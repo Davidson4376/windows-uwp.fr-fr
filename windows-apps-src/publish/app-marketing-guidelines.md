@@ -1,60 +1,60 @@
 ---
 author: jnHs
-Description: "Découvrez comment promouvoir vos applications et vos contenus dans le Windows Store. Ces consignes expliquent comment utiliser les ressources disponibles et fournissent des recommandations pour la promotion de vos applications sur les supports imprimés, la télévision, les réseaux sociaux et la publicité numérique."
-title: "Recommandations en matière de marketing adapté aux applications du Windows Store"
+Description: Learn how to promote your apps and content in the Windows Store. These guidelines cover how to use the assets that are available to you, along with recommendations for promoting your apps in print, TV, social media and digital advertising.
+title: Windows Store app marketing guidelines
 ms.assetid: CEB81E9D-5C64-458F-AAF1-C59BBBBB272E
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 64c6dd45053070096ff7d7e932bac1c560194518
+ms.openlocfilehash: b6662344996a83c3f1460af8b7387bf7cfd4b087
 
 ---
 
-# Recommandations en matière de marketing adapté aux applications du Windows Store
+# Windows Store app marketing guidelines
 
-Découvrez comment promouvoir vos applications et vos contenus dans le Windows Store. Ces consignes expliquent comment utiliser les ressources disponibles et fournissent des recommandations pour la promotion de vos applications sur les supports imprimés, la télévision, les réseaux sociaux et la publicité numérique.
+Learn how to promote your apps and content in the Windows Store. These guidelines cover how to use the assets that are available to you, along with recommendations for promoting your apps in print, TV, social media and digital advertising.
 
-## Badges Windows Store
+## Store badges
 
-Nous avons créé des badges promotionnels spéciaux pour attirer davantage de clients vers la description de votre application dans le Windows Store. Ces badges sont disponibles en 44 langues. N’oubliez pas que vous devez respecter certains critères lorsque vous utilisez ces images. Ces critères, ainsi que des exemples d’utilisation et les recommandations, sont disponibles dans un fichier PDF.
+We’ve created special promotional badges to help you drive more customers to your app's listing within the Windows Store. These badges are available in 44 languages. Keep in mind that there are certain requirements you need to follow when using these images; these requirements, along with usage examples and guidelines, are available in a PDF file.
 
-[![Bouton Télécharger](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529769) Recommandations en matière de marketing adapté aux applications du Windows Store (PDF, anglais)
+[![Download button](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529769) Windows Store Marketing Guidelines (PDF, English)
 
-## Images et générateur de badge
+## Badge generator and images
 
-Vous pouvez utiliser notre [Générateur de badge](http://go.microsoft.com/fwlink/p/?LinkID=534236) pour générer le code HTML qui affiche le badge Windows Store (dans la langue de votre choix) et les liens d’accès direct à la description de votre application dans le Windows Store. Vous pouvez également télécharger l’ensemble des images de badge (aux formats PNG et PDF) à partir du lien ci-dessous.
+You can use our [badge generator](http://go.microsoft.com/fwlink/p/?LinkID=534236) to generate HTML that displays the Store badge (in the language of your choice) and links directly to your app's Store listing. You can also download the complete set of badge images (in PNG and PDF format) from the link below.
 
-[![Bouton Télécharger](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529771) Toutes les images de badge
+[![Download button](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529771) All badge images
 
-## Images d’appareil
+## Device images
 
-Pour promouvoir votre application, vous pouvez afficher son aspect lors de son exécution sur un appareil Windows. Nous avons différentes images de châssis d'appareil que vous pouvez sélectionner, notamment des téléphones, des tablettes, des ordinateurs portables et des PC. Les meilleures pratiques et les spécifications techniques relatives à l’utilisation de ces images se trouvent dans les [Recommandations en matière de marketing adapté aux applications du Windows Store](http://go.microsoft.com/fwlink/p/?LinkId=529769).
+To promote your app, you may want to show how it looks when running on a Windows device. We’ve got a variety of device chassis images for you to select from, including phones, tablets, laptops and PCs. Best practices and technical specifications for how to use these images can be found in the [Windows Store Marketing Guidelines](http://go.microsoft.com/fwlink/p/?LinkId=529769).
 
-[![Bouton Télécharger](images/downloadbutton.png)](https://go.microsoft.com/fwlink/p/?LinkId=533057) Image d’appareil Windows
+[![Download button](images/downloadbutton.png)](https://go.microsoft.com/fwlink/p/?LinkId=533057) Windows device art
 
-## Licence d’utilisation des marques Microsoft
+## License to Microsoft Marks
 
-*Marques Microsoft* désigne le *badge Microsoft* et la *vignette du Windows Store* décrits dans la page [Générateur de badge](http://go.microsoft.com/fwlink/p/?LinkID=534236). Pour utiliser ces badges, vous devez:
+*Microsoft Marks* means the *Microsoft badge* and the *Windows Store tile* described on the [badge generator](http://go.microsoft.com/fwlink/p/?LinkID=534236) page. To use these badges, you must:
 
--   avoir votre application ou d’autres contenus disponibles dans le Windows Store, ou faire partie du [programme d’affiliation Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=624463) ;
+-   Have your app or other content available in the Windows Store, or be part of the [Microsoft Affiliate Program](http://go.microsoft.com/fwlink/p/?LinkId=624463).
 
--   si vous êtes inscrit au Centre de développement, vous conformer à la section [Licence d’utilisation de la marque Microsoft](https://msdn.microsoft.com/library/windows/apps/hh694058.aspx#license_to_mark) du Contrat du développeur de l’application ;
+-   If you are registered with Dev Center, comply with the [“License to Microsoft Marks”](https://msdn.microsoft.com/library/windows/apps/hh694058.aspx#license_to_mark) section of the App Developer Agreement.
 
--   si vous n’êtes pas inscrit au Centre de développement Windows, Microsoft vous accorde une licence gratuite internationale, non exclusive et non transférable pour l’utilisation des badges, uniquement conformément aux recommandations en matière de marketing adapté aux applications du Windows Store. Microsoft peut modifier ces recommandations, mais si tel est le cas, Microsoft utilisera tous les moyens raisonnables afin de vous rediriger vers les nouvelles URL auxquelles ces spécifications sont publiées. Microsoft se réserve tous les droits non expressément accordés ici.
+-   If you are not registered with Windows Dev Center, Microsoft grants you a worldwide, nonexclusive, nontransferable, royalty-free license to use the badges solely as described in the Windows Store Marketing Guidelines. Microsoft may change these guidelines, but if it does, Microsoft will use reasonable means to redirect you to any new URLs where these specifications are posted. Microsoft reserves all rights not expressly granted herein.
 
--   suivre les spécifications d’utilisation des logos décrites dans [Recommandations en matière de marketing adapté aux applications du Windows Store](http://go.microsoft.com/fwlink/p/?LinkId=529769).
+-   Follow the logo usage specifications described in the [Windows Store Marketing Guidelines](http://go.microsoft.com/fwlink/p/?LinkId=529769).
 
-Microsoft est l’unique propriétaire des Marques Microsoft et de son actif incorporel associé, et l’unique bénéficiaire de l’actif incorporel associé à votre utilisation des Marques Microsoft. Microsoft peut à tout moment révoquer cette licence, à sa seule discrétion.
-
- 
+Microsoft is the sole owner of the Microsoft Marks and associated goodwill, and the sole beneficiary of the goodwill associated with your use of the Microsoft Marks. Microsoft may revoke this license at any time and at its sole discretion.
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,112 +1,38 @@
 ---
 author: DelfCo
-Description: "Suivez ces meilleures pratiques en globalisant vos applications pour un public plus large, et en localisant vos applications pour un marché spécifique."
+Description: Follow these best practices when globalizing your apps for a wider audience and when localizing your apps for a specific market.
 Search.Refinement.TopicID: 180
-title: Indications de globalisation et de localisation
+title: Guidelines for globalization and localization
 ms.assetid: 0342DC3F-DDD1-4DD4-872E-A4EC340CAE79
 label: Do's and don'ts
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: bdbe6b3e319aa90a78660c664f1603bac93399ca
+ms.openlocfilehash: 9d16e553eb38526b4ae1f5aa827132e130cd05c7
 
 ---
 
-# Pratiques conseillées et déconseillées en matière de globalisation et de localisation
+# Globalization and localization do's and don'ts
 
 
 
 
 
-**API importantes**
+**Important APIs**
 
--   [**Globalisation**](https://msdn.microsoft.com/library/windows/apps/br206813)
+-   [**Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813)
 -   [**Globalization.NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136)
 -   [**Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)
--   [**Ressources**](https://msdn.microsoft.com/library/windows/apps/br206022)
+-   [**Resources**](https://msdn.microsoft.com/library/windows/apps/br206022)
 -   [**Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039)
 
-Suivez ces meilleures pratiques en globalisant vos applications pour un public plus large, et en les localisant pour un marché spécifique.
+Follow these best practices when globalizing your apps for a wider audience and when localizing your apps for a specific market.
 
 
 
-## <span id="guidelines_for_internationalization"></span><span id="GUIDELINES_FOR_INTERNATIONALIZATION"></span>Globalisation
+## <span id="guidelines_for_internationalization"></span><span id="GUIDELINES_FOR_INTERNATIONALIZATION"></span>Globalization
 
-Préparez votre application pour l’adapter simplement à différents marchés. Pour ce faire, choisissez des termes et des images mondialement appropriés pour votre interface utilisateur, utilisez des API [**Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) pour mettre en forme les données de l’application et évitez les hypothèses fondées sur un lieu géographique ou une langue.
-
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Recommandation</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><p>Utilisez les formats corrects pour les nombres, les dates, les heures, les adresses et les numéros de téléphone.</p></td>
-<td align="left"><p>Le format utilisé pour les nombres, les dates, les heures et d’autres formes de données varie entre les cultures, les régions, les langues et les marchés. Si vous affichez des nombres, des dates, des heures ou d’autres données, utilisez les API [<strong>Globalization</strong>](https://msdn.microsoft.com/library/windows/apps/br206813) pour obtenir le format adapté à un public particulier.</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>Prenez en charge les formats de papier internationaux.</p></td>
-<td align="left"><p>Les formats de papier les plus courants diffèrent entre les pays. Par conséquent, si vous incluez des fonctionnalités qui dépendent du format de papier, telles que l’impression, veillez à prendre en charge et tester les formats internationaux courants.</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>Prenez en charge les unités de mesure et les devises internationales.</p></td>
-<td align="left"><p>Des unités et des échelles différentes sont utilisées dans différents pays, bien que les systèmes métrique et impérial soient les plus populaires. Si vous utilisez des mesures, telles que la longueur, la température ou la surface, obtenez la mesure dans le système correct en utilisant la propriété [<strong>CurrenciesInUse</strong>](https://msdn.microsoft.com/library/windows/apps/br206793).</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>Affichez correctement le texte et les polices.</p></td>
-<td align="left"><p>Les paramètres optimaux de police, taille de police et direction du texte varient entre les différents marchés.</p>
-<p>Pour plus d’informations, voir [<strong>Ajuster la disposition et les polices, et prendre en charge le sens du flux DàG</strong>](adjust-layout-and-fonts--and-support-rtl.md).</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>Utilisez Unicode pour le codage des caractères.</p></td>
-<td align="left"><p>Par défaut, les versions récentes de Microsoft Visual Studio utilisent le codage de caractères Unicode pour tous les documents. Si vous utilisez un autre éditeur, veillez à enregistrer les fichiers sources dans les codages de caractères Unicode appropriés. Toutes les API Windows Runtime retournent des chaînes codées selon le codage de caractères UTF-16.</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>Enregistrez la langue de saisie.</p></td>
-<td align="left"><p>Lorsque votre application demande aux utilisateurs d’entrer du texte, enregistrez la langue de saisie. Cela garantit que, lorsque l’entrée est affichée ultérieurement, elle sera présentée à l’utilisateur dans le format approprié. Utilisez la propriété [<strong>CurrentInputMethodLanguage</strong>](https://msdn.microsoft.com/library/windows/apps/hh700658) pour obtenir la langue d’entrée actuelle.</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>N’utilisez pas la langue pour supposer l’emplacement géographique d’un utilisateur et n’utilisez pas l’emplacement géographique pour supposer la langue d’un utilisateur.</p></td>
-<td align="left"><p>Dans Windows, la langue et l’emplacement géographique d’un utilisateur sont des concepts distincts. Un utilisateur peut parler une variante régionale d’une langue, telle qu’en-gb pour l’anglais parlé en Grande-Bretagne, tout en étant situé dans un autre pays ou région. Déterminez si vos applications requièrent une connaissance de la langue de l’utilisateur, par exemple pour le texte de l’interface utilisateur, ou de son emplacement géographique, par exemple pour des problèmes de licence.</p>
-<p>Pour plus d’informations, voir [<strong>Gérer la langue et la région</strong>](manage-language-and-region.md).</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>N’utilisez pas d’expressions familières ni de métaphores.</p></td>
-<td align="left"><p>Le langage propre à une tranche de population, telle qu’une culture ou une classe d’âge, peut être difficile à comprendre, car seuls les représentants de cette tranche de population emploient ce langage. De la même façon, les métaphores peuvent avoir un sens pour une personne, mais ne rien évoquer pour une autre. Par exemple, &quot;vendanger&quot; a un sens précis dans le jargon du football, qui échappe aux non-initiés. Si vous envisagez de localiser votre application et que vous adoptez un ton informel, veillez à expliquer clairement aux traducteurs le sens et le style à reproduire.</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>N’utilisez pas de jargon, d’abréviations ni d’acronymes.</p></td>
-<td align="left"><p>Un langage technique aura moins de chances d’être compris d’un public non initié ou de personnes issues d’autres cultures ou régions et il sera difficile à traduire. Ce vocabulaire n’est pas utilisé dans les conversations de tous les jours. Un langage technique apparaît souvent dans les messages d’erreur pour identifier les problèmes matériels et logiciels. Parfois, cela s’avère nécessaire, mais vous devriez reformuler les chaînes pour qu’elles ne soient pas techniques.</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>N’utilisez pas d’images susceptibles d’être offensantes.</p></td>
-<td align="left"><p>Des images appropriées dans votre propre culture peuvent être offensantes ou mal interprétées dans d’autres cultures. Évitez l’utilisation de symboles religieux, d’animaux ou d’associations de couleurs correspondant à des drapeaux nationaux ou des mouvements politiques.</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>Évitez toute infraction politique dans les cartes ou en faisant référence à des régions.</p></td>
-<td align="left"><p>Les cartes peuvent inclure des frontières nationales ou régionales controversées et représentent une source fréquente d’infraction politique. Veillez à ce que toute interface utilisateur utilisée pour la sélection d’une nation lui fasse référence en tant que &quot;pays/région&quot;. Placer un territoire contesté dans une liste intitulée &quot;Pays&quot;, comme dans un formulaire de déclaration d’adresse, pourrait vous attirer des ennuis.</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>N’utilisez pas la seule comparaison de chaînes pour comparer des balises de langue.</p></td>
-<td align="left"><p>Les balises de langue BCP-47 sont complexes. Il existe un certain nombre de problèmes lors de la comparaison de balises de langue, dont notamment des problèmes de correspondance entre les informations de script, les balises héritées et les différentes variantes régionales. Le système de gestion des ressources dans Windows s’occupe des correspondances pour vous. Vous pouvez spécifier un ensemble de ressources dans des langues quelconques et le système choisit celle qui est appropriée pour l’utilisateur et l’application.</p>
-<p>Pour plus d’informations sur la gestion des ressources, voir [<strong>Définition des ressources d’application</strong>](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321).</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>Ne supposez pas que le classement est toujours alphabétique.</p></td>
-<td align="left"><p>Pour les langues qui n’utilisent pas le script latin, le classement se base sur des choses telles que la prononciation, le nombre de coups de crayon et d’autres facteurs. Mêmes les langues qui utilisent le script latin n’utilisent pas toujours le classement alphabétique. Par exemple, dans certaines cultures, un annuaire n’est pas trié par ordre alphabétique. Le système peut gérer le classement pour vous, mais si vous créez votre propre algorithme de tri, veillez à prendre en compte les méthodes de classement utilisées dans vos marchés cibles.</p></td>
-</tr>
-</tbody>
-</table>
-
- 
-
-## <span id="guidelines_for_localization"></span><span id="GUIDELINES_FOR_LOCALIZATION"></span>Localisation
+Prepare your app to easily adapt to different markets by choosing globally appropriate terms and images for your UI, using [**Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) APIs to format app data, and avoiding assumptions based on location or language.
 
 <table>
 <colgroup>
@@ -115,75 +41,149 @@ Préparez votre application pour l’adapter simplement à différents marchés.
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Recommandation</th>
+<th align="left">Recommendation</th>
 <th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Séparez les ressources telles que les chaînes d’interface utilisateur et les images du code.</p></td>
-<td align="left"><p>Concevez vos applications de telle sorte que les ressources, telles que les chaînes et les images, soient séparées de votre code. Cela permet de les gérer, localiser et personnaliser de manière indépendante pour différents facteurs d’échelle, diverses options d’accessibilité et une multitude d’autres contextes d’ordinateur et d’utilisateur.</p>
-<p>Séparez les ressources de type chaîne du code de votre application pour créer un code base unique, indépendant de la langue. Séparez toujours les chaînes du code d’application et du balisage. Placez-les dans un fichier de ressources, tel qu’un fichier ResW ou ResJSON.</p>
-<p>Utilisez l’infrastructure des ressources de Windows pour gérer la sélection des ressources les plus appropriées de façon à correspondre à l’environnement de l’utilisateur.</p></td>
+<td align="left"><p>Use the correct formats for numbers, dates, times, addresses, and phone numbers.</p></td>
+<td align="left"><p>The formatting used for numbers, dates, times, and other forms of data varies between cultures, regions, languages, and markets. If you're displaying numbers, dates, times, or other data, use [<strong>Globalization</strong>](https://msdn.microsoft.com/library/windows/apps/br206813) APIs to get the format appropriate for a particular audience.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Isolez les autres fichiers de ressources localisables.</p></td>
-<td align="left"><p>Prenez les autres fichiers qui requièrent une localisation, tels que les images qui contiennent du texte à traduire ou qui doivent être changées en raison de sensibilités culturelles, et placez-les dans des dossiers mentionnant les noms des langues.</p></td>
+<td align="left"><p>Support international paper sizes.</p></td>
+<td align="left"><p>The most common paper sizes differ between countries, so if you include features that depend on paper size, like printing, be sure to support and test common international sizes.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Définissez votre langue par défaut et marquez toutes vos ressources, même celles dans votre langue par défaut.</p></td>
-<td align="left"><p>Définissez toujours la langue par défaut de vos applications dans le manifeste de l’application (package.appxmanifest). La langue par défaut détermine la langue utilisée lorsque l’utilisateur ne parle aucune des langues prises en charge dans l’application. Marquez les ressources linguistiques par défaut, par exemple en-us/Logo.png, avec leur langue, de sorte que le système puisse savoir en quelle langue se trouve la ressource et comment elle est utilisée dans des situations particulières.</p></td>
+<td align="left"><p>Support international units of measurement and currencies.</p></td>
+<td align="left"><p>Different units and scales are used in different countries, although the most popular are the metric system and the imperial system. If you deal with measurements, like length, temperature, or area, get the correct system measurement by using the [<strong>CurrenciesInUse</strong>](https://msdn.microsoft.com/library/windows/apps/br206793) property.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Déterminez les ressources de votre application qui requièrent une localisation.</p></td>
-<td align="left"><p>Qu’est-ce qui doit changer si votre application doit être localisée pour d’autres marchés ? Les chaînes de texte doivent être traduites dans d’autres langues. Les images ont peut-être besoin d’être adaptées pour d’autres cultures. Déterminez la manière dont la localisation affecte d’autres ressources que votre application utilise, telles que les contenus audio et vidéo.</p></td>
+<td align="left"><p>Display text and fonts correctly.</p></td>
+<td align="left"><p>The ideal font, font size, and direction of text varies between different markets.</p>
+<p>For more info, see [<strong>Adjust layout and fonts, and support RTL</strong>](adjust-layout-and-fonts--and-support-rtl.md).</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Utilisez des identificateurs de ressource dans le code et le balisage pour faire référence aux ressources.</p></td>
-<td align="left"><p>Au lieu d’utiliser des opérateurs de chaîne ou des noms de fichiers spécifiques pour les images dans votre balisage, utilisez les références aux ressources. Veillez à utiliser des identificateurs uniques pour chaque ressource. Pour plus d’informations, voir [<strong>Comment nommer des ressources à l’aide de qualificateurs</strong>](https://msdn.microsoft.com/library/windows/apps/xaml/Hh965324).</p>
-<p>Écoutez les événements déclenchés en cas de changements dans le système et si ce dernier commence à utiliser un ensemble distinct de qualificateurs. Retraitez le document afin de charger les ressources correctes.</p></td>
+<td align="left"><p>Use Unicode for character encoding.</p></td>
+<td align="left"><p>By default, recent versions of Microsoft Visual Studio use Unicode character encoding for all documents. If you're using a different editor, be sure to save source files in the appropriate Unicode character encodings. All Windows Runtime APIs return UTF-16 encoded strings.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Autorisez l’augmentation de la taille du texte.</p></td>
-<td align="left"><p>Allouez dynamiquement les tampons de texte, car la taille du texte peut augmenter une fois traduit. Si vous devez utiliser des tampons statiques, définissez-les de très grande taille (en doublant peut-être la longueur de la chaîne anglaise) pour palier l’extension éventuelle des chaînes après traduction. L’espace disponible est peut-être limité pour une interface utilisateur. Pour s’adapter aux langues localisées, faites en sorte que la longueur de vos chaînes soit approximativement 40 % supérieure à celle que l’anglais nécessite. Pour les chaînes de texte vraiment courtes, telles que des mots uniques, vous pouvez avoir besoin de 300 % d’espace supplémentaire. En outre, si vous permettez à un contrôle de prendre en charge plusieurs lignes et le retour automatique à la ligne, cela laisse plus d’espace pour afficher chaque chaîne.</p></td>
+<td align="left"><p>Record the language of input.</p></td>
+<td align="left"><p>When your app asks users for text input, record the language of input. This ensures that when the input is displayed later it's presented to the user with the appropriate formatting. Use the [<strong>CurrentInputMethodLanguage</strong>](https://msdn.microsoft.com/library/windows/apps/hh700658) property to get the current input language.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Prenez en charge la mise en miroir.</p></td>
-<td align="left"><p>L’alignement de texte et le sens de lecture peuvent être de gauche à droite, comme en français, ou de droite à gauche (RTL, right-to-left), comme en arabe ou en hébreu. Si vous localisez votre produit dans des langues qui utilisent un sens de lecture différent du vôtre, veillez à ce que la disposition de vos éléments d’interface utilisateur prenne en charge la mise en miroir. Même des éléments tels que les boutons Précédent, les effets de transition de l’interface utilisateur et les images peuvent avoir à être mis en miroir.</p>
-<p>Pour plus d’informations, voir [<strong>Ajuster la disposition et les polices, et prendre en charge le sens du flux DàG</strong>](adjust-layout-and-fonts--and-support-rtl.md).</p></td>
+<td align="left"><p>Don't use language to assume a user's location, and don't use location to assume a user's language.</p></td>
+<td align="left"><p>In Windows, the user's language and location are separate concepts. A user can speak a particular regional variant of a language, like en-gb for English as spoken in Great Britain, but the user can be in an entirely different country or region. Consider whether your apps require knowledge about the user's language, like for UI text, or location, like for licensing issues.</p>
+<p>For more info, see [<strong>Manage language and region</strong>](manage-language-and-region.md).</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Commentez les chaînes.</p></td>
-<td align="left"><p>Veillez à ce que les chaînes soient commentées de façon appropriée et que seules les chaînes qui doivent être traduites soient fournies aux traducteurs. Une sur-localisation est une source courante de problèmes.</p></td>
+<td align="left"><p>Don't use colloquialisms and metaphors.</p></td>
+<td align="left"><p>Language that's specific to a demographic group, such as culture and age, can be hard to understand or translate, because only people in that demographic group use that language. Similarly, metaphors might make sense to one person but mean nothing to someone else. For example, a &quot;bluebird&quot; means something specific to those who are part of skiing culture, but those who aren’t part of that culture don’t understand the reference. If you plan to localize your app and you use an informal voice or tone, be sure that you adequately explain to localizers the meaning and voice to be translated.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Utilisez des chaînes courtes.</p></td>
-<td align="left"><p>Les chaînes courtes sont plus faciles à traduire et permettent le recyclage de la traduction. Le recyclage de la traduction permet d’économiser de l’argent en évitant l’envoi d’une chaîne déjà traduite au traducteur.</p>
-<p>Les chaînes de plus de 8 192 caractères peuvent ne pas être prises en charge par certains outils de localisation, alors conservez des chaînes de 4 000 caractères au plus.</p></td>
+<td align="left"><p>Don't use technical jargon, abbreviations, or acronyms.</p></td>
+<td align="left"><p>Technical language is less likely to be understood by non-technical audiences or people from other cultures or regions, and it's difficult to translate. People don't use these kinds of words in everyday conversations. Technical language often appears in error messages to identify hardware and software issues. At times, this might be be necessary, but you should rewrite strings to be non-technical.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Rédigez des chaînes contenant une phrase complète.</p></td>
-<td align="left"><p>Rédigez des chaînes contenant une phrase complète, au lieu de scinder la phrase en mots individuels, car la traduction des mots peut dépendre de leur position dans une phrase. De plus, ne supposez pas qu’une expression dotée de plusieurs paramètres conservera ces paramètres dans le même ordre pour chaque langue.</p></td>
+<td align="left"><p>Don't use images that might be offensive.</p></td>
+<td align="left"><p>Images that might be appropriate in your own culture may be offensive or misinterpreted in other cultures. Avoid use of religious symbols, animals, or color combinations that are associated with national flags or political movements.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Optimisez les fichiers image et audio pour la localisation.</p></td>
-<td align="left"><p>Réduisez les coûts de localisation en évitant l’utilisation de texte dans les images ou de paroles dans les fichiers audio. Si vous localisez du texte vers une langue dotée d’un sens de lecture différent du vôtre, l’utilisation d’images et d’effets symétriques facilite la prise en charge de la mise en miroir.</p></td>
+<td align="left"><p>Avoid political offense in maps or when referring to regions.</p></td>
+<td align="left"><p>Maps may include controversial regional or national boundaries, and they're a frequent source of political offense. Be careful that any UI used for selecting a nation refers to it as a &quot;country/region&quot;. Putting a disputed territory in a list labeled &quot;Countries&quot;, like in an address form, could get you in trouble.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Ne réutilisez pas des chaînes dans des contextes différents.</p></td>
-<td align="left"><p>Ne réutilisez pas des chaînes dans des contextes différents, car même des mots simples tels que &quot;on&quot; et &quot;off&quot; peuvent être traduits différemment selon le contexte.</p></td>
+<td align="left"><p>Don't use string comparison by itself to compare language tags.</p></td>
+<td align="left"><p>BCP-47 language tags are complex. There are a number of issues when comparing language tags, including issues with matching script information, legacy tags, and multiple regional variants. The resource management system in Windows takes care of matching for you. You can specify a set of resources in any languages, and the system chooses the appropriate one for the user and the app.</p>
+<p>For more on resource management, see [<strong>Defining app resources</strong>](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321).</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>Don't assume that sorting is always alphabetic.</p></td>
+<td align="left"><p>For languages that don't use Latin script, sorting is based on things like pronunciation, number of pen strokes, and other factors. Even languages that use Latin script don't always use alphabetic sorting. For example, in some cultures, a phone book might not be sorted alphabetically. The system can handle sorting for you, but if you create your own sorting algorithm, be sure to take into account the sorting methods used in your target markets.</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <span id="related_topics"></span>Articles connexes
+## <span id="guidelines_for_localization"></span><span id="GUIDELINES_FOR_LOCALIZATION"></span>Localization
+
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Recommendation</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><p>Separate resources such as UI strings and images from code.</p></td>
+<td align="left"><p>Design your apps so that resources, like strings and images, are separated from your code. This enables them to be independently maintained, localized, and customized for different scaling factors, accessibility options, and a number of other user and machine contexts.</p>
+<p>Separate string resources from your app's code to create a single language-independent codebase. Always separate strings from app code and markup, and place them into a resource file, like a ResW or ResJSON file.</p>
+<p>Use the resource infrastructure in Windows to handle the selection of the most appropriate resources to match the user's runtime environment.</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>Isolate other localizable resource files.</p></td>
+<td align="left"><p>Take other files that require localization, like images that contain text to be translated or that need to be changed due to cultural sensitivity, and place them in folders tagged with language names.</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>Set your default language, and mark all of your resources, even the ones in your default language.</p></td>
+<td align="left"><p>Always set the default language for your apps appropriately in the app manifest (package.appxmanifest). The default language determines the language that's used when the user doesn't speak any of the supported languages of the app. Mark default language resources, for example en-us/Logo.png, with their language, so the system can tell which language the resource is in and how it's used in particular situations.</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>Determine the resources of your app that require localization.</p></td>
+<td align="left"><p>What needs to change if your app is to be localized for other markets? Text strings require translation into other languages. Images may need to be adapted for other cultures. Consider how localization affects other resources that your app uses, like audio or video.</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>Use resource identifiers in the code and markup to refer to resources.</p></td>
+<td align="left"><p>Instead of having string literals or specific file names for images in your markup, use references to the resources. Be sure to use unique identifiers for each resource. For more info, see [<strong>How to name resources using qualifiers</strong>](https://msdn.microsoft.com/library/windows/apps/xaml/Hh965324).</p>
+<p>Listen for events that fire when the system changes and it begins to use a different set of qualifiers. Reprocess the document so that the correct resources can be loaded.</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>Enable text size to increase.</p></td>
+<td align="left"><p>Allocate text buffers dynamically, since text size may expand when translated. If you must use static buffers, make them extra-large (perhaps doubling the length of the English string) to accommodate potential expansion when strings are translated. There also may be limited space available for a user interface. To accommodate localized languages, ensure that your string length is approximately 40% longer than what you would need for the English language. For really short strings, such as single words, you may needs as much as 300% more space. In addition, enabling multiline support and text-wrapping in a control will leave more space to display each string.</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>Support mirroring.</p></td>
+<td align="left"><p>Text alignment and reading order can be left-to-right, as in English, or right-to-left (RTL), as in Arabic or Hebrew. If you are localizing your product into languages that use a different reading order than your own, be sure that the layout of your UI elements supports mirroring. Even items such as back buttons, UI transition effects, and images may need to be mirrored.</p>
+<p>For more info, see [<strong>Adjust layout and fonts, and support RTL</strong>](adjust-layout-and-fonts--and-support-rtl.md).</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>Comment strings.</p></td>
+<td align="left"><p>Ensure that strings are properly commented, and only the strings that need to be translated are provided to localizers. Over-localization is a common source of problems.</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>Use short strings.</p></td>
+<td align="left"><p>Shorter strings are easier to translate and enable translation recycling. Translation recycling saves money because the same string isn't sent to the localizer twice.</p>
+<p>Strings longer than 8192 characters may not be supported by some localization tools, so keep string length to 4000 or less.</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>Provide strings that contain an entire sentence.</p></td>
+<td align="left"><p>Provide strings that contain an entire sentence, instead of breaking the sentence into individual words, because the translation of words may depend on their position in a sentence. Also, don't assume that a phrase with multiple parameters will keep those parameters in the same order for every language.</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>Optimize image and audio files for localization.</p></td>
+<td align="left"><p>Reduce localization costs by avoiding use of text in images or speech in audio files. If you're localizing to a language with a different reading direction than your own, using symmetrical images and effects make it easier to support mirroring.</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>Don't re-use strings in different contexts.</p></td>
+<td align="left"><p>Don't re-use strings in different contexts, because even simple words like &quot;on&quot; and &quot;off&quot; may be translated differently, depending on the context.</p></td>
+</tr>
+</tbody>
+</table>
+
+ 
+
+## <span id="related_topics"></span>Related articles
 
 
-**Exemples**
-* [Exemple de ressources d’application et de localisation](http://go.microsoft.com/fwlink/p/?linkid=254478)
-* [Exemple de préférences de globalisation](http://go.microsoft.com/fwlink/p/?linkid=231608)
+**Samples**
+* [Application resources and localization sample](http://go.microsoft.com/fwlink/p/?linkid=254478)
+* [Globalization preferences sample](http://go.microsoft.com/fwlink/p/?linkid=231608)
  
 
  
@@ -193,6 +193,6 @@ Préparez votre application pour l’adapter simplement à différents marchés.
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

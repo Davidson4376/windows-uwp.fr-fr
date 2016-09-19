@@ -1,111 +1,113 @@
 ---
 author: mcleblanc
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
-title: Device Portal pour Bureau
-description: "Découvrez comment WindowsDevicePortal ouvre les diagnostics et l’automatisation sur votre bureau Windows."
+title: Device Portal for Desktop
+description: Learn how the Windows Device Portal opens up diagnostics and automation on your Windows desktop.
 translationtype: Human Translation
-ms.sourcegitcommit: f09f0233ec11b41989cf52da3c5e8cb37a97b607
-ms.openlocfilehash: 7be27f5fb15676c5330f22995dd044899eddfd3d
+ms.sourcegitcommit: b5d259172a7e3975d48a5ba669cfbe345869aebf
+ms.openlocfilehash: 3436a95124071045c8ec89ed8ddf644ccc80c29f
 
 ---
-# DevicePortal pour Bureau
+# Device Portal for Desktop
 
-À partir de Windows10 version1607, des fonctionnalités de développement supplémentaires sont disponibles pour le bureau. Ces fonctionnalités sont disponibles uniquement lorsque le mode développeur est activé.
+Starting in Windows 10, Version 1607, additional developer features are available for desktop. These features are available only when Developer Mode is enabled.
 
-Pour en savoir plus sur la façon d’activer le mode développeur, consultez [Activer votre appareil pour le développement](../get-started/enable-your-device-for-development.md).
+For information about how to enable Developer Mode, see [Enable your device for development](../get-started/enable-your-device-for-development.md).
 
-DevicePortal vous permet d’afficher les informations de diagnostic et d’interagir avec votre bureau surHTTP à l’aide de votre navigateur. Vous pouvez utiliser DevicePortal pour:
-- voir et manipuler une liste de processus en cours d’exécution;
-- installer, supprimer, démarrer et arrêter des applications;
-- modifier les profils de connexion Wi-Fi, afficher la force du signal et voir ipconfig;
-- afficher les graphiques d’utilisation du processeur, de la mémoire, des E/S, du réseau et du GPU en temps réel;
-- collecter les vidages de processus;
-- collecter les traces ETW; 
-- manipuler le stockage isolé des applications de version test chargée.
+Device Portal lets you view diagnostic information and interact with your desktop over HTTP from your browser. You can use Device Portal to do the following:
+- See and manipulate a list of running processes
+- Install, delete, launch, and terminate apps
+- Change Wi-Fi profiles, view signal strength, and see ipconfig
+- View live graphs of CPU, memory, I/O, network, and GPU usage
+- Collect process dumps
+- Collect ETW traces 
+- Manipulate the isolated storage of sideloaded apps
 
-## Configurer DevicePortal sur le bureau Windows
+## Set up device portal on Windows Desktop
 
-### Activer DevicePortal
+### Turn on device portal
 
-Dans le menu **Paramètres développeur**, si le Mode développeur est activé, vous pouvez activer DevicePortal.  
+In the **Developer Settings** menu, with Developer Mode enabled, you can enable Device Portal.  
 
-Lorsque vous activez DevicePortal, vous devez également créer un nom d’utilisateur et un mot de passe pour DevicePortal. N’utilisez pas votre compte Microsoft ou d’autres informations d’identification Windows.  
+When you enable Device Portal, you must also create a username and password for Device Portal. Do not use your Microsoft account or other Windows credentials.  
 
-Une fois DevicePortal activé, vous verrez des liens permettant d’y accéder en bas de la section **Paramètres**. Prenez note du numéro de port apparaissant à la fin de l’URL: ce numéro de port est généré de manière aléatoire lorsque DevicePortal est activé, mais il doit rester cohérent entre deux redémarrages du bureau. Si vous souhaitez définir les numéros de port manuellement afin qu’ils restent permanents, consultez [Configuration des numéros de port](device-portal-desktop.md#setting-port-numbers).
+After Device Portal is enabled, you will see links to it at the bottom of the **Settings** section. Take note of the port number applied to the end of the URL: this port number is randomly generated when Device Portal is enabled, but should remain consistent between reboots of the desktop. If you'd like to set the port numbers manually so they remain permanent, see [Setting port numbers](device-portal-desktop.md#setting-port-numbers).
 
-Vous pouvez choisir entre deux moyens de connexion à DevicePortal: hôte local et sur le réseau local (y compris le VPN).
+You can choose from two ways to connect to Device Portal: local host and over the local network (including VPN).
 
-**Pour se connecter à Device Portal**
+**To connect to Device Portal**
 
-1. Dans votre navigateur, entrez l’adresse indiquée ici selon le type de connexion que vous utilisez.
+1. In your browser, enter the address shown here for the connection type you're using.
 
-    - Hôte local : `http://127.0.0.1:PORT` ou `http://localhost:PORT`
+    - Localhost: `http://127.0.0.1:PORT` or `http://localhost:PORT`
 
-    Utilisez cette adresse pour afficher Device Portal localement.
+    Use this address to view Device Portal locally.
     
-    - Réseau local: `https://<The IP address of the desktop>:PORT`
+    - Local Network: `https://<The IP address of the desktop>:PORT`
 
-    Utilisez cette adresse pour établir la connexion par le biais d’un réseau local.
+    Use this address to connect over a local network.
 
-Une connexion HTTPS est requise pour l’authentification et la communication sécurisée.
+HTTPS is required for authentication and secure communication.
 
-Si vous utilisez Device Portal dans un environnement protégé, comme un laboratoire de test, où vous faites confiance à tous les utilisateurs du réseau local, si aucune information personnelle n’est présente sur votre appareil et si vous présentez des exigences uniques, vous pouvez désactiver l’authentification. Cela permet une communication non chiffrée. Toute personne connaissant l’adresseIP de votre ordinateur pourra le contrôler.
+If you are using Device Portal in a protected environment, like a test lab, where you trust everyone on your local network, have no personal information on the device, and have unique requirements, you can disable authentication. This enables unencrypted communication, and allows anyone with the IP address of your computer to control it.
 
-## Pages DevicePortal
+## Device Portal pages
 
-Sur le Bureau, DevicePortal propose les pages standard. Pour obtenir une description détaillée, voir [Vue d’ensemble de WindowsDevicePortal](device-portal.md).
+Device Portal on desktop provides the standard set of pages. For detailed descriptions, see [Windows Device Portal overview](device-portal.md).
 
-- Applications
-- Processus
-- Performances
-- Débogage
-- Suivi des événements pour Windows (ETW)
-- Suivi des performances
-- Appareils
-- Réseau
-- Explorateur de fichiers de l’application 
+- Apps
+- Processes
+- Performance
+- Debugging
+- Event Tracing for Windows (ETW)
+- Performance tracing
+- Devices
+- Networking
+- App File Explorer 
 
-## Définition des numéros de port
+## Setting port numbers
 
-Si vous souhaitez sélectionner des numéros de port pour DevicePortal (par exemple, 80 et 443), vous pouvez définir les clés de Registre suivantes:
+If you would like to select port numbers for Device Portal (such as 80 and 443), you can set the following regkeys:
 
-- Sous HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WebManagement\Service
-    - Utiliser des ports dynamiques: un DWORD requis. Définissez ce paramètre sur0 pour conserver les numéros de port que vous avez choisis.
-    - Port Http: un DWORD requis. Contient le numéro de port que DevicePortal va écouter pour les connexions HTTP.  
-    - Port Https: un DWORD requis. Contient le numéro de port que Device Portal va écouter pour les connexions HTTPS.
+- Under HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WebManagement\Service
+    - UseDynamicPorts: A required DWORD. Set this to 0 in order to retain the port numbers you've chosen.
+    - HttpPort: A required DWORD. Contains the port number that Device Portal will listen for HTTP connections on.  
+    - HttpsPort: A required DWORD. Contains the port number that Device Portal will listen for HTTPS connections on.
 
-## Échec d’installation du package Mode développeur
-Parfois, en raison de problèmes réseau ou de compatibilité, le Mode développeur ne s’installe pas correctement. Le package Mode développeur est requis pour le déploiement à distance (DevicePortal et SSH) mais pas pour le développement local.  
+## Failure to install Developer Mode package or launch Device Portal
+Sometimes, due to network or compatibility issues, Developer Mode won't install correctly. The Developer Mode package is required for **remote** deployment -- Device Portal and SSH -- but not for local development.  Even if you ewncounter these issues, you can still deploy your app locally using Visual Studio. 
 
-### Échec de localisation du package
+See the [Known Issues](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) forum to find workarounds to these issues and more. 
 
-«Le package Mode développeur n’a pas pu être localisé dans la mise à jour Windows. Code d’erreur 0x001234. En savoir plus»   
+### Failed to locate the package
 
-Cette erreur peut se produire en raison d’un problème de connectivité réseau, des paramètres d’Entreprise ou d’un package manquant. 
+"Developer Mode package couldn’t be located in Windows Update. Error Code 0x001234 Learn more"   
 
-Pour résoudre ce problème:
+This error may occur due to a network connectivity problem, Enterprise settings, or the package may be missing. 
 
-1. Assurez-vous que votre ordinateur est connecté à Internet. 
-2. Si vous utilisez un ordinateur appartenant à un domaine, adressez-vous à votre administrateur réseau. 
-3. Recherchez les mises à jour de Windows dans Paramètres &gt; Mises à jour et sécurité &gt; [Mises à jour Windows](ms-settings:windowsupdate).
-4. Vérifiez que le package Mode développeur Windows est présent dans Paramètres &gt; Système &gt; Applications et fonctionnalités &gt; [Gérer les fonctionnalités facultatives](ms-settings:optionalfeatures) &gt; Ajouter une fonctionnalité. S’il n’est pas présent, Windows ne peut pas trouver le package approprié pour votre ordinateur. 
+To fix this issue:
 
-Après avoir suivi les étapes ci-dessus, désactivez puis réactivez le Mode développeur pour vérifier le correctif. 
+1. Ensure your computer is connected to the Internet. 
+2. If you are on a domain-joined computer, speak to your network administrator. 
+3. Check for Windows updates in the Settings > Updates and Security > [Windows Updates](ms-settings:windowsupdate).
+4. Verify that the Windows Developer Mode package is present in Settings > System > Apps & Features > [Manage optional features](ms-settings:optionalfeatures) > Add a feature. If it is missing, Windows cannot find the correct package for your computer. 
 
-
-### Échec de l’installation du package
-
-«Échec d’installation du package Mode développeur. Code d’erreur 0x001234. En savoir plus»
-
-Cette erreur peut se produire en raison d’incompatibilités entre votre version de Windows et le package Mode développeur. 
-
-Pour résoudre ce problème:
-
-1. Recherchez les mises à jour de Windows dans Paramètres &gt; Mises à jour et sécurité &gt; [Mises à jour Windows](ms-settings:windowsupdate).
-2. Redémarrez votre ordinateur pour vérifier que toutes les mises à jour sont appliquées.
+After doing any of the above steps, disable and then re-enable Developer Mode to verify the fix. 
 
 
+### Failed to install the package
 
-<!--HONumber=Jun16_HO5-->
+"Developer Mode package failed to install. Error code 0x001234  Learn more"
+
+This error may occur due to incompatibilities between your build of Windows and the Developer Mode package. 
+
+To fix this issue:
+
+1. Check for Windows updates in the Settings > Updates and Security > [Windows Updates](ms-settings:windowsupdate).
+2. Reboot your computer to ensure all updates are applied.
+
+
+
+<!--HONumber=Aug16_HO5-->
 
 

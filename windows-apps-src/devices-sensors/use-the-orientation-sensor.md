@@ -1,53 +1,53 @@
 ---
 author: DBirtolo
 ms.assetid: 1889AC3A-A472-4294-89B8-A642668A8A6E
-title: "Utiliser le capteur d’orientation"
-description: "Découvrez comment utiliser les capteurs d’orientation pour déterminer l’orientation de l’appareil."
+title: Use the orientation sensor
+description: Learn how to use the orientation sensors to determine the device orientation.
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 67c23795be54207c54c1e871dad045e6c0cd7c77
+ms.openlocfilehash: 1265697f03e0de74444fc936a3041d1e88147e77
 
 ---
-# Utiliser le capteur d’orientation
+# Use the orientation sensor
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** API importantes **
+** Important APIs **
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371)
 -   [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399)
 
-Découvrez comment utiliser les capteurs d’orientation pour déterminer l’orientation de l’appareil.
+Learn how to use the orientation sensors to determine the device orientation.
 
-Deuxtypes d’API de capteur d’orientation sont inclus dans l’espace de noms [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408): [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) et [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399). Même si tous deux sont des capteurs d’orientation, ils sont utilisés à des fins très différentes. Toutefois, étant donné que les deux sont des capteurs d’orientation, ils sont traités tous les deux dans cet article.
+There are two different types of orientation sensor APIs included in the [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408) namespace: [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) and [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399). While both of these sensors are orientation sensors, that term is overloaded and they are used for very different purposes. However, since both are orientation sensors, they are both covered in this article.
 
-L’API [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) est utilisée pour les applications3D pour obtenir un quaternion et une matrice de rotation. Un quaternion est simplement la rotation d’un point [x,y,z] autour d’un axe arbitraire (par opposition à une matrice de rotation qui représente des rotations autour de trois axes). Les quaternions s’appuient sur des mathématiques quelque peu exotiques en ce sens qu’elles impliquent les propriétés géométriques des nombres complexes et les propriétés mathématiques des nombres imaginaires. Toutefois, leur utilisation est simple, et les infrastructures telles que DirectX les prennent en charge. Une application en 3D peut utiliser le capteur d’orientation pour régler la perspective de l’utilisateur. Ce capteur associe les entrées de l’accéléromètre, du gyromètre et de la boussole.
+The [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) API is used for 3-D apps two obtain a quaternion and a rotation matrix. A quaternion can be most easily understood as a rotation of a point \[x,y,z\] about an arbitrary axis (contrasted with a rotation matrix, which represents rotations around three axes). The mathematics behind quaternions is fairly exotic in that it involves the geometric properties of complex numbers and mathematical properties of imaginary numbers, but working with them is simple, and frameworks like DirectX support them. A complex 3-D app can use the Orientation sensor to adjust the user's perspective. This sensor combines input from the accelerometer, gyrometer, and compass.
 
-L’API [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) permet de déterminer l’orientation de l’appareil en termes de définition comme portrait vers le haut, portrait vers le bas, paysage à gauche, paysage à droite. Il peut également détecter si un appareil est face vers le haut ou face vers le bas. Au lieu de renvoyer des propriétés telles que «Portrait vers le haut» ou «Paysage à gauche», ce capteur renvoie une valeur de rotation: «Sans rotation», «Rotation90DegrésSensAntiHoraire», etc. Le tableau suivant établit une correspondance entre les propriétés d’orientation courantes et les lectures du capteur.
+The [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) API is used to determine the current device orientation in terms of definitions like portrait up, portrait down, landscape left, and landscape right. It can also detect if a device is face-up or face-down. Rather than returning properties like "portrait up" or "landscape left", this sensor returns a rotation value: "Not rotated", "Rotated90DegreesCounterclockwise", and so on. The following table maps common orientation properties to the corresponding sensor reading.
 
-| Orientation     | Lecture du capteur correspondante      |
+| Orientation     | Corresponding sensor reading      |
 |-----------------|-----------------------------------|
-| Portrait vers le haut     | SansRotation                        |
-| Paysage à gauche  | Rotation90DegrésSensAntiHoraire  |
-| Portrait vers le bas   | Rotation180DegrésSensAntiHoraire |
-| Paysage à droite | Rotation270DegrésSensAntiHoraire |
+| Portrait Up     | NotRotated                        |
+| Landscape Left  | Rotated90DegreesCounterclockwise  |
+| Portrait Down   | Rotated180DegreesCounterclockwise |
+| Landscape Right | Rotated270DegreesCounterclockwise |
 
-## Prérequis
+## Prerequisites
 
-Vous devez maîtriser le langage XAML (Extensible Application Markup Language), Microsoft Visual C# et les événements.
+You should be familiar with Extensible Application Markup Language (XAML), Microsoft Visual C#, and events.
 
-L’appareil ou émulateur que vous utilisez doit prendre en charge un capteur d’orientation.
+The device or emulator that you're using must support a orientation sensor.
 
-## Créer une application de capteur d’orientation
+## Create an OrientationSensor app
 
-Cette section se divise en deuxsous-sections. La première sous-section vous permet d’accéder aux étapes nécessaires pour créer de bout en bout une application d’orientation. La sous-section suivante décrit l’application que vous venez de créer.
+This section is divided into two subsections. The first subsection will take you through the steps necessary to create an orientation application from scratch. The following subsection explains the app you have just created.
 
 ###  Instructions
 
--   Créez un projet en choisissant une **Application vide (Windows universel)** dans les modèles de projet **Visual C#**.
+-   Create a new project, choosing a **Blank App (Universal Windows)** from the **Visual C#** project templates.
 
--   Ouvrez le fichier MainPage.xaml.cs de votre projet et remplacez le code existant par ce qui suit.
+-   Open your project's MainPage.xaml.cs file and replace the existing code with the following.
 
 ```csharp
     using System;
@@ -120,9 +120,9 @@ Cette section se divise en deuxsous-sections. La première sous-section vous per
     }
 ```
 
-Vous devez remplacer le nom de l’espace de noms dans l’extrait de code précédent par le nom que vous avez donné à votre projet. Par exemple, si vous avez créé un projet nommé **OrientationSensorCS**, vous devez remplacer `namespace App1` par `namespace OrientationSensorCS`.
+You'll need to rename the namespace in the previous snippet with the name you gave your project. For example, if you created a project named **OrientationSensorCS**, you'd replace `namespace App1` with `namespace OrientationSensorCS`.
 
--   Ouvrez le fichier MainPage.xaml et remplacez le contenu d’origine par le code XML suivant.
+-   Open the file MainPage.xaml and replace the original contents with the following XML.
 
 ```xml
         <Page
@@ -166,25 +166,25 @@ Vous devez remplacer le nom de l’espace de noms dans l’extrait de code préc
     </Page>
 ```
 
-Vous devez remplacer la première partie du nom de la classe dans l’extrait de code précédent par l’espace de noms de votre application. Par exemple, si vous avez créé un projet nommé **OrientationSensorCS**, vous devez remplacer `x:Class="App1.MainPage"` par `x:Class="OrientationSensorCS.MainPage"`. Vous devez aussi remplacer `xmlns:local="using:App1"` par `xmlns:local="using:OrientationSensorCS"`.
+You'll need to replace the first part of the class name in the previous snippet with the namespace of your app. For example, if you created a project named **OrientationSensorCS**, you'd replace `x:Class="App1.MainPage"` with `x:Class="OrientationSensorCS.MainPage"`. You should also replace `xmlns:local="using:App1"` with `xmlns:local="using:OrientationSensorCS"`.
 
--   Appuyez sur F5 ou sélectionnez **Déboguer** > **Démarrer le débogage** pour générer, déployer et exécuter l’application.
+-   Press F5 or select **Debug** > **Start Debugging** to build, deploy, and run the app.
 
-Une fois l’application en cours d’exécution, vous pouvez modifier l’orientation en déplaçant l’appareil ou à l’aide des outils de l’émulateur.
+Once the app is running, you can change the orientation by moving the device or using the emulator tools.
 
--   Pour arrêter l’application, retournez dans Visual Studio et appuyez sur Maj+ 5, ou sélectionnez **Déboguer** > **Arrêter le débogage**.
+-   Stop the app by returning to Visual Studio and pressing Shift+F5 or select **Debug** > **Stop Debugging** to stop the app.
 
-###  Explication
+###  Explanation
 
-L’exemple précédent démontre la faible quantité de code que vous devrez écrire afin d’intégrer l’entrée du capteur d’orientation dans votre application.
+The previous example demonstrates how little code you'll need to write in order to integrate orientation-sensor input in your app.
 
-L’application établit une connexion avec le capteur d’orientation par défaut dans la méthode **MainPage**.
+The app establishes a connection with the default orientation sensor in the **MainPage** method.
 
 ```csharp
 _sensor = OrientationSensor.GetDefault();
 ```
 
-L’application établit l’intervalle de rapport dans la méthode **MainPage**. Le code suivant récupère l’intervalle minimal pris en charge par l’appareil et le compare à un intervalle demandé de 16millisecondes (ce qui représente une fréquence de rafraîchissement de 60Hz). Si l’intervalle pris en charge minimum est supérieur à l’intervalle demandé, le code définit la valeur sur l’intervalle minimum. Sinon, il définit la valeur sur l’intervalle demandé.
+The app establishes the report interval within the **MainPage** method. This code retrieves the minimum interval supported by the device and compares it to a requested interval of 16 milliseconds (which approximates a 60-Hz refresh rate). If the minimum supported interval is greater than the requested interval, the code sets the value to the minimum. Otherwise, it sets the value to the requested interval.
 
 ```csharp
 uint minReportInterval = _sensor.MinimumReportInterval;
@@ -192,24 +192,24 @@ uint reportInterval = minReportInterval > 16 ? minReportInterval : 16;
 _sensor.ReportInterval = reportInterval;
 ```
 
-Les nouvelles données du capteur sont capturées dans la méthode **ReadingChanged**. Chaque fois que le pilote du capteur reçoit de nouvelles données du capteur, il transmet les valeurs à votre application à l’aide de ce gestionnaire d’événements. L’application inscrit ce gestionnaire d’événements sur la ligne suivante.
+The new sensor data is captured in the **ReadingChanged** method. Each time the sensor driver receives new data from the sensor, it passes the values to your app using this event handler. The app registers this event handler on the following line.
 
 ```csharp
 _sensor.ReadingChanged += new TypedEventHandler<OrientationSensor, 
 OrientationSensorReadingChangedEventArgs>(ReadingChanged);
 ```
 
-Ces nouvelles valeurs sont écrites dans les TextBlocks identifiés dans le codeXAML du projet.
+These new values are written to the TextBlocks found in the project's XAML.
 
-## Créer une application d’orientation simple
+## Create a SimpleOrientation app
 
-Cette section se divise en deuxsous-sections. La première sous-section vous permet d’accéder aux étapes nécessaires pour créer de bout en bout une application d’orientation simple. La sous-section suivante décrit l’application que vous venez de créer.
+This section is divided into two subsections. The first subsection will take you through the steps necessary to create a simple orientation application from scratch. The following subsection explains the app you have just created.
 
 ### Instructions
 
--   Créez un projet en choisissant une **Application vide (Windows universel)** dans les modèles de projet **Visual C#**.
+-   Create a new project, choosing a **Blank App (Universal Windows)** from the **Visual C#** project templates.
 
--   Ouvrez le fichier MainPage.xaml.cs de votre projet et remplacez le code existant par ce qui suit.
+-   Open your project's MainPage.xaml.cs file and replace the existing code with the following.
 
 ```csharp
     using System;
@@ -290,9 +290,9 @@ Cette section se divise en deuxsous-sections. La première sous-section vous per
     }
 ```
 
-Vous devez remplacer le nom de l’espace de noms dans l’extrait de code précédent par le nom que vous avez donné à votre projet. Par exemple, si vous avez créé un projet nommé **SimpleOrientationCS**, vous devez remplacer `namespace App1` par `namespace SimpleOrientationCS`.
+You'll need to rename the namespace in the previous snippet with the name you gave your project. For example, if you created a project named **SimpleOrientationCS**, you'd replace `namespace App1` with `namespace SimpleOrientationCS`.
 
--   Ouvrez le fichier MainPage.xaml et remplacez le contenu d’origine par le code XML suivant.
+-   Open the file MainPage.xaml and replace the original contents with the following XML.
 
 ```xml
     <Page
@@ -312,47 +312,47 @@ Vous devez remplacer le nom de l’espace de noms dans l’extrait de code préc
     </Page>
 ```
 
-Vous devez remplacer la première partie du nom de la classe dans l’extrait de code précédent par l’espace de noms de votre application. Par exemple, si vous avez créé un projet nommé **SimpleOrientationCS**, vous devez remplacer `x:Class="App1.MainPage"` par `x:Class="SimpleOrientationCS.MainPage"`. Vous devez aussi remplacer `xmlns:local="using:App1"` par `xmlns:local="using:SimpleOrientationCS"`.
+You'll need to replace the first part of the class name in the previous snippet with the namespace of your app. For example, if you created a project named **SimpleOrientationCS**, you'd replace `x:Class="App1.MainPage"` with `x:Class="SimpleOrientationCS.MainPage"`. You should also replace `xmlns:local="using:App1"` with `xmlns:local="using:SimpleOrientationCS"`.
 
--   Appuyez sur F5 ou sélectionnez **Déboguer** > **Démarrer le débogage** pour générer, déployer et exécuter l’application.
+-   Press F5 or select **Debug** > **Start Debugging** to build, deploy, and run the app.
 
-Une fois l’application en cours d’exécution, vous pouvez modifier l’orientation en déplaçant l’appareil ou à l’aide des outils de l’émulateur.
+Once the app is running, you can change the orientation by moving the device or using the emulator tools.
 
--   Pour arrêter l’application, retournez dans Visual Studio et appuyez sur Maj+ 5, ou sélectionnez **Déboguer** > **Arrêter le débogage**.
+-   Stop the app by returning to Visual Studio and pressing Shift+F5 or select **Debug** > **Stop Debugging** to stop the app.
 
-### Explication
+### Explanation
 
-L’exemple précédent démontre la faible quantité de code que vous devrez écrire afin d’intégrer l’entrée du capteur d’orientation simple dans votre application.
+The previous example demonstrates how little code you'll need to write in order to integrate simple-orientation sensor input in your app.
 
-L’application établit une connexion avec le capteur par défaut dans la méthode **MainPage**.
+The app establishes a connection with the default sensor in the **MainPage** method.
 
 ```csharp
 _simpleorientation = SimpleOrientationSensor.GetDefault();
 ```
 
-Les nouvelles données du capteur sont capturées dans la méthode **OrientationChanged**. Chaque fois que le pilote du capteur reçoit de nouvelles données du capteur, il transmet les valeurs à votre application à l’aide de ce gestionnaire d’événements. L’application inscrit ce gestionnaire d’événements sur la ligne suivante.
+The new sensor data is captured in the **OrientationChanged** method. Each time the sensor driver receives new data from the sensor, it passes the values to your app using this event handler. The app registers this event handler on the following line.
 
 ```csharp
 _simpleorientation.OrientationChanged += new TypedEventHandler<SimpleOrientationSensor, 
 SimpleOrientationSensorOrientationChangedEventArgs>(OrientationChanged);
 ```
 
-Ces nouvelles valeurs sont écrites dans un TextBlock identifié dans le code XAML du projet.
+These new values are written to a TextBlock found in the project's XAML.
 
 ```csharp
 <TextBlock HorizontalAlignment="Left" Height="24" Margin="8,8,0,0" TextWrapping="Wrap" Text="Current Orientation:" VerticalAlignment="Top" Width="101" Foreground="#FFF8F7F7"/>
  <TextBlock x:Name="txtOrientation" HorizontalAlignment="Left" Height="24" Margin="118,8,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="175" Foreground="#FFFEFAFA"/>
 ```
 
-## Rubriques connexes
+## Related topics
 
-* [Exemple de capteur d’orientation](http://go.microsoft.com/fwlink/p/?linkid=241382)
-* [Exemple de capteur d’orientation simple](http://go.microsoft.com/fwlink/p/?linkid=241383)
+* [OrientationSensor Sample](http://go.microsoft.com/fwlink/p/?linkid=241382)
+* [SimpleOrientation Sensor Sample](http://go.microsoft.com/fwlink/p/?linkid=241383)
  
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

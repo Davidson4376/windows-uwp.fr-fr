@@ -1,44 +1,42 @@
 ---
 author: mijacobs
-Description: "Les modèles de vignette adaptative sont une nouvelle fonctionnalité de Windows10, qui vous permet de concevoir votre propre contenu de notification par vignette à l’aide d’un langage de balisage simple et flexible adapté à différentes densités d’écran."
-title: "Créer des vignettes adaptatives"
+Description: Adaptive tile templates are a new feature in Windows 10, allowing you to design your own tile notification content using a simple and flexible markup language that adapts to different screen densities.
+title: Create adaptive tiles
 ms.assetid: 1246B58E-D6E3-48C7-AD7F-475D113600F9
 label: Create adaptive tiles
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a6632c7b8fdee5320f35e316abd318193a254c51
-ms.openlocfilehash: 6cd4519007d1241cb7c411dade1a092140b598c4
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 38ee8ae177898e20d45545c1cfd51a0dd24f7858
 
 ---
+# Create adaptive tiles
 
-# Créer des vignettes adaptatives
-
-
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
-Les modèles de vignette adaptative sont une nouvelle fonctionnalité de Windows10, qui vous permet de concevoir votre propre contenu de notification par vignette à l’aide d’un langage de balisage simple et flexible adapté à différentes densités d’écran. Cet article vous indique comment créer des vignettes dynamiques adaptatives pour votre application de plateforme Windows universelle (UWP). Pour obtenir la liste complète des éléments et attributs adaptatifs, voir [Schéma des vignettes adaptatives](tiles-and-notifications-adaptive-tiles-schema.md).
+Adaptive tile templates are a new feature in Windows 10, allowing you to design your own tile notification content using a simple and flexible markup language that adapts to different screen densities. This article tells you how to create adaptive live tiles for your Universal Windows Platform (UWP) app. For the complete list of adaptive elements and attributes, see the [Adaptive tiles schema](tiles-and-notifications-adaptive-tiles-schema.md).
 
-(Si vous le souhaitez, vous pouvez toujours utiliser les modèles prédéfinis du [catalogue de modèles de vignette Windows 8](https://msdn.microsoft.com/library/windows/apps/hh761491) lors de la conception de notifications pour Windows 10.)
+(If you'd like, you can still use the preset templates from the [Windows 8 tile template catalog](https://msdn.microsoft.com/library/windows/apps/hh761491) when designing notifications for Windows 10.)
 
-## Prise en main
-
-
-**Installez NotificationsExtensions.** Si vous préférez utiliserC# plutôt queXML pour générer des notifications, installez le package NuGet nommé [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki). Les exemples de code C# indiqués dans cet article utilisent NotificationsExtensions.
-
-**Installez Notifications Visualizer.** Cette application UWP gratuite vous permet de concevoir des vignettes dynamiques adaptatives en fournissant un aperçu visuel instantané de votre vignette lorsque vous la modifiez, comparable au mode Création/Éditeur XAML de VisualStudio. Pour plus d’informations, vous pouvez lire [ce billet de blog](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/09/22/introducing-notifications-visualizer-for-windows-10.aspx). Vous pouvez également télécharger Notifications Visualizer [ici](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1).
-
-## Conseils d’utilisation
+## Getting started
 
 
-Les modèles adaptatifs sont conçus pour fonctionner dans différents facteurs de forme et types de notification. Les éléments tels qu’un groupe ou un sous-groupe, relient du contenu et n’impliquent pas de comportement visuel particulier. L’apparence finale d’une notification varie en fonction de l’appareil sur lequel elle s’affiche, selon qu’il s’agit d’un téléphone, d’une tablette, d’un ordinateur de bureau ou d’un autre appareil.
+**Install NotificationsExtensions.** If you'd like to use C# instead of XML to generate notifications, install the NuGet package named [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki). The C# samples provided in this article use NotificationsExtensions.
 
-Les indications sont des attributs facultatifs qui peuvent être ajoutés à des éléments afin d’obtenir un comportement visuel spécifique. Elles peuvent être propres à un appareil ou à une notification.
+**Install Notifications Visualizer.** This free UWP app helps you design adaptive live tiles by providing an instant visual preview of your tile as you edit it, similar to Visual Studio's XAML editor/design view. You can read [this blog post](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/09/22/introducing-notifications-visualizer-for-windows-10.aspx) for more information, and you can download Notifications Visualizer [here](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1).
 
-## Exemple de base
+## Usage guidance
 
 
-Cet exemple montre ce que les modèles de vignette adaptative peuvent produire.
+Adaptive templates are designed to work across different form factors and notification types. Elements such as group and subgroup link together content and don't imply a particular visual behavior on their own. The final appearance of a notification should be based on the specific device on which it will appear, whether it's phone, tablet, or desktop, or another device.
+
+Hints are optional attributes that can be added to elements in order to achieve a specific visual behavior. Hints can be device-specific or notification-specific.
+
+## A basic example
+
+
+This example demonstrates what the adaptive tile templates can produce.
 
 ```XML
 <tile>
@@ -101,21 +99,21 @@ TileContent content = new TileContent()
 };
 ```
 
-**Résultat:**
+**Result:**
 
-![exemple de vignette rapide](images/adaptive-tiles-quicksample.png)
+![quick sample tile](images/adaptive-tiles-quicksample.png)
 
-## Tailles des vignettes
+## Tile sizes
 
 
-Le contenu de chaque taille de vignette est spécifié individuellement dans des éléments [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) distincts au sein de la charge utile XML. Choisissez la taille cible en définissant l’attribut de modèle sur l’une des valeurs suivantes:
+Content for each tile size is individually specified in separate [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) elements within the XML payload. Choose the target size by setting the template attribute to one of the following values:
 
 -   TileSmall
 -   TileMedium
 -   TileWide
--   TileLarge (uniquement pour les ordinateurs de bureau)
+-   TileLarge (only for desktop)
 
-Pour une charge utile XML de notification par vignette, indiquez des éléments &lt;binding&gt; pour chaque taille de vignette que vous souhaitez prendre en charge, comme illustré dans cet exemple :
+For a single tile notification XML payload, provide &lt;binding&gt; elements for each tile size that you'd like to support, as shown in this example:
 
 ```XML
 <tile>
@@ -193,16 +191,16 @@ TileContent content = new TileContent()
 };
 ```
 
-**Résultat:**
+**Result:**
 
-![tailles de vignettes adaptatives: petite, moyenne, large et grande](images/adaptive-tiles-sizes.png)
+![adaptive tile sizes: small, medium, wide, and large](images/adaptive-tiles-sizes.png)
 
-## Personnalisation
+## Branding
 
 
-Vous pouvez contrôler la personnalisation en bas d’une vignette dynamique (nom d’affichage et logo d’angle) à l’aide de l’attribut branding de la charge utile de notification. Vous pouvez choisir de ne rien afficher (valeur «none»), d’afficher uniquement le nom (valeur «name»), d’afficher uniquement le logo (valeur «logo») ou d’afficher à la fois le nom et le logo (valeur «nameAndLogo»).
+You can control the branding on the bottom of a live tile (the display name and corner logo) by using the branding attribute on the notification payload. You can choose to display "none," only the "name," only the "logo," or both with "nameAndLogo."
 
-**Remarque** Étant donné que WindowsMobile ne prend pas en charge le logo d’angle, les valeurs «logo» et «nameAndLogo» sont redéfinies par défaut sur «name» sur WindowsMobile.
+**Note**  Windows Mobile doesn't support the corner logo, so "logo" and "nameAndLogo" default to "name" on Mobile.
 
  
 
@@ -226,14 +224,14 @@ new TileVisual()
 }
 ```
 
-**Résultat:**
+**Result:**
 
-![Vignettes adaptatives, nom et logo](images/adaptive-tiles-namelogo.png)
+![adaptive tiles, name and logo](images/adaptive-tiles-namelogo.png)
 
-Vous pouvez appliquer une personnalisation à des tailles de vignettes spécifiques en procédant de l’une des deux manières suivantes:
+Branding can be applied for specific tile sizes one of two ways:
 
-1. En appliquant l’attribut à l’élément [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md)
-2. En appliquant l’attribut sur l’élément [&lt;visual&gt;](tiles-and-notifications-adaptive-tiles-schema.md) (qui affecte la charge utile de notification entière si vous ne spécifiez pas de personnalisation pour une liaison), la personnalisation fournie sur l’élément visuel est utilisée.
+1. By applying the attribute on the [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) element
+2. By applying the attribute on the [&lt;visual&gt;](tiles-and-notifications-adaptive-tiles-schema.md) element, which affects the entire notification payload If you don't specify branding for a binding, it will use the branding that's provided on the visual element.
 
 ```XML
 <tile>
@@ -274,22 +272,22 @@ TileContent content = new TileContent()
 };
 ```
 
-**Résultat de la personnalisation par défaut:**
+**Default branding result:**
 
-![Personnalisation par défaut des vignettes](images/adaptive-tiles-defaultbranding.png)
+![default branding on tiles](images/adaptive-tiles-defaultbranding.png)
 
-Si vous ne spécifiez aucune personnalisation dans votre charge utile de notification, les propriétés de base de la vignette déterminent la personnalisation. Si la vignette de base indique le nom d’affichage, alors la personnalisation est définie par défaut sur « name ». Si le nom d’affichage n’est pas indiqué, la personnalisation est définie par défaut sur «none».
+If you don't specify the branding in your notification payload, the base tile's properties will determine the branding. If the base tile shows the display name, then the branding will default to "name." Otherwise, the branding will default to "none" if the display name isn't shown.
 
-**Remarque** Il s’agit d’une modification par rapport à Windows8.x, dans lequel la personnalisation par défaut était définie sur «logo».
+**Note**   This is a change from Windows 8.x, in which the default branding was "logo."
 
  
 
-## Nom d’affichage
+## Display name
 
 
-Vous pouvez remplacer le nom d’affichage d’une notification en entrant la chaîne de texte de votre choix avec l’attribut **displayName**. Comme pour la personnalisation, vous pouvez spécifier cela dans l’élément [&lt;visual&gt;](tiles-and-notifications-adaptive-tiles-schema.md), ce qui affecte toute la charge utile de notification. Vous pouvez également spécifier cela dans l’élément [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md), ce qui affecte uniquement les vignettes individuelles.
+You can override the display name of a notification by entering the text string of your choice with the **displayName** attribute. As with branding, you can specify this on the [&lt;visual&gt;](tiles-and-notifications-adaptive-tiles-schema.md) element, which affects the entire notification payload, or on the [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) element, which only affects individual tiles.
 
-**Problème connu** Sur WindowsMobile, si vous spécifiez une ShortName pour votre vignette, le nom d’affichage fourni dans votre notification ne sera pas utilisé (seule la chaîne ShortName sera toujours affichée). 
+**Known Issue**  On Windows Mobile, if you specify a ShortName for your Tile, the display name provided in your notification will not be used (the ShortName will always be displayed). 
 
 ```XML
 <tile>
@@ -331,14 +329,14 @@ TileContent content = new TileContent()
 };
 ```
 
-**Résultat:**
+**Result:**
 
-![Nom d’affichage des vignettes adaptatives](images/adaptive-tiles-displayname.png)
+![adaptive tiles display name](images/adaptive-tiles-displayname.png)
 
-## Texte
+## Text
 
 
-L’élément [&lt;text&gt;](tiles-and-notifications-adaptive-tiles-schema.md) permet d’afficher un texte. Vous pouvez utiliser des indications pour en modifier l’apparence.
+The [&lt;text&gt;](tiles-and-notifications-adaptive-tiles-schema.md) element is used to display text. You can use hints to modify how text appears.
 
 ```XML
 <text>This is a line of text</text></code></pre></td>
@@ -365,14 +363,14 @@ new TileText()
 };
 ```
 
-**Résultat:**
+**Result:**
 
-![Texte de vignette adaptative](images/adaptive-tiles-text.png)
+![adaptive tile text](images/adaptive-tiles-text.png)
 
-## Habillage du texte
+## Text wrapping
 
 
-Par défaut, le texte n’est pas renvoyé à la ligne et déborde de la vignette. Utilisez l’attribut **hint-wrap** pour définir le renvoi de texte à la ligne sur un élément de texte. Vous pouvez également contrôler les nombres minimal et maximal de lignes à l’aide des éléments **hint-minLines** et **hint-maxLines**, qui acceptent des entiers positifs.
+By default, text doesn't wrap and will continue off the edge of the tile. Use the **hint-wrap** attribute to set text wrapping on a text element. You can also control the minimum and maximum number of lines by using **hint-minLines** and **hint-maxLines**, both of which accept positive integers.
 
 ```XML
 <text hint-wrap="true">This is a line of wrapping text</text></code></pre></td>
@@ -400,14 +398,14 @@ new TileText()
 };
 ```
 
-**Résultat:**
+**Result:**
 
-![Vignette adaptative avec renvoi de texte à la ligne](images/adaptive-tiles-textwrapping.png)
+![adaptive tile with text wrapping](images/adaptive-tiles-textwrapping.png)
 
-## Styles de texte
+## Text styles
 
 
-Les styles contrôlent la taille de police, la couleur et l’épaisseur des éléments de texte. Plusieurs styles sont disponibles, notamment une variation « subtile » de chaque style qui définit l’opacité sur 60 %, ce qui transforme généralement la couleur du texte en nuance de gris clair.
+Styles control the font size, color, and weight of text elements. There are a number of available styles, including a "subtle" variation of each style that sets the opacity to 60%, which usually makes the text color a shade of light gray.
 
 ```XML
 <text hint-style="base">Header content</text>
@@ -428,32 +426,32 @@ new TileText()
 }
 ```
 
-**Résultat:**
+**Result:**
 
-![Styles de texte des vignettes adaptatives](images/adaptive-tiles-textstyles.png)
+![adaptive tiles text styles](images/adaptive-tiles-textstyles.png)
 
-**Remarque** Par défaut, le style est défini sur « caption » si aucun élément hint-style n’est spécifié.
+**Note**  The style defaults to caption if hint-style isn't specified.
 
  
 
-**Styles de texte de base**
+**Basic text styles**
 
 |                                |                           |             |
 |--------------------------------|---------------------------|-------------|
-| &lt;text hint-style="\*" /&gt; | Hauteur de police               | Épaisseur de police |
-| caption                        | 12 pixels effectifs (epx) | Normale     |
-| body                           | 15 epx                    | Normale     |
+| &lt;text hint-style="\*" /&gt; | Font height               | Font weight |
+| caption                        | 12 effective pixels (epx) | Regular     |
+| body                           | 15 epx                    | Regular     |
 | base                           | 15 epx                    | Semibold    |
-| subtitle                       | 20 epx                    | Normale     |
+| subtitle                       | 20 epx                    | Regular     |
 | title                          | 24 epx                    | Semilight   |
-| subheader                      | 34 epx                    | Maigre       |
-| header                         | 46 epx                    | Maigre       |
+| subheader                      | 34 epx                    | Light       |
+| header                         | 46 epx                    | Light       |
 
  
 
-**Variations de style de texte numérique**
+**Numeral text style variations**
 
-Ces variations réduisent la hauteur de ligne afin que le contenu situé au-dessus et au-dessous soit beaucoup plus proche du texte.
+These variations reduce the line height so that content above and below come much closer to the text.
 
 |                  |
 |------------------|
@@ -463,9 +461,9 @@ Ces variations réduisent la hauteur de ligne afin que le contenu situé au-dess
 
  
 
-**Variations de style de texte de sous-titre**
+**Subtle text style variations**
 
-Chaque style dispose d’une variation de sous-titre qui octroie au texte une opacité de 60 %, qui transforme généralement la couleur du texte en nuance de gris clair.
+Each style has a subtle variation that gives the text a 60% opacity, which usually makes the text color a shade of light gray.
 
 |                        |
 |------------------------|
@@ -482,10 +480,10 @@ Chaque style dispose d’une variation de sous-titre qui octroie au texte une op
 
  
 
-## Alignement du texte
+## Text alignment
 
 
-Le texte peut être horizontalement aligné à gauche, au centre ou à droite. Pour les langues qui s’écrivent de gauche à droite, par exemple l’anglais, le texte est aligné à gauche par défaut. Pour les langues qui s’écrivent de droite à gauche, telles que l’arabe, le texte est aligné à droite par défaut. Vous pouvez définir l’alignement manuellement en utilisant l’attribut **hint-align** dans des éléments.
+Text can be horizontally aligned left, center, or right. In left-to-right languages like English, text defaults to left-aligned. In right-to-left languages like Arabic, text defaults to right-aligned. You can manually set alignment with the **hint-align** attribute on elements.
 
 ```XML
 <text hint-align="center">Hello</text></code></pre></td>
@@ -513,18 +511,18 @@ new TileText()
 };
 ```
 
-**Résultat:**
+**Result:**
 
-![Alignement du texte des vignettes adaptatives](images/adaptive-tiles-textalignment.png)
+![adaptive tiles text alignment](images/adaptive-tiles-textalignment.png)
 
-## Groupes et sous-groupes
+## Groups and subgroups
 
 
-Les groupes vous permettent de déclarer au niveau sémantique que le contenu à l’intérieur du groupe est lié et qu’il doit être affiché dans son intégralité pour qu’il ait du sens. Par exemple, vous pouvez avoir deux éléments de texte, un en-tête et un sous-titre, et il ne serait pas logique de n’afficher que l’en-tête. En regroupant ces éléments à l’intérieur d’un sous-groupe, les éléments sont tous affichés (s’ils peuvent s’ajuster à la vignette) ou pas affichés du tout (s’ils ne peuvent pas s’ajuster à la vignette).
+Groups allow you to semantically declare that the content inside the group is related and must be displayed in its entirety for the content to make sense. For example, you might have two text elements, a header, and a subheader, and it would not make sense for only the header to be shown. By grouping those elements inside a subgroup, the elements will either all be displayed (if they can fit) or not be displayed at all (because they can't fit).
 
-Pour que l’expérience soit la meilleure possible sur les appareils et les écrans, indiquez plusieurs groupes. L’indication de plusieurs groupes permet à votre vignette de s’adapter aux écrans plus grands.
+To provide the best experience across devices and screens, provide multiple groups. Having multiple groups allows your tile to adapt to larger screens.
 
-**Remarque** Le seul enfant valide d’un groupe est un sous-groupe.
+**Note**  The only valid child of a group is a subgroup.
 
  
 
@@ -615,16 +613,16 @@ private static TileGroup CreateGroup(string from, string subject, string body)
 }
 ```
 
-**Résultat:**
+**Result:**
 
-![Groupes et sous-groupes de vignettes adaptatives](images/adaptive-tiles-groups-subgroups.png)
+![adaptive tiles groups and subgroups](images/adaptive-tiles-groups-subgroups.png)
 
-## Sous-groupes (colonnes)
+## Subgroups (columns)
 
 
-Les sous-groupes vous permettent également de répartir les données en sections sémantiques au sein d’un groupe. Pour les vignettes dynamiques, cela se traduit visuellement par des colonnes.
+Subgroups also allow you to divide data into semantic sections within a group. For live tiles, this visually translates to columns.
 
-L’attribut **hint-weight** vous permet de contrôler la largeur des colonnes. La valeur de l’attribut **hint-weight** est exprimée sous forme de pondération de l’espace disponible, qui est identique au comportement **GridUnitType.Star**. Pour obtenir des colonnes de largeur égale, définissez chaque pondération sur 1.
+The **hint-weight** attribute lets you to control the widths of columns. The value of **hint-weight** is expressed as a weighted proportion of available space, which is identical to **GridUnitType.Star** behavior. For equal-width columns, assign each weight to 1.
 
 <table>
 <colgroup>
@@ -634,26 +632,26 @@ L’attribut **hint-weight** vous permet de contrôler la largeur des colonnes. 
 <tbody>
 <tr class="odd">
 <td align="left">hint-weight</td>
-<td align="left">Pourcentage de largeur</td>
+<td align="left">Percentage of width</td>
 </tr>
 <tr class="even">
 <td align="left">1</td>
-<td align="left">25 %</td>
+<td align="left">25%</td>
 </tr>
 <tr class="odd">
 <td align="left">1</td>
-<td align="left">25 %</td>
+<td align="left">25%</td>
 </tr>
 <tr class="even">
 <td align="left">1</td>
-<td align="left">25 %</td>
+<td align="left">25%</td>
 </tr>
 <tr class="odd">
 <td align="left">1</td>
-<td align="left">25 %</td>
+<td align="left">25%</td>
 </tr>
 <tr class="even">
-<td align="left">Pondération totale: 4</td>
+<td align="left">Total weight: 4</td>
 <td align="left"></td>
 </tr>
 </tbody>
@@ -661,9 +659,9 @@ L’attribut **hint-weight** vous permet de contrôler la largeur des colonnes. 
 
  
 
-![Sous-groupes avec des colonnes égales](images/adaptive-tiles-subgroups01.png)
+![subgroups, even columns](images/adaptive-tiles-subgroups01.png)
 
-Pour qu’une colonne soit deux fois plus large qu’une autre colonne, attribuez la pondération 1 à la colonne la moins large, et la pondération 2 à la colonne la plus large.
+To make one column twice as large as another column, assign the smaller column a weight of 1 and the larger column a weight of 2.
 
 <table>
 <colgroup>
@@ -673,18 +671,18 @@ Pour qu’une colonne soit deux fois plus large qu’une autre colonne, attribue
 <tbody>
 <tr class="odd">
 <td align="left">hint-weight</td>
-<td align="left">Pourcentage de largeur</td>
+<td align="left">Percentage of width</td>
 </tr>
 <tr class="even">
 <td align="left">1</td>
-<td align="left">33,3 %</td>
+<td align="left">33.3%</td>
 </tr>
 <tr class="odd">
 <td align="left">2</td>
-<td align="left">66,7 %</td>
+<td align="left">66.7%</td>
 </tr>
 <tr class="even">
-<td align="left">Pondération totale: 3</td>
+<td align="left">Total weight: 3</td>
 <td align="left"></td>
 </tr>
 </tbody>
@@ -692,9 +690,9 @@ Pour qu’une colonne soit deux fois plus large qu’une autre colonne, attribue
 
  
 
-![Sous-groupes avec une colonne deux fois plus large que l’autre](images/adaptive-tiles-subgroups02.png)
+![subgroups, one column twice the size of the other](images/adaptive-tiles-subgroups02.png)
 
-Si vous souhaitez que les première et seconde colonnes occupent respectivement 20% et 80% de la largeur totale, définissez la première pondération sur 20 et la seconde sur 80. Si la totalité des pondérations est égale à 100, elles correspondent à des pourcentages.
+If you want your first column to take up 20% of the total width and your second column to take up 80% of the total width, assign the first weight to 20 and the second weight to 80. If your total weights equal 100, they'll act as percentages.
 
 <table>
 <colgroup>
@@ -704,18 +702,18 @@ Si vous souhaitez que les première et seconde colonnes occupent respectivement 
 <tbody>
 <tr class="odd">
 <td align="left">hint-weight</td>
-<td align="left">Pourcentage de largeur</td>
+<td align="left">Percentage of width</td>
 </tr>
 <tr class="even">
 <td align="left">20</td>
-<td align="left">20 %</td>
+<td align="left">20%</td>
 </tr>
 <tr class="odd">
 <td align="left">80</td>
-<td align="left">80 %</td>
+<td align="left">80%</td>
 </tr>
 <tr class="even">
-<td align="left">Pondération totale: 100</td>
+<td align="left">Total weight: 100</td>
 <td align="left"></td>
 </tr>
 </tbody>
@@ -723,15 +721,15 @@ Si vous souhaitez que les première et seconde colonnes occupent respectivement 
 
  
 
-![Sous-groupes avec des pondérations totalisant 100](images/adaptive-tiles-subgroups03.png)
+![subgroups, with weights totalling 100](images/adaptive-tiles-subgroups03.png)
 
-**Remarque** Une marge de 8pixels est automatiquement ajoutée entre les colonnes.
+**Note**  An 8-pixel margin is automatically added between the columns.
 
  
 
-Si vous disposez de plus de deux sous-groupes, vous devez spécifier l’attribut **hint-weight**, qui accepte uniquement des entiers positifs. Si vous ne spécifiez pas l’attribut hint-weight pour le premier sous-groupe, la pondération 50 lui est attribuée. Le sous-groupe suivant pour lequel aucun attribut hint-weight n’est spécifié, se voit attribuer une pondération égal à 100 moins la somme des pondérations précédentes, ou une pondération égale à 1 si le résultat est zéro. La pondération 1 est attribué aux sous-groupes restants pour lesquels aucun attribut hint-weight n’est attribué.
+When you have more than two subgroups, you should specify the **hint-weight**, which only accepts positive integers. If you don't specify hint-weight for the first subgroup, it will be assigned a weight of 50. The next subgroup that doesn't have a specified hint-weight will be assigned a weight equal to 100 minus the sum of the preceding weights, or to 1 if the result is zero. The remaining subgroups that don't have specified hint-weights will be assigned a weight of 1.
 
-Voici un exemple de code pour une vignette météo, qui montre comment obtenir une vignette avec cinq colonnes de largeur égale :
+Here's sample code for a weather tile that shows how you can achieve a tile with five columns of equal width:
 
 ```XML
 ...
@@ -840,20 +838,20 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 }
 ```
 
-**Résultat:**
+**Result:**
 
-![Exemple d’une vignette météo](images/adaptive-tiles-weathertile.png)
+![example of a weather tile](images/adaptive-tiles-weathertile.png)
 
 ## Images
 
 
-L’élément &lt;image&gt; permet d’afficher des images dans la notification par vignette. Les images peuvent être incorporées au sein du contenu de la vignette (par défaut), en tant qu’image d’arrière-plan derrière le contenu ou en tant qu’image furtive qui s’anime à partir du haut de la notification.
+The &lt;image&gt; element is used to display images on the tile notification. Images can be placed inline within the tile content (default), as a background image behind your content, or as a peek image that animates in from the top of the notification.
 
-**Remarque** Il existe des [restrictions sur la taille des fichiers et les dimensions des images](https://msdn.microsoft.com/library/windows/apps/hh781198).
+**Note**   There are [restrictions on the file size and dimensions of images](https://msdn.microsoft.com/library/windows/apps/hh781198).
 
  
 
-Si aucun comportement supplémentaire n’est spécifié, les images sont uniformément réduites ou développées pour remplir la largeur disponible. L’exemple ci-dessous présente une vignette utilisant deux colonnes et des images incorporées. Les images incorporées sont étirées pour remplir la largeur de la colonne.
+With no extra behaviors specified, images will uniformly shrink or expand to fill the available width. The sample below shows a tile using two columns and inline images. The inline images stretch to fill the width of the column.
 
 ```XML
 ...
@@ -936,15 +934,15 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 }
 ```
 
-**Résultat:**
+**Result:**
 
-![Exemple d’image](images/adaptive-tiles-images01.png)
+![image example](images/adaptive-tiles-images01.png)
 
-Les images placées à la racine &lt;binding&gt; ou dans le premier groupe sont également étirées pour s’ajuster à la hauteur disponible.
+Images placed in the &lt;binding&gt; root, or in the first group, will also stretch to fit the available height.
 
-### Alignement d’images
+### Image alignment
 
-Les images peuvent être définies pour s’aligner à gauche, au centre ou à droite à l’aide de l’attribut **hint-align**. Cela entraîne également leur affichage à leur résolution native, et non leur étirement pour remplir la largeur.
+Images can be set to align left, center, or right using the **hint-align** attribute. This will also cause images to display at their native resolution instead of stretching to fill width.
 
 ```XML
 ...
@@ -973,13 +971,13 @@ TileLarge = new TileBinding()
 ...
 ```
 
-**Résultat:**
+**Result:**
 
-![Exemple d’alignement d’images (à gauche, au centre, à droite)](images/adaptive-tiles-imagealignment.png)
+![image alignment example (left, center, right)](images/adaptive-tiles-imagealignment.png)
 
-### Marges d’images
+### Image margins
 
-Par défaut, une marge de 8pixels est insérée dans les images incluses entre le contenu et l’image située au-dessus ou au-dessous. Cette marge peut être supprimée à l’aide de l’attribut **hint-removeMargin** dans l’image. Toutefois, les images conservent toujours la marge de 8pixels à partir du bord de la vignette, et les sous-groupes (colonnes) conservent toujours le remplissage de 8pixels entre les colonnes.
+By default, inline images have an 8-pixel margin between any content above or below the image. This margin can be removed by using the **hint-removeMargin** attribute on the image. However, images always retain the 8-pixel margin from the edge of the tile, and subgroups (columns) always retain the 8-pixel padding between columns.
 
 ```XML
 ...
@@ -1065,11 +1063,11 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 }
 ```
 
-![Exemple d’indication de suppression de marge](images/adaptive-tiles-removemargin.png)
+![hint remove margin example](images/adaptive-tiles-removemargin.png)
 
-### Rognage d’images
+### Image cropping
 
-Les images peuvent être rognées dans un cercle à l’aide de l’attribut **hint-crop**, qui ne prend actuellement en charge que les valeurs «none» (par défaut) ou «circle».
+Images can be cropped into a circle using the **hint-crop** attribute, which currently only supports the values "none" (default) or "circle."
 
 ```XML
 ...
@@ -1141,13 +1139,13 @@ TileLarge = new TileBinding()
 ...
 ```
 
-**Résultat:**
+**Result:**
 
-![exemple de rognage d’image](images/adaptive-tiles-imagecropping.png)
+![image cropping example](images/adaptive-tiles-imagecropping.png)
 
-### Image d’arrière-plan
+### Background image
 
-Pour définir une image d’arrière-plan, placez un élément image à la racine de &lt;binding&gt; et définissez l’attribut placement sur « background ».
+To set a background image, place an image element in the root of the &lt;binding&gt; and set the placement attribute to "background."
 
 ```XML
 ...
@@ -1230,11 +1228,11 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 }
 ```
 
-**Résultat:**
+**Result:**
 
-![Exemple d’image d’arrière-plan](images/adaptive-tiles-backgroundimage.png)
+![background image example](images/adaptive-tiles-backgroundimage.png)
 
-En outre, vous pouvez définir une superposition noire sur votre image d’arrière-plan à l’aide de l’attribut **hint-overlay**, qui accepte des entiers compris entre 0 et 100, 0 correspondant à l’absence de superposition et 100 étant une superposition noire complète. La valeur par défaut est de 20.
+Additionally, you can set a black overlay on your background image using **hint-overlay**, which accepts integers from 0-100, with 0 being no overlay and 100 being full black overlay. The default value is 20.
 
 ```XML
 ...
@@ -1265,13 +1263,13 @@ TileWide = new TileBinding()
 ...
 ```
 
-**Résultat de l’application de l’attribut hint-overlay:**
+**hint-overlay Result:**
 
-![Exemple d’image avec superposition](images/adaptive-tiles-image-hintoverlay.png)
+![example of an image hint overlay](images/adaptive-tiles-image-hintoverlay.png)
 
-### Image furtive
+### Peek image
 
-Vous pouvez spécifier une image qui défile furtivement à partir du haut de la vignette. L’image furtive utilise une animation qui glisse vers le bas/haut à partir du haut de la vignette, puis rebascule pour afficher le contenu principal de la vignette. Pour définir une image furtive, placez un élément image à la racine de &lt;binding&gt; et définissez l’attribut placement sur « peek ».
+You can specify an image that "peeks" in from the top of the tile. The peek image uses an animation to slide down/up from the top of the tile, peeking into view, and then later sliding back out to reveal the main content on the tile. To set a peek image, place an image element in the root of the &lt;binding&gt;, and set the placement attribute to "peek."
 
 ```XML
 ...
@@ -1317,44 +1315,44 @@ TileWide = new TileBinding()
 ...
 ```
 
-![Exemples d’images furtives](images/adaptive-tiles-imagepeeking.png)
+![examples of peeking images](images/adaptive-tiles-imagepeeking.png)
 
-**Rognage d’images furtives et d’arrière-plan dans un cercle**
+**Circle crop for peek and background images**
 
-Pour rogner les images furtives et d’arrière-plan dans un cercle, utilisez l’attribut suivant :
+Use the following attribute on peek and background images to do a circle crop:
 
 hint-crop="circle"
 
-Le résultat présentera l’aspect suivant:
+The result will look like this:
 
-![Rognage d’image furtive et d’arrière-plan dans un cercle](images/circlecrop-image.png)
+![circle crop for peek and background image](images/circlecrop-image.png)
 
-**Utilisation d’une image furtive et d’une image d’arrière-plan simultanément**
+**Use both peek and background image**
 
-Pour utiliser une image furtive et une image d’arrière-plan sur une notification par vignette, spécifiez ces deux images dans la charge utile de notification.
+To use both a peek and a background image on a tile notification, specify both a peek image and a background image in your notification payload.
 
-Le résultat présentera l’aspect suivant:
+The result will look like this:
 
-![Utilisation combinée d’une image furtive et d’une image d’arrière-plan](images/peekandbackground.png)
+![peek and background image used together](images/peekandbackground.png)
 
-**Utilisation de l’attribut hint-overlay sur une image furtive**
+**Use hint-overlay on a peek image**
 
-Vous pouvez utiliser **hint-overlay** sur une image furtive pour augmenter l’opacité et améliorer la lisibilité du nom complet de la vignette. Si vous spécifiez **hint-overlay** sur l’élément &lt;binding&gt;, la superposition sera appliquée à l’image d’arrière-plan et à l’image furtive simultanément.
+You can use **hint-overlay** on a peek image to add opacity and make the tile's display name more legible. If you specify **hint-overlay** on the &lt;binding&gt; element, the overlay will be applied to both the background and the peek image.
 
-Vous pouvez également appliquer **hint-overlay** à un élément &lt;image&gt; présentant le code « placement="peek" » ou « placement="background" » afin de disposer de niveaux d’opacité distincts pour chacune de ces images. Si vous ne spécifiez pas de superposition, la valeur d’opacité par défaut est de 20% pour l’image d’arrière-plan et de 0% pour l’image furtive.
+You can also apply **hint-overlay** to an &lt;image&gt; element that has placement="peek" or placement="background" to have discrete opacity levels for each of those images. If you don't specify an overlay, the background image opacity defaults to 20% and the peek image opacity defaults to 0%.
 
-Cet exemple illustre une image d’arrière-plan avec une opacité de 20 % (à gauche) et une opacité de 0 % (à droite) :
+This example shows a background image at 20% opacity (left) and at 0% opacity (right):
 
-![Attribut hint-overlay sur une image furtive](images/hintoverlay.png)
+![hint-overlay on a peek image](images/hintoverlay.png)
 
-## Alignement vertical (empilement de texte)
+## Vertical alignment (text stacking)
 
 
-Vous pouvez contrôler l’alignement vertical du contenu sur votre vignette à l’aide de l’attribut **hint-textStacking** à la fois sur l’élément [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) et sur l’élément [&lt;subgroup&gt;](tiles-and-notifications-adaptive-tiles-schema.md). Par défaut, tous les éléments sont alignés verticalement vers le haut, mais vous pouvez également aligner le contenu vers le bas ou le centre.
+You can control the vertical alignment of content on your tile by using the **hint-textStacking** attribute on both the [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) element and [&lt;subgroup&gt;](tiles-and-notifications-adaptive-tiles-schema.md) element. By default, everything is vertically aligned to the top, but you can also align content to the bottom or center.
 
-### Empilement de texte sur l’élément de liaison
+### Text stacking on binding element
 
-Lorsqu’il est appliqué au niveau [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md), l’empilement de texte définit l’alignement vertical du contenu de la notification dans son ensemble, en s’alignant dans l’espace vertical disponible au-dessus de la zone de personnalisation/badge.
+When applied at the [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) level, text stacking sets the vertical alignment of the notification content as a whole, aligning in the available vertical space above the branding/badge area.
 
 ```XML
 ...
@@ -1398,11 +1396,11 @@ TileMedium = new TileBinding()
 ...
 ```
 
-![Empilement de texte dans l’élément de liaison](images/adaptive-tiles-textstack-bindingelement.png)
+![text stacking on binding element](images/adaptive-tiles-textstack-bindingelement.png)
 
-### Empilement de texte dans l’élément de sous-groupe
+### Text stacking on subgroup element
 
-Lorsqu’il est appliqué au niveau [&lt;subgroup&gt;](tiles-and-notifications-adaptive-tiles-schema.md), l’empilement de texte définit l’alignement vertical du contenu du sous-groupe (colonne), en s’alignant dans l’espace vertical disponible au sein du groupe tout entier.
+When applied at the [&lt;subgroup&gt;](tiles-and-notifications-adaptive-tiles-schema.md) level, text stacking sets the vertical alignment of the subgroup (column) content, aligning in the available vertical space within the entire group.
 
 ```XML
 ...
@@ -1479,12 +1477,12 @@ TileWide = new TileBinding()
 ...
 ```
 
-## Rubriques connexes
+## Related topics
 
 
-* [Schéma des vignettes adaptatives](tiles-and-notifications-adaptive-tiles-schema.md)
-* [NotificationsExtensions sur GitHub](https://github.com/WindowsNotifications/NotificationsExtensions/wiki)
-* [Catalogue de modèles de vignette spéciaux](tiles-and-notifications-special-tile-templates-catalog.md)
+* [Adaptive tiles schema](tiles-and-notifications-adaptive-tiles-schema.md)
+* [NotificationsExtensions on GitHub](https://github.com/WindowsNotifications/NotificationsExtensions/wiki)
+* [Special tile templates catalog](tiles-and-notifications-special-tile-templates-catalog.md)
  
 
  
@@ -1495,6 +1493,6 @@ TileWide = new TileBinding()
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

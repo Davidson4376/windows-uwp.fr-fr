@@ -1,40 +1,51 @@
 ---
 author: Jwmsft
-Description: "Le sélecteur de dates de calendrier est un contrôle déroulant optimisé pour la sélection d’une seule date dans un affichage calendrier, dans lequel les informations contextuelles comme le jour de la semaine ou l’exhaustivité du calendrier sont importantes."
-title: "Sélecteur de dates du calendrier"
+Description: "The calendar date picker is a drop down control that’s optimized for picking a single date from a calendar view where contextual information like the day of the week or fullness of the calendar is important."
+title: Calendar date picker
 ms.assetid: 9e0213e0-046a-4906-ba86-0b49be51ca99
 label: Calendar date picker
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
-ms.openlocfilehash: 7ae444d9e096834daa2eef71c691b9bb8b86d7c4
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: d32c643db84eeb7c81304467a326566938e726c0
 
 ---
+# Calendar date picker
 
-# Sélecteur de dates du calendrier
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-Le sélecteur de dates de calendrier est un contrôle déroulant optimisé pour la sélection d’une seule date dans un affichage calendrier, dans lequel les informations contextuelles comme le jour de la semaine ou l’exhaustivité du calendrier sont importantes. Vous pouvez modifier le calendrier pour fournir du contexte supplémentaire ou pour limiter les dates disponibles.
+The calendar date picker is a drop down control that’s optimized for picking a single date from a calendar view where contextual information like the day of the week or fullness of the calendar is important. You can modify the calendar to provide additional context or to limit available dates.
+
+<div class="important-apis" >
+<b>Important APIs</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.aspx"><strong>CalendarDatePicker class</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.date.aspx"><strong>Date property</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.datechanged.aspx"><strong>DateChanged event</strong></a></li>
+</ul>
+
+</div>
+</div>
 
 
 
--   [**Classe CalendarDatePicker**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.aspx)
--   [**Propriété Date**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.date.aspx)
--   [**Événement DateChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.datechanged.aspx)
 
-## Est-ce le contrôle approprié?
-Utilisez un **sélecteur de dates du calendrier** pour permettre à un utilisateur de choisir une date unique à partir d’un affichage Calendrier contextuel. Utilisez-le pour des éléments tels que le choix d’une date de rendez-vous ou de départ.
 
-Pour permettre à un utilisateur de choisir une date connue, par exemple, une date de naissance, où le contexte du calendrier n’est pas important, pensez à utiliser un [**sélecteur de dates**](date-picker.md).
 
-Pour plus d’informations sur le choix du contrôle approprié, voir l’article [Contrôles de date et d’heure](date-and-time.md).
+## Is this the right control?
+Use a **calendar date picker** to let a user pick a single date from a contextual calendar view. Use it for things like choosing an appointment or departure date.
 
-## Exemples
+To let a user pick a known date, such as a date of birth, where the context of the calendar is not important, consider using a [**date picker**](date-picker.md).
 
-Le point d’entrée affiche le texte de l’espace réservé si aucune date n’a été définie. Sinon, il affiche la date choisie. Lorsque l’utilisateur sélectionne le point d’entrée, un affichage de calendrier est développé pour que l’utilisateur sélectionne une date. Cet affichage de calendrier se superpose aux autres éléments de l’interface utilisateur; il ne les ferme pas.
+For more info about choosing the right control, see the [Date and time controls](date-and-time.md) article.
 
-![Exemple de sélecteur de dates du calendrier](images/calendar-date-picker-2-views.png)
+## Examples
 
-## Créer un sélecteur de dates
+The entry point displays placeholder text if a date has not been set; otherwise, it displays the chosen date. When the user selects the entry point, a calendar view expands for the user to make a date selection. The calendar view overlays other UI; it doesn't push other UI out of the way.
+
+![Example of calendar date picker](images/calendar-date-picker-2-views.png)
+
+## Create a date picker
 
 ```xaml
 <CalendarDatePicker x:Name="arrivalCalendarDatePicker" Header="Arrival date"/>
@@ -45,37 +56,37 @@ CalendarDatePicker arrivalCalendarDatePicker = new CalendarDatePicker();
 arrivalCalendarDatePicker.Header = "Arrival date";
 ```
 
-Le sélecteur de dates du calendrier qui en résulte se présente comme suit:
+The resulting calendar date picker looks like this:
 
-![Exemple de sélecteur de dates du calendrier](images/calendar-date-picker-closed.png)
+![Example of calendar date picker](images/calendar-date-picker-closed.png)
 
-Le sélecteur de dates du calendrier possède un [**CalendarView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx) interne pour la sélection de dates. Un sous-ensemble des propriétés CalendarView, comme [**IsTodayHighlighted**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.istodayhighlighted.aspx) et [**FirstDayOfWeek**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.firstdayofweek.aspx), existe sur CalendarDatePicker et est transmis au CalendarView interne pour vous permettre de le modifier. 
+The calendar date picker has an internal [**CalendarView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx) for picking a date. A subset of CalendarView properties, like [**IsTodayHighlighted**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.istodayhighlighted.aspx) and [**FirstDayOfWeek**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.firstdayofweek.aspx), exist on CalendarDatePicker and are forwarded to the internal CalendarView to let you modify it. 
 
-Toutefois, vous ne pouvez pas modifier le [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selectionmode.aspx) du CalendarView interne pour autoriser la sélection multiple. Si vous avez besoin de permettre à un utilisateur de sélectionner plusieurs dates ou que vous avez besoin que le calendrier soit toujours visible, envisagez d’utiliser un affichage Calendrier plutôt qu’un sélecteur de dates du calendrier. Voir l’article [Affichage Calendrier](calendar-view.md) pour plus d’informations sur la manière dont vous pouvez modifier l’affichage du calendrier.
+However, you can't change the [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selectionmode.aspx) of the internal CalendarView to allow multiple selection. If you need to let a user pick multiple dates or need a calendar to be always visible, consider using a calendar view instead of a calendar date picker. See the [Calendar view](calendar-view.md) article for more info on how you can modify the calendar display.
 
-### Sélection de dates
+### Selecting dates
 
-Utilisez la propriété [**Date**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.date.aspx) pour obtenir ou définir la date sélectionnée. Par défaut, la propriété Date est **null**. Lorsqu’un utilisateur sélectionne une date dans l’affichage Calendrier, cette propriété est mise à jour. Un utilisateur peut effacer la date en cliquant sur la date sélectionnée dans l’affichage Calendrier pour la désélectionner. 
+Use the [**Date**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.date.aspx) property to get or set the selected date. By default, the Date property is **null**. When a user selects a date in the calendar view, this property is updated. A user can clear the date by clicking the selected date in the calendar view to deselect it. 
 
-Vous pouvez définir la date dans votre code comme suit.
+You can set the date in your code like this.
 
 ```csharp
 myCalendarDatePicker.Date = new DateTime(1977, 1, 5);
 ```
 
-Lorsque vous définissez la date dans le code, la valeur est limitée par les propriétés [**MinDate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.mindate.aspx) et [**MaxDate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.maxdate.aspx).
-- Si la valeur **Date** est inférieure à **MinDate**, la valeur est définie sur **MinDate**.
-- Si la valeur **Date** est supérieure à **MaxDate**, la valeur est définie sur **MaxDate**.
+When you set the Date in code, the value is constrained by the [**MinDate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.mindate.aspx) and [**MaxDate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.maxdate.aspx) properties.
+- If **Date** is smaller than **MinDate**, the value is set to **MinDate**.
+- If **Date** is greater than **MaxDate**, the value is set to **MaxDate**.
 
-Vous pouvez gérer l’événement [**DateChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.datechanged.aspx) pour être averti lorsque la valeur Date a changé.
+You can handle the [**DateChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.datechanged.aspx) event to be notified when the Date value has changed.
 
-> **Remarque** &nbsp;&nbsp;Pour obtenir des informations importantes sur les valeurs de date, consultez [Valeurs DateTime et Calendar](date-and-time.md#datetime-and-calendar-values) dans l’article Contrôles de date et d’heure.
+> **Note**&nbsp;&nbsp;For important info about date values, see [DateTime and Calendar values](date-and-time.md#datetime-and-calendar-values) in the Date and time controls article.
 
-### Définition d’un texte d’en-tête et d’espace réservé
+### Setting a header and placeholder text
 
-Vous pouvez ajouter un contrôle [**Header**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.header.aspx) (ou étiquette) et un contrôle [**PlaceholderText**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.placeholdertext.aspx) (ou filigrane) au sélecteur de date de calendrier pour indiquer à l’utilisateur son rôle. Si vous souhaitez personnaliser l’aspect de l’en-tête, vous pouvez définir la propriété [**HeaderTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.headertemplate.aspx) au lieu de la propriété Header.
+You can add a [**Header**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.header.aspx) (or label) and [**PlaceholderText**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.placeholdertext.aspx) (or watermark) to the calendar date picker to give the user an indication of what it's used for. To customize the look of the header, you can set the [**HeaderTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.headertemplate.aspx) property instead of Header.
 
-Le texte d’espace réservé par défaut est «sélectionner une date». Vous pouvez le supprimer en définissant la propriété PlaceholderText sur une chaîne vide, ou vous pouvez fournir un texte personnalisé comme illustré ici.
+The default placeholder text is "select a date". You can remove this by setting the PlaceholderText property to an empty string, or you can provide custom text as shown here.
 
 ```xaml
 <CalendarDatePicker x:Name="arrivalCalendarDatePicker" Header="Arrival date" 
@@ -83,15 +94,15 @@ Le texte d’espace réservé par défaut est «sélectionner une date». Vous p
 ```
 
 
-## Articles connexes
+## Related articles
 
-- [Contrôles de date et d’heure](date-and-time.md)
-- [Affichage Calendrier](calendar-view.md)
-- [Sélecteur de dates](date-picker.md)
-- [Sélecteur d’heure](time-picker.md)
+- [Date and time controls](date-and-time.md)
+- [Calendar view](calendar-view.md)
+- [Date picker](date-picker.md)
+- [Time picker](time-picker.md)
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,43 +1,43 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "Les applications UWP qui prennent en charge WindowsInk peuvent sérialiser et désérialiser les traits d’encre dans un fichier ISF (Ink Serialized Format). Le fichierISF est une imageGIF contenant des métadonnées supplémentaires pour tous les comportements et propriétés de traits d’encre. Les applications qui ne sont pas compatibles avec les entrées manuscrites peuvent afficher l’image GIF statique, y compris la transparence d’arrière-plan de canal alpha."
-title: "Stocker et récupérer les données de traits WindowsInk"
+Description: UWP apps that support Windows Ink can serialize and deserialize ink strokes to an Ink Serialized Format (ISF) file. The ISF file is a GIF image with additional metadata for all ink stroke properties and behaviors. Apps that are not ink-enabled, can view the static GIF image, including alpha-channel background transparency.
+title: Store and retrieve Windows Ink stroke data
 ms.assetid: C96C9D2F-DB69-4883-9809-4A0DF7CEC506
 label: Store and retrieve Windows Ink stroke data
 template: detail.hbs
 keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, ISF, Ink Serialized Format
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: cdef00304e1835532eceb8e51fecc8045f2ff300
+ms.sourcegitcommit: 75e93920422b5ad8ad0e9399bccc403ea69e7feb
+ms.openlocfilehash: 8ba48ed9aa7589ddee6009c5a8cb8ec1091d51ef
 
 ---
 
-# Stocker et récupérer les données de traits WindowsInk
+# Store and retrieve Windows Ink stroke data
 
 
-Les applications UWP qui prennent en charge WindowsInk peuvent sérialiser et désérialiser les traits d’encre dans un fichier ISF (Ink Serialized Format). Le fichierISF est une imageGIF contenant des métadonnées supplémentaires pour tous les comportements et propriétés de traits d’encre. Les applications qui ne sont pas compatibles avec les entrées manuscrites peuvent afficher l’image GIF statique, y compris la transparence d’arrière-plan de canal alpha.
+UWP apps that support Windows Ink can serialize and deserialize ink strokes to an Ink Serialized Format (ISF) file. The ISF file is a GIF image with additional metadata for all ink stroke properties and behaviors. Apps that are not ink-enabled, can view the static GIF image, including alpha-channel background transparency.
 
 
-**API importantes**
+**Important APIs**
 
 -   [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)
 -   [**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
 
 
 
-**Remarque**  
-ISF constitue la représentation persistante la plus compacte de l’entrée manuscrite. Vous pouvez l’intégrer dans un format de document binaire, tel qu’un fichier GIF, ou placer le fichier directement dans le Presse-papiers.
+> [!NOTE]
+> ISF is the most compact persistent representation of ink. It can be embedded within a binary document format, such as a GIF file, or placed directly on the Clipboard.
 
  
 
-## Enregistrer des traits d’encre dans un fichier
+## Save ink strokes to a file
 
 
-Nous montrons ici comment enregistrer des traits d’encre dessinés sur un contrôle [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
+Here, we demonstrate how to save ink strokes drawn on an [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) control.
 
-1.  Tout d’abord, nous configurons l’interface utilisateur.
+1.  First, we set up the UI.
 
-    L’interface utilisateur comprend les boutons Enregistrer, Charger et Effacer, ainsi que le contrôle [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
+    The UI includes "Save", "Load", and "Clear" buttons, and the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -65,9 +65,9 @@ Nous montrons ici comment enregistrer des traits d’encre dessinés sur un cont
     </Grid>
 ```
 
-2.  Nous définissons ensuite certains comportements d’entrée manuscrite de base.
+2.  We then set some basic ink input behaviors.
 
-    Le contrôle [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) est configuré pour interpréter les données d’entrée du stylet et de la souris sous forme de traits d’encre ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)), et des écouteurs pour les événements Click sur les boutons sont déclarés.
+    The [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) is configured to interpret input data from both pen and mouse as ink strokes ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)), and listeners for the click events on the buttons are declared.
 ```    CSharp
 public MainPage()
     {
@@ -87,13 +87,13 @@ public MainPage()
     }
 ```
 
-3.  Enfin, nous enregistrons l’entrée manuscrite dans le gestionnaire d’événements Click du bouton **Enregistrer**.
+3.  Finally, we save the ink in the click event handler of the **Save** button.
 
-    Une classe [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) permet à l’utilisateur de sélectionner le fichier et l’emplacement où les données d’entrée manuscrite sont enregistrées.
+    A [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) lets the user select both the file and the location where the ink data is saved.
 
-    Une fois qu’un fichier est sélectionné, nous ouvrons un flux [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) défini sur [**ReadWrite**](https://msdn.microsoft.com/library/windows/apps/br241635).
+    Once a file is selected, we open an [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) stream set to [**ReadWrite**](https://msdn.microsoft.com/library/windows/apps/br241635).
 
-    Nous appelons ensuite [**SaveAsync**](https://msdn.microsoft.com/library/windows/apps/br242114) pour sérialiser les traits d’encre gérés par la classe [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) dans le flux.
+    We then call [**SaveAsync**](https://msdn.microsoft.com/library/windows/apps/br242114) to serialize the ink strokes managed by the [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) to the stream.
 ```    CSharp
 // Save ink data to a file.
     private async void btnSave_Click(object sender, RoutedEventArgs e)
@@ -157,19 +157,16 @@ public MainPage()
     }
 ```
 
-[!NOTE]  
-Le format GIF est le seul pris en charge pour l’enregistrement des données d’entrée manuscrite. Toutefois, la méthode [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) (expliquée dans la section suivante) prend en charge des formats supplémentaires à des fins de compatibilité descendante.
+> [!NOTE]  
+> GIF is the only file format supported for saving ink data. However, the [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) method (demonstrated in the next section) does support additional formats for backward compatibility.
 
- 
+## Load ink strokes from a file
 
-## Charger des traits d’encre à partir d’un fichier
+Here, we demonstrate how to load ink strokes from a file and render them on an [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) control.
 
+1.  First, we set up the UI.
 
-Ici, nous montrons comment charger des traits d’encre à partir d’un fichier et les restituer sur un contrôle [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
-
-1.  Tout d’abord, nous configurons l’interface utilisateur.
-
-    L’interface utilisateur comprend les boutons Enregistrer, Charger et Effacer, ainsi que le contrôle [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
+    The UI includes "Save", "Load", and "Clear" buttons, and the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -197,9 +194,9 @@ Ici, nous montrons comment charger des traits d’encre à partir d’un fichier
     </Grid>
 ```
 
-2.  Nous définissons ensuite certains comportements d’entrée manuscrite de base.
+2.  We then set some basic ink input behaviors.
 
-    Le contrôle [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) est configuré pour interpréter les données d’entrée du stylet et de la souris sous forme de traits d’encre ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)), et des écouteurs pour les événements Click sur les boutons sont déclarés.
+    The [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) is configured to interpret input data from both pen and mouse as ink strokes ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)), and listeners for the click events on the buttons are declared.
 ```    CSharp
 public MainPage()
     {
@@ -219,13 +216,17 @@ public MainPage()
     }
 ```
 
-3.  Enfin, nous enregistrons l’entrée manuscrite dans le gestionnaire d’événements Click du bouton **Charger**.
+3.  Finally, we load the ink in the click event handler of the **Load** button.
 
-    Une classe [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) permet à l’utilisateur de sélectionner le fichier et l’emplacement où récupérer les données d’entrée manuscrite enregistrées.
+    A [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) lets the user select both the file and the location from where to retrieve the saved ink data.
 
-    Une fois qu’un fichier est sélectionné, nous ouvrons un flux [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) défini sur [**Read**](https://msdn.microsoft.com/library/windows/apps/br241635).
+    Once a file is selected, we open an [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) stream set to [**Read**](https://msdn.microsoft.com/library/windows/apps/br241635).
 
-    Nous appelons ensuite [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) pour lire, désérialiser et charger les traits d’encre enregistrés dans l’élément [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492). Le chargement des traits dans l’élément **InkStrokeContainer** entraîne leur restitution immédiate dans [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) par l’élément [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081).
+    We then call [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) to read, de-serialize, and load the saved ink strokes into the [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492). Loading the strokes into the **InkStrokeContainer** causes the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) to immediately render them to the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
+
+    > [!NOTE]
+    > All existing strokes in the InkStrokeContainer are cleared before new strokes are loaded.
+
 ``` csharp
 // Load ink data from a file.
 private async void btnLoad_Click(object sender, RoutedEventArgs e)
@@ -247,7 +248,7 @@ private async void btnLoad_Click(object sender, RoutedEventArgs e)
         // Read from file.
         using (var inputStream = stream.GetInputStreamAt(0))
         {
-            await inkCanvas.InkPresenter.StrokeContainer.LoadAsync(stream);
+            await inkCanvas.InkPresenter.StrokeContainer.LoadAsync(inputStream);
         }
         stream.Dispose();
     }
@@ -259,28 +260,28 @@ private async void btnLoad_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-**Remarque**  
-Le format GIF est le seul pris en charge pour l’enregistrement des données d’entrée manuscrite. Toutefois, la méthode [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) prend en charge les formats suivants pour la compatibilité descendante.
+> [!NOTE]
+> GIF is the only file format supported for saving ink data. However, the [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) method does support the following formats for backward compatibility.
 
 | Format                    | Description |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| InkSerializedFormat       | Indique les entrées manuscrites qui persistent avec le format ISF. Le format ISF est la représentation persistante la plus compacte de l’entrée manuscrite. Vous pouvez l’intégrer dans un format de document binaire ou le placer directement dans le Presse-papiers.                                                                                                                                                                                                         |
-| Base64InkSerializedFormat | Indique les entrées manuscrites qui persistent avec le codage de l’ISF en tant que flux en base 64. Ce format permet de coder l’entrée manuscrite directement dans un fichier XML ou HTML.                                                                                                                                                                                                                                                |
-| Gif                       | Indique les entrées manuscrites qui persistent avec l’utilisation d’un fichier GIF dans lequel la représentation ISF est considérée en tant que métadonnées incorporées au fichier. Ce format permet d’afficher les entrées manuscrites dans des applications qui ne sont pas compatibles avec l’entrée manuscrite, tout en conservant une fidélité totale pour celles qui sont compatibles. Il est idéal pour transporter du contenu d’entrée manuscrite au sein d’un fichier HTML et pour le rendre utilisable par des applications compatibles et non compatibles avec l’entrée manuscrite. |
-| Base64Gif                 | Indique les entrées manuscrites qui persistent en utilisant un format GIF renforcé codé en base 64. Ce format permet de coder directement les entrées manuscrites dans un fichier XML ou HTML afin de les convertir ultérieurement en images. Imaginons, par exemple, un format XML créé pour contenir toutes les informations sur les entrées manuscrites et utilisé comme moyen pour générer du HTML via le langage XSLT (Extensible Stylesheet Language Transformations). 
+| InkSerializedFormat       | Specifies ink that is persisted using ISF. This is the most compact persistent representation of ink. It can be embedded within a binary document format or placed directly on the Clipboard.                                                                                                                                                                                                         |
+| Base64InkSerializedFormat | Specifies ink that is persisted by encoding the ISF as a base64 stream. This format is provided so ink can be encoded directly in an XML or HTML file.                                                                                                                                                                                                                                                |
+| Gif                       | Specifies ink that is persisted by using a GIF file that contains ISF as metadata embedded within the file. This enables ink to be viewed in applications that are not ink-enabled and maintain its full ink fidelity when it returns to an ink-enabled application. This format is ideal when transporting ink content within an HTML file and for making it usable by ink and non-ink applications. |
+| Base64Gif                 | Specifies ink that is persisted by using a base64-encoded fortified GIF. This format is provided when ink is to be encoded directly in an XML or HTML file for later conversion into an image. A possible use of this is in an XML format generated to contain all ink information and used to generate HTML through Extensible Stylesheet Language Transformations (XSLT). 
 
-## Copier et coller des traits d’encre avec le Presse-papiers
+## Copy and paste ink strokes with the clipboard
 
 
-Ici, nous montrons comment utiliser le Presse-papiers pour transférer des traits d’encre entre applications.
+Here, we demonstrate how to use the clipboard to transfer ink strokes between apps.
 
-Pour la prise en charge des fonctionnalités du Presse-papiers, les commandes Couper-Coller intégrées à [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) requièrent la sélection d’un ou de plusieurs traits d’encre.
+To support clipboard functionality, the built-in [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) cut and copy commands require one or more ink strokes be selected.
 
-Pour cet exemple, nous activons la sélection de traits lorsque l’entrée est modifiée avec un bouton de stylet (ou le bouton droit de la souris). Pour obtenir un exemple complet illustrant comment implémenter une sélection de trait d’encre, voir [Entrée directe pour traitement avancé](pen-and-stylus-interactions.md#passthrough) dans [Interactions avec le stylo ou le stylet](pen-and-stylus-interactions.md).
+For this example, we enable stroke selection when input is modified with a pen barrel button (or right mouse button). For a complete example of how to implement stroke selection, see [Pass-through input for advanced processing](pen-and-stylus-interactions.md#passthrough) in [Pen and stylus interactions](pen-and-stylus-interactions.md).
 
-1.  Tout d’abord, nous configurons l’interface utilisateur.
+1.  First, we set up the UI.
 
-    L’interface utilisateur comprend les boutons Couper, Copier, Coller et Effacer, ainsi que l’élément [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) et un canevas de sélection.
+    The UI includes "Cut", "Copy", "Paste", and "Clear" buttons, along with the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) and a selection canvas.
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -314,11 +315,11 @@ Pour cet exemple, nous activons la sélection de traits lorsque l’entrée est 
     </Grid>
 ```
 
-2.  Nous définissons ensuite certains comportements d’entrée manuscrite de base.
+2.  We then set some basic ink input behaviors.
 
-    L’élément [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) est configuré pour interpréter les données d’entrée de stylet et de souris sous forme de traits d’encre ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)). Des écouteurs pour les événements Click sur les boutons ainsi que des événements relatifs au pointeur et aux traits pour la fonctionnalité de sélection sont également déclarés ici.
+    The [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) is configured to interpret input data from both pen and mouse as ink strokes ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)). Listeners for the click events on the buttons as well as pointer and stroke events for selection functionality are also declared here.
 
-    Pour obtenir un exemple complet illustrant comment implémenter une sélection de trait d’encre, voir [Entrée directe pour traitement avancé](pen-and-stylus-interactions.md#passthrough) dans [Interactions avec le stylo ou le stylet](pen-and-stylus-interactions.md).
+    For a complete example of how to implement stroke selection, see [Pass-through input for advanced processing](pen-and-stylus-interactions.md#passthrough) in [Pen and stylus interactions](pen-and-stylus-interactions.md).
 ```    CSharp
 public MainPage()
     {
@@ -364,13 +365,13 @@ public MainPage()
     }
 ```
 
-3.  Enfin, après avoir ajouté la prise en charge de la sélection de traits, nous implémentons la fonctionnalité de Presse-papiers dans les gestionnaires d’événements Click des boutons **Couper**, **Copier** et **Coller**.
+3.  Finally, after adding stroke selection support, we implement clipboard functionality in the click event handlers of the **Cut**, **Copy**, and **Paste** buttons.
 
-    Pour le bouton Couper, nous appelons d’abord [**CopySelectedToClipboard**](https://msdn.microsoft.com/library/windows/apps/br244232) sur l’élément [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) de [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011).
+    For cut, we first call [**CopySelectedToClipboard**](https://msdn.microsoft.com/library/windows/apps/br244232) on the [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) of the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011).
 
-    Nous appelons ensuite [**DeleteSelected**](https://msdn.microsoft.com/library/windows/apps/br244233) pour supprimer les traits du canevas d’encre.
+    We then call [**DeleteSelected**](https://msdn.microsoft.com/library/windows/apps/br244233) to remove the strokes from the ink canvas.
 
-    Enfin, nous supprimons tous les traits de sélection du canevas de sélection.
+    Finally, we delete all selection strokes from the selection canvas.
 ```    CSharp
 private void btnCut_Click(object sender, RoutedEventArgs e)
     {
@@ -427,14 +428,14 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
     }
 ```
 
-## Articles connexes
+## Related articles
 
-* [Interactions avec le stylo et le stylet](pen-and-stylus-interactions.md)
+* [Pen and stylus interactions](pen-and-stylus-interactions.md)
 
-**Exemples**
-* [Exemple d’entrée manuscrite](http://go.microsoft.com/fwlink/p/?LinkID=620308)
-* [Exemple d’entrée manuscrite simple](http://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [Exemple d’entrée manuscrite complexe](http://go.microsoft.com/fwlink/p/?LinkID=620314)
+**Samples**
+* [Ink sample](http://go.microsoft.com/fwlink/p/?LinkID=620308)
+* [Simple ink sample](http://go.microsoft.com/fwlink/p/?LinkID=620312)
+* [Complex ink sample](http://go.microsoft.com/fwlink/p/?LinkID=620314)
  
 
  
@@ -445,6 +446,6 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

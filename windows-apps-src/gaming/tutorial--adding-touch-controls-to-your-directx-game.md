@@ -1,38 +1,38 @@
 ---
 author: mtoepke
-title: "Contrôles tactiles pour les jeux"
-description: "Découvrez comment ajouter des contrôles tactiles de base à votre jeu de plateforme Windows universelle (UWP) en C++ avec DirectX."
+title: Touch controls for games
+description: Learn how to add basic touch controls to your Universal Windows Platform (UWP) C++ game with DirectX.
 ms.assetid: 9d40e6e4-46a9-97e9-b848-522d61e8e109
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: a2460ba2ffcf191fe87132180b2cca7519e87141
+ms.openlocfilehash: 901b83b1c4a2e572e4fe41e1df59910432982687
 
 ---
 
-# Contrôles tactiles pour les jeux
+# Touch controls for games
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Découvrez comment ajouter des contrôles tactiles de base à votre jeu de plateforme Windows universelle (UWP) en C++ avec DirectX. Nous allons vous montrer comment ajouter des contrôles tactiles pour déplacer une caméra de plan fixe dans un environnement Direct3D, où le glissement avec un doigt ou un stylet décale la perspective de la caméra.
+Learn how to add basic touch controls to your Universal Windows Platform (UWP) C++ game with DirectX. We show you how to add touch-based controls to move a fixed-plane camera in a Direct3D environment, where dragging with a finger or stylus shifts the camera perspective.
 
-Vous pouvez incorporer ces contrôles à des jeux où le joueur doit faire glisser pour effectuer un défilement ou un panoramique dans un environnement 3D, par exemple une carte ou un terrain de jeux. Par exemple, dans un jeu de stratégie ou de casse-tête, vous pouvez utiliser ces contrôles pour permettre au joueur de voir un environnement de jeu plus grand que l’écran par un mouvement panoramique gauche ou droit.
+You can incorporate these controls in games where you want the player to drag to scroll or pan over a 3D environment, such as a map or playfield. For example, in a strategy or puzzle game, you can use these controls to let the player view a game environment that is larger than the screen by panning left or right.
 
-> **Remarque** Notre code fonctionne également pour les contrôles panoramiques avec la souris. Les événements associés au pointeur étant abstraits par les API Windows Runtime, ils peuvent gérer les événements de pointeur tactiles ou avec la souris.
+> **Note**  Our code also works with mouse-based panning controls. The pointer related events are abstracted by the Windows Runtime APIs, so they can handle either touch- or mouse-based pointer events.
 
  
 
-## Objectifs
+## Objectives
 
 
--   Créer un simple contrôle de glisser tactile pour le panoramique d’une caméra de plan fixe dans un jeu DirectX.
+-   Create a simple touch drag control for panning a fixed-plane camera in a DirectX game.
 
-## Configurer l’infrastructure des événements tactiles de base
+## Set up the basic touch event infrastructure
 
 
-Commençons par définir notre type de contrôleur de base, **CameraPanController** dans le cas présent. Ici, nous définissons un contrôleur comme une idée abstraite correspondant à l’ensemble de comportements que l’utilisateur peut effectuer.
+First, we define our basic controller type, the **CameraPanController**, in this case. Here, we define a controller as an abstract idea, the set of behaviors the user can perform.
 
-La classe **CameraPanController** est une collection régulièrement mise à jour d’informations sur l’état du contrôleur de la caméra, et permet à notre application d’obtenir ces informations à partir de sa boucle de mise à jour.
+The **CameraPanController** class is a regularly refreshed collection of information about the camera controller state, and provides a way for our app to obtain that information from its update loop.
 
 ```cpp
 using namespace Windows::UI::Core;
@@ -47,7 +47,7 @@ ref class CameraPanController
 }
 ```
 
-Créons maintenant un en-tête qui définit l’état du contrôleur de la caméra, plus les méthodes de base et gestionnaires d’événements qui implémentent les interactions du contrôleur de la caméra.
+Now, let's create a header that defines the state of the camera controller, and the basic methods and event handlers that implement the camera controller interactions.
 
 ```cpp
 ref class CameraPanController
@@ -99,47 +99,47 @@ public:
 };  // Class CameraPanController
 ```
 
-Les champs privés contiennent l’état actuel du contrôleur de la caméra. Passons-les en revue.
+The private fields contain the current state of the camera controller. Let's review them.
 
--   **m\_position** représente la position de la caméra dans l’espace de scène. Dans cet exemple, la valeur de coordonnée z est fixée à 0. Nous pourrions utiliser DirectX::XMFLOAT2 pour représenter cette valeur, mais dans le cadre de cet exemple et à des fins d’extensibilité future, nous utilisons DirectX::XMFLOAT3. Nous transmettons cette valeur par le biais de la propriété **get\_Position** à l’application proprement dite afin qu’elle puisse mettre à jour la fenêtre d’affichage en conséquence.
--   **m\_panInUse** est une valeur booléenne qui indique si une opération panoramique est active ou, plus spécifiquement, si le joueur touche l’écran et déplace la caméra.
--   **m\_panPointerID** représente un ID unique pour le pointeur. Nous ne l’utiliserons pas dans cet exemple, mais il est conseillé d’associer la classe de l’état du contrôleur à un pointeur spécifique.
--   **m\_panFirstDown** est le point de l’écran où le joueur a touché pour la première fois l’écran ou a cliqué à l’aide de la souris pendant l’action panoramique de la caméra. Nous utiliserons cette valeur plus tard pour définir une zone morte afin d’empêcher tout sautillement lorsque l’écran est touché ou que la souris bouge légèrement.
--   **m\_panPointerPosition** est le point de l’écran où le joueur a actuellement placé le pointeur. Nous l’utilisons pour déterminer la direction dans laquelle l’utilisateur souhaite se déplacer en l’examinant par rapport à **m\_panFirstDown**.
--   **m\_panCommand** est la dernière commande calculée pour le contrôleur de la caméra: haut, bas, gauche ou droite. Dans la mesure où nous utilisons une caméra fixée au plan x-y, il pourrait s’agir d’une valeur DirectX::XMFLOAT2 à la place.
+-   **m\_position** is the position of the camera in the scene space. In this example, the z-coordinate value is fixed at 0. We could use a DirectX::XMFLOAT2 to represent this value, but for the purposes of this sample and future extensibility, we use a DirectX::XMFLOAT3. We pass this value through the **get\_Position** property to the app itself so it can update the viewport accordingly.
+-   **m\_panInUse** is a Boolean value that indicates whether a pan operation is active; or, more specifically, whether the player is touching the screen and moving the camera.
+-   **m\_panPointerID** is a unique ID for the pointer. We won't use this in the sample, but it's a good practice to associate your controller state class with a specific pointer.
+-   **m\_panFirstDown** is the point on the screen where the player first touched the screen or clicked the mouse during the camera pan action. We use this value later to set a dead zone to prevent jitter when the screen is touched, or if the mouse shakes a little.
+-   **m\_panPointerPosition** is the point on the screen where the player has currently moved the pointer. We use it to determine what direction the player wanted to move by examining it relative to **m\_panFirstDown**.
+-   **m\_panCommand** is the final computed command for the camera controller: up, down, left, or right. Because we are working with a camera fixed to the x-y plane, this could be a DirectX::XMFLOAT2 value instead.
 
-Nous utilisons ces 3gestionnaires d’événements pour mettre à jour les informations sur l’état du contrôleur de la caméra.
+We use these 3 event handlers to update the camera controller state info.
 
--   **OnPointerPressed** est un gestionnaire d’événements que notre application appelle lorsque le joueur appuie un doigt sur la surface tactile et que le pointeur est déplacé vers les coordonnées du point sur lequel il a appuyé.
--   **OnPointerMoved** est un gestionnaire d’événements que notre application appelle lorsque le joueur balaye du doigt la surface tactile. Il effectue la mise à jour avec les nouvelles coordonnées du chemin de glissement.
--   **OnPointerReleased** est un gestionnaire d’événements que notre application appelle lorsque le joueur retire le doigt de la surface tactile.
+-   **OnPointerPressed** is an event handler that our app calls when the players presses a finger onto the touch surface and the pointer is moved to the coordinates of the press.
+-   **OnPointerMoved** is an event handler that our app calls when the player swipes a finger across the touch surface. It updates with the new coordinates of the drag path.
+-   **OnPointerReleased** is an event handler that our app calls when the player removes the pressing finger from the touch surface.
 
-Enfin, nous utilisons les méthodes et propriétés suivantes pour accéder aux informations sur l’état du contrôleur de la caméra, les initialiser et les mettre à jour.
+Finally, we use these methods and properties to initialize, access, and update the camera controller state information.
 
--   **Initialize** est un gestionnaire d’événements que notre application appelle pour initialiser les contrôles et les associer à l’objet [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) qui décrit la fenêtre d’affichage.
--   **SetPosition** est une méthode que notre application appelle pour définir les coordonnées (x, y et z) des contrôles dans l’espace de scène. Notez que la coordonnée z présente la valeur 0 tout au long de ce didacticiel.
--   **get\_Position** est une propriété à laquelle notre application accède pour obtenir la position actuelle de la caméra dans l’espace de scène. Vous utilisez cette propriété comme méthode de communication de la position actuelle de la caméra à l’application.
--   **get\_FixedLookPoint** est une propriété à laquelle notre application accède pour obtenir le point actuel vers lequel la caméra du contrôleur est orientée. Dans cet exemple, il est verrouillé perpendiculairement au plan x-y.
--   **Update** est une méthode qui lit l’état du contrôleur et met à jour la position de la caméra. Vous appelez continuellement cet &lt;élément&gt; à partir de la boucle principale de l’application pour actualiser les données de contrôleur de la caméra et la position de la caméra dans l’espace de scène.
+-   **Initialize** is an event handler that our app calls to initialize the controls and attach them to the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) object that describes your display window.
+-   **SetPosition** is a method that our app calls to set the (x, y, and z) coordinates of your controls in the scene space. Note that our z-coordinate is 0 throughout this tutorial.
+-   **get\_Position** is a property that our app accesses to get the current position of the camera in the scene space. You use this property as the way of communicating the current camera position to the app.
+-   **get\_FixedLookPoint** is a property that our app accesses to get the current point toward which the controller camera is facing. In this example, it is locked normal to the x-y plane.
+-   **Update** is a method that reads the controller state and updates the camera position. You continually call this &lt;something&gt; from the app's main loop to refresh the camera controller data and the camera position in the scene space.
 
-Vous disposez à présent ici de tous les composants nécessaires pour implémenter les contrôles tactiles. Vous pouvez détecter quand et où les événements de pointeur de souris ou tactile se sont produits, et identifier l’action. Vous pouvez définir la position et l’orientation de la caméra par rapport à l’espace de scène et assurer le suivi des modifications. Enfin, vous pouvez communiquer la nouvelle position de la caméra à l’application appelante.
+Now, you have here all the components you need to implement touch controls. You can detect when and where the touch or mouse pointer events have occurred, and what the action is. You can set the position and orientation of the camera relative to the scene space, and track the changes. Finally, you can communicate the new camera position to the calling app.
 
-Rassemblons maintenant tous ces éléments.
+Now, let's connect these pieces together.
 
-## Créer les événements tactiles de base
+## Create the basic touch events
 
 
-Le répartiteur d’événements Windows Runtime fournit 3événements qui doivent être gérés par notre application:
+The Windows Runtime event dispatcher provides 3 events we want our app to handle:
 
 -   [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278)
 -   [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276)
 -   [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279)
 
-Ces événements sont implémentés sur le type [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). Nous supposons que vous disposez d’un objet **CoreWindow** à manipuler. Pour plus d’informations, voir [Configuration d’une application UWP en C++ pour afficher une vue DirectX](https://msdn.microsoft.com/library/windows/apps/hh465077).
+These events are implemented on the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) type. We assume that you have a **CoreWindow** object to work with. For more info, see [How to set up your UWP C++ app to display a DirectX view](https://msdn.microsoft.com/library/windows/apps/hh465077).
 
-Comme ces événements sont déclenchés pendant que notre application est en cours d’exécution, les gestionnaires mettent à jour les informations sur l’état du contrôleur de la caméra définies dans nos champs privés.
+As these events fire while our app is running, the handlers update the camera controller state info defined in our private fields.
 
-Commençons par remplir les gestionnaires d’événements de pointeur tactile. Dans le premier gestionnaire d’événements (**OnPointerPressed**), nous obtenons les coordonnées x-y du pointeur de la part de l’élément [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) qui gère notre affichage lorsque l’utilisateur clique avec la souris ou touche l’écran.
+First, let's populate the touch pointer event handlers. In the first event handler, **OnPointerPressed**, we get the x-y coordinates of the pointer from the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) that manages our display when the user touches the screen or clicks the mouse.
 
 **OnPointerPressed**
 
@@ -167,11 +167,11 @@ void CameraPanController::OnPointerPressed(
 }
 ```
 
-Nous utilisons ce gestionnaire pour indiquer à l’instance **CameraPanController** actuelle que le contrôleur de la caméra doit être considéré comme actif en affectant à **m\_panInUse** la valeur TRUE. Ainsi, lorsque l’application appelle **Update**, elle utilise les données de la position actuelle pour mettre à jour la fenêtre d’affichage.
+We use this handler to let the current **CameraPanController** instance know that camera controller should be treated as active by setting **m\_panInUse** to TRUE. That way, when the app calls **Update** , it will use the current position data to update the viewport.
 
-Maintenant que nous avons établi les valeurs de base pour le mouvement de la caméra lorsque l’utilisateur touche l’écran ou clique/appuie dans la fenêtre d’affichage, nous devons identifier les actions à effectuer lorsque l’utilisateur fait glisser le point sur lequel il a appuyé ou déplace la souris avec le bouton enfoncé.
+Now that we've established the base values for the camera movement when the user touches the screen or click-presses in the display window, we must determine what to do when the user either drags the screen press or moves the mouse with button pressed.
 
-Le gestionnaire d’événements **OnPointerMoved** se déclenche chaque fois que le pointeur se déplace, au niveau de chaque graduation selon laquelle le joueur fait glisser le pointeur sur l’écran. Nous devons tenir l’application informée de l’emplacement actuel du pointeur; voici comment procéder pour cela.
+The **OnPointerMoved** event handler fires whenever the pointer moves, at every tick that the player drags it on the screen. We need to keep the app aware of the current location of the pointer, and this is how we do it.
 
 **OnPointerMoved**
 
@@ -187,7 +187,7 @@ void CameraPanController::OnPointerMoved(
 }
 ```
 
-Enfin, nous devons désactiver le mouvement panoramique de la caméra lorsque le joueur cesse de toucher l’écran. Nous utilisons **OnPointerReleased**, qui est appelé lorsque [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) est déclenché, pour affecter à **m\_panInUse** la valeur FALSE et désactiver le mouvement panoramique de la caméra, ainsi que pour affecter la valeur 0 à l’ID de pointeur.
+Finally, we need to deactivate the camera pan behavior when the player stops touching the screen. We use **OnPointerReleased**, which is called when [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) is fired, to set **m\_panInUse** to FALSE and turn off the camera pan movement, and set the pointer ID to 0.
 
 **OnPointerReleased**
 
@@ -204,10 +204,10 @@ void CameraPanController::OnPointerReleased(
 }
 ```
 
-## Initialiser les contrôles tactiles et l’état du contrôleur
+## Initialize the touch controls and the controller state
 
 
-Rassemblons les événements et initialisons tous les champs des états de base du contrôleur de la caméra.
+Let's hook the events and initialize all the basic state fields of the camera controller.
 
 **Initialize**
 
@@ -236,12 +236,12 @@ void CameraPanController::Initialize( _In_ CoreWindow^ window )
 }
 ```
 
-**Initialize** fait référence à l’instance [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) de l’application en tant que paramètre et inscrit les gestionnaires d’événements développés dans les événements appropriés sur cet élément **CoreWindow**.
+**Initialize** takes a reference to the app's [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) instance as a parameter and registers the event handlers we developed to the appropriate events on that **CoreWindow**.
 
-## Obtention et définition de la position du contrôleur de la caméra
+## Getting and setting the position of the camera controller
 
 
-Définissons certaines méthodes pour obtenir et définir la position du contrôleur de la caméra dans l’espace de scène.
+Let's define some methods to get and set the position of the camera controller in the scene space.
 
 ```cpp
 void CameraPanController::SetPosition( _In_ DirectX::XMFLOAT3 pos )
@@ -266,16 +266,16 @@ DirectX::XMFLOAT3 CameraPanController::get_FixedLookPoint()
 }
 ```
 
-**SetPosition** est une méthode publique que nous pouvons appeler à partir de notre application si nous devons définir un point spécifique comme position du contrôleur de la caméra.
+**SetPosition** is a public method that we can call from our app if we need to set the camera controller position to a specific point.
 
-**get\_Position** est la propriété publique la plus importante: elle permet à l’application d’obtenir la position actuelle du contrôleur de la caméra dans l’espace de scène et donc de mettre à jour la fenêtre d’affichage en conséquence.
+**get\_Position** is our most important public property: it's the way our app gets the current position of the camera controller in the scene space so it can update the viewport accordingly.
 
-**get\_FixedLookPoint** est une propriété publique qui, dans cet exemple, obtient un point de mire qui est perpendiculaire au plan x-y. Vous pouvez modifier cette méthode pour utiliser les fonctions trigonométriques, sin et cos, lors du calcul des valeurs des coordonnées x, y et z si vous voulez créer d’autres angles obliques pour la caméra fixe.
+**get\_FixedLookPoint** is a public property that, in this example, obtains a look point that is normal to the x-y plane. You can change this method to use the trigonometric functions, sin and cos, when calculating the x, y, and z coordinate values if you want to create more oblique angles for the fixed camera.
 
-## Mise à jour des informations sur l’état du contrôleur de la caméra
+## Updating the camera controller state information
 
 
-Effectuons maintenant nos calculs pour convertir les informations de coordonnées du pointeur suivies dans **m\_panPointerPosition** en nouvelles informations de coordonnées respectives de notre espace de scène3D. Notre application appelle cette méthode chaque fois que nous actualisons la boucle principale de l’application. Nous calculons alors les nouvelles informations de position que nous souhaitons transmettre à l’application utilisée pour la mise à jour de la matrice globale avant projection dans la fenêtre d’affichage.
+Now, we perform our calculations that convert the pointer coordinate info tracked in **m\_panPointerPosition** into new coordinate info respective of our 3D scene space. Our app calls this method every time we refresh the main app loop. In it we compute the new position information we want to pass to the app which is used to update the view matrix before projection into the viewport.
 
 ```cpp
 
@@ -318,12 +318,12 @@ void CameraPanController::Update( CoreWindow ^window )
 }
 ```
 
-Comme nous ne voulons pas que les sautillements tactiles ou de souris donnent un mouvement saccadé au panoramique de la caméra, nous définissons une zone morte autour du pointeur avec un diamètre de 32 pixels. Nous avons également une valeur de vitesse, qui est ici de 1:1 avec la traversée de pixels du pointeur au-delà de la zone morte. Vous pouvez ajuster ce comportement pour ralentir ou accélérer la vitesse de mouvement.
+Because we don't want touch or mouse jitter to make our camera panning jerky, we set a dead zone around the pointer with a diameter of 32 pixels. We also have a velocity value, which in this case is 1:1 with the pixel traversal of the pointer past the dead zone. You can adjust this behavior to slow down or speed up the rate of movement.
 
-## Mise à jour de la matrice globale avec la nouvelle position de la caméra
+## Updating the view matrix with the new camera position
 
 
-Nous pouvons maintenant obtenir une coordonnée d’espace de scène sur laquelle la caméra fait le point et qui est mise à jour chaque fois que vous demandez à l’application de le faire (toutes les 60 secondes dans la boucle principale de l’application, par exemple). Ce pseudo code suggère le comportement d’appel à implémenter :
+We can now obtain a scene space coordinate that our camera is focused on, and which is updated whenever you tell your app to do so (every 60 seconds in the main app loop, for example). This pseudocode suggests the calling behavior you can implement:
 
 ```cpp
  myCameraPanController->Update( m_window ); 
@@ -336,23 +336,23 @@ Nous pouvons maintenant obtenir une coordonnée d’espace de scène sur laquell
         );  
 ```
 
-Félicitations ! Vous avez implémenté un ensemble simple de contrôles tactiles de panoramique de la caméra dans votre jeu.
+Congratulations! You've implemented a simple set of camera panning touch controls in your game.
 
-> **Remarque**  
-Cet article s’adresse aux développeurs de Windows10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
-
- 
+> **Note**  
+This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

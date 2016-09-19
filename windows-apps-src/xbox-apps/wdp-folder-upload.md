@@ -1,59 +1,59 @@
 ---
 author: WilliamsJason
-title: "Infos de référence sur les API de chargement du dossier Device Portal"
-description: "Découvrez comment accéder par programme aux API de chargement des dossiers."
+title: Device Portal folder upload API reference
+description: Learn how to access the folder upload APIs programatically.
 translationtype: Human Translation
 ms.sourcegitcommit: fdc25fa4bd7bd5bfa598b993f23cd0ae9783dd0e
-ms.openlocfilehash: 942ddc13b0deba382ad7758bc30bd9a5b0cceb11
+ms.openlocfilehash: 6c3eeccdbb2bca315dc84293a36d0923f46e746d
 
 ---
 
-# Télécharger un dossier dans le répertoire de développement
+# Upload a folder to the development directory
 
-**Requête**
+**Request**
 
-Vous pouvez charger un dossier complet en une fois vers l’ID de dossier connu pour les fichiers de développement (ou dans un sous-dossier de ce dossier).
+You can upload an entire folder at once to the Known Folder Id for the DevelopmentFiles (or to a subfolder within that folder).
 
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :------
 POST | /api/app/packagemanager/upload 
 <br />
-**Paramètres d’URI**
+**URI parameters**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+You can specify the following additional parameters on the request URI:
 
-Paramètre d’URI      | Description
+URI Parameter      | Description
 :------     | :-----
-destinationFolder (obligatoire) | Le nom du dossier de destination du dossier à charger. Ce dossier sera placé sous d:\developmentfiles\LooseApps sur la console. Ce nom de dossier doit être codé en base64, dans la mesure où il peut contenir des séparateurs de chemin d’accès si le dossier est un sous-dossier de LooseApps.
+destinationFolder  (required) | The destination folder name of the folder to be uploaded. This folder will be placed under d:\developmentfiles\LooseApps on the console. This folder name should be base64 encoded as it may contain path separators if the folder is a subfolder under LooseApps.
 <br />
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Corps HTTP à parties multiples conforme du contenu du répertoire.
+- multi-part conforming http body of the directory contents.
 
-**Réponse**
+**Response**
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
-200 | Réussite
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+200 | Success
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Xbox
 
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

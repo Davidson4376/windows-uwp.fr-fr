@@ -1,88 +1,88 @@
 ---
 author: jnHs
-Description: "Vous pouvez gérer chacune de vos applications dans le tableau de bord du Centre de développement Windows, en afficher les détails et configurer des services comme les notifications Push et les cartes."
-title: Gestion des applications et services
+Description: You can manage and view details related to each of your apps in the Windows Dev Center dashboard, and configure services such as push notifications and Maps.
+title: App management and services
 ms.assetid: 99DA2BC1-9B5D-4746-8BC0-EC723D516EEF
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 71077ac3f64e10734021e5fb655168f7273e3cb6
+ms.sourcegitcommit: 3afdf00864e023d913b635beef0c506735881b23
+ms.openlocfilehash: 9787ef724622a95d291b4631196b3e13bcb1298a
 
 ---
 
-# Gestion des applications et services
+# App management and services
 
-Vous pouvez gérer chacune de vos applications dans le tableau de bord du Centre de développement Windows, en afficher les détails et configurer des services comme les notifications Push et les cartes.
+You can manage and view details related to each of your apps in the Windows Dev Center dashboard, and configure services such as push notifications and Maps.
 
-Quand vous travaillez avec une application dans votre tableau de bord, vous visualisez les sections relatives à la gestion des applications et aux services dans le menu de navigation de gauche. Développez ces sections pour accéder aux fonctionnalités décrites ci-après.
+When working with an app in your dashboard, you'll see sections in the left navigation menu for Services and App management. You can expand these sections to access the functionality described below.
 
 ## Services
 
-La section **Services** vous permet de gérer les différents services pour vos applications.
+The **Services** section lets you manage several different services for your apps.
 
-### NotificationsPush
+### Push notifications
 
-En fonction du type de package de votre application et de sa configuration spécifique, vous pouvez utiliser l’une des options suivantes pour les notifications Push :
+Depending on your app's package type and its specific requirements, you can use one of the following options for push notifications:
 
--   **Windows Push Notification Services (WNS)** vous permet d’envoyer un toast, une vignette, un badge et des mises à jour brutes depuis votre propre service cloud. Pour plus d’informations, voir l’article [Vue d’ensemble des services de notifications Push Windows (WNS)](https://msdn.microsoft.com/library/windows/apps/mt187203).
+-   **Windows Push Notification Services (WNS)** lets you send toast, tile, badge, and raw updates from your own cloud service. For more info, see [Windows Push Notification Services (WNS) overview](https://msdn.microsoft.com/library/windows/apps/mt187203).
 
--   **Microsoft Azure Mobile Apps** vous permet d’envoyer des notifications Push, d’authentifier et de gérer les utilisateurs des applications et de stocker les données des applications dans le cloud. Pour plus d’informations, voir la [documentation sur les applications mobiles](http://go.microsoft.com/fwlink/p/?LinkId=221116).
+-   **Microsoft Azure Mobile Apps** lets you send push notifications, authenticate and manage app users, and store app data in the cloud. For more info, see the [Mobile Apps documentation](http://go.microsoft.com/fwlink/p/?LinkId=221116).
 
--   **Microsoft Push Notifications Service (MPNS)** peut être utilisé avec vos packages .xap pour Windows Phone. Vous pouvez envoyer un nombre limité de notifications non authentifiées sans intervenir sur la configuration, bien que nous vous recommandons d’utiliser des notifications authentifiées pour éviter les seuils de limitation. Si vous utilisez MPNS, vous devez charger un certificat sur le terrain tel que fourni sur la page des **notifications Push**. Pour plus d’informations, voir [Configuration d’un service web authentifié pour envoyer des notifications Push pour Windows Phone 8](http://go.microsoft.com/fwlink/p/?LinkId=528736).
+-   **Microsoft Push Notifications Service (MPNS)** can be used with your .xap packages for Windows Phone. You can send a limited number of unauthenticated notifications without doing any configuration here, although we recommend using authenticated notifications to avoid throttling limits. If you're using MPNS, you'll need to upload a certificate to the field provided on the **Push notifications** page. For more info, see [Setting up an authenticated web service to send push notifications for Windows Phone 8](http://go.microsoft.com/fwlink/p/?LinkId=528736).
 
-### Expérimentation
+### Experimentation
 
-Utilisez la page **Expérimentation** pour créer et exécuter des expériences pour vos applications de plateforme Windows universelle (UWP) avec des tests A/B. Un test A/B vous permet d’évaluer l’efficacité des modifications apportées aux fonctionnalités de votre application (ou leurs variantes) sur certains clients avant d’implémenter les modifications pour le reste de vos clients.
+Use the **Experimentation** page to create and run experiments for your Universal Windows Platform (UWP) apps with A/B testing. In an A/B test, you measure the effectiveness of feature changes (or variations) in your app on some customers before you enable the changes for everyone.
 
-Pour plus d’informations, voir [Exécuter des expériences d’application avec des tests A/B](../monetize/run-app-experiments-with-a-b-testing.md).
+For more info, see [Run app experiments with A/B testing](../monetize/run-app-experiments-with-a-b-testing.md).
 
-### Cartes
+### Maps
 
-Pour utiliser les services cartographiques dans les applications pour Windows Phone 8.1 et versions antérieures, vous devez insérer un identifiant et un jeton d’application de service cartographique dans le code de votre application. Ce jeton est accessible sur la page **Cartes**, dans la section **Services**.
+To use map services in apps for Windows Phone 8.1 and earlier, you need a map service application ID and a token to include in your app's code. You can get this token on the **Maps** page in the **Services** section.
 
-> **Remarque** Pour utiliser les services cartographiques dans des applications ciblant d’autres systèmes d’exploitation, visitez le [Centre de développement Bing Cartes](http://go.microsoft.com/fwlink/p/?LinkId=614880). Pour plus d’informations, voir [Demander une clé d’authentification de cartes](https://msdn.microsoft.com/library/windows/apps/mt219694).
+> **Note**  To use map services in apps targeting other operating systems, visit the [Bing Maps Dev Center](http://go.microsoft.com/fwlink/p/?LinkId=614880). See [Request a maps authentication key](https://msdn.microsoft.com/library/windows/apps/mt219694) for more info.
 
-Pour plus d’informations, voir [Utiliser les services cartographiques](use-map-services.md).
+For more info, see [Use map services](use-map-services.md).
 
-### Collections et achats de produits
+### Product collections and purchases
 
-Pour utiliser l’API de collection du Windows Store et l’API d’achat du Windows Store afin d’accéder aux informations de propriété relatives aux applications et aux produits in-app, vous devez entrer les ID clients Azure AD associés ici. Notez que la prise en compte de ces modifications peut prendre jusqu’à 16 heures.
+To use the Windows Store collection API and the Windows Store purchase API to access ownership information for apps and add-ons, you need to enter the associated Azure AD client IDs here. Note that it may take up to 16 hours for these changes to take effect.
 
-Pour plus d’informations, voir [Visualiser et accorder des produits à partir d’un service](https://msdn.microsoft.com/library/windows/apps/mt609002).
+For more info, see [View and grant products from a service](https://msdn.microsoft.com/library/windows/apps/mt609002).
 
-## Gestion des applications
+## App management
 
-La section **Gestion des applications** vous permet d’afficher l’identité et les détails du package, ainsi que de gérer les noms de vos applications.
+The **App management** section lets you view identity and package details and manage your app's names.
 
-### Identité des applications
+### App identity
 
-Cette page propose des informations détaillées sur l’identité unique de votre application dans le Windows Store, notamment la ou les URL à associer à la description de l’application.
+This page shows you details related to your app's unique identity within the Store, including the URL(s) to link to your app's listing.
 
-Pour plus d’informations, voir [Visualiser les détails d’identité d’application](view-app-identity-details.md).
+For more info, see [View app identity details](view-app-identity-details.md).
 
-### Gestion des noms d’application
+### Manage app names
 
-C’est là que vous visualisez tous les noms que vous avez réservés pour votre application. Vous pouvez réserver d’autres noms ici ou supprimer des noms que vous n’utilisez plus.
+This is where you can view all of the names that you've reserved for your app. You can reserve additional names here, or delete names you're no longer using.
 
-Pour plus d’informations, voir [Gestion des noms d’application](manage-app-names.md).
+For more info, see [Manage app names](manage-app-names.md).
 
-### Packages actuels
+### Current packages
 
-Cette page propose des informations détaillées sur tous vos packages publiés.
+This page lets you view details related to all of your published packages.
 
-> **Remarque** Aucune information n’est proposée ici avant la publication de votre application.
+> **Note**  You won't see any info here until after your app has been published.
 
-Nous affichons le nom, la version et l’architecture de chaque package. Cliquez sur **Détails** pour accéder à des informations complémentaires comme la langue prise en charge, les fonctionnalités de l’application et les tailles de fichier.
+The name, version, and architecture of each package is shown. Click **Details** to show additional info such as supported language, app capabilities, and file sizes.
 
-Les informations exactes affichées pour chaque package peuvent varier en fonction du système d’exploitation ciblé et d’autres facteurs. Par exemple, si vous avez ajouté [Médiation publicitaire Windows](https://msdn.microsoft.com/library/windows/apps/mt219691) dans votre package, un lien permettant de configurer la médiation pour ce package figure ici.
+The exact info you see for each package may differ depending on its targeted operating system and other factors. For example, if you've added [Windows ad mediation](https://msdn.microsoft.com/library/windows/apps/mt219691) into your package, you'll find a link to configure mediation for that package here.
 
-Les développeurs ayant des autorisations OEM peuvent également [générer des packages de préinstallation](generate-preinstall-packages-for-oems.md) depuis la page **Packages actuels**.
-
- 
+Developers with OEM permissions can also [generate preinstall packages](generate-preinstall-packages-for-oems.md) from the **Current packages** page.
 
  
 
+ 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

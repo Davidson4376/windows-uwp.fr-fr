@@ -1,131 +1,131 @@
 ---
 author: jnHs
-Description: Vous pouvez soumettre des applications dans le Windows Store dans plus de 100 langues.
-title: Langues prises en charge
+Description: You can submit apps to the Windows Store in over 100 languages.
+title: Supported languages
 ms.assetid: FCA66311-4145-46AC-8B20-1E736F940976
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 17a5a106e24305afd3041f434d2e0890d21fd7ec
+ms.openlocfilehash: 3d14f1d11290942a90498f7aff4dc324daa3a84e
 
 ---
 
-# Langues prises en charge
+# Supported languages
 
 
-Vous pouvez soumettre des applications dans le Windows Store dans plus de 100langues.
+You can submit apps to the Windows Store in over 100 languages.
 
-Pour en savoir plus sur la configuration de langues dans vos applications, consultez [Globalisation et localisation](../globalizing/globalizing-portal.md) et [Gérer la langue et la région](../globalizing/manage-language-and-region.md). Nous avons également un [Kit de ressources pour application multilingue](https://msdn.microsoft.com/library/windows/apps/xaml/jj572370) pour vous aider à écrire des applications qui prennent en charge plusieurs langues.
+To learn more about configuring languages in your apps, see [Globalization and localization](../globalizing/globalizing-portal.md) and [Manage language and region](../globalizing/manage-language-and-region.md). We also have a [Multilingual App Toolkit](https://msdn.microsoft.com/library/windows/apps/xaml/jj572370) to help you write apps that support multiple languages.
 
-## Langues prises en charge
+## Supported languages
 
 
-Voici la liste des langues que le Windows Store prend en charge. Votre application doit prendre en charge au moins l’une de ces langues, et ne doit spécifier aucun code de langue non répertorié ici.
+These are the languages that the Windows Store supports. Your app must support at least one of these languages, and it must not specify any language codes that are not included here.
 
-| Nom de la langue         | Codes de langue pris en charge                                                                                                                                                                              |
+| Language name         | Supported language codes                                                                                                                                                                              |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Arabe                | ar, ar-sa, ar-ae, ar-bh, ar-dz, ar-eg, ar-iq, ar-jo, ar-kw, ar-lb, ar-ly, ar-ma, ar-om, ar-qa, ar-sy, ar-tn, ar-ye                                                                                    |
+| Arabic                | ar, ar-sa, ar-ae, ar-bh, ar-dz, ar-eg, ar-iq, ar-jo, ar-kw, ar-lb, ar-ly, ar-ma, ar-om, ar-qa, ar-sy, ar-tn, ar-ye                                                                                    |
 | Afrikaans             | af, af-za                                                                                                                                                                                             |
-| Albanais              | sq, sq-al                                                                                                                                                                                             |
-| Amharique               | am, am-et                                                                                                                                                                                             |
-| Arménien              | hy, hy-am                                                                                                                                                                                             |
-| Assamais              | as, as-in                                                                                                                                                                                             |
-| Azerbaïdjanais           | az, az-arab, az-arab-az, az-cyrl, az-cyrl-az, az-latn, az-latn-az                                                                                                                                     |
+| Albanian              | sq, sq-al                                                                                                                                                                                             |
+| Amharic               | am, am-et                                                                                                                                                                                             |
+| Armenian              | hy, hy-am                                                                                                                                                                                             |
+| Assamese              | as, as-in                                                                                                                                                                                             |
+| Azerbaijani           | az, az-arab, az-arab-az, az-cyrl, az-cyrl-az, az-latn, az-latn-az                                                                                                                                     |
 | Basque (Basque)       | eu, eu-es                                                                                                                                                                                             |
-| Bélarusse            | be, be-by                                                                                                                                                                                             |
-| Bengali                | bn, bn-bd, bn-in                                                                                                                                                                                      |
-| Bosniaque               | bs, bs-cyrl, bs-cyrl-ba, bs-latn, bs-latn-ba                                                                                                                                                          |
-| Bulgare             | bg, bg-bg                                                                                                                                                                                             |
+| Belarusian            | be, be-by                                                                                                                                                                                             |
+| Bangla                | bn, bn-bd, bn-in                                                                                                                                                                                      |
+| Bosnian               | bs, bs-cyrl, bs-cyrl-ba, bs-latn, bs-latn-ba                                                                                                                                                          |
+| Bulgarian             | bg, bg-bg                                                                                                                                                                                             |
 | Catalan               | ca, ca-es, ca-es-valencia                                                                                                                                                                             |
 | Cherokee              | chr-cher, chr-cher-us, chr-latn                                                                                                                                                                       |
-| Chinois (simplifié)  | zh, zh-Hans, zh-cn, zh-hans-cn, zh-sg, zh-hans-sg                                                                                                                                                     |
-| Chinois (traditionnel) | zh-Hant, zh-hk, zh-mo, zh-tw, zh-hant-hk, zh-hant-mo, zh-hant-tw                                                                                                                                      |
-| Croate              | hr, hr-hr, hr-ba                                                                                                                                                                                      |
-| Tchèque                 | cs, cs-cz                                                                                                                                                                                             |
-| Danois                | da, da-dk                                                                                                                                                                                             |
+| Chinese (Simplified)  | zh, zh-Hans, zh-cn, zh-hans-cn, zh-sg, zh-hans-sg                                                                                                                                                     |
+| Chinese (Traditional) | zh-Hant, zh-hk, zh-mo, zh-tw, zh-hant-hk, zh-hant-mo, zh-hant-tw                                                                                                                                      |
+| Croatian              | hr, hr-hr, hr-ba                                                                                                                                                                                      |
+| Czech                 | cs, cs-cz                                                                                                                                                                                             |
+| Danish                | da, da-dk                                                                                                                                                                                             |
 | Dari                  | prs, prs-af, prs-arab                                                                                                                                                                                 |
-| Hollandais                 | nl, nl-nl, nl-be                                                                                                                                                                                      |
-| Anglais               | en, en-au, en-ca, en-gb, en-ie, en-in, en-nz, en-sg, en-us, en-za, en-bz, en-hk, en-id, en-jm, en-kz, en-mt, en-my, en-ph, en-pk, en-tt, en-vn, en-zw, en-053, en-021, en-029, en-011, en-018, en-014 |
-| Estonien              | et, et-ee                                                                                                                                                                                             |
+| Dutch                 | nl, nl-nl, nl-be                                                                                                                                                                                      |
+| English               | en, en-au, en-ca, en-gb, en-ie, en-in, en-nz, en-sg, en-us, en-za, en-bz, en-hk, en-id, en-jm, en-kz, en-mt, en-my, en-ph, en-pk, en-tt, en-vn, en-zw, en-053, en-021, en-029, en-011, en-018, en-014 |
+| Estonian              | et, et-ee                                                                                                                                                                                             |
 | Filipino              | fil, fil-latn, fil-ph                                                                                                                                                                                 |
-| Finlandais               | fi, fi-fi                                                                                                                                                                                             |
-| Français                | fr, fr-be , fr-ca , fr-ch , fr-fr , fr-lu, fr-015, fr-cd, fr-ci, fr-cm, fr-ht, fr-ma, fr-mc, fr-ml, fr-re, frc-latn, frp-latn, fr-155, fr-029, fr-021, fr-011                                         |
-| Galicien              | gl, gl-es                                                                                                                                                                                             |
-| Géorgien              | ka, ka-ge                                                                                                                                                                                             |
-| Allemand                | de, de-at, de-ch, de-de, de-lu, de-li                                                                                                                                                                 |
-| Grec                 | el, el-gr                                                                                                                                                                                             |
-| Goudjarati              | gu, gu-in                                                                                                                                                                                             |
-| Haoussa                 | ha, ha-latn, ha-latn-ng                                                                                                                                                                               |
-| Hébreu                | he, he-il                                                                                                                                                                                             |
+| Finnish               | fi, fi-fi                                                                                                                                                                                             |
+| French                | fr, fr-be , fr-ca , fr-ch , fr-fr , fr-lu, fr-015, fr-cd, fr-ci, fr-cm, fr-ht, fr-ma, fr-mc, fr-ml, fr-re, frc-latn, frp-latn, fr-155, fr-029, fr-021, fr-011                                         |
+| Galician              | gl, gl-es                                                                                                                                                                                             |
+| Georgian              | ka, ka-ge                                                                                                                                                                                             |
+| German                | de, de-at, de-ch, de-de, de-lu, de-li                                                                                                                                                                 |
+| Greek                 | el, el-gr                                                                                                                                                                                             |
+| Gujarati              | gu, gu-in                                                                                                                                                                                             |
+| Hausa                 | ha, ha-latn, ha-latn-ng                                                                                                                                                                               |
+| Hebrew                | he, he-il                                                                                                                                                                                             |
 | Hindi                 | hi, hi-in                                                                                                                                                                                             |
-| Hongrois             | hu, hu-hu                                                                                                                                                                                             |
-| Islandais             | is, is-is                                                                                                                                                                                             |
+| Hungarian             | hu, hu-hu                                                                                                                                                                                             |
+| Icelandic             | is, is-is                                                                                                                                                                                             |
 | Igbo                  | ig-latn, ig-ng                                                                                                                                                                                        |
-| Indonésien            | id, id-id                                                                                                                                                                                             |
+| Indonesian            | id, id-id                                                                                                                                                                                             |
 | Inuktitut (Latin)     | iu-cans, iu-latn, iu-latn-ca                                                                                                                                                                          |
-| Irlandais                 | ga, ga-ie                                                                                                                                                                                             |
+| Irish                 | ga, ga-ie                                                                                                                                                                                             |
 | isiXhosa              | xh, xh-za                                                                                                                                                                                             |
 | isiZulu               | zu, zu-za                                                                                                                                                                                             |
-| Italien               | it, it-it, it-ch                                                                                                                                                                                      |
-| Japonais              | ja, ja-jp                                                                                                                                                                                            |
+| Italian               | it, it-it, it-ch                                                                                                                                                                                      |
+| Japanese              | ja , ja-jp                                                                                                                                                                                            |
 | Kannada               | kn, kn-in                                                                                                                                                                                             |
 | Kazakh                | kk, kk-kz                                                                                                                                                                                             |
 | Khmer                 | km, km-kh                                                                                                                                                                                             |
-| K’iche’               | quc-latn, qut-gt, qut-latn                                                                                                                                                                            |
+| K'iche'               | quc-latn, qut-gt, qut-latn                                                                                                                                                                            |
 | Kinyarwanda           | rw, rw-rw                                                                                                                                                                                             |
-| Kiswahili             | sw, sw-ke                                                                                                                                                                                             |
+| KiSwahili             | sw, sw-ke                                                                                                                                                                                             |
 | Konkani               | kok, kok-in                                                                                                                                                                                           |
-| Coréen                | ko, ko-kr                                                                                                                                                                                             |
-| Kurde               | ku-arab, ku-arab-iq                                                                                                                                                                                   |
-| Kirgiz                | ky-kg, ky-cyrl                                                                                                                                                                                        |
+| Korean                | ko, ko-kr                                                                                                                                                                                             |
+| Kurdish               | ku-arab, ku-arab-iq                                                                                                                                                                                   |
+| Kyrgyz                | ky-kg, ky-cyrl                                                                                                                                                                                        |
 | Lao                   | lo, lo-la                                                                                                                                                                                             |
-| Letton               | lv, lv-lv                                                                                                                                                                                             |
-| Lituanien            | lt, lt-lt                                                                                                                                                                                             |
-| Luxembourgeois         | lb, lb-lu                                                                                                                                                                                             |
-| Macédonien            | mk, mk-mk                                                                                                                                                                                             |
-| Malais                 | ms, ms-bn, ms-my                                                                                                                                                                                      |
+| Latvian               | lv, lv-lv                                                                                                                                                                                             |
+| Lithuanian            | lt, lt-lt                                                                                                                                                                                             |
+| Luxembourgish         | lb, lb-lu                                                                                                                                                                                             |
+| Macedonian            | mk, mk-mk                                                                                                                                                                                             |
+| Malay                 | ms, ms-bn, ms-my                                                                                                                                                                                      |
 | Malayalam             | ml, ml-in                                                                                                                                                                                             |
-| Maltais               | mt, mt-mt                                                                                                                                                                                             |
+| Maltese               | mt, mt-mt                                                                                                                                                                                             |
 | Maori                 | mi, mi-latn, mi-nz                                                                                                                                                                                    |
-| Marathe               | mr, mr-in                                                                                                                                                                                             |
-| Mongole (cyrillique)  | mn-cyrl, mn-mong, mn-mn, mn-phag                                                                                                                                                                      |
-| Népalais                | ne, ne-np                                                                                                                                                                                             |
-| Norvégien             | nb, nb-no, nn, nn-no, no, no-no,                                                                                                                                                                      |
+| Marathi               | mr, mr-in                                                                                                                                                                                             |
+| Mongolian (Cyrillic)  | mn-cyrl, mn-mong, mn-mn, mn-phag                                                                                                                                                                      |
+| Nepali                | ne, ne-np                                                                                                                                                                                             |
+| Norwegian             | nb, nb-no, nn, nn-no, no, no-no,                                                                                                                                                                      |
 | Odia                  | or, or-in                                                                                                                                                                                             |
-| Persan               | fa, fa-ir                                                                                                                                                                                             |
-| Polonais                | pl, pl-pl                                                                                                                                                                                             |
-| Portugais (Brésil)   | pt-br                                                                                                                                                                                                 |
-| Portugais (Portugal) | pt, pt-pt                                                                                                                                                                                             |
-| Pendjabi               | pa, pa-arab, pa-arab-pk, pa-deva, pa-in                                                                                                                                                               |
+| Persian               | fa, fa-ir                                                                                                                                                                                             |
+| Polish                | pl, pl-pl                                                                                                                                                                                             |
+| Portuguese (Brazil)   | pt-br                                                                                                                                                                                                 |
+| Portuguese (Portugal) | pt, pt-pt                                                                                                                                                                                             |
+| Punjabi               | pa, pa-arab, pa-arab-pk, pa-deva, pa-in                                                                                                                                                               |
 | Quechua               | quz, quz-bo, quz-ec, quz-pe                                                                                                                                                                           |
-| Roumain              | ro, ro-ro                                                                                                                                                                                             |
-| Russe               | ru, ru-ru                                                                                                                                                                                            |
-| Gaélique écossais       | gd-gb, gd-latn                                                                                                                                                                                        |
-| Serbe (latin)       | sr-Latn, sr-latn-cs, sr, sr-latn-ba, sr-latn-me, sr-latn-rs                                                                                                                                           |
-| Serbe (cyrillique)    | sr-cyrl, sr-cyrl-ba, sr-cyrl-cs, sr-cyrl-me, sr-cyrl-rs                                                                                                                                               |
-| Sesotho sa leboa      | nso, nso-za                                                                                                                                                                                           |
+| Romanian              | ro, ro-ro                                                                                                                                                                                             |
+| Russian               | ru , ru-ru                                                                                                                                                                                            |
+| Scottish Gaelic       | gd-gb, gd-latn                                                                                                                                                                                        |
+| Serbian (Latin)       | sr-Latn, sr-latn-cs, sr, sr-latn-ba, sr-latn-me, sr-latn-rs                                                                                                                                           |
+| Serbian (Cyrillic)    | sr-cyrl, sr-cyrl-ba, sr-cyrl-cs, sr-cyrl-me, sr-cyrl-rs                                                                                                                                               |
+| Sesotho sa Leboa      | nso, nso-za                                                                                                                                                                                           |
 | Setswana              | tn, tn-bw, tn-za                                                                                                                                                                                      |
 | Sindhi                | sd-arab, sd-arab-pk, sd-deva                                                                                                                                                                          |
 | Sinhala               | si, si-lk                                                                                                                                                                                             |
-| Slovaque                | sk, sk-sk                                                                                                                                                                                             |
-| Slovène             | sl, sl-si                                                                                                                                                                                             |
-| Espagnol               | es, es-cl, es-co, es-es, es-mx, es-ar, es-bo, es-cr, es-do, es-ec, es-gt, es-hn, es-ni, es-pa, es-pe, es-pr, es-py, es-sv, es-us, es-uy, es-ve, es-019, es-419                                        |
-| Suédois               | sv, sv-se, sv-fi                                                                                                                                                                                      |
-| Tadjik (cyrillique)      | tg-arab, tg-cyrl, tg-cyrl-tj, tg-latn                                                                                                                                                                 |
-| Tamoul                 | ta, ta-in                                                                                                                                                                                             |
+| Slovak                | sk, sk-sk                                                                                                                                                                                             |
+| Slovenian             | sl, sl-si                                                                                                                                                                                             |
+| Spanish               | es, es-cl, es-co, es-es, es-mx, es-ar, es-bo, es-cr, es-do, es-ec, es-gt, es-hn, es-ni, es-pa, es-pe, es-pr, es-py, es-sv, es-us, es-uy, es-ve, es-019, es-419                                        |
+| Swedish               | sv, sv-se, sv-fi                                                                                                                                                                                      |
+| Tajik (Cyrillic)      | tg-arab, tg-cyrl, tg-cyrl-tj, tg-latn                                                                                                                                                                 |
+| Tamil                 | ta, ta-in                                                                                                                                                                                             |
 | Tatar                 | tt-arab, tt-cyrl, tt-latn, tt-ru                                                                                                                                                                      |
 | Telugu                | te, te-in                                                                                                                                                                                             |
-| Thaï                  | th, th-th                                                                                                                                                                                             |
+| Thai                  | th, th-th                                                                                                                                                                                             |
 | Tigrinya              | ti, ti-et                                                                                                                                                                                             |
-| Turc               | tr, tr-tr                                                                                                                                                                                             |
-| Turkmène               | tk-cyrl, tk-latn, tk-tm, tk-latn-tr, tk-cyrl-tr                                                                                                                                                       |
-| Ukrainien             | uk, uk-ua                                                                                                                                                                                             |
-| Ourdou                  | ur, ur-pk                                                                                                                                                                                             |
-| Ouïghour                | ug-arab, ug-cn, ug-cyrl, ug-latn                                                                                                                                                                      |
-| Ouzbek (latin)         | uz, uz-cyrl, uz-latn, uz-latn-uz                                                                                                                                                                      |
-| Vietnamien            | vi, vi-vn                                                                                                                                                                                             |
-| Gallois                 | cy, cy-gb                                                                                                                                                                                             |
+| Turkish               | tr, tr-tr                                                                                                                                                                                             |
+| Turkmen               | tk-cyrl, tk-latn, tk-tm, tk-latn-tr, tk-cyrl-tr                                                                                                                                                       |
+| Ukrainian             | uk, uk-ua                                                                                                                                                                                             |
+| Urdu                  | ur, ur-pk                                                                                                                                                                                             |
+| Uyghur                | ug-arab, ug-cn, ug-cyrl, ug-latn                                                                                                                                                                      |
+| Uzbek (Latin)         | uz, uz-cyrl, uz-latn, uz-latn-uz                                                                                                                                                                      |
+| Vietnamese            | vi, vi-vn                                                                                                                                                                                             |
+| Welsh                 | cy, cy-gb                                                                                                                                                                                             |
 | Wolof                 | wo, wo-sn                                                                                                                                                                                             |
-| Yorouba                | yo-latn, yo-ng                                                                                                                                                                                        |
+| Yoruba                | yo-latn, yo-ng                                                                                                                                                                                        |
 
  
 
@@ -139,6 +139,6 @@ Voici la liste des langues que le Windows Store prend en charge. Votre applicati
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,134 +1,134 @@
 ---
 author: DBirtolo
 ms.assetid: 415F4107-0612-4235-9722-0F5E4E26F957
-title: Capteurs
-description: "Les capteurs permettent à votre application de connaître la relation entre un appareil et le monde physique qui l’entoure. Ils peuvent indiquer à votre application la direction, l’orientation et le mouvement de l’appareil."
+title: Sensors
+description: Sensors let your app know the relationship between a device and the physical world around it. Sensors can tell your app the direction, orientation, and movement of the device.
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 15f9fbdc48d43feb02f46313cea4001392d7f0fe
+ms.openlocfilehash: 73ee42a275d0c0f0a08ddf19ddde4eabd21a7191
 
 ---
-# Capteurs
+# Sensors
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Les capteurs permettent à votre application de connaître la relation entre un appareil et le monde physique qui l’entoure. Ils peuvent indiquer à votre application la direction, l’orientation et le mouvement de l’appareil. Ces capteurs peuvent rendre votre jeu, votre utilitaire ou votre application de réalité augmentée plus utile et interactive en fournissant une forme unique d’entrée, par exemple l’utilisation du mouvement de l’appareil pour organiser les personnages à l’écran ou pour simuler la présence dans un cockpit avec l’appareil pour volant.
+Sensors let your app know the relationship between a device and the physical world around it. Sensors can tell your app the direction, orientation, and movement of the device. These sensors can help make your game, augmented reality app, or utility app more useful and interactive by providing a unique form of input, such as using the motion of the device to arrange the characters on the screen or to simulate being in a cockpit and using the device as the steering wheel.
 
-En règle générale, vous devez décider dès le début si votre application dépendra exclusivement des capteurs ou si ceux-ci offriront simplement un mécanisme supplémentaire de contrôle. Par exemple, un jeu de course automobile utilisant l’appareil comme volant virtuel pourrait également être contrôlé par l’intermédiaire d’une interface graphique utilisateur à l’écran. De cette façon, l’application fonctionne quels que soient les capteurs disponibles sur le système. En revanche, un jeu de labyrinthe à bille avec inclinaison pourrait être codé pour ne fonctionner que sur les systèmes équipés des capteurs adéquats. Vous devez faire le choix stratégique quant à la dépendance totale envers des capteurs. Notez qu’un modèle de contrôle avec la souris ou les fonctionnalités tactiles procure davantage de contrôle, en contrepartie d’une immersion moindre.
+As a general rule, decide from the outset whether your app will depend exclusively on sensors or if sensors will just offer an additional control mechanism. For example, a driving game using a device as a virtual steering wheel could alternatively be controlled through an on-screen GUI – this way, the app works regardless of the sensors available on the system. On the other hand, a marble tilt maze could be coded to only work on systems that have the appropriate sensors. You must make the strategic choice of whether to fully rely on sensors. Note that a mouse/touch control scheme trades immersion for greater control.
 
-La vidéo suivante présente certains capteurs à votre disposition lorsque vous générez votre application. Cette liste n’est pas exhaustive, mais décrit certains capteurs communs et montre leur objectif.
+The following video demonstrates some of the sensors available to you when you are building your app. This is not an exhaustive list, but goes over some of the more common sensors and demonstrates their purpose.
 
-<iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/acea5c8e-8699-483b-87f0-f65f80065470/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no">One Dev Minute - Vue d’ensemble des capteurs</iframe>
+<iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/acea5c8e-8699-483b-87f0-f65f80065470/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no">One dev minute - Sensors Overview</iframe>
 
-| Rubrique                                                       | Description  |
+| Topic                                                       | Description  |
 |-------------------------------------------------------------|--------------|
-| [Étalonner les capteurs](calibrate-sensors.md)                   | Dans un appareil basé sur le magnétomètre (la boussole, l’inclinomètre et le capteur d’orientation), il peut s’avérer nécessaire d’étalonner les capteurs en raison de facteurs environnementaux. L’énumération [<strong>MagnetometerAccuracy</strong>](https://msdn.microsoft.com/library/windows/apps/Dn297552) peut aider à déterminer la marche à suivre quand votre appareil doit être étalonné. |
-| [Orientation de capteur](sensor-orientation.md)                 | Les données du capteur provenant des classes [<strong>OrientationSensor</strong>](https://msdn.microsoft.com/library/windows/apps/BR206371) sont définies par leurs axes de référence. Ces axes sont définis par l’orientation paysage de l’appareil et pivotent avec celui-ci à mesure que l’utilisateur le fait tourner. |
-| [Utiliser l’accéléromètre](use-the-accelerometer.md)           | Découvrez comment utiliser l’accéléromètre pour répondre aux mouvements de l’utilisateur. |
-| [Utiliser la boussole](use-the-compass.md)                       | Découvrez comment utiliser la boussole pour déterminer l’orientation actuelle. |
-| [Utiliser le gyromètre](use-the-gyrometer.md)                   | Découvrez comment utiliser le gyromètre pour détecter les changements de mouvements de l’utilisateur. | 
-| [Utiliser l’inclinomètre](use-the-inclinometer.md)             | Découvrez comment utiliser l’inclinomètre pour déterminer le tangage, le roulis et le lacet. |
-| [Utiliser le capteur de luminosité](use-the-light-sensor.md)             | Découvrez comment utiliser le capteur de luminosité ambiante pour détecter les changements de luminosité. |
-| [Utiliser le capteur d’orientation](use-the-orientation-sensor.md) | Découvrez comment utiliser les capteurs d’orientation pour déterminer l’orientation de l’appareil.|
+| [Calibrate sensors](calibrate-sensors.md)                   | Sensors in a device based on the magnetometer – the compass, inclinometer and orientation sensor - can become in need of calibration due to environmental factors. The [<strong>MagnetometerAccuracy</strong>](https://msdn.microsoft.com/library/windows/apps/Dn297552) enumeration can help determine a course of action when your device is in need of calibration. |
+| [Sensor orientation](sensor-orientation.md)                 | Sensor data from the [<strong>OrientationSensor</strong>](https://msdn.microsoft.com/library/windows/apps/BR206371) classes is defined by their reference axes. These axes are defined by the device's landscape orientation and rotate with the device as the user turns it. |
+| [Use the accelerometer](use-the-accelerometer.md)           | Learn how to use the accelerometer to respond to user movement. |
+| [Use the compass](use-the-compass.md)                       | Learn how to use the compass to determine the current heading. |
+| [Use the gyrometer](use-the-gyrometer.md)                   | Learn how to use the gyrometer to detect changes in user movement. | 
+| [Use the inclinometer](use-the-inclinometer.md)             | Learn how to use the inclinometer to determine pitch, roll, and yaw. |
+| [Use the light sensor](use-the-light-sensor.md)             | Learn how to use the ambient light sensor to detect changes in lighting. |
+| [Use the orientation sensor](use-the-orientation-sensor.md) | Learn how to use the orientation sensors to determine the device orientation.|
 
-## Traitement par lot du capteur
+## Sensor batching
 
-Certains capteurs prennent en charge le concept de traitement par lot. Cela varie selon le capteur individuel disponible. Lorsqu’un capteur implémente le traitement par lot, il recueille plusieurs points de données sur un intervalle de temps spécifié et transfère toutes ces données en même temps. Cela diffère du comportement normal, où un capteur communique ses résultats dès qu’il effectue une lecture. Le diagramme suivant montre comment les données sont collectées et ensuite remises, tout d’abord avec la remise normale, puis avec la remise par lot.
+Some sensors support the concept of batching. This will vary depending on the individual sensor available. When a sensor implements batching, it collects several points of data over a specified time interval and then transfers all of that data at one time. This is different from normal behavior where a sensor reports its findings as soon as it performs a reading. Consider the following diagram which shows how data is collected and then delivered, first with normal delivery and then with batched delivery.
 
-![Collecte par lot du capteur](images/batchsample.png)
+![Sensor batch collection](images/batchsample.png)
 
-Le principal avantage du traitement par lot du capteur est de prolonger l’autonomie de la batterie. L’envoi différé des données permet de réduire la consommation d’énergie du processeur et d’éliminer la nécessité d’un traitement immédiat des données. Les composants du système peuvent rester en veille jusqu’à ce qu’ils soient requis, ce qui génère d’importantes économies d’énergie.
+The primary advantage for sensor batching is prolonging battery life. When the data is not sent immediately, that saves on processor power and prevents the data from needing to be immediately processed. Parts of the system can sleep until they are needed, which generates a significant power savings.
 
-Vous pouvez modifier la fréquence à laquelle le capteur envoie les lots en ajustant la latence. Par exemple, le capteur [**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687) présente la propriété [**ReportLatency**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.reportlatency). Lorsque cette propriété est définie pour une application, le capteur envoie les données après le laps de temps spécifié. Vous pouvez contrôler la quantité de données accumulée sur une période de latence donnée en définissant la propriété [**ReportInterval**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.reportinterval).
+You can influence how often the sensor sends batches by adjusting the latency. For example, the [**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687) sensor has the [**ReportLatency**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.reportlatency) property. When this property is set for an application, the sensor will send data after the specified amount of time. You can control how much data is accumulated over a given latency by setting the [**ReportInterval**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.reportinterval) property.
 
-La définition de la latence s’accompagne néanmoins de quelques inconvénients. Le premier est que chaque capteur présente une valeur [**MaxBatchSize**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.maxbatchsize.aspx) qui varie selon ses caractéristiques. Cette valeur correspond au nombre d’événements que le capteur peut mettre en cache avant d’être obligé de les envoyer. Si vous multipliez **MaxBatchSize** par [**ReportInterval**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.reportinterval), vous obtenez la valeur [**ReportLatency**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.reportlatency) maximale. Si vous spécifiez une valeur supérieure à celle-ci, la latence maximale est utilisée afin d’empêcher la perte de données. En outre, différentes applications peuvent chacune définir une latence spécifique. Pour répondre aux besoins de toutes les applications, la période de latence la plus courte est utilisée. Pour ces raisons, la latence que vous définissez dans votre application peut ne pas correspondre à la latence observée.
+There are a couple of caveats to keep in mind with respect to setting the latency. The first caveat is that each sensor has a [**MaxBatchSize**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.maxbatchsize.aspx) that it can support based on the sensor itself. This is the number of events that the sensor can cache before it is forced to send them. If you multiply **MaxBatchSize** by [**ReportInterval**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.reportinterval), that determines the maximum [**ReportLatency**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.reportlatency) value. If you specify a higher value than this, the maximum latency will be used so that you do not lose data. In addition, multiple applications can each set a desired latency. In order to meet the needs of all applications, the shortest latency period will be used. Because of these facts, the latency you set in your application may not match the observed latency.
 
-Si un capteur utilise la création de rapports par lot, l’appel de [**GetCurrentReading**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.getcurrentreading) permet d’effacer le lot actuel de données et de démarrer une nouvelle période de latence.
+If a sensor is using batch reporting, calling [**GetCurrentReading**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.getcurrentreading) will clear the current batch of data and start a new latency period.
 
-## Accéléromètre
+## Accelerometer
 
-Le capteur [**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687) mesure les valeurs de force G le long des axes X, Y et Z de l’appareil. Il convient parfaitement aux applications simples basées sur des mouvements. Notez que les «valeurs de force G» incluent l’accélération due à la gravité. Si l’appareil a **FaceUp** comme [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) sur une table, l’accéléromètre indique -1 G sur l’axe Z. Ainsi, les accéléromètres ne mesurent pas nécessairement simplement l’accélération par rapport aux coordonnées, le taux de changement de vélocité. Durant l’utilisation d’un accéléromètre, assurez-vous d’effectuer la distinction entre le vecteur gravitationnel de la gravité et le vecteur d’accélération linéaire du mouvement. Notez que le vecteur gravitationnel doit avoir une valeur normalisée de 1 pour un appareil immobile.
+The [**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687) sensor measures G-force values along the X, Y, and Z axes of the device and is great for simple motion-based applications. Note that G-force values include acceleration due to gravity. If the device has the [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) of **FaceUp** on a table, then the accelerometer would read -1 G on the Z axis. Thus, accelerometers do not necessarily measure just coordinate acceleration – the rate of change of velocity. When using an accelerometer, make sure to differentiate between the gravitational vector from gravity and the linear acceleration vector from motion. Note that the gravitational vector should normalize to 1 for a stationary device.
 
-Les schémas suivants illustrent ce qui suit :
+The following diagrams illustrate:
 
--   V1 = Vecteur 1 = Force due à la gravité
--   V2 = Vecteur 2 = Axe -Z du châssis de l’appareil (pointe vers la direction opposée à l’arrière de l’écran)
--   Θi = Angle d’inclinaison = angle entre l’axe –Z du châssis de l’appareil et le vecteur de gravité
+-   V1 = Vector 1 = Force due to gravity
+-   V2 = Vector 2 = -Z axis of device chassis (points out of back of screen)
+-   Θi = Tilt angle (inclination) = angle between –Z axis of device chassis and gravity vector
 
-![Accéléromètre](images/accelerometer1.png)![Mesure d’accéléromètre](images/accelerometer2.png)
+![Accelerometer](images/accelerometer1.png)![Accelerometer measurement](images/accelerometer2.png)
 
-Parmi les applications qui peuvent utiliser l’accéléromètre, citons les jeux dans lesquels une bille à l’écran glisse dans la direction dans laquelle vous inclinez l’appareil (vecteur gravitationnel). Ce type de fonctionnalité reflète étroitement celui de l’[**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766) et pourrait être obtenu avec ce capteur, à l’aide d’une combinaison de tangage et de roulis. Le recours au vecteur de gravité de l’accéléromètre simplifie quelque peu ce processus en fournissant un vecteur manipulé facilement de manière mathématique pour l’inclinaison de l’appareil. Autre exemple : une application qui émet un bruit de fouet quand l’utilisateur déplace l’appareil d’un coup sec (vecteur d’accélération linéaire).
+Apps that might use the accelerometer sensor include a game where a marble on the screen rolls in the direction you tilt the device (gravitational vector). This type of functionality closely mirrors that of the [**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766) and could also be done with that sensor by using a combination of pitch and roll. Using the accelerometer’s gravity vector simplifies this somewhat by providing an easily mathematically manipulated vector for device tilt. Another example would be an app that makes a whip’s cracking sound when the user flicks the device through the air (linear acceleration vector).
 
-## Capteur d’activité
+## Activity sensor
 
-Le capteur [**Activity**](https://msdn.microsoft.com/library/windows/apps/Dn785096) détermine l’état actuel de l’appareil connecté au capteur. Ce capteur est fréquemment utilisé dans des applications de santé et forme pour suivre l’activité de course ou de marche d’un utilisateur porteur d’un appareil. Pour obtenir la liste des activités que cette API de capteur peut détecter, voir [**ActivityType**](https://msdn.microsoft.com/library/windows/apps/Dn785128).
+The [**Activity**](https://msdn.microsoft.com/library/windows/apps/Dn785096) sensor determines the current status of the device attached to the sensor. This sensor is frequently used in fitness applications to keep track of when a user carrying a device is running or walking. See [**ActivityType**](https://msdn.microsoft.com/library/windows/apps/Dn785128) for a list of possible activities that can be detected by this sensor API.
 
-## Altimètre
+## Altimeter
 
-Le capteur [**Altimeter**](https://msdn.microsoft.com/library/windows/apps/Dn858893) renvoie une valeur qui indique l’altitude du capteur. Cela vous permet de suivre les changements d’altitude en termes de mètres par rapport au niveau de la mer. Un exemple d’application pouvant utiliser cela est une application qui mesure les changements d’altitude durant une course pour calculer les calories brûlées. Dans ce cas, les données de ce capteur pourraient être combinées avec celles du capteur [**Activity**](https://msdn.microsoft.com/library/windows/apps/Dn785096) pour fournir des informations de suivi plus précises.
+The [**Altimeter**](https://msdn.microsoft.com/library/windows/apps/Dn858893) sensor returns a value that indicates the altitude of the sensor. This enables you to keep track of a change in altitude in terms of meters from sea level. One example of an app that might use this would be a running app that keeps track of the elevation changes during a run to calculate the calories burned. In this case, this sensor data could be combined with the [**Activity**](https://msdn.microsoft.com/library/windows/apps/Dn785096) sensor to provide more accurate tracking information.
 
-## Baromètre
+## Barometer
 
-Le capteur [**Barometer**](https://msdn.microsoft.com/library/windows/apps/Dn872405) permet à une application d’obtenir les lectures barométriques. Une application météo pourrait utiliser ces informations pour indiquer la pression atmosphérique actuelle. Cela permettrait de fournir des informations plus détaillées et de prévoir d’éventuels changements des conditions météo.
+The [**Barometer**](https://msdn.microsoft.com/library/windows/apps/Dn872405) sensor enables an application to get barometric readings. A weather application could use this information to provide the current atmospheric pressure. This could be used to provide more detailed information and predict potential weather changes.
 
-## Boussole
+## Compass
 
-Le capteur [**Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705) renvoie un cap 2D par rapport au Nord magnétique et au plan horizontal de la Terre. Le capteur de boussole ne doit pas être utilisé pour déterminer l’orientation spécifique de l’appareil ou pour représenter quoi que ce soit dans un espace en trois dimensions. Certaines caractéristiques géographiques pouvant provoquer une inclinaison naturelle du cap, certains systèmes prennent en charge à la fois [**HeadingMagneticNorth**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.compassreading.headingmagneticnorth.aspx) et [**HeadingTrueNorth**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.compassreading.headingtruenorth.aspx). Réfléchissez à celle qui convient le mieux à votre application, mais souvenez-vous que les systèmes n’indiquent pas tous la valeur du Nord magnétique. Le gyromètre et le magnétomètre (un appareil mesurant la magnitude de la force magnétique) combinent leurs données pour générer le cap de la boussole, ce qui a comme effet net de stabiliser les données (la force du champ magnétique est très instable en raison des composants électriques du système).
+The [**Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705) sensor returns a 2D heading with respect to magnetic north based on the horizontal plane of the earth. The compass sensor should not be used in determining specific device orientation or for representing anything in 3D space. Geographical features can cause natural declination in the heading, so some systems support both [**HeadingMagneticNorth**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.compassreading.headingmagneticnorth.aspx) and [**HeadingTrueNorth**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.compassreading.headingtruenorth.aspx). Think about which one your app prefers, but remember that not all systems will report a true north value. The gyrometer and magnetometer (a device measuring magnetic strength magnitude) sensors combine their data to produce the compass heading, which has the net effect of stabilizing the data (magnetic field strength is very unstable due to electrical system components).
 
-![Lectures de la boussole par rapport au Pôle Nord magnétique](images/compass.png)
+![Compass readings in regards to Magnetic North Pole](images/compass.png)
 
-Les applications qui doivent afficher une rose des vents ou parcourir une carte utilisent généralement le capteur de boussole.
+Apps that want to display a compass rose or navigate a map would typically use the compass sensor.
 
-## Gyromètre
+## Gyrometer
 
-Le capteur [**Gyrometer**](https://msdn.microsoft.com/library/windows/apps/BR225718) mesure les vélocités angulaires le long des axes X, Y et Z. Ces valeurs sont très utiles dans les applications simples basées sur des mouvements, qui ne se soucient pas de l’orientation de l’appareil mais de sa rotation à différentes vitesses. Les gyromètres peuvent être perturbés en cas de bruit dans les données ou de décalage constant le long d’un ou plusieurs axes. Interrogez l’accéléromètre pour vérifier si l’appareil se déplace, afin de déterminer si le gyromètre est perturbé par un décalage, puis compensez le cas échéant dans votre application.
+The [**Gyrometer**](https://msdn.microsoft.com/library/windows/apps/BR225718) sensor measures angular velocities along the X, Y, and Z axes. These are very useful in simple motion-based apps that do not concern themselves with device orientation but care about the device rotating at different speeds. Gyrometers can suffer from noise in the data or a constant bias along one or more of the axes. You should query the accelerometer to verify whether the device is moving in order to determine if the gyrometer suffers from a bias, and then compensate accordingly in your app.
 
-![Gyromètre avec tangage, roulis et lacet](images/gyrometer.png)
+![Gyrometer with pitch, roll, and yaw](images/gyrometer.png)
 
-Comme exemple d’application pouvant utiliser le gyromètre, citons un jeu qui fait tourner une roulette de casino en fonction d’un bref mouvement de l’appareil.
+An example of an app that could use the gyrometer sensor is a game that spins a roulette wheel based on a quick rotational jerk of the device.
 
-## Inclinomètre
+## Inclinometer
 
-Le capteur [**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766) spécifie les valeurs de lacet, tangage et roulis d’un appareil et convient parfaitement aux applications pour lesquelles l’emplacement de l’appareil dans l’espace est important. Les valeurs de tangage et de roulis sont dérivées en prenant le vecteur de gravité de l’accéléromètre et en intégrant les données du gyromètre. Le lacet est établi à partir des données du magnétomètre et du gyromètre (de manière semblable au cap de la boussole). Les inclinomètres offrent des données d’orientation avancées dans un format facilement compréhensible et utilisable. Vous pouvez les utiliser quand vous souhaitez connaître l’orientation de l’appareil mais que vous n’avez pas besoin de manipuler les données des capteurs.
+The [**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766) sensor specifies the yaw, pitch, and roll values of a device and work best with apps that care about how the device is situated in space. Pitch and roll are derived by taking the accelerometer’s gravity vector and by integrating the data from the gyrometer. Yaw is established from magnetometer and gyrometer (similar to compass heading) data. Inclinometers offer advanced orientation data in an easily digestible and understandable way. Use inclinometers when you need device orientation but do not need to manipulate the sensor data.
 
-![Inclinomètre avec données de tangage, roulis et lacet](images/inclinometer.png)
+![Inclinometer with pitch, roll and yaw data](images/inclinometer.png)
 
-Les applications qui changent leur vue pour s’adapter à l’orientation de l’appareil peuvent utiliser le capteur inclinomètre. Une application qui affiche un avion dont la position correspond au tangage, au roulis et au lacet de l’appareil utiliserait également les mesures de l’inclinomètre.
+Apps that change their view to match the orientation of the device can use the inclinometer sensor. Also, an app that displays an airplane that matches the yaw, pitch, and roll of the device would also use the inclinometer readings.
 
-## Capteur de lumière
+## Light sensor
 
-Le capteur [**Light**](https://msdn.microsoft.com/library/windows/apps/BR225790) est capable de déterminer la lumière ambiante. Cela permet à une application de déterminer les changements de luminosité à proximité de l’appareil. Par exemple, un utilisateur disposant d’un appareil de type tablette peut passer d’un espace couvert à un espace découvert pendant une journée ensoleillée. Une application intelligente pourrait utiliser cette valeur pour modifier le contraste entre l’arrière-plan et la police affichée. Le contenu resterait ainsi lisible dans les conditions plus lumineuses de l’extérieur.
+The [**Light**](https://msdn.microsoft.com/library/windows/apps/BR225790) sensor is capable of determining the ambient light surrounding the sensor. This enables an app to determine when the light setting surrounding a device has changed. For example, a user with a slate device might walk from indoors to outdoors on a sunny day. A smart application could use this value to increase the contrast between the background and the font being rendered. That would make the content still readable in the brighter, outdoor setting.
 
-## Capteur d’orientation
+## Orientation sensor
 
-L’orientation de l’appareil est exprimée par l’intermédiaire du quaternion et d’une matrice de rotation. L’[**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) offre un degré élevé de précision dans la détermination de la position de l’appareil dans l’espace par rapport au cap absolu. Les données **OrientationSensor** sont dérivées de l’accéléromètre, du gyromètre et du magnétomètre. Comme tels, les capteurs inclinomètre et boussole peuvent être dérivés des valeurs de quaternion. Les quaternions et les matrices de rotation se prêtent bien à la manipulation mathématique avancée et sont souvent utilisés dans la programmation graphique. Les applications ayant recours à une manipulation complexe doivent utiliser de préférence le capteur d’orientation, car de nombreuses transformations sont basées sur les quaternions et les matrices de rotation.
+Device orientation is expressed through both quaternion and a rotation matrix. The [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) offers a high degree of precision in determining how the device is situated in space with respect to absolute heading. The **OrientationSensor** data is derived from the accelerometer, gyrometer, and magnetometer. As such, both the inclinometer and compass sensors can be derived from the quaternion values. Quaternions and rotation matrices lend themselves well to advanced mathematical manipulation and are often used in graphical programming. Apps using complex manipulation should favor the orientation sensor as many transforms are based off of quaternions and rotation matrices.
 
-![Données de capteur d’orientation](images/orientation-sensor.png)
+![Orientation sensor data](images/orientation-sensor.png)
 
-Le capteur d’orientation est souvent utilisé dans les applications de réalité augmentée avancées qui peignent une superposition sur votre environnement en fonction de la direction dans laquelle pointe l’arrière de l’appareil.
+The orientation sensor is often used in advanced augmented reality apps that paint an overlay on your surroundings based on the direction the back of the device is pointing.
 
-## Podomètre
+## Pedometer
 
-Le capteur [**Pedometer**](https://msdn.microsoft.com/library/windows/apps/Dn878203) suit le nombre de pas effectués par l’utilisateur porteur de l’appareil connecté. Le capteur est configuré pour suivre le nombre de pas pendant une période donnée. Plusieurs applications de forme et santé suivent ainsi le nombre de pas effectués pour aider l’utilisateur à définir et à atteindre divers objectifs. Ces informations peuvent ensuite être collectées et stockées pour afficher la progression au fil du temps.
+The [**Pedometer**](https://msdn.microsoft.com/library/windows/apps/Dn878203) sensor keeps track of the number of steps taken by the user carrying the connected device. The sensor is configured to keep track of the number of steps over a given time period. Several fitness applications like to keep track of the number of steps taken in order to help the user set and reach various goals. This information can then be collected and stored to show progress over time.
 
-## Capteur de proximité
+## Proximity sensor
 
-Le capteur [**Proximity**](https://msdn.microsoft.com/library/windows/apps/Dn872427) peut indiquer s’il détecte ou non certains objets. En plus de déterminer si un objet est ou non à portée de l’appareil, le capteur de proximité peut également déterminer la distance de l’objet détecté. Un exemple d’utilisation pourrait être une application qui doit sortir du mode veille quand un utilisateur entre dans une plage spécifiée. L’appareil pourrait rester en état de veille avec faible consommation d’énergie jusqu’à ce que le capteur de proximité détecte un objet, avec pour effet d’activer l’appareil.
+The [**Proximity**](https://msdn.microsoft.com/library/windows/apps/Dn872427) sensor can be used to indicate whether or not objects are detected by the sensor. In addition to determining whether or not an object is within range of the device, the proximity sensor also can determine the distance to the detected object. One example where this could be used is with an application that wants to emerge from a sleep state when a user comes within a specified range. The device could be in a low-powered sleep state until the proximity sensor detects an object, and then could enter a more active state.
 
-## Orientation simple
+## Simple orientation
 
-Le [**SimpleOrientationSensor**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.simpleorientationsensor.aspx) détecte l’orientation de quadrant actuelle de l’appareil spécifié, ou s’il est face vers le haut ou face vers le bas. Il possède six états [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) possibles (**NotRotated**, **Rotated90**, **Rotated180**, **Rotated270**, **FaceUp**, **FaceDown**).
+The [**SimpleOrientationSensor**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.simpleorientationsensor.aspx) detects the current quadrant orientation of the specified device or it’s face-up or face-down. It has six possible [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) states (**NotRotated**, **Rotated90**, **Rotated180**, **Rotated270**, **FaceUp**, **FaceDown**).
 
-Une application de lecture qui change son affichage selon que l’appareil est tenu parallèlement ou perpendiculairement au sol utiliserait les valeurs de SimpleOrientationSensor pour déterminer comment l’appareil est tenu.
+A reader app that changes its display based on the device being held parallel or perpendicular to the ground would use the values from the SimpleOrientationSensor to determine how the device is being held.
 
-## Exemples
+## Samples
 
-Pour découvrir certains exemples illustrant l’utilisation de deux capteurs différents, voir le [référentiel d’exemples de capteur Windows](http://go.microsoft.com/fwlink/?LinkID=616041).
-
-
+For some samples that demonstrate using a couple of different sensors, see [Windows Sensor Samples](http://go.microsoft.com/fwlink/?LinkID=616041).
 
 
-<!--HONumber=Jul16_HO2-->
+
+
+<!--HONumber=Aug16_HO3-->
 
 

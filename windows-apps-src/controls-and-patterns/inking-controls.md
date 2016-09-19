@@ -1,34 +1,38 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Ink tools described
-title: Inking Controls
+Description: Description des outils Encre
+title: "Contrôles pour l’entrée manuscrite"
 label: Inking Controls
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 7198f4084df8ce484cdc5f6b3231a4bdb02f18b5
+
 ---
+# Contrôles pour l’entrée manuscrite
+
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-# Inking controls
+Il existe deux contrôles différents qui facilitent l’entrée manuscrite dans les applications de plateforme Windows universelle (UWP): [**InkCanvas**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx) et [**InkToolbar**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx).
 
-There are two different controls that facilitate inking in Universal Windows Platform (UWP) apps: [**InkCanvas**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx) and [**InkToolbar**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx).
+Le contrôle InkCanvas permet de restituer une entrée de stylet sous la forme d’un trait d’encre (via les paramètres par défaut de couleur et d’épaisseur) ou d’un trait d’effacement. Ce contrôle est une superposition transparente qui n’inclut pas d’interface utilisateur intégrée permettant de modifier les propriétés de traits d’encre par défaut.
 
-The InkCanvas control renders pen input as either an ink stroke (using default settings for color and thickness) or an erase stroke. This control is a transparent overlay that doesn't include any built-in UI for changing the default ink stroke properties.
+>**Remarque**&nbsp;&nbsp;InkCanvas peut être configuré pour prendre en charge des fonctionnalités similaires pour la souris et les entrées tactiles.
 
->**Note**&nbsp;&nbsp;InkCanvas can be configured to support similar functionality for both mouse and touch input.
+Comme le contrôle InkCanvas n’inclut pas de prise en charge de la modification des paramètres de trait d’encre par défaut, il peut être jumelé à un contrôle InkToolbar. InkToolbar contient une collection extensible et personnalisable de boutons activant des fonctionnalités d’entrée manuscrite dans un InkCanvas associé.
 
-As the InkCanvas control does not include support for changing the default ink stroke settings, it can be paired with an InkToolbar control. The InkToolbar contains a customizable and extensible collection of buttons that activate ink-related features in an associated InkCanvas.
+Par défaut, l’élément InkToolbar comprend des boutons pour dessiner, effacer, surligner et afficher une règle. Selon la fonctionnalité, d’autres paramètres et commandes tels que la couleur de l’encre, l’épaisseur du trait, la suppression totale, sont fournis dans un menu volant.
 
-By default, the InkToolbar includes buttons for drawing, erasing, highlighting, and displaying a ruler. Depending on the feature, other settings and commands, such as ink color, stroke thickness, erase all ink, are provided in a flyout.
-
->**Note**&nbsp;&nbsp;InkToolbar supports pen and mouse input and can be configured to recognize touch input.
+>**Remarque**&nbsp;&nbsp;InkToolbar prend en charge la saisie à la souris et au stylet et peut être configuré pour reconnaître les entrées tactiles.
 
 <img src="images/ink-tools-invoked-toolbar.png" width="300">
 
 <div class="important-apis" >
-<b>Important APIs</b><br/>
+<b>API importantes</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx"><strong>InkCanvas class</strong></a></li>
-<li><a href="https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx"><strong>InkToolbar class</strong></a></li>
-<li><a href="https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx"><strong>InkPresenter class</strong></a></li>
+<li><a href="https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx"><strong>Classe InkCanvas</strong></a></li>
+<li><a href="https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx"><strong>Classe InkToolbar</strong></a></li>
+<li><a href="https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx"><strong>Classe InkPresenter</strong></a></li>
 <li><a href="https://msdn.microsoft.com/library/windows/apps/br208524"><strong>Windows.UI.Input.Inking</strong></a></li>
 </ul>
 
@@ -38,118 +42,124 @@ By default, the InkToolbar includes buttons for drawing, erasing, highlighting, 
 
 
 
-## Is this the right control?
+## Est-ce le contrôle approprié?
 
-Use the InkCanvas when you need to enable basic inking features in your app without providing any ink settings to the user.
+Utilisez InkCanvas lorsque vous devez activer des fonctionnalités d’entrée manuscrite de base dans votre application sans fournir de paramètres d’entrée manuscrite à l’utilisateur.
 
-By default, strokes are rendered as ink when using the pen tip (a black ballpoint pen with a thickness of 2 pixels) and as an eraser when using the eraser tip. If an eraser tip is not present, the InkCanvas can be configured to process input from the pen tip as an erase stroke.
+Par défaut, les traits sont rendus sous forme d’entrée manuscrite lors de l’utilisation de la pointe du stylet (un stylo à bille noir avec une épaisseur de 2pixels) et de gomme lors de l’utilisation de la gomme. En l’absence de gomme, l’élément InkCanvas peut être configuré pour traiter l’entrée à partir de la pointe du stylet comme un trait d’effacement.
 
-Pair the InkCanvas with an InkToolbar to provide a UI for activating ink features and setting basic ink properties such as stroke size, color, and shape of the pen tip.
+Jumelez InkCanvas avec un élément InkToolbar pour fournir une interface utilisateur permettant l’activation des fonctionnalités d’entrée manuscrite et la définition de propriétés d’entrée manuscrite de base, telles que la taille du trait, la couleur et la forme de la pointe du stylet.
 
->**Note**&nbsp;&nbsp;For more extensive customization of ink stroke rendering on an InkCanvas, use the underlying [**InkPresenter**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx) object.
+>**Remarque**&nbsp;&nbsp;Pour une personnalisation étendue du rendu du trait d’encre sur un InkCanvas, utilisez l’objet [**InkPresenter**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx) sous-jacent.
 
-## Examples
+## Exemples
 
-**Microsoft Edge**
+**MicrosoftEdge**
 
-The Edge browser uses the InkCanvas and InkToolbar for **Web Notes**.  
-![InkCanvas is used to ink in Microsoft Edge](images/ink-tools-edge.png)
+Le navigateur Edge utilise InkCanvas et InkToolbar pour **Notes Web**.  
+![InkCanvas est utilisé pour effectuer une entrée manuscrite dans MicrosoftEdge](images/ink-tools-edge.png)
 
-**Windows Ink Workspace**
+**Espace de travail WindowsInk**
 
-The InkCanvas and InkToolbar are also used for both **Sketchpad** and **Screen sketch** in the **Windows Ink Workspace**.  
-![InkToolbar in the Windows Ink Workspace](images/ink-tools-ink-workspace.png)
+Les éléments InkCanvas et InkToolbar sont également utilisés pour **bloc-croquis** et **croquis sur capture d’écran ** dans l’**Espace de travail WindowsInk**.  
+![InkToolbar dans l’Espace de travail WindowsInk.](images/ink-tools-ink-workspace.png)
 
-## Create an InkCanvas and InkToolbar
+## Créer un élément InkCanvas et InkToolbar
 
-Adding an InkCanvas to your app requires just one line of markup:
+L’ajout d’un InkCanvas à votre application nécessite une seule ligne de balisage:
 
 ```xaml
 <InkCanvas x:Name=“myInkCanvas”/>
 ```
 
->**Note**&nbsp;&nbsp;For detailed InkCanvas customization using InkPresenter, see the ["Pen and stylus interactions in UWP apps"](http://windowsstyleguide/input-and-devices/pen-and-stylus-interactions/) article.
+>**Remarque**&nbsp;&nbsp;Pour la personnalisation InkCanvas détaillée à l’aide d’InkPresenter, voir l’article [«Interactions avec le stylet dans les applications UWP»](http://windowsstyleguide/input-and-devices/pen-and-stylus-interactions/).
 
-The InkToolbar control must be used in conjunction with an InkCanvas. Incorporating an InkToolbar (with all built-in tools) into your app requires one additional line of markup:
+Le contrôle InkToolbar doit être utilisé en association avec un contrôle InkCanvas. L’intégration d’un contrôle InkToolbar (et de tous les outils intégrés) dans votre application nécessite une ligne supplémentaire de balisage:
 
  ```xaml
 <InkToolbar TargetInkCanvas=“{x:Bind myInkCanvas}”/>
  ```
 
-This displays the following InkToolbar:
+Cette action affiche le contrôle InkToolbar suivant:
 <img src="images/ink-tools-uninvoked-toolbar.png" width="250">
 
-### Built-in buttons
+### Boutons intégrés
 
-The InkToolbar includes the following built-in buttons:
+Le contrôle InkToolbar comprend les boutons intégrés suivants:
 
-**Pens**
+**Stylets**
 
-- Ballpoint pen - draws a solid, opaque stroke with a circle pen tip. The stroke size is dependent on the pen pressure detected.
-- Pencil - draws a soft-edged, textured, and semi-transparent stroke (useful for layered shading effects) with a circle pen tip. The stroke color (darkness) is dependent on the pen pressure detected.
-- Highlighter – draws a semi-transparent stroke with a rectangle pen tip.
+- Stylo à bille: dessine un trait solide, opaque avec une pointe de stylet arrondie. La taille du trait dépend de la pression du stylet détectée.
+- Crayon: dessine un trait semi-transparent, texturé et flou (utile pour les effets d’ombrage en couches) avec une pointe de stylet arrondie. La couleur du trait dépend de la pression du stylet détectée.
+- Surligneur: dessine un trait semi-transparent avec une pointe de stylet rectangulaire.
 
-You can customize both the color palette and size attributes (min, max, default) in the flyout for each pen.
+Vous pouvez personnaliser la palette de couleurs et les attributs de taille (min, max, par défaut) dans le menu volant pour chaque stylet.
 
-**Tool**
+**Outil**
 
-- Eraser – deletes any ink stroke touched. Note that the entire ink stroke is deleted, not just the portion under the eraser stroke.
+- Gomme: supprime tout trait d’encre touché. Notez que le trait d’encre entier est supprimé et pas seulement la partie située sous le trait de gomme.
 
-**Toggle**
+**Bascule**
 
-- Ruler – shows or hides the ruler. Drawing near the ruler edge causes the ink stroke to snap to the ruler.  
- ![Ruler visual associated with InkToolbar](images/inking-tools-ruler.png)
+- Règle: affiche ou masque la règle. Le fait de dessiner près du bord de la règle a pour effet d’ancrer le trait d’encre à cette dernière.  
+ ![Visuel de la règle associé à InkToolbar](images/inking-tools-ruler.png)
 
-Although this is the default configuration, you have complete control over which built-in buttons are included in the InkToolbar for your app.
+Bien qu’il s’agisse de la configuration par défaut, vous choisissez les boutons intégrés à inclure dans le contrôle InkToolbar pour votre application.
 
-### Custom buttons
+### Boutons personnalisés
 
-The InkToolbar consists of two distinct groups of button types:
+L’élément InkToolbar se compose de deux groupes de types de boutons distincts:
 
-1. A group of "tool" buttons containing the built-in drawing, erasing, and highlighting buttons. Custom pens and tools are added here.
-> **Note**&nbsp;&nbsp;Feature selection is mutually exclusive.
+1. Un groupe de boutons «outil» comprenant les boutons intégrés de dessin,d’effacement et de surlignage. Les outils et stylets personnalisés sont ajoutés ici.
+> **Remarque**&nbsp;&nbsp;La sélection des fonctionnalités est mutuellement exclusive.
 
-2. A group of "toggle" buttons containing the built-in ruler button. Custom toggles are added here.
-> **Note**&nbsp;&nbsp;Features are not mutually exclusive and can be used concurrently with other active tools.
+2. Un groupe de boutons «bascule» contenant le bouton intégré de règle. Les boutons de bascule personnalisés sont ajoutés ici.
+> **Remarque**&nbsp;&nbsp;Les fonctionnalités ne s’excluent pas mutuellement et peuvent être utilisées simultanément avec d’autres outils actifs.
 
-Depending on your application and the inking functionality required, you can add any of the following buttons (bound to your custom ink features) to the InkToolbar:
+En fonction de votre application et de la fonctionnalité d’entrée manuscrite requise, vous pouvez ajouter n’importe lequel des boutons suivants (liés à vos fonctionnalités d’entrée manuscrite personnalisées) à l’élément InkToolbar:
 
-- Custom pen – a pen for which the ink color palette and pen tip properties, such as shape, rotation, and size, are defined by the host app.
-- Custom tool – a non-pen tool, defined by the host app.
-- Custom toggle – Sets the state of an app-defined feature to on or off. When turned on, the feature works in conjunction with the active tool.
+- Stylet personnalisé: un stylet dont les propriétés de palette de couleurs de l’encre et de pointe de stylet, telles que la forme, la rotation et la taille, sont définies par l’application hôte.
+- Outil personnalisé: un outil autre qu’un stylet, défini par l’application hôte.
+- Bascule personnalisée: définit l’état d’une fonctionnalité définie par l’application sur activé ou désactivé. Lorsqu’elle est activée, la fonctionnalité fonctionne conjointement avec l’outil actif.
 
-> **Note**&nbsp;&nbsp;You cannot change the display order of the built-in buttons. The default display order is: Ballpoint pen, pencil, highlighter, eraser, and ruler. Custom pens are appended to the last default pen, custom tool buttons are added between the last pen button and the eraser button and custom toggle buttons are added after the ruler button. (Custom buttons are added in the order they are specified.)
+> **Remarque**&nbsp;&nbsp;Vous ne pouvez pas modifier l’ordre d’affichage des boutons intégrés. L’ordre d’affichage par défaut est le suivant: stylo à bille, crayon, surligneur, gomme et règle. Les stylets personnalisés sont ajoutés au dernier stylet par défaut, les boutons d’outil personnalisé sont ajoutés entre le dernier bouton de stylet et le bouton de gomme, et les boutons de bascule personnalisée sont ajoutés après le bouton de règle. (Les boutons personnalisés sont ajoutés dans l’ordre que vous avez spécifié.)
 
-Although the InkToolbar can be a top level item, it is typically exposed through an “Inking” button or command. We recommend using EE56 glyph from the Segoe MLD2 Assets font as a top level icon.
+Bien que l’élément InkToolbar peut être un élément de niveau supérieur, il est généralement exposé par le biais d’un bouton «Entrée manuscrite» ou d’une commande. Nous vous recommandons d’utiliser le glyphe EE56 de la police Segoe MLD2 Assets comme une icône de niveau supérieur.
 
-## InkToolbar Interaction
+## Interaction de l’élément InkToolbar
 
-All built-in pen and tool buttons include a flyout menu where ink properties and pen tip shape and size can be set. An "extension glyph" ![InkToolbar glyph](images/ink-tools-glyph.png) is displayed on the button to indicate the existence of the flyout.
+Tous les boutons de stylet et d’outil intégrés incluent un menu volant où il est possible de définir des propriétés d’entrée manuscrite et de taille et de forme de pointe de stylet. «Glyphe d’extension» ![«Glyphe InkToolbar»](images/ink-tools-glyph.png) s’affiche sur le bouton pour indiquer l’existence du menu volant.
 
-The flyout is shown when the button of an active tool is selected again. When the color or size is changed, the flyout is automatically dismissed and inking can be resumed. Custom pens and tools can use the default flyout or specify a custom flyout.
+Le menu volant s’affiche quand le bouton d’un outil actif est à nouveau sélectionné. Lorsque la couleur ou la taille est modifiée, le menu volant se ferme automatiquement et permet de reprendre l’entrée manuscrite. Les outils et stylets personnalisés peuvent utiliser le menu volant par défaut ou définir un menu volant personnalisé.
 
-The eraser also has a flyout that provides the **Erase All Ink** command.  
-![InkToolbar with eraser flyout invoked](images/ink-tools-erase-all-ink.png)
+La gomme dispose également d’un menu volant proposant la commande **Supprimer toutes les entrées manuscrites**.  
+![InkToolbar avec appel du menu volant gomme](images/ink-tools-erase-all-ink.png)
 
- For information on customization and extensibility, check out [SimpleInk sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk).
+ Pour plus d’informations sur la personnalisation et l’extensibilité, consultez l’[exemple de SimpleInk](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk).
 
-## Do's and don'ts
+## Pratiques conseillées et déconseillées
 
-- The InkCanvas, and inking in general, is best experienced through an active pen. However, we recommend supporting inking with mouse and touch (including passive pen) input if required by your app.
-- Use an InkToolbar control with the InkCanvas to provide basic inking features and settings. Both the InkCanvas and InkToolbar can be programmatically customized.
-- The InkToolbar, and inking in general, is best experienced through an active pen. However, inking with mouse and touch can be supported if required by your app.
-- If supporting inking with touch input, we recommend using the ED5F icon from the Segoe MLD2 Assets font for the toggle button, with a “Touch writing” tooltip.
-- If using more than one InkCanvas, we recommend using a single InkToolbar to control inking across canvases.
-- For best performance, we recommend altering the default flyout rather than creating a custom one for both default and custom tools.
+- InkCanvas et l’entrée manuscrite en règle générale sont conseillés avec un style actif. Toutefois, nous recommandons la prise en charge de l’entrée manuscrite avec une souris et la fonctionnalité tactile (y compris le stylet passif) si votre application l’impose.
+- Utilisez le contrôle InkToolbar avec l’élément InkCanvas pour fournir les paramètres et les fonctionnalités d’entrée manuscrite de base. InkCanvas et InkToolbar peuvent être personnalisés par programme.
+- InkToolbar et l’entrée manuscrite en règle générale sont conseillés avec un style actif. Toutefois, l’entrée manuscrite avec une souris et la fonctionnalité tactile peut être prise en charge si votre application l’impose.
+- En cas de prise en charge de l’entrée manuscrite avec la fonctionnalité tactile, nous recommandons d’utiliser l’icône ED5F de la police Segoe MLD2 Assets pour le bouton «bascule», avec une info-bulle «écriture tactile».
+- Si vous utilisez plusieurs InkCanvas, nous recommandons l’utilisation d’un seul élément InkToolbar pour contrôler l’entrée manuscrite dans les zones de dessin.
+- Pour des performances optimales, nous vous recommandons de modifier le menu volant par défaut plutôt que d’en créer un personnalisé pour les outils personnalisés et par défaut.
 
-## Get the samples
+## Obtenir les exemples
 
-[SimpleInk sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk) demonstrates 8 scenarios around the customization and extensibility capabilities of the InkCanvas and InkToolbar controls. Each scenario provides basic guidance on common inking situations and control implementations.
+L’[exemple de SimpleInk](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk) montre 8scénarios autour des fonctionnalités de personnalisation et d’extensibilité des contrôles InkCanvas et InkToolbar. Chaque scénario fournit des indications de base sur les situations courantes d’entrée manuscrite et les implémentations de contrôles.
 
-For a more advanced inking sample, see [ComplexInk sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk).
+Pour obtenir un exemple d’entrée manuscrite plus avancé, voir [Exemple de ComplexInk](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk).
 
-## Related articles
+## Articles connexes
 
-- [Pen and stylus interactions in UWP apps](http://windowsstyleguide/input-and-devices/pen-and-stylus-interactions/)
-- [Recognize ink strokes](http://windowsstyleguide/input-and-devices/convert-ink-to-text/)
-- [Store and retrieve ink strokes](http://windowsstyleguide/input-and-devices/save-and-load-ink/)
+- [Interactions avec le stylo et le stylet dans les applicationsUWP](http://windowsstyleguide/input-and-devices/pen-and-stylus-interactions/)
+- [Reconnaître les traits d’encre](http://windowsstyleguide/input-and-devices/convert-ink-to-text/)
+- [Stocker et récupérer des traits d’encre](http://windowsstyleguide/input-and-devices/save-and-load-ink/)
+
+
+
+<!--HONumber=Aug16_HO3-->
+
+

@@ -1,52 +1,62 @@
 ---
 author: Jwmsft
-Description: "Utilisez les contrôles des affichages Liste ou Grille pour afficher et manipuler des jeux de données, comme une galerie d’images ou un ensemble d’e-mails."
-title: Affichage Liste et affichage Grille
+Description: Use list view or grid view controls to display and manipulate sets of data, such as a gallery of images or a set of email messages.
+title: List view and grid view
 label: List view and grid view
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: e878b11bbecd4a1007f8b5f56bde5741da18c1e1
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: aeb339e54a1363dbfe5ee5a764ad762a42a40ed9
 
 ---
-# ListView et GridView
+# ListView and GridView
 
-La plupart des applications manipulent et affichent des jeux de données, par exemple, une galerie d’image ou un ensemble d’e-mails. L’infrastructure IU XAML fournit les contrôles ListView et GridView qui facilitent l’affichage et la manipulation des données dans votre application.  
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-Les contrôles ListView et GridView proviennent de la classe ListViewBase; ils possèdent donc les mêmes fonctionnalités mais affichent les données différemment. Dans cet article, lorsque nous évoquons ListView, sauf indication contraire, les informations s’appliquent aux contrôles ListView et GridView. Nous pouvons faire référence aux classes telles que ListView ou ListViewItem, mais le préfixe «List» peut être remplacé par «Grid» pour l’équivalent Grid correspondant (GridView ou GridViewItem). 
+Most applications manipulate and display sets of data, such as a gallery of images or a set of email messages. The XAML UI framework provides ListView and GridView controls that make it easy to display and manipulate data in your app.  
 
-<span class="sidebar_heading" style="font-weight: bold;">API importantes</span>
+ListView and GridView both derive from the ListViewBase class, so they have the same functionality, but display data differently. In this article, when we talk about ListView, the info applies to both the ListView and GridView controls unless otherwise specified. We may refer to classes like ListView or ListViewItem, but the “List” prefix can be replaced with “Grid” for the corresponding grid equivalent (GridView or GridViewItem). 
 
--   [**Classe ListView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)
--   [**Classe GridView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)
--   [**Propriété ItemsSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx)
--   [**Propriété ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx)
+<div class="important-apis" >
+<b>Important APIs</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx"><strong>ListView class</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx"><strong>GridView class</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx"><strong>ItemsSource property</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx"><strong>Items property</strong></a></li>
+</ul>
 
-## Est-ce le contrôle approprié ?
+</div>
+</div>
 
-Le contrôle ListView affiche les données en les empilant dans une seule colonne. Il est souvent utilisé pour afficher une liste ordonnée d’éléments, telle qu’une liste de messages électroniques ou de résultats de recherche. Il est également utile dans les scénarios [maître/détail](master-details.md), où les éléments de liste ne contiennent qu’une petite quantité d’informations, et où les détails de l’élément sélectionné sont affichés séparément. 
 
-![Exemple de modèle Maître/Détails](images/Stock_Tracker/uap_finance_desktop700.png)
 
-GridView présente une collection d’éléments en lignes et en colonnes qui peut défiler sur le plan vertical. Les données sont empilées horizontalement jusqu’à ce qu’elles remplissent les colonnes, puis se poursuivent avec la ligne suivante. Il est souvent utilisé pour mettre en valeur chaque élément sur davantage d’espace, comme dans le cas d’une galerie de photos. 
 
-![Exemple de bibliothèque de contenu](images/controls_list_contentlibrary.png)
+## Is this the right control?
 
-Pour une comparaison et des recommandations plus détaillées sur le contrôle à utiliser, consultez [Lists](lists.md).
+The ListView displays data stacked vertically in a single column. It's often used to show an ordered list of items, such as a list of emails or search results. 
 
-## Créer un affichage Liste
+![A list view with grouped data](images/simple-list-view-phone.png)
 
-L’affichage Liste est un élément [ItemsControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.aspx). Il peut donc contenir une collection d’éléments de n’importe quel type. Des éléments doivent figurer dans sa collection [**Items**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx) avant de pouvoir afficher quoi que ce soit à l’écran. Pour renseigner la vue, vous pouvez ajouter des éléments directement à la collection [**Items**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx), ou définir une propriété [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) sur une source de données. 
+The GridView presents a collection of items in rows and columns that can scroll vertically. Data is stacked horizontally until it fills the columns, then continues with the next row. It's often used when you need to show a rich visualization of each item that takes more space, such as a photo gallery. 
 
-**Important** &nbsp;&nbsp;Vous pouvez utiliser Items ou ItemsSource pour renseigner la liste, mais vous ne pouvez pas les utiliser en même temps. Si vous définissez la propriété ItemsSource et que vous ajoutez un élément en XAML, l’élément ajouté est alors ignoré. Si vous définissez la propriété ItemsSource et que vous ajoutez un élément à la collection Items dans le code, une exception est levée.
+![Example of a content library](images/controls_list_contentlibrary.png)
 
-> **Remarque** &nbsp;&nbsp;Par souci de simplicité, nombre des exemples de cet article renseignent directement la collection **Items**. Toutefois, il est plus courant que les éléments d’une liste proviennent d’une source dynamique, par exemple une liste de livres à partir d’une base de données en ligne. Vous utilisez la propriété **ItemsSource** dans ce but. 
+For a more detailed comparison and guidance on which control to use, see [Lists](lists.md).
 
-### Ajouter des éléments à la collection Items
+## Create a list view
 
-Vous pouvez ajouter des éléments à la collection [**Items**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx) en utilisant le langage XAML ou du code. Vous ajoutez généralement des éléments de cette façon si vous avez un petit nombre d’éléments qui ne sont pas modifiés et sont facilement définis en XAML, ou si vous générez les éléments dans le code lors de l’exécution. 
+List view is an [ItemsControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.aspx), so it can contain a collection of items of any type. It must have items in its [**Items**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx) collection before it can show anything on the screen. To populate the view, you can add items directly to the [**Items**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx) collection, or set the [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) property to a data source. 
 
-Voici un affichage Liste avec des éléments définis inline en XAML. Lorsque vous définissez les éléments en XAML, ceux-ci sont automatiquement ajoutés à la collection Items.
+**Important**&nbsp;&nbsp;You can use either Items or ItemsSource to populate the list, but you can't use both at the same time. If you set the ItemsSource property and you add an item in XAML, the added item is ignored. If you set the ItemsSource property and you add an item to the Items collection in code, an exception is thrown.
+
+> **Note**&nbsp;&nbsp;Many of the examples in this article populate the **Items** collection directly for the sake of simplicity. However, it's more common for the items in a list to come from a dynamic source, like a list of books from an online database. You use the **ItemsSource** property for this purpose. 
+
+### Add items to the Items collection
+
+You can add items to the [**Items**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx) collection using XAML or code. You typically add items this way if you have a small number of items that don't change and are easily defined in XAML, or if you generate the items in code at run time. 
+
+Here's a list view with items defined inline in XAML. When you define the items in XAML, they are automatically added to the Items collection.
 
 **XAML**
 ```xaml
@@ -59,7 +69,7 @@ Voici un affichage Liste avec des éléments définis inline en XAML. Lorsque vo
 </ListView>  
 ```
 
-Voici l’affichage Liste créé dans le code. La liste résultante est identique à celle créée précédemment dans le code XAML.
+Here's the list view created in code. The resulting list is the same as the one created previously in XAML.
 
 **C#**
 ```csharp
@@ -75,15 +85,15 @@ listView1.Items.Add("Item 5");
 stackPanel1.Children.Add(listView1); 
 ```
 
-ListView se présente comme suit.
+The ListView looks like this.
 
-![Un affichage Liste simple](images/listview-simple.png)
+![A simple list view](images/listview-simple.png)
 
-### Définir la source des éléments
+### Set the items source
 
-On utilise en général un affichage Liste pour afficher des données d’une source telle qu’une base de données ou Internet. Pour renseigner un affichage Liste à partir d’une source de données, vous affectez à sa propriété [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) une collection d’éléments de données.
+You typically use a list view to display data from a source such as a database or the Internet. To populate a list view from a data source, you set its [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) property to a collection of data items.
 
-Ici, la propriété ItemsSource de l’affichage Liste prend la valeur de l’instance d’une collection directement dans le code.
+Here, the list view's ItemsSource is set in code directly to an instance of a collection.
 
 **C#**
 ```csharp 
@@ -104,9 +114,9 @@ itemListView.ItemsSource = listItems;
 stackPanel1.Children.Add(itemListView);
 ```
 
-Vous pouvez également lier la propriété ItemsSource à une collection en XAML. Pour plus d’informations, voir [Liaison de données avec XAML](../data-binding/data-binding-quickstart.md).
+You can also bind the ItemsSource property to a collection in XAML. For more info about data binding, see [Data binding overview](https://msdn.microsoft.com/windows/uwp/data-binding/data-binding-quickstart).
 
-Ici, ItemsSource est lié à une propriété publique nommée `Items` qui expose la collecte de données privées de la page.
+Here, the ItemsSource is bound to a public property named `Items` that exposes the Page's private data collection.
 
 **XAML**
 ```xaml
@@ -136,23 +146,23 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 }
 ```
 
-Si vous avez besoin d’afficher des données groupées dans votre affichage Liste, vous devez lier un élément [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.data.collectionviewsource.aspx). CollectionViewSource agit en tant que proxy pour la classe de collection dans XAML et active la prise en charge du regroupement. Pour plus d’informations, consultez [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.data.collectionviewsource.aspx).
+If you need to show grouped data in your list view, you must bind to a [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.data.collectionviewsource.aspx). The CollectionViewSource acts as a proxy for the collection class in XAML and enables grouping support. For more info, see [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.data.collectionviewsource.aspx).
 
-## Modèle de données
+## Data template
 
-Un modèle de données d’un élément définit la manière dont les données sont visualisées. Par défaut, un élément de données est affiché dans l’affichage Liste en tant que représentation de chaîne de l’objet de données auquel il est lié. Vous pouvez afficher la représentation de chaîne d’une propriété spécifique de l’élément de données en définissant la propriété [**DisplayMemberPath**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.displaymemberpath.aspx) sur cette propriété.
+An item’s data template defines how the data is visualized. By default, a data item is displayed in the list view as the string representation of the data object it's bound to. You can show the string representation of a particular property of the data item by setting the [**DisplayMemberPath**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.displaymemberpath.aspx) to that property.
 
-Toutefois, en général, on souhaite afficher une représentation enrichie des données. Pour définir précisément la façon dont les éléments sont affichés dans l’affichage Liste, vous devez créer un objet [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.datatemplate.aspx). Le code XAML dans l’objet DataTemplate définit la disposition et l’apparence des contrôles qui permettent d’afficher un élément spécifique. Les contrôles dans la disposition peuvent être liés aux propriétés d’un objet de données ou leur contenu statique peut être défini inline. L’objet DataTemplate est affecté à la propriété [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) de la liste de contrôle.
+However, you typically want to show a more rich presentation of your data. To specify exactly how items in the list view are displayed, you create a [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.datatemplate.aspx). The XAML in the DataTemplate defines the layout and appearance of controls used to display an individual item. The controls in the layout can be bound to properties of a data object, or have static content defined inline. You assign the DataTemplate to the [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) property of the list control.
 
-Dans cet exemple, l’élément de données est une chaîne simple. Vous utilisez DataTemplate pour ajouter une image à gauche de la chaîne et afficher la chaîne en bleu.  
+In this example, the data item is a simple string. You use a DataTemplate to add an image to the left of the string, and show the string in blue.  
 
-> **Remarque** &nbsp;&nbsp;Lorsque vous utilisez l’[extension de balisage x:Bind](https://msdn.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) dans un DataTemplate, vous devez spécifier le DataType (`x:DataType`) sur le DataTemplate. Pour définir `x:DataType="System:String"`, comme dans cet exemple, vous devez ajouter la `xmlns:System="using:System"`[déclaration d’espaces de noms XAML](https://msdn.microsoft.com/windows/uwp/xaml-platform/xaml-overview#xaml-namespaces) sur votre page.
+> **Note**&nbsp;&nbsp;When you use the [x:Bind markup extension](https://msdn.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) in a DataTemplate, you have to specify the DataType (`x:DataType`) on the DataTemplate.
 
 **XAML**
 ```XAML
 <ListView x:Name="listView1">
     <ListView.ItemTemplate>
-        <DataTemplate x:DataType="System:String">
+        <DataTemplate x:DataType="x:String">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="54"/>
@@ -173,35 +183,35 @@ Dans cet exemple, l’élément de données est une chaîne simple. Vous utilise
 </ListView>
 ```
 
-Voici ce à quoi ressembleront les éléments de données affichés avec ce modèle de données.
+Here's what the data items look like when displayed with this data template.
 
-![Éléments de l’affichage Liste avec un modèle de données](images/listview-itemstemplate.png)
+![List view items with a data template](images/listview-itemstemplate.png)
 
-Les modèles de données sont le principal moyen de définir l’aspect de votre affichage Liste. Ils peuvent également avoir un impact significatif sur les performances si votre liste affiche un grand nombre d’éléments. Dans cet article, nous utilisons des données de chaîne simple pour la plupart des exemples et nous ne spécifions pas un modèle de données. Pour plus d’informations et des exemples d’utilisation de DataTemplates et des conteneurs d’éléments pour définir l’apparence des éléments dans votre liste ou grille, consultez *Modifier l’apparence des éléments de liste*. 
+Data templates are the primary way you define the look of your list view. They can also have a significant impact on performance if your list displays a large number of items. In this article, we use simple string data for most of the examples, and don't specify a data template. For more info and examples of how to use data templates and item containers to define the look of items in your list or grid, see [List view item templates](listview-item-templates.md). 
 
-## Modifier la disposition des éléments
+## Change the layout of items
 
-Lorsque vous ajoutez des éléments à un affichage Liste ou Grille, le contrôle encapsule automatiquement chaque élément dans un conteneur d’éléments, puis dispose tous les conteneurs d’éléments. La manière dont ces conteneurs d’éléments sont disposés dépend de l’élément [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx) du contrôle.  
-- Par défaut, **ListView** utilise un élément [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.aspx), ce qui donne une liste verticale, comme ceci.
+When you add items to a list view or grid view, the control automatically wraps each item in an item container and then lays out all of the item containers. How these item containers are laid out depends on the [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx) of the control.  
+- By default, **ListView** uses an [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.aspx), which produces a vertical list, like this.
 
-![Un affichage Liste simple](images/listview-simple.png)
+![A simple list view](images/listview-simple.png)
 
-- **GridView** utilise un élément [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemswrapgrid.aspx), ce qui ajoute les éléments horizontalement, enveloppe et défile verticalement, comme ceci.
+- **GridView** uses an [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemswrapgrid.aspx), which adds items horizontally, and wraps and scrolls vertically, like this.
 
-![Un affichage Grille simple](images/gridview-simple.png)
+![A simple grid view](images/gridview-simple.png)
 
-Vous pouvez modifier la disposition des éléments en ajustant les propriétés sur le panneau d’éléments, ou remplacer le panneau par défaut par un autre panneau.
+You can modify the layout of items by adjusting properties on the items panel, or you can replace the default panel with another panel.
 
-> Remarque&nbsp;&nbsp;Veillez à ne pas désactiver la virtualisation si vous modifiez ItemsPanel. **ItemsStackPanel** et **ItemsWrapGrid** prennent en charge la virtualisation, leur utilisation est donc sécurisée. Si vous utilisez tout autre panneau, vous pourriez désactiver la virtualisation et ralentir les performances de l’affichage Liste. Pour plus d’informations, voir les articles relatifs à l’affichage Liste sous [Performances](https://msdn.microsoft.com/windows/uwp/debug-test-perf/performance-and-xaml-ui). 
+> Note&nbsp;&nbsp;Be careful to not disable virtualization if you change the ItemsPanel. Both **ItemsStackPanel** and **ItemsWrapGrid** support virtualization, so these are safe to use. If you use any other panel, you might disable virtualization and slow the performance of the list view. For more info, see the list view articles under [Performance](https://msdn.microsoft.com/windows/uwp/debug-test-perf/performance-and-xaml-ui). 
 
-Cet exemple montre comment créer une disposition **ListView** avec des conteneurs d’éléments dans une liste horizontale en modifiant la propriété [**Orientation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.orientation.aspx) de **ItemsStackPanel**.
-Étant donné que l’affichage Liste défile verticalement par défaut, vous devez également ajuster certaines propriétés sur l’élément interne [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx) de l’affichage Liste pour le faire défiler horizontalement.
-- [ScrollViewer.HorizontalScrollMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.horizontalscrollmode.aspx) sur **Activé** ou **Auto**
-- [ScrollViewer.HorizontalScrollBarVisibility](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.horizontalscrollbarvisibility.aspx) sur **Auto** 
-- [ScrollViewer.VerticalScrollMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.verticalscrollmode.aspx) sur **Désactivé** 
-- [ScrollViewer.VerticalScrollBarVisibility](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.verticalscrollbarvisibility.aspx) sur **Masqué** 
+This example shows how to make a **ListView** lay out its item containers in a horizontal list by changing the [**Orientation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.orientation.aspx) property of the **ItemsStackPanel**.
+Because the list view scrolls vertically by default, you also need to adjust some properties on the list view’s internal [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx) to make it scroll horizontally.
+- [ScrollViewer.HorizontalScrollMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.horizontalscrollmode.aspx) to **Enabled** or **Auto**
+- [ScrollViewer.HorizontalScrollBarVisibility](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.horizontalscrollbarvisibility.aspx) to **Auto** 
+- [ScrollViewer.VerticalScrollMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.verticalscrollmode.aspx) to **Disabled** 
+- [ScrollViewer.VerticalScrollBarVisibility](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.verticalscrollbarvisibility.aspx) to **Hidden** 
 
-> **Remarque** &nbsp;&nbsp;Ces exemples sont affichés avec la largeur de l’affichage Liste sans contraintes, de sorte que les barres de défilement horizontales ne sont pas visibles. Si vous exécutez ce code, vous pouvez définir `Width="180"` sur ListView pour afficher les barres de défilement.
+> **Note**&nbsp;&nbsp;These examples are shown with the list view width unconstrained, so the horizontal scrollbars are not shown. If you run this code, you can set `Width="180"` on the ListView to make the scrollbars show.
 
 **XAML**
 ```xaml
@@ -223,13 +233,13 @@ Cet exemple montre comment créer une disposition **ListView** avec des conteneu
 </ListView>
 ```
 
-La liste résultante ressemble à ce qui suit.
+The resulting list looks like this.
 
-![Un affichage Liste horizontal](images/listview-horizontal.png)
+![A horizontal list view](images/listview-horizontal.png)
 
- Dans l’exemple suivant, **ListView** dispose les éléments dans une liste d’habillage verticale en utilisant **ItemsWrapGrid** à la place de **ItemsStackPanel**. 
+ In the next example, the **ListView** lays out items in a vertical wrapping list by using an **ItemsWrapGrid** instead of an **ItemsStackPanel**. 
  
-> **Remarque** &nbsp;&nbsp;La hauteur de l’affichage Liste doit être limitée pour forcer le contrôle à encapsuler les conteneurs.
+> **Note**&nbsp;&nbsp;The height of the list view must be constrained to force the control to wrap the containers.
 
 **XAML**
 ```xaml
@@ -251,33 +261,33 @@ La liste résultante ressemble à ce qui suit.
 </ListView>
 ```
 
-La liste résultante ressemble à ce qui suit.
+The resulting list looks like this.
 
-![Un affichage Liste avec disposition de grille](images/listview-itemswrapgrid.png)
+![A list view with grid layout](images/listview-itemswrapgrid.png)
 
-Si vous affichez des données groupées dans votre affichage Liste, ItemsPanel détermine la manière dont les groupes d’éléments (et non les éléments individuels) sont disposés. Par exemple, si l’élément ItemsStackPanel horizontal présenté précédemment est utilisé pour afficher les données groupées, les groupes sont organisés horizontalement, mais les éléments dans chaque groupe sont toujours empilés verticalement, comme illustré ici.
+If you show grouped data in your list view, the ItemsPanel determines how the item groups are layed out, not how the individual items are layed out. For example, if the horizontal ItemsStackPanel shown previously is used to show grouped data, the groups are arranged horizontally, but the items in each group are still stacked vertically, as shown here.
 
-![Un affichage Liste horizontal groupé](images/listview-horizontal-groups.png)
+![A grouped horizontal list view](images/listview-horizontal-groups.png)
 
-## Sélection d’éléments et interaction
+## Item selection and interaction
 
-Vous pouvez choisir différentes façons de permettre à un utilisateur d’interagir avec un affichage Liste. Par défaut, un utilisateur peut sélectionner un seul élément. Vous pouvez modifier la propriété [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx) afin d’autoriser la sélection multiple ou de désactiver la sélection. Vous pouvez définir la propriété [**IsItemClickEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isitemclickenabled.aspx) de sorte qu’un utilisateur clique sur un élément pour appeler une action (par exemple, un bouton) au lieu de sélectionner l’élément.
+You can choose from various ways to let a user interact with a list view. By default, a user can select a single item. You can change the [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx) property to enable multi-selection or to disable selection. You can set the [**IsItemClickEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isitemclickenabled.aspx) property so that a user clicks an item to invoke an action (like a button) instead of selecting the item.
 
-> **Remarque** &nbsp;&nbsp;ListView et GridView utilisent l’énumération [**ListViewSelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewselectionmode.aspx) pour leurs propriétés SelectionMode. IsItemClickEnabled est défini sur **False** par défaut, vous devez le définir uniquement pour activer le mode clic.
+> **Note**&nbsp;&nbsp;Both ListView and GridView use the [**ListViewSelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewselectionmode.aspx) enumeration for their SelectionMode properties. IsItemClickEnabled is **False** by default, so you need to set it only to enable click mode.
 
-Le tableau suivant montre les moyens dont un utilisateur dispose pour interagir avec un affichage Liste, et comment vous pouvez répondre à l’interaction.
+This table shows the ways a user can interact with a list view, and how you can respond to the interaction.
 
-Pour activer cette interaction: | Utilisez ces paramètres: | Gérez cet événement: | Utilisez cette propriété pour obtenir l’élément sélectionné:
+To enable this interaction: | Use these settings: | Handle this event: | Use this property to get the selected item:
 ----------------------------|---------------------|--------------------|--------------------------------------------
-Aucune interaction | [SelectionMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx)  =  **Aucun**, [IsItemClickEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isitemclickenabled.aspx) = **False** | Non applicable | Non applicable 
-Sélection unique | SelectionMode = **Simple**, IsItemClickEnabled = **False** | [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectionchanged.aspx) | [SelectedItem](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selecteditem.aspx), [SelectedIndex](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectedindex.aspx)  
-Sélection multiple | SelectionMode = **Multiple**, IsItemClickEnabled = **False** | [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectionchanged.aspx) | [SelectedItems](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selecteditems.aspx)  
-Sélection étendue | SelectionMode = **Étendu**, IsItemClickEnabled = **False** | [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectionchanged.aspx) | [SelectedItems](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selecteditems.aspx)  
-Clic | SelectionMode = **Aucun**, IsItemClickEnabled = **True** | [ItemClick](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.itemclick.aspx) | Non applicable 
+No interaction | [SelectionMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx) = **None**, [IsItemClickEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isitemclickenabled.aspx) = **False** | N/A | N/A 
+Single selection | SelectionMode = **Single**, IsItemClickEnabled = **False** | [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectionchanged.aspx) | [SelectedItem](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selecteditem.aspx), [SelectedIndex](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectedindex.aspx)  
+Multiple selection | SelectionMode = **Multiple**, IsItemClickEnabled = **False** | [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectionchanged.aspx) | [SelectedItems](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selecteditems.aspx)  
+Extended selection | SelectionMode = **Extended**, IsItemClickEnabled = **False** | [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectionchanged.aspx) | [SelectedItems](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selecteditems.aspx)  
+Click | SelectionMode = **None**, IsItemClickEnabled = **True** | [ItemClick](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.itemclick.aspx) | N/A 
 
-> **Remarque** &nbsp;&nbsp;À partir de Windows 10, vous pouvez activer IsItemClickEnabled pour déclencher un événement ItemClick pendant que SelectionMode est également défini sur Simple, Multiple ou Étendu. Si vous procédez ainsi, l’événement ItemClick est déclenché en premier, puis l’événement SelectionChanged est déclenché. Dans certains cas, par exemple, si vous accédez à une autre page dans le gestionnaire d’événements ItemClick, l’événement SelectionChanged n’est pas déclenché et l’élément n’est pas sélectionné.
+> **Note**&nbsp;&nbsp;Starting in Windows 10, you can enable IsItemClickEnabled to raise an ItemClick event while SelectionMode is also set to Single, Multiple, or Extended. If you do this, the ItemClick event is raised first, and then the SelectionChanged event is raised. In some cases, like if you navigate to another page in the ItemClick event handler, the SelectionChanged event is not raised and the item is not selected.
 
-Vous pouvez définir ces propriétés dans XAML ou dans le code, comme illustré ici.
+You can set these properties in XAML or in code, as shown here.
 
 **XAML**
 ```xaml
@@ -294,53 +304,53 @@ myGridView.SelectionMode = ListViewSelectionMode.None;
 myGridView.IsItemClickEnabled = true;
 ```
 
-### Lecture seule
+### Read-only
 
-Vous pouvez définir la propriété SelectionMode sur **ListViewSelectionMode.None** pour désactiver la sélection d’éléments. Cela place le contrôle en mode lecture seule: vous pouvez l’utiliser pour afficher des données, mais pas pour interagir avec celles-ci. Le contrôle lui-même n’est pas désactivé, seule la sélection d’éléments est désactivée.
+You can set the SelectionMode property to **ListViewSelectionMode.None** to disable item selection. This puts the control in read only mode, to be used for displaying data, but not for interacting with it. The control itself is not disabled, only item selection is disabled.
 
-### Sélection unique
+### Single selection
 
-Le tableau suivant décrit le clavier, la souris et les interactions tactiles, lorsque SelectionMode est défini sur **Simple**.
+This table describes the keyboard, mouse, and touch interactions when SelectionMode is **Single**.
 
-Touche de modification | Interaction
+Modifier key | Interaction
 -------------|------------
-Aucun | <li>Un utilisateur peut sélectionner un seul élément à l’aide de la barre d’espace, du clic de souris ou de l’appui tactile.</li>
-Ctrl | <li>Un utilisateur peut désélectionner un seul élément à l’aide de la barre d’espace, du clic de souris ou de l’appui tactile.</li><li>À l’aide des touches de direction, un utilisateur peut déplacer le focus indépendamment de la sélection.</li>
+None | <li>A user can select a single item using the space bar, mouse click, or touch tap.</li>
+Ctrl | <li>A user can deselect a single item using the space bar, mouse click, or touch tap.</li><li>Using the arrow keys, a user can move focus independently of selection.</li>
 
-Lorsque SelectionMode est défini sur **Simple**, vous pouvez obtenir l’élément de données sélectionné à partir de la propriété [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selecteditem.aspx). Vous pouvez obtenir l’index dans la collection de l’élément sélectionné en utilisant la propriété [**SelectedIndex**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectedindex.aspx). Si aucun élément n’est sélectionné, SelectedItem est défini sur **null**, et SelectedIndex est -1. 
+When SelectionMode is **Single**, you can get the selected data item from the [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selecteditem.aspx) property. You can get the index in the collection of the selected item using the [**SelectedIndex**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectedindex.aspx) property. If no item is selected, SelectedItem is **null**, and SelectedIndex is -1. 
  
-Si vous essayez de définir un élément qui n’est pas dans la collection **Items** en tant que **SelectedItem**, l’opération est ignorée et SelectedItem est **null**. Toutefois, si vous tentez de définir **SelectedIndex** sur un index en dehors de la plage **Items** dans la liste, une exception **System.ArgumentException** se produit. 
+If you try to set an item that is not in the **Items** collection as the **SelectedItem**, the operation is ignored and SelectedItem is**null**. However, if you try to set the **SelectedIndex** to an index that's out of the range of the **Items** in the list, a **System.ArgumentException** exception occurs. 
 
-### Sélection multiple
+### Multiple selection
 
-Le tableau suivant décrit le clavier, la souris et les interactions tactiles, lorsque SelectionMode est défini sur **Multiple**.
+This table describes the keyboard, mouse, and touch interactions when SelectionMode is **Multiple**.
 
-Touche de modification | Interaction
+Modifier key | Interaction
 -------------|------------
-Aucun | <li>Un utilisateur peut sélectionner plusieurs éléments à l’aide de la barre d’espace, du clic de souris ou de l’appui tactile pour activer/désactiver la sélection sur l’élément sélectionné.</li><li>À l’aide des touches de direction, un utilisateur peut déplacer le focus indépendamment de la sélection.</li>
-Maj | <li>Un utilisateur peut sélectionner plusieurs éléments contigus en cliquant ou en appuyant sur le premier élément de la sélection, puis sur le dernier.</li><li>À l’aide des touches de direction, un utilisateur peut créer une sélection contiguë à partir de l’élément sélectionné lorsque la touche MAJ est enfoncée.</li>
+None | <li>A user can select multiple items using the space bar, mouse click, or touch tap to toggle selection on the focused item.</li><li>Using the arrow keys, a user can move focus independently of selection.</li>
+Shift | <li>A user can select multiple contiguous items by clicking or tapping the first item in the selection and then the last item in the selection.</li><li>Using the arrow keys, a user can create a contiguous selection starting with the item selected when Shift is pressed.</li>
 
-### Sélection étendue
+### Extended selection
 
-Le tableau suivant décrit le clavier, la souris et les interactions tactiles, lorsque SelectionMode est défini sur **Étendu**.
+This table describes the keyboard, mouse, and touch interactions when SelectionMode is **Extended**.
 
-Touche de modification | Interaction
+Modifier key | Interaction
 -------------|------------
-Aucun | <li>Le comportement est identique à celui de la sélection **Simple**.</li>
-Ctrl | <li>Un utilisateur peut sélectionner plusieurs éléments à l’aide de la barre d’espace, du clic de souris ou de l’appui tactile pour activer/désactiver la sélection sur l’élément sélectionné.</li><li>À l’aide des touches de direction, un utilisateur peut déplacer le focus indépendamment de la sélection.</li>
-Maj | <li>Un utilisateur peut sélectionner plusieurs éléments contigus en cliquant ou en appuyant sur le premier élément de la sélection, puis sur le dernier.</li><li>À l’aide des touches de direction, un utilisateur peut créer une sélection contiguë à partir de l’élément sélectionné lorsque la touche MAJ est enfoncée.</li>
+None | <li>The behavior is the same as **Single** selection.</li>
+Ctrl | <li>A user can select multiple items using the space bar, mouse click, or touch tap to toggle selection on the focused item.</li><li>Using the arrow keys, a user can move focus independently of selection.</li>
+Shift | <li>A user can select multiple contiguous items by clicking or tapping the first item in the selection and then the last item in the selection.</li><li>Using the arrow keys, a user can create a contiguous selection starting with the item selected when Shift is pressed.</li>
 
-Lorsque SelectionMode est défini sur **Multiple** ou **Étendu**, vous pouvez obtenir les éléments de données sélectionnés à partir de la propriété [**SelectedItems**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selecteditems.aspx). 
+When SelectionMode is **Multiple** or **Extended**, you can get the selected data items from the [**SelectedItems**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selecteditems.aspx) property. 
 
-Les propriétés **SelectedIndex**, **SelectedItem** et **SelectedItems** sont synchronisées. Par exemple, si vous définissez SelectedIndex sur -1, SelectedItem est défini sur **null** et SelectedItems est vide; si vous définissez SelectedItem sur **null**, SelectedIndex est défini sur -1 et SelectedItems est vide.
+The **SelectedIndex**, **SelectedItem**, and **SelectedItems** properties are synchronized. For example, if you set SelectedIndex to -1, SelectedItem is set to **null** and SelectedItems is empty; if you set SelectedItem to **null**, SelectedIndex is set to -1 and SelectedItems is empty.
 
-En mode de sélection multiple, **SelectedItem** contient l’élément qui a été sélectionné en premier, et **Selectedindex** contient l’index de l’élément qui a été sélectionné en premier. 
+In multi-select mode, **SelectedItem** contains the item that was selected first, and **Selectedindex** contains the index of the item that was selected first. 
 
-### Répondre aux modifications de sélection
+### Respond to selection changes
 
-En réaction aux modifications de sélection dans un affichage Liste, gérez l’événement [**SelectionChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectionchanged.aspx). Dans le code du gestionnaire d’événements, vous pouvez obtenir la liste des éléments sélectionnés auprès de la propriété [**SelectionChangedEventArgs.AddedItems**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.selectionchangedeventargs.addeditems.aspx). Vous pouvez obtenir tous les éléments qui ont été désélectionnés à partir de la propriété [**SelectionChangedEventArgs.RemovedItems**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.selectionchangedeventargs.removeditems.aspx). Les collections AddedItems et RemovedItems contiennent au maximum 1élément, sauf si l’utilisateur sélectionne une plage d’éléments en maintenant la touche MAJ enfoncée.
+To respond to selection changes in a list view, handle the [**SelectionChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectionchanged.aspx) event. In the event handler code, you can get the list of selected items from the [**SelectionChangedEventArgs.AddedItems**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.selectionchangedeventargs.addeditems.aspx) property. You can get any items that were deselected from the [**SelectionChangedEventArgs.RemovedItems**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.selectionchangedeventargs.removeditems.aspx) property. The AddedItems and RemovedItems collections contain at most 1 item unless the user selects a range of items by holding down the Shift key.
 
-Cet exemple montre comment gérer l’événement **SelectionChanged** et accéder à des collections d’éléments différents.
+This example shows how to handle the **SelectionChanged** event and access the various items collections.
 
 **XAML**
 ```xaml
@@ -386,14 +396,14 @@ private void ListView1_SelectionChanged(object sender, SelectionChangedEventArgs
 }
 ```
 
-### Mode clic
+### Click mode
 
-Vous pouvez modifier un affichage Liste afin qu’un utilisateur clique sur des éléments tels que des boutons au lieu de les sélectionner. Cela est par exemple utile lorsque l’utilisateur de votre application accède à une nouvelle page en cliquant sur un élément dans une liste ou dans une grille. Pour activer ce comportement:
-- Définissez **SelectionMode** sur **Aucun**.
-- Définissez **IsItemClickEnabled** sur **true**.
-- Gérez l’événement **ItemClick** pour effectuer une action lorsque l’utilisateur clique sur un élément.
+You can change a list view so that a user clicks items like buttons instead of selecting them. For example, this is useful when your app navigates to a new page when your user clicks an item in a list or grid. To enable this behavior:
+- Set **SelectionMode** to **None**.
+- Set **IsItemClickEnabled** to **true**.
+- Handle the **ItemClick** event to do something when your user clicks an item.
 
-Voici un affichage Liste constitué d’éléments pouvant être activés par un clic. Le code dans le gestionnaire d’événement ItemClick accède à une nouvelle page.
+Here's a list view with clickable items. The code in the ItemClick event handler navigates to a new page.
 
 **XAML**
 ```xaml
@@ -440,19 +450,19 @@ private void ListView1_ItemClick(object sender, ItemClickEventArgs e)
 }
 ```
 
-### Sélectionner une plage d’éléments par programme
+### Select a range of items programmatically
 
-Parfois, vous avez besoin de manipuler la sélection d’éléments d’un affichage Liste par programme. Par exemple, vous pourriez avoir un bouton **Sélectionner tout** pour permettre à un utilisateur de sélectionner tous les éléments dans une liste. Dans ce cas, il n’est généralement pas très efficace d’ajouter et de supprimer des éléments de la collection SelectedItems un par un. Chaque modification d’élément déclenche un événement SelectionChanged. Lorsque vous travaillez avec des éléments directement au lieu de fonctionner avec des valeurs d’index, les éléments sont dévirtualisés.
+Sometimes, you need to manipulate a list view’s item selection programmatically. For example, you might have a **Select all** button to let a user select all items in a list. In this case, it’s usually not very efficient to add and remove items from the SelectedItems collection one by one. Each item change causes a SelectionChanged event to occur, and when you work with the items directly instead of working with index values, the item is de-virtualized.
 
-Les méthodes [**SelectAll**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectall.aspx), [**SelectRange**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectrange.aspx), et [**DeselectRange**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.deselectrange.aspx) fournissent un moyen plus efficace de modifier la sélection que l’utilisation de la propriété SelectedItems. Ces méthodes sélectionnent ou désélectionnent à l’aide de plages d’index d’élément. Les éléments qui sont virtualisés le restent, car seul l’index est utilisé. Tous les éléments dans la plage spécifiée sont sélectionnés (ou désélectionnés), quel que soit leur état de sélection d’origine. L’événement SelectionChanged ne se produit qu’une seule fois pour chaque appel à ces méthodes.
+The [**SelectAll**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectall.aspx), [**SelectRange**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectrange.aspx), and [**DeselectRange**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.deselectrange.aspx) methods provide a more efficient way to modify the selection than using the SelectedItems property. These methods select or deselect using ranges of item indexes. Items that are virtualized remain virtualized, because only the index is used. All items in the specified range are selected (or deselected), regardless of their original selection state. The SelectionChanged event occurs only once for each call to these methods.
 
-> **Important** &nbsp;&nbsp;Vous devez appeler ces méthodes uniquement lorsque la propriété SelectionMode est définie sur Multiple ou Étendu. Si vous appelez SelectRange lorsque SelectionMode est défini sur Simple, ou Aucun, une exception est levée.
+> **Important**&nbsp;&nbsp;You should call these methods only when the SelectionMode property is set to Multiple or Extended. If you call SelectRange when the SelectionMode is Single or None, an exception is thrown.
 
-Lorsque vous sélectionnez des éléments utilisant des plages d’index, utilisez la propriété [**SelectedRanges**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectedranges.aspx) pour obtenir toutes les plages sélectionnées dans la liste.
+When you select items using index ranges, use the [**SelectedRanges**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectedranges.aspx) property to get all selected ranges in the list.
 
-Si ItemsSource implémente [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.iitemsrangeinfo.aspx), et que vous utilisez ces méthodes pour modifier la sélection, les propriétés **AddedItems** et **RemovedItems** ne sont pas définies dans SelectionChangedEventArgs. La définition de ces propriétés nécessite la dévirtualisation de l’objet d’élément. Utilisez la propriété **SelectedRanges** pour obtenir les éléments à la place.
+If the ItemsSource implements [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.iitemsrangeinfo.aspx), and you use these methods to modify the selection, the **AddedItems** and **RemovedItems** properties are not set in the SelectionChangedEventArgs. Setting these properties requires de-virtualizing the item object. Use the **SelectedRanges** property to get the items instead.
 
-Vous pouvez sélectionner tous les éléments dans une collection en appelant la méthode SelectAll. Toutefois, il n’existe aucune méthode correspondante pour désélectionner tous les éléments. Vous pouvez désélectionner tous les éléments en appelant DeselectRange et en transmettant [**ItemIndexRange**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.itemindexrange.aspx) avec une valeur [**FirstIndex**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.itemindexrange.firstindex.aspx) de 0 et une valeur [**Longueur**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.itemindexrange.length.aspx) égale au nombre d’éléments dans la collection. 
+You can select all items in a collection by calling the SelectAll method. However, there is no corresponding method to deselect all items. You can deselect all items by calling DeselectRange and passing an [**ItemIndexRange**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.itemindexrange.aspx) with a [**FirstIndex**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.itemindexrange.firstindex.aspx) value of 0 and a [**Length**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.itemindexrange.length.aspx) value equal to the number of items in the collection. 
 
 **XAML**
 ```xaml
@@ -490,14 +500,28 @@ private void DeselectAllButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
+For info about how to change the look of selected items, see [List view item templates](listview-item-templates.md).
 
-## Articles connexes
+### Drag and drop
 
-- [Listes](lists.md)
+ListView and GridView controls support drag and drop of items within themselves, and between themselves and other ListView and GridView controls. For more info about implementing the drag and drop pattern, see [Drag and drop](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop). 
+
+## Get the samples
+
+*   [XAML ListView and GridView sample](http://go.microsoft.com/fwlink/p/?LinkId=619900)<br/>
+    This sample shows the usage of ListView and Gridview controls.
+
+*   [XAML UI basics sample](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)<br/>
+    See all of the XAML controls in an interactive format.
+
+## Related articles
+
+- [Lists](lists.md)
+- [List view item templates](listview-item-templates.md)
+- [Drag and drop](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
 
 
 
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

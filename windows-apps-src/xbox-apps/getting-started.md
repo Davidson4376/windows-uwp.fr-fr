@@ -1,73 +1,70 @@
 ---
 author: Mtoepke
-title: "Prise en main du développement d’applications UWP sur XboxOne"
-description: "Procédure de configuration de votre PC et de votre console XboxOne pour le développement UWP."
-area: Xbox
+title: Getting started with UWP app development on Xbox One
+description: How to set up your PC and Xbox One for UWP development.
 translationtype: Human Translation
-ms.sourcegitcommit: 5f050eee9430dc7aaa2738a4610a2c4f5083839d
-ms.openlocfilehash: 92a9cc54c6257c35b1e7ae19838b01c8452c4b36
+ms.sourcegitcommit: d4ef0da606c98c5eb024f349720fe9641e4a541e
+ms.openlocfilehash: 33b8369be9cc0fd54ee044ec2aa6ea38b352c908
 
 ---
 
-#Prise en main du développement d’applications UWP sur XboxOne
+#Getting started with UWP app development on Xbox One
 
-Pour configurer correctement votre PC et votre console Xbox One pour le développement UWP, suivez **scrupuleusement** la procédure ci-après. Après avoir configuré tous les paramètres, vous pourrez vous familiariser avec le mode développeur sur Xbox One et avec la création d’applications UWP en consultant la page [UWP pour Xbox One](index.md). 
+**Carefully** follow these steps to successfully set up your PC and Xbox One for Universal Windows Platform (UWP) development. After you’ve got things set up, you can learn more about Developer Mode on Xbox One and building UWP apps on the [UWP for Xbox One](index.md) page. 
 
-## Avant de commencer
-Avant de commencer, vous devez effectuer les opérations suivantes:
--   Créez un compte du [Centre de développement Windows](https://dev.windows.com).
--   Inscrivez-vous au [Programme Windows Insider](https://insider.windows.com/). Vous devrez effectuer cette opération pour obtenir la version d’évaluation du SDK Windows.
--   Configurez un PC Windows10 (toute version conviendra, y compris la dernière version d’évaluation Windows10 Insider). Dans le cadre de cette version préliminaire, nos outils de développement nécessitent l’exécution de Windows10. 
--   Connectez votre console XboxOne à un réseau. Pour des performances optimales, utilisez une connexion câblée.
-- Vérifiez que vous disposez d’au moins 5Go d’espace libre sur votre console XboxOne.
+## Before you start
+Before you start you will need to do the following:
+-   Set up a PC with Windows 10.
+-   Install Microsoft Visual Studio 2015 Update 3.
+- Have at least five gigabytes of free space on your Xbox One console.
 
-## Configuration de votre PC de développement
-1.  Installez Visual Studio2015 Update2. Veillez à choisir l’installation **Personnalisée** et à cocher la case **Outils de développement d’applications Windows universelles**, car ces outils ne font pas partie intégrante de l’installation par défaut. Pour plus d’informations, voir [Configuration de l’environnement de développement](development-environment-setup.md) (si vous êtes un développeur C++, prenez soin de choisir l’installation personnalisée et de sélectionner également C++).
+## Setting up your development PC
+1.  Install Visual Studio 2015 Update. Make sure that you choose **Custom** install and select the **Universal Windows App Development Tools** check box – it's not part of the default install. If you are a C++ developer, make sure that you choose **Custom install** and select **C++**. For more information, see [Development environment setup](development-environment-setup.md). 
 
-2.  Installez la dernière version d’évaluation du Kit de développement logiciel (SDK) Windows10. Vous pouvez l’obtenir à partir du [Programme Windows Insider](http://go.microsoft.com/fwlink/p/?LinkId=780552).
+2.  Install the latest Windows 10 SDK. You can get this from [https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk](https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk).
+
+3.  Enable Developer Mode for your development PC (Settings / Update & security / For developers / Developer mode).
+
+## Setting up your Xbox One console
+1.  Activate Developer Mode on your Xbox One. Download the app, get the activation code, and then enter it into the xboxactivate page in your Dev Center account. For more information, see [Enabling Developer Mode on Xbox One](devkit-activation.md). 
+
+2.  Go into the Dev Mode Activation app and select **Switch and restart**. Congratulations, you now have an Xbox One in Developer Mode!
   
-  > **Important**&nbsp;&nbsp;L’installation de cette version d’évaluation du SDK sur votre PC n’autorisera pas la soumission d’applications créées sur ce PC au Windows Store; par conséquent, n’installez pas cette version sur votre PC de développement de production. 
+  > [!NOTE]
+  > Your retail games and apps won’t run in Developer Mode, but the apps or games you create will. Switch back to Retail Mode to run your favorite games and apps.
+    
+  > [!NOTE]
+  > Before you can deploy an app to your Xbox One in Developer Mode, you must have a user signed in on the console. You can either use your existing Xbox Live account or create a new account for your console in Developer Mode. 
 
-## Configuration de votre console XboxOne
-1.  Activez le mode développeur sur votre console XboxOne. Téléchargez l’application, obtenez le code d’activation, puis entrez-le sur la page xboxactivate de votre compte du Centre de développement. Pour plus d’informations, voir [Activation du Mode développeur sur Xbox One](devkit-activation.md). 
+## Creating your first project in Visual Studio 2015
 
-2.  Attendez que votre console XboxOne effectue une mise à jour système de façon à exécuter la version préliminaire pour développeurs. Ce processus peut nécessiter jusqu’à 4heures. Si vous ne souhaitez pas attendre, effectuez un redémarrage matériel de votre console en appuyant longuement sur le bouton d’alimentation pendant 10secondes, puis en rallumant la console. Cette opération déclenchera la mise à jour.  
+For more detailed information, see [Development environment setup](development-environment-setup.md).
 
-3.  Accédez à l’application Dev Mode Activation, puis sélectionnez **Basculer et redémarrer**. Félicitations, vous disposez maintenant d’une console XboxOne en mode développeur!
-  
-  > **Remarque**&nbsp;&nbsp;Vos applications et jeux commerciaux ne s’exécuteront pas en mode développeur, mais les applications ou jeux que vous créerez le feront sans problème. Pour exécuter vos applications et jeux favoris, rebasculez en mode commercial.
-  
-  > **Remarque**&nbsp;&nbsp;Avant de pouvoir déployer une application vers votre XboxOne en Mode développeur, un utilisateur doit être connecté à la console. Vous pouvez utiliser votre compte XboxLive existant ou créer un compte pour votre console en Mode développeur. 
+1.  **For C#**: Create a new Universal Windows project, go into the project properties and select the **Debug** tab, change **Target device** to **Remote Machine**, type the IP address or hostname of your Xbox One console into the **Remote machine** field, and select **Universal (Unencrypted Protocol)** in the **Authentication Mode** drop-down list.   
 
-## Création de votre premier projet dans VisualStudio2015
+    You can find your Xbox One IP address by starting Dev Home on your console (the big tile on the right side of Home) and looking at the top left corner. For more information about Dev Home, see [Introduction to Xbox One tools](introduction-to-xbox-tools.md).  
 
-Pour plus d’informations, voir [Configuration de l’environnement de développement](development-environment-setup.md).
-
-1.  Pour C# : créez un projet Windows universel, accédez aux propriétés du projet, sélectionnez l’onglet **Déboguer**, remplacez **Appareil cible** par **Ordinateur distant**, tapez l’adresse IP ou le nom d’hôte de votre console Xbox One dans le champ **Ordinateur distant**, puis sélectionnez **Universel (protocole non chiffré)** dans la liste déroulante **Mode d’authentification**.   
-
-    Pour trouver l’adresseIP de votre console XboxOne, démarrez l’outil Accueil du développeur sur votre console (grande vignette figurant sur le côté droit de l’écran d’accueil) et examinez le coin supérieur gauche de l’écran. Pour plus d’informations sur l’outil Accueil du développeur, voir [Présentation des outils Xbox One](introduction-to-xbox-tools.md).  
-
-2.  Pour les projets C++ et HTML/Javascript : suivez une procédure similaire, mais dans les propriétés du projet, accédez à l’onglet **Débogage**, sélectionnez **Ordinateur distant** dans le Débogueur pour afficher la liste déroulante, tapez l’adresse IP ou le nom d’hôte de la console dans le champ **Nom de l’ordinateur**, puis sélectionnez **Universel (protocole non chiffré)** dans le champ **Type d’authentification**.
+2.  **For C++ and HTML/Javascript projects**:  You follow a similar path, but in project properties go to the **Debugging** tab, select **Remote Machine** in the Debugger to open the drop-down list, type the IP address or hostname of the console into the **Machine Name** field, and select **Universal (Unencrypted Protocol)** in the **Authentication Type** field.
    
-3.  Lorsque vous appuyez sur F5, votre application est générée et commence à se déployer sur votre console Xbox One.
+3.  When you press F5, your app will build and start to deploy on your Xbox One.
   
-4.  La première fois que vous effectuez cette opération, VisualStudio vous demande d’entrer un code confidentiel pour votre console XboxOne. Pour obtenir un code confidentiel, démarrez l’outil Accueil du développeur sur votre console Xbox One, puis appuyez sur le bouton **Jumeler avec Visual Studio**.
+4.  The first time you do this, Visual Studio will prompt you for a PIN for your Xbox One. You can get a PIN by starting Dev Home on your Xbox One and selecting the **Pair with Visual Studio** button.
   
-5.  Une fois cette opération effectuée, votre application commence à se déployer. La première exécution de cette procédure peut se révéler un peu lente (nous devons copier la totalité des outils sur votre console Xbox), mais ne devrait pas prendre plus de quelques minutes; dans le cas contraire, un problème est probablement survenu. Vérifiez que vous avez suivi toutes les étapes ci-dessus (notamment que vous avez défini le champ **Mode d’authentification** sur **Universel**) et que vous utilisez une connexion réseau câblée à votre console Xbox One.  
+5.  After you have paired, your app will start to deploy. The first time you do this it might be a bit slow (we have to copy all the tools over to your Xbox), but if it takes more than a few minutes, something is probably wrong. Make sure that you have followed all of the steps above (particularly, did you set the **Authentication Mode** to **Universal**?) and that you are using a wired network connection to your Xbox One.  
 
-6. Il ne vous reste plus qu’à vous détendre et à profiter de votre première application exécutée sur la console.  
+6. Sit back and relax. Enjoy your first app running on the console!  
 
-## C’est tout!
+## That's it!
 
 ![Hello World](images/getting-started-hello-world.png)
 
-## Voir aussi  
-- [Forum Aux Questions](frequently-asked-questions.md)  
-- [Problèmes connus](known-issues.md)
-- [UWP sur XboxOne](index.md)
+## See also  
+- [FAQ](frequently-asked-questions.md)  
+- [Known issues](known-issues.md)
+- [UWP on Xbox One](index.md) 
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO4-->
 
 

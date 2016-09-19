@@ -1,24 +1,24 @@
 ---
-Description: Montre comment convertir manuellement une application de bureau Windows (Win32, WPF, Windows Forms) en une application de plateforme Windows universelle (UWP).
+Description: Shows how to manually convert a Windows desktop application (like Win32, WPF, and Windows Forms) to a Universal Windows Platform (UWP) app.
 Search.Product: eADQiWindows 10XVcnh
-title: Convertir manuellement une application de bureau Windows en appli UWP
+title: Manually convert a Windows desktop application to a Universal Windows Platform (UWP) app
 translationtype: Human Translation
-ms.sourcegitcommit: 606d5237cb67cb4439704f81b180c3c48cc1556f
-ms.openlocfilehash: be7599403e78c8db7ba91fe5a7c25b1c1a1ab644
+ms.sourcegitcommit: 2c1a8ea38081c947f90ea835447a617c388aec08
+ms.openlocfilehash: 646a5b88cb7ca97f18bf4552950979a2ceead398
 
 ---
 
-# Convertir manuellement votre application de bureau Windows en une application de plateforme Windows universelle (UWP)
+# Manually convert your Windows desktop application to a Universal Windows Platform (UWP) app
 
-\[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.\]
+\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
 
-L’utilisation du convertisseur est pratique et automatique; celui-ci est très utile en cas d’incertitude sur ce que fait votre programme d’installation. Toutefois, si votre application est installée à l’aide de xcopy, ou si vous connaissez les modifications que le programme d’installation de votre application apporte au système, vous pouvez choisir de créer manuellement un package d’application et un manifeste.
+Using the Converter is convenient and automatic, and it's useful if there's any uncertainty about what your installer does. But if your app is installed by using xcopy, or if you're familiar with the changes that your app's installer makes to the system, you can opt to create an app package and manifest manually.
 
-Voici la procédure pour créer un package Centennial manuellement:
+Here are the steps to create a package manually:
 
-## Créez un manifeste manuellement.
+## Create a manifest by hand.
 
-Votre fichier _appxmanifest.xml_ doit présenter le contenu suivant (au minimum). Modifiez les espaces réservés mis en forme comme \*\*\*CECI\*\*\* en valeurs réelles pour votre application.
+Your _appxmanifest.xml_ file needs to have the following content (at the minimum). Change placeholders that are formatted like \*\*\*THIS\*\*\* to actual values for your application.
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -58,13 +58,13 @@ Votre fichier _appxmanifest.xml_ doit présenter le contenu suivant (au minimum)
     </Package>
     ```
 
-## Exécutez l’outil MakeAppX.
+## Run the MakeAppX tool
 
-Utilisez l’[outil de création de package de l’application (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx) pour générer un AppX pour votre projet. MakeAppx.exe est inclus dans le SDK Windows 10. 
+Use the [App packager (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx) to generate an AppX for your project. MakeAppx.exe is included with the Windows 10 SDK. 
 
-Pour exécuter MakeAppx, assurez-vous d’abord que vous avez créé un fichier manifeste, tel que décrit ci-dessus. 
+To run MakeAppx, first ensure you've created an manifest file as described above. 
 
-Ensuite, créez un fichier de mappage. Le fichier doit commencer par **[Files]**, puis répertorier chacun de vos fichiers sources sur le disque, suivis de leur chemin de destination dans le package. Voici un exemple: 
+Next, create a mapping file. The file should start with **[Files]**, then list each of your source files on disk followed by their destination path in the package. Here's an example: 
 
 ```
 [Files]
@@ -74,17 +74,17 @@ Ensuite, créez un fichier de mappage. Le fichier doit commencer par **[Files]**
 "MyCustomManifest.xml"       "AppxManifest.xml"
 ```
 
-Enfin, exécutez la commande suivante: 
+Finally, run the following command: 
 
 ```cmd
 MakeAppx.exe pack /f mapping_filepath /p filepath.appx
 ```
 
-## Signer votre package AppX
+## Sign your AppX package
 
-L’applet de commande Add-AppxPackage nécessite que le package d’application (.appx) déployé soit signé. Utilisez [SignTool.exe](https://msdn.microsoft.com/library/windows/desktop/aa387764(v=vs.85).aspx), fourni dans le SDK Microsoft Windows 10 pour signer le package .appx.
+The Add-AppxPackage cmdlet requires that the application package (.appx) being deployed must be signed. Use [SignTool.exe](https://msdn.microsoft.com/library/windows/desktop/aa387764(v=vs.85).aspx), which ships in the Microsoft Windows 10 SDK, to sign the .appx package.
 
-Exemple d’utilisation: 
+Example usage: 
 
 ```cmd
 C:\> MakeCert.exe -r -h 0 -n "CN=<publisher_name>" -eku 1.3.6.1.5.5.7.3.3 -pe -sv <my.pvk> <my.cer>
@@ -92,9 +92,9 @@ C:\> pvk2pfx.exe -pvk <my.pvk> -spc <my.cer> -pfx <my.pfx>
 C:\> signtool.exe sign -f <my.pfx> -fd SHA256 -v .\<outputAppX>.appx
 ```
 
-Lorsque vous exécutez MakeCert.exe et que vous êtes invité à entrer un mot de passe, sélectionnez **Aucun**. Pour plus d’informations sur les certificats et la signature, consultez les rubriques suivantes: 
+When you run MakeCert.exe and you're asked to enter a password, select **none**. For more info on certificates and signing, see the following: 
 
-- [Procédure: Créer des certificats temporaires à utiliser pendant le développement](https://msdn.microsoft.com/library/ms733813.aspx)
+- [How to: Create Temporary Certificates for Use During Development](https://msdn.microsoft.com/library/ms733813.aspx)
 
 - [SignTool](https://msdn.microsoft.com/library/windows/desktop/aa387764.aspx)
 
@@ -103,6 +103,6 @@ Lorsque vous exécutez MakeCert.exe et que vous êtes invité à entrer un mot d
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Sep16_HO2-->
 
 

@@ -1,45 +1,45 @@
 ---
 author: mtoepke
-title: Code complet de BasicReaderWriter
-description: "Code complet pour une classe et des méthodes permettant de lire et d’écrire des fichiers de données binaires en général."
+title: Complete code for BasicReaderWriter
+description: Complete code for a class and methods for reading and writing binary data files in general.
 ms.assetid: af968edd-df5c-b8e6-479e-bfa9689380fc
 translationtype: Human Translation
 ms.sourcegitcommit: 8a7202f2b860a4b7aa52f44ebd630d73889544a2
-ms.openlocfilehash: 46762d7b7234be9ff7b4c288a09162d4f942a707
+ms.openlocfilehash: de6ab2687cfbe7b485e51bc90811b1988e29fb7e
 
 ---
 
-# Code complet de BasicReaderWriter
+# Complete code for BasicReaderWriter
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Code complet pour une classe et des méthodes permettant de lire et écrire des fichiers de données binaires en général. Utilisé par la classe [BasicLoader](complete-code-for-basicloader.md).
+Complete code for a class and methods for reading and writing binary data files in general. Used by the [BasicLoader](complete-code-for-basicloader.md) class.
 
-Cette rubrique contient les sections suivantes:
+This topic contains these sections:
 
 -   [Technologies](#technologies)
--   [Configuration requise](#requirements)
--   [Afficher le code (C++)](#view-the-code-c-)
+-   [Requirements](#requirements)
+-   [View the code (C++)](#view-the-code-c-)
 
 
-## Emplacement de téléchargement
+## Download location
 
-Cet exemple n’est pas disponible en téléchargement.
+This sample is not available for download.
 
 
 ## Technologies
 
-**Langages de programmation**: C++  
-**Modèles de programmation**: Windows Runtime
+**Programming languages** -  C++  
+**Programming models** - Windows Runtime
 
 
-## Conditions requises
+## Requirements
 
- **Client minimal pris en charge**: Windows10       
- **Serveur minimal pris en charge**: Windows Server2016 Technical Preview 
+ **Minimum supported client** - Windows 10       
+ **Minimum supported server** - Windows Server 2016 Technical Preview 
 
-## Afficher le code (C++)
+## View the code (C++)
 
 
 ## BasicReaderWriter.h
@@ -266,6 +266,6 @@ task<void> BasicReaderWriter::WriteDataAsync(
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

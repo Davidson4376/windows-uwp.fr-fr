@@ -1,63 +1,63 @@
 ---
 author: jnHs
-Description: "Quand vous travaillez sur une application dans le tableau de bord du Centre de développement Windows, vous pouvez visualiser les informations concernant l’identité unique qui lui est affectée par le Windows Store et obtenir un lien d’accès à la description de votre application dans le Windows Store."
-title: "Visualiser les informations d’identité des applications"
+Description: When working with an app in the Windows Dev Center dashboard, you can view details related to the unique identity assigned to it by the Windows Store and get a link to your app's Store listing.
+title: View app identity details
 ms.assetid: 86F05A79-EFBC-4705-9A71-3A056323AC65
 translationtype: Human Translation
 ms.sourcegitcommit: a25d87556bb85718f818af5b586f54e6985aaaa4
-ms.openlocfilehash: f00d817616d473ef220ebc1817c2bf9207a7aea0
+ms.openlocfilehash: dc61971865a05e1de17cdcf55ab495fee4917b74
 
 ---
 
-# Visualiser les informations d’identité des applications
+# View app identity details
 
 
-Quand vous travaillez sur une application dans le tableau de bord du Centre de développement Windows, vous pouvez visualiser les informations concernant l&#39;identité unique qui lui est affectée par le Windows Store et obtenir un lien d&#39;accès à la description de votre application dans le Windows Store.
+When working with an app in the Windows Dev Center dashboard, you can view details related to the unique identity assigned to it by the Windows Store and get a link to your app's Store listing.
 
-Pour consulter ces informations, accédez à l’une de vos applications, puis développez l’option **Gestion des applications** dans le menu de navigation gauche. Cliquez sur **Identité de l’application** pour afficher les détails correspondants.
+To find this info, navigate to one of your apps, then expand **App management** in the left navigation menu. Click **App identity** to view these details.
 
-> **Remarque** Pour visualiser la plupart de ces informations d’identité, vous devez disposer d’un [nom réservé](create-your-app-by-reserving-a-name.md) pour votre application.
+> **Note**  You need to have a [reserved name](create-your-app-by-reserving-a-name.md) for your app in order to see most of these identity details.
 
-## Valeurs à inclure dans votre manifeste appx
-
-
-Votre manifeste appx doit contenir les valeurs ci-après. Si vous utilisez Microsoft Visual Studio pour générer vos packages, et que vous êtes connecté avec le même compte Microsoft que celui que vous avez associé à votre compte de développeur, ces informations sont incluses automatiquement. Si vous générez votre package manuellement, vous devrez y ajouter vous-même ces valeurs.
-
--   **Package/Identité/Nom**
--   **Package/Identité/Serveur de publication**
-
-Pour plus d'informations, voir [**Identity**](https://msdn.microsoft.com/library/windows/apps/br211441) dans la [référence du schéma de manifeste de package](https://msdn.microsoft.com/library/windows/apps/br211473).
-
-Utilisés conjointement, ces éléments déclarent l'identité de votre application en établissant la « famille de packages » à laquelle appartiennent tous les packages de l'application. Les différents packages comporteront des détails supplémentaires, comme l'architecture et la version.
-
-## Valeurs supplémentaires concernant la famille de packages
+## Values to include in your appx manifest
 
 
-Les valeurs supplémentaires ci-après font référence à la famille de packages de votre application, mais ne figurent pas dans votre manifeste.
+The following values must be included in your appx manifest. If you are using Microsoft Visual Studio to build your packages, and are signed in with the same Microsoft account that you have associated with your developer account, these details are included automatically. If you're building your package manually, you'll need to add these in.
 
--   **Nom de la famille de packages (PFN)** : cette valeur est utilisée avec certaines API Windows.
--   **SID du package** : vous aurez besoin de cette valeur pour envoyer des notifications WNS à votre application. Pour plus d'informations, voir l'article [Vue d'ensemble des services de notifications Push Windows (WNS)](https://msdn.microsoft.com/library/windows/apps/mt187203).
+-   **Package/Identity/Name**
+-   **Package/Identity/Publisher**
 
-## Lien d’accès à la description de votre application
+For more info, see [**Identity**](https://msdn.microsoft.com/library/windows/apps/br211441) in the [package manifest schema reference](https://msdn.microsoft.com/library/windows/apps/br211473).
 
-Vous pouvez partager le lien d’accès à la page de votre application afin d’aider vos clients à trouver cette dernière dans le WindowsStore. Ce lien est au format **`https://www.microsoft.com/store/apps/<your app's Store ID>`**.
+Together, these elements declare the identity of your app, establishing the "package family" to which all of its packages belong. Individual packages will have additional details, such as architecture and version.
 
-> **Remarque** Cette URL fonctionne pour n’importe quelle version du système d’exploitation, à condition que votre application soit disponible dessus. Vous pouvez également voir des liens supplémentaires pour Windows8.1 et versions antérieures et/ou Windows Phone8.1 et versions antérieures, qui ne fonctionnent que sur les versions de système d’exploitation spécifiées.
+## Additional values for package family
 
-Lorsqu’un client clique sur ce lien, il accède automatiquement à la page de description Web de votre application. Si l’appareil Windows du client prend en charge votre application, l’application du Windows Store lancera et affichera également la description de votre application.
 
-L’**ID Windows Store** de votre application figure également dans cette section. Cet ID Windows Store peut être utilisé pour [générer des badges Windows Store](http://go.microsoft.com/fwlink/p/?LinkId=534236) ou pour identifier votre application.
+The following values are additional values that refer to your app's package family, but are not included in your manifest.
 
- 
+-   **Package Family Name (PFN)**: This value is used with certain Windows APIs.
+-   **Package SID**: You'll need this value to send WNS notifications to your app. For more info, see [Windows Push Notification Services (WNS) overview](https://msdn.microsoft.com/library/windows/apps/mt187203).
+
+## Link to your app's listing
+
+The link to your app's page can be shared to help your customers find the app in the Store. This link is in the format **`https://www.microsoft.com/store/apps/<your app's Store ID>`**.
+
+> **Note**  This URL will work for any OS version on which your app is available. You may also see additional links for Windows 8.1 and earlier and/or Windows Phone 8.1 and earlier, which will work only on the specified OS versions.
+
+When a customer clicks this link, it will open the web-based listing page for your app. If your app is available for the customer's Windows device, the Store app will also launch and display your app's listing.
+
+Your app's **Store ID** is also shown in this section. This Store ID can be used to [generate Store badges](http://go.microsoft.com/fwlink/p/?LinkId=534236) or otherwise identify your app.
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

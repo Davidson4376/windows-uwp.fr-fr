@@ -1,42 +1,42 @@
 ---
 author: jnHs
 ms.assetid: DA495F9D-49B8-45A6-BBE0-27F0C804D240
-title: "Gestion de vos paramètres de compte et des informations sur le profil"
-description: "Vous pouvez afficher et mettre à jour les paramètres de votre compte de développeur et les informations sur le profil dans la section Paramètres du compte du tableau de bord unifié du Centre de développement Windows."
+title: Managing your account settings and profile info
+description: You can view and update your developer account settings and profile info in the Account settings section of the unified Windows Dev Center dashboard.
 translationtype: Human Translation
-ms.sourcegitcommit: a9aae8fdc3cb4eaf151934a773a7cc3e6ced177f
-ms.openlocfilehash: 20a995f1a67bfdf0d52340c0964eb05c10935af1
+ms.sourcegitcommit: 3afdf00864e023d913b635beef0c506735881b23
+ms.openlocfilehash: 3859918d94ad7ffcf1c331ca5a0ca6540387886f
 
 ---
-# Gestion de vos paramètres de compte et des informations sur le profil
+# Managing your account settings and profile info
 
-Vous pouvez afficher et mettre à jour les paramètres de votre compte de développeur et les informations sur le profil dans la section **Paramètres du compte** du [tableau de bord du Centre de développement Windows](https://msdn.microsoft.com/library/windows/apps/Mt169843).
+You can view and update your developer account settings and profile info in the **Account settings** section of the [Windows Dev Center dashboard](using-the-windows-dev-center-dashboard.md).
 
-## Paramètres de compte
+## Account settings
 
-La page **Paramètres du compte** affiche des détails sur votre compte et comprend des liens vers d’autres pages, sur lesquelles vous pouvez afficher et/ou mettre à jour des informations.
+The **Account settings** page shows details about your account, and includes links to other pages where you can view and/or update info.
 
-Dans la section **Détails du compte**, vous pouvez afficher le statut et le type de votre compte. Cette page contient également les informations sur l’ID de l’éditeur, notamment l’ID de vendeur, l’ID d’éditeur Windows et l’ID d’éditeur Windows Phone. Ces valeurs sont allouées par Microsoft afin d’identifier de manière unique votre compte de développeur. Vous ne pouvez pas les modifier.
+In the **Account details** section, you can see the status and type of your account. You can also find your publisher ID info on this page including your Seller ID, Windows publisher ID, and Windows Phone publisher ID. These values are assigned by Microsoft to uniquely identify your developer account, and you cannot edit these values.
 
-**Remarque** Les détails d’identité de vos applications respectives sont accessibles sur la page [Identité de l’application](https://msdn.microsoft.com/library/windows/apps/Mt148561) de chacune des applications.
+**Note**  Identity details for your individual apps can be found in the [App identity](view-app-identity-details.md) page for each app.
 
-## Coordonnées
+## Contact info
 
-La section **Coordonnées** comporte les informations fournies lors de la configuration de votre compte. Nous utilisons ces informations pour vous contacter à propos de votre compte.
+The **Contact info** section displays the info you provided when setting up your account. We use this info to contact you about your account.
 
-Si vos coordonnées ont évolué, vous pouvez modifier cette section. La modification de ces informations peut nous obliger à vérifier de nouveau votre compte, surtout s’il s’agit d’un compte d’entreprise. Votre statut de vérification s’affiche comme **En attente** pendant cette opération. Ce processus de vérification peut durer de quelques jours à quelques semaines. Il implique souvent un appel téléphonique à votre entreprise de nos partenaires de vérification Symantec ou Dun &amp; Bradstreet (vérifiez que vos coordonnées sont à jour).
+You can edit this section if any of your contact info has changed. Note that changing this info may require us to verify your account again, especially if you have a company account. Your verification status will show as **Pending** while this is in process. The verification process can take from a few days to a couple of weeks, and often includes a phone call to your company from our verification partners Symantec or Dun & Bradstreet (so make sure your contact information is up to date).
 
-Si vous modifiez le nom complet de l’éditeur, nous devons vérifier de nouveau votre compte. Si vous décidez de le faire après avoir publié une application, vous devez modifier le nom complet de l’éditeur dans les packages de votre application, puis soumettre de nouveau l’application à l’aide des packages mis à jour une fois le compte revérifié.
+If you change your publisher display name, we’ll need to verify your account again. If you do this after you have published an app, you'll need to modify the publisher display name in your app's packages and submit the app again using the updated packages after your account has been reverified.
 
-## Paramètres et informations supplémentaires
+## Additional settings and info
 
-Cette section comprend également des liens dédiés à la [configuration de votre compte de revenu et de vos formulaires fiscaux](https://msdn.microsoft.com/library/windows/apps/Bg124529). Vous devez effectuer cette action avant de facturer les applications ou les produits dans l’application.
+This section also includes links to [set up your payout account and tax forms](setting-up-your-payout-account-and-tax-forms.md). You'll need to do this before you can charge money for apps or add-ons.
 
-Certains programmes peuvent fournir un code vous permettant d’étendre les fonctionnalités de votre compte; le cas échéant, accédez aux **Paramètres du compte**. Cette page comporte également des détails sur les [appareils Windows Phone8 ou Windows Phone8.1 que vous avez déverrouillés pour le test](http://go.microsoft.com/fwlink/p/?LinkId=533897), et vous permet de vous inscrire ou de vous désinscrire du [Programme Insider du Centre de développement](dev-center-insider-program.md).
-
-
+Some programs may provide a code to let you expand the capabilities of your account; these can be entered in **Account settings**. This page also lets you view details for any [Windows Phone 8 or Windows Phone 8.1 devices that you've unlocked for testing](http://go.microsoft.com/fwlink/p/?LinkId=533897) and opt in or out of the [Dev Center Insider Program](dev-center-insider-program.md).
 
 
-<!--HONumber=Jun16_HO5-->
+
+
+<!--HONumber=Aug16_HO3-->
 
 

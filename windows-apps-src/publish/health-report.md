@@ -1,69 +1,69 @@
 ---
 author: jnHs
-Description: "Le rapport d’intégrité disponible dans le tableau de bord du centre de développement Windows vous permet d’obtenir des données liées aux performances et à la qualité de votre application, y compris les incidents et blocages."
-title: "Rapport d’intégrité"
+Description: The Health report in the Windows Dev Center dashboard lets you get data related to the performance and quality of your app, including crashes and unresponsive events.
+title: Health report
 ms.assetid: 4F671543-1E91-4E59-88A3-638E3E64539A
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 78bedc3e0551feef8efe61b3b664145e29281714
+ms.openlocfilehash: 72c5974da441e76f2fad8e844d3391999e42cd72
 
 ---
 
-# Rapport d’intégrité
+# Health report
 
 
-Le rapport **Intégrité** disponible dans le tableau de bord du centre de développement Windows vous permet d’obtenir des données liées aux performances et à la qualité de votre application, y compris les incidents et blocages. Vous pouvez afficher ces données dans votre tableau de bord ou [télécharger le rapport](download-analytic-reports.md) et le consulter hors connexion. Le cas échéant, vous pouvez afficher les traces de pile pour un débogage supplémentaire. Vous pouvez également récupérer ces données par programme à l’aide de l’[API REST d’analyse du Windows Store](../monetize/access-analytics-data-using-windows-store-services.md).
+The **Health** report in the Windows Dev Center dashboard lets you get data related to the performance and quality of your app, including crashes and unresponsive events. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline. Where applicable, you can view stack traces for further debugging. Alternatively, you can programmatically retrieve this data by using the [Windows Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
 
-> **Remarque** Si vous avez déjà publié des applications et affiché les données de performances dans vos anciens tableaux de bord, vous remarquerez peut-être ici une augmentation du nombre d’incidents et d’événements signalés. En effet, nous sommes en mesure d’intégrer davantage de données dans ce rapport pour vous offrir une vue plus complète.
+> **Note**  If you had previously published apps and viewed performance data in the earlier dashboards, you may notice an increased number of crashes and events reported here. This is because we are able to include more data in this report to give you a more complete picture.
 
-## Appliquer des filtres
-
-
-Dans la zone supérieure de la page, vous pouvez développer l'option **Appliquer des filtres** pour filtrer toutes les données de cette page par plage de dates et/ou par version de package.
-
--   **Date** : le filtre par défaut est **72 derniers jours**, mais vous pouvez choisir jusqu'à **6 derniers mois**.
--   **Version du package** : la valeur par défaut de ce filtre est **Toutes les versions**. Si votre application comporte plusieurs versions de package, vous pouvez en choisir une.
-
-Les informations figurant dans tous les graphiques répertoriés ci-après refléteront la période sélectionnée dans la section **Appliquer des filtres**. Par défaut, ces données porteront sur toutes les versions de vos packages, sauf si vous avez utilisé l'option **Appliquer des filtres** pour ne visualiser qu’une seule version.
-
-## Nombre total d’incidents et d’événements
+## Apply filters
 
 
-Le graphique **Nombre total d'incidents et d'événements** affiche le nombre d'incidents et d'événements quotidiens recensés par les clients sur votre application au cours de la période sélectionnée. Les différents événements survenus dans votre application font l'objet d'un suivi par type : incidents, absences de réponse, exceptions JavaScript ou défaillances mémoire.
+Near the top of the page, you can expand **Apply filters** to filter all of the data on this page by date range and/or by package version.
 
-Vous pouvez également filtrer les résultats par marché et/ou par version du système d'exploitation.
+-   **Date**: The default filter is **Last 72 hours**, but you can expand this up to **Last 6 months**.
+-   **Package version**: The default setting is **All versions**. If your app includes more than one package version, you can choose a specific one.
 
-## Répartition des incidents et des événements
+The info in all of the charts listed below will reflect the period of time selected in the **Apply filters** section. By default this will include data for all of your package versions, unless you've used the **Apply filters** to choose only one.
 
-
-Le graphique **Répartition des incidents et des événements** vous permet de visualiser des graphiques assurant le suivi de détails spécifiques relatifs aux configurations des clients en cas d'incident ou d'absence de réponse. Cliquez sur les titres de section pour obtenir des informations sur les éléments suivants :
-
--   Version du système d'exploitation
--   Type d'appareil
--   Mémoire (Mo)
--   Stockage de masse (Go)
--   Vitesse du processeur (GHz)
-
-Vous pouvez également filtrer les résultats par **type d’incident** : pannes, absences de réponse, exceptions JavaScript ou défaillances mémoire. (Le paramètre par défaut consiste à afficher tous les types d’incidents.)
-
-## Marché
+## Total crashes and events
 
 
-Le graphique **Marché** présente le nombre total d'incidents et d'événements survenus par marché au cours de la période sélectionnée. Par défaut, les marchés ayant donné lieu au plus grand nombre d’incidents apparaissent en premier dans le graphique. Vous pouvez inverser cet ordre en cliquant sur la flèche dans la colonne **Incidents** de ce graphique.
+The **Total crashes and events** chart shows the number of daily crashes and events that customers experienced when using your app during the selected period of time. Each type of event that your app experienced is tracked separately: crashes, hangs, JavaScript exceptions, or memory failures.
 
-## Journal des échecs
+You can optionally filter the results by market and/or by OS version.
+
+## Crash and event breakdown
 
 
-Si vous avez inclus des fichiers de symboles PDB, le graphique **Journal des échecs** affiche les détails relatifs aux occurrences de symboles spécifiques, notamment le nombre total d'incidents et le nombre quotidien moyen d'incidents par symbole.
+The **Crash and event breakdown** chart lets you see charts that track specific details related to the customers' configurations when a crash or unresponsive event occurred. Click the section headings to see details about:
 
-Ces informations sont obtenues sur la base d’un pourcentage du nombre total d'événements. La partie supérieure de ce graphique indique le pourcentage d'événements échantillonnés afin de fournir ces données.
+-   OS version
+-   Device type
+-   Memory (MB)
+-   Mass storage (GB)
+-   CPU speed (GHz)
 
- 
+You can optionally filter the results by **Crash type**: crashes, hangs, JavaScript exceptions, or memory failures. (The default setting is to show all crash types.)
+
+## Market
+
+
+The **Market** chart shows the total number of crashes and events over the selected period of time by market. By default, we show you the market which had the most acquisitions on top and continue downward from there. You can reverse this order by toggling the arrow in the **Crashes** column of this chart.
+
+## Failure log
+
+
+If you have included PDB symbol files, the **Failure log** chart will show details related to occurrences of specific symbols, including the total number of crashes and the average daily number of crashes per symbol.
+
+This info is based on a percentage of your total events. Near the top of the chart, we'll indicate what percentage of events was sampled to provide this data.
 
  
 
+ 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

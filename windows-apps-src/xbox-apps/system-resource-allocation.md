@@ -1,35 +1,39 @@
 ---
 author: Mtoepke
-title: "Ressources système pour les applications UWP et les jeux sur XboxOne"
-description: "UWP sur les ressources système Xbox"
-area: Xbox
+title: System resources for UWP apps and games on Xbox One
+description: UWP on Xbox system resources
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 5c5947239e16d883511e56c62f5267568c3d5feb
+ms.sourcegitcommit: 9187e39e1be8b98ad8315487633dfebd068491e6
+ms.openlocfilehash: c3ca70936e30ce67b19971e5ccbb01fa89253f35
 
 ---
 
-# Ressources système pour les applications UWP et les jeux sur XboxOne
+# System resources for UWP apps and games on Xbox One
 
-Les applications et les jeux UWP s’exécutant sur XboxOne partagent les ressources avec le système et d’autres applications. Par conséquent, les applications et les jeux UWP ont accès aux ressources suivantes:
+UWP apps and games running on Xbox One share resources with the system and other apps. Therefore, UWP apps and games will have access to the following resources:
 
-* Dans cette version d’évaluation, la mémoire maximale disponible pour une application en cours d’exécution au premier plan est d’1Go.
-    * La mémoire maximale disponible pour une application en cours d’exécution en arrière-plan est de 128Mo.
-    * Les applications qui utilisent une quantité de mémoire supérieure à la quantité requise rencontreront des échecs d’allocation de mémoire. Pour en savoir plus sur la surveillance de la mémoire, consultez la documentation de référence sur la [classeMemoryManager](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx).
-    * **Remarque**&nbsp;&nbsp;Lorsque vous exécutez votre application ou votre jeu à partir du débogueur Visual Studio, ces limites de mémoire ne s’appliquent pas. Cette limite s’applique uniquement quand l’exécution n’a pas lieu en mode débogage.
+* The maximum memory available to an app running in the foreground is 1 GB.
+    * The maximum memory available to an app running in the background is 128 MB.
+    * Apps that exceed these memory requirements will encounter memory allocation failures. For more information about monitoring memory use, see the [MemoryManager class](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx) reference.
+    
+    > [!NOTE]
+    > When running your application or game from the Visual Studio debugger, these memory constraints do not apply. This limit is only applicable when not running in debugging mode.
 
-* Partage de 2 à 4 cœurs de processeur en fonction du nombre d’applications et de jeux en cours d’exécution sur le système.
+* Share of 2-4 CPU cores depending on the number of apps and games running on the system.
 
-* Partage de 45% du GPU en fonction du nombre d’applications et de jeux en cours d’exécution sur le système.
+* Share of 45% of the GPU depending on the number of apps and games running on the system.
 
-* UWP sur XboxOne prend en charge la fonctionnalité DirectX11 niveau10. DirectX12 n’est pas pris en charge pour l’instant. 
+* UWP on Xbox One supports DirectX 11 Feature Level 10. DirectX 12 is not supported at this time. 
 
-Pour le **développement d’applications**, il est important de garder à l’esprit que les ressources disponibles peuvent être limitées par rapport à un ordinateur standard.
+For **application development**, it's important to keep in mind that the resources available may be limited in comparison to a standard PC.
 
-Pour le **développement de jeux**, il est important de garder à l’esprit que Xbox One, comme les autres consoles de jeu, est un élément matériel spécialisé qui nécessite un kit de développement matériel spécifique pour offrir tout son potentiel. Si vous travaillez sur un jeu sollicitant les capacités maximales du matériel XboxOne, vous pouvez vous inscrire auprès du programme [ID@XBOX](http://www.xbox.com/Developers/id) pour accéder aux kits de développement Xbox One, qui incluent la prise en charge de DirectX12.
+For **games development**, it’s important to keep in mind that Xbox One, like other games consoles, is a specialized piece of hardware that requires a specific hardware-based development kit to access its full potential. If you are working on a game that requires access to the maximum potential of the Xbox One hardware, you can register with the [ID@Xbox](http://www.xbox.com/Developers/id) program to get access to Xbox One development kits, which include DirectX 12 support.
+
+## See also
+- [UWP on Xbox One](index.md)
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

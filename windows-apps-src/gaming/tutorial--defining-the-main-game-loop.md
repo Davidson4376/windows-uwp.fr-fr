@@ -1,48 +1,48 @@
 ---
 author: mtoepke
-title: "Définir l’objet jeu principal"
-description: "Examinons maintenant les détails de l’objet principal de l’exemple de jeu et la façon dont les règles qu’il implémente se traduisent en interactions avec le monde du jeu."
+title: Define the main game object
+description: Now, we look at the details of the game sample's main object and how the rules it implements translate into interactions with the game world.
 ms.assetid: 6afeef84-39d0-cb78-aa2e-2e42aef936c9
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 66e40c150b5eb4f57c9cddfaf472c56601b3fa0b
+ms.openlocfilehash: 8af939fee50540e5213e624703400d99cbb6785f
 
 ---
 
-# Définir l’objet jeu principal
+# Define the main game object
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-À ce stade, nous avons conçu l’infrastructure de base de l’exemple de jeu et implémenté une machine à états qui gère les comportements globaux du système et de l’utilisateur. Toutefois, nous n’avons pas étudié la partie qui transforme l’exemple de jeu en jeu réel : les règles et la mécanique, et leur implémentation ! Examinons maintenant les détails de l’objet principal de l’exemple de jeu et la façon dont les règles qu’il implémente se traduisent en interactions avec le monde du jeu.
+At this point, we've laid out the basic framework of the sample game, and we implemented a state machine that handles the high-level user and system behaviors. But we haven't examined the part that makes the game sample an actual game: the rules and mechanics, and how they're implemented! Now, we look at the details of the game sample's main object and how the rules it implements translate into interactions with the game world.
 
-## Objectif
-
-
--   Appliquer les techniques de développement de base lors de l’implémentation des règles et de la mécanique d’un jeu de plateforme Windows universelle (UWP) simple en utilisant DirectX.
-
-## Prise en compte du flux du jeu
+## Objective
 
 
-La majeure partie de la structure de base du jeu est définie dans ces fichiers:
+-   To apply the basic development techniques when implementing the rules and mechanics of a simple Universal Windows Platform (UWP) game using DirectX.
+
+## Considering the game's flow
+
+
+The majority of the game's basic structure is defined in these files:
 
 -   **App.cpp**
 -   **Simple3DGame.cpp**
 
-Dans [Définir l’infrastructure d’application du jeu de plateforme Windows universelle (UWP)](tutorial--building-the-games-metro-style-app-framework.md), nous avons passé en revue l’infrastructure de jeu définie dans **App.cpp**.
+In [Defining the game's UWP app framework](tutorial--building-the-games-metro-style-app-framework.md), we reviewed the game framework defined in **App.cpp**.
 
-**Simple3DGame.cpp** fournit le code d’une classe, **Simple3DGame**, qui spécifie l’implémentation du jeu proprement dit. Précédemment, nous avons considéré le traitement de l’exemple de jeu en tant qu’application UWP. Nous examinons à présent le code qui en fait un jeu.
+**Simple3DGame.cpp** provides the code for a class, **Simple3DGame**, which specifies the implementation of the game play itself. Earlier, we considered the treatment of the sample game as a UWP app. Now, we look at the code that makes it a game.
 
-Le code complet pour **Simple3DGame.h/.cpp** est fourni dans [Exemple de code complet pour cette section](#code_sample).
+The complete code for **Simple3DGame.h/.cpp** is provided in [Complete sample code for this section](#code_sample).
 
-Examinons la définition de la classe **Simple3DGame**.
+Let's take a look at the definition of the **Simple3DGame** class.
 
-## Définition de l’objet jeu principal
+## Defining the core game object
 
 
-Lorsque le singleton de l’application démarre, la méthode **Initialize** du fournisseur de vues crée une instance de la classe de jeu principal, l’objet **Simple3DGame**. Cet objet contient les méthodes qui communiquent les modifications de l’état du jeu à la machine à états définie dans l’infrastructure de l’application, ou de l’application à l’objet jeu lui-même. Il contient également des méthodes qui renvoient des informations pour la mise à jour de la bitmap de superposition du jeu et l’affichage à tête haute, ainsi que pour la mise à jour des animations et de la physique (dynamique) du jeu. GameRenderer.cpp contient le code permettant d’obtenir les ressources des périphériques graphiques utilisées par le jeu, dont nous parlons ensuite dans [Assembler l’infrastructure de rendu](tutorial--assembling-the-rendering-pipeline.md).
+When the app singleton starts, the view provider's **Initialize** method creates an instance of the main game class, the **Simple3DGame** object. This object contains the methods that communicate changes in game state to the state machine defined in the app framework, or from the app to the game object itself. It also contains methods that return info for updating the game's overlay bitmap and heads-up display, and for updating the animations and physics (the dynamics) in the game. The code for obtaining the graphics device resources used by the game is found in GameRenderer.cpp, which we discuss next in [Assembling the rendering framework](tutorial--assembling-the-rendering-pipeline.md).
 
-Le code pour **Simple3DGame** se présente ainsi:
+The code for **Simple3DGame** looks like this:
 
 ```cpp
 ref class GameRenderer;
@@ -84,32 +84,32 @@ private:
 };
 ```
 
-Commençons par passer en revue les méthodes internes définies sur **Simple3DGame**.
+First, let's review the internal methods defined on **Simple3DGame**.
 
--   **Initialize**. Définit les valeurs de départ des variables globales et initialise les objets jeu.
--   **LoadGame**. Initialise un nouveau niveau et commence son chargement.
--   **LoadLevelAsync**. Démarre une tâche asynchrone (voir la [Bibliothèque de modèles parallèles](https://msdn.microsoft.com/library/windows/apps/dd492418.aspx) pour plus de détails) pour initialiser le niveau, puis invoquer une tâche asynchrone sur le convertisseur pour charger les ressources de niveau propres au périphérique. Cette méthode s’exécute dans un thread séparé; seules les méthodes [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) (par opposition aux méthodes [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)) peuvent être appelées à partir de ce thread. Toutes les méthodes de contexte de périphérique sont appelées dans la méthode **FinalizeLoadLevel**.
--   **FinalizeLoadLevel**. Finit tout travail de chargement de niveau à effectuer sur le thread principal. Cela comprend tout appel aux méthodes ([**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)) de contexte de périphérique Direct3D11.
--   **StartLevel**. Démarre le jeu sur un nouveau niveau.
--   **PauseGame**. Suspend le jeu.
--   **RunGame**. Exécute une itération de la boucle de jeu. Cette méthode est appelée à partir d’**App::Update** une fois par itération de la boucle de jeu si le jeu présente l’état **Active**.
--   **OnSuspending** et **OnResuming**. Suspend et reprend la partie audio du jeu, respectivement.
+-   **Initialize**. Sets the starting values of the global variables and initializes the game objects.
+-   **LoadGame**. Initializes a new level and starts loading it.
+-   **LoadLevelAsync**. Starts an async task (see the [Parallel Patterns Library](https://msdn.microsoft.com/library/windows/apps/dd492418.aspx) for more details) to initialize the level and then invoke an async task on the renderer to load the device specific level resources. This method runs in a separate thread; as a result, only [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) methods (as opposed to [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) methods) can be called from this thread. Any device context methods are called in the **FinalizeLoadLevel** method.
+-   **FinalizeLoadLevel**. Completes any work for level loading that needs to be done on the main thread. This includes any calls to Direct3D 11 device context ([**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)) methods.
+-   **StartLevel**. Starts the game play for a new level.
+-   **PauseGame**. Pauses the game.
+-   **RunGame**. Runs an iteration of the game loop. It's called from **App::Update** one time every iteration of the game loop if the game state is **Active**.
+-   **OnSuspending** and **OnResuming**. Suspends and resumes the game's audio, respectively.
 
-Et les méthodes privées:
+And the private methods:
 
--   **LoadSavedState** et **SaveState**. Charge et enregistre l’état actuel du jeu, respectivement.
--   **SaveHighScore** et **LoadHighScore**. Enregistre et charge les meilleurs scores des différentes parties, respectivement.
--   **InitializeAmmo**. Redéfinit l’état de chaque objet sphère utilisé comme munition dans son état d’origine au début de chaque partie.
--   **UpdateDynamics**. Il s’agit d’une méthode importante, car elle met à jour tous les objets jeu selon l’entrée de contrôle, la physique et les routines d’animation prédéfinies. Elle représente le cœur de l’interactivité qui définit le jeu. Nous en parlons davantage dans la section [Mise à jour du jeu](#update_game).
+-   **LoadSavedState** and **SaveState**. Loads and saves the current state of the game, respectively.
+-   **SaveHighScore** and **LoadHighScore**. Saves and loads the high score across games, respectively.
+-   **InitializeAmmo**. Resets the state of each sphere object used as ammunition back to its original state for the beginning of each round.
+-   **UpdateDynamics**. This is an important method, because it updates all the game objects based on canned animation routines, physics, and control input. This is the heart of the interactivity that defines the game. We talk about it more in the [Updating the game](#update_game) section.
 
-Les autres méthodes publiques sont les accesseurs Get de propriété qui renvoient des informations sur la superposition et le jeu à l’infrastructure de l’application dans le but de les afficher.
+The other public methods are property getters that return game play and overlay specific information to the app framework for display.
 
-## Définition des variables de l’état du jeu
+## Defining the game state variables
 
 
-L’une des fonctions de l’objet jeu est de servir de conteneur pour les données qui définissent une session, un niveau ou une durée de jeu, en fonction de la façon dont vous définissez votre jeu à un haut niveau. Dans ce cas, les données de l’état du jeu concernent la durée du jeu, initialisée une fois lorsqu’un utilisateur lance le jeu.
+One function of the game object is to serve as a container for the data that defines a game session, level, or lifetime, depending on how you define your game at a high level. In this case, the game state data is for the lifetime of the game, initialized one time when a user launches the game.
 
-Voici l’ensemble complet des définitions des variables de l’état de l’objet jeu.
+Here's the complete set of definitions for the game object's state variables.
 
 ```cpp
 private:
@@ -146,19 +146,19 @@ private:
     DirectX::XMFLOAT3                                   m_maxBound;
 ```
 
-En haut de l’exemple de code, il existe quatre objets dont les instances sont mises à jour pendant l’exécution de la boucle de jeu.
+At the top of the code example, there are four objects whose instances are updated as the game loop runs.
 
--   Objet **MoveLookController**. Cet objet représente les entrées du joueur. (Pour plus d’informations sur l’objet **MoveLookController**, voir [Ajouter des contrôles](tutorial--adding-controls.md).)
--   Objet **GameRenderer**. Cet objet représente le convertisseur Direct3D11 dérivé de la classe **DirectXBase** qui gère tous les objets propres au périphérique et leur rendu. Pour plus d’informations, voir [Assembler l’infrastructure de rendu](tutorial--assembling-the-rendering-pipeline.md).
--   Objet **Camera**. Cet objet représente la vue subjective du monde du jeu du joueur. (Pour plus d’informations sur l’objet **Camera**, voir [Assembler l’infrastructure de rendu](tutorial--assembling-the-rendering-pipeline.md).)
--   Objet **Audio**. Cet objet contrôle la lecture audio du jeu. (Pour plus d’informations sur l’objet **Audio**, voir [Ajouter du son](tutorial--adding-sound.md).)
+-   The **MoveLookController** object. This object represents the player input. (For more info about the **MoveLookController** object, see [Adding controls](tutorial--adding-controls.md).)
+-   The **GameRenderer** object. This object represents the Direct3D 11 renderer derived from the **DirectXBase** class that handles all the device-specific objects and their rendering. (For more info, see [Assembling the rendering pipeline](tutorial--assembling-the-rendering-pipeline.md)).
+-   The **Camera** object. This object represents the player's first-person view of the game world. (For more info about the **Camera** object, see [Assembling the rendering pipeline](tutorial--assembling-the-rendering-pipeline.md).)
+-   The **Audio** object. This object controls the audio playback for the game. (For more info about the **Audio** object, see [Adding sound](tutorial--adding-sound.md).)
 
-Le reste des variables du jeu contient les listes des primitives et leurs quantités respectives intégrées au jeu, ainsi que les données et contraintes propres au jeu. Voyons comment l’exemple configure ces variables lorsque le jeu est initialisé.
+The rest of the game variables contain the lists of the primitives and their respective in-game amounts, and game play specific data and constraints. Let's see how the sample configures these variables when the game is initialized.
 
-## Initialisation et démarrage du jeu
+## Initializing and starting the game
 
 
-Lorsqu’un joueur démarre le jeu, l’objet jeu doit initialiser son état, créer et ajouter la superposition, définir les variables qui suivent les performances du joueur et instancier les objets qui seront utilisés pour générer les niveaux.
+When a player starts the game, the game object must initialize its state, create and add the overlay, set the variables that track the player's performance, and instantiate the objects that it will use to build the levels.
 
 ```cpp
 void Simple3DGame::Initialize(
@@ -359,52 +359,52 @@ void Simple3DGame::Initialize(
 }
 ```
 
-L’exemple de jeu configure les composants de l’objet jeu dans l’ordre suivant :
+The sample game sets up the components of the game object in this order:
 
-1.  Un nouvel objet lecture audio est créé.
-2.  Des tableaux pour les primitives graphiques du jeu sont créés, notamment des tableaux pour les primitives de niveau, les munitions et les obstacles.
-3.  Un emplacement pour enregistrer les données de l’état du jeu est créé: il est nommé *Game* et est placé dans l’emplacement de stockage des paramètres des données d’application spécifié par [**ApplicationData::Current**](https://msdn.microsoft.com/library/windows/apps/br241619).
-4.  Un minuteur de jeu et la bitmap de superposition initiale, intégrée au jeu, sont créés.
-5.  Une nouvelle caméra est créée avec un ensemble spécifique de paramètres de vue et de projection.
-6.  Le périphérique d’entrée (contrôleur) étant défini sur les mêmes tangage et lacet de départ que la caméra, le joueur a une correspondance un-à-un entre la position du contrôle de départ et la position de la caméra.
-7.  L’objet joueur est créé et associé à l’état actif. Nous utilisons un objet sphère pour détecter la proximité du joueur par rapport aux murs et aux obstacles et pour conserver une position de caméra qui ne casse pas l’impression d’immersion.
-8.  La primitive du monde du jeu est créée.
-9.  Les obstacles sous forme de cylindres sont créés.
-10. Les cibles (objets **Face**) sont créées et numérotées.
-11. Les sphères de munitions sont créées.
-12. Les niveaux sont créés.
-13. Les meilleurs scores sont chargés.
-14. Tout état de jeu précédemment enregistré est chargé.
+1.  A new audio playback object is created.
+2.  Arrays for the game's graphic primitives are created, including arrays for the level primitives, ammo, and obstacles.
+3.  A location for saving game state data is created, named *Game*, and placed in the app data settings storage location specified by [**ApplicationData::Current**](https://msdn.microsoft.com/library/windows/apps/br241619).
+4.  A game timer and the initial in-game overlay bitmap are created.
+5.  A new camera is created with a specific set of view and projection parameters.
+6.  The input device (the controller) is set to the same starting pitch and yaw as the camera, so the player has a 1-to-1 correspondence between the starting control position and the camera position.
+7.  The player object is created and set to active. We use a sphere object to detect the player's proximity to walls and obstacles and to keep the camera from getting put in a position that might break immersion.
+8.  The game world primitive is created.
+9.  The cylinder obstacles are created.
+10. The targets (**Face** objects) are created and numbered.
+11. The ammo spheres are created.
+12. The levels are created.
+13. The high score is loaded.
+14. Any prior saved game state is loaded.
 
-Le jeu a maintenant des instances de tous les principaux composants : le monde, le joueur, les obstacles, les cibles et les sphères de munitions. Il a également des instances des niveaux, qui représentent les configurations de tous les composants ci-dessus ainsi que leurs comportements pour chaque niveau spécifique. Voyons comment le jeu génère les niveaux.
+The game now has instances of all the key components: the world, the player, the obstacles, the targets, and the ammo spheres. It also has instances of the levels, which represent configurations of all of the above components and their behaviors for each specific level. Let's see how the game builds the levels.
 
-## Génération et chargement des niveaux du jeu
-
-
-La plupart des lourdes tâches de construction des niveaux est effectuée dans le fichier **Level.h/.cpp**, que nous n’allons pas étudier en détail, car il est axé sur une implémentation très spécifique. Il est important que le code pour chaque niveau soit exécuté en tant qu’objet **LevelN** distinct. Si vous voulez étendre le jeu, vous pouvez créer un objet **Level** qui prend un numéro affecté en tant que paramètre et place de façon aléatoire les obstacles et cibles. Vous pouvez également faire en sorte qu’il charge les données de configuration de niveau à partir d’un fichier de ressources, ou même d’Internet!
-
-Le code complet pour **Level.h/.cpp** est fourni dans [Exemple de code complet pour cette section](#code_sample).
-
-## Définition du jeu
+## Building and loading the game's levels
 
 
-À ce stade, nous avons tous les composants nécessaires pour assembler le jeu. Les niveaux ont été construits en mémoire à partir des primitives et sont prêts à être utilisés par le joueur d’une manière ou d’une autre.
+Most of the heavy lifting for the level construction is done in the **Level.h/.cpp** file, which we won't delve into, because it focuses on a very specific implementation. The important thing is that the code for each level is run as a separate **LevelN** object. If you'd like to extend the game, you can create a **Level** object that took an assigned number as a parameter and randomly placed the obstacles and targets. Or, you can have it load level configuration data from a resource file, or even the Internet!
 
-Les meilleurs jeux réagissent instantanément aux entrées du joueur et fournissent des réponses immédiates. Cela est vrai pour tout type de jeu, qu’il s’agisse de jeux de rapidité et d’action en temps réel ou de jeux de stratégie au tour par tour et de réflexion.
+The complete code for **Level.h/.cpp** is provided in [Complete sample code for this section](#code_sample).
 
-Dans [Définir l’infrastructure d’application du jeu de plateforme Windows universelle (UWP)](tutorial--building-the-games-metro-style-app-framework.md), nous avons examiné la machine à états globale qui régit le flux du jeu. Rappelez-vous, l’exemple implémente ce flux comme une boucle à l’intérieur de la méthode [**Run**](https://msdn.microsoft.com/library/windows/apps/hh702093) de la classe **App**, qui est elle-même une implémentation d’un fournisseur de vues DirectX. Les transitions d’états importantes doivent être contrôlées par le joueur et doivent fournir des réponses claires. Tout retard dans ces réponses casse le sens de l’immersion.
+## Defining the game play
 
-Voici un diagramme représentant le flux de base du jeu et ses principaux états.
 
-![Diagramme illustrant la machine à états principale de notre jeu](images/simple3dgame-mainstatemachine.png)
+At this point, we have all the components we need to assemble the game. The levels have been constructed in memory from the primitives, and are ready for the player to start interacting with them in some fashion.
 
-Lorsque l’exemple de jeu démarre le jeu, l’objet jeu peut présenter l’un des trois états suivants:
+Now, the best games react instantly to player input, and provide immediate feedback. This is true for any type of a game, from twitch-action, real-time shoot-em-ups to thoughtful, turn-based strategy games.
 
--   **Waiting for resources**. Cet état est activé lorsque l’objet jeu est initialisé ou que les composants d’un niveau sont en cours de chargement. Si cet état a été déclenché par une demande de chargement d’un jeu précédent, la superposition des statistiques du jeu est affichée. Si l’état a été déclenché par une demande de jeu à un certain niveau, la superposition de début de niveau est affichée. À la fin du chargement d’une ressource, le jeu prend l’état **Resources loaded**, puis **Waiting for press**.
--   **Waiting for press**. Cet état est activé lorsque le jeu est mis en pause par le joueur ou par le système (par exemple, après le chargement des ressources). Lorsque le joueur est prêt à quitter cet état, il est invité à charger un nouvel état de jeu (LoadGame), à démarrer/redémarrer le niveau chargé (StartLevel) ou à poursuivre le niveau actuel (ContinueGame).
--   **Dynamics**. Si un joueur a entré toutes ses données et que l’action qui en résulte consiste à démarrer ou à poursuivre un niveau, l’objet jeu passe à l’état *Dynamics*. Le jeu est joué dans cet état, et le monde du jeu ainsi que les objets du joueur sont mis à jour ici selon les routines d’animation et les entrées du joueur. Le joueur quitte cet état lorsqu’il déclenche un événement de pause, en appuyant sur P, en entreprenant une action qui désactive la fenêtre principale, ou en terminant un niveau ou le jeu.
+In [Defining the game's UWP framework](tutorial--building-the-games-metro-style-app-framework.md), we looked at the overall state machine that governs the flow of the game. Remember, the sample implements this flow as a loop inside the [**Run**](https://msdn.microsoft.com/library/windows/apps/hh702093) method of the **App** class, which itself is an implementation of a DirectX view provider. The important state transitions must be controlled by the player, and must provide clear feedback. Any delay in this feedback breaks the sense of immersion.
 
-Examinons maintenant le code spécifique de la classe **App** (voir [Définir l’infrastructure d’application du jeu de plateforme Windows universelle (UWP)](tutorial--building-the-games-metro-style-app-framework.md)) pour la méthode **Update** qui implémente cette machine à états.
+Here is a diagram representing the basic flow of the game and its high-level states.
+
+![a diagram showing the main state machine for our game](images/simple3dgame-mainstatemachine.png)
+
+When the sample game starts play, the game object can be in one of three states:
+
+-   **Waiting for resources**. This state is activated when the game object is initialized or when the components of a level are being loaded. If this state was triggered by a request to load a prior game, the game stats overlay is displayed; if it was triggered by a request to play a level, the level start overlay is displayed. The completion of resource loading causes the game to pass through the **Resources loaded** state and then transition into the **Waiting for press** state.
+-   **Waiting for press**. This state is activated when the game is paused, either by the player or by the system (after, say, loading resources). When the player is ready to exit this state, the player is prompted to load a new game state (LoadGame), start or restart the loaded level (StartLevel), or continue the current level (ContinueGame).
+-   **Dynamics**. If a player's press input is completed and the resulting action is to start or continue a level, the game object transitions into the *Dynamics* state. The game is played in this state, and the game world and player objects are updated here based on animation routines and player input. This state is left when the player triggers a pause event, either by pressing P, by taking an action that deactivates the main window, or by completing a level or the game.
+
+Now, let's look at specific code in the **App** class (see: [Defining the game's UWP framework](tutorial--building-the-games-metro-style-app-framework.md)) for the **Update** method that implements this state machine.
 
 ```cpp
 void App::Update()
@@ -549,23 +549,23 @@ void App::Update()
 }
 ```
 
-Tout d’abord, cette méthode appelle la propre méthode **Update** de l’instance [MoveLookController](tutorial--adding-controls.md), qui met à jour les données du contrôleur. Ces données incluent la direction de la vue à laquelle l’utilisateur (la caméra) fait face et la vitesse de mouvement du joueur.
+The first thing this method does is call the [MoveLookController](tutorial--adding-controls.md) instance's own **Update** method, which updates the data from the controller. This data includes the direction the player's view (the camera) is facing and the velocity of the player's movement.
 
-Lorsque le jeu présente l’état Dynamics, autrement dit lorsque le joueur joue, le travail est géré dans la méthode **RunGame**, avec cet appel:
+When the game is in the Dynamics state, that is, when the player is playing, the work is handled in the **RunGame** method, with this call:
 
 `GameState runState = m_game->RunGame();`
 
-**RunGame** gère l’ensemble des données qui définissent l’état actuel du jeu pour l’itération en cours de la boucle de jeu. Le flux se présente comme suit:
+**RunGame** handles the set of data that defines the current state of the game play for the current iteration of the game loop. It flows like this:
 
-1.  La méthode met à jour le minuteur qui compte à rebours les secondes jusqu’à ce que le niveau soit terminé, et vérifie si le délai imparti pour ce niveau a expiré. Il s’agit de l’une des règles du jeu: lorsque le temps imparti est écoulé alors que toutes les cibles n’ont pas été atteintes, la partie se termine.
-2.  À la fin du temps imparti, la méthode place le jeu à l’état **TimeExpired**, puis revient à la méthode **Update** dans le code précédent.
-3.  S’il reste du temps, le contrôleur de déplacement/vue est interrogé dans le cadre d’une mise à jour de la position de la caméra, en particulier une mise à jour de l’angle perpendiculaire de la vue du plan de la caméra (où le joueur regarde), et de la distance selon laquelle cet angle a bougé depuis la dernière fois que le contrôleur a été interrogé.
-4.  La caméra est mise à jour en fonction des nouvelles données du contrôleur de déplacement/vue.
-5.  La dynamique, ou les animations et comportements des objets du monde du jeu indépendants du contrôle du joueur, sont mis à jour. Dans l’exemple de jeu, il s’agit du mouvement des sphères de munitions qui ont été tirées, de l’animation des colonnes d’obstacles et du déplacement des cibles.
-6.  La méthode vérifie si les critères de réussite d’un niveau ont été remplis. Si tel est le cas, elle finalise le score du niveau et vérifie s’il s’agit du dernier niveau (6). S’il s’agit du dernier niveau, la méthode renvoie l’état de jeu **GameComplete**; sinon, elle renvoie l’état de jeu **LevelComplete**.
-7.  Si le niveau n’est pas terminé, la méthode renvoie l’état de jeu **Active**.
+1.  The method updates the timer that counts down the seconds until the level is completed, and tests to see if the level's time has expired. This is one of the rules of the game: when time runs out without all the targets getting shot, the game is over.
+2.  If time has run out, the method sets the **TimeExpired** game state, and returns to the **Update** method in the previous code.
+3.  If time remains, the move-look controller is polled for an update to the camera position; specifically, an update to the angle of the view normal projecting from the camera plane (where the player is looking), and the distance that angle has moved from the previous time the controller was polled.
+4.  The camera is updated based on the new data from the move-look controller.
+5.  The dynamics, or the animations and behaviors of objects in the game world independent of player control, are updated. In the game sample, this is the motion of the ammo spheres that have been fired, the animation of the pillar obstacles and the movement of the targets.
+6.  The method checks to see if the criteria for the successful completion of a level have been met. If so, it finalizes the score for the level and checks to see if this is the last level (of 6). If it's the last level, the method returns the **GameComplete** game state; otherwise, it returns the **LevelComplete** game state.
+7.  If the level isn't complete, the method sets the game state to **Active** and returns.
 
-Voici à quoi **RunGame**, qui figure dans **Simple3DGame.cpp**, ressemble dans le code.
+Here's what **RunGame**, found in **Simple3DGame.cpp**, looks like in code.
 
 ```cpp
 GameState Simple3DGame::RunGame()
@@ -647,16 +647,16 @@ GameState Simple3DGame::RunGame()
 }}
 ```
 
-Voici l’appel clé : `UpdateDynamics()`. Le monde du jeu prend ainsi vie. Voyons cela !
+Here's the key call: `UpdateDynamics()`. It's what brings the game world to life. Let's review it!
 
-## Mise à jour du monde du jeu
+## Updating the game world
 
 
-Pour obtenir une expérience de jeu rapide et fluide, le monde doit paraître *vivant* et le jeu lui-même doit être en mouvement, indépendamment des entrées du joueur. Les arbres s’agitent dans le vent, les vagues s’écrasent sur le rivage, les machines fument et reluisent, et les monstres extraterrestres s’étirent et bavent. Imaginez ce que serait un jeu si tout était figé, les graphiques ne bougeant qu’avec l’intervention du joueur. Ce serait bizarre et pas vraiment, disons, immersif. L’immersion, pour le joueur, provient de la sensation d’être un agent dans un monde plein de vie.
+A fast and fluid game experience is one where the world feels *alive*, where the game itself is in motion independent of player input. Trees wave in the wind, waves crest along shore lines, machinery smokes and shines, and alien monsters stretch and salivate. Imagine what a game would be like if everything was frozen, with the graphics only moving when the player provided input. It'd be weird and not very, well, immersive. Immersion, for the player, comes from the feeling of being an agent in a living, breathing world.
 
-La boucle de jeu doit en permanence mettre à jour le monde du jeu et exécuter les routines d’animation, qu’elles soient prêtes à être utilisées, basées sur des algorithmes physiques ou simplement aléatoires, sauf quand le jeu est expressément suspendu. Dans l’exemple de jeu, ce principe porte le nom de *dynamique* et il englobe la montée et la chute des colonnes d’obstacles, ainsi que le mouvement et les comportements physiques des sphères de munitions lorsqu’elles sont tirées. Il englobe également l’interaction entre les objets, y compris les collisions entre la sphère du joueur et le monde, ou entre les munitions et les obstacles et cibles.
+The game loop should always keep updating the game world and running the animation routines, be they canned or based on physical algorithms or just plain random, except when the game is specifically paused. In the game sample, this principle is called *dynamics*, and it encompasses the rise and fall of the pillar obstacles, and the motion and physical behaviors of the ammo spheres as they are fired. It also encompasses the interaction between objects, including collisions between the player sphere and the world, or between the ammo and the obstacles and targets.
 
-Le code qui implémente cette dynamique se présente comme suit :
+The code that implements these dynamics looks like this:
 
 ```cpp
 void Simple3DGame::UpdateDynamics()
@@ -829,27 +829,27 @@ void Simple3DGame::UpdateDynamics()
 }
 ```
 
-(Nous avons abrégé cet exemple de code pour une meilleure lisibilité. Le code fonctionnel est disponible dans sa totalité dans l’exemple de code complet à la fin de cette rubrique.)
+(This code example has been abbreviated for readability. The full working code is found in the complete code sample at the bottom of this topic.)
 
-Cette méthode traite quatre ensembles de calculs :
+This method deals with four sets of computations:
 
--   Les positions des sphères de munitions tirées dans le monde.
--   L’animation des colonnes d’obstacles.
--   L’intersection du joueur et des limites du monde.
--   Les collisions entre les sphères de munitions et les obstacles, les cibles, d’autres sphères de munitions et le monde.
+-   The positions of the fired ammo spheres in the world.
+-   The animation of the pillar obstacles.
+-   The intersection of the player and the world boundaries.
+-   The collisions of the ammo spheres with the obstacles, the targets, other ammo spheres, and the world.
 
-L’animation des obstacles est une boucle définie dans **Animate.h/.cpp**. Le comportement des munitions et des collisions est défini par des algorithmes physiques simplifiés, fournis dans le code précédent et paramétrés par un ensemble de constantes globales pour le monde du jeu, y compris les propriétés matérielles et de pesanteur. Tout cela est calculé dans l’espace de coordonnées du monde du jeu.
+The animation of the obstacles is a loop defined in **Animate.h/.cpp**. The behavior of the ammo and any collisions are defined by simplified physics algorithms, supplied in the previous code and parameterized by a set of global constants for the game world, including gravity and material properties. This is all computed in the game world coordinate space.
 
-Maintenant que nous avons mis à jour tous les objets de la scène et calculé toutes les collisions, nous devons utiliser ces informations pour dessiner les modifications visuelles correspondantes. Une fois que la méthode Update a été exécutée dans l’itération en cours de la boucle de jeu, l’exemple appelle immédiatement **Render** pour prendre les données d’objet mises à jour et générer une nouvelle scène à présenter au joueur.
+Now that we've updated all the objects in the scene and calculated any collisions, we need to use that info to draw the corresponding visual changes. After Update completes in the current iteration of the game loop, the sample immediately calls **Render** to take the updated object data and generate a new scene to present to the player.
 
-Examinons à présent la méthode de rendu.
+Let's look at the render method now.
 
-## Rendu des graphiques du monde du jeu
+## Rendering the game world's graphics
 
 
-Nous conseillons de mettre à jour les graphiques d’un jeu chaque fois que possible, ce qui revient à le faire, au maximum, à chaque itération de la boucle de jeu principale. Lors de l’itération de la boucle, le jeu est mis à jour, avec ou sans intervention du joueur. Cela permet d’afficher correctement les animations et comportements calculés. Imaginez que nous ayons une simple scène comportant de l’eau qui ne bouge que lorsque le joueur appuie sur un bouton. Les effets visuels seraient terriblement ennuyeux. Un bon jeu doit avoir un aspect fluide.
+We recommend that the graphics in a game update as often as possible, which, at maximum, is every time the main game loop iterates. As the loop iterates, the game is updated, with or without player input. This allows the animations and behaviors that are calculated to be displayed smoothly. Imagine if we had a simple scene of water that only moved when the player pressed a button. That would make for terribly boring visuals. A good game looks smooth and fluid.
 
-Rappelez la boucle de l’exemple de jeu, comme illustré ici. Si la fenêtre principale du jeu est visible et n’est pas ancrée ni désactivée, le jeu continue de mettre à jour et de restituer les résultats de cette mise à jour.
+Recall the sample game's loop, as shown here. If the game's main window is visible, and isn't snapped or deactivated, the game continues to update and render the results of that update.
 
 ```cpp
 void App::Run()
@@ -885,7 +885,7 @@ void App::Run()
 }
 ```
 
-La méthode que nous examinons maintenant restitue une représentation de cet état immédiatement après la mise à jour de l’état dans **Run** avec un appel de la méthode **Update**, dont nous avons parlé dans la section précédente.
+The method we examine now renders a representation of that state immediately after the state is updated in **Run** with a call to **Update**, which we discussed in the previous section.
 
 ```cpp
 void GameRenderer::Render()
@@ -1035,18 +1035,18 @@ void GameRenderer::Render()
 }
 ```
 
-Le code complet de cette méthode figure dans [Assembler l’infrastructure de rendu](tutorial--assembling-the-rendering-pipeline.md).
+The complete code for this method is in [Assembling the rendering framework](tutorial--assembling-the-rendering-pipeline.md).
 
-Cette méthode dessine la projection du monde en 3D, puis la superposition Direct2D au-dessus. Une fois terminé, elle présente la chaîne de permutation finale avec les tampons combinés à afficher.
+This method draws the projection of the 3D world, and then draws the Direct2D overlay on top of it. When completed, it presents the final swap chain with the combined buffers for display.
 
-Gardez à l’esprit que la superposition Direct2D de l’exemple de jeu peut présenter deux états : un où le jeu affiche la superposition des informations du jeu qui contient la bitmap pour le menu de pause, et un où le jeu affiche le réticule avec les rectangles pour le contrôle de déplacement/vue de l’écran tactile. Le texte des scores est écrit dans les deux états.
+Be aware that there are two states for the sample game's Direct2D overlay: one where the game displays the game info overlay that contains the bitmap for the pause menu, and one where the game displays the cross hairs along with the rectangles for the touchscreen move-look controller. The score text is drawn in both states.
 
-## Étapes suivantes
+## Next steps
 
 
-À présent, vous êtes probablement intrigué par le moteur de rendu réel, et par la façon dont ces appels aux méthodes **Render** sur les primitives mises à jour deviennent des pixels sur votre écran. Nous abordons ce point en détail dans [Assembler l’infrastructure de rendu](tutorial--assembling-the-rendering-pipeline.md). Si vous êtes davantage intéressé par la façon dont les contrôles du joueur mettent à jour l’état du jeu, voir [Ajouter des contrôles](tutorial--adding-controls.md).
+By now, you're probably curious about the actual rendering engine: how those calls to the **Render** methods on the updated primitives get turned into pixels on your screen. We cover that in detail in [Assembling the rendering framework](tutorial--assembling-the-rendering-pipeline.md). If you're more interested in how the player controls update the game state, then check out [Adding controls](tutorial--adding-controls.md).
 
-## Exemple de code complet pour cette section
+## Complete code sample for this section
 
 
 Simple3DGame.h
@@ -3605,26 +3605,26 @@ XMFLOAT3 AnimateCirclePosition::Evaluate(_In_ float t)
             
 ```
 
-> **Remarque**  
-Cet article s’adresse aux développeurs de Windows10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Note**  
+This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
-## Rubriques connexes
+## Related topics
 
 
-[Créer un jeu UWP simple avec DirectX](tutorial--create-your-first-metro-style-directx-game.md)
-
- 
+[Create a simple UWP game with DirectX](tutorial--create-your-first-metro-style-directx-game.md)
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

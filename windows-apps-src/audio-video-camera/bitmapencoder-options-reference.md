@@ -1,39 +1,39 @@
 ---
 author: drewbatgit
 ms.assetid: 98BD79B3-F420-43C5-98D3-52EBDDB479A0
-description: "Cet article répertorie les options de codage qui peuvent être utilisées avec BitmapEncoder."
-title: "Référence des options BitmapEncoder"
+description: This article lists the encoding options that can be used with BitmapEncoder.
+title: BitmapEncoder options reference
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 510cb363b258d20688ea212856af4b7ac0311e61
+ms.sourcegitcommit: de54d389488d8298ea1341b0a6f27a476d38584e
+ms.openlocfilehash: 0ccaf55215cb82633313e145a126db92aa6d16e6
 
 ---
 
-# Référence des options BitmapEncoder
+# BitmapEncoder options reference
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Cet article répertorie les options de codage qui peuvent être utilisées avec [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206). Une option de codage se définit par son nom (à savoir une chaîne) et par une valeur dans un type de données particulier ([**Windows.Foundation.PropertyType**](https://msdn.microsoft.com/library/windows/apps/br225871)). Pour plus d’informations sur l’utilisation des images, voir [Imagerie](imaging.md).
+This article lists the encoding options that can be used with [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206). An encoding option is defined by its name, which is a string, and a value in a particular data type ([**Windows.Foundation.PropertyType**](https://msdn.microsoft.com/library/windows/apps/br225871)). For information about working with images, see [Create, edit, and save bitmap images](imaging.md).
 
-| Nom                    | Type de propriété | Notes d’utilisation                                                                                        | Formats valides |
+| Name                    | PropertyType | Usage notes                                                                                        | Valid formats |
 |-------------------------|--------------|----------------------------------------------------------------------------------------------------|---------------|
-| ImageQuality            | unique       | Valeurs valides de 0 à 1.0. Des valeurs plus élevées indiquent une plus haute qualité.                                 | JPEG, JPEG-XR |
-| CompressionQuality      | unique       | Valeurs valides de 0 à 1.0. Des valeurs plus élevées indiquent un schéma de compression plus efficace et plus lent. | TIFF          |
-| Lossless                | booléen      | Si cette propriété a la valeur True, l’option ImageQuality est ignorée.                                        | JPEG-XR       |
-| InterlaceOption         | booléen      | Indique la nécessité ou non d’entrelacer l’image.                                                                    | PNG           |
-| FilterOption            | uint8        | Utilisez l’énumération [**PngFilterMode**](https://msdn.microsoft.com/library/windows/apps/br226389).                                | PNG           |
-| TiffCompressionMethod   | uint8        | Utilisez l’énumération [**TiffCompressionMode**](https://msdn.microsoft.com/library/windows/apps/br226399).                    | TIFF          |
-| Luminance               | uint32Array  | Tableau de 64 éléments comprenant des constantes de quantification de la luminance.                               | JPEG          |
-| Chrominance             | uint32Array  | Tableau de 64 éléments comprenant des constantes de quantification de la chrominance.                             | JPEG          |
-| JpegYCrCbSubsampling    | uint8        | Utilisez l’énumération [**JpegSubsamplingMode**](https://msdn.microsoft.com/library/windows/apps/br226386).                    | JPEG          |
-| SuppressApp0            | booléen      | Indique la nécessité ou non de supprimer la création d’un bloc de métadonnées App0.                                        | JPEG          |
-| EnableV5Header32bppBGRA | booléen      | Indique la nécessité ou non de coder dans une version 5 BMP avec prise en charge alpha.                                         | BMP           |
+| ImageQuality            | single       | Valid values from 0 to 1.0. Higher values indicate higher quality                                 | JPEG, JPEG-XR |
+| CompressionQuality      | single       | Valid values from 0 to 1.0. Higher values indicate a more efficient and slower compression scheme | TIFF          |
+| Lossless                | boolean      | If this is set to true, the ImageQuality option is ignored                                        | JPEG-XR       |
+| InterlaceOption         | boolean      | Whether to interlace the image                                                                    | PNG           |
+| FilterOption            | uint8        | Use the [**PngFilterMode**](https://msdn.microsoft.com/library/windows/apps/br226389) enumeration                                | PNG           |
+| TiffCompressionMethod   | uint8        | Use the [**TiffCompressionMode**](https://msdn.microsoft.com/library/windows/apps/br226399) enumeration                    | TIFF          |
+| Luminance               | uint32Array  | An array of 64 elements containing luminance quantization constants                               | JPEG          |
+| Chrominance             | uint32Array  | An array of 64 elements containing chrominance quantization constants                             | JPEG          |
+| JpegYCrCbSubsampling    | uint8        | Use the [**JpegSubsamplingMode**](https://msdn.microsoft.com/library/windows/apps/br226386) enumeration                    | JPEG          |
+| SuppressApp0            | boolean      | Whether to suppress the creation of an App0 metadata block                                        | JPEG          |
+| EnableV5Header32bppBGRA | boolean      | Whether to encode to a version 5 BMP which supports alpha                                         | BMP           |
 
  
 
-## Rubriques connexes
+## Related topics
 
-* [Imagerie](imaging.md)
+* [Create, edit, and save bitmap images](imaging.md)
  
 
  
@@ -44,6 +44,6 @@ Cet article répertorie les options de codage qui peuvent être utilisées avec 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

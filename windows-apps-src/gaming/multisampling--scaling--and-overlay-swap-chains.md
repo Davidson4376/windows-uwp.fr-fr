@@ -1,34 +1,34 @@
 ---
 author: mtoepke
-title: "Mise à l’échelle et superpositions de chaînes d’échange"
-description: "Apprenez à créer des chaînes d’échange mises à l’échelle pour accélérer le rendu sur les appareils mobiles, et utilisez la superposition des chaînes d’échange (quand cela est possible) pour améliorer la qualité visuelle."
+title: Swap chain scaling and overlays
+description: Learn how to create scaled swap chains for faster rendering on mobile devices, and use overlay swap chains (when available) to increase the visual quality.
 ms.assetid: 3e4d2d19-cac3-eebc-52dd-daa7a7bc30d1
 translationtype: Human Translation
 ms.sourcegitcommit: d403e78b775af0f842ba2172295a09e35015dcc8
-ms.openlocfilehash: 3380c5156072a9853261ec6b706a612b42e7ba10
+ms.openlocfilehash: 1eea87b2175872e5a3bc7c41e82cda47bb555f82
 
 ---
 
-# Mise à l’échelle et superpositions de chaînes d’échange
+# Swap chain scaling and overlays
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Apprenez à créer des chaînes d’échange mises à l’échelle pour accélérer le rendu sur les appareils mobiles, et utilisez la superposition des chaînes d’échange (quand cela est possible) pour améliorer la qualité visuelle.
+Learn how to create scaled swap chains for faster rendering on mobile devices, and use overlay swap chains (when available) to increase the visual quality.
 
-## Chaînes d’échange dans DirectX 11.2
-
-
-Direct3D 11.2 vous permet de créer des applications de plateforme Windows universelle (UWP) avec des chaînes de permutation mises à l’échelle à partir de résolutions non natives (réduites), ce qui permet d’accélérer les taux de remplissage. Direct3D 11.2 inclut également des API de rendu avec des surcouches vidéo matérielles afin que vous puissiez présenter une interface utilisateur dans une autre chaîne de permutation à une résolution native. Ainsi, votre jeu peut afficher l’interface utilisateur à une résolution native maximale tout en conservant une grande fluidité, ce qui permet de tirer parti des appareils mobiles et des affichages haute résolution (par exemple 3840 x 2160). Cet article explique comment utiliser la superposition des chaînes de permutation.
-
-Direct3D 11.2 introduit également une nouvelle fonctionnalité qui permet de réduire la latence avec les chaînes de permutation d’un modèle de retournement. Voir [Réduire la latence avec des chaînes de permutation DXGI 1.3](reduce-latency-with-dxgi-1-3-swap-chains.md).
-
-## Utiliser la mise à l’échelle des chaînes de permutation
+## Swap chains in DirectX 11.2
 
 
-Quand votre jeu s’exécute sur du matériel de bas niveau ou sur du matériel optimisé pour l’économie d’énergie, il est préférable d’effectuer le rendu du contenu du jeu en temps réel à une résolution inférieure à la résolution native de l’écran. Pour ce faire, la chaîne d’échange qui est utilisée pour le rendu du contenu du jeu doit être inférieure à la résolution native. Sinon, une sous-région de la chaîne d’échange doit être utilisée.
+Direct3D 11.2 allows you to create Universal Windows Platform (UWP) apps with swap chains that are scaled up from non-native (reduced) resolutions, enabling faster fill rates. Direct3D 11.2 also includes APIs for rendering with hardware overlays so that you can present a UI in another swap chain at native resolution. This allows your game to draw UI at full native resolution while maintaining a high framerate, thereby making the best use of mobile devices and high DPI displays (such as 3840 by 2160). This article explains how to use overlapping swap chains.
 
-1.  Commencez par créer une chaîne d’échange à la résolution native maximale.
+Direct3D 11.2 also introduces a new feature for reduced latency with flip model swap chains. See [Reduce latency with DXGI 1.3 swap chains](reduce-latency-with-dxgi-1-3-swap-chains.md).
+
+## Use swap chain scaling
+
+
+When your game is running on downlevel hardware - or hardware optimized for power savings - it can be beneficial to render real-time game content at a lower resolution than the display is natively capable of. To do this, the swap chain that is used for rendering game content must be smaller than the native resolution, or a subregion of the swapchain must be used.
+
+1.  First, create a swap chain at full native resolution.
 
     ```cpp
     DXGI_SWAP_CHAIN_DESC1 swapChainDesc = {0};
@@ -77,9 +77,9 @@ Quand votre jeu s’exécute sur du matériel de bas niveau ou sur du matériel 
         );
     ```
 
-2.  Choisissez ensuite une sous-région de la chaîne de permutation à mettre à l’échelle en affectant une résolution réduite à la taille de la source.
+2.  Then, choose a subregion of the swap chain to scale up by setting the source size to a reduced resolution.
 
-    L’exemple des chaînes de permutation de premier plan DX calcule une taille réduite en fonction d’un pourcentage :
+    The DX Foreground Swap Chains sample calculates a reduced size based on a percentage:
 
     ```cpp
     m_d3dRenderSizePercentage = percentage;
@@ -96,7 +96,7 @@ Quand votre jeu s’exécute sur du matériel de bas niveau ou sur du matériel 
         );
     ```
 
-3.  Créez une fenêtre d’affichage qui correspond à la sous-région de la chaîne de permutation.
+3.  Create a viewport to match the subregion of the swap chain.
 
     ```cpp
     // In Direct3D, change the Viewport to match the region of the swap
@@ -111,16 +111,16 @@ Quand votre jeu s’exécute sur du matériel de bas niveau ou sur du matériel 
     m_d3dContext->RSSetViewports(1, &m_screenViewport);
     ```
 
-4.  Si Direct2D est utilisé, la transformation de la rotation doit être modifiée pour compenser la région source.
+4.  If Direct2D is being used, the rotation transform needs to be adjusted to compensate for the source region.
 
-## Créer une chaîne de permutation de surcouche vidéo matérielle pour les éléments d’interface utilisateur
+## Create a hardware overlay swap chain for UI elements
 
 
-Quand vous effectuez une mise à l’échelle d’une chaîne de permutation, tenez compte de l’inconvénient suivant : la mise à l’échelle de l’interface utilisateur est réduite également, ce qui peut la rendre floue et difficile à utiliser. Sur les appareils qui prennent en charge les chaînes de permutation de surcouche vidéo matérielle, ce problème peut être résolu. Pour ce faire, il suffit d’effectuer le rendu de l’interface utilisateur à la résolution native dans une chaîne de permutation distincte du contenu de jeu en temps réel. Notez que cette technique ne s’applique qu’aux chaînes de permutation [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). Elle ne peut pas être utilisée avec l’interopérabilité XAML.
+When using swap chain scaling, there is an inherent disadvantage in that the UI is also scaled down, potentially making it blurry and harder to use. On devices with hardware support for overlay swap chains, this problem is alleviated entirely by rendering the UI at native resolution in a swap chain that's separate from the real-time game content. Note that this technique applies only to [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) swap chains - it cannot be used with XAML interop.
 
-Procédez comme suit pour créer une chaîne de permutation de premier plan qui utilise la fonctionnalité de surcouche vidéo matérielle. Ces étapes doivent être effectuées après la création de la chaîne de permutation pour le contenu de jeu en temps réel, comme décrit ci-dessus.
+Use the following steps to create a foreground swap chain that uses hardware overlay capability. These steps are performed after first creating a swap chain for real-time game content as described above.
 
-1.  Tout d’abord, déterminez si l’adaptateur DXGI prend en charge les permutations. Récupérez l’adaptateur de sortie DXGI à partir de la chaîne de permutation :
+1.  First, determine whether the DXGI adapter supports overlays. Get the DXGI output adapter from the swap chain:
 
     ```cpp
     ComPtr<IDXGIAdapter> outputDxgiAdapter;
@@ -139,21 +139,21 @@ Procédez comme suit pour créer une chaîne de permutation de premier plan qui 
         );
     ```
 
-    L’adaptateur DXGI prend en charge les superpositions si l’adaptateur de sortie retourne True pour [**SupportsOverlays**](https://msdn.microsoft.com/library/windows/desktop/dn280411).
+    The DXGI adapter supports overlays if the output adapter returns True for [**SupportsOverlays**](https://msdn.microsoft.com/library/windows/desktop/dn280411).
 
     ```cpp
     m_overlaySupportExists = dxgiOutput2->SupportsOverlays() ? true : false;
     ```
     
-    > **Remarque** Si l’adaptateur DXGI prend en charge les superpositions, passez à l’étape suivante. Si l’appareil ne prend pas en charge les superpositions, le rendu avec plusieurs chaînes d’échange ne sera pas efficace. À la place, effectuez un rendu de l’interface utilisateur à une résolution réduite dans la même chaîne de permutation que le contenu de jeu en temps réel.
+    > **Note**   If the DXGI adapter supports overlays, continue to the next step. If the device does not support overlays, rendering with multiple swap chains will not be efficient. Instead, render the UI at reduced resolution in the same swap chain as real-time game content.
 
      
 
-2.  Créez la chaîne d’échange de premier plan avec [**IDXGIFactory2::CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559). Les options suivantes doivent être définies dans le [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528) fourni au paramètre *pDesc* :
+2.  Create the foreground swap chain with [**IDXGIFactory2::CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559). The following options must be set in the [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528) supplied to the *pDesc* parameter:
 
-    -   Utilisez l’indicateur de chaîne d’échange [**DXGI\_SWAP\_CHAIN\_FLAG\_FOREGROUND\_LAYER**](https://msdn.microsoft.com/library/windows/desktop/bb173076) pour spécifier qu’il s’agit d’une chaîne d’échange de premier plan.
-    -   Utilisez l’indicateur de mode alpha [**DXGI\_ALPHA\_MODE\_PREMULTIPLIED**](https://msdn.microsoft.com/library/windows/desktop/hh404496). Les chaînes d’échange de premier plan sont toujours prémultipliées.
-    -   Définissez l’indicateur [**DXGI\_SCALING\_NONE**](https://msdn.microsoft.com/library/windows/desktop/hh404526). Les chaînes d’échange de premier plan s’exécutent toujours à la résolution native.
+    -   Specify the [**DXGI\_SWAP\_CHAIN\_FLAG\_FOREGROUND\_LAYER**](https://msdn.microsoft.com/library/windows/desktop/bb173076) swap chain flag to indicate a foreground swap chain.
+    -   Use the [**DXGI\_ALPHA\_MODE\_PREMULTIPLIED**](https://msdn.microsoft.com/library/windows/desktop/hh404496) alpha mode flag. Foreground swap chains are always premultiplied.
+    -   Set the [**DXGI\_SCALING\_NONE**](https://msdn.microsoft.com/library/windows/desktop/hh404526) flag. Foreground swap chains always run at native resolution.
 
     ```cpp
      foregroundSwapChainDesc.Flags = DXGI_SWAP_CHAIN_FLAG_FOREGROUND_LAYER;
@@ -161,7 +161,7 @@ Procédez comme suit pour créer une chaîne de permutation de premier plan qui 
      foregroundSwapChainDesc.AlphaMode = DXGI_ALPHA_MODE_PREMULTIPLIED; // Foreground swap chain alpha values must be premultiplied.
     ```
 
-    > **Remarque** Redéfinissez [**DXGI\_SWAP\_CHAIN\_FLAG\_FOREGROUND\_LAYER**](https://msdn.microsoft.com/library/windows/desktop/bb173076) chaque fois que la chaîne d’échange est redimensionnée.
+    > **Note**   Set the [**DXGI\_SWAP\_CHAIN\_FLAG\_FOREGROUND\_LAYER**](https://msdn.microsoft.com/library/windows/desktop/bb173076) again every time the swap chain is resized.
 
     ```cpp
     HRESULT hr = m_foregroundSwapChain->ResizeBuffers(
@@ -173,7 +173,7 @@ Procédez comme suit pour créer une chaîne de permutation de premier plan qui 
         );
     ```
 
-3.  Quand deux chaînes d’échange sont utilisées, augmentez la latence d’image maximale à 2 afin que l’adaptateur DXGI ait le temps de présenter les deux chaînes d’échange en même temps (dans le même intervalle VSync).
+3.  When two swap chains are being used, increase the maximum frame latency to 2 so that the DXGI adapter has time to present both swap chains simultaneously (within the same VSync interval).
 
     ```cpp
     // Create a render target view of the foreground swap chain's back buffer.
@@ -194,15 +194,15 @@ Procédez comme suit pour créer une chaîne de permutation de premier plan qui 
     }
     ```
 
-4.  Les chaînes de permutation de premier plan utilisent toujours un alpha prémultiplié. Les valeurs de couleur de chaque pixel sont censées être déjà multipliées par la valeur alpha avant la présentation de l’image. Par exemple, un pixel BVRA (bleu/vert/rouge/alpha) 100% blanc, ayant 50% d’alpha, a la valeur (0.5, 0.5, 0.5, 0.5).
+4.  Foreground swap chains always use premultiplied alpha. Each pixel's color values are expected to be already multiplied by the alpha value before the frame is presented. For example, a 100% white BGRA pixel at 50% alpha is set to (0.5, 0.5, 0.5, 0.5).
 
-    L’étape de prémultiplication alpha peut être effectuée à l’étape de fusion/sortie en appliquant un état de fusion d’application (voir [**ID3D11BlendState**](https://msdn.microsoft.com/library/windows/desktop/ff476349)) avec le champ **SrcBlend** de la structure [**D3D11\_RENDER\_TARGET\_BLEND\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476200) défini à **D3D11\_SRC\_ALPHA**. Il est également possible d’utiliser des valeurs alpha prémultipliées.
+    The alpha premultiplication step can be done in the output-merger stage by applying an app blend state (see [**ID3D11BlendState**](https://msdn.microsoft.com/library/windows/desktop/ff476349)) with the [**D3D11\_RENDER\_TARGET\_BLEND\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476200) structure's **SrcBlend** field set to **D3D11\_SRC\_ALPHA**. Assets with pre-multiplied alpha values can also be used.
 
-    Si l’étape de prémultiplication alpha n’est pas effectuée, les couleurs de la chaîne de permutation de premier plan seront plus brillantes que prévu.
+    If the alpha premultiplication step is not done, colors on the foreground swap chain will be brighter than expected.
 
-5.  Selon que la chaîne de permutation de premier plan a été créée ou non, la surface de dessin Direct2D des éléments de l’interface utilisateur doit éventuellement être associée à la chaîne de permutation de premier plan.
+5.  Depending on whether the foreground swap chain was created, the Direct2D drawing surface for UI elements might need be associated with the foreground swap chain.
 
-    Création d’affichages de cibles de rendu :
+    Creating render target views:
 
     ```cpp
     // Create a render target view of the foreground swap chain's back buffer.
@@ -223,7 +223,7 @@ Procédez comme suit pour créer une chaîne de permutation de premier plan qui 
     }
     ```
 
-    Création de la surface de dessin Direct2D :
+    Creating the Direct2D drawing surface:
 
     ```cpp
     if (m_foregroundSwapChain)
@@ -278,7 +278,7 @@ Procédez comme suit pour créer une chaîne de permutation de premier plan qui 
         );
     ```
 
-6.  Présentez la chaîne de permutation de premier plan avec la chaîne de permutation mise à l’échelle utilisée pour le contenu de jeu en temps réel. Comme la latence d’image a la valeur 2 pour les deux chaînes d’échange, DXGI peut les présenter dans le même intervalle VSync.
+6.  Present the foreground swap chain together with the scaled swap chain used for real-time game content. Since frame latency was set to 2 for both swap chains, DXGI can present them both within the same VSync interval.
 
     ```cpp
     // Present the contents of the swap chain to the screen.
@@ -329,6 +329,6 @@ Procédez comme suit pour créer une chaîne de permutation de premier plan qui 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

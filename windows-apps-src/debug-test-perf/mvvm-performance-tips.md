@@ -1,50 +1,50 @@
 ---
 author: mcleblanc
 ms.assetid: 159681E4-BF9E-4A57-9FEE-EC7ED0BEFFAD
-title: "Conseils relatifs aux performances du langage de programmation et du modèleMVVM"
-description: "Cette rubrique décrit certaines considérations en matière de performances liées à vos choix de modèles de conception de logiciel et de langage de programmation."
+title: MVVM and language performance tips
+description: This topic discusses some performance considerations related to your choice of software design patterns, and programming language.
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 77a162076e14b4726e1fb29673b14be65be37a16
+ms.openlocfilehash: 4be8fd69752dac70c316164fca79bb73c6666c43
 
 ---
-# Conseils relatifs aux performances du langage de programmation et du modèle MVVM
+# MVVM and language performance tips
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Cette rubrique décrit certaines considérations en matière de performances liées à vos choix de modèles de conception de logiciel et de langage de programmation.
+This topic discusses some performance considerations related to your choice of software design patterns, and programming language.
 
-## Modèle MVVM (Model-View-ViewModel)
+## The Model-View-ViewModel (MVVM) pattern
 
-Le modèle MVVM est courant dans de nombreuses applications XAML. (Le modèle MVVM est très similaire à la description de Fowler du modèle Model-View-Presenter, mais il est adapté au langage XAML.) Le problème du modèle MVVM est qu’il peut, par inadvertance, entraîner un trop grand nombre de couches et d’allocations dans les applications. Les points motivant l’adoption du modèle MVVM sont les suivants.
+The Model-View-ViewModel (MVVM) pattern is common in a lot of XAML apps. (MVVM is very similar to Fowler’s description of the Model-View-Presenter pattern, but it is tailored to XAML). The issue with the MVVM pattern is that it can inadvertently lead to apps that have too many layers and too many allocations. The motivations for MVVM are these.
 
--   **Séparation des problèmes**. Il est toujours utile de diviser un problème en éléments plus petits, et un modèle tel que MVVM ou MVC permet de diviser une application (voire un contrôle unique) en plus petites parties : l’affichage réel, un modèle logique de l’affichage (modèle d’affichage) et la logique d’application indépendante de l’affichage (modèle). Il s’agit en particulier d’un flux de travail courant pour que les concepteurs possèdent l’affichage à l’aide d’un seul outil, les développeurs possèdent le modèle en utilisant un autre outil, et les intégrateurs de conception possèdent le modèle d’affichage à l’aide de ces deux outils.
--   **Test unitaire**. Vous pouvez procéder au test unitaire du modèle d’affichage (et par conséquent du modèle) indépendamment de l’affichage, sans vous appuyer sur la création des fenêtres, les saisies, etc. En conservant un affichage petit, vous pouvez tester une grande partie de votre application sans avoir à créer de fenêtre.
--   **Agilité des modifications apportées à l’expérience utilisateur**. L’affichage a tendance à montrer les modifications les plus fréquentes et les plus récentes, car l’expérience utilisateur est ajustée en fonction des commentaires des utilisateurs finaux. En maintenant l’affichage distinct, ces modifications peuvent être adaptées plus rapidement et avec moins de perturbation à l’application.
+-   **Separation of concerns**. It’s always helpful to divide a problem into smaller pieces, and a pattern like MVVM or MVC is a way to divide an app (or even a single control) into smaller pieces: the actual view, a logical model of the view (view-model), and the view-independent app logic (the model). In particular, it’s a popular workflow to have designers own the view using one tool, developers own the model using another tool, and design integrators own the view-model using both tools.
+-   **Unit testing**. You can unit test the view-model (and consequently the model) independent of the view, thereby not relying on creating windows, driving input, and so on. By keeping the view small, you can test a large portion of your app without ever having to create a window.
+-   **Agility to user experience changes**. The view tends to see the most frequent changes, and the most late changes, as the user experience is tweaked based on end-user feedback. By keeping the view separate, these changes can be accommodated more quickly and with less churn to the app.
 
-Il existe plusieurs définitions concrètes du modèle MVVM, et des infrastructures tierces qui permettent de l’implémenter. Cependant un strict respect d’une variation du modèle peut entraîner une surcharge bien supérieure à celle qui peut être justifiée dans les applications.
+There are multiple concrete definitions of the MVVM pattern, and 3rd party frameworks that help implement it. But strict adherence to any variation of the pattern can lead to apps with a lot more overhead than can be justified.
 
--   La liaison de données XAML (extension de balisage {Binding}) a été conçue en partie pour activer des modèles d’affichage/de modèle. Néanmoins, {Binding} est accompagnée d’une plage de travail non triviale et d’une surcharge de processeur. La création d’une {Binding} entraîne une série d’allocations, et la mise à jour d’une cible de liaison peut provoquer boxing et réflexion. Ces problèmes sont traités avec l’extension de balisage {x:Bind}, qui compile les liaisons au moment de la génération. **Recommandation :** utilisez {x: Bind}.
--   Dans MVVM, il est courant de connecter Button.Click au modèle d’affichage à l’aide d'une ICommand, par exemple les applications auxiliaires DelegateCommand ou RelayCommand courantes. Ces commandes sont des allocations supplémentaires, qui incluent cependant le détecteur d’événements CanExecuteChanged, s’ajoutent à la plage de travail et au temps de démarrage/navigation de la page. **Recommandation :** comme alternative à l’utilisation de l’interface ICommand pratique, pensez à placer des gestionnaires d’événements dans votre code-behind, à les attacher aux événements d’affichage et à appeler une commande dans votre modèle d’affichage lorsque ces événements sont déclenchés. Vous devez également ajouter du code supplémentaire pour désactiver le bouton lorsque la commande n’est pas disponible.
--   Dans le modèle MVVM, il est courant de créer une Page avec toutes les configurations possibles de l’interface utilisateur, puis de réduire les parties de l’arborescence en liant la propriété Visibility aux propriétés de l’ordinateur virtuel. Cela s’ajoute inutilement au temps de démarrage et éventuellement à la plage de travail (car certaines parties de l’arborescence peuvent ne jamais devenir visibles). **Recommandations :** utilisez la fonctionnalité x:DeferLoadStrategy pour différer des parties superflues de l’arborescence hors du démarrage. Vous pouvez également créer des contrôles utilisateur pour les différents modes de la page et utiliser code-behind pour ne conserver que les contrôles nécessaires chargés.
+-   XAML data binding (the {Binding} markup extension) was designed in part to enable model/view patterns. But {Binding} brings with it non-trivial working set and CPU overhead. Creating a {Binding} causes a series of allocations, and updating a binding target can cause reflection and boxing. These problems are being addressed with the {x:Bind} markup extension, which compiles the bindings at build time. **Recommendation:** use {x:Bind}.
+-   It’s popular in MVVM to connect Button.Click to the view-model using an ICommand, such as the common DelegateCommand or RelayCommand helpers. Those commands are extra allocations, though, including the CanExecuteChanged event listener, adding to the working set, and adding to the startup/navigation time for the page. **Recommendation:** As an alternative to using the convenient ICommand interface, consider putting event handlers in your code-behind and attaching them to the view events and call a command on your view-model when those events are raised. You'll also need to add extra code to disable the Button when the command is unavailable.
+-   It’s popular in MVVM to create a Page with all possible configurations of the UI, then collapse parts of the tree by binding the Visibility property to properties in the VM. This adds unnecessarily to startup time and possibly to working set (because some parts of the tree may never become visible). **Recommendations:** Use the x:DeferLoadStrategy feature to defer unnecessary portions of the tree out of startup. Also, create separate user controls for the different modes of the page and use code-behind to keep only the necessary controls loaded.
 
-## Recommandations liées à C++/CX
+## C++/CX recommendations
 
--   **Utilisez la dernière version**. Des améliorations sont apportées en continu aux performances du compilateur C++/CX. Vérifiez que votre application est générée à l’aide du dernier ensemble d’outils.
--   **Désactivez l’option RTTI (/GR-)**. L’option RTTI est activée par défaut dans le compilateur. À moins que votre environnement de génération ne l’ait désactivée, vous l’utilisez donc probablement. La surcharge de l’option RTTI est importante, et vous devez donc désactiver cette option à moins que votre code n’ait une dépendance approfondie avec elle. L’infrastructure XAML n’impose nullement que votre code utilise l’option RTTI.
--   **Évitez une utilisation intensive des ppltasks**. Les ppltasks sont très pratiques lors de l’appel des API WinRT asynchrones, mais elles sont fournies avec une surcharge de taille de code importante. L’équipe chargée de C++/CX travaille sur une fonctionnalité de langage qui fournit de bien meilleures performances. D’ici là, veillez à équilibrer l’utilisation des ppltasks dans les chemins réactifs de votre code.
--   **Évitez d’utiliser C++/CX dans la « logique métier » de votre application**. C++/CX est conçu pour permettre d’accéder facilement aux API WinRT des applications en C++. Il utilise des wrappers qui génèrent une surcharge. Vous devez éviter d’utiliser C++/CX dans la logique métier/le modèle de votre classe, et le réserver pour une utilisation aux frontières entre votre code et WinRT.
-
- 
+-   **Use the latest version**. There are continual performance improvements made to the C++/CX compiler. Ensure your app is building using the latest toolset.
+-   **Disable RTTI (/GR-)**. RTTI is on by default in the compiler so, unless your build environment switches it off, you’re probably using it. RTTI has significant overhead, and unless your code has a deep dependency on it, you should turn it off. The XAML framework has no requirement that your code use RTTI.
+-   **Avoid heavy use of ppltasks**. Ppltasks are very convenient when calling async WinRT APIs, but they come with significant code size overhead. The C++/CX team is working on a language feature – await – that will provide much better performance. In the meantime, balance your use of ppltasks in the hot paths of your code.
+-   **Avoid use of C++/CX in the “business logic” of your app**. C++/CX is designed to be a convenient way to access WinRT APIs from C++ apps. It makes use of wrappers that have overhead. You should avoid C++/CX inside the business logic/model of your class, and reserve it for use at the boundaries between your code and WinRT.
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

@@ -7,7 +7,7 @@ label: Continuous dictation
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 1bcf6ce700b50ff633a29863fee41c2bfa3d9f98
+ms.openlocfilehash: 1f074b210d42b1c40817e88b5d73921652fa7d05
 
 ---
 
@@ -77,7 +77,7 @@ Pendant l’initialisation de la reconnaissance vocale en continu, vous devez :
 
 Nous initialisons la reconnaissance vocale dans l’événement de page [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508).
 
-1.  Comme les événements déclenchés par le module de reconnaissance vocale se produisent sur un thread d’arrière-plan, créez une référence pour le répartiteur pour les mises à jour du thread d’interface utilisateur. [ **OnNavigatedTo** ](https://msdn.microsoft.com/library/windows/apps/br227508) est toujours appelé sur le thread d’interface utilisateur.
+1.  Comme les événements déclenchés par le module de reconnaissance vocale se produisent sur un thread d’arrière-plan, créez une référence pour le répartiteur pour les mises à jour du thread d’interface utilisateur. [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) est toujours appelé sur le thread d’interface utilisateur.
 ```    CSharp
 this.dispatcher = CoreWindow.GetForCurrentThread().Dispatcher;
 ```
@@ -110,16 +110,16 @@ Nous pouvons ensuite utiliser la propriété [**ContinuousRecognitionSession**](
 
 Deux événements sont particulièrement essentiels :
 
--   [ **ResultGenerated** ](https://msdn.microsoft.com/library/windows/apps/dn913900), qui se produit lorsque le module de reconnaissance a généré des résultats.
--   [ **Completed** ](https://msdn.microsoft.com/library/windows/apps/dn913899), qui se produit lorsque la session de reconnaissance en continu est terminée.
+-   [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900), qui se produit lorsque le module de reconnaissance a généré des résultats.
+-   [**Completed**](https://msdn.microsoft.com/library/windows/apps/dn913899), qui se produit lorsque la session de reconnaissance en continu est terminée.
 
 L’événement [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) est déclenché lorsque l’utilisateur parle. Le module de reconnaissance écoute l’utilisateur en continu et déclenche périodiquement un événement qui transmet un segment d’entrée vocale. Examinez l’entrée vocale à l’aide de la propriété [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) de l’argument d’événement et prenez les mesures appropriées dans le gestionnaire d’événements, par exemple en ajoutant du texte à un objet StringBuilder.
 
-En tant qu’instance de [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432), la propriété [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) permet d’indiquer si vous acceptez l’entrée vocale ou non: Une instance [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432) fournit deuxpropriétés spécifiques:
--   [ **Status** ](https://msdn.microsoft.com/library/windows/apps/dn631440) indique si la reconnaissance a réussi. La reconnaissance peut échouer pour diverses raisons.
--   [ **Confidence** ](https://msdn.microsoft.com/library/windows/apps/dn631434) indique que le module de reconnaissance a relativement bien compris les mots énoncés.
+En tant qu’instance de [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432), la propriété [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) permet d’indiquer si vous acceptez l’entrée vocale ou non: Une instance [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432) fournit deux propriétés spécifiques :
+-   [**Status**](https://msdn.microsoft.com/library/windows/apps/dn631440) indique si la reconnaissance a réussi. La reconnaissance peut échouer pour diverses raisons.
+-   [**Confidence**](https://msdn.microsoft.com/library/windows/apps/dn631434) indique que le module de reconnaissance a relativement bien compris les mots énoncés.
 
-Voici les étapes de base associées à la prise en charge de la reconnaissance continue:  
+Voici les étapes de base associées à la prise en charge de la reconnaissance continue :  
 
 1.  Ici, nous inscrivons le gestionnaire pour l’événement de reconnaissance en continu [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) de l’événement de page [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508).
 ```    CSharp
@@ -248,8 +248,8 @@ if (speechRecognizer.State == SpeechRecognizerState.Idle)
 
 La reconnaissance peut être arrêtée de deux façons :
 
--   [ **StopAsync** ](https://msdn.microsoft.com/library/windows/apps/dn913908) vous permet d’attendre des événements de reconnaissance complets ([**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) continue d’être déclenché jusqu’à ce que toutes les opérations de reconnaissance en attente soit terminées).
--   [ **CancelAsync** ](https://msdn.microsoft.com/library/windows/apps/dn913898) arrête la session de reconnaissance immédiatement et ignore les résultats en attente.
+-   [**StopAsync**](https://msdn.microsoft.com/library/windows/apps/dn913908) vous permet d’attendre des événements de reconnaissance complets ([**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) continue d’être déclenché jusqu’à ce que toutes les opérations de reconnaissance en attente soit terminées).
+-   [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) arrête la session de reconnaissance immédiatement et ignore les résultats en attente.
 
 Une fois la vérification de l’état du module de reconnaissance vocale terminée, nous arrêtons la session en appelant la méthode [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) de la propriété [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913) du module de reconnaissance vocale.
 
@@ -284,6 +284,6 @@ Si vous définissez tous les champs privés lors de l’annulation de la session
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

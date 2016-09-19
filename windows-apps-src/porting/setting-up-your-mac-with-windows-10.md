@@ -1,49 +1,49 @@
 ---
 author: mcleblanc
-description: "Utilisez votre ordinateur Mac actuel pour développer des applications pour Windows."
-title: Configuration de votre Mac avec Windows 10
+description: Use your current Mac computer to develop apps for Windows.
+title: Setting up your Mac with Windows 10
 ms.assetid: 6D520610-5DE0-476E-A792-AA57E002D309
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 10ebdb0a534d8f2931d15481c1bee4705268b0bb
+ms.openlocfilehash: b0a6c701237e7eeb1d96964ad429d73373e55252
 
 ---
 
-# Configuration de votre Mac avec Windows 10
+# Setting up your Mac with Windows 10
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Utilisez votre ordinateur Mac actuel pour développer des applications pour Windows.
+Use your current Mac computer to develop apps for Windows.
 
-## Exécuter Windows sur votre Mac et utiliser Visual Studio
+## Run Windows on your Mac and use Visual Studio
 
-Vous êtes prêt à développer des applications Windows universelles, mais vous n'avez pas de PC à portée de main ? Ce n’est pas un problème, vous pouvez utiliser votre Mac ! Avec des solutions tierces populaires telles que Boot Camp d’Apple, VirtualBox d’Oracle, VMware Fusion et Parallels Desktop, vous pouvez installer Windows10 et Microsoft Visual Studio sur votre Mac.
+Are you ready to start developing Universal Windows apps, but you don't have a PC handy? That's okay — you can use your Mac! With popular third-party solutions like Apple Boot Camp, Oracle VirtualBox, VMware Fusion, and Parallels Desktop, you can install Windows 10 and Microsoft Visual Studio on your Apple computer.
 
-**Remarque** Vous aurez besoin d’une image de démarrage Windows 10 sur disque ou sur un disque mémoire USB. Si vous êtes un abonné MSDN, vous pouvez télécharger l’image d’installation à partir du centre Téléchargements des abonnés MSDN. Si vous n’êtes pas un abonné, le programme d’installation peut être acheté dans le [Windows Store](http://apps.microsoft.com/windows/app). Vous pouvez également le télécharger à partir de [cet emplacement](http://go.microsoft.com/fwlink/?LinkId=623906) ; très utile si vous exécutez déjà Windows et que vous souhaitez effectuer une mise à jour.
+**Note**  You will need a Windows 10 bootable image on disk or USB flash drive. If you are a MSDN Subscriber, you can download the install image from the MSDN Subscriber Downloads center. If you aren't a subscriber, the installer can be purchased from the [Windows Store](http://apps.microsoft.com/windows/app). You can also download it from [this location](http://go.microsoft.com/fwlink/?LinkId=623906), which is useful if you are already running Windows and wish to upgrade.
 
-Une fois que Windows est en cours d’exécution, vous pouvez ensuite installer Visual Studio 2015 à partir de [Téléchargements destinés aux développeurs Windows 10](http://go.microsoft.com/fwlink/p/?LinkId=302144) et commencer à écrire des applications !
+Once you have Windows running, you can then install Visual Studio 2015 from [Developer downloads for Windows 10](http://go.microsoft.com/fwlink/p/?LinkId=302144) and start writing apps!
 
-**Remarque** Si vous envisagez d’utiliser les émulateurs Visual Studio, vous **devez** installer une version 64 bits (x64) de Windows 10 Professionnel ou une version supérieure. Malheureusement, certains anciens modèles de Mac ne peuvent pas exécuter Windows en version 64bits. Vérifiez auprès d’Apple si votre matériel est compatible sur cette[page de support Apple](http://go.microsoft.com/fwlink/p/?LinkID=397959).
+**Note**  If you plan to use the Visual Studio device emulators, you **must** install a 64-bit (x64) version of Windows 10 Pro or better. Unfortunately, some older Macs cannot run 64-bit Windows. Please check with Apple if your hardware is compatible on this[Apple support page](http://go.microsoft.com/fwlink/p/?LinkID=397959).
 
 ## Apple Boot Camp
 
-L’application Boot Camp Assistant est préinstallée sur tous les Mac récents. Lorsque vous la lancez, le processus d’installation de Windows 10 démarre. Tout ce dont vous avez besoin est une copie de Windows (obtenue à partir des sources énumérées ci-dessus) et au moins 30 Go d’espace disque libre. Une fois l’installation effectuée, vous pouvez choisir de démarrer dans Mac OSX ou dans Windows 10. Pour plus d'informations, voir la [page d’instructions Boot Camp](http://go.microsoft.com/fwlink/?LinkId=623912) d'Apple.
+The Boot Camp Assistant app is pre-installed on every recent Mac, and launching it will walk you through the process of installing Windows 10. All you need is a copy of Windows (from the sources listed above) and at least 30 Gb of free disk space. Once installed, you can choose to boot into Mac OSX or Windows 10. For more info, see Apple's [Boot Camp instructions page](http://go.microsoft.com/fwlink/?LinkId=623912).
 
 ## Parallels Desktop
 
-Avec Parallels Desktop 11, vous pouvez exécuter des applications Windows côte à côte avec les applications Mac existantes, y compris Visual Studio et Cortana. Une version pro est disponible et inclut des fonctionnalités supplémentaires pour les développeurs, notamment le débogage amélioré et la prise en charge de Docker et Jenkins. Pour plus d'informations et une version d'évaluation gratuite, voir [Parallels Desktop](http://go.microsoft.com/fwlink/p/?LinkId=281827).
+Using Parallels Desktop 11, you can run Windows apps side-by-side with existing Mac applications, including Visual Studio and Cortana. A pro version is available that includes extra features for developers, including improved debugging, and support for Docker and Jenkins. For more info, and a free trial version, see [Parallels Desktop](http://go.microsoft.com/fwlink/p/?LinkId=281827).
 
 ## VMWare Fusion
 
-Fusion 8 de VMware vous permet d'exécuter Visual Studio directement sur votre bureau Mac. Une version pro est disponible pour offrir aux développeurs certaines fonctionnalités plus avancées, telles que la prise en charge de vSphere. Pour plus d'informations et une version d'évaluation gratuite, voir [VMware Fusion](http://go.microsoft.com/fwlink/p/?LinkId=281826).
+Fusion 8 from VMWare will let you run Visual Studio right on your Mac desktop. A pro version is available to offer developers some more advanced features such as vSphere support. For more info, and a free trial version, see [VMware Fusion](http://go.microsoft.com/fwlink/p/?LinkId=281826).
 
 ## Oracle VirtualBox
 
-VirtualBox est une application gratuite qui permet d’exécuter des ordinateurs virtuels sur votre ordinateur. Elle prend en charge l’exécution de Windows sur Mac. C'est une option sans superflu, mais le prix est attrayant. Pour plus d’informations, voir [VirtualBox](http://go.microsoft.com/fwlink/p/?LinkId=280599).
+VirtualBox is a free application for running virtual machines on your computer, and it supports running Windows on Mac. It is a no-frills option, but the price is appealing. For more info, see [VirtualBox](http://go.microsoft.com/fwlink/p/?LinkId=280599).
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

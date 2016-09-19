@@ -1,40 +1,40 @@
 ---
 author: TylerMSFT
 ms.assetid: beac6333-655a-4bcf-9caf-bba15f715ea5
-title: Threads et programmation asynchrone
-description: "Les threads et la programmation asynchrone permettent à votre application d’accomplir des tâches de manière asynchrone dans des threads parallèles."
+title: Threading and async programming
+description: Threading and async programming enables your app to accomplish work asynchronously in parallel threads.
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d69259d449ffb7d4dfc1824c77c16eb9e1cdb026
+ms.openlocfilehash: 8962e24e393f0b7961f618f90cd38ead9e54dda4
 
 ---
-# Threads et programmation asynchrone
+# Threading and async programming
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Les threads et la programmation asynchrone permettent à votre application d’accomplir des tâches de manière asynchrone dans des threads parallèles.
+Threading and async programming enables your app to accomplish work asynchronously in parallel threads.
 
-Votre application peut utiliser le pool de threads pour accomplir des tâches de manière asynchrone dans des threads parallèles. Le pool de threads gère un ensemble de threads et utilise une file d’attente pour attribuer les éléments de travail aux threads lorsqu’ils deviennent disponibles. Le pool de threads est semblable aux modèles de programmation asynchrones disponibles dans Windows Runtime, car il peut être utilisé pour accomplir des tâches étendues sans bloquer l’interface utilisateur, mais il offre un plus grand contrôle que les modèles de programmation asynchrones, et vous pouvez l’utiliser pour effectuer plusieurs éléments de travail en parallèle. Vous pouvez utiliser le thread pour :
+Your app can use the thread pool to accomplish work asynchronously in parallel threads. The thread pool manages a set of threads and uses a queue to assign work items to threads as they become available. The thread pool is similar to the asynchronous programming patterns available in the Windows Runtime because it can be used to accomplish extended work without blocking the UI, but the thread pool offers more control than the asynchronous programming patterns and you can use it to complete multiple work items in parallel. You can use the thread pool to:
 
--   envoyer des éléments de travail, contrôler leur priorité et en annuler ;
+-   Submit work items, control their priority, and cancel work items.
 
--   planifier des éléments de travail à l’aide de minuteurs et de minuteurs périodiques ;
+-   Schedule work items using timers and periodic timers.
 
--   mettre de côté des ressources pour les éléments de travail critiques ;
+-   Set aside resources for critical work items.
 
--   exécuter des éléments de travail en réponse à des événements et sémaphores nommés.
+-   Run work items in response to named events and semaphores.
 
-Le pool de threads est plus efficace pour la gestion des threads car il réduit la surcharge liée à la création et à la destruction de threads. Cela signifie qu’il a la possibilité d’optimiser les threads sur plusieurs cœurs de processeurs, et qu’il peut équilibrer les ressources de threads entre les applications et lorsque des tâches en arrière-plan sont en cours d’exécution. L’utilisation du pool de threads intégré est pratique, car vous vous concentrez sur l’écriture du code qui accomplit une tâche plutôt que sur la mécanique de gestion des threads.
+The thread pool is more efficient at managing threads because it reduces the overhead of creating and destroying threads. The means it has access to optimize threads across multiple CPU cores, and it can balance thread resources between apps and when background tasks are running. Using the built-in thread pool is convenient because you focus on writing code that accomplishes a task instead of the mechanics of thread management.
 
-| Rubrique                                                                                                          | Description                         |
+| Topic                                                                                                          | Description                         |
 |----------------------------------------------------------------------------------------------------------------|-------------------------------------|
-| [Programmation asynchrone (applications UWP)](asynchronous-programming-universal-windows-platform-apps.md)              | Cette rubrique décrit la programmation asynchrone dans la plateforme Windows universelle (UWP), ainsi que sa représentation dans les langages C#, Microsoft Visual Basic .NET, les extensions de composant Visual C++ (C++/CX) et JavaScript. |
-| [Programmation asynchrone en C++ (applications UWP)](asynchronous-programming-in-cpp-universal-windows-platform-apps.md)| Cet article décrit la meilleure façon d’utiliser des méthodes asynchrones en C++/CX à l’aide de la classe <code>task</code> qui est définie dans l’espace de noms <code>concurrency</code> dans ppltasks.h. |
-| [Meilleures pratiques pour l’utilisation du pool de threads](best-practices-for-using-the-thread-pool.md)                         | Cette rubrique décrit les meilleures pratiques relatives à l’utilisation du pool de threads. |
-| [Appeler des API asynchrones en C# ou Visual Basic](call-asynchronous-apis-in-csharp-or-visual-basic.md)             | La plateforme Windows universelle (UWP) comporte de nombreuses API asynchrones qui permettent à votre application de rester réactive lorsqu’elle exécute des opérations potentiellement longues. Cette rubrique décrit comment utiliser les méthodes asynchrones de l’UWP en C# ou Microsoft Visual Basic. |
-| [Créer un élément de travail périodique](create-a-periodic-work-item.md)                                                   | Découvrez comment créer un élément de travail qui se reproduit régulièrement. |
-| [Envoyer un élément de travail au pool de threads](submit-a-work-item-to-the-thread-pool.md)                               | Découvrez comment effectuer des tâches dans un thread distinct en envoyant un élément de travail au pool de threads. |
-| [Utiliser un minuteur pour envoyer un élément de travail](use-a-timer-to-submit-a-work-item.md)                                       | Découvrez comment créer un élément de travail qui s’exécute une fois le délai du minuteur écoulé. |
+| [Asynchronous programming (UWP apps)](asynchronous-programming-universal-windows-platform-apps.md)              | This topic describes asynchronous programming in the Universal Windows Platform (UWP) and its representation in C#, Microsoft Visual Basic .NET, Visual C++ component extensions (C++/CX), and JavaScript. |
+| [Asynchronous programming in C++ (UWP apps)](asynchronous-programming-in-cpp-universal-windows-platform-apps.md)| This article describes the recommended way to consume asynchronous methods in C++/CX by using the <code>task</code> class that's defined in the <code>concurrency</code> namespace in ppltasks.h. |
+| [Best practices for using the thread pool](best-practices-for-using-the-thread-pool.md)                         | This topic describes best practices for working with the thread pool. |
+| [Call asynchronous APIs in C# or Visual Basic](call-asynchronous-apis-in-csharp-or-visual-basic.md)             | The Universal Windows Platform (UWP) includes many asynchronous APIs to ensure that your app remains responsive when it does work that might take an extended amount of time. This topic discusses how to use asynchronous methods from the UWP in C# or Microsoft Visual Basic. |
+| [Create a periodic work item](create-a-periodic-work-item.md)                                                   | Learn how to create a work item that repeats periodically. |
+| [Submit a work item to the thread pool](submit-a-work-item-to-the-thread-pool.md)                               | Learn how to do work in a separate thread by submitting a work item to the thread pool. |
+| [Use a timer to submit a work item](use-a-timer-to-submit-a-work-item.md)                                       | Learn how to create a work item that runs after a timer elapses. |
 
 
 
@@ -42,6 +42,6 @@ Le pool de threads est plus efficace pour la gestion des threads car il réduit 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

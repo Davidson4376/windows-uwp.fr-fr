@@ -1,25 +1,25 @@
 ---
 author: mcleanbyron
 ms.assetid: 2383296e-c3d7-4b49-bcd2-621391228fdb
-description: "Découvrez comment gérer les événements de la classe AdControl."
-title: "Événements AdControl en JavaScript"
+description: Learn how to handle the events of the AdControl class.
+title: AdControl events in JavaScript
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: b3c41f38f42c390c52c96fa93cfce3fe9bbd181d
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: d24030dfae92451924000ba4f1ac19cf6c4d4abe
 
 
 ---
 
-# Événements AdControl en JavaScript
+# AdControl events in JavaScript
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Les exemples suivants montrent comment gérer les événements de la classe [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx). Ces exemples reposent sur le principe que vous avez déjà affecté les gestionnaires d’événements aux événements **AdControl**. Pour plus d’informations sur la procédure à suivre pour ce faire, voir [Exemple de propriétés HTML](html-properties-example.md).
 
-En JavaScript, les événements **AdControl** doivent être délimités par la fonction [MarkSupportedForProcessing](http://msdn.microsoft.com/library/windows/apps/Hh967819.aspx). Pour plus d’informations sur la gestion des événements en JavaScript, voir [Codage d’applications de base (HTML)](https://msdn.microsoft.com/library/windows/apps/hh780660.aspx#adding-event-handlers).
+The following examples demonstrate how to handle the events of the [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) class. These examples assume that you have previously assigned the event handlers to the **AdControl** events. For more information about how to do this, see [HTML properties example](html-properties-example.md).
 
-## Exemples
+In JavaScript, the **AdControl** events must be enclosed by the [MarkSupportedForProcessing](http://msdn.microsoft.com/library/windows/apps/Hh967819.aspx) function. For more information about handling events in JavaScript, see [Coding basic apps (HTML)](https://msdn.microsoft.com/library/windows/apps/hh780660.aspx#adding-event-handlers).
+
+## Examples
 
 ``` syntax
 WinJS.Utilities.markSupportedForProcessing(
@@ -44,18 +44,18 @@ window.myAdEngagedChanged = function (sender) {
 });
 ```
 
-## Rubriques connexes
+## Related topics
 
-* [Exemples de publicité sur GitHub](http://aka.ms/githubads)
-* [Gestion des erreurs AdControl](adcontrol-error-handling.md)
-* [Classe RoutedEventArgs](http://msdn.microsoft.com/library/system.windows.routedeventargs.aspx)
-
- 
+* [Advertising samples on GitHub](http://aka.ms/githubads)
+* [AdControl error handling](adcontrol-error-handling.md)
+* [RoutedEventArgs Class](http://msdn.microsoft.com/library/system.windows.routedeventargs.aspx)
 
  
 
+ 
 
 
-<!--HONumber=Jul16_HO2-->
+
+<!--HONumber=Aug16_HO3-->
 
 

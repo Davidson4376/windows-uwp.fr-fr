@@ -1,28 +1,25 @@
 ---
 author: mijacobs
-Description: "Une vignette est la représentation d’une application dans le menu Démarrer. Chaque application dispose d’une vignette. Lorsque vous créez un projet d’application de plateforme Windows universelle (UWP) dans Microsoft Visual Studio, il inclut une vignette par défaut qui affiche le nom et le logo de l’application."
-title: Vignettes
+Description: A tile is an app's representation on the Start menu. Every app has a tile. When you create a new Universal Windows Platform (UWP) app project in Microsoft Visual Studio, it includes a default tile that displays your app's name and logo.
+title: Tiles
 ms.assetid: 09C7E1B1-F78D-4659-8086-2E428E797653
 label: Tiles
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: d3fe62d4de00c42079d62d105acdbb21e296ba5f
-ms.openlocfilehash: a9f5d25dfd359364fa8e16666b03c7c105a867dd
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 37de1a413ac9b5e74c905c140899ec7577a6fae5
 
 ---
+# Tiles for UWP apps
 
-# Vignettes pour les applications UWP
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
+A *tile* is an app's representation on the Start menu. Every app has a tile. When you create a new Universal Windows Platform (UWP) app project in Microsoft Visual Studio, it includes a default tile that displays your app's name and logo. Windows displays this tile when your app is first installed. After your app is installed, you can change your tile's content through notifications; for example, you can change the tile to communicate new information to the user, such as news headlines, or the subject of the most recent unread message.
 
-
-
-
-Une *vignette* est la représentation d’une application dans le menu Démarrer. Chaque application dispose d’une vignette. Lorsque vous créez un projet d’application de plateforme Windows universelle (UWP) dans Microsoft Visual Studio, il inclut une vignette par défaut qui affiche le nom et le logo de l’application. Windows affiche cette vignette lors de la première installation de l’application. Une fois votre application installée, vous pouvez modifier le contenu de votre vignette via des notifications. Par exemple, vous pouvez modifier la vignette pour communiquer de nouvelles informations à l’utilisateur, telles que des titres d’actualités, ou l’objet du dernier message non lu.
-
-## <span id="Configure_the_default_tile"></span><span id="configure_the_default_tile"></span><span id="CONFIGURE_THE_DEFAULT_TILE"></span>Configurer la vignette par défaut
+## Configure the default tile
 
 
-Lorsque vous créez un projet dans Visual Studio, cela a pour effet de créer une vignette par défaut simple qui affiche le nom et le logo de votre application.
+When you create a new project in Visual Studio, it creates a simple default tile that displays your app's name and logo.
 
 ```XML
   <Applications>
@@ -41,23 +38,23 @@ Lorsque vous créez un projet dans Visual Studio, cela a pour effet de créer un
   </Applications>
 ```
 
-Vous devez mettre à jour quelques éléments :
+There are a few items you should update:
 
--   DisplayName : remplacez cette valeur par le nom à afficher sur votre vignette.
--   ShortName : l’espace disponible pour le nom d’affichage sur les vignettes étant limité, nous vous recommandons de spécifier ce nom court pour éviter que le nom de votre application soit tronqué.
--   Images de logo :
+-   DisplayName: Replace this value with the name you want to display on your tile.
+-   ShortName: Because there is limited room for your display name to fit on tiles, we recommend that you to specify a ShortName as well, to make sure your app's name doesn’t get truncated.
+-   Logo images:
 
-    Vous devez remplacer ces images par vos propres images. Vous avez la possibilité de fournir des images pour différentes échelles visuelles, mais vous n’êtes pas obligé de le faire pour toutes. Pour vous assurer que votre application s’affiche correctement sur divers appareils, nous vous recommandons de fournir des versions de chaque image aux échelles 100 %, 200 % et 400 %.
+    You should replace these images with your own. You have the option of supplying images for different visual scales, but you are not required to supply them all. To ensure that you app looks good on a range of devices, we recommend that you provide 100%, 200%, and 400% scale versions of each image.
 
-    Les images mises à l’échelle suivent la convention d’affectation de noms suivante: 
+    Scaled images follow this naming convention: testing
     
-    *&lt;nom de l’image&gt;*.scale-*&lt;facteur d’échelle&gt;*.*&lt;extension de fichier image&gt;*  
-    
-    Par exemple: SmallLogo.scale-100.png
+    *&lt;image name&gt;*.scale-*&lt;scale factor&gt;*.*&lt;image file extension&gt;* 
 
-    Lorsque vous faites référence à l’image, vous spécifiez *&lt;nom de l’image&gt;*.*&lt;extension de fichier image&gt;* (« SmallLogo.png » dans cet exemple). Le système sélectionne automatiquement l’image à l’échelle appropriée pour l’appareil parmi les images que vous avez fournies.
+    For example: SmallLogo.scale-100.png
 
--   Nous vous conseillons vivement de fournir des logos pour les vignettes de grande taille afin que l’utilisateur puisse redimensionner la vignette de votre application si nécessaire. Pour fournir ces images supplémentaires, vous créez un élément `DefaultTile` et utilisez les attributs `Wide310x150Logo` et `Square310x310Logo` pour spécifier les images supplémentaires :
+    When you refer to the image, you refer to it as *&lt;image name&gt;*.*&lt;image file extension&gt;* ("SmallLogo.png" in this example). The system will automatically select the appropriate scaled image for the device from the images you've provided.
+
+-   You don't have to, but we highly recommend supplying logos for wide and large tile sizes so that the user can resize your app's tile to those sizes. To provide these additional images, you create a `DefaultTile` element and use the `Wide310x150Logo` and `Square310x310Logo` attributes to specify the additional images:
 ```    XML
   <Applications>
         <Application Id="App"
@@ -79,34 +76,34 @@ Vous devez mettre à jour quelques éléments :
       </Applications>
 ```
 
-## <span id="Use_notifications_to_customize_your_tile"></span><span id="use_notifications_to_customize_your_tile"></span><span id="USE_NOTIFICATIONS_TO_CUSTOMIZE_YOUR_TILE"></span>Utiliser les notifications pour personnaliser votre vignette
+## Use notifications to customize your tile
 
 
-Une fois votre application installée, vous pouvez utiliser les notifications pour personnaliser votre vignette. Vous pouvez le faire lors du premier lancement de l’application ou en réponse à certains événements tels qu’une notification Push.
+After your app is installed, you can use notifications to customize your tile. You can do this the first time your app launches or in response to some event, such as a push notification.
 
-1.  Créez une charge utile XML (sous la forme d’un [**Windows.Data.Xml.Dom.XmlDocument**](https://msdn.microsoft.com/library/windows/apps/br206173)) décrivant la vignette.
+1.  Create an XML payload (in the form of an [**Windows.Data.Xml.Dom.XmlDocument**](https://msdn.microsoft.com/library/windows/apps/br206173)) that describes the tile.
 
-    -   Windows10 inaugure un nouveau schéma de vignette adaptative que vous pouvez utiliser. Pour obtenir des instructions, voir [Vignettes adaptatives](tiles-and-notifications-create-adaptive-tiles.md). Pour découvrir le schéma, voir l’article [Schéma des vignettes adaptatives](tiles-and-notifications-adaptive-tiles-schema.md). 
+    -   Windows 10 introduces a new adaptive tile schema you can use. For instructions, see [Adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md). For the schema, see the [Adaptive tiles schema](tiles-and-notifications-adaptive-tiles-schema.md). 
 
-    -   Pour définir votre vignette, vous pouvez utiliser les modèles de vignette Windows8.1. Pour plus d’informations, voir [Création de vignettes et badges (Windows8.1)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868260).
+    -   You can use the Windows 8.1 tile templates to define your tile. For more info, see [Creating tiles and badges (Windows 8.1)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868260).
 
-2.  Créez un objet notification par vignette et passez-lui le [**XmlDocument**](https://msdn.microsoft.com/library/windows/apps/br206173) que vous avez créé. Il existe plusieurs types d’objets notification :
-    -   Un objet [**Windows.UI.NotificationsTileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616) pour la mise à jour immédiate de la vignette.
-    -   Un objet [**Windows.UI.Notifications.ScheduledTileNotification**](https://msdn.microsoft.com/library/windows/apps/hh701637) pour la mise à jour la vignette à un moment donné dans le futur.
+2.  Create a tile notification object and pass it the [**XmlDocument**](https://msdn.microsoft.com/library/windows/apps/br206173) you created. There are several types of notification objects:
+    -   A [**Windows.UI.NotificationsTileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616) object for updating the tile immediately.
+    -   A [**Windows.UI.Notifications.ScheduledTileNotification**](https://msdn.microsoft.com/library/windows/apps/hh701637) object for updating the tile at some point in the future.
 
-3.  Utilisez la méthode [**Windows.UI.Notifications.TileUpdateManager.CreateTileUpdaterForApplication**](https://msdn.microsoft.com/library/windows/apps/br208623) pour créer un objet [**TileUpdater**](https://msdn.microsoft.com/library/windows/apps/br208628).
-4.  Appelez la méthode [**TileUpdater.Update**](https://msdn.microsoft.com/library/windows/apps/br208632) et passez-lui l’objet notification par vignette créé à l’étape2.
-
- 
+3.  Use the [**Windows.UI.Notifications.TileUpdateManager.CreateTileUpdaterForApplication**](https://msdn.microsoft.com/library/windows/apps/br208623) to create a [**TileUpdater**](https://msdn.microsoft.com/library/windows/apps/br208628) object.
+4.  Call the [**TileUpdater.Update**](https://msdn.microsoft.com/library/windows/apps/br208632) method and pass it the tile notification object you created in step 2.
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO5-->
+
+<!--HONumber=Aug16_HO3-->
 
 

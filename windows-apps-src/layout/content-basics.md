@@ -1,77 +1,77 @@
 ---
 author: mijacobs
-Description: "Une application a principalement pour objet d’offrir un accès à un contenu. Dans une application de retouche photo, le contenu correspond aux photos; dans une application de voyage, le contenu comprend les cartes et les informations sur les destinations, etc."
-title: "Informations de base relatives à la conception de contenu pour les applications de plateforme Windows universelle (UWP)"
+Description: The main purpose of any app is to provide access to content. In a photo-editing app, the photo is the content; in a travel app, maps and info about travel destinations is the content; and so on.
+title: Content design basics for Universal Windows Platform (UWP) apps
 ms.assetid: 3102530A-E0D1-4C55-AEFF-99443D39D567
 label: Content design basics
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: c8328150601bf132c28e569c4db21095cb77f88c
+ms.openlocfilehash: 4ac800f9d2dd51ac074ec50cd1046e5a78c80710
 
 ---
 
-#  Informations de base relatives à la conception de contenu pour les applications UWP
+#  Content design basics for UWP apps
 
-Le rôle principal de toute application est d’offrir un accès à un contenu. Dans une application de retouche photo, le contenu correspond aux photos; dans une application de voyage, le contenu comprend les cartes et les informations sur les destinations, etc. Les éléments de navigation donnent accès au contenu. Les éléments de commande permettent à l’utilisateur d’interagir avec contenu. Les éléments de contenu affichent le contenu réel.
+The main purpose of any app is to provide access to content: in a photo-editing app, the photo is the content; in a travel app, maps and info about travel destinations is the content; and so on. Navigation elements provide access to content; command elements enable the user to interact with content; content elements display the actual content.
 
-Cet article fournit des recommandations de conception de contenu pour les troisscénarios de contenu.
+This article provides content design recommendations for the three content scenarios.
 
-## <span id="Design_for_the_right_content_scenario"></span><span id="design_for_the_right_content_scenario"></span><span id="DESIGN_FOR_THE_RIGHT_CONTENT_SCENARIO"></span>Scénario de conception de contenu adapté
-
-
-Il existe troisscénarios principaux en matière de contenu:
-
--   **Consommation**: expérience principalement unidirectionnelle où le contenu est utilisé. Les actions de lecture de documents, de morceaux de musique ou de vidéos, ou d’affichage de photos et d’images rentrent dans la catégorie Consommation.
--   **Création**: expérience principalement unidirectionnelle dans laquelle l’objectif est de créer du contenu. Elle inclut les actions de création d’éléments à partir de zéro (par exemple, capture de photos ou de vidéos, création d’images dans une application de dessin ou ouverture d’un nouveau document).
--   **Interaction**: expérience de contenu bidirectionnelle qui inclut la consommation, la création et la révision de contenu.
-
-## <span id="Consumption-focused_apps"></span><span id="consumption-focused_apps"></span><span id="CONSUMPTION-FOCUSED_APPS"></span>Applications axées sur la consommation
+## <span id="Design_for_the_right_content_scenario"></span><span id="design_for_the_right_content_scenario"></span><span id="DESIGN_FOR_THE_RIGHT_CONTENT_SCENARIO"></span>Design for the right content scenario
 
 
-Les éléments de contenu reçoivent la priorité la plus élevée dans une application axée sur la consommation, suivie des [éléments de navigation](navigation-basics.md) permettant aux utilisateurs de trouver le contenu qu’ils recherchent. Exemples d’applications axées sur la consommation: lecteurs de films, applications de lecture, applications de musique et visionneuses de photos.
+There are three main content scenarios:
 
-![application de lecteur de news](images/news-reader/v2/newsreader-v2-tablet-phone.png)
+-   **Consumption**: A primarily one-way experience where content is consumed. It includes tasks like reading, listening to music, watching videos, and photo and image viewing.
+-   **Creation**: A primarily one-way experience where the focus is creating new content. It can be broken down into making things from scratch, like shooting a photo or video, creating a new image in a painting app, or opening a fresh document.
+-   **Interactive**: A two-way content experience that includes consuming, creating, and revising content.
 
-Recommandations générales pour les applications axées sur la consommation:
-
--   Pensez à créer des pages de [navigation](navigation-basics.md) dédiées et des pages d’affichage de contenu, afin que lorsque les utilisateurs trouvent le contenu recherché, ils puissent l’afficher sur une page dédiée exempte de distractions.
--   Pensez à créer une option de mode plein écran qui étend le contenu pour remplir tout l’écran et masque tous les autres éléments d’interface utilisateur.
-
-## <span id="Creation-focused_apps"></span><span id="creation-focused_apps"></span><span id="CREATION-FOCUSED_APPS"></span>Applications axées sur la création
+## <span id="Consumption-focused_apps"></span><span id="consumption-focused_apps"></span><span id="CONSUMPTION-FOCUSED_APPS"></span>Consumption-focused apps
 
 
-Le contenu et les éléments de [commande](commanding-basics.md) sont les éléments d’interface utilisateur les plus importants dans une application axée sur la création. Les éléments de commande permettent à l’utilisateur de créer du contenu. Exemples : applications de peinture, applications de retouche photo, applications de retouche vidéo et applications de traitement de texte.
+Content elements receive the highest priority in a consumption-focused app, followed by the [navigation elements](navigation-basics.md) needed to help users find the content they want. Examples of consumption-focused apps include movie players, reading apps, music apps, and photo viewers.
 
-Par exemple, voici une conception pour une application de retouche photo qui utilise des barres de commandes pour donner accès aux outils et aux options de manipulation de photos. Comme toutes les commandes se trouvent dans la barre de commandes, la majeure partie de l’écran de l’application peut être utilisée pour le contenu, à savoir la photo en cours de modification.
+![a newsreader app](images/news-reader/v2/newsreader-v2-tablet-phone.png)
 
-![exemple d’une conception d’application de retouche photo utilisant un Canvas actif](images/photo-editor/uap-photo-tabletphone-sbs.png)
+General recommendations for consumption-focused apps:
 
-Recommandations générales pour les applications axées sur la création:
+-   Consider creating dedicated [navigation](navigation-basics.md) pages and content-viewing pages, so that when users find the content they are looking for, they can view it on a dedicated page free of distractions.
+-   Consider creating a full-screen view option that expands the content to fill the entire screen and hides all other UI elements.
 
--   Réduisez l’utilisation des éléments de [navigation](navigation-basics.md).
--   Les éléments de [commande](commanding-basics.md) sont particulièrement importants dans les applications axées sur la création. Dans la mesure où les utilisateurs doivent exécuter un grand nombre de commandes, nous vous recommandons de fournir une fonctionnalité d’historique/annulation de commande.
-
-## <span id="Apps_with_interactive_content"></span><span id="apps_with_interactive_content"></span><span id="APPS_WITH_INTERACTIVE_CONTENT"></span>Applications avec contenu interactif
+## <span id="Creation-focused_apps"></span><span id="creation-focused_apps"></span><span id="CREATION-FOCUSED_APPS"></span>Creation-focused apps
 
 
-Dans une application avec contenu interactif, les utilisateurs créent, affichent et modifient du contenu. De nombreuses applications entrent dans cette catégorie. Exemples: applications métier, applications de gestion de l’inventaire, applications permettant à l’utilisateur de créer ou de modifier des recettes de cuisine.
+Content and [command](commanding-basics.md) elements are the most import UI elements in a creation-focused app: command elements enable the user to create new content. Examples include painting apps, photo editing apps, video editing apps, and word processing apps.
 
-![conception pour un outil de collaboration, application disposant d’un contenu interactif](images/collaboration-tool/uap-collaboration-tabphone-700.png)
+As an example, here's a design for a photo app that uses command bars to provide access to tools and photo manipulation options. Because all the commands are in the command bar, the app can devote most of its screen space to its content, the photo being edited.
 
-Ces applications doivent trouver un équilibre entre les trois éléments de l’interface utilisateur:
+![example of a photo editing app design that uses active canvas](images/photo-editor/uap-photo-tabletphone-sbs.png)
 
--   Les éléments de [navigation](navigation-basics.md) permettent aux utilisateurs de rechercher et d’afficher du contenu. Si l’objectif principal consiste à afficher et à rechercher du contenu, donnez la priorité aux éléments de navigation, au filtrage et au tri, ainsi qu’à la recherche.
--   Les éléments de [commande](commanding-basics.md) permettent à l’utilisateur de créer, modifier et manipuler du contenu.
+General recommendations for creation-focused apps:
 
-Recommandations générales concernant les applications avec un contenu interactif :
+-   Minimize the use of [navigation](navigation-basics.md) elements.
+-   [Command](commanding-basics.md) elements are especially important in creation-focused apps. Since users will be executing a lot of commands, we recommend providing a command history/undo functionality.
 
--   Il peut être difficile d’équilibrer les éléments de navigation, de contenu et de commande, car ils ont chacun leur importance. Si possible, envisagez de créer des écrans distincts pour la navigation, la création et la modification du contenu, ou fournissez des changements de mode.
-
-## <span id="Commonly_used_content_elements"></span><span id="commonly_used_content_elements"></span><span id="COMMONLY_USED_CONTENT_ELEMENTS"></span>Éléments de contenu couramment utilisés
+## <span id="Apps_with_interactive_content"></span><span id="apps_with_interactive_content"></span><span id="APPS_WITH_INTERACTIVE_CONTENT"></span>Apps with interactive content
 
 
-Voici quelques éléments d’interface utilisateur couramment utilisés pour afficher du contenu. (Pour en obtenir la liste complète, voir [Contrôles et éléments d’interface utilisateur](https://msdn.microsoft.com/library/windows/apps/dn611856).)
+In an app with interactive content, users create, view, and edit content; many apps fit into this category. Examples of these types of apps include line of business apps, inventory management apps, cooking apps that enable the user to create or modify recipes.
+
+![a design for a collaboration tool, an app that has interactive content](images/collaboration-tool/uap-collaboration-tabphone-700.png)
+
+These sort of apps need to balance all three UI elements:
+
+-   [Navigation](navigation-basics.md) elements help users find and view content. If viewing and finding content is the most important scenario, prioritize navigation elements, filtering and sorting, and search.
+-   [Command](commanding-basics.md) elements let the user create, edit, and manipulate content.
+
+General recommendations for apps with interactive content:
+
+-   It can be difficult to balance navigation, content, and command elements when all three are important. If possible, consider creating separate screens for browsing, creating, and editing content, or providing mode switches.
+
+## <span id="Commonly_used_content_elements"></span><span id="commonly_used_content_elements"></span><span id="COMMONLY_USED_CONTENT_ELEMENTS"></span>Commonly used content elements
+
+
+Here are some UI elements commonly used to display content. (For a complete list of UI elements, see [Controls and UI elements](https://msdn.microsoft.com/library/windows/apps/dn611856).)
 
 <table>
 <colgroup>
@@ -81,32 +81,32 @@ Voici quelques éléments d’interface utilisateur couramment utilisés pour af
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Catégorie</th>
-<th align="left">Éléments</th>
+<th align="left">Category</th>
+<th align="left">Elements</th>
 <th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Audio et vidéo</td>
-<td align="left">[Contrôles de transport et de lecture de média](../controls-and-patterns/media-playback.md)</td>
-<td align="left">Lit du contenu audio et vidéo.</td>
+<td align="left">Audio and video</td>
+<td align="left">[Media playback and transport controls](../controls-and-patterns/media-playback.md)</td>
+<td align="left">Plays audio and video.</td>
 </tr>
 <tr class="even">
-<td align="left">Visionneuses d’image</td>
-<td align="left">[Vue symétrique](../controls-and-patterns/flipview.md), [image](../controls-and-patterns/images-imagebrushes.md)</td>
-<td align="left">Affiche des images. La vue symétrique permet d’afficher les images d’une collection, par exemple les photos d’un album ou les éléments d’une page de détails sur le produit, image par image.</td>
+<td align="left">Image viewers</td>
+<td align="left">[Flip view](../controls-and-patterns/flipview.md), [image](../controls-and-patterns/images-imagebrushes.md)</td>
+<td align="left">Displays images. The flip view displays images in a collection, such as photos in an album or items in a product details page, one image at a time.</td>
 </tr>
 <tr class="odd">
-<td align="left">Listes</td>
-<td align="left">[liste déroulante, zone de liste, affichage Liste et affichage Grille](../controls-and-patterns/lists.md)</td>
-<td align="left">Présente les éléments dans une liste interactive ou une grille. Utilisez ces éléments pour permettre aux utilisateurs de sélectionner un film parmi une liste de nouveautés ou de gérer un inventaire.</td>
+<td align="left">Lists</td>
+<td align="left">[drop-down list, list box, list view and grid view](../controls-and-patterns/lists.md)</td>
+<td align="left">Presents items in an interactive list or a grid. Use these elements to let users select a movie from a list of new releases or manage an inventory.</td>
 </tr>
 <tr class="even">
-<td align="left">Texte et saisie de texte</td>
-<td align="left"><p>[Bloc de texte](../controls-and-patterns/text-block.md), [zone de texte](../controls-and-patterns/text-box.md), [zone d’édition enrichie](../controls-and-patterns/rich-edit-box.md)</p>
+<td align="left">Text and text input</td>
+<td align="left"><p>[Text block](../controls-and-patterns/text-block.md), [text box](../controls-and-patterns/text-box.md), [rich edit box](../controls-and-patterns/rich-edit-box.md)</p>
 </td>
-<td align="left">Affiche le texte. Certains éléments permettent à l’utilisateur de modifier du texte. Pour plus d’informations, voir [Contrôles de texte](../controls-and-patterns/text-controls.md).</td>
+<td align="left">Displays text. Some elements enable the user to edit text. For more info, see [Text controls](../controls-and-patterns/text-controls.md)</td>
 </tr>
 </tbody>
 </table>
@@ -123,6 +123,6 @@ Voici quelques éléments d’interface utilisateur couramment utilisés pour af
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

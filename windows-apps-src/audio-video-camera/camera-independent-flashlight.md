@@ -1,24 +1,24 @@
 ---
 author: drewbatgit
 ms.assetid: D20C8E01-4E78-4115-A2E8-07BB3E67DDDC
-description: "Cet article montre comment accéder à la lampe d’un appareil et comment l’utiliser, le cas échéant. La fonctionnalité de lampe est gérée indépendamment des fonctionnalités de flash et d’appareil photo."
-title: "Lampe torche indépendante de l’appareil photo"
+description: This article shows how to access and use a device's lamp, if one is present. Lamp functionality is managed separately from the device's camera and camera flash functionality.
+title: Camera-independent Flashlight
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 022ca2848c575f545402b13e19c0854a9e3ec74a
+ms.sourcegitcommit: 1b32633abc9365bf88137dff7c36ba0f2ad05d72
+ms.openlocfilehash: 8c256d8aba08d42fa00b46a01c8b7e773a0ab40c
 
 ---
 
-# Lampe torche indépendante de l’appareil photo
+# Camera-independent Flashlight
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Cet article montre comment accéder à la lampe d’un appareil et comment l’utiliser, le cas échéant. La fonctionnalité de lampe est gérée indépendamment des fonctionnalités de flash et d’appareil photo. En plus d’acquérir une référence à la lampe et d’apprendre à ajuster ses paramètres, cet article vous montre comment libérer la ressource de la lampe lorsqu’elle n’est pas utilisée et comment détecter les changements de disponibilité de la lampe lorsqu’elle est utilisée par une autre application.
+This article shows how to access and use a device's lamp, if one is present. Lamp functionality is managed separately from the device's camera and camera flash functionality. In addition to acquiring a reference to the lamp and adjusting its settings, this article also shows you how to properly free up the lamp resource when it's not in use, and how to detect when the lamp's availability changes in case it is being used by another app.
 
-## Accéder à la lampe par défaut de l’appareil
+## Get the device's default lamp
 
-Pour accéder à la lampe par défaut d’un appareil, appelez [**Lamp.GetDefaultAsync**](https://msdn.microsoft.com/library/windows/apps/dn894327). Les API de lampe se trouvent dans l’espace de noms [**Windows.Devices.Lights**](https://msdn.microsoft.com/library/windows/apps/dn894331). Veillez à ajouter une directive d’utilisation pour cet espace de noms avant d’essayer d’accéder à ces API.
+To get a device's default lamp device, call [**Lamp.GetDefaultAsync**](https://msdn.microsoft.com/library/windows/apps/dn894327). The lamp APIs are found in the [**Windows.Devices.Lights**](https://msdn.microsoft.com/library/windows/apps/dn894331) namespace. Be sure to add a using directive for this namespace before attempting to access these APIs.
 
 [!code-cs[LightsNamespace](./code/Lamp/cs/MainPage.xaml.cs#SnippetLightsNamespace)]
 
@@ -28,49 +28,50 @@ Pour accéder à la lampe par défaut d’un appareil, appelez [**Lamp.GetDefaul
 
 [!code-cs[GetDefaultLamp](./code/Lamp/cs/MainPage.xaml.cs#SnippetGetDefaultLamp)]
 
-Si l’objet renvoyé est **null**, l’API **Lamp** n’est pas prise en charge sur l’appareil. Certains appareils ne peuvent pas prendre en charge l’API **Lamp**, même si la lampe est physiquement présente sur l’appareil.
+If the returned object is **null**, the **Lamp** API is unsupported on the device. Some devices may not support the **Lamp** API even if there is a lamp physically present on the device.
 
-## Accéder à une lampe spécifique à l’aide de la chaîne de sélecteur de lampe
+## Get a specific lamp using the lamp selector string
 
-Certains appareils possèdent plusieurs lampes. Pour obtenir la liste des lampes disponibles sur l’appareil, accédez à la chaîne de sélecteur d’appareil en appelant [**GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/dn894328). Cette chaîne de sélecteur peut alors être transmise à [**DeviceInformation.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432). Cette méthode est utilisée pour énumérer les différents types d’appareil et la chaîne de sélecteur indique à la méthode de renvoyer uniquement les lampes. L’objet [**DeviceInformationCollection**](https://msdn.microsoft.com/library/windows/apps/br225395) renvoyé par **FindAllAsync** est une collection d’objets [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) représentant les lampes disponibles sur l’appareil. Sélectionnez l’un des objets de la liste, puis transmettez la propriété [**Id**](https://msdn.microsoft.com/library/windows/apps/br225437) à [**Lamp.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/dn894326) pour obtenir une référence à la lampe demandée. Cet exemple utilise la méthode d’extension **GetFirstOrDefault** à partir de l’espace de noms **System.Linq** pour sélectionner l’objet **DeviceInformation** dans lequel la propriété [**EnclosureLocation.Panel**](https://msdn.microsoft.com/library/windows/apps/br229906) a une valeur de **Back**, qui permet de sélectionner une lampe à l’arrière du boîtier de l’appareil, le cas échéant.
+Some devices may have more than one lamp. To obtain a list of lamps available on the device, get the device selector string by calling [**GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/dn894328). This selector string can then be passed into [**DeviceInformation.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432). This method is used to enumerate many different kinds of devices and the selector string lets the method know to return only lamp devices. The [**DeviceInformationCollection**](https://msdn.microsoft.com/library/windows/apps/br225395) object returned from **FindAllAsync** is a collection of [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) objects representing the lamps available on the device. Select one of the objects in the list and then pass the [**Id**](https://msdn.microsoft.com/library/windows/apps/br225437) property to [**Lamp.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/dn894326) to get a reference to the requested lamp. This example uses the **GetFirstOrDefault** extension method from the **System.Linq** namespace to select the **DeviceInformation** object where the [**EnclosureLocation.Panel**](https://msdn.microsoft.com/library/windows/apps/br229906) property has a value of **Back**, which selects a lamp that is on the back of the device's enclosure, if one exists.
 
-Les API [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) se trouvent dans l’espace de noms [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/br225459).
+Note that the [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) APIs are found in the [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/br225459) namespace.
 
 [!code-cs[EnumerationNamespace](./code/Lamp/cs/MainPage.xaml.cs#SnippetEnumerationNamespace)]
 
 [!code-cs[GetLampWithSelectionString](./code/Lamp/cs/MainPage.xaml.cs#SnippetGetLampWithSelectionString)]
 
-## Régler les paramètres de lampe
+## Adjust lamp settings
 
-Une fois que vous avez une instance de la classe [**Lamp**](https://msdn.microsoft.com/library/windows/apps/dn894310), activez la lampe en définissant la propriété [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn894330) sur **true**.
+After you have an instance of the [**Lamp**](https://msdn.microsoft.com/library/windows/apps/dn894310) class, turn the lamp on by setting the [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn894330) property to **true**.
 
 [!code-cs[LampSettingsOn](./code/Lamp/cs/MainPage.xaml.cs#SnippetLampSettingsOn)]
 
-Éteignez la lampe en définissant la propriété [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn894330) sur **false**.
+Turn the lamp off by setting the [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn894330) property to **false**.
 
 [!code-cs[LampSettingsOff](./code/Lamp/cs/MainPage.xaml.cs#SnippetLampSettingsOff)]
 
-Certains appareils sont équipés de lampes qui prennent en charge les valeurs de couleur. Déterminez si une lampe prend en charge la couleur en vérifiant la propriété [**IsColorSettable**](https://msdn.microsoft.com/library/windows/apps/dn894329). Si cette valeur est **true**, vous pouvez définir la couleur de la lampe avec la propriété [**Color**](https://msdn.microsoft.com/library/windows/apps/dn894322).
+Some devices have lamps that support color values. Check if a lamp supports color by checking the [**IsColorSettable**](https://msdn.microsoft.com/library/windows/apps/dn894329) property. If this value is **true**, you can set the color of the lamp with the [**Color**](https://msdn.microsoft.com/library/windows/apps/dn894322) property.
 
 [!code-cs[LampSettingsColor](./code/Lamp/cs/MainPage.xaml.cs#SnippetLampSettingsColor)]
 
-## S’inscrire pour être averti en cas de modification de la disponibilité de la lampe
+## Register to be notified if the lamp availability changes
 
-L’accès à la lampe est accordé à l’application l’ayant demandé en dernier. Par conséquent, si une seconde application est lancée et qu’elle demande une ressource de lampe déjà utilisée par une première application, celle-ci ne sera plus en mesure de contrôler la lampe jusqu’à ce que la seconde application libère la ressource. Pour recevoir une notification lorsque la disponibilité de la lampe change, inscrivez un gestionnaire pour l’événement [**Lamp.AvailabilityChanged**](https://msdn.microsoft.com/library/windows/apps/dn894317).
+Lamp access is granted to the most recent app to request access. So, if another app is launched and requests a lamp resource that your app is currently using, your app will no longer be able to control the lamp until the other app has released the resource. To receive a notification when the availability of the lamp changes, register a handler for the [**Lamp.AvailabilityChanged**](https://msdn.microsoft.com/library/windows/apps/dn894317) event.
 
 [!code-cs[AvailabilityChanged](./code/Lamp/cs/MainPage.xaml.cs#SnippetAvailabilityChanged)]
 
-Dans le gestionnaire de l’événement, vérifiez la propriété [**LampAvailabilityChanged.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/dn894315) pour déterminer si la lampe est disponible. Dans cet exemple, un bouton bascule permettant d’allumer ou d’éteindre la lampe est activé ou désactivé en fonction de la disponibilité de la lampe.
+In the handler for the event, check the [**LampAvailabilityChanged.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/dn894315) property to determine if the lamp is available. In this example, a toggle switch for turning the lamp on and off is enabled or disabled based on the lamp availability.
 
 [!code-cs[AvailabilityChangedHandler](./code/Lamp/cs/MainPage.xaml.cs#SnippetAvailabilityChangedHandler)]
 
-## Libérer correctement la ressource de lampe quand elle n’est pas en cours d’utilisation
+## Properly dispose of the lamp resource when not in use
 
-Lorsque vous n’utilisez plus la lampe, vous devez la désactiver et appeler [**Lamp.Close**](https://msdn.microsoft.com/library/windows/apps/dn894320) pour libérer les ressources et permettre aux autres applications d’accéder à la lampe. Cette propriété est mappée à la méthode **Dispose** si vous utilisezC#. Si vous êtes inscrit à [**AvailabilityChanged**](https://msdn.microsoft.com/library/windows/apps/dn894317), vous devez vous désinscrire du gestionnaire lorsque vous libérez la ressource de la lampe. L’emplacement idéal dans le code pour procéder à une telle opération dépend de l’application. Pour limiter l’accès à la lampe sur une seule page, libérez la ressource dans l’événement [**OnNavigatingFrom**](https://msdn.microsoft.com/library/windows/apps/br227509).
+When you are no longer using the lamp, you should disable it and call [**Lamp.Close**](https://msdn.microsoft.com/library/windows/apps/dn894320) to release the resource and allow other apps to access the lamp. This property is mapped to the **Dispose** method if you are using C#. If you registered for the [**AvailabilityChanged**](https://msdn.microsoft.com/library/windows/apps/dn894317), you should unregister the handler when you dispose of the lamp resource. The right place in your code to dispose of the lamp resource depends on your app. To scope lamp access to a single page, release the resource in the [**OnNavigatingFrom**](https://msdn.microsoft.com/library/windows/apps/br227509) event.
 
 [!code-cs[DisposeLamp](./code/Lamp/cs/MainPage.xaml.cs#SnippetDisposeLamp)]
 
- 
+## Related topics
+- [Media playback](media-playback.md)
 
  
 
@@ -80,6 +81,6 @@ Lorsque vous n’utilisez plus la lampe, vous devez la désactiver et appeler [*
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

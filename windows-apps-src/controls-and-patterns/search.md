@@ -1,226 +1,231 @@
 ---
 author: Jwmsft
-Description: "L’option de recherche est l’un des moyens les plus courants pour rechercher du contenu dans votre application. Les recommandations de cet article abordent différents aspects de l’expérience de recherche, les étendues de recherche, l’implémentation et des exemples de recherche en contexte."
-title: Recherche et recherche dans la page
+Description: Search is one of the top ways users can find content in your app. The guidance in this article covers elements of the search experience, search scopes, implementation, and examples of search in context.
+title: Search and find-in-page
 ms.assetid: C328FAA3-F6AE-4970-8372-B413F1290C39
 label: Search
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: cd746f81e8cca27c5111f3d15342d1def0f874dc
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: f245db6c37b7c8257e4fe937417d981e49101b8c
 
 ---
+# Search and find-in-page
 
-# Recherche et recherche dans la page
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-L’option de recherche est l’un des moyens les plus courants pour rechercher du contenu dans votre application. Les recommandations de cet article abordent différents aspects de l’expérience de recherche, les étendues de recherche, l’implémentation et des exemples de recherche en contexte.
+Search is one of the top ways users can find content in your app. The guidance in this article covers elements of the search experience, search scopes, implementation, and examples of search in context.
 
-**API importantes**
+<div class="important-apis" >
+<b>Important APIs</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/dn633874"><strong>AutoSuggestBox class (XAML)</strong></a></li>
+</ul>
 
--   [**Classe AutoSuggestBox (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn633874)
-
-
-
-## <span id="Elements_of_the_search_experience"></span><span id="elements_of_the_search_experience"></span><span id="ELEMENTS_OF_THE_SEARCH_EXPERIENCE"></span>Aspects de l’expérience de recherche
-
-
-**Entrée.**  La saisie de texte est le mode d’entrée de recherche le plus courant et le sujet principal de ce guide. Les modes d’entrée Voix et Webcam sont également couramment utilisés, mais ils nécessitent généralement de pouvoir communiquer avec le matériel et, dans certains cas, l’ajout de contrôles ou d’une interface utilisateur personnalisée au sein de l’application.
-
-**Entrée nulle.**  Lorsque le champ d’entrée est activé par l’utilisateur, mais qu’aucun texte n’a été saisi, vous pouvez afficher ce que l’on appelle un «canevas d’entrée nulle». Le canevas d’entrée nulle apparaît généralement dans les canevas de l’application, afin que la fonction de [suggestion automatique](auto-suggest-box.md) remplace ce contenu lorsque l’utilisateur commence à entrer sa requête. L’historique des dernières recherches, les tendances des recherches, les suggestions de recherche contextuelle, les astuces et les conseils sont tous de bons candidats pour l’état d’entrée nulle.
-
-![Exemple de Cortana dans un canevas d’entrée nulle](images/search-cortana-example.png)
-
- 
-
-**Formulation de requêtes/suggestion automatique.**  La formulation de requêtes remplace le contenu d’entrée nulle dès que l’utilisateur commence à entrer sa requête. Lorsque les utilisateurs entrent une chaîne de requête, ces derniers aperçoivent un ensemble de suggestions de requête ou d’options de désambiguïsation mis à jour en continu afin d’accélérer le processus d’entrée et de les aider à formuler leur requête. Le comportement des suggestions de requête est intégré au [contrôle de suggestion automatique](auto-suggest-box.md). Il permet également d’afficher l’icône à l’intérieur de la recherche (comme un micro ou une icône de validation). Tout autre comportement incombe à l’application.
-
-![Exemple de suggestion automatique de requête/formulation](images/search-autosuggest-example.png)
-
- 
-
-**Jeu de résultats.**  En règle générale, les résultats de la recherche apparaissent directement sous le champ de recherche. Bien que facultative, la juxtaposition des entrées et des résultats permet de maintenir un contexte et d’accéder immédiatement à la modification de la dernière requête ou à la saisie d’une nouvelle requête. Ce lien peut être indiqué plus loin en remplaçant le texte d’information par la requête à l’origine du jeu de résultats.
-
-Vous pouvez faciliter l’accès aux fonctions de modification de la dernière requête et de saisie d’une nouvelle requête en mettant en surbrillance la dernière requête lorsque le champ est réactivé. Ainsi, la dernière chaîne est remplacée par la séquence de touches saisie, mais la chaîne est conservée afin que l’utilisateur puisse placer son curseur et modifier ou ajouter la chaîne précédente.
-
-L’affichage du jeu de résultats peut prendre différentes formes en fonction du contenu. Le [mode Liste](lists.md) offre une grande flexibilité et convient parfaitement à la plupart des recherches. Le mode Grille fonctionne bien pour les images ou les autres contenus multimédias. Vous pouvez utiliser une carte pour indiquer la distribution spatiale.
-
-## <span id="Search_scopes"></span><span id="search_scopes"></span><span id="SEARCH_SCOPES"></span>Zones de recherche
+</div>
+</div>
 
 
-La fonction recherche est d’utilisation. Les interfaces utilisateur de recherche sont intégrées à l’interpréteur de commandes et à de nombreuses applications. Bien que les points d’entrée de recherche présentent généralement un aspect similaire, ils permettent d’obtenir des résultats aussi larges (recherche sur le web ou sur un périphérique) que précis (liste de contacts d’un utilisateur). Le point d’entrée de recherche doit être juxtaposé au contenu en cours de recherche.
 
-Voici quelques exemples d’étendues de recherche courantes:
 
-**Global** et **contextuel/optimal.**  Rechercher dans plusieurs sources du cloud et du contenu local. Résultats variés incluant des URL, des documents, des médias, des actions, des applications et plus encore.
 
-**Web.**  Rechercher dans un index Web. Les résultats peuvent contenir des pages, des entités et des réponses.
 
-**Mon contenu.**  Rechercher des informations sur plusieurs appareils, dans le cloud, des graphiques sociaux et plus encore. Les résultats sont différents, mais sont limités par le lien aux comptes d’utilisateur.
 
-Utilisez un texte d’information afin d’indiquer l’étendue de la recherche. Par exemple :
 
-« Rechercher sur Windows et sur le Web »
+## Elements of the search experience
 
-« Rechercher dans la liste de contacts »
 
-« Rechercher dans la boîte aux lettres »
+**Input.**  Text is the most common mode of search input and is the focus of this guidance. Other common input modes include voice and camera, but these typically require the ability to interface with device hardware and may require additional controls or custom UI within the app.
 
-« Rechercher dans les paramètres »
+**Zero input.**  Once the user has activated the input field, but before the user has entered text, you can display what's called a "zero input canvas." The zero input canvas will commonly appear in the app canvas, so that [auto-suggest](auto-suggest-box.md) replaces this content when the user begins to input their query. Recent search history, trending searches, contextual search suggestions, hints and tips are all good candidates for the zero input state.
 
-«Rechercher un emplacement»
-
-![Exemple de texte d’information de recherche](images/search-windowsandweb.png)
+![example of cortana on a zero input canvas](images/search-cortana-example.png)
 
  
 
-En délimitant précisément l’étendue d’un point d’entrée de recherche, vous permettez à l’utilisateur de s’assurer que ses critères correspondent bien à la fonction de recherche et vous limitez ainsi les désagréments éventuels.
+**Query formulation/auto-suggest.**  Query formulation replaces zero input content as soon as the user begins to enter input. As the user enters a query string, they are provided with a continuously updated set of query suggestions or disambiguation options to help them expedite the input process and formulate an effective query. This behavior of query suggestions is built into the [auto-suggest control](auto-suggest-box.md), and is also a way to show the icon inside the search (like a microphone or a commit icon). Any behavior outside of this falls to the app.
 
-## <span id="Implementation"></span><span id="implementation"></span><span id="IMPLEMENTATION"></span>Implémentation
-
-
-Les champs d’entrée de texte sont recommandés pour la plupart des applications, car ils offrent un point d’entrée de recherche bien visible. Les textes d’information facilitent également la découverte et la communication avec l’étendue de la recherche. Lorsque la recherche est une fonction plus secondaire, ou lorsque l’espace est limité, l’icône de recherche peut servir de point d’entrée, sans qu’un champ d’entrée ne lui soit associé. Lorsque la recherche est affichée sous forme d’une icône, assurez-vous qu’il reste suffisamment d’espace pour afficher la zone de recherche modale, comme illustré dans les exemples ci-dessous.
-
-Avant de cliquer sur l’icône de recherche:
-
-![Exemple d’icône de recherche et de zone de recherche réduite](images/search-icon-collapsed.png)
+![example of query/formulation auto-suggest](images/search-autosuggest-example.png)
 
  
 
-Après avoir cliqué sur l’icône de recherche:
+**Results set.**  Search results commonly appear directly under the search input field. While this isn't a requirement, the juxtaposition of input and results maintains context and provides the user with immediate access to edit the previous query or enter a new query. This connection can be further communicated by replacing the hint text with the query that created the results set.
 
-![Exemple d’icône de recherche et de zone de recherche développée](images/search-icon-expanded.png)
+One method to enable efficient access to both edit the previous query and enter a new query is to highlight the previous query when the field is reactivated. This way, any keystroke will replace the previous string, but the string is maintained so that the user can position a cursor to edit or append the previous string.
 
- 
+The results set can appear in any form that best communicates the content. A [list view](lists.md) provides a good deal of flexibility and is well-suited to most searches. A grid view works well for images or other media, and a map can be used to communicate spatial distribution.
 
-La recherche utilise toujours un glyphe en forme de loupe orienté vers la droite comme point d’entrée. Le glyphe à utiliser est encodé en Segoe UI Symbol, code de caractère hexadécimal 0xE0094, et possède généralement une taille de police de 15 epx.
-
-Le point d’entrée de recherche peut être placé à différents endroits. Son placement indique l’étendue et le contexte de la recherche. Les recherches réunissant des résultats relatifs à une expérience ou externes à l’application sont généralement situés dans un chrome d’application de niveau supérieur, telles que les barres de commandes globales ou la navigation.
-
-À mesure que l’étendue de la recherche s’affine ou se contextualise, l’emplacement indiqué correspond davantage au contenu à rechercher, telle qu’une zone de canevas, un en-tête de liste ou des barres de commandes contextuelles. Dans tous les cas, le lien entre l’entrée de recherche et les résultats (ou le contenu filtré) doit apparaître clairement.
-
-Dans le cas des listes de défilement, il est utile d’afficher systématiquement les entrées de recherche. Nous vous recommandons de rendre l’entrée de recherche rémanente et de faire défiler le contenu en arrière-plan.
-
-Les fonctionnalités d’entrée nulle et de formulation de requêtes sont facultatives pour les recherches contextuelles/optimales, dans lesquelles la liste est filtrée en temps réel par l’entrée de l’utilisateur. Des exceptions existent, notamment lorsque les suggestions de mise en forme des requêtes sont disponibles, comme les options de filtrage de la boîte de réception (à :&lt;input string&gt;, de : &lt;input string&gt;, objet : &lt;input string&gt;, etc.).
-
-## <span id="examples"></span><span id="EXAMPLES"></span>Exemple
+## Search scopes
 
 
-Cette section présente des exemples de recherche en contexte.
+Search is a common feature, and users will encounter search UI in the shell and within many apps. Although search entry points tend to be similarly visualized, they can provide access to results that range from broad (web or device searches) to narrow (a user's contact list). The search entry point should be juxtaposed against the content being searched.
 
-Recherche en tant qu’action dans la barre d’outils Windows:
+Some common search scopes include:
 
-![Exemple de recherche en tant qu’action dans la barre d’outils Windows](images/search-toolbar-action.png)
+**Global** and **contextual/refine.**  Search across multiple sources of cloud and local content. Varied results include URLs, documents, media, actions, apps, and more.
 
- 
+**Web.**  Search a web index. Results include pages, entities, and answers.
 
-Recherche en tant qu’entrée sur le canevas d’application:
+**My stuff.**  Search across device(s), cloud, social graphs, and more. Results are varied, but are constrained by the connection to user account(s).
 
-![Exemple de recherche sur un canevas d’application](images/search-canvas-contacts.png)
+Use hint text to communicate search scope. Examples include:
 
- 
+"Search Windows and the Web"
 
-Recherche dans un volet de navigation:
+"Search contacts list"
 
-![Exemple de recherche dans un menu de navigation](images/search-navmenu.png)
+"Search mailbox"
+
+"Search settings"
+
+"Search for a place"
+
+![example of search hint text](images/search-windowsandweb.png)
 
  
 
-La recherche en ligne est réservée au cas où la recherche est rarement utilisée ou est hautement contextuelle:
+By effectively communicating the scope of a search input point, you can help to ensure that the user expectation will be met by the capabilities of the search you are performing and reduce the possibility of frustration.
 
-![Exemple de recherche en ligne](images/patterns-search-results-desktop.png)
-
-
-## Recommandations en matière de recherche dans la page
+## Implementation
 
 
-La recherche dans la page permet aux utilisateurs de trouver des correspondances dans le corps du texte affiché. Les visionneuses de documents, lecteurs et navigateurs constituent les types d’applications les plus classiques offrant cette fonctionnalité.
+For most apps, it's best to have a text input field as the search entry point, which provides a prominent visual footprint. In addition, hint text helps with discoverability and communicating the search scope. When search is a more secondary action, or when space is constrained, the search icon can serve as an entry point without the accompanying input field. When visualized as an icon, be sure that there's room for a modal search box, as seen in the below examples.
 
-## <span id="Recommendations"></span><span id="recommendations"></span><span id="RECOMMENDATIONS"></span>Recommandations
+Before clicking search icon:
 
-
--   Placez une barre de commandes dans votre application avec la fonctionnalité de recherche dans la page pour permettre à l’utilisateur d’y trouver du texte. Pour plus d’informations sur le placement, voir la section Exemples.
-
-    -   Les applications proposant une recherche dans la page doivent offrir tous les contrôles requis dans une barre de commandes.
-    -   Si votre application comporte un grand nombre de fonctionnalités autres que la recherche dans la page, vous pouvez ajouter un bouton **Rechercher** dans la barre de commandes du haut comme point d’entrée vers une autre barre de commandes contenant tous les contrôles de recherche dans la page.
-    -   La barre de commandes de la fonctionnalité de recherche dans la page doit rester visible lorsque l’utilisateur utilise le clavier tactile. Le clavier tactile s’affiche lorsqu’un utilisateur appuie sur la zone de texte. La barre de commandes de recherche dans la page doit être déplacée vers le haut afin que le clavier tactile ne la masque pas.
-
-    -   La fonctionnalité de recherche dans la page doit rester disponible lorsque l’utilisateur interagit avec la vue. Les utilisateurs doivent pouvoir interagir avec le texte de la vue tout en utilisant la fonctionnalité de recherche dans la page. Par exemple, s’ils le veulent, ils doivent pouvoir effectuer un zoom avant ou arrière sur un document ou un mouvement panoramique sur la vue pour lire le texte. Lorsque l’utilisateur commence à se servir de la fonctionnalité de recherche dans la page, la barre de commandes doit rester disponible et un bouton **Fermer** être proposé pour quitter cette fonctionnalité.
-
-    -   Implémentez le raccourci clavier (Ctrl+F). Le raccourci clavier Ctrl+F doit être disponible pour que l’utilisateur puisse rapidement ouvrir la barre de commandes de recherche dans la page.
-
-    -   Intégrez les éléments de base de la fonctionnalité de recherche dans la page. Voici les éléments d’interface utilisateur nécessaires pour implémenter une recherche dans la page :
-
-        -   Zone de texte
-        -   Boutons Précédent et Suivant
-        -   Nombre de correspondances
-        -   Fermer (bureau uniquement)
-    -   Les résultats correspondants doivent être mis en surbrillance dans la vue et l’utilisateur doit pouvoir la faire défiler pour passer au résultat suivant à l’écran. Les utilisateurs peuvent se déplacer rapidement au sein du document à l’aide des boutons **Précédent** et **Suivant**, de barres de défilement ou par voie tactile, en procédant à une manipulation directe.
-
-    -   La fonctionnalité de recherche et remplacement doit pouvoir être utilisée parallèlement à la fonctionnalité basique de recherche dans la page. Si votre application dispose d’une fonctionnalité de recherche et remplacement, assurez-vous que la recherche dans la page n’interfère pas avec cette fonctionnalité.
-
--   Incluez un compteur de correspondances pour indiquer à l’utilisateur le nombre de correspondances de texte sur la page.
--   Implémentez le raccourci clavier (Ctrl+F).
-
-## <span id="Examples"></span><span id="examples"></span><span id="EXAMPLES"></span>Exemples
-
-
-Fournissez un moyen facile d’accéder à la fonctionnalité de recherche dans la page. Dans cet exemple sur une interface utilisateur mobile, la fonctionnalité «Rechercher dans la page» s’affiche après deux commandes «Ajouter à...» dans un menu extensible:
-
-![Exemple de recherche dans la page1](images/findinpage-01.png)
+![example of a search icon and collapsed search box](images/search-icon-collapsed.png)
 
  
 
-Après avoir sélectionné Rechercher dans la page, l’utilisateur entre un terme recherché. Des suggestions de texte peuvent apparaître lors de la saisie du terme recherché:
+After clicking search icon:
 
-![Exemple de recherche dans la page2](images/findinpage-02.png)
-
- 
-
-Si aucune correspondance de texte n’est trouvée dans la recherche, une chaîne de texte «Aucun résultat» doit s’afficher dans la zone de résultats:
-
-![Exemple de recherche dans la page3](images/findinpage-03.png)
+![example of a search icon and expanded search box](images/search-icon-expanded.png)
 
  
 
-Si la recherche trouve des correspondances de texte, le premier terme doit être surligné dans une couleur distincte, et les autres occurrences dans une couleur plus claire de la même nuance, comme illustré dans cet exemple:
+Search always uses a right-pointing magnifying glass glyph for the entry point. The glyph to use is Segoe UI Symbol, hex character code 0xE0094, and usually at 15 epx font size.
 
-![Exemple de recherche dans la page4](images/findinpage-04.png)
+The search entry point can be placed in a number of different areas, and its placement communicates both search scope and context. Searches that gather results from across an experience or external to the app are typically located within top-level app chrome, such as global command bars or navigation.
 
- 
+As the search scope becomes more narrow or contextual, the placement will typically be more directly associated with the content to be searched, such as on a canvas, as a list header, or within contextual command bars. In all cases, the connection between search input and results or filtered content should be visually clear.
 
-La Recherche dans la page a un compteur de correspondances:
+In the case of scrollable lists, it's helpful to always have search input be visible. We recommend making the search input sticky and have content scroll behind it.
 
-![Exemple de compteur de recherche dans la page](images/findinpage-counter.png)
+Zero input and query formulation functionality is optional for contextual/refine searches in which the list will be filtered in real-time by user input. Exceptions include cases where query formatting suggestions may be available, such as inbox filtering options (to:&lt;input string&gt;, from: &lt;input string&gt;, subject: &lt;input string&gt;, and so on).
 
-
-
-
-## <span id="implementing_find_in_page"></span><span id="IMPLEMENTING_FIND_IN_PAGE"></span>
-
-**Implémentation de la recherche dans la page**
-
--   Les visionneuses de documents, lecteurs et navigateurs, qui sont les types d’applications les plus susceptibles d’offrir la fonctionnalité de recherche dans la page, offrent à l’utilisateur une expérience d’affichage/lecture plein écran.
--   La fonctionnalité de recherche dans la page est une fonctionnalité secondaire qui doit figurer dans une barre de commandes.
-
-Pour plus d’informations sur l’ajout de commandes à votre barre de commandes, voir [Barre de commandes](app-bars.md).
+## Example
 
 
+The examples in this section show search placed in context.
 
-## <span id="related_topics"></span>Articles connexes
+Search as an action in the Windows tool bar:
 
-* [**Zone de suggestion automatique**](auto-suggest-box.md)
-
+![an example of search as an action in the windows tool bar](images/search-toolbar-action.png)
 
  
 
+Search as an input on the app canvas:
+
+![example of search on an app canvas](images/search-canvas-contacts.png)
+
+ 
+
+Search in a navigation pane:
+
+![example of search in a navigation menu](images/search-navmenu.png)
+
+ 
+
+Inline search is best reserved for cases where search is infrequently accessed or is highly contextual:
+
+![example of inline search](images/patterns-search-results-desktop.png)
+
+
+## Guidelines for find-in-page
+
+
+Find-in-page enables users to find text matches in the current body of text. Document viewers, readers, and browsers are the most typical apps that provide find-in-page.
+
+## Recommendations
+
+
+-   Place a command bar in your app with find-in-page functionality to let the user search for on-page text. For placement details, see the Examples section.
+
+    -   Apps that provide find-in-page should have all necessary controls in a command bar.
+    -   If your app includes a lot of functionality beyond find-in-page, you can provide a **Find** button in the top-level command bar as an entry point to another command bar that contains all of your find-in-page controls.
+    -   The find-in-page command bar should remain visible when the user is interacting with the touch keyboard. The touch keyboard appears when a user taps the input box. The find-in-page command bar should move up, so it's not obscured by the touch keyboard.
+
+    -   Find-in-page should remain available while the user interacts with the view. Users need to interact with the in-view text while using find-in-page. For example, users may want to zoom in or out of a document or pan the view to read the text. Once the user starts using find-in-page, the command bar should remain available with a **Close** button to exit find-in-page.
+
+    -   Enable the keyboard shortcut (CTRL+F). Implement the keyboard shortcut CTRL+F to enable the user to invoke the find-in-page command bar quickly.
+
+    -   Include the basics of find-in-page functionality. These are the UI elements that you need in order to implement find-in-page:
+
+        -   Input box
+        -   Previous and Next buttons
+        -   A match count
+        -   Close (desktop-only)
+    -   The view should highlight matches and scroll to show the next match on screen. Users can move quickly through the document by using the **Previous** and **Next** buttons and by using scroll bars or direct manipulation with touch.
+
+    -   Find-and-replace functionality should work alongside the basic find-in-page functionality. For apps that have find-and-replace, ensure that find-in-page doesn't interfere with find-and-replace functionality.
+
+-   Include a match counter to indicate to the user the number of text matches there are on the page.
+-   Enable the keyboard shortcut (CTRL+F).
+
+## Examples
+
+
+Provide an easy way to access the find-in-page feature. In this example on a mobile UI, "Find on page" appears after two "Add to..." commands in an expandable menu:
+
+![find-on-page example 1](images/findinpage-01.png)
+
+ 
+
+After selecting find-in-page, the user enters a search term. Text suggestions can appear when a search term is being entered:
+
+![find-on-page example 2](images/findinpage-02.png)
+
+ 
+
+If there isn't a text match in the search, a "No results" text string should appear in the results box:
+
+![find-on-page example 3](images/findinpage-03.png)
+
+ 
+
+If there is a text match in the search, the first term should be highlighted in a distinct color, with succeeding matches in a more subtle tone of that same color palette, as seen in this example:
+
+![find-on-page example 4](images/findinpage-04.png)
+
+ 
+
+Find-in-page has a match counter:
+
+![example of find-in-page search counter](images/findinpage-counter.png)
+
+
+
+
+## **Implementing find-in-page**
+
+-   Document viewers, readers, and browsers are the likeliest app types to provide find-in-page, and enable the user to have a full screen viewing/reading experience.
+-   Find-in-page functionality is secondary and should be located in a command bar.
+
+For more info about adding commands to your command bar, see [Command bar](app-bars.md).
+
+
+
+## Related articles
+
+* [**Auto-suggest box**](auto-suggest-box.md)
+
+
+ 
+
  
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

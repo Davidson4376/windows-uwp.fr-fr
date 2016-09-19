@@ -1,55 +1,64 @@
 ---
-title&#58; Unity&#58; Migrer votre jeu pour XboxOne - Auteur&#58; JordanEllis6809 
+author: JordanEllis6809
+title: Bringing Unity games to UWP on Xbox
+description: Unity UWP development on Xbox.
+translationtype: Human Translation
+ms.sourcegitcommit: ea3bea2e5d6de0e55615de701a69e90d81f0f553
+ms.openlocfilehash: 73f701a2608c6ce8d10cab817683ada4e9eecc08
+
 ---
 
-# Unity&#58; Migrer votre jeu vers XboxOne
-
-Dans ce didacticiel détaillé, nous supposons que vous disposez déjà d’un jeu dans Unity, prêt à être créé et déployé.
-
-[Version vidéo de ce didacticiel.](https://www.youtube.com/watch?v=f0Ptvw7k-CE)
-
-Vous cherchez à créer une version de votre projet UWP Unity?  
-            [Voir ici](development-lanes-unity-versioning.md).
-
-## Étape0: S’assurer de l’installation correcte d’Unity.
-
-Les composants suivants doivent être sélectionnés lors de l’installation d’Unity:
-
-![Composants d’installation Unity](images/unity-install-components.png)
-
-## Étape1: générer la solution UWP
-
-Dans votre projet de jeu Unity, ouvrez la fenêtre Paramètres de génération, qui se trouve dans `File -> Build Settings...`, puis accédez au menu Options du Windows Store présenté ci-dessous.
-
-![Fenêtre Paramètres de génération](images/build-settings.png)
-
-Assurez-vous que le paramètre `SDK` est défini sur `Universal 10`. Appuyez sur le bouton Générer en bas du menu; une fenêtre Explorateur apparaît et vous demande de spécifier un dossier de destination. Créez un dossier nommé `UWP` dans le répertoire `Assets` de votre projet et choisissez-le comme dossier de destination pour le build.
-
-![Dossier de destination du build](images/build-destination.png)
-
-Unity a ainsi créé une solution VisualStudio que nous utiliserons pour déployer votre jeu UWP à l’étape suivante.
-
-![Solution Visual Studio UWP](images/uwp-vs-solution.png)
-
-## Étape2: déployez votre jeu
-
-Ouvrez la solution qui vient d’être créée dans le dossier `Assets/UWP`  Une fois ouverte, modifiez la plateforme cible en X64.
-
-![Plateforme de génération x64](images/x64-build-platform.png)
-
-À présent que vous disposez d’une solution VisualStudioUWP pour votre jeu, [suivez ces étapes](https://msdn.microsoft.com/windows/uwp/xbox-apps/getting-started) pour déployer correctement votre jeu vers votre XboxOne achetée au détail!
-
-## Étape 3: Modifier et régénérer
-
-Si des modifications sont apportées à des éléments ne figurant pas dans le script, pour que ces modifications s’affichent dans la buildUWP de votre jeu, le projet doit être régénéré à partir de l’éditeur (comme décrit à l’__Étape1__).
-
-## Contrôle de version de votre projetUWP
-
-Il existe quelques situations courantes où l’ajout de parties à ce répertoire UWP nouvellement créé pour le contrôle de version devient nécessaire.  Par exemple, si vous ajoutez une nouvelle dépendance au projet UWP (p.ex., le Kit de développement logiciel Xbox Live).  
-            [Ici](development-lanes-unity-versioning.md), nous passons en revue les détails de cet exemple.
+# Bringing Unity games to UWP on Xbox
 
 
+In this step-by-step tutorial, we assume that you already have a game in Unity, ready to be built and deployed.
 
-<!--HONumber=Jul16_HO2-->
+See also a [video version of this tutorial](https://www.youtube.com/watch?v=f0Ptvw7k-CE).
+
+Looking to version your Unity UWP project? See [Version control your UWP project](development-lanes-unity-versioning.md).
+
+## Step 0: Ensure Unity is installed correctly
+
+When installing Unity, these components must be selected:
+
+![Unity Install Components](images/unity-install-components.png)
+
+## Step 1: Building the UWP solution
+
+In your Unity game project, open the **Build Settings** windows located at **File -> Build Settings**, and go to the Windows Store options menu.
+
+![Build Settings Window](images/build-settings.png)
+
+Make sure the **SDK** setting is set to **Universal 10**, and then select the **Build** button, which will launch a File Explorer window asking for a destination folder. Create a folder named **UWP** next to the **Assets** directory of your project, and choose this folder as the destination folder of the build.
+
+![Build Destination Folder](images/build-destination.png)
+
+Unity has now created a new Visual Studio solution that we will use to deploy your UWP game from.
+
+![UWP VS Solution](images/uwp-vs-solution.png)
+
+## Step 2: Deploying your game
+
+Open the newly generated solution in the **UWP** folder, and then change the target platform to **x64**.
+
+![x64 Build Platform](images/x64-build-platform.png)
+
+Now that you have a UWP Visual Studio solution for your game, [following these steps](getting-started.md) will allow you to successfuly deploy your game onto your retail Xbox One!
+
+## Step 3: Modify and rebuild
+
+If changes are made to anything that isn't a script, for these changes to be shown in your game's UWP build, the project must be rebuilt from within the Editor (as described in __Step 1__).
+
+## Versioning your UWP project
+
+There are a few common situations where adding parts of this newly generated UWP directory to version control bocomes necessary. For example, if you're adding a new dependency to the UWP project (for example, the Xbox Live SDK).  We go over this example in detail at [Version control your UWP project](development-lanes-unity-versioning.md).
+
+## See also
+- [Bringing existing games to Xbox](development-lanes-landing.md)
+- [UWP on Xbox One](index.md)
+
+
+
+<!--HONumber=Aug16_HO4-->
 
 

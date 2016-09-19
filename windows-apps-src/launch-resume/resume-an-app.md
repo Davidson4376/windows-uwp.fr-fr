@@ -1,34 +1,27 @@
 ---
 author: TylerMSFT
-title: "Gérer la reprise d’une application"
-description: "Apprenez à actualiser le contenu à l’écran lorsque le système reprend l’exécution de votre application."
+title: Handle app resume
+description: Learn how to refresh displayed content when the system resumes your app.
 ms.assetid: DACCC556-B814-4600-A10A-90B82664EA15
 translationtype: Human Translation
-ms.sourcegitcommit: e6957dd44cdf6d474ae247ee0e9ba62bf17251da
-ms.openlocfilehash: dd3d75c7f3dfe325324e1fe31c039cd207b68d0b
+ms.sourcegitcommit: 231161ba576a140859952a7e9a4e8d3bd0ba4596
+ms.openlocfilehash: 2813a112f9d60c5b133284903c98a152bd027bee
 
 ---
 
-# Gérer la reprise d’une application
+# Handle app resume
 
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
-
-
-**API importantes**
+**Important APIs**
 
 -   [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339)
 
-Apprenez à actualiser le contenu à l’écran lorsque le système reprend l’exécution de votre application. L’exemple présenté dans cette rubrique enregistre un gestionnaire d’événements pour l’événement [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339).
+Learn where to refresh your UI when the system resumes your app. The example in this topic registers an event handler for the [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) event.
 
-**Feuille de route:** comment cette rubrique s’articule-t-elle par rapport aux autres? Voir:
+## Register the resuming event handler
 
--   [Feuille de route pour les applications Windows Runtime enC# ou VisualBasic](https://msdn.microsoft.com/library/windows/apps/br229583)
--   [Feuille de route pour les applications Windows Runtime en C++](https://msdn.microsoft.com/library/windows/apps/hh700360)
-
-## Enregistrer le gestionnaire d’événement de reprise
-
-Enregistrez-vous pour traiter l’événement [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339), qui indique que l’utilisateur revient vers votre application après s’en être éloigné.
+Register to handle the [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) event, which indicates that the user switched away from your app and then back to it.
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -60,9 +53,13 @@ Enregistrez-vous pour traiter l’événement [**Resuming**](https://msdn.micros
 > }
 > ```
 
-## Actualiser le contenu affiché après la suspension
+## Refresh displayed content and reacquire resources
 
-Lorsque votre application traite l’événement [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339), elle a la possibilité d’actualiser son contenu à l’écran.
+The system suspends your app a few seconds after the user switches to another app or to the desktop. The system resumes your app when the user switches back to it. When the system resumes your app, the content of your variables and data structures are the same as they were before the system suspended the app. The system restores the app where it left off. To the user, it appears as if the app has been running in the background.
+
+When your app handles the [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) event, your app may be been suspended for hours or days. It should refresh any content that might have become stale while the app was suspended, such as news feeds or the user's location.
+
+This is also a good time to restore any exclusive resources that you released when your app was suspended such as file handles, cameras, I/O devices, external devices, and network resources.
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -70,7 +67,7 @@ Lorsque votre application traite l’événement [**Resuming**](https://msdn.mic
 > {
 >     private void App_Resuming(Object sender, Object e)
 >     {
->         // TODO: Refresh network data
+>         // TODO: Refresh network data, perform UI updates, and reacquire resources like cameras, I/O devices, etc.
 >     }
 > }
 > ```
@@ -79,7 +76,7 @@ Lorsque votre application traite l’événement [**Resuming**](https://msdn.mic
 >
 >     Private Sub App_Resuming(sender As Object, e As Object)
 >  
->         ' TODO: Refresh network data
+>         ' TODO: Refresh network data, perform UI updates, and reacquire resources like cameras, I/O devices, etc.
 >
 >     End Sub
 >
@@ -88,32 +85,26 @@ Lorsque votre application traite l’événement [**Resuming**](https://msdn.mic
 > ```cpp
 > void MainPage::App_Resuming(Object^ sender, Object^ e)
 > {
->     // TODO: Refresh network data
+>     // TODO: Refresh network data, perform UI updates, and reacquire resources like cameras, I/O devices, etc.
 > }
 > ```
 
-> **Remarque** Étant donné que l’événement [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) n’est pas déclenché depuis le thread d’interface utilisateur, un répartiteur doit être utilisé pour accéder au thread en question et injecter une mise à jour à l’IU, si c’est ce que vous souhaitez faire dans votre gestionnaire.
+> **Note**  Because the [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) event is not raised from the UI thread, a dispatcher must be used in your handler to dispatch any calls to your UI.
 
-## Notes
+## Remarks
 
+When your app is attached to the Visual Studio debugger, it will not be suspended. You can suspend it from the debugger, however, and then send it a **Resume** event so that you can debug your code. Make sure the **Debug Location toolbar** is visible and click the drop-down next to the **Suspend** icon. Then choose **Resume**.
 
-Le système suspend votre application chaque fois que l’utilisateur bascule vers une autre application ou vers le Bureau. Le système en reprend l’exécution lorsque l’utilisateur revient à votre application. Dès lors, le contenu de vos variables et structures de données restent identiques à ce qu’elles étaient avant que le système ne suspende l’application. Le système rétablit l’application exactement dans l’état où il l’a laissée, de sorte qu’elle semble s’être exécutée en arrière-plan. Cependant, il se peut que l’application ait été suspendue pendant une durée significative. Elle doit dans ce cas actualiser le contenu affiché susceptible d’avoir changé pendant l’inactivité, par exemple les flux d’actualités ou la localisation de l’utilisateur.
+For Windows Phone Store apps, the [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) event is always followed by [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335), even when your app is currently suspended and the user re-launches your app from a primary tile or app list. Apps can skip initialization if there is already content set on the current window. You can check the [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) property to determine if the app was launched from a primary or a secondary tile and, based on that information, decide whether you should present a fresh or resume app experience.
 
-Si votre application ne contient pas de contenu à actualiser, il n’y a alors pas besoin de gérer l’événement [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339).
+## Related topics
 
-> **Remarque** Lorsque votre application est jointe au débogueur VisualStudio, vous pouvez lui envoyer un événement **Resume**. Assurez-vous que la **barre d’outils Emplacement de débogage** est visible, et cliquez sur la liste déroulante à côté de l’icône **Suspendre**. Ensuite, choisissez **Reprendre**.
-
-> **Remarque** Dans les applications du WindowsPhoneStore, l’événement [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) est toujours suivi de l’événement [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335), même lorsque votre application est suspendue et que l’utilisateur relance votre application à partir d’une vignette principale ou d’une liste d’applications. Les applications peuvent ignorer l’initialisation si un contenu est déjà défini sur la fenêtre active. Vous pouvez vérifier la propriété [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) pour déterminer si l’application a été lancée à partir d’une vignette principale ou secondaire et, en fonction de l’information obtenue, décider si vous devez présenter une expérience de nouvelle exécution ou de reprise d’exécution de l’application.
-
-## Rubriques connexes
-
-* [Gérer l’activation d’une application](activate-an-app.md)
-* [Gérer la suspension d’une application](suspend-an-app.md)
-* [Recommandations pour la suspension et la reprise d’une application](https://msdn.microsoft.com/library/windows/apps/hh465088)
-* [Cycle de vie de l’application](app-lifecycle.md)
+* [App lifecycle](app-lifecycle.md)
+* [Handle app activation](activate-an-app.md)
+* [Handle app suspend](suspend-an-app.md)
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

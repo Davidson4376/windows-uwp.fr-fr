@@ -1,30 +1,58 @@
 ---
 author: payzer
-title: Meilleures pratiques pourXbox
-description: "Découvrez comment optimiser votre application pourXbox."
-area: Xbox
+title: Xbox best practices
+description: How to optimize your application for Xbox.
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: bf3f89d29b947c39f818de297556cc438da8901a
+ms.sourcegitcommit: 422ab09117ad25183f352992a7d21fe511a5f3bb
+ms.openlocfilehash: 6198abcdde4a30df815ff9f36d062b8db3a37fab
 
 ---
 
-# Meilleures pratiques pourXbox
-Si vous voulez offrir une expérience optimale sur Xbox, ou si vous créez du code que vous comptez utiliser sur plusieurs plateformes de télévision, nous vous recommandons de lire les informations suivantes.  
+# Xbox best practices
+By default, all UWP apps will run on Xbox One without any extra effort on your part. However, if want your app to shine, delight your customers, and compete with the best app experiences on Xbox, you should follow the practices below.
+  > [!NOTE]
+  > Before you start, take a look at the design guidelines laid out in [Designing for Xbox and TV](../input-and-devices/designing-for-tv.md).   
 
-## Comment désactiver le modesouris
-Par défaut, le modesouris est activé. Nous vous recommandons vivement de désactiver cette fonctionnalité et d’optimiser l’application pour la navigation de contrôleur directionnelle. [En savoir plus](how-to-disable-mouse-mode.md)
+## To build the best experiences for Xbox One
 
-## Comment étirer les bords de l’application vers le bord de l’écran
-Par défaut, votre application est entourée de bordures. Pour les retirer et utiliser toute la largeur et la hauteur de votre écran, vous pouvez désactiver la mise à l’échelle automatique.  [En savoir plus](turn-off-overscan.md)
+### *Do:* Turn off mouse mode
+Xbox users love their controller. To optimize for controller input, [disable mouse mode](how-to-disable-mouse-mode.md) and enable directional navigation (also known as [X-Y focus](../input-and-devices/designing-for-tv.md#xy-focus-navigation-and-interaction)). Watch out for focus traps and for inaccessible UI.
 
-## Comment désactiver la mise à l’échelle
-Par défaut, votre application présente une mise à l’échelle de 200% si vous utilisez XAML et 150% si vous optez pour HTML. Vous pouvez désactiver la mise à l’échelle automatique.  [En savoir plus](disable-scaling.md)
+### *Do:* Draw a focus rectangle that is appropriate for a 10-foot experience
+Most Xbox users are sitting across the living room from their TV, so keep in mind that the standard focus rectangle is hard to see from ten feet away. To ensure that the UI element with the input focus is clearly visible to the user at all times, follow the [Focus visual](../input-and-devices/designing-for-tv.md#focus-visual) guidelines. In XAML you will get this behavior for free when your app runs on Xbox, but HTML apps will need to use a custom CSS style.
 
-## Conception pour Xbox et télévision
-Pour en savoir plus sur les pratiques adoptées en matière de conception, voir [Conception pour Xbox et télévision](https://msdn.microsoft.com/windows/uwp/input-and-devices/designing-for-tv?f=255&MSPPError=-2147217396#mouse-mode).
+### *Do:* Integrate with the SystemMediaTransportControls class 
+Xbox users want to control media apps with the Xbox Media Remote, Cortana (especially the "Play" and "Pause" voice commands), and Xbox SmartGlass. To get these features for free your app should use the [SystemMediaTransportControls](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.systemmediatransportcontrols.aspx) class, which is automatically included in the Xbox media controls. If your app has custom media controls, make sure to integrate with the **SystemMediaTransportControls** class to provide these features to your users. If you are creating a background music app, integrate with the **SystemMediaTransportControls** class to ensure that the background music controls work correctly in the Xbox multitasking tab.
+
+### *Do:* Use adaptive UI to account for snapped apps
+One of the unique features of Xbox One is that users can snap apps such as Cortana next to any other app, so your app should respond gracefully when it runs in *fill mode*. Implement [adaptive UI](../get-started/universal-application-platform-guide.md#design-adaptive-ui-with-adaptive-panels) and make sure to test your app during development by snapping an app next to it.
+
+### *Consider:* Draw to the edge of the screen
+Many TVs cut off the edges of the display, so all of your app's important content should be displayed within the [TV-safe area](../input-and-devices/designing-for-tv.md#tv-safe-area). UWP uses *overscan* to keep the content within the TV-safe area, but  this default behavior can draw an obvious border around your app. To provide the best experience, turn off the default behavior and follow the instructions at [How to draw UI to the edge of the screen](turn-off-overscan.md).
+> [!IMPORTANT]
+  > If you disable overscan, it's your responsibility to make sure that interactive elements and text remain within the TV-safe area. 
+
+### *Consider:* Use TV-safe colors 
+TVs don't handle extreme color intensities as well as computer monitors do. Avoid high-intensity colors in your app so that users don't see odd banded effects or a washed-out image. Also, be aware that differences between TVs mean that colors that look great on *your* TV might look very different to your users. Read [TV colors](../input-and-devices/designing-for-tv.md#colors) to understand how to make your app look great to everybody!
+
+### *Remember:* You can disable scaling
+UWP apps are automatically scaled to ensure that UI elements such as controls and fonts are legible on all devices. Apps that use XAML are scaled by 200%, while apps that use HTML are scaled by 150%. If you want more control over how your app looks on Xbox, disable the default scale factor to use the actual pixel dimensions of an HDTV (1920x1080). Take a look at [How to turn off scaling](disable-scaling.md) and [Effective pixels and scaling](../layout/design-and-ui-intro.md#effective-pixels-and-scaling) for information about tailoring your app to look great on Xbox.
+
+## Channel 9
+The following talks on [Channel 9](https://channel9.msdn.com/) are a great source of information for building amazing apps on Xbox:
+
+- [Building Great Universal Windows Platform (UWP) Apps for Xbox](https://channel9.msdn.com/Events/Build/2016/B883)
+- [Adapt Your App for Xbox One and TV](https://channel9.msdn.com/Events/Build/2016/T651-R1)
+- [UWP Development 1: Building an Adaptive UI](https://channel9.msdn.com/Events/Build/2016/L724-R1)
+- [Web Apps Beyond the Browser: Cross-Platform Meets Cross Device](https://channel9.msdn.com/Events/Build/2016/B888)
 
 
-<!--HONumber=Jul16_HO2-->
+## See also
+- [UWP on Xbox One](index.md)
+
+
+
+
+<!--HONumber=Aug16_HO4-->
 
 

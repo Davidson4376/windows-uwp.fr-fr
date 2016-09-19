@@ -1,53 +1,38 @@
 ---
 author: drewbatgit
 ms.assetid: EFCF84D0-2F4C-454D-97DA-249E9EAA806C
-description: "La classe SystemMediaTransportControls permet à votre application d’utiliser les contrôles de transport de média système intégrés à Windows et de mettre à jour les métadonnées affichées par les contrôles concernant le média lu actuellement par votre application."
-title: "Contrôles de transport de média système"
+description: "La classe SystemMediaTransportControls permet à votre application d’utiliser les contrôles dédiés intégrés à Windows et de mettre à jour les métadonnées affichées par les contrôles concernant le média lu actuellement par votre application."
+title: "Contrôle manuel des contrôles de transport de média système"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 5a94ce4112f7662d3fe9bf3c8a7d3f60b1569931
+ms.sourcegitcommit: 2cf432bc9d6eb0e564b6d6aa7fdbfd78c7eef272
+ms.openlocfilehash: 6643f6bee55c1c9631ca20d2fe7eb6ac1c5ae3e2
 
 ---
 
-# Contrôles de transport de média système
+# Contrôle manuel des contrôles de transport de média système
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
+À partir de Windows10, version1607, les applications UWP utilisant la classe [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) pour lire du contenu multimédia sont automatiquement intégrés avec les contrôles de transport de média système par défaut. Il s’agit de la méthode recommandée d’interaction avec les contrôles de transport de média système, pour la plupart des scénarios. Pour plus d’informations sur la personnalisation de l’intégration par défaut des contrôles de transport de média système avec **MediaPlayer**, consultez la section [Intégration avec les contrôles de transport de média système](integrate-with-systemmediatransportcontrols.md).
 
-La classe [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) permet à votre application d’utiliser les contrôles de transport de média système intégrés à Windows et de mettre à jour les métadonnées affichées par les contrôles concernant le média lu actuellement par votre application.
-
-Les contrôles de transport de média système sont différents des contrôles de transport de l’objet [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926). Les contrôles de transport système sont les contrôles qui s’affichent quand l’utilisateur appuie sur une touche de média matériel, telle que la commande de volume d’un casque ou les boutons de média d’un clavier. Si l’utilisateur appuie sur la touche Pause d’un clavier et que votre application prend en charge la classe [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677), votre application reçoit une notification et vous pouvez effectuer l’action appropriée.
-
-Votre application peut également mettre à jour les informations sur un média, telles que le titre de la chanson et l’image miniature affichée par [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677).
-
-**Remarque**  
-L’[exemple de contrôles de transport de média système UWP](http://go.microsoft.com/fwlink/?LinkId=619488) implémente le code décrit dans cette vue d’ensemble. Vous pouvez télécharger l’exemple pour voir le code en contexte ou pour vous en servir comme point de départ pour votre propre application.
+Certains scénarios peuvent nécessiter l’implémentation d’un contrôle manuel des contrôles de transport de média système. Cela vaut par exemple si vous utilisez une classe [**MediaTimelineController**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaTimelineController) afin de contrôler la lecture d’un ou de plusieurs lecteurs multimédias. Cette implémentation est également nécessaire si vous utilisez plusieurs lecteurs multimédias et souhaitez obtenir une seule instance des contrôles de transport de média système pour votre application. Vous devez contrôler manuellement les contrôles de transport de média système si vous utilisez [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaElement) pour lire du contenu multimédia.
 
 ## Installer les contrôles de transport
+Si vous utilisez **MediaPlayer** pour lire du contenu multimédia, vous pouvez obtenir une instance de la classe [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.SystemMediaTransportControls) en accédant à la propriété [**MediaPlayer.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.SystemMediaTransportControls). SI vous envisagez de contrôler manuellement les contrôles de transport de média système, vous devez désactiver l’intégration automatique fournie par **MediaPlayer** en définissant la propriété [**CommandManager.IsEnabled**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager.IsEnabled) sur False.
 
-Dans le fichier XAML de la page, définissez une classe [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) qui sera contrôlée par les contrôles de transport de média système. Les événements [**CurrentStateChanged**](https://msdn.microsoft.com/library/windows/apps/br227375) et [**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/br227394) sont utilisés pour mettre à jour les contrôles de transport de média système et seront abordés plus loin dans cet article.
+[!code-cs[InitSMTCMediaPlayer](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetInitSMTCMediaPlayer)]
 
-[!code-xml[MediaElementSystemMediaTransportControls](./code/SMTCWin10/cs/MainPage.xaml#SnippetMediaElementSystemMediaTransportControls)]
+Vous pouvez également récupérer une instance de la classe [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) en appelant [**GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/dn278708). Vous devez récupérer l’objet avec cette méthode si vous utilisez **MediaElement** pour lire du contenu multimédia.
 
-Ajoutez un bouton au fichier XAML qui permet à l’utilisateur de sélectionner un fichier à lire.
+[!code-cs[InitSMTCMediaElement](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetInitSMTCMediaElement)]
 
-[!code-xml[OpenButton](./code/SMTCWin10/cs/MainPage.xaml#SnippetOpenButton)]
+Activez les boutons utilisés par votre application en définissant la propriété «is enabled» correspondante de l’objet **SystemMediaTransportControls**, telle que [**IsPlayEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278714), [**IsPauseEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278713), [**IsNextEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278712) et [**IsPreviousEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278715). Voir la documentation de référence de **SystemMediaTransportControls** pour obtenir la liste complète des contrôles disponibles.
 
-Dans la page code-behind, ajoutez des directives using pour les espaces de noms suivants.
-
-[!code-cs[Espace de noms](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetNamespace)]
-
-Ajoutez un gestionnaire de clics sur le bouton qui utilise une classe [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) pour permettre à l’utilisateur de sélectionner un fichier, puis appelez [**SetSource**](https://msdn.microsoft.com/library/windows/apps/br244338) afin de l’activer pour l’élément **MediaElement**.
-
-[!code-cs[OpenMediaFile](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetOpenMediaFile)]
-
-Pour obtenir une instance de la classe [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677), appelez [**GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/dn278708).
-
-Activez les boutons utilisés par votre application en définissant la propriété « is enabled » correspondante de l’objet **SystemMediaTransportControls**, telle que [**IsPlayEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278714), [**IsPauseEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278713), [**IsNextEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278712) et [**IsPreviousEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278715). Voir la documentation de référence de **SystemMediaTransportControls** pour obtenir la liste complète des contrôles disponibles.
+[!code-cs[EnableContols](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetEnableContols)]
 
 Enregistrez un gestionnaire pour l’événement [**ButtonPressed**](https://msdn.microsoft.com/library/windows/apps/dn278706) afin de recevoir des notifications dès que l’utilisateur appuie sur un bouton.
 
-[!code-cs[SystemMediaTransportControlsSetup](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetSystemMediaTransportControlsSetup)]
+[!code-cs[RegisterButtonPressed](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetRegisterButtonPressed)]
 
 ## Gérer les pressions sur les boutons de contrôles de transport de média système
 
@@ -112,22 +97,25 @@ Dans le gestionnaire de cet événement, commencez par vérifier que la valeur d
 
 ## Utiliser les contrôles de transport de média système pour le son en arrière-plan
 
-Pour utiliser les contrôles de transport de média système pour le son en arrière-plan, vous devez activer les boutons de lecture et de pause en définissant [**IsPlayEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278714) et [**IsPauseEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278713) sur true. L’application doit également gérer l’événement [**ButtonPressed**](https://msdn.microsoft.com/library/windows/apps/dn278706).
+Si vous n’utilisez pas l’intégration automatique des contrôles de transport de média système fournie par **MediaPlayer**, vous devez procéder à une intégration manuelle pour activer le son en arrière-plan. Au minimum, votre application doit activer les boutons de lecture et de pause. Pour ce faire, les éléments [**IsPlayEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278714) et [**IsPauseEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278713) sont définis sur true. L’application doit également gérer l’événement [**ButtonPressed**](https://msdn.microsoft.com/library/windows/apps/dn278706). Si votre application ne satisfait pas ces exigences, la lecture audio s’arrête quand votre application est déplacée vers l’arrière-plan.
 
-Pour obtenir une instance de [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) depuis la tâche en arrière-plan de votre application, vous devez utiliser [**BackgroundMediaPlayer.Current.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn926635) à la place de [**GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/dn278708), qui ne peut être utilisée qu’à partir de l’application au premier plan.
+Les applications utilisant le nouveau modèle à processus unique pour l’audio d’arrière-plan doivent récupérer une instance de la classe [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677), en appelant [**GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/dn278708). Les applications utilisant le modèle à deuxprocessus existants pour l’audio d’arrière-plan doivent utiliser la classe [**BackgroundMediaPlayer.Current.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn926635) pour obtenir un accès aux contrôles de transport de média système à partir de leur processus d’arrière-plan.
 
-Pour plus d’informations sur la lecture audio en arrière-plan, voir [Audio d’arrière-plan](background-audio.md).
+Pour plus d’informations sur la lecture de l’audio dans l’arrière-plan, consultez la section [Contenu audio en arrière-plan](background-audio.md).
+
+## Rubriques connexes
+* [Lecture de contenu multimédia](media-playback.md)
+* [Intégration avec les contrôles de transport de média système](integrate-with-systemmediatransportcontrols.md) 
+* [Exemple de transport de média système](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls) 
 
  
 
- 
 
 
 
 
 
 
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

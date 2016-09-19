@@ -1,35 +1,35 @@
 ---
 author: mcleanbyron
 ms.assetid: 4a311d20-ba8c-4816-8091-35726428dc94
-description: "Obtenez des exemples supplémentaires qui montrent comment utiliser les propriétés, méthodes et événements des classes AdControl et InterstitialAd dans les bibliothèques de publicités Microsoft."
-title: Exemples de code
+description: Get additional examples that demonstrate how to use the properties, methods, and events of the AdControl and InterstitialAd classes in the Microsoft advertising libraries.
+title: Code samples
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 1a7bf9ed90ed2dadf6de7a141fa03972b06ef144
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: 0a852a4bf8404d7ab0d8a2a169a16451c0388122
 
 ---
 
-# Exemples de code
+# Code samples
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Cette section contient des exemples qui montrent comment utiliser les propriétés, méthodes et événements des classes [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) et [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) dans les bibliothèques de publicités Microsoft afin de cibler des utilisateurs, actualiser manuellement les publicités et gérer les événements. Pour passer en revue les procédures pas à pas d’introduction qui montrent comment ajouter ces contrôles à votre application, voir [Procédures pas à pas pour développeurs](developer-walkthroughs.md).
 
-Pour obtenir des exemples complets de projet qui montrent comment ajouter des bannières et des spots vidéo publicitaires à des applications HTML/JavaScript et XAML en C# et C++, voir [Exemples de publicité sur GitHub](http://aka.ms/githubads).
+This section provides examples that demonstrate how to use the properties, methods, and events of the [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) and [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx)  classes in the Microsoft advertising libraries to target users, manually refresh ads, and handle events. For introductory walkthroughs that demonstrate how to add these controls to your app, see [Developer walkthroughs](developer-walkthroughs.md).
 
-## Dans cette section
+For complete sample projects that demonstrate how to add banner and video interstitial ads to JavaScript/HTML apps and XAML apps using C# and C++, see the [advertising samples on GitHub](http://aka.ms/githubads).
 
-|  Rubrique    | Description |               
+## In this section
+
+|  Topic    | Description |               
 |----------|-------|
-| [Exemple de propriétés HTML](html-properties-example.md)     | Présente un **AdControl** dont les attributs sont intégralement définis en HTML.        |
-| [Exemple de propriétés XAML](xaml-properties-example.md)     | Présente un **AdControl** dont les attributs sont intégralement définis en XAML.        |
-| [Créer un AdControl en JavaScript](create-an-adcontrol-in-javascript.md)     | Montre comment créer un **AdControl** en JavaScript.        |
-| [Événements AdControl en JavaScript](adcontrol-events-in-javascript.md)     | Montre comment gérer les événements **AdControl** en JavaScript.       |
-| [Événements AdControl en C#](adcontrol-events-in-c.md)     | Montre comment gérer les événements **AdControl** en C#.       |
-| [Gestion des erreurs AdControl](adcontrol-error-handling.md)     | Contient des exemples de code de gestion des erreurs pour le **AdControl** dans différents langages de programmation.        |
-| [Exemple de code pour spot publicitaire en C#](interstitial-ad-sample-code-in-c.md)   | Montre comment créer une instance <strong>InterstitialAd</strong> en C#.        |
-| [Exemple de code pour spot publicitaire en JavaScript](interstitial-ad-sample-code-in-javascript.md)       | Montre comment créer une instance <strong>InterstitialAd</strong> en JavaScript/HTML.        |
+| [HTML properties example](html-properties-example.md)     | Shows a fully attributed **AdControl** in HTML.        |
+| [XAML properties example](xaml-properties-example.md)     | Shows a fully attributed **AdControl** in XAML.        |
+| [Create an AdControl in JavaScript](create-an-adcontrol-in-javascript.md)     | Shows how to create the **AdControl** using JavaScript.        |
+| [AdControl events in JavaScript](adcontrol-events-in-javascript.md)     | Shows how to handle **AdControl** events in JavaScript.       |
+| [AdControl events in C#](adcontrol-events-in-c.md)     | Shows how to handle **AdControl** events in C#.       |
+| [AdControl error handling](adcontrol-error-handling.md)     | Provides examples of error handling code for the **AdControl** in different programming languages.        |
+| [Interstitial ad sample code in C#](interstitial-ad-sample-code-in-c.md)   | Shows how to create an <strong>InterstitialAd</strong> using C#.        |
+| [Interstitial ad sample code in JavaScript](interstitial-ad-sample-code-in-javascript.md)       | Shows how to create an <strong>InterstitialAd</strong> using JavaScript/HTML.        |
 
 
 
@@ -41,6 +41,6 @@ Pour obtenir des exemples complets de projet qui montrent comment ajouter des ba
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

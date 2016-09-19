@@ -1,84 +1,85 @@
 ---
 author: drewbatgit
 ms.assetid: E0189423-1DF3-4052-AB2E-846EA18254C4
-description: "Cette rubrique décrit les effets conçus en vue d’être utilisés pour les scénarios de capture vidéo. Cela inclut l’effet de stabilisation vidéo."
-title: "Effets de capture vidéo"
+description: This topic shows you how to use the video stabilization effect.
+title: Effects for video capture
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 3af5ed7146f2420c2a6d3035c26290cbeaff8375
+ms.sourcegitcommit: 367ab34663d66d8c454ff305c829be66834e4ebe
+ms.openlocfilehash: 3fe7abcc417db76b4375243d66b1c0ecb9092147
 
 ---
 
-# Effets de capture vidéo
+# Effects for video capture
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Cette rubrique décrit les effets conçus en vue d’être utilisés pour les scénarios de capture vidéo. Cela inclut l’effet de stabilisation vidéo.
+This topic shows you how to use the video stabilization effect.
 
-**Remarque**  
-Cet article repose sur les concepts et sur le code décrits dans [Capturer des photos et des vidéos à l’aide de MediaCapture](capture-photos-and-video-with-mediacapture.md), qui détaille les étapes d’implémentation de capture photo et vidéo de base. Il est recommandé de vous familiariser avec le modèle de capture multimédia de base dans cet article avant de passer à des scénarios de capture plus avancés. Le code de cet article part du principe que votre application possède déjà une instance de MediaCapture initialisée correctement.
+> [!NOTE] 
+> This article builds on concepts and code discussed in [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md), which describes the steps for implementing basic photo and video capture. We recommend that you familiarize yourself with the basic media capture pattern in that article before moving on to more advanced capture scenarios. The code in this article assumes that your app already has an instance of MediaCapture that has been properly initialized.
 
-## Effet de stabilisation vidéo
+## Video stabilization effect
 
-L’effet de stabilisation vidéo manipule les cadres d’un flux vidéo pour réduire les secousses provoquées lorsque vous tenez l’appareil de capture dans votre main. Étant donné que cette technique décale les pixels vers la droite, vers la gauche, vers le haut ou vers le bas, et que l’effet ne peut pas déterminer quel est le contenu à l’extérieur du cadre vidéo, la vidéo stabilisée est légèrement rognée par rapport à la vidéo d’origine. Une fonction utilitaire est fournie pour vous permettre d’ajuster vos paramètres d’encodage vidéo pour gérer au mieux le rognage généré par l’effet.
+The video stabilization effect manipulates the frames of a video stream to minimize shaking caused by holding the capture device in your hand. Because this technique causes the pixels to be shifted right, left, up, and down, and because the effect can't know what the content just outside the video frame is, the stabilized video is cropped slightly from the original video. A utility function is provided to allow you to adjust your video encoding settings to optimally manage the cropping performed by the effect.
 
-Sur les appareils qui la prennent en charge, la stabilisation d’image optique (OIS, Optical Image Stabilization) stabilise la vidéo en manipulant mécaniquement l’appareil de capture et, par conséquent, il n’est pas nécessaire de rogner les bords des images vidéo. Pour plus d’informations, voir [Contrôles de l’appareil de capture pour la vidéo](capture-device-controls-for-video-capture.md).
+On devices that support it, Optical Image Stabilization (OIS) stabilizes video by mechanically manipulating the capture device and, therefore, does not need to crop the edges of the video frames. For more information, see [Capture device controls for video capture](capture-device-controls-for-video-capture.md).
 
-### Configurer votre application pour utiliser la stabilisation vidéo
+### Set up your app to use video stabilization
 
-Outre les espaces de noms nécessaires pour la capture multimédia de base, l’effet de stabilisation vidéo requiert les espaces de noms suivants.
+In addition to the namespaces required for basic media capture, using the video stabilization effect requires the following namespace.
 
 [!code-cs[VideoStabilizationEffectUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoStabilizationEffectUsing)]
 
-Déclarez une variable membre pour stocker l’objet [**VideoStabilizationEffect**](https://msdn.microsoft.com/library/windows/apps/dn926760). Dans le cadre de l’implémentation de l’effet, vous allez modifier les propriétés d’encodage que vous utilisez pour coder la vidéo capturée. Déclarez deux variables pour stocker une copie de sauvegarde des données initiales et les propriétés d’encodage de sortie afin de pouvoir les restaurer ultérieurement lorsque l’effet sera désactivé. Enfin, déclarez une variable membre de type [**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/hh701026), car cet objet est accessible à partir de différents emplacements au sein de votre code.
+Declare a member variable to store the [**VideoStabilizationEffect**](https://msdn.microsoft.com/library/windows/apps/dn926760) object. As part of the effect implementation, you will modify the encoding properties that you use to encode the captured video. Declare two variables to store a backup copy of the initial input and output encoding properties so that you can restore them later when the effect is disabled. Finally, declare a member variable of type [**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/hh701026) because this object will be accessed from multiple locations within your code.
 
 [!code-cs[DeclareVideoStabilizationEffect](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDeclareVideoStabilizationEffect)]
 
-Dans l’implémentation de capture vidéo de base décrite dans l’article [Capturer des photos et vidéos à l’aide de MediaCapture](capture-photos-and-video-with-mediacapture.md), l’objet de profil d’encodage multimédia est affecté à une variable locale, car celle-ci n’est utilisée nulle part ailleurs dans le code. Pour ce scénario, vous devez affecter l’objet à une variable membre afin de pouvoir y accéder ultérieurement.
+For this scenario, you should assign the media encoding profile object to a member variable so that you can access it later.
 
 [!code-cs[EncodingProfileMember](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetEncodingProfileMember)]
 
-### Initialiser l’effet de stabilisation vidéo
+### Initialize the video stabilization effect
 
-Une fois l’objet **MediaCapture** initialisé, créez une instance de l’objet [**VideoStabilizationEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn926762). Appelez [**MediaCapture.AddVideoEffectAsync**](https://msdn.microsoft.com/library/windows/apps/dn878035) pour ajouter l’effet au pipeline vidéo et récupérer une instance de la classe [**VideoStabilizationEffect**](https://msdn.microsoft.com/library/windows/apps/dn926760). Spécifiez [**MediaStreamType.VideoRecord**](https://msdn.microsoft.com/library/windows/apps/br226640) pour indiquer que l’effet doit être appliqué au flux d’enregistrement vidéo.
+After your **MediaCapture** object has been initialized, create a new instance of the [**VideoStabilizationEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn926762) object. Call [**MediaCapture.AddVideoEffectAsync**](https://msdn.microsoft.com/library/windows/apps/dn878035) to add the effect to the video pipeline and retrieve an instance of the [**VideoStabilizationEffect**](https://msdn.microsoft.com/library/windows/apps/dn926760) class. Specify [**MediaStreamType.VideoRecord**](https://msdn.microsoft.com/library/windows/apps/br226640) to indicate that the effect should be applied to the video record stream.
 
-Inscrivez un gestionnaire d’événements pour l’événement [**EnabledChanged**](https://msdn.microsoft.com/library/windows/apps/dn948982) et appelez la méthode d’assistance **SetUpVideoStabilizationRecommendationAsync**. Ces deux thèmes seront décrits plus loin dans cet article. Enfin, définissez la propriété [**Enabled**](https://msdn.microsoft.com/library/windows/apps/dn926775) de l’effet sur la valeur True pour activer l’effet.
+Register an event handler for the [**EnabledChanged**](https://msdn.microsoft.com/library/windows/apps/dn948982) event and call the helper method **SetUpVideoStabilizationRecommendationAsync**, both of which are discussed later in this article. Finally, set the [**Enabled**](https://msdn.microsoft.com/library/windows/apps/dn926775) property of the effect to true to enable the effect.
 
 [!code-cs[CreateVideoStabilizationEffect](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCreateVideoStabilizationEffect)]
 
-### Utiliser les propriétés d’encodage recommandées
+### Use recommended encoding properties
 
-Comme indiqué précédemment dans cet article, la technique utilisée par l’effet de stabilisation vidéo provoque un rognage léger de la vidéo stabilisée par rapport à la vidéo source. Définissez la fonction d’assistance suivante dans votre code afin d’ajuster les propriétés d’encodage vidéo pour mieux gérer cette limitation provoquée par l’effet. Cette étape n’est pas requise pour utiliser l’effet de stabilisation vidéo, mais si vous ne l’effectuez pas, la vidéo sera légèrement améliorée et par conséquent, la fidélité visuelle ne sera plus d’aussi bonne qualité.
+As discussed earlier in this article, the technique that the video stabilization effect uses necessarily causes the stabilized video to be cropped slightly from the source video. Define the following helper function in your code in order to adjust the video encoding properties to optimally handle this limitation of the effect. This step is not required in order to use the video stabilization effect, but if you don't perform this step, the resulting video will be upscaled slightly and therefore have slightly lower visual fidelity.
 
-Appelez [**GetRecommendedStreamConfiguration**](https://msdn.microsoft.com/library/windows/apps/dn948983) dans l’instance d’effet de stabilisation vidéo, en passant l’objet [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825), qui informe l’effet sur les propriétés actuelles d’encodage de flux d’entrée, et votre **MediaEncodingProfile**, qui informe l’effet sur les propriétés actuelles d’encodage de sortie. Cette méthode renvoie un objet [**VideoStreamConfiguration**](https://msdn.microsoft.com/library/windows/apps/dn926727) contenant de nouvelles recommandations de propriétés d’encodage de flux d’entrée et de sortie.
+Call [**GetRecommendedStreamConfiguration**](https://msdn.microsoft.com/library/windows/apps/dn948983) on your video stabilization effect instance, passing in the [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) object, which informs the effect about your current input stream encoding properties, and your **MediaEncodingProfile** which lets the effect know your current output encoding properties. This method returns a [**VideoStreamConfiguration**](https://msdn.microsoft.com/library/windows/apps/dn926727) object containing new recommended input and output stream encoding properties.
 
-Lorsque l’appareil le permet, les propriétés d’encodage d’entrée recommandées ont une résolution plus élevée que les paramètres initiaux fournis, de manière à ce que la perte de résolution soit minimale une fois l’effet de rognage appliqué.
+The recommended input encoding properties are, if it is supported by the device, a higher resolution that the initial settings you provided so that there is minimal loss in resolution after the effect's cropping is applied.
 
-Appelez [**VideoDeviceController.SetMediaStreamPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh700895) pour définir les nouvelles propriétés d’encodage. Avant de définir les nouvelles propriétés, utilisez la variable membre pour stocker les propriétés d’encodage initiales afin de pouvoir modifier de nouveau les paramètres lorsque l’effet sera désactivé.
+Call [**VideoDeviceController.SetMediaStreamPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh700895) to set the new encoding properties. Before setting the new properties, use the member variable to store the initial encoding properties so that you can change the settings back when you disable the effect.
 
-Si l’effet de stabilisation vidéo doit rogner la vidéo de sortie, les propriétés d’encodage de sortie recommandées auront la taille de la vidéo rognée. Cela signifie que la résolution de sortie correspondra à la taille de la vidéo rognée. Si vous n’utilisez pas les propriétés de sortie recommandées, la vidéo est redimensionnée pour correspondre à la taille initiale de sortie, ce qui se traduit par une perte de fidélité visuelle.
+If the video stabilization effect must crop the output video, the recommended output encoding properties will be the size of the cropped video. This means that the output resolution will match the cropped video size. If you do not use the recommended output properties, the video will be scaled up to match the initial output size, which will result in a loss of visual fidelity.
 
-Définissez la propriété [**Video**](https://msdn.microsoft.com/library/windows/apps/hh701124) sur l’objet **MediaEncodingProfile**. Avant de définir les nouvelles propriétés, utilisez la variable membre pour stocker les propriétés d’encodage initiales afin de pouvoir modifier de nouveau les paramètres lorsque l’effet sera désactivé.
+Set the [**Video**](https://msdn.microsoft.com/library/windows/apps/hh701124) property of the **MediaEncodingProfile** object. Before setting the new properties, use the member variable to store the initial encoding properties so that you can change the settings back when you disable the effect.
 
 [!code-cs[SetUpVideoStabilizationRecommendationAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetUpVideoStabilizationRecommendationAsync)]
 
-### Gérer la désactivation de l’effet de stabilisation vidéo
+### Handle the video stabilization effect being disabled
 
-Le système peut désactiver automatiquement l’effet de stabilisation vidéo si le débit de pixels est trop élevé ou s’il détecte que l’effet s’exécute lentement. Dans ce cas, l’événement EnabledChanged est déclenché. L’instance **VideoStabilizationEffect** du paramètre *sender* indique le nouvel état de l’effet, activé ou désactivé. [**VideoStabilizationEffectEnabledChangedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948979)a une valeur [**VideoStabilizationEffectEnabledChangedReason**](https://msdn.microsoft.com/library/windows/apps/dn948981) indiquant pourquoi l’effet a été activé ou désactivé. Cet événement est également déclenché si vous activez ou désactivez l’effet par programme, auquel cas la raison sera **Programmatic**.
+The system may automatically disable the video stabilization effect if the pixel throughput is too high for the effect to handle or if it detects that the effect is running slowly. If this occurs, the EnabledChanged event is raised. The **VideoStabilizationEffect** instance in the *sender* parameter indicates the new state of the effect, enabled or disabled. The [**VideoStabilizationEffectEnabledChangedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948979) has a [**VideoStabilizationEffectEnabledChangedReason**](https://msdn.microsoft.com/library/windows/apps/dn948981) value indicating why the effect was enabled or disabled. Note that this event is also raised if you programmatically enable or disable the effect, in which case the reason will be **Programmatic**.
 
-En règle générale, cet événement vous permet d’ajuster l’interface utilisateur de votre application pour indiquer l’état actuel de stabilisation vidéo.
+Typically, you would use this event to adjust your app's UI to indicate the current status of video stabilization.
 
 [!code-cs[VideoStabilizationEnabledChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoStabilizationEnabledChanged)]
 
-### Nettoyer l’effet de stabilisation vidéo
+### Clean up the video stabilization effect
 
-Pour nettoyer l’effet de stabilisation vidéo, appelez [**ClearEffectsAsync**](https://msdn.microsoft.com/library/windows/apps/br226592) pour effacer tous les effets du pipeline vidéo. Si les variables membres contenant les propriétés d’encodage initiales ne sont pas null, utilisez-les pour restaurer les propriétés d’encodage. Pour finir, supprimez le gestionnaire d’événements **EnabledChanged** et définissez l’effet sur la valeur null.
+To clean up the video stabilization effect, call [**ClearEffectsAsync**](https://msdn.microsoft.com/library/windows/apps/br226592) to clear all effects from the video pipeline. If the member variables containing the initial encoding properties are not null, use them to restore the encoding properties. Finally, remove the **EnabledChanged** event handler and set the effect to null.
 
 [!code-cs[CleanUpVisualStabilizationEffect](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpVisualStabilizationEffect)]
 
-## Rubriques connexes
+## Related topics
 
-* [Capturer des photos et des vidéos à l’aide de MediaCapture](capture-photos-and-video-with-mediacapture.md)
+* [Camera](camera.md)
+* [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
  
 
  
@@ -89,6 +90,6 @@ Pour nettoyer l’effet de stabilisation vidéo, appelez [**ClearEffectsAsync**]
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

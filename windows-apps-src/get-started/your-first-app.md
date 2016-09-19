@@ -1,79 +1,103 @@
 ---
-author: martinekuan
+author: GrantMeStrength
 ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
-title: "Créer votre première application"
-description: "Créer une application de plateforme de Windows universelle (UWP) pour Windows 10 est plus simple que vous le pensez."
+title: Create your first app
+description: It's easier than you think to create a Universal Windows Platform (UWP) app for Windows 10.
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: e2ed4b9587927a2a6a765b47ff69b9cedfd9b92d
+ms.sourcegitcommit: b57a461cf9859be26ed69d12b08259d15201403a
+ms.openlocfilehash: 16adf9c9c8de2ca4596f0fcbe503f570971e74a1
 
 ---
-# Créer votre première application
+# Create your first app
 
-Créer une application de plateforme de Windows universelle (UWP) pour Windows 10 est plus simple que vous le pensez. Nul besoin d’apprendre un nouveau langage pour commencer. Vous pouvez la créer avec ce que vous savez déjà :
+Welcome: these tutorials will help you create your first UWP app in the language of your choice. Here, you'll learn how to:
 
--   C# ou Visual Basic avec XAML
--   C++ avec XAML
--   JavaScript avec HTML/CSS
+-   Create a UWP app project in Microsoft Visual Studio.
+-   Add UI elements and code to the project.
+-   Build and debug your app on the local machine and on a phone emulator.
 
-Ces didacticiels vous aident à créer votre première application UWP dans le langage de votre choix. Vous allez apprendre ici à effectuer les opérations suivantes :
+To get started, choose the language you prefer.
 
--   Créer un projet d’application UWP dans Microsoft Visual Studio.
--   Ajouter du code et des éléments d’interface utilisateur au projet.
--   Générer et déboguer votre application sur l’ordinateur local et sur un émulateur de téléphone.
 
-Pour commencer, choisissez le langage de votre choix.
+<!--
 
-## Didacticiels C#/Visual Basic et XAML
+<table Width="100%">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<Col width="33%" />
+</colgroup>
 
-Utilisez vos compétences .NET, WPF ou Silverlight pour créer des application en XAML avec C# ou Visual Basic.
 
-[Créer une application « Hello World » en utilisant XAML avec C# ou VB](create-a-hello-world-app-xaml-universal.md)
+<tbody>
 
-Nous supposons que vous connaissez déjà XAML et C# ou Visual Basic. Si vous souhaitez découvrir les notions de base, ou simplement vous rafraîchir la mémoire, essayez ces cours de la [Microsoft Virtual Academy](http://www.microsoftvirtualacademy.com/).
+<tr style="background-color: #f2f2f2">
+<td align="left"><strong style="color: #8888ff">C# and XAML</strong><p><ul><li>Hello World, with C#</li><li>Link to docs</li></ul></p></td>
+<td align="left"><strong style="color: #8888ff">C++ and XAML</strong><p><ul><li><a href="http://go.microsoft.com/fwlink/p/?LinkId=533896">C++</a>Hello World, C++</a></li><li>Link to docs</li></ul></p></td>
+<td align="left"><strong style="color: #8888ff">JS and HTML</strong><p><ul><li>Hello World, with C#</li><li>Link to docs</li></ul></p></td>
 
--   [Principes de base de C# pour les néophytes](http://www.microsoftvirtualacademy.com/training-courses/c-fundamentals-for-absolute-beginners)
--   [Principes de base de VB pour les néophytes](http://www.microsoftvirtualacademy.com/training-courses/vb-fundamentals-for-absolute-beginners)
--   [Grand saut XAML pour le lancement d’applications Windows et Windows Phone](http://www.microsoftvirtualacademy.com/training-courses/xaml-deep-dive-for-windows-windows-phone-apps-jump-start)
 
-## Didacticiels sur les extensions des composants Visual C++ (C++/CX) et XAML
-
-Exploitez votre savoir-faire en matière de programmation C++ pour créer des applications à l’aide d’extensions de composants Visual C++ (C++/CX) avec XAML.
-
-[Créer une application «Hello World» en utilisant XAML avec C++/CX](create-a-basic-windows-10-app-in-cpp.md)
-
-Nous supposons que vous connaissez déjà XAML et C++. Si vous souhaitez découvrir les notions de base, ou simplement vous rafraîchir la mémoire, essayez ces cours de la [Microsoft Virtual Academy](http://go.microsoft.com/fwlink/p/?LinkID=389916).
-
--   [C++ : Lancement d’un langage de portée générale et d’une bibliothèque](http://www.microsoftvirtualacademy.com/training-courses/c-a-general-purpose-language-and-library-jump-start)
--   [Grand saut XAML pour le lancement d’applications Windows et Windows Phone](http://www.microsoftvirtualacademy.com/training-courses/xaml-deep-dive-for-windows-windows-phone-apps-jump-start)
-
-## Didacticiels JavaScript et HTML
-
-Exploitez vos compétences web pour créer des applications à l’aide de HTML5, CSS3 (feuilles de style en cascade de niveau 3) et JavaScript.
-
-[Créer une application « Hello World » en utilisant HTML et JavaScript](create-a-hello-world-app-js-universal.md)
-
-Nous supposons que vous connaissez bien HTML5, CSS3 et JavaScript. Si vous souhaitez découvrir les notions de base, ou simplement vous rafraîchir la mémoire, essayez ces cours de la [Microsoft Virtual Academy](http://go.microsoft.com/fwlink/p/?LinkID=389916).
-
--   [Principes de base de JavaScript pour les néophytes](http://www.microsoftvirtualacademy.com/training-courses/javascript-fundamentals-for-absolute-beginners)
--   [Principes de base de HTML5 et CSS3 pour les néophytes](http://www.microsoftvirtualacademy.com/training-courses/html5-css3-fundamentals-development-for-absolute-beginners)
-
-## Autres ressources
-
-Si vous souhaitez développer des jeux à l’aide de C++ et de Microsoft DirectX, voir [Développement de jeux sur Windows 10](https://dev.windows.com/games).
-
-Vous avez déjà une expérience d’iOS ou d’Android ? La section [Portage d’applications vers Windows 10](https://msdn.microsoft.com/library/windows/apps/Mt238321) vous aidera à vous lancer.
-
-# Rubriques connexes
-
-* [Qu’est-ce qu’une application Windows universelle?](whats-a-uwp.md)
-* [Se préparer](get-set-up.md)
-* [S’inscrire](sign-up.md)
- 
+</tr>
 
 
 
+</table>
 
-<!--HONumber=Jun16_HO4-->
+-->
+
+
+### C# and XAML tutorial
+
+Use your .NET, WPF, or Silverlight skills to build apps using XAML with C#.
+
+* [Create a "Hello, world" app using XAML with C#](create-a-hello-world-app-xaml-universal.md)
+
+We assume you're already comfortable with XAML and either C#. If you want to learn the basics, or just refresh your memory, try these courses from the [Microsoft Virtual Academy](http://www.microsoftvirtualacademy.com/).
+
+* [C# Fundamentals for Absolute Beginners](https://mva.microsoft.com/en-US/training-courses/c-fundamentals-for-absolute-beginners-16169)
+* [VB Fundamentals for Absolute Beginners](http://www.microsoftvirtualacademy.com/training-courses/vb-fundamentals-for-absolute-beginners)
+* [A Developer's Guide to Windows 10](https://mva.microsoft.com/en-US/training-courses/a-developers-guide-to-windows-10-12618)
+
+### Visual C++ component extensions (C++/CX) and XAML tutorial
+
+Take advantage of your C++ programming expertise to build apps using Visual C++ component extensions (C++/CX) with XAML.
+
+* [Create a "Hello, world" app using XAML with C++/CX](create-a-basic-windows-10-app-in-cpp.md)
+
+We assume you're already comfortable with XAML and C++. If you want to learn the basics, or just refresh your memory, try these courses from the [Microsoft Virtual Academy](http://go.microsoft.com/fwlink/p/?LinkID=389916).
+
+* [C++: A General Purpose Language and Library Jump Start](http://www.microsoftvirtualacademy.com/training-courses/c-a-general-purpose-language-and-library-jump-start)
+
+### JavaScript and HTML tutorial
+
+Take advantage of your web skills to build apps using HTML5, Cascading Style Sheets, Level 3 (CSS3), and JavaScript.
+
+* [Create a "Hello, world" app using HTML and JavaScript](create-a-hello-world-app-js-universal.md)
+
+We assume you're already comfortable with HTML5, CSS3, and JavaScript. If you want to learn the basics, or just refresh your memory, try these courses from the [Microsoft Virtual Academy](http://go.microsoft.com/fwlink/p/?LinkID=389916).
+
+* [JavaScript Fundamentals for Absolute Beginners](http://www.microsoftvirtualacademy.com/training-courses/javascript-fundamentals-for-absolute-beginners)
+* [HTML5 & CSS3 Fundamentals for Absolute Beginners](http://www.microsoftvirtualacademy.com/training-courses/html5-css3-fundamentals-development-for-absolute-beginners)
+
+### Objective-C
+
+Are you more of an iOS developer? 
+
+* Use the [Windows Bridge for iOS](https://developer.microsoft.com/windows/bridges/ios) to convert your existing code to a UWP app, and keep developing in Objective C.
+
+
+## Related topics
+
+* [How-to articles on developing UWP apps](https://developer.microsoft.com/windows/develop)
+* [Code Samples for UWP developers](https://developer.microsoft.com/windows/samples)
+* [What's a Universal Windows app?](whats-a-uwp.md)
+* [Get set up](get-set-up.md)
+* [Sign up](sign-up.md)
+
+
+
+
+
+<!--HONumber=Sep16_HO2-->
 
 

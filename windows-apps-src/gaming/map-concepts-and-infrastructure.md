@@ -1,20 +1,20 @@
 ---
 author: mtoepke
-title: "Mapper OpenGL ES2.0 à Direct3D11"
-description: "Si vous vous apprêtez à porter votre architecture graphique OpenGLES2.0 sur Direct3D pour la première fois, commencez par vous familiariser avec les principales différences entre lesAPI."
+title: Map OpenGL ES 2.0 to Direct3D 11
+description: When starting the process of porting your graphics architecture from OpenGL ES 2.0 to Direct3D for the first time, familiarize yourself with the key differences between the APIs.
 ms.assetid: 7f9b136c-aa22-04b3-d385-6e9e1f38b948
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: a058c5f669704695cc3a2ae5385feccbf6cb4bc3
+ms.openlocfilehash: d21bbf905797a7b0c14e666f1ec31a85203b30db
 
 ---
 
-# Mapper OpenGLES2.0 à Direct3D11
+# Map OpenGL ES 2.0 to Direct3D 11
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Si vous vous apprêtez à porter votre architecture graphique OpenGL ES2.0 sur Direct3D pour la première fois, commencez par vous familiariser avec ces API afin de découvrir les principales caractéristiques qui les distinguent. Les rubriques de cette section vous aideront à planifier votre stratégie de portage ainsi que les différentes modifications à apporter en vue du transfert de votre processus de traitement graphique sur Direct3D.
+When starting the process of porting your graphics architecture from OpenGL ES 2.0 to Direct3D for the first time, familiarize yourself with the key differences between the APIs. The topics in this section help you plan your port strategy and the API changes that you must make when moving your graphics processing to Direct3D.
 ## 
 <table>
 <colgroup>
@@ -23,47 +23,47 @@ Si vous vous apprêtez à porter votre architecture graphique OpenGL ES2.0 sur D
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Rubrique</th>
+<th align="left">Topic</th>
 <th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Planifier votre portage d’OpenGLES2.0 vers Direct3D](compare-opengl-es-2-0-api-design-to-directx.md)</p></td>
-<td align="left"><p>Si vous portez un jeu à partir des plateformes iOS ou Android, vous avez probablement effectué un investissement considérable dans OpenGL ES2.0. Avant de déplacer le code base de votre pipeline graphique vers Direct3D11 et Windows Runtime, certains points sont à prendre en compte.</p></td>
+<td align="left"><p>[Plan your port from OpenGL ES 2.0 to Direct3D](compare-opengl-es-2-0-api-design-to-directx.md)</p></td>
+<td align="left"><p>If you are porting a game from the iOS or Android platforms, you have probably made a significant investment in OpenGL ES 2.0. When preparing to move your graphics pipeline codebase to Direct3D 11 and the Windows Runtime, there are a few things you should consider before you start.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Comparer le codeEGL avec DXGI et Direct3D](moving-from-egl-to-dxgi.md)</p></td>
-<td align="left"><p>L’interface graphique DirectX(DXGI) et certaines APIDirect3D jouent le même rôle qu’EGL. Cette rubrique vous aidera à comprendre le fonctionnement de DXGI et Direct3D11 sous l’angle d’EGL.</p></td>
+<td align="left"><p>[Compare EGL code to DXGI and Direct3D](moving-from-egl-to-dxgi.md)</p></td>
+<td align="left"><p>The DirectX Graphics Interface (DXGI) and several Direct3D APIs serve the same role as EGL. This topic helps you understand DXGI and Direct3D 11 from the perspective of EGL.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Comparer les tampons, les uniformes et les attributs de vertex OpenGLES2.0 à Direct3D](porting-uniforms-and-attributes.md)</p></td>
-<td align="left"><p>Au cours du processus de portage vers Direct3D11 depuis OpenGLES2.0, vous devez modifier la syntaxe et le comportement de l’API pour transmettre des données entre l’application et les programmes de nuanceurs.</p></td>
+<td align="left"><p>[Compare OpenGL ES 2.0 buffers, uniforms, and vertex attributes to Direct3D](porting-uniforms-and-attributes.md)</p></td>
+<td align="left"><p>During the process of porting to Direct3D 11 from OpenGL ES 2.0, you must change the syntax and API behavior for passing data between the app and the shader programs.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Comparer le pipeline nuanceur d’OpenGL ES2.0 à Direct3D](change-your-shader-loading-code.md)</p></td>
-<td align="left"><p>D’un point de vue conceptuel, le pipeline nuanceur de Direct3D11 est très similaire à celui d’OpenGLES2.0. Cependant, en termes de conception d’API, les composants majeurs de création et de gestion des étapes de nuanceur appartiennent aux deux interfaces principales : [<strong>ID3D11Device1</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404575) et [<strong>ID3D11DeviceContext1</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404598). Cette rubrique tente d’établir une correspondance dans ces interfaces entre les modèles courants d’API du pipeline nuanceur d’OpenGL ES2.0 et ceux de Direct3D11.</p></td>
+<td align="left"><p>[Compare the OpenGL ES 2.0 shader pipeline to Direct3D](change-your-shader-loading-code.md)</p></td>
+<td align="left"><p>Conceptually, the Direct3D 11 shader pipeline is very similar to the one in OpenGL ES 2.0. In terms of API design, however, the major components for creating and managing the shader stages are parts of two primary interfaces, [<strong>ID3D11Device1</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404575) and [<strong>ID3D11DeviceContext1</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404598). This topic attempts to map common OpenGL ES 2.0 shader pipeline API patterns to the Direct3D 11 equivalents in these interfaces.</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## Remarques sur les fournisseurs OpenGL ES2.0 spécifiques
+## Notes on specific OpenGL ES 2.0 providers
 
 
-Ces rubriques font référence à la spécification OpenGL ES 2.0 de Khronos pour les plateformes agnostiques en langage C. Les plateformes iOS et Android emploient la même spécification ; le code OpenGL ES 2.0 développé pour ces deux plateformes est similaire aux extraits de code que nous allons étudier, bien que ces derniers soient généralement exposés en tant qu’API orientées objet. Par ailleurs, en raison des complexités et des spécificités linguistiques de chaque plateforme, des différences mineures peuvent se présenter, surtout en ce qui concerne les types de paramètres de méthode et la syntaxe générale du langage. Par exemple, iOS utilise le langage Objective-C. Android a la capacité d’utiliser le langage C++, mais les développeurs peuvent opter pour une implémentation en Java exclusivement. Tout en gardant les points précédents à l’esprit, n’hésitez pas à vous référer à ces rubriques, car les concepts, la structure et le mode d’utilisation des API OpenGL ES sont globalement identiques.
-
- 
+These topics use the Khronos OpenGL ES 2.0 specification with platform-agnostic C. Both iOS and Android utilize the same specification and OpenGL ES 2.0 code developed for those platforms is very similar to the code snippets we will walk through, although they are typically exposed as object-oriented APIs. Also, due to the intricacies and language differences of each platform, there may be minor differences, especially in method parameter types, or in general language syntax. iOS, for instance, uses Objective-C. Android has the capability to use C++; however, some developers may have relied on a pure Java implementation. With that in mind, these topics should still be useful as the overall concepts, structure and usage of the OpenGL ES APIs do not differ.
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,20 +1,20 @@
 ---
-title: "Copier des tableaux d’octets"
-description: "Cet exemple de code indique comment copier des tableaux d’octets dans une application de plateforme Windows universelle (UWP)."
+title: Copy to and from byte arrays
+description: This example code shows how to copy to and from byte arrays in an Universal Windows Platform (UWP) app.
 ms.assetid: C343B08C-1FA1-40FD-8CA5-7FC9B707C5E3
 author: awkoren
 translationtype: Human Translation
 ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: db1691421cf4e540c9593efb4bbf2a608426c0ed
+ms.openlocfilehash: f700d3d9c09424ef8fffd73a08e12563acbbc497
 
 ---
 
-# Copier des tableaux d’octets
+# Copy to and from byte arrays
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Cet exemple de code indique comment copier des tableaux d’octets dans une application de plateforme Windows universelle (UWP).
+This example code shows how to copy to and from byte arrays in an Universal Windows Platform (UWP) app.
 
 ```cs
 public void ByteArrayCopy()
@@ -35,6 +35,6 @@ public void ByteArrayCopy()
 ```
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

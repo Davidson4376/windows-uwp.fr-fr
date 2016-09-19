@@ -1,24 +1,24 @@
 ---
 author: mcleanbyron
 ms.assetid: 2fba38c4-11be-4058-bfa3-5f979390791c
-description: "Découvrez comment gérer les événements de la classe AdControl."
-title: "Événements AdControl en C#"
+description: Learn how to handle the events of the AdControl class.
+title: AdControl events in C#
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: f92cbbb00a064ce7569d44ad952838df4d21ac8c
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: 969d668c89b40e37245a8168879842159b4f5c14
 
 ---
 
-# Événements AdControl en C\# #  
+# AdControl events in C\# #  
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Les exemples suivants montrent comment gérer les événements de la classe [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx). Ces exemples reposent sur le principe que vous avez déjà affecté les gestionnaires d’événements aux événements **AdControl** en XAML. Pour plus d’informations sur la procédure à suivre pour ce faire, voir [Exemple de propriétés XAML](xaml-properties-example.md).
 
-Pour plus d’informations sur la gestion des événements en C#, voir [Vue d’ensemble des événements et des événements routés (applications Windows universelles en C#/VB/C++ et XAML)](http://msdn.microsoft.com/library/windows/apps/hh758286).
+The following examples demonstrate how to handle the events of the [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) class. These examples assume that you have previously assigned the event handlers to the **AdControl** events in XAML. For more information about how to do this, see [XAML properties example](xaml-properties-example.md).
 
-## Exemples
+For more information about handling events in C#, see [Events and routed events overview (Universal Windows apps using C#/VB/C++ and XAML)](http://msdn.microsoft.com/library/windows/apps/hh758286).
+
+## Examples
 
 
 ``` syntax
@@ -40,18 +40,18 @@ private void OnAdEngagedChanged(object sender, RoutedEventArgs e) {
 }
 ```
 
-## Rubriques connexes
+## Related topics
 
-* [Exemples de publicité sur GitHub](http://aka.ms/githubads)
-* [Gestion des erreurs AdControl](adcontrol-error-handling.md)
-* [Classe RoutedEventArgs](http://msdn.microsoft.com/library/system.windows.routedeventargs.aspx)
-
- 
+* [Advertising samples on GitHub](http://aka.ms/githubads)
+* [AdControl error handling](adcontrol-error-handling.md)
+* [RoutedEventArgs Class](http://msdn.microsoft.com/library/system.windows.routedeventargs.aspx)
 
  
 
+ 
 
 
-<!--HONumber=Jul16_HO2-->
+
+<!--HONumber=Aug16_HO3-->
 
 

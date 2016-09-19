@@ -1,48 +1,48 @@
 ---
 author: TylerMSFT
-title: "Créer et inscrire une tâche en arrière-plan"
-description: "Créez une classe de tâche en arrière-plan et inscrivez-la pour permettre son exécution lorsque votre application ne se trouve pas au premier plan."
+title: Create and register a background task that runs in a separate process
+description: Create a background task class and register it to run when your app is not in the foreground.
 ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
 translationtype: Human Translation
-ms.sourcegitcommit: 579547b7bd2ee76390b8cac66855be4a9dce008e
-ms.openlocfilehash: e8da193f96709bdd87bd6a008eb5885cc5c819fd
+ms.sourcegitcommit: 95c34f70e9610907897cfe9a2bf82aaac408e486
+ms.openlocfilehash: 4eb67f8f63134ab33df79b0b98b252b2b27b2dda
 
 ---
 
-# Créer et inscrire une tâche en arrière-plan
+# Create and register a background task that runs in a separate process
 
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
-
-
-**API importantes**
+**Important APIs**
 
 -   [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)
 -   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
 -   [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781)
 
-Créez une classe de tâche en arrière-plan et inscrivez-la pour permettre son exécution lorsque votre application ne se trouve pas au premier plan.
+Create a background task class and register it to run when your app is not in the foreground. This topic demonstrates how to create and register a background task that runs in a separate process than your foreground process. To do background work directly in the foreground application, see [Create and register a single process background task](create-and-register-a-singleprocess-background-task.md).
 
-## Créer la classe de tâche en arrière-plan
+> [!Note]
+> If you use a background task to play media in the background, see [Play media in the background](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio) for information about improvements in Windows 10, version 1607, that make it much easier.
 
+## Create the Background Task class
 
-Vous pouvez exécuter du code en arrière-plan en écrivant des classes qui implémentent l’interface [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794). Ce code s’exécute lorsqu’un événement spécifique est déclenché à l’aide, par exemple, de [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) ou de [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517).
+You can run code in the background by writing classes that implement the [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) interface. This code will run when a specific event is triggered by using, for example, [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) or [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517).
 
-Les étapes suivantes vous montrent comment écrire une nouvelle classe qui implémente l’interface [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794). Avant de commencer, créez un projet dans votre solution pour les tâches en arrière-plan. Ajoutez une nouvelle classe vide pour votre tâche en arrière-plan et importez l’espace de noms [Windows.ApplicationModel.Background](https://msdn.microsoft.com/library/windows/apps/br224847).
+The following steps show you how to write a new class that implements the [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) interface. Before getting started, create a new project in your solution for background tasks. Add a new empty class for your background task and import the [Windows.ApplicationModel.Background](https://msdn.microsoft.com/library/windows/apps/br224847) namespace.
 
-1.  Créez un projet pour les tâches en arrière-plan et ajoutez-le à votre solution. Pour ce faire, cliquez avec le bouton droit sur le nœud de votre solution dans l’**Explorateur de solutions**, puis sélectionnez Ajouter-&gt;Nouveau projet. Sélectionnez ensuite le type de projet **Composant Windows Runtime (Windows universel)**, nommez le projet, puis cliquez sur OK.
-2.  Référencez le projet des tâches en arrière-plan à partir de votre projet d’application de plateforme Windows universelle (UWP).
+1.  Create a new project for background tasks and add it to your solution. To do this, right-click on your solution node in the **Solution Explorer** and select Add-&gt;New Project. Then select the **Windows Runtime Component (Universal Windows)** project type, name the project, and click OK.
+2.  Reference the background tasks project from your Universal Windows Platform (UWP) app project.
 
-    Pour une application C++, cliquez avec le bouton droit sur votre projet d’application et sélectionnez **Propriétés**. Accédez ensuite à **Propriétés communes** et cliquez sur **Ajouter une nouvelle référence**, cochez la case en regard de votre projet de tâches en arrière-plan, et cliquez sur **OK** dans les deuxboîtes de dialogue.
+    For a C++ app, right-click on your app project and select **Properties**. Then go to **Common Properties** and click **Add New Reference**, check the box next to your background tasks project, and click **OK** on both dialogs.
 
-    Pour une application C#, dans votre projet d’application, cliquez avec le bouton droit sur **Références**, puis sélectionnez **Ajouter une nouvelle référence**. Sous **Solution**, sélectionnez **Projets** et le nom de votre projet de tâches en arrière-plan, puis cliquez sur **OK**.
+    For a C# app, in your app project, right click on **References** and select **Add New Reference**. Under **Solution**, select **Projects** and then select the name of your background task project and click **Ok**.
 
-3.  Créez une classe qui implémente l’interface [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794). La méthode [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811) est un point d’entrée obligatoire qui est appelé quand l’événement spécifié est déclenché; cette méthode est nécessaire dans chaque tâche en arrière-plan.
+3.  Create a new class that implements the [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) interface. The [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811) method is a required entry point that will be called when the specified event is triggered; this method is required in every background task.
 
     > [!NOTE]
-    > La classe de tâche en arrière-plan elle-même, ainsi que toutes les autres classes au sein du projet de tâche en arrière-plan, doivent être des classes **public** qui sont **sealed**.
+    > The background task class itself - and all other classes in the background task project - need to be **public** classes that are **sealed**.
 
-    L’exemple de code suivant présente un point de départ très élémentaire pour une classe de tâche en arrière-plan:
+    The following sample code shows a very basic starting point for a background task class:
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -102,17 +102,18 @@ Les étapes suivantes vous montrent comment écrire une nouvelle classe qui impl
     >     }
     >  ```
 
-4.  Si vous exécutez du code asynchrone dans votre tâche en arrière-plan, celle-ci doit alors utiliser un report, sans quoi le processus de la tâche en arrière-plan risque de prendre fin de manière inattendue si la méthode Run se termine avant la fin de votre appel de méthode asynchrone.
+4.  If you run any asynchronous code in your background task, then your background task needs to use a deferral. If you don't use a deferral, then the background task process can terminate unexpectedly if the Run method completes before your asynchronous method call has completed.
 
-    Demandez le report dans la méthode Run avant d’appeler la méthode asynchrone. Enregistrez le report dans une variable globale pour que la méthode asynchrone puisse y accéder. Déclarez le report terminé après que l’exécution du code asynchrone a abouti.
+    Request the deferral in the Run method before calling the asynchronous method. Save the deferral to a global variable so it can be accessed from the asynchronous method. Declare the deferral complete after the asynchronous code completes.
 
-    L’exemple de code suivant obtient le report, l’enregistre et le libère à l’issue de l’exécution du code asynchrone:
+    The following sample code gets the deferral, saves it, and releases it when the asynchronous code is complete:
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
-    >     BackgroundTaskDeferral _deferral = taskInstance.GetDeferral(); // Note: define at class scope
+    >     BackgroundTaskDeferral _deferral; // Note: defined at class scope so we can mark it complete inside the OnCancel() callback if we choose to support cancellation
     >     public async void Run(IBackgroundTaskInstance taskInstance)
     >     {
+    >         _deferral = taskInstance.GetDeferral()
     >         //
     >         // TODO: Insert code to start one or more asynchronous methods using the
     >         //       await keyword, for example:
@@ -124,7 +125,7 @@ Les étapes suivantes vous montrent comment écrire une nouvelle classe qui impl
     >     }
     > ```
     > ```cpp
-    >     BackgroundTaskDeferral^ deferral = taskInstance->GetDeferral(); // Note: define at class scope
+    >     BackgroundTaskDeferral^ deferral = taskInstance->GetDeferral(); // Note: defined at class scope so we can mark it complete inside the OnCancel() callback if we choose to support cancellation
     >     void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
     >     {
     >         //
@@ -142,21 +143,20 @@ Les étapes suivantes vous montrent comment écrire une nouvelle classe qui impl
     > ```
 
 > [!NOTE]
-> En C#, les méthodes asynchrones de vos tâches en arrière-plan peuvent être appelées à l’aide des mots clés **async/await**. EnC++, un résultat similaire peut être obtenu à l’aide d’une chaîne de tâches.
+> In C#, your background task's asynchronous methods can be called using the **async/await** keywords. In C++, a similar result can be achieved by using a task chain.
 
-Pour plus d’informations sur les modèles asynchrones, voir [Programmation asynchrone](https://msdn.microsoft.com/library/windows/apps/mt187335). Pour obtenir des exemples supplémentaires sur l’utilisation de reports en vue d’empêcher l’arrêt prématuré d’une tâche en arrière-plan, voir l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666).
+For more information about asynchronous patterns, see [Asynchronous programming](https://msdn.microsoft.com/library/windows/apps/mt187335). For additional examples of how to use deferrals to keep a background task from stopping early, see the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666).
 
-Les étapes qui suivent sont à effectuer dans l’une de vos classes d’application (par exemple, MainPage.xaml.cs).
+The following steps are completed in one of your app classes (for example, MainPage.xaml.cs).
 
 > [!NOTE]
-> Vous pouvez aussi créer une fonction consacrée à l’inscription des tâches en arrière-plan (voir [Inscrire une tâche en arrière-plan](register-a-background-task.md)). Dans ce cas, plutôt que de suivre les trois étapes suivantes, vous pouvez simplement construire le déclencheur et le communiquer à la fonction d’inscription avec le nom de la tâche, son point d’entrée et une condition (facultatif).
+> You can also create a function dedicated to registering background tasks - see [Register a background task](register-a-background-task.md). In that case, instead of using the next 3 steps, you can simply construct the trigger and provide it to the registration function along with the task name, task entry point, and (optionally) a condition.
 
+## Register the background task to run
 
-## Inscrire la tâche en arrière-plan à des fins d’exécution
+1.  Find out if the background task is already registered by iterating through the [**BackgroundTaskRegistration.AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) property. This step is important; if your app doesn't check for existing background task registrations, it could easily register the task multiple times, causing issues with performance and maxing out the task's available CPU time before work can complete.
 
-1.  Découvrez si la tâche en arrière-plan est déjà inscrite en parcourant la propriété [**BackgroundTaskRegistration.AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787). Cette étape est primordiale ; si votre application ne vérifie pas la présence d’inscriptions de tâches en arrière-plan existantes, elle peut aisément procéder plusieurs fois à l’inscription de la tâche, ce qui risque de poser des problèmes de performance et d’épuiser le temps processeur disponible pour la tâche avant que le travail ne soit effectué.
-
-    L’exemple qui suit parcourt la propriété AllTasks et définit une variable d’indicateur sur True si la tâche est déjà inscrite :
+    The following example iterates on the AllTasks property and sets a flag variable to true if the task is already registered:
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -193,11 +193,11 @@ Les étapes qui suivent sont à effectuer dans l’une de vos classes d’applic
     >     }
     > ```
 
-2.  Si la tâche en arrière-plan n’est pas déjà inscrite, utilisez [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) pour créer une instance de votre tâche en arrière-plan. Le point d’entrée de la tâche doit correspondre au nom de votre classe de tâche en arrière-plan précédé de l’espace de noms.
+2.  If the background task is not already registered, use [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) to create an instance of your background task. The task entry point should be the name of your background task class prefixed by the namespace.
 
-    Le déclencheur de tâche en arrière-plan contrôle à quel moment la tâche en arrière-plan. Pour obtenir la liste des déclencheurs possibles, voir [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839).
+    The background task trigger controls when the background task will run. For a list of possible triggers, see [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839).
 
-    Par exemple, ce code crée une tâche en arrière-plan et la configure pour l’exécuter au moment où le déclencheur **TimeZoneChanged** est activé:
+    For example, this code creates a new background task and sets it to run when the **TimeZoneChanged** trigger is fired:
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -215,9 +215,9 @@ Les étapes qui suivent sont à effectuer dans l’une de vos classes d’applic
     >     builder->SetTrigger(ref new SystemTrigger(SystemTriggerType::TimeZoneChange, false));
     > ```
 
-3.  Vous pouvez ajouter une condition afin de contrôler à quel moment votre tâche sera exécutée après que l’événement de déclencheur est survenu (facultatif). Par exemple, si vous ne souhaitez pas que la tâche s’exécute tant que l’utilisateur n’est pas présent, appliquez la condition **UserPresent**. Pour obtenir la liste des conditions possibles, voir [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
+3.  You can add a condition to control when your task will run after the trigger event occurs (optional). For example, if you don't want the task to run until the user is present, use the condition **UserPresent**. For a list of possible conditions, see [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
 
-    L’exemple de code suivant affecte une condition qui exige la présence de l’utilisateur:
+    The following sample code assigns a condition requiring the user to be present:
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -227,9 +227,9 @@ Les étapes qui suivent sont à effectuer dans l’une de vos classes d’applic
     >     builder->AddCondition(ref new SystemCondition(SystemConditionType::UserPresent));
     > ```
 
-4.  Inscrivez la tâche en arrière-plan en appelant la méthode Register sur l’objet [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Stockez le résultat [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) pour pouvoir l’utiliser à l’étape suivante.
+4.  Register the background task by calling the Register method on the [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) object. Store the [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) result so it can be used in the next step.
 
-    Le code qui suit inscrit la tâche en arrière-plan et stocke le résultat:
+    The following code registers the background task and stores the result:
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -240,18 +240,19 @@ Les étapes qui suivent sont à effectuer dans l’une de vos classes d’applic
     > ```
 
 > [!NOTE]
-> Les applications Windows universelles doivent appeler [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) avant d’inscrire tout type de déclencheur en arrière-plan.
+> Universal Windows apps must call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) before registering any of the background trigger types.
 
-Pour vous assurer que votre application Windows universelle continue de s’exécuter correctement après la publication d’une mise à jour, vous devez appeler [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471), puis [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) lorsque votre application est lancée après avoir été mise à jour. Pour plus d’informations, voir [Recommandations pour les tâches en arrière-plan](guidelines-for-background-tasks.md).
+To ensure that your Universal Windows app continues to run properly after you release an update, use the **ServicingComplete** (see [SystemTriggerType](https://msdn.microsoft.com/library/windows/apps/br224839)) trigger to perform any post-update configuration changes such as migrating the app's database and registering background tasks. It is best practice to unregister background tasks associated with the previous version of the app (see [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)) and register background tasks for the new version of the app (see [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)) at this time.
 
-## Gérer l’achèvement des tâches en arrière-plan à l’aide de gestionnaires d’événements
+For more information, see [Guidelines for background tasks](guidelines-for-background-tasks.md).
 
+## Handle background task completion using event handlers
 
-Vous devez inscrire une méthode avec le [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781) afin que votre application puisse obtenir les résultats de la tâche en arrière-plan. Lors du lancement ou de la reprise de l’application, la méthode mark est appelée si la tâche en arrière-plan s’est terminée depuis la dernière fois où l’application s’est trouvée au premier plan. (La méthode OnCompleted est appelée immédiatement si la tâche en arrière-plan se termine pendant que votre application est au premier plan.)
+You should register a method with the [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781), so that your app can get results from the background task. When the app is launched or resumed, the mark method will be called if the background task has completed since the last time the app was in the foreground. (The OnCompleted method will be called immediately if the background task completes while your app is currently in the foreground.)
 
-1.  Écrivez une méthode OnCompleted pour gérer l’achèvement des tâches en arrière-plan. Par exemple, le résultat des tâches en arrière-plan peut entraîner une mise à jour de l’interface utilisateur. L’empreinte de la méthode présentée ici est requise pour la méthode de gestionnaire d’événements OnCompleted, même si cet exemple n’utilise pas le paramètre *args*.
+1.  Write an OnCompleted method to handle the completion of background tasks. For example, the background task result might cause a UI update. The method footprint shown here is required for the OnCompleted event handler method, even though this example does not use the *args* parameter.
 
-    L’exemple de code suivant reconnaît l’achèvement des tâches en arrière-plan et appelle un exemple de méthode de mise à jour de l’interface utilisateur qui prend une chaîne de message.
+    The following sample code recognizes background task completion and calls an example UI update method that takes a message string.
 
      > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -274,13 +275,12 @@ Vous devez inscrire une méthode avec le [**BackgroundTaskCompletedEventHandler*
     > ```
 
     > [!NOTE]
-    > Les mises à jour de l’interface utilisateur doivent être effectuées de manière asynchrone pour éviter de retarder le thread d’interface utilisateur. Pour obtenir un exemple, voir la méthode UpdateUI dans l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666).
+    > UI updates should be performed asynchronously, to avoid holding up the UI thread. For an example, see the UpdateUI method in the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666).
 
 
+2.  Go back to where you registered the background task. After that line of code, add a new [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781) object. Provide your OnCompleted method as the parameter for the **BackgroundTaskCompletedEventHandler** constructor.
 
-2.  Revenez à l’endroit où vous avez inscrit la tâche en arrière-plan. Après cette ligne de code, ajoutez un nouvel objet [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781). Fournissez votre méthode OnCompleted comme paramètre du constructeur **BackgroundTaskCompletedEventHandler**.
-
-    L’exemple de code suivant ajoute un objet [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781) à [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786):
+    The following sample code adds a [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781) to the [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786):
 
      > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -290,18 +290,18 @@ Vous devez inscrire une méthode avec le [**BackgroundTaskCompletedEventHandler*
     >     task->Completed += ref new BackgroundTaskCompletedEventHandler(this, &ExampleBackgroundTask::OnCompleted);
     > ```
 
-## Déclarer que votre application utilise des tâches en arrière-plan dans le manifeste de l’application
+## Declare that your app uses background tasks in the app manifest
 
-Pour que votre application puisse exécuter des tâches en arrière-plan, vous devez déclarer chaque tâche en arrière-plan dans le manifeste de l’application. Si votre application tente d’inscrire une tâche en arrière-plan avec un déclencheur qui n’est pas répertorié dans le manifeste, l’inscription échoue.
+Before your app can run background tasks, you must declare each background task in the app manifest. If your app attempts to register a background task with a trigger that isn't listed in the manifest, the registration will fail.
 
-1.  Ouvrez le concepteur de manifeste du package en accédant au fichier nommé Package.appxmanifest.
-2.  Ouvrez l’onglet **Déclarations**.
-3.  Dans la liste déroulante **Déclarations disponibles**, sélectionnez **Tâches en arrière-plan**, puis cliquez sur **Ajouter**.
-4.  Cochez la case **Événement système**.
-5.  Dans la zone de texte **Point d’entrée**, entrez l’espace de noms et le nom de votre classe en arrière-plan qui, pour cet exemple, est RuntimeComponent1.ExampleBackgroundTask.
-6.  Fermez le concepteur de manifeste.
+1.  Open the package manifest designer by opening the file named Package.appxmanifest.
+2.  Open the **Declarations** tab.
+3.  From the **Available Declarations** drop-down, select **Background Tasks** and click **Add**.
+4.  Select the **System event** checkbox.
+5.  In the **Entry point:** textbox, enter the namespace and name of your background class which is for this example is RuntimeComponent1.ExampleBackgroundTask.
+6.  Close the manfiest designer.
 
-    L’élément Extensions suivant est ajouté à votre fichier Package.appxmanifest pour inscrire la tâche en arrière-plan:
+    The following Extensions element is added to your Package.appxmanifest file to register the background task:
 
     ```xml
     <Extensions>
@@ -313,43 +313,44 @@ Pour que votre application puisse exécuter des tâches en arrière-plan, vous d
     </Extensions>
     ```
 
-## Récapitulatif et étapes suivantes
+## Summary and next steps
 
-
-Vous devez à présent être en mesure d’écrire une classe de tâche en arrière-plan, d’inscrire la tâche en arrière-plan dans votre application et de permettre à votre application de reconnaître à quel moment la tâche en arrière-plan est achevée. Vous devez également savoir comment mettre à jour le manifeste de l’application de sorte que votre application peut inscrire correctement la tâche en arrière-plan.
-
-> [!NOTE]
-> Téléchargez l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) pour examiner des exemples de code similaires dans le contexte d’une application UWP aboutie et robuste ayant recours à des tâches en arrière-plan.
-
-Consultez les rubriques connexes suivantes pour obtenir des informations de référence sur les API, des recommandations conceptuelles pour les tâches en arrière-plan, ainsi que des instructions plus détaillées pour écrire des applications qui utilisent des tâches en arrière-plan.
+You should now understand the basics of how to write a background task class, how to register the background task from within your app, and how to make your app recognize when the background task is complete. You should also understand how to update the application manifest so that your app can successfully register the background task.
 
 > [!NOTE]
-> Cet article s’adresse aux développeurs de Windows 10 qui écrivent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> Download the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666) to see similar code examples in the context of a complete and robust UWP app that uses background tasks.
 
-## Rubriques connexes
+See the following related topics for API reference, background task conceptual guidance, and more detailed instructions for writing apps that use background tasks.
 
-**Rubriques d’instructions détaillées sur les tâches en arrière-plan**
+> [!NOTE]
+> This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
-* [Répondre aux événements système avec des tâches en arrière-plan](respond-to-system-events-with-background-tasks.md)
-* [Inscrire une tâche en arrière-plan](register-a-background-task.md)
-* [Définir des conditions pour exécuter une tâche en arrière-plan](set-conditions-for-running-a-background-task.md)
-* [Utiliser un déclencheur de maintenance](use-a-maintenance-trigger.md)
-* [Gérer une tâche en arrière-plan annulée](handle-a-cancelled-background-task.md)
-* [Surveiller la progression et l’achèvement des tâches en arrière-plan](monitor-background-task-progress-and-completion.md)
-* [Exécuter une tâche en arrière-plan en fonction d’un minuteur](run-a-background-task-on-a-timer-.md)
+## Related topics
 
-**Recommandations en matière de tâches en arrière-plan**
+**Detailed background task instructional topics**
 
-* [Recommandations pour les tâches en arrière-plan](guidelines-for-background-tasks.md)
-* [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
-* [Comment déclencher des événements de suspension, des événements de reprise et des événements en arrière-plan dans des applications du Windows Store (lors du débogage)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)
+* [Register a background task](register-a-background-task.md)
+* [Set conditions for running a background task](set-conditions-for-running-a-background-task.md)
+* [Use a maintenance trigger](use-a-maintenance-trigger.md)
+* [Handle a cancelled background task](handle-a-cancelled-background-task.md)
+* [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
+* [Run a background task on a timer](run-a-background-task-on-a-timer-.md)
+* [Create and register a single process background task](create-and-register-a-singleprocess-background-task.md).
+[Convert a multi-process background task to a single-process background task](convert-multiple-process-background-task.md)  
 
-**Informations de référence d’API de tâche en arrière-plan**
+**Background task guidance**
+
+* [Guidelines for background tasks](guidelines-for-background-tasks.md)
+* [Debug a background task](debug-a-background-task.md)
+* [How to trigger suspend, resume, and background events in Windows Store apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+
+**Background Task API Reference**
 
 * [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO4-->
 
 

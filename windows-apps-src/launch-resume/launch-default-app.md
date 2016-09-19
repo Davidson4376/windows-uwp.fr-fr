@@ -1,52 +1,57 @@
 ---
 author: TylerMSFT
-title: "Lancer l’application par défaut pour un URI"
-description: "Découvrez comment lancer l’application par défaut d’un URI (Uniform Resource Identifier). Un URI permet de lancer une autre application pour effectuer une tâche spécifique. Cette rubrique donne également une vue d’ensemble des nombreux schémas d’URI intégrés à Windows."
+title: Launch the default app for a URI
+description: Learn how to launch the default app for a Uniform Resource Identifier (URI). URIs allow you to launch another app to perform a specific task. This topic also provides an overview of the many URI schemes built into Windows.
 ms.assetid: 7B0D0AF5-D89E-4DB0-9B79-90201D79974F
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 053746735cb9f11bcdeb2244f33b589e4670974b
+ms.sourcegitcommit: 881056cf24755d880a142bd5317fc6e524d1cd81
+ms.openlocfilehash: 119b24573163224456d4f847cf3a444fb8420c5e
 
 ---
 
-# Lancer l’application par défaut pour un URI
+# Launch the default app for a URI
+
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
+**Important APIs**
+
+- [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476)
+-  [**PreferredApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/hh965482)
+- [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314)
+
+Learn how to launch the default app for a Uniform Resource Identifier (URI). URIs allow you to launch another app to perform a specific task. This topic also provides an overview of the many URI schemes built into Windows. You can launch custom URIs too. For more info about registering a custom URI scheme and handling URI activation, see [Handle URI activation](handle-uri-activation.md).
 
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+URI schemes let you open apps by clicking hyperlinks. Just as you can start a new email using **mailto:**, you can open the default web browser using **http:**
 
+This topic describes the following URI schemes built into Windows:
 
-**API importantes**
+| URI Scheme | Launches |
+| -------|--------------|
+|[bingmaps:, ms-drive-to:, and ms-walk-to: ](#maps-app-uri-schemes) | Maps app |
+|[http:](#http-uri-scheme) | Default web browser |
+|[mailto:](#email-uri-scheme) | Default email app |
+|[ms-call:](#call-app-uri-scheme) |  Call app |
+|[ms-chat:](#messaging-app-uri-scheme) | Messaging app |
+|[ms-people:](#people-app-uri-scheme) | People app |
+|[ms-settings:](#settings-app-uri-scheme) | Settings app |
+|[ms-store:](#store-app-uri-scheme)  | Store app |
+|[ms-tonepicker:](#tone-uri-scheme) | Tone picker |
+|[ms-yellowpage:](#nearby-numbers-app-uri-scheme) | Nearby Numbers app |
 
--   [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476)
--   [**PreferredApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/hh965482)
--   [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314)
-
-Découvrez comment lancer l’application par défaut pour un URI (Uniform Resource Identifier). Un URI permet de lancer une autre application pour effectuer une tâche spécifique. Cette rubrique donne également une vue d’ensemble des nombreux schémas d’URI intégré à Windows. Vous pouvez également lancer des URI personnalisés. Pour plus d’informations sur l’inscription d’un schéma d’URI personnalisé et la gestion de l’activation des URI, voir [Gérer l’activation des URI](handle-uri-activation.md).
-
-## Comment lancer un URI
-
-
-Les schémas d’URI permettent d’ouvrir des applications en cliquant sur des liens hypertexte. Tout comme vous pouvez commencer un nouveau message électronique à l’aide de **mailto:**, vous pouvez ouvrir le navigateur web par défaut à l’aide de **http:**. Cette rubrique décrit certains des schémas d’URI intégrés dans Windows:
-
--   Le [schéma d’URI ms-settings:](#settings) lance l’application Paramètres Windows
--   Le [schéma d’URI ms-store:](#store) lance l’application Windows Store
--   Le [schéma d’URI http:](#browser) lance le navigateur web par défaut
--   Le [schéma d’URI mailto:](#email) lance l’application de messagerie par défaut
--   Les [schémas d’URI bingmaps:, ms-drive-to: et ms-walk-to:](#maps) lancent l’application Cartes Windows
-
-Par exemple, l’URI suivant ouvre le navigateur par défaut et affiche le site web Bing.
+<br> For example, the following URI opens the default browser and displays the Bing web site.
 
 `http://bing.com`
 
-Vous pouvez également lancer des schémas d’URI personnalisés. Si aucune application n’est installée pour gérer cet URI, vous pouvez recommander à l’utilisateur une application à installer. Pour plus d’informations, voir [Recommander une application](#recommend).
+You can also launch custom URI schemes too. If there is no app installed to handle that URI, you can recommend an app for the user to install. For more info, see [Recommend an app](#recommend).
 
-En général, votre application ne peut pas sélectionner l’application à lancer. L’utilisateur détermine l’application à lancer. Plusieurs applications peuvent s’inscrire pour gérer le même schéma d’URI. Une exception à cette règle a trait aux schémas d’URI réservés. Les inscriptions de schémas d’URI réservés sont ignorées. Pour obtenir la liste complète des schémas d’URI réservés, voir [Gérer l’activation des URI](handle-uri-activation.md). Si plusieurs applications ont inscrit le même schéma d’URI, votre application peut recommander le lancement d’une application spécifique. Pour plus d’informations, voir [Recommander une application](#recommend).
+In general, your app can't select the app that is launched. The user determines which app is launched. More than one app can register to handle the same URI scheme. The exception to this is for reserved URI schemes. Registrations of reserved URI schemes are ignored. For the full list of reserved URI schemes, see [Handle URI activation](handle-uri-activation.md). In cases where more than one app may have registered the same URI scheme, your app can recommend a specific app to be launched. For more info, see [Recommend an app](#recommend).
 
-### Appeler LaunchUriAsync
+### Call LaunchUriAsync to launch a URI
 
-Utilisez la méthode [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) pour lancer un URI. Lors de l’appel de cette méthode, votre application doit être au premier plan, c’est-à-dire qu’elle doit être visible pour l’utilisateur. Cette conditions contribue à garantir que l’utilisateur conserve le contrôle. Pour pouvoir la respecter, assurez-vous que vous avez relié directement tous les lancements d’URI à l’interface utilisateur de votre application. L’utilisateur doit toujours exercer une action pour initier un lancement d’URI. Si vous tentez de lancer un URI alors que votre application n’est pas au premier plan, le lancement échoue et votre rappel d’erreur est appelé.
+Use the [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) method to launch a URI. When you call this method, your app must be the foreground app, that is, it must be visible to the user. This requirement helps ensure that the user remains in control. To meet this requirement, make sure that you tie all URI launches directly to the UI of your app. The user must always take some action to initiate a URI launch. If you attempt to launch a URI and your app isn't in the foreground, the launch will fail and your error callback will be invoked.
 
-Commencez par créer un objet [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/system.uri.aspx) pour représenter l’URI, puis passez-le à la méthode [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476). Utilisez le résultat renvoyé pour voir si l’appel a réussi, comme illustré dans l’exemple suivant.
+First create a [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/system.uri.aspx) object to represent the URI, then pass that to the [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) method. Use the return result to see if the call succeeded, as shown in the following example.
 
 ```cs
 private async void launchURI_Click(object sender, RoutedEventArgs e)
@@ -68,11 +73,11 @@ private async void launchURI_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Dans certains cas, le système d’exploitation invite l’utilisateur à confirmer qu’il veut réellement changer d’application.
+In some cases, the operating system will prompt the user to see if the actually want to switch apps.
 
-![boîte de dialogue d’avertissement sur un arrière-plan grisé de l’application. la boîte de dialogue demande à l’utilisateur s’il souhaite basculer entre les applications et a des boutons «oui» et «non» dans le coin inférieur droit. le bouton «non» est mis en surbrillance.](images/warningdialog.png)
+![a warning dialog overlayed on a grayed out background of the app. the dialog asks the user if they want to switch apps and has ‘yes’ and ‘no’ buttons in the bottom right. the ‘no’ button is highlighted.](images/warningdialog.png)
 
-Si vous voulez que cette invite apparaisse toujours, utilisez la propriété [**Windows.System.LauncherOptions.TreatAsUntrusted**](https://msdn.microsoft.com/library/windows/apps/hh701442) pour indiquer que le système d’exploitation doit afficher un avertissement.
+If you always want this prompt to occur, use the [**Windows.System.LauncherOptions.TreatAsUntrusted**](https://msdn.microsoft.com/library/windows/apps/hh701442) property to indicate that the operating system display a warning.
 
 ```cs
 // The URI to launch
@@ -86,13 +91,13 @@ promptOptions.TreatAsUntrusted = true;
 var success = await Windows.System.Launcher.LaunchUriAsync(uriBing, promptOptions);
 ```
 
-### Recommander une application
+### Recommend an app if one is not available to handle the URI
 
-Dans certains cas, l’utilisateur ne dispose pas forcément d’une application installée pour gérer l’URI que vous lancez. Par défaut, le système d’exploitation gère ces cas en fournissant à l’utilisateur un lien pour rechercher une application appropriée dans le Windows Store. Si vous voulez recommander à l’utilisateur l’acquisition d’une application spécifique dans ce scénario, vous pouvez passer cette recommandation avec l’URI que vous lancez.
+In some cases, the user might not have an app installed to handle the URI that you are launching. By default, the operating system handles these cases by providing the user with a link to search for an appropriate app on the store. If you want to give the user a specific recommendation for which app to acquire in this scenario, you can do so by passing that recommendation along with the URI that you are launching.
 
-Les recommandations sont également utiles quand plusieurs applications sont inscrites pour gérer un schéma d’URI. Si vous recommandez une application spécifique, Windows ouvre celle-ci si elle est installée.
+Recommendations are also useful when more than one app has registered to handle a URI scheme. By recommending a specific app, Windows will open that app if it is already installed.
 
-Pour faire une recommandation, appelez la méthode [**Windows.System.Launcher.LaunchUriAsync(Uri, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701484) avec [**LauncherOptions.preferredApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/hh965482) ayant pour valeur le nom de la famille de packages de l’application du Store que vous voulez recommander. Le système d’exploitation utilise cette information pour remplacer l’option générale permettant de rechercher une application dans le Windows Store par une option spécifique permettant d’acquérir l’application recommandée dans le Windows Store.
+To make a recommendation, call the [**Windows.System.Launcher.LaunchUriAsync(Uri, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701484) method with [**LauncherOptions.preferredApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/hh965482) set to the package family name of the app in the store that you want to recommend. The operating system uses this info to replace the general option to search for an app in the store with a specific option to acquire the recommended app from the store.
 
 ```cs
 // Set the recommended app
@@ -105,13 +110,11 @@ options.PreferredApplicationDisplayName = "Contoso URI Ap";
 var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 ```
 
-### Définir une préférence d’affichage persistant
+### Set remaining view preference
 
-Les applications sources qui appellent la méthode [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) peuvent demander à rester à l’écran après le lancement d’un URI. Par défaut, Windows essaie de partager tout l’espace disponible de manière équitable entre l’application source et l’application cible qui gère l’URI. Les applications sources peuvent utiliser la propriété [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) pour indiquer au système d’exploitation qu’elles préfèrent que leur fenêtre d’application occupe une plus grande ou plus petite partie de l’espace disponible. La propriété **DesiredRemainingView** peut également servir à indiquer que l’application source n’a pas besoin de rester à l’écran après le lancement de l’URI et qu’elle peut être complètement remplacée par l’application cible. Cette propriété spécifie uniquement la taille de fenêtre par défaut de l’application appelante. Elle ne spécifie pas le comportement d’autres applications qui peuvent se trouver en même temps sur l’écran.
+Source apps that call [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) can request that they remain on screen after a URI launch. By default, Windows attempts to share all available space equally between the source app and the target app that handles the URI. Source apps can use the [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) property to indicate to the operating system that they prefer their app window to take up more or less of the available space. **DesiredRemainingView** can also be used to indicate that the source app doesn't need to remain on screen after the URI launch and can be completely replaced by the target app. This property only specifies the preferred window size of the calling app. It doesn't specify the behavior of other apps that may happen to also be on screen at the same time.
 
-**Remarque** Windows tient compte de plusieurs facteurs différents pour déterminer la taille finale de la fenêtre de l’application source, par exemple, la préférence de l’application source, le nombre d’applications à l’écran, l’orientation de l’écran, etc. La définition de la propriété [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) ne garantit pas un comportement de fenêtrage spécifique pour l’application source.
-
- 
+**Note**  Windows takes into account multiple different factors when it determines the source app's final window size, for example, the preference of the source app, the number of apps on screen, the screen orientation, and so on. By setting [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314), you aren't guaranteed a specific windowing behavior for the source app.
 
 ```cs
 // Set the desired remaining view.
@@ -122,110 +125,98 @@ options.DesiredRemainingView = Windows.UI.ViewManagement.ViewSizePreference.UseL
 var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 ```
 
-## Schémas d’URI pour l’application Cartes Windows
+## URI Schemes ##
 
+The various URI schemes are described below.
+<br>
 
-Votre application peut utiliser les schémas d’URI **bingmaps:**, **ms-drive-to:** et **ms-walk-to:** afin de [lancer l’application Cartes Windows](launch-maps-app.md) pour des cartes, itinéraires et résultats de recherche spécifiques. Par exemple, l’URI suivant ouvre l’application Cartes Windows et affiche une carte centrée sur la ville de New York.
+### Call app URI scheme
+
+Your app can use the **ms-call:** URI scheme to launch the Call app.
+
+| URI Scheme       | Result                   |
+|------------------|--------------------------|
+| ms-call:settings | Calls app settings page. | 
+<br>
+### Email URI scheme
+
+Your app can use the **mailto:** URI scheme to launch the default mail app.
+
+| URI Scheme               | Results                                                                                                                                                     |
+|--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| mailto:                  | Launches the default email app.                                                                                                                             |
+| mailto:\[email address\] | Launches the email app and creates a new message with the specified email address on the To line. Note that the email is not sent until the user taps send. |
+<br>
+### HTTP URI scheme
+
+Your app can use the **http:** URI scheme to launch the default web browser.
+
+| URI Scheme | Results                           |
+|------------|-----------------------------------|
+| http:      | Launches the default web browser. |
+<br>
+### Maps app URI schemes
+
+Your app can use the **bingmaps:**, **ms-drive-to:**, and **ms-walk-to:** URI schemes to [launch the Windows Maps app](launch-maps-app.md) to specific maps, directions, and search results. For example, the following URI opens the Windows Maps app and displays a map centered over New York City.
 
 `bingmaps:?cp=40.726966~-74.006076`
 
-![Exemple de l’application Cartes Windows.](images/mapnyc.png)
+![an example of the windows maps app.](images/mapnyc.png)
 
-Pour plus d’informations, voir [Lancer l’application Cartes Windows](launch-maps-app.md). Pour utiliser le contrôle de carte dans votre propre application, voir [Afficher des cartes avec des vues 2D, 3D et Streetside](https://msdn.microsoft.com/library/windows/apps/mt219695).
+For more info, see [Launch the Windows Maps app](launch-maps-app.md). To use the map control in your own app, see [Display maps with 2D, 3D, and Streetside views](https://msdn.microsoft.com/library/windows/apps/mt219695).
+<br>
+### Messaging app URI scheme
 
-## Schéma d’URI pour l’application Paramètres Windows
+Your app can use the **ms-chat:** URI scheme to launch the Windows Messaging app.
 
+| URI scheme |Results | |-- ---------|--------| | ms-chat:   | Launches the Messaging app. | | ms-chat:?ContactID={contacted}  |  Allows the messaging application to be launched with a particular contact’s information.   | | ms-chat:?Body={body} | Allows the messaging application to be launched with a string to use as the content of the message.| | ms-chat:?Addresses={address}&Body={body} | Allows the messaging application to be launched with a particular addresses' information, and with a string to use as the content of the message. Note: Addresses can be concatenated. | | ms-chat:?TransportId={transportId}  | Allows the messaging application to be launched with a particular transport ID. |
+<br>
+### Tone picker URI scheme
 
-Votre application peut utiliser le schéma d’URI **ms-settings:** pour [lancer l’application Paramètres Windows](launch-settings-app.md). Le lancement de l’application Paramètres est une partie importante de l’écriture d’une application prenant en charge la confidentialité. Si votre application ne peut pas accéder à une ressource sensible, nous vous recommandons de fournir à l’utilisateur un lien pratique lui permettant d’accéder aux paramètres de confidentialité relatifs à cette ressource. Par exemple, l’URI suivant ouvre l’application Paramètres et affiche les paramètres de confidentialité de l’appareil photo.
+Your app can use the **ms-tonepicker:** URI scheme to choose ringtones, alarms, and system tones. You can also save new ringtones and get the display name of a tone.
+
+| URI Scheme | Results |
+|------------|---------|
+| ms-tonepicker: | Pick ringtones, alarms, and system tones. |
+
+Parameters are passed via a [ValueSet](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset.aspx) to the LaunchURI API. See [Choose and save tones using the ms-tonepicker URI scheme](launch-ringtone-picker.md) for details.
+
+### Nearby Numbers app URI scheme
+<br>
+Your app can use the **ms-yellowpage:** URI scheme to launch the Nearby Numbers app.
+
+| URI Scheme | Results |
+|------------|---------|
+| ms-yellowpage:?input=\[keyword\]&method=\[String or T9\] | Launches the Nearby Numbers app. `input` refers to the keyword you want to search. `method` refers to the type of search (string or T9 search). <br> If `method` is `T9` (a type of keyboard) then `keyword` should be a numeric string that maps to the T9 keyboard letters to search for.<br>If `method` is `String` then `keyword` is the keyword to search for. |
+ 
+<br>
+### People app URI scheme
+
+Your app can use the **ms-people:** URI scheme to launch the People app.
+For more info, see [Launch the People app](launch-people-apps.md).
+
+<br>
+### Settings app URI scheme
+
+Your app can use the **ms-settings:** URI scheme to [launch the Windows Settings app](launch-settings-app.md). Launching to the Settings app is an important part of writing a privacy-aware app. If your app can't access a sensitive resource, we recommend providing the user a convenient link to the privacy settings for that resource. For example, the following URI opens the Settings app and displays the camera privacy settings.
 
 `ms-settings:privacy-webcam`
 
-![paramètres de confidentialité de l’appareil photo.](images/privacyawarenesssettingsapp.png)
+![camera privacy settings.](images/privacyawarenesssettingsapp.png)
 
-Pour plus d’informations, voir [Lancer l’application Paramètres Windows](launch-settings-app.md) et [Recommandations en matière d’applications prenant en charge la confidentialité](https://msdn.microsoft.com/library/windows/apps/hh768223).
+For more info, see [Launch the Windows Settings app](launch-settings-app.md) and [Guidelines for privacy-aware apps](https://msdn.microsoft.com/library/windows/apps/hh768223).
 
-## Schéma d’URI pour l’application du Windows Store
+<br>
+### Store app URI scheme
 
-
-Votre application peut utiliser le schéma d’URI **ms-windows-store:** pour [lancer l’application du Windows Store](launch-store-app.md). Ouvrez des pages de détails, d’avis et de recherche en rapport avec les produits. Par exemple, l’URI suivant ouvre l’application du Windows Store et accède à la page d’accueil du Windows Store.
+Your app can use the **ms-windows-store:** URI scheme to [Launch the Windows Store app](launch-store-app.md). Open product detail pages, product review pages, and search pages, etc. For example, the following URI opens the Windows Store app and launches the home page of the Store.
 
 `ms-windows-store://home/`
 
-Pour plus d’informations, voir [Lancer l’application Windows Store](launch-store-app.md).
-
-## Schéma d’URI pour l’application d’appel
-
-
-Votre application peut utiliser le schéma d’URI **ms-call:** pour lancer l’application d’appel.
-
-| Schéma d’URI       | Résultats                               |
-|------------------|---------------------------------------|
-| ms-call:settings | Lance la page de paramètres de l’application Appel. |
-
- 
-
-## Schéma d’URI pour l’application de conversation
-
-
-Votre application peut utiliser le schéma d’URI **ms-chat:** pour lancer l’application Messages.
-
-| Schéma d’URI                               | Résultats                                                                                                                                                                                |
-|------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ms-chat:                                 | Lance l’application de messagerie.                                                                                                                                                            |
-| ms-chat:?ContactID={contacted}           | Permet le lancement de l’application de messagerie avec les informations d’un contact spécifique.                                                                                               |
-| ms-chat:?Body={body}                     | Permet le lancement de l’application de messagerie avec une chaîne à utiliser en tant que contenu du message.                                                                                    |
-| ms-chat:?Addresses={address}&amp;Body={body} | Permet le lancement de l’application de messagerie avec les informations d’adresse d’une personne particulière et une chaîne à utiliser en tant que contenu du message. Remarque : les adresses peuvent être concaténées. |
-| ms-chat:?TransportId={transportId}       | Permet le lancement de l’application de messagerie avec un ID de transport particulier.                                                                                                        |
-
- 
-
-## Schéma d’URI pour le courrier électronique
-
-
-Votre application peut utiliser le schéma d’URI **mailto:** pour lancer l’application de courrier électronique par défaut.
-
-| Schéma d’URI               | Résultats                                                                                                                                                     |
-|--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| mailto:                  | Lance l’application de courrier électronique par défaut.                                                                                                                             |
-| mailto:\[email address\] | Lance l’application de courrier électronique et crée un message dont la ligne À contient l’adresse de messagerie spécifiée. Notez que le message n’est pas envoyé tant que l’utilisateur n’appuie pas sur Envoyer. |
-
- 
-
-## Schéma d’URI pour le protocole HTTP
-
-
-Votre application peut utiliser le schéma d’URI **http:** pour lancer le navigateur web par défaut.
-
-| Schéma d’URI | Résultats                           |
-|------------|-----------------------------------|
-| http:      | Lance le navigateur web par défaut. |
-
- 
-
-## Schéma d’URI pour l’application de recherche de numéros à proximité
-
-
-Votre application peut utiliser le schéma d’URI **ms-yellowpage:** pour lancer l’application de recherche de numéros à proximité.
-
-| Schéma d’URI                                            | Résultats                                                                               |
-|-------------------------------------------------------|---------------------------------------------------------------------------------------|
-| ms-yellowpage:?input=\[keyword\]&amp;method=\[String|T9\] | Lance l’application de recherche de points d’intérêt installée qui prend en charge ce nouvel URI. |
-
- 
-
-## Schéma d’URI pour l’application Contacts
-
-
-Votre application peut utiliser le schéma d’URI **ms-people:** pour lancer l’application Contacts.
-
-Pour plus d’informations, voir [Lancer l’application Contacts](launch-people-apps.md).
-
- 
-
- 
+For more info, see [Launch the Windows Store app](launch-store-app.md).
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO4-->
 
 

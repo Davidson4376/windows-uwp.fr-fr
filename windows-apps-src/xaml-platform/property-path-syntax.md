@@ -1,124 +1,124 @@
 ---
 author: jwmsft
-description: "Vous pouvez utiliser la classe PropertyPath et la syntaxe de chaîne pour instancier une valeur PropertyPath en XAML ou dans le code."
-title: Syntaxe de Property-path
+description: You can use the PropertyPath class and the string syntax to instantiate a PropertyPath value either in XAML or in code.
+title: Property-path syntax'
 ms.assetid: FF3ECF47-D81F-46E3-BE01-C839E0398025
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 0b1851bc9d19de5b678f8c6c3a255c0ba3057a85
+ms.sourcegitcommit: 3144758352b99f8c145a3c7be8a6c43d6a002104
+ms.openlocfilehash: 867fd859823c23cec9666095793871a4b78e7e52
 
 ---
 
-# Syntaxe de Property-path
+# Property-path syntax
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Vous pouvez utiliser la classe [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) et la syntaxe de chaîne pour instancier une valeur **PropertyPath** en XAML ou dans le code. Les valeurs **PropertyPath** sont utilisées par la liaison de données. Une syntaxe similaire est utilisée pour cibler les animations dans une table de montage séquentiel. Toutefois, le ciblage d’animations ne crée pas de valeurs de syntaxe Property-path sous-jacentes, mais conserve l’information sous forme de chaîne. Dans les deux scénarios, un chemin de propriété décrit la traversée d’une ou de plusieurs relations de propriétés d’objet qui finissent par devenir une seule propriété.
+You can use the [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) class and the string syntax to instantiate a **PropertyPath** value either in XAML or in code. **PropertyPath** values are used by data binding. A similar syntax is used for targeting storyboarded animations. For both scenarios, a property path describes a traversal of one or more object-property relationships that eventually resolve to a single property.
 
-Vous pouvez affecter une chaîne de chemin de propriété directement à un attribut en XAML. Vous pouvez utiliser la même syntaxe de chaîne pour construire un [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) qui définit [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) dans du code, ou pour définir un ciblage d’animation dans du code via [**SetTargetProperty**](https://msdn.microsoft.com/library/windows/apps/br210503). Il existe deux zones de fonctionnalités distinctes dans Windows Runtime qui utilisent un chemin de propriété: la liaison de données et le ciblage d’animation. Le ciblage d’animation ne crée pas de valeurs de syntaxe Property-path sous-jacentes dans l’implémentation Windows Runtime; il conserve l’information sous forme de chaîne. Toutefois, les concepts de traversée de propriété d’objet sont très similaires. La liaison de données et le ciblage d’animation évaluent chacun un chemin de propriété de façon légèrement différente. C’est la raison pour laquelle nous décrivons séparément la syntaxe du chemin de propriété dans chaque cas.
+You can set a property path string directly to an attribute in XAML. You can use the same string syntax to construct a [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) that sets a [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) in code, or to set an animation target in code using [**SetTargetProperty**](https://msdn.microsoft.com/library/windows/apps/br210503). There are two distinct feature areas in the Windows Runtime that use a property path: data binding, and animation targeting. Animation targeting doesn't create underlying Property-path syntax values in the Windows Runtime implementation, it keeps the info as a string, but the concepts of object-property traversal are very similar. Data binding and animation targeting each evaluate a property path slightly differently, so we describe property path syntax separately for each.
 
-## Chemin de propriété pour les objets de la liaison de données
+## Property path for objects in data binding
 
-Dans Windows Runtime, vous pouvez lier la valeur cible de n’importe quelle propriété de dépendance. La valeur de la propriété source d’une liaison de données n’a pas besoin d’être une propriété de dépendance ; il peut s’agir d’une propriété d’un objet métier (par exemple une classe écrite dans un langage Microsoft .NET ou en C++). L’objet source de la valeur de liaison peut également être un objet de dépendance existant déjà défini par l’application. La source peut être référencée soit par un simple nom de propriété, soit par une traversée des relations de propriétés d’objet dans le graphique d’objet de l’objet métier.
+In Windows Runtime, you can bind to the target value of any dependency property. The source property value for a data binding doesn't have to be a dependency property; it can be a property on a business object (for example a class written in a Microsoft .NET language or C++). Or, the source object for the binding value can be an existing dependency object already defined by the app. The source can be referenced either by a simple property name, or by a traversal of the object-property relationships in the object graph of the business object.
 
-Vous pouvez lier soit une valeur de propriété individuelle, soit une propriété cible qui contient des listes ou des collections. Si votre source est une collection ou si le chemin d’accès spécifie une propriété de collection, le moteur de liaison de données fait correspondre les éléments de collection de la source à la cible de liaison, ce qui se traduit par un remplissage de [**ListBox**](https://msdn.microsoft.com/library/windows/apps/br242868) à l’aide d’une liste d’éléments provenant d’une collection de données sources, sans qu’il soit nécessaire d’anticiper les éléments spécifiques de cette collection.
+You can bind to an individual property value, or you can bind to a target property that holds lists or collections. If your source is a collection, or if the path specifies a collection property, the data-binding engine matches the collection items of the source to the binding target, resulting in behavior such as populating a [**ListBox**](https://msdn.microsoft.com/library/windows/apps/br242868) with a list of items from a data source collection without needing to anticipate the specific items in that collection.
 
-### Traversée d’un graphique d’objet
+### Traversing an object graph
 
-L’élément de la syntaxe qui désigne la traversée d’une relation de propriété d’objet dans un graphique d’objet est le point (**.**). Chaque point d’une chaîne de chemin de propriété indique une division entre un objet (côté gauche du point) et une propriété de cet objet (côté droit du point). La chaîne est évaluée de gauche à droite, ce qui permet d’exécuter le code pas à pas dans plusieurs relations de propriétés d’objet. Voyons un exemple:
+The element of the syntax that denotes the traversal of an object-property relationship in an object graph is the dot (**.**) character. Each dot in a property path string indicates a division between an object (left side of the dot) and a property of that object (right side of the dot). The string is evaluated left-to-right, which enables stepping through multiple object-property relationships. Let's look at an example:
 
 ``` syntax
-<Binding Path="Customer.Address.StreetAddress1"
+"{Binding Path=Customer.Address.StreetAddress1}"
 ```
 
-Voici comment ce chemin d’accès est évalué:
+Here's how this path is evaluated:
 
-1.  L’objet de contexte de données (ou un [**Source**](https://msdn.microsoft.com/library/windows/apps/br209832) spécifié par le même [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820)) donne lieu à la recherche de la propriété nommée « Customer ».
-2.  L’objet qui a la valeur de la propriété «Customer» donne lieu à la recherche de la propriété nommée «Address».
-3.  L’objet qui a la valeur de la propriété «Address» donne lieu à la recherche de la propriété nommée «StreetAddress1».
+1.  The data context object (or a [**Source**](https://msdn.microsoft.com/library/windows/apps/br209832) specified by the same [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820)) is searched for a property named "Customer".
+2.  The object that is the value of the "Customer" property is searched for a property named "Address".
+3.  The object that is the value of the "Address" property is searched for a property named "StreetAddress1".
 
-À chacune de ces étapes, la valeur est traitée comme un objet. Le type du résultat est vérifié uniquement lorsque la liaison est appliquée à une propriété spécifique. Cet exemple échoue si « Address » est juste une valeur de chaîne qui n’indique pas quelle est la partie de la chaîne correspondant à l’adresse. En règle générale, la liaison pointe vers les valeurs de propriétés imbriquées spécifiques d’un objet métier ayant une structure d’information connue et intentionnelle.
+At each of these steps, the value is treated as an object. The type of the result is checked only when the binding is applied to a specific property. This example would fail if "Address" were just a string value that didn't expose what part of the string was the street address. Typically, the binding is pointing to the specific nested property values of a business object that has a known and deliberate information structure.
 
-### Règles des propriétés dans un chemin de propriété de liaison de données
+### Rules for the properties in a data-binding property path
 
--   Toutes les propriétés référencées par un chemin de propriété doivent être publiques dans l’objet métier source.
--   La propriété de fin (dernière propriété nommée dans le chemin d’accès) doit être publique et modifiable. Vous ne pouvez pas lier des valeurs statiques.
--   La propriété de fin doit être accessible en lecture/écriture si ce chemin d’accès est utilisé en tant qu’information de [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) pour une liaison bidirectionnelle.
+-   All properties referenced by a property path must be public in the source business object.
+-   The end property (the property that is the last named property in the path) must be public and must be mutable – you can't bind to static values.
+-   The end property must be read/write if this path is used as the [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) information for a two-way binding.
 
-### Indexeurs
+### Indexers
 
-Un chemin de propriété pour la liaison de données peut inclure des références à des propriétés indexées. Cela permet de lier des listes/vecteurs ordonnés ou des dictionnaires/mappages. Utilisez des crochets «\[\]» pour indiquer une propriété indexée. Le contenu de ces crochets peut être soit un entier (pour la liste ordonnée), soit une chaîne sans guillemets (pour les dictionnaires). Vous pouvez également lier un dictionnaire où la clé est un entier. Vous pouvez utiliser différentes propriétés indexées dans le même chemin d’accès en séparant l’objet de la propriété à l’aide d’un point.
+A property path for data-binding can include references to indexed properties. This enables binding to ordered lists/vectors, or to dictionaries/maps. Use square brackets "\[\]" characters to indicate an indexed property. The contents of these brackets can be either an integer (for ordered list) or an unquoted string (for dictionaries). You can also bind to a dictionary where the key is an integer. You can use different indexed properties in the same path with a dot separating the object-property.
 
-Prenons par exemple un objet métier qui contient une liste de «Teams» (liste ordonnée). Chacune des équipes (teams) a un dictionnaire de «Players» où chaque joueur est indexé par le nom de famille. Voici un exemple de chemin de propriété pour un joueur spécifique de la deuxième équipe: «Teams\[1\].Players\[Smith\]». (Vous utilisez1 pour indiquer le deuxième élément de «Teams», car la liste est indexée à partir de zéro.)
+For example, consider a business object where there is a list of "Teams" (ordered list), each of which has a dictionary of "Players" where each player is keyed by last name. An example property path to a specific player on the second team is: "Teams\[1\].Players\[Smith\]". (You use 1 to indicate the second item in "Teams" because the list is zero-indexed.)
 
-**Remarque** La prise en charge de l’indexation pour les sources de données C++ est limitée ; voir [Présentation détaillée de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt210946).
+**Note**  Indexing support for C++ data sources is limited; see [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
-### Propriétés jointes
+### Attached properties
 
-Les chemins de propriété peuvent inclure des références à des propriétés jointes. Comme le nom permettant d’identifier une propriété jointe comprend déjà un point, vous devez mettre entre parenthèses le nom de la propriété jointe afin que le point ne soit pas considéré comme une étape de propriété d’objet. Par exemple, la chaîne qui permet de spécifier l’utilisation de [**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/hh759773) en tant que chemin de liaison est « (Canvas.ZIndex) ». Pour plus d’informations sur les propriétés jointes, voir [Vue d’ensemble des propriétés jointes](attached-properties-overview.md).
+Property paths can include references to attached properties. Because the identifying name of an attached property already includes a dot, you must enclose any attached property name within parentheses so that the dot isn't treated as an object-property step. For example, the string to specify that you want to use [**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/hh759773) as a binding path is "(Canvas.ZIndex)". For more info on attached properties see [Attached properties overview](attached-properties-overview.md).
 
-### Combinaison d’éléments de la syntaxe du chemin de propriété
+### Combining property path syntax
 
-Vous pouvez combiner divers éléments de la syntaxe du chemin de propriété en une seule chaîne. Par exemple, vous pouvez définir un chemin de propriété qui fait référence à une propriété jointe indexée, si votre source de données contient une telle propriété.
+You can combine various elements of property path syntax in a single string. For example, you can define a property path that references an indexed attached property, if your data source had such a property.
 
-### Débogage d’un chemin de propriété de liaison
+### Debugging a binding property path
 
-Comme un chemin de propriété est interprété par un moteur de liaison et qu’il s’appuie sur des informations présentes uniquement au moment de l’exécution, vous devez souvent déboguer un chemin de propriété de liaison sans pouvoir compter sur la prise en charge classique au moment du design ou au moment de la compilation dans les outils de développement. Bien souvent, l’échec de la résolution d’un chemin de propriété se traduit au moment de l’exécution par une valeur vide et l’absence d’erreurs, car il s’agit du comportement de secours défini volontairement pour la résolution de la liaison. Heureusement, Microsoft Visual Studio fournit un mode de sortie du débogage qui peut isoler la partie d’un chemin de propriété spécifiant une source de liaison dont la résolution a échoué. Pour plus d’informations sur l’utilisation de cette fonctionnalité d’outil de développement, voir la section « Débogage » de la rubrique [Présentation détaillée de la liaison de données](../data-binding/data-binding-in-depth.md#debugging).
+Because a property path is interpreted by a binding engine and relies on info that may be present only at run-time, you must often debug a property path for binding without being able to rely on conventional design-time or compile-time support in the development tools. In many cases the run-time result of failing to resolve a property path is a blank value with no error, because that is the by-design fallback behavior of binding resolution. Fortunately, Microsoft Visual Studio provides a debug output mode that can isolate which part of a property path that's specifying a binding source failed to resolve. For more info on using this development tool feature, see ["Debugging" section of Data binding in depth](../data-binding/data-binding-in-depth.md#debugging).
 
-## Chemin de propriété pour le ciblage d’animation
+## Property path for animation targeting
 
-Une animation s’appuie sur le ciblage d’une propriété de dépendance où des valeurs de table de montage séquentiel sont appliquées durant l’animation. Pour identifier l’objet dans lequel une propriété d’animation existe, l’animation cible un élément par son nom ([attribut x:Name](x-name-attribute.md)). Il est souvent nécessaire de définir un chemin de propriété qui commence par l’objet identifié en tant que [**Storyboard.TargetName**](https://msdn.microsoft.com/library/windows/apps/hh759823) et se termine par la valeur de propriété de dépendance particulière à laquelle l’animation doit s’appliquer. Ce chemin de propriété est utilisé en tant que valeur de [**Storyboard.TargetProperty**](https://msdn.microsoft.com/library/windows/apps/hh759824).
+Animations rely on targeting a dependency property where storyboarded values are applied when the animation runs. To identify the object where the property to be animated exists, the animation targets an element by name ([x:Name attribute](x-name-attribute.md)). It is often necessary to define a property path that starts with the object identified as the [**Storyboard.TargetName**](https://msdn.microsoft.com/library/windows/apps/hh759823), and ends with the particular dependency property value where the animation should apply. That property path is used as the value for [**Storyboard.TargetProperty**](https://msdn.microsoft.com/library/windows/apps/hh759824).
 
-Pour plus d’informations sur la définition d’animations en XAML, voir [Animations dans une table de montage séquentiel](https://msdn.microsoft.com/library/windows/apps/mt187354).
+For more info on the how to define animations in XAML, see [Storyboarded animations](https://msdn.microsoft.com/library/windows/apps/mt187354).
 
-## Ciblage simple
+## Simple targeting
 
-Si vous animez une propriété qui existe sur l’objet ciblé lui-même et si une animation peut être appliquée directement au type de cette propriété (au lieu d’une sous-propriété de la valeur d’une propriété), il vous suffit de nommer la propriété animée sans qualification supplémentaire. Par exemple, si vous ciblez une sous-classe de [**Shape**](https://msdn.microsoft.com/library/windows/apps/br243377) telle que [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371), et si vous appliquez un [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) animé à la propriété [**Fill**](https://msdn.microsoft.com/library/windows/apps/br243378), votre chemin de propriété peut être « Fill ».
+If you are animating a property that exists on the targeted object itself, and that property's type can have an animation applied directly to it (rather than to a sub-property of a property's value) then you can simply name the property being animated without any further qualification. For example, if you are targeting a [**Shape**](https://msdn.microsoft.com/library/windows/apps/br243377) subclass such as [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371), and you are applying an animated [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) to the [**Fill**](https://msdn.microsoft.com/library/windows/apps/br243378) property, your property path can be "Fill".
 
-## Ciblage de propriété indirect
+## Indirect property targeting
 
-Vous pouvez animer une propriété qui représente une sous-propriété de l’objet cible. En d’autres termes, s’il existe une propriété de l’objet cible qui est un objet lui-même et si cet objet a des propriétés, vous devez définir un chemin de propriété qui explique comment exécuter le code pas à pas de cette relation de propriété d’objet. Chaque fois que vous spécifiez un objet pour lequel vous souhaitez animer une sous-propriété, mettez entre parenthèses le nom de la propriété et spécifiez cette dernière en respectant le format *typename*.*propertyname*. Par exemple, pour spécifier la valeur d’objet de la propriété [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/br208980) d’un objet cible, spécifiez « (UIElement.RenderTransform) » en tant que première étape du chemin de propriété. Il ne s’agit pas d’un chemin d’accès complet, car aucune animation ne peut s’appliquer directement à une valeur [**Transform**](https://msdn.microsoft.com/library/windows/apps/br243006). Par conséquent, pour cet exemple, vous complétez à présent le chemin de propriété afin que la propriété de fin soit une propriété de la sous-classe **Transform** pouvant être animée par une valeur **Double** : « (UIElement.RenderTransform).(CompositeTransform.TranslateX) »
+You can animate a property that is a sub-property of the target object. In other words, if there's a property of the target object that's an object itself, and that object has properties, you must define a property path that explains how to step through that object-property relationship. Whenever you are specifying an object where you want to animate a sub-property, you enclose the property name in parentheses, and you specify the property in *typename*.*propertyname* format. For example, to specify that you want the object value of a target object's [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/br208980) property, you specify "(UIElement.RenderTransform)" as the first step in the property path. This isn't yet a complete path, because there are no animations that can apply to a [**Transform**](https://msdn.microsoft.com/library/windows/apps/br243006) value directly. So for this example, you now complete the property path so that the end property is a property of a **Transform** subclass that can be animated by a **Double** value: "(UIElement.RenderTransform).(CompositeTransform.TranslateX)"
 
-## Spécification d’un enfant particulier dans une collection
+## Specifying a particular child in a collection
 
-Pour spécifier un élément enfant dans une propriété de collection, vous pouvez utiliser un indexeur numérique. Utilisez des crochets «\[\]» autour de la valeur d’index de l’entier. Vous ne pouvez référencer que des listes ordonnées, pas des dictionnaires. Dans la mesure où une collection n’est pas une valeur qui peut être animée, l’utilisation d’un indexeur ne peut jamais représenter la propriété de fin d’un chemin de propriété.
+To specify a child item in a collection property, you can use a numeric indexer. Use square brackets "\[\]" characters around the integer index value. You can reference only ordered lists, not dictionaries. Because a collection isn't a value that can be animated, an indexer usage can never be the end property in a property path.
 
-Par exemple, pour indiquer que vous voulez animer la première couleur d’interruption de couleur dans un [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/br210108) appliqué à la propriété [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395) d’un contrôle, voici le chemin de propriété correspondant : « (Control.Background).(GradientBrush.GradientStops)\[0\].(GradientStop.Color) ». Notez que l’indexeur n’est pas la dernière étape du chemin d’accès et que la dernière étape, en particulier, doit faire référence à la propriété [**GradientStop.Color**](https://msdn.microsoft.com/library/windows/apps/br210094) de l’élément 0 de la collection pour lui appliquer une valeur animée [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723).
+For example, to specify that you want to animate the first color stop color in a [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/br210108) that is applied to a control's [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395) property, this is the property path: "(Control.Background).(GradientBrush.GradientStops)\[0\].(GradientStop.Color)". Note how the indexer is not the last step in the path, and that the last step particularly must reference the [**GradientStop.Color**](https://msdn.microsoft.com/library/windows/apps/br210094) property of item 0 in the collection to apply a [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) animated value to it.
 
-## Animation d’une propriété jointe
+## Animating an attached property
 
-Il ne s’agit pas d’un scénario répandu. Toutefois, il est possible d’animer une propriété jointe, du moment que cette dernière possède une valeur de propriété qui correspond à un type d’animation. Comme le nom permettant d’identifier une propriété jointe comprend déjà un point, vous devez mettre entre parenthèses le nom de la propriété jointe afin que le point ne soit pas considéré comme une étape de propriété d’objet. Par exemple, pour spécifier l’animation de la propriété jointe [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795) d’un objet, utilisez le chemin de propriété « (Grid.Row) ».
+It isn't a common scenario, but it is possible to animate an attached property, so long as that attached property has a property value that matches an animation type. Because the identifying name of an attached property already includes a dot, you must enclose any attached property name within parentheses so that the dot isn't treated as an object-property step. For example, the string to specify that you want to animate the [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795) attached property on an object, use the property path "(Grid.Row)".
 
-**Remarque** Pour cet exemple, la valeur de [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795) correspond au type de propriété **Int32**. Par conséquent, vous ne pouvez pas l’animer avec une animation **Double**. À la place, définissez un [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320) qui a des composants [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/br243132), où [**ObjectKeyFrame.Value**](https://msdn.microsoft.com/library/windows/apps/br210344) a la valeur d’un entier tel que « 0 » ou « 1 ».
+**Note**  For this example, the value of [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795) is an **Int32** property type. so you can't animate it with a **Double** animation. Instead, you'd define an [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320) that has [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/br243132) components, where the [**ObjectKeyFrame.Value**](https://msdn.microsoft.com/library/windows/apps/br210344) is set to an integer such as "0" or "1".
 
-## Règles des propriétés dans un chemin de propriété de ciblage d’animation
+## Rules for the properties in an animation targeting property path
 
--   Le point de départ supposé du chemin de propriété est l’objet identifié par [**Storyboard.TargetName**](https://msdn.microsoft.com/library/windows/apps/hh759823).
--   Tous les objets et propriétés référencés dans le chemin de propriété doivent être publics.
--   La propriété de fin (dernière propriété nommée dans le chemin d’accès) doit être publique, être accessible en lecture/écriture et représenter une propriété de dépendance.
--   La propriété de fin doit avoir un type de propriété pouvant être animé par l’une des classes générales des types d’animation (animations [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723), animations **Double**, animations [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870), [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320)).
+-   The assumed starting point of the property path is the object identified by a [**Storyboard.TargetName**](https://msdn.microsoft.com/library/windows/apps/hh759823).
+-   All objects and properties referenced along the property path must be public.
+-   The end property (the property that is the last named property in the path) must be public, be read-write, and be a dependency property.
+-   The end property must have a property type that is able to be animated by one of the broad classes of animation types ([**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) animations, **Double** animations, [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) animations, [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320)).
 
-## Classe PropertyPath
+## The PropertyPath class
 
-La classe [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) est le type de propriété sous-jacent de [**Binding.Path**](https://msdn.microsoft.com/library/windows/apps/br209830) pour le scénario de liaison.
+The [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) class is the underlying property type of [**Binding.Path**](https://msdn.microsoft.com/library/windows/apps/br209830) for the binding scenario.
 
-La plupart du temps, vous pouvez appliquer [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) en XAML, sans recourir à la moindre ligne de code. Mais dans certains cas, vous pouvez être amené à définir un objet **PropertyPath** avec du code et l’affecter à une propriété au moment de l’exécution.
+Most of the time, you can apply a [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) in XAML without using any code at all. But in some cases you may want to define a **PropertyPath** object using code and assign it to a property at run-time.
 
-[**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) a un constructeur [**PropertyPath(String)**](https://msdn.microsoft.com/library/windows/apps/br244261) et n’a pas de constructeur par défaut. La chaîne que vous passez à ce constructeur est une chaîne définie à l’aide de la syntaxe du chemin de propriété, comme nous l’avons expliqué précédemment. Vous utilisez également la même chaîne pour affecter [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) en tant qu’attribut XAML. La seule autre API de la classe **PropertyPath** est la propriété [**Path**](https://msdn.microsoft.com/library/windows/apps/br244260), qui est accessible en lecture seule. Vous pouvez utiliser cette propriété comme chaîne de construction pour une autre instance de **PropertyPath**.
+[**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) has a [**PropertyPath(String)**](https://msdn.microsoft.com/library/windows/apps/br244261) constructor, and doesn't have a default constructor. The string you pass to this constructor is a string that's defined using the property path syntax as we explained earlier. This is also the same string you'd use to assign [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) as a XAML attribute. The only other API of the **PropertyPath** class is the [**Path**](https://msdn.microsoft.com/library/windows/apps/br244260) property, which is read-only. You could use this property as the construction string for another **PropertyPath** instance.
 
-## Rubriques connexes
+## Related topics
 
-* [Présentation détaillée de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt210946)
-* [Animations dans une table de montage séquentiel](https://msdn.microsoft.com/library/windows/apps/mt187354)
-* [Extension de balisage {Binding}](binding-markup-extension.md)
+* [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946)
+* [Storyboarded animations](https://msdn.microsoft.com/library/windows/apps/mt187354)
+* [{Binding} markup extension](binding-markup-extension.md)
 * [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259)
-* [**Liaison**](https://msdn.microsoft.com/library/windows/apps/br209820)
-* [**Constructeur de liaison**](https://msdn.microsoft.com/library/windows/apps/br209825)
+* [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820)
+* [**Binding constructor**](https://msdn.microsoft.com/library/windows/apps/br209825)
 * [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713)
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,36 +1,36 @@
 ---
 author: mtoepke
-title: "Définir l’infrastructure d’application de plateforme Windows universelle (UWP) du jeu"
-description: "La première partie du codage d’un jeu de plateforme Windows universelle (UWP) avec DirectX consiste à créer l’infrastructure qui permet à l’objet jeu d’interagir avec Windows."
+title: Define the game's Universal Windows Platform (UWP) app framework
+description: The first part of coding a Universal Windows Platform (UWP) with DirectX game is building the framework that lets the game object interact with Windows.
 ms.assetid: 7beac1eb-ba3d-e15c-44a1-da2f5a79bb3b
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 2ebc7bca06454f78ab375058e49f012cacb00cc8
+ms.openlocfilehash: 9dea19c87c4049c73a938b1cd5576644f7b0f8b9
 
 ---
 
-#  Définir l’infrastructure d’application de plateforme Windows universelle (UWP) du jeu
+#  Define the game's Universal Windows Platform (UWP) app framework
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-La première partie du codage d’un jeu de plateforme Windows universelle (UWP) avec DirectX consiste à créer l’infrastructure qui permet à l’objet jeu d’interagir avec Windows. Cela inclut des propriétés Windows Runtime telles que la gestion des événements de pause/reprise, la sélection de fenêtre et l’ancrage, ainsi que les événements, interactions et transitions pour l’interface utilisateur. Nous passons en revue la façon dont l’exemple de jeu est structuré et la façon dont il définit la machine à états principale pour l’interaction du joueur avec le système.
+The first part of coding a Universal Windows Platform (UWP) with DirectX game is building the framework that lets the game object interact with Windows. This includes Windows Runtime properties like suspend/resume event handling, window focus, and snapping, plus as the events, interactions and transitions for the user interface. We go over how the sample game is structured, and how it defines the high-level state machine for the player and system interaction.
 
-## Objectif
-
-
--   Pour configurer l’infrastructure pour un jeu UWP DirectX et implémenter la machine à états qui définit le flux global du jeu.
-
-## Initialisation et démarrage du fournisseur de vues
+## Objective
 
 
-Dans tout jeu UWP DirectX, vous devez obtenir un fournisseur de vues que le singleton de l’application, l’objet Windows Runtime qui définit une instance de votre application en cours d’exécution, peut utiliser pour accéder aux ressources graphiques nécessaires. Windows Runtime permet à votre application d’avoir une connexion directe à l’interface graphique, mais vous devez spécifier les ressources nécessaires et la façon de les gérer.
+-   To set up the framework for a UWP DirectX game, and implement the state machine that defines the overall game flow.
 
-Comme nous l’avons indiqué dans [Configuration du projet de jeu](tutorial--setting-up-the-games-infrastructure.md), Microsoft VisualStudio2015 fournit une implémentation d’un convertisseur de base pour DirectX dans le fichier **Sample3DSceneRenderer.cpp**, qui est disponible quand vous sélectionnez le modèle **Application DirectX11 (Windows universel)**.
+## Initializing and starting the view provider
 
-Pour plus d’informations sur la compréhension et la création d’un fournisseur de vues et d’un convertisseur, voir [Configuration de votre UWP avec C++ et DirectX pour afficher une vue DirectX](https://msdn.microsoft.com/library/windows/apps/hh465077).
 
-Inutile de préciser que vous devez fournir l’implémentation de 5méthodes que le singleton de l’application appelle:
+In any UWP DirectX game, you must obtain a view provider that the app singleton, the Windows Runtime object that defines an instance of your running app, can use to access the graphics resources it needs. Through the Windows Runtime, your app has a direct connection with the graphics interface, but you need to specify the resources you need and how to handle them.
+
+As we discussed in [Setting up the game project](tutorial--setting-up-the-games-infrastructure.md), Microsoft Visual Studio 2015 provides an implementation of a basic renderer for DirectX in the **Sample3DSceneRenderer.cpp** file that is available when you pick the **DirectX 11 App (Universal Windows)** template.
+
+For more details about understanding and creating a view provider and renderer, see [How to set up your UWP with C++ and DirectX to display a DirectX view](https://msdn.microsoft.com/library/windows/apps/hh465077).
+
+Suffice to say, you must provide the implementation for 5 methods that the app singleton calls:
 
 -   [**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495)
 -   [**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509)
@@ -38,9 +38,9 @@ Inutile de préciser que vous devez fournir l’implémentation de 5méthodes qu
 -   [**Run**](https://msdn.microsoft.com/library/windows/apps/hh700505)
 -   [**Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523)
 
-Dans le modèle Application DirectX11 (Windows universel), ces 5méthodes sont définies sur l’objet **App** dans [App.h](#code_sample). Examinons la façon dont elles sont implémentées dans ce jeu.
+In the DirectX11 App (Universal Windows) template, these 5 methods are defined on the **App** object in [App.h](#code_sample). Let's take a look at the way they are implemented in this game.
 
-Méthode Initialize du fournisseur de vues
+The Initialize method of the view provider
 
 ```cpp
 void App::Initialize(
@@ -62,13 +62,13 @@ void App::Initialize(
 }
 ```
 
-Le singleton de l’application commence par appeler **Initialize**. Par conséquent, cette méthode doit gérer les comportements les plus fondamentaux d’un jeu UWP, comme la gestion de l’activation de la fenêtre principale et l’assurance que ce jeu peut gérer un événement de pause subite (et une possible reprise par la suite).
+The app singleton first calls **Initialize**. Therefore, it is crucial that this method handles the most fundamental behaviors of a UWP game, such as handling the activation of the main window and making sure that the game can handle a sudden suspend (and a possible later resume) event.
 
-Lorsque l’application de jeu est initialisée, elle alloue une mémoire spécifique pour le contrôleur afin de permettre au joueur de commencer à entrer des données. Elle crée aussi des nouvelles instances de rendu du jeu et de la machine à états à initialiser. Nous abordons les détails dans [Définition de l’objet jeu principal](tutorial--defining-the-main-game-loop.md).
+When the game app is initialized, it allocates specific memory for the controller to allow the player to begin providing input. It also creates new, uninitialized instances of the game's renderer and state machine. We discuss the details in [Defining the main game object](tutorial--defining-the-main-game-loop.md).
 
-À ce stade, l’application de jeu peut gérer un message de pause (ou de reprise), et la mémoire a été allouée pour le contrôleur, le convertisseur et le jeu lui-même. Cependant, il n’existe aucune fenêtre à utiliser et le jeu n’est pas initialisé. Quelques éléments supplémentaires sont nécessaires !
+At this point, the game app can handle a suspend (or resume) message, and has memory allocated for the controller, the renderer, and the game itself. But there's no window to work with, and the game is uninitialized. There's a few more things that need to happen!
 
-Méthode SetWindow du fournisseur de vues
+The SetWindow method of the view provider
 
 ```cpp
 void App::SetWindow(
@@ -106,15 +106,15 @@ void App::SetWindow(
 }
 ```
 
-À présent, avec un appel à une implémentation de [**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509), le singleton de l’application fournit un objet [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) qui représente la fenêtre principale du jeu et met ses ressources et événements à la disposition du jeu. Avec l’existence d’une fenêtre à utiliser, le jeu peut maintenant commencer à ajouter à l’interface utilisateur de base des composants et événements : un pointeur (utilisé à la fois par les contrôles tactiles et de souris) et les événements de base pour le redimensionnement de fenêtre, la fermeture et les modifications PPP (si le périphérique d’affichage change).
+Now, with a call to an implementation of [**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509), the app singleton provides a [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) object that represents the game's main window, and makes its resources and events available to the game. Because there's a window to work with, the game can now start adding in the basic user interface components and events: a pointer (used by both mouse and touch controls), and the basic events for window resizing, closing, and DPI changes (if the display device changes).
 
-L’application de jeu initialise également le contrôleur, car il existe une fenêtre avec laquelle interagir, ainsi que l’objet jeu lui-même. Elle peut lire les entrées du contrôleur (écran tactile, souris ou manette Xbox 360).
+The game app also initializes the controller, because there's a window to interact with, and initializes the game object itself. It can read input from the controller (touch, mouse, or XBox 360 controller).
 
-Une fois le contrôleur initialisé, l’application définit deux zones rectangulaires dans les coins inférieurs droit et gauche de l’écran pour les contrôles tactiles de déplacement et de la caméra, respectivement. Le joueur utilise le rectangle inférieur gauche, défini par l’appel de la méthode **SetMoveRect**, comme un pavé de contrôle virtuel pour déplacer la caméra vers l’avant et l’arrière, ou vers la gauche et la droite. Le rectangle inférieur droit, défini par la méthode **SetFireRect**, sert de bouton virtuel pour tirer des munitions.
+After the controller is initialized, the app defines two rectangular areas in the lower-left and lower-right corners of the screen for the move and camera touch controls, respectively. The player uses the lower-left rectangle, defined by the call to **SetMoveRect**, as a virtual control pad for moving the camera forward and backward, and side to side. The lower-right rectangle, defined by the **SetFireRect** method, is used as a virtual button to fire the ammo.
 
-Tout commence à se mettre en place.
+It's all starting to come together.
 
-Méthode Load du fournisseur de vues
+The Load method of the view provider
 
 ```cpp
 void App::Load(
@@ -158,23 +158,23 @@ void App::Load(
 }
 ```
 
-Une fois la fenêtre principale définie, le singleton de l’application appelle **Load**. Dans l’exemple, cette méthode utilise un ensemble de tâches asynchrones (dont la syntaxe est définie dans la [Bibliothèque de modèles parallèles](https://msdn.microsoft.com/library/windows/apps/dd492418.aspx)) pour créer les objets jeu, charger les ressources graphiques et initialiser la machine à états du jeu. Avec le modèle de tâche asynchrone, la méthode Load finit rapidement et permet à l’application de commencer à traiter les entrées. Dans cette méthode, l’application affiche aussi une barre de progression au fil du chargement des fichiers de ressources.
+After the main window is set, the app singleton calls **Load**. In the sample, this method uses a set of asynchronous tasks (the syntax for which is defined in the [Parallel Patterns Library](https://msdn.microsoft.com/library/windows/apps/dd492418.aspx)) to create the game objects, load graphics resources, and initialize the game’s state machine. By using the async task pattern, the Load method completes quickly and allows the app to start processing input. In this method, the app also displays a progress bar as the resource files load.
 
-Nous scindons le chargement des ressources en deux étapes, car l’accès au contexte de périphérique Direct3D11 est limité au thread sur lequel le contexte de périphérique a été créé, tandis que l’accès au périphérique Direct3D11 pour la création d’objet est dépourvu de thread. La tâche **CreateGameDeviceResourcesAsync** s’exécute sur un thread séparé à partir de la tâche de fin (*FinalizeCreateGameDeviceResources*), qui s’exécute sur le thread original. Nous utilisons un modèle semblable pour charger les ressources de niveau avec **LoadLevelAsync** et **FinalizeLoadLevel**.
+We break resource loading into two separate stages, because access to the Direct3D 11 device context is restricted to the thread the device context was created on, while access to the Direct3D 11 device for object creation is free-threaded. The **CreateGameDeviceResourcesAsync** task runs on a separate thread from the completion task (*FinalizeCreateGameDeviceResources*), which runs on the original thread. We use a similar pattern for loading level resources with **LoadLevelAsync** and **FinalizeLoadLevel**.
 
-Une fois les objets jeu créés et les ressources graphiques chargées, nous initialisons la machine à états du jeu avec les conditions de départ (par exemple: réglage du nombre de munitions, du nombre de niveaux et des positions des objets initiaux). Si l’état du jeu indique que le joueur reprend une partie, nous chargeons le niveau en cours (niveau du joueur lorsqu’il a interrompu la partie).
+After we create the game’s objects and load the graphics resources, we initialize the game's state machine to the starting conditions (for example: setting the initial ammo count, level number, and object positions). If the game state indicates that the player is resuming a game, we load the current level (the level that player was on when the game was suspended).
 
-Dans la méthode **Load**, nous effectuons toutes les préparations nécessaires avant le début du jeu, comme la définition des états de départ ou des valeurs globales. Si vous voulez commencer par récupérer des données ou des composants du jeu, faites-le ici, plutôt que dans **SetWindow** ou **Initialize**. Utilisez des tâches asynchrones dans votre jeu pour tout chargement, car Windows impose des restrictions sur le temps que peut prendre le jeu avant de commencer à traiter les entrées. Si le chargement dure un certain temps (en cas de nombreuses ressources), fournissez à vos utilisateurs une barre de progression régulièrement mise à jour.
+In the **Load** method, we do any necessary preparations before the game begins, like setting any starting states or global values. If you want to pre-fetch game data or assets, this is a better place for it rather than in **SetWindow** or **Initialize**. Use async tasks in your game for any loading as Windows imposes restrictions on the time your game can take before it must start processing input. If loading takes awhile—if there are lots of resources — then provide your users with a regularly updated progress bar.
 
-Lors du développement de votre propre jeu, concevez votre code de démarrage autour de ces méthodes. Voici une liste de suggestions de base pour chaque méthode:
+When developing your own game, design your startup code around these methods. Here's a simple list of basic suggestions for each method:
 
--   Utilisez **Initialize** pour allouer vos classes principales et connecter les gestionnaires d’événements de base.
--   Utilisez **SetWindow** pour créer votre fenêtre d’application principale et connecter tous les événements propres à la fenêtre.
--   Utilisez **Load** pour gérer tout le reste de l’installation, notamment pour commencer la création asynchrone d’objets et le chargement des ressources. Si vous devez créer des données ou fichiers temporaires, par exemple des composants générés par procédure, faites-le ici.
+-   Use **Initialize** to allocate your main classes and connect up the basic event handlers.
+-   Use **SetWindow** to create your main window and connect any window-specific events.
+-   Use **Load** to handle any remaining setup, and to initiate the async creation of objects and loading of resources. If you need to create any temporary files or data, such as procedurally generated assets, do it here too.
 
-Ainsi, l’exemple de jeu crée une instance de la machine à états du jeu et lui affecte la configuration de mise en marche. Il gère l’ensemble des événements système et d’entrée. Il fournit une fenêtre dans laquelle afficher le contenu. Le code du jeu est maintenant prêt à être exécuté.
+So, the sample game creates an instance of the game's state machine and sets it to the starting configuration. It handles all the system and input events. It provides a window to display content in. The gameplay code is now ready to run.
 
-Méthode Run du fournisseur de vues
+The Run method of the view provider
 
 ```cpp
 void App::Run()
@@ -210,22 +210,22 @@ void App::Run()
 }
 ```
 
-Nous arrivons ici à la partie jeu de l’application de jeu. Après avoir exécuté les 3méthodes et préparé le terrain, l’application de jeu exécute la méthode **Run**, il est temps de s’amuser!
+Here's where we get to the play part of the game app. Having run the 3 methods and set the stage, the game app runs the **Run** method, starting the fun!
 
-Dans l’exemple de jeu, nous démarrons une boucle while qui se termine lorsque le joueur ferme la fenêtre du jeu. L’exemple de code passe dans l’un des deux états de la machine à états du moteur de jeu :
+In the game sample, we start a while loop that terminates when the player closes the game window. The sample code transitions to one of two states in the game engine state machine:
 
--   La fenêtre de jeu est désactivée (perd le focus) ou ancrée. Lorsque cette situation se produit, le jeu interrompt le traitement des événements et attend que la fenêtre ait de nouveau le focus ou ne soit plus ancrée.
--   Sinon, le jeu met à jour son propre état et restitue le graphique pour affichage.
+-   The game window gets deactivated (loses focus) or snapped. When this happens, the game suspends event processing and waits for the window to focus or unsnap.
+-   Otherwise, the game updates its own state and renders the graphics for display.
 
-Lorsque votre jeu a le focus, vous devez gérer chaque événement qui arrive dans la file d’attente de messages, et vous devez donc appeler [**CoreWindowDispatch.ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) avec l’option **ProcessAllIfPresent**. D’autres options peuvent provoquer des retards dans le traitement des événements de message, ce qui donne la sensation que votre jeu ne répond pas ou que les comportements tactiles sont au ralenti au lieu d’être réactifs.
+When your game has focus, you must handle every event in the message queue as it arrives, and so you must call [**CoreWindowDispatch.ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) with the **ProcessAllIfPresent** option. Other options can cause delays in processing message events, which makes your game feel unresponsive, or result in touch behaviors that feel sluggish and not "sticky".
 
-Bien entendu, lorsque l’application est invisible, suspendue ou ancrée, nous ne voulons pas qu’elle utilise des ressources qui tournent en boucle pour envoyer des messages qui n’arriveront jamais. Votre jeu doit donc utiliser **ProcessOneAndAllPending**, qui opère un blocage tant qu’il ne reçoit pas d‘événement, puis traite cet événement et tous les autres qui arrivent dans la file d’attente de traitement pendant le traitement du premier. [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) est ensuite immédiatement de retour une fois que la file d’attente a été traitée.
+Of course, when the app is not visible, suspended or snapped, we don't want it to consume any resources cycling to dispatch messages that will never arrive. So your game must use **ProcessOneAndAllPending**, which blocks until it gets an event, and then processes that event and any others that arrive in the process queue during the processing of the first. [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) then immediately returns after the queue has been processed.
 
-Le jeu est en cours d’exécution! Les événements qu’il utilise pour basculer entre les états sont distribués et traités. Les graphiques sont mis à jour lorsque la boucle de jeu effectue une itération. Nous espérons que le joueur s’amuse. Mais les bonnes choses ont une fin...
+The game is running! The events that it uses to transition between game states are being dispatched and processed. The graphics are being updated as the game loop cycles. We hope the player is having fun. But eventually, the fun has to end...
 
-...et nous devons procéder au nettoyage. C’est là où **Uninitialize** intervient.
+...and we need to clean up the place. This is where **Uninitialize** comes in.
 
-Méthode Uninitialize du fournisseur de vues
+The Uninitialize method of the view provider
 
 ```cpp
 void App::Uninitialize()
@@ -233,24 +233,24 @@ void App::Uninitialize()
 }
 ```
 
-Dans l’exemple de jeu, nous laissons le singleton de l’application du jeu tout nettoyer une fois le jeu terminé. Dans Windows 10, la fermeture de la fenêtre de l’application ne met pas fin au processus de l’application, mais écrit en revanche l’état du singleton de l’application en mémoire. Si quelque chose de spécial doit se produire lorsque le système doit récupérer cette mémoire, un nettoyage spécifique des ressources, placez le code de ce nettoyage dans cette méthode.
+In the game sample, we let the app singleton for the game clean everything up after the game is terminated. In Windows 10, closing the app window doesn't kill the app's process, but instead writes the state of the app singleton to memory. If anything special must happen when the system must reclaim this memory, any special cleanup of resources, then put the code for that cleanup in this method.
 
-Gardez à l’esprit ces 5 méthodes, car nous y ferons de nouveau référence dans ce didacticiel. Examinons maintenant la structure globale du moteur de jeu ainsi que les machines à états qui le définissent.
+We refer back to these 5 methods in this tutorial, so keep them in mind. Now, let's look at the game engine's overall structure and the state machines that define it.
 
-## Initialisation de l’état du moteur de jeu
+## Initializing the game engine state
 
 
-Dans la mesure où un utilisateur peut reprendre une application de jeu UWP qui est dans un état suspendu à tout moment, l’application peut présenter n’importe quel nombre d’états possibles.
+Because a user can resume a UWP game app from a suspended state at any time, the app can have any number of possible states.
 
-L’exemple de jeu peut présenter l’un des trois états suivants au démarrage :
+The game sample can be in one of the three states when it starts:
 
--   La boucle de jeu était en cours d’exécution et au milieu d’un niveau.
--   La boucle de jeu n’était pas en cours d’exécution car une partie venait de se terminer. (Le meilleur score est défini.)
--   Aucune partie n’a été commencée ou la partie est entre deux niveaux. (Le meilleur score est égal à 0.)
+-   The game loop was running and was in the middle of a level.
+-   The game loop was not running because a game had just been completed. (The high score is set.)
+-   No game has been started, or the game was between levels. (The high score is 0.)
 
-Bien évidemment, dans votre propre jeu, vous pouvez avoir plus ou moins d’états. Encore une fois, gardez à l’esprit que votre jeu Windows Store peut se terminer à tout moment. Par ailleurs, lorsqu’il reprend, le joueur s’attend à ce que le jeu se comporte comme s’il n’avait jamais cessé de jouer.
+Obviously, in your own game, you could have more or fewer states. Again, always be aware that your UWP game can be terminated at any time, and when it resumes, the player expects the game to behave as though they had never stopped playing.
 
-Dans l’exemple de jeu, le flux de code se présente comme suit.
+In the game sample, the code flow looks like this.
 
 ```cpp
 void App::InitializeGameState()
@@ -279,22 +279,22 @@ void App::InitializeGameState()
 }
 ```
 
-L’initialisation ne concerne pas tant le «démarrage à froid» de l’application que le redémarrage de l’application une fois qu’elle s’est terminée. L’exemple de jeu enregistre toujours l’état, ce qui donne l’impression que l’application est toujours en cours d’exécution. L’état suspendu peut se résumer ainsi : le jeu est interrompu, mais les ressources du jeu sont toujours en mémoire. De même, l’événement de reprise indique que l’exemple de jeu reprend là où il a été interrompu ou arrêté. Lorsque l’exemple de jeu redémarre après un arrêt, il démarre normalement, puis détermine le dernier état connu afin que le joueur puisse tout de suite continuer à jouer.
+Initialization is less about cold starting the app, and more about restarting the app after it has been terminated. The sample game always saves state, which gives the appearance that the app is always running. The suspended state is just that: the game play is suspended, but the resources of the game are still in memory. Likewise, the resume event indicates that the sample game is picking up where it was last suspended or terminated. When the sample game restarts after termination, it starts up normally and then determines the last known state so the player can immediately continue playing.
 
-L’organigramme présente les états initiaux et transitions pour le processus d’initialisation de l’exemple de jeu.
+The flowchart lays out the initial states and transitions for the game sample's initialization process.
 
-![Processus d’initialisation et de préparation du jeu avant le démarrage de la boucle principale](images/simple3dgame-appstartup.png)
+![the process for initializing and preparing our game before the main loop starts](images/simple3dgame-appstartup.png)
 
-Selon l’état, différentes options sont présentées au joueur. Si le jeu reprend au milieu d’un niveau, il semble suspendu et la superposition présente une option pour continuer. Si le jeu a repris dans un état où il est terminé, il affiche les meilleurs scores et une option pour jouer une nouvelle partie. Enfin, si le jeu reprend avant le début d’un niveau, la superposition présente une option de démarrage à l’utilisateur.
+Depending on the state, different options are presented to the player. If the game resumes mid-level, it appears as paused, and the overlay presents a continue option. If the game resumed in a state where the game is completed, it displays the high scores and an option to play a new game. Lastly, if the game resumes before a level has started, the overlay presents a start option to the user.
 
-L’exemple de jeu ne fait pas la distinction entre le démarrage à froid du jeu lui-même, autrement dit un jeu lancé pour la première fois sans événement de pause, et le jeu qui reprend après avoir été interrompu. Il s’agit de la conception appropriée de toute application UWP.
+The game sample doesn't distinguish between the game itself cold starting, that is a game that is launching for the first time without a suspend event, and the game resuming from a suspended state. This is proper design for any UWP app.
 
-## Gestion des événements
+## Handling events
 
 
-Notre exemple de code a inscrit plusieurs gestionnaires pour des événements spécifiques dans **Initialize**, **SetWindow** et **Load**. Vous avez probablement deviné qu’il s’agissait d’événements importants, car l’exemple de code effectuait ce travail bien avant de faire partie de la mécanique de jeu ou du développement graphique. Vous avez raison ! Ces événements sont essentiels à une utilisation appropriée d’une application UWP et, comme une application UWP peut être activée, désactivée, redimensionnée, ancrée, non ancrée, suspendue ou reprise à tout moment, le jeu doit s’inscrire à ces événements précis dès que possible et les gérer de façon à ce que le jeu se déroule en douceur et de manière prévisible pour le joueur.
+Our sample code registered a number of handlers for specific events in **Initialize**, **SetWindow**, and **Load**. You probably guessed that these were important events, because the code sample did this work well before it got into any game mechanics or graphics development. You're right! These events are fundamental to a proper UWP app experience, and because a UWP app can be activated, deactivated, resized, snapped, unsnapped, suspended, or resumed at any time, the game must register for those very events as soon as it can, and handle them in a way that keeps the experience smooth and predictable for the player.
 
-Voici les gestionnaires d’événements de l’exemple et les événements qu’ils gèrent. Le code complet de ces gestionnaires d’événements est disponible dans [Code complet pour cette section](#code_sample)
+Here's the event handlers in the sample, and the events they handle. You can find the full code for these event handlers in [Complete code for this section](#code_sample).
 
 <table>
 <colgroup>
@@ -303,20 +303,20 @@ Voici les gestionnaires d’événements de l’exemple et les événements qu�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Gestionnaire d’événements</th>
+<th align="left">Event handler</th>
 <th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">OnActivated</td>
-<td align="left">Gère [<strong>CoreApplicationView::Activated</strong>](https://msdn.microsoft.com/library/windows/apps/br225018). L’application de jeu ayant été amenée au premier plan, la fenêtre principale est activée.</td>
+<td align="left">Handles [<strong>CoreApplicationView::Activated</strong>](https://msdn.microsoft.com/library/windows/apps/br225018). The game app has been brought to the foreground, so the main window is activated.</td>
 </tr>
 <tr class="even">
 <td align="left">OnLogicalDpiChanged</td>
-<td align="left">Gère [<strong>DisplayProperties::LogicalDpiChanged</strong>](https://msdn.microsoft.com/library/windows/apps/br226150). Les PPP de la fenêtre principale du jeu ont été modifiés, et l’application de jeu règle ses ressources en conséquence.
+<td align="left">Handles [<strong>DisplayProperties::LogicalDpiChanged</strong>](https://msdn.microsoft.com/library/windows/apps/br226150). The DPI for the main game window has changed, and the game app adjusts its resources accordingly.
 <div class="alert">
-<strong>Remarque</strong> Les coordonnées de [<strong>CoreWindow</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404559) sont affichées en DIP (pixels indépendants des appareils), comme dans [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370987). Par conséquent, vous devez indiquer à Direct2D la modification des PPP afin d’afficher correctement les primitives ou composants2D.
+<strong>Note</strong>  [<strong>CoreWindow</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404559) coordinates are in DIPs (Device Independent Pixels), as in [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370987). As a result, you must notify Direct2D of the change in DPI to display any 2D assets or primitives correctly.
 </div>
 <div>
  
@@ -324,49 +324,49 @@ Voici les gestionnaires d’événements de l’exemple et les événements qu�
 </tr>
 <tr class="odd">
 <td align="left">OnResuming</td>
-<td align="left">Gère [<strong>CoreApplication::Resuming</strong>](https://msdn.microsoft.com/library/windows/apps/br205859). L’application de jeu restaure le jeu qui est dans un état suspendu.</td>
+<td align="left">Handles [<strong>CoreApplication::Resuming</strong>](https://msdn.microsoft.com/library/windows/apps/br205859). The game app restores the game from a suspended state.</td>
 </tr>
 <tr class="even">
 <td align="left">OnSuspending</td>
-<td align="left">Gère [<strong>CoreApplication::Suspending</strong>](https://msdn.microsoft.com/library/windows/apps/br205860). L’application de jeu enregistre son état sur disque. Elle dispose de 5 secondes pour enregistrer l’état dans le dispositif de stockage.</td>
+<td align="left">Handles [<strong>CoreApplication::Suspending</strong>](https://msdn.microsoft.com/library/windows/apps/br205860). The game app saves its state to disk. It has 5 seconds to save state to storage.</td>
 </tr>
 <tr class="odd">
 <td align="left">OnVisibilityChanged</td>
-<td align="left">Gère [<strong>CoreWindow::VisibilityChanged</strong>](https://msdn.microsoft.com/library/windows/apps/hh701591). L’application de jeu a modifié la visibilité: elle est devenue soit visible, soit invisible car une autre application est devenue visible.</td>
+<td align="left">Handles [<strong>CoreWindow::VisibilityChanged</strong>](https://msdn.microsoft.com/library/windows/apps/hh701591). The game app has changed visibility, and has either become visible or been made invisible by another app becoming visible.</td>
 </tr>
 <tr class="even">
 <td align="left">OnWindowActivationChanged</td>
-<td align="left">Gère [<strong>CoreWindow::Activated</strong>](https://msdn.microsoft.com/library/windows/apps/br208255). La fenêtre principale de l’application de jeu ayant été activée ou désactivée, elle doit supprimer le focus et interrompre le jeu, ou regagner le focus. Dans les deux cas, la superposition indique que le jeu est suspendu.</td>
+<td align="left">Handles [<strong>CoreWindow::Activated</strong>](https://msdn.microsoft.com/library/windows/apps/br208255). The game app's main window has been deactivated or activated, so it must remove focus and pause the game, or regain focus. In both cases, the overlay indicates that the game is paused.</td>
 </tr>
 <tr class="odd">
 <td align="left">OnWindowClosed</td>
-<td align="left">Gère [<strong>CoreWindow::Closed</strong>](https://msdn.microsoft.com/library/windows/apps/br208261). L’application de jeu ferme la fenêtre principale et suspend le jeu.</td>
+<td align="left">Handles [<strong>CoreWindow::Closed</strong>](https://msdn.microsoft.com/library/windows/apps/br208261). The game app closes the main window and suspends the game.</td>
 </tr>
 <tr class="even">
 <td align="left">OnWindowSizeChanged</td>
-<td align="left">Gère [<strong>CoreWindow::SizeChanged</strong>](https://msdn.microsoft.com/library/windows/apps/br208283). L’application de jeu réaffecte les ressources graphiques et la superposition pour tenir compte de la modification de la taille, puis met à jour la cible de rendu.</td>
+<td align="left">Handles [<strong>CoreWindow::SizeChanged</strong>](https://msdn.microsoft.com/library/windows/apps/br208283). The game app reallocates the graphics resources and overlay to accommodate the size change, and then updates the render target.</td>
 </tr>
 </tbody>
 </table>
 
  
 
-Votre propre jeu doit gérer ces événements, car ils font partie de la conception d’une application UWP.
+Your own game must handle these events, because they are part of UWP app design.
 
-## Mise à jour du moteur de jeu
+## Updating the game engine
 
 
-Dans la boucle de jeu de **Run**, l’exemple a implémenté une machine à états de base pour la gestion de toutes les actions principales que le joueur peut effectuer. Le niveau le plus élevé de cette machine à états traite du chargement d’un jeu, du jeu à un niveau spécifique ou de la poursuite d’un niveau une fois que le jeu a été suspendu (par le système ou le joueur).
+Within the game loop in **Run**, the sample has implemented a basic state machine for handling all the major actions the player can take. The highest level of this state machine deals with loading a game, playing a specific level, or continuing a level after the game has been paused (by the system or the player).
 
-Dans l’exemple de jeu, le jeu peut se trouver dans l’un des 3principaux états suivants (UpdateEngineState):
+In the game sample, there are 3 major states (UpdateEngineState) the game can be in:
 
--   **Waiting for resources**. La boucle de jeu effectue une itération, incapable de procéder à la transition tant que les ressources (en particulier, les ressources graphiques) ne sont pas disponibles. Une fois terminées les tâches asynchrones de chargement des ressources, elle met à jour l’état avec **ResourcesLoaded**. Cette situation se produit généralement entre les niveaux lorsque le niveau a besoin de charger de nouvelles ressources à partir du disque. Dans l’exemple de jeu, nous simulons ce comportement, car l’exemple n’a pas besoin de ressources supplémentaires par niveau à ce stade.
--   **Waiting for press**. La boucle de jeu effectue une itération, en attente d’une entrée utilisateur spécifique. Cette entrée est une action du joueur pour charger un jeu, démarrer un niveau ou continuer de jouer à un niveau. L’exemple de code fait référence à ces sous-états en tant que valeurs d’énumération PressResultState.
--   **Dynamics**. La boucle de jeu est en cours d’exécution et l’utilisateur joue. Pendant que l’utilisateur joue, le jeu recherche 3 conditions de transition : l’expiration du temps défini pour un niveau, la fin d’un niveau par le joueur ou la fin de tous les niveaux par le joueur.
+-   **Waiting for resources**. The game loop is cycling, unable to transition until resources (specifically graphics resources) are available. When the async tasks for loading resources completes, it updates the state to **ResourcesLoaded**. This usually happens between levels when the level needs to load new resources from disk. In the game sample, we simulate this behavior because the sample doesn't need any additional per-level resources at that time.
+-   **Waiting for press**. The game loop is cycling, waiting for specific user input. This input is a player action to load a game, start a level, or continue a level. The sample code refers to these sub-states as PressResultState enumeration values.
+-   **Dynamics**. The game loop is running with the user playing. While the user is playing, the game checks for 3 conditions that it can transition on: the expiration of the set time for a level, the completion of a level by the player, or the completion of all levels by the player.
 
-Voici la structure du code. Le code complet figure dans [Code complet pour cette section](#code_sample).
+Here's the code structure. The complete code is in [Complete code for this section](#code_sample).
 
-Structure de la machine à états utilisée pour mettre à jour le moteur de jeu
+The structure of the state machine used to update the game engine
 
 ```cpp
 void App::Update()
@@ -465,27 +465,27 @@ void App::Update()
 }
 ```
 
-Visuellement, la machine à états principale du jeu se présente comme suit:
+Visually, the main game state machine looks like this:
 
-![Machine à états principale de notre jeu](images/simple3dgame-mainstatemachine.png)
+![the main state machine for our game](images/simple3dgame-mainstatemachine.png)
 
-Nous abordons la logique de jeu en elle-même plus en détail dans [Définir l’objet jeu principal](tutorial--defining-the-main-game-loop.md). Pour le moment, vous devez considérer votre jeu comme une machine à états. Chaque état spécifique doit présenter des critères bien particuliers pour le définir et les transitions d’un état à un autre doivent reposer sur une intervention discrète de l’utilisateur ou des actions système (telles que le chargement de ressources graphiques). Lorsque vous planifiez votre jeu, tracez un diagramme semblable à celui que nous utilisons, en vous assurant que vous traitez toutes les actions possibles que l’utilisateur ou le système peut entreprendre à un haut niveau. Les jeux peuvent être très compliqués et la machine à états est un outil puissant pour visualiser cette complexité et la rendre très facile à gérer.
+We talk about the game logic itself in more detail in [Defining the main game object](tutorial--defining-the-main-game-loop.md). For now, the important takeaway is that your game is a state machine. Each specific state must have very specific criteria to define it, and the transitions from one state to another must be based on discrete user input or system actions (such as graphics resource loading). When you are planning your game, draw out a diagram like the one we use, making sure you address all possible actions the user or system can take at a high level. Games can be very complicated, and the state machine is a powerful tool to visualize this complexity and make it very manageable.
 
-Bien entendu, comme vous le constatez, il existe des machines à états dans les machines à états. Il en existe une pour le contrôleur, qui gère toutes les entrées acceptables que le joueur peut générer. Dans le diagramme, un appui est une forme d’entrée utilisateur. Cette machine à états ne s’y intéresse pas, car elle fonctionne à un niveau supérieur ; elle part du principe que la machine à états du contrôleur gère toutes les transitions qui affectent les comportements de déplacement et de tir, ainsi que les mises à jour de rendu associées. Nous abordons la gestion des états des entrées dans [Ajout de contrôles](tutorial--adding-controls.md).
+Of course, as you saw, there are state machines within state machines. There's one for the controller, that handles all of the acceptable inputs the player can generate. In the diagram, a press is some form of user input. This state machine doesn't care what it is, because it works at a higher level; it assumes that the state machine for the controller will handle any transitions that affect movement and shooting behaviors, and the associated rendering updates. We talk about managing input states in [Adding controls](tutorial--adding-controls.md).
 
-## Mise à jour de l’interface utilisateur
+## Updating the user interface
 
 
-Nous devons tenir le joueur informé de l’état du système et lui permettre de modifier l’état de haut niveau en fonction des règles du jeu. Pour la plupart des jeux, y compris cet exemple de jeu, cela s’effectue avec un affichage à tête haute qui contient des représentations de l’état du jeu, ainsi que d’autres informations spécifiques au jeu, telles que le score, les munitions ou le nombre de chances restantes. C’est ce que nous appelons la superposition, car elle est restituée séparément de la chaîne de transformations graphiques principale et placée au-dessus de la projection 3D. Dans l’exemple de jeu, nous créons cette superposition à l’aide des API Direct2D. Nous pouvons également la créer en utilisant XAML, dont nous parlons dans [Extension de l’exemple de jeu](tutorial-resources.md).
+We need to keep the player apprised of the state of the system, and allow him to change the high-level state according to the rules of the game. For most games, this game sample included, this is done with a heads-up display that contains representations of game state, and other play-specific info such as score, or ammo, or the number of chances remaining. We call this the overlay, because it is rendered separate from the main graphics pipeline and placed on top the 3D projection. In the sample game, we create this overlay using the Direct2D APIs. We can also create this overlay using XAML, which we discuss in [Extending the game sample](tutorial-resources.md).
 
-Il existe deux composants dans l’interface utilisateur :
+There are two components to the user interface:
 
--   L’affichage à tête haute qui contient les scores et informations sur l’état actuel du jeu.
--   La bitmap de pause, qui est un rectangle noir avec un texte superposé lorsque le jeu est dans l’état de pause/suspension. Il s’agit de la superposition du jeu. Nous en parlons plus tard dans [Ajout d’une interface utilisateur](tutorial--adding-a-user-interface.md).
+-   The heads-up display that contains the score and info about the current state of game play.
+-   The pause bitmap, which is a black rectangle with text overlaid during the paused/suspended state of the game. This is the game overlay. We discuss it further in [Adding a user interface](tutorial--adding-a-user-interface.md).
 
-Rien d’étonnant à cela, la superposition a également une machine à états. La superposition peut afficher un message de début de niveau ou de fin de partie. Il s’agit essentiellement d’une zone de dessin destinée à recevoir toute information sur l’état du jeu que nous affichons à l’intention du joueur lorsque le jeu est interrompu ou suspendu.
+Unsurprisingly, the overlay has a state machine too. The overlay can display a level start or game over message. It is essentially a canvas to output any info about game state that we display to the player when the game is paused or suspended.
 
-Voici comment l’exemple de jeu structure la machine à états de la superposition.
+Here's how the game sample structures the overlay's state machine.
 
 ```cpp
 void App::SetGameInfoOverlay(GameInfoOverlayState state)
@@ -521,18 +521,18 @@ void App::SetGameInfoOverlay(GameInfoOverlayState state)
 }
 ```
 
-La superposition peut afficher 6 écrans d’états, selon l’état du jeu lui-même : un écran de chargement des ressources au début du jeu, un écran de jeu, un écran de message de début de niveau, un écran de fin de partie lorsque tous les niveaux sont terminés sans expiration du temps, un écran de fin de partie lorsque le temps est écoulé et un écran de menu de pause.
+There are 6 state screens that the overlay displays, depending on the state of the game itself: a resources loading screen at the start of the game, a game play screen, a level start message screen, a game over screen when all of the levels are competed without time running out, a game over screen when time runs out, and a pause menu screen.
 
-La séparation de l’interface utilisateur de la chaîne de transformations graphiques du jeu vous permet de l’utiliser indépendamment du moteur de rendu graphique du jeu et réduit considérablement la complexité du code du jeu.
+Separating your user interface from your game's graphics pipeline allows you to work on it independent of the game's graphics rendering engine and decreases the complexity of your game's code significantly.
 
-## Étapes suivantes
+## Next steps
 
 
-Nous avons couvert la structure de base de l’exemple de jeu et présenté un modèle adéquat pour le développement d’applications de jeu UWP avec DirectX. Naturellement, nous n’avons pas tout abordé. Nous n’avons parlé que du squelette du jeu. Examinons maintenant de façon détaillée le jeu et sa mécanique, et comment cette mécanique est implémentée en tant qu’objet jeu principal Nous passons en revue cette partie dans [Définition de l’objet jeu principal](tutorial--defining-the-main-game-loop.md).
+This covers the basic structure of the game sample, and presents a good model for UWP game app development with DirectX. Of course, there's more to it than this. We only walked through the skeleton of the game. Now, we take an in-depth look at the game and its mechanics, and how those mechanics are implemented as the core game object. We review that part in [Defining the main game object](tutorial--defining-the-main-game-loop.md).
 
-Il est également temps d’examiner plus en détail le processeur graphique de l’exemple de jeu. Cette partie est abordée dans [Assemblage du pipeline de rendu](tutorial--assembling-the-rendering-pipeline.md).
+It's also time to consider the sample game's graphics engine in greater detail. That part is covered in [Assembling the rendering pipeline](tutorial--assembling-the-rendering-pipeline.md).
 
-## Exemple de code complet pour cette section
+## Complete sample code for this section
 
 
 App.h
@@ -1427,6 +1427,6 @@ int main(Platform::Array<Platform::String^>^)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -5,7 +5,7 @@ title: Effets de perspective 3D pour une interface utilisateur en XAML
 description: "Vous pouvez appliquer des effets 3D au contenu de vos applications Windows Runtime à l’aide de transformations de perspective. Par exemple, vous pouvez donner l’illusion qu’un objet est tourné vers vous ou vers l’arrière, comme illustré ici."
 translationtype: Human Translation
 ms.sourcegitcommit: 54bcd19419f31563f910b705fce8128bca33825b
-ms.openlocfilehash: 4141d23c5102df4970ef7c4fb3659bf3ba561ccf
+ms.openlocfilehash: 543dfb60b1fa70e2fceebbdd03da8a301eb9d08f
 
 ---
 # Effets de perspective 3D pour une interface utilisateur en XAML
@@ -186,6 +186,6 @@ Vous pouvez utiliser les types [**Matrix3DProjection**](https://msdn.microsoft.c
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

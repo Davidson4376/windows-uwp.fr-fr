@@ -1,82 +1,82 @@
 ---
 author: TylerMSFT
-title: "Ajouter un écran de démarrage"
-description: "Définissez l’image et la couleur d’arrière-plan de l’écran de démarrage de votre application à l’aide de Microsoft Visual Studio2015."
+title: Add a splash screen
+description: Set your app's splash screen image and background color using Microsoft Visual Studio 2015.
 ms.assetid: 41F53046-8AB7-4782-9E90-964D744B7D66
 translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: 261b52d1835e992a784aa5fa356230fdd326b8c5
+ms.openlocfilehash: 4d8a00cf7bd151ab97e9abc10a09a3794a0e292f
 
 ---
 
-# Ajouter un écran de démarrage
+# Add a splash screen
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Définissez l’image et la couleur d’arrière-plan de l’écran de démarrage de votre application à l’aide de Microsoft Visual Studio2015.
+Set your app's splash screen image and background color using Microsoft Visual Studio 2015.
 
-## Définir l’image et la couleur d’arrière-plan de l’écran de démarrage dans Visual Studio 2015
+## Set the splash screen image and background color in Visual Studio 2015
 
 
-Quand vous utilisez un modèle Visual Studio 2015 pour créer votre application, une image par défaut est ajoutée à votre projet et définie en tant qu’image de l’écran de démarrage. Par défaut, la couleur d’arrière-plan de votre écran de démarrage est gris clair. Pour modifier l’image ou la couleur par défaut de l’écran de démarrage de votre application, procédez comme suit :
+When you use a Visual Studio 2015 template to create your app, a default image is added to your project and set as the splash screen image. The background color for your splash screen defaults to a light gray. If you want to change the default image or color of your app's splash screen, follow these steps:
 
-1.  Ouvrez votre projet existant d’application de plateforme Windows universelle (UWP) dans Visual Studio2015.
-2.  Dans l’**Explorateur de solutions**, ouvrez le fichier Package.appxmanifest. Vous pouvez également ouvrir ce fichier à partir de la barre de menus en choisissant **Projet**&gt;**Windows Store**&gt;**Modifier le manifeste d’application**.
-3.  Ouvrez l’onglet **Ressources visuelles** et sélectionnez **Écran de démarrage** dans le volet **Tous les composants de l’image** du côté gauche de la fenêtre Package.appxmanifest. Si vous changez votre écran de démarrage pour la première fois, le chemin d’accès Assets\SplashScreen.png s’affiche dans le champ **Écran de démarrage**.
+1.  Open your existing Universal Windows Platform (UWP) app project in Visual Studio 2015.
+2.  From **Solution Explorer**, open the "Package.appxmanifest" file. You can also open this file from the menu bar by choosing **Project** &gt; **Store** &gt; **Edit App Manifest**.
+3.  Open the **Visual Assets** tab and select **Splash Screen** from the **All Image Assets** pane on the left side of the "Package.appxmanifest" window. If you're changing your splash screen for the first time, you'll see the "Assets\\SplashScreen.png" path in the **Splash Screen** field.
 
-    La capture d’écran suivante montre la fenêtre Package.appxmanifest dans Visual Studio2015. Selon le type de projet, l’ensemble des ressources visuelles peut différer légèrement.
+    The following screen shot shows the "Package.appxmanifest" window in Visual Studio 2015. Depending on the type of project, you will see a slightly different set of visual assets.
 
-    ![une capture d’écran de la fenêtre Package.appxmanifest dans Visual Studio2013.](images/appmanifest.png)
+    ![a screen shot of the "package.appxmanifest" window in visual studio 2013](images/appmanifest.png)
 
-    Si vous ouvrez le fichier Package.appxmanifest dans un éditeur de texte, l’élément [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br211467) s’affiche en tant qu’enfant de l’élément [**VisualElements**](https://msdn.microsoft.com/library/windows/apps/br211471). Le balisage de l’écran de démarrage par défaut dans le fichier manifeste ressemble à ceci dans un éditeur de texte:
+    If you open "Package.appxmanifest" in a text editor, the [**SplashScreen element**](https://msdn.microsoft.com/library/windows/apps/br211467) appears as a child of the [**VisualElements element**](https://msdn.microsoft.com/library/windows/apps/br211471). The default splash screen markup in the manifest file looks like this in a text editor:
 
     ```xml
     <uap:SplashScreen Image="Assets\SplashScreen.png" />
     ```
 
-4.  Pour sélectionner une nouvelle image d’écran de démarrage pour une application UWP, appuyez sur le bouton comportant des points de suspension, qui s’affiche à côté de l’étiquette **1240x600px** sous **Composants mis à l’échelle**. Choisissez l’image de 1240x600pixels (.png, .jpg ou .jpeg) que vous voulez utiliser comme image d’écran de démarrage.
+4.  To select a new splash screen image for a UWP app, press the button with an ellipsis that appears next to the **1240 x 600 px** label below **Scaled Assets**. Choose the 1240 x 600 pixel image (.png, .jpg, or .jpeg) you'd like to use for your splash screen image.
 
-    **Important** Vous devez choisir une image de 620x300pixels avec un facteur d’échelle1x. Lorsque vous concevez votre écran de démarrage, notez également qu’il est inférieur à l’écran et centré. Il ne remplit pas l’écran comme l’écran de démarrage d’une application du Windows Phone Store.
-
-     
-
-5.  Pour sélectionner une nouvelle image d’écran de démarrage pour une application du Windows Phone Store, appuyez sur le bouton comportant des points de suspension, qui s’affiche à côté de l’étiquette **1152x1920px** sous **Composants mis à l’échelle**. Choisissez l’image de 1152 x 1920pixels (.png, .jpg ou .jpeg) que vous voulez utiliser comme image d’écran de démarrage.
-
-    **Important** L’image d’écran de démarrage que vous choisissez doit être de 1152x 1920pixels, qui est la taille correcte pour le facteur d’échelle2,4x. Si c’est la seule ressource que vous fournissez, elle sera réduite pour les facteurs d’échelle de 1,4x et 1x.
+    **Important**  The splash screen image you choose must be 620 x 300 pixels using a 1x scaling factor. Also, when designing your splash screen, note that it is smaller than the screen, and centered. It does not fill the screen like a splash screen for a Windows Phone Store app does.
 
      
 
-6.  Dans le champ **Couleur d’arrière-plan** de la section **Écran de démarrage**, définissez la couleur d’arrière-plan affichée avec l’image d’écran de démarrage. Vous pouvez entrer le nom d’une couleur ou ’\#’ et la valeur hexadécimale d’une couleur. Pour obtenir la liste des noms de couleurs disponibles, voir [**Élément SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br211467).
+5.  To select a new splash screen image for a Windows Phone Store app, press the button with an ellipsis that appears next to the **1152 x 1920 px** label below **Scaled Assets**. Choose the 1152 x 1920 pixel image (.png, .jpg, or .jpeg) you'd like to use for your splash screen image.
 
-    La définition d’une couleur d’arrière-plan d’écran de démarrage est facultative. Si vous ne spécifiez pas de couleur pour une application UWP, la couleur d’arrière-plan de l’écran de démarrage est gris clair par défaut (valeur hexadécimale \#464646). Il s’agit de la même couleur que la couleur d’arrière-plan par défaut de la **vignette** (voir le champ **Couleur d’arrière-plan** de la section **Mosaïque et logos** de l’onglet **Ressources visuelles**). Si vous ne spécifiez pas de couleur pour un Windows Phone ou si vous la définissez sur « transparent », la couleur d’arrière-plan de l’écran de démarrage sera transparente.
+    **Important**  The splash screen image you choose must be 1152 x 1920 pixels which is the correct size for a 2.4x scaling factor. If this is the only asset you provide then it will be scaled down for 1.4x and 1x scaling factors.
 
-## Récapitulatif et étapes suivantes
+     
+
+6.  In the **Background Color** field of the **Splash Screen** section, set the background color displayed with your splash screen image. You can enter either the name of a color or '\#' and the hex value of a color. For a list of the names of available colors, see [**SplashScreen element**](https://msdn.microsoft.com/library/windows/apps/br211467).
+
+    Setting a background color for your splash screen is optional. If you don't specify a color for a UWP app, the splash screen background color defaults to a light gray (hex value \#464646). This is the same color as the default **Tile** background color (see the **Background Color** field of the **Tile Images and Logos** section in the **Visual Assets** tab). If you don't specify a color for a Windows Phone, or set it to "transparent", then the splash screen background color will be transparent.
+
+## Summary and next steps
 
 
-Si votre application met un certain temps à se charger, ajoutez un écran de démarrage étendu. Pour obtenir des indications détaillées, voir [Créer un écran de démarrage personnalisé](create-a-customized-splash-screen.md).
+If your app takes a while to load, consider adding an extended splash screen. For step-by-step guidance, seen [Create a customized splash screen](create-a-customized-splash-screen.md).
 
-**Remarque**  
-Cet article s’adresse aux développeurs de Windows10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
-
- 
-
-## Rubriques connexes
-
-* [Créer un écran de démarrage personnalisé](create-a-customized-splash-screen.md)
-
-**Référence**
-
-* [**Référence du schéma de manifeste de package: élément SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br211467)
-* [**Classe Windows.ApplicationModel.Activation.SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763)
+**Note**  
+This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
+## Related topics
+
+* [Create a customized splash screen](create-a-customized-splash-screen.md)
+
+**Reference**
+
+* [**Package manifest schema reference: SplashScreen element**](https://msdn.microsoft.com/library/windows/apps/br211467)
+* [**Windows.ApplicationModel.Activation.SplashScreen class**](https://msdn.microsoft.com/library/windows/apps/br224763)
+
+ 
+
  
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

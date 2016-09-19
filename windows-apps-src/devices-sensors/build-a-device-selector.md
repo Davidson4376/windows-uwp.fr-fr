@@ -1,103 +1,103 @@
 ---
 author: DBirtolo
 ms.assetid: D06AA3F5-CED6-446E-94E8-713D98B13CAA
-title: "Créer un sélecteur d’appareil"
-description: "La création d’un sélecteur d’appareil permet de limiter les appareils que vous parcourez lors de l’énumération de ceux-ci."
+title: Build a device selector
+description: Building a device selector will enable you to limit the devices you are searching through when enumerating devices.
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 67bf2795a7d555dc5cd236eeafb07009511fe5d3
+ms.openlocfilehash: 091767d6f223ce2b4538dafb1c81595015589013
 
 ---
-# Créer un sélecteur d’appareil
+# Build a device selector
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** API importantes **
+** Important APIs **
 
 -   [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459)
 
-La création d’un sélecteur d’appareil permet de limiter les appareils que vous parcourez lors de l’énumération de ceux-ci. Cela vous permet d’obtenir uniquement des résultats pertinents et d’améliorer les performances du système. Dans la plupart des cas, vous obtenez un sélecteur d’appareils à partir d’une pile d’appareils. Par exemple, vous pouvez utiliser [**GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/Dn264015) pour les appareils détectés via sur USB. Ces sélecteurs d’appareils retournent une chaîne AQS (syntaxe de recherche avancée). Si vous ne connaissez pas bien le format AQS, voir [Utilisation de la syntaxe de recherche avancée par programmation](https://msdn.microsoft.com/library/windows/desktop/Bb266512).
+Building a device selector will enable you to limit the devices you are searching through when enumerating devices. This will enable you to only get relevant results and will also improve the performance of the system. In most scenarios you get a device selector from a device stack. For example, you might use [**GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/Dn264015) for devices discovered over USB. These device selectors return an Advanced Query Syntax (AQS) string. If you are not familiar with the AQS format, you can read more at [Using Advanced Query Syntax Programmatically](https://msdn.microsoft.com/library/windows/desktop/Bb266512).
 
-## Création de la chaîne de filtre
+## Building the filter string
 
-Il existe quelques cas où vous devez énumérer des appareils alors qu’aucun sélecteur d’appareils fourni n’est pas disponible pour votre scénario. Un sélecteur d’appareils est une chaîne de filtre AQS qui contient les informations suivantes. Avant de créer une chaîne de filtre, vous devez connaître certains éléments clés d’information sur les appareils que vous souhaitez énumérer.
+There are some cases where you need to enumerate devices and a provided device selector is not available for your scenario. A device selector is an AQS filter string that contains the following information. Before creating a filter string, you need to know some key pieces of information about the devices you want to enumerate.
 
--   Les éléments [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) des appareils qui vous intéressent. Pour plus d’informations sur l’incidence de **DeviceInformationKind** sur la façon d’énumérer les appareils, voir [Énumérer les appareils](enumerate-devices.md) ;
--   la procédure de génération d’une chaîne de filtre AQS, expliquée dans cette rubrique;
--   les propriétés qui vous intéressent ; Les propriétés disponibles dépendent des éléments [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991). Pour plus d’informations, voir [Propriétés d’informations d’appareil](device-information-properties.md).
--   Les protocoles que vous interrogez. Cela est nécessaire uniquement si vous recherchez des appareils sur un réseau sans fil ou filaire. Pour plus d’informations sur cette procédure, voir [Énumérer des appareils sur un réseau](enumerate-devices-over-a-network.md).
+-   The [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) of the devices you are interested in. For more information about how **DeviceInformationKind** impacts enumerating devices, see [Enumerate devices](enumerate-devices.md).
+-   How to build an AQS filter string, which is explained in this topic.
+-   The properties you are interested in. The available properties will depend upon the [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991). See [Device information properties](device-information-properties.md) for more information.
+-   The protocols you are querying over. This is only needed if you are searching for devices over a wireless or wired network. For more information about doing this, see [Enumerate devices over a network](enumerate-devices-over-a-network.md).
 
-Lorsque vous utilisez les API [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459), vous combinez fréquemment le sélecteur d’appareils avec le type d’appareil qui vous intéresse. La liste des types d’appareils disponibles est définie par l’énumération [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991). Cette combinaison de facteurs vous permet de limiter les appareils disponibles à ceux qui vous intéressent. Si vous ne spécifiez pas le **DeviceInformationKind** ou si la méthode que vous utilisez ne fournit pas de paramètre **DeviceInformationKind**, le type par défaut est **DeviceInterface**.
+When using the [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) APIs, you frequently combine the device selector with the device kind that you are interested in. The available list of device kinds is defined by the [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) enumeration. This combination of factors helps you to limit the devices that are available to the ones that you are interested in. If you do not specify the **DeviceInformationKind**, or the method you are using does not provide a **DeviceInformationKind** parameter, the default kind is **DeviceInterface**.
 
-Les API [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) utilisent la syntaxe AQS canonique, mais ne prennent pas en charge tous les opérateurs. Pour obtenir la liste des propriétés disponibles lors de la création de la chaîne de filtre, voir [Propriétés d’informations sur l’appareil](device-information-properties.md).
+The [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) APIs use canonical AQS syntax, but not all of the operators are supported. For a list of properties that are available when you are constructing your filter string, see [Device information properties](device-information-properties.md).
 
-**Attention** Les propriétés personnalisées définies à l’aide du format `{GUID} PID` ne peuvent pas être utilisées lors de la construction de la chaîne de filtre AQS. Cela vient du fait que le type de propriété est dérivé du nom de propriété bien connu.
+**Caution**  Custom properties that are defined using the `{GUID} PID` format cannot be used when constructing your AQS filter string. This is because the property type is derived from the well-known property name.
 
  
 
-Le tableau suivant répertorie les opérateurs AQS et les types de paramètres qu’ils prennent en charge.
+The following table lists the AQS operators and what types of parameters they support.
 
-| Opérateur                       | Types pris en charge                                                             |
+| Operator                       | Supported types                                                             |
 |--------------------------------|-----------------------------------------------------------------------------|
-| **COP\_EQUAL**                 | Chaîne, booléen, GUID, UInt16, UInt32                                       |
-| **COP\_NOTEQUAL**              | Chaîne, booléen, GUID, UInt16, UInt32                                       |
+| **COP\_EQUAL**                 | String, boolean, GUID, UInt16, UInt32                                       |
+| **COP\_NOTEQUAL**              | String, boolean, GUID, UInt16, UInt32                                       |
 | **COP\_LESSTHAN**              | UInt16, UInt32                                                              |
 | **COP\_GREATERTHAN**           | UInt16, UInt32                                                              |
 | **COP\_LESSTHANOREQUAL**       | UInt16, UInt32                                                              |
 | **COP\_GREATERTHANOREQUAL**    | UInt16, UInt32                                                              |
-| **COP\_VALUE\_CONTAINS**       | Chaîne, tableau de chaînes, tableau de booléens, tableau de GUID, tableau d’UInt16, tableau d’UInt32 |
-| **COP\_VALUE\_NOTCONTAINS**    | Chaîne, tableau de chaînes, tableau de booléens, tableau de GUID, tableau d’UInt16, tableau d’UInt32 |
-| **COP\_VALUE\_STARTSWITH**     | Chaîne                                                                      |
-| **COP\_VALUE\_ENDSWITH**       | Chaîne                                                                      |
-| **COP\_DOSWILDCARDS**          | Non pris en charge                                                               |
-| **COP\_WORD\_EQUAL**           | Non pris en charge                                                               |
-| **COP\_WORD\_STARTSWITH**      | Non pris en charge                                                               |
-| **COP\_APPLICATION\_SPECIFIC** | Non pris en charge                                                               |
+| **COP\_VALUE\_CONTAINS**       | String, string array, boolean array, GUID array, UInt16 array, UInt32 array |
+| **COP\_VALUE\_NOTCONTAINS**    | String, string array, boolean array, GUID array, UInt16 array, UInt32 array |
+| **COP\_VALUE\_STARTSWITH**     | String                                                                      |
+| **COP\_VALUE\_ENDSWITH**       | String                                                                      |
+| **COP\_DOSWILDCARDS**          | Not supported                                                               |
+| **COP\_WORD\_EQUAL**           | Not supported                                                               |
+| **COP\_WORD\_STARTSWITH**      | Not supported                                                               |
+| **COP\_APPLICATION\_SPECIFIC** | Not supported                                                               |
 
 
-> **Conseil** Vous pouvez spécifier **NULL** pour **COP\_EQUAL** ou **COP\_NOTEQUAL**. Cela se traduit par une propriété sans valeur ou par le fait que la valeur n’existe pas. Dans AQS, vous spécifiez **NULL** à l’aide de crochets vides \[\].
+> **Tip**  You can specify **NULL** for **COP\_EQUAL** or **COP\_NOTEQUAL**. This translates to a property with no value, or that the value does not exist. In AQS, you specify **NULL** by using empty brackets \[\].
 
-> **Important** Lorsque vous utilisez les opérateurs **COP\_VALUE\_CONTAINS** et **COP\_VALUE\_NOTCONTAINS**, ceux-ci se comportent différemment avec les chaînes et les tableaux de chaînes. Dans le cas d’une chaîne, le système effectue une recherche sans respect de la casse pour voir si l’appareil contient la chaîne indiquée comme sous-chaîne. Dans le cas d’un tableau de chaînes, aucune recherche n’est effectuée dans les sous-chaînes. Avec le tableau de chaînes, une recherche est effectuée pour voir s’il contient la chaîne spécifiée complète. Il n’est pas possible d’effectuer une recherche dans un tableau de chaînes pour voir si les éléments qui le composent contiennent une sous-chaîne.
+> **Important**  When using the **COP\_VALUE\_CONTAINS** and **COP\_VALUE\_NOTCONTAINS** operators, they behave differently with strings and string arrays. In the case of a string, the system will perform a case-insensitive search to see if the device contains the indicated string as a substring. In the case of a string array, substrings are not searched. With the string array, the array is searched to see if it contains the entire specified string. It is not possible to search a string array to see if the elements in the array contain a substring.
 
-Si vous ne pouvez pas créer de chaîne de filtre AQS unique qui parcourt vos résultats de manière appropriée, vous pouvez filtrer les résultats après les avoir reçus. Toutefois, si vous choisissez de procéder ainsi, nous recommandons de limiter les résultats issus de la chaîne de filtre AQS initiale autant que possible lorsque vous la fournissez aux API [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459). Cela permet d’améliorer les performances de votre application.
+If you cannot create a single AQS filter string that will scope your results appropriately, you can filter your results after you receive them. However, if you choose to do this, we recommend limiting the results from your initial AQS filter string as much as possible when you provide it to the [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) APIs. This will help improve the performance of your application.
 
-## Exemples de chaînes AQS
+## AQS string examples
 
-Les exemples suivants montrent comment la syntaxe AQS permet de limiter les appareils que vous souhaitez énumérer. Toutes ces chaînes de filtre sont associées à un [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) pour créer un filtre complet. Si aucun type d’appareil n’est spécifié, n’oubliez pas que le type par défaut est **DeviceInterface**.
+The following examples demonstrate how the AQS syntax can be used to limit the devices you want to enumerate. All of these filter strings are paired up with a [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) to create a complete filter. If no kind is specified, remember that the default kind is **DeviceInterface**.
 
-Lorsque ce filtre est associé à un type de [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) **DeviceInterface**, il énumère tous les objets qui contiennent la classe d’interface de capture audio et qui sont activés. **=** se traduit par **COP\_EQUALS**.
+When this filter is paired with a [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) of **DeviceInterface**, it enumerates all objects that contain the Audio Capture interface class and that are currently enabled. **=** translates to **COP\_EQUALS**.
 
 ``` syntax
 System.Devices.InterfaceClassGuid:="{2eef81be-33fa-4800-9670-1cd474972c3f}" AND 
 System.Devices.InterfaceEnabled:=System.StructuredQueryType.Boolean#True
 ```
 
-Lorsque ce filtre est associé à un type de [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) **Device**, il énumère tous les objets qui ont au moins un id de matériel GenCdRom. **~~** se traduit par **COP\_VALUE\_CONTAINS**.
+When this filter is paired with a [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) of **Device**, it enumerates all objects that have at least one hardware id of GenCdRom. **~~** translates to **COP\_VALUE\_CONTAINS**.
 
 ``` syntax
 System.Devices.HardwareIds:~~"GenCdRom"
 ```
 
-Lorsque ce filtre est associé à un type de [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) **DeviceContainer**, il énumère tous les objets qui ont un nom de modèle contenant la sous-chaîne Microsoft. **~~** se traduit par **COP\_VALUE\_CONTAINS**.
+When this filter is paired with a [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) of **DeviceContainer**, it enumerates all objects that have a model name containing the substring Microsoft. **~~** translates to **COP\_VALUE\_CONTAINS**.
 
 ``` syntax
 System.Devices.ModelName:~~"Microsoft"
 ```
 
-Lorsque ce filtre est associé à un type de [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) **DeviceInterface**, il énumère tous les objets qui ont un nom commençant par la sous-chaîne Microsoft. **~&lt;** se traduit par **COP\_STARTSWITH**.
+When this filter is paired with a [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) of **DeviceInterface**, it enumerates all objects that have a name starting with the substring Microsoft. **~&lt;** translates to **COP\_STARTSWITH**.
 
 ``` syntax
 System.ItemNameDisplay:~<"Microsoft"
 ```
 
-Lorsque ce filtre est associé à un type de [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) **Device**, il énumère tous les objets qui ont une propriété **System.Devices.IpAddress** définie. **&lt;&gt;\[\]** se traduit par **COP\_NOTEQUALS** combiné avec une valeur **NULL**.
+When this filter is paired with a [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) of **Device**, it enumerates all objects that have a **System.Devices.IpAddress** property set. **&lt;&gt;\[\]** translates to **COP\_NOTEQUALS** combined with a **NULL** value.
 
 ``` syntax
 System.Devices.IpAddress:<>[]
 ```
 
-Lorsque ce filtre est associé à un type de [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) **Device**, il énumère tous les objets qui n’ont pas de propriété **System.Devices.IpAddress** définie. **=\[\]** se traduit par **COP\_EQUALS** combiné avec une valeur **NULL**.
+When this filter is paired with a [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) of **Device**, it enumerates all objects that do not have a **System.Devices.IpAddress** property set. **=\[\]** translates to **COP\_EQUALS** combined with a **NULL** value.
 
 ``` syntax
 System.Devices.IpAddress:=[]
@@ -113,6 +113,6 @@ System.Devices.IpAddress:=[]
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

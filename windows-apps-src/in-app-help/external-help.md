@@ -1,48 +1,48 @@
 ---
 author: QuinnRadich
-Description: "Concevez des pages d’aide externe pour obtenir des instructions détaillées et des conseils sur votre application."
-title: "Recommandations en matière de conception de pages d’aide externe"
+Description: Design external help pages for detailed instructions and advice about your app.
+title: Guidelines for designing external help pages
 label: External help
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: 9da639dedf46068fb1f555f90b39ab979114ebf3
-ms.openlocfilehash: 0e21737e33f33d7239162ddcf9d4cdf39db17655
+ms.openlocfilehash: de371e39dc98049545b81329f240fbe94df78de5
 
 ---
 
-# Pages d’aide externe
+# External help pages
 
-\[ Mise à jour pour des applications UniversalWindowsPlatform (UWP) sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for Universal Windows Platform (UWP) apps in Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Si votre application nécessite une aide détaillée pour du contenu complexe, envisagez d’héberger ces instructions sur une page web.
+If your app requires detailed help for complex content, consider hosting these instructions on a web page.
 
-## <span id="when_to_use_external_help_pages"></span><span id="WHEN_TO_USE_EXTERNAL_HELP_PAGES"></span>Quand utiliser des pages d’aide externe
+## <span id="when_to_use_external_help_pages"></span><span id="WHEN_TO_USE_EXTERNAL_HELP_PAGES"></span>When to use external help pages
 
-Les pages d’aide externe sont moins pratiques pour un usage général ou une référence rapide; elles conviennent pour un contenu d’aide trop important pour être intégré à l’application elle-même, ainsi que pour des didacticiels et des instructions relatives aux fonctions avancées d’une application qui ne sont pas utilisés par le grand public.
+External help pages are less convenient for general use or quick reference, but they are suitable for help content that is too extensive to be incorporated into the app itself, as well as for tutorials and instructions for advanced functions of an app that won't be used by its general audience.
 
-Si votre contenu d’aide est bref ou suffisamment spécifique pour être affiché dans l’application, procédez ainsi. Ne dirigez pas les utilisateurs en dehors de l’application pour obtenir de l’aide à moins que cela ne soit nécessaire.
+If your help content is brief or specific enough to be displayed in-app, you should do so. Avoid directing users outside of the app for help unless it's necessary.
 
-## <span id="navigating_external_help_pages"></span><span id="NAVIGATING_EXTERNAL_HELP_PAGES"></span>Navigation dans les pages d’aide externe
+## <span id="navigating_external_help_pages"></span><span id="NAVIGATING_EXTERNAL_HELP_PAGES"></span>Navigating external help pages
 
-Lorsqu’un utilisateur est dirigé vers une page d’aide externe, deuxscénarios devraient s’offrir à lui:
--   Les utilisateurs sont dirigés directement vers la page correspondant au problème connu. Il s’agit d’une aide contextuelle, qui doit être utilisée dans la mesure du possible.
--   Ils sont dirigés vers une page d’aide générale affichant clairement les catégories et sous-catégories à choisir.
+When a user is directed to an external help page, the experience should reflect one of two scenarios:
+-   They are linked directly to the page that corresponds with their known issue. This is contextual help, and should be used whenever possible.
+-   They are linked to a general help page that provides a clear display of categories and subcategories to choose from.
 
-Fournir aux utilisateurs un moyen d’effectuer des recherches dans votre aide peut être utile, mais n’en faites pas le seul moyen de naviguer dans celle-ci. Il peut parfois être difficile pour les utilisateurs de décrire leur problème, ce qui complique la recherche. Les utilisateurs doivent être en mesure de trouver rapidement les pages correspondant à leurs problèmes sans avoir à effectuer de recherches.
+Providing users with a way to search your help can be useful, but don't make this search the only way of navigating your help. It can sometimes be difficult for users to describe their problems, which can make searching difficult. Users should be able to quickly find pages relevant to their problems without needing to search.
 
-## <span id="tutorials_and_detailed_walkthroughs"></span><span id="TUTORIALS_AND_DETAILED_WALKTHROUGHS"></span>Didacticiels et procédures pas à pas détaillées
+## <span id="tutorials_and_detailed_walkthroughs"></span><span id="TUTORIALS_AND_DETAILED_WALKTHROUGHS"></span>Tutorials and detailed walkthroughs
 
-Les pages d’aide externe sont l’endroit idéal pour proposer des didacticiels et des procédures pas à pas sous forme de texte ou de vidéo.
--   Les didacticiels doivent se limiter aux notions plus complexes et aux fonctions avancées. Les utilisateurs ne doivent pas avoir besoin d’un didacticiel pour utiliser votre application.
--   Veillez à ce que les utilisateurs puissent facilement distinguer les didacticiels des instructions d’aide standard par un affichage différent. Les utilisateurs à la recherche d’instructions avancées sont davantage enclins à effectuer des recherches que les utilisateurs voulant une solution facile à leur problème.
--   Envisagez la création de liens vers des didacticiels à la fois à partir d’un répertoire et de pages d’aide individuelles correspondant à chaque didacticiel.
+External help pages are the ideal place to provide users with tutorials and walkthroughs, whether video or textual.
+-   Tutorials should focus on more complicated ideas and advanced functions. Users shouldn't need a tutorial to use your app.
+-   Make sure that these tutorials are displayed differently from standard help instructions. Users who are looking for advanced instructions are more eager to search for them than users who want straightforward solutions to their problems.
+-   Consider linking to tutorials from both a directory and from individual help pages that correspond to each tutorial.
 
-## <span id="related_topics"></span>Articles connexes
+## <span id="related_topics"></span>Related articles
 
-* [Recommandations en matière d’aide de l’application](guidelines-for-app-help.md)
+* [Guidelines for app help](guidelines-for-app-help.md)
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

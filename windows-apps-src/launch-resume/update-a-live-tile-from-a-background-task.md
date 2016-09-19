@@ -1,51 +1,51 @@
 ---
 author: TylerMSFT
-title: "Mettre à jour une vignette dynamique à partir d’une tâche en arrière-plan"
-description: "Utilisez une tâche en arrière-plan pour mettre à jour une vignette dynamique de votre application avec du contenu actualisé."
+title: Update a live tile from a background task
+description: Use a background task to update your app's live tile with fresh content.
 Search.SourceType: Video
 ms.assetid: 9237A5BD-F9DE-4B8C-B689-601201BA8B9A
 translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: 5b11c3d4757d7da0c4c99d8f74a8988babfc26fd
+ms.openlocfilehash: d651a5dbf8478de238944cac36ea13429b0f1849
 
 ---
 
 
-# Mettre à jour une vignette dynamique à partir d’une tâche en arrière-plan
+# Update a live tile from a background task
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**API importantes**
+**Important APIs**
 
 -   [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)
 -   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
 
-Utilisez une tâche en arrière-plan pour mettre à jour une vignette dynamique de votre application avec du contenu actualisé.
+Use a background task to update your app's live tile with fresh content.
 
-La vidéo suivante montre comment ajouter des vignettes dynamiques à vos applications.
+Here's a video that shows how to add live tiles to your apps.
 
-<iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/afb47cc5-edd3-4262-ae45-8f0e3ae664ac/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no">La minute du développeur - Mise à jour d’une vignette dynamique à partir d’une tâche en arrière-plan</iframe>
+<iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/afb47cc5-edd3-4262-ae45-8f0e3ae664ac/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no">One Dev Minute - Updating a live tile from a background task</iframe>
 
-## Créer le projet de tâche en arrière-plan
-
-
-Pour activer une vignette dynamique pour votre application, ajoutez un nouveau projet de composant Windows Runtime à votre solution. Il s’agit d’un assembly distinct que le système d’exploitation charge et exécute en arrière-plan lorsqu’un utilisateur installe votre application.
-
-1.  Dans l’Explorateur de solutions, cliquez avec le bouton droit sur la solution, pointez sur **Ajouter**, puis cliquez ou appuyez sur **Nouveau projet**.
-2.  Dans la boîte de dialogue **Ajouter un nouveau projet**, sélectionnez le modèle **Composant Windows Runtime** dans la section **Visual C# &gt; Windows Store**.
-3.  Nommez le projet BackgroundTasks, puis cliquez ou appuyez sur **OK**. Microsoft Visual Studio ajoute le nouveau projet à la solution.
-4.  Dans le projet principal, ajoutez une référence au projet BackgroundTasks.
-
-## Implémenter la tâche en arrière-plan
+## Create the background task project
 
 
-Implémentez l’interface [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) pour créer une classe qui met à jour la vignette dynamique de votre application. Votre tâche en arrière-plan va dans la méthode Run. Dans ce cas, la tâche obtient un flux de syndication pour les blogs MSDN. Pour éviter la fermeture prématurée de la tâche lorsque du code asynchrone est encore en cours d’exécution, obtenez un report.
+To enable a live tile for your app, add a new Windows Runtime Component project to your solution. This is a separate assembly that the OS loads and runs in the background when a user installs your app.
 
-1.  Dans l’Explorateur de solutions, renommez le fichier généré automatiquement, Class1.cs, sous la forme BlogFeedBackgroundTask.cs.
-2.  Dans BlogFeedBackgroundTask.cs, remplacez le code généré automatiquement par le code stub pour la classe **BlogFeedBackgroundTask**.
-3.  Dans l’implémentation de la méthode Run, ajoutez du code pour les méthodes **GetMSDNBlogFeed** et **UpdateTile**.
+1.  In Solution Explorer, right-click the solution, point to **Add**, and click or tap **New Project**.
+2.  In the **Add New Project** dialog, select the **Windows Runtime Component** template in the **Visual C# &gt; Windows Store** section.
+3.  Name the project BackgroundTasks and click or tap **OK**. Microsoft Visual Studio adds the new project to the solution.
+4.  In the main project, add a reference to the BackgroundTasks project.
+
+## Implement the background task
+
+
+Implement the [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) interface to create a class that updates your app's live tile. Your background work goes in the Run method. In this case, the task gets a syndication feed for the MSDN blogs. To prevent the task from closing prematurely while asynchronous code is still running, get a deferral.
+
+1.  In Solution Explorer, rename the automatically generated file, Class1.cs, to BlogFeedBackgroundTask.cs.
+2.  In BlogFeedBackgroundTask.cs, replace the automatically generated code with the stub code for the **BlogFeedBackgroundTask** class.
+3.  In the Run method implementation, add code for the **GetMSDNBlogFeed** and **UpdateTile** methods.
 
 ```cs
 using System;
@@ -141,32 +141,32 @@ namespace BackgroundTasks
 }
 ```
 
-## Configurer le manifeste du package
+## Set up the package manifest
 
 
-Pour configurer le manifeste du package, ouvrez-le et ajoutez une nouvelle déclaration de tâche en arrière-plan. Affectez au point d’entrée de la tâche le nom de la classe, y compris son espace de noms.
+To set up the package manifest, open it and add a new background task declaration. Set the entry point for the task to the class name, including its namespace.
 
-1.  Dans l’Explorateur de solutions, ouvrez Package.appxmanifest.
-2.  Cliquez ou appuyez sur l’onglet **Déclarations**.
-3.  Sous **Déclarations disponibles**, sélectionnez **BackgroundTasks**, puis cliquez sur **Ajouter**. VisualStudio ajoute **BackgroundTasks** sous **Déclarations prises en charge**.
-4.  Sous **Types de tâches pris en charge**, vérifiez que la case **Minuterie** est cochée.
-5.  Sous **Paramètres de l’application**, affectez **BackgroundTasks.BlogFeedBackgroundTask** au point d’entrée.
-6.  Cliquez ou appuyez sur l’onglet **Interface utilisateur de l’application**.
-7.  Affectez à **Notifications de verrouillage de l’écran** la valeur **Badge et texte de mosaïque**.
-8.  Définissez un chemin d’accès à une icône de 24x24pixels dans le champ **Logo du badge**.
-    **Important** Cette icône doit uniquement utiliser des pixels monochromes et transparents.
-9.  Dans le champ **Petit logo**, définissez un chemin d’accès à une icône de 30x30pixels.
-10. Dans le champ **Logo large**, définissez un chemin d’accès vers une icône de 310x150pixels.
+1.  In Solution Explorer, open Package.appxmanifest.
+2.  Click or tap the **Declarations** tab.
+3.  Under **Available Declarations**, select **BackgroundTasks** and click **Add**. Visual Studio adds **BackgroundTasks** under **Supported Declarations**.
+4.  Under **Supported task types**, ensure that **Timer** is checked.
+5.  Under **App settings**, set the entry point to **BackgroundTasks.BlogFeedBackgroundTask**.
+6.  Click or tap the **Application UI** tab.
+7.  Set **Lock screen notifications** to **Badge and Tile Text**.
+8.  Set a path to a 24x24 pixel icon in the **Badge logo** field.
+    **Important**  This icon must use monochrome and transparent pixels only.
+9.  In the **Small logo** field, set a path to a 30x30 pixel icon.
+10. In the **Wide logo** field, set a path to a 310x150 pixel icon.
 
-## Inscrire la tâche en arrière-plan
+## Register the background task
 
 
-Créez un élément [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) pour inscrire votre tâche.
+Create a [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) to register your task.
 
-> **Remarque** Depuis Windows8.1, les paramètres d’inscription de la tâche en arrière-plan sont validés au moment de l’inscription. Si l’un des paramètres d’inscription n’est pas valide, une erreur est renvoyée. Votre application doit être en mesure de gérer les scénarios dans lesquels l’inscription de la tâche en arrière-plan échoue. Par exemple utilisez une instruction conditionnelle pour rechercher les erreurs d’inscription, puis retentez l’inscription qui a échoué avec d’autres valeurs de paramètre.
+> **Note**  Starting in Windows 8.1, background task registration parameters are validated at the time of registration. An error is returned if any of the registration parameters are invalid. Your app must be able to handle scenarios where background task registration fails - for example, use a conditional statement to check for registration errors and then retry failed registration using different parameter values.
  
 
-Dans la page principale de votre application, ajoutez la méthode **RegisterBackgroundTask** et appelez-la dans le gestionnaire d’événements **OnNavigatedTo**.
+In your app's main page, add the **RegisterBackgroundTask** method and call it in the **OnNavigatedTo** event handler.
 
 ```cs
 using System;
@@ -240,29 +240,29 @@ namespace ContosoApp
 }
 ```
 
-## Déboguer la tâche en arrière-plan
+## Debug the background task
 
 
-Pour déboguer la tâche en arrière-plan, définissez un point d’arrêt dans la méthode Run de la tâche. Dans la barre d’outils **Emplacement de débogage**, sélectionnez votre tâche en arrière-plan. Le système appelle immédiatement la méthode Run.
+To debug the background task, set a breakpoint in the task’s Run method. In the **Debug Location** toolbar, select your background task. This causes the system to call the Run method immediately.
 
-1.  Définissez un point d’arrêt dans la méthode Run de la tâche.
-2.  Appuyez sur F5 ou sur **Déboguer &gt; Démarrer le débogage** pour déployer et exécuter l’application.
-3.  Une fois l’application lancée, revenez à VisualStudio.
-4.  Vérifiez que la barre d’outils **Emplacement de débogage** est visible. Elle se trouve dans le menu **Affichage &gt; Barres d’outils**.
-5.  Dans la barre d’outils **Emplacement de débogage**, cliquez sur la liste déroulante **Interrompre** et sélectionnez **BlogFeedBackgroundTask**.
-6.  VisualStudio interrompt l’exécution au niveau du point d’arrêt.
-7.  Appuyez sur F5 ou sur **Déboguer &gt; Continuer** pour continuer à exécuter l’application.
-8.  Appuyez sur Maj+F5 ou sur **Déboguer &gt; Arrêter le débogage** pour arrêter le débogage.
-9.  Revenez à la vignette de l’application sur l’écran d’accueil. Après quelques secondes, les notifications par vignette apparaissent sur la vignette de votre application.
+1.  Set a breakpoint in the task’s Run method.
+2.  Press F5 or tap **Debug &gt; Start Debugging** to deploy and run the app.
+3.  After the app launches, switch back to Visual Studio.
+4.  Ensure that the **Debug Location** toolbar is visible. It's on the **View &gt; Toolbars** menu.
+5.  On the **Debug Location** toolbar, click the **Suspend** dropdown and select **BlogFeedBackgroundTask**.
+6.  Visual Studio suspends execution at the breakpoint.
+7.  Press F5 or tap **Debug &gt; Continue** to continue running the app.
+8.  Press Shift+F5 or tap **Debug &gt; Stop Debugging** to stop debugging.
+9.  Return to the app's tile on the Start screen. After a few seconds, tile notifications appear on your app's tile.
 
-## Rubriques connexes
+## Related topics
 
 
 * [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
 * [**TileUpdateManager**](https://msdn.microsoft.com/library/windows/apps/br208622)
 * [**TileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616)
-* [Prendre en charge votre application avec des tâches en arrière-plan](support-your-app-with-background-tasks.md)
-* [Recommandations et liste de vérification sur les vignettes et les badges](https://msdn.microsoft.com/library/windows/apps/hh465403)
+* [Support your app with background tasks](support-your-app-with-background-tasks.md)
+* [Guidelines and checklist for tiles and badges](https://msdn.microsoft.com/library/windows/apps/hh465403)
 
  
 
@@ -270,6 +270,6 @@ Pour déboguer la tâche en arrière-plan, définissez un point d’arrêt dans 
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,27 +1,27 @@
 ---
 author: mtoepke
-title: Comment relancer une application (DirectX et C++)
-description: "Cette rubrique montre comment restaurer des données d’application importantes lorsque le système reprend l’exécution de votre application DirectX de plateforme UWP."
+title: How to resume an app (DirectX and C++)
+description: This topic shows how to restore important application data when the system resumes your Universal Windows Platform (UWP) DirectX app.
 ms.assetid: 5e6bb673-6874-ace5-05eb-f88c045f2178
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d5383da7332c80d4337f0e0b3eef0a6851fcd527
+ms.openlocfilehash: 978f779eaeb732b549657751c11cd2192728999b
 
 ---
 
-# Comment relancer une application (DirectX et C++)
+# How to resume an app (DirectX and C++)
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Cette rubrique montre comment restaurer des données d’application importantes lorsque le système reprend l’exécution de votre application DirectX de plateforme Windows universelle.
+This topic shows how to restore important application data when the system resumes your Universal Windows Platform (UWP) DirectX app.
 
-## Enregistrer le gestionnaire d’événements de reprise
+## Register the resuming event handler
 
 
-Enregistrez-vous pour traiter l’événement [**CoreApplication::Resuming**](https://msdn.microsoft.com/library/windows/apps/br205859), qui indique que l’utilisateur revient vers votre application après s’en être éloigné.
+Register to handle the [**CoreApplication::Resuming**](https://msdn.microsoft.com/library/windows/apps/br205859) event, which indicates that the user switched away from your app and then back to it.
 
-Ajoutez le code suivant à votre implémentation de la méthode [**IFrameworkView::Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495) de votre fournisseur d’affichage :
+Add this code to your implementation of the [**IFrameworkView::Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495) method of your view provider:
 
 ```cpp
 // The first method is called when the IFrameworkView is being created.
@@ -37,10 +37,10 @@ void App::Initialize(CoreApplicationView^ applicationView)
 }
 ```
 
-## Actualiser le contenu affiché après la suspension
+## Refresh displayed content after suspension
 
 
-Lorsque votre application gère l’événement de reprise, elle a la possibilité d’actualiser son contenu à l’écran. Restaurez les applications que vous avez enregistrées avec votre gestionnaire pour [**CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860), puis redémarrez le traitement. Développeurs de jeux : si vous avez suspendu votre moteur audio, il est temps de le redémarrer.
+When your app handles the Resuming event, it has the opportunity to refresh its displayed content. Restore any app you have saved with your handler for [**CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860), and restart processing. Game devs: if you've suspended your audio engine, now's the time to restart it.
 
 ```cpp
 void App::OnResuming(Platform::Object^ sender, Platform::Object^ args)
@@ -53,7 +53,7 @@ void App::OnResuming(Platform::Object^ sender, Platform::Object^ args)
 }
 ```
 
-Ce rappel a lieu en tant que message d’événement traité par l’objet [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) pour l’objet [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) de l’application. Ce rappel n’est pas effectué si vous n’appelez pas [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) à partir de la boucle principale de votre application (mise en œuvre dans la méthode [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) de votre fournisseur d’affichage).
+This callback occurs as an event message processed by the [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) for the app's [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). This callback will not be invoked if you do not call [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) from your app's main loop (implemented in the [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) method of your view provider).
 
 ``` syntax
 // This method is called after the window becomes active.
@@ -80,26 +80,26 @@ void App::Run()
 }
 ```
 
-## Remarques
+## Remarks
 
 
-Le système suspend votre application chaque fois que l’utilisateur bascule vers une autre application ou vers le Bureau. Le système en reprend l’exécution lorsque l’utilisateur revient à votre application. Dès lors, le contenu de vos variables et structures de données restent identiques à ce qu’elles étaient avant que le système ne suspende l’application. Le système rétablit l’application exactement dans l’état où il l’a laissée, de sorte qu’elle semble s’être exécutée en arrière-plan. Cependant, il se peut que l’application ait été suspendue pendant une durée significative. Elle doit dans ce cas actualiser le contenu affiché susceptible d’avoir changé pendant l’inactivité et redémarrer les threads de traitement audio ou de rendu. Si vous avez enregistré des données d’état de jeu durant un événement de suspension précédent, restaurez-les maintenant.
+The system suspends your app whenever the user switches to another app or to the desktop. The system resumes your app whenever the user switches back to it. When the system resumes your app, the content of your variables and data structures is the same as it was before the system suspended the app. The system restores the app exactly where it left off, so that it appears to the user as if it's been running in the background. However, the app may have been suspended for a significant amount of time, so it should refresh any displayed content that might have changed while the app was suspended, and restart any rendering or audio processing threads. If you've saved any game state data during a previous suspend event, restore it now.
 
-## Rubriques connexes
+## Related topics
 
-* [Comment suspendre une application (DirectX et C++)](how-to-suspend-an-app-directx-and-cpp.md)
-* [Comment activer une application (DirectX et C++)](how-to-activate-an-app-directx-and-cpp.md)
-
- 
+* [How to suspend an app (DirectX and C++)](how-to-suspend-an-app-directx-and-cpp.md)
+* [How to activate an app (DirectX and C++)](how-to-activate-an-app-directx-and-cpp.md)
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

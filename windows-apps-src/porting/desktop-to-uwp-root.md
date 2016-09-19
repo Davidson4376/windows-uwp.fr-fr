@@ -1,102 +1,123 @@
 ---
 author: awkoren
-Description: "Préparez votre application de bureau Windows (Win32, WPF, Windows Forms) pour convertir une application UWP en utilisant les extensions de conversion de bureau."
+Description: Prepare your Windows desktop application (like Win32, WPF, and Windows Forms) for conversion to a Universal Windows Platform (UWP) app by using the Desktop Conversion extensions.
 Search.Product: eADQiWindows 10XVcnh
-title: Convertir votre application de bureau en une application UWP
+title: Convert your desktop application to a Universal Windows Platform (UWP) app
 translationtype: Human Translation
-ms.sourcegitcommit: 45b9170ed311e6f17d1c51c0b7d1d288e07184a9
-ms.openlocfilehash: c5ffb1e912c2953d5f813f099e036d2d7b395b69
+ms.sourcegitcommit: ff8cd3ab5e38cfc3a2b5fabaad15f78a5f2620f2
+ms.openlocfilehash: 6cf6367ed0f6acea0f87ac36a050e874425423b1
 
 ---
 
-# Convertir votre application de bureau en une application UWP
+# Convert your desktop application to a Universal Windows Platform (UWP) app
 
-\[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.\]
+\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
 
-Préparez votre application de bureau Windows (Win32, WPF, Windows Forms) pour convertir une application UWP en utilisant les extensions de conversion de bureau.
+Prepare your Windows desktop application (like Win32, WPF, and Windows Forms) for conversion to a Universal Windows Platform (UWP) app by using the Desktop Conversion extensions.
 
-## Avantages de la conversion de votre application vers UWP
+## Benefits of converting your application to UWP
 
-Les extensions de conversion de bureau utilisant UWP constituent un pont qui vous permet de convertir votre application de bureau classique (Win32, Windows Forms et WPF) ou un jeu en une application de plateforme Windows universelle (UWP) ou un jeu. Pour plus d’informations, voir [Guide des applications UWP](https://msdn.microsoft.com/library/windows/apps/dn894631.aspx). Après la conversion, votre application de bureau classique est empaquetée, soumise à maintenance et déployée sous la forme d’un package d’application UWP (un fichier .appx ou un package .appxbundle) ciblant Windows 10 Desktop.
+UWP using Desktop Conversion extensions is a bridge that enables you to convert your Windows desktop application (like Win32, Windows Forms, and WPF) or game to a Universal Windows Platform (UWP) app or game. For more info, see [Guide to UWP apps](https://msdn.microsoft.com/library/windows/apps/dn894631.aspx). After conversion, your Windows desktop application is packaged, serviced, and deployed in the form of a UWP app package (an .appx or an .appxbundle) targeting Windows 10 Desktop.
 
-La technologie qui permet aux applications de bureau d’être converties en packages UWP est constituée de deux parties. La première est le convertisseur d’application de bureau, qui prend vos éléments binaires existants et les empaquète sous forme de package UWP. Votre code est toujours le même, il est simplement empaqueté différemment. La deuxième partie comprend les technologies d’exécution de la mise à jour anniversaire Windows qui permettent à un package UWP d’avoir des fichiers exécutables qui s’exécutent en confiance totale et non dans un conteneur d’application. En outre, cette technologie confère à une application convertie une identité de package, nécessaire pour utiliser certaines API UWP.
+There are two parts to the technology that enables desktop apps to be converted to UWP packages. The first is the Desktop App Converter, which takes your existing binaries and repackages them as a UWP package. Your code is still the same, it's just packaged differently. The second piece comprises runtime technologies in the Windows Anniversary update that enable a UWP package to have executables that run as full trust instead of in an app container. This technology also gives a converted app a package identity, which is required to use some UWP APIs.
 
-Voici quelques-uns des avantages de la conversion de votre application de bureau classique.
+Here are some of the benefits of converting your Windows desktop application.
 
-* L’expérience d’installation de votre application est beaucoup plus fluide pour vos clients. Vous pouvez la déployer sur les ordinateurs à l’aide du chargement indépendant (consultez [Charger la version test d’applications métier dans Windows 10](https://technet.microsoft.com/library/mt269549.aspx)); elle ne laissera aucune trace après sa désinstallation. À long terme, vous serez également en mesure de publier votre application dans le Windows Store.
+* Your app's installation experience is much smoother for your customers. You can deploy it to computers using sideloading (see [Sideload LOB apps in Windows 10](https://technet.microsoft.com/library/mt269549.aspx)), and it leaves no trace behind after being uninstalled. Longer term, you'll also be able to publish your app to the Windows Store.
 
-* Votre application convertie jouissant d’une identité de package, vous pouvez appeler plus d’API UWP que jamais, même à partir de la partition de confiance totale.
+* Because your converted app has package identity, you can call more UWP APIs, even from the full-trust partition, than you could before. See a full list of [Supported UWP APIs for converted desktop apps](desktop-to-uwp-supported-api.md). 
 
-* Vous pouvez ajouter des fonctionnalités UWP au package de votre application à votre propre rythme, comme une interface utilisateur XAML, des mises à jour de vignette en direct, des tâches en arrière-plan UWP, des services d’application et bien plus encore. Toutes les fonctionnalités disponibles pour toute autre application UWP sont disponibles pour votre application.
+* At your own pace, you can add UWP features to your app's package, like a XAML user-interface, live tile updates, UWP background tasks, app services, and many more. All of the functionality available to any other UWP app is available to your app.
 
-* Si vous choisissez de déplacer l’ensemble des fonctionnalités de votre application de la partition de confiance totale de l’application et dans la partition de conteneur d’application, votre application pourra s’exécuter sur tout appareil Windows 10.
+* If you choose to move all of your app's functionality out of the full-trust partition of the app and into the app container partition, then your app will be able to run on any Windows 10 device.
 
-* En tant qu’application UWP, votre application peut effectuer tout ce qu’elle savait faire comme application de bureau classique. Elle interagit avec une vue virtualisée du Registre et du système de fichiers, impossible à distinguer du Registre et du système de fichiers réels.
+* As a UWP app, your app is able to do the things it could do as a Windows desktop application. It interacts with a virtualized view of the registry and file system that's indistinguishable from the actual registry and file system.
 
-* Votre application peut participer à la gestion de licences intégrées du Windows Store et aux solutions de mises à jour automatiques. La mise à jour automatique est un mécanisme extrêmement fiable et efficace, car seules les parties modifiées de fichiers sont téléchargées.
+* Your app can participate in the Windows Store's built-in licensing and automatic update facilities. Automatic update is a highly reliable and efficient mechanism, because only the changed parts of files are downloaded.
 
-## Préparation de votre application de bureau pour la conversion vers UWP
-Il est possible que n’ayez que peu à faire pour préparer votre application pour le processus de conversion. N’oubliez pas que Windows Store gère le Gestionnaire de licences et les mises à jour automatiques pour vous, par conséquent, vous pouvez supprimer ces fonctionnalités de votre code de base. Si l’une de ces situations s’applique à votre application, vous devez résoudre ce problème avant la conversion.
+## Prepare your desktop app for conversion to UWP
 
-+ __Votre application utilise une version de .NET antérieure à 4.6.1__. Seul .NET4.6.1 est pris en charge. Vous devez recibler votre application vers .NET4.6.1 avant la conversion. 
+You may not need to do much to get your app ready for the conversion process. Remember that the Windows Store handles licensing and automatic updating for you, so you can remove those features from your codebase. If any of these situations applies to your application, you need to address this issue before conversion.
 
-+ __Votre application s’exécute toujours avec des privilèges élevés de sécurité__. Votre application a besoin de travailler lors de l’exécution en tant qu’utilisateur interactif. Les utilisateurs qui installent votre application depuis le Windows Store ne sont peut-être pas des administrateurs système. Par conséquent, exiger que votre application s’exécute avec élévation de privilèges signifie qu’elle ne s’exécutera pas correctement pour les utilisateurs standard.
++ __Your app uses a version of .NET earlier than 4.6.1__. Only .NET 4.6.1 is supported. You must retarget your app to .NET 4.6.1 before converting. 
 
-+ __Votre application nécessite un pilote en mode noyau ou un service Windows__. Le pont est approprié pour une application, mais il ne prend pas en charge un pilote en mode noyau ou un service Windows devant être exécutés sous un compte système. Au lieu d’un service Windows, utilisez une [tâche en arrière-plan](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task).
++ __Your app always runs with elevated security privileges__. Your app needs to work while running as the interactive user. Users who install your app from the Windows Store may not be system administrators, so requiring your app to run elevated means that it won't run correctly for standard users.
 
-+ __Les modules de votre application sont chargés in-process sur les processus ne figurant pas dans votre package AppX__. Cela n’est pas autorisé, ce qui signifie que les extensions in-process, par exemple les [extensions d’environnement](https://msdn.microsoft.com/library/windows/desktop/dd758089.aspx), ne sont pas prises en charge. Mais si vous disposez de deux applications dans le même package, vous pouvez créer une communication entre processus entre elles.
++ __Your app requires a kernel-mode driver or a Windows service__. The bridge is suitable for an app, but it does not support a kernel-mode driver or a Windows service that needs to run under a system account. Instead of a Windows service, use a [background task](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task).
 
-+ __Votre application utilise un ID de modèle utilisateur de l’application (AUMID)__. Si votre processus appelle [SetCurrentProcessExplicitAppUserModelID](https://msdn.microsoft.com/library/windows/desktop/dd378422.aspx) pour définir son propre AUMID, il peut uniquement utiliser l’AUMID généré pour lui par l’environnement de modèle de l’application/du package AppX. Vous ne pouvez pas définir d’AUMID personnalisés.
++ __Your app's modules are loaded in-process to processes that are not in your AppX package__. This isn't permitted, which means that in-process extensions, like [shell extensions](https://msdn.microsoft.com/library/windows/desktop/dd758089.aspx), aren't supported. But if you have two apps in the same package, you can do inter-process communication between them.
 
-+ __Votre application modifie la ruche du Registre HKEY_LOCAL_MACHINE (HKLM)__. Toute tentative par votre application de créer une clé HKLM ou d’en ouvrir une pour modification donnera lieu à une erreur d’accès refusé. N’oubliez pas que votre application dispose de sa propre vue privée virtualisée du Registre. La notion de ruche du Registre de l’utilisateur ou de l’ordinateur (la définition de HKLM) ne s’applique pas. Vous devez trouver un autre moyen d’obtenir ce pour quoi vous utilisiez HKLM, comme l’écriture sur HKEY_CURRENT_USER (HKCU) à la place.
++ __Your app calls [SetDllDirectory](https://msdn.microsoft.com/library/windows/desktop/ms686203) or [AddDllDirectory](https://msdn.microsoft.com/library/windows/desktop/hh310513)__. These functions are not currently supported for converted apps. We are working on adding support in a future release. As a workaround, you can copy any .dlls you were locating using these functions to your package root. 
 
-+ __Votre application utilise une sous-clé de Registre ddeexec comme moyen de lancement d’une autre application__. Utilisez plutôt l’un des gestionnaires de verbe DelegateExecute tel que configuré par les différentes extensions activables* dans votre [manifeste du package de l’application](https://msdn.microsoft.com/library/windows/apps/br211474.aspx).
++ __Your app uses a custom Application User Model ID (AUMID)__. If your process calls [SetCurrentProcessExplicitAppUserModelID](https://msdn.microsoft.com/library/windows/desktop/dd378422.aspx) to set its own AUMID, then it may only use the AUMID generated for it by the app model environment/AppX package. You can't define custom AUMIDs.
 
-+ __Votre application écrit dans le dossier AppData dans le but de partager des données avec une autre application__. Après la conversion, AppData est redirigé vers le magasin de données de l’application locale, qui est un magasin privé pour chaque application UWP. Utilisez un autre moyen de partager des données entre processus. Pour plus d’informations, voir [Stocker et récupérer des paramètres et autres données d’application](https://msdn.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data).
++ __Your app modifies the HKEY_LOCAL_MACHINE (HKLM) registry hive__. Any attempt by your app to create an HKLM key, or to open one for modification, will result in an access-denied failure. Remember that your app has its own private virtualized view of the registry, so the notion of a user- and machine-wide registry hive (which is what HKLM is) does not apply. You will need to find another way of achieving what you were using HKLM for, like writing to HKEY_CURRENT_USER (HKCU) instead.
 
-+ __Votre application écrit dans le répertoire d’installation de votre application__. Par exemple, votre application écrit dans un fichier journal que vous avez placé dans le même répertoire que votre fichier exe. Cela n’est pas pris en charge; vous devez donc trouver un autre emplacement, comme le magasin de données de l’application locale.
++ __Your app uses a ddeexec registry subkey as a means of launching another app__. Instead, use one of the DelegateExecute verb handlers as configured by the various Activatable* extensions in your [app package manifest](https://msdn.microsoft.com/library/windows/apps/br211474.aspx).
 
-+ __L’installation de votre application requiert l’intervention de l’utilisateur__. Le programme d’installation de votre application doit être en mesure de s’exécuter en silence, et il doit installer tous les éléments requis qui ne sont pas disponibles par défaut sur une nouvelle image de système d’exploitation.
++ __Your app writes to the AppData folder with the intention of sharing data with another app__. After conversion, AppData is redirected to the local app data store, which is a private store for each UWP app. Use a different means of inter-process data sharing. For more info, see [Store and retrieve settings and other app data](https://msdn.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data).
 
-+ __Votre application utilise le répertoire de travail actuel__. Lors de l’exécution, votre application convertie ne dispose pas du même répertoire de travail que celui spécifié précédemment dans le raccourci .LNK sur votre bureau. Vous devez modifier votre répertoire de travail actuel lors de l’exécution si le fait de disposer du répertoire correct est important pour le bon fonctionnement de votre application.
++ __Your app writes to the install directory for your app__. For example, your app writes to a log file that you put in the same directory as your exe. This isn't supported, so you'll need to find another location, like the local app data store.
 
-+ __Votre application requiert UIAccess__. Si votre application spécifie `UIAccess=true` dans l’élément `requestedExecutionLevel` du manifeste de contrôle de compte d’utilisateur, la conversion vers UWP n’est pas prise en charge actuellement. Pour plus d’informations, consultez [Vue d’ensemble de la sécurité UI Automation](https://msdn.microsoft.com/library/ms742884.aspx).
++ __Your app installation requires user interaction__. Your app installer must be able to run silently, and it must install all of its prerequisites that aren't on by default on a clean OS image.
 
-+ __Votre application expose des objets COM ou des assemblys GAC pour que ces derniers soient utilisés par d’autres processus__. Dans la version actuelle, votre application ne peut pas exposer des objets COM ou des assemblys GAC pour une utilisation par des processus issus de fichiers exécutables externes à votre package AppX. Les processus issus du package peuvent enregistrer et utiliser des objets COM et des assemblys GAC normalement, mais ceux-ci ne seront pas visibles en externe. Cela signifie que les scénarios d’interopération, comme OLE, ne fonctionneront pas si ces derniers sont appelés par des processus externes. 
++ __Your app uses the Current Working Directory__. At runtime, your converted app won't get the same Working Directory that you previously specified in your desktop .LNK shortcut. You need to change your CWD at runtime if having the correct directory is important for your app to function correctly.
 
-+ __Votre application lie des bibliothèques Cruntime d’une manière non prise en charge__. La bibliothèque runtime C/C++ Microsoft fournit des routines de programmation pour le système d’exploitation MicrosoftWindows. Ces routines automatisent de nombreuses tâches de programmation courantes qui ne sont pas fournies par les langages C et C++. Si votre application utilise la bibliothèque runtime C/C++, vous devez vous assurer que la liaison de celle-ci est prise en charge. 
++ __Your app requires UIAccess__. If your application specifies `UIAccess=true` in the `requestedExecutionLevel` element of the UAC manifest, conversion to UWP isn't supported currently. For more info, see [UI Automation Security Overview](https://msdn.microsoft.com/library/ms742884.aspx).
+
++ __Your app is already a full UWP app and wants to invoke a full trust process from within the app package__. Using the bridge in "reverse" is not supported and UWP apps attempting to invoke full trust processes will fail Store certification. To enable this scenario in a sideloaded app, first include the ```<desktop:Extension>``` declaration in your app's manifest (which includes the *EntryPoint* attribute with the value *Windows.FullTrustApplication*). Next, set your app's  ```<TargetDeviceFamily>``` to *Windows.Desktop*. This indicates your app is only targeting the desktop device family and not all UWP devices. If your app returns the error *APPX0501: Validation Error* with these settings in place, verify your target device family; your app is likely targeting the *Windows.Universal* family and not *Windows.Desktop*. 
+
++ __Your app exposes COM objects or GAC assemblies for use by other processes__. In the current release, your app cannot expose COM objects or GAC assemblies for use by processes originating from executables external to your AppX package. Processes from within the package can register and use COM objects and GAC assemblies as normal, but they will not be visible externally. This means interop scenarios like OLE will not function if invoked by external processes. 
+
++ __Your app is linking C runtime libraries in an unsupported manner__. The Microsoft C/C++ runtime library provides routines for programming for the Microsoft Windows operating system. These routines automate many common programming tasks that are not provided by the C and C++ languages. If your app utilizes C/C++ runtime library, you need to ensure it is linked in a supported manner. 
     
-    VisualStudio2015 prend en charge à la fois la liaison dynamique (pour que votre code puisse utiliser des fichiers DLL courants) et la liaison statique (pour lier la bibliothèque directement dans votre code) à la version actuelle du CRT. Si possible, nous vous recommandons d’utiliser la liaison dynamique avec VisualStudio2015 pour votre application. 
+    Visual Studio 2015 supports both dynamic linking, to let your code use common DLL files, or static linking, to link the library directly into your code, to the current version of the CRT. If possible, we recommend your app use dynamic linking with VS 2015. 
 
-    La prise en charge des versions antérieures de VisualStudio peut varier. Pour plus d’informations, voir le tableau suivant: 
+    Support in previous versions of Visual Studio varies. See the following table for details: 
 
     <table>
-    <th>Version de VisualStudio</td><th>Liaison dynamique</th><th>Liaison statique</th></th>
-    <tr><td>2005 (VC8)</td><td>Non pris en charge</td><td>Pris en charge</td>
-    <tr><td>2008 (VC9)</td><td>Non pris en charge</td><td>Pris en charge</td>
-    <tr><td>2010 (VC10)</td><td>Pris en charge</td><td>Pris en charge</td>
-    <tr><td>2012 (VC11)</td><td>Prise en charge</td><td>Non pris en charge</td>
-    <tr><td>2013 (VC12)</td><td>Prise en charge</td><td>Non pris en charge</td>
-    <tr><td>2015 (VC14)</td><td>Pris en charge</td><td>Pris en charge</td>
+    <th>Visual Studio version</td><th>Dynamic linking</th><th>Static linking</th></th>
+    <tr><td>2005 (VC 8)</td><td>Not supported</td><td>Supported</td>
+    <tr><td>2008 (VC 9)</td><td>Not supported</td><td>Supported</td>
+    <tr><td>2010 (VC 10)</td><td>Supported</td><td>Supported</td>
+    <tr><td>2012 (VC 11)</td><td>Supported</td><td>Not supported</td>
+    <tr><td>2013 (VC 12)</td><td>Supported</td><td>Not supported</td>
+    <tr><td>2015 (VC 14)</td><td>Supported</td><td>Supported</td>
     </table>
     
-    Remarque: dans tous les cas, vous devez créer une liaison vers la toute dernière version de CRT disponible publiquement.
+    Note: In all cases, you must link to the latest publically available CRT.
 
-+ __Votre application installe et charge des assemblys à partir du dossier Windows côte-à-côte__. Par exemple, votre application utilise des bibliothèques RuntimeC VC8 ou VC9 et les lie dynamiquement à partir du dossier Windows côte-à-côte, ce qui signifie que votre code utilise les fichiers DLL courants à partir d’un dossier partagé. Ceci n’est pas pris en charge. Vous devez les lier statiquement en créant un lien vers les fichiers de bibliothèque redistribuables directement dans votre code.
++ __Your app installs and loads assemblies from the Windows side-by-side folder__. For example, your app uses C runtimes libraries VC8 or VC9 and is dynamically linking them from Windows side-by-side folder, meaning your code is using the common DLL files from a shared folder. This is not supported. You will need to statically link them by linking to the redistributable library files directly into your code.
 
+## Start the conversion process
 
-## Dans cette section
+You have a few different options for converting your app.
 
-| Rubrique | Description |
+* **Desktop App Converter (DAC)**. The DAC is a tool that automatically converts and signs your app for you. Using the DAC is convenient and automatic, and it's useful if your app makes lots of system modifications or if there's any uncertainty about what your installer does. To get started with the DAC, see [Desktop App Converter](desktop-to-uwp-run-desktop-app-converter.md). 
+
+* **Manual Conversion**. If your app is installed using xcopy, or you're familiar with the changes that your installer makes to the system, manual conversion might be a more straightforward choice. This involves creating a manifest file, running the MakeAppx.exe tool, and then signing your app package. For details on how to manually convert, see [Manually convert your Windows desktop application to a Universal Windows Platform (UWP) app](desktop-to-uwp-manual-conversion.md). 
+
+* **Third-Party Installer**. Three popular third-party installers — [InstallShield by Flexera](http://www.flexerasoftware.com/producer/products/software-installation/installshield-software-installer), [WiX by FireGiant](https://www.firegiant.com/r/appx), and [Advanced Installer by Caphyon](http://www.advancedinstaller.com/uwp-app-package) — now support the Desktop Bridge and can generate both a MSI installer and converted app package with only a few clicks. For more information, visit the respective website for each installer. 
+
+## Get support and give feedback
+
+If you run in to issues converting your app, you can visit the [forums](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop) for help. 
+
+To give feedback or make feature suggestions, check out [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial). 
+
+## In this section
+
+| Topic | Description |
 |-------|-------------|
-| [Aperçu du Convertisseur d’applications de bureau (projet Centennial)](desktop-to-uwp-run-desktop-app-converter.md) | Montre comment exécuter le Convertisseur d’applications de bureau. Il est possible que n’ayez que peu (voire rien) à faire pour préparer votre application pour le processus de conversion. |
-| [Convertir manuellement votre application de bureau Windows en une application de plateforme Windows universelle (UWP)](desktop-to-uwp-manual-conversion.md) | Découvrez comment créer un package et un manifeste d’application manuellement. |
-| [Extensions d’application de bureau converties](desktop-to-uwp-extensions.md) | Vous pouvez améliorer votre application de bureau convertie avec un large éventail d’API de la plateforme Windows universelle (UWP). Toutefois, outre les API normales disponibles pour toutes les applications UWP, il existe certaines extensions et API disponibles uniquement pour les applications de bureau converties. Cet article décrit ces extensions et la manière de les utiliser. |
-| [Déployer et déboguer votre application UWP convertie](desktop-to-uwp-deploy-and-debug.md) | Contient des informations pour vous aider à réussir le déploiement et le débogage de votre application après sa conversion. En outre, si vous êtes curieux de connaître certains éléments internes des extensions de conversion de bureau, cette rubrique est faite pour vous. |
-| [Pont d’application de bureau pour les exemples de code UWP](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) | Exemples de code sur GitHub illustrant les fonctionnalités d’applications converties. |
+| [Desktop App Converter](desktop-to-uwp-run-desktop-app-converter.md) | Shows how to run Desktop App Converter. You probably won't need to do much, if anything, to get your app ready for the conversion process. |
+| [Manually convert your desktop app](desktop-to-uwp-manual-conversion.md) | Learn how to create an app package and manifest to by hand. |
+| [Converted desktop app extensions](desktop-to-uwp-extensions.md) | Enhance your converted app with extensions to enable features like startup tasks, File Explorer integration, and more. |
+| [Supported UWP APIs for converted desktop apps](desktop-to-uwp-supported-api.md) | See what UWP APIs are available for your converted desktop app to use. |
+| [Sign your converted desktop app](desktop-to-uwp-signing.md) | Learn how to sign your converted .appx package with a certificate. |
+| [Deploy and debug your converted UWP app](desktop-to-uwp-deploy-and-debug.md) | Get help with deploying and debugging your app after converting it. Also, if you're curious about some of the internals of the Desktop Conversion extensions, this topic is for you. |
+| [Desktop app bridge to UWP code samples](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) | Code samples on GitHub demonstrating features of converted apps. |
 
 
-
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

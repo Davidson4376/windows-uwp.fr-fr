@@ -1,202 +1,202 @@
 ---
 author: mcleblanc
 ms.assetid: 7234DD5F-8E86-424E-99A0-93D01F1311F2
-title: "Tester à l’aide de l’émulateur Microsoft pour Windows10 Mobile"
-description: "Simulez une interaction réaliste avec un appareil et testez les fonctionnalités de votre application à l’aide des outils fournis avec l’émulateur Microsoft pour Windows 10 Mobile."
+title: Test with the Microsoft Emulator for Windows 10 Mobile
+description: Simulate real-world interaction with a device and test the features of your app by using the tools included with Microsoft Emulator for Windows 10 Mobile.
 translationtype: Human Translation
 ms.sourcegitcommit: 9a33710315486c23a204a528d3d87421c6990b85
-ms.openlocfilehash: c53bda2329cd984e3a03d4a166e7353097e62cef
+ms.openlocfilehash: 6889c80d9879295fec31685aa3fd9bea9e6aea3e
 
 ---
-# Tester à l’aide de l’émulateur Microsoft pour Windows10 Mobile
+# Test with the Microsoft Emulator for Windows 10 Mobile
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Simulez une interaction réaliste avec un appareil et testez les fonctionnalités de votre application à l’aide des outils fournis avec l’émulateur Microsoft pour Windows 10 Mobile. L’émulateur est une application de bureau qui émule un appareil mobile exécutant Windows 10. Il offre un environnement virtualisé dans lequel vous pouvez déboguer et tester les applications Windows sans appareil physique. Il fournit également un environnement isolé pour vos prototypes d’application.
+Simulate real-world interaction with a device and test the features of your app by using the tools included with Microsoft Emulator for Windows 10 Mobile. The emulator is a desktop application that emulates a mobile device running Windows 10. It provides a virtualized environment in which you can debug and test Windows apps without a physical device. It also provides an isolated environment for your application prototypes.
 
-L’émulateur a pour but de fournir des performances comparables à un appareil réel. Cependant, avant de publier votre application sur le Windows Store, nous vous recommandons de tester votre application sur un appareil physique.
+The emulator is designed to provide comparable performance to an actual device. Before you publish your app to the Windows Store, however, we recommend that you test your app on a physical device.
 
-Vous pouvez tester votre application universelle à l’aide d’une image de l’émulateur pour Windows 10 Mobile unique pour différentes configurations de résolution et de taille d’écran. Vous pouvez simuler une interaction réaliste avec un appareil et tester les différentes fonctionnalités de votre application à l’aide des outils fournis avec l’émulateur Microsoft.
+You can test your universal app using a unique Windows 10 Mobile emulator image for various screen resolution and screen size configurations. You can simulate real-world interaction with a device and test various features of your app by using the tools included in the Microsoft Emulator.
 
-## Configuration système requise
+## System requirements
 
-Votre ordinateur doit présenter la configuration suivante :
+Your computer must meet the following requirements:
 
 BIOS
 
--   Assistance matérielle à la virtualisation
--   Traduction d’adresse de second niveau (SLAT, Second Level Address Translation)
--   Prévention de l’exécution des données au niveau matériel (DEP, Data Execution Prevention)
+-   Hardware-assisted virtualization.
+-   Second Level Address Translation (SLAT).
+-   Hardware-based Data Execution Prevention (DEP).
 
 RAM
 
--   4 Go ou plus
+-   4 GB or more.
 
-Système d’exploitation
+Operating system
 
--   Windows 8 ou version ultérieure (Windows 10 fortement recommandé)
--   64 bits
--   Édition Professionnelle ou version supérieure
+-   Windows 8 or higher (Windows 10 strongly recommended)
+-   64-bit
+-   Pro edition or higher
 
-Pour vérifier la configuration requise du BIOS, consultez [Activation d’Hyper-V pour l’émulateur pour WindowsPhone8](https://msdn.microsoft.com/library/windows/apps/xaml/jj863509.aspx).
+To check the BIOS requirements, see [How to enable Hyper-V for the emulator for Windows Phone 8](https://msdn.microsoft.com/library/windows/apps/xaml/jj863509.aspx).
 
-Pour vérifier la configuration requise en termes de RAM et de système d’exploitation, dans le Panneau de configuration, cliquez sur **Système et sécurité**, puis sur **Système**.
+To check requirements for RAM and operating system, in Control Panel, click **System and Security**, and then click **System**.
 
-L’émulateur Microsoft pour Windows 10 Mobile nécessite Visual Studio 2015. Il n’est pas compatible avec les versions antérieures de Visual Studio.
+Microsoft Emulator for Windows 10 Mobile requires Visual Studio 2015; it is not backward compatible with earlier versions of Visual Studio.
 
-L’émulateur Microsoft pour Windows 10 Mobile ne peut pas charger des applications destinées à des versions de Windows Phone OS antérieures à Windows Phone OS 7.1.
+Microsoft Emulator for Windows 10 Mobile cannot load apps that target the Windows Phone OS version earlier than Windows Phone OS 7.1.
 
-## Installation et désinstallation
+## Installing and uninstalling
 
--   **Installation**.
+-   **Installing**.
 
-    L’émulateur Microsoft pour Windows10 Mobile est fourni avec le Kit de développement logiciel (SDK) Windows10. Ils peuvent tous deux être installés conjointement avec Visual Studio 2015. Consultez la [page de téléchargement de Visual Studio](https://go.microsoft.com/fwlink/p/?LinkId=534785).
+    Microsoft Emulator for Windows 10 Mobile ships as part of the Windows 10 SDK. The Windows 10 SDK and emulator can be installed as part of the Visual Studio 2015 install. See the [Visual Studio download page](https://go.microsoft.com/fwlink/p/?LinkId=534785).
 
-    Vous pouvez également installer l’émulateur Microsoft pour Windows 10 Mobile à l’aide du programme d’installation de l’émulateur Microsoft. Consultez la [page de téléchargement des outils Windows10](https://go.microsoft.com/fwlink/p/?LinkID=534189).
+    You can also install the Microsoft Emulator for Windows 10 Mobile using the Microsoft Emulator setup. See the [Windows 10 Tools download page](https://go.microsoft.com/fwlink/p/?LinkID=534189).
 
--   **Désinstallation**.
+-   **Uninstalling**.
 
-    Vous pouvez désinstaller l’émulateur Microsoft pour Windows10 Mobile à l’aide du programme d’installation/réparation de Visual Studio. Vous pouvez également utiliser l’option **Programmes et fonctionnalités** du **Panneau de configuration** pour supprimer l’émulateur.
+    You can uninstall the Microsoft Emulator for Windows 10 Mobile using Visual Studio setup/repair. Or you can use **Programs and Features** under **Control Panel** to remove the emulator.
 
-    Lorsque vous désinstallez l’émulateur Microsoft pour Windows 10 Mobile, la carte Ethernet virtuelle Hyper-V créée pour l’émulateur à utiliser n’est pas automatiquement supprimée. Vous pouvez la supprimer manuellement sous **Connexions réseau**, dans le **Panneau de configuration**.
+    When you uninstall the Microsoft Emulator for Windows 10 Mobile, the Hyper-V Virtual Ethernet Adapter that was created for the emulator to use is not automatically removed. You can manually remove this virtual adapter from **Network Connections** in **Control Panel**.
 
-## Nouveautés de l’émulateur Microsoft pour Windows 10 Mobile
+## What’s new in Microsoft Emulator for Windows 10 Mobile
 
-Outre la prise en charge de la plateforme Windows universelle (UWP, Universal Windows Platform), l’émulateur offre les nouvelles fonctionnalités suivantes :
+In addition to providing support for Universal Windows Platform (UWP), the emulator has added the following functionality:
 
--   Prise en charge des modes d’entrée de souris pour différencier les entrées de souris des entrées tactiles uniques.
--   Prise en charge de la communication en champ proche (NFC, Near Field Communication) L’émulateur permet de simuler la communication NFC et de tester et développer des applications universelles de proximité et NFC.
--   L’accélération matérielle native améliore les performances graphiques dans l’émulateur à l’aide de la carte graphique locale. Vous devez disposer d’une carte graphique prise en charge et activer l’accélération dans l’onglet **Capteurs** de l’interface utilisateur des paramètres **Outils supplémentaires** de l’émulateur pour utiliser l’accélération.
+-   Mouse input mode support to differentiate between mouse and single touch input.
+-   NFC Support. The emulator allows you to simulate NFC and make it possible to test and develop NFC/Proximity-enabled universal apps.
+-   Native hardware acceleration improves graphics performance in the emulator by using the local graphics card. You must have a supported graphics card installed, and enable acceleration on the **Sensors** tab of the emulator's **Additional Tools** settings user interface in order to use acceleration.
 
-## Fonctionnalités que vous pouvez tester dans l’émulateur
+## Features that you can test in the emulator
 
-Outre les nouvelles fonctionnalités mentionnées dans la section précédente, vous pouvez tester les fonctionnalités couramment utilisées suivantes dans l’émulateur Microsoft pour Windows 10 Mobile.
+In addition to the new features mentioned in the previous section, you can test the following commonly used features in the Microsoft Emulator for Windows 10 Mobile.
 
--   **Résolution d’écran, taille d’écran et mémoire**. Visez un large marché pour votre application en la testant sur plusieurs images de l’émulateur afin de simuler différentes résolutions d’écran, tailles physiques et contraintes de mémoire.
+-   **Screen resolution, screen size, and memory**. Reach a broad market for your app by testing it on various emulator images to simulate various screen resolutions, physical sizes, and memory constraints.
 
-    ![Émulateurs disponibles avec la résolution, la taille et la mémoire](images/em-list.png)
+    ![Available emulators with resolution, size, and memory](images/em-list.png)
 
--   **Configuration de l’écran**. Basculez l’émulateur du mode Portrait au mode Paysage. Modifiez la valeur de zoom pour adapter l’émulateur à l’écran de l’ordinateur.
+-   **Screen configuration**. Change the emulator from portrait to landscape mode. Change the zoom setting to fit the emulator to your desktop screen.
 
--   **Mise en réseau**. La prise en charge réseau est intégrée à l’émulateur Windows Phone. La mise en réseau est activée par défaut. Dans la plupart des environnements, vous n’avez pas à installer les pilotes réseau de l’émulateur Windows Phone ou à configurer les options de mise en réseau manuellement.
+-   **Networking**. Networking support is integrated with Windows Phone Emulator. Networking is enabled by default. You do not have to install network drivers for Windows Phone Emulator or configure networking options manually in most environments.
 
-    L’émulateur utilise la connexion réseau de l’ordinateur hôte. Il n’apparaît pas comme appareil distinct sur le réseau. Certains problèmes de configuration que l’utilisateur rencontrait avec l’émulateur du Kit de développement logiciel (SDK) de Windows Phone 8.0 n’existent ainsi plus.
+    The emulator uses the network connection of the host computer. It does not appear as a separate device on the network. This eliminates some of the configuration issues that users encountered with the Windows Phone SDK 8.0 emulator.
 
--   **Langue et paramètres régionaux**. Préparez votre application au marché international en modifiant la langue d’affichage et les paramètres régionaux de l’émulateur Windows Phone.
+-   **Language and region settings**. Prepare your app for an international market by changing the display language and region settings in Windows Phone Emulator.
 
-    Sur l’émulateur en cours d’exécution, accédez à l’application **Paramètres**, sélectionnez les paramètres **système**, puis sélectionnez **langue** ou **région**. Modifiez les paramètres que vous voulez tester. Si vous y êtes invité, cliquez sur **redémarrer le téléphone** pour appliquer les nouveaux paramètres et redémarrer l’émulateur.
+    On the running emulator, go to the **Settings** app, then select the **system** settings, then select **language** or **region**. Change the settings that you want to test. If you're prompted, click **restart phone** to apply the new settings and restart the emulator.
 
--   **Cycle de vie des applications et «tombstoning»**. Testez le comportement de votre application quand elle est désactivée ou «tombstoned» en modifiant la valeur de l’option **Tombstone sur désactivation lors du débogage** dans la page **Débogage** des propriétés du projet.
+-   **Application lifecycle and tombstoning**. Test the behavior or your app when it's deactivated or tombstoned by changing the value of the option **Tombstone upon deactivation while debugging** on the **Debug** page of project properties.
 
--   **Stockage de dossiers local (précédemment appelé stockage isolé)**. Les données d’un stockage isolé sont conservées pendant que l’émulateur est en cours d’exécution, mais perdues une fois qu’il se ferme.
+-   **Local folder storage (previously known as isolated storage)**. Data in isolated storage persists while the emulator is running, but is lost once the emulator closes.
 
--   **Microphone**. Nécessite et utilise le microphone de l’ordinateur hôte.
+-   **Microphone**. Requires and uses the microphone on the host computer.
 
--   **Clavier du téléphone**. L’émulateur prend en charge le mappage du clavier matériel de votre ordinateur de développement sur le clavier d’un WindowsPhone. Le comportement des clés est le même que sur un appareil WindowsPhone
+-   **Phone keyboard**. The emulator supports mapping of the hardware keyboard on your development computer to the keyboard on a Windows Phone. The behavior of the keys is the same as on a Windows Phone device
 
--   **Écran de verrouillage**. L’émulateur étant ouvert, appuyez deux fois sur la touche F12 du clavier de votre ordinateur. La touche F12 émule le bouton Marche/Arrêt du téléphone. Le premier appui éteint l’affichage. Le second appui rallume l’affichage et active l’écran de verrouillage. Déverrouillez l’écran en le faisant glisser vers le haut à l’aide de la souris.
+-   **Lock screen**. With the emulator open, press F12 on your computer keyboard twice. The F12 key emulates the power button on the phone. The first key press turns off the display. The second key press turns the display on again with the lock screen engaged. Unlock the screen by using the mouse to slide the lock screen upward.
 
-## Fonctionnalités que vous ne pouvez pas tester dans l’émulateur
+## Features that you can't test in the emulator
 
-Testez les fonctionnalités suivantes uniquement sur un appareil physique.
+Test the following features only on a physical device.
 
--   Boussole
+-   Compass
 -   Gyroscope
--   Contrôleur de vibration
--   Luminosité. Le niveau de luminosité de l’émulateur est toujours élevé.
--   Vidéo haute résolution. Les vidéos dont la résolution est supérieure à la résolution VGA (640 x 480) ne peuvent pas s’afficher correctement, en particulier sur les images d’émulateur n’ayant que 512 Mo de mémoire.
+-   Vibration controller
+-   Brightness. The brightness level of the emulator is always High.
+-   High-resolution video. Videos with a resolution higher than VGA resolution (640 x 480) cannot be displayed reliably, especially on emulator images with only 512MB of memory.
 
-## Saisie à la souris
+## Mouse input
 
-Simulez les entrées de souris à l’aide de la souris physique ou du Trackpad sur votre PC Windows et le bouton d’entrée de souris sur la barre d’outils de l’émulateur. Cette fonctionnalité est utile si votre application permet à l’utilisateur d’utiliser une souris associée à son appareil Windows 10 pour les entrées.
+Simulate mouse input using the physical mouse or trackpad on your Windows PC and the mouse input button on the emulator toolbar. This feature is useful if your app provides the user with an ability to utilize a mouse paired to their Windows 10 device to provide input.
 
-Appuyez sur le bouton d’entrée de souris de la barre d’outils de l’émulateur pour activer l’entrée de souris. Les événements de clic dans l’environnement de l’émulateur sont désormais envoyés au système d’exploitation Windows 10 Mobile exécuté sur l’ordinateur virtuel de l’émulateur en tant qu’événements de souris.
+Tap the mouse input button on the emulator toolbar to enable mouse input. Any click events within the emulator chrome will now be sent to the Windows 10 Mobile OS running inside the emulator VM as mouse events.
 
-![Écran de l’émulateur avec entrée de souris activée](images/emulator-with-mouse-enabled.png)
+![Emulator screen with mouse input enabled](images/emulator-with-mouse-enabled.png)
 
-Écran de l’émulateur avec l’entrée de souris activée.
+The emulator screen with the mouse input enabled.
 
-![Bouton d’entrée de souris de la barre d’outils de l’émulateur](images/emulator-showing-mouse-input-button-bar.png)
+![The mouse input button on the emulator toolbar](images/emulator-showing-mouse-input-button-bar.png)
 
-Bouton d’entrée de souris de la barre d’outils de l’émulateur.
+The mouse input button on the emulator toolbar.
 
-## Saisie au clavier
+## Keyboard input
 
-L’émulateur prend en charge le mappage du clavier matériel de votre ordinateur de développement sur le clavier d’un WindowsPhone. Le comportement des clés est le même que sur un appareil WindowsPhone. 
+The emulator supports mapping of the hardware keyboard on your development computer to the keyboard on a Windows Phone. The behavior of the keys is the same as on a Windows Phone device. 
 
-Par défaut, le clavier matériel n’est pas activé. Cette implémentation est équivalente à un clavier coulissant qui doit être déployé avant de pouvoir être utilisé. Avant d’activer le clavier matériel, l’émulateur n’accepte d’entrée par touche qu’à partir des touches de contrôle.
+By default, the hardware keyboard is not enabled. This implementation is equivalent to a sliding keyboard that must be deployed before you can use it. Before you enable the hardware keyboard, the emulator accepts key input only from the control keys.
 
-Les caractères spéciaux sur le clavier d’une version localisée d’un ordinateur de développement Windows ne sont pas pris en charge par l’émulateur. Pour entrer les caractères spéciaux présents sur un clavier localisé, utilisez plutôt le panneau de saisie. 
+Special characters on the keyboard of a localized version of a Windows development computer are not supported by the emulator. To enter special characters that are present on a localized keyboard, use the Software Input Panel (SIP) instead. 
 
-Pour utiliser le clavier de votre ordinateur dans l’émulateur, appuyez surF4.
+To use your computer’s keyboard in the emulator, press F4.
 
-Pour arrêter d’utiliser le clavier de votre ordinateur dans l’émulateur, appuyez surF4.
+To stop using your computer’s keyboard in the emulator, press F4.
 
-Le tableau suivant répertorie les touches d’un clavier matériel que vous pouvez utiliser pour émuler les boutons et d’autres contrôles sur un Windows Phone.
+The following table lists the keys on a hardware keyboard that you can use to emulate the buttons and other controls on a Windows Phone.
 
-Notez que dans l’émulateur build10.0.14332, le mappage de clés matérielles de l’ordinateur a été modifié. Les valeurs dans la deuxième colonne du tableau ci-dessous représentent ces nouvelles clés. 
+Note that in Emulator Build 10.0.14332 the computer hardware key mapping was changed. Values in the second column of the table below represent these new keys. 
 
-Clés matérielles de l’ordinateur (émulateur build10.0.14295 et versions antérieures) | Clés matérielles de l’ordinateur (émulateur build10.0.14332 et versions antérieures) | Bouton matériel de Windows Phone | Remarques
+Computer hardware keys (Emulator Build 10.0.14295 and earlier) | Computer hardware keys (Emulator Build 10.0.14332 and newer) | Windows Phone hardware button | Notes
 --------------------- | ------------------------- | ----------------------------- | -----
-F1 | WIN + ÉCHAP | RETOUR | Les pressions longues fonctionnent comme prévu.
-F2 | WIN + F2 | ÉCRAN D’ACCUEIL | Les pressions longues fonctionnent comme prévu.
-F3 | WIN + F3 | RECHERCHER |  
-F4 | F4 (aucune modification) | Bascule entre l’utilisation du clavier de l’ordinateur local et la non utilisation du clavier de l’ordinateur local. | 
-F6 | WIN + F6 | APPAREIL PHOTO, À MOITIÉ | Bouton d’appareil photo enfoncé à moitié.
-F7 | WIN + F7 | APPAREIL PHOTO, COMPLET | Bouton d’appareil photo dédié.
-F9 | WIN + F9 | MONTER LE VOLUME | 
-F10 | WIN + F10 | BAISSER LE VOLUME | 
-F12 | WIN + F12 | ALIMENTATION | Appuyez sur la toucheF12 à deux reprises pour activer l’écran de verrouillage. Les pressions longues fonctionnent comme prévu.
-ÉCHAP | WIN + ÉCHAP | RETOUR | Les pressions longues fonctionnent comme prévu.
+F1 | WIN + ESC | BACK | Long presses work as expected.
+F2 | WIN + F2 | START | Long presses work as expected.
+F3 | WIN + F3 | SEARCH |  
+F4 | F4 (no change) | Toggles between using the local computer’s keyboard and not using the local computer’s keyboard. | 
+F6 | WIN + F6 | CAMERA HALF | A dedicated camera button that is pressed halfway.
+F7 | WIN + F7 | CAMERA FULL | A dedicated camera button.
+F9 | WIN + F9 | VOLUME UP | 
+F10 | WIN + F10 | VOLUME DOWN | 
+F12 | WIN + F12 | POWER | Press the F12 key twice to enable the lock screen. Long presses work as expected.
+ESC | WIN + ESC | BACK | Long presses work as expected.
  
 
 
-## Communication en champ proche (NFC)
+## Near Field Communications (NFC)
 
-Générez et testez les applications qui utilisent des fonctionnalitésNFC sur Windows10Mobile à l’aide de l’onglet **NFC** du menu **Outils supplémentaires** de l’émulateur. Ces fonctionnalités sont utiles dans de nombreuses situations : des scénarios de proximité (par exemple, Toucher pour partager) à l’émulation de carte (par exemple, Toucher pour payer).
+Build and test apps that use Near Field Communication (NFC) enabled features on Windows 10 Mobile by using the **NFC** tab of the emulator’s **Additional Tools** menu. NFC is useful for a number of scenarios ranging from Proximity scenarios (such as tap to share) to card emulation (such as tap to pay).
 
-Vous pouvez tester votre application en simulant deux téléphones rapprochés à l’aide de deux émulateurs ou en simulant une approche auprès d’une balise. Dans Windows 10, les appareils mobiles bénéficient de la fonction d’émulation de la carte hôte (HCE, Host Card Emulation). À l’aide de l’émulateur de téléphone, vous pouvez simuler l’approche de votre appareil auprès d’un terminal de paiement pour le trafic de réponse à la commande APDU.
+You can test your app by simulating a pair of phones tapping together by using a pair of emulators, or you can test your app by simulating a tap to a tag. Also in Windows 10, mobile devices are enabled with HCE (Host Card Emulation) feature and by using the phone emulator you can simulate tapping your device to a payment terminal for APDU command-response traffic.
 
-L’onglet NFC prend en charge trois modes :
+The NFC tab supports three modes:
 
--   Mode Proximité
--   Mode HCE
--   Mode Lecteur de carte à puce
+-   Proximity Mode
+-   HCE (Host Card Emulation) Mode
+-   Smart Card Reader Mode
 
-Dans tous les modes, la fenêtre de l’émulateur présente trois zones d’intérêt.
+In all modes, the emulator window has three areas of interest.
 
--   La section supérieure gauche est spécifique au mode sélectionné. Les fonctionnalités de cette section dépendent du mode et sont décrites dans les sections spécifiques aux modes ci-dessous.
--   La section supérieure droite répertorie les journaux. Lorsque vous rapprochez deux appareils (ou approchez votre appareil auprès du terminal de PDV) puis les éloignez, les événements correspondants sont enregistrés. Cette section enregistre également si votre application a répondu avant que la connexion ne soit interrompue et toute autre action effectuée via l’interface utilisateur de l’émulateur, avec horodatage. Les données des journaux sont conservées entre les changements de mode. Vous pouvez effacer les journaux à tout moment en appuyant sur le bouton **Effacer** situé au-dessus de l’écran **Journaux**.
--   Dans la partie inférieure de l’écran figurent le journal des messages et la transcription de tous les messages envoyés ou reçus dans le cadre de la connexion sélectionnée, en fonction du mode sélectionné.
+-   The top left section is specific to the mode selected. The features of this section depend on the mode, and are detailed in the mode-specific sections below.
+-   The top right section lists the logs. When you tap a pair of devices together (or tap to the POS terminal) the tap event is logged and when the devices are untapped the untap event is logged. This section also records if your app responded before the connection is broken or any other action you have taken in the emulator UI with time stamps. Logs are persistent between mode switches, and you can clear the logs at any point by hitting the **Clear** button above the **Logs** screen.
+-   The bottom half of the screen is the message log and shows the transcript of all messages sent or received over the currently selected connection, depending on the mode selected.
 
-> **Important** Lors du premier lancement de l’outil d’approche, une invite relative au Pare-feu Windows s’affiche. Vous devez activer les 3cases à cocher et empêcher tout blocage de l’outil par le pare-feu. Sinon, l’outil échouera sans avertissement.
+> **Important**  When you first launch the tapper tool, you will get a Windows Firewall prompt. You MUST select ALL 3 check boxes and allow the tool through the firewall, or the tool will silently fail to work.
 
-Après le lancement du programme d’installation rapide, suivez rigoureusement l’instruction ci-dessus : activez les 3 cases à cocher à l’invite du pare-feu. En outre, l’outil d’approche doit être installé et utilisé sur le même ordinateur hôte physique que l’émulateur Microsoft.
+After launching the quick start installer, make sure you follow the above instruction to select all 3 check boxes on the firewall prompt. Also, the tapper tool must be installed and used on the same physical host machine as the Microsoft Emulator.
 
-### Mode Proximité
+### Proximity mode
 
-Pour simuler le rapprochement de deux téléphones, vous devez lancer 2 émulateurs Windows Phone 8. Visual Studio ne prend pas en charge l’exécution simultanée de deux émulateurs identiques. Pour contourner ce problème, vous devez sélectionner différentes résolutions pour chacun des émulateurs.
+To simulate a pair of phones tapping together you'll need to launch a pair of Windows Phone 8 emulators. Since Visual Studio doesn't support running two identical emulators at the same time, you'll need to select different resolutions for each of the emulators to work around it.
 
-![Page Proximité NFC](images/emulator-nfc-proximity.png)
+![The NFC Proximity page](images/emulator-nfc-proximity.png)
 
-Lorsque vous activez la case à cocher **Activer la découverte d’appareils homologues**, la zone de liste déroulante **Appareil homologue** présente les émulateurs Microsoft (en cours d’exécution sur le même ordinateur hôte physique ou sur le réseau local), ainsi que les ordinateurs Windows exécutant le pilote du simulateur (en cours d’exécution sur le même ordinateur ou sur le réseau local).
+When you check the **Enable discovery of peer devices** checkbox, the **Peer device** dropdown box shows Microsoft Emulators (running on the same physical host machine or in the local network) as well as the Windows machines running the simulator driver (running on the same machine or in the local network).
 
-Une fois que les deux émulateurs sont en cours d’exécution :
+Once both emulators are running:
 
--   Sélectionnez l’émulateur que vous voulez cibler dans la liste **Appareil homologue**.
--   Sélectionnez la case d’option **Envoyer à l’appareil homologue**.
--   Cliquez sur le bouton **Approcher**. Cela simule le rapprochement des deux appareils. Vous devriez entendre la notification sonore d’approche NFC.
--   Pour déconnecter les 2appareils, appuyez simplement sur le bouton **Déconnecter**.
+-   Select the emulator you would like to target in the **Peer device** list.
+-   Select the **Send to peer device** radio button.
+-   Click **Tap** button. This will simulate the two devices tapping together and you should be hearing the NFC tap notification sound
+-   To disconnect the 2 devices, simply hit the **Untap** button.
 
-Vous pouvez également activer la case à cocher **Déconnecter automatiquement dans (secondes)** et spécifier le nombre de secondes durant lesquelles vous souhaitez approcher les appareils avant que ceux-ci ne soient automatiquement déconnectés. Cela simule les attentes d’un utilisateur dans une situation réelle: il ne tiendrait ses téléphones à proximité l’un de l’autre que pendant une courte durée. Actuellement, le journal des messages n’est pas disponible après la déconnexion.
+Alternatively, you can enable **Automatically untap in (seconds)** check box where you can specify the number of seconds you want the devices to be tapped and they will be automatically untapped after the specified number of seconds (simulating what would be expected of a user in real life, they would only hold their phones together for a short time). Note however that currently the message log isn't available after the connection has been untapped.
 
-Pour simuler la lecture des messages à partir d’une balise ou la réception de messages à partir d’un autre appareil :
+To simulate reading messages from a tag or receiving messages from another device:
 
--   Activez la case d’option **Envoyer à soi-même** pour tester les scénarios qui ne nécessitent qu’un seul appareil NFC.
--   Cliquez sur le bouton **Approcher**. Cela simule l’approche d’un appareil auprès d’une balise. Vous devriez entendre la notification sonore d’approche NFC.
--   Pour effectuer la déconnexion, appuyez simplement sur le bouton **Déconnecter**.
+-   Select the **Send to self** radio button to test scenarios that require only one NFC enabled device.
+-   Click **Tap** button. This will simulate the tapping a device to a tag and you should be hearing the NFC tap notification sound
+-   To disconnect, simply hit the **Untap** button.
 
-En utilisant le mode de proximité, vous pouvez injecter des messages comme s’ils provenaient d’une balise ou d’un autre appareil homologue. L’outil vous permet d’envoyer des messages des types suivants.
+Using the proximity mode you can inject messages as if they came from a tag or another peer device. The toolallows you to send messages of the following types.
 
 -   WindowsURI
 -   WindowsMime
@@ -207,35 +207,35 @@ En utilisant le mode de proximité, vous pouvez injecter des messages comme s’
 -   NDEF:URI
 -   NDEF:wkt.U
 
-Vous pouvez créer ces messages en effectuant des modifications dans les fenêtres **Charge utile** ou en les fournissant dans un fichier. Pour plus d’informations sur ces types et sur leur utilisation, voir la section Remarques de la page de référence[**ProximityDevice.PublishBinaryMessage**](https://msdn.microsoft.com/library/windows/apps/Hh701129).
+You can either create these messages by editing the **Payload** windows or providing them in a file. For more information about these types and how to use them please refer to the Remarks section of the[**ProximityDevice.PublishBinaryMessage**](https://msdn.microsoft.com/library/windows/apps/Hh701129) reference page.
 
-Windows8 Driver Kit (WDK) inclut un exemple de pilote présentant le même protocole que l’émulateur Windows Phone8. Vous devez télécharger le DDK, créer cet exemple de pilote, l’installer sur un appareil Windows 8, ajouter l’adresse IP ou le nom d’hôte de l’appareil Windows 8 à la liste d’appareils, puis l’approcher d’un autre appareil Windows 8 ou d’un émulateur Windows Phone 8.
+The Windows 8 Driver Kit (WDK) includes a driver sample that exposes the same protocol as the Windows Phone 8 emulator. You'll need to download the DDK, build that sample driver, install it on a Windows 8 device, then add the Windows 8 device's IP address or hostname to the devices list and tap it either with another Windows 8 device or with a Windows Phone 8 emulator.
 
-### Mode HCE
+### Host Card Emulation (HCE) Mode
 
-En mode d’émulation de la carte hôte (HCE, Host Card Emulation), vous pouvez tester votre application d’émulation de carte basée sur HCE en écrivant vos propres scripts personnalisés pour simuler un terminal de lecteur de carte à puce, par exemple un terminal de point de vente (PDV). Cet outil part du principe que vous êtes familiarisé avec les paires de réponse à la commande (conformes à la norme ISO-7816-4) envoyées entre un terminal de lecteur (par exemple, PDV, lecteur de badge ou lecteur de carte de transport public) et la carte à puce (que vous émulez dans votre application).
+In Host Card Emulation (HCE) mode you can test your HCE-based card emulation application by writing your own custom scripts to simulate a smart card reader terminal, such as a Point of Sale (POS) terminal. This tool assumes that you are familiar with the command response pairs (compliant with ISO-7816-4) that are sent between a reader terminal (such as POS, badge reader or transit card reader) and the smart card (that you are emulating in your application).
 
-![Page NFC HCE](images/emulator-nfc-hce.png)
+![The NFC HCE page](images/emulator-nfc-hce.png)
 
--   Créez un nouveau script en cliquant sur le bouton **Ajouter** dans la section de l’éditeur de script. Vous pouvez nommer votre script. Une fois que vous avez terminé la modification, vous pouvez enregistrer votre script à l’aide du bouton **Enregistrer**.
--   Vos scripts enregistrés seront disponibles la prochaine fois que vous lancez l’émulateur.
--   Exécutez vos scripts en appuyant sur le bouton **Lire** dans la fenêtre de l’éditeur de script. Cette action entraîne la simulation de l’approche de votre téléphone auprès du terminal et de l’envoi des commandes écrites dans votre script. Vous pouvez également appuyer sur le bouton **Approcher**, puis sur le bouton **Lire**. Le script s’exécutera uniquement lorsque vous aurez appuyé sur le bouton **Lire** .
--   Vous pouvez arrêter l’envoi de commandes à votre application en appuyant sur le bouton **Arrêter**. Cependant, les appareils ne se déconnectent que lorsque vous appuyez sur le bouton **Déconnecter**.
--   Supprimez vos scripts en sélectionnant le script souhaité dans le menu déroulant et en appuyant sur le bouton **Supprimer**.
--   L’outil de l’émulateur ne vérifie la syntaxe de vos scripts que lorsque vous exécutez le script à l’aide du bouton **Lire**. Les messages envoyés par votre script dépendent de l’implémentation de votre application d’émulation de carte.
+-   Create a new script by clicking the **Add** button in the script editor section. You can provide a name for your script and after you are done with editing, you can save your script using the **Save** button.
+-   Your saved scripts will be available the next time you launch the emulator.
+-   Run your scripts by hitting the **Play** button in the scripts editor window. This action results in simulating of tapping your phone to the terminal and sending commands written in your script. Alternatively you can hit the **Tap** button and then the **Play** button, until you hit **Play** the script will not run.
+-   Stop sending commands by hitting the **Stop** button, which stops sending the commands to your application but the devices remain tapped until you hit the **Untap** button.
+-   Delete your scripts by selecting the script in the dropdown menu and hitting **Delete** button.
+-   The emulator tool does not check for the syntax of your scripts until you run the script using the **Play** button. The messages sent by your script are dependent on your implementation of your card emulation app.
 
-Vous pouvez également utiliser l’outil de simulation de terminal de MasterCard ([https://www.terminalsimulator.com/](https://www.terminalsimulator.com/ )) pour tester les applications de paiement.
+You can also use the terminal simulator tool from MasterCard ([https://www.terminalsimulator.com/](https://www.terminalsimulator.com/ )) for payments app testing.
 
--   Activez la case à cocher de l’écouteur **Activer MasterCard** sous les fenêtres de l’éditeur de script et lancez le simulateur de MasterCard.
--   Grâce à cet outil, vous pouvez générer des commandes qui sont transmises à votre application exécutée sur l’émulateur par le biais de l’outil NFC.
+-   Check the **Enable MasterCard** listener checkbox below the script editor windows and launch the simulator from MasterCard.
+-   Using the tool, you can generate commands that are relayed to your application running on the emulator through the NFC tool.
 
-Pour en savoir plus sur la prise en charge de l’émulationHCE et le développement d’applicationsHCE dans Windows10Mobile, consultez le [blog de l’équipe NFC de Microsoft](http://go.microsoft.com/fwlink/?LinkId=534749).
+To learn more about HCE support and how to develop HCE apps in Windows 10 Mobile, please refer to the [Microsoft NFC Team Blog](http://go.microsoft.com/fwlink/?LinkId=534749).
 
-### Création de scripts pour les tests HCE
+### How to Create Scripts for HCE Testing
 
-Les scripts sont écrits en codeC# et la méthode d’exécution de votre script est appelée lorsque vous cliquez sur le bouton **Lire**. Cette méthode exploite une interface IScriptProcessor utilisée pour émettre les commandesAPDU, générer la fenêtre de journal et contrôler le délai d’attente de réponseAPDU à partir du téléphone.
+The scripts are written as C# code and your script’s Run method is called when you click the **Play** button, this method takes an IScriptProcessor interface which is used to transceive APDU commands, output to the log window, and control the timeout for waiting on an APDU response from the phone.
 
-Vous trouverez ci-dessous une référence sur les fonctionnalités disponibles :
+Below is a reference on what functionality is available:
 
 ```csharp     
         public interface IScriptProcessor
@@ -258,332 +258,332 @@ Vous trouverez ci-dessous une référence sur les fonctionnalités disponibles :
         }
 ```
 
-### Mode Lecteur de carte à puce
+### Smart Card Reader Mode
 
-L’émulateur peut être connecté à un lecteur de carte à puce sur votre ordinateur hôte, de sorte que les cartes à puce insérées ou approchées s’affichent dans l’application de votre téléphone et puissent communiquer avec des commandesAPDU à l’aide de la classe [**Windows.Devices.SmartCards.SmartCardConnection**](https://msdn.microsoft.com/library/windows/apps/Dn608002). Pour cela, un lecteur de carte à puce compatible doit être connecté à votre ordinateur. Des lecteurs de carte à puce USB (NFC/sans contact et de type insertion/contact) sont largement disponibles sur le marché. Pour permettre à l’émulateur de fonctionner avec un lecteur de carte à puce connecté, vous devez d’abord choisir le mode **Lecteur de carte**. Dans ce mode, une zone de liste déroulante répertoriant tous les lecteurs de carte à puce compatibles connectés au système hôte s’affiche. Choisissez le lecteur de carte à puce à connecter dans la liste déroulante.
+The emulator can be connected to a smart card reader device on your host computer, such that smart cards inserted or tapped will show up to your phone application and can be communicated to with APDUs using the [**Windows.Devices.SmartCards.SmartCardConnection**](https://msdn.microsoft.com/library/windows/apps/Dn608002) class. For this to work, you will need a compatible smart card reader device attached to your computer, USB smart card readers (both NFC/contactless and insert/contact) are widely available. To enable the emulator to work with an attached smart card reader, first choose the **Card Reader** mode which should show a dropdown box listing all the compatible smart card readers attached to the host system, then choose the smart card reader device you’d like to be connected from the dropdown.
 
-Notez que certains lecteurs de carte à puce NFC ne prennent pas en charge les commandes APDU de carte de stockage PC/SC standard et certains types de cartes NFC.
+Note that not all NFC-capable smart card readers support some types of NFC cards, and some do not support the standard PC/SC storage card APDU commands.
 
-## Entrée multipoint
+## Multi-point input
 
-Simulez l’entrée tactile multipoint pour effectuer un pincement et un zoom, une rotation ou un mouvement panoramique sur les objets, à l’aide du bouton **Entrée tactile multipoint** de la barre d’outils de l’émulateur. Cette fonctionnalité est utile si votre application affiche des photos, des cartes ou autres éléments visuels sur lesquels les utilisateurs peuvent effectuer un pincement et un zoom, une rotation ou un mouvement panoramique.
+Simulate multi-touch input for pinching and zooming, rotating, and panning objects by using the **Multi-touch Input** button on the emulator toolbar. This feature is useful if your app displays photos, maps, or other visual elements that users can pinch and zoom, rotate, or pan.
 
-1.  Appuyez sur le bouton **Entrée tactile multipoint** de la barre d’outils de l’émulateur pour activer l’entrée multipoint. Deux points tactiles apparaissent sur l’écran de l’émulateur autour d’un point central.
-2.  Cliquez avec le bouton droit sur l’un des points tactiles et faites-le glisser pour le placer sans toucher l’écran.
-3.  Effectuez un clic gauche et faites glisser l’un des points tactiles pour simuler un pincement et un zoom, une rotation ou un mouvement panoramique.
-4.  Appuyez sur le bouton **Entrée point unique** de la barre d’outils de l’émulateur pour rétablir l’entrée normale.
+1.  Tap the **Multi-touch Input** button on the emulator toolbar to enable multi-point input. Two touch points appear on the emulator screen around a center point.
+2.  Right-click and drag one of the touch points to position them without touching the screen.
+3.  Left-click and drag one of the touch points to simulate pinching and zooming, rotating, or panning.
+4.  Tap the **Single Point Input** button on the emulator toolbar to restore normal input.
 
-La capture d’écran suivante illustre l’entrée tactile multipoint.
+The following screenshot shows multi-touch input.
 
-1.  L’image à gauche montre le bouton **Entrée tactile multipoint** de la barre d’outils de l’émulateur.
-2.  L’image du milieu illustre l’écran de l’émulateur après que l’utilisateur a appuyé sur le bouton **Entrée tactile multipoint** pour afficher les points tactiles.
-3.  L’image du milieu montre l’écran de l’émulateur une fois que l’utilisateur a déplacé les points tactiles pour effectuer un zoom sur l’image.
+1.  The small left image shows the **Multi-touch Input** button on the emulator toolbar.
+2.  The middle image shows the emulator screen after tapping the **Multi-touch Input** button to display the touch points.
+3.  The right image shows the emulator screen after dragging the touch points to zoom the image.
 
-![Option d’entrée multipoint de la barre d’outils de l’émulateur](images/em-multipoint.png)
+![Multi-point input option on the Emulator toolbar](images/em-multipoint.png)
 
-## Accéléromètre
+## Accelerometer
 
-Testez les applications qui suivent le mouvement du téléphone à l’aide de l’onglet **Accéléromètre** des **Outils supplémentaires** de l’émulateur.
+Test apps that track the movement of the phone by using the **Accelerometer** tab of the emulator's **Additional Tools**.
 
-Vous pouvez tester l’accéléromètre avec des données réelles ou des données déjà enregistrées. Le seul type de données enregistrées disponibles simule le fait de secouer le téléphone. Vous ne pouvez pas enregistrer ou sauvegarder vos propres simulations pour l’accéléromètre.
+You can test the accelerometer sensor with live input or pre-recorded input. The only type of recorded data that’s available simulates shaking the phone. You can’t record or save your own simulations for the accelerometer.
 
-1.  Sélectionnez l’orientation de départ souhaitée dans la liste déroulante **Orientation**.
+1.  Select the desired starting orientation in the **Orientation** drop-down list.
 
-2.  -   Sélectionnez le type d’entrée.
+2.  -   Select the type of input.
 
-        **Pour exécuter la simulation à l’aide de données réelles**
+        **To run the simulation with live input**
 
-        Au milieu du simulateur de l’accéléromètre, faites glisser le point de couleur pour simuler le mouvement de l’appareil dans un plan en 3D.
+        In the middle of the accelerometer simulator, drag the colored dot to simulate movement of the device in a 3D plane.
 
-        Le déplacement du point sur l’accès horizontal entraîne une rotation du simulateur d’un côté à l’autre. Le déplacement du point sur l’accès vertical entraîne un mouvement de va-et-vient du simulateur, avec une rotation autour de l’axe X. Au fur et à mesure que vous déplacez le point, les coordonnées X, Y et Z se mettent à jour en fonction des calculs de rotation. Vous ne pouvez pas déplacer le point en dehors du cercle englobant de la zone de la tablette tactile.
+        Moving the dot on the horizontal access rotates the simulator from side to side. Moving the dot on the vertical access rotates the simulator back and forth, rotating around the x-axis. As you drag the dot, the X, Y, and Z coordinates update based on the rotation calculations. You cannot move the dot outside the bounding circle in the touch pad area.
 
-        Vous pouvez aussi cliquer sur le bouton **Réinitialiser** pour rétablir l’orientation de départ.
+        Optionally, click **Reset** to restore the starting orientation.
 
-    -   **Pour exécuter la simulation à l’aide de données enregistrées**
+    -   **To run the simulation with recorded input**
 
-        Dans la section **Données enregistrées**, cliquez sur le bouton **Lire** pour démarrer la lecture des données simulées. La seule option disponible de la liste **Données enregistrées** est la possibilité de secouer l’appareil. Le simulateur ne se déplace pas sur l’écran quand il lit les données.
+        In the **Recorded Data** section, click the **Play** button to start playback of the simulated data. The only option available in the **Recorded Data** list is shake. The simulator does not move on the screen when it plays back the data.
 
-![Page Accéléromètre dans Outils supplémentaires de l’émulateur](images/em-accelerometer.png)
+![Accelerometer page in Additional Tools for the Emulator](images/em-accelerometer.png)
 
-## Emplacement et conduite
+## Location and driving
 
-Testez les applications qui utilisent la navigation ou le géorepérage à l’aide de l’onglet **Emplacement** des **Outils supplémentaires** de l’émulateur. Cette fonctionnalité permet de simuler la conduite en voiture ou à vélo, ou la marche dans des conditions similaires à celles du monde réel.
+Test apps that use navigation or geofencing by using the **Location** tab of the emulator's **Additional Tools**. This feature is useful for simulating driving, biking, or walking in conditions similar to the real world.
 
-Vous pouvez tester votre application tandis que vous simulez le déplacement d’un lieu vers un autre à différentes vitesses et selon différents profils de précision. Le simulateur d’emplacement peut vous aider à identifier les modifications de votre utilisation des API d’emplacement qui améliorent l’expérience utilisateur. Par exemple, l’outil peut vous permettre d’identifier que vous devez régler les paramètres de géorepérage, comme la taille ou la durée de résidence, pour détecter correctement les géorepérages des différents scénarios.
+You can test your app while you simulate moving from one location to another at different speeds and with different accuracy profiles. The location simulator can help you to identify changes in your usage of the location APIs usage that improve the user experience. For example, the tool can help you identify that you have to tune geofence parameters, such as size or dwell time, to detect the geofences successfully in different scenarios.
 
-L’onglet **Emplacement** prend en charge trois modes. Dans tous les modes, quand l’émulateur reçoit une nouvelle position, celle-ci est disponible pour déclencher l’événement [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/BR225540) ou pour répondre à un appel [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/Hh973536) de votre application de géolocalisation.
+The **Location** tab supports three modes. In all modes, when the emulator receives a new position, that position is available to trigger the [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/BR225540) event or to respond to a [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/Hh973536) call in your location-aware app.
 
--   Dans le mode **Punaise**, vous placez des punaises sur la carte. Lorsque vous cliquez sur **Lire tous les points**, le simulateur d’emplacement envoie l’emplacement de chaque punaise à l’émulateur l’un après l’autre, selon l’intervalle spécifié dans la zone de texte **Secondes par punaise**.
+-   In **Pin** mode, you place pushpins on the map. When you click **Play all points**, the location simulator sends the location of each pin to the emulator one after another, at the interval specified in the **Seconds per pin** text box.
 
--   En mode **Réel**, vous placez les punaises sur la carte. Le simulateur d’emplacement envoie l’emplacement de chaque punaise à l’émulateur aussitôt que vous les avez placées sur la carte.
+-   In **Live** mode, you place pushpins on the map. The location simulator sends the location of each pin to the emulator immediately as you place them on the map.
 
--   En mode **Itinéraire**, vous placez les punaises sur la carte pour signaler les points de navigation et le simulateur d’emplacement calcule automatiquement un itinéraire. L’itinéraire inclut les punaises non visibles à un intervalle d’une seconde le long de l’itinéraire. Par exemple, si vous avez sélectionné le profil de vitesse **Marche**, qui présume une vitesse de 5km/h, les punaises invisibles sont générées à des intervalles de1,39m. Lorsque vous cliquez sur **Lire tous les points**, le simulateur d’emplacement envoie l’emplacement de chaque punaise à l’émulateur l’un après l’autre, selon l’intervalle déterminé par le profil de vitesse sélectionné dans la liste déroulante.
+-   In **Route** mode, you place pushpins on the map to indicate waypoints, and the location simulator automatically calculates a route. The route includes invisible pins at one-second intervals along the route. For example, if you have select the **Walking** speed profile, which assumes a speed of 5 kilometers per hour, then invisible pins are generated at intervals of 1.39 meters. When you click **Play all points**, the location simulator sends the location of each pin to the emulator one after another, at the interval determined by the speed profile selected in the drop-down list.
 
-Dans tous les modes du simulateur d’emplacement, vous pouvez exécuter les tâches suivantes.
+In all modes of the location simulator, you can do the following things.
 
--   Rechercher un emplacement à l’aide de la zone **Rechercher**.
+-   You can search for a location by using the **Search** box.
 
--   Effectuer un **Zoom avant** et un **Zoom arrière** sur la carte.
+-   You can **Zoom in** and **Zoom out** on the map.
 
--   Enregistrer l’ensemble des points de données actifs dans un fichier XML et recharger le fichier ultérieurement pour réutiliser les mêmes points de données.
+-   You can save the current set of data points to an XML file, and reload the file later to reuse the same data points.
 
--   **Activer/désactiver le mode Punaise** et **Effacer tous les points**.
+-   You can **Toggle pushpin mode on or off** and **Clear all points**.
 
-En mode Punaise ou Itinéraire, vous pouvez aussi exécuter les tâches suivantes.
+In Pin and Route mode, you can also do the following things.
 
--   Enregistrer un itinéraire que vous avez créé en vue d’une utilisation ultérieure.
+-   Save a route you created for later use.
 
--   Charger un itinéraire préalablement créé. Vous pouvez même charger les fichiers d’itinéraire créés à l’aide de versions antérieures de l’outil.
+-   Load a route previously created. You can even load route files created in previous versions of the tool.
 
--   Modifier un itinéraire en supprimant les punaises (en mode Punaise) ou les points de navigation (en mode Itinéraire).
+-   Modify a route by deleting pushpins (in Pin mode) or waypoints (in Route mode).
 
-**Profils de précision**
+**Accuracy profiles**
 
-Dans tous les modes du simulateur d’emplacement, vous pouvez sélectionner l’un des profils de précision dans la liste déroulante **Profil de précision**.
+In all modes of the location simulator, you can select one of the following accuracy profiles in the **Accuracy profile** drop-down list.
 
-| Profil  | Description                                        |
+| Profile  | Description                                        |
 |----------|----------------------------------------------------|
-| Punaise | Suppose une lecture d’emplacement parfaitement exacte. Ce paramètre n’est pas réaliste, mais est utile pour tester la logique de votre emplacement.  |
-| Urbain    | Suppose que les immeubles limitent le nombre de satellites en vue, mais qu’il existe souvent une forte densité de pylônes de téléphonie cellulaire et de points d’accès Wi-Fi qui peuvent être utilisés pour le positionnement. |
-| Périphérique | Suppose que le positionnement des satellites est relativement satisfaisant et qu’il existe une bonne densité de pylônes de téléphonie cellulaire, alors que la densité de points d’accès Wi-Fi n’est pas élevée.  |
-| Rural    | Suppose que le positionnement des satellites est satisfaisant, mais que la densité de pylônes de téléphonie cellulaire est faible et qu’il n’existe pratiquement aucun point d’accès Wi-Fi susceptible d’être utilisé pour le positionnement. |
+| Pinpoint | Assumes perfectly accurate location readings. This setting is not realistic, but it's useful for testing the logic of your app.  |
+| Urban    | Assumes that buildings are restricting the number of satellites in view, but there is often a high density of cell towers and Wi-Fi access points that can be used for positioning. |
+| Suburban | Assumes that satellite positioning is relatively good and there is good density of cell towers, but the density of Wi-Fi access points is not high.  |
+| Rural    | Assumes that satellite positioning is good, but there is low density of cell towers and almost no Wi-Fi access points that can be used for positioning. |
 
-**Profils de vitesse**
+**Speed profiles**
 
-En mode **Itinéraire**, vous pouvez sélectionner l’un des profils de vitesse suivants dans la liste déroulante.
+In **Route** mode, you can select one of the following speed profiles in the drop-down list.
 
-| Profil | Vitesse par heure               | Vitesse par seconde | Description | 
+| Profile | Speed per hour               | Speed per second | Description | 
 |---------|------------------------------|------------------|-------------|
-| Limite de vitesse | Limite de vitesse de l’itinéraire | Non applicable   | Parcourez l’itinéraire en respectant la limite de vitesse indiquée. |
-| Marche     | 5 km/h                   | 1,39 m           | Parcourez l’itinéraire au pas de 5 km/h. |
-| Vélo      | 25 km/h                  | 6,94 m           | Parcourez l’itinéraire à la vitesse de 25 km/h. |
-| Rapide        |                          |                  |Parcourez l’itinéraire en dépassant la limite de vitesse indiquée. | 
+| Speed Limit | Speed limit of the route | Not applicable   | Traverse the route at the posted speed limit. |
+| Walking     | 5 km/h                   | 1.39 m           | Traverse the route at a natural walking pace of 5 km/h. |
+| Biking      | 25 km/h                  | 6.94 m           | Traverse the route at a natural biking pace of 25 km/h. |
+| Fast        |                          |                  |Traverse the route faster than the posted speed limit. | 
 
-**Mode Itinéraire**
+**Route mode**
 
-Le mode Itinéraire présente les caractéristiques et limitations suivantes.
+Route mode has the following features and limitations.
 
--   Le mode Internet nécessite une connexion Internet.
+-   Route mode requires an Internet connection.
 
--   Lorsque le profil de précision Urbain, Périphérique ou Rural est sélectionné, le simulateur d’emplacement calcule une position satellite simulée, une position Wi-Fi simulée et une position cellulaire simulée pour chaque punaise. Votre application ne reçoit qu’une seule de ces positions. Les trois ensembles de coordonnées de l’emplacement actif sont affichés en différentes couleurs sur la carte et dans la liste **Emplacement actuel**.
+-   When the Urban, Suburban, or Rural accuracy profile is selected, the location simulator calculates a simulated satellite-based position, a simulated Wi-Fi position, and a simulated cellular position for each pin. Your app receives only one of these positions. The three sets of coordinates for the current location are displayed in different colors on the map and in the **Current location** list.
 
--   La précision des punaises le long de l’itinéraire n’est pas uniforme. Certaines punaises utilisent la précision satellitaire, d’autres la précision Wi-Fi et d’autres encore la précision cellulaire.
+-   The accuracy of the pins along route the route is not uniform. Some of the pins use satellite accuracy, some use Wi-Fi accuracy, and some use cellular accuracy.
 
--   Vous ne pouvez pas sélectionner plus de 20 points de navigation pour l’itinéraire.
+-   You cannot select more than 20 waypoints for the route.
 
--   Les positions des punaises visibles et non visibles sur la carte ne sont générés qu’après que vous avez sélectionné un nouveau profil de précision. Lorsque vous lisez l’itinéraire plus d’une fois avec le même profil de précision pendant la même session de l’émulateur, les positions précédemment générées sont réutilisées.
+-   Positions for the visible and invisible pins on the map are generated only once when you select a new accuracy profile. When you play the route more than once with the same accuracy profile during the same emulator session, the previously generated positions are reused.
 
-La capture d’écran suivante illustre le mode Itinéraire. La ligne orange indique l’itinéraire. Le point bleu indique l’emplacement précis de la voiture, déterminé par le positionnement satellite. Le point rouge et le point vert correspondent à des emplacements moins précis calculés à partir du positionnement Wi-Fi et cellulaire, et du profil de précision Périphérique. Les trois emplacements calculés sont aussi affichés dans la liste **Emplacement actuel**.
+The following screenshot shows Route mode. The orange line indicates the route. The blue dot indicates the accurate location of the car determined by satellite-based positioning. The red and green dots indicate less accurate locations calculated by using Wi-Fi and cellular positioning and the Suburban accuracy profile. The three calculated locations are also displayed in the **Current location** list.
 
-![Page Emplacement dans Outils supplémentaires de l’émulateur](images/em-drive.png)
+![Location page in Additional Tools for the Emulator](images/em-drive.png)
 
-**Plus d’informations sur le simulateur d’emplacement**
+**More info about the location simulator**
 
--   Vous pouvez demander une position avec une précision définie avec la valeur zéro (0). La limitation qui existait dans la version Windows Phone 8 du simulateur d’emplacement, et qui nécessitait que vous demandiez une position avec une précision définie avec la valeur Haute, a été corrigée.
+-   You can request a position with the accuracy set to Default. A limitation that existed in the Windows Phone 8 version of the location simulator, and required you to request a position with the accuracy set to High, has been fixed.
 
--   Lorsque vous testez le géorepérage dans l’émulateur, créez une simulation qui fournit au moteur du géorepérage une période de préparation pour apprendre les modèles de déplacement et s’y adapter.
+-   When you test geofencing in the emulator, create a simulation that gives the geofencing engine a “warm-up” period to learn and adjust to the movement patterns.
 
--   Les seules propriétés de position simulées sont les suivantes : Latitude, Longitude, Accuracy et PositionSource. Le simulateur d’emplacement ne simule pas d’autres propriétés, comme Speed, Heading, etc.
+-   The only position properties that are simulated are the Latitude, Longitude, Accuracy, and PositionSource. The location simulator does not simulate other properties such as Speed, Heading, and so forth.
 
-## Réseau
+## Network
 
-Testez votre application avec différentes vitesses du réseau et forces du signal à l’aide de l’onglet **Réseau** des **Outils supplémentaires** de l’émulateur. Cette fonctionnalité est utile si votre application appelle les services web ou transfère les données.
+Test your app with different network speeds and different signal strengths by using the **Network** tab of the emulator's **Additional Tools**. This feature is useful if your app calls web services or transfers data.
 
-La simulation du réseau vous permet de vous assurer que votre application s’exécutera correctement dans la réalité. L’émulateur Windows Phone s’exécute sur un ordinateur qui possède généralement une connexion Wi-Fi ou Ethernet rapide. Votre application, cependant, s’exécute sur des téléphones qui sont généralement connectés via une connexion cellulaire plus lente.
+The network simulation feature helps you to make sure that your app runs well in the real world. The Windows Phone Emulator runs on a computer that usually has a fast WiFi or Ethernet connection. Your app, however, runs on phones that are typically connected over a slower cellular connection.
 
-1.  Activez **Activer la simulation de réseau** pour tester votre application avec différentes vitesses du réseau et forces du signal.
-2.  Dans la liste déroulante **Vitesse du réseau**, sélectionnez l’une des options suivantes:
-    -   Pas de réseau
+1.  Check **Enable network simulation** to test your app with different network speeds and different signal strengths.
+2.  In the **Network speed** dropdown list, select one of the following options:
+    -   No network
     -   2G
     -   3G
     -   4G
 
-3.  Dans la liste déroulante **Force du signal**, sélectionnez l’une des options suivantes:
-    -   Bonne
-    -   Moyenne
-    -   Médiocre
+3.  In the **Signal strength** dropdown list, select one of the following options:
+    -   Good
+    -   Average
+    -   Poor
 
-4.  Désactivez **Activer la simulation de réseau** pour rétablir le comportement par défaut, qui utilise les paramètres réseau de votre ordinateur de développement.
+4.  Clear **Enable network simulation** to restore the default behavior, which uses the network settings of your development computer.
 
-Vous pouvez aussi vérifier les paramètres en cours du réseau sous l’onglet **Réseau**.
+You can also review the current network settings on the **Network** tab.
 
-![Page Réseau des Outils supplémentaires de l’émulateur](images/em-network.png)
+![Network page in Additional Tools for the Emulator](images/em-network.png)
 
-## Carte SD
+## SD card
 
-Testez votre application avec une carte SD amovible simulée à l’aide de l’onglet **Carte SD** des **Outils supplémentaires**. Cette fonctionnalité est utile si votre application lit ou écrit des fichiers.
+Test your app with a simulated removable SD card by using the **SD Card** tab of the emulator's **Additional Tools**. This feature is useful if your app reads or write files.
 
-![Page Carte SD dans Outils supplémentaires de l’émulateur](images/em-sdcard.png)
+![SD Card page in Additional Tools for the Emulator](images/em-sdcard.png)
 
-L’onglet **Carte SD** utilise un dossier de l’ordinateur de développement pour simuler une carte SD amovible dans le téléphone.
+The **SD Card** tab uses a folder on the development computer to simulate a removable SD card in the phone.
 
-1.  **Sélectionnez un dossier**.
+1.  **Select a folder**.
 
-    Cliquez sur **Parcourir** pour sélectionner un dossier sur l’ordinateur de développement où sera placé le contenu de la carteSD simulée.
+    Click **Browse** to pick a folder on the development computer to hold the contents of the simulated SD card.
 
-2.  **Insérez la carte SD**.
+2.  **Insert the SD card**.
 
-    Après avoir sélectionné un dossier, cliquez sur **Insérer une carte SD**. Lorsque vous insérez la carte SD, les événements suivants peuvent se produire :
+    After selecting a folder, click **Insert SD card**. When you insert the SD card, the following things happen:
 
-    -   Si vous n’avez pas indiqué de dossier, ou que le dossier n’est pas valide, il se produit une erreur.
-    -   Les fichiers stockés dans le dossier indiqué de l’ordinateur de développement sont copiés dans le dossier racine de la carte SD simulée de l’émulateur. Une barre de progression indique la progression de l’opération de synchronisation.
-    -   Le bouton **Insérer la carte SD** se change en **Éjecter la carte SD**.
-    -   Si vous cliquez sur **Éjecter la carte SD** alors que l’opération de synchronisation est en cours, l’opération est annulée.
+    -   If you didn't specify a folder, or the folder's not valid, an error occurs.
+    -   The files in the specified folder on the development computer are copied to the root folder of the simulated SD card on the emulator. A progress bar indicates the progress of the sync operation.
+    -   The **Insert the SD card** button changes to **Eject SD card**.
+    -   If you click **Eject SD card** while the sync operation is in progress, the operation is canceled.
 
-3.  Le cas échéant, activez ou désactivez **Resynchroniser les fichiers mis à jour sur le dossier local quand j’éjecte la carte SD**.
+3.  Optionally, select or clear **Sync updated files back to the local folder when I eject the SD card**.
 
-    Cette option est activée par défaut. Si cette option est activée, les fichiers sont resynchronisés depuis l’émulateur sur le dossier de l’ordinateur de développement lorsque vous éjectez la carte SD.
+    This option is enabled by default. When this option is enabled, files are synced from the emulator back to the folder on the development computer when you eject the SD card.
 
-4.  **Éjecter la carte SD**.
+4.  **Eject the SD card**.
 
-    Cliquez sur **Éjecter la carte SD**. Lorsque vous éjectez la carte SD, les événements suivants peuvent se produire :
+    Click **Eject SD card**. When you eject the SD card, the following things happen:
 
-    -   Si vous avez sélectionné **Resynchroniser les fichiers mis à jour sur le dossier local quand j’éjecte la carte SD**, les événements suivants peuvent se produire :
-        -   Les fichiers de la carte SD simulée de l’émulateur sont copiés sur le dossier spécifié de l’ordinateur de développement. Une barre de progression indique la progression de l’opération de synchronisation.
-        -   Le bouton **Éjecter la carte SD** se change en **Annuler la synchronisation**.
-        -   Si vous cliquez sur **Annuler la synchronisation** pendant que l’opération de synchronisation est en cours, la carte est éjectée et les résultats de l’opération de synchronisation sont incomplets.
-    -   Le bouton **Éjecter la carte SD** se change à nouveau en **Insérer la carte SD**.
+    -   if you have selected **Sync updated files back to the local folder when I eject the SD card**, the following things happen:
+        -   The files on the simulated SD card on the emulator are copied to the specified folder on the development computer. A progress bar indicates the progress of the sync operation.
+        -   The **Eject SD card** button changes to **Cancel sync**.
+        -   If you click **Cancel sync** while the sync operation is in progress, the card is ejected and the results of the sync operation are incomplete.
+    -   The **Eject SD card** button changes back to **Insert SD card**.
 
-> **Remarque** Comme les cartes SD utilisées par le téléphone sont formatées avec le système de fichiersFAT32, la taille maximale est de 32Go.
+> **Note**  Since an SD card used by the phone is formatted with the FAT32 file system, 32GB is the maximum size.
 
-La vitesse de lecture et d’écriture de la carte SD simulée est limitée afin de reproduire les vitesses réelles. L’accès à une carte SD est plus lent que l’accès au disque dur de l’ordinateur.
+The speed of reading from and writing to the simulated SD card is throttled to imitate real-world speeds. Accessing an SD card is slower than accessing the computer's hard drive.
 
 ## Notifications
 
-Envoyez les notifications push à votre application à l’aide de l’onglet **Notifications** des **Outils supplémentaires de l’émulateur**. Cette fonctionnalité est utile si votre application reçoit les notifications push.
+Send push notifications to your app by using the **Notifications** tab of the emulator's **Additional Tools**. This feature is useful if your app receives push notifications.
 
-Vous pouvez facilement tester les notifications push sans créer le service cloud requis après que vous avez publié votre application.
+You can easily test push notifications without creating the working cloud service that's required after you publish your app.
 
-1.  **Activez la simulation.**
+1.  **Enable simulation.**
 
-    Après que vous avez sélectionné **Activé**, toutes les applications déployées sur l’émulateur utilisent le moteur de simulation au lieu du service WNS ou MPN jusqu’à ce que vous désactiviez la simulation.
+    After you select **Enabled**, all apps deployed on the emulator use the simulation engine instead of the WNS or MPN service until you disable simulation.
 
-2.  **Sélectionnez une application pour recevoir les notifications.**
+2.  **Select an app to receive notifications.**
 
-    La liste **AppId** est automatiquement remplie avec toutes les applications déployées sur l’émulateur et activées pour les notifications push. Sélectionnez une application dans la liste déroulante.
+    The **AppId** list is automatically populated with all apps deployed to the emulator that are enabled for push notifications. Select an app in the drop-down list.
 
-    Si vous déployez une autre application activée pour les notifications push après avoir activé la simulation, cliquez sur **Actualiser** pour ajouter l’application à la liste.
+    If you deploy another push-enabled app after enabling simulation, click **Refresh** to add the app to the list.
 
-3.  **Sélectionnez un canal de notification.**
+3.  **Select a notification channel.**
 
-    Après que vous avez sélectionné une application dans la liste **AppId**, la liste **URI** est automatiquement remplie avec tous les canaux de notification enregistrés pour l’application sélectionnée. Sélectionnez un canal de notification dans la liste déroulante.
+    After you select an app in the **AppId** list, the **URI** list is automatically populated with all the notification channels registered for the selected app. Select a notification channel in the drop-down list.
 
-4.  **Sélectionnez un type de notification.**
+4.  **Select a notification type.**
 
-    Après que vous avez sélectionné un canal de notification dans la liste **URI**, la liste **Type de notification** est automatiquement remplie avec tous les types disponibles pour le service de notification. Sélectionnez un type de notification dans la liste déroulante.
+    After you select a notification channel in the **URI** list, the **Notification Type** list is automatically populated with all the types available for the notification service. Select a notification type in the drop-down list.
 
-    Le simulateur utilise le format Uri du canal de notification pour déterminer si l’application utilise les notifications push WNS ou MPN.
+    The simulator uses the Uri format of the notification channel to determine whether the app is using WNS or MPN push notifications.
 
-    La simulation prend en charge tous les types de notification. Le type de notification par défaut est **Vignette**.
+    Simulation supports all notification types. The default notification type is **Tile**.
 
-    -   Les types de notification WNS suivants sont pris en charge :
+    -   The following WNS notification types are supported.
 
-        -   Brute
+        -   Raw
         -   Toast
 
-            Quand votre application utilise les notifications WNS et que vous sélectionnez le type de notification **Toast**, l’onglet Simulation affiche les champs **Mot clé** et **Groupe**. Vous pouvez sélectionner ces options et entrer les valeurs **Mot clé** et **Groupe** pour gérer les notifications toast du Centre de notifications.
+            When your app uses WNS notifications and you select the **Toast** notification type, the simulation tab displays the **Tag** and **Group** fields. You can select these options and enter **Tag** and **Group** values to manage toast notifications in the Notification Center.
 
-        -   Vignette
+        -   Tile
         -   Badge
 
-    -   Les types de notification MPN suivants sont pris en charge.
+    -   The following MPN notification types are supported.
 
-        -   Brute
+        -   Raw
         -   Toast
-        -   Vignette
+        -   Tile
 
-5.  **Sélectionnez un modèle de notification.**
+5.  **Select a notification template.**
 
-    Après que vous avez sélectionné un type de notification dans la liste **Type de notification**, la liste **Modèles** est automatiquement remplie avec tous les modèles disponibles pour le type de notification. Sélectionnez un modèle dans la liste déroulante.
+    After you select a notification type in the **Notification Type** list, the **Templates** list is automatically populated with all the templates available for the notification type. Select a template in the drop-down list.
 
-    La simulation prend en charge tous les types de modèle.
+    Simulation supports all template types.
 
-6.  **Le cas échéant, modifiez la charge utile de notification.**
+6.  **Optionally, change the notification payload.**
 
-    Après que vous avez sélectionné un modèle dans la liste **Modèles**, la zone de texte **Charge utile de notification** est automatiquement remplie avec un exemple de charge utile pour le modèle. Vérifiez l’exemple de charge utile dans la zone de texte **Charge utile de notification**.
+    After you select a template in the **Templates** list, the **Notification Payload** text box is automatically populated with a sample payload for the template. Review the sample payload in the **Notification Payload** text box.
 
-    -   Vous pouvez envoyer l’exemple de charge utile sans le modifier.
+    -   You can send the sample payload without changing it.
 
-    -   Vous pouvez modifier l’exemple de charge utile dans la zone de texte.
+    -   You can edit the sample payload in the text box.
 
-    -   Vous pouvez cliquer sur **Charger** pour charger une charge utile à partir d’un fichier texte ou XML.
+    -   You can click **Load** to load a payload from a text or XML file.
 
-    -   Vous pouvez cliquer sur **Enregistrer** pour enregistrer le texte XML de la charge utile à réutiliser ultérieurement.
+    -   You can click **Save** to save the XML text of the payload to use again later.
 
-    Le simulateur ne valide pas le texte XML de la charge utile.
+    The simulator does not validate the XML text of the payload.
 
-7.  **Envoyez la notification push.**
+7.  **Send the push notification.**
 
-    Cliquez sur **Envoyer** pour transmettre la notification push à l’application sélectionnée.
+    Click **Send** to deliver the push notification to the selected app.
 
-    L’écran affiche un message de succès ou d’échec.
+    The screen displays a message to indicate success or failure.
 
-![Page Notifications des Outils supplémentaires de l’émulateur](images/em-notifications.png)
+![Notifications page in Additional Tools for the Emulator](images/em-notifications.png)
 
-## Capteurs
+## Sensors
 
-Testez comment votre application fonctionne sur les téléphones à bas prix qui ne possèdent pas tous les capteurs facultatifs ou fonctionnalités photographiques, à l’aide de l’onglet **Capteurs** des **Outils supplémentaires** de l’émulateur. Cette fonctionnalité est utile si votre application utilise l’appareil photo ou certains capteurs du téléphone, et que vous souhaitez que votre application atteigne le marché le plus large possible.
+Test how your app works on low-cost phones that don't have all the optional sensors or camera features by using the **Sensors** tab of the emulator's **Additional Tools**. This feature is useful if your app uses the camera or some of the phone's sensors, and you want your app to reach the largest possible market.
 
--   Par défaut, tous les capteurs sont activés dans la liste **Capteurs facultatifs**. Activez ou désactivez les cases à cocher pour activer ou désactiver les capteurs correspondants.
--   Une fois que vous avez modifié vos sélections, cliquez sur **Appliquer**. Puis, redémarrez l’émulateur.
--   Si vous avez effectué des modifications, puis que vous passez d’un onglet à un autre ou que vous fermez la fenêtre **Outils supplémentaires** sans cliquer sur **Appliquer**, vos modifications sont ignorées.
--   Vos paramètres sont conservés d’une session de l’émulateur à l’autre tant que vous ne les modifiez pas ou ne les réinitialisez pas. Si vous capturez un point de contrôle, les paramètres sont enregistrés avec le point de contrôle. Les paramètres ne sont conservés que pour l’émulateur particulier que vous utilisez : par exemple, l’**émulateur8.1 WVGA4"512Mo**.
+-   By default, all sensors are enabled in the **Optional sensors** list. Select or clear individual check boxes to enable or disable individual sensors.
+-   After you change your selections, click **Apply**. Then you have to restart the emulator.
+-   If you make changes, and then you switch tabs or close the **Additional Tools** window without clicking **Apply**, your changes are discarded.
+-   Your settings are persisted between for the emulator session until you change them or reset them. If you capture a checkpoint, the settings are saved with the checkpoint. The settings are persisted only for the specific emulator that you're using - for example, **Emulator 8.1 WVGA 4" 512MB**.
 
-![Page Capteurs des Outils supplémentaires de l’émulateur](images/em-sensors.png)
+![Sensors page in Additional Tools for the Emulator](images/em-sensors.png)
 
-**Options des capteurs**
+**Sensor options**
 
-Vous pouvez activer ou désactiver les capteurs matériels facultatifs suivants :
+You can enable or disable the following optional hardware sensors:
 
--   Capteur de lumière ambiante
--   Appareil photo de face
+-   Ambient light sensor
+-   Front-facing camera
 -   Gyroscope
--   Boussole (magnétomètre)
--   Communication en champ proche (NFC)
--   Boutons logiciels (uniquement sur certaines images d’émulateur haute résolution)
+-   Compass (magnetometer)
+-   NFC
+-   Software buttons (only on some high-resolution emulator images)
 
-**Options de l’appareil photo**
+**Camera options**
 
-Vous pouvez activer ou désactiver l’appareil photo de face en activant ou en désactivant la case à cocher de la liste **Capteurs facultatifs**.
+You can enable or disable the optional front-facing camera by selecting or clearing the check box in the **Optional sensors** list.
 
-Vous pouvez aussi sélectionner l’un des profils d’appareil photo suivants dans la liste déroulante **Appareil photo**.
+You can also select one of the following camera profiles in the **Camera** dropdown list.
 
--   Appareil photo Windows Phone 8.0.
--   Appareil photo Windows Phone 8.1.
+-   Windows Phone 8.0 camera.
+-   Windows Phone 8.1 camera.
 
-Voici la liste des fonctionnalités d’appareil photo prise en charge par chacun des profils.
+Here is the list of camera features supported by each of the profiles.
 
-| Fonctionnalité            | Appareil photo Windows Phone 8.0 | Appareil photo Windows Phone 8.1  |
+| Feature            | Windows Phone 8.0 camera | Windows Phone 8.1 camera  |
 |--------------------|--------------------------|---------------------------|
-| Résolution         | 640 x 480 (VGA)          | 640 x 480 (VGA) ou supérieure |
-| Autofocus          | Oui                      | Oui                       |
-| Flash              | Non                       | Oui                       |
-| Zoom               | 2x (numérique ou optique)  | 2x (numérique ou optique)   |
-| Résolution vidéo   | 640 x 480 (VGA)          | 640 x 480 (VGA) ou supérieure |
-| Résolution de l’aperçu | 640 x 480 (VGA)          | 640 x 480 (VGA)           |
+| Resolution         | 640 x 480 (VGA)          | 640 x 480 (VGA) or better |
+| Autofocus          | Yes                      | Yes                       |
+| Flash              | No                       | Yes                       |
+| Zoom               | 2x (digital or optical)  | 2x (digital or optical)   |
+| Video resolution   | 640 x 480 (VGA)          | 640 x 480 (VGA) or better |
+| Preview resolution | 640 x 480 (VGA)          | 640 x 480 (VGA)           |
 
-## Compteurs de fréquence des trames
+## Frame rate counters
 
-Utilisez les compteurs de fréquence d’images de l’émulateur Windows Phone pour surveiller les performances de votre application en cours d’exécution.
+Use the frame rate counters in Windows Phone emulator to monitor the performance of your running app.
 
-![Compteurs de fréquence d’images de l’émulateur Windows Phone](images/em-frameratecounters.PNG)
+![Frame rate counters in Windows Phone emulator](images/em-frameratecounters.PNG)
 
-**Descriptions des compteurs de fréquence d’images**
+**Descriptions of the frame rate counters**
 
-Le tableau suivant décrit chaque compteur de fréquence d’images.
+The following table describes each frame rate counter.
 
-| Compteur de fréquence d’images                           | Description        |
+| Frame rate counter                           | Description        |
 |----------------------------------------------|--------------------|
-| Fréquence d’images du thread (images par seconde) de composition (rendu) | Fréquence à laquelle l’écran est mis à jour.  |
-| Fréquence d’images du thread (images par seconde) d’interface utilisateur       | Fréquence à laquelle le thread de l’interface utilisateur s’exécute.    |
-| Utilisation de la mémoire de texture                         | Copies de textures de la mémoire vidéo et de la mémoire système utilisées dans l’application.    |
-| Compteur de surfaces                              | Nombre de surfaces explicites transmises au GPU pour traitement.     |
-| Compteur de surfaces intermédiaires                 | Nombre de surfaces implicites générées comme résultat de surfaces mises en cache.    |
-| Compteur du taux de remplissage de l’écran                     | Nombre de pixels peints par image en termes d’écrans. La valeur 1 représente le nombre de pixels de la résolution d’écran active : 480 x 800 pixels, par exemple. |
+| Composition (Render) Thread Frame Rate (FPS) | The rate at which the screen is updated.  |
+| User Interface Thread Frame Rate (FPS)       | The rate at which the UI thread is running.    |
+| Texture Memory Usage                         | The video memory and system memory copies of textures being used in the app.    |
+| Surface Counter                              | The number of explicit surfaces being passed to the GPU for processing.     |
+| Intermediate Surface Counter                 | The number of implicit surfaces generated as a result of cached surfaces.    |
+| Screen Fill Rate Counter                     | The number of pixels being painted per frame in terms of screens. A value of 1 represents the number of pixels in the current screen resolution – for example, 480 x 800 pixels. |
 
-**Activation et désactivation des compteurs de fréquence d’images**
+**Enabling and disabling the frame rate counters**
 
-Vous pouvez activer ou désactiver l’affichage des compteurs de fréquence d’images dans votre code. Lorsque vous créez un projet d’application Windows Phone dans Visual Studio, le code suivant permet d’activer les compteurs de fréquence d’images. Il est ajouté par défaut dans le fichier App.xaml.cs. Pour désactiver les compteurs de fréquence d’images, définissez **EnableFrameRateCounter** sur **false**, ou placez la ligne de code en commentaire.
+You can enable or disable the display of the frame rate counters in your code. When you create a Windows Phone app project in Visual Studio, the following code to enable the frame rate counters is added by default in the file App.xaml.cs. To disable the frame rate counters, set **EnableFrameRateCounter** to **false** or comment out the line of code.
 
 > [!div class="tabbedCodeSnippets"]
 >```csharp
@@ -607,58 +607,58 @@ Vous pouvez activer ou désactiver l’affichage des compteurs de fréquence d�
 >End If
 >```
 
-## Problèmes connus
+## Known Issues
 
-Vous trouverez ci-après des problèmes connus liés à l’émulateur, ainsi que des suggestions de solutions pour les contourner.
+The following are known issues with the emulator, with suggested ways to work around problems if you encounter them.
 
-### Message d’erreur : « Échec lors de la suppression du commutateur Ethernet virtuel »
+### Error message: “Failed while removing virtual Ethernet switch”
 
-Dans certains cas, y compris lorsque vous avez procédé à une mise à jour vers une nouvelle version d’évaluation de Windows10, un commutateur réseau virtuel associé à l’émulateur peut passer à un état dans lequel il ne peut pas être supprimé par le biais de l’interface utilisateur.
+In certain situations, including after you update to a new Windows 10 flight, a virtual network switch associated with the emulator can get into a state where it can't be deleted through the user interface.
 
-Pour résoudre ce problème, exécutez « netcfg -d » à partir d’une invite de commandes administrateur : `C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`. À l’issue de l’exécution de la commande, redémarrez votre ordinateur pour terminer le processus de récupération.
+To recover from this situation run "netcfg -d" from an administrator command prompt: `C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`. When the command is finished running, reboot your computer to complete the recovery process.
 
-**Remarque** Cette commande supprime tous les appareil réseau, pas seulement ceux qui sont associés à l’émulateur. Lorsque l’ordinateur redémarre, tous les périphériques réseau matériels sont découverts automatiquement.
+**Note**  This command will delete all networking devices, not just those associated with the emulator. When your computer starts again, all hardware networking devices will be discovered automatically.
  
-### Impossible de lancer les émulateurs
+### Unable to launch the emulators
 
-L’émulateur Microsoft inclut XDECleanup.exe, un outil qui supprime tous les ordinateurs virtuels, les disques différentiels et les commutateurs réseau propres à l’émulateur ; il est déjà fourni avec les fichiers binaires de l’émulateur (XDE). Vous devez utiliser cet outil pour nettoyer les ordinateurs virtuels d’émulateur si leur état est incorrect. Exécutez l’outil à partir d’une invite de commandes administrateur:`C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`
+Microsoft Emulator includes XDECleanup.exe, a tool that deletes all VMs, diff disks, and emulator specific network switches, and it ships with the emulator (XDE) binaries already. You should use this tool to clean up emulator VMs if they get into a bad state. Run the tool from an administrator command prompt:`C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`
 
-> **Remarque** XDECleanup.exe supprime tous les ordinateurs virtuels Hyper-V propres à l’émulateur, ainsi que les points de contrôle des ordinateurs virtuels ou les états de mise en mémoire.
+> **Note**  XDECleanup.exe deletes all emulator specific Hyper-V VMs, and it also deletes any VM checkpoints or saved states.
 
-### Désinstaller l’image système Windows10 pour Mobile
+### Uninstall Windows 10 for Mobile Image
 
-Lorsque vous installez l’émulateur, une image système Windows10 pour Mobile de disque dur virtuel est installée. Elle possède sa propre entrée dans la liste **Programmes et fonctionnalités** du Panneau de configuration. Pour désinstaller l’image, recherchez **Image système Windows 10 pour Mobile - <version>** dans la liste des programmes installés, cliquez dessus avec le bouton droit, puis choisissez **Désinstaller**.
+When you install the emulator, a Windows 10 for Mobile VHD image is installed, which gets its own entry in the **Programs and Features** list in the Control Panel. If you wish to uninstall the image, find **Windows 10 for Mobile Image - <version>** in the list of installed programs, right-click on it, and choose **Uninstall**.
 
-Dans la version actuelle, vous devez alors supprimer manuellement le fichier de disque dur virtuel correspondant à l’émulateur. Si vous avez choisi le chemin d’accès par défaut pour l’installation de l’émulateur, le fichier de disque dur virtuel est situé à l’emplacement suivant: C:\\Program Files (x86)\\Windows Kits\\10\\Emulation\\Mobile\\<version>\\flash.vhd.
+In the current release, you must then manually delete the VHD file for the emulator. If you installed the emulator to the default path, the VHD file is at C:\\Program Files (x86)\\Windows Kits\\10\\Emulation\\Mobile\\<version>\\flash.vhd.
 
-###Procédure de désactivation des graphiques à accélération matérielle
+###How to disable hardware accelerated graphics
 
-Par défaut, l’émulateur Windows10Mobile utilise des graphiques à accélération matérielle. Si vous rencontrez des problèmes au démarrage de l’émulateur lorsque l’accélération matérielle est activée, vous pouvez la désactiver en affectant une valeur de Registre.
+By default, Windows 10 Mobile Emulator uses hardware accelerated graphics. If you are having trouble launching the emulator with hardware acceleration enabled, you can turn it off by setting a registry value.
 
-Pour désactiver l’accélération matérielle:
+To disable hardware acceleration:
 
-1. Démarrez l’Éditeur du Registre.
-2. Créez la sous-clé de Registre suivante si elle n’existe pas: HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Xde\10.0
-3. Cliquez avec le bouton droit de la souris sur le dossier10.0, pointez sur **Nouveau**, puis cliquez sur **Valeur DWORD**.
-4. Tapez **DisableRemoteFx**, puis appuyez sur Entrer.
-5. Double-cliquez sur **DisableRemoteFx**, entrez 1 dans la zone de données **Valeur**, sélectionnez l’option **Décimal**, puis cliquez sur **OK**.
-6. Fermez l’Éditeur du Registre.
+1. Start Registry Editor.
+2. Create the following registry subkey if it doesn't exist: HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Xde\10.0
+3. Right click the 10.0 folder, point to **New**, and then click **DWORD Value**.
+4. Type **DisableRemoteFx**, and then press Enter.
+5. Double-click **DisableRemoteFx**, enter 1 in the **Value** data box, select the **Decimal** option, and then click **OK**.
+6. Close Registry Editor.
 
-**Remarque:** Après avoir défini cette valeur de Registre, vous devez supprimer la machine virtuelle dans le Gestionnaire Hyper-V pour la configuration que vous avez lancée dans Visual Studio, puis relancez l’émulateur avec des graphiques rendus par logiciel.
+**Note:** After setting this registry value, you must delete the virtual machine in Hyper-V manager for the configuration that you launched in Visual Studio, and then relaunch the emulator with software-rendered graphics.
 
-## Ressources de support
+## Support Resources
 
-Pour trouver des réponses à vos questions et résoudre vos problèmes lorsque vous commencez à travailler avec les outils Windows10, consultez le [forum sur les outils Windows 10](http://go.microsoft.com/fwlink/?LinkId=534765). Pour voir tous les forums ayant trait au développement Windows10, cliquez sur [ce lien](http://go.microsoft.com/fwlink/?LinkId=535000).
+To find answers and solve problems as you start working with the Windows 10 tools, please visit [Windows 10 Tools forum](http://go.microsoft.com/fwlink/?LinkId=534765). To see all the forums for Windows 10 development, visit [this link](http://go.microsoft.com/fwlink/?LinkId=535000).
 
-## Rubriques connexes
+## Related topics
 
-* [Exécuter les applications du Windows Phone dans l’émulateur](https://msdn.microsoft.com/library/windows/apps/xaml/dn632391.aspx)
-* [Archive du kit de développement logiciel (SDK) Windows et Windows Phone](https://dev.windows.com/downloads/sdk-archive)
+* [Run Windows Phone apps in the emulator](https://msdn.microsoft.com/library/windows/apps/xaml/dn632391.aspx)
+* [Windows and Windows Phone SDK archive](https://dev.windows.com/downloads/sdk-archive)
  
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

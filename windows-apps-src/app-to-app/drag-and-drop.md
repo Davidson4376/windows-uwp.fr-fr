@@ -1,65 +1,82 @@
 ---
-description: "Cet article vous explique comment ajouter le glisser-déplacer dans votre application UWP."
-title: "Glisser-déplacer"
+description: This article explains how to add dragging and dropping in your Universal Windows Platform (UWP) app.
+title: Drag and drop
 ms.assetid: A15ED2F5-1649-4601-A761-0F6C707A8B7E
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: 03f3f86ed1310e6e3ac5f53cc5e81ebef708a1a2
-ms.openlocfilehash: ffa2f0f368a61ef4f3003c1fa03e143b26c6859b
+ms.sourcegitcommit: f2133ca15e30f7451a61f78b48e883db1a5687a6
+ms.openlocfilehash: ee3d0c40effc12382f6fd31154016953f172be70
 
 ---
-# Glisser-déplacer
+# Drag and drop
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Cet article vous explique comment ajouter le glisser-déplacer dans votre application UWP. Glisser-déplacer est une méthode naturelle classique d’interaction avec le contenu comme les images et les fichiers. Une fois implémenté, le glisser-déplacer fonctionne parfaitement dans toutes les directions, notamment d’application à application, d’application à bureau et de bureau à application.
+This article explains how to add dragging and dropping in your Universal Windows Platform (UWP) app. Drag and drop is a classic, natural way of interacting with content such as images and files. Once implemented, drag and drop works seamlessly in all directions, including app-to-app, app-to-desktop, and desktop-to app.
 
-## Définir des zones valides
+## Set valid areas
 
-Utilisez les propriétés [**AllowDrop**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.AllowDrop) et [**CanDrag**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.CanDrag) pour désigner les zones de votre application qui sont valides pour le glisser-déplacer.
+Use the [**AllowDrop**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.AllowDrop) and [**CanDrag**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.CanDrag) properties to designate the areas of your app valid for dragging and dropping.
 
-Le balisage ci-dessous montre comment définir une zone spécifique de l’application valide pour l’opération Déplacer à l’aide de l’élément [**AllowDrop**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.AllowDrop) dans XAML. Si un utilisateur tente de déplacer vers un autre emplacement, le système l’en empêche. Si vous souhaitez que les utilisateurs puissent déplacer des éléments n’importe où dans votre application, définissez l’ensemble de l’arrière-plan en tant que cible de l’opération Déplacer.
+The following markup shows how to set a specific area of the app as valid for dropping by using the [**AllowDrop**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.AllowDrop) in XAML. If a user tries to drop somewhere else, the system won't let them. If you want users to be able to drop items anywhere on your app, set the entire background as a drop target.
 
-[!code-xml[Principal](./code/drag_drop/cs/MainPage.xaml#SnippetDropArea)]
+[!code-xml[Main](./code/drag_drop/cs/MainPage.xaml#SnippetDropArea)]
 
-Pour le glissement, vous devrez généralement être spécifique sur le contenu pouvant être glissé. Les utilisateurs souhaitent faire glisser certains éléments, comme les images, et non la totalité du contenu de l’application. Voici comment configurer l’élément [**CanDrag**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.CanDrag) à l’aide de XAML.
+With dragging, you'll usually want to be specific about what's draggable. Users will want to drag certain items, such as pictures, not everything in your app. Here's how to set [**CanDrag**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.CanDrag) by using XAML.
 
-[!code-xml[Principal](./code/drag_drop/cs/MainPage.xaml#SnippetDragArea)]
+[!code-xml[Main](./code/drag_drop/cs/MainPage.xaml#SnippetDragArea)]
 
-Vous n’avez besoin d’effectuer aucune autre action pour autoriser le glissement, sauf si vous souhaitez personnaliser l’interface utilisateur (le sujet est abordé plus loin dans cet article). L’opération Déplacer nécessite quelques étapes supplémentaires.
+You don't need to do any other work to allow dragging, unless you want to customize the UI (which is covered later in this article). Dropping requires a few more steps.
 
-## Gérer l’événement DragOver
+## Handle the DragOver event
 
-L’événement [**DragOver**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.DragOver) se déclenche lorsqu’un utilisateur a fait glisser un élément sur votre application, mais qu’il ne l’a pas encore déplacé. Dans ce gestionnaire, vous devez spécifier le type d’opérations que votre application prend en charge à l’aide de la propriété [**AcceptedOperation**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.DragEventArgs.AcceptedOperation). L’opération Copier est la plus courante.
+The [**DragOver**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.DragOver) event fires when a user has dragged an item over your app, but not yet dropped it. In this handler, you need to specify what kind of operations your app supports by using the [**AcceptedOperation**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.DragEventArgs.AcceptedOperation) property. Copy is the most common.
 
-[!code-cs[Principal](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_DragOver)]
+[!code-cs[Main](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_DragOver)]
 
-## Traiter l’événement Drop
+## Process the Drop event
 
-L’événement [**Drop**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.Drop) se produit lorsque l’utilisateur relâche des éléments dans une zone de dépôt valide. Traitez-les à l’aide de la propriété [**DataView**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.DragEventArgs.DataView).
+The [**Drop**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.Drop) event occurs when the user releases items in a valid drop area. Process them by using the [**DataView**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.DragEventArgs.DataView) property.
 
-Pour simplifier l’exemple ci-dessous, supposons que l’utilisateur a déplacé une seule photo et un accès. En réalité, les utilisateurs peuvent déplacer plusieurs éléments de formats divers simultanément. Votre application doit gérer cette possibilité en vérifiant les types de fichiers qui ont été déplacés, en les traitant en conséquence, et en notifiant l’utilisateur s’il essaie d’effectuer une action non prise en charge.
+For simplicity in the example below, we'll assume the user dropped a single photo and access. In reality, users can drop multiple items of varying formats simultaneously. Your app should handle this possibility by checking what types of files were dropped and processing them accordingly, and notifying the user if they're trying to do something your app doesn't support.
 
-[!code-cs[Principal](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_Drop)]
+[!code-cs[Main](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_Drop)]
 
-## Personnaliser l’interface utilisateur
+## Customize the UI
 
-Le système fournit une interface utilisateur par défaut pour le glisser-déposer. Toutefois, vous pouvez également choisir de personnaliser les différentes parties de l’interface utilisateur en définissant des légendes et des glyphes personnalisés, ou en choisissant de ne pas afficher d’interface utilisateur du tout. Pour personnaliser l’interface utilisateur, utilisez la propriété [**DragEventArgs.DragUIOverride**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.DragEventArgs.DragUIOverride).
+The system provides a default UI for dragging and dropping. However, you can also choose to customize various parts of the UI by setting custom captions and glyphs, or by opting not to show a UI at all. To customize the UI, use the [**DragEventArgs.DragUIOverride**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.DragEventArgs.DragUIOverride) property.
 
-[!code-cs[Principal](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_DragOverCustom)]
+[!code-cs[Main](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_DragOverCustom)]
 
-## Voir également
+## Open a context menu on an item you can drag with touch
 
+When using touch, dragging a [**UIElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement) and opening its context menu share similar touch gestures; each begins with a press and hold. Here's how the system disambiguates between the two actions for elements in your app that support both: 
+
+* If a user presses and holds an item and begins dragging it within 500 milliseconds, the item is dragged and the context menu is not shown. 
+* If the user presses and holds but does not drag within 500 milliseconds, the context menu is opened. 
+* After the context menu is open, if the user tries to drag the item (without lifting their finger), the context menu is dismissed and the drag will start.
+
+## Designate an item in a ListView or GridView as a folder
+
+You can specify a [**ListViewItem**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.ListViewItem) or [**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.GridViewItem) as a folder. This is particularly useful for TreeView and File Explorer scenarios. To do so, explicitly set the [**AllowDrop**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.AllowDrop) property to **True** on that item. 
+
+The system will automatically show the appropriate animations for dropping into a folder versus a non-folder item. Your app code must continue to handle the [**Drop**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.Drop) event on the folder item (as well as on the non-folder item) in order to update the data source and add the dropped item to the target folder.
+
+## See also
+
+* [App-to-app communication](index.md)
 * [AllowDrop](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.allowdrop.aspx)
 * [CanDrag](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.candrag.aspx)
 * [DragOver](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.dragover.aspx)
 * [AcceptedOperation](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.drageventargs.acceptedoperation.aspx)
 * [DataView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.drageventargs.dataview.aspx)
-* [DragUiOverride](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.drageventargs.draguioverride.aspx)
+* [DragUIOverride](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.drageventargs.draguioverride.aspx)
 * [Drop](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.drop.aspx)
+* [IsDragSource](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isdragsource.aspx)
 
 
-<!--HONumber=Jun16_HO5-->
+
+<!--HONumber=Aug16_HO3-->
 
 

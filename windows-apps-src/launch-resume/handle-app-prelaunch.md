@@ -1,44 +1,39 @@
 ---
 author: TylerMSFT
-title: "Gérer le prélancement d’une application"
-description: "Découvrez comment gérer le prélancement d’une application en remplaçant la méthode OnLaunched."
+title: Handle app prelaunch
+description: Learn how to handle app prelaunch by overriding the OnLaunched method and calling CoreApplication.EnablePrelaunch(true).
 ms.assetid: A4838AC2-22D7-46BA-9EB2-F3C248E22F52
 translationtype: Human Translation
-ms.sourcegitcommit: 213384a194513a0f98a5f37e7f0e0849bf0a66e2
-ms.openlocfilehash: d9d3bdf86d858367008a32d9d6a06ec9fc13787d
+ms.sourcegitcommit: ea9aa37e15dbb6c977b0c0be4f91f77f3879e622
+ms.openlocfilehash: cf7cb9f81207f4f25eb8e78283079df27f83d7dc
 
 ---
 
-# Gérer le prélancement d’une application
+# Handle app prelaunch
 
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
-
-
-**API importantes**
-
--   [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)
-
-Découvrez comment gérer le prélancement d’une application en remplaçant la méthode [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335).
+Learn how to handle app prelaunch by overriding the [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) method.
 
 ## Introduction
 
+When available system resources allow, the startup performance of Windows Store apps on desktop device family devices is improved by proactively launching the user’s most frequently used apps in the background. A prelaunched app is put into the suspended state shortly after it is launched. Then, when the user invokes the app, the app is resumed by bringing it from the suspended state to the running state--which is faster than launching the app cold. The user's experience is that the app simply launched very quickly.
 
-Lorsque les ressources système disponibles le permettent, les performances de démarrage des applications du Windows Store sont améliorées en lançant, de manière proactive, les applications les plus fréquemment utilisées en arrière-plan. Une application prélancée est placée à l’état suspendu dans les secondes suivant son lancement. Lorsque l’utilisateur appelle l’application, celle-ci reprend l’exécution à partir de l’état suspendu, ce qui est plus rapide que le lancement de l’application à froid.
+Prior to Windows 10, apps did not automatically take advantage of prelaunch. In Windows 10, version 1511, all Universal Windows Platform (UWP) apps were candidates for being prelaunched. In Windows 10, version 1607, you must opt-in to prelaunch behavior by calling [CoreApplication.EnablePrelaunch(true)](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.core.coreapplication.enableprelaunch.aspx). A good place to put this call is within `OnLaunched()` near the location that the `if (e.PrelaunchActivated == false)` check is made.
 
-Avant Windows 10, les applications ne bénéficiaient pas automatiquement du prélancement. À partir de Windows 10, toutes les applications de plateforme Windows universelle (UWP, Universal Windows Platform) en bénéficient automatiquement.
+Whether an app is prelaunched depends on system resources. If the system is experiencing resource pressure, apps are not prelaunched.
 
-La plupart des applications doivent fonctionner avec prélancement sans qu’aucune modification soit nécessaire. Toutefois, le comportement au démarrage de certains types d’applications doit éventuellement être modifié pour fonctionner correctement avec le prélancement. Par exemple, une application de messagerie qui change la visibilité en ligne de l’utilisateur lors du démarrage ou un jeu qui suppose que l’utilisateur est présent et affiche des éléments visuels élaborés au démarrage de l’application.
+Some types of apps may need to change their startup behavior to work well with prelaunch. For example, an app that plays music when its starts up, a game which assumes the user is present and displays elaborate visuals when the app starts up, a messaging app that changes the user's online visibility during startup, can identify when the app was prelaunched and can change their startup behavior as described in the sections below.
 
-## Prélancement et cycle de vie de l’application
+The default templates for XAML Projects (C#, VB, C++) and WinJS accommodate prelaunch in Visual Studio 2015 Update 3.
 
+## Prelaunch and the app lifecycle
 
-Une fois qu’une application est prélancée, elle passe très vite à l’état suspendu. (Voir [Gérer la suspension d’une application](suspend-an-app.md).)
+After an app is prelaunched, it will enter the suspended state. (see [Handle app suspend](suspend-an-app.md)).
 
-## Détecter et gérer le prélancement
+## Detect and handle prelaunch
 
-
-Les applications reçoivent l’indicateur [**LaunchActivatedEventArgs.PrelaunchActivated**](https://msdn.microsoft.com/library/windows/apps/dn263740) pendant l’activation. Cet indicateur permet de déterminer s’il convient d’exécuter des opérations qui doivent être effectuées uniquement lorsque l’utilisateur lance explicitement l’application, comme indiqué dans l’extrait suivant de [**Application.OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335).
+Apps receive the [**LaunchActivatedEventArgs.PrelaunchActivated**](https://msdn.microsoft.com/library/windows/apps/dn263740) flag during activation. Use this flag to run code that should only run when the user explicitly launches the app, as shown in the following excerpt from [**Application.OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335).
 
 ```cs
 protected override void OnLaunched(LaunchActivatedEventArgs e)
@@ -81,14 +76,11 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 }
 ```
 
-**Conseil** Si vous souhaitez refuser le prélancement, cochez l’indicateur [**LaunchActivatedEventArgs.PrelaunchActivated**](https://msdn.microsoft.com/library/windows/apps/dn263740). Si celui-ci est défini, revenez à OnLaunched() avant de créer une image ou d’activer la fenêtre.
+**Tip**  If you are targeting a version of Windows 10 prior to version 1607, and you wish to opt-out of prelaunch, check the [**LaunchActivatedEventArgs.PrelaunchActivated**](https://msdn.microsoft.com/library/windows/apps/dn263740) flag. If it is set, return from OnLaunched() before doing any work to create a frame or activate the window.
 
- 
+## Use the VisibilityChanged event
 
-## Utiliser l’événement VisibilityChanged
-
-
-Les applications activées par prélancement ne sont pas visibles pour l’utilisateur. Elles le deviennent lorsque l’utilisateur bascule vers celles-ci. Vous souhaitez peut-être retarder certaines opérations jusqu’à ce que la fenêtre principale de votre application soit visible. Par exemple, si votre application affiche une liste des nouveaux éléments d’un flux, vous pouvez mettre à jour cette liste pendant l’événement [**VisibilityChanged**](https://msdn.microsoft.com/library/windows/apps/hh702458) plutôt que de vous appuyer sur une liste qui a été générée lors du prélancement de l’application et qui peut être obsolète au moment où l’utilisateur active l’application. Le code suivant gère l’événement **VisibilityChanged** pour **MainPage**:
+Apps activated by prelaunch are not visible to the user. They become visible when the user switches to them. You may want to delay certain operations until your app's main window becomes visible. For example, if your app displays a list of what's new items from a feed, you could update the list during the [**VisibilityChanged**](https://msdn.microsoft.com/library/windows/apps/hh702458) event rather than use the list that was built when the app was prelaunched because it may become stale by the time the user activates the app. The following code handles the **VisibilityChanged** event for **MainPage**:
 
 ```cs
 public sealed partial class MainPage : Page
@@ -108,29 +100,62 @@ public sealed partial class MainPage : Page
 }
 ```
 
-## Indications
+## DirectX games guidance
+
+DirectX games should generally not enable prelaunch because many DirectX games do their initialization before prelaunch can be detected. Starting with Windows 1607, Anniversary edition, your game will not be prelaunched by default.  If you do want your game to take advantage of prelaunch, call [CoreApplication.EnablePrelaunch(true)](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.core.coreapplication.enableprelaunch.aspx).
+
+If your game targets an earlier version of Windows 10, you can handle the prelaunch condition to exit the application:
+
+```cs
+void ViewProvider::OnActivated(CoreApplicationView^ appView,IActivatedEventArgs^ args)
+{
+    if (args->Kind == ActivationKind::Launch)
+    {
+        auto launchArgs = static_cast<LaunchActivatedEventArgs^>(args);
+        if (launchArgs->PrelaunchActivated)
+        {
+            // Opt-out of Prelaunch
+            CoreApplication::Exit();
+            return;
+        }
+    }
+}
+```
+
+## WinJS app guidance
+
+If your WinJS app targets an earlier version of Windows 10, you can handle the prelaunch condition in your [onactivated](https://msdn.microsoft.com/en-us/library/windows/apps/br212679.aspx) handler:
+
+```js
+    app.onactivated = function (args) {
+        if (!args.detail.prelaunchActivated) {
+            // TODO: This is not a prelaunch activation. Perform operations which
+            // assume that the user explicitly launched the app such as updating
+            // the online presence of the user on a social network, updating a
+            // what's new feed, etc.
+        }
+    }
+```
+
+## General Guidance
+
+-   Apps should not perform long running operations during prelaunch because the app will terminate if it can't be suspended quickly.
+-   Apps should not initiate audio playback from [**Application.OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) when the app is prelaunched because the app won't be visible and it won't be apparent why there is audio playing.
+-   Apps should not perform any operations during launch which assume that the app is visible to the user, or assume that the app was explicitly launched by the user. Because an app can now be launched in the background without explicit user action, developers should consider the privacy, user experience and performance implications.
+    -   An example privacy consideration is when a social app should change the user state to online. It should wait until the user switches to the app instead of changing the status when the app is prelaunched.
+    -   An example user experience consideration is that if you have an app, such as a game, that displays an introductory sequence when it is launched, you might delay the introductory sequence until the user switches to the app.
+    -   An example performance implication is that you might wait until the user switches to the app to retrieve the current weather information instead of loading it when the app is prelaunched and then need to load it again when the app becomes visible to ensure that the information is current.
+-   If your app clears its Live Tile when launched, defer doing this until the visibility changed event.
+-   Telemetry for your app should distinguish between normal tile activations and prelaunch activations to make it easier to narrow down the scenario if problems occur.
+-   If you have Microsoft Visual Studio 2015 Update 1, and Windows 10, Version 1511, you can simulate prelaunch for App your app in Visual Studio 2015 by choosing **Debug** &gt; **Other Debug Targets** &gt; **Debug Windows Universal App PreLaunch**.
+
+## Related topics
+
+* [App lifecycle](app-lifecycle.md)
+* [CoreApplication.EnablePrelaunch](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.core.coreapplication.enableprelaunch.aspx)
 
 
--   Les applications ne doivent pas effectuer d’opérations de longue durée pendant le prélancement, puisque l’application s’arrêtera si elle ne peut pas être suspendue rapidement.
--   Les applications ne doivent pas initier la lecture audio à partir de [**Application.OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) lorsque l’application est prélancée, car l’application n’est pas visible et ne sera pas apparente lors de la lecture audio.
--   Les applications ne doivent pas effectuer d’opérations lors du lancement, qui suppose que l’application est visible par l’utilisateur ou qu’elle a été lancée explicitement par l’utilisateur. Dans la mesure où une application peut maintenant être lancée en arrière-plan sans action explicite de l’utilisateur, les développeurs doivent prendre en compte la confidentialité, l’incidence sur les performances et l’expérience utilisateur.
-    -   Le moment où une application sociale doit définir l’état de l’utilisateur sur « en ligne » est un exemple de considération relative à la confidentialité. Elle doit attendre que l’utilisateur bascule vers l’application au lieu de modifier l’état de celui-ci lors du prélancement de l’application.
-    -   Exemple de considération relative à l’expérience utilisateur : vous possédez une application, telle qu’un jeu, qui affiche une séquence d’introduction lors de son lancement, et aimeriez avoir la possibilité de retarder la séquence d’introduction jusqu’à ce que l’utilisateur bascule vers l’application.
-    -   En ce qui concerne l’incidence sur les performances, il pourrait s’agir d’attendre que l’utilisateur bascule vers l’application pour récupérer les informations météorologiques actuelles au lieu de les charger lors du prélancement de l’application, puis de les charger une nouvelle fois lorsque l’application devient visible pour vous assurer que les informations sont à jour.
--   Si votre application efface sa vignette dynamique lors de son lancement, reportez cette opération pour qu’elle ait lieu après l’événement VisibilityChanged.
--   La télémétrie de votre application doit faire la distinction entre les activations de vignette standard et les activations de prélancement, afin que vous puissiez identifier le scénario dans lequel les problèmes se produisent.
--   Si vous possédez Microsoft Visual Studio 2015 Update 1 et Windows 10 version 1511, vous pouvez simuler le prélancement de votre application dans Visual Studio 2015 en choisissant **Déboguer**&gt;**Autres cibles de débogage**&gt;**Déboguer le prélancement de l’application Windows universelle**.
 
-## Rubriques connexes
-
-* [Cycle de vie de l’application](app-lifecycle.md)
-
- 
-
- 
-
-
-
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO4-->
 
 

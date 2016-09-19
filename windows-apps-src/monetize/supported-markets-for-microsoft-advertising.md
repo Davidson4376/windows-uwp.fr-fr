@@ -1,185 +1,185 @@
 ---
 author: mcleanbyron
 ms.assetid: 4804e371-065e-4d5a-ab1a-9c5732f52a9e
-description: "En savoir plus sur les pays et régions pris en charge pour les spots et bannières publicitaires."
-title: "Marchés pris en charge par MicrosoftAdvertising"
+description: Learn about the supported countries and regions for interstitial and banner ads.
+title: Supported markets for Microsoft advertising
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 2d17a3936a4932b0aa30c80a38bb492f3f21fb37
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: 297659aa33d37bd8da29b0cb4e0d43ce29e5e7c0
 
 ---
 
-# Marchés pris en charge par MicrosoftAdvertising
+# Supported markets for Microsoft advertising
 
 
-\[ Mise à jour pour les applicationsUWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Les spots et bannières publicitaires sont pris en charge dans les régions et pays suivants.
+
+Interstitial ads and banner ads are supported in the following countries and regions.
 
 <span id="interstitialads"/>
-## Spots publicitaires
+## Interstitial ads
 
--   Australie
+-   Australia
 
--   Brésil
+-   Brazil
 
 -   Canada
 
 -   France
 
--   Allemagne
+-   Germany
 
--   Italie
+-   Italy
 
--   Japon
+-   Japan
 
--   Espagne
+-   Spain
 
--   Royaume-Uni
+-   United Kingdom
 
--   États-Unis
+-   United States
 
 <span id="bannerads"/>
-## Bannières publicitaires
+## Banner ads
 
 
 -   Afghanistan
 
--   Albanie
+-   Albania
 
--   Algérie
+-   Algeria
 
 -   Angola
 
--   Antigua et Barbuda
+-   Antigua and Barbuda
 
--   Argentine
+-   Argentina
 
--   Arménie
+-   Armenia
 
--   Australie
+-   Australia
 
--   Autriche
+-   Austria
 
--   Azerbaïdjan
+-   Azerbaijan
 
--   Bahreïn
+-   Bahrain
 
 -   Bangladesh
 
--   Bélarus
+-   Belarus
 
--   Belgique
+-   Belgium
 
--   Bénin
+-   Benin
 
--   Bolivie
+-   Bolivia
 
--   Bosnie-Herzégovine
+-   Bosnia and Herzegovina
 
 -   Botswana
 
--   Brésil
+-   Brazil
 
--   Burkina-Faso
+-   Burkina Faso
 
 -   Burundi
 
--   Cambodge
+-   Cambodia
 
--   Cameroun
+-   Cameroon
 
 -   Canada
 
--   République centrafricaine
+-   Central African Republic
 
--   Tchad
+-   Chad
 
--   Chili
+-   Chile
 
--   Chine
+-   China
 
--   Colombie
+-   Colombia
 
--   Comores (Les)
+-   Comoros
 
 -   Congo
 
--   Congo (RDC)
+-   Congo (DRC)
 
 -   Costa Rica
 
--   Côte d’Ivoire
+-   Côte d'Ivoire
 
--   Danemark
+-   Denmark
 
--   Dominique
+-   Dominica
 
--   République dominicaine
+-   Dominican Republic
 
--   Équateur (République de)
+-   Ecuador
 
--   Égypte
+-   Egypt
 
--   Salvador
+-   El Salvador
 
--   Érythrée
+-   Eritrea
 
--   Éthiopie
+-   Ethiopia
 
--   Fidji
+-   Fiji
 
--   Finlande
+-   Finland
 
 -   France
 
--   Géorgie
+-   Georgia
 
--   Allemagne
+-   Germany
 
 -   Ghana
 
--   Grèce
+-   Greece
 
 -   Guatemala
 
--   Guinée
+-   Guinea
 
--   Haïti
+-   Haiti
 
 -   Honduras
 
 -   Hong Kong
 
--   Islande
+-   Iceland
 
--   Inde
+-   India
 
--   Indonésie
+-   Indonesia
 
--   Irak
+-   Iraq
 
--   Irlande
+-   Ireland
 
--   Israël
+-   Israel
 
--   Italie
+-   Italy
 
--   Jamaïque
+-   Jamaica
 
--   Japon
+-   Japan
 
--   Jordanie
+-   Jordan
 
 -   Kazakhstan
 
 -   Kenya
 
--   Koweït
+-   Kuwait
 
 -   Laos
 
--   Liban
+-   Lebanon
 
 -   Liberia
 
@@ -187,35 +187,35 @@ Les spots et bannières publicitaires sont pris en charge dans les régions et p
 
 -   Luxembourg
 
--   Macédoine (Ex-République yougoslave de Macédoine)
+-   Macedonia (FYROM)
 
 -   Madagascar
 
 -   Malawi
 
--   Malaisie
+-   Malaysia
 
 -   Mali
 
--   Malte
+-   Malta
 
--   Maurice (Île)
+-   Mauritius
 
--   Mexique
+-   Mexico
 
 -   Monaco
 
--   Mongolie
+-   Mongolia
 
--   Monténégro
+-   Montenegro
 
--   Maroc
+-   Morocco
 
 -   Mozambique
 
--   Népal
+-   Nepal
 
--   Nouvelle-Zélande
+-   New Zealand
 
 -   Nicaragua
 
@@ -223,7 +223,7 @@ Les spots et bannières publicitaires sont pris en charge dans les régions et p
 
 -   Nigeria
 
--   Norvège
+-   Norway
 
 -   Oman
 
@@ -233,53 +233,53 @@ Les spots et bannières publicitaires sont pris en charge dans les régions et p
 
 -   Paraguay
 
--   Pérou
+-   Peru
 
 -   Philippines
 
--   Pologne
+-   Poland
 
 -   Portugal
 
 -   Qatar
 
--   Russie
+-   Russia
 
 -   Rwanda
 
--   Saint-Vincent-et-les-Grenadines
+-   Saint Vincent and the Grenadines
 
--   Arabie saoudite
+-   Saudi Arabia
 
--   Sénégal
+-   Senegal
 
 -   Sierra Leone
 
--   Singapour
+-   Singapore
 
--   Somalie
+-   Somalia
 
--   Afrique du Sud
+-   South Africa
 
--   Corée du Sud
+-   South Korea
 
--   Espagne
+-   Spain
 
 -   Sri Lanka
 
--   Suède
+-   Sweden
 
--   Suisse
+-   Switzerland
 
--   Taïwan
+-   Taiwan
 
--   Tadjikistan
+-   Tajikistan
 
--   Tanzanie
+-   Tanzania
 
--   Thaïlande
+-   Thailand
 
--   Pays-Bas
+-   The Netherlands
 
 -   Timor-Leste
 
@@ -287,21 +287,21 @@ Les spots et bannières publicitaires sont pris en charge dans les régions et p
 
 -   Tonga
 
--   Tunisie
+-   Tunisia
 
--   Turquie
+-   Turkey
 
--   Turkménistan
+-   Turkmenistan
 
--   Ouganda
+-   Uganda
 
 -   Ukraine
 
--   Émirats arabes unis
+-   United Arab Emirates
 
--   Royaume-Uni
+-   United Kingdom
 
--   Ouzbékistan
+-   Uzbekistan
 
 -   Venezuela
 
@@ -315,6 +315,6 @@ Les spots et bannières publicitaires sont pris en charge dans les régions et p
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

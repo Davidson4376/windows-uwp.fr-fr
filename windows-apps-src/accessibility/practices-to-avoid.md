@@ -1,42 +1,41 @@
 ---
 author: Xansky
-Description: "Répertorie les pratiques à éviter si vous voulez créer une application de plateforme Windows universelle (UWP) accessible."
+Description: Lists the practices to avoid if you want to create an accessible Universal Windows Platform (UWP) app.
 ms.assetid: 024A9B70-9821-45BB-93F1-61C0B2ECF53E
-title: "Pratiques d’accessibilité à éviter"
+title: Accessibility practices to avoid
 label: Accessibility practices to avoid
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: b5f5f220d5ff70d70dd797c0bf26a355bd447563
+ms.sourcegitcommit: 014fb096817a25651188821fa59b202d260781d5
+ms.openlocfilehash: 382899f038e2ac2ad6e34e98b3ba4849e9685d10
 
 ---
-# Pratiques d’accessibilité à éviter
+# Accessibility practices to avoid
 
+If you want to create an accessible Universal Windows Platform (UWP) app, see this list of practices to avoid: 
 
+* **Avoid building custom UI elements if you can use the default Windows controls** or controls that have already implemented Microsoft UI Automation support. Standard Windows controls are accessible by default and usually require adding only a few accessibility attributes that are app-specific. In contrast, implementing the [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) support for a true custom control is somewhat more involved (see [Custom automation peers](custom-automation-peers.md)).
+* **Don't put static text or other non-interactive elements into the tab order** (for example, by setting the [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) property for an element that is not interactive). If non-interactive elements are in the tab order, that is against keyboard accessibility guidelines because it decreases efficiency of keyboard navigation for users. Many assistive technologies use tab order and the ability to focus an element as part of their logic for how to present an app's interface to the assistive technology user. Text-only elements in the tab order can confuse users who expect only interactive elements in the tab order (buttons, check boxes, text input fields, combo boxes, lists, and so on).
+* **Avoid using absolute positioning of UI elements** (such as in a [**Canvas**](https://msdn.microsoft.com/library/windows/apps/BR209267) element) because the presentation order often differs from the child element declaration order (which is the de facto logical order). Whenever possible, arrange UI elements in document or logical order to ensure that screen readers can read those elements in the correct order. If the visible order of UI elements can diverge from the document or logical order, use explicit tab index values (set [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461)) to define the correct reading order.
+* **Don’t use color as the only way to convey information.** Users who are color blind cannot receive information that is conveyed only through color, such as in a color status indicator. Include other visual cues, preferably text, to ensure that information is accessible.
+* **Don’t automatically refresh an entire app canvas** unless it is really necessary for app functionality. If you need to automatically refresh page content, update only certain areas of the page. Assistive technologies generally must assume that a refreshed app canvas is a totally new structure, even if the effective changes were minimal. The cost of this to the assistive technology user is that any document view or description of the refreshed app now must be recreated and presented to the user again.
+  
+  A deliberate page navigation that is initiated by the user is a legitimate case for refreshing the app's structure. But make sure that the UI item that initiates the navigation is correctly identified or named to give some indication that invoking it will result in a context change and page reload.
 
-Répertorie les pratiques à éviter si vous voulez créer une application de plateforme Windows universelle (UWP) accessible.
+  > [!NOTE]
+  > If you do refresh content within a region, consider setting the [**AccessibilityProperties.LiveSetting**](https://msdn.microsoft.com/library/windows/apps/JJ191516) accessibility property on that element to one of the non-default settings **Polite** or **Assertive**. Some assistive technologies can map this setting to the Accessible Rich Internet Applications (ARIA) concept of live regions and can thus inform the user that a region of content has changed.
 
-* Évitez de créer des éléments d’interface utilisateur personnalisés si vous pouvez utiliser les contrôles par défaut Windows ou des contrôles qui ont déjà implémenté la prise en charge de Microsoft UI Automation. Les contrôles Windows standard sont accessibles par défaut et ne nécessitent généralement que l’ajout de quelques attributs d’accessibilité propres à l’application. L’implémentation de la prise en charge de [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) pour un vrai contrôle personnalisé nécessite quant à elle une charge de travail plus importante (voir [Homologues d’automatisation personnalisés](custom-automation-peers.md)).
-* Ne placez pas de texte statique ou d’autres éléments non interactifs dans l’ordre de tabulation (par exemple, en définissant la propriété [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) pour un élément non interactif). La présence d’éléments non interactifs dans l’ordre de tabulation est contraire aux consignes d’accessibilité du clavier, car elle diminue l’efficacité de la navigation au clavier pour les utilisateurs. De nombreuses technologies d’assistance utilisent l’ordre de tabulation et la possibilité de mettre le focus sur un élément dans le cadre de leur logique pour présenter l’interface d’une application à l’utilisateur de technologie d’assistance. Les éléments de texte uniquement dans l’ordre de tabulation peuvent dérouter les utilisateurs qui s’attendent à rencontrer uniquement des éléments interactifs dans l’ordre de tabulation (boutons, cases à cocher, champs de saisie de texte, zones de liste déroulante, listes, etc.).
-* Évitez d’utiliser un positionnement absolu pour les éléments d’interface utilisateur (comme dans un élément [**Canvas**](https://msdn.microsoft.com/library/windows/apps/BR209267)), car l’ordre de présentation diffère souvent de l’ordre de déclaration des éléments enfants (qui est l’ordre logique de fait). Dans la mesure du possible, organisez les éléments d’interface utilisateur dans l’ordre du document ou dans l’ordre logique pour vous assurer que les lecteurs d’écran peuvent lire ces éléments dans l’ordre correct. Si l’ordre visible des éléments d’interface utilisateur peut diverger de l’ordre du document ou de l’ordre logique, utilisez des valeurs d’index de tabulation explicites (définissez [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461)) pour définir l’ordre de lecture correct.
-* N’utilisez pas la couleur comme seule façon de transmettre des informations. Les utilisateurs qui ne distinguent pas les couleurs ne peuvent pas recevoir des informations qui sont transmises uniquement via la couleur, comme sur un indicateur d’état en couleur. Incluez d’autres signaux visuels, de préférence du texte, pour garantir l’accessibilité des informations.
-* N’actualisez pas automatiquement un canevas d’application entier, à moins que cela ne soit absolument nécessaire pour la fonctionnalité de l’application. Si vous devez actualiser automatiquement le contenu d’une page, mettez à jour uniquement certaines zones de la page. Les technologies d’assistance doivent généralement supposer qu’un canevas d’application actualisé est une structure entièrement nouvelle, même si les modifications effectives sont minimes. Le coût pour l’utilisateur de technologie d’assistance est que tout affichage de document ou description de l’application actualisée doit maintenant être recréé et représenté à l’utilisateur.
-
-> [!NOTE]
-> Si vous actualisez le contenu au sein d’une région, envisagez d’attribuer à la propriété d’accessibilité[**AccessibilityProperties.LiveSetting**](https://msdn.microsoft.com/library/windows/apps/JJ191516) de cet élément un paramètre autre que ceux par défaut (**Polite** ou **Assertive**). Certaines technologies d’assistance peuvent mapper ce paramètre au concept ARIA (Accessible Rich Internet Applications) des zones dynamiques et ainsi indiquer à l’utilisateur qu’une région de contenu a été modifiée.
-
-* Une navigation de page délibérée initiée par l’utilisateur constitue un cas légitime pour l’actualisation de la structure d’application. Mais vous devez vous assurer que l’élément d’interface utilisateur qui initie la navigation est identifié ou nommé correctement afin de bien signaler que son appel aura pour conséquence un changement de contexte et un rechargement de page.
-* N’utilisez pas d’éléments d’interface utilisateur qui clignotent plus de trois fois par seconde. Les éléments qui clignotent peuvent provoquer des crises chez certaines personnes. Il est conseillé d’éviter d’utiliser des éléments d’interface utilisateur qui clignotent.
-* Ne modifiez pas le contexte utilisateur ou n’activez pas des fonctionnalités automatiquement. Les modifications de contexte ou d’activation doivent se produire uniquement lorsque l’utilisateur entreprend une action directe sur un élément d’interface utilisateur qui a le focus. Les modifications apportées au contexte utilisateur comprennent le changement de focus, l’affichage d’un nouveau contenu et la navigation jusqu’à une autre page. Le fait d’apporter des changements de contexte sans impliquer l’utilisateur peut être désorientant pour les utilisateurs souffrant de handicaps. Les exceptions à cette exigence sont notamment l’affichage de sous-menus, la validation de formulaires, l’affichage de texte d’aide dans un autre contrôle et la modification du contexte en réponse à un événement asynchrone.
+* **Don’t use UI elements that flash more than three times per second.** Flashing elements can cause some people to have seizures. It is best to avoid using UI elements that flash.
+* **Don’t change user context or activate functionality automatically.** Context or activation changes should occur only when the user takes a direct action on a UI element that has focus. Changes in user context include changing focus, displaying new content, and navigating to a different page. Making context changes without involving the user can be disorienting for users who have disabilities. The exceptions to this requirement include displaying submenus, validating forms, displaying help text in another control, and changing context in response to an asynchronous event.
 
 <span id="related_topics"/>
-## Rubriques connexes  
-* [Accessibilité](accessibility.md)
-* [Accessibilité dans le Windows Store](accessibility-in-the-store.md)
-* [Liste de vérification de l’accessibilité](accessibility-checklist.md)
+## Related topics  
+* [Accessibility](accessibility.md)
+* [Accessibility in the Store](accessibility-in-the-store.md)
+* [Accessibility checklist](accessibility-checklist.md)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,50 +1,50 @@
 ---
 author: mcleblanc
-description: "Le code qui s’intègre à l’appareil proprement dit et à ses capteurs implique une entrée de l’utilisateur et une sortie vers ce dernier."
-title: "Portage d’une application Windows Runtime 8.x vers UWP pour le modèle d’E/S, d’appareil et d’application"
+description: Code that integrates with the device itself and its sensors involves input from, and output to, the user.
+title: Porting Windows Runtime 8.x to UWP for I/O, device, and app model'
 ms.assetid: bb13fb8f-bdec-46f5-8640-57fb0dd2d85b
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: e5e560ca4f40496edf9d11c3eef546fdc4c3b079
+ms.openlocfilehash: 4f7a73eb48d898ed99a5145eccc04da259fe4871
 
 ---
 
-# Portage d’une application Windows Runtime 8.x vers UWP pour le modèle d’E/S, d’appareil et d’application
+# Porting Windows Runtime 8.x to UWP for I/O, device, and app model
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Rubrique précédente : [Portage du balisage XAML et de la couche interface utilisateur](w8x-to-uwp-porting-xaml-and-ui.md).
+The previous topic was [Porting XAML and UI](w8x-to-uwp-porting-xaml-and-ui.md).
 
-Le code qui s’intègre à l’appareil proprement dit et à ses capteurs implique l’entrée de l’utilisateur et la sortie vers ce dernier. Il peut également impliquer le traitement des données. Néanmoins, ce code n’est généralement pas pensé comme la couche interface utilisateur *ni* comme la couche de données. Ce code inclut l’intégration au contrôleur de vibrations, à l’accéléromètre, au gyroscope, au microphone et au haut-parleur (qui rejoignent la reconnaissance et la synthèse vocales), à la (géo)localisation et aux modalités d’entrée telles que l’écran tactile, la souris, le clavier et le stylet.
+Code that integrates with the device itself and its sensors involves input from, and output to, the user. It can also involve processing data. But, this code is not generally thought of as either the UI layer *or* the data layer. This code includes integration with the vibration controller, accelerometer, gyroscope, microphone and speaker (which intersect with speech recognition and synthesis), (geo)location, and input modalities such as touch, mouse, keyboard, and pen.
 
-## Cycle de vie des applications (gestion de la durée de vie des processus)
-
-
-Dans le cas d’une application 8.1 universelle, il existe une « fenêtre de réponse » de deux secondes entre le moment où l’application devient inactive et le moment où le système déclenche l’événement de suspension. L’utilisation de cette fenêtre de réponse comme délai supplémentaire pour suspendre l’état est peu sûre. Par ailleurs, dans le cas d’une application pour la plateforme Windows universelle (UWP), il n’existe pas de telle fenêtre ; l’événement de suspension est déclenché dès que l’application devient inactive.
-
-Pour plus d’informations, voir [Cycle de vie de l’application](https://msdn.microsoft.com/library/windows/apps/mt243287).
-
-## Contenu audio en arrière-plan
+## Application lifecycle (process lifetime management)
 
 
-Dans le cas de la propriété [**MediaElement.AudioCategory**](https://msdn.microsoft.com/library/windows/apps/br227352), les valeurs **ForegroundOnlyMedia** et **BackgroundCapableMedia** sont déconseillées pour les applications Windows 10. Utilisez plutôt le modèle d’application du Windows PhoneStore. Pour plus d’informations, voir [Contenu audio en arrière-plan](https://msdn.microsoft.com/library/windows/apps/mt282140).
+For a Universal 8.1 app, there is a two-second "debounce window" of time between the app becoming inactive and the system raising the suspending event. Using this debounce window as extra time to suspend state is unsafe, and for a Universal Windows Platform (UWP) app, there is no debounce window at all; the suspension event is raised as soon as an app becomes inactive.
 
-## Détection de la plateforme d’exécution de votre application
+For more info, see [App lifecycle](https://msdn.microsoft.com/library/windows/apps/mt243287).
+
+## Background audio
 
 
-La façon d’envisager le ciblage d’application change avec Windows 10. Selon le nouveau modèle conceptuel, une application cible la plateforme Windows universelle (UWP) et s’exécute sur tous les appareils Windows. Elle peut ensuite choisir d’activer des fonctionnalités exclusives à certaines familles d’appareils. Si nécessaire, l’application a également la possibilité de restreindre son ciblage à une ou plusieurs familles d’appareils spécifiques. Pour plus d’informations sur les familles d’appareils et savoir comment déterminer les familles d’appareils à cibler, voir le [Guide des applications UWP](https://msdn.microsoft.com/library/windows/apps/dn894631).
+For the [**MediaElement.AudioCategory**](https://msdn.microsoft.com/library/windows/apps/br227352) property, **ForegroundOnlyMedia** and **BackgroundCapableMedia** are deprecated for Windows 10 apps. Use the Windows Phone Store app model instead. For more information, see [Background Audio](https://msdn.microsoft.com/library/windows/apps/mt282140).
 
-Si votre application8.1 universelle intègre du code qui détecte le système d’exploitation sur lequel elle est exécutée, vous devrez peut-être changer cela en fonction de la raison de la logique. Si l’application transmet la valeur et n’intervient pas en conséquence, il peut être préférable de continuer à collecter les informations sur le système d’exploitation.
+## Detecting the platform your app is running on
 
-**Remarque** Nous vous recommandons de ne pas utiliser le système d’exploitation ou la famille d’appareils pour détecter la présence de fonctionnalités. En règle générale, l’identification de la famille d’appareils ou du système d’exploitation actuel ne constitue pas le meilleur moyen de déterminer si une fonctionnalité particulière du système d’exploitation ou de la famille d’appareils est présente. Plutôt que de détecter le système d’exploitation ou la famille d’appareils (et le numéro de version), vérifiez directement la présence de la fonctionnalité à l’aide d’un test (voir [Compilation conditionnelle et code adaptatif](w8x-to-uwp-porting-to-a-uwp-project.md#reviewing-conditional-compilation)). Si vous devez exiger un système d’exploitation ou une famille d’appareils spécifique, veillez à l’utiliser comme une version minimale prise en charge plutôt que de concevoir le test pour cette version particulière.
+
+The way of thinking about app-targeting changes with Windows 10. The new conceptual model is that an app targets the Universal Windows Platform (UWP) and runs across all Windows devices. It can then opt to light up features that are exclusive to particular device families. If needed, the app also has the option to limit itself to targeting one or more device families specifically. For more info on what device families are—and how to decide which device family to target—see [Guide to UWP apps](https://msdn.microsoft.com/library/windows/apps/dn894631).
+
+If you have code in your Universal 8.1 app that detects what operating system it is running on, then you may need to change that depending on the reason for the logic. If the app is passing the value through, and not acting on it, then you may want to continue to collect the operating system info.
+
+**Note**   We recommend that you not use operating system or device family to detect the presence of features. Identifying the current operating system or device family is usually not the best way to determine whether a particular operating system or device family feature is present. Rather than detecting the operating system or device family (and version number), test for the presence of the feature itself (see [Conditional compilation, and adaptive code](w8x-to-uwp-porting-to-a-uwp-project.md#reviewing-conditional-compilation)). If you must require a particular operating system or device family, be sure to use it as a minimum supported version, rather than design the test for that one version.
 
  
 
-Pour adapter l’interface utilisateur à différents appareils, plusieurs techniques sont recommandées. Continuez à utiliser les éléments à dimensionnement automatique et les panneaux à disposition dynamique que vous utilisez depuis toujours. Dans le balisage XAML, continuez à utiliser les tailles en pixels effectifs (auparavant appelés « pixels d’affichage ») afin que votre interface utilisateur s’adapte à différentes résolutions et différents facteurs d’échelle (voir [Pixels effectifs, distance d’affichage et facteurs d’échelle](w8x-to-uwp-porting-xaml-and-ui.md#effective-pixels)). Utilisez également les déclencheurs adaptatifs et les méthodes setter du Gestionnaire d’état visuel pour adapter votre interface utilisateur à la taille de la fenêtre (voir le [Guide des applications UWP](https://msdn.microsoft.com/library/windows/apps/dn894631)).
+To tailor your app's UI to different devices, there are several techniques that we recommend. Continue to use auto-sized elements and dynamic layout panels as you always have. In your XAML markup, continue to use sizes in effective pixels (formerly view pixels) so that your UI adapts to different resolutions and scale factors (see [Effective pixels, viewing distance, and scale factors](w8x-to-uwp-porting-xaml-and-ui.md#effective-pixels).). And use Visual State Manager's adaptive triggers and setters to adapt your UI to the window size (see [Guide to UWP apps](https://msdn.microsoft.com/library/windows/apps/dn894631).).
 
-Toutefois, si l’un de vos scénarios implique nécessairement la détection de la famille d’appareils, vous pouvez mettre celle-ci en œuvre. Dans cet exemple, nous faisons appel à la classe [**AnalyticsVersionInfo**](https://msdn.microsoft.com/library/windows/apps/dn960165) pour naviguer vers une page adaptée à la famille d’appareils mobiles lorsqu’un tel appareil est utilisé, en veillant à revenir vers une page par défaut dans le cas contraire.
+However, if you have a scenario where it is unavoidable to detect the device family, then you can do that. In this example, we use the [**AnalyticsVersionInfo**](https://msdn.microsoft.com/library/windows/apps/dn960165) class to navigate to a page tailored for the mobile device family where appropriate, and we make sure to fall back to a default page otherwise.
 
 ```csharp
    if (Windows.System.Profile.AnalyticsInfo.VersionInfo.DeviceFamily == "Windows.Mobile")
@@ -53,7 +53,7 @@ Toutefois, si l’un de vos scénarios implique nécessairement la détection de
         rootFrame.Navigate(typeof(MainPage), e.Arguments);
 ```
 
-Votre application peut également déterminer la famille d’appareils sur laquelle elle est exécutée à partir des facteurs de sélection de ressources en vigueur. L’exemple ci-dessous indique comment effectuer cette opération de manière impérative, et la rubrique [**ResourceContext.QualifierValues**](https://msdn.microsoft.com/library/windows/apps/br206071) décrit le cas d’utilisation le plus courant de la classe pour le chargement de ressources propres à la famille d’appareils en fonction du facteur de cette dernière.
+Your app can also determine the device family that it is running on from the resource selection factors that are in effect. The example below shows how to do this imperatively, and the [**ResourceContext.QualifierValues**](https://msdn.microsoft.com/library/windows/apps/br206071) topic describes the more typical use case for the class in loading device family-specific resources based on the device family factor.
 
 ```csharp
 var qualifiers = Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView().QualifierValues;
@@ -61,23 +61,23 @@ string deviceFamilyName;
 bool isDeviceFamilyNameKnown = qualifiers.TryGetValue("DeviceFamily", out deviceFamilyName);
 ```
 
-Voir également [Compilation conditionnelle et code adaptatif](w8x-to-uwp-porting-to-a-uwp-project.md#reviewing-conditional-compilation).
+Also, see [Conditional compilation, and adaptive code](w8x-to-uwp-porting-to-a-uwp-project.md#reviewing-conditional-compilation).
 
-## Localisation
+## Location
 
 
-Lorsqu’une application déclarant la fonctionnalité de localisation dans son manifeste de package d’application s’exécute sur Windows 10, le système demande le consentement de l’utilisateur final. Ceci s’applique aux applications du Windows Phone Store ou aux applications Windows 10. Si votre application affiche sa propre invite de consentement personnalisée ou qu’elle fournit une bascule de type activation/désactivation, vous devrez donc supprimer ces éléments pour que l’utilisateur final ne soit invité qu’une seule fois à autoriser cette fonctionnalité.
-
- 
+When an app that declares the Location capability in its app package manifest runs on Windows 10, the system will prompt the end-user for consent. This is true whether the app is a Windows Phone Store app or a Windows 10 app. So, if your app displays its own custom consent prompt, or if it provides an on-off toggle, then you will want to remove that so that the end-user is only prompted once.
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

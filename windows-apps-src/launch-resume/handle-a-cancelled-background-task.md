@@ -1,37 +1,37 @@
 ---
 author: TylerMSFT
-title: "Gérer une tâche en arrière-plan annulée"
-description: "Découvrez comment faire en sorte qu’une tâche en arrière-plan reconnaisse les demandes d’annulation et arrête le travail, tout en signalant l’annulation à l’application utilisant le stockage persistant."
+title: Handle a cancelled background task
+description: Learn how to make a background task that recognizes cancellation requests and stops work, reporting the cancellation to the app using persistent storage.
 ms.assetid: B7E23072-F7B0-4567-985B-737DD2A8728E
 translationtype: Human Translation
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: ab575415e5e6a091fb45dab49af21d0552834406
+ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
+ms.openlocfilehash: e1a843448accb5ae2d689a6105c8254b0f868b5b
 
 ---
 
-# Gérer une tâche en arrière-plan annulée
+# Handle a cancelled background task
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**API importantes**
+**Important APIs**
 
 -   [**BackgroundTaskCanceledEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224775)
 -   [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797)
 -   [**ApplicationData.Current**](https://msdn.microsoft.com/library/windows/apps/br241619)
 
-Découvrez comment faire en sorte qu’une tâche en arrière-plan reconnaisse les demandes d’annulation et arrête le travail, tout en signalant l’annulation à l’application utilisant le stockage persistant.
+Learn how to make a background task that recognizes a cancellation request, stops work, and reports the cancellation to the app using persistent storage.
 
-> **Remarque** Pour toutes les familles d’appareils, à l’exception des ordinateurs de bureau, les tâches en arrière-plan peuvent être arrêtées en cas de mémoire insuffisante de l’appareil. Si aucune exception de mémoire insuffisante n’est exposée ou que l’application ne la gère pas, la tâche en arrière-plan est arrêtée sans avertissement ni déclenchement de l’événement OnCanceled. Cela permet de garantir l’expérience utilisateur de l’application au premier plan. Votre tâche en arrière-plan doit être conçue de manière à gérer ce scénario.
+This topic assumes you have already created a background task class, including the Run method that is used as the background task entry point. To get started quickly building a background task, see [Create and register a background task that runs in a separate process](create-and-register-a-background-task.md) or . For more in-depth information on conditions and triggers, see [Support your app with background tasks](support-your-app-with-background-tasks.md).
 
-Cette rubrique suppose que vous avez déjà créé une classe de tâche en arrière-plan, incluant la méthode Run utilisée comme point d’entrée de la tâche en arrière-plan. Pour vous lancer rapidement dans la génération d’une tâche en arrière-plan, voir [Créer et inscrire une tâche en arrière-plan](create-and-register-a-background-task.md). Pour des informations plus détaillées sur les conditions et les déclencheurs, voir [Définition de tâches en arrière-plan pour les besoins de votre application](support-your-app-with-background-tasks.md).
+This topic is also applicable to single-process background tasks. But instead of the Run() method, substitute OnBackgroundActivated(). Single-process background tasks do not require you to use persistent storage to signal the cancellation because you can communicate the cancellation using app state since the background task is running in the same process as your foreground app.
 
-## Utiliser la méthode OnCanceled pour reconnaître les demandes d’annulation
+## Use the OnCanceled method to recognize cancellation requests
 
-Écrivez une méthode permettant de gérer l’événement d’annulation.
+Write a method to handle the cancellation event.
 
-Créez une méthode nommée OnCanceled qui possède l’empreinte suivante. Cette méthode est le point d’entrée appelé par Windows Runtime chaque fois qu’une demande d’annulation est formulée pour votre tâche en arrière-plan.
+> **Note**  For all device families except desktop, if the device becomes low on memory, background tasks may be terminated. If an out of memory exception is not surfaced, or the app does not handle it, then the background task will be terminated without warning and without raising the OnCanceled event. This helps to ensure the user experience of the app in the foreground. Your background task should be designed to handle this scenario.
 
-La méthode OnCanceled doit avoir l’empreinte suivante:
+Create a method named OnCanceled as follows. This method is the entry point called by the Windows Runtime when a cancellation request is made against your background task.
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -47,7 +47,7 @@ La méthode OnCanceled doit avoir l’empreinte suivante:
 >    }
 > ```
 
-Ajoutez une variable d’indicateur appelée **\_CancelRequested** à la classe de tâche en arrière-plan. Cette variable servira à indiquer qu’une demande d’annulation a été effectuée.
+Add a flag variable called **\_CancelRequested** to the background task class. This variable will be used to indicate when a cancellation request has been made.
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -58,9 +58,9 @@ Ajoutez une variable d’indicateur appelée **\_CancelRequested** à la classe 
 >     volatile bool CancelRequested;
 > ```
 
-Dans la méthode OnCanceled que vous avez créée à l’étape1, attribuez à la variable d’indicateur **\_CancelRequested** la valeur **true**.
+In the OnCanceled method you created in step 1, set the flag variable **\_CancelRequested** to **true**.
 
-La méthode OnCanceled de l’[exemple complet de tâche en arrière-plan]( http://go.microsoft.com/fwlink/p/?linkid=227509) attribue à **_CancelRequested** la valeur **true** et écrit une sortie de débogage qui peut s’avérer utile:
+The full [background task sample]( http://go.microsoft.com/fwlink/p/?linkid=227509) OnCanceled method sets **\_CancelRequested** to **true** and writes potentially useful debug output:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -86,7 +86,7 @@ La méthode OnCanceled de l’[exemple complet de tâche en arrière-plan]( http
 >     }
 > ```
 
-Dans la méthode Run de la tâche en arrière-plan, inscrivez la méthode de gestionnaire d’événements OnCanceled avant de lancer le travail. Par exemple, utilisez la ligne de code suivante:
+In the background task's Run method, register the OnCanceled event handler method before starting work. In a single-process background task, you might do this registration as part of your application initialization. For example, use the following line of code:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -96,14 +96,13 @@ Dans la méthode Run de la tâche en arrière-plan, inscrivez la méthode de ges
 >     taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &SampleBackgroundTask::OnCanceled);
 > ```
 
-## Gérer une annulation en quittant la méthode Run
+## Handle cancellation by exiting your background task
 
+When a cancellation request is received, your method that does background work needs to stop work and exit by recognizing when **\_cancelRequested** is set to **true**. For single-process background tasks, this means returning from the `OnBackgroundActivated()` method. For background tasks that run in a separate process, this means returning from the `Run()` method.
 
-Lors de la réception d’une demande d’annulation, la méthode Run doit arrêter le travail et quitter en reconnaissant que **_cancelRequested** a la valeur **true**.
+Modify the code of your background task class to check the flag variable while it's working. If **\_cancelRequested** set to true, stop work from continuing.
 
-Modifiez le code de votre classe de tâche en arrière-plan pour vérifier la variable d’indicateur pendant qu’elle est utilisée. Si **_cancelRequested** a la valeur true, le travail s’arrête.
-
-L’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) comprend une vérification qui arrête le rappel de minuteur périodique en cas d’annulation de la tâche en arrière-plan:
+The [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666) includes a check that stops the periodic timer callback if the background task is canceled:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -133,11 +132,11 @@ L’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkI
 >     }
 > ```
 
-> **Remarque** L’exemple de code présenté ci-dessus utilise la propriété [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797).[**Progress**](https://msdn.microsoft.com/library/windows/apps/br224800) qui sert à enregistrer la progression de la tâche en arrière-plan. La progression est indiquée à l’application à l’aide de la classe [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782).
+> **Note**  The code sample shown above uses the [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797).[**Progress**](https://msdn.microsoft.com/library/windows/apps/br224800) property being used to record background task progress. Progress is reported back to the app using the [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782) class.
 
-Modifiez la méthode Run de sorte qu’une fois le travail arrêté, elle enregistre l’état de la tâche (terminé ou annulé).
+Modify the Run method so that after work has stopped, it records whether the task completed or was cancelled. This step applies to background tasks that run in a separate process because you need a way to communicate between processes when the background task was cancelled. For single-process background tasks, you can simply share state with the application to indicate the task was cancelled.
 
-L’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) enregistre l’état dans LocalSettings :
+The [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666) records status in LocalSettings:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -201,15 +200,15 @@ L’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkI
 >     }
 > ```
 
-## Remarques
+## Remarks
 
-Vous pouvez télécharger l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) pour voir ces exemples de code dans le contexte des méthodes.
+You can download the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666) to see these code examples in the context of methods.
 
-Pour des raisons d’illustration, l’exemple de code présente uniquement des portions de la méthode Run (et du minuteur de rappel) de l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666).
+For illustrative purposes, the sample code shows only portions of the Run method (and callback timer) from the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666).
 
-## Exemple de méthode Run
+## Run method example
 
-L’intégralité de la méthode Run ainsi que le code de rappel de minuteur de l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) sont présentés ci-dessous pour plus de contexte:
+The complete Run method, and timer callback code, from the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666) are shown below for context:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -328,26 +327,26 @@ L’intégralité de la méthode Run ainsi que le code de rappel de minuteur de 
 > }
 > ```
 
-> **Remarque** Cet article s’adresse aux développeurs Windows10 qui développent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Note**  This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
-## Rubriques connexes
+## Related topics
 
-* [Créer et inscrire une tâche en arrière-plan](create-and-register-a-background-task.md)
-* [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md)
-* [Recommandations pour les tâches en arrière-plan](guidelines-for-background-tasks.md)
-* [Surveiller la progression et l’achèvement des tâches en arrière-plan](monitor-background-task-progress-and-completion.md)
-* [Inscrire une tâche en arrière-plan](register-a-background-task.md)
-* [Répondre aux événements système avec des tâches en arrière-plan](respond-to-system-events-with-background-tasks.md)
-* [Exécuter une tâche en arrière-plan en fonction d’un minuteur](run-a-background-task-on-a-timer-.md)
-* [Définir des conditions pour exécuter une tâche en arrière-plan](set-conditions-for-running-a-background-task.md)
-* [Mettre à jour une vignette dynamique à partir d’une tâche en arrière-plan](update-a-live-tile-from-a-background-task.md)
-* [Utiliser un déclencheur de maintenance](use-a-maintenance-trigger.md)
+* [Create and register a background task](create-and-register-a-background-task.md)
+* [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md)
+* [Guidelines for background tasks](guidelines-for-background-tasks.md)
+* [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
+* [Register a background task](register-a-background-task.md)
+* [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)
+* [Run a background task on a timer](run-a-background-task-on-a-timer-.md)
+* [Set conditions for running a background task](set-conditions-for-running-a-background-task.md)
+* [Update a live tile from a background task](update-a-live-tile-from-a-background-task.md)
+* [Use a maintenance trigger](use-a-maintenance-trigger.md)
 
-* [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
-* [Comment déclencher des événements de suspension, des événements de reprise et des événements en arrière-plan dans des applications du Windows Store (lors du débogage)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Debug a background task](debug-a-background-task.md)
+* [How to trigger suspend, resume, and background events in Windows Store apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

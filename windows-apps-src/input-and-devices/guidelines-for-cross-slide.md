@@ -1,150 +1,150 @@
 ---
 author: mijacobs
-Description: "Utilisez le glisser transversal pour prendre en charge la sélection avec le mouvement de balayage et les interactions de glissement (déplacement) avec le mouvement de glissement."
-title: "Recommandations en matière de glisser transversal"
+Description: Use cross-slide to support selection with the swipe gesture and drag (move) interactions with the slide gesture.
+title: Guidelines for cross-slide
 ms.assetid: 897555e2-c567-4bbe-b600-553daeb223d5
 label: Cross-slide
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 47a16acc4025541b1cc19582c2c7d59755fd2594
+ms.openlocfilehash: 6f89875b5ef14c029103155f4e3c333dbdad0cab
 
 ---
 
-# Recommandations en matière de glisser transversal
+# Guidelines for cross-slide
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**API importantes**
+**Important APIs**
 
 -   [**CrossSliding**](https://msdn.microsoft.com/library/windows/apps/br241942)
 -   [**CrossSlideThresholds**](https://msdn.microsoft.com/library/windows/apps/br241941)
 -   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
 
-Utilisez le glisser transversal pour prendre en charge la sélection avec le mouvement de balayage et les interactions de glissement (déplacement) avec le mouvement de glissement.
+Use cross-slide to support selection with the swipe gesture and drag (move) interactions with the slide gesture.
 
-## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>Pratiques conseillées et déconseillées
-
-
--   Utilisez le glisser transversal pour les listes ou les collections qui défilent dans une seule direction.
--   Utilisez le glisser transversal pour la sélection d’éléments lorsque l’interaction d’appui n’est pas possible.
--   N’utilisez pas le glisser transversal pour ajouter des éléments à une file d’attente.
-
-## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>Indications d’utilisation supplémentaires
+## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>Dos and don'ts
 
 
-La sélection et le déplacement par glissement sont possibles uniquement à l’intérieur d’une zone de contenu capable de défiler en panoramique dans une direction (verticale or horizontale). Pour que chacune de ces interactions fonctionne, l’une des directions de mouvement panoramique doit être verrouillée. De plus, le mouvement doit être effectué perpendiculairement à la direction du mouvement panoramique.
+-   Use cross-slide for lists or collections that scroll in a single direction.
+-   Use cross-slide for item selection when the tap interaction is used for another purpose.
+-   Don't use cross-slide for adding items to a queue.
 
-Nous démontrons ici la sélection et le glissement d’un objet à l’aide d’un glisser transversal. L’image de gauche montre comment s’effectue la sélection d’un élément si le mouvement de balayage ne dépasse aucun seuil de distance avant le relâchement du contact et la libération de l’objet. L’image de droite montre comment un mouvement de glissement dépasse un seuil de distance et aboutit au déplacement de l’objet.
+## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>Additional usage guidance
 
-![schéma illustrant les processus de sélection et de glisser-déplacer.](images/crossslide-mechanism.png)
 
-Le schéma suivant indique les distances seuils utilisées par l’interaction de glisser transversal.
+Selection and drag are possible only within a content area that is pannable in one direction (vertical or horizontal). For either interaction to work, one panning direction must be locked and the gesture must be performed in the direction perpendicular to the panning direction.
 
-![capture d’écran illustrant les processus de sélection et de glisser-déplacer.](images/crossslide-threshold.png)
+Here we demonstrate selecting and dragging an object using a cross-slide. The image on the left shows how an item is selected if a swipe gesture doesn't cross a distance threshold before the contact is lifted and the object released. The image on the right shows a sliding gesture that crosses a distance threshold and results in the object being dragged.
 
-Pour conserver la fonctionnalité de mouvement panoramique, un petit seuil de 2,7mm (environ 10 pixels en résolution cible) doit être dépassé avant qu’une interaction de sélection ou de glissement soit activée. Ce petit seuil permet au système non seulement de différencier le glisser transversal du mouvement panoramique, mais également de distinguer un appui du glisser transversal et du mouvement panoramique.
+![diagram showing the select and drag and drop processes.](images/crossslide-mechanism.png)
 
-Cette image montre comment un utilisateur appuie sur un élément dans l’interface utilisateur, mais déplace son doigt légèrement vers le bas au contact. Sans seuil, cette interaction serait interprétée comme un glisser transversal en raison du mouvement vertical effectué par l’utilisateur. Grâce au seuil, le mouvement est correctement interprété en tant que mouvement panoramique horizontal.
+The threshold distances used by the cross-slide interaction are shown in the following diagram.
 
-![capture d’écran illustrant le seuil de levée des ambiguïtés de la sélection ou du glisser-déplacer.](images/crossslide-threshold2.png)
+![screen shot showing the select and drag and drop processes.](images/crossslide-threshold.png)
 
-Voici quelques recommandations à prendre en compte quand vous ajoutez la fonctionnalité de glisser transversal dans votre application.
+To preserve panning functionality, a small threshold of 2.7mm (approximately 10 pixels at target resolution) must be crossed before either a select or drag interaction is activated. This small threshold helps the system to differentiate cross-sliding from panning, and also helps ensure that a tap gesture is distinguished from both cross-sliding and panning.
 
-Utilisez le glisser transversal pour les listes ou les collections qui défilent dans une seule direction. Pour plus d’informations, voir [Ajout de contrôles ListView](https://msdn.microsoft.com/library/windows/apps/hh465382).
+This image shows how a user touches an element in the UI, but moves their finger down slightly at contact. With no threshold, the interaction would be interpreted as a cross-slide because of the initial vertical movement. With the threshold, the movement is interpreted correctly as horizontal panning.
 
-**Remarque** Dans les cas où la zone de contenu prend en charge le mouvement panoramique dans deuxdirections (par exemple, des navigateurs web ou des lecteurs électroniques), l’interaction chronométrée de la séquence Appuyer et maintenir doit être utilisée pour appeler le menu contextuel pour des objets du type image ou lien hypertexte.
+![screen shot showing the select or drag and drop disambiguation threshold.](images/crossslide-threshold2.png)
+
+Here are some guidelines to consider when including cross-slide functionality in your app.
+
+Use cross-slide for lists or collections that scroll in a single direction. For more information, see [Adding ListView controls](https://msdn.microsoft.com/library/windows/apps/hh465382).
+
+**Note**  In cases where the content area can be panned in two directions, such as web browsers or e-readers, the press-and-hold timed interaction should be used to invoke the context menu for objects such as images and hyperlinks.
 
  
 
 |                                                                                         |                                                                                         |
 |-----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
-| ![mouvement panoramique horizontal, liste à deux dimensions](images/groupedlistview1.png)                | ![mouvement panoramique vertical, liste à une dimension](images/listviewlistlayout.png)                |
-| Un mouvement panoramique horizontal sur une liste à deux dimensions. Glisser vertical pour sélectionner ou déplacer un élément. | Un mouvement panoramique vertical sur une liste à une dimension. Glisser horizontal pour sélectionner ou déplacer un élément. |
+| ![horizontal-panning, two-dimensional list](images/groupedlistview1.png)                | ![vertical-panning, one-dimensional list](images/listviewlistlayout.png)                |
+| A horizontally panning two-dimensional list. Drag vertically to select or move an item. | A vertically panning one-dimensional list. Drag horizontally to select or move an item. |
 
  
 
 ### <span id="selection"></span><span id="SELECTION"></span>
 
-**Sélection**
+**Selecting**
 
-La sélection consiste à marquer un ou plusieurs objets sans les lancer ni les activer. Cette action est comparable à celle qui consiste à cliquer avec la souris ou à utiliser la touche Maj + un clic sur un ou plusieurs objets.
+Selection is the marking, without launching or activating, of one or more objects. This action is analogous to a single mouse click, or Shift key and mouse click, on one or more objects.
 
-La sélection par glisser transversal s’effectue en touchant un élément, puis en le relâchant après l’avoir légèrement fait glisser. Cette méthode de sélection permet de contourner le mode de sélection dédiée et l’interaction chronométrée de la séquence Appuyer et maintenir requis par d’autres interfaces tactiles, et d’éviter le conflit avec l’interaction d’appui pour l’activation.
+Cross-slide selection is achieved by touching an element and releasing it after a short dragging interaction. This method of selection dispenses with both the dedicated selection mode and the press-and-hold timed interaction required by other touch interfaces and does not conflict with the tap interaction for activation.
 
-Outre le seuil de distance, la sélection par glisser transversal est limitée à une zone de seuil de 90°, comme indiqué dans le schéma suivant. Si l’objet est glissé en dehors de cette zone, il n’est pas sélectionné.
+In addition to the distance threshold, cross-slide selection is constrained to a 90° threshold area, as shown in the following diagram. If the object is dragged outside of this area, it is not selected.
 
-![schéma indiquant la zone de seuil de la sélection.](images/crossslide-selection.png)
+![diagram showing the selection threshold area.](images/crossslide-selection.png)
 
-L’interaction de glisser transversal est complétée par une interaction chronométrée de type appui prolongé, également appelée interaction «auto-révélatrice». Cette interaction supplémentaire active en effet une animation qui révèle l’action qui peut être effectuée sur l’objet. Pour plus d’informations sur l’interface utilisateur de résolution des ambiguïtés, voir [Recommandations en matière de retour visuel](guidelines-for-visualfeedback.md).
+The cross-slide interaction is supplemented by a press-and-hold timed interaction, also referred to as a "self-revealing" interaction. This supplemental interaction activates an animation that indicates what action can be performed on the object. For more information on disambiguation UI, see [Guidelines for visual feedback](guidelines-for-visualfeedback.md).
 
-Les captures d’écran suivantes expliquent le fonctionnement de l’animation auto-révélatrice.
+The following screen shots demonstrate how the self-revealing animation works.
 
-1.  Appuyez de manière prolongée pour démarrer l’animation pour l’interaction auto-révélatrice. L’état sélectionné de l’élément affecte ce que l’animation révèle: une coche en cas de non-sélection et aucune coche en cas de sélection.
+1.  Press and hold to initiate the animation for the self-revealing interaction. The selected state of the item affects what is revealed by the animation: a check mark if unselected and no check mark if selected.
 
-    ![capture d’écran montrant un état de non-sélection.](images/crossslide-selfreveal1.png)
+    ![screen shot showing an unselected state.](images/crossslide-selfreveal1.png)
 
-2.  Sélectionnez l’élément par un mouvement de balayage (vers le haut ou vers le bas).
+2.  Select the item using the swipe gesture (up or down).
 
-    ![capture d’écran montrant l’animation d’une action de sélection.](images/crossslide-selfreveal2.png)
+    ![screen shot showing the animation for selection.](images/crossslide-selfreveal2.png)
 
-3.  L’élément est maintenant sélectionné. Remplacez le comportement de sélection à l’aide du mouvement de glissement pour déplacer l’élément.
+3.  The item is now selected. Override the selection behavior using the slide gesture to move the item.
 
-    ![capture d’écran montrant l’animation d’une action de glisser-déplacer.](images/crossslide-selfreveal3.png)
+    ![screen shot showing the animation for drag and drop.](images/crossslide-selfreveal3.png)
 
-Appuyez une fois pour effectuer une sélection dans une application qui ne comporte pas d’autre action principale que celle-ci. L’animation auto-révélatrice du glisser transversal s’affiche pour résoudre les ambiguïtés de cette fonctionnalité par rapport à l’interaction d’appui standard utilisée pour l’activation et la navigation.
+Use a single tap for selection in applications where it is the only primary action. The cross-slide self-revealing animation is displayed to disambiguate this functionality from the standard tap interaction for activation and navigation.
 
-**Panier de sélection**
+**Selection basket**
 
-Le panier de sélection est une représentation dynamique et visuellement distincte des éléments qui ont été sélectionnés dans la liste ou la collection principale de l’application. Cette fonctionnalité est utile pour suivre les éléments sélectionnés et doit être utilisée par les applications dans les cas suivants :
+The selection basket is a visually distinct and dynamic representation of items that have been selected from the primary list or collection in the application. This feature is useful for tracking selected items and should be used by applications where:
 
--   Les éléments peuvent être sélectionnés dans plusieurs emplacements.
--   De nombreux éléments peuvent être sélectionnés.
--   Une action ou une commande dépend de la liste de sélection.
+-   Items can be selected from multiple locations.
+-   Many items can be selected.
+-   An action or command relies upon the selection list.
 
-Le contenu du panier de sélection est conservé quelles que soient les actions et commandes effectuées. Par exemple, si vous sélectionnez une série de photos dans une galerie de photos, appliquez une correction de couleur à chacune d’elles, puis partagez les photos avec la méthode de votre choix, les éléments restent sélectionnés.
+The content of the selection basket persists across actions and commands. For example, if you select a series of photographs from a gallery, apply a color correction to each photograph, and share the photographs in some fashion, the items remain selected.
 
-Si le panier de sélection n’est pas utilisé dans une application, la sélection active doit être effacée après une action ou une commande. Par exemple, si vous sélectionnez un morceau de musique dans une liste de lecture pour l’évaluer, la sélection doit être effacée.
+If no selection basket is used in an application, the current selection should be cleared after an action or command. For example, if you select a song from a play list and rate it, the selection should be cleared.
 
-La sélection active doit également être effacée si le panier de sélection n’est pas utilisé et qu’un autre élément de la liste ou de la collection est activé. Par exemple, si vous sélectionnez un message dans votre boîte de réception, le volet de visualisation est mis à jour. Si, ensuite, vous sélectionnez un deuxième message dans votre boîte de réception, la sélection du précédent message est annulée et le volet de visualisation est mis à jour.
+The current selection should also be cleared when no selection basket is used and another item in the list or collection is activated. For example, if you select an inbox message, the preview pane is updated. Then, if you select a second inbox message, the selection of the previous message is canceled and the preview pane is updated.
 
-**Files d’attente**
+**Queues**
 
-Une file d’attente n’est pas comparable à la liste du panier de sélection et ne doit pas être considérée comme telle. Les principales différences sont les suivantes :
+A queue is not equivalent to the selection basket list and should not be treated as such. The primary distinctions include:
 
--   La liste des éléments figurant dans le panier de sélection n’est qu’une représentation visuelle. Les éléments figurant dans une file d’attente sont regroupés pour une action spécifique.
--   Les éléments ne peuvent être représentés qu’une seule fois dans le panier de sélection, alors qu’ils peuvent être représentés à plusieurs reprises dans une file d’attente.
--   L’ordre des éléments figurant dans le panier de sélection représente l’ordre de la sélection. L’ordre des éléments figurant dans une file d’attente est directement lié à la fonctionnalité.
+-   The list of items in the selection basket is only a visual representation; the items in a queue are assembled with a specific action in mind.
+-   Items can be represented only once in the selection basket but multiple times in a queue.
+-   The order of items in the selection basket represents the order of selection. The order of items in a queue is directly related to functionality.
 
-C’est la raison pour laquelle l’interaction de sélection par glisser transversal ne doit pas être utilisée pour ajouter des éléments à une file d’attente. Pour effectuer cette opération, il est préférable d’utiliser une action de déplacement par glissement.
+For these reasons, the cross-slide selection interaction should not be used to add items to a queue. Instead, items should be added to a queue through a drag action.
 
 ### <span id="draganddrop"></span><span id="DRAGANDDROP"></span>
 
-**Glissement**
+**Drag**
 
-Utilisez l’action de glissement pour déplacer un ou plusieurs objets d’un emplacement à l’autre.
+Use drag to move one or more objects from one location to another.
 
-Si plusieurs objets doivent être déplacés, permettez aux utilisateurs de sélectionner plusieurs éléments, puis de les faire glisser en même temps.
+If more than one object needs to be moved, let users select multiple items and then drag all at one time.
 
-## <span id="related_topics"></span>Articles connexes
+## <span id="related_topics"></span>Related articles
 
 
-**Exemples**
-* [Exemple d’entrée de base](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Exemple d’entrée à faible latence](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [Exemple de mode d’interaction utilisateur](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Exemple de visuels de focus](http://go.microsoft.com/fwlink/p/?LinkID=619895) 
-           **Exemples d’archive**
-* [Entrée: exemple d’événements d’entrée utilisateur XAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Entrée : exemple de fonctionnalités d’appareils](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Entrée : exemple de test de positionnement tactile](http://go.microsoft.com/fwlink/p/?linkid=231590)
-* [Exemple de zoom, de panoramique et de défilement XAML](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Entrée : exemple d’entrée manuscrite simplifiée](http://go.microsoft.com/fwlink/p/?linkid=246570)
-* [Entrée : exemple de mouvements Windows 8](http://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [Entrée : exemple de manipulations et de mouvements (C++)](http://go.microsoft.com/fwlink/p/?linkid=231605)
-* [Exemple d’entrée tactile DirectX](http://go.microsoft.com/fwlink/p/?LinkID=231627)
+**Samples**
+* [Basic input sample](http://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [Low latency input sample](http://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [User interaction mode sample](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [Focus visuals sample](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+**Archive samples**
+* [Input: XAML user input events sample](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [Input: Device capabilities sample](http://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Input: Touch hit testing sample](http://go.microsoft.com/fwlink/p/?linkid=231590)
+* [XAML scrolling, panning, and zooming sample](http://go.microsoft.com/fwlink/p/?linkid=251717)
+* [Input: Simplified ink sample](http://go.microsoft.com/fwlink/p/?linkid=246570)
+* [Input: Windows 8 gestures sample](http://go.microsoft.com/fwlink/p/?LinkId=264995)
+* [Input: Manipulations and gestures (C++) sample](http://go.microsoft.com/fwlink/p/?linkid=231605)
+* [DirectX touch input sample](http://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 
  
@@ -155,6 +155,6 @@ Si plusieurs objets doivent être déplacés, permettez aux utilisateurs de sél
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

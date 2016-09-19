@@ -1,46 +1,46 @@
 ---
 author: Jwmsft
-Description: "Modèle avec zones de contenu et de commande destiné aux apps à affichage unique ou aux expériences modales (ex.&#58; visionneuses de photos/documents ou autres apps utilisant un affichage à défilement libre)."
-title: "Modèle de disposition avec Canvas actif"
+Description: A pattern with a content area and a command area for single-view apps or modal experiences, such as photo viewers/editors, document viewers, maps, painting, or other apps that make use of a free-scrolling view.
+title: Active canvas layout pattern
 ms.assetid: 4D768472-64D6-406C-9E87-F750F6B981A0
 label: TBD
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: ef71196ba0aefd4428daae70c54bcc9cbeaa56a2
-ms.openlocfilehash: ddb977999f4bdb24cef36c80659c78aba1ee5e98
+ms.openlocfilehash: 2c4bb601e1657bad8d1acad49f0591658b5b1d77
 
 ---
-# Modèle de disposition avec Canvas actif
+# Active canvas layout pattern
 
-Un Canvas actif est un modèle avec une zone de contenu et une zone de commande. Il est destiné aux applications à affichage unique ou aux expériences modales, telles que les éditeurs/visionneuses de photos, les visionneuses de documents, les applications cartographiques, les applications de dessin ou les autres applications qui utilisent un affichage à défilement libre. Pour entreprendre des actions, un Canvas actif peut être associé à une barre de commandes ou simplement à des boutons, selon le nombre et le type d’action dont vous avez besoin.
+An active canvas is a pattern with a content area and a command area. It's for single-view apps or modal experiences, such as photo viewers/editors, document viewers, maps, painting, or other apps that make use of a free-scrolling view. For taking actions, an active canvas can be paired with a command bar or just buttons, depending on the number and types of actions you need.
 
-## Exemples
+## Examples
 
-Cette conception d’application de retouche photo présente un modèle de Canvas actif, avec un exemple mobile à gauche et un exemple de bureau à droite. La surface de retouche d’image est un Canvas et la barre de commandes située en bas de l’écran contient toutes les actions contextuelles pour l’application.
+This design of a photo editing app features an active canvas pattern, with a mobile example on the left, and a desktop example on the right. The image editing surface is a canvas, and the command bar at the bottom contains all of the contextual actions for the app.
 
-![Exemple d’éditeur de photos utilisant un modèle de Canvas actif](images/uap-photo-pc-phone-700.png)
+![Example of a photo editor using active canvas pattern](images/uap-photo-pc-phone-700.png)
 
-Cette conception d’une application de carte métro utilise un Canvas actif doté d’une bande d’interface utilisateur simple dans la partie supérieure, comprenant seulement deux actions et une zone de recherche. Les actions contextuelles sont affichées dans le menu contextuel, comme illustré sur l’image de droite.
+This design of a subway map app makes use of an active canvas with a simple UI strip at the top that has only two actions and a search box. Contextual actions are shown in the context menu, as seen on the right image.
 
-![Exemple d’application cartographique utilisant un modèle de Canvas actif](images/uap-subway-pc-phone-700.png)
-
-
-## Implémentation de ce modèle
-
-Un modèle de Canvas actif comporte une zone de contenu et une zone de commande.
-
-**Zone de contenu.**  La zone de contenu est généralement un Canvas à défilement libre. Plusieurs zones de contenu peuvent exister dans une application.
-
-**Zone de commande.**  Si vous placez un grand nombre de commandes, une barre de commandes, qui répond en fonction de la taille d’écran peut s’avérer utile. Si vous ne placez pas un nombre important de commandes et que vous ne cherchez pas nécessairement à obtenir une interface utilisateur réactive, les boutons compacts fonctionnent parfaitement bien.
+![Example of a maps app using active canvas pattern](images/uap-subway-pc-phone-700.png)
 
 
+## Implementing this pattern
 
-## Articles connexes
+The active canvas pattern consists of a content area and a command area.
 
--   [**Barre de l’application et barre de commandes**](../controls-and-patterns/app-bars.md)
+**Content area.**  The content area is usually a free-scrolling canvas. Multiple content areas can exist within an app.
+
+**Command area.**  If you're placing a lot of commands, then a command bar, which responds based on screen size, could be the way to go. If you're not placing that many commands and aren't as concerned with a responsive UI, space-saving buttons work well.
 
 
 
-<!--HONumber=Jul16_HO1-->
+## Related articles
+
+-   [**App bar and command bar**](../controls-and-patterns/app-bars.md)
+
+
+
+<!--HONumber=Aug16_HO3-->
 
 

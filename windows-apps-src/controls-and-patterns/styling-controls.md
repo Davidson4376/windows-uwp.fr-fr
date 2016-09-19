@@ -1,37 +1,37 @@
 ---
 author: Jwmsft
-Description: "Les styles permettent de définir les propriétés des contrôles et de réutiliser ces paramètres pour uniformiser l’apparence de plusieurs contrôles."
+Description: Styles let you set control properties and reuse those settings for a consistent appearance across multiple controls.
 MS-HAID: dev\_ctrl\_layout\_txt.styling\_controls
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: "Application de styles aux contrôles"
+title: Styling controls
 ms.assetid: AB469A46-FAF5-42D0-9340-948D0EDF4150
 label: Styling controls
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 02cd8f7777f169ad9fc4e5bfe854a8b6e0fe5060
+ms.openlocfilehash: 2386ccbc89cad5514c0b1a4879af6d0df328263e
 
 ---
 
-# Application de styles aux contrôles
+# Styling controls
 
 
 
-Vous pouvez personnaliser l’apparence de vos applications de nombreuses manières à l’aide de l’infrastructure XAML. Les styles permettent de définir les propriétés des contrôles et de réutiliser ces paramètres pour uniformiser l’apparence de plusieurs contrôles.
+You can customize the appearance of your apps in many ways by using the XAML framework. Styles let you set control properties and reuse those settings for a consistent appearance across multiple controls.
 
-## Bases des styles
+## Style basics
 
 
-Les styles permettent d’extraire des paramètres de propriété visuels afin de disposer de ressources réutilisables. Voici un exemple représentant 3boutons avec un style définissant les propriétés [**BorderBrush**](https://msdn.microsoft.com/library/windows/apps/br209397), [**BorderThickness**](https://msdn.microsoft.com/library/windows/apps/br209399) et [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414). Lorsque vous appliquez un style, vous pouvez faire en sorte que les contrôles aient la même apparence sans définir ces propriétés pour chaque contrôle individuellement.
+Use styles to extract visual property settings into reusable resources. Here's an example that shows 3 buttons with a style that sets the [**BorderBrush**](https://msdn.microsoft.com/library/windows/apps/br209397), [**BorderThickness**](https://msdn.microsoft.com/library/windows/apps/br209399) and [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414) properties. By applying a style, you can make the controls appear the same without having to set these properties on each control separately.
 
-![Boutons stylés](images/styles-rainbow-buttons.png)
+![styled buttons](images/styles-rainbow-buttons.png)
 
-Vous pouvez définir un style inline en langage XAML pour un contrôle ou sous la forme de ressource réutilisable. Vous définissez les ressources dans le fichier XAML d’une page individuelle, dans le fichier App.xaml ou dans le fichier XAML d’un dictionnaire de ressources distinct. Le fichier XAML d’un dictionnaire de ressources peut être partagé entre plusieurs applications et plusieurs dictionnaires de ressources peuvent être fusionnés dans une seule application. L’endroit où la ressource est définie détermine l’étendue (champ d’application) de son utilisation. Les ressources au niveau page sont uniquement disponibles dans la page où elles sont définies. Si des ressources sont définies avec la même clé à la fois dans App.xaml et dans une page, la ressource de la page remplace la ressource de App.xaml. Si une ressource est définie dans un fichier de dictionnaire de ressources distinct, son étendue est déterminée par l’endroit où le dictionnaire de ressources est référencé.
+You can define a style inline in the XAML for a control, or as a reusable resource. Define resources in an individual page's XAML file, in the App.xaml file, or in a separate resource dictionary XAML file. A resource dictionary XAML file can be shared across apps, and more than one resource dictionary can be merged in a single app. Where the resource is defined determines the scope in which it can be used. Page-level resources are available only in the page where they are defined. If resources with the same key are defined in both App.xaml and in a page, the resource in the page overrides the resource in App.xaml. If a resource is defined in a separate resource dictionary file, it's scope is determined by where the resource dictionary is referenced.
 
-Dans la définition de [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849), vous avez besoin d’un attribut [**TargetType**](https://msdn.microsoft.com/library/windows/apps/br208857) et d’une collection d’un ou de plusieurs éléments [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817). L’attribut **TargetType** est une chaîne spécifiant le type [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) auquel appliquer le style. La valeur **TargetType** doit spécifier un type dérivé de **FrameworkElement** qui est défini par Windows Runtime ou un type personnalisé disponible dans un assembly référencé. Si vous essayez d’appliquer un style à un contrôle et que le type de ce contrôle ne correspond pas à l’attribut **TargetType** du style que vous essayez d’appliquer, une exception se produit.
+In the [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) definition, you need a [**TargetType**](https://msdn.microsoft.com/library/windows/apps/br208857) attribute and a collection of one or more [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) elements. The **TargetType** attribute is a string that specifies a [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) type to apply the style to. The **TargetType** value must specify a **FrameworkElement**-derived type that's defined by the Windows Runtime or a custom type that's available in a referenced assembly. If you try to apply a style to a control and the control's type doesn't match the **TargetType** attribute of the style you're trying to apply, an exception occurs.
 
-Chaque élément [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) nécessite un élément [**Property**](https://msdn.microsoft.com/library/windows/apps/br208836) et [**Value**](https://msdn.microsoft.com/library/windows/apps/br208838). Ces paramètres de propriété indiquent quelle est la propriété de contrôle à laquelle ce paramètre s’applique, ainsi que la valeur à définir pour cette propriété. Vous pouvez définir la valeur **Setter.Value** avec une syntaxe d’attribut ou une syntaxe d’élément de propriété. Le code XAML ci-dessous montre le style appliqué aux boutons illustrés précédemment. Dans ce code XAML, les deux premiers éléments **Setter** utilisent une syntaxe d’attribut, tandis que le dernier élément **Setter**, relatif à la propriété [**BorderBrush**](https://msdn.microsoft.com/library/windows/apps/br209397), utilise une syntaxe d’élément de propriété. L’[attribut x:Key](../xaml-platform/x-key-attribute.md) n’étant pas utilisé, le style est appliqué implicitement aux boutons. La section suivante explique la notion d’application implicite et explicite de styles.
+Each [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) element requires a [**Property**](https://msdn.microsoft.com/library/windows/apps/br208836) and a [**Value**](https://msdn.microsoft.com/library/windows/apps/br208838). These property settings indicate what control property the setting applies to, and the value to set for that property. You can set the **Setter.Value** with either attribute or property element syntax. The XAML here shows the style applied to the buttons shown previously. In this XAML, the first two **Setter** elements use attribute syntax, but the last **Setter**, for the [**BorderBrush**](https://msdn.microsoft.com/library/windows/apps/br209397) property, uses property element syntax. The example doesn't use the [x:Key attribute](../xaml-platform/x-key-attribute.md) attribute, so the style is implicitly applied to the buttons. Applying styles implicitly or explicitly is explained in the next section.
 
 ```XAML
 <Page.Resources>
@@ -58,20 +58,20 @@ Chaque élément [**Setter**](https://msdn.microsoft.com/library/windows/apps/br
 </StackPanel>
 ```
 
-## Appliquer un style de manière implicite ou explicite
+## Apply an implicit or explicit style
 
-Si vous définissez un style en tant que ressource, vous pouvez l’appliquer à vos contrôles de deux façons :
+If you define a style as a resource, there are two ways to apply it to your controls:
 
--   Implicitement, en définissant uniquement un élément [**TargetType**](https://msdn.microsoft.com/library/windows/apps/br208857) pour [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849).
--   Explicitement, en spécifiant un élément [**TargetType**](https://msdn.microsoft.com/library/windows/apps/br208857) et un attribut [x:Key attribute](../xaml-platform/x-key-attribute.md) pour [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849), puis en définissant la propriété [**Style**](https://msdn.microsoft.com/library/windows/apps/br208743) du contrôle cible avec une référence [Extension de balisage {StaticResource}](https://msdn.microsoft.com/library/windows/apps/mt185588) qui utilise la clé explicite.
+-   Implicitly, by specifying only a [**TargetType**](https://msdn.microsoft.com/library/windows/apps/br208857) for the [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849).
+-   Explicitly, by specifying a [**TargetType**](https://msdn.microsoft.com/library/windows/apps/br208857) and an [x:Key attribute](../xaml-platform/x-key-attribute.md) attribute for the [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) and then by setting the target control's [**Style**](https://msdn.microsoft.com/library/windows/apps/br208743) property with a [{StaticResource} markup extension](https://msdn.microsoft.com/library/windows/apps/mt185588) reference that uses the explicit key.
 
-Si un style contient l’[attribut x:Key](../xaml-platform/x-key-attribute.md), vous ne pouvez l’appliquer à un contrôle qu’en définissant la propriété [**Style**](https://msdn.microsoft.com/library/windows/apps/br208743) du contrôle sur le style associé à la clé. En revanche, un style sans attribut x:Key est automatiquement appliqué à chaque contrôle de son type cible qui, sinon, n’a pas de paramètre de style explicite.
+If a style contains the [x:Key attribute](../xaml-platform/x-key-attribute.md), you can only apply it to a control by setting the [**Style**](https://msdn.microsoft.com/library/windows/apps/br208743) property of the control to the keyed style. In contrast, a style without an x:Key attribute is automatically applied to every control of its target type, that doesn't otherwise have an explicit style setting.
 
-Voici deux boutons illustrant les styles implicite et explicite.
+Here are two buttons that demonstrate implicit and explicit styles.
 
-![Boutons aux styles implicite et explicite](images/styles-buttons-implicit-explicit.png)
+![implicitly and explicitly styled buttons.](images/styles-buttons-implicit-explicit.png)
 
-Dans cet exemple, l’[attribut x:Key](../xaml-platform/x-key-attribute.md) est associé au premier style et le type cible de ce dernier est [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265). La propriété [**Style**](https://msdn.microsoft.com/library/windows/apps/br208743) du premier bouton est définie sur cette clé: le style est donc appliqué explicitement. Le type cible du deuxième style est **Button** et aucun attribut x:Key n’est associé à ce dernier: le style est donc appliqué implicitement au deuxième bouton.
+In this example, the first style has an [x:Key attribute](../xaml-platform/x-key-attribute.md) and its target type is [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265). The first button's [**Style**](https://msdn.microsoft.com/library/windows/apps/br208743) property is set to this key, so this style is applied explicitly. The second style is applied implicitly to the second button because its target type is **Button** and the style doesn't have an x:Key attribute.
 
 ```XAML
 <Page.Resources>
@@ -103,13 +103,13 @@ Dans cet exemple, l’[attribut x:Key](../xaml-platform/x-key-attribute.md) est 
 </Grid>
 ```
 
-## Utiliser des styles basés sur d’autres styles
+## Use based-on styles
 
-Pour faciliter la gestion des styles et optimiser leur réutilisation, vous pouvez créer des styles héritant d’autres styles. Pour créer des styles hérités, vous devez utiliser la propriété [**BasedOn**](https://msdn.microsoft.com/library/windows/apps/br208852). Les styles héritant d’autres styles doivent cibler le même type de contrôle ou un contrôle dérivé du type ciblé par le style de référence. Par exemple, si le contrôle cible du style de référence est [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/br209365), les styles basés sur ce style peuvent cibler également **ContentControl** ou des types dérivés de **ContentControl**, tels que [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) et [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527). Si vous ne définissez aucune valeur dans le style qui hérite, celle du style de référence est utilisée. Pour modifier une valeur issue du style de référence, le style qui hérite écrase cette valeur. L’exemple suivant présente un type **Button** et un type [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) avec des styles basés sur le même style de référence.
+To make styles easier to maintain and to optimize style reuse, you can create styles that inherit from other styles. You use the [**BasedOn**](https://msdn.microsoft.com/library/windows/apps/br208852) property to create inherited styles. Styles that inherit from other styles must target the same type of control or a control that derives from the type targeted by the base style. For example, if a base style targets [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/br209365), styles that are based on this style can target **ContentControl** or types that derive from **ContentControl** such as [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) and [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527). If a value is not set in the based-on style, it's inherited from the base style. To change a value from the base style, the based-on style overrides that value. The next example shows a **Button** and a [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) with styles that inherit from the same base style.
 
-![Boutons stylés à l’aide de styles basés sur d’autres styles](images/styles-buttons-based-on.png)
+![styled buttons usign based-on styles.](images/styles-buttons-based-on.png)
 
-Le type cible du style de référence est [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/br209365), et les propriétés [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) et [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) sont définies pour ce style. Les styles basés sur ce style ciblent les types [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) et [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) dérivés de **ContentControl**. Des couleurs différentes sont définies pour les propriétés [**BorderBrush**](https://msdn.microsoft.com/library/windows/apps/br209397) et [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414) de ces styles. (En règle générale, on ne met pas de bordure autour d’un contrôle **CheckBox**. Nous le faisons ici pour illustrer les effets du style.)
+The base style targets [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/br209365), and sets the [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718), and [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) properties. The styles based on this style target [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) and [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265), which derive from **ContentControl**. The based-on styles set different colors for the [**BorderBrush**](https://msdn.microsoft.com/library/windows/apps/br209397) and [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414) properties. (You don't typically put a border around a **CheckBox**. We do it here to show the effects of the style.)
 
 ```XAML
 <Page.Resources>
@@ -139,21 +139,21 @@ Le type cible du style de référence est [**ContentControl**](https://msdn.micr
 </StackPanel>
 ```
 
-## Utilisation de styles en toute simplicité à l’aide d’outils
+## Use tools to work with styles easily
 
-Pour appliquer rapidement des styles à vos contrôles, cliquez avec le bouton droit sur un contrôle dans l’aire de conception XAML de Microsoft Visual Studio et sélectionnez **Modifier le style** ou **Modifier le modèle** (selon le contrôle concerné). Vous pouvez ensuite appliquer un style existant en sélectionnant **Appliquer la ressource** ou en définir un nouveau en sélectionnant **Créer vide**. Si vous créez un style vide, vous avez l’option de le définir dans la page, dans le fichier App.xaml ou dans un dictionnaire de ressources distinct.
+A fast way to apply styles to your controls is to right-click on a control on the Microsoft Visual Studio XAML design surface and select **Edit Style** or **Edit Template** (depending on the control you are right-clicking on). You can then apply an existing style by selecting **Apply Resource** or define a new style by selecting **Create Empty**. If you create an empty style, you are given the option to define it in the page, in the App.xaml file, or in a separate resource dictionary.
 
-## Modifier les styles système par défaut
+## Modify the default system styles
 
-Lorsque vous le pouvez, vous devez utiliser les styles provenant des ressources XAML Windows Runtime par défaut. Quand vous devez définir vos propres styles, essayez de les baser sur les styles par défaut lorsque cela est possible (en utilisant des styles basés sur d’autres styles, comme expliqué précédemment, ou en commençant par modifier une copie du style par défaut d’origine).
+You should use the styles that come from the Windows Runtime default XAML resources when you can. When you have to define your own styles, try to base your styles on the default ones when possible (using based-on styles as explained earlier, or start by editing a copy of the original default style).
 
-## Propriété Template
+## The Template property
 
-Il est possible d’utiliser un setter de style pour la propriété [**Template**](https://msdn.microsoft.com/library/windows/apps/br209465) d’un élément [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390). En réalité, cela constitue la majorité d’un style XAML classique et des ressources XAML d’une application . Ce sujet est abordé de manière plus détaillée dans la rubrique [Modèles de contrôles](control-templates.md).
-
-
+A style setter can be used for the [**Template**](https://msdn.microsoft.com/library/windows/apps/br209465) property of a [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390), and in fact this makes up the majority of a typical XAML style and an app's XAML resources. This is discussed in more detail in the topic [Control templates](control-templates.md).
 
 
-<!--HONumber=Jun16_HO4-->
+
+
+<!--HONumber=Aug16_HO3-->
 
 

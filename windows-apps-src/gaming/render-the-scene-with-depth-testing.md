@@ -1,26 +1,26 @@
 ---
 author: mtoepke
-title: "Générer le rendu de la scène avec un test de profondeur"
-description: "Créez un effet d’ombre en ajoutant un test de profondeur à votre nuanceur de vertex (ou géométrie) et votre nuanceur de pixels."
+title: Render the scene with depth testing
+description: Create a shadow effect by adding depth testing to your vertex (or geometry) shader and your pixel shader.
 ms.assetid: bf496dfb-d7f5-af6b-d588-501164608560
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 2bac8e8337a10a8411b02eeed53d772dbb5abad6
+ms.openlocfilehash: 6351cc9f6efe0d4bffb54961624a35b4a9f4136a
 
 ---
 
-# Générer le rendu de la scène avec un test de profondeur
+# Render the scene with depth testing
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Créez un effet d’ombre en ajoutant un test de profondeur à votre nuanceur de vertex (ou géométrie) et votre nuanceur de pixels. Partie 3 de la [Procédure pas à pas : implémenter des volumes d’ombre à l’aide de tampons de profondeur dans Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md).
+Create a shadow effect by adding depth testing to your vertex (or geometry) shader and your pixel shader. Part 3 of [Walkthrough: Implement shadow volumes using depth buffers in Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md).
 
-## Inclure une transformation pour un tronc de cône lumineux
+## Include transformation for light frustum
 
 
-Votre nuanceur de vertex a besoin de calculer la position transformée de l’espace lumineux pour chaque vertex. Indiquez le modèle d’espace lumineux, l’affichage et les matrices de projection à l’aide d’un tampon constant. Vous pouvez également utiliser ce tampon constant pour indiquer la position et la normale de la lumière pour les calculs d’éclairage. La position transformée dans l’espace lumineux est utilisée lors du test de profondeur.
+Your vertex shader needs to compute the transformed light space position for each vertex. Provide the light space model, view, and projection matrices using a constant buffer. You can also use this constant buffer to provide the light position and normal for lighting calculations. The transformed position in light space will be used during the depth test.
 
 ```cpp
 PixelShaderInput main(VertexShaderInput input)
@@ -59,12 +59,12 @@ PixelShaderInput main(VertexShaderInput input)
 }
 ```
 
-Ensuite, le nuanceur de pixels utilise la position de l’espace lumineux interpolée indiquée par le nuanceur de vertex pour tester si le pixel est dans l’ombre.
+Next, the pixel shader will use the interpolated light space position provided by the vertex shader to test whether the pixel is in shadow.
 
-## Tester si la position est dans le tronc de cône lumineux
+## Test whether the position is in the light frustum
 
 
-Tout d’abord, vérifiez que le pixel se trouve dans le tronc de cône de l’affichage de la lumière en normalisant les coordonnées X et Y. Si les deux se trouvent dans la plage \[0, 1\], alors il est possible que le pixel soit dans l’ombre. Sinon, vous pouvez ignorer le test de profondeur. Un nuanceur peut le tester rapidement en appelant [Saturate](https://msdn.microsoft.com/library/windows/desktop/hh447231) et en comparant le résultat à la valeur d’origine.
+First, check that the pixel is in the view frustum of the light by normalizing the X and Y coordinates. If they are both within the range \[0, 1\] then it's possible for the pixel to be in shadow. Otherwise you can skip the depth test. A shader can test for this quickly by calling [Saturate](https://msdn.microsoft.com/library/windows/desktop/hh447231) and comparing the result against the original value.
 
 ```cpp
 // Compute texture coordinates for the current point's location on the shadow map.
@@ -83,10 +83,10 @@ if ((saturate(shadowTexCoords.x) == shadowTexCoords.x) &&
 {
 ```
 
-## Test de profondeur par rapport au mappage d’ombre
+## Depth test against the shadow map
 
 
-Utilisez une fonction de comparaison d’exemples (soit [SampleCmp](https://msdn.microsoft.com/library/windows/desktop/bb509696), soit [SampleCmpLevelZero](https://msdn.microsoft.com/library/windows/desktop/bb509697)) pour tester la profondeur du pixel dans l’espace lumineux par rapport au mappage de profondeur. Calculez la valeur de la profondeur de l’espace lumineux normalisé, à savoir `z / w`, puis passez la valeur à la fonction de comparaison. Puisque nous utilisons un test de comparaison LessOrEqual pour l’échantillon, la fonction intrinsèque renvoie zéro quand le test de comparaison est satisfaisant; cela indique que le pixel est dans l’ombre.
+Use a sample comparison function (either [SampleCmp](https://msdn.microsoft.com/library/windows/desktop/bb509696) or [SampleCmpLevelZero](https://msdn.microsoft.com/library/windows/desktop/bb509697)) to test the pixel's depth in light space against the depth map. Compute the normalized light space depth value, which is `z / w`, and pass the value to the comparison function. Since we use a LessOrEqual comparison test for the sampler, the intrinsic function returns zero when the comparison test passes; this indicates that the pixel is in shadow.
 
 ```cpp
 // Use an offset value to mitigate shadow artifacts due to imprecise 
@@ -115,10 +115,10 @@ lighting = float(shadowMap.SampleCmpLevelZero(
     );
 ```
 
-## Calculer l’éclairage avec ou sans l’ombre
+## Compute lighting in or out of shadow
 
 
-Si le pixel n’est pas dans l’ombre, le nuanceur de pixels doit calculer l’éclairage direct et l’ajouter à la valeur du pixel.
+If the pixel is not in shadow, the pixel shader should compute direct lighting and add it to the pixel value.
 
 ```cpp
 return float4(input.color * (ambient + DplusS(N, L, NdotL, input.view)), 1.f);
@@ -147,13 +147,13 @@ float3 DplusS(float3 N, float3 L, float NdotL, float3 view)
 }
 ```
 
-Sinon, le nuanceur de pixels doit calculer la valeur du pixel à l’aide de l’éclairage ambiant.
+Otherwise, the pixel shader should compute the pixel value using ambient lighting.
 
 ```cpp
 return float4(input.color * ambient, 1.f);
 ```
 
-Dans la partie suivante de cette procédure pas à pas, découvrez comment [prendre en charge les mappages d’ombre sur une gamme de matériel](target-a-range-of-hardware.md).
+In the next part of this walkthrough, learn how to [Support shadow maps on a range of hardware](target-a-range-of-hardware.md).
 
  
 
@@ -165,6 +165,6 @@ Dans la partie suivante de cette procédure pas à pas, découvrez comment [pren
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,76 +1,81 @@
 ---
 author: jnHs
-Description: "Vous pouvez publier des applications métier directement à l’attention des entreprises pour une acquisition en volume par le biais du Windows Store pour Entreprises, sans mettre vos applications à disposition sur le Store de façon étendue."
-title: "Distribuer des applications métier aux entreprises"
+Description: You can publish line-of-business (LOB) apps directly to enterprises for volume acquisition via the Windows Store for Business, without making the apps broadly available in the Store.
+title: Distribute LOB apps to enterprises
 ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
 translationtype: Human Translation
-ms.sourcegitcommit: 9ad7589344d2af986e52ae43acc3e48de6374ae6
-ms.openlocfilehash: d7551e0456ce0e59dbbfa92690ddd5ba2ebaf8b4
+ms.sourcegitcommit: 44485b32a7c5580e1a7a0ca9ca7c642e0b9b29d2
+ms.openlocfilehash: 76fc4e5cfa70d06d6f378409ecd9f331f64c0803
 
 ---
 
-# Distribuer des applications métier aux entreprises
+# Distribute LOB apps to enterprises
 
 
-Vous pouvez publier des applications métier directement à l’attention des entreprises pour une acquisition en volume par le biais du Windows Store pour Entreprises, sans mettre vos applications à disposition sur le Windows Store de façon étendue.
+You can publish line-of-business (LOB) apps directly to enterprises for volume acquisition via the Windows Store for Business, without making the apps broadly available in the Store.
 
-> **Important** Actuellement, seules les applications gratuites peuvent être distribuées exclusivement aux entreprises par le biais du Windows Store pour Entreprises. Si vous soumettez une application payante en tant qu’application métier, elle ne sera pas disponible pour l’entreprise à ce stade. 
+> **Important**  At this time, only free apps can be distributed exclusively to enterprises via the Windows Store for Business. If you submit a paid app as LOB, it will not be available to the enterprise at this time. 
 
-## Configuration de l’association d’entreprise
-
-
-Lorsque vous envisagez de publier des applications métier exclusivement à l’attention d’une entreprise, la première étape consiste à établir l’association entre votre compte et le magasin privé de l’entreprise.
-
-> **Important** Ce processus d’association doit être initié par l’entreprise et doit être envoyé à l’adresse de messagerie figurant dans les **Coordonnées** de votre compte. Pour plus d’informations, voir [Utilisation des applications métier](http://go.microsoft.com/fwlink/p/?LinkId=698846).
-
-Lorsqu'une entreprise vous invite à publier des applications destinées à son utilisation exclusive, vous recevez un e-mail contenant un lien pour confirmer l'association. Vous pouvez également confirmer ces associations dans la section **Associations d'entreprise**, sous **Paramètres de compte**.
-
-Pour confirmer l'association, cliquez sur **Accepter**. Votre compte pourra désormais publier des applications destinées à une utilisation exclusive par l'entreprise.
-
-## Soumission d'une application métier
+## Setting up the enterprise association
 
 
-Lorsque vous êtes prêt à publier une application destinée à une utilisation exclusive par une entreprise, vous suivez un processus similaire au processus de soumission d'application. L'application est soumise au même processus de certification et doit être conforme à l'ensemble des [stratégies du Windows Store](https://msdn.microsoft.com/library/windows/apps/dn764944). Seuls deux aspects du processus sont différents.
+The first step in publishing LOB apps exclusively to an enterprise is to establish the association between your account and the enterprise’s private store.
 
-### Distribution et visibilité
+> **Important**  This association process must be initiated by the enterprise, and must be sent to the email address in your account’s **Contact info**. For more info, see [Working with line-of-business apps](http://go.microsoft.com/fwlink/p/?LinkId=698846).
 
-Une fois que vous avez configuré une association d’entreprise, dès lors que vous soumettez une application, une liste déroulante s’affiche dans la section **Distribution et visibilité** de la page **Tarification et disponibilité** relative à la soumission. La sélection par défaut est **Vente au détail**. Pour mettre l’application à la disposition exclusive d’une entreprise, vous devez choisir **Distribution d’applications métier**.
+When an enterprise chooses to invite you to publish apps for their exclusive use, you’ll get an email that includes a link to confirm the association. You can also confirm these associations by going to the **Enterprise associations** section of your **Account settings**.
 
-Une fois l’option **Distribution d’applications métier** sélectionnée, les options **Distribution et visibilité** habituelles sont remplacées par une liste des entreprises pour lesquelles vous pouvez publier des applications exclusives.
+To confirm the association, click **Accept**. Your account will then be able to publish apps for that enterprise’s exclusive use.
 
-Sélectionnez les entreprises qui doivent pouvoir accéder à l'application. Elle ne sera accessible à personne d’autre.
+## Submitting an LOB app
 
-> **Remarque** Vous devez sélectionner au moins une entreprise pour publier une application en tant qu’application métier.
 
-### Gestion des licences organisationnelles
+Once you’re ready to publish an app for an enterprise’s exclusive use, the process is similar to the app submission process. The app goes through the same certification process, and must comply with all [Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944). There are just a few parts of the process that are different.
 
-Par défaut, la case **Proposer mon application aux organisations via le service de gestion de licences en volume (en ligne) du Store** est cochée lorsque vous soumettez une application. Lorsque vous soumettez des applications métier, cette case doit être cochée, de sorte que l’entreprise puisse acquérir votre application en volume. Personne ne pourra y accéder, hormis les entreprises que vous avez sélectionnées dans la section **Distribution et visibilité**.
+### Distribution and visibility
 
-Si vous souhaitez mettre l’application à disposition de l’entreprise à l’aide de licences en mode hors connexion, vous pouvez également cocher la case **Permettre aux entreprises d’acheter des licences en mode hors connexion**.
+After you've set up an enterprise association, every time you submit an app you’ll see a drop-down box in the **Distribution and visibility** section of the submission’s **Pricing and availability** page. By default, this is set to **Retail distribution**. To make the app exclusive to an enterprise, you’ll need to choose **Line-of-business (LOB) distribution**.
 
-Pour plus d'informations, voir [Options de gestion des licences organisationnelles](organizational-licensing.md).
+Once **Line-of-business (LOB) distribution** is selected, the usual **Distribution and visibility** options will be replaced with a list of the enterprises to which you can publish exclusive apps.
 
-### Déploiement d'applications métier dans les entreprises
+Select the enterprise(s) which should be able to get the app. No one else will be able to access it.
 
-Lorsque vous cliquez sur **Envoyer au Store**, le processus de certification de l'application s'exécute. À l'issue de ce processus, un administrateur de l'entreprise doit l'ajouter à son magasin privé dans le portail Windows Store pour Entreprises. L'entreprise peut alors déployer l'application à l'attention de ses utilisateurs.
+> **Note**  At least one enterprise must be selected in order to publish an app as line-of-business.
 
-> **Remarque** Pour obtenir votre application métier, l’organisation doit se trouver dans un [marché pris en charge](https://technet.microsoft.com/itpro/windows/whats-new/windows-store-for-business-overview#supported-markets), et vous ne devez pas avoir exclu ce marché lors de la soumission de votre application. 
+### Organizational licensing
 
-Pour plus d'informations, voir [Utilisation des applications métier](http://go.microsoft.com/fwlink/p/?LinkId=698846) et [Distribuer des applications à l'aide de votre magasin privé](http://go.microsoft.com/fwlink/p/?LinkId=698847).
+By default, the box for **Store-managed (online) volume licensing** is checked when you submit an app. When publishing LOB apps, this box must be checked so that the enterprise can acquire your app in volume. This won’t make the app available to anyone outside of the enterprise(s) that you selected in the **Distribution and visibility** section.
 
-### Mise à jour des applications métier
+If you’d like to make the app available to the enterprise via disconnected (offline) licensing, you can check the **Disconnected (offline) licensing** box as well.
 
-Pour publier les mises à jour d'une application que vous avez déjà publiée en tant qu'application métier, il vous suffit de créer une soumission. Vous pouvez transférer de nouveaux packages ou apporter des modifications, puis cliquer sur **Envoyer au Store** pour mettre à disposition la version mise à jour. Veillez à ce que les sélections d'entreprises sous **Distribution et visibilité** restent les mêmes (sauf si vous souhaitez les modifier, par exemple pour sélectionner une autre entreprise pouvant acquérir l'application ou supprimer l'une des entreprises auxquelles vous l'avez déjà distribuée).
+For more info, see [Organizational licensing options](organizational-licensing.md).
 
-Si vous souhaitez ne plus offrir une application que vous avez déjà publiée en tant qu’application métier et que vous souhaitez empêcher toute nouvelle acquisition, vous devez créer une soumission. En premier lieu, vous devez modifier votre sélection sous **Distribution et visibilité** et choisir **Vente au détail** au lieu de **Distribution d’applications métier**. Ensuite, sous **Distribution et visibilité**, choisissez l'option **Masquer cette application et empêcher l'acquisition**. Une fois le processus de certification appliqué à la soumission, l’application n’est plus disponible pour de nouvelles acquisitions (les personnes qui en disposent déjà pourront cependant continuer à l’utiliser).
+### Age ratings
+For LOB apps, the [age ratings](age-ratings.md) step of the submission process works the same as for retail apps, but you also have an additional option that allows you to indicate the Store age rating of your app manually rather than completing the questionnaire or importing an existing IARC rating ID. This manual rating can only be used with LOB distribution, so if you ever change the **Distribution and visibility** setting of the app to **Retail distribution**, you'll need to take the age ratings questionnaire before you can publish the submission.
 
-### Distribution d'applications métier par chargement indépendant
+### Enterprise deployment of LOB apps
 
-En mettant votre application à disposition par le biais du Windows Store pour Entreprises, vous vous assurez qu'elle a été signée par le Store et qu'elle est conforme aux stratégies standard du Store.
+After you click **Submit to the Store**, the app will go through the certification process. Once it’s ready, an admin for the enterprise must add it to their private store in the Windows Store for Business portal. The enterprise can then deploy the app to its users.
 
-Dans certains cas, les entreprises ne souhaitent pas soumettre leurs applications métier par le biais du Centre de développement Windows, et ce, pour différentes raisons (par exemple, pour des raisons de conformité ou lorsque les applications requièrent des fonctionnalités supplémentaires). Les entreprises peuvent alors déployer des applications directement sur les machines par chargement indépendant, sans utiliser le Windows Store pour Entreprises.
+> **Note** In order to get your LOB app, the organization must be located in a [supported market](https://technet.microsoft.com/itpro/windows/whats-new/windows-store-for-business-overview#supported-markets), and you must not have excluded that market when submitting your app. 
 
-Pour plus d'informations, voir [Charger la version test d'applications métier dans Windows 10](http://go.microsoft.com/fwlink/p/?LinkId=623433).
+For more info, see [Working with line-of-business apps](http://go.microsoft.com/fwlink/p/?LinkId=698846) and [Distribute apps using your private store](http://go.microsoft.com/fwlink/p/?LinkId=698847).
+
+### Updating LOB apps
+
+To publish updates to an app that you’ve already published as LOB, simply create a new submission. You can upload new packages or make any other changes, then click **Submit to the Store** to make the updated version available. Be sure to keep the enterprise selections in **Distribution and visibility** the same (unless you intentionally want to change them, such as selecting an additional enterprise to acquire the app, or removing one of the enterprises to which you’d previously distributed it).
+
+If you want to stop offering an app that you’ve previously published as line-of-business, and prevent any new acquisitions, you’ll need to create a new submission. First, you’ll need to change your **Distribution and visibility** selection from **Line-of-business (LOB) distribution** to **Retail distribution**. Then, in the **Distribution and visibility** options, choose **Hide this app and prevent acquisition**. After the submission goes through the certification process, the app will no longer be available for new acquisitions (although anyone who already has it will continue to be able to use it).
+
+> **Note** When changing an app to **Retail distribution**, you'll need to complete the [age ratings questionnaire](age-ratings.md) if you haven't done so already (even if the app will not be available for new acquisitions).
+
+### Distributing LOB apps through sideloading
+
+Making apps available through Store for Business ensures that the app has been signed by the Store and complies with the standard Store Policies.
+
+In some cases, companies may not want their LOB apps to be submitted through the Windows Dev Center for various reasons (such as compliance reasons or apps that need additional capabilities). In this case, the enterprises can deploy apps directly to machines via sideloading, without using the Windows Store for Business.
+
+For more info, see [Sideload LOB apps in Windows 10](http://go.microsoft.com/fwlink/p/?LinkId=623433).
 
  
 
@@ -82,6 +87,6 @@ Pour plus d'informations, voir [Charger la version test d'applications métier d
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Sep16_HO1-->
 
 

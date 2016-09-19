@@ -1,35 +1,35 @@
 ---
 author: mcleblanc
 ms.assetid: EAC34672-5C12-402D-920B-6F2835EA5ACE
-title: Outils de profilage et de performances
-description: "Microsoft fournit plusieurs outils pour vous aider à améliorer les performances de vos applications de plateforme Windows universelle (UWP)."
+title: Tools for profiling and performance
+description: Microsoft provides several tools to help you improve the performance of your Universal Windows Platform (UWP) app.
 translationtype: Human Translation
 ms.sourcegitcommit: 5bbd14fb53cae67bbb827f94e695b2703e07fc34
-ms.openlocfilehash: f7f9821be7d1423b2f89367bd20c09981eca24eb
+ms.openlocfilehash: 3d0cf5f983efdee116bcf8b87398fe376efca3c6
 
 ---
-# Outils de profilage et de performances
+# Tools for profiling and performance
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Microsoft fournit plusieurs outils pour vous aider à améliorer les performances de vos applications de plateforme Windows universelle (UWP). Suivez ces liens pour découvrir comment utiliser ces outils.
+Microsoft provides several tools to help you improve the performance of your Universal Windows Platform (UWP) app. Follow these links to learn how to use these tools.
 
-**Outil Réactivité de l’interface utilisateur XAML dans Visual Studio 2015** : l’un des meilleurs outils à utiliser pour mesurer l’impact sur les performances au sein de votre application. Cet outil a été [mis à jour pour Visual Studio 2015](http://blogs.msdn.com/b/wpf/archive/2015/01/14/new-ui-performance-analysis-tool-for-wpf-applications.aspx) pour prendre en charge d’autres scénarios.
+**XAML UI Responsiveness tool in Visual Studio 2015**. One of the best tools to use for measuring perf impact within your app is the XAML UI Responsiveness Tool. This shipped has been [updated for Visual Studio 2015](http://blogs.msdn.com/b/wpf/archive/2015/01/14/new-ui-performance-analysis-tool-for-wpf-applications.aspx) to support even more scenarios.
 
-Voir aussi:
+See also:
 
 |           |             |
 |-----------|-------------|
-| [Analyser les performances des applications du Windows Store à l’aide des outils de diagnostic de Visual Studio](https://msdn.microsoft.com/library/windows/apps/xaml/hh696636.aspx) | En vous indiquant où le code de votre application opère pendant l’exécution du programme, les profileurs Visual Studio peuvent vous aider à détecter les goulots d’étranglement des performances dans vos applications, fonctions et algorithmes. |
-| [Performances XAML : techniques d’optimisation des expériences d’application Windows universelles générées avec XAML](https://channel9.msdn.com/Events/Build/2015/3-698) | Dans cette //session de création, vous allez découvrir les nouvelles fonctionnalités de plateforme, les nouvelles fonctionnalités d’outils et les nouvelles techniques permettant d’améliorer sensiblement les performances de votre application Windows universelle basée sur XAML. |
-| [Nouveaux outils XAML dans Visual Studio 2015](https://channel9.msdn.com/Events/Build/2015/2-697) | Dans cette //session de création, vous allez découvrir certaines des nouvelles fonctionnalités de Visual Studio 2015, dont l’expérience Blend repensée, les outils de débogage de l’interface utilisateur et les améliorations apportées à l’éditeur XAML. |
-| [Windows Performance Analyzer](https://msdn.microsoft.com/library/windows/apps/xaml/hh448170.aspx) | Inclus dans le Kit de déploiement et d’évaluation Windows (Windows ADK), Windows Performance Analyzer (WPA) est un outil qui crée des graphiques et des tables de données d’événements du Suivi d’événements pour Windows (ETW) enregistrés par l’Enregistreur de performances Windows (WPR), Xperf ou une évaluation effectuée dans la Plateforme d’évaluation . WPA peut ouvrir tout fichier journal de suivi des événements (ETL) à des fins d’analyse. |
+| [Analyze the performance of Windows Store apps using Visual Studio diagnostic tools](https://msdn.microsoft.com/library/windows/apps/xaml/hh696636.aspx) | By showing you where the code of your app spends its time as your program executes, the Visual Studio profilers can help you find the performance bottlenecks in your apps, functions, and algorithms. |
+| [XAML Performance: Techniques for Maximizing Universal Windows App Experiences Built with XAML](https://channel9.msdn.com/Events/Build/2015/3-698) | In this //build session, you will learn about the new platform features, new tooling features and new techniques to dramatically increase the performance of your XAML-based Universal Windows app. |
+| [New XAML Tools in Visual Studio 2015](https://channel9.msdn.com/Events/Build/2015/2-697) | In this //build session, you will learn about some of the new capabilities in Visual Studio 2015, including the re-designed Blend experience, UI debugging tools and the XAML editor enhancements. |
+| [Windows Performance Analyzer](https://msdn.microsoft.com/library/windows/apps/xaml/hh448170.aspx) | Included in the Windows Assessment and Deployment Kit (Windows ADK), Windows Performance Analyzer (WPA) is a tool that creates graphs and data tables of Event Tracing for Windows (ETW) events that are recorded by Windows Performance Recorder (WPR), Xperf, or an assessment that is run in the Assessment Platform. WPA can open any event trace log (ETL) file for analysis. |
 
  
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

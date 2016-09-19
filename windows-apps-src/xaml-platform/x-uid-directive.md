@@ -1,55 +1,55 @@
 ---
 author: jwmsft
-description: "Fournit un identificateur unique à des éléments de balisage. Pour le code XAML de plateforme Windows universelle (UWP), cet identificateur unique est utilisé par des processus ou outils de localisation XAML, comme l’utilisation des ressources d’un fichier de ressources .resw."
-title: Directive xUid
+description: Provides a unique identifier for markup elements. For Universal Windows Platform (UWP) XAML, this unique identifier is used by XAML localization processes and tools, such as using resources from a .resw resource file.
+title: xUid directive
 ms.assetid: 9FD6B62E-D345-44C6-B739-17ED1A187D69
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 4f8aa553c99b6071cedc4f9d93cf8258b75eca49
+ms.openlocfilehash: c94db1dc1095f53dc836f78768ecc826470343d5
 
 ---
 
-# Directive x&#58;Uid
+# x:Uid directive
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Fournit un identificateur unique à des éléments de balisage. Pour le code XAML de plateforme Windows universelle (UWP), cet identificateur unique est utilisé par des processus ou outils de localisation XAML, comme l’utilisation des ressources d’un fichier de ressources .resw.
+Provides a unique identifier for markup elements. For Universal Windows Platform (UWP) XAML, this unique identifier is used by XAML localization processes and tools, such as using resources from a .resw resource file.
 
-## Utilisation des attributs XAML
+## XAML attribute usage
 
 ``` syntax
 <object x:Uid="stringID".../>
 ```
 
-## Valeurs XAML
+## XAML values
 
-| Terme | Description |
+| Term | Description |
 |------|-------------|
-| stringID | Chaîne qui identifie de manière unique un élément XAML dans une application et qui fait partie du chemin d’accès aux ressources dans un fichier de ressources. Voir Notes.| 
+| stringID | A string that uniquely identifies a XAML element in an app, and becomes part of the resource path in a resource file. See Remarks.| 
 
-## Remarques
+## Remarks
 
-Utilisez **x:Uid** pour identifier un élément objet dans votre code XAML. Cet élément objet est généralement une instance d’une classe de contrôle ou d’un autre élément affiché dans une interface utilisateur. La relation entre la chaîne utilisée dans **x:Uid** et les chaînes utilisées dans un fichier de ressources est que les chaînes du fichier de ressources sont la directive **x:Uid** suivie d’un point (.),puis du nom d’une propriété spécifique de l’élément en cours de localisation. Examinez cet exemple:
+Use **x:Uid** to identify an object element in your XAML. Typically this object element is an instance of a control class or other element that is displayed in a UI. The relationship between the string you use in **x:Uid** and the strings you use in a resources file is that the resource file strings are the **x:Uid** followed by a dot (.) and then by the name of a specific property of the element that's being localized. Consider this example:
 
 ``` syntax
 <Button x:Uid="GoButton" Content="Go"/>
 ```
 
-Pour spécifier le contenu devant remplacer le texte d’affichage **Go**, vous devez spécifier une nouvelle ressource provenant d’un fichier de ressources. Votre fichier de ressources doit contenir une entrée pour la ressource nommée «GoButton.Content». Dans le cas présent, [**Content**](https://msdn.microsoft.com/library/windows/apps/br209366) est une propriété spécifique héritée par la classe [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265). Vous pouvez également fournir des valeurs localisées pour d’autres propriétés de ce bouton; par exemple, vous pouvez fournir une valeur basée sur les ressources pour «GoButton.FlowDirection». Pour plus d’informations sur l’utilisation conjointe de **x:Uid** et de fichiers de ressources, voir [Démarrage rapide : traduction des ressources de l’interface utilisateur](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329).
+To specify content to replace the display text **Go**, you must specify a new resource that comes from a resource file. Your resource file should contain an entry for the resource named "GoButton.Content". [**Content**](https://msdn.microsoft.com/library/windows/apps/br209366) in this case is a specific property that's inherited by the [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) class. You might also provide localized values for other properties of this button, for example you could provide a resource-based value for "GoButton.FlowDirection". For more info on how to use **x:Uid** and resource files together, see [Quickstart: Translating UI resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329).
 
-La validité des chaînes pouvant servir de valeur **x:Uid** est contrôlée dans un sens pratique par les chaînes légitimes en tant qu’identificateur dans un fichier de ressources et un chemin d’accès aux ressources.
+The validity of which strings can be used for an **x:Uid** value is controlled in a practical sense by which strings are legal as an identifier in a resource file and a resource path.
 
-**x:Uid** est discret à partir de **x:Name** à la fois en raison du scénario de localisation XAML indiqué et afin que les identificateurs utilisés pour la localisation n’aient aucune dépendance vis-à-vis des implications du modèle de programmation de **x:Name**. En outre, **x:Name** est régi par le concept de namescope XAML, tandis que l’unicité de **x:Uid** est contrôlée par le système d’index de ressource de package (IRP). Pour plus d’informations, voir [Système de gestion des ressources](https://msdn.microsoft.com/library/windows/apps/jj552947).
+**x:Uid** is discrete from **x:Name** both because of the stated XAML localization scenario, and so that identifiers that are used for localization have no dependencies on the programming model implications of **x:Name**. Also, **x:Name** is governed by the XAML namescope concept, whereas uniqueness for **x:Uid** is controlled by the package resource index (PRI) system. For more info, see [Resource Management System](https://msdn.microsoft.com/library/windows/apps/jj552947).
 
-Le langage XAML UWP comporte des règles légèrement différentes pour l’unicité de **x:Uid** par rapport aux technologies XAML précédemment utilisées. En langage XAML UWP, il est légitime que la même valeur d’ID **x:Uid** existe en tant que directive sur plusieurs éléments XAML. Toutefois, chacun de ces éléments doit alors partager la même logique de résolution pour la résolution des ressources dans un fichier de ressources. En outre, tous les fichiers XAML d’un projet partagent une seule étendue de ressources à des fins de résolution de **x:Uid** ; il n’existe pas de concept d’étendues **x:Uid** alignées sur des fichiers XAML individuels.
+UWP XAML has somewhat different rules for **x:Uid** uniqueness than previous XAML-utilizing technologies used. For UWP XAML it is legal for the same **x:Uid** ID value to exist as a directive on multiple XAML elements. However, each such element must then share the same resolution logic when resolving the resources in a resource file. Also, all XAML files in a project share a single resource scope for purposes of **x:Uid** resolution, there is no concept of **x:Uid** scopes being aligned to individual XAML files.
 
-Dans certains cas, vous utiliserez un chemin d’accès aux ressources plutôt que la fonctionnalité intégrée du système d’index de ressource de package (IRP). Toute chaîne utilisée en tant que valeur **x:Uid** définit un chemin d’accès aux ressources qui commence par ms-resource:///Resources/ et qui inclut la chaîne **x:Uid**. Le chemin d’accès est complété par les noms des propriétés que vous spécifiez dans un fichier de ressources ou que vous ciblez.
+In some cases you'll be using a resource path rather than built-in functionality of the package resource index (PRI) system. Any string used as an **x:Uid** value defines a resource path that begins with ms-resource:///Resources/ and includes the **x:Uid** string. The path is completed by the names of the properties you specify in a resources file or are otherwise targeting.
 
-Ne placez pas **x:Uid** sur des éléments propriétés ; cette opération n’est pas autorisée dans le langage XAML Windows Runtime.
-
-
+Don't put **x:Uid** on property elements, that isn't allowed in Windows Runtime XAML.
 
 
-<!--HONumber=Jun16_HO4-->
+
+
+<!--HONumber=Aug16_HO3-->
 
 

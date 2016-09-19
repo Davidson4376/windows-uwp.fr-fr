@@ -1,29 +1,31 @@
 ---
-title: "Programme Insider du Centre de développement"
-description: "Essayez les nouvelles fonctionnalités du Centre de développement avant qu’elles ne soient disponibles pour tous, et dites-nous ce que vous en pensez."
+title: Dev Center Insider Program
+description: Try out new Dev Center features before they become available to all developers and let us know what you think.
 author: JnHs
 translationtype: Human Translation
-ms.sourcegitcommit: ee75eb3ee3bff61666513dcf57384675a07c56ee
-ms.openlocfilehash: b889769f6a23c2830274a72bc392a4409377c142
+ms.sourcegitcommit: c3a8b083272fc421763eb153372f660ef357f044
+ms.openlocfilehash: 67aacbbcdf066ec22bcf18bc6bad1e0f0e17c7d0
 
 ---
 
-# Programme Insider du Centre de développement
+# Dev Center Insider Program
 
-En tant que [développeur inscrit](http://go.microsoft.com/fwlink/?LinkID=615100), vous pouvez influer sur les fonctionnalités que nous mettons à disposition dans le tableau de bord du Centre de développement en rejoignant le programme Insider du Centre de développement. Ce programme vous permet de tester les nouvelles fonctionnalités avant qu’elles ne soient disponibles pour tous les développeurs. Nous vous encourageons à nous faire part de vos commentaires sur ces fonctionnalités à l’aide du lien Commentaires dans le coin inférieur droit du Centre de développement. Tous les commentaires que nous recevons des Insiders du Centre de développement font l’objet d’une lecture attentive et sont considérés en priorité.
+As a [registered developer](http://go.microsoft.com/fwlink/?LinkID=615100), you can help influence the functionality we make available in the Dev Center dashboard by joining the Dev Center Insider Program. This program allows you to try out new features before they become available to all developers. We encourage you to give us your feedback on these features by using the Feedback link in the bottom right corner of Dev Center. All of the feedback we receive from Dev Center Insiders will be read closely and given priority consideration.
 
-Pour rejoindre le programme, acceptez de participer à ce dernier à partir de la page **Paramètres du compte** dans votre tableau de bord du Centre de développement. Vous pouvez annuler cette décision à tout moment.
+To join the program, opt in on the **Account settings** page in your Dev Center dashboard. You can opt out at any time.
 
-> **Important** Les conditions du [Contrat développeur d’applications](https://msdn.microsoft.com/windows/apps/hh694058.aspx) s’appliquent à votre participation au programme. Avant de rejoindre le programme, veuillez lire ces conditions, notamment l’ExposéI. Gardez à l’esprit que les fonctionnalités exclusivement disponibles pour les membres du programme Insider du Centre de développement peuvent inclure des services expérimentaux et de versions préliminaires. Souvent, ces fonctionnalités ne sont associées à aucune documentation disponible, et vous pouvez rencontrer des résultats inattendus lorsque vous les utilisez. 
+> **Important** The terms of the [App Developer Agreement](https://msdn.microsoft.com/windows/apps/hh694058.aspx) apply to your participation in the program. Please read them, particularly Exhibit I, before you join the program. Keep in mind that the features made available exclusively to people in the Dev Center Insider Program may include experimental and early prerelease services. This means that these features often don’t have documentation available yet, and you may experience unintended results when using them. 
 
-Voici quelques-unes des fonctionnalités que nous avons rendues disponibles exclusivement aux membres du programme Insider du Centre de développement. Cette liste changera au fur et à mesure que de nouvelles fonctionnalités seront ajoutées (et lorsque des fonctionnalités introduites au programme Insider seront accessibles à tous).
+Here are some of the features that we’ve made available exclusively to members of the Dev Center Insider Program. This list will change over time as new features are added (and as features introduced to the Insider Program are made available to everyone).
 
-| Fonctionnalité du programme Insider du Centre de développement   | Comment les membres du programme Insider du Centre de développement peuvent l’essayer | Date d’ajout |
+| Dev Center Insider Program feature   | How Dev Center Insiders can try it | Date added |
 |--------------------------------------|------------------------------------|------------|
-|**Gérer des produits in-app en bloc**: apportez des modifications à plusieurs produits in-app simultanément, plutôt que de soumettre chaque mise à jour séparément. | Cliquez sur **Gérer les produits in-app en bloc** sur la vue d’ensemble d’une application ou sur la page des produits in-app. |Juin2016|
-|**Disponibilité de la famille d’appareils**: gérez la disponibilité de la famille d’appareils pour votre application et découvrez quels packages seront offerts aux familles d’appareils Windows10 spécifiques (et aux systèmes d’exploitation plus anciens, le cas échéant), classés par ordre.|Consultez ces informations et faites votre choix sur la page **Packages** de la soumission d’une application.|Mai2016|
-|**Historique des pages pour les comptes partagés par plusieurs utilisateurs**: les détenteurs de compte peuvent accéder à l’historique de navigation détaillé pour tout utilisateur qu’ils ont ajouté au compte.|Sur la page **Gérer les utilisateurs**, cliquez sur le lien présent sous «Dernière activité» pour l’utilisateur dont vous souhaitez passer en revue l’historique de navigation.|Avril2016|
-|**Nouvelle conception du tableau de bord**: obtenez une vue mise à jour de vos applications et mesures clés, le tout au même endroit.|La nouvelle conception s’affiche sur la page de présentation de votre tableau de bord.|Mars 2016|
+|**Analytics overview page**: View key metrics about your apps, all in one page. You can select any of your apps, or select up to five to get a combined view; coming soon we’ll show your top five apps by default. | Click the **Analyze** dropdown near the top of the page and select **Overview**. Please share your feedback to let us know what additional info you’d like to see here and what you think of this design.  |September 2016|
+|**Real time analytics**: See details about your app's most recent acquisitions and add-ons. The new report uses real-time event collection from your Windows 10 customers. | Choose Real time report in the left menu under Analytics. Select the time range to review data over the last 7 days or up to the last hour on a per-minute basis. Note that the report includes only data from customers on Windows 10.  |August 2016|
+|**Targeted push notifications**: Create custom notifications to send to your app's customers - all of them, or only a selected segment based on specific criteria that you define. | Go to the Push notifications page (under Services) for an app. Click **New notification** to create and schedule the notification. You can send it to all of your app's users, or click **Create new customer group** to define a specific segment of your app's customers. [Learn more](http://go.microsoft.com/fwlink/p/?LinkId=718017).  |August 2016|
+|**Segments**: Create a segment of your app’s customers by selecting specific criteria, and get a breakdown of stats about that segment. | Near the top of your dashboard overview page, click **Customers** and then **Create new group**. |July 2016|
+|**Manage add-ons in bulk**: Make changes to multiple add-ons at once rather than submitting each update individually. | Click **Manage add-ons in bulk** on an app’s Overview or Add-ons page. |June 2016|
+|**Page history for multi-user accounts**: Account owners can access detailed browsing history for any additional users they’ve added to the account.|On the **Manage users** page, click the link shown under “Last activity” for the user whose browsing history you’d like to review.|April 2016|
 
 
 
@@ -32,6 +34,6 @@ Voici quelques-unes des fonctionnalités que nous avons rendues disponibles excl
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Sep16_HO2-->
 
 

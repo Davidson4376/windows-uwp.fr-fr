@@ -1,61 +1,61 @@
 ---
 author: jnHs
-Description: "Une fois que vous avez terminé de créer la soumission de votre application et cliqué sur Soumettre au Windows Store, l’application passe à l’étape de certification."
-title: Processus de certification des applications
+Description: When you are finished creating your app's submission and click Submit to the Store, it enters the certification step.
+title: The app certification process
 ms.assetid: 0DCB4344-224D-4E5A-899F-FF7A89F23DBC
 translationtype: Human Translation
-ms.sourcegitcommit: 4ea19e85d1e151dd1e03d5acf085c186613be35f
-ms.openlocfilehash: 579d1ef306123f765e19fc9ab3b02c064b690aee
+ms.sourcegitcommit: 865d71374cf7d678804ce16548edd819faafed33
+ms.openlocfilehash: 07b3631ccc875222b8d2ea30a2b69e2995a09e23
 
 ---
 
-# Processus de certification des applications
+# The app certification process
 
 
-Une fois que vous avez terminé de créer la soumission de votre application et cliqué sur **Soumettre au Windows Store**, l’application passe à l’étape de certification. Ce processus s’effectue généralement en quelques heures, bien qu’il nécessite parfois une journée ouvrable entière. Une fois votre soumission certifiée, un maximum de 16heures peut s’écouler avant l’apparition de sa description (ou de vos mises à jour d’une application publiée précédemment) dans le WindowsStore. Une notification s’affiche lorsque votre soumission est publiée et disponible pour les clients; l’état de l’application dans le tableau de bord sera **dans le Windows Store**.
+When you are finished creating your app's submission and click **Submit to the Store**, it enters the certification step. This process usually is completed within a few hours, though in some cases it may take up to three business days. After your submission passes certification, it can take up to 16 hours for customers to see the app’s listing (or your updates to a previously published app) in the Store. You'll see a notification when your submission is published and available to customers, and the app's status in the dashboard will be **In the Store**.
 
-## Prétraitement
+## Preprocessing
 
-Une fois que vous avez chargé avec succès les packages de l’application et soumis l’application pour certification, les packages sont mis en file d’attente à des fins de test. Un message s’affiche si des erreurs sont détectées pendant le pré-traitement. Pour plus d’informations sur les erreurs potentielles, voir [Résoudre les erreurs de soumission](resolve-submission-errors.md).
+After you successfully upload the app's packages and submit the app for certification, the packages are queued for testing. We'll display a message if we detect any errors during preprocessing. For more info on possible errors, see [Resolve submission errors](resolve-submission-errors.md).
 
 ## Certification
 
-Plusieurs tests sont exécutés pendant cette phase:
+During this phase, several tests are conducted:
 
--   **Tests de sécurité :** Ce premier test vérifie que les packages de votre application sont exempts de virus et de programmes malveillants. Si votre application échoue à ce test, vous devez vérifier votre système de développement en exécutant l’antivirus le plus récent, puis régénérer le package de votre application sur un système propre.
--   **Tests de conformité technique :** la conformité technique est testée à l’aide du Kit de certification des applications Windows. (Vous devez toujours prendre soin de [tester votre application à l’aide du Kit de certification des applications Windows](../debug-test-perf/windows-app-certification-kit.md) avant de la soumettre au Windows Store.)
--   **Conformité du contenu :** la durée de cette opération varie en fonction de la complexité de votre application, de la quantité de contenu visuel qu’elle comporte et du nombre d’applications que vous avez soumises récemment. Veillez à fournir toutes les informations que les testeurs doivent connaître dans la page [Remarques pour la certification](notes-for-certification.md).
+-   **Security tests:** This first test checks your app's packages for viruses and malware. If your app fails this test, you'll need to check your development system by running the latest antivirus software, then rebuild your app's package on a clean system.
+-   **Technical compliance tests:** Technical compliance is tested by the Windows App Certification Kit. (You should always make sure to [test your app with the Windows App Certification Kit](../debug-test-perf/windows-app-certification-kit.md) before you submit it to the Store.)
+-   **Content compliance:** The amount of time this takes varies depending on how complex your app is, how much visual content it has, and how many apps have been submitted recently. Be sure to provide any info that testers should be aware of in the [Notes for certification](notes-for-certification.md) page.
 
-Une fois le processus de certification terminé, vous recevez un rapport de certification indiquant si votre application a été ou non certifiée. Si votre application n’a pas été certifiée, le rapport indique le test auquel elle a échoué ou la [stratégie](https://msdn.microsoft.com/library/windows/apps/dn764944) qui n’a pas été respectée. Après avoir corrigé le problème, vous pouvez créer une autre soumission pour votre application afin de recommencer le processus de certification.
+After the certification process is complete, you'll get a certification report telling you whether or not your app passed certification. If it didn't pass, the report will indicate which test failed or which [policy](https://msdn.microsoft.com/library/windows/apps/dn764944) was not met. After you fix the problem, you can create a new submission for your app to start the certification process again.
 
-## Mise sur le marché
+## Release
 
-Lorsque votre application obtient la certification, elle est prête pour l’étape **Publication**. Si vous avez demandé que votre soumission soit publiée le plus tôt possible, cette opération s’exécute immédiatement. Si vous avez spécifié que la sortie de l’application ne doit pas s’effectuer avant une date spécifique, nous attendrons jusqu’à cette date, sauf si vous cliquez sur le lien **Changer la date de sortie**. Si vous avez choisi de publier la soumission manuellement, nous n’effectuerons la publication que lorsque vous aurez cliqué sur le bouton **Publier maintenant**, ou cliqué sur le lien **Changer la date de sortie** et sélectionné une date spécifique.
+When your app passes certification, it's ready to move to the to the **Publishing** process. If you've indicated that your submission should be published as soon as possible, this will happen right away. If you've specified that it should not be released until a certain date, we'll wait until that date, unless you click the link to **Change release date**. If you've indicated that you want to publish the submission manually, then we won't publish it until you indicate that we should by clicking the button to **Publish now**, or if you click the link to **Change release date** and pick a specific date.
 
-## Publication
+## Publishing
 
-Les packages de votre application sont signés numériquement pour être protégés contre toute falsification après leur publication. Une fois que cette phase a commencé, vous ne pouvez plus annuler votre soumission ni en modifier la date de sortie.
+Your app's packages are digitally signed to protect them against tampering after they have been released. Once this phase has begun, you can no longer cancel your submission or change its release date.
 
-Lorsque votre application est en phase de publication, le lien **Afficher les détails** dans la colonne État de soumission de votre application vous indique quand vos nouveaux packages et vos descriptions dans le Store sont disponibles pour les clients sur chacune de vos versions de système d’exploitation prises en charge. Votre application reste en phase de publication jusqu’à ce que les nouveaux packages et les descriptions soient disponibles pour tous les clients potentiels de votre application. Ce processus peut prendre jusqu’à 16heures. 
+While your app is in the publishing phase, the **Show details** link in the Status column for your app’s submission will let you know when your new packages and Store listing details become available to customers on each of your supported OS versions. Your app will remain in the publishing phase until the new packages and listing details are available to all of your app’s potential customers, which can take up to 16 hours. 
 
-## Dans le WindowsStore 
+## In the Store 
 
-Après avoir correctement effectué les étapes ci-dessus, l’état de la soumission passe de **Publication** à **Dans le Windows Store**. Les clients peuvent ainsi télécharger votre soumission à partir du WindowsStore (sauf si vous avez choisi une autre option [Distribution et visibilité](set-app-pricing-and-availability.md#distribution-and-visibility)). 
+After successfully going through the steps above, the submission's status will change from **Publishing** to **In the Store**. Your submission will then be available in the Windows Store for customers to download (unless you have chosen another [Distribution and visibility](set-app-pricing-and-availability.md#distribution-and-visibility) option). 
 
-**Remarque** Nous effectuons également des vérifications ponctuelles sur les applications publiées pour identifier les problèmes potentiels et vérifier que votre application est conforme à toutes les [politiques du Windows Store](https://msdn.microsoft.com/library/windows/apps/dn764944). Si nous détectons un problème, nous vous en informons et vous indiquons comment le résoudre, ou nous vous prévenons que votre application a été retirée du WindowsStore.
-
- 
+**Note**  We also conduct spot checks of apps after they've been published so we can identity potential problems and ensure that your app complies with all of the [Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944). If we find any problems, you'll be notified about the issue and how to fix it, if applicable, or if it has been removed from the Store.
 
  
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO5-->
+
+<!--HONumber=Aug16_HO3-->
 
 

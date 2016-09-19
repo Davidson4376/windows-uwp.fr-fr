@@ -1,28 +1,29 @@
 ---
 author: mcleanbyron
 ms.assetid: 9FCBAF2E-5419-4169-A17C-9C4058DCF909
-description: "Le Windows Store expose plusieurs services que vous pouvez appeler par le biais d’API REST afin d’accéder par programme à certains types de données pour les applications qui sont enregistrées pour votre compte personnel ou compte d’organisation du Centre de développement Windows."
-title: Utiliser les services du Windows Store
+description: The Windows Store exposes several services that you can call via REST APIs to programmatically access certain types of data for apps that are registered to your or your organization''s Windows Dev Center account.
+title: Use Windows Store services
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 43e3155315a9132daa36f592b54af3e943ea3e21
+ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
+ms.openlocfilehash: ed5d27bf74e516717fa0b8e7e526617bea94cc51
 
 ---
 
-# Utiliser les services du Windows Store
+# Use Windows Store services
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
-
-Le WindowsStore expose plusieurs services que vous pouvez appeler par le biais d’API REST afin d’accéder par programme à certains types de données pour les applications qui sont enregistrées pour votre compte personnel ou compte d’organisation du Centre de développement Windows.
-
-## Dans cette section
 
 
-| Rubrique                                                                                                       | Description                 |
+The Windows Store exposes several services that you can call via REST APIs to programmatically access certain types of data for apps that are registered to your or your organization's Windows Dev Center account.
+
+## In this section
+
+
+| Topic                                                                                                       | Description                 |
 |-------------------------------------------------------------------------------------------------------------|-----------------------------|
-| [Accéder aux données d’analyse](access-analytics-data-using-windows-store-services.md) | Utilisez l’<em>API d’analyse du Windows Store</em> pour récupérer par programme les données d’analyse pour les applications qui sont enregistrées sur votre compte personnel ou compte d’organisation du Centre de développement Windows. Cette API vous permet de récupérer les données pour les acquisitions d’applications et de produits intégrés à l’application, les échecs d’application, ainsi que les évaluations et avis relatifs aux applications. |
-| [Afficher et octroyer des produits à partir d’un service](view-and-grant-products-from-a-service.md)  | Si vous disposez d’un catalogue d’applications et de produits intégrés à l’application (PIA), vous pouvez utiliser l’API de collection du WindowsStore et l’API d’achat du WindowsStore pour accéder aux informations de propriété de ces produits à partir de vos services.  |
+| [Access analytics data](access-analytics-data-using-windows-store-services.md) | Use the *Windows Store analytics API* to programmatically retrieve analytics data for apps that are registered to your or your organization's Windows Dev Center account. This API enables you to retrieve data for app and add-on (also known as in-app product or IAP) acquisitions, app failures, app ratings and reviews. |
+| [Create and manage submissions](create-and-manage-submissions-using-windows-store-services.md) | Use the *Windows Store submission API* to programmatically query and create submissions for apps, add-ons and package flights for your or your organization's Windows Dev Center account. This API is useful if your account manages many apps or add-ons, and you want to automate and optimize the submission process for these assets. |
+| [View and grant products from a service](view-and-grant-products-from-a-service.md)  | If you have a catalog of apps and add-ons, you can use the *Windows Store collection API* and *Windows Store purchase API* to access ownership information for these products from your services.  |
 
 
 
@@ -34,6 +35,6 @@ Le WindowsStore expose plusieurs services que vous pouvez appeler par le biais d
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

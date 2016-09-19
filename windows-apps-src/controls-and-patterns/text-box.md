@@ -4,42 +4,52 @@ ms.assetid: CC1BF51D-3DAC-4198-ADCB-1770B901C2FC
 label: Text box
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 873ca8f869f4303f8fc4a9a7ff08f81df29d367d
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: f9750e87516d38b16a589e5271de25d9f241e97b
 
 ---
-# Zone de texte
-Le contrôle TextBox permet à un utilisateur de taper du texte dans une application. Il est généralement utilisé pour capturer une seule ligne de texte, mais peut être configuré pour la saisie de plusieurs lignes. Le texte s’affiche sous la forme d’un texte brut uniforme simple.
+# Text box
 
-Le contrôle TextBox comporte différentes fonctionnalités destinées à simplifier la saisie de texte. Il intègre un menu contextuel familier prenant en charge la copie et le collage de texte. Le bouton Effacer tout («X») permet à un utilisateur de supprimer rapidement l’ensemble du texte qui a été entré. Le contrôle intègre également des fonctionnalités de vérification de l’orthographe qui sont activées par défaut.
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-<span class="sidebar_heading" style="font-weight: bold;">API importantes</span>
+The TextBox control lets a user type text into an app. It's typically used to capture a single line of text, but can be configured to capture multiple lines of text. The text displays on the screen in a simple, uniform, plaintext format.
 
--   [**Classe TextBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)
--   [**Propriété Text**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx)
+TextBox has a number of features that can simplify text entry. It comes with a familiar, built-in context menu with support for copying and pasting text. The "clear all" button lets a user quickly delete all text that has been entered. It also has spell checking capabilities built in and enabled by default.
+
+<div class="important-apis" >
+<b>Important APIs</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx"><strong>TextBox class</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx"><strong>Text property</strong></a></li>
+</ul>
+
+</div>
+</div>
 
 
-## Est-ce le contrôle approprié ?
 
-Utilisez un contrôle **TextBox** si vous souhaitez permettre à un utilisateur de saisir et de modifier du texte sans mise en forme, dans un formulaire par exemple. Vous pouvez utiliser la propriété [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx) pour obtenir et définir le texte d’un contrôle TextBox.
 
-Vous avez la possibilité de définir un contrôle TextBox en lecture seule, mais il doit s’agir d’un état conditionnel temporaire. Si le texte ne doit jamais être modifiable, envisagez plutôt d’utiliser un contrôle [**TextBlock**](text-block.md).
+## Is this the right control?
 
-Si vous souhaitez recueillir un mot de passe ou d’autres données confidentielles, telles qu’un numéro de sécurité sociale, utilisez un contrôle [**PasswordBox**](password-box.md). Une zone de mot de passe ressemble à une zone de saisie de texte, à la différence qu’elle affiche des puces à la place du texte entré.
+Use a **TextBox** control to let a user enter and edit unformatted text, such as in a form. You can use the [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx) property to get and set the text in a TextBox.
 
-Pour permettre à l’utilisateur d’entrer des termes de recherche ou pour lui présenter une liste de suggestions dans laquelle il peut effectuer un choix pendant qu’il saisit du texte, utilisez un contrôle [**AutoSuggestBox**](auto-suggest-box.md).
+You can make a TextBox read-only, but this should be a temporary, conditional state. If the text is never editable, consider using a [**TextBlock**](text-block.md) instead.
 
-Pour afficher et modifier des fichiers de texte enrichi, utilisez un contrôle [**RichEditBox**](rich-edit-box.md).
+Use a [**PasswordBox**](password-box.md) control to collect a password or other private data, such as a Social Security number. A password box looks like a text input box, except that it renders bullets in place of the text that has been entered.
 
-Pour plus d’informations sur le choix du contrôle de texte approprié, voir l’article [Contrôles de texte](text-controls.md).
+Use an [**AutoSuggestBox**](auto-suggest-box.md) control to let the user enter search terms or to show the user a list of suggestions to choose from as they type.
 
-## Exemples
+Use a [**RichEditBox**](rich-edit-box.md) to display and edit rich text files.
 
-![Zone de texte](images/text-box.png)
+For more info about choosing the right text control, see the [Text controls](text-controls.md) article.
 
-## Créer une zone de texte
+## Examples
 
-Voici le code XAML d’une zone de texte simple avec un texte d’en-tête et un texte d’espace réservé.
+![A text box](images/text-box.png)
+
+## Create a text box
+
+Here's the XAML for a simple text box with a header and placeholder text.
 
 ```xaml
 <TextBox Width="500" Header="Notes" PlaceholderText="Type your notes here"/>
@@ -54,53 +64,54 @@ textBox.PlaceholderText = "Type your notes here";
 rootGrid.Children.Add(textBox);
 ```
 
-Voici la zone de texte résultant de ce code XAML.
+Here's the text box that results from this XAML.
 
-![Zone de texte simple](images/text-box-ex1.png)
+![A simple text box](images/text-box-ex1.png)
 
-### Utiliser une zone de texte pour l’entrée de données dans un formulaire
+### Use a text box for data input in a form
 
-Il est courant d’utiliser une zone de texte pour accepter l’entrée de données dans un formulaire, et de recourir à la propriété [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx) pour obtenir la chaîne de texte complète à partir de la zone de texte. Vous utilisez généralement un événement tel qu’un clic sur un bouton d’envoi pour accéder à la propriété Text, mais vous pouvez gérer l’événement [TextChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textchanged.aspx) ou [TextChanging](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textchanging.aspx) si vous avez besoin d’effectuer une opération spécifique lorsque le texte change. 
+It’s common to use a text box to accept data input on a form, and use the [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx) property to get the complete text string from the text box. You typically use an event like a submit button click to access the Text property, but you can handle the [TextChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textchanged.aspx) or [TextChanging](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textchanging.aspx) event if you need to do something when the text changes.
 
-Vous pouvez ajouter un contrôle [Header](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.header.aspx) (ou étiquette) et un contrôle [PlaceholderText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.placeholdertext.aspx) (ou filigrane) à la zone de texte pour indiquer à l’utilisateur le rôle de cette zone. Si vous souhaitez personnaliser l’aspect de l’en-tête, vous pouvez définir la propriété [HeaderTemplate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.headertemplate.aspx) au lieu de la propriété Header. Pour plus d’informations sur la conception, voir l’article *Recommandations en matière d’étiquettes*.
+You can add a [Header](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.header.aspx) (or label) and [PlaceholderText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.placeholdertext.aspx) (or watermark) to the text box to give the user an indication of what the text box is for. To customize the look of the header, you can set the [HeaderTemplate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.headertemplate.aspx) property instead of Header. *For design info, see Guidelines for labels*.
 
-Vous pouvez restreindre le nombre de caractères que l’utilisateur peut taper en définissant la propriété [MaxLength](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.maxlength.aspx). Toutefois, la propriété MaxLength ne limite pas la longueur du texte collé. Si cet aspect a de l’importance pour votre application, utilisez l’événement [Paste](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.paste.aspx) pour modifier le texte collé.
+You can restrict the number of characters the user can type by setting the [MaxLength](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.maxlength.aspx) property. However, MaxLength does not restrict the length of pasted text. Use the [Paste](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.paste.aspx) event to modify pasted text if this is important for your app.
 
-La zone de texte inclut un bouton Effacer tout («X») qui s’affiche lorsque du texte est entré dans la zone. Quand un utilisateur clique sur le bouton «X», le texte figurant dans la zone de texte est effacé. Ce bouton apparaît comme suit.
+The text box includes a clear all button ("X") that appears when text is entered in the box. When a user clicks the "X", the text in the text box is cleared. It looks like this.
 
-![Zone de texte avec un bouton Effacer tout](images/text-box-clear-all.png)
+![A text box with a clear all button](images/text-box-clear-all.png)
 
-Le bouton Effacer tout s’affiche uniquement pour les zones de texte modifiables d’une seule ligne qui contiennent du texte et qui présentent le focus. 
+The clear all button is shown only for editable, single-line text boxes that contain text and have focus.
 
-Le bouton Effacer tout n’apparaît pas dans l’un des cas suivants:
-- **IsReadOnly** présente la valeur **true**.
-- **AcceptsReturn** présente la valeur **true**.
-- **TextWrap** présente une valeur différente de **NoWrap**.
+The clear all button is not shown in any of these cases:
+- **IsReadOnly** is **true**
+- **AcceptsReturn** is **true**
+- **TextWrap** has a value other than **NoWrap**
 
-### Configurer une zone de texte en lecture seule
+### Make a text box read-only
 
-Vous pouvez configurer une zone de texte comme étant en lecture seule en définissant la propriété [IsReadOnly](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.isreadonly.aspx) sur la valeur **true**. En règle générale, vous activez/désactivez cette propriété dans le code de votre application en fonction de conditions applicables à cette dernière. Si vous avez besoin que le texte soit toujours en lecture seule, envisagez plutôt d’utiliser un contrôle TextBlock.
+You can make a text box read-only by setting the [IsReadOnly](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.isreadonly.aspx) property to **true**. You typically toggle this property in your app code based on conditions in your app. If need text that is always read-only, consider using a TextBlock instead.
 
-Pour configurer le contrôle TextBox en lecture seule, définissez la propriété IsReadOnly sur la valeur «true». Par exemple, vous pouvez avoir besoin de définir un contrôle TextBox ne permettant à un utilisateur d’entrer des commentaires que sous certaines conditions. Vous pouvez alors configurer le contrôle TextBox comme étant en lecture seule jusqu’à ce que ces conditions soient remplies. Si vous souhaitez simplement afficher du texte, envisagez plutôt d’utiliser un contrôle TextBlock ou RichTextBlock.
+You can make a TextBox read-only by setting the IsReadOnly property to true. For example, you might have a TextBox for a user to enter comments that is enabled only under certain conditions. You can make the TextBox read-only until the conditions are met. If you need only to display text, consider using a TextBlock or RichTextBlock instead.
 
-Une zone de texte en lecture seule présente le même aspect qu’une zone de texte en lecture/écriture, ce qui peut dérouter l’utilisateur. Un utilisateur peut sélectionner et copier du texte.
+A read-only text box looks the same as a read/write text box, so it might be confusing to a user.
+A user can select and copy text.
 IsEnabled
 
 
-### Activer la saisie multiligne
+### Enable multi-line input
 
-Deux propriétés vous permettent d’indiquer si le contrôle TextBox peut ou non afficher du texte sur plusieurs lignes. En règle générale, vous définissez ces deux propriétés pour configurer une zone de texte multiligne.
-- Pour que la zone de texte autorise et afficher les caractères de saut de ligne ou de retour chariot, définissez la propriété [**AcceptsReturn**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.acceptsreturn.aspx) sur **true**.
-- Pour activer la fonctionnalité de renvoi de texte à la ligne, définissez la propriété [**TextWrapping**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textwrapping.aspx) sur **Wrap**. Le texte est alors automatiquement renvoyé à la ligne lorsqu’il atteint le bord de la zone de texte, indépendamment des caractères séparateurs de ligne.
+There are two properties that you can use to control whether the text box displays text on more than one line. You typically set both properties to make a multi-line text box.
+- To let the text box allow and display the newline or return characters, set the [**AcceptsReturn**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.acceptsreturn.aspx) property to **true**.
+- To enable text wrapping, set the [**TextWrapping**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textwrapping.aspx) property to **Wrap**. This causes the text to wrap when it reaches the edge of the text box, independent of line separator characters.
 
-> **Remarque** &nbsp;&nbsp;Les contrôles TextBox et RichEditBox ne prennent pas en charge la valeur **WrapWholeWords** pour leur propriété TextWrapping. Si vous tentez d’utiliser WrapWholeWords comme valeur pour TextBox.TextWrapping ou pour RichEditBox.TextWrapping, une exception d’argument non valide sera levée.
+> **Note**&nbsp;&nbsp;TextBox and RichEditBox don't support the **WrapWholeWords** value for their TextWrapping properties. If you try to use WrapWholeWords as a value for TextBox.TextWrapping or RichEditBox.TextWrapping an invalid argument exception is thrown.
 
-À mesure que l’utilisateur saisit du texte dans un contrôle TextBox multiligne, la hauteur de ce dernier s’accroît progressivement, sauf si le contrôle est restreint par ses propriétés [Height](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.height.aspx) ou [MaxHeight](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.maxheight.aspx) ou par un conteneur parent. Vous devez vérifier qu’une zone de texte multiligne ne dépasse pas les limites de sa zone visible, et restreindre son extension dans le cas contraire. Nous vous recommandons de configurer systématiquement une zone de texte multiligne sur une hauteur appropriée, et de ne pas autoriser l’augmentation progressive de cette hauteur à mesure que l’utilisateur tape du texte. 
+A multi-line text box will continue to grow vertically as text is entered unless it’s constrained by its [Height](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.height.aspx) or [MaxHeight](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.maxheight.aspx) property, or by a parent container. You should test that a multi-line text box doesn’t grow beyond its visible area, and constrain its growth if it does. We recommend that you always specify an appropriate height for a multi-line text box, and not let it grow in height as the user types.
 
-Le défilement à l’aide d’une roulette de défilement ou d’une interaction tactile est automatiquement activé s’il y a lieu. Toutefois, les barres de défilement verticales ne sont pas visibles par défaut. Vous pouvez afficher les barres de défilement verticales en définissant [ScrollViewer.VerticalScrollBarVisibility](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.verticalscrollbarvisibility.aspx) sur **Auto** sur le contrôle ScrollViewer incorporé, comme indiqué ci-après. 
+Scrolling using a scroll-wheel or touch is automatically enabled when needed. However, the vertical scrollbars are not visible by default. You can show the vertical scrollbars by setting the [ScrollViewer.VerticalScrollBarVisibility](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.verticalscrollbarvisibility.aspx) to **Auto** on the embedded ScrollViewer, as shown here.
 
 ```xaml
-<TextBox AcceptsReturn="True" TextWrapping="Wrap" 
+<TextBox AcceptsReturn="True" TextWrapping="Wrap"
          MaxHeight="172" Width="300" Header="Description"
          ScrollViewer.VerticalScrollBarVisibility="Auto"/>
 ```
@@ -115,22 +126,22 @@ textBox.Header = "Description";
 ScrollViewer.SetVerticalScrollBarVisibility(textBox, ScrollBarVisibility.Auto);
 ```
 
-Voici à quoi ressemble la zone de texte après un ajout de texte.
+Here's what the text box looks like after text is added.
 
-![Zone de texte multiligne](images/text-box-multi-line.png)
+![A multi line text box](images/text-box-multi-line.png)
 
-### Mettre en forme l’affichage du texte
+### Format the text display
 
-Pour aligner le texte figurant dans une zone de texte, utilisez la propriété [TextAlignment](). Pour aligner la zone de texte dans la disposition de la page, utilisez les propriétés [HorizontalAlignment](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.horizontalalignment.aspx) et [VerticalAlignment](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.verticalalignment.aspx).
+Use the [TextAlignment]() property to align text within a text box. To align the text box within the layout of the page, use the [HorizontalAlignment](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.horizontalalignment.aspx) and [VerticalAlignment](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.verticalalignment.aspx) properties.
 
-Bien que le contrôle TextBox prenne uniquement en charge du texte sans mise en forme, vous pouvez personnaliser la façon dont le texte s’affiche dans la zone de texte pour l’adapter à vos besoins. Vous pouvez ainsi modifier l’aspect du texte en définissant les propriétés [Control](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.aspx) standard, comme [FontFamily](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.fontfamily.aspx), [FontSize](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.fontsize.aspx), [FontStyle](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.fontstyle.aspx), [Background](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.background.aspx), [Foreground](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.foreground.aspx) et [CharacterSpacing](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.characterspacing.aspx). Ces propriétés affectent uniquement la façon dont le texte s’affiche localement dans la zone de texte. Par conséquent, si vous deviez copier et coller ce texte dans un contrôle de texte enrichi par exemple, aucune mise en forme ne serait appliquée.
+While the text box supports only unformatted text, you can customize how the text is displayed in the text box to match your branding. You can set standard [Control](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.aspx) properties like [FontFamily](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.fontfamily.aspx), [FontSize](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.fontsize.aspx), [FontStyle](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.fontstyle.aspx), [Background](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.background.aspx), [Foreground](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.foreground.aspx), and [CharacterSpacing](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.characterspacing.aspx) to change the look of the text. These properties affect only how the text box displays the text locally, so if you were to copy and paste the text into a rich text control, for example, no formatting would be applied.
 
-Cet exemple présente un contrôle TextBox en lecture seule dont plusieurs propriétés sont définies pour personnaliser l’apparence du texte.
+This example shows a read-only text box with several properties set to customize the appearance of the text.
 
 ```xaml
-<TextBox Text="Sample Text" IsReadOnly="True" 
+<TextBox Text="Sample Text" IsReadOnly="True"
          FontFamily="Verdana" FontSize="24"
-         FontWeight="Bold" FontStyle="Italic" 
+         FontWeight="Bold" FontStyle="Italic"
          CharacterSpacing="200" Width="300"
          Foreground="Blue" Background="Beige"/>
 ```
@@ -151,39 +162,39 @@ textBox.Foreground = new SolidColorBrush(Windows.UI.Colors.Blue);
 rootGrid.Children.Add(textBox);
 ```
 
-La zone de texte résultante ressemble à ce qui suit.
+The resulting text box looks like this.
 
-![Zone de texte mise en forme](images/text-box-formatted.png)
+![A formatted text box](images/text-box-formatted.png)
 
-### Modifier le menu contextuel
+### Modify the context menu
 
-Par défaut, les commandes figurant dans le menu contextuel de la zone de texte dépendent de l’état de cette dernière. Par exemple, le menu contextuel peut présenter les commandes ci-après lorsque la zone de texte est modifiable.
+By default, the commands shown in the text box context menu depend on the state of the text box. For example, the following commands can be shown when the text box is editable.
 
-Commande | Condition d’affichage
+Command | Shown when...
 ------- | -------------
-Copier | L’utilisateur a sélectionné du texte. 
-Couper | L’utilisateur a sélectionné du texte. 
-Coller | Le Presse-papiers contient du texte. 
-Tout sélectionner | Le contrôle TextBox contient du texte. 
-Annuler | L’utilisateur a modifié du texte. 
+Copy | text is selected.
+Cut | text is selected.
+Paste | the clipboard contains text.
+Select all | the TextBox contains text.
+Undo | text has been changed.
 
-Pour modifier les commandes figurant dans le menu contextuel, gérez l’événement [ContextMenuOpening](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.contextmenuopening.aspx). Pour découvrir un exemple de la procédure à suivre, voir le scénario2 de l’[exemple de menu contextuel](http://go.microsoft.com/fwlink/p/?linkid=234891). Pour plus d’informations sur la conception, voir l’article Recommandations en matière de menus contextuels.
+To modify the commands shown in the context menu, handle the [ContextMenuOpening](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.contextmenuopening.aspx) event. For an example of this, see Scenario 2 of the [ContextMenu sample](http://go.microsoft.com/fwlink/p/?linkid=234891). For design info, see Guidelines for context menus.
 
-### Sélectionner, copier et coller du texte
+### Select, copy, and paste
 
-Vous pouvez obtenir ou définir le texte sélectionné dans un contrôle TextBox à l’aide de la propriété [SelectedText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectedtext.aspx). Pour manipuler la sélection de texte, utilisez les propriétés [SelectionStart](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionstart.aspx) et [SelectionLength](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionlength.aspx), ainsi que les méthodes [Select](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.select.aspx) et [SelectAll](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectall.aspx). Pour exécuter une action spécifique lorsque l’utilisateur sélectionne ou désélectionne du texte, gérez l’événement [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionchanged.aspx). Vous pouvez modifier la couleur de mise en surbrillance du texte sélectionné en définissant la propriété [SelectionHighlightColor](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionhighlightcolor.aspx).
+You can get or set the selected text in a text box using the [SelectedText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectedtext.aspx) property. Use the [SelectionStart](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionstart.aspx) and [SelectionLength](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionlength.aspx) properties, and the [Select](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.select.aspx) and [SelectAll](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectall.aspx) methods, to manipulate the text selection. Handle the [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionchanged.aspx) event to do something when the user selects or de-selects text. You can change the color used to highlight the selected text by setting the [SelectionHighlightColor](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionhighlightcolor.aspx) property.
 
-Le contrôle TextBox prend en charge les opérations de copie et de collage par défaut. Vous pouvez appliquer une gestion personnalisée de l’événement [Paste](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.paste.aspx) aux contrôles de texte modifiables de votre application. Par exemple, vous pouvez supprimer les sauts de ligne d’une adresse multiligne lorsque vous collez cette dernière dans une zone de recherche d’une seule ligne. Vous pouvez également vérifier la longueur du texte collé et avertir l’utilisateur si elle dépasse la longueur maximale pouvant être enregistrée dans une base de données. Pour plus d’informations et d’exemples, voir l’événement [Paste](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.paste.aspx).
+TextBox supports copy and paste by default. You can provide custom handling of the [Paste](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.paste.aspx) event on editable text controls in your app. For example, you might remove the line breaks from a multi-line address when pasting it into a single-line search box. Or, you might check the length of the pasted text and warn the user if it exceeds the maximum length that can be saved to a database. For more info and examples, see the [Paste](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.paste.aspx) event.
 
-Vous trouverez ci-dessous un exemple d’utilisation de ces propriétés et méthodes. Lorsque vous sélectionnez du texte dans la première zone de texte, ce texte s’affiche dans la seconde zone de texte, qui est en lecture seule. Les valeurs des propriétés [SelectionLength](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionlength.aspx) et [SelectionStart](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionstart.aspx) apparaissent sous la forme de deux blocs de texte. Cette opération est effectuée à l’aide de l’événement [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionchanged.aspx).
+Here, we have an example of these properties and methods in use. When you select text in the first text box, the selected text is displayed in the second text box, which is read-only. The values of the [SelectionLength](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionlength.aspx) and [SelectionStart](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionstart.aspx) properties are shown in two text blocks. This is done using the [SelectionChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.selectionchanged.aspx) event.
 
 ```xaml
 <StackPanel>
    <TextBox x:Name="textBox1" Height="75" Width="300" Margin="10"
-         Text="The text that is selected in this TextBox will show up in the read only TextBox below." 
+         Text="The text that is selected in this TextBox will show up in the read only TextBox below."
          TextWrapping="Wrap" AcceptsReturn="True"
          SelectionChanged="TextBox1_SelectionChanged" />
-   <TextBox x:Name="textBox2" Height="75" Width="300" Margin="5" 
+   <TextBox x:Name="textBox2" Height="75" Width="300" Margin="5"
          TextWrapping="Wrap" AcceptsReturn="True" IsReadOnly="True"/>
    <TextBlock x:Name="label1" HorizontalAlignment="Center"/>
    <TextBlock x:Name="label2" HorizontalAlignment="Center"/>
@@ -199,88 +210,88 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 }
 ```
 
-Voici le résultat de ce code:
+Here's the result of this code.
 
-![Texte sélectionné dans une zone de texte](images/text-box-selection.png)
+![Selected text in a text box](images/text-box-selection.png)
 
-## Choisir le clavier adapté à votre contrôle de texte
+## Choose the right keyboard for your text control
 
-Pour faciliter la saisie de données par les utilisateurs au moyen du clavier tactile, ou clavier virtuel, définissez l’étendue des entrées du contrôle de texte de façon qu’elle corresponde au type de données attendu de la part de l’utilisateur.
+To help users to enter data using the touch keyboard, or Soft Input Panel (SIP), you can set the input scope of the text control to match the kind of data the user is expected to enter.
 
-Le clavier tactile permet d’entrer du texte lorsque l’application est exécutée sur un appareil disposant d’un écran tactile. Le clavier tactile est appelé lorsque l’utilisateur appuie sur un champ d’entrée modifiable, tel qu’un contrôle TextBox ou RichEditBox. Vous pouvez nettement faciliter et accélérer la saisie de données par les utilisateurs dans votre application en définissant l’étendue des entrées du contrôle de texte afin qu’elle corresponde au type de données attendu de la part de l’utilisateur. L’étendue des entrées fournit au système une indication sur le type d’entrée de texte attendu par le contrôle, afin que le système puisse fournir une disposition de clavier tactile spécialisée pour le type d’entrée.
+The touch keyboard can be used for text entry when your app runs on a device with a touch screen. The touch keyboard is invoked when the user taps on an editable input field, such as a TextBox or RichEditBox. You can make it much faster and easier for users to enter data in your app by setting the input scope of the text control to match the kind of data you expect the user to enter. The input scope provides a hint to the system about the type of text input expected by the control so the system can provide a specialized touch keyboard layout for the input type.
 
-Par exemple, si une zone de texte est utilisée uniquement pour la saisie d’un code confidentiel à 4 chiffres, définissez la propriété [InputScope](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.inputscope.aspx) sur **Number**. Cela indique au système qu’il doit afficher la disposition du pavé numérique, ce qui facilite la saisie d’un code confidentiel par l’utilisateur.
+For example, if a text box is used only to enter a 4-digit PIN, set the [InputScope](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.inputscope.aspx) property to **Number**. This tells the system to show the number keypad layout, which makes it easier for the user to enter the PIN.
 
-> **Important** &nbsp;&nbsp;L’étendue des entrées n’entraîne l’exécution d’aucune validation des entrées et n’empêche pas l’utilisateur de saisir des données par le biais d’un clavier matériel ou d’un autre dispositif du même ordre. Vous restez responsable de la validation d’une entrée dans votre code, si nécessaire.
+> **Important**&nbsp;&nbsp;The input scope does not cause any input validation to be performed, and does not prevent the user from providing any input through a hardware keyboard or other input device. You are still responsible for validating the input in your code as needed.
 
-Les autres propriétés qui affectent le clavier tactile sont [IsSpellCheckEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.isspellcheckenabled.aspx), [IsTextPredictionEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.istextpredictionenabled.aspx) et [PreventKeyboardDisplayOnProgrammaticFocus](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.preventkeyboarddisplayonprogrammaticfocus.aspx). (La propriété IsSpellCheckEnabled a également une incidence sur le contrôle TextBox lorsqu’un clavier matériel est utilisé.) 
+Other properties that affect the touch keyboard are [IsSpellCheckEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.isspellcheckenabled.aspx), [IsTextPredictionEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.istextpredictionenabled.aspx), and [PreventKeyboardDisplayOnProgrammaticFocus](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.preventkeyboarddisplayonprogrammaticfocus.aspx). (IsSpellCheckEnabled also affects the TextBox when a hardware keyboard is used.)
 
-Pour plus d’informations et d’exemples, voir [Utiliser l’étendue des entrées pour modifier le clavier tactile]() et la documentation relative aux propriétés.
+For more info and examples, see [Use input scope to change the touch keyboard](https://msdn.microsoft.com/library/windows/apps/mt280229) and the property documentation.
 
-## Recommandations
+## Recommendations
 
--   Utilisez un texte d’étiquette ou d’espace réservé si l’objectif de la zone de texte n’est pas clair. Une étiquette reste toujours visible, qu’il y ait ou non une valeur dans la zone de saisie de texte. Le texte d’espace réservé s’affiche initialement dans la zone de saisie de texte, mais disparaît après qu’une valeur a été entrée.
--   Attribuez à la zone de texte une largeur appropriée pour la plage de valeurs qui peuvent être entrées. La longueur des mots varie selon la langue. Par conséquent, tenez compte de la localisation si vous destinez votre application au marché international.
--   Une zone de saisie de texte se compose généralement d’une seule ligne (`TextWrap = "NoWrap"`). Si les utilisateurs doivent entrer ou modifier une longue chaîne de caractères, utilisez une zone de saisie de texte multiligne (`TextWrap = "Wrap"`).
--   En règle générale, une zone de saisie de texte est utilisée pour du texte modifiable. Vous pouvez toutefois utiliser une zone de saisie de texte en lecture seule. Le contenu de la zone pourra être lu, sélectionné et copié, mais pas modifié.
--   Pour réduire l’encombrement de l’écran, vous pouvez choisir d’afficher certaines zones de saisie de texte uniquement lorsque la case de contrôle associée est cochée. Vous pouvez également lier l’état activé d’une zone de saisie de texte à un contrôle de type case à cocher.
--   Déterminez comment doit se comporter une zone de saisie de texte quand l’utilisateur appuie dessus alors qu’elle contient déjà une valeur. Le comportement par défaut prévoit la modification de la valeur plutôt que son remplacement. Le point d’insertion est inséré entre deux mots et aucune sélection de texte n’est faite. Si la valeur d’une zone de saisie de texte a toutes les chances d’être remplacée par l’utilisateur, modifiez le comportement de la zone afin que tout le texte existant soit sélectionné lorsque le contrôle reçoit le focus, et que la sélection soit remplacée par la nouvelle valeur entrée.
+-   Use a label or placeholder text if the purpose of the text box isn't clear. A label is visible whether or not the text input box has a value. Placeholder text is displayed inside the text input box and disappears once a value has been entered.
+-   Give the text box an appropriate width for the range of values that can be entered. Word length varies between languages, so take localization into account if you want your app to be world-ready.
+-   A text input box is typically single-line (`TextWrap = "NoWrap"`). When users need to enter or edit a long string, set the text input box to multi-line (`TextWrap = "Wrap"`).
+-   Generally, a text input box is used for editable text. But you can make a text input box read-only so that its content can be read, selected, and copied, but not edited.
+-   If you need to reduce clutter in a view, consider making a set of text input boxes appear only when a controlling checkbox is checked. You can also bind the enabled state of a text input box to a control such as a checkbox.
+-   Consider how you want a text input box to behave when it contains a value and the user taps it. The default behavior is appropriate for editing the value rather than replacing it; the insertion point is placed between words and nothing is selected. If replacing is the most common use case for a given text input box, you can select all the text in the field whenever the control receives focus, and typing replaces the selection.
 
-**Zones de saisie d’une seule ligne**
+**Single-line input boxes**
 
--   Utilisez plusieurs zones de texte d’une ligne pour la saisie de plusieurs éléments de texte de petite taille. Si les zones de texte sont de nature apparentées, regrouper-les.
+-   Use several single-line text boxes to capture many small pieces of text information. If the text boxes are related in nature, group those together.
 
--   Faites en sorte que la taille des zones de texte d’une ligne soit légèrement supérieure à l’entrée la plus longue prévue. Si cette opération élargit le contrôle de manière excessive, divisez ce dernier en deux contrôles. Par exemple, vous pouvez fractionner une entrée d’adresse unique sous la forme «Ligne d’adresse1» et «Ligne d’adresse2».
--   Définissez un nombre maximal de caractères pouvant être entrés. Si la source de données de stockage n’accepte pas les chaînes d’entrée longues, limitez la longueur des entrées et utilisez une fenêtre contextuelle de validation pour indiquer à l’utilisateur qu’il a atteint la limite.
--   Utilisez des contrôles de saisie de texte d’une ligne pour recueillir de petits éléments de texte.
- 
-    L’exemple suivant montre une zone de texte d’une ligne destinée à saisir une réponse à une question de sécurité. La réponse devant être brève, il convient d’utiliser ici une zone de texte d’une seule ligne.
+-   Make the size of single-line text boxes slightly wider than the longest anticipated input. If doing so makes the control too wide, separate it into two controls. For example, you could split a single address input into "Address line 1" and "Address line 2".
+-   Set a maximum length for characters that can be entered. If the backing data source doesn't allow a long input string, limit the input and use a validation popup to let users know when they reach the limit.
+-   Use single-line text input controls to gather small pieces of text from users.
 
-    ![Saisie de données élémentaire](images/guidelines_and_checklist_for_singleline_text_input_type_text.png)
-    
--   Utilisez un ensemble de contrôles de saisie de texte d’une ligne courts et de taille fixe pour entrer des données ayant un format spécifique.
+    The following example shows a single-line text box to capture an answer to a security question. The answer is expected to be short, and so a single-line text box is appropriate here.
 
-    ![Entrée de données formatées](images/textinput_example_productkey.png)
+    ![Basic data input](images/guidelines_and_checklist_for_singleline_text_input_type_text.png)
 
--   Utilisez un contrôle de saisie de texte d’une ligne sans contraintes pour entrer ou modifier des chaînes, en association avec un bouton de commande qui permette aux utilisateurs de sélectionner les valeurs valides.
+-   Use a set of short, fixed-sized, single-line text input controls to enter data with a specific format.
 
-    ![Saisie de données assistée](images/textinput_example_assisted.png)
+    ![Formatted data input](images/textinput_example_productkey.png)
 
+-   Use a single-line, unconstrained text input control to enter or edit strings, combined with a command button that helps users select valid values.
 
-**Zones de saisie de texte multiligne**
-
--   Quand vous créez une zone de texte enrichi, proposez des boutons de style et implémentez leurs actions.
--   Utilisez une police cohérente avec le style de votre application.
--   Faites en sorte que la hauteur du contrôle de texte soit suffisante pour recevoir des entrées classiques.
--   Pour la saisie de longues chaînes de texte dont le nombre de mots ou de caractères est limité, utilisez une zone de texte brut et ajoutez un compteur en temps réel qui affiche à l’utilisateur le nombre de caractères ou de mots autorisés restants avant d’atteindre la limite. Vous devez créer le compteur vous-même. Placez-le sous la zone de texte en question et mettez-le à jour de façon dynamique à mesure que l’utilisateur entre chaque mot ou caractère.
-
-    ![Texte long](images/guidelines_and_checklist_for_multiline_text_input_text_limits.png)
-
--   Ne laissez pas les contrôles de saisie de texte s’allonger en hauteur lorsque les utilisateurs entrent le texte.
--   N’utilisez pas de zone de texte de plusieurs lignes quand les utilisateurs n’ont besoin que d’une seule ligne.
--   N’utilisez pas de contrôle de texte enrichi si un contrôle de texte brut est approprié.
+    ![Assisted data input](images/textinput_example_assisted.png)
 
 
+**Multi-line text input controls**
 
-## Articles connexes
+-   When you create a rich text box, provide styling buttons and implement their actions.
+-   Use a font that's consistent with the style of your app.
+-   Make the height of the text control tall enough to accommodate typical entries.
+-   When capturing long spans of text with a maximum character or word count, use a plain text box and provide a live-running counter to show the user how many characters or words they have left before they reach the limit. You'll need to create the counter yourself; place it below the text box and dynamically update it as the user enters each character or word.
 
-[Contrôles de texte](text-controls.md)
+    ![A long span of text](images/guidelines_and_checklist_for_multiline_text_input_text_limits.png)
 
-**Pour les concepteurs**
-- [Recommandations en matière de vérification orthographique](spell-checking-and-prediction.md)
-- [Ajout de la fonctionnalité de recherche](https://msdn.microsoft.com/library/windows/apps/hh465231)
-- [Recommandations en matière de saisie de texte](text-controls.md)
-
-**Pour les développeurs (XAML)**
-- [**Classe TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [**Classe PasswordBox Windows.UI.Xaml.Controls**](https://msdn.microsoft.com/library/windows/apps/br227519)
-
-
-**Pour les développeurs (autres)**
-- [Propriété String.Length](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
+-   Don't let your text input controls grow in height while users type.
+-   Don't use a multi-line text box when users only need a single line.
+-   Don't use a rich text control if a plain text control is adequate.
 
 
 
-<!--HONumber=Jun16_HO4-->
+## Related articles
+
+[Text controls](text-controls.md)
+
+**For designers**
+- [Guidelines for spell checking](spell-checking-and-prediction.md)
+- [Adding search](https://msdn.microsoft.com/library/windows/apps/hh465231)
+- [Guidelines for text input](text-controls.md)
+
+**For developers (XAML)**
+- [**TextBox class**](https://msdn.microsoft.com/library/windows/apps/br209683)
+- [**Windows.UI.Xaml.Controls PasswordBox class**](https://msdn.microsoft.com/library/windows/apps/br227519)
+
+
+**For developers (other)**
+- [String.Length property](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
+
+
+
+<!--HONumber=Aug16_HO3-->
 
 

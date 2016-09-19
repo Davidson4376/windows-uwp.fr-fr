@@ -1,40 +1,40 @@
 ---
 author: DelfCo
-description: "Outils et techniques pour le débogage et le test de fonctionnement de votre application avec la Gestion de la durée de vie des processus."
-title: "Outils de test et de débogage pour la PLM"
+description: Tools and techniques for debugging and testing how your app works with Process Lifetime Management.
+title: Testing and debugging tools for Process Lifetime Management (PLM)
 translationtype: Human Translation
 ms.sourcegitcommit: cbf3d2bb1466ca06e397561ad90d95db28e7136d
-ms.openlocfilehash: 0fde4fa22dc6876807e7f7e1c10e7606eee3786d
+ms.openlocfilehash: 1ea7b969ce0b8992306bb8a2d2b569905cc0cc67
 
 ---
 
-# Outils de test et de débogage pour la PLM
+# Testing and debugging tools for Process Lifetime Management (PLM)
 
-L’une des principales différences entre les applications UWP et les applications de bureau traditionnelles est que les applications UWP se trouvent dans un conteneur d’application soumis à la Gestion de la durée de vie des processus (PLM). Les applications UWP peuvent être suspendues, reprises ou arrêtées par le service Runtime Broker sur l’ensemble des plateformes; des outils dédiés peuvent forcer ces transitions lorsque vous testez ou déboguez le code qui les gère.
+One of the key differences between UWP apps and traditional desktop applications is that UWP titles reside in an app container subject to Process Lifecycle Management (PLM). UWP apps can be suspended, resumed, or terminated across all platforms by the Runtime Broker service, and there are dedicated tools for you to use to force those transitions when you are testing or debugging the code that handles them.
 
-## Fonctionnalités de VisualStudio2015
+## Features in Visual Studio 2015
 
-Le débogueur intégré à VisualStudio2015 peut vous aider à résoudre les problèmes potentiels pouvant survenir lors de l’utilisation des fonctionnalités propres à UWP. Vous pouvez forcer votre application à adapter différents états PLM à l’aide de la barre d’outils **Événements de cycle de vie**, qui devient visible lorsque vous exécutez et déboguez votre titre.
+The built-in debugger in Visual Studio 2015 can help you investigate potential issues when using UWP-exclusive features. You can force your application into different PLM states by using the **Lifecycle Events** toolbar, which becomes visible when you run and debug your title.
 
-![Barre d’outils Événements de cycle de vie](images/gs-debug-uwp-apps-001.png)
+![Lifecycle Events Toolbar](images/gs-debug-uwp-apps-001.png)
 
-## L’outil PLMDebug
+## The PLMDebug tool
 
-PLMDebug.exe est un outil de ligne de commande qui vous permet de contrôler l’état PLM d’un package d’application; l’outil est inclus dans le SDKWindows. Après son installation, l’outil se trouve à l’emplacement *C:\Program Files (x86) \Windows Kits\10\Debuggers\x64* par défaut. 
+PLMDebug.exe is a command-line tool that allows you to control the PLM state of an application package, and is shipped as part of the Windows SDK. After it is installed, the tool resides in *C:\Program Files (x86)\Windows Kits\10\Debuggers\x64* by default. 
 
-PLMDebug vous permet également de désactiver les PLM pour un quelconque package d’application installé, ce qui est nécessaire pour certains débogueurs. La désactivation de la Gestion de la durée de vie des processus empêche le service Runtime Broker d’arrêter votre application avant que vous puissiez la déboguer. Pour désactiver la Gestion de la durée de vie des processus, utilisez le commutateur **/enableDebug**, suivi par le *nom complet du package* de votre application UWP (le nom court, le nom de famille ou l’AUMID du package ne fonctionneront pas):
+PLMDebug also allows you to disable PLM for any installed app package, which is necessary for some debuggers. Disabling PLM prevents the Runtime Broker service from terminating your app before you have a chance to debug. To disable PLM, use the **/enableDebug** switch, followed by the *full package name* of your UWP app (the short name, package family name, or AUMID of a package will not work):
 
 ```
 plmdebug /enableDebug [PackageFullName]
 ```
 
-Suite au déploiement de votre application UWP à partir de VisualStudio, le nom complet du package s’affiche dans la fenêtre Sortie. Vous pouvez également récupérer le nom complet du package en exécutant **Get-AppxPackage** dans une console PowerShell.
+After deploying your UWP app from Visual Studio, the full package name is displayed in the output window. Alternatively, you can also retrieve the full package name by running **Get-AppxPackage** in a PowerShell console.
 
-![Exécution de Get-AppxPackage](images/gs-debug-uwp-apps-003.png)
+![Running Get-AppxPackage](images/gs-debug-uwp-apps-003.png)
 
-Vous pouvez éventuellement spécifier un chemin d’accès absolu à un débogueur qui se lance automatiquement lorsque votre package d’application est activé. Si vous souhaitez le faire à l’aide de VisualStudio, vous devez spécifier VSJITDebugger.exe en tant que débogueur. Toutefois, pour utiliser VSJITDebugger.exe, vous devez spécifier le commutateur «-p», ainsi que l’ID du processus (PID) de l’application UWP. Étant donné qu’il est impossible de connaître le PID de votre application UWP au préalable, ce scénario n’est pas réalisable pour l’opération standard.
+Optionally, you can specify an absolute path to a debugger that will automatically launch when your app package is activated. If you wish to do this using Visual Studio, you’ll need to specify VSJITDebugger.exe as the debugger. However, VSJITDebugger.exe requires that you specify the “-p” switch, along with the process ID (PID) of the UWP app. Because it’s not possible to know the PID of your UWP app beforehand, this scenario is not possible out of the box.
 
-Vous pouvez contourner cette limitation en écrivant un script ou un outil qui identifie le processus de votre jeu; l’interpréteur de commandes exécute ensuite VSJITDebugger.exe, en passant le PID de votre application UWP. L’exemple de code C# suivant illustre une approche simple pour y parvenir.
+You can work around this limitation by writing a script or tool that identifies your game’s process, and then the shell runs VSJITDebugger.exe, passing in the PID of your UWP app. The following C# code sample illustrates a straightforward approach to accomplish this.
 
 ```
 using System.Diagnostics;
@@ -69,21 +69,21 @@ namespace VSJITLauncher
 }
 ```
 
-Exemple d’utilisation, conjointement avec PLMDebug:
+Example usage of this in conjunction with PLMDebug:
 
 ```
 plmdebug /enableDebug 279f7062-ce35-40e8-a69f-cc22c08e0bb8_1.0.0.0_x86__c6sq6kwgxxfcg "\"C:\VSJITLauncher.exe\" Game"
 ```
-où `Game` est le nom du processus et `279f7062-ce35-40e8-a69f-cc22c08e0bb8_1.0.0.0_x86__c6sq6kwgxxfcg` est le nom complet du package de l’exemple de package d’application UWP.
+where `Game` is the process name, and `279f7062-ce35-40e8-a69f-cc22c08e0bb8_1.0.0.0_x86__c6sq6kwgxxfcg` is the full package name of the example UWP app package.
 
-Notez que chaque appel à **/enableDebug** doit ensuite être associé à un autre appel PLMDebug avec le commutateur **/disableDebug**. En outre, le chemin d’accès à un débogueur doit être absolu (les chemins d’accès relatifs ne sont pas pris en charge).
+Note that every call to **/enableDebug** must be later coupled to another PLMDebug call with the **/disableDebug** switch. Furthermore, the path to a debugger must be absolute (relative paths are not supported).
 
-## Rubriques connexes
-- [Déploiement et débogage des applications UWP](deploying-and-debugging-uwp-apps.md)
-- [Débogage, tests et analyse des performances](index.md)
+## Related topics
+- [Deploying and debugging UWP apps](deploying-and-debugging-uwp-apps.md)
+- [Debugging, testing, and performance](index.md)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

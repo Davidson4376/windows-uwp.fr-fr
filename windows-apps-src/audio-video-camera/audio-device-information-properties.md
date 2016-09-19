@@ -1,29 +1,33 @@
 ---
 author: drewbatgit
 ms.assetid: 3b75d881-bdcf-402b-a330-23cd29d68e53
-description: "Cet article répertorie les propriétés DeviceInformation liées aux appareils audio"
-title: "Propriétés d’informations des appareils audio"
+description: This article lists the DeviceInformation properties related to audio devices
+title: Audio device information properties
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: b1bcb5b005e82303884c2e096356d5a0f542b1e1
+ms.sourcegitcommit: 0745e96715ba49582ab762d4b25f1b8e681116f5
+ms.openlocfilehash: 08ebb37679d1dd93458a3ffe846d8bd33574635d
 
 ---
 
-# Propriétés d’informations des appareils audio
+# Audio device information properties
 
-Cet article répertorie les propriétés d’informations liées aux appareils audio Sur Windows, chaque périphérique matériel dispose de propriétés [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) fournissant des informations détaillées sur l’appareil. Vous pouvez les consulter lorsque vous avez besoin d’informations spécifiques sur l’appareil ou lorsque vous créez un sélecteur d’appareil. Pour obtenir des informations générales sur l’énumération des appareils sur Windows, voir [**Énumérer les appareils**](../devices-sensors/enumerate-devices.md) et [**Propriétés d’informations d’appareil**](../devices-sensors/device-information-properties.md).
+This article lists the device information properties related to audio devices. On Windows, each hardware device has associated [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) properties providing detailed information about a device that you can use when you need specific information about the device or when you are building a device selector. For general information about enumerating devices on Windows, see [Enumerate devices](../devices-sensors/enumerate-devices.md) and [Device information properties](../devices-sensors/device-information-properties.md).
 
 
-|Nom|Type|Description|
+|Name|Type|Description|
 |------------------------------------------------------------|------------|------------------------------------------------------|
-|**System.Devices.AudioDevice.SpeechProcessingSupported**|Booléen|Indique si l’appareil audio prend en charge le traitement de la parole.|
-|**System.Devices.AudioDevice.RawProcessingSupported**|Booléen|Indique si l’appareil audio prend en charge le traitement des fichiers bruts.|
-|**System.Devices.MicrophoneArray.Geometry**|unsigned char[]|Données géométriques pour un réseau de microphones.|
-## Rubriques connexes
+|**System.Devices.AudioDevice.Microphone.SensitivityInDbfs**|Double|Specifies the microphone sensitivity in decibels relative to full scale (dBFS) units.|
+|**System.Devices.AudioDevice.Microphone.SignalToNoiseRationInDb**|Double|Specifies the microphone signal to noise ratio (SNR) measured in decibel (dB) units.|
+|**System.Devices.AudioDevice.SpeechProcessingSupported**|Boolean|Indicates whether the audio device supports speech processing.|
+|**System.Devices.AudioDevice.RawProcessingSupported**|Boolean|Indicates whether the audio device supports raw processing.|
+|**System.Devices.MicrophoneArray.Geometry**|unsigned char[]|Geometry data for a microphone array.|
 
-* [**Énumérer les appareils**](../devices-sensors/enumerate-devices.md)
-* [**Propriétés d’informations de périphérique**](../devices-sensors/device-information-properties.md)
-* [**Créer un sélecteur d’appareil**](../devices-sensors/build-a-device-selector.md)
+## Related topics
+
+* [Enumerate devices](../devices-sensors/enumerate-devices.md)
+* [Device information properties](../devices-sensors/device-information-properties.md)
+* [Build a device selector](../devices-sensors/build-a-device-selector.md)
+* [Media playback](media-playback.md)
 
 
 
@@ -31,6 +35,6 @@ Cet article répertorie les propriétés d’informations liées aux appareils a
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

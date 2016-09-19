@@ -1,25 +1,25 @@
 ---
 author: mcleanbyron
 ms.assetid: 08b4ae43-69e8-4424-b3c0-a07c93d275c3
-description: "Découvrez comment intercepter les erreurs AdControl dans votre application."
-title: "Gestion des erreurs dans la procédure pas à pas pour JavaScript"
+description: Learn how to catch AdControl errors in your app.
+title: Error handling in JavaScript walkthrough
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: d26a8efeb253c6c793d8edd21d7452bbf15da261
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: e7ce3cd96286454aaa987483ed4df1cefbee5b57
 
 
 ---
 
-# Gestion des erreurs dans la procédure pas à pas pour JavaScript
+# Error Handling in JavaScript Walkthrough
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Cette rubrique montre comment intercepter les erreurs [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) dans votre application.
 
-Ces exemples partent du principe que vous disposez d’une application JavaScript/HTML qui contient un **AdControl**. Pour obtenir des instructions pas à pas qui montrent comment ajouter un **AdControl** à votre application, voir [AdControl en HTML5 JavaScript](adcontrol-in-html-5-and-javascript.md). Pour un exemple de projet complet illustrant l’ajout de bannières publicitaires à une application HTML/JavaScript, voir [Exemples de publicité sur GitHub](http://aka.ms/githubads).
+This topic demonstrates how to catch [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) errors in your app.
 
-1.  Dans le fichier default.html, ajoutez une valeur pour l’événement **onErrorOccurred** où vous définissez les options **data-win-options** dans l’élément **div** du contrôle **AdControl**. Recherchez le code ci-dessous dans le fichier default.html.
+These examples assume that you have a JavaScript/HTML app that contains an **AdControl**. For step-by-step instructions that demonstrate how to add an **AdControl** to your app, see [AdControl in HTML 5 and Javascript](adcontrol-in-html-5-and-javascript.md). For a complete sample project that demonstrates how to add banner ads to a JavaScript/HTML app, see the [advertising samples on GitHub](http://aka.ms/githubads).
+
+1.  In the default.html file, add a value for the **onErrorOccurred** event where you define the **data-win-options** in the **div** for the **AdControl**. Find the following code in the default.html file.
 
     ``` syntax
     <div id="myAd" style="position: absolute; top: 53px; left: 0px; width: 300px; height: 250px; z-index: 1"
@@ -28,13 +28,13 @@ Ces exemples partent du principe que vous disposez d’une application JavaScrip
     </div>
     ```
 
-    Après **adUnitId**, ajoutez la valeur de l’événement **onErrorOccurred**.
+    Following the **adUnitId**, add the value for the **onErrorOccurred** event.
 
     ``` syntax
     onErrorOccurred: errorLogger
     ```
 
-    Voici le code complet de l’élément **div**.
+    Here is the complete code for the **div**.
 
     ``` syntax
     <div id="myAd" style="position: absolute; top: 53px; left: 0px; width: 300px; height: 250px; z-index: 1"
@@ -43,7 +43,7 @@ Ces exemples partent du principe que vous disposez d’une application JavaScrip
     </div>
     ```
 
-2.  Créez un élément **div** qui affiche le texte afin de pouvoir consulter les messages générés. Pour ce faire, ajoutez le code suivant après l’élément **div** de **myAd**.
+2.  Create a **div** that will display text so you can see the messages being generated. To do this, add the following code after the **div** for **myAd**.
 
     ``` syntax
     <div style="position:absolute; width:100%; height:130px; top:300px; left:0px">
@@ -52,7 +52,7 @@ Ces exemples partent du principe que vous disposez d’une application JavaScrip
     </div>
     ```
 
-3.  Créez un **AdControl** pour déclencher un événement d’erreur. Il ne peut exister qu’un ID d’application pour tous les objets **AdControl** d’une application. Par conséquent, la création d’une application supplémentaire avec un autre ID d’application déclenche une erreur au moment de l’exécution. Pour ce faire, après les sections **div** précédentes que vous avez ajoutées, ajoutez le code suivant au corps de la page default.html.
+3.  Create an **AdControl** that will trigger an error event. There can only be one application id for all **AdControl** objects in an app. So creating an additional one with a different application id will trigger an error at runtime. To do this, after the previous **div** sections you have added, add the following code to the body of the default.html page.
 
     ``` syntax
     <!-- since only one applicationId can be used, the following ad control will fire an error event -->
@@ -63,7 +63,7 @@ Ces exemples partent du principe que vous disposez d’une application JavaScrip
     </div>
     ```
 
-4.  Dans le fichier default.js du projet, après la fonction d’initialisation par défaut, vous allez ajouter le gestionnaire d’événements pour **errorLogger**. Faites défiler le fichier jusqu’en bas, puis après le dernier point-virgule, insérez le code suivant.
+4.  In the project’s default.js file, after the default initialization function, you will add the event handler for **errorLogger**. Scroll to the end of the file and after the last semi-colon is where you will put the following code.
 
     ``` syntax
     WinJS.Utilities.markSupportedForProcessing(
@@ -75,18 +75,18 @@ Ces exemples partent du principe que vous disposez d’une application JavaScrip
     });
     ```
 
-5.  Générez et exécutez le fichier.
+5.  Build and run the file.
 
-Vous pouvez voir la publicité d’origine de l’exemple d’application généré précédemment ainsi que le texte figurant sous cette publicité qui décrit l’erreur. Vous ne voyez pas la publicité dotée de l’ID de publicité **liveAd**.
+You will see the original ad from the sample app you built previously and text under that ad describing the error. You will not see the ad with the id of **liveAd**.
 
-## Rubriques connexes
+## Related topics
 
-* [Exemples de publicité sur GitHub](http://aka.ms/githubads)
+* [Advertising samples on GitHub](http://aka.ms/githubads)
 
  
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

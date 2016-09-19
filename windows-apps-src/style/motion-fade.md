@@ -1,53 +1,53 @@
 ---
 author: mijacobs
-Description: "Utilisez les animations en fondu pour faire apparaître ou disparaître des éléments. Les deux animations en fondu les plus courantes sont l’apparition en fondu et la disparition en fondu."
-title: Animations en fondu dans les applications UWP
+Description: Use fade animations to bring items into a view or to take items out of a view. The two common fade animations are fade-in and fade-out.
+title: Fade animations in UWP apps
 ms.assetid: 975E5EE3-EFBE-4159-8D10-3C94143DD07F
 label: Motion--fades
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 028e3462a0bf34af0486864508b1ac049fdf60ed
+ms.openlocfilehash: 9999c353bfc7a72f04ba8ae0052212f9f2166703
 
 ---
 
-# Afficher et masquer les animations en fondu
+# Fade animations
 
-Utilisez les animations en fondu pour faire apparaître ou disparaître des éléments. Les deux animations en fondu les plus courantes sont l’apparition en fondu et la disparition en fondu.
+Use fade animations to bring items into a view or to take items out of a view. The two common fade animations are fade-in and fade-out.
 
-**API importantes**
+**Important APIs**
 
--   [**Classe FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210298)
--   [**Classe FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210302)
-
-
-## Pratiques conseillées et déconseillées
+-   [**FadeInThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210298)
+-   [**FadeOutThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210302)
 
 
--   Lorsque votre application effectue la transition entre des éléments non liés ou riches en texte, utilisez une disparition en fondu suivie d’une apparition en fondu. L’objet sortant disparaît ainsi entièrement avant que l’objet entrant ne soit visible.
--   Faites apparaître en fondu le ou les éléments entrants au-dessus des éléments sortants si leur taille reste constante et si vous voulez que l’utilisateur ait l’impression de voir le même élément. Une fois l’apparition en fondu terminée, vous pouvez simplement supprimer l’élément sortant. Cette option n’est viable que lorsque l’élément sortant est entièrement recouvert par l’élément entrant.
--   N’utilisez pas d’animations en fondu pour ajouter ou supprimer des éléments dans une liste. À la place, utilisez les animations de liste créées à cet effet.
--   Évitez d’utiliser des animations en fondu pour modifier l’intégralité du contenu d’une page. Utilisez plutôt les animations de transition entre les pages créées à cet effet.
--   Une disparition en fondu vous permet de supprimer un élément de façon subtile.
-## Articles connexes
+## Do's and don'ts
 
-**Pour les développeurs (XAML)**
-* [Vue d’ensemble des animations](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [Animation de fondus](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
-* [Démarrage rapide: animation de votre interface utilisateur avec des animations de la bibliothèque](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
-* [**Classe FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210298)
-* [**Classe FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210302)
 
- 
+-   When your app transitions between unrelated or text-heavy elements, use a fade-out followed by a fade-in. This allows the outgoing object to completely disappear before the incoming object is visible.
+-   Fade in the incoming element or elements on top of the outgoing elements if the size of the elements remains constant, and if you want the user to feel that they're looking at the same item. Once the fade-in is complete, the outgoing item can be removed. This is only a viable option when the outgoing item will be completely covered by the incoming item.
+-   Avoid fade animations to add or delete items in a list. Instead, use the list animations created for that purpose.
+-   Avoid fade animations to change the entire contents of a page. Instead, use the page transition animations created for that purpose.
+-   Fade-out is a subtle way to remove an element.
+## Related articles
+
+**For developers (XAML)**
+* [Animations overview](https://msdn.microsoft.com/library/windows/apps/mt187350)
+* [Animating fades](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
+* [Quickstart: Animating your UI using library animations](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [**FadeInThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210298)
+* [**FadeOutThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210302)
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

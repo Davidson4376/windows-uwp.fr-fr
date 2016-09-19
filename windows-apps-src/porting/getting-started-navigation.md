@@ -1,45 +1,45 @@
 ---
 author: mcleblanc
-title: Prise en main &#58; Navigation
-description: Prise en main &#58; Navigation
+title: Getting started with Navigation
+description: Getting started with navigation
 ms.assetid: F4DF5C5F-C886-4483-BBDA-498C4E2C1BAF
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c542faa6365c8558988162bee12f266d67474461
+ms.openlocfilehash: daf56299b3a5e81bb756bc9fcb8112da044b00f3
 
 ---
 
-# Prise en main &#58; Navigation
+# Getting started: Navigation
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-## Ajout de la navigation
+## Adding navigation
 
-iOS fournit la classe **UINavigationController** pour faciliter la navigation : vous pouvez pousser et faire apparaître des affichages pour créer une hiérarchie de **UIViewControllers** qui définissent votre application.
+iOS provides the **UINavigationController** class to help with in-app navigation: you can push and pop views to create the hierarchy of **UIViewControllers** that define your app.
 
-En revanche, une application Windows 10 contenant plusieurs affichages présente une approche de la navigation plus proche de celle d’un site web. Vous pouvez imaginer vos utilisateurs passant de page en page en cliquant sur des contrôles tandis qu’ils explorent l’application. Pour plus d’informations, voir [Informations de base relatives à la conception de la navigation](https://msdn.microsoft.com/library/windows/apps/dn958438).
+In contrast, a Windows 10 app containing multiple views takes more of a web-site approach to navigation. You can imagine your users hopping from page to page as they click on controls to work their way through the app. For more info, see [Navigation design basics](https://msdn.microsoft.com/library/windows/apps/dn958438).
 
-Une des manières de gérer la navigation dans une application Windows 10 consiste à utiliser la classe [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682). La procédure pas à pas suivante vous montre comment tester et mettre en pratique cette opération.
+One of the ways to manage this navigation in a Windows 10 app is to use the [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) class. The following walkthrough shows you how to try this out.
 
-Sans quitter la solution commencée précédemment, ouvrez le fichier **MainPage.xaml**, puis ajoutez un bouton dans l’affichage **Conception**. Remplacez la valeur « Button » de la propriété **Content** du bouton par « Go To Page ». Créez ensuite un gestionnaire pour l’événement **Click** du bouton, comme illustré dans la figure ci-dessous. Si vous ne vous rappelez pas comment procéder, consultez la procédure pas à pas décrite dans la section précédente (conseil : double-cliquez sur le bouton dans le mode **Création**).
+Continuing with the solution you started earlier, open the **MainPage.xaml** file, and add a button in the **Design** view. Change the button's **Content** property from "Button" to "Go To Page". Then, create a handler for the button's **Click** event, as shown in the following figure. If you don't remember how to do this, review the walkthrough in the previous section (Hint: double-click the button in the **Design** view).
 
-![ajout d’un bouton et de son événement click dans visual studio](images/ios-to-uwp/vs-go-to-page.png)
+![adding a button and its click event in visual studio](images/ios-to-uwp/vs-go-to-page.png)
 
-Ajoutons une nouvelle page. Dans l’affichage **Solution**, appuyez sur le menu **Projet**, puis sur **Ajouter un nouvel élément**. Appuyez sur **Page vierge** comme le montre la figure ci-dessous, puis appuyez sur **Ajouter**.
+Let's add a new page. In the **Solution** view, tap the **Project** menu, and tap **Add New Item**. Tap **Blank Page** as shown in the following figure, and then tap **Add**.
 
-![ajout d’une nouvelle page dans visual studio](images/ios-to-uwp/vs-add-new-page.png)
+![adding a new page in visual studio](images/ios-to-uwp/vs-add-new-page.png)
 
-Ajoutons ensuite un bouton au fichier BlankPage.xaml. Utilisons le contrôle AppBarButton et attribuons-lui une image de flèche Précédent : dans la vue **XAML**, ajoutez ` <AppBarButton Icon="Back"/>` entre les éléments `<Grid> </Grid>`.
+Next, add a button to the BlankPage.xaml file. Let's use the AppBarButton control, and let's give it a back arrow image: in the **XAML** view, add ` <AppBarButton Icon="Back"/>` between the `<Grid> </Grid>` elements.
 
-À présent, ajoutons un gestionnaire d’événements au bouton : double-cliquez sur le contrôle en mode **Création**. Microsoft Visual Studio ajoute alors le texte « AppBarButton_Click » à la zone **Click**, comme le montre la figure suivante, avant d’ajouter et d’afficher le gestionnaire d’événements correspondant dans le fichier BlankPage.xaml.cs.
+Now, let's add an event handler to the button: double-click the control in the **Design** view and Microsoft Visual Studio adds the text "AppBarButton\_Click" to the **Click** box, as shown in the following figure, and then adds and displays the corresponding event handler in the BlankPage.xaml.cs file.
 
-![ajout d’un bouton précédent et de son événement click dans visual studio](images/ios-to-uwp/vs-add-back-button.png)
+![adding a back button and its click event in visual studio](images/ios-to-uwp/vs-add-back-button.png)
 
-De retour dans la vue **XAML** du fichier BlankPage.xaml, le code XAML (Extensible Application Markup Language) de l’élément `<AppBarButton>` doit maintenant ressembler à ceci :
+If you return to the BlankPage.xaml file's **XAML** view, the `<AppBarButton>` element's Extensible Application Markup Language (XAML) code should now look like this:
 
 ` <AppBarButton Icon="Back" Click="AppBarButton_Click"/>`
 
-Revenez au fichier BlankPage.xaml.cs et ajoutez ce code pour accéder à la page précédente dès que l’utilisateur appuie sur le bouton.
+Return to the BlankPage.xaml.cs file, and add this code to go to the previous page after the user taps the button.
 
 ```csharp
 private void AppBarButton_Click(object sender, RoutedEventArgs e)
@@ -49,7 +49,7 @@ private void AppBarButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Pour finir, ouvrez le fichier MainPage.xaml.cs et ajoutez ce code. Le fichier BlankPage s’ouvre après que l’utilisateur a appuyé sur le bouton.
+Finally, open the MainPage.xaml.cs file and add this code. It opens BlankPage after the user taps the button.
 
 ```csharp
 private void Button_Click(object sender, RoutedEventArgs e)
@@ -59,11 +59,11 @@ private void Button_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Exécutez le programme à présent. Appuyez sur le bouton «Go To Page» (Atteindre la page) pour accéder à l’autre page, puis appuyez sur le bouton doté de la flèche Précédent pour revenir à la page précédente.
+Now, run the program. Tap the "Go To Page" button to go to the other page, and then tap the back-arrow button to return to the previous page.
 
-La navigation entre les pages est gérée par la classe [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682). Tout comme la classe **UINavigationController** dans iOS utilise les méthodes **pushViewController** et **popViewController**, la classe **Frame** pour les applications du Windows Store fournit les méthodes [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) et [**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568). La classe **Frame** possède également une méthode appelée [**GoForward**](https://msdn.microsoft.com/library/windows/apps/br242693), qui comblera vos attentes.
+Page navigation is managed by the [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) class. As the **UINavigationController** class in iOS uses **pushViewController** and **popViewController** methods, the **Frame** class for Windows Store apps provides [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) and [**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568) methods. The **Frame** class also has a method called [**GoForward**](https://msdn.microsoft.com/library/windows/apps/br242693), which does what you might expect.
 
-Cette procédure pas à pas crée une nouvelle instance de BlankPage chaque fois que vous y accédez (l’instance précédente sera automatiquement libérée, ou *publiée*). Si vous ne souhaitez pas qu’une nouvelle instance soit créée à chaque fois, ajoutez le code suivant au constructeur de la classe BlankPage dans le fichier BlankPage.xaml.cs. Le comportement [**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506) est ainsi activé.
+This walkthrough creates a new instance of BlankPage each time you navigate to it. (The previous instance will be freed, or *released*, automatically). If you don't want a new instance to be created each time, add the following code to the BlankPage class's constructor in the BlankPage.xaml.cs file. This will enable the [**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506) behavior.
 
 ```csharp
 public BlankPage()
@@ -74,19 +74,19 @@ public BlankPage()
 }
 ```
 
-Vous pouvez également vous procurer ou définir la propriété [**CacheSize**](https://msdn.microsoft.com/library/windows/apps/br242683) de la classe **Frame** pour gérer le nombre de pages de l’historique de navigation qu’il est possible de mettre en cache.
+You can also get or set the **Frame** class's [**CacheSize**](https://msdn.microsoft.com/library/windows/apps/br242683) property to manage how many pages in the navigation history can be cached.
 
-Pour plus d’informations sur la navigation, voir [Navigation](https://msdn.microsoft.com/library/windows/apps/mt187344) et [Exemple d’animations de personnages XAML](http://go.microsoft.com/fwlink/p/?LinkID=242401).
+For more info about navigation, see [Navigation](https://msdn.microsoft.com/library/windows/apps/mt187344) and [XAML personality animations sample](http://go.microsoft.com/fwlink/p/?LinkID=242401).
 
-**Remarque** Pour plus d’informations sur la navigation pour les applications du Windows Store en JavaScript et HTML, voir [Démarrage rapide : utilisation de la navigation sur une seule page](https://msdn.microsoft.com/library/windows/apps/hh452768).
+**Note**  For info about navigation for Windows Store apps using JavaScript and HTML, see [Quickstart: Using single-page navigation](https://msdn.microsoft.com/library/windows/apps/hh452768).
  
-### Étape suivante
+### Next step
 
-[Prise en main : Animation](getting-started-animation.md)
-
-
+[Getting started: Animation](getting-started-animation.md)
 
 
-<!--HONumber=Jun16_HO4-->
+
+
+<!--HONumber=Aug16_HO3-->
 
 

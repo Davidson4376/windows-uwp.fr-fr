@@ -1,93 +1,93 @@
 ---
 author: jnHs
-Description: "Vous pouvez indiquer si et comment votre application peut être proposée pour les achats en volume par le biais du Windows Store pour Entreprises dans la section Clés de produit réservées aux entreprises de la page Tarification et disponibilité relative à la soumission d’une application."
-title: Options de gestion des licences organisationnelles
+Description: You can indicate whether and how your app can be offered for volume purchases through the Windows Store for Business in the Organizational licensing section of the Pricing and availability page of an app submission.
+title: Organizational licensing options
 ms.assetid: 1EB139B0-67E7-4F66-AAEF-491B1E52E96F
 translationtype: Human Translation
-ms.sourcegitcommit: 13603b66bd6168073b855bbe37ea92763e14a5a0
-ms.openlocfilehash: e4adbc66b4b4a88ca3787737e9bbddf0d937b604
+ms.sourcegitcommit: 4a297b7a2a2383a825a848ed6939f9743733253f
+ms.openlocfilehash: f3c1ee23e53e3c31a577eb3be03e3fc3055f1ec2
 
 ---
 
-# Options de gestion des licences organisationnelles
+# Organizational licensing options
 
 
-Vous pouvez indiquer si et comment votre application peut être proposée pour les achats en volume par le biais du Windows Store pour Entreprises dans la section **Clés de produit réservées aux entreprises** de la page [Tarification et disponibilité](set-app-pricing-and-availability.md#organizational-licensing) relative à la soumission d'une application.
+You can indicate whether and how your app can be offered for volume purchases through the Windows Store for Business in the **Organizational licensing** section of the [Pricing and availability](set-app-pricing-and-availability.md#organizational-licensing) page of an app submission.
 
-Ces paramètres vous permettent d'autoriser que votre application soit disponible pour les organisations qui acquièrent et déploient plusieurs licences pour leurs utilisateurs, ce qui offre une opportunité d'élargir votre couverture aux entreprises qui utilisent Windows 10 sur différents types d'appareils tels que PC, tablettes et téléphones. Vous devrez également autoriser la gestion des licences organisationnelles pour les [applications métier](distribute-lob-apps-to-enterprises.md) que vous publiez directement à l’attention des entreprises.
+Through these settings, you can opt to allow your app to be made available to organizations who acquire and deploy multiple licenses for their users, providing an opportunity to increase your reach to Windows 10 organizations across device types, including PCs, tablets and phones. You will also need to allow organizational licensing for [line-of-business (LOB) apps](distribute-lob-apps-to-enterprises.md) that you publish directly to enterprises.
 
-> **Remarque** Les sélections pour chacune de vos applications sont configurées indépendamment les unes des autres. Vous pouvez modifier vos préférences concernant une application à tout moment en créant une nouvelle soumission. Vos modifications prennent effet dès la fin du [processus de certification](the-app-certification-process.md) de la soumission.
+> **Note**  Selections for each of your apps are configured independently from each other. You may change your preferences for an app at any time by creating a new submission, and your changes will take effect after the submission completes the [certification process](the-app-certification-process.md).
 
-## Autorisation de l'offre de votre application aux organisations
+## Allowing your app to be offered to organizations
 
-Par défaut, la case à cocher **Proposer mon application aux organisations via le service de gestion de licences en volume (en ligne) du Store** est activée. Cela signifie que vous souhaitez que votre application puisse être incluse dans les catalogues d’applications que nous mettons à la disposition des organisations pour l’acquisition en volume, avec des licences d’application gérées par le biais du système de gestion de licences en ligne du Windows Store.
+By default, the box labeled **Make my app available to organizations with Store-managed (online) licensing and distribution** is checked. This means that you wish your app to be available for inclusion in catalogs of apps that will be made available to organizations for volume acquisition, with app licenses managed through the Store's online licensing system.
 
-> **Remarque** Cela ne garantit pas que votre application sera mise à la disposition de toutes les organisations.
+> **Note**  This does not guarantee that your app will be made available to all organizations.
 
-Si vous ne souhaitez pas nous autoriser à proposer votre application à l’acquisition en volume aux organisations, désactivez cette case à cocher. Notez que cette modification prend effet uniquement après l’achèvement du processus de certification. Si des organisations ont précédemment acquis des licences pour votre application, celles-ci restent valides, et les personnes disposant déjà de l’application peuvent continuer à l’utiliser.
+If you prefer not to allow us to offer your app to organizations for volume acquisition, uncheck this box. Note that this change will only take place after the app completes the certification process. If any organizations had previously acquired licenses to your app, those licenses will still be valid, and the people who have the app already can continue to use it.
 
-> **Conseil** Pour publier des applications métier exclusivement à l’attention d’une organisation spécifique, vous pouvez configurer une association d’entreprise et autoriser l’organisation à ajouter les applications directement à son magasin privé. Pour plus d’informations, voir [Distribuer des applications métier aux entreprises](distribute-lob-apps-to-enterprises.md).
+> **Tip**  To publish line-of-business (LOB) apps exclusively to a specific organization, you can set up an enterprise association and allow the organization to add the apps directly their private store. For more info, see [Distribute LOB apps to enterprises](distribute-lob-apps-to-enterprises.md).
 
-## Autorisation de l’achat de licences en mode hors connexion
+## Allowing disconnected (offline) licensing
 
 
-De nombreuses organisations ont besoin d’applications dont la licence peut être achetée hors connexion. Par exemple, certaines organisations doivent déployer des applications sur des appareils qui se connectent rarement ou jamais à Internet. Si vous souhaitez autoriser que votre application soit disponible pour ces clients, activez la case à cocher **Permettre aux entreprises d’acheter des licences en mode hors connexion**.
+Many organizations need apps enabled for offline licensing. For example, some organizations need to deploy apps to devices which rarely or never connect to the internet. If you want to allow your app to be made available to these customers, check the box labeled **Allow organization-managed (offline) licensing and distribution for organizations**.
 
-> **Remarque** Cette case à cocher est désactivée par défaut. Vous devez l’activer pour nous permettre de rendre votre application disponible à des organisations vérifiées qui l’installent via une acquisition de licence hors connexion. Pour pouvoir installer des applications payantes pour leurs utilisateurs finaux de cette manière, les organisations doivent se soumettre à un processus de validation supplémentaire.
+> **Note**  This box is unchecked by default; you must check the box to allow us to make your app available to verified organizations who will install it using organization-managed (offline) licensing. Organizations must go through additional validation in order to install paid apps to their end users in this way.
 
-L’achat de licences en mode hors connexion permet aux organisations d’acquérir votre application en volume, puis de l’installer sans que chaque appareil doive contacter le système de gestion de licences du Windows Store. L'organisation peut télécharger le package de votre application en même temps qu'une licence lui permettant de l'installer sur des appareils (via ses propres outils de gestion ou en préchargeant l'application sur des images du système d'exploitation) sans informer le Store quand une licence particulière a été utilisée. L’activation de ce scénario accroît sensiblement la flexibilité de déploiement et peut augmenter considérablement l’attrait de votre application auprès de ces clients.
+Offline licensing allows organizations to acquire your app on a volume basis, and then install the app without requiring each device to contact the Store's licensing system. The organization is able to download your app's package along with a license which lets them install it to devices (via their own management tools or by preloading apps on OS images) without notifying the Store when a particular license has been used. Enabling this scenario greatly increases deployment flexibility, and it may substantially increase the attractiveness of your app with these customers.
 
-> **Important** La gestion de licences en mode hors connexion n’est pas prise en charge pour les packages .xap.  
+> **Important** Offline licensing is not supported for .xap packages.  
 
  
-## Support de l’application payante
+## Paid app support
 
-Sur certains marchés, les comptes de développeur sont actuellement en mesure de proposer des applications payantes pour l’acquisition de volume via le Windows Store pour Entreprises. 
+Currently, developer accounts in certain markets are able to offer paid apps for volume acquisition through the Windows Store for Business. 
 
-> **Remarque** Sur certains marchés, le prix affiché pour une application dans le Windows Store pour Entreprises peut être différent de celui affiché pour les clients au détail dans le Windows Store, pour le même niveau de prix. Le paiement des revenus des achats d’entreprise fonctionne de la même façon que les achats grand public de votre application. Pour plus d’informations, voir [Rémunération](getting-paid-apps.md) et [Contrat du développeur de l’application](https://msdn.microsoft.com/library/windows/apps/hh694058).
+> **Note** In some markets, the price shown for an app in the Windows Store for Business may be different than the price shown to retail customers in the Windows Store for the same price tier. Payout of proceeds from organizational purchases works just the same as it does for consumer purchases of your app. For more info, see [Getting paid](getting-paid-apps.md) and the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058).
 
-Si votre pays ou votre région n’est pas répertorié ci-dessous, vos applications payantes ne seront pour le moment pas proposées dans le Windows Store pour Entreprises. Si tel est le cas, les choix de licences organisationnelles que vous faites pour vos applications payantes pourront être appliquées ultérieurement, au fur et à mesure que le Windows Store pour Entreprises prendra en charge les soumissions d’applications payantes pour de nouveaux marchés de compte de développeur.
+If your country or region is not listed below, your paid apps currently will not be offered in the Windows Store for Business. If so, the organizational licensing selections you make for your paid apps may be applied at a later time, as the Windows Store for Business continues to add support for paid app submissions from additional developer account markets.
 
-À ce stade, les développeurs des pays et régions suivants peuvent distribuer des applications payantes aux clients professionnels via le Windows Store pour Entreprises:
+At this time, developers in the following countries and regions can distribute paid apps to organizational customers via the Windows Store for Business:
 
-- Autriche
-- Belgique
-- Bulgarie
+- Austria
+- Belgium
+- Bulgaria
 - Canada
-- Croatie
-- Chypre
-- République tchèque
-- Danemark
-- Estonie
-- Finlande
+- Croatia
+- Cyprus
+- Czech Republic
+- Denmark
+- Estonia
+- Finland
 - France
-- Allemagne
-- Grèce
-- Hongrie
-- Irlande
-- Île de Man
-- Italie
-- Lettonie
+- Germany
+- Greece
+- Hungary
+- Ireland
+- Isle of Man
+- Italy
+- Latvia
 - Liechtenstein
-- Lituanie
+- Lithuania
 - Luxembourg
-- Malte
+- Malta
 - Monaco
-- Pays-Bas
-- Norvège
-- Pologne
+- Netherlands
+- Norway
+- Poland
 - Portugal
-- Roumanie
-- Slovaquie
-- Slovénie
-- Espagne
-- Suède
-- Suisse
-- Royaume-Uni
-- France
+- Romania
+- Slovakia
+- Slovenia
+- Spain
+- Sweden
+- Switzerland
+- United Kingdom
+- United States
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Sep16_HO3-->
 
 

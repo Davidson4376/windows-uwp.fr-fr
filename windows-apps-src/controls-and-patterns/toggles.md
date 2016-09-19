@@ -1,71 +1,81 @@
 ---
 author: Jwmsft
-Description: "Le bouton bascule représente un commutateur physique qui permet à l’utilisateur d’activer ou de désactiver des options."
-title: "Recommandations en matière de boutons bascule"
+Description: The toggle switch represents a physical switch that allows users to turn things on or off.
+title: Guidelines for toggle switch controls
 ms.assetid: 753CFEA4-80D3-474C-B4A9-555F872A3DEF
 label: Toggle switches
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: e90760c6894ee5d32ba1063993a703023d23c152
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: a4fe19dcd6f555273e74236192c5c61e8c6579ab
 
 ---
-# Boutons bascule
+# Toggle switches
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-Le bouton bascule représente un commutateur physique qui permet à l’utilisateur d’activer ou de désactiver des options. Utilisez des contrôles **ToggleSwitch** pour présenter aux utilisateurs exactement deux options qui s’excluent mutuellement (comme activé/désactivé), de sorte que la sélection d’une option se traduise par une action immédiate.
 
-<span class="sidebar_heading" style="font-weight: bold;">API importantes</span>
+The toggle switch represents a physical switch that allows users to turn things on or off. Use **ToggleSwitch** controls to present users with exactly two mutually exclusive options (like on/off), where choosing an option results in an immediate action.
 
--   [**Classe ToggleSwitch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.aspx)
--   [**Propriété IsOn**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.ison.aspx)
--   [**Événement Toggled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.toggled.aspx)
+<div class="important-apis" >
+<b>Important APIs</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.aspx"><strong>ToggleSwitch class</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.ison.aspx"><strong>IsOn property</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.toggled.aspx"><strong>Toggled event</strong></a></li>
+</ul>
 
-## Est-ce le contrôle approprié ?
+</div>
+</div>
 
-Utilisez un bouton bascule pour les opérations binaires qui prennent effet dès que l’utilisateur change l’état du bouton. Par exemple, vous pouvez utiliser un bouton bascule pour activer ou désactiver des services ou des composants matériels, comme le WiFi :
 
-![Bouton bascule WiFi, activé et désactivé](images/toggleswitches01.png)
 
-Si un commutateur physique est adapté à l’action, un bouton bascule est probablement le meilleur contrôle à utiliser.
 
-Après que l’utilisateur active ou désactive le commutateur, il est préférable que l’action correspondante soit effectuée immédiatement.
+## Is this the right control?
 
-### Choix entre le bouton bascule et la case à cocher
+Use a toggle switch for binary operations that take effect right after the user flips the toggle switch. For example, use a toggle switch to turn services or hardware components on or off, such as WiFi:
 
-Le bouton bascule et la case à cocher peuvent tous deux convenir à certaines actions. Pour déterminer le contrôle le mieux approprié, suivez ces conseils :
+![WiFi toggle switch, on and off](images/toggleswitches01.png)
 
--   Utilisez un bouton bascule pour les paramètres binaires impliquant des modifications qui deviennent immédiatement effectives une fois que l’utilisateur les a apportées.
+If a physical switch would work for the action, a toggle switch is probably the best control to use.
 
-    ![Bouton bascule ou case à cocher](images/toggleswitches02.png)
+After the user toggles the switch on or off, we recommend that the corresponding action is immediately performed.
 
-    Dans l’exemple précédent, il est évident dans le cas du bouton bascule que la fonctionnalité sans fil est activée. Mais pour la case à cocher, l’utilisateur doit se demander si la fonctionnalité sans fil est en marche ou s’il doit activer la case à cocher pour la mettre en marche.
+### Choosing between toggle switch and check box
 
--   Utilisez une case à cocher lorsque l’utilisateur doit réaliser des étapes supplémentaires afin de rendre effectives les modifications. À titre d’exemple, si l’utilisateur doit cliquer sur un bouton « Envoyer » ou « Suivant » pour appliquer les modifications, utilisez une case à cocher.
+For some actions, either a toggle switch or a check box might work. To decide which control would work better, follow these tips:
 
-    ![Case à cocher et bouton Envoyer](images/submitcheckbox.png)
+-   Use a toggle switch for binary settings when changes become effective immediately after the user changes them.
 
--   Utilisez des cases à cocher ou une [zone de liste](lists.md) lorsque l’utilisateur peut sélectionner plusieurs éléments:
+    ![Toggle switch versus check box](images/toggleswitches02.png)
 
-    ![Case à cocher avec plusieurs éléments sélectionnés](images/guidelines_and_checklist_for_toggle_switches_checkbox_multi_select.png)
+    In the above example, it's clear with the toggle switch that the wireless is set to "On." But with the checkbox, the user needs to think about whether the wireless is on now or whether they need to check the box to turn wireless on.
 
-## Exemples
+-   Use a checkbox when the user has to perform extra steps for changes to be effective. For example, if the user must click a "submit" or "next" button to apply changes, use a check box.
 
-Boutons bascule dans les paramètres généraux de l’application Actualités.
+    ![A checkbox and a Submit button](images/submitcheckbox.png)
 
-![Boutons bascule dans les paramètres généraux de l’application Actualités](images/control-examples/toggle-switch-news.png)
+-   Use check boxes or a [list box](lists.md) when the user can select multiple items:
 
-Boutons bascule dans les paramètres du menu Démarrer dans Windows.
+    ![A checkbox that has multiple items selected](images/guidelines_and_checklist_for_toggle_switches_checkbox_multi_select.png)
 
-![Boutons bascule dans les paramètres du menu Démarrer dans Windows](images/control-examples/toggle-switch-start-settings.png)
+## Examples
 
-## Créer un bouton bascule
+Toggle switches in the general settings of the News app.
 
-Voici comment créer un bouton bascule simple. Ce code XAML crée le bouton bascule WiFi présenté précédemment.
+![Toggle switches in the general settings of the News app](images/control-examples/toggle-switch-news.png)
+
+Toggle switches in the start menu settings in Windows.
+
+![Toggle switches in the start menu settings in Windows](images/control-examples/toggle-switch-start-settings.png)
+
+## Create a toggle switch
+
+Here's how to create a simple toggle switch. This XAML creates the WiFi toggle switch shown previously.
 
 ```xaml
 <ToggleSwitch x:Name="wiFiToggle" Header="Wifi"/>
 ```
-Voici comment créer le même bouton bascule à l’aide de code.
+Here's how to create the same toggle switch in code.
 
 ```csharp
 ToggleSwitch wiFiToggle = new ToggleSwitch();
@@ -77,7 +87,7 @@ stackPanel1.Children.Add(wiFiToggle);
 
 ### IsOn
 
-Le commutateur peut être activé ou désactivé. Utilisez la propriété [**IsOn**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.ison.aspx) pour déterminer l’état du commutateur. Lorsque le commutateur est utilisé pour contrôler l’état d’une autre propriété binaire, vous pouvez utiliser une liaison, comme illustré ici.
+The switch can be either on or off. Use the [**IsOn**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.ison.aspx) property to determine the state of the switch. When the switch is used to control the state of another binary property, you can use a binding as shown here.
 
 ```
 <StackPanel Orientation="Horizontal">
@@ -88,16 +98,16 @@ Le commutateur peut être activé ou désactivé. Utilisez la propriété [**IsO
 
 ### Toggled
 
-Dans les autres cas, vous pouvez gérer l’événement [**Toggled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.toggled.aspx) afin de répondre aux modifications de l’état.
+In other cases, you can handle the [**Toggled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.toggled.aspx) event to respond to changes in the state.
 
-Cet exemple indique comment ajouter un gestionnaire d’événements Toggled en XAML et à l’aide de code. L’événement Toggled est géré de façon à activer ou désactiver un anneau de progression et à en modifier la visibilité.
+This example shows how to add a Toggled event handler in XAML and in code. The Toggled event is handled to turn a progress ring on or off, and change its visibility.
 
 ```xaml
 <ToggleSwitch x:Name="toggleSwitch1" IsOn="True" 
               Toggled="ToggleSwitch_Toggled"/>
 ```
 
-Voici comment créer le même bouton bascule à l’aide de code.
+Here's how to create the same toggle switch in code.
 
 ```csharp
 // Create a new toggle switch and add a Toggled event handler.
@@ -108,7 +118,7 @@ toggleSwitch1.Toggled += ToggleSwitch_Toggled;
 stackPanel1.Children.Add(toggleSwitch1);
 ```
 
-Voici le gestionnaire de l’événement Toggled.
+Here's the handler for the Toggled event.
 
 ```csharp
 private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
@@ -130,11 +140,11 @@ private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
 }
 ```
 
-### Étiquettes On/Off
+### On/Off labels
 
-Par défaut, le bouton bascule inclut des étiquettes On et Off littérales, qui sont localisées automatiquement. Vous pouvez remplacer ces étiquettes en définissant les propriétés [**OnContent**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.oncontent.aspx) et [**OffContent**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.offcontent.aspx).
+By default, the toggle switch includes literal On and Off labels, which are localized automatically. You can replace these labels by setting the [**OnContent**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.oncontent.aspx), and [**OffContent**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.offcontent.aspx) properties.
 
-Cet exemple remplace les étiquettes On/Off par des étiquettes Show/Hide.  
+This example replaces the On/Off labels with Show/Hide labels.  
 
 ```xaml
 <ToggleSwitch x:Name="imageToggle" Header="Show images"
@@ -142,26 +152,26 @@ Cet exemple remplace les étiquettes On/Off par des étiquettes Show/Hide.
               Toggled="ToggleSwitch_Toggled"/>
 ```
 
-Vous pouvez également utiliser un contenu plus complexe en définissant les propriétés [**OnContentTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.oncontenttemplate.aspx) et [**OffContentTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.offcontenttemplate.aspx).
+You can also use more complex content by setting the [**OnContentTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.oncontenttemplate.aspx) and [**OffContentTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.offcontenttemplate.aspx) properties.
 
-## Recommandations
+## Recommendations
 
--   Remplacez les étiquettes « Activé » et « Désactivé » quand il en existe de plus spécifiques pour le paramètre. S’il existe des étiquettes courtes (de 3 ou 4caractères) qui représentent des choix binaires plus pertinents pour un paramètre donné, utilisez-les. Par exemple, vous pouvez utiliser «Show/Hide» si le paramètre offre la possibilité d’afficher des images. L’utilisation d’étiquettes plus précises peut contribuer à faciliter la localisation de l’interface utilisateur.
--   Évitez de remplacer les étiquettes On et Off, sauf si vous y êtes tenu; utilisez les étiquettes par défaut, à moins que la situation n’appelle des étiquettes personnalisées.
--   Les étiquettes ne doivent pas contenir plus de 4caractères.
+-   Replace the On and Off labels when there are more specific labels for the setting. If there are short (3-4 characters) labels that represent binary opposites that are more appropriate for a particular setting, use those. For example, you could use "Show/Hide" if the setting is "Show images." Using more specific labels can help when localizing the UI.
+-   Avoid replacing the On and Off labels unless you must; stick with the default labels unless the situation calls for custom ones.
+-   Labels should be no more than 4 characters long.
 
-## Articles connexes
+## Related articles
 
 [**ToggleSwitch**](https://msdn.microsoft.com/library/windows/apps/hh701411)
-- [Cases d’option](radio-button.md)
-- [Boutons bascule](toggles.md)
-- [Cases à cocher](checkbox.md)
+- [Radio buttons](radio-button.md)
+- [Toggle switches](toggles.md)
+- [Check boxes](checkbox.md)
 
-**Pour les développeurs (XAML)**
-- [**Classe ToggleSwitch**](https://msdn.microsoft.com/library/windows/apps/br209712)
+**For developers (XAML)**
+- [**ToggleSwitch class**](https://msdn.microsoft.com/library/windows/apps/br209712)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

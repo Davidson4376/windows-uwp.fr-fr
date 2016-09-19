@@ -1,104 +1,104 @@
 ---
 author: jnHs
-Description: "Pour afficher les données de performances pour les unités publicitaires dans vos applications, utilisez les rapports sur les performances publicitaires au niveau du compte et de l’application dans le tableau de bord du Centre de développementWindows."
-title: Rapport sur les performances publicitaires
+Description: To view performance data for the ad units in your apps, use the app-level and account-level advertising performance reports on the Windows Dev Center dashboard.
+title: Advertising performance report
 ms.assetid: 32E555C3-C34D-4503-82BB-4C3F5CAE4500
 translationtype: Human Translation
 ms.sourcegitcommit: 6b354b1b009bf9e4f2899f7ef97ef8791712f52b
-ms.openlocfilehash: 2b06e25a7e96c3645d7067dc0082da3fc942249d
+ms.openlocfilehash: b75d9310e577c77d1caed3e9f34762e925eb11ae
 
 ---
 
-# Rapport sur les performances publicitaires
+# Advertising performance report
 
 
-Pour afficher les données de performances pour les unités publicitaires dans vos applications, vous pouvez utiliser les rapports suivants dans le tableau de bord du centre de développement Windows &#58;
+To view performance data for the ad units in your apps, you can use the following reports on the Windows Dev Center dashboard:
 
--   [Rapport sur les performances publicitaires au niveau de l’application](advertising-performance-report.md#app-level-advertising-performance-report). Ce rapport fournit des données de performances pour les unités publicitairesMicrosoft dans l’application actuellement sélectionnée dans le tableau de bord.
--   [Rapport sur les performances publicitaires au niveau du compte](advertising-performance-report.md#account-level-advertising-performance-report). Ce rapport fournit des données de performances détaillées pour les unités publicitairesMicrosoft et les annonces de la communauté pour toutes les applications qui sont enregistrées sur votre compte de développeur.
+-   [App-level advertising performance report](advertising-performance-report.md#app-level-advertising-performance-report). This report provides performance data for the Microsoft ad units in the currently selected app in the dashboard.
+-   [Account-level advertising performance report](advertising-performance-report.md#account-level-advertising-performance-report). This report provides detailed performance data for Microsoft ad units and community ads for all apps that are registered to your developer account.
 
-Par défaut, les rapports sont filtrés sur les performances des 30derniers jours, sur tous les appareils. Pour modifier ces filtres, sélectionnez **Appliquer des filtres**, puis choisissez une autre période (un des périodes prédéfinies ou une plage de dates personnalisée) ou un type d’appareil spécifique. 
+By default, the reports are filtered on performance from the last 30 days, on all devices. To change these filters, select **Apply filters**, and then choose a different time frame (one of the preset periods or a custom date range) or choose an individual device type. 
 
 > [!TIP]
-> Pour effectuer une analyse plus approfondie de vos données, sélectionnez **Télécharger le rapport**, puis ouvrez le fichier CSV (valeurs séparées par une virgule) dans Microsoft Excel ou un programme similaire.
+> To do deeper analysis of your data, select **Download report**, then open the CSV (comma-separated values) file in Microsoft Excel or a similar program.
 
-Les sections suivantes fournissent des informations supplémentaires sur ces rapports.
+The following sections provide more details about these reports.
 
-## Rapport sur les performances publicitaires au niveau de l’application.
+## App-level advertising performance report
 
-Ce rapport fournit, sous forme de graphique, de carte du monde et de tableau, des données de performances pour les unités publicitairesMicrosoft dans l’application actuellement sélectionnée dans le tableau de bord. Pour afficher ce rapport, sélectionnez l’une de vos applications dans le tableau de bord et cliquez sur **Analyse** &gt; **Performances des publicités** dans le volet de navigation.
+This page provides performance data in graph, world map, and table form for the Microsoft ad units in the currently selected app in the dashboard. To view this report, select one of your apps in the dashboard and click **Analytics** &gt; **Advertising performance** in the navigation pane.
 
-Les données sont obtenues à partir des métriques de performances ci-après, que nous suivons pour les publicités intégrées dans votre application:
+The data is obtained from the following performance metrics we track for the ads in your app:
 
--   **Estimation des revenus** : estimation des revenus générés par les publicités diffusées dans votre application.
--   **Coût par impression électronique** : coût effectif pour mille impressions.
--   **Demandes** : nombre de fois où une demande de publicité a été envoyée à partir de votre application.
--   **Impressions** : nombre de fois où une publicité a été affichée dans votre application.
--   **Taux de remplissage** : pourcentage de demandes de publicité envoyées à partir de votre application dans lesquelles une publicité était affichée.
--   **Clics** : nombre de fois où quelqu’un a cliqué sur une publicité dans votre application.
--   **Taux de clic** : nombre de fois où quelqu’un a cliqué sur une publicité divisé par le nombre d’impressions.
+-   **Estimated revenue**: The estimated amount of money you received from the ads running on your app.
+-   **eCPM**: Effective cost per thousand impressions.
+-   **Requests**: The number of times an ad request was sent from your app.
+-   **Impressions**: The number of times an ad was shown in your app.
+-   **Fill rate**: The percentage of ad requests sent from your app in which an ad was shown.
+-   **Clicks**: The number of times someone clicked on an ad in your app.
+-   **CTR**: Click-through rate, meaning the number of times an ad was clicked, divided by the number of impressions.
 
-Pour passer en revue toutes ces métriques de performances pour les unités publicitaires intégrées dans votre application, reportez-vous au tableau sous les vues graphique et carte.
+To review all these performance metrics for the ad units in your app, refer to the table below the graph and map views.
 
-Pour analyser les données pour l’un de ces métriques dans une vue de carte graphique ou monde, cliquez sur **graphique** ou **carte**. Cliquez sur les en-têtes au-dessus du graphique ou de la carte pour basculer entre les différentes métriques. Par défaut, les vues graphique et carte affichent les données de performances pour toutes les unités publicitaires dans votre application, mais vous pouvez cliquer sur **Choisissez des unités publicitaires** pour sélectionner jusqu’à six unités publicitaires individuelles à comparer.
+To analyze the data for one of these metrics in a graph or world map view, click **Graph** or **Map**. Click the headers above the graph or map to switch between the different metrics. By default, the graph and map views show performance data for all of the ad units in your app, but you can click **Choose ad units** to select up to six individual ad units to compare.
 
-Dans la vue carte, les nuances plus foncées représentent des valeurs plus élevées et les nuances plus légères représentent des valeurs inférieures. Vous pouvez pointer sur un pays ou une région sur la carte pour analyser la valeur de la métrique sélectionnée. Vous pouvez également effectuer un zoom avant sur une zone de la carte pour afficher les données des plus petits pays.
+In the map view, darker shades represent higher values and lighter shades represent lower values. You can hover over a specific country or region on the map to analyze the value of the selected metric. You can also zoom in on any area of the map to view data for smaller countries.
 
-Pour effectuer une analyse plus approfondie de vos données, sélectionnez **Télécharger le rapport**, puis ouvrez le fichier CSV (valeurs séparées par une virgule) dans Microsoft Excel ou un programme similaire.
+To do deeper analysis of your data, select **Download report**, then open the CSV (comma-separated values) file in Microsoft Excel or a similar program.
 
-## Rapport sur les performances publicitaires au niveau du compte
+## Account-level advertising performance report
 
-Ce rapport fournit des données de performances pour les unités publicitairesMicrosoft et les annonces de la communauté utilisées dans les applications qui sont enregistrées sur votre compte de développeur. Pour afficher ce rapport, accédez à votre page de présentation du tableau de bord et cliquez sur **Performances des publicités** dans le volet de navigation.
+This page provides performance data for Microsoft ad units and community ads used in apps that are registered to your developer account. To view this report, go to your dashboard overview page and click **Advertising performance** in the navigation pane.
 
-Cette page contient les sections suivantes.
+This page includes the following sections.
 
-### MicrosoftAdvertising
+### Microsoft Advertising
 
-Ce rapport fournit des données de performances pour toutes les unités publicitairesMicrosoft utilisées dans vos applications. Il inclut également des données de performances pour les unités publicitaires pubCenter qui n’ont pas été correctement mappées à vos applications du Centre de développement.
+This report provides performance data for all the Microsoft ad units used in your apps. This report also includes performance data for any pubCenter ad units that were not successfully mapped to your Dev Center apps.
 
-Ce rapport montre les sept mêmes mesures de performances et affichages (sous forme de graphiques, cartes du monde et tableaux) que le rapport sur les performances publicitaires au niveau de l’application décrit ci-dessus. Vous pouvez appliquer les filtres suivants à ce rapport :
+This report shows the same seven performance metrics and views (graph, world map, and table) as the app-level advertising performance report described above. You can apply the following filters to this report:
 
--   **Toutes les unités publicitaires**. Lorsque vous sélectionnez ce filtre, vous pouvez choisir d’afficher les données à partir de toutes les unités publicitaires ou d’un maximum de six unités publicitaires spécifiques.
--   **Toutes les applications**. Lorsque vous sélectionnez ce filtre, vous pouvez choisir d’afficher les données à partir de toutes les applications ou d’un maximum de six applications spécifiques.
--   **Application individuelle**. Lorsque vous sélectionnez une application, vous pouvez choisir d’afficher les données à partir de toutes les unités publicitaires utilisées par l’application ou d’un maximum de six unités publicitaires spécifiques utilisées par l’application.
+-   **All ad units**. When you select this filter, you can choose to display data from all ad units or from up to six specific ad units.
+-   **All apps**. When you select this filter, you can choose to display data from all apps or from up to six specific apps.
+-   **Individual app**. When you select an app, you can choose to display data from all ad units used by the app or from up to six specific ad units used by the app.
 
-Si vous avez créé des unités publicitaires pour une application à l’aide de Microsoft pubCenter, il se peut qu’elles n’aient pas toutes été correctement mappées à vos applications dans le Centre de développement. Dans ce rapport, les unités publicitaires sont associées à des noms d’application que vous avez spécifiés dans pubCenter, avec la chaîne **(pubCenter)** ajoutée au nom de l’application.
+If you created ad units for an app using Microsoft pubCenter, it’s possible that not all of them were mapped successfully to your apps in Dev Center. In this report, these ad units are associated with app names that you specified in pubCenter, with the string **(pubCenter)** appended to the app name.
 
-Si vous avez créé des unités publicitaires pour une application à l’aide de pubCenter et que les données correspondantes ne sont disponibles dans aucune des deux pages de rapports, cliquez sur **Lier un compte pubCenter** pour lier ce compte à votre compte du Centre de développement. Entrez l’adresse de messagerie que vous avez associée à ce compte pubCenter et votre code de liaison du compte. Pour connaître le code de liaison du compte, connectez-vous à ce compte pubCenter et accédez à la page **Mes informations**.
+If you created ad units for an app using pubCenter, and you don’t see data for them in either report page, click **Link a pubCenter account** to link that account to your Dev Center account. Enter the email address you associated with this pubCenter account and your account linking code. You can find the account linking code by signing into this pubCenter account and going to the **My information** page.
 
-Pour plus d’informations sur la migration de comptes pubCenter vers le Centre de développement, voir [Intégration de pubCenter au Centre de développement](pubcenter-dev-center-integration.md).
+For more information about migrating pubCenter accounts to Dev Center, see [pubCenter-DevCenter integration](pubcenter-dev-center-integration.md).
 
-Pour effectuer une analyse plus approfondie de vos données, sélectionnez **Télécharger le rapport**, puis ouvrez le fichier CSV (valeurs séparées par une virgule) dans Microsoft Excel ou un programme similaire.
+To do deeper analysis of your data, select **Download report**, then open the CSV (comma-separated values) file in Microsoft Excel or a similar program.
 
-### Annonces de la communautéMicrosoft
+### Microsoft community ads
 
-Cette section fournit, sous forme de graphiques et de cartes du monde, des données de performances pour les annonces de la communauté dans l’application actuellement sélectionnée dans le tableau de bord. Pour en savoir plus sur les annonces de la communauté, voir [À propos des annonces de la communauté](about-community-ads.md).
+This section provides performance data in graph and world map form for community ads in the currently selected app in the dashboard. For more information about community ads, see [About community ads](about-community-ads.md).
 
-Les données sont obtenues à partir des métriques de performances suivantes que nous suivons pour les publicités intégrées dans votre application:
+The data is obtained from the following performance metrics we track for the ads in your app:
 
--   **Demandes** : nombre de fois où une demande d’annonce de la communauté a été envoyée à partir de votre application.
--   **Taux de remplissage** : pourcentage de demandes d’annonce de la communauté envoyées à partir de votre application dans lesquelles une publicité était affichée.
--   **Clics** : nombre de fois où quelqu’un a cliqué sur une annonce de la communauté dans votre application.
--   **Taux de clic** : nombre de fois où quelqu’un a cliqué sur une annonce de la communauté divisé par le nombre d’impressions.
--   **Crédits obtenus** : nombre de crédits d’annonces de la communauté que vous avez gagnés grâce à cette application. Pour en savoir plus sur la façon d’obtenir des crédits, voir [À propos des annonces de la communauté](about-community-ads.md).
--   **Crédits dépensés** : nombre de crédits d’annonces de la communauté que vous avez dépensés pour cette application. Pour en savoir plus sur la façon de dépenser des crédits, voir [À propos des annonces de la communauté](about-community-ads.md).
+-   **Requests**: The number of times a community ad request was sent from your app.
+-   **Fill rate**: The percentage of community ad requests sent from your app in which an ad was shown.
+-   **Clicks**: The number of times someone clicked on a community ad in your app.
+-   **CTR**: Click-through rate, meaning the number of times a community ad was clicked, divided by the number of impressions.
+-   **Credits earned**: The number of community ad credits you have earned from this app. For more details about how credits are earned, see [About community ads](about-community-ads.md).
+-   **Credits spent**: The number of community ad credits you have spent for this app. For more details about how credits are spent, see [About community ads](about-community-ads.md).
 
-Pour analyser les données pour l’un de ces métriques dans une vue de carte graphique ou monde, cliquez sur **graphique** ou **carte**. Cliquez sur les en-têtes au-dessus du graphique ou de la carte pour basculer entre les différentes métriques. Dans la vue carte, les nuances plus foncées représentent des valeurs plus élevées et les nuances plus légères représentent des valeurs inférieures. Vous pouvez pointer sur un pays ou une région sur la carte pour analyser la valeur de la métrique sélectionnée. Vous pouvez également effectuer un zoom avant sur une zone de la carte pour afficher les données des plus petits pays.
+To analyze the data for one of these metrics in a graph or world map view, click **Graph** or **Map**. Click the headers above the graph or map to switch between the different metrics. In the map view, darker shades represent higher values and lighter shades represent lower values. You can hover over a specific country or region on the map to analyze the value of the selected metric. You can also zoom in on any area of the map to view data for smaller countries.
 
-## Remarques concernant les rapports
+## Notes about the reports
 
-Voici quelques éléments à prendre en considération lors de l’utilisation des rapports sur les performances publicitaires.
+Here are a few things to keep in mind when using the advertising performance reports.
 
-- Il peut exister des différences entre les rapports sur les performances publicitaires dans le Centre de développement et pubCenter. Les données de performances publicitaires dans le Centre de développement sont agrégées en fonction de l’heure UTC (et non de votre fuseau horaire spécifique), tandis que les rapports pubCenter sont agrégés en fonction de votre fuseau horaire spécifique.
-- Les données des rapports portant sur les trois derniers jours sont susceptibles de changer à mesure que nous recevons et traitons de nouvelles données en provenance de différentes sources.
-- Les données remontant à jusqu’à 90jours peuvent faire l’objet d’un ajustement.
-
- 
+- There may be differences between advertising performance reports in Dev Center and pubCenter. Advertising performance data in Dev Center is aggregated based on UTC (not your particular time zone), while pubCenter reports are aggregated based on your particular time zone.
+- Reporting data for the last three days might change as we receive and process new data from various sources.
+- Data restatements can happen up to 90 days in the past.
 
  
 
+ 
 
 
-<!--HONumber=Jul16_HO2-->
+
+<!--HONumber=Aug16_HO3-->
 
 

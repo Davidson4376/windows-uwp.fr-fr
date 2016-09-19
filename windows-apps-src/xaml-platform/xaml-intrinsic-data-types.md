@@ -1,51 +1,51 @@
 ---
 author: jwmsft
-description: "Indique la prise en charge au niveau du langage en XAML pour Windows Runtime pour certains types de données dans le Common Language Runtime (CLR) et dans d’autres langages de programmation tels que C++."
-title: "Types de données intrinsèques XAML"
+description: Lists language-level support in XAML for the Windows Runtime for certain data types in the common language runtime (CLR) and in other programming languages such as C++.
+title: XAML intrinsic data types
 ms.assetid: D50E6127-395D-4E27-BAA2-2FE627F4B711
 translationtype: Human Translation
 ms.sourcegitcommit: 60e328ca8652baeb226e78f5a9d99fbf8c4f5208
-ms.openlocfilehash: 479b900ca14497712f25a7825fde6775a3c1ab60
+ms.openlocfilehash: a204f1d000dd28a9159b4ca795107046ca4ef92e
 
 ---
 
-# Types de données intrinsèques XAML
+# XAML intrinsic data types
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-XAML pour Windows Runtime offre une prise en charge, au niveau du langage, de plusieurs types de données qui sont des primitives souvent utilisées dans le Common Language Runtime (CLR) et dans d’autres langages de programmation tels que C++.
+XAML for the Windows Runtime provides language-level support for several data types that are frequently used primitives in the common language runtime (CLR) and in other programming languages such as C++.
 
-Le cas le plus courant dans lequel vous verrez des utilisations de types de données intrinsèques XAML est celui où des ressources sont définies dans un dictionnaire de ressources XAML. Vous pouvez y définir des constantes, par exemple, des nombres que vous utilisez pour plusieurs valeurs. Ou vous pouvez utiliser une animation dans une table de montage séquentiel qui s’anime en utilisant une chaîne ou une valeur booléenne, puis vous aurez besoin d’un élément objet XAML représentant la chaîne ou la valeur booléenne pour remplir l’image clé de votre définition [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320). Les modèles XAML par défaut Windows Runtime utilisent ces deux techniques.
+The most common place you'll see XAML intrinsic data type usages is when resources are defined in a XAML resource dictionary. You might define constants there, for example numbers that you use for multiple values. Or you might use a storyboarded animation that animates using a string or Boolean value, and you'll then need a XAML object element representing the string or Boolean to fill the keyframe of your [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320) definition. The Windows Runtime default XAML templates use both these techniques.
 
-XAML pour le Windows Runtime offre une prise en charge au niveau du langage pour les types suivants :
+XAML for the Windows Runtime provides language-level support for these types.
 
-| Primitive XAML | Description |
+| XAML primitive | Description |
 |-------|-------------|
-| **x:Boolean**  | Pour la prise en charge du CLR, correspond à [**Boolean**](https://msdn.microsoft.com/library/windows/apps/xaml/system.boolean.aspx). Le code XAML analyse les valeurs de **x:Boolean** sans tenir compte de la casse. Notez que «x:Bool» n’est pas une alternative acceptée. |
-| **x:String**   | Pour la prise en charge du CLR, correspond à [**String**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.aspx). Le codage de la chaîne a pour valeur par défaut le codage XML environnant. |
-| **x:Double**   | Pour la prise en charge du CLR, correspond à [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx). Outre les valeurs numériques, la syntaxe texte pour **x:Double** autorise le jeton « NaN », ce qui correspond à la manière dont vous pouvez stocker « Auto » pour le comportement de la disposition en tant que valeur de ressource. Les jetons sont traités en tenant compte de la casse. Vous pouvez utiliser une notation scientifique, par exemple « 1+E06 » pour `1,000,000`. |
-| **x:Int32**    | Pour la prise en charge du CLR, correspond à [**Int32**](https://msdn.microsoft.com/library/windows/apps/xaml/system.int32.aspx). **x:Int32** est traité comme signé et vous pouvez inclure le symbole moins (« - ») pour un entier négatif. En XAML, l’absence de signe dans la syntaxe texte implique une valeur signée positive. |
+| **x:Boolean**  | For CLR support, corresponds to [**Boolean**](https://msdn.microsoft.com/library/windows/apps/xaml/system.boolean.aspx). XAML parses values for **x:Boolean** as case insensitive. Note that "x:Bool" is not an accepted alternative. |
+| **x:String**   | For CLR support, corresponds to [**String**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.aspx). Encoding for the string defaults to the surrounding XML encoding. |
+| **x:Double**   | For CLR support, corresponds to [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx). In addition to the numeric values, text syntax for **x:Double** permits the token "NaN", which is how "Auto" for layout behavior can be stored as a resource value. The tokens are treated as case sensitive. You can use scientific notation, for example "1+E06" for `1,000,000`. |
+| **x:Int32**    | For CLR support, corresponds to [**Int32**](https://msdn.microsoft.com/library/windows/apps/xaml/system.int32.aspx). **x:Int32** is treated as signed, and you can include the minus ("-") symbol for a negative integer. In XAML, the absence of a sign in text syntax implies a positive signed value. |
 
-Ces primitives de langage XAML sont en général les seuls cas où vous définissez un élément objet qui utilise le préfixe **x:** dans votre XAML. Toutes les autres fonctionnalités de langage XAML sont en général utilisées sous forme d’attributs ou en tant qu’extension de balisage.
+These XAML language primitives are generally the only cases in which you define an object element that uses the **x:** prefix in your XAML. All other XAML language features are typically used in attribute form, or as a markup extension.
 
-**Remarque** Par convention, les primitives du langage XAML et tous les autres éléments du langage XAML sont affichés avec le préfixe « x: ». C’est ainsi que les éléments du langage XAML sont habituellement utilisés dans un balisage réel. Cette convention est suivie dans la documentation relative à XAML et également dans la spécification XAML.
+**Note**  By convention, the language primitives for XAML and all other XAML language elements are shown with the "x:" prefix. This is how XAML language elements are typically used in real-world markup. This convention is followed in the documentation for XAML and also in the XAML specification.
 
-## Autres primitives XAML
+## Other XAML primitives
 
-La spécification XAML 2009 indique d’autres primitives au niveau du langage XAML, telles que **x:Uri** et **x:Single**. Sauf indication contraire dans le tableau de cette rubrique, les autres primitives du langage XAML telles que définies par les vocabulaires XAML ou par la spécification XAML 2009 ne sont actuellement pas prises en charge en XAML pour Windows Runtime.
+The XAML 2009 specification notes other XAML language-level primitives such as **x:Uri** and **x:Single**. Unless listed in the table in this topic, other XAML language primitives as defined by other XAML vocabularies or by the XAML 2009 specification are not currently supported in XAML for the Windows Runtime.
 
-**Remarque** Les dates et les heures (propriétés qui utilisent [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576) ou [**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx), [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996) ou [**System.TimeSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/system.timespan.aspx)) ne sont pas définissables avec une primitive XAML. En règle générale, ces propriétés ne sont pas du tout définissables en XAML, car, par défaut, l’analyseur XAML Windows Runtime ne prend pas en charge la conversion à partir d’une chaîne pour les dates et les heures. Pour les valeurs d’initialisation de toutes les propriétés de date et d’heure, vous devez utiliser du code-behind qui s’exécute au chargement d’une page ou d’un élément.
+**Note**  Dates and times (properties that use [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576) or [**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx), [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996) or [**System.TimeSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/system.timespan.aspx)) aren't settable with a XAML primitive. These properties generally aren't settable in XAML at all, because there's no default from-string conversion behavior in the Windows Runtime XAML parser for dates and times. For initialization values of any date and time properties, you'll have to use code-behind that runs when a page or element loads.
 
-## Rubriques connexes
+## Related topics
 
-* [Vue d’ensemble du langage XAML](xaml-overview.md)
-* [Guide de la syntaxe XAML](xaml-syntax-guide.md)
-* [Animations dans une table de montage séquentiel](https://msdn.microsoft.com/library/windows/apps/mt187354)
+* [XAML overview](xaml-overview.md)
+* [XAML syntax guide](xaml-syntax-guide.md)
+* [Storyboarded animations](https://msdn.microsoft.com/library/windows/apps/mt187354)
  
 
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

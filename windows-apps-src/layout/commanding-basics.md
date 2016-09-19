@@ -1,57 +1,57 @@
 ---
 author: mijacobs
-Description: "Dans une application de plateforme Windows universelle (UWP), les éléments de commande sont les éléments d’interface utilisateur interactifs qui permettent à l’utilisateur d’effectuer des actions telles que l’envoi d’un message électronique, la suppression d’un élément ou l’envoi d’un formulaire."
-title: "Informations de base relatives à la conception des commandes pour les applications de plateforme Windows universelle (UWP)"
+Description: In a Universal Windows Platform (UWP) app, command elements are the interactive UI elements that enable the user to perform actions, such as sending an email, deleting an item, or submitting a form.
+title: Command design basics for Universal Windows Platform (UWP) apps
 ms.assetid: 1DB48285-07B7-4952-80EF-02B57D4469F2
 label: Command design basics
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: be7ff187df9800a8c2c47c4315f3f9b021e265f8
+ms.openlocfilehash: 736ab8ebe74a293efd48ffd7dcd9d2026089147a
 
 ---
 
-#  Informations de base relatives à la conception des commandes pour les applications UWP
+#  Command design basics for UWP apps
 
-Dans une application de plateforme Windows universelle (UWP), les *éléments de commande* sont les éléments d’interface utilisateur interactifs qui permettent à l’utilisateur d’effectuer des actions telles que l’envoi d’un message électronique, la suppression d’un élément ou l’envoi d’un formulaire. Cet article décrit les éléments de commande, comme les boutons et les cases à cocher, les interactions qu’ils prennent en charge, ainsi que les surfaces de commandes (telles que les barres de commandes et les menus contextuels) pouvant les accueillir.
+In a Universal Windows Platform (UWP) app, *command elements* are the interactive UI elements that enable the user to perform actions, such as sending an email, deleting an item, or submitting a form. This article describes the command elements, such as buttons and check boxes, the interactions they support, and the command surfaces (such as command bars and context menus) for hosting them.
 
-## <span id="Provide_the_right_type_of_interactions"></span><span id="provide_the_right_type_of_interactions"></span><span id="PROVIDE_THE_RIGHT_TYPE_OF_INTERACTIONS"></span>Fournissez le type approprié d’interactions
-
-
-Lorsque vous créez une interface de commande, la décision la plus importante consiste à choisir ce que les utilisateurs auront la possibilité de faire. Par exemple, si vous créez une application de retouche photo, l’utilisateur aura besoin d’outils pour modifier ses photos. Toutefois, si vous créez une application de réseau social qui affiche des photos, la retouche d’images peut ne pas être une priorité. Les outils d’édition peuvent donc être omis pour économiser de l’espace. Choisissez ce que les utilisateurs pourront accomplir et fournissez-leur les outils adéquats.
-
-Pour obtenir des recommandations sur la planification des interactions appropriées pour votre application, voir [Planifier votre application](https://msdn.microsoft.com/library/windows/apps/hh465427.aspx).
-
-## <span id="Use_the_right_command_element_for_the_interaction"></span><span id="use_the_right_command_element_for_the_interaction"></span><span id="USE_THE_RIGHT_COMMAND_ELEMENT_FOR_THE_INTERACTION"></span>Utilisez l’élément de commande approprié pour l’interaction
+## <span id="Provide_the_right_type_of_interactions"></span><span id="provide_the_right_type_of_interactions"></span><span id="PROVIDE_THE_RIGHT_TYPE_OF_INTERACTIONS"></span>Provide the right type of interactions
 
 
-Utiliser les éléments adéquats pour les interactions appropriées peut faire toute la différence entre une application intuitive et une application dont l’utilisation est complexe ou déroutante. La plateforme Windows universelle (UWP) fournit un large éventail d’éléments de commande, sous la forme de contrôles, que vous pouvez utiliser dans votre application. Le tableau suivant répertorie quelques-uns des contrôles les plus courants et offre un résumé des interactions qu’ils permettent.
+When designing a command interface, the most important decision is choosing what users should be able to do. For example, if you're creating a photo app, the user will need tools to edit their photos. However, if you're creating a social media app that happens to display photos, image editing might not be a priority and so editing tools can be omitted to save space. Decide what you want users to accomplish and provide the tools to help them do it.
 
-| Catégorie              | Éléments                                                                                                                                                                                                            | Interaction                                                                                                                                        |
+For recommendations about how to plan the right interactions for your app, see [Plan your app](https://msdn.microsoft.com/library/windows/apps/hh465427.aspx).
+
+## <span id="Use_the_right_command_element_for_the_interaction"></span><span id="use_the_right_command_element_for_the_interaction"></span><span id="USE_THE_RIGHT_COMMAND_ELEMENT_FOR_THE_INTERACTION"></span>Use the right command element for the interaction
+
+
+Using the right elements for the right interactions can mean the difference between an app that feels intuitive to use and one that seems difficult or confusing. The Universal Windows Platform (UWP) provides a large set of command elements, in the form of controls, that you can use in your app. Here's a list of some of the most common controls and a summary of the interactions they enable.
+
+| Category              | Elements                                                                                                                                                                                                            | Interaction                                                                                                                                        |
 |-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
-| Boutons               | [Bouton](https://msdn.microsoft.com/library/windows/apps/hh465470)                                                                                                                                                     | Déclenche une action immédiate, telle que l’envoi d’un message électronique, la confirmation d’une action dans une boîte de dialogue ou l’envoi des données d’un formulaire.                                    |
-| Sélecteurs de date et d’heure | [sélecteur de date de calendrier, affichage de calendrier, sélecteur de date, sélecteur d’heure](https://msdn.microsoft.com/library/windows/apps/hh465466)                                                                                                                 | Permet à l’utilisateur d’afficher et de modifier les informations de date et d’heure, notamment lors de l’entrée de la date d’expiration d’une carte de crédit ou de la configuration d’une alarme.                   |
-| Listes                 | [Liste déroulante, zone de liste, affichage Liste et affichage Grille](https://msdn.microsoft.com/library/windows/apps/mt186889)                                                                                                                                              | Présente les éléments dans une liste ou une grille interactives. Utilisez ces éléments pour permettre aux utilisateurs de sélectionner un film parmi une liste de nouveautés ou de gérer un inventaire. |
-| Saisie de texte prédictive | [Zone de suggestion automatique](https://msdn.microsoft.com/library/windows/apps/dn997762)                                                                                                                                                                    | Fait gagner du temps aux utilisateurs quand ils entrent des données ou effectuent des requêtes en leur fournissant des suggestions au fur et à mesure de la saisie.                                                   |
-| Contrôles de sélection    | [Case à cocher](https://msdn.microsoft.com/library/windows/apps/hh700393), [case d’option](https://msdn.microsoft.com/library/windows/apps/hh700395), [bouton bascule](https://msdn.microsoft.com/library/windows/apps/hh465475) | Permet à l’utilisateur de choisir entre différentes options, par exemple lors du remplissage d’un questionnaire ou de la configuration des paramètres d’application.                                      |
+| Buttons               | [Button](https://msdn.microsoft.com/library/windows/apps/hh465470)                                                                                                                                                     | Triggers an immediate action, such as sending an email, confirming an action in a dialog, submitting form data.                                    |
+| Date and time pickers | [calendar date picker, calendar view, date picker, time picker](https://msdn.microsoft.com/library/windows/apps/hh465466)                                                                                                                 | Enables the user to view and modify date and time info, such as when entering a credit card expiration date or setting an alarm.                   |
+| Lists                 | [drop-down list, list box, list view and grid view](https://msdn.microsoft.com/library/windows/apps/mt186889)                                                                                                                                              | Presents items in a interactive list or a grid. Use these elements to let users select a movie from a list of new releases or manage an inventory. |
+| Predictive text entry | [Auto-suggest box](https://msdn.microsoft.com/library/windows/apps/dn997762)                                                                                                                                                                    | Saves users time when entering data or performing queries by providing suggestions as they type.                                                   |
+| Selection controls    | [check box](https://msdn.microsoft.com/library/windows/apps/hh700393), [radio button](https://msdn.microsoft.com/library/windows/apps/hh700395), [toggle switch](https://msdn.microsoft.com/library/windows/apps/hh465475) | Lets the user choose between different options, such as when completing a survey or configuring app settings.                                      |
 
  
 
-Pour obtenir la liste complète de ces éléments, voir [Contrôles et éléments d’interface utilisateur](https://dev.windows.com/design/controls-patterns).
+For a complete list, see [Controls and UI elements](https://dev.windows.com/design/controls-patterns)
 
-## <span id="_________Place_commands_on_the_right_surface_______"></span><span id="_________place_commands_on_the_right_surface_______"></span><span id="_________PLACE_COMMANDS_ON_THE_RIGHT_SURFACE_______"></span> Placer les commandes sur la surface appropriée
+## <span id="_________Place_commands_on_the_right_surface_______"></span><span id="_________place_commands_on_the_right_surface_______"></span><span id="_________PLACE_COMMANDS_ON_THE_RIGHT_SURFACE_______"></span> Place commands on the right surface
 
 
-Vous pouvez placer les éléments de commande sur un certain nombre de surfaces dans votre application, notamment le Canvas (zone de contenu de votre application) ou des éléments de commande spéciaux pouvant servir de conteneurs de commandes, tels que des barres de commandes, des menus, des boîtes de dialogue et des menus volants. Voici quelques recommandations générales pour placer les commandes :
+You can place command elements on a number of surfaces in your app, including the app canvas (the content area of your app) or special command elements that can act as command containers, such as command bars, menus, dialogs, and flyouts. Here are some general recommendations for placing commands:
 
--   Laissez les utilisateurs manipuler directement, autant que possible, le contenu sur le Canvas de l’application, au lieu d’ajouter des commandes qui agissent sur le contenu. Par exemple, dans l’application de voyage, permettez aux utilisateurs de réorganiser leur itinéraire en faisant glisser et en déplaçant des activités d’une liste de la zone de dessin, plutôt qu’en sélectionnant l’activité et en utilisant les boutons haut et bas de la barre de commandes.
--   Si les utilisateurs ne peuvent pas manipuler le contenu directement, vous pouvez placer les commandes sur l’une de ces surfaces d’interface utilisateur :
+-   Whenever possible, let users directly manipulate the content on the app's canvas, rather than adding commands that act on the content. For example, in the travel app, let users rearrange their itinerary by dragging and dropping activities in a list on the canvas, rather than by selecting the activity and using Up or Down command buttons.
+-   Otherwise, place commands on one of these UI surfaces if users can't manipulate content directly:
 
-    -   Dans la [barre de commandes](https://msdn.microsoft.com/library/windows/apps/hh465302): nous vous recommandons de placer la plupart des commandes dans la barre de commandes pour faciliter leur organisation et leur accès.
-    -   Sur la zone de dessin de l’application : si l’utilisateur consulte une page ou une vue avec un objet unique, vous pouvez placer les commandes adéquates directement sur cette zone. Il doit y avoir très peu de commandes de ce type.
-    -   Dans un [menu contextuel](https://msdn.microsoft.com/library/windows/apps/hh465308): vous pouvez utiliser des menus contextuels pour les actions du Presse-papiers (comme couper, copier et coller), ou pour les commandes qui concernent le contenu qui ne peut pas être sélectionné (ajouter une punaise pour localiser un lieu sur une carte, par exemple).
+    -   In the [command bar](https://msdn.microsoft.com/library/windows/apps/hh465302): You should put most commands on the command bar, which helps to organize commands and makes them easy to access.
+    -   On the app's canvas: If the user is on a page or view that has a single purpose, you can provide commands for that purpose directly on the canvas. There should be very few of these commands.
+    -   In a [context menu](https://msdn.microsoft.com/library/windows/apps/hh465308): You can use context menus for clipboard actions (such as cut, copy, and paste), or for commands that apply to content that cannot be selected (like adding a push pin to a location on a map).
 
-Voici une liste des surfaces de commande offertes par Windows, ainsi que des recommandations pour en tirer le meilleur parti.
+Here's a list of the command surfaces that Windows provides and recommendations for when to use them.
 
 <table>
 <colgroup>
@@ -66,89 +66,89 @@ Voici une liste des surfaces de commande offertes par Windows, ainsi que des rec
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Canvas (zone de contenu) de l’application
+<td align="left">App canvas (content area)
 <p><img src="images/content-area.png" alt="The content area of an app" /></p></td>
-<td align="left"><p>Si une commande est fondamentale et est requise en permanence pour permettre à l’utilisateur d’effectuer les actions de base, placez-la sur le Canvas (zone de contenu de votre application). Comme vous pouvez placer les commandes près des objets qu’elles affectent (ou sur ceux-ci), le fait de les placer sur le Canvas rend leur utilisation facile et évidente.</p>
-<p>Toutefois, choisissez les commandes que vous placez sur le Canvas avec soin. S’il y en a trop, vous perdrez de l’espace précieux sur l’écran et risquez de submerger l’utilisateur. Si la commande n’est pas vouée à être fréquemment utilisée, envisagez de la placer sur une autre surface de commande, telle qu’un menu ou la zone &quot;Plus&quot; de la barre de commandes.</p></td>
+<td align="left"><p>If a command is critical and is constantly needed for the user to complete the core scenarios, put it on the canvas (the content area of your app). Because you can put commands near (or on) the objects they affect, putting commands on the canvas makes them easy and obvious to use.</p>
+<p>However, choose the commands you put on the canvas carefully. Too many commands on the app canvas takes up valuable screen space and can overwhelm the user. If the command won't be frequently used, consider putting it in another command surface, such as menu or the command bar's &quot;More&quot; area.</p></td>
 </tr>
 <tr class="even">
-<td align="left">[Barre de commandes](https://msdn.microsoft.com/library/windows/apps/hh465302)
+<td align="left">[Command bar](https://msdn.microsoft.com/library/windows/apps/hh465302)
 <p><img src="images/controls-appbar-icons-200.png" alt="Example of a command bar with icons" /></p></td>
-<td align="left"><p>Les barres de commandes permettent aux utilisateurs d’accéder facilement aux actions. Utilisez une barre de commandes pour afficher les commandes et les options propres au contexte de l’utilisateur, par exemple celles relatives à une sélection de photos ou au mode dessin.</p>
-<p>Les barres de commandes peuvent être placées en haut de l’écran et/ou au bas de l’écran. Cette conception d’une application de retouche photo montre la zone de contenu et la barre de commandes:</p>
+<td align="left"><p>Command bars provide users with easy access to actions. You can use a command bar to show commands or options that are specific to the user's context, such as a photo selection or drawing mode.</p>
+<p>Command bars can be placed at the top of the screen, at the bottom of the screen, or at both the top and bottom of the screen. This design of a photo editing app shows the content area and the command bar:</p>
 <p><img src="images/commands-appcanvas-example.png" alt="A photo app" /></p>
-<p>Pour plus d’informations sur les barres de commandes, voir l’article [Recommandations en matière de barres de commandes](https://msdn.microsoft.com/library/windows/apps/hh465302).</p></td>
+<p>For more information about command bars, see the [Guidelines for command bar](https://msdn.microsoft.com/library/windows/apps/hh465302) article.</p></td>
 </tr>
 <tr class="odd">
-<td align="left">[Menus et menus contextuels](../controls-and-patterns/dialogs-popups-menus.md)
+<td align="left">[Menus and context menus](../controls-and-patterns/dialogs-popups-menus.md)
 <p><img src="images/controls-contextmenu-singlepane.png" alt="Example of a single-pane context menu" /></p></td>
-<td align="left"><p>Parfois, il est plus efficace de regrouper plusieurs commandes dans un menu de commandes. Les menus permettent de proposer davantage d’options dans moins d’espace. Les menus peuvent comprendre des contrôles interactifs.</p>
-<p>Les menus contextuels peuvent fournir des raccourcis pour les actions courantes et un accès aux commandes secondaires qui ne sont pertinentes que dans certains contextes.</p>
-<p>Les menus contextuels sont destinés aux types de commande et aux scénarios de commandes suivants:</p>
+<td align="left"><p>Sometimes it is more efficient to group multiple commands into a command menu. Menus let you present more options with less space. Menus can include interactive controls.</p>
+<p>Context menus can provide shortcuts to commonly-used actions and provide access to secondary commands that are only relevant in certain contexts.</p>
+<p>Context menus are for the following types of commands and command scenarios:</p>
 <ul>
-<li>Les actions contextuelles sur des parties de texte, comme Copier, Couper, Coller, Vérifier l’orthographe, etc.</li>
-<li>Les commandes associées à un objet qui doivent être exécutées, qui ne peuvent pas être sélectionnées ou indiquées d’une autre manière.</li>
-<li>L’affichage des commandes du Presse-papiers.</li>
-<li>Les commandes personnalisées.</li>
+<li>Contextual actions on text selections, such as Copy, Cut, Paste, Check Spelling, and so on.</li>
+<li>Commands for an object that needs to be acted upon but that can't be selected or otherwise indicated.</li>
+<li>Showing clipboard commands.</li>
+<li>Custom commands.</li>
 </ul>
-<p>Cet exemple illustre la conception d’une application de plan de métro qui utilise un menu contextuel pour modifier l’itinéraire, marquer un itinéraire ou sélectionner un autre métro.</p>
+<p>This example shows the design for a subway app that uses a context menu to modify the route, bookmark a route, or select another train.</p>
 <p><img src="images/subway/uap-subway-ak-8in-dashboard-200.png" alt="A context menu in an subway app" /></p>
-<p>Pour plus d’informations sur les menus contextuels, voir l’article [Recommandations en matière de menus contextuels](https://msdn.microsoft.com/library/windows/apps/hh465308).</p></td>
+<p>For more info about context menus, see the [Guidelines for context menu](https://msdn.microsoft.com/library/windows/apps/hh465308) article.</p></td>
 </tr>
 <tr class="even">
-<td align="left">[Contrôles de boîte de dialogue](../controls-and-patterns/dialogs-popups-menus.md)
+<td align="left">[Dialog controls](../controls-and-patterns/dialogs-popups-menus.md)
 <p><img src="images/controls-dialog-twobutton-200.png" alt="Example of a simple two-button dialog" /></p></td>
-<td align="left"><p>Les boîtes de dialogue sont des superpositions d’interface utilisateur modales qui fournissent des informations contextuelles sur l’application. Dans la plupart des cas, les boîtes de dialogue bloquent les interactions avec la fenêtre de l’application jusqu’à ce qu’elles soient masquées explicitement. Elles demandent souvent un type d’action de l’utilisateur.</p>
-<p>Les boîtes de dialogue peuvent nuire à la fluidité de l’expérience et ne doivent être utilisées que dans certaines situations. Pour plus d’informations, voir la section [Quand confirmer ou annuler des actions](#whentoconfirm).</p></td>
+<td align="left"><p>Dialogs are modal UI overlays that provide contextual app information. In most cases, dialogs block interactions with the app window until being explicitly dismissed, and often request some kind of action from the user.</p>
+<p>Dialogs can be disruptive and should only be used in certain situations. For more info, see the [When to confirm or undo actions](#whentoconfirm) section.</p></td>
 </tr>
 <tr class="odd">
-<td align="left">[Menu volant](../controls-and-patterns/dialogs-popups-menus.md)
+<td align="left">[Flyout](../controls-and-patterns/dialogs-popups-menus.md)
 <p><img src="images/controls-flyout-default-200.png" alt="Image of default flyout" /></p></td>
-<td align="left"><p>Fenêtre contextuelle légère qui affiche l’interface utilisateur liée à l’action de l’utilisateur. Utilisez un menu volant pour :</p>
+<td align="left"><p>A lightweight contextual popup that displays UI related to what the user is doing. Use a flyout to:</p>
 <p></p>
 <ul>
-<li>Afficher un menu.</li>
-<li>Afficher plus de détails sur un élément.</li>
-<li>Demander à l’utilisateur de confirmer une action sans bloquer l’interaction avec l’application.</li>
+<li>Show a menu.</li>
+<li>Show more detail about an item.</li>
+<li>Ask the user to confirm an action without blocking interaction with the app.</li>
 </ul>
-<p>Vous pouvez masquer les menus volants en appuyant ou en cliquant sur un élément hors du menu volant. Pour plus d’informations sur les contrôles de menu volant, voir l’article [Boîtes de dialogue, fenêtres contextuelles et menus](../controls-and-patterns/dialogs-popups-menus.md).</p></td>
+<p>Flyouts can be dismissed by tapping or clicking somewhere outside the flyout. For more info about flyout controls, see the [Dialogs, menus, and popups](../controls-and-patterns/dialogs-popups-menus.md) article.</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <span id="whentoconfirm"></span><span id="WHENTOCONFIRM"></span>Quand confirmer ou annuler des actions
+## <span id="whentoconfirm"></span><span id="WHENTOCONFIRM"></span>When to confirm or undo actions
 
 
-Même si l’interface utilisateur est parfaitement pensée et que l’utilisateur fait preuve de la plus grande précaution, il arrivera inévitablement à celui-ci d’effectuer une action non souhaitée. Votre application peut remédier à ce genre de situation en demandant à l’utilisateur de confirmer une action ou en lui offrant un moyen d’annuler les actions récentes.
+No matter how well-designed the user interface is and no matter how careful the user is, at some point, all users will perform an action they wish they hadn't. Your app can help in these situations by requiring the user to confirm an action, or by providing a way of undoing recent actions.
 
--   Pour les actions qui ne peuvent pas être annulées et dont les conséquences sont importantes, nous vous recommandons d’utiliser une boîte de dialogue de confirmation. Exemples de telles actions :
-    -   Remplacement d’un fichier
-    -   Non-enregistrement d’un fichier avant la fermeture
-    -   Confirmation de la suppression définitive d’un fichier ou de données
-    -   Achat (sauf si l’utilisateur refuse de demander une confirmation)
-    -   Envoi d’un formulaire, par exemple pour s’inscrire à un programme
--   Pour les actions qui peuvent être annulées, une simple commande d’annulation est généralement suffisante. Exemples de telles actions :
-    -   Suppression d’un fichier
-    -   Suppression d’un e-mail (pas définitivement)
-    -   Modification du contenu ou d’un texte
-    -   Changement de nom d’un fichier
+-   For actions that can't be undone and have major consequences, we recommend using a confirmation dialog. Examples of such actions include:
+    -   Overwriting a file
+    -   Not saving a file before closing
+    -   Confirming permanent deletion of a file or data
+    -   Making a purchase (unless the user opts out of requiring a confirmation)
+    -   Submitting a form, such as signing up for something
+-   For actions that can be undone, offering a simple undo command is usually enough. Examples of such actions include:
+    -   Deleting a file
+    -   Deleting an email (not permanently)
+    -   Modifying content or editing text
+    -   Renaming a file
 
-**Conseil** Prenez garde à ne pas utiliser un trop grand nombre de boîtes de dialogue de confirmation dans votre application: elles peuvent être très utiles en cas d’erreur de l’utilisateur, mais elles représentent un obstacle chaque fois que l’utilisateur tente d’effectuer une action intentionnellement.
-
- 
-
-## <span id="_________Optimize_for_specific_input_types_______"></span><span id="_________optimize_for_specific_input_types_______"></span><span id="_________OPTIMIZE_FOR_SPECIFIC_INPUT_TYPES_______"></span> Optimiser les types d’entrée spécifiques
-
-
-Voir les [Notions fondamentales sur les interactions](../input-and-devices/input-primer.md) pour plus d’informations sur l’optimisation des expériences utilisateur avec un type ou un périphérique d’entrée spécifique.
-
-
-
+**Tip**  Be careful of how much your app uses confirmation dialogs; they can be very helpful when the user makes a mistake, but they are a hindrance whenever the user is trying to perform an action intentionally.
 
  
 
+## <span id="_________Optimize_for_specific_input_types_______"></span><span id="_________optimize_for_specific_input_types_______"></span><span id="_________OPTIMIZE_FOR_SPECIFIC_INPUT_TYPES_______"></span> Optimize for specific input types
+
+
+See the [Interaction primer](../input-and-devices/input-primer.md) for more detail on optimizing user experiences around a specific input type or device.
+
+
+
+
+ 
+
  
 
 
@@ -157,6 +157,6 @@ Voir les [Notions fondamentales sur les interactions](../input-and-devices/input
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

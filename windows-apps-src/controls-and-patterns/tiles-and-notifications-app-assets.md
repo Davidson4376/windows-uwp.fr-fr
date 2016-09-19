@@ -1,207 +1,205 @@
 ---
 author: mijacobs
-Description: "Les ressources d’icône d’application, qui s’affichent sous différentes formes dans le système d’exploitation Windows10, sont les cartes de visite de votre application de plateforme Windows universelle (UWP)."
-title: "Ressources de vignette et d’icône"
+Description: App icon assets, which appear in a variety of forms throughout the Windows 10 operating system, are the calling cards for your Universal Windows Platform (UWP) app.
+title: Tile and icon assets
 ms.assetid: D6CE21E5-2CFA-404F-8679-36AA522206C7
 label: Tile and icon assets
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 98eebc4fbf18aa2fbe4586958f666b41580cf6d9
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 4aa22b9eae8ff7f7da2c73f3fdf3a63ed12ff87b
 
 ---
+# Guidelines for tile and icon assets
 
-# Recommandations en matière de ressources de vignette et d’icône
-
-
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
-Les ressources d’icône d’application, qui s’affichent sous différentes formes dans le système d’exploitation Windows10, sont les cartes de visite de votre application de plateforme Windows universelle (UWP). Ces recommandations précisent où apparaissent les ressources d’icône d’application dans le système et fournissent des conseils de conception détaillés pour vous aider à créer les plus belles icônes.
+App icon assets, which appear in a variety of forms throughout the Windows 10 operating system, are the calling cards for your Universal Windows Platform (UWP) app. These guidelines detail where app icon assets appear in the system, and provide in-depth design tips on how to create the most polished icons.
 
-![Écran d’accueil et vignettes de Windows10](images/assetguidance01.jpg)
+![windows 10 start and tiles](images/assetguidance01.jpg)
 
-## <span id="Adaptive_scaling"></span><span id="adaptive_scaling"></span><span id="ADAPTIVE_SCALING"></span>Mise à l’échelle adaptative
-
-
-Tout d’abord, voici une brève vue d’ensemble de la mise à l’échelle adaptative pour mieux comprendre comment fonctionne la mise à l’échelle avec des ressources. Windows 10 introduit une évolution du modèle de mise à l’échelle existant. En plus de la mise à l’échelle du contenu vectoriel, il existe un ensemble unifié de facteurs d’échelle qui assurent la cohérence de taille des éléments d’interface utilisateur en fonction de diverses tailles d’écran et résolutions d’affichage. Ces facteurs d’échelle sont également compatibles avec les facteurs d’échelle d’autres systèmes d’exploitation tels qu’iOS et Android. Cela facilite le partage de ressources entre ces plateformes.
-
-Le Store sélectionne les ressources à télécharger notamment en fonction de la résolution de l’appareil. Seules les ressources correspondant au mieux à l’appareil sont téléchargées.
-
-## <span id="Tile_elements"></span><span id="tile_elements"></span><span id="TILE_ELEMENTS"></span>Éléments de vignette
+## Adaptive scaling
 
 
-Les composants de base d’une vignette de démarrage comprennent une plaque de fond, une icône, une barre de marque, des marges et un titre d’application:
+First, a brief overview on adaptive scaling to better understand how scaling works with assets. Windows 10 introduces an evolution of the existing scaling model. In addition to scaling vector content, there is a unified set of scale factors that provides a consistent size for UI elements across a variety of screen sizes and display resolutions. The scale factors are also compatible with the scale factors of other operating systems such as iOS and Android, which makes it easier to share assets between these platforms.
 
-![Décomposition des éléments d’une vignette](images/assetguidance02.png)
+The Store picks the assets to download based in part of the DPI of the device. Only the assets that best match the device are downloaded.
 
-La barre de marque au bas d’une vignette comprend le nom de l’application, le badge et le compteur (le cas échéant):
+## Tile elements
 
-![Barre de marque de la vignette](images/assetguidance03.png)
 
-La hauteur de la barre de marque dépend du facteur d’échelle de l’appareil sur lequel la vignette s’affiche:
+The basic components of a Start tile consist of a back plate, an icon, a branding bar, margins, and an app title:
 
-| Facteur d’échelle | Pixels |
+![breakdown of tile elements](images/assetguidance02.png)
+
+The branding bar at the bottom of a tile is where the app name, badging, and counter (if used) appear:
+
+![branding bar in tile](images/assetguidance03.png)
+
+The height of the branding bar is based on the scale factor of the device on which it appears:
+
+| Scale factor | Pixels |
 |--------------|--------|
 | 100%         | 32     |
-| 125 %         | 40     |
-| 150 %         | 48     |
-| 200 %         | 64     |
-| 400 %         | 128    |
+| 125%         | 40     |
+| 150%         | 48     |
+| 200%         | 64     |
+| 400%         | 128    |
 
  
 
-Le système définit les marges de vignette. Elles ne peuvent pas être modifiées. La majorité du contenu s’affiche entre les marges, comme illustré dans cet exemple:
+The system sets tile margins and cannot be modified. Most content appears inside the margins, as seen in this example:
 
-![Marges de vignette](images/assetguidance04.png)
+![tile margins](images/assetguidance04.png)
 
-La largeur des marges dépend du facteur d’échelle de l’appareil sur lequel la vignette s’affiche:
+Margin width is based on the scale factor of the device on which it appears:
 
-| Facteur d’échelle | Pixels |
+| Scale factor | Pixels |
 |--------------|--------|
 | 100%         | 8      |
-| 125 %         | 10     |
-| 150 %         | 12     |
-| 200 %         | 16     |
-| 400 %         | 32     |
+| 125%         | 10     |
+| 150%         | 12     |
+| 200%         | 16     |
+| 400%         | 32     |
 
  
 
-## <span id="Tile_assets"></span><span id="tile_assets"></span><span id="TILE_ASSETS"></span>Ressources de vignette
+## Tile assets
 
 
-Chaque ressource de vignette a la même taille que la vignette sur laquelle elle est positionnée. Vous pouvez personnaliser les vignettes de votre application avec deux représentations différentes d’une ressource:
+Each tile asset is the same size as the tile on which it is placed. You can brand your app's tiles with two different representations of an asset:
 
-1. Une icône ou un logo centrés avec remplissage. La couleur de la plaque de fond apparaît ainsi sur les éléments suivants:
+1. An icon or logo centered with padding. This lets the back plate color show through:
 
-![Vignette et plaque de fond](images/assetguidance05.png)
+![tile and back plate](images/assetguidance05.png)
 
-2. Une vignette personnalisée en pleine page sans remplissage:
+2. A full-bleed, branded tile without padding:
 
-![Vignette en pleine page](images/assetguidance06.png)
+![tile showing full bleed](images/assetguidance06.png)
 
-Par souci de cohérence entre les appareils, chaque taille de vignette (petite, moyenne, large et grande) a son propre ratio de dimensionnement. Pour obtenir un positionnement homogène de l’icône sur l’ensemble des vignettes, nous vous donnons quelques recommandations de base en matière de remplissage pour les tailles de vignette suivantes. L’emplacement idéal d’une icône est à l’intersection des deux superpositions violettes. Même si les icônes ne tiennent pas toujours à l’intérieur de l’emplacement, le volume visuel d’une icône devrait plus ou moins correspondre aux exemples fournis.
+For consistency across devices, each tile size (small, medium, wide, and large) has its own sizing relationship. In order to achieve a consistent icon placement across tiles, we recommend a few basic padding guidelines for the following tile sizes. The area where the two purple overlays intersect represents the ideal footprint for an icon. Although icons won't always fit inside the footprint, the visual volume of an icon should be roughly equivalent to the provided examples.
 
-Dimensionnement d’une petite vignette:
+Small tile sizing:
 
-![Exemple de dimensionnement d’une petite vignette](images/assetguidance07a.png)
+![small tile sizing example](images/assetguidance07a.png)
 
-Dimensionnement d’une vignette moyenne:
+Medium tile sizing:
 
-![Exemple de dimensionnement d’une vignette moyenne](images/assetguidance07b.png)
+![medium tile sizing example](images/assetguidance07b.png)
 
-Dimensionnement d’une vignette large:
+Wide tile sizing:
 
-![Exemple de dimensionnement d’une vignette large](images/assetguidance07c.png)
+![wide tile sizing example](images/assetguidance07c.png)
 
-Dimensionnement d’une grande vignette:
+Large tile sizing:
 
-![Exemple de dimensionnement d’une grande vignette](images/assetguidance07d.png)
+![large tile sizing example](images/assetguidance07d.png)
 
-Dans cet exemple, l’icône est trop grande pour la vignette:
+In this example, the icon is too large for the tile:
 
-![Icône trop grande pour la vignette](images/assetguidance08a.png)
+![icon too big for tile](images/assetguidance08a.png)
 
-Dans cet exemple, l’icône est trop petite pour la vignette:
+In this example, the icon is too small for the tile:
 
-![Icône trop petite pour la vignette](images/assetguidance08b.png)
+![icon too small for tile](images/assetguidance08b.png)
 
-Les taux de remplissage suivants sont particulièrement adaptés aux icônes positionnées à l’horizontale ou à la verticale.
+The following padding ratios are optimal for horizontally or vertically oriented icons.
 
-Pour les petites vignettes, limitez la largeur et la hauteur de l’icône à 66% de la taille de la vignette:
+For small tiles, limit the icon width and height to 66% of the tile size:
 
-![Ratios de dimensionnement d’une petite vignette](images/assetguidance09.png)
+![small tile sizing ratios](images/assetguidance09.png)
 
-Pour les vignettes moyennes, limitez la largeur de l’icône à 66% et la hauteur de l’icône à 50% de la taille de la vignette. Cela empêche le chevauchement des éléments dans la barre de marque:
+For medium tiles, limit the icon width to 66% and height to 50% of tile size. This prevents overlapping of elements in the branding bar:
 
-![Ratios de dimensionnement d’une vignette moyenne](images/assetguidance10.png)
+![medium tile sizing ratios](images/assetguidance10.png)
 
-Pour les vignettes larges, limitez la largeur de l’icône à 66% et la hauteur de l’icône à 50% de la taille de la vignette. Cela empêche le chevauchement des éléments dans la barre de marque:
+For wide tiles, limit the icon width to 66% and height to 50% of tile size. This prevents overlapping of elements in the branding bar:
 
-![Ratios de dimensionnement d’une vignette large](images/assetguidance11.png)
+![wide tile sizing ratios](images/assetguidance11.png)
 
-Pour les grandes vignettes, limitez la largeur et la hauteur de l’icône à 50% de la taille de la vignette:
+For large tiles, limit the icon width and height to 50% of tile size:
 
-![Ratios de dimensionnement d’une grande vignette](images/assetguidance12.png)
+![large tile size ratios](images/assetguidance12.png)
 
-Certaines icônes sont conçues pour être positionnées à l’horizontale ou à la verticale, tandis que certaines ont des formes plus complexes qui les empêchent de respecter les dimensions cibles. Les icônes qui semblent centrées peuvent déborder d’un côté. Dans ce cas, certaines parties de l’icône peuvent se retrouver hors de l’emplacement recommandé, à condition que l’icône offre le même attrait visuel qu’une icône aux bonnes dimensions:
+Some icons are designed to be horizontally or vertically oriented, while others have more complex shapes that prevent them from fitting squarely within the target dimensions. Icons that appear to be centered can be weighted to one side. In this case, parts of an icon may hang outside the recommended footprint, provided it occupies the same visual weight as a squarely fitted icon:
 
-![Trois icônes centrées](images/assetguidance13.png)
+![three centered icons](images/assetguidance13.png)
 
-Pour les ressources pleine page, prenez en compte les éléments qui interagissent avec les marges et les bords des vignettes. Conservez des marges équivalentes à au moins 16 % de la hauteur ou de la largeur de la vignette. Ce pourcentage représente le double de la largeur des marges pour la plus petite taille de vignette:
+With full-bleed assets, take into account elements that interact within the margins and edges of the tiles. Maintain margins of at least 16% of the height or width of the tile. This percentage represents double the width of the margins at the smallest tile sizes:
 
-![Vignette pleine page avec marges](images/assetguidance14.png)
+![full-bleed tile with margins](images/assetguidance14.png)
 
-Dans cet exemple, les marges sont trop étroites:
+In this example, margins are too tight:
 
-![Vignette pleine page avec marges trop étroites](images/assetguidance15.png)
+![full bleed tile with margins that are too small](images/assetguidance15.png)
 
-## <span id="Tile_assets_in_list_views"></span><span id="tile_assets_in_list_views"></span><span id="TILE_ASSETS_IN_LIST_VIEWS"></span>Ressources de vignette dans les affichages Liste
+## Tile assets in list views
 
 
-Les vignettes peuvent également apparaître dans un affichage Liste. Les recommandations de dimensionnement des ressources de vignette qui apparaissent dans les affichages Liste diffèrent légèrement de celles des ressources de vignette décrites précédemment. Cette section détaille ces caractéristiques de dimensionnement spécifiques.
+Tiles can also appear in a list view. Sizing guidelines for tile assets that appear in list views are a bit different than tile assets previously outlined. This section details those sizing specifics.
 
-![Ressources de vignette dans un affichage Liste](images/assetguidance16.png)
+![tile assets in a list view](images/assetguidance16.png)
 
-Limitez la largeur et la hauteur de l’icône à 75% de la taille de la vignette:
+Limit icon width and height to 75% of the tile size:
 
-![Dimensionnement d’une icône de vignette en affichage Liste](images/assetguidance17.png)
+![sizing of icon of list view tile](images/assetguidance17.png)
 
-Pour les icônes horizontales et verticales, limitez la largeur et la hauteur de l’icône à 75% de la taille de la vignette:
+For vertical and horizontal icon formats, limit width and height to 75% of the tile size:
 
-![Dimensionnement d’une icône de vignette en affichage Liste](images/assetguidance18.png)
+![sizing of icon of list view tile](images/assetguidance18.png)
 
-Pour des illustrations pleine page d’éléments de marque importants, conservez des marges d’au moins 12,5%:
+For full bleed artwork of important brand elements, maintain margins of at least 12.5%:
 
-![Illustration pleine page d’une vignette en affichage Liste](images/assetguidance19.png)
+![full-bleed artwork in list view tile](images/assetguidance19.png)
 
-Dans cet exemple, l’icône est trop grande pour la vignette:
+In this example, the icon is too big inside its tile:
 
-![Icône trop grande pour la vignette](images/assetguidance20a.png)
+![icon that is too big for tile](images/assetguidance20a.png)
 
-Dans cet exemple, l’icône est trop petite pour la vignette:
+In this example, the icon is too small inside its tile:
 
-![Icône trop petite pour la vignette](images/assetguidance20b.png)
+![icon that is too small for tile](images/assetguidance20b.png)
 
-## <span id="Target-based_assets"></span><span id="target-based_assets"></span><span id="TARGET-BASED_ASSETS"></span>Ressources basées sur la taille de la cible avec plaque
+## Target-based assets
 
 
-Les ressources basées sur la cible sont destinées aux icônes et vignettes qui apparaissent dans la barre des tâches Windows, dans les applications actives, dans l’affichage Alt+Tab, dans l’alignement automatique et dans le coin inférieur droit des vignettes de démarrage. Vous n’avez pas besoin d’ajouter du remplissage à ces ressources ; Windows s’en charge le cas échéant. Ces ressources doivent présenter un encombrement minimal de 16 pixels. Voici un exemple de ces ressources telles qu’elles apparaissent dans les icônes de la barre des tâches Windows:
+Target-based assets are for icons and tiles that appear on the Windows taskbar, task view, ALT+TAB, snap-assist, and the lower-right corner of Start tiles. You don't have to add padding to these assets; Windows adds padding if needed. These assets should account for a minimum footprint of 16 pixels. Here's an example of these assets as they appear in icons on the Windows taskbar:
 
-![Ressources dans la barre des tâches Windows](images/assetguidance21.png)
+![assets in windows taskbar](images/assetguidance21.png)
 
-Même si ces interfaces utilisateur positionnent par défaut une ressource basée sur la cible sur une plaque de fond en couleur, vous pouvez également utiliser une ressource basée sur la cible sans plaque. Lorsque vous créez des ressources sans plaque, pensez au fait qu’elles pourront apparaître sur différentes couleurs d’arrière-plan.
+Although these UI will use a target-based asset on top of a colored backplate by default, you may use a target-based unplated asset as well. Unplated assets should be created with the possibility that they may appear on various background colors:
 
-![Ressources avec et sans plaque](images/assetguidance22.png)
+![unplated and plated assets](images/assetguidance22.png)
 
-Voici des recommandations de dimensionnement pour les ressources basées sur la cible, à l’échelle 100%:
+These are size recommendations for target-based assets, at 100% scale:
 
-![Dimensionnement des ressources basées sur la cible à l’échelle 100%](images/assetguidance23.png)
+![target-based asset sizing at 100% scale](images/assetguidance23.png)
 
-**Ressources d’application utilisant un modèle sous forme d’icône**
+**Iconic template app assets**
 
-Le modèle sous forme d’icône (également connu sous le nom de modèle « IconWithBadge ») vous permet d’afficher une petite image au centre de la vignette. Windows 10 prend en charge le modèle à la fois sur les téléphones et sur les tablettes/ordinateurs de bureau. (Pour en savoir plus sur la création de vignettes sous forme d’icône, voir l’article [Modèles de vignette spéciaux](tiles-and-notifications-special-tile-templates-catalog.md).)
+The iconic template (also known as the "IconWithBadge" template) lets you display a small image in the center of the tile. Windows 10 supports the template on both phone and tablet/desktop. (Learn about creating iconic tiles in the [Special tile templates article](tiles-and-notifications-special-tile-templates-catalog.md).)
 
-Les applications qui utilisent un modèle sous forme d’icône, telles que les applications Messagerie, Téléphone et Windows Store, disposent de ressources basées sur la cible pouvant intégrer un badge (avec compteur dynamique). À l’instar des autres ressources basées sur la cible, aucun remplissage n’est nécessaire. Les ressources sous forme d’icône ne font pas partie du manifeste de l’application, mais d’une charge utile de vignettes dynamiques. Les ressources sont redimensionnées et centrées dans un conteneur de coefficient 3:2:
+Apps that use the iconic template, such as Messaging, Phone, and Store, have target-based assets that can feature a badge (with the live counter). As with other target-based assets, no padding is needed. Iconic assets aren't part of the app manifest, but are part of a live tile payload. Assets are scaled to fit and centered within a 3:2 ratio container:
 
-![Dimensionnement des ressources avec et sans badge](images/assetguidance24.png)
+![sizing for assets with and without badge](images/assetguidance24.png)
 
-Pour les ressources carrées, un centrage automatique est effectué dans le conteneur:
+For square assets, automatic centering within the container occurs:
 
-![Dimensionnement des ressources carrées, avec et sans badge](images/assetguidance25.png)
+![square asset sizing, with and without badge](images/assetguidance25.png)
 
-Pour les ressources non carrées, un centrage horizontal/vertical automatique et un alignement de la largeur/hauteur sont effectués dans le conteneur:
+For non-square assets, automatic horizontal/vertical centering and snapping to the width/height of the container occurs:
 
-![Dimensionnement des ressources non carrées, avec et sans badge](images/assetguidance26a.png)
+![non-square asset sizing, with and without badge](images/assetguidance26a.png)
 
-![Dimensionnement des ressources non carrées, avec et sans badge](images/assetguidance26b.png)
+![non-square asset sizing, with and without badge](images/assetguidance26b.png)
 
-## <span id="Splash_screen_assets"></span><span id="splash_screen_assets"></span><span id="SPLASH_SCREEN_ASSETS"></span>Ressources d’écran de démarrage
+## Splash screen assets
 
 
-L’image d’écran de démarrage peut être fournie sous la forme d’un chemin d’accès direct à un fichier image ou en tant que ressource. En utilisant une référence à une ressource, vous pouvez fournir des images d’échelles différentes afin que Windows puisse choisir la taille la mieux adaptée à l’appareil et à la résolution d’écran. Vous pouvez également fournir des images à contraste élevé pour l’accessibilité et des images localisées correspondant aux différentes langues d’interface utilisateur.
+The splash screen image can be given either as a direct path to an image file or as a resource. By using a resource reference, you can supply images of different scales so that Windows can choose the best size for the device and screen resolution. You can also supply high contrast images for accessibility and localized images to match different UI languages.
 
-Si vous ouvrez le fichier « Package.appxmanifest » dans un éditeur de texte, l’élément [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br211467) s’affiche en tant qu’enfant de l’élément [**VisualElements**](https://msdn.microsoft.com/library/windows/apps/br211471). Le balisage de l’écran de démarrage par défaut dans le fichier manifeste ressemble à ceci dans un éditeur de texte :
+If you open "Package.appxmanifest" in a text editor, the [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br211467) element appears as a child of the [**VisualElements**](https://msdn.microsoft.com/library/windows/apps/br211471) element. The default splash screen markup in the manifest file looks like this in a text editor:
 
 ```XML
 <uap:SplashScreen Image="Assets\SplashScreen.png" /></code></pre></td>
@@ -210,175 +208,175 @@ Si vous ouvrez le fichier « Package.appxmanifest » dans un éditeur de texte, 
 </table>
 ```
 
-Les ressources d’écran de démarrage sont centrées sur chaque appareil sur lequel elles apparaissent:
+The splash screen asset is centered by whichever device it appears on:
 
-![Dimensionnement des ressources d’écran de démarrage](images/assetguidance27.png)
+![sizing of splash screen asset](images/assetguidance27.png)
 
-## <span id="High-contrast_assets"></span><span id="high-contrast_assets"></span><span id="HIGH-CONTRAST_ASSETS"></span>Ressources à contraste élevé
-
-
-Le mode de contraste élevé utilise des jeux de ressources distincts pour le blanc à contraste élevé (arrière-plan blanc avec texte noir) et le noir à contraste élevé (arrière-plan noir avec texte blanc). Si vous ne fournissez pas de ressources à contraste élevé pour votre application, les ressources standard seront utilisées.
-
-Si les ressources standard de votre application offrent un affichage acceptable sur un arrière-plan noir et blanc, alors votre application pourra au moins offrir un affichage satisfaisant en mode de contraste élevé. Si vos ressources standard n’offrent pas un affichage acceptable sur un arrière-plan noir et blanc, envisagez d’inclure des ressources à contraste élevé. Ces exemples illustrent les deux types de ressources à contraste élevé:
-
-![Exemples de ressources à contraste élevé](images/assetguidance28.png)
-
-Si vous décidez de fournir des ressources à contraste élevé, vous devez inclure les deux types de ressources: blanc sur noir et noir sur blanc. Au moment d’ajouter ces ressources à votre package, vous pouvez créer un dossier «contraste noir» pour les ressources blanc sur noir et un dossier «contraste blanc» pour les ressources noir sur blanc.
-
-## <span id="Asset_size_tables"></span><span id="asset_size_tables"></span><span id="ASSET_SIZE_TABLES"></span>Tableaux des tailles de ressource
+## High-contrast assets
 
 
-Nous vous recommandons vivement de fournir au moins des ressources pour les facteurs d’échelle 100, 200 et 400. Si vous fournissez des ressources pour tous les facteurs d’échelle, l’expérience utilisateur sera optimale.
+High-contrast mode makes use of separate sets of assets for high-contrast white (white background with black text) and high-contrast black (black background with white text). If you don't provide high-contrast assets for your app, standard assets will be used.
 
-**Ressources basées sur l’échelle**
+If your app's standard assets provide an acceptable viewing experience when rendered on a black-and-white background, then your app should look at least satisfactory in high-contrast mode. If your standard assets don't afford an acceptable viewing experience when rendered on a black-and-white background, consider specifically including high-contrast assets. These examples illustrate the two types of high-contrast assets:
 
-| Catégorie             | Nom d’élément      | À l’échelle 100 % | À l’échelle 125 % | À l’échelle 150 % | À l’échelle 200 % | À l’échelle 400 % |
+![high-contrast ratio asset examples](images/assetguidance28.png)
+
+If you decide to provide high-contrast assets, you need to include both sets—both white-on-black and black-on-white. When including these assets in your package, you could create a "contrast-black" folder for white-on-black assets, and a "contrast-white" folder for black-on-white assets.
+
+## Asset size tables
+
+
+At a bare minimum, we strongly recommend that you provide assets for the 100, 200, and 400 scale factors. Providing assets for all scale factors will provide the optimal user experience.
+
+**Scale-based assets**
+
+| Category             | Element name      | At 100% scale | At 125% scale | At 150% scale | At 200% scale | At 400% scale |
 |----------------------|-------------------|---------------|---------------|---------------|---------------|---------------|
-| Petite                | Square71x71Logo   | 71 x 71         | 89 x 89         | 107 x 107       | 142 x 142       | 284 x 284       |
-| Moyenne               | Square150x150Logo | 150 x 150       | 188 x 188       | 225 x 225       | 300 x 300       | 600 x 600       |
-| Large                 | Square310x150Logo | 310 x 150       | 388 x 188       | 465 x 225       | 620 x 300       | 1 240 x 600      |
-| Grande (bureau uniquement) | Square310x310Logo | 310 x 310       | 388 x 388       | 465 x 465       | 620 x 620       | 1240x 1240     |
-| Liste des applications (icône)      | Square44x44Logo   | 44 x 44         | 55 x 55         | 66 x 66         | 88 x 88         | 176 x 176       |
+| Small                | Square71x71Logo   | 71x71         | 89x89         | 107x107       | 142x142       | 284x284       |
+| Medium               | Square150x150Logo | 150x150       | 188x188       | 225x225       | 300x300       | 600x600       |
+| Wide                 | Square310x150Logo | 310x150       | 388x188       | 465x225       | 620x300       | 1240x600      |
+| Large (desktop only) | Square310x310Logo | 310x310       | 388x388       | 465x465       | 620x620       | 1240x1240     |
+| App list (icon)      | Square44x44Logo   | 44x44         | 55x55         | 66x66         | 88x88         | 176x176       |
 
  
 
-**Exemples de nom de fichier pour les ressources basées sur l’échelle**
+**File name examples for scale-based assets**
 
-| Catégorie             | Nom d’élément      | À l’échelle 100 %                  | À l’échelle 125 %                  | À l’échelle 150 %                  |
+| Category             | Element name      | At 100% scale                  | At 125% scale                  | At 150% scale                  |
 |----------------------|-------------------|--------------------------------|--------------------------------|--------------------------------|
-| Petite                | Square71x71Logo   | AppNameSmallTile.scale-100.png | AppNameSmallTile.scale-125.png | AppNameSmallTile.scale-150.png |
-| Moyenne               | Square150x150Logo | AppNameMedTile.scale-100.png   | AppNameMedTile.scale-125.png   | AppNameMedTile.scale-150.png   |
-| Large                 | Square310x150Logo | AppNameWideTile.scale-100.png  | AppNameWideTile.scale-125.png  | AppNameWideTile.scale-150.png  |
-| Grande (bureau uniquement) | Square310x310Logo | AppNameLargeTile.scale-100.png | AppNameLargeTile.scale-125.png | AppNameLargeTile.scale-150.png |
-| Liste des applications (icône)      | Square44x44Logo   | AppNameLargeTile.scale-100.png | AppNameLargeTile.scale-125.png | AppNameLargeTile.scale-150.png |
+| Small                | Square71x71Logo   | AppNameSmallTile.scale-100.png | AppNameSmallTile.scale-125.png | AppNameSmallTile.scale-150.png |
+| Medium               | Square150x150Logo | AppNameMedTile.scale-100.png   | AppNameMedTile.scale-125.png   | AppNameMedTile.scale-150.png   |
+| Wide                 | Square310x150Logo | AppNameWideTile.scale-100.png  | AppNameWideTile.scale-125.png  | AppNameWideTile.scale-150.png  |
+| Large (desktop only) | Square310x310Logo | AppNameLargeTile.scale-100.png | AppNameLargeTile.scale-125.png | AppNameLargeTile.scale-150.png |
+| App list (icon)      | Square44x44Logo   | AppNameLargeTile.scale-100.png | AppNameLargeTile.scale-125.png | AppNameLargeTile.scale-150.png |
 
  
 
-| Catégorie             | Nom d’élément      | À l’échelle 200 %                  | À l’échelle 400 %                  |
+| Category             | Element name      | At 200% scale                  | At 400% scale                  |
 |----------------------|-------------------|--------------------------------|--------------------------------|
-| Petite                | Square71x71Logo   | AppNameSmallTile.scale-200.png | AppNameSmallTile.scale-400.png |
-| Moyenne               | Square150x150Logo | AppNameMedTile.scale-200.png   | AppNameMedTile.scale-400.png   |
-| Large                 | Square310x150Logo | AppNameWideTile.scale-200.png  | AppNameWideTile.scale-400.png  |
-| Grande (bureau uniquement) | Square310x310Logo | AppNameLargeTile.scale-200.png | AppNameLargeTile.scale-400.png |
-| Liste des applications (icône)      | Square44x44Logo   | AppNameLargeTile.scale-200.png | AppNameLargeTile.scale-400.png |
+| Small                | Square71x71Logo   | AppNameSmallTile.scale-200.png | AppNameSmallTile.scale-400.png |
+| Medium               | Square150x150Logo | AppNameMedTile.scale-200.png   | AppNameMedTile.scale-400.png   |
+| Wide                 | Square310x150Logo | AppNameWideTile.scale-200.png  | AppNameWideTile.scale-400.png  |
+| Large (desktop only) | Square310x310Logo | AppNameLargeTile.scale-200.png | AppNameLargeTile.scale-400.png |
+| App list (icon)      | Square44x44Logo   | AppNameLargeTile.scale-200.png | AppNameLargeTile.scale-400.png |
 
  
 
-**Ressources basées sur la taille de la cible avec plaque**
+**Target-based assets**
 
-Les ressources basées sur la cible sont utilisées dans plusieurs facteurs d’échelle. Le nom d’élément pour les ressources basées sur la cible est **Square44x44Logo**. Nous vous recommandons vivement de fournir au moins les ressources suivantes :
+Target-based assets are used across multiple scale factors. The element name for target-based assets is **Square44x44Logo**. We strongly recommend submitting the following assets as a bare minimum:
 
-16 x 16, 24 x 24, 32 x 32, 48 x 48, 256 x 256
+16x16, 24x24, 32x32, 48x48, 256x256
 
-Le tableau suivant répertorie toutes les tailles de ressources basées sur la cible et les exemples de nom de fichier correspondants :
+The following table lists all target-based asset sizes and corresponding file name examples:
 
-| Taille de la ressource | Exemple de nom de fichier                 |
+| Asset size | File name example                 |
 |------------|-----------------------------------|
-| 16 x 16\*    | AppNameAppList.targetsize-16.png  |
-| 24 x 24\*    | AppNameAppList.targetsize-24.png  |
-| 32 x 32\*    | AppNameAppList.targetsize-32.png  |
-| 48 x 48\*    | AppNameAppList.targetsize-48.png  |
-| 256 x 256\*  | AppNameAppList.targetsize-256.png |
-| 20 x 20      | AppNameAppList.targetsize-20.png  |
-| 30 x 30      | AppNameAppList.targetsize-30.png  |
-| 36 x 36      | AppNameAppList.targetsize-36.png  |
-| 40 x 40      | AppNameAppList.targetsize-40.png  |
-| 60 x 60      | AppNameAppList.targetsize-60.png  |
-| 64 x 64      | AppNameAppList.targetsize-64.png  |
-| 72 x 72      | AppNameAppList.targetsize-72.png  |
-| 80 x 80      | AppNameAppList.targetsize-80.png  |
-| 96 x 96      | AppNameAppList.targetsize-96.png  |
+| 16x16\*    | AppNameAppList.targetsize-16.png  |
+| 24x24\*    | AppNameAppList.targetsize-24.png  |
+| 32x32\*    | AppNameAppList.targetsize-32.png  |
+| 48x48\*    | AppNameAppList.targetsize-48.png  |
+| 256x256\*  | AppNameAppList.targetsize-256.png |
+| 20x20      | AppNameAppList.targetsize-20.png  |
+| 30x30      | AppNameAppList.targetsize-30.png  |
+| 36x36      | AppNameAppList.targetsize-36.png  |
+| 40x40      | AppNameAppList.targetsize-40.png  |
+| 60x60      | AppNameAppList.targetsize-60.png  |
+| 64x64      | AppNameAppList.targetsize-64.png  |
+| 72x72      | AppNameAppList.targetsize-72.png  |
+| 80x80      | AppNameAppList.targetsize-80.png  |
+| 96x96      | AppNameAppList.targetsize-96.png  |
 
  
 
-\* Fournissez ces tailles de ressource à titre de référence
+\* Submit these asset sizes as a baseline
 
-## <span id="Asset_types"></span><span id="asset_types"></span><span id="ASSET_TYPES"></span>Types de ressources
+## Asset types
 
 
-Voici tous les types de ressources, leur utilisation et les noms de fichier recommandés.
+Listed here are all asset types, their uses, and recommended file names.
 
-**Ressources de vignette**
+**Tile assets**
 
--   Les ressources centrées sont généralement utilisées sur l’écran de démarrage pour présenter votre application.
--   Format de nom de fichier: \*Tile.scale-\*.PNG
--   Applications concernées: toutes les applications UWP
--   Utilisations :
-    -   Vignettes d’écran de démarrage par défaut (bureau et appareil mobile)
-    -   Centre de maintenance (bureau et appareil mobile)
-    -   Sélecteur de tâches (appareil mobile)
-    -   Sélecteur Partager (appareil mobile)
-    -   Sélecteur (appareil mobile)
-    -   Windows Store
+-   Centered assets are generally used on the Start to showcase your app.
+-   File name format: \*Tile.scale-\*.PNG
+-   Impacted apps: Every UWP app
+-   Uses:
+    -   Default Start tiles (desktop and mobile)
+    -   Action center (desktop and mobile)
+    -   Task switcher (mobile)
+    -   Share picker (mobile)
+    -   Picker (mobile)
+    -   Store
 
-**Ressources évolutives avec plaque**
+**Scalable list assets with plate**
 
--   Ces ressources sont utilisées sur les surfaces qui requièrent des facteurs d’échelle. Les ressources sont équipées d’une plaque par le système ou sont fournies avec leur propre couleur d’arrière-plan si l’application inclut cette fonctionnalité.
--   Format de nom de fichier: \*AppList.scale-\*.PNG
--   Applications concernées: toutes les applications UWP
--   Utilisations :
-    -   Liste Toutes les applications du menu Démarrer (bureau)
-    -   Liste Les plus utilisées du menu Démarrer (bureau)
-    -   Gestionnaire des tâches (bureau)
-    -   Résultats de recherche Cortana
-    -   Liste Toutes les applications du menu Démarrer (appareil mobile)
-    -   Paramètres
+-   These assets are used on surfaces that request scale factors. Assets either get plated by the system or come with their own background color if the app includes that.
+-   File name format: \*AppList.scale-\*.PNG
+-   Impacted apps: Every UWP app
+-   Uses:
+    -   Start all apps list (desktop)
+    -   Start most-frequently used list (desktop)
+    -   Task manager (desktop)
+    -   Cortana search results
+    -   Start all apps list (mobile)
+    -   Settings
 
-**Ressources basées sur la taille de la cible avec plaque**
+**Target-size list assets with plate**
 
--   Ces tailles de ressource fixes ne sont pas mises à l’échelle avec les plaques. Principalement utilisées pour les expériences héritées. Les ressources sont vérifiées par le système.
--   File Format de nom de fichier: \*AppList.targetsize-\*.PNG
--   Applications concernées: toutes les applications UWP
--   Utilisations :
-    -   Liste des raccourcis du menu Démarrer (bureau)
-    -   Coin inférieur de la vignette du menu Démarrer (bureau)
-    -   Raccourcis (bureau)
-    -   Panneau de configuration (bureau)
+-   These are fixed asset sizes that don't scale with plateaus. Mostly used for legacy experiences. Assets are checked by the system.
+-   File name format: \*AppList.targetsize-\*.PNG
+-   Impacted apps: Every UWP app
+-   Uses:
+    -   Start jump list (desktop)
+    -   Start lower corner of tile (desktop)
+    -   Shortcuts (desktop)
+    -   Control Panel (desktop)
 
-**Ressources basées sur la taille de la cible sans plaque**
+**Target-size list assets without plate**
 
--   Ces ressources ne sont pas équipées de plaque ni mises à l’échelle par le système.
--   Format de nom de fichier: \*AppList.targetsize-\*\_altform-unplated.PNG
--   Applications concernées: toutes les applications UWP
--   Utilisations :
-    -   Barre des tâches et miniature de la barre des tâches (bureau)
-    -   Liste des raccourcis de la barre des tâches
-    -   Applications actives
-    -   Alt+Tab
+-   These are assets that don't get plated or scaled by the system.
+-   File name format: \*AppList.targetsize-\*\_altform-unplated.PNG
+-   Impacted apps: Every UWP app
+-   Uses:
+    -   Taskbar and taskbar thumbnail (desktop)
+    -   Taskbar jumplist
+    -   Task view
+    -   ALT+TAB
 
-**Ressources d’extension de fichier**
+**File extension assets**
 
--   Ces ressources sont spécifiques aux extensions de fichier. Elles s’affichent en regard des icônes d’association de fichier de type Win32 dans l’Explorateur de fichiers et doivent être indépendantes du thème défini. Le dimensionnement diffère selon les plateformes mobiles et de bureau.
--   Format de nom de fichier: \*LogoExtensions.targetsize-\*.PNG
--   Applications concernées : Musique, Vidéo, Photos, MicrosoftEdge, Microsoft Office
--   Utilisations :
-    -   Explorateur de fichiers
+-   These are assets specific to file extensions. They appear next to Win32-style file association icons in File Explorer and must be theme-agnostic. Sizing is different on desktop and mobile platforms.
+-   File name format: \*LogoExtensions.targetsize-\*.PNG
+-   Impacted apps: Music, Video, Photos, Microsoft Edge, Microsoft Office
+-   Uses:
+    -   File Explorer
     -   Cortana
-    -   Différentes surfaces d’interface utilisateur (bureau)
+    -   Various UI surfaces (desktop)
 
-**Écran de démarrage**
+**Splash screen**
 
--   La ressource qui s’affiche sur l’écran de démarrage de votre application. Elle est automatiquement mise à l’échelle sur les plateformes mobiles et de bureau.
--   Format de nom de fichier: \*SplashScreen.screen-100.PNG
--   Applications concernées: toutes les applications UWP
--   Utilisations :
-    -   Écran de démarrage de l’application
+-   The asset that appears on your app's splash screen. Automatically scales on both desktop and mobile platforms.
+-   File name format: \*SplashScreen.screen-100.PNG
+-   Impacted apps: Every UWP app
+-   Uses:
+    -   App's splash screen
 
-**Ressources de vignette sous forme d’icône**
+**Iconic tile assets**
 
--   Il s’agit des ressources pour les applications utilisant le modèle sous forme d’icône.
--   Format de nom de fichier : non applicable
--   Applications concernées : Messagerie, Téléphone, Windows Store, etc.
--   Utilisations :
-    -   Vignette sous forme d’icône
-
-
-
-## <span id="related_topics"></span>Rubriques connexes
+-   These are assets for apps that make use of the iconic template.
+-   File name format: Not applicable
+-   Impacted apps: Messaging, Phone, Store, more
+-   Uses:
+    -   Iconic tile
 
 
 
-* [Modèles de vignette spéciaux](tiles-and-notifications-special-tile-templates-catalog.md)
+## Related topics
+
+
+
+* [Special tile templates](tiles-and-notifications-special-tile-templates-catalog.md)
  
 
  
@@ -389,6 +387,6 @@ Voici tous les types de ressources, leur utilisation et les noms de fichier reco
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

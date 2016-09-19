@@ -1,38 +1,37 @@
 ---
 author: mcleanbyron
 ms.assetid: 4e8cc0c0-b14c-472c-9e1c-4601d10289d2
-description: "Le SDK Windows, le SDK d’engagement et de monétisation de la Boutique Microsoft et le Windows Store fournissent de nombreuses fonctionnalités qui vous permettent de générer plus de revenus avec vos applications et de conquérir des clients en engageant les utilisateurs."
-title: "Monétiser votre application"
+description: The Windows SDK, Microsoft Store Services SDK, and the Windows Store provide many features that enable you to make more money from your apps and gain customers from engaging with your users.
+title: Monetization, customer engagement, and Store services
 translationtype: Human Translation
-ms.sourcegitcommit: de85956c7c1d2a0ba509d61ee8928b412f057f8a
-ms.openlocfilehash: 6d5f483b44ae4516f4969431e31f70388a66c5d9
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: 8332a70951572da162dce77b258cda1361e75148
 
 ---
 
-# Monétiser votre application et engager les clients
+# Monetization, customer engagement, and Store services
 
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
-
-Le SDK Windows, le SDK d’engagement et de monétisation de la Boutique Microsoft et le Windows Store fournissent des fonctionnalités qui vous permettent de générer plus de revenus avec vos applications et de conquérir des clients en suscitant l’intérêt des utilisateurs. Les rubriques de cette section indiquent comment générer ces fonctionnalités dans votre application.
-
-Pour plus d’informations sur les frais facturés par le WindowsStore et la façon dont vous recevez l’argent généré par votre application, voir [Rémunération](https://msdn.microsoft.com/library/windows/apps/mt148536).
-
-## Dans cette section
 
 
-| Rubrique                                                                                                       | Description                 |
+The Windows SDK, the Microsoft Store Services SDK, and the Windows Store provide features that enable you to make more money from your apps and gain customers by engaging with your users. The topics in this section show you how to build these features into your app.
+
+For details about the fees charged by the Windows Store and how you get paid for the money your app makes, see [Getting paid](https://msdn.microsoft.com/library/windows/apps/mt148536).
+
+## In this section
+
+
+| Topic                                                                                                       | Description                 |
 |-------------------------------------------------------------------------------------------------------------|-----------------------------|
-| [Exclure ou limiter des fonctionnalités de la version d’évaluation](exclude-or-limit-features-in-a-trial-version-of-your-app.md) | Si vous donnez aux clients la possibilité d’utiliser votre application gratuitement pendant une période d’évaluation, vous pouvez leur donner envie de mettre à niveau vers la version complète de votre application en excluant ou en limitant certaines fonctionnalités pendant la période d’évaluation à l’aide des API du SDK Windows. Choisissez les fonctionnalités à limiter avant de commencer à coder, puis faites en sorte que votre application ne les rende disponibles qu’à l’achat de la licence complète. Vous pouvez également activer certaines fonctionnalités, telles que des bannières ou des filigranes, qui ne s’afficheront que pendant la période d’évaluation, avant l’achat de votre application par un client. |
-| [Activer les achats de produits dans l’application](enable-in-app-product-purchases.md)                                       | Que votre application soit gratuite ou non, vous pouvez vendre du contenu, d’autres applications ou de nouvelles fonctionnalités applicatives (par exemple le déverrouillage d’un nouveau niveau de jeu) directement dans l’application. Nous allons vous montrer comment activer ces produits dans votre application à l’aide des API du SDKWindows.    |
-| [Kit de développement logiciel (SDK) d’engagement et de monétisation de la BoutiqueMicrosoft](monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md)      | Le Kit de développement logiciel (SDK) d’engagement et de monétisation de la BoutiqueMicrosoft contient des bibliothèques et des outils qui vous permettent de doter vos applications de fonctionnalités conçues pour vous aider à générer plus de revenus et à collaborer avec vos clients.   |
-| [Exécuter des expériences d’application avec des tests A/B](run-app-experiments-with-a-b-testing.md)      |   Exécutez des tests A/B dans vos applications de plateforme Windows universelle (UWP) pour évaluer l’efficacité de fonctionnalités spécifiques auprès de certains clients avant de les mettre à la disposition de tous. Cette fonctionnalité requiert le Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft.  |
-| [Afficher des publicités dans votre application](display-ads-in-your-app.md)      |   Augmentez vos revenus en affichant des bannières ou des spots vidéo publicitaires dans votre application. Cette fonctionnalité requiert le Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft.   |
-| [Lancer le Hub de commentaires à partir de votre application](launch-feedback-hub-from-your-app.md)      |   Ajoutez du code dans vos applications UWP pour diriger vos clients Windows10 vers le Hub de commentaires, qui leur permettra de soumettre leurs problèmes, suggestions et votes pour. Ensuite, gérez ces commentaires dans le tableau de bord du Centre de développement. Cette fonctionnalité requiert le Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft.   |
-| [Utiliser les services du WindowsStore](using-windows-store-services.md)                                    | Le WindowsStore expose plusieurs services que vous pouvez appeler par le biais d’API REST afin d’accéder par programme à certains types de données pour les applications qui sont enregistrées pour votre compte personnel ou compte d’organisation du Centre de développement Windows.    |
+| [In-app purchases and trials](in-app-purchases-and-trials.md)      | Learn how to use APIs in the Windows SDK to add in-app product purchases and trial functionality to your apps: <ul><li>Whether your app is free or not, you can sell content, other apps, or new app functionality (such as unlocking the next level of a game) from right within the app.</li><li>If you enable customers to use your app for free during a trial period, you can entice your customers to purchase the full version of your app by excluding or limiting some features during the trial period. You can also enable features, such as banners or watermarks, that are shown only during the trial, before a customer buys your app.</li></ul>  |
+| [Microsoft Store Services SDK](microsoft-store-services-sdk.md)      | The Microsoft Store Services SDK provides libraries and tools that you can use to add features to your apps that help you make more money and engage with your customers. These features include in-app ads, A/B tests, and launching Feedback Hub from your app. |
+| [Display ads in your app](display-ads-in-your-app.md)      |   Increase your revenue by displaying banner ads or video interstitial ads in your app. This feature requires the Microsoft Store Services SDK.   |
+| [Run experiments with A/B testing](run-app-experiments-with-a-b-testing.md)      |   Run A/B tests in your Universal Windows Platform (UWP) apps to measure the effectiveness of features on some customers before you release the features to everyone. This feature requires the Microsoft Store Services SDK.  |
+| [Launch Feedback Hub from your app](launch-feedback-hub-from-your-app.md)      |   Add code to your UWP apps to direct your Windows 10 customers to Feedback Hub, where they can submit problems, suggestions, and upvotes. Then, manage this feedback in the Dev Center dashboard. This feature requires the Microsoft Store Services SDK.   |
+| [Use Windows Store services](using-windows-store-services.md)                                    | The Windows Store exposes several services that you can call via REST APIs to programmatically access certain types of data for apps that are registered to your or your organization's Windows Dev Center account.    |
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

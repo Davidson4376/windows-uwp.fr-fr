@@ -1,31 +1,31 @@
 ---
 author: mtoepke
-title: "Porter les mémoires tampons et données de vertex"
-description: "Lors de cette étape, vous allez définir les mémoires tampons de vertex qui contiendront vos maillages ainsi que les mémoires tampons d’index qui permettront aux nuanceurs de parcourir les vertex dans l’ordre indiqué."
+title: Port the vertex buffers and data
+description: In this step, you'll define the vertex buffers that will contain your meshes and the index buffers that allow the shaders to traverse the vertices in a specified order.
 ms.assetid: 9a8138a5-0797-8532-6c00-58b907197a25
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9692b33303099f9d1193b93ab458a19a5d95abe3
+ms.openlocfilehash: ee8b3f693e40d9c0fba679a44ebcd4986d06d7ac
 
 ---
 
-# Porter les mémoires tampons et données de vertex
+# Port the vertex buffers and data
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**API importantes**
+**Important APIs**
 
 -   [**ID3DDevice::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501)
 -   [**ID3DDeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456)
 -   [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/bb173588)
 
-Lors de cette étape, vous allez définir les mémoires tampons de vertex qui contiendront vos maillages ainsi que les mémoires tampons d’index qui permettront aux nuanceurs de parcourir les vertex dans l’ordre indiqué.
+In this step, you'll define the vertex buffers that will contain your meshes and the index buffers that allow the shaders to traverse the vertices in a specified order.
 
-Commençons par examiner le modèle codé en dur correspondant au maillage de cube de notre exemple. Dans les deux représentations, les vertex sont organisés sous forme de liste de triangles (à la différence d’une bande de triangles ou de toute autre disposition de triangles plus appropriée). Tous les vertex de ces représentations sont également associés à des valeurs d’index et de couleur. Une grande partie du code Direct3D utilisé dans cette rubrique fait référence à des variables et des objets déjà définis dans le projet Direct3D.
+At this point, let's examine the hardcoded model for the cube mesh we are using. Both representations have the vertices organized as a triangle list (as opposed to a strip or other more efficient triangle layout). All vertices in both representations also have associated indices and color values. Much of the Direct3D code in this topic refers to variables and objects defined in the Direct3D project.
 
-Voici le cube qui sera traité par OpenGL ES 2.0. Dans l’exemple d’implémentation, chaque vertex se compose de sept valeurs flottantes (trois coordonnées de position suivies de quatre valeurs de couleur RVBA).
+Here's the cube for processing by OpenGL ES 2.0. In the sample implementation, each vertex is 7 float values: 3 position coordinates followed by 4 RGBA color values.
 
 ```cpp
 #define CUBE_INDICES 36
@@ -65,7 +65,7 @@ GLuint cubeIndices[] =
 };
 ```
 
-Et voici le même cube qui sera cette fois traité par Direct3D 11.
+And here's the same cube for processing by Direct3D 11.
 
 ```cpp
 VertexPositionColor cubeVerticesAndColors[] = 
@@ -103,17 +103,17 @@ unsigned short cubeIndices[] =
 };
 ```
 
-Si vous analysez ce code plus en détail, vous remarquerez que le cube contenu dans le code OpenGL ES 2.0 est représenté dans un système de coordonnées orienté main droite, alors que le cube défini dans le code Direct3D est représenté dans un système de coordonnées orienté main gauche. Lorsque vous importez vos propres données de maillage, vous devez inverser les coordonnées de l’axe z de votre modèle, et modifier les index de chaque maillage de façon adéquate pour parcourir les triangles dans le nouvel ordre du système de coordonnées.
+Reviewing this code, you notice that the cube in the OpenGL ES 2.0 code is represented in a right-hand coordinate system, whereas the cube in the Direct3D-specific code is represented in a left-hand coordinate system. When importing your own mesh data, you must reverse the z-axis coordinates for your model and change the indices for each mesh accordingly to traverse the triangles according to the change in the coordinate system.
 
-Supposons que nous venons de transposer le maillage du cube du système de coordonnées orienté main droite d’OpenGL ES2.0 dans le système de coordonnées orienté main gauche de Direct3D. Voyons maintenant comment faire pour charger les données du cube en vue de leur traitement dans les deux modèles.
+Assuming that we have successfully moved the cube mesh from the right-handed OpenGL ES 2.0 coordinate system to the left-handed Direct3D one, let's see how to load the cube data for processing in both models.
 
 ## Instructions
 
-### Étape1: Créer une disposition d’entrée
+### Step 1: Create an input layout
 
-Dans OpenGL ES2.0, vos données de vertex sont fournies sous forme d’attributs, qui seront ensuite transmis aux objets nuanceur pour lecture. En règle générale, vous fournissez à l’objet programme du nuanceur une chaîne contenant le nom d’attribut utilisé dans le code GLSL du nuanceur, puis vous obtenez en retour un emplacement mémoire à transmettre au nuanceur. Dans cet exemple, un objet mémoire tampon de vertex stocke une liste de structures de vertex personnalisées, qui ont été définies et mises en forme comme suit :
+In OpenGL ES 2.0, your vertex data is supplied as attributes that will be supplied to and read by the shader objects. You typically provide a string that contains the attribute name used in the shader's GLSL to the shader program object, and get a memory location back that you can supply to the shader. In this example, a vertex buffer object contains a list of custom Vertex structures, defined and formatted as follows:
 
-OpenGL ES2.0: configurer les attributs contenant les données de chaque vertex
+OpenGL ES 2.0: Configure the attributes that contain the per-vertex information.
 
 ``` syntax
 typedef struct 
@@ -123,13 +123,13 @@ typedef struct
 } Vertex;
 ```
 
-Dans OpenGL ES2.0, les dispositions d’entrée sont implicites. Avec l’objet général GL\_ELEMENT\_ARRAY\_BUFFER, vous définissez les valeurs de stride et de décalage de manière à ce que le nuanceur de vertex puisse charger et interpréter les données qui lui sont fournies. Avant l’étape du rendu, vous indiquez au nuanceur quels attributs il doit mapper aux différentes parties de chaque bloc de données de vertex, avec **glVertexAttribPointer**.
+In OpenGL ES 2.0, input layouts are implicit; you take a general purpose GL\_ELEMENT\_ARRAY\_BUFFER and supply the stride and offset such that the vertex shader can interpret the data after uploading it. You inform the shader before rendering which attributes map to which portions of each block of vertex data with **glVertexAttribPointer**.
 
-Dans Direct3D, vous devez fournir la disposition d’entrée qui décrit la structure des données de vertex dans la mémoire tampon de vertex au moment où vous créez cette dernière (et pas avant de dessiner la géométrie). Pour cela, utilisez une disposition d’entrée qui correspond à la disposition des données de chaque vertex en mémoire. Les informations que vous indiquez ici doivent être précises et exactes. C’est très important!
+In Direct3D, you must provide an input layout to describe the structure of the vertex data in the vertex buffer when you create the buffer, instead of before you draw the geometry. To do this, you use an input layout which corresponds to layout of the data for our individual vertices in memory. It is very important to specify this accurately!
 
-Dans cet exemple, vous créez une description de disposition d’entrée sous forme de tableau de structures [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180).
+Here, you create an input description as an array of [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) structures.
 
-Direct3D: définir une description de disposition d’entrée
+Direct3D: Define an input layout description.
 
 ``` syntax
 struct VertexPositionColor
@@ -148,13 +148,13 @@ const D3D11_INPUT_ELEMENT_DESC vertexDesc[] =
 
 ```
 
-Cette description de disposition d’entrée définit un vertex à l’aide d’une paire de vecteurs à troiscoordonnées: le premier vecteur3D indique la position du vertex dans le système de coordonnées du modèle et le second vecteur3D contient la valeur de couleurRVB associée au vertex. Dans cet exemple, vous utilisez trois valeurs à virgule flottante 32 bits, représentées ainsi dans le code : `XMFLOAT3(X.Xf, X.Xf, X.Xf)`. Vous devez utiliser des types de la bibliothèque [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/ee415574)si vous gérez des données qui seront utilisées par un nuanceur car ils garantissent un packaging et un alignement corrects de ces données. (Par exemple, choisissez le type [**XMFLOAT3**](https://msdn.microsoft.com/library/windows/desktop/ee419475) ou [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608) pour les données de vecteur et le type [**XMFLOAT4X4**](https://msdn.microsoft.com/library/windows/desktop/ee419621) pour les matrices.)
+This input description defines a vertex as a pair of 2 3-coordinate vectors: one 3D vector to store the position of the vertex in model coordinates, and another 3D vector to store the RGB color value associated with the vertex. In this case, you use 3x32 bit floating point format, elements of which we represent in code as `XMFLOAT3(X.Xf, X.Xf, X.Xf)`. You should use types from the [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/ee415574) library whenever you are handling data that will be used by a shader, as it ensure the proper packing and alignment of that data. (For example, use [**XMFLOAT3**](https://msdn.microsoft.com/library/windows/desktop/ee419475) or [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608) for vector data, and [**XMFLOAT4X4**](https://msdn.microsoft.com/library/windows/desktop/ee419621) for matrices.)
 
-Pour obtenir une liste de tous les types de format possibles, voir [**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059).
+For a list of all the possible format types, refer to [**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059).
 
-Créez l’objet disposition sur la base de la disposition d’entrée du vertex que vous venez de définir. Dans le code suivant, écrivez l’objet dans **m\_inputLayout**, qui est une variable de type **ComPtr** pointant vers un objet de type [**ID3D11InputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476575). **fileData** contient l’objet nuanceur de vertex compilé à l’étape précédente, [Porter les nuanceurs](port-the-shader-config.md).
+With the per-vertex input layout defined, you create the layout object. In the following code, you write it to **m\_inputLayout**, a variable of type **ComPtr** (which points to an object of type [**ID3D11InputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476575)). **fileData** contains the compiled vertex shader object from the previous step, [Port the shaders](port-the-shader-config.md).
 
-Direct3D: créer la disposition d’entrée utilisée par la mémoire tampon de vertex
+Direct3D: Create the input layout used by the vertex buffer.
 
 ``` syntax
 Microsoft::WRL::ComPtr<ID3D11InputLayout>      m_inputLayout;
@@ -170,13 +170,13 @@ m_d3dDevice->CreateInputLayout(
 );
 ```
 
-Nous avons terminé la définition de la disposition d’entrée. À présent, créons une mémoire tampon qui utilise cette disposition et chargeons-la avec les données de maillage du cube.
+We've defined the input layout. Now, let's create a buffer that uses this layout and load it with the cube mesh data.
 
-### Étape2: Créer et charger chaque mémoire tampon de vertex
+### Step 2: Create and load the vertex buffer(s)
 
-Dans OpenGL ES2.0, vous créez deux mémoires tampons: l’une pour les données de position, l’autre pour les valeurs de couleur. (Vous pourriez aussi créer une structure contenant une seule de ces mémoires tampons ou les deux.) Vous liez ces mémoires tampons, puis leur fournissez les données de position et de couleur. Plus tard, lors de l’exécution de votre fonction de rendu, vous devrez de nouveau lier les mémoires tampons et indiquer au nuanceur le format des données contenues dans chacune d’elles afin qu’il sache comment les interpréter.
+In OpenGL ES 2.0, you create a pair of buffers, one for the position data and one for the color data. (You could also create a struct that contains both and a single buffer.) You bind each buffer and write position and color data into them. Later, during your render function, bind the buffers again and provide the shader with the format of the data in the buffer so it can correctly interpret it.
 
-OpenGL ES2.0: lier les mémoires tampons de vertex
+OpenGL ES 2.0: Bind the vertex buffers
 
 ``` syntax
 // upload the data for the vertex position buffer
@@ -185,13 +185,13 @@ glBindBuffer(GL_ARRAY_BUFFER, renderer->vertexBuffer);
 glBufferData(GL_ARRAY_BUFFER, sizeof(VERTEX) * CUBE_VERTICES, renderer->vertices, GL_STATIC_DRAW);   
 ```
 
-Dans Direct3D, les mémoires tampons accessibles par les nuanceurs sont représentées par des structures [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220). Pour lier l’emplacement d’une mémoire tampon à un objet nuanceur, vous devez créer une structure CD3D11\_BUFFER\_DESC pour chaque mémoire tampon, avec [**ID3DDevice::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501), puis définir la mémoire tampon du contexte de périphérique Direct3D en appelant la méthode « set » correspondant au type de cette mémoire tampon ([**ID3DDeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456), par exemple).
+In Direct3D, shader-accessible buffers are represented as [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) structures. To bind the location of this buffer to shader object, you need to create a CD3D11\_BUFFER\_DESC structure for each buffer with [**ID3DDevice::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501), and then set the buffer of the Direct3D device context by calling a set method specific to the buffer type, such as [**ID3DDeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456).
 
-Lorsque vous définissez la mémoire tampon, vous devez configurer le stride (la taille de l’élément de données pour un vertex) ainsi que le décalage (là où commence le tableau des données de vertex) à partir du début de la mémoire.
+When you set the buffer, you must set the stride (the size of the data element for an individual vertex) as well the offset (where the vertex data array actually starts) from the beginning of the buffer.
 
-Notez que le pointeur vers le tableau **vertexIndices** est affecté au champ **pSysMem** de la structure [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220). Si cela n’est pas défini correctement, votre maillage sera endommagé ou vide.
+Notice that we assign the pointer to the **vertexIndices** array to the **pSysMem** field of the [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) structure. If this isn't correct, your mesh will be corrupt or empty!
 
-Direct3D: créer et définir la mémoire tampon de vertex
+Direct3D: Create and set the vertex buffer
 
 ``` syntax
 D3D11_SUBRESOURCE_DATA vertexBufferData = {0};
@@ -217,13 +217,13 @@ m_d3dContext->IASetVertexBuffers(
   &offset);
 ```
 
-### Étape3: Créer et charger la mémoire tampon d’index
+### Step 3: Create and load the index buffer
 
-Les mémoires tampons d’index sont très utiles, car elles permettent au nuanceur de vertex de rechercher des vertex spécifiques. Nous avons intégré ces mémoires dans notre exemple de convertisseur, mais ce n’est pas une obligation. À l’instar des mémoires tampons de vertex dans OpenGL ES2.0, vous créez et liez une mémoire tampon d’index en tant que mémoire tampon générale, puis vous y copiez les index de vertex que vous aviez précédemment créés.
+Index buffers are an efficient way to allow the vertex shader to look up individual vertices. Although they are not required, we use them in this sample renderer. As with vertex buffers in OpenGL ES 2.0, an index buffer is created and bound as a general purpose buffer and the vertex indices you created earlier are copied into it.
 
-Lorsque vous êtes prêt à dessiner, vous liez de nouveau les deux mémoires tampons (index et vertex) et vous appelez **glDrawElements**.
+When you're ready to draw, you bind both the vertex and the index buffer again, and call **glDrawElements**.
 
-OpenGL ES2.0 : envoyer l’ordre des index à l’appel de dessin
+OpenGL ES 2.0: Send the index order to the draw call.
 
 ``` syntax
 GLuint indexBuffer;
@@ -245,9 +245,9 @@ glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, renderer->indexBuffer);
 glDrawElements (GL_TRIANGLES, renderer->numIndices, GL_UNSIGNED_INT, 0);
 ```
 
-Dans Direct3D, le processus est quasiment similaire, bien qu’un peu plus technique. Fournissez la mémoire tampon d’index sous forme de sous-ressource Direct3D à l’objet [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) que vous avez créé lors de la configuration de Direct3D. Pour cela, appelez [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/bb173588) avec la sous-ressource configurée pour le tableau d’index, comme ci-dessous. (Notez que, encore ici, le pointeur vers le tableau **cubeIndices** est affecté au champ **pSysMem** de la structure [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220).)
+With Direct3D, it's a bit very similar process, albeit a bit more didactic. Supply the index buffer as a Direct3D subresource to the [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) you created when you configured Direct3D. You do this by calling [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/bb173588) with the configured subresource for the index array, as follows. (Again, notice that you assign the pointer to the **cubeIndices** array to the **pSysMem** field of the [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) structure.)
 
-Direct3D: créer la mémoire tampon d’index
+Direct3D: Create the index buffer.
 
 ``` syntax
 m_indexCount = ARRAYSIZE(cubeIndices);
@@ -271,9 +271,9 @@ m_d3dContext->IASetIndexBuffer(
   0);
 ```
 
-Vous allez ensuite dessiner les triangles en appelant [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) (ou [**ID3D11DeviceContext::Draw**](https://msdn.microsoft.com/library/windows/desktop/ff476407) pour les vertex non indexés), comme expliqué ci-après. (Pour plus d’informations, voir l’étape suivante [Dessiner à l’écran](draw-to-the-screen.md).)
+Later, you will draw the triangles with a call to [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) (or [**ID3D11DeviceContext::Draw**](https://msdn.microsoft.com/library/windows/desktop/ff476407) for unindexed vertices), as follows. (For more details, jump ahead to [Draw to the screen](draw-to-the-screen.md).)
 
-Direct3D: dessiner les vertex indexés
+Direct3D: Draw the indexed vertices.
 
 ``` syntax
 m_d3dContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
@@ -287,37 +287,37 @@ m_d3dContext->DrawIndexed(
   0);
 ```
 
-## Étape précédente
+## Previous step
 
 
-[Porter les objets nuanceurs](port-the-shader-config.md)
+[Port the shader objects](port-the-shader-config.md)
 
-## Étape suivante
+## Next step
 
-[Porter le langage GLSL](port-the-glsl.md)
+[Port the GLSL](port-the-glsl.md)
 
-## Remarques
+## Remarks
 
-Lorsque vous définissez vos structures Direct3D, séparez le code qui appelle les méthodes sur [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) du code de la méthode qui est appelée lorsque les ressources de périphérique doivent être recréées. Dans le modèle de projet Direct3D, ce code se trouve dans les méthodes **CreateDeviceResource** de l’objet convertisseur. Le code employé pour la mise à jour du contexte de périphérique ([**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)) est placé dans la méthode **Render**, car c’est l’endroit où vous élaborez les étapes du nuanceur et liez les données requises.
+When structuring your Direct3D, separate the code that calls methods on [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) into a method that is called whenever the device resources need to be recreated. (In the Direct3D project template, this code is in the renderer object's **CreateDeviceResource** methods. The code that updates the device context ([**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)), on the other hand, is placed in the **Render** method, since this is where you actually construct the shader stages and bind the data.
 
-## Rubriques connexes
+## Related topics
 
 
-* [Procédure: portage d’un convertisseur simple OpenGL ES2.0 sur Direct3D11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
-* [Porter les objets nuanceur](port-the-shader-config.md)
-* [Porter les mémoires tampons et données de vertex](port-the-vertex-buffers-and-data-config.md)
-* [Porter le langage GLSL](port-the-glsl.md)
-
- 
+* [How to: port a simple OpenGL ES 2.0 renderer to Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
+* [Port the shader objects](port-the-shader-config.md)
+* [Port the vertex buffers and data](port-the-vertex-buffers-and-data-config.md)
+* [Port the GLSL](port-the-glsl.md)
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

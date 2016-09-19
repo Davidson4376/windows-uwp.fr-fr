@@ -1,144 +1,145 @@
 ---
 author: jnHs
-Description: "Vous pouvez générer des codes promotionnels pour une application ou un produit in-app que vous avez publiés dans le Windows Store."
-title: "Générer des codes promotionnels"
+Description: You can generate promotional codes for an app or add-on that you have published in the Windows Store.
+title: Generate promotional codes
 ms.assetid: 9B632266-64EC-4D62-A4C4-55B6643D8750
 translationtype: Human Translation
-ms.sourcegitcommit: df994a3bbda9f6d4df0ee2dd6c2cb646d91a0bfc
-ms.openlocfilehash: bfea802fb4a6efcfe34121802ce49f20a9b0305e
+ms.sourcegitcommit: a92f642b2d28eb801106388648455752c10e013a
+ms.openlocfilehash: cf1f6cf680d4ae57513dde2c6a356e8ba4b1cb56
 
 ---
 
-# Générer des codes promotionnels
+# Generate promotional codes
 
 
-Vous pouvez générer des codes promotionnels pour une application ou un produit in-app que vous avez publiés dans le Windows Store. Les codes promotionnels permettent d’offrir facilement à des utilisateurs influents un accès gratuit à votre application ou votre produit in-app. Vous pouvez également utiliser des codes promotionnels dans des scénarios de service client, en offrant aux utilisateurs un accès gratuit à votre application ou votre produit in-app, ou pour effectuer un [test bêta](beta-testing-and-targeted-distribution.md) dans Windows 10.
+You can generate promotional codes for an app or add-on that you have published in the Windows Store. Promotional codes are an easy way to give influential users free access to your app or add-on. You might also use promotional codes to address customer service scenarios by giving users free access to your app or add-on, or for [beta testing](beta-testing-and-targeted-distribution.md) with Windows 10.
 
-À chaque code promotionnel correspond une URL donnant droit, que vous pouvez distribuer à un utilisateur. L’utilisateur peut cliquer simplement sur l’URL pour utiliser le code et installer votre application ou produit in-app à partir du Windows Store.
+Each promotional code has a corresponding unique redeemable URL that you can distribute to a single user or to a group of users. The user can simply click the URL to redeem the code and install your app or add-on from the Windows Store.
 
-Dans le tableau de bord du Centre de développement Windows, vous pouvez :
+On the Windows Dev Center dashboard, you can:
 
--   Commander un ensemble de codes promotionnels pour votre application.
--   Télécharger une commande de codes promotionnels complétée.
--   Examiner l’utilisation des codes promotionnels pour vos applications, notamment :
-    -   Récapitulatif des commandes de codes promotionnels pour toutes vos applications (dans la page **Présentation du tableau de bord**) et pour chaque application (dans la page **Vue d’ensemble de l’application** pour chaque application).
-    -   Résumé détaillé des commandes de code promotionnel pour chaque application (sur la page **Codes promotionnels** pour chaque application).
+-   Order a set of promotional codes for your app.
+-   Download a fulfilled promotional codes order.
+-   Review promotional code usage for your apps, including:
+    -   Summaries of promotional code orders for all your apps (on the **Dashboard overview** page) and for each app individually (on the **App overview** page for each app).
+    -   A detailed summary of promotional code orders for each app (on the **Promotional codes** page for each app).
 
-> **Remarque** Vous pouvez générer des codes promotionnels même si vous avez sélectionné l’option **Masquer cette application et empêcher l’acquisition. Les clients disposant d’un code promotionnel peuvent la télécharger sur les appareils Windows 10** de la page du tableau de bord [Tarification et disponibilité](set-app-pricing-and-availability.md) relative à votre application. Votre application doit exécuter la phase finale de publication du [processus de certification des applications](the-app-certification-process.md) avant que les utilisateurs ne puissent utiliser un code promotionnel pour l’installer.
+> **Note**  You can generate promotional codes even if you have selected the **Hide this app and prevent acquisition. Customers with a promotional code can still download it on Windows 10 devices** option on the [Pricing and availability](set-app-pricing-and-availability.md) dashboard page for your app. Your app must pass the final publishing phase of the [app certification process](the-app-certification-process.md) before users can redeem a promotional code to install it.
 
-## Stratégies de code promotionnel
-
-
-Tenez compte des stratégies suivantes relatives aux codes promotionnels :
-
--   Vous pouvez générer des codes promotionnels pour toute application ou tout produit in-app que vous avez publiés dans le Windows Store. Les utilisateurs peuvent utiliser les codes sur toutes les versions de Windows prises en charge par votre application ou produit in-app.
--   Les codes promotionnels expirent 6mois après la date de leur commande.
--   Pour chaque application ou produit in-app, vous pouvez générer jusqu’à 500codes promotionnels tous les 6mois. La période de six mois commence à la soumission de la première commande de code promotionnel.
--   Vous devez respecter les exigences définies dans le [Contrat du développeur de l’application](https://msdn.microsoft.com/library/windows/apps/hh694058), notamment la section **3k. Codes promotionnels**.
-
-## Commander des codes promotionnels
+## Promotional code policies
 
 
-Pour commander des codes promotionnels pour une application ou un produit in-app que vous avez publiés dans le Windows Store :
+Be aware of the following policies for promotional codes:
 
-1.  Dans le tableau de bord du Centre de développement Windows, effectuez l’une des opérations suivantes :
-    -   Dans la page **Vue d’ensemble de l’application** pour votre application, recherchez la section **Codes promotionnels**, puis cliquez sur **Commander des codes**.
-    -   Dans n’importe quelle page du tableau de bord pour votre application, dans le menu de navigation à gauche, développez **Monétisation**, puis cliquez sur **Codes promotionnels**. Dans la page **Codes promotionnels**, cliquez sur **Commander des codes**.
+-   You can generate promotional codes for any app or add-on that you published to the Windows Store. Users can redeem the codes on any versions of Windows that are supported by your app or add-on.
+-   Promotional codes expire 6 months after the date you order them (unless you choose an earlier expiration date).
+-   For each of your apps or add-ons, you can generate up to 500 promotional codes every 6 months. The 6 month period begins when the first promotional code order is submitted.
+-   You must follow the requirements defined in the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058), including section **3k. Promotional Codes**.
 
-2.  Dans la page **Nouvelle commande de codes promotionnels**, entrez les informations suivantes :
-    -   Sélectionnez l’application ou le produit in-app pour lequel vous voulez générer des codes.
-    -   Spécifiez un nom pour la commande. Ce nom permet de différencier les différentes commandes de codes lors de l’examen des données d’utilisation de votre code promotionnel.
-    -   Indiquez le nombre de codes à commander.
-    -   Indiquez à quel moment les codes promotionnels doivent devenir actifs. Pour choisir une date et une heure de début précises, décochez la case **Les codes sont immédiatement actifs**.
-    -   Indiquez à quel moment les codes promotionnels doivent expirer. Pour choisir une date et une heure d’expiration précises, décochez la case **Les codes expirent au bout de 6mois**.
-
-3.  Cliquez sur **Commander des codes**. La commande est soumise et le tableau de bord vous amène à la page **Codes promotionnels** dans laquelle la nouvelle commande est mentionnée comme **En attente** dans le tableau récapitulatif des commandes de codes promotionnels.
-
-Les codes promotionnels sont généralement disponibles en téléchargement dans les 60 minutes suivant la soumission de la commande. Le traitement de certaines commandes peut cependant parfois prendre plus de temps. Une fois la commande exécutée et les codes disponibles en téléchargement, le statut de la commande devient **Disponible**.
-
-## Télécharger et distribuer des codes promotionnels
+## Order promotional codes
 
 
-Pour télécharger une commande exécutée de codes promotionnels et distribuer les codes aux utilisateurs de votre application :
+To order promotional codes for an app or add-on that you published to the Windows Store:
 
-1.  Dans le tableau de bord du Centre de développement Windows, revenez à la page **Codes promotionnels** de votre application (développez **Monétisation**, puis cliquez sur **Codes promotionnels**).
-2.  Vérifiez que l’état de votre commande est **Disponible**. Cliquez sur le lien **Télécharger** correspondant à votre commande, puis enregistrez le fichier fourni sur votre ordinateur. Ce fichier contient des informations sur votre commande de codes promotionnels sous la forme de valeurs séparées par des tabulations (TSV).
-3.  Ouvrez le fichier TSV dans l’éditeur de votre choix. Pour une expérience optimale, ouvrez le fichier TSV dans une application capable d’afficher les données dans une structure tabulaire, telle que Microsoft Excel. Vous pouvez cependant ouvrir ce fichier dans tout éditeur de texte.
+1.  On Windows Dev Center dashboard, do one of the following:
+    -   On the **App overview** page for your app, locate the **Promotional codes** section and click **Manage codes**.
+    -   On any dashboard page for your app, in the left navigation menu, expand **Monetization** and click **Promotional codes**. On the **Promotional codes** page, click **Order codes**.
 
-    Le fichier contient les colonnes de données suivantes pour chaque code :
+2.  On the **New promotional codes order** page, enter the following:
+    -   Select the app or add-on for which you want to generate codes.
+    -   Specify a name for the order. You can use this name to differentiate between different orders of codes when reviewing your promotional code usage data.
+    -   Select the order type. You can choose to generate a set of promo codes that can each be used once or you can choose to generate one promo code that can be used multiple times.
+    -   Specify the quantity of codes to order.
+    -   Specify when the promotional codes should become active. To choose a specific start date and time, clear the **Codes are active immediately** check box.
+    -   Specify when the promotional codes should expire. To choose a specific expire date and time, clear the **Codes expire after 6 months** check box.
 
-    -   **Nom du produit** : nom de l’application ou du produit in-app auquel le code est associé.
-    -   **Nom de la commande** : nom de la commande dans laquelle ce code a été exécuté.
-    -   **Code promotionnel** : code proprement dit. Il s’agit d’une chaîne de 5x5 caractères alphanumériques séparés par des traits d’union. Par exemple :
+3.  Click **Order codes**. The order is submitted and the dashboard navigates you to the **Promotional codes** page, where the new order is listed as **Pending** in the summary table of promotional code orders.
+
+Promotional codes are usually available for download within 60 minutes of placing the order, although some orders may take longer to process. After your order is fulfilled and the codes are available for download, the order status changes to **Available**.
+
+## Download and distribute promotional codes
+
+
+To download a fulfilled promotional codes order and distribute the codes to users of your app:
+
+1.  On Windows Dev Center dashboard, return to the **Promotional codes** page for your app (expand **Monetization** and click **Promotional codes**).
+2.  Confirm that your order's status is **Available**. Click the **Download** link for your order and save the provided file to your computer. This file contains information about your promotional codes order in tab-separated value (TSV) format.
+3.  Open the TSV file in the editor of your choice. For the best experience, open the TSV file in an application that can display the data in a tabular structure, such as Microsoft Excel. However, you can alternatively open the file in any text editor.
+
+    The file contains the following columns of data for each code:
+
+    -   **Product name**: The name of the app or add-on that the code is associated with.
+    -   **Order name**: The name of the order in which this code was fulfilled.
+    -   **Promotional code**: The code itself. This is a 5x5 string of alphanumeric characters separated by hyphens. For example:
 
         DM3GY-M2GYM-6YMW6-4QHHT-23W2Z
 
-    -   **URL donnant droit** : URL permettant à un utilisateur d’utiliser le code et d’installer votre application ou produit in-app. L’URL est au format suivant:
+    -   **Redeemable URL**: The URL that a user can use to redeem the code and install your app or add-on. The URL has the following format:
 
-        https://account.microsoft.com/billing/redeem?mstoken=&lt;promotional_code&gt;
+        https://account.microsoft.com/billing/redeem?mstoken=&lt;promotional_code>
 
-    -   **Date de début** : date de début de ce code.
-    -   **Date d’expiration** : date d’expiration de ce code.
-    -   **ID de code** : ID unique de ce code.
-    -   **ID de commande** : ID unique de la commande exécutée relative à ce code.
-    -   **Accordé à** : champ vide dans lequel vous pouvez entrer une valeur identifiant l’utilisateur auquel vous avez donné le code.
-    -   **Disponible**: nombre de codes toujours disponibles.
-    -   **Utilisé**: nombre de codes qui ont été utilisés.
+    -   **Start date**: The date this code starts.
+    -   **Expire date**: The date this code expires.
+    -   **Code ID**: A unique ID for this code.
+    -   **Order ID**: A unique ID for the order in which this code was fulfilled.
+    -   **Given to**: An empty field that you can fill with a value that identifies the user you gave the code to.
+    -   **Available**: The number of codes still available to redeem.
+    -   **Redeemed**: The number of codes that have been redeemed.
 
-4.  Distribuez les URL donnant droit à vos utilisateurs via le mode de communication de votre choix (par exemple, message électronique, SMS ou carte imprimée). Nous vous recommandons d’inclure dans votre communication les éléments suivants :
-    -   Explication relative à l’application ou au produit in-app auquel le code promotionnel a trait et, éventuellement, description de la raison pour laquelle l’utilisateur reçoit le code.
-    -   URL donnant droit correspondant au code.
-    -   Instructions invitant l’utilisateur à accéder à l’URL donnant droit, à se connecter à l’aide de son compte Microsoft, et à suivre les consignes de téléchargement et d’installation de votre application.
+4.  Distribute the redeemable URLs to your users via any communication format you prefer (for example, email, SMS message, or printed cards). We recommend that your communication includes the following:
+    -   An explanation of which app or add-on the promotional code is for, and optionally a description of why the user is receiving the code.
+    -   The redeemable URL for the code.
+    -   Instructions that guide the user to visit the redeemable URL, log in using their Microsoft account, and follow the instructions to download and install your app.
 
-## Expérience utilisateur d’échange du code
-
-
-Une fois l’URL donnant droit distribuée à un utilisateur, les étapes suivantes décrivent comment celui-ci doit procéder pour utiliser le code afin d’obtenir votre application.
-
-1.  L’utilisateur clique sur l’URL donnant droit.
-
-    Le navigateur accède à une page authentifiée **Utiliser votre code** à l’adresse <https://account.microsoft.com/billing/redeem>. Cette page inclut une description de l’application à laquelle l’utilisateur est sur le point d’accéder.
-
-2.  L’utilisateur clique sur **Échanger.**
-
-    Le navigateur accède à une page **Merci** contenant un lien **Obtenir*****&lt;nom de votre application&gt;***.
-
-    > **Remarque** Si votre application n’est pas encore publiée à ce stade, les utilisateurs recevront un message d’erreur.
-
-3.  L’utilisateur clique sur **Obtenir*****&lt;nom de votre application&gt;***.
-
-4.  Si l’utilisateur se connecte à partir d’un ordinateur sur lequel le Windows Store pour Windows 10 ou Windows 8.1 est installé, le Windows Store s’ouvre à la page de présentation de l’application. L’utilisateur peut cliquer **Installer** pour installer l’application gratuitement.
-
-    Si l’utilisateur se connecte à partir d’un ordinateur ou d’un appareil sur lequel Windows Store n’est pas installé, le navigateur ouvre la page web du Windows Store pour l’application. L’utilisateur peut cliquer **Installer** pour installer l’application gratuitement.
-
-    > **Remarque** Dans certains cas, la page de l’application peut afficher un bouton **Acheter** à la place du bouton **Installer**, même si l’application a été correctement acquise par le biais du code promotionnel. L’utilisateur peut alors cliquer sur **Acheter** pour installer l’application gratuitement.
-
-## Passer en revue vos codes promotionnels
+## Code redemption user experience
 
 
-Plusieurs méthodes permettent de passer en revue l’utilisation d’un code promotionnel.
+After you distribute a redeemable URL to a user, the following steps describe the experience the user will follow to redeem your app.
 
--   Pour obtenir un récapitulatif des commandes de codes promotionnels pour toutes vos applications, accédez à la page **Présentation du tableau de bord** et consultez la section **Codes promotionnels**. Cette section présente, pour toutes vos applications, les codes promotionnels actifs restants, le nombre total de codes promotionnels utilisés, et le nombre total de commandes de codes promotionnels passées.
--   Pour consulter un récapitulatif des commandes de codes promotionnels pour une application spécifique, accédez à la page **Vue d'ensemble de l'application** pour cette application, puis consultez la section **Codes promotionnels**. Cette section présente les codes promotionnels actifs restants, le nombre total de codes promotionnels utilisés et le nombre total de commandes de codes promotionnels que vous avez passées pour l'application.
--   Pour consulter un récapitulatif détaillé des commandes de codes promotionnels pour une application spécifique, accédez à la page **Codes promotionnels** de l'application (développez **Monétisation**, puis cliquez sur **Codes promotionnels**). Vous pouvez consulter les détails suivants pour tous les codes promotionnels actifs et inactifs de l’application :
-    -   Nom de la commande
-    -   Nom de l’application ou du produit un-app
-    -   Date de commande
-    -   Date d’expiration
-    -   État
+1.  The user clicks the redeemable URL.
 
-Vous pouvez également télécharger une commande active à partir de ce tableau.
+    The browser opens to an authenticated **Redeem your code** page at <https://account.microsoft.com/billing/redeem>. This page includes a description of the app the user is about to redeem.
 
- 
+2.  The user clicks **Redeem.**
+
+    The browser navigates to a **Thank you** page with a **Get** ***&lt;your app name&gt;*** link.
+
+    > **Note**  Users will receive an error at this step if your app is not yet published.
+
+3.  The user clicks **Get** ***&lt;your app name&gt;***.
+
+4.  If the user is on a computer with the Windows Store for Windows 10 or Windows 8.1 installed, the Windows Store opens to the overview page for the app. The user can click **Install** to install the app for no charge.
+
+    If the user is on a computer or device that does not have the Windows Store installed, the browser opens to the Windows Store web page for the app. The user can click **Install** to install the app for no charge.
+
+    > **Note**  In some cases the app page might display a **Buy** button instead of **Install**, even though the app was successfully redeemed via the promotional code. The user can click **Buy** to install the app for no charge.
+
+## Review your promotional codes
+
+
+There are several different ways to review your promotional code usage.
+
+-   To review a summary of promotional code orders for all your apps, visit the **Dashboard overview** page and locate the **Promotional codes** section on this page. This section displays the remaining active promotional codes for all your apps, the total number of redeemed promotional codes for all your apps, and the total number of promotional code orders you have placed for all your apps.
+-   To review a summary of promotional code orders for a specific app, navigate to the **App overview** page for the app and locate the **Promotional codes** section on this page. This section displays the remaining active promotional codes for the app, the total number of redeemed promotional codes for the app, and the total number of promotional code orders you have placed for the app.
+-   To review a detailed summary of promotional code orders for a specific app, navigate to the **Promotional codes** page for your app (expand **Monetization** and click **Promotional codes**). You can review the following details for all current and inactive promotional codes for the app:
+    -   Order name
+    -   App or add-on name
+    -   Order date
+    -   Expire date
+    -   Status
+
+You can also download an active order from this table.
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jul16_HO1-->
+
+<!--HONumber=Aug16_HO4-->
 
 

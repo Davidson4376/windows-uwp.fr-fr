@@ -1,28 +1,24 @@
 ---
 author: drewbatgit
 ms.assetid: C5623861-6280-4352-8F22-80EB009D662C
-description: "La classe MediaSource offre une méthode courante de référencement et de lecture de contenu multimédia à partir de différentes sources telles que des fichiers locaux ou à distance et elle présente un modèle commun d’accès aux données multimédias, quel que soit le format multimédia sous-jacent."
-title: "Lecture de contenu multimédia avec MediaSource"
+description: This article shows you how to use MediaSource, which provides a common way to reference and play back media from different sources such as local or remote files, and exposes a common model for accessing media data, regardless of the underlying media format.
+title: Media items, playlists, and tracks
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d64f4484566d80eaf2a353b1aba954c15079343c
+ms.sourcegitcommit: c2e337e88f9dda3380dd62c32ca6e5d942366636
+ms.openlocfilehash: bb49af7a386356647000e268bcc6983351eaf4b8
 
 ---
 
-# Lecture de contenu multimédia avec MediaSource
+# Media items, playlists, and tracks
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
+ This article shows you how to use the [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaSource) class, which provides a common way to reference and play back media from different sources such as local or remote files and exposes a common model for accessing media data, regardless of the underlying media format. The [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/dn930939) class extends the functionality of **MediaSource**, allowing you to manage and select from multiple audio, video, and metadata tracks contained in a media item. [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) allows you to create playback lists from one or more media playback items.
 
 
-\[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.\]
+## Create and play a MediaSource
 
-La classe [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/dn930905) offre une méthode courante de référencement et de lecture de contenu multimédia à partir de différentes sources telles que des fichiers locaux ou à distance et elle présente un modèle commun d’accès aux données multimédias, quel que soit le format multimédia sous-jacent. La classe [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/dn930939) étend les fonctionnalités de **MediaSource**, vous permettant ainsi de gérer et de sélectionner à partir de plusieurs pistes audio, vidéo et de métadonnées contenues dans un élément multimédia. [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) vous permet de créer des listes de lecture à partir d’un ou plusieurs éléments de la lecture de contenu multimédia.
-
-Le code figurant dans cet article a été adapté à partir de l’exemple [Kit de développement logiciel (SDK) de lecture vidéo](http://go.microsoft.com/fwlink/p/?LinkId=620020&clcid=0x409). Vous pouvez télécharger cet exemple pour voir le code utilisé en contexte ou pour vous en servir comme point de départ pour votre propre application.
-
-## Créer et lire un MediaSource
-
-Créez une instance de **MediaSource** en appelant l’une des méthodes de fabrique exposées par la classe :
+Create a new instance of **MediaSource** by calling one of the factory methods exposed by the class:
 
 -   [**CreateFromAdaptiveMediaSource**](https://msdn.microsoft.com/library/windows/apps/dn930906)
 -   [**CreateFromIMediaSource**](https://msdn.microsoft.com/library/windows/apps/dn965527)
@@ -33,52 +29,68 @@ Créez une instance de **MediaSource** en appelant l’une des méthodes de fabr
 -   [**CreateFromStreamReference**](https://msdn.microsoft.com/library/windows/apps/dn930911)
 -   [**CreateFromUri**](https://msdn.microsoft.com/library/windows/apps/dn930912)
 
-Après avoir créé un **MediaSource**, vous pouvez lire la source directement avec un [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) en appelant [**SetPlaybackSource**](https://msdn.microsoft.com/library/windows/apps/dn899085), ou avec un [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535) en définissant la propriété [**Source**](https://msdn.microsoft.com/library/windows/apps/dn987010). L’exemple suivant montre comment lire un fichier multimédia sélectionné par l’utilisateur dans un **MediaElement** à l’aide de **MediaSource**.
+After creating a **MediaSource** you can play it with a [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535) by setting the [**Source**](https://msdn.microsoft.com/library/windows/apps/dn987010) property. Starting with Windows 10, version 1607, you can assign a **MediaPlayer** to a [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement) by calling [**SetMediaPlayer**](https://msdn.microsoft.com/library/windows/apps/mt708764) in order to render the media player content in a XAML page. This is the preferred method over using **MediaElement**. For more information on using **MediaPlayer**, see [**Play audio and video with MediaPlayer**](play-audio-and-video-with-mediaplayer.md).
 
-Vous devez inclure les espaces de noms [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) et [**Windows.Media.Playback**](https://msdn.microsoft.com/library/windows/apps/dn640562) pour pouvoir terminer ce scénario.
+The following example shows how to play back a user-selected media file in a **MediaPlayer** using **MediaSource**.
+
+You will need to include the [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) and [**Windows.Media.Playback**](https://msdn.microsoft.com/library/windows/apps/dn640562) namespaces in order to complete this scenario.
 
 [!code-cs[Using](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetUsing)]
 
-Déclarez une variable de type **MediaSource**. Pour les exemples de cet article, la source multimédia est déclarée en tant que membre de classe. Elle est donc accessible à partir de plusieurs emplacements.
+Declare a variable of type **MediaSource**. For the examples in this article, the media source is declared as a class member so that it can be accessed from multiple locations.
 
 [!code-cs[DeclareMediaSource](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetDeclareMediaSource)]
 
-Pour permettre à l’utilisateur de sélectionner un fichier multimédia à lire, utilisez un [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847). Avec l’objet [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) retourné de la méthode [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) du sélecteur, initialisez un nouveau MediaObject en appelant [**MediaSource.CreateFromStorageFile**](https://msdn.microsoft.com/library/windows/apps/dn930909). Enfin, définissez la source du média en tant que source de lecture de **MediaElement** en appelant la méthode [**SetPlaybackSource**](https://msdn.microsoft.com/library/windows/apps/dn899085).
+Declare a variable to store the **MediaPlayer** object and, if you want to render the media content in XAML, add a **MediaPlayerElement** control to your page.
+
+[!code-cs[DeclareMediaPlayer](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetDeclareMediaPlayer)]
+
+[!code-xml[MediaPlayerElement](./code/MediaSource_RS1/cs/MainPage.xaml#SnippetMediaPlayerElement)]
+
+To allow the user to pick a media file to play, use a [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847). With the [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) object returned from the picker's [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) method, initialize a new MediaObject by calling [**MediaSource.CreateFromStorageFile**](https://msdn.microsoft.com/library/windows/apps/dn930909). Finally, set the media source as the playback source for the **MediaElement** by calling the [**SetPlaybackSource**](https://msdn.microsoft.com/library/windows/apps/dn899085) method.
 
 [!code-cs[PlayMediaSource](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetPlayMediaSource)]
 
-## Gérer plusieurs pistes audio, vidéo et de métadonnées avec MediaPlaybackItem
+By default, the **MediaPlayer** does not begin playing automatically when the media source is set. You can manually begin playback by calling [**Play**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Play).
 
-L’utilisation d’un [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/dn930905) pour la lecture est pratique car il offre une méthode courante de lecture de contenu multimédia à partir de différents types de sources. Un comportement plus avancé est toutefois disponible à l’aide d’un [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/dn930939). Il inclut la possibilité d’accéder et de gérer plusieurs pistes audio, vidéo et de données pour un élément multimédia.
+[!code-cs[Play](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetPlay)]
 
-Déclarez une variable pour stocker votre **MediaPlaybackItem**.
+You can also set the [**AutoPlay**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.AutoPlay) property of the **MediaPlayer** to true to tell the player to begin playing as soon as the media source is set.
+
+[!code-cs[AutoPlay](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetAutoPlay)]
+
+## Handle multiple audio, video, and metadata tracks with MediaPlaybackItem
+
+Using a [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/dn930905) for playback is convenient because it provides a common way to playback media from different kinds of sources, but more advanced behavior can be accessed by creating a [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/dn930939) from the **MediaSource**. This includes the ability to access and manage multiple audio, video, and data tracks for a media item.
+
+Declare a variable to store your **MediaPlaybackItem**.
 
 [!code-cs[DeclareMediaPlaybackItem](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetDeclareMediaPlaybackItem)]
 
-Créez un **MediaPlaybackItem** en appelant le constructeur et en le transmettant à un objet **MediaSource** initialisé.
+Create a **MediaPlaybackItem** by calling the constructor and passing in an initialized **MediaSource** object.
 
-Si votre application prend en charge plusieurs pistes audio, vidéo ou de données dans un élément de lecture multimédia, inscrivez des gestionnaires d’événements pour les événements [**AudioTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930948), [**VideoTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930954) ou [**TimedMetadataTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930952).
+If your app supports multiple audio, video, or data tracks in a media playback item, register event handlers for the [**AudioTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930948), [**VideoTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930954), or [**TimedMetadataTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930952) events.
 
-Enfin, définissez la source de la lecture de **MediaElement** ou **MediaPlayer** sur votre **MediaPlaybackItem**.
+Finally, set the playback source of the **MediaElement** or **MediaPlayer** to your **MediaPlaybackItem**.
 
 [!code-cs[PlayMediaPlaybackItem](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetPlayMediaPlaybackItem)]
 
-**Remarque**  
-Un **MediaSource** ne peut être associé qu’à un seul **MediaPlaybackItem**. Après avoir créé un **MediaPlaybackItem** à partir d’une source, toute tentative de création d’un autre élément de lecture à partir de la même source entraînera une erreur. De plus, après avoir créé un **MediaPlaybackItem** à partir d’une source multimédia, vous ne pouvez pas définir l’objet **MediaSource** directement en tant que source d’un **MediaElement** ou **MediaPlayer**, mais vous devez plutôt utiliser le **MediaPlaybackItem**.
+> [!NOTE] 
+> A **MediaSource** can only be associated with a single **MediaPlaybackItem**. After creating a **MediaPlaybackItem** from a source, attempting to create another playback item from the same source will result in an error. Also, after creating a **MediaPlaybackItem** from a media source, you can't set the **MediaSource** object directly as the source for a **MediaPlayer** but should instead use the **MediaPlaybackItem**.
 
-L’événement [**VideoTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930954) est déclenché après qu’un **MediaPlaybackItem** contenant plusieurs pistes vidéo a été affecté en tant que source de lecture, et peut être déclenché à nouveau si la liste des pistes vidéo change pour l’élément. Le gestionnaire de cet événement vous permet de mettre à jour votre interface utilisateur, permettant ainsi à l’utilisateur de basculer entre les pistes disponibles. Cet exemple utilise un [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348) pour afficher les pistes vidéo disponibles.
+The [**VideoTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930954) event is raised after a **MediaPlaybackItem** containing multiple video tracks is assigned as a playback source, and can be raised again if the list of video tracks changes for the item changes. The handler for this event gives you the opportunity to update your UI to allow the user to switch between available tracks. This example uses a [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348) to display the available video tracks.
 
 [!code-xml[VideoComboBox](./code/MediaSource_Win10/cs/MainPage.xaml#SnippetVideoComboBox)]
 
-Dans le gestionnaire **VideoTracksChanged**, parcourez toutes les pistes de la liste [**VideoTracks**](https://msdn.microsoft.com/library/windows/apps/dn930953) de l’élément de lecture. Un nouveau [**ComboBoxItem**](https://msdn.microsoft.com/library/windows/apps/br209349) est créé pour chaque piste. Si la piste ne porte déjà une étiquette, une étiquette est générée à partir de l’index de piste. La propriété [**Tag**](https://msdn.microsoft.com/library/windows/apps/br208745) de l’élément de zone de liste déroulante est définie sur l’index de piste pour pouvoir l’identifier ultérieurement. Enfin, l’élément est ajouté à la zone de liste déroulante. Notez que ces opérations sont effectuées dans le cadre d’un appel [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317), car toutes les modifications de l’interface utilisateur doivent être apportées sur le thread d’interface utilisateur et que cet événement est déclenché sur un autre thread.
+In the **VideoTracksChanged** handler, loop through all of the tracks in the playback item's [**VideoTracks**](https://msdn.microsoft.com/library/windows/apps/dn930953) list. For each track, a new [**ComboBoxItem**](https://msdn.microsoft.com/library/windows/apps/br209349) is created. If the track does not already have a label, a label is generated from the track index. The [**Tag**](https://msdn.microsoft.com/library/windows/apps/br208745) property of the combo box item is set to the track index so that it can be identified later. Finally, the item is added to the combo box. Note that these operations are performed within a [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) call because all UI changes must be made on the UI thread and this event is raised on a different thread.
 
 [!code-cs[VideoTracksChanged](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetVideoTracksChanged)]
 
-Dans le gestionnaire [**SelectionChanged**](https://msdn.microsoft.com/library/windows/apps/br209776) de la zone de liste déroulante, l’index de piste est récupéré à partir de la propriété **Tag** de l’élément sélectionné. La définition de la propriété [**SelectedIndex**](https://msdn.microsoft.com/library/windows/apps/dn956634) de la liste [**VideoTracks**](https://msdn.microsoft.com/library/windows/apps/dn930953) de l’élément de lecture multimédia amène **MediaElement** ou **MediaPlayer** à basculer la piste vidéo active sur l’index spécifié.
+In the [**SelectionChanged**](https://msdn.microsoft.com/library/windows/apps/br209776) handler for the combo box, the track index is retrieved from the selected item's **Tag** property. Setting the [**SelectedIndex**](https://msdn.microsoft.com/library/windows/apps/dn956634) property of the media playback item's [**VideoTracks**](https://msdn.microsoft.com/library/windows/apps/dn930953) list causes the **MediaElement** or **MediaPlayer** to switch the active video track to the specified index.
 
 [!code-cs[VideoTracksSelectionChanged](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetVideoTracksSelectionChanged)]
 
-La gestion des éléments multimédias avec des pistes audio multiples est strictement identique à celle des pistes vidéo. Gérez le [**AudioTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930948) pour mettre à jour votre interface utilisateur avec les pistes audio trouvées dans la liste [**AudioTracks**](https://msdn.microsoft.com/library/windows/apps/dn930947) de l’élément de lecture. Lorsque l’utilisateur sélectionne une piste audio, définissez la propriété [**SelectedIndex**](https://msdn.microsoft.com/library/windows/apps/dn930937) de la liste **AudioTracks** pour que **MediaElement** ou **MediaPlayer** bascule la piste audio active sur l’index spécifié.
+Managing media items with multiple audio tracks works exactly the same as with video tracks. Handle the [**AudioTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930948) to update your UI with the audio tracks found in the playback item's [**AudioTracks**](https://msdn.microsoft.com/library/windows/apps/dn930947) list. When the user selects an audio track, set the [**SelectedIndex**](https://msdn.microsoft.com/library/windows/apps/dn930937) property of the **AudioTracks** list to cause the **MediaElement** or **MediaPlayer** to switch the active audio track to the specified index.
 
 [!code-xml[AudioComboBox](./code/MediaSource_Win10/cs/MainPage.xaml#SnippetAudioComboBox)]
 
@@ -86,100 +98,134 @@ La gestion des éléments multimédias avec des pistes audio multiples est stric
 
 [!code-cs[AudioTracksSelectionChanged](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetAudioTracksSelectionChanged)]
 
-En plus de l’audio et de la vidéo, un objet **MediaPlaybackItem** peut contenir zéro ou plusieurs objets [**TimedMetadataTrack**](https://msdn.microsoft.com/library/windows/apps/dn956580). Une piste de métadonnées synchronisée peut contenir du texte de sous-titre. Elle peut également contenir des données personnalisées propriétaires de votre application. Une piste de métadonnées synchronisée contient une liste d’indicateurs représentés par des objets qui héritent de [**IMediaCue**](https://msdn.microsoft.com/library/windows/apps/dn930899), un [**DataCue**](https://msdn.microsoft.com/library/windows/apps/dn930892) ou un [**TimedTextCue**](https://msdn.microsoft.com/library/windows/apps/dn956655) par exemple. Chaque indicateur a une heure de début et une durée qui déterminent quand l’indicateur est activé et pour combien de temps.
+In addition to audio and video, a **MediaPlaybackItem** object may contain zero or more [**TimedMetadataTrack**](https://msdn.microsoft.com/library/windows/apps/dn956580) objects. A timed metadata track can contain subtitle or caption text, or it may contain custom data that is proprietary to your app. A timed metadata track contains a list of cues represented by objects that inherit from [**IMediaCue**](https://msdn.microsoft.com/library/windows/apps/dn930899), such as a [**DataCue**](https://msdn.microsoft.com/library/windows/apps/dn930892) or a [**TimedTextCue**](https://msdn.microsoft.com/library/windows/apps/dn956655). Each cue has a start time and a duration that determines when the cue is activated and for how long.
 
-Comme les pistes audio et vidéo, les pistes de métadonnées synchronisées d’un élément multimédia peuvent être détectées en gérant l’événement [**TimedMetadataTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930952) d’un **MediaPlaybackItem**. Toutefois, avec les pistes de métadonnées synchronisées, l’utilisateur souhaitera peut-être activer plusieurs pistes de métadonnées simultanément. De plus, en fonction de votre scénario d’application, vous souhaiterez peut-être activer ou désactiver automatiquement des pistes de métadonnées, sans l’intervention de l’utilisateur. À des fins d’illustration, l’exemple suivant ajoute un [**ToggleButton**](https://msdn.microsoft.com/library/windows/apps/br209795) pour chaque piste de métadonnées d’un élément multimédia pour permettre à l’utilisateur d’activer et de désactiver la piste. La propriété **Tag** de chaque bouton est définie sur l’index de la piste de métadonnées associée pour pouvoir l’identifier lorsque le bouton est activé.
+Similar to audio tracks and video tracks, the timed metadata tracks for a media item can be discovered by handling the [**TimedMetadataTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930952) event of a **MediaPlaybackItem**. With timed metadata tracks, however, the user may want to enable more than one metadata track at a time. Also, depending on your app scenario, you may want to enable or disable metadata tracks automatically, without user intervention. For illustration purposes, this example adds a [**ToggleButton**](https://msdn.microsoft.com/library/windows/apps/br209795) for each metadata track in a media item to allow the user to enable and disable the track. The **Tag** property of each button is set to the index of the associated metadata track so that it can be identified when the button is toggled.
 
 [!code-xml[MetaStackPanel](./code/MediaSource_Win10/cs/MainPage.xaml#SnippetMetaStackPanel)]
 
 [!code-cs[TimedMetadataTrackschanged](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetTimedMetadataTrackschanged)]
 
-Étant donné que plusieurs pistes de métadonnées peuvent être actives simultanément, vous ne définissez pas simplement l’index actif de la liste de pistes de métadonnées. Appelez plutôt le **MediaPlaybackItem** de la méthode [**SetPresentationMode**](https://msdn.microsoft.com/library/windows/apps/dn986977) de l’objet, en indiquant l’index de la piste que vous souhaitez activer/désactiver, puis en spécifiant une valeur à partir de l’énumération [**TimedMetadataTrackPresentationMode**](https://msdn.microsoft.com/library/windows/apps/dn987016). Le mode de présentation que vous choisissez dépend de l’implémentation de votre application. Dans cet exemple, la piste de métadonnées est définie sur **PlatformPresented** lorsqu’elle est activée. Pour les pistes de texte, cela signifie que le système affichera automatiquement les indicateurs de texte dans la piste. Lorsque le bouton d’activation/de désactivation est désactivé, le mode de présentation est défini sur **Disabled**, ce qui signifie qu’aucun texte ne s’affiche et qu’aucun événement d’indicateur n’est déclenché. Les événements d’indicateur sont présentés plus loin dans cet article.
+Because more than one metadata track can be active at a time, you don't simply set the active index for the metadata track list. Instead, call the **MediaPlaybackItem** object's [**SetPresentationMode**](https://msdn.microsoft.com/library/windows/apps/dn986977) method, passing in the index of the track you want to toggle, and then providing a value from the [**TimedMetadataTrackPresentationMode**](https://msdn.microsoft.com/library/windows/apps/dn987016) enumeration. The presentation mode you choose depends on the implementation of your app. In this example, the metadata track is set to **PlatformPresented** when enabled. For text-based tracks, this means that the system will automatically display the text cues in the track. When the toggle button is toggled off, the presentation mode is set to **Disabled**, which means that no text is displayed and no cue events are raised. Cue events are discussed later in this article.
 
 [!code-cs[ToggleChecked](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetToggleChecked)]
 
 [!code-cs[ToggleUnchecked](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetToggleUnchecked)]
 
-## Ajouter du texte synchronisé externe avec TimedTextSource
+As you are processing the metadata tracks, you can access the set of cues within the track by accessing the [**Cues**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.TimedMetadataTrack.Cues) or [**ActiveCues**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.TimedMetadataTrack.ActiveCues) properties. You can do this to update your UI to show the cue locations for a media item.
 
-Dans certains scénarios, vous pouvoir disposer de fichiers externes contenant du texte synchronisé associé à un élément multimédia, des fichiers distincts contenant des sous-titres pour différents paramètres régionaux par exemple. Utilisez la classe [**TimedTextSource**](https://msdn.microsoft.com/library/windows/apps/dn956679) pour charger les fichiers de texte synchronisé externe à partir d’un flux ou d’une URI.
+## Handle unsupported codecs and unknown errors when opening media items
+Starting with Windows 10, version 1607, you can check whether the codec required to playback a media item is supported or partially supported on the device on which your app is running. In the event handler for the **MediaPlaybackItem** tracks-changed events, such as [**AudioTracksChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.AudioTracksChanged), first check to see if the track change is an insertion of a new track. If so, you can get a reference to the track being inserted by using the index passed in the **IVectorChangedEventArgs.Index** parameter with the appropriate track collection of the **MediaPlaybackItem** parameter, such as the [**AudioTracks**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.AudioTracks) collection.
 
-Cet exemple utilise une collection **Dictionary** pour stocker une liste de sources de texte synchronisé pour l’élément multimédia à l’aide de l’URI source et de l’objet **TimedTextSource** en tant que paire clé/valeur afin d’identifier les pistes une fois qu’elles ont été résolues.
+Once you have a reference to the inserted track, check the [**DecoderStatus**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrackSupportInfo.DecoderStatus) of the track's [**SupportInfo**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrack.SupportInfo) property. If the value is [**FullySupported**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus), then the appropriate codec needed to play back the track is present on the device. If the value is [**Degraded**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus), then the track can be played by the system, but the playback will be degraded in some way. For example, a 5.1 audio track may be played back as 2-channel stereo instead. If this is the case, you may want to update your UI to alert the user of the degradation. If the value is [**UnsupportedSubtype**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus) or [**UnsupportedEncoderProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus), then the track can't be played back at all with the current codecs on the device. You may wish to alert the user and skip playback of the item or implement UI to allow the user to download the correct codec. The track's [**GetEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrack.GetEncodingProperties) method can be used to determine the required codec for playback.
+
+Finally, you can register for the track's [**OpenFailed**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrack.OpenFailed) event, which will be raised if the track is supported on the device but failed to open due to an unknown error in the pipeline.
+
+[!code-cs[AudioTracksChanged_CodecCheck](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetAudioTracksChanged_CodecCheck)]
+
+In the [**OpenFailed**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrack.OpenFailed) event handler, you can check to see if the **MediaSource** status is unknown, and if so, you can programatically select a different track to play, allow the user to choose a different track, or abandon playback.
+
+[!code-cs[OpenFailed](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetOpenFailed)]
+
+## Set display properties used by the System Media Transport Controls
+Starting with Windows 10, version 1607, media played in a [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) is automatically integrated into the System Media Transport Controls (SMTC) by default. You can specify the metadata that will be displayed by the SMTC by updating the display properties for a **MediaPlaybackItem**. Get an object representing the display properties for an item by calling [**GetDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.GetDisplayProperties). Set whether the playback item is music or video by setting the [**Type**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.Type) property. Then, set the properties of the object's [**VideoProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.VideoProperties) or [**MusicProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.MusicProperties). Call [**ApplyDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/mt489923) to set the update the item's properties to the values you provided. Typically, an app will retrieve the display values dynamically from a web service, but the following example illustrates this process with hardcoded values.
+
+[!code-cs[SetVideoProperties](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetSetVideoProperties)]
+
+[!code-cs[SetMusicProperties](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetSetMusicProperties)]
+
+## Add external timed text with TimedTextSource
+
+For some scenarios, you may have external files that contains timed text associated with a media item, such as separate files that contain subtitles for different locales. Use the [**TimedTextSource**](https://msdn.microsoft.com/library/windows/apps/dn956679) class to load in external timed text files from a stream or URI.
+
+This example uses a **Dictionary** collection to store a list of the timed text sources for the media item using the source URI and the **TimedTextSource** object as the key/value pair in order to identify the tracks after they have been resolved.
 
 [!code-cs[TimedTextSourceMap](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetTimedTextSourceMap)]
 
-Créez un **TimedTextSource** pour chaque fichier de texte synchronisé externe en appelant la méthode [**CreateFromUri**](https://msdn.microsoft.com/library/windows/apps/dn708190). Ajoutez une entrée pour le **Dictionary** de la source de texte synchronisé. Ajoutez un gestionnaire pour l’événement [**TimedTextSource.Resolved**](https://msdn.microsoft.com/library/windows/apps/dn965540) à gérer si l’élément n’a pas pu être chargé ou pour définir des propriétés supplémentaires lorsque l’élément a bien été chargé.
+Create a new **TimedTextSource** for each external timed text file by calling [**CreateFromUri**](https://msdn.microsoft.com/library/windows/apps/dn708190). Add an entry to the **Dictionary** for the timed text source. Add a handler for the [**TimedTextSource.Resolved**](https://msdn.microsoft.com/library/windows/apps/dn965540) event to handle if the item failed to load or to set additional properties after the item was loaded successfully.
 
-Inscrivez tous vos objets **TimedTextSource** avec **MediaSource** en les ajoutant à la collection [**ExternalTimedTextSources**](https://msdn.microsoft.com/library/windows/apps/dn930916). Notez que les sources de texte synchronisé externe sont ajoutées directement à **MediaSource** et non au **MediaPlaybackItem** créé à partir de la source. Pour mettre à jour votre interface utilisateur afin de refléter les pistes de texte externe, inscrivez et gérez l’événement **TimedMetadataTracksChanged** comme décrit précédemment dans cet article.
+Register all of your **TimedTextSource** objects with the **MediaSource** by adding them to the [**ExternalTimedTextSources**](https://msdn.microsoft.com/library/windows/apps/dn930916) collection. Note that external timed text sources are added to directly the **MediaSource** and not the **MediaPlaybackItem** created from the source. To update your UI to reflect the external text tracks, register and handle the **TimedMetadataTracksChanged** event as described previously in this article.
 
 [!code-cs[TimedTextSource](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetTimedTextSource)]
 
-Dans le gestionnaire de l’événement [**TimedTextSource.Resolved**](https://msdn.microsoft.com/library/windows/apps/dn965540), vérifiez la propriété **Error** de [**TimedTextSourceResolveResultEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn965537) transmise au gestionnaire pour déterminer si une erreur s’est produite lors de la tentative de chargement des données de texte synchronisé. Si l’élément a bien été résolu, vous pouvez utiliser ce gestionnaire pour mettre à jour d’autres propriétés de la piste résolue. Cet exemple ajoute une étiquette à chaque piste en fonction de l’URI préalablement enregistrée dans **Dictionary**.
+In the handler for the [**TimedTextSource.Resolved**](https://msdn.microsoft.com/library/windows/apps/dn965540) event, check the **Error** property of the [**TimedTextSourceResolveResultEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn965537) passed into the handler to determine if an error occurred while trying to load the timed text data. If the item was resolved successfully, you can use this handler to update additional properties of the resolved track. This example adds a label for each track based on the URI previously stored in the **Dictionary**.
 
 [!code-cs[TimedTextSourceResolved](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetTimedTextSourceResolved)]
 
-## Ajouter des pistes de métadonnées supplémentaires
+## Add additional metadata tracks
 
-Vous pouvez créer des pistes de métadonnées personnalisées de manière dynamique dans le code et les associer à une source de média. Les pistes que vous créez peuvent contenir du texte de sous-titre. Elles peuvent également contenir vos données d’application propriétaires.
+You can dynamically create custom metadata tracks in code and associate them with a media source. The tracks you create can contain subtitle or caption text, or they can contain your proprietary app data.
 
-Créez un [**TimedMetadataTrack**](https://msdn.microsoft.com/library/windows/apps/dn956580) en appelant le constructeur et en spécifiant un ID, l’identificateur de langue et une valeur de l’énumération [**TimedMetadataKind**](https://msdn.microsoft.com/library/windows/apps/dn956578). Enregistrez des gestionnaires pour les événements [**CueEntered**](https://msdn.microsoft.com/library/windows/apps/dn956583) et [**CueExited**](https://msdn.microsoft.com/library/windows/apps/dn956584). Ces événements sont déclenchés lorsque l’heure de début d’un indicateur est atteinte et lorsque la durée d’un indicateur s’est écoulée, respectivement.
+Create a new [**TimedMetadataTrack**](https://msdn.microsoft.com/library/windows/apps/dn956580) by calling the constructor and specifying an ID, the language identifier, and a value from the [**TimedMetadataKind**](https://msdn.microsoft.com/library/windows/apps/dn956578) enumeration. Register handlers for the [**CueEntered**](https://msdn.microsoft.com/library/windows/apps/dn956583) and [**CueExited**](https://msdn.microsoft.com/library/windows/apps/dn956584) events. These events are raised when the start time for a cue has been reached and when the duration for a cue has expired, respectively.
 
-Créez un nouvel objet d’indicateur, adapté au type de piste de métadonnées que vous avez créée, puis définissez l’ID, l’heure de début et la durée de la piste. Cet exemple crée une piste de données, un ensemble d’objet [**DataCue**](https://msdn.microsoft.com/library/windows/apps/dn930892) est donc généré et une mémoire tampon contenant des données spécifiques à l’application est fournie pour chaque indicateur. Pour inscrire la nouvelle piste, ajoutez-la à la collection [**ExternalTimedMetadataTracks**](https://msdn.microsoft.com/library/windows/apps/dn930915) de l’objet **MediaSource**.
+Create a new cue object, appropriate for the type of metadata track you created, and set the ID, start time, and duration for the track. This example creates a data track, so a set of [**DataCue**](https://msdn.microsoft.com/library/windows/apps/dn930892) objects are generated and a buffer containing app-specific data is provided for each cue. To register the new track, add it to the [**ExternalTimedMetadataTracks**](https://msdn.microsoft.com/library/windows/apps/dn930915) collection of the **MediaSource** object.
 
 [!code-cs[AddDataTrack](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetAddDataTrack)]
 
-L’événement **CueEntered** est déclenché lorsque l’heure de début d’un indicateur est atteinte alors que la piste associée dispose d’un mode de présentation **ApplicationPresented**, **Hidden** ou **PlatformPresented.**. Les événements d’indicateur ne sont pas déclenchés pour les pistes de métadonnées lorsque le mode de présentation de la piste est **Disabled**. Cet exemple présente simplement les données personnalisées associées à l’indicateur dans la fenêtre de débogage.
+The **CueEntered** event is raised when a cue's start time has been reached as long as the associated track has a presentation mode of **ApplicationPresented**, **Hidden**, or **PlatformPresented.** Cue events are not raised for metadata tracks while the presentation mode for the track is **Disabled**. This example simply outputs the custom data associated with the cue to the debug window.
 
 [!code-cs[DataCueEntered](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetDataCueEntered)]
 
-Cet exemple ajoute une piste de texte personnalisé en spécifiant **TimedMetadataKind.Caption** lors de la création de la piste et de l’utilisation d’objets [**TimedTextCue**](https://msdn.microsoft.com/library/windows/apps/dn956655) pour ajouter des indicateurs à la piste.
+This example adds a custom text track by specifying **TimedMetadataKind.Caption** when creating the track and using [**TimedTextCue**](https://msdn.microsoft.com/library/windows/apps/dn956655) objects to add cues to the track.
 
 [!code-cs[AddTextTrack](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetAddTextTrack)]
 
 [!code-cs[TextCueEntered](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetTextCueEntered)]
 
-## Lire une liste d’éléments multimédias avec MediaPlaybackList
+## Play a list of media items with MediaPlaybackList
 
-[**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) vous permet de créer une playlist d’éléments multimédias, qui sont représentés par des objets **MediaPlaybackItem**.
+The [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) allows you to create a playlist of media items, which are represented by **MediaPlaybackItem** objects.
 
-**Remarque** Les éléments figurant dans [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) sont rendus à l’aide de la lecture sans blanc. Le système utilise les métadonnées fournies dans les fichiers codés MP3 ou AAC pour déterminer la compensation de délai ou de remplissage nécessaire pour la lecture sans blanc. Si les fichiers codés MP3 ou AAC ne fournissent pas ces métadonnées, le système détermine alors le délai ou le remplissage de manière heuristique. Pour les formats sans perte, tels que PCM, FLAC ou ALAC, le système n’exécute aucune action, car ces encodeurs n’introduisent ni retard ni remplissage.
+**Note**  Items in a [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) are rendered using gapless playback. The system will use provided metadata in MP3 or AAC encoded files to determine the delay or padding compensation needed for gapless playback. If the MP3 or AAC encoded files don't provide this metadata, then the system determines the delay or padding heuristically. For lossless formats, such as PCM, FLAC, or ALAC, the system takes no action because these encoders don't introduce delay or padding.
 
-Pour commencer, déclarez une variable pour stocker votre **MediaPlaybackList**.
+To get started, declare a variable to store your **MediaPlaybackList**.
 
 [!code-cs[DeclareMediaPlaybackList](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetDeclareMediaPlaybackList)]
 
-Créez un **MediaPlaybackItem** pour chaque élément multimédia que vous voulez ajouter à votre liste en suivant la procédure décrite précédemment dans cet article. Initialisez votre objet **MediaPlaybackList** et ajoutez-y les éléments de lecture multimédia. Inscrivez un gestionnaire pour l’événement [**CurrentItemChanged**](https://msdn.microsoft.com/library/windows/apps/dn930957). Cet événement vous permet de mettre à jour votre interface utilisateur afin de refléter l’élément multimédia en cours de lecture. Enfin, définissez la source de la lecture de **MediaElement** ou **MediaPlayer** sur votre **MediaPlaybackList**.
+Create a **MediaPlaybackItem** for each media item you want to add to your list using the same procedure described previously in this article. Initialize your **MediaPlaybackList** object and add the media playback items to it. Register a handler for the [**CurrentItemChanged**](https://msdn.microsoft.com/library/windows/apps/dn930957) event. This event allows you to update your UI to reflect the currently playing media item. Finally, set the playback source of the **MediaPlayer** to your **MediaPlaybackList**.
 
 [!code-cs[PlayMediaPlaybackList](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetPlayMediaPlaybackList)]
 
-Dans le gestionnaire d’événements **CurrentItemChanged**, mettez à jour votre interface utilisateur afin de refléter l’élément en cours de lecture, qui peut être récupéré à l’aide de la propriété [**NewItem**](https://msdn.microsoft.com/library/windows/apps/dn930930) de l’objet [**CurrentMediaPlaybackItemChangedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn930929) transmis dans l’événement. N’oubliez pas que si vous mettez à jour l’interface utilisateur à partir de cet événement, vous devez le faire dans le cadre d’un appel à [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) afin que les mises à jour soient effectuées sur le thread d’interface utilisateur.
+In the **CurrentItemChanged** event handler, update your UI to reflect the currently playing item, which can be retrieved using the [**NewItem**](https://msdn.microsoft.com/library/windows/apps/dn930930) property of the [**CurrentMediaPlaybackItemChangedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn930929) object passed into the event. Remember that if you update the UI from this event, you should do so within a call to [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) so that the updates are made on the UI thread.
+
+> [!NOTE] 
+> The system does not automatically dispose of media items after they are played. This means that if the user navigates backwards through the list, previous played songs can be played again gaplessly, but this means that as more items in the list are played, the memory usage of your app will increase. You must be sure to free up the resources for previously played media items periodically. This is especially important to address when your app is playing in the background and more tightly resource-constrained. 
+
+You can use the **CurrentItemChanged** event as an opportunity to release the resources from previously played media items. To keep a reference to previously played items, create a **Queue** collection. And set a variable that determines the maximum number of media items to keep in memory. In the handler, get a reference to the previously played item and add it to the queue and dequeue the oldest entry in the queue. Call [**Reset**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaSource.Reset) on the returned item to free up its resources, but first check to make sure it's not still on the queue or currently being played to handle cases where the item is played multiple times.
+
+[!code-cs[DeclareItemQueue](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetDeclareItemQueue)]
 
 [!code-cs[MediaPlaybackListItemChanged](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetMediaPlaybackListItemChanged)]
 
-Appelez [**MovePrevious**](https://msdn.microsoft.com/library/windows/apps/mt146455) ou [**MoveNext**](https://msdn.microsoft.com/library/windows/apps/mt146454) pour que le lecteur multimédia lise l’élément précédent ou suivant de votre **MediaPlaybackList**.
+Call [**MovePrevious**](https://msdn.microsoft.com/library/windows/apps/mt146455) or [**MoveNext**](https://msdn.microsoft.com/library/windows/apps/mt146454) to cause the media player to play the previous or next item in your **MediaPlaybackList**.
 
 [!code-cs[PrevButton](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetPrevButton)]
 
 [!code-cs[NextButton](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetNextButton)]
 
-Définissez la propriété [**ShuffleEnabled**](https://msdn.microsoft.com/library/windows/apps/mt146457) pour spécifier si le lecteur multimédia doit lire les éléments de votre liste dans un ordre aléatoire.
+Set the [**ShuffleEnabled**](https://msdn.microsoft.com/library/windows/apps/mt146457) property to specify whether the media player should play the items in your list in random order.
 
 [!code-cs[ShuffleButton](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetShuffleButton)]
 
-Définissez la propriété [**AutoRepeatEnabled**](https://msdn.microsoft.com/library/windows/apps/mt146452) pour spécifier si le lecteur multimédia doit lire votre liste en boucle.
+Set the [**AutoRepeatEnabled**](https://msdn.microsoft.com/library/windows/apps/mt146452) property to specify whether the media player should loop playback of your list.
 
 [!code-cs[RepeatButton](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetRepeatButton)]
 
- 
 
- 
+###Handle the failure of media items in a playback list
+The [**ItemFailed**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackList.ItemFailed) event is raised when an item in the list fails to open. The [**ErrorCode**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItemError.ErrorCode) property of the [**MediaPlaybackItemError**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItemError) object passed into the handler enumerates the specific cause of the failure when possible, including network errors, decoding errors, or encryption errors.
+
+[!code-cs[ItemFailed](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetItemFailed)]
+
+## Related topics
+* [Media playback](media-playback.md)
+* [Play audio and video with MediaPlayer](play-audio-and-video-with-mediaplayer.md)
+* [Integrate with the Sytem Media Transport Controls](integrate-with-systemmediatransportcontrols.md)
+* [Play media in the background](background-audio.md)
 
 
 
 
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

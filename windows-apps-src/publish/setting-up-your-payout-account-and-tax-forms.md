@@ -1,165 +1,165 @@
 ---
 author: jnHs
-Description: "Afin de recevoir l’argent provenant des ventes d’applications dans le Windows Store, vous devez configurer votre compte de revenu et remplir les déclarations fiscales nécessaires."
-title: "Configuration de votre compte de revenu et de vos déclarations fiscales"
+Description: In order to receive money from app sales in the Windows Store, you need to set up your payout account and fill out the necessary tax forms.
+title: Setting up your payout account and tax forms
 ms.assetid: 690A2EBC-11B1-4547-B422-54F15A6C26A7
 translationtype: Human Translation
-ms.sourcegitcommit: f17132514a42c50d6bfe716f6be706748c287043
-ms.openlocfilehash: 45cb4e8b65f1aeb75c049a88c143a23350d47b64
+ms.sourcegitcommit: ea9ea2d39ecd0fc54381df8d5fa7dd7cdc2fae51
+ms.openlocfilehash: 7de230aeee932f781a282ab7555e1c90bcd76460
 
 ---
 
-# Configuration de votre compte de revenu et de vos déclarations fiscales
+# Setting up your payout account and tax forms
 
 
-Afin de recevoir l’argent provenant des ventes d’applications dans le Windows Store, vous devez configurer votre compte de revenu et remplir les déclarations fiscales nécessaires.
+In order to receive money from app sales in the Windows Store, you need to set up your payout account and fill out the necessary tax forms.
 
-> **Remarque** Dès le 1er avril 2016, vos revenus Microsoft Advertising seront reversés sur le compte de revenu défini dans le Centre de développement. Pour en savoir plus, consultez l’article [Consolidation du profil fiscal et du compte de paiement de pubCenter dans le Centre de développement](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md).
+> **Note**  As of April 1st, 2016, your Microsoft Advertising earnings will be paid to the same payout account you've set up in Dev Center. For more info, see [pubCenter-DevCenter payout account and tax profile consolidation](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md).
 
-Si vous envisagez de référencer uniquement des applications gratuites (et que vous ne voulez pas proposer d’achats in-app ou utiliser Microsoft Advertising), vous n’avez pas besoin de configurer de compte de revenu ni de remplir de déclaration fiscale. Si vous changez d’avis par la suite et décidez de vendre des applications (ou de proposer des produits in-app), vous pourrez alors configurer votre compte de revenu et remplir vos déclarations fiscales à ce moment-là. Vous ne pourrez pas soumettre d’applications payées ou de produits in-app avant d’avoir créé votre compte de revenu et votre profil fiscal.
+If you only plan to list free apps (and don't plan to offer in-app purchases or use Microsoft Advertising), you don't need to set up a payout account or fill out any tax forms. If you change your mind later and decide you do want to sell apps (or in-app products), you can set up your payout account and fill out tax forms at that time. You won't be able to submit any paid apps or add-ons until your payout account and tax profile has been completed.
 
-> **Remarque** Sur [certains marchés](account-types-locations-and-fees.md#developer-account-and-app-submission-markets), les développeurs peuvent uniquement soumettre des applications gratuites. Si votre compte est enregistré sur l’un de ces marchés, vous n’aurez pas la possibilité de configurer un compte de revenu.
-
-
-Après avoir [configuré votre compte de développeur](opening-a-developer-account.md), vous devez effectuer deux opérations avant de pouvoir vendre des applications (ou des produits in-app) dans le Windows Store :
-
--   [Configurer votre compte de revenu](#setting_up_your_payout_account)
--   [Remplir vos déclarations fiscales](#paying_taxes)
-
-> **Remarque** Pour plus d’informations sur le mode et l’échéance des paiements de l’argent que vos applications vous ont rapporté, voir [Rémunération](getting-paid-apps.md).
-
- 
-
-## Compte de revenu
+> **Note**  In [certain markets](account-types-locations-and-fees.md#developer-account-and-app-submission-markets), developers can only submit free apps. If your account is registered in one of these markets, you will not have the option to set up a payout account.
 
 
-Un compte de revenu est le compte bancaire vers lequel nous transférons l'argent de vos ventes. Ce compte bancaire doit se trouver dans le même pays que celui dans lequel vous avez enregistré votre compte de développeur.
+After you have [set up your developer account](opening-a-developer-account.md), there are two things you need to do before you can sell apps (or add-ons) in the Windows Store:
 
-> **Remarque** Sur certains marchés, PayPal peut être utilisé pour votre compte de revenu. Pour savoir si PayPal est pris en charge pour un marché spécifique, consultez l’article [Types de compte, emplacements et frais](account-types-locations-and-fees.md#developer-account-and-app-submission-markets), et lisez la section [Informations PayPal](#paypal) ci-après pour en savoir plus.
+-   [Set up your payout account](#setting_up_your_payout_account)
+-   [Fill out your tax forms](#paying_taxes)
 
- 
-**Pour configurer votre compte de revenu**
-
-1.  Dans le tableau de bord du Centre de développement Windows, cliquez sur **Paramètres du compte** dans le menu de navigation gauche.
-2.  Dans le menu de navigation gauche de la page **Paramètres du compte**, cliquez sur **Compte de revenu**.
-
-   > **Remarque** Étant donné qu’il s’agit d’informations sensibles, vous serez peut-être invité à vous reconnecter.
-
-3.  Sur l’écran qui apparaît, saisissez les informations relatives à votre compte.
-
-   > **Remarque** Les champs dans lesquels vous entrez des informations sur votre compte acceptent uniquement les caractères alphanumériques.
-
-4.  Enregistrez vos informations.
-
-Si vous devez mettre à jour ou modifier votre compte de revenu, suivez la même procédure ci-dessus, en remplaçant les informations actuelles par les nouvelles informations.
-
-> **Important** En cas de modification de votre compte de revenu, vos paiements peuvent être retardés au plus d’un cycle de paiement. Ce retard s’explique par le fait que nous devons vérifier la modification apportée au compte, et ce, selon le même processus que celui utilisé lors de la configuration initiale du compte de revenu. Une fois votre compte vérifié, vous serez toujours rémunéré, mais nous ajouterons les paiements du cycle de paiement actuel au prochain cycle de paiement. Pour plus d'informations, voir l'article [Rémunération](getting-paid-apps.md).
+> **Note**  For details about how and when you will be paid for the money your apps make, see [Getting paid](getting-paid-apps.md).
 
  
 
-### Informations PayPal
+## Payout account
 
-Selon votre pays ou votre région, vous avez la possibilité de créer un compte de paiement en saisissant vos informations PayPal. Avant de choisir PayPal comme option de compte de paiement, vérifiez les points suivants :
 
--   Consultez l'article [Types de compte, emplacements et frais](account-types-locations-and-fees.md) pour savoir si PayPal est un mode de paiement pris en charge dans votre pays ou région.
--   Consultez les FAQ ci-après. En fonction de votre situation, il se peut que PayPal ne soit pas l'option idéale pour votre compte de paiement et qu'un compte bancaire soit mieux adapté.
+A payout account is the bank account to which we send the proceeds from your sales. This bank account must be located in the same country where you registered your developer account.
 
-Questions courantes concernant l'utilisation de PayPal comme mode de paiement :
+> **Note**  In some markets, PayPal can be used for your payout account. See [Account types, locations, and fees](account-types-locations-and-fees.md#developer-account-and-app-submission-markets) to find out if PayPal is supported for a specific market, and read the [PayPal info](#paypal) below for more details.
 
--   **Comment configurer les paramètres PayPal pour recevoir des paiements?** Vous devez vous assurer que votre compte PayPal ne bloque pas les paiements par eCheck. Ce paramètre peut être configuré sur la page des préférences de réception des paiements de votre compte PayPal. Pour plus d'informations, voir la [page de configuration du compte PayPal](http://go.microsoft.com/fwlink/p/?linkid=513139).
--   **Mon pays ou ma région sont-ils pris en charge?** Pour savoir si PayPal est un mode de paiement pris en charge, consultez l’article [Types de compte, emplacements et frais](account-types-locations-and-fees.md).
--   **Existe-t-il un montant maximal pour les paiements reçus sur mon compte PayPal?** Oui. PayPal limite le montant que les utilisateurs peuvent percevoir au cours d’une même transaction. Ces seuils varient en fonction de la devise utilisée. Pour connaître les seuils de chaque devise, consultez la [page des seuils de transaction PayPal](http://go.microsoft.com/fwlink/p/?linkid=513108). Si vous pensez recevoir un paiement dépassant votre seuil de transaction PayPal, modifiez votre mode de paiement et optez pour le paiement par compte bancaire.
--   **Mon compte PayPal doit-il être enregistré dans le même pays ou la même région que mon compte du Centre de développement?** Non. Lorsque vous créez un compte PayPal, vous pouvez accepter la configuration par défaut. Vous ne devriez rencontrer aucun problème d’incompatibilité entre les différents pays ou régions et entre les différentes devises, à moins que vous n’ayez bloqué le paiement dans certaines devises. Ce paramètre peut être configuré sur la page des préférences de réception des paiements de votre compte PayPal.
--   **Dois-je accepter les paiements PayPal manuellement?** Non. Les comptes PayPal demandent par défaut de valider manuellement chaque paiement, ce qui signifie que si vous n’acceptez pas le paiement dans un délai de 30 jours, celui-ci est rejeté. Vous pouvez modifier ce paramètre en désactivant l'option « Me demander » sur la page des paramètres supplémentaires de votre compte PayPal.
+ 
+**To set up your payout account**
 
-### Exigences spécifiques pour certains pays/régions
+1.  In the Windows Dev Center dashboard, and click **Account settings** in the left navigation menu.
+2.  In the left navigation menu of the **Account settings** page, click **Payout account**.
 
-Certains pays et régions appliquent des exigences supplémentaires pour les comptes de revenu. Si vous résidez au Pakistan, en Russie ou en Ukraine, notez les obligations suivantes.
+   > **Note**  Because this is sensitive info, you may be prompted to sign in again.
+
+3.  On the screen that appears, fill out the info for your account.
+
+   > **Note**  The fields you use to provide your account info accept only alphanumeric characters.
+
+4.  Save your info.
+
+If you need to update or change your payout account, follow the same steps above, replacing the current info with the new info.
+
+> **Important**  Changing your payout account can delay your payments by up to one payment cycle. This delay occurs because we need to verify the account change, just as we did when you first set up the payout account. You'll still get paid for the full amount after your account has been verified; any payments due for the current payment cycle will be added to the next one. See [Getting paid](getting-paid-apps.md) for more info.
+
+ 
+
+### PayPal info
+
+In select countries and regions, you can create a payment account by entering your PayPal info. However, before choosing PayPal as a payment account option:
+
+-   Check [Account types, locations, and fees](account-types-locations-and-fees.md) to see if PayPal is a supported payment method in your country or region.
+-   Review the following FAQs. Depending on your situation, PayPal may not be the best payment account option for you, and a bank account may be preferred.
+
+Common questions about using PayPal as a payment method:
+
+-   **What PayPal settings do I need to have in order to receive payments?** You must ensure that your PayPal account does not block eCheck payments. This setting is managed in PayPal’s Payment Receiving Preferences page. See [PayPal’s account setup page](http://go.microsoft.com/fwlink/p/?linkid=513139) for more info.
+-   **Is my country/region supported?** See [Account types, locations, and fees](account-types-locations-and-fees.md) to find out where PayPal is a supported payment method.
+-   **Is there a restriction on the size of payments that I can receive using PayPal?** Yes. PayPal limits the amount of money that users can receive in a single transaction. The limits vary by currency; see [PayPal’s transaction limit page](http://go.microsoft.com/fwlink/p/?linkid=513108) for each currency’s limit. If you anticipate that you will receive a payment greater than your PayPal transaction limit, change your payment method to a bank account.
+-   **Does my PayPal account have to be registered in the same country/region as my Dev Center account?** No. When you set up a PayPal account, you can accept the default configuration. You shouldn’t have any issues with other countries/regions and currencies unless you have blocked payment in some currencies. This setting is managed in PayPal’s Payment Receiving Preferences page.
+-   **Do I have to accept PayPal payments manually?** No. PayPal accounts are set by default to require users to accept payments manually, which means if you don’t accept the payment within 30 days, it is returned. You can change this setting by turning off “Ask Me” in PayPal’s More Settings page.
+
+### Specific requirements for certain countries/regions
+
+In some countries and regions, additional requirements for payout accounts must be followed. If you are a resident of Pakistan, Russia, or Ukraine, please note the following requirements.
 
 ### Pakistan
 
-Le remplissage d’un formulaire R constitue une exigence réglementaire du secteur bancaire au Pakistan. Ce formulaire sert à indiquer la finalité et le motif d’un encaissement de fonds en provenance de l’étranger. Par conséquent, chaque fois que vous pouvez bénéficier d’un revenu mensuel de la part de Microsoft, vous devez soumettre un formulaire R à votre banque pour que ce paiement soit autorisé sur votre compte. Pour connaître la procédure d’obtention d’un formulaire R, contactez votre agence bancaire locale.
+Form-R is a Pakistan banking regulatory requirement. It is used to indicate the purpose and reason for receipt of funds from abroad. Therefore, anytime that you are eligible for a monthly payout from Microsoft, you will need to submit a Form-R to your bank before the payout can be released to your account. Contact your local bank branch for instructions on how to obtain a copy of Form-R.
 
-Vous devrez soumettre un formulaire R à votre banque pour chacun des mois où vous pouvez bénéficier d’un revenu. Par exemple, si vous prévoyez de recevoir un paiement tous les mois de l'année, vous devrez soumettre un formulaire R à 12 reprises (un par mois).
+You will need to submit a Form-R to your bank each month that you are eligible for a payout. For example, if you expect to receive a payout every month of the year, you will need to submit a Form-R 12 times (once each month).
 
-Une fois que le paiement a été soumis à votre banque, vous disposez de 30 jours pour envoyer un formulaire R. Passé ce délai, les fonds seront retournés à Microsoft.
+Once the payout has been submitted to your bank, you have 30 days to submit a Form-R. If it is not submitted within 30 days, the funds will be returned to Microsoft.
 
-### Russie
+### Russia
 
-Si vous êtes un développeur vivant en Russie, vous pouvez avoir besoin de fournir des documents à votre banque pour que celle-ci puisse déposer des fonds sur votre compte. Lorsque vous avez le droit d'être payé, nous vous fournissons les documents suivants dans un message e-mail :
+If you’re a developer who lives in Russia, you may need to provide documentation to your bank before your bank will deposit funds into your account. When you’re eligible to be paid, we will provide you with the following documentation in an email message:
 
-1.  Certificate of Acceptance (CoA) - contient le montant du paiement transféré sur votre compte.
-2.  App Developer Agreement (ADA) - copie signée de l'accord de développeur qui doit être contresignée.
+1.  Acceptance Certificate (AC) – contains the amount of payout being transferred to your account.
+2.  App Developer Agreement (ADA) – a signed copy of the developer agreement that needs to be counter signed.
 
-Pour garantir le succès du paiement, notez les points suivants :
+To ensure your payout is successful, please also keep in mind the following:
 
--   Le **Nom du titulaire du compte** saisi pour votre compte de revenu dans le tableau de bord du Centre de développement Windows doit être exactement le même que celui associé à votre compte bancaire. Par exemple, si le nom de votre compte bancaire comporte un deuxième prénom, saisissez un deuxième prénom dans le champ **Nom du titulaire du compte**.
--   Les paiements sont transférés directement de Microsoft à votre compte bancaire en roubles (RUB).
--   Les informations bancaires entrées dans le Centre de développement en caractères latins sont converties en caractères cyrilliques.
--   Les paiements doivent être effectués sur un compte bancaire et non sur une carte bancaire.
+-   The **Account holder name** entered for your payout account in the Windows Dev Center dashboard must be the exact same name associated with your bank account. For example, if your bank account name contains a middle name, add a middle name to your **Account holder name**.
+-   Payouts are transferred directly from Microsoft to your bank account in Ruble (RUB) currency.
+-   Bank information entered in Dev Center in Latin characters is translated to Cyrillic characters.
+-   Payouts must be made to a bank account and not to a bank card.
 
 ### Ukraine
 
-Si vous êtes un développeur vivant en Ukraine, vous pouvez avoir besoin de fournir des documents à votre banque pour que celle-ci puisse déposer des fonds sur votre compte. Si vous pouvez bénéficier d’une rémunération, nous vous fournirons les documents suivants dans un e-mail :
+If you’re a developer who lives in Ukraine, you may need to provide documentation to your bank before your bank will deposit funds into your account. When you’re eligible to be paid, we will provide you with the following documentation in an email message:
 
-1.  Certificate of Acceptance (CoA) - contient le montant du paiement transféré sur votre compte.
-2.  App Developer Agreement (ADA) - copie signée de l'accord de développeur qui doit être contresignée.
-3.  Amendment Agreement (AA) – ce document est utilisable par votre banque pour faciliter l’identification de vos fonds de paiement.
+1.  Acceptance Certificate (AC) – contains the amount of payout being transferred to your account.
+2.  App Developer Agreement (ADA) – a signed copy of the developer agreement that needs to be counter signed.
+3.  Amendment Agreement (AA) – this document can be used by your bank to help identify your payout funds.
 
-Microsoft fournit ces trois documents lors de la première tentative de paiement. Pour les paiements ultérieurs, vous ne recevrez plus que le document CoA. Conservez les documents ADA et AA au cas où vous en auriez besoin pour recevoir de futurs paiements de votre banque.
+Microsoft provides all three documents when your first payout is attempted. For any subsequent payouts, you will only receive the AC document. Please retain the ADA and AA documents in case you need them to receive future payouts from your bank.
 
-Pour garantir le succès du paiement, notez les points suivants :
+To ensure your payout is successful, please also keep in mind the following:
 
--   Le **Nom du titulaire du compte** saisi pour votre compte de revenu dans le tableau de bord du Centre de développement Windows doit être exactement le même que celui associé à votre compte bancaire. Par exemple, si le nom de votre compte bancaire comporte un deuxième prénom, saisissez un deuxième prénom dans le champ **Nom du titulaire du compte**.
--   Les paiements sont transférés directement de Microsoft vers votre compte bancaire en dollars USD.
--   Les informations bancaires entrées dans le Centre de développement en caractères latins sont converties en caractères cyrilliques.
+-   The **Account holder name** entered for your payout account in the Windows Dev Center dashboard must be the exact same name associated with your bank account. For example, if your bank account name contains a middle name, add a middle name to your **Account holder name**.
+-   Payouts are transferred directly from Microsoft to your bank account in USD currency.
+-   Bank information entered in Dev Center in Latin characters is translated to Cyrillic characters.
 
-## Déclarations fiscales
+## Tax forms
 
 
-Une fois que vous vous êtes [inscrit pour obtenir un compte de développeur](opening-a-developer-account.md) et que vous avez configuré votre [compte de revenu](#receiving_payments), vous pouvez créer votre *profil fiscal* pour le Windows Store en procédant comme suit :
+After you have [registered for a developer account](opening-a-developer-account.md) and set up your [payout account](#receiving_payments), you can create your *tax profile* for the Windows Store by completing the following steps:
 
--   Spécifiez votre pays de résidence et votre nationalité.
--   Remplissez les déclarations fiscales appropriées.
+-   Specify your country of residence and citizenship.
+-   Fill out the appropriate tax forms.
 
-Vous pouvez remplir et envoyer vos déclarations fiscales au format électronique dans votre tableau de bord, ce qui vous évite d’avoir à imprimer les formulaires et à les envoyer par courrier.
+You can complete and submit your tax forms electronically in your dashboard; in most cases, you don't need to print and mail any forms.
 
-> **Important** L’imposition varie selon les pays et les régions. Le montant exact des taxes dont vous devez vous affranchir varie selon les pays et les régions où vous vendez vos applications. Pour savoir dans quels pays Microsoft vous dispense des taxes d’utilisation et sur les ventes, voir le [Contrat du développeur de l’application](https://msdn.microsoft.com/library/windows/apps/hh694058) Dans d’autres pays, selon l’endroit où vous êtes inscrit, vous devrez peut-être verser directement les taxes d’utilisation et les taxes sur les ventes de vos applications à l’administration fiscale locale. Notez également que le produit des ventes d’applications que vous recevez peut être considéré comme un revenu imposable. Nous vous encourageons vivement à contacter l’autorité compétente de votre pays ou de votre région pour obtenir les informations fiscales appropriées à vos activités en tant que développeur Windows Store.
-
- 
-**Pour créer votre profil fiscal**
-
-1.  Dans le tableau de bord du Centre de développement Windows, cliquez sur **Paramètres du compte** dans le menu de navigation gauche.
-2.  Dans le menu de navigation gauche de la page **Paramètres du compte**, cliquez sur **Profil fiscal**.
-
-   > **Remarque** Étant donné qu’il s’agit d’informations sensibles, vous serez peut-être invité à vous reconnecter.
-
-3.  Prenez connaissance de l’état actuel de votre profil fiscal, puis cliquez sur **Modifier** pour remplir les formulaires requis.
-4.  Répondez aux questions portant sur la nationalité américaine et la résidence aux États-Unis, puis cliquez sur **Suivant**.
-5.  Si votre nom et votre adresse sont affichés, vérifiez-les pour la déclaration de vos revenus.
-
-Les versions électroniques des déclarations fiscales à remplir apparaissent ensuite. Quel que soit votre pays de résidence ou votre nationalité, vous devez remplir les déclarations fiscales des États-Unis pour pouvoir vendre des applications ou des produits in-app par le biais du Windows Store. Les développeurs répondant à certains critères de résidence aux États-Unis doivent remplir le formulaire W-9 du fisc américain (IRS). Les autres développeurs résidant en dehors des États-Unis doivent compléter le formulaire W-8 de l'IRS. Vous pouvez remplir ces formulaires en ligne lors de la création de votre profil fiscal.
-
-Il n'est pas nécessaire de fournir un numéro d'identification du contribuable ou ITIN (États-Unis) pour recevoir des paiements de Microsoft ou pour revendiquer des avantages en vertu d'une convention fiscale.
-
-### Taux de retenue
-
-Les informations que vous indiquez dans vos déclarations fiscales déterminent le taux de retenue fiscale appropriée. Le taux de retenue s’applique uniquement aux ventes que vous réalisez aux États-Unis ; les ventes réalisées dans les autres pays ne sont pas assujetties à une retenue. Les taux de retenue peuvent varier, mais pour la plupart des développeurs s’inscrivant dans un autre pays que les États-Unis, le taux par défaut est de 30 %. Ce taux peut être revu à la baisse si votre pays a signé une convention fiscale avec les États-Unis.
-
-### Avantages en vertu d’une convention fiscale
-
-Si vous résidez en dehors des États-Unis, vous pouvez tirer parti d’avantages découlant d’une convention fiscale. Ces avantages varient d’un pays à l’autre et peuvent vous permettre de réduire le montant des taxes retenues par le Windows Store. Pour revendiquer des avantages en vertu d’une convention fiscale, remplissez la deuxième partie du formulaire W-8BEN. Nous vous recommandons de contacter les autorités appropriées dans votre pays ou région pour déterminer si ces avantages vous concernent.
+> **Important**  Different countries and regions have different tax requirements. The exact amount that you must pay in taxes depends on the countries and regions where you sell your apps. See the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058) to find out for which countries Microsoft remits sales and use tax on your behalf. In other countries, depending on where you are registered, you may need to remit sales and use tax for your app sales directly to the local taxing authority. In addition, the app sales proceeds you receive may be taxable as income. We strongly encourage you to contact the relevant authority for your country or region that can best help you determine the right tax info for your Windows Store developer activities.
 
  
+**To complete your tax profile**
+
+1.  In the Windows Dev Center dashboard, click **Account settings** in the left navigation menu.
+2.  In the left navigation menu of the **Account settings** page, click **Tax profile**.
+
+   > **Note**  Because this is sensitive info, you may be prompted to sign in again.
+
+3.  Review your current tax profile status and click **Edit** to complete the required forms.
+4.  Answer the questions about United States citizenship and residency, then click **Next**.
+5.  If your name and address info are displayed, confirm them for the purposes of filing taxes.
+
+Next, you will see electronic versions of the tax forms that you must complete. Regardless of your country of residence or citizenship, you must fill out United States tax forms to sell any apps or in-app products through the Windows Store. Developers who satisfy certain United States residency requirements must fill out an IRS W-9 form. Other developers outside the United States must fill out an IRS W-8 form. You can fill out these forms online as you complete your tax profile.
+
+A United States Individual Taxpayer Identification Number (or ITIN) is not required to receive payments from Microsoft or to claim tax treaty benefits.
+
+### Withholding rates
+
+The info you submit in your tax forms determines the appropriate tax withholding rate. The withholding rate applies only to sales that you make into the United States; sales made into non-US locations are not subject to withholding. The withholding rates vary, but for most developers registering outside the United States, the default rate is 30%. You have the option of reducing this rate if your country has agreed to an income tax treaty with the United States.
+
+### Tax treaty benefits
+
+If you are outside the United States, you may be able to take advantage of tax treaty benefits. These benefits vary from country to country, and may allow you to reduce the amount of taxes that the Windows Store withholds. You can claim tax treaty benefits by completing Part II of the W-8BEN form. We recommend that you communicate with the appropriate resources in your country or region to determine whether these benefits apply to you.
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO5-->
+
+<!--HONumber=Aug16_HO3-->
 
 

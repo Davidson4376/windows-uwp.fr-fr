@@ -1,63 +1,65 @@
 ---
 author: jwmsft
-title: Attribut xDeferLoadStrategy
-description: "xDeferLoadStrategy retarde la création d’un élément et ses enfants. Cela réduit le temps de démarrage, mais augmente légèrement l’utilisation de la mémoire. Chaque élément affecté ajoute environ 600 octets à l’utilisation de la mémoire."
+title: xDeferLoadStrategy attribute
+description: xDeferLoadStrategy delays the creation of an element and its children, decreasing startup time but increasing memory usage slightly. Each element affected adds about 600 bytes to the memory usage.
 ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: a5230a92ad919fc52c40c19646ff799453e64fa4
+ms.sourcegitcommit: 82edf9c3ee7f7303788b7a1272ecb261d3748c5a
+ms.openlocfilehash: c1a0515ea4298b6eb870bdf69e452f774962cdd8
 
 ---
 
-# Attribut x&#58;DeferLoadStrategy
+# x:DeferLoadStrategy attribute
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**x:DeferLoadStrategy="Lazy"** retarde la création d’un élément et ses enfants. Cela réduit le temps de démarrage, mais augmente légèrement l’utilisation de la mémoire. Chaque élément affecté ajoute environ 600octets à l’utilisation de la mémoire. Plus l’arborescence d’éléments que vous différez est importante, plus vous gagnez du temps de démarrage, mais au prix d’un encombrement mémoire supérieur. Par conséquent, un usage abusif de cet attribut peut entraîner une diminution des performances.
+**x:DeferLoadStrategy="Lazy"** is a feature that can be used to optimize the performance of the startup or tree creation scenarios of a XAML app. Using **x:DeferLoadStrategy="Lazy"** delays the creation of an element and its children, decreasing startup time and memory costs by not needing to create the element(s). This is useful to reduce the costs of elements that are not often or conditionally needed. The element will be realized when its referred to from code or VisualStateManager.
 
-## Utilisation des attributs XAML
+However the book keeping for deferral adds about 600 bytes to the memory usage for each element affected. The larger the element tree you defer, the more startup time you'll save, but at the cost of a greater memory footprint. Therefore it's possible to overuse this attribute to the extent that your performance decreases.
+
+## XAML attribute usage
 
 ``` syntax
 <object x:DeferLoadStrategy="Lazy" .../>
 ```
 
-## Remarques
+## Remarks
 
-Les restrictions pour l’utilisation de **x:DeferLoadStrategy** sont les suivantes :
+The restrictions for using **x:DeferLoadStrategy** are:
 
--   Nécessite un [x: Name](x-name-attribute.md) défini, car il doit être possible de trouver l’élément ultérieurement.
--   Seul un [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) peut être marqué comme différé, à l’exception des types dérivés de [**FlyoutBase**](https://msdn.microsoft.com/library/windows/apps/dn279249).
--   Des éléments racines ne peuvent pas être différés dans [**Page**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page), [**UserControls**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.usercontrol) ou [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348).
--   Les éléments d’un [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) ne peuvent pas être différés.
--   Ne fonctionne pas avec un XAML libre chargé avec [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048).
--   Le déplacement d’un élément parent efface tous les éléments qui n’ont pas été réalisés.
+-   Requires an [x:Name](x-name-attribute.md) defined, as there needs to be a way to find the element later.
+-   Only a [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) can be marked as deferred, with the exception of types deriving from [**FlyoutBase**](https://msdn.microsoft.com/library/windows/apps/dn279249).
+-   Root elements can not be deferred in a [**Page**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.page), a [**UserControls**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.usercontrol), nor a [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348).
+-   Elements in a [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) cannot be deferred.
+-   Does not work with loose XAML loaded with [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048).
+-   Moving a parent element will clear out any elements that have not been realized.
 
-Il existe plusieurs manières de réaliser les éléments différés :
+There are several different ways to realize the deferred elements:
 
--   Appeler [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) avec le nom défini sur l’élément.
--   Appeler [**GetTemplateChild**](https://msdn.microsoft.com/library/windows/apps/br209416) avec le nom défini sur l’élément.
--   Dans un [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007), utiliser une animation [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) ou **Storyboard** qui cible l’élément différé.
--   Cibler l’élément différé dans un **Storyboard**.
--   Utiliser une liaison qui cible l’élément différé.
--   NOTE : une fois que l’instanciation d’un élément a démarré, celui-ci est créé sur le thread de l’interface utilisateur, au risque que celle-ci s’interrompe si ce qui est créé en une fois est trop important.
+-   Call [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) with the name that was defined on the element.
+-   Call [**GetTemplateChild**](https://msdn.microsoft.com/library/windows/apps/br209416) with the name that was defined on the element.
+-   In a [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007), use a [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) or **Storyboard** animation that is targeting the deferred element.
+-   Target the deferred element in any **Storyboard**.
+-   Use a binding that is targeting the deferred element.
+-   NOTE: Once the instantiation of an element has started, it is created on the UI thread, so it could cause the UI to stutter if too much is created at once.
 
-Une fois qu’un élément différé est créé par une des méthodes répertoriées ci-dessus, plusieurs choses se passent :
+Once a deferred element is created by any of the methods listed above, several things will happen:
 
--   L’événement [**Loaded**](https://msdn.microsoft.com/library/windows/apps/br208723) sur l’élément est déclenché.
--   Toutes les liaisons sur l’élément sont évaluées.
--   Si l’application est inscrite pour recevoir des notifications de modification de propriété sur la propriété contenant les éléments différés, la notification est déclenchée.
+-   The [**Loaded**](https://msdn.microsoft.com/library/windows/apps/br208723) event on the element will get raised.
+-   Any bindings on the element will get evaluated.
+-   If the application has registered to receive property change notifications on the property containing the deferred element(s), the notification will be raised.
 
-Vous pouvez imbriquer des éléments différés, mais ils doivent être réalisés à partir de l’élément le plus éloigné.  Si vous tentez de réaliser un élément enfant avant que le parent soit réalisé, une exception est levée.
+You can nest deferred elements, however they have to be realized from the outer-most element in.  If you try to realize a child element before the parent has been realized, an exception will be raised.
 
-En règle générale, la recommandation est de différer ce qui n’est pas visible dans le premier cadre.  Une bonne indication pour identifier les éléments à différer consiste à rechercher des éléments créés avec une [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) réduite.  De même, une interface utilisateur accessoire (c’est-à-dire déclenchée par l’utilisateur) est également un bon endroit où rechercher des éléments à différer.  
+In general, the recommendation is to defer things that are not viewable in the first frame.  A good guideline for finding candidates to be deferred is to look for elements that are being created with collapsed [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992).  Also incidental UI (that is, UI that is triggered by user interaction) is a good place to look for deferring elements.  
 
-Soyez prudent avant de différer des éléments dans le cas d’un contrôle [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878), car si le temps de démarrage s’en trouve réduit, cela peut également réduire les performances des mouvements panoramiques, selon ce que vous créez.  Si vous cherchez à accroître les performances des mouvements panoramiques, reportez-vous à la documentation sur [l’extension de balisage {x:Bind}](x-bind-markup-extension.md) et [l’attribut x:Phase](x-phase-attribute.md).
+Be wary of deferring elements in a [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) scenario, as it will decrease your startup time, but could also decrease your panning performance depending on what you're creating.  If you are looking to increase panning performance, please refer to the [{x:Bind} markup extension](x-bind-markup-extension.md) and [x:Phase attribute](x-phase-attribute.md) documentation.
 
-Si l’[attribut x:Phase](x-phase-attribute.md) est utilisé en association avec **x:DeferLoadStrategy**, lors de la réalisation d’un élément ou d’une arborescence d’éléments, les liaisons sont appliquées jusqu’à la phase actuelle, celle-ci étant elle-même incluse. La phase spécifiée pour **x:Phase** n’affecte pas et ne contrôle pas le report de l’élément. Lorsqu’un élément de liste est recyclé dans le cadre d’un mouvement panoramique, les éléments réalisés se comportent de la même manière que les autres éléments actifs, et les liaisons compilées (liaisons **{x:Bind}**) sont traitées à l’aide des mêmes règles, y compris l’exécution par phases.
+If the [x:Phase attribute](x-phase-attribute.md) is used in conjunction with **x:DeferLoadStrategy** then, when an element or an element tree is realized, the bindings will be applied up to and including the current phase. The phase specified for **x:Phase** will not affect or control the deferral of the element. When a list item is recycled as part of panning, realized elements will behave in the same way as other active elements, and compiled bindings (**{x:Bind}** bindings) will be processed using the same rules, including phasing.
 
-Il est généralement conseillé de mesurer votre application avant et après afin d’être sûr d’obtenir les performances souhaitées.
+A general guideline is to measure your application before and after to make sure you are getting the performance that you want.
 
-## Exemple
+## Example
 
 ```xml
 <Grid x:Name="DeferredGrid" x:DeferLoadStrategy="Lazy">
@@ -88,6 +90,6 @@ private void RealizeElements_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

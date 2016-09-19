@@ -1,67 +1,67 @@
 ---
 author: WilliamsJason
-title: "Référence sur les API d’inscription dans dossier isolé Device Portal"
-description: "Découvrez comment accéder par programme aux API d’inscription dans des dossiers isolés."
+title: Device Portal Loose folder registration API reference
+description: Learn how to access the loose folder registration APIs programatically.
 translationtype: Human Translation
 ms.sourcegitcommit: ef0f1339b77a8d1f60a677b2ff19a63b68f0d6cd
-ms.openlocfilehash: 41e4cc67120b9e32fac34404ca918edcf58ba267
+ms.openlocfilehash: 42dc5e16065f1a2252f63743269970cf85fb0b95
 
 ---
 
-# Inscrire une application dans un dossier isolé  
+# Register an app in a loose folder  
 
-**Requête**
+**Request**
 
-Vous pouvez inscrire une application dans un dossier isolé en utilisant le format de requête suivant.
+You can register an app in a loose folder by using the following request format.
 
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :------
 POST | /api/app/packagemanager/register
 <br />
-**Paramètres d’URI**
+**URI parameters**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+You can specify the following additional parameters on the request URI:
 
-Paramètre d’URI      | Description
+URI Parameter      | Description
 :------     | :-----
-folder (obligatoire) | Le nom du dossier de destination du package à inscrire. Ce dossier doit exister sous d:\developmentfiles\LooseApps sur la console. Ce nom de dossier doit être codé en base64, dans la mesure où il peut contenir des séparateurs de chemin d’accès si le dossier est un sous-dossier de LooseApps.
+folder (required) | The destination folder name of the package to be registered. This folder must exist under d:\developmentfiles\LooseApps on the console. This folder name should be base64 encoded as it may contain path separators if the folder is in a subfolder under LooseApps.
 <br />
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
-200 | Requête de déploiement acceptée et traitée
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+200 | Deploy request accepted and being processed
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Xbox
 
-**Remarques**
+**Notes**
 
-Il existe au moins trois manières différentes d’obtenir l’application isolée sur la console dans le dossier souhaité. La méthode la plus simple consiste à copier les fichiers via SMB vers \\&lt;adresse_IP&gt;\DevelopmentFiles\LooseApps. Cela nécessite un nom d’utilisateur et un mot de passe sur les kits UWA qui peuvent être obtenus via [/ext/smb/developerfolder](wdp-smb-api.md). 
+There are at least three different ways to get the loose app on the console in the desired folder. The easiest is to simply copy the files via SMB to \\<IP_Address>\DevelopmentFiles\LooseApps. This will require a username and password on UWA kits which can be obtained via [/ext/smb/developerfolder](wdp-smb-api.md). 
 
-La deuxième méthode consiste à copier les fichiers individuels à l’emplacement adéquat en utilisant une commande POST vers /api/filesystem/apps/file, où knownfolderid est DevelopmentFiles, packagefullname est vide, et où le nom de fichier et le chemin d’accès sont fournis (le chemin d’accès doit commencer par LooseApps).
+The second way is by copying over individual files to the correct location by doing a POST to /api/filesystem/apps/file where knownfolderid is DevelopmentFiles, packagefullname is empty, and filename and path are properly supplied (path should begin with LooseApps).
 
-La troisième méthode consiste à copier un dossier complet en une fois via [/api/app/packagemanager/upload](wdp-folder-upload.md), où destinationFolder est le nom du dossier à placer sous d:\developmentfiles\looseapps et où la charge utile est un corps HTTP à parties multiples conforme du contenu du répertoire.
-
-
+The third way is to copy an entire folder at a time via [/api/app/packagemanager/upload](wdp-folder-upload.md) where destinationFolder is the name of the folder to be placed under d:\developmentfiles\looseapps and the payload is a multi-part conforming http body of the directory contents.
 
 
-<!--HONumber=Jul16_HO1-->
+
+
+<!--HONumber=Aug16_HO3-->
 
 

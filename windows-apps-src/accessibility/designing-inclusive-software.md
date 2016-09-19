@@ -1,112 +1,113 @@
 ---
 author: Xansky
-Description: "En savoir plus sur l’évolution de la conception inclusive avec les applications de la plateforme Windows universelle(UWP) pour Windows10.  Concevez et développez un logiciel inclusif en tenant compte de l’accessibilité."
+Description: Learn about evolving inclusive design with Universal Windows Platform (UWP) apps for Windows 10.  Design and build inclusive software with accessibility in mind.
 ms.assetid: A6393A57-53F2-4F06-89AF-0D806FD76DB0
-title: Conception de logiciels inclusifs dans Windows10
+title: Designing inclusive software in Windows 10
 label: Designing inclusive software
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: cdd41595ee2727c0eeefab7b041c1adfefc15dfa
+ms.sourcegitcommit: c5ccae0e095b7c8e403a230fe8f3442754aa2ad7
+ms.openlocfilehash: 94848fd1acf51e7ab8dab0f45584d3214be58830
 
 ---
 
-# Conception de logiciels inclusifs pour Windows10  
+# Designing inclusive software for Windows 10  
 
-En savoir plus sur l’évolution de la conception inclusive avec les applications de la plateforme Windows universelle(UWP) pour Windows10.  Concevez et développez un logiciel inclusif en tenant compte de l’accessibilité.
+Learn about evolving inclusive design with Universal Windows Platform (UWP) apps for Windows 10.  Design and build inclusive software with accessibility in mind.
 
-Chez Microsoft, nous faisons évoluer nos principes et pratiques de conception. Ces derniers dictent l’aspect, la fonction et le comportement de nos expériences. Nous enrichissons notre perspective.
+At Microsoft, we’re evolving our design principles and practices. These inform how our experiences look, feel, function, and behave. We’re elevating our perspective.
 
-Cette nouvelle philosophie de conception est appelée conception inclusive. L’idée consiste à concevoir un logiciel qui s’adresse à tous dès le départ. Cela diffère du processus qui consiste à intégrer l’élément d’accessibilité à la toute fin du processus de développement, ce qui convient uniquement à un groupe d’utilisateurs restreint.
+This new design philosophy is called inclusive design. The idea is to design software with everyone in mind from the very beginning. This is in contrast to viewing accessibility as a technology you bolt on at the end of the development process in order to satisfy some small group of users.
 
-«Nous définissons le handicap/invalidité comme l’incompatibilité entre les besoins de l’individu et le service, le produit ou l’environnement proposés. Tout le monde peut rencontrer un handicap/invalidité. L’exclusion est très courante dans notre société humaine.»  tiré de la vidéo [Inclusive](https://www.microsoft.com/design/inclusive)  
+“We define disability as a mismatch between the needs of the individual and the service, product or environment offered. Anyone can experience a disability. It is a common human trait to be excluded.”  \- from the [Inclusive](https://www.microsoft.com/design/inclusive) video  
 
-La conception inclusive crée de meilleurs produits pour tout le monde. Il s’agit de créations pouvant s’appliquer à l’ensemble de la diversité humaine. Prenons l’exemple des abaissements de trottoir présents sur la plupart des trottoirs. À l’origine, ils étaient destinés aux personnes en fauteuil roulant. Mais presque tout le monde s’en sert à présent, y compris les personnes avec des poussettes, les cyclistes et les utilisateurs de skate-board. Même les piétons profitent souvent de ces aménagements qui facilitent la vie. La télécommande d’une TV peut être considérée comme une technologie d’assistance pour une personne atteinte d’un handicap moteur. Et pourtant, presque chaque télévision est accompagnée d’une télécommande. Avant que les enfants n’apprennent à lacer leurs chaussures, ils peuvent porter des chaussures simples à enfiler ou à fermeture facile. Les chaussures simples à enfiler et à enlever sont souvent préférées dans les cultures où l’on se déchausse avant d’entrer dans une maison. Elles sont également mieux adaptées aux personnes ayant des problèmes de dextérité et souffrant par exemple d’arthrite ou d’une fracture du poignet.
+Inclusive design creates better products for everyone. It’s about considering the full range of human diversity. Consider the curb cutouts that you now find on most street corner sidewalks. They were clearly intended to be used by people in wheelchairs. But now nearly everyone uses them, including people with baby strollers, bicyclists, skateboarders. Even pedestrians will often use curb cutouts because they are there and provide a better experience. The television remote control could be considered an assistive technology (AT) for someone with physical limitations. And yet, today it is nearly impossible to buy a television without one. Before children learn to tie their shoes, they can wear slip-on or easy fastening shoes. Shoes that are easy to put on and take off are often preferred in cultures where shoes are removed before entering a home. They are also better for people with dexterity issues such as arthritis or even a temporarily broken wrist.
 
-## Principes de conception inclusive.  
-Les 4principes suivants guident la transition de Microsoft vers la conception inclusive:
+## Inclusive design principles  
+The following 4 principles are guiding Microsoft’s shift to inclusive design:
 
-**Universalité**: nous mettons l’accent sur ce qui unifie les humains: leurs motivations, leurs relations et leurs capacités. Cela nous oblige également de prendre en compte l’impact social élargi de notre travail. Le résultat obtenu constitue une expérience à laquelle tout le monde peut participer de manière différente.
+**Think universal**: We focus on what unifies people — human motivations, relationships, and abilities. This drives us to consider the broader social impact of our work. The result is an experience that has a diversity of ways for all people to participate.
 
-**Personnalisation**: ensuite, nous nous efforçons de créer des liens émotionnels. Les interactions humaines peuvent inspirer une meilleure interaction entre la technologie et les hommes. La situation unique d’une personne peut améliorer la conception pour tout le monde. Le résultat obtenu constitue une expérience donnant l’impression d’avoir été créée sur mesure pour tous.
+**Make it personal**: Next, we challenge ourselves to create emotional connections. Human-to-human interactions can inspire better human-to-technology interaction. A person’s unique circumstances can improve a design for everyone. The result is an experience that feels like it was created for one person.
 
-**Simplicité**: pour nous, la simplicité est le principal fédérateur. Avec un affichage plus clair, nos utilisateurs se sentent plus à l’aise. Les espaces épurés, clairs et ouverts renforcent leur confiance. Le résultat obtenu constitue une expérience authentique et intemporelle.
+**Keep it simple**: We start with simplicity as the ultimate unifier. When we reduce clutter people know what to do next. They’re inspired to move forward into spaces that are clean, light, and open. The result is an experience that’s honest and timeless.
 
-**Ravir**: les expériences agréables favorisent un ressenti et une découverte réjouissants. Parfois, cela relève de la magie. Parfois, il s’agit d’un détail parfait. Nous concevons ces moments pour proposer à nos utilisateurs un changement bienvenu. Le résultat obtenu constitue une expérience fluide et continue.
+**Create delight**: Delightful experiences evoke wonder and discovery. Sometimes it’s magical. Sometimes it’s a detail that’s just right. We design these moments to feel like a welcomed change in tempo. The result is an experience that has momentum and flow.
 
-## Utilisateurs de la conception inclusive  
-On distingue deux catégories d’utilisateurs de la technologie d’assistance:
+## Inclusive design users  
+There are essentially two types of users of assistive technology (AT):
 
-1. Ceux qui en dépendent du fait d’un handicap ou d’une invalidité, de leur âge avancé ou d’une situation temporaire (par exemple, mobilité réduite à cause d’un plâtre).  
-2. Ceux qui l’utilisent pour une expérience informatique plus confortable ou pratique.
+1. Those who need it, because of disabilities or impairments, age-related conditions, or temporary conditions (such as limited mobility from a broken limb)  
+2. Those who use it out of preference, for a more comfortable or convenient computing experience
 
-La majorité (54%) des utilisateurs d’ordinateur connaît une technologie d’assistance quelconque, et 44% des utilisateurs en utilisent une, mais bon nombre d’entre eux n’utilisent pas une technologie d’assistance qui leur serait bénéfique (Forrester2004).  
+The majority of computer users (54 per-cent) are aware of some form of assistive technology, and 44 percent of computer users use some form of it, but many of them are not using AT that would benefit them (Forrester 2004).  
 
-Une étude commandée par Microsoft et menée entre 2003 et 2004 par l’institut ForresterResearch a permis d’établir que plus de la moitié &mdash;57%&mdash; des utilisateurs d’ordinateur aux États-Unis entre 18 et 64ans pouvaient améliorer leur expérience à l’aide d’une technologie d’assistance. La plupart de ces utilisateurs ne s’identifient pas comme étant handicapés ou invalides, mais ils expriment certaines difficultés ou troubles quant à certaines tâches liées à l’utilisation d’un ordinateur. Cette étude a également pu déterminer les chiffres suivants: un utilisateur sur quatre rencontre des troubles visuels. Un utilisateur sur quatre ressent une douleur au niveau des poignets ou des mains. Un utilisateur sur cinq souffre de troubles auditifs.  
+A 2003-2004 study commissioned by Microsoft and conducted by Forrester Research found that over half &mdash; 57 percent &mdash; of computer users in the United States between the ages of 18 and 64 could benefit from assistive technology. Most of these users did not identify themselves as having a disability or being impaired but expressed certain task-related difficulties or impairments when using a computer. Forrester (2003) also found the following number of users with these specific difficulties: One in four experiences a visual difficulty. One in four experiences pain in the wrists or hands. One in five experiences hearing difficulty.  
 
-En plus des handicaps permanents, la gravité et les types de difficulté que rencontrent les individus peuvent varier tout au long de leur vie. L’«individu normal» n’existe pas. Nos capacités sont en constante évolution. Margaret Meade a déclaré: «Nous sommes tous uniques. En étant tous uniques, nous sommes tous pareils.»  
+Besides permanent disabilities, the severity and types of difficulties an individual experiences can vary throughout their life. There is no such thing as a normal human. Our capabilities are always changing. Margaret Meade said, “We are all unique. Being all unique makes us all the same.”  
 
-Microsoft s’est engagé à mener des recherches en matière d’informatique et de génie logiciel afin d’améliorer l’expérience informatique et d’inventer des technologies informatiques innovantes. Consultez les [projets actuels de recherche et développement Microsoft](https://www.microsoft.com/enable/microsoft/research.aspx), visant à rendre l’ordinateur plus accessible, plus visible et audible, ainsi que de faciliter l’interaction avec celui-ci.  
+Microsoft is dedicated to conducting computer science and software engineering research with goals to enhance the computing experience and invent novel computing technologies. See [Current Microsoft Research and Development Projects](https://www.microsoft.com/enable/microsoft/research.aspx) aimed at making the computer more accessible, and easier to see, hear, and interact with.  
 
-## Étapes pratiques de la conception  
-Si vous êtes en pleine phase de conception, cette section est faite pour vous. Elle décrit les étapes pratiques de conception à prendre en compte lors de l’implémentation de la conception inclusive dans votre application.  
+## Practical design steps  
+If you're all in, then this section is for you. It describes the practical design steps to consider when implementing inclusive design for your app.  
 
-### Décrire le public visé  
-Déterminez les utilisateurs potentiels de votre application. Réfléchissez à toutes leurs aptitudes et caractéristiques différentes. Par exemple: l’âge, le sexe, la langue, les utilisateurs sourds, malentendants ou atteints de déficiences visuelles, les capacités cognitives, le style d’apprentissage, les restrictions de mobilité, etc. Votre conception répond-elle à leurs besoins individuels?  
+### Describe the target audience  
+Define the potential users of your app. Think through all of their different abilities and characteristics. For example, age, gender, language, deaf or hard of hearing users, visual impairments, cognitive abilities, learning style, mobility restrictions, and so on. Is your design meeting their individual needs?  
 
-### Discuter avec des personnes ayant des besoins spécifiques  
-Rencontrez des utilisateurs potentiels aux caractéristiques diverses. Assurez-vous de prendre en compte tous leurs besoins lors de la conception de votre application. Par exemple, Microsoft a découvert que les utilisateurs sourds désactivaient les notifications toast sur leurs consoles Xbox. Lorsque nous les avons interrogés à ce sujet, nous avons appris que les notifications toast masquaient une partie des sous-titres. Nous avons corrigé cela en déplaçant le toast légèrement plus haut sur l’écran. Il s’agissait d’une solution simple qui n’était pas nécessairement évidente en se basant sur les données de télémétrie ayant révélé ce comportement.  
+### Talk to actual humans with specific needs  
+Meet with potential users who have diverse characteristics. Make sure you are considering all of their needs when designing your app. For example, Microsoft discovered that deaf users were turning off toast notifications on their Xbox consoles. When we asked actual deaf users about this, we learned that toast notifications were obscuring a section of closed captioning. The fix was to display the toast slight higher on the screen. This was a simple solution that was not necessarily obvious from the telemetry data that initially revealed the behavior.  
 
-### Choisir judicieusement une infrastructure de développement  
-Lors de la phase de conception, l’infrastructure de développement que vous utiliserez (c’est-à-dire UWP, Win32, le web) est essentielle pour le développement de votre produit. Si vous avez la chance de pouvoir choisir votre infrastructure, réfléchissez à l’effort nécessaire pour la création de vos contrôles au sein de celle-ci. Quelles sont les propriétés d’accessibilité par défaut ou intégrées comprises dans l’infrastructure? Quels contrôles devez-vous personnaliser? Lorsque vous choisissez l’infrastructure, il s’agit en fait de choisir quels contrôles d’accessibilité vous obtiendrez «gratuitement» (autrement dit, combien d’entre eux sont déjà intégrés) et combien d’entre eux nécessiteront des coûts de développement supplémentaires en raison des personnalisations de contrôles.   
+### Choose a development framework wisely  
+In the design stage, the development framework you will use (i.e. UWP, Win32, web) is critical to the development of your product. If you have the luxury of choosing your framework, think about how much effort it will take to create your controls within the framework. What are the default or built-in accessibility properties that come with it? Which controls will you need to customize? When choosing your framework, you are essentially choosing how much of the accessibility controls you will get “for free” (that is, how much of the controls are already built-in) and how much will require additional development costs because of control customizations.   
 
-Utilisez les contrôles Windows standard lorsque c’est possible. Ces contrôles sont déjà activés avec la technologie nécessaire pour établir un lien avec les technologies d’assistance.
+Use standard Windows controls whenever possible. These controls are already enabled with the technology necessary to interface with assistive technologies.
 
-### Concevoir une hiérarchie logique pour vos contrôles  
-Une fois que vous avez votre infrastructure, concevez une hiérarchie logique pour mapper vos contrôles. La hiérarchie logique de votre application inclut la disposition et l’ordre de tabulation des contrôles. La présentation visuelle de l’interface utilisateur n’est pas suffisante lorsque les technologies d’assistance (telles que les lecteurs d’écran) lisent votre interface utilisateur. Vous devez fournir une alternative programmatique pertinente du point de vue structurel pour vos utilisateurs. Une hiérarchie logique peut vous aider pour cette fin. C’est un moyen d’étudier la disposition de votre interface utilisateur et de structurer chaque élément pour que les utilisateurs puissent la comprendre. Une hiérarchie logique est surtout utilisée:  
+### Design a logical hierarchy for your controls  
+Once you have your framework, design a logical hierarchy to map out your controls. The logical hierarchy of your app includes the layout and tab order of controls. When assistive technology (AT) programs, such as screen readers, read your UI, visual presentation is not sufficient; you must provide a programmatic alternative that makes sense structurally to your users. A logical hierarchy can help you do that. It is a way of studying the layout of your UI and structuring each element so that users can understand it. A logical hierarchy is mainly used:  
 
-1.  pour fournir aux programmes un contexte pour l’ordre logique de lecture des éléments dans l’interface utilisateur;  
-2.  pour identifier les frontières claires entre les contrôles personnalisés et les contrôles standard dans l’interface utilisateur;  
-3.  pour déterminer la façon dont les éléments de l’interface utilisateur interagissent.  
+1.  To provide programs context for the logical (reading) order of the elements in the UI  
+2.  To identify clear boundaries between custom controls and standard controls in the UI  
+3.  To determine how pieces of the UI interact together  
 
-Une hiérarchie logique est un excellent moyen de résoudre les problèmes potentiels liés à l’utilisation. Si vous ne pouvez pas structurer l’interface utilisateur d’une manière relativement simple, vous pouvez avoir des problèmes liés à l’utilisation. Une représentation logique d’une boîte de dialogue simple ne doit pas se traduire par plusieurs pages de diagrammes. Si votre hiérarchie logique devient trop longue ou trop large, vous devriez peut-être refaire votre interface utilisateur. Pour en savoir plus, téléchargez le livre électronique [Engineering Software for Accessibility (Conception de logiciels accessibles)](https://www.microsoft.com/download/details.aspx?id=19262).  
+A logical hierarchy is a great way to address any potential usability issues. If you cannot structure the UI in a relatively simple manner, you may have problems with usability. A logical representation of a simple dialog box should not result in pages of diagrams. For logical hierarchies that become too deep or too wide, you may need to redesign your UI. For more information, download the [Engineering Software for Accessibility](https://www.microsoft.com/download/details.aspx?id=19262) eBook.  
 
-### Concevoir des paramètres appropriés de l’interface utilisateur visuelle  
-Lors de la conception de l’interface utilisateur visuelle, assurez-vous que votre produit dispose d’un paramètre de contraste élevé, utilise les polices système et les options de lissage par défaut et se met correctement à l’échelle par rapport aux paramètres PPP (points par pouce) de l’écran. Veillez également à ce que le coefficient de contraste du texte par défaut soit d’au moins 5:1 par rapport à l’arrière-plan et à ce que les combinaisons de couleurs soient faciles à distinguer pour les utilisateurs daltoniens.  
+### Design appropriate visual UI settings  
+When designing the visual UI, ensure that your product has a high contrast setting, uses the default system fonts and smoothing options, correctly scales to the dots per inch (dpi) screen settings, has default text with at least a 5:1 contrast ratio with the background, and has color combinations that will be easy for users with color deficiencies to differentiate.  
 
-#### Paramètre de contraste élevé  
-L’une des fonctionnalités d’accessibilité intégrées dans Windows est le mode Contraste élevé, qui améliore le contraste de couleur du texte et des images. Pour certaines personnes, l’augmentation du contraste des couleurs permet de réduire la fatigue visuelle et de faciliter la lecture. Lorsque vous vérifiez votre interface utilisateur en mode de contraste élevé, vous souhaitez vous assurer que les contrôles, tels que les liens, ont été codés de manière cohérente et avec les couleurs système (pas à l’aide de couleurs codées en dur) pour vous assurer qu’ils seront en mesure de voir tous les contrôles de l’écran qu’un utilisateur n’utilisant pas le contraste élevé pourrait voir.  
+#### High contrast setting  
+One of the built-in accessibility features in Windows is High Contrast mode, which heightens the color contrast of text and images. For some people, increasing the contrast in colors reduces eyestrain and makes it easier to read. When you verify your UI in high contrast mode, you want to check that controls, such as links, have been coded consistently and with system colors (not with hard-coded colors) to ensure that they will be able to see all the controls on the screen that a user not using high contrast would see.  
 
-#### Paramètres de police système  
-Pour garantir la lisibilité et éviter toute déformation inattendue du texte, assurez-vous de la conformité de votre produit par rapport à la police système par défaut et veillez à ce qu’il active les options d’anticrénelage et de lissage. Si votre produit utilise des polices personnalisées, les utilisateurs peuvent rencontrer des problèmes de lisibilité lorsqu’ils personnalisent la présentation de leur interface utilisateur (via des lecteurs d’écran ou en utilisant des styles de police différents pour l’afficher, par exemple).  
+#### System font settings  
+To ensure readability and minimize any unexpected distortions to the text, make sure that your product always adheres to the default system fonts and uses the anti-aliasing and smoothing options. If your product uses custom fonts, users may face significant readability issues and distractions when they customize the presentation of their UI (through the use of a screen reader or by using different font styles to view your UI, for instance).  
 
-#### RésolutionsPPP élevées  
-Pour les utilisateurs malvoyants, il est important d’avoir une interface utilisateur évolutive. Les interfaces utilisateur qui ne se mettent pas correctement à l’échelle lorsque les résolutionsPPP (point par pouce) sont élevées peuvent provoquer le chevauchement de certains composants importants, voire masquer et rendre inaccessibles d’autres composants.  
+#### High DPI resolutions  
+For users with vision impairments, having a scalable UI is important. User interfaces that do not scale correctly in high dots-per-inch (DPI) resolutions may cause important components to overlap or hide other components and can become inaccessible.  
 
-#### Coefficient de contraste des couleurs  
-La section508 mise à jour de l’Americans with Disability Act (ADA), ainsi que d’autres législations, exigent que le contraste de couleur par défaut entre le texte et son arrière-plan soit de5:1. Pour le texte de grande taille (tailles de police de 18points, ou 14points et en gras), le contraste requis par défaut est de 3:1.  
+#### Color contrast ratio  
+The updated Section 508 of the Americans with Disability Act (ADA), as well as other legislations, requires that the default color contrasts between text and its background must be 5:1. For large texts (18-point font sizes, or 14 points and bolded) the required default contrast is 3:1.  
 
-#### Combinaisons de couleurs  
-Environ 7% des hommes (et moins de 1% des femmes) souffrent de problèmes de perception des couleurs. Les utilisateurs daltoniens ont des difficultés à distinguer certaines couleurs, il est donc important de ne pas se servir uniquement de la couleur pour communiquer un état ou une idée. Comme pour les images décoratives (par exemple, les icônes ou les arrière-plans), les combinaisons de couleurs doivent être choisies de manière à optimiser la perception de l’image par les utilisateurs daltoniens. Si vous vous appuyez sur ces recommandations en matière de couleurs dès le début de la conception de votre application, cette dernière sera déjà inclusive en partie.  
+#### Color combinations  
+About 7 percent of males (and less than 1 percent of females) have some form of color deficiency. Users with colorblindness have problems distinguishing between certain colors, so it is important that color alone is never used to convey status or meaning in an application. As for decorative images (such as icons or backgrounds), color combinations should be chosen in a manner that maximizes the perception of the image by colorblind users. If you design using these color recommendations from the beginning, your app will already be taking significant steps toward being inclusive.  
 
-## Récapitulatif : &mdash;sept étapes pour la conception inclusive  
-En résumé, suivez ces sept étapes pour vous assurer que votre logiciel est inclusif.  
-1.  Décidez si la conception inclusive revêt une importance quelconque pour votre logiciel. Si c’est le cas, découvrez comment celle-ci permet aux utilisateurs réels de vivre, de travailler et de jouer afin de vous guider dans votre conception.  
-2.  Lorsque vous concevez des solutions à vos besoins, utilisez les contrôles fournis par votre infrastructure (contrôles standard) autant que possible; évitez les efforts et les coûts inutiles liés aux contrôles personnalisés.  
-3.  Concevez une hiérarchie logique pour votre produit, en notant où se trouvent les contrôles standard, les contrôles personnalisés et le focus clavier dans l’interface utilisateur.  
-4.  Concevez des paramètres système utiles (par exemple, la navigation au clavier, le contraste élevé et la haute résolution) pour votre produit.  
-5.  Implémentez votre conception en utilisant le [Hub de développeurs axés sur l’accessibilitéMicrosoft](https://developer.microsoft.com/windows/accessible-apps) et la spécification d’accessibilité de votre infrastructure comme point de référence.  
-6.  Testez votre produit avec des utilisateurs ayant des besoins spécifiques pour vous assurer qu’ils pourront tirer parti des techniques de conception inclusive que vous avez implémentées.  
-7.  Livrez votre produit fini et documentez votre implémentation pour ceux qui travailleront sur le projet ultérieurement.  
+## Summary &mdash; seven steps for inclusive design  
+In summary, follow these seven steps to ensure your software is inclusive.  
+1.  Decide if inclusive design is an important aspect to your software. If it is, learn and appreciate how it enables real users to live, work, and play, to help guide your design.  
+2.  As you design solutions for your requirements, use controls provided by your framework (standard controls) as much as possible, and avoid any unnecessary effort and costs of custom controls.  
+3.  Design a logical hierarchy for your product, noting where the standard controls, any custom controls, and keyboard focus are in the UI.  
+4.  Design useful system settings (such as keyboard navigation, high contrast, and high dpi) into your product.  
+5.  Implement your design, using the [Microsoft accessibility developer hub](https://developer.microsoft.com/windows/accessible-apps) and your framework’s accessibility specification as a reference point.  
+6.  Test your product with users who have special needs to ensure they will be able to take advantage of the inclusive design techniques implemented in it.  
+7.  Deliver your finished product and document your implementation for those who may work on the project after you.  
 
-## Rubriques connexes  
-* [Conception inclusive](http://design.microsoft.com/inclusive)
-* [Conception de logiciels accessibles](https://www.microsoft.com/download/details.aspx?id=19262)
-* [Hub de développeurs axés sur l’accessibilité Microsoft](https://developer.microsoft.com/windows/accessible-apps)
-* [Développement d’applications Windows inclusives](developing-inclusive-windows-apps.md)  
+## Related topics  
+* [Inclusive design](http://design.microsoft.com/inclusive)
+* [Engineering Software for Accessibility](https://www.microsoft.com/download/details.aspx?id=19262)
+* [Microsoft accessibility developer hub](https://developer.microsoft.com/windows/accessible-apps)
+* [Developing inclusive Windows apps](developing-inclusive-windows-apps.md) 
+* [Accessibility](accessibility.md)
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

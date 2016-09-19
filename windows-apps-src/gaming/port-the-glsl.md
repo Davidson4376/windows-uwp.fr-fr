@@ -1,48 +1,48 @@
 ---
 author: mtoepke
-title: Porter le langage GLSL
-description: "Après avoir adapté le code utilisé pour créer et configurer vos mémoires tampons et vos objets nuanceurs, vous pouvez procéder au portage du code de ces nuanceurs du langage GLSL (GL Shader Language) d’OpenGLES2.0 vers le langage HLSL (High-level Shader Language) de Direct3D11."
+title: Port the GLSL
+description: Once you've moved over the code that creates and configures your buffers and shader objects, it's time to port the code inside those shaders from OpenGL ES 2.0's GL Shader Language (GLSL) to Direct3D 11's High-level Shader Language (HLSL).
 ms.assetid: 0de06c51-8a34-dc68-6768-ea9f75dc57ee
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d1d203fa74bd80fe26401e64d4e15bb11e5c1050
+ms.openlocfilehash: 883f4423f72f044435ffc0ee9eccdcd5b0d63bfa
 
 ---
 
-# Porter le langage GLSL
+# Port the GLSL
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**API importantes**
+**Important APIs**
 
--   [Sémantique HLSL](https://msdn.microsoft.com/library/windows/desktop/bb205574)
--   [Constantes de nuanceur (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509581)
+-   [HLSL Semantics](https://msdn.microsoft.com/library/windows/desktop/bb205574)
+-   [Shader Constants (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509581)
 
-Après avoir adapté le code utilisé pour créer et configurer vos mémoires tampons et vos nuanceurs, vous pouvez procéder au portage du code de ces nuanceurs du langage GLSL (GL Shader Language) d’OpenGLES2.0 vers le langage HLSL (High-level Shader Language) de Direct3D11.
+Once you've moved over the code that creates and configures your buffers and shader objects, it's time to port the code inside those shaders from OpenGL ES 2.0's GL Shader Language (GLSL) to Direct3D 11's High-level Shader Language (HLSL).
 
-Dans OpenGLES2.0, les nuanceurs exécutés renvoient les données avec des intrinsèques comme **gl\_Position**, **gl\_FragColor** ou **gl\_FragData\[n\]** (où n est l’index d’une cible de rendu spécifique). Dans Direct3D, les nuanceurs n’utilisent pas d’intrinsèques: ils renvoient les données dans le même type que celui de leurs fonctions main() respectives.
+In OpenGL ES 2.0, shaders return data after execution using intrinsics such as **gl\_Position**, **gl\_FragColor**, or **gl\_FragData\[n\]** (where n is the index for a specific render target). In Direct3D, there are no specific intrinsics, and the shaders return data as the return type of their respective main() functions.
 
-Les données à interpoler entre les étapes des nuanceurs, telles que les variables de vertex «position» ou «normal», sont gérées au moyen de la déclaration **varying**. En revanche, cette déclaration n’existant pas dans Direct3D, vous devrez ajouter une [sémantique HLSL](https://msdn.microsoft.com/library/windows/desktop/bb205574) à toutes les données à transmettre d’une étape à l’autre dans les nuanceurs. La sémantique choisie dépend de la finalité des données. Par exemple, pour interpoler des données de vertex dans le nuanceur de fragments, déclarez-les comme suit :
+Data that you want interpolated between shader stages, such as the vertex position or normal, is handled through the use of the **varying** declaration. However, Direct3D doesn't have this declaration; rather, any data that you want passed between shader stages must be marked with an [HLSL semantic](https://msdn.microsoft.com/library/windows/desktop/bb205574). The specific semantic chosen indicates the purpose of the data, and is. For example, you'd declare vertex data that you want interpolated between the fragment shader as:
 
 `float4 vertPos : POSITION;`
 
-ou
+or
 
 `float4 vertColor : COLOR;`
 
-POSITION correspond à la sémantique définissant les données sur la position du vertex. POSITION est une sémantique particulière, car après l’interpolation, elle n’est plus accessible au nuanceur de pixels. Par conséquent, vous devez indiquer les données en entrée dans le nuanceur de pixels avec SV\_POSITION afin que les données de vertex interpolées soient transmises à cette variable.
+Where POSITION is the semantic used to indicate vertex position data. POSITION is also a special case, since after interpolation, it cannot be accessed by the pixel shader. Therefore, you must specify input to the pixel shader with SV\_POSITION and the interpolated vertex data will be placed in that variable.
 
 `float4 position : SV_POSITION;`
 
-Les sémantiques peuvent être déclarées dans les méthodes body (main) des nuanceurs. Pour les nuanceurs de pixels, vous devez définir une cible de rendu avec SV\_TARGET\[n\] dans la méthode body. Lorsque SV\_TARGET ne comporte pas de suffixe numérique, la cible de rendu d’index0 est utilisée par défaut.
+Semantics can be declared on the body (main) methods of shaders. For pixel shaders, SV\_TARGET\[n\], which indicates a render target, is required on the body method. (SV\_TARGET without a numeric suffix defaults to render target index 0.)
 
-Notez également que les nuanceurs de vertex doivent renvoyer la sémantique de la valeur système SV\_POSITION. Cette sémantique traduit les données de position du vertex en coordonnées, où x et y sont des valeurs comprises entre -1 et 1, z est divisé par la valeur w de la coordonnée homogène initiale (z/w), et w correspond à 1 divisé par la valeur w initiale (1/w). Les nuanceurs de pixels utilisent la sémantique de la valeur système SV\_POSITION pour récupérer l’emplacement des pixels à l’écran, où x se situe entre0 et la largeur de la cible de rendu, et y entre0 et la hauteur de la cible de rendu (avec un décalage de 0,5 pour chacun). Les nuanceurs de pixels du niveau de fonctionnalité 9\_x ne peuvent pas lire la valeur SV\_POSITION.
+Also note that vertex shaders are required to output the SV\_POSITION system value semantic. This semantic resolves the vertex position data to coordinate values where x is between -1 and 1, y is between -1 and 1, z is divided by the original homogeneous coordinate w value (z/w), and w is 1 divided by the original w value (1/w). Pixel shaders use the SV\_POSITION system value semantic to retrieve the pixel location on the screen, where x is between 0 and the render target width and y is between 0 and the render target height (each offset by 0.5). Feature level 9\_x pixel shaders cannot read from the SV\_POSITION value.
 
-Les mémoires tampons constantes doivent être déclarées avec le mot clé **cbuffer** et être associées à un registre de démarrage spécifique pour la recherche.
+Constant buffers must be declared with **cbuffer** and be associated with a specific starting register for lookup.
 
-Direct3D11: déclaration de mémoire tampon constante HLSL
+Direct3D 11: An HLSL constant buffer declaration
 
 ``` syntax
 cbuffer ModelViewProjectionConstantBuffer : register(b0)
@@ -51,16 +51,16 @@ cbuffer ModelViewProjectionConstantBuffer : register(b0)
 };
 ```
 
-Dans cet exemple, la mémoire tampon constante utilise le registre b0 pour mettre en attente la mémoire tampon empaquetée. Tous les registres sont référencés sous la forme «b\#». Pour plus d’informations sur l’implémentation HLSL des mémoires tampons constantes, des registres et des données empaquetées, voir [Constantes de nuanceur (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509581).
+Here, the constant buffer uses register b0 to hold the packed buffer. All registers are referred to in the form b\#. For more information on the HLSL implementation of constant buffers, registers, and data packing, read [Shader Constants (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509581).
 
 Instructions
 ------------
 
-### Étape1: Porter le nuanceur de vertex
+### Step 1: Port the vertex shader
 
-Dans notre exemple simple de code OpenGLES2.0, le nuanceur de vertex reçoit trois données en entrée: une matrice 4x4 constante modèle-affichage-projection et deux vecteurs à quatre coordonnées. Ces vecteurs définissent la position et la couleur du vertex. Le nuanceur traduit le vecteur de position en coordonnées de perspective, qu’il affecte ensuite à l’intrinsèque gl\_Position pour les besoins de la rastérisation. La couleur du vertex est copiée dans une variable «varying» qui sera également utilisée lors de la rastérisation, pour l’interpolation.
+In our simple OpenGL ES 2.0 example, the vertex shader has three inputs: a constant model-view-projection 4x4 matrix, and two 4-coordinate vectors. These two vectors contain the vertex position and its color. The shader transforms the position vector to perspective coordinates and assigns it to the gl\_Position intrinsic for rasterization. The vertex color is copied to a varying variable for interpolation during rasterization, as well.
 
-OpenGL ES 2.0 : nuanceur de vertex pour l’objet cube (GLSL)
+OpenGL ES 2.0: Vertex shader for the cube object (GLSL)
 
 ``` syntax
 uniform mat4 u_mvpMatrix; 
@@ -75,9 +75,9 @@ void main()
 }
 ```
 
-Désormais, dans Direct3D, la matrice constante modèle-affichage-projection est contenue dans une mémoire tampon constante empaquetée dans le registre b0, et la position et la couleur du vertex sont définies avec des sémantiques HLSL spécifiques (POSITION et COLOR, respectivement). Étant donné que notre disposition en entrée correspond à un emplacement précis de ces deux valeurs de vertex, vous créez une structure pour les contenir, puis déclarez cette structure en tant que type de paramètre d’entrée pour la fonction body (main) du nuanceur. (Vous pourriez aussi définir ces deux valeurs sous forme de paramètres individuels, mais cette pratique n’est pas recommandée.) Par ailleurs, vous indiquez un type de sortie pour cette étape, qui contient la position et la couleur interpolées, puis vous le déclarez en tant que valeur de retour pour la fonction body du nuanceur de vertex.
+Now, in Direct3D, the constant model-view-projection matrix is contained in a constant buffer packed at register b0, and the vertex position and color are specifically marked with the appropriate respective HLSL semantics: POSITION and COLOR. Since our input layout indicates a specific arrangement of these two vertex values, you create a struct to hold them and declare it as the type for the input parameter on the shader body function (main). (You could also specify them as two individual parameters, but that could get cumbersome.) You also specify an output type for this stage, which contains the interpolated position and color, and declare it as the return value for the body function of the vertex shader.
 
-Direct3D11: nuanceur de vertex pour l’objet cube (HLSL)
+Direct3D 11: Vertex shader for the cube object (HLSL)
 
 ``` syntax
 cbuffer ModelViewProjectionConstantBuffer : register(b0)
@@ -113,13 +113,13 @@ PixelShaderInput main(VertexShaderInput input)
 }
 ```
 
-Le type des données en sortie (PixelShaderInput) est indiqué au moment de la rastérisation, puis transmis au nuanceur de fragments (pixels).
+The output data type, PixelShaderInput, is populated during rasterization and provided to the fragment (pixel) shader.
 
-### Étape2: Porter le nuanceur de fragments
+### Step 2: Port the fragment shader
 
-Notre exemple de nuanceur de fragments en GLSL est très simple: il suffit de fournir l’intrinsèque gl\_FragColor avec la valeur de la couleur interpolée. OpenGLES2.0 transmettra cette valeur à la cible de rendu par défaut.
+Our example fragment shader in GLSL is extremely simple: provide the gl\_FragColor intrinsic with the interpolated color value. OpenGL ES 2.0 will write it to the default render target.
 
-OpenGL ES 2.0 : nuanceur de fragments pour l’objet cube (GLSL)
+OpenGL ES 2.0: Fragment shader for the cube object (GLSL)
 
 ``` syntax
 varying vec4 destColor;
@@ -130,9 +130,9 @@ void main()
 } 
 ```
 
-Le processus Direct3D est presque aussi simple. La seule différence notable concerne la fonction body du nuanceur de pixels, qui doit renvoyer une valeur. Étant donné que la couleur est représentée par une valeur flottante (RVBA) à quatre coordonnées, vous devez indiquer un type de retour float4, puis définir la cible de rendu par défaut avec la valeur système SV\_TARGET.
+Direct3D is almost as simple. The only significant difference is that the body function of the pixel shader must return a value. Since the color is a 4-coordinate (RGBA) float value, you indicate float4 as the return type, and then specify the default render target as the SV\_TARGET system value semantic.
 
-Direct3D11: nuanceur de pixels pour l’objet cube (HLSL)
+Direct3D 11: Pixel shader for the cube object (HLSL)
 
 ``` syntax
 struct PixelShaderInput
@@ -148,47 +148,47 @@ float4 main(PixelShaderInput input) : SV_TARGET
 }
 ```
 
-La couleur du pixel situé à la position indiquée est transmise à la cible de rendu. Pour plus d’informations sur l’affichage du contenu de la cible de rendu, voir [Dessiner à l’écran](draw-to-the-screen.md).
+The color for the pixel at the position is written to the render target. Now, let's see how to display the contents of that render target in [Draw to the screen](draw-to-the-screen.md)!
 
-## Étape précédente
+## Previous step
 
 
-[Porter les données et tampons vertex](port-the-vertex-buffers-and-data-config.md) Étape suivante
+[Port the vertex buffers and data](port-the-vertex-buffers-and-data-config.md) Next step
 ---------
 
-[Dessiner à l’écran](draw-to-the-screen.md) Remarques
+[Draw to the screen](draw-to-the-screen.md) Remarks
 -------
 
-Pour faciliter le débogage de votre code et avoir plus de latitude pour l’optimiser, il est essentiel de bien comprendre le fonctionnement des sémantiques HLSL et du packaging des mémoires tampons constantes. Si vous le pouvez, lisez les articles [Syntaxe des variables (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509706), [Présentation des mémoires tampons dans Direct3D11](https://msdn.microsoft.com/library/windows/desktop/ff476898) et [Procédure: Création d’une mémoire tampon constante](https://msdn.microsoft.com/library/windows/desktop/ff476896). Sinon, prenez au moins connaissance des quelques conseils ci-dessous concernant l’utilisation des sémantiques et des mémoires tampons :
+Understanding HLSL semantics and the packing of constant buffers can save you a bit of a debugging headache, as well as provide optimization opportunities. If you get a chance, read through [Variable Syntax (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509706), [Introduction to Buffers in Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476898), and [How to: Create a Constant Buffer](https://msdn.microsoft.com/library/windows/desktop/ff476896). If not, though, here's a few starting tips to keep in mind about semantics and constant buffers:
 
--   Vérifiez toujours le code de configuration Direct3D de votre convertisseur afin de vous assurer que les structures de vos mémoires tampons constantes correspondent aux déclarations de structure cbuffer indiquées dans votre code HLSL, et que les types scalaires des composants sont identiques dans l’ensemble des déclarations.
--   Dans le codeC++ de votre convertisseur, utilisez les types [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833) dans les déclarations de mémoires tampons constantes pour garantir un packaging correct des données.
--   Pour optimiser l’utilisation des mémoires tampons constantes, classez les variables de nuanceur dans ces mémoires en fonction de la fréquence de leur mise à jour. Par exemple, si certaines de vos données uniformes sont mises à jour une fois par trame, alors que d’autres ne sont mises à jour qu’après un mouvement de la caméra, il vaut mieux placer ces données dans deux mémoires tampons constantes distinctes.
--   Vérifiez soigneusement toutes les sémantiques utilisées. En effet, les premières erreurs de compilation d’un nuanceur (FXC) sont souvent dues à un oubli de sémantiques ou à leur utilisation incorrecte. La documentation fournie peut être confuse, du fait que beaucoup de pages et d’exemples publiés précédemment font référence aux différentes versions de sémantiques HLSL antérieures à Direct3D 11.
--   Assurez-vous que le niveau de fonctionnalité Direct3D utilisé est approprié pour chaque nuanceur. Les sémantiques du niveau de fonctionnalité 9\_\* ne sont pas les mêmes que celles du niveau 11\_1.
--   La sémantique SV\_POSITION traduit les données de position interpolées associées en coordonnées, où x est une valeur située entre 0 et la largeur de la cible de rendu, y une valeur située entre 0 et la hauteur de la cible de rendu, z est divisé par la valeur w de la coordonnée homogène initiale (z/w), et w correspond à 1 divisé par la valeur w initiale (1/w).
+-   Always double check your renderer's Direct3D configuration code to make sure that the structures for your constant buffers match the cbuffer struct declarations in your HLSL, and that the component scalar types match across both declarations.
+-   In your renderer's C++ code, use [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833) types in your constant buffer declarations to ensure proper data packing.
+-   The best way to efficiently use constant buffers is to organize shader variables into constant buffers based on their frequency of update. For example, if you have some uniform data that is updated once per frame, and other uniform data that is updated only when the camera moves, consider separating that data into two separate constant buffers.
+-   Semantics that you have forgotten to apply or which you have applied incorrectly will be your earliest source of shader compilation (FXC) errors. Double-check them! The docs can be a bit confusing, as many older pages and samples refer to different versions of HLSL semantics prior to Direct3D 11.
+-   Make sure you know which Direct3D feature level you are targeting for each shader. The semantics for feature level 9\_\* are different from those for 11\_1.
+-   The SV\_POSITION semantic resolves the associated post-interpolation position data to coordinate values where x is between 0 and the render target width, y is between 0 and the render target height, z is divided by the original homogeneous coordinate w value (z/w), and w is 1 divided by the original w value (1/w).
 
-## Rubriques connexes
+## Related topics
 
 
-[Procédure: portage d’un convertisseur simple OpenGL ES2.0 sur Direct3D11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
+[How to: port a simple OpenGL ES 2.0 renderer to Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
 
-[Porter les objets nuanceur](port-the-shader-config.md)
+[Port the shader objects](port-the-shader-config.md)
 
-[Porter les mémoires tampons et données de vertex](port-the-vertex-buffers-and-data-config.md)
+[Port the vertex buffers and data](port-the-vertex-buffers-and-data-config.md)
 
-[Dessiner à l’écran](draw-to-the-screen.md)
-
- 
+[Draw to the screen](draw-to-the-screen.md)
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

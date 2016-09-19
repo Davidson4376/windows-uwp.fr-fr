@@ -1,87 +1,88 @@
 ---
 author: Jwmsft
-Description: "Les ressources de thème de XAML sont un ensemble de ressources qui s’appliquent à différentes valeurs en fonction desquelles le thème du système est actif."
+Description: Theme resources in XAML are a set of resources that apply different values depending on which system theme is active.
 MS-HAID: dev\_ctrl\_layout\_txt.xaml\_theme\_resources
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: "Ressources de thème XAML"
+title: XAML theme resources
 ms.assetid: 41B87DBF-E7A2-44E9-BEBA-AF6EEBABB81B
 label: XAML theme resources
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: fa0d0881eee0f87b549a7d053e75882ffd2afa6e
+ms.sourcegitcommit: 32b6685dfd04994d13dc8805c5205e87a20b10f1
+ms.openlocfilehash: 092b183ead828ae411ff64d37e581bbbb59a1f5b
 
 ---
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-# Ressources de thème XAML
+# XAML theme resources
 
-Les ressources de thème de XAML sont un ensemble de ressources qui s’appliquent à différentes valeurs en fonction desquelles le thème du système est actif. Trois thèmes sont pris en charge par l’infrastructure XAML: «Light» (clair), «Dark» (sombre) et «HighContrast» (contraste élevé).
+Theme resources in XAML are a set of resources that apply different values depending on which system theme is active. There are 3 themes that the XAML framework supports: "Light", "Dark", and "HighContrast".
 
-**Prérequis**
+**Prerequisites**
 
-Cette rubrique suppose que vous avez lu [Références aux ressources ResourceDictionary et XAML](resourcedictionary-and-xaml-resource-references.md).
+This topic assumes that you have read [ResourceDictionary and XAML resource references](resourcedictionary-and-xaml-resource-references.md).
 
-## En quoi les ressources de thème diffèrent des ressources statiques
+## How theme resources differ from static resources
 
-Deux extensions de balisage XAML peuvent référencer une ressource XAML d’un dictionnaire de ressources XAML existant: [extension de balisage {StaticResource}](../xaml-platform/staticresource-markup-extension.md) et [extension de balisage {ThemeResource}](../xaml-platform/themeresource-markup-extension.md).
+There are two XAML markup extensions that can reference a XAML resource from an existing XAML resource dictionary: [{StaticResource} markup extension](../xaml-platform/staticresource-markup-extension.md) and [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md).
 
-L’évaluation d’une [extension de balisage {ThemeResource}](../xaml-platform/themeresource-markup-extension.md) se produit lors du chargement de l’application et à chaque changement de thème pendant l’exécution. Cela est notamment le cas lorsque l’utilisateur modifie les paramètres de son appareil ou lorsqu’un programme apporte à l’application un changement qui modifie son thème actuel.
+Evaluation of a [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md) occurs when the app loads and subsequently each time the theme changes at runtime. This is typically the result of the user changing their device settings or from a programmatic change within the app that alters its current theme.
 
-En revanche, pour une [extension de balisage {StaticResource}](../xaml-platform/staticresource-markup-extension.md), une évaluation se produit uniquement lors du premier chargement du code XAML par l’application. Il n’y a aucune mise à jour. Le processus est similaire à une opération de type rechercher-remplacer dans votre code XAML avec la valeur d’exécution réelle au démarrage de l’application.
+In contrast, a [{StaticResource} markup extension](../xaml-platform/staticresource-markup-extension.md) is evaluated only when the XAML is first loaded by the app. It does not update. It’s similar to a find and replace in your XAML with the actual runtime value at app launch.
 
-## Ressources de thème et ajustement dans la structure du dictionnaire de ressources
+## Theme resources and where they fit in the resource dictionary structure
 
 
-Chaque ressource de thème fait partie du fichier XAML themeresources.xaml. À des fins de conception, themeresources.xaml est disponible dans le dossier \\(Program Files)\\Windows Kits\\10\\DesignTime\\CommonConfiguration\\Neutral\\UAP\\&lt;SDK version&gt;\\Generic d’une installation du Kit de développement logiciel (SDK) Windows. Les dictionnaires de ressources dans themeresources.xaml sont également reproduits dans generic.xaml dans le même répertoire.
+Each theme resource is part of the XAML file themeresources.xaml. For design purposes, themeresources.xaml is available in the \\(Program Files)\\Windows Kits\\10\\DesignTime\\CommonConfiguration\\Neutral\\UAP\\&lt;SDK version&gt;\\Generic folder from a Windows Software Development Kit (SDK) installation. The resource dictionaries in themeresources.xaml are also reproduced in generic.xaml in the same directory.
 
-> **Remarque** &nbsp;&nbsp;Windows Runtime n’utilise pas ces fichiers physiques pour la correspondance du runtime. C’est pourquoi elles sont spécifiquement dans un dossier DesignTime et elles ne sont pas copiées dans les applications par défaut. À la place, ces dictionnaires de ressources existent en mémoire dans Windows Runtime proprement dit, et les références des ressources XAML de votre application aux ressources de thème (ou ressources système) sont résolues ici lors de l’exécution.
+> **Note**&nbsp;&nbsp;The Windows Runtime doesn't use these physical files for runtime lookup. That's why they are specifically in a DesignTime folder, and they aren't copied into apps by default. Instead, these resource dictionaries exist in memory as part of the Windows Runtime itself, and your app's XAML resource references to theme resources (or system resources) resolve there at runtime.
 
- ## Recommandations relatives à l’utilisation des ressources de thème
+ ## Guidelines for using theme resources
 
-Respectez ces recommandations lorsque vous définissez et consommez vos propres ressources de thème personnalisées.
+Follow these guidelines when you define and consume your own custom theme resources.
 
-PRATIQUES CONSEILLÉES:
+DO:
 
--   Spécifiez des dictionnaires pour les thèmes «Light» et «Dark», en plus de votre dictionnaire «HighContrast». Bien que vous puissiez créer un élément [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) avec la clé «Default», nous vous recommandons d’être explicite et d’utiliser «Light», «Dark» et «HighContrast».
--   Utilisez l’[extension de balisage {ThemeResource}](../xaml-platform/themeresource-markup-extension.md) dans les éléments suivants: styles, méthodes setter, modèles de contrôle, méthodes setter de propriété et animations.
+-   Specify theme dictionaries for both "Light" and "Dark" in addition to your "HighContrast" dictionary. Although you can create a [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) with "Default" as the key, it’s preferred to be explicit and instead use "Light", "Dark", and "HighContrast".
+-   Use the [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md) in: Styles, Setters, Control templates, Property setters, and Animations.
 
-PRATIQUES DÉCONSEILLÉES :
+DO NOT:
 
--   N’utilisez pas l’[extension de balisage {ThemeResource}](../xaml-platform/themeresource-markup-extension.md) dans les définitions de ressources de votre [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807). Utilisez plutôt l’[extension de balisage {StaticResource}](../xaml-platform/staticresource-markup-extension.md)
+-   Use the [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md) in your resource definitions inside your [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807). Use [{StaticResource} markup extension](../xaml-platform/staticresource-markup-extension.md) instead.
 
-    EXCEPTION : il est acceptable d’utiliser l’extension de balisage [{ThemeResource}](../xaml-platform/themeresource-markup-extension.md) pour référencer les ressources indépendantes du thème de l’application dans votre [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807). Il peut s’agir par exemple des ressources de couleur d’accentuation comme `SystemAccentColor`, ou des ressources de couleur système, qui présentent généralement le préfixe SystemColor, comme `SystemColorButtonFaceColor`.
+    EXCEPTION: it is alright to use the [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md) to reference resources that are agnostic to the app theme in your [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807). Examples of these resources are accent color resources like `SystemAccentColor`, or system color resources, which are typically prefixed with "SystemColor" like `SystemColorButtonFaceColor`.
 
-**Attention** Si vous ne suivez pas ces recommandations, vous constaterez peut-être un comportement inattendu lié aux thèmes dans votre application. Pour plus d’informations, voir la section [Résolution des problèmes de ressources de thème](#troubleshooting_theme_resources).
+**Caution**  If you don’t follow these guidelines, you might see unexpected behavior related to themes in your app. For more info, see the [Troubleshooting theme resources](#troubleshooting_theme_resources) section.
  
 
-## Gamme de couleurs de code XAML et pinceaux dépendants du thème
+## The XAML color ramp and theme-dependent brushes
 
-L’ensemble des couleurs pour les thèmes «Light», «Dark» et «HighContrast» constitue la *gamme de couleurs Windows* du code XAML. Que vous souhaitiez modifier les thèmes système ou appliquer un thème système à vos propres éléments XAML, vous devez maîtriser la structure des ressources de couleur.
+The combined set of colors for "Light", "Dark", and "HighContrast" themes make up the *Windows color ramp* in XAML. Whether you want to modify the system themes, or apply a system theme to your own XAML elements, it’s important to understand how the color resources are structured.
 
-### Couleurs des thèmes Light et Dark
+### Light and Dark theme colors
 
-L’infrastructure XAML fournit un ensemble de ressources [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) nommées, avec des valeurs adaptées aux thèmes «Light» et «Dark». Les clés que vous utilisez pour référencer ces ressources respectent le format d’attribution de noms : `System[Simple Light/Dark Name]Color`.
+The XAML framework provides a set of named [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) resources with values that are tailored for the "Light" and "Dark" themes. The keys you use to reference these follow the naming format: `System[Simple Light/Dark Name]Color`.
 
-Le tableau ci-dessous répertorie la clé, le nom simple et la représentation sous forme de chaîne de la couleur (au format #aarrggbb) pour les ressources «Light» et «Dark» fournies par l’infrastructure XAML. La clé sert à référencer la ressource dans une application. Le «nom simple Light/Dark» est utilisé dans le cadre de la convention d’affectation de noms aux pinceaux, que nous expliquons plus tard.
+This table lists the key, simple name, and string representation of the color (using the \#aarrggbb format) for the "Light" and "Dark" resources provided by the XAML framework. The key is used to reference the resource in an app. The "Simple light/dark name" is used as part of the brush naming convention that we explain later.
 
-| Clé                             | Nom Simple light/dark | Light      | Dark       |
+| Key                             | Simple light/dark name | Light      | Dark       |
 |---------------------------------|------------------------|------------|------------|
 | SystemAltHighColor              | AltHigh                | \#FFFFFFFF | \#FF000000 |
 | SystemAltLowColor               | AltLow                 | \#33FFFFFF | \#33000000 |
 | SystemAltMediumColor            | AltMedium              | \#99FFFFFF | \#99000000 |
-| SystemAltMediumHighColor        | AltMediumHigh          | \#CCFFFFFF | #CC000000 |
+| SystemAltMediumHighColor        | AltMediumHigh          | \#CCFFFFFF | \#CC000000 |
 | SystemAltMediumLowColor         | AltMediumLow           | \#66FFFFFF | \#66000000 |
 | SystemBaseHighColor             | BaseHigh               | \#FF000000 | \#FFFFFFFF |
 | SystemBaseLowColor              | BaseLow                | \#33000000 | \#33FFFFFF |
 | SystemBaseMediumColor           | BaseMedium             | \#99000000 | \#99FFFFFF |
-| SystemBaseMediumHighColor       | BaseMediumHigh         | #CC000000 | \#CCFFFFFF |
+| SystemBaseMediumHighColor       | BaseMediumHigh         | \#CC000000 | \#CCFFFFFF |
 | SystemBaseMediumLowColor        | BaseMediumLow          | \#66000000 | \#66FFFFFF |
 | SystemChromeAltLowColor         | ChromeAltLow           | \#FF171717 | \#FFF2F2F2 |
 | SystemChromeBlackHighColor      | ChromeBlackHigh        | \#FF000000 | \#FF000000 |
 | SystemChromeBlackLowColor       | ChromeBlackLow         | \#33000000 | \#33000000 |
 | SystemChromeBlackMediumLowColor | ChromeBlackMediumLow   | \#66000000 | \#66000000 |
-| SystemChromeBlackMediumColor    | ChromeBlackMedium      | #CC000000 | #CC000000 |
+| SystemChromeBlackMediumColor    | ChromeBlackMedium      | \#CC000000 | \#CC000000 |
 | SystemChromeDisabledHighColor   | ChromeDisabledHigh     | \#FFCCCCCC | \#FF333333 |
 | SystemChromeDisabledLowColor    | ChromeDisabledLow      | \#FF7A7A7A | \#FF858585 |
 | SystemChromeHighColor           | ChromeHigh             | \#FFCCCCCC | \#FF767676 |
@@ -93,83 +94,83 @@ Le tableau ci-dessous répertorie la clé, le nom simple et la représentation s
 | SystemListMediumColor           | ListMedium             | \#33000000 | \#33FFFFFF |
 
 
-### Couleurs à contraste élevé du système Windows
+### Windows system high-contrast colors
 
-Outre l’ensemble des ressources fournies par l’infrastructure XAML, il existe un ensemble de valeurs de couleur dérivé de la palette du système Windows. Ces couleurs ne sont pas spécifiques aux applications Windows Runtime ou aux applications de plateforme Windows universelle (UWP). Toutefois, la majeure partie des ressources [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) XAML utilisent ces couleurs lorsque le système fonctionne (et lorsque l’application est en cours d’exécution) avec le thème «HighContrast». L’infrastructure XAML fournit ces couleurs système en tant que ressources à clé. Les clés respectent le format d’attribution de noms : `SystemColor[name]Color`.
+In addition to the set of resources provided by the XAML framework, there's a set of color values derived from the Windows system palette. These colors are not specific to the Windows Runtime or Universal Windows Platform (UWP) apps. However, many of the XAML [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) resources consume these colors when the system is operating (and the app is running) using the "HighContrast" theme. The XAML framework provides these system-wide colors as keyed resources. The keys follow the naming format: `SystemColor[name]Color`.
 
-Le tableau suivant répertorie les couleurs système fournies par l’infrastructure XAML en tant qu’objets de ressources dérivés de la palette du système Windows. La colonne «Nom d’options d’ergonomie» indique le nom porté par la couleur dans les paramètres Windows. La colonne «Nom simple HighContrast» fournit une description en un mot de la façon dont la couleur est appliquée dans les contrôles XAML courants. Ce nom est utilisé dans le cadre de la convention d’affectation de noms aux pinceaux, que nous expliquons plus tard. La colonne «Valeur initiale par défaut» indique les valeurs que vous obtenez si le système ne s’exécute pas du tout en mode de contraste élevé.
+This table lists the system-wide colors that XAML provides as resource objects derived from the Windows system palette. The "Ease of Access name" column shows how color is labeled in the Windows settings UI. The "Simple HighContrast name" column is a one word description of how the color is applied across the XAML common controls. It's used as part of the brush naming convention that we explain later. The "Initial default" column shows the values you'd get if the system is not running in high contrast at all.
 
-| Clé                           | Nom d’options d’ergonomie            | Nom simple ContrasteÉlevé | Valeur initiale par défaut |
+| Key                           | Ease of Access name            | Simple HighContrast name | Initial default |
 |-------------------------------|--------------------------------|--------------------------|-----------------|
-| SystemColorButtonFaceColor    | **Texte du bouton** (arrière-plan)   | Arrière-plan               | \#FFF0F0F0      |
-| SystemColorButtonTextColor    | **Texte du bouton** (premier plan)   | Premier plan               | \#FF000000      |
-| SystemColorGrayTextColor      | **Texte désactivé**              | Désactivée                 | \#FF6D6D6D      |
-| SystemColorHighlightColor     | **Texte sélectionné** (arrière-plan) | Highlight                | \#FF3399FF      |
-| SystemColorHighlightTextColor | **Texte sélectionné** (premier plan) | HighlightAlt             | \#FFFFFFFF      |
-| SystemColorHotlightColor      | **Liens hypertexte**                 | Hyperlink                | \#FF0066CC      |
-| SystemColorWindowColor        | **Arrière-plan**                 | PageBackground           | \#FFFFFFFF      |
-| SystemColorWindowTextColor    | **Texte**                       | PageText                 | \#FF000000      |
+| SystemColorButtonFaceColor    | **Button Text** (background)   | Background               | \#FFF0F0F0      |
+| SystemColorButtonTextColor    | **Button Text** (foreground)   | Foreground               | \#FF000000      |
+| SystemColorGrayTextColor      | **Disabled Text**              | Disabled                 | \#FF6D6D6D      |
+| SystemColorHighlightColor     | **Selected Text** (background) | Highlight                | \#FF3399FF      |
+| SystemColorHighlightTextColor | **Selected Text** (foreground) | HighlightAlt             | \#FFFFFFFF      |
+| SystemColorHotlightColor      | **Hyperlinks**                 | Hyperlink                | \#FF0066CC      |
+| SystemColorWindowColor        | **Background**                 | PageBackground           | \#FFFFFFFF      |
+| SystemColorWindowTextColor    | **Text**                       | PageText                 | \#FF000000      |
 
 
-Windows propose différents thèmes à contraste élevé, et permet à l’utilisateur de définir les couleurs spécifiques pour les paramètres de contraste élevé par l’intermédiaire des Options d’ergonomie, comme indiqué ici. Par conséquent, il n’est pas possible de fournir une liste exhaustive des valeurs de couleur à contraste élevé.
+Windows provides different high-contrast themes, and enables the user to set the specific colors to for their high-contrast settings through the Ease of Access Center, as shown here. Therefore, it's not possible to provide a definitive list of high-contrast color values.
 
-![Interface utilisateur Windows des paramètres de contraste élevé](images/high-contrast-settings.png)
+![The Windows high contrast settings UI](images/high-contrast-settings.png)
 
-Pour plus d’informations sur la prise en charge des thèmes à contraste élevé, consultez [Thèmes à contraste élevé](https://msdn.microsoft.com/library/windows/apps/mt244346).
+For more info about supporting high-contrast themes, see [High-contrast themes](https://msdn.microsoft.com/library/windows/apps/mt244346).
 
-### Couleur d’accentuation système
+### System accent color
 
-En plus des couleurs de thème à contraste élevé du système, la couleur d’accentuation système est fournie comme ressource spéciale de couleur à l’aide de la clé `SystemAccentColor`. Lors de l’exécution, cette ressource récupère la couleur que l’utilisateur a indiquée comme couleur d’accentuation dans les paramètres de personnalisation de Windows.
+In addition to the system high-contrast theme colors, the system accent color is provided as a special color resource using the key `SystemAccentColor`. At runtime, this resource gets the color that the user has specified as the accent color in the Windows personalization settings.
 
-> **emarque** &nbsp;&nbsp;Il est possible de remplacer les ressources de couleur du système par la couleur d’accentuation et la couleur à contraste élevé en créant des ressources portant les mêmes noms. Il est cependant recommandé de respecter les couleurs choisies par l’utilisateur, en particulier pour les paramètres de contraste élevé.
+> **Note**&nbsp;&nbsp;It’s possible to override the system color resources for high-contrast color and accent color by creating resources with the same names, but it’s a best practice to respect the user’s color choices, especially for high-contrast settings.
 
-### Pinceaux dépendants du thème
+### Theme-dependent brushes
 
-Les ressources de couleur indiquées dans les sections précédentes sont utilisées pour définir la propriété [**Color**](https://msdn.microsoft.com/library/windows/apps/br242963) des ressources [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) dans les dictionnaires de ressources de thème du système. Les ressources de pinceau permettent d’appliquer la couleur à des éléments XAML. Les clés pour les ressources de pinceau respectent le format d’attribution de noms : `SystemControl[Simple HighContrast name][Simple light/dark name]Brush`. Exemple : `SystemControlBackroundAltHighBrush`.
+The color resources shown in the preceding sections are used to set the [**Color**](https://msdn.microsoft.com/library/windows/apps/br242963) property of [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) resources in the system theme resource dictionaries. You use the brush resources to apply the color to XAML elements. The keys for the brush resources follow the naming format: `SystemControl[Simple HighContrast name][Simple light/dark name]Brush`. For example, `SystemControlBackroundAltHighBrush`.
 
-Examinons à présent comment la valeur de couleur de ce pinceau est déterminée au moment de l’exécution. Dans les dictionnaires de ressources «Light» et «Dark», ce pinceau est défini comme ceci:
+Let’s look at how the color value for this brush is determined at run-time. In the "Light" and "Dark" resource dictionaries, this brush is defined like this:
 
 `<SolidColorBrush x:Key="SystemControlBackgroundAltHighBrush" Color="{StaticResource SystemAltHighColor}"/>`
 
-Dans le dictionnaire de ressources «HighContrast», ce pinceau est défini comme ceci:
+In the "HighContrast" resource dictionary, this brush is defined like this:
 
 `<SolidColorBrush x:Key="SystemControlBackgroundAltHighBrush" Color="{ThemeResource SystemColorButtonFaceColor}"/>`
 
-Lorsque ce pinceau est appliqué à un élément XAML, sa couleur est déterminée au moment de l’exécution par le thème actuel, comme indiqué dans le tableau suivant.
+When this brush is applied to a XAML element, its color is determined at run-time by the current theme, as shown in this table.
 
-| Thème        | Nom simple de couleur | Ressource de couleur             | Valeur d’exécution                                              |
+| Theme        | Color simple name | Color resource             | Runtime value                                              |
 |--------------|-------------------|----------------------------|------------------------------------------------------------|
 | Light        | AltHigh           | SystemAltHighColor         | \#FFFFFFFF                                                 |
 | Dark         | AltHigh           | SystemAltHighColor         | \#FF000000                                                 |
-| HighContrast | Arrière-plan        | SystemColorButtonFaceColor | La couleur spécifiée dans les paramètres pour l’arrière-plan du bouton. |
+| HighContrast | Background        | SystemColorButtonFaceColor | The color specified in settings for the button background. |
 
-Vous pouvez utiliser le schéma de nommage `SystemControl[Simple HighContrast name][Simple light/dark name]Brush` pour déterminer quel pinceau appliquer à vos propres éléments XAML. 
+You can use the `SystemControl[Simple HighContrast name][Simple light/dark name]Brush` naming scheme to determine which brush to apply to your own XAML elements. 
 
 <!--
 For many examples of how the brushes are used in the XAML control templates, see the [Default control styles and templates](default-control-styles-and-templates.md).
 -->
 
-> **Remarque** &nbsp;&nbsp;Toutes les combinaisons de \[*Simple HighContrast name*\]\[*Simple light/dark name*\] ne sont pas fournies en tant que ressource de pinceau.
+> **Note**&nbsp;&nbsp;Not every combination of \[*Simple HighContrast name*\]\[*Simple light/dark name*\] is provided as a brush resource.
 
-## Gamme de type XAML
+## The XAML type ramp
 
-Le fichier themeresources.xaml définit plusieurs ressources, qui définissent elles-mêmes un [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) que vous pouvez appliquer à des conteneurs de texte dans votre interface utilisateur, plus spécifiquement pour [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) ou [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565). Il ne s’agit pas des styles implicites par défaut. Ils sont fournis pour faciliter la création de définitions XAML d’interface utilisateur qui correspondent à la *gamme de type Windows* explicitée dans [Recommandations en matière de polices](https://msdn.microsoft.com/library/windows/apps/hh700394).
+The themeresources.xaml file defines several resources that define a [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) that you can apply to text containers in your UI, specifically for either [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) or [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565). These are not the default implicit styles. They are provided to make it easier for you to create XAML UI definitions that match the *Windows type ramp* documented in [Guidelines for fonts](https://msdn.microsoft.com/library/windows/apps/hh700394).
 
-Ces styles concernent les attributs de texte à appliquer à l’ensemble du conteneur de texte. Si vous souhaitez appliquer des styles uniquement à certaines parties du texte, définissez des attributs sur les éléments de texte dans le conteneur, par exemple sur [**Run**](https://msdn.microsoft.com/library/windows/apps/br209959) dans [**TextBlock.Inlines**](https://msdn.microsoft.com/library/windows/apps/br209668) ou sur [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244503) dans [**RichTextBlock.Blocks**](https://msdn.microsoft.com/library/windows/apps/br244347).
+These styles are for text attributes that you want applied to the whole text container. If you want styles applied just to sections of the text, set attributes on the text elements within the container, such as on a [**Run**](https://msdn.microsoft.com/library/windows/apps/br209959) in [**TextBlock.Inlines**](https://msdn.microsoft.com/library/windows/apps/br209668) or on a [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244503) in [**RichTextBlock.Blocks**](https://msdn.microsoft.com/library/windows/apps/br244347).
 
-Les styles ressemblent à ceci quand ils sont appliqués à un élément [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652):
+The styles look like this when applied to a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652):
 
-![Styles de bloc de texte](images/text-block-type-ramp.png)
+![text block styles](images/text-block-type-ramp.png)
 
 ### BaseTextBlockStyle
 
 **TargetType**: [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)
 
-Fournit les propriétés communes à tous les autres styles de conteneur [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652).
+Supplies the common properties for all the other [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) container styles.
 
 ```XAML
 <!-- Usage -->
-<TextBlock Text="Base" Style="{ThemeResource BaseTextBlockStyle}"/>
+<TextBlock Text="Base" Style="{StaticResource BaseTextBlockStyle}"/>
 
 <!-- Style definition -->
 <Style x:Key="BaseTextBlockStyle" TargetType="TextBlock">
@@ -187,7 +188,7 @@ Fournit les propriétés communes à tous les autres styles de conteneur [**Text
 
 ```XAML
 <!-- Usage -->
-<TextBlock Text="Header" Style="{ThemeResource HeaderTextBlockStyle}"/>
+<TextBlock Text="Header" Style="{StaticResource HeaderTextBlockStyle}"/>
 
 <!-- Style definition -->
 <Style x:Key="HeaderTextBlockStyle" TargetType="TextBlock"
@@ -202,7 +203,7 @@ Fournit les propriétés communes à tous les autres styles de conteneur [**Text
 
 ```XAML
 <!-- Usage -->
-<TextBlock Text="SubHeader" Style="{ThemeResource SubheaderTextBlockStyle}"/>
+<TextBlock Text="SubHeader" Style="{StaticResource SubheaderTextBlockStyle}"/>
 
 <!-- Style definition -->
 <Style x:Key="SubheaderTextBlockStyle" TargetType="TextBlock" 
@@ -247,7 +248,7 @@ Fournit les propriétés communes à tous les autres styles de conteneur [**Text
 
 ```XAML
 <!-- Usage -->
-<TextBlock Text="Body" Style="{ThemeResource BodyTextBlockStyle}"/>
+<TextBlock Text="Body" Style="{StaticResource BodyTextBlockStyle}"/>
 
 <!-- Style definition -->
 <Style x:Key="BodyTextBlockStyle" TargetType="TextBlock" 
@@ -261,7 +262,7 @@ Fournit les propriétés communes à tous les autres styles de conteneur [**Text
 
 ```XAML
 <!-- Usage -->
-<TextBlock Text="Caption" Style="{ThemeResource CaptionTextBlockStyle}"/>
+<TextBlock Text="Caption" Style="{StaticResource CaptionTextBlockStyle}"/>
 
 <!-- Style definition -->
 <Style x:Key="CaptionTextBlockStyle" TargetType="TextBlock" 
@@ -275,11 +276,11 @@ Fournit les propriétés communes à tous les autres styles de conteneur [**Text
 
 **TargetType**: [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565)
 
-Fournit les propriétés communes à tous les autres styles de conteneur [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565).
+Supplies the common properties for all the other [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565) container styles.
 
 ```XAML
 <!-- Usage -->
-<RichTextBlock Style="{ThemeResource BaseRichTextBlockStyle}">
+<RichTextBlock Style="{StaticResource BaseRichTextBlockStyle}">
     <Paragraph>Rich text.</Paragraph>
 </RichTextBlock>
 
@@ -300,7 +301,7 @@ Fournit les propriétés communes à tous les autres styles de conteneur [**Rich
 
 ```XAML
 <!-- Usage -->
-<RichTextBlock Style="{ThemeResource BodyRichTextBlockStyle}">
+<RichTextBlock Style="{StaticResource BodyRichTextBlockStyle}">
     <Paragraph>Rich text.</Paragraph>
 </RichTextBlock>
 
@@ -310,71 +311,71 @@ Fournit les propriétés communes à tous les autres styles de conteneur [**Rich
 </Style>
 ```
 
-> **Remarque** &nbsp;&nbsp; Les styles [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565) ne possèdent pas tous les styles de rampe de texte de [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652), cela étant principalement dû au fait qu’il est plus facile avec le modèle d’objet de document basé sur des blocs pour **RichTextBlock** de définir des attributs sur les éléments de texte individuels. Par ailleurs, le fait de définir [**TextBlock.Text**](https://msdn.microsoft.com/library/windows/apps/br209676) à l’aide de la propriété de contenu XAML introduit un cas de figure dans lequel aucun élément de texte de style ne se prête à l’application d’un style, ce qui vous oblige à appliquer un style au conteneur. Ceci ne constitue pas un problème pour **RichTextBlock**, car son contenu de texte doit toujours figurer dans des éléments de texte spécifiques comme [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244503), c’est-à-dire l’emplacement à partir duquel vous pouvez définir des styles XAML pour un en-tête de page, un sous-en-tête de page et des définitions de gamme de texte semblables.
+> **Note**&nbsp;&nbsp;  The [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565) styles don't have all the text ramp styles that [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) does, mainly because the block-based document object model for **RichTextBlock** makes it easier to set attributes on the individual text elements. Also, setting [**TextBlock.Text**](https://msdn.microsoft.com/library/windows/apps/br209676) using the XAML content property introduces a situation where there is no text element to style and thus you'd have to style the container. That isn't an issue for **RichTextBlock** because its text content always has to be in specific text elements like [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244503), which is where you might apply XAML styles for page header, page subheader and similar text ramp definitions.
 
-## Divers styles nommés
+## Miscellaneous Named styles
 
-Il existe un ensemble supplémentaire de définitions [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) à clé que vous pouvez appliquer pour donner à un [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) un style autre que le style implicite par défaut.
+There's an additional set of keyed [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) definitions you can apply to style a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) differently than its default implicit style.
 
 ### TextBlockButtonStyle
 
 **TargetType**: [**ButtonBase**](https://msdn.microsoft.com/library/windows/apps/br227736)
 
-Appliquez ce style à un [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) lorsque vous avez besoin d’afficher du texte sur lequel l’utilisateur peut cliquer pour déclencher une action. Le style du texte est défini en utilisant la couleur d’accentuation actuelle pour l’identifier comme interactif. Des rectangles de focus, bien adaptés au texte, sont également ajoutés. Contrairement au style implicite d’un [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739), le **TextBlockButtonStyle** ne souligne pas le texte.
+Apply this style to a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) when you need to show text that a user can click to take action. The text is styled using the current accent color to distinguish it as interactive and has focus rectangles that work well for text. Unlike the implicit style of a [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739), the **TextBlockButtonStyle** does not underline the text.
 
-Le modèle applique également des styles au texte présenté de manière à utiliser **SystemControlHyperlinkBaseMediumBrush** (pour l’état «PointerOver»), **SystemControlHighlightBaseMediumLowBrush** (pour l’état «Pressed») et **SystemControlDisabledBaseLowBrush** (pour l’état «Disabled»).
+The template also styles the presented text to use **SystemControlHyperlinkBaseMediumBrush** (for "PointerOver" state), **SystemControlHighlightBaseMediumLowBrush** (for "Pressed" state) and **SystemControlDisabledBaseLowBrush** (for "Disabled" state).
 
-Voici un [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) auquel la ressource **TextBlockButtonStyle** est appliquée.
+Here's a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) with the **TextBlockButtonStyle** resource applied to it.
 
 ```XAML
-<Button Content="Clickable text" Style="{ThemeResource TextBlockButtonStyle}" 
+<Button Content="Clickable text" Style="{StaticResource TextBlockButtonStyle}" 
         Click="Button_Click"/>
 ```
 
-Il se présente ainsi:
+It looks like this:
 
-![Bouton stylisé pour ressembler à du texte](images/styles-textblock-button-style.png)
+![A button styled to look like text](images/styles-textblock-button-style.png)
 
 ### NavigationBackButtonNormalStyle
 
 **TargetType**: [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)
 
-Ce [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) fournit un modèle complet pour un [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) qui peut servir de bouton de navigation Précédent pour une application de navigation. Il inclut des références de ressources de thème qui provoquent l’utilisation de la police de symboles Segoe MDL2 par le bouton, ce qui signifie que vous devez utiliser une valeur [**Symbol**](https://msdn.microsoft.com/library/windows/apps/dn252842) en tant que contenu plutôt qu’en tant que texte. Les dimensions par défaut sont de 40×40pixels. Pour adapter le style, vous pouvez définir explicitement [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718), [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751), [**FontSize**](https://msdn.microsoft.com/library/windows/apps/br209406) et d’autres propriétés sur votre **Button**, ou créer un style dérivé à l’aide de [**BasedOn**](https://msdn.microsoft.com/library/windows/apps/br208852).
+This [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) provides a complete template for a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) that can be the navigation back button for a navigation app. It includes theme resource references that make this button use the Segoe MDL2 Assets symbol font, so you should use a [**Symbol**](https://msdn.microsoft.com/library/windows/apps/dn252842) value as the content rather than text. The default dimensions are 40 x 40 pixels. To tailor the styling you can either explicitly set the [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718), [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751), [**FontSize**](https://msdn.microsoft.com/library/windows/apps/br209406), and other properties on your **Button** or create a derived style using [**BasedOn**](https://msdn.microsoft.com/library/windows/apps/br208852).
 
-Voici un [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) auquel la ressource **NavigationBackButtonNormalStyle** est appliquée.
+Here's a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) with the **NavigationBackButtonNormalStyle** resource applied to it.
 
 ```XAML
-<Button Content="&amp;#xE830;" Style="{ThemeResource NavigationBackButtonNormalStyle}" 
+<Button Content="&amp;#xE830;" Style="{StaticResource NavigationBackButtonNormalStyle}" 
         Click="Button_Click"/>
 ```
 
-Il se présente ainsi:
+It looks like this:
 
-![Bouton stylisé comme bouton Précédent](images/styles-back-button-normal.png)
+![A button styled as a back button](images/styles-back-button-normal.png)
 
 ### NavigationBackButtonSmallStyle
 
 **TargetType**: [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)
 
-Ce [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) fournit un modèle complet pour un [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) qui peut servir de bouton de navigation Précédent pour une application de navigation. Il est semblable à **NavigationBackButtonNormalStyle**, mais les dimensions sont de 30×30 pixels.
+This [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) provides a complete template for a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) that can be the navigation back button for a navigation app. It's similar to **NavigationBackButtonNormalStyle**, but its dimensions are 30 by 30 pixels.
 
-Voici un [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) auquel la ressource **NavigationBackButtonSmallStyle** est appliquée.
+Here's a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) with the **NavigationBackButtonSmallStyle** resource applied to it.
 
 ```XAML
-<Button Content="&amp;#xE830;" Style="{ThemeResource NavigationBackButtonSmallStyle}" 
+<Button Content="&amp;#xE830;" Style="{StaticResource NavigationBackButtonSmallStyle}" 
         Click="Button_Click"/>
 ```
 
-## Résolution des problèmes liés aux ressources de thème
+## Troubleshooting theme resources
 
 
-Si vous ne suivez pas les [recommandations pour l’utilisation de ressources de thème](#guidelines_for_using_theme_resources), vous constaterez peut-être un comportement inattendu lié aux thèmes dans votre application.
+If you don’t follow the [guidelines for using theme resources](#guidelines_for_using_theme_resources), you might see unexpected behavior related to themes in your app.
 
-Par exemple, lorsque vous ouvrez un menu volant sur le thème clair, certaines parties de votre application sur le thème foncé changent également, comme si elles faisaient partie du thème clair. Ou, si vous naviguez vers une page sur le thème clair puis revenez en arrière, la page d’origine sur le thème foncé (ou certaines parties de cette page) se présente comme si elle était soumise au thème clair.
+For example, when you open a light-themed flyout, parts of your dark-themed app also change as if they were in the light theme. Or if you navigate to a light-themed page and then navigate back, the original dark-themed page (or parts of it) now looks as though it is in the light theme.
 
-En règle générale, ces types de problèmes se produisent lorsque vous indiquez un thème «Default» et un thème «HighContrast» pour prendre en charge les scénarios à contraste élevé, puis utilisez les thèmes «Light» et «Dark» dans différentes parties de votre application.
+Typically, these types of issues occur when you provide a "Default" theme and a "HighContrast" theme to support high-contrast scenarios, and then use both "Light" and "Dark" themes in different parts of your app.
 
-Prenons l’exemple de cette définition de dictionnaire de thème:
+For example, consider this theme dictionary definition:
 
 ```XAML
 <!-- DO NOT USE. THIS XAML DEMONSTRATES AN ERROR. -->
@@ -390,11 +391,11 @@ Prenons l’exemple de cette définition de dictionnaire de thème:
 </ResourceDictionary>
 ```
 
-Au premier abord, elle semble correcte. Vous souhaitez modifier la couleur vers laquelle pointe `myBrush` lorsque vous utilisez le contraste élevé, mais lorsque vous n’êtes pas en contraste élevé, vous vous appuyez sur l’extension de balisage [{ThemeResource}](../xaml-platform/themeresource-markup-extension.md) pour vous assurer que `myBrush` pointe vers la bonne couleur pour votre thème. Si votre application n’a jamais d’ensemble [**FrameworkElement.RequestedTheme**](https://msdn.microsoft.com/library/windows/apps/dn298515) sur les éléments au sein de son arborescence visuelle, elle fonctionne généralement comme prévu. Toutefois, vous rencontrez des problèmes avec votre application dès que vous commencez à modifier le thème de différentes parties de votre arborescence visuelle.
+Intuitively, this looks correct. You want to change the color pointed to by `myBrush` when in high-contrast, but when not in high-contrast, you rely on the [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md) to make sure that `myBrush` points to the right color for your theme. If your app never has [**FrameworkElement.RequestedTheme**](https://msdn.microsoft.com/library/windows/apps/dn298515) set on elements within its visual tree, this will typically work as expected. However, you run into problems in your app as soon as you start to re-theme different parts of your visual tree.
 
-Ce problème est dû au fait que les pinceaux sont des ressources partagées, contrairement à la plupart des autres types XAML. Si vous avez 2 éléments dans des sous-arborescences XAML avec différents thèmes qui font référence à la même ressource de pinceau, lorsque l’infrastructure parcourt chaque sous-arborescence pour mettre à jour les expressions d’[extension de balisage {ThemeResource}](../xaml-platform/themeresource-markup-extension.md), les modifications apportées à la ressource de pinceau partagée sont reflétées dans l’autre sous-arborescence, ce qui n’est pas le résultat souhaité.
+The problem occurs because brushes are shared resources, unlike most other XAML types. If you have 2 elements in XAML sub-trees with different themes that reference the same brush resource, then as the framework walks each sub-tree to update its [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md) expressions, changes to the shared brush resource are reflected in the other sub-tree, which is not your intended result.
 
-Pour résoudre ce problème, remplacez le dictionnaire «Default» par des dictionnaires de thème distincts pour les thèmes «Light» et «Dark», en plus du thème «HighContrast»:
+To fix this, replace the "Default" dictionary with separate theme dictionaries for both "Light" and "Dark" themes in addition to "HighContrast":
 
 ```XAML
 <!-- DO NOT USE. THIS XAML DEMONSTRATES AN ERROR. -->
@@ -413,13 +414,13 @@ Pour résoudre ce problème, remplacez le dictionnaire «Default» par des dicti
 </ResourceDictionary>
 ```
 
-Toutefois, vous rencontrerez toujours des problèmes si l’une de ces ressources est référencée dans les propriétés héritées comme [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414). Votre modèle de contrôle personnalisé peut spécifier la couleur de premier plan d’un élément à l’aide de l’[extension de balisage {ThemeResource}](../xaml-platform/themeresource-markup-extension.md), mais lorsque l’infrastructure propage la valeur héritée aux éléments enfants, elle fournit une référence directe à la ressource qui a été résolue par l’expression d’extension de balisage {ThemeResource}. Cela crée des problèmes lorsque l’infrastructure traite les modifications du thème au fur et à mesure qu’elle parcourt l’arborescence visuelle de votre contrôle. Elle évalue de nouveau l’expression d’extension de balisage {ThemeResource} afin d’obtenir une nouvelle ressource de pinceau, mais ne propage pas encore cette référence vers les enfants de votre contrôle; cela se produit plus tard, par exemple pendant la passe de mesure suivante.
+However, problems still occur if any of these resources are referenced in inherited properties like [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414). Your custom control template might specify the foreground color of an element using the [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md), but when the framework propagates the inherited value to child elements, it provides a direct reference to the resource that was resolved by the {ThemeResource} markup extension expression. This causes problems when the framework processes theme changes as it walks your control's visual tree. It re-evaluates the {ThemeResource} markup extension expression to get a new brush resource but doesn’t yet propagate this reference down to the children of your control; this happens later, such as during the next measure pass.
 
-Par conséquent, après avoir parcouru l’arborescence visuelle du contrôle suite à un changement de thème, l’infrastructure parcourt les enfants et met à jour les expressions d’[extension de balisage {ThemeResource}](../xaml-platform/themeresource-markup-extension.md) définies sur chacun d’eux, ou sur les objets définis à partir de leurs propriétés. C’est à ce moment que le problème survient; l’infrastructure parcourt la ressource de pinceau et, dans la mesure où elle spécifie sa couleur à l’aide d’une extension de balisage {ThemeResource}, une réévaluation est effectuée.
+As a result, after walking the control visual tree in response to a theme change, the framework walks the children and updates any [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md) expressions set on them, or on objects set on their properties. This is where the problem occurs; the framework walks the brush resource and because it specifies its color using a {ThemeResource} markup extension, it's re-evaluated.
 
-À ce stade, l’infrastructure semble avoir pollué votre dictionnaire de thèmes: il inclut désormais une ressource d’un dictionnaire dont la couleur est définie à partir d’un autre dictionnaire.
+At this point, the framework appears to have polluted your theme dictionary because it now has a resource from one dictionary that has its color set from another dictionary.
 
-Pour résoudre ce problème, utilisez l’extension de balisage [{StaticResource}](../xaml-platform/staticresource-markup-extension.md) à la place de [{ThemeResource}](../xaml-platform/themeresource-markup-extension.md). Si vous appliquez correctement les recommandations, les dictionnaires de thèmes se présentent ainsi:
+To fix this problem, use the [{StaticResource} markup extension](../xaml-platform/staticresource-markup-extension.md) instead of [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md). With the guidelines applied, the theme dictionaries look like this:
 
 ```XAML
 <ResourceDictionary>
@@ -437,12 +438,12 @@ Pour résoudre ce problème, utilisez l’extension de balisage [{StaticResource
 </ResourceDictionary>
 ```
 
-Notez que l’[extension de balisage {ThemeResource}](../xaml-platform/themeresource-markup-extension.md) est toujours utilisée à la place de l’[extension de balisage {StaticResource}](../xaml-platform/staticresource-markup-extension.md) dans le dictionnaire «HighContrast». Cette situation correspond à l’exception citée précédemment dans les recommandations. La plupart des valeurs de pinceau utilisées pour le thème «HighContrast» utilisent des choix de couleur qui sont contrôlés globalement par le système, mais exposés au code XAML sous forme d’une ressource spécialement nommée (ceux dont le nom comporte le préfixe SystemColor). Le système permet à l’utilisateur de définir les couleurs spécifiques qui doivent être utilisées pour les paramètres de contraste élevé par l’intermédiaire des Options d’ergonomie. Ces choix de couleur sont appliqués aux ressources spécialement nommées. L’infrastructure XAML utilise le même événement de modification de thème pour mettre également à jour ces pinceaux lorsqu’elle détecte une modification au niveau du système. C’est pourquoi l’extension de balisage {ThemeResource} est utilisée ici.
+Notice that the [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md) is still used in the "HighContrast" dictionary instead of [{StaticResource} markup extension](../xaml-platform/staticresource-markup-extension.md). This situation falls under the exception given earlier in the guidelines. Most of the brush values that are used for the "HighContrast" theme are using color choices that are globally controlled by the system, but exposed to XAML as a specially-named resource (those prefixed with ‘SystemColor’ in the name). The system enables the user to set the specific colors that should be used for their high contrast settings through the Ease of Access Center. Those color choices are applied to the specially-named resources. The XAML framework uses the same theme changed event to also update these brushes when it detects they’ve changed at the system level. This is why the {ThemeResource} markup extension is used here.
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

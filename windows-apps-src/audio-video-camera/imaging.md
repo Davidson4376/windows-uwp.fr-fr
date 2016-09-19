@@ -1,125 +1,127 @@
 ---
 author: drewbatgit
 ms.assetid: 3FD2AA71-EF67-47B2-9332-3FFA5D3703EA
-description: "Cet article explique comment charger et enregistrer des fichiers image à l’aide de BitmapDecoder et de BitmapEncoder, et comment utiliser l’objet SoftwareBitmap pour représenter des images bitmap."
-title: "Acquisition d’images"
+description: This article explains how to load and save image files using BitmapDecoder and BitmapEncoder and how to use the SoftwareBitmap object to represent bitmap images.
+title: Create, edit, and save bitmap images
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8da8c78a848c4eea565d432bdf62d3d1528c5a85
+ms.sourcegitcommit: c61bad4b4a5440531c0177247c425addaf452920
+ms.openlocfilehash: ff6bff692c4e0e73b2c99e06b46e8a3050ba12c4
 
 ---
 
-# Acquisition d’images
+# Create, edit, and save bitmap images
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Cet article explique comment charger et enregistrer des fichiers image à l’aide de [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) et de [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206), et comment utiliser l’objet [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) pour représenter des images bitmap.
+This article explains how to load and save image files using [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) and [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) and how to use the [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) object to represent bitmap images.
 
-La classe **SoftwareBitmap** est une API polyvalente qui peut être créée à partir de plusieurs sources, y compris les fichiers image, les objets [**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/br243259), les surfaces Direct3D et le code. **SoftwareBitmap** permet de convertir facilement entre les différents formats de pixels et les modes alpha, et offre l’accès de bas niveau aux données de pixel. En outre, **SoftwareBitmap** est une interface commune utilisée par plusieurs fonctionnalités de Windows, notamment:
+The **SoftwareBitmap** class is a versatile API that can be created from multiple sources including image files, [**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/br243259) objects, Direct3D surfaces, and code. **SoftwareBitmap** allows you to easily convert between different pixel formats and alpha modes, and allows low-level access to pixel data. Also, **SoftwareBitmap** is a common interface used by multiple features of Windows, including:
 
--   [**CapturedFrame**](https://msdn.microsoft.com/library/windows/apps/dn278725) qui vous permet d’obtenir des images capturées par l’appareil photo en tant que **SoftwareBitmap**.
+-   [**CapturedFrame**](https://msdn.microsoft.com/library/windows/apps/dn278725) allows you to get frames captured by the camera as a **SoftwareBitmap**.
 
--   [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) qui vous permet d’obtenir une représentation **SoftwareBitmap** d’un élément **VideoFrame**.
+-   [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) allows you to get a **SoftwareBitmap** representation of a **VideoFrame**.
 
--   [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) qui vous permet de détecter les visages d’un élément **SoftwareBitmap**.
+-   [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) allows you to detect faces in a **SoftwareBitmap**.
 
-L’exemple de code dans cet article utilise les API des espaces de noms suivants.
+The sample code in this article uses APIs from the following namespaces.
 
-[!code-cs[Espaces de noms](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetNamespaces)]
+[!code-cs[Namespaces](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetNamespaces)]
 
-## Créer un élément SoftwareBitmap à partir d’un fichier image avec BitmapDecoder
+## Create a SoftwareBitmap from an image file with BitmapDecoder
 
-Pour créer un élément [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) à partir d’un fichier, obtenez une instance de [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) qui contient les données d’image. Cet exemple utilise un élément [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) pour permettre à l’utilisateur de sélectionner un fichier image.
+To create a [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) from a file, get an instance of [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) containing the image data. This example uses a [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) to allow the user to select an image file.
 
 [!code-cs[PickInputFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetPickInputFile)]
 
-Appelez la méthode [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br227116) de l’objet **StorageFile** pour obtenir un flux d’accès aléatoire contenant les données d’image. Appelez la méthode statique [**BitmapDecoder.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/br226182) pour obtenir une instance de la classe [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) pour le flux spécifié. Appelez [**GetSoftwareBitmapAsync**](https://msdn.microsoft.com/library/windows/apps/dn887332) pour obtenir un objet [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) contenant l’image.
+Call the [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br227116) method of the **StorageFile** object to get a random access stream containing the image data. Call the static method [**BitmapDecoder.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/br226182) to get an instance of the [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) class for the specified stream. Call [**GetSoftwareBitmapAsync**](https://msdn.microsoft.com/library/windows/apps/dn887332) to get a [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) object containing the image.
 
 [!code-cs[CreateSoftwareBitmapFromFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetCreateSoftwareBitmapFromFile)]
 
-## Enregistrer un élément SoftwareBitmap dans un fichier avec BitmapEncoder
+## Save a SoftwareBitmap to a file with BitmapEncoder
 
-Pour enregistrer un élément **SoftwareBitmap** dans un fichier, obtenez une instance de **StorageFile** sur laquelle l’image sera enregistrée. Cet exemple utilise un élément [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) pour permettre à l’utilisateur de sélectionner un fichier de sortie.
+To save a **SoftwareBitmap** to a file, get an instance of **StorageFile** to which the image will be saved. This example uses a [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) to allow the user to select an output file.
 
 [!code-cs[PickOuputFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetPickOuputFile)]
 
-Appelez la méthode [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br227116) de l’objet **StorageFile** pour obtenir un flux d’accès aléatoire sur lequel écrire l’image. Appelez la méthode statique [**BitmapEncoder.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/br226211) pour obtenir une instance de la classe [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) pour le flux spécifié. Le premier paramètre de **CreateAsync** est un GUID représentant le codec qui doit être utilisé pour encoder l’image. La classe **BitmapEncoder** expose une propriété qui contient l’ID de chaque codec pris en charge par l’encodeur, telle que [**JpegEncoderId**](https://msdn.microsoft.com/library/windows/apps/br226226).
+Call the [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br227116) method of the **StorageFile** object to get a random access stream to which the image will be written. Call the static method [**BitmapEncoder.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/br226211) to get an instance of the [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) class for the specified stream. The first parameter to **CreateAsync** is a GUID representing the codec that should be used to encode the image. **BitmapEncoder** class exposes a property containing the ID for each codec supported by the encoder, such as [**JpegEncoderId**](https://msdn.microsoft.com/library/windows/apps/br226226).
 
-Utilisez la méthode [**SetSoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887337) pour définir l’image qui sera encodée. Vous pouvez définir les valeurs de la propriété [**BitmapTransform**](https://msdn.microsoft.com/library/windows/apps/br226254) pour appliquer des transformations de base à l’image pendant qu’elle est encodée. La propriété [**IsThumbnailGenerated**](https://msdn.microsoft.com/library/windows/apps/br226225) détermine si une miniature est générée par l’encodeur. Veuillez noter que tous les formats de fichier ne prennent pas en charge les miniatures. Si vous utilisez cette fonctionnalité, vous devez intercepter l’erreur d’opération non prise en charge qui sera levée si les miniatures ne sont pas prises en charge.
+Use the [**SetSoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887337) method to set the image that will be encoded. You can set values of the [**BitmapTransform**](https://msdn.microsoft.com/library/windows/apps/br226254) property to apply basic transforms to the image while it is being encoded. The [**IsThumbnailGenerated**](https://msdn.microsoft.com/library/windows/apps/br226225) property determines whether a thumbnail is generated by the encoder. Note that not all file formats support thumbnails, so if you use this feature, you should catch the unsupported operation error that will be thrown if thumbnails are not supported.
 
-Appelez [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/br226216) pour forcer l’encodeur à écrire les données d’image dans le fichier spécifié.
+Call [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/br226216) to cause the encoder to write the image data to the specified file.
 
 [!code-cs[SaveSoftwareBitmapToFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetSaveSoftwareBitmapToFile)]
 
-Vous pouvez spécifier des options d’encodage supplémentaires lorsque vous créez l’élément **BitmapEncoder** en créant un objet [**BitmapPropertySet**](https://msdn.microsoft.com/library/windows/apps/hh974338) et en le remplissant avec un ou plusieurs objets [**BitmapTypedValue**](https://msdn.microsoft.com/library/windows/apps/hh700687) représentant les paramètres d’encodeur. Pour obtenir la liste des options d’encodeur prises en charge, voir [Références des options BitmapEncoder](bitmapencoder-options-reference.md).
+You can specify additional encoding options when you create the **BitmapEncoder** by creating a new [**BitmapPropertySet**](https://msdn.microsoft.com/library/windows/apps/hh974338) object and populating it with one or more [**BitmapTypedValue**](https://msdn.microsoft.com/library/windows/apps/hh700687) objects representing the encoder settings. For a list of supported encoder options, see [BitmapEncoder options reference](bitmapencoder-options-reference.md).
 
 [!code-cs[UseEncodingOptions](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetUseEncodingOptions)]
 
-## Utiliser SoftwareBitmap avec un contrôle XAML Image
+## Use SoftwareBitmap with a XAML Image control
 
-Pour afficher une image dans une page XAML à l’aide du contrôle [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752), commencez par définir un contrôle **Image** dans votre page XAML.
+To display an image within a XAML page using the [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) control, first define an **Image** control in your XAML page.
 
 [!code-xml[ImageControl](./code/ImagingWin10/cs/MainPage.xaml#SnippetImageControl)]
 
-Créez un objet [**SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/dn997854). Définissez le contenu de l’objet source en appelant [**SetBitmapAsync**](https://msdn.microsoft.com/library/windows/apps/dn997856), en transmettant un élément **SoftwareBitmap**. Vous pouvez ensuite définir la propriété [**Source**](https://msdn.microsoft.com/library/windows/apps/br242760) du contrôle **Image** sur l’élément **SoftwareBitmapSource** créé.
+Currently, the **Image** control only supports images that use BGRA8 encoding and pre-multiplied or no alpha channel. Before attempting to display an image, test to make sure it has the correct format, and if not, use the **SoftwareBitmap** static [**Convert**](https://msdn.microsoft.com/library/windows/apps/dn887362) method to convert the image to the supported format.
+
+Create a new [**SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/dn997854) object. Set the contents of the source object by calling [**SetBitmapAsync**](https://msdn.microsoft.com/library/windows/apps/dn997856), passing in a **SoftwareBitmap**. Then you can set the [**Source**](https://msdn.microsoft.com/library/windows/apps/br242760) property of the **Image** control to the newly created **SoftwareBitmapSource**.
 
 [!code-cs[SoftwareBitmapToWriteableBitmap](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetSoftwareBitmapToWriteableBitmap)]
 
-Vous pouvez également utiliser **SoftwareBitmapSource** pour définir un élément **SoftwareBitmap** comme [**ImageSource**](https://msdn.microsoft.com/library/windows/apps/br210105) pour [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/br210101).
+You can also use **SoftwareBitmapSource** to set a **SoftwareBitmap** as the [**ImageSource**](https://msdn.microsoft.com/library/windows/apps/br210105) for an [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/br210101).
 
-## Créer un élément SoftwareBitmap à partir d’un élément WriteableBitmap
+## Create a SoftwareBitmap from a WriteableBitmap
 
-Vous pouvez créer un élément **SoftwareBitmap** à partir d’un élément **WriteableBitmap** existant en appelant [**SoftwareBitmap.CreateCopyFromBuffer**](https://msdn.microsoft.com/library/windows/apps/dn887370) et en fournissant la propriété **PixelBuffer** de la classe **WriteableBitmap** pour définir les données de pixel. Le deuxième argument permet de demander un format de pixel pour l’élément **WriteableBitmap** créé. Vous pouvez utiliser les propriétés [**PixelWidth**](https://msdn.microsoft.com/library/windows/apps/br243253) et [**PixelHeight**](https://msdn.microsoft.com/library/windows/apps/br243251) de **WriteableBitmap** pour spécifier les dimensions de la nouvelle image.
+You can create a **SoftwareBitmap** from an existing **WriteableBitmap** by calling [**SoftwareBitmap.CreateCopyFromBuffer**](https://msdn.microsoft.com/library/windows/apps/dn887370) and supplying the **PixelBuffer** property of the **WriteableBitmap** to set the pixel data. The second argument allows you to request a pixel format for the newly created **WriteableBitmap**. You can use the [**PixelWidth**](https://msdn.microsoft.com/library/windows/apps/br243253) and [**PixelHeight**](https://msdn.microsoft.com/library/windows/apps/br243251) properties of the **WriteableBitmap** to specify the dimensions of the new image.
 
 [!code-cs[WriteableBitmapToSoftwareBitmap](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetWriteableBitmapToSoftwareBitmap)]
 
-## Créer ou modifier un élément SoftwareBitmap par programme
+## Create or edit a SoftwareBitmap programmatically
 
-Jusqu’à présent, cette rubrique faisait référence aux fichiers image. Vous pouvez également créer un élément **SoftwareBitmap** par programme dans le code et utiliser la même technique pour accéder aux données de pixel de **SoftwareBitmap** et les modifier.
+So far this topic has addressed working with image files. You can also create a new **SoftwareBitmap** programatically in code and use the same technique to access and modify the **SoftwareBitmap**'s pixel data.
 
-**SoftwareBitmap** utilise COM Interop pour exposer la mémoire tampon brute contenant les données de pixel.
+**SoftwareBitmap** uses COM interop to expose the raw buffer containing the pixel data.
 
-Pour utiliser COM Interop, vous devez inclure une référence à l’espace de noms **System.Runtime.InteropServices** dans votre projet.
+To use COM interop, you must include a reference to the **System.Runtime.InteropServices** namespace in your project.
 
 [!code-cs[InteropNamespace](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetInteropNamespace)]
 
-Initialisez l’interface COM [**IMemoryBufferByteAccess**](https://msdn.microsoft.com/library/windows/desktop/mt297505) en ajoutant le code suivant dans votre espace de noms.
+Initialize the [**IMemoryBufferByteAccess**](https://msdn.microsoft.com/library/windows/desktop/mt297505) COM interface by adding the following code within your namespace.
 
 [!code-cs[COMImport](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetCOMImport)]
 
-Créez un élément **SoftwareBitmap** avec le format de pixel et la taille souhaités. Vous pouvez aussi utiliser un élément **SoftwareBitmap** existant pour lequel vous voulez modifier les données de pixel. Appelez [**SoftwareBitmap.LockBuffer**](https://msdn.microsoft.com/library/windows/apps/dn887380) pour obtenir une instance de la classe [**BitmapBuffer**](https://msdn.microsoft.com/library/windows/apps/dn887325) représentant la mémoire tampon des données de pixel. Diffusez l’élément **BitmapBuffer** sur l’interface COM **IMemoryBufferByteAccess**, puis appelez [**IMemoryBufferByteAccess.GetBuffer**](https://msdn.microsoft.com/library/windows/desktop/mt297506) pour remplir un tableau d’octets avec des données. Utilisez la méthode [**BitmapBuffer.GetPlaneDescription**](https://msdn.microsoft.com/library/windows/apps/dn887330) pour obtenir un objet [**BitmapPlaneDescription**](https://msdn.microsoft.com/library/windows/apps/dn887342) qui vous aidera à calculer le décalage dans la mémoire tampon pour chaque pixel.
+Create a new **SoftwareBitmap** with pixel format and size you want. Or, use an existing **SoftwareBitmap** for which you want to edit the pixel data. Call [**SoftwareBitmap.LockBuffer**](https://msdn.microsoft.com/library/windows/apps/dn887380) to obtain an instance of the [**BitmapBuffer**](https://msdn.microsoft.com/library/windows/apps/dn887325) class representing the pixel data buffer. Cast the **BitmapBuffer** to the **IMemoryBufferByteAccess** COM interface and then call [**IMemoryBufferByteAccess.GetBuffer**](https://msdn.microsoft.com/library/windows/desktop/mt297506) to populate a byte array with data. Use the [**BitmapBuffer.GetPlaneDescription**](https://msdn.microsoft.com/library/windows/apps/dn887330) method to get a [**BitmapPlaneDescription**](https://msdn.microsoft.com/library/windows/apps/dn887342) object that will help you calculate the offset into the buffer for each pixel.
 
 [!code-cs[CreateNewSoftwareBitmap](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetCreateNewSoftwareBitmap)]
 
-Étant donné que cette méthode accède à la mémoire tampon brute sous-jacente des types Windows Runtime, elle doit être déclarée à l’aide du mot clé **unsafe**. Vous devez également configurer votre projet dans Microsoft Visual Studio pour permettre la compilation du code non sécurisé en ouvrant la page **Propriétés** du projet, en cliquant sur la page de propriétés **Générer**, puis en sélectionnant la case à cocher **Autoriser les blocs de code unsafe**.
+Because this method accesses the raw buffer underlying the Windows Runtime types, it must be declared using the **unsafe** keyword. You must also configure your project in Microsoft Visual Studio to allow the compilation of unsafe code by opening the project's **Properties** page, clicking the **Build** property page, and selecting the **Allow Unsafe Code** checkbox.
 
-## Créer un élément SoftwareBitmap à partir d’une surface Direct3D
+## Create a SoftwareBitmap from a Direct3D surface
 
-Pour créer un objet **SoftwareBitmap** à partir d’une surface Direct3D, vous devez inclure l’espace de noms [**Windows.Graphics.DirectX.Direct3D11**](https://msdn.microsoft.com/library/windows/apps/dn895104) dans votre projet.
+To create a **SoftwareBitmap** object from a Direct3D surface, you must include the [**Windows.Graphics.DirectX.Direct3D11**](https://msdn.microsoft.com/library/windows/apps/dn895104) namespace in your project.
 
 [!code-cs[Direct3DNamespace](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetDirect3DNamespace)]
 
-Appelez [**CreateCopyFromSurfaceAsync**](https://msdn.microsoft.com/library/windows/apps/dn887373) pour créer un élément **SoftwareBitmap** à partir de la surface. Comme son nom l’indique, le nouvel élément **SoftwareBitmap** contient une copie distincte des données d’image. Les modifications apportées à **SoftwareBitmap** n’auront pas d’effet sur la surface Direct3D.
+Call [**CreateCopyFromSurfaceAsync**](https://msdn.microsoft.com/library/windows/apps/dn887373) to create a new **SoftwareBitmap** from the surface. As the name indicates, the new **SoftwareBitmap** has a separate copy of the image data. Modifications to the **SoftwareBitmap** will not have any effect on the Direct3D surface.
 
 [!code-cs[CreateSoftwareBitmapFromSurface](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetCreateSoftwareBitmapFromSurface)]
 
-## Convertir un élément SoftwareBitmap dans un format de pixel différent
+## Convert a SoftwareBitmap to a different pixel format
 
-La classe **SoftwareBitmap** fournit la méthode statique [**Convert**](https://msdn.microsoft.com/library/windows/apps/dn887362) permettant de créer facilement un nouvel élément **SoftwareBitmap**, qui utilise le format pixel et le mode alpha spécifiés à partir d’un élément **SoftwareBitmap** existant. Veuillez noter que l’image bitmap créée contient une copie distincte des données d’image. Les modifications apportées à la nouvelle image bitmap n’affectent pas l’image bitmap source.
+The **SoftwareBitmap** class provides the static method, [**Convert**](https://msdn.microsoft.com/library/windows/apps/dn887362), that allows you to easily create a new **SoftwareBitmap** that uses the pixel format and alpha mode you specify from an existing **SoftwareBitmap**. Note that the newly created bitmap has a separate copy of the image data. Modifications to the new bitmap will not affect the source bitmap.
 
-[!code-cs[Convertir](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetConvert)]
+[!code-cs[Convert](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetConvert)]
 
-## Transcoder un fichier image
+## Transcode an image file
 
-Vous pouvez transcoder un fichier image directement à partir de [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) vers [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206). Créez un [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) à partir du fichier à transcoder. Créez un **BitmapDecoder** à partir du flux d’entrée. Créez un [**InMemoryRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241720) sur lequel l’encodeur pourra écrire et appelez [**BitmapEncoder.CreateForTranscodingAsync**](https://msdn.microsoft.com/library/windows/apps/br226214) en transmettant le flux en mémoire et l’objet de décodeur. Définissez les propriétés d’encodage de votre choix. Toutes les propriétés dans le fichier image d’entrée que vous ne définissez pas spécifiquement sur l’encodeur seront écrites dans le fichier de sortie inchangé. Appelez [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/br226216) pour forcer l’encodeur à encoder dans le flux en mémoire. Enfin, recherchez le début du flux de fichier et du flux en mémoire et appelez [**CopyAsync**](https://msdn.microsoft.com/library/windows/apps/hh701827) pour écrire le flux en mémoire dans le flux de fichier.
+You can transcode an image file directly from a [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) to a [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206). Create a [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) from the file to be transcoded. Create a new **BitmapDecoder** from the input stream. Create a new [**InMemoryRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241720) for the encoder to write to and call [**BitmapEncoder.CreateForTranscodingAsync**](https://msdn.microsoft.com/library/windows/apps/br226214), passing in the in-memory stream and the decoder object. Set the encoding properties you want. Any properties in the input image file that you do not specifically set on the encoder, will be written to the output file unchanged. Call [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/br226216) to cause the encoder to encode to the in-memory stream. Finally, seek the file stream and the in-memory stream to the beginning and call [**CopyAsync**](https://msdn.microsoft.com/library/windows/apps/hh701827) to write the in-memory stream out to the file stream.
 
 [!code-cs[TranscodeImageFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetTranscodeImageFile)]
 
-## Rubriques connexes
+## Related topics
 
-* [Référence des options BitmapEncoder](bitmapencoder-options-reference.md)
-* [Métadonnées d’image](image-metadata.md)
+* [BitmapEncoder options reference](bitmapencoder-options-reference.md)
+* [Image Metadata](image-metadata.md)
  
 
  
@@ -130,6 +132,6 @@ Vous pouvez transcoder un fichier image directement à partir de [**BitmapDecode
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

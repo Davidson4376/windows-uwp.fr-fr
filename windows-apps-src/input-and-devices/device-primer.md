@@ -1,193 +1,193 @@
 ---
 author: mijacobs
-Description: "Une bonne connaissance des appareils qui prennent en charge les applications UWP peut vous aider à offrir la meilleure expérience utilisateur pour chaque facteur de forme."
-title: Notions fondamentales sur les appareils pour les applications UWP
+Description: Getting to know the devices that support Universal Windows Platform (UWP) apps will help you offer the best user experience for each form factor.
+title: Device primer for Universal Windows Platform (UWP) apps
 ms.assetid: 7665044E-F007-495D-8D56-CE7C2361CDC4
 label: Device primer
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: 0501d59108c5f01b3cefd3d038f3c7d320c862eb
-ms.openlocfilehash: 3461d5cd399682e0c26a7a6864c916bda21eec43
+ms.openlocfilehash: 8821af9bc160dc2636871c3a3b2a558987707766
 
 ---
 
-#  Notions fondamentales sur les appareils pour les applications UWP
+#  Device primer for Universal Windows Platform (UWP) apps
 
 
 
 
 
-![appareils fonctionnant sous Windows](images/device-primer/1894834-hig-device-primer-01-500.png)
+![windows-powered devices](images/device-primer/1894834-hig-device-primer-01-500.png)
 
-Une bonne connaissance des appareils qui prennent en charge les applications UWP peut vous aider à offrir la meilleure expérience utilisateur pour chaque facteur de forme. Lors de la conception d’une application pour un appareil particulier, vous devez surtout prendre en compte l’affichage de l’application sur cet appareil, ainsi que le moment, l’endroit ou la façon dont l’application sera utilisée sur cet appareil et le type d’interaction de l’utilisateur avec ce dernier.
+Getting to know the devices that support Universal Windows Platform (UWP) apps will help you offer the best user experience for each form factor. When designing for a particular device, the main considerations include how the app will appear on that device, where, when, and how the app will be used on that device, and how the user will interact with that device.
 
-## Téléphones et phablettes
+## Phones and phablets
 
 
-Appareils informatiques parmi les plus utilisés actuellement, les téléphones peuvent proposer de nombreuses fonctions, malgré un espace à l’écran réduit et des commandes d’entrée limitées. Les téléphones sont disponibles dans différentes tailles. Les téléphones de grande taille sont appelés des phablettes. L’expérience liée à l’utilisation de l’application sur une phablette est similaire à celle que propose un téléphone, mais l’espace disponible sur l’écran d’une phablette permet d’apporter des modifications significatives au comportement de consommation du contenu de l’utilisateur.
+The most widely-used of all computing devices, phones can do a lot with limited screen real estate and basic inputs. Phones are available in a variety of sizes; larger phones are called phablets. App experiences on phablets are similar to those on phones, but the increased screen real estate of phablets enable some key changes in content consumption.
 
-Avec Continuum pour téléphones, une nouvelle expérience pour les appareils mobiles Windows 10 compatibles, les utilisateurs peuvent connecter leurs téléphones à un moniteur et même à une souris et un clavier pour les utiliser comme un ordinateur portable. (Pour plus d’informations, voir l’article [Continuum pour téléphones](http://go.microsoft.com/fwlink/p/?LinkID=699431).)
+With Continuum for Phones, a new experience for compatible Windows 10 mobile devices, users can connect their phones to a monitor and even use a mouse and keyboard to make their phones work like a laptop. (For more info, see the [Continuum for Phone article](http://go.microsoft.com/fwlink/p/?LinkID=699431).)
 
-Tailles d’écran
--   De 4 à 5 pouces pour les téléphones
--   De 5,5 à 7pouces pour les phablettes
+Screen sizes
+-   4'' to 5'' for phone
+-   5.5'' to 7'' for phablet
 
-![windows Phone](images/device-primer/1894834-hig-device-primer-03.png)
+![windows phone](images/device-primer/1894834-hig-device-primer-03.png)
 
-Utilisation type
--   Le mode portrait est le mode le plus utilisé, avant tout parce qu’il permet de tenir facilement son téléphone dans une main tout en interagissant avec l’ensemble des fonctionnalités. Toutefois, certaines expériences sont plus pratiques en mode paysage, comme afficher des photos et des vidéos, lire un livre ou rédiger un texte.
--   La plupart du temps, les téléphones sont utilisés par une seule personne : leur propriétaire.
--   Toujours à portée de main, généralement au fond d’une poche ou d’un sac.
--   On utilise généralement son téléphone sur de courtes durées.
--   Les utilisateurs effectuent souvent plusieurs tâches lorsqu’ils utilisent leur téléphone.
--   L’utilisateur saisit son texte par salves.
+Typical usage
+-   Primarily used in portrait orientation, mostly due to the ease of holding the phone with one hand and being able to fully interact with it that way, but there are some experiences that work well in landscape, such as viewing photos and video, reading a book, and composing text.
+-   Mostly used by just one person, the owner of the device.
+-   Always within reach, usually stashed in a pocket or a bag.
+-   Used for brief periods of time.
+-   Users are often multitasking when using the phone.
+-   Text is entered in short bursts.
 
-Considérations relatives à l’interface utilisateur
--   La taille réduite des écrans de téléphone permet l’affichage d’une seule image à la fois, en mode portrait ou paysage. Tous les modèles de navigation hiérarchique d’un téléphone utilisent le modèle de type « extraction », l’utilisateur pouvant se déplacer d’une couche d’interface utilisateur à une seule image à l’autre.
+UI considerations
+-   The small size of a phone's screen allows only one frame at a time to be viewed in both portrait and landscape orientations. All hierarchical navigation patterns on a phone use the "drill" model, with the user navigating through single-frame UI layers.
 
--   Comme les téléphones, les phablettes peuvent uniquement afficher une image à la fois en orientation portrait. Cependant, l’espace disponible étant plus grand sur l’écran d’une phablette, les utilisateurs peuvent passer de l’orientation portrait à l’orientation paysage, en conservant cette dernière. Ainsi, deux images de l’application peuvent être visibles en même temps.
+-   Similar to phones, phablets in portrait mode can view only one frame at a time. But with the greater screen real estate available on a phablet, users have the ability to rotate to landscape orientation and stay there, so two app frames can be visible at a time.
 
--   Dans les deux orientations, assurez-vous que l’espace disponible à l’écran est suffisant pour la barre d’application lorsque le clavier visuel est affiché.
+-   In both landscape and portrait orientations, be sure that there's enough screen real estate for the app bar when the on-screen keyboard is up.
 
-Entrées
--   Interaction tactile
--   Voix
+Inputs
+-   Touch
+-   Voice
 
-Fonctionnalités de l’appareil type
+Typical device capabilities
 -   Microphone
--   Appareil photo
--   Capteurs de mouvement
--   Capteurs d’emplacement
+-   Camera
+-   Movement sensors
+-   Location sensors
 
  
 
-## Tablettes
+## Tablets
 
 
-Les tablettes PC ultra-portables sont dotées d’un écran tactile, d’un appareil photo, de microphones et d’accéléromètres. En général, leur écran mesure entre 7 et 13,3 pouces.
+Ultra-portable tablet computers are equipped with touchscreens, cameras, microphones, and accelerometers. Tablet screen sizes usually range from 7” to 13.3”.
 
-Tailles d’écran
--   De 7 à 13,3 pouces
+Screen sizes
+-   7” to 13.3”
 
-![appareil de type tablette](images/device-primer/1894834-hig-device-primer-05.png)
+![a tablet device](images/device-primer/1894834-hig-device-primer-05.png)
 
-Utilisation type
--   Le propriétaire d’une tablette l’utilise à 80 % environ, les 20 % restants étant réservés au partage.
--   On l’utilise souvent à la maison, en tant que complément, en regardant la télévision.
--   Les tablettes sont utilisées pendant de plus longues périodes que les téléphones et les phablettes.
--   L’utilisateur saisit son texte par salves.
+Typical usage
+-   About 80% of tablet use is by the owner, with the other 20% being shared use.
+-   It’s most commonly used at home as a companion device while watching TV.
+-   It’s used for longer periods than phones and phablets.
+-   Text is entered in short bursts.
 
-Considérations relatives à l’interface utilisateur
--   Dans les orientations paysage et portrait, les tablettes autorisent l’affichage de deux images à la fois.
--   La fonction système de retour se trouve sur la barre de navigation.
+UI considerations
+-   In both landscape and portrait orientations, tablets allow two frames at a time.
+-   System back is located on the navigation bar.
 
-Entrées
--   Interaction tactile
--   Stylet
--   Clavier externe (parfois)
--   Souris (parfois)
--   Voix (parfois)
+Inputs
+-   Touch
+-   Stylus
+-   External keyboard (occasionally)
+-   Mouse (occasionally)
+-   Voice (occasionally)
 
-Fonctionnalités de l’appareil type
--   Appareil photo
+Typical device capabilities
+-   Camera
 -   Microphone
--   Capteurs de mouvement
--   Capteurs d’emplacement
+-   Movement sensors
+-   Location sensors
 
  
 
-## PC et portables
+## PCs and laptops
 
 
-Les PC et portables Windows comprennent une large gamme d’appareils et de tailles d’écran. En règle générale, les PC et les portables peuvent afficher davantage d’informations que les téléphones ou les tablettes.
+Windows PCs and laptops include a wide array of devices and screen sizes. In general, PCs and laptops can display more info than phone or tablets.
 
-Tailles d’écran
--   13pouces et plus
+Screen sizes
+-   13” and greater
 
-![pc](images/device-primer/1894834-hig-device-primer-06-349.png)
+![a pc](images/device-primer/1894834-hig-device-primer-06-349.png)
 
-Utilisation type
--   Les applications installées sur les ordinateurs de bureau et les portables présentent une utilisation partagée mais sont utilisées par un seul utilisateur à la fois, généralement sur des périodes plus longues.
+Typical usage
+-   Apps on desktops and laptops see shared use, but by one user at a time, and usually for longer periods.
 
-Considérations relatives à l’interface utilisateur
--   Les applications peuvent inclure un affichage fenêtré, dont la taille est déterminée par l’utilisateur. Selon la taille des fenêtres, une à trois images peuvent s’afficher. Sur les moniteurs de grande taille, l’application peut inclure plus de trois images.
+UI considerations
+-   Apps can have a windowed view, the size of which is determined by the user. Depending on window size, there can be between one and three frames. On larger monitors, the app can have more than three frames.
 
--   Lorsqu’il utilise une application sur un ordinateur de bureau ou portable, l’utilisateur contrôle les fichiers de l’application. En tant que concepteur d’applications, veillez à fournir les mécanismes permettant de gérer le contenu de votre application. Vous pouvez envisager d’inclure des fonctions et commandes comme «Enregistrer sous», «Fichiers récents», etc.
+-   When using an app on a desktop or laptop, the user has control over app files. As an app designer, be sure to provide the mechanisms to manage your app’s content. Consider including commands and features such as "Save As", "Recent files", and so on.
 
--   L’arrière-plan système est facultatif. Lorsqu’un développeur d’application choisit de l’afficher, celui-ci apparaît dans la barre de titre de l’application.
+-   System back is optional. When an app developer chooses to show it, it appears in the app title bar.
 
-Entrées
--   Souris
--   Clavier
--   Écran tactile sur ordinateur portable et ordinateur tout-en-un.
--   Des boîtiers de commande, tels que des manettes Xbox, sont parfois utilisés.
+Inputs
+-   Mouse
+-   Keyboard
+-   Touch on laptops and all-in-one desktops.
+-   Gamepads, such as the Xbox controller, are sometimes used.
 
-Fonctionnalités de l’appareil type
--   Appareil photo
--   Microphone
-
- 
-
-## Appareils SurfaceHub
-
-
-L’appareil de collaboration d’équipe à écran large Microsoft SurfaceHub est conçu pour être utilisé simultanément par plusieurs personnes.
-
-Tailles d’écran
--   55 et 84pouces
-
-![surface hub](images/device-primer/1894834-hig-device-primer-07-349.png)
-
-Utilisation type
--   Les applications installées sur Surface Hub présentent une utilisation partagée sur de courtes périodes, telles que des réunions.
-
--   Les appareils Surface Hub sont généralement fixes et sont rarement déplacés.
-
-Considérations relatives à l’interface utilisateur
--   Les applications installées sur Surface Hub peuvent présenter quatre états: complet (affichage plein écran standard), arrière-plan (masqué lorsque l’application est en cours d’exécution, disponible dans le sélecteur de tâches) remplissage (affichage fixe occupant tout l’espace disponible à l’écran) et ancré (affichage variable occupant le côté gauche ou droit de l’écran).
--   En mode ancré ou en mode remplissage, le système affiche la barre latérale Skype et réduit l’application horizontalement.
--   L’arrière-plan système est facultatif. Lorsqu’un développeur d’application choisit de l’afficher, celui-ci apparaît dans la barre de titre de l’application.
-
-Entrées
--   Commandes tactiles
--   Stylet
--   Voix
--   Clavier (à l’écran/distant)
--   Pavé tactile (à distance)
-
-Fonctionnalités classiques d’appareil
--   Appareil photo
+Typical device capabilities
+-   Camera
 -   Microphone
 
  
 
-## Appareil Windows IoT
+## Surface Hub devices
 
 
-Les appareils IoT Windows sont une nouvelle catégorie d’appareils centrés sur l’ajout de petits composants électroniques, de capteurs et de la connectivité aux objets physiques. Ces appareils sont généralement connectés à un réseau ou à Internet afin d’envoyer les données captées et d’interagir avec elles, le cas échéant. Ces appareils peuvent être dépourvus d’écran (on dit alors de ces appareils qu’ils sont « sans périphérique de contrôle ») ou connectés à un écran de petite taille (on parle alors d’appareils « avec périphérique de contrôle ») avec une taille d’écran généralement de 3,5 pouces ou plus petite.
+Microsoft Surface Hub is a large-screen team collaboration device designed for simultaneous use by multiple users.
 
-Tailles d’écran
--   3,5 pouces ou inférieure
--   Certains appareils ne possèdent pas d’écran
+Screen sizes
+-   55” and 84''
 
-![appareil iot](images/device-primer/1894834-hig-device-primer-02.png)
+![a surface hub](images/device-primer/1894834-hig-device-primer-07-349.png)
 
-Utilisation type
--   Ces appareils sont généralement connectés à un réseau ou à Internet afin d’envoyer les données captées et d’interagir avec elles, le cas échéant.
--   Ils ne peuvent exécuter qu’une seule application à la fois, à la différence des téléphones ou d’autres appareils de plus grande taille.
--   Ces appareils ne sont pas destinés à être utilisés en permanence : ils sont présents quand vous en avez besoin et s’éclipsent lorsque vous n’en avez pas l’utilité.
--   Les applications ne disposent nécessairement pas d’une affordance d’arrière-plan : cet élément est déterminé par chaque développeur.
+Typical usage
+-   Apps on Surface Hub see shared use for short periods of time, such as in meetings.
 
-Considérations relatives à l’interface utilisateur
--   Les appareils dits « sans périphérique de contrôle » ne possèdent pas d’écran.
--   L’affichage des appareils dits « avec périphérique de contrôle » est minimal, et ne comprend que le nécessaire compte tenu de l’espace restreint et des fonctionnalités limitées de l’écran.
--   L’orientation est la plupart du temps verrouillée, afin que votre application n’utilise qu’un seul sens d’affichage.
+-   Surface Hub devices are mostly stationary and rarely moved.
 
-Entrées
--   Variable, dépend de l’appareil
+UI considerations
+-   Apps on Surface Hub can appear in one of four states - full (standard full-screen view), background (hidden from view while the app is still running, available in task switcher), fill (a fixed view that occupies the available stage area), and snapped (variable view that occupies the right or left sides of the stage).
+-   In snapped mode or fill modes, the system displays the Skype sidebar and shrinks the app horizontally.
+-   System back is optional. When an app developer chooses to show it, it appears in the app title bar.
 
-Fonctionnalités de l’appareil type
--   Variable, dépend de l’appareil
+Inputs
+-   Touch
+-   Pen
+-   Voice
+-   Keyboard (on-screen/remote)
+-   Touchpad (remote)
+
+Typical device capabilities
+-   Camera
+-   Microphone
+
+ 
+
+## Windows IoT devices
+
+
+Windows IoT devices are an emerging class of devices centered around embedding small electronics, sensors, and connectivity within physical objects. These devices are usually connected through a network or the Internet to report on the real-world data they sense, and in some cases act on it. Devices can either have no screen (also known as “headless” devices) or are connected to a small screen (known as “headed” devices) with a screen size usually 3.5” or smaller.
+
+Screen sizes
+-   3.5'' or smaller
+-   Some devices have no screen
+
+![an iot device](images/device-primer/1894834-hig-device-primer-02.png)
+
+Typical usage
+-   Usually connected through a network or the Internet to report on the real-world data they sense, and in some cases act on it.
+-   These devices can only run one application at a time unlike phones or other larger devices.
+-   It isn’t something that is interacted with all the time, but instead is available when you need it, out of the way when you don’t.
+-   App doesn’t have a dedicated back affordance, that is the developers responsibility.
+
+UI considerations
+-   "headless" devices have no screen.
+-   Display for “headed” devices is minimal, only showing what is necessary due to limited screen real estate and functionality.
+-   Orientation is most times locked, so your app only needs to consider one display direction.
+
+Inputs
+-   Variable, depending on the device
+
+Typical device capabilities
+-   Variable, depending on the device
 
  
 
@@ -199,6 +199,6 @@ Fonctionnalités de l’appareil type
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

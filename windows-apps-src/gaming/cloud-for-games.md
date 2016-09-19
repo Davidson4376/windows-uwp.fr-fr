@@ -1,37 +1,37 @@
 ---
 author: joannaleecy
-title: Utilisation des services de cloud computing pour les jeux UWP
-description: "Apprenez-en davantage sur l’implémentation de services de cloud computing en tant que serveur principal pour vos jeux UWP."
+title: Using cloud services for UWP games
+description: Learn more about implementing cloud as a backend for your UWP games.
 ms.assetid: 1a7088e0-0d7b-11e6-8e05-0002a5d5c51b
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 8bf42e9c2c2e074240eb8e7b94efdfbca65cc7f9
+ms.sourcegitcommit: 0b2d81daa8bd0fd5694b81fa14fcd064e1600d35
+ms.openlocfilehash: b23c33fac9ac8fe5e2d5563a0af6824c82a3969b
 
 ---
-#  Utilisation des services de cloud computing pour les jeux UWP
+#  Using cloud services for UWP games
 
-La plateforme Windows universelle (UWP) dans Windows10 propose un ensemble d’API qui peuvent être utilisées sur les appareils Microsoft pour le développement de jeux. Lorsque vous développez des jeux sur différentes plateformes et différents appareils, vous pouvez utiliser un serveur principal dans le cloud pour accroître leur portée en fonction de la demande.
+The Universal Windows Platform (UWP) in Windows 10 offers a set of APIs that can be used for developing games across Microsoft devices. When developing games across platforms and devices, you can make use of a cloud backend to help scale your game according to demand.
 
-##  Qu’est-ce que le cloud computing?
+##  What is cloud computing?
 
-Le cloud computing utilise des ressources informatiques et des applications à la demande sur Internet pour stocker et traiter les données de vos appareils. Le terme _cloud_ est une métaphore faisant référence à la disponibilité des vastes ressources qu’il contient (ressources non locales). Vous accédez à celles-ci à partir d’emplacements non spécifiques.
-Le principe de cloud computing offre une nouvelle façon de consommer les ressources et les logiciels. Les utilisateurs n’ont plus besoin de payer à l’avance pour l’intégralité du produit ou des ressources. Au lieu de cela, ils peuvent consommer la plateforme, les logiciels et les ressources en tant que service. Les fournisseurs de services de cloud computing facturent souvent leurs clients d’après des plans d’utilisation ou de services.
+Cloud computing uses on demand IT resources and applications over the internet to store and process data for your devices. The term _cloud_ is a metaphor for the availability of vast resources out there (not local resources) that you can access from non-specific locations.
+The principle of cloud computing offers a new way in which resources and software can be consumed. Users no longer need to pay for the full complete product or resources upfront, but instead are able to consume platform, software, and resources as a service. Cloud providers often bill their customers according to usage or service plan offerings.
 
-##  Pourquoi utiliser des services de cloud computing?
+##  Why use cloud services?
 
-L’un des avantages à utiliser des services de cloud computing pour les jeux réside dans le fait que vous n’avez pas besoin d’investir dans des serveurs physiques ni de les payer au comptant. Vous avez uniquement besoin de payer a posteriori en fonction du plan d’utilisation ou de services mis en place. C’est un moyen de gérer les risques induits par le développement d’un nouveau titre de jeu. 
+One advantage of using cloud services for games is that you do not need to invest in physical hardware servers upfront, but only need to pay according to usage or service plans at a later stage. It is one way to help manage the risks involved in developing a new game title. 
 
-Un autre avantage réside dans le fait que votre jeu peut s’appuyer sur un large éventail de ressources de cloud computing pour gagner en évolutivité (gestion efficace des hausses soudaines du nombre de joueurs simultanés, des calculs de jeu en temps réel ou des exigences liées aux données). Cela préserve la stabilité des performances de votre jeu, à tout moment. En outre, les ressources de cloud computing sont accessibles depuis tout type d’appareil s’exécutant sur tout type de plateforme, n’importe où dans le monde. Cela signifie que vous êtes en mesure de proposer votre jeu aux utilisateurs du monde entier.
+Another advantage is that your game can tap into vast cloud resources to achieve scalability (effectively manage any sudden spikes in the number of concurrent players, intense real-time game calculations or data requirements). This keeps the performance of your game stable around the clock. Furthermore, cloud resources can be accessed from any device running on any platform anywhere in the world, which means that you are able to bring your game to everyone globally.
 
-Il est important de proposer aux joueurs une expérience de jeu incroyable. Étant donné que les serveurs de jeu qui s’exécutent dans le cloud ne dépendent pas de mises à jour côté client, ils offrent à votre jeu un environnement mieux contrôlé et plus sécurisé dans l’ensemble.   Vous pouvez également parvenir à une cohérence de jeu dans le cloud en ne faisant jamais confiance au client et en adoptant une logique de jeu côté serveur. Rien ne vous empêche non plus de configurer les connexions d’un service à l’autre pour parvenir à une expérience de jeu mieux intégrée. Par exemple, vous pouvez lier les achats dans le jeu à différents modes de paiement, créer une passerelle entre différents réseaux de jeux et partager les mises à jour dans le jeu sur les portails de réseaux sociaux les plus courants comme Facebook et Twitter. 
+Delivering an amazing gameplay experience to your players is important. Because game servers running in the cloud are independent of client-side updates, they can give you a more controlled and secure environment for your game overall.   You can also achieve gameplay consistency through the cloud by never trusting the client and having server side game logic. Service-to-service connections can also be configured to allow a more integrated gaming experience; examples include linking in-game purchases to various payment methods, bridging over different gaming networks, and sharing in-game updates to popular social media portals such as Facebook and Twitter. 
 
-Vous pouvez également utiliser des serveurs de cloud computing dédiés pour créer un vaste univers de jeu permanent, construire une communauté de joueurs, collecter et analyser les données des joueurs dans le temps afin d’améliorer l’expérience de jeu et optimiser le modèle de conception de monétisation de votre jeu.
+You can also use dedicated cloud servers to create a large persistent game world, build up a gamer community, collect and analyze gamer data over time to improve gameplay, and optimize your game's monetization design model.
 
-En outre, les jeux qui nécessitent des fonctionnalités de gestion des données de jeu et beaucoup de ressources (par exemple, les jeux sociaux dotés de mécanismes multijoueurs asynchrones) peuvent être implémentés à l’aide de services de cloud computing.
+In addition, games that require intensive game data management capabilities like social games with asynchronous multiplayer mechanics can be implemented using cloud services.
 
-##  Comment les entreprises spécialisées dans le développement de jeux vidéo utilisent-elles la technologie de cloud computing?
+##  How game companies use the cloud technology
 
-Découvrez comment des développeurs ont implémenté des solutions de cloud computing dans leurs jeux.
+Learn how other developers have implemented cloud solutions in their games.
 
 <table>
     <colgroup>
@@ -41,157 +41,157 @@ Découvrez comment des développeurs ont implémenté des solutions de cloud com
     <col width="30%" />
     </colgroup>
     <tr class="header">
-        <th>Développeur</th>
+        <th>Developer</th>
         <th>Description</th>
-        <th>Principaux scénarios de jeu</th>
-        <th>En savoir plus</th>
+        <th>Key game scenarios</th>
+        <th>Learn more</th>
     </tr>
     <tr>
         <td>[343 Industries](https://www.halowaypoint.com/)</td>
-        <td>_Halo5: Guardians_ a mis en œuvre les [Spartan Companies](https://www.halowaypoint.com/spartan-companies) et en a fait sa plateforme de jeu sur les réseaux sociaux en s’appuyant sur Microsoft Azure DocumentDB, une solution choisie pour sa rapidité et sa flexibilité en raison de ses fonctionnalités d’indexation automatique.</td>
+        <td>_Halo 5: Guardians_ implemented [Halo: Spartan Companies](https://www.halowaypoint.com/spartan-companies) as its social gameplay platform by using Microsoft Azure DocumentDB, which was selected for its speed and flexibility due to its auto-indexing capabilities.</td>
         <td>
             <ul>
-                <li>Couche Données évolutive pour gérer la création de groupes et l’expérience de jeu en mode multijoueur <li>Intégration des jeux et des réseaux sociaux <li>Demandes de données en temps réel par le biais de plusieurs attributs <li>Synchronisation des scores et statistiques de jeu </ul>
+                <li>Scalable data-tier to handle groups creation/management for multiplayer gameplay <li>Game and social media integration <li>Real-time queries of data through multiple attributes <li>Synchronization of gameplay achievements and stats </ul>
         </td>
         <td>
             <ul>
-                <li>[Implémentation d’une expérience de jeu sur les réseaux sociaux avec AzureDocumentDB](https://azure.microsoft.com/blog/how-halo-5-guardians-implemented-social-gameplay-using-azure-documentdb/)</td>
+                <li>[Social gameplay implemented using Azure DocumentDB](https://azure.microsoft.com/blog/how-halo-5-guardians-implemented-social-gameplay-using-azure-documentdb/)</td>
             </ul>
     </tr>
     <tr>
         <td>[Illyriad Games](http://web.ageofascent.com/)</td>
-        <td>Illyriad Games a créé _Age of Ascent_, un jeu3D épique dans l’espace de type MMO (en ligne massivement multijoueur) auquel il est possible de jouer sur les appareils équipés de navigateurs modernes. Par conséquent, ce jeu est utilisable sans plug-in sur PC, ordinateurs portables, téléphones portables et autres appareils mobiles. Le jeu utilise ASP.NET Core, HTML5, WebGL et MicrosoftAzure.</td>
+        <td>Illyriad Games created _Age of Ascent_, a massively multiplayer online (MMO) epic 3D space game that can be played on devices that have modern browsers. So this game can be played on PCs, laptops, mobile phones and other mobile devices without plug-ins. The game uses ASP.NET Core, HTML5, WebGL, and Microsoft Azure.</td>
         <td>
             <ul>
-                <li>Jeu multiplateforme sur navigateur <li>Grand monde ouvert, persistant et unique <li>Gestion d’importants calculs de jeu en temps réel <li>Évolutivité en fonction du nombre de joueurs </ul>
+                <li>Cross-platform, browser-based game <li>Single large persistent open world <li>Handles intensive real-time gameplay calculations <li>Scales with number of players </ul>
         </td>
         <td>
             <ul>
-                <li>[Gestion des composants de jeu en tant que microservices avec Azure Service Fabric (vidéo)](https://channel9.msdn.com/Events/Build/2016/KEY02#time=57m20s)  
-                <li>[Entretien avec les développeurs d’Age of Ascent (vidéo)](https://channel9.msdn.com/Shows/Azure-Friday/Age-of-Ascent-from-Illyriad-Powered-by-Azure-Service-Fabric-and-ASPNET)
+                <li>[Manage game components as microservices using Azure Service Fabric (video)](https://channel9.msdn.com/Events/Build/2016/KEY02#time=57m20s)  
+                <li>[Interview with Age of Ascent developers (video)](https://channel9.msdn.com/Shows/Azure-Friday/Age-of-Ascent-from-Illyriad-Powered-by-Azure-Service-Fabric-and-ASPNET)
             </ul>
         </td>
     </tr>
     <tr>
         <td>[Next Games](http://www.nextgames.com/)</td>
-        <td>Next Games est le créateur du jeu vidéo _The Walking Dead: No Man’s Land_ d’après une série originale d’AMC. Le jeu The Walking Dead utilisait Azure comme serveur principal. Le week-end de son ouverture, 1000000de téléchargements ont eu lieu. Dès la première semaine, il était numéro1 des applications gratuites de l’AppStore sur iPhone et iPad aux États-Unis, numéro1 des applications gratuites dans 12pays et numéro1 des jeux gratuits dans 13pays.
+        <td>Next Games is the creator of _The Walking Dead: No Man's Land_ video game which is based on AMC's original series. The Walking Dead game used Azure as the backend. It had 1,000,000 downloads in the opening weekend and within the first week, the game became #1 iPhone & iPad Free App in the U.S. App Store, #1 Free App in 12 countries, and #1 Free Game in 13 countries.
         </td>
         <td>
             <ul>
-                <li>Système multiplateforme <li>Mode multijoueur <li>Performances élastiques à grande échelle </ul>
+                <li>Cross-platform <li>Turn based multiplayer <li>Elastically scale performance </ul>
         </td>
         <td>
             <ul>
-                <li>[Entretien avec KalleHiitola, directeur de Next Games (vidéo)](https://channel9.msdn.com/Blogs/AzureDocumentDB/azure-documentdb-walking-dead)
-                <li>[The Walking Dead utilise DocumentDB pour un cycle de développement plus rapide et une expérience de jeu plus conviviale](https://azure.microsoft.com/blog/the-walking-dead-no-mans-land-game-soars-to-1-with-azure-documentdb/)
+                <li>[Interview with Kalle Hiitola, CTO of Next Games (video)](https://channel9.msdn.com/Blogs/AzureDocumentDB/azure-documentdb-walking-dead)
+                <li>[Walking Dead uses DocumentDB for faster development cycle and more engaging gameplay](https://azure.microsoft.com/blog/the-walking-dead-no-mans-land-game-soars-to-1-with-azure-documentdb/)
             </ul>
     </tr>
     </td>
-        <td>[Pixels Squad](http://www.crimecoast.com/)</td>
-        <td>Pixels Squad a développé _Crime Coast_ à l’aide du moteur de jeu Unity et d’Azure. _Crime Coast_ est un jeu social de stratégie disponible sur les plateformes Android, iOS et Windows. Ont été utilisés dans ce jeu le stockage d’objets Blob Azure, un cache Azure Redis géré, un ensemble d’ordinateurs virtuels IIS à charge équilibrée et un hub de notification Microsoft. Découvrez comment cette société a géré la mise à l’échelle et l’augmentation du nombre de joueurs avec 5000joueurs simultanés.
+        <td>[Pixel Squad](http://www.crimecoast.com/)</td>
+        <td>Pixel Squad developed _Crime Coast_ using Unity game engine and Azure. _Crime Coast_ is a social strategy game available on the Android, iOS and Windows platform. Azure Blob storage, Managed Azure Redis Cache, an array of load balanced IIS VMs, and Microsoft Notification hub were used in their game. Learn how they managed scaling and handled players surge with 5000 simultaneous players.
         </td>
         <td>
             <ul>
-                <li>Système multiplateforme <li>Jeu en ligne en mode multijoueur <li>Système évolutif en fonction du nombre de joueurs </ul>
+                <li>Cross-platform <li>Multiplayer online game <li>Scale with number of players </ul>
         </td>
         <td>
             <ul>
-                <li>[Comment le jeu MMO Crime Coast a utilisé Azure Cloud Services](https://channel9.msdn.com/Blogs/The-Game-Blog/BizSpark-Interview-with-Pixel-Squad-How-the-used-Azure-Cloud-Services-to-make-an-MMO-with-a-3-man-te)
+                <li>[How Crime Coast MMO game used Azure Cloud Services](https://channel9.msdn.com/Blogs/The-Game-Blog/BizSpark-Interview-with-Pixel-Squad-How-the-used-Azure-Cloud-Services-to-make-an-MMO-with-a-3-man-te)
             </ul>
         </td>
     </tr> 
 </table>
 
     
-### Autres liens
+### Other links
 
-* [Azure, l’arme secrète de Hitcents, Game Troopers et InnoSpark](http://news.microsoft.com/features/game-developers-use-microsoft-azure-as-secret-sauce-for-scale-and-growth-2/)
-* [Les start-up du jeu du programme Bizspark utilisent Azure](https://blogs.technet.microsoft.com/bizspark_featured_startups/2015/09/25/azure-open-for-gaming-startups/)
-
-
-## Comment concevoir votre serveur principal dans le cloud
-
-Alors que les fabricants et les concepteurs de jeu discutent des fonctions et fonctionnalités nécessaires, nous vous recommandons de vous pencher sur la façon dont vous voulez concevoir votre infrastructure de jeu. À partir du moment où vous voulez développer des jeux pour différents appareils et sur différentes plateformes parmi les principales, pensez à AzureCloud comme serveur principal pour votre jeu.
-
-### Guides de formation étape par étape
-
-* [Build 2016 Codelabs: utilisation de Microsoft Azure App Service et du serveur principal Microsoft SQL Azure pour enregistrer le score du jeu](https://github.com/Microsoft-Build-2016/CodeLabs-GameDev-6-Azure)
-* [Conception de la stratégie de mobile engagement de votre jeu](https://azure.microsoft.com/documentation/articles/mobile-engagement-gaming-scenario/)
-* [Prise en main d’Azure Mobile Engagement pour le déploiement de l’application Unity pour iOS](https://azure.microsoft.com/documentation/articles/mobile-engagement-unity-ios-get-started/)
-
-### Comprendre IaaS, PaaS ou SaaS
-
-Tout d’abord, vous devez prendre en considération le niveau de service le mieux adapté à votre jeu. Une bonne connaissance des trois services suivants et de leurs différences peut vous aider à déterminer l’approche à adopter pour créer votre serveur principal.
-
-* [Infrastructure en tant que service (IaaS)](https://azure.microsoft.com/overview/what-is-iaas/)
-
-    L’infrastructure en tant que service (IaaS) est une infrastructure informatique instantanée, mise en service et gérée via Internet. Imaginez pouvoir utiliser de nombreuses machines immédiatement disponibles pour rapidement augmenter ou réduire votre offre, en fonction de la demande. L’infrastructure en tant que service vous permet d’éviter d’acheter vos propres serveurs physiques et toute autre infrastructure de centre de données, ainsi qu’elle vous libère de la complexité de tels systèmes.
-
-* [Plateforme en tant que service (PaaS)](https://azure.microsoft.com/overview/what-is-paas/)
-
-    La plateforme en tant que service (PaaS) est comme l’infrastructure en tant que service, à ceci près qu’elle intègre également une gestion de l’infrastructure comme les serveurs, le stockage et la mise en réseau. Aussi, non seulement vous n’êtes pas obligé d’acheter des serveurs physiques et une infrastructure de base de données, mais vous n’êtes pas obligé non plus d’acheter ni de gérer des licences logicielles, une infrastructure applicative sous-jacente, un middleware, des outils de développement ou autres ressources.
-
-* Logiciel en tant que service (SaaS)
-
-    Les logiciels en tant que service sont habituellement des applications déjà développées pour vous et hébergées sur une plateforme dans le cloud existante. Ils sont conçus pour aider à exécuter plus facilement votre jeu sur le service proposé.
+* [Azure as the secret sauce for Hitcents, Game Troopers and InnoSpark](http://news.microsoft.com/features/game-developers-use-microsoft-azure-as-secret-sauce-for-scale-and-growth-2/)
+* [Game startups on Bizspark program using Azure](https://blogs.technet.microsoft.com/bizspark_featured_startups/2015/09/25/azure-open-for-gaming-startups/)
 
 
-### Conception de votre infrastructure de jeu avec MicrosoftAzure
+## How to design your cloud backend
 
-Voici quelques-unes des façons dont vous pouvez utiliser les offres de services de cloud computing Azure pour un jeu. Azure fonctionne avec Windows, Linux et les technologies Open Source que vous connaissez comme Ruby, Python, Java et PHP. Pour plus d’informations, voir [AzureCloud](https://azure.microsoft.com).
+While producers and game designers are in discussion about what game features and functionalities are needed in the game, it is good to start considering how you want to design your game infrastructure. The Azure Cloud can be used as your game backend when you want to develop games for various devices and across different major platforms.
 
-| Conditions requises                 | Scénarios d’activité                            | Offre de produit                      | Fonctionnalités de produit                               |
+### Step by step learning guides
+
+* [Build 2016 Codelabs: Use Microsoft Azure App Service and Microsoft SQL Azure backend to save game score](https://github.com/Microsoft-Build-2016/CodeLabs-GameDev-6-Azure)
+* [Design your game's mobile engagement strategy](https://azure.microsoft.com/documentation/articles/mobile-engagement-gaming-scenario/)
+* [Using Azure Mobile Engagement for Unity iOS deployment](https://azure.microsoft.com/documentation/articles/mobile-engagement-unity-ios-get-started/)
+
+### Understanding IaaS, PaaS or SaaS
+
+First, you need to think about the level of service that is best suited for your game. Knowing the differences in the following three services can help you determine the approach you want to take in building your backend.
+
+* [Infrastructure as a Service (IaaS)](https://azure.microsoft.com/overview/what-is-iaas/)
+
+    Infrastructure as a Service (IaaS) is an instant computing infrastructure, provisioned and managed over the Internet. Imagine having the possibility of many machines readily available to quickly scale up and down depending on demand. IaaS helps you to avoid the cost and complexity of buying and managing your own physical servers and other datacenter infrastructure.
+
+* [Platform as a Service (PaaS)](https://azure.microsoft.com/overview/what-is-paas/)
+
+    Platform as a Service (PaaS) is like IaaS but it also includes management of infrastructure like servers, storage, and networking. So on the top of not buying physical servers and datacenter infrastructure, you also do not need to buy and manage software licenses, underlying application infrastructure, middleware, development tools, or other resources.
+
+* Software as a Service (SaaS)
+
+    Software as a Service is normally an application already built for you and hosted on an existing cloud platform. It is designed to make it even easier for you to start running your game on their service.
+
+
+### Design your game infrastructure using Azure
+
+Following are some ways that Azure cloud offerings can be used for a game. Azure works with Windows, Linux, and familiar open source technologies such as Ruby, Python, Java, and PHP. For more information, see [Azure cloud](https://azure.microsoft.com).
+
+| Requirements                 | Activity scenarios                            | Product Offering                      | Product Capabilities                               |
 |-----------------------------------|-----------------------------------------------|---------------------------------------|----------------------------------------------------|
-| Hébergement de votre domaine dans le cloud     | Répondre efficacement aux requêtes DNS            | [Azure DNS](https://azure.microsoft.com/services/dns/) | Hébergement de votre domaine avec des performances et une disponibilité élevées  |
-| Connexion et vérification d’identité      | Le joueur se connecte et son identité est authentifiée  | [Azure Active Directory](https://azure.microsoft.com/services/active-directory/) | Authentification unique à toute application web sur site et dans le cloud avec une authentification multifacteur            |
-| Jeu utilisant le modèle Infrastructure en tant que service (IaaS)      | Le jeu est hébergé sur des ordinateurs virtuels dans le cloud       | [Ordinateurs virtuels Azure](https://azure.microsoft.com/services/virtual-machines/) | Mise à l’échelle de 1 à plusieurs milliers d’instances d’ordinateur virtuel en tant que serveurs de jeu avec mise en réseau virtuelle intégrée et équilibrage de la charge; cohérence hybride avec les systèmes sur site           |
-| Jeux web ou sur appareil mobile utilisant le modèle Plateforme en tant que service (PaaS)            | Le jeu est hébergé sur une plateforme gérée                | [Azure App Service](https://azure.microsoft.com/services/app-service/) | Plateforme en tant que service pour les jeux sur site web ou sur appareil mobile (soit des ordinateurs virtuels Azure avec middleware/outils de développement/aide à la décision/gestion de base de données)   |
-| Stockage dans le cloud des données de jeu       | Les dernières données de jeu sont stockées dans le cloud et envoyées aux appareils des clients | [Stockage d’objets Blob Azure](https://azure.microsoft.com/services/storage/blobs/)| Aucune restriction sur les types de fichiers qui peuvent être stockés; stockage d’objets pour de grandes quantités de données non structurées comme les images, les fichiers audio, vidéo et plus encore  |
-| Tables de stockage de données temporaires| Les transactions de jeu (changements dans les états de jeu) sont stockées temporairement dans les tables | [Stockage de tables Azure](https://azure.microsoft.com/services/storage/tables/)| Les données de jeu peuvent être stockées dans un schéma flexible en fonction des besoins du jeu |
-| Mise en file d’attente des transactions/requêtes de jeu| Les transactions de jeu sont traitées sous la forme d’une file d’attente | [Azure Queue Storage](https://azure.microsoft.com/services/storage/queues/)| Les files d’attente absorbent les pics de trafic inattendus et peuvent empêcher les serveurs d’être submergés par un flux soudain de demandes en cours de jeu   |
-| Base de données de jeu relationnelle évolutive| Stockage structuré de données relationnelles de type transactions dans le jeu vers base de données | [Base de données SQL Azure](https://azure.microsoft.com/services/sql-database/)| Base de données SQL en tant que service ([comparaison avec SQL sur un ordinateur virtuel](https://azure.microsoft.com/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas/))  |
-| Base de données de jeu évolutive et distribuée à faible latence| Rapidité des lectures, écritures et requêtes de jeu et des données du joueur avec flexibilité du schéma | [Azure DocumentDB](https://azure.microsoft.com/services/documentdb/)| Base de données de documents NoSQL à faible latence, gérée en tant que service   |
-| Utilisation de votre propre centre de données avec les services Azure | Le jeu est récupéré depuis votre propre centre de données et envoyé sur les appareils du client | [Azure Stack](https://azure.microsoft.com/overview/azure-stack/) | Permet à votre organisation de transmettre des services WindowsAzure depuis votre propre centre de données pour plus d’efficacité  |
-| Transfert de blocs de données volumineux| Les fichiers volumineux comme les images de jeu, les fichiers audio et vidéo peuvent être envoyés aux utilisateurs de l’emplacement POP CDN (réseau de diffusion de contenu) le plus proche avec AzureCDN  | [Azure Content Delivery Network](https://azure.microsoft.com/services/cdn/) | Basé sur une topologie réseau moderne avec nœuds centralisés de grande taille, AzureCDN gère les pics soudains de trafic et les charges élevées pour augmenter considérablement la vitesse et la disponibilité, ce qui conduit à une amélioration significative de l’expérience utilisateur  |
-| Faible latence               | Effectuer une mise en cache pour créer des jeux rapides et évolutifs, avec plus de contrôle et de garantie d’isolation des données; peut également être utilisé pour améliorer la fonctionnalité de matchmaking | [Azure Redis Cache](https://azure.microsoft.com/services/cache/) | Débit élevé et accès aux données cohérent et à faible latence pour alimenter rapidement les applications Azure évolutives  |
-| Évolutivité élevée, faible latence | Gère les fluctuations du nombre d’utilisateurs du jeu avec des lectures et des écritures à faible latence | [Azure Service Fabric](https://azure.microsoft.com/services/service-fabric/) | Possibilité d’alimenter les scénarios les plus complexes à faible latence avec volumes importants de données et d’assurer une mise à l’échelle fiable pour gérer un plus grand nombre d’utilisateurs à la fois Service Fabric vous permet de développer des jeux sans avoir à créer un magasin ou un cache séparé, tel que cela est demandé pour les applications sans état |
-| Capacité à collecter des millions d’événements par seconde depuis les appareils                         | Consigner des millions d’événements par seconde depuis les appareils | [Concentrateurs d’événement Azure](https://azure.microsoft.com/services/event-hubs/) | Ingestion de télémétrie à l’échelle du cloud depuis les jeux, les sites web, les applications et les appareils  |
-| Traitement des données de jeu en temps réel  | Effectuer une analyse en temps réel des données des joueurs pour améliorer l’expérience de jeu| [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/) | Traitement du flux en temps réel dans le cloud  |
-| Développement d’une expérience de jeu prédictive         | Créer une expérience de jeu dynamique et personnalisée en fonction des données du joueur  | [Azure Machine Learning](https://azure.microsoft.com/services/machine-learning/) | Service cloud entièrement géré qui vous permet de facilement développer, déployer et partager des solutions d’analyse prédictive  |
-| Collecte et analyse des données de jeu| Traitement parallèle massif des données à partir de bases de données relationnelles et non relationnelles | [Azure Data Warehouse](https://azure.microsoft.com/services/sql-data-warehouse/)| Entrepôt de données élastique en tant que service doté de fonctionnalités adaptées aux besoins des entreprises   |
-| Création de campagnes marketing pour accroître l’utilisation et la fidélisation  | Envoyer des notifications push à certains joueurs pour susciter l’intérêt et encourager des actions de jeu spécifiques en fonction de l’analyse des données | [Mobile engagement](https://azure.microsoft.com/services/mobile-engagement/) |  Augmenter le temps de jeu et la fidélisation des utilisateurs sur toutes les principales plateformes (iOS, Android, Windows, WindowsPhone) |
+| Host your domain in the cloud     | Respond to DNS queries efficiently            | [Azure DNS](https://azure.microsoft.com/services/dns/) | Host your domain with high performance and availability  |
+| Sign in, identity verification      | Gamer signs in and gamer identity is authenticated  | [Azure Active Directory](https://azure.microsoft.com/services/active-directory/) | Single sign-on to any cloud and on-premises web app with multi-factor authentication            |
+| Game using infrastructure as a service model (IaaS)      | Game is hosted on virtual machines in the cloud       | [Azure VMs](https://azure.microsoft.com/services/virtual-machines/) | Scale from 1 to thousands of virtual machine instances as game servers with built-in virtual networking and load balancing; hybrid consistency with on-premises systems           |
+| Web or mobile games using platform as a service model (PaaS)            | Game is hosted on a managed platform                | [Azure App Service](https://azure.microsoft.com/services/app-service/) | PaaS for websites or mobile games (which means Azure VMs with middleware/development tools/BI/DB management)   |
+| Cloud storage for game data       | Latest game data is stored in the cloud and sent to client devices | [Azure Blob Storage](https://azure.microsoft.com/services/storage/blobs/)| No restriction on the kinds of file that can be stored; object storage for large amounts of unstructured data like images, audio, video, and more.  |
+| Temporary data storage tables| Game transactions (changes in game states) are stored in tables temporarily | [Azure Table Storage](https://azure.microsoft.com/services/storage/tables/)| Game data can be stored in a flexible schema according to the needs of the game |
+| Queue game transactions/requests| Game transactions are processed in the form of a queue | [Azure Queue Storage](https://azure.microsoft.com/services/storage/queues/)| Queues absorb unexpected traffic bursts and can prevent servers from being overwhelmed by a sudden flood of requests during the game   |
+| Scalable relational game database| Structured storage of relational data like in-game transactions to database | [Azure SQL Database](https://azure.microsoft.com/services/sql-database/)| SQL database as a service ([Compare with SQL on a VM](https://azure.microsoft.com/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas/))  |
+| Scalable distributed low-latency game database| Fast read, write, and query of game and player data with schema flexibility | [Azure DocumentDB](https://azure.microsoft.com/services/documentdb/)| Low latency NoSQL document database as a service   |
+| Use own datacenter with Azure services | Game is retrieved from your own datacenter and sent to the client devices | [Azure Stack](https://azure.microsoft.com/overview/azure-stack/) | Enables your organization to deliver Azure services from your own datacenter to help you achieve more  |
+| Large data chunks transfer| Large files such as game images, audio, and videos can be sent to users from the nearest Content Delivery Network (CDN) pop location with Azure CDN    | [Azure Content Delivery Network](https://azure.microsoft.com/services/cdn/) | Built on a modern network topology of large centralized nodes, Azure CDN handles sudden traffic spikes and heavy loads to dramatically increase speed and availability, resulting in significant user experience improvements  |
+| Low latency               | Perform caching to build fast, scalable games with more control and guaranteed isolation of data; can be used to improve match-making feature for game as well. | [Azure Redis Cache](https://azure.microsoft.com/services/cache/) | High throughput, consistent low-latency data access to power fast, scalable Azure applications  |
+| High scalability, low latency | Handles fluctuations in the number of game users with low latency read and writes | [Azure Service Fabric](https://azure.microsoft.com/services/service-fabric/) | Able to power the most complex, low-latency, data-intensive scenarios and reliably scale to handle more users at a time. Service Fabric enables you to build games without having to create a separate store or cache, as required for stateless apps |
+| Ability to collect millions of events per second from devices                         | Log millions of events per second from devices | [Azure Event Hubs](https://azure.microsoft.com/services/event-hubs/) | Cloud-scale telemetry ingestion from games, websites, apps, and devices  |
+| Real time processing for game data  | Perform real-time analysis of gamer data to improve gameplay| [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/) | Real-time stream processing in the cloud  |
+| Develop predictive gameplay         | Create customized dynamic gameplay based on gamer data  | [Azure Machine Learning](https://azure.microsoft.com/services/machine-learning/) | A fully managed cloud service that enables you to easily build, deploy, and share predictive analytics solutions  |
+| Collect and analyze game data| Massive parallel processing of data from both relational and non-relational databases | [Azure Data Warehouse](https://azure.microsoft.com/services/sql-data-warehouse/)| Elastic data warehouse as a service with Enterprise class features   |
+| Create marketing campaigns to increase usage and retention  | Send push notifications to targeted players to generate interest and encourage specific game actions according to data analysis | [Mobile engagement](https://azure.microsoft.com/services/mobile-engagement/) |  Increase gameplay time and user retention on all major platforms—iOS, Android, Windows, Windows Phone |
 
 
-##  Ressources pour start-up et développeurs
+##  Startup and developer resources
 
 * [Microsoft BizSpark](https://www.microsoft.com/bizspark/)
 
-    Microsoft BizSpark est un programme international qui favorise la réussite des start-up en offrant un accès gratuit aux services de cloud computing Azure, ainsi qu’aux logiciels et au support technique. Les membres BizSpark reçoivent cinq abonnements Visual Studio Enterprise avec MSDN, chacun avec un crédit Azure mensuel de 150dollars. Cela correspond à un total de 750dollars/mois que les développeurs peuvent dépenser en services Azure. BizSpark est une offre proposée aux start-up privées en activité depuis moins de 5ans et qui génèrent un chiffre d’affaires annuel inférieur à 1million de dollars. Chez Microsoft, nous pensons qu’en aidant les start-up, nous aidons à mettre en place un partenariat productif à long terme.
+    Microsoft BizSpark is a global program that helps startups succeed by giving free access to Azure cloud services, software and support. BizSpark members receive five Visual Studio Enterprise with MSDN subscriptions, each with a $150 monthly Azure credit. This totals $750/month across all five developers to spend on Azure services. BizSpark is available to startups that are privately held, less than 5-years-old, and earn less than $1M in annual revenue. Microsoft believes that by helping startups succeed, we’re helping to build a valued long-term partnership.
     
 * [ID@Xbox](http://www.xbox.com/Developers/id)
 
-    Vous voulez ajouter à votre jeu Windows10 des fonctionnalités XboxLive comme une expérience de jeu multijoueur, un matchmaking multiplateforme, les scores des joueurs, les progrès et les classements? Inscrivez-vous sur ID@Xbox pour obtenir les outils et le support technique dont vous avez besoin. Vous pourrez ainsi libérer votre créativité et renforcer vos chances de réussir. Avant de faire une demande sur ID@Xbox, inscrivez un compte de développeur dans le [Centre de développement Windows](https://developer.microsoft.com/windows/programs/join).
+    If you want to add Xbox Live features like multiplayer gameplay, cross-platform matchmaking, Gamerscore, achievements, and leaderboards to your Windows 10 game, sign up with ID@Xbox to get the tools and support you need to unleash your creativity and maximize your success. Before applying to ID@Xbox, please register a developer account on [Windows Dev Center](https://developer.microsoft.com/windows/programs/join).
 
-## Serveur principal de jeu et logiciels en tant que service
+## Software as a Service for game backend
 
-Voici quelques sociétés qui proposent un serveur principal dans le cloud pour les jeux basés sur les principaux fournisseurs de services de cloud computing. L’intérêt est de vous permettre de vous concentrer sur le développement de votre jeu.
+These are some companies that offer cloud backend for games based on major cloud service providers to allow you to focus on developing your game.
 
 * [GameSparks](http://www.gamesparks.com/)
 
-    GameSparks est une plateforme de développement basé sur le cloud pour les développeurs de jeu, qui leur permet de développer leur jeu côté serveur.
+    GameSparks is a cloud-based development platform for games developers enabling them to build all of their game's server-side
 
 * [Photon Engine](https://www.photonengine.com/en/Photon)
 
-    Photon est une plateforme multijoueur pour les jeux et un moteur de mise en réseau indépendant. Photon propose Photon Cloud, un service entièrement géré de logiciels en tant que service (SaaS). Vous pouvez totalement vous concentrer sur votre client d’application pendant l’hébergement; les opérations serveur et la mise à l’échelle sont toutes prises en charge par ExitGames.
+    Photon is an independent networking engine and multiplayer platform for games. It offers Photon Cloud which offers software as a service (SaaS) and as such is a fully managed service. You can completely concentrate on your application client while hosting; server operations and scaling is all taken care of by Exit Games.
 
 * [Playfab](https://playfab.com/)
 
-    Playfab apporte rapidement et simplement une excellence gestion des jeux en direct et une technologie de serveur principal performante sur appareils mobiles, PC ou consoles de jeux.
+    Playfab brings world-class live game management and backend technology to your mobile, PC, or console game simply and quickly.
 
-## Liens connexes
+## Related links
 
-* [Guide de développement de jeux Windows10](https://msdn.microsoft.com/windows/uwp/gaming/e2e)
-* [MicrosoftAzure](https://azure.microsoft.com/)
+* [Windows 10 game development guide](https://msdn.microsoft.com/windows/uwp/gaming/e2e)
+* [Microsoft Azure](https://azure.microsoft.com/)
 * [Microsoft BizSpark](https://www.microsoft.com/bizspark/)
 * [ID@Xbox](http://www.xbox.com/Developers/id)
 
@@ -202,6 +202,6 @@ Voici quelques sociétés qui proposent un serveur principal dans le cloud pour 
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

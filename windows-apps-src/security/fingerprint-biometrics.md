@@ -1,26 +1,26 @@
 ---
-title: "Empreinte digitale biométrique"
-description: "Cet article explique comment ajouter des empreintes digitales biométriques à votre application de plateforme Windows universelle (UWP)."
+title: Fingerprint biometrics
+description: This article explains how to add fingerprint biometrics to your Universal Windows Platform (UWP) app.
 ms.assetid: 55483729-5F8A-401A-8072-3CD611DDFED2
 author: awkoren
 translationtype: Human Translation
 ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 093924b51c48c3bed71e0a47b10fc80f966b34ac
+ms.openlocfilehash: d2dfbc6c69e8ee97a01bbf0d7ae82488ca62e3cb
 
 ---
 
-# Empreinte digitale biométrique
+# Fingerprint biometrics
 
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Cet article explique comment ajouter des empreintes digitales biométriques à votre application de plateforme Windows universelle (UWP). L’inclusion d’une demande d’authentification par empreinte digitale (biométrique) lorsque l’utilisateur doit valider une action particulière renforce la sécurité de votre application. Par exemple, vous pouvez exiger une authentification par empreinte digitale avant d’autoriser un achat in-app ou avant l’accès à des ressources restreintes. L’authentification par empreinte digitale est gérée par l’intermédiaire de la classe [**UserConsentVerifier**](https://msdn.microsoft.com/library/windows/apps/dn279134) dans l’espace de noms [**Windows.Security.Credentials.UI**](https://msdn.microsoft.com/library/windows/apps/hh701356).
+This article explains how to add fingerprint biometrics to your Universal Windows Platform (UWP) app. Including a request for fingerprint authentication when the user must consent to a particular action increases the security of your app. For example, you could require fingerprint authentication before authorizing an in-app purchase, or access to restricted resources. Fingerprint authentication is managed using the [**UserConsentVerifier**](https://msdn.microsoft.com/library/windows/apps/dn279134) class in the [**Windows.Security.Credentials.UI**](https://msdn.microsoft.com/library/windows/apps/hh701356) namespace.
 
-## Déterminer si l’appareil est doté d’un lecteur d’empreintes digitales
+## Check the device for a fingerprint reader
 
 
-Pour savoir si l’appareil dispose d’un lecteur d’empreintes digitales, appelez la méthode [**UserConsentVerifier.CheckAvailabilityAsync**](https://msdn.microsoft.com/library/windows/apps/dn279138). Même si un appareil prend en charge l’authentification par empreinte digitale, votre application doit fournir aux utilisateurs une option dans Paramètres pour activer ou désactiver l’authentification des empreintes digitales.
+To find out whether the device has a fingerprint reader, call [**UserConsentVerifier.CheckAvailabilityAsync**](https://msdn.microsoft.com/library/windows/apps/dn279138). Even if a device supports fingerprint authentication, your app should still provide users with an option in Settings to enable or disable it.
 
 ```cs
 public async System.Threading.Tasks.Task<string> CheckFingerprintAvailability()
@@ -64,12 +64,12 @@ public async System.Threading.Tasks.Task<string> CheckFingerprintAvailability()
 }
 ```
 
-## Demander le consentement et retourner des résultats
+## Request consent and return results
 
 
-Pour demander à l’utilisateur son consentement par le biais d’une analyse de son empreinte digitale, appelez la méthode [**UserConsentVerifier.RequestVerificationAsync**](https://msdn.microsoft.com/library/windows/apps/dn279139). Pour que l’authentification par empreinte digitale fonctionne, l’utilisateur doit avoir au préalable ajouté une « signature par empreinte digitale » à la base de données d’empreintes digitales.
+To request user consent from a fingerprint scan, call the [**UserConsentVerifier.RequestVerificationAsync**](https://msdn.microsoft.com/library/windows/apps/dn279139) method. For fingerprint authentication to work, the user must have previously added a fingerprint "signature" to the fingerprint database.
 
-Lorsque vous appelez la méthode [**UserConsentVerifier.RequestVerificationAsync**](https://msdn.microsoft.com/library/windows/apps/dn279139), l’utilisateur se voit présenter une boîte de dialogue modale lui demandant une analyse de son empreinte digitale. Vous pouvez inclure un message dans la méthode **UserConsentVerifier.RequestVerificationAsync** qui est présenté à l’utilisateur dans la boîte de dialogue modale, comme vous pouvez le voir sur l’image suivante.
+When you call the [**UserConsentVerifier.RequestVerificationAsync**](https://msdn.microsoft.com/library/windows/apps/dn279139), the user is presented with a modal dialog requesting a fingerprint scan. You can supply a message to the **UserConsentVerifier.RequestVerificationAsync** method that will be displayed to the user as part of the modal dialog, as shown in the following image.
 
 ```cs
 private async System.Threading.Tasks.Task<string> RequestConsent(string userMessage)
@@ -125,6 +125,6 @@ private async System.Threading.Tasks.Task<string> RequestConsent(string userMess
 ```
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

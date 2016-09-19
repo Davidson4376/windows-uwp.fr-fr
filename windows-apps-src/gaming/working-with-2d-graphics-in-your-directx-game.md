@@ -1,77 +1,77 @@
 ---
 author: mtoepke
-title: Graphiques 2D pour jeux DirectX
-description: "Nous allons découvrir comment utiliser les graphismes et les effets2D, puis comment vous en servir dans votre jeu."
+title: 2D graphics for DirectX games
+description: We discuss the use of 2D bitmap graphics and effects, and how to use them in your game.
 ms.assetid: ad69e680-d709-83d7-4a4c-7bbfe0766bc7
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 50782c5923f9c811f5d8e91aa9aee897876e6c24
+ms.openlocfilehash: 7a4c41b24bc4f703f035bb0daf0f1bc280af1e68
 
 ---
 
-# Graphismes2D pour jeux DirectX
+# 2D graphics for DirectX games
 
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Nous allons découvrir comment utiliser les graphiques et les effets 2D, puis comment vous en servir dans votre jeu.
+We discuss the use of 2D bitmap graphics and effects, and how to use them in your game.
 
-Les graphiques 2D sont un sous-ensemble des graphiques 3D qui gèrent des primitives ou des bitmaps 2D. Plus généralement, ils n’utilisent pas la coordonnée z comme le ferait un jeu en 3D, puisque l’action est limitée au plan x-y. Ils utilisent parfois des techniques graphiques 3D pour créer leurs composants visuels, et sont en général plus simples à développer. Si vous faites vos premiers pas dans le monde du jeu, un jeu en 2D constitue un excellent point de départ, et le développement de graphiques 2D peut vous permettre de bien vous familiariser avec DirectX.
+2D graphics are a subset of 3D graphics that deal with 2D primitives or bitmaps. More generally, they don't use a z-coordinate in the way a 3D game might, since the game play is usually confined to the x-y plane. They sometimes use 3D graphics techniques to create their visual components, and they are generally simpler to develop. If you are new to gaming, a 2D game is a great place to start, and 2D graphics development can be a good place for you to get a handle on DirectX.
 
-Vous pouvez développer des graphiques de jeu 2D dans DirectX avec Direct2D ou Direct3D, ou en combinaison. Nombre des classes les plus utiles pour le développement de jeux en2D se trouvent dans Direct3D, telles que la classe [**Sprite**](https://msdn.microsoft.com/library/windows/desktop/bb205601). Direct2D est un ensemble d’API qui vise principalement les interfaces utilisateur et les applications nécessitant une prise en charge pour dessiner les primitives (telles que les cercles, les lignes et les formes polygonales plates). Il n’en fournit pas moins un jeu puissant et performant de classes et de méthodes pour créer des graphiques de jeu, notamment les superpositions, les interfaces et les affichages tête haute (HUD) -- ou pour créer une variété de jeux 2D, simples ou raisonnablement détaillés. Néanmoins, l’approche la plus efficace en matière de création de jeux 2D consiste à utiliser des éléments des deux bibliothèques, et c’est donc celle que nous allons utiliser pour le développement de graphiques 2D dans cette rubrique.
+You can develop 2D gaming graphics in DirectX using either Direct2D or Direct3D, or some combination. Many of the more useful classes for 2D game development are in Direct3D, such as the [**Sprite**](https://msdn.microsoft.com/library/windows/desktop/bb205601) class. Direct2D is a set of APIs that primarily target user interfaces and apps that require support for drawing primitives (such as circles, lines, and flat polygon shapes). With that in mind, it still provides a powerful and performant set of classes and methods for creating game graphics as well, especially when creating game overlays, interfaces, and heads-up displays (HUDs) -- or for creating a variety of 2D games, from simple to reasonably detailed. The most effective approach when creating 2D games, though, is to use elements from both libraries, and that's the way we will approach 2D graphics development in this topic.
 
-## Aperçu rapide des concepts
-
-
-Avant l’avènement du graphisme 3D moderne et du matériel capable de prendre en charge cette technologie, les jeux étaient principalement en 2D, et nombre de leurs techniques graphiques impliquaient de déplacer des blocs de mémoire (souvent des tableaux de données de couleur à traduire ou transformer en pixels à l’écran dans un format 1:1).
-
-Dans DirectX, les graphiques 2D font partie du pipeline 3D. La variété de résolutions d’écran et de matériels graphiques est aujourd’hui beaucoup plus grande, et votre logiciel graphique 2D doit être capable de les prendre en charge sans changement notable de fidélité.
-
-Voici quelques-uns des concepts de base avec lesquels vous devez vous familiariser lorsque vous commencez à développer des graphiques 2D.
-
--   Pixels et coordonnées de raster. Un pixel est un point unique sur un écran à balayage, qui possède sa propre paire de coordonnées (x, y) pour indiquer sa position sur l’écran. (Le terme «pixel» est souvent utilisé de manière interchangeable entre les pixels physiques qui composent l’écran et les éléments de mémoire adressables utilisés pour contenir les couleurs et les valeurs alpha des pixels avant qu’ils ne soient envoyés à l’écran.) Le raster est traité par les API comme une grille rectangulaire d’éléments de pixel, qui a souvent une correspondance 1:1 avec la grille de pixels physique d’un écran. Les systèmes de coordonnées de raster commencent dans le coin supérieur gauche de la grille, au pixel de coordonnées (0, 0).
--   Les graphiques bitmaps (parfois appelés graphiques raster) sont des éléments graphiques représentés sous la forme d’une grille rectangulaire de valeurs de pixels. Les sprites, tableaux de pixels calculés gérés indépendamment du raster, sont un type de graphique bitmap, souvent utilisés pour les personnages ou les objets animés et indépendants de l’arrière-plan dans un jeu. Les différentes trames d’animation d’un sprite sont représentées sous forme de collections de bitmaps appelés « feuilles » ou « lots ». Les arrière-plans sont des objets bitmap plus grands de résolution identique ou supérieure à celle du raster d’écran, et servent souvent de toile(s) de fond pour l’action du jeu.
--   Les graphiques vectoriels sont des graphiques qui utilisent des primitives géométriques, comme des points, des lignes, des cercles des polygones pour définir les objets 2D. Ils sont représentés non sous forme de tableaux de pixels, mais comme les équations mathématiques qui les définissent dans un espace 2D. Ils n’ont pas nécessairement de correspondance 1:1 avec la grille de pixels de l’écran, et doivent être convertis du système de coordonnées dans lequel vous les avez rendus, dans le système de coordonnées raster de l’écran.
--   La traduction est la procédure de calcul du nouvel emplacement d’un point ou d’un vertex dans le même système de coordonnées.
--   La mise à l’échelle est la procédure d’élargissement ou de réduction d’un objet en fonction d’un facteur d’échelle spécifié. Avec une image vectorielle, vous réduisez et agrandissez les vertex de ses composants ; avec une bitmap, vous réduisez ou agrandissez les éléments de pixel. Avec des images bitmap, vous perdez des données de pixel lorsque l’image se réduit, et vous agrandissez chaque pixel lorsque l’image est mise à une échelle plus proche. Dans ce dernier cas, vous utilisez des opérations d’interpolation de couleur de pixel, comme le filtrage bilinéaire, pour lisser les bordures de couleur abruptes entre les pixels agrandis.
--   La rotation est la procédure consistant à faire pivoter un objet autour d’un ou plusieurs axes spécifiés. Avec une image vectorielle, les vertex de la géométrie sont multipliés par rapport à une matrice de rotation afin d’obtenir un vertex pivoté ; avec une image bitmap, différents algorithmes peuvent être employés, chacun avec un degré plus ou moins grand de fidélité dans les résultats. Dans la mise à l’échelle comme dans la traduction, il existe des API spécifiquement conçues pour les opérations de rotation.
--   La transformation est la procédure consistant à prendre un point ou un vertex dans un système de coordonnées et à calculer son point ou vertex correspondant dans un autre système de coordonnées. Cela inclut la traduction, la mise à l’échelle et la rotation, ainsi que d’autres opérations de calcul de coordonnées.
--   Le découpage consiste à retirer des parties de bitmaps ou de géométries qui ne se trouvent pas dans la partie visible de l’écran, ou qui sont masquées par des objets de plus grande priorité visuelle.
--   Le tampon de trame est une zone dans la mémoire, souvent dans la mémoire du matériel graphique lui-même, qui contient la carte de raster finale que vous dessinerez à l’écran. La chaîne d’échange est une collection de tampons, où vous dessinez dans une mémoire tampon d’arrière-plan que vous faites passer à l’avant pour l’afficher quand l’image est prête.
-
-## Considérations de conception
+## Concepts at a glance
 
 
-Le développement de graphiques 2D est un excellent moyen de vous familiariser avec Direct3D. Il vous permet de passer plus de temps sur d’autres aspects très importants du développement de jeu : le son, les commandes et les mécanismes du jeu.
+Before the advent of modern 3D graphics and the hardware that supports it, games were primarily 2D, and many of their graphics techniques involved moving blocks of memory around -- usually arrays of color data that would be translated or transformed to pixels on the screen in a 1:1 fashion.
 
-Dessinez toujours dans une mémoire tampon d’arrière-plan. Dessiner directement dans votre tampon de trame signifie que votre image s’affiche à la réception du signal d’affichage (généralement tous les 1/60e de seconde), même si votre opération de dessin n’est pas terminée !
+In DirectX, 2D graphics are part of the 3D pipeline. There is a much greater variety of screen resolutions and graphics hardware available, and your 2D graphics engine must be able to support them without a significant change in fidelity.
 
-Configurez votre logiciel graphique de sorte qu’il prenne en charge une bonne sélection de résolutions, de 1024x600 à 1920x1080 (ou au-delà). Les utilisateurs de votre jeu vous remercieront si vous prenez en charge la résolution native de leur écran LCD, particulièrement avec les graphiques 2D.
+Here are a few of the basic concepts you should be familiar with when starting 2D graphics development.
 
-En ce qui concerne les visuels, un esthétisme soigné sera votre meilleur atout. Si vos graphiques bitmap n’ont peut-être pas le punch des visuels photoréalistes 3D qui exploitent les fonctionnalités des modèles de nuanceurs les plus récents, un travail graphique en haute résolution de qualité véhicule souvent plus de style et de personnalité -- en sollicitant beaucoup moins les ressources.
+-   Pixels and raster coordinates. A pixel is a single point on a raster display, and has its own (x, y) coordinate pair indicating its location on the display. (The term "pixel" is often used interchangeably between the physical pixels that comprise the display and the addressable memory elements used to hold the color and alpha values of the pixels before they are sent to the display.) The raster is treated by APIs as a rectangular grid of pixel elements, which often has a 1:1 correspondence with the physical pixel grid of a display. Raster coordinate systems start from the upper left, with the pixel at (0, 0) in the upper leftmost corner of the grid.
+-   Bitmap graphics (sometimes called raster graphics) are graphic elements represented as a rectangular grid of pixel values. Sprites -- computed pixel arrays managed independent of the raster -- are one type of bitmap graphic, commonly used for the active characters or background-independent animated objects in a game. The various frames of animation for a sprite are represented as collections of bitmaps called "sheets" or "batches." Backgrounds are larger bitmap objects that are the same resolution or greater than that of the screen raster, and often serve as the backdrop(s) for a game's playfield.
+-   Vector graphics are graphics that use geometric primitives, such as points, lines, circles, and polygons to define 2D objects. They are represented not as arrays of pixels, but as the mathematical equations that define them in a 2D space. They do not necessarily have a 1:1 correspondence with the pixel grid of the display, and must be transformed from the coordinate system that you rendered them in into the raster coordinate system of the display.
+-   Translation is when you take a point or vertex and calculate its new location in the same coordinate system.
+-   Scaling is when you enlarge or shrink an object by a specified scale factor. With a vector image, you shrink and enlarge its component vertices; with a bitmap, you enlarge the pixel elements or diminish them. With bitmap images, you lose pixel data when the image shrinks, and you enlarge the individual pixels when the image is scaled closer. For the latter, you can use pixel color interpolation operations, like bilinear filtering, to smooth out the harsh color boundaries between the enlarged pixels.
+-   Rotation is when you rotate an object about a specified axis or axes. With a vector image, the vertices of the geometry are multiplied against a rotation matrix to obtain the rotated vertex; with a bitmap image, different algorithms can be employed, each with a lesser or greater degree of fidelity in the results. As with scaling and translation, there are APIs specifically for rotation operations.
+-   Transformation is when you take one point or vertex in one coordinate system and calculate its corresponding point or vertex in another coordinate system. This includes translation, scaling, and rotation, as well as other coordinate calculation operations.
+-   Clipping is when you remove portions of bitmaps or geometry that are not within the viewable area of the display, or are hidden by objects with higher view priority.
+-   The frame buffer is an area in memory -- often in the memory of the graphics hardware itself -- that contains the final raster map that you will draw to the screen. The swap chain is a collection of buffers, where you draw in a back buffer and, when the image is ready, you "swap" it to the front and display it.
 
-## Référence
+## Design considerations
 
 
--   [Vue d’ensemble de Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370987)
--   [Démarrage rapide de Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd535473)
--   [Vue d’ensemble de l’interopérabilité entre Direct2D et Direct3D](https://msdn.microsoft.com/library/windows/desktop/dd370966)
+2D graphics development is a great way to get accustomed to developing with Direct3D, and will allow you to spend more time on other critical aspects of game development: audio, controls, and the game mechanics.
 
-> **Remarque**  
-Cet article s’adresse aux développeurs de Windows10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Always draw to a back buffer. Drawing directly to your frame buffer means that your image will be displayed when the signal for display is received (usually every 1/60th of second), even if your drawing operation hasn't completed!
 
- 
+Design your graphics engine to support a good selection of resolutions, from 1024x600 to 1920x1080 (or higher). Your audience will thank you if you support their LCD monitor's native resolution, especially with 2D graphics.
+
+Great artwork will be your greatest asset, when it comes to visuals. While your bitmap graphics may lack the punch of 3D photorealistic visuals using the latest shader model features, great high-resolution artwork can often convey as much or more style and personality -- and with far less of a performance penalty.
+
+## Reference
+
+
+-   [Direct2D overview](https://msdn.microsoft.com/library/windows/desktop/dd370987)
+-   [Direct2D quickstart](https://msdn.microsoft.com/library/windows/desktop/dd535473)
+-   [Direct2D and Direct3D interoperability overview](https://msdn.microsoft.com/library/windows/desktop/dd370966)
+
+> **Note**  
+This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,28 +1,28 @@
 ---
 author: mijacobs
-Description: "Des icônes efficaces s’harmonisent avec la typographie et avec le reste du langage de conception. Elles ne mélangent pas les métaphores et communiquent uniquement les informations nécessaires, le plus rapidement et simplement possible."
-title: "Icônes"
+Description: "Good icons harmonize with typography and with the rest of the design language. They don’t mix metaphors, and they communicate only what’s needed, as speedily and simply as possible."
+title: Icons
 ms.assetid: b90ac02d-5467-4304-99bd-292d6272a014
 label: Icons
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: e5e601bf3ff9d0b1518c86130a5b0fefbb86a773
+ms.openlocfilehash: 9d19107a29c471a811e87fc548656ff2d970754d
 
 ---
 
-# Icônes pour les applications UWP
+# Icons for UWP apps
 
-Des icônes efficaces s’harmonisent avec la typographie et avec le reste du langage de conception. Elles ne mélangent pas les métaphores et communiquent uniquement les informations nécessaires, le plus rapidement et simplement possible. 
+Good icons harmonize with typography and with the rest of the design language. They don’t mix metaphors, and they communicate only what’s needed, as speedily and simply as possible. 
 
-## Gammes de tailles de mise à l’échelle linéaire 
+## Linear scaling size ramps 
 
 <table>
     <tr> 
-        <td>16pxx16px</td>
-        <td>24pxx24px</td>
-        <td>32pxx32px</td>
-        <td>48pxx48px</td>
+        <td>16px x 16px</td>
+        <td>24px x 24px</td>
+        <td>32px x 32px</td>
+        <td>48px x 48px</td>
     </tr>
     <tr> 
         <td>![Icons at 16x16 effective pixels](images/icons-16x16.png)</td>
@@ -32,18 +32,18 @@ Des icônes efficaces s’harmonisent avec la typographie et avec le reste du la
     </tr>
 </table>
 
-## Formes courantes
+## Common shapes
 
-Les icônes doivent généralement optimiser l’espace dont elles disposent et n’inclure qu’un remplissage minime. Ces formes fournissent des points de départ pour le dimensionnement des formes de base. 
+Icons should generally maximize their given space with little padding. These shapes provide starting points for sizing basic shapes. 
 
-![Grille de 32px par 32px](images/icons-common-shapes.png)
+![32px by 32px grid](images/icons-common-shapes.png)
 
-Utilisez la forme qui correspond à l’orientation de l’icône et créez votre composition autour de ces paramètres de base. Les icônes ne doivent pas nécessairement remplir la forme ou tenir entièrement à l’intérieur de cette dernière, et peuvent être ajustées selon les besoins pour garantir un équilibre optimal. 
+Use the shape that corresponds to the icon's orientation and compose around these basic parameters. Icons don't necessarily need to fill or fit completely inside the shape and may be adjusted as needed to ensure optimal balance. 
 
 <table>
     <tr>
-        <td>Cercle<td>
-        <td>Carré</td>
+        <td>Circle<td>
+        <td>Square</td>
         <td>Triangle</td>
     </tr>
     <tr>
@@ -52,8 +52,8 @@ Utilisez la forme qui correspond à l’orientation de l’icône et créez votr
         <td>![A triangle ](images/icons-common-shapes-examples-3.png)</td>
     </tr>
         <tr>
-        <td>Rectangle horizontal<td>
-        <td colspan="2">Rectangle vertical</td>        
+        <td>Horizontal rectangle<td>
+        <td colspan="2">Vertical rectangle</td>        
         </tr>
     <tr>
         <td>![A horizontal rectangle](images/icons-common-shapes-examples-4.png)<td>
@@ -65,18 +65,18 @@ Utilisez la forme qui correspond à l’orientation de l’icône et créez votr
 
 ## Angles
 
-Outre l’utilisation d’une grille et d’une épaisseur de trait identiques, les icônes sont construites avec des éléments communs. 
+In addition to using the same grid and line weight, icons are constructed with common elements. 
 
-L’utilisation de ces seuls angles lors de la création de formes garantit la cohérence et le rendu adéquat de l’ensemble de nos icônes. 
+Using only these angles in building shapes creates consistency across all our icons, and ensures the icons render correctly. 
 
-Vous pouvez combiner, joindre, faire pivoter et refléter ces lignes lorsque vous créez des icônes. 
+These lines can be combined, joined, rotated, and reflected in creating icons. 
 
 <table>
     <tr>
         <td>**1:1**<br/>45°</td>
-        <td>**1:2**<br />26,57° (vertical)<br/>63,43° (horizontal)</td>
-        <td>**1:3**<br/>18,43° (vertical)<br/>71,57° (horizontal)</td>
-        <td>**1:4**<br/>14,04° (vertical)<br/>75,96° (horizontal)</td>
+        <td>**1:2**<br />26.57° (vertical)<br/>63.43° (horizontal)</td>
+        <td>**1:3**<br/>18.43° (vertical)<br/>71.57° (horizontal)</td>
+        <td>**1:4**<br/>14.04° (vertical)<br/>75.96° (horizontal)</td>
     </tr>
     <tr>
         
@@ -87,7 +87,7 @@ Vous pouvez combiner, joindre, faire pivoter et refléter ces lignes lorsque vou
     </tr>  
 </table>
 
-<p>En voici quelques exemples :</p>
+<p>Here are some examples:</p>
 
 <table>
     <tr>
@@ -98,14 +98,14 @@ Vous pouvez combiner, joindre, faire pivoter et refléter ces lignes lorsque vou
     </tr>
 </table>
 
-## Courbes
+## Curves
 
-Les traits courbes sont créés à partir de sections d’un cercle complet et ne doivent pas être inclinés, sauf s’ils ont besoin d’être alignés sur la grille de pixels. 
+Curved lines are constructed from sections of a whole circle and should not be skewed unless needed to snap to the pixel grid. 
 
 <table>
     <tr>
-        <td>1/4 de cercle</td>
-        <td>1/8 de cercle</td>
+        <td>1/4 circle</td>
+        <td>1/8 circle</td>
     </tr>
     <tr>
         <td>![1/4 circle](images/icons-curves-14circle.png)</td>
@@ -117,32 +117,32 @@ Les traits courbes sont créés à partir de sections d’un cercle complet et n
     </tr>    
 </table>
 
-## Construction géométrique
+## Geometric construction
 
-Nous vous recommandons de n’utiliser que des formes géométriques pures lorsque vous construisez des icônes.
+We recommend using only pure geometric shapes when constructing icons.
 
-![Icône en forme de guitare avec superposition géométrique ](images/icons-geometric-construction.png)
+![Guitar icon with geometric overlay ](images/icons-geometric-construction.png)
 
-## Formes remplies 
+## Filled shapes 
 
-Les icônes peuvent contenir des formes remplies si nécessaire, mais elles ne doivent pas dépasser 4px pour une grille de 32px×32px. La taille des cercles remplis ne doit pas être supérieure à 6pxx6px. 
+Icons can contain filled shapes when needed, but they should not be more than 4px at 32px × 32px. Filled circles should not be larger than 6px × 6px. 
 
-![Remplissage 5px par 8px ](images/icons-filled-shapes.png)
+![5px by 8px fill ](images/icons-filled-shapes.png)
 
 ## Badges
 
-Un «badge» est un terme générique désignant un élément ajouté à une icône non destiné à être intégré à l’élément d’icône de base. Ces éléments véhiculent généralement d’autres informations concernant l’icône, comme un état ou une action. Les autres termes couramment employés pour désigner ce type d’élément sont: superposition, annotation ou modificateur. 
+A "badge" is a generic term used to describe an element added to an icon that's not meant to be integrated with the base icon element. These usually convey other pieces of information about the icon like status or action. Other commons terms include: overlay, annotation, or modifier. 
 
-![Badge d’état ](images/icons-badge-status.png)
+![Status badge ](images/icons-badge-status.png)
 
-![Badge d’action ](images/icons-badge-action.png)
+![Action badge ](images/icons-badge-action.png)
 
-Les badges d’état utilisent un objet coloré rempli surmontant l’icône, tandis que les badges d’action sont intégrés à l’icône avec le même style monochrome et la même épaisseur de trait.
+Status badges utilize a filled, colored object that is on top of the icon, whereas action badges are integrated into the icon in the same monochrome style and line weight.
 
 <table>
 <tr>
-    <td>Badges d’état courants</td>
-    <td>Badges d’action courants</td>
+    <td>Common status badges</td>
+    <td>Common action badges</td>
 </tr>
 <tr>
     <td>![Status badge ](images/icons-badge-common-states-1.png)</td>
@@ -151,32 +151,32 @@ Les badges d’état utilisent un objet coloré rempli surmontant l’icône, ta
 </table>
 <p></p>
 
-### Couleur de badge 
+### Badge color 
 
-L’utilisation d’une couleur de badge ne doit être utilisée que pour communiquer l’état d’une icône. Les couleurs utilisées dans le badge d’état transmettent des messages émotionnels spécifiques à l’utilisateur. 
+Color badging should only be used to convey the state of an icon. The colors used in status badging convey specific emotional messages to the user. 
 
 <table>
-<tr><td>Vert: #128B44</td><td>Bleu: #2C71B9</td><td>Jaune: #FDC214</td></tr>
-<tr><td>Positif: effectué, terminé </td><td>Neutre: aide, notification </td><td>Mise en garde: alerte, avertissement </td></tr>
+<tr><td>Green - #128B44</td><td>Blue - #2C71B9</td><td>Yellow - #FDC214</td></tr>
+<tr><td>Positive: done, completed </td><td>Neutral: help, notification </td><td>Cautionary: alert, warning </td></tr>
 <tr><td>![Green status](images/icons-color-inbadging-1.png)</td><td>![Blue status](images/icons-color-inbadging-2.png)</td>
 <td>![Yellow status](images/icons-color-inbadging-3.png)</td></tr>
 </table>
 <p></p>
 
-### Position de badge
+### Badge position
 
-Par défaut, un badge d’état ou d’action est positionné dans le coin inférieur droit. N’utilisez d’autres positions que si la conception n’autorise pas ce positionnement par défaut. 
+The default position for any status or action is the bottom right. Only use the other positions when the design will not allow it. 
 
-### Dimensionnement de badge
+### Badge sizing
 
-Les badges doivent présenter une taille de 10 à 18px sur une grille de 32px × 32px. 
+Badges should be sized to 10–18 px on a 32 px × 32 px grid. 
 
-## Articles connexes
+## Related articles
 
-* [Recommandations en matière de ressources de vignette et d’icône](../controls-and-patterns/tiles-and-notifications-app-assets.md)
+* [Guidelines for tile and icon assets](../controls-and-patterns/tiles-and-notifications-app-assets.md)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -7,7 +7,7 @@ label: Touch interactions
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: a78dd1030e653d1cf0a1d7f191b4768e5a99860a
+ms.openlocfilehash: ca4ab33a58391f36e376323ca29d27961a2a7404
 
 ---
 
@@ -620,13 +620,13 @@ Tous les événements de pointeur, événements de mouvement et événements de 
 ## Articles connexes
 
 * [Gérer les entrées du pointeur](handle-pointer-input.md)
-* [Identifier des périphériques d’entrée](identify-input-devices.md) 
-           **Exemples**
+* [Identifier des périphériques d’entrée](identify-input-devices.md)
+**Exemples**
 * [Exemple d’entrée de base](http://go.microsoft.com/fwlink/p/?LinkID=620302)
 * [Exemple d’entrée à faible latence](http://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [Exemple de mode d’interaction utilisateur](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Exemple de visuels de focus](http://go.microsoft.com/fwlink/p/?LinkID=619895) 
-           **Exemples d’archive**
+* [Exemple de visuels de focus](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+**Exemples d’archive**
 * [Entrée: exemple de fonctionnalités de périphériques](http://go.microsoft.com/fwlink/p/?linkid=231530)
 * [Entrée : exemple d’événements d’entrée utilisateur XAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [Exemple de zoom, de panoramique et de défilement XAML](http://go.microsoft.com/fwlink/p/?linkid=251717)
@@ -641,6 +641,6 @@ Tous les événements de pointeur, événements de mouvement et événements de 
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

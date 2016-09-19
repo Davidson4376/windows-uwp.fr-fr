@@ -1,54 +1,54 @@
 ---
 author: jnHs
-Description: "Faites en sorte que votre application soit remarquée ! En plus de faire le nécessaire pour que votre application soit la meilleure possible, il y a des choses que vous pouvez faire pour faciliter la promotion de votre application dans le Windows Store et sur d’autres sites et pour qu’elle retienne davantage l’attention."
-title: Faciliter la promotion de votre application
+Description: Get your app noticed! Aside from making your app the best it can be, there are things you can do that make it easy for the Windows Store and other sites to showcase your app and help it get more attention.
+title: Make your app easier to promote
 ms.assetid: 375A73EB-A010-4319-AEFF-3DC3E3691220
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: e0f993d703ccd3a4509de4350f07d50564893763
+ms.openlocfilehash: aa35a1e46c5fea9bb64602af3842735f1914b039
 
 ---
 
-# Faciliter la promotion de votre application
+# Make your app easier to promote
 
 
-Faites en sorte que votre application soit remarquée! En plus de faire le nécessaire pour que votre application soit la meilleure possible, il y a des choses que vous pouvez faire pour faciliter la promotion de votre application dans le Windows Store et sur d’autres sites et pour qu’elle retienne davantage l’attention.
+Get your app noticed! Aside from making your app the best it can be, there are things you can do that make it easy for the Windows Store and other sites to showcase your app and help it get more attention.
 
-## Conditions requises par le Windows Store pour les applications proposées
+## Windows Store requirements for featured apps
 
 
-Le Windows Store présente différentes applications regroupées par catégorie ou par thème. Les applications réussies sont trop nombreuses pour être toutes proposées, et il n’existe aucun moyen de garantir que votre application sera sélectionnée. Cependant, il y a certaines actions à effectuer pour garantir que la promotion de votre application sera prise en considération dans le Windows Store.
+The Windows Store showcases different apps grouped by category or theme. There are too many great apps to feature them all, and there is no way to guarantee your app will get selected. However, there are some things you can do to make sure your app is eligible to be considered for promotion in the Store.
 
--   **Inclure des captures d’écran et des images publicitaires attrayantes**
+-   **Include great screenshots and promo images**
 
-    Pour présenter les applications, le Windows Store peut afficher les [images et captures d'écran de votre application](app-screenshots-and-images.md) dans différentes dispositions. Veillez à concevoir des captures d'écran attrayantes qui reflètent fidèlement votre application et assurez-vous que la première capture d'écran est particulièrement représentative et percutante.
+    When featuring apps, the Windows Store may use your [app screenshots and images](app-screenshots-and-images.md) in various layouts. Be sure to design great screenshots that represent your app, and make sure the first screenshot is especially representative and appealing.
 
-    Pour faire en sorte que votre application soit présentée dans le Windows Store, vous devez également joindre au moins une image promotionnelle dans votre envoi. Il est particulièrement important de fournir une image au format 2400 x 1200 pixels, car ce format d’image est exploitable de différentes façons dans le Windows Store, à destination des clients Windows 10. N’oubliez pas que nous pouvons rogner cette image dans certaines dispositions, de manière à ce que le centre de l’image contienne les éléments visuels clés et le logo/la marque de votre application. Nous pouvons également fournir des formats d’image supplémentaires, si votre application est exécutée sur des versions antérieures de système d’exploitation. Pour plus de détails et de recommandations, voir [Conception graphique promotionnelle](app-screenshots-and-images.md#promotional-artwork).
+    To maximize your app's chance of getting featured in the Store, you'll also need to provide at least one promotional image in your app's submission. Providing the 2400 x 1200 pixel size is most important, as we can use that image in a number of ways in the Store for Windows 10 customers. Keep in mind that we may crop this image in some layouts, so the center of the picture should contain your app's key visual elements and branding/logo. You may also want to provide additional image sizes if your app runs on earlier OS versions. For more details and guidelines, see [Promotional artwork](app-screenshots-and-images.md#promotional-artwork).
 
--   **Générer une seule version de votre application, et non pas une version gratuite et une version payante distincte**
+-   **Build one version of your app, not one free version and a distinct paid version**
 
-    Au lieu de publier une version gratuite et une version payante distinctes de la même application, proposez une version d’évaluation gratuite de votre application payante ou proposez-la sous forme d’une application gratuite avec la possibilité d’effectuer des achats dans l’application pour ajouter des fonctionnalités avancées. Ainsi, tous les utilisateurs (aussi bien ceux qui sont intéressés par des téléchargements gratuits que ceux qui sont peut-être prêts à effectuer un achat) auront accès à une seule et même description de votre application.
+    Rather than publishing separate free and paid versions of the same app, offer a free trial version for your paid app, or make it a free app with in-app purchases available to add enhanced functionality. This way your app will have one listing that works for all users: those only interested in free downloads, and those who might be ready to make a purchase.
 
--   **Activer des filtres pour les applications comportant du contenu classifié 16+ et 18+**
+-   **Enable filters for apps containing 16+ and 18+ content**
 
-    Dans la plupart des cas, le WindowsStore ne propose des applications comportant du contenu classifié16+ que si l'application utilise le filtrage de contenu. Ainsi, tout le contenu destiné à un public âgé de plus de 16ans sera masqué aux utilisateurs jusqu'à ce qu'ils décident explicitement de l'afficher. Le filtre de contenu doit être activé pardéfaut, protégé par mot de passe et disponible dans l'application proprement dite (et non pas sur un site web distinct).
+    In most cases the Windows Store doesn't consider featuring apps with 16+ content, unless the app uses content filtering so that any content that is only appropriate for age 16+ is hidden from users until they explicitly choose to show it. The content filter should be turned on by default, it should be password protected, and it should be available in the app itself (not on a separate website).
 
--   **Répertorier votre application dans tous les marchés pertinents et la localiser dans les langues appropriées**
+-   **List your app in all relevant markets and languages**
 
-    Le fait de soumettre votre application à tous les [marchés](define-pricing-and-market-selection.md) pertinents peut vous aider à accroître sa visibilité. Vous devrez bien sûr vous assurer que votre application est adaptée aux marchés sélectionnés et qu’elle respecte toutes les réglementations locales. La localisation du contenu de votre application dans le plus de [langues](supported-languages.md) possible peut aussi avoir des conséquences positives.
+    Submitting your app to all relevant [markets](define-pricing-and-market-selection.md) can help you get broader coverage for your app. Of course, you'll want to make sure that your app is appropriate and meets all local guidelines for the markets you choose. Localizing your app's content into as many [languages](supported-languages.md) as possible can also help.
 
-Le fait de suivre ces recommandations permettra également à d’autres personnes de promouvoir votre application dans des journaux, sur les réseaux sociaux et dans d’autres lieux.
-
- 
+Following these guidelines will also make it easier for others to promote your app in reviews, social media, or other venues.
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

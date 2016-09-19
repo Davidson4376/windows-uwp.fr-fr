@@ -1,42 +1,40 @@
 ---
 author: mcleanbyron
 ms.assetid: bb105fbe-bbbd-4d78-899b-345af2757720
-description: "Découvrez comment ajouter des valeurs d’ID d’application et d’ID d’unité publicitaire du tableau de bord du Centre de développement Windows à votre application avant de la soumettre au WindowsStore."
-title: "Configurer des unités publicitaires dans votre application"
+description: Learn how to add application ID and ad unit ID values from the Windows Dev Center dashboard to your app before you submit your app to the Store.
+title: Set up ad units in your app
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 96c09de9321f67dc26cc3538f2655bd598f134f9
+ms.sourcegitcommit: c6e0cf98c6eb2cdc656d5b4555d794ff6a94d2bc
+ms.openlocfilehash: 705955faf7ddd67f80098f8c3ac7b2844553de95
 
 
 ---
 
-# Configurer des unités publicitaires dans votre application
+# Set up ad units in your app
 
 
-\[ Mise à jour pour les applicationsUWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Lorsque vous utilisez une classe [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) ou [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) pour afficher des publicités dans votre application, vous devez spécifier un ID d’application et un ID d’unité publicitaire. Lors du développement de votre application, utilisez les [valeurs de test d’ID d’application et d’ID d’unité publicitaire](test-mode-values.md) pour voir comment votre application restitue les publicités au cours du test.
 
-Après avoir testé votre application, et une fois que vous êtes prêt à la soumettre au Centre de développement Windows, vous devez mettre à jour son code pour qu’il utilise les valeurs desID d’application et d’unité publicitaire du [tableau de bord du Centre de développement Windows](https://msdn.microsoft.com/library/windows/apps/mt170658.aspx). Si vous essayez d’utiliser des valeurs de test dans votre application dynamique, votre application ne recevra pas de publicités dynamiques.
+When you use an [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) or [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) to display ads in your app, you must specify an application ID and ad unit ID. While you are developing your app, use the appropriate [test application ID and ad unit ID values](test-mode-values.md) to see how your app renders ads during testing.
 
-Pour configurer l’ID d’application et les unités publicitaires pour votre application dynamique:
+After you finish testing your app and you are ready to submit it to Windows Dev Center, you must update your app code to use application ID and ad unit ID values from the [Windows Dev Center dashboard](https://msdn.microsoft.com/library/windows/apps/mt170658.aspx). If you try to use test values in your live app, your app will not receive live ads.
 
-1.  Dans le tableau de bord du Centre de développement Windows, sélectionnez votre application, puis cliquez sur **Monétisation&gt; Monétiser avec des publicités**.
-2.  Dans la section **Publicités Microsoft Advertising** de cette page, créez une unité publicitaire. Pour le type d’unité publicitaire, sélectionnez **Bannière** si vous utilisez un **AdControl**, ou **Spot vidéo** si vous utilisez un **InterstitialAd**. Pour en savoir plus sur cette page, voir [Monétiser à l’aide des publicités](../publish/monetize-with-ads.md).
+To set up the application ID and ad units for your live app:
 
-3.  Pour chaque unité publicitaire générée, vous voyez l’**ID de l’application** et l’**ID d’unité publicitaire** sur cette page. Pour afficher les publicités dans votre application, vous devez utiliser ces valeurs dans le code de votre application:
+1.  On the Windows Dev Center dashboard, select your app and then click **Monetization > Monetize with ads**.
+2.  In the **Microsoft Advertising ad units** section on this page, create an ad unit. For the ad unit type, select **Banner** if you are using an **AdControl**, or select **Video interstitial** if you are using an **InterstitialAd**. For more information about this page, see [Monetize with ads](../publish/monetize-with-ads.md).
 
-    * Si votre application affiche des bannières, affectez ces valeurs aux propriétés **ApplicationId** et **AdUnitId** de votre objet **AdControl**.
+3.  For each generated ad unit, you will see an **Application ID** and an **Ad unit ID** on this page. To show ads in your app, you'll need to use these values in your apps code:
 
-    * Si votre application affiche des spots publicitaires, transmettez ces valeurs à la méthode **RequestAd** de votre objet **InterstitialAd**.
+    * If your app shows banner ads, assign these values to the **ApplicationId** and **AdUnitId** properties of your **AdControl** object.
 
-> **Important** Si votre application utilise la médiation publicitaire pour afficher les bannières publicitaires de Microsoft (elle utilise un objet **AdMediatorControl**), il n’est pas nécessaire de demander des unités publicitaires. Dans ce scénario, les unités publicitaires sont automatiquement générées pour vous. Pour plus d’informations, voir [Quelle est la différence entre AdMediatorControl et AdControl?](what-is-the-difference-admediatorcontrol-or-adcontrol.md).
+    * If your app shows video interstitial ads, pass these values to the **RequestAd** method of your **InterstitialAd** object.
 
  
 
-## Rubriques connexes
+## Related topics
 
-[Valeurs du mode test](test-mode-values.md)
+[Test mode values](test-mode-values.md)
 
 
  
@@ -45,6 +43,6 @@ Pour configurer l’ID d’application et les unités publicitaires pour votre a
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -5,7 +5,7 @@ title: Pinceaux de composition
 description: "Un pinceau peint la zone d’un Visual avec sa sortie. Des pinceaux différents ont différents types de sortie."
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: a9f30ca041d320798c7ace596bd9be37f9712129
+ms.openlocfilehash: 11989aafb86d280b93eed7c2e3f016b5914b15ab
 
 ---
 # Pinceaux de composition
@@ -116,6 +116,6 @@ Il arrive que le contenu de la [**ICompositionSurface**](https://msdn.microsoft.
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

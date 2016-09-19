@@ -1,31 +1,31 @@
 ---
 author: TylerMSFT
 ms.assetid: AAE467F9-B3C7-4366-99A2-8A880E5692BE
-title: "Utiliser un minuteur pour envoyer un élément de travail"
-description: "Découvrez comment créer un élément de travail qui s’exécute une fois le délai du minuteur écoulé."
+title: Use a timer to submit a work item
+description: Learn how to create a work item that runs after a timer elapses.
 translationtype: Human Translation
 ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 033669a781aa85cc2c90fa11816e385ffefa997d
+ms.openlocfilehash: ea45e3b61f7646b5df978f36961bd6264ff08fe2
 
 ---
-# Utiliser un minuteur pour envoyer un élément de travail
+# Use a timer to submit a work item
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** API importantes **
+** Important APIs **
 
--   [**Espace de noms Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/BR208383)
--   [**Espace de noms Windows.System.Threading**](https://msdn.microsoft.com/library/windows/apps/BR229642)
+-   [**Windows.UI.Core namespace**](https://msdn.microsoft.com/library/windows/apps/BR208383)
+-   [**Windows.System.Threading namespace**](https://msdn.microsoft.com/library/windows/apps/BR229642)
 
-Découvrez comment créer un élément de travail qui s’exécute une fois le délai du minuteur écoulé.
+Learn how to create a work item that runs after a timer elapses.
 
-## Créer un minuteur à déclenchement unique
+## Create a single-shot timer
 
-Utilisez la méthode [**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967921) pour créer un minuteur pour l’élément de travail. Fournissez une expression lambda qui effectue la tâche, puis utilisez le paramètre *delay* pour spécifier la durée pendant laquelle le pool de threads attend avant de pouvoir attribuer l’élément de travail à un thread disponible. Le délai est spécifié à l’aide d’une structure [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/BR225996).
+Use the [**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967921) method to create a timer for the work item. Supply a lambda that accomplishes the work, and use the *delay* parameter to specify how long the thread pool waits before it can assign the work item to an available thread. The delay is specified using a [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/BR225996) structure.
 
-> **Remarque** Vous pouvez utiliser [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) pour accéder à l’interface utilisateur et afficher la progression à partir de l’élément de travail.
+> **Note**  You can use [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) to access the UI and show progress from the work item.
 
-L’exemple suivant crée un élément de travail qui s’exécute dans trois minutes:
+The following example creates a work item that runs in three minutes:
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -81,11 +81,11 @@ L’exemple suivant crée un élément de travail qui s’exécute dans trois mi
 >         }), delay);
 > ```
 
-## Fournir un gestionnaire d’achèvement
+## Provide a completion handler
 
-Si nécessaire, gérez l’annulation et l’achèvement de l’élément de travail avec un objet [**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926). Utilisez la surcharge [**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967921) pour fournir une expression lambda supplémentaire. Celle-ci s’exécute lorsque le minuteur est annulé ou que l’élément de travail se termine.
+If needed, handle cancellation and completion of the work item with a [**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926). Use the [**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967921) overload to supply an additional lambda. This runs when the timer is cancelled or when the work item completes.
 
-L’exemple suivant crée un minuteur qui envoie l’élément de travail, puis appelle une méthode lorsque l’élément de travail se termine ou que le minuteur est annulé:
+The following example creates a timer that submits the work item, and calls a method when the work item finishes or the timer is cancelled:
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -201,9 +201,9 @@ L’exemple suivant crée un minuteur qui envoie l’élément de travail, puis 
 >         }));
 > ```
 
-## Annuler le minuteur
+## Cancel the timer
 
-Si le compte à rebours du minuteur se poursuit alors que l’élément de travail n’est plus nécessaire, appelez [**Cancel**](https://msdn.microsoft.com/library/windows/apps/BR230588). Le minuteur est annulé et l’élément de travail n’est pas envoyé au pool de threads.
+If the timer is still counting down, but the work item is no longer needed, call [**Cancel**](https://msdn.microsoft.com/library/windows/apps/BR230588). The timer is cancelled and the work item won't be submitted to the thread pool.
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -213,19 +213,19 @@ Si le compte à rebours du minuteur se poursuit alors que l’élément de trava
 > DelayTimer->Cancel();
 > ```
 
-## Remarques
+## Remarks
 
-Les applications de plateforme Windows universelle (UWP) ne peuvent pas utiliser **Thread.Sleep**, car cela peut bloquer le thread d’interface utilisateur. Vous pouvez utiliser un objet [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587) pour créer un élément de travail à la place. Cela retarde la tâche accomplie par l’élément de travail sans bloquer le thread d’interface utilisateur.
+Universal Windows Platform (UWP) apps can't use **Thread.Sleep** because it can block the UI thread. You can use a [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587) to create a work item instead, and this will delay the task accomplished by the work item without blocking the UI thread.
 
-Pour obtenir un exemple de code complet illustrant les éléments de travail, les éléments de travail de minuteur et les éléments de travail périodiques, voir l’[exemple de pool de threads](http://go.microsoft.com/fwlink/p/?linkid=255387). L’exemple de code a été écrit à l’origine pour Windows 8.1, mais le code peut être réutilisé dans Windows 10.
+See the [thread pool sample](http://go.microsoft.com/fwlink/p/?linkid=255387) for a complete code sample that demonstrates work items, timer work items, and periodic work items. The code sample was originally written for Windows 8.1 but the code can be re-used in Windows 10.
 
-Pour plus d’informations sur la répétition de minuteurs, voir [Créer un élément de travail périodique](create-a-periodic-work-item.md).
+For information about repeating timers, see [Create a periodic work item](create-a-periodic-work-item.md).
 
-## Rubriques connexes
+## Related topics
 
-* [Envoyer un élément de travail au pool de threads](submit-a-work-item-to-the-thread-pool.md)
-* [Meilleures pratiques pour l’utilisation du pool de threads](best-practices-for-using-the-thread-pool.md)
-* [Utiliser un minuteur pour envoyer un élément de travail](use-a-timer-to-submit-a-work-item.md)
+* [Submit a work item to the thread pool](submit-a-work-item-to-the-thread-pool.md)
+* [Best practices for using the thread pool](best-practices-for-using-the-thread-pool.md)
+* [Use a timer to submit a work item](use-a-timer-to-submit-a-work-item.md)
  
 
  
@@ -233,6 +233,6 @@ Pour plus d’informations sur la répétition de minuteurs, voir [Créer un él
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

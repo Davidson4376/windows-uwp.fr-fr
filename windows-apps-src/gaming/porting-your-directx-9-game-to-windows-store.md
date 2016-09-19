@@ -1,45 +1,45 @@
 ---
 author: mtoepke
-title: Porter de DirectX 9 vers la plateforme Windows universelle (UWP)
-description: "Cette section inclut des articles, des vues d’ensemble et des procédures pas à pas liés au portage des jeux DirectX 9 vers la plateforme UWP."
+title: Port from DirectX 9 to Universal Windows Platform (UWP)
+description: This section includes articles, overviews, and walkthroughs for porting DirectX 9 games to Universal Windows Platform (UWP).
 ms.assetid: 536c0b99-cdf3-1527-1ee2-4187f50a2cf0
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 1cb77db78fe368c567990c9521122b42ef10ec65
+ms.openlocfilehash: 3988d0cbfb3b7e585622af45c0d7ff3589ee020d
 
 ---
 
-# Porter de DirectX 9 vers la plateforme Windows universelle (UWP)
+# Port from DirectX 9 to Universal Windows Platform (UWP)
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Cette section inclut des articles, des vues d’ensemble et des procédures pas à pas liés au portage des jeux DirectX9 vers la plateforme Windows universelle (UWP).
+This section includes articles, overviews, and walkthroughs for porting DirectX 9 games to Universal Windows Platform (UWP).
 
-##  Porter votre jeu DirectX9 vers UWP
-
-
--   Atteindre le public UWP et monétiser votre jeu.
--   Ciblez un large éventail d’appareils, prenant au moins tous en charge l’ensemble Direct3D 9.1 de fonctionnalités graphiques.
--   Dotez-vous de nouvelles compétences précieuses en développement de jeux Windows, notamment Direct3D 11, les modèles de nuanceurs unifiés, les API Windows, XAudio2, les entrées tactiles, C++/CX et bien d’autres.
-
-## Par où commencer ?
+##  Port your DirectX 9 game to UWP
 
 
--   Visitez [Portage de DirectX 9 vers DirectX 11 et UWP](porting-considerations.md) pour découvrir ce que vous devez planifier dans votre projet de portage de jeux, actualiser vos connaissances des concepts Direct3D 11 et comprendre les correspondances entre les fonctionnalités qui vous sont familières et les applications UWP DirectX 11.
--   Suivez la procédure pas à pas [Porter une application Direct3D 9 simple vers DirectX 11 et UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md) pour comparer directement les infrastructures graphiques Direct3D 9 et Direct3D 11. Cette procédure pas à pas comporte également le code requis pour configurer une fenêtre d’application et une fenêtre d’affichage.
--   Voir le [Forum Aux Questions (FAQ) sur le portage DirectX 11](directx-porting-faq.md) pour connaître les réponses aux questions courantes sur le portage depuis DirectX 9.
+-   Reach the UWP audiences and monetize your game.
+-   Target a wide array of devices, all of which support at least the Direct3D 9.1 set of graphics features.
+-   Learn valuable new Windows game development skills - including Direct3D 11, the unified shader models, Windows APIs, XAudio2, touch input, C++/CX and more.
 
- 
+## Where do I start?
+
+
+-   Visit [Moving from DirectX 9 to DirectX 11 and UWP](porting-considerations.md) to learn what you should plan for in your game porting project, catch up on Direct3D 11 concepts, and understand how the features you're familiar with map to DirectX 11 UWP apps.
+-   Follow the [Port a simple Direct3D 9 app to DirectX 11 and UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md) walkthrough article for a direct comparison of Direct3D 9 and Direct3D 11 graphics frameworks. This walkthrough also has code for setting up an app window and viewport.
+-   See the [DirectX 11 porting FAQ](directx-porting-faq.md) for answers to common questions about porting from DirectX 9.
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

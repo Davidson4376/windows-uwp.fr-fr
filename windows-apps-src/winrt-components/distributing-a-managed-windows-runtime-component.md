@@ -1,81 +1,81 @@
 ---
 author: msatranjr
-title: "Distribution d’un composant Windows Runtime managé"
-description: Vous pouvez distribuer votre composant Windows Runtime par copie des fichiers.
+title: Distributing a managed Windows Runtime Component
+description: You can distribute your Windows Runtime Component by file copy.
 ms.assetid: 80262992-89FC-42FC-8298-5AABF58F8212
 translationtype: Human Translation
 ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: 3d7a51ed13f63ca9d6070fbbe860c653c4deaf07
+ms.openlocfilehash: 3a82ee44b748c2c8748ed063cbc67e02200a4e31
 
 ---
 
 
-# Distribution d’un composant Windows Runtime managé
+# Distributing a managed Windows Runtime Component
 
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Vous pouvez distribuer votre composant Windows Runtime par copie des fichiers. Toutefois, si votre composant comporte de nombreux fichiers, l’installation peut être fastidieuse pour vos utilisateurs. En outre, des erreurs de placement des fichiers ou l’impossibilité de définir les références peuvent leur occasionner des problèmes. Vous pouvez empaqueter un composant complexe sous la forme d’un kit de développement logiciel (SDK) d’extension Visual Studio pour en faciliter l’installation et l’utilisation. Les utilisateurs doivent uniquement définir une référence pour le package entier. Ils peuvent facilement localiser et installer votre composant à l’aide de la boîte de dialogue **Extensions et mises à jour**, comme indiqué dans l’article [Recherche et utilisation des extensions Visual Studio](https://msdn.microsoft.com/library/vstudio/dd293638.aspx) de MSDN Library.
+You can distribute your Windows Runtime Component by file copy. However, if your component consists of many files, installation can be tedious for your users. Also, errors in placing files or failure to set references might cause problems for them. You can package a complex component as a Visual Studio extension SDK, to make it easy to install and use. Users only need to set one reference for the entire package. They can easily locate and install your component by using the **Extensions and Updates** dialog box, as described in [Finding and Using Visual Studio Extensions](https://msdn.microsoft.com/library/vstudio/dd293638.aspx), in the MSDN Library.
 
-## Planification d’un composant Windows Runtime distribuable
+## Planning a distributable Windows Runtime Component
 
-Choisissez des noms uniques pour les fichiers binaires, tels que vos fichiers .winmd. Nous recommandons le format suivant pour en garantir l’unicité :
+Choose unique names for binary files, such as your .winmd files. We recommend the following format to ensure uniqueness:
 
 ``` syntax
 company.product.purpose.extension
 For example: Microsoft.Cpp.Build.dll
 ```
 
-Vos fichiers binaires seront installés dans des packages d’application, éventuellement avec les fichiers binaires d’autres développeurs. Consultez la rubrique Kits de développement logiciel (SDK) d’extension dans l’article [Création d’un kit de développement logiciel (SDK)](https://msdn.microsoft.com/library/hh768146.aspx)de MSDN Library.
+Your binary files will be installed in app packages, possibly with binary files from other developers. See "Extension SDKs" in [How to: Create a Software Development Kit](https://msdn.microsoft.com/library/hh768146.aspx), in the MSDN Library.
 
-Pour décider du mode de distribution de votre composant, tenez compte de sa complexité. Un SDK d’extension ou un gestionnaire de package similaire est recommandé lorsque :
+To decide how to distribute your component, consider how complex it is. An extension SDK or similar package manager is recommended when:
 
--   Votre composant comporte plusieurs fichiers.
--   Vous fournissez des versions de votre composant pour plusieurs plateformes (x86 et ARM, par exemple).
--   Vous fournissez à la fois une version de débogage et une version commerciale de votre composant.
--   Votre composant comprend des fichiers et des assemblys utilisés uniquement au moment de la conception.
+-   Your component consists of multiple files.
+-   You provide versions of your component for multiple platforms (x86 and ARM, for example).
+-   You provide both debug and release versions of your component.
+-   Your component has files and assemblies that are used only at design time.
 
-Un SDK d’extension est particulièrement utile si plusieurs des conditions ci-dessus s’appliquent.
+An extension SDK is particularly useful if more than one of the above are true.
 
-> **Remarque** Pour les composants complexes, le système de gestion des packages NuGet offre une alternative open source aux SDK d’extension. Tout comme les SDK d’extension, NuGet permet de créer des packages qui simplifient l’installation des composants complexes. Pour une comparaison des packages NuGet et des SDK d’extension Visual Studio, consultez l’article [Comparaison de l’ajout de références à l’aide de NuGet et à l’aide d’un kit de développement logiciel (SDK) d’extension](https://msdn.microsoft.com/library/jj161096.aspx) de MSDN Library.
+> **Note**  For complex components, the NuGet package management system offers an open source alternative to extension SDKs. Like extension SDKs, NuGet enables you to create packages that simplify the installation of complex components. For a comparison of NuGet packages and Visual Studio extension SDKs, see [Adding References Using NuGet Versus an Extension SDK](https://msdn.microsoft.com/library/jj161096.aspx) in the MSDN Library.
 
-## Distribution par copie des fichiers
+## Distribution by file copy
 
-Si votre composant comporte un seul fichier .winmd ou un fichier .winmd et un fichier d’index de ressource (.pri), vous pouvez simplement mettre le fichier .winmd à la disposition des utilisateurs à des fins de copie. Les utilisateurs pourront placer le fichier où ils souhaitent dans un projet, utiliser la boîte de dialogue **Ajouter un élément existant** pour ajouter le fichier .winmd au projet, puis utiliser la boîte de dialogue Gestionnaire de références pour créer une référence. Si vous incluez un fichier .pri ou un fichier .xml, demandez aux utilisateurs de placer ces fichiers avec le fichier .winmd.
+If your component consists of a single .winmd file, or a .winmd file and a resource index (.pri) file, you can simply make the .winmd file available for users to copy. Users can put the file wherever they want to in a project, use the **Add Existing Item** dialog box to add the .winmd file to the project, and then use the Reference Manager dialog box to create a reference. If you include a .pri file or an .xml file, instruct users to place those files with the .winmd file.
 
-> **Remarque** Visual Studio produit toujours un fichier .pri lorsque vous générez votre composant Windows Runtime, même si votre projet ne comprend pas de ressources. Si vous avez une application test pour votre composant, vous pouvez déterminer si le fichier .pri est utilisé en examinant le contenu du package d’application dans le dossier bin\debug\AppX. Si le fichier .pri de votre composant n’apparaît pas à cet emplacement, vous n’avez pas besoin de le distribuer. Vous pouvez également utiliser l’outil [MakePRI.exe](https://msdn.microsoft.com/library/windows/apps/jj552945.aspx) pour vider le fichier de ressources de votre projet de composant Windows Runtime. Par exemple, dans la fenêtre d’invite de commandes Visual Studio, tapez : makepri dump /if MyComponent.pri /of MyComponent.pri.xml Pour en savoir plus sur les fichiers .pri, consultez l’article [Système de gestion des ressources (Windows)](https://msdn.microsoft.com/library/windows/apps/jj552947.aspx).
+> **Note**  Visual Studio always produces a .pri file when you build your Windows Runtime Component, even if your project doesn't include any resources. If you have a test app for your component, you can determine whether the .pri file is used by examining the contents of the app package in the bin\\debug\\AppX folder. If the .pri file from your component doesn't appear there, you don't need to distribute it. Alternatively, you can use the [MakePRI.exe](https://msdn.microsoft.com/library/windows/apps/jj552945.aspx) tool to dump the resource file from your Windows Runtime Component project. For example, in the Visual Studio Command Prompt window, type: makepri dump /if MyComponent.pri /of MyComponent.pri.xml You can read more about .pri files in [Resource Management System (Windows)](https://msdn.microsoft.com/library/windows/apps/jj552947.aspx).
 
-## Distribution par kit de développement logiciel (SDK) d’extension
+## Distribution by extension SDK
 
-Un composant complexe inclut généralement des ressources Windows, mais reportez-vous à la remarque concernant la détection des fichiers .pri vides à la section précédente.
+A complex component usually includes Windows resources, but see the note about detecting empty .pri files in the previous section.
 
-**Pour créer un SDK d’extension**
+**To create an extension SDK**
 
-1.  Vérifiez que le SDK Visual Studio est installé. Vous pouvez télécharger le SDK Visual Studio depuis la page [Téléchargements Visual Studio](https://www.visualstudio.com/downloads/download-visual-studio-vs).
-2.  Créez un projet à l’aide du modèle Projet VSIX, qui se trouve sous Visual C# ou Visual Basic dans la catégorie Extensibilité. Ce modèle est installé en même temps que le SDK Visual Studio. (L’article [Procédure pas à pas : création d’un kit de développement logiciel (SDK) en C# ou Visual Basic](https://msdn.microsoft.com/library/jj127119.aspx) ou [Procédure pas à pas : création d’un kit de développement logiciel (SDK) en C++](https://msdn.microsoft.com/library/jj127117.aspx) illustre l’utilisation de ce modèle dans un scénario très simple. )
-3.  Déterminez la structure de dossiers de votre SDK. La structure de dossiers commence au niveau racine de votre projet VSIX, avec les dossiers **Références**, **Package redistribuable** et **DesignTime**.
+1.  Make sure you have the Visual Studio SDK installed. You can download the Visual Studio SDK from the [Visual Studio Downloads](https://www.visualstudio.com/downloads/download-visual-studio-vs) page.
+2.  Create a new project using the VSIX Project template. You can find the template under Visual C# or Visual Basic, in the Extensibility category. This template is installed as part of the Visual Studio SDK. ([Walkthrough: Creating an SDK using C# or Visual Basic](https://msdn.microsoft.com/library/jj127119.aspx) or [Walkthrough: Creating an SDK using C++](https://msdn.microsoft.com/library/jj127117.aspx), demonstrates the use of this template in a very simple scenario. )
+3.  Determine the folder structure for your SDK. The folder structure begins at the root level of your VSIX project, with the **References**, **Redist**, and **DesignTime** folders.
 
-    -   **Références** correspond à l’emplacement des fichiers binaires que les utilisateurs peuvent programmer. Le SDK d’extension crée des références à ces fichiers dans les projets Visual Studio de vos utilisateurs.
-    -   **Package redistribuable** correspond à l’emplacement des autres fichiers qui doivent être distribuées avec vos fichiers binaires, dans les applications qui sont créées à l’aide de votre composant.
-    -   **DesignTime** correspond à l’emplacement des fichiers utilisés uniquement lorsque les développeurs créent des applications qui utilisent votre composant.
+    -   **References** is the location for binary files that your users can program against. The extension SDK creates references to these files in your users' Visual Studio projects.
+    -   **Redist** is the location for other files that must be distributed with your binary files, in apps that are created by using your component.
+    -   **DesignTime** is the location for files that are used only when developers are creating apps that use your component.
 
-    Dans chacun de ces dossiers, vous pouvez créer des dossiers de configuration. Les noms autorisés sont debug, retail et CommonConfiguration. Le dossier CommonConfiguration est réservé aux fichiers qui sont identiques pour les versions commerciales ou de débogage. Si vous distribuez uniquement des versions commerciales de votre composant, vous pouvez tout placer dans CommonConfiguration et omettre les deux autres dossiers.
+    In each of these folders, you can create configuration folders. The permitted names are debug, retail, and CommonConfiguration. The CommonConfiguration folder is for files that are the same whether they're used by retail or debug builds. If you're only distributing retail builds of your component, you can put everything in CommonConfiguration and omit the other two folders.
 
-    Dans chaque dossier de configuration, vous pouvez fournir des dossiers d’architecture pour les fichiers spécifiques d’une plateforme. Si vous utilisez les mêmes fichiers pour toutes les plateformes, vous pouvez fournir un dossier unique nommé neutral. Vous trouverez plus d’informations sur la structure de dossiers, notamment d’autres noms de dossiers d’architecture, dans l’article [Création d’un kit de développement logiciel (SDK)](https://msdn.microsoft.com/library/hh768146.aspx) de MSDN Library. (Cet article présente à la fois les SDK de plateforme et les SDK d’extension. Il peut s’avérer utile de réduire la section sur les SDK de plateforme afin d’éviter toute confusion. )
+    In each configuration folder, you can provide architecture folders for platform-specific files. If you use the same files for all platforms, you can supply a single folder named neutral. You can find details of the folder structure, including other architecture folder names, in [How to: Create a Software Development Kit](https://msdn.microsoft.com/library/hh768146.aspx), in the MSDN Library. (That article discusses both platform SDKs and extension SDKs. You may find it useful to collapse the section about platform SDKs, to avoid confusion. )
 
-4.  Créez un fichier de manifeste SDK. Le manifeste spécifie les informations sur le nom et la version, les architectures prises en charge par votre SDK, les versions de .NET Framework et d’autres informations sur le mode d’utilisation de votre SDK par Visual Studio. Vous trouverez plus d’informations et un exemple dans l’article [Création d’un kit de développement logiciel (SDK)](https://msdn.microsoft.com/library/hh768146.aspx).
-5.  Générez et distribuez le kit de développement logiciel de l’extension. Pour des informations plus détaillées, notamment sur la recherche et la signature du package VSIX, consultez l’article Déploiement VSIX de MSDN Library.
+4.  Create an SDK manifest file. The manifest specifies name and version information, the architectures your SDK supports, .NET Framework versions, and other information about the way Visual Studio uses your SDK. You can find details and an example in [How to: Create a Software Development Kit](https://msdn.microsoft.com/library/hh768146.aspx).
+5.  Build and distribute the extension SDK. For in-depth information, including localizing and signing the VSIX package, see VSIX Deployment in the MSDN Library.
 
-## Rubriques connexes
+## Related topics
 
-* [Création d’un kit de développement logiciel (SDK)](https://msdn.microsoft.com/library/hh768146.aspx)
-* [Système de gestion des packages NuGet](https://github.com/NuGet/Home)
-* [Système de gestion des ressources (Windows)](https://msdn.microsoft.com/library/windows/apps/jj552947.aspx)
-* [Recherche et utilisation des extensions Visual Studio](https://msdn.microsoft.com/library/dd293638.aspx)
-* [Options de commande de MakePRI.exe](https://msdn.microsoft.com/library/windows/apps/jj552945.aspx)
+* [Creating a Software Development Kit](https://msdn.microsoft.com/library/hh768146.aspx)
+* [NuGet package management system](https://github.com/NuGet/Home)
+* [Resource Management System (Windows)](https://msdn.microsoft.com/library/windows/apps/jj552947.aspx)
+* [Finding and Using Visual Studio Extensions](https://msdn.microsoft.com/library/dd293638.aspx)
+* [MakePRI.exe command options](https://msdn.microsoft.com/library/windows/apps/jj552945.aspx)
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

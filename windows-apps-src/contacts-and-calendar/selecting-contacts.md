@@ -1,64 +1,64 @@
 ---
 author: Xansky
-description: "L’espace de noms Windows.ApplicationModel.Contacts fournit plusieurs options de sélection des contacts."
-title: "Sélectionner des contacts"
+description: Through the Windows.ApplicationModel.Contacts namespace, you have several options for selecting contacts.
+title: Select contacts
 ms.assetid: 35FEDEE6-2B0E-4391-84BA-5E9191D4E442
 keywords: contact, selecting specific fields
 translationtype: Human Translation
 ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
-ms.openlocfilehash: 6f2c6a546ed3daa0ef0311bc54ca47f31d01f3d8
+ms.openlocfilehash: 70abebb53f96b7d9d818f3542c33ed477ff0c8a4
 
 ---
 
-# Sélectionner des contacts
+# Select contacts
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-L’espace de noms [**Windows.ApplicationModel.Contacts**](https://msdn.microsoft.com/library/windows/apps/BR225002) fournit plusieurs options de sélection des contacts. Ici, nous allons vous montrer comment sélectionner un ou plusieurs contacts, et comment configurer le sélecteur de contacts pour récupérer uniquement les informations de contact dont votre application a besoin.
+Through the [**Windows.ApplicationModel.Contacts**](https://msdn.microsoft.com/library/windows/apps/BR225002) namespace, you have several options for selecting contacts. Here, we'll show you how to select a single contact or multiple contacts, and we'll show you how to configure the contact picker to retrieve only the contact information that your app needs.
 
-## Configurer le sélecteur de contacts
+## Set up the contact picker
 
-Créez une instance de [**Windows.ApplicationModel.Contacts.ContactPicker**](https://msdn.microsoft.com/library/windows/apps/BR224913) et attribuez-lui une variable.
+Create an instance of [**Windows.ApplicationModel.Contacts.ContactPicker**](https://msdn.microsoft.com/library/windows/apps/BR224913) and assign it to a variable.
 
 ```cs
 var contactPicker = new Windows.ApplicationModel.Contacts.ContactPicker();
 ```
 
-## Définir le mode de sélection (facultatif)
+## Set the selection mode (optional)
 
-Par défaut, le sélecteur de contacts récupère toutes les données disponibles des contacts que l’utilisateur sélectionne. La propriété [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.selectionmode) vous permet de configurer le sélecteur de contacts pour récupérer uniquement les champs de données dont votre application a besoin. Il s’agit d’un moyen plus efficace pour utiliser le sélecteur de contacts, si vous avez seulement besoin d’un sous-ensemble des données de contact disponibles.
+By default, the contact picker retrieves all of the available data for the contacts that the user selects. The [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.selectionmode) property lets you configure the contact picker to retrieve only the data fields that your app needs. This is a more efficient way to use the contact picker if you only need a subset of the available contact data.
 
-Affectez d’abord à la propriété [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.selectionmode) la valeur **Fields** :
+First, set the [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.selectionmode) property to **Fields**:
 
 ```cs
 contactPicker.SelectionMode = Windows.ApplicationModel.Contacts.ContactSelectionMode.Fields;
 ```
 
-Utilisez ensuite la propriété [**desiredFieldsWithContactFieldType**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.desiredfieldswithcontactfieldtype) pour indiquer les champs que le sélecteur de contacts doit récupérer. Cet exemple configure le sélecteur de contacts pour récupérer les adresses de messagerie :
+Then, use the [**DesiredFieldsWithContactFieldType**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.desiredfieldswithcontactfieldtype) property to specify the fields that you want the contact picker to retrieve. This example configures the contact picker to retrieve email addresses:
 
 ``` cs
 contactPicker.DesiredFieldsWithContactFieldType.Add(Windows.ApplicationModel.Contacts.ContactFieldType.Email);
 ```
 
-## Lancer le sélecteur
+## Launch the picker
 
 ```cs
 Contact contact = await contactPicker.PickContactAsync();
 ```
 
-Utilisez [**pickContactsAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.pickcontactsasync) si vous voulez que l’utilisateur sélectionne un ou plusieurs contacts.
+Use [**PickContactsAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.pickcontactsasync) if you want the user to select one or more contacts.
 
 ```cs
 public IList<Contact> contacts;
 contacts = await contactPicker.PickContactsAsync();
 ```
 
-## Traiter les contacts
+## Process the contacts
 
-Quand le sélecteur retourne sa valeur, vérifiez si l’utilisateur a sélectionné des contacts. Si c’est le cas, traitez les informations de contact.
+When the picker returns, check whether the user has selected any contacts. If so, process the contact information.
 
-Cet exemple montre comment traiter un contact unique. Ici, nous récupérons le nom du contact afin de le copier dans un contrôle [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) appelé *OutputName*.
+This example shows how to processes a single contact. Here we retrieve the contact's name and copy it into a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) control called *OutputName*.
 
 ```cs
 if (contact != null)
@@ -71,7 +71,7 @@ else
 }
 ```
 
-Cet exemple montre comment traiter plusieurs contacts.
+This example shows how to process multiple contacts.
 
 ```cs
 if (contacts != null && contacts.Count > 0)
@@ -83,9 +83,9 @@ if (contacts != null && contacts.Count > 0)
 }
 ```
 
-## Exemple complet (contact unique)
+## Complete example (single contact)
 
-Cet exemple utilise le sélecteur de contacts pour récupérer le nom, ainsi que l’adresse électronique, la localisation ou le numéro de téléphone d’un contact unique.
+This example uses the contact picker to retrieve a single contact's name along with an email address, location or phone number.
 
 ```cs
 // ...
@@ -163,9 +163,9 @@ private void AppendContactFieldValues<T>(TextBlock content, IList<T> fields)
 }
 ```
 
-## Exemple complet (contacts multiples)
+## Complete example (multiple contacts)
 
-Cet exemple utilise le sélecteur de contacts pour récupérer plusieurs contacts, puis les ajoute à un contrôle [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) appelé `OutputContacts`.
+This example uses the contact picker to retrieve multiple contacts and then adds the contacts to a [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) control called `OutputContacts`.
 
 ```cs
 MainPage rootPage = MainPage.Current;
@@ -226,12 +226,12 @@ public class ContactItemAdapter
 }
 ```
 
-## Récapitulatif et étapes suivantes
+## Summary and next steps
 
-À présent, vous savez utiliser de manière basique le sélecteur de contacts pour récupérer des informations de contact. Téléchargez les [Exemples d’applications Windows universelles](http://go.microsoft.com/fwlink/p/?linkid=619979) dans GitHub pour voir d’autres exemples illustrant comment utiliser les contacts et le sélecteur de contacts.
+Now you have a basic understanding of how to use the contact picker to retrieve contact information. Download the [Universal Windows app samples](http://go.microsoft.com/fwlink/p/?linkid=619979) from GitHub to see more examples of how to use contacts and the contact picker.
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

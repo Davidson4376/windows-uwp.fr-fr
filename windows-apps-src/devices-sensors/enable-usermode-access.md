@@ -1,30 +1,30 @@
 ---
 author: JordanRh1
-title: "Activer l’accès en mode utilisateur sur Windows10IoTStandard"
-description: "Ce didacticiel explique comment activer l’accès en mode utilisateur à GPIO, I2C, SPI et UART sur Windows10IoTStandard."
+title: Enable usermode access on Windows 10 IoT Core
+description: This tutorial describes how to enable usermode access to GPIO, I2C, SPI, and UART on Windows 10 IoT Core.
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: eddb2ca0aaa4bdbc19b2c3015ec8d599e0ef5584
+ms.openlocfilehash: 363e73101157e1c9cc233d87b3964736c260f665
 
 ---
-# Activer l’accès en mode utilisateur sur Windows10IoTStandard
+# Enable usermode access on Windows 10 IoT Core
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Windows10IoTStandard contient de nouvelles API d’accès à GPIO, I2C, SPI et UART directement à partir du mode utilisateur. Les cartes de développement comme RaspberryPi2 exposent un sous-ensemble de ces connexions, qui permettent aux utilisateurs d’étendre un module de calcul de base avec des circuits personnalisés pour l’adressage d’une application donnée. Ces bus de bas niveau sont généralement partagés avec d’autres fonctions critiques intégrées, et seul un sous-ensemble des broches et des bus GPIO sont exposés sur les en-têtes. Pour préserver la stabilité du système, il est nécessaire de spécifier les broches et les bus qui peuvent être modifiés en toute sécurité par les applications en mode utilisateur. 
+Windows 10 IoT Core contains new APIs for accessing GPIO, I2C, SPI, and UART directly from usermode. Development boards like Raspberry Pi 2 expose a subset of these connections which enable users to extend a base compute module with custom circuitry to address a particular application. These low level buses are usually shared with other critical onboard functions, with only a subset of GPIO pins and buses exposed on headers. To preserve system stability, it is necessary to specify which pins and buses are safe for modification by usermode applications. 
 
-Ce document explique comment spécifier cette configuration dans l’interface ACPI et fournit des outils pour confirmer que la configuration a été correctement spécifiée. 
+This document describes how to specify this configuration in ACPI and provides tools to validate that the configuration was specified correctly. 
 
 > [!IMPORTANT]
-> Ce document est destiné aux développeurs UEFI et ACPI. Il suppose que vous êtes déjà familiarisé avec l’interfaceACPI, la création d’ASL et les extensions SpbCx/GpioClx.
+> The audience for this document is UEFI and ACPI developers. Some familiarity with ACPI, ASL authoring, and SpbCx/GpioClx is assumed.
 
-L’accès en mode utilisateur aux bus de bas niveau sur Windows est ajouté via les infrastructures `GpioClx` et `SpbCx` existantes. Un nouveau pilote appelé *RhProxy*, uniquement disponible sur Windows 10 IoT Standard, expose les ressources `GpioClx` et `SpbCx` au mode utilisateur. Pour activer les API, vous devez avoir déclaré un nœud d’appareil pour rhproxy dans vos tables ACPI avec chacune des ressources GPIO et SPB qui doivent être exposées au mode utilisateur. Ce document présente la procédure de création et de vérification de l’ASL. 
+Usermode access to low level buses on Windows is plumbed through the existing `GpioClx` and `SpbCx` frameworks. A new driver called *RhProxy*, only available on Windows 10 IoT Core, exposes `GpioClx` and `SpbCx` resources to usermode. To enable the APIs, a device node for rhproxy must be declared in your ACPI tables with each of the GPIO and SPB resources that should be exposed to usermode. This document walks through authoring and verifying the ASL. 
 
 
-## ASL par exemple
+## ASL by example
 
-Examinons la déclaration d’un nœud d’appareil rhproxy sur RaspberryPi2. Tout d’abord, créez la déclaration d’appareil ACPI dans l’étendue \\_SB.  
+Let’s walk through the rhproxy device node declaration on Raspberry Pi 2. First, create the ACPI device declaration in the \\_SB scope.  
 
 ```cpp
 Device(RHPX) 
@@ -35,15 +35,15 @@ Device(RHPX)
     
 ```
 
-* _HID: ID du matériel. Définissez ce paramètre sur un ID matériel spécifique au fournisseur. 
-* _CID: ID compatible. Il doit s’agir de «MSFT8000».  
-* _UID: ID unique. Définissez ce paramètre sur1.  
+* _HID – Hardware Id. Set this to a vendor-specific hardware ID. 
+* _CID – Compatible Id. Must be “MSFT8000”.  
+* _UID – Unique Id. Set to 1.  
 
-Nous allons ensuite déclarer chacune des ressources GPIO et SPB qui doivent être exposées au mode utilisateur. L’ordre dans lequel les ressources sont déclarées est important, car les index de ressource sont utilisés pour associer les propriétés avec des ressources. Si plusieurs bus I2C ou SPI sont exposés, le premier bus déclaré est considéré comme le bus « par défaut » pour ce type et sera l’instance renvoyée par les méthodes `GetDefaultAsync()` de [Windows.Devices.I2c.I2cController](https://msdn.microsoft.com/library/windows/apps/windows.devices.i2c.i2ccontroller.aspx) et [Windows.Devices.Spi.SpiController](https://msdn.microsoft.com/library/windows/apps/windows.devices.spi.spicontroller.aspx). 
+Next we declare each of the GPIO and SPB resources that should be exposed to usermode. The order in which resources are declared is important because resource indexes are used to associate properties with resources. If there are multiple I2C or SPI busses exposed, the first declared bus is considered the ‘default’ bus for that type, and will be the instance returned by the `GetDefaultAsync()` methods of [Windows.Devices.I2c.I2cController](https://msdn.microsoft.com/library/windows/apps/windows.devices.i2c.i2ccontroller.aspx) and [Windows.Devices.Spi.SpiController](https://msdn.microsoft.com/library/windows/apps/windows.devices.spi.spicontroller.aspx). 
 
 ### SPI 
 
-RaspberryPi comporte deux bus SPI exposés. SPI0 comporte deux lignes de sélection de microprocesseur et SPI1 comporte une seule ligne de sélection de microprocesseur. Une déclaration de ressource SPISerialBus() est requise pour chaque ligne de sélection de processeur pour chaque bus. Les deux déclarations de ressource SPISerialBus suivantes sont pour les deux lignes de sélection de processeur sur SPI0. Le champ DeviceSelection contient une valeur unique que le pilote interprète comme un identificateur de ligne de sélection de microprocesseur. La valeur exacte que vous indiquez dans le champ DeviceSelection dépend de la manière dont votre pilote interprète ce champ du descripteur de connexion ACPI.  
+Raspberry Pi has two exposed SPI buses. SPI0 has two hardware chip select lines and SPI1 has one hardware chip select line. One SPISerialBus() resource declaration is required for each chip select line for each bus. The following two SPISerialBus resource declarations are for the two chip select lines on SPI0. The DeviceSelection field contains a unique value which the driver interprets as a hardware chip select line identifier. The exact value that you put in the DeviceSelection field depends on how your driver interprets this field of the ACPI connection descriptor.  
 
 ```cpp
 // Index 0 
@@ -84,28 +84,28 @@ SPISerialBus(              // SCKL - GPIO 11 - Pin 23
 
 ```
 
-Comment le logiciel sait-il que ces deux ressources doivent être associées au même bus? Le mappage entre le nom convivial de bus et l’index de ressource est spécifié dans le DSD:  
+How does software know that these two resources should be associated with the same bus? The mapping between bus friendly name and resource index is specified in the DSD:  
 
 ```cpp
 Package(2) { "bus-SPI-SPI0", Package() { 0, 1 }}, 
 ```
 
-Cela crée un bus nommé «SPI0» avec deux lignes de sélection de processeur: les index de ressource0 et1. Plusieurs autres propriétés sont requises pour déclarer les fonctionnalités du bus SPI.  
+This creates a bus named “SPI0” with two chip select lines – resource indexes 0 and 1. Several more properties are required to declare the capabilities of the SPI bus.  
 
 ```cpp
 Package(2) { "SPI0-MinClockInHz", 7629 }, 
 Package(2) { "SPI0-MaxClockInHz", 125000000 },
 ```
 
-Les propriétés **MinClockInHz** et **MaxClockInHz** spécifient les vitesses d’horloge minimale et maximale prises en charge par le contrôleur. L’API empêche les utilisateurs de spécifier des valeurs en dehors de cette plage. La vitesse d’horloge est transmise à votre piloteSPB dans le champ _SPE du descripteur de connexion (ACPI section6.4.3.8.2.2).  
+The **MinClockInHz** and **MaxClockInHz** properties specify the minimum and maximum clock speeds that are supported by the controller. The API will prevent users from specifying values outside this range. The clock speed is passed to your SPB driver in the _SPE field of the connection descriptor (ACPI section 6.4.3.8.2.2).  
 
 ```cpp
 Package(2) { "SPI0-SupportedDataBitLengths", Package() { 8 }}, 
 ```
 
-La propriété **SupportedDataBitLengths** répertorie les longueurs de bits de données prises en charge par le contrôleur. Il est possible de spécifier plusieurs valeurs dans une liste séparée par des virgules. L’API empêche les utilisateurs de spécifier des valeurs en dehors de cette liste. La longueur de bits de données est transmise au piloteSPB dans le champ _LEN du descripteur de connexion (ACPI section6.4.3.8.2.2).  
+The **SupportedDataBitLengths** property lists the data bit lengths supported by the controller. Multiple values can be specified in a comma-separated list. The API will prevent users from specifying values outside this list. The data bit length is passed to your SPB driver in the _LEN field of the connection descriptor (ACPI section 6.4.3.8.2.2).  
 
-Vous pouvez considérer ces déclarations de ressources comme des «modèles». Certains champs sont résolus au démarrage du système tandis que d’autres sont spécifiés dynamiquement lors de l’exécution. Les champs suivants du descripteur SPISerialBus sont résolus: 
+You can think of these resource declarations as “templates.” Some of the fields are fixed at system boot while others are specified dynamically at runtime. The following fields of the SPISerialBus descriptor are fixed: 
 
 * DeviceSelection 
 * DeviceSelectionPolarity 
@@ -113,14 +113,14 @@ Vous pouvez considérer ces déclarations de ressources comme des «modèles». 
 * SlaveMode 
 * ResourceSource 
 
-Les champs suivants sont des espaces réservés pour les valeurs spécifiées par l’utilisateur lors de l’exécution: 
+The following fields are placeholders for values specified by the user at runtime: 
 
 * DataBitLength 
 * ConnectionSpeed 
 * ClockPolarity 
 * ClockPhase 
 
-Dans la mesure où SPI1 contient une seule ligne de sélection de processeur, une seule ressource `SPISerialBus()` est déclarée : 
+Since SPI1 contains only a single chip select line, a single `SPISerialBus()` resource is declared: 
 
 ```cpp
 // Index 2 
@@ -144,25 +144,25 @@ SPISerialBus(              // SCKL - GPIO 21 - Pin 40
 
 ```
 
-La déclaration de nom convivial qui l’accompagne (obligatoire) est spécifiée dans le DSD et fait référence à l’index de cette déclaration de ressource. 
+The accompanying friendly name declaration – which is required – is specified in the DSD and refers to the index of this resource declaration. 
 
 ```cpp
 Package(2) { "bus-SPI-SPI1", Package() { 2 }}, 
 ```
 
-Cela crée un bus nommé «SPI1» et l’associe à l’index de ressource2.  
+This creates a bus named “SPI1” and associates it with resource index 2.  
 
-#### Exigences liées au piloteSPI 
+#### SPI Driver Requirements 
 
-* Doit utiliser `SpbCx` ou être compatible SpbCx 
-* Doit avoir réussi les [tests SPI dans MITT](https://msdn.microsoft.com/library/windows/hardware/dn919873.aspx)
-* Doit prendre en charge une vitesse d’horloge de 4MHz 
-* Doit prendre en charge la longueur des données de 8bits 
-* Doit prendre en charge tous les Modes SPI: 0, 1, 2, 3 
+* Must use `SpbCx` or be SpbCx-compatible 
+* Must have passed the [MITT SPI Tests](https://msdn.microsoft.com/library/windows/hardware/dn919873.aspx)
+* Must support 4Mhz clock speed 
+* Must support 8-bit data length 
+* Must support all SPI Modes: 0, 1, 2, 3 
 
 ### I2C 
 
-Ensuite, nous déclarons les ressourcesI2C. RaspberryPi expose un seul busI2C sur les broches3 et5. 
+Next, we declare the I2C resources. Raspberry Pi exposes a single I2C bus on pins 3 and 5. 
 
 ```cpp
 // Index 3 
@@ -178,42 +178,42 @@ I2CSerialBus(              // Pin 3 (GPIO2, SDA1), 5 (GPIO3, SCL1)
 
 ```
 
-La déclaration de nom convivial qui l’accompagne (obligatoire) est spécifiée dans le DSD: 
+The accompanying friendly name declaration – which is required – is specified in the DSD: 
 
 ```cpp
 Package(2) { "bus-I2C-I2C1", Package() { 3 }}, 
 ```
 
-Ce code déclare un busI2C avec un nom convivial «I2C1» qui fait référence à l’index de ressource3, qui est l’index de la ressource I2CSerialBus() que nous avons déclarée ci-dessus. 
+This declares an I2C bus with friendly name “I2C1” that refers to resource index 3, which is the index of the I2CSerialBus() resource that we declared above. 
 
-Les champs suivants du descripteur I2CSerialBus() sont résolus: 
+The following fields of the I2CSerialBus() descriptor are fixed: 
 
 * SlaveMode 
 * ResourceSource 
 
-Les champs suivants sont des espaces réservés pour les valeurs spécifiées par l’utilisateur lors de l’exécution: 
+The following fields are placeholders for values specified by the user at runtime. 
 
 * SlaveAddress 
 * ConnectionSpeed 
 * AddressingMode 
 
-#### Exigences liées au piloteI2C 
+#### I2C Driver Requirements 
 
-* Doit utiliser SpbCx ou être compatible SpbCx 
-* Doit avoir réussi les [tests I2C dans MITT](https://msdn.microsoft.com/library/windows/hardware/dn919852.aspx) 
-* Doit prendre en charge l’adressage 7bits 
-* Doit prendre en charge une vitesse d’horloge de 100KHz 
-* Doit prendre en charge une vitesse d’horloge de 400KHz 
+* Must use SpbCx or be SpbCx-compatible 
+* Must have passed the [MITT I2C Tests](https://msdn.microsoft.com/library/windows/hardware/dn919852.aspx) 
+* Must support 7-bit addressing 
+* Must support 100kHz clock speed 
+* Must support 400kHz clock speed 
 
 ### GPIO 
 
-Ensuite, nous déclarons tous les broches GPIO qui sont exposées au mode utilisateur. Nous vous recommandons de procéder comme suit pour décider quelles broches exposer: 
+Next, we declare all the GPIO pins that are exposed to usermode. We offer the following guidance in deciding which pins to expose: 
 
-* Déclarez toutes les broches sur les en-têtes exposées. 
-* Déclarez les broches connectées à des fonctions intégrées utiles comme les boutons et les voyants. 
-* Ne déclarez pas les broches qui sont réservées aux fonctions système ou qui ne sont connectées à rien. 
+* Declare all pins on exposed headers. 
+* Declare pins that are connected to useful onboard functions like buttons and LEDs. 
+* Do not declare pins that are reserved for system functions or are not connected to anything. 
 
-Le bloc suivant d’ASL déclare deux broches: GPIO4 et GPIO5. Les autres broches n’apparaissent pas ici par souci de brièveté. L’annexeC contient un exemple de script powershell qui peut être utilisé pour générer les ressourcesGPIO. 
+The following block of ASL declares two pins – GPIO4 and GPIO5. The other pins are not shown here for brevity. Appendix C contains a sample powershell script which can be used to generate the GPIO resources. 
 
 ```cpp
 // Index 4 – GPIO 4 
@@ -225,77 +225,77 @@ GpioIO(Shared, PullUp, , , , “\\_SB.GPI0”, , , , ) { 5 }
 GpioInt(Edge, ActiveBoth, Shared, PullUp, 0, “\\_SB.GPI0”,) { 5 } 
 ```
 
-Les conditions suivantes doivent être respectées lors de la déclaration des brochesGPIO: 
+The following requirements must be observed when declaring GPIO pins: 
 
-* Seuls les contrôleurs GPIO mappés en mémoire sont pris en charge. Les contrôleurs GPIO interfacés sur I2C/SPI ne sont pas pris en charge. Le pilote du contrôleur est un contrôleur mappé en mémoire s’il définit l’indicateur [MemoryMappedController](https://msdn.microsoft.com/library/windows/hardware/hh439449.aspx) dans la structure [CLIENT_CONTROLLER_BASIC_INFORMATION](https://msdn.microsoft.com/library/windows/hardware/hh439358.aspx) en réponse au rappel [CLIENT_QueryControllerBasicInformation](https://msdn.microsoft.com/library/windows/hardware/hh439399.aspx). 
-* Chaque broche nécessite une ressource GpioIO et une ressource GpioInt. La ressource GpioInt doit immédiatement suivre la ressource GpioIO et doit faire référence au même numéro de broche. 
-* Les ressources GPIO doivent être classées par numéro de broche croissant. 
-* Chaque ressource GpioIO et GpioInt doit contenir exactement un numéro de broche dans la liste des broches. 
-* Le champ ShareType de ces deux descripteurs doit valoir Shared 
-* Le champ EdgeLevel du descripteur GpioInt doit valoir Edge 
-* Le champ ActiveLevel du descripteur GpioInt doit valoir ActiveBoth 
-* Le champ PinConfig 
-  * Doit avoir la même valeur dans les descripteurs GpioIO et GpioInt 
-  * Doit valoir PullUp, PullDown ou PullNone. Il ne peut pas valoir PullDefault.
-  * La configuration de collecte doit correspondre à l’état de mise sous tension de la broche. Le fait d’activer le mode de collecte spécifié pour la broche à partir de l’état de mise sous tension ne doit pas changer l’état de la broche. Par exemple, si la feuille de données spécifie que la broche est fournie avec une résistance pull-up, spécifiez PinConfig comme PullUp.  
+* Only memory mapped GPIO controllers are supported. GPIO controllers interfaced over I2C/SPI are not supported. The controller driver is a memory mapped controller if it sets the [MemoryMappedController](https://msdn.microsoft.com/library/windows/hardware/hh439449.aspx) flag in the [CLIENT_CONTROLLER_BASIC_INFORMATION](https://msdn.microsoft.com/library/windows/hardware/hh439358.aspx) structure in response to the [CLIENT_QueryControllerBasicInformation](https://msdn.microsoft.com/library/windows/hardware/hh439399.aspx) callback. 
+* Each pin requires both a GpioIO and a GpioInt resource. The GpioInt resource must immediately follow the GpioIO resource and must refer to the same pin number. 
+* GPIO resources must be ordered by increasing pin number. 
+* Each GpioIO and GpioInt resource must contain exactly one pin number in the pin list. 
+* The ShareType field of both descriptors must be Shared 
+* The EdgeLevel field of the GpioInt descriptor must be Edge 
+* The ActiveLevel field of the GpioInt descriptor must be ActiveBoth 
+* The PinConfig field 
+  * Must be the same in both the GpioIO and GpioInt descriptors 
+  * Must be one of PullUp, PullDown, or PullNone. It cannot be PullDefault.
+  * The pull configuration must match the power-on state of the pin. Putting the pin in the specified pull mode from power-on state must not change the state of the pin. For example, if the datasheet specifies that the pin comes up with a pull up, specify PinConfig as PullUp.  
 
-Le code d’initialisation du microprogramme, d’UEFI et du pilote ne doit pas modifier l’état d’une broche à partir de son état de mise sous tension au cours du démarrage. L’utilisateur est le seul à savoir quels éléments sont attachés à une broche et par conséquent, quelles transitions d’état sont sécurisées. L’état de mise sous tension de chaque broche doit être documenté pour que les utilisateurs puissent concevoir un matériel qui crée une interface correcte avec une broche. Une broche ne doit pas changer d’état de façon inattendue au cours du démarrage. 
+Firmware, UEFI, and driver initialization code should not change the state of a pin from its power-on state during boot. Only the user knows what’s attached to a pin and therefore which state transitions are safe. The power-on state of each pin must be documented so that users can design hardware that correctly interfaces with a pin. A pin must not change state unexpectedly during boot. 
 
-Si une broche exposée comporte plusieurs fonctions secondaires, il incombe au microprogramme d’initialiser la broche dans la configuration mux (multiplexe) correcte pour une utilisation ultérieure par le système d’exploitation. La modification dynamique de la fonction d’une broche («multiplexage») n’est pas actuellement prise en charge sur Windows. 
+If an exposed pin has multiple alternate functions, it is the responsibility of firmware to initialize the pin in the correct mux configuration for subsequent use by the OS. Dynamically changing the function of a pin (“muxing”) is not currently supported on Windows. 
 
-#### Modes de lecteur pris en charge 
+#### Supported Drive Modes 
 
-Si votre contrôleur GPIO prend en charge les résistances pull-up et pull-down intégrées en plus d’une impédance d’entrée et de sortie CMOS élevée, vous devez spécifier cela avec la propriété SupportedDriveModes facultative. 
+If your GPIO controller supports built-in pull up and pull down resistors in addition to high impedance input and CMOS output, you must specify this with the optional SupportedDriveModes property. 
 
 ```cpp
 Package (2) { “GPIO-SupportedDriveModes”, 0xf }, 
 ```
 
-La propriété SupportedDriveModes indique quels modes de lecteur sont pris en charge par le contrôleur GPIO. Dans l’exemple ci-dessus, tous les modes de lecteur suivants sont pris en charge. La propriété est un masque de bits des valeurs suivantes: 
+The SupportedDriveModes property indicates which drive modes are supported by the GPIO controller. In the example above, all of the following drive modes are supported. The property is a bitmask of the following values: 
 
-| Valeur de l’indicateur | Mode du lecteur | Description |
+| Flag Value | Drive Mode | Description |
 |------------|------------|-------------|
-| 0x1        | InputHighImpedance | La broche prend en charge une impédance d’entrée élevée, qui correspond à la valeur «PullNone» dans l’interface ACPI. |
-| 0x2        | InputPullUp | La broche prend en charge une résistance pull-up intégrée, qui correspond à la valeur «PullUp» dans l’interface ACPI. |
-| 0x4        | InputPullDown | La broche prend en charge une résistance pull-down intégrée, qui correspond à la valeur «PullDown» dans l’interface ACPI. |
-| 0x8        | OutputCmos | La broche prend en charge la génération de fortes hausses et de fortes baisses (contrairement aux purges directes). |
+| 0x1        | InputHighImpedance | The pin supports high impedance input, which corresponds to the “PullNone” value in ACPI. |
+| 0x2        | InputPullUp | The pin supports a built-in pull-up resistor, which corresponds to the “PullUp” value in ACPI. |
+| 0x4        | InputPullDown | The pin supports a built-in pull-down resistor, which corresponds to the “PullDown” value in ACPI. |
+| 0x8        | OutputCmos | The pin supports generating both strong highs and strong lows (as opposed to open drain). |
 
-InputHighImpedance et OutputCmos sont pris en charge par la plupart des contrôleurs GPIO. Si la propriété SupportedDriveModes n’est pas spécifiée, il s’agit de la valeur par défaut. 
+InputHighImpedance and OutputCmos are supported by almost all GPIO controllers. If the SupportedDriveModes property is not specified, this is the default. 
 
-Si un signal GPIO passe à travers un convertisseur de niveau avant d’atteindre un en-tête exposé, déclarez les modes du lecteur pris en charge par le SOC, même si le mode du lecteur n’est pas observable sur l’en-tête externe. Par exemple, si une broche passe à travers un convertisseur de niveau bidirectionnel pour apparaître comme un collecteur ouvert avec résistance pull-up, vous n’observerez jamais un état d’impédance élevé sur l’en-tête exposé même si la broche est configurée avec une impédance d’entrée élevée. Vous devez toujours déclarer que la broche prend en charge une impédance d’entrée élevée. 
+If a GPIO signal goes through a level shifter before reaching an exposed header, declare the drive modes supported by the SOC, even if the drive mode would not be observable on the external header. For example, if a pin goes through a bidirectional level shifter that makes a pin appear as open drain with resistive pull up, you will never observe a high impedance state on the exposed header even if the pin is configured as a high impedance input. You should still declare that the pin supports high impedance input. 
 
-#### Numérotation de broche 
+#### Pin Numbering 
 
-Windows prend en charge deux modèles de numérotation de broche: 
+Windows supports two pin numbering schemes: 
 
-* Numérotation séquentielle de broche: les utilisateurs voient des nombres comme 0, 1, 2... jusqu’au nombre de broches exposées. 0 est la première ressource GpioIo déclarée dans ASL, 1 est la deuxième ressource GpioIo déclarée dans ASL et ainsi de suite. 
-* Numérotation native de broche: les utilisateurs, voit les numéros de broche spécifiés dans les descripteurs GpioIo, par exemple, 4, 5, 12, 13,... .  
+* Sequential Pin Numbering – Users see numbers like 0, 1, 2 … up to the number of exposed pins. 0 is the first GpioIo resource declared in ASL, 1 is the second GpioIo resource declared in ASL, and so on. 
+* Native Pin Numbering – Users see the pin numbers specified in GpioIo descriptors, e.g. 4, 5, 12, 13, … .  
 
 ```cpp
 Package (2) { “GPIO-UseDescriptorPinNumbers”, 1 }, 
 ```
 
-La propriété **UseDescriptorPinNumbers** indique à Windows d’utiliser la numérotation native de broche au lieu de la numérotation séquentielle de broche. Si la propriété UseDescriptorPinNumbers n’est pas spécifiée ou si sa valeur vaut zéro, Windows utilise la numérotation séquentielle de broche par défaut. 
+The **UseDescriptorPinNumbers** property tells Windows to use native pin numbering instead of sequential pin numbering. If the UseDescriptorPinNumbers property is not specified or its value is zero, Windows will default to Sequential pin numbering. 
 
-Si la numérotation native de broche est utilisée, vous devez également spécifier la propriété **PinCount**. 
+If native pin numbering is used, you must also specify the **PinCount** property. 
 
 ```cpp
 Package (2) { “GPIO-PinCount”, 54 }, 
 ```
 
-La propriété **PinCount** doit correspondre à la valeur renvoyée par le biais de la propriété **TotalPins** dans le rappel [CLIENT_QueryControllerBasicInformation](https://msdn.microsoft.com/library/windows/hardware/hh439399.aspx) du pilote `GpioClx`. 
+The **PinCount** property should match the value returned through the **TotalPins** property in the [CLIENT_QueryControllerBasicInformation](https://msdn.microsoft.com/library/windows/hardware/hh439399.aspx) callback of the `GpioClx` driver. 
 
-Choisissez le modèle de numérotation le plus compatible avec la documentation publiée existante pour votre carte. Par exemple, RaspberryPi utilise la numérotation native de broche car de nombreux diagrammes de brochage existants utilisent les numéros de brocheBCM2835. MinnowBoardMax utilise la numérotation séquentielle de broche car il y a peu de diagrammes de brochage existants, et la numérotation séquentielle de broche simplifie l’expérience du développeur car seules 10broches sur plus de200 sont exposées. La décision d’utiliser la numérotation séquentielle ou native de broche doit avoir pour objet de réduire la confusion du développeur. 
+Choose the numbering scheme that is most compatible with existing published documentation for your board. For example, Raspberry Pi uses native pin numbering because many existing pinout diagrams use the BCM2835 pin numbers. MinnowBoardMax uses sequential pin numbering because there are few existing pinout diagrams, and sequential pin numbering simplifies the developer experience because only 10 pins are exposed out of more than 200 pins. The decision to use sequential or native pin numbering should aim to reduce developer confusion. 
 
-#### Exigences liées au piloteGPIO 
+#### GPIO Driver Requirements 
 
-* Doit utiliser `GpioClx`
-* Doit être mappé en mémoire sur SOC 
-* Doit utiliser la gestion d’interruption ActiveBoth émulée 
+* Must use `GpioClx`
+* Must be on-SOC memory mapped 
+* Must use emulated ActiveBoth interrupt handling 
 
 ### UART 
 
-UART n’est pas pris en charge sur RaspberryPi au moment où nous écrivons ceci, donc la déclaration UART suivante est de MinnowBoardMax. 
+UART is not supported on Raspberry Pi at the time of writing, so the following UART declaration is from MinnowBoardMax. 
 
 ```cpp
 // Index 2 
@@ -316,59 +316,59 @@ UARTSerialBus(           // Pin 17, 19 of JP1, for SIO_UART2
     )
 ```
 
-Seul le champ ResourceSource est résolu. Tous les autres champs sont des espaces réservés pour les valeurs spécifiées par l’utilisateur lors de l’exécution. 
+Only the ResourceSource field is fixed while all other fields are placeholders for values specified at runtime by the user. 
 
-La déclaration de nom convivial associée est la suivante: 
+The accompanying friendly name declaration is: 
 
 ```cpp
 Package(2) { "bus-UART-UART2", Package() { 2 }}, 
 ```
 
-Ce code affecte le nom convivial «UART2» au contrôleur, qui est l’identificateur dont les utilisateurs se serviront pour accéder au bus à partir du mode utilisateur.  
+This assigns the friendly name “UART2” to the controller, which is the identifier users will use to access the bus from usermode.  
 
-## Multiplexage de broche au moment de l’exécution 
+## Runtime Pin Muxing 
 
-Le multiplexage de broche est la capacité d’utiliser la même broche physique pour différentes fonctions. Il est possible d’acheminer plusieurs appareils sur puce, par exemple un contrôleurI2C, un contrôleurSPI et un contrôleurGPIO, vers la même broche physique sur unSOC. Le bloc mux contrôle quelle fonction est active sur la broche à tout moment. Généralement, le microprogramme est chargé de déterminer les affectations de fonction au démarrage, et ces affectations restent statiques tout au long de la session de démarrage. Le multiplexage de broche au moment de l’exécution ajoute la capacité de reconfigurer les affectations de fonction de la broche à l’exécution. Le fait de laisser les utilisateurs choisir la fonction d’une broche à l’exécution accélère le développement en leur permettant de reconfigurer rapidement les broches d’une carte. En outre, cela permet au matériel de prendre en charge un plus large éventail d’applications qu’une configuration statique. 
+Pin muxing is the ability to use the same physical pin for different functions. Several different on-chip peripherals, such as an I2C controller, SPI controller, and GPIO controller, might be routed to the same physical pin on a SOC. The mux block controls which function is active on the pin at any given time. Traditionally, firmware is responsible for establishing function assignments at boot, and this assignment remains static through the boot session. Runtime pin muxing adds the ability to reconfigure pin function assignments at runtime. Enabling users to choose a pin’s function at runtime speeds development by enabling users to quickly reconfigure a board’s pins, and enables hardware to support a broader range of applications than would a static configuration. 
 
-Les utilisateurs profitent de la prise en charge du multiplexage pour GPIO, I2C, SPI et UART sans écrire de code supplémentaire. Quand un utilisateur ouvre un GPIO ou un bus en utilisant [OpenPin()](https://msdn.microsoft.com/library/dn960157.aspx) ou [FromIdAsync()](https://msdn.microsoft.com/windows.devices.i2c.i2cdevice.fromidasync), les broches physiques sous-jacentes sont automatiquement multiplexées sur la fonction demandée. Si les broches sont déjà utilisées par une autre fonction, l’appel à OpenPin() ou FromIdAsync() échoue. Lorsque l’utilisateur ferme l’appareil en supprimant l’objet [GpioPin](https://msdn.microsoft.com/library/windows/apps/windows.devices.gpio.gpiopin.aspx), [I2cDevice](https://msdn.microsoft.com/library/windows/apps/windows.devices.i2c.i2cdevice.aspx), [SpiDevice](https://msdn.microsoft.com/library/windows/apps/windows.devices.spi.spidevice.aspx) ou [SerialDevice](https://msdn.microsoft.com/library/windows/apps/windows.devices.serialcommunication.serialdevice.aspx), les broches sont libérées, ce qui permet de les ouvrir ultérieurement pour une autre fonction. 
+Users consume muxing support for GPIO, I2C, SPI, and UART without writing any additional code. When a user opens a GPIO or bus using [OpenPin()](https://msdn.microsoft.com/library/dn960157.aspx) or [FromIdAsync()](https://msdn.microsoft.com/windows.devices.i2c.i2cdevice.fromidasync), the underlying physical pins are automatically muxed to the requested function. If the pins are already in use by a different function, the OpenPin() or FromIdAsync() call will fail. When the user closes the device by disposing the [GpioPin](https://msdn.microsoft.com/library/windows/apps/windows.devices.gpio.gpiopin.aspx), [I2cDevice](https://msdn.microsoft.com/library/windows/apps/windows.devices.i2c.i2cdevice.aspx), [SpiDevice](https://msdn.microsoft.com/library/windows/apps/windows.devices.spi.spidevice.aspx), or [SerialDevice](https://msdn.microsoft.com/library/windows/apps/windows.devices.serialcommunication.serialdevice.aspx) object, the pins are released, allowing them to later be opened for a different function. 
 
-Windows contient la prise en charge intégrée pour le multiplexage de broche dans les infrastructures [GpioClx](https://msdn.microsoft.com/library/windows/hardware/hh439515.aspx), [SpbCx](https://msdn.microsoft.com/library/windows/hardware/hh406203.aspx) et [SerCx](https://msdn.microsoft.com/library/windows/hardware/dn265349.aspx). Ces infrastructures fonctionnent ensemble pour basculer automatiquement une broche vers la fonction appropriée lors de l’accès à une broche ou un bus GPIO. L’accès aux broches fait l’objet d’un arbitrage pour éviter les conflits entre plusieurs clients. Outre cette prise en charge intégrée, les interfaces et les protocoles de multiplexage de broche ont un usage général et peuvent être étendus pour prendre en charge des scénarios et des appareils supplémentaires. 
+Windows contains built-in support for pin muxing in the [GpioClx](https://msdn.microsoft.com/library/windows/hardware/hh439515.aspx), [SpbCx](https://msdn.microsoft.com/library/windows/hardware/hh406203.aspx), and [SerCx](https://msdn.microsoft.com/library/windows/hardware/dn265349.aspx) frameworks. These frameworks work together to automatically switch a pin to the correct function when a GPIO pin or bus is accessed. Access to the pins is arbitrated to prevent conflicts among multiple clients. In addition to this built-in support, the interfaces and protocols for pin muxing are general purpose and can be extended to support additional devices and scenarios. 
 
-Ce document décrit tout d’abord les interfaces et les protocoles sous-jacents impliqués dans le multiplexage de broche et décrit comment ajouter la prise en charge du multiplexage de broche aux pilotes de contrôleurs GpioClx, SpbCx et SerCx. 
+This document first describes the underlying interfaces and protocols involved in pin muxing, and then describes how to add support for pin muxing to GpioClx, SpbCx, and SerCx controller drivers. 
 
-### Architecture de multiplexage de broche 
+### Pin Muxing Architecture 
 
-Cette section décrit les interfaces et les protocoles sous-jacents impliqués dans le multiplexage de broche. Il n’est pas obligatoire de connaître les protocoles sous-jacents pour prendre en charge le multiplexage de broche avec les pilotes GpioClx/SpbCx/SerCx. Pour plus d’informations sur la prise en charge du multiplexage de broche avec les pilotes GpioCls/SpbCx/SerCx, consultez [Implémentation de la prise en charge du multiplexage de broche dans les pilotes clients GpioClx](#supporting-muxing-support-in-GpioClx-client-drivers) et [Utilisation de la prise en charge du multiplexage dans les pilotes de contrôleur SpbCx et SerCx](#supporting-muxing-in-SpbCx-and-SerCx-controller-drivers). 
+This section describes the underlying interfaces and protocols involved in pin muxing. Knowledge of the underlying protocols is not necessarily needed to support pin muxing with GpioClx/SpbCx/SerCx drivers. For details on how to support pin muxing with GpioCls/SpbCx/SerCx drivers, see [Implementing pin muxing support in GpioClx client drivers](#supporting-muxing-support-in-GpioClx-client-drivers) and [Consuming muxing support in SpbCx and SerCx controller drivers](#supporting-muxing-in-SpbCx-and-SerCx-controller-drivers). 
 
-Le multiplexage de broche est accompli via l’utilisation conjointe de plusieurs composants. 
+Pin muxing is accomplished by the cooperation of several components. 
 
-* Les serveurs de multiplexage de broche: il s’agit des pilotes qui contrôlent le bloc de contrôle du multiplexage de broche. Les serveurs de multiplexage de broche reçoivent les requêtes de multiplexage de broche des clients via les requêtes de réservation des ressources de multiplexage (via les requêtes *IRP_MJ_CREATE*) et les requêtes de basculement de la fonction d’une broche (via les requêtes *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS*). Le serveur de multiplexage de broche est généralement le pilote GPIO, dans la mesure où le bloc de multiplexage fait parfois partie du bloc GPIO. Même si le bloc de multiplexage est un périphérique distinct, le pilote GPIO est un emplacement logique pour placer des fonctionnalités de multiplexage. 
-* Clients du multiplexage de broche: il s’agit des pilotes qui utilisent le multiplexage de broche. Les clients du multiplexage de broche reçoivent des ressources de multiplexage de broche à partir du microprogramme ACPI. Les ressources de multiplexage de broche sont un type de ressource de connexion et sont gérées par le concentrateur de ressources. Les clients du multiplexage de broche réservent des ressources de multiplexage de broche en ouvrant un handle vers la ressource. Pour appliquer un changement de matériel, les clients doivent valider la configuration en envoyant une requête *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS*. Les clients libèrent les ressources de multiplexage de broche en fermant le handle, auquel cas la configuration du multiplexage est rétablie à son état par défaut. 
-* Microprogramme ACPI : spécifie la configuration du multiplexage avec des ressources `MsftFunctionConfig()`. Les ressources MsftFunctionConfig expriment quelles broches sont requises par un client, et dans quelle configuration de multiplexage. Les ressources MsftFunctionConfig contiennent le numéro de fonction, la configuration de la résistance pull et la liste des numéros de broche. Les ressources MsftFunctionConfig sont fournies aux clients du multiplexage de broche en tant que ressources matérielles, qui sont reçues par les pilotes dans leur rappel PrepareHardware de la même manière que les ressources de connexion GPIO et SPB. Les clients reçoivent un ID de concentrateur de ressource qui peut être utilisé pour ouvrir un handle vers la ressource. 
+* Pin muxing servers – these are drivers that control the pin muxing control block. Pin muxing servers receive pin muxing requests from clients via requests to reserve muxing resources (via *IRP_MJ_CREATE*) requests, and requests to switch a pin’s function (via *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* requests). The pin muxing server is usually the GPIO driver, since the muxing block is sometimes part of the GPIO block. Even if the muxing block is a separate peripheral, the GPIO driver is a logical place to put muxing functionality. 
+* Pin muxing clients – these are drivers that consume pin muxing. Pin muxing clients receive pin muxing resources from ACPI firmware. Pin muxing resources are a type of connection resource and are managed by the resource hub. Pin muxing clients reserve pin muxing resources by opening a handle to the resource. To effect a hardware change, clients must commit the configuration by sending an *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* request. Clients release pin muxing resources by closing the handle, at which point muxing configuration is reverted to its default state. 
+* ACPI firmware – specifies muxing configuration with `MsftFunctionConfig()` resources. MsftFunctionConfig resources express which pins, in which muxing configuration, are required by a client. MsftFunctionConfig resources contain function number, pull configuration, and list of pin numbers. MsftFunctionConfig resources are supplied to pin muxing clients as hardware resources, which are received by drivers in their PrepareHardware callback similarly to GPIO and SPB connection resources. Clients receive a resource hub ID which can be used to open a handle to the resource. 
 
-> Vous devez faire passer le commutateur de ligne de commande `/MsftInternal` à `asl.exe` pour compiler les fichiers ASL contenant les descripteurs `MsftFunctionConfig()`, car ces descripteurs sont actuellement examinés par le comité de travail ACPI. Par exemple: `asl.exe /MsftInternal dsdt.asl`
+> You must pass the `/MsftInternal` command line switch to `asl.exe` to compile ASL files containing `MsftFunctionConfig()` descriptors since these descriptors are currently under review by the ACPI working committee. For example: `asl.exe /MsftInternal dsdt.asl`
 
-La séquence des opérations impliquées dans le multiplexage de broche est présentée ci-dessous. 
+The sequence of operations involved in pin muxing is shown below. 
 
-![Interaction du serveur client de multiplexage de broche](images/usermode-access-diagram-1.png)
+![Pin muxing client server interaction](images/usermode-access-diagram-1.png)
 
-1.  Le client reçoit les ressources MsftFunctionConfig à partir du microprogramme ACPI dans son rappel [EvtDevicePrepareHardware()](https://msdn.microsoft.com/library/windows/hardware/ff540880.aspx).
-2.  Le client utilise la fonction d’assistance du concentrateur de ressources `RESOURCE_HUB_CREATE_PATH_FROM_ID()` pour créer un chemin d’accès à partir de l’ID de ressource, puis ouvre un handle vers le chemin d’accès (à l’aide de [ZwCreateFile()](https://msdn.microsoft.com/library/windows/hardware/ff566424.aspx), [IoGetDeviceObjectPointer()](https://msdn.microsoft.com/library/windows/hardware/ff549198.aspx) ou [WdfIoTargetOpen()](https://msdn.microsoft.com/library/windows/hardware/ff548634.aspx)).
-3.  Le serveur extrait l’ID du concentrateur de ressources à partir du chemin d’accès au fichier à l’aide des fonctions d’assistance du concentrateur de ressources `RESOURCE_HUB_ID_FROM_FILE_NAME()`, puis interroge le concentrateur de ressources pour récupérer le descripteur des ressources.
-4.  Le serveur effectue un arbitrage du partage pour chaque broche dans le descripteur et termine la requête IRP_MJ_CREATE.
-5.  Le client émet une requête *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* sur le handle reçu.
-6.  En réponse à *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS*, le serveur effectue l’opération de multiplexage du matériel en rendant la fonction spécifiée active sur chaque broche.
-7.  Le client poursuit les opérations qui dépendent de la configuration du multiplexage de broche demandée.
-8.  Lorsque le client n’a plus besoin que les broches soient multiplexées, il ferme le handle.
-9.  En réponse à la fermeture du handle, le serveur rétablit l’état initial de la broche.
+1.  The client receives MsftFunctionConfig resources from ACPI firmware in its [EvtDevicePrepareHardware()](https://msdn.microsoft.com/library/windows/hardware/ff540880.aspx) callback.
+2.  The client uses the resource hub helper function `RESOURCE_HUB_CREATE_PATH_FROM_ID()` to create a path from the resource ID, then opens a handle to the path (using [ZwCreateFile()](https://msdn.microsoft.com/library/windows/hardware/ff566424.aspx), [IoGetDeviceObjectPointer()](https://msdn.microsoft.com/library/windows/hardware/ff549198.aspx), or [WdfIoTargetOpen()](https://msdn.microsoft.com/library/windows/hardware/ff548634.aspx)).
+3.  The server extracts the resource hub ID from the file path using resource hub helper functions `RESOURCE_HUB_ID_FROM_FILE_NAME()`, then queries the resource hub to get the resource descriptor.
+4.  The server performs sharing arbitration for each pin in the descriptor and completes the IRP_MJ_CREATE request.
+5.  The client issues an *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* request on the received handle.
+6.  In response to *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS*, the server performs the hardware muxing operation by making the specified function active on each pin.
+7.  The client proceeds with operations that depend on the requested pin muxing configuration.
+8.  When the client no longer requires the pins to be muxed, it closes the handle.
+9.  In response to the handle being closed, the server reverts the pins back to their initial state.
 
-### Description du protocole pour les clients du multiplexage de broche
+### Protocol description for pin muxing clients
 
-Cette section explique comment un client utilise la fonctionnalité de multiplexage de broche. Cela ne s’applique pas aux pilotes de contrôleur `SerCx` et `SpbCx`, dans la mesure où les infrastructures implémentent ce protocole pour le compte des pilotes de contrôleur.
+This section describes how a client consumes pin muxing functionality. This does not apply to `SerCx` and `SpbCx` controller drivers, since the frameworks implement this protocol on behalf of controller drivers.
 
-####    Analyse des ressources
+####    Parsing resources
 
-Un pilote WDF reçoit des ressources `MsftFunctionConfig()` dans sa routine [EvtDevicePrepareHardware()](https://msdn.microsoft.com/library/windows/hardware/ff540880.aspx). Les ressources MsftFunctionConfig peuvent être identifiées par les champs suivants:
+A WDF driver receives `MsftFunctionConfig()` resources in its [EvtDevicePrepareHardware()](https://msdn.microsoft.com/library/windows/hardware/ff540880.aspx) routine. MsftFunctionConfig resources can be identified by the following fields:
 
 ```cpp
 CM_PARTIAL_RESOURCE_DESCRIPTOR::Type = CmResourceTypeConnection
@@ -376,7 +376,7 @@ CM_PARTIAL_RESOURCE_DESCRIPTOR::u.Connection.Class = CM_RESOURCE_CONNECTION_CLAS
 CM_PARTIAL_RESOURCE_DESCRIPTOR::u.Connection.Type = CM_RESOURCE_CONNECTION_TYPE_FUNCTION_CONFIG
 ```
 
-Une routine `EvtDevicePrepareHardware()` peut extraire des ressources MsftFunctionConfig comme suit:
+An `EvtDevicePrepareHardware()` routine might extract MsftFunctionConfig resources as follows:
 
 ```cpp
 EVT_WDF_DEVICE_PREPARE_HARDWARE evtDevicePrepareHardware;
@@ -430,9 +430,9 @@ evtDevicePrepareHardware (
 }
 ```
 
-####    Réservation et validation des ressources
+####    Reserving and committing resources
 
-Quand un client veut multiplexer des broches, il réserve et valide la ressource MsftFunctionConfig. L’exemple suivant montre comment un client peut réserver et valider des ressources MsftFunctionConfig.
+When a client wants to mux pins, it reserves and commits the MsftFunctionConfig resource. The following example shows how a client might reserve and commit MsftFunctionConfig resources.
 
 ```cpp
 _IRQL_requires_max_(PASSIVE_LEVEL)
@@ -503,57 +503,57 @@ NTSTATUS AcquireFunctionConfigResource (
 }
 ```
 
-Le pilote doit stocker le WDFIOTARGET dans l’une de ses zones de contexte afin de pouvoir être fermé ultérieurement. Lorsque le pilote est prêt à libérer la configuration du multiplexage, il doit fermer le handle de ressource en appelant la méthode [WdfObjectDelete()](https://msdn.microsoft.com/library/windows/hardware/ff548734.aspx) ou [WdfIoTargetClose()](https://msdn.microsoft.com/library/windows/hardware/ff548586.aspx) si vous avez l’intention de réutiliser le WDFIOTARGET.
+The driver should store the WDFIOTARGET in one of its context areas so that it can be closed later. When the driver is ready to release the muxing configuration, it should close the resource handle by calling [WdfObjectDelete()](https://msdn.microsoft.com/library/windows/hardware/ff548734.aspx), or [WdfIoTargetClose()](https://msdn.microsoft.com/library/windows/hardware/ff548586.aspx) if you intend to reuse the WDFIOTARGET.
 
 ```cpp
     WdfObjectDelete(resourceHandle);
 ```
 
-Lorsque le client ferme son handle de ressource, les broches sont multiplexées pour retrouver leur état initial et peuvent alors être acquises par un client différent.
+When the client closes its resource handle, the pins are muxed back to their initial state, and can now be acquired by a different client.
 
-### Description du protocole pour les serveurs du multiplexage de broche
+### Protocol description for pin muxing servers
 
-Cette section explique comment un serveur de multiplexage de broche expose sa fonctionnalité aux clients. Cela ne s’applique pas aux pilotes de miniport `GpioClx`, dans la mesure où les infrastructures implémentent ce protocole pour le compte des pilotes clients. Pour plus d’informations sur la prise en charge du multiplexage de broche dans les pilotes clients `GpioClx`, voir [Implémentation de la prise en charge du multiplexage dans pilotes clients GpioClx](#supporting-muxing-support-in-GpioClx-client-drivers).
+This section describes how a pin muxing server exposes its functionality to clients. This does not apply to `GpioClx` miniport drivers, since the framework implements this protocol on behalf of client drivers. For details on how to support pin muxing in `GpioClx` client drivers, see [Implementing muxing support in GpioClx Client Drivers](#supporting-muxing-support-in-GpioClx-client-drivers).
 
-####    Gestion des requêtes IRP_MJ_CREATE
+####    Handling IRP_MJ_CREATE requests
 
-Les clients ouvrent un handle vers une ressource lorsqu’ils veulent réserver une ressource de multiplexage de broche. Un serveur de multiplexage de broche reçoit des requêtes *IRP_MJ_CREATE* par le biais d’une opération d’analyse à partir du concentrateur de ressources. Le composant de chemin d’accès final de la requête *IRP_MJ_CREATE* contient l’ID du concentrateur de ressources, qui est un entier 64bits au format hexadécimal. Le serveur doit extraire l’ID du concentrateur de ressources à partir du nom de fichier en utilisant `RESOURCE_HUB_ID_FROM_FILE_NAME()` de reshub.h et envoyer *IOCTL_RH_QUERY_CONNECTION_PROPERTIES* vers le concentrateur de ressources pour obtenir le descripteur `MsftFunctionConfig()`.
+Clients open a handle to a resource when they want to reserve a pin muxing resource. A pin muxing server receives *IRP_MJ_CREATE* requests by way of a reparse operation from the resource hub. The trailing path component of the *IRP_MJ_CREATE* request contains the resource hub ID, which is a 64-bit integer in hexadecimal format. The server should extract the resource hub ID from the filename using `RESOURCE_HUB_ID_FROM_FILE_NAME()` from reshub.h, and send *IOCTL_RH_QUERY_CONNECTION_PROPERTIES* to the resource hub to obtain the `MsftFunctionConfig()` descriptor.
 
-Le serveur doit valider le descripteur et extraire le mode de partage et la liste des broches à partir du descripteur. Il doit ensuite effectuer l’arbitrage du partage des broches et, en cas de succès, marquer les broches comme réservées avant de terminer la requête.
+The server should validate the descriptor and extract the sharing mode and pin list from the descriptor. It should then perform sharing arbitration for the pins, and if successful, mark the pins as reserved before completing the request.
 
-L’arbitrage global du partage réussit si l’arbitrage du partage réussit pour chaque broche dans la liste des broches. Chaque broche doit être arbitrée comme suit:
+Sharing arbitration succeeds overall if sharing arbitration succeeds for each pin in the pin list. Each pin should be arbitrated as follows:
 
-*   Si la broche n’est pas déjà réservée, l’arbitrage du partage réussit.
-*   Si la broche est déjà réservée comme broche exclusive, l’arbitrage du partage échoue.
-*   Si la broche est déjà réservée comme broche partagée,
-  * et que la requête entrante est partagée, l’arbitrage du partage réussit.
-  * et que la requête entrante est exclusive, l’arbitrage du partage échoue.
+*   If the pin is not already reserved, sharing arbitration succeeds.
+*   If the pin is already reserved as exclusive, sharing arbitration fails.
+*   If the pin is already reserved as shared,
+  * and the incoming request is shared, sharing arbitration succeeds.
+  * and the incoming request is exclusive, sharing arbitration fails.
 
-Si l’arbitrage du partage échoue, la requête doit être effectuée avec *STATUS_GPIO_INCOMPATIBLE_CONNECT_MODE*. Si l’arbitrage du partage réussit, la requête doit être effectuée avec *STATUS_SUCCESS*.
+If sharing arbitration fails, the request should be completed with *STATUS_GPIO_INCOMPATIBLE_CONNECT_MODE*. If sharing arbitration succeeds, the request should completed with *STATUS_SUCCESS*.
 
-Le mode de partage de la requête entrante doit être récupéré à partir du descripteur MsftFunctionConfig, et non [IrpSp-&gt;Parameters.Create.ShareAccess](https://msdn.microsoft.com/library/windows/hardware/ff548630.aspx).
+Note that the sharing mode of the incoming request should be taken from the MsftFunctionConfig descriptor, not [IrpSp->Parameters.Create.ShareAccess](https://msdn.microsoft.com/library/windows/hardware/ff548630.aspx).
 
-####    Gestion des demandes IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS
+####    Handling IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS requests
 
-Une fois que le client a réussi à réserver une ressource MsftFunctionConfig en ouvrant un handle, il peut envoyer *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* pour demander au serveur d’effectuer l’opération de multiplexage réelle du matériel. Lorsque le serveur reçoit *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS*, pour chaque broche de la liste des broches il doit 
+After the client has successfully reserved a MsftFunctionConfig resource by opening a handle, it can send *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* to request the server to perform the actual hardware muxing operation. When the server receives *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS*, for each pin in the pin list it should 
 
-*   Définir le mode pull spécifié dans le membre PinConfiguration de la structure PNP_FUNCTION_CONFIG_DESCRIPTOR dans le matériel.
-*   Multiplexer la broche sur la fonction spécifiée par le membre FunctionNumber de la structure PNP_FUNCTION_CONFIG_DESCRIPTOR.
+*   Set the pull mode specified in the PinConfiguration member of the PNP_FUNCTION_CONFIG_DESCRIPTOR structure into hardware.
+*   Mux the pin to the function specified by the FunctionNumber member of the PNP_FUNCTION_CONFIG_DESCRIPTOR structure.
 
-Le serveur doit ensuite effectuer la requête avec *STATUS_SUCCESS*.
+The server should then complete the request with *STATUS_SUCCESS*.
 
-La signification de FunctionNumber est définie par le serveur, et il est entendu que le descripteur MsftFunctionConfig a été créé en sachant de quelle façon le serveur interprète ce champ.
+The meaning of FunctionNumber is defined by the server, and it is understood that the MsftFunctionConfig descriptor was authored with knowledge of how the server interprets this field.
 
-Souvenez-vous que lorsque le handle est fermé, le serveur devra rétablir la configuration des broches au moment où IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS a été reçu, si bien que le serveur peut avoir à enregistrer l’état des broches avant de les modifier.
+Remember that when the handle is closed, the server will have to revert the pins to the configuration they were in when IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS was received, so the server may need to save the pins’ state before modifying them.
 
-####    Gestion des requêtes IRP_MJ_CLOSE
+####    Handling IRP_MJ_CLOSE requests
 
-Quand un client n’a plus besoin d’une ressource de multiplexage, il ferme son handle. Quand un serveur reçoit une requête *IRP_MJ_CLOSE*, il doit rétablir l’état des broches au moment où *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* a été reçu. Si le client n’a jamais envoyé un *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS*, aucune action n’est nécessaire. Le serveur doit ensuite marquer les broches comme disponibles par rapport à l’arbitrage du partage, et effectuer la requête avec *STATUS_SUCCESS*. Assurez-vous de synchroniser correctement la gestion de *IRP_MJ_CLOSE* avec la gestion de *IRP_MJ_CREATE*.
+When a client no longer requires a muxing resource, it closes its handle. When a server receives a *IRP_MJ_CLOSE* request, it should revert the pins to the state they were in when *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* was received. If the client never sent a *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS*, no action is necessary. The server should then mark the pins as available with respect to sharing arbitration, and complete the request with *STATUS_SUCCESS*. Be sure to properly synchronize *IRP_MJ_CLOSE* handling with *IRP_MJ_CREATE* handling.
 
-### Création de recommandations pour les tables ACPI
+### Authoring guidelines for ACPI tables
 
-Cette section décrit comment fournir des ressources de multiplexage aux pilotes clients. Notez que vous aurez besoin du compilateur Microsoft ASL build 14327 ou version ultérieure pour compiler les tables contenant des ressources `MsftFunctionConfig()`. `MsftFunctionConfig()` Les ressources sont fournies aux clients du multiplexage de broche en tant que ressources matérielles. `MsftFunctionConfig()` Les ressources doivent être fournies aux pilotes qui requièrent des modifications de multiplexage de broche, qui sont généralement des pilotes de contrôleur série et SPB, mais ne doivent pas être fournies aux pilotes de périphériques série ou SPB, dans la mesure où le pilote de contrôleur gère la configuration du multiplexage.
-La macro ACPI `MsftFunctionConfig()` est définie comme suit :
+This section describes how to supply muxing resources to client drivers. Note that you will need Microsoft ASL compiler build 14327 or later to compile tables containing `MsftFunctionConfig()` resources. `MsftFunctionConfig()` resources are supplied to pin muxing clients as hardware resources. `MsftFunctionConfig()` resources should be supplied to drivers that require pin muxing changes, which are typically SPB and serial controller drivers, but should not be supplied to SPB and serial peripheral drivers, since the controller driver handles muxing configuration.
+The `MsftFunctionConfig()` ACPI macro is defined as follows:
 
 ```cpp
   MsftFunctionConfig(Shared/Exclusive
@@ -566,20 +566,20 @@ La macro ACPI `MsftFunctionConfig()` est définie comme suit :
 
 ```
 
-* Shared/Exclusive: si Exclusive est défini, cette broche peut être obtenue par un seul client à la fois. Si Shared est défini, plusieurs clients partagés peuvent acquérir la ressource. Définissez toujours ce paramètre sur Exclusive, dans la mesure où le fait d’autoriser plusieurs clients non coordonnés à accéder à une ressource mutable peut générer des courses de données et donc des résultats imprévisibles. 
-* PinPullConfig: l’une des valeurs 
-  * PullDefault: utiliser la configuration pull par défaut de mise sous tension définie par le SOC 
-  * PullUp: activer la résistance pull-up 
-  * Pulldown: activer la résistance pull-down 
-  * PullNone: désactiver tous les résistances pull 
-* FunctionNumber: le numéro de fonction à programmer dans le multiplexage. 
-* ResourceSource: le chemin d’espace de noms ACPI du serveur de multiplexage de broche 
-* ResourceSourceIndex: définissez ce paramètre sur0 
-* ResourceConsumer/ResourceProducer: définissez ce paramètre sur ResourceConsumer 
-* VendorData: données binaires facultatives dont la signification est définie par le serveur de multiplexage de broche. Ce champ doit généralement rester vide.
-* Pin List: liste séparée par des virgules des numéros de broches auxquels ma configuration s’applique. Lorsque le serveur de multiplexage de broche est un pilote GpioClx, il s’agit de numéros de broches GPIO qui ont la même signification que les numéros de broche dans un descripteur GpioIo. 
+* Shared/Exclusive – If exclusive, this pin can be acquired by a single client at a time. If shared, multiple shared clients can acquire the resource. Always set this to exclusive since allowing multiple uncoordinated clients to access a mutable resource can lead to data races and therefore unpredictable results. 
+* PinPullConfig – one of 
+  * PullDefault – use the SOC-defined power-on default pull configuration 
+  * PullUp – enable pull-up resistor 
+  * PullDown – enable pull-down resistor 
+  * PullNone – disable all pull resistors 
+* FunctionNumber – the function number to program into the mux. 
+* ResourceSource – The ACPI namespace path of the pin muxing server 
+* ResourceSourceIndex – set this to 0 
+* ResourceConsumer/ResourceProducer – set this to ResourceConsumer 
+* VendorData – optional binary data whose meaning is defined by the pin muxing server. This should usually be left blank
+* Pin List – a comma separated list of pin numbers to which the configuration applies. When the pin muxing server is a GpioClx driver, these are GPIO pin numbers and have the same meaning as pin numbers in a GpioIo descriptor. 
 
-L’exemple suivant montre comment fournir une ressource MsftFunctionConfig() à un pilote de contrôleurI2C. 
+The following example shows how one might supply a MsftFunctionConfig() resource to an I2C controller driver. 
 
 ```cpp
 Device(I2C1) 
@@ -604,56 +604,56 @@ Device(I2C1)
 } 
 ```
 
-En plus des ressources de mémoire et d’interruption généralement requises par un pilote de contrôleur, une ressource `MsftFunctionConfig()` est également spécifiée. Cette ressource permet au pilote de contrôleur I2C de placer les broches2 et3 (gérées par le nœud d’appareil au niveau de \\_SB. GPIO0) dans la fonction4 avec la résistance pull-up activée. 
+In addition to the memory and interrupt resources typically required by a controller driver, a `MsftFunctionConfig()` resource is also specified. This resource enables the I2C controller driver to put pins 2 and 3 - managed by the device node at \\_SB.GPIO0 – in function 4 with pull-up resistor enabled. 
 
-### Prise en charge du multiplexage dans les pilotes clients GpioClx 
+### Supporting muxing support in GpioClx client drivers 
 
-`GpioClx` intègre la prise en charge du multiplexage de broche. Les pilotes miniport GpioClx (également appelés «pilotes clients GpioClx») contrôlent le matériel du contrôleur GPIO. À partir de Windows10 build14327, les pilotes miniport GpioClx peuvent ajouter la prise en charge du multiplexage de broche en implémentant deux nouveaux DDI: 
+`GpioClx` has built-in support for pin muxing. GpioClx miniport drivers (also referred to as “GpioClx client drivers”), drive GPIO controller hardware. As of Windows 10 build 14327, GpioClx miniport drivers can add support for pin muxing by implementing two new DDIs: 
 
-* CLIENT_ConnectFunctionConfigPins : appelée par `GpioClx` pour commander le pilote miniport et appliquer la configuration du multiplexage spécifiée. 
-* CLIENT_DisconnectFunctionConfigPins : appelée par `GpioClx` pour commander le pilote miniport et rétablir la configuration du multiplexage. 
+* CLIENT_ConnectFunctionConfigPins – called by `GpioClx` to command the miniport driver to apply the specified muxing configuration. 
+* CLIENT_DisconnectFunctionConfigPins – called by `GpioClx` to command the miniport driver to revert the muxing configuration. 
 
-Consultez la page [Fonctions de rappel d’événement GpioClx](https://msdn.microsoft.com/library/windows/hardware/hh439464.aspx) pour une description de ces routines.
+See [GpioClx Event Callback Functions](https://msdn.microsoft.com/library/windows/hardware/hh439464.aspx) for a description of these routines.
 
-Outre ces deux nouvellesDDI, les DDI existantes doivent être auditées pour la compatibilité du multiplexage de broche: 
+In addition to these two new DDIs, existing DDIs should be audited for pin muxing compatibility: 
 
-* CLIENT_ConnectIoPins/CLIENT_ConnectInterrupt – CLIENT_ConnectIoPins est appelée par GpioClx pour commander le pilote miniport et configurer une broche définie pour l’entrée ou la sortie GPIO. GPIO est mutuellement exclusif avec MsftFunctionConfig, ce qui signifie qu’une broche ne sera jamais connectée pour GPIO et MsftFunctionConfig en même temps. Dans la mesure où la fonction par défaut d’une broche ne doit pas obligatoirement être GPIO, une broche ne doit pas nécessairement être multiplexée sur GPIO lorsque ConnectIoPins est appelée. ConnectIoPins est requis pour effectuer toutes les opérations nécessaires pour préparer la broche aux entrées/sorties GPIO, notamment les opérations de multiplexage. *CLIENT_ConnectInterrupt* doit se comporter de la même façon, dans la mesure où les interruptions peuvent être considérées comme un cas spécial d’entrée GPIO. 
-* CLIENT_DisconnectIoPins/CLIENT_DisconnectInterrupt: ces routines doivent rétablir l’état des broches au moment où CLIENT_ConnectIoPins/CLIENT_ConnectInterrupt a été appelée, sauf si l’indicateur PreserveConfiguration a été spécifié. En plus de rétablir le sens des broches à leur état par défaut, le miniport doit également rétablir l’état de multiplexage de chaque broche au moment où la routine _Connect a été appelée. 
+* CLIENT_ConnectIoPins/CLIENT_ConnectInterrupt – CLIENT_ConnectIoPins is called by GpioClx to command the miniport driver to configure a set pins for GPIO input or output. GPIO is mutually exclusive with MsftFunctionConfig, meaning a pin will never be connected for GPIO and MsftFunctionConfig at the same time. Since a pin’s default function is not required to be GPIO, a pin may not necessarily not be muxed to GPIO when ConnectIoPins is called. ConnectIoPins is required to perform all operations necessary to make the pin ready for GPIO IO, including muxing operations. *CLIENT_ConnectInterrupt* should behave similarly, since interrupts can be thought of as a special case of GPIO input. 
+* CLIENT_DisconnectIoPins/CLIENT_DisconnectInterrupt – These routine should return pins to the state they were in when CLIENT_ConnectIoPins/CLIENT_ConnectInterrupt was called, unless the PreserveConfiguration flag is specified. In addition to reverting the direction of pins to their default state, the miniport should also revert each pin’s muxing state to the state it was in when the _Connect routine was called. 
 
-Par exemple, supposons que la configuration du multiplexage par défaut d’une broche est UART, et que la broche peut également être utilisée comme GPIO. Lorsque CLIENT_ConnectIoPins est appelée pour connecter la broche pour GPIO, elle doit multiplexer la broche sur GPIO et, dans CLIENT_DisconnectIoPins, elle doit à nouveau multiplexer la broche sur UART. En général, les routines _Disconnect doivent annuler les opérations effectuées par les routines _Connect. 
+For example, assume that a pin’s default muxing configuration is UART, and the pin can also be used as GPIO. When CLIENT_ConnectIoPins is called to connect the pin for GPIO, it should mux the pin to GPIO, and in CLIENT_DisconnectIoPins, it should mux the pin back to UART. In general, the _Disconnect routines should undo operations done by the _Connect routines. 
 
-### Prise en charge du multiplexage dans les pilotes de contrôleur SpbCx et SerCx 
+### Supporting muxing in SpbCx and SerCx controller drivers 
 
-À partir de Windows 10 build 14327, les infrastructures `SpbCx` et `SerCx` contiennent la prise en charge intégrée du multiplexage de broche qui permet aux contrôleurs de pilote `SpbCx` et `SerCx` d’être des clients de multiplexage de broche sans apporter aucune modification de code aux pilotes de contrôleur eux-mêmes. Par extension, tout pilote de périphérique SpbCx/SerCx qui se connecte à un pilote de contrôleur SpbCx/SerCx prêt pour le multiplexage déclenchera une activité de multiplexage de broche. 
+As of Windows 10 build 14327, the `SpbCx` and `SerCx` frameworks contain built-in support for pin muxing that enables `SpbCx` and `SerCx` controller drivers to be pin muxing clients without any code changes to the controller drivers themselves. By extension, any SpbCx/SerCx peripheral driver that connects to a muxing-enabled SpbCx/SerCx controller driver will trigger pin muxing activity. 
 
-Le diagramme suivant montre les dépendances entre chacun de ces composants. Comme vous pouvez le constater, le multiplexage de broche introduit une dépendance entre les pilotes de contrôleur SerCx et SpbCx et le pilote GPIO, qui est généralement responsable du multiplexage. 
+The following diagram shows the dependencies between each of these components. As you can see, pin muxing introduces a dependency from SerCx and SpbCx controller drivers to the GPIO driver, which is usually responsible for muxing. 
 
-![Dépendance du multiplexage de broche](images/usermode-access-diagram-2.png)
+![Pin muxing dependency](images/usermode-access-diagram-2.png)
 
-Au moment de l’initialisation de l’appareil, les infrastructures `SpbCx` et `SerCx` analysent toutes les ressources `MsftFunctionConfig()` fournies sous forme de ressources matérielles à l’appareil. SpbCx/SerCx obtiennent et libèrent ensuite à la demande les ressources de multiplexage de broche.
+At device initialization time, the `SpbCx` and `SerCx` frameworks parse all `MsftFunctionConfig()` resources supplied as hardware resources to the device. SpbCx/SerCx then acquire and release the pin muxing resources on demand.
 
-`SpbCx` applique la configuration de multiplexage de broche dans son gestionnaire *IRP_MJ_CREATE*, juste avant d’appeler le rappel [EvtSpbTargetConnect()](https://msdn.microsoft.com/library/windows/hardware/hh450818.aspx) du pilote client. Si la configuration du multiplexage n’a pas pu être appliquée, le rappel `EvtSpbTargetConnect()` du pilote de contrôleur ne sera pas appelé. Par conséquent, un pilote de contrôleur SPB peut supposer que les broches sont multiplexées sur la fonction SPB avant que `EvtSpbTargetConnect()` soit appelée.
+`SpbCx` applies pin muxing configuration in its *IRP_MJ_CREATE* handler, just before calling the client driver’s [EvtSpbTargetConnect()](https://msdn.microsoft.com/library/windows/hardware/hh450818.aspx) callback. If muxing configuration could not be applied, the controller driver’s `EvtSpbTargetConnect()` callback will not be called. Therefore, an SPB controller driver may assume that pins are muxed to the SPB function by the time `EvtSpbTargetConnect()` is called.
 
-`SpbCx` rétablit la configuration de multiplexage de broche dans son gestionnaire *IRP_MJ_CLOSE*, juste après l’appel du rappel [EvtSpbTargetDisconnect()](https://msdn.microsoft.com/library/windows/hardware/hh450820.aspx) du pilote de contrôleur. Résultat: les broches sont multiplexées sur la fonction SPB chaque fois qu’un pilote de périphérique ouvre un handle sur le pilote de contrôleur SPB, et sont à nouveau multiplexées lorsque le pilote de périphérique ferme son handle.
+`SpbCx` reverts pin muxing configuration in its *IRP_MJ_CLOSE* handler, just after invoking the controller driver’s [EvtSpbTargetDisconnect()](https://msdn.microsoft.com/library/windows/hardware/hh450820.aspx) callback. The result is that pins are muxed to the SPB function whenever a peripheral driver opens a handle to the SPB controller driver, and are muxed away when the peripheral driver closes their handle.
 
-`SerCx` se comporte de la même façon. `SerCx` acquiert toutes les ressources `MsftFunctionConfig()` dans son gestionnaire *IRP_MJ_CREATE* juste avant d’appeler le rappel [EvtSerCx2FileOpen()](https://msdn.microsoft.com/library/windows/hardware/dn265209.aspx) du pilote de contrôleur, et libère toutes les ressources dans son gestionnaire IRP_MJ_CLOSE, juste après l’appel du rappel [EvtSerCx2FileClose](https://msdn.microsoft.com/library/windows/hardware/dn265208.aspx) du pilote de contrôleur.
+`SerCx` behaves similarly. `SerCx` acquires all `MsftFunctionConfig()` resources in its *IRP_MJ_CREATE* handler just before invoking the controller driver’s [EvtSerCx2FileOpen()](https://msdn.microsoft.com/library/windows/hardware/dn265209.aspx) callback, and releases all resources in its IRP_MJ_CLOSE handler, just after invoking the controller driver’s [EvtSerCx2FileClose](https://msdn.microsoft.com/library/windows/hardware/dn265208.aspx) callback.
 
-Avec le multiplexage de broche dynamique, les pilotes de contrôleur `SerCx` et `SpbCx` doivent pouvoir tolérer les broches multiplexées à partir de la fonction SPB/UART à certains moments. Les pilotes de contrôleur doivent supposer que les broches ne seront pas multiplexées jusqu’à ce que `EvtSpbTargetConnect()` ou `EvtSerCx2FileOpen()` soit appelée. Les broches ne sont pas nécessairement mixées sur la fonction SPB/UART pendant les rappels suivants. La liste suivante n’est pas complète, mais représente les routines PNP les plus courantes implémentées par les pilotes de contrôleur.
+The implication of dynamic pin muxing for `SerCx` and `SpbCx` controller drivers is that they must be able to tolerate pins being muxed away from SPB/UART function at certain times. Controller drivers need to assume that pins will not be muxed until `EvtSpbTargetConnect()` or `EvtSerCx2FileOpen()` is called. Pins are not necessary muxed to SPB/UART function during the following callbacks. The following is not a complete list, but represents the most common PNP routines implemented by controller drivers.
 
 * DriverEntry 
 * EvtDriverDeviceAdd 
 * EvtDevicePrepareHardware/EvtDeviceReleaseHardware 
 * EvtDeviceD0Entry/EvtDeviceD0Exit 
 
-## Vérification 
+## Verification 
 
-Lorsque vous avez fini de créer votre ASL, vous devez exécuter les tests du [Kit d’évaluation de matériel en laboratoire (HLK)](https://msdn.microsoft.com/library/windows/hardware/dn930814.aspx) pour vérifier que toutes les ressources sont exposées correctement et que les bus sous-jacents satisfont le contrat fonctionnel de l’API. Les sections suivantes expliquent comment charger le nœud d’appareil rhproxy pour le tests sans recompiler votre microprogramme et comment exécuter les tests HLK. 
+When you’ve finished authoring your ASL, you should run the [Hardware Lab Kit (HLK)](https://msdn.microsoft.com/library/windows/hardware/dn930814.aspx) tests to verify that all resources are exposed correctly and the underlying busses meet the functional contract of the API. The following sections describe how to load the rhproxy device node for testing without recompiling your firmware and how to run the HLK tests. 
 
-### Compiler et charger ASL avec ACPITABL.dat 
+### Compile and load ASL with ACPITABL.dat 
 
-La première étape consiste à compiler et charger le fichier ASL sur votre système en cours de test. Nous recommandons d’utiliser ACPITABL.dat lors du développement et de la validation car il ne nécessite pas une reconstruction UEFI complète pour tester les modifications d’ASL. 
+The first step is to compile and load the ASL file onto your system under test. We recommend using ACPITABL.dat during development and validation as it does not require a full UEFI rebuild to test ASL changes. 
 
-1. Créez un fichier nommé yourboard.asl et placez le nœud d’appareil RHPX à l’intérieur d’un DefinitionBlock: 
+1. Create a file named yourboard.asl and put the RHPX device node inside a DefinitionBlock: 
 ```
 DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
 {
@@ -666,54 +666,54 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
     }
 }
 ```
-2.  Téléchargez le WDK et obtenez asl.exe.
-3.  Exécutez la commande suivante pour générer ACPITABL.dat:
+2.  Download the WDK and get asl.exe
+3.  Run the following command to generate ACPITABL.dat:
 ```
 asl.exe yourboard.asl
 ```
-4.  Copiez le fichier ACPITABL.dat produit dans c:\windows\system32 sur votre système en cours de test.
-5.  Activez testsigning sur votre système en cours de test:
+4.  Copy the resulting ACPITABL.dat file to c:\windows\system32 on your system under test.
+5.  Turn on testsigning on your system under test:
 ```
 bcdedit /set testsigning on
 ```
-6.  Redémarrez le système en cours de test. Le système ajoutera les tables ACPI définies dans ACPITABL.dat aux tables du microprogramme du système. 
-7.  Vérifiez que le nœud d’appareil RHPX a été ajouté au système:
+6.  Reboot the system under test. The system will append the ACPI tables defined in ACPITABL.dat to the system firmware tables. 
+7.  Verify that the RHPX device node was added to the system:
 ```
 devcon status *msft8000
 ```
-La sortie de devcon doit indiquer que l’appareil est présent, même si le pilote peut avoir échoué à s’initialiser s’il y a des bogues à corriger dans l’ASL.
+The output of devcon should indicate that the device is present, although the driver may have failed to initialize if there are bugs in the ASL that need to be worked out.
 
-### Exécuter les tests HLK
+### Run the HLK Tests
 
-Lorsque vous sélectionnez le nœud d’appareil rhproxy dans le gestionnaire HLK, les tests applicables sont automatiquement sélectionnés.
+When you select the rhproxy device node in HLK manager, the applicable tests will automatically be selected.
 
-Dans le gestionnaire HLK, sélectionnez «Appareil proxy du concentrateur de ressources»:
+In the HLK manager, select “Resource Hub Proxy device”:
 
-![Capture d’écran du Gestionnaire HLK](images/usermode-hlk-1.png)
+![HLK manager screenshot](images/usermode-hlk-1.png)
 
-Cliquez sur l’onglet Tests, puis sélectionnez les tests I2CWinRT, GpioWinRT et SpiWinRT.
+Then click the Tests tab, and select I2C WinRT, Gpio WinRT, and Spi WinRT tests.
 
-![Capture d’écran du Gestionnaire HLK](images/usermode-hlk-2.png)
+![HLK manager screenshot](images/usermode-hlk-2.png)
 
-Cliquez sur Exécuter la sélection. Vous pouvez accéder à une documentation supplémentaire sur chaque test en cliquant avec le bouton droit sur le test et en cliquant sur «Description du test».
+Click Run Selected. Further documentation on each test is available by right clicking on the test and clicking “Test Description.”
 
-### Ressources de test supplémentaires
+### More testing resources
 
-Des outils en ligne de commande simples pour Gpio, I2c, Spi et Série sont disponibles dans le référentiel des exemples ms-iot github (https://github.com/ms-iot/samples). Ces outils peuvent être utiles pour le débogage manuel.
+Simple command line tools for Gpio, I2c, Spi, and Serial are available on the ms-iot github samples repository  (https://github.com/ms-iot/samples). These tools can be helpful for manual debugging.
 
-| Outil | Lien |
+| Tool | Link |
 |------|------|
-| GpioTestTool | https://developer.microsoft.com/fr-fr/windows/iot/win10/samples/GPIOTestTool |
-| I2cTestTool   | https://developer.microsoft.com/fr-fr/windows/iot/win10/samples/I2cTestTool | 
-| SpiTestTool | https://developer.microsoft.com/fr-fr/windows/iot/win10/samples/spitesttool |
-| MinComm (Série) |    https://github.com/ms-iot/samples/tree/develop/MinComm |
+| GpioTestTool | https://developer.microsoft.com/windows/iot/win10/samples/GPIOTestTool |
+| I2cTestTool   | https://developer.microsoft.com/windows/iot/win10/samples/I2cTestTool | 
+| SpiTestTool | https://developer.microsoft.com/windows/iot/win10/samples/spitesttool |
+| MinComm (Serial) |    https://github.com/ms-iot/samples/tree/develop/MinComm |
 
-## Ressources
+## Resources
 
-| Destination | Lien |
+| Destination | Link |
 |-------------|------|
-| Spécification ACPI5.0 | http://acpi.info/spec.htm |
-| Asl.exe (compilateur Microsoft ASL) | https://msdn.microsoft.com/library/windows/hardware/dn551195.aspx |
+| ACPI 5.0 specification | http://acpi.info/spec.htm |
+| Asl.exe (Microsoft ASL Compiler) | https://msdn.microsoft.com/library/windows/hardware/dn551195.aspx |
 | Windows.Devices.Gpio  | https://msdn.microsoft.com/library/windows/apps/windows.devices.gpio.aspx | 
 | Windows.Devices.I2c | https://msdn.microsoft.com/library/windows/apps/windows.devices.i2c.aspx |
 | Windows.Devices.Spi | https://msdn.microsoft.com/library/windows/apps/windows.devices.spi.aspx |
@@ -722,18 +722,18 @@ Des outils en ligne de commande simples pour Gpio, I2c, Spi et Série sont dispo
 | SpbCx | https://msdn.microsoft.com/library/windows/hardware/hh450906.aspx |
 | GpioClx   | https://msdn.microsoft.com/library/windows/hardware/hh439508.aspx |
 | SerCx | https://msdn.microsoft.com/library/windows/hardware/ff546939.aspx |
-| Tests MITT I2C | https://msdn.microsoft.com/library/windows/hardware/dn919852.aspx |
-| GpioTestTool | https://developer.microsoft.com/fr-fr/windows/iot/win10/samples/GPIOTestTool |
-| I2cTestTool   | https://developer.microsoft.com/fr-fr/windows/iot/win10/samples/I2cTestTool | 
-| SpiTestTool | https://developer.microsoft.com/fr-fr/windows/iot/win10/samples/spitesttool |
-| MinComm (Série) |    https://github.com/ms-iot/samples/tree/develop/MinComm |
-| Kit d’évaluation de matériel en laboratoire (HLK) | https://msdn.microsoft.com/library/windows/hardware/dn930814.aspx |
+| MITT I2C Tests | https://msdn.microsoft.com/library/windows/hardware/dn919852.aspx |
+| GpioTestTool | https://developer.microsoft.com/windows/iot/win10/samples/GPIOTestTool |
+| I2cTestTool   | https://developer.microsoft.com/windows/iot/win10/samples/I2cTestTool | 
+| SpiTestTool | https://developer.microsoft.com/windows/iot/win10/samples/spitesttool |
+| MinComm (Serial) |    https://github.com/ms-iot/samples/tree/develop/MinComm |
+| Hardware Lab Kit (HLK) | https://msdn.microsoft.com/library/windows/hardware/dn930814.aspx |
 
-## Annexe
+## Apendix
 
-### AnnexeA - Liste d’ASL RaspberryPi
+### Appendix A - Raspberry Pi ASL Listing
 
-Brochage d’en-tête: https://developer.microsoft.com/fr-fr/windows/iot/win10/samples/PinMappingsRPi2
+Header pinout: https://developer.microsoft.com/windows/iot/win10/samples/PinMappingsRPi2
 
 ```
 DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
@@ -893,9 +893,9 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
 
 ```
 
-### AnnexeB - Liste d’ASL MinnowBoardMax
+### Appendix B - MinnowBoardMax ASL Listing
 
-Brochage d’en-tête: https://developer.microsoft.com/fr-fr/windows/iot/win10/samples/PinMappingsMBM
+Header pinout: https://developer.microsoft.com/windows/iot/win10/samples/PinMappingsMBM
 
 ```
 DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
@@ -1048,9 +1048,9 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
 }
 ```
 
-### AnnexeC - Exemple de script Powershell pour générer des ressources GPIO
+### Appendix C - Sample Powershell script to generate GPIO resources
 
-Vous pouvez utiliser le script suivant pour générer les déclarations de ressource GPIO pour RaspberryPi:
+The following script can be used to generate the GPIO resource declarations for Raspberry Pi:
 
 ```
 $pins = @(
@@ -1086,6 +1086,6 @@ GpioInt(Edge, ActiveBoth, Shared, $($_.PullConfig), 0, "\\_SB.GPI0",) { $($_.Pin
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

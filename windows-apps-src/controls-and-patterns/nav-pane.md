@@ -1,121 +1,131 @@
 ---
 author: Jwmsft
-Description: "Assure la navigation de niveau supérieur tout en économisant l’espace de l’écran."
-title: "Recommandations en matière de volets de navigation"
+Description: Provides top-level navigation while conserving screen real estate.
+title: Guidelines for navigation panes
 ms.assetid: 8FB52F5E-8E72-4604-9222-0B0EC6A97541
 label: Nav pane
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: eb5600a78d7e8cfcad98509afc4de2d117066f7e
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 4adf3cc8425bba467a8a379a9680360c4e0e3037
 
 ---
+# Nav panes
 
-Volets de navigation
-=============================================================================================
-Un volet de navigation est un modèle qui permet d’inclure de nombreux éléments de navigation de niveau supérieur tout en économisant l’espace de l’écran. Ce volet est largement utilisé pour les applications mobiles, mais il fonctionne également bien avec des écrans plus grands. Lorsqu’il est utilisé en superposition, le volet reste réduit et masqué tant que l’utilisateur n’appuie pas sur le bouton, ce qui est pratique pour les petits écrans. Lorsqu’il est utilisé en mode ancré, le volet reste ouvert, ce qui renforce son utilité s’il y a suffisamment d’espace dans l’écran.
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-![Exemple d’un volet de navigation](images/navHero.png)
+A navigation pane (or just "nav" pane) is a pattern that allows for many top-level navigation items while conserving screen real estate. The nav pane is widely used for mobile apps, but also works well on larger screens. When used as an overlay, the pane remains collapsed and out-of-the way until the user presses the button, which is handy for smaller screens. When used in its docked mode, the pane remains open, which allows greater utility if there's enough screen real estate.
 
-<span class="sidebar_heading" style="font-weight: bold;">API importantes</span>
+![Example of a nav pane](images/navHero.png)
 
--   [**Classe SplitView**](https://msdn.microsoft.com/library/windows/apps/dn864360)
+<div class="important-apis" >
+<b>Important APIs</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/dn864360"><strong>SplitView class</strong></a></li>
+</ul>
 
-## <span id="Is_this_the_right_pattern_"></span><span id="is_this_the_right_pattern_"></span><span id="IS_THIS_THE_RIGHT_PATTERN_"></span>Est-ce le modèle approprié?
-
-Le volet de navigation fonctionne bien pour:
-
--   Les applications comportant de nombreux éléments de navigation de niveau supérieur ayant un type similaire. Par exemple, une application sportive avec des catégories comme Football américain, Baseball, Basketball, Football et ainsi de suite.
--   La fourniture d’une expérience de navigation cohérente sur l’ensemble des applications. Un volet de navigation doit inclure uniquement les éléments de navigation, pas les actions.
--   Un nombre moyen ou élevé de catégories de navigation de niveau supérieur (entre 5 et 10, ou plus).
--   Économiser l’espace de l’écran (sous forme de superposition).
--   Les éléments de navigation qui sont rarement consultés. (sous forme de superposition).
-
-## <span id="Building_a_nav_pane"></span><span id="building_a_nav_pane"></span><span id="BUILDING_A_NAV_PANE"></span>Conception d’un volet de navigation
-
-Le modèle de volet de navigation se compose d’un volet des catégories de navigation, d’une zone de contenu et d’un bouton facultatif pour ouvrir ou fermer le volet. La méthode la plus simple pour créer un volet de navigation consiste à [fractionner le contrôle d’affichage](split-view.md), comprenant un volet vide ainsi qu’une zone de contenu visible en permanence.
-
-Pour tester le code implémentant ce modèle, téléchargez la [solution de navigation XAML](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlNavigation) à partir de GitHub.
+</div>
+</div>
 
 
 
-### <span id="Pane"></span><span id="pane"></span><span id="PANE"></span>Volet
 
-Le volet contient les en-têtes des catégories de navigation. ainsi que les points d’entrée aux paramètres d’application et à la gestion des comptes, le cas échéant. Les en-têtes de navigation sont généralement une liste d’éléments parmi lesquels l’utilisateur peut choisir.
 
-![Exemple de surface du volet de navigation](images/nav_pane_expanded.png)
 
-### <span id="Content_area"></span><span id="content_area"></span><span id="CONTENT_AREA"></span>Zone de contenu
+## Is this the right pattern?
 
-La zone de contenu présente les informations relatives à l’emplacement de navigation sélectionné. Elle peut contenir des éléments individuels ou d’autres éléments de navigation de niveau inférieur.
+The nav pane works well for:
 
-### <span id="Button"></span><span id="button"></span><span id="BUTTON"></span>Bouton
+-   Apps with many top-level navigation items that are of similar type. For example, a sports app with categories like Football, Baseball, Basketball, Soccer, and so on.
+-   Providing a consistent navigational experience across apps. Nav pane should include only navigational elements, not actions.
+-   A medium-to-high number (5-10+) of top-level navigational categories.
+-   Preserving screen real estate (as an overlay).
+-   Navigation items that are infrequently accessed. (as an overlay).
 
-Lorsqu’il est présent, le bouton permet aux utilisateurs d’ouvrir et de fermer le volet. Le bouton reste visible à un emplacement fixe et ne se déplace pas avec le volet. Nous recommandons de placer le bouton dans le coin supérieur gauche de votre application. Le bouton du volet de navigation est affiché sous la forme de trois lignes horizontales empilées. Il est communément appelé le bouton «hamburger».
+## Building a nav pane
 
-![Exemple de bouton du volet de navigation](images/nav_button.png)
+The nav pane pattern consists of a pane for navigation categories, a content area, and an optional button to open or close the pane. The easiest way to build a nav pane is with a [split view control](split-view.md), which comes with an empty pane and a content area that's always visible.
 
-Le bouton est généralement associé à une chaîne de texte. Le titre de l’application peut être affiché en regard du bouton dans la partie supérieure de l’application. La chaîne de texte peut être le titre de la page consultée par l’utilisateur dans les niveaux inférieurs de l’application.
+To try out code implementing this pattern, download the [XAML Navigation solution](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlNavigation) from GitHub.
 
-## <span id="Nav_pane_variations"></span><span id="nav_pane_variations"></span><span id="NAV_PANE_VARIATIONS"></span>Variantes du volet de navigation
 
-Le volet de navigation comporte trois modes: superposition, compact et inclus. En mode superposition, le volet peut être réduit ou développé au besoin. En mode compact, le volet est toujours affiché sous la forme d’une zone étroite qui peut être développée. Un volet inclus reste ouvert par défaut.
+### Pane
 
-### <span id="Overlay"></span><span id="overlay"></span><span id="OVERLAY"></span>Superposition
+Headers for navigational categories go in the pane. Entry points to app settings and account management, if applicable, also go in the pane. Navigation headers are usually a list of items for the user to choose from.
 
--   La superposition peut être utilisée sur un écran de toute taille et en orientation portrait ou paysage. Dans son état par défaut (réduit), la superposition n’occupe pas d’espace, car seul le bouton est affiché.
--   Permet une navigation à la demande qui économise l’espace de l’écran. Il est idéal pour les applications sur les téléphones et phablettes.
--   Par défaut, le volet est masqué, le bouton seul étant visible.
--   L’ouverture et la fermeture de la superposition s’effectue en appuyant sur le bouton du volet de navigation.
--   L’état développé est temporaire et disparaît lorsqu’une sélection est effectuée, lorsque le bouton Précédent est utilisé ou lorsque l’utilisateur appuie en dehors du volet.
--   La superposition s’étire au-dessus du contenu et n’en modifie pas la présentation.
+![Example of the nav pane's pane](images/nav_pane_expanded.png)
 
-### <span id="Compact"></span><span id="compact"></span><span id="COMPACT"></span>Compact
+### Content area
 
--   Le mode compact peut être spécifié en tant que `CompactOverlay`, qui superpose le contenu lorsque le volet est ouvert ou `CompactInline`, qui déplace le contenu hors de sa zone. Nous vous recommandons d’utiliser CompactOverlay.
--   Les volets en mode compact fournissent des indications sur l’emplacement sélectionné lors de l’utilisation d’une petite quantité d’espace écran.
--   Ce mode convient mieux aux écrans de taille moyenne comme ceux des tablettes.
--   Par défaut, le volet est fermé et seuls les icônes de navigation et le bouton sont visibles.
--   Un appui sur le bouton du volet de navigation permet d’ouvrir et de fermer le volet, qui se comporte comme en mode superposition ou inclus selon le mode d’affichage spécifié.
--   La sélection doit être affichée dans les icônes de liste à mettre en surbrillance lorsque l’utilisateur se trouve dans l’arborescence de navigation.
+The content area is where information for the selected nav location is displayed. It can contain individual elements or other sub-level navigation.
 
-### <span id="Inline"></span><span id="inline"></span><span id="INLINE"></span>Inclus
+### Button
 
--   Le volet de navigation reste ouvert. Ce mode convient mieux aux écrans plus grands.
--   Prend en charge les scénarios de glisser-déplacer vers et depuis le volet.
--   Le bouton du volet de navigation n’est pas nécessaire pour cet état. Si le bouton est utilisé, la zone de contenu est déplacée et son contenu s’ajuste dynamiquement.
--   La sélection doit être affichée dans les éléments de liste à mettre en surbrillance lorsque l’utilisateur se trouve dans l’arborescence de navigation.
+When present, the button allows users to open and close the pane. The button remains visible in a fixed position and does not move with the pane. We recommend placing the button in the upper-left corner of your app. The nav pane button is visualized as three stacked horizontal lines and is commonly referred to as the "hamburger" button.
 
-## <span id="Adaptability"></span><span id="adaptability"></span><span id="ADAPTABILITY"></span>Capacité d’adaptation
+![Example of the nav pane button](images/nav_button.png)
 
-Pour optimiser la facilité d’utilisation sur différents appareils, nous recommandons l’utilisation de [points d’arrêt](../layout/screen-sizes-and-breakpoints-for-responsive-design.md) et l’ajustement du mode du volet de navigation en fonction de la largeur de sa fenêtre d’application.
--   Petite fenêtre
-   -   Inférieur ou égal à640pixels de large.
-   -   Le volet de navigation doit être en mode superposition, fermé par défaut.
--   Fenêtre de taille moyenne
-   -   Supérieure à 640pixels et inférieure ou égale à 1007pixels de large.
-   -   Le volet de navigation doit être en mode zone étroite, fermé par défaut.
--   Grande fenêtre
-   -   Supérieure à 1007pixels de large.
-   -   Le volet de navigation doit être en mode ancré, ouvert par défaut.
+The button is usually associated with a text string. At the top level of the app, the app title can be displayed next to the button. At lower levels of the app, the text string may be the title of the page that the user is currently on.
 
-## <span id="Tailoring"></span><span id="tailoring"></span><span id="TAILORING"></span>Personnalisation
+## Nav pane variations
 
-Pour optimiser [l’expérience d’interface utilisateur à 3m](http://go.microsoft.com/fwlink/?LinkId=760736), envisagez de personnaliser le volet de navigation en changeant l’apparence visuelle de ses éléments de navigation. Selon le contexte d’interaction, il peut être plus important d’attirer l’attention de l’utilisateur sur l’élément de navigation sélectionné ou sur l’élément de navigation ciblé. Pour une expérience d’interface utilisateur à 3m, dans laquelle le boîtier de commande est l’appareil d’entrée généralement utilisé, il est particulièrement important de s’assurer que l’utilisateur peut facilement suivre l’emplacement de l’élément sélectionné à l’écran.
+The nav pane has three modes: overlay, compact and inline. An overlay collapses and expands as needed. When compact, the pane always shows as a narrow sliver which can be expanded. An inline pane remains open by default.
 
-![Exemple d’éléments du volet de navigation personnalisés](images/nav_item_states.png)
+### Overlay
 
-## <span id="related_topics"></span>Rubriques connexes
+-   An overlay can be used on any screen size and in either portrait or landscape orientation. In its default (collapsed) state, the overlay takes up no real-estate, with only the button shown.
+-   Provides on-demand navigation that conserves screen real estate. Ideal for apps on phones and phablets.
+-   The pane is hidden by default, with only the button visible.
+-   Pressing the nav pane button opens and closes the overlay.
+-   The expanded state is transient and is dismissed when a selection is made, when the back button is used, or when the user taps outside of the pane.
+-   The overlay draws over the top of content and does not reflow content.
 
-* [Contrôle de mode Fractionné](split-view.md)
-* [Maître/détails](master-details.md)
-* [Notions de base sur la navigation](https://msdn.microsoft.com/library/windows/apps/dn958438)
+### Compact
+
+-   Compact mode can be specified as `CompactOverlay`, which overlays content when opened, or `CompactInline`, which pushes content out of its way. We recommend using CompactOverlay.
+-   Compact panes provide some indication of the selected location while using a small amount of screen real-estate.
+-   This mode is better suited for medium screens like tablets.
+-   By default, the pane is closed with only navigation icons and the button visible.
+-   Pressing the nav pane button opens and closes the pane, which behaves like overlay or inline depending on the specified display mode.
+-   The selection should be shown on the list icons to highlight where the user is in the navigation tree.
+
+### Inline
+
+-   The navigation pane remains open. This mode is better suited for larger screens.
+-   Supports drag-and-drop scenarios to and from the pane.
+-   The nav pane button is not required for this state. If the button is used, then the content area is pushed out and the content within that area will reflow.
+-   The selection should be shown on the list items to highlight where the user is in the navigation tree.
+
+## Adaptability
+
+To maximize usability on a variety of devices, we recommend utilizing [break points](../layout/screen-sizes-and-breakpoints-for-responsive-design.md) and adjusting nav pane's mode based on the width of its app window.
+-   Small window
+   -   Less than or equal to 640px wide.
+   -   Nav pane should be in overlay mode, closed by default.
+-   Medium window
+   -   Greater than 640px and less than or equal to 1007px wide.
+   -   Nav pane should be in sliver mode, closed by default.
+-   Large window
+   -   Greater than 1007px wide.
+   -   Nav pane should be in docked mode, opened by default.
+
+## Tailoring
+
+To optimize your app's [10ft experience](http://go.microsoft.com/fwlink/?LinkId=760736), consider tailoring nav pane by altering the visual appearance of its navigational elements. Depending on the interaction context, it may be more important to call the user's attention to either the selected nav item or to the focused nav item. For 10ft experience, where gamepad is the most common input device, ensuring that the user can easily keep track of the currently focused item's location on screen is particularly important.
+
+![Example of tailored nav pane items](images/nav_item_states.png)
+
+## Related topics
+
+* [Split view control](split-view.md)
+* [Master/details](master-details.md)
+* [Navigation basics](https://msdn.microsoft.com/library/windows/apps/dn958438)
  
 
  
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

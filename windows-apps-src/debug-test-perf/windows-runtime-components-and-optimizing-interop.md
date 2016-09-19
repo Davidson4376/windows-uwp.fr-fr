@@ -1,95 +1,95 @@
 ---
 author: mcleblanc
 ms.assetid: 9899F6A0-7EDD-4988-A76E-79D7C0C58126
-title: "Composants UWP et optimisation de l’interopérabilité"
-description: "Créez des applications de plateforme Windows universelle (UWP) qui utilisent des composants UWP et l’interopérabilité entre les types natifs et managés, tout en évitant les problèmes de performances liés à l’interopérabilité."
+title: Universal Windows Platform Components and optimizing interop
+description: Create Universal Windows Platform (UWP) apps that use UWP Components and interop between native and managed types while avoiding interop performance issues.
 translationtype: Human Translation
 ms.sourcegitcommit: 5c7a49558ed11f82b7afea1ea96271c45c2f9139
-ms.openlocfilehash: b9300b3feb1e5229951f3e1ebe454b61ba8065ae
+ms.openlocfilehash: bfbf4a630b1874f718a1ebd41caf96c72e2f05c5
 
 ---
-# Composants UWP et optimisation de l’interopérabilité
+# Universal Windows Platform Components and optimizing interop
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Créez des applications de plateforme Windows universelle (UWP) qui utilisent des composants UWP et l’interopérabilité entre les types natifs et managés, tout en évitant les problèmes de performances liés à l’interopérabilité.
+Create Universal Windows Platform (UWP) apps that use UWP Components and interop between native and managed types while avoiding interop performance issues.
 
-## Meilleures pratiques en matière d’interopérabilité avec les composants UWP
+## Best practices for interoperability with UWP Components
 
-Si vous n’y prêtez pas attention, l’utilisation de composants UWP peut avoir une incidence considérable sur les performances de votre application. Cette section explique comment obtenir des performances optimales quand votre application utilise des composants UWP.
+If you are not careful, using UWP Components can have a large impact on your app performance. This section discusses how to get good performance when your app uses UWP Components.
 
 ### Introduction
 
-L’interopérabilité peut avoir un impact important sur les performances et il peut arriver que vous y ayez recours sans vous en apercevoir. L’UWP traite automatiquement une grande part de l’interopérabilité avec ses composants pour que vous soyez plus productif et réutilisiez tout code écrit dans un autre langage. Nous vous recommandons de tirer parti de ce que l’UWP fait à votre place, mais sachez que cela peut avoir un impact sur les performances. Cette section indique ce que vous pouvez faire pour atténuer l’impact de l’interopérabilité sur les performances de votre application.
+Interoperability can have a big impact on performance and you might be using it without even realizing that you are. The UWP handles a lot of the interoperability for you so that you can be more productive and reuse code that was written in other languages. We encourage you to take advantage of what the UWP does for you, but be aware that it can impact performance. This section discusses things you can do to lessen the impact that interoperability has on your app's performance.
 
-l’UWP comporte une bibliothèque de types accessible à partir de tout langage permettant d’écrire une application UWP. Vous pouvez utiliser les types UWP dans C# ou Microsoft Visual Basic de la même manière que des objets .NET. Vous n’avez pas besoin de configurer la plateforme de sorte qu’elle invoque des appels de méthode pour accéder aux composants UWP. Cela rend l’écriture des applications beaucoup moins complexe mais sachez que l’interopérabilité peut être plus importante que prévu. Si un composant UWP est écrit dans un langage autre que C# ou Visual Basic, vous dépassez les limites de l’interopérabilité lorsque vous utilisez ce composant. Cela a un impact sur les performances d’une application.
+The UWP has a library of types that are accessible from any language that can write a UWP app. You use the UWP types in C# or Microsoft Visual Basic the same way you use .NET objects. You don't need to make platform invoke method calls to access the UWP components. This makes writing your apps much less complex, but it is important to realize that there might be more interoperability occurring than you expect. If a UWP component is written in a language other than C# or Visual Basic, you cross interoperability boundaries when you use that component. Crossing interoperability boundaries can impact the performance of an app.
 
-Quand vous développez une application UWP en C# ou Visual Basic, les deux types d’API les plus courants que vous utilisez sont les API UWP et les API .NET pour les applications UWP. En règle générale, les types qui sont définis dans UWP se trouvent dans des espaces de noms commençant par «Windows.», alors que les espaces de noms des types .NET commencent par «System.». Il existe cependant quelques exceptions à cette règle. Les types dans .NET pour les applications UWP ne nécessitent pas d’interopérabilité quand ils sont utilisés. Si vous constatez de mauvaises performances pour des actions qui utilisent UWP, vous pouvez peut-être utiliser .NET pour les applications UWP à la place afin d’obtenir de meilleures performances.
+When you develop a UWP app in C# or Visual Basic, the two most common set of APIs that you use are the UWP APIs and the .NET APIs for UWP apps. In general, types that are defined in the UWP are in namespaces that begin with "Windows." and .NET types are in namespaces that begin with "System." There are exceptions, though. The types in .NET for UWP apps do not require interoperability when they are used. If you find that you have bad performance in an area that uses UWP, you might be able to use .NET for UWP apps instead to get better performance.
 
-**Remarque**  
-La plupart des composants UWP fournis avec Windows10 étant implémentés enC++, vous dépassez les limites de l’interopérabilité lorsque vous les utilisez dansC# ou Visual Basic. Comme toujours, observez le comportement de votre application pour déterminer si l’utilisation de composants UWP nuit à ses performances avant de modifier le code.
+**Note**  
+Most of the UWP components that ship with Windows 10 are implemented in C++ so you cross interoperability boundaries when you use them from C# or Visual Basic. As always, make sure to measure your app to see if using UWP components affects your app's performance before you invest in making changes to your code.
 
-Dans cette rubrique, l’expression « composants UWP » désigne les composants écrits dans un langage autre que C# ou Visual Basic.
-
- 
-
-Chaque fois que vous accédez à une propriété ou appelez une méthode sur un composant UWP, cela induit un coût d’interopérabilité. En fait, créer un composant UWP est plus coûteux en ressources que de créer un objet .NET. Cela est dû au fait que l’UWP doit exécuter du code qui est converti du langage de votre application à celui du composant. En outre, si vous transmettez des données au composant, ces données doivent être converties du type géré au type non géré.
-
-### Utilisation efficace des composants UWP
-
-Si vous souhaitez obtenir de meilleures performances, vous pouvez faire en sorte que votre code utilise les composants UWP le plus efficacement possible. Cette section donne des conseils pour améliorer les performances lorsque vous utilisez les composants UWP.
-
-Un nombre d’appels important dans une courte période est nécessaire pour que l’impact sur les performances soit visible. Une application bien conçue qui encapsule les appels aux composants UPW à partir de la logique métier et de tout autre code managé ne doit pas induire de coûts excessifs d’interopérabilité. Toutefois, si vos tests indiquent que l’utilisation des composants UWP nuit aux performances de votre application, les conseils présentés dans cette section vous aideront à éviter ce problème.
-
-### Envisager d’utiliser .NET pour les applications UWP
-
-Dans certains cas, vous pouvez accomplir une tâche à l’aide de l’UWP ou de .NET pour les applications UWP. Nous vous conseillons de ne pas essayer de mélanger les types .NET et les types UWP. Essayez de n’utiliser qu’un seul type. Par exemple, vous pouvez analyser un flux de données xml à l’aide du type [**Windows.Data.Xml.Dom.XmlDocument**](https://msdn.microsoft.com/library/windows/apps/BR206173) (un type UWP) ou du type [**System.Xml.XmlReader**](https://msdn.microsoft.com/library/windows/apps/xaml/system.xml.xmlreader.aspx) (un type .NET). Utilisez l’API de la même technologie que celle du flux. Par exemple, si vous lisez des données xml à partir d’un type [**MemoryStream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.memorystream.aspx), utilisez le type **System.Xml.XmlReader**, car les deux types sont des types .NET. Si vous lisez des données dans un fichier, utilisez le type **Windows.Data.Xml.Dom.XmlDocument**, car les API de fichier et **XmlDocument** sont des composants UWP.
-
-### Copier les objets Window Runtime dans les types .NET
-
-Quand un composant UWP renvoie un objet UWP, il peut être judicieux de copier l’objet retourné dans un objet .NET. Cela est notamment important lorsque vous utilisez des collections et des flux.
-
-Si vous appelez une API UWP qui renvoie une collection, puis si vous enregistrez cette collection et y accédez de nombreuses fois, il peut être utile de copier la collection dans une collection .NET et d’utiliser ensuite cette collection .NET.
-
-### Mettre en cache les résultats des appels aux composants UWP pour un usage ultérieur
-
-Il est possible que vous obteniez de meilleures performances en enregistrant les valeurs dans des variables locales au lieu d’accéder à un type UWP plusieurs fois. Cela peut s’avérer particulièrement utile si vous utilisez une valeur dans une boucle. Observez le comportement de votre application pour déterminer si l’utilisation de variables locales améliore ses performances. L’utilisation de valeurs mises en cache peut augmenter la vitesse de votre application, car elle consacre moins de temps à l’interopérabilité.
-
-### Combiner les appels aux composants UWP
-
-Essayez d’accomplir des tâches avec le moins d’appels possible aux objets UWP. Par exemple, il est en général préférable de lire un grand volume de données à partir d’un flux que de lire de petites quantités de données les unes après les autres.
-
-Utilisez des API qui permettent de réaliser une tâche avec le moins d’appels possible au lieu d’utiliser des API qui permettent de réaliser moins de travail avec plus d’appels. Par exemple, créez de préférence un objet en appelant des constructeurs qui initialisent plusieurs propriétés au lieu d’appeler le constructeur par défaut et de lui affecter des propriétés une par une.
-
-### Création d’un composant UWP
-
-Si vous écrivez un composant UWP pouvant être utilisé par des applications écrites en C++ ou JavaScript, assurez-vous que ce composant produira des performances optimales. Toutes les suggestions pour obtenir des performances optimales dans les applications s’appliquent également aux composants. Observez votre composant afin de savoir quelles API connaissent un trafic élevé et en conséquence, envisagez de fournir des API qui permettent à vos utilisateurs de faire leur travail en quelques appels.
-
-## Préserver la rapidité de votre application en cas d’utilisation de l’interopérabilité en code managé
-
-L’UWP facilite l’interopérabilité entre les codes natif et managé mais, si vous ne faites pas attention, cela peut occasionner des coûts de performance. Nous expliquons ici comment obtenir des performances optimales lorsque vous utilisez l’interopérabilité dans vos applications UWP managées.
-
-Avec l’UWP, les développeurs peuvent choisir le langage dans lequel ils souhaitent écrire leurs applications UWP en XAML, grâce aux projections des API UWP disponibles dans chaque langage. Dans le cas d’une application en C# ou Visual Basic, cette interopérabilité a un coût. En effet, comme les API UWP sont habituellement implémentées en code natif, chaque appel de l’UWP depuis C# ou Visual Basic nécessite que le CLR passe d’un frame de pile managé à un frame de pile natif, et qu’il marshale les paramètres de fonction aux représentations accessibles par le code natif. Ce temps de traitement supplémentaire a un impact négligeable pour la plupart des applications. Toutefois, si vous effectuez beaucoup d’appels (des centaines de milliers à des millions) aux API UWP dans le chemin critique d’une application, ce coût peut devenir considérable. En général, il faut veiller à ce que le temps consacré à la transition entre les langages est faible par rapport à l’exécution du reste de votre code. Ceci est illustré par le schéma suivant.
-
-![Les transitions d’interopérabilité ne doivent pas dominer la durée d’exécution du programme.](images/interop-transitions.png)
-
-Les types répertoriés dans [**.NET for Windows apps**](https://msdn.microsoft.com/library/windows/apps/xaml/br230232.aspx) ne présentent pas ce coût d’interopérabilité lorsqu’ils sont utilisés enC# ou Visual Basic. En règle générale, vous pouvez supposer que les types dans les espaces de noms qui commencent par « Windows. » font partie de l’UWP, et que les types dans les espaces de noms qui commencent par « System. » sont des types .NET. Souvenez-vous qu’une utilisation même simple des types UWP, telle que l’allocation ou l’accès aux propriétés, a un coût en matière d’interopérabilité.
-
-Vous devez effectuer des mesures sur votre application et déterminer si l’interopérabilité requiert une partie significative de la durée d’exécution de votre application avant d’optimiser les coûts liés à l’interopérabilité. Lors de l’analyse de votre application avec Visual Studio, il est très facile d’obtenir une limite supérieure des coûts d’interopérabilité à l’aide de l’affichage **Fonctions**, en examinant la durée inclusive consacrée aux méthodes qui appellent l’UWP.
-
-Si votre application est lente à cause de la surcharge liée à l’interopérabilité, vous pouvez améliorer ses performances en diminuant le nombre d’appels aux API UWP sur les chemins de code réactifs. Par exemple, lorsqu’un moteur de jeu doit effectuer une multitude de calculs physiques en demandant constamment la position et les dimensions de [**UIElements**](https://msdn.microsoft.com/library/windows/apps/BR208911), il peut le faire beaucoup plus rapidement en stockant les informations nécessaires de **UIElements** dans des variables locales. De cette manière, il effectue les calculs sur ces valeurs mises en cache, puis retourne le résultat final à **UIElements** une fois les calculs terminés. Prenons un autre exemple : lorsqu’une collection est souvent sollicitée par du code C# ou Visual Basic, il est plus judicieux d’utiliser une collection de l’espace de noms [**System.Collections**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.aspx) qu’une collection de l’espace de noms [**Windows.Foundation.Collections**](https://msdn.microsoft.com/library/windows/apps/BR206657). Vous pourriez également combiner des appels aux composants UWP. Cela est par exemple possible lors de l’utilisation des API [**Windows.Storage.BulkAccess**](https://msdn.microsoft.com/library/windows/apps/BR207676).
-
-### Création d’un composant UWP
-
-Si vous écrivez un composant UWP pour des applications écrites en C++ ou JavaScript, assurez-vous que ce composant produira des performances optimales. Votre surface d’API définit votre limite d’interopérabilité ainsi que le degré auquel vos utilisateurs devront prendre en compte les recommandations de cette rubrique. Si vous distribuez vos composants à des tierces parties, ceci revêt une importance toute particulière.
-
-Toutes les suggestions pour obtenir des performances optimales dans les applications s’appliquent également aux composants. Observez votre composant afin de savoir quelles API connaissent un trafic élevé et fournissez des API qui permettent à vos utilisateurs de faire leur travail en quelques appels. Des efforts significatifs ont été consacrés à la conception de l’UWP en vue de permettre aux applications de l’utiliser sans avoir à traverser fréquemment la limite d’interopérabilité.
+In this topic, when we say "UWP components", we mean components that are written in a language other than C# or Visual Basic.
 
  
 
+Each time you access a property or call a method on a UWP component, an interoperability cost is incurred. In fact, creating a UWP component is more costly than creating a .NET object. The reasons for this are that the UWP must execute code that transitions from your app's language to the component's language. Also, if you pass data to the component, the data must be converted between managed and unmanaged types.
+
+### Using UWP Components efficiently
+
+If you find that you need to get better performance, you can ensure that your code uses UWP components as efficiently as possible. This section discusses some tips for improving performance when you use UWP components.
+
+It takes a significant number of calls in a short period of time for the performance impact to be noticeable. A well-designed application that encapsulates calls to UWP components from business logic and other managed code should not incur huge interoperability costs. But if your tests indicate that using UWP components is affecting your app's performance, the tips discussed in this section help you improve performance.
+
+### Consider using .NET for UWP apps
+
+There are certain cases where you can accomplish a task by using either UWP or .NET for UWP apps. It is a good idea to try to not mix .NET types and UWP types. Try to stay in one or the other. For example, you can parse a stream of xml by using either the [**Windows.Data.Xml.Dom.XmlDocument**](https://msdn.microsoft.com/library/windows/apps/BR206173) type (a UWP type) or the [**System.Xml.XmlReader**](https://msdn.microsoft.com/library/windows/apps/xaml/system.xml.xmlreader.aspx) type (a .NET type). Use the API that is from the same technology as the stream. For example, if you read xml from a [**MemoryStream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.memorystream.aspx), use the **System.Xml.XmlReader** type, because both types are .NET types. If you read from a file, use the **Windows.Data.Xml.Dom.XmlDocument** type because the file APIs and **XmlDocument** are UWP components.
+
+### Copy Window Runtime objects to .NET types
+
+When a UWP component returns a UWP object, it might be beneficial to copy the returned object into a .NET object. Two places where this is especially important is when you're working with collections and streams.
+
+If you call a UWP API that returns a collection and then you save and access that collection many times, it might be beneficial to copy the collection into a .NET collection and use the .NET version from then on.
+
+### Cache the results of calls to UWP components for later use
+
+You might be able to get better performance by saving values into local variables instead of accessing a UWP type multiple times. This can be especially beneficial if you use a value inside of a loop. Measure your app to see if using local variables improves your app's performance. Using cached values can increase your app's speed because it will spend less time on interoperability.
+
+### Combine calls to UWP components
+
+Try to complete tasks with the fewest number of calls to UWP objects as possible. For example, it is usually better to read a large amount of data from a stream than to read small amounts at a time.
+
+Use APIs that bundle work in as few calls as possible instead of APIs that do less work and require more calls. For example, prefer to create an object by calling constructors that initialize multiple properties instead of calling the default constructor and assigning properties one at a time.
+
+### Building a UWP components
+
+If you write a UWP Component that can be used by apps written in C++ or JavaScript, make sure that your component is designed for good performance. All the suggestions for getting good performance in apps apply to getting good performance in components. Measure your component to find out which APIs have high traffic patterns and for those areas, consider providing APIs that enable your users to do work with few calls.
+
+## Keep your app fast when you use interop in managed code
+
+The UWP makes it easy to interoperate between native and managed code, but if you're not careful it can incur performance costs. Here we show you how to get good performance when you use interop in your managed UWP apps.
+
+The UWP allows developers to write apps using XAML with their language of choice thanks to the projections of the UWP APIs available in each language. When writing an app in C# or Visual Basic, this convenience comes at an interop cost because the UWP APIs are usually implemented in native code, and any UWP invocation from C# or Visual Basic requires that the CLR transition from a managed to a native stack frame and marshal function parameters to representations accessible by native code. This overhead is negligible for most apps. But when you make many calls (hundreds of thousands, to millions) to UWP APIs in the critical path of an app, this cost can become noticeable. In general you want to ensure that the time spent in transition between languages is small relative to the execution of the rest of your code. This is illustrated by the following diagram.
+
+![Interop transitions should not dominate the program execution time.](images/interop-transitions.png)
+
+The types listed at [**.NET for Windows apps**](https://msdn.microsoft.com/library/windows/apps/xaml/br230232.aspx) don't incur this interop cost when used from C# or Visual Basic. As a rule of thumb, you can assume that types in namespaces which begin with “Windows.” are part of the UWP, and types in namespaces which begin with “System.” are .NET types. Keep in mind that even simple usage of UWP types such as allocation or property access incurs an interop cost.
+
+You should measure your app and determine if interop is taking up a large portion of your apps execution time before optimizing your interop costs. When analyzing your app’s performance with Visual Studio, you can easily get an upper bound on your interop costs by using the **Functions** view and looking at inclusive time spent in methods which call into the UWP.
+
+If your app is slow because of interop overhead, you can improve its performance by reducing calls to UWP APIs on hot code paths. For example, a game engine that is doing tons of physics calculations by constantly querying the position and dimensions of [**UIElements**](https://msdn.microsoft.com/library/windows/apps/BR208911) can save a lot of time by storing the necessary info from **UIElements** to local variables, doing calculations on these cached values, and assigning the end result back to the **UIElements** after the calculations are done. Another example: if a collection is heavily accessed by C# or Visual Basic code, then it is more efficient to use a collection from the [**System.Collections**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.aspx) namespace, rather than a collection from the [**Windows.Foundation.Collections**](https://msdn.microsoft.com/library/windows/apps/BR206657) namespace. You may also consider combining calls to UWP components; one example where this is possible is by using the [**Windows.Storage.BulkAccess**](https://msdn.microsoft.com/library/windows/apps/BR207676) APIs.
+
+### Building a UWP component
+
+If you write a UWP component for use in apps written in C++ or JavaScript, make sure that your component is designed for good performance. Your API surface defines your interop boundary and defines the degree to which your users will have to think about the guidance in this topic. If you are distributing your components to other parties then this becomes especially important.
+
+All of the suggestions for getting good performance in apps apply to getting good performance in components. Measure your component to find out which APIs have high traffic patterns, and for those areas, consider providing APIs that enable your users to do work with few calls. Significant effort was put into designing the UWP to allow apps to use it without requiring frequent crossing of the interop boundary.
+
+ 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

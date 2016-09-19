@@ -1,43 +1,43 @@
 ---
 author: TylerMSFT
-title: "Lancer une application pour obtenir des résultats"
-description: "Découvrez comment démarrer une application à partir d’une autre, et échanger des données entre les deux. On parle de «démarrage d’une application pour afficher les résultats»."
+title: Launch an app for results
+description: Learn how to launch an app from another app and exchange data between the two. This is called launching an app for results.
 ms.assetid: AFC53D75-B3DD-4FF6-9FC0-9335242EE327
 translationtype: Human Translation
 ms.sourcegitcommit: 213384a194513a0f98a5f37e7f0e0849bf0a66e2
-ms.openlocfilehash: 5826b370df3dccd1590e3f67c15126b4e78c2c32
+ms.openlocfilehash: d8d7f73e06d627eaa53deaf26f778c122113a9d6
 
 ---
 
-# Lancer une application pour obtenir des résultats
+# Launch an app for results
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**API importantes**
+**Important APIs**
 
 -   [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686)
 -   [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131)
 
-Découvrez comment démarrer une application à partir d’une autre et échanger des données entre les deux. On parle de *démarrage d’une application pour afficher les résultats*. L’exemple suivant vous montre comment utiliser [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) afin de démarrer une application pour afficher les résultats.
+Learn how to launch an app from another app and exchange data between the two. This is called *launching an app for results*. The example here shows you how to use [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) to launch an app for results.
 
-Les nouvelles API de communication entre les applications de Windows 10 permettent aux applications Windows (et aux applications web Windows) de démarrer une application et d’échanger des données et des fichiers. Cela vous permet de créer des solutions hybrides à partir de plusieurs applications. Grâce à ces nouvelles API, les tâches complexes qui, auparavant, auraient obligé l’utilisateur à lancer plusieurs applications, peuvent désormais être gérées de manière transparente. Ainsi, votre application peut démarrer une application de réseau social pour choisir un contact, ou une application de validation d’achat pour effectuer un processus de paiement.
+New app-to-app communication APIs in Windows 10 make it possible for Windows apps (and Windows Web apps) to launch an app and exchange data and files. This enables you to build mash-up solutions from multiple apps. Using these new APIs, complex tasks that would have required the user to use multiple apps can now be handled seamlessly. For example, your app could launch a social networking app to choose a contact, or launch a checkout app to complete a payment process.
 
-L’application que vous démarrez pour afficher les résultats sera désignée sous le nom d’application lancée. L’application qui lance l’application sera désignée sous le nom d’application appelante. Pour cet exemple, vous allez écrire l’application appelante et l’application lancée.
+The app that you'll launch for results will be referred to as the launched app. The app that launches the app will be referred to as the calling app. For this example you will write both the calling app and the launched app.
 
-## Étape1: Inscrire le protocole à gérer dans l’application démarrée pour afficher les résultats
+## Step 1: Register the protocol to be handled in the app that you'll launch for results
 
 
-Dans le fichier Package.appxmanifest de l’application lancée, ajoutez une extension de protocole à la section **&lt;Application&gt;**. L’exemple présent utilise un protocole fictif, appelé **test-app2app**.
+In the Package.appxmanifest file of the launched app, add a protocol extension to the **&lt;Application&gt;** section. The example here uses a fictional protocol named **test-app2app**.
 
-L’attribut **ReturnResults** dans l’extension de protocole accepte l’une des valeurs suivantes:
+The **ReturnResults** attribute in the protocol extension accepts one of these values:
 
--   **optional**: l’application peut être démarrée pour afficher les résultats via la méthode [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686), ou à d’autres fins via la méthode [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476). Si vous utilisez l’élément **optional**, l’application lancée doit déterminer si elle a été démarrée pour afficher les résultats. Pour ce faire, elle peut vérifier l’argument d’événement [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330). Si la propriété [**IActivatedEventArgs.Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) de l’argument renvoie [**ActivationKind.ProtocolForResults**](https://msdn.microsoft.com/library/windows/apps/br224693) ou si le type de l’argument d’événement est [**ProtocolActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224742), l’application a été lancée via **LaunchUriForResultsAsync**.
--   **always**: l’application peut être démarrée uniquement pour afficher les résultats; autrement dit, elle ne peut répondre qu’à [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686).
--   **none**: l’application ne peut pas être démarrée pour afficher les résultats; elle ne peut répondre qu’à [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476).
+-   **optional**—The app can be launched for results by using the [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) method, or not for results by using [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476). When you use **optional**, the launched app must determine whether it was launched for results. It can do that by checking the [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) event argument. If the argument's [**IActivatedEventArgs.Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) property returns [**ActivationKind.ProtocolForResults**](https://msdn.microsoft.com/library/windows/apps/br224693), or if the type of the event argument is [**ProtocolActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224742), the app was launched via **LaunchUriForResultsAsync**.
+-   **always**—The app can be launched only for results; that is, it can respond only to [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686).
+-   **none**—The app cannot be launched for results; it can respond only to [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476).
 
-Dans cet exemple d’extension de protocole, l’application peut être démarrée uniquement pour afficher les résultats. Cela permet de simplifier la logique figurant dans la méthode **OnActivated** (abordée ci-dessous), car nous avons uniquement besoin de gérer les cas de «démarrage pour afficher les résultats», et non les autres modes d’activation possibles de l’application.
+In this protocol-extension example, the app can be launched only for results. This simplifies the logic inside the **OnActivated** method, discussed below, because we have to handle only the "launched for results" case and not the other ways that the app could be activated.
 
 ```xml
 <Applications>
@@ -55,12 +55,12 @@ Dans cet exemple d’extension de protocole, l’application peut être démarr�
 </Applications>
 ```
 
-## Étape 2 : Remplacer l’élément Application.OnActivated dans l’application à démarrer pour afficher les résultats
+## Step 2: Override Application.OnActivated in the app that you'll launch for results
 
 
-Si cette méthode n’existe pas déjà dans l’application lancée, créez-la dans la classe `App` définie dans le fichier App.xaml.cs.
+If this method does not already exist in the launched app, create it within the `App` class defined in App.xaml.cs.
 
-Dans une application permettant de sélectionner vos amis dans un réseau social, cette fonction peut être utilisée pour ouvrir la page du sélecteur de contacts. Dans l’exemple suivant, une page appelée **LaunchedForResultsPage** s’affiche lorsque l’application est activée pour afficher les résultats. Assurez-vous que l’instruction **using** est incluse en haut du fichier.
+In an app that lets you pick your friends in a social network, this function could be where you open the people-picker page. In this next example, a page named **LaunchedForResultsPage** is displayed when the app is activated for results. Ensure that the **using** statement is included at the top of the file.
 
 ```cs
 using Windows.ApplicationModel.Activation;
@@ -85,29 +85,29 @@ protected override void OnActivated(IActivatedEventArgs args)
 }
 ```
 
-Étant donné que l’extension de protocole dans le fichier Package.appxmanifest spécifie l’élément **ReturnResults** en tant que **always**, le code que nous venons d’illustrer peut effectuer un transtypage de l’élément `args` directement à [**ProtocolForResultsActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn906905). Cela permet de s’assurer que seul **ProtocolForResultsActivatedEventArgs** sera transmis à **OnActivated** pour cette application. Si votre application peut être activée pour d’autres modes que le démarrage pour afficher les résultats, vous pouvez vérifier si la propriété [**IActivatedEventArgs.Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) renvoie la valeur [**ActivationKind.ProtocolForResults**](https://msdn.microsoft.com/library/windows/apps/br224693) pour savoir si l’application a bien été démarrée pour afficher les résultats.
+Because the protocol extension in the Package.appxmanifest file specifies **ReturnResults** as **always**, the code just shown can cast `args` directly to [**ProtocolForResultsActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn906905) with confidence that only **ProtocolForResultsActivatedEventArgs** will be sent to **OnActivated** for this app. If your app can be activated in ways other than launching for results, you can check whether [**IActivatedEventArgs.Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) property returns [**ActivationKind.ProtocolForResults**](https://msdn.microsoft.com/library/windows/apps/br224693) to tell whether the app was launched for results.
 
-## Étape 3 : Ajouter un champ ProtocolForResultsOperation à l’application que vous démarrez pour afficher les résultats
+## Step 3: Add a ProtocolForResultsOperation field to the app you launch for results
 
 
 ```cs
 private Windows.System.ProtocolForResultsOperation _operation = null;
 ```
 
-Vous utiliserez le champ [**ProtocolForResultsOperation**](https://msdn.microsoft.com/library/windows/apps/dn906913) pour signaler que l’application lancée est prête à renvoyer le résultat à l’application à l’origine de l’appel. Dans cet exemple, le champ est ajouté à la classe **LaunchedForResultsPage**, car vous effectuez le démarrage pour afficher les résultats à partir de cette page et devez être à même d’y accéder.
+You'll use the [**ProtocolForResultsOperation**](https://msdn.microsoft.com/library/windows/apps/dn906913) field to signal when the launched app is ready to return the result to the calling app. In this example, the field is added to the **LaunchedForResultsPage** class because you'll complete the launch-for-results operation from that page and will need access to it.
 
-## Étape 4 : Remplacer OnNavigatedTo() dans l’application que vous démarrez pour afficher les résultats
+## Step 4: Override OnNavigatedTo() in the app you launch for results
 
 
-Remplacez la méthode [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) dans la page que vous allez afficher lorsque votre application est démarrée pour afficher les résultats. Si cette méthode n’existe pas encore, créez-la dans la classe de la page définie dans le fichier &lt;pagename&gt;.xaml.cs. Assurez-vous que l’instruction **using** suivante est incluse en haut du fichier:
+Override the [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) method on the page that you'll display when your app is launched for results. If this method does not already exist, create it within the class for the page defined in &lt;pagename&gt;.xaml.cs. Ensure that the following **using** statement is included at the top of the file:
 
 ```cs
 using Windows.ApplicationModel.Activation
 ```
 
-L’objet [**NavigationEventArgs**](https://msdn.microsoft.com/library/windows/apps/br243285) de la méthode [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) contient les données transmises par l’application à l’origine de l’appel. Ces données, d’une taille de 100Ko au maximum, sont stockées dans un objet [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131).
+The [**NavigationEventArgs**](https://msdn.microsoft.com/library/windows/apps/br243285) object in the [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) method contains the data passed from the calling app. The data may not exceed 100KB and is stored in a [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) object.
 
-Dans cet exemple de code, l’application lancée s’attend à ce que les données envoyées par l’application à l’origine de l’appel soient incluses dans un élément [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131), sous une clé appelée **TestData**, car il s’agit de l’élément dont l’envoi a été prévu par le code de l’exemple d’application à l’origine de l’appel.
+In this example code, the launched app expects the data sent from the calling app to be in a [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) under a key named **TestData**, because that's what the example's calling app is coded to send.
 
 ```cs
 using Windows.ApplicationModel.Activation;
@@ -127,10 +127,10 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 private Windows.System.ProtocolForResultsOperation _operation = null;
 ```
 
-## Étape 5: Écrire du code pour renvoyer des données à l’application à l’origine de l’appel
+## Step 5: Write code to return data to the calling app
 
 
-Dans l’application lancée, utilisez l’élément [**ProtocolForResultsOperation**](https://msdn.microsoft.com/library/windows/apps/dn906913) pour renvoyer des données à l’application à l’origine de l’appel. Dans cet exemple de code, un objet [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) est créé. Il contient la valeur à renvoyer à l’application à l’origine de l’appel. Le champ **ProtocolForResultsOperation** est ensuite utilisé pour envoyer la valeur à l’application à l’origine de l’appel.
+In the launched app, use [**ProtocolForResultsOperation**](https://msdn.microsoft.com/library/windows/apps/dn906913) to return data to the calling app. In this example code, a [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) object is created that contains the value to return to the calling app. The **ProtocolForResultsOperation** field is then used to send the value to the calling app.
 
 ```cs
     ValueSet result = new ValueSet();
@@ -138,10 +138,10 @@ Dans l’application lancée, utilisez l’élément [**ProtocolForResultsOperat
     _operation.ReportCompleted(result);
 ```
 
-## Étape 6: Écrire du code pour démarrer l’application pour afficher les résultats et obtenir les données renvoyées
+## Step 6: Write code to launch the app for results and get the returned data
 
 
-Démarrez l’application à partir d’une méthode asynchrone dans l’application à l’origine de l’appel, comme illustré dans cet exemple de code. Notez les instructions **using**, qui sont nécessaires pour que le code soit compilé:
+Launch the app from within an async method in your calling app as shown in this example code. Note the **using** statements, which are necessary for the code to compile:
 
 ```cs
 using System.Threading.Tasks;
@@ -170,28 +170,28 @@ async Task<string> LaunchAppForResults()
 }
 ```
 
-Dans cet exemple, un élément [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) contenant la clé **TestData** est transmis à l’application lancée. L’application lancée crée un élément **ValueSet** avec une clé appelée **ReturnedData**, qui contient le résultat renvoyé à l’application à l’origine de l’appel.
+In this example, a [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) containing the key **TestData** is passed to the launched app. The launched app creates a **ValueSet** with a key named **ReturnedData** that contains the result returned to the caller.
 
-Vous devez générer et déployer l’application à démarrer pour afficher les résultats avant d’exécuter l’application à l’origine de l’appel. Sinon, [**LaunchUriResult.Status**](https://msdn.microsoft.com/library/windows/apps/dn906892) indiquera **LaunchUriStatus.AppUnavailable**.
+You must build and deploy the app that you'll launch for results before running your calling app. Otherwise, [**LaunchUriResult.Status**](https://msdn.microsoft.com/library/windows/apps/dn906892) will report **LaunchUriStatus.AppUnavailable**.
 
-Vous avez besoin du nom de famille de l’application lancée lorsque vous définissez la propriété [**TargetApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/dn893511). Une façon d’obtenir le nom de famille consiste à effectuer l’appel suivant à partir de l’application lancée :
+You'll need the family name of the launched app when you set the [**TargetApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/dn893511). One way to get the family name is to make the following call from within the launched app:
 
 ```cs
 string familyName = Windows.ApplicationModel.Package.Current.Id.FamilyName;
 ```
 
-## Remarques
+## Remarks
 
 
-L’exemple de cette procédure inclut une introduction de type «hello world» pour le démarrage d’une application afin d’afficher les résultats. Les points à noter sont les suivants: la nouvelle API [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) vous permet de démarrer une application de manière asynchrone et de communiquer via la classe [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131). Les données à transmettre via un élément **ValueSet** doivent présenter une taille de 100Ko au maximum. Si vous devez transmettre des quantités de données supérieures, vous pouvez partager des fichiers à l’aide de la classe [**SharedStorageAccessManager**](https://msdn.microsoft.com/library/windows/apps/dn889985) afin de créer des jetons de fichier que vous pouvez transmettre entre les applications. Par exemple, pour un élément **ValueSet** appelé `inputData`, vous pouvez stocker le jeton dans un fichier que vous souhaitez partager avec l’application lancée :
+The example in this how-to provides a "hello world" introduction to launching an app for results. The key things to note are that the new [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) API lets you asynchronously launch an app and communicate via the [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) class. Passing data via a **ValueSet** is limited to 100KB. If you need to pass larger amounts of data, you can share files by using the [**SharedStorageAccessManager**](https://msdn.microsoft.com/library/windows/apps/dn889985) class to create file tokens that you can pass between apps. For example, given a **ValueSet** named `inputData`, you could store the token to a file that you want to share with the launched app:
 
 ```cs
 inputData["ImageFileToken"] = SharedStorageAccessManager.AddFile(myFile);
 ```
 
-transférez-le ensuite à l’application lancée via **LaunchUriForResultsAsync**.
+Then pass it to the launched app via **LaunchUriForResultsAsync**.
 
-## Rubriques connexes
+## Related topics
 
 
 * [**LaunchUri**](https://msdn.microsoft.com/library/windows/apps/hh701476)
@@ -204,6 +204,6 @@ transférez-le ensuite à l’application lancée via **LaunchUriForResultsAsync
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

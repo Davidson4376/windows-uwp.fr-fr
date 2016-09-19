@@ -1,68 +1,77 @@
 ---
 author: Jwmsft
-title: "Mode Fractionné"
+title: Split view
 ms.assetid: E9E4537F-1160-4183-9A83-26602FCFDC9A
-description: "Un contrôle de mode Fractionné inclut un volet, qui peut être visible ou masqué, ainsi qu’une zone de contenu."
+description: A split view control has an expandable/collapsible pane and a content area.
 label: Split view
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 391bfdbbf09474ad707dbbf306d4997825fa8386
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 7fae1477b997508ade92a5bbb977c1d6530a181f
 
 ---
+# Split view control
 
-# Recommandations en matière de contrôles SplitView
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
+A split view control has an expandable/collapsible pane and a content area.
 
+<div class="important-apis" >
+<b>Important APIs</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/dn864360"><strong>SplitView class (XAML)</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/dn919970"><strong>SplitView object (HTML)</strong></a></li>
+</ul>
 
-**API importantes**
-
--   [**Classe SplitView (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn864360)
--   [**Objet SplitView (HTML)**](https://msdn.microsoft.com/library/windows/apps/dn919970)
-
-Un contrôle de mode Fractionné inclut un volet, qui peut être visible ou masqué, ainsi qu’une zone de contenu. La zone de contenu est toujours visible. Le volet peut être visible ou masqué ; il est susceptible de s’afficher depuis le côté gauche ou droit de la fenêtre. Le volet comporte quatre modes:
-
--   **Superposition**
-
-    Le volet est masqué jusqu’à ce qu’il soit ouvert. Lorsqu’il est ouvert, il recouvre la zone de contenu.
-
--   **Inclus**
-
-    Le volet est toujours visible et ne recouvre pas la zone de contenu. Les zones de volet et de contenu divisent l’espace disponible à l’écran.
-
--   **Superposé compact (CompactOverlay)**
-
-    Une mince partie du volet est toujours visible à l’état compact dans ce mode, sa largeur étant juste suffisante pour afficher les icônes. Par défaut, la largeur du volet fermé est de 48 pixels et peut être modifiée avec `CompactPaneLength`. Si le volet est ouvert, il se superpose à la zone de contenu.
-
--   **CompactInline (Inclus compact)**
-
-    Une mince partie du volet est toujours visible à l’état compact dans ce mode, sa largeur étant juste suffisante pour afficher les icônes. Par défaut, la largeur du volet fermé est de 48 pixels et peut être modifiée avec `CompactPaneLength`. Si le volet est ouvert, l’espace disponible pour le contenu est réduit, le poussant en dehors.
-
-## <span id="Is_this_the_right_control_"></span><span id="is_this_the_right_control_"></span><span id="IS_THIS_THE_RIGHT_CONTROL_"></span>Est-ce le contrôle approprié ?
-
-Le contrôle de mode Fractionné peut être utilisé pour créer un [volet de navigation](nav-pane.md). Pour créer ce modèle, ajoutez un bouton Développer/réduire (le bouton «hamburger») et un affichage Liste représentant les éléments de navigation.
-
-Le contrôle de mode Fractionné peut également servir à créer toute expérience «à tiroirs» (c’est-à-dire que les utilisateurs peuvent ouvrir et fermer le volet supplémentaire).
-
-## <span id="Examples"></span><span id="examples"></span><span id="EXAMPLES"></span>Exemples
-
-Par défaut, le contrôle de mode Fractionné correspond à un conteneur de base. Voici un exemple de l’application Microsoft Edge utilisant SplitView pour afficher son Hub.
-
-![Exemple de mode Fractionné Microsoft Edge](images/split_view_Edge.png)
+</div>
+</div>
 
 
 
-## <span id="related_topics"></span>Rubriques connexes
+
+ A split view's content area is always visible. The pane can expand and collapse or remain in an open state, and can present itself from either the left side or right side of an app window. The pane has four modes:
+
+-   **Overlay**
+
+    The pane is hidden until opened. When open, the pane overlays the content area.
+
+-   **Inline**
+
+    The pane is always visible and doesn't overlay the content area. The pane and content areas divide the available screen real estate.
+
+-   **CompactOverlay**
+
+    A narrow portion of the pane is always visible in this mode, which is just wide enough to show icons. The default closed pane width is 48px, which can be modified with `CompactPaneLength`. If the pane is opened, it will overlay the content area.
+
+-   **CompactInline**
+
+    A narrow portion of the pane is always visible in this mode, which is just wide enough to show icons. The default closed pane width is 48px, which can be modified with `CompactPaneLength`. If the pane is opened, it will reduce the space available for content, pushing the content out of its way.
+
+## Is this the right control?
+
+The split view control can be used to make a [navigation pane](nav-pane.md). To build this pattern, add an expand/collapse button (the "hamburger" button) and a list view representing the nav items.
+
+The split view control can also be used to create any "drawer" experience where users can open and close the supplemental pane.
+
+## Examples
+
+The split view control in its default form is a basic container. Here is an example of the Microsoft Edge app using SplitView to show its Hub.
+
+![Microsoft Edge split view example](images/split_view_Edge.png)
 
 
-* [Modèle de volet de navigation](nav-pane.md)
-* [Affichage Liste](lists.md)
+
+## Related topics
+
+
+* [Nav pane pattern](nav-pane.md)
+* [List view](lists.md)
  
 
  
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

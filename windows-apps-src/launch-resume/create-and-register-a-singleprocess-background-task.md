@@ -2,6 +2,10 @@
 author: TylerMSFT
 title: Create and register a single-process background task
 description: Create and register a single-process task that runs in the same process as your foreground app.
+translationtype: Human Translation
+ms.sourcegitcommit: 9e959a8ae6bf9496b658ddfae3abccf4716957a3
+ms.openlocfilehash: 5a2461d00114ba71ced7cca64c197f253f33690d
+
 ---
 
 # Create and register a single-process background task
@@ -14,20 +18,19 @@ description: Create and register a single-process task that runs in the same pro
 
 This topic demonstrates how to create and register a background task that runs in the same process as your app.
 
-Single-process background tasks have the advantage of greater simplicity when compared with running your background work in a separate process. However, they are less resilient. If the code running in the background crashes, it will take down your app. Also note that [DeviceUseTrigger](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx?f=255&MSPPError=-2147217396), [DeviceServicingTrigger](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.background.deviceservicingtrigger.aspx) and **IoTStartupTask** cannot be used with the single process model. Activating a VoIP background task within your application is also not possible. These triggers and tasks are still supported using the multiple-process background task model.
+Single-process background tasks are simpler to implement than background tasks that run in a separate process. However, they are less resilient. If the code running in the background crashes, it will take down your app. Also note that [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx?f=255&MSPPError=-2147217396), [DeviceServicingTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceservicingtrigger.aspx) and **IoTStartupTask** cannot be used with the single process model. Activating a VoIP background task within your application is also not possible. These triggers and tasks are still supported using the multiple-process background task model.
 
 Be aware that background activity can be terminated even when running inside the app's foreground process if it runs past execution time limits. For some purposes the resiliency of separating work into a background task that runs in a separate process is still useful. Keeping background work as a task separate from the foreground application may be the best option for work that does not require communication with the foreground application.
 
 ## Fundamentals
 
-The single process model enhances the application lifecycle with improved notifications for when your app is in the foreground or in the background. Two new events are available from the Application object for these transitions: [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) and [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground). These events fit into the application lifecycle based on the visibility state of your application
-Read more about these events and how they affect the application lifecycle at [App lifecycle](app-lifecycle.md).
+The single process model enhances the application lifecycle with improved notifications for when your app is in the foreground or in the background. Two new events are available from the Application object for these transitions: [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) and [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground). These events fit into the application lifecycle based on the visibility state of your application Read more about these events and how they affect the application lifecycle at [App lifecycle](app-lifecycle.md).
 
 At a high level, you will handle the **EnteredBackground** event to run your code that will execute while your app is running in the background, and handle **LeavingBackground** to know when your app has moved to the foreground.
 
 ## Register your background task trigger
 
-Single-process background activity is registered much the same as multiple-process background activity. All background triggers start with registration using the [BackgroundTaskBuilder](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.background.backgroundtaskbuilder.aspx?f=255&MSPPError=-2147217396). The builder makes it easy to register a background task by setting all required values in one place:
+Single-process background activity is registered much the same as multiple-process background activity. All background triggers start with registration using the [BackgroundTaskBuilder](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundtaskbuilder.aspx?f=255&MSPPError=-2147217396). The builder makes it easy to register a background task by setting all required values in one place:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -43,9 +46,9 @@ Single-process background activity is registered much the same as multiple-proce
 > Universal Windows apps must call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) before registering any of the background trigger types.
 > To ensure that your Universal Windows app continues to run properly after you release an update, you must call [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471) and then call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) when your app launches after being updated. For more information, see [Guidelines for background tasks](guidelines-for-background-tasks.md).
 
-For single-process background activities you do not set `TaskEntryPoint.` Leaving it blank enables the default entry point, a new protected method on the Application object called `OnBackgroundActivated()`.
+For single-process background activities you do not set `TaskEntryPoint.` Leaving it blank enables the default entry point, a new protected method on the Application object called [OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx).
 
-Once a trigger is registered, it will fire based on the type of trigger set in the `SetTrigger` method. In the example above a `TimeTrigger` is used, which will fire fifteen minutes from the time it was registered.
+Once a trigger is registered, it will fire based on the type of trigger set in the [SetTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundtaskbuilder.settrigger.aspx) method. In the example above a [TimeTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.timetrigger.aspx) is used, which will fire fifteen minutes from the time it was registered.
 
 ## Add a condition to control when your task will run (optional)
 
@@ -60,15 +63,15 @@ You can add a condition to control when your task will run after the trigger eve
 
 ## Place your background activity code in OnBackgroundActivated()
 
-Put your background activity code in `OnBackgroundActivated` to respond to your background trigger when it fires. `OnBackgroundActivated` can be treated just like [IBackgroundTask.Run](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396). The method has a  BackgroundActivatedEventArgs parameter, which contains everything that the Run method delivers.
+Put your background activity code in [OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx)** to respond to your background trigger when it fires. **OnBackgroundActivated** can be treated just like [IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396). The method has a [BackgroundActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.backgroundactivatedeventargs.aspx) parameter, which contains everything that the Run method delivers.
 
 ## Handle background task progress and completion
 
-Task progress and completion can be monitored the same way as for multi-process background tasks (See [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)) but you will likely find that you can more easily track them by using variables to track progress or completion status in your app. This is one of the advantages of having your background activity code running in the same process as your app.
+Task progress and completion can be monitored the same way as for multi-process background tasks (see [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)) but you will likely find that you can more easily track them by using variables to track progress or completion status in your app. This is one of the advantages of having your background activity code running in the same process as your app.
 
 ## Handle background task cancellation
 
-Single-process background tasks are cancelled the same way as multi-process background tasks are (see [Handle a cancelled background task](handle-a-cancelled-background-task.md)).  But be aware that your **BackgroundActivated** event handler must exit before the cancellation occurs, or the whole process will be terminated. If your foreground app closes unexpectedly when you cancel the background task, verify that your handler exited before the cancellation occured.
+Single-process background tasks are cancelled the same way as multi-process background tasks are (see [Handle a cancelled background task](handle-a-cancelled-background-task.md)). Be aware that your **BackgroundActivated** event handler must exit before the cancellation occurs, or the whole process will be terminated. If your foreground app closes unexpectedly when you cancel the background task, verify that your handler exited before the cancellation occured.
 
 ## The manifest
 
@@ -86,7 +89,7 @@ See the following related topics for API reference, background task conceptual g
 
 * [Convert a multi-process background task to a single-process background task](convert-multiple-process-background-task.md)
 * [Create and register a background task that runs in a separate process](create-and-register-a-background-task.md)
-* [Play media in the background](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)
+* [Play media in the background](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 * [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)
 * [Register a background task](register-a-background-task.md)
 * [Set conditions for running a background task](set-conditions-for-running-a-background-task.md)
@@ -105,3 +108,9 @@ See the following related topics for API reference, background task conceptual g
 **Background Task API Reference**
 
 * [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)
+
+
+
+<!--HONumber=Aug16_HO3-->
+
+

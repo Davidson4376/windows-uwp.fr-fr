@@ -1,33 +1,33 @@
 ---
 author: drewbatgit
 ms.assetid: 9347AD7C-3A90-4073-BFF4-9E8237398343
-description: "Cet article répertorie la prise en charge des codecs et formats audio et vidéo pour les applications UWP."
-title: Codecs pris en charge
+description: This article lists the audio and video codec and format support for UWP apps.
+title: Supported codecs
 translationtype: Human Translation
-ms.sourcegitcommit: b4d6a9f7cc8b343ee1cbd31bcfd8f19e329c82dc
-ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
+ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
+ms.openlocfilehash: 0f6da61ba167328968694d240e250dbc454d5e7b
 
 ---
 
-# Codecs pris en charge
+# Supported codecs
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Cet article répertorie la prise en charge des codecs et formats audio et vidéo pour les applications UWP.
+This article lists the audio and video codec and format support for UWP apps.
 
-Dans les tableaux ci-dessous, la lettre « D » indique la prise en charge de décodeurs et la lettre « E », la prise en charge d’encodeurs.
+In the tables below "D" indicates decoder support and "E" indicates encoder support.
 
-## Prise en charge des codecs et formats audio
+## Audio codec & format support
 
-Les tableaux suivants indiquent la prise en charge des codecs et formats audio pour chaque famille d’appareils.
+The following tables show the audio codec and format support for each device family.
 
-**Remarque**  
--   Lorsque la prise en charge AMR-NB est indiquée, le codec n’est pas pris en charge sur les références serveur.
+> [!NOTE] 
+> Where AMR-NB support is indicated, this codec is not supported on Server SKUs.
 
  
 
-### Bureau
+### Desktop
 
 <table>
 <colgroup>
@@ -47,7 +47,7 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats audio p
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Codec/conteneur</th>
+<th align="left">Codec/Container</th>
 <th align="left">MPEG-4</th>
 <th align="left">MPEG-3</th>
 <th align="left">MPEG-2</th>
@@ -358,7 +358,7 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats audio p
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Codec/conteneur</th>
+<th align="left">Codec/Container</th>
 <th align="left">MPEG-4</th>
 <th align="left">MPEG-3</th>
 <th align="left">MPEG-2</th>
@@ -421,14 +421,14 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats audio p
 </tr>
 <tr class="even">
 <td align="left">AC3</td>
-<td align="left">D, uniquement sur Lumia Icon, 830, 930, 1520</td>
+<td align="left">D, Only on Lumia Icon, 830, 930, 1520</td>
 <td align="left"></td>
-<td align="left">D, uniquement sur Lumia Icon, 830, 930, 1520</td>
+<td align="left">D, Only on Lumia Icon, 830, 930, 1520</td>
 <td align="left"></td>
-<td align="left">D, uniquement sur Lumia Icon, 830, 930, 1520</td>
-<td align="left">D, uniquement sur Lumia Icon, 830, 930, 1520</td>
-<td align="left">D, uniquement sur Lumia Icon, 830, 930, 1520</td>
-<td align="left">D, uniquement sur Lumia Icon, 830, 930, 1520</td>
+<td align="left">D, Only on Lumia Icon, 830, 930, 1520</td>
+<td align="left">D, Only on Lumia Icon, 830, 930, 1520</td>
+<td align="left">D, Only on Lumia Icon, 830, 930, 1520</td>
+<td align="left">D, Only on Lumia Icon, 830, 930, 1520</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -669,7 +669,7 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats audio p
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Codec/conteneur</th>
+<th align="left">Codec/Container</th>
 <th align="left">MPEG-4</th>
 <th align="left">MPEG-3</th>
 <th align="left">MPEG-2</th>
@@ -980,7 +980,7 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats audio p
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Codec/conteneur</th>
+<th align="left">Codec/Container</th>
 <th align="left">MPEG-4</th>
 <th align="left">MPEG-3</th>
 <th align="left">MPEG-2</th>
@@ -1271,7 +1271,7 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats audio p
 
  
 
-### Xbox
+### XBox
 
 <table>
 <colgroup>
@@ -1291,7 +1291,7 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats audio p
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Codec/conteneur</th>
+<th align="left">Codec/Container</th>
 <th align="left">MPEG-4</th>
 <th align="left">MPEG-3</th>
 <th align="left">MPEG-2</th>
@@ -1582,17 +1582,17 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats audio p
 
  
 
-## Prise en charge des codecs et formats vidéo
+## Video codec & format support
 
-Les tableaux suivants indiquent la prise en charge des codecs et formats vidéo pour chaque famille d’appareils.
+The following tables show the video codec and format support for each device family.
 
-**Remarque**  
--   Lorsque la prise en charge H.265 est indiquée, elle n’est pas forcément assurée par tous les appareils de la famille d’appareils.
--   Lorsque la prise en charge MPEG-2/MPEG-1 est indiquée, elle est uniquement assurée avec l’installation de l’application Windows universelle de DVD Microsoft en option.
+> [!NOTE] 
+> Where H.265 support is indicated, it is not necessarily supported by all devices within the device family.
+> Where MPEG-2/MPEG-1 support is indicated, it is only supported with the installation of the optional Microsoft DVD Universal Windows app.
 
  
 
-### Bureau
+### Desktop
 
 <table>
 <colgroup>
@@ -1613,7 +1613,7 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats vidéo 
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Codec/conteneur</th>
+<th align="left">Codec/Container</th>
 <th align="left">FOURCC</th>
 <th align="left">fMP4</th>
 <th align="left">MPEG-4</th>
@@ -1832,7 +1832,7 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats vidéo 
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Codec/conteneur</th>
+<th align="left">Codec/Container</th>
 <th align="left">FOURCC</th>
 <th align="left">fMP4</th>
 <th align="left">MPEG-4</th>
@@ -2051,7 +2051,7 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats vidéo 
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Codec/conteneur</th>
+<th align="left">Codec/Container</th>
 <th align="left">FOURCC</th>
 <th align="left">fMP4</th>
 <th align="left">MPEG-4</th>
@@ -2270,7 +2270,7 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats vidéo 
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Codec/conteneur</th>
+<th align="left">Codec/Container</th>
 <th align="left">FOURCC</th>
 <th align="left">fMP4</th>
 <th align="left">MPEG-4</th>
@@ -2468,7 +2468,7 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats vidéo 
 
  
 
-### Xbox
+### XBox
 
 <table>
 <colgroup>
@@ -2489,7 +2489,7 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats vidéo 
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Codec/conteneur</th>
+<th align="left">Codec/Container</th>
 <th align="left">FOURCC</th>
 <th align="left">fMP4</th>
 <th align="left">MPEG-4</th>
@@ -2697,6 +2697,6 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats vidéo 
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,31 +1,31 @@
 ---
-title: "Stockage sécurisé des informations d’identification"
-description: "Cet article décrit comment des applications UWP peuvent utiliser le stockage sécurisé des informations d’identification pour stocker et récupérer des informations d’identification utilisateur en toute sécurité et les déplacer entre des appareils avec le compte Microsoft de l’utilisateur."
+title: Credential locker
+description: This article describes how Universal Windows Platform (UWP) apps can use the Credential Locker to securely store and retrieve user credentials, and roam them between devices with the user's Microsoft account.
 ms.assetid: 7BCC443D-9E8A-417C-B275-3105F5DED863
 author: awkoren
 translationtype: Human Translation
 ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
-ms.openlocfilehash: ba3f4fc8584108fefe25de146ae7fc84ee7c9e2c
+ms.openlocfilehash: 2d5e1fada82e0c39ad0dce31c779ac80005aff17
 
 ---
 
-# Stockage sécurisé des informations d’identification
+# Credential locker
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Cet article décrit comment des applications de plateformeWindows universelle (UWP) peuvent utiliser le stockage sécurisé des informations d’identification pour stocker et récupérer des informations d’identification utilisateur en toute sécurité et les déplacer entre des appareils avec le compte Microsoft de l’utilisateur.
+This article describes how Universal Windows Platform (UWP) apps can use the Credential Locker to securely store and retrieve user credentials, and roam them between devices with the user's Microsoft account.
 
-Supposons que vous ayez une application qui se connecte à un service pour accéder à des ressources protégées telles que des fichiers multimédias ou des réseaux sociaux. Votre service exige des informations de connexion pour chaque utilisateur. Vous avez créé une interface utilisateur dans votre application, qui obtient le nom et le mot de passe de l’utilisateur. Ces données sont ensuite utilisées pour connecter l’utilisateur au service. L’API de stockage sécurisé des informations d’identification vous permet de stocker les nom et mot de passe de votre utilisateur, puis de les récupérer facilement pour connecter automatiquement l’utilisateur lors de la prochaine ouverture de l’application, quel que soit l’appareil utilisé.
+For example, you have an app that connects to a service to access protected resources such as media files, or social networking. Your service requires login information for each user. You’ve built UI into your app that gets the username and password for the user, which is then used to log the user into the service. Using the Credential Locker API, you can store the username and password for your user and easily retrieve them and log the user in automatically the next time they open your app, regardless of what device they're on.
 
-Le stockage sécurisé des informations d’identification fonctionne un peu différemment pour les comptes de domaine. Si des informations d’identification sont stockées avec votre compte Microsoft et que vous associez ce compte à un compte de domaine (comme le compte que vous utilisez au travail), vos informations sont transmises à ce compte de domaine. Toutefois, les nouvelles informations d’identification ajoutées lors de la connexion au compte de domaine ne seront pas transmises. Cela permet de s’assurer que les informations d’identification privées pour le domaine ne sont pas exposées à l’extérieur du domaine.
+Credential locker works a little differently for domain accounts. If there are credentials stored with your Microsoft account, and you associate that account with a domain account (such as the account that you use at work), your credentials will roam to that domain account. However, any new credentials added when signed on with the domain account won’t roam. This ensures that private credentials for the domain aren’t exposed outside of the domain.
 
-## Stockage des informations d’identification de l’utilisateur
+## Storing user credentials
 
 
-1.  Obtenez une référence au stockage des informations d’identification de l’utilisateur à l’aide de l’objet [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) de l’espace de noms [**Windows.Security.Credentials**](https://msdn.microsoft.com/library/windows/apps/br227089).
-2.  Créez un objet [**PasswordCredential**](https://msdn.microsoft.com/library/windows/apps/br227061) contenant un identificateur pour votre application, le nom d’utilisateur et le mot de passe, puis passez le tout à la méthode [**PasswordVault.Add**](https://msdn.microsoft.com/library/windows/apps/hh701231) pour ajouter les informations d’identification au stockage des informations d’identification de l’utilisateur.
+1.  Obtain a reference to the Credential Locker using the [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) object from the [**Windows.Security.Credentials**](https://msdn.microsoft.com/library/windows/apps/br227089) namespace.
+2.  Create a [**PasswordCredential**](https://msdn.microsoft.com/library/windows/apps/br227061) object that contains an identifier for your app, the username and the password, and pass that to the [**PasswordVault.Add**](https://msdn.microsoft.com/library/windows/apps/hh701231) method to add the credential to the locker.
 
 ```cs
 var vault = new Windows.Security.Credentials.PasswordVault();
@@ -33,20 +33,20 @@ vault.Add(new Windows.Security.Credentials.PasswordCredential(
     "My App", username, password));
 ```
 
-## Récupération des informations d’identification de l’utilisateur
+## Retrieving user credentials
 
 
-Pour récupérer les informations d’identification de l’utilisateur du stockage des informations d’identification de l’utilisateur suite à la création d’une référence à l’objet [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081), plusieurs options s’offrent à vous.
+You have several options for retrieving user credentials from the Credential Locker after you have a reference to the [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) object.
 
--   Vous pouvez récupérer toutes les informations d’identification fournies par l’utilisateur pour votre application dans le stockage des informations d’identification de l’utilisateur à l’aide de la méthode [**PasswordVault.RetrieveAll**](https://msdn.microsoft.com/library/windows/apps/br227088).
+-   You can retrieve all the credentials the user has supplied for your app in the locker with the [**PasswordVault.RetrieveAll**](https://msdn.microsoft.com/library/windows/apps/br227088) method.
 
--   Si vous connaissez le nom d’utilisateur associé aux informations d’identification stockées, vous pouvez récupérer toutes les informations d’identification associées à ce nom d’utilisateur à l’aide de la méthode [**PasswordVault.FindAllByUserName**](https://msdn.microsoft.com/library/windows/apps/br227084).
+-   If you know the username for the stored credentials, you can retrieve all the credentials for that username with the [**PasswordVault.FindAllByUserName**](https://msdn.microsoft.com/library/windows/apps/br227084) method.
 
--   Si vous connaissez le nom de ressource associé aux informations d’identification stockées, vous pouvez récupérer toutes les informations d’identification associées à ce nom de ressource à l’aide de la méthode [**PasswordVault.FindAllByResource**](https://msdn.microsoft.com/library/windows/apps/br227083).
+-   If you know the resource name for the stored credentials, you can retrieve all the credentials for that resource name with the [**PasswordVault.FindAllByResource**](https://msdn.microsoft.com/library/windows/apps/br227083) method.
 
--   Enfin, si vous connaissez à la fois le nom d’utilisateur et le nom de ressource associés aux informations d’identifications, vous pouvez uniquement récupérer ces informations d’identifications à l’aide de la méthode [**PasswordVault.Retrieve**](https://msdn.microsoft.com/library/windows/apps/br227087).
+-   Finally, if you know both the username and the resource name for a credential, you can retrieve just that credential with the [**PasswordVault.Retrieve**](https://msdn.microsoft.com/library/windows/apps/br227087) method.
 
-Prenons un exemple. Nous avons stocké le nom de ressource globalement dans une application et nous connectons l’utilisateur automatiquement si nous trouvons des informations d’identification correspondantes. Si nous trouvons plusieurs informations d’identification pour le même utilisateur, nous demandons à l’utilisateur de sélectionner les informations d’identification par défaut à utiliser lors de la connexion.
+Let’s look at an example where we have stored the resource name globally in an app and we log the user on automatically if we find a credential for them. If we find multiple credentials for the same user, we ask the user to select a default credential to use when logging on.
 
 ```cs
 private string resourceName = "My App";
@@ -104,14 +104,14 @@ private Windows.Security.Credentials.PasswordCredential GetCredentialFromLocker(
 }
 ```
 
-## Suppression des informations d’identification de l’utilisateur
+## Deleting user credentials
 
 
-La suppression des informations d’identification de l’utilisateur dans le stockage sécurisé des informations d’identification est aussi un processus rapide en deux étapes.
+Deleting user credentials in the Credential Locker is also a quick, two-step process.
 
-1.  Obtenez une référence au stockage des informations d’identification de l’utilisateur à l’aide de l’objet [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) de l’espace de noms [**Windows.Security.Credentials**](https://msdn.microsoft.com/library/windows/apps/br227089).
+1.  Obtain a reference to the Credential Locker using the [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) object from the [**Windows.Security.Credentials**](https://msdn.microsoft.com/library/windows/apps/br227089) namespace.
 
-2.  Passez les informations d’identification à supprimer à la méthode [**PasswordVault.Remove**](https://msdn.microsoft.com/library/windows/apps/hh701242).
+2.  Pass the credential you want to delete to the [**PasswordVault.Remove**](https://msdn.microsoft.com/library/windows/apps/hh701242) method.
 
 ```cs
 var vault = new Windows.Security.Credentials.PasswordVault();
@@ -119,19 +119,19 @@ vault.Remove(new Windows.Security.Credentials.PasswordCredential(
     "My App", username, password));
 ```
 
-## Meilleures pratiques
+## Best practices
 
 
-Utilisez uniquement le stockage sécurisé des informations d’identification pour les mots de passe et pas pour des données plus volumineuses.
+Only use the credential locker for passwords and not for larger data blobs.
 
-Enregistrez les mots de passe dans le stockage sécurisé des informations d’identification uniquement si les critères suivants sont satisfaits :
+Save passwords in the credential locker only if the following criteria are met:
 
--   L’utilisateur s’est connecté correctement.
--   L’utilisateur a choisi d’enregistrer les mots de passe.
+-   The user has successfully signed in.
+-   The user has opted to save passwords.
 
-Ne stockez jamais d’informations d’identification en texte brut en utilisant des données d’application ou des paramètres d’itinérance.
+Never store credentials in plain-text using app data or roaming settings.
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

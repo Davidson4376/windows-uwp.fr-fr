@@ -1,59 +1,59 @@
 ---
-author: TylerMSFT
+author: normesta
 ms.assetid: 3604524F-112A-474F-B0CA-0726DC8DB885
-title: "Détermination de la disponibilité des fichiers MicrosoftOneDrive"
-description: "Déterminez si un fichier MicrosoftOneDrive est disponible à l’aide de la propriété StorageFile.IsAvailable."
+title: Determining availability of Microsoft OneDrive files
+description: Determine if a Microsoft OneDrive file is available using the StorageFile.IsAvailable property.
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: a46507f007e0f5c3a9b28e4a6e72f6ba31114294
+ms.sourcegitcommit: 82edf9c3ee7f7303788b7a1272ecb261d3748c5a
+ms.openlocfilehash: 2ed00b525fd2b7af51da00ad0464e37f1cabd889
 
 ---
-# Détermination de la disponibilité des fichiers MicrosoftOneDrive
+# Determining availability of Microsoft OneDrive files
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** API importantes **
+** Important APIs **
 
--   [**Classe FileIO**](https://msdn.microsoft.com/library/windows/apps/Hh701440)
--   [**Classe StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171)
--   [**Propriété StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx)
+-   [**FileIO class**](https://msdn.microsoft.com/library/windows/apps/Hh701440)
+-   [**StorageFile class**](https://msdn.microsoft.com/library/windows/apps/BR227171)
+-   [**StorageFile.IsAvailable property**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx)
 
-Déterminez si un fichier MicrosoftOneDrive est disponible à l’aide de la propriété [**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx).
+Determine if a Microsoft OneDrive file is available using the [**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) property.
 
-## Prérequis
+## Prerequisites
 
--   **Comprendre la programmation asynchrone pour les applications pour la plateforme Windows universelle (UWP)**
+-   **Understand async programming for Universal Windows Platform (UWP) apps**
 
-    Pour apprendre à écrire des applications asynchrones en C# ou Visual Basic, voir [Appeler des API asynchrones en C# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/Mt187337). Pour apprendre à écrire des applications asynchrones enC++, voir [Programmation asynchrone enC++](https://msdn.microsoft.com/library/windows/apps/Mt187334).
+    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/Mt187337). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](https://msdn.microsoft.com/library/windows/apps/Mt187334).
 
--   **Déclarations des fonctionnalités d’application**
+-   **App capabilty declarations**
 
-    Voir [Autorisations d’accès aux fichiers](file-access-permissions.md).
+    See [File access permissions](file-access-permissions.md).
 
-## Utilisation de la propriété StorageFile.IsAvailable
+## Using the StorageFile.IsAvailable property
 
-Les utilisateurs peuvent marquer les fichiers OneDrive comme étant disponibles hors connexion (par défaut) ou en ligne uniquement. Cette fonctionnalité permet aux utilisateurs de déplacer des fichiers volumineux (tels que des images et des vidéos) vers leur emplacement OneDrive, de les marquer comme étant en ligne uniquement et d’économiser de l’espace disque (le seul élément conservé localement est un fichier de métadonnées).
+Users are able to mark OneDrive files as either available-offline (default) or online-only. This capability enables users to move large files (such as pictures and videos) to their OneDrive, mark them as online-only, and save disk space (the only thing kept locally is a metadata file).
 
-[**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) permet de déterminer si un fichier est actuellement disponible. Le tableau suivant indique la valeur de la propriété **StorageFile.IsAvailable** dans différents scénarios.
+[**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx), is used to determine if a file is currently available. The following table shows the value of the **StorageFile.IsAvailable** property in various scenarios.
 
-| Type de fichier                              | En ligne | Connexion réseau limitée        | Hors connexion |
+| Type of file                              | Online | Metered network        | Offline |
 |-------------------------------------------|--------|------------------------|---------|
-| Fichier local                                | True   | True                   | True    |
-| Fichier OneDrive marqué comme étant disponible hors connexion | True   | True                   | True    |
-| Fichier OneDrive marqué comme étant en ligne uniquement       | True   | Dépend des paramètres utilisateur | False   |
-| Fichier réseau                              | True   | Dépend des paramètres utilisateur | False   |
+| Local file                                | True   | True                   | True    |
+| OneDrive file marked as available-offline | True   | True                   | True    |
+| OneDrive file marked as online-only       | True   | Based on user settings | False   |
+| Network file                              | True   | Based on user settings | False   |
 
  
 
-Les étapes suivantes illustrent comment déterminer si un fichier est actuellement disponible.
+The following steps illustrate how to determine if a file is currently available.
 
-1.  Déclarez une fonctionnalité appropriée pour la bibliothèque à laquelle vous voulez accéder.
-2.  Incluez l’espace de noms [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346). Cet espace de noms comprend les types qui permettent de gérer les fichiers, les dossiers et les paramètres d’application. Il comprend également le type [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) nécessaire.
-3.  Obtenez un objet [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) pour le ou les fichiers souhaités. Si vous énumérez une bibliothèque, vous devez généralement effectuer cette étape en appelant la méthode [**StorageFolder.CreateFileQuery**](https://msdn.microsoft.com/library/windows/apps/BR227252), puis la méthode [**GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227276.aspx) de l’objet [**StorageFileQueryResult**](https://msdn.microsoft.com/library/windows/apps/BR208046) résultant. La méthode **GetFilesAsync** retourne une collection [IReadOnlyList](http://go.microsoft.com/fwlink/p/?LinkId=324970) d’objets **StorageFile**.
-4.  Une fois que vous avez accès à un objet [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) qui représente le ou les fichiers souhaités, la valeur de la propriété [**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) indique si le fichier est disponible ou non.
+1.  Declare a capability appropriate for the library you want to access.
+2.  Include the [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346) namespace. This namespace includes the types for managing files, folders, and application settings. It also includes the needed [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) type.
+3.  Acquire a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) object for the desired file(s). If you are enumerating a library, this step is usually accomplished by calling the [**StorageFolder.CreateFileQuery**](https://msdn.microsoft.com/library/windows/apps/BR227252) method and then calling the resulting [**StorageFileQueryResult**](https://msdn.microsoft.com/library/windows/apps/BR208046) object's [**GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227276.aspx) method. The **GetFilesAsync** method returns an [IReadOnlyList](http://go.microsoft.com/fwlink/p/?LinkId=324970) collection of **StorageFile** objects.
+4.  Once you have the access to a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) object representing the desired file(s), the value of the [**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) property reflects whether or not the file is available.
 
-La méthode générique suivante montre comment énumérer un dossier et retourner la collection d’objets [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) pour ce dossier. La méthode d’appel itère la collection retournée en référençant la propriété [**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) pour chaque fichier.
+The following generic method illustrates how to enumerate any folder and return the collection of [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) objects for that folder. The calling method then iterates over the returned collection referencing the [**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) property for each file.
 
 ```CSharp
 /// <summary>
@@ -78,9 +78,9 @@ private async void CheckAvailabilityOfFilesInPicturesLibrary()
         StorageFile file = files[i];
 
         StringBuilder fileInfo = new StringBuilder();
-        fileInfo.AppendFormat("{0} (on {1}) is {2}", 
-                    file.Name, 
-                    file.Provider.DisplayName, 
+        fileInfo.AppendFormat("{0} (on {1}) is {2}",
+                    file.Name,
+                    file.Provider.DisplayName,
                     file.IsAvailable ? "available" : "not available");
     }
 }
@@ -92,10 +92,6 @@ private async void CheckAvailabilityOfFilesInPicturesLibrary()
 
 
 
-
-
-
-
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

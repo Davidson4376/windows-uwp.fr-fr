@@ -1,17 +1,17 @@
 ---
 author: mcleanbyron
 ms.assetid: 28C6D865-2A5C-4B64-82E3-49A862A36850
-description: "Le contrôle Ad Mediator et les outils de développement associés sont disponibles dans le Kit de développement logiciel (SDK) Microsoft Universal Ad Client."
-title: "Installer le Kit de développement logiciel (SDK) Microsoft Universal Ad Client"
-redirect_url: https://msdn.microsoft.com/windows/uwp/monetize/monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk
+description: The ad mediator control and the related developer tools are available in the Microsoft Universal Ad Client SDK.
+title: Install the Universal Ad Client SDK
+redirect_url: https://msdn.microsoft.com/windows/uwp/monetize/microsoft-store-services-sdk
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 87eb36d7a77bfb6a283a3e668781ee9c99d6947f
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: e09e5f164f25116b5af23155e838db03a1fa4b8a
 
 ---
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

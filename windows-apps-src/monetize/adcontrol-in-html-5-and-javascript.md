@@ -1,76 +1,76 @@
 ---
 author: mcleanbyron
 ms.assetid: adb2fa45-e18f-4254-bd8b-a749a386e3b4
-description: "Découvrez comment utiliser la classe AdControl pour afficher des bannières publicitaires dans une application HTML/JavaScript pour Windows10 (UWP), Windows8.1 ou Windows Phone8.1."
-title: AdControl en HTML5 et JavaScript
+description: Learn how to use the AdControl class to display banner ads in a JavaScript/HTML app for Windows 10 (UWP), Windows 8.1, or Windows Phone 8.1.
+title: AdControl in HTML 5 and JavaScript
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 6e96b085132126a2c3e7b0b0b86124aba4cd651e
+ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
+ms.openlocfilehash: 501edf178ecccf8a6b62d4602837dbbdf820d744
 
 ---
 
-# AdControl en HTML5 et JavaScript
+# AdControl in HTML 5 and JavaScript
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-Cette procédure pas à pas montre comment utiliser la classe [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) pour afficher des bannières publicitaires dans une application HTML/JavaScript pour Windows10 (UWP), Windows8.1 ou Windows Phone8.1. Cette procédure pas à pas n’utilise ni **AdMediatorControl** ni la médiation publicitaire.
-
-Pour un exemple de projet complet illustrant l’ajout de bannières publicitaires à une application HTML/JavaScript, voir [Exemples de publicité sur GitHub](http://aka.ms/githubads).
-
-## Conditions préalables
 
 
-* Installez le [Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft](http://aka.ms/store-em-sdk) avec Visual Studio2015 ou Visual Studio2013.
+This walkthrough shows how to use the [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) class to display banner ads in a JavaScript/HTML app for Windows 10 (UWP), Windows 8.1, or Windows Phone 8.1. This walkthrough does not use the **AdMediatorControl** or ad mediation.
 
-> **Remarque** Si vous avez installé Windows10 Anniversary SDK Preview Build14295 ou ultérieure avec Visual Studio2015, vous devez également installer la bibliothèque WinJS. Cette bibliothèque était incluse dans les versions précédentes du Kit de développement logiciel Windows (Kit SDK Windows) pour Windows10, mais depuis Windows10 Anniversary SDK Preview Build14295, elle doit être installée séparément. Pour installer WinJS, voir [Obtenir WinJS](http://try.buildwinjs.com/download/GetWinJS/).
+For a complete sample project that demonstrates how to add banner ads to a JavaScript/HTML app, see the [advertising samples on GitHub](http://aka.ms/githubads).
 
-## Développement du code
+## Prerequisites
 
-1. Dans Visual Studio, ouvrez votre projet ou créez-en un.
 
-2. Si votre projet cible **Toute UC**, mettez-le à jour pour utiliser une sortie de génération propre à l’architecture (par exemple, **x86**). Si votre projet cible **Toute UC**, vous ne pourrez pas ajouter une référence à la bibliothèque de publicités Microsoft dans les étapes suivantes. Pour plus d’informations, voir [Erreurs de référence provoquées par le ciblage de Toute UC dans votre projet](known-issues-for-the-advertising-libraries.md#reference_errors).
+* For UWP apps: install the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) with Visual Studio 2015.
+* For Windows 8.1 or Windows Phone 8.1 apps: install the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk) with Visual Studio 2015 or Visual Studio 2013.
 
-3.  Dans la fenêtre **Explorateur de solutions**, cliquez avec le bouton droit sur **Références**, puis sélectionnez **Ajouter une référence...**
+> **Note** If you have installed Windows 10 Anniversary SDK Preview Build 14295 or later with Visual Studio 2015, you must also install the WinJS library. This library used to be included in previous versions of the Windows SDK for Windows 10, but starting with the Windows 10 Anniversary SDK Preview Build 14295 this library must be installed separately. To install WinJS, see [Get WinJS](http://try.buildwinjs.com/download/GetWinJS/).
 
-4.  Dans **Gestionnaire de références**, sélectionnez l’une des références suivantes en fonction de votre type de projet:
+## Code development
 
-    -   Pour un projet de plateforme Windows universelle (UWP): développez **Windows universel**, cliquez sur **Extensions**, puis cochez la case en regard de **Kit de développement logiciel (SDK) Microsoft Advertising pour JavaScript** (version10.0).
+1. In Visual Studio, open your project or create a new project.
 
-    -   Pour un projet Windows8.1: développez **Windows8.1**, cliquez sur **Extensions**, puis cochez la case en regard de **Kit de développement logiciel (SDK) Microsoft Advertising pour Windows8.1 natif (JS)**.
+2. If your project targets **Any CPU**, update your project to use an architecture-specific build output (for example, **x86**). If your project targets **Any CPU**, you will not be able to successfully add a reference to the Microsoft advertising library in the following steps. For more information, see [Reference errors caused by targeting Any CPU in your project](known-issues-for-the-advertising-libraries.md#reference_errors).
 
-    -   Pour un projet Windows Phone8.1: développez **Windows Phone8.1**, cliquez sur **Extensions**, puis cochez la case en regard de **Kit de développement logiciel (SDK) Microsoft Advertising pour Windows Phone8.1 natif (JS)**.
+3.  From the **Solution Explorer** window, right click **References**, and select **Add Reference…**
+
+4.  In **Reference Manager**, select one of the following references depending on your project type:
+
+    -   For a Universal Windows Platform (UWP) project: Expand **Universal Windows**, click **Extensions**, and then select the check box next to **Microsoft Advertising SDK for JavaScript** (Version 10.0).
+
+    -   For a Windows 8.1 project: Expand **Windows 8.1**, click **Extensions**, and then select the check box next to **Microsoft Advertising SDK for Windows 8.1 Native (JS)**.
+
+    -   For a Windows 8.1 project: Expand **Windows Phone 8.1**, click **Extensions**, and then select the check box next to **Microsoft Advertising SDK for Windows Phone 8.1 Native (JS)**.
 
     ![javascriptaddreference](images/13-f7f6d6a6-161e-4f17-995d-1236d0b5d9f2.png)
 
-    > **Remarque** Cette image correspond à la génération d’un projet UWP pour Windows10 à l’aide de Visual Studio2015. Si vous générez une application Windows8.1 ou Windows Phone8.1 à l’aide de Visual Studio2013, votre écran aura une apparence différente.
+    > **Note**  This image is for Visual Studio 2015 building a UWP project for Windows 10. If you are building a Windows 8.1 or Windows Phone 8.1 app or using Visual Studio 2013, your screen will look different.
 
-5.  Dans **Gestionnaire de références**, cliquez sur OK.
+5.  In **Reference Manager**, click OK.
 
-6.  Ouvrez le fichier default.html (ou un autre fichier html en fonction de votre projet).
+6.  Open the default.html file (or other html file as appropriate for your project).
 
-7.  Dans la section **&lt;head&gt;**, après les références JavaScript des fichiers default.css et default.js du projet, ajoutez la référence à ad.js.
+7.  In the **&lt;head&gt;** section, after the project’s JavaScript references of default.css and default.js, add the reference to ad.js.
 
-    Dans un projet UWP, ajoutez le code suivant.
+    In a UWP project, add the following code.
 
     ``` syntax
     <!-- Microsoft advertising required references -->
     <script src="//Microsoft.Advertising.JavaScript/ad.js"></script>
     ```
 
-    Dans un projet Windows8.1 ou Windows Phone8.1, ajoutez le code suivant.
+    In a Windows 8.1 or Windows Phone 8.1 project, add the following code.
 
     ``` syntax
     <!-- Microsoft advertising required references -->
     <script src="/MSAdvertisingJS/ads/ad.js"></script>
     ```
 
-    > **Remarque** Vous devez placer cette ligne dans la section **&lt;head&gt;** après l’inclusion de default.js, faute de quoi vous rencontrerez une erreur lors de la génération de votre projet.
+    > **Note**&nbsp;&nbsp;This line must be placed in the **&lt;head&gt;** section after the include of default.js; otherwise, you will encounter an error when you build your project.
 
-8.  Modifiez la section **&lt;body&gt;** dans le fichier default.html (ou un autre fichier html en fonction de votre projet) pour inclure l’élément div correspondant à la classe **AdControl**. Affectez les propriétés **applicationId** et **adUnitId** de la classe **AdControl** aux valeurs de test indiquées dans [Valeurs du mode test](test-mode-values.md), puis ajustez la hauteur et la largeur du contrôle afin qu’il fasse partie des [tailles de bannières publicitaires prises en charge](supported-ad-sizes-for-banner-ads.md).
+8.  Modify the **&lt;body&gt;** section in the default.html file (or other html file as appropriate for your project) to include the div for the **AdControl**. Assign the **applicationId** and **adUnitId** properties in the **AdControl** to the test values provided in [Test mode values](test-mode-values.md), and adjust the height and width of the control so it is one of the [supported ad sizes for banner ads](supported-ad-sizes-for-banner-ads.md).
 
-    > **Remarque**  
-    Vous allez remplacer les valeurs **applicationId** et **adUnitId** de test par les valeurs dynamiques avant de soumettre votre application.
+    > **Note**&nbsp;&nbsp;You will replace the test **applicationId** and **adUnitId** values with live values before submitting your app for submission.
 
     ``` syntax
     <div id="myAd" style="position: absolute; top: 50px; left: 0px; width: 300px; height: 250px; z-index: 1"
@@ -79,20 +79,20 @@ Pour un exemple de projet complet illustrant l’ajout de bannières publicitair
     </div>
     ```
 
-9.  Compilez et exécutez l’application pour la voir avec une publicité.
+9.  Compile and run the app to see it with an ad.
 
-## Publier l’application avec des publicités dynamiques à l’aide du Centre de développement Windows
+## Release your app with live ads using Windows Dev Center
 
 
-1.  Dans le tableau de bord du Centre de développement, accédez à la page **Monétisation**&gt;**Monétiser avec des publicités** de votre application, puis [créez une unité Microsoft Advertising autonome](../publish/monetize-with-ads.md). Pour le type d’unité publicitaire, spécifiez **Bannière**. Prenez note de l’ID d’unité publicitaire et de l’ID de l’application.
+1.  In the Dev Center dashboard, go to the **Monetization** &gt; **Monetize with ads** page for your app, and [create a standalone Microsoft Advertising unit](../publish/monetize-with-ads.md). For the ad unit type, specify **Banner**. Make note of both the ad unit ID and the application ID.
 
-2.  Dans votre code, remplacez les valeurs de test de l’unité publicitaire (**applicationId** et **adUnitId**) par les valeurs dynamiques que vous avez générées dans le Centre de développement.
+2.  In your code, replace the test ad unit values (**applicationId** and **adUnitId**) with the live values you generated in Dev Center.
 
-3.  [Soumettez votre application](../publish/app-submissions.md) au Windows Store à l’aide du tableau de bord du Centre de développement.
+3.  [Submit your app](../publish/app-submissions.md) to the Store using the Dev Center dashboard.
 
-4.  Passez en revue vos [rapports de performances des publicités](../publish/advertising-performance-report.md) dans le tableau de bord du Centre de développement.
+4.  Review your [advertising performance reports](../publish/advertising-performance-report.md) in the Dev Center dashboard.
 
-## Fichier default.html complet correspondant à un exemple de projet UWP
+## Complete default.html for a sample UWP project
 
 
 ``` syntax
@@ -124,15 +124,15 @@ Pour un exemple de projet complet illustrant l’ajout de bannières publicitair
 </html>
 ```
 
-## Rubriques connexes
+## Related topics
 
-* [Exemples de publicité sur GitHub](http://aka.ms/githubads)
+* [Advertising samples on GitHub](http://aka.ms/githubads)
  
 
  
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

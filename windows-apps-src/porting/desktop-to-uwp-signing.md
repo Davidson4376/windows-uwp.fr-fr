@@ -1,57 +1,85 @@
-# Signer votre application de bureau convertie
+# Sign your converted desktop app
 
-Cet article explique comment signer une application de bureau que vous avez convertie à la plateforme Windows universelle (UWP). Vous devez signer votre package .appx avec un certificat avant de pouvoir le déployer.
+This article explains how to sign a desktop app you converted to the Universal Windows Platform (UWP). You must sign your .appx package with a certificate before you can deploy it.
 
-## Signer votre package .appx
+## Automatically sign using the Desktop App Converter (DAC)
 
-Tout d’abord, créez un certificat à l’aide de MakeCert.exe. Si vous êtes invité à entrer un mot de passe, sélectionnez «Aucun». 
+Use the ```-Sign``` flag when running the DAC to automatically sign your .appx package. For more details, see [Desktop App Converter Preview](desktop-to-uwp-run-desktop-app-converter.md).
+
+## Manually sign using SignTool.exe
+
+First, create a certificate using MakeCert.exe. If you are asked to enter a password, select "None." 
 
 ```cmd
 C:\> MakeCert.exe -r -h 0 -n "CN=<publisher_name>" -eku 1.3.6.1.5.5.7.3.3 -pe -sv <my.pvk> <my.cer>
 ```
 
-Ensuite, copiez vos informations de clé publique et privée dans le certificat à l’aide de pvk2pfx.exe. 
+Next, copy your public and private key information into the certificate using pvk2pfx.exe. 
 
 ```cmd
 C:\> pvk2pfx.exe -pvk <my.pvk> -spc <my.cer> -pfx <my.pfx>
 ```
-Pour finir, utilisez SignTool.exe pour signer votre .appx avec le certificat.
+Lastly, use SignTool.exe to sign your .appx with the certificate.
 
 ```cmd
 C:\> signtool.exe sign -f <my.pfx> -fd SHA256 -v .\<outputAppX>.appx
 ``` 
 
-Pour plus d’informations, voir [Comment signer un package d’application à l’aide de SignTool](https://msdn.microsoft.com/en-us/library/windows/desktop/jj835835(v=vs.85).aspx). 
+For additional details, see [How to sign an app package using SignTool](https://msdn.microsoft.com/library/windows/desktop/jj835835.aspx). 
 
-Les trois outils ci-dessus sont inclus dans le Kit de développement logiciel (SDK) de MicrosoftWindows10. Pour les appeler directement, appelez le script ```C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\VsDevCmd.bat``` à l’aide d’une invite de commandes.
+All three tools above are included with the Microsoft Windows 10 SDK. To call them directly, call the ```C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\VsDevCmd.bat``` script from a command prompt.
 
-## Erreurs courantes
+## Common errors
 
-### Signatures Authenticode endommagées ou mal formées
+### Publisher and cert mismatch causes Signtool error "Error: SignerSign() Failed" (-2147024885/0x8007000b)
 
-Cette section illustre comment identifier des problèmes dans les fichiers au format exécutable portable (PE) de votre package AppX, qui peuvent contenir des signatures endommagées ou mal formées. Toute signature Authenticode non valide de vos fichiers PE, qui peuvent être au n’importe quel format binaire (par exemple, .exe, .dll, .chm, etc.), empêchera la signature correcte de votre package. Ce dernier ne peut donc pas être déployé à partir d’un package AppX. 
+The Publisher entry in the appx manifest must match the Subject of the certificate you are signing with.  You can use any of the following methods to view the subject of the cert. 
 
-L’emplacement de la signature Authenticode d’un fichier PE est spécifié par l’entrée de la table de certificats, qui se trouve dans les répertoires de données d’en-tête facultatifs, ainsi que par la table des certificats d’attribut associée. Lors de la vérification des signatures, les informations spécifiées dans ces structures sont utilisées pour localiser la signature d’un fichier PE. Si ces valeurs sont endommagées, il est possible que la signature d’un fichier paraisse non valide. 
+**Option 1: Powershell**
 
-Pour que la signature Authenticode soit correcte, les conditions suivantes doivent être réunies:
+Run the following PowerShell command. Either .cer or .pfx can be used as the certificate file, as they have the same publisher information.
 
-- Le début de l’entrée **WIN_CERTIFICATE** dans le fichier PE ne peut pas dépasser la fin de l’exécutable
-- L’entrée **WIN_CERTIFICATE** doit se trouver à la fin de l’image
-- La taille de l’entrée **WIN_CERTIFICATE** doit être positive
-- L’entrée **WIN_CERTIFICATE** doit commencer après la structure **IMAGE_NT_HEADERS32** pour les exécutables 32bits et après la structure IMAGE_NT_HEADERS64 pour les exécutables 64bits
+```ps
+(Get-PfxCertificate <cert_file>).Subject
+```
 
-Pour plus d’informations, reportez-vous à la [spécification relative à l’exécutable portable Authenticode](http://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/Authenticode_PE.docx) et à la [spécification relative au format de fichier PE](https://msdn.microsoft.com/en-us/windows/hardware/gg463119.aspx). 
+**Option 2: File Explorer**
 
-Notez que SignTool.exe peut créer une liste des fichiers binaires endommagés ou mal formés lorsque vous tentez de signer un package AppX. Pour ce faire, activez la journalisation détaillée en définissant la variable d’environnement APPXSIP_LOG sur 1 (par exemple, ```set APPXSIP_LOG=1```), puis réexécutez SignTool.exe.
+Double-click the certificate in File Explorer, select the *Details* tab, and then the *Subject* field in the list. You can then copy the contents. 
 
-Pour réparer ces fichiers binaires endommagés, assurez-vous qu’ils respectent les exigences ci-dessus.
+**Option 3: CertUtil**
 
-## Voir également
+Run **certutil** from the the command line on the PFX file and copy the *Subject* field from the output. 
 
-- [SignTool](https://msdn.microsoft.com/library/windows/desktop/aa387764(v=vs.85).aspx)
-- [SignTool.exe (Sign Tool)](https://msdn.microsoft.com/library/8s9b9yaz(v=vs.110).aspx)
-- [Comment signer un package d’application à l’aide de SignTool](https://msdn.microsoft.com/en-us/library/windows/desktop/jj835835(v=vs.85).aspx)
+```cmd
+certutil -dump <cert_file.pfx>
+```
 
-<!--HONumber=Jun16_HO5-->
+### Corrupted or malformed Authenticode signatures
+
+This section contains details on how to identify issues with Portable Executable (PE) files in your AppX package that may contain corrupted or malformed Authenticode signatures. Invalid Authenticode signatures on your PE files, which may be in any binary format (e.g. .exe, .dll, .chm, etc.), will prevent your package from being signed properly, and thus prevent it from being deployable from an AppX package. 
+
+The location of the Authenticode signature of a PE file is specified by the Certificate Table entry in the Optional Header Data Directories and the associated Attribute Certificate Table. During signature verification, the information specified in these structures is used to locate the signature on a PE file. If these values get corrupted then it is possible for a file to appear to be invalidly signed. 
+
+For the Authenticode signature to be correct, the following must be true of the Authenticode signature:
+
+- The start of the **WIN_CERTIFICATE** entry in the PE file cannot extend past the end of the executable
+- The **WIN_CERTIFCATE** entry should be located at the end of the image
+- The size of the **WIN_CERTIFICATE** entry must be positive
+- The **WIN_CERTIFICATE** entry must start after the **IMAGE_NT_HEADERS32** structure for 32-bit executables and IMAGE_NT_HEADERS64 structure for 64-bit executables
+
+For more details, please refer to the [Authenticode Portal Executable specification](http://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/Authenticode_PE.docx) and the [PE file format specification](https://msdn.microsoft.com/windows/hardware/gg463119.aspx). 
+
+Note that SignTool.exe can output a list of the corrupted or malformed binaries when attempting to sign an AppX package. To do this, enable verbose logging by setting the environment variable APPXSIP_LOG to 1 (e.g., ```set APPXSIP_LOG=1``` ) and re-run SignTool.exe.
+
+To fix these malformed binaries, ensure they conform to the requirements above.
+
+## See also
+
+- [SignTool](https://msdn.microsoft.com/library/windows/desktop/aa387764.aspx)
+- [SignTool.exe (Sign Tool)](https://msdn.microsoft.com/library/8s9b9yaz.aspx)
+- [How to sign an app package using SignTool](https://msdn.microsoft.com/library/windows/desktop/jj835835.aspx)
+
+<!--HONumber=Sep16_HO2-->
 
 

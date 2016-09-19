@@ -1,63 +1,63 @@
 ---
 author: DelfCo
-description: "Récupérez ou créez le contenu web le plus actualisé et le plus populaire à l’aide de flux syndiqués générés conformément aux normes RSS et Atom via les fonctionnalités de l’espace de noms Windows.Web.Syndication."
-title: Flux RSS/Atom
+description: Retrieve or create the most current and popular Web content using syndicated feeds generated according to the RSS and Atom standards using features in the Windows.Web.Syndication namespace.
+title: RSS/Atom feeds
 ms.assetid: B196E19B-4610-4EFA-8FDF-AF9B10D78843
 translationtype: Human Translation
 ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 625a18203bd2d60acc97a6243d4f3e1e0cf2b297
+ms.openlocfilehash: b20eb8a241d3cb7800904c26331ac39da93f4d44
 
 ---
 
-# Flux RSS/Atom
+# RSS/Atom feeds
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**API importantes**
+**Important APIs**
 
 -   [**Windows.Data.Xml.Dom**](https://msdn.microsoft.com/library/windows/apps/br240819)
 -   [**Windows.Web.AtomPub**](https://msdn.microsoft.com/library/windows/apps/br210609)
 -   [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632)
 
-Récupérez ou créez le contenu web le plus actualisé et le plus populaire à l’aide de flux syndiqués générés conformément aux normes RSS et Atom via les fonctionnalités de l’espace de noms [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632).
+Retrieve or create the most current and popular Web content using syndicated feeds generated according to the RSS and Atom standards using features in the [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) namespace.
 
-## Qu’est-ce qu’un flux ?
+## What is a feed?
 
-Un flux Web est un document contenant un nombre indéfini d’entrées individuelles constituées de texte, de liens et d’images. Les mises à jours d’un flux prennent la forme de nouvelles entrées utilisées pour promouvoir le tout dernier contenu des éditeurs sur le Web. Les consommateurs de contenu peuvent utiliser une application de lecture de flux pour agréger et contrôler les flux d’autant d’auteurs de contenu qu’ils le souhaitent, ce qui leur donne un accès rapide et pratique au contenu le plus récent.
+A web feed is a document that contains any number of individual entries made up of text, links, and images. Updates made to a feed are in the form of new entries used to promote the latest content across the Web. Content consumers can use a feed reader app to aggregate and monitor feeds from any number of individual content authors, gaining access to the latest content quickly and conveniently.
 
-## Quelles normes de format de flux sont prises en charge ?
+## Which feed format standards are supported?
 
-La plateforme Windows universelle (UWP) prend en charge la récupération des flux pour les normes de format RSS 0.91 à 2.0, et les normes Atom 0.3 à 1.0. Les classes de l’espace de noms [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) peuvent définir les flux et éléments de flux qui peuvent représenter aussi bien des éléments RSS que des éléments Atom.
+The Universal Windows Platform (UWP) supports feed retrieval for RSS format standards from 0.91 to RSS 2.0, and Atom standards from 0.3 to 1.0. Classes in the [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) namespace can define feeds and feed items capable of representing both RSS and Atom elements.
 
-En outre, les formats Atom 1.0 et RSS 2.0 permettent tous les deux que les documents de flux contiennent des éléments ou attributs non définis dans les spécifications officielles. Avec le temps, ces éléments et attributs personnalisés sont devenus un moyen de définir des informations spécifiques à un domaine consommées par d’autres formats de données de services Web, comme GData et OData. Pour permettre la prise en charge de cette fonctionnalité ajoutée, la classe [**SyndicationNode**](https://msdn.microsoft.com/library/windows/apps/br243585) représente des éléments XML génériques. L’utilisation de **SyndicationNode** avec des classes de l’espace de noms [**Windows.Data.Xml.Dom**](https://msdn.microsoft.com/library/windows/apps/br240819) permet aux applications d’accéder à leurs attributs, extensions et contenus éventuels.
+Additionally, Atom 1.0 and RSS 2.0 formats both allow their feed documents to contain elements or attributes not defined in the official specifications. Over time, these custom elements and attributes have become a way to define domain-specific information consumed by other web service data formats like GData and OData. To support this added feature, the [**SyndicationNode**](https://msdn.microsoft.com/library/windows/apps/br243585) class represents generic XML elements. Using **SyndicationNode** with classes in the [**Windows.Data.Xml.Dom**](https://msdn.microsoft.com/library/windows/apps/br240819) namespace, allows apps to access attributes, extensions, and any content that they may contain.
 
-Notez que pour la publication de contenu syndiqué, l’implémentation UWP du protocole Atom Publication ([**Windows.Web.AtomPub**](https://msdn.microsoft.com/library/windows/apps/br210609)) prend uniquement en charge les opérations de contenu de flux conformément aux normes Atom et Atom Publication.
+Note that, for publication of syndicated content, the UWP implementation of the Atom Publication Protocol ([**Windows.Web.AtomPub**](https://msdn.microsoft.com/library/windows/apps/br210609)) only supports feed content operations according to the Atom and Atom Publication standards.
 
-## Utilisation de contenu syndiqué avec l’isolement réseau
+## Using syndicated content with network isolation
 
-La fonctionnalité d’isolement réseau dans UWP permet à un développeur de contrôler et de limiter l’accès réseau par une application pour UWP. Toutes les applications n’ont pas besoin d’un accès au réseau. Néanmoins, pour celles qui en ont besoin, UWP propose différents niveaux d’accès qui peuvent être activés en sélectionnant les fonctionnalités appropriées.
+The network isolation feature in the UWP enables a developer to control and limit network access by a UWP app. Not all apps may require access to the network. However for those apps that do, UWP provides different levels of access to the network that can be enabled by selecting appropriate capabilities.
 
-L’isolement réseau permet à un développeur de définir pour chaque application la portée de l’accès réseau requis. Une application pour laquelle la portée appropriée ne serait pas définie ne peut pas accéder au type de réseau spécifié et au type spécifique de demande réseau (demandes sortantes à l’initiative du client ou à la fois demandes entrantes non sollicitées et demandes sortantes à l’initiative du client). La possibilité de définir et de mettre en œuvre l’isolement réseau garantit que si une application est compromise, elle ne pourra accéder qu’aux réseaux pour lesquels l’accès aura été expressément accordé à l’application. Cela réduit de façon significative la portée de l’impact sur d’autres applications et sur Windows.
+Network isolation allows a developer to define for each app the scope of required network access. An app without the appropriate scope defined is prevented from accessing the specified type of network, and specific type of network request (outbound client-initiated requests or both inbound unsolicited requests and outbound client-initiated requests). The ability to set and enforce network isolation ensures that if an app does get compromised, it can only access networks where the app has explicitly been granted access. This significantly reduces the scope of the impact on other applications and on Windows.
 
-L’isolement réseau affecte tous les éléments de classe des espaces de noms [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) et [**Windows.Web.AtomPub**](https://msdn.microsoft.com/library/windows/apps/br210609) qui essaient d’accéder au réseau. Windows applique activement l’isolement réseau. Un appel à un élément de classe de l’espace de noms **Windows.Web.Syndication** ou **Windows.Web.AtomPub** qui conduit à un accès réseau peut échouer en raison de l’isolement réseau si la fonctionnalité réseau appropriée n’a pas été activée.
+Network isolation affects any class elements in the [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) and [**Windows.Web.AtomPub**](https://msdn.microsoft.com/library/windows/apps/br210609) namespaces that try to access the network. Windows actively enforces network isolation. A call to a class element in the **Windows.Web.Syndication** or **Windows.Web.AtomPub** namespace that results in network access may fail because of network isolation if the appropriate network capability has not been enabled.
 
-Les fonctionnalités réseau d’une application sont configurées dans le manifeste de l’application à la création de cette dernière. Les fonctionnalités réseau sont généralement ajoutées à l’aide de Microsoft Visual Studio 2015 lors du développement de l’application. Elles peuvent également être définies manuellement dans le fichier manifeste de l’application à l’aide d’un éditeur de texte.
+The network capabilities for an app are configured in the app manifest when the app is built. Network capabilities are usually added using Microsoft Visual Studio 2015 when developing the app. Network capabilities may also be set manually in the app manifest file using a text editor.
 
-Pour plus d’informations sur l’isolement réseau et les fonctionnalités de réseau, voir la section « Fonctionnalités » dans la rubrique [Notions de base en matière de réseau](networking-basics.md).
+For more detailed information on network isolation and networking capabilities, see the "Capabilities" section in the [Networking basics](networking-basics.md) topic.
 
-## Comment accéder à un flux web
+## How to access a web feed
 
-Cette section montre comment récupérer et afficher un flux web à l’aide des classes de l’espace de noms [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) dans votre application pour UWP écrite en C# ou Javascript.
+This section shows how to retrieve and display a web feed using classes in the [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) namespace in your UWP app written in C# or Javascript.
 
-**Prérequis**
+**Prerequisites**
 
-Pour vous assurer que votre application UWP est prête à être utilisée en réseau, vous devez définir les fonctionnalités réseau nécessaires dans le fichier **Package.appxmanifest** du projet. Si votre application doit se connecter en qualité de client à des services distants sur Internet, la fonctionnalité **internetClient** est nécessaire. Pour plus d’informations, voir la section « Fonctionnalités » dans la rubrique [Notions de base en matière de réseau](networking-basics.md).
+To ensure your UWP app is network ready, you must set any network capabilities that are needed in the project **Package.appxmanifest** file. If your app needs to connect as a client to remote services on the Internet, then the **internetClient** capability is needed. For more information, see the "Capabilities" section in the [Networking basics](networking-basics.md) topic.
 
-**Récupération d’un contenu syndiqué dans un flux web**
+**Retrieving syndicated content from a web feed**
 
-Nous allons maintenant examiner du code qui illustre comment extraire un flux puis afficher chaque élément qu’il contient. Avant de pouvoir configurer et envoyer la requête, nous allons définir quelques variables que nous utiliserons durant l’opération et initialiser une instance de [**SyndicationClient**](https://msdn.microsoft.com/library/windows/apps/br243456), qui définit les méthodes et propriétés que nous utiliserons pour extraire et afficher le flux.
+Now we will review some code that demonstrates how to retrieve a feed, and then display each individual item that the feed contains. Before we can configure and send the request, we'll define a few variables we'll be using during the operation, and initialize an instance of [**SyndicationClient**](https://msdn.microsoft.com/library/windows/apps/br243456), which defines the methods and properties we'll use to retrieve and display the feed.
 
-Le constructeur [**Uri**](https://msdn.microsoft.com/library/windows/apps/br226017) lève une exception si l’élément *uriString* passé au constructeur n’est pas un URI valide. Par conséquent, nous validons *uriString* à l’aide d’un bloc try/catch.
+The [**Uri**](https://msdn.microsoft.com/library/windows/apps/br226017) constructor throws an exception if the *uriString* passed to the constructor is not a valid URI. So we validate the *uriString* using a try/catch block.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -95,13 +95,13 @@ try {
 }
 ```
 
-Ensuite, nous configurerons la requête en définissant les informations d’identification de serveur (propriété [**ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br243461)), les informations d’identification de proxy (propriété [**ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br243459)) et les en-têtes HTTP (méthode [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br243462)) nécessaires. Une fois les paramètres de requête de base configurés, un objet [**Uri**](https://msdn.microsoft.com/library/windows/apps/br226017) valide est créé à l’aide d’une chaîne d’URI de flux fournie par l’application. L’objet **Uri** est ensuite transmis à la fonction [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/br243460) pour demander le flux.
+Next we configure the request by setting any Server credentials (the [**ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br243461) property), proxy credentials (the [**ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br243459) property), and HTTP headers (the [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br243462) method) needed. With the basic request parameters configured, a valid [**Uri**](https://msdn.microsoft.com/library/windows/apps/br226017) object, created using a feed URI string provided by the app. The **Uri** object is then passed to the [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/br243460) function to request the feed.
 
-En supposant que le contenu de flux souhaité a été renvoyé, l’exemple de code itère chaque élément de flux et appelle **displayCurrentItem** (que nous allons définir ensuite), pour afficher les éléments et leur contenu sous forme de liste dans l’interface utilisateur.
+Assuming the desired feed content was returned, the example code iterates through each feed item, calling **displayCurrentItem** (which we define next), to display items and their contents as a list through the UI.
 
-Vous devez écrire du code capable de gérer les exceptions au moment où vous appelez la plupart des méthodes réseau asynchrones. Votre gestionnaire d’exceptions peut récupérer des informations plus détaillées sur la cause de l’exception dans le but d’analyser l’échec et de prendre des décisions appropriées.
+You must write code to handle exceptions when you call most asynchronous network methods. Your exception handler can retrieve more detailed information on the cause of the exception to better understand the failure and make appropriate decisions.
 
-La méthode [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/br243460) lève une exception si aucune connexion n’a pu être établie avec le serveur HTTP ou si l’[**Uri**](https://msdn.microsoft.com/library/windows/apps/br226017) ne pointe pas vers un flux AtomPub ou RSS valide. L’exemple de code JavaScript utilise une fonction **onError** pour intercepter les exceptions, et affiche des informations plus détaillées sur l’exception si une erreur se produit.
+The [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/br243460) method throws an exception if a connection could not be established with the HTTP server or the [**Uri**](https://msdn.microsoft.com/library/windows/apps/br226017) object does not point to a valid AtomPub or RSS feed. The Javascript sample code uses an **onError** function to catch any exceptions and print out more detailed information on the exception if an error occurs.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -170,7 +170,7 @@ function retreiveFeed(uri) {
 }
 ```
 
-Durant l’étape précédente, [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/br243460) a renvoyé le contenu de flux demandé et l’exemple de code a commencé à itérer les éléments de flux disponibles. Chacun de ces éléments est représenté à l’aide d’un objet [**SyndicationItem**](https://msdn.microsoft.com/library/windows/apps/br243533) qui inclut tout le contenu et les propriétés d’éléments offerts par la norme de syndication pertinente (RSS ou Atom). Dans l’exemple suivant, la fonction **displayCurrentItem** itère chaque élément et affiche son contenu dans différents éléments d’interface utilisateur.
+In the previous step, [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/br243460) returned the requested feed content and the example code got to work iterating through available feed items. Each of these items is represented using a [**SyndicationItem**](https://msdn.microsoft.com/library/windows/apps/br243533) object that contains all of the item properties and content afforded by the relevant syndication standard (RSS or Atom). In the following example we observe the **displayCurrentItem** function working through each item and displaying its content through various named UI elements.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -218,7 +218,7 @@ function displayCurrentItem() {
                 //displayCurrentItem is continued below.
 ```
 
-Comme mentionné plus haut, le type de contenu représenté par un objet [**SyndicationItem**](https://msdn.microsoft.com/library/windows/apps/br243533) sera différent en fonction de la norme de flux (RSS ou Atom) utilisée pour publier le flux. Par exemple, un flux Atom est capable de fournir une liste de [**Contributors**](https://msdn.microsoft.com/library/windows/apps/br243540), ce qui n’est pas le cas d’un flux RSS. Toutefois, les éléments d’extension inclus dans un élément de flux qui ne sont pas pris en charge par l’une ou l’autre norme (par exemple les éléments d’extension Dublin Core) sont accessibles à l’aide de la propriété [**SyndicationItem.ElementExtensions**](https://msdn.microsoft.com/library/windows/apps/br243543), puis affichés comme dans l’exemple de code suivant.
+As suggested earlier, the type of content represented by a [**SyndicationItem**](https://msdn.microsoft.com/library/windows/apps/br243533) object will differ depending on the feed standard (RSS or Atom) employed to publish the feed. For example, an Atom feed is capable of providing a list of [**Contributors**](https://msdn.microsoft.com/library/windows/apps/br243540), but an RSS feed is not. However, extension elements included in a feed item that are not supported by either standard (e.g., Dublin Core extension elements) can be accessed using the [**SyndicationItem.ElementExtensions**](https://msdn.microsoft.com/library/windows/apps/br243543) property and then displayed as demonstrated in the following example code.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -261,6 +261,6 @@ Comme mentionné plus haut, le type de contenu représenté par un objet [**Synd
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

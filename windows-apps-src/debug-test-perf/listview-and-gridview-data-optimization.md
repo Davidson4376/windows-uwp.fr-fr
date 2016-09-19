@@ -4,8 +4,8 @@ ms.assetid: 3A477380-EAC5-44E7-8E0F-18346CC0C92F
 title: "Virtualisation des données ListView et GridView"
 description: "Améliorez les performances et le délai de démarrage des éléments ListView et GridView via la virtualisation des données."
 translationtype: Human Translation
-ms.sourcegitcommit: d76ef6a87d6afad577f5f7bf5e8f18a8b0776094
-ms.openlocfilehash: 26faa92e98547844af2be1720c458d793ac2f3ac
+ms.sourcegitcommit: e44dd5c2c3c9fb252062af3a6a9f409e1777a878
+ms.openlocfilehash: 0a16dc27db6fb1e04e1ab0c575077ca10b97f12d
 
 ---
 # Virtualisation des données ListView et GridView
@@ -63,7 +63,7 @@ Voici la stratégie de base pour votre source de données dans le cadre de la vi
 -   Lorsqu’un élément est demandé
     -   S’il est disponible dans la mémoire, renvoyez-le.
     -   S’il n’est pas disponible, renvoyez une valeur null ou un élément d’espace réservé.
-    -   Utilisez la demande relative à un élément (ou les informations de plage de [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070)) pour connaître les éléments requis et pour récupérer les données des éléments de façon asynchrone à partir de votre back end. Une fois les données récupérées, déclenchez une notification de modification via [**INotifyCollectionChanged**] ((https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) ou [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) afin que le contrôle d’éléments soit informé du nouvel élément.
+    -   Utilisez la demande relative à un élément (ou les informations de plage de [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070)) pour connaître les éléments requis et pour récupérer les données des éléments de façon asynchrone à partir de votre back end. Une fois les données récupérées, déclenchez une notification de modification via [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) or [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) afin que le contrôle d’éléments soit informé du nouvel élément.
 -   (Facultatif) À mesure que la fenêtre d’affichage du contrôle d’éléments change, identifiez les éléments requis à partir de la source de données via votre implémentation de [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070).
 
 En outre, la stratégie permettant de déterminer à quel moment charger les éléments de données, le nombre d’éléments à charger et les éléments à conserver en mémoire dépend de votre application. Voici quelques considérations générales à retenir :
@@ -83,6 +83,6 @@ En outre, la stratégie permettant de déterminer à quel moment charger les él
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

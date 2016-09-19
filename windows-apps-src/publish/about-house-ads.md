@@ -1,42 +1,42 @@
 ---
 author: jnHs
-Description: "Vous pouvez créer une publicité pour promouvoir l’une de vos applications dans vos autres applications, le tout gratuitement. C’est ce que nous appelons les «publicités maison»."
-title: "À propos des publicités maison"
+Description: You can create an ad to promote one of your apps in your other apps, for free. We call these house ads.
+title: About house ads
 ms.assetid: C6507C8B-351B-49E7-A194-35AB05BC3358
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c9b73bb1963839640243fce4caaa7f3701b1eb45
+ms.openlocfilehash: 6d0c9aa276a624966b6294db2be8e08a716d42c2
 
 ---
 
-# À propos des publicités maison
+# About house ads
 
 
-Vous pouvez créer une publicité pour promouvoir l’une de vos applications dans vos autres applications, le tout gratuitement. C’est ce que nous appelons les « *publicités maison* ».
+You can create an ad to promote one of your apps in your other apps, for free. We call these *house ads*.
 
-Pour en définir une, sélectionnez **Campagne gratuite** comme **Type de campagne** lorsque vous [créez une campagne de publicité](create-an-ad-campaign-for-your-app.md). Cette publicité apparaît alors automatiquement dans l’une de vos applications si celle-ci répond aux critères suivants:
+To set up a house ad, select **Free house campaign** as the **Campaign type** when you [create an ad campaign](create-an-ad-campaign-for-your-app.md). The ad will automatically be eligible to appear in any app of yours that meets the following criteria:
 
--   L’application doit s’adresser au même type d’appareil que l’application publiée.
--   L’application doit avoir au moins une unité de publicité configurée.
+-   The app must be for the same device type as the advertised app.
+-   The app must have at least one ad unit set up.
 
-Quand une publicité maison pour l’application A apparaît dans l’application B, vous n’êtes pas facturé pour l’exposition, et vous n’êtes pas non plus rémunéré pour l’affichage de cette publicité dans l’unité de publicité de l’application B. Les publicités payées sont prioritaires sur les publicités maison dans vos unités de publicité.
+When a house ad for App A appears in App B, you will not be charged for the impression, nor will you receive revenue for displaying the ad in your App B ad unit. Paid ads have priority over house ads to appear in your ad units.
 
-> **Remarque** Un utilisateur final voit toutes les publicités maison, un maximum de cinq fois par jour.
+> **Note**  An individual end user will see any given house ad a maximum of five times per day.
 
  
 
-## Rubriques connexes
+## Related topics
 
 
-* [Création d’une campagne de publicité pour votre application](create-an-ad-campaign-for-your-app.md)
-* [Gestion de votre campagne de publicité](managing-your-ad-campaign.md)
-* [Rapport de publicité sur l’installation d’applications](app-install-ads-reports.md)
-* [Questions courantes](common-questions.md)
+* [Create an ad campaign for your app](create-an-ad-campaign-for-your-app.md)
+* [Managing your ad campaign](managing-your-ad-campaign.md)
+* [App install ads report](app-install-ads-reports.md)
+* [Common questions](common-questions.md)
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,560 +1,560 @@
 ---
 author: jnHs
-Description: "Le Windows Store touche des clients dans plus de 200 pays et régions du monde."
-title: "Définition des prix et sélection du marché"
+Description: The Windows Store reaches customers in over 200 countries and regions around the world.
+title: Define pricing and market selection
 ms.assetid: FBE7507B-DBF3-4FCB-8377-DB01660E75F8
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9a1d8b8fb57989091fe7b82ad34066240f62cb8b
+ms.sourcegitcommit: 3afdf00864e023d913b635beef0c506735881b23
+ms.openlocfilehash: 3fb8594748d303216a4437983604b5d78c993934
 
 ---
 
-# Définition des prix et sélection du marché
+# Define pricing and market selection
 
 
-Le Windows Store touche des clients dans plus de 200 pays et régions du monde. Vous pouvez choisir les marchés dans lesquels proposer votre application, et déterminer le prix à facturer aux clients, avec la possibilité de personnaliser les prix en fonction des marchés.
+The Windows Store reaches customers in over 200 countries and regions around the world. You can choose the markets in which you'd like to offer your app, and you can determine the price to charge customers, with the option to customize prices on a per-market basis.
 
-**Remarque** Tenez compte de nos [recommandations pour globaliser votre application](https://msdn.microsoft.com/library/windows/apps/hh969150).
-
- 
-
-## Prix de base
-
-
-Une fois que vous avez sélectionné le **prix de base** de votre application, ce prix est utilisé dans tous les marchés où votre application est vendue, sauf si vous spécifiez un prix personnalisé pour un marché spécifique.
-
-Vous pouvez définir le champ **Prix de base** sur **Gratuit** ou choisir un niveau de prix disponible. Le niveau de prix fixe le prix de vente dans tous les pays où vous souhaitez distribuer votre application. Les niveaux de prix commencent à 0,99 USD, avec des incréments supplémentaires (1,29 USD, 1,49 USD, 1,99 USD, etc.). Les incréments augmentent avec le niveau du prix.
-
-> **Remarque** Ces niveaux de prix s’appliquent également aux [produits in-app](iap-submissions.md).
-
-Chaque niveau de prix a une valeur correspondante dans chacune des devises du Windows Store, qui en compte plus de 60. Ces valeurs vous aident à vendre vos applications à un prix comparable dans le monde entier. Cependant, en raison des fluctuations des taux de change, le montant exact des ventes peut varier légèrement d’une devise à l’autre.
-
-N’oubliez pas que le niveau de prix que vous sélectionnez peut inclure la taxe de vente ou la taxe sur la valeur ajoutée que vos clients doivent payer. Pour plus d’informations sur les implications fiscales de votre application dans les marchés sélectionnés, voir l’article [Informations fiscales pour les applications payantes](tax-details-for-paid-apps.md). Consultez également l’article [Considérations de prix pour des marchés spécifiques](#price-considerations-for-specific-markets) ci-dessous.
-
-## Marchés et prix personnalisés
-
-
-Par défaut, votre application sera indiquée à son prix de base dans tous les marchés possibles, y compris dans les éventuels marchés que nous ajouterons par la suite.
-
-Pour modifier ce paramétrage, développez la section **Marchés et prix personnalisés** sur la page **Tarification et disponibilité** de la soumission de votre application. Vous pouvez désélectionner des marchés spécifiques pour les exclure, ou cliquer sur **Désélectionner tout**, puis ajouter les marchés de votre choix.
-
-> **Important** Il est de votre responsabilité de vous conformer à toute obligation juridique locale, même si ces obligations ne sont pas répertoriées ici ni dans le tableau de bord du Centre de développement Windows.
-
-Si vous souhaitez définir des prix personnalisés pour votre application dans des marchés spécifiques, vous pouvez également effectuer cette opération à partir de cette section ; dans le cas contraire, votre application sera indiquée par défaut à son prix de base (dans la devise locale de ce marché).
-
-> **Remarque** En outre, vous pouvez définir des prix personnalisés pour des marchés spécifiques dans les [soumissions de produits in-app](iap-submissions.md).
-
-Tenez compte du fait que même si vous sélectionnez tous les marchés, la législation et les restrictions locales ou d’autres facteurs peuvent empêcher certaines applications d’être référencées dans des pays ou régions spécifiques. Par ailleurs, certains marchés peuvent avoir établi des conditions spécifiques relatives à la classification par âge. Si votre application ne satisfait pas ces conditions, nous ne pourrons pas proposer votre application dans ce marché. Pour plus d’informations, consultez la section [Classification par âge](age-ratings.md).
-
-> **Remarque** Pour les applications destinées à Windows 8 ou Windows 8.1, certains marchés individuels sont traités comme un seul marché « Rest of World ». Pour plus d’informations, voir [Marchés « Rest of World » pour Windows 8.x](#rest-of-world-markets-for-windows-8-x). N’oubliez pas non plus que sur Windows 8 ou Windows 8.1, les clients verront uniquement l’application répertoriée avec son prix de base, même si vous avez changé le prix pour leur marché.
+**Note**  Be sure to consider our [guidelines to help you globalize your app](https://msdn.microsoft.com/library/windows/apps/hh969150).
 
  
 
-## Marchés grand public du Windows Store
+## Base price
 
 
-Vous pouvez choisir de répertorier votre application (ou produit intégré à l’application) dans un ou plusieurs des marchés suivants.
+When you select your app's **Base price**, that price will be used in every market where your app is sold, unless you specify a custom price for a particular market.
+
+You can set the **Base price** to **Free**, or you can choose an available price tier. which sets the sales price in all the countries where you choose to distribute your app. Price tiers start at .99 USD, with additional increments (1.29 USD, 1.49 USD, 1.99 USD, and so on). The increments increase as the price gets higher.
+
+> **Note**  These price tiers also apply to [add-ons](add-on-submissions.md).
+
+Each price tier has a corresponding value in each of the more than 60 currencies offered by the Store. We use these values to help you sell your apps at a comparable price point worldwide. However, due to changes in foreign exchange rates, the exact sales amount may vary slightly from one currency to another.
+
+Keep in mind that the price tier you select may include sales or value-added tax that your customers must pay. To learn more about your app’s tax implications in selected markets, see [Tax details for paid apps](tax-details-for-paid-apps.md). See also the [price considerations for specific markets](#price-considerations-for-specific-markets) below.
+
+## Markets and custom prices
+
+
+By default, your app will be listed in all possible markets, including any future markets that we may add later, at its base price.
+
+To change these settings, expand the **Markets and custom prices** section on the **Pricing and availability** page of your app's submission. You can unselect individual markets to exclude them, or click **Unselect all**, then add individual markets of your choice.
+
+> **Important**   It is your responsibility to meet any local legal requirements, even if those requirements aren't listed here or in the Windows Dev Center dashboard.
+
+If you'd like to set custom prices for your app in specific markets, you can do that here as well; otherwise, by default, your app will be offered at its base price (in the local currency of that market).
+
+> **Note**  You can also set custom prices for specific markets for [add-on submissions](add-on-submissions.md).
+
+Keep in mind that even if you select all markets, local laws and restrictions or other factors may prevent certain apps from being listed in some countries and regions. Also, some markets may have specific requirements related to age ratings. If your app doesn’t meet these requirements, we won't be able to offer your app in that market. See [Age ratings](age-ratings.md) for more info.
+
+> **Note**  For apps targeting Windows 8 or Windows 8.1, some individual markets are treated as one single "Rest of World" market. For more info, see ["Rest of World" markets for Windows 8.x](#rest-of-world-markets-for-windows-8-x). Also keep in mind that customers on Windows 8 or Windows 8.1 will only see the app listed at its base price, even if you change the price in their market.
+
+ 
+
+## Windows Store consumer markets
+
+
+You can choose to list your app (or add-on) in one or more of the following markets.
 
 -   Afghanistan
--   Åland (îles d’)
--   Albanie
--   Samoa américaines
--   Andorre
+-   Åland Islands
+-   Albania
+-   American Samoa
+-   Andorra
 -   Angola
 -   Anguilla
--   Antarctique
--   Antigua et Barbuda
--   Arménie
+-   Antarctica
+-   Antigua and Barbuda
+-   Armenia
 -   Aruba
--   Azerbaïdjan
--   Algérie
--   Argentine
--   Australie
--   Autriche
--   Bahamas, Les
--   Bahreïn
+-   Azerbaijan
+-   Algeria
+-   Argentina
+-   Australia
+-   Austria
+-   Bahamas, The
+-   Bahrain
 -   Bangladesh
--   Barbade (La)
--   Bélarus
--   Belgique
+-   Barbados
+-   Belarus
+-   Belgium
 -   Belize
--   Bénin
--   Bermudes
--   Bhoutan
--   Bolivie
--   Bonaire, Saint-Eustache et Saba
--   Bosnie-Herzégovine
+-   Benin
+-   Bermuda
+-   Bhutan
+-   Bolivia
+-   Bonaire, Saint Eustatius and Saba
+-   Bosnia and Herzegovina
 -   Botswana
--   Bouvet (Île)
--   Brésil
--   Territoires britanniques de l’océan Indien
--   Îles Vierges britanniques
+-   Bouvet Island
+-   Brazil
+-   British Indian Ocean Territory
+-   British Virgin Islands
 -   Brunei
--   Burkina-Faso
+-   Burkina Faso
 -   Burundi
--   Bulgarie
+-   Bulgaria
 -   Cabo Verde
--   Cambodge
--   Cameroun
+-   Cambodia
+-   Cameroon
 -   Canada
--   Caïmans (îles)
--   République centrafricaine
--   Tchad
--   Chili
--   Chine
--   Christmas (île)
--   Cocos-Keeling (îles)
--   Colombie
--   Comores (Les)
+-   Cayman Islands
+-   Central African Republic
+-   Chad
+-   Chile
+-   China
+-   Christmas Island
+-   Cocos (Keeling) Islands
+-   Colombia
+-   Comoros
 -   Congo
--   Congo (RDC)
--   Cook (îles)
+-   Congo (DRC)
+-   Cook Islands
 -   Costa Rica
 -   Côte d’Ivoire
--   Croatie
+-   Croatia
 -   Curaçao
--   Chypre
--   République tchèque
--   Danemark
+-   Cyprus
+-   Czech Republic
+-   Denmark
 -   Djibouti
--   Dominique
--   République dominicaine
--   Équateur (République de)
--   Égypte
--   Salvador
--   Guinée équatoriale
--   Érythrée
--   Estonie
--   Éthiopie
--   Malouines (îles)
--   Féroé (îles)
--   Fidji
--   Finlande
+-   Dominica
+-   Dominican Republic
+-   Ecuador
+-   Egypt
+-   El Salvador
+-   Equatorial Guinea
+-   Eritrea
+-   Estonia
+-   Ethiopia
+-   Falkland Islands
+-   Faroe Islands
+-   Fiji
+-   Finland
 -   France
--   Guyane française
--   Polynésie française
--   Terres australes et antarctiques françaises
+-   French Guiana
+-   French Polynesia
+-   French Southern and Antarctic Lands
 -   Gabon
--   Gambie
--   Géorgie
--   Allemagne
+-   Gambia, The
+-   Georgia
+-   Germany
 -   Ghana
 -   Gibraltar
--   Grèce
--   Groenland
--   Grenade
+-   Greece
+-   Greenland
+-   Grenada
 -   Guadeloupe
 -   Guam
 -   Guatemala
--   Guernesey
--   Guinée
--   Guinée-Bissau
+-   Guernsey
+-   Guinea
+-   Guinea-Bissau
 -   Guyana
--   Haïti
--   Heard et McDonald (Îles)
--   Saint-Siège (Cité du Vatican)
+-   Haiti
+-   Heard Island and McDonald Islands
+-   Holy See (Vatican City)
 -   Honduras
--   Hong Kong R.A.S.
--   Hongrie
--   Islande
--   Inde
--   Indonésie
--   Irak
--   Irlande
--   Île de Man
--   Israël
--   Italie
--   Japon
--   Jamaïque
+-   Hong Kong SAR
+-   Hungary
+-   Iceland
+-   India
+-   Indonesia
+-   Iraq
+-   Ireland
+-   Isle of Man
+-   Israel
+-   Italy
+-   Japan
+-   Jamaica
 -   Jersey
--   Jordanie
+-   Jordan
 -   Kazakhstan
 -   Kenya
 -   Kiribati
--   Corée
--   Kirghizistan
--   Koweït
+-   Korea
+-   Kyrgyzstan
+-   Kuwait
 -   Laos
--   Lettonie
--   Liban
+-   Latvia
+-   Lebanon
 -   Lesotho
 -   Liberia
--   Libye
+-   Libya
 -   Liechtenstein
--   Lituanie
+-   Lithuania
 -   Luxembourg
--   Macao R.A.S.
--   Macédoine (Ex-République yougoslave de Macédoine)
+-   Macao SAR
+-   Macedonia (FYROM)
 -   Madagascar
 -   Malawi
--   Malaisie
+-   Malaysia
 -   Maldives
 -   Mali
--   Malte (République de)
--   Marshall (îles)
+-   Malta
+-   Marshall Islands
 -   Martinique
--   Mauritanie
--   Maurice (île)
+-   Mauritania
+-   Mauritius
 -   Mayotte
--   Mexique
--   Micronésie
--   République de Moldavie
+-   Mexico
+-   Micronesia
+-   Moldova
 -   Monaco
--   Mongolie
--   Monténégro
+-   Mongolia
+-   Montenegro
 -   Montserrat
--   Maroc
+-   Morocco
 -   Mozambique
 -   Myanmar
--   Namibie
+-   Namibia
 -   Nauru
--   Népal
--   Pays-Bas
--   Nouvelle-Calédonie
--   Nouvelle-Zélande
+-   Nepal
+-   Netherlands
+-   New Caledonia
+-   New Zealand
 -   Nicaragua
 -   Niger
 -   Nigeria
 -   Niue
--   Norfolk (île)
--   Mariannes du Nord (îles)
--   Norvège
+-   Norfolk Island
+-   Northern Mariana Islands
+-   Norway
 -   Oman
 -   Pakistan
 -   Palau
--   Autorité palestinienne
+-   Palestinian Authority
 -   Panama
--   Papouasie-Nouvelle-Guinée
+-   Papua New Guinea
 -   Paraguay
--   Pérou
+-   Peru
 -   Philippines
--   Pitcairn (îles)
--   Pologne
+-   Pitcairn Islands
+-   Poland
 -   Portugal
 -   Puerto Rico
 -   Qatar
--   La Réunion
--   Roumanie
--   Russie
+-   Réunion
+-   Romania
+-   Russia
 -   Rwanda
--   Saint-Barthélemy
--   Sainte-Hélène, Ascension et Tristan da Cunha
--   Saint Kitts et Nevis
--   Sainte-Lucie
--   Saint-Martin (partie française)
--   Saint-Pierre-et-Miquelon
--   Saint-Vincent-et-les-Grenadines
+-   Saint Barthélemy
+-   Saint Helena, Ascension and Tristan da Cunha
+-   Saint Kitts and Nevis
+-   Saint Lucia
+-   Saint Martin (French Part)
+-   Saint Pierre and Miquelon
+-   Saint Vincent and the Grenadines
 -   Samoa
--   Saint-Marin
--   São Tomé et Príncipe
--   Arabie saoudite
--   Sénégal
--   Serbie
+-   San Marino
+-   São Tomé and Príncipe
+-   Saudi Arabia
+-   Senegal
+-   Serbia
 -   Seychelles
 -   Sierra Leone
--   Singapour
--   Sint-Maarten (partie néerlandaise)
--   Slovaquie
--   Slovénie
--   Salomon (îles)
--   Somalie
--   Géorgie du Sud-et-les îles Sandwich du Sud
+-   Singapore
+-   Sint Maarten (Dutch Part)
+-   Slovakia
+-   Slovenia
+-   Solomon Islands
+-   Somalia
+-   South Georgia and the South Sandwich Islands
 -   Sri Lanka
--   Surinam
--   Svalbard et Jan Mayen
+-   Suriname
+-   Svalbard and Jan Mayen
 -   Swaziland
--   Suède
--   Suisse
--   Afrique du Sud
--   Espagne
--   Taïwan
--   Tadjikistan
--   Tanzanie
--   Thaïlande
+-   Sweden
+-   Switzerland
+-   South Africa
+-   Spain
+-   Taiwan
+-   Tajikistan
+-   Tanzania
+-   Thailand
 -   Timor-Leste
 -   Togo
 -   Tokelau
 -   Tonga
--   Trinité-et-Tobago
--   Tunisie
--   Turkménistan
--   Turks et Caïcos (îles)
+-   Trinidad and Tobago
+-   Tunisia
+-   Turkmenistan
+-   Turks and Caicos Islands
 -   Tuvalu
--   Turquie
--   Ouganda
+-   Turkey
+-   Uganda
 -   Ukraine
--   Émirats arabes unis
--   Royaume-Uni
--   États-Unis
+-   United Arab Emirates
+-   United Kingdom
+-   United States
 -   Uruguay
--   Îles mineures éloignées des États-Unis
--   Îles Vierges (É.-U.)
--   Ouzbékistan
+-   U.S. Minor Outlying Islands
+-   U.S. Virgin Islands
+-   Uzbekistan
 -   Venezuela
 -   Vietnam
 -   Vanuatu
--   Wallis-et-Futuna
--   Yémen
--   Zambie
+-   Wallis and Futuna
+-   Yemen
+-   Zambia
 -   Zimbabwe
 
-## Considérations de prix pour des marchés spécifiques
+## Price considerations for specific markets
 
 
-Les moyens de paiement tels que la facturation d’opérateur mobile peuvent aider à augmenter les ventes d’applications payantes et d’articles in-app. En raison des coûts plus élevés engendrés pour autoriser ces moyens de paiement, un Ajustement du développement commercial est ajouté à la redevance du Store pour calculer les revenus de l’application à payer pour des transactions d’applications payantes et d’achats in-app dans les pays/régions et en utilisant les moyens de paiement du tableau ci-dessous. Vous pouvez analyser si l’Ajustement du développement commercial s’applique dans un pays/région où votre application est disponible et en tenir compte dans votre stratégie de fixation des prix du marché. Vous pouvez trouver des détails sur l’Ajustement du développement commercial dans le [Contrat du développeur de l’application](https://msdn.microsoft.com/library/windows/apps/hh694058).
+Payment methods such as gift cards and mobile operator billing can help increase sales of paid apps and in-app purchase items. Due to the higher costs to enable such payment methods, a Commerce Expansion Adjustment is added to the Store Fee deducted from Net Receipts to calculate the App Proceeds payable for paid apps and in-app purchase transactions in the countries/regions and using the payment methods in the tables below. You may want to consider if the Commerce Expansion Adjustment applies in a country/region where your app is available and factor that into your market pricing strategy. Details about the Commerce Expansion Adjustment can be found in the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058).
 
-L’Ajustement du développement commercial sera appliqué à toutes les transactions traitées pour les pays/régions et moyens de paiement spécifiés à compter de la date d’entrée en vigueur. Ces informations seront mises à jour mensuellement ; de nouveaux pays/régions et moyens de paiement seront répertoriés dans les trente (30) jours qui suivent la prise d’effet de l’Ajustement du développement commercial pour ce pays/région et moyen de paiement.
+The Commerce Expansion Adjustment will be applied to all transactions processed for the specified Country/Region and Payment Methods as of the Effective Date. This information will be updated monthly; new countries/regions and payment methods will be listed within thirty (30) days after the Commerce Expansion Adjustment takes effect for that country/region and payment method.
 
-| Pays/région | Moyens de paiement         | Ajustement du développement commercial | Date d’entrée en vigueur |
+| Country/region | Payment methods         | Commerce Expansion Adjustment | Effective date |
 |----------------|-------------------------|-------------------------------|----------------|
-| Brésil         | Facturation de l’opérateur mobile | 13,9 %                         | Décembre 2014  |
-| Chili          | Facturation de l’opérateur mobile | 13,9 %                         | Mars 2014     |
-| Chine          | Facturation de l’opérateur mobile | 13,9 %                         | Décembre 2014  |
-| Colombie       | Facturation de l’opérateur mobile | 13,9 %                         | Mars 2014     |
-| Costa Rica     | Facturation de l’opérateur mobile | 13,9 %                         | Mars 2014     |
-| Équateur (République de l’)        | Facturation de l’opérateur mobile | 13,9 %                         | Novembre 2014  |
-| Égypte          | Facturation de l’opérateur mobile | 13,9 %                         | Juin 2014      |
-| Guatemala      | Facturation de l’opérateur mobile | 13,9 %                         | Octobre 2014   |
-| Inde          | Facturation de l’opérateur mobile | 13,9 %                         | Décembre 2014  |
-| Jordanie         | Facturation de l’opérateur mobile | 13,9 %                         | Mars 2015     |
-| Kenya          | Facturation de l’opérateur mobile | 13,9 %                         | Juillet 2014      |
-| Malaisie       | Facturation de l’opérateur mobile | 13,9 %                         | Mars 2014     |
-| Mexique         | Facturation de l’opérateur mobile | 13,9 %                         | Mars 2014     |
-| Pakistan       | Facturation de l’opérateur mobile | 13.9%                         | Octobre 2015   |
-| Pérou           | Facturation de l’opérateur mobile | 13,9 %                         | Mars 2014     |
-| Philippines    | Facturation de l’opérateur mobile | 13,9 %                         | Juin 2015      |
-| Puerto Rico    | Facturation de l’opérateur mobile | 13,9 %                         | Juin 2015      |
-| Afrique du Sud   | Facturation de l’opérateur mobile | 13,9 %                         | Mars 2014     |
-| Vietnam        | Facturation de l’opérateur mobile | 13,9 %                         | Octobre 2014   |
+| Brazil         | Mobile operator billing | 13.9%                         | December 2014  |
+| Chile          | Mobile operator billing | 13.9%                         | March 2014     |
+| China          | Mobile operator billing | 13.9%                         | December 2014  |
+| Colombia       | Mobile operator billing | 13.9%                         | March 2014     |
+| Costa Rica     | Mobile operator billing | 13.9%                         | March 2014     |
+| Ecuador        | Mobile operator billing | 13.9%                         | November 2014  |
+| Egypt          | Mobile operator billing | 13.9%                         | June 2014      |
+| Guatemala      | Mobile operator billing | 13.9%                         | October 2014   |
+| India          | Mobile operator billing | 13.9%                         | December 2014  |
+| Jordan         | Mobile operator billing | 13.9%                         | March 2015     |
+| Kenya          | Mobile operator billing | 13.9%                         | July 2014      |
+| Malaysia       | Mobile operator billing | 13.9%                         | March 2014     |
+| Mexico         | Mobile operator billing | 13.9%                         | March 2014     |
+| Pakistan       | Mobile operator billing | 13.9%                         | October 2015   |
+| Peru           | Mobile operator billing | 13.9%                         | March 2014     |
+| Philippines    | Mobile operator billing | 13.9%                         | June 2015      |
+| Puerto Rico    | Mobile operator billing | 13.9%                         | June 2015      |
+| South Africa   | Mobile operator billing | 13.9%                         | March 2014     |
+| Vietnam        | Mobile operator billing | 13.9%                         | October 2014   |
 
   
 
-| Pays/région       | Moyens de paiement | Ajustement du développement commercial | Date d’entrée en vigueur |
+| Country/region       | Payment methods | Commerce Expansion Adjustment | Effective date |
 |----------------------|-----------------|-------------------------------|----------------|
-| Argentine            | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Australie            | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Autriche              | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Belgique              | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Brésil               | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Canada               | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Chili                | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Chine                | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Colombie             | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| République tchèque       | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Danemark              | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Finlande              | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| France               | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Allemagne              | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Grèce               | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Hong Kong            | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Hongrie              | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Inde                | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Irlande              | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Israël               | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Italie                | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Japon                | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Mexique               | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Pays-Bas          | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Nouvelle-Zélande          | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Pologne               | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Portugal             | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Russie               | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Arabie saoudite         | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Singapour            | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Slovaquie             | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Afrique du Sud         | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Corée du Sud          | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Espagne                | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Suède               | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Suisse          | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Taïwan               | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Turquie               | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Émirats arabes unis | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| Royaume-Uni       | Carte cadeau       | 2,24 %                         | Mars 2016     |
-| États-Unis        | Carte cadeau       | 2,24 %                         | Mars 2016     |
+| Argentina            | Gift card       | 2.24%                         | March 2016     |
+| Australia            | Gift card       | 2.24%                         | March 2016     |
+| Austria              | Gift card       | 2.24%                         | March 2016     |
+| Belgium              | Gift card       | 2.24%                         | March 2016     |
+| Brazil               | Gift card       | 2.24%                         | March 2016     |
+| Canada               | Gift card       | 2.24%                         | March 2016     |
+| Chile                | Gift card       | 2.24%                         | March 2016     |
+| China                | Gift card       | 2.24%                         | March 2016     |
+| Colombia             | Gift card       | 2.24%                         | March 2016     |
+| Czech Republic       | Gift card       | 2.24%                         | March 2016     |
+| Denmark              | Gift card       | 2.24%                         | March 2016     |
+| Finland              | Gift card       | 2.24%                         | March 2016     |
+| France               | Gift card       | 2.24%                         | March 2016     |
+| Germany              | Gift card       | 2.24%                         | March 2016     |
+| Greece               | Gift card       | 2.24%                         | March 2016     |
+| Hong Kong            | Gift card       | 2.24%                         | March 2016     |
+| Hungary              | Gift card       | 2.24%                         | March 2016     |
+| India                | Gift card       | 2.24%                         | March 2016     |
+| Ireland              | Gift card       | 2.24%                         | March 2016     |
+| Israel               | Gift card       | 2.24%                         | March 2016     |
+| Italy                | Gift card       | 2.24%                         | March 2016     |
+| Japan                | Gift card       | 2.24%                         | March 2016     |
+| Mexico               | Gift card       | 2.24%                         | March 2016     |
+| Netherlands          | Gift card       | 2.24%                         | March 2016     |
+| New Zealand          | Gift card       | 2.24%                         | March 2016     |
+| Poland               | Gift card       | 2.24%                         | March 2016     |
+| Portugal             | Gift card       | 2.24%                         | March 2016     |
+| Russia               | Gift card       | 2.24%                         | March 2016     |
+| Saudi Arabia         | Gift card       | 2.24%                         | March 2016     |
+| Singapore            | Gift card       | 2.24%                         | March 2016     |
+| Slovakia             | Gift card       | 2.24%                         | March 2016     |
+| South Africa         | Gift card       | 2.24%                         | March 2016     |
+| South Korea          | Gift card       | 2.24%                         | March 2016     |
+| Spain                | Gift card       | 2.24%                         | March 2016     |
+| Sweden               | Gift card       | 2.24%                         | March 2016     |
+| Switzerland          | Gift card       | 2.24%                         | March 2016     |
+| Taiwan               | Gift card       | 2.24%                         | March 2016     |
+| Turkey               | Gift card       | 2.24%                         | March 2016     |
+| United Arab Emirates | Gift card       | 2.24%                         | March 2016     |
+| United Kingdom       | Gift card       | 2.24%                         | March 2016     |
+| United States        | Gift card       | 2.24%                         | March 2016     |
 
  
 
-## Marchés « Rest of World » pour Windows 8.x
+## "Rest of World" markets for Windows 8.x
 
 
-Si votre application contient des packages destinés à Windows 8.x, n’oubliez pas que certains marchés sont traités comme un seul marché « Rest of World » pour les clients qui utilisent le Store sur Windows 8.x, même s’ils sont désormais affichés comme des marchés individuels dans le tableau de bord du Centre de développement Windows (contrairement au tableau de bord Windows Store précédent, qui contenait une seule option de marché « Rest of World » sélectionnable).
+If your app includes packages targeting Windows 8.x, it's important to be aware that a number of markets are treated as a single "Rest of World" market for customers using the Store on Windows 8.x, even though they are now shown as individual markets in the Windows Dev Center dashboard (as opposed to the earlier Windows Store dashboard, where there was one selectable "Rest of World" market option).
 
-Si vous conservez la sélection par défaut lorsque vous soumettez votre application, vous n’avez pas à vous soucier de cela. Votre application sera disponible sur tous les marchés possibles. Toutefois, si vous voulez exclure certains marchés, gardez à l’esprit que l’exclusion d’un seul de ces marchés « Rest of World » signifie que votre application ne sera disponible sur aucun marché « Rest of World » pour les clients utilisant Windows 8 ou Windows 8.1.
+If you leave the default selection when submitting your app, you don't have to worry about this, and your app will be available to all possible markets. However, if you want to exclude certain markets, keep in mind that excluding even one of these "Rest of World" markets means that your app won't be available in any of the "Rest of World" markets for customers on Windows 8 or Windows 8.1.
 
-Les marchés inclus dans « Rest of World » pour Windows 8.x sont les suivants :
+The markets that are included in "Rest of World" for Windows 8.x are the following:
 
 -   Afghanistan
--   Åland (îles d’)
--   Albanie
--   Samoa américaines
--   Andorre
+-   Åland Islands
+-   Albania
+-   American Samoa
+-   Andorra
 -   Angola
 -   Anguilla
--   Antarctique
--   Antigua et Barbuda
--   Arménie
+-   Antarctica
+-   Antigua and Barbuda
+-   Armenia
 -   Aruba
--   Azerbaïdjan
--   Bahamas, Les
+-   Azerbaijan
+-   Bahamas, The
 -   Bangladesh
--   Barbade (La)
--   Bélarus
+-   Barbados
+-   Belarus
 -   Belize
--   Bénin
--   Bermudes
--   Bhoutan
--   Bolivie
--   Bonaire, Saint-Eustache et Saba
--   Bosnie-Herzégovine
+-   Benin
+-   Bermuda
+-   Bhutan
+-   Bolivia
+-   Bonaire, Saint Eustatius and Saba
+-   Bosnia and Herzegovina
 -   Botswana
--   Bouvet (Île)
--   Territoires britanniques de l’océan Indien
--   Îles Vierges britanniques
+-   Bouvet Island
+-   British Indian Ocean Territory
+-   British Virgin Islands
 -   Brunei
--   Burkina-Faso
+-   Burkina Faso
 -   Burundi
 -   Cabo Verde
--   Cambodge
--   Cameroun
--   Caïmans (îles)
--   République centrafricaine
--   Tchad
--   Christmas (île)
--   Cocos-Keeling (îles)
--   Comores (Les)
+-   Cambodia
+-   Cameroon
+-   Cayman Islands
+-   Central African Republic
+-   Chad
+-   Christmas Island
+-   Cocos (Keeling) Islands
+-   Comoros
 -   Congo
--   Congo (RDC)
--   Cook (îles)
+-   Congo (DRC)
+-   Cook Islands
 -   Côte d’Ivoire
 -   Curaçao
 -   Djibouti
--   Dominique
--   République dominicaine
--   Équateur (République de l’)
--   Salvador
--   Guinée équatoriale
--   Érythrée
--   Éthiopie
--   Malouines (îles)
--   Féroé (îles)
--   Fidji
--   Guyane française
--   Polynésie française
--   Terres australes et antarctiques françaises
+-   Dominica
+-   Dominican Republic
+-   Ecuador
+-   El Salvador
+-   Equatorial Guinea
+-   Eritrea
+-   Ethiopia
+-   Falkland Islands
+-   Faroe Islands
+-   Fiji
+-   French Guiana
+-   French Polynesia
+-   French Southern and Antarctic Lands
 -   Gabon
--   Gambie
--   Géorgie
+-   Gambia, The
+-   Georgia
 -   Ghana
 -   Gibraltar
--   Groenland
--   Grenade
+-   Greenland
+-   Grenada
 -   Guadeloupe
 -   Guam
 -   Guatemala
--   Guernesey
--   Guinée
--   Guinée-Bissau
+-   Guernsey
+-   Guinea
+-   Guinea-Bissau
 -   Guyana
--   Haïti
--   Heard et McDonald (Îles)
--   Saint-Siège (Cité du Vatican)
+-   Haiti
+-   Heard Island and McDonald Islands
+-   Holy See (Vatican City)
 -   Honduras
--   Islande
--   Île de Man
--   Jamaïque
+-   Iceland
+-   Isle of Man
+-   Jamaica
 -   Jersey
 -   Kenya
 -   Kiribati
--   Kirghizistan
+-   Kyrgyzstan
 -   Laos
 -   Lesotho
 -   Liberia
 -   Liechtenstein
--   Macao R.A.S.
--   Macédoine (ex-République yougoslave de Macédoine)
+-   Macao SAR
+-   Macedonia, FYROM
 -   Madagascar
 -   Malawi
 -   Maldives
 -   Mali
--   Marshall (îles)
+-   Marshall Islands
 -   Martinique
--   Mauritanie
--   Maurice (île)
+-   Mauritania
+-   Mauritius
 -   Mayotte
--   Micronésie
--   République de Moldavie
+-   Micronesia
+-   Moldova
 -   Monaco
--   Mongolie
--   Monténégro
+-   Mongolia
+-   Montenegro
 -   Montserrat
--   Maroc
+-   Morocco
 -   Mozambique
 -   Myanmar
--   Namibie
+-   Namibia
 -   Nauru
--   Népal
--   Nouvelle-Calédonie
+-   Nepal
+-   New Caledonia
 -   Nicaragua
 -   Niger
 -   Nigeria
 -   Niue
--   Norfolk (île)
--   Mariannes du Nord (îles)
+-   Norfolk Island
+-   Northern Mariana Islands
 -   Palau
--   Autorité palestinienne
+-   Palestinian Authority
 -   Panama
--   Papouasie-Nouvelle-Guinée
+-   Papua New Guinea
 -   Paraguay
--   Pitcairn (îles)
--   Porto Rico
--   La Réunion
+-   Pitcairn Islands
+-   Puerto Rico
+-   Réunion
 -   Rwanda
--   Saint-Barthélemy
--   Sainte-Hélène, Ascension et Tristan da Cunha
--   Saint Kitts et Nevis
--   Sainte-Lucie
--   Saint-Martin (partie française)
--   Saint-Pierre-et-Miquelon
--   Saint-Vincent-et-les-Grenadines
+-   Saint Barthélemy
+-   Saint Helena, Ascension and Tristan da Cunha
+-   Saint Kitts and Nevis
+-   Saint Lucia
+-   Saint Martin (French Part)
+-   Saint Pierre and Miquelon
+-   Saint Vincent and the Grenadines
 -   Samoa
--   Saint-Marin
--   São Tomé et Príncipe
--   Sénégal
+-   San Marino
+-   São Tomé and Príncipe
+-   Senegal
 -   Seychelles
 -   Sierra Leone
--   Sint-Maarten (partie néerlandaise)
--   Salomon (îles)
--   Somalie
--   Géorgie du Sud-et-les îles Sandwich du Sud
--   Surinam
--   Svalbard et Jan Mayen
+-   Sint Maarten (Dutch Part)
+-   Solomon Islands
+-   Somalia
+-   South Georgia and the South Sandwich Islands
+-   Suriname
+-   Svalbard and Jan Mayen
 -   Swaziland
--   Tadjikistan
--   Tanzanie
+-   Tajikistan
+-   Tanzania
 -   Timor-Leste
 -   Togo
 -   Tokelau
 -   Tonga
--   Turkménistan
--   Turks et Caïcos (îles)
+-   Turkmenistan
+-   Turks and Caicos Islands
 -   Tuvalu
--   Ouganda
--   Îles mineures éloignées des États-Unis
--   Îles Vierges (É.-U.)
--   Ouzbékistan
+-   Uganda
+-   U.S. Minor Outlying Islands
+-   U.S. Virgin Islands
+-   Uzbekistan
 -   Venezuela
 -   Vietnam
 -   Vanuatu
--   Wallis-et-Futuna
--   Yémen
--   Zambie
+-   Wallis and Futuna
+-   Yemen
+-   Zambia
 -   Zimbabwe
 
-> **Remarque** Pour obtenir la liste des pays et régions dans lesquels vous pouvez vous inscrire en vue d’obtenir un compte de développeur, voir [Types de compte, emplacements et frais](https://msdn.microsoft.com/library/windows/apps/jj863494).
+> **Note**  For a list of the countries and regions in which you can register for a developer account, see [Account types, locations, and fees](https://msdn.microsoft.com/library/windows/apps/jj863494).
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

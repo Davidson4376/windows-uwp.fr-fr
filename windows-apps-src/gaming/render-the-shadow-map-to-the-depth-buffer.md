@@ -1,42 +1,42 @@
 ---
 author: mtoepke
-title: "Générer le rendu du mappage d’ombre dans le tampon de profondeur"
-description: "Générez le rendu du point de vue de la lumière pour créer un mappage de profondeur en deux dimensions qui représente le volume de l’ombre."
+title: Render the shadow map to the depth buffer
+description: Render from the point of view of the light to create a two-dimensional depth map representing the shadow volume.
 ms.assetid: 7f3d0208-c379-8871-cc48-027047c6c2d0
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 644e2084baa750965a5283208fde1cea24ecfdea
+ms.openlocfilehash: 337aa63ee30b05da51d5b224cb0013519e11504d
 
 ---
 
-# Générer le rendu du mappage d’ombre dans le tampon de profondeur
+# Render the shadow map to the depth buffer
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Générez le rendu du point de vue de la lumière pour créer un mappage de profondeur en deux dimensions qui représente le volume de l’ombre. Le mappage de profondeur masque l’espace qui sera rendu dans l’ombre. Partie 2 de la [Procédure pas à pas : implémenter des volumes d’ombre à l’aide de tampons de profondeur dans Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md).
+Render from the point of view of the light to create a two-dimensional depth map representing the shadow volume. The depth map masks the space that will be rendered in shadow. Part 2 of [Walkthrough: Implement shadow volumes using depth buffers in Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md).
 
-## Effacer le tampon de profondeur
+## Clear the depth buffer
 
 
-Effacez toujours le tampon de profondeur avant d’y générer un rendu.
+Always clear the depth buffer before rendering to it.
 
 ```cpp
 context->ClearRenderTargetView(m_deviceResources->GetBackBufferRenderTargetView(), DirectX::Colors::CornflowerBlue);
 context->ClearDepthStencilView(m_shadowDepthView.Get(), D3D11_CLEAR_DEPTH | D3D11_CLEAR_STENCIL, 1.0f, 0);
 ```
 
-## Générer le rendu du mappage d’ombre dans le tampon de profondeur
+## Render the shadow map to the depth buffer
 
 
-Pour la passe de rendu d’ombre, spécifiez un tampon de profondeur mais ne spécifiez pas de cible de rendu.
+For the shadow rendering pass, specify a depth buffer but do not specify a render target.
 
-Spécifiez la fenêtre d’affichage de la lumière, un nuanceur de vertex et définissez les tampons constants de l’espace lumineux. Utilisez l’élimination de la face avant pour cette passe pour optimiser les valeurs de profondeur placées dans le tampon de l’ombre.
+Specify the light viewport, a vertex shader, and set the light space constant buffers. Use front face culling for this pass to optimize the depth values placed in the shadow buffer.
 
-Notez que sur la plupart des périphériques, vous pouvez spécifier nullptr pour le nuanceur de pixels (ou évitez totalement de spécifier un nuanceur de pixels). Mais certains pilotes risquent de lever une exception quand vous appelez le dessin sur le périphérique Direct3D avec un jeu de nuanceurs de pixels null. Pour éviter cette exception, vous pouvez définir un nuanceur de pixels minimal pour la passe de rendu d’ombre. La sortie de ce nuanceur est rejetée ; il peut appeler [**discard**](https://msdn.microsoft.com/library/windows/desktop/bb943995) sur chaque pixel.
+Note that on most devices, you can specify nullptr for the pixel shader (or skip specifying a pixel shader entirely). But some drivers may throw an exception when you call draw on the Direct3D device with a null pixel shader set. To avoid this exception, you can set a minimal pixel shader for the shadow rendering pass. The output of this shader is thrown away; it can call [**discard**](https://msdn.microsoft.com/library/windows/desktop/bb943995) on every pixel.
 
-Générez le rendu des objets pouvant projeter des ombres, mais ne vous embêtez pas à générer le rendu de la géométrie qui ne peut pas en projeter (comme un sol dans une salle ou des objets supprimés de la passe d’ombre pour des raisons d’optimisation).
+Render the objects that can cast shadows, but don't bother rendering geometry that can't cast a shadow (like a floor in a room, or objects removed from the shadow pass for optimization reasons).
 
 ```cpp
 void ShadowSceneRenderer::RenderShadowMap()
@@ -122,12 +122,12 @@ void ShadowSceneRenderer::RenderShadowMap()
 }
 ```
 
-**Optimisez le tronc de cône de l’affichage :** assurez-vous que votre implémentation calcule un tronc de cône de l’affichage étroit afin d’obtenir le niveau de précision le plus élevé possible de votre tampon de profondeur. Voir [Techniques courantes pour améliorer les mappages de profondeur d’ombre](https://msdn.microsoft.com/library/windows/desktop/ee416324) pour obtenir plus de conseils sur la technique d’ombrage.
+**Optimize the view frustum:**  Make sure your implementation computes a tight view frustum so that you get the most precision out of your depth buffer. See [Common Techniques to Improve Shadow Depth Maps](https://msdn.microsoft.com/library/windows/desktop/ee416324) for more tips on shadow technique.
 
-## Nuanceur de vertex pour la passe d’ombre
+## Vertex shader for shadow pass
 
 
-Utilisez une version simplifiée de votre nuanceur de vertex pour générer uniquement le rendu de la position du vertex dans l’espace lumineux. N’incluez pas de normales d’éclairage, de transformations secondaires, etc.
+Use a simplified version of your vertex shader to render just the vertex position in light space. Don't include any lighting normals, secondary transformations, and so on.
 
 ```cpp
 PixelShaderInput main(VertexShaderInput input)
@@ -145,7 +145,7 @@ PixelShaderInput main(VertexShaderInput input)
 }
 ```
 
-Dans la partie suivante de cette procédure pas à pas, découvrez comment ajouter des ombres en [générant le rendu avec un test de profondeur](render-the-scene-with-depth-testing.md).
+In the next part of this walkthrough, learn how to add shadows by [rendering with depth testing](render-the-scene-with-depth-testing.md).
 
  
 
@@ -157,6 +157,6 @@ Dans la partie suivante de cette procédure pas à pas, découvrez comment ajout
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

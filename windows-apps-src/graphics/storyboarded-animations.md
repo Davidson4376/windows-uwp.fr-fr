@@ -5,7 +5,7 @@ title: Animations dans une table de montage
 description: "Les animations de table de montage séquentiel ne sont pas seulement des animations au sens visuel."
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: bcb8dbd3c0b2556c3d426687eb9be02ffe7265fb
+ms.openlocfilehash: 361765de700af2a701e16fc27a5867d80907865a
 
 ---
 # Animations dans une table de montage séquentiel
@@ -333,6 +333,6 @@ Jusqu’à présent nous vous avons montré les animations personnalisées qui s
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

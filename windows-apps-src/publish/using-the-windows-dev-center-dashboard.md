@@ -1,43 +1,43 @@
 ---
 author: jnHs
-Description: "Le tableau de bord du Centre de développement Windows vous permet de gérer et de soumettre toutes vos applications pour les appareils Windows à partir d’un seul et même emplacement."
-title: "Utilisation du tableau de bord du Centre de développement Windows"
+Description: The Windows Dev Center dashboard lets you manage and submit all of your apps for Windows devices in one place.
+title: Using the Windows Dev Center dashboard
 ms.assetid: FB63F773-71AC-464E-BDE1-21C429FB2B0B
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 7478a832cea6114c7a6e7f6be5cc3e908981a64c
+ms.sourcegitcommit: fc7b0d7dd85e661e1688f4df3f67280c16eb6742
+ms.openlocfilehash: 2ccec6e85666ef328f4aa0baa8ba6a705986a4c4
 
 ---
 
-# Utilisation du tableau de bord du Centre de développement Windows
+# Using the Windows Dev Center dashboard
 
 
-Le tableau de bord du Centre de développement Windows vous permet de gérer et de soumettre toutes vos applications pour les appareils Windows à partir d’un seul et même emplacement.
+The Windows Dev Center dashboard lets you manage and submit all of your apps for Windows devices in one place.
 
-> **Remarque** Vous devez disposer d’un [compte de développeur](http://go.microsoft.com/fwlink/p/?LinkId=615100) pour accéder au tableau de bord du Centre de développement Windows.
+> **Note**   You must have a [developer account](http://go.microsoft.com/fwlink/p/?LinkId=615100) in order to access the Windows Dev Center dashboard.
 
-Lorsque vous [créez une soumission pour votre application](app-submissions.md) (pour la première fois ou en tant que mise à jour), vous pouvez [charger des packages d’application](upload-app-packages.md) pour tout système d’exploitation pris en charge. Le Windows Store propose automatiquement aux clients le package qui fonctionne le mieux pour eux. Vous pouvez utiliser les mêmes [descriptions](create-app-descriptions.md) et [conceptions graphiques](app-screenshots-and-images.md) pour tous les systèmes d’exploitation que votre application prend en charge, ou [personnaliser la description pour des plateformes spécifiques](create-platform-specific-descriptions.md).
+When you create a [create a submission for your app](app-submissions.md) (for the first time or as an update), you can [upload app packages](upload-app-packages.md) for any supported operating system, and the Store will automatically offer customers the package that will work best for them. You can use the same [Store listings](create-app-store-listings.md) and [artwork](app-screenshots-and-images.md) for all of the operating systems your app supports, or you can [customize the Store listing for specific OS versions](create-platform-specific-Store-listings.md).
 
-Les produits in-app peuvent désormais être gérés indépendamment de la soumission de l’application. Vous disposez ainsi d’une plus grande souplesse et de la possibilité d’effectuer des modifications de manière indépendante. Pour plus d'informations, voir l'article [Soumissions de Produits in-app](iap-submissions.md).
+Add-ons (in-app products) are managed independently of your app's submission. This brings you greater flexibility and the ability to make changes independently. For more info, see [Add-on submissions](add-on-submissions.md).
 
-Le tableau de bord du Centre de développement Windows offre de nombreuses fonctionnalités, notamment de [gestion des applications et de configuration des services](app-management-and-services.md), de [revue des données analytiques](analytics.md), de [création de rapports sur les revenus](payout-summary.md), de [promotion des applications et d'implication des clients](app-promotion-and-customer-engagement.md), de [tests bêta](beta-testing-and-targeted-distribution.md) et de [distribution d'applications métier aux entreprises](distribute-lob-apps-to-enterprises.md).
+The Dev Center dashboard also offers capabilities for [app management and configuring services](app-management-and-services.md), [reviewing analytic data](analytics.md), [payout reporting](payout-summary.md), [promotion and customer engagement](app-promotion-and-customer-engagement.md), [beta testing](beta-testing-and-targeted-distribution.md), [distributing LOB apps to enterprises](distribute-lob-apps-to-enterprises.md), and much more.
 
-## Conseils concernant l'utilisation du tableau de bord unifié
+## Tips for using the unified dashboard
 
-Si vous avez précédemment publié des applications pour Windows 8.1, Windows Phone 8.1 ou des versions de système d'exploitation antérieures, voir [Apparence de votre application dans le Store pour les clients dotés de Windows 10](how-your-app-appears-in-the-store-for-windows-10-customers.md) pour en savoir plus sur certaines des modifications de la description de votre application pour les clients Windows 10 et sur la manière dont nous classons les informations de votre application dans le nouveau tableau de bord.
+If you had previously published apps for Windows 8.1, Windows Phone 8.1, or earlier OS versions, take a look at [How your app appears in the Store for Windows 10 customers](how-your-app-appears-in-the-store-for-windows-10-customers.md) to find out more about some of the changes in your app's listing for Windows 10 customers, and how we categorize your app's info in the new dashboard.
 
-Les applications qui étaient liées pour partager l'identité dans les versions précédentes du Centre de développement Windows Phone et du Tableau de bord du Windows Store apparaissent sous la forme d'une même application dans le tableau de bord du Centre de développement Windows. Quelles que soient les versions de système d'exploitation que votre application prend en charge, vous les gérez désormais comme une seule application. L'application partage les mêmes détails, tels que le prix et la catégorie, pour l'ensemble des types d'appareil.
-
- 
+Apps that were linked to share identity in the earlier Windows Phone Dev Center and Windows Store dashboard will appear as the same app in the Dev Center dashboard. No matter which OS versions your app supports, you'll manage it as one app. The app will share the same details, such as price and category, across device types.
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO5-->
 
 

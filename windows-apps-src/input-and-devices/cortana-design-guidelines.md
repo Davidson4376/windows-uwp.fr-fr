@@ -1,25 +1,25 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "Compléter Cortana avec les fonctionnalités fournies par votre application, à l’aide des commandes vocales."
-title: "Recommandations relatives à la conception de Cortana"
+Description: Extend Cortana with functionality provided by your app, using voice commands.
+title: Cortana design guidelines
 ms.assetid: A92C084B-9913-4718-9A04-569D51ACE55D
 label: Guidelines
 template: detail.hbs
 redirect_url: https://msdn.microsoft.com/en-us/cortana/voicecommands/voicecommand-design-guidelines
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 83bf462659b28df49bf40beabd253acd039d67b6
+ms.openlocfilehash: b3612b71b5e6843d2326c9874e674cfb77900e7e
 
 ---
 
-# Recommandations relatives à la conception de Cortana
+# Cortana design guidelines
 
-Cette rubrique a été déplacée vers https&#58;//msdn.microsoft.com/fr-fr/cortana/voicecommands/voicecommand-design-guidelines.
+This topic has been moved to https://msdn.microsoft.com/en-us/cortana/voicecommands/voicecommand-design-guidelines.
 
-Github: https://github.com/Microsoft/cortana-docs/blob/master/docs/voicecommands/voicecommand-design-guidelines.md (en anglais)
+Github: https://github.com/Microsoft/cortana-docs/blob/master/docs/voicecommands/voicecommand-design-guidelines.md
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

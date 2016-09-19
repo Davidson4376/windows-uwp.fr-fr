@@ -1,74 +1,71 @@
 ---
 author: mcleanbyron
 ms.assetid: 1f970d38-2338-470e-b5ba-811402752fc4
-description: "Découvrez comment utiliser les bibliothèques de publicités Microsoft du Kit de développement logiciel (SDK) d’engagement et de monétisation de la BoutiqueMicrosoft pour insérer des spots publicitaires dans une application pour Windows10, Windows8.1 ou Windows Phone8.1."
-title: Spots publicitaires
+description: Learn how to include interstitial ads in a Windows 10, Windows 8.1, or Windows Phone 8.1 app using the Microsoft advertising libraries in the Microsoft Store Services SDK.
+title: Interstitial ads
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 0f159409bb584aacaf66550efe8d147cd8fddd50
+ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
+ms.openlocfilehash: 4082fdd17ba42fd2b6a7659095b019c1ad4875a0
 
 ---
 
-# Spots publicitaires
+# Interstitial ads
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Cette procédure pas à pas montre comment utiliser les bibliothèques de publicités Microsoft du Kit de développement logiciel (SDK) d’engagement et de monétisation de la BoutiqueMicrosoft pour insérer des spots publicitaires dans une application pour Windows10, Windows8.1 ou Windows Phone8.1.
 
-Pour obtenir des exemples complets de projet qui montrent comment ajouter des spots publicitaires à des applications HTML/JavaScript et XAML en C# et C++, voir [Exemples de publicité sur GitHub](http://aka.ms/githubads).
+This walkthrough shows how to include interstitial ads in a Windows 10, Windows 8.1, or Windows Phone 8.1 app using the Microsoft advertising libraries in the Microsoft Store Services SDK.
+
+For complete sample projects that demonstrate how to add interstitial ads to JavaScript/HTML apps and XAML apps using C# and C++, see the [advertising samples on GitHub](http://aka.ms/githubads).
 
 <span id="whatareinterstitialads10"/>
-## Que sont les spots publicitaires?
+## What are interstitial ads?
 
-Contrairement aux bannières publicitaires, les spots publicitaires (ou *publicités interstitielles*) s’affichent sur la totalité de l’écran de l’application. Deuxformes de base sont fréquemment utilisées dans les jeux.
+Unlike banner ads, interstitial ads (or *interstitials*) are shown on the entire screen of the app. Two basic forms are frequently used in games.
 
-* Avec les publicités de type *Paywall*, l’utilisateur doit regarder une publicité à intervalles réguliers. Par exemple entre les niveaux de jeu:
+* With *Paywall* ads, the user must watch an ad at some regular interval. For example between game levels:
 
     ![whatisaninterstitial](images/13-ed0a333b-0fc8-4ca9-a4c8-11e8b4392831.png)
 
-* Avec les publicités *basées sur les récompenses*, l’utilisateur recherche explicitement certains avantages, par exemple un conseil ou du temps supplémentaire pour terminer le niveau, et initialise la publicité vidéo par le biais de l’interface utilisateur de l’application.
+* With *Rewards Based* ads the user is explicitly seeking some benefit, such as a hint or extra time to complete the level, and initializes the video ad through the app’s user interface.
 
-    Il est important de noter que ce SDK ne gère pas les interfaces utilisateur sauf lors de la lecture vidéo. Reportez-vous aux [meilleures pratiques Spots](ui-and-user-experience-guidelines.md#interstitialbestpractices10) pour obtenir des recommandations sur les choses à faire et à ne pas faire, si vous envisagez d’intégrer des spots publicitaires dans votre application.
+    It is important to note that this SDK does not handle any user interface except at the time of video playback. Refer to the [interstitial best practices](ui-and-user-experience-guidelines.md#interstitialbestpractices10) for guidelines on what to do, and avoid, as you consider how to integrate interstitial ads in your app.
 
-## Génération d’une application contenant des spots publicitaires
+## Building an app with interstitial ads
 
 
-### Conditions préalables
+### Prerequisites
 
-1.  Installez le [Kit de développement logiciel (SDK) d’engagement et de monétisation de la BoutiqueMicrosoft](http://aka.ms/store-em-sdk) avec VisualStudio2015 ou VisualStudio2013.
+* For UWP apps: install the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) with Visual Studio 2015.
+* For Windows 8.1 or Windows Phone 8.1 apps: install the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk) with Visual Studio 2015 or Visual Studio 2013.
 
-2.  Dans VisualStudio, ouvrez votre projet ou créez-en un.
+### Code development
 
-### Développement du code
-
-* [Étapes pour une application XAML/.NET](#interstitialadsxaml10)
-
-* [Étapes pour HTML/JavaScript](#interstitialadshtml10)
-
-* [Étapes pour C++ (DirectX Interop)](#interstitialadsdirectx10)
+* [Steps for a XAML/.NET app](#interstitialadsxaml10)
+* [Steps for HTML/JavaScript](#interstitialadshtml10)
+* [Steps for C++ (DirectX Interop)](#interstitialadsdirectx10)
 
 <span id="interstitialadsxaml10"/>
-### Spots publicitaires (XAML/.NET)
+### Interstitial ads (XAML/.NET)
 
-> **Remarque** Cette section fournit des exemples en C#, mais VisualBasic et C++ sont également pris en charge.
+> **Note**   This section provides C# examples, but Visual Basic and C++ are also supported.
  
-1. Ouvrez votre projet dans VisualStudio.
-2. Dans **Gestionnaire de références**, sélectionnez l’une des références suivantes en fonction de votre type de projet:
+1. Open your project in Visual Studio.
+2. In **Reference Manager**, select one of the following references depending on your project type:
 
-    -   Pour un projet de plateforme Windows universelle (UWP): développez **Windows universel**, cliquez sur **Extensions**, puis cochez la case en regard de **Kit de développement logiciel (SDK) Microsoft Advertising pour XAML** (version10.0).
+    -   For a Universal Windows Platform (UWP) project: Expand **Universal Windows**, click **Extensions**, and then select the check box next to **Microsoft Advertising SDK for XAML** (Version 10.0).
 
-    -   Pour un projet Windows8.1: développez **Windows8.1**, cliquez sur **Extensions**, puis cochez la case en regard de **Kit de développement logiciel (SDK) Ad Mediator pour Windows8.1 XAML**. Cette option permet d’ajouter les bibliothèques de publicités et de médiateurs publicitaires Microsoft à votre projet, mais vous pouvez ignorer les bibliothèques de médiateurs publicitaires.
+    -   For a Windows 8.1 project: Expand **Windows 8.1**, click **Extensions**, and then select the check box next to **Ad Mediator SDK for Windows 8.1 XAML**. This option will add both the Microsoft advertising and ad mediator libraries to your project, but you can ignore the ad mediator libraries.
 
-    -   Pour un projet Windows Phone8.1: développez **Windows Phone8.1**, cliquez sur **Extensions**, puis cochez la case en regard de **Kit de développement logiciel (SDK) Ad Mediator pour Windows Phone8.1 XAML**. Cette option permet d’ajouter les bibliothèques de publicités et de médiateurs publicitaires Microsoft à votre projet, mais vous pouvez ignorer les bibliothèques de médiateurs publicitaires.
+    -   For a Windows Phone 8.1 project: Expand **Windows Phone 8.1**, click **Extensions**, and then select the check box next to **Ad Mediator SDK for Windows Phone 8.1 XAML**. This option will add both the Microsoft advertising and ad mediator libraries to your project, but you can ignore the ad mediator libraries.
 
-3.  Dans le code de l’application, incluez la référence à l’espace de noms suivant.
+3.  In the app code, include the following namespace reference.
 
     ``` syntax
     using Microsoft.Advertising.WinRT.UI;
     ```
 
-4.  Déclarez les propriétés `MyAppId` et `MyAdUnitId`.
+4.  Declare your `MyAppId` and `MyAdUnitId` properties.
 
     ``` syntax
     var MyAppId = "<your app id for windows>";
@@ -83,9 +80,9 @@ Contrairement aux bannières publicitaires, les spots publicitaires (ou *publici
 #endif
     ```
 
-    > **Remarque** Vous allez remplacer les valeurs de test par les valeurs dynamiques avant de soumettre votre application.
+    > **Note**   You will replace the test values with live values before submitting your app for submission.
 
-5.  Instanciez une classe [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx), connectez tous les gestionnaires d’événements et demandez une publicité.
+5.  Instantiate an [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx), wire up all event handlers, and request an ad.
 
     ``` syntax
     // instantiate an InterstitialAd
@@ -101,7 +98,7 @@ Contrairement aux bannières publicitaires, les spots publicitaires (ou *publici
     MyVideoAd.RequestAd(AdType.Video, MyAppId, MyAdUnitId);
     ```
 
-6.  Dans le code, à l’emplacement où vous souhaitez afficher la publicité, vérifiez qu’elle est opérationnelle, puis affichez-la.
+6.  At the point in your code where the ad is to be shown, be sure the ad is ready, and show it.
 
     ``` syntax
     if ((InterstitialAdState.Ready) == (MyVideoAd.State))
@@ -110,7 +107,7 @@ Contrairement aux bannières publicitaires, les spots publicitaires (ou *publici
     }
     ```
 
-7.  Définissez et codez les événements.
+7.  Define and code up the events.
 
     ``` syntax
     void MyVideoAd_AdReady(object sender, object e)
@@ -134,41 +131,41 @@ Contrairement aux bannières publicitaires, les spots publicitaires (ou *publici
     }
     ```
 
-8.  Affectez la propriété `MyAppId` à la valeur de test indiquée dans [Valeurs du mode test](test-mode-values.md). Cette valeur est utilisée uniquement pour les tests; vous allez la remplacer par une valeur dynamique avant de publier votre application.
+8.  Assign the `MyAppId` property to the test value provided in [Test mode values](test-mode-values.md). This value is used only used for testing; you will replace it with a live value before you publish your app.
 
     ``` syntax
     var MyAppId = "d25517cb-12d4-4699-8bdc-52040c712cab";
     ```
 
-9.  Affectez la propriété `MyAdUnitId` à la valeur de test indiquée dans [Valeurs du mode test](test-mode-values.md). Cette valeur est utilisée uniquement pour les tests; vous allez la remplacer par une valeur dynamique avant de publier votre application.
+9.  Assign the `MyAdUnitId` property to the test value provided in [Test mode values](test-mode-values.md). This value is used only used for testing; you will replace it with a live value before you publish your app.
 
     ``` syntax
     var MyAdUnitId = "11389925";
     ```
 
-10.  Générez et testez votre application pour vérifier qu’elle affiche les publicités de test.
+10.  Build and test your app to confirm it is showing test ads.
 
 <span id="interstitialadshtml10"/>
-### Spots publicitaires (HTML/JavaScript)
+### Interstitial ads (HTML/JavaScript)
 
-Cet exemple part du principe que vous avez créé un projet d’application universelle pour JavaScript dans VisualStudio2015 et que vous ciblez un processeur spécifique.
+This sample assumes you have created a Universal App project for JavaScript in Visual Studio 2015 and are targeting a specific CPU.
 
-1. Ouvrez votre projet dans VisualStudio.
-2.  Dans **Gestionnaire de références**, sélectionnez l’une des références suivantes en fonction de votre type de projet:
+1. Open your project in Visual Studio.
+2.  In **Reference Manager**, select one of the following references depending on your project type:
 
-    -   Pour un projet de plateforme Windows universelle (UWP): développez **Windows universel**, cliquez sur **Extensions**, puis cochez la case en regard de **Kit de développement logiciel (SDK) Microsoft Advertising pour JavaScript** (version10.0).
+    -   For a Universal Windows Platform (UWP) project: Expand **Universal Windows**, click **Extensions**, and then select the check box next to **Microsoft Advertising SDK for JavaScript** (Version 10.0).
 
-    -   Pour un projet Windows8.1: développez **Windows8.1**, cliquez sur **Extensions**, puis cochez la case en regard de **Kit de développement logiciel (SDK) Microsoft Advertising pour Windows8.1 natif (JS)**.
+    -   For a Windows 8.1 project: Expand **Windows 8.1**, click **Extensions**, and then select the check box next to **Microsoft Advertising SDK for Windows 8.1 Native (JS)**.
 
-    -   Pour un projet Windows Phone8.1: développez **Windows Phone8.1**, cliquez sur **Extensions**, puis cochez la case en regard de **Kit de développement logiciel (SDK) Microsoft Advertising pour Windows Phone8.1 natif (JS)**.
+    -   For a Windows 8.1 project: Expand **Windows Phone 8.1**, click **Extensions**, and then select the check box next to **Microsoft Advertising SDK for Windows Phone 8.1 Native (JS)**.
 
-3.  Dans le code HTML, insérez la référence de script suivante.
+3.  In the HTML, include the following script reference.
 
     ``` syntax
     <script src="//Microsoft.Advertising.JavaScript/ad.js"></script>
     ```
 
-4.  Déclarez les propriétés `myAppId` et `myAdUnitId`.
+4.  Declare your `myAppId` and `myAdUnitId` properties.
 
     ``` syntax
     <script>
@@ -177,7 +174,7 @@ Cet exemple part du principe que vous avez créé un projet d’application univ
     </script>
     ```
 
-5.  Instanciez une classe **InterstitialAd**, connectez tous les gestionnaires d’événements et demandez une publicité.
+5.  Instantiate an **InterstitialAd**, wire up all event handlers, and request an ad.
 
     ``` syntax
     // instantiate an InterstitialAd
@@ -194,7 +191,7 @@ Cet exemple part du principe que vous avez créé un projet d’application univ
     window.interstitialAd.requestAd(myAdType, myAppId, myAdUnitId);
     ```
 
-6.  Dans le code, à l’emplacement où vous souhaitez afficher la publicité, vérifiez qu’elle est opérationnelle, puis affichez-la.
+6.  At the point in your code where the ad is to be shown, be sure the ad is ready, and show it.
 
     ``` syntax
     if ((MicrosoftNSJS.Advertising.InterstitialAdState.ready) == (window.interstitialAd.state)) {
@@ -202,7 +199,7 @@ Cet exemple part du principe que vous avez créé un projet d’application univ
     }
     ```
 
-7.  Définissez et codez les événements.
+7.  Define and code up the events.
 
     ``` syntax
     function readyHandler(sender) {
@@ -222,38 +219,38 @@ Cet exemple part du principe que vous avez créé un projet d’application univ
     }
     ```
 
-7.  Affectez la propriété `MyAppId` à la valeur de test indiquée dans [Valeurs du mode test](test-mode-values.md). Cette valeur est utilisée uniquement pour les tests; vous allez la remplacer par une valeur dynamique avant de publier votre application.
+7.  Assign the `MyAppId` property to the test value provided in [Test mode values](test-mode-values.md). This value is used only used for testing; you will replace it with a live value before you publish your app.
 
     ``` syntax
     var MyAppId = "d25517cb-12d4-4699-8bdc-52040c712cab";
     ```
 
-8.  Affectez la propriété `MyAdUnitId` à la valeur de test indiquée dans [Valeurs du mode test](test-mode-values.md). Cette valeur est utilisée uniquement pour les tests; vous allez la remplacer par une valeur dynamique avant de publier votre application.
+8.  Assign the `MyAdUnitId` property to the test value provided in [Test mode values](test-mode-values.md). This value is used only used for testing; you will replace it with a live value before you publish your app.
 
     ``` syntax
     var MyAdUnitId = "11389925";
     ```
 
-9.  Générez et testez votre application pour vérifier qu’elle affiche les publicités de test.
+9.  Build and test your app to confirm it is showing test ads.
 
 <span id="interstitialadsdirectx10"/>
-### Spots publicitaires (C++ et DirectX avec XAML interop)
+### Interstitial ads (C++ and DirectX with XAML interop)
 
-Cet exemple part du principe que vous avez créé un projet d’application universelle pour XAML dans VisualStudio2015 et que vous ciblez une architectureUC spécifique.
+This sample assumes you have created a Universal App project for XAML in Visual Studio 2015 and are targeting a specific CPU architecture.
 
-> **Important** Ce code est écrit enC++ comme le requiert DirectX.
+> **Important**   This code is written in C++ as required for DirectX.
 
  
-1. Ouvrez votre projet dans VisualStudio.
-1.  Dans **Gestionnaire de références**, sélectionnez l’une des références suivantes en fonction de votre type de projet:
+1. Open your project in Visual Studio.
+1.  In **Reference Manager**, select one of the following references depending on your project type:
 
-    -   Pour un projet de plateforme Windows universelle (UWP): développez **Windows universel**, cliquez sur **Extensions**, puis cochez la case en regard de **Kit de développement logiciel (SDK) Microsoft Advertising pour XAML** (version10.0).
+    -   For a Universal Windows Platform (UWP) project: Expand **Universal Windows**, click **Extensions**, and then select the check box next to **Microsoft Advertising SDK for XAML** (Version 10.0).
 
-    -   Pour un projet Windows8.1: développez **Windows8.1**, cliquez sur **Extensions**, puis cochez la case en regard de **Kit de développement logiciel (SDK) Ad Mediator pour Windows8.1 XAML**. Cette option permet d’ajouter les bibliothèques de publicités et de médiateurs publicitaires Microsoft à votre projet, mais vous pouvez ignorer les bibliothèques de médiateurs publicitaires.
+    -   For a Windows 8.1 project: Expand **Windows 8.1**, click **Extensions**, and then select the check box next to **Ad Mediator SDK for Windows 8.1 XAML**. This option will add both the Microsoft advertising and ad mediator libraries to your project, but you can ignore the ad mediator libraries.
 
-    -   Pour un projet Windows Phone8.1: développez **Windows Phone8.1**, cliquez sur **Extensions**, puis cochez la case en regard de **Kit de développement logiciel (SDK) Ad Mediator pour Windows Phone8.1 XAML**. Cette option permet d’ajouter les bibliothèques de publicités et de médiateurs publicitaires Microsoft à votre projet, mais vous pouvez ignorer les bibliothèques de médiateurs publicitaires.
+    -   For a Windows Phone 8.1 project: Expand **Windows Phone 8.1**, click **Extensions**, and then select the check box next to **Ad Mediator SDK for Windows Phone 8.1 XAML**. This option will add both the Microsoft advertising and ad mediator libraries to your project, but you can ignore the ad mediator libraries.
 
-2.  Dans le fichier d’en-tête approprié de votre application, déclarez l’objet spot publicitaire ainsi que les propriétés/méthodes associées.
+2.  In the appropriate header file for your app, declare the interstitial ad object and related properties/methods.
 
     ``` syntax
     Microsoft::Advertising::WinRT::UI::InterstitialAd^ m_ia;
@@ -263,7 +260,7 @@ Cet exemple part du principe que vous avez créé un projet d’application univ
     void OnAdError (Object^ sender,  Microsoft::Advertising::WinRT::UI::AdErrorEventArgs^ args);
     ```
 
-3.  Déclarez les propriétés `AppId` et `AdUnitId`.
+3.  Declare your `AppId` and `AdUnitId` properties.
 
     ``` syntax
     #if WINDOWS_PHONE_APP
@@ -277,13 +274,13 @@ Cet exemple part du principe que vous avez créé un projet d’application univ
     #endif
     ```
 
-4.  Dans le fichier.cpp, ajoutez une référence d’espace de noms.
+4.  In the .cpp file, add a namespace reference.
 
     ``` syntax
     using namespace Microsoft::Advertising::WinRT::UI;
     ```
 
-5.  Instanciez une classe **InterstitialAd**, connectez tous les gestionnaires d’événements et demandez une publicité.
+5.  Instantiate an **InterstitialAd**, wire up all event handlers, and request an ad.
 
     ``` syntax
     // Instantiate an InterstitialAd.
@@ -304,7 +301,7 @@ Cet exemple part du principe que vous avez créé un projet d’application univ
     m_ia->RequestAd(AdType::Video, IA_APPID, IA_ADUNITID);
     ```
 
-6.  Dans le code, à l’emplacement où vous souhaitez afficher la publicité, vérifiez qu’elle est opérationnelle, puis affichez-la.
+6.  At the point in your code where the ad is to be shown, be sure the ad is ready, and show it.
 
     ``` syntax
     if ((InterstitialAdState::Ready == m_ia->State))
@@ -313,7 +310,7 @@ Cet exemple part du principe que vous avez créé un projet d’application univ
     }
     ```
 
-7.  Définissez et codez les événements.
+7.  Define and code up the events.
 
     ``` syntax
     void DirectXPage::OnAdReady(Object^ sender, Object^ args)
@@ -338,55 +335,55 @@ Cet exemple part du principe que vous avez créé un projet d’application univ
     }
     ```
 
-8.  Affectez la propriété `AppId` à la valeur de test indiquée dans [Valeurs du mode test](test-mode-values.md). Cette valeur est utilisée uniquement pour les tests; vous allez la remplacer par une valeur dynamique avant de publier votre application.
+8.  Assign the `AppId` property to the test value provided in [Test mode values](test-mode-values.md). This value is used only used for testing; you will replace it with a live value before you publish your app.
 
     ``` syntax
     static Platform::String^ IA_APPID = L"d25517cb-12d4-4699-8bdc-52040c712cab";
     ```
 
-9.  Affectez la propriété `AdUnitId` à la valeur de test indiquée dans [Valeurs du mode test](test-mode-values.md). Cette valeur est utilisée uniquement pour les tests; vous allez la remplacer par une valeur dynamique avant de publier votre application.
+9.  Assign the `AdUnitId` property to the test value provided in [Test mode values](test-mode-values.md). This value is used only used for testing; you will replace it with a live value before you publish your app.
 
     ``` syntax
     static Platform::String^ IA_ADUNITID = L"11389925";
     ```
 
-10. Générez et testez votre application pour vérifier qu’elle affiche les publicités de test.
+10. Build and test your app to confirm it is showing test ads.
 
-### Publier l’application avec des publicités dynamiques à l’aide du Centre de développement Windows
+### Release your app with live ads using Windows Dev Center
 
-1.  Dans le tableau de bord du Centre de développement, accédez à la page **Monétisation**&gt;**Monétiser avec des publicités** de votre application, puis [créez une unité Microsoft Advertising autonome](../publish/monetize-with-ads.md). Pour le type d’unité publicitaire, spécifiez **Spot vidéo**. Prenez note de l’ID d’unité publicitaire et de l’ID de l’application.
+1.  In the Dev Center dashboard, go to the **Monetization** &gt; **Monetize with ads** page for your app, and [create a standalone Microsoft Advertising unit](../publish/monetize-with-ads.md). For the ad unit type, specify **Video interstitial**. Make note of both the ad unit ID and the application ID.
 
-2.  Dans votre code, remplacez les valeurs de test de l’unité publicitaire par les valeurs dynamiques que vous avez générées dans le Centre de développement.
+2.  In your code, replace the test ad unit values with the live values you generated in Dev Center.
 
-3.  [Soumettez votre application](../publish/app-submissions.md) au WindowsStore à l’aide du tableau de bord du Centre de développement Windows.
+3.  [Submit your app](../publish/app-submissions.md) to the Store using the Windows Dev Center dashboard.
 
-4.  Passez en revue vos [rapports de performances des publicités](../publish/advertising-performance-report.md) dans le tableau de bord du Centre de développement.
+4.  Review your [advertising performance reports](../publish/advertising-performance-report.md) in the Dev Center dashboard.
 
 <span id="interstitialbestpractices10"/>
-## Meilleures pratiques Spots
+## Interstitial best practices
 
 
-Pour plus d’informations sur l’utilisation efficace des spots publicitaires, voir [Recommandations en matière d’expérience utilisateur et d’interface utilisateur](ui-and-user-experience-guidelines.md).
+For more information about how to use interstitial ads effectively, see [UI and user experience guidelines](ui-and-user-experience-guidelines.md).
 
 <span id="targetplatform10"/>
-## Supprimer des erreurs de référence: Cibler une plateformeUC spécifique (XAML et HTML)
+## Remove reference errors: target a specific CPU platform (XAML and HTML)
 
 
-Lorsque vous utilisez les bibliothèques de publicités Microsoft, vous ne pouvez pas cibler **TouteUC** dans votre projet. Si votre projet cible la plateforme **TouteUC**, vous pouvez voir un message d’avertissement dans votre projet une fois que vous avez ajouté une référence aux bibliothèques de publicités Microsoft. Pour supprimer cet avertissement, mettez à jour votre projet pour utiliser une sortie de génération propre à l’architecture (par exemple, **x86**). Pour plus d’informations, voir [Problèmes connus](known-issues-for-the-advertising-libraries.md).
+When using the Microsoft advertising libraries, you cannot target **Any CPU** in your project. If your project targets the **Any CPU** platform, you may see a warning in your project after you add a reference to the Microsoft advertising libraries. To remove this warning, update your project to use an architecture-specific build output (for example, **x86**). For more information, see [Known issues](known-issues-for-the-advertising-libraries.md).
 
-## Rubriques connexes
+## Related topics
 
 
-* [Exemple de code pour spot publicitaire en C#](interstitial-ad-sample-code-in-c.md)
-* [Exemple de code pour spot publicitaire en JavaScript](interstitial-ad-sample-code-in-javascript.md)
-* [Exemples de publicité sur GitHub](http://aka.ms/githubads)
-
- 
+* [Interstitial ad sample code in C#](interstitial-ad-sample-code-in-c.md)
+* [Interstitial ad sample code in JavaScript](interstitial-ad-sample-code-in-javascript.md)
+* [Advertising samples on GitHub](http://aka.ms/githubads)
 
  
 
+ 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Sep16_HO2-->
 
 

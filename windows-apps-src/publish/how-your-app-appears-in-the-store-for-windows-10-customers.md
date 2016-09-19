@@ -1,127 +1,127 @@
 ---
 author: jnHs
-Description: "Si vous avez déjà publié des applications pour Windows ou Windows Phone sur le Store, elles sont également disponibles pour les clients disposant d’appareils Windows 10."
-title: "Apparence de votre application dans le Store pour les clients dotés de Windows 10"
+Description: If you have previously published apps to the Store for either Windows or Windows Phone, those apps will be made available to customers on Windows 10 devices as well.
+title: How your app appears in the Store for Windows 10 customers
 ms.assetid: 487BB57E-F547-4764-99B1-84FE396E6D3A
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 5e8d25264a17307c61f4e8b1295ded3f920ee2cf
+ms.sourcegitcommit: fc7b0d7dd85e661e1688f4df3f67280c16eb6742
+ms.openlocfilehash: a3ecb8a4a1aebc719f8a8a4eb140776685f53b4e
 
 ---
 
-# Apparence de votre application dans le Store pour les clients dotés de Windows 10
+# How your app appears in the Store for Windows 10 customers
 
 
-Si vous avez déjà publié des applications pour Windows ou Windows Phone sur le Store, elles sont également disponibles pour les clients disposant d’appareils Windows 10. Comme le mode de présentation et de classement des applications a été modifié dans le Store pour les clients exécutant Windows10, cette rubrique décrit ces changements.
+If you have previously published apps to the Store for either Windows or Windows Phone, those apps will be made available to customers on Windows 10 devices as well. Since there are some changes in the way the Store presents and categorizes apps to customers running Windows 10, this topic will help you understand what may have changed.
 
-**Remarque** Si vous voulez modifier certains détails, [Créez une nouvelle soumission](app-submissions.md), apportez vos modifications, puis soumettez la mise à jour au Store.
+**Note**  If you want to change any of these details, [create a new submission](app-submissions.md) and make your changes, then submit the update to the Store.
 
  
 
-## Remarques relatives aux applications partageant des identités dans le Windows Store et dans le Windows Phone Store
+## Consideration for apps that shared identity in the Windows Store and Windows Phone Store
 
 
-Si vous avez utilisé le même nom réservé pour une application publiée dans les deux Stores (on parle également de partage d’identité de votre application), ces deux Stores considèrent qu’il existe une application, et non deux. Dans le tableau de bord, elles figurent sous la forme d’une seule application disponible en packages Windows et Windows Phone.
+If you have used the same reserved name for an app published to both Stores (often referred to as sharing your app’s identity), these will now be considered one app, not two. In the dashboard, you'll see them as a single app with Windows and Windows Phone packages.
 
-La plupart des développeurs définissent des prix et d’autres propriétés identiques pour l’application et tout produit in-app dans les deux Stores. Cependant, si certaines de ces valeurs diffèrent, vous devez absolument déterminer celles qui sont affichées pour les clients Windows 10.
+Most developers had set the same pricing and other properties for the app and any add-ons in each Store, but if some of these values were different, it's important to understand which ones are shown to your Windows 10 customers.
 
-### Tarification
-Si vous avez choisi des prix de base différents pour votre application ou produit in-app dans chaque Store, le prix de base proposé dans le Windows Store a la priorité.
+### Pricing
+If you had chosen different base prices for your app (or add-on) in each Store, the base price from the Windows Store is used.
 
-**Remarque** Si vous avez défini une tarification par marché dans le Windows Phone Store, les prix personnalisés s’affichent également au clients Windows 10.
+**Note**  If you had set per-market pricing in the Windows Phone Store, custom prices will also be shown to your Windows 10 customers.
 
-### Évaluation gratuite
-les options d’évaluation déféraient dans les deux anciens Stores. Ainsi, si vous les avez utilisés, il se peut que vous ayez choisi des options différentes pour chacun d’eux. L’option d’évaluation disponible pour les clients Windows 10 est déterminée d’après le tableau suivant.
+### Free trials
+Trial options were different in the two earlier Stores, so if you used them, it's possible that chose different options for each Store. The trial option available to your Windows 10 customers are determined based on the following table.
 
-| Application Windows 8       | Application Windows Phone   | Paramètre d’évaluation pour Windows 10                                                  |
+| Windows 8 app       | Windows Phone app   | Trial setting for Windows 10                                                  |
 |---------------------|---------------------|-------------------------------------------------------------------------------|
-| Aucune version d’évaluation gratuite       | Aucune version d’évaluation gratuite       | Aucune version d’évaluation gratuite                                                                 |
-| Aucune version d’évaluation gratuite       | La version d’évaluation n’expire jamais | Aucune version d’évaluation gratuite                                                                 |
-| La version d’évaluation n’expire jamais | La version d’évaluation n’expire jamais | La version d’évaluation n’expire jamais                                                           |
-| La version d’évaluation n’expire jamais | Aucune version d’évaluation gratuite       | Aucune version d’évaluation gratuite                                                                 |
-| Version d’évaluation à durée limitée  | La version d’évaluation n’expire jamais | Aucune version d’évaluation gratuite disponible pour Windows Phone 8.1 et versions antérieures ; dans les autres cas, version d’évaluation à durée limitée |
-| Version d’évaluation à durée limitée  | Aucune version d’évaluation gratuite       | Aucune version d’évaluation gratuite disponible pour Windows Phone 8.1 et versions antérieures; dans les autres cas, version d’évaluation à durée limitée |
+| No free trial       | No free trial       | No free trial                                                                 |
+| No free trial       | Trial never expires | No free trial                                                                 |
+| Trial never expires | Trial never expires | Trial never expires                                                           |
+| Trial never expires | No free trial       | No free trial                                                                 |
+| Time-limited trial  | Trial never expires | No free trial on Windows Phone 8.1 and earlier; otherwise, time-limited trial |
+| Time-limited trial  | No free trial       | No free trial on Windows Phone 8.1 and earlier; otherwise, time-limited trial |
 
-### Marchés
-Votre application sera disponible pour les clients Windows 10, sur tous les marchés où vous avez déjà publié l’application. Cela s’applique même si vous avez sélectionné des marchés différents pour chaque Store.
+### Markets
+Your app will be available to Windows 10 customers in every market where you had previously published the app. This applies even if you had different market selections for each Store.
 
-### Catégories
-Si votre application s’affichait dans des catégories différentes dans les deux Stores, nous utilisons la catégorie du Windows Store comme nouvelle catégorie. Remarque : certaines catégories sont différentes dans le Store pour les clients Windows 10. Veillez donc à consulter le [tableau](#cat) ci-dessous.
+### Categories
+If your app appeared in different categories in the two Stores, we'll use the category from the Windows Store to determine its new category. Note that some categories are different in the Store for Windows 10 customers, so be sure to review the [table](#cat) below.
 
-### Évaluation de l’âge
-Si vous avez fourni des évaluations d’âge différentes, la plus stricte (l’âge le plus élevé) est utilisée.
+### Age rating
+If you provided different age ratings, the stricter (higher age) rating is used.
 
-### Politique de confidentialité
-Si votre application inclut une politique de confidentialité, c’est celle que vous avez fournie lors de la soumission de votre application Windows 8 qui s’affiche pour les clients Windows 10.
+### Privacy policy
+If your app has a privacy policy, the one you provided when submitting your Windows 8 app is shown to your Windows 10 customers as well.
 
-### Captures d’écran
-Nous récupérons toutes les captures d’écran que vous avez soumises, en affichant la version appropriée de celles-ci aux clients Windows 10, selon le type d’appareil qu’ils utilisent. Dans les rares cas où les langues prises en charge par votre application diffèrent selon le Store, certains clients peuvent voir une capture d’écran dans une autre langue, choisie de manière à représenter au mieux l’expérience dont ils profiteront lorsqu’ils achèteront l’application.
+### Screenshots
+We take all of the screenshots you've submitted and use the appropriate version to display to Windows 10 customers, based on the type of device they're using. In the rare case where your supported languages differ for each Store, some customers might see a screenshot from another language that best represents the experience they will get when buying the app.
 
-### Descriptions
-Nous nous efforçons de choisir la description la plus appropriée pour les clients Windows 10 en fonction de leur langue. Lorsque des descriptions sont disponibles à partir de plusieurs sources dans la même langue, la description de votre application du Windows Store est présentée aux clients Windows 10. Dans les rares cas où vos langues prises en charge diffèrent pour chaque Store, certains clients peuvent voir une description de votre application Windows Phone, s’il s’agit de la seule description que vous avez fournie dans cette langue.
+### Store listings
+We try to show the most appropriate Store listing to your Windows 10 customers, based on their language. When Store listings are available from more than one source in the same language, the listing fron your Windows Store app is shown to your Windows 10 customers. In the rare cases where your supported languages differ for each Store, some customers might see a Store listing from your Windows Phone app, if that is the only Store listing you provided in that language.
 
-Si vous voulez mettre à jour la description visible par vos clients Windows 10 afin de leur indiquer les expériences fonctionnant sur plusieurs appareils, vous pouvez le faire en mettant à jour la [description de votre application](create-app-descriptions.md). Les clients Windows 10 voient la description par défaut de votre application, mais vous pouvez également [créer des descriptions spécifiques de la plateforme](create-platform-specific-descriptions.md) si vous souhaitez que votre description diffère en fonction de la version du système d’exploitation.
+If you want to update the Store listing that your Windows 10 customers see to let them know about experiences that work across multiple devices, you can do this by updating [your app's description](create-app-store-listings.md). Customers on Windows 10 will see your app's default description, but you can also [create platform-specific Store listings](create-platform-specific-store-listings.md) if you want your Store listing to appear differently for customers on different OS versions.
 
-## Changements de catégorie
-
-
-Dans de nombreux cas, les nouvelles [catégories et sous-catégories](category-and-subcategory-table.md) associées aux applications et aux jeux sont les mêmes que celles du Store pour les version de système d’exploitation antérieure. Toutefois, quelques modifications ont été apportées. Consultez le tableau ci-dessous pour comprendre comment votre application est classée dans le Store pour les clients Windows 10, en fonction de sa catégorie précédente.
-
-**Remarque** Vous pouvez voir la nouvelle catégorie répertoriée dans le tableau de bord lorsque vous affichez la [catégorie de votre application](category-and-subcategory-table.md) dans la page [Propriétés de l’application](enter-app-properties.md) d’une soumission. Les clients consultant le Store sur des appareils Windows 10 voient votre application dans la nouvelle catégorie. En revanche, les clients consultant le Store à partir d’un système d’exploitation antérieur continuent de voir l’application dans sa catégorie d’origine.
+## Category changes
 
 
-**Changements de catégorie pour les applications Windows Phone :**
+In many cases, the new [categories and subcategories](category-and-subcategory-table.md) for apps and games are the same as they have been in the Store for previous OS versions. However, there have been a few changes. Review the table below to understand how your app is categorized in the Store for customers on Windows 10, based on its previous category.
 
-| Catégorie précédente                       | Nouvelle catégorie                  |
+**Note**  You'll see the new category listed in the dashboard when viewing your [app's category](category-and-subcategory-table.md) in the [App properties](enter-app-properties.md) page of a submission, and customers viewing the Store on Windows 10 devices will see your app in the new category. However, customers viewing the Store from an earlier operating system will continue to see the app listed in its original category.
+
+
+**Category changes for Windows Phone apps:**
+
+| Previous category                       | New category                  |
 |-----------------------------------------|-------------------------------|
-| Gouvernement + politique &gt; Commentaire   | Gouvernement et politique         |
-| Gouvernement + politique &gt; Questions juridiques | Gouvernement et politique         |
-| Gouvernement + politique &gt; Politique     | Gouvernement et politique         |
-| Gouvernement + politique &gt; Ressources    | Gouvernement et politique         |
-| Santé + forme &gt; Alimentation + nutrition  | Santé et bien-être              |
-| Santé + forme &gt; Forme           | Santé et bien-être              |
-| Santé + forme &gt; Santé            | Santé et bien-être              |
-| Loisirs &gt; Art + divertissement      | Loisirs                     |
-| Loisirs &gt; Sorties              | Loisirs                     |
-| Loisirs &gt; Gastronomie + restaurants            | Alimentation et cuisine                 |
-| Loisirs &gt; Achats                 | Achats                      |
-| Actualités + météo &gt; Niveau international       | Actualités et météo                |
-| Actualités + météo &gt; Niveaux local + national    | Actualités et météo                |
-| Utilitaires + productivité                | Utilitaires + outils             |
-| Voyages + navigation                     | Voyage                        |
-| Voyages + navigation &gt; Planification       | Voyage                        |
-| Voyages + navigation &gt; Outils          | Voyage                        |
-| Voyages + navigation &gt; Déplacements avec des enfants      | Enfants + famille &gt; Voyages     |
-| Voyages + navigation &gt; Langue       | Formation &gt; Langue       |
-| Voyages + navigation &gt; Mappage        | Navigation et cartes             |
-| Voyages + navigation &gt; Navigation     | Navigation et cartes             |
-| Jeux &gt; Classiques                     | Jeux &gt; Action + aventure |
-| Jeux &gt; Famille                       | Jeux &gt; Famille + enfants      |
-| Jeux &gt; Sports + loisirs          | Jeux &gt; Sports             |
-| Jeux &gt; Stratégie + simulation        | Jeux &gt; Stratégie           |
+| Government + politics &gt; commentary   | Government + politics         |
+| Government + politics &gt; legal issues | Government + politics         |
+| Government + politics &gt; politics     | Government + politics         |
+| Government + politics &gt; resources    | Government + politics         |
+| Health + fitness &gt; diet + nutrition  | Health + fitness              |
+| Health + fitness &gt; fitness           | Health + fitness              |
+| Health + fitness &gt; health            | Health + fitness              |
+| Lifestyle &gt; art + entertainment      | Lifestyle                     |
+| Lifestyle &gt; out + about              | Lifestyle                     |
+| Lifestyle &gt; food + dining            | Food + dining                 |
+| Lifestyle &gt; shopping                 | Shopping                      |
+| News + weather &gt; international       | News + weather                |
+| News + weather &gt; local + national    | News + weather                |
+| Utilities + productivity                | Utilities + tools             |
+| Travel + navigation                     | Travel                        |
+| Travel + navigation &gt; planning       | Travel                        |
+| Travel + navigation &gt; tools          | Travel                        |
+| Travel + navigation &gt; with kids      | Kids + family &gt; travel     |
+| Travel + navigation &gt; language       | Education &gt; Language       |
+| Travel + navigation &gt; mapping        | Navigation + maps             |
+| Travel + navigation &gt; navigation     | Navigation + maps             |
+| Games &gt; classics                     | Games &gt; Action + adventure |
+| Games &gt; family                       | Games &gt; Family + kids      |
+| Games &gt; sports + recreation          | Games &gt; Sports             |
+| Games &gt; strategy + simulation        | Games &gt; Strategy           |
 
  
 
-**Changements de catégorie pour les applications Windows 8:**
+**Category changes for Windows 8 apps:**
 
-| Catégorie précédente           | Nouvelle catégorie                         |
+| Previous category           | New category                         |
 |-----------------------------|--------------------------------------|
-| Livres + référence &gt; Enfants | Enfants + famille &gt; Livres + référence |
-| Musique + vidéos &gt; Vidéo   | Photo et vidéo                        |
-| Musique + vidéos &gt; Musique   | Musique                                |
-| Gouvernement                  | Gouvernement + politique                |
-| Finance                     | Finances personnelles                     |
-| Jeux &gt; Action           | Jeux &gt; Action + aventure        |
-| Jeux &gt; Aventure        | Jeux &gt; Action + aventure        |
-| Jeux &gt; Arcade           | Jeux &gt; Action + aventure        |
-| Jeux &gt; Jeux de cartes             | Jeux &gt; Jeux de cartes + plateau              |
-| Jeux &gt; Enfants             | Jeux &gt; Famille + enfants             |
-| Jeux &gt; Famille           | Jeux &gt; Famille + enfants             |
-| Jeux &gt; Puzzles           | Jeux &gt; Puzzles + jeux d’esprit           |
-| Jeux &gt; Course           | Jeux &gt; Course + vol           |
+| Books + Reference &gt; Kids | Kids + family &gt; Books + reference |
+| Music + Videos &gt; Video   | Photo + video                        |
+| Music + Videos &gt; Music   | Music                                |
+| Government                  | Government + politics                |
+| Finance                     | Personal Finance                     |
+| Games &gt; Action           | Games &gt; Action + adventure        |
+| Games &gt; Adventure        | Games &gt; Action + adventure        |
+| Games &gt; Arcade           | Games &gt; Action + adventure        |
+| Games &gt; Card             | Games &gt; Card + board              |
+| Games &gt; Kids             | Games &gt; Family + kids             |
+| Games &gt; Family           | Games &gt; Family + kids             |
+| Games &gt; Puzzle           | Games &gt; Puzzle + trivia           |
+| Games &gt; Racing           | Games &gt; Racing + flying           |
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

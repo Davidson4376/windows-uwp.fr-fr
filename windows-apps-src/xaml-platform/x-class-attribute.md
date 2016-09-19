@@ -1,21 +1,21 @@
 ---
 author: jwmsft
-description: "Configure la compilation XAML afin de joindre des classes partielles entre le balisage et le code-behind. La classe partielle du code est définie dans un fichier de code distinct et la classe partielle de balisage est créée par la génération du code lors de la compilation XAML."
-title: Attribut x&#58;Class
+description: Configures XAML compilation to join partial classes between markup and code-behind. The code partial class is defined in a separate code file, and the markup partial class is created by code generation during XAML compilation.
+title: xClass attribute
 ms.assetid: 40A7C036-133A-44DF-9D11-0D39232C948F
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 83267df025baeb802bfdd0ec03ecd3bf7b01db76
+ms.sourcegitcommit: 3144758352b99f8c145a3c7be8a6c43d6a002104
+ms.openlocfilehash: 1d04755cc9a2b7689d5373772803b6697227b18a
 
 ---
 
-# Attribut x&#58;Class
+# x:Class attribute
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Configure la compilation XAML afin de joindre des classes partielles entre le balisage et le code-behind. La classe partielle du code est définie dans un fichier de code distinct et la classe partielle de balisage est créée par la génération du code lors de la compilation XAML.
+Configures XAML compilation to join partial classes between markup and code-behind. The code partial class is defined in a separate code file, and the markup partial class is created by code generation during XAML compilation.
 
-## Utilisation des attributs XAML
+## XAML attribute usage
 
 
 ``` syntax
@@ -24,28 +24,28 @@ Configure la compilation XAML afin de joindre des classes partielles entre le ba
 </object>
 ```
 
-## Valeurs XAML
+## XAML values
 
-| Terme | Description |
+| Term | Description |
 |------|-------------|
-| namespace | Facultatif. Spécifie un espace de noms qui contient la classe partielle identifiée par _classname_. Si _namespace_ est spécifié, un point (.) sépare _namespace_ et _classname_. Si _namespace_ est omis, _classname_ est considéré comme n’ayant pas d’espace de noms. |
-| classname | Obligatoire. Spécifie le nom de la classe partielle qui connecte le code XAML chargé et votre code-behind pour ce code XAML. | 
+| namespace | Optional. Specifies a namespace that contains the partial class identified by _classname_. If _namespace_ is specified, a dot (.) separates _namespace_ and _classname_. If _namespace_ is omitted, _classname_ is assumed to have no namespace. |
+| classname | Required. Specifies the name of the partial class that connects the loaded XAML and your code-behind for that XAML. | 
 
-## Remarques
+## Remarks
 
-Il est possible de déclarer **x:Class** en tant qu’attribut pour un élément qui est la racine d’une arborescence d’objets/d’un fichier XAML et qui est compilé par des actions de génération, ou pour la racine de la classe [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) dans la définition d’application d’une application compilée. La déclaration de **x:Class** sur un élément autre qu’une racine de page ou une racine d’application, et dans toutes les circonstances pour un fichier XAML qui n’est pas compilé avec l’action de génération **Page**, engendre une erreur au moment de la compilation.
+**x:Class** can be declared as an attribute for any element that is the root of a XAML file/object tree and is being compiled by build actions, or for the [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) root in the application definition of a compiled application. Declaring **x:Class** on any element other than a root node, and under any circumstances for a XAML file that is not compiled with the **Page** build action, results in a compile-time error.
 
-La classe utilisée en tant que **x:Class** ne peut pas être une classe imbriquée.
+The class used as **x:Class** cannot be a nested class.
 
-La valeur de l’attribut **x:Class** doit être une chaîne qui spécifie le nom qualifié complet d’une classe. Vous pouvez omettre les informations relatives à l’espace de noms tant qu’il s’agit de la manière dont le code-behind est également structuré (votre définition de classe démarre au niveau de la classe). Le fichier code-behind d’une définition de page ou d’application doit se trouver dans un fichier de code inclus dans le cadre du projet. La classe code-behind doit être publique. La classe code-behind doit être partielle.
+The value of the **x:Class** attribute must be a string that specifies the fully qualified name of a class. You can omit namespace information so long as that is how the code-behind is structured also (your class definition starts at the class level). The code-behind file for a page or application definition must be within a code file that is included as part of the project. The code-behind class must be public. The code-behind class must be partial.
 
-## Règle du langage CLR
+## CLR language rules
 
-Bien que votre fichier code-behind puisse être un fichier C++, il existe certaines conventions qui suivent quand même la forme du langage CLR, afin qu’il n’y ait aucune différence dans la syntaxe XAML. En particulier, le séparateur entre l’espace de noms et les composants de nom de classe d’une valeur **x:Class** est toujours un point (« . »), même si le séparateur entre l’espace de noms et le nom de classe dans le fichier de code C++ associé au XAML est « :: ». Si vous déclarez des espaces de noms imbriqués en C++, le séparateur entre les chaînes d’espaces de noms imbriquées successives doit être également « . » plutôt que « :: » quand vous spécifiez la partie *namespace* de la valeur **x:Class**.
-
-
+Although your code-behind file can be a C++ file, there are certain conventions that still follow the CLR language form, so that there is no difference in the XAML syntax. In particular, the separator between the namespace and classname components of any **x:Class** value is always a dot ("."), even though the separator between namespace and classname in the C++ code file associated with the XAML is "::". If you declare nested namespaces in C++, then the separator between the successive nested namespace strings should also be "." rather than "::" when you specify the *namespace* part of the **x:Class** value.
 
 
-<!--HONumber=Jun16_HO4-->
+
+
+<!--HONumber=Aug16_HO3-->
 
 

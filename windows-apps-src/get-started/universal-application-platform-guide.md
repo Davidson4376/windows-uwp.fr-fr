@@ -1,11 +1,11 @@
 ---
 author: TylerMSFT
 title: Guide des applications de plateforme Windows universelle (UWP)
-description: "Ce guide décrit les applications de plateforme Windows universelle (UWP) qui peuvent s’exécuter sur un vaste éventail d’appareils."
+description: "Découvrez les applications de plateforme Windows universelle (UWP) qui peuvent s’exécuter sur un vaste éventail d’appareils."
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
 translationtype: Human Translation
-ms.sourcegitcommit: 4ad8dc5883b7edafa2c2579d3733eafba0b9cc1f
-ms.openlocfilehash: 8f4e906c9f1c685a5f6aeebd5fe0ebcc96ff9a7c
+ms.sourcegitcommit: 2df873ad451e2bb1196a1ce42e3fcd40f8c3ac8e
+ms.openlocfilehash: 925db2c5242eb49229f41298f1db4e2653f3499d
 
 ---
 
@@ -34,7 +34,7 @@ Windows 10 introduit la plateforme Windows universelle (UWP), qui développe le 
 
 Les applications Windows 8.1 et Windows Phone 8.1 ciblent un système d’exploitation (SE) : Windows ou Windows Phone. Avec Windows 10, votre application ne cible plus un système d’exploitation, mais une ou plusieurs familles d’appareils. Une famille d’appareils identifie les API, les caractéristiques système et les comportements que vous pouvez attendre sur les différents appareils de cette famille. Elle détermine également l’ensemble des appareils sur lesquels votre application peut être installée à partir du Store. Voici la hiérarchie des familles d’appareils.
 
-![Familles d’appareils](images/devicefamilytree.png)
+![Familles d’appareils](images/device-family-tree.png)
 
 Une famille d’appareils est un ensemble d’API regroupées, doté d’un nom et d’un numéro de version. Une famille d’appareils constitue le fondement d’un SE. Les PC exécutent la version bureau du système d’exploitation, qui est basée sur la famille d’appareils de bureau. Les téléphones, tablettes, etc., exécutent la version mobile du système d’exploitation, qui est basée sur la famille d’appareils mobiles. Et ainsi de suite.
 
@@ -51,6 +51,8 @@ La décision relative aux familles d’appareils que votre application cible vou
 -   Les appareils sur lesquels votre application peut être installée à partir du Store (et par conséquent les facteurs de forme que vous devez prendre en considération).
 
 Le choix d’une famille d’appareils a deux conséquences principales : la surface d’API qui peut être appelée de façon inconditionnelle par l’application et le nombre d’appareils que l’application peut atteindre. Ces deux facteurs impliquent des compromis et inversement proportionnels. Par exemple, une application UWP est une application qui cible spécifiquement la famille d’appareils universelle et qui est donc disponible pour tous les appareils. Une application qui cible la famille d’appareils universelle peut supposer la présence uniquement des API de la famille d’appareils universelle (parce que c’est ce qu’elle cible). Les autres API doit être appelées de manière conditionnelle. En outre, une telle application doit avoir une interface utilisateur hautement adaptative et des capacités d’entrée complètes, car elle peut s’exécuter sur un vaste éventail d’appareils. Une application mobile Windows est une application qui cible spécifiquement la famille d’appareils mobiles, et est disponible pour les appareils dont le système d’exploitation est basé sur la famille d’appareils mobiles (incluant les téléphones, tablettes et autres appareils similaires). Une application de la famille d’appareils mobiles peut supposer la présence de toutes les API de la famille d’appareils mobiles, et son interface utilisateur doit être moyennement adaptative. Une application qui cible la famille d’appareils IoT ne peut être installée que sur des appareils IoT, et peut supposer la présence de toutes les API de la famille d’appareils IoT. Cette application peut être très spécialisée au niveau de son interface utilisateur et de ses fonctionnalités d’entrée, car vous savez qu’elle doit s’exécuter uniquement sur un type spécifique d’appareil.
+
+<iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-UWP-and-Device-Families/player" width="640" height="360" allowFullScreen frameBorder="0"></iframe>
 
 Voici quelques aspects à prendre en considération pour choisir la famille d’appareils à cibler :
 
@@ -280,12 +282,8 @@ Le nouveau tableau de bord unifié du Centre de développement Windows vous perm
 
 Pour savoir comment soumettre vos applications en vue de leur publication dans le Windows Store, voir [Utilisation du nouveau tableau de bord unifié du Centre de développement Windows](../publish/using-the-windows-dev-center-dashboard.md).
 
- 
-
- 
 
 
-
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

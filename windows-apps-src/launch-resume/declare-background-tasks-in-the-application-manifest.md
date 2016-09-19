@@ -1,37 +1,40 @@
 ---
 author: TylerMSFT
-title: "Déclarer des tâches en arrière-plan dans le manifeste de l’application"
-description: "Activez l’utilisation des tâches en arrière-plan en les déclarant comme extensions dans le manifeste de l’application."
+title: Declare background tasks in the application manifest
+description: Enable the use of background tasks by declaring them as extensions in the app manifest.
 ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
 translationtype: Human Translation
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: d7dbdab0e8d404e6607585045d49bb3dd1407de6
+ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
+ms.openlocfilehash: 6ec298a956673c114d34d64b026394ece2c33506
 
 ---
 
-# Déclarer des tâches en arrière-plan dans le manifeste de l’application
+# Declare background tasks in the application manifest
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**API importantes**
+**Important APIs**
 
--   [**Schéma BackgroundTasks**](https://msdn.microsoft.com/library/windows/apps/br224794)
+-   [**BackgroundTasks Schema**](https://msdn.microsoft.com/library/windows/apps/br224794)
 -   [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)
 
-Activez l’utilisation des tâches en arrière-plan en les déclarant comme extensions dans le manifeste de l’application.
+Enable the use of background tasks by declaring them as extensions in the app manifest.
 
-Les tâches en arrière-plan doivent être déclarées dans le manifeste de l’application. Autrement, votre application n’est pas en mesure de les inscrire (une exception est levée). De plus, les tâches en arrière-plan doivent être déclarées dans le manifeste de l’application pour réussir la certification.
+> [!Important]
+>  This article is specific to background tasks that run in a separate process. Single-process background tasks are not declared in the manifest.
 
-Cette rubrique suppose que vous avez créé une ou plusieurs classes de tâche en arrière-plan et que votre application inscrit chaque tâche en arrière-plan à exécuter en réponse à un déclencheur au minimum.
+Background tasks that run in a separate process must be declared in the app manifest or else your app will not be able to register them (an exception will be thrown). Additionally, background tasks must be declared in the application manifest to pass certification.
 
-## Ajouter manuellement les extensions
+This topic assumes you have a created one or more background task classes, and that your app registers each background task to run in response to at least one trigger.
+
+## Add Extensions Manually
 
 
-Ouvrez le manifeste de l’application (Package.appxmanifest) et accédez à l’élément Application. Créez un élément Extensions (s’il n’en existe pas).
+Open the application manifest (Package.appxmanifest) and go to the Application element. Create an Extensions element (if one doesn't already exist).
 
-L’extrait de code suivant provient de l’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666):
+The following snippet is taken from the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666):
 
 ```xml
 <Application Id="App"
@@ -52,60 +55,58 @@ L’extrait de code suivant provient de l’[exemple de tâche en arrière-plan]
  </Application>
 ```
 
-## Ajouter une extension de tâche en arrière-plan
+## Add a Background Task Extension
 
 
-Déclarez votre première tâche en arrière-plan.
+Declare your first background task.
 
-Copiez ce code dans l’élément Extensions (vous ajouterez des attributs aux étapes suivantes).
+Copy this code into the Extensions element (you will add attributes in the following steps).
 
 ```xml
-      <Extensions>
-        <Extension Category="windows.backgroundTasks" EntryPoint="">
-          <BackgroundTasks>
-            <Task Type="" />
-          </BackgroundTasks>
-        </Extension>
-      </Extensions>
+<Extensions>
+    <Extension Category="windows.backgroundTasks" EntryPoint="">
+      <BackgroundTasks>
+        <Task Type="" />
+      </BackgroundTasks>
+    </Extension>
+</Extensions>
 ```
 
-1.  Modifiez l’attribut EntryPoint afin que votre code utilise la même chaîne comme point d’entrée lors de l’inscription de votre tâche en arrière-plan (**namespace.classname**).
+1.  Change the EntryPoint attribute to have the same string used by your code as the entry point when registering your background task (**namespace.classname**).
 
-    Dans cet exemple, le point d’entrée est ExampleBackgroundTaskNameSpace.ExampleBackgroundTaskClassName:
+    In this example, the entry point is ExampleBackgroundTaskNameSpace.ExampleBackgroundTaskClassName:
 
-    ```xml
-          <Extensions>
-            <Extension Category="windows.backgroundTasks" EntryPoint="Tasks.ExampleBackgroundTaskClassName">
-              <BackgroundTasks>
-                <Task Type="" />
-              </BackgroundTasks>
-            </Extension>
-          </Extensions>
-    ```
+```xml
+<Extensions>
+    <Extension Category="windows.backgroundTasks" EntryPoint="Tasks.ExampleBackgroundTaskClassName">
+       <BackgroundTasks>
+         <Task Type="" />
+       </BackgroundTasks>
+    </Extension>
+</Extensions>
+```
 
-2.  Modifiez la liste de l’attribut Task Type pour indiquer le type d’inscription de tâche utilisé avec cette tâche en arrière-plan. Si la tâche en arrière-plan est inscrite avec plusieurs types de déclencheur, ajoutez des éléments Task et des attributs Type supplémentaires pour chacun d’eux.
+2.  Change the list of Task Type attribute to indicate the type of task registration used with this background task. If the background task is registered with multiple trigger types, add additional Task elements and Type attributes for each one.
 
-    **Remarque** Pensez impérativement à répertorier chaque type de déclencheur que vous utilisez, sans quoi la tâche en arrière-plan ne sera pas inscrite avec les types de déclencheur non déclarés (la méthode [**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) échouera et lèvera une exception).
+    **Note**  Make sure to list each of the trigger types you're using, or the background task will not register with the undeclared trigger types (the [**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) method will fail and throw an exception).
 
-    Cet extrait de code montre que des déclencheurs d’événements système et des notifications Push sont utilisés:
+    This snippet example indicates the use of system event triggers and push notifications:
 
-    ```xml
-                <Extension Category="windows.backgroundTasks" EntryPoint="Tasks.BackgroundTaskClass">
-                  <BackgroundTasks>
-                    <Task Type="systemEvent" />
-                    <Task Type="pushNotification" />
-                  </BackgroundTasks>
-                </Extension>
-    ```
-
-    > **Remarque** Normalement, une application s’exécute dans un processus spécial appelé BackgroundTaskHost.exe. Il est possible d’ajouter un élément Executable à l’élément Extension et de permettre ainsi à la tâche en arrière-plan de s’exécuter dans le contexte de l’application. Utilisez uniquement l’élément Executable avec les tâches en arrière-plan qui le requièrent, telles que [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).    
-
-## Ajouter des extensions de tâche en arrière-plan supplémentaires
+```xml
+<Extension Category="windows.backgroundTasks" EntryPoint="Tasks.BackgroundTaskClass">
+    <BackgroundTasks>
+        <Task Type="systemEvent" />
+        <Task Type="pushNotification" />
+    </BackgroundTasks>
+</Extension>
+```
 
 
-Répétez l’étape2 pour chaque classe de tâche en arrière-plan supplémentaire inscrite par votre application.
+## Add Additional Background Task Extensions
 
-L’exemple suivant représente l’élément Application complet de l’[exemple de tâche en arrière-plan]( http://go.microsoft.com/fwlink/p/?linkid=227509). Il illustre l’utilisation de deuxclasses de tâche en arrière-plan avec au total troistypes de déclencheur. Copiez la section Extensions de cet exemple et modifiez-la si nécessaire pour déclarer des tâches en arrière-plan dans le manifeste de l’application.
+Repeat step 2 for each additional background task class registered by your app.
+
+The following example is the complete Application element from the [background task sample]( http://go.microsoft.com/fwlink/p/?linkid=227509). This shows the use of 2 background task classes with a total of 3 trigger types. Copy the Extensions section of this example, and modify it as needed, to declare background tasks in your application manifest.
 
 ```xml
 <Applications>
@@ -146,14 +147,71 @@ L’exemple suivant représente l’élément Application complet de l’[exempl
 </Applications>
 ```
 
-## Rubriques connexes
+## Declare your background task to run in a different process
 
-* [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
-* [Inscrire une tâche en arrière-plan](register-a-background-task.md)
-* [Recommandations pour les tâches en arrière-plan](guidelines-for-background-tasks.md)
+New functionality in Windows 10, version 1507, allows you to run your background task in a different process than BackgroundTaskHost.exe (the process where background tasks run by default).  There are two options: run in the same process as your foreground application; run in an instance of BackgroundTaskHost.exe that is separate from other instances of background tasks from the same application.  
+
+### Run in the foreground application
+
+Here is example XML that declares a background task that runs in the same process as the foreground application. Note the `Executable` attribute:
+
+```xml
+<Extensions>
+    <Extension Category="windows.backgroundTasks" EntryPoint="ExecModelTestBackgroundTasks.ApplicationTriggerTask" Executable="$targetnametoken$.exe">
+        <BackgroundTasks>
+            <Task Type="systemEvent" />
+        </BackgroundTasks>
+    </Extension>
+</Extensions>
+```
+
+> [!Note]
+> Only use the Executable element with background tasks that require it, such as the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).  
+
+### Run in a different background host process
+
+Here is example XML that declares a background task that runs in a BackgroundTaskHost.exe process, but in a separate one than other instances of background tasks from the same app. Note the `ResourceGroup` attribute, which identifies which background tasks will run together.
+
+```xml
+<Extensions>
+    <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundTasks.SessionConnectedTriggerTask" ResourceGroup="foo">
+      <BackgroundTasks>
+        <Task Type="systemEvent" />
+      </BackgroundTasks>
+    </Extension>
+    <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundTasks.TimeZoneTriggerTask" ResourceGroup="foo">
+      <BackgroundTasks>
+        <Task Type="systemEvent" />
+      </BackgroundTasks>
+    </Extension>
+    <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundTasks.TimerTriggerTask" ResourceGroup="bar">
+      <BackgroundTasks>
+        <Task Type="timer" />
+      </BackgroundTasks>
+    </Extension>
+    <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundTasks.ApplicationTriggerTask" ResourceGroup="bar">
+      <BackgroundTasks>
+        <Task Type="general" />
+      </BackgroundTasks>
+    </Extension>
+    <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundTasks.MaintenanceTriggerTask" ResourceGroup="foobar">
+      <BackgroundTasks>
+        <Task Type="general" />
+      </BackgroundTasks>
+    </Extension>
+</Extensions>
+```
+
+
+## Related topics
+
+
+* [Debug a background task](debug-a-background-task.md)
+* [Register a background task](register-a-background-task.md)
+* [Guidelines for background tasks](guidelines-for-background-tasks.md)
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

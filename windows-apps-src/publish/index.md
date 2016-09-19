@@ -1,37 +1,37 @@
 ---
 author: jnHs
-Description: "Découvrez comment publier vos applications Windows dans le Windows Store."
+Description: See how to publish your Windows apps to the Windows Store.
 translationtype: Human Translation
-ms.sourcegitcommit: c13c51c26998fba4bf54c221905fc917ccac3035
-ms.openlocfilehash: ff3988998951ae8569dc6d8fd2f28ba19b509c6f
+ms.sourcegitcommit: fc7b0d7dd85e661e1688f4df3f67280c16eb6742
+ms.openlocfilehash: 3cc56e61be85e0938c5b923ae402ca1da881888d
 
 
 ---
 
-# Publier des applications Windows
+# Publish Windows apps
 
-Vous pouvez utiliser le tableau de bord du Centre de développement Windows pour publier vos applications dans le Windows Store. 
+You can use the Windows Dev Center dashboard to publish your apps to the Windows Store. 
 
-> **Remarque** Vous devez disposer d’un [compte de développeur](http://go.microsoft.com/fwlink/p/?LinkId=615100) pour accéder au tableau de bord du Centre de développement Windows et y publier des applications.
+> **Note** You must have a [developer account](http://go.microsoft.com/fwlink/p/?LinkId=615100) in order to access the Windows Dev Center dashboard and submit apps.
 
-Cette section contient des informations concernant la publication et la gestion de vos applications.
+This section contains info about publishing and managing your apps.
 
-| **Rubrique** | **Description** |
+| **Topic** | **Description** |
 |-----------|-----------------|
-| [Utilisation du tableau de bord du Centre de développement Windows](using-the-windows-dev-center-dashboard.md) | Découvrez [comment enregistrer un compte](opening-a-developer-account.md) et obtenir une vue d’ensemble des actions possibles dans le tableau de bord du Centre de développement. |
-| [Créer votre application en réservant un nom](create-your-app-by-reserving-a-name.md) | Découvrez comment réserver des noms et bénéficiez de suggestions pour choisir un nom exceptionnel pour votre application. |
-| [Soumissions d’application](app-submissions.md) | Une soumission d’application inclut les [informations de tarification et de disponibilité](set-app-pricing-and-availability.md), les [propriétés](enter-app-properties.md), la [classification en fonction de l’âge](age-ratings.md), les [packages](upload-app-packages.md) et la [description de l’application dans le Store](create-app-descriptions.md). Votre soumission passera par le [processus de certification](the-app-certification-process.md) avant d’être publiée dans le Windows Store. Parmi les fonctionnalités optionnelles que vous pouvez utiliser figurent: la [version d’évaluation de package](package-flights.md), le [test de la version bêta](beta-testing-and-targeted-distribution.md) et la [distribution d’applications métier directement aux entreprises](distribute-lob-apps-to-enterprises.md). |
-| [Soumissions des produits in-app](iap-submissions.md) | Découvrez comment publier des produits in-app par le biais du tableau de bord du Centre de développement Windows. |
-| [Monétisation à l’aide des publicités](monetize-with-ads.md) | Gérez votre utilisation des publicités, y compris les configurations de médiation publicitaire personnalisées et la publicité affiliée. |
-| [Gestion des applications et services](app-management-and-services.md) | Utilisez des services comme les notifications push, l’expérimentation et les cartes, et découvrez comment [visualiser les informations d’identité des applications](view-app-identity-details.md) et [réserver des noms d’application supplémentaires](manage-app-names.md). |
-| [Analyses](analytics.md) | Bénéficiez de données analytiques détaillées pour vos applications pour savoir où en sont vos applications: combien de clients vous avez atteint, la façon dont ils utilisent votre application et ce qu’ils en pensent. Vous obtenez également des informations sur l’intégrité de l’application, l’utilisation des publicités, etc. |
-| [Promotion des applications et implication des clients](app-promotion-and-customer-engagement.md) | Faites la promotion de votre application à l’aide de [campagnes publicitaires](create-an-ad-campaign-for-your-app.md), de [codes promotionnels](generate-promotional-codes.md), du [prix de vente](put-apps-and-iaps-on-sale.md), et bien plus encore. 
-| [Rémunération](getting-paid-apps.md) | Obtenez des informations sur la rémunération obtenue grâce à vos applications, vos produits in-app et Microsoft Advertising. |
-| [Politiques et code de conduite du Windows Store](https://msdn.microsoft.com/library/windows/apps/dn764939.aspx) | Cette section comprend les [politiques du Store](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx) et les critères de [qualité des applications](https://msdn.microsoft.com/library/windows/apps/mt652261.aspx) applicables au contenu et aux applications Windows, ainsi que le [Code de conduite](https://msdn.microsoft.com/library/windows/apps/dn764941.aspx) que doivent respecter les développeurs. |
+| [Using the Windows Dev Center dashboard](using-the-windows-dev-center-dashboard.md) | Learn [how to register for an account](opening-a-developer-account.md) and get an overview of what you can do in the Dev Center dashboard. |
+| [Create your app by reserving a name](create-your-app-by-reserving-a-name.md) | See how to reserve names and find suggestions for choosing a great app name. |
+| [App submissions](app-submissions.md) | An app submission includes [pricing and availability details](set-app-pricing-and-availability.md), [properties](enter-app-properties.md), [age ratings](age-ratings.md), [packages](upload-app-packages.md), and [Store listing details](create-app-store-listings.md). Your submission will go through the [certification process](the-app-certification-process.md) before it's published to the Store. Optional features you can use include [package flighting](package-flights.md), [beta testing](beta-testing-and-targeted-distribution.md), and [LOB distribution directly to enterprises](distribute-lob-apps-to-enterprises.md). |
+| [Add-on submissions](add-on-submissions.md) | Learn how to publish add-ons (in-app products) through the Windows Dev Center dashboard. |
+| [Monetize with ads](monetize-with-ads.md) | Manage your use of ads, including custom ad mediation configurations and affiliate advertising. |
+| [App management and services](app-management-and-services.md) | Use services like push notifications, experimentation, and maps, and see how to [view app identity details](view-app-identity-details.md) and [reserve additional app names](manage-app-names.md) |
+| [Analytics](analytics.md) | Get detailed analytic data for your apps to see how your apps are doing, from how many customers you've reached to how they're using your app and what they have to say about it. You can also find info on app health, ad usage, and more. |
+| [App promotion and customer engagement](app-promotion-and-customer-engagement.md) | Promote your app with [ad campaigns](create-an-ad-campaign-for-your-app.md), [promotional codes](generate-promotional-codes.md), [sale pricing](put-apps-and-add-ons-on-sale.md), and more. 
+| [Getting paid](getting-paid-apps.md) | Get details about receiving earnings from your apps, add-ons, and Microsoft Advertising. |
+| [Store Policies and Code of Conduct](https://msdn.microsoft.com/library/windows/apps/dn764939.aspx) | This section includes the [Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx) and [App Quality](https://msdn.microsoft.com/library/windows/apps/mt652261.aspx) criteria that apply to Windows apps and content, and the [Code of Conduct](https://msdn.microsoft.com/library/windows/apps/dn764941.aspx) that developers should follow. |
  
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

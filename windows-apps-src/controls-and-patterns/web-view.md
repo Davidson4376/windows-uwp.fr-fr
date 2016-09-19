@@ -6,20 +6,29 @@ ms.assetid: D3CFD438-F9D6-4B72-AF1D-16EF2DFC1BB1
 label: Web view
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: dd947d0b55dad56fdd6c684ae236f1c31ac8da86
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 5752e1a7f7ac358043ec99c8db07cbfda9c4cd37
 
 ---
-
 # Affichage web
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
 
 
 
 Un contrôle d’affichage web incorpore dans votre application une vue qui affiche le contenu web à l’aide du moteur de rendu Microsoft Edge. Des liens hypertexte peuvent également apparaître et fonctionner dans un contrôle d’affichage web.
 
-**API importantes**
+<div class="important-apis" >
+<b>API importantes</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/br227702"><strong>Classe WebView</strong></a></li>
+</ul>
 
--   [**Classe WebView**](https://msdn.microsoft.com/library/windows/apps/br227702)
+</div>
+</div>
+
+
+
 
 ## Est-ce le contrôle approprié?
 
@@ -307,11 +316,11 @@ Pour obtenir une image d’aperçu du contenu actuel de l’affichage web, utili
 
 Par défaut, le contenu de l’affichage web est hébergé sur le thread d’interface utilisateur sur les appareils de bureau et en dehors de celui-ci sur tous les autres appareils. Vous pouvez utiliser la propriété statique [**WebView.DefaultExecutionMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.defaultexecutionmode.aspx) pour obtenir le comportement de threading par défaut du client actuel. Si nécessaire, vous pouvez utiliser le constructeur [**WebView(WebViewExecutionMode)**](https://msdn.microsoft.com/library/windows/apps/xaml/dn932036.aspx) pour remplacer ce comportement. 
 
-> **Remarque** &nbsp;&nbsp;Des problèmes de performances peuvent se présenter lorsque du contenu est hébergé sur le thread d’interface utilisateur sur des appareils mobiles. Par conséquent, veillez à effectuer des tests sur tous les appareils cibles en cas de changement de la propriété DefaultExecutionMode.
+> **Remarque**&nbsp;&nbsp; Des problèmes de performances peuvent se présenter lorsque du contenu est hébergé sur le thread d’interface utilisateur sur des appareils mobiles. Par conséquent, veillez à effectuer des tests sur tous les appareils cibles en cas de changement de la propriété DefaultExecutionMode.
 
 Un affichage web qui héberge le contenu en dehors du thread d’interface utilisateur n’est pas compatible avec les contrôles parents qui nécessitent la propagation de mouvements entre le contrôle d’affichage web et le parent, tels que [**FlipView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flipview.aspx), [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.aspx) et les autres contrôles associés. Ces contrôles ne sont pas en mesure de recevoir des mouvements effectués dans l’affichage web hors thread. En outre, l’impression de contenu web hors thread n’est pas directement prise en charge: vous devez imprimer un élément avec le remplissage [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.aspx) à la place.
 
-## <span id="Recommendations"></span><span id="recommendations"></span><span id="RECOMMENDATIONS"></span>Recommandations
+## Recommandations
 
 
 -   Vérifiez que le site web chargé possède une mise en forme adaptée à l’appareil, et qu’il utilise des couleurs, une typographie et une navigation cohérentes avec le reste de votre application.
@@ -320,7 +329,7 @@ Un affichage web qui héberge le contenu en dehors du thread d’interface utili
 
 
 
-## <span id="related_topics"></span>Rubriques connexes
+## Rubriques connexes
 
 * [**Classe WebView**](https://msdn.microsoft.com/library/windows/apps/br227702)
  
@@ -333,6 +342,6 @@ Un affichage web qui héberge le contenu en dehors du thread d’interface utili
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

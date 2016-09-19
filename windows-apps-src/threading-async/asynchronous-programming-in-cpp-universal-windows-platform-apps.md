@@ -1,43 +1,43 @@
 ---
 author: TylerMSFT
 ms.assetid: 34C00F9F-2196-46A3-A32F-0067AB48291B
-description: "Cet article décrit la meilleure façon d’utiliser des méthodes asynchrones dans les extensions des composants Visual C++ (C++/CX) à l’aide de la classe task qui est définie dans l’espace de noms concurrency dans ppltasks.h."
-title: Programmation asynchrone en C++
+description: This article describes the recommended way to consume asynchronous methods in Visual C++ component extensions (C++/CX) by using the task class defined in the concurrency namespace in ppltasks.h.
+title: Asynchronous programming in C++
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: b0a3faa56249ccfe693438c1077b7500736f3ec5
+ms.openlocfilehash: 12fdf79cbf3a79e4789131d0da8eee978b82cdf8
 
 ---
 
-# Programmation asynchrone en C++
+# Asynchronous programming in C++
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Cet article décrit la meilleure façon d’utiliser des méthodes asynchrones dans les extensions des composants Visual C++ (C++/CX) à l’aide de la classe `task` qui est définie dans l’espace de noms `concurrency` dans ppltasks.h.
+This article describes the recommended way to consume asynchronous methods in Visual C++ component extensions (C++/CX) by using the `task` class that's defined in the `concurrency` namespace in ppltasks.h.
 
-## Types asynchrones de plateforme Windows universelle (UWP)
+## Universal Windows Platform (UWP) asynchronous types
 
-Les fonctionnalités de plateforme Windows universelle UWP comprennent un modèle bien défini pour l’appel de méthodes asynchrones, et fournissent les types dont vous avez besoin pour consommer de telles méthodes. Si le modèle asynchrone UWP ne vous est pas familier, lisez la rubrique [Programmation asynchrone][AsyncProgramming] avant de lire le reste de cet article.
+The Universal Windows Platform (UWP) features a well-defined model for calling asynchronous methods and provides the types that you need to consume such methods. If you are not familiar with the UWP asynchronous model, read [Asynchronous Programming][AsyncProgramming] before you read the rest of this article.
 
-Bien que vous puissiez consommer les API asynchrones UWP directement en C++, une approche plus judicieuse consiste à utiliser la [**classe task**][task-class] et ses types et fonctions associés, lesquels sont contenus dans l’espace de noms [**concurrency**][concurrencyNamespace] et définis dans `<ppltasks.h>`. Le type **concurrency::task** est un type à usage général, mais lorsque le commutateur du compilateur **/ZW**, requis pour les applications et composants de plateforme Windows universelle (UWP), est utilisé, la classe task encapsule les types asynchrones UWP, ce qui facilite les opérations suivantes :
+Although you can consume the asynchronous UWP APIs directly in C++, the preferred approach is to use the [**task class**][task-class] and its related types and functions, which are contained in the [**concurrency**][concurrencyNamespace] namespace and defined in `<ppltasks.h>`. The **concurrency::task** is a general-purpose type, but when the **/ZW** compiler switch—which is required for Universal Windows Platform (UWP) apps and components—is used, the task class encapsulates the UWP asynchronous types so that it's easier to:
 
--   chaîner plusieurs opérations asynchrones et synchrones
+-   chain multiple asynchronous and synchronous operations together
 
--   gérer des exceptions dans des chaînes de tâches
+-   handle exceptions in task chains
 
--   effectuer des annulations dans des chaînes de tâches
+-   perform cancellation in task chains
 
--   garantir que des tâches individuelles s’exécutent dans le contexte de thread ou le cloisonnement de threads approprié
+-   ensure that individual tasks run in the appropriate thread context or apartment
 
-Cet article fournit des indications de base sur la façon d’utiliser la classe **task** avec les API asynchrones UWP. Pour obtenir une documentation plus complète sur la classe **task** et ses méthodes associées, notamment [**create\_task**][createTask], voir [Parallélisme des tâches (runtime de concurrence)][taskParallelism]. Pour plus d’informations sur la façon de créer des méthodes publiques asynchrones destinées à être consommées par JavaScript ou d’autres langages compatibles avec UWP, voir [Création d’opérations asynchrones en C++ pour les applications Windows Runtime][createAsyncCpp].
+This article provides basic guidance about how to use the **task** class with the UWP asynchronous APIs. For more complete documentation about **task** and its related methods including [**create\_task**][createTask], see [Task Parallelism (Concurrency Runtime)][taskParallelism]. For more information about how to create asynchronous public methods for consumption by JavaScript or other UWP-compatible languages, see [Creating Asynchronous Operations in C++ for Windows Runtime apps][createAsyncCpp].
 
-## Consommation d’une opération asynchrone à l’aide d’une tâche
+## Consuming an async operation by using a task
 
-L’exemple suivant montre comment utiliser la classe task pour consommer une méthode **async** qui renvoie une interface [**IAsyncOperation**][IAsyncOperation] et dont l’opération produit une valeur. Voici les étapes de base à effectuer :
+The following example shows how to use the task class to consume an **async** method that returns an [**IAsyncOperation**][IAsyncOperation] interface and whose operation produces a value. Here are the basic steps:
 
-1.  Appelez la méthode `create_task` et passez-lui l’objet **IAsyncOperation^**.
+1.  Call the `create_task` method and pass it the **IAsyncOperation^** object.
 
-2.  Appelez la fonction membre [**task::then**][taskThen] sur la tâche et fournissez une expression lambda qui sera appelée quand l’opération asynchrone se terminera.
+2.  Call the member function [**task::then**][taskThen] on the task and supply a lambda that will be invoked when the asynchronous operation completes.
 
 
 ``` cpp
@@ -72,17 +72,17 @@ void App::TestAsync()
 }
 ```
 
-La tâche qui est créée et renvoyée par la fonction [**task::then**][taskThen] est appelée *continuation*. L’argument d’entrée (dans le cas présent) pour l’expression lambda fournie par l’utilisateur est le résultat que l’opération de la tâche produit quand elle se termine. C’est la même valeur que celle qui serait récupérée en appelant la méthode [**IAsyncOperation::GetResults**](https://msdn.microsoft.com/library/windows/apps/br206600) si vous utilisiez directement l’interface **IAsyncOperation**.
+The task that's created and returned by the [**task::then**][taskThen] function is known as a *continuation*. The input argument (in this case) to the user-provided lambda is the result that the task operation produces when it completes. It's the same value that would be retrieved by calling [**IAsyncOperation::GetResults**](https://msdn.microsoft.com/library/windows/apps/br206600) if you were using the **IAsyncOperation** interface directly.
 
-La méthode [**task::then**][taskThen] renvoie immédiatement un résultat, et son délégué ne s’exécute que quand le travail asynchrone se termine correctement. Dans cet exemple, si l’opération asynchrone entraîne la levée d’une exception, ou se termine dans l’état d’annulation suite à une demande d’annulation, la continuation ne s’exécute jamais. Nous expliquerons ultérieurement comment écrire des continuations qui s’exécutent même si la tâche précédente a été annulée ou a échoué.
+The [**task::then**][taskThen] method returns immediately, and its delegate doesn't run until the asynchronous work completes successfully. In this example, if the asynchronous operation causes an exception to be thrown, or ends in the canceled state as a result of a cancellation request, the continuation will never execute. Later, we’ll describe how to write continuations that execute even if the previous task was cancelled or failed.
 
-Bien que vous déclariez la variable de la tâche sur la pile locale, elle gère sa durée de vie de façon à ne pas être supprimée tant que toutes ses opérations ne sont pas terminées et que toutes les références à celle-ci ne sortent pas de l’étendue, même si la méthode retourne un résultat avant que les opérations soient terminées.
+Although you declare the task variable on the local stack, it manages its lifetime so that it is not deleted until all of its operations complete and all references to it go out of scope, even if the method returns before the operations complete.
 
-## Création d’une chaîne de tâches
+## Creating a chain of tasks
 
-Dans la programmation asynchrone, il est courant de définir une séquence d’opérations, également appelée *chaîne de tâches*, dans laquelle chaque continuation s’exécute uniquement si la précédente est terminée. Dans certains cas, la tâche précédente (aussi appelée *antécédent*) produit une valeur que la continuation accepte comme entrée. En utilisant la méthode [**task::then**][taskThen], vous pouvez créer des chaînes de tâches d’une manière intuitive et simple ; la méthode renvoie une valeur **task<T>**, où **T** est le type de retour de la fonction lambda. Vous pouvez composer plusieurs continuations dans une chaîne de tâches : `myTask.then(…).then(…).then(…);`
+In asynchronous programming, it's common to define a sequence of operations, also known as *task chains*, in which each continuation executes only when the previous one completes. In some cases, the previous (or *antecedent*) task produces a value that the continuation accepts as input. By using the [**task::then**][taskThen] method, you can create task chains in an intuitive and straightforward manner; the method returns a **task<T>** where **T** is the return type of the lambda function. You can compose multiple continuations into a task chain: `myTask.then(…).then(…).then(…);`
 
-Les chaînes de tâches sont particulièrement utiles lorsqu’une continuation crée une nouvelle opération asynchrone; une telle tâche est appelée «tâche asynchrone». L’exemple suivant illustre une chaîne de tâches comportant deux continuations. La tâche initiale acquiert le handle vers un fichier existant, et lorsque cette opération se termine, la première continuation démarre une nouvelle opération asynchrone pour supprimer le fichier. Lorsque l’opération se termine, la deuxième continuation s’exécute, et génère un message de confirmation.
+Task chains are especially useful when a continuation creates a new asynchronous operation; such a task is known as an asynchronous task. The following example illustrates a task chain that has two continuations. The initial task acquires the handle to an existing file, and when that operation completes, the first continuation starts up a new asynchronous operation to delete the file. When that operation completes, the second continuation runs, and outputs a confirmation message.
 
 ``` cpp
 #include <ppltasks.h>
@@ -102,38 +102,38 @@ void App::DeleteWithTasks(String^ fileName)
 }
 ```
 
-L’exemple précédent illustre quatre points importants :
+The previous example illustrates four important points:
 
--   La première continuation convertit l’objet [**IAsyncAction^**][IAsyncAction] en un type **task<void>** et renvoie l’objet **task**.
+-   The first continuation converts the [**IAsyncAction^**][IAsyncAction] object to a **task<void>** and returns the **task**.
 
--   La deuxième continuation n’effectue aucune gestion des erreurs, et par conséquent, prend **void** et non pas **task<void>** comme entrée. C’est une continuation basée sur les valeurs.
+-   The second continuation performs no error handling, and therefore takes **void** and not **task<void>** as input. It is a value-based continuation.
 
--   La deuxième continuation ne s’exécute pas tant que l’opération [**DeleteAsync**][deleteAsync] n’est pas terminée.
+-   The second continuation doesn't execute until the [**DeleteAsync**][deleteAsync] operation completes.
 
--   Étant donné que la deuxième continuation est basée sur les valeurs, si l’opération qui a été démarrée par l’appel à l’opération [**DeleteAsync**][deleteAsync] lève une exception, la deuxième continuation ne s’exécute pas du tout.
+-   Because the second continuation is value-based, if the operation that was started by the call to [**DeleteAsync**][deleteAsync] throws an exception, the second continuation doesn't execute at all.
 
-**Remarque** La création d’une chaîne de tâches est juste l’un des moyens d’utiliser la classe **task** pour composer des opérations asynchrones. Vous pouvez également composer des opérations en utilisant des opérateurs de jointure et de choix **&&** et **||**. Pour plus d’informations, voir [Parallélisme des tâches (runtime de concurrence)][taskParallelism].
+**Note**  Creating a task chain is just one of the ways to use the **task** class to compose asynchronous operations. You can also compose operations by using join and choice operators **&&** and **||**. For more information, see [Task Parallelism (Concurrency Runtime)][taskParallelism].
 
-## Types de retour de la fonction lambda et types de retour d’une tâche
+## Lambda function return types and task return types
 
-Dans une continuation de tâche, le type de retour de la fonction lambda est encapsulé dans un objet **task**. Si l’expression lambda retourne une valeur **double**, le type de la tâche de continuation est **task<double>**. Toutefois, l’objet task est conçu de façon à ne pas produire inutilement des types de retour imbriqués. Si une expression lambda retourne un **IAsyncOperation&lt;SyndicationFeed^&gt;^**, la continuation retourne un **task&lt;SyndicationFeed^&gt;**, et non un **task&lt;task&lt;SyndicationFeed^&gt;&gt;** ou **task&lt;IAsyncOperation&lt;SyndicationFeed^&gt;^&gt;^**. Ce processus, qui porte le nom de *désencapsulation asynchrone*, garantit également l’achèvement de l’opération asynchrone à l’intérieur de la continuation avant l’appel de la continuation suivante.
+In a task continuation, the return type of the lambda function is wrapped in a **task** object. If the lambda returns a **double**, then the type of the continuation task is **task<double>**. However, the task object is designed so that it doesn't produce needlessly nested return types. If a lambda returns an **IAsyncOperation<SyndicationFeed^>^**, the continuation returns a **task<SyndicationFeed^>**, not a **task<task<SyndicationFeed^>>** or **task<IAsyncOperation<SyndicationFeed^>^>^**. This process is known as *asynchronous unwrapping* and it also ensures that the asynchronous operation inside the continuation completes before the next continuation is invoked.
 
-Dans l’exemple précédent, notez que la tâche retourne un type **task<void>** en dépit du fait que l’expression lambda ait renvoyé un objet [**IAsyncInfo**][IAsyncInfo]. Le tableau suivant résume les conversions de types qui se produisent entre une fonction lambda et la tâche englobante :
+In the previous example, notice that the task returns a **task<void>** even though its lambda returned an [**IAsyncInfo**][IAsyncInfo] object. The following table summarizes the type conversions that occur between a lambda function and the enclosing task:
 
 | | |
 |--------------------------------------------------------|---------------------|
-| type de retour de la fonction lambda                                     | `.then` type de retour |
-| TResult                                                | tâche<TResult> |
-| IAsyncOperation<TResult>^                        | tâche<TResult> |
-| IAsyncOperationWithProgress&lt;TResult, TProgress&gt;^ | tâche<TResult> |
-|IAsyncAction^                                           | tâche<void>    |
-| IAsyncActionWithProgress<TProgress>^             |tâche<void>     |
-| tâche<TResult>                                    |tâche<TResult>  |
+| lambda return type                                     | `.then` return type |
+| TResult                                                | task<TResult> |
+| IAsyncOperation<TResult>^                        | task<TResult> |
+| IAsyncOperationWithProgress<TResult, TProgress>^ | task<TResult> |
+|IAsyncAction^                                           | task<void>    |
+| IAsyncActionWithProgress<TProgress>^             |task<void>     |
+| task<TResult>                                    |task<TResult>  |
 
 
-## Annulation de tâches
+## Canceling tasks
 
-Il est souvent conseillé de donner à l’utilisateur la possibilité d’annuler une opération asynchrone. Et dans certains cas, vous pouvez avoir besoin d’annuler une opération par programme depuis l’extérieur de la chaîne de tâches. Bien que chaque type de retour \***Async** ait une méthode [**Cancel**][IAsyncInfoCancel] qui hérite de l’objet [**IAsyncInfo**][IAsyncInfo], il est compliqué de l’exposer à des méthodes extérieures. Le meilleur moyen de prendre en charge l’annulation dans une chaîne de tâches consiste à utiliser un objet [**cancellation\_token\_source**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749985.aspx) pour créer un objet [**cancellation\_token**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749975.aspx), puis à transmettre le jeton au constructeur de la tâche initiale. Si une tâche asynchrone est créée avec un jeton d’annulation, et que la classe [**cancellation\_token\_source::cancel**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750076.aspx) est appelée, la tâche appelle automatiquement la méthode **Cancel** sur l’opération **IAsync\*** et transmet la demande d’annulation à sa chaîne de continuation. Le pseudo-code suivant présente l’approche de base.
+It is often a good idea to give the user the option to cancel an asynchronous operation. And in some cases you might have to cancel an operation programmatically from outside the task chain. Although each \***Async** return type has a [**Cancel**][IAsyncInfoCancel] method that it inherits from [**IAsyncInfo**][IAsyncInfo], it's awkward to expose it to outside methods. The preferred way to support cancellation in a task chain is to use a [**cancellation\_token\_source**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749985.aspx) to create a [**cancellation\_token**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749975.aspx), and then pass the token to the constructor of the initial task. If an asynchronous task is created with a cancellation token, and [**cancellation\_token\_source::cancel**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750076.aspx) is called, the task automatically calls **Cancel** on the **IAsync\*** operation and passes the cancellation request down its continuation chain. The following pseudocode demonstrates the basic approach.
 
 ``` cpp
 //Class member:
@@ -148,17 +148,17 @@ auto getFileTask2 = create_task(documentsFolder->GetFileAsync(fileName),
 //getFileTask2.then ...
 ```
 
-Lorsqu’une tâche est annulée, une exception [**task\_canceled**][taskCanceled] est propagée vers la chaîne de tâches. Les continuations basées sur les valeurs ne s’exécutent simplement pas, mais les continuations basées sur les tâches entraînent la levée d’une exception lorsque la méthode [**task::get**][taskGet] est appelée. Si vous avez une continuation de gestion des erreurs, assurez-vous qu’elle intercepte l’exception **task\_canceled** de manière explicite. (Cette exception n’est pas dérivée de [**Platform::Exception**](https://msdn.microsoft.com/library/windows/apps/xaml/hh755825.aspx).)
+When a task is canceled, a [**task\_canceled**][taskCanceled] exception is propagated down the task chain. Value-based continuations will simply not execute, but task-based continuations will cause the exception to be thrown when [**task::get**][taskGet] is called. If you have an error-handling continuation, make sure that it catches the **task\_canceled** exception explicitly. (This exception is not derived from [**Platform::Exception**](https://msdn.microsoft.com/library/windows/apps/xaml/hh755825.aspx).)
 
-L’annulation est coopérative. Si votre continuation effectue un travail de longue durée au-delà du simple appel de méthode UWP, il vous incombe de vérifier régulièrement l’état du jeton d’annulation et d’arrêter l’exécution s’il est annulé. Après avoir nettoyé toutes les ressources qui ont été allouées dans la continuation, appelez [**cancel\_current\_task**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749945.aspx) pour annuler la tâche et propager l’annulation à toutes les continuations basées sur les valeurs qui la suivent. Voici un autre exemple : vous pouvez créer une chaîne de tâches qui représente le résultat d’une opération [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/BR207871). Si l’utilisateur choisit le bouton **Cancel**, la méthode [**IAsyncInfo::Cancel**][IAsyncInfoCancel] n’est pas appelée. Au lieu de cela, l’opération réussit mais renvoie **nullptr**. La continuation peut tester le paramètre d’entrée et appeler **cancel\_current\_task** si l’entrée est **nullptr**.
+Cancellation is cooperative. If your continuation does some long-running work beyond just invoking a UWP method, then it is your responsibility to check the state of the cancellation token periodically and stop execution if it is canceled. After you clean up all resources that were allocated in the continuation, call [**cancel\_current\_task**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749945.aspx) to cancel that task and propagate the cancellation down to any value-based continuations that follow it. Here's another example: you can create a task chain that represents the result of a [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/BR207871) operation. If the user chooses the **Cancel** button, the [**IAsyncInfo::Cancel**][IAsyncInfoCancel] method is not called. Instead, the operation succeeds but returns **nullptr**. The continuation can test the input parameter and call **cancel\_current\_task** if the input is **nullptr**.
 
-Pour plus d’informations, voir [Annulation dans la bibliothèque de modèles parallèles](https://msdn.microsoft.com/library/windows/apps/xaml/dd984117.aspx)
+For more information, see [Cancellation in the PPL](https://msdn.microsoft.com/library/windows/apps/xaml/dd984117.aspx)
 
-## Gestion des erreurs dans une chaîne de tâches
+## Handling errors in a task chain
 
-Si vous voulez qu’une continuation s’exécute même si l’antécédent a été annulé ou a levé une exception, transformez la continuation en continuation basée sur les tâches en spécifiant l’entrée de sa fonction lambda en tant que type **task<TResult>** ou **task<void>** si la fonction lambda de la tâche précédente (antécédent) renvoie un objet [**IAsyncAction^**][IAsyncAction].
+If you want a continuation to execute even if the antecedent was canceled or threw an exception, then make the continuation a task-based continuation by specifying the input to its lambda function as a **task<TResult>** or **task<void>** if the lambda of the antecedent task returns an [**IAsyncAction^**][IAsyncAction].
 
-Pour gérer les erreurs et l’annulation dans une chaîne de tâches, il n’est pas nécessaire de transformer chaque continuation en continuation basée sur les tâches ou de placer chaque opération qui pourrait être déclenchée dans un bloc `try…catch`. Au lieu de cela, vous pouvez ajouter une continuation basée sur les tâches à la fin de la chaîne et gérer toutes les erreurs à cet emplacement. Toute exception, y compris une exception [**task\_canceled**][taskCanceled], se propage dans la chaîne de tâches et ignore toutes les continuations basées sur les valeurs, de sorte que vous pouvez la gérer dans la continuation de gestion des erreurs basée sur les tâches. Vous pouvez récrire l’exemple précédent pour utiliser une continuation de gestion des erreurs basée sur les tâches :
+To handle errors and cancellation in a task chain, you don't have to make every continuation task-based or enclose every operation that might throw within a `try…catch` block. Instead, you can add a task-based continuation at the end of the chain and handle all errors there. Any exception—this includes a [**task\_canceled**][taskCanceled] exception—will propagate down the task chain and bypass any value-based continuations, so that you can handle it in the error-handling task-based continuation. We can rewrite the previous example to use an error-handling task-based continuation:
 
 ``` cpp
 #include <ppltasks.h>
@@ -194,15 +194,15 @@ void App::DeleteWithTasksHandleErrors(String^ fileName)
 }
 ```
 
-Dans une continuation basée sur les tâches, nous appelons la fonction membre [**task::get**][taskGet] pour obtenir les résultats de la tâche. Nous devons toujours appeler **task::get** même si l’opération était un type [**IAsyncAction**][IAsyncAction] qui ne produit aucun résultat, car **task::get** obtient également toutes les exceptions qui ont été acheminées jusqu’à la tâche. Si la tâche d’entrée stocke une exception, celle-ci est levée lors de l’appel à **task::get**. Si vous n’appelez pas **task::get**, que vous n’utilisez pas de continuation basée sur les tâches à la fin de la chaîne ou que vous n’interceptez pas le type d’exception qui est levé, une exception **unobserved\_task\_exception** est levée quand toutes les références à la tâche ont été supprimées.
+In a task-based continuation, we call the member function [**task::get**][taskGet] to get the results of the task. We still have to call **task::get** even if the operation was an [**IAsyncAction**][IAsyncAction] that produces no result because **task::get** also gets any exceptions that have been transported down to the task. If the input task is storing an exception, it is thrown at the call to **task::get**. If you don't call **task::get**, or don't use a task-based continuation at the end of the chain, or don't catch the exception type that was thrown, then an **unobserved\_task\_exception** is thrown when all references to the task have been deleted.
 
-Interceptez uniquement les exceptions que vous pouvez gérer. Si votre application rencontre une erreur de laquelle vous ne pouvez pas récupérer, il est préférable de laisser l’application se bloquer plutôt que de laisser son exécution se poursuivre dans un état inconnu. En général, n’essayez pas non plus d’intercepter l’exception **unobserved\_task\_exception**. Cette exception est principalement destinée aux opérations de diagnostic. Quand une exception **unobserved\_task\_exception** est levée, elle indique généralement un bogue dans le code. La cause est souvent soit une exception qui doit être gérée, soit une exception irrécupérable qui est provoquée par une autre erreur dans le code.
+Only catch the exceptions that you can handle. If your app encounters an error that you can't recover from, it's better to let the app crash than to let it continue to run in an unknown state. Also, in general, don't attempt to catch the **unobserved\_task\_exception** itself. This exception is mainly intended for diagnostic purposes. When **unobserved\_task\_exception** is thrown, it usually indicates a bug in the code. Often the cause is either an exception that should be handled, or an unrecoverable exception that's caused by some other error in the code.
 
-## Gestion du contexte de thread
+## Managing the thread context
 
-L’interface utilisateur d’une application UWP s’exécute dans un thread unique cloisonné (STA). Une tâche dont l’expression lambda renvoie un objet [**IAsyncAction**][IAsyncAction] ou un objet [**IAsyncOperation**][IAsyncOperation] prend en charge le cloisonnement. Sauf spécification contraire, si la tâche est créée dans le thread unique cloisonné (STA), toutes les continuations qu’elle contient s’exécuteront également par défaut. En d’autres termes, l’ensemble de la chaîne de tâches hérite de la prise en charge du cloisonnement de la tâche parente. Ce comportement permet de simplifier les interactions avec les contrôles d’interface utilisateur, lesquels sont accessibles uniquement à partir du thread unique cloisonné (STA).
+The UI of a UWP app runs in a single-threaded apartment (STA). A task whose lambda returns either an [**IAsyncAction**][IAsyncAction] or [**IAsyncOperation**][IAsyncOperation] is apartment-aware. If the task is created in the STA, then all of its continuations will run also run in it by default, unless you specify otherwise. In other words, the entire task chain inherits apartment-awareness from the parent task. This behavior helps simplify interactions with UI controls, which can only be accessed from the STA.
 
-Par exemple, dans une application UWP, dans la fonction membre de toute classe représentant une page XAML, vous pouvez remplir un contrôle [**ListBox**](https://msdn.microsoft.com/library/windows/apps/BR242868) à partir d’une méthode [**task::then**][taskThen] sans avoir à utiliser l’objet [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/BR208211).
+For example, in a UWP app, in the member function of any class that represents a XAML page, you can populate a [**ListBox**](https://msdn.microsoft.com/library/windows/apps/BR242868) control from within a [**task::then**][taskThen] method without having to use the [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/BR208211) object.
 
 ``` cpp
 #include <ppltasks.h>
@@ -221,11 +221,11 @@ void App::SetFeedText()
 }
 ```
 
-Si une tâche ne renvoie pas un objet [**IAsyncAction**][IAsyncAction] ou un objet [**IAsyncOperation**][IAsyncOperation], c’est qu’elle ne prend pas en charge le cloisonnement et, par défaut, ses continuations sont exécutées sur le premier thread d’arrière-plan disponible.
+If a task doesn't return an [**IAsyncAction**][IAsyncAction] or [**IAsyncOperation**][IAsyncOperation], then it's not apartment-aware and, by default, its continuations are run on the first available background thread.
 
-Vous pouvez remplacer le contexte de thread par défaut pour n’importe quelle sorte de tâche en utilisant la surcharge de la fonction [**task::then**][taskThen] qui prend une classe [**task\_continuation\_context**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749968.aspx). Par exemple, dans certains cas, il peut être souhaitable de planifier la continuation d’une tâche prenant en charge le cloisonnement sur un thread d’arrière-plan. Si tel est le cas, vous pouvez transmettre la méthode [**task\_continuation\_context::use\_arbitrary**][useArbitrary] pour planifier le travail de la tâche sur le thread disponible suivant d’un multithread cloisonné. Cela peut améliorer les performances de la continuation, car son travail n’a pas besoin d’être synchronisé avec un autre travail qui se produit sur le thread d’interface utilisateur.
+You can override the default thread context for either kind of task by using the overload of [**task::then**][taskThen] that takes a [**task\_continuation\_context**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749968.aspx). For example, in some cases, it might be desirable to schedule the continuation of an apartment-aware task on a background thread. In such a case, you can pass [**task\_continuation\_context::use\_arbitrary**][useArbitrary] to schedule the task’s work on the next available thread in a multi-threaded apartment. This can improve the performance of the continuation because its work doesn't have to be synchronized with other work that's happening on the UI thread.
 
-L’exemple suivant montre quand il est utile de spécifier l’option [**task\_continuation\_context::use\_arbitrary**][useArbitrary], et comment le contexte de continuation par défaut est utile pour la synchronisation d’opérations simultanées sur des collections qui ne sont pas thread-safe. Dans ce code, nous parcourons en boucle une liste d’URL pour des flux RSS, et pour chaque URL, nous démarrons une opération asynchrone pour récupérer les données de flux. Nous ne pouvons pas contrôler l’ordre dans lequel les flux sont récupérés, et cela n’a pas vraiment d’importance. Quand chaque opération [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR210642) se termine, la première continuation accepte l’objet [**SyndicationFeed^**](https://msdn.microsoft.com/library/windows/apps/BR243485) et l’utilise pour initialiser un objet `FeedData^` défini par l’application. Chacune de ces opérations étant indépendante des autres, nous pouvons éventuellement accélérer le processus en spécifiant le contexte de continuation **task\_continuation\_context::use\_arbitrary**. Toutefois, une fois chaque objet `FeedData` initialisé, nous devons l’ajouter à une classe [**Vector**](https://msdn.microsoft.com/library/windows/apps/xaml/hh441570.aspx), qui n’est pas une collection thread-safe. Par conséquent, nous créons une continuation et spécifions [**task\_continuation\_context::use\_current**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750085.aspx) pour garantir que tous les appels à la méthode [**Append**](https://msdn.microsoft.com/library/windows/apps/BR206632) se produisent dans le même contexte de cloisonnement de threads unique d’application (ASTA, Application Single-Threaded Apartment). Étant donné que la méthode [**task\_continuation\_context::use\_default**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750085.aspx) est le contexte par défaut, nous n’avons pas besoin de la spécifier explicitement, mais nous le faisons par souci de clarté.
+The following example demonstrates when it's useful to specify the [**task\_continuation\_context::use\_arbitrary**][useArbitrary] option, and it also shows how the default continuation context is useful for synchronizing concurrent operations on non-thread-safe collections. In this code, we loop through a list of URLs for RSS feeds, and for each URL, we start up an async operation to retrieve the feed data. We can’t control the order in which the feeds are retrieved, and we don't really care. When each [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR210642) operation completes, the first continuation accepts the [**SyndicationFeed^**](https://msdn.microsoft.com/library/windows/apps/BR243485) object and uses it to initialize an app-defined `FeedData^` object. Because each of these operations is independent from the others, we can potentially speed things up by specifying the **task\_continuation\_context::use\_arbitrary** continuation context. However, after each `FeedData` object is initialized, we have to add it to a [**Vector**](https://msdn.microsoft.com/library/windows/apps/xaml/hh441570.aspx), which is not a thread-safe collection. Therefore, we create a continuation and specify [**task\_continuation\_context::use\_current**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750085.aspx) to ensure that all the calls to [**Append**](https://msdn.microsoft.com/library/windows/apps/BR206632) occur in the same Application Single-Threaded Apartment (ASTA) context. Because [**task\_continuation\_context::use\_default**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750085.aspx) is the default context, we don’t have to specify it explicitly, but we do so here for the sake of clarity.
 
 ``` cpp
 #include <ppltasks.h>
@@ -286,23 +286,23 @@ void App::InitDataSource(Vector<Object^>^ feedList, vector<wstring> urls)
 }
 ```
 
-Les tâches imbriquées, qui sont de nouvelles tâches créées à l’intérieur d’une continuation, n’héritent pas de la prise en charge du cloisonnement de la tâche initiale.
+Nested tasks, which are new tasks that are created inside a continuation, don't inherit apartment-awareness of the initial task.
 
-## Gestion des mises à jour de l’avancement
+## Handing progress updates
 
-Les méthodes qui prennent en charge [**IAsyncOperationWithProgress**](https://msdn.microsoft.com/library/windows/apps/br206594.aspx) ou [**IAsyncActionWithProgress**](https://msdn.microsoft.com/library/windows/apps/br206581.aspx) fournissent régulièrement des mises à jour de l’avancement pendant que l’opération est en cours, avant qu’elle ne se termine. Le signalement de l’avancement est indépendant de la notion de tâches et de continuations. Vous fournissez simplement le délégué pour la propriété [**Progress**](https://msdn.microsoft.com/library/windows/apps/br206594) de l’objet. Le délégué est généralement utilisé pour mettre à jour une barre de progression dans l’interface utilisateur.
+Methods that support [**IAsyncOperationWithProgress**](https://msdn.microsoft.com/library/windows/apps/br206594.aspx) or [**IAsyncActionWithProgress**](https://msdn.microsoft.com/library/windows/apps/br206581.aspx) provide progress updates periodically while the operation is in progress, before it completes. Progress reporting is independent from the notion of tasks and continuations. You just supply the delegate for the object’s [**Progress**](https://msdn.microsoft.com/library/windows/apps/br206594) property. A typical use of the delegate is to update a progress bar in the UI.
 
-## Rubriques connexes
+## Related topics
 
-* [Création d’opérations asynchrones en C++ pour des applications du Windows Store][createAsyncCpp]
-* [Informations de référence en matière de langage Visual C++](http://msdn.microsoft.com/library/windows/apps/hh699871.aspx)
-* [Programmation asynchrone][AsyncProgramming]
-* [Parallélisme des tâches (runtime d’accès concurrentiel)][taskParallelism]
-* [classe de tâche][task-class]
+* [Creating Asynchronous Operations in C++ for Windows Store apps][createAsyncCpp]
+* [Visual C++ Language Reference](http://msdn.microsoft.com/library/windows/apps/hh699871.aspx)
+* [Asynchronous Programming][AsyncProgramming]
+* [Task Parallelism (Concurrency Runtime)][taskParallelism]
+* [task class][task-class]
  
 <!-- LINKS -->
 [AsyncProgramming]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh464924.aspx> "AsyncProgramming"
-[concurrencyNamespace]: <https://msdn.microsoft.com/library/windows/apps/xaml/dd492819.aspx> "Espace de noms concurrency"
+[concurrencyNamespace]: <https://msdn.microsoft.com/library/windows/apps/xaml/dd492819.aspx> "Concurrency Namespace"
 [createTask]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh913025.aspx> "CreateTask"
 [createAsyncCpp]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh750082.aspx> "CreateAsync"
 [deleteAsync]: <https://msdn.microsoft.com/library/windows/apps/BR227199> "DeleteAsync"
@@ -311,14 +311,14 @@ Les méthodes qui prennent en charge [**IAsyncOperationWithProgress**](https://m
 [IAsyncInfo]: <https://msdn.microsoft.com/library/windows/apps/BR206587> "IAsyncInfo"
 [IAsyncInfoCancel]: <https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncinfo.cancel> "IAsyncInfoCancel"
 [taskCanceled]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh750106.aspx> "TaskCancelled"
-[task-class]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh750113.aspx> "Classe de tâche"
+[task-class]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh750113.aspx> "Task Class"
 [taskGet]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh750017.aspx> "TaskGet"
-[taskParallelism]: <https://msdn.microsoft.com/library/windows/apps/xaml/dd492427.aspx> "Parallélisme des tâches"
+[taskParallelism]: <https://msdn.microsoft.com/library/windows/apps/xaml/dd492427.aspx> "Task Parallelism"
 [taskThen]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh750044.aspx> "TaskThen"
 [useArbitrary]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh750036.aspx> "UseArbitrary"
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

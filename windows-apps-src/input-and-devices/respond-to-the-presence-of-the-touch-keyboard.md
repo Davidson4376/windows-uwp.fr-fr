@@ -1,80 +1,80 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "Découvrez comment personnaliser l’interface utilisateur de votre application lorsque le clavier tactile est affiché ou masqué."
-title: "Répondre à la présence du clavier tactile"
+Description: Learn how to tailor the UI of your app when showing or hiding the touch keyboard.
+title: Respond to the presence of the touch keyboard
 ms.assetid: 70C6130E-23A2-4F9D-88E7-7060062DA988
 label: Respond to the presence of the touch keyboard
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 417668a24c4a2ba28671b6fb0a4da74c0cfab341
+ms.openlocfilehash: 97a626aedff1b0915c845f151b16b3678e1cf977
 
 ---
 
-# Répondre à la présence du clavier tactile
+# Respond to the presence of the touch keyboard
 
-Découvrez comment personnaliser l’interface utilisateur de votre application lorsque le clavier tactile est affiché ou masqué.
+Learn how to tailor the UI of your app when showing or hiding the touch keyboard.
 
 
-**API importantes**
+**Important APIs**
 
 -   [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/br209185)
 -   [**InputPane**](https://msdn.microsoft.com/library/windows/apps/br242255)
 
 
 
-![clavier tactile en mode de disposition classique](images/touchkeyboard-standard.png)
+![the touch keyboard in default layout mode](images/touchkeyboard-standard.png)
 
-<sup>Clavier tactile en mode de disposition classique</sup>
+<sup>The\\ touch\\ keyboard\\ in\\ default\\ layout\\ mode</sup>
 
-Le clavier tactile permet l’entrée de texte pour les appareils qui prennent en charge les fonctions tactiles. Les contrôles de saisie de texte de la plateforme Windows universelle (UWP) appellent le clavier tactile par défaut quand un utilisateur appuie sur un champ d’entrée modifiable. Le clavier tactile reste généralement visible pendant que l’utilisateur navigue entre les contrôles d’un formulaire, mais ce comportement peut varier selon les autres types de contrôles que contient le formulaire.
+The touch keyboard enables text entry for devices that support touch. Universal Windows Platform (UWP) text input controls invoke the touch keyboard by default when a user taps on an editable input field. The touch keyboard typically remains visible while the user navigates between controls in a form, but this behavior can vary based on the other control types within the form.
 
-Pour prendre en charge le comportement de clavier tactile correspondant dans un contrôle de saisie de texte personnalisé qui ne dérive pas d’un contrôle de saisie de texte standard, vous devez utiliser la classe [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/br209185) pour exposer vos contrôles à Microsoft UI Automation et mettre en œuvre les modèles de contrôles UI Automation appropriés. Voir [Accessibilité du clavier](https://msdn.microsoft.com/library/windows/apps/mt244347) et [Homologues d’automation personnalisés](https://msdn.microsoft.com/library/windows/apps/mt297667).
+To support corresponding touch keyboard behavior in a custom text input control that does not derive from a standard text input control, you must use the [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/br209185) class to expose your controls to Microsoft UI Automation and implement the correct UI Automation control patterns. See [Keyboard accessibility](https://msdn.microsoft.com/library/windows/apps/mt244347) and [Custom automation peers](https://msdn.microsoft.com/library/windows/apps/mt297667).
 
-Une fois cette prise en charge ajoutée à votre contrôle personnalisé, vous pouvez répondre de manière appropriée à la présence du clavier tactile.
+Once this support has been added to your custom control, you can respond appropriately to the presence of the touch keyboard.
 
-**Éléments requis:  **
+**Prerequisites:  **
 
-Cette rubrique s’appuie sur l’article [Interactions avec le clavier](keyboard-interactions.md).
+This topic builds on [Keyboard interactions](keyboard-interactions.md).
 
-Vous devez posséder des connaissances de base sur les interactions avec le clavier standard, sur la gestion de la saisie au clavier et des événements de clavier et sur UI Automation.
+You should have a basic understanding of standard keyboard interactions, handling keyboard input and events, and UI Automation.
 
-Si vous débutez dans le développement d’applications de plateforme Windows universelle (UWP), consultez les rubriques ci-dessous pour vous familiariser avec les technologies décrites ici.
+If you're new to developing Universal Windows Platform (UWP) apps, have a look through these topics to get familiar with the technologies discussed here.
 
--   [Créer votre première application](https://msdn.microsoft.com/library/windows/apps/bg124288)
--   Découvrir les événements avec [Vue d’ensemble des événements et des événements routés](https://msdn.microsoft.com/library/windows/apps/mt185584).
+-   [Create your first app](https://msdn.microsoft.com/library/windows/apps/bg124288)
+-   Learn about events with [Events and routed events overview](https://msdn.microsoft.com/library/windows/apps/mt185584)
 
-**Recommandations en matière d’expérience utilisateur:  **
+**User experience guidelines:  **
 
-Pour obtenir de précieux conseils concernant la conception d’une application optimisée pour la saisie au clavier à la fois utile et conviviale, voir [Recommandations en matière de conception de clavier](https://msdn.microsoft.com/library/windows/apps/hh972345).
+For helpful tips about designing a useful and engaging app optimized for keyboard input, see [Keyboard design guidelines](https://msdn.microsoft.com/library/windows/apps/hh972345) .
 
-## Clavier tactile et interface utilisateur personnalisée
-
-
-Voici quelques recommandations de base concernant les contrôles de saisie de texte personnalisés.
-
--   Affichez le clavier tactile tout au long de l’interaction avec votre formulaire.
-
--   Assurez-vous que vos contrôles personnalisés ont le [**AutomationControlType**](https://msdn.microsoft.com/library/windows/apps/br209182) UI Automation approprié pour que le clavier reste affiché quand un champ d’entrée de texte perd le focus dans le contexte d’une entrée de texte. Par exemple, si vous avez un menu qui est ouvert au milieu d’un scénario d’entrée de texte et que vous souhaitez que le clavier reste affiché, le menu doit avoir le **AutomationControlType** de Menu.
-
--   Ne manipulez pas les propriétés UI Automation pour contrôler le clavier tactile. D’autres outils d’accessibilité reposent sur la précision des propriétés UI Automation.
-
--   Assurez-vous que les utilisateurs peuvent toujours voir le champ d’entrée avec lequel ils interagissent.
-
-    Étant donné que le clavier tactile masque une grande partie de l’écran, la plateforme UWP garantit que le champ d’entrée ayant le focus devient visible quand l’utilisateur navigue parmi les contrôles du formulaire, y compris ceux qui ne sont pas affichés actuellement.
-
-    Lorsque vous personnalisez votre interface utilisateur, donnez un comportement similaire à l’affichage du clavier tactile en gérant les événements [**Showing**](https://msdn.microsoft.com/library/windows/apps/br242262) et [**Hiding**](https://msdn.microsoft.com/library/windows/apps/br242260) exposés par l’objet [**InputPane**](https://msdn.microsoft.com/library/windows/apps/br242255).
-
-    ![Formulaire avec et sans clavier tactile apparent](images/touch-keyboard-pan1.png)
-
-    Dans certains cas, il existe des éléments d’interface utilisateur qui doivent rester tout le temps à l’écran. Concevez l’interface utilisateur de sorte que les contrôles de formulaire se trouvent dans une région panoramique et que les éléments d’interface utilisateur importants soient statiques. Par exemple:
-
-    ![formulaire contenant des zones devant toujours rester affichées](images/touch-keyboard-pan2.png)
-
-## Gestion des événements d’affichage et de masquage
+## Touch keyboard and a custom UI
 
 
-Voici un exemple d’association de gestionnaires d’événements pour les événements [**showing**](https://msdn.microsoft.com/library/windows/apps/br242262) et [**hiding**](https://msdn.microsoft.com/library/windows/apps/br242260) du clavier tactile.
+Here are a few basic recommendations for custom text input controls.
+
+-   Display the touch keyboard throughout the entire interaction with your form.
+
+-   Ensure that your custom controls have the appropriate UI Automation [**AutomationControlType**](https://msdn.microsoft.com/library/windows/apps/br209182) for the keyboard to persist when focus moves from a text input field while in the context of text entry. For example, if you have a menu that's opened in the middle of a text-entry scenario, and you want the keyboard to persist, the menu must have the **AutomationControlType** of Menu.
+
+-   Don't manipulate UI Automation properties to control the touch keyboard. Other accessibility tools rely on the accuracy of UI Automation properties.
+
+-   Ensure that users can always see the input field that they're interacting with.
+
+    Because the touch keyboard occludes a large portion of the screen, the UWP ensures that the input field with focus scrolls into view as a user navigates through the controls on the form, including controls that are not currently in view.
+
+    When customizing your UI, provide similar behavior on the appearance of the touch keyboard by handling the [**Showing**](https://msdn.microsoft.com/library/windows/apps/br242262) and [**Hiding**](https://msdn.microsoft.com/library/windows/apps/br242260) events exposed by the [**InputPane**](https://msdn.microsoft.com/library/windows/apps/br242255) object.
+
+    ![a form with and without the touch keyboard showing](images/touch-keyboard-pan1.png)
+
+    In some cases, there are UI elements that should stay on the screen the entire time. Design the UI so that the form controls are contained in a panning region and the important UI elements are static. For example:
+
+    ![a form that contains areas that should always stay in view](images/touch-keyboard-pan2.png)
+
+## Handling the Showing and Hiding events
+
+
+Here's an example of attaching event handlers for the [**showing**](https://msdn.microsoft.com/library/windows/apps/br242262) and [**hiding**](https://msdn.microsoft.com/library/windows/apps/br242260) events of the touch keyboard.
 
 ```CSharp
 public class MyApplication
@@ -124,18 +124,18 @@ public class MyApplication
 }
 ```
 
-## Articles connexes
+## Related articles
 
-* [Interactions avec le clavier](keyboard-interactions.md)
-* [Accessibilité du clavier](https://msdn.microsoft.com/library/windows/apps/mt244347)
-* [Homologues d’automation personnalisés](https://msdn.microsoft.com/library/windows/apps/mt297667)
+* [Keyboard interactions](keyboard-interactions.md)
+* [Keyboard accessibility](https://msdn.microsoft.com/library/windows/apps/mt244347)
+* [Custom automation peers](https://msdn.microsoft.com/library/windows/apps/mt297667)
 
 
-**Exemples d’archive**
-* [Entrée : exemple de clavier tactile](http://go.microsoft.com/fwlink/p/?linkid=246019)
-* [Exemple de réponse à l’apparition du Clavier visuel](http://go.microsoft.com/fwlink/p/?linkid=231633)
-* [Exemple de modification de texte XAML](http://go.microsoft.com/fwlink/p/?LinkID=251417)
-* [Exemple d’accessibilité XAML](http://go.microsoft.com/fwlink/p/?linkid=238570)
+**Archive samples**
+* [Input: Touch keyboard sample](http://go.microsoft.com/fwlink/p/?linkid=246019)
+* [Responding to the appearance of the on-screen keyboard sample](http://go.microsoft.com/fwlink/p/?linkid=231633)
+* [XAML text editing sample](http://go.microsoft.com/fwlink/p/?LinkID=251417)
+* [XAML accessibility sample](http://go.microsoft.com/fwlink/p/?linkid=238570)
  
 
  
@@ -146,6 +146,6 @@ public class MyApplication
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

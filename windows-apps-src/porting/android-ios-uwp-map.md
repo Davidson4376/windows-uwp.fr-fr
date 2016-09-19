@@ -1,21 +1,21 @@
 ---
 author: GrantMeStrength
-Description: "Comparez les fonctionnalités de la plateforme sous iOS, Android et Windows10."
+Description: Compare platform features between iOS, Android, and Windows 10.
 Search.Product: eADQiWindows 10XVcnh
-title: "Mappage de concepts d’applications Windows pour développeurs iOS et Android"
+title: Windows apps concept mapping for Android and iOS developers
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 640ddc7b77d5a23562dba2ecd9812464beb8a422
+ms.sourcegitcommit: a55e7d0945902ce44ebad481475e8324c9859054
+ms.openlocfilehash: 8acd22c44cf6423aba01083d1e32d282c87f44cb
 
 ---
 
-#Mappage de concepts d’applications Windows pour développeurs iOS et Android
+#Windows apps concept mapping for Android and iOS developers
 
-Si vous êtes un développeur doté de compétences relatives aux systèmes d’exploitation Android ou iOS et au code et que vous souhaitez migrer vers Windows10 et la plateforme Windows universelle (UWP), cette ressource vous permettra de mapper les fonctionnalités de la plateforme, et vos connaissances, entre les trois plateformes.
+If you're a developer with Android or iOS skills and/or code, and you want to make the move to Windows 10 and the Universal Windows Platform (UWP), then this resource has all you need to map platform features—and your knowledge—between the three platforms.
 
-Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-root.md). Ce document est également disponible en [téléchargement](https://www.microsoft.com/download/details.aspx?id=52041).
+Also see the porting content in [Move from iOS to UWP](ios-to-uwp-root.md). This document is also available as a [download](https://www.microsoft.com/download/details.aspx?id=52041).
 
-## Interface utilisateur (UI)
+## User-interface (UI)
 
 
 <table style="width:100%">
@@ -27,76 +27,76 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><strong>Concept général</strong></th>
+<th align="left"><strong>General concept</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Plateforme Windows universelle Windows10</strong></th>
+<th align="left"><strong>Windows 10 UWP</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Langage de conception.</strong><br><br>Ensemble de conventions qui prévoient la manière dont les applications sur la plateforme doivent se présenter et se comporter.</td>
-<td align="left"><strong>Les recommandations en matière de conception d’applications Android</strong> fournissent un langage visuel à suivre par les concepteurs et développeurs Android.</td>
-<td align="left"><strong>Les recommandations en matière d’interface utilisateur</strong> fournissent des conseils aux concepteurs et développeurs iOS.</td>
-<td align="left"><a href="https://dev.windows.com/design"><strong>Conception et interface utilisateur</strong></a> vous montre comment créer une application parfaitement adaptée à tous les appareils Windows 10. Vous y trouverez des notions de base en matière de conception d’interface utilisateur (UI), des techniques de conception réactives et une liste complète de recommandations détaillées.<br/></td>
+<td align="left"><strong>Design language.</strong><br><br>A set of conventions that prescribe how apps on the platform should look and behave.</td>
+<td align="left"><strong>Android Material Design</strong> guidelines provide a visual language for Android designers and developers to follow.</td>
+<td align="left"><strong>Human Interface Guidelines</strong> provide advice for iOS designers and developers.</td>
+<td align="left"><a href="https://dev.windows.com/design"><strong>UWP Windows Apps Design</strong></a> shows you how to create an app that looks fantastic on all Windows 10 devices. You will find user-interface (UI) design fundamentals, responsive design techniques, and a full list of detailed guidelines.<br/></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Langage de balisage d’interface utilisateur.</strong> <br><br>Langage de balisage effectuant le rendu et décrivant une interface utilisateur et ses composants. Chaque plateforme fournit un éditeur à des fins de modification visuelle et du balisage.<br/></td>
-<td align="left"><strong>Modification des dispositions XML</strong> à l’aide d’<strong>Android Studio</strong> ou <strong>Eclipse</strong>.</td>
-<td align="left"><strong>Modification de XIB</strong> et <strong>Storyboards</strong> à l’aide d’<strong>Interface Builder</strong> dans Xcode.</td>
-<td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt185595.aspx">Modification de XAML</a></strong> à l’aide de <strong><a href="https://www.visualstudio.com/">Microsoft Visual Studio</a></strong> et <strong><a href="https://msdn.microsoft.com/library/jj171012.aspx">Blend pour Visual Studio</a></strong>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt228259.aspx">Plateforme XAML</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt228349.aspx">Créer une interface utilisateur avec XAML</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt228350.aspx">Définir des dispositions avec XAML</a></td>
+<td align="left"><strong>User interface markup language.</strong> <br><br>A markup language that renders and describes a UI and its components. Each platform provides an editor for both visual and markup editing.<br/></td>
+<td align="left"><strong>XML layouts</strong>, edited using <strong>Android Studio</strong> or <strong>Eclipse</strong>.</td>
+<td align="left"><strong>XIB</strong> and <strong>Storyboards</strong> edited using <strong>Interface Builder</strong> inside Xcode.</td>
+<td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt185595.aspx">XAML</a></strong>, edited using <strong><a href="https://www.visualstudio.com/">Microsoft Visual Studio</a></strong> and <strong><a href="https://msdn.microsoft.com/library/jj171012.aspx">Blend for Visual Studio</a></strong>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt228259.aspx">XAML platform</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt228349.aspx">Create a UI with XAML</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt228350.aspx">Define Layouts with XAML</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Contrôles d’interface utilisateur intégrés.</strong> <br><br>Éléments d’interface utilisateur réutilisables fournis par la plateforme, tels que des boutons, des contrôles de liste et des contrôles de texte.</td>
-<td align="left">Classes <strong>view</strong> et <strong>view group</strong> prédéfinies désignées sous les termes widgets, dispositions, champs de texte, conteneurs, contrôles date/heure et contrôles d’expert.</td>
-<td align="left"><strong>Vues</strong> et <strong>contrôles</strong> de la bibliothèque d’objets Xcode et répertoriés dans le catalogue d’interface utilisateur UIKit. Les vues comprennent les vues d’images, les vues de sélecteur et les vues de défilement. Les contrôles comprennent les boutons, les sélecteurs de dates et les champs de texte.</td>
-<td align="left">La plateforme XAML propose un vaste ensemble de <strong>contrôles intégrés</strong>, tels que des boutons, des contrôles de liste, des panneaux, des contrôles de texte, des barres de commandes, des sélecteurs, du contenu multimédia et l’entrée manuscrite.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt228345.aspx">Ajouter des contrôles et gérer les événements</a></td>
+<td align="left"><strong>Built-in user interface controls.</strong> <br><br>Reusable UI elements provided by the platform such as buttons, list controls, and text controls.</td>
+<td align="left">Prebuilt <strong>view</strong> and <strong>view group</strong> classes referred to as widgets, layouts, text fields, containers, date/time controls and expert controls.</td>
+<td align="left"><strong>Views</strong> and <strong>controls</strong> found in the Xcode object library and listed in the UIKit user interface catalog. Views include image views, picker views and scroll views. Controls include buttons, date pickers and text fields.</td>
+<td align="left">The XAML platform provides you with a generous set of <strong>built-in controls</strong> such as buttons, list controls, panels, text controls, command bars, pickers, media, and inking.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt228345.aspx">Add controls and handle events</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Gestion des événements de contrôle.</strong> <br><br>Définition de la logique qui s’exécute lorsque des événements sont déclenchés dans des contrôles d’interface utilisateur.</td>
-<td align="left"><strong>Des gestionnaires d’événements</strong> et <strong>détecteurs d’événements</strong> sont ajoutés dans le langage XML ou par programme.</td>
-<td align="left">Les contrôles envoient des messages d’<strong>action</strong> aux <strong>cibles</strong>.</td>
-<td align="left">Vous pouvez définir des méthodes pour gérer les événements d’un contrôle XAML dans un <strong>fichier code-behind</strong> attaché à la page XAML. <strong>Des gestionnaires d’événements</strong> sont toujours écrits dans le code. Toutefois, vous pouvez associer ces gestionnaires à des événements dans le balisage XAML ou le code.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt228345.aspx">Ajouter des contrôles et gérer les événements</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt185584.aspx">Vue d’ensemble des événements et des événements routés</a></td>
+<td align="left"><strong>Control event-handling.</strong> <br><br>Defining the logic that runs when events are triggered within UI controls.</td>
+<td align="left"><strong>Event handlers</strong> and <strong>event listeners</strong> are added in XML or programmatically.</td>
+<td align="left">Controls send <strong>action</strong> messages to <strong>targets</strong>.</td>
+<td align="left">You can define methods to handle the events of a XAML control in a <strong>code-behind file</strong> attached to the XAML page. <strong>Event handlers</strong> are always written in code. But you can hook those handlers to events either in XAML markup or in code.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt228345.aspx">Add controls and handle events</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt185584.aspx">Events and routed events overview</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Liaison de données.</strong> <br><br>Modèle de conception logicielle qui permet à l’interface utilisateur de votre application d’afficher des données et éventuellement de rester synchronisé avec celles-ci.</td>
-<td align="left">Une <strong>bibliothèque de liaison de données</strong> est fournie, bien qu’elle soit toujours en version bêta.</td>
-<td align="left">Il n’existe aucun système de liaison intégré sur iOS. <strong>Il est possible de se baser sur Key-value observing</strong> pour effectuer des liaisons de données, soit par l’utilisation d’une bibliothèque tierce, ou l’écriture de code supplémentaire. Les contrôles utilisent une approche délégué/rappel pour l’obtention des données.</td>
-<td align="left">La plateforme UWP traite pour vous la <strong>liaison de données</strong>. Vous utilisez l’extension de balisage <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt204783.aspx">{x:Bind}</a></strong> pour tirer parti de la liaison de données hautes performances ou <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt204782.aspx">{Binding}</a></strong> pour exploiter d’autres fonctionnalités. Il suffit alors de configurer votre liaison pour choisir si la plateforme utilise une <strong>liaison à sens unique</strong> pour afficher les valeurs provenant d’une source de données dans votre interface utilisateur, ou si elle observe ces valeurs et met à jour votre interface utilisateur lors du passage en <strong>liaison bidirectionnelle</strong>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt210947.aspx">Liaison de données</a></td>
+<td align="left"><strong>Data binding.</strong> <br><br>A software design pattern that allows your app UI to render data and optionally stay in sync with that data.</td>
+<td align="left">There is a <strong>Data Binding Library</strong> provided, although it is still in beta.</td>
+<td align="left">No built-in bindings system exists on iOS. <strong>Key-value observing</strong> can be built upon to perform data binding, either with the use of a third-party library, or writing additional code. Controls use a delegate/callback approach for obtaining data.</td>
+<td align="left">The UWP platform handles <strong>data binding</strong> for you. You use the <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt204783.aspx">{x:Bind}</a></strong> markup extension to take advantage of high performance binding or <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt204782.aspx">{Binding}</a></strong> to take advantage of more features. It’s then just a case of configuring your binding to choose whether the platform uses <strong>one-way binding</strong> to display values from a data source in your UI, or whether it also observes those values and updates your UI when they change with <strong>two-way binding</strong>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt210947.aspx">Data Binding</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Automatisation de l’interface utilisateur.</strong> <br><br>Accès par programme aux éléments d’interface utilisateur, rendant les applications accessibles aux produits de technologie d’assistance et permettant aux scripts automatisés d’interagir avec votre interface utilisateur.</td>
-<td align="left"><strong>Les valeurs Text labels</strong>, <strong>contentDescription</strong> et <strong>hint</strong> permettent de garantir que les éléments d’interface utilisateur puissent être trouvés par le biais de l’automatisation. Android Studio vous permet d’écrire des tests d’interface utilisateur à l’aide des infrastructures de test <strong>UI Automator</strong> et <strong>Espresso</strong>.</td>
-<td align="left">L’<strong>instrument d’automatisation</strong> vous permet d’écrire des scripts de test d’interface utilisateur automatisés qui identifient les éléments à l’aide de paramètres d’<strong>accessibilité</strong> ou de la position de l’élément dans la <strong>hiérarchie d’éléments</strong>.</td>
-<td align="left">Vous obtenez un accès par programme aux éléments d’interface utilisateur intégrés dans UWP fournie avec <strong><a href="https://msdn.microsoft.com/library/windows/apps/ee684076.aspx">UI Automation</a></strong>.<br/><strong><a href="https://msdn.microsoft.com/library/windows/apps/mt297667.aspx">Les homologues d’automatisation personnalisés</a></strong> vous permettent de fournir la prise en charge de l’automatisation pour vos propres classes d’interface utilisateur personnalisées. Le <strong><a href="https://msdn.microsoft.com/library/dd286726.aspx#VerifyingCodeUsingCUITCreate">projet de test codé de l’interface utilisateur</a></strong> dans Visual Studio vous permet de tester automatiquement l’ensemble de votre application par le biais de l’interface utilisateur ou de tester l’interface utilisateur de manière isolée.</td>
+<td align="left"><strong>UI Automation.</strong> <br><br>Programmatic access to UI elements, making apps accessible to assistive technology products and enabling automated test scripts to interact with your UI.</td>
+<td align="left"><strong>Text labels</strong>, <strong>contentDescription</strong> and <strong>hint</strong> values help ensure UI elements can be found by automation. Android Studio allows you to write UI tests using the <strong>UI Automator</strong> and <strong>Espresso</strong> testing frameworks.</td>
+<td align="left">The <strong>Automation instrument</strong> allows you to write automated UI test scripts which identify elements using the <strong>accessibility</strong> settings or the element's position in the <strong>element hierarchy</strong>.</td>
+<td align="left">You get programmatic access to built-in UI elements in UWP out-of-box with <strong><a href="https://msdn.microsoft.com/library/windows/apps/ee684076.aspx">UI Automation</a></strong>.<br/><strong><a href="https://msdn.microsoft.com/library/windows/apps/mt297667.aspx">Custom Automation Peers</a></strong> allow you to provide automation support for your own custom UI classes. The <strong><a href="https://msdn.microsoft.com/library/dd286726.aspx#VerifyingCodeUsingCUITCreate">Coded UI Test Project</a></strong> in Visual Studio allows you to automatically test your whole application through the UI, or to test the UI in isolation.</td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Modification de l’apparence d’un contrôle.</strong> <br><br>Modification de la taille, de la couleur et d’autres attributs.</td>
-<td align="left">Les contrôles possèdent des <strong>propriétés</strong> qui peuvent être modifiées à l’aide de l’outil de conception, dans le balisage XML ou par programme.</td>
-<td align="left">Les contrôles possèdent des <strong>attributs</strong> que vous pouvez modifier à l’aide de l’<strong>Attributes Inspector</strong> dans Interface Builder ou par programme.</td>
-<td align="left">Vous pouvez modifier les <strong>propriétés</strong> des contrôles dans le balisage XAML ou par programme, à l’aide de Visual Studio et de Blend pour Visual Studio.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt228345.aspx">Ajouter des contrôles et gérer les événements</a></td>
+<td align="left"><strong>Changing the appearance of a control.</strong> <br><br>Editing size, color and other attributes.</td>
+<td align="left">Controls have <strong>properties</strong> which can be edited using the designer tool, in XML markup or programmatically.</td>
+<td align="left">Controls have <strong>attributes</strong> which you can edit using the <strong>Attributes Inspector</strong> in Interface Builder or programmatically.</td>
+<td align="left">You can edit the <strong>properties</strong> of controls in the XAML markup or programmatically, using Visual Studio and Blend for Visual Studio.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt228345.aspx">Add controls and handle events</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Styles visuels réutilisables.</strong> <br><br>Application de modifications visuelles à un certain nombre de contrôles, dans un format réutilisable.</td>
-<td align="left"><strong>Les styles XML</strong> sont des ensembles de propriétés appliqués à un ou plusieurs contrôles.</td>
-<td align="left">iOS ne prend pas en charge les styles visuels réutilisables fournis, toutefois le protocole UIAppearance permet à plusieurs contrôles de partager des attributs communs.</td>
-<td align="left">Vous pouvez créer des <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.style.aspx">styles</a></strong> réutilisables, qui peuvent être appliqués à plusieurs contrôles et stockés dans un <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.resourcedictionary.aspx">ResourceDictionary</a></strong> pour faciliter leur réutilisation.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465381.aspx">Démarrage rapide: application de styles aux contrôles (XAML)</a></td>
+<td align="left"><strong>Reusable visual styles.</strong> <br><br>Apply visual changes to a number of controls, in a reusable format.</td>
+<td align="left"><strong>XML styles</strong> are sets of properties that are applied to one or more controls.</td>
+<td align="left">iOS does not support reusable visual styles out-of-box, but the UIAppearance protocol allows multiple controls to share common attributes.</td>
+<td align="left">You can create reusable <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.style.aspx">styles</a></strong>, which can be applied to multiple controls and stored in a <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.resourcedictionary.aspx">ResourceDictionary</a></strong> for easy reuse.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465381.aspx">Quickstart: Styling Controls</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Modification de la structure visuelle des contrôles.</strong> <br><br>Personnalisation de la structure visuelle d’un contrôle au-delà de la simple modification des propriétés ou des attributs, par exemple, déplacement d’un texte de case à cocher sous cette dernière.</td>
-<td align="left">Il n’existe aucune méthode de modification simple de la structure visuelle des contrôles dans Android.</td>
-<td align="left">Il n’existe aucune méthode de modification simple de la structure visuelle des contrôles dans iOS.</td>
-<td align="left">Pour personnaliser la structure visuelle d’un contrôle, vous pouvez copier et modifier son <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.controltemplate.aspx">modèle de contrôle</a></strong> dans le balisage XAML.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465374.aspx">Démarrage rapide: modèles de contrôle (XAML)</a></td>
+<td align="left"><strong>Editing the visual structure of controls.</strong> <br><br>Customize the visual structure of a control beyond just modifying properties or attributes, e.g. moving the checkbox text underneath the checkbox.</td>
+<td align="left">No simple method of editing the visual structure of controls exists in Android.</td>
+<td align="left">No simple method of editing the visual structure of controls exists in iOS.</td>
+<td align="left">To customize the visual structure of a control, you can copy and edit its <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.controltemplate.aspx">control template</a></strong> in XAML markup.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465374.aspx">Quickstart: Control Templates</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Mouvements tactiles intégrés.</strong> <br><br>Prise en charge personnalisée de la fonctionnalité tactile par la gestion des événements de mouvement abstraits de niveau élevé, tels que l’appui et le double appui dans les vues et les contrôles.</td>
-<td align="left"><strong>Les détecteurs de mouvement</strong> détectent les mouvements tactiles de base, y compris le défilement, l’appui prolongé et le glissement rapide.</td>
-<td align="left">L’infrastructure UIKit fournit des <strong>outils de reconnaissance de mouvement</strong> qui détectent les mouvements tactiles, tels que l’appui, le pincement, le mouvement panoramique, le balayage, la rotation et l’appui prolongé.</td>
-<td align="left"><strong>Les éléments d’interface utilisateur</strong> vous permettent de gérer les <strong>événements de mouvement statique</strong>, notamment l’appui, le double appui, l’appui droit et le maintien, ainsi que les <strong>événements de mouvement de manipulation</strong>, notamment le glissement, le balayage, la rotation, le pincement et l’étirement. Les événements de mouvement sont des <strong>événements routés</strong> et peuvent être gérés par des objets parent contenant l’élément d’interface utilisateur enfant.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185617.aspx">Interactions tactiles</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185599.aspx#gestures__manipulations__and_interactions">Interactions utilisateur personnalisées (mouvements, manipulations et interactions)</a></td>
+<td align="left"><strong>Built-in touch gestures.</strong> <br><br>Provide customized touch support by handling high level abstracted gesture events such as tap and double tap in views and controls.</td>
+<td align="left"><strong>Gesture detectors</strong> detect common touch gestures including scrolling, long-press, tap, double-tap and fling.</td>
+<td align="left">UIKit framework provides built-in <strong>gesture recognizers</strong> which detect touch gestures including tap, pinch, pan, swipe, rotate and long-press.</td>
+<td align="left"><strong>UI elements</strong> allow you to handle <strong>static gesture events</strong> including tap, double-tap, right-tap and holding, as well as <strong>manipulation gesture events</strong> including slide, swipe, turn, pinch and stretch. Gesture events are <strong>routed events</strong> and can be handled by parent objects containing the child UIElement.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185617.aspx">Touch interactions</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185599.aspx#gestures__manipulations__and_interactions">Custom user interactions - gestures, manipulations, and interactions</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="navigation-and-app-structure">Navigation et structure de l’application</h2>
+<h2 id="navigation-and-app-structure">Navigation and app structure</h2>
 <table style="width:100%">
 <colgroup>
 <col width="20%" />
@@ -106,46 +106,46 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><strong>Concept général</strong></th>
+<th align="left"><strong>General concept</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Plateforme Windows universelle Windows10</strong></th>
+<th align="left"><strong>Windows 10 UWP</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Dispositions.</strong> <br><br>La disposition définit la structure de l’interface utilisateur.</td>
-<td align="left">La disposition se compose de <strong>groupes d’affichages</strong>, tels que <strong>LinearLayout</strong> et <strong>RelativeLayout</strong> qui peuvent imbriquer d’autres groupes d’affichages ou vues.</td>
-<td align="left">La disposition est constituée d’un <strong>UIViewController</strong> contenant des <strong>UIView</strong> qui peuvent être imbriqués.</td>
-<td align="left">XAML fournissant un système de disposition flexible composé de <strong>classes de panneau de disposition</strong>, telles que <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.canvas.aspx">Canvas</a></strong>, <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.aspx">Grid</a></strong>, <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.relativepanel.aspx">RelativePanel</a></strong> et <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.aspx">StackPanel</a></strong> pour les dispositions statiques et réactives. <strong><a href="https://msdn.microsoft.com/library/ms171352.aspx">Les propriétés</a></strong> permettent de contrôler la taille et la position des éléments.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt228350.aspx">Définir des dispositions avec XAML</a><br/></td>
+<td align="left"><strong>Layouts.</strong> <br><br>The layout defines the structure of the user interface.</td>
+<td align="left">Layout is composed of <strong>view groups</strong> such as the <strong>LinearLayout</strong> and the <strong>RelativeLayout</strong> which can nest other view groups or views.</td>
+<td align="left">Layout is composed of a <strong>UIViewController</strong> containing <strong>UIView</strong>'s which can be nested.</td>
+<td align="left">XAML which provides a flexible layout system composed of <strong>layout panel classes</strong> such as <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.canvas.aspx">Canvas</a></strong>, <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.aspx">Grid</a></strong>, <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.relativepanel.aspx">RelativePanel</a></strong> and <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.aspx">StackPanel</a></strong> for static and responsive layouts. <strong><a href="https://msdn.microsoft.com/library/ms171352.aspx">Properties</a></strong> are used to control the size and position of the elements.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt228350.aspx">Define layouts with XAML</a><br/></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Navigation pair à pair.</strong> <br><br>Présentation à l’utilisateur de méthodes de navigation entre les pages d’importance hiérarchique équivalente.</td>
-<td align="left"><strong>Les onglets</strong>, <strong>vues à balayage</strong> et <strong>panneaux de navigation</strong> permettent une <strong>navigation latérale</strong>.</td>
-<td align="left"><strong>Les contrôleurs de la barre d’onglets</strong>, les <strong>contrôleurs du mode fractionné</strong> et les <strong>contrôleurs d’affichage de page</strong> permettent de naviguer entre les vues de hiérarchie équivalente.</td>
-<td align="left">Vous pouvez afficher une liste permanente de liens/onglets au-dessus du contenu à l’aide d’<strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997788.aspx">onglets/de pivots</a></strong>. Le <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997787.aspx">mode fractionné/volet de navigation</a></strong> vous permet d’afficher une liste de liens avec le contenu.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187344.aspx">Navigation</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt465735.aspx">Navigation pair à pair entre deux pages</a></td>
+<td align="left"><strong>Peer navigation.</strong> <br><br>Presenting the user with methods of navigating between pages of equal hierarchical importance.</td>
+<td align="left"><strong>Tabs</strong>, <strong>swipe views</strong> and <strong>navigation drawers</strong> provide <strong>lateral navigation</strong>.</td>
+<td align="left"><strong>Tab bar controllers</strong>, <strong>split view controllers</strong> and <strong>page view controllers</strong> allow navigation between views of equal hierarchy.</td>
+<td align="left">You can display a persistent list of links/tabs above the content using <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997788.aspx">tabs/pivots</a></strong>. The <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997787.aspx">navigation pane/split view</a></strong> lets you display a list of links alongside the content.<br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigation-basics">Navigation</a><br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigate-between-two-pages">Navigate between two pages</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Navigation hiérarchique.</strong> <br><br>Navigation entre les pages parent et enfant d’une hiérarchie.</td>
-<td align="left"><strong>Les listes</strong>, <strong>listes de quadrillage</strong>, <strong>boutons</strong> et autres contrôles permettent une <strong>navigation par descendants</strong> lorsqu’ils sont utilisés dans l’<strong>intention</strong> de charger d’autres <strong>activités</strong>.</td>
-<td align="left"><strong>Les contrôleurs de navigation</strong> permettent aux utilisateurs de naviguer entre les niveaux d’une hiérarchie.</td>
-<td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/dn449149.aspx">Les concentrateurs</a></strong> permettent de présenter à l’utilisateur un aperçu du contenu qui peut être sélectionné pour naviguer vers les pages enfant. <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997765.aspx">Maître/détails</a></strong> permet aux utilisateurs de faire une sélection parmi une liste de résumés d’éléments qui s’affichent en regard de la section correspondante relative aux détails.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187344.aspx">Navigation</a></td>
+<td align="left"><strong>Hierarchical navigation.</strong> <br><br>Navigating between parent and child pages of a hierarchy.</td>
+<td align="left"><strong>Lists</strong>, and <strong>grid lists</strong>, <strong>buttons</strong> and other controls provide <strong>descendent navigation</strong> when used with <strong>intents</strong> to load other <strong>activities</strong>.</td>
+<td align="left"><strong>Navigation controllers</strong> allow users to navigate between levels of a hierarchy.</td>
+<td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/dn449149.aspx">Hubs</a></strong> let you show the user a preview of content which can be selected to navigate to child pages. <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997765.aspx">Master/details</a></strong> let users pick from a list of item summaries which display next to the corresponding detail section.<br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigation-basics">Navigation</a><br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigate-between-two-pages">Navigate between two pages</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Navigation via le bouton Précédent.</strong> <br><br>Retour à une application.</td>
-<td align="left">Les boutons <strong>précédent</strong> et <strong>haut</strong> situés dans la barre d’actions permettent une navigation par <strong>ancêtres</strong> et <strong>temporelle</strong> à l’aide de la <strong>pile Back</strong>.</td>
-<td align="left">Le <strong>contrôleur de navigation</strong> peut se voir ajouter un bouton Précédent.<br/></td>
-<td align="left">Vous pouvez facilement gérer les appuis sur les boutons matériels ou logiciels à l’aide de la <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.frame.backstack.aspx">propriété pile Back</a></strong> qui permet aux utilisateurs de traverser l’<strong>historique de navigation</strong>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt465734.aspx">Navigation via le bouton Précédent</a></td>
+<td align="left"><strong>Back button navigation.</strong> <br><br>Navigating back through an application.</td>
+<td align="left">The <strong>back</strong> and <strong>up</strong> buttons inside the action bar provide <strong>ancestral</strong> and <strong>temporal</strong> navigation using the <strong>back stack</strong>.</td>
+<td align="left">The <strong>navigation controller</strong> can have a back button added to it.<br/></td>
+<td align="left">You can handle software or hardware back button presses easily using the <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.frame.backstack.aspx">back stack property</a></strong> which allows your users to traverse the <strong>navigation history</strong>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt465734.aspx">Back button navigation</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Écran de démarrage.</strong> <br><br>Affiche d’une image au lancement de l’application, principalement utilisé pour la personnalisation.</td>
-<td align="left">Les écrans de démarrage ne sont pas fournis par défaut et sont implémentés en modifiant l’arrière-plan du <strong>thème des premières activités</strong>.</td>
-<td align="left">Les applications doivent disposer d’une <strong>image de lancement statique</strong> ou d’un <strong>fichier de lancement XIB/de table de montage séquentiel</strong>.</td>
-<td align="left">Vous créez un écran de démarrage à l’aide d’une <strong>image</strong> et d’un arrière-plan coloré. <a href="https://msdn.microsoft.com/library/windows/apps/mt187309.aspx">Vous pouvez prolonger l’affichage de l’écran de démarrage</a>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187306.aspx">Ajouter un écran de démarrage</a></td>
+<td align="left"><strong>Splash screen.</strong> <br><br>Showing an image on app launch, used primarily for branding.</td>
+<td align="left">Splash screens are not provided by default, and are implemented by editing the first activities <strong>theme background</strong>.</td>
+<td align="left">Apps must either have a <strong>static launch image</strong> or <strong>XIB/storyboard launch file</strong>.</td>
+<td align="left">You create a splash screen using an <strong>image</strong> and colored background. <a href="https://msdn.microsoft.com/library/windows/apps/mt187309.aspx">Splash screen time can be extended</a>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187306.aspx">Add a splash screen</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="custom-inputs">Entrées personnalisées</h2>
+<h2 id="custom-inputs">Custom inputs</h2>
 <table style="width:100%">
 <colgroup>
 <col width="20%" />
@@ -155,28 +155,28 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><strong>Concept général</strong></th>
+<th align="left"><strong>General concept</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Plateforme Windows universelle Windows10</strong></th>
+<th align="left"><strong>Windows 10 UWP</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Voix.</strong> <br><br>Reconnaissance vocale pour la saisie vocale et fonctionnalités vocales supplémentaires.</td>
-<td align="left">La saisie vocale peut être assurée par toute application implémentant une classe <strong>RecognizerIntent</strong>, tel que la <strong>recherche vocale Google</strong>. La classe <strong>SpeechRecognizer</strong> permet aux applications d’utiliser l’API de reconnaissance vocale de Google.</td>
-<td align="left">Aucune reconnaissance vocale intégrée ou API de saisie vocale n’existe.</td>
-<td align="left">Vous pouvez utiliser l’API de <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185615.aspx">reconnaissance vocale</a></strong> pour interagir avec votre application au premier plan. Vous pouvez utiliser des <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185598.aspx">interactions Cortana</a></strong> vocales pour lancer des applications au premier plan ou en arrière-plan et pour interagir avec des applications en arrière-plan.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185614.aspx">Interactions vocales</a></td>
+<td align="left"><strong>Voice.</strong> <br><br>Speech recognition for speech input, and additional voice capabilities.</td>
+<td align="left">Speech input can be provided by any app which implements a <strong>RecognizerIntent</strong>, such as <strong>Google Voice Search</strong>. The <strong>SpeechRecognizer</strong> class allows apps to use Google's speech recognition API.</td>
+<td align="left">No built-in speech recognition or speech input APIs exist.</td>
+<td align="left">You can use the <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185615.aspx">speech recognition</a></strong> API to interact with your app in the foreground. You can use speech-based <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185598.aspx">Cortana interactions</a></strong> to launch apps in the foreground or background, and to ​interact with background apps.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185614.aspx">Speech interactions</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Entrées utilisateur personnalisées.</strong> <br><br>Gestion du clavier, de la souris, du stylet et d’autres entrées.</td>
-<td align="left">Prise en charge de l’interaction via la fonctionnalité <strong>tactile</strong>, le <strong>pavé tactile</strong>, le <strong>stylet</strong>, la <strong>souris</strong> et le <strong>clavier</strong>. Les mouvements et entrées sont considérés comme des mouvements tactiles, toutefois, il est possible de détecter plus d’informations concernant le <strong>périphérique d’entrée</strong>.</td>
-<td align="left">La prise en charge de la fonctionnalité <strong>tactile</strong>, de l’<strong>Apple Pencil</strong> et du <strong>clavier</strong> est assurée.</td>
-<td align="left">Vous découvrirez une prise en charge pour une large gamme d’interactions, notamment <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185617.aspx">tactiles</a></strong>, avec le<strong><a href="https://msdn.microsoft.com/library/windows/apps/mt187313.aspx"> pavé tactile</a></strong>, le <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt187311.aspx">stylet</a></strong> avec entrée manuscrite, la <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt187308.aspx">souris</a></strong> et le <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185607.aspx">clavier</a></strong>. Vos applications peuvent gérer les données sans avoir besoin de savoir quel périphérique d’entrée a été utilisé, et les données de périphérique d’entrée brutes sont accessibles si nécessaire.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt404610.aspx">Gérer les entrées du pointeur</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185599.aspx">Interactions utilisateur personnalisées</a></td>
+<td align="left"><strong>Custom user inputs.</strong> <br><br>Handling keyboard, mouse, stylus and other inputs.</td>
+<td align="left">Support for interactions includes <strong>touch</strong>, <strong>touchpad</strong>, <strong>stylus</strong>, <strong>mouse</strong> and <strong>keyboard</strong>. Movements and inputs are reported in the same way as touch, but it is possible to detect more information about the <strong>input device</strong>.</td>
+<td align="left">Support for <strong>touch</strong>, the <strong>Apple Pencil</strong> and hardware <strong>keyboards</strong> are provided.</td>
+<td align="left">You will find support for a wide range of interactions including <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185617.aspx">touch</a></strong>, <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt187313.aspx">touchpad</a></strong>, <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt187311.aspx">pen/stylus</a></strong> with digital ink, <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt187308.aspx">mouse</a></strong> and <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185607.aspx">keyboard</a></strong>. Your apps can handle the data without needing to know which input device was used, and raw input device data can be accessed if needed.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt404610.aspx">Handle pointer input</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185599.aspx">Custom user interactions</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="data">Données</h2>
+<h2 id="data">Data</h2>
 <table style="width:100%">
 <colgroup>
 <col width="20%" />
@@ -186,64 +186,64 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><strong>Concept général</strong></th>
+<th align="left"><strong>General concept</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Plateforme Windows universelle Windows10</strong></th>
+<th align="left"><strong>Windows 10 UWP</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Données d’application locales.</strong> <br><br>Stockage local des paramètres et des fichiers associés à votre application.</td>
-<td align="left">Les fichiers locaux peuvent être enregistrés à l’aide de <strong>openFileOutput</strong> et <strong>openFileInput</strong>. Les paramètres d’un <strong>fichier de préférences partagé</strong> sont accessibles à l’aide de <strong>getSharedPreferences</strong>.</td>
-<td align="left">Les fichiers locaux peuvent être stockés dans le répertoire <strong>prise en charge de l’application</strong>, accessible via la classe <strong>NSFileManager</strong>. Les paramètres des fichiers de <strong>préférences</strong> sont accessibles via la classe <strong>NSUserDefaults</strong>.</td>
-<td align="left">Les classes <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/br230562.aspx">Windows.Storage</a></strong> gèrent pour vous le stockage des données locales de manière uniformisée. Vous stockez les paramètres sous forme d’objet <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.applicationdatacontainer.aspx">ApplicationDataContainer</a></strong>, accessible via la propriété <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.applicationdata.localsettings.aspx">ApplicationData.LocalSettings</a></strong>. Vous stockez les fichiers sous forme d’objet <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefolder.aspx">StorageFolder</a></strong>, accessible via la propriété <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.applicationdata.localfolder.aspx">ApplicationData.LocalFolder</a></strong>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt299098.aspx">Stocker et récupérer des paramètres et autres données d’application</a></td>
+<td align="left"><strong>Local app data.</strong> <br><br>Storing settings and files related to your app locally.</td>
+<td align="left">Local files can be saved using <strong>openFileOutput</strong> and <strong>openFileInput</strong>. Settings in a <strong>shared preferences file</strong> can be accessed using <strong>getSharedPreferences</strong>.</td>
+<td align="left">Local files can be stored in the <strong>application support</strong> directory, accessed via the <strong>NSFileManager</strong> class. Settings in <strong>preferences</strong> files can be accessed by the <strong>NSUserDefaults</strong> class.</td>
+<td align="left">The <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/br230562.aspx">Windows.Storage</a></strong> classes handle local data storage for you in a unified way. You store settings as an <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.applicationdatacontainer.aspx">ApplicationDataContainer</a></strong> object, accessed via the <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.applicationdata.localsettings.aspx">ApplicationData.LocalSettings</a></strong> property. You store files in a <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefolder.aspx">StorageFolder</a></strong> object accessed via the <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.applicationdata.localfolder.aspx">ApplicationData.LocalFolder</a></strong> property.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt299098.aspx">Store and retrieve settings and other app data</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Stockage de base de données local.</strong> <br><br>Stockage des données d’application dans une base de données relationnelle, avec ORM, le cas échéant.</td>
-<td align="left">La base de données <strong>SQLite</strong> est fournie. Aucun ORM n’est intégré. Les requêtes SQL sont exécutées à l’aide de la classe <strong>SQLiteDatabase</strong>.</td>
-<td align="left">La base de données <strong>SQLite</strong> est fournie. <strong>CoreData</strong> constitue l’infrastructure graphique d’objet intégrée qui peut être utilisée avec SQLite et peut proposer des fonctionnalités comparables à un ORM.</td>
-<td align="left">Vous pouvez stocker des données à l’aide <strong>SQLite</strong>. <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt592863.aspx">Entity Framework</a></strong> est un ORM intégré qui permet d’éviter d’avoir recours à l’écriture d’une grande quantité de code d’accès aux données et permet d’interroger facilement la base de données sans écrire de code SQL. Vous pouvez exécuter des requêtes SQL directement avec la <a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt592864.aspx">bibliothèque SQLite</a>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt592862.aspx">Accès aux données.</a></td>
+<td align="left"><strong>Local database storage.</strong> <br><br>Storing app data in a relational database, with object-relational mappers (ORM) if applicable.</td>
+<td align="left">The <strong>SQLite</strong> database is provided. No ORM is built-in. SQL queries are run using the <strong>SQLiteDatabase</strong> class.</td>
+<td align="left">The <strong>SQLite</strong> database is provided. <strong>CoreData</strong> is the built-in object graph framework which can be used with SQLite and provide functionality comparable with an ORM.</td>
+<td align="left">You can store data using <strong>SQLite</strong>. <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt592863.aspx">Entity Framework</a></strong> is a built-in ORM which eliminates the need to write lots of data access code and enables you to easily query the database without writing SQL. You can run SQL queries directly with the <a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt592864.aspx">SQLite library</a>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt592862.aspx">Data Access</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Bibliothèques HTTP pour l’accès à REST.</strong> <br><br>Bibliothèques intégrées qui vous permettent de communiquer avec les services web et les serveurs web à l’aide du protocole HTTP(S).<br/></td>
-<td align="left">Bibliothèques HTTP <strong>HttpURLConnection</strong> et <strong>Volley</strong>.</td>
-<td align="left"><strong>NSURLSession</strong>, <strong>NSURLConnection</strong> et <strong>NSURLDownload</strong>.</td>
-<td align="left">Vous pouvez utiliser l’API <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httpclient">HttpClient</a></strong> intégrée pour accéder à des fonctionnalités HTTP communes, y compris à GET, DELETE, PUT, POST, aux modèles d’authentification courants, à SSL, aux cookies et aux informations de progression.</td>
+<td align="left"><strong>HTTP libraries for REST access.</strong> <br><br>Built-in libraries that let you communicate with web services and web servers using HTTP(S).<br/></td>
+<td align="left">HTTP libraries <strong>HttpURLConnection</strong> and <strong>Volley</strong>.</td>
+<td align="left"><strong>NSURLSession</strong>, <strong>NSURLConnection</strong> and <strong>NSURLDownload</strong>.</td>
+<td align="left">You can use the built-in <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httpclient">HttpClient</a></strong> API to access common HTTP functionality including GET, DELETE, PUT, POST, common authentication patterns, SSL, cookies and progress info.</td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Services de sauvegarde dans le cloud.</strong> <br><br>Services de sauvegarde fournis par la plate-forme pour les données d’application.</td>
-<td align="left">Le <strong>gestionnaire de sauvegarde</strong> d’Android gère la sauvegarde des données d’application dans le <strong>service de sauvegarde Android</strong> de Google.</td>
-<td align="left"><strong>La sauvegarde sur iCloud</strong> peut être configurée par un utilisateur pour gérer ses sauvegardes, y compris les données d’application. Les applications utilisant des <strong>données principales</strong> compatibles iCloud, le <strong>magasin clé-valeur iCloud</strong> et le <strong>stockage de documents iCloud</strong>.</td>
-<td align="left">Les données d’application que vous stockez à l’aide des <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.aspx">API ApplicationData</a></strong> itinérantes <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.roamingfolder.aspx">RoamingFolder</a></strong> et <a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.roamingsettings.aspx"><strong>RoamingSettings</strong></a>) seront automatiquement synchronisées sur le cloud et les autres appareils de l’utilisateur. La synchronisation s’effectue par le biais du compte Microsoft de l’utilisateur.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/hh465094.aspx">Recommandations en matière de données d’application itinérantes</a></td>
+<td align="left"><strong>Cloud backup services.</strong> <br><br>Platform-provided backup services for app data.</td>
+<td align="left">Android's <strong>backup manager</strong> handles the backing up of application data in Google's <strong>Android Backup Service</strong>.</td>
+<td align="left"><strong>iCloud Backup</strong> can be configured by a user to handle their backups, including app data. Apps which use iCloud compatible <strong>Core Data</strong>, the <strong>iCloud key-value store</strong> and <strong>iCloud document storage</strong>.</td>
+<td align="left">Any app data that you store using the roaming <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.aspx">ApplicationData APIs</a></strong> (including <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.roamingfolder.aspx">RoamingFolder</a></strong> and <a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.roamingsettings.aspx"><strong>RoamingSettings</strong></a>) will be automatically synced to the cloud and to the user’s other devices, too. The syncing is done by way of the user’s Microsoft account.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/hh465094.aspx">Guidelines for roaming app data</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Téléchargements de fichiers sur HTTP.</strong> <br><br>Téléchargement de fichiers de petite et grande taille sur HTTP.</td>
-<td align="left"><strong>URLConnection</strong> et <strong>HTTPURLConnection</strong> sont utilisés pour effectuer des téléchargements sur HTTP et FTP. Il est également possible d’utiliser le <strong>gestionnaire de téléchargement</strong> système à télécharger en arrière-plan.</td>
-<td align="left"><strong>NSURLSession</strong> et <strong>NSURLConnection</strong> peuvent être utilisés pour télécharger des fichiers sur HTTP et FTP.</td>
-<td align="left">L’<strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.networking.backgroundtransfer.aspx">API de transfert en arrière-plan</a></strong> vous permet de transférer de manière fiable des fichiers sur HTTP(S) et FTP en prenant en compte la suspension d’une application, la perte de connectivité et le réglage en fonction de l’autonomie de la batterie et de la connectivité. Vous pouvez également utiliser <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.web.http.httpclient.aspx">HttpClient</a></strong> qui est idéal pour les fichiers de plus petite taille.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280235.aspx">Quelle technologie de réseau?</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280377.aspx">Transferts en arrière-plan</a></td>
+<td align="left"><strong>HTTP file downloads.</strong> <br><br>Downloading large and small files over HTTP.</td>
+<td align="left"><strong>URLConnection</strong> and <strong>HTTPURLConnection</strong> are used to download over HTTP and FTP, it is also possible to make use of the system <strong>download manager</strong> to download in the background.</td>
+<td align="left"><strong>NSURLSession</strong> and <strong>NSURLConnection</strong> can be used to download files over HTTP and FTP.</td>
+<td align="left">The <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.networking.backgroundtransfer.aspx">background transfer API</a></strong> lets you reliably transfer files over HTTP(S) and FTP, taking into account app suspension, connectivity loss and adjusting based on connectivity and battery life. You can also use <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.web.http.httpclient.aspx">HttpClient</a></strong> which is ideal for smaller files.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280235.aspx">Which networking technology?</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280377.aspx">Background transfers</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Sockets.</strong> <br><br>Création de datagrammes UDP et de sockets TCP de faible niveau pour communiquer avec d’autres appareils à l’aide de votre propre protocole.</td>
-<td align="left"><strong>La classe Socket</strong> fournit des sockets TCP. La classe <strong>DatagramSocket</strong> fournit un socket UDP.</td>
-<td align="left"><strong>NSStream</strong> et <strong>CFStream</strong> fournissent des sockets TCP. <strong>CFSocket</strong> fournit des sockets UDP.</td>
-<td align="left">Vous pouvez utiliser la classe <strong><a href="https://msdn.microsoft.com/library/windows/apps/br241319">DatagramSocket</a></strong> pour communiquer à l’aide d’un socket de datagramme UDP et la classe <strong><a href="https://msdn.microsoft.com/library/windows/apps/br226882">StreamSocket</a></strong> pour communiquer sur TCP ou Bluetooth RFCOMM.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280233.aspx">Notions de base en matière de réseau</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280235.aspx">Quelle technologie de réseau?</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280234.aspx">Vue d’ensemble de sockets</a></td>
+<td align="left"><strong>Sockets.</strong> <br><br>Creating low level UDP datagram and TCP sockets to communicate with other devices using your own protocol.</td>
+<td align="left"><strong>Socket</strong> class provides TCP sockets, <strong>DatagramSocket</strong> class provides a UDP socket.</td>
+<td align="left"><strong>NSStream</strong> and <strong>CFStream</strong> provide TCP sockets, <strong>CFSocket</strong> provides UDP sockets.</td>
+<td align="left">You can use the <strong><a href="https://msdn.microsoft.com/library/windows/apps/br241319">DatagramSocket</a></strong> class to communicate using a UDP datagram socket and the <strong><a href="https://msdn.microsoft.com/library/windows/apps/br226882">StreamSocket</a></strong> class to communicate over TCP or Bluetooth RFCOMM.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280233.aspx">Networking basics</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280235.aspx">Which networking technology?</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280234.aspx">Sockets overview</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>WebSockets.</strong> <br><br>Assurer une communication bidirectionnelle entre un client et un serveur, ce qui permet le transfert de données en temps réel.</td>
-<td align="left">Aucune bibliothèque WebSockets intégrée n’existe sur Android.</td>
-<td align="left">Aucune bibliothèque WebSockets intégrée n’existe sur iOS.</td>
-<td align="left">Des connexions sécurisées aux serveurs prenant en charge WebSockets peuvent être mises en place à l’aide de la classe <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.networking.sockets.messagewebsocket.aspx">MessageWebSocket</a></strong> pour les messages de plus petite taille avec des notifications de réception et <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.networking.sockets.streamwebsocket.aspx">StreamWebSocket</a></strong> pour les transferts de fichiers binaires de plus grande taille pouvant être lus en sections.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280233.aspx">Notions de base en matière de réseau</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280235.aspx">Quelle technologie de réseau?</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt186447.aspx">Vue d’ensemble de WebSockets</a></td>
+<td align="left"><strong>WebSockets.</strong> <br><br>Provide two-way communication between a client and server, enabling real-time data transfer.</td>
+<td align="left">No built-in WebSockets libraries exist on Android.</td>
+<td align="left">No built-in WebSockets libraries exist on iOS.</td>
+<td align="left">Secure connections to servers supporting WebSockets can be made with the <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.networking.sockets.messagewebsocket.aspx">MessageWebSocket</a></strong> class for smaller messages with receipt notifications and <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.networking.sockets.streamwebsocket.aspx">StreamWebSocket</a></strong> for larger binary file transfers which can be read in sections.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280233.aspx">Networking basics</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt280235.aspx">Which networking technology?</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt186447.aspx">WebSockets overview</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Bibliothèques OAuth.</strong> <br><br>Bibliothèques OAuth permettant d’accéder à des fournisseurs OAuth tiers et à toute gestion de compte intégrée à la plateforme.</td>
-<td align="left">Aucune bibliothèque OAuth générique n’est fournie. La classe <strong>GoogleAuthUtil</strong> est fournie pour l’authentification OAuth avec les Services Google Play.<br/></td>
-<td align="left">Aucune bibliothèque OAuth générique n’est fournie. L’<strong>infrastructure des comptes</strong> permet d’accéder aux comptes d’utilisateurs déjà stockés sur l’appareil, tels que Facebook et Twitter.</td>
-<td align="left">Le <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt270196.aspx">broker d’authentification Web</a></strong> de la bibliothèque OAuth générique permet de se connecter à des services de fournisseur d’identité tiers. Le <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt270189.aspx">stockage sécurisé des informations d’identification</a></strong> permet aux utilisateurs d’enregistrer leurs informations de connexion et de les utiliser sur plusieurs appareils. L’espace de noms <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn896755.aspx">Microsoft.Live</a></strong> vous permet d’accéder facilement à Live SDK OAuth pour l’accès aux services Microsoft.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt270184.aspx">Authentification et identité des utilisateurs</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.web.aspx">Documentation sur l’API Windows.Security.Authentication.Web</a><br/><br/><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAuthenticationBroker">Exemple de code WebAuthenticationBroker</a></td>
+<td align="left"><strong>OAuth libraries.</strong> <br><br>OAuth libraries allowing access to third party OAuth providers, and any account management built into the platform.</td>
+<td align="left">No generic OAuth library is provided. The <strong>GoogleAuthUtil</strong> class is provided for OAuth authentication with Google Play Services .<br/></td>
+<td align="left">No generic OAuth library is provided. The <strong>accounts framework</strong> provides access to user accounts already stored on the device such as Facebook and Twitter.</td>
+<td align="left">The generic OAuth library <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt270196.aspx">Web authentication broker</a></strong> lets you connect to third-party identity provider services. The <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt270189.aspx">Credential locker</a></strong> allows your users to save their login and use it on multiple devices. The <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn896755.aspx">Microsoft.Live</a></strong> namespace lets you easily access Live SDK OAuth for access to Microsoft services.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt270184.aspx">Authentication and user identity</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.web.aspx">Windows.Security.Authentication.Web API documentation</a><br/><br/><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAuthenticationBroker">WebAuthenticationBroker code example</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="tooling">Outils</h2>
+<h2 id="tooling">Tooling</h2>
 <table style="width:100%">
 <colgroup>
 <col width="20%" />
@@ -253,28 +253,28 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><strong>Concept général</strong></th>
+<th align="left"><strong>General concept</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Plateforme Windows universelle Windows10</strong></th>
+<th align="left"><strong>Windows 10 UWP</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>IDE.</strong> <br><br>Ensemble d’outils utilisé pour créer votre application.</td>
-<td align="left"><strong>Android Studio</strong> et <strong>Eclipse</strong>, ainsi que Google incitent les développeurs à utiliser Android Studio.</td>
+<td align="left"><strong>IDE.</strong> <br><br>The toolset used to create your app.</td>
+<td align="left"><strong>Android Studio</strong> and <strong>Eclipse</strong>, with Google pushing developers toward the use of Android Studio.</td>
 <td align="left"><strong>Xcode</strong></td>
-<td align="left"><strong><a href="https://www.visualstudio.com/features/universal-windows-platform-vs.aspx">Visual Studio</a></strong> et <strong><a href="https://msdn.microsoft.com/library/jj171012.aspx">Blend pour Visual Studio</a></strong> disposent de tout ce dont vous avez besoin pour coder, concevoir, connecter, déboguer, analyser, optimiser et tester les applications UWP. Visual Studio propose également des <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt188754.aspx">émulateurs</a></strong> pour les appareils Windows 10 afin de pouvoir tester votre application sur une large gamme d’appareils émulés.<br/><br/><a href="https://dev.windows.com/downloads">Téléchargements et outils pour UWP</a></td>
+<td align="left"><strong><a href="https://www.visualstudio.com/features/universal-windows-platform-vs.aspx">Visual Studio</a></strong> and <strong><a href="https://msdn.microsoft.com/library/jj171012.aspx">Blend for Visual Studio</a></strong> has all the tools you need to code, design, connect, debug, analyze, optimize and test UWP apps. Visual Studio also provides you with <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt188754.aspx">emulators</a></strong> for Windows 10 devices, so you can test your app across a range of emulated devices.<br/><br/><a href="https://dev.windows.com/downloads">Downloads and tools for UWP</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Organisation du code.</strong> <br><br>Structure de dossiers de base d’une application, souvent créée à partir d’un modèle d’origine.</td>
-<td align="left"><strong>Fichier AndroidManifest</strong>, dossier <strong>java</strong> contenant les fichiers sources, dossier <strong>res</strong> avec ressources comprenant des dispositions et des valeurs, scripts de création <strong>Gradle</strong> dans Android Studio et <strong>Ant</strong> dans Eclipse.</td>
-<td align="left">Fichiers sources et <strong>fichiers de prise en charge</strong>, fichier <strong>Info.plist</strong>, <strong>Main.storyboard</strong> et <strong>LaunchScreen.storyboard</strong>. Les images sont stockées dans les <strong>bibliothèques de ressources</strong>.</td>
-<td align="left">Votre application UWP contient des fichiers XAML et de code pour votre application intitulée Example.xaml et Example.xaml.cs, différentes images dans le <strong>dossier de ressources</strong>, une page de démarrage comme <strong>MainPage.xaml</strong> et <strong>MainPage.xaml.cs</strong> et un manifeste.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/dn765018.aspx">Créer une application Hello World</a></td>
+<td align="left"><strong>Code organization.</strong> <br><br>The basic folder structure of an app, often created from an initial template.</td>
+<td align="left"><strong>AndroidManifest</strong> file, <strong>java</strong> folder containing source files, <strong>res</strong> folder with resources including layouts and values, <strong>Gradle</strong> build scripts in Android Studio and <strong>Ant</strong> build scripts in Eclipse.</td>
+<td align="left">Source files and <strong>Supporting Files</strong>, <strong>Info.plist</strong> file, <strong>Main.storyboard</strong> and <strong>LaunchScreen.storyboard</strong>. Images are stored in <strong>Asset libraries</strong>.</td>
+<td align="left">Your UWP app contains XAML and code files for your app named Example.xaml and Example.xaml.cs, various images in the <strong>Assets folder</strong>, a start page such as <strong>MainPage.xaml</strong> and <strong>MainPage.xaml.cs</strong> and a manifest.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/dn765018.aspx">Create a hello world app</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="app-lifecycle">Cycle de vie de l’application</h2>
+<h2 id="app-lifecycle">App lifecycle</h2>
 <table style="width:100%">
 <colgroup>
 <col width="20%" />
@@ -284,28 +284,28 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><strong>Concept général</strong></th>
+<th align="left"><strong>General concept</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Plateforme Windows universelle Windows10</strong></th>
+<th align="left"><strong>Windows 10 UWP</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Cycle de vie de l’application.</strong> <br><br>Gestion des événements lors du lancement, de la suspension, de la reprise et de la fermeture d’une application permettant d’enregistrer/de restaurer l’état de l’application et d’exécuter d’autres tâches.</td>
-<td align="left">Chaque activité possède son propre <strong>cycle de vie d’activité</strong> avec des états de type <strong>reprise</strong>. <strong>Les rappels de cycle de vie</strong> tels que <strong>onResume</strong> sont implémentés dans vos <strong>classes d’activité</strong>.</td>
-<td align="left">Le <strong>cycle de vie de l’application</strong> peut avoir des états de type <strong>suspendue</strong>. Les méthodes telles que <strong>applicationDidEnterBackground:</strong> sont implémentées dans l’<strong>objet délégué d’application</strong> pour exécuter du code lors d’un changement d’état.</td>
-<td align="left">Votre application dispose des <strong>états d’exécution</strong> suivants : NotRunning, Activated, Running, Suspending, Suspended et Resuming.<br/><br/>Vous pouvez implémenter les méthodes de <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.aspx">classe d’application</a></strong> OnLaunched, OnActivated, Suspending ou Resuming dans votre application afin d’exécuter du code lors d’un changement d’état.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt243287.aspx">Cycle de vie de l’application</a></td>
+<td align="left"><strong>App lifecycle.</strong> <br><br>Handling events on app launch, suspension, resume and close, providing an opportunity to save/restore application state and run other tasks.</td>
+<td align="left">Each activity has its own <strong>activity lifecycle</strong> with states such as <strong>resumed</strong>. <strong>Lifecycle callbacks</strong> such as <strong>onResume</strong> are implemented in in your <strong>activity classes</strong>.</td>
+<td align="left">The <strong>application lifecycle</strong> has states such as <strong>suspended</strong>. Methods such as <strong>applicationDidEnterBackground:</strong> are implemented in the <strong>application delegate object</strong> to run code on state changes.</td>
+<td align="left">Your application has the <strong>app execution states</strong> NotRunning, Activated, Running, Suspending, Suspended and Resuming.<br/><br/>You can implement the <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.aspx">Application class</a></strong> methods OnLaunched, OnActivated, Suspending or Resuming in your app to run code when the state changes.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt243287.aspx">App lifecycle</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Tâches en arrière-plan.</strong> <br><br>Tâches qui effectuent des opérations en arrière-plan et qui continuent à s’exécuter lorsque l’application n’est plus au premier plan.</td>
-<td align="left">Les applications peuvent lancer des <strong>services</strong> qui effectuent des opérations en arrière-plan lorsque l’application n’est plus au premier plan. Les services ont leur propre <strong>cycle de vie</strong> et sont enregistrés dans le manifeste.</td>
-<td align="left"><strong>L’exécution en arrière-plan</strong> est autorisée uniquement pour les types de tâches spécifiques.<br/><br/>Les applications déclarent les<strong> tâches en arrière-plan prises en charge</strong> dans le fichier Info.plist à l’aide de <strong>UIBackgroundModes</strong>.<br/><br/>Le système contrôle l’exécution des tâches en arrière-plan et leur durée.</td>
-<td align="left">Vous pouvez créer une tâche en arrière-plan en implémentant l’interface <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.aspx">IBackgroundTask</a></strong> et en inscrivant la tâche dans le manifeste de l’application. Vous pouvez définir une tâche à déclencher avec un <a href="https://msdn.microsoft.com/library/windows/apps/mt186458.aspx"><strong>minuteur</strong></a>, un <a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.systemtriggertype.aspx"><strong>déclencheur système</strong></a> et un <a href="https://msdn.microsoft.com/library/windows/apps/mt185632.aspx"><strong>déclencheur de maintenance</strong></a>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt299103.aspx">Prendre en charge votre application avec des tâches en arrière-plan</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt299100.aspx">Créer et inscrire une tâche en arrière-plan</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187310.aspx">Recommandations en matière de tâches en arrière-plan</a></td>
+<td align="left"><strong>Background tasks.</strong> <br><br>Tasks that perform background operations and continue to run when the app is no longer in the foreground.</td>
+<td align="left">Apps can launch <strong>services</strong> which perform background operations when the app is no longer in the foreground. Services have their own <strong>lifecycle</strong> and are registered in the manifest.</td>
+<td align="left"><strong>Background execution</strong> is only permitted for specific task types.<br/><br/>Apps declare <strong>supported background tasks</strong> in the Info.plist file using the <strong>UIBackgroundModes</strong>.<br/><br/>The system controls when background tasks are run and for how long.</td>
+<td align="left">You can create a background task by implementing the <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.aspx">IBackgroundTask</a></strong> interface and registering the task in the application manifest. You can set a task to be triggered with a <a href="https://msdn.microsoft.com/library/windows/apps/mt186458.aspx"><strong>timer</strong></a>, <a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.systemtriggertype.aspx"><strong>system trigger</strong></a>, and <a href="https://msdn.microsoft.com/library/windows/apps/mt185632.aspx"><strong>maintenance trigger</strong></a>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt299103.aspx">Support your app with background tasks</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt299100.aspx">Create and register a background task</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187310.aspx">Guidelines for background tasks</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="performance">Performances</h2>
+<h2 id="performance">Performance</h2>
 <table style="width:100%">
 <colgroup>
 <col width="20%" />
@@ -315,46 +315,46 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><strong>Concept général</strong></th>
+<th align="left"><strong>General concept</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Plateforme Windows universelle Windows10</strong></th>
+<th align="left"><strong>Windows 10 UWP</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Meilleures pratiques en matière de performances</strong> <br><br>Recommandations en matière de création d’applications rapides, réactives, préservant l’autonomie de la batterie et offrant un démarrage rapide.</td>
-<td align="left">Android fournit le guide de formation <strong>Meilleures pratiques en matière de performances</strong>.</td>
-<td align="left">iOS fournit le document <strong>Vue d’ensemble des performances</strong>.</td>
-<td align="left">Vous pouvez lire le <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt270266.aspx">guide des performances</a></strong> détaillé comprenant des sections traitant de sujets, tels que la définition d’objectifs en matière de performances, la mesure des performances, la gestion de la mémoire, la fluidité des animations, l’accès efficace au système de fichiers et les outils disponibles pour le profilage et les performances.</td>
+<td align="left"><strong>Performance best practices.</strong> <br><br>Guidelines for building apps that are fast, responsive, considerate of battery life with a fast startup time.</td>
+<td align="left">Android provides the <strong>Best Practices for Performance</strong> training guide.</td>
+<td align="left">iOS provides the <strong>Performance Overview</strong> document.</td>
+<td align="left">You can read the detailed <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt270266.aspx">Performance guide</a></strong> with sections covering topics such as; setting performance goals, measuring performance, memory management, smooth animations, efficient file system access and the tools available for profiling and performance.</td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Optimisation de la vue pour une interface utilisateur réactive.</strong> <br><br>Amélioration des performances par l’optimisation des vues.</td>
-<td align="left">L’optimisation des <strong>hiérarchies de disposition</strong> à l’aide de l’outil Visionneuse de la hiérarchie, la <strong>réutilisation des dispositions</strong> et le chargement des <strong>vues à la demande</strong>, sont des techniques qui permettent d’assurer la réactivité du thread et d’éviter les boîtes de dialogue &quot;L’application ne répond pas&quot; (<strong>ANR</strong>).<br/></td>
-<td align="left">La résolution des problèmes liés à l’interface utilisateur avec le <strong>rendu hors écran</strong>, le <strong>mélange des couches</strong> et la <strong>rastérisation</strong> à l’aide de l’outil <strong>Core Animation</strong> assure la réactivité du thread de l’interface utilisateur.</td>
-<td align="left">Vous pouvez facilement <strong>optimiser</strong> le <strong>balisage</strong> et les <strong>dispositions</strong> XAML en suivant quelques étapes simples. Les techniques incluent la réduction de la structure de la disposition, du nombre d’éléments et du surdessin. <br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185403.aspx">Assurer la réactivité du thread de l’interface utilisateur</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt204779.aspx">Optimiser votre balisage XAML</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt404609.aspx">Optimiser votre disposition XAML</a></td>
+<td align="left"><strong>View optimization for a responsive UI.</strong> <br><br>Improving performance by optimizing views.</td>
+<td align="left">Optimizing <strong>layout hierarchies</strong> using the Hierarchy Viewer tool, <strong>reusing layouts</strong> and loading <strong>views on demand</strong> are all techniques to help keep the UI thread responsive and avoid &quot;Application Not Responding&quot; dialogs (<strong>ANR's</strong>).<br/></td>
+<td align="left">Fixing UI issues with <strong>offscreen rendering</strong>, <strong>blended layers</strong>, <strong>rasterization</strong> using the <strong>Core Animation</strong> tool help keep the UI thread responsive.</td>
+<td align="left">You can easily <strong>optimize</strong> XAML <strong>markup</strong> and <strong>layouts</strong> by following a few simple steps. Techniques include reducing layout structure, minimizing the element count and minimizing overdrawing. <br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185403.aspx">Keep the UI thread responsive</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt204779.aspx">Optimize your XAML markup</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt404609.aspx">Optimize your XAML layout</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Threads.</strong> <br><br>Utilisation de threads pour assurer la <strong>réactivité de l’interface utilisateur</strong> et exécuter plusieurs <strong>tâches en parallèle</strong>.</td>
-<td align="left">Les threads sont obtenus à l’aide des classes <strong>Runnable</strong>, <strong>Handler</strong>, <strong>ThreadPoolExecutor</strong> et <strong>AsyncTask</strong> de niveau supérieur.</td>
-<td align="left">Les threads sont obtenus à l’aide des classes <strong>NSThread</strong>, <strong>Grand Central Dispatch</strong> et <strong>NSOperation</strong> de niveau supérieur.</td>
-<td align="left">Vous pouvez travailler avec des threads en soumettant des <strong>éléments de travail</strong> au <strong>pool de threads</strong> avec <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpool.runasync.aspx">RunAsync</a></strong>. Vous pouvez utiliser un minuteur pour envoyer un élément de travail avec <strong><a href="https://msdn.microsoft.com/library/windows/apps/br230590.aspx">CreateTimer</a></strong> et créer un élément de travail qui se répète avec <strong><a href="https://msdn.microsoft.com/library/windows/apps/br230589.aspx">CreatePeriodicTimer</a></strong>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187339.aspx">Envoyer un élément de travail au pool de threads</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187341.aspx">Utiliser un minuteur pour envoyer un élément de travail</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187338.aspx">Créer un élément de travail périodique</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187336.aspx">Meilleures pratiques pour l’utilisation du pool de threads</a></td>
+<td align="left"><strong>Threading.</strong> <br><br>Use of threading to maintain a <strong>responsive UI</strong> and run multiple <strong>tasks in parallel</strong>.</td>
+<td align="left">Threading is achieved using the classes <strong>Runnable</strong>, <strong>Handler</strong>, <strong>ThreadPoolExecutor</strong>, and the higher level <strong>AsyncTask</strong>.</td>
+<td align="left">Threading is achieved using <strong>NSThread</strong>, <strong>Grand Central Dispatch</strong>, and the higher level <strong>NSOperation</strong>.</td>
+<td align="left">You can work with threads by submitting <strong>work items</strong> to the <strong>threadpool</strong> with <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpool.runasync.aspx">RunAsync</a></strong>. You can use a timer to submit a work item with <strong><a href="https://msdn.microsoft.com/library/windows/apps/br230590.aspx">CreateTimer</a></strong> and create a repeating work item with <strong><a href="https://msdn.microsoft.com/library/windows/apps/br230589.aspx">CreatePeriodicTimer</a></strong>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187339.aspx">Submit a work item to the thread pool</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187341.aspx">Use a timer to submit a work item</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187338.aspx">Create a periodic work item</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187336.aspx">Best practices for using the thread pool</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Programmation asynchrone.</strong> <br><br>Éviter la complexité des threads en tirant parti des modèles de programmation asynchrones pour garantir la réactivité du thread de l’interface utilisateur.</td>
-<td align="left">L’utilisation des <strong>threads est requise</strong> pour créer vos propres classes asynchrones. Certaines classes intégrées sont asynchrones.</td>
-<td align="left">L’utilisation des <strong>threads est requise</strong> pour créer vos propres classes asynchrones. Certaines classes intégrées sont asynchrones.</td>
-<td align="left">Vous pouvez utiliser les modèles asynchrones pour éviter le blocage du thread principal lorsque vous créez vos propres API, par exemple, à l’aide de <strong>async</strong> et <strong>await</strong> en C# et Visual Basic. Vous pouvez utiliser les API asynchrones intégrées qui se terminent par le mot <strong>Async</strong>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187335.aspx">Programmation asynchrone</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187337.aspx">Appeler des API asynchrones en C# ou Visual Basic</a></td>
+<td align="left"><strong>Asynchronous programming.</strong> <br><br>Avoid threading complexity by taking advantage of asynchronous programming patterns to keep the UI thread responsive.</td>
+<td align="left">The use of <strong>threading is required</strong> to create your own asynchronous classes. Some built-in classes are asynchronous.</td>
+<td align="left">The use of <strong>threading is required</strong> is required to create your own asynchronous classes. Some built-in classes are asynchronous.</td>
+<td align="left">You can use asynchronous patterns to avoid blocking the main thread when you create your own APIs, e.g. using <strong>async</strong> and <strong>await</strong> in C# and Visual Basic. You can use the asynchronous built-in APIs which end in the word <strong>Async</strong>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187335.aspx">Asynchronous programming</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187337.aspx">Call asynchronous APIs in C# or Visual Basic</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Optimisation de l’affichage Liste.</strong> <br><br>Modèles intégrés permettant d’optimiser des listes de données, qui sont souvent peu performantes pour l’affichage de grandes quantités de données</td>
-<td align="left">Le modèle de conception <strong>ViewHolder</strong> est utilisé pour éviter les multiples recherches de vues, et vous permet d’utiliser des éléments d’interface utilisateur réutilisables.</td>
-<td align="left">Diverses optimisations peuvent être effectuées pour améliorer les performances de <strong>UITableView</strong>. Rien n’est intégré.</td>
-<td align="left">Vous pouvez utiliser les contrôles <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx">ListView</a> et <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx">GridView</a> qui assurent la <strong>virtualisation de l’interface utilisateur</strong> offrant un mouvement panoramique fluide, une expérience de défilement expérience et un démarrage plus rapide. Vous pouvez également implémenter <a href="https://msdn.microsoft.com/library/windows/apps/system.collections.ilist.aspx">IList</a> et <a href="https://msdn.microsoft.com/library/windows/apps/system.collections.specialized.inotifycollectionchanged.aspx">INotifyCollectionChanged</a> dans votre source de données, pour <strong>virtualiser les données</strong> et améliorer les performances.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt204776.aspx">Optimisation des options d’interface ListView et GridView</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt574120.aspx">Virtualisation des données ListView et GridView</a></td>
+<td align="left"><strong>List view optimization.</strong> <br><br>Built-in patterns to aid with optimizing lists of data, which often have poor performance when large amounts of data need to be shown</td>
+<td align="left">The <strong>ViewHolder</strong> design pattern is used to avoid multiple view lookups, which allows you to use reusable UI elements.</td>
+<td align="left">A range of optimizations can be made to improve the performance of <strong>UITableView</strong>, nothing is built-in.</td>
+<td align="left">You can use the <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx">ListView</a> and <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx">GridView</a> controls which provide <strong>UI virtualization</strong> out-of-box, providing a smooth panning and scrolling experience and a faster startup time. You can also implement <a href="https://msdn.microsoft.com/library/windows/apps/system.collections.ilist.aspx">IList</a> and <a href="https://msdn.microsoft.com/library/windows/apps/system.collections.specialized.inotifycollectionchanged.aspx">INotifyCollectionChanged</a> in your data source, providing <strong>data virtualization</strong> and further improving performance.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt204776.aspx">ListView and GridView UI optimization</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt574120.aspx">ListView and GridView data virtualization</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="monetization">Monétisation</h2>
+<h2 id="monetization">Monetization</h2>
 <table style="width:100%">
 <colgroup>
 <col width="20%" />
@@ -364,40 +364,40 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><strong>Concept général</strong></th>
+<th align="left"><strong>General concept</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Plateforme Windows universelle Windows10</strong></th>
+<th align="left"><strong>Windows 10 UWP</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Achats dans l’application.</strong> <br><br>Fonctionnalités de la plateforme permettant aux utilisateurs d’effectuer des achats dans vos applications.</td>
-<td align="left"><strong>La facturation dans l’application</strong> est fournie par les services Google. Les produits sont ajoutés à la <strong>Console développeur de Google Play</strong>. Les achats dans l’application sont implémentés à l’aide de la <strong>bibliothèque de facturation Google Play</strong>.</td>
-<td align="left">Les produits sont ajoutés à <strong>iTunes Connect</strong>. Les achats dans l’application sont implémentés à l’aide de l’infrastructure <strong>StoreKit</strong>.<br/><br/>Les produits sont achetés à l’aide de <strong>SKMutablePayment</strong> et <strong>SKPaymentQueue</strong>.</td>
-<td align="left">Vous créez des achats de produits in-app pour votre application en les <a href="https://msdn.microsoft.com/library/windows/apps/mt148551.aspx">ajoutant à votre application et les soumettant au Windows Store</a>. <br/><br/>Vous utilisez la <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.aspx">classe CurrentApp</a></strong> pour définir des achats dans l’application. <br/><br/>Vous utilisez <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.requestproductpurchaseasync.aspx">CurrentApp.RequestProductPurchaseAsync</a></strong> pour afficher l’interface utilisateur qui permet aux clients d’acheter le produit.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219684.aspx">Activer les achats de produits in-app</a></td>
+<td align="left"><strong>In-app purchases.</strong> <br><br>Platform features that allow users to make purchases in your apps.</td>
+<td align="left"><strong>In-app billing</strong> is provided by Google Services. Products are added to the <strong>Google Play Developer Console</strong>. In-app purchases are implemented with the <strong>Google Play Billing Library</strong>.</td>
+<td align="left">Products are added to <strong>iTunes Connect</strong>. In-app purchases are implemented using the <strong>StoreKit</strong> framework.<br/><br/>Products are purchased using <strong>SKMutablePayment</strong> and <strong>SKPaymentQueue</strong>.</td>
+<td align="left">You create in-app product purchases for your app by <a href="https://msdn.microsoft.com/library/windows/apps/mt148551.aspx">adding them to your app and submitting them to the Store</a>. <br/><br/>You use the <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.aspx">CurrentApp class</a></strong> to define in-app purchases. <br/><br/>You use <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.requestproductpurchaseasync.aspx">CurrentApp.RequestProductPurchaseAsync</a></strong> to display the UI that allows customers to purchase the product.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219684.aspx">Enable in-app product purchases</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Achats de consommables dans l’application.</strong> <br><br>Produits intégrés à l’application pouvant être achetés, utilisés, puis de nouveau achetés.</td>
-<td align="left">Les achats de consommables sont activés par un achat régulier, puis sa consommation à l’aide de <strong>consumePurchase</strong>, qui lui permet d’être acheté, utilisé, puis acheté de nouveau.</td>
-<td align="left">Les produits consommables sont <strong>définis sous forme de produits consommables</strong> dans iTunes Connect.</td>
-<td align="left">Vous pouvez prendre en charge des consommables en <a href="https://msdn.microsoft.com/library/windows/apps/mt148534.aspx">définissant leur type de produit sur Consommable lorsque vous les envoyez au</a> Windows Store. Vous devez ensuite appeler <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.reportconsumablefulfillmentasync.aspx">CurrentApp.ReportConsumableFulfillmentAsync</a></strong> après l’achat d’un produit pour permettre au client d’y accéder.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219683.aspx">Activer les achats de consommables dans l’application</a></td>
+<td align="left"><strong>Consumable in-app purchases.</strong> <br><br>In-app products which can be purchased, used and then purchased again.</td>
+<td align="left">Consumable purchases are enabled by making a regular purchase and then consuming it with <strong>consumePurchase</strong>, enabling it to be purchased, used, and then purchased again.</td>
+<td align="left">Consumable products are <strong>defined as consumable products</strong> in iTunes Connect.</td>
+<td align="left">You can support consumables by <a href="https://msdn.microsoft.com/library/windows/apps/mt148534.aspx">defining their product type as Consumable when you submit them to</a> the Store. You then call <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.reportconsumablefulfillmentasync.aspx">CurrentApp.ReportConsumableFulfillmentAsync</a></strong> after a consumable purchase has been made to allow the customer to access it.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219683.aspx">Enable consumable in-app purchases</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Test des achats dans l’application.</strong> <br><br>Permet de tester le code d’achat dans l’application sans placer votre application dans le Windows Store.</td>
-<td align="left">Le <strong>bac à sable de facturation dans l’application</strong> est utilisé pour le test.</td>
-<td align="left"><strong>Les comptes de testeur de bac à sable (sandbox)</strong> sont utilisés pour le test.</td>
-<td align="left">Vous pouvez tester des achats dans l’application en utilisant simplement la classe <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.aspx">CurrentAppSimulator</a></strong> au lieu de CurrentApp.<br/><br/></td>
+<td align="left"><strong>Testing in-app purchases.</strong> <br><br>Enabling you to test your in-app purchase code without putting your app in the Store.</td>
+<td align="left">The <strong>in-app billing sandbox</strong> is used for testing.</td>
+<td align="left"><strong>Sandbox tester accounts</strong> are used for testing.</td>
+<td align="left">You can test in-app purchases by simply using the <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.aspx">CurrentAppSimulator</a></strong> class in place of CurrentApp.<br/><br/></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Essais gratuits.</strong> <br><br>Permet de limiter facilement le contenu ou de supprimer des publicités en fonction de la version d’évaluation d’une application.</td>
-<td align="left">Google Play <strong>ne prend pas en charge officiellement les versions d’évaluation</strong>. Les essais gratuits ou la suppression des publicités s’obtient en créant un achat dans l’application et en prenant le chemin d’accès au code approprié lors de la confirmation de la réussite de l’achat.</td>
-<td align="left">L’App Store <strong>ne prend pas en charge officiellement les essais gratuits d’applications</strong>. Les essais gratuits ou la suppression des publicités s’obtient en créant un achat dans l’application et en prenant le chemin d’accès au code approprié lors de la confirmation de la réussite de l’achat.</td>
-<td align="left">Vous pouvez proposer une version d’évaluation gratuite de votre application à l’aide de l’<strong><a href="https://msdn.microsoft.com/library/windows/apps/mt148548.aspx">option Essai gratuit</a></strong> lors de l’envoi de votre application au Windows Store. Vous pouvez ensuite utiliser <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.licenseinformation.istrial.aspx">LicenseInformation.IsTrial</a></strong> pour vérifier l’état d’essai de l’application et présenter, par conséquent, les différents chemins d’accès au code. Vous pouvez vous inscrire à l’<a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.licenseinformation.licensechanged">événement LicenseChanged</a> pour être averti lorsque l’utilisateur modifie l’état de l’essai lors de l’exécution de l’application.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219685.aspx">Exclure ou limiter des fonctionnalités de la version d’évaluation</a></td>
+<td align="left"><strong>Trials.</strong> <br><br>Enabling you to easily limit content or remove advertising based on a trial version of an app.</td>
+<td align="left">Google Play <strong>doesn't officially support app trials</strong>. Trials or removing advertising is achieved by creating an in-app purchase and taking the appropriate code path when confirming the purchase was successful.</td>
+<td align="left">The App Store <strong>doesn't officially support app trials</strong>. Trials or removing advertising is achieved by creating an in-app purchase and taking the appropriate code path when confirming the purchase was successful.</td>
+<td align="left">You can offer a free trial version of your app by using the <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt148548.aspx">'Free Trial' option</a></strong> when submitting your app to the Store. You can then use <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.licenseinformation.istrial.aspx">LicenseInformation.IsTrial</a></strong> to check the trial status of the app and present different code paths accordingly. You can register for the <a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.licenseinformation.licensechanged">LicenseChanged event</a> to be notified when the user changes the trial status while the app is running.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219685.aspx">Exclude or limit features in a trial version</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="adapting-to-multiple-platforms">Adaptation aux différentes plateformes</h2>
+<h2 id="adapting-to-multiple-platforms">Adapting to multiple platforms</h2>
 <table style="width:100%">
 <colgroup>
 <col width="20%" />
@@ -407,42 +407,42 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><strong>Concept général</strong></th>
+<th align="left"><strong>General concept</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Plateforme Windows universelle Windows10</strong></th>
+<th align="left"><strong>Windows 10 UWP</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Interface utilisateur adaptative: dispositions flexibles.</strong> <br><br>Prise en charge de différentes tailles d’écran avec une hauteur et une largeur flexibles.</td>
-<td align="left">Des dispositions flexibles peuvent être obtenues à l’aide des valeurs <strong>wrap_content</strong> et <strong>match_parent</strong> des objets LinearLayout, ou en utilisant des objets RelativeLayout pour l’alignement.</td>
-<td align="left">Des dispositions flexibles peuvent être obtenues à l’aide du <strong>modèle adaptatif</strong> avec des tables de montage séquentiel universelles, en utilisant la <strong>Disposition automatique</strong> avec des <strong>contraintes</strong> et des <strong>caractéristiques</strong> telles que horizontalSizeClass et displayScale qui sont appliquées aux contrôleurs d’affichage.</td>
-<td align="left">Vous pouvez créer une disposition fluide à l’aide de <strong>propriétés</strong> et de <strong>panneaux de disposition</strong> avec une combinaison de dimensionnement fixe et dynamique.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt228350.aspx#layout_overview">Définir des dispositions avec XAML - Propriétés et panneaux de disposition</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/dn958435.aspx">Conception dynamique101</a></td>
+<td align="left"><strong>Adaptive UI: flexible layouts.</strong> <br><br>Supporting different screen sizes with a flexible height and width.</td>
+<td align="left">Flexible layouts can be achieved using the <strong>wrap_content</strong> and <strong>match_parent</strong> values in LinearLayout objects, or by making use of RelativeLayout objects for alignment.</td>
+<td align="left">Flexible layouts can be achieved using the <strong>adaptive model</strong> with universal Storyboards, making use of <strong>Auto Layout</strong> with <strong>constraints</strong> and <strong>traits</strong> such as horizontalSizeClass and displayScale which are applied to view controllers.</td>
+<td align="left">You can create a fluid layout using <strong>layout properties</strong> and <strong>panels</strong> with a combination of fixed and dynamic sizing.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt228350.aspx#layout_overview">Define layouts with XAML - layout properties and panels</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/dn958435.aspx">Responsive design 101</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Interface utilisateur adaptative: dispositions adaptées.</strong> <br><br>Prise en charge de différentes tailles d’écran avec des dispositions ciblées distinctes.</td>
-<td align="left">Le fait de fournir d’autres fichiers de disposition pour différentes configurations d’écran dans le répertoire de ressources utilisant des <strong>qualificateurs de configuration</strong> tels que <strong>small</strong>, <strong>large</strong>, <strong>ldpi</strong> et <strong>hdpi</strong> vous permet de cibler des dispositions personnalisées pour les écrans de différentes tailles et densités.</td>
-<td align="left">Définissez une <strong>table de montage séquentiel pour iPhone et iPad distincte</strong> afin d’adapter les dispositions à différentes familles d’appareils dans une application universelle.</td>
-<td align="left">Vous pouvez créer une disposition personnalisée en définissant <strong>différents fichiers de balisage XAML</strong> par famille d’appareils.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt228350.aspx#tailored_layouts">Définir des dispositions avec XAML - Dispositions personnalisées</a></td>
+<td align="left"><strong>Adaptive UI: tailored layouts.</strong> <br><br>Supporting different screen sizes with separate targeted layouts.</td>
+<td align="left">Providing alternative layout files for different screen configurations in the resources directory using <strong>configuration qualifiers</strong> such as <strong>small</strong>, <strong>large</strong>, <strong>ldpi</strong>, and <strong>hdpi</strong> allows you to target custom layouts to screens of varying size and density.</td>
+<td align="left">Define a <strong>separate iPhone and iPad Storyboard</strong> to tailor layouts to different device families in a universal app.</td>
+<td align="left">You can build a tailored layout by defining <strong>different XAML markup files</strong> per device family.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt228350.aspx#tailored_layouts">Define layouts with XAML - tailored layouts</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Interface utilisateur adaptative: dispositions dynamiques.</strong> <br><br>Réponse aux changements de taille d’écran, par exemple, à la rotation, ou à une modification de la taille d’une fenêtre.</td>
-<td align="left">L’utilisation de dispositions flexibles avec <strong>LinearLayout</strong> et <strong>RelativeLayout</strong>, ou le fait de proposer d’autres fichiers de disposition pour différentes orientations offre des dispositions dynamiques.</td>
-<td align="left">Lors du changement de la <strong>taille</strong> ou des <strong>caractéristiques</strong> d’une vue, les <strong>contraintes</strong> spécifiées dans les tables de montage séquentiel s’appliquent.</td>
-<td align="left">Vous pouvez facilement réorganiser, repositionner, redimensionner, faire apparaître ou remplacer des sections de votre interface utilisateur lors de l’exécution en réponse aux changements de taille de fenêtre à l’aide de <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstate.aspx">VisualState</a></strong>, <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstatemanager.aspx">VisualStateManager</a></strong> et <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.adaptivetrigger.aspx">AdaptiveTrigger</a></strong>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt228350.aspx#visual_states_and_state_triggers">Définir des dispositions avec XAML - États visuels et déclencheurs d’état</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/dn958435.aspx">Conception dynamique101</a></td>
+<td align="left"><strong>Adaptive UI: responsive layouts.</strong> <br><br>Responding to changes in screen size, such as rotation, or a change in the size of a window.</td>
+<td align="left">Use of flexible layouts with <strong>LinearLayout</strong> and <strong>RelativeLayout</strong>, or providing alternative layout files for different orientations enable responsive layouts.</td>
+<td align="left">When the <strong>size</strong> or <strong>traits</strong> of a view change, the <strong>constraints</strong> specified in storyboards are applied.</td>
+<td align="left">You can easily reflow, reposition, resize, reveal, or replace sections of your UI at runtime in response to window size changes using <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstate.aspx">VisualState</a></strong>, the <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstatemanager.aspx">VisualStateManager</a></strong> and <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.adaptivetrigger.aspx">AdaptiveTrigger</a></strong>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt228350.aspx#visual_states_and_state_triggers">Define layouts with XAML - visual states and state triggers</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/dn958435.aspx">Responsive design 101</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Prise en charge de différentes fonctionnalités d’appareils.</strong> <br><br>Exploitation des fonctionnalités matérielles avancées tout en assurant la prise en charge des appareils qui n’en sont pas dotés.</td>
-<td align="left">Le fait de tester des fonctionnalités d’appareil au moment de l’exécution à l’aide de <strong>PackageManager.hasSystemFeature</strong> vous permet de déterminer si un code spécifique d’un matériel peut s’exécuter.</td>
-<td align="left">Il n’existe <strong>aucune vérification unique</strong> à effectuer lors de l’exécution pour tester les fonctionnalités d’un appareil. Chaque fonctionnalité est testée de manière spécifique pour déterminer si le code propre à un matériel peut être exécuté.</td>
-<td align="left">Vous pouvez ajouter des <strong>Kits de développement logiciel (SDK) d’extension de plate-forme</strong> à votre package pour cibler les fonctionnalités supplémentaires trouvées dans différentes familles d’appareils : téléphone, ordinateur de bureau et IoT. Vous utilisez également l’<strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.aspx">API ApiInformation</a></strong> pour tester la présence de types et de membres lors de l’exécution. Vous ne pouvez appeler ces types et membres que s’ils sont présents.</td>
+<td align="left"><strong>Supporting different device capabilities.</strong> <br><br>Take advantage of advanced hardware features while still supporting devices without them.</td>
+<td align="left">Testing for device features at runtime using <strong>PackageManager.hasSystemFeature</strong> enables you to decide if hardware specific code can run.</td>
+<td align="left">There is <strong>no single check</strong> you can perform at runtime to test for device features, you test for each feature in a specific way to decide if hardware specific code can be run.</td>
+<td align="left">You can add <strong>platform extension SDKs</strong> to your package to target additional functionality found in different device families including phone, desktop, and IoT. You use the <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.aspx">ApiInformation API</a></strong> to test for the presence of types and members at runtime, and can call those types and members only if they're present.</td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Prise en charge de différentes fonctionnalités d’appareils.</strong> <br><br>Exploitation des fonctionnalités matérielles avancées tout en assurant la prise en charge des appareils qui n’en sont pas dotés.</td>
-<td align="left">La <strong>bibliothèque de prise en charge Android</strong> peut être fournie avec votre application afin de mettre à disposition quelques nouvelles API aux utilisateurs d’anciennes versions d’Android. Le test du niveau d’API lors de l’exécution peut être effectué à l’aide de <strong>Build.Version.SDK_INT</strong>.</td>
-<td align="left">Les vérifications à l’exécution standard permettent de déterminer si des API sont disponibles, comme la méthode <strong>class</strong> qui vérifie l’existence d’une classe et <strong>respondsToSelector:</strong> qui recherche les méthodes sur les classes.</td>
-<td align="left">Vous pouvez utiliser <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn949005.aspx">ApiInformation.IsApiContractPresent</a></strong> pour vérifier la présence d’un contrat API avec un nombre majeur et mineur spécifié. Vous utilisez également l’<strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.aspx">API ApiInformation</a></strong> pour tester la présence de types et de membres lors de l’exécution. Vous ne pouvez appeler ces types et membres que s’ils sont présents.</td>
+<td align="left"><strong>Supporting different device capabilities.</strong> <br><br>Take advantage of advanced hardware features while still supporting devices without them.</td>
+<td align="left">The <strong>Android Support Library</strong> can be packaged with your app to make some newer APIs available to those with older versions of Android. Testing for the API level at runtime can be done using <strong>Build.Version.SDK_INT</strong>.</td>
+<td align="left">Standard runtime checks are used to find out if APIs are available, such as the <strong>class</strong> method to check if a class exists and <strong>respondsToSelector:</strong> to check for methods on classes.</td>
+<td align="left">You can use <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn949005.aspx">ApiInformation.IsApiContractPresent</a></strong> to identify if an API contract with a specified major and minor number is present. You also use the <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.aspx">ApiInformation API</a></strong> to test for the presence of types and members at runtime, and can call those types and members only if they're present.</td>
 </tr>
 </tbody>
 </table>
@@ -456,34 +456,34 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><strong>Concept général</strong></th>
+<th align="left"><strong>General concept</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Plateforme Windows universelle Windows10</strong></th>
+<th align="left"><strong>Windows 10 UWP</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Vignettes et badges.</strong> <br><br>Présentation des mises à jour aux utilisateurs sur l’écran d’accueil.</td>
-<td align="left"><strong>Les widgets d’application</strong> sont des vues de votre application qui peuvent être intégrées à l’écran d’accueil et recevoir des mises à jour périodiques. <strong>Il n’existe aucun système de badge</strong> sur Android. Il n’existe aucun système identique aux vignettes.</td>
-<td align="left"><strong>Il n’existe aucune vignette ou aucun widget</strong> sur iOS. Vous pouvez ajouter un <strong>badge</strong> à votre icône avec un nombre qui peut changer suite à des notifications locales ou distantes.</td>
-<td align="left">Votre application dispose d’une <strong>vignette</strong> qui peut être épinglée à l’écran de démarrage et permet d’afficher les textes, images et un <strong>badge</strong> de votre choix avec des glyphes et des chiffres. Vous pouvez mettre à jour le contenu des vignettes à partir de l’application par le biais de notifications Push ou selon un calendrier prédéfini. Les vignettes peuvent être adaptatives et varier en fonction de l’endroit où elles sont affichées.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt185605.aspx">Créer des vignettes</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt590880.aspx">Créer des vignettes adaptatives</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt187193.aspx">Choisir une méthode de remise de notification</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465403.aspx">Recommandations en matière de vignettes et de badges</a></td>
+<td align="left"><strong>Tiles and badges.</strong> <br><br>Present updates to users on the home screen.</td>
+<td align="left"><strong>App Widgets</strong> are views on your application that can be embedded into the home screen and can receive periodic updates. <strong>No badge system</strong> exists on Android. No identical system to tiles exists.</td>
+<td align="left"><strong>No tiles or widgets</strong> exist on iOS. You can add a <strong>badge</strong> to your icon with a number which can change in response to local or remote notifications.</td>
+<td align="left">Your app has a <strong>tile</strong> which can be pinned to the start screen and is used to display your choice of text, images, and a <strong>badge</strong> with glyphs and numbers. You can update the content of tiles from the app; via push notifications or at predefined schedules. Tiles can be adaptive, and can change according to where they are being displayed.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt185605.aspx">Create tiles</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt590880.aspx">Create adaptive tiles</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt187193.aspx">Choose a notification delivery method</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465403.aspx">Guidelines for tiles and badges</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Affichage des notifications.</strong> <br><br>Types de notifications pouvant être affichées.</td>
-<td align="left">Les notifications peuvent être affichées dans la <strong>zone de notification</strong> et le <strong>panneau de notification</strong>. Les <strong>notifications d’avertissement</strong> s’affichent dans une petite fenêtre flottante. La définition d’un <strong>PendingIntent</strong> permet d’ajouter des actions aux notifications.</td>
-<td align="left">Les notifications contextuelles apparaissent sous forme de <strong>bannières</strong> ou d’<strong>alertes</strong>. Vous pouvez ajouter des boutons d’action personnalisés aux <strong>notifications interactives</strong> définis avec <strong>UIMutableUserNotificationAction</strong>.</td>
-<td align="left">Vous pouvez créer des notifications contextuelles adaptatives appelées <strong>notifications toast</strong>. Vous pouvez définir des notifications toast en XML avec du contenu visuel, des <strong>actions</strong> qui peuvent être des boutons, ou des entrées et du son.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt631604.aspx">Notifications toast adaptatives et interactives</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt187193.aspx">Choisir une méthode de remise de notification</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465391.aspx">Recommandations en matière de notifications toast</a></td>
+<td align="left"><strong>Displaying notifications.</strong> <br><br>Types of notifications that can be displayed.</td>
+<td align="left">Notifications can be shown in the <strong>notification area</strong> and <strong>notification drawer</strong>, <strong>heads-up notifications</strong> present a notification in a small floating window. Notifications can have actions added to them by defining a <strong>PendingIntent</strong>.</td>
+<td align="left">Pop-up notifications appear as <strong>banners</strong> or <strong>alerts</strong>. You can add custom action buttons to <strong>actionable notifications</strong> which are defined with <strong>UIMutableUserNotificationAction</strong>.</td>
+<td align="left">You can create adaptive pop-up notifications called <strong>toast notifications</strong>. You can define toasts in XML with visual content, <strong>actions</strong> which can be buttons, or inputs and audio.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt631604.aspx">Adaptive and interactive toast notifications</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt187193.aspx">Choose a notification delivery method</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465391.aspx">Guidelines for toast notifications</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Planification de notifications locales.</strong> <br><br>Notifications locales envoyées par votre application à une heure prévue.</td>
-<td align="left">Les notifications et actions sont définies à l’aide d’un <strong>NotificationCompat.Builder</strong> et peuvent être planifiées et gérées dans l’application à l’aide d’<strong>AlarmManager</strong> et de <strong>BroadcastReceiver</strong>.</td>
-<td align="left">Les notifications locales sont créées à l’aide de <strong>UILocalNotification</strong>, et peuvent être planifiées avec ** UILocalNotification.scheduleLocalNotification:<strong>. Vous pouvez planifier une notification toast à l’aide de </strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.notifications.scheduledtoastnotification.aspx">ScheduledToastNotification</a><strong>. Vous pouvez envoyer une notification par vignette à partir de votre application en utilisant la classe </strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.notifications.tilenotification.aspx">TileNotification</a><strong>, ou planifier une notification par vignette avec <a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.notifications.scheduledtilenotification.aspx">ScheduledTileNotification</a>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt631604.aspx">Notifications toast adaptatives et interactives</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt593299.aspx">Envoyer une notification par vignette locale</a> || </strong>Envoi de notifications Push.** Une notification envoyée depuis un serveur de notifications Push et éventuellement gérée dans l’application.</td>
-<td align="left"><strong>Google Cloud Messaging</strong> prend en charge les notifications Push pour Android.</td>
+<td align="left"><strong>Scheduling local notifications.</strong> <br><br>Local notifications sent by your app at a scheduled time.</td>
+<td align="left">Notifications and actions are defined using a <strong>NotificationCompat.Builder</strong> and can be scheduled and handled in-app using <strong>AlarmManager</strong> and <strong>BroadcastReceiver</strong>.</td>
+<td align="left">Local notifications are created using <strong>UILocalNotification</strong>, and can be scheduled with ** UILocalNotification.scheduleLocalNotification:<strong>. | You can schedule a toast notification using </strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.notifications.scheduledtoastnotification.aspx">ScheduledToastNotification</a><strong>. You can send a tile notification from your app using the </strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.notifications.tilenotification.aspx">TileNotification class</a><strong>, or schedule a tile notification with <a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.notifications.scheduledtilenotification.aspx">ScheduledTileNotification</a>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt631604.aspx">Adaptive and interactive toast notifications</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt593299.aspx">Send a local tile notification</a> | | </strong>Sending push notifications.** A notification sent from a push notification server and optionally handled in-app.</td>
+<td align="left"><strong>Google Cloud Messaging</strong> provides push notification support for Android.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="media-capture-and-rendering">Capture et rendu multimédia</h2>
+<h2 id="media-capture-and-rendering">Media capture and rendering</h2>
 <table style="width:100%">
 <colgroup>
 <col width="20%" />
@@ -493,34 +493,34 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><strong>Concept général</strong></th>
+<th align="left"><strong>General concept</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Plateforme Windows universelle Windows10</strong></th>
+<th align="left"><strong>Windows 10 UWP</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Capture multimédia.</strong> <br><br>Enregistrement d’un contenu audio et visuel.</td>
-<td align="left">L’utilisation de <strong>intent</strong>, tel que MediaStore.ACTION_VIDEO_CAPTURE permet la capture multimédia avec une application de caméra existante. L’utilisation de la bibliothèque <strong>android.hardware.camera2</strong> ou <strong>camera</strong> permet d’implémenter une interface de caméra personnalisée. <strong>Les API MediaRecorder</strong> permettent de capturer des données audio.</td>
-<td align="left"><strong>UIImagePickerController</strong> permet la capture de vidéos et de photos avec l’interface utilisateur du système. Les classes <strong>AVFoundation</strong> telles que <strong>AVCaptureSession</strong> permettent d’accéder directement à la caméra. <br/>La classe <strong>AVAudioRecorder</strong> permet d’enregistrer du son.</td>
-<td align="left">Vous pouvez capturer des photos et des vidéos tout en utilisant l’interface utilisateur de la caméra intégrée avec la classe <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.media.capture.cameracaptureui.aspx">CameraCaptureUI</a></strong>. Vous pouvez interagir avec la caméra à un niveau faible et capturer du son à l’aide de classes dans <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.media.capture.aspx">Windows.Media.Capture</a></strong>, comme l’<strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.media.capture.mediacapture.aspx">API MediaCapture</a></strong>. <br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt282142.aspx">Capturer des photos et des vidéos à l’aide de CameraCaptureUI</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt243896.aspx">Capturer des photos et des vidéos à l’aide de MediaCapture</a></td>
+<td align="left"><strong>Capturing media.</strong> <br><br>Recording audio and visual content.</td>
+<td align="left">Using an <strong>intent</strong> such as MediaStore.ACTION_VIDEO_CAPTURE allows media to be captured with an existing camera app. Using the <strong>android.hardware.camera2</strong> or <strong>camera</strong> library enables the implementation of a custom camera interface. <strong>MediaRecorder</strong> APIs can be used to capture audio.</td>
+<td align="left">The <strong>UIImagePickerController</strong> allows for the capture of video and photos with the system UI. The <strong>AVFoundation</strong> classes such as <strong>AVCaptureSession</strong> enable direct access to the camera. <br/>The <strong>AVAudioRecorder</strong> class enables audio recording.</td>
+<td align="left">You can capture photos and video while using the built-in camera UI with the <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.media.capture.cameracaptureui.aspx">CameraCaptureUI class</a></strong>. You can interact with the camera at a low level, and capture audio with classes in <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.media.capture.aspx">Windows.Media.Capture</a></strong> such as the <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.media.capture.mediacapture.aspx">MediaCapture API</a></strong>. <br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt282142.aspx">Capture photos and video with CameraCaptureUI</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt243896.aspx">Capture photos and video with MediaCapture</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Lecture de contenu multimédia.</strong> <br><br>Lecture de fichiers audio et vidéo.</td>
-<td align="left">Les classes <strong>MediaPlayer</strong> et <strong>AudioManager</strong> permettent de lire des fichiers audio et vidéo.</td>
-<td align="left">L’<strong>infrastructure AVKit</strong>, <strong>AVAudioPlayer</strong> et l’<strong>infrastructure du lecteur multimédia</strong> permettent de lire des fichiers audio et vidéo.</td>
-<td align="left">Vous pouvez utiliser les classes <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.media.core.mediasource.aspx">MediaSource</a></strong>, <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.aspx">MediaElement</a></strong> et <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.aspx">MediaPlayer</a></strong> pour lire du contenu audio et vidéo à partir de sources telles que des fichiers locaux et distants.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt592657.aspx">Lecture de contenu multimédia avec MediaSource</a></td>
+<td align="left"><strong>Media playback.</strong> <br><br>Playing audio and video files.</td>
+<td align="left">The <strong>MediaPlayer</strong> and <strong>AudioManager</strong> classes are used to play audio and video files.</td>
+<td align="left">The <strong>AVKit framework</strong>, <strong>AVAudioPlayer</strong>, and <strong>Media Player Framework</strong> are used to play audio and video files.</td>
+<td align="left">You can use the <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.media.core.mediasource.aspx">MediaSource class</a></strong>, <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.aspx">MediaElement</a></strong>, and <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.aspx">MediaPlayer</a></strong> classes to play back audio and video from sources such as local and remote files.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt592657.aspx">Media playback with MediaSource</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Modification multimédia.</strong> <br><br>Composition de nouveaux fichiers multimédias à partir d’enregistrements existants et application d’effets spéciaux.</td>
-<td align="left">Les classes de faible niveau, telles que <strong>MediaCodec</strong>, <strong>MediaMuxer</strong> et <strong>android.media.effect</strong> peuvent être utilisées pour modifier du contenu.</td>
-<td align="left">Les classes de l’infrastructure <strong>AV Foundation</strong>, telles que <strong>AVMutableComposition</strong>, <strong>AVMutableVideoComposition</strong> et <strong>AVMutableAudioMix</strong> peuvent être utilisées pour modifier du contenu.</td>
-<td align="left">Vous pouvez utiliser les API <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.media.editing.aspx">Windows.Media.Editing</a></strong>, telles que <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.media.editing.mediacomposition.aspx">MediaComposition</a></strong> et <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.media.editing.mediaclip.aspx">MediaClip</a></strong> pour créer des compositions multimédias à partir de fichiers audio et vidéo. Vous pouvez ajouter des superpositions d’images et de vidéos, combiner des clips vidéo, ajouter du son en arrière-plan et appliquer des effets audio et vidéo.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt204792.aspx">Compositions multimédias et modification</a></td>
+<td align="left"><strong>Editing media.</strong> <br><br>Composing new media files from existing recordings and applying special effects.</td>
+<td align="left">Low level classes such as <strong>MediaCodec</strong>, <strong>MediaMuxer</strong>, and <strong>android.media.effect</strong> can be used for content editing.</td>
+<td align="left">Classes in the <strong>AV Foundation</strong> framework such as <strong>AVMutableComposition</strong>, <strong>AVMutableVideoComposition</strong>, and <strong>AVMutableAudioMix</strong> can be used for content editing.</td>
+<td align="left">You can use the <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.media.editing.aspx">Windows.Media.Editing</a></strong> APIs such as <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.media.editing.mediacomposition.aspx">MediaComposition</a></strong> and <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.media.editing.mediaclip.aspx">MediaClip</a></strong> to create media compositions from audio and video files. You are able to add video and image overlays, combine video clips, add background audio, and apply audio and video effects.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt204792.aspx">Media compositions and editing</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="sensors">Capteurs</h2>
+<h2 id="sensors">Sensors</h2>
 <table style="width:100%">
 <colgroup>
 <col width="20%" />
@@ -530,22 +530,22 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><strong>Concept général</strong></th>
+<th align="left"><strong>General concept</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Plateforme Windows universelle Windows10</strong></th>
+<th align="left"><strong>Windows 10 UWP</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Capteurs.</strong> <br><br>Détection des propriétés environnementales, de position et de mouvement de l’appareil.</td>
-<td align="left">L’<strong>infrastructure de capteur</strong> permet d’accéder aux capteurs matériels et logiciels avec des classes, telles que <strong>SensorManager</strong> et <strong>SensorEvent</strong>.</td>
-<td align="left">L<strong>’infrastructure Core Motion</strong> permet d’accéder aux données des capteurs bruts et traités.</td>
-<td align="left">Vous pouvez utiliser des classes dans <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.aspx">Windows.Devices.Sensors</a></strong> pour accéder aux mesures des capteurs et aux événements déclenchés lors de la réception de nouvelles données de lecture provenant de l’appareil.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt187358.aspx">Capteurs</a></td>
+<td align="left"><strong>Sensors.</strong> <br><br>Detect device movement, position and environmental properties.</td>
+<td align="left">The <strong>sensor framework</strong> is used to access hardware and software sensors with classes such as <strong>SensorManager</strong> and <strong>SensorEvent</strong>.</td>
+<td align="left">The <strong>Core Motion framework</strong> is used to access raw and processed sensor data.</td>
+<td align="left">You can use classes in <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.aspx">Windows.Devices.Sensors</a></strong> to access sensor readings and events triggered when new reading data is received from the sensor.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt187358.aspx">Sensors</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="location-and-mapping">Localisation et mappage</h2>
+<h2 id="location-and-mapping">Location and mapping</h2>
 <table style="width:100%">
 <colgroup>
 <col width="20%" />
@@ -555,46 +555,46 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><strong>Concept général</strong></th>
+<th align="left"><strong>General concept</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Plateforme Windows universelle Windows10</strong></th>
+<th align="left"><strong>Windows 10 UWP</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Localisation.</strong> <br><br>Recherche de l’emplacement <strong>actuel</strong> de l’appareil et suivi des <strong>modifications</strong>.</td>
-<td align="left">Les API de localisation des services Google Play offrent un accès de haut niveau au <strong>dernier emplacement connu</strong> avec le <strong>fournisseur de localisation fusionné</strong> à l’aide des méthodes <strong>getLastLocation</strong> et <strong>requestLocationUpdates</strong>. <strong>LocationManager</strong> offre un accès de bas niveau dans les bibliothèques Android.</td>
-<td align="left">La classe <strong>CLLocationManager</strong> <strong> de Core Location</strong> permet de surveiller l’emplacement d’un appareil, avec <strong>startUpdatingLocation</strong> pour le service de localisation standard et <strong>startMonitoringSignificantLocationChanges</strong> pour le service de localisation en cas de <strong>changement notable</strong>.</td>
-<td align="left">Vous pouvez suivre la localisation de l’appareil à l’aide des classes dans <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.aspx">Windows.Devices.Geolocation</a></strong>. Utilisez <strong><a href="https://msdn.microsoft.com/library/windows/apps/br225537.aspx">Geolocator.GetGeopositionAsync</a></strong> pour une lecture unique. Utilisez <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.positionchanged.aspx">Geolocator.PositionChanged</a></strong> pour procéder à une localisation régulière à l’aide d’un minuteur ou être informé lorsque l’emplacement a changé.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219698.aspx">Obtenir l’emplacement de l’utilisateur</a></td>
+<td align="left"><strong>Location.</strong> <br><br>Finding the device's <strong>current</strong> location and tracking <strong>changes</strong>.</td>
+<td align="left">The Google Play services location APIs provide high-level access to the <strong>last known location</strong> with the <strong>fused location provider</strong> using the <strong>getLastLocation</strong> and <strong>requestLocationUpdates</strong> methods. Low-level access is provided in the Android libraries with the <strong>LocationManager</strong>.</td>
+<td align="left">The <strong>Core Location</strong> <strong>CLLocationManager</strong> class is used to monitor a device's location, with <strong>startUpdatingLocation</strong> for the standard location service and <strong>startMonitoringSignificantLocationChanges</strong> for the <strong>significant-change</strong> location service.</td>
+<td align="left">You can track device location with classes in <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.aspx">Windows.Devices.Geolocation</a></strong>. Use <strong><a href="https://msdn.microsoft.com/library/windows/apps/br225537.aspx">Geolocator.GetGeopositionAsync</a></strong> for a one-time reading. Use <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.positionchanged.aspx">Geolocator.PositionChanged</a></strong> to obtain the location regularly using a timer, or be informed when the location has changed.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219698.aspx">Get the user's location</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Affichage de cartes.</strong> <br><br>Affichage d’une <strong>carte interactive intégrée</strong> et ajout de <strong>centres d’intérêt</strong>.</td>
-<td align="left">Les classes <strong>GoogleMap</strong>, <strong>MapFragment</strong> et <strong>MapView</strong> de l’<strong>API Google Maps Android</strong> permet d’intégrer des cartes dans des applications. Il est possible d’afficher des centres d’intérêt à l’aide de <strong>marqueurs</strong> et de la classe <strong>Marker</strong> personnalisable.</td>
-<td align="left">Les cartes sont intégrées aux applications iOS à l’aide de la classe <strong>MKMapView</strong> de l’<strong>infrastructure MapKit</strong>. <strong>Des annotations</strong> peuvent être ajoutées aux applications pour afficher des centres d’intérêt à l’aide de classes d’objet, telles que <strong>MKPointAnnotation</strong> et de classes de vue, telles que <strong>MKPinAnnotationView</strong>.</td>
-<td align="left">Vous pouvez intégrer des cartes dans vos applications à l’aide du contrôle XAML <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mapcontrol.aspx">MapControl</a></strong> intégré qui fournit des vues 2D, 3D et Streeside. Vous pouvez ajouter des clics-infos, des images ou des formes aux centres d’intérêt à l’aide de classes, telles que <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mapicon.aspx">MapIcon</a></strong>, <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mappolygon.aspx">MapPolygon</a></strong> et <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mappolyline.aspx">MapPolyline</a></strong>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219695.aspx">Afficher des cartes avec des vues 2D, 3D et Streetside</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219696.aspx">Afficher des centres d’intérêt sur une carte</a></td>
+<td align="left"><strong>Displaying maps.</strong> <br><br>Displaying an <strong>interactive built-in map</strong> and adding <strong>points of interest</strong>.</td>
+<td align="left">The <strong>GoogleMap</strong>, <strong>MapFragment</strong>, and <strong>MapView</strong> classes within the <strong>Google Maps Android API</strong> allow maps to be embedded in apps. Points of interest can be displayed using <strong>markers</strong> and the customizable <strong>Marker</strong> class.</td>
+<td align="left">Maps are embedded into iOS apps with the <strong>MKMapView</strong> class in the <strong>MapKit framework</strong>. <strong>Annotations</strong> can be added to apps to display points of interest using object classes such as <strong>MKPointAnnotation</strong> and view classes such as <strong>MKPinAnnotationView</strong>.</td>
+<td align="left">You can embed maps in your apps using the built-in <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mapcontrol.aspx">MapControl</a></strong> XAML control which provides 2D, 3D, and streetside views. You can add points of interest with a pushpin, image, or shape using classes such as <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mapicon.aspx">MapIcon</a></strong>, <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mappolygon.aspx">MapPolygon</a></strong> and <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mappolyline.aspx">MapPolyline</a></strong>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219695.aspx">Display maps with 2D, 3D, and Streetside views</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219696.aspx">Display points of interest (POI) on a map</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Géorepérage.</strong> <br><br>Surveillance de l’entrée et de la sortie d’une région géographique particulière.</td>
-<td align="left">Les limites géographiques sont surveillées à l’aide des <strong>services de localisation</strong> du Kit de développement logiciel (SDK) des services Google Play.</td>
-<td align="left">Les régions sont surveillées avec la classe <strong>CLCircularRegion</strong> et enregistrées à l’aide de <strong>CLLocationManager.startMonitoringForRegion:</strong>.</td>
-<td align="left">Vous pouvez créer une limite géographique à l’aide de la classe <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geofencing.geofence.aspx">Geofence</a></strong> et définir les <strong>états surveillés</strong>, relatifs par exemple, à l’entrée ou à la sortie d’une région. Gérez les événements de limite géographique au premier plan avec la <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geofencing.geofencemonitor.aspx">classe GeofenceMonitor</a></strong>, et en arrière-plan avec <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.locationtrigger.aspx">LocationTrigger</a></strong>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219702.aspx">Configurer une limite géographique</a></td>
+<td align="left"><strong>Geofencing.</strong> <br><br>Monitor the entering and leaving of a particular geographic region.</td>
+<td align="left">Geofences are monitored using the <strong>Location Services</strong> in the Google Play Services SDK.</td>
+<td align="left">Regions are monitored with the <strong>CLCircularRegion</strong> class and registered with the <strong>CLLocationManager.startMonitoringForRegion:</strong>.</td>
+<td align="left">You can create a geofence with the <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geofencing.geofence.aspx">Geofence</a></strong> class and define your <strong>monitored states</strong> such as entering or leaving a region. Handle geofence events in the foreground with the <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geofencing.geofencemonitor.aspx">GeofenceMonitor class</a></strong>, and in the background with the <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.locationtrigger.aspx">LocationTrigger background class</a></strong>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219702.aspx">Set up a geofence</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Géocodage et géocodage inverse.</strong> <br><br>Conversion d’adresses en emplacements géographiques (géocodage) et inversement (géocodage inverse).<br/></td>
-<td align="left">La classe <strong>Geocoder</strong> est utilisée pour le géocodage et le géocodage inverse.</td>
-<td align="left">La classe <strong>CLGeocoder</strong> est utilisée pour le géocodage.</td>
-<td align="left">Vous pouvez effectuer le géocodage à l’aide de la <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.services.maps.maplocationfinder.aspx">classe MapLocationFinder</a></strong> dans <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.services.maps.aspx">Windows.Services.Maps</a></strong>. Utilisez <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.services.maps.maplocationfinder.findlocationsasync.aspx">FindLocationsAsync</a></strong> pour le géocodage et <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.services.maps.maplocationfinder.findlocationsatasync.aspx">FindLocationsAtAsync</a></strong> pour le géocodage inverse.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219697.aspx">Effectuer un géocodage et un géocodage inverse</a></td>
+<td align="left"><strong>Geocoding and reverse geocoding.</strong> <br><br>Converting addresses to geographic locations (geocoding) and converting geographic locations to addresses (reverse geocoding).<br/></td>
+<td align="left">The <strong>Geocoder</strong> class is used for geocoding and reverse geocoding.</td>
+<td align="left">The <strong>CLGeocoder</strong> class is used for geocoding.</td>
+<td align="left">You can perform geocoding using the <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.services.maps.maplocationfinder.aspx">MapLocationFinder class</a></strong> in <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.services.maps.aspx">Windows.Services.Maps</a></strong>. You use <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.services.maps.maplocationfinder.findlocationsasync.aspx">FindLocationsAsync</a></strong> for geocoding and <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.services.maps.maplocationfinder.findlocationsatasync.aspx">FindLocationsAtAsync</a></strong> for reverse geocoding.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219697.aspx">Perform geocoding and reverse geocoding</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Indications et itinéraires.</strong> <br><br>Itinéraires, indications et distances entre deux emplacements géographiques.</td>
-<td align="left">Google propose l’<strong>API Google Maps Directions</strong> du service web qui peut être utilisée sur Android même si aucun Kit de développement logiciel n’est fourni.</td>
-<td align="left">Map Kit fournit l’API <strong>MKDirections</strong> qui peut être utilisée pour récupérer des informations relatives à un itinéraire et des indications.</td>
-<td align="left">Vous pouvez demander un itinéraire en voiture ou à pied avec la <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.services.maps.maproutefinder.aspx">MapRouteFinder</a></strong> de classe dans <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.services.maps.aspx">Windows.Services.Maps</a></strong>. Les indications sont renvoyées sous forme d’instance <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.services.maps.maproute.aspx">MapRoute</a></strong> qui peut être facilement affichée sur un MapControl. Les itinéraires sont renvoyés à l’intérieur de l’objet <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.services.maps.maproutemaneuver.aspx">MapRouteManeuver</a></strong>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219701.aspx">Afficher des itinéraires et indications sur une carte</a></td>
+<td align="left"><strong>Routes and directions.</strong> <br><br>Providing routes, distances, and directions between two geographical locations.</td>
+<td align="left">Google provides the web service <strong>Google Maps Directions API</strong> which can be used on Android although no SDK is provided.</td>
+<td align="left">Map Kit provides the <strong>MKDirections</strong> API which can be used to fetch information about a route and directions.</td>
+<td align="left">You can request a walking or driving route with the <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.services.maps.maproutefinder.aspx">MapRouteFinder</a></strong> class in <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.services.maps.aspx">Windows.Services.Maps</a></strong>. Routes are returned as a <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.services.maps.maproute.aspx">MapRoute</a></strong> instance which can be easily shown on a MapControl. Directions are returned inside the <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.services.maps.maproutemaneuver.aspx">MapRouteManeuver</a></strong> object.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219701.aspx">Display routes and directions on a map</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="app-to-app-communication">Communication entre les applications</h2>
+<h2 id="app-to-app-communication">App-to-app communication</h2>
 <table style="width:100%">
 <colgroup>
 <col width="20%" />
@@ -604,40 +604,40 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><strong>Concept général</strong></th>
+<th align="left"><strong>General concept</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Plateforme Windows universelle Windows10</strong></th>
+<th align="left"><strong>Windows 10 UWP</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Appel d’une autre application.</strong> <br><br>Lancement d’une autre application et éventuellement partage de données, telles que des liens, du texte, des photos, des vidéos et des fichiers.</td>
-<td align="left">Une <strong>intention implicite</strong> permet de lancer une autre application en définissant une <strong>action</strong> et des données facultatives dans une<strong> intention</strong> et en l’appelant avec <strong>startActivityForResult</strong>.<br/></td>
-<td align="left"><strong>Les extensions d’application</strong> permettent d’accéder aux données d’une autre application. <strong>Les schémas d’URL</strong> permettent de transmettre une URL à une autre application.</td>
-<td align="left">Vous pouvez lancer une autre application enregistrée pour un URI avec <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.system.launcher.launchuriasync.aspx">Launcher.LaunchUriAsync</a></strong>, ou <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.system.launcher.launchuriforresultsasync.aspx">Launcher.LaunchUriForResultsAsync</a></strong> pour obtenir des résultats et des données à partir de l’application lancée. Vous pouvez utiliser <strong><a href="https://msdn.microsoft.com/library/windows/apps/hh701471.aspx">Launcher.LaunchFileAsync</a></strong> pour transmettre un fichier à une autre application à gérer.<br/><br/>Vous pouvez utiliser un <strong>contrat de partage</strong> pour partager facilement des données entre des applications.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt228340.aspx">Lancer l’application par défaut pour un URI</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt269386.aspx">Lancer une application pour obtenir des résultats</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt299102.aspx">Lancer l’application par défaut pour un fichier</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt243293.aspx">Partager des données</a></td>
+<td align="left"><strong>Invoking another app.</strong> <br><br>Launching another app, and optionally sharing data such as links, text, photos, videos, and files.</td>
+<td align="left">An <strong>implicit intent</strong> is used to launch another app, by defining an <strong>action</strong> and optional data in an <strong>Intent</strong> and calling it with <strong>startActivityForResult</strong>.<br/></td>
+<td align="left"><strong>App extensions</strong> can be used to provide access to app data to another app. <strong>URL schemes</strong> enable a URL to be passed to another app.</td>
+<td align="left">You can launch another app which has registered for a URI with <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.system.launcher.launchuriasync.aspx">Launcher.LaunchUriAsync</a></strong>, or <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.system.launcher.launchuriforresultsasync.aspx">Launcher.LaunchUriForResultsAsync</a></strong> to launch for results and get data back from the launched app. You can use <strong><a href="https://msdn.microsoft.com/library/windows/apps/hh701471.aspx">Launcher.LaunchFileAsync</a></strong> to pass a file to another app to handle.<br/><br/>You can use a <strong>share contract</strong> to easily share data between apps.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt228340.aspx">Launch the default app for a URI</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt269386.aspx">Launch an app for results</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt299102.aspx">Launch the default app for a file</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt243293.aspx">Share data</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Autoriser l’appel de votre application.</strong> <br><br>Autorisation de votre application à répondre à une demande issue d’une autre application.</td>
-<td align="left">Les applications enregistrent une <strong>activité de gestion d’intention</strong> avec un <strong>filtre d’intention</strong> pour répondre à une intention implicite à partir d’une autre application.</td>
-<td align="left">La création d’un package d’une <strong>extension d’application</strong> permet de partager des données avec d’autres applications. Les applications peuvent enregistrer un <strong>schéma d’URL personnalisé</strong> à l’aide de la clé <strong>CFBundleURLTypes</strong> d’Info.plist.</td>
-<td align="left">Vous pouvez enregistrer votre application comme gestionnaire par défaut d’un <strong>nom de schéma d’URI</strong> en enregistrant un <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.activationkind.aspx#Protocol">protocole</a></strong> dans le manifeste du package et en mettant à jour le gestionnaire d’événements <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onactivated.aspx">Application.OnActivated</a></strong>, qui renvoie éventuellement des résultats. De la même manière, vous pouvez enregistrer votre application comme gestionnaire par défaut pour certains types de fichiers en ajoutant une déclaration dans le manifeste du package et en gérant l’événement <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onfileactivated.aspx">Application.OnFileActivated</a></strong>.<br/><br/>Vous pouvez gérer les demandes de contrat de partage en enregistrant votre application en tant que cible de partage dans le manifeste et en gérant l’événement <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.application.onsharetargetactivated.aspx">Application.OnShareTargetActivated</a></strong>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt269386.aspx">Lancer une application pour obtenir des résultats</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt269385.aspx">Gérer l’activation des fichiers</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt243292.aspx">Recevoir des données</a></td>
+<td align="left"><strong>Allowing your app to be invoked.</strong> <br><br>Allow your app to respond to a request from another app.</td>
+<td align="left">Apps register an <strong>intent handling activity</strong> with an <strong>intent filter</strong> to respond to an implicit intent from another app.</td>
+<td align="left">Packaging an <strong>app extension</strong> enables data to be shared with other apps. Apps can register a <strong>custom URL scheme</strong> using the <strong>CFBundleURLTypes</strong> key in Info.plist.</td>
+<td align="left">You can register your app to be the default handler for a <strong>URI scheme name</strong> by registering a <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.activationkind.aspx#Protocol">protocol</a></strong> in the package manifest and updating the <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onactivated.aspx">Application.OnActivated</a></strong> event handler, optionally returning results. In the same way you can register your app to be the default handler for certain file types by adding a declaration in the package manifest and handling the <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onfileactivated.aspx">Application.OnFileActivated</a></strong> event.<br/><br/>You can handle share contract requests by registering your app as a share target in the manifest and handling the <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.application.onsharetargetactivated.aspx">Application.OnShareTargetActivated</a></strong> event.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt269386.aspx">Launch an app for results</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt269385.aspx">Handle file activation</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt243292.aspx">Receive data</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Copier-coller.</strong> <br><br>Copie et collage de texte et d’autres contenus entre les applications.</td>
-<td align="left">L’<strong>infrastructure du Presse-papiers</strong> peut servir à implémenter la fonction de copier-coller à l’aide des classes <strong>ClipboardManager</strong> et <strong>ClipData</strong>.</td>
-<td align="left"><strong>UIPasteboard</strong>, <strong>UIMenuController</strong> et <strong>UIResponderStandardEditActions</strong> peuvent servir à implémenter la fonction de copier-coller.</td>
-<td align="left">De nombreux contrôles XAML par défaut prennent déjà en charge la fonction de copier-coller. Vous pouvez implémenter la fonction de copier-coller vous-même à l’aide des classes <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datapackage.aspx">DataPackage</a></strong> et <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.datatransfer.clipboard.aspx">Clipboard</a></strong> dans <strong><a href="https://msdn.microsoft.com/library/windows/apps/br205967">Windows.ApplicationModel.DataTransfer</a></strong>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt243291.aspx">Copier et coller</a></td>
+<td align="left"><strong>Copy and paste.</strong> <br><br>Copy and pasting text and other content between apps.</td>
+<td align="left">The <strong>clipboard framework</strong> can be used to implement copy and paste with the <strong>ClipboardManager</strong> and <strong>ClipData</strong> classes.</td>
+<td align="left">The <strong>UIPasteboard</strong>, <strong>UIMenuController</strong>, and <strong>UIResponderStandardEditActions</strong> can be used to implement copy and paste.</td>
+<td align="left">Many default XAML controls already support copy and paste. You can implement copy and paste yourself using the <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datapackage.aspx">DataPackage</a></strong> and <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.datatransfer.clipboard.aspx">Clipboard</a></strong> classes in <strong><a href="https://msdn.microsoft.com/library/windows/apps/br205967">Windows.ApplicationModel.DataTransfer</a></strong>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt243291.aspx">Copy and paste</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Glisser-déplacer.</strong> <br><br>Glisser-déplacer du contenu entre plusieurs applications.</td>
-<td align="left">La fonction de glisser-déplacer peut être implémentée au sein d’une seule application à l’aide de l’<strong>infrastructure de glisser-déplacer Android</strong>.</td>
-<td align="left">Aucune API de glisser-déplacer de haut niveau n’est fournie par iOS.</td>
-<td align="left">Vous pouvez implémenter la fonction de glisser-déplacer dans votre application pour permettre de glisser-déplacer du contenu d’une application à une autre, du Bureau vers une application et inversement. La prise en charge de la fonction de glisser-déplacer au sein de la classe UIElement s’effectue à l’aide des propriétés <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.allowdrop.aspx">AllowDrop</a></strong>, et <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.candrag.aspx">CanDrag</a></strong> et des événements <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.dragover.aspx">DragOver</a></strong> et <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.drop.aspx">Drop</a></strong>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt227651.aspx">Glisser-déplacer</a></td>
+<td align="left"><strong>Drag and drop.</strong> <br><br>Dragging and dropping content between apps.</td>
+<td align="left">Drag and drop can be implemented within a single application by using the <strong>Android drag/drop framework</strong>.</td>
+<td align="left">No high-level drag and drop APIs are provided by iOS.</td>
+<td align="left">You can implement dragging and dropping in your app to enable app-to-app, desktop-to-app, and app-to-desktop drag and drop capabilities. You implement drag and drop support in the UIElement class with the <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.allowdrop.aspx">AllowDrop</a></strong>, and <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.candrag.aspx">CanDrag</a></strong> properties, and the <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.dragover.aspx">DragOver</a></strong>, and <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.drop.aspx">Drop</a></strong> events.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt227651.aspx">Drag and drop</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="software-design">Conception de logiciels</h2>
+<h2 id="software-design">Software design</h2>
 <table style="width:100%">
 <colgroup>
 <col width="20%" />
@@ -647,24 +647,24 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left"><strong>Concept général</strong></th>
+<th align="left"><strong>General concept</strong></th>
 <th align="left"><strong>Android</strong></th>
 <th align="left"><strong>iOS</strong></th>
-<th align="left"><strong>Plateforme Windows universelle Windows10</strong></th>
+<th align="left"><strong>Windows 10 UWP</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Modèles de conception de logiciels.</strong> <br><br>Modèles recommandés ou bien adaptés pour la plateforme.</td>
-<td align="left">Aucun modèle officiel n’a été recommandé ou fourni pour le développement Android, bien que la version bêta de l’infrastructure de liaison de données puisse permettre une utilisation plus généralisée du modèle <strong>Model-View-ViewModel (MVVM)</strong>. Un certain nombre d’articles et d’infrastructures tiers recommandent les approches <strong>Model-View-Presenter (MVP)</strong> et <strong>MVVM</strong>.</td>
-<td align="left"><strong>Model-View-Controller (MVC)</strong> est un modèle commun utilisé avec iOS et intégré à la plateforme.</td>
-<td align="left">Vous n’êtes pas limité à un modèle spécifique lorsque vous créez des logiciels pour UWP.<br/><br/>Vous pouvez utiliser le modèle de <a href="https://msdn.microsoft.com/library/windows/apps/mt210947.aspx">liaison de données</a> intégré pour garantir une séparation nette des problèmes liés aux données et de ceux liés à l’interface utilisateur et éviter d’avoir à coder les gestionnaires d’événements de l’interface utilisateur qui mettent ensuite à jour les valeurs des propriétés.<br/><br/>Vous pouvez étendre la liaison de données de manière à suivre le modèle <strong>Model-View-ViewModel (MVVM)</strong> soit en utilisant des bibliothèques MVVM tierces, telles que le <a href="https://mvvmlight.codeplex.com/">Kit de ressources MVVM Light</a>, ou en déployant votre propre liaison et en maintenant la logique en dehors de code-behind.<br/><br/><a href="https://msdn.microsoft.com/library/hh848246.aspx">Le modèle MVVM</a><br/><br/><a href="https://github.com/Windows-XAML/Template10/wiki">Modèles de projet Visual Studio Template10</a></td>
+<td align="left"><strong>Software design patterns.</strong> <br><br>Recommended or well-used patterns for the platform.</td>
+<td align="left">No formal pattern has been recommended or provided for Android development, although the beta Data Binding Framework may enable more widespread use of the <strong>Model-View-ViewModel (MVVM)</strong> pattern. A number of third party articles and frameworks recommend the <strong>Model-View-Presenter (MVP)</strong> and <strong>MVVM</strong> approaches.</td>
+<td align="left"><strong>Model-View-Controller (MVC)</strong> is a common pattern used with iOS and is integrated into the platform.</td>
+<td align="left">You are not limited towards a specific pattern when building for UWP.<br/><br/>You can use the built-in <a href="https://msdn.microsoft.com/library/windows/apps/mt210947.aspx">data binding</a> pattern to ensure clean separation of data concerns and UI concerns, and avoid having to code up UI event handlers which then update property values.<br/><br/>You can extend data binding to follow the <strong>Model-View-ViewModel (MVVM)</strong> pattern, either by making use of third-party MVVM libraries such as <a href="https://mvvmlight.codeplex.com/">MVVM Light Toolkit</a>, or rolling your own and keeping logic out of code-behind.<br/><br/><a href="https://msdn.microsoft.com/library/hh848246.aspx">The MVVM Pattern</a><br/><br/><a href="https://github.com/Windows-XAML/Template10/wiki">Template 10 Visual Studio project templates</a></td>
 </tr>
 </tbody>
 </table>
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

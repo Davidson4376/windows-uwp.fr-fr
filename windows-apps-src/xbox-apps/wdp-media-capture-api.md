@@ -1,61 +1,61 @@
 ---
 author: WilliamsJason
-title: "Informations de référence sur les API de capture multimédia"
-description: "Découvrez comment accéder à l’API de capture multimédia par programmation."
+title: Media Capture API reference
+description: Learn how to access the media capture API programatically.
 translationtype: Human Translation
 ms.sourcegitcommit: 4356bd2cfc7697905ed91d60b5829c06d850e109
-ms.openlocfilehash: 2e32c4d516a35b5f5bd8d57bce75ff8bdce6b461
+ms.openlocfilehash: 2f77c565acf272a1a8f147eb07ac6c7f08bf8ef0
 
 ---
 
-# Informations de référence sur les API de capture multimédia #
+# Media Capture API reference #
 
-**Requête**
+**Request**
 
-Vous pouvez capturer une représentation PNG de l’écran actuel en utilisant le format de requête suivant.
+You can capture a PNG representation of the current screen by using the following request format.
 
-| Méthode        | URI de la requête     | 
+| Method        | Request URI     | 
 | ------------- |-----------------|
 | GET           | /ext/screenshot |
 <br>
 
-**Paramètres d’URI**
+**URI parameters**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+You can specify the following additional parameters on the request URI:
 
 
-| Paramètre d’URI      | Description     | 
+| URI parameter      | Description     | 
 | ------------------ |-----------------|
-| download (facultatif)| Valeur booléenne qui indique si les en-têtes de réponse HTTP doivent définir que le navigateur hôte doit télécharger la capture d’écran en tant que pièce jointe, plutôt que de l’afficher dans le navigateur.  |
+| download (optional)| A boolean value indicating if HTTP response headers should be set indicating that the host browser should download the screenshot as an attachment rather than rendering it in the browser.  |
 <br>
 
-**En-têtes de requête**
+**Request headers**
 
-* Aucun
+* None
 
-**Corps de la requête**
+**Request body**
 
-* Aucun
+* None
 
-###Réponse###
+###Response###
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-| Code d’état HTTP   | Description     | 
+| HTTP status code   | Description     | 
 | ------------------ |-----------------|
-| 200                | Demande de capture d’écran réussie et capture renvoyée |
-| 5XX                | Codes d’erreur des échecs inattendus |
+| 200                | Screenshot request successful and capture returned |
+| 5XX                | Error codes for unexpected failures |
 <br>
 
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Xbox
 
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

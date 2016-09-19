@@ -1,54 +1,54 @@
 ---
 author: TylerMSFT
-title: "Lancer l’application Cartes Windows"
-description: "Découvrez comment lancer l’application Cartes Windows à partir de votre application."
+title: Launch the Windows Maps app
+description: Learn how to launch the Windows Maps app from your app.
 ms.assetid: E363490A-C886-4D92-9A64-52E3C24F1D98
 translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: 0dcd15c7d04ed452f69208ad1e68a8949baf40dd
+ms.openlocfilehash: a2f09aa510c9c3db6b8eca25f4c8cee98fa0eb46
 
 ---
 
-# Lancer l’application Cartes Windows
+# Launch the Windows Maps app
 
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Découvrez comment lancer l’application Cartes Windows à partir de votre application. Cette rubrique décrit les schémas d’URI (Uniform Resource Identifier) **bingmaps:**, **ms-drive-to:**, **ms-walk-to:** et *ms-settings:*. Utilisez ces schémas d’URI afin de lancer l’application Cartes Windows pour des cartes, itinéraires et résultats de recherche spécifiques ou pour télécharger des cartes de l’application Cartes Windows hors connexion à partir de l’application Paramètres.
+Learn how to launch the Windows Maps app from your app. This topic describes the **bingmaps:**, **ms-drive-to:**, **ms-walk-to:**, and *ms-settings:* Uniform Resource Identifier (URI) schemes. Use these URI schemes to launch the Windows Maps app to specific maps, directions, and search results or to download Windows Maps offline maps from the Settings app.
 
-**Conseil** Pour plus d’informations sur le lancement de l’application CartesWindows à partir de votre application, téléchargez l’[Exemple de carte pour la plateforme Windows universelle (UWP)](http://go.microsoft.com/fwlink/p/?LinkId=619977) à partir du [référentiel Windows-universal-samples](http://go.microsoft.com/fwlink/p/?LinkId=619979) sur GitHub.
+**Tip** To learn more about launching the Windows Maps app from your app, download the [Universal Windows Platform (UWP) map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977) from the [Windows-universal-samples repo](http://go.microsoft.com/fwlink/p/?LinkId=619979) on GitHub.
 
-## Présentation des URI
+## Introducing URIs
 
-Les schémas d’URI vous permettent d’ouvrir des applications en cliquant sur des liens hypertexte (ou par programme dans votre application). Tout comme vous pouvez commencer un nouveau message électronique à l’aide de **mailto:**, ou ouvrir un navigateur web à l’aide de **http:**, vous pouvez accéder à l’application CartesWindows à l’aide de **bingmaps:**, **ms-drive-to:** et **ms-walk-to:**.
+URI schemes let you open apps by clicking hyperlinks (or programmatically, in your app). Just as you can start a new email using **mailto:** or open a web browser using **http:**, you can open the Windows maps app using **bingmaps:**, **ms-drive-to:**, and **ms-walk-to:**.
 
--   L’URI **bingmaps:** fournit des cartes en relation avec des emplacements, des résultats de recherche, des itinéraires et le trafic.
--   L’URI **ms-drive-to:** fournit un itinéraire détaillé de trajet en voiture à partir de votre emplacement actuel.
--   L’URI **ms-walk-to:** fournit un itinéraire détaillé de trajet à pied à partir de votre emplacement actuel.
+-   The **bingmaps:** URI provides maps for locations, search results, directions, and traffic.
+-   The **ms-drive-to:** URI provides turn-by-turn driving directions from your current location.
+-   The **ms-walk-to:** URI provides turn-by-turn walking directions from your current location.
 
-Par exemple, l’URI suivant ouvre l’application Cartes Windows et affiche une carte centrée sur la ville de New York.
+For example, the following URI opens the Windows Maps app and displays a map centered over New York City.
 
 ```xml
 <bingmaps:?cp=40.726966~-74.006076>
 ```
 
-![carte centrée sur la ville de New York.](images/mapnyc.png)
+![a map centered over new york city.](images/mapnyc.png)
 
-Voici une description du schéma d’URI:
+Here is a description of the URI scheme:
 
 **bingmaps:?query**
 
-Dans ce schéma d’URI, l’élément *query* est une série de paires nom/valeur de paramètre:
+In this URI scheme, *query* is a series of parameter name/value pairs:
 
-**&amp;param1=value1&amp;param2=value2 …**
+**&param1=value1&param2=value2 …**
 
-Pour obtenir la liste complète des paramètres disponibles, voir les références des paramètres [bingmaps:](#bingmaps), [ms-drive-to:](#msdriveto) et [ms-walk-to:](#mswalkto). Des exemples sont également fournis plus loin dans cette rubrique.
+For a full list of the available parameters, see the [bingmaps:](#bingmaps), [ms-drive-to:](#msdriveto), and [ms-walk-to:](#mswalkto) parameter reference. There are also examples later in this topic.
 
-## Lancer un URI à partir de votre application
+## Launch a URI from your app
 
 
-Pour lancer l’application CartesWindows à partir de votre application, appelez la méthode [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) avec un URI **bingmaps:**, **ms-drive-to:** ou **ms-walk-to:**. L’exemple suivant lance le même URI à partir de l’exemple précédent. Pour plus d’informations sur le lancement d’une application via un URI, voir [Lancer l’application par défaut pour unURI](launch-default-app.md).
+To launch the Windows Maps app from your app, call the [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) method with a **bingmaps:**, **ms-drive-to:**, or **ms-walk-to:** URI. The following example launches the same URI from the previous example. For more info about launching apps via URI, see [Launch the default app for a URI](launch-default-app.md).
 
 ```cs
 // Center on New York City
@@ -60,113 +60,113 @@ launcherOptions.TargetApplicationPackageFamilyName = "Microsoft.WindowsMaps_8wek
 var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherOptions);
 ```
 
-Dans cet exemple, la classe [**LauncherOptions**](https://msdn.microsoft.com/library/windows/apps/hh701435) est utilisée pour s’assurer du lancement de l’application CartesWindows.
+In this example, the [**LauncherOptions**](https://msdn.microsoft.com/library/windows/apps/hh701435) class is used to help ensure the Windows Maps app is launched.
 
-## Afficher des emplacements connus
+## Display known locations
 
 
-Il existe plusieurs façons de contrôler le point central de la carte et le niveau de zoom. Les paramètres *cp* (point central) et *lvl* (niveau de zoom) sont le moyen le plus simple et le plus direct d’y parvenir. De plus, ils produisent des résultats prévisibles. En effet, le paramètre *bb* (qui spécifie une zone délimitée par des valeurs de latitude et de longitude) produit des résultats nettement plus incertains, car il tient compte de la résolution de l’écran et détermine le point central de la carte et le niveau de zoom en fonction des coordonnées indiquées. Le paramètre *bb* est ignoré quand les troisparamètres (*bb*, *cp* et *lvl*) sont présents.
+There are several ways to control the map center point and the zoom level. Using *cp* (center point) and *lvl* (zoom level) parameters are the most straightforward methods and they produce predictable results. Using *bb* parameter (specifies an area bounded by latitude and longitude values) is less predictable because it takes into account the screen resolution and determines the map center point and zoom level based on the coordinates provided. The *bb* parameter is ignored when all three parameters (*bb*, *cp*, and *lvl*) are present.
 
-Pour contrôler le type d’affichage, utilisez les paramètres (Streetside) *ss* et (style) *sty*. Le paramètre *ss* place la carte dans une vue Streetside. Le paramètre *sty* vous permet de basculer entre les vues aérienne, routière et3D. Lors de l’utilisation du style3D, les paramètres *hdg*, *pit* et *rad* permettent de spécifier l’affichage3D. *hdg* spécifie l’orientation de la vue, *pit* l’inclinaison de la vue, et *rad* la distance par rapport au point central à afficher dans la vue. Pour plus d’informations sur ces paramètres et d’autres, voir la [référence de paramètre bingmaps:](#bingmaps).
+To control the type of view, use the *ss* (Streetside) and *sty* (style) and parameters. The *ss* parameter puts the map into a Streetside view. The *sty* parameter lets you switch between road, aerial, and 3D views. When using the 3D style, the *hdg*, *pit*, and *rad* parameters can be used to specify the 3D view. *hdg* specifies the heading of the view, *pit* specifies the pitch of the view, and *rad* specifies the distance from the center point to show in view. For more info about these and other parameters, see the [bingmaps: parameter reference](#bingmaps).
 
-| Exemple d’URI                                                                 | Résultats                                                                                                                                                                                                   |
+| Sample URI                                                                 | Results                                                                                                                                                                                                   |
 |----------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| bingmaps:?                                                                 | Ouvre l’application Cartes.                                                                                                                                                                                       |
-| bingmaps:?cp=40.726966~-74.006076                                          | Affiche une carte centrée sur la ville de New York.                                                                                                                                                               |
-| bingmaps:?cp=40.726966~-74.006076&amp;lvl=10                                   | Affiche une carte centrée sur la ville de New York avec le niveau de zoom 10.                                                                                                                                       |
-| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5                                   | Affiche une carte de la ville de New York avec la taille de l’écran comme cadre englobant.                                                                                                                          |
-| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5&amp;cp=47~-122                        | Affiche une carte de la ville de New York, qui est la zone spécifiée dans l’argument du cadre englobant. Le point central pour Seattle spécifié dans l’argument **cp** est ignoré.                                      |
-| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5&amp;cp=47~-122&amp;lvl=8                  | Affiche une carte de la ville de New York, qui est la zone spécifiée dans l’argument **bb**. L’argument **cp**, qui spécifie Seattle, est ignoré, car les éléments **cp** et **lvl** ne sont pas pris en compte quand l’élément **bb** est spécifié. |
-| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace&amp;lvl=16 | Affiche une carte avec un point nommé Caesars Palace (à Las Vegas) et affecte la valeur 16 au niveau de zoom.                                                                                                            |
-| bingmaps:?collection=point.40.726966\_-74.006076\_Some%255FBusiness        | Affiche une carte avec un point nommé Some_Business (à Las Vegas).                                                                                                                                          |
-| bingmaps:?cp=40.726966~-74.006076&amp;trfc=1&amp;sty=a                             | Affiche une carte de la ville de New York avec le trafic sur une vue de carte aérienne.                                                                                                                                               |
-| bingmaps:?cp=47.6204~-122.3491&amp;sty=3d                                      | Affiche une vue 3D de la Space Needle.                                                                                                                                                                   |
-| bingmaps:?cp=47.6204~-122.3491&amp;sty=3d&amp;rad=200&amp;pit=75&amp;hdg=165               | Affiche une vue 3D de la Space Needle avec un rayon de 200 m, une inclinaison de 75 degrés et une orientation de 165 degrés.                                                                                        |
-| bingmaps:?cp=47.6204~-122.3491&amp;ss=1                                        | Affiche une vue Streetside de la Space Needle.                                                                                                                                                           |
+| bingmaps:?                                                                 | Opens the Maps app.                                                                                                                                                                                       |
+| bingmaps:?cp=40.726966~-74.006076                                          | Displays a map centered over New York City.                                                                                                                                                               |
+| bingmaps:?cp=40.726966~-74.006076&lvl=10                                   | Displays a map centered over New York City with a zoom level of 10.                                                                                                                                       |
+| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5                                   | Displays a map of New York City with the size of the screen as the bounding box.                                                                                                                          |
+| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5&cp=47~-122                        | Displays a map of New York City, which is the area specified in the bounding box argument. The center point for Seattle specified in the **cp** argument is ignored.                                      |
+| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5&cp=47~-122&lvl=8                  | Displays a map of New York, which is the area specified in the **bb** argument. The **cp** argument, which specifies Seattle, is ignored because **cp** and **lvl** are ignored when **bb** is specified. |
+| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace&lvl=16 | Displays a map with a point named Caesars Palace (in Las Vegas) and sets the zoom level to 16.                                                                                                            |
+| bingmaps:?collection=point.40.726966\_-74.006076\_Some%255FBusiness        | Displays a map with a point named Some\_Business (in Las Vegas).                                                                                                                                          |
+| bingmaps:?cp=40.726966~-74.006076&trfc=1&sty=a                             | Displays a map of NYC with traffic on and aerial map style.                                                                                                                                               |
+| bingmaps:?cp=47.6204~-122.3491&sty=3d                                      | Displays a 3D view of the Space Needle.                                                                                                                                                                   |
+| bingmaps:?cp=47.6204~-122.3491&sty=3d&rad=200&pit=75&hdg=165               | Displays a 3D view of the Space Needle with a radius of 200m, a pitch or 75 degrees, and a heading of 165 degrees.                                                                                        |
+| bingmaps:?cp=47.6204~-122.3491&ss=1                                        | Displays a Streetside view of the Space Needle.                                                                                                                                                           |
 
  
 
-## Afficher les résultats de la recherche
+## Display search results
 
 
-Lorsque vous effectuez une recherche d’entreprise à l’aide du paramètre *q*, nous vous recommandons d’utiliser des termes aussi spécifiques que possible, en parallèle avec le paramètre *cp* ou *where*, pour spécifier un emplacement. Si l’utilisateur n’a pas donné à l’application Cartes l’autorisation d’utiliser son emplacement et si aucun emplacement n’est spécifié pour la recherche d’entreprise, cette recherche peut être effectuée au niveau du pays sans renvoyer de résultats exploitables. Les résultats de recherche sont affichés dans la vue de carte la mieux appropriée. Pour cette raison, si vous n’avez pas absolument besoin de définir le paramètre *lvl* (niveau de zoom), nous vous recommandons d’autoriser l’application Cartes à prendre cette décision. Pour plus d’informations sur ces paramètres et d’autres, voir la [référence de paramètre bingmaps:](#bingmaps).
+We recommend when doing a business search using the *q* parameter, make the terms specific as possible and use it in conjunction with either the *cp* or the *where* parameter to specify a location. If the user has not given the Maps app permission to use their location and you do not specify a location for a business search, the search may be performed at the country level and not return meaningful results. Search results are displayed in the most appropriate map view, so unless there is a need to set the *lvl* (zoom level), we recommend to allow the Maps app to decide. For more info about these and other parameters, see the [bingmaps: parameter reference](#bingmaps).
 
-| Exemple d’URI                                                    | Résultats                                                                                                                                         |
+| Sample URI                                                    | Results                                                                                                                                         |
 |---------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
-| bingmaps:?where=1600%20Pennsylvania%20Ave,%20Washington,%20DC | Affiche une carte et recherche l’adresse de la Maison Blanche à Washington.                                                              |
-| bingmaps:?cp=40.726966~-74.006076&amp;lvl=10&amp;where=New%20York     | Recherche New York près du point central indiqué, affiche les résultats sur une carte et affecte la valeur 10 au niveau de zoom.                            |
-| bingmaps:?lvl=10&amp;where=New%20York                             | Recherche la ville de New York et affiche le résultat avec un niveau de zoom de 10.                                                                                    |
-| bingmaps:?cp=40.726966~-74.006076&amp;lvl=14.5&amp;q=pizza            | Recherche une pizzeria près du point central indiqué (autrement dit, à New York), affiche les résultats sur une carte et affecte la valeur 14,5 au niveau de zoom. |
-| bingmaps:?q=coffee&amp;where=Seattle                              | Recherche un café à Seattle.                                                                                                                 |
+| bingmaps:?where=1600%20Pennsylvania%20Ave,%20Washington,%20DC | Displays a map and searches for the address of the White House in Washington, D.C.                                                              |
+| bingmaps:?cp=40.726966~-74.006076&lvl=10&where=New%20York     | Searches for New York near the specified center point, displays the results on a map, and sets the zoom level to 10.                            |
+| bingmaps:?lvl=10&where=New%20York                             | Searches for New York and shows the result at zoom level 10.                                                                                    |
+| bingmaps:?cp=40.726966~-74.006076&lvl=14.5&q=pizza            | Searches for pizza near the specified center point (that is, in New York City), displays the results on a map, and sets the zoom level to 14.5. |
+| bingmaps:?q=coffee&where=Seattle                              | Searches for coffee in Seattle.                                                                                                                 |
 
  
 
-## Afficher plusieurs points
+## Display multiple points
 
 
-Utilisez le paramètre *collection* pour afficher un ensemble personnalisé de points sur la carte. S’il existe plusieurs points, une liste de points s’affiche. Une collection peut inclure jusqu’à 25 points, qui sont répertoriés dans l’ordre indiqué. La collection est prioritaire sur les demandes d’itinéraires et de recherche. Pour plus d’informations sur ce paramètre et d’autres, voir la [référence de paramètre bingmaps:](#bingmaps).
+Use the *collection* parameter to show a custom set of points on the map. If there is more than one point, a list of points is displayed. There can be up to 25 points in a collection and they are listed in the order provided. The collection takes precedence over search and directions requests. For more info about this parameter and others, see the [bingmaps: parameter reference](#bingmaps).
 
-| Exemple d’URI                                                                                                                                                         | Résultats                                                                                                                   |
+| Sample URI                                                                                                                                                         | Results                                                                                                                   |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
-| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace                                                                                                | Recherche Caesars Palace à Las Vegas et affiche les résultats sur une carte dans la meilleure vue de carte.                         |
-| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace&amp;lvl=16                                                                                         | Affiche une punaise nommée «Caesars Palace à Las Vegas», avec un niveau de zoom de 16.                                               |
-| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace~point.36.113126\_-115.175188\_The%20Bellagio&amp;lvl=16&amp;cp=36.114902~-115.176669                   | Affiche une punaise nommée «Caesars Palace à Las Vegas» et une autre appelée «Hôtel Bellagio à Las Vegas», avec un niveau de zoom de 16.              |
-| bingmaps:?collection=point.40.726966\_-74.006076\_Fake%255FBusiness%255Fwith%255FUnderscore                                                                        | Affiche la ville de New York avec une punaise nommée «Fake\_Business\_with\_Underscore».                                                  |
-| bingmaps:?collection=name.Hotel%20List~point.36.116584\_-115.176753\_Caesars%20Palace~point.36.113126\_-115.175188\_The%20Bellagio&amp;lvl=16&amp;cp=36.114902~-115.176669 | Affiche une liste nommée «Liste d’hôtels» et deux punaises correspondant aux hôtels Caesars Palace et Bellagio à Las Vegas, avec un niveau de zoom de 16. |
+| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace                                                                                                | Searches for Caesar's Palace in Las Vegas and displays the results on a map in the best map view.                         |
+| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace&lvl=16                                                                                         | Displays a pushpin named Caesars Palace in Las Vegas and zooms to level 16.                                               |
+| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace~point.36.113126\_-115.175188\_The%20Bellagio&lvl=16&cp=36.114902~-115.176669                   | Displays a pushpin named Caesars Palace and a pushpin named The Bellagio in Las Vegas and zooms to level 16.              |
+| bingmaps:?collection=point.40.726966\_-74.006076\_Fake%255FBusiness%255Fwith%255FUnderscore                                                                        | Displays New York with a pushpin named Fake\_Business\_with\_Underscore.                                                  |
+| bingmaps:?collection=name.Hotel%20List~point.36.116584\_-115.176753\_Caesars%20Palace~point.36.113126\_-115.175188\_The%20Bellagio&lvl=16&cp=36.114902~-115.176669 | Displays a list named Hotel List and two pushpins for Caesars Palace and The Bellagio in Las Vegas and zooms to level 16. |
 
  
 
-## Afficher un itinéraire et le trafic
+## Display directions and traffic
 
 
-Vous pouvez afficher un itinéraire entre deuxpoints à l’aide du paramètre *rtp*. Ces points peuvent être des adresses ou des coordonnées en latitude et longitude. Utilisez le paramètre *trfc* pour afficher des informations sur le trafic. Pour spécifier le type d’itinéraire (en voiture, à pied ou en transport public), utilisez le paramètre *mode*. Si le paramètre *mode* n’est pas spécifié, un itinéraire est fourni sur la base du mode de transport préféré de l’utilisateur. Pour plus d’informations sur ces paramètres et d’autres, voir la [référence de paramètre bingmaps:](#bingmaps).
+You can display directions between two points using the *rtp* parameter; those points can be either an address or latitude and longitude coordinates. Use the *trfc* parameter to show traffic information. To specify the type of directions: driving, walking, or transit, use the *mode* parameter. If *mode* isn't specified, directions will be provided using the user's mode of transportation preference. For more info about these parameters and others, see the [bingmaps: parameter reference](#bingmaps).
 
-![exemple d’itinéraire](images/windowsmapgcdirections.png)
+![an example of directions](images/windowsmapgcdirections.png)
 
-| Exemple d’URI                                                                                                              | Résultats                                                                                                                                                         |
+| Sample URI                                                                                                              | Results                                                                                                                                                         |
 |-------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| bingmaps:?rtp=pos.44.9160\_-110.4158~pos.45.0475\_-109.4187                                                             | Affiche une carte avec un itinéraire de point à point. Le paramètre *mode* n’étant pas spécifié, un itinéraire est fourni sur la base du mode de transport préféré de l’utilisateur. |
-| bingmaps:?cp=43.0332~-87.9167&amp;trfc=1                                                                                    | Affiche une carte centrée sur Milwaukee, Wisconsin, avec le trafic.                                                                                                        |
-| bingmaps:?rtp=adr.One Microsoft Way, Redmond, WA 98052~pos.39.0731\_-108.7238                                           | Affiche une carte avec un itinéraire de l’adresse spécifiée à l’emplacement indiqué.                                                                            |
-| bingmaps:?rtp=adr.1%20Microsoft%20Way,%20Redmond,%20WA,%2098052~pos.36.1223\_-111.9495\_Grand%20Canyon%20northern%20rim | Affiche un itinéraire de 1 Microsoft Way, Redmond, WA, 98052, au rebord nord du Grand Canyon.                                                                |
-| bingmaps:?rtp=adr.Davenport, CA~adr.Yosemite Village                                                                    | Affiche une carte avec un itinéraire en voiture de l’emplacement indiqué au point de repère spécifié.                                                                   |
-| bingmaps:?rtp=adr.Mountain%20View,%20CA~adr.San%20Francisco%20International%20Airport,%20CA&amp;mode=d                      | Affiche un itinéraire en voiture de Mountain View à l’aéroport international de San Francisco en Californie.                                                                  |
-| bingmaps:?rtp=adr.Mountain%20View,%20CA~adr.San%20Francisco%20International%20Airport,%20CA&amp;mode=w                      | Affiche un itinéraire à pied de Mountain View à l’aéroport international de San Francisco en Californie.                                                                  |
-| bingmaps:?rtp=adr.Mountain%20View,%20CA~adr.San%20Francisco%20International%20Airport,%20CA&amp;mode=t                      | Affiche un itinéraire de transit de Mountain View à l’aéroport international de San Francisco en Californie.                                                                  |
+| bingmaps:?rtp=pos.44.9160\_-110.4158~pos.45.0475\_-109.4187                                                             | Displays a map with point-to-point directions. Because *mode* is not specified, directions will be provided using the user's mode of transportation preference. |
+| bingmaps:?cp=43.0332~-87.9167&trfc=1                                                                                    | Displays a map centered over Milwaukee, WI with traffic.                                                                                                        |
+| bingmaps:?rtp=adr.One Microsoft Way, Redmond, WA 98052~pos.39.0731\_-108.7238                                           | Displays a map with directions from the specified address to the specified location.                                                                            |
+| bingmaps:?rtp=adr.1%20Microsoft%20Way,%20Redmond,%20WA,%2098052~pos.36.1223\_-111.9495\_Grand%20Canyon%20northern%20rim | Displays directions from 1 Microsoft Way, Redmond, WA, 98052 to the Grand Canyon's northern rim.                                                                |
+| bingmaps:?rtp=adr.Davenport, CA~adr.Yosemite Village                                                                    | Displays a map with driving directions from the specified location to the specified landmark.                                                                   |
+| bingmaps:?rtp=adr.Mountain%20View,%20CA~adr.San%20Francisco%20International%20Airport,%20CA&mode=d                      | Displays driving directions from Mountain View, CA to San Francisco International Airport, CA.                                                                  |
+| bingmaps:?rtp=adr.Mountain%20View,%20CA~adr.San%20Francisco%20International%20Airport,%20CA&mode=w                      | Displays walking directions from Mountain View, CA to San Francisco International Airport, CA.                                                                  |
+| bingmaps:?rtp=adr.Mountain%20View,%20CA~adr.San%20Francisco%20International%20Airport,%20CA&mode=t                      | Displays transit directions from Mountain View, CA to San Francisco International Airport, CA.                                                                  |
 
  
 
-## Afficher un itinéraire détaillé
+## Display turn-by-turn directions
 
 
-Les schémas d’URI **ms-drive-to:** et **ms-walk-to:** permettent de lancer directement une vue détaillée d’un itinéraire. Ces schémas d’URI peuvent uniquement fournir un itinéraire à partir de la localisation actuelle de l’utilisateur. Si vous devez fournir un itinéraire entre des points qui n’incluent pas la localisation actuelle de l’utilisateur, utilisez le schéma d’URI **bingmaps:**, comme décrit dans la section précédente. Pour plus d’informations sur ces schémas d’URI, voir les références de paramètres [ms-drive-to:](#msdriveto) et [ms-walk-to:](#mswalkto).
+The **ms-drive-to:** and **ms-walk-to:** URI schemes let you launch directly into a turn-by-turn view of a route. These URI schemes can only provide directions from the user's current location. If you must provide directions between points that do not include the user's current location, use the **bingmaps:** URI scheme as described in the previous section. For more info about these URI schemes, see the [ms-drive-to:](#msdriveto) and [ms-walk-to:](#mswalkto) parameter reference.
 
-> **Important** Lorsque les schémas d’URI **ms-drive-to:** ou **ms-walk-to:** sont lancés, l’application Cartes vérifie si un emplacementGPS a déjà été corrigé sur l’appareil. Si tel est le cas, l’application Cartes continue de fournir un itinéraire détaillé. Dans le cas contraire, l’application affiche la vue d’ensemble de l’itinéraire, comme décrit dans la section [Afficher un itinéraire et le trafic](#directions).
+> **Important**  When the **ms-drive-to:** or **ms-walk-to:** URI schemes are launched, the Maps app will check to see if the device has ever had a GPS location fix. If it has, then the Maps app will proceed to turn-by-turn directions. If it hasn't, the app will display the route overview, as described in [Display directions and traffic](#directions).
 
  
 
-![exemple d’itinéraire détaillé](images/windowsmapsappdirections.png)
+![an example of turn-by-turn directions](images/windowsmapsappdirections.png)
 
-| Exemple d’URI                                                                                                | Résultats                                                                                       |
+| Sample URI                                                                                                | Results                                                                                       |
 |-----------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
-| ms-drive-to:?destination.latitude=47.680504&amp;destination.longitude=-122.328262&amp;destination.name=Green Lake | Affiche un itinéraire étape par étape en voiture de votre emplacement actuel à Green Lake. |
-| ms-walk-to:?destination.latitude=47.680504&amp;destination.longitude=-122.328262&amp;destination.name=Green Lake  | Affiche un itinéraire étape par étape à pied de votre emplacement actuel à GreenLake. |
+| ms-drive-to:?destination.latitude=47.680504&destination.longitude=-122.328262&destination.name=Green Lake | Displays a map with turn-by-turn driving directions to Green Lake from your current location. |
+| ms-walk-to:?destination.latitude=47.680504&destination.longitude=-122.328262&destination.name=Green Lake  | Displays a map with turn-by-turn walking directions to Green Lake from your current location. |
 
 
-## Télécharger des cartes hors connexion
+## Download offline maps
 
 
-Le schéma d’URI **ms-settings:** vous permet de démarrer directement au niveau d’une page spécifique de l’application Paramètres. Bien que le schéma d’URI **ms-settings:** ne se lance pas dans l’application Cartes, il vous permet de démarrer directement dans la page Cartes hors connexion de l’application Paramètres et affiche une boîte de dialogue de confirmation pour télécharger les cartes hors connexion utilisées par l’application Cartes. Le schéma d’URI accepte un point spécifié par une latitude et une longitude et détermine automatiquement si des cartes hors connexion sont disponibles pour une région contenant ce point.  Si la latitude et la longitude transmises appartiennent à plusieurs régions de téléchargement, la boîte de dialogue de confirmation permet à l’utilisateur de sélectionner la région à télécharger. Si des cartes hors connexion ne sont pas disponibles pour une région contenant ce point, la page Cartes hors connexion de l’application Paramètres s’affiche avec une boîte de dialogue d’erreur.
+The **ms-settings:** URI scheme lets you launch directly into a particular page in the Settings app. While the **ms-settings:** URI scheme doesn't launch into the Maps app, it does allow you to launch directly to the Offline Maps page in the Settings app and displays a confirmation dialog to download the offline maps used by the Maps app. The URI scheme accepts a point specified by a latitude and longitude and automatically determines if there are offline maps available for a region containing that point.  If the latitude and longitude passed happen to fall within multiple download regions, the confirmation dialog will let the user pick which of those regions to download. If offline maps are not available for a region containing that point, the offline Maps page in the Settings app is displayed with an error dialog.
 
-| Exemple d’URI                                                                                                | Résultats                                                                                       |
+| Sample URI                                                                                                | Results                                                                                       |
 |-----------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
-| ms-settings:maps-downloadmaps?latlong=47.6,-122.3 | Ouvre l’application Paramètres au niveau de la page Cartes hors connexion en affichant une boîte de dialogue de confirmation pour vous permettre de télécharger des cartes pour la région contenant le point de latitude et de longitude spécifié. |
+| ms-settings:maps-downloadmaps?latlong=47.6,-122.3 | Opens the Settings app to the Offline Maps page with a confirmation dialog displayed to download maps for the region containing the specified latitude-longitude point. |
  
 
-## Référence de paramètre bingmaps:
+## bingmaps: parameter reference
 
 
-Vous pouvez afficher la syntaxe de chaque paramètre de ce tableau à l’aide de l’extension ABNF (Augmented Backus–Naur Form).
+The syntax for each parameter in this table is shown by using Augmented Backus–Naur Form (ABNF).
 
 <table>
 <colgroup>
@@ -177,29 +177,29 @@ Vous pouvez afficher la syntaxe de chaque paramètre de ce tableau à l’aide d
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Paramètre</th>
-<th align="left">Définition</th>
-<th align="left">Exemple et définition de l’extension ABNF</th>
-<th align="left">Détails</th>
+<th align="left">Parameter</th>
+<th align="left">Definition</th>
+<th align="left">ABNF Definition and Example</th>
+<th align="left">Details</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>**cp**</p></td>
-<td align="left"><p>Point central</p></td>
+<td align="left"><p>Center point</p></td>
 <td align="left"><p>cp = "cp=" cpval</p>
 <p>cpval = degreeslat "~" degreeslon</p>
 <p>degreeslat = ["-"] 1*3DIGIT ["." 1*7DIGIT]</p>
 <p>degreeslon = ["-"] 1*2DIGIT ["." 1*7DIGIT]</p>
-<p>Exemple:</p>
+<p>Example:</p>
 <p>cp=40.726966~-74.006076</p></td>
-<td align="left"><p>Ces deux valeurs doivent être exprimées en degrés et séparées par un tilde (**~**).</p>
-<p>Les valeurs de longitude valides sont comprises entre-180 et+180 (ces deuxvaleurs étant incluses).</p>
-<p>Les valeurs de latitude valables sont comprises entre -90 et +90 (ces deux valeurs étant incluses).</p></td>
+<td align="left"><p>Both values must be expressed in decimal degrees and separated by a tilde(**~**).</p>
+<p>Valid longitude values are between -180 and +180 inclusive.</p>
+<p>Valid latitude values are between -90 and +90 inclusive.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>**bb**</p></td>
-<td align="left"><p>Cadre englobant</p></td>
+<td align="left"><p>Bounding box</p></td>
 <td align="left"><p>bb = "bb=" southlatitude "_" westlongitude "~" northlatitude "_" eastlongitude</p>
 <p>southlatitude = degreeslat</p>
 <p>northlatitude = degreeslat</p>
@@ -207,53 +207,53 @@ Vous pouvez afficher la syntaxe de chaque paramètre de ce tableau à l’aide d
 <p>eastlongitude = degreeslon</p>
 <p>degreeslat = ["-"] 13DIGIT ["." 17DIGIT]</p>
 <p>degreeslon = ["-"] 12DIGIT ["." 17DIGIT]</p>
-<p>Exemple:</p>
+<p>Example:</p>
 <p>bb=39.719_-74.52~41.71_-73.5</p></td>
-<td align="left"><p>Zone rectangulaire qui spécifie le cadre englobant exprimé en degrés, en utilisant un tilde (**~**) pour séparer l’angle inférieur gauche de l’angle supérieur droit. Les valeurs de latitude et de longitude de chaque point sont séparées par un trait de soulignement (**_**).</p>
-<p>Les valeurs de longitude valables sont comprises entre -180 et +180 (ces deux valeurs étant incluses).</p>
-<p>Les valeurs de latitude valables sont comprises entre -90 et +90 (ces deux valeurs étant incluses).</p><p>Les paramètres cp et lvl sont ignorés lorsqu’un cadre englobant est fourni.</p></td>
+<td align="left"><p>A rectangular area that specifies the bounding box expressed in decimal degrees, using a tilde (**~**) to separate the lower left corner from the upper right corner. Latitude and longitude for each are separated with an underscore (**_**).</p>
+<p>Valid longitude values are between -180 and +180 inclusive.</p>
+<p>Valid latitude values are between -90 and +90 inclusive.</p><p>The cp and lvl parameters are ignored when a bounding box is provided.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>**where**</p></td>
-<td align="left"><p>Localisation</p></td>
+<td align="left"><p>Location</p></td>
 <td align="left"><p>where = "where=" whereval</p>
 <p>whereval = 1*( ALPHA / DIGIT / "-" / "." / "_" / pct-encoded / "!" / "$" / "'" / "(" / ")" / "*" / "+" / "," / ";" / ":" / "@" / "/" / "?")</p>
-<p>Exemple:</p>
+<p>Example:</p>
 <p>where=1600%20Pennsylvania%20Ave,%20Washington,%20DC</p></td>
-<td align="left"><p>Terme de recherche correspondant à un emplacement, un élément géographique ou un lieu spécifiques.</p></td>
+<td align="left"><p>Search term for a specific location, landmark or place.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>**q**</p></td>
-<td align="left"><p>Terme de requête</p></td>
+<td align="left"><p>Query Term</p></td>
 <td align="left"><p>q = "q="</p>
 <p>whereval</p>
-<p>Exemple:</p>
-<p>q=restaurants%20mexicains</p></td>
-<td align="left"><p>Terme de recherche pour les entreprises locales ou la catégorie des entreprises.</p></td>
+<p>Example:</p>
+<p>q=mexican%20restaurants</p></td>
+<td align="left"><p>Search term for local business or category of businesses.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>**lvl**</p></td>
-<td align="left"><p>Niveau de zoom</p></td>
+<td align="left"><p>Zoom Level</p></td>
 <td align="left"><p>lvl = "lvl=" 1*2DIGIT ["." 1*2DIGIT]</p>
-<p>Exemple:</p>
+<p>Example:</p>
 <p>lvl=10.50</p></td>
-<td align="left"><p>Définit le niveau de zoom de la vue de carte. Les valeurs valables sont incluses entre 1-20, la valeur1 correspondant au zoom maximal.</p></td>
+<td align="left"><p>Defines the zoom level of the map view. Valid values are 1-20 where 1 is zoomed all the way out.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>**sty**</p></td>
 <td align="left"><p>Style</p></td>
 <td align="left"><p>sty = "sty=" ("a" / "r"/"3d")</p>
-<p>Exemple:</p>
+<p>Example:</p>
 <p>sty=a</p></td>
-<td align="left"><p>Définit le style de carte. Les valeurs valables pour ce paramètre sont les suivantes:</p>
+<td align="left"><p>Defines the map style. Valid values for this parameter include:</p>
 <ul>
-<li>**a**: affiche une vue aérienne de la carte.</li>
-<li>**r**: affiche un plan routier de la carte.</li>
-<li>**3d**: affiche une vue3D de la carte. Utilisez cette valeur conjointement avec le paramètre **cp** et éventuellement avec le paramètre **rad**.</li>
+<li>**a**: Display an aerial view of the map.</li>
+<li>**r**: Display a road view of the map.</li>
+<li>**3d**: Display a 3D view of the map. Use in conjunction with the **cp** parameter and optionally with the **rad** parameter.</li>
 </ul>
-<p>Dans Windows10, les styles vue aérienne et affichage3D sont identiques.</p>
+<p>In Windows 10, the aerial view and 3D view styles are the same.</p>
 <div class="alert">
-**Remarque** Si vous omettez le paramètre **sty**, vous obtenez le même résultat qu’avec la commande sty=r.
+**Note**  Omitting the **sty** parameter produces the same results as sty=r.
 </div>
 <div>
  
@@ -261,37 +261,37 @@ Vous pouvez afficher la syntaxe de chaque paramètre de ce tableau à l’aide d
 </tr>
 <tr class="odd">
 <td align="left"><p>**rad**</p></td>
-<td align="left"><p>Rayon</p></td>
+<td align="left"><p>Radius</p></td>
 <td align="left"><p>rad = "rad=" 1*8DIGIT</p>
-<p>Exemple:</p>
+<p>Example:</p>
 <p>rad=1000</p></td>
-<td align="left"><p>Zone circulaire qui spécifie la vue de carte souhaitée. La valeur du rayon se mesure en mètres.</p></td>
+<td align="left"><p>A circular area that specifies the desired map view. The radius value is measured in meters.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>**pit**</p></td>
-<td align="left"><p>Inclinaison</p></td>
-<td align="left"><p>pit = "pit=" pitch (inclinaison)</p>
-<p>Exemple:</p>
+<td align="left"><p>Pitch</p></td>
+<td align="left"><p>pit = "pit=" pitch</p>
+<p>Example:</p>
 <p>pit=60</p></td>
-<td align="left"><p>Indique l’angle sous lequel la carte est visualisée, où 90 revient à regarder l’horizon (inclinaison maximale) et 0 à regarder le sol verticalement (inclinaison minimale).</p><p>Les valeurs d’inclinaison valables sont comprises entre 0 et 90 (ces deux valeurs étant incluses).</td>
+<td align="left"><p>Indicates the angle that the map is viewed at, where 90 is looking out at the horizon (maximum) and 0 is looking straight down (minimum).</p><p>Valid pitch values are between 0 and 90 inclusive.</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>**hdg**</p></td>
-<td align="left"><p>Orientation</p></td>
-<td align="left"><p>hdg = "hdg=" heading (orientation)</p>
-<p>Exemple:</p>
+<td align="left"><p>Heading</p></td>
+<td align="left"><p>hdg = "hdg=" heading</p>
+<p>Example:</p>
 <p>hdg=180</p></td>
-<td align="left"><p>Indique l’orientation (ou cap) de la carte exprimée en degrés, où 0 ou 360 = Nord, 90 = Est, 180 = Sud et 270 = Ouest.</p></td>
+<td align="left"><p>Indicates the direction the map is heading in degrees, where 0 or 360 = North, 90 = East, 180 = South, and 270 = West.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>**ss**</p></td>
 <td align="left"><p>Streetside</p></td>
 <td align="left"><p>ss = "ss=" BIT</p>
-<p>Exemple:</p>
+<p>Example:</p>
 <p>ss=1</p></td>
-<td align="left"><p>Spécifie l’affichage des images au niveau de la rue quand <code>ss=1</code>. Si vous omettez le paramètre **ss**, vous obtenez le même résultat qu’avec la commande <code>ss=0</code>. Utilisez ce paramètre conjointement avec le paramètre **cp** pour spécifier l’emplacement de la vue au niveau de la rue.</p>
+<td align="left"><p>Indicates that street-level imagery is shown when <code>ss=1</code>. Omitting the **ss** parameter produces the same result as <code>ss=0</code>. Use in conjunction with the **cp** parameter to specify the location of the street-level view.</p>
 <div class="alert">
-> **Remarque** Les images au niveau de la rue ne sont pas disponibles dans toutes les régions.
+> **Note**  Street-level imagery is not available in all regions.
 </div>
 <div>
  
@@ -299,13 +299,13 @@ Vous pouvez afficher la syntaxe de chaque paramètre de ce tableau à l’aide d
 </tr>
 <tr class="odd">
 <td align="left"><p>**trfc**</p></td>
-<td align="left"><p>Trafic</p></td>
+<td align="left"><p>Traffic</p></td>
 <td align="left"><p>trfc = "trfc=" BIT</p>
-<p>Exemple:</p>
+<p>Example:</p>
 <p>trfc=1</p></td>
-<td align="left"><p>Spécifie si les informations sur le trafic sont incluses sur la carte. Si vous omettez le paramètre trfc, vous obtenez le même résultat qu’avec la commande <code>trfc=0</code>.</p>
+<td align="left"><p>Specifies whether traffic information is included on the map. Omitting the trfc parameter produces the same results as <code>trfc=0</code>.</p>
 <div class="alert">
-> **Remarque** Les données sur le trafic ne sont pas disponibles dans toutes les régions.
+> **Note**  Traffic data is not available in all regions.
 </div>
 <div>
  
@@ -313,7 +313,7 @@ Vous pouvez afficher la syntaxe de chaque paramètre de ce tableau à l’aide d
 </tr>
 <tr class="even">
 <td align="left"><p>**rtp**</p></td>
-<td align="left"><p>Itinéraire</p></td>
+<td align="left"><p>Route</p></td>
 <td align="left"><p>rtp = "rtp=" (waypoint "~" [waypoint]) / ("~" waypoint)</p>
 <p>waypoint = ("pos." point ) / ("adr." whereval)</p>
 <p>point = "point." pointval ["_" title]</p>
@@ -324,17 +324,17 @@ Vous pouvez afficher la syntaxe de chaque paramètre de ce tableau à l’aide d
 <p>whereval = 1( ALPHA / DIGIT / "-" / "." / "_" / pct-encoded / "!" / "$" / "'" / "(" / ")" / "" / "+" / "," / ";" / ":" / "@" / "/" / "?")</p>
 
 
-<p>Exemples:</p>
+<p>Examples:</p>
 <p>rtp=adr.Mountain%20View,%20CA~adr.SFO</p>
 <p>rtp=adr.One%20Microsoft%20Way,%20Redmond,%20WA~pos.45.23423_-122.1232 _My%20Picnic%20Spot</p></td>
-<td align="left"><p>Définit les valeurs de début et de fin d’un itinéraire à dessiner sur la carte, séparées par un tilde (**~**). Chacun des points de navigation est défini par une position, reposant sur une latitude et une longitude, ou par un identificateur d’adresse.</p>
-<p>Un itinéraire complet contient exactement deux points de navigation. Par exemple, un itinéraire avec deux points de navigation est défini par <code>rtp="A"~"B"</code>.</p>
-<p>Il est également acceptable de spécifier un itinéraire incomplet. Ainsi, vous pouvez définir uniquement le début d’un itinéraire avec <code>rtp="A"~</code>. Dans ce cas, le panneau de saisie d’itinéraire s’affiche avec le point de navigation fourni inséré dans le champ **De**, et le focus positionné sur le champ **À**.</p>
-<p>Si seule la fin d’un itinéraire est spécifiée, comme avec <code>rtp=~"B"</code>, le panneau d’itinéraire affiche le point de navigation fourni dans le champ **À**. Si la localisation actuelle est disponible, elle figure dans le champ **De** sur lequel le focus est positionné.</p>
-<p>Aucune ligne d’itinéraire n’est dessinée lorsque l’itinéraire fourni est incomplet.</p>
-<p>Utilisez ces paramètres conjointement avec le paramètre **mode** servant à spécifier le mode de transport (en voiture, en transport public ou à pied). Si le paramètre **mode** n’est pas spécifié, un itinéraire est fourni sur la base du mode de transport préféré de l’utilisateur.</p>
+<td align="left"><p>Defines the start and end of a route to draw on the map, separated by a tilde (**~**). Each of the waypoints is defined by either a position using ltitude, longitude, and optional title or an address identifier.</p>
+<p>A complete route contains exactly two waypoints. For example, a route with two waypoints is defined by <code>rtp="A"~"B"</code>.</p>
+<p>It's also acceptable to specify an incomplete route. For example, you can define only the start of a route with <code>rtp="A"~</code>. In this case, the directions input is displayed with the provided waypoint in the **From** field and the **To** field has focus.</p>
+<p>If only the end of a route is specified, as with <code>rtp=~"B"</code>, the directions panel is displayed with the provided waypoint in the **To** field. If an accurate current location is available, the current location is pre-populated in the **From** field with focus.</p>
+<p>No route line is drawn when an incomplete route is given.</p>
+<p>Use in conjunction with the **mode** parameter to specify the mode of transportation (driving, transit, or walking). If **mode** isn't specified, directions will be provided using the user's mode of transportation preference.</p>
 <div class="alert">
-**Remarque** Il est possible d’utiliser un titre pour un emplacement si celui-ci est spécifié par la valeur de paramètre **pos**. Le titre s’affichera à la place de la latitude et de la longitude.
+**Note**  A title can be used for a location if the location is specified by the **pos** parameter value. Rather than showing the latitude and longitude, the title will be displayed.
 </div>
 <div>
  
@@ -342,17 +342,17 @@ Vous pouvez afficher la syntaxe de chaque paramètre de ce tableau à l’aide d
 </tr>
 <tr class="odd">
 <td align="left"><p>**mode**</p></td>
-<td align="left"><p>Mode de transport</p></td>
+<td align="left"><p>Transportation mode</p></td>
 <td align="left"><p>mode = "mode=" ("d" / "t" / "w")</p>
-<p>Exemple:</p>
+<p>Example:</p>
 <p>mode=d</p></td>
-<td align="left"><p>Définit le mode de transport. Les valeurs valables pour ce paramètre sont les suivantes:</p>
+<td align="left"><p>Defines the transportation mode. Valid values for this parameter include:</p>
 <ul>
-<li>**d**: affiche la vue d’ensemble de l’itinéraire pour l’itinéraire en voiture.</li>
-<li>**t**: affiche la vue d’ensemble de l’itinéraire pour l’itinéraire en transport public.</li>
-<li>**w**: affiche la vue d’ensemble de l’itinéraire pour l’itinéraire à pied.</li>
+<li>**d**: Displays route overview for driving directions</li>
+<li>**t**: Displays route overview for transit directions</li>
+<li>**w**: Displays route overview for walking directions</li>
 </ul>
-<p>Utilisez ce paramètre conjointement avec le paramètre **rtp** pour la définition de l’itinéraire de transport. Si le paramètre **mode** n’est pas spécifié, un itinéraire est fourni sur la base du mode de transport préféré de l’utilisateur. Il est possible d’indiquer un paramètre **mode** sans aucun paramètre d’itinéraire afin de fournir une saisie d’itinéraire pour ce mode à partir de la localisation actuelle.</p></td>
+<p>Use in conjunction with the **rtp** parameter for transportation directions. If **mode** isn't specified, directions will be provided using the user's mode of transportation preference. A **mode** can be provided with no route parameter to enter directions input for that mode from the current location.</p></td>
 </tr>
 
 <tr class="even">
@@ -368,70 +368,70 @@ Vous pouvez afficher la syntaxe de chaque paramètre de ce tableau à l’aide d
 <p>title = whereval</p>
 
 
-<p>Exemple:</p>
+<p>Example:</p>
 <p>collection=name.My%20Trip%20Stops~point.36.116584_-115.176753_Las%20Vegas~point.37.8268_-122.4798_Golden%20Gate%20Bridge</p></td>
-<td align="left"><p>Collection de points à ajouter à la carte et à la liste. Il est possible de nommer la collection de points en utilisant le paramètre name. Un point est spécifié à l’aide d’une latitude, d’une longitude et d’un titre facultatif.</p>
-<p>Le nom doit être séparé des différents points par un caractère tilde (**~**).</p>
-<p>Si l’élément spécifié contient un tilde, assurez-vous qu’il est codé comme suit: <code>%7E</code>. En l’absence de paramètres de niveau de zoom et de point central, la collection propose la meilleure vue de carte possible.</p>
+<td align="left"><p>Collection of points to be added to the map and list. The collection of points can be named using the name parameter. A point is specified using a latitude, longitude, and optional title.</p>
+<p>Separate name and multiple points with tildes (**~**).</p>
+<p>If the item you specify contains a tilde, make sure the tilde is encoded as <code>%7E</code>. If not accompanied by Center point and Zoom Level parameters, the collection will provide the best map view.</p>
 
-<p>**Important** Si l’élément que vous spécifiez contient un trait de soulignement, assurez-vous qu’il est double et encodé comme suit: %255F.</p>
+<p>**Important** If the item you specify contains an underscore, make sure the underscore is double encoded as %255F.</p>
 
-<p>Si l’élément que vous spécifiez contient un trait de soulignement, assurez-vous qu’il est double et encodé comme suit: %255F.</p></td>
+<p>If the item you specify contains an underscore, make sure the underscore is double encoded as %255F.</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## Référence de paramètre ms-drive-to:
+## ms-drive-to: parameter reference
 
 
-L’URI permettant de lancer une demande d’itinéraire détaillé en voiture n’a pas besoin d’encodage et présente le format suivant.
+The URI to launch a request for turn-by-turn driving directions does not need to be encoded and has the following format.
 
-> **Remarque** Dans ce schéma d’URI, vous ne spécifiez pas le point de départ. Le point de départ est toujours supposé être la localisation actuelle. Si vous devez spécifier un point de départ différent de l’emplacement actuel, voir [Afficher un itinéraire et le trafic](#directions).
+> **Note**  You don’t specify the starting point in this URI scheme. The starting point is always assumed to be the current location. If you need to specify a starting point other than the current location, see [Display directions and traffic](#directions).
 
  
 
-| Paramètre | Définition | Exemple | Détails |
+| Parameter | Definition | Example | Details |
 |------------|-----------|---------|---------|
-| **destination.latitude** | Latitude de destination | Exemple: destination.latitude=47.6451413797194 | Latitude de la destination. Les valeurs de latitude valables sont comprises entre -90 et +90 (ces deux valeurs étant incluses). |
-| **destination.longitude** | Longitude de destination | Exemple: destination.longitude=-122.141964733601 | Longitude de la destination. Les valeurs de longitude valables sont comprises entre -180 et +180 (ces deux valeurs étant incluses). |
-| **destination.name** | Nom de la destination | Exemple: destination.name=Redmond, WA | Nom de la destination. Vous n’avez pas besoin d’encoder la valeur **destination.name**. |
+| **destination.latitude** | Destination latitude | Example: destination.latitude=47.6451413797194 | The latitude of the destination. Valid latitude values are between -90 and +90 inclusive. |
+| **destination.longitude** | Destination longitude | Example: destination.longitude=-122.141964733601 | The longitude of the destination. Valid longitude values are between -180 and +180 inclusive. |
+| **destination.name** | Name of the destination | Example: destination.name=Redmond, WA | The name of the destination. You do not have to encode the **destination.name** value. |
 
  
 
-## Référence de paramètre ms-walk-to:
+## ms-walk-to: parameter reference
 
 
-L’URI permettant de lancer une demande d’itinéraire détaillé à pied n’a pas besoin d’encodage et présente le format suivant.
+The URI to launch a request for turn-by-turn walking directions does not need to be encoded and has the following format.
 
-> **Remarque** Dans ce schéma d’URI, vous ne spécifiez pas le point de départ. Le point de départ est toujours supposé être la localisation actuelle. Si vous devez spécifier un point de départ différent de l’emplacement actuel, voir [Afficher un itinéraire et le trafic](#directions).
+> **Note**  You don’t specify the starting point in this URI scheme. The starting point is always assumed to be the current location. If you need to specify a starting point other than the current location, see [Display directions and traffic](#directions).
 
  
 
-| Paramètre | Définition | Exemple | Détails |
+| Parameter | Definition | Example | Details |
 |-----------|------------|---------|----------|
-| **destination.latitude** | Latitude de destination | Exemple: destination.latitude=47.6451413797194 | Latitude de la destination. Les valeurs de latitude valables sont comprises entre -90 et +90 (ces deux valeurs étant incluses). |
-| **destination.longitude** | Longitude de destination | Exemple: destination.longitude=-122.141964733601 | Longitude de la destination. Les valeurs de longitude valables sont comprises entre -180 et +180 (ces deux valeurs étant incluses). |
-| **destination.name** | Nom de la destination | Exemple: destination.name=Redmond, WA | Nom de la destination. Vous n’avez pas besoin d’encoder la valeur **destination.name**. |
+| **destination.latitude** | Destination latitude | Example: destination.latitude=47.6451413797194 | The latitude of the destination. Valid latitude values are between -90 and +90 inclusive. |
+| **destination.longitude** | Destination longitude | Example: destination.longitude=-122.141964733601 | The longitude of the destination. Valid longitude values are between -180 and +180 inclusive. |
+| **destination.name** | Name of the destination | Example: destination.name=Redmond, WA | The name of the destination. You do not have to encode the **destination.name** value. |
 
  
-## Référence de paramètre ms-settings:
+## ms-settings: parameter reference
 
 
-La syntaxe des paramètres propres à l’application Cartes pour le schéma d’URI **ms-settings:** est définie ci-après. **maps-downloadmaps** est spécifié avec l’URI **ms-settings:** sous la forme **ms-settings:maps-downloadmaps?** pour indiquer la page de paramètres de cartes hors connexion.
+The syntax for maps app specific parameters for the **ms-settings:** URI scheme is defined below. **maps-downloadmaps** is specified along with the **ms-settings:** URI in the form of **ms-settings:maps-downloadmaps?** to indicate the offline maps settings page.
 
  
 
-| Paramètre | Définition | Exemple | Détails |
+| Parameter | Definition | Example | Details |
 |-----------|------------|---------|----------|
-| **latlong** | Point définissant une région de carte hors connexion. | Exemple: latlong=47.6,-122.3 | Le point géographique est spécifié par une latitude et une longitude séparées par une virgule. Les valeurs de latitude valables sont comprises entre -90 et +90 (ces deux valeurs étant incluses). Les valeurs de longitude valables sont comprises entre -180 et +180 (ces deux valeurs étant incluses). |
+| **latlong** | Point defining offline map region. | Example: latlong=47.6,-122.3 | The geopoint is specified by a comma separated latitude and longitude. Valid latitude values are between -90 and +90 inclusive. Valid longitude values are between -180 and +180 inclusive. |
  
 
  
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

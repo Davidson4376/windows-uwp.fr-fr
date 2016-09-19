@@ -1,49 +1,61 @@
 ---
 author: Jwmsft
-Description: "Permet d’afficher les images d’une collection, par exemple les photos d’un album ou les éléments d’une page de détails sur le produit, image par image."
-title: "Recommandations en matière de contrôles de vue symétrique"
+Description: Displays images in a collection, such as photos in an album or items in a product details page, one image at a time.
+title: Guidelines for flip view controls
 ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
 label: Flip view
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
-ms.openlocfilehash: ecb46c0d42821d833e8232780b553754f8f097c5
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 7e52f9d379b909c4dd35bc535cbca2d7b8cca6ac
 
 ---
-# Vue symétrique
+# Flip view
 
-La vue symétrique permet d’afficher les images ou d’autres éléments d’une collection, par exemple les photos d’un album ou les éléments d’une page de détails sur le produit, élément après élément. Pour les appareils tactiles, un mouvement de balayage sur un élément permet de parcourir la collection. Pour une souris, les boutons de navigation apparaissent au pointage de la souris. Pour un clavier, les touches de direction permettent de parcourir la collection.
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
+Use a flip view for browsing images or other items in a collection, such as photos in an album or items in a product details page, one item at a time. For touch devices, swiping across an item moves through the collection. For a mouse, navigation buttons appear on mouse hover. For a keyboard, arrow keys move through the collection.
+
+<div class="important-apis" >
+<b>Important APIs</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx"><strong>FlipView class</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx"><strong>ItemsSource property</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx"><strong>ItemTemplate property</strong></a></li>
+</ul>
+
+</div>
+</div>
 
 
 
 
--   [**Classe FlipView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx)
--   [**Propriété ItemsSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx)
--   [**Propriété ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx)
 
-## Est-ce le contrôle approprié?
 
-La vue symétrique est appropriée pour l’examen des images des petites et moyennes collections (jusqu’à 25 éléments environ). Les exemples de telles collections comprennent les éléments d’une page de détails de produit ou les photos d’un album. Même si nous ne recommandons pas la vue symétrique pour la plupart des grandes collections, ce contrôle est souvent utilisé pour afficher les images individuelles d’un album photo.
 
-## Exemples
+## Is this the right control?
 
-La navigation horizontale, c’est-à-dire à partir de l’élément le plus à gauche et vers la droite, est la disposition de vue symétrique la plus commune. Cette disposition fonctionne bien en orientation portrait ou paysage sur tous les appareils :
+Flip view is best for perusing images in small to medium collections (up to 25 or so items). Examples of such collections include items in a product details page or photos in a photo album. Although we don't recommend flip view for most large collections, the control is common for viewing individual images in a photo album.
 
-![Exemple de disposition horizontale de vue symétrique](images/controls_flipview_horizonal.jpg)
+## Examples
 
-Une vue symétrique peut également être utilisée verticalement :
+Horizontal browsing, starting at the left-most item and flipping right, is the typical layout for a flip view. This layout works well in either portrait or landscape orientation on all devices:
 
-![Exemple de vue symétrique verticale](images/controls_flipview_vertical.jpg)
+![Example of horizontal flip view layout](images/controls_flipview_horizonal.jpg)
 
-## Créer une vue symétrique
+A flip view can also be browsed vertically:
 
-Le contrôle FlipView est un élément [ItemsControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.aspx). Il peut donc contenir une collection d’éléments de n’importe quel type. Pour renseigner la vue, ajoutez des éléments à la collection [**Items**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx), ou définissez une propriété [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) sur une source de données.
+![Example of vertical flip view](images/controls_flipview_vertical.jpg)
 
-Par défaut, un élément de données est affiché dans la vue symétrique en tant que représentation de chaîne de l’objet de données auquel il est lié. Pour définir exactement la manière dont les éléments s’affichent dans la vue symétrique, créez un [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.datatemplate.aspx) afin de définir la disposition des contrôles utilisés pour afficher un élément. Les contrôles dans la disposition peuvent être liés aux propriétés d’un objet de données ou leur contenu peut être défini inline. L’objet DataTemplate est affecté à la propriété [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) de l’objet FlipView.
+## Create a flip view
 
-### Ajouter des éléments à la collection Items
+FlipView is an [ItemsControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.aspx), so it can contain a collection of items of any type. To populate the view, add items to the [**Items**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx) collection, or set the [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) property to a data source.
 
-Vous pouvez ajouter des éléments à la collection [**Items**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx) en utilisant le langage XAML ou du code. Vous ajoutez généralement des éléments de cette façon si vous avez un petit nombre d’éléments qui ne sont pas modifiés et sont facilement définis en XAML, ou si vous générez les éléments dans le code lors de l’exécution. Voici un FlipView avec des éléments définis inline.
+By default, a data item is displayed in the flip view as the string representation of the data object it's bound to. To specify exactly how items in the flip view are displayed, you create a [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.datatemplate.aspx) to define the layout of controls used to display an individual item. The controls in the layout can be bound to properties of a data object, or have content defined inline. You assign the DataTemplate to the [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) property of the FlipView.
+
+### Add items to the Items collection
+
+You can add items to the [**Items**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx) collection using XAML or code. You typically add items this way if you have a small number of items that don't change and are easily defined in XAML, or if you generate the items in code at run time. Here's a flip view with items defined inline.
 
 ```xaml
 <FlipView x:Name="flipView1">
@@ -64,15 +76,15 @@ flipView1.Items.Add("Item 2");
 stackPanel1.Children.Add(flipView1);
 ```
 
-Lorsque vous ajoutez des éléments à une vue symétrique, ils sont placés automatiquement dans un conteneur [**FlipViewItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flipviewitem.aspx). Pour modifier l’apparence d’un élément, vous pouvez appliquer un style au conteneur d’éléments en définissant la propriété [**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle.aspx). 
+When you add items to a flip view they are automatically placed in a [**FlipViewItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flipviewitem.aspx) container. To change how an item is displayed you can apply a style to the item container by setting the [**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle.aspx) property. 
 
-Lorsque vous définissez les éléments en XAML, ceux-ci sont automatiquement ajoutés à la collection Items.
+When you define the items in XAML, they are automatically added to the Items collection.
 
-### Définir la source des éléments
+### Set the items source
 
-On utilise en général une vue symétrique pour afficher des données d’une source telle qu’une base de données ou Internet. Pour renseigner une vue symétrique à partir d’une source de données, vous affectez à sa propriété [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) une collection d’éléments de données.
+You typically use a flip view to display data from a source such as a database or the Internet. To populate a flip view from a data source, you set its [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) property to a collection of data items.
 
-Ici, la propriété ItemsSource de la vue symétrique prend la valeur de l’instance d’une collection directement dans le code.
+Here, the flip view's ItemsSource is set in code directly to an instance of a collection.
 
 ```csharp
 // Data source.
@@ -90,9 +102,9 @@ flipView1.SelectionChanged += FlipView_SelectionChanged;
 stackPanel1.Children.Add(flipView1);
 ```
 
-Vous pouvez également lier la propriété ItemsSource à une collection en XAML. Pour plus d’informations, voir [Liaison de données avec XAML](../data-binding/data-binding-quickstart.md).
+You can also bind the ItemsSource property to a collection in XAML. For more info, see [Data binding with XAML](../data-binding/data-binding-quickstart.md).
 
-Dans le cas présent, la propriété ItemsSource est liée à un objet [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.data.collectionviewsource.aspx) nommé `itemsViewSource`. 
+Here, the ItemsSource is bound to a [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.data.collectionviewsource.aspx) named `itemsViewSource`. 
 
 ```xaml
 <Page.Resources>
@@ -106,13 +118,13 @@ Dans le cas présent, la propriété ItemsSource est liée à un objet [**Collec
           ItemsSource="{Binding Source={StaticResource itemsViewSource}}"/>
 ```
 
->**Remarque** &nbsp;&nbsp;Vous pouvez remplir un contrôle FlipView en ajoutant des éléments directement dans sa collection Items ou en définissant sa propriété ItemsSource, mais vous ne pouvez pas faire les deux à la fois. Si vous définissez la propriété ItemsSource et que vous ajoutez un élément en XAML, l’élément ajouté est alors ignoré. Si vous définissez la propriété ItemsSource et que vous ajoutez un élément à la collection Items dans le code, une exception est levée.
+>**Note**&nbsp;&nbsp;You can populate a flip view either by adding items to its Items collection, or by setting its ItemsSource property, but you can't use both ways at the same time. If you set the ItemsSource property and you add an item in XAML, the added item is ignored. If you set the ItemsSource property and you add an item to the Items collection in code, an exception is thrown.
 
-### Spécifier l’accès des éléments
+### Specify the look of the items
 
-Par défaut, un élément de données est affiché dans la vue symétrique en tant que représentation de chaîne de l’objet de données auquel il est lié. En général, on souhaite afficher une représentation enrichie des données. Pour définir précisément la façon dont les éléments sont affichés dans la vue symétrique, vous devez créer un objet [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.datatemplate.aspx). Le code XAML dans l’objet DataTemplate définit la disposition et l’apparence des contrôles qui permettent d’afficher un élément spécifique. Les contrôles dans la disposition peuvent être liés aux propriétés d’un objet de données ou leur contenu peut être défini inline. L’objet DataTemplate est affecté à la propriété [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) du contrôle FlipView.
+By default, a data item is displayed in the flip view as the string representation of the data object it's bound to. You typically want to show a more rich presentation of your data. To specify exactly how items in the flip view are displayed, you create a [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.datatemplate.aspx). The XAML in the DataTemplate defines the layout and appearance of controls used to display an individual item. The controls in the layout can be bound to properties of a data object, or have content defined inline. The DataTemplate is assigned to the [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) property of the FlipView control.
 
-Dans cet exemple, la propriété ItemTemplate d’un objet FlipView est définie inline. Une superposition est ajoutée à l’image pour afficher le nom de l’image. 
+In this example, the ItemTemplate of a FlipView is defined inline. An overlay is added to the image to display the image name. 
 
 ```XAML
 <FlipView x:Name="flipView1" Width="480" Height="270" 
@@ -133,15 +145,15 @@ Dans cet exemple, la propriété ItemTemplate d’un objet FlipView est définie
 </FlipView>
 ```
 
-Voici à quoi ressemble la disposition définie par le modèle de données.
+Here's what the layout defined by the data template looks like.
 
-Modèle de données affiché sous forme de vue symétrique.
+Flip view data template.
 
-### Définir l’orientation de la vue symétrique
+### Set the orientation of the flip view
 
-Par défaut, la vue symétrique défile horizontalement. Pour le faire défiler verticalement, utilisez un panneau d’empilement avec une orientation verticale comme l’objet [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx) de la vue symétrique.
+By default, the flip view flips horizontally. To make the it flip vertically, use a stack panel with a vertical orientation as the flip view's [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx).
 
-Cet exemple montre comment spécifier un panneau d’empilement avec une orientation verticale comme l’objet ItemsPanel d’un contrôle FlipView.
+This example shows how to use a stack panel with a vertical orientation as the ItemsPanel of a FlipView.
 
 ```XAML
 <FlipView x:Name="flipViewVertical" Width="480" Height="270" 
@@ -170,47 +182,47 @@ Cet exemple montre comment spécifier un panneau d’empilement avec une orienta
 </FlipView>
 ```
 
-Voici à quoi ressemble la vue symétrique avec une orientation verticale.
+Here's what the flip view looks like with a vertical orientation.
 
-![Exemple de vue symétrique verticale](images/controls_flipview_vertical.jpg)
+![Example of vertical flip view](images/controls_flipview_vertical.jpg)
 
-## Ajout d’un indicateur de contexte
+## Adding a context indicator
 
-Un indicateur de contexte dans une vue symétrique fournit un bon point de référence. Les points d’un indicateur de contexte standard ne sont pas interactifs. Comme illustré dans cet exemple, le meilleur emplacement est généralement au centre et en dessous de la galerie de photos :
+A context indicator in a flip view provides a useful point of reference. The dots in a standard context indicator aren't interactive. As seen in this example, the best placement is usually centered and below the gallery:
 
-![Exemple d’indicateur de page](images/controls_pageindicator.png)
+![Example of a page indicator](images/controls_pageindicator.png)
 
-Pour les plus grandes collections (10 à 25 éléments), un indicateur qui propose plus de contexte, par exemple une bande de miniatures, peut être utile. Contrairement à un indicateur de contexte qui utilise des points simples, chaque miniature dans la bande affiche une version réduite de l’image correspondante et doit pouvoir être sélectionnée :
+For larger collections (10-25 items), consider using an indicator that provides more context, such as a film strip of thumbnails. Unlike a context indicator that uses simple dots, each thumbnail in the film strip shows a small version of the corresponding image and should be selectable:
 
-![Exemple d’indicateur de contexte](images/controls_contextindicator.jpg)
+![Example of context indicator](images/controls_contextindicator.jpg)
 
-## Pratiques conseillées et déconseillées
+## Do's and don'ts
 
--   Les vues symétriques sont particulièrement adaptées aux collections contenant jusqu’à 25éléments environ.
--   Évitez d’utiliser un contrôle de vue symétrique pour les collections de grande taille, car le passage d’un élément à l’autre peut être fastidieux. Les albums photo, qui possèdent souvent des centaines, voire des milliers d’images, constituent une exception. Ils passent presque toujours en vue symétrique dès lors qu’une photo a été sélectionnée dans l’affichage Grille. Pour les autres collections de grande taille, pensez à [l’affichage Liste ou Grille](lists.md).
--   Pour les indicateurs de contexte :
-    -   L’ordre des points (ou n’importe quel marqueur visuel que vous choisissez) fonctionne mieux lorsqu’il est centré et placé sous une galerie avec un mouvement panoramique horizontal.
-    -   Si vous souhaitez ajouter un indicateur de contexte dans une galerie avec un mouvement panoramique vertical, nous vous conseillons de le positionner au centre et à droite des images.
-    -   Le point en surbrillance indique l’élément actuel. Généralement, le point en surbrillance est blanc et les autres points sont gris.
-    -   Le nombre de points peut varier, mais veillez à ne pas en placer trop car l’utilisateur pourrait avoir du mal à se situer. 10points est généralement le nombre maximal à afficher.
+-   Flip views work best for collections of up to 25 or so items.
+-   Avoid using a flip view control for larger collections, as the repetitive motion of flipping through each item can be tedious. An exception would be for photo albums, which often have hundreds or thousands of images. Photo albums almost always switch to a flip view once a photo has been selected in the grid view layout. For other large collections, consider a [List view or grid view](lists.md).
+-   For context indicators:
+    -   The order of dots (or whichever visual marker you choose) works best when centered and below a horizontally-panning gallery.
+    -   If you want a context indicator in a vertically-panning gallery, it works best centered and to the right of the images.
+    -   The highlighted dot indicates the current item. Usually the highlighted dot is white and the other dots are gray.
+    -   The number of dots can vary, but don't have so many that the user might struggle to find his or her place - 10 dots is usually the maximum number to show.
 
-## Liste de contrôle de globalisation et de localisation
+## Globalization and localization checklist
 
 <table>
 <tr>
-<th>Considérations bidirectionnelles</th><td>Utilisez la mise en miroir standard pour les langues se lisant de droite à gauche. Les commmandes vers l’arrière et vers l’avant doivent se baser sur le sens de lecture de la langue. Pour les langues se lisant de droite à gauche, le bouton droit doit permettre de naviguer vers l’arrière et le bouton gauche vers l’avant.</td>
+<th>Bi-directional considerations</th><td>Use standard mirroring for RTL languages. The back and forward controls should be based on the language's direction, so for RTL languages, the right button should navigate backwards and the left button should navigate forward.</td>
 </tr>
 
 </table>
 
 
-## Articles connexes
+## Related articles
 
-- [Recommandations en matière de listes](lists.md)
-- [**Classe FlipView**](https://msdn.microsoft.com/library/windows/apps/br242678)
+- [Guidelines for lists](lists.md)
+- [**FlipView class**](https://msdn.microsoft.com/library/windows/apps/br242678)
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

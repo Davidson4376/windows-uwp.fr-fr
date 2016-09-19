@@ -4,8 +4,8 @@ title: "Lancer l’application par défaut d’un fichier"
 description: "Découvrez comment lancer l’application par défaut pour un fichier."
 ms.assetid: BB45FCAF-DF93-4C99-A8B5-59B799C7BD98
 translationtype: Human Translation
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: b9b2d8ba6aeedea7d9db12565de191b1b6307fa6
+ms.sourcegitcommit: c87f66a39e6ae7733ecc75006510b6aede699d4f
+ms.openlocfilehash: 20cbd0ef20cc81c81f686100579059321e3c56fa
 
 ---
 
@@ -40,10 +40,7 @@ Windows fournit plusieurs options différentes pour le lancement du gestionnaire
 | Lancement par défaut | [**LaunchFileAsync(IStorageFile)**](https://msdn.microsoft.com/library/windows/apps/hh701471) | Lancer le fichier spécifié avec le gestionnaire par défaut. |
 | Ouvrir avec lancement | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) | Lancer le fichier spécifié en laissant l’utilisateur choisir le gestionnaire dans la boîte de dialogue Ouvrir avec. |
 | Lancer avec une application de secours recommandée | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) | Lancer le fichier spécifié avec le gestionnaire par défaut. Si aucun gestionnaire n’est installé sur le système, recommandez une application du Windows Store à l’utilisateur. |
-| Lancer avec un affichage restant souhaité | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) (Windows uniquement) | Lancer le fichier spécifié avec le gestionnaire par défaut. Spécifiez une préférence à conserver à l’écran après le lancement et demandez une taille de fenêtre spécifique. |
-|  |  |  |
-|  |  | **Famille d’appareils mobiles:** [**LauncherOptions.DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) n’est pas pris en charge sur la famille d’appareils mobiles. |
-
+| Lancer avec un affichage restant souhaité | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) (Windows uniquement) | Lancer le fichier spécifié avec le gestionnaire par défaut. Spécifiez une préférence à conserver à l’écran après le lancement et demandez une taille de fenêtre spécifique. [**LauncherOptions.DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) n’est pas pris en charge sur la famille d’appareils mobiles.   |
  
 ### Lancement par défaut
 
@@ -423,7 +420,7 @@ Les applications sources qui appellent la méthode [**LaunchFileAsync**](https:/
 
 ## Remarques
 
-Votre application ne peut pas sélectionner l’application qui est lancée. L’utilisateur détermine l’application à lancer. L’utilisateur peut sélectionner une application de plateforme Windows universelle (UWP) ou une application de plateforme Windows classique (CWP).
+Votre application ne peut pas sélectionner l’application qui est lancée. L’utilisateur détermine l’application à lancer. L’utilisateur peut sélectionner une application de la plateforme Windows universelle (UWP) ou une application de bureau Windows.
 
 Lors du lancement d’un fichier, votre application doit être l’application au premier plan, c’est-à-dire qu’elle doit être visible pour l’utilisateur. Cette condition permet de garantir que l’utilisateur conserve le contrôle. Pour pouvoir la respecter, veillez à relier directement tous les lancements de fichiers à l’interface utilisateur de votre application. Dans la majorité des cas, l’utilisateur doit toujours exercer une action pour initier un lancement de fichier.
 
@@ -457,6 +454,6 @@ Si vous essayez de lancer un type de fichier restreint, le lancement se soldera 
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

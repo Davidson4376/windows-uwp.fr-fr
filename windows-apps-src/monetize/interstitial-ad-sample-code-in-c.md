@@ -1,28 +1,28 @@
 ---
 author: mcleanbyron
 ms.assetid: 7a16b0ca-6b8e-4ade-9853-85690e06bda6
-description: "Découvrez comment lancer un spot publicitaire en C#."
-title: Exemple de code pour spot publicitaire en C#
+description: Learn how to launch an interstitial ad using C#.
+title: Interstitial ad sample code in C#
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: e83730c60eada273aee4f3bca4ff28cf6feccbf8
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: 5969bfacd34bcfab5f1bebd2cfbade4fd16c5a39
 
 
 ---
 
-# Exemple de code pour spot publicitaire en C\# #  
+# Interstitial ad sample code in C\# #  
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
-
-Cette rubrique montre comment lancer un spot publicitaire en C#. Pour connaître les instructions pas à pas pour configurer votre projet pour qu’il utilise ce code, voir [Spots publicitaires](interstitial-ads.md). Pour un exemple de projet complet illustrant l’ajout de spots vidéo publicitaires à une application XAML en C#, voir [Exemples de publicité sur GitHub](http://aka.ms/githubads).
 
 
-## Exemple de code
+This topic shows how to launch an interstitial ad using C#. For step-by-step instructions that show how to configure your project to use this code, see [Interstitial ads](interstitial-ads.md). For a complete sample project that demonstrates how to add video interstitial ads to a XAML app using C#, see the [advertising samples on GitHub](http://aka.ms/githubads).
 
-Cet exemple de code montre un fichier de code MainPage.xaml.cs qui implémente un spot publicitaire. Ce code part du principe que le fichier MainPage.xaml comporte un bouton fonctionnant avec un événement **Click** qui se déclenche et qui est géré par la méthode **button_Click**. Ce code lance le spot publicitaire lorsque l’événement **Click** du bouton est déclenché.
 
-Remplacez le texte des variables **AppID** et **AdUnitId** par des valeurs dynamiques avant de soumettre votre application au WindowsStore. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre application](set-up-ad-units-in-your-app.md).
+## Code example
+
+This code sample shows a working MainPage.xaml.cs code file that implements an interstitial ad. This code assumes that the MainPage.xaml file has a working button with a **Click** event that fires and is handled by a method named **button_Click**. This code launches the interstitial ad when the **Click** event on the button is fired.
+
+Replace the text in the **AppID** and **AdUnitId** variables with live values before submitting your app to the Store. For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md).
 
 ``` syntax
 using System;
@@ -99,13 +99,13 @@ namespace BasicCSharpInterstitialUWP
 ```
 
  
-## Rubriques connexes
+## Related topics
 
-* [Exemples de publicité sur GitHub](http://aka.ms/githubads)
+* [Advertising samples on GitHub](http://aka.ms/githubads)
  
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

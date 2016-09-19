@@ -1,146 +1,139 @@
 ---
 author: mijacobs
-Description: "Cet article décrit les meilleures pratiques pour créer et afficher des paramètres d’application."
-title: "Recommandations en matière de paramètres de l’application"
+Description: This article describes best practices for creating and displaying app settings.
+title: Guidelines for app settings
 ms.assetid: 2D765E90-3FA0-42F5-A5CB-BEDC14C3F60A
 label: Guidelines
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: aeccd755c5fe5df8f2ff5549950ce2d6cb74e8e4
+ms.sourcegitcommit: 78ede41d559613e89d3174430f5474559f48c6bf
+ms.openlocfilehash: 6302ec1bf332a27986876dbde4da92bbc916f85b
 
 ---
 
 
-# Recommandations en matière de paramètres de l’application
+# Guidelines for app settings
+
+App settings are the user-customizable portions of your app and live within an app settings page. For example, app settings in a news reader app might let the user specify which news sources to display or how many columns to display on the screen, while a weather app's settings could let the user choose between Celsius and Fahrenheit as the default unit of measurement. This article describes best practices for creating and displaying app settings.
+
+![example of a settings pane](images/app-settings.png)
+
+## Should I include a settings page in my app?
+
+Here are examples of app options that belong on an app settings page: 
+
+-   Configuration options that affect the behavior of the app and don't require frequent readjustment, such as choosing between Celsius or Fahrenheit as default units for temperature in a weather app, changing account settings for a mail app, settings for notifications, or accessibility options.
+-   Options that depend on the user's preferences, such as music, sound effects, or color themes.
+-   App information that isn't accessed very often, such as privacy policy, help, app version, or copyright info.
+
+Commands that are part of the typical app workflow (for example, changing the brush size in an art app) shouldn't be on a settings page. To learn more about command placement, see [Command design basics](../layout/commanding-basics.md).
+
+## General recommendations
+
+-   Keep settings pages simple and make use of binary (on/off) controls. A [toggle switch](../controls-and-patterns/toggles.md) is usually the best control for a binary setting.
+-   For settings that let users choose one item from a set of up to 5 mutually exclusive, related options, use [radio buttons](../controls-and-patterns/radio-button.md).
+-   Create an entry point for all app settings on your app setting's page.
+-   Keep your settings simple. Define smart defaults and keep the number of settings to a minimum.
+-   When a user changes a setting, the app should immediately reflect the change.
+-   Don't include commands that are part of the common app workflow.
+
+## Entry point
 
 
+The way that users get to your app settings page should be based on your app's layout.
 
+**Navigation pane**
 
+For a nav pane layout, app settings should be the last item in the list of navigational choices and be pinned to the bottom:
 
-Les paramètres d’application sont les parties de votre application qui sont personnalisables par l’utilisateur. Ces paramètres figurent dans une page qui leur est spécialement dédiée. Par exemple, les paramètres d’une application de lecteur de flux d’actualités peuvent permettre à l’utilisateur de spécifier les sources d’informations à afficher ou le nombre de colonnes à présenter à l’écran, tandis que les paramètres d’une application météo peuvent offrir à l’utilisateur la possibilité de choisir entre les unités Celsius et Fahrenheit comme unité de mesure par défaut. Cet article décrit les meilleures pratiques pour créer et afficher des paramètres d’application.
+![app settings entry point for nav pane](images/appsettings-entrypoint-navpane.png)
 
-![exemple de volet paramètres](images/app-settings.png)
+**App bar**
 
-## <span id="Should_I_include_a_settings_page_in_my_app_"></span><span id="should_i_include_a_settings_page_in_my_app_"></span><span id="SHOULD_I_INCLUDE_A_SETTINGS_PAGE_IN_MY_APP_"></span>Dois-je inclure une page de paramètres dans mon application?
+If you're using an app bar or tool bar, which is usually part of a hub or tabs/pivots navigational layout, place the entry point as the last item in the "More" flyout menu. If greater discoverability for the settings entry point is important for your app, place the entry point directly on the app bar and not within the "More" flyout menu.
 
-Voici quelques exemples d’options d’application qui figurent dans une page de paramètres d’application: 
-
--   options de configuration qui affectent le comportement de l’application et qui sont rarement modifiées, comme le choix de l’unité Celsius ou Fahrenheit comme unité de température par défaut dans une application météo, le changement de paramètres de compte dans une application de messagerie, les paramètres des notifications ou les options d’accessibilité ;
--   options qui dépendent des préférences de l’utilisateur, comme la musique, les effets sonores ou les thèmes de couleur ;
--   informations d’application rarement consultées, telles que la déclaration de confidentialité, l’aide, la version de l’application ou les informations de copyright.
-
-Les commandes qui font partie du flux de travail classique de l’application (par exemple, la modification de la taille du pinceau dans une application artistique) ne doivent pas figurer dans une page de paramètres. Pour plus d’informations sur la disposition des commandes, voir [Informations de base sur la conception des commandes](https://msdn.microsoft.com/library/windows/apps/dn958433).
-
-## <span id="general_principles"></span><span id="GENERAL_PRINCIPLES"></span>Recommandations générales
-
-
--   Faites en sorte que les pages de paramètres restent simples et utilisez des contrôles binaires (activé/désactivé). Un [bouton bascule](../controls-and-patterns/toggles.md) constitue généralement le contrôle le mieux adapté pour un paramètre binaire.
--   Pour permettre aux utilisateurs de choisir un élément dans un ensemble de 5 options au maximum ayant un lien entre elles, mais mutuellement exclusives; utilisez des [cases d’option](../controls-and-patterns/radio-button.md).
--   Créez un point d’entrée pour tous les paramètres d’application dans votre page de paramètres d’application.
--   Veillez à ce que vos paramètres restent simples. Définissez les valeurs par défaut actives et limitez au minimum le nombre de paramètres.
--   Si un utilisateur modifie un paramètre, l’application doit immédiatement refléter cette modification.
--   N’incluez pas de commandes qui font partie intégrante du flux de travail courant de l’application.
-
-## <span id="Entry_point"></span><span id="entry_point"></span><span id="ENTRY_POINT"></span>Point d’entrée
-
-
-La manière dont les utilisateurs accèdent à votre page de paramètres d’application doit reposer sur la disposition de votre application.
-
-**Volet de navigation**
-
-Pour une disposition de volet de navigation, les paramètres d’application doivent correspondre au dernier élément de la liste de choix de navigation et être épinglés dans la partie inférieure:
-
-![point d’entrée des paramètres d’application pour un volet de navigation](images/appsettings-entrypoint-navpane.png)
-
-**Barre de l’application**
-
-Si vous utilisez une barre d’application ou une barre d’outils, qui font généralement partie intégrante d’une disposition de navigation de type hub ou onglets/sélecteurs de vue, placez le dernier élément de point d’entrée dans le menu volant « Plus ». Si vous avez besoin d’améliorer la détectabilité du point d’entrée des paramètres pour votre application, placez le point d’entrée directement sur la barre d’application plutôt que dans le menu volant «Plus».
-
-![point d’entrée des paramètres d’application pour une barre d’application](images/appsettings-entrypoint-tabs.png)
+![app settings entry point for app bar](images/appsettings-entrypoint-tabs.png)
 
 **Hub**
 
-Si vous utilisez une disposition de type hub, le point d’entrée des paramètres d’application doit être placé dans le menu volant « Plus » d’une barre d’application.
+If you're using a hub layout, the entry point for app settings should be placed inside the "More" flyout menu of an app bar.
 
-**Onglets/sélecteurs de vue**
+**Tabs/pivots**
 
-Dans le cas d’une disposition d’onglets ou de sélecteurs de vue, nous vous déconseillons de placer le point d’entrée des paramètres d’application parmi l’un des premiers éléments de la navigation. Insérez plutôt le point d’entrée des paramètres d’application dans le menu volant « Plus » d’une barre d’application.
+For a tabs or pivots layout, we don't recommended placing the app settings entry point as one of the top items within the navigation. Instead, the entry point for app settings should be placed inside the "More" flyout menu of an app bar.
 
-**Maître/détails**
+**Master-details**
 
-Plutôt que d’enfouir profondément le point d’entrée des paramètres d’application dans un volet maître/détails, faites-en le dernier élément épinglé du niveau supérieur du volet maître.
+Instead of burying the app settings entry point deeply within a master-details pane, make it the last pinned item on the top level of the master pane.
 
-## <span id="Layout"></span><span id="layout"></span><span id="LAYOUT"></span>Disposition
-
-
-Sur les appareils de bureau et les appareils mobiles, la page de paramètres d’application doit s’ouvrir en mode plein écran et remplir l’intégralité de la fenêtre. Si votre menu de paramètres d’application comporte jusqu’à quatre groupes de niveau supérieur, ces groupes doivent s’afficher en cascade en descendant d’une colonne.
-
-Appareil de bureau:
-
-![disposition d’une page de paramètres d’application sur un appareil de bureau](images/appsettings-layout-navpane-desktop.png)
-
-Appareil mobile:
-
-![disposition d’une page de paramètres d’application sur un téléphone](images/appsettings-layout-navpane-mobile.png)
-
-## <span id="_About__section_and__Give_feedback__button"></span><span id="_about__section_and__give_feedback__button"></span><span id="_ABOUT__SECTION_AND__GIVE_FEEDBACK__BUTTON"></span>Section «À propos de» et bouton «Envoyer des commentaires»
+## Layout
 
 
-Si votre application doit comporter une section « À propos de cette application », créez une page de paramètres d’application dédiée à cette section. Si vous voulez inclure un bouton « Envoyer des commentaires », placez-le vers le bas de la page « À propos de cette application ».
+On both desktop and mobile, the app settings window should open full-screen and fill the entire window. If your app settings menu has up to four top-level groups, those groups should cascade down one column.
 
-Les sections «Conditions d’utilisation» et «Déclaration de confidentialité» doivent être accessibles par le biais de [boutons de lien hypertexte](../controls-and-patterns/hyperlinks.md) avec renvoi à la ligne automatique.
+**Desktop**
 
-![section «à propos de cette application» avec bouton «envoyer des commentaires»](images/appsettings-about.png)
+![layout for app settings page on desktop](images/appsettings-layout-navpane-desktop.png)
 
-## <span id="dos_and_donts"></span><span id="DOS_AND_DONTS"></span>Recommandations
+**Mobile**
 
+![layout for app settings page on phone](images/appsettings-layout-navpane-mobile.png)
 
-## <span id="add_entry_points"></span><span id="ADD_ENTRY_POINTS"></span>Contenu d’une page de paramètres d’application
-
-
-Une fois que vous disposez d’une liste d’éléments à inclure dans votre page de paramètres d’application, tenez compte des recommandations suivantes:
-
--   Regroupez les paramètres similaires ou connexes sous une même étiquette de paramètres.
--   Faites en sorte que le nombre total de paramètres ne dépasse pas quatre ou cinq.
--   Affichez les mêmes paramètres, quel que soit le contexte de l’application. Si certains paramètres ne sont pas pertinents dans un contexte spécifique, désactivez-les dans le menu volant de paramètres d’application.
--   Utilisez des étiquettes descriptives composées d’un seul mot pour les paramètres. Par exemple, nommez l’entrée « Comptes » plutôt que « Paramètres de compte » pour les paramètres liés aux comptes. Si vous ne voulez qu’une seule option pour vos paramètres et que ces derniers ne se prêtent pas à une étiquette descriptive, utilisez « Options » ou « Par défaut ».
--   Si un paramètre est directement lié au web plutôt qu’à un menu volant, informez-en l’utilisateur à l’aide d’un indice visuel, par exemple «Aide (en ligne)» ou «Forums web», doté d’un style de [lien hypertexte](../controls-and-patterns/hyperlinks.md). Envisagez de regrouper plusieurs liens vers le web dans un menu volant constitué d’un seul paramètre. Par exemple, un paramètre « À propos de » peut ouvrir un menu volant proposant des liens vers vos conditions d’utilisation, votre déclaration de confidentialité et le support technique de votre application.
--   Combinez les paramètres peu utilisés dans une même entrée afin que chaque paramètre plus courant puisse disposer de sa propre entrée. Placez le contenu ou les liens qui contiennent uniquement des informations dans un paramètre « À propos de ».
--   Ne dupliquez pas la fonctionnalité du volet « Autorisations ». Windows fournit ce volet par défaut et ne vous permet pas de le modifier.
-
-## <span id="add_settings_to_flyouts"></span><span id="ADD_SETTINGS_TO_FLYOUTS"></span> Ajouter le contenu des paramètres aux menus volants des paramètres
+## "About" section and "Give feedback" button
 
 
--   Présentez le contenu de haut en bas dans une seule colonne que l’utilisateur pourra faire défiler, si nécessaire. Limitez le défilement à un maximum de deux fois la hauteur de l’écran.
--   Utilisez les contrôles suivants pour les paramètres d’application :
+If you need an "About this app" section in your app, create a dedicated app settings page for that. If you want a "Give Feedback" button, place that toward the bottom of the "About this app" page.
 
-    -   [Boutons bascule](../controls-and-patterns/toggles.md): pour permettre aux utilisateurs de définir des valeurs Activé ou Désactivé.
-    -   [Cases d’option](../controls-and-patterns/radio-button.md): pour permettre à l’utilisateur de choisir un élément dans un ensemble de 5 options au maximum ayant un lien entre elles, mais mutuellement exclusives.
-    -   [Zone de texte](../controls-and-patterns/text-block.md): pour permettre aux utilisateurs d’entrer du texte. Utilisez le type de zone de texte qui correspond au type de texte que vous obtenez de l’utilisateur, tel qu’un message électronique ou un mot de passe.
-    -   [Liens hypertexte](../controls-and-patterns/hyperlinks.md): pour diriger l’utilisateur vers une autre page de l’application ou un site Web externe. Quand un utilisateur clique sur un lien hypertexte, le menu volant des paramètres se ferme.
-    -   [Boutons](../controls-and-patterns/buttons.md): pour permettre aux utilisateurs de lancer une action immédiate sans quitter le menu volant des paramètres actuel.
--   Ajoutez un message descriptif si l’un des contrôles est désactivé. Placez ce message au-dessus du contrôle désactivé.
--   Une fois l’animation du menu volant Paramètres et de l’en-tête terminée, animez le contenu et les contrôles dans un bloc unique. Animez le contenu à l’aide des animations [**enterPage**](https://msdn.microsoft.com/library/windows/apps/br212672) ou [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210288) avec un décalage gauche de 100 px.
--   Utilisez des en-têtes de section, des paragraphes et des étiquettes pour faciliter l’organisation du contenu et apporter plus de clarté, si nécessaire.
--   Si vous avez besoin de répéter les paramètres, utilisez un niveau supplémentaire d’interface utilisateur ou un modèle développer/réduire, mais évitez les hiérarchies de plus de deux niveaux. Par exemple, une application météo qui fournit des paramètres par ville peut répertorier les villes et permettre à l’utilisateur d’appuyer sur la ville pour ouvrir un nouveau menu volant ou développer les options de paramètres.
--   Si le chargement des contrôles ou du contenu Web prend du temps, utilisez le contrôle de progression indéterminée pour indiquer aux utilisateurs que les informations sont en cours de chargement. Pour plus d’informations, consultez [Recommandations en matière de contrôles de progression](https://msdn.microsoft.com/library/windows/apps/hh465469).
--   N’utilisez pas de boutons pour la navigation ou pour valider des modifications. Utilisez des liens hypertexte pour accéder à d’autres pages et, au lieu d’utiliser un bouton pour valider les modifications, enregistrez automatiquement les modifications apportées aux paramètres d’application quand un utilisateur ferme le menu volant des paramètres.
+"Terms of Use" and "Privacy Statement" should be [hyperlink buttons](../controls-and-patterns/hyperlinks.md) with wrapping text.
 
-\[Cet article contient des informations propres aux applications de plateforme Windows universelle (UWP) et à Windows 10. Pour obtenir de l’aide concernant Windows8.1, téléchargez le [document PDF de recommandations pour Windows8.1](https://go.microsoft.com/fwlink/p/?linkid=258743) (en anglais).\]
+!["about this app" section with "give feedback" button](images/appsettings-about.png)
 
-## <span id="related_topics"></span>Rubriques connexes
+## Recommendations
 
-* [Informations de base sur la conception des commandes](https://msdn.microsoft.com/library/windows/apps/dn958433)
-* [Recommandations en matière de contrôles de progression](https://msdn.microsoft.com/library/windows/apps/hh465469) 
-           **Pour les développeurs (XAML)**
-* [Stocker et récupérer des données d’application](https://msdn.microsoft.com/library/windows/apps/mt299098)
-* [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210288) �
 
-�
+### App settings page content
+
+
+After you have a list of items that you want to include in your app settings page, consider these guidelines:
+
+-   Group similar or related settings under one settings label.
+-   Try to keep the total number of settings to a maximum of four or five.
+-   Display the same settings regardless of the app context. If some settings aren't relevant in a certain context, disable those in the app Settings flyout.
+-   Use descriptive, one-word labels for settings. For example, name the setting "Accounts" instead of "Account settings" for account-related settings. If you only want one option for your settings and the settings don't lend themselves to a descriptive label, use "Options" or "Defaults."
+-   If a setting directly links to the web instead of to a flyout, let the user know this with a visual clue, such as "Help (online)" or "Web forums" styled as a [hyperlink](../controls-and-patterns/hyperlinks.md). Consider grouping multiple links to the web into a flyout with a single setting. For example, an "About" setting could open a flyout with links to your terms of use, privacy policy, and app support.
+-   Combine less-used settings into a single entry so that more common settings can each have their own entry. Put content or links that only contain information in an "About" setting.
+-   Don't duplicate the functionality in the "Permissions" pane. Windows provides this pane by default and you can't modify it.
+
+###  Add settings content to Settings flyouts
+
+
+-   Present content from top to bottom in a single column, scrollable if necessary. Limit scrolling to a maximum of twice the screen height.
+-   Use the following controls for app settings:
+
+    -   [Toggle switches](../controls-and-patterns/toggles.md): To let users set values on or off.
+    -   [Radio buttons](../controls-and-patterns/radio-button.md): To let users choose one item from a set of up to 5 mutually exclusive, related options.
+    -   [Text input box](../controls-and-patterns/text-block.md): To let users enter text. Use the type of text input box that corresponds to the type of text you're getting from the user, such as an email or password.
+    -   [Hyperlinks](../controls-and-patterns/hyperlinks.md): To take the user to another page within the app or to an external website. When a user clicks a hyperlink, the Settings flyout will be dismissed.
+    -   [Buttons](../controls-and-patterns/buttons.md): To let users initiate an immediate action without dismissing the current Settings flyout.
+-   Add a descriptive message if one of the controls is disabled. Place this message above the disabled control.
+-   Animate content and controls as a single block after the Settings flyout and header have animated. Animate content using the [**enterPage**](https://msdn.microsoft.com/library/windows/apps/br212672) or [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210288) animations with a 100px left offset.
+-   Use section headers, paragraphs, and labels to organize and clarify content, if necessary.
+-   If you need to repeat settings, use an additional level of UI or an expand/collapse model, but avoid hierarchies deeper than two levels. For example, a weather app that provides per-city settings could list the cities and let the user tap on the city to either open a new flyout or expand to show the settings options.
+-   If loading controls or web content takes time, use an indeterminate progress control to indicate to users that info is loading. For more info, see [Guidelines for progress controls](../controls-and-patterns/progress-controls.md).
+-   Don't use buttons for navigation or to commit changes. Use hyperlinks to navigate to other pages, and instead of using a button to commit changes, automatically save changes to app settings when a user dismisses the Settings flyout.
+
+\[This article contains information that is specific to Universal Windows Platform (UWP) apps and Windows 10. For Windows 8.1 guidance, please download the [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+
+## Related articles
+
+* [Command design basics](../layout/commanding-basics.md)
+* [Guidelines for progress controls](../controls-and-patterns/progress-controls.md)
+* [Store and retrieve app data](store-and-retrieve-app-data.md)
+* [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210288)
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

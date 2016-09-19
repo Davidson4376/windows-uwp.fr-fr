@@ -1,33 +1,33 @@
 ---
-title: "Tâches courantes de chiffrement"
-description: "Ces articles fournissent des exemples de code pour les tâches de chiffrement de plateforme UWP courantes, telles que la création de nombres aléatoires, la comparaison de mémoires tampon, la conversion entre chaînes et données binaires, la copie de tableaux d’octets, ainsi que le codage/décodage de données."
+title: Common cryptography tasks
+description: These articles provide example code for common Universal Windows Platform (UWP) cryptography tasks, such as creating random numbers, comparing buffers, converting between strings and binary data, copying to and from byte arrays, and encoding and decoding data.
 ms.assetid: 2DE094F4-28E2-4C5D-BF8C-617BD90AB119
 author: awkoren
 translationtype: Human Translation
 ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: 38d0af2cdbf4137cbd0e005fcb750ed2f0b2c87c
+ms.openlocfilehash: 5122c7d9750a9f37582b27752926da1c9f44b321
 
 ---
 
-# Tâches courantes de chiffrement
+# Common cryptography tasks
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Ces articles fournissent des exemples de code pour les tâches de chiffrement de plateformeWindows universelle (UWP) courantes, telles que la création de nombres aléatoires, la comparaison de mémoires tampon, la conversion entre chaînes et données binaires, la copie de tableaux d’octets, ainsi que le codage/décodage de données.
+These articles provide example code for common Universal Windows Platform (UWP) cryptography tasks, such as creating random numbers, comparing buffers, converting between strings and binary data, copying to and from byte arrays, and encoding and decoding data.
 
  
-| Rubrique                                                                                 | Description                                                                                            |
+| Topic                                                                                 | Description                                                                                            |
 |---------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
-| [Créer des nombres aléatoires](create-random-numbers.md)                                     | Cet exemple de code indique comment créer un nombre aléatoire ou une mémoire tampon à utiliser pour le chiffrement dans une application UWP. |
-| [Comparer des mémoires tampons](compare-buffers.md)                                                 | Cet exemple de code indique comment comparer des mémoires tampons dans une application UWP.                                          |
-| [Convertir entre chaînes et données binaires](convert-between-strings-and-binary-data.md) | Cet exemple de code indique comment convertir les chaînes et les données binaires dans une application UWP.                  |
-| [Copier des tableaux d’octets](copy-to-and-from-byte-arrays.md)                       | Cet exemple de code indique comment copier des tableaux d’octets dans une application UWP.                             |
-| [Encoder et décoder des données](encode-and-decode-data.md)                                   | Cet exemple de code indique comment encoder et décoder des données base64 et hexadécimales dans une application UWP.            |
+| [Create random numbers](create-random-numbers.md)                                     | This example code shows how to create a random number or buffer for use in cryptography in an UWP app. |
+| [Compare buffers](compare-buffers.md)                                                 | This example code shows how to compare buffers in an UWP app.                                          |
+| [Convert between strings and binary data](convert-between-strings-and-binary-data.md) | This example code shows how to convert between strings and binary data in an UWP app.                  |
+| [Copy to and from byte arrays](copy-to-and-from-byte-arrays.md)                       | This example code shows how to copy to and from byte arrays in an UWP app.                             |
+| [Encode and decode data](encode-and-decode-data.md)                                   | This example code shows how to encode and decode base64 and hexadecimal data in an UWP app.            |
  
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

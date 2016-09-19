@@ -1,219 +1,222 @@
 ---
-title: "DéverrouillageWindows avec appareils (IoT) complémentaires"
-description: "Un dispositif complémentaire est un appareil pouvant agir en conjonction avec votre ordinateur de bureau Windows10 pour améliorer l’expérience d’authentification utilisateur. S’appuyant sur l’infrastructure CompanionDeviceFramework, un dispositif complémentaire peut enrichir considérablement l’expérience MicrosoftPassport, même en l’absence de WindowsHello (par exemple, si l’ordinateur de bureau Windows10 ne dispose pas d’appareil photo pour l’authentification faciale ou d’un lecteur d’empreintes digitales)."
+title: Windows Unlock with Windows Hello companion (IoT) devices
+description: A Windows Hello companion device is a device that can act in conjunction with your Windows 10 desktop to enhance the user authentication experience. Using the Windows Hello companion device framework, a companion device can provide a rich experience for Windows Hello even when biometrics are not available (e.g., if the Windows 10 desktop lacks a camera for face authentication or fingerprint reader device, for example).
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: a6265ca66a1a9d729465845da1014d1aff0e7d4d
-ms.openlocfilehash: 18102d6277ff1c66ebd147b5c1fd2f2d6c91edd1
+ms.sourcegitcommit: fcff9982a0a4f42f864d1ade214b475458b7d37a
+ms.openlocfilehash: 04e68203367b2366fa64decd067dc6e8526ce71e
 
 ---
-# DéverrouillageWindows avec appareils (IoT) complémentaires
+# Windows Unlock with Windows Hello companion (IoT) devices
 
-Un dispositif complémentaire est un appareil pouvant agir en conjonction avec votre ordinateur de bureau Windows10 pour améliorer l’expérience d’authentification utilisateur. S’appuyant sur l’infrastructure CompanionDeviceFramework, un dispositif complémentaire peut enrichir considérablement l’expérience MicrosoftPassport, même en l’absence de WindowsHello (par exemple, si l’ordinateur de bureau Windows10 ne dispose pas d’appareil photo pour l’authentification faciale ou d’un lecteur d’empreintes digitales).
+A Windows Hello companion device is a device that can act in conjunction with your Windows 10 desktop to enhance the user authentication experience. Using the Windows Hello companion device framework, a companion device can provide a rich experience for Windows Hello even when biometrics are not available (e.g., if the Windows 10 desktop lacks a camera for face authentication or fingerprint reader device, for example).
 
-> **Remarque** L’infrastructure Companion Device Framework est une fonctionnalité spécialisée qui n’est pas disponible pour tous les développeurs d’applications. Pour utiliser cette infrastructure, votre application doit être spécialement approvisionnée par Microsoft et répertorier la fonctionnalité *secondaryAuthenticationFactor* dans son manifeste. Pour obtenir une approbation, contactez [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com).
+> **Note** The Windows Hello companion device framework is a specialized feature not available to all app developers. To use this framework, your app must be specifically provisioned by Microsoft and list the restricted *secondaryAuthenticationFactor* capability in its manifest. To obtain approval, contact [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com).
 
 ## Introduction
 
-> Pour obtenir un aperçu vidéo, voir la session [Déverrouillage Windows avec appareils IoT](https://channel9.msdn.com/Events/Build/2016/P491) à partir de la Build2016 sur le canal9.
+> For a video overview, see the [Windows Unlock with IoT Devices](https://channel9.msdn.com/Events/Build/2016/P491) session from Build 2016 on Channel 9.
 
-### Cas d’utilisation
+> For code samples, see the [Windows Hello companion device framework Github repository](https://github.com/Microsoft/companion-device-framework).
 
-Plusieurs méthodes existent pour créer une excellente expérience de déverrouillage Windows avec un dispositif complémentaire à l’aide de l’infrastructure CompanionDeviceFramework. Les utilisateurs peuvent, par exemple:
+### Use cases
 
-- attacher leurs dispositifs complémentaires aux PC via USB, puis effleurer le bouton sur le dispositif complémentaire pour déverrouiller automatiquement leur PC;
-- porter sur eux un téléphone déjà couplé à un PC via Bluetooth. Le fait d’appuyer sur la barre d’espace du PC envoie une notification au téléphone. L’approbation de ce message par l’utilisateur déverrouille le PC;
-- poser rapidement leur dispositif complémentaire contre un lecteurNFC pour déverrouiller leur ordinateur en toute rapidité;
-- porter des bracelets connectés ayant déjà authentifié l’utilisateur. Lorsque l’utilisateur s’approche du PC et effectue un mouvement spécial, comme se frapper dans les mains, le PC se déverrouille.
+There are numerous ways one can use the Windows Hello companion device framework to build a great Windows unlock experience with a companion device. For example, users could:
 
-### Dispositifs complémentaires fonctionnant par biométrie
+- Attach their companion device to PC via USB, touch the button on the companion device, and automatically unlock their PC.
+- Carry a phone in their pocket that is already paired with PC over Bluetooth. Upon hitting the spacebar on their PC, their phone receives a notification. Approve it and the PC simply unlocks.
+- Tap their companion device to an NFC reader to quickly unlock their PC.
+- Wear a fitness band that has already authenticated the wearer. Upon approaching PC, and by performing a special gesture (like clapping), the PC unlocks.
 
-Si l’appareil complémentaire prend en charge la biométrie, [Windows Biometric Framework](https://msdn.microsoft.com/library/windows/hardware/mt608302(v=vs.85).aspx) peut parfois s’avérer une meilleure solution que Companion Device Framework. Veuillez contacter [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com) pour que nous vous aidions à choisir l’approche la plus adaptée.
+### Biometric enabled Windows Hello companion devices
 
-### Composants de la solution
+If the companion device supports biometrics, in some cases the [Windows Biometric framework](https://msdn.microsoft.com/library/windows/hardware/mt608302(v=vs.85).aspx) may be a better solution than the Windows Hello companion device framework. Please contact [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com) and we'll help you pick the right approach.
 
-Le diagramme ci-dessous illustre les composants de la solution et leurs fabricants respectifs.
+### Components of the solution
 
-![vue d’ensemble de l’infrastructure](images/companion-device-1.png)
+The diagram below depicts the components of the solution and who is responsible for building them.
 
-L’infrastructure CompanionDeviceFramework est implémentée en tant que service exécuté sur Windows (appelé service d’authentification par dispositif complémentaire dans cet article). Ce service génère un jeton de déverrouillage qui doit être protégé par une cléHMAC stockée sur un dispositif complémentaire. Cela garantit un accès au jeton de déverrouillage nécessitant la présence d’un dispositif complémentaire. Chaque tuple (PC, utilisateur Windows) se voit affecter un seul jeton de déverrouillage.
+![framework overview](images/companion-device-1.png)
 
-L’intégration avec l’infrastructure CompanionDeviceFramework nécessite:
+The Windows Hello companion device framework is implemented as a service running on Windows (called the Companion Authentication Service in this article). This service is responsible for generating an unlock token which needs to be protected by an HMAC key stored on the Windows Hello companion device. This guarantees that access to the unlock token requires Windows Hello companion device presence. Per each (PC, Windows user) tuple, there will be a unique unlock token.
 
-- une application de [plateforme Windows universelle (UWP)](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) pour le dispositif complémentaire, téléchargée à partir du Windows Store ; 
-- la possibilité de créer deux clésHMAC 256bits sur le dispositif complémentaire et générer un HMAC avec ce dernier (à l’aide de SHA-256).
-- une bonne configuration des paramètres de sécurité sur le Bureau Windows10. Le service d’authentification par dispositif complémentaire nécessite un PIN avant de pouvoir accueillir un dispositif complémentaire. Les utilisateurs doivent configurer ce PIN dans Paramètres &gt; Comptes &gt; Options de connexion.
+Integration with the Windows Hello Companion Device Framework requires:
 
-Outre les exigences ci-dessus, l’application pour le dispositif complémentaire est responsable de:
+- A [Universal Windows Platform (UWP)](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) Windows Hello companion device app for the companion device, downloaded from the Windows app store. 
+- The ability to create two 256 bit HMAC keys on the Windows Hello companion device and generate HMAC with it (using SHA-256).
+- Security settings on the Windows 10 desktop properly configured. The Companion Authentication Service will require this PIN to be set up before any Windows Hello companion device can be plugged into it. The users must set up a PIN via Settings > Accounts > Sign-in options.
 
-- l’expérience utilisateur et la personnalisation lors de l’inscription initiale, puis la désinscription du dispositif complémentaire;
-- l’exécution en arrière-plan, la prise en main du dispositif complémentaire, la communication avec ce dernier ainsi que le service d’authentification par dispositif complémentaire.
-- Gestion des erreurs
+In addition to the above requirements, the Windows Hello companion device app is responsible for:
 
-Les dispositifs complémentaires sont généralement fournis avec une application pour leur configuration initiale, comme les bracelets connectés. Les fonctionnalités décrites dans le présent document peuvent faire partie de l’application en question; une application distincte ne devrait pas être requise.  
+- User experience and branding of initial registration and later de-registration of the Windows Hello companion device.
+- Running in the background, discovering the Windows Hello companion device, communicating to the Windows Hello companion device and also Companion Authentication Service.
+- Error handling
 
-### Signaux utilisateur
+Normally, companion devices ship with an app for initial setup, like setting up a fitness band for the first time. The functionality described in this document can be part of that app and a separate app should not be required.  
 
-Chaque dispositif complémentaire doit être associé à une application qui prend en charge trois signaux utilisateur. Ces signaux peuvent être exprimés sous forme d’une action ou d’un geste.
+### User signals
 
-- **Signal d’intention** : permet à l’utilisateur d’indiquer sa volonté de déverrouiller l’appareil, en appuyant sur un bouton du dispositif complémentaire, par exemple. Le signal d’intention doit être capturé du côté du **dispositif complémentaire**.
-- **Signal de présence de l’utilisateur** : apporte la preuve de la présence de l’utilisateur. Le dispositif complémentaire devrait, par exemple, être activé par PIN ou un bouton avant de pouvoir être utilisé pour déverrouiller le PC (à ne pas confondre avec le PIN du PC).
-- **Signal de levée d’ambiguïté** : lève l’ambiguïté sur quel Bureau Windows 10 l’utilisateur souhaite déverrouiller lorsque plusieurs options se présentent au dispositif complémentaire.
+Each Windows Hello companion device should be combined with an app that supports three user signals. These signals can be in form of an action or gesture.
 
-Un nombre quelconque de ces signaux utilisateur peut être combiné en un seul signal. La présence de l’utilisateur et les signaux d’intention doivent être obligatoires à chaque utilisation.
+- **Intent signal**: Allows the user to show his intent for unlock by, for example, hitting a button on the Windows Hello companion device. The intent signal must be collected on **Windows Hello companion device** side.
+- **User presence signal**: Proves the presence of the user. The Windows Hello companion device might, for instance, require a PIN before it can be used for unlocking PC (not to be confused with PC PIN), or it might require press of a button.
+- **Disambiguation signal**: Disambiguates which Windows 10 desktop the user wants to unlock when multiple options are available to the Windows Hello companion device.
 
-### Inscription et communication future entre un PC et dispositifs complémentaires
+Any number of these user signals can be combined into one. User presence and intent signals must be required on each use.
 
-Un dispositif complémentaire doit être inscrit auprès de l’infrastructure CompanionDeviceFramework avant de pouvoir le relier à cette dernière. L’expérience d’inscription est entièrement dictée par l’application du dispositif complémentaire.
+### Registration and future communication between a PC and Windows Hello companion devices
 
-Une interconnexion entre le dispositif complémentaire et l’appareil de bureauWindows10 ayant fait l’objet d’une inscription peut servir plusieurs appareils; un seul dispositif complémentaire peut être utilisé pour plusieurs appareils de bureauWindows10. Toutefois, chaque dispositif complémentaire peut uniquement être utilisé pour un seul utilisateur sur chaque appareil de bureauWindows10.   
+Before a Windows Hello companion device can be plugged into the Windows Hello companion device framework, it needs to be registered with the framework. The experience for registration is completely owned by the Windows Hello companion device app.
 
-Le type de transport entre le PC et le dispositif doit être configuré avant de pouvoir établir une communication entre les deux appareils. Ce choix est fait par l’application du dispositif complémentaire; l’infrastructure CompanionDeviceFramework n’impose aucune restriction sur le type de transport (USB, NFC, Wi-Fi, BT, BLE, etc.) ou le protocole utilisé entre le dispositif complémentaire et l’application du dispositif complémentaire du côté de l’appareil de bureauWindows10. Elle soulève cependant certaines considérations de sécurité liées à la couche transport, indiquées à la section «Exigences de sécurité» du présent document. Il incombe au fournisseur de l’appareil de faire respecter ces exigences. Cela n’est pas du ressort de l’infrastructure.
+The relationship between the Windows Hello companion device and the Windows 10 desktop  device can be one to many (i.e., one companion device can be used for many Windows 10 desktop  devices). However, each Windows Hello companion device can only be used for one user on each Windows 10 desktop  device.   
 
+Before a Windows Hello companion device can communicate with a PC, they need to agree on a transport to use. Such choice is left to the Windows Hello companion device app; the Windows Hello companion device framework does not impose any limitations on transport type (USB, NFC, WiFi, BT, BLE, etc) or protocol being used between the Windows Hello companion device and the Windows Hello companion device app on the Windows 10 desktop device side. It does, however, suggest certain security considerations for the transport layer as outlined in the "Security Requirements" section of this document. It is the device provider’s responsibility to provide those requirements. The framework does not provide them for you.
 
-## Modèle d’interaction utilisateur
 
-### Découverte, installation et première inscription de l’application du dispositif complémentaire
+## User Interaction Model
 
-Un flux de travail classique se présente de la manière suivante:
+### Windows Hello companion device app discovery, installation, and first-time registration
 
-- L’utilisatrice configure le PIN sur chacun des appareils de bureauWindows10 cibles qu’elle souhaite déverrouiller avec le dispositif complémentaire.
-- Elle exécute l’application du dispositif complémentaire sur son appareil de bureauWindows10 pour l’inscrire auprès du BureauWindows10.
+A typical user workflow is as follows:
 
-Remarques:
+- The user sets up the PIN on each of target Windows 10 desktop devices she wants to unlock with that Windows Hello companion device.
+- The user runs the Windows Hello companion device app on their Windows 10 desktop device to register her Windows Hello companion device with Windows 10 desktop.
 
-- Nous vous recommandons la rationalisation, voire l’automatisation si possible, de la découverte, du téléchargement et de l’exécution de l’application du dispositif complémentaire (l’application peut, par exemple, être téléchargée en posant brièvement le dispositif complémentaire sur un lecteurNFC du côté de l’appareil de bureauWindows10). Le dispositif complémentaire et son application doivent cependant les appliquer automatiquement.
-- Dans un environnement d’entreprise, l’application de dispositif complémentaire peut être déployée via GPM.
-- L’application de dispositif complémentaire doit afficher à l’utilisateur tout message d’erreur lié à l’inscription.
+Notes:
 
-### Protocole d’inscription et de désinscription
+- We recommend the discovery, download, and launch of the Windows Hello companion device app is streamlined and, if possible, automated (e.g., the app can be downloaded upon tapping the Windows Hello companion device on an NFC reader on Windows 10 desktop device side). This is, however, the responsibility of the Windows Hello companion device and Windows Hello companion device app.
+- In an enterprise environment, the Windows Hello companion device app can be deployed via MDM.
+- The Windows Hello companion device app is responsible for showing the user any error messages that happen as part of registration.
 
-Le schéma suivant illustre la façon dont le dispositif complémentaire interagit avec le service d’authentification par dispositif complémentaire.  
+### Registration and de-registration protocol
 
-![Flux d’inscription](images/companion-device-2.png)
+The following diagram illustrates how the Windows Hello companion device interacts with Companion Authentication Service during registration.  
 
-Deux clés sont utilisées dans notre protocole:
+![registration flow](images/companion-device-2.png)
 
-- La clé de périphérique (**devicekey**) : permet de protéger les jetons de déverrouillage que nécessitent les PC pour déverrouiller Windows.
-- La clé d’authentification (**authkey**) : permet d’authentifier mutuellement le dispositif complémentaire et le service d’authentification par dispositif complémentaire.
+There are two keys used in our protocol:
 
-La clé de périphérique et les clés d’authentification sont échangées entre l’application du dispositif complémentaire et le dispositif complémentaire au moment de l’inscription. Par conséquent, l’application du dispositif complémentaire et le dispositif complémentaire doivent utiliser un transport sécurisé pour protéger les clés.
+- Device key (**devicekey**): used to protect unlock tokens that the PC needs to unlock Windows.
+- The authentication key (**authkey**): used to mutually authenticate the Windows Hello companion device and Companion Authentication Service.
 
-Notez également que, même si le schéma ci-dessus présente deux clésHMAC générées sur le dispositif complémentaire, l’application peut également les générer pour ensuite les envoyer au dispositif complémentaire à des fins de stockage.
+The device key and authentication keys are exchanged at registration time between the Windows Hello companion device app and Windows Hello companion device. As a result, the Windows Hello companion device app and Windows Hello companion device must use a secure transport to protect keys.
 
-### Lancer le flux d’authentification
+Also, note that while the diagram above displays two HMAC keys generating on the Windows Hello companion device, it is also possible for the app to generate them and send them to the Windows Hello companion device for storage.
 
-L’utilisateur peut lancer le flux d’authentification vers le BureauWindows10 à l’aide de l’infrastructure CompanionDeviceFramework de deux façons (c’est-à-dire, avec un signal d’intention):
+### Starting authentication flows
 
-- Ouvrez l’ordinateur portable ou appuyez sur la barre d’espace/effectuez un balayage vers le haut surPC.
-- Faites un geste ou une action du côté du dispositif complémentaire.
+There are two ways for the user to start the signing in flow to Windows 10 desktop using Windows Hello companion device framework (i.e., provide intent signal):
 
-Ce dernier choisit lequel d’entre eux constitue un point de départ. L’infrastructure CompanionDeviceFramework informera l’application du dispositif complémentaire lorsque vous effectuez la première option. Pour la deuxième option, l’application du dispositif complémentaire interroge le dispositif complémentaire pour savoir si cet événement a été capturé. Cela permet au dispositif complémentaire de capturer le signal d’intention pour le déverrouillage.
+- Open up the lid on laptop, or hit the space bar or swipe up on PC.
+- Perform a gesture or an action on the Windows Hello companion device side.
 
-### Fournisseur d’informations d’identification du dispositif complémentaire
+It is the Windows Hello companion device's choice to select which one is the starting point. The Windows Hello companion device framework will inform companion device app when option one happens. For option two, the Windows Hello companion device app should query the companion device to see if that event has been captured. This ensures the Windows Hello companion device collects the intent signal before the unlock succeeds.
 
-Un nouveau fournisseur d’informations d’identification dans Windows10 gère tous les dispositifs complémentaires.
+### Windows Hello companion device credential provider
 
-Le fournisseur d’informations d’identification du dispositif complémentaire est responsable de l’exécution des tâches d’arrière-plan dudit dispositif par l’activation d’un déclencheur. Le déclencheur est activé une première fois lorsque le PC démarre et l’écran de verrouillage s’affiche. Il l’est une deuxième fois lorsque le PC lance l’IU d’ouverture de session et que la vignette du fournisseur d’informations d’identification du dispositif complémentaire est sélectionnée.
+There is a new credential provider in Windows 10 that handles all Windows Hello companion devices.
 
-La bibliothèque d’aide de l’application du dispositif complémentaire écoutera le changement du statut de l’écran de verrouillage et enverra l’événement correspondant à la tâche en arrière-plan du dispositif complémentaire.
+The Windows Hello companion device credential provider is responsible for launching the companion device background task via activating a trigger. The trigger is set the first time when the PC awakens and a lock screen is displayed. The second time is when the PC is entering logon UI and the Windows Hello companion device credential provider is the selected tile.
 
-Si plusieurs tâches sont exécutées en arrière-plan du dispositif complémentaire, la première tâche en arrière-plan ayant terminé le processus d’authentification déverrouillera le PC. Le service d’authentification du dispositif complémentaire ignore tous les appels d’authentification restants.
+The helper library for the Windows Hello companion device app will listen to the lock screen status change and send the event corresponding to the Windows Hello companion device background task.
 
-L’expérience du côté du dispositif complémentaire est gérée par l’application du dispositif complémentaire, qui en est également le propriétaire. L’infrastructure CompanionDeviceFramework ne contrôle en aucun cas cette partie de l’expérience utilisateur. Plus précisément, le fournisseur d’authentification du dispositif complémentaire informe l’application du dispositif complémentaire (via son application en arrière-plan) des changements de statut dans l’IU d’ouverture de session (par exemple, l’écran de verrouillage s’est activé, ou l’utilisateur l’a désactivé en appuyant sur la barre d’espace). L’application du dispositif complémentaire doit alors prendre le relais et créer une expérience autour de cette action (elle se met par exemple à chercher un appareil via USB lorsque l’utilisateur appuie sur la barre d’espace pour désactiver l’écran de verrouillage).
+If there are multiple Windows Hello companion device background tasks, the first background task that has finished the authentication process will unlock the PC. The companion device authentication service will ignore any remaining authentication calls.
 
-L’infrastructure CompanionDeviceFramework fournira un ensemble de textes et de messages d’erreur (localisés) à partir desquels l’application pour le dispositif complémentaire fait son choix. Ceux-ci apparaissent en haut de l’écran de verrouillage (ou sur l’interface utilisateur d’ouverture de session). Pour en savoir plus, voir la section Messages et erreurs.
+The experience on the Windows Hello companion device side is owned and managed by the Windows Hello companion device app. The Windows Hello companion device framework has no control over this part of the user experience. More specifically, the companion authentication provider informs the Windows Hello companion device app (via its background app) about state changes in logon UI (e.g., lock screen just came down, or the user just dispelled lock screen by hitting spacebar), and it is the responsibility of the Windows Hello companion device app to build an experience around that (e.g., upon user hitting spacebar and dispelling unlock screen, start looking for the device over USB).
 
-### Protocole d’authentification
+The Windows Hello companion device Framework will provide a stock of (localized) text and error messages for the Windows Hello companion device app to choose from. These will be displayed on top of lock screen (or in logon UI). See the Dealing with Messages and Errors section for more details.
 
-Une fois la tâche en arrière-plan associée à une application de dispositif complémentaire démarrée par déclenchement, celle-ci doit envoyer une requête au dispositif complémentaire pour calculer deux valeurs HMAC:
-- La valeur HMAC de la clé de périphérique avec un nonce.
-- La valeur HMAC de la clé d’authentification; la première valeur HMAC est concaténée avec un nonce généré par le service d’authentification par dispositif complémentaire.
+### Authentication protocol
 
-La seconde valeur est utilisée par le service pour authentifier l’appareil et pour empêcher les attaques par relecture dans le canal de transport.
+Once the background task associated with a Windows Hello companion device app is trigger started, it is responsible for asking the Windows Hello companion device to validate an HMAC value computed by the Companion Authentication Service and help calculate two HMAC values:
+- Validate Service HMAC = HMAC(authentication key, service nonce || device nonce || session nonce).
+- Calculate the HMAC of the device key with a nonce.
+- Calculate the HMAC of the authentication key with first HMAC value concatenated with a nonce generated by the Companion Authentication Service.
 
-![Flux d’inscription](images/companion-device-3.png)
+The second computed value is used by the service to authenticate the device and also prevent replay attack in transport channel.
 
-## Gestion du cycle de vie
+![registration flow](images/companion-device-3.png)
 
-### Une seule inscription pour une utilisation en tout lieu
+## Lifecycle management
 
-Sans serveur principal, les utilisateurs doivent inscrire leur dispositif complémentaire auprès de chaque appareil de bureauWindows10 de manière individuelle.
+### Register once, use everywhere
 
-Un fournisseur de périphérique ou OEM de dispositifs complémentaires peut faire en sorte qu’un serviceweb utilise un profil itinérant pour rendre itinérant le statut d’enregistrement sur tous les BureauxWindows10 ou les appareils mobiles des utilisateurs. Pour en savoir plus, voir la section Itinérance, révocation et service de filtre.
+Without a backend server, users must register their Windows Hello companion device with each Windows 10 desktop device separately.
 
-### Gestion du PIN
+A companion device vendor or OEM can implement a web service to roam the registration state across user Windows 10 desktops or mobile devices. For more details, see the Roaming, Revocation, and Filter Service section.
 
-L’utilisation d’un dispositif complémentaire nécessite d’abord la configuration d’un PIN sur un appareil de bureauWindows10. Cela garantit à l’utilisateur une sauvegarde au cas où son dispositif complémentaire ne fonctionne pas. Le PIN est géré par Windows; les applications ne le découvrent jamais. Pour le changer, accédez à Paramètres &gt; Comptes &gt; Options de connexion.
+### PIN management
 
-### Gestion et stratégie
+Before a companion device can be used, a PIN needs to be set up on Windows 10 desktop device. This ensures the user has a backup in case their Windows Hello companion device is not working. The PIN is something that Windows manages and that apps never see. To change it, the user navigates to Settings > Accounts > Sign-in options.
 
-Les utilisateurs peuvent supprimer un dispositif complémentaire d’un BureauWindows10 en exécutant une application de dispositif complémentaire sur le bureau en question.
+### Management and policy
 
-Les entreprises disposent de deux options pour contrôler l’infrastructure CompanionDeviceFramework:
+Users can remove a Windows Hello companion device from a Windows 10 desktops by running the Windows Hello companion device app on that desktop device.
 
-- L’activation/désactivation de la fonctionnalité
-- L’établissement d’une liste blanche de dispositifs complémentaires autorisés à l’aide de WindowsAppLocker
+Enterprises have two options for controlling the Windows Hello companion device framework:
 
-L’infrastructure CompanionDeviceFramework ne tient pas d’inventaire des dispositifs complémentaires disponibles de manière centralisée, et ne prend en charge aucune méthode pour définir quelles instances d’un type de dispositif complémentaire sont autorisées (seuls les dispositifs complémentaires dont le numéro de série est compris entre X et Y sont autorisés, par exemple). Les développeurs d’applications peuvent, cependant, créer un service pour fournir cette fonctionnalité. Pour en savoir plus, voir la section Itinérance, révocation et service de filtre.
+- Turn the feature on or off
+- Define the whitelist of Windows Hello companion devices allowed using Windows app locker
 
-### Révocation
+The Windows Hello companion device framework does not support any centralized way to keep inventory of available companion devices, or a method to further filter which instances of a Windows Hello companion device type is allowed (for example, only a companion device with a serial number between X and Y are allowed). Apps developers can, however, build a service to provide such functionality. For more details, see the Roaming, Revocation, and Filter Service section.
 
-L’infrastructure CompanionDeviceFramework ne prend pas en charge la suppression à distance d’un dispositif complémentaire d’un appareil de bureauWindows10 spécifique. Au lieu de cela, les utilisateurs peuvent supprimer le dispositif complémentaire par le biais de l’application de dispositif complémentaire en cours d’exécution sur ce BureauWindows10.
+### Revocation
 
-Les fournisseurs complémentaires peuvent toutefois créer un service de fonctionnalités de révocation à distance. Pour en savoir plus, voir la section Itinérance, révocation et service de filtre.
+The Windows Hello companion device framework does not support removing a companion device from a specific Windows 10 desktop device remotely. Instead, users can remove the Windows Hello companion device via the Windows Hello companion device app running on that Windows 10 desktop.
 
-### Itinérance et services de filtre
+Companion device vendors, however, can build a service to provide remote revocation functionality. For more details, see Roaming, Revocation, and Filter Service section.
 
-Les fournisseurs de dispositifs complémentaires peuvent implémenter un service web pouvant être utilisé dans les scénarios suivants:
+### Roaming and filter services
 
-- Un service de filtre pour les entreprises: une entreprise peut limiter le nombre de dispositifs complémentaires s’exécutant dans son environnement à quelques dispositifs issus d’un fournisseur spécifique. Par exemple, la société Contoso pourrait commander 10000 modèlesY de dispositifs complémentaires provenant d’un fournisseurX et faire en sorte que seuls ces dispositifs fonctionnent dans le domaine de Contoso (et non d’autres modèles du fournisseurX).
-- Inventaire: une entreprise peut déterminer la liste des dispositifs complémentaires existants utilisés dans un environnement d’entreprise.
-- Révocation en temps réel: si un employé signale la perte ou le vol de son dispositif complémentaire, le serviceweb peut servir à révoquer le dispositif en question.
-- Itinérance: un utilisateur ne doit inscrire son dispositif complémentaire qu’une seule fois; ce dernier fonctionne alors sur tous ses Bureaux et appareils Windows10.
+Companion device vendors can implement a web service that can be used for the following scenarios:
 
-L’implémentation de ces fonctionnalités nécessite que l’application du dispositif complémentaire consulte le serviceweb au moment de l’inscription et de l’utilisation. L’application du dispositif complémentaire permet d’optimiser les scénarios d’ouverture de session mise en cache, comme la consultation du serviceweb une seule fois par jour (au prix d’un rallongement du temps de révocation jusqu’à un jour).  
+- A filter service for enterprise: An enterprise can limit the set of Windows Hello companion devices that can work in their environment to a select few from a specific vendor. For example, the company Contoso could order 10,000 Model Y companion devices from Vendor X and ensure only those devices will work in the Contoso domain (and not any other device model from Vendor X).
+- Inventory:  An enterprise can determine the list of existing companion devices used in an enterprise environment.
+- Real time revocation: If an employee reports that his companion device is lost or stolen, the web service can be used to revoke that device.
+- Roaming: A user only has to register his companion device once and it works on all of his Windows 10 desktops and Mobile.
 
-## Modèle d’API d’infrastructure CompanionDeviceFramework
+Implementing these features requires the Windows Hello companion device app to check with the web service at registration and usage time. The Windows Hello companion device app can optimize for cached logon scenarios like requiring checking with web service only once a day (at the cost of extending the revocation time to up to one day).  
 
-### Vue d’ensemble
+## Windows Hello companion device framework API model
 
-Une application complément doit contenir deux composants: une application au premier plan avec une interface utilisateur responsable de l’inscription et la désinscription de l’appareil et une tâche en arrière-plan qui gère l’authentification.
+### Overview
 
-Le processus global de l’API se déroule comme suit:
+A Windows Hello companion device app should contain two components: a foregroud app with UI responsible for registering and unregistering the device, and a background task that handles authentication.
 
-1. Inscrire le dispositif complémentaire
-    * S’assurer qu’un appareil se trouve à proximité et interroger ses fonctionnalités (si nécessaire)
-    * Générer deux clésHMAC (du côté du dispositif complémentaire ou de l’application)
-    * Appeler la méthode RequestStartRegisteringDeviceAsync
-    * Appeler la méthode FinishRegisteringDeviceAsync
-    * S’assurer que l’application du dispositif complémentaire stocke des clésHMAC (si elles sont prises en charge) et qu’elle en supprime les copies
-2. Inscrire votre tâche en arrière-plan
-3. Attendre l’événement approprié dans la tâche en arrière-plan
-    * WaitingForUserConfirmation: attendre cet événement si l’action/le geste de l’utilisateur est nécessaire au lancement du flux d’authentification du côté du dispositif complémentaire
-    * CollectingCredential: attendre cet événement si le dispositif complémentaire repose sur une action/geste de l’utilisateur pour lancer le flux d’authentification du côté du PC (par exemple, en appuyant sur la barre d’espace)
-    * Autres déclencheurs, tels qu’une carte à puce: envoyer une requête à l’état d’authentification actuel pour qu’il appelle les API appropriées.
-4. Tenir l’utilisateur informé des messages d’erreur ou des étapes suivantes nécessaires en appelant la méthode ShowNotificationMessageAsync. Appeler uniquement cette API une fois qu’un signal d’intention est capturé.
-5. Déverrouiller
-    * S’assurer que les signaux d’intention et de présence de l’utilisateur ont été capturés
-    * Appeler la méthode StartAuthenticationAsync
-    * Communiquer avec le dispositif complémentaire pour effectuer des opérationsHMAC requises
-    * Appeler la méthode FinishAuthenticationAsync
-6. Désinscrire un dispositif complémentaire lorsque l’utilisateur le demande (par exemple, s’il a perdu son dispositif complémentaire)
-    * Énumérer le dispositif complémentaire pour l’utilisateur connecté par le biais de la méthode FindAllRegisteredDeviceInfoAsync
-    * Désinscrire ce dernier par le biais de la méthode UnregisterDeviceAsync
+The overall API flow is as follows:
 
-### Inscription et désinscription
+1. Register the Windows Hello companion device
+    * Make sure the device is nearby and query its capability (if required)
+    * Generate two HMAC keys (either on the companion device side or the app side)
+    * Call RequestStartRegisteringDeviceAsync
+    * Call FinishRegisteringDeviceAsync
+    * Make sure Windows Hello companion device app stores HMAC keys (if supported) and Windows Hello companion device app discards its copies
+2. Register your background task
+3. Wait for the right event in the background task
+    * WaitingForUserConfirmation: Wait for this event if the user action/gesture on the Windows Hello companion device side is required to start authentication flow
+    * CollectingCredential: Wait for this event if the Windows Hello companion device relies on user action/gesture on the PC side to start authentication flow (e.g., by hitting spacebar)
+    * Other trigger, like a smartcard: Make sure to query for current authentication state to call the right APIs.
+4. Keep user informed about error messages or required next steps by calling ShowNotificationMessageAsync. Only call this API once an intent signal is collected
+5. Unlock
+    * Make sure intent and user presence signals were collected
+    * Call StartAuthenticationAsync
+    * Communicate with the companion device to perform required HMAC operations
+    * Call FinishAuthenticationAsync
+6. Un-register a Windows Hello companion device when the user requests it (for example, if they've lost their companion device)
+    * Enumerate the Windows Hello companion device for logged in user via FindAllRegisteredDeviceInfoAsync
+    * Un-register it using UnregisterDeviceAsync
 
-L’inscription exige deux appels d’API au service d’authentification par dispositif complémentaire: RequestStartRegisteringDeviceAsync et FinishRegisteringDeviceAsync.
+### Registration and de-registration
 
-Avant d’effectuer ces appels, l’application du dispositif complémentaire doit s’assurer que le dispositif complémentaire est disponible. Si le dispositif complémentaire est responsable de la génération des clés HMAC (d’authentification et d’appareil), l’application du dispositif complémentaire doit demander à ce dernier de les générer avant d’effectuer les deux appels cités plus haut. Si l’application du dispositif complémentaire est responsable de la génération des clésHMAC, elle doit les générer avant d’effectuer les deux appels cités plus haut.
+Registration requires two API calls to the Companion Authentication Service: RequestStartRegisteringDeviceAsync and FinishRegisteringDeviceAsync.
 
-En outre, dans le cadre du premier appel d’API (RequestStartRegisteringDeviceAsync), l’application du dispositif complémentaire doit évaluer la fonctionnalité du dispositif (par exemple, si le dispositif complémentaire prend en charge le stockage sécurisé des clésHMAC) et être prête à l’intégrer à l’appel d’API.  Si la même application est utilisée pour gérer plusieurs versions du même dispositif complémentaire, et si ces fonctionnalités changent (et nécessitent une requête envoyée à l’appareil), nous recommandons d’envoyer cette requête avant d’effectuer le premier appel d’API.   
+Before any of these calls are made, the Windows Hello companion device app must make sure that the Windows Hello companion device is available. If the Windows Hello companion device is responsible for generating HMAC keys (authentication and device keys), then the Windows Hello companion device app should also ask the companion device to generate them before making any of the above two calls. If the Windows Hello companion device app is responsible for generating HMAC keys, then it should do so before calling the above two calls.
 
-La première API (RequestStartRegisteringDeviceAsync) retourne un handle utilisé par la deuxième API (FinishRegisteringDeviceAsync). Le premier appel d’inscription lance l’invite de saisie du PIN pour s’assurer de la présence de l’utilisateur. Si aucun PIN n’est défini, cet appel échouera. L’application du dispositif complémentaire peut envoyer une requête par le biais de KeyCredentialManager.IsSupportedAsync pour savoir si le PIN est configuré ou non. L’appel RequestStartRegisteringDeviceAsync peut également échouer si la stratégie a désactivé l’utilisation d’un dispositif complémentaire.
+Additionally, as part of first API call (RequestStartRegisteringDeviceAsync), the Windows Hello companion device app must decide on device capability and be prepared to pass it as part of the API call; for example, whether the Windows Hello companion device supports secure storage for HMAC keys. If the same Windows Hello companion device app is used to manage multiple versions of the same companion device and those capabilities change (and requires a device query to decide), we recommend this queries occurs before first API call is made.   
 
-Le résultat du premier appel est retourné par le biais de l’énumération SecondaryAuthenticationFactorRegistrationStatus:
+The first API (RequestStartRegisteringDeviceAsync) will return a handle used by the second API (FinishRegisteringDeviceAsync). The first call for registration will launch the PIN prompt to make sure user is present. If no PIN is set up, this call will fail. The Windows Hello companion device app can query whether PIN is set up or not via KeyCredentialManager.IsSupportedAsync call as well. RequestStartRegisteringDeviceAsync call can also fail if policy has disabled the usage of the Windows Hello companion device.
+
+The result of first call is returned via SecondaryAuthenticationFactorRegistrationStatus enum:
 
 ```C#
 {
@@ -225,13 +228,13 @@ Le résultat du premier appel est retourné par le biais de l’énumération Se
 }
 ```
 
-Le deuxième appel (FinishRegisteringDeviceAsync) termine l’inscription. Dans le cadre du processus d’inscription, l’application du dispositif complémentaire peut stocker les données de configuration de ce dernier à l’aide du service d’authentification par dispositif complémentaire. La limite de taille pour ces données est de 4Ko. Ces données seront mises à la disposition de l’application du dispositif complémentaire au moment de l’authentification. Ces données peuvent par exemple être utilisées pour se connecter à un dispositif complémentaire, tel qu’une adresseMAC. Si un dispositif complémentaire n’a pas de stockage et veut utiliser le PC à cette fin, les données de configuration peuvent alors être utilisées. Remarque: toute donnée sensible stockée parmi les données de configuration doit être chiffrée à l’aide d’une clé que seul le dispositif complémentaire connaît. En outre, étant donné que les données de configuration sont stockées par un service Windows, celles-ci sont disponibles pour les applications de dispositif complémentaire sur des profils utilisateur différents.
+The second call (FinishRegisteringDeviceAsync) finishes the registration. As part of registration process, the Windows Hello companion device app can store companion device configuration data with Companion Authentication Service. There is a 4K size limit for this data. This data will be available to the Windows Hello companion device app at authentication time. This data can be used, as an example, to connect to the Windows Hello companion device like a MAC address, or if the Windows Hello companion device does not have storage and companion device wants to use PC for storage, then configuration data can be used. Note that any sensitive data stored as part of configuration data must be encrypted with a key that only the Windows Hello companion device knows. Also, given that configuration data is stored by a Windows service, it is available to the Windows Hello companion device app across user profiles.
 
-L’application de dispositif complémentaire peut appeler la méthode AbortRegisteringDeviceAsync pour annuler l’inscription et transférer un code d’erreur. Le service d’authentification par dispositif complémentaire consigne l’erreur dans les données de télémétrie. Un bon exemple de cet appel serait une erreur survenue dans le dispositif complémentaire, qui n’a donc pas pu terminer l’inscription (il ne peut pas stocker des clésHMAC ou la connexionBT a été interrompue, par exemple).
+The Windows Hello companion device app can call AbortRegisteringDeviceAsync to cancel the registration and pass in an error code. The Companion Authentication Service will log the error in the telemetry data. A good example for this call would be when something went wrong with the Windows Hello companion device and it could not finish registration (e.g., it cannot store HMAC keys or BT connection was lost).
 
-L’application du dispositif complémentaire doit proposer à l’utilisateur l’option de désinscrire son dispositif complémentaire du BureauWindows10 (par exemple, s’il a perdu son dispositif complémentaire ou acheté une version plus récente). Lorsque l’utilisateur sélectionne cette option, l’application du dispositif complémentaire doit appeler la méthode UnregisterDeviceAsync. Cet appel effectué par l’application du dispositif complémentaire déclenchera la suppression (par le service d’authentification par le dispositif complémentaire) de toutes les données (y compris les clésHMAC) correspondant à l’Id de l’appareil ainsi qu’à l’AppId spécifiques de l’application à l’origine de l’appel du côté du PC. Cet appel d’API ne tente pas de supprimer des clésHMAC du côté de l’application du dispositif complémentaire ou du côté du dispositif complémentaire. C’est à l’application du dispositif complémentaire de l’implémenter.
+The Windows Hello companion device app must provide an option for the user to de-register their Windows Hello companion device from their Windows 10 desktop (e.g., if they lost their companion device or bought a newer version). When the user selects that option, then the Windows Hello companion device app must call UnregisterDeviceAsync. This call by the Windows Hello companion device app will trigger the companion device authentication service to delete all data (including HMAC keys) corresponding to the specific device Id and AppId of the caller app from PC side. This API call does not attempt to delete HMAC keys from either the Windows Hello companion device app or companion device side. That is left for the Windows Hello companion device app to implement.
 
-L’application du dispositif complémentaire est responsable de l’affichage des messages d’erreur se produisent au moment de l’inscription et de la désinscription.
+The Windows Hello companion device app is responsible for showing any error messages that happen in registration and de-registration phase.
 
 ```C#
 using System;
@@ -258,9 +261,9 @@ namespace SecondaryAuthFactorSample
             SecondaryAuthenticationFactorRegistration registrationResult =
                 await SecondaryAuthenticationFactorRegistration.RequestStartRegisteringDeviceAsync(
                     deviceId,  // deviceId: max 40 wide characters. For example, serial number of the device
-                    SecondaryAuthenticaitonFactorDeviceCapabilities.SupportSecureStorage |
-                        SecondaryAuthenticaitonFactorDeviceCapabilities.SupportSha2 |
-                        SecondaryAuthenticaitonFactorDeviceCapabilities.StoreKeys,
+                    SecondaryAuthenticationFactorDeviceCapabilities.SecureStorage |
+                        SecondaryAuthenticationFactorDeviceCapabilities.HMacSha256 |
+                        SecondaryAuthenticationFactorDeviceCapabilities.StoreKeys,
                     "My test device 1", // deviceFriendlyName: max 64 wide characters. For example: John's card
                     "SAMPLE-001", // deviceModelNumber: max 32 wide characters. The app should read the model number from device.
                     deviceKey,
@@ -310,7 +313,7 @@ namespace SecondaryAuthFactorSample
         {
             IReadOnlyList<SecondaryAuthenticationFactorInfo> deviceInfoList =
                 await SecondaryAuthenticationFactorRegistration.FindAllRegisteredDeviceInfoAsync(
-                    SecondaryAuthenticaitonFactorDeviceFindScope.User);
+                    SecondaryAuthenticationFactorDeviceFindScope.User);
 
             if (deviceInfoList.Count > 0)
             {
@@ -335,13 +338,13 @@ namespace SecondaryAuthFactorSample
 }
 ```
 
-### Authentification
+### Authentication
 
-L’authentification nécessite deux appels d’API vers le service d’authentification par dispositif complémentaire: StartAuthenticationAsync et FinishAuthencationAsync.
+Authentication requires two API calls to the Companion Authentication Service: StartAuthenticationAsync and FinishAuthencationAsync.
 
-La première API d’initiation retourne un handle utilisé par la deuxième API.  Le premier appel retourne entre autres un nonce qui, une fois concaténé avec d’autres éléments, doit faire l’objet d’un HMAC avec la clé de périphérique stockée sur le dispositif complémentaire. Le deuxième appel retourne les résultats HMAC avec une clé de périphérique et peut potentiellement réussir l’authentification (c’est-à-dire que l’utilisateur voit son bureau).
+The first initiation API will return a handle used by the second API.  The first call returns, among other things, a nonce that – once concatenated with other things - needs to be HMAC'ed with the device key stored on the Windows Hello companion device. The second call returns the results of HMAC with device key and can potentially end in successful authentication (i.e., the user will see their desktop).
 
-La première API d’initiation (StartAuthenticationAsync) peut échouer si la stratégie a désactivé le dispositif complémentaire en question suivant la première inscription. Elle peut également échouer si l’appel d’API a été effectué hors état WaitingForUserConfirmation ou CollectingCredential (voir plus loin pour plus de détails). Elle peut également échouer si une application de dispositif complémentaire non enregistré l’appelle. L’énumération SecondaryAuthenticationFactorAuthenticationStatus résume les résultats possibles:
+The first initiation API (StartAuthenticationAsync) can fail if policy has disabled that Windows Hello companion device after initial registration. It can also fail if the API call was made outside WaitingForUserConfirmation or CollectingCredential states (more on this later in this section). It can also fail if an unregistered companion device app calls it. SecondaryAuthenticationFactorAuthenticationStatus Enum summarizes the possible outcomes:
 
 ```C#
 {
@@ -354,7 +357,7 @@ La première API d’initiation (StartAuthenticationAsync) peut échouer si la s
 }
 ```
 
-Le deuxième appel d’API (FinishAuthencationAsync) peut échouer si le nonce fourni dans le premier appel a expiré (20secondes). L’énumération SecondaryAuthenticationFactorAuthenticationStatus résume les résultats possibles.
+The second API call (FinishAuthencationAsync) can fail if the nonce that was provided in the first call is expired (20 seconds). SecondaryAuthenticationFactorFinishAuthenticationStatus enum captures possible outcomes.
 
 ```C#
 {
@@ -364,26 +367,26 @@ Le deuxième appel d’API (FinishAuthencationAsync) peut échouer si le nonce f
 }
 ```
 
-Le minutage de deux appels d’API (StartAuthenticationAsync et FinishAuthencationAsync) doit coïncider avec la façon dont le dispositif complémentaire capture les signaux d’intention, la présence de l’utilisateur ainsi que les signaux de levée d’ambiguïté (pour en savoir plus, voir Signaux utilisateur). Par exemple, le deuxième appel ne doit pas être envoyé tant qu’un signal d’intention n’est pas disponible. En d’autres termes, le PC ne doit pas se déverrouiller si l’utilisateur n’en a pas exprimé son intention. Par exemple: supposons que la proximité d’un dispositif Bluetooth soit nécessaire pour déverrouiller le PC. Un signal d’intention explicite doit être capturé; sinon, le PC se déverrouille dès lors que l’utilisateur passe à côté de son PC. Par ailleurs, le nonce retourné par le premier appel est limité dans le temps (20secondes) et expire au bout d’un certain temps. Par conséquent, le premier appel doit seulement être effectué lorsque l’application du dispositif complémentaire dispose d’une bonne indication de la présence d’un dispositif complémentaire. C’est-à-dire qu’un dispositif complémentaire est inséré dans un portUSB ou posé sur un lecteurNFC. Avec Bluetooth, il faut veiller à ne pas affecter l’autonomie de la batterie du côté du PC ou affecter d’autres activitésBluetooth lors de la recherche de la présence d’un dispositif complémentaire. En outre, si le signal de présence de l’utilisateur doit être fourni (par exemple, en tapant le PIN), il est recommandé que le premier appel d’authentification soit émis uniquement lorsque ce signal a été capturé.
+The timing of two API calls (StartAuthenticationAsync and FinishAuthencationAsync) needs to align with how the Windows Hello companion device collects intent, user presence, and disambiguation signals (see User Signals for more details). For example, the second call must not be submitted until intent signal is available. In other words, the PC should not unlock if the user has not expressed intent for it. To make this more clear, assume that Bluetooth proximity is used for PC unlock, then an explicit intent signal must be collected, otherwise, as soon as user walks by his PC on the way to kitchen, the PC will unlock. Also, the nonce returned from the first call is time bound (20 seconds) and will expire after certain period. As a result, the first call only should be made when the Windows Hello companion device app has good indication of companion device presence, e.g., the companion device is inserted into USB port, or tapped on NFC reader. With Bluetooth, care must be taken to avoid affecting battery on PC side or affecting other Bluetooth activities going on at that point when checking for Windows Hello companion device presence. Also, if a user presence signal needs to be provided (e.g., by typing in PIN), it is recommended that the first authentication call is only made after that signal is collected.
 
-L’infrastructure CompanionDeviceFramework aide l’application du dispositif complémentaire à décider quand émettre les deux appels susmentionnés en établissant clairement la position de l’utilisateur au sein du flux d’authentification. L’infrastructure CompanionDeviceFramework propose cette fonctionnalité en envoyant la notification de changement d’état de verrouillage à l’application en arrière-plan.
+The Windows Hello companion device framework helps the Windows Hello companion device app to make informed decision on when to make above two calls by providing a complete picture of where user is in authentication flow. Windows Hello companion device framework provides this functionality by providing lock state change notification to app background task.
 
-![flux de dispositif complémentaire](images/companion-device-4.png)
+![companion device flow](images/companion-device-4.png)
 
-Voici les détails de chacun de ces états:
+Details of each of these states are as follows:
 
-| État                         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| State                         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |----------------------------   |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------    |
-| WaitingForUserConfirmation    | Cet événement de notification de changement d’état est déclenché lorsqu’un écran de verrouillage apparaît (par exemple, lorsque l’utilisateur appuie sur Windows+L). Nous recommandons de ne pas demander des messages d’erreur concernant des difficultés pour trouver un appareil dans cet état. En règle générale, nous recommandons d’afficher des messages seulement en présence d’un signal d’intention. L’application du dispositif complémentaire doit émettre le premier appel d’API pour l’authentification dans cet état si le dispositif complémentaire capture un signal d’intention (par exemple, en posant le dispositif sur un lecteurNFC, en appuyant sur un bouton du dispositif ou en effectuant un geste spécifique, comme se frapper dans les mains). La tâche d’arrière-plan de l’application du dispositif complémentaire reçoit une indication de la part du dispositif complémentaire l’informant qu’un signal d’intention a été capturé. Dans le cas contraire, si l’application du dispositif complémentaire dépend du PC pour lancer le flux d’authentification (l’utilisateur devant effectuer un balayage vers le haut sur l’écran de verrouillage ou appuyer sur la barre d’espace), cette dernière doit attendre le prochain état (CollectingCredential).    |
-| CollectingCredential          | Cet événement de notification de changement d’état est déclenché lorsque l’utilisateur ouvre le portable, appuie sur une touche quelconque du clavier ou effectue un balayage vers le haut sur l’écran de verrouillage. Si le dispositif complémentaire dépend des actions ci-dessus pour pouvoir capturer le signal d’intention, le rôle de l’application du dispositif complémentaire est de lancer la capture du signal (par exemple, via une fenêtre contextuelle sur le dispositif complémentaire demandant si l’utilisateur souhaite déverrouiller le PC). C’est le moment approprié de fournir des cas d’erreur si l’application du dispositif complémentaire nécessite que l’utilisateur fournisse un signal de présence sur le dispositif complémentaire (tel que la saisie d’un PIN sur ce dernier).                                                                                                                                                                                                                                                                                                                                               |
-| Suspendingauthentication      | Lorsque l’application du dispositif complémentaire reçoit cet état, cela signifie que le service d’authentification par dispositif complémentaire n’accepte plus les demandes d’authentification.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| CredentialCollected           | Cela signifie qu’une autre application de dispositif complémentaire a appelé la deuxième API et que le service d’authentification par dispositif complémentaire vérifie l’envoi. À ce stade, le service d’authentification par dispositif complémentaire n’accepte plus aucune demande d’authentification, sauf si la demande en cours n’est pas acceptée. L’application du dispositif complémentaire doit rester opérationnelle jusqu’à ce que l’état suivant soit atteint.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| CredentialAuthenticated       | Cela signifie que les informations d’identification envoyées ont été acceptées. L’état credentialAuthenticated détient l’ID d’appareil du dispositif complémentaire ayant réussi. L’application du dispositif complémentaire doit vérifier cette information pour voir s’il s’agit de l’appareil qui lui est associé. Si ce n’est pas le cas, l’application du dispositif complémentaire ne doit pas afficher de flux de post-authentification (message de réussite sur le dispositif complémentaire ou une vibration de ce dernier). Notez que si les informations d’identification soumises n’ont pas fonctionné, l’état actuel passera à l’état CollectingCredential.                                                                                                                                                                                                                                                                                                                                                                                        |
-| StoppoingAuthentication       | L’authentification a réussi et l’utilisateur voit le bureau. Vous devez terminer la tâche en arrière-plan                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| WaitingForUserConfirmation    | This state change notification event is fired when the lock screen comes down (e.g., user pressed Windows + L). We recommend not to request any error messages relating to having difficulty finding a device in this state. In general, we recommend to only show messages when intent signal is available. The Windows Hello companion device app should make the first API call for authentication in this state if the companion device collects the intent signal (e.g., tapping on NFC reader, press of a button on the companion device or a specific gesture, like clapping), and the Windows Hello companion device app background task receives indication from the companion device that intent signal was detected. Otherwise, if the Windows Hello companion device app relies on the PC to start authentication flow (by having user swipe up the unlock screen or hitting space bar), then the Windows Hello companion device app needs to wait for the next state (CollectingCredential).     |
+| CollectingCredential          | This state change notification event is fired when the user either opens their laptop lid, hits any key on their keyboard, or swipes up to the unlock screen. If the Windows Hello companion device relies on the above actions to start collecting the intent signal, then the Windows Hello companion device app should start collecting it (e.g., via a pop up on the companion device asking whether user wants to unlock the PC). This would be a good time to provide error cases if the Windows Hello companion device app needs the user to provide a user presence signal on the companion device (like typing in PIN on the Windows Hello companion device).                                                                                                                                                                                                                                                                                                                                            |
+| SuspendingAuthentication      | When the Windows Hello companion device app receives this state, it means that the Companion Authentication Service has stopped accepting authentication requests.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| CredentialCollected           | This means that another Windows Hello companion device app has called the second API and that the Companion Authentication Service is verifying what was submitted. At this point, the Companion Authentication Service is not accepting any other authentication requests unless the currently submitted one does not pass verification. The Windows Hello companion device app should stay tuned until next state is reached.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| CredentialAuthenticated       | This means that the submitted credential worked. The credentialAuthenticated has the device ID of the Windows Hello companion device that succeeded. The Windows Hello companion device app should make sure to check on that to see if its associated device was the winner. If not, then the Windows Hello companion device app should avoid showing any post authentication flows (like success message on the companion device or perhaps a vibration on that device). Note that if the submitted credential did not work, the state will change to CollectingCredential state.                                                                                                                                                                                                                                                                                                                                                                                       |
+| StoppingAuthentication        | Authentication succeeded and user saw the desktop. Time to kill your background task                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 
 
 
-Les applications de dispositif complémentaire doivent uniquement appeler les deux API d’authentification dans les deux premiers états.  Les applications de dispositif complémentaire doivent vérifier le scénario dans lequel cet événement est déclenché. Deux possibilités existent: le déverrouillage ou le post-déverrouillage. Seul le déverrouillage est pris en charge pour l’instant. Dans les versions à venir, les scénarios de post-déverrouillage peuvent être pris en charge. L’énumération SecondaryAuthenticationFactorAuthenticationScenario capture ces deux options:
+Windows Hello companion device apps should only call the two authentication APIs in the first two states. Windows Hello companion device apps should check for what scenario this event is being fired. There are two possibilities: unlock or post unlock. Currently, only unlock is supported. In upcoming releases, post unlock scenarios may be supported. The SecondaryAuthenticationFactorAuthenticationScenario enum captures these two options:
 
 ```C#
 {
@@ -392,7 +395,7 @@ Les applications de dispositif complémentaire doivent uniquement appeler les de
 }
 ```
 
-Exemple de code complet:
+Complete code sample:
 
 ```C#
 using System;
@@ -529,7 +532,7 @@ namespace SecondaryAuthFactorSample
             // Find all device registred by this application
             IReadOnlyList<SecondaryAuthenticationFactorInfo> deviceInfoList =
                 await SecondaryAuthenticationFactorRegistration.FindAllRegisteredDeviceInfoAsync(
-                    SecondaryAuthenticaitonFactorDeviceFindScope.AllUsers);
+                    SecondaryAuthenticationFactorDeviceFindScope.AllUsers);
 
             if (deviceInfoList.Count == 0)
             {
@@ -556,9 +559,9 @@ namespace SecondaryAuthFactorSample
 }
 ```
 
-### Inscrire une tâche en arrière-plan
+### Register a background task
 
-Lorsque l’application du dispositif complémentaire inscrit le premier dispositif complémentaire, elle doit également inscrire le composant de sa tâche en arrière-plan, qui transmettra les informations d’authentification entre l’appareil et le service d’authentification par dispositif complémentaire.
+When the Windows Hello companion device app registers the first companion device, it should also register its background task component which will pass authentication information between device and companion device authentication service.
 
 ```C#
 using System;
@@ -607,50 +610,50 @@ namespace SecondaryAuthFactorSample
 }
 ```
 
-### Messages et erreurs
+### Errors and messages
 
-L’infrastructure CompanionDeviceFramework est chargée d’envoyer à l’utilisateur des commentaires concernant les réussites et les échecs de connexion. L’infrastructure CompanionDeviceFramework fournira un ensemble de textes et de messages d’erreur (localisés) à partir desquels l’application pour le dispositif complémentaire fait son choix. Ceux-ci apparaissent dans l’interface utilisateur d’ouverture de session.
+The Windows Hello companion device framework is responsible for providing feedback to the user about success or failure of signing in. The Windows Hello companion device framework will provide a stock of (localized) text and error messages for the Windows Hello companion device app to choose from. These will be displayed in the logon UI.
 
-![erreur de dispositif complémentaire](images/companion-device-5.png)
+![companion device error](images/companion-device-5.png)
 
-Les applications de dispositif complémentaire peuvent utiliser ShowNotificationMessageAsync pour afficher des messages à l’utilisateur sur l’interface utilisateur d’ouverture de session. Appelez cette API lorsque le signal d’intention est disponible. Le signal d’intention doit toujours être capturé du côté du dispositif complémentaire.
+Windows Hello companion device apps can use ShowNotificationMessageAsync to show messages to user as part of the logon UI. Call this API when an intent signal is available. Note that an intent signal must always be collected on the Windows Hello companion device side.
 
-Il existe deux types de messages: les aides et les erreurs.
+There are two types of messages: guidance and errors.
 
-Les messages d’aide sont conçus pour montrer à l’utilisateur comment lancer le processus de déverrouillage. Ces messages ne s’affichent qu’une fois, lors de la première inscription.
+Guidance messages are designed to show the user how to start the unlock process. Those messages are only shown to the user once, upon first device registration, and never shown again.
 
-En revanche, les messages d’erreur s’affichent à chaque fois. Les messages d’erreur s’affichent pendant 5secondes, puis disparaissent. Étant donné qu’un signal d’intention doit être capturé pour que les messages s’affichent, et que l’utilisateur fournit ce signal à l’aide d’un seul dispositif complémentaire, en aucun cas doit se produire un scénario dans lequel plusieurs dispositifs complémentaires tentent d’afficher des messages d’erreur. Par conséquent, l’infrastructure CompanionDeviceFramework ne comporte pas de file d’attente. Lorsqu’un appelant demande un message d’erreur, ce dernier s’affiche pendant 5secondes et toutes les autres demandes de message d’erreur survenant dans ce délai de 5secondes sont ignorées. Une fois que ces 5secondes sont écoulées, un autre appelant peut demander l’affichage d’un message d’erreur. Nous empêchons tout appelant de bloquer le canal d’erreur.
+Error messages are always shown. Error messages will be shown to the user for 5 seconds and then disappear. Given that an intent signal must be collected before showing messages to the user, and the user will provide that intent only using one of the Windows Hello companion devices, there must not be a situation where multiple Windows Hello companion devices race for showing error messages. As a result, the Windows Hello companion device framework does not maintain any queue. When a caller asks for an error message, it will be shown for 5 seconds and all other requests for showing an error message in that 5 seconds are dropped. Once 5 seconds has passed, then the opportunity arises for another caller to show an error message. We prohibit any caller from jamming the error channel.
 
-Les messages d’erreur et d’aide sont les suivants. Le nom de l’appareil est un paramètre transmis par l’application du dispositif complémentaire dans le cadre de la méthode ShowNotificationMessageAsync.
+Guidance and error messages are as follows. Device name is a parameter passed by the companion device app as part of ShowNotificationMessageAsync.
 
-**Indications**
+**Guidance**
 
-- «Effectuez un balayage vers le haut ou appuyez sur la barre d’espace pour vous connecter avec *nom de l’appareil*.»
-- «Posez *nom de l’appareil* sur le lecteurNFC pour vous connecter.»
-- «Recherche en cours de *nom de l’appareil*...»
-- «Branchez *nom de l’appareil* sur un portUSB pour vous connecter.»
+- "Swipe up or press space bar to sign in with *device name*."
+- "Tap *device name* to the NFC reader to sign in."
+- "Looking for *device name* ..."
+- "Plug *device name* into a USB port to sign in."
 
-**Erreurs**
+**Errors**
 
-- «Voir *nom de l’appareil* pour obtenir des instructions de connexion.»
-- «Activez le Bluetooth pour utiliser *nom de l’appareil* pour vous connecter.»
-- «Activez le NFC pour utiliser *nom de l’appareil* pour vous connecter.»
-- «Connectez-vous à un réseau Wi-Fi afin d’utiliser *nom de l’appareil* pour vous connecter.»
-- «Appuyez sur *nom de l’appareil* à nouveau.»
-- «Votre entreprise empêche la connexion avec *nom de l’appareil*. Utilisez une autre option de connexion.»
-- «Appuyez sur *nom de l’appareil* pour vous connecter.»
-- «Maintenez votre doigt sur *nom de l’appareil* pour vous connecter.»
-- «Effectuez un balayage avec votre doigt sur *nom de l’appareil* pour vous connecter.»
-- «Impossible de se connecter avec *nom de l’appareil*. Utilisez une autre option de connexion.»
-- «Un problème est survenu. Utilisez une autre option de connexion, puis configurez de nouveau *nom de l’appareil*.»
-- «Réessayez.»
-- «Dites votre phrase secrète à *nom de l’appareil*.»
-- «Prêt pour la connexion avec *nom de l’appareil*.»
-- «Utilisez d’abord une autre option de connexion, puis vous pourrez utiliser *nom de l’appareil* pour vous connecter.»
+- "See *device name* for sign-in instructions."
+- "Turn on Bluetooth to use *device name* to sign in."
+- "Turn on NFC to use *device name* to sign in."
+- "Connect to a Wi-Fi network to use *device name* to sign in."
+- "Tap *device name* again."
+- "Your enterprise prevents sign in with *device name*. Use another sign-in option."
+- "Tap *device name* to sign in."
+- "Rest your finger on *device name* to sign in."
+- "Swipe your finger on *device name* to sign in."
+- "Couldn’t sign in with *device name*. Use another sign-in option."
+- "Something went wrong. Use another sign-in option, and then set up *device name* again."
+- "Try again."
+- "Say your Spoken Passphrase into *device name*."
+- "Ready to sign in with *device name*."
+- "Use another sign-in option first, then you can use *device name* to sign in."
 
-### Énumérer les dispositifs complémentaires inscrits
+### Enumerating registered devices
 
-L’application du dispositif complémentaire peut énumérer les dispositifs complémentaires inscrits via l’appel FindAllRegisteredDeviceInfoAsync. Cette API prend en charge deux types de requête définis par le biais de l’énumération SecondaryAuthenticaitonFactorDeviceFindScope:
+The Windows Hello companion device app can enumerate the list of registered companion devices via FindAllRegisteredDeviceInfoAsync call. This API supports two query types defined via enum SecondaryAuthenticationFactorDeviceFindScope:
 
 ```C#
 {
@@ -659,28 +662,28 @@ L’application du dispositif complémentaire peut énumérer les dispositifs co
 }
 ```
 
-La première étendue retourne la liste des dispositifs complémentaires pour l’utilisateur connecté. La seconde retourne la liste pour tous les utilisateurs de ce PC. La première étendue doit être utilisée au moment de la désinscription pour éviter de désinscrire les dispositifs complémentaires des autres utilisateurs. La deuxième doit être utilisée au moment de l’authentification ou de l’enregistrement: au moment de l’inscription, cette énumération peut aider à éviter la double inscription d’un même dispositif complémentaire.
+The first scope returns the list of devices for the logged on user. The second one returns the list for all users on that PC. The first scope must be used at un-registration time to avoid un-registering another user's Windows Hello companion device. The second one must be used at authentication or registration time: at registration time, this enumeration can help the app avoid trying to register the same Windows Hello companion device twice.
 
-Notez que, même si l’application n’effectue pas cette vérification, le PC l’effectue et rejettera une deuxième inscription du dispositif complémentaire. Au moment de l’authentification, l’utilisation de l’étendue AllUsers permet d’aider l’application du dispositif complémentaire à prendre en charge le changement de flux d’utilisateur: connexion de l’utilisateurA lorsque l’utilisateurB est déjà connecté (cela nécessite que les deux utilisateurs aient installé l’application du dispositif complémentaire et que l’utilisateurA ait inscrit ses dispositifs complémentaires auprès du PC. Le PC doit également présenter l’écran de verrouillage (ou l’écran d’ouverture de session)).
+Note that even if the app does not perform this check, the PC does and will reject the same Windows Hello companion device from being registered more than once. At authentication time, using the AllUsers scope helps the Windows Hello companion device app support switch user flow: log on user A when user B is logged in (this requires that both users have installed the Windows Hello companion device app and user A has registered their companion devices with the PC and the PC is sitting on lock screen (or logon screen)).
 
-## Exigences de sécurité
+## Security requirements
 
-Le service d’authentification par dispositif complémentaire fournit les protections de sécurité suivantes:
+The Companion Authentication Service provides the following security protections.
 
-- Les programmes malveillants, s’exécutant en tant qu’utilisateur moyen ou conteneur d’application sur un appareil de bureauWindows10, ne peuvent pas utiliser le dispositif complémentaire pour accéder aux clés d’informations d’identification utilisateur (stockées dans MicrosoftPassport) sur les PC de manière silencieuse.
-- Un utilisateur malveillant sur un appareil de bureau Windows10 ne peut pas utiliser de dispositif complémentaire appartenant à un autre utilisateur, sur l’appareil en question, pour obtenir un accès en mode silencieux à ses clés d’information d’identification utilisateur (sur le même appareil de bureau Windows10).
-- Les programmes malveillants sur le dispositif complémentaire ne peuvent pas obtenir un accès silencieux aux clés d’information d’identification utilisateur sur l’appareil de bureau Windows10, ni tirer parti des fonctionnalités ou du code développés spécifiquement pour l’infrastructure CompanionDeviceFramework.
-- Un utilisateur malveillant ne peut pas déverrouiller un appareil de bureauWindows10 en capturant le trafic entre le dispositif complémentaire et l’appareil de bureauWindows10, puis en le relisant ultérieurement. L’utilisation de nonces, d’authkey et de HMAC dans notre protocole garantit la protection contre les attaques par relecture.
-- Les programmes malveillants ou un utilisateur malveillant sur un PC non autorisé ne peuvent pas utiliser un dispositif complémentaire pour accéder au PC d’un utilisateur honnête. Ce résultat est obtenu par l’authentification mutuelle entre le service d’authentification par dispositif complémentaire et le dispositif complémentaire, en utilisant authkey et HMAC dans notre protocole.
+- Malware on a Windows 10 desktop device running as a medium user or app container cannot use the Windows Hello companion device to access user credential keys (stored as part of Windows Hello) on a PC silently.
+- A malicious user on a Windows 10 desktop device cannot use the Windows Hello companion device that belongs to another user on that Windows 10 desktop device to get silent access to his user credential keys (on the same Windows 10 desktop device).
+- Malware on the Windows Hello companion device cannot silently get access to user credential keys on a Windows 10 desktop device, including leveraging functionality or code developed specifically for the Windows Hello companion device framework.
+- A malicious user cannot unlock a Windows 10 desktop device by capturing traffic between the Windows Hello companion device and the Windows 10 desktop device and replaying it later. Usage of nonce, authkey, and HMAC in our protocol guarantees protection against a replay attack.
+- Malware or a malicious user on a rouge PC cannot use Windows Hello companion device to get access to honest user PC. This is achieved through mutual authentication between Companion Authentication Service and Windows Hello companion device through usage of authkey and HMAC in our protocol.
 
-Ces protections de sécurité sont possibles grâce à la protection des clésHMAC contre tout accès non autorisé et en vérifiant la présence de l’utilisateur. Plus précisément, elles doivent satisfaire les exigences suivantes:
+The key to achieve the security protections enumerated above is to protect HMAC keys from unauthorized access and also verifying user presence. More specifically, it must satisfy these requirements:
 
-- La protection contre le clonage du dispositif complémentaire
-- La protection contre l’espionnage lors de l’envoi de clésHMAC au moment de l’inscription auprès d’un PC
-- La garantie de l’existence du signal de présence de l’utilisateur.
+- Provide protection against cloning the Windows Hello companion device
+- Provide protection against eavesdropping when sending HMAC keys at registration time to the PC
+- Make sure that user presence signal is available
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

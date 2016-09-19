@@ -1,96 +1,96 @@
 ---
 author: mijacobs
-Description: "Cet article décrit les fonctionnalités, avantages et configurations requises de la plateforme Windows universelle (UWP, Universal Windows Platform) du point de vue de la conception. Découvrez ce que la plateforme met gratuitement à votre disposition, ainsi que les outils qu’elle propose."
-title: "Présentation de la conception des applications de plateforme Windows universelle (UWP)"
+Description: This article describes the features, benefits, and requirements of the Universal Windows Platform (UWP) from a design perspective. Find out what the platform gives you for free and the tools it puts at your disposal.
+title: Introduction to Universal Windows Platform (UWP) app design
 ms.assetid: 50A5605E-3A91-41DB-800A-9180717C1E86
 label: Intro to UWP app design
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: ec154ec64ba18badb5f81b59e76fc04e539de1a8
+ms.openlocfilehash: 06925bc42aab6d2ca7bf97c48161cca5e1cf840b
 
 ---
 
-#  Présentation de la conception des applicationsUWP 
+#  Introduction to UWP app design 
 
-Une application de plateforme Windows universelle (UWP) peut s’exécuter sur tout appareil Windows, qu’il s’agisse de votre téléphone, de votre tablette ou de votre PC.
+A Universal Windows Platform (UWP) app can run on any Windows-based device, from your phone to your tablet or PC.
 
-![appareils fonctionnant sous Windows](images/1894834-hig-device-primer-01-500.png)
+![windows-powered devices](images/1894834-hig-device-primer-01-500.png)
 
-La conception d’une application qui s’affiche correctement sur autant d’appareils peut être un véritable défi. Comment concevoir une application offrant une expérience utilisateur hors du commun sur des appareils dont les tailles d’écrans et les méthodes d’entrée sont radicalement différentes? Fort heureusement, la plateforme universelle Windows fournit un ensemble de fonctionnalités et de blocs de construction universels intégrés qui vous aident à atteindre cet objectif. 
+Designing an app that looks good on such a wide variety of devices can be a big challenge. So how do you go about designing an app that provides a great UX on devices with dramatically different screen sizes and input methods? Fortunately, the Universal Windows Platform (UWP) provides a set of built-in features and universal building blocks that help you do just that. 
 
-![conception d’une application exécutée sur des téléphones Windows Phone, des tablettes et des PC](images/food-truck-finder/uap-foodtruck--md-detail.png)
+![a design for an app that runs on windows phone, tablets, and pcs](images/food-truck-finder/uap-foodtruck--md-detail.png)
 
-Cet article décrit les fonctionnalités de l’interface utilisateur et les avantages des applicationsUWP, et fournit des recommandations pour la création de votre première applicationUWP. Commençons par jeter un coup d’œil à certaines des fonctionnalités que vous obtenez lorsque vous créez une application UWP. 
+This articles describes the UI features and benefits of UWP apps and provides some high-level design guidance for creating your first UWP app. Let's start by taking a look at some of the features that you get when you create a UWP app. 
 
-## Fonctionnalités des applicationsUWP
+## UWP app features
 
-### Pixels effectifs et mise à l’échelle
+### Effective pixels and scaling
 
-Les applicationsUWP ajustent automatiquement la taille des contrôles, des polices et des autres éléments d’interface utilisateur afin de se rendre accessibles sur l’ensemble des appareils.
+UWP apps automatically adjust the size of controls, fonts, and other UI elements so that they are legible on all devices.
 
-Lorsque votre application est exécutée sur un appareil, le système utilise un algorithme afin de normaliser l’affichage à l’écran des éléments d’interface utilisateur. Cet algorithme de mise à l’échelle prend en compte la distance d’affichage et la densité de l’écran (en pixels par pouce) pour optimiser la taille perçue (plutôt que la taille physique). L’algorithme de mise à l’échelle garantit qu’une police de 24pixels sur un appareil Surface Hub placé à une distance de 3 mètres est aussi lisible pour l’utilisateur qu’une police de 24pixels sur un téléphone doté d’un écran 5pouces distant de quelques centimètres.
+When your app runs on a device, the system uses an algorithm to normalize the way UI elements display on the screen. This scaling algorithm takes into account viewing distance and screen density (pixels per inch) to optimize for perceived size (rather than physical size). The scaling algorithm ensures that a 24 px font on Surface Hub 10 feet away is just as legible to the user as a 24 px font on 5' phone that's a few inches away.
 
-![distances d’affichage des différents appareils](images/1910808-hig-uap-toolkit-03.png)
+![viewing distances for different devices](images/1910808-hig-uap-toolkit-03.png)
 
-En raison du mode de fonctionnement du système de mise à l’échelle, lorsque vous concevez une application UWP, la conception est effectuée en *pixels effectifs* et non en pixels physiques réels. Quels en sont les effets sur la façon dont vous concevez vos applications?
+Because of how the scaling system works, when you design your UWP app, you're designing in *effective pixels*, not actual physical pixels. So, how does that impact the way you design your app?
 
--   Vous pouvez ignorer la densité de pixels et la résolution d’écran réelle lors de la conception. Effectuez plutôt une conception pour la résolution réelle (résolution en pixels effectifs) d’une classe de taille (nous définissons les classes de taille [plus loin dans cet article](#sizeclasses)).
+-   You can ignore the pixel density and the actual screen resolution when designing. Instead, design for the effective resolution (the resolution in effective pixels) for a size class (we define size classes [later in this article](#sizeclasses)).
 
--   Lorsque le système met à l’échelle l’interface utilisateur, il le fait par multiples de 4. Pour garantir une apparence nette, alignez vos conceptions sur la grille de pixels 4x4: faites des marges, des tailles et des positions des éléments d’interface utilisateur et de l’emplacement du texte (mais pas la taille, car le texte peut être de toute taille) un multiple de 4 pixels effectifs.
+-   When the system scales your UI, it does so by multiples of 4. To ensure a crisp appearance, snap your designs to the 4x4 pixel grid: make margins, sizes and positions of UI elements, and the position (but not the size—text can be any size) of text a multiple of 4 effective pixels.
 
-Cette illustration présente des éléments de conception alignés sur la grille de pixels 4x4. L’élément de conception a toujours des bords nets et vifs.
+This illustration shows design elements that map to the 4x4 pixel grid. The design element will always have crisp, sharp edges.
 
-![alignement sur la grille de pixels 4x4](images/rsp-design/epx-4pixelgood.png)
+![snapping to the 4x4 pixel grid](images/rsp-design/epx-4pixelgood.png)
 
-Cette illustration présente des éléments de conception non alignés sur la grille de pixels 4x4. Ces éléments de conception présenteront des bords flous et arrondis sur certains appareils.
+The next illustration shows design elements that don't map to the 4x4 grid. These design elements will have blurry, soft edges on some devices.
 
-![éléments de conception non alignés sur la grille de pixels 4x4](images/rsp-design/offthegridillustration.png)
+![design elements that do not align to the 4x4 pixel grid](images/rsp-design/offthegridillustration.png)
 
-**Conseil** Lors de la création de maquettes d’écran dans des programmes d’édition d’image, définissez les PPP sur72 et les dimensions d’image sur la résolution réelle pour la classe de taille que vous ciblez. (Pour obtenir la liste des classes de taille et des résolutions réelles, voir la section [Recommandations pour des classes de taille spécifiques](#sizeclasses) de cet article.)
-
-
-### Entrée universelle et interactions intelligentes
-
-Parmi les autres fonctionnalités des applicationsUWP, citons l’entrée universelle prise en charge par les interactions intelligentes. Vous pouvez concevoir vos applications en fonction de modes d’entrée et d’appareils spécifiques, mais vous n’y êtes pas obligés. Pourquoi? Par défaut, les applicationsUWP reposent sur les interactions intelligentes. Cela signifie que vous pouvez concevoir une fonction sur la base d’une interaction de clic sans savoir nécessairement si le clic provient d’un clic de la souris ou d’une pression du doigt.
-
-### Contrôles et styles universels
+**Tip**   When creating screen mockups in image editing programs, set the DPI to 72 and set the image dimensions to the effective resolution for the size class you're targeting. (For a list of size classes and effective resolutions, see the [Recommendations for specific size classes](#sizeclasses) section of this article.)
 
 
-La plateforme UWP fournit également des blocs de construction utiles qui simplifient la conception d’applications pour plusieurs familles d’appareils.
+### Universal input and smart interactions
 
--   **Contrôles universels**
+Another built-in capability of the UWP is universal input enabled via smart interactions. Although you can design your apps for specific input modes and devices, you aren’t required to. That’s because Universal Windows apps by default rely on smart interactions. That means you can design around a click interaction without having to know or define whether the click comes from an actual mouse click or the tap of a finger.
 
-    La plateforme UWP fournit un ensemble de contrôles universels dont le fonctionnement est garanti sur tous les appareils fonctionnant sous Windows. Cet ensemble de contrôles universels inclut tous les éléments, des contrôles de formulaire courants (comme la case d’option et la zone de texte) aux contrôles complexes, comme l’affichage Grille et l’affichage Liste, qui permettent de générer des listes d’éléments à partir d’un flux de données et d’un modèle. Ces contrôles sont liés à l’entrée et déployés avec l’ensemble de moyens d’entrée, d’états des événements et de fonctionnalités globales approprié à chaque famille d’appareils.
+### Universal controls and styles
 
-    Pour obtenir la liste complète de ces contrôles et des modèles que vous pouvez créer à partir de ceux-ci, consultez la section [Contrôles et modèles](https://dev.windows.com/design/controls-patterns).
 
--   **Styles universels**
+The UWP also provides some useful building blocks that make it easier to design apps for multiple device families.
 
-    Votre application UWP obtient automatiquement un ensemble de styles par défaut, qui vous offre les fonctionnalités suivantes :
+-   **Universal controls**
 
-    -   Un ensemble de styles qui donne automatiquement à votre application un thème clair ou sombre (selon votre choix) et qui peut inclure la préférence de couleur d’accentuation de l’utilisateur.
+    The UWP provides a set of universal controls that are guaranteed to work well on all Windows-powered devices. This set of universal controls includes everything from common form controls like radio button and text box to sophisticated controls like grid view and list view that can generate lists of items from a stream of data and a template. These controls are input-aware and deploy with the proper set of input affordances, event states, and overall functionality for each device family.
 
-        ![thèmes clairs et sombres](images/1910808-hig-uap-toolkit-01.png)
+    For a complete list of these controls and the patterns you can make from them, see the [Controls and patterns](https://dev.windows.com/design/controls-patterns) section.
 
-    -   Une gamme de types Segoe qui garantit la netteté du texte de l’application sur tous les appareils.
-    -   Des animations par défaut pour les interactions.
-    -   La prise en charge automatique des modes de contraste élevé. Nos styles ont été conçus de manière à répondre aux contraintes de contraste élevé, ce qui permet à votre application de s’afficher correctement lorsqu’elle s’exécute sur un appareil en mode de contraste élevé.
-    -   La prise en charge automatique d’autres langues. Nos styles par défaut sélectionnent automatiquement la police adéquate pour chaque langue prise en charge par Windows. Vous pouvez même utiliser plusieurs langues dans la même application, qui s’afficheront correctement.
-    -   La prise en charge intégrée de l’ordre de lecture de droite à gauche.
+-   **Universal styles**
 
-    Vous pouvez personnaliser ces styles par défaut pour apporter une touche personnelle à votre application, ou vous pouvez les remplacer intégralement par les vôtres pour offrir une expérience visuelle unique. Voici un exemple de conception d’une application météo avec un style visuel unique:
+    Your UWP app automatically gets a default set of styles that gives you these features:
 
-    ![application météo avec son propre style visuel](images/weather/uwp-weather-tab-phone-700.png)
+    -   A set of styles that automatically gives your app a light or dark theme (your choice) and can incorporate the user's accent color preference.
 
-Maintenant que nous avons décrit les blocs de construction des applicationsUWP, voyons comment les assembler pour créer une interface utilisateur. 
+        ![light and dark themes](images/1910808-hig-uap-toolkit-01.png)
+
+    -   A Segoe-based type ramp that ensures that app text looks crisp on all devices.
+    -   Default animations for interactions.
+    -   Automatic support for high-contrast modes. Our styles were designed with high-contrast in mind, so when your app runs on a device in high-contrast mode, it will display properly.
+    -   Automatic support for other languages. Our default styles automatically select the correct font for every language that Windows supports. You can even use multiple languages in the same app and they'll be displayed properly.
+    -   Built-in support for RTL reading order.
+
+    You can customize these default styles to give your app a personal touch, or you can completely replace them with your own to create a unique visual experience. For example, here's a design for a weather app with a unique visual style:
+
+    ![a weather app with its own visual style](images/weather/uwp-weather-tab-phone-700.png)
+
+Now that we've described the building blocks of UWP apps, let's take a look at how to put them together to create a UI. 
     
-## Anatomie d’une applicationUWP typique
+## The anatomy of a typical UWP app
 
 
-Une interface utilisateur moderne est un mécanisme complexe, qui inclut du texte, des formes, des couleurs et des animations, lesquelles sont constituées des pixels de l’écran de l’appareil que vous utilisez. Lorsque vous démarrez la conception d’une interface utilisateur, le nombre d’options disponibles peut être accablant.
+A modern user interface is a complex thing, made up of text, shapes, colors, and animations which are ultimately made up out of individual pixels of the screen of the device you're using. When you start designing a user interface, the sheer number of choices can be overwhelming.
 
-Pour simplifier les choses, nous allons définir l’anatomie d’une application d’un point de vue conceptuel. Disons qu’une application se compose d’écrans et de pages. Chaque page possède une interface utilisateur composée de troistypes d’élément d’interface utilisateur: éléments de navigation, de commande et de contenu.
+To make things simpler, let's define the anatomy of an app from a design perspective. Let's say that an app is made up of screens and pages. Each page has a user interface, made up of three types of UI elements: navigation, commanding, and content elements.
 
 
 
@@ -103,123 +103,123 @@ Pour simplifier les choses, nous allons définir l’anatomie d’une applicatio
 <tr class="odd">
 <td align="left"><p><img src="images/1895065-hig-anatomyofanapp-02.png" alt="Navigation, command, and content areas of an address book app" /></p>
 <p></p></td>
-<td align="left"><strong>Éléments de navigation</strong>
-<p>Les éléments de navigation permettent aux utilisateurs de choisir le contenu à afficher. Les éléments de navigation incluent les [onglets et pivots](../controls-and-patterns/tabs-pivot.md), les [liens hypertexte](../controls-and-patterns/hyperlinks.md) et les [volets de navigation](../controls-and-patterns/nav-pane.md).</p>
-<p>Les éléments de navigation sont traités en détail dans l’article [Informations de base relatives à la conception de la navigation](navigation-basics.md).</p>
-<strong>Éléments de commande</strong>
-<p>Les éléments de commande permettent d’initier des actions (de manipulation, d’enregistrement ou de partage de contenu, par exemple). Les éléments de commande incluent les [boutons](../controls-and-patterns/buttons.md) et la [barre de commandes](../controls-and-patterns/app-bars.md). Les éléments de commande peuvent également inclure des raccourcis clavier qui ne sont pas visibles à l’écran.</p>
-<p>Les éléments de commande sont traités en détail dans l’article [Informations de base relatives à la conception des commandes](commanding-basics.md).</p>
-<strong>Éléments de contenu</strong>
-<p>Les éléments de contenu affichent le contenu de l’application. Pour une application de peinture, ce contenu peut correspondre à un dessin; pour une application d’actualités, il peut s’agir d’un article de presse.</p>
-<p>Les éléments de contenu sont traités en détail dans l’article [Informations de base relatives à la conception du contenu](content-basics.md).</p></td>
+<td align="left"><strong>Navigation elements</strong>
+<p>Navigation elements help users choose the content they want to display. Examples of navigation elements include [tabs and pivots](../controls-and-patterns/tabs-pivot.md), [hyperlinks](../controls-and-patterns/hyperlinks.md), and [nav panes](../controls-and-patterns/nav-pane.md).</p>
+<p>Navigation elements are covered in detail in the [Navigation design basics](navigation-basics.md) article.</p>
+<strong>Command elements</strong>
+<p>Command elements initiate actions, such as manipulating, saving, or sharing content. Examples of command elements include [button](../controls-and-patterns/buttons.md) and the [command bar](../controls-and-patterns/app-bars.md). Command elements can also include keyboard shortcuts that aren't actually visible on the screen.</p>
+<p>Command elements are covered in detail in the [Command design basics](commanding-basics.md) article.</p>
+<strong>Content elements</strong>
+<p>Content elements display the app's content. For a painting app, the content might be a drawing; for a news app, the content might be a news article.</p>
+<p>Content elements are covered in detail in the [Content design basics](content-basics.md) article.</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-Au minimum, une application inclut un écran de démarrage et une page d’accueil, qui définit l’interface utilisateur. Une application classique possède plusieurs pages et écrans; les éléments de contenu, de navigation et de commande peuvent changer d’une page à l’autre.
+At a minimum, an app has a splash screen and a home page that defines the user interface. A typical app will have multiple pages and screens, and navigation, command, and content elements might change from page to page.
 
-Lorsque vous choisissez les éléments d’interface utilisateur appropriés pour votre application, vous devez également tenir compte des appareils et de la taille des écrans sur lesquels vous l’exécuterez.
+When deciding on the right UI elements for your app, you might also consider the devices and the screen sizes your app will run on.
 
-## <span id="Why_tailor_your_app_for_specific_device_families_and_screen_sizes_"></span><span id="why_tailor_your_app_for_specific_device_families_and_screen_sizes_"></span><span id="WHY_TAILOR_YOUR_APP_FOR_SPECIFIC_DEVICE_FAMILIES_AND_SCREEN_SIZES_"></span>Personnalisation de votre application pour des appareils et des tailles d’écrans spécifiques.
-
-
-Les applications UWP utilisent les pixels effectifs pour garantir la lisibilité et la convivialité de vos éléments de conception sur tous les appareils Windows. Dès lors, pourquoi souhaiteriez-vous personnaliser l’interface utilisateur de votre application pour une famille d’appareils spécifique?
-
-**Remarque**  
-Avant d’aller plus loin, Windows ne permet pas à votre application de détecter l’appareil spécifique sur lequel elle s’exécute. Le système peut vous indiquer la famille d’appareils (mobile, ordinateur, etc.) sur laquelle l’application s’exécute, la résolution réelle et la quantité d’espace à l’écran disponible pour l’application (la taille de la fenêtre de l’application).
-
- 
-
--   **Pour tirer le meilleur parti de l’espace et limiter la navigation**
-
-    Si vous concevez une application pour qu’elle ait une apparence appropriée sur un appareil doté d’un petit écran, par exemple un téléphone, l’application pourra être utilisée sur un PC équipé d’un écran beaucoup plus grand, mais de l’espace sera probablement inutilisé. Vous pouvez personnaliser l’application pour afficher davantage de contenu lorsque la taille de l’écran est supérieure à une certaine valeur. Par exemple, une application d’achat peut afficher une catégorie de marchandise à la fois sur un téléphone, mais afficher simultanément plusieurs catégories et produits sur un PC ou un ordinateur portable.
-
-    En plaçant plus de contenu à l’écran, vous réduisez les étapes de navigation que l’utilisateur doit effectuer.
-
--   **Pour tirer parti des fonctionnalités des appareils**
-
-    Certains appareils sont plus susceptibles d’être dotés de fonctionnalités particulières. Par exemple, les téléphones sont susceptibles d’être équipés d’un capteur d’emplacement et d’un appareil photo, contrairement à un PC. Votre application peut détecter les fonctionnalités qui sont disponibles et les activer.
-
--   **Pour optimiser les entrées**
-
-    La bibliothèque de contrôles universels fonctionne avec tous les types d’entrée (tactile, stylet, clavier, souris), mais vous pouvez toujours optimiser certains types d’entrée en réorganisant vos éléments d’interface utilisateur. Par exemple, si vous placez des éléments de navigation en bas de l’écran, ils seront plus facilement accessibles aux utilisateurs de téléphone, mais la plupart des utilisateurs de PC s’attendent à voir des éléments de navigation en haut de l’écran.
-
-## <span id="Responsive_design_techniques"></span><span id="responsive_design_techniques"></span><span id="RESPONSIVE_DESIGN_TECHNIQUES"></span>Techniques de conception réactive
+## <span id="Why_tailor_your_app_for_specific_device_families_and_screen_sizes_"></span><span id="why_tailor_your_app_for_specific_device_families_and_screen_sizes_"></span><span id="WHY_TAILOR_YOUR_APP_FOR_SPECIFIC_DEVICE_FAMILIES_AND_SCREEN_SIZES_"></span>Tailoring your app for specific devices and screen sizes.
 
 
-Lorsque vous optimisez l’interface utilisateur de votre application pour des largeurs d’écran spécifiques, nous disons que vous créez une conception réactive. Voici sixtechniques de conception réactive que vous pouvez utiliser pour personnaliser l’interface utilisateur de votre application.
+UWP apps use effective pixels to guarantee that your design elements will be legible and usable on all Windows-powered devices. So, why would you ever want to customize your app's UI for a specific device family?
 
-### <span id="Reposition"></span><span id="reposition"></span><span id="REPOSITION"></span>Repositionner
-
-Vous pouvez modifier l’emplacement et la position des éléments de l’interface utilisateur de l’application pour tirer le meilleur parti de chaque appareil. Dans cet exemple, le mode portrait sur un téléphone ou une phablette nécessite une interface utilisateur de défilement, car une seule trame complète est visible à la fois. Lorsque l’application translate vers un appareil qui autorise deux trames complètes à l’écran, la trame B peut occuper un espace dédié que ce soit en orientation portrait ou paysage. Si vous utilisez une grille de positionnement, vous pouvez utiliser cette même grille lorsque des éléments d’interface utilisateur sont repositionnés.
-
-![repositionner](images/rsp-design/rspd-reposition.png)
-
-Dans cet exemple de conception pour une application de photos, l’application repositionne son contenu sur des écrans plus grands.
-
-![conception d’une application repositionnant du contenu sur des écrans plus grands](images/rsp-design/rspd-reposition-type1.png)
-
-### <span id="Resize"></span><span id="resize"></span><span id="RESIZE"></span>Redimensionner
-
-Vous pouvez optimiser la taille de la trame en ajustant les marges et la taille des éléments de l’interface utilisateur. Cela peut vous permettre, comme dans l’exemple indiqué ici, d’enrichir l’expérience de lecture sur un écran plus grand en augmentant simplement le cadre de contenu.
-
-![redimensionnement des éléments de conception](images/rsp-design/rspd-resize.png)
-
-### <span id="Reflow"></span><span id="reflow"></span><span id="REFLOW"></span>Ajuster dynamiquement
-
-En modifiant le flux des éléments de l’interface utilisateur en fonction de l’appareil et de l’orientation, votre application peut offrir un affichage de contenu optimal. Par exemple, lors du passage à un écran plus grand, il peut être judicieux d’activer des conteneurs plus grands, d’ajouter des colonnes et de générer des éléments de liste d’une manière différente.
-
-Cet exemple indique comment une colonne unique de contenu à défilement vertical sur un téléphone ou une phablette peut être réorganisée sur un écran plus grand pour afficher deux colonnes de texte.
-
-![ajustement dynamique des éléments de conception](images/rsp-design/rspd-reflow.png)
-
-### <span id="_____________Reveal___________"></span><span id="_____________reveal___________"></span><span id="_____________REVEAL___________"></span> Révéler
-
-Vous pouvez révéler l’interface utilisateur en fonction de l’espace disponible à l’écran, ou lorsque l’appareil prend en charge des fonctionnalités supplémentaires, des situations spécifiques ou des orientations d’écran favorites.
-
-Dans cet exemple présentant des onglets, l’onglet du milieu contenant l’icône d’appareil photo peut être propre à l’application d’un téléphone ou d’une phablette et ne pas s’appliquer à des appareils plus grands, raison pour laquelle il est révélé dans l’appareil à droite. Un autre exemple courant de révélation ou de masquage de l’interface utilisateur s’applique aux contrôles de lecteur multimédia, où le bouton défini est réduit sur de petits appareils et développé sur des appareils plus grands. Le lecteur multimédia sur PC, par exemple, peut gérer beaucoup plus de fonctionnalités à l’écran que sur un téléphone.
-
-![masquage des éléments de conception](images/rsp-design/rspd-revealhide.png)
-
-Une partie de la technique de révélation ou de masquage comprend le choix de l’affichage des métadonnées. Lorsque l’espace est limité, comme sur un téléphone ou une phablette, il est préférable d’afficher une quantité minimale de métadonnées. Sur un PC ou un ordinateur portable, une quantité importante de métadonnées peut être exposée. Voici quelques exemples de traitement du masquage ou de l’affichage des métadonnées :
-
--   Dans une application de messagerie, vous pouvez afficher l’avatar de l’utilisateur.
--   Dans une application de musique, vous pouvez afficher davantage d’informations sur un album ou un artiste.
--   Dans une application vidéo, vous pouvez afficher plus d’informations sur un film ou une émission, en présentant par exemple des détails sur la distribution et l’équipe technique.
--   Dans n’importe quelle application, vous pouvez décomposer les colonnes et révéler plus de détails.
--   Dans n’importe quelle application, vous pouvez disposer un élément à l’horizontal alors qu’il était empilé verticalement. Lorsque vous passez d’un téléphone ou d’une phablette à un appareil plus grand, les éléments de liste empilés peuvent changer pour faire apparaître des lignes d’éléments de liste et des colonnes de métadonnées.
-
-### <span id="Replace"></span><span id="replace"></span><span id="REPLACE"></span>Remplacer
-
-Cette technique vous permet de changer d’interface utilisateur en fonction de la classe de taille ou de l’orientation de l’appareil. Dans cet exemple, le volet de navigation et son interface utilisateur compacte et temporaire fonctionnent bien pour un petit appareil, mais des onglets peuvent être mieux appropriés pour un appareil plus grand.
-
-![remplacement des éléments de conception](images/rsp-design/rspd-replace.png)
-
-### <span id="_____________Re-architect___________"></span><span id="_____________re-architect___________"></span><span id="_____________RE-ARCHITECT___________"></span> Remodéliser
-
-Vous pouvez réduire ou répliquer l’architecture de votre application pour mieux cibler des appareils spécifiques. Dans cet exemple, la jonction des pages est montrée de l’appareil de gauche à l’appareil de droite.
-
-![exemple de réorganisation d’une interface utilisateur](images/rsp-design/rspd-rearchitect.png)
-
-Voici un exemple de cette technique appliquée à la conception d’une application domestique intelligente.
-
-![exemple de conception utilisant la technique de conception dynamique de réorganisation](images/rsp-design/rspd-rearchitect-type1.png)
-
-
-## Articles connexes
-
-- [Qu’est-ce qu’une application UWP?](https://msdn.microsoft.com/library/windows/apps/dn726767.aspx)
+**Note**  
+Before we go any further, Windows doesn't provide a way for your app to detect the specific device your app is running on. It can tell you the device family (mobile, desktop, etc) the app is running on, the effective resolution, and the amount of screen space available to the app (the size of the app's window).
 
  
 
+-   **To make the most effective use of space and reduce the need to navigate**
+
+    If you design an app to look good on a device that has a small screen, such as a phone, the app will be usable on a PC with a much bigger display, but there will probably be some wasted space. You can customize the app to display more content when the screen is above a certain size. For example, a shopping app might display one merchandise category at a time on a phone, but show multiple categories and products simultaneously on a PC or laptop.
+
+    By putting more content on the screen, you reduce the amount of navigation that the user needs to perform.
+
+-   **To take advantage of devices' capabilities**
+
+    Certain devices are more likely to have certain device capabilities. For example, phones are likely to have a location sensor and a camera, while a PC might not have either. Your app can detect which capabilities are available and enable features that use them.
+
+-   **To optimize for input**
+
+    The universal control library works with all input types (touch, pen, keyboard, mouse), but you can still optimize for certain input types by re-arranging your UI elements. For example, if you place navigation elements at the bottom of the screen, they'll be easier for phone users to access—but most PC users expect to see navigation elements toward the top of the screen.
+
+## <span id="Responsive_design_techniques"></span><span id="responsive_design_techniques"></span><span id="RESPONSIVE_DESIGN_TECHNIQUES"></span>Responsive design techniques
+
+
+When you optimize your app's UI for specific screen widths, we say that you're creating a responsive design. Here are six responsive design techniques you can use to customize your app's UI.
+
+### <span id="Reposition"></span><span id="reposition"></span><span id="REPOSITION"></span>Reposition
+
+You can alter the location and position of app UI elements to get the most out of each device. In this example, the portrait view on phone or phablet necessitates a scrolling UI because only one full frame is visible at a time. When the app translates to a device that allows two full on-screen frames, whether in portrait or landscape orientation, frame B can occupy a dedicated space. If you're using a grid for positioning, you can stick to the same grid when UI elements are repositioned.
+
+![reposition](images/rsp-design/rspd-reposition.png)
+
+In this example design for a photo app, the photo app repositions its content on larger screens.
+
+![a design for an app that repositions content on larger screens](images/rsp-design/rspd-reposition-type1.png)
+
+### <span id="Resize"></span><span id="resize"></span><span id="RESIZE"></span>Resize
+
+You can optimize the frame size by adjusting the margins and size of UI elements. This could allow you, as the example here shows, to augment the reading experience on a larger screen by simply growing the content frame.
+
+![resizing design elements](images/rsp-design/rspd-resize.png)
+
+### <span id="Reflow"></span><span id="reflow"></span><span id="REFLOW"></span>Reflow
+
+By changing the flow of UI elements based on device and orientation, your app can offer an optimal display of content. For instance, when going to a larger screen, it might make sense to switch larger containers, add columns, and generate list items in a different way.
+
+This example shows how a single column of vertically scrolling content on phone or phablet can be reflowed on a larger screen to display two columns of text.
+
+![reflowing design elements](images/rsp-design/rspd-reflow.png)
+
+### <span id="_____________Reveal___________"></span><span id="_____________reveal___________"></span><span id="_____________REVEAL___________"></span> Reveal
+
+You can reveal UI based on screen real estate, or when the device supports additional functionality, specific situations, or preferred screen orientations.
+
+In this example with tabs, the middle tab with the camera icon might be specific to the app on phone or phablet and not be applicable on larger devices, which is why it's revealed in the device on the right. Another common example of revealing or hiding UI applies to media player controls, where the button set is reduced on smaller devices and expanded on larger devices. The media player on PC, for instance, can handle far more on-screen functionality than it can on a phone.
+
+![hiding design elements](images/rsp-design/rspd-revealhide.png)
+
+Part of the reveal-or-hide technique includes choosing when to display more metadata. When real estate is at a premium, such as with a phone or phablet, it's best to show a minimal amount of metadata. With a laptop or desktop PC, a significant amount of metadata can be surfaced. Some examples of how to handle showing or hiding metadata include:
+
+-   In an email app, you can display the user's avatar.
+-   In a music app, you can display more info about an album or artist.
+-   In a video app, you can display more info about a film or a show, such as showing cast and crew details.
+-   In any app, you can break apart columns and reveal more details.
+-   In any app, you can take something that's vertically stacked and lay it out horizontally. When going from phone or phablet to larger devices, stacked list items can change to reveal rows of list items and columns of metadata.
+
+### <span id="Replace"></span><span id="replace"></span><span id="REPLACE"></span>Replace
+
+This technique lets you switch the user interface for a specific device size-class or orientation. In this example, the nav pane and its compact, transient UI works well for a smaller device, but on a larger device tabs might be a better choice.
+
+![replacing design elements](images/rsp-design/rspd-replace.png)
+
+### <span id="_____________Re-architect___________"></span><span id="_____________re-architect___________"></span><span id="_____________RE-ARCHITECT___________"></span> Re-architect
+
+You can collapse or fork the architecture of your app to better target specific devices. In this example, going from the left device to the right device demonstrates the joining of pages.
+
+![an example of re-architecting a user interface](images/rsp-design/rspd-rearchitect.png)
+
+Here's an example of this technique applied to the design for a smart home app.
+
+![an example of a design that using the re-artchitect responsive design technique](images/rsp-design/rspd-rearchitect-type1.png)
+
+
+## Related articles
+
+- [What's a UWP app?](https://msdn.microsoft.com/library/windows/apps/dn726767.aspx)
+
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 
