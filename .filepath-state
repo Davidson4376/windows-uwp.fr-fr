@@ -2124,9 +2124,6 @@
   "6368d201060ce9f7198f67005bfae3c93ad080be": [
     "windows-apps-src\\get-started\\images\\devmode-pc-options.png"
   ],
-  "834e44aa121a8071febd7e495e0d14b9a1da8e10": [
-    "windows-apps-src\\get-started\\images\\devmode-pc-options.png"
-  ],
   "25264704ed1696688454ca35303338eb719e8e07": [
     "windows-apps-src\\get-started\\images\\eventsbutton.png"
   ],
@@ -4474,9 +4471,6 @@
   "ba575488da35f0b97e048ee9cf6c46a0cbfc92d4": [
     "windows-apps-src\\style\\images\\alignment.png"
   ],
-  "8df06a57d466b94458ec32e795f572c196075b7a": [
-    "windows-apps-src\\style\\images\\alignment.png"
-  ],
   "82208763381161593c253469683db48e05b97a04": [
     "windows-apps-src\\style\\images\\character-count.png"
   ],
@@ -4588,22 +4582,13 @@
   "4b524190539a247dee3214a12c0fa13d20ace21d": [
     "windows-apps-src\\style\\images\\line-endings.png"
   ],
-  "424d1a549885446e2243310e68ed0e56965d62d2": [
-    "windows-apps-src\\style\\images\\line-endings.png"
-  ],
   "831a63e9f4c1d9e77477dded4e22209c49723b9d": [
     "windows-apps-src\\style\\images\\line-height-stacking.png"
   ],
   "4f7309e698bdd5e6b7f0cde0e5b8d44786c1f053": [
     "windows-apps-src\\style\\images\\line-spacing.png"
   ],
-  "0d90f3f692fa79ad9cd8799c64ec47b7b9e3405e": [
-    "windows-apps-src\\style\\images\\line-spacing.png"
-  ],
   "576d610c6ac49c2fb86707b007895c76ab68eebd": [
-    "windows-apps-src\\style\\images\\paragraphs.png"
-  ],
-  "095718794413bff309481502bda3d637a02292aa": [
     "windows-apps-src\\style\\images\\paragraphs.png"
   ],
   "18c790b7ef157816f5c2e36dc267ff3e53762473": [
@@ -4642,13 +4627,7 @@
   "60df1ddfaca12ff5e8c6055b4a43add3061d089e": [
     "windows-apps-src\\style\\images\\weights.png"
   ],
-  "c662d56ede98396783a8fcd82794c417b7e4dbbf": [
-    "windows-apps-src\\style\\images\\weights.png"
-  ],
   "f47149726b9e3a25b7467430b81b6ef147f5cabc": [
-    "windows-apps-src\\style\\images\\word-letter.png"
-  ],
-  "3e4ea7aad183ebf768d8c6ab7fd94b8d5835c470": [
     "windows-apps-src\\style\\images\\word-letter.png"
   ],
   "1cdbb81c783d17af16743a4ff5f82dc1c92df6b4": [
@@ -4867,9 +4846,6 @@
   "62db1be80faeaf94583b66e693f822da4f66d5d2": [
     "windows-apps-src\\xbox-apps\\images\\activation-step-5.png"
   ],
-  "84119964d253bcc32ba76f8e53f06df010523683": [
-    "windows-apps-src\\xbox-apps\\images\\activation-step-5.png"
-  ],
   "78f743f172eefaeea8c3cc000e3c55aacd3325a1": [
     "windows-apps-src\\xbox-apps\\images\\activation-step-8.png"
   ],
@@ -5027,9 +5003,6 @@
     "windows-apps-src\\xbox-apps\\images\\cpusets-table4.png"
   ],
   "0e2bef11807e50fee9424ecf662c95630d57e42e": [
-    "windows-apps-src\\graphics\\images\\composition-animation-types.png"
-  ],
-  "32d970c9a95073fa716893356ec1487d3085867e": [
     "windows-apps-src\\graphics\\images\\composition-animation-types.png"
   ],
   "0a97fa3e180c545cd78ef0da45d83e1cdce65d9a": [
@@ -5266,9 +5239,6 @@
   "ec3c2f27223c35a423a5e5a5ff189e39b179f8d8": [
     "windows-apps-src\\get-started\\images\\vs-2015-community-setup.png"
   ],
-  "c76ac5f735c5dc93e5f5014b77181a2e862386a1": [
-    "windows-apps-src\\get-started\\images\\vs-2015-community-setup.png"
-  ],
   "2aa55797ed3a6588b3a27158282a02827fbd2109": [
     "windows-apps-src\\porting\\desktop-to-uwp-extensions.md"
   ],
@@ -5410,9 +5380,6 @@
   "7920f4f0ea31e50c7c7ca69054f969df43545319": [
     "windows-apps-src\\get-started\\images\\winjs-tut-newproject.png"
   ],
-  "147a0a48f77c0a5679dff07cf8927969806165c8": [
-    "windows-apps-src\\get-started\\images\\winjs-tut-newproject.png"
-  ],
   "d42d460623779397cf99559fbc29182a27a89c95": [
     "windows-apps-src\\get-started\\images\\win10-cs-01.png"
   ],
@@ -5438,9 +5405,6 @@
     "windows-apps-src\\get-started\\images\\win10-cs-08.png"
   ],
   "dc43ec1d2c973718cd80c0785ebbd12fd108ca6e": [
-    "windows-apps-src\\get-started\\images\\win10-cs-09.png"
-  ],
-  "5c3a44248265b9ad200a2844c8ad46b5ff5f7d00": [
     "windows-apps-src\\get-started\\images\\win10-cs-09.png"
   ],
   "00d663b130202f4513cd1a9d82baed4068d909d3": [
@@ -5929,9 +5893,6 @@
   "72ac67b17fc519d374798e5121b309f664ff6b1b": [
     "windows-apps-src\\get-started\\application-development-for-windows-as-a-service.md",
     "windows-apps-src\\updates-and-versions\\application-development-for-windows-as-a-service.md"
-  ],
-  "561f5ea0ab4ba5b456456cedf786479ef168e7c0": [
-    "windows-apps-src\\get-started\\application-development-for-windows-as-a-service.md"
   ],
   "ef605f9d749148240ecee5e0ecfd473f8440ca25": [
     "windows-apps-src\\launch-resume\\launch-ringtone-picker.md"
