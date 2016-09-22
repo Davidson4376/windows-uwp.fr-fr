@@ -1,26 +1,11 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 1
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/1cae625559ad95c1de577e57bfd5087e55a0c2f5/windows-apps-src/TOC.md) | InSyncHandedBackSuccess | [Details](#1c9b52594ed1a3b519d5d20fea23f9a0c5bca1c88004)
 
 ## Item Details
-##### <a name='1c9b52594ed1a3b519d5d20fea23f9a0c5bca1c88004'></a> Source: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/1cae625559ad95c1de577e57bfd5087e55a0c2f5/windows-apps-src/TOC.md)
-* Status: InSyncHandedBackSuccess
-* Target File: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/4f2f4a7649622ea3ca3ee9e70071c1d7b0a40683/windows-apps-src/TOC.md)
-* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/c396884e207c667a0f45f6be9271376319f481ec/ol-handoff/Microsoft/windows-apps.fr-fr/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.fr-fr.xlf)
-* Handoff Datetime: 2016-09-14 22:08:17
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/1d7568686fce989c4e066f3c46c0b53d8c9c089a/ol-handback/Microsoft/windows-apps.fr-fr/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.fr-fr.xlf)
-* Handback Datetime: 2016-09-22 14:25:22
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
