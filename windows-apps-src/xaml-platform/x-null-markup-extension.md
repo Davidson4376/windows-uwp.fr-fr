@@ -1,35 +1,35 @@
 ---
 author: jwmsft
-description: In XAML markup, specifies a null value for a property.
-title: xNull markup extension
+description: "En XAML, un balisage spécifie une valeur null pour une propriété."
+title: Extension de balisage xNull
 ms.assetid: E6A4038E-4ADA-4E82-9824-582FC16AB037
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c81acb985c54a8dc799df5ad9c811577777dbf9b
+ms.openlocfilehash: 96ec27fa36d5a30d6bcf3b3c4ad4a330bf799a09
 
 ---
 
-# {x:Null} markup extension
+# Extension de balisage {x&#58;Null}
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-In XAML markup, specifies a **null** value for a property.
+En XAML, un balisage spécifie une valeur **null** pour une propriété.
 
-## XAML attribute usage
+## Utilisation des attributs XAML
 
 ``` syntax
 <object property="{x:Null}" .../>
 ```
 
-## Remarks
+## Remarques
 
-**null** is the null reference keyword for C# and C++. The Microsoft Visual Basic keyword for a null reference is **Nothing**.
+**null** est le mot clé de référence Null pour C# et C++. Le mot clé Microsoft Visual Basic pour une référence Null est **Nothing**.
 
-The initial default value can vary between dependency properties, and it is not necessarily **null**. Further, many dependency properties will not accept **null** as a value (whether through markup or code) due to their internal implementation. In such cases, setting a XAML attribute value with **{x:Null}** can result in a parser exception.
+La valeur par défaut initiale peut varier selon les propriétés de dépendance, et n’est pas nécessairement **null**. De plus, de nombreuses propriétés de dépendance n’acceptent pas **null** en tant que valeur (via le balisage ou le code), en raison de leur implémentation interne. Le cas échéant, la définition d’une valeur d’attribut XAML avec **{x:Null}** peut engendrer une exception d’analyse.
 
-Some Windows Runtime types are nullable. In cases where a nullable type does not already have **null** as the default, you could use **{x:Null}** in XAML to set to the **null** value. If using Visual C++ component extensions (C++/CX), nullable types are represented as [**Platform::IBox<T>**](https://msdn.microsoft.com/library/windows/apps/xaml/jj606120.aspx). If using Microsoft .NET languages, nullable types are represented as [**Nullable<T>**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx).
+Certains types Windows Runtime ont la valeur Nullable. Quand un type Nullable n’a pas déjà la valeur **null** comme valeur par défaut, vous pouvez utiliser **{x:Null}** pour définir la valeur **null** en XAML. Si vous utilisez des extensions de composant Visual C++ (C++/CX), les types Nullable sont représentés par [**Platform::IBox<T>**](https://msdn.microsoft.com/library/windows/apps/xaml/jj606120.aspx). Si vous utilisez des langages Microsoft .NET, les types Nullable sont représentés par [**Nullable<T>**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx).
 
-## Related topics
+## Rubriques connexes
 
 * [**Nullable<T>**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx)
 * [**IReference<T>**](https://msdn.microsoft.com/library/windows/apps/br225864)
@@ -38,6 +38,6 @@ Some Windows Runtime types are nullable. In cases where a nullable type does not
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

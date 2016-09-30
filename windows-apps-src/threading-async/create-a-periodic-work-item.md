@@ -1,35 +1,35 @@
 ---
 author: TylerMSFT
 ms.assetid: 1B077801-0A58-4A34-887C-F1E85E9A37B0
-title: Create a periodic work item
-description: Learn how to create a work item that repeats periodically.
+title: "Créer un élément de travail périodique"
+description: "Découvrez comment créer un élément de travail qui se reproduit régulièrement."
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 11e4c5d2ece918854620a89062e164fba7f48953
+ms.openlocfilehash: 8bf4bb511f84b314d48aedf9dd05c8955875029c
 
 ---
-# Create a periodic work item
+# Créer un élément de travail périodique
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-** Important APIs **
+** API importantes **
 
 -   [**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915)
 -   [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587)
 
-Learn how to create a work item that repeats periodically.
+Découvrez comment créer un élément de travail qui se reproduit régulièrement.
 
-## Create the periodic work item
+## Créer l’élément de travail périodique
 
-Use the [**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915) method to create a periodic work item. Supply a lambda that accomplishes the work, and use the *period* parameter to specify the interval between submissions. The period is specified using a [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/BR225996) structure. The work item will be resubmitted every time the period elapses, so make sure the period is long enough for work to complete.
+Utilisez la méthode [**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915) pour créer un élément de travail périodique. Fournissez une expression lambda qui effectue la tâche, puis utilisez le paramètre *period* pour spécifier l’intervalle entre les envois. La période est spécifiée à l’aide d’une structure [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/BR225996). L’élément de travail est renvoyé chaque fois que la période est écoulée; vérifiez donc que la période est suffisamment longue pour que la tâche s’accomplisse.
 
-[**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.createtimer.aspx) returns a [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587) object. Store this object in case the timer needs to be canceled.
+[**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.createtimer.aspx) retourne un objet [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587). Stockez cet objet au cas où le minuteur devrait être annulé.
 
-> **Note**  Avoid specifying a value of zero (or any value less than one millisecond) for the interval. This causes the periodic timer to behave as a single-shot timer instead.
+> **Remarque** Évitez de spécifier la valeur zéro (ou toute valeur inférieure à une milliseconde) pour l’intervalle. Sinon, cela amène le minuteur périodique à se comporter comme un minuteur à déclenchement unique.
 
-> **Note**  You can use [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) to access the UI and show progress from the work item.
+> **Remarque** Vous pouvez utiliser [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) pour accéder à l’interface utilisateur et afficher la progression à partir de l’élément de travail.
 
-The following example creates a work item that runs once every 60 seconds:
+L’exemple suivant crée un élément de travail qui s’exécute une fois toutes les 60 secondes:
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -81,11 +81,11 @@ The following example creates a work item that runs once every 60 seconds:
 >         }), period);
 > ```
 
-## Handle cancellation of the periodic work item (optional)
+## Gérer l’annulation de l’élément périodique (facultatif)
 
-If needed, you can handle cancellation of the periodic timer with a [**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926). Use the [**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915) overload to supply an additional lambda that handles cancellation of the periodic work item.
+Si nécessaire, vous pouvez gérer l’annulation du minuteur périodique avec un objet [**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926). Utilisez la surcharge [**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915) pour fournir une expression lambda supplémentaire qui gère l’annulation de l’élément de travail périodique.
 
-The following example creates a periodic work item that repeats every 60 seconds and it also supplies a cancellation handler:
+L’exemple suivant crée un élément de travail périodique qui se reproduit toutes les 60secondes et fournit également un gestionnaire d’annulation:
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -180,9 +180,9 @@ The following example creates a periodic work item that repeats every 60 seconds
 >         }));
 > ```
 
-## Cancel the timer
+## Annuler le minuteur
 
-When necessary, call the [**Cancel**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.cancel.aspx) method to stop the periodic work item from repeating. If the work item is running when the periodic timer is cancelled it is allowed to complete. The [**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926) (if provided) is called when all instances of the periodic work item have completed.
+Si nécessaire, appelez la méthode [**Cancel**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.cancel.aspx) pour mettre fin à la répétition de l’élément de travail périodique. Si l’élément de travail est en cours d’exécution lorsque le minuteur périodique est annulé, il est autorisé à se terminer. L’objet [**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926) (s’il est fourni) est appelé lorsque toutes les instances de l’élément de travail périodique sont terminées.
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -192,20 +192,20 @@ When necessary, call the [**Cancel**](https://msdn.microsoft.com/library/windows
 > PeriodicTimer->Cancel();
 > ```
 
-## Remarks
+## Notes
 
-For information about single-use timers, see [Use a timer to submit a work item](use-a-timer-to-submit-a-work-item.md).
+Pour obtenir des informations sur les minuteurs à déclenchement unique, voir [Utiliser un minuteur pour envoyer un élément de travail](use-a-timer-to-submit-a-work-item.md).
 
-## Related topics
+## Rubriques connexes
 
-* [Submit a work item to the thread pool](submit-a-work-item-to-the-thread-pool.md)
-* [Best practices for using the thread pool](best-practices-for-using-the-thread-pool.md)
-* [Use a timer to submit a work item](use-a-timer-to-submit-a-work-item.md)
+* [Envoyer un élément de travail au pool de threads](submit-a-work-item-to-the-thread-pool.md)
+* [Meilleures pratiques pour l’utilisation du pool de threads](best-practices-for-using-the-thread-pool.md)
+* [Utiliser un minuteur pour envoyer un élément de travail](use-a-timer-to-submit-a-work-item.md)
  
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO2-->
 
 

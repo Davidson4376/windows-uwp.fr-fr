@@ -1,473 +1,473 @@
 ---
 author: mcleblanc
 ms.assetid: 1526FF4B-9E68-458A-B002-0A5F3A9A81FD
-title: Windows App Certification Kit tests
-description: The Windows App Certification Kit contains a number of tests that can help ensure that your app is ready to be published on the Windows Store.
+title: Tests du Kit de certification des applications Windows
+description: "Le Kit de certification des applications Windows contient un certain nombre de tests qui permettent de vérifier si une application est prête à être publiée sur le Windows Store."
 translationtype: Human Translation
 ms.sourcegitcommit: 0bf96b70a915d659c754816f4c115f3b3f0a5660
-ms.openlocfilehash: 78a1a2ad4aea11275aa3db1d13790c490a50c232
+ms.openlocfilehash: 816b147c91a340505348aa579c8b1540962a1df5
 
 ---
-## Windows App Certification Kit tests
+## Tests du Kit de certification des applications Windows
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-The Windows App Certification Kit contains a number of tests that can help ensure that your app is ready to be published on the Windows Store.
+Le Kit de certification des applications Windows contient un certain nombre de tests qui permettent de vérifier si une application est prête à être publiée sur le Windows Store.
 
-## Deployment and launch tests
+## Tests de déploiement et de lancement
 
-Monitors the app during certification testing to record when it crashes or hangs.
+Surveille l’application au cours des tests de certification afin d’enregistrer quand elle cesse de répondre ou se bloque.
 
-### Background
+### Contexte
 
-Apps that stop responding or crash can cause the user to lose data and have a poor experience.
+Les applications qui cessent de répondre ou qui se bloquent peuvent conduire à la perte de données ou une expérience médiocre du point de vue de l’utilisateur.
 
-We expect apps to be fully functional without the use of Windows compatibility modes, AppHelp messages, or compatibility fixes.
+Nous attendons des applications qu’elles soient totalement fonctionnelles sans recourir aux modes de compatibilité Windows, aux messages AppHelp ou à d’autres correctifs de compatibilité.
 
-Apps must not list DLLs to load in the HKEY\-LOCAL\-MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Windows\\AppInit\-DLLs registry key.
+Les applications ne doivent pas énumérer des DLL à télécharger dans la clé de Registre HKEY\-LOCAL\-MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Windows\\AppInit\-DLLs.
 
-### Test details
+### Détails du test
 
-We test the app resilience and stability throughout the certification testing.
+Nous testons la résilience et la stabilité de l’application tout au long des tests de certification.
 
-The Windows App Certification Kit calls [**IApplicationActivationManager::ActivateApplication**](https://msdn.microsoft.com/library/windows/desktop/Hh706903) to launch apps. For **ActivateApplication** to launch an app, User Account Control (UAC) must be enabled and the screen resolution must be at least 1024 x 768 or 768 x 1024. If either condition is not met, your app will fail this test.
+Le Kit de certification des applications Windows appelle la méthode [**IApplicationActivationManager::ActivateApplication**](https://msdn.microsoft.com/library/windows/desktop/Hh706903) pour lancer les applications. Pour que la méthode **ActivateApplication** lance une application, il faut que le contrôle de compte d’utilisateur (UAC) soit activé et que la résolution de l’écran soit d’au moins 1024×768 ou 768×1024. Si l’une de ces conditions n’est pas respectée, votre application échouera à ce test.
 
-### Corrective actions
+### Actions correctives
 
-Make sure UAC is enabled on the test computer.
+Assurez-vous que le contrôle UAC est activé sur l’ordinateur de test.
 
-Make sure you are running the test on a computer with large enough screen.
+Veillez à exécuter le test sur un ordinateur dont l’écran est suffisamment grand.
 
-If your app fails to launch and your test platform satisfies the prerequisites of [**ActivateApplication**](https://msdn.microsoft.com/library/windows/desktop/Hh706903), you can troubleshoot the problem by reviewing the activation event log. To find these entries in the event log:
+Si le lancement de votre application échoue et que votre plateforme de test satisfait aux exigences liées à la méthode [**ActivateApplication**](https://msdn.microsoft.com/library/windows/desktop/Hh706903), vous pouvez résoudre le problème en examinant le journal des événements d’activation. Pour rechercher ces entrées dans le journal des événements:
 
-1.  Open eventvwr.exe and navigate to the Application and Services Log\\Microsoft\\Windows\\Immersive-Shell folder.
-2.  Filter the view to show Event Ids: 5900-6000.
-3.  Review the log entries for info that might explain why the app didn't launch.
+1.  Ouvrez eventvwr.exe et accédez au dossier Journaux des applications et des services\\Microsoft\\Windows\\Immersive-Shell.
+2.  Filtrez la vue de manière à afficher les ID d’événement 5900 à 6000.
+3.  Dans les entrées du journal, recherchez les informations susceptibles d’expliquer l’échec du lancement de l’application.
 
-Troubleshoot the file with the problem, identify and fix the problem. Rebuild and re-test the app. You can also check if a dump file was generated in the Windows App Certification Kit log folder that can be used to debug your app.
+Identifiez le fichier posant problème et corrigez-le. Générez et testez de nouveau l’application. Vous pouvez également vérifier si un fichier de vidage a été généré dans le dossier du journal du Kit de certification des applications Windows qui peut être utilisé pour déboguer votre application.
 
-## Platform Version Launch test
+## Test de lancement de la version de plateforme
 
-Checks that the Windows app can run on a future version of the OS. This test has historically been only applied to the Desktop app workflow, but this is now enabled for the Store and Universal Windows Platform (UWP) workflows.
+Vérifie que l’application Windows peut s’exécuter sur une version ultérieure du système d’exploitation. À l’origine, ce test s’appliquait uniquement au workflow des applications de bureau, mais il est désormais activé pour les workflows des applications du Windows Store et de la plateforme Windows universelle (UWP).
 
-### Background
+### Arrière-plan
 
-Operating system version info has restricted usage for the Windows Store. This has often been incorrectly used by apps to check OS version so that the app can provide users with functionality that is specific to an OS version.
+L’information relative à la version du système d’exploitation a restreint l’utilisation pour le Windows Store. Elle a souvent été incorrectement utilisée par les applications pour vérifier la version du système d’exploitation afin de pouvoir fournir aux utilisateurs des fonctionnalités propres à une version de système d’exploitation.
 
-### Test details
+### Détails du test
 
-The Windows App Certification Kit uses the HighVersionLie to detect how the app checks the OS version. If the app crashes, it will fail this test.
+Le Kit de certification des applications Windows utilise le test HighVersionLie pour détecter le mode de vérification de la version du système d’exploitation utilisé par l’application. Si l’application se bloque, elle échoue à ce test.
 
-### Corrective action
+### Action corrective
 
-Apps should use Version API helper functions to check this. See [Operating System Version](https://msdn.microsoft.com/library/windows/desktop/ms724832) for more information.
+Les applications doivent utiliser les fonctions d’assistance de l’API Version pour effectuer cette vérification. Pour plus d’informations, voir [Version du système d’exploitation](https://msdn.microsoft.com/library/windows/desktop/ms724832).
 
-## Background tasks cancellation handler validation
+## Validation du gestionnaire d’annulation de tâches en arrière-plan
 
-This verifies that the app has a cancellation handler for declared background tasks. There needs to be a dedicated function that will be called when the task is cancelled. This test is applied only for deployed apps.
+Ce test permet de vérifier que l’application dispose d’un gestionnaire d’annulation pour les tâches en arrière-plan déclarées. Il doit exister une fonction dédiée qui sera appelée lorsque la tâche est annulée. Ce test s’applique uniquement aux applications déployées.
 
-### Background
+### Contexte
 
-Store apps can register a process that runs in the background. For example, an email app may ping a server from time to time. However, if the OS needs these resources, it will cancel the background task, and apps should gracefully handle this cancellation. Apps that don't have a cancellation handler may crash or not close when the user tries to close the app.
+Les applications du Windows Store peuvent inscrire un processus qui s’exécute en arrière-plan. Par exemple, une application de messagerie peut de temps à autre effectuer un test ping sur un serveur. Toutefois, si le système d’exploitation a besoin de ces ressources, il annule la tâche en arrière-plan, et les applications doivent gérer correctement cette annulation. Les applications qui ne disposent pas d’un gestionnaire d’annulation peuvent se bloquer ou ne pas se fermer lorsque l’utilisateur essaie de les fermer.
 
-### Test details
+### Détails du test
 
-The app is launched, suspended and the non-background portion of the app is terminated. Then the background tasks associated with this app are cancelled. The state of the app is checked, and if the app is still running then it will fail this test.
+L’application est lancée, suspendue et les tâches de l’application qui ne s’exécutent pas en arrière-plan sont arrêtées. Ensuite, les tâches en arrière-plan associées à cette application sont annulées. L’état de l’application est vérifié, et si l’application est toujours en cours d’exécution, elle échoue à ce test.
 
-### Corrective action
+### Action corrective
 
-Add the cancellation handler to your app. For more information see [Support your app with background tasks](https://msdn.microsoft.com/library/windows/apps/Mt299103).
+Ajoutez le gestionnaire d’annulation à votre application. Pour plus d’informations, voir [Définir des tâches en arrière-plan pour les besoins de votre application](https://msdn.microsoft.com/library/windows/apps/Mt299103).
 
-## App count
+## Nombre d’applications
 
-This verifies that an app package (APPX, app bundle) contains one application. This was changed in the kit to be a standalone test.
+Ce test permet de vérifier qu’un package d’application (APPX, ensemble d’applications) contient une seule application. Il a été modifié dans le kit afin d’en faire un test autonome.
 
-### Background
+### Contexte
 
-This test was implemented as per Store policy.
+Ce test a été implémenté conformément à la politique du Windows Store.
 
-### Test details
+### Détails du test
 
-For Windows Phone 8.1 apps the test verifies the total number of appx packages in the bundle is &lt; 512, there is only one main package in the bundle, and that the architecture of the main package in the bundle is marked as ARM or neutral.
+Pour les applications Windows Phone 8.1, le test vérifie que le nombre total de packages appx de l’ensemble est inférieur à (&lt; ) 512, qu’il n’y a qu’un seul package principal dans l’ensemble et que l’architecture du package principal de l’ensemble est marquée comme ARM ou neutre.
 
-For Windows 10 apps the test verifies that the revision number in the version of the bundle is set to 0.
+Pour les applications Windows10, le test vérifie que le numéro de révision de la version de l’ensemble est défini sur0.
 
-### Corrective action
+### Action corrective
 
-Ensure the app package and bundle meet requirements above in Test details.
+Assurez-vous que le package et que l’ensemble d’applications satisfont aux exigences décrites dans les détails du test ci-dessus.
 
-## App manifest compliance test
+## Test de conformité du manifeste d’application
 
-Test the contents of app manifest to make sure its contents are correct.
+Teste le contenu du manifeste d’application pour vérifier qu’il est correct.
 
-### Background
+### Contexte
 
-Apps must have a correctly formatted app manifest.
+Les applications doivent avoir un manifeste d’application correctement mis en forme.
 
-### Test details
+### Détails du test
 
-Examines the app manifest to verify the contents are correct as described in the [App package requirements](https://msdn.microsoft.com/library/windows/apps/Mt148525).
+Examine le manifeste de l’application afin de vérifier que son contenu est correct, comme décrit dans [Exigences relatives aux packages d’applications](https://msdn.microsoft.com/library/windows/apps/Mt148525).
 
--   **File extensions and protocols**
+-   **Extensions de fichiers et protocoles**
 
-    Your app can declare the file extensions that it wants to associate with. Used improperly, an app can declare a large number of file extensions, most of which it may not even use, resulting in a bad user experience. This test will add a check to limit the number of file extensions that an app can associate with.
+    Votre application peut déclarer les extensions de fichier auxquelles elle veut s’associer. Une application peut utiliser de façon incorrecte cette fonction et déclarer un grand nombre d’extensions de fichier, alors qu’elle n’en utilisera peut-être même pas la majeure partie, ce qui aboutit à une expérience utilisateur médiocre. Ce test ajoute une vérification pour limiter le nombre d’extensions de fichier auxquelles une application peut s’associer.
 
--   **Framework Dependency rule**
+-   **Règle de dépendance d’infrastructure**
 
-    This test enforces the requirement that apps take appropriate dependencies on the UWP. If there is an inappropriate dependency, this test will fail.
+    Ce test applique la spécification selon laquelle les applications établissent des dépendances appropriées envers la plateforme Windows universelle (UWP). En cas de dépendance inappropriée, ce test échoue.
 
-    If there is a mismatch between the OS version the app applies to and the framework dependencies made, the test will fail. The test would also fail if the app refers to any preview versions of the framework dlls.
+    En cas d’incompatibilité entre la version du système d’exploitation à laquelle l’application s’applique et les dépendances d’infrastructure établies, le test échoue. Le test échoue également si l’application fait référence à des versions d’évaluation des DLL d’infrastructure.
 
--   **Inter-process Communication (IPC) verification**
+-   **Vérification de la communication entre processus (IPC)**
 
-    This test enforces the requirement that Windows Store apps do not communicate outside of the app container to Desktop components. Inter-process communication is intended for side-loaded apps only. Apps that specify the [**ActivatableClassAttribute**](https://msdn.microsoft.com/library/windows/apps/BR211414) with name equal to "DesktopApplicationPath" will fail this test.
+    Ce test applique la spécification selon laquelle les applications du Windows Store ne communiquent pas en dehors du conteneur d’application avec des composants de bureau. La communication entre processus ne concerne que les applications chargées latéralement. Les applications qui spécifient l’attribut [**ActivatableClassAttribute**](https://msdn.microsoft.com/library/windows/apps/BR211414) avec «DesktopApplicationPath» comme nom échouent à ce test.
 
-### Corrective action
+### Action corrective
 
-Review the app's manifest against the requirements described in the [App package requirements](https://msdn.microsoft.com/library/windows/apps/Mt148525).
+Confrontez le manifeste de l’application aux exigences décrites dans [Exigences relatives aux packages d’applications](https://msdn.microsoft.com/library/windows/apps/Mt148525).
 
-## Windows Security features test
+## Test des fonctionnalités de sécurité Windows
 
-### Background
+### Contexte
 
-Changing the default Windows security protections can put customers at increased risk.
+La modification des protections de sécurité Windows par défaut peut exposer les clients à des risques accrus.
 
-### Test details
+### Détails du test
 
-Tests the app's security by running the [BinScope Binary Analyzer](#binscope).
+Teste la sécurité de l’application en exécutant [BinScope Binary Analyzer](#binscope).
 
-The BinScope Binary Analyzer tests examine the app's binary files to check for coding and building practices that make the app less vulnerable to attack or to being used as an attack vector.
+Les tests BinScope Binary Analyzer examinent les fichiers binaires de l’application afin de vérifier qu’ils utilisent des pratiques de codage et de génération qui rendent l’application moins vulnérable à des attaques ou à leur utilisation comme vecteurs d’attaque.
 
-The BinScope Binary Analyzer tests check for the correct use of the following security-related features.
+Les tests BinScope Binary Analyzer vérifient que les fonctionnalités de sécurité suivantes sont correctement utilisées.
 
--   BinScope Binary Analyzer tests
--   Private Code Signing
+-   Tests BinScope Binary Analyzer
+-   Signature de code privé
 
-### BinScope Binary Analyzer tests
+### Tests BinScope Binary Analyzer
 
-The [BinScope Binary Analyzer](http://go.microsoft.com/fwlink/p/?linkid=257276) tests examine the app's binary files to check for coding and building practices that make the app less vulnerable to attack or to being used as an attack vector.
+Les tests [BinScope Binary Analyzer](http://go.microsoft.com/fwlink/p/?linkid=257276) examinent les fichiers binaires de l’application afin de vérifier qu’ils utilisent des pratiques de codage et de génération qui rendent l’application moins vulnérable à des attaques ou à leur utilisation comme vecteurs d’attaque.
 
-The BinScope Binary Analyzer tests check for the correct use of these security-related features:
+Les tests BinScope Binary Analyzer vérifient que les fonctionnalités de sécurité suivantes sont correctement utilisées :
 
 -   [AllowPartiallyTrustedCallersAttribute](#binscope-1)
--   [/SafeSEH Exception Handling Protection](#binscope-2)
--   [Data Execution Prevention](#binscope-3)
--   [Address Space Layout Randomization](#binscope-4)
--   [Read/Write Shared PE Section](#binscope-5)
+-   [Protection de la gestion des exceptions /SafeSEH](#binscope-2)
+-   [Prévention de l’exécution des données](#binscope-3)
+-   [Randomisation du format d’espace d’adresse](#binscope-4)
+-   [Section PE partagée en lecture/écriture](#binscope-5)
 -   [AppContainerCheck](#appcontainercheck)
 -   [ExecutableImportsCheck](#binscope-7)
 -   [WXCheck](#binscope-8)
 
 ### <span id="binscope-1"></span>AllowPartiallyTrustedCallersAttribute
 
-**Windows App Certification Kit error message:** APTCACheck Test failed
+**Message d’erreur du Kit de certification des applications Windows:** Échec du test APTCACheck
 
-The AllowPartiallyTrustedCallersAttribute (APTCA) attribute enables access to fully trusted code from partially trusted code in signed assemblies. When you apply the APTCA attribute to an assembly, partially trusted callers can access that assembly for the life of the assembly, which can compromise security.
+L’attribut AllowPartiallyTrustedCallersAttribute (APTCA) autorise l’accès au code entièrement fiable à partir de code partiellement fiable dans des assemblys signés. Lorsque vous appliquez l’attribut APTCA à un assembly, les appelants partiellement fiables peuvent accéder à cet assembly pendant toute la durée de vie de l’assembly, ce qui peut compromettre la sécurité.
 
-**What to do if your app fails this test**
+**Ce que vous devez faire si votre application échoue à ce test**
 
-Don't use the APTCA attribute on strong named assemblies unless your project requires it and the risks are well understood. In cases where it's required, make sure that all APIs are protected with appropriate code access security demands. APTCA has no effect when the assembly is a part of a Universal Windows Platform (UWP) app.
+N’utilisez pas l’attribut APTCA sur les assemblys portant un nom fort, à moins que votre projet ne l’exige et que vous ayez conscience des risques encourus. Assurez-vous alors que toutes les API sont protégées avec des demandes de sécurité appropriées d’accès au code. L’attribut APTCA est sans effet lorsque l’assembly fait partie d’une application UWP (plateforme Windows universelle).
 
-**Remarks**
+**Remarques**
 
-This test is performed only on managed code (C#, .NET, etc.).
+Ce test est uniquement réalisé sur le code managé (C#, .NET, etc.).
 
-### <span id="binscope-2"></span>/SafeSEH Exception Handling Protection
+### <span id="binscope-2"></span>Protection de la gestion des exceptions /SafeSEH
 
-**Windows App Certification Kit error message:** SafeSEHCheck Test failed
+**Message d’erreur du Kit de certification des applications Windows:** Échec du test SafeSEHCheck
 
-An exception handler runs when the app encounters an exceptional condition, such as a divide-by-zero error. Because the address of the exception handler is stored on the stack when a function is called, it could be vulnerable to a buffer overflow attacker if some malicious software were to overwrite the stack.
+Un gestionnaire d’exceptions est exécuté lorsque l’application rencontre une condition exceptionnelle, telle qu’une erreur de type « division par zéro ». L’adresse du gestionnaire d’exceptions étant stockée sur la pile lors de l’appel d’une fonction, elle peut faire l’objet d’une attaque par saturation de la mémoire tampon si un logiciel malveillant parvient à remplacer la pile.
 
-**What to do if your app fails this test**
+**Ce que vous devez faire si votre application échoue à ce test**
 
-Enable the /SAFESEH option in the linker command when you build your app. This option is on by default in the Release configurations of Visual Studio. Verify this option is enabled in the build instructions for all executable modules in your app.
+Activez l’option /SAFESEH dans la commande de l’éditeur de liens lorsque vous générez votre application. Cette option est activée par défaut dans les configurations Release de Visual Studio. Vérifiez que cette option est activée dans les instructions de génération pour tous les modules exécutables dans votre application.
 
-**Remarks**
+**Remarques**
 
-The test is not performed on 64-bit binaries or ARM chipset binaries because they don't store exception handler addresses on the stack.
+Le test n’est pas effectué sur les binaires 64bits ni sur les binaires du circuit microprogrammé ARM, ceux-ci ne stockant pas les adresses du gestionnaire d’exceptions sur la pile.
 
-### <span id="binscope-3"></span>Data Execution Prevention
+### <span id="binscope-3"></span>Prévention de l’exécution des données
 
-**Windows App Certification Kit error message:** NXCheck Test failed
+**Message d’erreur du Kit de certification des applications Windows:** Échec du test NXCheck
 
-This test verifies that an app doesn't run code that is stored in a data segment.
+Ce test vérifie qu’une application n’exécute pas du code qui est stocké dans un segment de données.
 
-**What to do if your app fails this test**
+**Ce que vous devez faire si votre application échoue à ce test**
 
-Enable the /NXCOMPAT option in the linker command when you build your app. This option is on by default in linker versions that support Data Execution Prevention (DEP).
+Activez l’option /NXCOMPAT dans la commande de l’éditeur de liens lorsque vous générez votre application. Cette option est activée par défaut dans les versions de l’éditeur de liens qui prennent en charge la prévention de l’exécution des données (PED).
 
-**Remarks**
+**Remarques**
 
-We recommend that you test your apps on a DEP-capable CPU and fix any failures you find that result from DEP.
+Nous vous recommandons de tester vos applications sur une unité centrale compatible avec PED et de corriger toutes les erreurs résultant de cette fonction.
 
-### <span id="binscope-4"></span>Address Space Layout Randomization
+### <span id="binscope-4"></span>Randomisation du format d’espace d’adresse
 
-**Windows App Certification Kit error message:** DBCheck Test failed
+**Message d’erreur du Kit de certification des applications Windows:** Échec du test DBCheck
 
-Address Space Layout Randomization (ASLR) loads executable images into unpredictable locations in memory, which makes it harder for malicious software that expects a program to be loaded at a certain virtual address to operate predictably. Your app and all components that your app uses must support ASLR.
+La randomisation du format d’espace d’adresse (ASLR) charge des images exécutables à des endroits imprévisibles de la mémoire, ce qui complique la tâche des logiciels malveillants qui s’attendent à ce qu’un programme soit chargé à une adresse virtuelle particulière pour fonctionner de manière prévisible. Votre application et tous les composants qu’elle utilise doivent prendre en charge ASLR.
 
-**What to do if your app fails this test**
+**Ce que vous devez faire si votre application échoue à ce test**
 
-Enable the /DYNAMICBASE option in the linker command when you build your app. Verify that all modules that your app uses also use this linker option.
+Activez l’option /DYNAMICBASE dans la commande de l’éditeur de liens lorsque vous générez votre application. Vérifiez que tous les modules utilisés par votre application utilisent également cette option de l’éditeur de liens.
 
-**Remarks**
+**Remarques**
 
-Normally, ASLR doesn't affect performance. But in some scenarios there is a slight performance improvement on 32-bit systems. It is possible that performance could degrade in a highly congested system that have many images loaded in many different memory locations.
+En règle générale, ASLR n’affecte pas les performances. Toutefois, dans certains scénarios, les systèmes 32 bits bénéficient d’une légère amélioration des performances. Une dégradation des performances peut se produire dans un système fortement encombré dans lequel de nombreuses images sont chargées dans différents emplacements de mémoire.
 
-This test is performed on only apps written in managed code, such as by using C# or .NET Framework.
+Ce test est réalisé uniquement sur les applications écrites en code managé, par exemple en utilisant C# ou le .NET Framework.
 
-### <span id="binscope-5"></span>Read/Write Shared PE Section
+### <span id="binscope-5"></span>Section PE partagée en lecture/écriture
 
-**Windows App Certification Kit error message:** SharedSectionsCheck Test failed.
+**Message d’erreur du Kit de certification des applications Windows:** Échec du test SharedSectionsCheck.
 
-Binary files with writable sections that are marked as shared are a security threat. Don't build apps with shared writable sections unless necessary. Use [**CreateFileMapping**](https://msdn.microsoft.com/library/windows/desktop/Aa366537) or [**MapViewOfFile**](https://msdn.microsoft.com/library/windows/desktop/Aa366761) to create a properly secured shared memory object.
+Les fichiers binaires avec des sections accessibles en écriture qui sont marquées comme étant partagées constituent faille de sécurité. Ne générez pas d’applications avec des sections accessibles en écriture partagées sauf en cas d’absolue nécessité. Utilisez [**CreateFileMapping**](https://msdn.microsoft.com/library/windows/desktop/Aa366537) ou [**MapViewOfFile**](https://msdn.microsoft.com/library/windows/desktop/Aa366761) pour créer un objet mémoire partagée correctement sécurisé.
 
-**What to do if your app fails this test**
+**Ce que vous devez faire si votre application échoue à ce test**
 
-Remove any shared sections from the app and create shared memory objects by calling [**CreateFileMapping**](https://msdn.microsoft.com/library/windows/desktop/Aa366537) or [**MapViewOfFile**](https://msdn.microsoft.com/library/windows/desktop/Aa366761) with the proper security attributes and then rebuild your app.
+Supprimez toutes les sections partagées de l’application et créez des objets mémoire partagée en appelant [**CreateFileMapping**](https://msdn.microsoft.com/library/windows/desktop/Aa366537) ou [**MapViewOfFile**](https://msdn.microsoft.com/library/windows/desktop/Aa366761)avec les attributs de sécurité appropriés, puis regénérez votre application.
 
-**Remarks**
+**Remarques**
 
-This test is performed only on apps written in unmanaged languages, such as by using C or C++.
+Ce test est réalisé uniquement sur les applications écrites dans des langages non managés, par exemple en utilisant C ou C++.
 
 ### AppContainerCheck
 
-**Windows App Certification Kit error message:** AppContainerCheck Test failed.
+**Message d’erreur du Kit de certification des applications Windows:** Échec du test AppContainerCheck.
 
-The AppContainerCheck verifies that the **appcontainer** bit in the portable executable (PE) header of an executable binary is set. Apps must have the **appcontainer** bit set on all .exe files and all unmanaged DLLs to execute properly.
+Le test AppContainerCheck vérifie que le bit **appcontainer** est défini dans l’en-tête de fichier exécutable portable (PE) d’un binaire exécutable. Le bit **appcontainer** doit être défini dans tous les fichiers .exe et les DLL non managées des applications pour que ces dernières s’exécutent correctement.
 
-**What to do if your app fails this test**
+**Que faire si votre application échoue à ce test?**
 
-If a native executable file fails the test, make sure that you used the latest compiler and linker to build the file and that you use the */appcontainer* flag on the linker.
+Si un fichier exécutable natif échoue à ce test, vérifiez que vous avez utilisé le compilateur et l’éditeur de liens les plus récents pour générer le fichier et que vous utilisez l’indicateur */appcontainer* sur l’éditeur de liens.
 
-If a managed executable fails the test, make sure that you used the latest compiler and linker, such as Microsoft Visual Studio, to build the Windows Store app.
+Si un exécutable managé échoue au test, vérifiez que vous avez utilisé le compilateur et l’éditeur de liens les plus récents (Microsoft Visual Studio par exemple) pour générer l’application du Windows Store.
 
-**Remarks**
+**Remarques**
 
-This test is performed on all .exe files and on unmanaged DLLs.
+Ce test est réalisé sur tous les fichiers.exe et DLL non managées.
 
 ### <span id="binscope-7"></span>ExecutableImportsCheck
 
-**Windows App Certification Kit error message:** ExecutableImportsCheck Test failed.
+**Message d’erreur du Kit de certification des applications Windows:** Échec du test ExecutableImportsCheck.
 
-A portable executable (PE) image fails this test if its import table has been placed in an executable code section. This can occur if you enabled .rdata merging for the PE image by setting the */merge* flag of the Visual C++ linker as */merge:.rdata=.text*.
+Une image PE (Portable Executable) échoue à ce test si sa table d’importation a été placée dans une section de code exécutable. Cette situation peut se produire si vous avez activé la fusion .rdata pour l’image PE en définissant l’indicateur */merge* de l’éditeur de liens Visual C++ sur */merge:.rdata=.text*.
 
-**What to do if your app fails this test**
+**Que faire si votre application échoue à ce test?**
 
-Don't merge the import table into an executable code section. Make sure that the */merge* flag of the Visual C++ linker is not set to merge the ".rdata" section into a code section.
+Ne fusionnez pas la table d’importation dans une section de code exécutable. Assurez-vous que l’indicateur */merge* de l’éditeur de liens Visual C++ n’est pas défini pour fusionner la section «.rdata» dans une section de code.
 
-**Remarks**
+**Remarques**
 
-This test is performed on all binary code except purely managed assemblies.
+Ce test est réalisé sur l’ensemble du code binaire, à l’exception des assemblys purement managés.
 
 ### <span id="binscope-8"></span>WXCheck
 
-**Windows App Certification Kit error message:** WXCheck Test failed.
+**Message d’erreur du Kit de certification des applications Windows:** Échec du test WXCheck.
 
-The check helps to ensure that a binary does not have any pages that are mapped as writable and executable. This can occur if the binary has a writable and executable section or if the binary’s *SectionAlignment* is less than *PAGE\-SIZE*.
+Cette vérification permet de s’assurer qu’un binaire ne comporte pas de pages mappées en tant qu’éléments accessibles en écriture et exécutables. Cela peut se produire si le binaire a une section accessible en écriture et exécutable ou si la valeur de *SectionAlignment* du binaire est inférieure à *PAGE\-SIZE*.
 
-**What to do if your app fails this test**
+**Que faire si votre application échoue à ce test?**
 
-Make sure that the binary does not have a writeable or executable section and that the binary's *SectionAlignment* value is at least equal to its *PAGE\-SIZE*.
+Assurez-vous que le binaire n’a pas de section accessible en écriture et exécutable, et que la valeur de *SectionAlignment* du binaire est au moins égale à *PAGE\-SIZE*.
 
-**Remarks**
+**Remarques**
 
-This test is performed on all .exe files and on native, unmanaged DLLs.
+Ce test est effectué sur tous les fichiers .exe, ainsi que sur les DLL natives, non managées.
 
-An executable may have a writable and executable section if it has been built with Edit and Continue enabled (/ZI). Disabling Edit and Continue will cause the invalid section to not be present.
+Un exécutable peut avoir une section accessible en écriture et exécutable s’il est généré quand Modifier &amp; Continuer est activé (/ZI). Si Modifier &amp; Continuer est désactivé, la section non valide n’est pas présente.
 
-*PAGE\-SIZE* is the default *SectionAlignment* for executables.
+*PAGE\-SIZE* est la valeur de *SectionAlignment* par défaut pour les exécutables.
 
-### Private Code Signing
+### Signature de code privé
 
-Tests for the existence of private code signing binaries within the app package.
+Teste l’existence de fichiers binaires de signature de code privé dans le package de l’application.
 
-### Background
+### Contexte
 
-Private code signing files should be kept private as they may be used for malicious purposes in the event they are compromised.
+Les fichiers de signature de code privé doivent demeurer privés car ils peuvent être utilisés à des fins malveillantes s’ils sont compromis.
 
-### Test details
+### Détails du test
 
-Tests for files within the app package that have an extension of .pfx or.snk that would indicate that private signing keys were included.
+Teste si le package d’application contient des fichiers portant l’extension .pfx ou .snk qui indiquerait la présence de clés de signature privée.
 
-### Corrective actions
+### Actions correctives
 
-Remove any private code signing keys (e.g. .pfx and .snk files) from the package.
+Supprimez du package toute clé de signature de code privé (par exemple, les fichiers .pfx et .snk).
 
-## Supported API test
+## Test des API prises en charge
 
-Test the app for the use of any non-compliant APIs.
+Teste l’application afin de savoir si elle utilise des API non conformes.
 
-### Background
+### Contexte
 
-Apps must use the APIs for Windows Store apps (Windows Runtime or supported Win32 APIs) to be certified for the Windows Store. This test also identifies situations where a managed binary takes a dependency on a function outside of the approved profile.
+Les applications doivent utiliser les API pour applications du Windows Store (API Windows Runtime ou Win32 prises en charge) afin d’être certifiées pour le Windows Store. Ce test identifie également les cas où un fichier binaire managé devient dépendant d’une fonction en dehors du profil approuvé.
 
-### Test details
+### Détails du test
 
--   Verifies that each binary within the app package doesn't have a dependency on a Win32 API that is not supported for Windows Store app development by checking the import address table of the binary.
--   Verifies that each managed binary within the app package doesn't have a dependency on a function outside of the approved profile.
+-   S’assure que chaque fichier binaire dans le package d’application n’est pas dépendant d’une API Win32 non prise en charge pour le développement d’applications du Windows Store en vérifiant la table des adresses d’importation du fichier binaire.
+-   Vérifie que chaque fichier binaire managé dans le package d’application n’est pas dépendant d’une fonction en dehors du profil approuvé.
 
-### Corrective actions
+### Actions correctives
 
-Make sure that the app was compiled as a release build and not a debug build.
+Vérifiez que l’application a été compilée en tant que version de publication et non en tant que version de débogage.
 
-> **Note**  The debug build of an app will fail this test even if the app uses only [APIs for Windows Store apps](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx).
+> [Remarque**La version de débogage d’une application échouera à ce test même si l’application utilise uniquement des**API pour applications du Windows Store](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx).
 
-Review the error messages to identify the API the app uses that is not an [API for Windows Store apps](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx).
+Passez en revue les messages d’erreur pour identifier l’API utilisée par l’application qui n’est pas une [API pour applications du Windows Store](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx).
 
-> **Note**  C++ apps that are built in a debug configuration will fail this test even if the configuration only uses APIs from the Windows SDK for Windows Store apps. See, [Alternatives to Windows APIs in Windows Store apps](http://go.microsoft.com/fwlink/p/?LinkID=244022) for more info.
+> **Remarque** Les applicationsC++ générées dans une configuration de débogage échouent à ce test même si la configuration utilise uniquement des API du SDK Windows pour les applications du Windows Store. Pour plus d’informations, voir [Solutions de rechange aux API Windows dans les applications du Windows Store](http://go.microsoft.com/fwlink/p/?LinkID=244022).
 
-## Performance tests
+## Tests de performances
 
-The app must respond quickly to user interaction and system commands in order to present a fast and fluid user experience.
+L’application doit répondre rapidement à l’interaction utilisateur et aux commandes système pour présenter à l’utilisateur une expérience rapide et fluide.
 
-The characteristics of the computer on which the test is performed can influence the test results. The performance test thresholds for app certification are set such that low-power computers meet the customer’s expectation of a fast and fluid experience. To determine your app’s performance, we recommend that you test on a low-power computer, such as an Intel Atom processor-based computer with a screen resolution of 1366x768 (or higher) and a rotational hard drive (as opposed to a solid-state hard drive).
+Les caractéristiques de l’ordinateur sur lequel le test est exécuté peuvent influencer les résultats du test. Les seuils du test de performances pour la certification d’une application sont définis de telle sorte que les ordinateurs à faible consommation d’énergie répondent aux attentes du client en termes de rapidité et de fluidité. Pour déterminer les performances de votre application, nous vous recommandons d’effectuer le test sur un ordinateur à faible consommation d’énergie, tel qu’un ordinateur équipé d’un processeur Intel Atom, d’une résolution d’écran de 1366x768 (ou plus) et d’un disque dur rotatif (par opposition à un disque SSD).
 
-### Bytecode generation
+### Génération de bytecode
 
-As a performance optimization to accelerate JavaScript execution time, JavaScript files ending in the .js extension generate bytecode when the app is deployed. This significantly improves startup and ongoing execution times for JavaScript operations.
+Dans le cadre d’une optimisation des performances pour accélérer la durée d’exécution JavaScript, les fichiers JavaScript dont l’extension est .js génèrent du bytecode lors du déploiement de l’application. Cela améliore considérablement le temps de démarrage et d’exécution des opérations JavaScript.
 
-### Test Details
+### Détails du test
 
-Checks the app deployment to verify that all .js files have been converted to bytecode.
+Vérifie le déploiement de l’application pour s’assurer que tous les fichiers .js ont été convertis en bytecode.
 
-### Corrective Action
+### Action corrective
 
-If this test fails, consider the following when addressing the issue:
+Si ce test échoue, effectuez les actions suivantes pour résoudre le problème :
 
--   Verify that event logging is enabled.
--   Verify that all JavaScript files are syntactically valid.
--   Confirm that all previous versions of the app are uninstalled.
--   Exclude identified files from the app package.
+-   Vérifiez que la journalisation des événements est activée.
+-   Vérifiez que tous les fichiers JavaScript sont valides du point de vue syntaxique.
+-   Vérifiez que toutes les précédentes versions de l’application ont été désinstallées.
+-   Excluez les fichiers identifiés du package d’application.
 
-### Optimized binding references
+### Références de liaisons optimisées
 
-When using bindings, WinJS.Binding.optimizeBindingReferences should be set to true in order to optimize memory usage.
+Si vous utilisez des liaisons, WinJS.Binding.optimizeBindingReferences doit avoir la valeur True de manière à optimiser l’utilisation de la mémoire.
 
-### Test Details
+### Détails du test
 
-Verify the value of WinJS.Binding.optimizeBindingReferences.
+Vérifiez la valeur de WinJS.Binding.optimizeBindingReferences.
 
-### Corrective Action
+### Action corrective
 
-Set WinJS.Binding.optimizeBindingReferences to **true** in the app JavaScript.
+Affectez à WinJS.Binding.optimizeBindingReferences la valeur **true** dans le code JavaScript de l’application.
 
-## App manifest resources test
+## Test des ressources du manifeste d’application
 
-### App resources validation
+### Validation des ressources de l’application
 
-The app might not install if the strings or images declared in your app’s manifest are incorrect. If the app does install with these errors, your app’s logo or other images used by your app might not display correctly.
+L’application peut ne pas s’installer si les chaînes ou les images déclarées dans le manifeste de votre application sont incorrectes. Si l’application s’installe avec des erreurs, le logo ou d’autres images utilisées par votre application peuvent ne pas s’installer correctement.
 
-### Test Details
+### Détails du test
 
-Inspects the resources defined in the app manifest to make sure they are present and valid.
+Inspecte les ressources définies dans le manifeste de l’application afin de vérifier qu’elles sont présentes et valides.
 
-### Corrective Action
+### Action corrective
 
-Use the following table as guidance.
+Inspirez-vous du tableau suivant.
 
 <table>
-<tr><th>Error message</th><th>Comments</th></tr>
+<tr><th>Message d’erreur</th><th>Commentaires</th></tr>
 <tr><td>
-<p>The image {image name} defines both Scale and TargetSize qualifiers; you can define only one qualifier at a time.</p>
+<p>L’image {image name} définit à la fois les qualificateurs Scale et TargetSize ; vous ne pouvez définir qu’un seul qualificateur à la fois.</p>
 </td><td>
-<p>You can customize images for different resolutions.</p>
-<p>In the actual message, {image name} contains the name of the image with the error.</p>
-<p> Make sure that each image defines either Scale or TargetSize as the qualifier.</p>
+<p>Vous pouvez personnaliser les images pour différentes résolutions.</p>
+<p>Dans le message réel, {image name} représente le nom de l’image affectée par l’erreur.</p>
+<p> Assurez-vous que chaque image définit Scale ou TargetSize comme qualificateur.</p>
 </td></tr>
 <tr><td>
-<p>The image {image name} failed the size restrictions.</p>
+<p>L’image {image name} ne respecte pas les restrictions imposées pour la taille.</p>
 </td><td>
-<p>Ensure that all the app images adhere to the proper size restrictions.</p>
-<p>In the actual message, {image name} contains the name of the image with the error.</p>
+<p>Assurez-vous que toutes les images de l’application adhèrent aux restrictions définissant la taille appropriée.</p>
+<p>Dans le message réel, {image name} représente le nom de l’image affectée par l’erreur.</p>
 </td></tr>
 <tr><td>
-<p>The image {image name} is missing from the package.</p>
+<p>L’image {image name} ne se trouve pas dans le package.</p>
 </td><td>
-<p>A required image is missing.</p>
-<p>In the actual message, {image name} contains the name of the image that is missing.</p>
+<p>Une image requise est manquante.</p>
+<p>Dans le message réel, {image name} représente le nom de l’image manquante.</p>
 </td></tr>
 <tr><td>
-<p>The image {image name} is not a valid image file.</p>
+<p>L’image {image name} n’est pas un fichier image valide.</p>
 </td><td>
-<p>Ensure that all the app images adhere to the proper file format type restrictions.</p>
-<p>In the actual message, {image name} contains the name of the image that is not valid.</p>
+<p>Assurez-vous que toutes les images de l’application adhèrent aux restrictions définissant le type de format de fichier approprié.</p>
+<p>Dans le message réel, {image name} représente le nom de l’image non valide.</p>
 </td></tr>
 <tr><td>
-<p>The image "BadgeLogo" has an ABGR value {value} at position (x, y) that is not valid. The pixel must be white (##FFFFFF) or transparent (00######)</p>
+<p>L’image « BadgeLogo » a une valeur ABGR {value} à la position (x, y) qui n’est pas valide. Le pixel doit être blanc (##FFFFFF) ou transparent (00######).</p>
 </td><td>
-<p>The badge logo is an image that appears next to the badge notification to identify the app on the lock screen. This image must be monochromatic (it can contain only white and transparent pixels).</p>
-<p>In the actual message, {value} contains the color value in the image that is not valid.</p>
+<p>Le logo du badge représente une image qui apparaît à côté de la notification de badge afin d’identifier l’application sur l’écran de verrouillage. L’image doit être monochrome (elle ne peut contenir que des pixels blancs ou transparents).</p>
+<p>Dans le message réel, {value} représente la valeur de couleur qui n’est pas valide dans l’image.</p>
 </td></tr>
 <tr><td>
-<p>The image "BadgeLogo" has an ABGR value {value} at position (x, y) that is not valid for a high-contrast white image. The pixel must be (##2A2A2A) or darker, or transparent (00######).</p>
+<p>L’image «BadgeLogo» a une valeur ABGR «{value}» non valide pour une image blanche à contraste élevé à la position (x, y). Les pixels doivent être (##2A2A2A) ou plus sombres, ou transparents (00######).</p>
 </td><td>
-<p>The badge logo is an image that appears next to the badge notification to identify the app on the lock screen.   Because the badge logo  appears on a white background when in high-contrast white, it must be a dark version of the normal badge logo. In high-contrast white, the badge logo can only contain pixels that are darker than (##2A2A2A) or transparent.</p>
-<p>In the actual message, {value} contains the color value in the image that is not valid.</p>
+<p>Le logo du badge représente une image qui apparaît à côté de la notification de badge afin d’identifier l’application sur l’écran de verrouillage.   Étant donné que le logo du badge apparaît sur un arrière-plan blanc lors de l’utilisation d’un motif blanc à contraste élevé, il doit être une version sombre du logo de badge normal. Lors de l’utilisation d’un motif blanc à contraste élevé, le logo du badge ne peut contenir que des pixels plus sombres que (##2A2A2A) ou transparents.</p>
+<p>Dans le message réel, {value} représente la valeur de couleur qui n’est pas valide dans l’image.</p>
 </td></tr>
 <tr><td>
-<p>The image must define at least one variant without a TargetSize qualifier. It must define a Scale qualifier or leave Scale and TargetSize unspecified, which defaults to Scale-100.</p>
+<p>L’image doit définir au moins un type Variant sans qualificateur TargetSize. Elle doit définir un qualificateur Scale ou laisser Scale et TargetSize non spécifiés, ce qui donne la valeur par défaut Scale-100.</p>
 </td><td>
-<p>For more info, see <a href="https://msdn.microsoft.com/library/windows/apps/xaml/dn958435.aspx">Responsive design 101 for UWP apps</a> and <a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465241.aspx">Guidelines for app resources</a>.</p>
+<p>Pour plus d’informations, voir <a href="https://msdn.microsoft.com/library/windows/apps/xaml/dn958435.aspx">Conception réactive 101 pour les applications UWP</a> et <a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465241.aspx">Recommandations en matière de ressources d’application</a>.</p>
 </td></tr>
 <tr><td>
-<p>The package is missing a "resources.pri" file.</p>
+<p>Un fichier «resources.pri» manque dans le package.</p>
 </td><td>
-<p>If you have localizable content in your app manifest, make sure that your app's package includes a valid resources.pri file.</p>
+<p>Si le manifeste de votre application comporte du contenu localisable, veillez à ce que le package de votre application contienne un fichier resources.pri valide.</p>
 </td></tr>
 <tr><td>
-<p>The "resources.pri" file must contain a resource map with a name that matches the package name  {package full name}</p>
+<p>Le fichier «resources.pri» doit contenir un mappage des ressources avec un nom qui correspond au nom du package «{package full name}».</p>
 </td><td>
-<p>You can get this error if the manifest changed and  the name of the resource map in resources.pri no longer matches the package name in the manifest.</p>
-<p>In the actual message, {package full name} contains the package name that resources.pri must contain.</p>
-<p>To fix this, you need to rebuild resources.pri and the easiest way to do that is  by rebuilding the app's package.</p>
+<p>Vous pouvez obtenir cette erreur si le manifeste a changé et que le nom du mappage de ressources dans resources.pri ne correspond plus au nom du package dans le manifeste.</p>
+<p>Dans le message réel, {package full name} représente le nom du package que resources.pri doit contenir.</p>
+<p>Pour résoudre ce problème, vous devez régénérer resources.pri; la façon la plus facile de le faire consiste à régénérer le package de l’application.</p>
 </td></tr>
 <tr><td>
-<p>The "resources.pri" file must not have AutoMerge enabled.</p>
+<p>La fusion automatique ne doit pas être activée pour le fichier «resources.pri».</p>
 </td><td>
-<p>MakePRI.exe supports an option called <strong>AutoMerge</strong>. The default value of <strong>AutoMerge</strong> is <strong>off</strong>. When enabled, <strong>AutoMerge</strong> merges an app's  language pack resources into a single resources.pri at runtime. We don't recommend this for apps that you intend to distribute through  the Windows Store. The resources.pri of an app that is distributed through the  Windows Store must be in  the root of the app's package and contain all the language references that the app supports.</p>
+<p>MakePRI.exe prend en charge une option appelée <strong>AutoMerge</strong>. La valeur par défaut de <strong>AutoMerge</strong> est <strong>off</strong>. Lorsque l’option <strong>AutoMerge</strong> est activée, elle fusionne les ressources du module linguistique d’une application en un fichier resources.pri unique au moment de l’exécution. Ce paramétrage est déconseillé pour les applications que vous envisagez de distribuer par le biais du Windows Store. Le fichier resources.pri d’une application distribuée par le biais du Windows Store doit se trouver à la racine du package de l’application et contenir toutes les références linguistiques prises en charge par l’application.</p>
 </td></tr>
 <tr><td>
-<p>The string {string} failed the max length restriction of {number} characters.</p>
+<p>La chaîne «{string}» ne respecte pas la limite maximale de {number}caractères.</p>
 </td><td>
-<p>Refer to the <a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt148525.aspx">App package requirements</a>.</p>
-<p>In the actual message, {string} is replaced by the string with the error and {number} contains the maximum length.</p>
+<p>Consultez les <a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt148525.aspx">Exigences relatives aux packages d’applications</a>.</p>
+<p>Dans le message réel, {string} est remplacé par la chaîne affectée par l’erreur et {number} représente la longueur maximale.</p>
 </td></tr>
 <tr><td>
-<p>The string {string} must not have leading/trailing whitespace.</p>
+<p>La chaîne {string} ne doit pas comporter d’espace de début/fin.</p>
 </td><td>
-<p>The schema for the elements in the app manifest don't allow leading or trailing white space characters.</p>
-<p>In the actual message, {string} is replaced by the string with the error.</p>
-<p>Make sure that none of the localized values of the manifest fields in resources.pri have leading or trailing white space characters.</p>
+<p>Le schéma des éléments du manifeste de l’application n’autorise pas les espaces de début ou de fin.</p>
+<p>Dans le message réel, {string} est remplacé par la chaîne affectée par l’erreur.</p>
+<p>Assurez-vous qu’aucune des valeurs localisées des champs du manifeste dans resources.pri ne possède d’espaces de début ou de fin.</p>
 </td></tr>
 <tr><td>
-<p>The string must be non-empty (greater than zero in length)</p>
+<p>La chaîne ne doit pas être vide (sa longueur doit être supérieure à zéro).</p>
 </td><td>
-<p>For more info, see <a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt148525.aspx">App package requirements</a>.</p>
+<p>Pour plus d’informations, voir <a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt148525.aspx">Exigences relatives aux packages d’applications</a>.</p>
 </td></tr>
 <tr><td>
-<p>There is no default resource specified in the "resources.pri" file.</p>
+<p>Il n’y a aucune ressource par défaut spécifiée dans le fichier «resources.pri».</p>
 </td><td>
-<p>For more info, see <a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465241.aspx">Guidelines for app resources</a>.</p>
-<p>In the default build configuration,  Visual Studio only includes scale-200 image resources in the app package when generating bundles, putting other resources in the resource package. Make sure  you either include scale-200 image resources or configure your project to include the resources you have.</p>
+<p>Pour plus d’informations, voir <a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465241.aspx">Recommandations en matière de ressources de l’application</a>.</p>
+<p>Dans la configuration de build par défaut, Visual Studio inclut uniquement les ressources d’image avec qualificateur «Scale-200» dans le package d’application lors de la génération des offres groupées, et place les autres ressources dans le package de ressources. Prenez soin d’inclure les ressources d’image avec qualificateur «Scale-200» ou de configurer votre projet pour qu’il intègre les ressources dont vous disposez.</p>
 </td></tr>
 <tr><td>
-<p>There is no resource value specified in the "resources.pri" file.</p>
+<p>Aucune valeur de ressource n’est spécifiée dans le fichier «resources.pri».</p>
 </td><td>
-<p>Make sure that the app manifest has valid resources defined in resources.pri.</p>
+<p>Assurez-vous que des ressources valides sont définies dans resources.pri pour le manifeste de l’application.</p>
 </td></tr>
 <tr><td>
-<p>The image file {filename} must be smaller than 204800 bytes.\*\*</p>
+<p>La taille du fichier image {filename} doit être inférieure à 204800octets.**</p>
 </td><td>
-<p>Reduce the size of the indicated images.</p>
+<p>Réduisez la taille des images indiquées.</p>
 </td></tr>
 <tr><td>
-<p>The {filename} file must not contain a reverse map section.\*\*</p>
+<p>Le fichier «{filename}» ne doit pas contenir de section de correspondance inverse.**</p>
 </td><td>
-<p>While the reverse map is generated during Visual Studio 'F5 debugging' when calling into makepri.exe, it can be removed by running makepri.exe without the /m parameter when generating a pri file.</p>
+<p>Bien que la correspondance inverse soit générée pendant un débogage F5 Visual Studio lors d’un appel de makepri.exe, elle peut être supprimée en exécutant makepri.exe sans le paramètre /m lors de la génération d’un fichier .pri.</p>
 </td></tr>
 <tr><td colspan="2">
-<p>\*\* Indicates that a test was added in the Windows App Certification Kit 3.3 for Windows 8.1 and is only applicable when using the that version of the kit or later.</p>
+<p>\*\* Indique qu’un test a été ajouté au Kit de certification des applications Windows version3.3 pour Windows8.1 et qu’il n’est applicable que lors de l’utilisation de cette version du Kit ou d’une version ultérieure.</p>
 </td></tr>
 </table>
 
@@ -475,202 +475,202 @@ Use the following table as guidance.
 
  
 
-### Branding validation
+### Validation de la personnalisation
 
-Windows Store apps are expected to be complete and fully functional. Apps using the default images (from templates or SDK samples) present a poor user experience and cannot be easily identified in the store catalog.
+Les applications du Windows Store doivent être terminées et pleinement fonctionnelles. Les applications qui utilisent les images par défaut (provenant des exemples ou exemples SDK) offrent une expérience utilisateur médiocre et sont difficilement identifiables dans le catalogue du Windows Store.
 
-### Test Details
+### Détails du test
 
-The test will validate if the images used by the app are not default images either from SDK samples or from Visual Studio.
+Le test réussit si les images utilisées par l’application ne sont pas des images par défaut provenant des exemples du Kit de développement logiciel (SDK) ou de Visual Studio.
 
-### Corrective actions
+### Actions correctives
 
-Replace default images with something more distinct and representative of your app.
+Remplacez les images par défaut par quelque chose de plus singulier et de plus représentatif de votre application.
 
-## Debug configuration test
+## Test de configuration du débogage
 
-Test the app to make sure it is not a debug build.
+Teste l’application afin de vérifier qu’il ne s’agit pas d’une version de débogage.
 
-### Background
+### Contexte
 
-To be certified for the Windows Store, apps must not be compiled for debug and they must not reference debug versions of an executable file. In addition, you must build your code as optimized for your app to pass this test.
+Pour pouvoir être certifiées pour le Windows Store, les applications ne doivent pas être compilées pour le débogage et ne doivent pas référencer les versions de débogage d’un fichier exécutable. En outre, vous devez générer votre code de manière optimisée pour que votre application réussisse ce test.
 
-### Test details
+### Détails du test
 
-Test the app to make sure it is not a debug build and is not linked to any debug frameworks.
+Testez l’application de manière à vérifier qu’il ne s’agit pas d’une version de débogage et qu’elle n’est pas liée à des infrastructures de débogage.
 
-### Corrective actions
+### Actions correctives
 
--   Build the app as a release build before you submit it to the Windows Store.
--   Make sure that you have the correct version of .NET framework installed.
--   Make sure the app isn't linking to debug versions of a framework and that it is building with a release version. If this app contains .NET components, make sure that you have installed the correct version of the .NET framework.
+-   Générez l’application en tant que version de débogage avant de la soumettre au Windows Store.
+-   Vérifiez que la version correcte du .NET Framework est installée.
+-   Assurez-vous que l’application ne crée pas de liens vers des versions de débogage d’une infrastructure et qu’elle est créée avec une version commerciale. Si l’application contient des composants .NET, assurez-vous que vous avez installé la version correcte du .NET Framework.
 
-## File encoding test
+## Test d’encodage des fichiers
 
-### UTF-8 file encoding
+### Codage de fichier UTF-8
 
-### Background
+### Contexte
 
-HTML, CSS, and JavaScript files must be encoded in UTF-8 form with a corresponding byte-order mark (BOM) to benefit from bytecode caching and avoid certain runtime error conditions.
+Les fichiers HTML, CSS et JavaScript doivent être encodés au format UTF-8 avec une marque d’ordre d’octet (BOM) pour bénéficier de la mise en cache du bytecode et éviter certaines conditions d’erreur d’exécution.
 
-### Test details
+### Détails du test
 
-Test the contents of app packages to make sure that they use the correct file encoding.
+Teste le contenu des packages d’application pour vérifier que l’encodage de fichiers correct est utilisé.
 
-### Corrective Action
+### Action corrective
 
-Open the affected file and select **Save As** from the **File** menu in Visual Studio. Select the drop-down control next to the **Save** button and select **Save with Encoding**. From the **Advanced** save options dialog, choose the Unicode (UTF-8 with signature) option and click **OK**.
+Ouvrez le fichier affecté et sélectionnez **Enregistrer sous** dans le menu **Fichier** de Visual Studio. Sélectionnez le contrôle de liste déroulante en regard du bouton **Enregistrer**, puis sélectionnez **Enregistrer avec codage**. Dans la boîte de dialogue **Options d’enregistrement avancées**, choisissez l’option Unicode (UTF-8 avec signature) et cliquez sur **OK**.
 
-## Direct3D feature level test
+## Test du niveau de fonctionnalité Direct3D
 
-### Direct3D feature level support
+### Prise en charge du niveau de fonctionnalité Direct3D
 
-Tests Microsoft Direct3D apps to ensure that they won't crash on devices with older graphics hardware.
+Teste les applications Microsoft Direct3D pour s’assurer qu’elles ne se bloquent pas avec les matériels vidéo plus anciens.
 
-### Background
+### Contexte
 
-Windows Store requires all applications using Direct3D to render properly or fail gracefully on feature level 9\-1 graphics cards.
+Windows Store nécessite que toutes les applications qui utilisent Direct3D assurent un rendu correct ou échouent de manière appropriée avec les cartes graphiques de niveau de fonctionnalité 9\-1.
 
-Because users can change the graphics hardware in their device after the app is installed, if you choose a minimum feature level higher than 9\-1, your app must detect at launch whether or not the current hardware meets the minimum requirements. If the minimum requirements are not met, the app must display a message to the user detailing the Direct3D requirements. Also, if an app is downloaded on a device with which it is not compatible, it should detect that at launch and display a message to the customer detailing the requirements.
+Dans la mesure où les utilisateurs peuvent changer de matériel graphique sur leur appareil après l’installation de l’application, si vous choisissez un niveau de fonctionnalité minimal supérieur au niveau 9\-1, votre application doit détecter au démarrage si le matériel actuel répond ou non aux critères minimaux. Dans le cas contraire, l’application doit afficher un message qui détaille les critères exigés pour Direct3D. Par ailleurs, si une application est téléchargée sur un appareil avec lequel elle n’est pas compatible, elle doit détecter cette incompatibilité au démarrage et afficher un message expliquant au client la configuration requise.
 
-### Test Details
+### Détails du test
 
-The test will validate if the apps render accurately on feature level 9\-1.
+Le test est validé si les applications assurent un rendu précis avec le niveau de fonctionnalité 9\-1.
 
-### Corrective Action
+### Action corrective
 
-Ensure that your app renders correctly on Direct3D feature level 9\-1, even if you expect it to run at a higher feature level. See [Developing for different Direct3D feature levels](http://go.microsoft.com/fwlink/p/?LinkID=253575) for more info.
+Assurez-vous que votre application s’affiche correctement avec le niveau de fonctionnalité Direct3D 9\-1, même si vous vous attendez à ce qu’elle s’exécute à un niveau de fonctionnalité supérieur. Pour plus d’informations, voir [Développement pour différents niveaux de fonctionnalités Direct3D](http://go.microsoft.com/fwlink/p/?LinkID=253575).
 
-### Direct3D Trim after suspend
+### Découpage Direct3D après suspension
 
-> **Note**  This test only applies to Windows Store apps developed for Windows 8.1 and later.
+> **Remarque** Ce test s’applique uniquement aux applications du Windows Store développées pour Windows8.1 et versions ultérieures.
 
-### Background
+### Contexte
 
-If the app does not call [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) on its Direct3D device, the app will not release memory allocated for its earlier 3D work. This increases the risk of apps being terminated due to system memory pressure.
+Si l’application n’appelle pas [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) sur son périphérique Direct3D, elle ne libère pas la mémoire allouée pour sa précédente tâche3D. Cela augmente le risque que les applications soient arrêtées en raison de la sollicitation de la mémoire système.
 
-### Test Details
+### Détails du test
 
-Checks apps for compliance with d3d requirements and ensures that apps are calling a new [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) API upon their Suspend callback.
+Vérifie la conformité des applications avec les spécifications D3D et s’assure que les applications appellent une nouvelle API [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) lors de leur rappel de suspension.
 
-### Corrective Action
+### Action corrective
 
-The app should call the [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) API on its [**IDXGIDevice3**](https://msdn.microsoft.com/library/windows/desktop/Dn280345) interface anytime it is about to be suspended.
+L’application doit appeler l’API [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) sur son interface [**IDXGIDevice3**](https://msdn.microsoft.com/library/windows/desktop/Dn280345) chaque fois qu’elle est sur le point d’être suspendue.
 
-## App Capabilities test
+## Test des fonctionnalités de l’application
 
-### Special use capabilities
+### Fonctionnalités à usage spécial
 
-### Background
+### Contexte
 
-Special use capabilities are intended for very specific scenarios. Only company accounts are allowed to use these capabilities.
+Les fonctionnalités à usage spécial sont destinées à des scénarios très spécifiques. Seuls les comptes d’entreprise sont autorisés à utiliser ces fonctionnalités.
 
-### Test Details
+### Détails du test
 
-Validate if the app is declaring any of the below capabilities:
+Le test est validé si l’application déclare une ou plusieurs des fonctionnalités suivantes :
 
 -   EnterpriseAuthentication
 -   SharedUserCertificates
 -   DocumentsLibrary
 
-If any of these capabilities are declared, the test will display a warning to the user.
+Si au moins une de ces fonctionnalités est déclarée, le test affiche un message d’avertissement pour l’utilisateur.
 
-### Corrective Actions
+### Actions correctives
 
-Consider removing the special use capability if your app doesn't require it. Additionally, use of these capabilities are subject to additional on-boarding policy review.
+Envisagez de supprimer la fonctionnalité à usage spécial si votre application n’en a pas besoin. De plus, l’utilisation de ces fonctionnalités est sujette à un examen supplémentaire de la stratégie d’accueil.
 <!--TODO: after migrating dev-packaging, link to [if your app doesn't require it](dev-packaging.app-capability-declarations#special-and-restricted-capabilities)-->
 
-## Windows Runtime metadata validation
+## Validation des métadonnées Windows Runtime
 
-### Background
+### Arrière-plan
 
-Ensures that the components that ship in an app conform to the UWP type system.
+S’assure que les composants fournis avec une application sont conformes au système de type UWP.
 
-### Test Details
+### Détails du test
 
-Verifies that the **.winmd** files in the package conform to UWP rules.
+Vérifie que les fichiers **.winmd** du package sont conformes aux règles UWP.
 
-### Corrective Actions
+### Actions correctives
 
--   **ExclusiveTo attribute test:** Ensure that UWP classes don't implement interfaces that are marked as ExclusiveTo another class.
--   **Type location test:** Ensure that the metadata for all UWP types is located in the winmd file that has the longest namespace-matching name in the app package.
--   **Type name case-sensitivity test:** Ensure that all UWP types have unique, case-insensitive names within your app package. Also ensure that no UWP type name is also used as a namespace name within your app package.
--   **Type name correctness test:** Ensure there are no UWP types in the global namespace or in the Windows top-level namespace.
--   **General metadata correctness test:** Ensure that the compiler you are using to generate your types is up to date with the UWP specifications.
--   **Properties test:** ensure that all properties on a UWP class have a get method (set methods are optional). Ensure that the type of the get method return value matches the type of the set method input parameter, for all properties on UWP types.
+-   **Test de l’attribut ExclusiveTo:** s’assure que les classes UWP n’implémentent pas d’interfaces marquées comme étant des interfaces exclusives d’une autre classe.
+-   **Test d’emplacement du type:** s’assure que les métadonnées de tous les types UWP se trouvent dans le fichier winmd dont le nom correspondant à l’espace de noms est le plus long du package d’application.
+-   **Test de respect de la casse du nom du type:** s’assure que tous les types UWP de votre package d’application ont un nom unique qui ne respecte pas la casse. S’assure également qu’aucun nom de type UWP n’est utilisé comme nom d’espace de noms dans votre package d’application.
+-   **Test d’exactitude du nom du type:** s’assure qu’aucun type UWP ne se trouve dans l’espace de noms global ni dans l’espace de noms Windows de niveau supérieur.
+-   **Test d’exactitude des métadonnées générales:** s’assure que le compilateur que vous utilisez pour générer vos types est conforme aux dernières spécifications UWP.
+-   **Test des propriétés:** s’assure que toutes les propriétés d’une classe UWP disposent d’une méthode Get (les méthodes Set sont facultatives). S’assure que le type de la valeur retournée par la méthode Get correspond au type du paramètre d’entrée de la méthode Set pour toutes les propriétés des types UWP.
 
-## Package Sanity tests
+## Tests de validité des packages
 
-### Platform appropriate files test
+### Test des fichiers appropriés à la plateforme
 
-Apps that install mixed binaries may crash or not run correctly depending upon the user’s processor architecture.
+Les applications qui installent des fichiers mixtes binaires peuvent se bloquer ou ne pas s’exécuter correctement selon l’architecture du processeur de l’utilisateur.
 
-### Background
+### Contexte
 
-This test validates the binaries in an app package for architecture conflicts. An app package should not include binaries that can't be used on the processor architecture specified in the manifest. Including unsupported binaries can lead to your app crashing or an unnecessary increase in the app package size.
+Ce test valide les conflits d’architecture sur les fichiers binaires stockés dans un package d’application. Un package d’application ne doit pas inclure des fichiers binaires qui ne peuvent pas être utilisés sur l’architecture de processeur spécifiée dans le manifeste. Inclure des fichiers binaires non pris encharge peut entraîner le blocage de votre application ou une augmentation inutile de la taille de son package.
 
-### Test Details
+### Détails du test
 
-Validates that each file's "bitness" in the PE header is appropriate when cross-referenced with the app package processor architecture declaration
+S’assure que le nombre de bits figurant dans l’en-tête PE de chaque fichier est approprié en cas de référence croisée avec la déclaration de l’architecture de processeur du package d’application.
 
-### Corrective Action
+### Action corrective
 
-Follow these guidelines to ensure that your app package only contains files supported by the architecture specified in the app manifest:
+Suivez les recommandations suivantes pour vous assurer que votre package d’application contient uniquement des fichiers pris en charge par l’architecture spécifiée dans le manifeste d’application:
 
--   If the Target Processor Architecture for your app is Neutral processor Type, the app package cannot contain x86, x64, or ARM binary or image type files.
+-   Si l’architecture du processeur cible de votre application a un type de processeur Neutre, le package d’application ne peut pas contenir des fichiers binairesx86, x64 ou ARM, ni de fichiers de types d’images.
 
--   If the Target Processor Architecture for your app is x86 processor type, the app package must only contain x86 binary or image type files. If the package contains x64 or ARM binary or image types, it will fail the test.
+-   Si l’architecture du processeur cible de votre application a un type de processeurx86, le package d’application doit uniquement contenir des fichiers binairesx86 ou des fichiers de types d’images. Si le package contient des fichiers binairesx64 ou ARM, ou des fichiers de types d’images, il échouera au test.
 
--   If the Target Processor Architecture for your app is x64 processor type, the app package must contain x64 binary or image type files. Note that in this case the package can also include x86 files, but the primary app experience should utilize the x64 binary.
+-   Si l’architecture du processeur cible de votre application a un type de processeurx64, le package d’application doit contenir des fichiers binairesx64 ou des fichiers de types d’images. Notez que, dans ce cas, le package peut également inclure des fichiersx86, mais l’expérience d’application principale doit utiliser le fichier binairex64.
 
-    However, if the package contains ARM binary or image type files, or only contains x86 binaries or image type files, it will fail the test.
+    Toutefois, si le package contient des fichiers binairesARM ou des fichiers de types d’images, ou s’il contient uniquement des fichiers binairesx86 ou des fichiers de types d’images, il échouera au test.
 
--   If the Target Processor Architecture for your app is ARM processor type, the app package must only contain ARM binary or image type files. If the package contains x64 or x86 binary or image type files, it will fail the test.
+-   Si l’architecture du processeur cible de votre application a un type de processeurARM, le package d’application doit uniquement contenir des fichiers binairesARM ou des fichiers de types d’images. Si le package contient des fichiers binairesx64 oux86, ou des fichiers de types d’images, il échouera au test.
 
-### Supported Directory Structure test
+### Test de la structure de répertoires prise en charge
 
-Validates that applications are not creating subdirectories as part of installation that are longer than MAX\-PATH.
+S’assure que les applications ne créent pas de sous-répertoires plus longs que MAX\-PATH dans le cadre de l’installation.
 
-### Background
+### Arrière-plan
 
-OS components (including Trident, WWAHost, etc.) are internally limited to MAX\-PATH for file system paths and will not work correctly for longer paths.
+Les composants du système d’exploitation (notamment Trident, WWAHost, etc.) sont limités en interne à MAX\-PATH pour les chemins d’accès au système de fichiers et ne fonctionnent pas correctement pour les chemins plus longs.
 
-### Test Details
+### Détails du test
 
-Verifies that no path within the app install directory exceeds MAX\-PATH.
+Vérifie qu’aucun chemin d’accès dans le répertoire d’installation de l’application ne dépasse MAX\-PATH.
 
-### Corrective Action
+### Action corrective
 
-Use a shorter directory structure, and or file name.
+Utilisez une structure de répertoires et/ou un nom de fichier plus court.
 
-## Resource Usage test
+## Test d’utilisation des ressources
 
-### WinJS Background Task test
+### Test de la tâche en arrière-plan WinJS
 
-WinJS background task test ensures that JavaScript apps have the proper close statements so apps don’t consume battery.
+Le test de la tâche en arrière-plan WinJS s’assure que les applications JavaScript comportent les instructions close adéquates afin que l’application ne consomme pas inutilement la batterie.
 
-### Background
+### Arrière-plan
 
-Apps that have JavaScript background tasks need to call Close() as the last statement in their background task. Apps that do not do this could keep the system from returning to connected standby mode and result in draining the battery.
+Les applications comportant des tâches en arrière-plan JavaScript doivent appeler Close() en dernière instruction dans leur tâche en arrière-plan. Les applications qui ne respectent pas cette règle risquent d’empêcher le système de retourner au mode de veille connectée et entraîner le déchargement de la batterie.
 
-### Test Details
+### Détails du test
 
-If the app does not have a background task file specified in the manifest, the test will pass. Otherwise the test will parse the JavaScript background task file that is specified in the app package, and look for a Close() statement. If found, the test will pass; otherwise the test will fail.
+Si aucun fichier de tâche en arrière-plan n’est spécifié dans le manifeste de l’application, le test réussit. Dans le cas contraire, le test analyse le fichier de tâche en arrière-plan JavaScript qui est spécifié dans le package d’application et recherche une instruction Close(). S’il trouve l’instruction, le test réussit, sinon le test échoue.
 
-### Corrective Action
+### Action corrective
 
-Update the background JavaScript code to call Close() correctly.
+Mettez à jour le code JavaScript en arrière-plan pour appeler Close() correctement.
 
-> **Note**  This article is for Windows 10 developers writing UWP apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
-
- 
+> **Remarque** Cet article s’adresse aux développeurs de Windows10 qui écrivent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows8.x ou Windows Phone8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
  
 
+ 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

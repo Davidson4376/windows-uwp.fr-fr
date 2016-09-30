@@ -1,36 +1,36 @@
 ---
 author: DBirtolo
 ms.assetid: 95481C7E-E905-4477-955B-90D292634E2E
-title: Printing and scanning
-description: This section describes how to print and scan from your Universal Windows app.
+title: "Impression et de numérisation"
+description: "Cette section décrit comment imprimer et numériser à partir de votre application Windows universelle."
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 1e30bfb4f80d955d28799e6a6d5c22b82379a8fc
+ms.openlocfilehash: 81a96c4c519a112551cab83425caf782b13ea9be
 
 ---
-# Printing and scanning
+# Impression et numérisation
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-This section describes how to print and scan from your Universal Windows app.
+Cette section décrit comment imprimer et numériser à partir de votre application Windows universelle.
 
-| Topic | Description | 
+| Rubrique | Description | 
 |-------|-------------|
-| [Epson ESC/POS with formatting](epson-esc-pos-with-formatting.md) | Learn how to use the ESC/POS command language to format text, such as bold and double size characters, for your Point of Service printer. |
-| [Print from your app](print-from-your-app.md) | Learn how to print documents from a Universal Windows app. This topic also shows how to print specific pages. |
-| [Customize the print preview UI](customize-the-print-preview-ui.md) | This section describes how to customize the print options and settings in the print preview UI. |
-| [Scan from your app](scan-from-your-app.md) | Learn here how to scan content from your app by using a flatbed, feeder, or auto-configured scan source.|
+| [Epson ESC/POS avec mise en forme](epson-esc-pos-with-formatting.md) | Découvrez comment utiliser le langage de commandes ESC/POS pour mettre en forme le texte, par exemple pour le mettre en gras ou pour doubler la taille des caractères, pour l’imprimante de votre Point de service. |
+| [Imprimer à partir de votre application](print-from-your-app.md) | Découvrez comment imprimer des documents à partir d’une application Windows universelle. Cette rubrique montre également comment imprimer des pages spécifiques. |
+| [Personnaliser l’interface utilisateur d’aperçu avant impression](customize-the-print-preview-ui.md) | Cette section décrit comment personnaliser les options d’impression et les paramètres dans l’interface utilisateur d’aperçu avant impression. |
+| [Numériser à partir de votre application](scan-from-your-app.md) | Découvrez ici comment numériser du contenu à partir de votre application à l’aide d’un scanneur à plat, à chargeur ou configuré automatiquement.|
 
-## Related topics
+## Rubriques connexes
 
-* [Design guidelines for printing](https://msdn.microsoft.com/library/windows/apps/Hh868178)
-* [//Build 2015 video: Developing apps that print in Windows 10](https://channel9.msdn.com/Events/Build/2015/2-94)
-* [UWP print sample](http://go.microsoft.com/fwlink/p/?LinkId=619984)
+* [Instructions de conception concernant l’impression](https://msdn.microsoft.com/library/windows/apps/Hh868178)
+* [//Vidéo de la build 2015 : développement d’applications qui impriment dans Windows 10](https://channel9.msdn.com/Events/Build/2015/2-94)
+* [Exemple d’impression UWP](http://go.microsoft.com/fwlink/p/?LinkId=619984)
  
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

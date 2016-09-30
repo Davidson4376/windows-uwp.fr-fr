@@ -1,34 +1,34 @@
 ---
 author: msatranjr
-title: Custom events and event accessors in Windows Runtime Components
-description: .NET Framework support for Windows Runtime Components makes it easy to declare events components by hiding the differences between the Universal Windows Platform (UWP) event pattern and the .NET Framework event pattern.
+title: "Événements et accesseurs d’événement personnalisés dans les composants Windows Runtime"
+description: "La prise en charge de .NET Framework pour les composants Windows Runtime facilite la déclaration de composants d’événements, car les différences entre le modèle d’événement de la plateforme UWP et le modèle d’événement .NET Framework sont masquées."
 ms.assetid: 6A66D80A-5481-47F8-9499-42AC8FDA0EB4
 translationtype: Human Translation
 ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: c1beff6cbfefdfd3c11c9b16e18519c02c201930
+ms.openlocfilehash: 1308989c8d1c6959560458dd4d87119b4bfa74b0
 
 ---
 
-# Custom events and event accessors in Windows Runtime Components
+# Événements et accesseurs d’événement personnalisés dans les composants Windows Runtime
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-.NET Framework support for Windows Runtime Components makes it easy to declare events components by hiding the differences between the Universal Windows Platform (UWP) event pattern and the .NET Framework event pattern. However, when you declare custom event accessors in a Windows Runtime Component, you must follow the pattern used in the UWP.
+La prise en charge de .NET Framework pour les composants Windows Runtime facilite la déclaration de composants d’événements, car les différences entre le modèle d’événement de la plateforme Windows universelle (UWP) et le modèle d’événement .NET Framework sont masquées. Toutefois, lorsque vous déclarez des accesseurs d’événement personnalisés dans un composant Windows Runtime, vous devez suivre le modèle utilisé dans UWP.
 
-## Registering events
+## Inscription d’événements
 
 
-When you register to handle an event in the UWP, the add accessor returns a token. To unregister, you pass this token to the remove accessor. This means that the add and remove accessors for UWP events have different signatures from the accessors you're used to.
+Lorsque vous effectuez une inscription pour gérer un événement dans UWP, l’accesseur add retourne un jeton. Pour annuler l’inscription, vous devez transmettre ce jeton à l’accesseur remove. Cela signifie que les accesseurs add et remove pour les événements UWP ont des signatures différentes des accesseurs auxquels vous êtes habitué.
 
-Fortunately, the Visual Basic and C# compilers simplify this process: When you declare an event with custom accessors in a Windows Runtime Component, the compilers automatically use the UWP pattern. For example, you get a compiler error if your add accessor doesn't return a token. The .NET Framework provides two types to support the implementation:
+Heureusement, les compilateurs Visual Basic et C# simplifient ce processus: lorsque vous déclarez un événement avec des accesseurs personnalisés dans un composant Windows Runtime, les compilateurs utilisent automatiquement le modèle UWP. Par exemple, vous obtenez une erreur de compilation si votre accesseur add ne renvoie pas de jeton. Deux types sont proposés par .NET Framework pour prendre en charge l’implémentation :
 
--   The [EventRegistrationToken](https://msdn.microsoft.com/library/windows/apps/windows.foundation.eventregistrationtoken.aspx) structure represents the token.
--   The [EventRegistrationTokenTable&lt;T&gt;](https://msdn.microsoft.com/library/hh138412.aspx) class creates tokens and maintains a mapping between tokens and event handlers. The generic type argument is the event argument type. You create an instance of this class for each event, the first time an event handler is registered for that event.
+-   La structure [EventRegistrationToken](https://msdn.microsoft.com/library/windows/apps/windows.foundation.eventregistrationtoken.aspx) représente le jeton.
+-   La classe [EventRegistrationTokenTable&lt;T&gt;](https://msdn.microsoft.com/library/hh138412.aspx) crée les jetons et maintient un mappage entre les jetons et les gestionnaires d’événements. L’argument de type générique est le type d’argument d’événement. Vous devez créer une instance de cette classe pour chaque événement la première fois qu’un gestionnaire d’événements est inscrit pour l’événement en question.
 
-The following code for the NumberChanged event shows the basic pattern for UWP events. In this example, the constructor for the event argument object, NumberChangedEventArgs, takes a single integer parameter that represents the changed numeric value.
+Le code suivant pour l’événement NumberChanged illustre le modèle de base pour les événements UWP. Dans cet exemple, le constructeur de l’objet d’argument d’événement, NumberChangedEventArgs, prend un seul paramètre entier représentant la valeur numérique modifiée.
 
-> **Note**  This is the same pattern the compilers use for ordinary events that you declare in a Windows Runtime Component.
+> **Remarque** Le même modèle est utilisé par les compilateurs pour les événements ordinaires que vous déclarez dans un composant Windows Runtime.
 
  
 > [!div class="tabbedCodeSnippets"]
@@ -94,39 +94,39 @@ The following code for the NumberChanged event shows the basic pattern for UWP e
 > End Event
 > ```
 
-The static (Shared in Visual Basic) GetOrCreateEventRegistrationTokenTable method creates the event’s instance of the EventRegistrationTokenTable&lt;T&gt; object lazily. Pass the class-level field that will hold the token table instance to this method. If the field is empty, the method creates the table, stores a reference to the table in the field, and returns a reference to the table. If the field already contains a token table reference, the method just returns that reference.
+La méthode statique (partagée en Visual Basic) GetOrCreateEventRegistrationTokenTable crée tardivement l’instance d’événement de l’objet EventRegistrationTokenTable&lt;T&gt;. Transmettez le champ de niveau classe qui contiendra l’instance de table de jeton à cette méthode. Si le champ est vide, la méthode crée la table, stocke une référence vers la table dans le champ et retourne une référence à la table. Si le champ contient déjà une référence de table de jeton, la méthode retourne simplement cette référence.
 
-> **Important**  To ensure thread safety, the field that holds the event’s instance of EventRegistrationTokenTable&lt;T&gt; must be a class-level field. If it is a class-level field, the GetOrCreateEventRegistrationTokenTable method ensures that when multiple threads try to create the token table, all threads get the same instance of the table. For a given event, all calls to the GetOrCreateEventRegistrationTokenTable method must use the same class-level field.
+> **Important** Pour garantir la sécurité des threads, le champ qui contient l’instance EventRegistrationTokenTable&lt;T&gt; de l’événement doit être un champ de niveau classe. S’il s’agit d’un champ de niveau classe, la méthode GetOrCreateEventRegistrationTokenTable garantit que lorsque plusieurs threads tentent de créer la table de jeton, ils obtiennent tous la même instance de la table. Pour un événement donné, tous les appels à la méthode GetOrCreateEventRegistrationTokenTable doivent utiliser le même champ de niveau classe.
 
-Calling the GetOrCreateEventRegistrationTokenTable method in the remove accessor and in the [RaiseEvent](https://msdn.microsoft.com/library/fwd3bwed.aspx) method (the OnRaiseEvent method in C#) ensures that no exceptions occur if these methods are called before any event handler delegates have been added.
+Le fait d’appeler la méthode GetOrCreateEventRegistrationTokenTable dans l’accesseur remove et dans la méthode [RaiseEvent](https://msdn.microsoft.com/library/fwd3bwed.aspx) (méthode OnRaiseEvent en C#) garantit qu’aucune exception ne se produit si ces méthodes sont appelées avant que les délégués de gestionnaire d’événements n’aient été ajoutés.
 
-The other members of the EventRegistrationTokenTable&lt;T&gt; class that are used in the UWP event pattern include the following:
+Les autres membres de la classe EventRegistrationTokenTable&lt;T&gt; utilisés dans le modèle d’événement UWP incluent les éléments suivants :
 
--   The [AddEventHandler](https://msdn.microsoft.com/library/hh138458.aspx) method generates a token for the event handler delegate, stores the delegate in the table, adds it to the invocation list, and returns the token.
--   The [RemoveEventHandler(EventRegistrationToken)](https://msdn.microsoft.com/library/hh138425.aspx) method overload removes the delegate from the table and from the invocation list.
+-   La méthode [AddEventHandler](https://msdn.microsoft.com/library/hh138458.aspx) génère un jeton pour le délégué de gestionnaire d’événements, stocke le délégué dans la table, l’ajoute à la liste d’appel, puis retourne le jeton.
+-   La surcharge de méthode [RemoveEventHandler(EventRegistrationToken)](https://msdn.microsoft.com/library/hh138425.aspx) supprime le délégué de la table et de la liste d’appel.
 
-    >**Note**  The AddEventHandler and RemoveEventHandler(EventRegistrationToken) methods lock the table to help ensure thread safety.
+    >**Remarque** Les méthodes AddEventHandler et RemoveEventHandler(EventRegistrationToken) verrouillent la table afin de garantir la sécurité des threads.
 
--   The [InvocationList](https://msdn.microsoft.com/library/hh138465.aspx) property returns a delegate that includes all the event handlers that are currently registered to handle the event. Use this delegate to raise the event, or use the methods of the Delegate class to invoke the handlers individually.
+-   La propriété [InvocationList](https://msdn.microsoft.com/library/hh138465.aspx) retourne un délégué qui inclut tous les gestionnaires d’événements actuellement inscrits pour gérer l’événement. Utilisez ce délégué pour déclencher l’événement ou utilisez les méthodes de la classe Delegate pour appeler les gestionnaires individuellement.
 
-    >**Note**  We recommend that you follow the pattern shown in the example provided earlier in this article, and copy the delegate to a temporary variable before invoking it. This avoids a race condition in which one thread removes the last handler, reducing the delegate to null just before another thread tries to invoke the delegate. Delegates are immutable, so the copy is still valid.
+    >**Remarque** Nous vous recommandons de suivre le modèle indiqué dans l’exemple fourni précédemment dans cet article et de copier le délégué dans une variable temporaire avant de l’appeler. Cela permet d’éviter une condition de concurrence dans laquelle le thread supprime le dernier gestionnaire, réduisant ainsi le délégué à la valeur null juste avant qu’un autre thread tente d’appeler le délégué. Les délégués étant immuables, la copie reste valide.
 
-Place your own code in the accessors as appropriate. If thread safety is an issue, you must provide your own locking for your code.
+Placez votre propre code dans les accesseurs si nécessaire. Si la sécurité des threads pose problème, vous devez fournir votre propre verrouillage pour votre code.
 
-C# users: When you write custom event accessors in the UWP event pattern, the compiler doesn't provide the usual syntactic shortcuts. It generates errors if you use the name of the event in your code.
+Utilisateurs de C#: lorsque vous écrivez des accesseurs d’événement personnalisés dans le modèle d’événement UWP, le compilateur ne fournit pas les raccourcis de syntaxe habituels. Il génère des erreurs si vous utilisez le nom de l’événement dans votre code.
 
-Visual Basic users: In the .NET Framework, an event is just a multicast delegate that represents all the registered event handlers. Raising the event just means invoking the delegate. Visual Basic syntax generally hides the interactions with the delegate, and the compiler copies the delegate before invoking it, as described in the note about thread safety. When you create a custom event in a Windows Runtime Component, you have to deal with the delegate directly. This also means that you can, for example, use the [MulticastDelegate.GetInvocationList](https://msdn.microsoft.com/library/system.multicastdelegate.getinvocationlist.aspx) method to get an array that contains a separate delegate for each event handler, if you want to invoke the handlers separately.
+Utilisateurs de Visual Basic : dans .NET Framework, un événement est simplement un délégué multicast qui représente tous les gestionnaires d’événements inscrits. Le fait de déclencher l’événement signifie simplement appeler le délégué. La syntaxe Visual Basic masque généralement les interactions avec le délégué et le compilateur copie le délégué avant de l’appeler, comme indiqué dans la remarque sur la sécurité des threads. Lorsque vous créez un événement personnalisé dans un composant Windows Runtime, vous devez gérer le délégué directement. Cela signifie également que vous pouvez, par exemple, utiliser la méthode [MulticastDelegate.GetInvocationList](https://msdn.microsoft.com/library/system.multicastdelegate.getinvocationlist.aspx) pour obtenir un tableau qui contient un délégué distinct pour chaque gestionnaire d’événements, si vous voulez appeler les gestionnaires séparément.
 
-## Related topics
+## Rubriques connexes
 
-* [Events (Visual Basic)](https://msdn.microsoft.com/library/ms172877.aspx)
-* [Events (C# Programming Guide)](https://msdn.microsoft.com/library/awbftdfh.aspx)
-* [.NET for Windows Store Apps Overview](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
-* [.NET for UWP apps](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
-* [Walkthrough: Creating a Simple Windows Runtime Component and calling it from JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
+* [Événements (Visual Basic)](https://msdn.microsoft.com/library/ms172877.aspx)
+* [Événements (Guide de programmation C#)](https://msdn.microsoft.com/library/awbftdfh.aspx)
+* [Vue d’ensemble de .NET pour les applications du Windows Store](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
+* [.NET pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
+* [Procédure pas à pas : création d’un composant Windows Runtime simple et appel de ce composant à partir de JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

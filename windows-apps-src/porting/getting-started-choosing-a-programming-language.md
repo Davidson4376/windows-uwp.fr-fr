@@ -1,47 +1,47 @@
 ---
 author: mcleblanc
-title: Choosing a programming language
+title: "Choix d’un langage de programmation"
 ms.assetid: 6CA46432-BF03-4B20-9187-565B3503B497
-description: Choosing a programming language
+description: "Choix d’un langage de programmation"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c7d99923a0deac61e289d3a2796b8dd1720430b4
+ms.openlocfilehash: 10fa4a349621c8e7b248c7daf4d7cdf967e25255
 
 ---
 
-# Getting started: Choosing a programming language
+# Prise en main &#58; Choix d’un langage de programmation
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-## Choosing a programming language
+## Choix d’un langage de programmation
 
-Before we go any further, you should know about the programming languages that you can choose from when you develop Universal Windows Platform (UWP) apps. Although the walkthroughs in this article use C#, you can develop UWP apps using one or more programming languages (see [Languages, tools and frameworks](https://msdn.microsoft.com/library/windows/apps/dn465799)).
+Avant d’aller plus loin, vous devez connaître les langages de programmation permettant de développer des applications pour la plateforme Windows universelle (UWP). Bien que les procédures pas à pas du présent article utilisent le langage C#, vous pouvez développer des applications pour la plateforme Windows universelle (UWP) à l’aide d’un ou de plusieurs langages de programmation (voir [Langages, outils et infrastructures](https://msdn.microsoft.com/library/windows/apps/dn465799)).
 
-You can develop using C++, C#, Microsoft Visual Basic, and JavaScript. JavaScript uses HTML5 markup for UI layout, and the other languages use a markup language called *Extensible Application Markup Language (XAML)* to describe their UI.
+Vous pouvez développer à l’aide des langages C++, C#, Microsoft Visual Basic et JavaScript. JavaScript utilise le balisage HTML5 pour la disposition de l’interface utilisateur et les autres langages utilisent un langage de balisage appelé *XAML (Extensible Application Markup Language)* pour décrire leur interface utilisateur.
 
-Although we're focusing on C# in this article, the other languages offer unique benefits, which you may want to explore. For example, if your app's performance is a primary concern, especially for intensive graphics, then C++ might be the right choice. The Microsoft .NET version of Visual Basic is great for Visual Basic app developers. JavaScript with HTML5 is great for those coming from a web development background. For more info, see one of the following:
+Bien que l’article se concentre ici sur C#, les autres langages offrent des avantages uniques qu’il peut être intéressant d’explorer. Par exemple, si la performance de votre application est une priorité, surtout pour des composants graphiques complexes, C++ peut s’avérer le meilleur choix. La version Microsoft .NET de Visual Basic donne de très bons résultats pour les développeurs d’applications Visual Basic. JavaScript avec HTML5 convient parfaitement pour les professionnels spécialisés dans le développement Web. Pour plus d’informations, voir les rubriques suivantes :
 
--   [Create your first Windows Store app using C++](https://msdn.microsoft.com/library/windows/apps/hh974580)
--   [Create your first Windows Store app using C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/hh974581)
--   [Create your first Windows Store app using JavaScript](https://msdn.microsoft.com/library/windows/apps/br211385)
--   [Create your first Windows Phone Store app using C# or Visual Basic](http://go.microsoft.com/fwlink/p/?LinkID=397877)
--   [WinJS on Windows Phone 8.1](http://go.microsoft.com/fwlink/p/?LinkID=397879)
+-   [Créer votre première application du Windows Store en C++](https://msdn.microsoft.com/library/windows/apps/hh974580)
+-   [Créer votre première application du Windows Store en C# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/hh974581)
+-   [Créer votre première application du Windows Store en JavaScript](https://msdn.microsoft.com/library/windows/apps/br211385)
+-   [Créer votre première application du Windows Phone Store en C# ou Visual Basic](http://go.microsoft.com/fwlink/p/?LinkID=397877)
+-   [WinJS sur Windows Phone 8.1](http://go.microsoft.com/fwlink/p/?LinkID=397879)
 
-**Note**  For apps that use 3D graphics, the OpenGL and OpenGL ES standards are not natively available for UWP apps. If you would rather not rewrite your OpenGL ES code into Microsoft DirectX, you may be interested to know about **Angle**. Angle is an on-going project designed to convert OpenGL to DirectX by translating OpenGL API calls into DirectX API calls. To learn more, see the following:
+**Remarque** Pour les applications avec des graphiques 3D, les normes OpenGL et OpenGL ES ne sont pas disponibles en mode natif pour les applications UWP. Si vous préférez ne pas réécrire votre code OpenGL ES dans Microsoft DirectX, vous pourriez être intéressé par **Angle**. Angle est un projet en cours conçu pour convertir OpenGL en DirectX en transformant des appels d’API OpenGL en appels d’API DirectX. Pour en savoir plus, consultez les rubriques suivantes :
 -   [Angle](https://code.google.com/p/angleproject/)
--   [Create your first Windows Store app using DirectX](https://msdn.microsoft.com/library/windows/apps/br229580)
--   [Windows Store app samples that use DirectX](http://go.microsoft.com/fwlink/p/?LinkId=263603)
--   [Where is the DirectX SDK?](https://msdn.microsoft.com/library/windows/desktop/ee663275)
+-   [Créer votre première application du Windows Store à l’aide de DirectX](https://msdn.microsoft.com/library/windows/apps/br229580)
+-   [Exemples d’applications du Windows Store utilisant DirectX](http://go.microsoft.com/fwlink/p/?LinkId=263603)
+-   [Où est le Kit de développement logiciel (SDK) DirectX ?](https://msdn.microsoft.com/library/windows/desktop/ee663275)
 
-## Giving C# a go
+## Essayer C#
 
-As an iOS developer, you're accustomed to Objective-C and Swift. The closest Microsoft programming language to both is C#. For most developers and most apps, we think C# is the easiest and fastest language to learn and use, so this article's info and walkthroughs focus on that language. To learn more about C#, see the following:
+En tant que développeur iOS, vous êtes accoutumé à Objective-C et à Swift. Le langage de programmation Microsoft le plus proche des deux est C#. Pour la majorité des développeurs et des applications, nous pensons que C# est le langage le plus simple et le plus rapide à apprendre et à utiliser. C’est pourquoi les informations et procédures fournies dans cet article se concentrent sur ce langage. Pour en savoir plus sur le langage C#, voir les rubriques suivantes :
 
--   [Create your first Windows Store app using C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/hh974581)
--   [Windows Store app samples that use C#](http://go.microsoft.com/fwlink/p/?LinkId=263453)
+-   [Créer votre première application du Windows Store en C# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/hh974581)
+-   [Exemples d’applications du Windows Store utilisant C##](http://go.microsoft.com/fwlink/p/?LinkId=263453)
 -   [Visual C#](http://go.microsoft.com/fwlink/p/?LinkId=263450)
 
-Following is a class written in Objective-C and C#. The Objective-C version is shown first, followed by the C# version.
+Voici une classe écrite avec les deux langages, Objective-C et C#. La version Objective-C apparaît en premier, suivie de la version C#.
 
 ```obj-c
 // Objective-C header: SampleClass.h.
@@ -91,7 +91,7 @@ mySampleClass.localVariable = false;
 int result = [mySampleClass addThis:1 andThis:2];
 ```
 
-Now, for the C# version. You'll see that like Swift, the header and the implementation are not in separate files.
+Voyons la version C#. Vous remarquerez que, comme dans Swift, l’en-tête et l’implémentation ne figurent pas dans des fichiers distincts.
 
 ```csharp
 // C# header and implementation.
@@ -137,14 +137,14 @@ mySampleClass.myLocalVariable = false;
 int result = mySampleClass.AddTwoNumbers(1, 2);
 ```
 
-C# is an easy language to pick up, and comes with the many support classes and frameworks that make up .NET. In no time, you'll be happily writing your code without a square bracket in sight!
+C# est un langage facile à comprendre. Il est fourni avec les nombreuses classes et infrastructures de prise en charge de .NET. En un clin de œil, vous écrirez avec bonheur votre code sans le moindre crochet !
 
-## Next step
+## Étape suivante
 
-[Getting started: Getting around in Visual Studio](getting-started-getting-around-in-visual-studio.md)
+[Prise en main : Savoir maîtriser Visual Studio](getting-started-getting-around-in-visual-studio.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -5,7 +5,7 @@ description: Vous pouvez utiliser XAML (Extensible Application Markup Language) 
 ms.assetid: 0fb2819a-61ed-129d-6564-0b67debf5c6b
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 167709c7ba3470c144924801cb8cf18ffa544c5d
+ms.openlocfilehash: dda452a6f9b2a47d7ddaee9732bb714f0f5dbe5d
 
 ---
 
@@ -372,6 +372,6 @@ Voici le processus de base de création et de mise à jour d’un objet [**SwapC
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO2-->
 
 

@@ -1,61 +1,61 @@
 ---
 author: scottmill
 ms.assetid: 6e9b9ff2-234b-6f63-0975-1afb2d86ba1a
-title: Composition effects
-description: The effect APIs enable developers to customize how their UI is rendered.
+title: Effets de composition
+description: "Les API d’effet permettent aux développeurs de personnaliser l’affichage de leur interface utilisateur."
 translationtype: Human Translation
 ms.sourcegitcommit: b3d198af0c46ec7a2041a7417bccd56c05af760e
-ms.openlocfilehash: 12523034d9b3ad50fb5c31b2e66984df68f34de1
+ms.openlocfilehash: 10c3b6d0f56d0e8670cc202ac8d8a3f7538eb5a7
 
 ---
-# Composition effects
+# Effets de composition
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-The [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878) WinRT API allows Real-time effects to be applied to images and UI with animatable effect properties. In this overview, we’ll run through the functionality available that allows effects to be applied to a composition visual.
+L’API WinRT [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878) autorise l’application d’effets en temps réel à des images et à l’interface utilisateur avec des propriétés d’effet animables. Dans cette vue d’ensemble, nous allons parcourir les fonctionnalités disponibles, qui permettent d’appliquer des effets à un élément visuel de composition.
 
-To support [Universal Windows Platform (UWP)](https://msdn.microsoft.com/library/windows/apps/dn726767.aspx) consistency for developers describing effects in their applications, composition effects leverage Win2D’s IGraphicsEffect interface to use effect descriptions via the [Microsoft.Graphics.Canvas.Effects](http://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.md) Namespace.
+Pour prendre en charge la cohérence de [plateforme Windows universelle (UWP)](https://msdn.microsoft.com/library/windows/apps/dn726767.aspx) pour les développeurs décrivant des effets dans leurs applications, les effets de composition tirent parti de l’interface IGraphicsEffect de Win2D pour utiliser les descriptions d’effet via l’espace de noms [Microsoft.Graphics.Canvas.Effects](http://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.md).
 
-Brush effects are used to paint areas of an application by applying effects to a set of existing images. Windows 10 composition effect APIs are focused on Sprite Visuals. The SpriteVisual allows for flexibility and interplay in color, image and effect creation. The SpriteVisual is a composition visual type that can fill a 2D rectangle with a brush. The visual defines the bounds of the rectangle and the brush defines the pixels used to paint the rectangle.
+Les effets de pinceau permettent de peindre les zones d’une application en appliquant des effets à un ensemble d’images existantes. Les API d’effet de composition de Windows 10 sont axées sur SpriteVisual. SpriteVisual permet une flexibilité et une interconnexion de création de couleur, d’image et d’effet. SpriteVisual est un type d’élément visuel de composition qui permet de remplir un rectangle 2D avec un pinceau. L’élément visuel définit les limites du rectangle, et le pinceau définit les pixels utilisés pour peindre le rectangle.
 
-Effect brushes are used on composition tree visuals whose content comes from the output of an effect graph. Effects can reference existing surfaces/textures, but not the output of other composition trees.
+Les pinceaux à effets sont utilisés sur les éléments visuels de l’arborescence de composition dont le contenu provient de la sortie d’un graphique d’effet. Les effets peuvent référencer des surfaces/textures existantes, mais pas la sortie des autres arborescences de composition.
 
-## Effect Features
+## Fonctionnalités d’effet
 
--   [Effect Library](./composition-effects.md#effect-library)
--   [Chaining Effects](./composition-effects.md#chaining-effects)
--   [Animation Support](./composition-effects.md#animation-support)
--   [Effect properties – Constant vs. Animated](./composition-effects.md#effect-properties-constant-vs-animated)
--   [Multiple Effect Instances with Independent Properties](./composition-effects.md#multiple-effect-instances-with-independent-properties)
+-   [Bibliothèque d’effets](./composition-effects.md#effect-library)
+-   [Chaînage des effets](./composition-effects.md#chaining-effects)
+-   [Prise en charge de l’animation](./composition-effects.md#animation-support)
+-   [Propriétés d’effet: comparaison entre effet constant et effet animé](./composition-effects.md#effect-properties-constant-vs-animated)
+-   [Instances d’effet multiples avec des propriétés indépendantes](./composition-effects.md#multiple-effect-instances-with-independent-properties)
 
-### Effect Library
+### Bibliothèque d’effets
 
-Currently composition supports the following effects:
+Actuellement, les compositions prennent en charge les effets suivants :
 
-| Effect               | Description                                                                                                                                                                                                                |
+| Effet               | Description                                                                                                                                                                                                                |
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 2D affine transform  | Applies a 2D affine transform matrix to an image. We used this effect to animate alpha mask in our effect [samples](http://go.microsoft.com/fwlink/?LinkId=785341).       |
-| Arithmetic composite | Combines two images using a flexible equation. We used arithmetic composite to create a crossfade effect in our [samples](http://go.microsoft.com/fwlink/?LinkId=785341). |
-| Blend effect         | Creates a blend effect that combines two images. Composition provides 21 of the 26 [blend modes](http://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_Effects_BlendEffectMode.md) supported in Win2D.        |
-| Color source         | Generates an image containing a solid color.                                                                                                                                                                               |
-| Composite            | Combines two images. Composition provides all 13 [composite modes](http://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_CanvasComposite.md) supported in Win2D.                                              |
-| Contrast             | Increases or decreases the contrast of an image.                                                                                                                                                                           |
-| Exposure             | Increases or decreases the exposure of an image.                                                                                                                                                                           |
-| Grayscale            | Converts an image to monochromatic gray.                                                                                                                                                                                   |
-| Gamma transfer       | Alters the colors of an image by applying a per-channel gamma transfer function.                                                                                                                                           |
-| Hue rotate           | Alters the color of an image by rotating its hue values.                                                                                                                                                                   |
-| Invert               | Inverts the colors of an image.                                                                                                                                                                                            |
-| Saturate             | Alters the saturation of an image.                                                                                                                                                                                         |
-| Sepia                | Converts an image to sepia tones.                                                                                                                                                                                          |
-| Temperature and tint | Adjusts the temperature and/or tint of an image.                                                                                                                                                                           |
+| Transformation affine 2D :  | applique une matrice de transformation affine 2D à une image. Nous avons utilisé cet effet pour animer un masque alpha dans nos [exemples](http://go.microsoft.com/fwlink/?LinkId=785341) d’effet.       |
+| Composite arithmétique : | combine deux images à l’aide d’une équation flexible. Nous avons utilisé le composite arithmétique pour créer un effet de fondu enchaîné dans nos [exemples](http://go.microsoft.com/fwlink/?LinkId=785341). |
+| Effet de fusion :         | crée un effet de fusion qui combine deux images. La composition fournit 21 des 26 [modes de fusion](http://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_Effects_BlendEffectMode.md) pris en charge dans Win2D.        |
+| Source de couleur :         | génère une image contenant une couleur unie.                                                                                                                                                                               |
+| Composite :            | combine deux images. La composition fournit l’ensemble des 13 [modes composites](http://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_CanvasComposite.md) pris en charge dans Win2D.                                              |
+| Contraste :             | augmente ou diminue le contraste d’une image.                                                                                                                                                                           |
+| Exposition :             | augmente ou diminue l’exposition d’une image.                                                                                                                                                                           |
+| Nuances de gris :            | convertit une image en gris monochrome.                                                                                                                                                                                   |
+| Transfert gamma :       | modifie les couleurs d’une image en appliquant une fonction de transfert gamma par canal.                                                                                                                                           |
+| Rotation des teintes :           | modifie la couleur d’une image en faisant tourner ses valeurs de teinte.                                                                                                                                                                   |
+| Inverser :               | inverse les couleurs d’une image.                                                                                                                                                                                            |
+| Saturer :             | modifie la saturation d’une image.                                                                                                                                                                                         |
+| Sépia :                | convertit une image en tons sépia.                                                                                                                                                                                          |
+| Température et teinte : | ajuste la température et/ou la teinte d’une image.                                                                                                                                                                           |
 
  
 
-See Win2D’s [Microsoft.Graphics.Canvas.Effects](http://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.md) Namespace for more detailed information. Effects not supported in composition are noted as \[NoComposition\].
+Pour plus d’informations, voir l’espace de noms [Microsoft.Graphics.Canvas.Effects](http://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.md) de Win2D. Les effets non pris en charge dans la composition sont indiqués par \[NoComposition\].
 
-### Chaining Effects
+### Chaînage des effets
 
-Effects can be chained, allowing an application to simultaneously use multiple effects on an image. Effect graphs can support multiple effects that can refer to one and other. When describing your effect, simply add an effect as input to your effect.
+Les effets peuvent être chaînés, ce qui permet à une application d’utiliser simultanément plusieurs effets dans une image. Les graphiques d’effet peuvent prendre en charge plusieurs effets qui peuvent faire référence les uns aux autres. Lorsque vous décrivez votre effet, ajoutez simplement un effet comme entrée pour votre effet.
 
 ```cs
 IGraphicsEffect graphicsEffect =
@@ -75,25 +75,25 @@ new Microsoft.Graphics.Canvas.Effects.ArithmeticCompositeEffect
   
 ```
 
-The example above describes an arithmetic composite effect which has two inputs. The second input has a saturation effect with a .5 saturation property.
+L’exemple ci-dessus décrit un effet composite arithmétique possédant deux entrées. La deuxième entrée possède un effet de saturation avec une propriété de saturation de 0,5.
 
-### Animation Support
+### Prise en charge de l’animation
 
-Effect properties support animation, during effect compilation you can specify effect properties can be animated and which can be "baked in" as constants. The animatable properties are specified through strings of the form “effect name.property name”. These properties can be animated independently over multiple instantiations of the effect.
+Les propriétés d’effet prennent en charge l’animation ; lors de la compilation d’effet, vous pouvez spécifier les propriétés d’effet qui peuvent être animées et celles qui peuvent être « intégrées » sous forme de constantes. Les propriétés animables sont spécifiées par le biais de chaînes de la forme « nom d’effet.nom de propriété ». Ces propriétés peuvent être animées indépendamment sur plusieurs instanciations de l’effet.
 
-### Effect properties – Constant vs Animated
+### Propriétés d’effet: comparaison entre effet constant et effet animé
 
-During effect compilation you can specify effect properties as dynamic or as properties that are "baked in" as constants. The dynamic properties are specified through strings of the form “<effect name>.<property name>”. The dynamic properties can be set to a specific value or can be animated using the composition animation system.
+Lors de la compilation d’effet, vous pouvez spécifier des propriétés d’effet comme étant dynamiques ou comme étant «intégrées» sous forme de constantes. Les propriétés dynamiques sont spécifiées par le biais de chaînes de la forme «<effect name>.<property name>». Les propriétés dynamiques peuvent être définies sur une valeur spécifique ou être animées à l’aide du système d’animations de composition.
 
-When compiling the effect description above, you have the flexibility of either baking in saturation to be equal to 0.5 or making it dynamic and setting it dynamically or animating it.
+Lorsque vous compilez la description d’effet ci-dessus, vous avez la possibilité d’intégrer la saturation de sorte qu’elle soit égale à 0,5, ou de la rendre dynamique et de la définir de manière dynamique ou en l’animant.
 
-Compiling an effect with saturation baked in:
+Compilation d’un effet avec la saturation intégrée :
 
 ```cs
 var effectFactory = _compositor.CreateEffectFactory(graphicsEffect);              
 ```
 
-Compiling an effect with dynamic saturation:
+Compilation d’un effet avec la saturation dynamique :
 
 ```cs
 var effectFactory = _compositor.CreateEffectFactory(graphicsEffect, new[]{SaturationEffect.Saturation});
@@ -102,9 +102,9 @@ _catEffect.SetSourceParameter("mySource", surfaceBrush);
 _catEffect.Properties.InsertScalar("saturationEffect.Saturation", 0f);
 ```
 
-The saturation property of the effect above can then be either set to a static value or animated using either Expression or ScalarKeyFrame animations.
+La propriété de saturation de l’effet ci-dessus peut alors être définie sur une valeur statique ou être animée à l’aide d’animations de type Expression ou ScalarKeyFrame.
 
-You can create a ScalarKeyFrame that will be used to animate the Saturation property of an effect like this:
+Vous pouvez créer un élément ScalarKeyFrame qui sera utilisé pour animer la propriété de saturation d’un effet comme suit :
 
 ```cs
 ScalarKeyFrameAnimation effectAnimation = _compositor.CreateScalarKeyFrameAnimation();
@@ -115,58 +115,58 @@ ScalarKeyFrameAnimation effectAnimation = _compositor.CreateScalarKeyFrameAnimat
             effectAnimation.IterationBehavior = AnimationIterationBehavior.Forever;
 ```
 
-Start the animation on the Saturation property of the effect like this:
+Démarrez l’animation sur la propriété de saturation de l’effet comme suit :
 
 ```cs
 catEffect.Properties.StartAnimation("saturationEffect.Saturation", effectAnimation);
 ```
 
-See the [Desaturation - Animation sample](http://go.microsoft.com/fwlink/?LinkId=785342) for effect properties animated with key frames and the [AlphaMask sample](http://go.microsoft.com/fwlink/?LinkId=785343) for use of effects and expressions.
+Voir l’[exemple Désaturation - Animation](http://go.microsoft.com/fwlink/?LinkId=785342) pour les propriétés d’effet animées avec des images clés et l’[exemple AlphaMask](http://go.microsoft.com/fwlink/?LinkId=785343) pour l’utilisation des effets et expressions.
 
-### Multiple Effect Instances with Independent Properties
+### Instances d’effet multiples avec des propriétés indépendantes
 
-By specifying that a parameter should be dynamic during effect compilation, the parameter can then be changed on a per-effect instance basis. This allows two Visuals to use the same effect but be rendered with different effect properties. See the ColorSource and Blend [sample](http://go.microsoft.com/fwlink/?LinkId=785344) for more information.
+En indiquant qu’un paramètre doit être dynamique lors de la compilation d’effet, le paramètre peut ensuite être modifié sur la base d’une instance par effet. Cela permet à deux éléments visuels d’utiliser le même effet tout en étant affichés avec des propriétés d’effet différentes. Pour plus d’informations, voir l’[exemple](http://go.microsoft.com/fwlink/?LinkId=785344) de code utilisant les paramètres ColorSource et Blend.
 
-## Getting Started with Composition Effects
+## Prise en main des effets de composition
 
-This quick start tutorial shows you how to make use of some of the basic capabilities of effects.
+Ce didacticiel de démarrage rapide vous montre comment utiliser certaines fonctionnalités de base des effets.
 
--   [Installing Visual Studio](./composition-effects.md#installing-visual-studio)
--   [Creating a new project](./composition-effects.md#creating-a-new-project)
--   [Installing Win2D](./composition-effects.md#installing-win2d)
--   [Setting your Composition Basics](./composition-effects.md#setting-your-composition-basics)
--   [Creating a CompositionSurface Brush](./composition-effects.md#creating-a-compositionsurface-brush)
--   [Creating, Compiling and Applying Effects](./composition-effects.md#creating,-compiling-and-applying-effects)
+-   [Installation de Visual Studio](./composition-effects.md#installing-visual-studio)
+-   [Création d’un projet](./composition-effects.md#creating-a-new-project)
+-   [Installation de Win2D](./composition-effects.md#installing-win2d)
+-   [Définition des bases de votre composition](./composition-effects.md#setting-your-composition-basics)
+-   [Création d’un pinceau CompositionSurface](./composition-effects.md#creating-a-compositionsurface-brush)
+-   [Création, compilation et application d’effets](./composition-effects.md#creating,-compiling-and-applying-effects)
 
-### Installing Visual Studio
+### Installation de Visual Studio
 
--   If you don't have a supported version of Visual Studio installed, go to the Visual Studio Downloads page [here](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx).
+-   Si vous n’avez pas installé une version prise en charge de Visual Studio, accédez à la page de téléchargements de Visual Studio [ici](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx).
 
-### Creating a new project
+### Création d’un projet
 
--   Go to File->New->Project...
--   Select 'Visual C#'
--   Create a 'Blank App (Windows Universal)' (Visual Studio 2015)
--   Enter a project name of your choosing
--   Click 'OK'
+-   Accédez à Fichier-&gt;Nouveau -&gt;Projet...
+-   Sélectionnez Visual C#.
+-   Créez une application vide (Windows universelle) (Visual Studio 2015).
+-   Entrez le nom de projet de votre choix.
+-   Cliquez sur OK.
 
-### Installing Win2D
+### Installation de Win2D
 
-Win2D is released as a Nuget.org package and needs to be installed before you can use effects.
+Win2D est publié en tant que package Nuget.org et doit être installé avant que vous ne puissiez utiliser des effets.
 
-There are two package versions, one for Windows 10 and one for Windows 8.1. For Composition effects you’ll use the Windows 10 version.
+Il existe deux versions de package, l’une pour Windows 10 et l’autre pour Windows 8.1. Pour les effets de composition, vous allez utiliser la version de Windows 10.
 
--   Launch the NuGet Package Manager by going to Tools → NuGet Package Manager → Manage NuGet Packages for Solution.
--   Search for "Win2D" and select the appropriate package for your target version of Windows. Because Windows.UI. Composition supports Windows 10 (not 8.1), select Win2D.uwp.
--   Accept the license agreement
--   Click 'Close'
+-   Lancez le Gestionnaire de package NuGet en accédant à Outils → Gestionnaire de package NuGet → Gérer les packages NuGet pour la solution.
+-   Recherchez Win2D et sélectionnez le package approprié pour votre version cible de Windows. Comme Windows.UI. Composition prend en charge Windows 10 (et non Windows 8.1), sélectionnez Win2D.uwp.
+-   Acceptez le contrat de licence.
+-   Cliquez sur Fermer.
 
-In the next few steps we will use composition API’s to apply a saturation effect to this cat image which will remove all saturation. In this model the effect is created and then applied to an image.
+Dans les étapes suivantes, nous allons utiliser les API de composition pour appliquer un effet de saturation à cette image de chat, qui supprimera toute la saturation. Dans ce modèle, l’effet est créé, puis appliqué à une image.
 
-![Source image](images/composition-cat-source.png)
-### Setting your Composition Basics
+![Image source](images/composition-cat-source.png)
+### Définition des bases de votre composition
 
-See the [Composition Visual Tree Sample](http://go.microsoft.com/fwlink/?LinkId=785345) on our GitHub for an example of how to set up Windows.UI.Composition Compositor, root ContainerVisual, and associate with the Core Window.
+Consultez l’[exemple d’arborescence d’éléments visuels de composition](http://go.microsoft.com/fwlink/?LinkId=785345) sur notre GitHub pour obtenir un exemple de configuration de Windows.UI.Composition Compositor, du paramètre ContainerVisual racine, et l’associer à la fenêtre principale.
 
 ```cs
 _compositor = new Compositor();
@@ -177,16 +177,16 @@ _imageFactory = new CompositionImageFactory(_compositor)
 Desaturate();
 ```
 
-### Creating a CompositionSurface Brush
+### Création d’un pinceau CompositionSurface
 
 ```cs
 CompositionSurfaceBrush surfaceBrush = _compositor.CreateSurfaceBrush();
 LoadImage(surfaceBrush); 
 ```
 
-### Creating, Compiling and Applying Effects
+### Création, compilation et application d’effets
 
-1.) Create the graphics effect
+1.) Créez l’effet graphique.
 ```cs
 var graphicsEffect = new SaturationEffect
 {
@@ -195,7 +195,7 @@ var graphicsEffect = new SaturationEffect
 };
 ```
 
-2.) Compile the effect and create effect brush
+2.) Compilez l’effet et créez le pinceau à effets.
 ```cs
 var effectFactory = _compositor.CreateEffectFactory(graphicsEffect);
 
@@ -203,7 +203,7 @@ var catEffect = effectFactory.CreateBrush();
 catEffect.SetSourceParameter("mySource", surfaceBrush);
 ```
 
-3.) Create a SpriteVIsual in the composition tree and apply the effect
+3.) Créez un élément SpriteVisual dans l’arborescence de composition et appliquez l’effet.
 ```cs
 var catVisual = _compositor.CreateSpriteVisual();
   catVisual.Brush = catEffect;
@@ -212,31 +212,31 @@ var catVisual = _compositor.CreateSpriteVisual();
 }
 ```
 
-4.) Create your image source to load.
+4.) Créez votre source d’image à charger.
 ```cs
 CompositionImage imageSource = _imageFactory.CreateImageFromUri(new Uri("ms-appx:///Assets/cat.png"));
 CompositionImageLoadResult result = await imageSource.CompleteLoadAsync();
 if (result.Status == CompositionImageLoadStatus.Success)
 ```
 
-5.) Size and brush the surface on the SpriteVisual
+5.) Dimensionnez et brossez la surface de l’élément SpriteVisual.
 ```cs
 brush.Surface = imageSource.Surface;
 ```
 
-6.) Run your app – your results should be a desaturated cat:
+6.) Exécutez votre application: le résultat doit être une image de chat désaturée:
 
-![Desaturated image](images/composition-cat-desaturated.png)
-## More Information
+![Image désaturée](images/composition-cat-desaturated.png)
+## Plus d’informations
 
--   [Microsoft – Composition GitHub](https://github.com/Microsoft/composition)
+-   [Microsoft: GitHub Composition](https://github.com/Microsoft/composition)
 -   [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878)
--   [Windows Composition team on Twitter](https://twitter.com/wincomposition)
--   [Composition Overview](https://blogs.windows.com/buildingapps/2015/12/08/awaken-your-creativity-with-the-new-windows-ui-composition/)
--   [Visual Tree Basics](composition-visual-tree.md)
--   [Composition Brushes](composition-brushes.md)
--   [Animation Overview](composition-animation.md)
--   [Composition native DirectX and Direct2D interoperation with BeginDraw and EndDraw](composition-native-interop.md)
+-   [Équipe de composition Windows sur Twitter](https://twitter.com/wincomposition)
+-   [Vue d’ensemble de la composition](https://blogs.windows.com/buildingapps/2015/12/08/awaken-your-creativity-with-the-new-windows-ui-composition/)
+-   [Notions de base de l’arborescence visuelle](composition-visual-tree.md)
+-   [Pinceaux de composition](composition-brushes.md)
+-   [Vue d’ensemble de l’animation](composition-animation.md)
+-   [Interopération DirectX et Direct2D de composition en mode natif avec BeginDraw et EndDraw](composition-native-interop.md)
 
  
 
@@ -248,6 +248,6 @@ brush.Surface = imageSource.Surface;
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

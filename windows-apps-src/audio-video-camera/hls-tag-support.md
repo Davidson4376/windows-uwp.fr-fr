@@ -1,91 +1,81 @@
 ---
 author: drewbatgit
 ms.assetid: 
-description: "Cet article répertorie les balises du protocole HTTP Live Streaming (HLS) prises en charge pour les applications UWP."
-title: Prise en charge des balises HTTP Live Streaming (HLS)
-translationtype: Human Translation
-ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
-ms.openlocfilehash: 779e5d0da7186a6f94251b89cf27636170923d5c
-
+description: This article lists the HTTP Live Streaming (HLS) protocol tags supported for UWP apps.
+title: HTTP Live Streaming (HLS) tag support
 ---
 
-# Prise en charge des balises HTTP Live Streaming (HLS)
-Le tableau suivant répertorie les balises HLS prises en charge pour les applications UWP.
+# HTTP Live Streaming (HLS) tag support
+The following table lists the HLS tags that are supported for UWP apps.
 
 > [!NOTE] 
-> Les balises personnalisées qui démarrent avec le préfixe «X» sont accessibles en tant que métadonnées synchronisées, tel que décrit dans l’article [Éléments, playlists et pistes multimédias](media-playback-with-mediasource.md).
+> Custom tags that start with "X-" can be accessed as timed metadata as described in the article [Media items, playlists, and tracks](media-playback-with-mediasource.md).
 
-|Balise |Introduite dans la version du protocole HLS|Version brouillon du document du protocole HLS|Requis sur le client|Version de juillet de Windows10|Windows10, version1511|Windows10, version1606 |
+|Tag |Introduced in HLS Protocol version|HLS Protocol Document Draft Version|Required on Client|July release of Windows 10|Windows 10, Version 1511|Windows 10, Version 1606 |
 |---------------------|-----------|--------------|---------|--------------|
-|4.3.1.  Balises de base                 |             |                   |         |             |     |    |
-| 4.3.1.1.  EXTM3U |1|0|OBLIGATOIRE|Prise en charge|Pris en charge|Prise en charge|
-| 4.3.1.2.  EXT-X-VERSION |2|3|OBLIGATOIRE|Prise en charge|Pris en charge|Prise en charge
-|4.3.2.  Balises de segments multimédias                 |             |                   |         |             |     |    | 
-| 4.3.2.1.  EXTINF  |1|0|OBLIGATOIRE|Prise en charge|Pris en charge|Prise en charge
-| 4.3.2.2.  EXT-X-BYTERANGE |4|7|FACULTATIVE|Prise en charge|Pris en charge|Prise en charge|
-| 4.3.2.3.  EXT-X-DISCONTINUITY |1|2|FACULTATIVE|Prise en charge|Pris en charge|Prise en charge|
-| 4.3.2.4.  EXT-X-KEY |1|0|FACULTATIVE|Prise en charge|Pris en charge|Prise en charge|
-|&nbsp;&nbsp;&nbsp; MÉTHODE|1|0|Attribut|«NONE, AES-128»|«NONE, AES-128»|«NONE, AES-128, SAMPLE-AES»|
-|&nbsp;&nbsp;&nbsp; URI|1|0|Attribut|Prise en charge|Pris en charge|Prise en charge|
-|&nbsp;&nbsp;&nbsp; IV|2|3|Attribut|Prise en charge|Pris en charge|Prise en charge|
-|&nbsp;&nbsp;&nbsp; KEYFORMAT|5|9|Attribut|Non prise en charge|Non prise en charge|Non prise en charge|
-|&nbsp;&nbsp;&nbsp; KEYFORMATVERSIONS|5|9|Attribut|Non prise en charge|Non prise en charge|Non prise en charge|
-| 4.3.2.5.  EXT-X-MAP |5|9|FACULTATIVE|Non prise en charge|Non prise en charge|Non prise en charge|
-|&nbsp;&nbsp;&nbsp; URI|5|9|Attribut|Non prise en charge|Non prise en charge|Non prise en charge|
-|&nbsp;&nbsp;&nbsp; BYTERANGE|5|9|Attribut|Non prise en charge|Non prise en charge|Non prise en charge|
-| 4.3.2.6.  EXT-X-PROGRAM-DATE-TIME |1|0|FACULTATIVE|Non prise en charge|Non prise en charge|Non prise en charge|
-|4.3.3.  Balises de sélection multimédia                 |             |                   |         |             |     |    | 
-| 4.3.3.1.  EXT-X-TARGETDURATION  |1|0|OBLIGATOIRE|Prise en charge|Pris en charge|Prise en charge|
-| 4.3.3.2.  EXT-X-MEDIA-SEQUENCE  |1|0|FACULTATIVE|Prise en charge|Pris en charge|Prise en charge|
-| 4.3.3.3.  EXT-X-DISCONTINUITY-SEQUENCE|6|12|FACULTATIVE|Non prise en charge|Non prise en charge|Non prise en charge|
-| 4.3.3.4.  EXT-X-ENDLIST |1|0|FACULTATIVE|Prise en charge|Pris en charge|Prise en charge|
-| 4.3.3.5.  EXT-X-PLAYLIST-TYPE |3|6|FACULTATIVE|Prise en charge|Pris en charge|Prise en charge|
-| 4.3.3.6.  EXT-X-I-FRAMES-ONLY |4|7|FACULTATIVE|Non prise en charge|Non prise en charge|Non prise en charge|
-|4.3.4.  Balises de sélection principale                 |             |                   |         |             |     |    |
-| 4.3.4.1.  EXT-X-MEDIA |4|7|FACULTATIVE|Prise en charge|Pris en charge|Prise en charge|
-|&nbsp;&nbsp;&nbsp;  TYPE|4|7|Attribut|«AUDIO, VIDEO»|«AUDIO, VIDEO»|«AUDIO, VIDEO, SUBTITLES»|
-|&nbsp;&nbsp;&nbsp;  URI|4|7|Attribut|Prise en charge|Pris en charge|Prise en charge|
-|&nbsp;&nbsp;&nbsp;  GROUP-ID|4|7|Attribut|Prise en charge|Pris en charge|Prise en charge|
-|&nbsp;&nbsp;&nbsp;  LANGUAGE|4|7|Attribut|Prise en charge|Pris en charge|Prise en charge|
-|&nbsp;&nbsp;&nbsp;  ASSOC-LANGUAGE|6|13|Attribut|Non prise en charge|Non prise en charge|Non prise en charge|
-|&nbsp;&nbsp;&nbsp;  NAME|4|7|Attribut|Non prise en charge|Non prise en charge|Prise en charge|
-|&nbsp;&nbsp;&nbsp;  PAR DÉFAUT|4|7|Attribut|Non prise en charge|Non prise en charge|Non prise en charge|
-|&nbsp;&nbsp;&nbsp;  AUTOSELECT|4|7|Attribut|Non prise en charge|Non prise en charge|Non prise en charge|
-|&nbsp;&nbsp;&nbsp;  FORCED|5|9|Attribut|Non prise en charge|Non prise en charge|Non prise en charge|
-|&nbsp;&nbsp;&nbsp;  INSTREAM-ID|6|12|Attribut|Non prise en charge|Non prise en charge|Non prise en charge|
-|&nbsp;&nbsp;&nbsp;  CARACTÉRISTIQUES|5|9|Attribut|Non prise en charge|Non prise en charge|Non prise en charge|
-| 4.3.4.2.  EXT-X-STREAM-INF  |1|0|OBLIGATOIRE|Prise en charge|Pris en charge|Prise en charge|
-|&nbsp;&nbsp;&nbsp;  BANDWIDTH|1|0|Attribut|Prise en charge|Pris en charge|Prise en charge|
-|&nbsp;&nbsp;&nbsp;  PROGRAM-ID|1|0|Attribut|N/A|N/A|N/A|
-|&nbsp;&nbsp;&nbsp;  AVERAGE-BANDWIDTH|7|14|Attribut|Non prise en charge|Non prise en charge|Non prise en charge|
-|&nbsp;&nbsp;&nbsp;  CODECS|1|0|Attribut|Prise en charge|Pris en charge|Prise en charge|
-|&nbsp;&nbsp;&nbsp;  RESOLUTION|2|3|Attribut|Prise en charge|Pris en charge|Prise en charge|
-|&nbsp;&nbsp;&nbsp;  FRAME-RATE|7|15|Attribut|N/A|N/A|N/A|
-|&nbsp;&nbsp;&nbsp;  AUDIO|4|7|Attribut|Prise en charge|Pris en charge|Prise en charge|
-|&nbsp;&nbsp;&nbsp;  VIDEO|4|7|Attribut|Prise en charge|Pris en charge|Prise en charge|
-|&nbsp;&nbsp;&nbsp;  SUBTITLES|5|9|Attribut|Non prise en charge|Non prise en charge|Prise en charge|
-|&nbsp;&nbsp;&nbsp;  CLOSED-CAPTIONS|6|12|Attribut|Non prise en charge|Non prise en charge|Non prise en charge|
-| 4.3.4.3.  EXT-X-I-FRAME-STREAM-INF  |4|7|FACULTATIVE|Non prise en charge|Non prise en charge|Non prise en charge|
-| 4.3.4.4.  EXT-X-SESSION-DATA  |7|14|FACULTATIVE|Non prise en charge|Non prise en charge|Non prise en charge|
-| 4.3.4.5.  EXT-X-SESSION-KEY |7|17|FACULTATIVE|Non prise en charge|Non prise en charge|Non prise en charge|
+|4.3.1.  Basic Tags                 |             |                   |         |             |     |    |
+| 4.3.1.1.  EXTM3U |1|0|REQUIRED|Supported|Supported|Supported|
+| 4.3.1.2.  EXT-X-VERSION |2|3|REQUIRED|Supported|Supported|Supported
+|4.3.2.  Media Segment Tags                 |             |                   |         |             |     |    | 
+| 4.3.2.1.  EXTINF  |1|0|REQUIRED|Supported|Supported|Supported
+| 4.3.2.2.  EXT-X-BYTERANGE |4|7|OPTIONAL|Supported|Supported|Supported|
+| 4.3.2.3.  EXT-X-DISCONTINUITY |1|2|OPTIONAL|Supported|Supported|Supported|
+| 4.3.2.4.  EXT-X-KEY |1|0|OPTIONAL|Supported|Supported|Supported|
+|&nbsp;&nbsp;&nbsp; METHOD|1|0|Attribute|"NONE, AES-128"|"NONE, AES-128"|"NONE, AES-128, SAMPLE-AES"|
+|&nbsp;&nbsp;&nbsp; URI|1|0|Attribute|Supported|Supported|Supported|
+|&nbsp;&nbsp;&nbsp; IV|2|3|Attribute|Supported|Supported|Supported|
+|&nbsp;&nbsp;&nbsp; KEYFORMAT|5|9|Attribute|Not Supported|Not Supported|Not Supported|
+|&nbsp;&nbsp;&nbsp; KEYFORMATVERSIONS|5|9|Attribute|Not Supported|Not Supported|Not Supported|
+| 4.3.2.5.  EXT-X-MAP |5|9|OPTIONAL|Not Supported|Not Supported|Not Supported|
+|&nbsp;&nbsp;&nbsp; URI|5|9|Attribute|Not Supported|Not Supported|Not Supported|
+|&nbsp;&nbsp;&nbsp; BYTERANGE|5|9|Attribute|Not Supported|Not Supported|Not Supported|
+| 4.3.2.6.  EXT-X-PROGRAM-DATE-TIME |1|0|OPTIONAL|Not Supported|Not Supported|Not Supported|
+|4.3.3.  Media Playlist Tags                 |             |                   |         |             |     |    | 
+| 4.3.3.1.  EXT-X-TARGETDURATION  |1|0|REQUIRED|Supported|Supported|Supported|
+| 4.3.3.2.  EXT-X-MEDIA-SEQUENCE  |1|0|OPTIONAL|Supported|Supported|Supported|
+| 4.3.3.3.  EXT-X-DISCONTINUITY-SEQUENCE|6|12|OPTIONAL|Not Supported|Not Supported|Not Supported|
+| 4.3.3.4.  EXT-X-ENDLIST |1|0|OPTIONAL|Supported|Supported|Supported|
+| 4.3.3.5.  EXT-X-PLAYLIST-TYPE |3|6|OPTIONAL|Supported|Supported|Supported|
+| 4.3.3.6.  EXT-X-I-FRAMES-ONLY |4|7|OPTIONAL|Not Supported|Not Supported|Not Supported|
+|4.3.4.  Master Playlist Tags                 |             |                   |         |             |     |    |
+| 4.3.4.1.  EXT-X-MEDIA |4|7|OPTIONAL|Supported|Supported|Supported|
+|&nbsp;&nbsp;&nbsp;  TYPE|4|7|Attribute|"AUDIO, VIDEO"|"AUDIO, VIDEO"|"AUDIO, VIDEO, SUBTITLES"|
+|&nbsp;&nbsp;&nbsp;  URI|4|7|Attribute|Supported|Supported|Supported|
+|&nbsp;&nbsp;&nbsp;  GROUP-ID|4|7|Attribute|Supported|Supported|Supported|
+|&nbsp;&nbsp;&nbsp;  LANGUAGE|4|7|Attribute|Supported|Supported|Supported|
+|&nbsp;&nbsp;&nbsp;  ASSOC-LANGUAGE|6|13|Attribute|Not Supported|Not Supported|Not Supported|
+|&nbsp;&nbsp;&nbsp;  NAME|4|7|Attribute|Not Supported|Not Supported|Supported|
+|&nbsp;&nbsp;&nbsp;  DEFAULT|4|7|Attribute|Not Supported|Not Supported|Not Supported|
+|&nbsp;&nbsp;&nbsp;  AUTOSELECT|4|7|Attribute|Not Supported|Not Supported|Not Supported|
+|&nbsp;&nbsp;&nbsp;  FORCED|5|9|Attribute|Not Supported|Not Supported|Not Supported|
+|&nbsp;&nbsp;&nbsp;  INSTREAM-ID|6|12|Attribute|Not Supported|Not Supported|Not Supported|
+|&nbsp;&nbsp;&nbsp;  CHARACTERISTICS|5|9|Attribute|Not Supported|Not Supported|Not Supported|
+| 4.3.4.2.  EXT-X-STREAM-INF  |1|0|REQUIRED|Supported|Supported|Supported|
+|&nbsp;&nbsp;&nbsp;  BANDWIDTH|1|0|Attribute|Supported|Supported|Supported|
+|&nbsp;&nbsp;&nbsp;  PROGRAM-ID|1|0|Attribute|NA|NA|NA|
+|&nbsp;&nbsp;&nbsp;  AVERAGE-BANDWIDTH|7|14|Attribute|Not Supported|Not Supported|Not Supported|
+|&nbsp;&nbsp;&nbsp;  CODECS|1|0|Attribute|Supported|Supported|Supported|
+|&nbsp;&nbsp;&nbsp;  RESOLUTION|2|3|Attribute|Supported|Supported|Supported|
+|&nbsp;&nbsp;&nbsp;  FRAME-RATE|7|15|Attribute|NA|NA|NA|
+|&nbsp;&nbsp;&nbsp;  AUDIO|4|7|Attribute|Supported|Supported|Supported|
+|&nbsp;&nbsp;&nbsp;  VIDEO|4|7|Attribute|Supported|Supported|Supported|
+|&nbsp;&nbsp;&nbsp;  SUBTITLES|5|9|Attribute|Not Supported|Not Supported|Supported|
+|&nbsp;&nbsp;&nbsp;  CLOSED-CAPTIONS|6|12|Attribute|Not Supported|Not Supported|Not Supported|
+| 4.3.4.3.  EXT-X-I-FRAME-STREAM-INF  |4|7|OPTIONAL|Not Supported|Not Supported|Not Supported|
+| 4.3.4.4.  EXT-X-SESSION-DATA  |7|14|OPTIONAL|Not Supported|Not Supported|Not Supported|
+| 4.3.4.5.  EXT-X-SESSION-KEY |7|17|OPTIONAL|Not Supported|Not Supported|Not Supported|
 
 
 
 
-## Rubriques connexes
+## Related topics
 
-* [Lecture de contenu multimédia](media-playback.md)
-* [Diffusion en continu adaptative](adaptive-streaming.md)
- 
+* [Media playback](media-playback.md)
+* [Adaptive streaming](adaptive-streaming.md)
+ 
 
- 
-
-
+ 
 
 
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

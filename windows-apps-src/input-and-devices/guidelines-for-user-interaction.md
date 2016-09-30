@@ -1,173 +1,172 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Create Universal Windows Platform (UWP) apps with intuitive and distinctive user interaction experiences that are optimized for touch but functionally consistent across input devices.
-title: Touch design guidelines
+Description: "Créez des applications de plateforme Windows universelle (UWP) offrant des expériences d’interaction utilisateur intuitives et distinctives qui sont optimisées pour l’entrée tactile, mais cohérentes du point de vue du fonctionnement entre les périphériques d’entrée."
+title: "Recommandations en matière de conception pour l’interface tactile"
 ms.assetid: 3250F729-4FDD-4AD4-B856-B8BA575C3375
 label: Touch design guidelines
 template: detail.hbs
-redirect_url: https://msdn.microsoft.com/windows/uwp/input-and-devices/touch-interactions
 translationtype: Human Translation
-ms.sourcegitcommit: 2db7aaccfd56b1bdfda099b197a695bad8a9cba1
-ms.openlocfilehash: 28dfadf6010aed3fb2ed0d03b73f92631c17fcf4
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 67b851ce854c803934c2b97dbe7519e2916383a3
 
 ---
 
-# Touch design guidelines
+# Recommandations en matière de conception pour l’interface tactile
 
 
 
 
 
-Create Universal Windows Platform (UWP) apps with intuitive and distinctive user interaction experiences that are optimized for touch but functionally consistent across input devices.
+Créez des applications de plateforme Windows universelle (UWP) offrant des expériences d’interaction utilisateur intuitives et distinctives qui sont optimisées pour l’entrée tactile, mais cohérentes du point de vue du fonctionnement entre les périphériques d’entrée.
 
-## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>Dos and don'ts
-
-
--   Design applications with touch interaction as the primary expected input method.
--   Provide visual feedback for interactions of all types (touch, pen, stylus, mouse, etc.)
--   Optimize targeting by adjusting touch target size, contact geometry, scrubbing and rocking.
--   Optimize accuracy through the use of snap points and directional "rails".
--   Provide tooltips and handles to help improve touch accuracy for tightly packed UI items.
--   Don't use timed interactions whenever possible (example of appropriate use: touch and hold).
--   Don't use the number of fingers used to distinguish the manipulation whenever possible.
-
-## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>Additional usage guidance
+## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>Pratiques conseillées et déconseillées
 
 
-First and foremost, design your app with the expectation that touch will be the primary input method of your users. If you use the platform controls, support for touchpad, mouse, and pen/stylus requires no additional programming, because Windows 8 provides this for free.
+-   Concevez des applications en utilisant l’interaction tactile comme méthode d’entrée principale.
+-   Fournissez un retour visuel pour les interactions de tous types (entrée tactile, stylo, stylet, souris, etc.)
+-   Optimisez le ciblage en ajustant la taille de la cible tactile, la géométrie de contact, ainsi que les mouvements de frottement et de va-et-vient.
+-   Optimisez la précision grâce à l’utilisation de points d’ancrage et de « rails » d’orientation.
+-   Fournissez des info-bulles et des poignées pour améliorer la précision tactile quand les éléments d’interface sont serrés entre eux.
+-   Évitez dans la mesure du possible d’utiliser des interactions chronométrées (exemple d’utilisation appropriée : maintenir appuyé).
+-   Évitez d’utiliser le nombre de doigts servant à distinguer la manipulation.
 
-However, keep in mind that a UI optimized for touch is not always superior to a traditional UI. Both provide advantages and disadvantages that are unique to a technology and application. In the move to a touch-first UI, it is important to understand the core differences between touch (including touchpad), pen/stylus, mouse, and keyboard input. Do not take familiar input device properties and behaviors for granted, as touch in Windows 8 does more than simply emulate that functionality.
+## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>Indications d’utilisation supplémentaires
 
-You will find throughout these guidelines that touch input requires a different approach to UI design.
 
-**Compare touch interaction requirements**
+Avant tout, concevez votre application en ayant comme objectif que l’entrée tactile sera la principale méthode d’entrée de vos utilisateurs. Si vous utilisez les contrôles de la plateforme, la prise en charge du pavé tactile, de la souris et du stylo/stylet ne demande pas plus de programmation car Windows 8 fournit cela gratuitement.
 
-The following table shows some of the differences between input devices that you should consider when you design touch-optimized Windows Store apps.
+Sachez toutefois qu’une interface utilisateur optimisée pour les entrées tactiles ne s’avère pas toujours supérieure à une interface utilisateur classique. Les deux présentent des avantages et des inconvénients qui sont propres à une technologie et une application. Quand on s’achemine vers une interface utilisateur principalement tactile, il est important de connaître les différences fondamentales qui existent entre les différentes entrées : tactile (y compris le pavé tactile), stylo/stylet, souris et clavier. Ne considérez pas les propriétés et les comportements familiers des périphériques d’entrée comme acquis car, dans Windows 8, la fonction tactile ne se limite pas à une simple émulation de cette fonctionnalité.
 
-Factor Touch interactions Mouse, keyboard, pen/stylus interactions Touchpad Precision The contact area of a fingertip is greater than a single x-y coordinate, which increases the chances of unintended command activations.
-The mouse and pen/stylus supply a precise x-y coordinate.
-Same as mouse.
-The shape of the contact area changes throughout the movement.
-Mouse movements and pen/stylus strokes supply precise x-y coordinates. Keyboard focus is explicit.
-Same as mouse.
-There is no mouse cursor to assist with targeting.
-The mouse cursor, pen/stylus cursor, and keyboard focus all assist with targeting.
-Same as mouse.
-Human anatomy Fingertip movements are imprecise, because a straight-line motion with one or more fingers is difficult. This is due to the curvature of hand joints and the number of joints involved in the motion.
-It's easier to perform a straight-line motion with the mouse or pen/stylus because the hand that controls them travels a shorter physical distance than the cursor on the screen.
-Same as mouse.
-Some areas on the touch surface of a display device can be difficult to reach due to finger posture and the user's grip on the device.
-The mouse and pen/stylus can reach any part of the screen while any control should be accessible by the keyboard through tab order.
-Finger posture and grip can be an issue.
-Objects might be obscured by one or more fingertips or the user's hand. This is known as occlusion.
-Indirect input devices do not cause occlusion.
-Same as mouse.
-Object state Touch uses a two-state model: the touch surface of a display device is either touched (on) or not (off). There is no hover state that can trigger additional visual feedback.
-A mouse, pen/stylus, and keyboard all expose a three-state model: up (off), down (on), and hover (focus).
+Les recommandations suivantes vous permettront de découvrir que l’entrée tactile exige une approche différente de la conception de l’interface utilisateur.
 
-Hover lets users explore and learn through tooltips associated with UI elements. Hover and focus effects can relay which objects are interactive and also help with targeting.
+**Comparer les critères de l’interaction tactile**
 
-Same as mouse.
-Rich interaction Supports multi-touch: multiple input points (fingertips) on a touch surface.
-Supports a single input point.
-Same as touch.
-Supports direct manipulation of objects through gestures such as tapping, dragging, sliding, pinching, and rotating.
-No support for direct manipulation as mouse, pen/stylus, and keyboard are indirect input devices.
-Same as mouse.
+Le tableau suivant présente certaines différences qui existent entre les périphériques d’entrée dont vous devez tenir compte quand vous concevez des applications du WindowsStore optimisées pour l’interaction tactile.
+
+Interactions facteur tactile Interactions souris, clavier, stylo/stylet Pavé tactile de précision La zone de contact au bout du doigt est plus importante qu’une simple coordonnées x-y, ce qui augmente le risque d’activations involontaires de commandes.
+La souris et le stylo/stylet répondent à une coordonnée x-y précise.
+Comme la souris.
+La forme de la zone de contact change tout au long du mouvement.
+Les mouvements de la souris et les traits du stylo/stylet répondent à des coordonnées x-y précises. Le focus du clavier est explicite.
+Comme la souris.
+Il n’y a pas de curseur de souris pour aider au ciblage.
+Le curseur de la souris, le curseur du stylo/stylet et le focus du clavier constituent tous une aide au ciblage.
+Comme la souris.
+Anatomie humaine Les mouvements effectués avec le bout du doigt sont imprécis, car le traçage d’une ligne droite avec un ou plusieurs doigts est difficile à réaliser. Cela s’explique par la courbure des articulations de la main et le nombre d’articulations impliquées dans le mouvement.
+Il est plus facile de tracer un mouvement de ligne droite avec la souris ou le stylo/stylet, car la main qui les contrôle parcourt une distance plus courte que le curseur sur l’écran.
+Comme la souris.
+Certaines zones situées sur la surface tactile d’un périphérique d’affichage peuvent être difficiles à atteindre en raison de la posture des doigts et de la prise en main du périphérique par l’utilisateur.
+La souris et le stylo/stylet peuvent accéder à toutes les parties de l’écran, et n’importe quel contrôle est accessible par le clavier via l’ordre des onglets.
+La posture des doigts et la prise en main peuvent poser problème.
+Le bout des doigts ou la main de l’utilisateur peuvent masquer des objets. C’est ce que l’on appelle l’« occlusion ».
+Les périphériques d’entrée indirects ne provoquent pas d’occlusion.
+Comme la souris.
+État de l’objet L’interaction tactile utilise un modèle à deuxétats : la surface tactile du périphérique d’affichage est touchée (activée) ou non touchée (désactivée) par l’utilisateur. Il n’existe pas d’état de pointage susceptible de déclencher un retour visuel supplémentaire.
+Une souris, un stylo/stylet et un clavier exposent tous un modèle à trois états : soulevé (activé), appuyé (activé) et pointé (focus).
+
+Le pointage permet à l’utilisateur d’explorer et de découvrir les éléments à l’aide d’info-bulles associées aux éléments de l’interface utilisateur. Les effets de pointage et de focus peuvent transmettre les objets qui sont interactifs et aident également au ciblage.
+
+Comme la souris.
+Interaction évoluée Prend en charge l’interaction tactile multipoint: plusieurs points d’entrée (bout des doigts) sur une surface tactile.
+Prend en charge un point d’entrée unique.
+Comme l’entrée tactile.
+Prend en charge la manipulation directe des objets par le biais de gestes tels que l’appui, le glissement, le pincement et la rotation.
+Ne prend pas en charge la manipulation directe, car la souris, le stylo/stylet et le clavier sont des périphériques d’entrée indirects.
+Comme la souris.
  
 
-**Note**  
-Indirect input has had the benefit of more than 25 years of refinement. Features such as hover-triggered tooltips have been designed to solve UI exploration specifically for touchpad, mouse, pen/stylus, and keyboard input. UI features like this have been re-designed for the rich experience provided by touch input, without compromising the user experience for these other devices.
+**Remarque**  
+L’entrée indirecte a bénéficié de plus de 25 ans d’amélioration. Les fonctions comme les info-bulles déclenchées par le pointage ont été conçues pour résoudre les problèmes d’exploration de l’interface utilisateur spécifiques aux entrées à l’aide du pavé tactile, de la souris, du stylo/stylet et du clavier. Les fonctionnalités d’interface utilisateur de ce genre ont été repensées pour enrichir l’expérience de la saisie tactile, sans compromettre l’expérience utilisateur sur les autres appareils.
 
  
 
-**Use touch feedback**
+**Utiliser le retour tactile**
 
-Appropriate visual feedback during interactions with your app helps users recognize, learn, and adapt to how their interactions are interpreted by both the app and Windows 8. Visual feedback can indicate successful interactions, relay system status, improve the sense of control, reduce errors, help users understand the system and input device, and encourage interaction.
+Les retours visuels appropriés au cours des interactions avec votre application aident les utilisateurs à reconnaître, à apprendre et à s’adapter à l’interprétation des leurs interactions par l’application et par Windows 8. Le retour visuel peut indiquer les interactions réussies, transmettre l’état du système, améliorer le sentiment de contrôle, réduire les erreurs, aider les utilisateurs à comprendre le système et le périphérique d’entrée et encourager l’interaction.
 
-Visual feedback is critical when the user relies on touch input for activities that require accuracy and precision based on location. Display feedback whenever and wherever touch input is detected, to help the user understand any custom targeting rules that are defined by your app and its controls.
+Le retour visuel est essentiel quand l’utilisateur doit réaliser, avec la fonction tactile, des activités qui demandent de l’exactitude et de la précision selon l’endroit concerné. Affichez le retour, peu importe où et quand l’entrée tactile est détectée, pour aider l’utilisateur à comprendre toutes les méthodes de ciblage personnalisé qui sont définies par votre application et ses contrôles.
 
-**Create an immersive interaction experience**
+**Créer une expérience d’interaction immersive**
 
-The following techniques enhance the immersive experience of Windows Store apps.
+Les techniques suivantes améliorent l’expérience immersive des applications du Windows Store.
 
-**Targeting**
+**Ciblage**
 
-Targeting is optimized through:
+Le ciblage est optimisé par les éléments suivants :
 
--   Touch target sizes
+-   Taille des cibles tactiles
 
-    Clear size guidelines ensure that applications provide a comfortable UI that contains objects and controls that are easy and safe to target.
+    Des instructions claires concernant les tailles garantissent une interface utilisateur confortable contenant des objets et des contrôles que l’utilisateur peut cibler facilement et en toute sécurité.
 
--   Contact geometry
+-   Géométrie de contact
 
-    The entire contact area of the finger determines the most likely target object.
+    La totalité de la zone de contact du doigt détermine l’objet cible le plus probable.
 
--   Scrubbing
+-   Frottement
 
-    Items within a group are easily re-targeted by dragging the finger between them (for example, radio buttons). The current item is activated when the touch is released.
+    L’utilisateur peut facilement recibler les éléments au sein d’un groupe en glissant le doigt entre eux (par exemple, des cases d’option). L’élément actif est activé lorsque l’utilisateur relâche le doigt.
 
--   Rocking
+-   Va-et-vient
 
-    Densely packed items (for example, hyperlinks) are easily re-targeted by pressing the finger down and, without sliding, rocking it back and forth over the items. Due to occlusion, the current item is identified through a tooltip or the status bar and is activated when the touch is released.
+    L’utilisateur peut facilement recibler des éléments compacts (par exemple, des liens hypertexte) en appuyant avec le doigt et, sans le faire glisser, en effectuant un mouvement de va-et-vient sur les éléments. Pour éviter l’occlusion, l’élément est identifié par une info-bulle ou la barre d’état. Il est activé dès que l’utilisateur relâche le doigt.
 
-**Accuracy**
+**Précision**
 
-Design for sloppy interactions by using:
+Pour les interactions imprécises, utilisez :
 
--   Snap-points that can make it easier to stop at desired locations when users interact with content.
--   Directional "rails" that can assist with vertical or horizontal panning, even when the hand moves in a slight arc. For more information, see [Guidelines for panning](guidelines-for-panning.md).
+-   des points d’ancrage qui permettent à l’utilisateur de s’arrêter plus facilement aux emplacements souhaités quand il interagit avec le contenu ;
+-   des « rails » d’orientation qui permettent d’aider l’utilisateur à effectuer un mouvement panoramique vertical ou horizontal, même si la main se déplace avec un léger mouvement d’arc. Pour plus d’informations, voir [Recommandations en matière de mouvement panoramique](guidelines-for-panning.md).
 
 **Occlusion**
 
-Finger and hand occlusion is avoided through:
+Pour éviter l’occlusion du doigt et de la main, respectez les recommandations suivantes :
 
--   Size and positioning of UI
+-   Taille et positionnement des éléments d’interface utilisateur
 
-    Make UI elements big enough so that they cannot be completely covered by a fingertip contact area.
+    Créez des éléments d’interface utilisateur suffisamment grands pour qu’ils ne soient pas complètement recouverts par la zone de contact du doigt.
 
-    Position menus and pop-ups above the contact area whenever possible.
+    Positionnez autant que possible les menus et les fenêtres indépendantes au-dessus de la zone de contact.
 
--   Tooltips
+-   Info-bulles
 
-    Show tooltips when a user maintains finger contact on an object. This is useful for describing object functionality. The user can drag the fingertip off the object to avoid invoking the tooltip.
+    Affichez des info-bulles quand un utilisateur maintient son doigt sur un objet. Cela est utile pour décrire la fonctionnalité d’un objet. L’utilisateur peut retirer le bout de son doigt de l’objet pour éviter d’appeler l’info-bulle.
 
-    For small objects, offset tooltips so they are not covered by the fingertip contact area. This is helpful for targeting.
+    Pour les petits objets, décalez les info-bulles afin qu’elles ne soient pas recouvertes par la zone de contact du doigt. Cela permet d’améliorer le ciblage.
 
--   Handles for precision
+-   Poignées de précision
 
-    Where precision is required (for example, text selection), provide selection handles that are offset to improve accuracy. For more information, see [Guidelines for selecting text and images (Windows Runtime apps)](guidelines-for-textselection.md).
+    Pour les actions de précision (par exemple, la sélection de texte), insérez des poignées de sélection décalées afin d’augmenter le degré d’exactitude. Pour plus d’informations, voir [Recommandations en matière de sélection de texte et d’images (applications WindowsRuntime)](guidelines-for-textselection.md).
 
-**Timing**
+**Chronométrage**
 
-Avoid timed mode changes in favor of direct manipulation. Direct manipulation simulates the direct, real-time physical handling of an object. The object responds as the fingers are moved.
+Évitez les modifications en mode chronométré au profit de la manipulation directe. Celle-ci simule le maniement direct et en temps réel d’un objet. L’objet réagit directement au mouvement du doigt.
 
-A timed interaction, on the other hand, occurs after a touch interaction. Timed interactions typically depend on invisible thresholds like time, distance, or speed to determine what command to perform. Timed interactions have no visual feedback until the system performs the action.
+À l’inverse, en mode chronométré, l’interaction se produit après le geste tactile. Généralement, les interactions chronométrées dépendent de seuils invisibles, tels que le temps, la distance ou la vitesse, pour déterminer la commande à effectuer. Elles ne produisent aucun retour visuel tant que le système n’a pas effectué l’action.
 
-Direct manipulation provides a number of benefits over timed interactions:
+La manipulation directe offre un certain nombre d’avantages par rapport aux interactions chronométrées :
 
--   Instant visual feedback during interactions make users feel more engaged, confident, and in control.
--   Direct manipulations make it safer to explore a system because they are reversible—users can easily step back through their actions in a logical and intuitive manner.
--   Interactions that directly affect objects and mimic real world interactions are more intuitive, discoverable, and memorable. They don't rely on obscure or abstract interactions.
--   Timed interactions can be difficult to perform, as users must reach arbitrary and invisible thresholds.
+-   Le retour visuel instantané au cours de l’interaction permet à l’utilisateur de se sentir davantage impliqué, confiant et en contrôle.
+-   Les manipulations directes permettent de sécuriser l’exploration d’un système, car elles sont réversibles, c’est-à-dire que l’utilisateur peut facilement revenir en arrière et annuler ses actions d’une manière logique et intuitive.
+-   Les interactions qui affectent directement les objets et qui imitent les gestes réels sont plus intuitives, plus visibles et plus faciles à retenir. Elles ne dépendent pas d’interactions obscures ou abstraites.
+-   Les interactions chronométrées peuvent être difficiles à effectuer, étant donné que l’utilisateur doit atteindre des seuils arbitraires et invisibles.
 
-In addition, the following are strongly recommended:
+En outre, nous vous encourageons vivement à tenir compte des recommandations suivantes :
 
--   Manipulations should not be distinguished by the number of fingers used.
--   Interactions should support compound manipulations. For example, pinch to zoom while dragging the fingers to pan.
--   Interactions should not be distinguished by time. The same interaction should have the same outcome regardless of the time taken to perform it. Time-based activations introduce mandatory delays for users and detract from both the immersive nature of direct manipulation and the perception of system responsiveness.
+-   Ne classez pas les manipulations en fonction du nombre de doigts utilisés.
+-   Les interactions doivent prendre en charge les manipulations composées. Par exemple, resserrez les doigts pour zoomer tout en les faisant glisser pour effectuer un mouvement panoramique.
+-   Ne classez pas les interactions en fonction du temps. Une même interaction doit avoir le même résultat, quel que soit le temps pris pour l’effectuer. Les activations temporelles impliquent des délais obligatoires à respecter par l’utilisateur. Par ailleurs, elles portent atteinte non seulement à la nature immersive des manipulations directes, mais également à la perception de la réactivité du système.
 
-    **Note**  An exception to this is where you use specific timed interactions to assist in learning and exploration (for example, press and hold).
+    **Remarque** Il existe une exception à cette règle : quand vous utilisez des interactions chronométrées à titre d’aide à l’apprentissage et à l’exploration (par exemple, l’appui prolongé).
 
      
 
--   Appropriate descriptions and visual cues have a great effect on the use of advanced interactions.
+-   Les descriptions appropriées et les signaux visuels influent très favorablement sur l’utilisation des interactions avancées.
 
-## <span id="related_topics"></span>Related articles
+## <span id="related_topics"></span>Articles connexes
 
-**For developers (XAML)**
-* [Touch interactions](https://msdn.microsoft.com/library/windows/apps/mt185617)
-* [Custom user interactions](https://msdn.microsoft.com/library/windows/apps/mt185599)
+**Pour les développeurs (XAML)**
+* [Interactions tactiles](https://msdn.microsoft.com/library/windows/apps/mt185617)
+* [Interactions utilisateur personnalisées](https://msdn.microsoft.com/library/windows/apps/mt185599)
  
 
  
@@ -178,6 +177,6 @@ In addition, the following are strongly recommended:
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

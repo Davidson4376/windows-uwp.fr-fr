@@ -1,66 +1,66 @@
 ---
 author: mijacobs
-Description: Use drag-and-drop animations when users move objects, such as moving an item within a list, or dropping an item on top of another.
-title: Drag animations in UWP apps
+Description: "Utilisez les animations de glisser-déplacer lors du déplacement d’objets par les utilisateurs, par exemple pour le déplacement d’un élément dans une liste ou le positionnement d’un élément au-dessus d’un autre."
+title: Animations de glissement dans les applications UWP
 ms.assetid: 6064755F-6E24-4901-A4FF-263F05F0DFD6
 label: Motion--Drag and drop
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 58934982554aa3caf0060c84df113d483e62e1d2
+ms.openlocfilehash: c975ba3d03c06009710f4f57edf8a4cc517ad90c
 
 ---
 
-# Drag animations
+# Animations de glissement
 
 
 
 
-Use drag-and-drop animations when users move objects, such as moving an item within a list, or dropping an item on top of another.
+Utilisez les animations de glisser-déplacer lors du déplacement d’objets par les utilisateurs, par exemple pour le déplacement d’un élément dans une liste ou le positionnement d’un élément au-dessus d’un autre.
 
-**Important APIs**
+**API importantes**
 
--   [**DragItemThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br243174)
-
-
-## Do's and don'ts
+-   [**Classe DragItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br243174)
 
 
-**Drag start animation**
-
--   Use the drag start animation when the user begins to move an object.
--   Include affected objects in the animation if and only if there are other objects that can be affected by the drag-and-drop operation.
--   Use the drag end animation to complete any animation sequence that began with the drag start animation. This reverses the size change in the dragged object that was caused by the drag start animation.
-
-**Drag end animation**
-
--   Use the drag end animation when the user drops a dragged object.
--   Use the drag end animation in combination with add and delete animations for lists.
--   Include affected objects in the drag end animation if and only if you included those same affected objects in the drag start animation.
--   Don't use the drag end animation if you have not first used the drag start animation. You need to use both animations to return objects to their original sizes after the drag sequence is complete.
-
-**Drag between enter animation**
-
--   Use the drag between enter animation when the user drags the drag source into a drop area where it can be dropped between two other objects.
--   Choose a reasonable drop target area. This area should not be so small that it is difficult for the user to position the drag source for the drop.
--   The recommended direction to move affected objects to show the drop area is directly apart from each other. Whether they move vertically or horizontally depends on the orientation of the affected objects to each other.
--   Don't use the drag between enter animation if the drag source cannot be dropped in an area. The drag between enter animation tells the user that the drag source can be dropped between the affected objects.
-
-**Drag between leave animation**
-
--   Use the drag between leave animation when the user drags an object away from an area where it could have been dropped between two other objects.
--   Don't use the drag between leave animation if you have not first used the drag between enter animation.
+## Pratiques conseillées et déconseillées
 
 
-## Related articles
+**Animation de début du glissement**
 
-**For developers (XAML)**
-* [Animations overview](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [Animating drag-and-drop sequences](https://msdn.microsoft.com/library/windows/apps/xaml/jj649427)
-* [Quickstart: Animating your UI using library animations](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
-* [**DragItemThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br243174)
-* [**DropTargetItemThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br243186)
-* [**DragOverThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br243180)
+-   Utilisez l’animation de début du glissement quand l’utilisateur commence à déplacer un objet.
+-   Insérez les objets affectés dans l’animation seulement si d’autres objets peuvent être affectés par l’opération de glisser-déplacer.
+-   Utilisez l’animation de fin du glissement pour terminer toute séquence d’animation qui a commencé par l’animation de début du glissement. Le changement de taille provoqué par l’animation de début du glissement dans l’objet déplacé est alors inversé.
+
+**Animation de fin du glissement**
+
+-   Utilisez l’animation de fin du glissement quand l’utilisateur dépose un élément déplacé.
+-   Utilisez l’animation de fin du glissement en combinaison avec les animations d’ajout et de suppression pour les listes.
+-   Incluez les objets affectés dans l’animation de fin du glissement si et seulement si vous avez inclus ces mêmes objets affectés dans l’animation de début du glissement.
+-   N’utilisez pas l’animation de fin du glissement si vous n’avez pas utilisé l’animation de début du glissement. Vous devez utiliser les deux animations pour que tous les objets retrouvent leur taille d’origine une fois la séquence de glissement terminée.
+
+**Animation de glissement entre les objets**
+
+-   Utilisez l’animation de glissement entre les objets quand l’utilisateur fait glisser la source du glissement dans une zone de dépôt où elle peut être placée entre deux objets.
+-   Choisissez un emplacement où il est possible de déposer l’objet. Cet emplacement ne doit pas être trop petit, sinon l’utilisateur rencontrera des difficultés pour déposer la source du glissement.
+-   La direction recommandée pour déplacer les objets affectés afin d’afficher la zone de dépôt est l’étirement direct les uns des autres. Qu’il s’agisse d’un mouvement vertical ou horizontal dépend de l’orientation des objets affectés les uns par rapport aux autres.
+-   N’utilisez pas l’animation de glissement entre les objets, s’il n’est pas possible de déposer la source du glissement dans une zone. L’animation de glissement entre les objets indique à l’utilisateur que la source du glissement peut être déposée entre les objets affectés.
+
+**Animation de glissement entre les objets par éloignement**
+
+-   Utilisez l’animation de glissement entre les objets par éloignement quand l’utilisateur éloigne un objet d’une zone où il aurait pu être placé entre deux autres objets.
+-   N’utilisez pas l’animation de glissement entre les objets par éloignement si vous n’avez pas d’abord utilisé l’animation de glissement entre les objets.
+
+
+## Articles connexes
+
+**Pour les développeurs (XAML)**
+* [Vue d’ensemble des animations](https://msdn.microsoft.com/library/windows/apps/mt187350)
+* [Animation de séquences de glisser-déplacer](https://msdn.microsoft.com/library/windows/apps/xaml/jj649427)
+* [Démarrage rapide: animation de votre interface utilisateur avec des animations de la bibliothèque](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [**Classe DragItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br243174)
+* [**Classe DropTargetItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br243186)
+* [**Classe DragOverThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br243180)
 
 
  
@@ -71,6 +71,6 @@ Use drag-and-drop animations when users move objects, such as moving an item wit
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

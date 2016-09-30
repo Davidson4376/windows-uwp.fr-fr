@@ -1,50 +1,50 @@
 ---
-title: Hosted Web Apps - Convert your web application to a Universal Windows Platform (UWP) app and access native Windows 10 features
-description: Create a Universal Windows Platform (UWP) app from your website URL. Access Windows 10 native device features from code within your web app. Microsoft Windows Bridges for Hosted Web Apps, formerly Project Westminster, makes it quick and easy for you to include your web app in the Windows Store.
+title: "Apps web hébergées - Convertir votre appweb en app UWP et accéder aux fonctionnalités Windows10 natives"
+description: "Créez une application de plateforme Windows universelle (UWP) à partir de l’URL de votre site web. Accédez aux fonctionnalités d’appareil natives Windows10 à partir du code de votre application web. Avec les ponts Windows Microsoft (anciennement appelés Project Westminster) pour applications web hébergées, vous pouvez rapidement et facilement inclure votre application web dans le Windows Store."
 author: seksenov
 translationtype: Human Translation
-ms.sourcegitcommit: 7fe6e240e4ef221b49f9b103cf30192449ce4502
-ms.openlocfilehash: 95d50aa37f349f494f260ea3af97211a085623a9
+ms.sourcegitcommit: 765789ef83f9b6a845ab79505b1b9ecbfd987126
+ms.openlocfilehash: 491665558f713dcbaae7ea20739ed72c61a12cd2
 
 ---
 
-# Hosted Web Apps - Access Windows 10 features from your web app
+# Applications web hébergées - Accéder aux fonctionnalités Windows10 à partir de votre application web
 
-Your web application can have full access to the Universal Windows Platform (UWP), including calling Windows Runtime APIs directly from script hosted on a server, leveraging Cortana integration, and using an online authentication provider. Hybrid apps are also supported as you can include local code to be called from the hosted script and manage app navigation between remote and local pages.
+Votre application web hébergée peut avoir un accès complet à la plateforme Windows universelle (UWP), notamment l’appel des API Windows Runtime directement à partir du script hébergé sur un serveur, tirant parti de l’intégration de Cortana et utilisant un fournisseur d’authentification en ligne. Les applications hybrides sont également prises en charge pour que vous puissiez inclure du code local pour être appelé à partir du script hébergé et gérer la navigation entre les pages locales et distantes dans l’application.
 
-## Get started
+## Prise en main
 
-Whether you're on a Mac or a PC, you can create your very own Hosted Web App in a matter of minutes. The best way to get started is by using free, full-featured [Visual Studio Community 2015](https://www.visualstudio.com/), especially if you're on a Windows device. If you do not have access to Visual Studio, there are a few options from which you can choose. If you are familiar with command-line interface (CLI) utilities, check out [ManifoldJS](http://manifoldjs.com/). You can also use [App Studio](http://appstudio.windows.com/), a free, no coding required, online creation tool that allows you to quickly build Windows 10 apps.
+Que vous utilisiez un PC ou un Mac, vous pouvez créer votre propre application web hébergée en quelques minutes seulement. Gratuit et complet, [Visual Studio Community2015](https://www.visualstudio.com/) vous assure la meilleure prise en main, en particulier depuis un appareil Windows. Si vous n’avez pas accès à Visual Studio, vous avez le choix entre d’autres options. Si vous êtes familiarisé avec les utilitaires d’interface de ligne de commande, consultez [ManifoldJS](http://manifoldjs.com/). Vous pouvez utiliser [App Studio](http://appstudio.windows.com/), un outil de création gratuit et en ligne ne nécessitant aucun codage qui vous permet de développer rapidement des applications Windows 10.
 
-- [Step-by-step instrucitons to convert your web application to a Universal Windows Platform (UWP) app using Windows](hwa-create-windows.md)
+- [Instructions pas à pas pour convertir votre application web en application de plateforme Windows universelle (UWP) avec Windows](hwa-create-windows.md)
 
-- [Step-by-step instrucitons to convert your web application to a Universal Windows Platform (UWP) app using a Mac](hwa-create-mac.md)
+- [Instructions pas à pas pour convertir votre application web en application de plateforme Windows universelle (UWP) avec Mac](hwa-create-mac.md)
 
-## Enhance your app
+## Améliorer votre application
 
-- Make your app sparkle by [accessing native Windows features](hwa-access-features.md) in JavaScript from the Windows Runtime.
+- Faites étinceler votre application [en accédant aux fonctionnalités Windows natives](hwa-access-features.md) dans JavaScript à partir de Windows Runtime.
 
-- Keep your app secure by setting Application Content URI Rules (ACURs) with our Content Security Policy (CSP) model.
-- Run your app with the power of voice by integrating with Cortana voice commands.
+- Préservez la sécurité de votre application en définissant des règles URI de contenu de l’application (ACUR) grâce à notre modèle Content Security Policy (CSP).
+- Exécutez votre application avec la puissance de la voix en intégrant les commandes vocales Cortana.
 
-- Grant programmatic access to user resources and device functionality by declaring app cabilities.
+- Accordez un accès par programme aux ressources utilisateur et fonctionnalités d’appareil en déclarant les fonctionnalités de l’application.
 
-- Create a simple and smooth login flow for your users by verifying their identity with OpenID and OAuth.
+- Créez un flux de connexion simple et sans souci pour vos utilisateurs en vérifiant leur identité avec OpenID et OAuth.
 
-- Stop having to decide between a Packaged and Hosted Web app. You can have a bit of both by creating a Hybrid App.
+- Ne choisissez plus entre une applicationweb empaquetée ou hébergée. Vous pouvez avoir un peu des deux en créant une application hybride.
 
-## Convert your existing Chrome app
+## Convertir votre application Chrome existante
 
-We have made it easy to [convert your existing Chrome hosted app](hwa-chrome-conversion.md) to a Windows Hosted Web App. [ManifoldJS](http://manifoldjs.com/) now accepts Chrome manifests as a form of input. We have also developed a [CLI tool](https://github.com/MicrosoftEdge/hwa-cli) that generates an `.appx` package from your existing `.zip` or `.crx` files.
+Nous avons simplifié le processus visant à [convertir votre application hébergée Chrome existante](hwa-chrome-conversion.md) en application web hébergée Windows. [ManifoldJS](http://manifoldjs.com/) accepte désormais les manifestes Chrome comme type d’entrée. En outre, nous avons développé un [outil d’interface de ligne de commande](https://github.com/MicrosoftEdge/hwa-cli) qui génère un package `.appx` à partir de vos fichiers `.zip` ou `.crx` existants.
 
-## Demos
+## Démos
 
-- [Contoso Travel App](http://contosotravel.azurewebsites.net/)
+- [Application Contoso Travel](http://contosotravel.azurewebsites.net/)
 
-- [Windows Runtime API: JavaScript Code Samples](http://rjs.azurewebsites.net/)
+- [API Windows Runtime: exemples de code JavaScript](http://rjs.azurewebsites.net/)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO1-->
 
 

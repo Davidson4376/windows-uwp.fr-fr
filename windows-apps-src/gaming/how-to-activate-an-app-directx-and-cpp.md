@@ -1,27 +1,27 @@
 ---
 author: mtoepke
-title: How to activate an app (DirectX and C++)
-description: This topic shows how to define the activation experience for a Universal Windows Platform (UWP) DirectX app.
+title: Comment activer une application (DirectX et C++)
+description: "Cette rubrique explique comment définir l’expérience d’activation d’une application DirectX de plateforme Windows universelle (UWP)."
 ms.assetid: b07c7da1-8a5e-5b57-6f77-6439bf653a53
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 0b13604d2b0349817881a5c1c56c311931c90759
+ms.openlocfilehash: 14859d03c7af45a17772c76f8c79b3c1bc56272c
 
 ---
 
-# How to activate an app (DirectX and C++)
+# Comment activer une application (DirectX et C++)
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-This topic shows how to define the activation experience for a Universal Windows Platform (UWP) DirectX app.
+Cette rubrique explique comment définir l’expérience d’activation d’une application DirectX de plateforme Windows universelle (UWP).
 
-## Register the app activation event handler
+## Enregistrer le gestionnaire d’événements d’activation d’application
 
 
-First, register to handle the [**CoreApplicationView::Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) event, which is raised when your app is started and initialized by the operating system.
+Tout d’abord, inscrivez le gestionnaire de l’événement [**CoreApplicationView::Activated**](https://msdn.microsoft.com/library/windows/apps/br225018), lequel est déclenché au démarrage et à l’initialisation de votre application par le système d’exploitation.
 
-Add this code to your implementation of the [**IFrameworkView::Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495) method of your view provider (named **MyViewProvider** in the example):
+Ajoutez le code suivant à votre implémentation de la méthode [**IFrameworkView::Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495) de votre fournisseur d’affichage (nommé **MyViewProvider** dans l’exemple) :
 
 ```cpp
 void App::Initialize(CoreApplicationView^ applicationView)
@@ -36,10 +36,10 @@ void App::Initialize(CoreApplicationView^ applicationView)
 }
 ```
 
-## Activate the CoreWindow instance for the app
+## Activer l’instance CoreWindow pour l’application
 
 
-When your app starts, you must obtain a reference to the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) for your app. **CoreWindow** contains the window event message dispatcher that your app uses to process window events. Obtain this reference in your callback for the app activation event by calling [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589). Once you have obtained this reference, activate the main app window by calling [**CoreWindow::Activate**](https://msdn.microsoft.com/library/windows/apps/br208254).
+Au démarrage de votre application, vous devez obtenir une référence à l’objet [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) de votre application. **CoreWindow** contient le répartiteur de message d’événement de fenêtre utilisé par votre application pour traiter les événements de fenêtre. Obtenez cette référence dans votre rappel pour l’événement d’activation d’application en appelant [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589). Après avoir obtenu cette référence, activez la fenêtre principale de l’application en appelant [**CoreWindow::Activate**](https://msdn.microsoft.com/library/windows/apps/br208254).
 
 ```cpp
 void App::OnActivated(CoreApplicationView^ applicationView, IActivatedEventArgs^ args)
@@ -49,10 +49,10 @@ void App::OnActivated(CoreApplicationView^ applicationView, IActivatedEventArgs^
 }
 ```
 
-## Start processing event message for the main app window
+## Commencer le traitement du message d’événement pour la fenêtre principale de l’application
 
 
-Your callbacks occur as event messages are processed by the [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) for the app's [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). This callback will not be invoked if you do not call [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) from your app's main loop (implemented in the [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) method of your view provider).
+Vos rappels ont lieu en tant que messages d’événements traités par l’objet [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) pour l’objet [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) de l’application. Ce rappel n’est pas effectué si vous n’appelez pas [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) à partir de la boucle principale de votre application (mise en œuvre dans la méthode [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) de votre fournisseur d’affichage).
 
 ``` syntax
 // This method is called after the window becomes active.
@@ -79,22 +79,22 @@ void App::Run()
 }
 ```
 
-## Related topics
+## Articles connexes
 
 
-* [How to suspend an app (DirectX and C++)](how-to-suspend-an-app-directx-and-cpp.md)
-* [How to resume an app (DirectX and C++)](how-to-resume-an-app-directx-and-cpp.md)
-
- 
+* [Comment suspendre une application (DirectX et C++)](how-to-suspend-an-app-directx-and-cpp.md)
+* [Comment relancer une application (DirectX et C++)](how-to-resume-an-app-directx-and-cpp.md)
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

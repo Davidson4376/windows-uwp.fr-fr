@@ -1,134 +1,134 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Use visual feedback to show users when their interactions with a Windows Store app are detected, interpreted, and handled.
-title: Visual feedback
+Description: "Utilisez le retour visuel pour indiquer aux utilisateurs quand leurs interactions avec une application du Windows Store sont détectées, interprétées et gérées."
+title: Retour visuel
 ms.assetid: bf2f3672-95f0-4c8c-9a72-0934f2d3b767
 label: Visual feedback
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 388bdc42610d05a4decb5c8aecadcaf2f78b26f8
+ms.openlocfilehash: 2bf873f35192c20f15c6cb445b6be6436354c8c2
 
 ---
 
-# Guidelines for visual feedback
+# Recommandations en matière de retour visuel
 
-Use visual feedback to show users when their interactions are detected, interpreted, and handled. Visual feedback can help users by encouraging interaction. It indicates the success of an interaction, which improves the user's sense of control. It also relays system status and reduces errors.
+Utilisez le retour visuel pour indiquer aux utilisateurs quand leurs interactions sont détectées, interprétées et gérées. Le retour visuel peut aider les utilisateurs en encourageant l’interaction. Il indique le succès d’une interaction et améliore ainsi le sentiment de contrôle de l’utilisateur. Il transmet également l’état du système et réduit les erreurs.
 
-**Important APIs**
+**API importantes**
 
 -   [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)
 -   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
 -   [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)
 
-## Recommendations
+## Recommandations
 
--   Try to remain as close to the original control template as possible, for optimal control and application performance.
--   Don't use touch visualizations in situations where they might interfere with the use of the app. For more info, see [**ShowGestureFeedback**](https://msdn.microsoft.com/library/windows/apps/br241969).
--   Don't display feedback unless it is absolutely necessary. Keep the UI clean and uncluttered by not showing visual feedback unless you are adding value that is not available elsewhere.
--   Try not to dramatically customize the visual feedback behaviors of the built-in Windows gestures, as this can create an inconsistent and confusing user experience.
+-   Essayez de rester aussi proche du modèle de contrôle d’origine que possible pour assurer des performances optimales des applications et des contrôles.
+-   N’utilisez pas les visualisations tactiles dans des situations où elles risquent d’interférer avec l’utilisation de l’application. Pour plus d’informations, voir [**ShowGestureFeedback**](https://msdn.microsoft.com/library/windows/apps/br241969).
+-   N’affichez pas de retour à moins que ce soit absolument nécessaire. Veillez à ce que l’interface utilisateur soit propre et aérée en n’affichant pas de retour visuel, à moins que cela ajoute une valeur non disponible ailleurs.
+-   Ne personnalisez pas les comportements de retour visuel des mouvements intégrés de Windows de manière radicale, car cela peut créer une expérience utilisateur incohérente et confuse.
 
-## Additional usage guidance
+## Indications d’utilisation supplémentaires
 
-Contact visualizations are especially critical for touch interactions that require accuracy and precision. For example, your app should clearly indicate the location of a tap to let a user know if they missed their target, how much they missed it by, and what adjustments they must make.
+Les visualisations de contact sont essentielles pour les interactions tactiles qui exigent précision et exactitude. Par exemple, votre application doit clairement indiquer l’emplacement d’un appui pour permettre à l’utilisateur de savoir s’il a manqué sa cible, de combien il l’a manquée et quels réglages il doit effectuer.
 
-Using the default XAML platform controls available will ensure that your app works correctly on all devices and in all input situations. If your app features custom interactions that require customized feedback, you should ensure the feedback is appropriate, spans input devices, and doesn't distract a user from their task. This can be a particular issue in game or drawing apps, where the visual feedback might conflict with or obscure critical UI.
+L’utilisation des contrôles de la plateforme XAML disponibles permettra de garantir le fonctionnement de votre application sur tous les appareils et dans toutes les situations d’entrée. Si votre application propose des interactions personnalisées qui nécessitent un retour personnalisé, vous devez veiller à ce que le retour soit approprié, qu’il s’étende sur les périphériques d’entrée et qu’il ne risque pas de distraire l’utilisateur de sa tâche. Cela peut s’avérer particulièrement gênant dans les applications de jeu ou de dessin où le retour visuel peut entrer en conflit avec des éléments essentiels de l’interface utilisateur ou les masquer.
 
-[!IMPORTANT] We don't recommend changing the interaction behavior of the built-in gestures. 
+[!IMPORTANT] Nous ne conseillons pas de modifier le comportement d’interaction des mouvements intégrés. 
 
-**Feedback Across Devices**
+**Retour visuel sur tous les appareils:**
 
-Visual feedback is generally dependent on the input device (touch, touchpad, mouse, pen/stylus, keyboard, and so on). For example, the built-in feedback for a mouse usually involves moving and changing the cursor, while touch and pen require contact visualizations, and keyboard input and navigation uses focus rectangles and highlighting.
+Le retour visuel dépend généralement du périphérique d’entrée (entrée tactile, pavé tactile, souris, stylo/stylet, clavier, etc.). Par exemple, le retour intégré pour une souris implique habituellement le déplacement et le changement du curseur, l’entrée tactile et le stylo nécessitent des visualisations de contact, et l’entrée et la navigation au clavier utilisent la mise en surbrillance et des rectangles de sélection.
 
-Use [**ShowGestureFeedback**](https://msdn.microsoft.com/library/windows/apps/br241969) to set feedback behavior for the platform gestures.
+La propriété [**ShowGestureFeedback**](https://msdn.microsoft.com/library/windows/apps/br241969) vous sert à définir le comportement de retour pour les mouvements de la plateforme.
 
-If customizing feedback UI, ensure you provide feedback that supports, and is suitable for, all input modes.
+Si vous personnalisez l’interface utilisateur de retour, veillez à fournir un retour d’interaction prenant en charge tous les modes d’entrée et approprié à tous ces modes.
 
-Here are some examples of built-in contact visualizations in Windows.
+Voici quelques exemples de visualisations de contact intégrées à Windows:
 
-| ![Touch Feedback](images/TouchFeedback.png) | ![Mouse Feedback](images/MouseFeedback.png) | ![Pen Feedback](images/PenFeedback.png) | ![Keyboard Feedback](images/KeyboardFeedback.png) |
+| ![Retour tactile](images/TouchFeedback.png) | ![Retour de la souris](images/MouseFeedback.png) | ![Retour du stylo](images/PenFeedback.png) | ![Retour du clavier](images/KeyboardFeedback.png) |
 | --- | --- | --- | --- |
-| Touch visualization | Mouse/touchpad visualization | Pen visualization | Keyboard visualization |
+| Visualisation tactile | Visualisation de souris/pavé tactile | Visualisation de stylo | Visualisation de clavier |
 
-## High Visibility Focus Visuals
+## Visuels du focus à haute visibilité
 
-All Windows apps sport a more defined focus visual around interactable controls within the application. These new focus visuals are fully customizable as well as disableable when needed.
+Toutes les applications Windows comportent un visuel du focus plus défini autour des contrôles interactifs de l’application. Ces nouveaux visuels du focus sont entièrement personnalisables, mais peuvent également être désactivés si nécessaire.
 
-## Color Branding & Customizing
+## Personnalisation des couleurs et des visuels du focus
 
-**Border Properties**
+**Propriétés des bordures**
 
-There are two parts to the high visibility focus visuals: the primary border and the secondary border. The primary border is **2px** thick, and runs around the *outside* of the secondary border. The secondary border is **1px** thick and runs around the *inside* of the primary border.
-![High visibility focus visual redlines](images/FocusRectRedlines.png)
+Les visuels du focus à haute visibilité sont composés de deux éléments: la bordure principale et la bordure secondaire. La bordure principale a une épaisseur de **2px** et apparaît autour de la bordure secondaire *extérieure*. La bordure secondaire a une épaisseur de **1px** et apparaît autour de la bordure principale *intérieure*.
+![Lignes rouges des visuels du focus à haute visibilité](images/FocusRectRedlines.png)
 
-To change the thickness of either border type (primary or secondary) use the **FocusVisualPrimaryThickness** or **FocusVisualSecondaryThickness**, respectively:
+Pour modifier l’épaisseur des bordures (principale ou secondaire), utilisez les propriétés **FocusVisualPrimaryThickness** ou **FocusVisualSecondaryThickness**, respectivement:
 ```XAML
 <Slider Width="200" FocusVisualPrimaryThickness="5" FocusVisualSecondaryThickness="2"/>
 ```
-![High visibility focus visual margin thicknesses](images/FocusMargin.png)
+![Épaisseurs des marges des visuels du focus à haute visibilité](images/FocusMargin.png)
 
-The margin is a property of type [**Thickness**](https://msdn.microsoft.com/library/system.windows.thickness), and therefore the margin can be customized to appear only on certain sides of the control. See below: ![High visibility focus visual margin thickness bottom only](images/FocusThicknessSide.png)
+La marge est une propriété de type [**Thickness**](https://msdn.microsoft.com/library/system.windows.thickness); par conséquent, la marge peut être personnalisée afin d’apparaître uniquement sur certains côtés du contrôle. Voir ci-dessous: ![Épaisseurs des marges des visuels du focus à haute visibilité, bas uniquement](images/FocusThicknessSide.png)
 
-The margin is the space between the control's visual bounds and the start of the focus visuals *secondary border*. The default margin is **1px** away from the control bounds. You can edit this margin on a per-control basis, by changing the **FocusVisualMargin** property:
+La marge est l’espace entre les limites de l’élément visuel du contrôle et le début de la *bordure secondaire* des visuels du focus. La marge par défaut est à **1px** des limites du contrôle. Vous pouvez modifier cette marge pour chaque contrôle, en modifiant la propriété **FocusVisualMargin**:
 ```XAML
 <Slider Width="200" FocusVisualMargin="-5"/>
 ```
-![High visibility focus visual margin differences](images/FocusPlusMinusMargin.png)
+![Différences des marges des visuels du focus à haute visibilité](images/FocusPlusMinusMargin.png)
 
-*A negative margin will push the border away from the center of the control, and a positive margin will move the border closer to the center of the control.*
+*Une marge négative éloignera la bordure du centre du contrôle; en revanche, une marge positive rapprochera la bordure du centre du contrôle.*
 
-To turn off focus visuals on the control entirely, simply disabled **UseSystemFocusVisuals**:
+Pour désactiver les visuels du focus du contrôle, désactivez simplement **UseSystemFocusVisuals**:
 ```XAML
 <Slider Width="200" UseSystemFocusVisuals="False"/>
 ```
 
-The thickness, margin, or whether or not the app-developer wishes to have the focus visuals at all, is determined on a per-control basis.
+L’épaisseur, la marge ou la présence souhaitée (ou non) de visuels du focus sont déterminées pour chaque contrôle.
 
-**Color Properties**
+**Propriétés de couleur**
 
-There are only two color properties for the focus visuals: the primary border color, and the secondary border color. These focus visual border colors can be changed per-control on an page level, and globally on an app-wide level:
+Les visuels du focus comportent seulement deux propriétés de couleur: la couleur de la bordure principale et secondaire. Ces couleurs des bordures des visuels du focus peuvent être modifiées pour chaque contrôle au niveau page et, plus globalement, à l’échelle de l’application:
 
-To brand focus visuals app-wide, override the system brushes:
+Pour personnaliser les visuels du focus à l’échelle de l’application, remplacez les pinceaux système:
 ```XAML
 <SolidColorBrush x:Key="SystemControlFocusVisualPrimaryBrush" Color="DarkRed"/>
 <SolidColorBrush x:Key="SystemControlFocusVisualSecondaryBrush" Color="Pink"/>
 ```
-![High visibility focus visual color changes](images/FocusRectColorChanges.png)
+![Changements de couleurs des visuels du focus à haute visibilité](images/FocusRectColorChanges.png)
 
-To change the colors on a per-control basis, just edit the focus visual properties on the desired control:
+Pour modifier les couleurs pour chaque contrôle, modifiez simplement les propriétés visuelles du focus sur le contrôle souhaité:
 ```XAML
 <Slider Width="200" FocusVisualPrimaryBrush="DarkRed" FocusVisualSecondaryBrush="Pink"/>
 ```
 
-## Related articles
+## Articles connexes
 
-**For designers**
-* [Guidelines for panning](guidelines-for-panning.md)
+**Pour les concepteurs**
+* [Recommandations en matière de mouvement panoramique](guidelines-for-panning.md)
 
-**For developers**
-* [Custom user interactions](https://msdn.microsoft.com/library/windows/apps/mt185599)
+**Pour les développeurs**
+* [Interactions utilisateur personnalisées](https://msdn.microsoft.com/library/windows/apps/mt185599)
 
-**Samples**
-* [Basic input sample](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Low latency input sample](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [User interaction mode sample](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Focus visuals sample](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+**Exemples**
+* [Exemple d’entrée de base](http://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [Exemple d’entrée à faible latence](http://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [Exemple de mode d’interaction utilisateur](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [Exemple de visuels de focus](http://go.microsoft.com/fwlink/p/?LinkID=619895)
 
-**Archive samples**
-* [Input: XAML user input events sample](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Input: Device capabilities sample](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Input: Touch hit testing sample](http://go.microsoft.com/fwlink/p/?linkid=231590)
-* [XAML scrolling, panning, and zooming sample](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Input: Simplified ink sample](http://go.microsoft.com/fwlink/p/?linkid=246570)
-* [Input: Windows 8 gestures sample](http://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [Input: Manipulations and gestures (C++) sample](http://go.microsoft.com/fwlink/p/?linkid=231605)
-* [DirectX touch input sample](http://go.microsoft.com/fwlink/p/?LinkID=231627)
+**Exemples d’archive**
+* [Entrée: exemple d’événements d’entrée utilisateurXAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [Entrée : exemple de fonctionnalités d’appareils](http://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Entrée : exemple de test de positionnement tactile](http://go.microsoft.com/fwlink/p/?linkid=231590)
+* [Exemple de zoom, de panoramique et de défilement XAML](http://go.microsoft.com/fwlink/p/?linkid=251717)
+* [Entrée : exemple d’entrée manuscrite simplifiée](http://go.microsoft.com/fwlink/p/?linkid=246570)
+* [Entrée : exemple de mouvements Windows 8](http://go.microsoft.com/fwlink/p/?LinkId=264995)
+* [Entrée : exemple de manipulations et de mouvements (C++)](http://go.microsoft.com/fwlink/p/?linkid=231605)
+* [Exemple d’entrée tactile DirectX](http://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 
  
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO1-->
 
 

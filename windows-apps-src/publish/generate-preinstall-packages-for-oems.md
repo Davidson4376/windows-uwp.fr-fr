@@ -1,56 +1,56 @@
 ---
 author: jnHs
-Description: If your developer account has been granted the appropriate permissions, you can generate and download preinstall packages that an OEM can use to include your app in their image.
-title: Generate preinstall packages for OEMs
+Description: "Si votre compte de développeur a reçu les autorisations appropriées, vous pouvez générer et télécharger des packages de préinstallation permettant à un fabricant d’ordinateurs OEM d’inclure votre application dans son image."
+title: "Générer des packages de préinstallation pour les fabricants d’ordinateurs OEM"
 ms.assetid: AC3A45E8-7BBD-44E9-B2D3-B74B7C9B2BC9
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 1c08ab2e29e70e198ee72798f29e7667254272fd
+ms.openlocfilehash: dba1c1f754b4200bd00395e0b71d18bee30e3a2d
 
 ---
 
-# Generate preinstall packages for OEMs
+# Générer des packages de préinstallation pour les fabricants d’ordinateurs OEM
 
 
-If your developer account has been granted the appropriate permissions, you can generate and download preinstall packages that an OEM can use to include your app in their image. Preinstall permissions are only enabled on developer accounts that are sponsored by OEMs.
+Si votre compte de développeur a reçu les autorisations appropriées, vous pouvez générer et télécharger des packages de préinstallation permettant à un fabricant d&#39;ordinateurs OEM d&#39;inclure votre application dans son image. Les autorisations de préinstallation sont uniquement activées sur les comptes de développeur qui sont sponsorisés par des OEM.
 
-## Important preinstall policy & limitations
-
-
-Preinstall apps must be certified through Windows Dev Center to have the latest Store license so that they are able to connect to the Store and receive app updates.
-
-Any app that is already preinstalled must be and remain free in all markets.
-
-## Generating preinstall packages
+## Politique et limitations importantes en matière de préinstallation
 
 
-Once an account has been enabled with preinstall permissions, complete the following steps:
+Les applications de préinstallation doivent être certifiées par le biais du Centre de développement Windows comme disposant de la dernière licence du Windows Store pour être en mesure de se connecter au Windows Store et de recevoir les mises à jour d'application.
 
-1.  In your dashboard, navigate to the app that is to be preinstalled.
-2.  In the left navigation menu, expand **App management** and then click **Current packages**.
-3.  In the **Request packages for OS preinstallation** section, click **Enable downloadable packages**.
-4.  A confirmation dialog will appear, noting that apps preinstalled on an OS prior to Windows 10 must be free. Select **Enable.**
-5.  Find the package that you want to download, and click the appropriate **Generate package** link.
-    > **Note**  Generation time for preinstall packages will vary depending on the size of the package you have selected. You can leave this page and come back later, or leave the page open.
-6.  When the package has been generated, a link to **Download package** will appear. Click this link to download the .zip file.
+Toute application déjà préinstallée doit être et rester gratuite dans tous les marchés.
 
-You can then provide this .zip file to the OEM for inclusion in their OS image.
-
-## Support
+## Génération de packages de préinstallation
 
 
-If you have further questions about generating preinstall packages, please email <partnerops@microsoft.com>.
+Une fois qu'un compte a été activé avec des autorisations de préinstallation, suivez la procédure ci-après :
 
- 
+1.  Dans votre tableau de bord, accédez à l'application à préinstaller.
+2.  Dans le menu de navigation à gauche, développez l'option **Gestion des applications**, puis cliquez sur **Packages actuels**.
+3.  Dans la section **Demander des packages pour la préinstallation du système d’exploitation**, cliquez sur **Activer les packages téléchargeables**.
+4.  Cette opération affiche une boîte de dialogue de confirmation signalant que les applications préinstallées sur un système d’exploitation antérieur à Windows 10 doivent être gratuites. Sélectionnez **Activer**.
+5.  Recherchez le package à télécharger, puis cliquez sur le lien **Générer le package** approprié.
+    > **Remarque** Le temps nécessaire à la génération des packages de préinstallation varie en fonction de la taille du package que vous avez sélectionné. Vous pouvez quitter cette page et y revenir par la suite, ou laisser la page ouverte.
+6.  Une fois le package généré, un lien **Télécharger le package** s'affiche. Cliquez sur ce lien pour télécharger le fichier .zip.
+
+Vous pouvez alors fournir ce fichier .zip à l'OEM pour qu'il puisse l'inclure dans son image de système d'exploitation.
+
+## Support technique
+
+
+Si vous avez des questions sur la génération de packages de préinstallation, envoyez un e-mail à l'adresse <partnerops@microsoft.com>.
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -5,7 +5,7 @@ title: Mappages des espaces de noms et des classes de Silverlight pour Windows P
 ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 6b33127c6b76ef820a93b200a655426a0f516b68
+ms.openlocfilehash: 164e5303c48b6c65807984e4afcaf81ac12f6431
 
 ---
 
@@ -151,7 +151,7 @@ En outre, dans une application Windows10, vous bénéficierez du code natif .NET
 | Classes **Microsoft.Phone.Tasks.SaveContactTask**, **SaveEmailAddressTask** et **SavePhoneNumberTask** | Classe [**StoredContact**](https://msdn.microsoft.com/library/windows/apps/jj207727) (Windows Phone uniquement) | 
 | Classe **Microsoft.Phone.Tasks.SaveRingtoneTask** | Aucun équivalent direct | 
 | Classes **Microsoft.Phone.Tasks.ShareLinkTask**, **ShareMediaTask** et **ShareStatusTask** | Classe [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/br205873) |
-| Emplacement | |
+| Localisation | |
 | Espace de noms **System.Device.Location** | Espace de noms [**Windows.Devices.Geolocation**](https://msdn.microsoft.com/library/windows/apps/br225603) |
 | Classe **System.Device.GeoCoordinateWatcher** | Classe [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) |
 | Cartes | |
@@ -165,7 +165,7 @@ En outre, dans une application Windows10, vous bénéficierez du code natif .NET
 | Classe **Microsoft.Phone.Maps.Services.RouteQuery** | Classe [**MapRouteFinder**](https://msdn.microsoft.com/library/windows/apps/dn636938) |
 | Monétisation | |
 | Espace de noms **Microsoft.Phone.Marketplace** | Espace de noms [**Windows.ApplicationModel.Store**](https://msdn.microsoft.com/library/windows/apps/br225197) |
-| Support | |
+| Multimédia | |
 | Espace de noms **Microsoft.Phone.Media** | Classe [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) |
 | Réseau | |
 | (MPNN = **Microsoft.Phone.Net.NetworkInformation**) <br/> Classe **MPNN.DeviceNetworkInformation** | Classes [**Hostname**](https://msdn.microsoft.com/library/windows/apps/br207113) et [**NetworkInformation**](https://msdn.microsoft.com/library/windows/apps/br207293)
@@ -249,6 +249,6 @@ Rubrique suivante : [Portage du projet](wpsl-to-uwp-porting-to-a-uwp-project.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

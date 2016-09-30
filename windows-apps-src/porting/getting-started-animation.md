@@ -1,59 +1,59 @@
 ---
 author: mcleblanc
-title: Getting started with Animation
+title: "Prise en main de l’application Animation"
 ms.assetid: C1C3F5EA-B775-4700-9C45-695E78C16205
-description: In this project, we're going to move a rectangle, apply a fade effect, and then bring it back into view.
+description: "Dans ce projet, nous allons déplacer un rectangle, luis appliquer un effet de fondu, puis de nouveau l’afficher."
 translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: ae08bb25d8ac56ca6e03a5c200e8a0d4e05fbfe3
+ms.openlocfilehash: 6e0b92af1d3c5f61aa2341d43ca40330fcc359f4
 
 ---
 
-# Getting started: Animation
+# Prise en main &#58; Animation
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-## Adding animations
+## Ajout d’animations
 
-In iOS, you most often create animation effects programmatically. For example, you might use animations provided by the block-based **UIView** class's **animateWithDuration** methods, or the older non-block based methods. Or, you might explicitly use the **CALayer** class to animate layers. Animations in Windows apps can be created programmatically, but they can also be defined declaratively with Extensible Application Markup Language (XAML). You can use Microsoft Visual Studio to edit XAML code directly, but Visual Studio also comes with a tool called **Blend**, which creates XAML code for you as you work with animations in a designer. In fact, Blend allows you to open, design, build, and run complete Visual Studio projects, graphically. The following walkthrough lets you try this out.
+Dans iOS, vous créez le plus souvent des effets d’animation par programme. Par exemple, vous pouvez utiliser des animations fournies par les méthodes **animateWithDuration** de classe **UIView**, basées sur des blocs, ou les méthodes plus anciennes non basées sur des blocs. Vous pouvez également utiliser explicitement la classe **CALayer** pour animer des couches. Les animations dans les applications Windows peuvent être créées par programme, mais aussi être définies de manière déclarative avec XAML (Extensible Application Markup Language). Vous pouvez utiliser Microsoft Visual Studio pour modifier directement du code XAML, mais Visual Studio inclut également un outil appelé **Blend**, qui génère du code XAML à votre place lorsque vous travaillez sur des animations dans un concepteur. En fait, Blend vous permet d’ouvrir, de concevoir, de générer et d’exécuter des projets Visual Studio complets sous forme graphique. La procédure qui suit vous offre l’occasion de tester et mettre en pratique cette opération.
 
-Create a new Universal Windows Platform (UWP) app and name it something like "SimpleAnimation". In this project, we're going to move a rectangle, apply a fade effect, and then bring it back into view. Animations in XAML are based on the concept of *storyboards* (not to be confused with iOS storyboards). Storyboards use *keyframes* to animate property changes.
+Créez une application de plateforme Windows universelle (UWP) et appelez-la, par exemple, «SimpleAnimation». Dans ce projet, nous allons déplacer un rectangle, luis appliquer un effet de fondu, puis de nouveau l’afficher. Les animations en XAML sont basées sur le concept des *tables de montage* (à ne pas confondre avec les tables de montage iOS). Les tables de montage séquentiel utilisent des *images clés* pour animer les changements de propriétés.
 
-With your project open, in **Solution Explorer**, right-click the project's name and then select **Open in Blend** or **Design in Blend**, as shown in the following figure. Visual Studio continues to run in the background.
+Après avoir ouvert votre projet, dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le nom du projet, puis sélectionnez **Ouvrir dans Blend** ou **Configurer dans Blend**, comme illustré dans la figure ci-dessous. Visual Studio poursuit son exécution en arrière-plan.
 
-![open in blend menu command](images/ios-to-uwp/vs-open-in-blend.png)
+![commande de menu ouvrir dans blend](images/ios-to-uwp/vs-open-in-blend.png)
 
-After Blend starts, you should see something similar to the following figure.
+Au démarrage de Blend, vous devez voir apparaître un écran semblable à celui-ci.
 
-![blend development environment](images/ios-to-uwp/blend-1.png)
+![environnement de développement blend](images/ios-to-uwp/blend-1.png)
 
-Double-click on **MainPage.xaml** in the **Solution Explorer** on the left hand side. Next, from the vertical strip of tools on the edge of the central **Design View**, select the **Rectangle** tool, and then draw a rectangle in **Design View**, as shown in the following figure.
+Dans l’**Explorateur de solutions**, à gauche, double-cliquez sur **MainPage.xaml**. Ensuite, dans la bande verticale des outils au bord de **Mode Création**, sélectionnez l’outil **Rectangle** , puis tracez un rectangle dans **Mode Création**, comme illustré dans la figure suivante.
 
-![adding a rectangle to design view](images/ios-to-uwp/blend-2.png)
+![ajout d’un rectangle en mode création](images/ios-to-uwp/blend-2.png)
 
-To make the rectangle green, look in the **Properties** window, and in the **Brush** area, click on the **Solid color brush** button, and then click the **Color eyedropper** icon. Click somewhere in the green band of hues.
+Pour obtenir un rectangle vert, accédez à la fenêtre **Propriétés**. Dans la zone **Pinceau**, cliquez sur le bouton **Pinceau de couleur unie**, puis sur l’icône **Pipette de couleur**. Cliquez n’importe où dans la palette des teintes de vert.
 
-To begin animating the rectangle, in the **Objects and Timeline** window, tap the plus symbol (**New**) button as shown in the following figure, and then tap **OK**.
+Pour commencer à animer le rectangle, dans la fenêtre **Objets et chronologie**, appuyez sur le bouton doté d’un symbole plus (**Nouveau**) comme dans la figure ci-dessous, puis appuyez sur **OK**.
 
-![adding a storyboard](images/ios-to-uwp/blend-3.png)
+![ajout d’une table de montage séquentiel](images/ios-to-uwp/blend-3.png)
 
-A storyboard appears in the **Objects and Timeline** window (you may need to resize the view to see it properly). The **Design View** display changes to show that **Storyboard1 timeline recording is on**. To capture the current state of the rectangle, in the **Objects and Timeline** window, tap the **Record Keyframe** button just above the yellow arrow, as shown in the following figure.
+Une table de montage séquentiel s’affiche dans la fenêtre **Objets et chronologie** (vous devrez peut-être redimensionner la vue pour l’afficher correctement). Le **mode Création** change pour indiquer que l’**enregistrement chronologique de Storyboard1 est activé**. Pour capturer l’état actuel du rectangle, dans la fenêtre **Objets et chronologie**, appuyez sur le bouton **Enregistrer l’image clé** juste au-dessus de la flèche jaune (voir figure ci-dessous).
 
-![recording a keyframe](images/ios-to-uwp/blend-4.png)
+![enregistrement d’une image clé](images/ios-to-uwp/blend-4.png)
 
-Now, let's move the rectangle and fade it away. To do this, drag the orange/yellow arrow to the 2-second position, and then move your green rectangle slightly to the right. Then, in the **Properties** window, in the **Appearance** area, change the **Opacity** property to **0**, as shown in the following figure. To preview the animation, tap the **Play** button in the Storyboard panel.
+Déplaçons à présent le rectangle et atténuons-le. Pour cela, faites glisser la flèche jaune/orange vers la deuxième position, puis déplacez le rectangle vert légèrement vers la droite. Dans la zone **Apparence** de la fenêtre **Propriétés**, redéfinissez ensuite la propriété **Opacité** sur **0** (voir figure ci-dessous). Pour afficher un aperçu de l’animation, appuyez sur le bouton **Lecture** dans le panneau de la table de montage séquentiel.
 
-![properties windows and play button](images/ios-to-uwp/blend-5.png)
+![fenêtre propriétés et bouton lecture](images/ios-to-uwp/blend-5.png)
 
-Next, let's bring the rectangle back into view. In the **Objects and Timeline** window, double-click **Storyboard1**. Then, in the **Properties** window, in the **Common** area, select **AutoReverse**, as shown in the following figure.
+Faisons maintenant réapparaître le rectangle. Dans la fenêtre **Objets et chronologie**, double-cliquez sur **Storyboard1**. Ensuite, dans la zone **Commun** de la fenêtre **Propriétés**, sélectionnez **AutoReverse** comme illustré dans la figure ci-dessous.
 
-![selecting a storyboard](images/ios-to-uwp/blend-6.png)
+![sélection d’une table de montage séquentiel](images/ios-to-uwp/blend-6.png)
 
-Finally, click on the **Play** button to see what happens.
+Pour finir, cliquez sur le bouton **Lecture** pour voir ce qu’il se passe.
 
-You can build and run the project by clicking on the green run button at the top of the window (or just press F5). If you do this, you'll see your project will indeed build and run, but the green rectangle will stubbornly sit perfectly still, like a toddler denied candy in a supermarket aisle. To start the animation, you'll need to add a line of code to the project. Here's how.
+Vous pouvez générer et exécuter le projet en cliquant sur le bouton d’exécution vert en haut de la fenêtre (ou en appuyant simplement sur F5). Si vous procédez de la sorte, votre projet sera en effet généré et exécuté, mais le rectangle vert restera obstinément immobile, comme un bambin auquel on refuse un bonbon dans une allée de supermarché. Pour démarrer l’animation, vous devez ajouter une ligne de code au projet. Voici comment procéder.
 
-Save the project, by opening the **File** menu, and selecting **Save MainPage.xaml**. Return to Visual Studio. If Visual Studio displays a dialog box asking whether you want to reload the modified file, select **Yes**. Double-click the **MainPage.xaml.cs** file, which is hidden under **MainPage.xaml**, to open it, and add the following code just above the public MainPage() method:
+Enregistrez le projet en ouvrant le menu **Fichier**, puis en sélectionnant **Enregistrer MainPage.xaml**. Retournez à Visual Studio. Si Visual Studio affiche une boîte de dialogue qui vous demande si vous souhaitez recharger le fichier modifié, sélectionnez **Oui**. Double-cliquez sur le fichier **MainPage.xaml.cs**, masqué sous **MainPage.xaml**, pour l’ouvrir, puis ajoutez le code suivant juste au-dessus de la méthode public MainPage() :
 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -63,9 +63,9 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 }
 ```
 
-Run the project again, and watch the rectangle animate. Hurrah!
+Exécutez de nouveau le projet et regardez le rectangle s’animer. Hourra!
 
-If you open the MainPage.xaml file, in **XAML** view, you'll see the XAML code that Blend added for you as you worked in the designer. In particular, look at the code in the `<Storyboard>` and `<Rectangle>` elements. The following code shows an example. Ellipses indicate unrelated code omitted for brevity, and line breaks have been added for code readability.)
+Si vous ouvrez le fichier MainPage.xaml, dans la vue **XAML**, vous verrez le code XAML ajouté par Blend tandis que vous travaillez dans le concepteur. Examinez surtout le code dans les éléments `<Storyboard>` et `<Rectangle>`. Le code qui suit montre un exemple. Les points de suspension représentent du code sans rapport omis par souci de concision et des sauts de line ont été ajoutés pour rendre le code plus lisible.
 
 ```xml
 ...
@@ -121,16 +121,16 @@ If you open the MainPage.xaml file, in **XAML** view, you'll see the XAML code t
 ...
 ```
 
-You can edit this XAML manually, or return to Blend to continue working on it there. Blend makes it fun to create interesting user interfaces, and the ability to animate them using a graphical tool can dramatically speed up development time. For more info about animations, see [Animations overview](https://msdn.microsoft.com/library/windows/apps/mt187350).
+Vous pouvez modifier ce code XAML manuellement, ou retourner à Blend pour continuer à travailler dessus. Blend permet de créer aisément des interfaces utilisateur intéressantes, et la possibilité de les animer à l’aide d’un outil graphique peut accélérer considérablement le temps de développement. Pour plus d’informations sur les animations, voir [Vue d’ensemble des animations](https://msdn.microsoft.com/library/windows/apps/mt187350).
 
-**Note**  For info about animations for Windows Store apps using JavaScript and HTML, see [Animating your UI (HTML)](https://msdn.microsoft.com/library/windows/apps/hh465165).
+**Remarque** Pour plus d’informations sur les animations pour les applications du Windows Store en JavaScript et HTML, voir [Animation de votre interface utilisateur (HTML)](https://msdn.microsoft.com/library/windows/apps/hh465165).
 
-### Next step
+### Étape suivante
 
-[Getting started: What next?](getting-started-what-next.md)
+[Prise en main : Et ensuite ?](getting-started-what-next.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

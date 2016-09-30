@@ -2,16 +2,16 @@
 author: drewbatgit
 ms.assetid: B5D915E4-4280-422C-BA0E-D574C534410B
 description: "Cet article décrit comment utiliser les classes SceneAnalysisEffect et FaceDetectionEffect pour analyser le contenu du flux d’aperçu de capture multimédia."
-title: "Effets d’analyse de cadres caméra"
+title: "Analyse de scène de capture multimédia"
 translationtype: Human Translation
-ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
-ms.openlocfilehash: a5af97156ade8574537e38e50c45b9b15f506980
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 891c0d274c2d3fb82f855011158ecd3ccdcd87b3
 
 ---
 
-# Effets d’analyse de cadres caméra
+# Analyse de scène de capture multimédia
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cet article décrit comment utiliser les classes [**SceneAnalysisEffect**](https://msdn.microsoft.com/library/windows/apps/dn948902) et [**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776) pour analyser le contenu du flux d’aperçu de capture multimédia.
@@ -112,8 +112,7 @@ Tous les appareils ne disposent pas d’un appareil de capture permettant d’aj
 
 ## Rubriques connexes
 
-* [Appareil photo](camera.md)
-* [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Capturer des photos et des vidéos à l’aide de MediaCapture](capture-photos-and-video-with-mediacapture.md)
  
 
  
@@ -124,6 +123,6 @@ Tous les appareils ne disposent pas d’un appareil de capture permettant d’aj
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

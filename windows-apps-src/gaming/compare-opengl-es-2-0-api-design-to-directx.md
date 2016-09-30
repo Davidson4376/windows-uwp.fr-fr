@@ -1,125 +1,125 @@
 ---
 author: mtoepke
-title: Plan your port from OpenGL ES 2.0 to Direct3D
-description: If you are porting a game from the iOS or Android platforms, you have probably made a significant investment in OpenGL ES 2.0.
+title: "Planifier votre portage d’OpenGL ES2.0 vers Direct3D"
+description: "Si vous portez un jeu à partir des plateformes iOS ou Android, vous avez probablement effectué un investissement considérable dans OpenGL ES 2.0."
 ms.assetid: a31b8c5a-5577-4142-fc60-53217302ec3a
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 84f13d6507d141c468fcfd6a2bcf75f5419d65da
+ms.openlocfilehash: f1119a9faed4fca7f0538a4c92c667e5b2ba559c
 
 ---
 
-# Plan your port from OpenGL ES 2.0 to Direct3D
+# Planifier votre portage d’OpenGL ES 2.0 vers Direct3D
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-**Important APIs**
+**API importantes**
 
 -   [Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476080)
 -   [Visual C++](https://msdn.microsoft.com/library/windows/apps/60k1461a.aspx)
 
-If you are porting a game from the iOS or Android platforms, you have probably made a significant investment in OpenGL ES 2.0. When preparing to move your graphics pipeline codebase to Direct3D 11 and the Windows Runtime, there are a few things you should consider before you start.
+Si vous portez un jeu à partir des plateformes iOS ou Android, vous avez probablement effectué un investissement considérable dans OpenGL ES 2.0. Avant de déplacer le code base de votre pipeline graphique vers Direct3D 11 et le Windows Runtime, certains points sont à prendre en compte.
 
-Most porting efforts usually involving initially walking the codebase and mapping common APIs and patterns between the two models. You'll find this process a bit easier if you take some time to read and review this topic.
+La plupart des efforts de portage concernent généralement le passage du code base et le mappage des API et modèles courants entre les deux modèles. Vous trouverez ce processus un peu plus simple après avoir lu cette rubrique.
 
-Here are some things to be aware of when porting graphics from OpenGL ES 2.0 to Direct3D 11.
+Voici certains points à prendre en considération dans le portage des graphiques d’OpenGL ES 2.0 vers Direct3D 11.
 
-## Notes on specific OpenGL ES 2.0 providers
-
-
-The porting topics in this section reference the Windows implementation of the OpenGL ES 2.0 specification created by the Khronos Group. All OpenGL ES 2.0 code samples were developed using Visual Studio 2012 and basic Windows C syntax. If you are coming from an Objective-C (iOS) or Java (Android) codebase, be aware that the provided OpenGL ES 2.0 code samples may not use similar API calling syntax or parameters. This guidance tries to stay as platform agnostic as possible.
-
-This documentation only uses the 2.0 specification APIs for the OpenGL ES code and reference. If you are porting from OpenGL ES 1.1 or 3.0, this content can still prove useful, although some of the OpenGL ES 2.0 code examples and context may be unfamiliar.
-
-The Direct3D 11 samples in these topics use Microsoft Windows C++ with Component Extensions (CX). For more info on this version of the C++ syntax, read [Visual C++](https://msdn.microsoft.com/library/windows/apps/60k1461a.aspx), [Component Extensions for Runtime Platforms](https://msdn.microsoft.com/library/windows/apps/xey702bw.aspx), and [Quick Reference (C++\\CX)](https://msdn.microsoft.com/library/windows/apps/br212455.aspx).
-
-## Understand your hardware requirements and resources
+## Remarques sur les fournisseurs OpenGL ES 2.0 spécifiques
 
 
-The set of graphics processing features supported by OpenGL ES 2.0 roughly maps to the features provided in Direct3D 9.1. If you want to take advantage of the more advanced features provided in Direct3D 11, review the [Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476080) documentation when planning your port, or review the [Port from DirectX 9 to Universal Windows Platform (UWP)](porting-your-directx-9-game-to-windows-store.md) topics when you're done with the initial effort.
+Les rubriques qui abordent le portage dans cette section font référence à l’implémentation Windows des spécifications OpenGL ES 2.0 créées par Khronos Group. Tous les exemples de code OpenGL ES 2.0 ont été développés à l’aide de Visual Studio 2012 et de la syntaxe C Windows de base. Si vous effectuez un portage à partir d’un code base Objective-C (iOS) ou Java (Android), les exemples de code OpenGL ES 2.0 peuvent ne pas utiliser la même syntaxe ou les mêmes paramètres d’appel des API. Ces recommandations tentent d’adopter un point de vue aussi indépendant que possible du type de plateforme utilisé.
 
-To make your initial porting effort simple, start with a Visual Studio Direct3D template. It provides a basic renderer already configured for you, and supports UWP app features like recreating resources on window changes and Direct3D feature levels.
+Cette documentation n’utilise que les API de spécification 2.0 pour le code et les références OpenGL ES. Si vous effectuez un portage à partir d’OpenGL ES 1.1 ou 3.0, ce contenu peut vous être utile, mais certains des exemples de code ou de contexte OpenGL ES 2.0 ne vous seront peut-être pas familiers.
 
-## Understand Direct3D feature levels
+Les exemples Direct3D 11 de ces rubriques utilisent Microsoft Windows C++ avec extensions de composant (CX). Pour plus d’informations sur cette version de la syntaxe C++, voir [Visual C++](https://msdn.microsoft.com/library/windows/apps/60k1461a.aspx), [Extensions de composant pour les plateformes Runtime](https://msdn.microsoft.com/library/windows/apps/xey702bw.aspx) et [Guide de référence rapide (C++\\CX)](https://msdn.microsoft.com/library/windows/apps/br212455.aspx).
 
-
-Direct3D 11 provides support for hardware "feature levels" from 9\_1 (Direct3D 9.1) for 11\_1. These feature levels indicate the availability of certain graphics features and resources. Typically, most OpenGL ES 2.0 platforms support a Direct3D 9.1 (feature level 9\_1) set of features.
-
-## Review DirectX graphics features and APIs
+## Explorer la configuration requise et vos ressources matérielles
 
 
-| API Family                                                | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+L’ensemble des fonctionnalités de traitement graphique prises en charge par OpenGL ES 2.0 correspondent à peu près aux fonctionnalités fournies dans Direct3D 9.1. Si vous voulez tirer parti des fonctionnalités plus avancées proposées dans Direct3D 11, consultez la documentation [Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476080) au moment de planifier votre portage ou les rubriques [Portage de DirectX 9 vers le Windows Store](porting-your-directx-9-game-to-windows-store.md) une fois la mise en place terminée.
+
+Pour simplifier la mise en place de votre portage, commencez avec un modèle Visual Studio Direct3D. Il fournit un rendu basique pré-configuré et prend en charge des fonctionnalités d’application Windows Store comme la recréation de ressources suite à des modifications de fenêtre et les niveaux de fonctionnalité Direct3D.
+
+## Explorer les niveaux de fonctionnalité Direct3D
+
+
+Direct3D 11 prend en charge les «niveaux de fonctionnalité» de matériel du niveau 9\_1 (Direct3D 9.1) au niveau 11\_1. Ces niveaux de fonctionnalité indiquent la disponibilité de certaines fonctionnalités et ressources graphiques. En général, la plupart des plateformes OpenGL ES 2.0 prennent en charge un ensemble de fonctionnalités Direct3D 9.1 (niveau de fonctionnalité 9\_1).
+
+## Parcourir les fonctionnalités graphiques et les API DirectX
+
+
+| Famille d’API                                                | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |-----------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [DXGI](https://msdn.microsoft.com/library/windows/desktop/hh404534)                     | The DirectX Graphics Infrastructure (DXGI) provides an interface between the graphics hardware and Direct3D. It sets the device adapter and hardware configuration using the [**IDXGIAdapter**](https://msdn.microsoft.com/library/windows/desktop/bb174523) and [**IDXGIDevice1**](https://msdn.microsoft.com/library/windows/desktop/hh404543) COM interfaces. Use it to create and configure your buffers and other window resources. Notably, the [**IDXGIFactory2**](https://msdn.microsoft.com/library/windows/desktop/hh404556) factory pattern iis used to acquire the graphics resources, including the swap chain (a set of frame buffers). Since DXGI owns the swap chain, the [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631) interface is used to present frames to the screen. |
-| [Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff476080)       | Direct3D is the set of APIs that provide a virtual representation of the graphics interface and allow you to draw graphics using it. Version 11, is roughly comparable, feature-wise, to OpenGL 4.3. (OpenGL ES 2.0, on the other hand, is similar to DirectX9, feature-wise, and OpenGL 2.0, but with OpenGL 3.0's unified shader pipeline.) Most of the heavy lifting is done with the ID3D11Device1 and ID3D11DeviceContext1 interfaces which provide access to individual resources and subresources, and the rendering context, respectively.                                                                                                                                          |
-| [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990)                      | Direct2D provides a set of APIs for GPU-accelerated 2D rendering. It can be considered similar in purpose to OpenVG.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038)            | DirectWrite provides a set of APIs for GPU-accelerated, high-quality font rendering.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833)                  | DirectXMath provides a set of APIs and macros for handling common linear algebra and trigonometric types, values, and functions. These types and functions are designed to work well with Direct3D and its shader operations.                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| [DirectX HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509580) | The current HLSL syntax used by Direct3D shaders. It implements Direct3D Shader Model 5.0.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| [DXGI](https://msdn.microsoft.com/library/windows/desktop/hh404534)                     | L’infrastructure DXGI (DirectX Graphics Infrastructure) constitue une interface entre le matériel vidéo et Direct3D. Elle définit la carte du périphérique et la configuration matérielle à l’aide des interfaces COM [**IDXGIAdapter**](https://msdn.microsoft.com/library/windows/desktop/bb174523) et [**IDXGIDevice1**](https://msdn.microsoft.com/library/windows/desktop/hh404543). Utilisez-la pour créer et configurer vos tampons et autres ressources Windows. De toute évidence, le modèle de fabrique [**IDXGIFactory2**](https://msdn.microsoft.com/library/windows/desktop/hh404556) est utilisé pour acquérir des ressources graphiques, y compris la chaîne de permutation (ensemble de tampons de trame). Dans la mesure où DXGI détient la chaîne de permutation, l’interface [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631) sert à présenter les trames à l’écran. |
+| [Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff476080)       | Direct3D est l’ensemble d’API qui fournit une représentation virtuelle de l’interface graphique et vous permet de dessiner des graphiques. Version 11 est à peu près comparable à OpenGL 4.3 du point de vue des fonctionnalités. (OpenGL ES2.0, pour sa part, est similaire à DirectX9, du point de vue des fonctionnalités, et à OpenGL2.0, mais accompagné du pipeline nuanceur unifié d’OpenGL3.0). Une grande partie du travail est effectuée dans les interfaces ID3D11Device1 et ID3D11DeviceContext1 qui fournissent respectivement un accès aux ressources et sous-ressources individuelles, et au contexte de rendu.                                                                                                                                          |
+| [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990)                      | Direct2D fournit un ensemble d’API pour le rendu 2D à accélération graphique. Sa fonction est comparable à celle d’OpenVG.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038)            | DirectWrite fournit un ensemble d’API pour le rendu de polices haute qualité, à accélération graphique.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833)                  | DirectXMath fournit un ensemble d’API et de macros pour la gestion des types, valeurs et fonctions courants d’algèbre linéaire et de trigonométrie. Ces types et fonctions sont conçus pour fonctionner correctement avec Direct3D et ses opérations de nuanceur.                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| [HLSL DirectX](https://msdn.microsoft.com/library/windows/desktop/bb509580) | Syntaxe HLSL actuelle utilisée par les nuanceurs Direct3D. Elle implémente le modèle de nuanceur 5.0 de Direct3D.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 
  
 
-## Review the Windows Runtime APIs and template library
+## Parcourir les API et la bibliothèque de modèles de Windows Runtime
 
 
-The Windows Runtime APIs provide the overall infrastructure for UWP apps. Review them [here](https://msdn.microsoft.com/library/windows/apps/br211377).
+Les API Windows Runtime fournissent l’infrastructure générale des applications UWP. Parcourez-les [ici](https://msdn.microsoft.com/library/windows/apps/br211377).
 
-Key Windows Runtime APIs used in porting your graphics pipeline include:
+Les API Windows Runtime essentielles utilisées dans le portage de votre pipeline graphique sont notamment les suivantes:
 
 -   [**Windows::UI::Core::CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)
 -   [**Windows::UI::Core::CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211)
 -   [**Windows::ApplicationModel::Core::IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478)
 -   [**Windows::ApplicationModel::Core::CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017)
 
-Additionally, the Windows Runtime C++ Template Library (WRL) is a template library that provides a low-level way to author and use Windows Runtime components. The Direct3D 11 APIs for UWP apps are best used in conjunctions with the interfaces and types in this library, such as smart pointers ([ComPtr](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)). For more info on the WRL, read [Windows Runtime C++ Template Library (WRL)](https://msdn.microsoft.com/library/windows/apps/hh438466.aspx).
+Par ailleurs, la bibliothèque de modèles C++ Windows Runtime (WRL) est une bibliothèque de modèles qui fournit un moyen de bas niveau pour créer et utiliser des composants Windows Runtime. Les API Direct3D 11 pour les applications Windows Store doivent être utilisées de préférence avec les interfaces et types de cette bibliothèque, comme les pointeurs intelligents ([ComPtr](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)). Pour plus d’informations sur WRL, voir [Bibliothèque de modèles C++ Windows Runtime (WRL)](https://msdn.microsoft.com/library/windows/apps/hh438466.aspx).
 
-## Change your coordinate system
+## Changer votre système de coordonnées
 
 
-One difference that sometimes confuses early port efforts is the change from OpenGL's traditional right-handed coordinate system to Direct3D's default left-handed coordinate system. This change in coordinate modeling affects many parts of your game, from the setup and configuration of your vertex buffers to many of your matrix math functions. The two most important changes to make are:
+La différence qui perturbe parfois les premiers efforts de portage est le passage d’un système de coordonnées droitier traditionnel d’OpenGL au système de coordonnées gaucher par défaut de Direct3D. Ce changement de modélisation des coordonnées affecte plusieurs parties de votre jeu, depuis l’installation et la configuration de vos tampons de vertex jusqu’à de nombreuses fonctions mathématiques de votre matrice. Les deux changements les plus importants à effectuer sont les suivants :
 
--   Flip the order of triangle vertices so that Direct3D traverses them clockwise from the front. For example, if your vertices are indexed as 0, 1, and 2 in your OpenGL pipeline, pass them to Direct3D as 0, 2, 1 instead.
--   Use the view matrix to scale world space by -1.0f in the z direction, effectively reversing the z-axis coordinates. To do this, flip the sign of the values at positions M31, M32, and M33 in your view matrix (when porting it to the [**Matrix**](https://msdn.microsoft.com/library/windows/desktop/bb147180) type). If M34 is not 0, flip its sign as well.
+-   Inversez l’ordre des vertex des triangles de sorte que Direct3D les parcoure dans le sens des aiguilles d’une montre depuis l’avant. Par exemple, si vos vertex sont indexés en tant que 0, 1 et 2 dans votre pipeline OpenGL, passez-les à Direct3D en tant que 0, 2, 1.
+-   Utilisez la matrice globale pour la mise à l’échelle de l’espace du monde à -1.0f dans la direction de l’axe z, en inversant les coordonnées de l’axe z. Pour ce faire, inversez le signe des valeurs des positions M31, M32 et M33 dans votre matrice globale (lors de son portage vers le type [**Matrix**](https://msdn.microsoft.com/library/windows/desktop/bb147180)). Si M34 n’est pas égal à zéro, inversez aussi son signe.
 
-However, Direct3D can support a right-handed coordinate system. DirectXMath provides a number of functions that operate on and across both left-handed and right-handed coordinate systems. They can be used to preserve some of your original mesh data and matrix processing. They include:
+Toutefois, Direct3D peut prendre en charge un système de coordonnées droitier. DirectXMath fournit un nombre de fonctions compatibles avec les systèmes de coordonnées droitier et gaucher. Elles peuvent être utilisées pour préserver certaines de vos données de maillage d’origine et le traitement des matrices. Ces fonctions sont notamment les suivantes :
 
-| DirectXMath matrix function                                                   | Description                                                                                                                 |
+| Fonction de matrice DirectXMath                                                   | Description                                                                                                                 |
 |-------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
-| [**XMMatrixLookAtLH**](https://msdn.microsoft.com/library/windows/desktop/ee419969)                               | Builds a view matrix for a left-handed coordinate system using a camera position, an up direction, and a focal point.       |
-| [**XMMatrixLookAtRH**](https://msdn.microsoft.com/library/windows/desktop/ee419970)                               | Builds a view matrix for a right-handed coordinate system using a camera position, an up direction, and a focal point.      |
-| [**XMMatrixLookToLH**](https://msdn.microsoft.com/library/windows/desktop/ee419971)                               | Builds a view matrix for a left-handed coordinate system using a camera position, an up direction, and a camera direction.  |
-| [**XMMatrixLookToRH**](https://msdn.microsoft.com/library/windows/desktop/ee419972)                               | Builds a view matrix for a right-handed coordinate system using a camera position, an up direction, and a camera direction. |
-| [**XMMatrixOrthographicLH**](https://msdn.microsoft.com/library/windows/desktop/ee419975)                   | Builds an orthogonal projection matrix for a left-handed coordinate system.                                                 |
-| [**XMMatrixOrthographicOffCenterLH**](https://msdn.microsoft.com/library/windows/desktop/ee419976) | Builds a custom orthogonal projection matrix for a left-handed coordinate system.                                           |
-| [**XMMatrixOrthographicOffCenterRH**](https://msdn.microsoft.com/library/windows/desktop/ee419977) | Builds a custom orthogonal projection matrix for a right-handed coordinate system.                                          |
-| [**XMMatrixOrthographicRH**](https://msdn.microsoft.com/library/windows/desktop/ee419978)                   | Builds an orthogonal projection matrix for a right-handed coordinate system.                                                |
-| [**XMMatrixPerspectiveFovLH**](https://msdn.microsoft.com/library/windows/desktop/ee419979)               | Builds a left-handed perspective projection matrix based on a field of view.                                                |
-| [**XMMatrixPerspectiveFovRH**](https://msdn.microsoft.com/library/windows/desktop/ee419980)               | Builds a right-handed perspective projection matrix based on a field of view.                                               |
-| [**XMMatrixPerspectiveLH**](https://msdn.microsoft.com/library/windows/desktop/ee419981)                     | Builds a left-handed perspective projection matrix.                                                                         |
-| [**XMMatrixPerspectiveOffCenterLH**](https://msdn.microsoft.com/library/windows/desktop/ee419982)   | Builds a custom version of a left-handed perspective projection matrix.                                                     |
-| [**XMMatrixPerspectiveOffCenterRH**](https://msdn.microsoft.com/library/windows/desktop/ee419983)   | Builds a custom version of a right-handed perspective projection matrix.                                                    |
-| [**XMMatrixPerspectiveRH**](https://msdn.microsoft.com/library/windows/desktop/ee419984)                     | Builds a right-handed perspective projection matrix.                                                                        |
+| [**XMMatrixLookAtLH**](https://msdn.microsoft.com/library/windows/desktop/ee419969)                               | Crée une matrice globale pour un système de coordonnées gaucher à l’aide d’une position de caméra, une direction vers le haut et un point focal.       |
+| [**XMMatrixLookAtRH**](https://msdn.microsoft.com/library/windows/desktop/ee419970)                               | Crée une matrice globale pour un système de coordonnées droitier à l’aide d’une position de caméra, une direction vers le haut et un point focal.      |
+| [**XMMatrixLookToLH**](https://msdn.microsoft.com/library/windows/desktop/ee419971)                               | Crée une matrice globale pour un système de coordonnées gaucher à l’aide d’une position de caméra, une direction vers le haut et une direction de caméra.  |
+| [**XMMatrixLookToRH**](https://msdn.microsoft.com/library/windows/desktop/ee419972)                               | Crée une matrice globale pour un système de coordonnées droitier à l’aide d’une position de caméra, une direction vers le haut et une direction de caméra. |
+| [**XMMatrixOrthographicLH**](https://msdn.microsoft.com/library/windows/desktop/ee419975)                   | Crée une matrice de projection orthogonale pour un système de coordonnées gaucher.                                                 |
+| [**XMMatrixOrthographicOffCenterLH**](https://msdn.microsoft.com/library/windows/desktop/ee419976) | Crée une matrice de projection orthogonale personnalisée pour un système de coordonnées gaucher.                                           |
+| [**XMMatrixOrthographicOffCenterRH**](https://msdn.microsoft.com/library/windows/desktop/ee419977) | Crée une matrice de projection orthogonale personnalisée pour un système de coordonnées droitier.                                          |
+| [**XMMatrixOrthographicRH**](https://msdn.microsoft.com/library/windows/desktop/ee419978)                   | Crée une matrice de projection orthogonale pour un système de coordonnées droitier.                                                |
+| [**XMMatrixPerspectiveFovLH**](https://msdn.microsoft.com/library/windows/desktop/ee419979)               | Crée une matrice de projection de perspective pour un système gaucher en fonction d’un champ de vue.                                                |
+| [**XMMatrixPerspectiveFovRH**](https://msdn.microsoft.com/library/windows/desktop/ee419980)               | Crée une matrice de projection de perspective pour un système droitier en fonction d’un champ de vue.                                               |
+| [**XMMatrixPerspectiveLH**](https://msdn.microsoft.com/library/windows/desktop/ee419981)                     | Crée une matrice de projection de perspective pour un système gaucher.                                                                         |
+| [**XMMatrixPerspectiveOffCenterLH**](https://msdn.microsoft.com/library/windows/desktop/ee419982)   | Crée une version personnalisée d’une matrice de projection de perspective pour un système gaucher.                                                     |
+| [**XMMatrixPerspectiveOffCenterRH**](https://msdn.microsoft.com/library/windows/desktop/ee419983)   | Crée une version personnalisée d’une matrice de projection de perspective pour un système droitier.                                                    |
+| [**XMMatrixPerspectiveRH**](https://msdn.microsoft.com/library/windows/desktop/ee419984)                     | Crée une matrice de projection de perspective pour un système droitier.                                                                        |
 
  
 
-## OpenGL ES2.0-to-Direct3D 11 porting Frequently Asked Questions
+## Portage OpenGL ES 2.0 vers Direct3D 11 : Forum Aux Questions
 
 
--   Question: "In general, can I search for certain strings or patterns in my OpenGL code and replace them with the Direct3D equivalents?"
--   Answer: No. OpenGL ES 2.0 and Direct3D 11 come from different generations of graphics pipeline modeling. While there are some surface similarities between concepts and APIs, such as the rendering context and the instancing of shaders, you should review this guidance as well as the Direct3D 11 reference so you can make the best choices when recreating your pipeline instead of attempting a 1-to-1 mapping. However, if you are porting from GLSL to HLSL, creating a set of common aliases for GLSL variables, intrinsincs, and functions can not only make porting easier, it allows you to maintain only one set of shader code files.
-
- 
+-   Question : « En général, puis-je rechercher des chaînes ou modèles dans mon code OpenGL et les remplacer par les équivalents Direct3D ? »
+-   Réponse : non. OpenGL ES 2.0 et Direct3D 11 sont issus de différentes générations de modélisation de pipeline graphique. Bien qu’il existe certaines similarités superficielles entre les concepts et les API, telles que le contexte de rendu et l’instanciation des nuanceurs, vous pouvez consulter ces recommandations ainsi que les informations de référence sur Direct3D 11 pour vous aider à faire les meilleurs choix lors de la recréation de votre pipeline au lieu de tenter un mappage 1 à 1. Toutefois, si vous effectuez un portage de GLSL à HLSL, la création d’un ensemble d’alias communs pour les variables, les intrinsèques et les fonctions GLSL peut non seulement simplifier le portage, mais aussi vous permettre de maintenir un seul ensemble de fichiers de code de nuanceur.
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jul16_HO2-->
 
 

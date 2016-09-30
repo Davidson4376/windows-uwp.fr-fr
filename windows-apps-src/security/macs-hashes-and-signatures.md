@@ -1,41 +1,41 @@
 ---
-title: MACs, hashes, and signatures
-description: This article discusses how message authentication codes (MACs), hashes, and signatures can be used in Universal Windows Platform (UWP) apps to detect message tampering.
+title: "Codes d’authentification des messages, hachages et signatures"
+description: "Cet article explique comment les codes d’authentification de message (MAC), les codes de hachage et les signatures peuvent être utilisés dans les applications UWP pour détecter une falsification des messages."
 ms.assetid: E674312F-6678-44C5-91D9-B489F49C4D3C
 author: awkoren
 translationtype: Human Translation
 ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: 2c43e8ea726827d263fd397ea28058c04d30a7aa
+ms.openlocfilehash: d7c66d9ead6e3dbf750f1d058e311ef3c84a204f
 
 ---
 
-# MACs, hashes, and signatures
+# Codes d’authentification des messages, hachages et signatures
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-This article discusses how message authentication codes (MACs), hashes, and signatures can be used in Universal Windows Platform (UWP) apps to detect message tampering.
+Cet article explique comment les codes d’authentification de message (MAC), les codes de hachage et les signatures peuvent être utilisés dans les applications de plateforme Windows universelle (UWP) pour détecter une falsification des messages.
 
-## Message authentication codes (MACs)
+## Codes d’authentification des messages
 
 
-Encryption helps prevent an unauthorized individual from reading a message, but it does not prevent that individual from tampering with the message. An altered message, even if the alteration results in nothing but nonsense, can have real costs. A message authentication code (MAC) helps prevent message tampering. For example, consider the following scenario:
+Le chiffrement permet d’empêcher un individu nonautorisé de lire un message, mais il n’empêche pas cet individu de le falsifier. Un message altéré, même si l’altération ne produit rien d’autre qu’une absurdité, peut avoir des coûts réels. Un code d’authentification des messages (MAC) permet d’empêcher la falsification des messages. Prenons, parexemple, le scénario suivant:
 
--   Bob and Alice share a secret key and agree on a MAC function to use.
--   Bob creates a message and inputs the message and the secret key into a MAC function to retrieve a MAC value.
--   Bob sends the \[unencrypted\] message and the MAC value to Alice over a network.
--   Alice uses the secret key and the message as input to the MAC function. She compares the generated MAC value to the MAC value sent by Bob. If they are the same, the message was not changed in transit.
+-   Bob et Alice partagent une clé secrète et conviennent d’une fonction MAC à utiliser.
+-   Bob crée un message, puis entre le message et la clé secrète dans une fonction MAC pour récupérer une valeur MAC.
+-   Bob envoie le message \[unencrypted\] et la valeur MAC à Alice via un réseau.
+-   Alice utilise la clé secrète et le message comme entrée pour la fonction MAC. Elle compare la valeur MAC générée à la valeur MAC envoyée par Bob. Si elles sont identiques, cela indique que le message n’a pas été modifié lors du transit.
 
-Note that Eve, a third party eavesdropping on the conversation between Bob and Alice, cannot effectively manipulate the message. Eve does not have access to the private key and cannot, therefore, create a MAC value which would make the tampered message appear legitimate to Alice.
+Notez qu’Eve, une tierce personne effectuant une écoute clandestine de la conversation entre Bob et Alice, ne peut effectivement pas manipuler le message. Eve n’a pas accès à la clé privée et, parconséquent, ne peut pas créer de valeur MAC qui ferait apparaître le message falsifié comme légitime à Alice.
 
-Creating a message authentication code ensures only that the original message was not altered and, by using a shared secret key, that the message hash was signed by someone with access to that private key.
+La création d’un code d’authentification des messages garantit que le message d’origine n’a pas été altéré et, en utilisant une clé secrète partagée, que le hachage du message a été signé par une personne ayant accès à cette clé privée.
 
-You can use the [**MacAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241530) to enumerate the available MAC algorithms and generate a symmetric key. You can use static methods on the [**CryptographicEngine**](https://msdn.microsoft.com/library/windows/apps/br241490) class to perform the necessary encryption that creates the MAC value.
+Vous pouvez utiliser [**MacAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241530) pour énumérer les algorithmes MAC disponibles et générer une clé symétrique. Vous pouvez utiliser des méthodes statiques sur la classe [**CryptographicEngine**](https://msdn.microsoft.com/library/windows/apps/br241490) pour effectuer le chiffrement nécessaire qui crée la valeur MAC.
 
-Digital signatures are the public key equivalent of private key message authentication codes (MACs). Although MACs use private keys to enable a message recipient to verify that a message has not been altered during transmission, signatures use a private/public key pair.
+Les signatures numériques sont l’équivalent, pour les clés publiques, des codes d’authentification de message (MAC) des clés privées. Bien que les codes d’authentification des messages (MAC, Message Authentication Codes) utilisent des clés privées pour permettre au destinataire d’un message de vérifier qu’un message n’a pas été altéré pendant la transmission, les signatures utilisent une paire clé privée/clé publique.
 
-This example code shows how to use the [**MacAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241530) class to create a hashed message authentication code (HMAC).
+Cet exemple montre comment utiliser la classe [**MacAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241530) pour créer un code d’authentification de message haché (HMAC, Hashed Message Authentication Code).
 
 ```cs
 using Windows.Security.Cryptography;
@@ -122,23 +122,23 @@ namespace SampleMacAlgorithmProvider
 }
 ```
 
-## Hashes
+## Hachages
 
 
-A cryptographic hash function takes an arbitrarily long block of data and returns a fixed-size bit string. Hash functions are typically used when signing data. Because most public key signature operations are computationally intensive, it is typically more efficient to sign (encrypt) a message hash than it is to sign the original message. The following procedure represents a common, albeit simplified, scenario:
+Une fonction de hachage de chiffrement prend un long bloc de données au hasard et renvoie une chaîne de bits de taille fixe. Les fonctions de hachage sont généralement utilisées dans le cadre de la signature de données. Comme la plupart des opérations de signature de clé publique sont gourmandes en calcul, il est plus efficace de signer (chiffrer) un hachage de message plutôt que le message d’origine. La procédure suivante représente un cas courant, bien que simplifié:
 
--   Bob and Alice share a secret key and agree on a MAC function to use.
--   Bob creates a message and inputs the message and the secret key into a MAC function to retrieve a MAC value.
--   Bob sends the \[unencrypted\] message and the MAC value to Alice over a network.
--   Alice uses the secret key and the message as input to the MAC function. She compares the generated MAC value to the MAC value sent by Bob. If they are the same, the message was not changed in transit.
+-   Bob et Alice partagent une clé secrète et conviennent d’une fonction MAC à utiliser.
+-   Bob crée un message, puis entre le message et la clé secrète dans une fonction MAC pour récupérer une valeur MAC.
+-   Bob envoie le message \[unencrypted\] et la valeur MAC à Alice via un réseau.
+-   Alice utilise la clé secrète et le message comme entrée pour la fonction MAC. Elle compare la valeur MAC générée à la valeur MAC envoyée par Bob. Si elles sont identiques, cela indique que le message n’a pas été modifié lors du transit.
 
-Note that Alice sent an unencrypted message. Only the hash was encrypted. The procedure ensures only that the original message was not altered and, by using Alice's public key, that the message hash was signed by someone with access to Alice's private key, presumably Alice.
+Notez qu’Alice a envoyé un message non chiffré. Seul le hachage était chiffré. La procédure permet uniquement de s’assurer que le message d’origine n’a pas été modifié et, à l’aide de la clé publique d’Alice, que le hachage du message a été signé par quelqu’un qui a accès à la clé privée d’Alice, probablement Alice elle-même.
 
-You can use the [**HashAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241511) class to enumerate the available hash algorithms and create a [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) value.
+Vous pouvez utiliser la classe [**HashAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241511) pour énumérer les algorithmes de hachage disponibles et créer une valeur [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498).
 
-Digital signatures are the public key equivalent of private key message authentication codes (MACs). Whereas MACs use private keys to enable a message recipient to verify that a message has not been altered during transmission, signatures use a private/public key pair.
+Les signatures numériques sont l’équivalent, pour les clés publiques, des codes d’authentification de message (MAC) des clés privées. Alors que les codes MAC utilisent des clés privées pour permettre au destinataire d’un message de vérifier que celui-ci n’a pas été modifié au cours de transmission, les signatures utilisent une paire de clés privée/publique.
 
-The [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) object can be used to repeatedly hash different data without having to re-create the object for each use. The [**Append**](https://msdn.microsoft.com/library/windows/apps/br241499) method adds new data to a buffer to be hashed. The [**GetValueAndReset**](https://msdn.microsoft.com/library/windows/apps/hh701376) method hashes the data and resets the object for another use. This is shown by the following example.
+L’objet [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) peut être utilisé pour hacher différentes données de manière répétée sans avoir à recréer l’objet pour chaque utilisation. La méthode [**Append**](https://msdn.microsoft.com/library/windows/apps/br241499) ajoute de nouvelles données à une mémoire tampon en vue d’être hachées. La méthode [**GetValueAndReset**](https://msdn.microsoft.com/library/windows/apps/hh701376) hache les données et réinitialise l’objet en vue d’une autre utilisation. En voici une illustration dans l’exemple suivant.
 
 ```cs
 public void SampleReusableHash()
@@ -179,18 +179,18 @@ public void SampleReusableHash()
 
 ```
 
-## Digital signatures
+## Signatures numériques
 
 
-Digital signatures are the public key equivalent of private key message authentication codes (MACs). Whereas MACs use private keys to enable a message recipient to verify that a message has not been altered during transmission, signatures use a private/public key pair.
+Les signatures numériques sont l’équivalent, pour les clés publiques, des codes d’authentification de message (MAC) des clés privées. Alors que les codes MAC utilisent des clés privées pour permettre au destinataire d’un message de vérifier que celui-ci n’a pas été modifié au cours de transmission, les signatures utilisent une paire de clés privée/publique.
 
-Because most public key signature operations are computationally intensive, however, it is typically more efficient to sign (encrypt) a message hash than it is to sign the original message. The sender creates a message hash, signs it, and sends both the signature and the (unencrypted) message. The recipient calculates a hash over the message, decrypts the signature, and compares the decrypted signature to the hash value. If they match, the recipient can be fairly certain that the message did, in fact, come from the sender and was not altered during transmission.
+Comme la plupart des opérations de signature de clé publique sont gourmandes en calcul, il est toutefois plus efficace de signer (chiffrer) un hachage de message plutôt que le message d’origine. L’expéditeur crée un hachage de message, le signe et envoie la signature et le message (non chiffré). Le destinataire calcule un hachage sur le message, déchiffre la signature et compare la signature déchiffrée à la valeur de hachage. Si elles correspondent, le destinataire peut être quasi certain que le message provient effectivement de l’expéditeur et qu’il n’a pas été modifié au cours de la transmission.
 
-Signing ensures only that the original message was not altered and, by using the sender's public key, that the message hash was signed by someone with access to the private key.
+La signature permet uniquement de s’assurer que le message d’origine n’a pas été modifié et, à l’aide de la clé publique de l’expéditeur, que le hachage du message a été signé par quelqu’un qui a accès à la clé privée.
 
-You can use an [**AsymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241478) object to enumerate the available signature algorithms and generate or import a key pair. You can use static methods on the [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) class to sign a message or verify a signature.
+Vous pouvez utiliser un objet [**AsymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241478) pour énumérer les algorithmes de signature disponibles et générer ou importer une paire de clés. Vous pouvez utiliser des méthodes statiques sur la classe [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) pour signer un message ou vérifier une signature.
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

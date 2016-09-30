@@ -5,7 +5,7 @@ ms.assetid: D8AF24CD-F4C2-4562-AFD7-25010955D677
 description: "Les animations par clés linéaires, les animations par clés avec KeySpline ou les animations de fonctions d’accélération sont utilisées avec le même scénario."
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 00abdacf8d1f8376a3d1a0c472ff7cf2c15afb01
+ms.openlocfilehash: 9c010e0abca4dd095b32b42b3a8606f8faf3fcaa
 
 ---
 # Animations par images clés et animations de fonctions d’accélération
@@ -283,6 +283,6 @@ Vous pouvez utiliser plusieurs éléments [**DiscreteObjectKeyFrame**](https://m
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO2-->
 
 

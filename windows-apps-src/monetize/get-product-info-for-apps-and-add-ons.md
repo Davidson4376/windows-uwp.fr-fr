@@ -1,36 +1,30 @@
 ---
 author: mcleanbyron
 ms.assetid: 89178FD9-850B-462F-9016-1AD86D1F6F7F
-description: "Découvrez comment utiliser l’espace de noms Windows.Services.Store pour obtenir les informations du WindowsStore concernant l’application active ou l’un de ses modules complémentaires."
-title: "Obtenir les informations produit des applications et modules complémentaires"
-translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: c453dc74730fc451bbe9babdffb2ce4d72712082
-
+description: Learn how to use the Windows.Services.Store namespace to get Store-related product info for the current app or one of its add-ons.
+title: Get product info for apps and add-ons
 ---
 
-# Obtenir les informations produit des applications et modules complémentaires
+# Get product info for apps and add-ons
 
-Les applications qui ciblent Windows10 version1607 ou ultérieure peuvent utiliser les méthodes de la classe [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) dans l’espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) pour obtenir les informations WindowsStore de l’application actuelle ou de l’un de ses modules complémentaires (également appelés produits dans l’application ou produits in-app). Les exemples suivants dans cet article montrent comment effectuer cette opération dans différents cas de figure. Pour un exemple complète, consultez la section [Exemple Store](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store).
+Apps that target Windows 10, version 1607 or later can use methods of the [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) class in the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace to access Store-related info for the current app or one of its add-ons (also known as in-app products or IAPs). The following examples demonstrate how to do this for different scenarios.
 
->**Remarque**&nbsp;&nbsp;Cet article concerne les applications ciblant Windows10 version1607 ou ultérieure. Si votre application cible une version antérieure de Windows10, vous devez utiliser l’espace de noms [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) à la place de l’espace de noms **Windows.Services.Store**. Pour plus d’informations, consultez [Versions d’évaluation et achats in-app utilisant l’espace de noms Windows.ApplicationModel.Store](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
+>**Note** This article is applicable to apps that target Windows 10, version 1607 or later. If your app targets an earlier version of Windows 10, you must use the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace instead of the **Windows.Services.Store** namespace. For more information, see [In-app purchases and trials using the Windows.ApplicationModel.Store namespace](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
 
-## Conditions préalables
+## Prerequisites
 
-Les conditions préalables de ces exemples sont les suivantes:
-* Un projet VisualStudio d’application de plateforme Windows universelle (UWP) qui cible Windows10 version1607 ou ultérieure.
-* Vous avez créé une application dans le tableau de bord du Centre de développement Windows, et celle-ci est publiée et disponible dans le WindowsStore. Il peut s’agir d’une application que vous souhaitez vendre à des clients, ou d’une application de base qui présente la configuration minimale requise par le [Kit de certification des applications Windows](https://developer.microsoft.com/windows/develop/app-certification-kit) et que vous utilisez uniquement à des fins de test. Pour plus d’informations, consultez les [conseils de test](in-app-purchases-and-trials.md#testing).
+These examples have the following prerequisites:
+* A Visual Studio project for a Universal Windows Platform (UWP) app that targets Windows 10, version 1607 or later.
+* You have created an app in the Windows Dev Center dashboard, and this app is published and available in the Store. This can be an app that you want to release to customers, or it can be a basic app that meets minimum [Windows App Certification Kit](https://developer.microsoft.com/windows/develop/app-certification-kit) requirements that you are using for testing purposes only. For more information, see the [testing guidance](in-app-purchases-and-trials.md#testing).
 
-Le code de ces exemples respecte les présupposés suivants:
-* Le code s’exécute dans le contexte d’une [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) qui contient un [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx) nommé ```workingProgressRing``` et un [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) nommé ```textBlock```. Ces objets sont utilisés pour respectivement indiquer qu’une opération asynchrone est en cours et afficher les messages de sortie.
-* Le fichier de code contient une instruction **using** pour l’espace de noms **Windows.Services.Store**.
-* Cette application mono-utilisateur ne s’exécute que dans le contexte de l’utilisateur qui l’a lancée. Pour plus d’informations, consultez [Versions d’évaluation et achats in-app](in-app-purchases-and-trials.md#api_intro).
+The code in these examples assume:
+* The code runs in the context of a [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) that contains a [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx) named ```workingProgressRing``` and a [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) named ```textBlock```. These objects are used to indicate that an asynchronous operation is occurring and to display output messages, respectively.
+* The code file has a **using** statement for the **Windows.Services.Store** namespace.
+* The app is a single-user app that runs only in the context of the user that launched the app. For more information, see [In-app purchases and trials](in-app-purchases-and-trials.md#api_intro).
 
-Pour un exemple d’application complète, consultez la section [Exemple Store](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store).
+## Get info for the current app
 
-## Obtenir les informations de l’application en cours
-
-Pour obtenir des informations du WindowsStore concernant l’application actuelle, utilisez la méthode [GetStoreProductForCurrentAppAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getstoreproductforcurrentappasync.aspx). Cette méthode asynchrone renvoie un objet [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) que vous pouvez utiliser pour obtenir des informations telles que le prix.
+To get Store product info about the current app, use the [GetStoreProductForCurrentAppAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getstoreproductforcurrentappasync.aspx) method. This is an asynchronous method that returns a [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) object that you can use to get info such as the price.
 
 ```csharp
 private StoreContext context = null;
@@ -45,7 +39,7 @@ public async void GetAppInfo()
     // Get app store product details. Because this might take several moments,   
     // display a ProgressRing during the operation.
     workingProgressRing.IsActive = true;
-    StoreProductResult queryResult = await context.GetStoreProductForCurrentAppAsync();
+    var queryResult = await context.GetStoreProductForCurrentAppAsync();
     workingProgressRing.IsActive = false;
 
     if (queryResult.ExtendedError != null)
@@ -67,11 +61,11 @@ public async void GetAppInfo()
 }
 ```
 
-## Obtenir des informations sur les produits ayant des ID WindowsStore connus
+## Get info for products with known Store IDs
 
-Pour obtenir les informations du WindowsStore sur des applications ou des modules complémentaires dont vous connaissez déjà l’[ID WindowsStore](in-app-purchases-and-trials.md#store_ids), utilisez la méthode [GetStoreProductsAsync](https://msdn.microsoft.com/library/windows/apps/mt706579.aspx). Cette méthode asynchrone renvoie un ensemble d’objets [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) qui représentent chaque application ou module complémentaire. Outre les ID WindowsStore, vous devez transmettre à cette méthode une liste de chaînes qui identifient les types de modules complémentaires. Pour obtenir la liste des valeurs de chaîne prises en charge, consultez la propriété [ProductKind](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.productkind.aspx).
+To get Store product info for apps or add-ons for which you already know the [Store IDs](in-app-purchases-and-trials.md#store_ids), use the [GetStoreProductsAsync](https://msdn.microsoft.com/library/windows/apps/mt706579.aspx) method. This is an asynchronous method that returns a collection of  [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) objects that represent each of the apps or add-ons. In addition to the Store IDs, you must pass a list of strings to this method that identify the types of the add-ons. For a list of the supported string values, see the [ProductKind](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.productkind.aspx) property.
 
-L’exemple suivant récupère les informations concernant les modules complémentaires durables qui ont les ID WindowsStore spécifiés.
+The following example retrieves info for durable add-ons with the specified Store IDs.
 
 ```csharp
 private StoreContext context = null;
@@ -91,8 +85,7 @@ public async void GetProductInfo()
     string[] storeIds = new string[] { "9NBLGGH4TNMP", "9NBLGGH4TNMN" };
 
     workingProgressRing.IsActive = true;
-    StoreProductQueryResult queryResult =
-        await context.GetStoreProductsAsync(filterList, storeIds);
+    var queryResult = await context.GetStoreProductsAsync(filterList, storeIds);
     workingProgressRing.IsActive = false;
 
     if (queryResult.ExtendedError != null)
@@ -102,7 +95,7 @@ public async void GetProductInfo()
         return;
     }
 
-    foreach (KeyValuePair<string, StoreProduct> item in queryResult.Products)
+    foreach (var item in queryResult.Products)
     {
         // Access the Store info for the product.
         StoreProduct product = item.Value;
@@ -112,11 +105,11 @@ public async void GetProductInfo()
 }
 ```
 
-## Obtenir les informations des modules complémentaires qui sont disponibles pour l’application en cours
+## Get info for add-ons that are available for the current app
 
-Pour obtenir les informations du WindowsStore correspondant aux modules complémentaires disponibles pour l’application en cours, utilisez la méthode [GetAssociatedStoreProductsAsync](https://msdn.microsoft.com/library/windows/apps/mt706571.aspx). Cette méthode asynchrone renvoie un ensemble d’objets [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) qui représentent chaque module complémentaire disponible. Vous devez transmettre à cette méthode une liste de chaînes qui identifient les types de modules complémentaires que vous souhaitez récupérer. Pour obtenir la liste des valeurs de chaîne prises en charge, consultez la propriété [ProductKind](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.productkind.aspx).
+To get Store product info for the add-ons that are available for the current app, use the [GetAssociatedStoreProductsAsync](https://msdn.microsoft.com/library/windows/apps/mt706571.aspx) method. This is an asynchronous method that returns a collection of  [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) objects that represent each of the available add-ons. You must pass a list of strings to this method that identify the types of add-ons you want to retrieve. For a list of the supported string values, see the [ProductKind](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.productkind.aspx) property.
 
-L’exemple suivant récupère les informations de tous les modules complémentaires durables, des modules complémentaires gérés par le WindowsStore et des modules complémentaires consommables gérés par un développeur.
+The following example retrieves info for all durable add-ons, Store-managed consumable add-ons, and developer-managed consumable add-ons.
 
 ```csharp
 private StoreContext context = null;
@@ -133,7 +126,7 @@ public async void GetAddOnInfo()
     List<String> filterList = new List<string>(productKinds);
 
     workingProgressRing.IsActive = true;
-    StoreProductQueryResult queryResult = await context.GetAssociatedStoreProductsAsync(filterList);
+    var queryResult = await context.GetAssociatedStoreProductsAsync(filterList);
     workingProgressRing.IsActive = false;
 
     if (queryResult.ExtendedError != null)
@@ -143,7 +136,7 @@ public async void GetAddOnInfo()
         return;
     }
 
-    foreach (KeyValuePair<string, StoreProduct> item in queryResult.Products)
+    foreach (var item in queryResult.Products)
     {
         // Access the Store product info for the add-on.
         StoreProduct product = item.Value;
@@ -153,14 +146,14 @@ public async void GetAddOnInfo()
 }
 ```
 
->**Remarque**&nbsp;&nbsp;Si l’application compte de nombreux modules complémentaires, vous pouvez également employer la méthode [GetAssociatedStoreProductsWithPagingAsync](https://msdn.microsoft.com/library/windows/apps/mt706572.aspx) pour utiliser la pagination dans le renvoi des résultats des modules complémentaires.
+>**Note** If the app has many add-ons, you can alternatively use the [GetAssociatedStoreProductsWithPagingAsync](https://msdn.microsoft.com/library/windows/apps/mt706572.aspx) method to use paging to return the add-on results.
 
 
-## Obtenir des informations sur les modules complémentaires de l’application active, que l’utilisateur actuel est autorisé à utiliser
+## Get info for add-ons for the current app that the current user is entitled to use
 
-Pour obtenir les informations du WindowsStore correspondant aux modules complémentaires que l’utilisateur actuel est autorisé à utiliser, utilisez la méthode [GetUserCollectionAsync](https://msdn.microsoft.com/library/windows/apps/mt706580.aspx). Cette méthode asynchrone renvoie un ensemble d’objets [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) qui représentent chaque module complémentaire. Vous devez transmettre à cette méthode une liste de chaînes qui identifient les types de modules complémentaires que vous souhaitez récupérer. Pour obtenir la liste des valeurs de chaîne prises en charge, consultez la propriété [ProductKind](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.productkind.aspx).
+To get Store product info for add-ons that the current user is entitled to use, use the [GetUserCollectionAsync](https://msdn.microsoft.com/library/windows/apps/mt706580.aspx) method. This is an asynchronous method that returns a collection of  [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) objects that represent each of the add-ons. You must pass a list of strings to this method that identify the types of add-ons you want to retrieve. For a list of the supported string values, see the [ProductKind](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.productkind.aspx) property.
 
-L’exemple suivant récupère les informations concernant les modules complémentaires durables qui ont les ID WindowsStore spécifiés.
+The following example retrieves info for durable add-ons with the specified Store IDs.
 
 ```csharp
 private StoreContext context = null;
@@ -176,8 +169,11 @@ public async void GetUserCollection()
     string[] productKinds = { "Durable" };
     List<String> filterList = new List<string>(productKinds);
 
+    // Specify the Store IDs of the products to retrieve.
+    string[] storeIds = new string[] { "9NBLGGH4TNMP", "9NBLGGH4TNMN" };
+
     workingProgressRing.IsActive = true;
-    StoreProductQueryResult queryResult = await context.GetUserCollectionAsync(filterList);
+    var queryResult = await context.GetUserCollectionAsync(filterList);
     workingProgressRing.IsActive = false;
 
     if (queryResult.ExtendedError != null)
@@ -187,7 +183,7 @@ public async void GetUserCollection()
         return;
     }
 
-    foreach (KeyValuePair<string, StoreProduct> item in queryResult.Products)
+    foreach (var item in queryResult.Products)
     {
         StoreProduct product = item.Value;
 
@@ -196,19 +192,12 @@ public async void GetUserCollection()
 }
 ```
 
->**Remarque**&nbsp;&nbsp;Si l’application compte de nombreux modules complémentaires, vous pouvez également employer la méthode [GetUserCollectionWithPagingAsync](https://msdn.microsoft.com/library/windows/apps/mt706581.aspx) pour utiliser la pagination dans le renvoi des résultats des modules complémentaires.
+>**Note** If the app has many add-ons, you can alternatively use the [GetUserCollectionWithPagingAsync](https://msdn.microsoft.com/library/windows/apps/mt706581.aspx) method to use paging to return the add-on results.
 
-## Rubriques connexes
+## Related topics
 
-* [Versions d’évaluation et achats in-app](in-app-purchases-and-trials.md)
-* [Obtenir les informations de licence des applications et des modules complémentaires](get-license-info-for-apps-and-add-ons.md)
-* [Activer les achats in-app d’applications et de modules complémentaires](enable-in-app-purchases-of-apps-and-add-ons.md)
-* [Activer les achats de modules complémentaires consommables](enable-consumable-add-on-purchases.md)
-* [Implémenter une version d’évaluation de votre application](implement-a-trial-version-of-your-app.md)
-* [Exemple Store](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)
-
-
-
-<!--HONumber=Aug16_HO5-->
-
-
+* [In-app purchases and trials](in-app-purchases-and-trials.md)
+* [Get license info for apps and add-ons](get-license-info-for-apps-and-add-ons.md)
+* [Enable in-app purchases of apps and add-ons](enable-in-app-purchases-of-apps-and-add-ons.md)
+* [Enable consumable add-on purchases](enable-consumable-add-on-purchases.md)
+* [Implement a trial version of your app](implement-a-trial-version-of-your-app.md)

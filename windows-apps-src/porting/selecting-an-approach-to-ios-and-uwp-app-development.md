@@ -1,101 +1,101 @@
 ---
 author: mcleblanc
-description: What are the choices when developing cross-platform apps?.
-title: Selecting an approach to iOS and UWP app development
+description: "Quels sont les choix possibles lors du développement d’applications multiplateformes ?"
+title: "Sélection d’une approche d’iOS et développement d’applications UWP"
 ms.assetid: 5CDAB313-07B7-4A32-A49B-026361DCC853
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 53e6c50b7a1b4262f738cd798aa2bd02291512fe
+ms.openlocfilehash: 2703a0c919b08331cc7ab55fe78b868555312ac0
 
 ---
 
-# Selecting an approach to iOS and UWP app development
+# Sélection d’une approche d’iOS et développement d’applications UWP
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-What are the choices when developing cross-platform apps?
+Quels sont les choix possibles lors du développement d’applications multiplateformes?
 
-## What's the best way to support both iOS and Windows?
+## Quel est le meilleur moyen de prise en charge des applications iOS et Windows ?
 
-Windows and iOS may seem to be very different beasts, but a growing number of tools and techniques can greatly assist you if you need to write apps that support both platforms (and Android too). The best solution depends on the type of app you are writing, and whether you are starting from scratch or porting an existing project.
+Windows et iOS peuvent sembler très différents, mais de plus en plus d'outils et de techniques peuvent vraiment vous aider pour l’écriture d’applications qui prennent en charge les deux plateformes (et même Android). La meilleure solution dépend du type d'application que vous écrivez et du mode de création : à partir de zéro ou par le portage d’un projet existant.
 
-## Writing a new app
+## Écriture d’une nouvelle application
 
-With a clean slate, you have many options at your disposal, including:
+Avec une nouvelle tablette, vous disposez de nombreuses options à votre disposition, notamment :
 
 -   [Xamarin](http://go.microsoft.com/fwlink/p/?LinkID=320484)
 
-    With Xamarin, you can write your app in C#, have it run on Windows, and create native iOS apps too. Support for Xamarin is built into Visual Studio; just select the correct project type.
+    Avec Xamarin, vous pouvez écrire votre application en C#, l’exécuter sous Windows et créer également des applications iOS natives. La prise en charge de Xamarin est intégrée à Visual Studio ; sélectionnez simplement le type de projet approprié.
 
 -   [Apache Cordova](http://go.microsoft.com/fwlink/p/?LinkID=400439)
 
-    If Javascript and HTML is more your thing, Apache Cordova (aka PhoneGap) will help you create cross-platform apps for iOS, Windows, and Android. This project type is also built into Visual Studio.
+    Si vous préférez Javascript et HTML, Apache Cordova (également appelé PhoneGap) vous aidera à créer des applications multiplateformes pour iOS, Windows et Android. Ce type de projet est également intégré à Visual Studio.
 
--   Game-engines
+-   Moteurs de jeu
 
-    With tools like [Unity3D](http://go.microsoft.com/fwlink/p/?LinkID=320479) and [Unreal Engine](http://go.microsoft.com/fwlink/p/?LinkID=394062) at your disposal, you can write AAA-quality games for Windows and many other platforms, including iOS. Unity supports C# scripting; Unreal uses C++.
+    Avec des outils comme [Unity3D](http://go.microsoft.com/fwlink/p/?LinkID=320479) et [Unreal Engine](http://go.microsoft.com/fwlink/p/?LinkID=394062) à votre disposition, vous pouvez écrire des jeux de qualité AAA pour Windows et de nombreuses autres plateformes, y compris iOS. Unity prend en charge l’écriture de script en C#, Unreal utilise C++.
 
 -   [MonoGame](http://go.microsoft.com/fwlink/p/?LinkID=320483)
 
-    The spiritual successor to XNA. Now, it's an open-source cross-platform framework, which means you can write apps in C# for many platforms with support for physics engines, and 2D and 3D graphics.
+    Le successeur spirituel de XNA. C’est maintenant une infrastructure multiplateforme open source, ce qui signifie que vous pouvez écrire des applications en C# pour de nombreuses plateformes avec prise en charge des moteurs physiques et des graphismes 2D et 3D.
 
-## Adapting an existing app
+## Adaptation d’une application existante
 
-With an existing iOS app, your options are a little more limited. However, all is most certainly not lost.
+Avec une application iOS existante, les options sont un peu plus limitées. Néanmoins, tout n’est pas perdu.
 
--   [Windows Bridge for iOS](https://go.microsoft.com/fwlink/p/?LinkId=619014)
+-   [Pont Windows pour iOS](https://go.microsoft.com/fwlink/p/?LinkId=619014)
 
-    Also known as Project Islandwood, this is a still-in-development tool that can import Xcode projects directly into Visual Studio. Objective-C code can be built and debugged from within Visual Studio. If your project makes use of libraries such as Cocos for graphics, you might find this a useful way to quickly port your app.
+    Également connu sous le nom Project Islandwood, c’est un outil en cours de développement qui permet d’importer des projets Xcode directement dans Visual Studio. Le code Objective-C peut être généré et débogué dans Visual Studio. Si votre projet utilise des bibliothèques telles que Cocos pour les graphiques, cela peut s'avérer un moyen utile pour un portage rapide de votre application.
 
--   Repurpose your C++ code.
+-   Réutilisez votre code C++.
 
-    If your core business logic is written in C++, rather than Objective-C or Swift, you can often use this code with only minor changes in your project. You can then use XAML to define your UI, as with other Windows apps, and call into the C++ code when necessary.
+    Si votre logique d'entreprise est écrite en C++, plutôt qu’en Objective-C ou Swift, vous pouvez souvent utiliser ce code avec des modifications mineures de votre projet. Vous pouvez ensuite utiliser XAML pour définir votre interface utilisateur, comme avec d'autres applications Windows, et appeler le code C++ lorsque cela est nécessaire.
 
--   [Use ANGLE to run OpenGL ES on Windows](http://go.microsoft.com/fwlink/p/?linkid=618387)
+-   [Utiliser ANGLE pour exécuter OpenGL ES sous Windows](http://go.microsoft.com/fwlink/p/?linkid=618387)
 
-    An intermediate step to porting your OpenGL ES 2.0 project is to use ANGLE. ANGLE allows you to run OpenGL ES content on Windows by translating OpenGL ES API calls to DirectX 11 API calls.
+    Une étape intermédiaire pour le portage de votre projet OpenGL ES 2.0 consiste à utiliser ANGLE. ANGLE pour Windows Store vous permet d’exécuter le contenu OpenGL ES sous Windows en convertissant les appels d’API OpenGL ES en appels d’API DirectX 11.
 
-## Other cross-platform authoring tools
+## Autres outils de création multiplateformes
 
 -   [GameSalad](http://go.microsoft.com/fwlink/p/?LinkID=320480)
 
-    A game authoring environment.
+    Environnement de création de jeux.
 
 -   [Construct 2]( http://go.microsoft.com/fwlink/p/?LinkID=320481)
 
-    A game authoring environment.
+    Environnement de création de jeux.
 
 -   [Titanium Studio](http://go.microsoft.com/fwlink/p/?LinkID=320482)
 
-    A cross-platform authoring environment.
+    Environnement de création multiplateforme.
 
 -   [Cocos2D-x](http://go.microsoft.com/fwlink/p/?LinkID=320485)
 
-    A cross-platform code library for sprite handling and physics modeling.
+    Bibliothèque de code interplateforme pour la gestion des sprites et la modélisation physique.
 
 -   [Impact.js](http://go.microsoft.com/fwlink/p/?LinkID=320486)
 
-    An HTML based game library.
+    Bibliothèque de jeux HTML.
 
 -   [Marmalade](http://go.microsoft.com/fwlink/p/?LinkID=320487)
 
-    A cross-platform SDK.
+    Kit de développement logiciel interplateforme.
 
 -   [OpenFL](http://go.microsoft.com/fwlink/p/?LinkID=320488)
 
-    A cross-platform development tool.
+    Outil de développement multiplateforme.
 
 -   [GameMaker](http://go.microsoft.com/fwlink/p/?LinkID=320490)
 
-    An authoring environment specifically for games.
+    Environnement de création spécifique aux jeux.
 
 -   [PlayCanvas](http://go.microsoft.com/fwlink/p/?LinkID=394061)
 
-    An HTML based game development tool.
+    Outil de développement de jeux HTML.
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

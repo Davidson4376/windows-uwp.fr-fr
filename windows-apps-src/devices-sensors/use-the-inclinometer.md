@@ -1,41 +1,41 @@
 ---
 author: DBirtolo
 ms.assetid: 16AD53CA-1252-456C-8567-2263D3EC95F3
-title: Use the inclinometer
-description: Learn how to use the inclinometer to determine pitch, roll, and yaw.
+title: "Utiliser l’inclinomètre"
+description: "Découvrez comment utiliser l’inclinomètre pour déterminer le tangage, le roulis et le lacet."
 translationtype: Human Translation
 ms.sourcegitcommit: d403e78b775af0f842ba2172295a09e35015dcc8
-ms.openlocfilehash: 17828018f2c8db8a5a60d839e7f73904de7a1a24
+ms.openlocfilehash: f8b56e0ef13e471d99519256b5a6d124b569102d
 
 ---
-# Use the inclinometer
+# Utiliser l’inclinomètre
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-** Important APIs **
+** API importantes **
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766)
 
-Learn how to use the inclinometer to determine pitch, roll, and yaw.
+Découvrez comment utiliser l’inclinomètre pour déterminer le tangage, le roulis et le lacet.
 
-Some 3-D games require an inclinometer as an input device. One common example is the flight simulator, which maps the three axes of the inclinometer (X, Y, and Z) to the elevator, aileron, and rudder inputs of the aircraft.
+Certaines jeux3D requièrent un inclinomètre en tant que périphérique d’entrée. Le simulateur de vol en est un exemple courant, qui mappe les troisaxes de l’inclinomètre (x, y et z) aux entrées de la gouverne de profondeur, de l’aileron et du volet de dérive.
 
- ## Prerequisites
+ ## Prérequis
 
-You should be familiar with Extensible Application Markup Language (XAML), Microsoft Visual C#, and events.
+Vous devez maîtriser le langage XAML (Extensible Application Markup Language), Microsoft Visual C# et les événements.
 
-The device or emulator that you're using must support a inclinometer.
+L’appareil ou émulateur que vous utilisez doit prendre en charge un inclinomètre.
 
- ## Create a simple inclinometer app
+ ## Créer une application simple d’inclinomètre
 
-This section is divided into two subsections. The first subsection will take you through the steps necessary to create a simple inclinometer application from scratch. The following subsection explains the app you have just created.
+Cette section se divise en deuxsous-sections. La première sous-section vous permet d’accéder aux étapes nécessaires pour créer de bout en bout une application simple d’inclinomètre. La sous-section suivante décrit l’application que vous venez de créer.
 
 ###  Instructions
 
--   Create a new project, choosing a **Blank App (Universal Windows)** from the **Visual C#** project templates.
+-   Créez un projet en choisissant une **Application vide (Windows universel)** dans les modèles de projet **Visual C#**.
 
--   Open your project's MainPage.xaml.cs file and replace the existing code with the following.
+-   Ouvrez le fichier MainPage.xaml.cs de votre projet et remplacez le code existant par ce qui suit.
 
 ```csharp
     using System;
@@ -100,9 +100,9 @@ This section is divided into two subsections. The first subsection will take you
     }
 ```
 
-You'll need to rename the namespace in the previous snippet with the name you gave your project. For example, if you created a project named **InclinometerCS**, you'd replace `namespace App1` with `namespace InclinometerCS`.
+Vous devez remplacer le nom de l’espace de noms dans l’extrait de code précédent par le nom que vous avez donné à votre projet. Par exemple, si vous avez créé un projet nommé **InclinometerCS**, vous devez remplacer `namespace App1` par `namespace InclinometerCS`.
 
--   Open the file MainPage.xaml and replace the original contents with the following XML.
+-   Ouvrez le fichier MainPage.xaml et remplacez le contenu d’origine par le code XML suivant.
 
 ```xml
         <Page
@@ -126,25 +126,25 @@ You'll need to rename the namespace in the previous snippet with the name you ga
     </Page>
 ```
 
-You'll need to replace the first part of the class name in the previous snippet with the namespace of your app. For example, if you created a project named **InclinometerCS**, you'd replace `x:Class="App1.MainPage"` with `x:Class="InclinometerCS.MainPage"`. You should also replace `xmlns:local="using:App1"` with `xmlns:local="using:InclinometerCS"`.
+Vous devez remplacer la première partie du nom de la classe dans l’extrait de code précédent par l’espace de noms de votre application. Par exemple, si vous avez créé un projet nommé **InclinometerCS**, vous devez remplacer `x:Class="App1.MainPage"` par `x:Class="InclinometerCS.MainPage"`. Vous devez aussi remplacer `xmlns:local="using:App1"` par `xmlns:local="using:InclinometerCS"`.
 
--   Press F5 or select **Debug** > **Start Debugging** to build, deploy, and run the app.
+-   Appuyez sur F5 ou sélectionnez **Déboguer** > **Démarrer le débogage** pour générer, déployer et exécuter l’application.
 
-Once the app is running, you can change the inclinometer values by moving the device or using the emulator tools.
+Une fois l’application en cours d’exécution, vous pouvez modifier les valeurs de l’inclinomètre en déplaçant l’appareil ou à l’aide des outils de l’émulateur.
 
--   Stop the app by returning to Visual Studio and pressing Shift+F5 or select **Debug** > **Stop Debugging** to stop the app.
+-   Pour arrêter l’application, retournez dans Visual Studio et appuyez sur Maj+ 5, ou sélectionnez **Déboguer** > **Arrêter le débogage**.
 
-###  Explanation
+###  Explication
 
-The previous example demonstrates how little code you'll need to write in order to integrate inclinometer input in your app.
+L’exemple précédent démontre la faible quantité de code que vous devrez écrire afin d’intégrer l’entrée de l’inclinomètre dans votre application.
 
-The app establishes a connection with the default inclinometer in the **MainPage** method.
+L’application établit une connexion avec l’inclinomètre par défaut dans la méthode **MainPage**.
 
 ```csharp
 _inclinometer = Inclinometer.GetDefault();
 ```
 
-The app establishes the report interval within the **MainPage** method. This code retrieves the minimum interval supported by the device and compares it to a requested interval of 16 milliseconds (which approximates a 60-Hz refresh rate). If the minimum supported interval is greater than the requested interval, the code sets the value to the minimum. Otherwise, it sets the value to the requested interval.
+L’application établit l’intervalle de rapport dans la méthode **MainPage**. Le code suivant récupère l’intervalle minimal pris en charge par l’appareil et le compare à un intervalle demandé de 16millisecondes (ce qui représente une fréquence de rafraîchissement de 60Hz). Si l’intervalle pris en charge minimum est supérieur à l’intervalle demandé, le code définit la valeur sur l’intervalle minimum. Sinon, il définit la valeur sur l’intervalle demandé.
 
 ```csharp
 uint minReportInterval = _inclinometer.MinimumReportInterval;
@@ -152,14 +152,14 @@ uint reportInterval = minReportInterval > 16 ? minReportInterval : 16;
 _inclinometer.ReportInterval = reportInterval;
 ```
 
-The new inclinometer data is captured in the **ReadingChanged** method. Each time the sensor driver receives new data from the sensor, it passes the values to your app using this event handler. The app registers this event handler on the following line.
+Les nouvelles données de l’inclinomètre sont capturées dans la méthode **ReadingChanged**. Chaque fois que le pilote du capteur reçoit de nouvelles données du capteur, il transmet les valeurs à votre application à l’aide de ce gestionnaire d’événements. L’application inscrit ce gestionnaire d’événements sur la ligne suivante.
 
 ```csharp
 _inclinometer.ReadingChanged += new TypedEventHandler<Inclinometer, 
 InclinometerReadingChangedEventArgs>(ReadingChanged);
 ```
 
-These new values are written to the TextBlocks found in the project's XAML.
+Ces nouvelles valeurs sont écrites dans les TextBlocks identifiés dans le code XAML du projet.
 
 ```xml
 <TextBlock HorizontalAlignment="Left" Height="21" Margin="0,8,0,0" TextWrapping="Wrap" Text="Pitch: " VerticalAlignment="Top" Width="45" Foreground="#FFF9F4F4"/>
@@ -170,13 +170,13 @@ These new values are written to the TextBlocks found in the project's XAML.
  <TextBlock x:Name="txtYaw" HorizontalAlignment="Left" Height="19" Margin="55,56,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="54" Foreground="#FFF6F2F2"/>
 ```
 
- ## Related topics
+ ## Rubriques connexes
 
-* [Inclinometer Sample](http://go.microsoft.com/fwlink/p/?linkid=241380)
-
-
+* [Exemple d’inclinomètre](http://go.microsoft.com/fwlink/p/?linkid=241380)
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Jun16_HO4-->
 
 

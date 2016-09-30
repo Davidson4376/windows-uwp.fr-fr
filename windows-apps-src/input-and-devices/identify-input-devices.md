@@ -1,37 +1,37 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Identify the input devices connected to a Universal Windows Platform (UWP) device and identify their capabilities and attributes.
-title: Identify input devices
+Description: "Identifiez les périphériques d’entrée connectés à un appareil de plateforme Windows universelle (UWP), ainsi que leurs fonctionnalités et attributs."
+title: "Identifier des périphériques d’entrée"
 ms.assetid: B2E93FBF-C508-44D9-BA46-ECFDAA8746F4
 label: Identify input devices
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: df416821ad67a8eaf8a8a31879b6a1d39526df14
+ms.openlocfilehash: 2ebef9767520d9f54f35ba22e2681cb41766e181
 
 ---
 
-# Identify input devices
+# Identifier des périphériques d’entrée
 
-Identify the input devices connected to a Universal Windows Platform (UWP) device and identify their capabilities and attributes.
+Identifiez les périphériques d’entrée connectés à un appareil de plateforme Windows universelle (UWP), ainsi que leurs fonctionnalités et attributs.
 
-**Important APIs**
+**API importantes**
 
 -   [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)
 -   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br208383)
 -   [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
 
 
-## Retrieve mouse properties
+## Récupérer les propriétés de la souris
 
 
-The [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) namespace contains the [**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626) class used to retrieve the properties exposed by one or more connected mice. Just create a new **MouseCapabilities** object and get the properties you're interested in.
+L’espace de noms [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) contient la classe [**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626), utilisée pour récupérer les propriétés exposées par une ou plusieurs souris connectées. Créez simplement un objet **MouseCapabilities** et obtenez les propriétés qui vous intéressent.
 
-**Note**  The values returned by the properties discussed here are based on all detected mice: Boolean properties return non-zero if at least one mouse supports a specific capability, and numeric properties return the maximum value exposed by any one mouse.
+**Remarque** Les valeurs renvoyées par les propriétés abordées ici sont basées sur l’ensemble des souris détectées: les propriétés booléennes renvoient une valeur différente de zéro si au moins une souris prend en charge une fonctionnalité spécifique, tandis que les propriétés numériques renvoient la valeur maximale exposée par n’importe quelle souris.
 
  
 
-The following code uses a series of [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) elements to display the individual mouse properties and values.
+Le code suivant utilise une série d’éléments [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) permettant d’afficher les propriétés et valeurs de chaque souris.
 
 ```CSharp
 private void GetMouseProperties()
@@ -45,12 +45,12 @@ private void GetMouseProperties()
 }
 ```
 
-## Retrieve keyboard properties
+## Récupérer les propriétés du clavier
 
 
-The [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) namespace contains the [**KeyboardCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225623) class used to retrieve whether a keyboard is connected. Just create a new **KeyboardCapabilities** object and get the [**KeyboardPresent**](https://msdn.microsoft.com/library/windows/apps/br225625) property.
+L’espace de noms [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) contient la classe [**KeyboardCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225623), utilisée pour savoir si un clavier est connecté. Créez simplement un objet **KeyboardCapabilities** et obtenez la propriété [**KeyboardPresent**](https://msdn.microsoft.com/library/windows/apps/br225625).
 
-The following code uses a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) element to display the keyboard property and value.
+Le code suivant utilise un élément [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) permettant d’afficher la propriété et la valeur du clavier.
 
 ```CSharp
 private void GetKeyboardProperties()
@@ -60,16 +60,16 @@ private void GetKeyboardProperties()
 }
 ```
 
-## Retrieve touch properties
+## Récupérer les propriétés de l’interaction tactile
 
 
-The [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) namespace contains the [**TouchCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225644) class used to retrieve whether any touch digitizers are connected. Just create a new **TouchCapabilities** object and get the properties you're interested in.
+L’espace de noms [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) contient la classe [**TouchCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225644), utilisée pour savoir si un numériseur tactile est connecté. Créez simplement un objet **TouchCapabilities** et obtenez les propriétés qui vous intéressent.
 
-**Note**  The values returned by the properties discussed here are based on all detected touch digitizers: Boolean properties return non-zero if at least one digitizer supports a specific capability, and numeric properties return the maximum value exposed by any one digitizer.
+**Remarque** Les valeurs renvoyées par les propriétés abordées ici sont basées sur l’ensemble des numériseurs tactiles détectés: les propriétés booléennes renvoient une valeur différente de zéro si au moins un numériseur prend en charge une fonctionnalité spécifique, tandis que les propriétés numériques renvoient la valeur maximale exposée par n’importe quel numériseur.
 
  
 
-The following code uses a series of [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) elements to display the touch properties and values.
+Le code suivant utilise une série d’éléments [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) permettant d’afficher les propriétés et valeurs de l’interaction tactile.
 
 ```CSharp
 private void GetTouchProperties()
@@ -80,16 +80,16 @@ private void GetTouchProperties()
 }
 ```
 
-## Retrieve pointer properties
+## Récupérer les propriétés du pointeur
 
 
-The [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) namespace contains the [**PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633) class used to retrieve whether any detected devices support pointer input (touch, touchpad, mouse, or pen). Just create a new **PointerDevice** object and get the properties you're interested in.
+L’espace de noms [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) contient la classe [**PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633), utilisée pour savoir si l’un des appareils détectés prend en charge l’entrée de pointeur (interaction tactile, pavé tactile, souris ou stylet). Créez simplement un objet **PointerDevice** et obtenez les propriétés qui vous intéressent.
 
-**Note**  The values returned by the properties discussed here are based on all detected pointer devices: Boolean properties return non-zero if at least one device supports a specific capability, and numeric properties return the maximum value exposed by any one pointer device.
+**Remarque** Les valeurs renvoyées par les propriétés abordées ici sont basées sur l’ensemble des périphériques de pointage détectés: les propriétés booléennes renvoient une valeur différente de zéro si au moins un périphérique prend en charge une fonctionnalité spécifique, tandis que les propriétés numériques renvoient la valeur maximale exposée par n’importe quel périphérique de pointage.
 
  
 
-The following code uses a table to display the properties and values for each pointer device.
+Le code suivant utilise un tableau permettant d’afficher les propriétés et valeurs de chaque périphérique de pointage.
 
 ```CSharp
 private void GetPointerDevices()
@@ -176,16 +176,16 @@ private void GetPointerDevices()
     }
 ```
 
-## Related articles
+## Articles connexes
 
 
-**Samples**
-* [Basic input sample](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Low latency input sample](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [User interaction mode sample](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+**Exemples**
+* [Exemple d’entrée de base](http://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [Exemple d’entrée à faible latence](http://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [Exemple de mode d’interaction utilisateur](http://go.microsoft.com/fwlink/p/?LinkID=619894)
 
-**Archive samples**
-* [Input: Device capabilities sample](http://go.microsoft.com/fwlink/p/?linkid=231530)
+**Exemples d’archive**
+* [Entrée: exemple de fonctionnalités de périphériques](http://go.microsoft.com/fwlink/p/?linkid=231530)
  
 
  
@@ -196,6 +196,6 @@ private void GetPointerDevices()
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

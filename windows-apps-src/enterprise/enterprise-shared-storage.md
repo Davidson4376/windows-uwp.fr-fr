@@ -1,34 +1,34 @@
 ---
 author: mcleblanc
 ms.assetid: B48E21AB-0EA5-444B-8333-393DD8D1B76D
-title: Enterprise Shared Storage
-description: Enterprise shared storage defines local data locations for line of business apps to share data.
+title: "Stockage partagé d’entreprise"
+description: "Le stockage d’entreprise partagé définit des emplacements de données locaux pour les applications métier afin de partager des données."
 translationtype: Human Translation
 ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: bd4663b25c351551cd2f4e1e780a76431d1c3a19
+ms.openlocfilehash: 6f0e479081c361d69ab0c9e8cf4c531627304d32
 
 ---
-# Enterprise Shared Storage
+# Stockage partagé d’entreprise
 
-The shared storage consists of two locations, where apps with the restricted capability  **enterpriseDeviceLockdown** and an Enterprise certificate have full read and write access. Note that the **enterpriseDeviceLockdown** capability allows apps to use the device lock down API and access the enterprise shared storage folders. For more information about the API, see [**Windows.Embedded.DeviceLockdown**](http://go.microsoft.com/fwlink/?LinkId=699331) namespace.  
+Le stockage partagé se compose de deux emplacements où les applications dotées de la fonctionnalité restreinte **enterpriseDeviceLockdown** et d’un certificat d’entreprise disposent d’un accès complet en lecture et écriture. Notez que la fonctionnalité **enterpriseDeviceLockdown** permet aux applications d’utiliser l’API de verrouillage de l’appareil et d’accéder aux dossiers de stockage partagés de l’entreprise. Pour plus d’informations sur l’API, voir l’espace de noms [**Windows.Embedded.DeviceLockdown**](http://go.microsoft.com/fwlink/?LinkId=699331).  
 
-These locations are set on the local drive:
+Ces emplacements sont définis sur le disque local:
 - \Data\SharedData\Enterprise\Persistent
 - \Data\SharedData\Enterprise\Non-Persistent
 
-## Scenarios
+## Scénarios
 
-Enterprise shared storage provides support for the following scenarios.
+Stockage partagé d’entreprise prend en charge les scénarios suivants.
 
-- You can share data within an instance of an app, between instances of the same app, or even between apps assuming they both have the appropriate capability and certificate.
-- You can store data on the local hard drive in the \Data\SharedData\Enterprise\Persistent folder and it persists even after the device has been reset.
-- Manipulate files, including read, write, and delete of files on a device via Mobile Device Management (MDM) service. For more information on how to use enterprise shared storage through the MDM service, see [EnterpriseExtFileSystem CSP](http://go.microsoft.com/fwlink/?LinkId=699333).
+- Vous pouvez partager des données au sein de l’ instance d’une application, entre les instances de la même application, ou encore entre les applications en supposant qu’elles disposent de la fonctionnalité et du certificat appropriés.
+- Vous pouvez stocker des données sur le disque dur local dans le dossier \Data\SharedData\Enterprise\Persistent qui seront conservées même après la réinitialisation de l’appareil.
+- Vous pouvez manipuler des fichiers (lecture, écriture, suppression) sur un appareil via le service de gestion des périphériques mobiles (GPM). Pour plus d’informations sur l’utilisation du stockage partagé d’entreprise, voir [Fournisseur de services de configuration (CSP) EnterpriseExtFileSystem](http://go.microsoft.com/fwlink/?LinkId=699333).
 
-## Access enterprise shared storage
+## Accéder au stockage partagé d’entreprise
 
-The following example shows how to declare the capability to access enterprise shared storage in the package manifest, and how to access the shared storage folders by using the Windows.Storage.StorageFolder class.
+L’exemple suivant montre comment déclarer la fonctionnalité pour accéder au stockage d’entreprise partagé dans le manifeste du package et comment accéder aux dossiers de stockage partagé à l’aide de la classe Windows.Storage.StorageFolder.
 
-In your app package manifest, include the following capability:
+Incluez la fonctionnalité suivante dans le manifeste de package de votre application:
 
 ```xml
 <Package
@@ -45,7 +45,7 @@ In your app package manifest, include the following capability:
 </Capabilities>
 ```
 
-To access the shared data location, your app would use the following code.
+Pour accéder à l’emplacement des données partagées, votre application utilise le code suivant.
 
 ```csharp
 using System;
@@ -74,6 +74,6 @@ foreach (StorageFile file in sortedItems)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

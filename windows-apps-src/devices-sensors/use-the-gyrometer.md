@@ -1,43 +1,43 @@
 ---
 author: DBirtolo
 ms.assetid: 454953E1-DD8F-44B7-A614-7BAD8C683536
-title: Use the gyrometer
-description: Learn how to use the gyrometer to detect changes in user movement.
+title: "Utiliser le gyromètre"
+description: "Découvrez comment utiliser le gyromètre pour détecter les changements de mouvements de l’utilisateur."
 translationtype: Human Translation
 ms.sourcegitcommit: 07058b48a527414b76d55b153359712905aa9786
-ms.openlocfilehash: f53ae8de70ddca0d8293283012bedb8a39ac7ac1
+ms.openlocfilehash: ad76837574b8887bceb135db156e2744542259b0
 
 ---
-# Use the gyrometer
+# Utiliser le gyromètre
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-** Important APIs **
+** API importantes **
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**Gyrometer**](https://msdn.microsoft.com/library/windows/apps/BR225718)
 
-\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
+\[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.\]
 
-Learn how to use the gyrometer to detect changes in user movement.
+Découvrez comment utiliser le gyromètre pour détecter les changements de mouvements de l’utilisateur.
 
-Gyrometers compliment accelerometers as game controllers. The accelerometer can measure linear motion while the gyrometer measures angular velocity or rotational motion.
+Les gyromètres viennent compléter les accéléromètres en tant que contrôleurs de jeu. Tandis que l’accéléromètre peut mesurer le déplacement linéaire, le gyromètre mesure la vitesse angulaire ou déplacement rotatoire.
 
-## Prerequisites
+## Prérequis
 
-You should be familiar with Extensible Application Markup Language (XAML), Microsoft Visual C#, and events.
+Vous devez maîtriser le langage XAML (Extensible Application Markup Language), Microsoft Visual C# et les événements.
 
-The device or emulator that you're using must support a gyrometer.
+L’appareil ou émulateur que vous utilisez doit prendre en charge un gyromètre.
 
-## Create a simple gyrometer app
+## Créer une application simple de gyromètre
 
-This section is divided into two subsections. The first subsection will take you through the steps necessary to create a simple gyrometer application from scratch. The following subsection explains the app you have just created.
+Cette section se divise en deuxsous-sections. La première sous-section vous permet d’accéder aux étapes nécessaires pour créer de bout en bout une application simple de gyromètre. La sous-section suivante décrit l’application que vous venez de créer.
 
 ###  Instructions
 
--   Create a new project, choosing a **Blank App (Universal Windows)** from the **Visual C#** project templates.
+-   Créez un projet en choisissant une **Application vide (Windows universel)** dans les modèles de projet **Visual C#**.
 
--   Open your project's MainPage.xaml.cs file and replace the existing code with the following.
+-   Ouvrez le fichier MainPage.xaml.cs de votre projet et remplacez le code existant par ce qui suit.
 
 ```csharp
     using System;
@@ -102,9 +102,9 @@ This section is divided into two subsections. The first subsection will take you
     }
 ```
 
-You'll need to rename the namespace in the previous snippet with the name you gave your project. For example, if you created a project named **GyrometerCS**, you'd replace `namespace App1` with `namespace GyrometerCS`.
+Vous devez remplacer le nom de l’espace de noms dans l’extrait de code précédent par le nom que vous avez donné à votre projet. Par exemple, si vous avez créé un projet nommé **GyrometerCS**, vous devez remplacer `namespace App1` par `namespace GyrometerCS`.
 
--   Open the file MainPage.xaml and replace the original contents with the following XML.
+-   Ouvrez le fichier MainPage.xaml et remplacez le contenu d’origine par le code XML suivant.
 
 ```xml 
         <Page
@@ -128,25 +128,25 @@ You'll need to rename the namespace in the previous snippet with the name you ga
     </Page>
 ```
 
-You'll need to replace the first part of the class name in the previous snippet with the namespace of your app. For example, if you created a project named **GyrometerCS**, you'd replace `x:Class="App1.MainPage"` with `x:Class="GyrometerCS.MainPage"`. You should also replace `xmlns:local="using:App1"` with `xmlns:local="using:GyrometerCS"`.
+Vous devez remplacer la première partie du nom de la classe dans l’extrait de code précédent par l’espace de noms de votre application. Par exemple, si vous avez créé un projet nommé **GyrometerCS**, vous devez remplacer `x:Class="App1.MainPage"` par `x:Class="GyrometerCS.MainPage"`. Vous devez aussi remplacer `xmlns:local="using:App1"` par `xmlns:local="using:GyrometerCS"`.
 
--   Press F5 or select **Debug** > **Start Debugging** to build, deploy, and run the app.
+-   Appuyez sur F5 ou sélectionnez **Déboguer** > **Démarrer le débogage** pour générer, déployer et exécuter l’application.
 
-Once the app is running, you can change the gyrometer values by moving the device or using the emulator tools.
+Une fois l’application en cours d’exécution, vous pouvez modifier les valeurs du gyromètre en déplaçant l’appareil ou à l’aide des outils de l’émulateur.
 
--   Stop the app by returning to Visual Studio and pressing Shift+F5 or select **Debug** > **Stop Debugging** to stop the app.
+-   Pour arrêter l’application, retournez dans Visual Studio et appuyez sur Maj+ 5, ou sélectionnez **Déboguer** > **Arrêter le débogage**.
 
-###  Explanation
+###  Explication
 
-The previous example demonstrates how little code you'll need to write in order to integrate gyrometer input in your app.
+L’exemple précédent démontre la faible quantité de code que vous devrez écrire afin d’intégrer l’entrée du gyromètre dans votre application.
 
-The app establishes a connection with the default gyrometer in the **MainPage** method.
+L’application établit une connexion avec le gyromètre par défaut dans la méthode **MainPage**.
 
 ```csharp
 _gyrometer = Gyrometer.GetDefault(); // Get the default gyrometer sensor object
 ```
 
-The app establishes the report interval within the **MainPage** method. This code retrieves the minimum interval supported by the device and compares it to a requested interval of 16 milliseconds (which approximates a 60-Hz refresh rate). If the minimum supported interval is greater than the requested interval, the code sets the value to the minimum. Otherwise, it sets the value to the requested interval.
+L’application établit l’intervalle de rapport dans la méthode **MainPage**. Le code suivant récupère l’intervalle minimal pris en charge par l’appareil et le compare à un intervalle demandé de 16millisecondes (ce qui représente une fréquence de rafraîchissement de 60Hz). Si l’intervalle pris en charge minimum est supérieur à l’intervalle demandé, le code définit la valeur sur l’intervalle minimum. Sinon, il définit la valeur sur l’intervalle demandé.
 
 ```csharp
 uint minReportInterval = _gyrometer.MinimumReportInterval;
@@ -154,14 +154,14 @@ uint reportInterval = minReportInterval > 16 ? minReportInterval : 16;
 _gyrometer.ReportInterval = reportInterval;
 ```
 
-The new gyrometer data is captured in the **ReadingChanged** method. Each time the sensor driver receives new data from the sensor, it passes the values to your app using this event handler. The app registers this event handler on the following line.
+Les nouvelles données du gyromètre sont capturées dans la méthode **ReadingChanged**. Chaque fois que le pilote du capteur reçoit de nouvelles données du capteur, il transmet les valeurs à votre application à l’aide de ce gestionnaire d’événements. L’application inscrit ce gestionnaire d’événements sur la ligne suivante.
 
 ```csharp
 _gyrometer.ReadingChanged += new TypedEventHandler<Gyrometer, 
 GyrometerReadingChangedEventArgs>(ReadingChanged);
 ```
 
-These new values are written to the TextBlocks found in the project's XAML.
+Ces nouvelles valeurs sont écrites dans les TextBlocks identifiés dans le code XAML du projet.
 
 ```xml
         <TextBlock HorizontalAlignment="Left" Height="23" Margin="8,8,0,0" TextWrapping="Wrap" Text="X-Axis:" VerticalAlignment="Top" Width="46" Foreground="#FFFDFDFD"/>
@@ -172,13 +172,13 @@ These new values are written to the TextBlocks found in the project's XAML.
         <TextBlock x:Name="txtZAxis" HorizontalAlignment="Left" Height="21" Margin="54,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="63" Foreground="#FFF8F3F3"/>
 ```
 
- ## Related topics
+ ## Rubriques connexes
 
-* [Gyrometer Sample](http://go.microsoft.com/fwlink/p/?linkid=241379)
-
-
+* [Exemple de gyromètre](http://go.microsoft.com/fwlink/p/?linkid=241379)
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Jun16_HO4-->
 
 

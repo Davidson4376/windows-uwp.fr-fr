@@ -1,30 +1,30 @@
 ---
 author: msatranjr
-title: Passing arrays to a Windows Runtime Component
-description: In the Windows Universal Platform (UWP), parameters are either for input or for output, never both. This means that the contents of an array that is passed to a method, as well as the array itself, are either for input or for output.
+title: "Transmission de tableaux à un composant Windows Runtime"
+description: "Dans la plateforme universelle Windows (UWP), les paramètres sont destinés à l’entrée ou à la sortie, jamais aux deux. Cela signifie que le contenu d’un tableau qui est transmis à une méthode, ainsi que le tableau lui-même, sont destinés à l’entrée ou à la sortie."
 ms.assetid: 8DE695AC-CEF2-438C-8F94-FB783EE18EB9
 translationtype: Human Translation
 ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: 8ced5e6a4411554fcf82a54b57de64562a305619
+ms.openlocfilehash: 21e4b504b4adc6e2cb9b16d377781aaaab6a4aac
 
 ---
 
-# Passing arrays to a Windows Runtime Component
+# Transmission de tableaux à un composant Windows Runtime
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-In the Windows Universal Platform (UWP), parameters are either for input or for output, never both. This means that the contents of an array that is passed to a method, as well as the array itself, are either for input or for output. If the contents of the array are for input, the method reads from the array but doesn't write to it. If the contents of the array are for output, the method writes to the array but doesn't read from it. This presents a problem for array parameters, because arrays in the .NET Framework are reference types, and the contents of an array are mutable even when the array reference is passed by value (**ByVal** in Visual Basic). The [Windows Runtime Metadata Export Tool (Winmdexp.exe)](https://msdn.microsoft.com/library/hh925576.aspx) requires you to specify the intended usage of the array if it is not clear from context, by applying the ReadOnlyArrayAttribute attribute or the WriteOnlyArrayAttribute attribute to the parameter. Array usage is determined as follows:
+Dans la plateforme universelle Windows (UWP), les paramètres sont destinés à l’entrée ou à la sortie, jamais aux deux. Cela signifie que le contenu d’un tableau qui est transmis à une méthode, ainsi que le tableau lui-même, sont destinés à l’entrée ou à la sortie. Si le contenu du tableau est destiné à l’entrée, la méthode lit dans le tableau mais n’écrit pas dans celui-ci. Si le contenu du tableau est destiné à la sortie, la méthode écrit dans le tableau mais ne lit pas dans celui-ci. Cela pose un problème pour les paramètres de tableau, car les tableaux de .NET Framework sont des types de référence et le contenu d’un tableau est mutable même si la référence du tableau est transmise par valeur (**ByVal** en Visual Basic). L’[outil d’exportation de métadonnées Windows Runtime (Winmdexp.exe)](https://msdn.microsoft.com/library/hh925576.aspx) requiert de spécifier l’utilisation prévue pour le tableau si elle n’est pas claire d’après le contexte en appliquant l’attribut ReadOnlyArrayAttribute ou WriteOnlyArrayAttribute au paramètre. L’utilisation du tableau est déterminée comme suit:
 
--   For the return value or for an out parameter (a **ByRef** parameter with the [OutAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.outattribute.aspx) attribute in Visual Basic) the array is always for output only. Do not apply the ReadOnlyArrayAttribute attribute. The WriteOnlyArrayAttribute attribute is allowed on output parameters, but it's redundant.
+-   Pour la valeur de retour ou un paramètre out (un paramètre **ByRef** avec l’attribut [OutAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.outattribute.aspx) en Visual Basic), le tableau est toujours destiné à la sortie. N’appliquez pas l’attribut ReadOnlyArrayAttribute. L’attribut WriteOnlyArrayAttribute est autorisé sur les paramètres de sortie, mais il est redondant.
 
-    > **Caution**  The Visual Basic compiler does not enforce output-only rules. You should never read from an output parameter; it may contain **Nothing**. Always assign a new array.
+    > **Attention** Le compilateur Visual Basic n’applique pas les règles de sortie uniquement. Vous ne devez jamais lire un paramètre de sortie ; il peut contenir **Nothing**. Assignez toujours un nouveau tableau.
  
--   Parameters that have the **ref** modifier (**ByRef** in Visual Basic) are not allowed. Winmdexp.exe generates an error.
--   For a parameter that is passed by value, you must specify whether the array contents are for input or output by applying either the [ReadOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.readonlyarrayattribute.aspx) attribute or the [WriteOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute.aspx) attribute. Specifying both attributes is an error.
+-   Les paramètres qui présentent le modificateur **ref** (**ByRef** en Visual Basic) ne sont pas autorisés. Winmdexp.exe génère une erreur.
+-   Pour un paramètre transmis par valeur, vous devez indiquer si le contenu du tableau est destiné à l’entrée ou à la sortie en appliquant l’attribut [ReadOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.readonlyarrayattribute.aspx) ou [WriteOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute.aspx). La spécification des deux attributs génère une erreur.
 
-If a method must accept an array for input, modify the array contents, and return the array to the caller, use a read-only parameter for the input and a write-only parameter (or the return value) for the output. The following code shows one way to implement this pattern:
+Si une méthode doit accepter un tableau pour l’entrée, modifier le contenu du tableau et retourner le tableau à l’appelant, utilisez un paramètre en lecture seule pour l’entrée et un paramètre en écriture seule (ou la valeur de retour) pour la sortie. Le code suivant montre un moyen d’implémenter ce modèle:
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -45,26 +45,26 @@ If a method must accept an array for input, modify the array contents, and retur
 > End Function
 > ```
 
-We recommend that you make a copy of the input array immediately, and manipulate the copy. This helps ensure that the method behaves the same whether or not your component is called by .NET Framework code.
+Nous vous conseillons d’effectuer une copie du tableau d’entrée immédiatement et de manipuler celle-ci. Cela permet de garantir que la méthode se comporte de la même façon que votre composant soit appelé ou non par du code .NET Framework.
 
-## Using components from managed and unmanaged code
+## Utilisation des composants depuis du code managé et non managé
 
 
-Parameters that have the ReadOnlyArrayAttribute attribute or the WriteOnlyArrayAttribute attribute behave differently depending on whether the caller is written in native code or managed code. If the caller is native code (JavaScript or Visual C++ component extensions), the array contents are treated as follows:
+Les paramètres qui présentent l’attribut ReadOnlyArrayAttribute ou WriteOnlyArrayAttribute se comportent différemment selon que l’appelant est écrit en code natif ou en code managé. Si l’appelant est du code natif (JavaScript ou extensions des composants Visual C++), le contenu du tableau est traité comme suit :
 
--   ReadOnlyArrayAttribute: The array is copied when the call crosses the application binary interface (ABI) boundary. Elements are converted if necessary. Therefore, any accidental changes the method makes to an input-only array are not visible to the caller.
--   WriteOnlyArrayAttribute: The called method can't make any assumptions about the contents of the original array. For example, the array the method receives might not be initialized, or might contain default values. The method is expected to set the values of all the elements in the array.
+-   ReadOnlyArrayAttribute : le tableau est copié lorsque l’appel traverse la limite de l’interface binaire d’application (ABI). Les éléments sont convertis si nécessaire. Par conséquent, toute modification accidentelle que la méthode effectue dans un tableau d’entrée uniquement n’est pas visible pour l’appelant.
+-   WriteOnlyArrayAttribute : la méthode appelée ne peut pas faire d’hypothèses sur le contenu du tableau d’origine. Par exemple, le tableau que la méthode reçoit peut ne pas être initialisé ou peut contenir des valeurs par défaut. La méthode est censée définir les valeurs de tous les éléments du tableau.
 
-If the caller is managed code, the original array is available to the called method, as it would be in any method call in the .NET Framework. Array contents are mutable in .NET Framework code, so any changes the method makes to the array are visible to the caller. This is important to remember because it affects unit tests written for a Windows Runtime Component. If the tests are written in managed code, the contents of an array will appear to be mutable during testing.
+Si l’appelant est du code managé, le tableau d’origine est disponible pour la méthode appelée, comme il l’est dans un appel de méthode dans .NET Framework. Le contenu du tableau est mutable dans le code .NET Framework, de sorte que toutes les modifications que la méthode apporte au tableau sont visibles pour l’appelant. Il importe d’en tenir compte, car cela affecte les tests d’unité écrits pour un composant Windows Runtime. Si les tests sont écrits en code managé, le contenu d’un tableau apparaîtra mutable pendant le test.
 
-## Related topics
+## Rubriques connexes
 
 * [ReadOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.readonlyarrayattribute.aspx)
 * [WriteOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute.aspx)
-* [Creating Windows Runtime Components in C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* [Création de composants Windows Runtime enC# et VisualBasic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

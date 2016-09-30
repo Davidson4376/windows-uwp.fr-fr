@@ -1,34 +1,34 @@
 ---
 author: mcleblanc
 ms.assetid: BC7E8130-A28A-443C-8D7E-353E7DA33AE3
-description: Entity Framework (EF) is an object-relational mapper that enables you to work with relational data using domain-specific objects.
-title: Entity framework 7 with SQLite for C# apps
+description: "Entity Framework (EF) est un mappeur relationnel objet qui vous permet de travailler avec les données relationnelles en utilisant des objets spécifiques au domaine."
+title: Entity Framework 7 avec des applications SQLite pour C#
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: b453a2a6c3ab0b9418122ae27bf6a3a1c56e5873
+ms.openlocfilehash: 4c9b674445e901a370f9822f8f11acdeba6061b6
 
 ---
 
-# Entity framework 7 with SQLite for C# apps
+# Entity Framework 7 avec des applications SQLite pour C#
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Entity Framework (EF) is an object-relational mapper that enables you to work with relational data using domain-specific objects. This article explains how you can use Entity Framework 7 with a SQLite database in a Universal Windows app.
+Entity Framework (EF) est un mappeur relationel objet qui vous permet de travailler avec les données relationnelles en utilisant des objets spécifiques au domaine. Cet article explique comment utiliser EntityFramework7 avec une base de données SQLite dans une application Windows universelle.
 
-Originally for .NET developers, Entity Framework 7 can be used with SQLite on Universal Windows Platform (UWP) to store and manipulate relational data using domain specific objects. You can migrate EF code from a .NET app to a UWP app and expect it work with appropriate changes to the connection string.
+Conçu à l’origine pour les développeurs .NET, EntityFramework7 peut être utilisé avec SQLite sur une plateforme Windows universelle (UWP) pour stocker et manipuler des données relationnelles à l’aide d’objets spécifiques au domaine. Vous pouvez migrer le code EF d’une application .NET vers une applicationUWP. Cela fonctionne une fois les modifications appropriées effectuées dans la chaîne de connexion.
 
-Currently EF only supports SQLite on UWP. A detailed walkthrough on installing Entity Framework 7, and creating models is available at the [Getting Started on Universal Windows Platform page](http://go.microsoft.com/fwlink/p/?LinkId=735013). It covers the following topics:
+Pour le moment, EF prend uniquement en charge SQLite sur UWP. Vous trouverez une procédure détaillée pour l’installation d’Entity Framework 7 et la création de modèles sur la page [Prise en main de la plateforme Windows universelle (en anglais)](http://go.microsoft.com/fwlink/p/?LinkId=735013). Vous y trouverez les rubriques suivantes :
 
--   Prerequisites
--   Create a new project
--   Install Entity Framework
--   Create your model
--   Create your database
--   Use your model
-
-
+-   Prerequisites (Prérequis)
+-   Create a new project (Créer un projet)
+-   Install Entity Framework (Installer Entity Framework)
+-   Create your model (Créer votre modèle)
+-   Create your database (Créer votre base de données)
+-   Use your model (Utiliser votre modèle)
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -5,7 +5,7 @@ title: HttpClient
 ms.assetid: EC9820D3-3A46-474F-8A01-AE1C27442750
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: a3d63f7bd090d9afe92813133503997b98502683
+ms.openlocfilehash: b1908e83ffcab562c12c82cfcf7b5fe281d7ada1
 
 ---
 
@@ -118,6 +118,6 @@ Pour la plupart des erreurs de validation de paramètre, la valeur **HRESULT** r
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

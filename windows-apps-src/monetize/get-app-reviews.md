@@ -1,49 +1,52 @@
 ---
 author: mcleanbyron
 ms.assetid: 2967C757-9D8A-4B37-8AA4-A325F7A060C5
-description: Use this method in the Windows Store analytics API to get review data for a given date range and other optional filters.
-title: Get app reviews
+description: "Utilisez cette méthode dans l’API d’analyse du WindowsStore pour obtenir les avis relatifs à une plage de dates donnée, et suivant d’autres filtres facultatifs."
+title: Obtenir les avis sur les applications
 translationtype: Human Translation
-ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
-ms.openlocfilehash: 4190012c08e22f4efb086c711183332b23ccee38
+ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
+ms.openlocfilehash: 6e7e8c6a1b870031fb7055bf09c8ebbaa7dc13a5
 
 ---
 
-# Get app reviews
+# Obtenir les avis sur les applications
 
 
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+
+Utilisez cette méthode dans l’API d’analyse du WindowsStore pour obtenir les avis relatifs à une plage de dates donnée, et suivant d’autres filtres facultatifs. Cette méthode renvoie les données au format JSON.
+
+## Prérequis
 
 
-Use this method in the Windows Store analytics API to get review data for a given date range and other optional filters. This method returns the data in JSON format.
+Pour utiliser cette méthode, procédez comme suit:
 
-## Prerequisites
+-   Associez l’application Azure AD que vous utiliserez pour appeler cette méthode à votre compte du Centre de développement.
 
+-   Obtenez un jeton d’accès Azure AD pour votre application.
 
-To use this method, you need to first do the following:
+Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide des services du WindowsStore](access-analytics-data-using-windows-store-services.md).
 
-* If you have not done so already, complete all the [prerequisites](access-analytics-data-using-windows-store-services.md#prerequisites) for the Windows Store analytics API.
-* [Obtain an Azure AD access token](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
-
-## Request
+## Requête
 
 
-### Request syntax
+### Syntaxe de la requête
 
-| Method | Request URI                                                      |
+| Méthode | URI de la requête                                                      |
 |--------|------------------------------------------------------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/reviews``` |
 
 <span/> 
 
-### Request header
+### En-tête de requête
 
-| Header        | Type   | Description                                                                 |
+| En-tête        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
+| Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer**&lt;*token*&gt;. |
 
 <span/> 
 
-### Request parameters
+### Paramètres de la requête
 
 <table>
 <colgroup>
@@ -54,53 +57,53 @@ To use this method, you need to first do the following:
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Parameter</th>
+<th align="left">Paramètre</th>
 <th align="left">Type</th>
 <th align="left">Description</th>
-<th align="left">Required</th>
+<th align="left">Requis</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">applicationId</td>
-<td align="left">string</td>
-<td align="left">The Store ID of the app for which you want to retrieve review data. The Store ID is available on the [App identity page](../publish/view-app-identity-details.md) of the Dev Center dashboard. An example Store ID is 9WZDNCRFJ3Q8.</td>
-<td align="left">Yes</td>
+<td align="left">chaîne</td>
+<td align="left">L’ID WindowsStore pour l’application pour laquelle vous souhaitez récupérer les avis. L’ID WindowsStore est disponible dans la page [Identité de l’application](../publish/view-app-identity-details.md) du tableau de bord du Centre de développement. Exemple d’ID WindowsStore: 9WZDNCRFJ3Q8.</td>
+<td align="left">Oui</td>
 </tr>
 <tr class="even">
 <td align="left">startDate</td>
 <td align="left">date</td>
-<td align="left">The start date in the date range of review data to retrieve. The default is the current date.</td>
-<td align="left">No</td>
+<td align="left">Dans la plage de dates, la date de début de la récupération des avis. La valeur par défaut est la date actuelle.</td>
+<td align="left">Non</td>
 </tr>
 <tr class="odd">
 <td align="left">endDate</td>
 <td align="left">date</td>
-<td align="left">The end date in the date range of review data to retrieve. The default is the current date.</td>
-<td align="left">No</td>
+<td align="left">Dans la plage de dates, la date de début de la récupération des avis. La valeur par défaut est la date actuelle.</td>
+<td align="left">Non</td>
 </tr>
 <tr class="even">
 <td align="left">top</td>
-<td align="left">int</td>
-<td align="left">The number of rows of data to return in the request. The maximum value and the default value if not specified is 10000. If there are more rows in the query, the response body includes a next link that you can use to request the next page of data.</td>
-<td align="left">No</td>
+<td align="left">entier</td>
+<td align="left">Le nombre de lignes de données à renvoyer dans la requête. La valeur maximale et la valeur par défaut en l’absence de définition est 10000. Si la requête comporte davantage de lignes, le corps de la réponse inclut un lien sur lequel vous cliquez pour solliciter la page suivante de données.</td>
+<td align="left">Non</td>
 </tr>
 <tr class="odd">
 <td align="left">skip</td>
-<td align="left">int</td>
-<td align="left">The number of rows to skip in the query. Use this parameter to page through large data sets. For example, top=10000 and skip=0 retrieves the first 10000 rows of data, top=10000 and skip=10000 retrieves the next 10000 rows of data, and so on.</td>
-<td align="left">No</td>
+<td align="left">entier</td>
+<td align="left">Le nombre de lignes à ignorer dans la requête. Utilisez ce paramètre pour parcourir de grands ensembles de données. Par exemple, indiquez top=10000 et skip=0 pour obtenir les 10000 premières lignes de données, top=10000 et skip=10000 pour obtenir les 10000 lignes suivantes, et ainsi de suite.</td>
+<td align="left">Non</td>
 </tr>
 <tr class="even">
 <td align="left">filter</td>
-<td align="left">string</td>
-<td align="left">One or more statements that filter the rows in the response. For more information, see the [filter fields](#filter-fields) section below.</td>
-<td align="left">No</td>
+<td align="left">chaîne</td>
+<td align="left">Une ou plusieurs instructions qui filtrent les lignes de la réponse. Pour plus d’informations, voir la section [Champs de filtre](#filter-fields) ci-dessous.</td>
+<td align="left">Non</td>
 </tr>
 <tr class="odd">
 <td align="left">orderby</td>
-<td align="left">string</td>
-<td align="left">A statement that orders the result data values for each rating. The syntax is <em>orderby=field [order],field [order],...</em>. The <em>field</em> parameter can be one of the following strings:
+<td align="left">chaîne</td>
+<td align="left">Une instruction qui commande les valeurs de données de résultats pour chaque avis. Syntaxe : <em>orderby=field [order],field [order],...</em>. Le paramètre <em>field</em> peut comporter l’une des chaînes suivantes :
 <ul>
 <li><strong>date</strong></li>
 <li><strong>osVersion</strong></li>
@@ -123,22 +126,22 @@ To use this method, you need to first do the following:
 <li><strong>deviceStorageCapacity</strong></li>
 <li><strong>rating</strong></li>
 </ul>
-<p>The <em>order</em> parameter is optional, and can be <strong>asc</strong> or <strong>desc</strong> to specify ascending or descending order for each field. The default is <strong>asc</strong>.</p>
-<p>Here is an example <em>orderby</em> string: <em>orderby=date,market</em></p></td>
-<td align="left">No</td>
+<p>Le paramètre <em>order</em>, facultatif, peut comporter les valeurs <strong>asc</strong> ou <strong>desc</strong> afin de spécifier l’ordre croissant ou décroissant pour chaque champ. La valeur par défaut est <strong>asc</strong>.</p>
+<p>Voici un exemple de chaîne <em>orderby</em> : <em>orderby=date,market</em></p></td>
+<td align="left">Non</td>
 </tr>
 </tbody>
 </table>
 
 <span/>
  
-### Filter fields
+### Champs de filtrage
 
-The *filter* parameter of the request contains one or more statements that filter the rows in the response. Each statement contains a field and value that are associated with the **eq** or **ne** operators, and some fields also support the **contains**, **gt**, **lt**, **ge**, and **le** operators. Statements can be combined using **and** or **or**.
+Le paramètre *filter* de la requête contient une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction comporte un champ et une valeur qui sont associés aux opérateurs **eq** ou **ne**, et certains champs prennent également en charge les opérateurs **contains**, **gt**, **lt**, **ge** et **le**. Les instructions peuvent être combinées à l’aide des opérateurs **and** ou **or**.
 
-Here is an example *filter* string: *filter=contains(reviewText,'great') and contains(reviewText,'ads') and deviceRAM lt 2048 and market eq 'US'*
+Voici un exemple de chaîne *filter*: *filter=contains(reviewText,’great’) and contains(reviewText,’ads’) and deviceRAM lt 2048 and market eq ’US’*
 
-For a list of the supported fields and support operators for each field, see the following table. String values must be surrounded by single quotes in the *filter* parameter.
+Pour obtenir une liste des champs pris en charge et des opérateurs associés à chacun d’entre eux, consultez le tableau suivant. Les valeurs de chaîne doivent être entourées par des guillemets dans le paramètre *filter*.
 
 <table>
 <colgroup>
@@ -148,8 +151,8 @@ For a list of the supported fields and support operators for each field, see the
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Fields</th>
-<th align="left">Supported operators</th>
+<th align="left">Champs</th>
+<th align="left">Opérateurs pris en charge</th>
 <th align="left">Description</th>
 </tr>
 </thead>
@@ -157,12 +160,12 @@ For a list of the supported fields and support operators for each field, see the
 <tr class="odd">
 <td align="left">market</td>
 <td align="left">eq, ne</td>
-<td align="left">A string that contains the ISO 3166 country code of the device market.</td>
+<td align="left">Chaîne contenant le code pays ISO3166 du marché des appareils.</td>
 </tr>
 <tr class="even">
 <td align="left">osVersion</td>
 <td align="left">eq, ne</td>
-<td align="left">One of the following strings:
+<td align="left">Une des chaînes suivantes:
 <ul>
 <li><strong>Windows Phone 7.5</strong></li>
 <li><strong>Windows Phone 8</strong></li>
@@ -177,7 +180,7 @@ For a list of the supported fields and support operators for each field, see the
 <tr class="odd">
 <td align="left">deviceType</td>
 <td align="left">eq, ne</td>
-<td align="left">One of the following strings:
+<td align="left">Une des chaînes suivantes:
 <ul>
 <li><strong>PC</strong></li>
 <li><strong>Tablet</strong></li>
@@ -192,22 +195,22 @@ For a list of the supported fields and support operators for each field, see the
 <tr class="even">
 <td align="left">isRevised</td>
 <td align="left">eq, ne</td>
-<td align="left">Specify <strong>true</strong> to filter for reviews that have been revised; otherwise <strong>false</strong>.</td>
+<td align="left">Spécifiez la valeur <strong>true</strong> pour filtrer les avis révisés ; sinon, définissez la valeur <strong>false</strong>.</td>
 </tr>
 <tr class="odd">
 <td align="left">packageVersion</td>
 <td align="left">eq, ne</td>
-<td align="left">The version of the app package that was reviewed.</td>
+<td align="left">La version du package d’application qui a été passée en revue.</td>
 </tr>
 <tr class="even">
 <td align="left">deviceModel</td>
 <td align="left">eq, ne</td>
-<td align="left">The type of device on which the app was reviewed.</td>
+<td align="left">Le type d’appareil sur lequel l’application a été révisée.</td>
 </tr>
 <tr class="odd">
 <td align="left">productFamily</td>
 <td align="left">eq, ne</td>
-<td align="left">One of the following strings:
+<td align="left">Une des chaînes suivantes:
 <ul>
 <li><strong>PC</strong></li>
 <li><strong>Tablet</strong></li>
@@ -221,71 +224,71 @@ For a list of the supported fields and support operators for each field, see the
 <tr class="even">
 <td align="left">deviceScreenResolution</td>
 <td align="left">eq, ne</td>
-<td align="left">The device screen resolution in the format &quot;<em>width</em> x <em>height</em>&quot;.</td>
+<td align="left">Résolution de l’écran de l’appareil, au format &quot;<em>largeur</em> x <em>hauteur</em>&quot;.</td>
 </tr>
 <tr class="odd">
 <td align="left">isTouchEnabled</td>
 <td align="left">eq, ne</td>
-<td align="left">Specify <strong>true</strong> to filter for touch-enabled devices; otherwise <strong>false</strong>.</td>
+<td align="left">Spécifiez la valeur <strong>true</strong> pour filtrer les appareils tactiles ; sinon, définissez la valeur <strong>false</strong>.</td>
 </tr>
 <tr class="even">
 <td align="left">reviewerName</td>
 <td align="left">eq, ne</td>
-<td align="left">The reviewer name.</td>
+<td align="left">Le nom de réviseur.</td>
 </tr>
 <tr class="odd">
 <td align="left">helpfulCount</td>
 <td align="left">eq, ne</td>
-<td align="left">The number of times the review was marked helpful.</td>
+<td align="left">Le nombre d’occurrences où l’avis a été marqué comme utile.</td>
 </tr>
 <tr class="even">
 <td align="left">notHelpfulCount</td>
 <td align="left">eq, ne</td>
-<td align="left">The number of times the review was marked not helpful.</td>
+<td align="left">Le nombre d’occurrences où l’avis a été marqué comme inutile.</td>
 </tr>
 <tr class="odd">
 <td align="left">reviewTitle</td>
 <td align="left">eq, ne, contains</td>
-<td align="left">The title of the review.</td>
+<td align="left">Le titre de l’avis.</td>
 </tr>
 <tr class="even">
 <td align="left">reviewText</td>
 <td align="left">eq, ne, contains</td>
-<td align="left">The text contents of the review.</td>
+<td align="left">Le contenu textuel de l’avis.</td>
 </tr>
 <tr class="odd">
 <td align="left">responseText</td>
 <td align="left">eq, ne, contains</td>
-<td align="left">The text contents of the response.</td>
+<td align="left">Le contenu textuel de la réponse.</td>
 </tr>
 <tr class="even">
 <td align="left">responseDate</td>
 <td align="left">eq, ne</td>
-<td align="left">The date that the response was submitted.</td>
+<td align="left">La date à laquelle la réponse a été soumise.</td>
 </tr>
 <tr class="odd">
 <td align="left">deviceRAM</td>
 <td align="left">eq, ne, gt, lt, ge, le</td>
-<td align="left">The physical RAM, in MB.</td>
+<td align="left">La mémoireRAM physique, en Mo.</td>
 </tr>
 <tr class="even">
 <td align="left">deviceStorageCapacity</td>
 <td align="left">eq, ne, gt, lt, ge, le</td>
-<td align="left">The capacity of the primary storage disk, in GB.</td>
+<td align="left">La capacité du disque de stockage principal, en Go.</td>
 </tr>
 <tr class="odd">
 <td align="left">rating</td>
 <td align="left">eq, ne, gt, lt, ge, le</td>
-<td align="left">The app rating, in stars.</td>
+<td align="left">L’évaluation de l’application, en étoiles.</td>
 </tr>
 </tbody>
 </table>
 
 <span/> 
 
-### Request example
+### Exemple de requête
 
-The following examples demonstrate several requests for getting review data. Replace the *applicationId* value with the Store ID for your app.
+Les exemples suivants illustrent plusieurs requêtes de récupération des avis. Remplacez la valeur *applicationId* par l’ID WindowsStore de votre application.
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/reviews?applicationId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1
@@ -295,53 +298,53 @@ GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/reviews?application
 Authorization: Bearer <your access token>
 ```
 
-## Response
+## Réponse
 
 
-### Response body
+### Corps de la réponse
 
-| Value      | Type   | Description                                                                                                                                                                                                                                                                            |
+| Valeur      | Type   | Description                                                                                                                                                                                                                                                                            |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Value      | array  | An array of objects that contain review data. For more information about the data in each object, see the [review values](#review-values) section below.                                                                                                                                      |
-| @nextLink  | string | If there are additional pages of data, this string contains a URI that you can use to request the next page of data. For example, this value is returned if the **top** parameter of the request is set to 10000 but there are more than 10000 rows of acquisition data for the query. |
-| TotalCount | int    | The total number of rows in the data result for the query.                                                                                                                                                                                                                             |
+| Valeur      | tableau  | Un tableau d’objets comportant des avis. Pour plus d’informations sur les données de chaque objet, consultez la section [Valeurs d’avis](#review-values) ci-dessous.                                                                                                                                      |
+| @nextLink  | chaîne | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour solliciter la page suivante de données. Par exemple, cette valeur est renvoyée si le paramètre **top** de la demande est défini sur 10000, mais que plus de 10000 lignes de données d’acquisition sont associées à la requête. |
+| TotalCount | entier    | Nombre total de lignes des résultats de données pour la requête.                                                                                                                                                                                                                             |
 
 <span/>
  
-### Review values
+### Valeurs d’avis
 
-Elements in the *Value* array contain the following values.
+Les éléments du tableau *Value* comportent les valeurs suivantes:
 
-| Value                  | Type    | Description                                                                                                                                                                                                                          |
+| Valeur                  | Type    | Description                                                                                                                                                                                                                          |
 |------------------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| date                   | string  | The first date in the date range for the ratings data. If the request specified a single day, this value is that date. If the request specified a week, month, or other date range, this value is the first date in that date range. |
-| applicationId          | string  | The Store ID of the app for which you are retrieving ratings data.                                                                                                                                                                 |
-| applicationName        | string  | The display name of the app.                                                                                                                                                                                                         |
-| market                 | string  | The ISO 3166 country code of the market where the rating was submitted.                                                                                                                                                              |
-| osVersion              | string  | The OS version on which the rating was submitted. For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                               |
-| deviceType             | string  | The type of device on which the rating was submitted. For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                           |
-| isRevised              | Boolean | The value **true** indicates that the review was revised; otherwise **false**.                                                                                                                                                       |
-| packageVersion         | string  | The version of the app package that was reviewed.                                                                                                                                                                                    |
-| deviceModel            | string  | The type of device on which the app was reviewed.                                                                                                                                                                                    |
-| productFamily          | string  | The device family name. For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                                                         |
-| deviceScreenResolution | string  | The device screen resolution in the format "*width* x *height*".                                                                                                                                                                     |
-| isTouchEnabled         | Boolean | The value **true** indicates that touch is enabled; otherwise **false**.                                                                                                                                                             |
-| reviewerName           | string  | The reviewer name.                                                                                                                                                                                                                   |
-| helpfulCount           | number  | The number of times the review was marked helpful.                                                                                                                                                                                   |
-| notHelpfulCount        | number  | The number of times the review was marked not helpful.                                                                                                                                                                               |
-| reviewTitle            | string  | The title of the review.                                                                                                                                                                                                             |
-| reviewText             | string  | The text contents of the review.                                                                                                                                                                                                     |
-| responseText           | string  | The text contents of the response.                                                                                                                                                                                                   |
-| responseDate           | string  | The date a response was submitted.                                                                                                                                                                                                   |
-| deviceRAM              | number  | The physical RAM, in MB.                                                                                                                                                                                                             |
-| deviceStorageCapacity  | number  | The capacity of the primary storage disk, in GB.                                                                                                                                                                                     |
-| rating                 | number  | The app rating, in stars.                                                                                                                                                                                                            |
+| date                   | chaîne  | Première date dans la plage de dates de classification. Si la requête était relative à un jour unique, cette valeur correspond à la date associée. Si la requête était relative à une semaine, un mois ou toute autre plage de dates, cette valeur correspond à la première date de la plage de dates. |
+| applicationId          | chaîne  | L’ID WindowsStore de l’application pour laquelle vous récupérez les données de classification.                                                                                                                                                                 |
+| applicationName        | chaîne  | Nom d’affichage de l’application.                                                                                                                                                                                                         |
+| market                 | chaîne  | Le code pays ISO3166 du marché dans lequel la classification a été soumise.                                                                                                                                                              |
+| osVersion              | chaîne  | La version du système d’exploitation sur lequel la classification a été soumise. Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                               |
+| deviceType             | chaîne  | Le type d’appareil sur lequel la classification a été soumise. Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                           |
+| isRevised              | Booléen | La valeur **true** indique que l’avis a été révisé; sinon, la valeur **false** est affichée.                                                                                                                                                       |
+| packageVersion         | chaîne  | La version du package d’application qui a été passée en revue.                                                                                                                                                                                    |
+| deviceModel            | chaîne  | Le type d’appareil sur lequel l’application a été révisée.                                                                                                                                                                                    |
+| productFamily          | chaîne  | Le nom de la famille d’appareils. Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                                                         |
+| deviceScreenResolution | chaîne  | Résolution de l’écran de l’appareil, au format «*largeur*x*hauteur*».                                                                                                                                                                     |
+| isTouchEnabled         | Booléen | La valeur **true** indique l’activation de l’interaction tactile; sinon, la valeur **false** est affichée.                                                                                                                                                             |
+| reviewerName           | chaîne  | Le nom de réviseur.                                                                                                                                                                                                                   |
+| helpfulCount           | nombre  | Le nombre d’occurrences où l’avis a été marqué comme utile.                                                                                                                                                                                   |
+| notHelpfulCount        | nombre  | Le nombre d’occurrences où l’avis a été marqué comme inutile.                                                                                                                                                                               |
+| reviewTitle            | chaîne  | Le titre de l’avis.                                                                                                                                                                                                             |
+| reviewText             | chaîne  | Le contenu textuel de l’avis.                                                                                                                                                                                                     |
+| responseText           | chaîne  | Le contenu textuel de la réponse.                                                                                                                                                                                                   |
+| responseDate           | chaîne  | La date de soumission d’une réponse.                                                                                                                                                                                                   |
+| deviceRAM              | nombre  | La mémoireRAM physique, en Mo.                                                                                                                                                                                                             |
+| deviceStorageCapacity  | nombre  | La capacité du disque de stockage principal, en Go.                                                                                                                                                                                     |
+| rating                 | nombre  | L’évaluation de l’application, en étoiles.                                                                                                                                                                                                            |
 
 <span/> 
 
-### Response example
+### Exemple de réponse
 
-The following example demonstrates an example JSON response body for this request.
+L’exemple suivant représente un corps de réponse JSON pour cette requête.
 
 ```json
 {
@@ -376,16 +379,16 @@ The following example demonstrates an example JSON response body for this reques
 }
 ```
 
-## Related topics
+## Rubriques connexes
 
-* [Access analytics data using Windows Store services](access-analytics-data-using-windows-store-services.md)
-* [Get app acquisitions](get-app-acquisitions.md)
-* [Get add-on acquisitions](get-in-app-acquisitions.md)
-* [Get error reporting data](get-error-reporting-data.md)
-* [Get app ratings](get-app-ratings.md)
+* [Accéder aux données d’analyse à l’aide des services du Windows Store](access-analytics-data-using-windows-store-services.md)
+* [Obtenir des acquisitions d’applications](get-app-acquisitions.md)
+* [Obtenir les acquisitions de produits in-app](get-in-app-acquisitions.md)
+* [Obtenir les données de rapport d’erreurs](get-error-reporting-data.md)
+* [Obtenir les classifications des applications](get-app-ratings.md)
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

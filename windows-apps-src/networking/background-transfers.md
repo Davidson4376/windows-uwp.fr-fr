@@ -4,8 +4,8 @@ description: "Utilisez l’API de transfert en arrière-plan pour copier des fic
 title: "Transferts en arrière-plan"
 ms.assetid: 1207B089-BC16-4BF0-BBD4-FD99950C764B
 translationtype: Human Translation
-ms.sourcegitcommit: 177ada6ea8934ca74636454946dfa9c450285167
-ms.openlocfilehash: f8548c85e571d3f0f72f775af4ca40d85e86c163
+ms.sourcegitcommit: b15d01ec4fd41a8f03345a4416b4795455928533
+ms.openlocfilehash: cbb8308a3390634f0068f72041803989201e2345
 
 ---
 
@@ -16,7 +16,7 @@ ms.openlocfilehash: f8548c85e571d3f0f72f775af4ca40d85e86c163
 
 **API importantes**
 
--   [**Windows.Networking.BackgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242)
+-   [**Windows.Networking.backgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242)
 -   [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998)
 -   [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960)
 
@@ -317,6 +317,6 @@ Pour les erreurs de validation de paramètre, une application peut également ut
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO2-->
 
 

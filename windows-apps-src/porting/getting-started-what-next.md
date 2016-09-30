@@ -1,43 +1,43 @@
 ---
 author: mcleblanc
-title: Getting started, What next
+title: Prise en main &#58; Et ensuite ?
 ms.assetid: 903046E7-581F-4845-AB80-1A57C42B1B02
-description: With this basic information, you can now start writing more interesting Universal Windows Platform (UWP) apps.
+description: "Avec ces informations de base, vous pouvez commencer à écrire des applications UWP plus intéressantes."
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d71c0026c8658e8aa88827915b8f2d815f10c6ef
+ms.openlocfilehash: 2b11133fda76fb42f3a850848c426cbb33fb8366
 
 ---
 
-# Getting started: What next?
+# Prise en main &#58; Et ensuite ?
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-## Next steps
+## Étapes suivantes
 
-With this basic information, you can now start writing more interesting Universal Windows Platform (UWP) apps. For your next steps, have a read through the following topics, and then fire up Microsoft Visual Studio and start writing some code!
+Avec ces informations de base, vous pouvez commencer à écrire des applications de plateforme Windows universelle (UWP, Universal Windows Platform) plus intéressantes. Pour les étapes suivantes, lisez les rubriques qui suivent, démarrez Microsoft Visual Studio, puis commencez à écrire du code.
 
--   [App contracts and extensions](https://msdn.microsoft.com/library/windows/apps/hh464906): How to declare agreements between your apps and other apps and Windows, for example, the Play To contract and the Game Explorer extension.
--   [Working with tiles, badges, and toast notifications](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259): How to create tiles, update tiles and their badges, send toast notifications, and show and update tile and badge updates on the lock screen.
--   [Launching, resuming, and multitasking](https://msdn.microsoft.com/library/windows/apps/hh770837): How to auto-launch, activate, suspend, and resume apps, and how to work with background tasks.
--   [Guidelines for roaming application data](https://msdn.microsoft.com/library/windows/apps/hh465094): How to provide a great end-user experience for apps where the user utilizes more than one device, such as a PC at work and a tablet at home.
--   [Create your first Windows Runtime app using C# or Visual Basic](http://go.microsoft.com/fwlink/p/?LinkID=394138): A topic focusing on Windows Phone development.
--   [Videos for iOS and Android devs](https://msdn.microsoft.com/library/windows/apps/dn393982): Some more help, this time in visual format.
+-   [Contrats et extensions d’application](https://msdn.microsoft.com/library/windows/apps/hh464906) : comment déclarer des contrats entre vos applications et Windows (par exemple, le contrat « Lire sur » et l’extension Explorateur de jeux).
+-   [Utilisation de vignettes, de badges et de notifications toast](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259) : comment créer des vignettes, mettre à jour les vignettes et leurs badges, envoyer des notifications toast, afficher des mises à jour de vignettes et de badges et mettre ces derniers à jours dans l’écran de verrouillage.
+-   [Lancement, reprise et multitâche](https://msdn.microsoft.com/library/windows/apps/hh770837) : comment lancer automatiquement, activer, suspendre et relancer des applications, et comment travailler avec des tâches en arrière-plan.
+-   [Recommandations en matière de données d’application itinérantes](https://msdn.microsoft.com/library/windows/apps/hh465094) : comment garantir une expérience optimale à l’utilisateur final dans le cas d’applications utilisées sur plusieurs appareils (par exemple un PC au travail et une tablette à la maison).
+-   [Créer votre première application Windows Runtime en C# ou Visual Basic](http://go.microsoft.com/fwlink/p/?LinkID=394138) : rubrique traitant du développement Windows Phone.
+-   [Vidéos pour développeurs iOS et Android](https://msdn.microsoft.com/library/windows/apps/dn393982) : aide supplémentaire, cette fois dans un format visuel.
 
-Also, be sure to visit our [Community resources](http://go.microsoft.com/fwlink/p/?LinkId=263513) to learn how to get help and get connected through developer forums, blogs, developer camps and workshops, and local Microsoft events and contacts.
+Pensez aussi surtout à consulter nos [ressources de communauté](http://go.microsoft.com/fwlink/p/?LinkId=263513) pour savoir comment obtenir de l’aide et accéder des forums des développeurs, des blogs, des séminaires (Devcamps) et des ateliers pour développeurs, et des événements et contacts Microsoft locaux.
 
-We think that Windows 10 will open up new app-building opportunities for you. We look forward to seeing all of the great apps that you're going to build!
+Nous pensons que Windows 10 vous ouvrira un vaste champ de nouvelles opportunités pour la création de vos applications. Et nous attendons avec impatience de découvrir toutes les applications que vous créerez!
 
-## Related topics
+## Rubriques connexes
 
-**Topics for iOS devs**
-* [Resources for iOS devs](https://msdn.microsoft.com/library/windows/apps/jj945493)
-* [Windows controls for iOS devs](https://msdn.microsoft.com/library/windows/apps/dn263255)
-* [Windows cookbook for iOS devs](https://msdn.microsoft.com/library/windows/apps/dn263256)
-* [Building apps for Windows blog](https://blogs.windows.com/buildingapps/2016/01/27/visual-studio-walkthrough-for-ios-developers/)
+**Rubriques pour les développeurs iOS**
+* [Ressources pour les développeurs iOS](https://msdn.microsoft.com/library/windows/apps/jj945493)
+* [Contrôles Windows pour les développeurs iOS](https://msdn.microsoft.com/library/windows/apps/dn263255)
+* [Guide de référence Windows pour les développeurs iOS](https://msdn.microsoft.com/library/windows/apps/dn263256)
+* [Blog de création d’applications pour Windows](https://blogs.windows.com/buildingapps/2016/01/27/visual-studio-walkthrough-for-ios-developers/)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

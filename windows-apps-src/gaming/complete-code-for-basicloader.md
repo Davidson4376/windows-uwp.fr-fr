@@ -1,45 +1,45 @@
 ---
 author: mtoepke
-title: Complete code for BasicLoader
-description: Complete code for a class and methods that convert and load common graphics resources, such as meshes, textures, and various shader objects.
+title: Code complet de BasicLoader
+description: "Code complet pour une classe et des méthodes qui convertissent et chargent des ressources graphiques communes, telles que les maillages, les textures et divers objets nuanceurs."
 ms.assetid: b37f5852-278c-57b8-0834-002fb837e158
 translationtype: Human Translation
 ms.sourcegitcommit: 8a7202f2b860a4b7aa52f44ebd630d73889544a2
-ms.openlocfilehash: ab16033c05273a0cd483fdc7a5302a3ff461e4b1
+ms.openlocfilehash: 355e5a65a16e5e2df9bb039383f68dda16ff23a2
 
 ---
 
-# Complete code for BasicLoader
+# Code complet de BasicLoader
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Complete code for a class and methods that convert and load common graphics resources, such as meshes, textures, and various shader objects.
+Code complet pour une classe et des méthodes qui convertissent et chargent des ressources graphiques communes, telles que les maillages, les textures et divers objets nuanceurs.
 
-This topic contains these sections:
+Cette rubrique contient les sections suivantes:
 
 -   [Technologies](#technologies)
--   [Requirements](#requirements)
--   [View the code (C++)](#view-the-code-c-)
+-   [Configuration requise](#requirements)
+-   [Afficher le code (C++)](#view-the-code-c-)
 
 <span id="download_locations"></span>
-## Download location
+## Emplacement de téléchargement
 
 
-This sample is not available for download.
+Cet exemple n’est pas disponible en téléchargement.
 
 ## Technologies
 
-**Programming languages** - C++  
-**Programming models** - Windows Runtime
+**Langages de programmation**: C++  
+**Modèles de programmation**: Windows Runtime
 
-## Requirements
+## Conditions requises
 
-**Minimum supported client** - Windows 10                              
-**Minimum supported server** - Windows Server 2016 Technical Preview 
+**Client minimal pris en charge**: Windows10                              
+**Serveur minimal pris en charge**: Windows Server2016 Technical Preview 
 
 
-## View the code (C++)
+## Afficher le code (C++)
 
 ## BasicLoader.h
 
@@ -1111,6 +1111,6 @@ task<void> BasicLoader::LoadMeshAsync(
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

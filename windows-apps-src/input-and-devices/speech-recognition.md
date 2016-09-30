@@ -1,65 +1,65 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Use speech recognition to provide input, specify an action or command, and accomplish tasks.
-title: Speech recognition
+Description: "La reconnaissance vocale permet de fournir une saisie vocale, de spécifier une action ou une commande et d’accomplir différentes tâches."
+title: Reconnaissance vocale
 ms.assetid: 553C0FB7-35BC-4894-9EF1-906139E17552
 label: Speech recognition
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 59cebc2235b8ae4214156a4140b0b003c717375d
+ms.openlocfilehash: 66bab97e7108a1728e9659a04ea2f1ecf15f68b7
 
 ---
 
-# Speech recognition
+# Reconnaissance vocale
 
 
-Use speech recognition to provide input, specify an action or command, and accomplish tasks.
+La reconnaissance vocale permet de fournir une saisie vocale, de spécifier une action ou une commande et d’accomplir différentes tâches.
 
-**Important APIs**
+**API importantes**
 
 -   [**Windows.Media.SpeechRecognition**](https://msdn.microsoft.com/library/windows/apps/dn653262)
 
 
 
-Speech recognition is made up of a speech runtime, recognition APIs for programming the runtime, ready-to-use grammars for dictation and web search, and a default system UI that helps users discover and use speech recognition features.
+La reconnaissance vocale se compose d’un runtime de fonctions vocales, d’API de reconnaissance vocale pour programmer le runtime, de grammaires prêtes à l’emploi pour la dictée et la recherche web, ainsi que d’une interface utilisateur système par défaut permettant aux utilisateurs de découvrir et d’utiliser les fonctionnalités de reconnaissance vocale.
 
 
-## Set up the audio feed
+## Configurer le flux audio
 
 
-Ensure that your device has a microphone or the equivalent.
+Assurez-vous que votre appareil est équipé d’un microphone ou d’un dispositif équivalent.
 
-Set the **Microphone** device capability ([**DeviceCapability**](https://msdn.microsoft.com/library/windows/apps/br211430)) in the [App package manifest](https://msdn.microsoft.com/library/windows/apps/br211474) (**package.appxmanifest** file) to get access to the microphone’s audio feed. This allows the app to record audio from connected microphones.
+Définissez la fonctionnalité de l’appareil **Microphone** ([**DeviceCapability**](https://msdn.microsoft.com/library/windows/apps/br211430)) dans le [manifeste du package d’application](https://msdn.microsoft.com/library/windows/apps/br211474) (fichier **package.appxmanifest**) pour accéder au flux audio du microphone. Cela permet à l’application d’enregistrer des données audio à partir des microphones connectés.
 
-See [App capability declarations](https://msdn.microsoft.com/library/windows/apps/mt270968).
+Voir [Déclarations des fonctionnalités d’application](https://msdn.microsoft.com/library/windows/apps/mt270968).
 
-## Recognize speech input
+## Reconnaître la saisie vocale
 
 
-A *constraint* defines the words and phrases (vocabulary) that an app recognizes in speech input. Constraints are at the core of speech recognition and give your app great over the accuracy of speech recognition.
+Une *contrainte* définit les mots et expressions (vocabulaire) qu’une application reconnaît dans la saisie vocale. Les contraintes sont au centre de la reconnaissance vocale. Elles permettent à votre application de contrôler sa précision.
 
-You can use various types of constraints when performing speech recognition:
+Vous pouvez utiliser différents types de contraintes lors de l’exécution d’opérations de reconnaissance vocale:
 
-1.  **Predefined grammars** ([**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)).
+1.  **Grammaires prédéfinies** ([**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)).
 
-    Predefined dictation and web-search grammars provide speech recognition for your app without requiring you to author a grammar. When using these grammars, speech recognition is performed by a remote web service and the results are returned to the device.
+    Les grammaires de dictée et de recherche web prédéfinies vous permettent d’activer la reconnaissance vocale dans votre application sans créer votre propre grammaire. Si vous optez pour ces grammaires, la reconnaissance vocale est effectuée par un service web distant qui renvoie les résultats à l’appareil.
 
-    The default free-text dictation grammar can recognize most words and phrases that a user can say in a particular language, and is optimized to recognize short phrases. The predefined dictation grammar is used if you don't specify any constraints for your [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) object. Free-text dictation is useful when you don't want to limit the kinds of things a user can say. Typical uses include creating notes or dictating the content for a message.
+    La grammaire de dictée de texte libre par défaut peut reconnaître la plupart des mots et expressions prononcés par un utilisateur dans une langue spécifique. Elle est optimisée pour reconnaître les expressions courtes. La grammaire de dictée prédéfinie est utilisée si vous ne spécifiez pas de contrainte pour votre objet [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226). La dictée de texte libre est utile si vous ne souhaitez pas limiter ce qu’un utilisateur peut dire. Elle est généralement utilisée pour créer des notes ou dicter le contenu d’un message.
 
-    The web-search grammar, like a dictation grammar, contains a large number of words and phrases that a user might say. However, it is optimized to recognize terms that people typically use when searching the web.
+    La grammaire de recherche web, comme une grammaire de dictée, contient un grand nombre de mots et expressions qu’un utilisateur peut dire. Toutefois, elle est optimisée pour reconnaître les termes que les personnes utilisent généralement lors des recherches sur le web.
 
-    **Note**  Because predefined dictation and web-search grammars can be large, and because they are online (not on the device), performance might not be as fast as with a custom grammar installed on the device.
+    **Remarque** Étant donné que les grammaires de dictée et de recherche web prédéfinies peuvent être volumineuses et qu’elles sont hébergées en ligne (elles ne se trouvent pas sur l’appareil), les performances obtenues peuvent ne pas être aussi bonnes qu’avec des grammaires personnalisées qui sont installées sur l’appareil.
 
      
 
-    These predefined grammars can be used to recognize up to 10 seconds of speech input and require no authoring effort on your part. However, they do require a connection to a network.
+    Ces grammaires prédéfinies peuvent être utilisées pour reconnaître jusqu’à 10secondes de saisie vocale et ne nécessitent aucun effort de création de votre part. Toutefois, elles requièrent une connexion à un réseau.
 
-    To use web-service constraints, speech input and dictation support must be enabled in **Settings** by turning on the "Get to know me" option in the Settings -&gt; Privacy -&gt; Speech, inking, and typing page.
+    Pour utiliser les contraintes de service web, vous devez activer la prise en charge de la saisie vocale et de la dictée dans **Paramètres** en activant l’option Reconnaître ma voix dans la page Paramètres -&gt; Confidentialité -&gt; Voix, entrée manuscrite et frappe.
 
-    Here, we show how to test whether speech input is enabled and open the Settings -&gt; Privacy -&gt; Speech, inking, and typing page, if not.
+    Nous indiquons ici comment vérifier si la saisie vocale est activée et comment ouvrir la page Paramètres -&gt; Confidentialité -&gt; Voix, entrée manuscrite et frappe si cette fonction n’est pas activée.
 
-    First, we initialize a global variable (HResultPrivacyStatementDeclined) to the HResult value of 0x80045509. See [Exception handling for in C\# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/dn532194).
+    Nous commençons par initialiser une variable globale (HResultPrivacyStatementDeclined) sur la valeur HResult de 0x80045509. Voir [Gestion des exceptions pour les applications enC# ou VisualBasic](https://msdn.microsoft.com/library/windows/apps/dn532194).
 
 ```    CSharp
 private static uint HResultPrivacyStatementDeclined = 0x80045509;</code></pre></td>
@@ -102,32 +102,32 @@ catch (Exception exception)
     }
 ```
 
-2.  **Programmatic list constraints** ([**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)).
+2.  **Contraintes de liste de programmation** ([**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)).
 
-    Programmatic list constraints provide a lightweight approach to creating simple grammars using a list of words or phrases. A list constraint works well for recognizing short, distinct phrases. Explicitly specifying all words in a grammar also improves recognition accuracy, as the speech recognition engine must only process speech to confirm a match. The list can also be programmatically updated.
+    Les contraintes de liste de programmation permettent de créer facilement une grammaire simple sous la forme d’une liste de mots ou d’expressions. Une contrainte de liste fonctionne correctement pour la reconnaissance d’expressions distinctes courtes. En indiquant explicitement des mots dans une grammaire, vous améliorez également la précision de la reconnaissance, car le traitement de la parole par le moteur de reconnaissance se limite à la confirmation d’une correspondance. La liste peut également être mise à jour par programme.
 
-    A list constraint consists of an array of strings that represents speech input that your app will accept for a recognition operation. You can create a list constraint in your app by creating a speech-recognition list-constraint object and passing an array of strings. Then, add that object to the constraints collection of the recognizer. Recognition is successful when the speech recognizer recognizes any one of the strings in the array.
+    Une contrainte de liste se compose d’un tableau de chaînes qui correspondent à la saisie vocale acceptée par votre application en vue d’une opération de reconnaissance vocale. Pour créer une contrainte de liste dans votre application, vous devez créer un objet de contrainte de liste de reconnaissance vocale et lui passer un tableau de chaînes. Vous devez ensuite ajouter cet objet à la collection de contraintes du moteur de reconnaissance vocale. La reconnaissance vocale fonctionne quand le moteur de reconnaissance vocale reconnaît l’une des chaînes du tableau.
 
-3.  **SRGS grammars** ([**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)).
+3.  **Grammaires SRGS** ([**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)).
 
-    An Speech Recognition Grammar Specification (SRGS) grammar is a static document that, unlike a programmatic list constraint, uses the XML format defined by the [SRGS Version 1.0](http://go.microsoft.com/fwlink/p/?LinkID=262302). An SRGS grammar provides the greatest control over the speech recognition experience by letting you capture multiple semantic meanings in a single recognition.
+    Contrairement à une contrainte de liste de programmation, une grammaire SRGS (Speech Recognition Grammar Specification) est un document statique au format XML défini par la norme [SRGS version1.0](http://go.microsoft.com/fwlink/p/?LinkID=262302). Une grammaire SRGS permet de contrôler au maximum l’expérience de la reconnaissance vocale en capturant plusieurs significations sémantiques dans une même reconnaissance.
 
-4.  **Voice command constraints** ([**SpeechRecognitionVoiceCommandDefinitionConstraint**](https://msdn.microsoft.com/library/windows/apps/dn653220))
+4.  **Contraintes de commandes vocales** ([**SpeechRecognitionVoiceCommandDefinitionConstraint**](https://msdn.microsoft.com/library/windows/apps/dn653220))
 
-    Use a Voice Command Definition (VCD) XML file to define the commands that the user can say to initiate actions when activating your app. For more detail, see [Launch a foreground app with voice commands in Cortana](launch-a-foreground-app-with-voice-commands-in-cortana.md).
+    Utilisez un fichier XML VCD (Voice Command Definition) pour définir les commandes que l’utilisateur peut prononcer pour lancer des actions au moment de l’activation de votre application. Pour plus d’informations, voir [Lancer une application au premier plan avec les commandes vocales de Cortana](launch-a-foreground-app-with-voice-commands-in-cortana.md).
 
-**Note**  Which type of constraint type you use depends on the complexity of the recognition experience you want to create. Any could be the best choice for a specific recognition task, and you might find uses for all types of constraints in your app.
-To get started with constraints, see [Define custom recognition constraints](define-custom-recognition-constraints.md).
+**Remarque** Le type de contrainte que vous utilisez dépend de la complexité de l’expérience de reconnaissance que vous voulez créer. Un type de contrainte peut être mieux adapté à une tâche de reconnaissance vocale particulière, mais vous pouvez aussi combiner tous les types de contrainte dans votre application.
+Pour apprendre à utiliser des contraintes, voir [Définir des contraintes de reconnaissance vocale personnalisées](define-custom-recognition-constraints.md).
 
  
 
-The predefined Universal Windows app dictation grammar recognizes most words and short phrases in a language. It is activated by default when a speech recognizer object is instantiated without custom constraints.
+La grammaire de dictée prédéfinie d’une application Windows universelle reconnaît la plupart des mots et des expressions courtes dans une langue donnée. Elle est activée par défaut lorsqu’un objet du moteur de reconnaissance vocale est instancié sans contraintes personnalisées.
 
-In this example, we show how to:
+Dans cet exemple, nous montrons comment effectuer les opérations suivantes :
 
--   Create a speech recognizer.
--   Compile the default Universal Windows app constraints (no grammars have been added to the speech recognizer's grammar set).
--   Start listening for speech by using the basic recognition UI and TTS feedback provided by the [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) method. Use the [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) method if the default UI is not required.
+-   créer un moteur de reconnaissance vocale ;
+-   compiler les contraintes de l’application Windows universelle par défaut (aucune grammaire n’a été ajoutée à l’ensemble de grammaires du moteur de reconnaissance vocale) ;
+-   commencer à écouter les données vocales en utilisant l’interface utilisateur de reconnaissance vocale de base et le retour de la conversion de texte par synthèse vocale (TTS) fourni par la méthode [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245). Utilisez la méthode [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) si l’interface utilisateur par défaut n’est pas requise.
 
 ```CSharp
 private async void StartRecognizing_Click(object sender, RoutedEventArgs e)
@@ -147,32 +147,32 @@ private async void StartRecognizing_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## Customize the recognition UI
+## Personnaliser l’interface utilisateur de reconnaissance vocale
 
 
-When your app attempts speech recognition by calling [**SpeechRecognizer.RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245), several screens are shown in the following order.
+Quand votre application tente une reconnaissance vocale en appelant la méthode [**SpeechRecognizer.RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245), plusieurs écrans s’affichent dans l’ordre suivant.
 
-If you're using a constraint based on a predefined grammar (dictation or web search):
+Si vous utilisez une contrainte basée sur une grammaire prédéfinie (dictée ou recherche web):
 
--   The **Listening** screen.
--   The **Thinking** screen.
--   The **Heard you say** screen or the error screen.
+-   Écran **Écoute**
+-   Écran **Réflexion**
+-   Écran **Nous vous avons entendu dire** ou écran de notification d’erreur
 
-If you're using a constraint based on a list of words or phrases, or a constraint based on a SRGS grammar file:
+Si vous utilisez une contrainte basée sur une liste de mots ou d’expressions ou une contrainte basée sur un fichier de grammaire SRGS:
 
--   The **Listening** screen.
--   The **Did you say** screen, if what the user said could be interpreted as more than one potential result.
--   The **Heard you say** screen or the error screen.
+-   Écran **Écoute**
+-   Écran **Nous vous avons entendu dire**, si l’interprétation de ce que l’utilisateur a prononcé pourrait avoir plusieurs résultats éventuels
+-   Écran **Nous vous avons entendu dire** ou écran de notification d’erreur
 
-The following image shows an example of the flow between screens for a speech recognizer that uses a constraint based on a SRGS grammar file. In this example, speech recognition was successful.
+L’image suivante présente un exemple du flux entre des écrans d’un moteur de reconnaissance vocale qui utilise une contrainte basée sur un fichier de grammaire SGRS. Dans cet exemple, la reconnaissance vocale a réussi.
 
-![initial recognition screen for a constraint based on a sgrs grammar file](images/speech-listening-initial.png)
+![Écran initial de la reconnaissance vocale correspondant à une contrainte basée sur un fichier de grammaire SGRS](images/speech-listening-initial.png)
 
-![intermediate recognition screen for a constraint based on a sgrs grammar file](images/speech-listening-intermediate.png)
+![Écran intermédiaire de la reconnaissance vocale correspondant à une contrainte basée sur un fichier de grammaire SGRS](images/speech-listening-intermediate.png)
 
-![final recognition screen for a constraint based on a sgrs grammar file](images/speech-listening-complete.png)
+![Écran final de la reconnaissance vocale correspondant à une contrainte basée sur un fichier de grammaire SGRS](images/speech-listening-complete.png)
 
-The **Listening** screen can provide examples of words or phrases that the app can recognize. Here, we show how to use the properties of the [**SpeechRecognizerUIOptions**](https://msdn.microsoft.com/library/windows/apps/dn653234) class (obtained by calling the [**SpeechRecognizer.UIOptions**](https://msdn.microsoft.com/library/windows/apps/dn653254) property) to customize content on the **Listening** screen.
+L’écran **Listening** peut fournir des exemples de mot ou d’expression que l’application peut reconnaître. Nous montrons ici comment utiliser les propriétés de la classe [**SpeechRecognizerUIOptions**](https://msdn.microsoft.com/library/windows/apps/dn653234) (obtenue en appelant la propriété [**SpeechRecognizer.UIOptions**](https://msdn.microsoft.com/library/windows/apps/dn653254)) pour personnaliser le contenu de l’écran **Listening**.
 
 ```CSharp
 private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
@@ -204,15 +204,15 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## Related articles
+## Articles connexes
 
 
-**Developers**
-* [Speech interactions](speech-interactions.md)
-**Designers**
-* [Speech design guidelines](https://msdn.microsoft.com/library/windows/apps/dn596121)
-**Samples**
-* [Speech recognition and speech synthesis sample](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+**Développeurs**
+* [Interactions vocales](speech-interactions.md) 
+           **Concepteurs**
+* [Recommandations en matière de conception de fonctions vocales](https://msdn.microsoft.com/library/windows/apps/dn596121) 
+           **Exemples**
+* [Exemple de reconnaissance vocale et de synthèse vocale](http://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  
@@ -223,6 +223,6 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

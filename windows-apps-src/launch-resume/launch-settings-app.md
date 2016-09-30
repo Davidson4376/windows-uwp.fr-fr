@@ -1,35 +1,38 @@
 ---
 author: TylerMSFT
-title: Launch the Windows Settings app
-description: Learn how to launch the Windows Settings app from your app. This topic describes the ms-settings URI scheme. Use this URI scheme to launch the Windows Settings app to specific settings pages.
+title: "Lancer l’application Paramètres Windows"
+description: "Découvrez comment lancer l’application Paramètres Windows à partir de votre application. Cette rubrique décrit le schéma d’URI ms-settings. Utilisez ce schéma d’URI pour lancer l’application Paramètres Windows en ouvrant des pages de paramètres spécifiques."
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
 translationtype: Human Translation
-ms.sourcegitcommit: f90ba930db60f338ee0ebcc80934281363de01ee
-ms.openlocfilehash: 249e485f74364475ff96a8256ee88bdb79749259
+ms.sourcegitcommit: 3cf9dd4ab83139a2b4b0f44a36c2e57a92900903
+ms.openlocfilehash: e52a4245e8697a68bfc5c5605dc54e5ea510c662
 
 ---
 
-# Launch the Windows Settings app
+# Lancer l’application Paramètres Windows
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-**Important APIs**
+**API importantes**
 
 -   [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476)
 -   [**PreferredApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/hh965482)
 -   [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314)
 
-Learn how to launch the Windows Settings app from your app. This topic describes the **ms-settings:** URI scheme. Use this URI scheme to launch the Windows Settings app to specific settings pages.
+Découvrez comment lancer l’application Paramètres Windows à partir de votre application. Cette rubrique décrit le schéma d’URI **ms-settings:**. Utilisez ce schéma d’URI pour lancer l’application Paramètres Windows en ouvrant des pages de paramètres spécifiques.
 
-Launching to the Settings app is an important part of writing a privacy-aware app. If your app can't access a sensitive resource, we recommend providing the user a convenient link to the privacy settings for that resource. For more info, see [Guidelines for privacy-aware apps](https://msdn.microsoft.com/library/windows/apps/hh768223).
+Le lancement de l’application Paramètres est une partie importante de l’écriture d’une application prenant en charge la confidentialité. Si votre application ne peut pas accéder à une ressource sensible, nous vous recommandons de fournir à l’utilisateur un lien pratique lui permettant d’accéder aux paramètres de confidentialité relatifs à cette ressource. Pour plus d’informations, voir [Recommandations en matière d’applications prenant en charge la confidentialité](https://msdn.microsoft.com/library/windows/apps/hh768223).
 
-## How to launch the Settings app
+## Comment lancer l’application Paramètres
 
-To launch the **Settings** app, use the `ms-settings:` URI scheme as shown in the following examples.
 
-In this example, a Hyperlink XAML control is used to launch the privacy settings page for the microphone using the `ms-settings:privacy-microphone` URI.
+Si les paramètres de confidentialité n’autorisent votre application à accéder à une ressource sensible, nous vous recommandons de fournir un lien pratique permettant d’accéder aux paramètres de confidentialité dans l’application **Paramètres**. Cela peut aider les utilisateurs à modifier leurs paramètres.
+
+Pour lancer directement l’application **Paramètres**, utilisez le schéma d’URI `ms-settings:` comme illustré dans les exemples suivants.
+
+Dans cet exemple, un contrôle Hyperlink XAML est utilisé pour ouvrir la page des paramètres de confidentialité relatifs au microphone en utilisant l’URI `ms-settings:privacy-microphone`.
 
 ```xml
 <!--Set Visibility to Visible when access to the microphone is denied -->  
@@ -43,7 +46,7 @@ In this example, a Hyperlink XAML control is used to launch the privacy settings
 </TextBlock>
 ```
 
-Alternatively, your app can call the [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) method to launch the **Settings** app from code. This example shows how to launch to the privacy settings page for the camera using the `ms-settings:privacy-webcam` URI.
+Par ailleurs, votre application peut appeler la méthode[**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) pour lancer l’application **Paramètres** à partir du code.
 
 ```cs
 using Windows.System;
@@ -51,87 +54,80 @@ using Windows.System;
 bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-webcam"));
 ```
 
-The code above launches the privacy settings page for the camera:
+Cet exemple montre comment ouvrir la page des paramètres de confidentialité relatifs à l’appareil photo en utilisant l’URI `ms-settings:privacy-webcam`.
 
-![camera privacy settings.](images/privacyawarenesssettingsapp.png)
+![paramètres de confidentialité de l’appareil photo.](images/privacyawarenesssettingsapp.png)
 
+Pour plus d’informations sur les URI de lancement, voir [Lancer l’application par défaut pour un URI](launch-default-app.md).
 
-
-For more info about launching URIs, see [Launch the default app for a URI](launch-default-app.md).
-
-## ms-settings: URI scheme reference
+## Référence de schéma d’URI ms-settings:
 
 
-Use the following URIs to open various pages of the Settings app. Note that the Supported SKUs column indicates whether the settings page exists in Windows 10 for desktop editions (Home, Pro, Enterprise, and Education), Windows 10 Mobile, or both.
+Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramètres. Notez que la colonne des références prises en charge signale l’existence ou non de la page de paramètres dans les versions de Windows 10 pour éditions de bureau (Famille, Professionnel, Entreprise et Éducation) et/ou dans Windows 10 Mobile.
 
-| Category           | Settings page                          | Supported SKUs | URI                                       |
+| Catégorie           | Page de paramètres                          | Références prises en charge | URI                                       |
 |--------------------|----------------------------------------|----------------|-------------------------------------------|
-| Home Page          | Landing page for Settings              | Both           | ms-settings:                              |
-| System             | Display                                | Both           | ms-settings:screenrotation                |
-|                    | Notifications & actions                | Both           | ms-settings:notifications                 |
-|                    | Phone                                  | Mobile only    | ms-settings:phone                         |
-|                    | Messaging                              | Mobile only    | ms-settings:messaging                     |
-|                    | Battery Saver                          | Mobile and desktop on devices with a battery such as a tablet | ms-settings:batterysaver                  |
-|                    | Battery Saver / Battery saver settings | Mobile and desktop on devices with a battery such as a tablet | ms-settings:batterysaver-settings         |
-|                    | Battery Saver / Battery use            | Mobile and desktop on devices with a battery such as a tablet | ms-settings:batterysaver-usagedetails     |
-|                    | Power & sleep                          | Desktop only   | ms-settings:powersleep                    |
-|                    | Desktop: About                         | Both           | ms-settings:deviceencryption              |
+| Page d’accueil          | Page de destination des paramètres              | Les deux           | ms-settings:                              |
+| Système             | Affichage                                | Les deux           | ms-settings:screenrotation                |
+|                    | Notifications et actions                | Les deux           | ms-settings:notifications                 |
+|                    | Téléphone                                  | Mobile uniquement    | ms-settings:phone                         |
+|                    | Messagerie                              | Mobile uniquement    | ms-settings:messaging                     |
+|                    | Économiseur de batterie                          | Mobiles et bureau sur les appareils dotés d’une batterie, comme les tablettes    | ms-settings:batterysaver                  |
+|                    | Économiseur de batterie/paramètres d’économiseur de batterie | Mobiles et bureau sur les appareils dotés d’une batterie, comme les tablettes | ms-settings:batterysaver-settings         |
+|                    | Économiseur de batterie/utilisation de batterie            | Mobiles et bureau sur les appareils dotés d’une batterie, comme les tablettes    | ms-settings:batterysaver-usagedetails     |
+|                    | Alimentation et mise en veille                          | Bureau uniquement   | ms-settings:powersleep                    |
+|                    | Bureau: Informations système                         | Les deux           | ms-settings:deviceencryption              |
 |                    |                                        |                |                                           |
-|                    | Mobile: Device encryption              |                |                                           |
-|                    | Offline Maps                           | Both           | ms-settings:maps                          |
-|                    | About                                  | Both           | ms-settings:about                         |
-| Devices            | Default camera                         | Mobile only    | ms-settings:camera                        |
-|                    | Bluetooth                              | Desktop only   | ms-settings:bluetooth                     |
-|                    | Mouse & touchpad                       | Both           | ms-settings:mousetouchpad                 |
-|                    | NFC                                    | Both           | ms-settings:nfctransactions               |
-| Network & Wireless | Wi-Fi                                  | Both           | ms-settings:network-wifi                  |
-|                    | Airplane mode                          | Both           | ms-settings:network-airplanemode          |
-| Network & Internet | Data usage                             | Both           | ms-settings:datausage                     |
-|                    | Cellular & SIM                         | Both           | ms-settings:network-cellular              |
-|                    | Mobile hotspot                         | Both           | ms-settings:network-mobilehotspot         |
-|                    | Proxy                                  | Both           | ms-settings:network-proxy                 |
-|                    | Status                                 | Desktop only   | ms-settings:network-status                |
-| Personalization    | Personalization (category)             | Both           | ms-settings:personalization               |
-|                    | Background                             | Desktop only   | ms-settings:personalization-background    |
-|                    | Colors                                 | Both           | ms-settings:personalization-colors        |
-|                    | Sounds                                 | Mobile only    | ms-settings:sounds                        |
-|                    | Lock screen                            | Both           | ms-settings:lockscreen                    |
-| Accounts           | Access work or school                  | Both           | ms-settings:workplace                     |
-|                    | Email & app accounts                   | Both           | ms-settings:emailandaccounts              |
-|                    | Family & other people                  | Both           | ms-settings:otherusers                    |
-|                    | Sign-in options                        | Both           | ms-settings:signinoptions                 |
-|                    | Sync your settings                     | Both           | ms-settings:sync                          |
-|                    | Other people                           | Both           | ms-settings:otherusers                    |
-|                    | Your info                              | Both           | ms-settings:yourinfo                      |
-| Time and language  | Date & time                            | Both           | ms-settings:dateandtime                   |
-|                    | Region & language                      | Desktop only   | ms-settings:regionlanguage                |
-| Ease of Access     | Narrator                               | Both           | ms-settings:easeofaccess-narrator         |
-|                    | Magnifier                              | Both           | ms-settings:easeofaccess-magnifier        |
-|                    | High contrast                          | Both           | ms-settings:easeofaccess-highcontrast     |
-|                    | Closed captions                        | Both           | ms-settings:easeofaccess-closedcaptioning |
-|                    | Keyboard                               | Both           | ms-settings:easeofaccess-keyboard         |
-|                    | Mouse                                  | Both           | ms-settings:easeofaccess-mouse            |
-|                    | Other options                          | Both           | ms-settings:easeofaccess-otheroptions     |
-| Privacy            | Location                               | Both           | ms-settings:privacy-location              |
-|                    | Camera                                 | Both           | ms-settings:privacy-webcam                |
-|                    | Microphone                             | Both           | ms-settings:privacy-microphone            |
-|                    | Motion                                 | Both           | ms-settings:privacy-motion                |
-|                    | Speech, inking & typing                | Both           | ms-settings:privacy-speechtyping          |
-|                    | Account info                           | Both           | ms-settings:privacy-accountinfo           |
-|                    | Contacts                               | Both           | ms-settings:privacy-contacts              |
-|                    | Calendar                               | Both           | ms-settings:privacy-calendar              |
-|                    | Call history                           | Both           | ms-settings:privacy-callhistory           |
-|                    | Email                                  | Both           | ms-settings:privacy-email                 |
-|                    | Messaging                              | Both           | ms-settings:privacy-messaging             |
-|                    | Radios                                 | Both           | ms-settings:privacy-radios                |
-|                    | Background Apps                        | Both           | ms-settings:privacy-backgroundapps        |
-|                    | Other devices                          | Both           | ms-settings:privacy-customdevices         |
-|                    | Feedback & diagnostics                 | Both           | ms-settings:privacy-feedback              |
-| Update & security  | For developers                         | Both           | ms-settings:developers                    |
+|                    | Mobile: Chiffrement de l’appareil              |                |                                           |
+|                    | Cartes hors connexion                           | Les deux           | ms-settings:maps                          |
+|                    | Informations système                                  | Les deux           | ms-settings:about                         |
+| Périphériques            | Appareil photo par défaut                         | Mobile uniquement    | ms-settings:camera                        |
+|                    | Bluetooth                              | Bureau uniquement   | ms-settings:bluetooth                     |
+|                    | Souris et pavé tactile                       | Les deux           | ms-settings:mousetouchpad                 |
+|                    | Communication en champ proche                                    | Les deux           | ms-settings:nfctransactions               |
+| Réseau et sans fil | Wi-Fi                                  | Les deux           | ms-settings:network-wifi                  |
+|                    | Mode avion                          | Les deux           | ms-settings:network-airplanemode          |
+| Réseau et Internet | Consommation des données                             | Les deux           | ms-settings:datausage                     |
+|                    | Réseau cellulaire et SIM                         | Les deux           | ms-settings:network-cellular              |
+|                    | Point d’accès sans fil mobile                         | Les deux           | ms-settings:network-mobilehotspot         |
+|                    | Proxy                                  | Les deux           | ms-settings:network-proxy                 |
+| Personnalisation    | Personnalisation (catégorie)             | Les deux           | ms-settings:personalization               |
+|                    | Arrière-plan                             | Bureau uniquement   | ms-settings:personalization-background    |
+|                    | Couleurs                                 | Les deux           | ms-settings:personalization-colors        |
+|                    | Sons                                 | Mobile uniquement    | ms-settings:sounds                        |
+|                    | Écran de verrouillage                            | Les deux           | ms-settings:lockscreen                    |
+| Comptes           | Adresse de messagerie et comptes                | Les deux           | ms-settings:emailandaccounts              |
+|                    | Accès professionnel                            | Les deux           | ms-settings:workplace                     |
+|                    | Synchroniser vos paramètres                     | Les deux           | ms-settings:sync                          |
+| Heure et langue  | Date et heure                            | Les deux           | ms-settings:dateandtime                   |
+|                    | Region &amp; language                      | Poste de travail uniquement   | ms-settings:regionlanguage                |
+| Options d’ergonomie     | Narrateur                               | Les deux           | ms-settings:easeofaccess-narrator         |
+|                    | Loupe                              | Les deux           | ms-settings:easeofaccess-magnifier        |
+|                    | Contraste élevé                          | Les deux           | ms-settings:easeofaccess-highcontrast     |
+|                    | Sous-titres                        | Les deux           | ms-settings:easeofaccess-closedcaptioning |
+|                    | Clavier                               | Les deux           | ms-settings:easeofaccess-keyboard         |
+|                    | Souris                                  | Les deux           | ms-settings:easeofaccess-mouse            |
+|                    | Autres options                          | Les deux           | ms-settings:easeofaccess-otheroptions     |
+| Confidentialité            | Emplacement                               | Les deux           | ms-settings:privacy-location              |
+|                    | Caméra                                 | Les deux           | ms-settings:privacy-webcam                |
+|                    | Microphone                             | Les deux           | ms-settings:privacy-microphone            |
+|                    | Mouvement                                 | Les deux           | ms-settings:privacy-motion                |
+|                    | Voix, entrée manuscrite et saisie                | Les deux           | ms-settings:privacy-speechtyping          |
+|                    | Informations sur le compte                           | Les deux           | ms-settings:privacy-accountinfo           |
+|                    | Contacts                               | Les deux           | ms-settings:privacy-contacts              |
+|                    | Calendrier                               | Les deux           | ms-settings:privacy-calendar              |
+|                    | Historique des appels                           | Les deux           | ms-settings:privacy-callhistory           |
+|                    | Courrier électronique                                  | Les deux           | ms-settings:privacy-email                 |
+|                    | Messagerie                              | Les deux           | ms-settings:privacy-messaging             |
+|                    | Radios                                 | Les deux           | ms-settings:privacy-radios                |
+|                    | Applications en arrière-plan                        | Les deux           | ms-settings:privacy-backgroundapps        |
+|                    | Autres appareils                          | Les deux           | ms-settings:privacy-customdevices         |
+|                    | Commentaires et diagnostics                 | Les deux           | ms-settings:privacy-feedback              |
+| Mise à jour et sécurité  | Pour les développeurs                         | Les deux           | ms-settings:developers                    |
  
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

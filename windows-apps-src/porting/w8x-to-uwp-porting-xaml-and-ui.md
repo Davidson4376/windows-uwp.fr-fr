@@ -5,7 +5,7 @@ title: Portage du balisage XAML et de la couche interface utilisateur de Windows
 ms.assetid: 78b86762-7359-474f-b1e3-c2d7cf9aa907
 translationtype: Human Translation
 ms.sourcegitcommit: 07058b48a527414b76d55b153359712905aa9786
-ms.openlocfilehash: c81c017817e55aed5dc4d19d919e22dd511c2b01
+ms.openlocfilehash: eb543a5ef1da7c9b39438349757c1b394a3be9b5
 
 ---
 
@@ -98,7 +98,7 @@ Voici quelques exemples plus spécifiques de modifications apportées aux contr�
 | [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) | Pour une application du Windows Phone Store, la valeur de [**CommandBar.IsSticky**](https://msdn.microsoft.com/library/windows/apps/hh701944) n’a pas d’influence sur la possibilité d’abandon interactif de la barre. Pour une application Windows 10, si **IsSticky** est défini sur true, l’élément **CommandBar** ignorera tout mouvement d’abandon interactif. |
 | [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) | Dans une application Windows 10, l’élément [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) ne gère pas les événements [**EdgeGesture.Completed**](https://msdn.microsoft.com/library/windows/apps/hh701622) ni [**UIElement.RightTapped**](https://msdn.microsoft.com/library/windows/apps/br208984). Il ne réagit pas non plus à un appui ni à un balayage vers le haut. Vous avez toujours la possibilité de gérer ces événements et de définir [**IsOpen**](https://msdn.microsoft.com/library/windows/apps/hh701939). |
 | [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584), [**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) | Passez en revue l’apparence de votre application avec les changements visuels apportés à [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584) et [**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280). Pour une application Windows 10 s’exécutant sur un appareil mobile, ces contrôles n’accèdent plus à une page de sélection, mais à une fenêtre contextuelle révocable à l’aide d’un léger mouvement. |
-| [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584),[**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) | Dans une application Windows 10, vous ne pouvez pas placer [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584) ni [**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) à l’intérieur d’un menu volant. Si vous souhaitez que ces contrôles s’affichent dans un contrôle de type fenêtre contextuelle, vous pouvez utiliser [**DatePickerFlyout**](https://msdn.microsoft.com/library/windows/apps/dn625013) et [**TimePickerFlyout**](https://msdn.microsoft.com/library/windows/apps/dn608313). |
+| [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584), [**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) | Dans une application Windows 10, vous ne pouvez pas placer [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584) ni [**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) à l’intérieur d’un menu volant. Si vous souhaitez que ces contrôles s’affichent dans un contrôle de type fenêtre contextuelle, vous pouvez utiliser [**DatePickerFlyout**](https://msdn.microsoft.com/library/windows/apps/dn625013) et [**TimePickerFlyout**](https://msdn.microsoft.com/library/windows/apps/dn608313). |
 | **GridView**, **ListView** | Pour **GridView**/**ListView**, voir la section [Modifications GridView/ListView](#gridview). |
 | [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) | Dans une application du Windows Phone Store, un contrôle [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) exécute une boucle entre la dernière section et la première. Dans une application du Windows Store et dans une application Windows 10, les sections de hub n’exécutent aucune boucle. |
 | [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) | Dans une application du Windows Phone Store, l’image d’arrière-plan d’un contrôle [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) se déplace en parallaxe par rapport aux sections de hub. Dans une application du WindowsStore et dans une application Windows10, l’effet parallaxe n’est pas utilisé. |
@@ -485,6 +485,6 @@ Rubrique suivante : [Portage pour le modèle d’E/S, d’appareil et d’applic
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

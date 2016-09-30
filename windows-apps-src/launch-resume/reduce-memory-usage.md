@@ -1,12 +1,8 @@
 ---
 author: TylerMSFT
-ms.assetid: 
+ms.assetid:
 description: This article shows you how to reduce memory when your app moves to the background.
 title: Reduce memory usage when your app moves to the background state
-translationtype: Human Translation
-ms.sourcegitcommit: bf0cb8f072a2a6974ab582329d8b482add37f1d9
-ms.openlocfilehash: 80e89e24236903ab90f7c4fe326782a0a7e5272f
-
 ---
 
 # Free memory when your app moves to the background
@@ -101,9 +97,3 @@ When an app moves from the background to the foreground, the app will first get 
 
 * [Background media playback sample](http://go.microsoft.com/fwlink/p/?LinkId=800141) - shows how to free memory when your app moves to the background state.
 * [Diagnostic Tools](https://blogs.msdn.microsoft.com/visualstudioalm/2015/01/16/diagnostic-tools-debugger-window-in-visual-studio-2015/) - use the diagnostic tools to observe garbage collection events and validate that your app is releasing memory the way you expect it to.
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

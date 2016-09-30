@@ -1,57 +1,57 @@
 ---
 author: jwmsft
-description: Provides a value for any XAML attribute by evaluating a reference to a resource that comes from a custom resource-lookup implementation. Resource lookup is performed by a CustomXamlResourceLoader class implementation.
-title: CustomResource markup extension
+description: "Fournit une valeur pour tout attribut XAML en évaluant une référence à une ressource qui provient de l’implémentation d’une recherche de ressource personnalisée. La recherche de ressource est effectuée via l’implémentation d’une classe CustomXamlResourceLoader."
+title: Extension de balisage CustomResource
 ms.assetid: 3A59A8DE-E805-4F04-B9D9-A91E053F3642
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: a0a4edc8d59219aea3a47a18ea991e4267782026
+ms.openlocfilehash: 4758f67c7bcbc58fda47faf1e872998302086c10
 
 ---
 
-# {CustomResource} markup extension
+# Extension de balisage {CustomResource}
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Provides a value for any XAML attribute by evaluating a reference to a resource that comes from a custom resource-lookup implementation. Resource lookup is performed by a [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327) class implementation.
+Fournit une valeur pour tout attribut XAML en évaluant une référence à une ressource qui provient de l’implémentation d’une recherche de ressource personnalisée. La recherche de ressource est effectuée via l’implémentation d’une classe [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327).
 
-## XAML attribute usage
+## Utilisation des attributs XAML
 
 ``` syntax
 <object property="{CustomResource key}" .../>
 ```
 
-## XAML values
+## Valeurs XAML
 
-| Term | Description |
+| Terme | Description |
 |------|-------------|
-| key | The key for the requested resource. How the key is initially assigned is specific to the implementation of the [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327) class that is currently registered for use. |
+| key | Clé de la ressource demandée. Le mode d’affectation initial est spécifique à l’implémentation de la classe [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327) actuellement inscrite pour être utilisée. |
 
-## Remarks
+## Notes
 
-**CustomResource** is a technique for obtaining values that are defined elsewhere in a custom resource repository. This technique is relatively advanced and isn't used by most Windows Runtime app scenarios.
+**CustomResource** est une technique permettant d’obtenir des valeurs définies ailleurs dans un référentiel de ressources personnalisées. Cette technique relativement avancée n’est pas utilisée dans la plupart des scénarios des applications Windows Runtime.
 
-How a **CustomResource** resolves to a resource dictionary is not described in this topic, because that can vary widely depending on how [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327) is implemented.
+Le mode de résolution de **CustomResource** en dictionnaire de ressources n’est pas décrit dans cette rubrique, car il peut varier considérablement selon la façon dont [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327) est implémenté.
 
-The [**GetResource**](https://msdn.microsoft.com/library/windows/apps/br243340) method of the [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327) implementation is called by the Windows Runtime XAML parser whenever it encounters a `{CustomResource}` usage in markup. The *resourceId* that is passed to **GetResource** comes from the *key* argument, and the other input parameters come from context, such as which property the usage is applied to.
+La méthode [**GetResource**](https://msdn.microsoft.com/library/windows/apps/br243340) de l’implémentation de [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327) est appelée par l’analyseur XAML Windows Runtime chaque fois qu’il rencontre l’utilisation de `{CustomResource}` dans le balisage. Le *resourceId* passé à **GetResource** vient de l’argument *key*. Par ailleurs, les autres paramètres d’entrée proviennent du contexte, par exemple la propriété à laquelle l’utilisation s’applique.
 
-A `{CustomResource}` usage doesn't work by default (the base implementation of [**GetResource**](https://msdn.microsoft.com/library/windows/apps/br243340) is incomplete). To make a valid `{CustomResource}` reference, you must perform each of these steps:
+L’utilisation de `{CustomResource}` ne fonctionne pas par défaut (l’implémentation de base de [**GetResource**](https://msdn.microsoft.com/library/windows/apps/br243340) est incomplète). Pour créer une référence valide à `{CustomResource}`, vous devez effectuer chacune des étapes suivantes :
 
-1.  Derive a custom class from [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327) and override [**GetResource**](https://msdn.microsoft.com/library/windows/apps/br243340) method. Do not call base in the implementation.
-2.  Set [**CustomXamlResourceLoader.Current**](https://msdn.microsoft.com/library/windows/apps/br243328) to reference your class in initialization logic. This must happen before any page-level XAML that includes the `{CustomResource}` extension usage is loaded. One place to set **CustomXamlResourceLoader.Current** is in the [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) subclass constructor that's generated for you in the App.xaml code-behind templates.
-3.  Now you can use `{CustomResource}` extensions in the XAML that your app loads as pages, or from within XAML resource dictionaries.
+1.  Dérivez une classe personnalisée de [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327) et substituez la méthode [**GetResource**](https://msdn.microsoft.com/library/windows/apps/br243340). N’appelez pas la base dans l’implémentation.
+2.  Définissez [**CustomXamlResourceLoader.Current**](https://msdn.microsoft.com/library/windows/apps/br243328) de manière à référencer votre classe dans une logique d’initialisation. Cette opération doit intervenir avant le chargement de tout code XAML de niveau page comprenant l’utilisation d’une extension `{CustomResource}`. Vous pouvez définir **CustomXamlResourceLoader.Current** dans le constructeur de sous-classe [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) qui est automatiquement généré dans les modèles code-behind App.xaml.
+3.  Vous pouvez à présent utiliser des extensions `{CustomResource}` dans le XAML que votre application charge en tant que pages, ou à partir de dictionnaires de ressources XAML.
 
-**CustomResource** is a markup extension. Markup extensions are typically implemented when there is a requirement to escape attribute values to be other than literal values or handler names, and the requirement is more global than just putting type converters on certain types or properties. All markup extensions in XAML use the "\{" and "\}" characters in their attribute syntax, which is the convention by which a XAML processor recognizes that a markup extension must process the attribute.
+**CustomResource** est une extension de balisage. Les extensions de balisage sont généralement implémentées lorsqu’il est nécessaire de procéder à l’échappement de valeurs d’attribut pour en faire autre chose que des valeurs littérales ou des noms de gestionnaires. Il s’agit d’une mesure plus globale que celle qui consiste à placer simplement des convertisseurs de types au niveau de certains types ou propriétés. Toutes les extensions de balisage XAML utilisent les caractères «\{» et «\}» dans leur syntaxe d’attribut, ce qui correspond à la convention qui permet au processeur XAML de reconnaître qu’une extension de balisage doit traiter l’attribut.
 
-## Related topics
+## Rubriques connexes
 
-* [ResourceDictionary and XAML resource references](https://msdn.microsoft.com/library/windows/apps/mt187273)
+* [Références aux ressources ResourceDictionary et XAML](https://msdn.microsoft.com/library/windows/apps/mt187273)
 * [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327)
 * [**GetResource**](https://msdn.microsoft.com/library/windows/apps/br243340)
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

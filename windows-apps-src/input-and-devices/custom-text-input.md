@@ -7,7 +7,7 @@ label: Custom text input
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 614c1b8f319ea1925cd15c5ad1a3093b2bce54d3
+ms.openlocfilehash: 31f10b862ba53f2ba51f3936a73e874466590b30
 
 ---
 
@@ -99,7 +99,7 @@ Par exemple, voici l’état d’un contrôle d’édition avant que l’utilisa
 
 -   [**Range**](https://msdn.microsoft.com/library/windows/apps/dn958234) = \[10, 10\]
 -   [**Text**](https://msdn.microsoft.com/library/windows/apps/dn958236) = « d »
--   [**NewSelection**](https://msdn.microsoft.com/library/windows/apps/dn958233) = \[11, 11\]
+-   [**newSelection**](https://msdn.microsoft.com/library/windows/apps/dn958233) = \[11, 11\]
 
 Dans votre système de contrôle d’édition, appliquez les modifications indiquées et définissez [**Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) sur **Succeeded**. Voici l’état du contrôle une fois que les modifications sont appliquées.
 
@@ -165,6 +165,6 @@ Il peut arriver que le champ [**Range**](https://msdn.microsoft.com/library/wind
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

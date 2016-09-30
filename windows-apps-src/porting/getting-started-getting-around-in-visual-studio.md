@@ -1,59 +1,59 @@
 ---
 author: mcleblanc
-description: Getting around in Visual Studio
-title: Getting around in Visual Studio
+description: "Savoir maîtriser Visual Studio"
+title: "Savoir maîtriser Visual Studio"
 ms.assetid: 7FBB50A2-6D22-4082-B333-5153DADDDE9A
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 3f23745d161965d08a35abbef31b8e4342cf1ff6
+ms.openlocfilehash: d31e6e940f0b03667f1e19abec17804f6f3e16a6
 
 ---
 
-# Getting started: Getting around in Visual Studio
+# Prise en main &#58; Savoir maîtriser Visual Studio
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-## Getting around in Microsoft Visual Studio
+## Savoir maîtriser Microsoft Visual Studio
 
-Let's now get back to the project that we created earlier, and look at how you might find your way around the Microsoft Visual Studio integrated development environment (IDE).
+Revenons au projet que nous avons créé précédemment et voyons comment s’y retrouver dans l’environnement de développement intégré (IDE) de Microsoft Visual Studio.
 
-If you are an Xcode developer, the default view below should be familiar, with source files in the left pane, the editor (either the UI or source code) in the center pane, and controls and their properties in the right pane.
+Si vous êtes développeur Xcode, l’affichage par défaut ci-dessous vous semblera probablement familier, notamment avec les fichiers sources dans le volet gauche, l’éditeur (soit l’interface utilisateur, soit le code) dans le volet central, et les contrôles et leurs propriétés dans le volet droit.
 
-![xcode development environment](images/ios-to-uwp/xcode-ide.png)
+![environnement de développement xcode](images/ios-to-uwp/xcode-ide.png)
 
-Microsoft Visual Studio looks very similar, although the default view has the controls on the left side in the **Toolbox**. The source files are in the **Solution Explorer** on the right side, and properties are in **Properties** under the **Solution Explorer** pane, like this:
+L’apparence de Microsoft Visual Studio est similaire mais, dans l’affichage par défaut, les contrôles apparaissent sur le côté gauche à l’intérieur de la **boîte à outils**. Les fichiers sources figurent dans l’**Explorateur de solutions** sur le côté droit, et les propriétés sous **Propriétés** dans le volet **Explorateur de solutions**, comme ceci :
 
-![visual studio development environment](images/ios-to-uwp/vs-ide.png)
+![environnement de développement visual studio](images/ios-to-uwp/vs-ide.png)
 
-If this feels a little alien to you, you'll be pleased to know you can rearrange the panes in Visual Studio to place the source files on the left of the screen and the toolbox on the right. In fact, you can click and drag the title bar of any pane to reposition it, and Visual Studio will display a shaded box telling you where it will be docked once you release it. Many panes also have a small drawing pin icon in their title bar. This allows you to pin the panel as-is, locking it in place. Unpin the pane, and it can be collapsed to save space: useful if your monitor is on the smaller side. If you mess things up (don't worry, we've all done it), select **Reset Window Layout** from the **Window** menu to restore order.
+Même si cela peut sembler un peu surprenant, vous serez peut-être heureux d’apprendre que, dans Visual Studio, vous pouvez réorganiser les volets de façon à placer les fichiers sources à gauche, et la boîte à outils à droite. En fait, vous pouvez cliquer sur la barre de titre d’un volet, puis la faire glisser pour repositionner celui-ci. Visual Studio affiche une zone ombrée, indiquant où le volet sera ancré quand vous aurez relâché le bouton. De nombreux volets affichent également une icône de punaise dans la barre de titre. Celle-ci vous permet d’épingler le volet là où il se trouve. En le désépinglant, vous pouvez le réduire pour économiser de l’espace, ce qui est utile si votre moniteur est de taille relativement petite. Si vous faites une fausse manœuvre (ne vous inquiétez pas, nous sommes tous passés par là), sélectionnez **Rétablir la disposition de fenêtre** dans le menu **Fenêtre** pour remettre de l’ordre.
 
-## Adding controls, setting their properties, and responding to events
+## Ajout de contrôles, définition de leurs propriétés et réponse aux événements
 
-Let's now add some controls to your project. We'll then change some of their properties, and write some code to respond to one of the control's events.
+À présent, ajoutons quelques contrôles à votre projet. Nous allons ensuite changer certaines de leurs propriétés et écrire un code pour répondre à l’un des événements du contrôle.
 
-To add controls in Xcode, you open up the desired .xib file or the Storyboard and then drag and drop controls, such as a**Round Rect Button** or a **Label**, as shown below:
+Pour ajouter des contrôles dans Xcode, vous ouvrez le fichier .xib ou la table de montage séquentiel souhaités, puis glissez-déplacez des contrôles tels qu’un **bouton rectangulaire arrondi** ou une **étiquette**, comme illustré ci-dessous :
 
-![designing ui in xcode](images/ios-to-uwp/xcode-add-button-label.png)
+![conception de l’interface utilisateur dans xcode](images/ios-to-uwp/xcode-add-button-label.png)
 
-Let's do something similar in Visual Studio. From the **Toolbox**, drag the **Button** control, and then drop it onto the MainPage.xaml file's design surface.
+Tentons une opération similaire dans Visual Studio. Dans la **boîte à outils**, faites glisser le contrôle **Bouton**, puis déposez-le dans l’aire de conception du fichier MainPage.xaml.
 
-Do the same with the **TextBlock** control, so it looks like this:
+Faites de même avec le contrôle **TextBlock**, afin qu’il se présente comme suit :
 
-![designing ui in visual studio](images/ios-to-uwp/vs-add-button-label.png)
+![conception de l’interface utilisateur dans visual studio](images/ios-to-uwp/vs-add-button-label.png)
 
-Unlike Xcode, which hides the layout and binding information inside a .xib or Storyboard file, Visual Studio encourages you to edit the XAML files used to store these details it its rich, editable, declarative, XML-like language. For more info about Extensible Application Markup Language (XAML), see [XAML overview](https://msdn.microsoft.com/library/windows/apps/mt185595). For now, know that everything displayed in the **Design** pane is defined in the **XAML** pane. The **XAML** pane allows for fine control where necessary, and as you learn more about it, you can quickly develop user interface code manually. For now, however, let's focus on just the **Design** and **Properties** panes.
+Contrairement à Xcode, qui masque les informations de disposition et de liaison à l’intérieur d’un fichier .xib ou d’une table de montage séquentiel, Visual Studio vous incite à modifier les fichiers XAML utilisés pour stocker ces détails. Il s’agit d’un langage riche, modifiable et déclaratif de type XML. Pour plus d’informations sur le langage XAML (Extensible Application Markup Language), voir [Vue d’ensemble du langage XAML](https://msdn.microsoft.com/library/windows/apps/mt185595). Pour l’instant, sachez que tous les éléments affichés dans le volet **Conception** sont définis dans le volet **XAML**. Le volet **XAML** permet un contrôle précis si nécessaire et, quand vous en saurez davantage à ce sujet, vous pourrez rapidement développer manuellement un code d’interface utilisateur. Quoi qu’il en soit, pour le moment, concentrons-nous simplement sur les volets **Conception** et **Propriétés**.
 
-Let's change the button's details. As you will know, to change the button's name in Xcode, you would change the value of the **Title** field in its properties panel.
+Modifions les détails du bouton. Comme vous le savez, pour modifier le nom du bouton dans Xcode, vous devez modifier la valeur du champ **Titre** dans son panneau de propriétés.
 
-When using Visual Studio you do something very similar. In the **Design** pane, tap the button to give it focus. Then in the **Properties** pane, alter the **Content** value from "Button" to "Press Me". Next, update the name of the button control, by changing the **Name** value from "&lt;No Name&gt;" to "myButton", as shown here:
+Lorsque vous utilisez Visual Studio vous procédez de manière très similaire. Dans le volet **Conception**, appuyez sur le bouton afin de positionner le focus sur celui-ci. Ensuite, dans le volet **Propriétés**, modifiez la valeur de **Contenu** de « Bouton » en « Appuyez ici ». Enfin, mettez à jour le nom du contrôle de bouton, en remplaçant la valeur de **Name** « &lt;Sans nom&gt; » par « myButton », comme illustré ici :
 
-![button properties window in visual studio](images/ios-to-uwp/vs-button-properties.png)
+![fenêtre des propriétés du bouton dans visual studio](images/ios-to-uwp/vs-button-properties.png)
 
-Now, let's write some code to change the **TextBlock** control's contents to "Hello, World!" after the user taps the button.
+Écrivons maintenant un code pour changer le contenu du contrôle **TextBlock** en « Hello, World! » après que l’utilisateur a appuyé sur le bouton.
 
-In Xcode, you would associate an event with a control by writing code and then associating that code with the control, often by control-dragging the button into the source code, like this:
+Dans Xcode, vous pouvez associer un événement à un contrôle en écrivant un code, puis en associant celui-ci au contrôle, souvent en faisant glisser le bouton dans le code source en maintenant la touche Contrôle appuyée, comme suit:
 
-![wiring a button to an event in xcode](images/ios-to-uwp/xcode-add-button-event.png)
+![connexion d’un bouton avec un événement dans xcode](images/ios-to-uwp/xcode-add-button-event.png)
 
 ```swift
 // Swift implementation.
@@ -63,11 +63,11 @@ In Xcode, you would associate an event with a control by writing code and then a
 }
 ```
 
-Visual Studio is similar. At the top right of **Properties** is a lightning bolt button. This is where the possible events associated with the selected control are listed, like this:
+Visual Studio est très semblable. En haut de la fenêtre **Propriétés** se trouve un bouton reconnaissable par un éclair. C’est ici que sont répertoriés les événements possibles associés au contrôle sélectionné, comme suit:
 
-![button events list in visual studio](images/ios-to-uwp/vs-button-event.png)
+![liste des événements du bouton dans visual studio](images/ios-to-uwp/vs-button-event.png)
 
-To add code for the button's click event, first select the button in the **Design** pane. Next, click the lightning bolt button, and double-click the empty box next to the name **Click**. Visual Studio then adds the event "myButton\_Click" to the **Click** box, and then adds and displays the corresponding event handler in the MainPage.xaml.cs file, like this.
+Pour ajouter du code à l’événement Click du bouton, commencez par sélectionner le bouton dans le volet **Conception**. Ensuite, cliquez sur le bouton identifié par un éclair, puis double-cliquez sur la zone vide à côté du mot **Click**. Visual Studio ajoute l’événement « myButton_Click » à la zone **Click**, puis ajoute et affiche le gestionnaire d’événements correspondant dans le fichier MainPage.xaml.cs, comme ceci.
 
 ```csharp
 private void myButton_Click(object sender, RoutedEventArgs e)
@@ -76,9 +76,9 @@ private void myButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Let's now hook-up the **TextBlock** control. In Xcode, you would control-drag the button to the source code file to associate the control with its definition, like this.
+Accrochons à présent le contrôle **TextBlock**. Dans Xcode, vous feriez glisser le bouton dans le fichier de code source en maintenant la touche Contrôle appuyée pour associer le contrôle à sa définition, comme suit.
 
-![wiring a label to its definition in xcode](images/ios-to-uwp/xcode-add-button-reference.png)
+![association d’une étiquette à sa définition dans xcode](images/ios-to-uwp/xcode-add-button-reference.png)
 
 ```swift
 // Swift implentation.
@@ -86,16 +86,16 @@ Let's now hook-up the **TextBlock** control. In Xcode, you would control-drag th
 @IBOutlet weak var myLabel : UILabel
 ```
 
-In Visual Studio, you don't need associated the control as this is always done for you. Let's change some of the properties though:
+Dans Visual Studio, vous n’avez pas besoin d’associer le contrôle, car cela est toujours fait pour vous. Modifions certaines des propriétés:
 
-1.  Tap the MainPage.xaml file tab.
-2.  In the **Design** pane, tap the **TextBlock** control.
-3.  In the **Properties** pane, tap the wrench button to display its properties.
-4.  In the **Name** box, change "&lt;No Name&gt;" to "myLabel".
+1.  Appuyez sur l’onglet du fichier MainPage.xaml.
+2.  Dans le volet **Conception**, appuyez sur le contrôle **TextBlock**.
+3.  Dans le volet **Propriétés**, appuyez sur le bouton doté d’une clé à molette pour afficher ses propriétés.
+4.  Dans la zone **Nom**, changez et remplacez « &lt;Sans nom&gt; » par « myLabel ».
 
-![label properties window in visual studio](images/ios-to-uwp/vs-label-properties.png)
+![fenêtre des propriétés du libellé dans visual studio](images/ios-to-uwp/vs-label-properties.png)
 
-Let's now add some code to the button's click event. To do this, tap the MainPage.xaml.cs file, and add the following code to the myButton\_Click event handler.
+Ajoutons maintenant un peu de code à l’événement Click du bouton. Pour cela, appuyez sur le fichier MainPage.xaml.cs et ajoutez le code suivant au gestionnaire d’événements myButton_Click.
 
 ```csharp
 private void myButton_Click(object sender, RoutedEventArgs e)
@@ -105,7 +105,7 @@ private void myButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-This is similar to what you would write in Swift:
+Cela est similaire à ce que vous écririez dans Swift:
 
 ```swift
 @IBAction func buttonPressed(sender: UIButton) {
@@ -113,19 +113,19 @@ This is similar to what you would write in Swift:
 }
 ```
 
-Finally, to run the app, select the **Debug** menu, and then select **Start Debugging** (or just press F5). After the app starts, click the "Press Me" button, and see the label's contents change from "TextBlock" to "Hello, World!", as shown in the following figure.
+Enfin, pour exécuter l’application, sélectionnez le menu **Déboguer**, puis sélectionnez **Démarrer le débogage** (ou appuyez sur F5). Une fois l’application démarrée, cliquez sur le bouton «Appuyez ici». Le contenu de l’étiquette «TextBlock» est remplacé par «Hello, World!» comme le montre la figure suivante.
 
-![results of running the first walkthrough: hello, world!](images/ios-to-uwp/vs-hello-world.png)
+![résultats de l’exécution de la première procédure: Hello, World!](images/ios-to-uwp/vs-hello-world.png)
 
-To quit the app, return to Visual Studio, tap the **Debug** menu, and then tap **Stop Debugging** (or just press SHIFT + F5). Notice that Visual Studio lets you try the app in many different devices, to check how it will perform in each.
+Pour quitter l’application, revenez à Visual Studio, appuyez sur le menu **Déboguer**, puis sur **Arrêter le débogage** (ou appuyez simplement sur Maj+F5). Notez que Visual Studio vous permet d’essayer l’application sur différents appareils pour vérifier la manière dont elle s’exécute.
 
-## Next step
+## Étape suivante
 
-[Getting started: Common Controls](getting-started-common-controls.md)
-
-
+[Prise en main : Contrôles courants](getting-started-common-controls.md)
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Jun16_HO4-->
 
 

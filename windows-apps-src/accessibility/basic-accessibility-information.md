@@ -1,13 +1,13 @@
 ---
 author: Xansky
-Description: "Les informations d’accessibilité élémentaires sont souvent classées en trois catégories: nom, rôle et valeur. Cette rubrique décrit le code qui aide votre application à exposer les informations de base nécessaires aux technologies d’assistance."
+Description: "Les informations d’accessibilité élémentaires sont souvent classées en trois catégories&#58; nom, rôle et valeur. Cette rubrique décrit le code qui aide votre application à exposer les informations de base nécessaires aux technologies d’assistance."
 ms.assetid: 9641C926-68C9-4842-8B55-C38C39A9E5C5
 title: "Présenter des informations d’accessibilité élémentaires"
 label: Expose basic accessibility information
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 05fa9bb674839c255d8b63da04a018e397c84490
-ms.openlocfilehash: a72a49756b5d2828526a39fce50357ae90549aae
+ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
+ms.openlocfilehash: 1c6bc8567b39357d414a46ef2b92197c78bca971
 
 ---
 
@@ -30,7 +30,7 @@ Le tableau suivant décrit comment définir ou obtenir un nom accessible pour di
 | Images            | L’élément [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) XAML n’a pas d’analogue direct pour l’attribut HTML **alt** de type **img** et éléments similaires. Vous devez utiliser [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) pour fournir un nom ou utiliser la technique de légendage. Voir [Noms accessibles pour les images](#images). |
 | Éléments de formulaire     | Le nom accessible pour un élément de formulaire doit être identique à l’étiquette affichée pour cet élément. Voir [Étiquettes et LabeledBy](#labels). |
 | Boutons et liens | Par défaut, le nom accessible d’un bouton ou d’un lien est basé sur le texte visible, les mêmes règles que celles décrites dans [Nom du texte interne](#name_from_inner_text) étant appliquées. Dans les cas où un bouton contient uniquement une image, utilisez [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) pour fournir un équivalent texte-uniquement de l’action prévue du bouton. |
-<br/>
+
 La plupart des éléments de conteneur tels que les panneaux n’effectuent pas la promotion de leur contenu comme nom accessible, car c’est le contenu de l’élément qui doit indiquer un nom et un rôle correspondant, et non son conteneur. L’élément conteneur peut indiquer qu’il s’agit d’un élément ayant des enfants dans une représentation Microsoft UI Automation, de telle sorte que la logique de technologie d’assistance puisse le traverser. Toutefois, les informations sur les conteneurs ne sont généralement pas utiles aux utilisateurs de technologies d’assistance et la plupart des conteneurs ne sont pas nommés.
 
 <span id="role_value"/>
@@ -146,6 +146,6 @@ Notez que les propriétés jointes telles les propriétés [**AutomationProperti
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

@@ -1,269 +1,201 @@
 ---
 author: Jwmsft
-Description: Lists display and enable interaction with collection-based content.
-title: Lists
+Description: "Les listes affichent et activent l’interaction avec du contenu basé sur des collections."
+title: Listes
 ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
 label: Lists
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 508a09e0c12006c00dbdf7675516b41119eab8a6
-ms.openlocfilehash: 8b8820c9ab82ce0789fbe2fb9f62309e48f4ce9d
+ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
+ms.openlocfilehash: adf8e449cff846caebff3a80b772f801430871e5
 
 ---
-# Lists
+# Listes
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+Les listes affichent et activent l’interaction avec du contenu basé sur des collections. Les quatre modèles de liste traités dans cet article sont les suivants:
 
-Lists display and enable interactions with collection-based content. The four list patterns covered in this article include:
+-   Affichages Liste, principalement utilisés pour afficher des collections de contenus riches en texte
+-   Affichages Grille, principalement utilisés pour afficher des collections de contenus riches en images
+-   Listes déroulantes, permettant aux utilisateurs de choisir un élément dans une liste développée
+-   Zones de liste, permettant aux utilisateurs de choisir un ou plusieurs éléments dans une zone pouvant défiler
 
--   List views, which are primarily used to display text-heavy content collections
--   Grid views, which are primarily used to display image-heavy content collections
--   Drop-down lists, which let users choose one item from an expanding list
--   List boxes, which let users choose one item or multiple items from a box that can be scrolled
+Des recommandations en matière de conception, des fonctionnalités et des exemples sont fournis pour chaque modèle de liste. À la fin de l’article figurent des liens vers des rubriques et des API connexes.
 
-Design guidelines, features, and examples are given for each list pattern. At the end of the article are links to related topics and APIs.
+## API importantes
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br242878"><strong>ListView class</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br242705"><strong>GridView class</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br209348"><strong>ComboBox class</strong></a></li>
-</ul>
+-   [**Classe ListView**](https://msdn.microsoft.com/library/windows/apps/br242878)
+-   [**Classe GridView**](https://msdn.microsoft.com/library/windows/apps/br242705)
+-   [**Classe ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348)
 
-</div>
-</div>
 
+## Affichages de liste
 
+Les affichages Liste permettent de classer des éléments et d’affecter des en-têtes de groupe, de glisser-déplacer des éléments, de traiter du contenu et de réorganiser des éléments.
 
+### Est-ce le contrôle approprié ?
 
-## List views
+Utilisez un affichage Liste pour :
 
-List views let you categorize items and assign group headers, drag and drop items, curate content, and reorder items.
+-   Afficher une collection de contenus principalement composée de texte.
+-   Naviguer dans une collection de contenu unique ou catégorisée.
+-   Créer le volet principal dans le [modèle Maître/Détails](master-details.md). Un modèle Maître/Détails est souvent utilisé dans les applications de messagerie, dans lesquelles un volet (maître) contient une liste d’éléments sélectionnables, tandis que l’autre (détails) affiche une vue détaillée de l’élément sélectionné.
 
-### Is this the right control?
+### Exemples
 
-Use a list view to:
-
--   Display a content collection that primarily consists of text.
--   Navigate a single or categorized collection of content.
--   Create the master pane in the [master/details pattern](master-details.md). A master/details pattern is often used in email apps, in which one pane (the master) has a list of selectable items while the other pane (details) has a detailed view of the selected item.
-
-### Examples
-
-Here's a simple list view showing grouped data on a phone.
-
-![A list view with grouped data](images/simple-list-view-phone.png)
-
-### Recommendations
-
--   Items within a list should have the same behavior.
--   If your list is divided into groups, you can use [semantic zoom](semantic-zoom.md) to make it easier for users to navigate through grouped content.
-
-### List view articles
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Topic</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><p>[List view and grid view](listview-and-gridview.md)</p></td>
-<td align="left"><p>Learn the essentials of using a list view or grid view in your app.</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>[List view item templates](listview-item-templates.md)</p></td>
-<td align="left"><p>The items you display in a list or grid can play a major role in the overall look of your app. Modify control templates and data templates to define the look of the items and make your app look great.</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>[Inverted lists](inverted-lists.md)</p></td>
-<td align="left"><p>Inverted lists have new items added at the bottom, like in a chat app. Follow this guidance to use an inverted list in your app.</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>[Pull-to-refresh](pull-to-refresh.md)</p></td>
-<td align="left"><p>The pull-to-refresh pattern lets a user pull down on a list of data using touch in order to retrieve more data. Use this guidance to implement pull-to-refresh in your list view.</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>[Nested UI](nested-ui.md)</p></td>
-<td align="left"><p>Nested UI is a user interface (UI) that exposes actionable controls enclosed inside a container that a user can also take action on. For example, you might have list view item that contains a button, and the user can select the list item, or press the button nested within it. Follow these best practices to provide the best nested UI experience for your users.</p></td>
-</tr>
-</tbody>
-</table>
+Lorsque vous utilisez un [modèle Maître/Détails](master-details.md), vous pouvez utiliser un affichage Liste pour organiser le volet maître. Ce dernier affiche une liste d’éléments sélectionnables. Lorsque l’utilisateur sélectionne un élément dans le volet maître, des informations supplémentaires concernant l’élément sélectionné apparaissent dans le volet de détails. Le volet Détails contient souvent un affichage en mode Grille.
 
-## Grid views
+![Exemple de modèle Maître/Détails](images/Stock_Tracker/uap_finance_desktop700.png)
 
-Grid views are suited for arranging and browsing image-based content collections. A grid view layout scrolls vertically and pans horizontally. Items are laid out in a left-to-right, then top-to-bottom reading order.
+Vous pouvez relier plusieurs listes pour créer des hiérarchies Maître/Détails complexes. Pour plus d’informations, voir le [modèle Maître/Détails](master-details.md).
 
-### Is this the right control?
+L’exemple de disposition de liste comporte des en-têtes de groupe, et s’affiche sous la forme d’une seule colonne :
 
-Use a list view to:
+![Exemple d’affichage Liste avec quatre types d’unités principales](images/controls_listview_4types.png)
 
--   Display a content collection that primarily consists of images.
--   Display content libraries.
--   Format the two content views associated with [semantic zoom](semantic-zoom.md).
+### Recommandations
 
-### Examples
+-   Les éléments d’une liste doivent avoir le même comportement.
+-   Si votre liste est répartie en groupes, vous pouvez utiliser un [zoom sémantique](semantic-zoom.md) pour permettre aux utilisateurs de naviguer plus facilement dans un contenu regroupé.
 
-This example shows a typical grid view layout, in this case for browsing apps. Metadata for grid view items is usually restricted to a few lines of text and an item rating.
+## Affichages Grille
 
-![Example of a grid view layout](images/controls_gridview_example02.png)
+Les affichages Grille conviennent pour l’organisation et l’exploration des collections de contenus à base d’images. Une disposition de liste Grille défile verticalement et s’étend horizontalement. Les éléments sont disposés dans un ordre de lecture de gauche à droite, puis de haut en bas.
 
-A grid view is an ideal solution for a content library, which is often used to present media such as pictures and videos. In a content library, users expect to be able to tap an item to invoke an action.
+### Est-ce le contrôle approprié ?
 
-![Example of a content library](images/controls_list_contentlibrary.png)
+Utilisez un affichage Liste pour :
 
-### Recommendations
+-   Afficher une collection de contenus composée essentiellement d’images.
+-   Afficher des bibliothèques de contenu.
+-   Mettre en forme les deux affichages de contenu associés à un [zoom sémantique](semantic-zoom.md).
 
--   Items within a list should have the same behavior.
--   If your list is divided into groups, you can use [semantic zoom](semantic-zoom.md) to make it easier for users to navigate through grouped content.
+### Exemples
 
-### Grid view articles
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Topic</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><p>[List view and grid view](listview-and-gridview.md)</p></td>
-<td align="left"><p>Learn the essentials of using a list view or grid view in your app.</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>[List view item templates](listview-item-templates.md)</p></td>
-<td align="left"><p>The items you display in a list or grid can play a major role in the overall look of your app. Modify control templates and data templates to define the look of the items and make your app look great.</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>[Nested UI](nested-ui.md)</p></td>
-<td align="left"><p>Nested UI is a user interface (UI) that exposes actionable controls enclosed inside a container that a user can also take action on. For example, you might have list view item that contains a button, and the user can select the list item, or press the button nested within it. Follow these best practices to provide the best nested UI experience for your users.</p></td>
-</tr>
-</tbody>
-</table>
+Cet exemple illustre une disposition d’affichage Grille standard, dans ce cas pour des applications de navigation. Les métadonnées pour les éléments d’un affichage Grille sont généralement limitées à quelques lignes de texte et à une évaluation.
 
-## Drop-down lists
+![Exemple de disposition d’affichage Grille](images/controls_gridview_example02.png)
 
-Drop-down lists, also known as combo boxes, start in a compact state and expand to show a list of selectable items. The selected item is always visible, and non-visible items can be brought into view when the user taps the combo box to expand it.
+Un affichage Grille est une solution idéale pour une bibliothèque de contenu, souvent utilisée pour présenter du contenu multimédia tel que des images et vidéos. Dans une bibliothèque de contenu, l’utilisateur s’attend à pouvoir appuyer sur un élément pour appeler une action.
 
-### Is this the right control?
+![Exemple de bibliothèque de contenu](images/controls_list_contentlibrary.png)
 
--   Use a drop-down list to let users select a single value from a set of items that can be adequately represented with single lines of text.
--   Use a list or grid view instead of a combo box to display items that contain multiple lines of text or images.
--   When there are fewer than five items, consider using [radio buttons](radio-button.md) (if only one item can be selected) or [check boxes](checkbox.md) (if multiple items can be selected).
--   Use a combo box when the selection items are of secondary importance in the flow of your app. If the default option is recommended for most users in most situations, showing all the items by using a list view might draw more attention to the options than necessary. You can save space and minimize distraction by using a combo box.
+### Recommandations
 
-### Examples
+-   Les éléments d’une liste doivent avoir le même comportement.
+-   Si votre liste est répartie en groupes, vous pouvez utiliser un [zoom sémantique](semantic-zoom.md) pour permettre aux utilisateurs de naviguer plus facilement dans un contenu regroupé.
 
-A combo box in its compact state can show a header.
+## Listes déroulantes
 
-![Example of a drop-down list in its compact state](images/combo_box_collapsed.png)
+Les listes déroulantes, également appelées zones de liste déroulante, démarrent dans un état compact et se développent pour afficher une liste d’éléments sélectionnables. L’élément sélectionné est toujours visible, et les éléments non visibles peuvent s’afficher lorsque l’utilisateur appuie sur la zone de liste déroulante pour la développer.
 
-Although combo boxes expand to support longer string lengths, avoid excessively long strings that are difficult to read.
+### Est-ce le contrôle approprié?
 
-![Example of a drop-down list with long text string](images/combo_box_listitemstate.png)
+-   Utilisez une liste déroulante pour permettre aux utilisateurs de sélectionner une valeur unique parmi un ensemble d’éléments qui peuvent être représentés correctement à l’aide de simples lignes de texte.
+-   Utilisez un affichage Liste ou Grille au lieu d’une zone de liste déroulante pour afficher des éléments contenant plusieurs lignes de texte ou images.
+-   En présence de moins de cinq éléments, utilisez des [cases d’option](radio-button.md) (si un seul élément peut être sélectionné) ou des [cases à cocher](checkbox.md) (si plusieurs éléments peuvent être sélectionnés).
+-   Utilisez cette zone de liste déroulante pour les éléments de sélection d’importance secondaire au sein de votre application. Si l’option par défaut est recommandée pour la plupart des utilisateurs dans la majorité des situations, l’affichage de tous les éléments à l’aide d’un affichage Liste risque d’attirer l’attention sur les options plus qu’il n’est nécessaire. Pour économiser de l’espace et éviter de distraire l’utilisateur, utilisez une zone de liste déroulante.
 
-If the collection in a combo box is long enough, a scroll bar will appear to accommodate it. Group items logically in the list.
+### Exemples
 
-![Example of a scroll bar in a drop-down list](images/combo_box_scroll.png)
+Une zone de liste déroulante en état compact peut afficher un en-tête.
 
-### Recommendations
+![Exemple de liste déroulante à l’état compact](images/combo_box_collapsed.png)
 
--   Limit the text content of combo box items to a single line.
--   Sort items in a combo box in the most logical order. Group together related options and place the most common options at the top. Sort names in alphabetical order, numbers in numerical order, and dates in chronological order.
+Bien que les zones de listes déroulantes se développent pour prendre en charge des chaînes plus longues, évitez les chaînes excessivement longues qui rendent la lecture difficile.
 
-### Text Search
+![Exemple de liste déroulante avec une longue chaîne de texte](images/combo_box_listitemstate.png)
 
-Combo boxes automatically support search within their collections. As users type characters on a physical keyboard while focused on an open or closed combo box, candidates matching the user's string are brought into view. This functionality is especially helpful when navigating a long list. For example, when interacting with a drop-down containing a list of states, users can press the “w” key to bring “Washington” into view for quick selection. 
+Si la collection figurant dans une zone de liste déroulante est suffisamment longue, une barre de défilement s’affiche. Regroupez les éléments logiquement dans la liste.
 
-## List boxes
+![Exemple de barre de défilement dans une liste déroulante](images/combo_box_scroll.png)
 
-A list box allows the user to choose either a single item or multiple items from a collection. List boxes are similar to drop-down lists, except that list boxes are always open—there is no compact (non-expanded) state for a list box. Items in the list can be scrolled if there isn't space to show everything.
+### Recommandations
 
-### Is this the right control?
+-   Limitez le contenu texte des éléments de zone de liste déroulante à une seule ligne.
+-   Triez les éléments d’une zone de liste déroulante dans l’ordre le plus logique. Regroupez les options associées et placez les options les plus courantes en haut. Triez les noms par ordre alphabétique, les nombres par ordre numérique et les dates par ordre chronologique.
 
--   A list box can be useful when items in the list are important enough to prominently display, and when there's enough screen real estate, to show the full list.
--   A list box should draw the user's attention to the full set of alternatives in an important choice. By contrast, a drop-down list initially draws the user's attention to the selected item.
--   Avoid using a list box if:
-    -   There is a very small number of items for the list. A single-select list box that always has the same 2 options might be better presented as [radio buttons](radio-button.md). Also consider using radio buttons when there are 3 or 4 static items in the list.
-    -   The list box is single-select and it always has the same 2 options where one can be implied as not the other, such as "on" and "off." Use a single check box or a toggle switch.
-    -   There is a very large number of items. A better choice for long lists are grid view and list view. For very long lists of grouped data, semantic zoom is preferred.
-    -   The items are contiguous numerical values. If that's the case, consider using a [slider](slider.md).
-    -   The selection items are of secondary importance in the flow of your app or the default option is recommended for most users in most situations. Use a drop-down list instead.
+### Recherche en texte
 
-### Recommendations
+Les zones de liste déroulante prennent automatiquement en charge la recherche au sein de leurs collections. Lorsque les utilisateurs tapent des caractères sur un clavier physique dans une zone de liste déroulante ouverte ou fermée, des candidats correspondant à la chaîne entrée apparaissent. Cette fonctionnalité est particulièrement utile lors de la navigation dans une liste longue. Par exemple, lorsqu’un utilisateur interagit avec une liste déroulante contenant une liste des États américains, le fait d’appuyer sur la touche «W» affiche «Washington» pour une sélection rapide. 
 
--   The ideal range of items in a list box is 3 to 9.
--   A list box works well when its items can dynamically vary.
--   If possible, set the size of a list box so that its list of items don't need to be panned or scrolled.
--   Verify that the purpose of the list box, and which items are currently selected, is clear.
--   Reserve visual effects and animations for touch feedback, and for the selected state of items.
--   Limit the list box item's text content to a single line. If the items are visuals, you can customize the size. If an item contains multiple lines of text or images, instead use a grid view or list view.
--   Use the default font unless your brand guidelines indicate to use another.
--   Don't use a list box to perform commands or to dynamically show or hide other controls.
+## Zones de liste
 
-## Selection mode
+Une zone de liste permet à l’utilisateur de choisir un ou plusieurs éléments d’une collection. Les zones de liste sont similaires aux listes déroulantes, sauf qu’elles sont toujours ouvertes, c’est-à-dire qu’elles n’ont pas d’état compact (non développé). Les éléments de la liste peuvent défiler si l’espace est insuffisant pour les afficher tous.
 
-Selection mode lets users select and take action on a single item or on multiple items. It can be invoked through a context menu, by using CTRL+click or SHIFT+click on an item, or by rolling-over a target on an item in a gallery view. When selection mode is active, check boxes appear next to each list item, and actions can appear at the top or the bottom of the screen.
+### Est-ce le contrôle approprié ?
 
-There are three selection modes:
+-   Une zone de liste peut être utile quand des éléments de la liste sont suffisamment importants pour être mis en avant, et quand l’écran offre suffisamment d’espace pour afficher la liste complète.
+-   Une zone de liste doit attirer l’attention de l’utilisateur sur toutes les possibilités d’un choix important. En revanche, une liste déroulante attire initialement l’attention de l’utilisateur sur l’élément sélectionné.
+-   Évitez d’utiliser une zone de liste dans les cas suivants :
+    -   Il existe un très petit nombre d’éléments pour la liste. Si une zone de liste à sélection unique comporte toujours les deux mêmes options, mieux vaut utiliser des [cases d’option](radio-button.md). Pensez également à utiliser des cases d’option quand 3 ou 4 éléments statiques figurent dans la liste.
+    -   La zone de liste est à sélection unique, et propose toujours les deux mêmes options, l’une étant l’inverse de l’autre (par exemple, « activé » et « désactivé »). Utilisez une case à cocher ou un bouton bascule.
+    -   Le nombre d’éléments est très élevé. Pour les longues listes, mieux vaut utiliser un affichage Grille ou Liste. Pour les très longues listes de données groupées, utilisez de préférence un zoom sémantique.
+    -   Les éléments sont des valeurs numériques contiguës. Si tel est le cas, pensez à utiliser un [curseur](slider.md).
+    -   Les éléments de sélection ont une importance secondaire dans le flux de votre application, ou l’option par défaut est recommandée pour la plupart des utilisateurs dans la majorité des situations. Dans ce cas, utilisez plutôt une liste déroulante.
 
--   Single: The user can select only one item at a time.
--   Multiple: The user can select multiple items without using a modifier.
--   Extended: The user can select multiple items with a modifier, such as holding down the SHIFT key.
+### Recommandations
 
-Tapping anywhere on an item selects it. Tapping on the command bar action affects all selected items. If no item is selected, command bar actions should be inactive, except for "Select All".
+-   La plage idéale d’éléments dans une zone de liste est de 3 à 9.
+-   Une zone de liste est efficace quand ses éléments peuvent varier de manière dynamique.
+-   Dans la mesure du possible, la taille de la zone de liste doit être suffisante pour que vous n’ayez pas à faire défiler la liste des éléments.
+-   Vérifiez qu’il n’y a aucune ambiguïté quand à la fonction de la zone de liste et aux éléments sélectionnés actuellement.
+-   Réservez les effets visuels et les animations pour le retour tactile et pour l’état sélectionné des éléments.
+-   Limitez le contenu textuel de l’élément de zone de liste à une seule ligne. Si les éléments sont visuels, vous pouvez personnaliser la taille. Si un élément contient plusieurs lignes de texte ou images, utilisez plutôt un affichage de Grille ou Liste.
+-   Utilisez la police par défaut à moins que vos instructions de personnalisation imposent d’en utiliser une autre.
+-   N’utilisez pas une zone de liste pour exécuter des commandes ou pour afficher ou masquer de manière dynamique d’autres contrôles.
 
-Selection mode doesn't have a light dismiss model; tapping outside of the frame in which selection mode is active won't cancel the mode. This is to prevent accidental deactivation of the mode. Clicking the back button dismisses the multi-select mode.
+## Mode de sélection
 
-Show a visual confirmation when an action is selected. Consider displaying a confirmation dialog for certain actions, especially destructive actions such as delete.
+Le mode de sélection permet aux utilisateurs de sélectionner et d’exécuter une action sur un ou plusieurs éléments. Il peut être appelé par le biais d’un menu contextuel, à l’aide de la combinaison CTRL+clic ou MAJ+clic sur un élément, ou par la substitution d’une cible sur un élément dans un affichage Galerie. Quand le mode de sélection est actif, des cases à cocher s’affichent à côté de chaque élément de la liste, et des actions peuvent apparaître en haut ou en bas de l’écran.
 
-Selection mode is confined to the page in which it is active, and can't affect any items outside of that page.
+Il existe trois modes de sélection :
 
-The entry point to selection mode should be juxtaposed against the content it affects.
+-   Unique : l’utilisateur ne peut sélectionner qu’un élément à la fois.
+-   Multiple : l’utilisateur peut sélectionner plusieurs éléments sans utiliser de modificateur.
+-   Étendu : l’utilisateur peut sélectionner plusieurs éléments avec un modificateur, par exemple, en maintenant la touche MAJ enfoncée.
 
-For command bar recommendations, see [guidelines for command bars](app-bars.md).
+L’appui sur un emplacement quelconque d’un élément entraîne la sélection de celui-ci. L’appui sur une action de la barre de commandes affecte tous les éléments sélectionnés. Si aucun élément n’est sélectionné, toutes les actions de la barre de commandes doivent être inactives, à l’exception de l’action Sélectionner tout.
 
-## Globalization and localization checklist
+Le mode Sélection ne comporte pas de modèle d’abandon interactif ; l’appui sur une zone à l’extérieur du cadre dans lequel le mode Sélection est actif ne permet pas d’annuler ce mode. Ceci empêche toute désactivation accidentelle du mode. En cliquant sur le bouton Précédent, vous fermez le mode de sélection multiple.
+
+Affichez une confirmation visuelle lors de la sélection d’une action. Envisagez d’afficher une boîte de dialogue de confirmation pour certaines actions, notamment pour les opérations destructrices, comme la suppression.
+
+Le mode Sélection est limité à la page dans laquelle il est actif et ne peut pas affecter les éléments situés à l’extérieur de cette page.
+
+Le point d’entrée du mode Sélection doit être juxtaposé au contenu concerné.
+
+Pour des recommandations relatives à la barre de commandes, voir [Recommandations en matière de barres de commandes](app-bars.md).
+
+## Liste de contrôle de globalisation et de localisation
 
 <table>
 <tr>
-<th>Wrapping</th><td>Allow two lines for the list label.</td>
+<th>Renvoi à la ligne</th><td>Autorisez deux lignes pour l’étiquette de liste.</td>
 </tr>
 <tr>
-<th>Horizontal expansion</th><td>Make sure fields can accomdation text expension and are scrollable.</td>
+<th>Extension horizontale</th><td>Assurez-vous que les champs prennent en charge l’extension de texte et sont défilants.</td>
 </tr>
 <tr>
-<th>Vertical spacing</th><td>Use non-Latin chracters for vertical spacing to ensure non-Latin scripts will display properly.</td>
+<th>Espacement vertical</th><td>Utilisez les caractères non latins d’espacement vertical pour assurer un affichage correct des scripts non latins.</td>
 </tr>
 </table>
 
 
-## Related articles
+## Articles connexes
 
 - [Hub](hub.md)
-- [Master/details](master-details.md)
-- [Nav pane](nav-pane.md)
-- [Semantic zoom](semantic-zoom.md)
-- [Drag and drop](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
+- [Maître/détails](master-details.md)
+- [Volet de navigation](nav-pane.md)
+- [Zoom sémantique](semantic-zoom.md)
 
-**For developers**
-- [**ListView class**](https://msdn.microsoft.com/library/windows/apps/br242878)
-- [**GridView class**](https://msdn.microsoft.com/library/windows/apps/br242705)
-- [**ComboBox class**](https://msdn.microsoft.com/library/windows/apps/br209348)
-- [**ListBox class**](https://msdn.microsoft.com/library/windows/apps/br242868)
-
+**Pour les développeurs**
+- [**Classe ListView**](https://msdn.microsoft.com/library/windows/apps/br242878)
+- [**Classe GridView**](https://msdn.microsoft.com/library/windows/apps/br242705)
+- [**Classe ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348)
+- [**Classe ListBox**](https://msdn.microsoft.com/library/windows/apps/br242868)
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jul16_HO1-->
 
 

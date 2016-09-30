@@ -1,48 +1,48 @@
 ---
 author: mcleanbyron
 ms.assetid: 7a61c328-77be-4614-b117-a32a592c9efe
-description: Read about solutions to common development issues with the Microsoft advertising libraries in JavaScript/HTML apps.
-title: HTML and JavaScript troubleshooting guide
+description: "Découvrez les solutions aux problèmes de développement courants liés aux bibliothèques de publicités Microsoft dans les applications JavaScript/HTML."
+title: "Guide de résolution des problèmes pour HTML et JavaScript"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: 2b86d307dfbaf6d82e99a323762cfb5515f865da
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: af4ea6f3360ea85d1c70ec9b757db65ec23c88af
 
 
 ---
 
-# HTML and JavaScript troubleshooting guide
+# Guide de résolution des problèmes pour HTML et JavaScript
 
 
+\[ Mise à jour pour les applicationsUWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-
-This topic contains solutions to common development issues with the Microsoft advertising libraries in JavaScript/HTML apps.
+Cette rubrique contient des solutions aux problèmes de développement courants liés aux bibliothèques de publicités Microsoft dans les applications JavaScript/HTML.
 
 -   [HTML](#html)
 
-    -   [AdControl not appearing](#html-notappearing)
+    -   [AdControl invisible](#html-notappearing)
 
-    -   [Black box blinks and disappears](#html-blackboxblinksdisappears)
+    -   [Une boîte noire clignote et disparaît](#html-blackboxblinksdisappears)
 
-    -   [Ads not refreshing](#html-adsnotrefreshing)
+    -   [Non-actualisation des publicités](#html-adsnotrefreshing)
 
 -   [JavaScript](#js)
 
-    -   [AdControl not appearing](#js-adcontrolnotappearing)
+    -   [AdControl invisible](#js-adcontrolnotappearing)
 
-    -   [Black box blinks and disappears](#js-blackboxblinksdisappears)
+    -   [Une boîte noire clignote et disparaît](#js-blackboxblinksdisappears)
 
-    -   [Ads not refreshing](#js-adsnotrefreshing)
+    -   [Non-actualisation des publicités](#js-adsnotrefreshing)
 
 ## HTML
 
 <span id="html-notappearing"/>
-### AdControl not appearing
+### AdControl invisible
 
-1.  Ensure that the **Internet (Client)** capability is selected in Package.appxmanifest.
+1.  Assurez-vous que la fonctionnalité **Internet (client)** est sélectionnée dans le fichier Package.appxmanifest.
 
-2.  Ensure the JavaScript reference is present. Without the ad.js reference in the &lt;head&gt; section (after the default.js reference) the **AdControl** will be unable to display and an error will occur during build.
+2.  Vérifiez la présence des informations de référence JavaScript. Sans la référence ad.js dans la section &lt;head&gt; (après la référence default.js), le contrôle **AdControl** n’est pas en mesure de s’afficher, et une erreur se produit lors de la génération.
 
-    Windows 10:
+    Windows10:
 
     ``` syntax
     <head>
@@ -52,7 +52,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     </head>
     ```
 
-    Windows 8.x:
+    Windows8.x:
 
     ``` syntax
     <head>
@@ -62,7 +62,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     </head>
     ```
 
-3.  Check the application ID and ad unit ID. These IDs must match the application ID and ad unit ID that you obtained in Windows Dev Center. For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md).
+3.  Vérifiez l’ID de l’application et l’ID d’unité publicitaire. Ces ID doivent correspondre à l’ID de l’application et à l’ID d’unité publicitaire que vous avez obtenus dans le Centre de développement Windows. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre application](set-up-ad-units-in-your-app.md).
 
     ``` syntax
     <div id="myAd" style="position: absolute; top: 50px; left: 0px;
@@ -73,7 +73,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     </div>
     ```
 
-4.  Check the **height** and **width** properties. These must be set to one of the [supported ad sizes for banner ads](supported-ad-sizes-for-banner-ads.md).
+4.  Vérifiez les propriétés **height** et **width**. Elles doivent être définies sur l’une des [tailles de bannières publicitaires prises en charge](supported-ad-sizes-for-banner-ads.md).
 
     ``` syntax
     <div id="myAd" style="position: absolute; top: 50px; left: 0px;
@@ -84,20 +84,9 @@ This topic contains solutions to common development issues with the Microsoft ad
     </div>
     ```
 
-5.  Check the element positioning. The [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) must be inside the viewable area.
+5.  Vérifiez la position des éléments. Le contrôle [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) doit se situer à l’intérieur de la zone d’affichage.
 
-6.  Check the **visibility** property. This property must not be set to collapsed or hidden. This property can be set inline (as shown below) or in an external style sheet.
-
-    ``` syntax
-    <div id="myAd" style="visibility: visible; position: absolute; top: 1025px;
-                          left: 500px; width: 250px; height: 250px; z-index: 1"
-         data-win-control="MicrosoftNSJS.Advertising.AdControl"
-         data-win-options="{applicationId: 'ApplicationID',
-                            adUnitId: 'AdUnitID'}">
-    </div>
-    ```
-
-7.  Check the **position** property. The position property must be set to an appropriate value depending on the element’s other properties (for example, margins in parent element and z-index). This property can be set inline (as shown below) or in an external style sheet.
+6.  Vérifiez la propriété **visibility**. Cette propriété ne doit pas être définie sur collapsed ou hidden. Cette propriété peut être incluse (comme illustré ci-dessous) ou définie dans une feuille de style externe.
 
     ``` syntax
     <div id="myAd" style="visibility: visible; position: absolute; top: 1025px;
@@ -108,7 +97,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     </div>
     ```
 
-8.  Check the **z-index** property. The **z-index** property must be set high enough so the **AdControl** always appears on top of other elements. This property can be set inline (as shown below) or in an external style sheet.
+7.  Vérifiez la propriété **position**. La propriété position doit être définie sur une valeur appropriée en fonction des autres propriétés de l’élément (par exemple, les marges dans l’élément parent et l’indexz). Cette propriété peut être incluse (comme illustré ci-dessous) ou définie dans une feuille de style externe.
 
     ``` syntax
     <div id="myAd" style="visibility: visible; position: absolute; top: 1025px;
@@ -119,7 +108,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     </div>
     ```
 
-9.  Check external style sheets. If properties are set on the **AdControl** element through an external style sheet, ensure all of the above properties are correctly set.
+8.  Vérifiez la propriété **z-index**. La propriété **z-index** doit être définie sur une valeur suffisamment élevée pour que le contrôle **AdControl** apparaisse toujours au-dessus des autres éléments. Cette propriété peut être incluse (comme illustré ci-dessous) ou définie dans une feuille de style externe.
 
     ``` syntax
     <div id="myAd" style="visibility: visible; position: absolute; top: 1025px;
@@ -130,7 +119,18 @@ This topic contains solutions to common development issues with the Microsoft ad
     </div>
     ```
 
-10. Check the parent of the **AdControl**. If the **AdControl** resides in a parent element, the parent must be active and visible.
+9.  Vérifiez les feuilles de style externes. Si les propriétés sont définies dans l’élément **AdControl** par le biais d’une feuille de style externe, assurez-vous que toutes les propriétés mentionnées ci-dessus sont correctement définies.
+
+    ``` syntax
+    <div id="myAd" style="visibility: visible; position: absolute; top: 1025px;
+                          left: 500px; width: 250px; height: 250px; z-index: 1"
+         data-win-control="MicrosoftNSJS.Advertising.AdControl"
+         data-win-options="{applicationId: 'ApplicationID',
+                            adUnitId: 'AdUnitID'}">
+    </div>
+    ```
+
+10. Vérifiez le parent du **AdControl**. Si le **AdControl** réside dans un élément parent, ce dernier doit être actif et visible.
 
     ``` syntax
     <div style="position: absolute; width: 500px; height: 500px;">
@@ -143,16 +143,16 @@ This topic contains solutions to common development issues with the Microsoft ad
     </div>
     ```
 
-11. Ensure the **AdControl** is not hidden from the viewport. The **AdControl** must be visible for ads to display properly.
+11. Vérifiez que le **AdControl** n’est pas masqué dans la fenêtre d’affichage. Le **AdControl** doit être visible afin que les publicités s’affichent correctement.
 
-12. Live values for [ApplicationId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.applicationid.aspx) and [AdUnitId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.adunitid.aspx) should not be tested in the emulator. To ensure the **AdControl** is functioning as expected, use the test IDs for both **ApplicationId** and **AdUnitId** found in [Test mode values](test-mode-values.md).
+12. Les valeurs dynamiques des paramètres [ApplicationId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.applicationid.aspx) et [AdUnitId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.adunitid.aspx) ne doivent pas être testées dans l’émulateur. Pour vous assurer du bon fonctionnement du contrôle **AdControl**, utilisez les ID de test pour les valeurs **ApplicationId** et **AdUnitId** contenues dans [Valeurs du mode test](test-mode-values.md).
 
 <span id="html-blackboxblinksdisappears"/>
-### Black box blinks and disappears
+### Une boîte noire clignote et disparaît
 
-1.  Double-check all steps in the previous [AdControl not appearing](#html-notappearing) section.
+1.  Vérifiez toutes les étapes indiquées dans la section précédente [AdControl invisible](#html-notappearing).
 
-2.  Handle the **onErrorOccurred** event, and use the message that is passed to the event handler to determine whether an error occurred and what type of error was thrown. More details can be found in [Error handling in JavaScript walkthrough](error-handling-in-javascript-walkthrough.md).
+2.  Gérez l’événement **onErrorOccurred**, puis utilisez le message transmis au gestionnaire d’événements pour déterminer si une erreur s’est produite et identifier le type d’erreur levée. Pour plus d’informations, voir [Gestion des erreurs dans la procédure pas à pas pour JavaScript](error-handling-in-javascript-walkthrough.md).
 
     ``` syntax
     <div id="myAd" style="position: absolute; top: 0px; left: 0px;
@@ -169,14 +169,14 @@ This topic contains solutions to common development issues with the Microsoft ad
     </div>
     ```
 
-    The most common error that causes a black box is “No ad available.” This error means there is no ad available to return from the request.
+    L’erreur la plus courante provoquant une boîte noire est la suivante: «Aucune publicité disponible». Cette erreur signifie qu’aucune publicité n’est disponible pour être retourné à partir de la demande.
 
-3.  The **AdControl** is behaving normally. By default, the **AdControl** will collapse when it cannot display an ad. If other elements are children of the same parent they may move to fill the gap of the collapsed **AdControl** and expand when the next request is made.
+3.  Le contrôle **AdControl** se comporte normalement. Par défaut, le **AdControl** est réduit s’il ne peut pas afficher de publicité. Si d’autres éléments sont des enfants du même parent, ils peuvent être déplacés pour combler le vide du contrôle **AdControl** réduit, et développés à la prochaine demande.
 
 <span id="html-adsnotrefreshing"/>
-### Ads not refreshing
+### Non-actualisation des publicités
 
-1.  Check the **isAutoRefreshEnabled** property. By default, this optional property is set to true. When set to false, the **refresh** method must be used to retrieve another ad.
+1.  Vérifiez la propriété **isAutoRefreshEnabled**. Par défaut, cette propriété facultative est définie sur true. Si elle est définie sur false, la méthode **refresh** doit être utilisée pour récupérer une autre publicité.
 
     ``` syntax
     <div id="myAd" style="position: absolute; top: 0px; left: 0px;
@@ -189,9 +189,9 @@ This topic contains solutions to common development issues with the Microsoft ad
     </div>
     ```
 
-2.  Check calls to the **refresh** method. When using automatic refresh, **refresh** cannot be used to retrieve another ad. When using manual refresh, **refresh** should be called only after a minimum of 30 to 60 seconds depending on the device’s current data connection.
+2.  Vérifiez les appels à la méthode **refresh**. Si vous utilisez l’actualisation automatique, la méthode **refresh** ne permet pas de récupérer une autre publicité. Si vous utilisez l’actualisation manuelle, la méthode **refresh** doit être appelée uniquement après un minimum de 30à 60secondes en fonction de la connexion de données actuelle de l’appareil.
 
-    This example demonstrates how to use the **refresh** method. The following HTML code shows an example of how to instantiate the **AdControl** with **isAutoRefreshEnabled** set to false.
+    Cet exemple montre comment utiliser la méthode **refresh**. Le code HTML suivant montre un exemple d’instanciation du contrôle **AdControl** avec la propriété **isAutoRefreshEnabled** définie sur false.
 
     ``` syntax
     <div id="myAd" style="position: absolute; top: 0px; left: 0px;
@@ -204,7 +204,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     </div>
     ```
 
-    Theis example demonstrates how to use the **refresh** function.
+    Cet exemple montre comment utiliser la fonction **refresh**.
 
     ``` syntax
     args.setPromise(WinJS.UI.processAll()
@@ -217,19 +217,19 @@ This topic contains solutions to common development issues with the Microsoft ad
     );
     ```
 
-3.  The **AdControl** is behaving normally. Sometimes the same ad will appear more than once in a row giving the appearance that ads are not refreshing.
+3.  Le contrôle **AdControl** se comporte normalement. Parfois, une même publicité s’affiche plusieurs fois dans une ligne, ce qui donne l’impression que les publicités ne sont pas actualisées.
 
 <span id="js"/>
 ## JavaScript
 
 <span id="js-adcontrolnotappearing"/>
-### AdControl not appearing
+### AdControl invisible
 
-1.  Ensure that the **Internet (Client)** capability is selected in Package.appxmanifest.
+1.  Assurez-vous que la fonctionnalité **Internet (client)** est sélectionnée dans le fichier Package.appxmanifest.
 
-2.  Ensure the **AdControl** is instantiated. If the **AdControl** is not instantiated. it will not be available.
+2.  Vérifiez que le contrôle **AdControl** est instancié. S’il ne l’est pas, c’est qu’il n’est pas disponible.
 
-    The following snippets show an example of instantiating the **AdControl**. This HTML code shows an example of setting up the UI for the **AdControl**
+    Les extraits de code suivants illustrent un exemple d’instanciation du contrôle **AdControl**. Le code HTML suivant montre un exemple de configuration de l’interface utilisateur pour le contrôle **AdControl**
 
     ``` syntax
     <div id="myAd" style="position: absolute; top: 0px; left: 0px;
@@ -238,7 +238,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     </div>
     ```
 
-    The following JavaScript code shows an example of instantiating the **AdControl**
+    Le code JavaScript suivant illustre un exemple d’instanciation du contrôle **AdControl**.
 
     ``` syntax
     app.onactivated = function (args) {
@@ -260,7 +260,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     }
     ```
 
-3.  Check the parent element. The parent **&lt;div&gt;** must be correctly assigned, active, and visible.
+3.  Vérifiez l’élément parent. L’élément **&lt;div&gt;** parent doit être correctement affecté, actif et visible.
 
     ``` syntax
     var adDiv = document.getElementById("myAd");
@@ -270,7 +270,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     });  
     ```
 
-4.  Check the application ID and ad unit ID. These IDs must match the application ID and ad unit ID that you obtained in Windows Dev Center. For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md).
+4.  Vérifiez l’ID de l’application et l’ID d’unité publicitaire. Ces ID doivent correspondre à l’ID de l’application et à l’ID d’unité publicitaire que vous avez obtenus dans le Centre de développement Windows. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre application](set-up-ad-units-in-your-app.md).
 
     ``` syntax
     var myAdControl = new MicrosoftNSJS.Advertising.AdControl(adDiv, {
@@ -279,18 +279,18 @@ This topic contains solutions to common development issues with the Microsoft ad
     });  
     ```
 
-5.  Check the parent element of the **AdControl**. The parent must be active and visible.
+5.  Vérifiez l’élément parent du **AdControl**. Le parent doit être actif et visible.
 
-6.  Live values for **ApplicationId** and **AdUnitId** should not be tested in the emulator. To ensure the **AdControl** is functioning as expected, use the test IDs for both **ApplicationId** and **AdUnitId** found in [Test mode values](test-mode-values.md).
+6.  Les valeurs dynamiques des paramètres **ApplicationId** et **AdUnitId** ne doivent pas être testées dans l’émulateur. Pour vous assurer du bon fonctionnement du contrôle **AdControl**, utilisez les ID de test pour les valeurs **ApplicationId** et **AdUnitId** contenues dans [Valeurs du mode test](test-mode-values.md).
 
 <span id="js-blackboxblinksdisappears"/>
-### Black box blinks and disappears
+### Une boîte noire clignote et disparaît
 
-1.  Double-check all steps in the [AdControl not appearing](#js-adcontrolnotappearing) section.
+1.  Vérifiez toutes les étapes indiquées dans la section [AdControl invisible](#js-adcontrolnotappearing).
 
-2.  Handle the **onErrorOccurred** event, and use the message that is passed to the event handler to determine whether an error occurred and what type of error was thrown. More details can be found in [Error handling in JavaScript walkthrough](error-handling-in-javascript-walkthrough.md).
+2.  Gérez l’événement **onErrorOccurred**, puis utilisez le message transmis au gestionnaire d’événements pour déterminer si une erreur s’est produite et identifier le type d’erreur levée. Pour plus d’informations, voir [Gestion des erreurs dans la procédure pas à pas pour JavaScript](error-handling-in-javascript-walkthrough.md).
 
-    This example demonstrates how to implement an error handler that reports error messages. This snippet of HTML code provides an example of how to set up the UI to display error messages.
+    Cet exemple montre comment implémenter un gestionnaire d’erreurs signalant des messages d’erreur. Cet extrait de code HTML fournit un exemple de configuration de l’interface utilisateur pour afficher les messages d’erreur.
 
     ``` syntax
     <div style="position:absolute; width:100%; height:130px; top:300px">
@@ -299,7 +299,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     </div>
     ```
 
-    This example demonstrates how to instantiate the **AdControl**. This function would be inserted in the app.onactivated file.
+    Cet exemple montre comment instancier le contrôle **AdControl**. Cette fonction est insérée dans le fichier app.onactivated.
 
     ``` syntax
     var myAdControl = new MicrosoftNSJS.Advertising.AdControl(adDiv,
@@ -310,7 +310,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     myAdControl.onErrorOccurred = myAdError;
     ```
 
-    This example demonstrates how to report errors. This function would be inserted below the self-running function in the default.js file.
+    Cet exemple illustre le signalement des erreurs. Cette fonction est insérée sous la fonction exécutée automatiquement dans le fichier default.js.
 
     ``` syntax
     WinJS.Utilities.markSupportedForProcessing
@@ -324,16 +324,16 @@ This topic contains solutions to common development issues with the Microsoft ad
     );
     ```
 
-    The most common error that causes a black box is “No ad available.” This error means there is no ad available to return from the request.
+    L’erreur la plus courante provoquant une boîte noire est la suivante: «Aucune publicité disponible». Cette erreur signifie qu’aucune publicité n’est disponible pour être retourné à partir de la demande.
 
-3.  The **AdControl** is behaving normally. Sometimes the same ad will appear more than once in a row giving the appearance that ads are not refreshing.
+3.  Le contrôle **AdControl** se comporte normalement. Parfois, une même publicité s’affiche plusieurs fois dans une ligne, ce qui donne l’impression que les publicités ne sont pas actualisées.
 
 <span id="js-adsnotrefreshing"/>
-### Ads not refreshing
+### Non-actualisation des publicités
 
-1.  Check the **isAutoRefreshEnabled** property. By default, this optional property is set to **true**. When set to **false**, the **refresh** method must be used to retrieve another ad.
+1.  Vérifiez la propriété **isAutoRefreshEnabled**. Par défaut, cette propriété facultative est définie sur **true**. Si elle est définie sur **false**, la méthode **refresh** doit être utilisée pour récupérer une autre publicité.
 
-    This example demonstrates how to use the **isAutoRefreshEnabled** property.
+    Cet exemple montre comment utiliser la propriété **isAutoRefreshEnabled**.
 
     ``` syntax
     var myAdControl = new MicrosoftNSJS.Advertising.AdControl(adDiv,
@@ -344,9 +344,9 @@ This topic contains solutions to common development issues with the Microsoft ad
     });  
     ```
 
-2.  Check calls to the **refresh** method. When using automatic refresh, **refresh** cannot be used to retrieve another ad. When using manual refresh, **refresh** should be called only after a minimum of 30 to 60 seconds depending on the device’s current data connection.
+2.  Vérifiez les appels à la méthode **refresh**. Si vous utilisez l’actualisation automatique, la méthode **refresh** ne permet pas de récupérer une autre publicité. Si vous utilisez l’actualisation manuelle, la méthode **refresh** doit être appelée uniquement après un minimum de 30à 60secondes en fonction de la connexion de données actuelle de l’appareil.
 
-    This example demonstrates how to create the **div** for the **AdControl**.
+    Cet exemple montre comment créer l’élément **div** pour le contrôle **AdControl**.
 
     ``` syntax
     <div id="myAd" style="position: absolute; top: 0px; left: 0px;
@@ -355,7 +355,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     </div>
     ```
 
-    This example shows how to use the **refresh** function
+    Cet exemple montre comment utiliser la fonction **refresh**.
 
     ``` syntax
     var myAdControl = new MicrosoftNSJS.Advertising.AdControl(adDiv,
@@ -375,7 +375,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     );
     ```
 
-3.  The **AdControl** is behaving normally. Sometimes the same ad will appear more than once in a row giving the appearance that ads are not refreshing.
+3.  Le contrôle **AdControl** se comporte normalement. Parfois, une même publicité s’affiche plusieurs fois dans une ligne, ce qui donne l’impression que les publicités ne sont pas actualisées.
 
  
 
@@ -383,6 +383,6 @@ This topic contains solutions to common development issues with the Microsoft ad
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

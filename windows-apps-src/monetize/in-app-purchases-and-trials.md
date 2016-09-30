@@ -1,141 +1,129 @@
 ---
 author: mcleanbyron
 ms.assetid: F45E6F35-BC18-45C8-A8A5-193D528E2A4E
-description: "Découvrez comment activer les versions d’évaluation et achats in-app dans les applicationsUWP."
-title: "Versions d’évaluation et achats in-app"
-translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 99143d48a5f2155b0a47008574d0a78243dea925
-
+description: Learn how to enable in-app purchases and trials in UWP apps.
+title: In-app purchases and trials
 ---
 
-# Versions d’évaluation et achats in-app
+# In-app purchases and trials
 
-Le SDK Windows fournit des API que vous pouvez utiliser pour ajouter des achats in-app et la fonctionnalité d’évaluation dans votre application de plateforme Windows universelle (UWP) afin de monétiser votre application et d’enrichir ses fonctionnalités. Ces API permettent également d’accéder aux informations de licence de votre application.
+The Windows SDK provides APIs you can use to add in-app purchases and trial functionality to your Universal Windows Platform (UWP) app to help monetize your app and add new functionality. These APIs also provide access to the license info for your app.
 
-Pour ces scénarios, Windows10 offre deuxAPI différentes:
+For these scenarios, Windows 10 offers two different APIs:
 
-* Toutes les versions de Windows10 prennent en charge une API pour les achats in-app et les informations de licence dans l’espace de noms [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx).
+* All versions of Windows 10 support an API for in-app purchases and license info in the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace.
 
-* Depuis Windows10 version1607, il existe une autre API pour les achats in-app et les informations de licence dans l’espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx).  
+* Starting in Windows 10, version 1607, there is an alternate API for in-app purchases and license info in the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace.  
 
-Bien que les API dans ces espaces de noms servent les mêmes objectifs, elles sont conçues légèrement différemment et leur code n’est pas compatible. Si votre application cible Windows10 version1607 ou ultérieure, nous vous recommandons d’utiliser l’espace de noms **Windows.Services.Store**. Celui-ci prend en charge les types de module complémentaire les plus récents, comme les modules complémentaires consommables gérés par le Windows Store. Il est conçu pour être compatible avec les futurs types de produits et de fonctionnalités pris en charge par le Centre de développement Windows et le WindowsStore. L’espace de noms **Windows.Services.Store** est également plus performant.
+Although the APIs in these namespaces serve the same goals, they are designed quite differently, and code is not compatible between the two APIs. If your app targets Windows 10, version 1607 or later, we recommend that you use the **Windows.Services.Store** namespace. This namespace supports the latest add-on types, such as Store-managed consumable add-ons, and is designed to be compatible with future types of products and features supported by Windows Dev Center and the Store. The **Windows.Services.Store** namespace is also designed to have better performance than the **Windows.ApplicationModel.Store** namespace.
 
-Cet article présente les achats in-app des applicationsUWP et décrit l’espace de noms **Windows.Services.Store** disponible depuis Windows10 version1607. Pour plus d’informations sur l’utilisation des membres dans l’espace de noms **Windows.ApplicationModel.Store**, consultez [Achats in-app et versions d’évaluation utilisant l’espace de noms Windows.ApplicationModel.Store](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
+This article introduces in-app purchases for UWP apps and provides an overview of the **Windows.Services.Store** namespace that is available starting in Windows 10, version 1607. For information about using the members in the **Windows.ApplicationModel.Store** namespace, see [In-app purchases and trials using the Windows.ApplicationModel.Store namespace](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
 
 
-## Vue d’ensemble des achats in-app dans les applicationsUWP
+## Overview of in-app purchases in UWP apps
 
-Cette section décrit les concepts de base décrivant le fonctionnement des achats in-app et des versions d’évaluation avec les applicationsUWP dans le WindowsStore. La plupart de ces concepts s’appliquent aux espaces de noms **Windows.Services.Store** et **Windows.ApplicationModel.Store**.
+This section describes core concepts about how in-app purchases and trials work with UWP apps in the Store. Most of these concepts apply to both the **Windows.Services.Store** and the **Windows.ApplicationModel.Store** namespaces.
 
-En général, chaque élément proposé dans le WindowsStore est appelé *produit*. La plupart des développeurs utilisent les types de produit suivants: *applications* et *modules complémentaires* (également appelés produits dans l’application ou produits in-app). Un module complémentaire fait référence à un produit ou une fonctionnalité que vous rendez disponibles à vos clients dans le cadre de votre application. Un module complémentaire peut représenter une fonctionnalité que votre application propose aux clients: par exemple, la devise à utiliser dans une application ou un jeu, les nouvelles cartes ou armes d’un jeu, la possibilité d’utiliser votre application sans publicité, ou le contenu numérique comme de la musique ou des vidéos pour les applications qui peuvent proposer ce type de contenu.
+Every item that is offered in the Store is generally called a *product*. Most developers work with the following types of products: *apps* and *add-ons* (also known as in-app products or IAPs). An add-on refers to a product or feature that you make available to your customers in the context of your app. An add-on can represent any functionality that your app offers to customers; for example, new maps or weapons for a game, the ability to use your app without ads, or digital content such as music or videos for apps that have the ability to offer that type of content.
 
-Chaque application ou module complémentaire a une licence qui indique si l’utilisateur est autorisé à l’utiliser. Si l’utilisateur est autorisé à utiliser l’application ou le module complémentaire en tant que version d’évaluation, la licence fournit également des informations supplémentaires sur la version d’évaluation.
+Every app and add-on has an associated license that indicates whether the user is entitled to use the app or add-on. If the user is entitled to use the app or add-on as a trial, the license also provides additional info about the trial.
 
-Pour offrir un module complémentaire aux clients dans votre application, commencez par [définir les modules complémentaires de votre application dans le tableau de bord du Centre de développement](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions). Ensuite, écrivez du code dans votre application pour déterminer si l’utilisateur est autorisé à utiliser la fonctionnalité représentée par le module complémentaire, et proposez le module complémentaire à la vente à l’utilisateur comme un achat in-app, s’il ne possède pas encore la licence correspondante. Pour obtenir des exemples qui illustrent des tâches associées utilisant l’espace de noms **Windows.Services.Store** dans les applications qui ciblent Windows10 version1607 ou ultérieure, consultez les articles suivants:
+To offer an add-on to customers in your app, start by [defining the add-ons for your app in the Dev Center dashboard](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions). Then, write code in your app to determine whether the user has a license to use the feature that is represented by the add-on, and offer the add-on for sale to the user as an in-app purchase if they don't yet have a license for it. For examples that demonstrate related tasks using the **Windows.Services.Store** namespace in apps that target Windows 10, version 1607 or later, see the following articles:
 
-* [Obtenir les informations produit des applications et modules complémentaires](get-product-info-for-apps-and-add-ons.md)
-* [Obtenir les informations de licence des applications et des modules complémentaires](get-license-info-for-apps-and-add-ons.md)
-* [Activer les achats in-app d’applications et de modules complémentaires](enable-in-app-purchases-of-apps-and-add-ons.md)
-* [Activer les achats de modules complémentaires consommables](enable-consumable-add-on-purchases.md)
-* [Implémenter une version d’évaluation de votre application](implement-a-trial-version-of-your-app.md)
+* [Get product info for apps and add-ons](get-product-info-for-apps-and-add-ons.md)
+* [Get license info for apps and add-ons](get-license-info-for-apps-and-add-ons.md)
+* [Enable in-app purchases of apps and add-ons](enable-in-app-purchases-of-apps-and-add-ons.md)
+* [Enable consumable add-on purchases](enable-consumable-add-on-purchases.md)
+* [Implement a trial version of your app](implement-a-trial-version-of-your-app.md)
 
-Pour obtenir des exemples illustrant les tâches associées utilisant l’espace de noms **Windows.ApplicationModel.Store**, consultez [Achats in-app et versions d’évaluation utilisant l’espace de noms Windows.ApplicationModel.Store](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
+For examples that demonstrate related tasks using the **Windows.ApplicationModel.Store** namespace, see [In-app purchases and trials using the Windows.ApplicationModel.Store namespace](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md).
 
-Tous les développeurs peuvent créer les types suivants de module complémentaire.
+All developers can create the following types of add-ons.
 
-| Type de module complémentaire |  Description  |
+| Add-on type |  Description  |
 |---------|-------------------|
-| Durable  |  Module complémentaire conservé pendant la durée de vie que vous spécifiez dans le [tableau de bord du Centre de développement Windows](https://msdn.microsoft.com/windows/uwp/publish/enter-iap-properties). <p/><p/>Par défaut, les modules complémentaires durables n’ont pas de date d’expiration et ne peuvent donc être achetés qu’une seule fois. Si vous spécifiez une durée pour le module complémentaire, l’utilisateur peut racheter le module complémentaire après l’expiration de ce dernier.  |
-| Consommable géré par le développeur  |  Module complémentaire qu’il est possible d’acheter, d’utiliser et d’acheter à nouveau. Ce type de module complémentaire est généralement utilisé pour les devises dans l’application. <p/><p/>Pour ce type de consommable, vous devez gérer le solde d’éléments de l’utilisateur, qui représente le module complémentaire, et signaler l’achat du module complémentaire comme épuisé dans le WindowsStore une fois que l’utilisateur a consommé tous les éléments. L’utilisateur ne peut pas acheter à nouveau le module complémentaire, tant que votre application n’a pas signalé le module complémentaire précédent comme épuisé. <p/><p/>Par exemple, si votre module complémentaire représente 100pièces dans un jeu et que l’utilisateur en consomme10, votre application ou votre service doit maintenir le nouveau solde restant de 90pièces pour l’utilisateur. Une fois que l’utilisateur a consommé les 100pièces, votre application doit signaler le module complémentaire comme épuisé. Ensuite, l’utilisateur peut racheter le module complémentaire de 100pièces.    |
-| Consommable géré par le WindowsStore  |  Module complémentaire qu’il est possible d’acheter, d’utiliser et d’acheter à nouveau. Ce type de module complémentaire est généralement utilisé pour les devises dans l’application.<p/><p/>Pour ce type de consommable, le WindowsStore gère le solde d’éléments de l’utilisateur, que le module complémentaire représente. Lorsque l’utilisateur utilise des éléments, vous devez les déclarer comme consommés dans le Store qui met à jour le solde de l’utilisateur. Votre application peut demander le solde actuel de l’utilisateur à tout moment. Une fois que l’utilisateur a consommé tous les éléments, l’utilisateur peut acheter le module complémentaire à nouveau.  <p/><p/> Par exemple, si votre module complémentaire représente une quantité initiale de 100pièces dans un jeu et que l’utilisateur consomme 10pièces, votre application signale au Store que 10unités du module complémentaire ont été consommées, et le Windows Store met à jour le solde restant. Une fois que l’utilisateur a consommé les 100pièces, l’utilisateur peut à nouveau acheter le module complémentaire de 100pièces. <p/><p/> **Les consommables gérés par le WindowsStore sont disponibles à partir de Windows10 version1607. Il sera bientôt possible de créer un consommable géré par le WindowsStore dans le tableau de bord du Centre de développement Windows.**  |
+| Durable  |  An add-on that can only be purchased once. |
+| Developer-managed consumable  |  An add-on that can be purchased, used, and purchased again. For this type of consumable, you are responsible for keep tracking of the user's balance of items that the add-on represents. For example, if your add-on represents 100 coins in a game and the user consumes 10 coins, your app must report the add-on as fulfilled to the Store and your app or service must update the new remaining balance for the user (in this example, the user now has 90 coins left).  |
+| Store-managed consumable  |  An add-on that can be purchased, used, and purchased again. For this type of consumable, Microsoft keeps track of the user's balance of items that the add-on represents. For example, if your add-on represents an initial quantity of 100 coins in a game and the user consumes 10 coins, your app reports to the Store that 10 units of the add-on were fulfilled, and the Store updates the remaining balance. You can use a method to query for the current balance. <p/><p/> **Store-managed consumables are available starting in Windows 10, version 1607. The ability to create a Store-managed consumable in the Windows Dev Center dashboard is coming soon.**  |
 
 <span />
 
->**Remarque**&nbsp;&nbsp;D’autres types de module complémentaire, comme les modules complémentaires durables avec des packages (également appelés contenu téléchargeable ou DLC) ne sont disponibles que pour un groupe restreint de développeurs et ne sont pas traités dans cette documentation.
+>**Note** Other types of add-ons, such as durable add-ons with packages (also known as downloadable content or DLC) are only available to a restricted set of developers, and are not covered in this documentation.
 
 <span id="api_intro" />
-## Présentation de l’espace de noms Windows.Services.Store
+## Introduction to the Windows.Services.Store namespace
 
-Le point d’entrée principal de l’espace de noms **Windows.Services.Store** est la classe [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx). Cette classe fournit des méthodes que vous pouvez utiliser, entre autres, pour obtenir des informations sur l’application active et ses modules complémentaires disponibles, acheter une application ou un module complémentaire pour l’utilisateur actuel, et obtenir des informations sur la licence de l’application en cours ou de ses modules complémentaires. Pour obtenir un objet [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx), effectuez l’une des opérations suivantes:
+The main entry point to the **Windows.Services.Store** namespace is the [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) class. This class provides methods you can use to get info for the current app and its available add-ons, purchase an app or add-on for the current user, get license info for the current app or its add-ons, and other tasks. To get a [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) object, do one of the following:
 
-* Dans une application mono-utilisateur (c’est-à-dire une application qui ne s’exécute que dans le contexte de l’utilisateur qui l’a lancée), utilisez la méthode [GetDefault](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getdefault.aspx) pour obtenir un objet **StoreContext** que vous pouvez utiliser pour consulter et gérer les données du WindowsStore concernant l’utilisateur. La plupart des applications de plateforme Windows universelle (UWP) sont des applications mono-utilisateur.
+* In a single-user app (that is, an app that runs only in the context of the user that launched the app), use the [GetDefault](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getdefault.aspx) method to get a **StoreContext** object that you can use to access and manage Windows Store-related data for the user. Most Universal Windows Platform (UWP) apps are single-user apps.
 
   ```csharp
   Windows.Services.Store.StoreContext context = StoreContext.GetDefault();
   ```
 
-* Dans une application multi-utilisateur, utilisez la méthode [GetForUser](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getforuser.aspx) pour obtenir un objet **StoreContext** que vous pouvez utiliser pour consulter et gérer les données du WindowsStore concernant un utilisateur connecté avec son compte Microsoft pendant qu’il utilise l’application. Pour plus d’informations sur les applications multi-utilisateur, consultez [Présentation des applications multi-utilisateur](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications). L’exemple suivant obtient un objet **StoreContext** pour le premier utilisateur disponible.
+* In a multi-user app (that is, an app that runs only in the context of the user that launched the app), use the [GetForUser](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getforuser.aspx) method to get a **StoreContext** object that you can use to access and manage Windows Store-related data for a specific user who is signed in with their Microsoft account while using the app. For more information about multi-user apps, see [Introduction to multi-user applications](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications). The following example gets a **StoreContext** object for the first available user.
 
   ```csharp
   var users = await Windows.System.User.FindAllAsync();
   Windows.Services.Store.StoreContext context = StoreContext.GetForUser(users[0]);
   ```
 
-Lorsque vous avez un objet [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx), vous pouvez commencer à appeler des méthodes pour acheter une application ou un module complémentaire pour l’utilisateur actuel et d’autres tâches. Pour plus d’informations, consultez les articles suivants:
+After you have a [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx), you can start calling methods to purchase an app or add-on for the current user and other tasks. For more information, see the following articles:
 
-* [Obtenir les informations produit des applications et modules complémentaires](get-product-info-for-apps-and-add-ons.md)
-* [Obtenir les informations de licence des applications et des modules complémentaires](get-license-info-for-apps-and-add-ons.md)
-* [Activer les achats in-app d’applications et de modules complémentaires](enable-in-app-purchases-of-apps-and-add-ons.md)
-* [Activer les achats de modules complémentaires consommables](enable-consumable-add-on-purchases.md)
-* [Implémenter une version d’évaluation de votre application](implement-a-trial-version-of-your-app.md)
-
-Pour un exemple complet montrant comment implémenter des versions d’évaluation et des achats in-app à l’aide de l’espace de noms **Windows.Services.Store**, consultez la section [Exemple Store](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store).
+* [Get product info for apps and add-ons](get-product-info-for-apps-and-add-ons.md)
+* [Get license info for apps and add-ons](get-license-info-for-apps-and-add-ons.md)
+* [Enable in-app purchases of apps and add-ons](enable-in-app-purchases-of-apps-and-add-ons.md)
+* [Enable consumable add-on purchases](enable-consumable-add-on-purchases.md)
+* [Implement a trial version of your app](implement-a-trial-version-of-your-app.md)
 
 <span />
-### Modèle d’objet pour les produits, références et disponibilités
+### Object model for products, SKUs, and availabilities
 
-Chaque produit dans le WindowsStore a au moins une *référence (SKU)*, et chaque référence (SKU) a au moins une *disponibilité*. Ces concepts sont employés par la plupart des développeurs dans le tableau de bord du Centre de développement Windows. La plupart des développeurs ne définissent jamais les références (SKU) ou les disponibilités de leurs applications ou modules complémentaires. Toutefois, comme le modèle d’objet des produits du WindowsStore dans l’espace de noms **Windows.Services.Store** contient des références (SKU) et des disponibilités, la compréhension de ces concepts de base peut être utile.
+Every product in the Store has at least one *SKU*, and each SKU has at least one *availability*. These concepts are abstracted away from most developers in the Windows Dev Center dashboard, and most developers will never define SKUs or availabilities for their apps or add-ons. However, because the object model for Store products in the **Windows.Services.Store** namespace includes SKUs and availabilities, a basic understanding of these concepts can be helpful.
 
-| Type d’objet |  Description  |
+| Object type |  Description  |
 |---------|-------------------|
-| Produit  |  La classe [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) représente un type de produit disponible dans le WindowsStore, notamment une application ou un modèle complémentaire. Cette classe fournit des propriétés qui vous permettent d’accéder à des données, telles que l’ID WindowsStore du produit, les images et vidéos de la liste du WindowsStore, ainsi que des informations tarifaires. Elle fournit également des méthodes que vous pouvez utiliser pour acheter le produit. |
-| Référence (SKU) |  La classe [StoreSku](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.aspx) représente la *référence (SKU)* d’un produit. Une référence (SKU) est une version spécifique d’un produit avec sa propre description, son prix et d’autres détails uniques sur le produit. Chaque application ou module complémentaire a une référence (SKU) par défaut. Le seul cas où la plupart des développeurs ont plusieurs références (SKU) pour une application, c’est lorsqu’ils publient une version complète de leur application et une version d’évaluation. Dans le catalogue du WindowsStore, chacune de ces versions a une référence (SKU) différente de la même application. <p/><p/> Certains éditeurs peuvent définir leurs propres références (SKU). Par exemple, un grand éditeur de jeux peut commercialiser un jeu avec une référence (SKU) qui affiche du sang vert sur les marchés qui n’autorisent pas le sang rouge et une autre référence (SKU) montrant du sang rouge sur tous les autres marchés. Autre possibilité, un éditeur qui vend des contenus vidéo numériques peut publier deuxréférences (SKU) pour une vidéo: une pour la version haute définition et une autre pour la version en définition standard. <p/><p/> Chaque produit a une propriété [Skus](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.skus.aspx) que vous pouvez utiliser pour accéder aux références (SKU). |
-| Disponibilité  |  La classe [StoreAvailability](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeavailability.aspx) représente la *disponibilité* d’une référence (SKU). Une disponibilité est une version spécifique d’une référence (SKU) avec des informations de tarification qui lui sont propres. Chaque référence (SKU) a une disponibilité par défaut. Certains éditeurs peuvent définir leurs propres disponibilités pour proposer des prix différents pour une référence (SKU) donnée. <p/><p/> Chaque référence (SKU) a une propriété [Availabilities](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.availabilities.aspx) que vous pouvez utiliser pour accéder aux disponibilités. Pour la plupart des développeurs, chaque référence (SKU) a une disponibilité unique par défaut.  |
+| Product  |  The [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) class represents any type of product that is available in the Store, including an app or add-on. This class provides properties you can use to access data such as the Store ID of the product, the images and videos for the Store listing, and pricing info. It also provides methods you can use to purchase the product. |
+| SKU |  The [StoreSku](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.aspx) class represents a *SKU* for a product. A SKU is a specific version of a product with its own description, price, and other unique product details. Each app or add-on has a default SKU. The only time most developers will ever have multiple SKUs for an app is if they publish a full version of your app and a trial version (in the Store catalog, each of these versions is a different SKU of the same app). <p/><p/> Some publishers have the ability to define their own SKUs. For example, a large game publisher might release a game with one SKU that shows green blood in markets that don't allow red blood and a different SKU that shows red blood in all other markets. Alternatively, a publisher who sells digital video content might publish two SKUs for a video, one SKU for the high-definition version and a different SKU for the standard-definition version. <p/><p/> Each product has a [Skus](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.skus.aspx) property you can use to access the SKUs. |
+| Availability  |  The [StoreAvailability](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeavailability.aspx) class represents an *availability* for a SKU. An availability is a specific version of a SKU with its own unique pricing info. Each SKU has a default availability. Some publishers have the ability to define their own availabilities to introduce different price options for a given SKU. <p/><p/> Each SKU has an [Availabilities](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.availabilities.aspx) property you can use to access the availabilities. For most developers, each SKU has a single default availability.  |
 
 <span id="store_ids" />
-### ID WindowsStore
+### Store IDs
 
-Chaque application ou module complémentaire dans le WindowsStore a un **ID WindowsStore**. Un grand nombre d’API dans l’espace de noms **Windows.Services.Store** requièrent l’ID WindowsStore pour effectuer une opération sur une application ou un module complémentaire. Les produits, références (SKU) et disponibilités ont des ID WindowsStore de différents formats.
+Every app and add-on in the Store has an associated **Store ID**. Many of the APIs in the **Windows.Services.Store** namespace require the Store ID in order to perform an operation on an app or add-on. Products, SKUs, and availabilities have different Store ID formats.
 
-| Type d’objet |  Format de l’ID Windows Store  |
+| Object type |  Store ID format  |
 |---------|-------------------|
-| Produit  |  L’ID WindowsStore d’un produit dans le WindowsStore est composé de 12caractères alphanumériques, comme ```9NBLGGH4R315```. Cet ID figure dans le tableau de bord du Centre de développement Windows de l’application ou du module complémentaire, et il est renvoyé par la propriété [StoreID](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.storeid.aspx) de l’objet [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx). Cet ID est parfois appelé *ID WindowsStore du produit*. |
-| Référence (SKU) |  Pour une référence (SKU), l’ID WindowsStore présente le format ```<product Store ID>/xxxx```, où ```xxxx``` est une chaîne alphanumérique de 4caractères qui identifie une référence (SKU) du produit. Exemple: ```9NBLGGH4R315/000N```. Cet ID est renvoyé par la propriété [StoreID](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.storeid.aspx) d’un objet [StoreSku](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.aspx) et il est parfois appelé *ID Windows Store de référence*. |
-| Disponibilité  |  Pour une disponibilité, l’ID WindowsStore a le format ```<product Store ID>/xxxx/yyyyyyyyyyyy```, où ```xxxx``` est une chaîne alphanumérique de 4caractères qui identifie une référence (SKU) du produit et ```yyyyyyyyyyyy``` est une chaîne alphanumérique de 12caractères qui identifie une disponibilité de la référence (SKU). Exemple: ```9NBLGGH4R315/000N/4KW6QZD2VN6X```. Cet ID est renvoyé par la propriété [StoreID](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeavailability.storeid.aspx) d’un objet [StoreAvailability](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeavailability.aspx) et il est parfois appelé *ID WindowsStore de disponibilité*.  |
+| Product  |  The Store ID of any product in the Store is 12-character alpha-numeric string, such as ```9NBLGGH4R315```. This Store ID is available in the Windows Dev Center dashboard page for the app or add-on, and it is returned by the [StoreId](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.storeid.aspx) property [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) object. This ID is sometimes called the *product Store ID*. |
+| SKU |  For a SKU, the Store ID has the format ```<product Store ID>/xxxx```, where ```xxxx``` is a 4-character alpha-numeric string that identifies a SKU for the product. For example, ```9NBLGGH4R315/000N```. This ID is returned by the [StoreId](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.storeid.aspx) property of a  [StoreSku](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storesku.aspx) object, and it is sometimes called the *SKU Store ID*. |
+| Availability  |  For an availability, the Store ID has the format ```<product Store ID>/xxxx/yyyyyyyyyyyy```, where ```xxxx``` is a 4-character alpha-numeric string that identifies a SKU for the product and ```yyyyyyyyyyyy``` is a 12-character alpha-numeric string that identifies an availability for the SKU. For example, ```9NBLGGH4R315/000N/4KW6QZD2VN6X```. This ID is returned by the [StoreId](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeavailability.storeid.aspx) property of a  [StoreAvailability](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeavailability.aspx) object, and it is sometimes called the *availability Store ID*.  |
 
 <span id="testing" />
-### Test d’applications qui utilisent l’espace de noms Windows.Services.Store
+### Testing apps that use the Windows.Services.Store namespace
 
-L’espace de noms **Windows.Services.Store** ne fournit pas une classe que vous pouvez utiliser pour simuler des informations de licence lors d’un test. En revanche, vous devez publier une application dans le WindowsStore et télécharger cette application sur votre appareil de développement pour utiliser sa licence à des fins de test. Cette expérience est différente des applications qui utilisent l’espace de noms **Windows.ApplicationModel.Store**, car ces dernières peuvent utiliser la classe [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) pour simuler des informations de licence lors du test.
+The **Windows.Services.Store** namespace does not provide a class that you can use to simulate license info during testing. Instead, you must publish an app to the Store and download that app to your development device to use its license for testing. This is a different experience from apps that use the **Windows.ApplicationModel.Store** namespace, as these apps can use the [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) class to simulate license info during testing
 
-Si votre application utilise des API dans l’espace de noms **Windows.Services.Store** pour accéder aux informations de votre application et ses modules complémentaires, procédez comme suit pour tester votre code:
+If your app uses APIs in the **Windows.Services.Store** namespace to access info for your app and its add-ons, follow this process to test your code:
 
-1. Si votre application est déjà publiée et disponible dans le WindowsStore et que vous voulez la mettre à jour pour qu’elle utilise les API dans l’espace de noms **Windows.Services.Store**, vous êtes prêt à commencer. Si vous souhaitez proposer des modules complémentaires pour l’application, veillez à [définir les modules complémentaires de votre application](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions) dans le tableau de bord du Centre de développement.
+1. If your app is already published and available in the Store and you want to update this app to use APIs in the **Windows.Services.Store** namespace, you are ready to get started. If you want to offer add-ons for the app, make sure that you [define the add-ons for your app](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions) in the Dev Center dashboard.
 
-  Si vous n’avez aucune application publiée et disponible dans le WindowsStore, créez une application de base qui répond aux conditions minimales requises par le [Kit de certification des applications Windows](https://developer.microsoft.com/windows/develop/app-certification-kit), puis [envoyez cette application](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) au tableau de bord du Centre de développement Windows. Si vous souhaitez proposer des modules complémentaires pour l’application, veillez à [définir les modules complémentaires de votre application](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions). Le cas échéant, vous pouvez [masquer l’application dans le WindowsStore](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability) pendant le test.
+  If you don't yet have an app that is published and available in the Store, build a basic app that meets minimum [Windows App Certification Kit](https://developer.microsoft.com/windows/develop/app-certification-kit) requirements and [submit this app](https://msdn.microsoft.com/windows/uwp/publish/app-submissions) to the Windows Dev Center dashboard. If you want to offer add-ons for the app, make sure that you [define the add-ons for your app](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions). Optionally, you can [hide the app from the Store](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability) during testing.
 
-2. Dans votre application, écrivez du code qui utilise l’une des méthodes [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) dans l’espace de noms **Windows.Services.Store** pour effectuer des tâches comme [rendre les modules complémentaires disponibles pour l’application active](get-product-info-for-apps-and-add-ons.md), [acheter une application ou un module complémentaire](enable-in-app-purchases-of-apps-and-add-ons.md), ou [obtenir les informations de licence de votre application](get-license-info-for-apps-and-add-ons.md). Pour plus d’exemples, consultez la section Rubriques connexes ci-dessous.
+2. Write code in your app that uses one of the [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) methods in the **Windows.Services.Store** namespace to perform tasks such as [getting the add-ons available for the current app](get-product-info-for-apps-and-add-ons.md), [purchasing an app or add-on](enable-in-app-purchases-of-apps-and-add-ons.md), or [getting license info for your app](get-license-info-for-apps-and-add-ons.md). See the related topics section below for more examples.
 
-3. Dans VisualStudio, cliquez sur le **menu Projet**, pointez sur **Store**, puis cliquez sur **Associer l’application au WindowsStore**. Suivez les instructions de l’Assistant pour associer le projet d’application à l’application dans votre compte du Centre de développement Windows à utiliser pour le test.
+3. In Visual Studio, click the **Project menu**, point to **Store**, and then click **Associate App with the Store**. Complete the instructions in the wizard to associate the app project with the app in your Windows Dev Center account that you want to use for testing.
 
-  >**Remarque**&nbsp;&nbsp;Si vous n’associez pas votre projet à une application du Windows Store, les méthodes [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) attribuent le code d’erreur0x803F6107 à la propriété **ExtendedError** dans la valeur renvoyée. Cette valeur indique que le WindowsStore ne connaît pas l’application.
+  >**Note** If you do not associate your project with an app in the Store, the [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) methods set the **ExtendedError** property of their return values to the error code value 0x803F6107. This value indicates that the Store doesn't have any knowledge about the app.
 
-4. Si ce n’est déjà fait, installez l’application à partir du WindowsStore que vous avez spécifié à l’étape précédente, exécutez l’application une fois, puis fermez-la. Ceci garantit l’installation d’une licence valide de l’application sur votre appareil de développement.
+4. If you have not done so already, install the app from the Store that you specified in the previous step, run the app once, and then close this app. This ensures that a valid license for the app is installed to your development device.
 
-5. Dans VisualStudio, exécutez ou déboguez votre projet. Votre code doit récupérer les données d’application et de module complémentaire, à partir de l’application WindowsStore que vous avez associée à votre projet local. Si vous êtes invité à réinstaller l’application, suivez les instructions, puis exécutez ou déboguez votre projet.
+5. In Visual Studio, start running or debugging your project. Your code should retrieve app and add-on data from the Store app that you associated with your local project. If you are prompted to reinstall the app, follow the instructions and then run or debug your project.
 
-## Rubriques connexes
+## Related topics
 
-* [Obtenir les informations produit des applications et modules complémentaires](get-product-info-for-apps-and-add-ons.md)
-* [Obtenir les informations de licence des applications et des modules complémentaires](get-license-info-for-apps-and-add-ons.md)
-* [Activer les achats in-app d’applications et de modules complémentaires](enable-in-app-purchases-of-apps-and-add-ons.md)
-* [Activer les achats de modules complémentaires consommables](enable-consumable-add-on-purchases.md)
-* [Implémenter une version d’évaluation de votre application](implement-a-trial-version-of-your-app.md)
-* [Versions d’évaluation et achats in-app utilisant l’espace de noms Windows.ApplicationModel.Store](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)
-
-
-
-<!--HONumber=Aug16_HO5-->
-
-
+* [Get product info for apps and add-ons](get-product-info-for-apps-and-add-ons.md)
+* [Get license info for apps and add-ons](get-license-info-for-apps-and-add-ons.md)
+* [Enable in-app purchases of apps and add-ons](enable-in-app-purchases-of-apps-and-add-ons.md)
+* [Enable consumable add-on purchases](enable-consumable-add-on-purchases.md)
+* [Implement a trial version of your app](implement-a-trial-version-of-your-app.md)
+* [In-app purchases and trials using the Windows.ApplicationModel.Store namespace](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)

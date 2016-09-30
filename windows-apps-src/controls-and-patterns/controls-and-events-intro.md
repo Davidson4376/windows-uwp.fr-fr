@@ -1,90 +1,82 @@
 ---
 author: Jwmsft
-Description: You create the UI for your app by using controls such as buttons, text boxes, and combo boxes to display data and get user input. Here, we show you how to add controls to your app.
-title: Intro to controls and patterns
+Description: "Pour créer l’interface utilisateur de votre application, utilisez des contrôles tels que des boutons, des zones de texte et des zones de liste modifiable pour afficher les données et obtenir les entrées utilisateur. Cette rubrique indique comment ajouter des contrôles à votre application."
+title: "Ajouter des contrôles et gérer les événements"
 ms.assetid: 64740BF2-CAA1-419E-85D1-42EE7E15F1A5
-label: Intro to controls and patterns
+label: Intro to controls and events
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: c597b2e5a1da23247a2100aeae88beaf1bfdaa64
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 709771424daba7c034dc6f19d6998469705a24da
 
 ---
-# Intro to controls and patterns
+# Présentation des contrôles et des événements
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+Pour créer l’interface utilisateur de votre application, utilisez des contrôles tels que des boutons, des zones de texte et des zones de liste modifiable pour afficher les données et obtenir les entrées utilisateur. Cette rubrique indique comment ajouter des contrôles à votre application. Il existe 3 étapes principales pour l’ajout de contrôles à votre application : 
 
-In UWP app development, a *control* is a UI element that displays content or enables interaction. You create the UI for your app by using controls such as buttons, text boxes, and combo boxes to display data and get user input.
+- Ajoutez un contrôle à l’interface utilisateur de votre application. 
+- Définissez des propriétés sur le contrôle, telles que la largeur, la hauteur ou la couleur de premier plan. 
+- Associez du code aux gestionnaires d’événements du contrôle afin qu’il effectue une opération. 
 
-A *pattern* is a recipe for modifying a control or combining several controls to make something new. For example, the [Nav pane](nav-pane.md) pattern is a way that you can use a [SplitView](split-view.md) control for app navigation. Similarly, you can customize the template of a [Pivot](tabs-pivot.md) control to implement the tab pattern.
-
-In many cases, you can use a control as-is. But XAML controls separate function from structure and appearance, so you can make various levels of modification to make them fit your needs. In the [Style](../style/index.md) section, you can learn how to use [XAML styles](xaml-styles.md) and [control templates](control-templates.md) to modify a control.
-
-In this section, we provide guidance for each of the XAML controls you can use to build your app UI. To start, this article shows you how to add controls to your app. There are 3 key steps to using controls to your app: 
-
-- Add a control to your app UI. 
-- Set properties on the control, such as width, height, or foreground color. 
-- Add code to the control's event handlers so that it does something. 
-
-## Add a control
-You can add a control to an app in several ways:
+## Ajouter un contrôle
+Vous pouvez ajouter un contrôle à une application de plusieurs façons :
  
-- Use a design tool like Blend for Visual Studio or the Microsoft Visual Studio Extensible Application Markup Language (XAML) designer. 
-- Add the control to the XAML markup in the Visual Studio XAML editor. 
-- Add the control in code. Controls that you add in code are visible when the app runs, but are not visible in the Visual Studio XAML designer.
+- Utilisez un outil de conception tel que Blend pour Visual Studio ou le concepteur XAML (Extensible Application Markup Language) Microsoft Visual Studio. 
+- Ajoutez le contrôle au balisage XAML dans l’éditeur XAML Visual Studio. 
+- Ajoutez le contrôle dans du code. Les contrôles que vous ajoutez dans du code sont visibles lorsque l’application s’exécute, mais pas dans le concepteur XAML Visual Studio.
 
-In Visual Studio, when you add and manipulate controls in your app, you can use many of the program's features, including the Toolbox, XAML designer, XAML editor, and the Properties window. 
+Dans Visual Studio, lorsque vous ajoutez et manipulez des contrôles dans votre application, vous pouvez utiliser de nombreuses fonctionnalités du programme, notamment la boîte à outils, le concepteur XAML, l’éditeur XAML et la fenêtre Propriétés. 
 
-The Visual Studio Toolbox displays many of the controls that you can use in your app. To add a control to your app, double-click it in the Toolbox. For example, when you double-click the TextBox control, this XAML is added to the XAML view. 
+La boîte à outils Visual Studio affiche de nombreux contrôles utilisables dans votre application. Pour ajouter un contrôle à votre application, double-cliquez dessus dans la boîte à outils. Par exemple, lorsque vous double-cliquez sur le contrôle TextBox, le code XAML suivant est ajouté à la vue XAML. 
 
 ```xaml
 <TextBox HorizontalAlignment="Left" Text="TextBox" VerticalAlignment="Top"/>
 ```
 
-You can also drag the control from the Toolbox to the XAML designer.
+Vous pouvez également faire glisser le contrôle à partir de la boîte à outils jusqu’au concepteur XAML.
 
-## Set the name of a control 
+## Définir le nom d’un contrôle 
 
-To work with a control in code, you set its [x:Name](../xaml-platform/x-name-attribute.md) attribute and reference it by name in your code. You can set the name in the Visual Studio Properties window or in XAML. Here's how to set the name of the currently selected control by using the Name text box at the top of the Properties window. 
+Pour utiliser un contrôle dans du code, vous définissez son attribut [x:Name](../xaml-platform/x-name-attribute.md), puis vous le référencez par son nom dans votre code. Vous pouvez définir le nom dans la fenêtre Propriétés de Visual Studio ou en XAML. Voici comment définir le nom du contrôle actuellement sélectionné en utilisant la zone de texte Nom en haut de la fenêtre Propriétés. 
 
-To name a control
-1. Select the element to name.
-2. In the Properties panel, type a name into the Name text box.
-3. Press Enter to commit the name.
+Pour affecter un nom à un contrôle
+1. Sélectionnez l’élément à nommer.
+2. Dans le panneau Propriétés, tapez un nom dans la zone de texte Nom.
+3. Appuyez sur Entrée pour valider le nom.
 
-![Name property in the Visual Studio designer](images/add-controls-control-name-designer.png)
+![Propriété Name dans le concepteur Visual Studio](images/add-controls-control-name-designer.png)
 
-Here's how to set the name of a control in the XAML editor by adding the x:Name attribute.
+Voici comment vous pouvez définir le nom d’un contrôle dans l’éditeur XAML en ajoutant l’attribut x:Name.
 
 ```xaml
 <Button x:Name="Button1" Content="Button"/>
 ```
 
-## Set the control properties 
+## Définir les propriétés de contrôle 
 
-You use properties to specify the appearance, content, and other attributes of controls. When you add a control using a design tool, some properties that control size, position, and content might be set for you by Visual Studio. You can change some properties, such as Width, Height or Margin, by selecting and manipulating the control in the Design view. This illustration shows some of the resizing tools available in Design view. 
+Les propriétés vous permettent de spécifier l’aspect, le contenu et d’autres attributs des contrôles. Lorsque vous ajoutez un contrôle à l’aide d’un outil de conception, certaines propriétés qui contrôlent la taille, la position et le contenu peuvent être définis automatiquement par Visual Studio. Vous pouvez modifier certaines propriétés, telles que Width, Height ou Margin, en sélectionnant et en manipulant le contrôle en mode Création. L’illustration suivante montre certains des outils de redimensionnement disponibles en mode Création. 
 
-![Resizing tools in the Visual Studio designer](images/add-controls-resizing-designer.png)
+![Outils de redimensionnement dans le concepteur Visual Studio](images/add-controls-resizing-designer.png)
 
-You might want to let the control be sized and positioned automatically. In this case, you can reset the size and position properties that Visual Studio set for you.
+Vous souhaiterez peut-être laisser le contrôle être redimensionné et positionné automatiquement. Dans ce cas, vous pouvez redéfinir les propriétés de taille et de position définies automatiquement par Visual Studio.
 
-To reset a property
-1. In the Properties panel, click the property marker next to the property value. The property menu opens.
-2. In the property menu, click Reset.
+Pour réinitialiser une propriété
+1. Dans le panneau Propriétés, cliquez sur le marqueur de propriété en regard de la valeur de propriété. Le menu des propriétés s’ouvre.
+2. Dans le menu des propriétés, cliquez sur Réinitialiser.
 
-![Visual Studio property reset menu option](images/add-controls-property-reset.png)
+![Option de menu Réinitialiser de la propriété Visual Studio](images/add-controls-property-reset.png)
 
-You can set control properties in the Properties window, in XAML, or in code. For example, to change the foreground color for a Button, you set the control's Foreground property. This illustration shows how to set the Foreground property by using the color picker in the Properties window. 
+Vous pouvez définir les propriétés d’un contrôle dans la fenêtre Propriétés, en XAML ou dans du code. Par exemple, pour modifier la couleur de premier plan d’un objet Button, vous définissez la propriété Foreground du contrôle. L’illustration suivante montre comment définir la propriété Foreground à l’aide du sélecteur de couleurs dans la fenêtre Propriétés. 
 
-![Color picker in the Visual Studio designer](images/add-controls-foreground-designer.png)
+![Sélecteur de couleur dans le concepteur Visual Studio](images/add-controls-foreground-designer.png)
 
-Here's how to set the Foreground property in the XAML editor. Notice the Visual Studio IntelliSense window that opens to help you with the syntax. 
+Voici comment définir la propriété Foreground dans l’éditeur XAML. Notez l’ouverture de la fenêtre Visual Studio IntelliSense pour une entrée plus aisée de la syntaxe. 
 
-![Intellisense in XAML part 1](images/add-controls-foreground-xaml.png)
+![IntelliSense dans XAML partie 1](images/add-controls-foreground-xaml.png)
 
-![Intellisense in XAML part 2](images/add-controls-foreground-xaml-2.png)
+![IntelliSense dans XAML partie 2](images/add-controls-foreground-xaml-2.png)
 
-Here's the resulting XAML after you set the Foreground property. 
+Voici la syntaxe XAML issue de la définition de la propriété Foreground. 
 
 ```xaml
 <Button x:Name="Button1" Content="Button" 
@@ -92,23 +84,23 @@ Here's the resulting XAML after you set the Foreground property.
         Foreground="Beige"/>
 ```
 
-Here's how to set the Foreground property in code. 
+Voici comment définir la propriété Foreground dans du code. 
 
 ```csharp
 Button1.Foreground = new SolidColorBrush(Windows.UI.Colors.Beige);
 ```
 
-## Create an event handler 
+## Créer un gestionnaire d’événements 
 
-Each control has events that enable you to respond to actions from your user or other changes in your app. For example, a Button control has a Click event that is raised when a user clicks the Button. You create a method, called an event handler, to handle the event. You can associate a control's event with an event handler method in the Properties window, in XAML, or in code. For more info about events, see [Events and routed events overview](../xaml-platform/events-and-routed-events-overview.md).
+Chaque contrôle possède des événements qui réagissent aux actions de l’utilisateur ou à d’autres modifications dans votre application. Par exemple, un contrôle Button contient un événement Click qui est déclenché lorsqu’un utilisateur clique sur l’objet Button. Vous créez une méthode, appelée gestionnaire d’événements, pour gérer l’événement. Vous pouvez associer l’événement d’un contrôle à une méthode de gestionnaire d’événements dans la fenêtre Propriétés, en XAML ou dans du code. Pour plus d’informations sur les événements, voir [Vue d’ensemble des événements et des événements routés](../xaml-platform/events-and-routed-events-overview.md).
 
-To create an event handler, select the control and then click the Events tab at the top of the Properties window. The Properties window lists all of the events available for that control. Here are some of the events for a Button.
+Pour créer un gestionnaire d’événements, sélectionnez le contrôle, puis cliquez sur l’onglet Événements en haut de la fenêtre Propriétés. La fenêtre Propriétés répertorie tous les événements disponibles pour ce contrôle. Voici une partie des événements associés à un objet Button.
 
-![Visual Studio event list](images/add-controls-add-event-designer.png)
+![Liste des événements Visual Studio](images/add-controls-add-event-designer.png)
 
-To create an event handler with the default name, double-click the text box next to the event name in the Properties window. To create an event handler with a custom name, type the name of your choice into the text box and press enter. The event handler is created and the code-behind file is opened in the code editor. The event handler method has 2 parameters. The first is `sender`, which is a reference to the object where the handler is attached. The `sender` parameter is an **Object** type. You typically cast `sender` to a more precise type if you expect to check or change the state on the `sender` object itself. Based on your own app design, you expect a type that is safe to cast the `sender` to, based on where the handler is attached. The second value is event data, which generally appears in signatures as the `e` or `args` parameter.
+Pour créer un gestionnaire d’événements avec le nom par défaut, double-cliquez sur la zone de texte en regard du nom d’événement dans la fenêtre Propriétés. Pour créer un gestionnaire d’événements avec un nom personnalisé, tapez le nom de votre choix dans la zone de texte, puis appuyez sur Entrée. Le gestionnaire d’événements est créé, et le fichier code-behind est ouvert dans l’éditeur de code. La méthode de gestionnaire d’événements possède 2paramètres. Le premier est `sender`, qui est une référence à l’objet auquel le gestionnaire est attaché. Le paramètre `sender` est un type **Object**. Vous effectuez généralement une conversion de type (transtypage) `sender` en un type plus précis si vous prévoyez de vérifier ou de modifier l’état sur l’objet `sender` lui-même. En fonction de la conception de votre propre application, vous attendez un type vers lequel un transtypage de `sender` peut être effectué en toute sécurité, en fonction de l’élément auquel le gestionnaire est attaché. La seconde valeur correspond aux données d’événement, qui apparaissent généralement dans les signatures sous la forme du paramètre `e` ou `args`.
 
-Here's code that handles the Click event of a Button named `Button1`. When you click the button, the Foreground property of the Button you clicked is set to blue. 
+Voici le code qui gère l’événement Click d’un objet Button nommé `Button1`. Lorsque vous cliquez sur le bouton, la propriété Foreground de l’objet Button sur lequel vous avez cliqué a la valeur blue. 
 
 ```csharp
 private void Button_Click(object sender, RoutedEventArgs e)
@@ -118,19 +110,19 @@ private void Button_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-You can also associate an event handler in XAML. In the XAML editor, type in the event name that you want to handle. Visual Studio shows an IntelliSense window when you begin typing. After you specify the event, you can double-click `<New Event Handler>` in the IntelliSense window to create a new event handler with the default name, or select an existing event handler from the list. 
+Vous pouvez également associer un gestionnaire d’événements en XAML. Dans l’éditeur XAML, tapez le nom de l’événement à gérer. Visual Studio affiche une fenêtre IntelliSense lorsque vous commencez à taper. Après avoir spécifié l’événement, vous pouvez double-cliquer sur `<New Event Handler>` dans la fenêtre IntelliSense pour créer un gestionnaire d’événements portant le nom par défaut, ou sélectionner un gestionnaire d’événements existant dans la liste. 
 
-Here's the IntelliSense window that appears. It helps you create a new event handler or select an existing event handler.
+Voici la fenêtre IntelliSense qui apparaît. Elle vous permet de créer un gestionnaire d’événements ou de sélectionner un gestionnaire d’événements existants.
 
-![Intellisense for the click event](images/add-controls-add-event-xaml.png)
+![IntelliSense pour l’événement Click](images/add-controls-add-event-xaml.png)
 
-This example shows how to associate a Click event with an event handler named Button_Click in XAML. 
+L’exemple suivant montre comment associer un événement Click à un gestionnaire d’événements nommé Button_Click en XAML. 
 
 ```xaml
 <Button Name="Button1" Content="Button" Click="Button_Click"/>
 ```
 
-You can also associate an event with its event handler in the code-behind. Here's how to associate an event handler in code.
+Vous pouvez également associer un événement à son gestionnaire d’événements dans le code-behind. Voici comment associer un gestionnaire d’événements dans du code.
 
 ```csharp
 Button1.Click += new RoutedEventHandler(Button_Click);
@@ -138,16 +130,14 @@ Button1.Click += new RoutedEventHandler(Button_Click);
 
 
 
-## Related topics
+## Rubriques connexes
 
--   [Index of controls by function](controls-by-function.md)
--   [Windows.UI.Xaml.Controls namespace](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
--   [Layout](../layout/index.md)
--   [Style](../style/index.md)
--   [Usability](../usability/index.md)
+-   [**Barre de commandes**](app-bars.md)
+-   [Rechercher](search.md)
+-   [Menus volants](dialogs-popups-menus.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

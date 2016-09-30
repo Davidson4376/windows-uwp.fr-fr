@@ -1,94 +1,81 @@
 ---
 author: Jwmsft
-Description: Used to select or deselect action items. Can be used for a single list item or for multiple list items.
-title: Check boxes
+Description: "Permet de sélectionner ou de désélectionner des éléments d’action. Peut être utilisée pour un ou plusieurs éléments de liste."
+title: "Cases à cocher"
 ms.assetid: 6231A806-287D-43EE-BD8D-39D2FF761914
 label: Check boxes
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: f565acbebbee8b8fb88a72970c9dbe3202ba24df
+ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
+ms.openlocfilehash: b1532ef10a284cbb6e28694ab1598c08b8619773
 
 ---
-# Check boxes
+# Cases à cocher
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+Une case à cocher permet de sélectionner ou de désélectionner des éléments d’action. Elle peut être utilisée pour un élément unique ou pour une liste de plusieurs éléments parmi lesquels l’utilisateur peut en choisir quelques-uns. Le contrôle possède trois états de sélection: l’état désélectionné, l’état sélectionné et l’état indéterminé. Sélectionnez l’état indéterminé lorsqu’une collection de sous-choix possède des états désélectionné et sélectionné.
 
-A check box is used to select or deselect action items. It can be used for a single item or for a list of multiple items that a user can choose from. The control has three selection states: unselected, selected, and indeterminate. Use the indeterminate state when a collection of sub-choices have both unselected and selected states.
-
-![Example of check box states](images/templates-checkbox-states-default.png)
-
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br209316"><strong>CheckBox class</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx"><strong>Checked event</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx"><strong>IsChecked property</strong></a> </li>
-</ul>
-
-</div>
-</div>
+![Exemple d’états de case à cocher](images/templates-checkbox-states-default.png)
 
 
+-   [**Classe CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316)
+-   [**Événement Checked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)
+-   [**Propriété IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) 
 
+## Est-ce le contrôle approprié?
 
+Utilisez une **case à cocher unique** pour un choix binaire Oui/Non, comme avec la question «Mémoriser mes informations?» scénario de connexion avec conditions d’utilisation du service.
 
+![Case à cocher unique pour un choix individuel](images/checkbox1.png)
 
-## Is this the right control?
+Dans le cas d’un choix binaire, la seule différence entre une **case à cocher** et un [**bouton bascule**](toggles.md) est que le premier désigne un état, tandis que le deuxième indique une action. Vous pouvez retarder la validation d’une opération de case à cocher (par exemple, dans le cadre de l’envoi d’un formulaire) alors que l’utilisation d’un bouton bascule nécessite une action immédiate de votre part. Seules les cases à cocher autorisent une sélection multiple.
 
-Use a **single check box** for a binary yes/no choice, such as with a "Remember me?" login scenario or with a terms of service agreement.
+Utilisez **plusieurs cases à cocher** pour les scénarios à sélection multiple dans lesquels un utilisateur choisit un ou plusieurs éléments à partir d’un groupe d’options qui ne s’excluent pas mutuellement.
 
-![A single check box used for an individual choice](images/checkbox1.png)
+Créez un groupe de cases à cocher quand les utilisateurs peuvent choisir une combinaison quelconque d’options.
 
-For a binary choice, the main difference between a **check box** and a [**toggle switch**](toggles.md) is that the check box is for status and the toggle switch is for action. You can delay committing a check box interaction (as part of a form submit, for example), while you should immediately commit a toggle switch interaction. Also, only check boxes allow for multi-selection.
+![Sélection de plusieurs options à l’aide de cases à cocher](images/checkbox2.png)
 
-Use **multiple check boxes** for multi-select scenarios in which a user chooses one or more items from a group of choices that are not mutually exclusive.
+Lorsque les options peuvent être regroupées, vous pouvez utiliser une case à cocher indéterminée pour représenter le groupe entier. Utilisez l’état indéterminé de la case à cocher quand un utilisateur sélectionne une partie, et non l’ensemble, des éléments dans le groupe.
 
-Create a group of check boxes when users can select any combination of options.
+![Cases à cocher indiquant un choix mixte](images/checkbox3.png)
 
-![Selecting multiple options with check boxes](images/checkbox2.png)
+Les deux contrôles **case à cocher** et **case d’option** permettent à l’utilisateur d’effectuer un choix dans une liste d’options. Les cases à cocher permettent à l’utilisateur de sélectionner une combinaison quelconque d’options. En revanche, les cases d’option permettent à l’utilisateur d’effectuer un choix unique à partir d’options qui s’excluent mutuellement. Lorsque plusieurs options sont disponibles mais qu’une seule peut être choisie, utilisez une case d’option à la place.
 
-When options can be grouped, you can use an indeterminate check box to represent the whole group. Use the check box's indeterminate state when a user selects some, but not all, sub-items in the group.
+## Exemples
 
-![Check boxes used to show a mixed choice](images/checkbox3.png)
+Une case à cocher dans une boîte de dialogue du navigateur MicrosoftEdge.
 
-Both **check box** and **radio button** controls let the user select from a list of options. Check boxes let the user select a combination of options. In contrast, radio buttons let the user make a single choice from mutually exclusive options. When there is more than one option but only one can be selected, use a radio button instead.
+![Une case à cocher dans une boîte de dialogue du navigateur MicrosoftEdge](images/control-examples/check-box-edge.png)
 
-## Examples
+Des cases à cocher dans l’application Alarmes et horloge dans Windows.
 
-A check box in a dialog in the Microsoft Edge browser.
+![Des cases à cocher dans l’application Alarmes et horloge dans Windows](images/control-examples/check-box-alarm.png)
 
-![A check box in a dialog in the Microsoft Edge browser](images/control-examples/check-box-edge.png)
+## Créer une case à cocher
 
-Check boxes in the Alarms & Clock app in Windows.
+Pour attribuer une étiquette à la case à cocher, définissez la propriété [**Content**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content.aspx). L’étiquette s’affiche en regard de la case à cocher.
 
-![Check boxes in the Alarms & Clock app in Windows](images/control-examples/check-box-alarm.png)
-
-## Create a checkbox
-
-To assign a label to the checkbox, set the [**Content**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content.aspx) property. The label displays next to the checkbox.
-
-This XAML creates a single check box that is used to agree to terms of service before a form can be submitted. 
+Ce code XAML crée une case à cocher unique qui sert à accepter les conditions d’utilisation avant l’envoi d’un formulaire. 
 
 ```xaml
 <CheckBox x:Name="termsOfServiceCheckBox" 
           Content="I agree to the terms of service."/>
 ```
 
-Here's the same check box created in code.
+Voici la même case à cocher sous forme de code.
 
 ```csharp
 CheckBox checkBox1 = new CheckBox();
 checkBox1.Content = "I agree to the terms of service.";
 ```
 
-### Bind to IsChecked
+### Lier à IsChecked
 
-Use the [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) property to determine whether the check box is checked or cleared. You can bind the value of the IsChecked property to another binary value. However, because IsChecked is a [nullable](https://msdn.microsoft.com/library/windows/apps/b3h38hb0.aspx) boolean value, you must use a value converter to bind it to a boolean value.
+Utilisez la propriété [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) pour déterminer si la case à cocher est activée ou désactivée. Vous pouvez lier la valeur de la propriété IsChecked à une autre valeur binaire. Toutefois, étant donné que IsChecked est une valeur booléenne [Nullable](https://msdn.microsoft.com/library/windows/apps/b3h38hb0.aspx), vous devez utiliser un convertisseur de valeur pour la lier à une valeur booléenne.
 
-In this example, the **IsChecked** property of the check box to agree to terms of service is bound to the [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isenabled.aspx) property of a Submit button. The Submit button is enabled only if the terms of service are agreed to.
+Dans cet exemple, la propriété **IsChecked** de la case à cocher pour accepter les conditions d’utilisation est liée à la propriété [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isenabled.aspx) du bouton Envoyer. Le bouton Envoyer est activé uniquement si l’utilisateur accepte les conditions d’utilisation.
 
-> Note&nbsp;&nbsp;We only show the relevant code here. For more info about data binding and value converters, see [Data binding overview](../data-binding/data-binding-quickstart.md).
+> Remarque&nbsp;&nbsp;Nous affichons ici uniquement le code approprié. Pour en savoir plus sur les convertisseurs de valeurs et la liaison de données, voir [Vue d’ensemble de la liaison de données](../data-binding/data-binding-quickstart.md).
 
 ```xaml
 ...
@@ -127,17 +114,17 @@ public class NullableBooleanToBooleanConverter : IValueConverter
 }
 ```
 
-### Handle Click and Checked events
+### Gérer les événements Click et Checked
 
-To perform an action when the check box state changes, you can handle either the [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) event, or the [**Checked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx) and [**Unchecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.unchecked.aspx) events. 
+Pour effectuer une action lorsque l’état de la case à cocher change, vous pouvez gérer soit l’événement [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx), soit les événements [**Checked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx) et [**Unchecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.unchecked.aspx). 
 
-The **Click** event occurs whenever the checked state changes. If you handle the Click event, use the **IsChecked** property to determine the state of the check box.
+Les événements **Click** se produisent chaque fois que l’état d’activation change. Si vous gérez l’événement Click, utilisez la propriété **IsChecked** pour déterminer l’état de la case à cocher.
 
-The **Checked** and **Unchecked** events occur independently. If you handle these events, you should handle both of them to repsond to state changes in the check box.
+Les événements **Checked** et **Unchecked** se produisent de manière indépendante. Si vous gérez ces événements, vous devez gérer les deux pour répondre aux changements d’état de la case à cocher.
 
-In the following examples, we show handling the Click event, and the Checked and Unchecked events. 
+Les exemples suivants vous présentent la gestion de l’événement Click et des événements Checked et Unchecked. 
 
-Multiple checkboxes can share the same event handler. This example creates four checkboxes for selecting pizza toppings. The four checkboxes share the same **Click** event handler to update the list of selected toppings.
+Plusieurs cases à cocher peuvent partager le même gestionnaire d’événements. Cet exemple crée quatre cases à cocher pour la sélection des ingrédients de garniture d’une pizza. Les quatre cases à cocher partagent le même gestionnaire d’événements **Click** pour mettre à jour la liste des ingrédients sélectionnés.
 
 ```XAML
 <StackPanel Margin="40">
@@ -157,7 +144,7 @@ Multiple checkboxes can share the same event handler. This example creates four 
 </StackPanel>
 ```
 
-Here's the event handler for the Click event. Every time a checkbox is clicked, it examines the checkboxes to see which ones are checked and update list of selected toppings.
+Voici le gestionnaire d’événements pour l’événement Click. Chaque fois que vous cliquez sur une case à cocher, il examine les cases à cocher pour vérifier celles qui sont cochées et met à jour la liste des ingrédients sélectionnés.
 
 ```csharp
 private void toppingsCheckbox_Click(object sender, RoutedEventArgs e)
@@ -180,21 +167,21 @@ private void toppingsCheckbox_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-### Use the indeterminate state
+### Utiliser l’état indéterminé
 
-The CheckBox control inherits from [ToggleButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.aspx) and can have three states: 
+Le contrôle CheckBox hérite de [ToggleButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.aspx) et peut avoir trois états: 
 
-State | Property | Value
+État | Propriété | Valeur
 ------|----------|------
 checked | IsChecked | **true** 
 unchecked | IsChecked | **false** 
 indeterminate | IsChecked | **null** 
 
-For the check box to report the indeterminate state, you must set the [**IsThreeState**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.isthreestate.aspx) property to **true**. 
+Pour que la case à cocher indique l’état indéterminé, vous devez définir la propriété [**IsThreeState**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.isthreestate.aspx) sur **true**. 
 
-When options can be grouped, you can use an indeterminate check box to represent the whole group. Use the check box's indeterminate state when a user selects some, but not all, sub-items in the group.
+Lorsque les options peuvent être regroupées, vous pouvez utiliser une case à cocher indéterminée pour représenter le groupe entier. Utilisez l’état indéterminé de la case à cocher quand un utilisateur sélectionne une partie, et non l’ensemble, des éléments dans le groupe.
 
-In the following example, the "Select all" checkbox has its IsThreeState property set to **true**. The "Select all" checkbox is checked if all child elements are checked, unchecked if all child elements are unchecked, and indeterminate otherwise.
+Dans l’exemple suivant, la propriété IsThreeState de la case à cocher «Select all» est définie sur **true**. La case à cocher «Select all» est sélectionnée si tous les éléments enfants sont sélectionnés; si tous les éléments enfants sont désélectionnés, la case à cocher l’est également. Sinon, la case à cocher reste indéterminée.
 
 ```xaml
 <StackPanel>
@@ -276,38 +263,38 @@ private void SetCheckedState()
 }
 ```
 
-## Do's and don'ts
+## Pratiques conseillées et déconseillées
 
--   Verify that the purpose and current state of the check box is clear.
--   Limit check box text content to no more than two lines.
--   Word the checkbox label as a statement that the check mark makes true and the absence of a check mark makes false.
--   Use the default font unless your brand guidelines tell you to use another.
--   If the text content is dynamic, consider how the control will resize and what will happen to visuals around it.
--   If there are two or more mutually exclusive options from which to choose, consider using [radio buttons](radio-button.md).
--   Don't put two check box groups next to each other. Use group labels to separate the groups.
--   Don't use a check box as an on/off control or to perform a command; instead, use a toggle switch.
--   Don't use a check box to display other controls, such as a dialog box.
--   Use the indeterminate state to indicate that an option is set for some, but not all, sub-choices.
--   When using indeterminate state, use subordinate check boxes to show which options are selected and which are not. Design the UI so that the user can get see the sub-choices.
--   Don't use the indeterminate state to represent a third state. The indeterminate state is used to indicate that an option is set for some, but not all, sub-choices. So, don't allow users to set an indeterminate state directly. For an example of what not to do, this check box uses the indeterminate state to indicate medium spiciness:
+-   Assurez-vous que le but et l’état actuel de la case à cocher sont clairs.
+-   Limitez le texte de la case à cocher à deux lignes.
+-   Formulez le libellé de la case à cocher comme une instruction indiquant que la présence d’une coche correspond à une activation, et qu’à l’inverse, l’absence d’une coche correspond à une désactivation.
+-   Utilisez la police par défaut à moins que vos instructions de personnalisation n’imposent d’en utiliser une autre.
+-   Si le contenu du texte est dynamique, songez au redimensionnement du contrôle et à ses conséquences sur les effets visuels environnants.
+-   Si vous avez le choix entre plusieurs options mutuellement exclusives, pensez à utiliser des [cases d’option](radio-button.md).
+-   Ne placez pas deux groupes de cases à cocher en regard l’un de l’autre. Utilisez des étiquettes de groupe pour les distinguer.
+-   N’utilisez pas de case à cocher comme contrôle actif/inactif ou pour exécuter une commande ; utilisez de préférence un bouton bascule.
+-   N’utilisez pas de case à cocher pour afficher d’autres contrôles, tels qu’une boîte de dialogue.
+-   Utilisez l’état indéterminé pour signaler qu’une option est définie pour une poignée de sous-choix, mais pas pour tous.
+-   Si vous avez recours à l’état indéterminé, utilisez des cases à cocher subordonnées pour indiquer les options sélectionnées et celles qui ne le sont pas. Concevez l’interface utilisateur afin que l’utilisateur puisse voir les sous-choix.
+-   N’utilisez pas l’état indéterminé pour désigner un troisième état. L’état indéterminé sert à indiquer qu’une option est définie pour une poignée de sous-choix et non la totalité. N’autorisez donc pas les utilisateurs à définir directement un état indéterminé. Parfait exemple à ne pas suivre, la case à cocher qui suit utilise l’état indéterminé pour indiquer un goût moyennement épicé :
 
-    ![An indeterminate check box](images/checkbox4_spicy.png)
+    ![Case à cocher avec un état indéterminé](images/checkbox4_spicy.png)
 
-    Instead, use a radio button group that has three options: Not spicy, Spicy, and Extra spicy.
+    Utilisez plutôt un groupe de cases d’options proposant trois options : Non épicé, Épicé et Très épicé.
 
-    ![Radio button group with three options: Not spicy, Spicy, and Extra spicy](images/spicyoptions.png)
-
-
-## Related articles
-
--   [**CheckBox class**](https://msdn.microsoft.com/library/windows/apps/br209316) 
--   [Radio buttons](radio-button.md)
--   [Toggle switch](toggles.md)
+    ![Groupe de cases d’options proposant trois options: Non épicé, Épicé et Très épicé.](images/spicyoptions.png)
 
 
+## Articles connexes
+
+-   [**Classe CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 
+-   [Cases d’option](radio-button.md)
+-   [Commutateur bascule](toggles.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Jun16_HO5-->
 
 

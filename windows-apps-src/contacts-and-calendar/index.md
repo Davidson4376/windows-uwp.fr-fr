@@ -1,44 +1,43 @@
 ---
 author: Xansky
-description: How to use contacts and calendar info in your UWP app.
-title: Contacts and calendar
+description: Comment utiliser les informations relatives aux contacts et calendriers dans votre application UWP.
+title: Contacts et calendriers
 ms.assetid: b7e53ab5-2828-4fb7-8656-2bec70b3467f
 translationtype: Human Translation
-ms.sourcegitcommit: 5c0f6ef1f1a346a66ca554a415d9f24c8a314ae1
-ms.openlocfilehash: da73790ca9aec3fa16295eac4880c7b80db033ab
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 4e40ac413e021aba26776053871a4c6f1a215b2a
 
 ---
 
-# Contacts and calendar
+# Contacts et calendriers
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-You can let your users access their contacts and appointments so they can share content, email, calendar info, or messages with each other, or whatever functionality you design.
+Vous pouvez permettre aux utilisateurs d’accéder à leurs contacts et rendez-vous afin de partager du contenu, des courriers électroniques, des informations de calendrier ou des messages, ou toute autre fonctionnalité de votre conception.
 
-To see a few different ways in which your app can access contacts and appointments, see these topics:
+Pour en savoir plus sur les différentes façons d’accéder aux contacts et aux rendez-vous dans votre application, voir les rubriques suivantes:
 
-| Topic | Description |
+| Rubrique | Description |
 |-------|-------------|
-| [Select contacts](selecting-contacts.md) | Through the [<strong>Windows.ApplicationModel.Contacts</strong>](https://msdn.microsoft.com/library/windows/apps/BR225002) namespace, you have several options for selecting contacts. Here, we'll show you how to select a single contact or multiple contacts, and we'll show you how to configure the contact picker to retrieve only the contact information that your app needs. |
-| [Send email](sending-email.md) | Shows how to launch the compose email dialog to allow the user to send an email message. You can pre-populate the fields of the email with data before showing the dialog. The message will not be sent until the user taps the send button. |
-| [Send an SMS message](sending-an-sms-message.md) | This topic shows you how to launch the compose SMS dialog to allow the user to send an SMS message. You can pre-populate the fields of the SMS with data before showing the dialog. The message will not be sent until the user taps the send button. |
-| [Manage appointments](managing-appointments.md) | Through the [<strong>Windows.ApplicationModel.Appointments</strong>](https://msdn.microsoft.com/library/windows/apps/Dn263359) namespace, you can create and manage appointments in a user's calendar app. Here, we'll show you how to create an appointment, add it to a calendar app, replace it in the calendar app, and remove it from the calendar app. We'll also show how to display a time span for a calendar app and create an appointment-recurrence object. |
-| [Connect your app to actions on a contact card](integrating-with-contacts.md) | Shows how to make your app appear next to actions on a contact card or mini contact card. Users can choose your app to perform an action such as open a profile page, place a call, or send a message. |
-| [Provide social feeds to the People app](integrating-social-feeds-into-contact-cards.md) | Integrate social feed data from your database into the People app. Your feed data will appear in the <strong>What's New</strong> pages of the People app or in the <strong>Profile</strong> page of a contact. |
+| [Sélectionner des contacts](selecting-contacts.md) | L’espace de noms [<strong>Windows.ApplicationModel.Contacts</strong>](https://msdn.microsoft.com/library/windows/apps/BR225002) fournit plusieurs options de sélection des contacts. Ici, nous allons vous montrer comment sélectionner un ou plusieurs contacts, et comment configurer le sélecteur de contacts pour récupérer uniquement les informations de contact dont votre application a besoin. | 
+| [Envoyer un courrier électronique](sending-email.md) | Montre comment lancer la boîte de dialogue de rédaction d’un courrier électronique pour permettre à l’utilisateur d’envoyer un courrier électronique. Vous pouvez préremplir les champs de l’e-mail avec des données avant d’afficher la boîte de dialogue. Le message ne sera pas envoyé tant que l’utilisateur n’aura pas appuyé sur le bouton d’envoi. |
+| [Envoyer un SMS](sending-an-sms-message.md) | Cette rubrique vous montre comment lancer la boîte de dialogue de rédaction d’un SMS pour permettre à l’utilisateur d’envoyer un SMS. Vous pouvez préremplir les champs du message SMS avec des données avant d’afficher la boîte de dialogue. Le message ne sera pas envoyé tant que l’utilisateur n’aura pas appuyé sur le bouton d’envoi. |
+| [Gérer des rendez-vous](managing-appointments.md) | L’espace de noms [<strong>Windows.ApplicationModel.Appointments</strong>](https://msdn.microsoft.com/library/windows/apps/Dn263359) vous permet de créer et gérer des rendez-vous dans l’application Calendrier d’un utilisateur. Ici, nous allons vous montrer comment créer un rendez-vous, l’ajouter à l’application Calendrier, le remplacer dans l’application Calendrier et le supprimer de l’application Calendrier. Nous allons également vous montrer comment afficher une période de temps pour une application Calendrier et créer un objet appointment-recurrence. |
 
  
 
-## Related topics
+## Rubriques connexes
 
-* [Appointments API sample](http://go.microsoft.com/fwlink/p/?linkid=309836)
-* [Contact manager API sample](http://go.microsoft.com/fwlink/p/?LinkID=310079)
-* [Contact Picker app sample](http://go.microsoft.com/fwlink/p/?linkid=231575)
-* [Handling Contact Actions sample](http://go.microsoft.com/fwlink/p/?LinkID=320151)
-* [Contact Card Integration Sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration)
-* [Social Info Sample](https://github.com/Microsoft/Windows-Social-Samples/tree/master/SocialInfoSampleApp)
+* [Exemple d’API de rendez-vous](http://go.microsoft.com/fwlink/p/?linkid=309836)
+* [Exemple d’API du Gestionnaire de contacts](http://go.microsoft.com/fwlink/p/?LinkID=310079)
+* [Exemple d’application du sélecteur de contacts](http://go.microsoft.com/fwlink/p/?linkid=231575)
+* [Exemple de la gestion des actions de contact](http://go.microsoft.com/fwlink/p/?LinkID=320151)
 
 
 
-<!--HONumber=Aug16_HO5-->
+
+
+
+<!--HONumber=Jun16_HO4-->
 
 

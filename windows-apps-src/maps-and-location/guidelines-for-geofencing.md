@@ -1,64 +1,64 @@
 ---
 author: PatrickFarley
-Description: Follow these best practices for geofencing in your app.
-title: Guidelines for geofencing apps
+Description: "Suivez ces meilleures pratiques pour définir la clôture virtuelle dans votre application."
+title: "Recommandations concernant la clôture virtuelle des applications"
 ms.assetid: F817FA55-325F-4302-81BE-37E6C7ADC281
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 0a152fbc444e252ed8c2a822036e00b8869703ac
+ms.openlocfilehash: d631885eced58d360d3e0442cbb49ede7b9b86c3
 
 ---
 
-# Guidelines for geofencing apps
+# Recommandations concernant la clôture virtuelle des applications
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-**Important APIs**
+**API importantes**
 
 -   [**Geofence class (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn263587)
 -   [**Geolocator class (XAML)**](https://msdn.microsoft.com/library/windows/apps/br225534)
 
-Follow these best practices for [**geofencing**](https://msdn.microsoft.com/library/windows/apps/dn263744) in your app.
+Suivez ces meilleures pratiques pour définir la [**clôture virtuelle**](https://msdn.microsoft.com/library/windows/apps/dn263744) dans votre application.
 
-## Recommendations
+## Recommandations
 
 
--   If your app will need internet access when a [**Geofence**](https://msdn.microsoft.com/library/windows/apps/dn263587) event occurs, check for internet access before creating the geofence.
-    -   If the app doesn't currently have internet access, you can prompt the user to connect to the internet before you set up the geofence.
-    -   If internet access isn't possible, avoid consuming the power required for the geofencing location checks.
--   Ensure the relevance of geofencing notifications by checking the time stamp and current location when a geofence event indicates changes to an [**Entered**](https://msdn.microsoft.com/library/windows/apps/dn263660) or **Exited** state. See [Checking the time stamp and current location](#timestamp) below for more information.
--   Create exceptions to manage cases when a device can't access location info, and notify the user if necessary. Location info may be unavailable because permissions are turned off, the device doesn't contain a GPS radio, the GPS signal is blocked, or the Wi-Fi signal isn't strong enough.
--   In general, it isn't necessary to listen for geofence events in the foreground and background at the same time. However, if your app needs to listen for geofence events in both the foreground and background:
+-   Si votre application nécessite un accès à Internet lorsqu’un événement [**Geofence**](https://msdn.microsoft.com/library/windows/apps/dn263587) se produit, vérifiez l’accès à Internet avant de créer la clôture virtuelle.
+    -   Si l’application ne dispose pas d’un accès à Internet, vous pouvez inviter l’utilisateur à se connecter à Internet avant de configurer la clôture virtuelle.
+    -   Si aucun accès à Internet n’est possible, économisez l’énergie nécessaire à la recherche d’emplacements par clôture virtuelle.
+-   Assurez-vous que les notifications de clôture virtuelle sont appropriées en vérifiant l’horodatage et l’emplacement actuel lorsqu’un événement de géorepérage indique un changement apporté à un état [**Entered**](https://msdn.microsoft.com/library/windows/apps/dn263660) ou **Exited**. Pour plus d’informations, voir la section ci-dessous [Vérification de l’horodatage et de l’emplacement actuel](#timestamp).
+-   Créez des exceptions qui permettent de gérer les cas où un périphérique n’a pas accès aux informations sur l’emplacement et d’en notifier l’utilisateur si nécessaire. La non-disponibilité des informations sur l’emplacement peut avoir différentes causes : les autorisations sont désactivées, le périphérique n’est pas pourvu d’une radio GPS, le signal GPS est bloqué ou le signal Wi-Fi n’est pas assez fort.
+-   En règle générale, votre application n’a pas besoin de détecter les événements de clôture virtuelle au premier plan et en arrière-plan simultanément. Dans le cas contraire, suivez les recommandations ci-après :
 
-    -   Call the [**ReadReports**](https://msdn.microsoft.com/library/windows/apps/dn263633) method to find out if an event has occurred.
-    -   Unregister your foreground event listener when your app isn't visible to the user and re-register when it becomes visible again.
+    -   Appelez la méthode [**ReadReports**](https://msdn.microsoft.com/library/windows/apps/dn263633) pour savoir si un événement s’est produit.
+    -   Désinscrivez votre détecteur d’événements au premier plan lorsque votre application n’est pas visible pour l’utilisateur et réinscrivez-le quand elle redevient visible.
 
-    See [Background and foreground listeners](#background-and-foreground-listeners) for code examples and more information.
+    Pour plus d’informations et pour obtenir des exemples de code, voir [Détecteurs en arrière-plan et au premier plan](#background-and-foreground-listeners).
 
--   Don't use more than 1000 geofences per app. The system actually supports thousands of geofences per app, you can maintain good app performance to help reduce the app's memory usage by using no more than 1000.
--   Don't create a geofence with a radius smaller than 50 meters. If your app needs to use a geofence with a small radius, advise users to use your app on a device with a GPS radio to ensure the best performance.
+-   N’utilisez pas plus de 1000 clôtures virtuelles par application. Le système prend en charge plusieurs milliers de clôtures virtuelles par application, mais en limitant leur nombre à 1000, vous optimiserez les performances de votre application et contribuerez à réduire l’utilisation de la mémoire par l’application.
+-   Ne créez pas de clôtures virtuelles avec un rayon de moins de 50 mètres. Si votre application doit utiliser une clôture virtuelle avec un petit rayon, conseillez aux utilisateurs d’utiliser votre application sur un appareil équipé d’une radio GPS pour garantir des performances optimales.
 
-## Additional usage guidance
+## Indications d’utilisation supplémentaires
 
-### Checking the time stamp and current location
+### Vérification de l’horodatage et de l’emplacement actuel
 
-When an event indicates a change to an [**Entered**](https://msdn.microsoft.com/library/windows/apps/dn263660) or **Exited** state, check both the time stamp of the event and your current location. Various factors, such as the system not having enough resources to launch a background task, the user not noticing the notification, or the device being in standby (on Windows), may affect when the event is actually processed by the user. For example, the following sequence may occur:
+Lorsqu’un événement indique un changement apporté à un état [**Entered**](https://msdn.microsoft.com/library/windows/apps/dn263660) ou **Exited**, vérifiez à la fois l’horodatage de l’événement et votre emplacement actuel. Divers facteurs peuvent avoir une incidence sur le moment où l’événement est réellement traité par l’utilisateur: par exemple, le système ne dispose pas de ressources suffisantes pour lancer une tâche en arrière-plan, l’utilisateur ne remarque pas la notification ou le périphérique est en état de veille (sur Windows). Par exemple, il peut se produire la séquence suivante :
 
--   Your app creates a geofence and monitors the geofence for enter and exit events.
--   The user moves the device inside of the geofence, causing an enter event to be triggered.
--   Your app sends a notification to the user that they are now inside the geofence.
--   The user was busy and does not notice the notification until 10 minutes later.
--   During that 10 minute delay, the user has moved back outside of the geofence.
+-   Votre application crée une clôture virtuelle et surveille la présence d’événements Enter et Exit pour cette dernière.
+-   L’utilisateur déplace l’appareil à l’intérieur de la clôture virtuelle, ce qui provoque le déclenchement d’un événement Enter.
+-   Votre application envoie une notification à l’utilisateur et l’informe qu’il se trouve à présent à l’intérieur de la clôture virtuelle.
+-   Occupé, l’utilisateur ne remarque la notification que dix minutes plus tard.
+-   Pendant ce laps de temps, l’utilisateur est repassé à l’extérieur de la clôture virtuelle.
 
-From the timestamp, you can tell that the action occurred in the past. From the current location, you can see that the user is now back outside of the geofence. Depending on the functionality of your app, you may want to filter out this event.
+À partir de l’horodatage, vous pouvez constater que l’action est survenue dans le passé. À partir de l’emplacement actuel, vous pouvez voir que l’utilisateur se trouve de nouveau en dehors de la clôture virtuelle. Selon les fonctionnalités de votre application, vous pouvez filtrer cet événement.
 
-### Background and foreground listeners
+### Détecteurs en arrière-plan et au premier plan
 
-In general, your app doesn't need to listen for [**Geofence**](https://msdn.microsoft.com/library/windows/apps/dn263587) events both in the foreground and in a background task at the same time. The cleanest method for handling a case where you might need both is to let the background task handle the notifications. If you do set up both foreground and background geofence listeners, there is no guarantee which will be triggered first and so you must always call the [**ReadReports**](https://msdn.microsoft.com/library/windows/apps/dn263633) method to find out if an event has occurred.
+En règle générale, votre application n’a pas besoin de détecter les événements [**Geofence**](https://msdn.microsoft.com/library/windows/apps/dn263587) au premier plan et en arrière-plan simultanément. Toutefois, si cela est nécessaire, la méthode la plus sûre est de confier la gestion des notifications à la tâche en arrière-plan. Si vous configurez des détecteurs de clôtures virtuelles (parfois appelées «géorepères») tant au premier plan qu’en arrière-plan, il est impossible de savoir avec certitude lequel sera déclenché le premier, et vous devez donc appeler en permanence la méthode [**ReadReports**](https://msdn.microsoft.com/library/windows/apps/dn263633) pour savoir si un événement s’est produit.
 
-If you have set up both foreground and background geofence listeners, you should unregister your foreground event listener whenever your app is not visible to the user and re-register your app when it becomes visible again. Here's some example code that registers for the visibility event.
+Si vous avez configuré des détecteurs de clôtures virtuelles au premier plan et en arrière-plan, vous devez désinscrire votre détecteur d’événements au premier plan lorsque votre application n’est pas visible pour l’utilisateur et le réinscrire quand elle redevient visible. L’exemple de code présenté ci-dessous permet d’inscrire l’événement de visibilité.
 
 ```csharp
     Windows.UI.Core.CoreWindow coreWindow;    
@@ -72,7 +72,7 @@ If you have set up both foreground and background geofence listeners, you should
  document.addEventListener("visibilitychange", onVisibilityChanged, false);
 ```
 
-When the visibility changes, you can then enable or disable the foreground event handlers as shown here.
+Lorsque la visibilité change, vous pouvez activer ou désactiver les gestionnaires d’événements au premier plan comme le montre cet exemple.
 
 ```csharp
 private void OnVisibilityChanged(CoreWindow sender, VisibilityChangedEventArgs args)
@@ -114,19 +114,19 @@ function onVisibilityChanged() {
 }
 ```
 
-### Sizing your geofences
+### Dimensionnement de vos clôtures virtuelles
 
-While GPS can provide the most accurate location info, geofencing can also use Wi-Fi or other location sensors to determine the user's current position. But using these other methods can affect the size of the geofences you can create. If the accuracy level is low, creating small geofences won't be useful. In general, it is recommended that you do not create a geofence with a radius smaller than 50 meters. Also, geofence background tasks only run periodically on Windows; if you use a small geofence, there's a possibility that you could miss an [**Enter**](https://msdn.microsoft.com/library/windows/apps/dn263660) or **Exit** event entirely.
+Si le GPS est capable de fournir les informations d’emplacement les plus précises, le géorepérage peut également se servir du Wi-Fi ou d’autres capteurs d’emplacement pour déterminer la position actuelle de l’utilisateur. En revanche, l’emploi de ces autres méthodes peut affecter la taille des clôtures virtuelles qu’il vous est possible de créer. Si le niveau de précision est faible, la création de clôtures virtuelles de petite taille n’est pas utile. En général, nous vous recommandons de ne pas créer de clôture virtuelle avec un rayon inférieur à 50 mètres. Par ailleurs, notez que les tâches de clôture virtuelle en arrière-plan sont exécutées seulement de manière régulière sur Windows, ce qui peut vous faire manquer un événement [**Enter**](https://msdn.microsoft.com/library/windows/apps/dn263660) ou **Exit** entier si vous utilisez une petite clôture virtuelle.
 
-If your app needs to use a geofence with a small radius, advise users to use your app on a device with a GPS radio to ensure the best performance.
+Si votre application doit utiliser une clôture virtuelle avec un petit rayon, conseillez aux utilisateurs d’utiliser votre application sur un appareil équipé d’une radio GPS pour garantir des performances optimales.
 
-## Related topics
+## Rubriques connexes
 
 
-* [Set up a geofence](https://msdn.microsoft.com/library/windows/apps/mt219702)
-* [Get current location](https://msdn.microsoft.com/library/windows/apps/mt219698)
+* [Configurer une clôture virtuelle](https://msdn.microsoft.com/library/windows/apps/mt219702)
+* [Obtenir l’emplacement actuel](https://msdn.microsoft.com/library/windows/apps/mt219698)
 <!--* [Design guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md)-->
-* [UWP location sample (geolocation)](http://go.microsoft.com/fwlink/p/?linkid=533278)
+* [Exemple de géolocalisation UWP (géolocalisation)](http://go.microsoft.com/fwlink/p/?linkid=533278)
  
 
  
@@ -137,6 +137,6 @@ If your app needs to use a geofence with a small radius, advise users to use you
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

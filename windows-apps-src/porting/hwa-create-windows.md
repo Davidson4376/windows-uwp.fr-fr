@@ -1,81 +1,81 @@
 ---
 author: seksenov
-title: Hosted Web Apps - Convert your web application to a Windows app using Visual Studio
-description: Use Visual Studio to turn your website in to a Universal Windows Platform (UWP) app for Windows 10.
+title: "Apps web hébergées - Convertir une app web en app Windows avec Visual Studio"
+description: Utilisez Visual Studio pour transformer votre site web en application de plateforme Windows universelle (UWP) pour Windows10.
 kw: Hosted Web Apps tutorial, Porting to Windows 10 with Visual Studio, How to convert website to Windows, How to add website to Windows Store, Packaging web application for Microsoft Store, Test Windows 10 native features and runtime APIs with CodePen, How to use Windows Cortana Live Tiles Built-in Camera on my Website with remote JavaScript
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: e6dfda4a0f4f8b5760f08cfeb3562d9e42ba8a10
+ms.openlocfilehash: 05e2362d23ce6d1ce70e20a5610e1a5ede464987
 
 ---
 
-# Convert your web application to a Universal Windows Platform (UWP) app
+# Convertir votre applicationweb en une application UWP (plateforme Windows universelle)
 
-Learn how to quickly create a Universal Windows Platform app for Windows 10 starting with just a website URL. 
+Découvrez comment créer rapidement une application de plateforme Windows universelle pour Windows10 à partir d’une simple URL de site web. 
 
 > [!NOTE]
-> The following instructions are for use with a Windows development platform. Mac users, visit [instructions on using a Mac development platform](/hwa-create-mac.md).
+> Les instructions suivantes sont à utiliser avec une plateforme de développement Windows. Les utilisateurs de Mac peuvent consulter la page relative aux [instructions sur l’utilisation d’une plateforme de développement Mac](/hwa-create-mac.md).
 
-## What you need to develop on Windows
+## Éléments nécessaires au développement sur Windows
 
-- [Visual Studio 2015.](https://www.visualstudio.com/) The free, full-featured Visual Studio Community 2015 includes the Windows 10 developer tools, universal app templates, a code editor, a powerful debugger, Windows Mobile emulators, rich language support, and much more—all ready to use in production.
-- (Optional) [Windows Standalone SDK for Windows 10.](https://dev.windows.com/downloads/windows-10-sdk) If you are using a development environment other than Visual Studio 2015, you can download a standalone Windows SDK for Windows 10 installer. Note that you do not need to install this SDK if you're using Visual Studio 2015; it is already included.
+- [VisualStudio2015.](https://www.visualstudio.com/) VisualStudioCommunity2015, complet et gratuit, inclut les outils de développement Windows 10, des modèles d’applications universelles, un éditeur de code, un puissant débogueur, des émulateurs WindowsMobile, une prise en charge linguistique enrichie, et bien plus encore. Tous ces éléments sont prêts pour une utilisation en production.
+- [Kit de développement logiciel (SDK) Windows autonome pour Windows10](https://dev.windows.com/downloads/windows-10-sdk) (en option). Si vous utilisez un environnement de développement autre que VisualStudio2015, vous pouvez télécharger un SDK Windows autonome pour le programme d’installation de Windows10. Notez que vous n’avez pas besoin d’installer ce SDK si vous utilisez VisualStudio2015, car ce logiciel l’inclut déjà.
 
-## Step 1: Pick a website URL
-Choose an existing website that will work great as a single-page app. We highly recommend that you are the owner or developer of the site, this way you will be able to make all the necessary changes. If you do not have a URL in mind, try using this [Codepen example](http://codepen.io/seksenov/pen/wBbVyb/?editors=101) as the website. Copy your URL, or the Codepen URL, to use throughout the tutorial. 
+## Étape 1: Sélectionner une URL de site web
+Choisissez un site web existant qui fonctionnera de manière optimale en tant qu’application d’une seule page. Nous vous recommandons vivement d’être le propriétaire ou le développeur du site. Ainsi, vous serez en mesure d’effectuer toutes les modifications nécessaires. Si aucune URL ne vous vient à l’esprit, essayez d’utiliser cet [exemple Codepen](http://codepen.io/seksenov/pen/wBbVyb/?editors=101) en tant que site web. Copiez votre URL, ou l’URL Codepen, à utiliser tout au long de ce didacticiel. 
 
-![Step #1: Pick a website URL](images/hwa-to-uwp/windows_step1.png)
+![Étape1: Sélectionner une URL de site web](images/hwa-to-uwp/windows_step1.png)
 
-## Step 2: Create a blank JavaScript app
+## Étape2: Créer une application JavaScript vide
 
-Launch Visual Studio.
-1. Click **File**.
-2. Click **New Project**.
-3. Under **JavaScript** then **Windows Universal**, click **Blank App (Windows Universal)**.
+Ouvrez Visual Studio.
+1. Cliquez sur **Fichier**.
+2. Cliquez sur **Nouveau projet**.
+3. Sous **JavaScript**, puis **Windows universel**, cliquez sur **Application vide (Windows universel)**.
 
-![Step #2: Create a blank JavaScript app](images/hwa-to-uwp/windows_step2.png)
+![Étape2: Créer une application JavaScript vide](images/hwa-to-uwp/windows_step2.png)
 
-## Step 3: Delete any packaged code
+## Étape3: Supprimer tout code empaqueté
 
-Since this is a hosted web app, where the content is served from a remote server, you will not need most of the local app files that come with the JavaScript template by default. Delete any local HTML, JavaScript, or CSS resources. All that should remain is the `package.appxmanifest` file, where you configure the app, and the image resources.
+Étant donné qu’il s’agit d’une application web hébergée, où le contenu est servi à partir d’un serveur distant, vous n’aurez pas besoin de la plupart des fichiers d’application locaux qui accompagnent le modèle JavaScript par défaut. Supprimez les ressources locales HTML, JavaScript ou CSS. Seul doit rester le fichier `package.appxmanifest`, où vous configurez l’application et les ressources de type image.
 
-![Step #3: Delete any packaged code](images/hwa-to-uwp/windows_step3.png)
+![Étape3: Supprimer tout code empaqueté](images/hwa-to-uwp/windows_step3.png)
 
-## Step 4: Set the start page URL
+## Étape4: Définir l’URL de la page de démarrage
 
-1. Open the `package.appxmanifest` file.
-2. Under the **Application** tab, find the **Start page** text field.
-3. Replace `default.html` with your website URL.
+1. Ouvrez le fichier `package.appxmanifest`.
+2. Sous l’onglet **Application**, recherchez le champ de texte **Page de démarrage**.
+3. Remplacez `default.html` par l’URL de votre site web.
 
-![Step #4: Set the start page URL](images/hwa-to-uwp/windows_step4.png)
+![Étape4: Définir l’URL de la page de démarrage](images/hwa-to-uwp/windows_step4.png)
 
-## Step 5: Define the boundaries of your web app
+## Étape5: Définir les limites de votre application web
 
-Application Content URI Rules (ACURs) specify which remote URLs are allowed access to your app and to the Universal Windows APIs. At the very minimum, you will need to add an ACUR for your start page and any web resources utilized by that page. For more information on ACURs, [click here](./hwa-access-features.md#keep-your-app-secure-setting-application-content-uri-rules-acurs).
-1. Open the `package.appxmanifest` file.
-2. Click the **Content URIs** tab.
-3. Add any necessary URIs for your start page.
+Les règles URI de contenu de l’application (ACUR) spécifient les URL distantes autorisées à accéder à votre application et aux API Windows universelles. Vous devrez ajouter au minimum une règle ACUR pour votre page de démarrage et toutes les ressources web utilisées par cette page. Pour plus d’informations sur les règles ACUR, [cliquez ici](./hwa-access-features.md#keep-your-app-secure-setting-application-content-uri-rules-acurs).
+1. Ouvrez le fichier `package.appxmanifest`.
+2. Cliquez sur l’onglet **URI de contenu**.
+3. Ajoutez tout URI nécessaire pour votre page de démarrage.
 
-For example:
+Par exemple:
 ```
 1. http://codepen.io/seksenov/pen/wBbVyb/?editors=101
 2. http://*.codepen.io/
 ```
-4. Set the **WinRT Access** to **All** for each URI you added.
+4. Définissez **l’accès WinRT** sur **Tous** pour chaque URI que vous avez ajouté.
 
-![Step #5: Define the boundaries of your web app](images/hwa-to-uwp/windows_step5.png)
+![Étape5: Définir les limites de votre application web](images/hwa-to-uwp/windows_step5.png)
 
-## Step 6: Run your app
+## Étape6: Exécuter votre application
 
-At this point, you have a fully functioning Windows 10 app capable of accessing the Universal Windows APIs!
+À ce stade, votre application Windows10 est entièrement opérationnelle et capable d’accéder aux API Windows universelles!
 
-If you are following along with our Codepen example, click the **Toast Notification** button to call a Windows API from hosted script.
+Si vous continuez avec notre exemple Codepen, cliquez sur le bouton **Notification toast** pour appeler une API Windows à partir du script hébergé.
 
-![Step #6: Run your app](images/hwa-to-uwp/windows_step6.png)
+![Étape6: Exécuter votre application](images/hwa-to-uwp/windows_step6.png)
 
-## Bonus: Add camera capture
+## Bonus: Ajouter la capture vidéo
 
-Copy and paste the JavaScript code below to enable camera capture. If you are following along with your own website, create a button to invoke the `cameraCapture()` method. If you are following along with our Codepen example, a button is already present in HTML. Click the button and a take a picture.
+Copiez et collez le code JavaScript ci-dessous pour activer la capture vidéo. Si vous continuez avec votre propre site web, créez un bouton pour appeler la méthode `cameraCapture()`. Si vous continuez avec notre exemple Codepen, un bouton est déjà présent dans le code HTML. Cliquez sur le bouton et prenez une photo.
 
 ```JavaScript
 function cameraCapture() {
@@ -91,14 +91,14 @@ function cameraCapture() {
 }
 ```
 
-## Related topics
+## Rubriques connexes
 
-- [Enhance your web app by accessing Universal Windows Platform (UWP) features](hwa-access-features.md)
-- [Guide to Universal Windows Platform (UWP) apps](http://go.microsoft.com/fwlink/p/?LinkID=397871)
-- [Download design assets for Windows Store apps](https://msdn.microsoft.com/library/windows/apps/xaml/bg125377.aspx)
+- [Améliorer votre applicationweb en accédant aux fonctionnalités de plateforme Windows universelle (UWP)](hwa-access-features.md)
+- [Guide des applications de plateforme Windows universelle (UWP)](http://go.microsoft.com/fwlink/p/?LinkID=397871)
+- [Télécharger des ressources de conception pour les applications du WindowsStore](https://msdn.microsoft.com/library/windows/apps/xaml/bg125377.aspx)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO2-->
 
 

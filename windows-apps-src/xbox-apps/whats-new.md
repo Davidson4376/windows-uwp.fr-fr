@@ -1,58 +1,59 @@
 ---
 author: v-angraf
-title: What's new for UWP on Xbox One
-description: Highlights new features for UWP apps on Xbox One.
+title: "Nouveautés de la plateformeUWP sur Xbox One"
+description: "Cette rubrique souligne les nouvelles fonctionnalités pour la plateformeUWP sur les applicationsXboxOne."
+area: Xbox
 translationtype: Human Translation
-ms.sourcegitcommit: 044aac722180015586487dcc8738facccf209f5c
-ms.openlocfilehash: 4cc1e0b495a80e019296b9c3be9e75a37c60224a
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: edc9a914f200c643b1133cf07778e2ca3931d0d9
 
 ---
 
-# What's new for developers in the latest update of UWP on Xbox One
+# Nouveautés de la version préliminaire pour développeurs de juillet2016 de la plateformeUWP sur XboxOne
 
-The July 2016 release of Universal Windows Platform (UWP) on Xbox One contains the following new features, updates to existing features, and bug fixes.
+La version préliminaire pour développeurs de juillet2016 de la plateformeUWP sur XboxOne contient les nouvelles fonctionnalités, mises à jour de fonctionnalités et résolutions de bogues suivantes.
 
-## Networking using TCP/UDP sockets is now available  
-Inbound and outbound network access from the console that uses traditional TCP/UDP sockets (WinSock, Windows.Networking.Sockets) is now available.
+## Mise en réseau utilisant des sockets TCP/UDP maintenant disponible  
+Les accès réseau entrants et sortants de la console qui utilisent des sockets TCP/UDP traditionnels (WinSock, Windows.Networking.Sockets) sont désormais disponibles.
 
-## Fiddler support
-You can now enable Fiddler as a proxy for a console that has enabled UWP on Xbox One. Fiddler allows you to log and inspect all HTTP/HTTPS traffic to and from Xbox services and relying-party web services. For more information, see [How to use Fiddler with Xbox One when developing for UWP](uwp-fiddler.md).
+## Prise en charge de Fiddler
+Vous pouvez désormais activer Fiddler en tant que proxy pour une console qui a activé la plateforme Windows universelle (UWP) sur XboxOne. Fiddler vous permet de consigner et d’inspecter tout le trafic HTTP/HTTPS vers et à partir de services Xbox et des services web des parties de confiance. Pour plus d’informations, voir [Utilisation de Fiddler avec XboxOne lors du développement pour UWP](uwp-fiddler.md).
 
-## Mouse mode is now enabled by default
-Mouse mode is now enabled by default for XAML and Hosted Web Apps.
-We strongly recommend that you turn this off and optimize for directional controller navigation.
-To learn how to turn mouse mode off, see [How to disable mouse mode](how-to-disable-mouse-mode.md).
-For more information about how to build great apps for Xbox, see [Designing for Xbox and TV](../input-and-devices/designing-for-tv.md#mouse-mode).
+## Le modesouris est désormais activé par défaut
+Le modesouris est désormais activé par défaut pour les applications XAML et les applications web hébergées.
+Nous vous recommandons vivement de désactiver cette fonctionnalité et d’optimiser l’application pour la navigation de contrôleur directionnelle.
+Pour savoir comment désactiver le mode souris, voir [Comment désactiver le mode souris](how-to-disable-mouse-mode.md).
+Pour plus d’informations sur la façon de créer des applications réussies pour Xbox, voir [Conception pour Xbox et télévision](https://msdn.microsoft.com/windows/uwp/input-and-devices/designing-for-tv?f=255&MSPPError=-2147217396#mouse-mode).
 
-## Extended UWP API surface area is now functional on the console
-Additional UWP APIs are now functional on the Xbox console. For more information about UWP API support, see [UWP features that aren't yet supported on Xbox](http://go.microsoft.com/fwlink/p/?LinkID=760755). 
+## La surface d’exposition d’APIUWP étendue est fonctionnelle sur la console
+Les APIUWP supplémentaires sont désormais fonctionnelles sur la consoleXbox. Pour en savoir plus sur la prise en charge des APIUWP, voir [FonctionnalitésUWP qui ne sont pas encore prises en charge surXbox](http://go.microsoft.com/fwlink/?LinkID=760755). 
 
-## Background music and audio capabilities
-You can now play music and audio from an app that is running in the background.
+## Fonctionnalités de musique et audio en arrière-plan
+Vous pouvez désormais lire des fichiers de musique et audio depuis une application exécutée en arrière-plan.
 
-## XAML improvements
-The following improvements have been made to the XAML platform:
--   The focus rectangle is now styled for a television 10-foot experience.
--   Xbox sounds are now embedded in the XAML platform.
--   XY focus navigation between UI elements has been improved. 
+## Améliorations apportées à XAML
+Les améliorations suivantes ont été apportées à la plateforme XAML:
+-   Le rectangle de sélection présente désormais un style adapté à une télévision de 3mètres.
+-   Les sonsXbox sont désormais incorporés dans la plateformeXAML.
+-   La navigation de typeXY dans le focus a été améliorée entre les éléments d’interface utilisateur. 
 
-## You can now change the size of allocated developer storage on the console
-A new setting in the Dev Home app allows you to increase or decrease the size of the allocated developer storage on your console. For more information about changing the size of your allocated developer storage, see [Introduction to Xbox One tools](introduction-to-xbox-tools.md).
+## Vous pouvez maintenant modifier la taille du stockage de développement sur la console.
+Un nouveau paramètre dans l’application Dev Home vous permet d’augmenter ou de diminuer le volume de stockage alloué au développement sur votre console. Pour plus d’informations sur la modification de la taille de votre espace de stockage de développement, voir [Présentation des outils Xbox One](introduction-to-xbox-tools.md).
 
-## WDP tool enhancements
-The following improvements have been made to the Windows Device Portal (WDP) Tool for Xbox:
- - The tool includes additional console settings. For more information about console settings, see the [/ext/settings](wdp-xboxsettings-api.md) reference topic. 
- - Users can be signed in and out on the console. For more information about users, see the [/ext/user](wdp-user-management.md) reference topic.
- - You can now capture a screenshot of the console. For more information about taking a screenshot, see the [/ext/screenshot](wdp-media-capture-api.md) reference topic.
- - The tool can deploy a loose file build of your app. For more information about loose file builds, see the [/api/app/packagemanager/register](wdp-loose-folder-register-api.md) reference topic.
- - Developer files on your console can be accessed from File Explorer on your development PC. For more information about accessing files through File Explorer, see the [/ext/smb/developerfolder](wdp-smb-api.md) reference topic.
+## Améliorations de l’outil WDP
+Les améliorations suivantes ont été apportées à l’outil Windows Device Portal (WDP) pour Xbox:
+ - L’outil comprend des paramètres de console supplémentaires. Pour plus d’informations sur les paramètres de la console, voir la rubrique de référence [/ext/settings](wdp-xboxsettings-api.md). 
+ - Les utilisateurs peuvent se connecter ou se déconnecter sur la console. Pour plus d’informations sur les utilisateurs, voir la rubrique de référence [/ext/user](wdp-user-management.md).
+ - Vous pouvez désormais effectuer une capture d’écran de la console. Pour plus d’informations sur la réalisation d’une capture d’écran, voir la rubrique de référence [/ext/screenshot](wdp-media-capture-api.md).
+ - L’outil peut déployer une build de fichier isolé de votre application. Pour plus d’informations sur les builds de fichier isolé, consultez la rubrique de référence [/api/app/packagemanager/register](wdp-loose-folder-register-api.md).
+ - Il est possible d’accéder aux fichiers de développement sur votre console via l’Explorateur de fichiers sur votre ordinateur de développement. Pour plus d’informations sur l’accès aux fichiers via l’Explorateur de fichiers, voir la rubrique de référence [/ext/smb/developerfolder](wdp-smb-api.md).
 
-## See also
-- [Known issues](known-issues.md)
-- [UWP on Xbox One](index.md)
+## Voir également
+- [UWP sur XboxOne](index.md)
+- [Problèmes connus](known-issues.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO2-->
 
 

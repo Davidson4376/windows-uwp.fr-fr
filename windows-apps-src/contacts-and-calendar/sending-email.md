@@ -1,31 +1,31 @@
 ---
 author: Xansky
-description: Shows how to launch the compose email dialog to allow the user to send an email message. You can pre-populate the fields of the email with data before showing the dialog. The message will not be sent until the user taps the send button.
-title: Send email
+description: "Montre comment lancer la boîte de dialogue de rédaction d’un message électronique pour permettre à l’utilisateur d’envoyer un message électronique. Vous pouvez préremplir les champs de l’e-mail avec des données avant d’afficher la boîte de dialogue. Le message ne sera pas envoyé tant que l’utilisateur n’aura pas appuyé sur le bouton d’envoi."
+title: "Envoyer un courrier électronique"
 ms.assetid: 74511E90-9438-430E-B2DE-24E196A111E5
 keywords: contacts, email, send
 translationtype: Human Translation
 ms.sourcegitcommit: 252e144b2436f047f7b0849bb6e5aee87b2e3464
-ms.openlocfilehash: ff09393af072eb8aee8c3001e7323cc20201da70
+ms.openlocfilehash: ff0d2cd86f8ba422db7a26565c52293a3e21a018
 
 ---
 
-# Send email
+# Envoyer un courrier électronique
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-Shows how to launch the compose email dialog to allow the user to send an email message. You can pre-populate the fields of the email with data before showing the dialog. The message will not be sent until the user taps the send button.
+Montre comment lancer la boîte de dialogue de rédaction d’un message électronique pour permettre à l’utilisateur d’envoyer un message électronique. Vous pouvez préremplir les champs de l’e-mail avec des données avant d’afficher la boîte de dialogue. The message will not be sent until the user taps the send button.
 
 **In this article**
 
--   [Launch the compose email dialog](#launch-the-compose-email-dialog)
--   [Summary and next steps](#summary-and-next-steps)
--   [Related topics](#related-topics)
+-   [Lancer la boîte de dialogue de rédaction d’un message électronique](#launch-the-compose-email-dialog)
+-   [Récapitulatif et étapes suivantes](#summary-and-next-steps)
+-   [Rubriques connexes](#related-topics)
 
-## Launch the compose email dialog
+## Lancer la boîte de dialogue de rédaction d’un message électronique
 
-Create a new [**EmailMessage**](https://msdn.microsoft.com/library/windows/apps/Dn631270) object and set the data that you want to be pre-populated in the compose email dialog. Call [**ShowComposeNewEmailAsync**](https://msdn.microsoft.com/library/windows/apps/Dn631269) to show the dialog.
+Créez un objet [**EmailMessage**](https://msdn.microsoft.com/library/windows/apps/Dn631270) et définissez les données à préremplir dans la boîte de dialogue de rédaction d’un message électronique. Appelez [**ShowComposeNewEmailAsync**](https://msdn.microsoft.com/library/windows/apps/Dn631269) pour afficher la boîte de dialogue.
 
 ``` cs
 private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipient, 
@@ -58,13 +58,13 @@ private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
 }
 ```
 
-## Summary and next steps
+## Récapitulatif et étapes suivantes
 
-This topic has shown you how to launch the compose email dialog. For information on selecting contacts to use as recipients for an email message, see [Select contacts](selecting-contacts.md). See [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/JJ635275) to select a file to use as an email attachment.
+Cette rubrique vous a montré comment lancer la boîte de dialogue de rédaction d’un message électronique. Pour plus d’informations sur la sélection de contacts en tant que destinataires d’un message électronique, voir [Sélectionner des contacts](selecting-contacts.md). Voir [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/JJ635275) pour sélectionner un fichier à utiliser en pièce jointe d’un message électronique.
 
-## Related topics
+## Rubriques connexes
 
-* [Selecting contacts](selecting-contacts.md)
+* [Sélection de contacts](selecting-contacts.md)
 * [How to continue your Windows Phone app after calling a file picker](https://msdn.microsoft.com/library/windows/apps/xaml/Dn614994)
  
 
@@ -76,6 +76,6 @@ This topic has shown you how to launch the compose email dialog. For information
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

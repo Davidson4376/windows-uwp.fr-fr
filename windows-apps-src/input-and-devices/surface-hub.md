@@ -7,7 +7,7 @@ label: Surface Hub
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: fc9331c1583d3aaa97b9fbedb9ee010c84be9001
+ms.openlocfilehash: 171d313a668ad4242d2e77b7ba055019d143a176
 
 ---
 
@@ -16,7 +16,7 @@ ms.openlocfilehash: fc9331c1583d3aaa97b9fbedb9ee010c84be9001
 
 
 
-Content goes here
+Emplacement du contenu
 
 
 
@@ -32,6 +32,6 @@ Content goes here
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

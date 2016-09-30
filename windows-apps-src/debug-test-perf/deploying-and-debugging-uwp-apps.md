@@ -1,230 +1,147 @@
 ---
 author: mcleblanc
 ms.assetid: 9322B3A3-8F06-4329-AFCB-BE0C260C332C
-description: This article guides you through the steps to target various deployment and debugging targets.
-title: Deploying and debugging Universal Windows Platform (UWP) apps
+description: "Cet article vous guide tout au long des étapes nécessaires pour cibler différents objectifs de déploiement et de débogage."
+title: "Déploiement et débogage des applications UWP"
 translationtype: Human Translation
-ms.sourcegitcommit: 3fe300a88c9b4fbb5a8ee21485269ea150111ed6
-ms.openlocfilehash: 00693e6debfba6511a75164ef6e1964088ae3516
+ms.sourcegitcommit: 14f6684541716034735fbff7896348073fa55f85
+ms.openlocfilehash: e2209e90080c7346bb363304b1a28f6446300332
 
 ---
 
-# Deploying and debugging Universal Windows Platform (UWP) apps
+# Déploiement et débogage des applications UWP
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-This article guides you through the steps to target various deployment and debugging targets.
+Cet article vous guide tout au long des étapes nécessaires pour cibler différents objectifs de déploiement et de débogage.
 
-Microsoft Visual Studio allows you to deploy and debug your Universal Windows Platform (UWP) apps on a variety of Windows 10 devices. Visual Studio will handle the process of building and registering the app on the target device.
+Microsoft Visual Studio vous permet de déployer et de déboguer des applications UWP sur de nombreux appareils Windows 10. Visual Studio gère le processus de génération et d’inscription de l’application sur l’appareil cible.
 
-## Picking a deployment target
+## Sélection d’une cible de déploiement
+
+Pour sélectionner une cible, accédez à la liste déroulante des cibles de débogage située en regard du bouton **Démarrer le débogage**, puis sélectionnez la cible vers laquelle vous voulez déployer votre application. Une fois la cible sélectionnée, choisissez **Démarrer le débogage (F5)** pour procéder au déploiement et au débogage sur cette cible, ou appuyez sur **Ctrl+F5** pour déployer simplement vers cette cible.
+
+![](images/debug-device-target-list.png)
+
+-   **Ordinateur local** : l’application est déployée vers l’ordinateur de développement actif. Cette option est disponible uniquement si la **Version minimale de la plateforme cible** de votre application est inférieure ou égale au système d’exploitation sur votre ordinateur de développement.
+-   **Simulateur** : l’application est déployée vers un environnement simulé de l’ordinateur de développement actif. Cette option est disponible uniquement si la **Version minimale de la plateforme cible** de votre application est inférieure ou égale au système d’exploitation sur votre ordinateur de développement.
+-   **Appareil** : l’application est déployée vers un appareil connecté USB. L’appareil doit être déverrouillé par le développeur et son écran doit être déverrouillé.
+-   Une cible **Émulateur** permet de démarrer et de déployer l’application sur un émulateur avec la configuration spécifiée dans le nom. Les émulateurs sont disponibles uniquement sur les ordinateurs Hyper-V exécutant Windows 8.1 ou supérieur.
+-   L’option **Ordinateur distant** vous permet de spécifier une cible distante pour déployer l’application. Pour plus d’informations sur le déploiement vers un ordinateur distant, voir la section [Spécification d’un appareil distant](#specifying-a-remote-device).
+
+## Débogage des applications déployées
+Visual Studio assure également l’attachement à n’importe quel processus d’application UWP en cours d’exécution. Pour cela, sélectionnez **Déboguer**, puis **Attacher au processus**. L’attachement à un processus en cours d’exécution ne nécessite pas le projet Visual Studio d’origine. Cependant, le chargement des [symboles](#symbols) du processus sera d’une grande aide pour déboguer un processus dont vous ne disposez pas du code d’origine.  
+  
+En outre, vous pouvez attacher et déboguer n’importe quel package d’application installé en sélectionnant **Déboguer**, **Autres**, puis **Déboguer le package d’application installé**.   
  
-To pick a target, go to the debug target drop-down next to the **Start Debugging** button and choose which target you want to deploy your app to. After the target is selected, select **Start Debugging (F5)** to deploy and debug on that target, or select **Ctrl+F5** to just deploy to that target.
+![Boîte de dialogue Déboguer le package d’application installé](images/gs-debug-uwp-apps-002.png)  
 
-![Debug device target list](images/debug-device-target-list.png)
+Si vous sélectionnez **Ne pas lancer, mais déboguer mon code au démarrage**, le débogueur Visual Studio sera attaché à votre application UWP au moment où vous la lancerez. Il s’agit d’un moyen efficace pour déboguer les chemins d’accès de contrôle à partir de [différentes méthodes de lancement](../xbox-apps/automate-launching-uwp-apps.md), notamment en cas d’activation du protocole avec des paramètres personnalisés.  
 
--   **Simulator** will deploy the app to a simulated environment on your current development machine. This option is only available if your app's **Target Platform Min. Version** is less than or equal to the operating system on your development machine.
--   **Local Machine** will deploy the app to your current development machine. This option is only available if your app's **Target Platform Min. Version** is less than or equal to the operating system on your development machine.
--   **Remote Machine** will let you specify a remote target to deploy the app. More information about deploying to a remote machine can be found in [Specifying a remote device](#specifying-a-remote-device).
--   **Device** will deploy the app to a USB connected device. The device must be developer unlocked and have the screen unlocked.
--   An **Emulator** target will boot up and deploy the app to an emulator with the configuration specified in the name. Emulators are only available on Hyper-V enabled machines running Windows 8.1 or beyond.
-
-
-## Debugging deployed apps
-Visual Studio can also attach to any running UWP app process by selecting **Debug**, and then **Attach to Process**. Attaching to a running process doesn’t require the original Visual Studio project, but loading the process's [symbols](#symbols) will help significantly when debugging a process that you don't have the original code for.  
+Les applications UWP peuvent être développées et compilées sur Windows8.1 ou une version ultérieure, mais leur exécution nécessite Windows10. Si vous développez une application UWP sur un PC Windows8.1, vous pouvez déboguer à distance une application UWP s’exécutant sur un autre appareil Windows10, sous réserve que les ordinateurs hôte et cible soient sur le même LAN. Pour ce faire, téléchargez et installez les [Outils de contrôle à distance de Visual Studio](http://aka.ms/remotedebugger) sur les deux machines. La version installée doit correspondre à la version existante de Visual Studio que vous avez installée, et l’architecture que vous sélectionnez (x86, x64) doit également correspondre à celle de votre application cible.   
   
-In addition, any installed app package can be attached and debugged by selecting **Debug**, **Other**, and then **Debug Installed App Packages**.   
- 
-![Debug Installed App Package dialog box](images/gs-debug-uwp-apps-002.png)   
 
-Selecting **Do not launch, but debug my code when it starts** will cause the Visual Studio debugger to attach to your UWP app when you launch it at a custom time. This is an effective way to debug control paths from [different launch methods](../xbox-apps/automate-launching-uwp-apps.md), such as protocol activation with custom parameters.  
+## Spécification d’un appareil distant
 
-UWP apps can be developed and compiled on Windows 8.1 or later, but require Windows 10 to run. If you are developing a UWP app on a Windows 8.1 PC, you can remotely debug a UWP app running on another Windows 10 device, provided that both the host and target computer are on the same LAN. To do this, download and install the [Remote Tools for Visual Studio](http://aka.ms/remotedebugger) on both machines. The installed version must match the existing version of Visual Studio that you have installed, and the architecture you select (x86, x64) must also match that of your target app.   
-  
-## Package layout
-With Visual Studio 2015 Update 3, we have added the option for developers to specify the layout path for their UWP apps. This determines where the package layout is copied to on disk when you build your app. By default, this property is set relative to the project’s root directory. If you do not modify this property, the behavior will remain the same as it has for previous versions of Visual Studio.
+### C# et Microsoft Visual Basic
 
-This property can be modified in the project's **Debug** properties. 
+Pour spécifier un ordinateur distant pour des applications en C# ou Microsoft Visual Basic, sélectionnez **Ordinateur distant** dans la liste déroulante des cibles de débogage. La boîte de dialogue **Connexions à distance** s’affiche et vous permet d’indiquer une adresse IP ou de sélectionner un appareil détecté. Par défaut, le mode d’authentification **universelle** est sélectionné. Pour déterminer le mode d’authentification à utiliser, voir [Modes d’authentification](#authentication-modes).
 
-If you want to include all layout files in your package when you create a package for your app, you must add the project property `<IncludeLayoutFilesInPackage>true</IncludeLayoutFilesInPackage>`. 
+![](images/debug-remote-connections.png)
 
-To add this property:
+Pour revenir à cette boîte de dialogue, vous pouvez ouvrir les propriétés du projet et accéder à l’onglet **Déboguer**. À partir de là, sélectionnez **Rechercher…**. en regard de **Ordinateur distant:**.
 
-1. Right-click the project, and then select **Unload Project**. 
-2. Right-click the project, and then select **Edit [projectname].xxproj** (.xxproj will change depending on project language). 
-3. Add the property, and then reload the project. 
+![](images/debug-remote-machine-config.png)
 
-## Specifying a remote device
+Pour déployer une application vers un PC distant, vous devez également télécharger et installer les outils de contrôle à distance Visual Studio sur le PC cible. Voir [Instructions pour un PC distant](#remote-pc-instructions) pour obtenir des instructions complètes.
 
-### C# and Microsoft Visual Basic
+### C++ et JavaScript
 
-To specify a remote machine for C# or Microsoft Visual Basic apps, select **Remote Machine** in the debug target drop-down. The **Remote Connections** dialog will appear, which will let you specify an IP address or select a discovered device. By default, the **Universal** authentication mode is selected. To determine which authentication mode to use, see [Authentication modes](#authentication-modes).
+Pour spécifier une cible d’ordinateur distant pour une application UWP en C++ ou JavaScript, accédez aux propriétés de projet en cliquant avec le bouton droit sur le projet dans l’**Explorateur de solutions**, puis en cliquant sur **Propriétés**. Accédez aux paramètres de **Débogage** et remplacez **Débogueur à lancer** par **Ordinateur distant**. Ensuite, renseignez le **Nom de l’ordinateur** (ou cliquez sur **Localiser…** pour en trouver un) et définissez la propriété ** 	Type d'authentification**.
 
-![Remote Connections dialog box](images/debug-remote-connections.png)
+![](images/debug-property-pages.png)
+Une fois que l’ordinateur est spécifié, vous pouvez sélectionner **Ordinateur distant** dans la liste déroulante des cibles de débogage pour revenir à cet ordinateur spécifié. Un seul ordinateur distant peut être sélectionné à la fois.
 
-To return to this dialog, you can open project properties and go to the **Debug** tab. From there, select **Find** next to **Remote machine:**
+### Instructions pour un PC distant
 
-![Debug tab](images/debug-remote-machine-config.png)
+Pour effectuer un déploiement sur un PC distant, les outils de contrôle à distance Visual Studio doivent être installés sur ce PC cible. Le PC distant doit également exécuter une version de Windows supérieure ou égale à la propriété **Version minimale de la plateforme cible** de vos applications. Une fois que vous avez installé les outils de contrôle à distance, vous devez lancer le débogueur distant sur le PC cible. Pour ce faire, recherchez **Débogueur distant** dans le menu **Démarrer** pour le lancer, et si vous y êtes invité, autorisez le débogueur à configurer vos paramètres de pare-feu. Par défaut, le débogueur est lancé avec l’authentification Windows. Cela requiert les informations d’identification de l’utilisateur si l’utilisateur connecté n’est pas le même sur les deux PC. Pour le définir sur **Pas d’authentification**, accédez à **Outils** -&gt;**Options** dans le **Débogueur distant** et définissez-le sur **Pas d’authentification**. Une fois le débogueur distant configuré, vous pouvez procéder au déploiement à partir de votre ordinateur de développement.
 
-To deploy an app to a remote PC, you will also need to download and install the Visual Studio Remote Tools on the target PC. For full instructions, see [Remote PC instructions](#remote-pc-instructions). 
+Pour plus d’informations, voir la page de téléchargement [Outils de contrôle à distance de Microsoft Visual Studio]( http://go.microsoft.com/fwlink/?LinkId=717039).
 
-### C++ and JavaScript
+## Modes d’authentification
 
-To specify a remote machine target for a C++ or JavaScript UWP app:
+Il existe trois modes d’authentification de déploiement sur un ordinateur distant :
 
-1. In the **Solution Explorer**, right-click the project, and then click **Properties**. 
-2. Go to **Debugging** settings, and under **Debugger to launch**, select **Remote Machine**. 
-3. Enter the **Machine Name** (or click **Locate** to find one), and then set the **Authentication Type** property.
+- **Universel (protocole non chiffré)** : utilisez ce mode d’authentification chaque fois que vous effectuez un déploiement sur un appareil distant qui n’est pas un PC Windows (ordinateur de bureau ou portable). Actuellement, il s’agit uniquement des appareils IoT. Le mode Universel (protocole non chiffré) doit uniquement être utilisé sur les réseaux approuvés. La connexion de débogage est vulnérable aux utilisateurs malveillants qui peuvent intercepter les données transmises entre la machine de développement et la machine distante, et les modifier.
+- **Windows** : ce mode d’authentification est destiné uniquement à être utilisé pour le déploiement sur PC distant (ordinateur de bureau ou portable). Utilisez ce mode d’authentification lorsque vous avez accès aux informations d’identification de l’utilisateur connecté de l’ordinateur cible. Il s’agit du canal le plus sécurisé pour le déploiement à distance.
+- **Aucun** : ce mode d’authentification est destiné uniquement à être utilisé pour le déploiement sur PC distant (ordinateur de bureau ou portable). Utilisez ce mode d’authentification lorsque vous disposez d’un ordinateur de test configuré dans un environnement dans lequel un compte de test est connecté, et que vous ne pouvez pas entrer les informations d’identification. Assurez-vous que les paramètres du débogueur distant sont définis pour ne pas accepter d’authentification.
 
-![Debug property pages](images/debug-property-pages.png)
+## Options de débogage
 
-After the machine is specified, you can select **Remote Machine** in the debug target drop-down to return to that specified machine. Only one remote machine can be selected at a time.
+Sur Windows 10, les performances de démarrage des applications UWP sont améliorées en les lançant de manière proactive, puis en les suspendant dans une technique dite de [prélancement](https://msdn.microsoft.com/library/windows/apps/Mt593297). Nombre d’applications fonctionnent dans ce mode sans rien de spécial, mais certaines d’entre elles devront peut-être ajuster leur comportement. Pour permettre le débogage des problèmes dans ces chemins de code, vous pouvez commencer à déboguer l’application à partir de Visual Studio en mode de prélancement. Le débogage est pris en charge à la fois à partir d’un projet Visual Studio (**Déboguer** -&gt;**Autres cibles de débogage** -&gt;**Déboguer le prélancement d’application Windows universelle**) et pour les applications déjà installées sur l’ordinateur (**Déboguer** -&gt;**Autres cibles de débogage** -&gt;**Déboguer le package d’application installé**, puis cochez la case **Activer l’application par prélancement**). Pour plus d’informations, voir la page web [Debug UWP Prelaunch]( http://go.microsoft.com/fwlink/?LinkId=717245) (en anglais).
 
-### Remote PC instructions
+Vous pouvez définir les options de déploiement suivantes dans la page de propriétés de **débogage** du projet de démarrage.
 
-To deploy to a remote PC, the target PC must have the Visual Studio Remote Tools installed. The remote PC must also be running a version of Windows that is greater than or equal to your apps **Target Platform Min. Version** property. After you have installed the remote tools, you must launch the remote debugger on the target PC. 
+**Autoriser le bouclage réseau**
 
-To do this, search for **Remote Debugger** in the **Start** menu, open it, and if prompted, allow the debugger to configure your firewall settings. By default, the debugger launches with Windows authentication. This will require user credentials if the signed-in user is not the same on both PCs.
+Pour des raisons de sécurité, une application UWP qui est installée de manière standard n’est pas autorisée à effectuer des appels réseau vers l’appareil sur lequel elle est installée. Par défaut, le déploiement de Visual Studio crée une exemption à cette règle pour l’application déployée. Cette exemption vous permet de tester les procédures de communication sur un seul et même ordinateur. Avant de soumettre votre application au Windows Store, vous devez la tester sans l’exemption.
 
-To change it to **no authentication**, in the **Remote Debugger**, go to **Tools** -&gt; **Options**, and then set it to **No Authentication**. After the remote debugger is set up, you must also ensure that you have set the host device to [Developer Mode](https://msdn.microsoft.com/windows/uwp/get-started/enable-your-device-for-development). After that, you can deploy from your development machine.
+Pour supprimer l’exemption de bouclage réseau de l’application:
 
-For more information, see the [Remote Tools for Visual Studio](http://go.microsoft.com/fwlink/p/?LinkId=717039) download page.
+-   Dans la page de propriétés de **débogage** en C# et Visual Basic, décochez la case **Autoriser le bouclage réseau**.
+-   Dans la page de propriétés de **débogage** en JavaScript et C++, définissez la valeur **Autoriser le bouclage réseau** sur **Non**.
 
-## Authentication modes
+**Ne pas lancer, mais déboguer mon code au démarrage (C# et Visual Basic)/Lancer l’application (JavaScript et C++)**
 
-There are three authentication modes for remote machine deployment:
+Pour configurer le déploiement afin de démarrer automatiquement une session de débogage au lancement de l’application:
 
-- **Universal (Unencrypted Protocol)**: Use this authentication mode whenever you are deploying to a remote device that is not a Windows PC (desktop or laptop). Currently, this is for IoT devices, Xbox devices, and HoloLens devices. Universal (Unencrypted Protocol) should only be used on trusted networks. The debugging connection is vulnerable to malicious users who could intercept and change data being passed between the development and remote machine.
-- **Windows**: This authentication mode is only intended to be used for remote PC deployment (desktop or laptop). Use this authentication mode when you have access to the credentials of the signed-in user of the target machine. This is the most secure channel for remote deployment.
-- **None**: This authentication mode is only intended to be used for remote PC deployment (desktop or laptop). Use this authentication mode when you have a test machine set up in an environment that has a test account signed in and you cannot enter the credentials. Ensure that the remote debugger settings are set to accept no authentication.
+-   Dans la page de propriétés de **débogage** en C# et Visual Basic, cochez la case **Ne pas lancer, mais déboguer mon code au démarrage**.
+-   Dans la page de propriétés de **débogage** en JavaScript et C++, définissez la valeur **Lancer l’application** sur **Oui**.
 
-## Advanced remote deployment options
-With the release of Visual Studio 2015 Update 3, and the Windows 10 Anniversary Update, there are new advanced remote deployment options for certain Windows 10 devices. The advanced remote deployment options can be found on the **Debug** menu for project properties.
+## Symboles
 
-The new properties include:
-* Deployment type
-* Package registration path
-* Keep all files on device – even those that are no longer a part of your layout
+Les fichiers de symboles contiennent une variété de données très utiles lors du débogage du code, notamment des variables, des noms de fonctions et des adresses de points d’entrée, ce qui vous permet de mieux comprendre les exceptions et l’ordre d’exécution de la pile des appels. Les symboles sont disponibles par le biais du [serveur de symboles Microsoft](http://msdl.microsoft.com/download/symbols) pour la plupart des variantes de Windows. Pour des recherches hors connexion plus rapides, vous pouvez également les télécharger à partir de la page [Télécharger des packages de symboles Windows](http://aka.ms/winsymbols).
 
-### Requirements
-To utilize the advanced remote deployment options, you must satisfy the following requirements:
-* Have Visual Studio 2015 Update 3 installed with Windows 10 Tools 1.4.1 (which includes the Windows 10 Anniversary Update SDK)
-* Target a Windows 10 Anniversary Update Xbox remote device
-* Use Universal Authentication mode 
+Pour définir les options de symbole de Visual Studio, sélectionnez **Outils&gt; Options**, puis **Débogage&gt; Symboles** dans la boîte de dialogue.
 
-### Properties pages
-For a C# or Visual Basic UWP app, the properties page will look like the following.
+**Figure4. Boîte de dialogue Options.** 
+![Boîte de dialogue Options](images/gs-debug-uwp-apps-004.png)
 
-![CS or VB properties](images/advanced-remote-deploy-cs.png)
-
-For a C++ UWP app, the properties page will look like the following.
-
-![Cpp properties](images/advanced-remote-deploy-cpp.png)
-
-### Copy files to device
-**Copy files to device** will physically transfer the files over the network to the remote device. It will copy and register the package layout that is built to the **Layout folder path**. Visual Studio will keep the files that are copied to the device in sync with the files in your Visual Studio project; however, there is an option to **keep all files on device – even those that are no longer a part of your layout**. Selecting this option means that any files that were previously copied to the remote device, but are no longer a part of your project, will remain on the remote device.
-
-The **package registration path** specified when you **copy files to device** is the physical location on the remote device where the files are copied. This path can be specified as any relative path. The location where the files are deployed will be relative to a development files root that will vary depending on the target device. Specifying this path is useful for multiple developers sharing the same device and working on packages with some build variance.
-
-> [!NOTE]
-> **Copy files to device** is currently supported on Xbox running Windows 10 Anniversary Update.
-
-On the remote device, the layout gets copied to the following default location depending on the device family:
-  `Xbox: \\MY-DEVKIT\DevelopmentFiles\PACKAGE-REGISTRATION-PATH`
-
-### Register layout from network
-When you choose to register the layout from the network, you can build your package layout to a network share and then register the layout on the remote device directly from the network. This requires that you specify a layout folder path (a network share) that is accessible from the remote device. The **Layout folder path** property is the path set relative to the PC running Visual Studio, while the **Package registration path** property is the same path, but specified relative to the remote device. 
-
-To successfully register the layout from the network, you must first make **Layout folder path** a shared network folder. To do this, right-click the folder in File Explorer, select **Share with > Specific people**, and then choose the users you would like to share the folder with. When you try to register the layout from the network, you will be prompted for credentials to ensure that you are registering as a user with access to the share.
-
-For help with this, see the following examples:
-
-- Example 1 (local layout folder, accessible as a network share):
-  * **Layout folder path** = `D:\Layouts\App1` 
-  * **Package registration path** = `\\NETWORK-SHARE\Layouts\App1`
-
-- Example 2 (network layout folder):
-  * **Layout folder path** = `\\NETWORK-SHARE\Layouts\App1`
-  * **Package registration path** = `\\NETWORK-SHARE\Layouts\App1` 
-
-When you first register the layout from the network, your credentials will be cached on the target device so you do not need to repeatedly sign in. To remove cached credentials, you can use the [WinAppDeployCmd.exe tool](https://msdn.microsoft.com/windows/uwp/packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool) from the Windows 10 SDK with the **deletecreds** command. 
-
-You cannot select **keep all files on device** when you register the layout from the network because no files are physically copied to the remote device. 
-
-> [!NOTE]
-> **Register layout from network** is currently supported on Xbox running Windows 10 Anniversary Update.
-
-On the remote device, the layout gets registered to the following default location depending on the device family:
-  `Xbox: \\MY-DEVKIT\DevelopmentFiles\XrfsFiles`
-
-
-## Debugging options
-
-On Windows 10, the startup performance of UWP apps is improved by proactively launching and then suspending apps in a technique called [prelaunch](https://msdn.microsoft.com/library/windows/apps/Mt593297). Many apps will not need to do anything special to work in this mode, but some apps may need to adjust their behavior. To help debug any issues in these code paths, you can start debugging the app from Visual Studio in prelaunch mode. 
-
-Debugging is supported both from a Visual Studio project (**Debug** -&gt; **Other Debug Targets** -&gt; **Debug Universal Windows App Prelaunch**), and for apps already installed on the machine (**Debug** -&gt; **Other Debug Targets** -&gt; **Debug Installed App Package** by selecting the **Activate app with Prelaunch** check box). For more information, see [Debug UWP Prelaunch](http://go.microsoft.com/fwlink/p/?LinkId=717245).
-
-You can set the following deployment options on the **Debug** property page of the startup project:
-
-- **Allow local network loopback**
-
-  For security reasons, a UWP app that is installed in the standard manner is not allowed to make network calls to the device it is installed on. By default, Visual Studio deployment creates an exemption from this rule for the deployed app. This exemption allows you to test communication procedures on a single machine. Before submitting your app to the Windows Store, you should test your app without the exemption.
-  
-  To remove the network loopback exemption from the app:
-  
-  -   On the C# and Visual Basic **Debug** property page, clear the **Allow local network loopback** check box.
-  -   On the JavaScript and C++ **Debugging** property page, set the **Allow Local Network Loopback** value to **No**.
-
-- **Do not launch, but debug my code when it starts / Launch Application**
-
-  To configure the deployment to automatically start a debugging session when the app is launched:
-  
-  -   On the C# and Visual Basic **Debug** property page, select the **Do not launch, but debug my code when it starts** check box.
-  -   On the JavaScript and C++ **Debugging** property page, set the **Launch Application** value to **Yes**.
-
-## Symbols
-
-Symbol files contain a variety of very useful data when debugging code, such as variables, function names, and entry point addresses, allowing you to better understand exceptions and callstack execution order. Symbols for most variants of Windows are available through the [Microsoft Symbol Server](http://msdl.microsoft.com/download/symbols) or can be downloaded for faster, offline lookups at [Download Windows Symbol Packages](http://aka.ms/winsymbols).
-
-To set symbol options for Visual Studio, select **Tools > Options**, and then go to **Debugging > Symbols** in the dialog window.
-
-![Options dialog box](images/gs-debug-uwp-apps-004.png)
-
-To load symbols in a debugging session with [WinDbg](#windbg), set the **sympath** variable to the symbol package location. For example, running the following command will load symbols from the Microsoft Symbol Server, and then cache them in the C:\Symbols directory:
+Pour charger les symboles dans une session de débogage avec [WinDbg](#windbg), définissez la variable **sympath** selon l’emplacement du package de symboles. Par exemple, l’exécution de la commande suivante permet de charger des symboles à partir du serveur de symboles Microsoft et de les mettre en cache dans le répertoire C:\Symbols:
 
 ```
 .sympath SRV*C:\Symbols*http://msdl.microsoft.com/download/symbols
 .reload
 ```
 
-You can add more paths by using the `‘;’` delimiter, or use the `.sympath+` command. For more advanced symbol operations that use WinDbg, see [Public and Private Symbols](https://msdn.microsoft.com/library/windows/hardware/ff553493).
+Vous pouvez ajouter des chemins d’accès en utilisant le délimiteur «;». Vous pouvez également utiliser la commande `.sympath+`. Pour les opérations de symbole plus avancées qui utilisent WinDbg, consultez [Symboles publics et privés](https://msdn.microsoft.com/library/windows/hardware/ff553493).
 
 ## WinDbg
 
-WinDbg is a powerful debugger that is shipped as part of the Debugging Tools for Windows suite, which is included in the [Windows SDK](http://go.microsoft.com/fwlink/p/?LinkID=271979). The Windows SDK installation allows you to install Debugging Tools for Windows as a standalone product. While highly useful for debugging native code, we don’t recommend WinDbg for apps written in managed code or HTML5. 
+WinDbg est un débogueur puissant fourni avec la suite d’outils de débogage pour Windows, qui est incluse dans le [SDK Windows](http://go.microsoft.com/fwlink/p?LinkID=271979). Lors de l’installation du SDK Windows, vous pouvez installer les outils de débogage pour Windows en tant que produit autonome. Si WinDbg s’avère très utile pour le débogage de code natif, nous ne le recommandons pas pour les applications écrites en code managé ou HTML5. 
 
-To use WinDbg with UWP apps, you will need to first disable Process Lifetime Management (PLM) for your app package by using PLMDebug, as described in [Testing and debugging tools for Process Lifetime Management (PLM)](testing-debugging-plm.md). 
+Pour utiliser WinDbg avec des applications UWP, vous devez commencer par désactiver PLM pour votre package d’application à l’aide de PLMDebug, comme décrit dans la section précédente. 
 
 ```
 plmdebug /enableDebug [PackageFullName] "\"C:\Program Files\Debugging Tools for Windows (x64)\WinDbg.exe\" -server npipe:pipe=test"
 ```
 
-In contrast to Visual Studio, most of the core functionality of WinDbg relies on providing commands to the command window. The provided commands allow you to view execution state, investigate user mode crash dumps, and debug in a variety of modes. 
+Contrairement à Visual Studio, WinDbg a pour principale fonctionnalité de fournir des commandes à la fenêtre de commandes. Les commandes fournies vous permettent d’afficher l’état d’exécution, d’examiner les vidages sur incident en mode utilisateur et d’effectuer le débogage dans une variété de modes. 
 
-One of the most popular commands in WinDbg is `!analyze -v`, which is used to retrieve a verbose amount of information about the current exception, including:
+`!analyze -v` est l’une des commandes les plus utilisées de WinDbg. Elle permet de récupérer des informations détaillées sur l’exception actuelle, notamment:
 
-- FAULTING_IP: instruction pointer at the time of fault
-- EXCEPTION_RECORD: address, code, and flags of the current exception
-- STACK_TEXT: stack trace prior to exception
+- FAULTING_IP: pointeur d’instruction au moment de l’erreur
+- EXCEPTION_RECORD: adresse, code et indicateurs de l’exception actuelle
+- STACK_TEXT: arborescence des appels de procédure avant l’exception
 
-For a complete list of all WinDbg commands, see [Debugger Commands](https://msdn.microsoft.com/library/ff540507).
+Pour obtenir la liste complète de toutes les commandes de WinDbg, consultez [Commandes du débogueur](https://msdn.microsoft.com/library/ff540507).
 
-## Related topics
-- [Testing and debugging tools for Process Lifetime Management (PLM)](testing-debugging-plm.md)
-- [Debugging, testing, and performance](index.md)
+## Rubriques connexes
+- [Outils de test et de débogage pour la PLM](testing-debugging-plm.md)
+- [Débogage, tests et analyse des performances](index.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

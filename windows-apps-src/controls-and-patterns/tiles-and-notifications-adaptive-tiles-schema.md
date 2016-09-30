@@ -1,25 +1,24 @@
 ---
 author: mijacobs
-Description: Here are the elements and attributes you use to create adaptive tiles.
-title: Adaptive tile schema and templates
+Description: "Voici les éléments et attributs permettant de créer des vignettes adaptatives."
+title: "Schéma et modèles de vignette adaptative"
 ms.assetid: 858FB05E-87A2-49CF-BE48-570980AD36C8
 label: Adaptive tile schema and templates
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 08bdb46dba6fc93ada20b3fc585d3e24e29023a0
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: a5d061515eee1ab64f17e4f5aab8846adbd1c8f1
 
 ---
-# Adaptive tile templates: schema and guidance
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+# Modèles de vignette adaptative&#58; schéma et conseils
 
-Here are the elements and attributes you use to create adaptive tiles. For instructions and examples, see [Create adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md).
+Voici les éléments et attributs permettant de créer des vignettes adaptatives. Consultez les instructions et les exemples indiqués dans [Créer des vignettes adaptatives](tiles-and-notifications-create-adaptive-tiles.md).
 
-## tile element
+## <span id="tile_element"></span><span id="TILE_ELEMENT"></span>élément de vignette
 
 
-``` xml
+``` syntax
 <tile>
   
   <!-- Child elements -->
@@ -28,10 +27,10 @@ Here are the elements and attributes you use to create adaptive tiles. For instr
 </tile>
 ```
 
-## visual element
+## <span id="visual_element"></span><span id="VISUAL_ELEMENT"></span>élément visuel
 
 
-``` xml
+``` syntax
 <visual
   version? = integer
   lang? = string
@@ -47,10 +46,10 @@ Here are the elements and attributes you use to create adaptive tiles. For instr
 </visual>
 ```
 
-## binding element
+## <span id="binding_element"></span><span id="BINDING_ELEMENT"></span>élément de liaison
 
 
-``` xml
+``` syntax
 <binding
   template = tileTemplateNameV3
   fallback? = tileTemplateNameV1
@@ -72,10 +71,10 @@ Here are the elements and attributes you use to create adaptive tiles. For instr
 </binding>
 ```
 
-## image element
+## <span id="image_element"></span><span id="IMAGE_ELEMENT"></span>élément d’image
 
 
-``` xml
+``` syntax
 <image
   src = string
   placement? = "inline" | "background" | "peek"
@@ -86,10 +85,10 @@ Here are the elements and attributes you use to create adaptive tiles. For instr
   hint-align? = "stretch" | "left" | "center" | "right" />
 ```
 
-## text element
+## <span id="text_element"></span><span id="TEXT_ELEMENT"></span>élément de texte
 
 
-``` xml
+``` syntax
 <text
   lang? = string
   hint-style? = textStyle
@@ -103,12 +102,12 @@ Here are the elements and attributes you use to create adaptive tiles. For instr
 </text>
 ```
 
-textStyle values: caption captionSubtle body bodySubtle base baseSubtle subtitle subtitleSubtle title titleSubtle titleNumeral subheader subheaderSubtle subheaderNumeral header headerSubtle headerNumber
+Valeurs de textStyle: caption captionSubtle body bodySubtle base baseSubtle subtitle subtitleSubtle title titleSubtle titleNumeral subheader subheaderSubtle subheaderNumeral header headerSubtle headerNumber
 
-## group element
+## <span id="group_element"></span><span id="GROUP_ELEMENT"></span>élément de groupe
 
 
-``` xml
+``` syntax
 <group>
 
   <!-- Child elements -->
@@ -117,10 +116,10 @@ textStyle values: caption captionSubtle body bodySubtle base baseSubtle subtitle
 </group>
 ```
 
-## subgroup element
+## <span id="subgroup_element"></span><span id="SUBGROUP_ELEMENT"></span>élément de sous-groupe
 
 
-``` xml
+``` syntax
 <subgroup
   hint-weight? = [0-100]
   hint-textStacking? = "top" | "center" | "bottom" >
@@ -133,10 +132,10 @@ textStyle values: caption captionSubtle body bodySubtle base baseSubtle subtitle
 </subgroup>
 ```
 
-## Related topics
+## <span id="related_topics"></span>Rubriques connexes
 
 
-* [Create adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md)
+* [Créer des vignettes adaptatives](tiles-and-notifications-create-adaptive-tiles.md)
  
 
  
@@ -147,6 +146,6 @@ textStyle values: caption captionSubtle body bodySubtle base baseSubtle subtitle
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,69 +1,69 @@
 ---
 author: jnHs
-Description: Listing your app in the right category and subcategory helps customers find your app and understand more about it.
-title: Category and subcategory table
+Description: "Le classement de votre application dans la catégorie et la sous-catégorie adéquates permet aux utilisateurs de la trouver facilement et d’en savoir plus sur elle."
+title: "Tableau des catégories et sous-catégories"
 ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
 translationtype: Human Translation
-ms.sourcegitcommit: b31e399d950a99f0cb6f1e912e391429b5463136
-ms.openlocfilehash: 40891ade1c3383f89eed99176b4e9cf979e1fb64
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 9f9f5da100109af5dc38f7ffbc3cadca842b1214
 
 ---
 
-# Category and subcategory table
+# Tableau des catégories et sous-catégories
 
 
-Listing your app in the right category and subcategory helps customers find your app and understand more about it.
+Le classement de votre application dans la catégorie et la sous-catégorie adéquates permet aux utilisateurs de la trouver facilement et d&#39;en savoir plus sur elle.
 
-Choose the category that best describes your app. Then choose a subcategory, if available.
+Choisissez la catégorie qui correspond le mieux à votre application. Ensuite, sélectionnez une sous-catégorie, le cas échéant.
 
-> **Note**  If you choose **Games** for your category, a subcategory is required.
+> **Important** Si vous choisissez la catégorie **Jeux**, vous devez définir une sous-catégorie.
 
-An app can only be listed in one category (and one subcategory, if available.) If you're not sure which category or subcategory to use, choose the one that you think customers are most likely to look at when trying to find apps like yours.
-
-If you want to change the category or subcategory of an app that's already in the Store, you can do that by [creating a new submission](app-submissions.md) and selecting the new category.
-
-> **Important** If you publish the app in the **Games** category, you won't be able to pick a different category in a new submission. You also can't choose the **Games** category in an update to an app that you previously published in a different category.
-
-The Windows Store organizes apps into the following categories and subcategories.
-
-Only some categories have subcategories. Keep in mind that you can only use a subcategory if it belongs to the category you picked.
-
-
-| Category                    | Subcategory                                       |
-|-----------------------------|---------------------------------------------------|
-| Books + reference           | E-reader <br> Fiction <br> Nonfiction <br> Reference |
-| Business                    | Accounting + finance <br> Collaboration <br> CRM <br> Data + analytics <br> File management <br> Inventory + logistics <br> Legal + HR <br> Project management <br> Remote desktop <br> Sales + marketing <br> Time + expenses |
-| Developer tools             | Database <br> Design tools <br> Development kits <br> Networking <br> Reference + training <br> Servers <br> Utilities <br> Web hosting |
-| Education                   | Books + reference <br> Early learning <br> Instructional tools <br> Language <br> Study aids |
-| Entertainment               | (None)                                            |
-| Food + dining               | (None)                                            |
-| Games                       | Action + adventure <br> Card + board <br> Casino <br> Educational <br> Family + kids <br> Fighting <br> Music <br> Platformer <br> Puzzle + trivia <br> Racing + flying <br> Role playing <br> Shooter <br> Simulation <br> Sports <br> Strategy <br> Word |
-| Government + politics       | (None)                                            |
-| Health + fitness            | (None)                                            |
-| Kids + family               | Books + reference <br> Entertainment <br> Hobbies + toys <br> Sports + activities <br> Travel |
-| Lifestyle                   | Automotive <br> DIY <br> Home + garden <br> Relationships <br> Special interest <br> Style + fashion |
-| Medical                     | (None)                                            |
-| Multimedia design           | Illustration + graphic design <br> Music production <br> Photo + video production |
-| Music                       | (None)                                            |
-| Navigation + maps           | (None)                                            |
-| News + weather              | News <br> Weather                                 |
-| Personal finance            | Banking + investments <br> Budgeting + taxes      |
-| Personalization             | Ringtones + sounds <br> Themes <br> Wallpaper + lock screens |
-| Photo + video               | (None)                                            |
-| Productivity                | (None)                                            |
-| Security                    | PC protection <br> Personal security <br>         |
-| Shopping                    | (None)                                            |
-| Social                      | (None)                                            |
-| Sports                      | (None)                                            |
-| Travel                      | City guides <br> Hotels                           |
-| Utilities + tools           | Backup + manage <br> File managers                |
  
 
-> **Note**  For info on the categories used in the Windows Store for Windows 8.1 and earlier, and in the Windows Phone Store, and how they relate to the category list above, see [How your app appears in the Store for Windows 10 customers](how-your-app-appears-in-the-store-for-windows-10-customers.md#category-changes).
+Une application ne peut être répertoriée que dans une seule catégorie (et une seule sous-catégorie, le cas échéant.) Si vous ne savez pas quelle catégorie ou sous-catégorie utiliser, choisissez celle que, selon vous, les clients vont très certainement parcourir lorsqu’ils rechercheront des applications comme les vôtres.
+
+Si vous souhaitez modifier la catégorie ou la sous-catégorie d’une application déjà publiée dans le Windows Store, vous devez [créer une autre soumission](app-submissions.md) et sélectionner la nouvelle catégorie.
+
+Le Windows Store organise les applications dans les catégories et sous-catégories ci-après.
+
+Seules certaines catégories ont des sous-catégories. N’oubliez pas que vous ne pouvez utiliser une sous-catégorie que si elle appartient à la catégorie choisie.
+
+
+| Catégorie                    | Sous-catégorie                                       |
+|-----------------------------|---------------------------------------------------|
+| Livres et référence           | Liseuse électronique <br> Fiction <br> Non-fiction <br> Référence |
+| Entreprise                    | Comptabilité et finances <br> Collaboration <br> CRM <br> Données et analyse <br> Gestion de fichiers <br> Inventaire et logistique <br> Juridique et ressources humaines <br> Gestion de projet <br> Bureau à distance <br> Ventes et marketing <br> Temps et dépenses |
+| Outils pour développeur             | Base de données <br> Outils de conception <br> Kits de développement <br> Réseaux <br> Référence et formation <br> Serveurs <br> Utilitaires <br> Hébergement web |
+| Éducation                   | Livres et référence <br> Éveil <br> Outils pédagogiques <br> Langue <br> Aide scolaire et universitaire |
+| Divertissement               | (Aucune)                                            |
+| Alimentation et cuisine               | (Aucune)                                            |
+| Jeux                       | Action + aventure <br> Jeux de cartes et de société <br> Casino <br> Pédagogie <br> Famille et enfants <br> Sports de combat <br> Musique <br> Jeux de plateforme <br> Puzzle et jeux d'esprit <br> Courses et pilotage <br> Jeux de rôle <br> Tir <br> Simulation <br> Sports <br> Stratégie <br> Jeux de lettres |
+| Gouvernement et politique       | (Aucune)                                            |
+| Santé et bien-être            | (Aucune)                                            |
+| Enfants et famille               | Livres et référence <br> Divertissement <br> Loisirs et jouets <br> Sports et activités <br> Voyage |
+| Loisirs                   | Automobile <br> Loisirs créatifs <br> Maison et jardin <br> Relations <br> Autres centres d'intérêt <br> Mode et stylisme |
+| Médical                     | (Aucune)                                            |
+| Conception multimédia           | Illustration et conception graphique <br> Production musicale <br> Production photo et vidéo |
+| Musique                       | (Aucune)                                            |
+| Navigation et cartes           | (Aucune)                                            |
+| Actualités et météo              | Actualités <br> Météo                                 |
+| Finances personnelles            | Banque et investissements <br> Budgétisation et taxes      |
+| Personnalisation             | Sonneries et sons <br> Thèmes <br> Papier peint et écrans de verrouillage |
+| Photo et vidéo               | (Aucune)                                            |
+| Productivité                | (Aucune)                                            |
+| Sécurité                    | Protection du PC <br> Protection personnelle <br>         |
+| Achats                    | (Aucune)                                            |
+| Social                      | (Aucune)                                            |
+| Sports                      | (Aucune)                                            |
+| Voyage                      | Guides touristiques <br> Hôtels                           |
+| Utilitaires et outils           | Sauvegarde et gestion <br> Gestionnaires de fichiers                |
+ 
+
+> **Important** Pour plus d’informations sur les catégories utilisées dans le Windows Store pour Windows 8.1 et les versions antérieures ainsi que dans le Windows Phone Store, et sur leur lien avec la liste de catégories ci-dessus, consultez [Apparence de votre application dans le Store pour les clients dotés de Windows 10](how-your-app-appears-in-the-store-for-windows-10-customers.md#category-changes).
 
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Jun16_HO4-->
 
 

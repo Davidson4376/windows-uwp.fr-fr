@@ -4,8 +4,8 @@ description: "Les applications utilisent les tâches en arrière-plan et deux m�
 title: "Communications réseau en arrière-plan"
 ms.assetid: 537F8E16-9972-435D-85A5-56D5764D3AC2
 translationtype: Human Translation
-ms.sourcegitcommit: eea01135c60df0323b73bf3fda8b44e6d02cd04b
-ms.openlocfilehash: bea161a9eeac012aa7b09547212f021f1289afa6
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 4ab9ca2a1cd337bd0af8fbbfcf44d8fc6e6dda3e
 
 ---
 
@@ -18,13 +18,7 @@ ms.openlocfilehash: bea161a9eeac012aa7b09547212f021f1289afa6
 -   [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009)
 -   [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)
 
-Les applications utilisent les tâches en arrière-plan et deux mécanismes principaux pour maintenir les communications lorsqu’elles ne sont pas au premier plan: le broker de socket et les déclencheurs de canal de contrôle. Les applications qui utilisent des sockets pour les connexions à long terme peuvent déléguer la propriété d’un socket à un broker de socket système lorsqu’elles quittent le premier plan. Le broker active ensuite l’application lorsque le trafic atteint le socket, puis retransfère la propriété à l’application, et l’application traite alors le trafic entrant.
-
-## Exécution d’opérations réseau de courte durée dans les tâches en arrière-plan
-
-Les API SocketActivityTrigger et ControlChannelTrigger (décrites plus loin dans cette rubrique) ont été conçues pour les applications qui gèrent des connexions réseau durables, qui sont conservées même lorsque l’application s’exécute en arrière-plan. Les applications qui requièrent des interactions de courte durée avec le réseau dans le cadre de la logique de leurs tâches en arrière-plan (par exemple, l’envoi d’une requête HTTP) peuvent appeler directement les API du réseau principal ([**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319), [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) ou [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906)). Ces tâches doivent toutefois être configurées de manière spécifique pour pouvoir fonctionner correctement quelles que soient les circonstances. Les tâches en arrière-plan doivent utiliser soit la condition [InternetAvailable](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.systemconditiontype.aspx) avec leur tâche en arrière-plan, soit l’indicateur [IsNetworkRequested](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundtaskbuilder.isnetworkrequested.aspx) sur l’inscription de leur tâche en arrière-plan. Cela indique à l’infrastructure de tâches en arrière-plan qu’elle doit maintenir le réseau actif pendant l’exécution de la tâche, même si le périphérique est passé en mode de veille connectée.
-
-Si votre tâche en arrière-plan n’utilise ni la condition [InternetAvailable](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.systemconditiontype.aspx) ni l’indicateur [IsNetworkRequested](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundtaskbuilder.isnetworkrequested.aspx) comme décrit ici, elle ne sera pas en mesure d’accéder au réseau en mode de veille connectée (par exemple, lorsque l’écran du téléphone est éteint).
+Les applications utilisent les tâches en arrière-plan et deux mécanismes principaux pour maintenir les communications lorsqu’elles ne sont pas au premier plan: le broker de socket et les déclencheurs de canal de contrôle. Les applications qui utilisent des sockets peuvent déléguer la propriété d’un socket à un broker de socket système lorsqu’elles quittent le premier plan. Le broker active ensuite l’application lorsque le trafic atteint le socket, puis retransfère la propriété à l’application, et l’application traite alors le trafic entrant.
 
 ## Broker de socket et SocketActivityTrigger
 
@@ -32,8 +26,10 @@ Si votre application utilise des connexions [**DatagramSocket**](https://msdn.mi
 
 Pour que votre application reçoive et traite les données reçues sur un socket lorsqu’elle est inactive, elle doit effectuer une configuration unique au démarrage, puis transférer la propriété du socket au broker de socket lorsqu’elle bascule vers un état d’inactivité.
 
-Les étapes de l’installation ponctuelle visent à créer un déclencheur, à inscrire une tâche en arrière-plan pour ce déclencheur, et à activer le socket pour le broker de socket:
-  - Créez un **SocketActivityTrigger** et inscrivez une tâche en arrière-plan pour le déclencheur en définissant le paramètre TaskEntryPoint sur votre code de traitement d’un paquet reçu.
+-   Les étapes de configuration uniques sont les suivantes:
+
+    -   Créez un SocketActivityTrigger et inscrivez une tâche en arrière-plan pour le déclencheur en définissant le paramètre TaskEntryPoint sur votre code de traitement d’un paquet reçu.
+
 ```csharp
             var socketTaskBuilder = new BackgroundTaskBuilder(); 
             socketTaskBuilder.Name = _backgroundTaskName; 
@@ -42,7 +38,10 @@ Les étapes de l’installation ponctuelle visent à créer un déclencheur, à 
             socketTaskBuilder.SetTrigger(trigger); 
             _task = socketTaskBuilder.Register(); 
 ```
-  - Appelez **EnableTransferOwnership** sur le socket, avant de lier le socket.
+
+    -   Call EnableTransferOwnership on the socket, before you bind the socket.
+
+
 ```csharp
            _tcpListener = new StreamSocketListener(); 
           
@@ -55,12 +54,15 @@ Les étapes de l’installation ponctuelle visent à créer un déclencheur, à 
            await _tcpListener.BindServiceNameAsync("my-service-name"); 
 ```
 
-Une fois votre socket correctement configuré et lorsque votre application est sur le point d’être suspendue, appelez la méthode **TransferOwnership** sur le socket pour le transférer au broker de socket. Le broker surveille le socket et active votre tâche en arrière-plan lors de la réception de données. L’exemple suivant inclut une fonction **TransferOwnership** utilitaire pour effectuer le transfert des sockets **StreamSocketListener**. (Notez que les différents types de sockets ont tous leur propre méthode **TransferOwnership**. Vous devez donc appeler la méthode appropriée pour le socket dont vous transférez la propriété. Votre code contient probablement une fonction d’assistance **TransferOwnership** surchargée avec une implémentation pour chaque type de socket utilisé, afin que le code **OnSuspending** reste facile à lire.)
+-   L’action à entreprendre au moment de la suspension est la suivante:
 
-Une application transfère la propriété d’un socket à un broker de socket et transmet l’ID de la tâche en arrière-plan à l’aide de l’une des méthodes suivantes, selon celle qui est la plus appropriée:
--   L’une des méthodes [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn804256) sur un [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319).
--   L’une des méthodes [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn781433) sur un [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882).
--   L’une des méthodes [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn804407) sur un [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906).
+    Lorsque votre application est sur le point d’être suspendue, appelez la méthode **TransferOwnership** sur le socket pour le transférer au broker de socket. Le broker surveille le socket et active votre tâche en arrière-plan lors de la réception de données. L’exemple suivant inclut une fonction **TransferOwnership** utilitaire pour effectuer le transfert des sockets **StreamSocketListener**. (Notez que les différents types de sockets ont tous leur propre méthode **TransferOwnership**. Vous devez donc appeler la méthode appropriée pour le socket dont vous transférez la propriété. Votre code contient probablement une fonction d’assistance **TransferOwnership** surchargée avec une implémentation pour chaque type de socket utilisé, afin que le code **OnSuspending** reste facile à lire.)
+
+    Une application transfère la propriété d’un socket à un broker de socket et transmet l’ID de la tâche en arrière-plan à l’aide de l’une des méthodes suivantes, selon celle qui est la plus appropriée:
+
+    -   L’une des méthodes [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn804256) sur un [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319).
+    -   L’une des méthodes [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn781433) sur un [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882).
+    -   L’une des méthodes [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn804407) sur un [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906).
 
 ```csharp
     private void TransferOwnership(StreamSocketListener tcpListener) 
@@ -82,20 +84,26 @@ Une application transfère la propriété d’un socket à un broker de socket e
         deferral.Complete(); 
     } 
 ```
-Dans le gestionnaire d’événements de votre tâche en arrière-plan :
+
+-  Dans le gestionnaire d’événements de votre tâche en arrière-plan :
+
    -  Vous devez d’abord obtenir un report de tâche en arrière-plan afin de pouvoir gérer l’événement à l’aide de méthodes asynchrones.
+
 ```csharp
 var deferral = taskInstance.GetDeferral();
 ```
+
    -  Ensuite, extrayez l’élément SocketActivityTriggerDetails des arguments de l’événement et trouvez le motif de déclenchement de l’événement:
+
 ```csharp
 var details = taskInstance.TriggerDetails as SocketActivityTriggerDetails; 
     var socketInformation = details.SocketInformation; 
     switch (details.Reason) 
 ```
-   -   Si l’événement a été déclenché en raison de l’activité du socket, créez un DataReader sur le socket, chargez ce lecteur de manière asynchrone, puis utilisez les données en fonction de la conception de votre application. Notez que vous devez renvoyer la propriété du socket vers le broker de socket de manière à être averti de toute activité supplémentaire du socket.
 
-   Dans l’exemple suivant, le texte reçu sur le socket est affiché dans une notification toast.
+    -   If the event was raised because of socket activity, create a DataReader on the socket, load the reader asynchronously, and then use the data according to your app's design. Note that you must return ownership of the socket back to the socket broker, in order to be notified of further socket activity again.
+
+        In the following example, the text received on the socket is displayed in a toast.
 
 ```csharp
 case SocketActivityTriggerReason.SocketActivity: 
@@ -109,7 +117,7 @@ case SocketActivityTriggerReason.SocketActivity:
             break; 
 ```
 
-   -   Si l’événement a été déclenché parce qu’un minuteur de connexion active a expiré, votre code doit envoyer des données sur le socket pour le garder actif et redémarrer le minuteur de connexion active. Là encore, il est important de retransférer la propriété du socket au broker de socket pour pouvoir recevoir des notifications d’événement supplémentaires :
+    -   If the event was raised because a keep alive timer expired, then your code should send some data over the socket in order to keep the socket alive and restart the keep alive timer. Again, it is important to return ownership of the socket back to the socket broker in order to receive further event notifications:
 
 ```csharp
 case SocketActivityTriggerReason.KeepAliveTimerExpired: 
@@ -123,7 +131,7 @@ case SocketActivityTriggerReason.KeepAliveTimerExpired:
             break; 
 ```
 
-   -   Si l’événement a été déclenché en raison de la fermeture du socket, rétablissez le socket et assurez-vous de transférer la propriété du nouveau socket créé au broker de socket. Dans cet exemple, le nom d’hôte et le port sont stockés dans les paramètres locaux afin de pouvoir être utilisés pour établir une nouvelle connexion de socket :
+    -   If the event was raised because the socket was closed, re-establish the socket, making sure that after you create the new socket, you transfer ownership of it to the socket broker. In this sample, the hostname and port are stored in local settings so that they can be used to establish a new socket connection:
 
 ```csharp
 case SocketActivityTriggerReason.SocketClosed: 
@@ -140,7 +148,7 @@ case SocketActivityTriggerReason.SocketClosed:
             break; 
 ```
 
-   -   N’oubliez pas de terminer votre report, une fois que vous aurez fini de traiter la notification d’événement :
+-   N’oubliez pas de terminer votre report, une fois que vous aurez fini de traiter la notification d’événement:
 
 ```csharp
   deferral.Complete();
@@ -285,7 +293,7 @@ L’exemple qui suit ajoute une notification de déclencheur réseau et un décl
   </Extensions> 
 ```
 
-Faites preuve d’extrême prudence lorsque vous utilisez une instruction **await** dans le contexte d’un [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) et une opération asynchrone sur [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923), [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) ou [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882). Vous pouvez utiliser un objet **Task&lt;bool&gt;** pour inscrire un pour la notification Push et les persistances de connexion WebSocket sur **StreamWebSocket** et connecter le transport. Dans le cadre de l’inscription, le transport **StreamWebSocket** est défini comme le transport pour **ControlChannelTrigger** et une lecture est publiée. **Task.Result** bloque le thread actuel jusqu’à ce que toutes les étapes de la tâche s’exécutent et retournent des instructions dans le corps du message. La tâche n’est pas résolue tant que la méthode n’a pas retourné la valeur true ou false. De cette façon, la méthode en entier est exécutée. **Task** peut contenir plusieurs instructions **await** qui sont protégées par **Task**. Ce modèle doit être utilisé avec l’objet **ControlChannelTrigger** quand **StreamWebSocket** ou **MessageWebSocket** est utilisé comme transport. Pour les opérations dont l’exécution peut prendre du temps (par exemple une opération de lecture asynchrone type), l’application doit utiliser le modèle asynchrone brut évoqué précédemment.
+Faites preuve d’extrême prudence lorsque vous utilisez une instruction **await** dans le contexte d’un [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) et une opération asynchrone sur [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923), [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) ou [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882). Vous pouvez utiliser un objet **Task&lt;bool&gt;** pour inscrire un  pour la notification Push et les persistances de connexion WebSocket sur **StreamWebSocket** et connecter le transport. Dans le cadre de l’inscription, le transport **StreamWebSocket** est défini comme le transport pour **ControlChannelTrigger** et une lecture est publiée. **Task.Result** bloque le thread actuel jusqu’à ce que toutes les étapes de la tâche s’exécutent et retournent des instructions dans le corps du message. La tâche n’est pas résolue tant que la méthode n’a pas retourné la valeur true ou false. De cette façon, la méthode en entier est exécutée. **Task** peut contenir plusieurs instructions **await** qui sont protégées par **Task**. Ce modèle doit être utilisé avec l’objet **ControlChannelTrigger** quand **StreamWebSocket** ou **MessageWebSocket** est utilisé comme transport. Pour les opérations dont l’exécution peut prendre du temps (par exemple une opération de lecture asynchrone type), l’application doit utiliser le modèle asynchrone brut évoqué précédemment.
 
 L’exemple suivant inscrit [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) pour la notification Push et les persistances de connexion WebSocket sur [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923).
 
@@ -590,6 +598,6 @@ Pour plus d’informations sur l’utilisation de [**IXMLHTTPRequest2**](https:/
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

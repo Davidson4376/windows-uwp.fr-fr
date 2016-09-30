@@ -1,85 +1,81 @@
 ---
 author: jnHs
-Description: You can view detailed analytics for your apps in the Windows Dev Center dashboard.
-title: Analytics
+Description: "Vous pouvez voir les analyses détaillées de vos applications dans le tableau de bord du Centre de développement Windows."
+title: Analyses
 ms.assetid: 3A3C6F10-0DB1-416D-B632-CD388EA66759
 translationtype: Human Translation
-ms.sourcegitcommit: 3afdf00864e023d913b635beef0c506735881b23
-ms.openlocfilehash: fd03b13d4169f265575de921ef9c42303babe972
+ms.sourcegitcommit: dfaf348956b19746aa5332aeb7ad5cbc4b224e8c
+ms.openlocfilehash: 8922a53da8b1bc97bef7faf49d0e412a26127188
 
 ---
 
-# Analytics
+# Analyses
 
-You can view detailed analytics for your apps in the Windows Dev Center dashboard. Statistics and charts let you know how your apps are doing, from how many customers you've reached to how they're using your app and what they have to say about it. You can also find info on app health, ad usage, and more. View the reports in the dashboard, or [download the reports you need](download-analytic-reports.md) to analyze your data offline. We also provide several ways for you to [access your analytics data without using the dashboard](#no-dashboard).
+Vous pouvez voir les analyses détaillées de vos applications dans le tableau de bord du Centre de développement Windows. Les statistiques et les graphiques vous permettent de savoir où en sont vos applications: combien de clients vous avez atteint, la façon dont ils utilisent votre application et ce qu’ils en pensent. Vous obtenez également des informations sur l’intégrité de l’application, l’utilisation des publicités, etc. Affichez des rapports dans le tableau de bord ou [téléchargez les rapports dont vous avez besoin](download-analytic-reports.md) pour analyser les données hors connexion. Nous vous proposerons également plusieurs méthodes vous permettant d’[accéder à vos données d’analyse sans utiliser le tableau de bord](#no-dashboard).
 
-> [!NOTE]
-> In addition to the dashboard reports, you can programmatically access some analytics data by using the [Windows Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
+> **Remarque** &nbsp;&nbsp;Outre les rapports du tableau de bord, vous pouvez accéder par programme à certaines données d’analyse à l’aide de l’[API REST d’analyse du Windows Store](../monetize/access-analytics-data-using-windows-store-services.md).
 
-## Analytics for all your apps
+## Analyse de toutes vos applications
 
-Your dashboard overview page also includes a roll-up view to gather details about all your apps. The stats shown on the overview page will vary, depending on your apps.
 
-When you [download analytic reports](download-analytic-reports.md), you also have the option to download reports about all of your apps. Note that you will need to access the **Download reports** page in the **Analytics** section for one of your apps, but you are not limited to downloading data only for that particular app.
+La page de présentation de votre tableau de bord propose également un affichage multiniveau avec des détails sur toutes vos applications. Les statistiques proposées sur cette page de présentation dépendent de vos applications.
 
-## Available reports for each app
+Lorsque vous [téléchargez des rapports d’analyse](download-analytic-reports.md), vous avez également la possibilité de télécharger des rapports sur toutes vos applications. Notez que vous devez accéder à la page **Télécharger les rapports** dans la section **Analyse** de l’une de vos applications, mais que vous n’êtes pas limité au téléchargement des seules données de cette application particulière.
 
-In this section you'll find details about the info presented in each of the following reports:
+## Rapports disponibles pour chaque application
 
--   [Acquisitions report](acquisitions-report.md)
--   [Health report](health-report.md)
--   [Ratings report](ratings-report.md)
--   [Reviews report](reviews-report.md)
--   [Feedback report](feedback-report.md)
--   [Usage report](usage-report.md)
--   [Add-on acquisitions report](add-on-acquisitions-report.md)
--   [Ad mediation report](ad-mediation-report.md)
--   [Advertising performance report](advertising-performance-report.md)
--   [App install ads report](app-install-ads-reports.md)
--   [Channels and conversions report](channels-and-conversions-report.md)
 
-> [!NOTE]
-> You may not see data in all of these reports, depending on your app's specific features and implementation.
+Cette section détaille les informations présentées dans chacun des rapports suivants :
 
-## Page and section filters
+-   [Rapport sur les acquisitions](acquisitions-report.md)
+-   [Rapport sur l’intégrité](health-report.md)
+-   [Rapport sur les évaluations](ratings-report.md)
+-   [Rapport sur les révisions](reviews-report.md)
+-   [Rapport sur les commentaires](feedback-report.md)
+-   [Rapport sur l’utilisation](usage-report.md)
+-   [Rapport sur les acquisitions de PIA](iap-acquisitions-report.md)
+-   [Rapport de médiation publicitaire](ad-mediation-report.md)
+-   [Rapport sur les performances publicitaires](advertising-performance-report.md)
+-   [Rapport de publicité sur l’installation d’applications](app-install-ads-reports.md)
+-   [Rapport sur les canaux et conversions](channels-and-conversions-report.md)
 
-Each report includes filters that you can use to drill down into your data. Near the top of the page you'll see **Apply filters**. You can use these filters to limit or expand the scope of all of the charts and info on the page.
+> **Remarque** &nbsp;&nbsp;Dans la mesure où les données figurant dans ces rapports dépendent des fonctionnalités et de l’implémentation propres à votre application, certains rapports n’en contiennent pas.
 
-Within each particular chart, you may also see individual section filters. These will limit the data shown only for that particular chart.
+## Filtres de page et de section
 
-The specific filters vary by report. The topics in this section will explain which filters are available and will describe the other data on the page for each report.
+Chaque rapport intègre des filtres qui vous aident à analyser vos données en profondeur. En haut de la page se trouve **Appliquer les filtres**. Ces filtres servent à restreindre ou à développer l’étendue des informations et des graphiques présentés sur la page.
+
+Dans chaque graphique, vous pouvez voir des filtres de section. Ceux-ci limitent les données affichées uniquement pour ce graphique particulier.
+
+Ces filtres varient selon les rapports. Les rubriques de cette section expliquent les filtres disponibles et décrivent les autres données disponibles sur la page de chaque rapport.
 
 <span id="no-dashboard"/>
-## Access analytics data without using the Dev Center dashboard
+## Accéder aux données d’analyse sans utiliser le tableau de bord du Centre de développement
 
-In addition to the analytic reports on the dashboard, there are several other ways to access your analytics data.
+Outre les rapports d’analyse du tableau de bord, il existe plusieurs façons d’accéder à vos données d’analyse.
 
-### Windows Store analytics API
+### API d’analyse du WindowsStore
 
-Use the [Windows Store analytics API](../monetize/access-analytics-data-using-windows-store-services.md) to programmatically retrieve analytics data for your apps. This REST API enables you to retrieve data for app and add-on acquisitions, errors, app ratings and reviews. This API uses Azure Active Directory (Azure AD) to authenticate the calls from your app or service.
+Utilisez l’[API d’analyse du Windows Store](../monetize/access-analytics-data-using-windows-store-services.md) pour récupérer par programme les données d’analyse de vos applications. Cette API REST permet de récupérer les données pour les acquisitions de produits in-app et d’applications, les erreurs, ainsi que les évaluations et avis relatifs aux applications. Cette API utilise Azure Active Directory (Azure AD) pour authentifier les appels à partir de votre application ou service.
 
-### Windows Dev Center content pack for Power BI
+### Pack de contenu du Centre de développement Windows pour PowerBI
 
-Use the [Windows Dev Center content pack for Power BI](https://powerbi.microsoft.com/documentation/powerbi-content-pack-windows-dev-center/) to explore and monitor your Dev Center analytics data in Power BI. Power BI is a cloud-based business analytics service that gives you a single view of your business data.
+Utilisez le [pack de contenu du Centre de développement Windows pour Power BI](https://powerbi.microsoft.com/documentation/powerbi-content-pack-windows-dev-center/) pour découvrir et surveiller vos données d’analyse du Centre de développement dans PowerBI. PowerBI est un service d’analyse métier basé sur le cloud qui vous offre une vue unique de vos données d’entreprise.
 
-Use the following resources to get started using Power BI to access your analytics data.
+Utilisez les ressources suivantes pour commencer à utiliser PowerBI pour accéder à vos données d’analyse.
 
-* [Sign up for Power BI](https://powerbi.microsoft.com/documentation/powerbi-service-self-service-signup-for-power-bi/)
-* [Learn how to use Power BI](https://powerbi.microsoft.com/guided-learning/)
-* [Learn how to use the Windows Dev Center content pack for Power BI to connect to your analytics data](https://powerbi.microsoft.com/documentation/powerbi-content-pack-windows-dev-center/)
+* [S’inscrire à PowerBI](https://powerbi.microsoft.com/documentation/powerbi-service-self-service-signup-for-power-bi/)
+* [Découvrez comment utiliser PowerBI](https://powerbi.microsoft.com/guided-learning/)
+* [Découvrez comment utiliser le pack de contenu du Centre de développement Windows pour PowerBI pour se connecter à vos données d’analyse](https://powerbi.microsoft.com/documentation/powerbi-content-pack-windows-dev-center/)
 
-> [!NOTE]
-> To connect to the Windows Dev Center content pack for Power BI, we recommend that you specify credentials from an Azure AD directory that is associated with your Dev Center account. If you use your Microsoft account credentials, your analytics data in Power BI does not refresh automatically, and you will need to sign in to Power BI to refresh your data. If your organization already uses Office 365 or other business services from Microsoft, you already have Azure AD. Otherwise, you can [get it for free](http://go.microsoft.com/fwlink/p/?LinkId=703757). For more information about associating your Dev Center account with an Azure AD, see [Manage account users](manage-account-users.md).
+> **Remarque** &nbsp;&nbsp;Pour connecter le pack de contenu du Centre de développement Windows pour Power BI, nous vous recommandons de spécifier les informations d’identification à partir d’un répertoire Azure AD associé à votre compte du Centre de développement. Si vous utilisez vos informations d’identification de compte Microsoft, vos données d’analyse dans PowerBI ne sont pas actualisées automatiquement et vous devez ouvrir une session PowerBI pour actualiser vos données. Si votre organisation utilise déjà Office 365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’Azure AD. Sinon, vous pouvez l’[obtenir gratuitement](http://go.microsoft.com/fwlink/p/?LinkId=703757). Pour plus d’informations sur l’association de votre compte du Centre de développement avec Azure AD, consultez [Gérer les utilisateurs de compte](manage-account-users.md).
 
-### Dev Center app
+### Application Centre de développement
 
-Install the [Dev Center](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws) app to quickly view details about the health and performance of your apps on any Windows 10 device. 
-
-## Related topics
-- [Publish Windows apps](index.md)
+Installez l’application [Centre de développement](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws) pour afficher rapidement des informations sur l’intégrité et les performances de vos applications sur tout appareil Windows10. 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

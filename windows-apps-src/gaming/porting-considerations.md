@@ -1,20 +1,20 @@
 ---
 author: mtoepke
-title: Moving from DirectX 9 to DirectX 11 and Universal Windows Platform (UWP)
-description: This section has guidance on porting your DirectX 9 desktop game to DirectX 11 and Universal Windows Platform (UWP).
+title: Portage de DirectX 9 vers DirectX 11 et la plateforme Windows universelle (UWP)
+description: Cette section fournit des recommandations sur le portage de jeux de bureau DirectX 9 vers DirectX 11 et la plateforme Windows universelle (UWP).
 ms.assetid: 7a3f8ddf-d5b2-1c05-b532-70459befda4e
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 875d638a6104cf91b707a2998c9d74e905c945da
+ms.openlocfilehash: 0f27f9e9219fca10798a09e6f934b72ad7b1b5a8
 
 ---
 
-# Moving from DirectX 9 to DirectX 11 and Universal Windows Platform (UWP)
+# Portage de DirectX 9 vers DirectX 11 et la plateforme Windows universelle (UWP)
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-This section has guidance on porting your DirectX 9 desktop game to DirectX 11 and Universal Windows Platform (UWP).
+Cette section fournit des recommandations sur le portage de jeux de bureau DirectX9 vers DirectX11 et la plateforme Windows universelle (UWP).
 
 <table>
 <colgroup>
@@ -23,22 +23,22 @@ This section has guidance on porting your DirectX 9 desktop game to DirectX 11 a
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Topic</th>
+<th align="left">Rubrique</th>
 <th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Plan your DirectX port](plan-your-directx-port.md)</p></td>
-<td align="left"><p>Plan your game porting project from DirectX 9 to DirectX 11 and UWP: upgrade your graphics code, and put your game in the Windows Runtime environment.</p></td>
+<td align="left"><p>[Planifier votre portage DirectX](plan-your-directx-port.md)</p></td>
+<td align="left"><p>Planifiez le portage de votre jeu DirectX9 sur DirectX11 et UWP: mettez à niveau votre code graphique et préparez votre jeu pour l’environnement Windows Runtime.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Important changes from Direct3D 9 to Direct3D 11.1](understand-direct3d-11-1-concepts.md)</p></td>
-<td align="left"><p>This topic explains the high-level differences between DirectX 9 and DirectX 11.</p></td>
+<td align="left"><p>[Modifications importantes de Direct3D9 à Direct3D11.1](understand-direct3d-11-1-concepts.md)</p></td>
+<td align="left"><p>Cette rubrique décrit les principales différences entre DirectX9 et DirectX11.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Map DirectX 9 features to DirectX 11.1 APIs](feature-mapping.md)</p></td>
-<td align="left"><p>Understand how the features your Direct3D 9 game uses will translate to Direct3D 11 and the UWP.</p></td>
+<td align="left"><p>[Mapper les fonctionnalités DirectX9 aux API DirectX11.1](feature-mapping.md)</p></td>
+<td align="left"><p>Découvrez comment les fonctionnalités utilisées par votre jeu Direct3D9 sont traduites dans Direct3D11 et UWP.</p></td>
 </tr>
 </tbody>
 </table>
@@ -55,6 +55,6 @@ This section has guidance on porting your DirectX 9 desktop game to DirectX 11 a
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

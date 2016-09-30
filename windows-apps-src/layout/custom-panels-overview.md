@@ -10,7 +10,7 @@ label: XAML custom panels overview
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: aebe6b873fff2a4284f03ca519f998ded742f677
+ms.openlocfilehash: 8fba13d28f885d89d5b115eebf1a2e75abb8c890
 
 ---
 
@@ -69,11 +69,11 @@ De nombreuses propriétés et valeurs contribuent au fonctionnement de la logiqu
 
 La disposition candidate doit être ajustée à la fenêtre d’application active, sinon certaines parties de l’interface utilisateur seront coupées. La logique de coupe est souvent déterminée au niveau des panneaux. La logique de panneau peut souvent déterminer la taille qui est disponible à partir de l’implémentation de [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) et peut devoir pousser les restrictions de taille vers les enfants et diviser l’espace parmi les enfants pour que tous les éléments soient ajustés du mieux possible. Le résultat de la disposition est, dans l’idéal, quelque chose qui utilise différentes propriétés de toutes les parties de la disposition tout en étant ajusté à la fenêtre de l’application. Cela nécessite à la fois une bonne implémentation de la logique de disposition des panneaux et une conception judicieuse de l’interface utilisateur de la part du code d’application qui génère une interface utilisateur à l’aide de ce panneau. Votre conception de panneau ne pourra pas être attrayante si la conception globale de l’interface utilisateur comporte plus d’éléments enfants que l’application ne peut en contenir.
 
-Le bon fonctionnement du système de disposition est dû en grande partie au fait que tout élément basé sur [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) possède déjà une partie de son propre comportement inhérent quand il joue le rôle d’enfant dans un conteneur. Par exemple, il y a plusieurs API de **FrameworkElement** qui informent le comportement de disposition ou qui sont nécessaires au fonctionnement de la disposition. Il s’agit des éléments suivants:
+Le bon fonctionnement du système de disposition est dû en grande partie au fait que tout élément basé sur [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) possède déjà une partie de son propre comportement inhérent quand il joue le rôle d’enfant dans un conteneur. Par exemple, il y a plusieurs API de **FrameworkElement** qui informent le comportement de disposition ou qui sont nécessaires au fonctionnement de la disposition. y compris:
 
 -   [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) (en réalité une propriété [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911)) ;
 -   [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) et [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) ;
--   [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) et [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) ;
+-   [**Hauteur**](https://msdn.microsoft.com/library/windows/apps/br208718) et [**largeur**](https://msdn.microsoft.com/library/windows/apps/br208751)
 -   [**Marge**](https://msdn.microsoft.com/library/windows/apps/br208724)
 -   l’événement [**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/br208722) ;
 -   [**HorizontalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208720) et [**VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208749) ;
@@ -194,6 +194,6 @@ D’autres API font partie du système de disposition mais ne sont pas déclaré
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

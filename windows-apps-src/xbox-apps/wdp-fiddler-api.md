@@ -1,106 +1,107 @@
 ---
 author: WilliamsJason
-title: Device Portal Fiddler API reference
-description: Learn how to enable/disable Fiddler tracing programatically.
+title: "Informations de référence sur les API Fiddler Device Portal"
+description: "Apprenez à activer/désactiver le suivi de Fiddler par programmation."
+area: Xbox
 translationtype: Human Translation
-ms.sourcegitcommit: 3cc2a4bd1859e46a73f3e806489eac7381fa6c17
-ms.openlocfilehash: bd215058c71118d8b3e5ce81e2302ce8b151c3f6
+ms.sourcegitcommit: eeb3bc5c4843fe86c54930315d4e112166664e45
+ms.openlocfilehash: 435a00eaf9c1f0d8e0c0043229c2adc80638ace3
 
 ---
 
-# Fiddler settings API reference   
-You can enable and disable Fiddler network tracing on your devkit using this REST API.
+# Informations de référence sur les API des paramètres Fiddler   
+Vous pouvez activer et désactiver le suivi réseau de Fiddler sur votre kit de développement à l’aide de cette API REST.
 
-## Enable Fiddler tracing
+## Activer le suivi de Fiddler
 
-**Request**
+**Requête**
 
-You can enable Fiddler tracing for the devkit using the following request.  Note that the device must be restarted before this takes effect.
+Vous pouvez activer le suivi de Fiddler pour le kit de développement à l’aide de la demande suivante.  Notez que l’appareil doit être redémarré avant que cela ne prenne effet.
 
-Method      | Request URI
+Méthode      | URI de la requête
 :------     | :-----
 POST | /ext/fiddler
 <br />
-**URI parameters**
+**Paramètres d’URI**
 
-You can specify the following additional parameters on the request URI:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
-| URI parameter      | Description     | 
+| Paramètre d’URI      | Description     | 
 | ------------------ |-----------------|
-| proxyAddress       | The IP address or hostname of the device running Fiddler |
-| proxyPort          | The port which Fiddler is using for monitoring traffic. Defaults to 8888 |
-| updateCert (optional)| A boolean value indicating if the root Fiddler cert is provided. This must be true if Fiddler has never been configured on this devkit or was configured for a different host.  |
+| proxyAddress       | L’adresse IP ou le nom d’hôte de l’appareil exécutant Fiddler |
+| proxyPort          | Le port que Fiddler utilise pour la surveillance du trafic. Par défaut: 8888 |
+| updateCert (facultatif)| Une valeur booléenne indiquant si le certificat Fiddler racine est fourni. Cette valeur doit être true si Fiddler n’a jamais été configuré sur ce kit de développement ou a été configuré pour un autre hôte.  |
 <br>
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None if updateCert is false or not provided. Multi-part conforming http body containing the FiddlerRoot.cer file otherwise.
+- Aucun si updateCert est false ou n’est pas fourni. Corps HTTP à parties multiples conforme contenant le fichier FiddlerRoot.cer dans le cas contraire.
 
-**Response**   
+**Réponse**   
 
-- None  
+- Aucun  
 
-**Status code**
+**Code d’état**
 
-This API has the following expected status codes.
+Cette API comporte les codes d’état attendus suivants.
 
-HTTP status code      | Description
+Code d’état HTTP      | Description
 :------     | :-----
-204 | The request to enable Fiddler was accepted. Fiddler will be enabled the next time the device reboots.
-4XX | Error codes
-5XX | Error codes
+204 | La demande d’activation de Fiddler a été acceptée. Fiddler va être activé au prochain redémarrage de l’appareil.
+4XX | Codes d’erreur
+5XX | Codes d’erreur
 
-## Disable Fiddler tracing on the devkit
+## Désactiver le suivi de Fiddler sur le kit de développement
 
-**Request**
+**Requête**
 
-You can disable Fiddler tracing on the device using the following request. Note that the device must be restarted before this takes effect.
+Vous pouvez désactiver le suivi de Fiddler sur l’appareil à l’aide de la demande suivante. Notez que l’appareil doit être redémarré avant que cela ne prenne effet.
 
-Method      | Request URI
+Méthode      | URI de requête
 :------     | :-----
 DELETE | /ext/fiddler
 <br />
-**URI parameters**
+**Paramètres d’URI**
 
-- None
+- Aucun
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**   
+**Corps de la requête**   
 
-- None
+- Aucun
 
-**Response**   
+**Réponse**   
 
-- None 
+- Aucun 
 
-**Status code**
+**Code d’état**
 
-This API has the following expected status codes.
+Cette API comporte les codes d’état attendus suivants.
 
-HTTP status code      | Description
+Code d’état HTTP      | Description
 :------     | :-----
-204 | The request to disable Fiddler tracing was successful. Tracing will be disabled on the next reboot of the device.
-4XX | Error codes
-5XX | Error codes
+204 | La demande de désactivation du suivi de Fiddler a réussi. Le suivi va être désactivé au prochain redémarrage de l’appareil.
+4XX | Codes d’erreur
+5XX | Codes d’erreur
 
 <br />
-**Available device families**
+**Familles d’appareils disponibles**
 
 * Windows Xbox
 
-## See also
-- [Configuring Fiddler for UWP on Xbox](uwp-fiddler.md)
+## Voir également
+- [Configuration de Fiddler pour UWP sur Xbox](uwp-fiddler.md)
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO1-->
 
 

@@ -5,7 +5,7 @@ ms.assetid: 6AFF9D09-77C2-4811-BB1A-BBF4A6FF511E
 author: awkoren
 translationtype: Human Translation
 ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
-ms.openlocfilehash: 434505a697e045198972ce529366be281774af86
+ms.openlocfilehash: c09170042841dcff6625d1d236cf708c717301c5
 
 ---
 
@@ -501,6 +501,6 @@ Lorsque les données arrivent sur l’appareil, le modèle d’application Windo
 -   [**Windows.Security.EnterpriseData**](https://msdn.microsoft.com/library/windows/apps/dn279153)
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

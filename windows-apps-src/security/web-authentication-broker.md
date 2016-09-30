@@ -1,39 +1,39 @@
 ---
-title: Web authentication broker
-description: This article explains how to connect your Universal Windows Platform (UWP) app to an online identity provider that uses authentication protocols like OpenID or OAuth, such as Facebook, Twitter, Flickr, Instagram, and so on.
+title: "Service Broker d’authentification web"
+description: "Cet article explique comment connecter votre application UWP à un fournisseur d’identité en ligne qui utilise des protocoles d’authentification comme OpenID ou OAuth (par exemple, Facebook, Twitter, Flickr, Instagram, etc.)."
 ms.assetid: 05F06961-1768-44A7-B185-BCDB74488F85
 author: awkoren
 translationtype: Human Translation
 ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: ea3d3e1df07c8cf9701e7bd39af006cd681ef1fe
+ms.openlocfilehash: 96ca8d019fe6cbf742c98edf0b8bf04b35f71dfd
 
 ---
 
-# Web authentication broker
+# Service Broker d’authentification web
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-This article explains how to connect your Universal Windows Platform (UWP) app to an online identity provider that uses authentication protocols like OpenID or OAuth, such as Facebook, Twitter, Flickr, Instagram, and so on. The [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) method sends a request to the online identity provider and gets back an access token that describes the provider resources to which the app has access.
+Cet article explique comment connecter votre application de plateforme Windows universelle (UWP) à un fournisseur d’identité en ligne qui utilise des protocoles d’authentification comme OpenID ou OAuth (par exemple, Facebook, Twitter, Flickr, Instagram, etc.). La méthode [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) envoie une demande au fournisseur d’identité en ligne, puis obtient en retour un jeton d’accès qui décrit les ressources du fournisseur auxquelles l’application a accès.
 
-**Note**  For a complete, working code sample, clone the [WebAuthenticationBroker repo on GitHub](http://go.microsoft.com/fwlink/p/?LinkId=620622).
+[Remarque](http://go.microsoft.com/fwlink/p/?LinkId=620622) Pour obtenir un exemple de code utilisable complet, copiez le **référentiel WebAuthenticationBroker sur GitHub** (en anglais).
 
  
 
-## Register your app with your online provider
+## Inscrire votre application auprès de votre fournisseur en ligne
 
 
-You must register your app with the online identity provider to which you want to connect. You can find out how to register your app from the identity provider. After registering, the online provider typically gives you an Id or secret key for your app.
+Vous devez inscrire votre application auprès du fournisseur d’identité en ligne auquel vous voulez vous connecter. Vous pouvez déterminer comment inscrire votre application auprès du fournisseur d’identité. Après l’inscription, le fournisseur en ligne vous donne généralement un ID et/ou une clé secrète pour votre application.
 
-## Build the authentication request URI
+## Créer l’URI de la demande d’authentification
 
 
-The request URI consists of the address where you send the authentication request to your online provider appended with other required information, such as an app ID or secret, a redirect URI where the user is sent after completing authentication, and the expected response type. You can find out from your provider what parameters are required.
+L’URI de la demande se compose de l’adresse à laquelle vous envoyez la demande d’authentification à votre fournisseur en ligne, complétée par d’autres informations requises, comme un ID d’application ou secret, un URI de redirection où l’utilisateur est envoyé après avoir effectué l’authentification, ainsi que le type de réponse attendu. Vous pouvez déterminer auprès de votre fournisseur les paramètres requis.
 
-The request URI is sent as the *requestUri* parameter of the [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) method. It must be a secure address (it must start with https://)
+L’URI de la demande est envoyé en tant que paramètre *requestUri* de la méthode [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066). Il doit s’agir d’une adresse sécurisée (commençant par https://).
 
-The following example shows how to build the request URI.
+L’exemple suivant explique comment créer l’URI de la demande.
 
 ```cs
 string startURL = "https://<providerendpoint>?client_id=<clientid>&scope=<scopes>&response_type=token";
@@ -43,10 +43,10 @@ System.Uri startURI = new System.Uri(startURL);
 System.Uri endURI = new System.Uri(endURL);
 ```
 
-## Connect to the online provider
+## Se connecter au fournisseur en ligne
 
 
-You call the [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) method to connect to the online identity provider and get an access token. The method takes the URI constructed in the previous step as the *requestUri* parameter, and a URI to which you want the user to be redirected as the *callbackUri* parameter.
+Vous appelez la méthode [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) pour vous connecter au fournisseur d’identité en ligne et obtenir un jeton d’accès. La méthode prend l’URI construit à l’étape précédente comme paramètre *requestUri* et un URI vers lequel vous voulez rediriger l’utilisateur comme paramètre *callbackUri*.
 
 ```cs
 string result;
@@ -82,14 +82,14 @@ catch (Exception ex)
 }
 ```
 
-In addition to [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066), the [**Windows.Security.Authentication.Web**](https://msdn.microsoft.com/library/windows/apps/br227044) namespace contains an [**AuthenticateAndContinue**](https://msdn.microsoft.com/library/windows/apps/dn632425) method. Do not call this method. It is designed for apps targeting Windows Phone 8.1 only and is deprecated starting with Windows 10.
+En plus de [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066), l’espace de noms [**Windows.Security.Authentication.Web**](https://msdn.microsoft.com/library/windows/apps/br227044) contient une méthode [**AuthenticateAndContinue**](https://msdn.microsoft.com/library/windows/apps/dn632425). N’appelez pas cette méthode. Elle est conçue pour les applications ciblant uniquement Windows Phone 8.1, et son usage avec Windows 10 est désapprouvé.
 
-## Connecting with single sign-on (SSO).
+## Connexion par authentification unique (SSO).
 
 
-By default, Web authentication broker does not allow cookies to persist. Because of this, even if the app user indicates that they want to stay logged in (for example, by selecting a check box in the provider's login dialog), they will have to login each time they want to access resources for that provider. To login with SSO, your online identity provider must have enabled SSO for Web authentication broker, and your app must call the overload of [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212068) that does not take a *callbackUri* parameter.
+Par défaut, le service Broker d’authentification web n’autorise pas la persistance des cookies. C’est pourquoi, même si l’utilisateur de l’application indique qu’il souhaite rester connecté (par exemple, en activant une case à cocher dans la boîte de dialogue de connexion du fournisseur), il doit se connecter chaque fois qu’il souhaite accéder aux ressources de ce fournisseur. Pour se connecter avec l’authentification unique, votre fournisseur d’identité en ligne doit avoir activé l’authentification unique pour le service Broker d’authentification web et votre application doit appeler la surcharge de la méthode [**authenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212068) qui ne prend pas de paramètre *callbackUri*.
 
-To support SSO, the online provider must allow you to register a redirect URI in the form `ms-app://`*appSID*, where *appSID* is the SID for your app. You can find your app's SID from the app developer page for your app, or by calling the [**GetCurrentApplicationCallbackUri**](https://msdn.microsoft.com/library/windows/apps/br212069) method.
+Pour prendre en charge l’authentification unique, le fournisseur en ligne doit vous permettre d’inscrire un URI de redirection sous la forme `ms-app://`*appSID*, où *appSID* correspond au SID de l’application. Vous pouvez obtenir le SID de votre application depuis la page du développeur correspondant à votre application ou en appelant la méthode [**GetCurrentApplicationCallbackUri**](https://msdn.microsoft.com/library/windows/apps/br212069).
 
 ```cs
 string result;
@@ -124,40 +124,40 @@ catch (Exception ex)
 }
 ```
 
-## Debugging
+## Débogage
 
 
-There are several ways to troubleshoot the web authentication broker APIs, including reviewing operational logs and reviewing web requests and responses using Fiddler.
+Il existe plusieurs façons de résoudre les problèmes liés aux API du service Broker d’authentification web. Vous pouvez notamment examiner les journaux des opérations ou bien passer en revue les demandes et réponses web avec Fiddler.
 
-### Operational logs
+### Journaux des opérations
 
-Often you can determine what is not working by using the operational logs. There is a dedicated event log channel Microsoft-Windows-WebAuth\\Operational that allows website developers to understand how their web pages are being processed by the Web authentication broker. To enable it, launch eventvwr.exe and enable Operational log under the Application and Services\\Microsoft\\Windows\\WebAuth. Also, the Web authentication broker appends a unique string to the user agent string to identify itself on the web server. The string is "MSAuthHost/1.0". Note that the version number may change in the future, so you should not to depend on that version number in your code. An example of the full user agent string, followed by full debugging steps, is as follows.
+Il est souvent possible de déterminer ce qui ne fonctionne pas à l’aide des journaux des opérations. Il existe un canal dédié du journal des événements, Microsoft-Windows-WebAuth\Operational, qui permet aux développeurs de sites web de comprendre comment leurs pages web sont traitées par le service Broker d’authentification web. Pour l’activer, lancez eventvwr.exe et activez le journal Opérationnel sous Journaux des applications et des services\Microsoft\Windows\WebAuth. Le service Broker d’authentification web ajoute également une chaîne unique à la chaîne de l’agent utilisateur pour s’identifier sur le serveur web. Cette chaîne est «MSAuthHost/1.0». Notez que le numéro de version est susceptible de changer dans le futur. Vous ne devez donc pas nécessairement utiliser ce numéro de version dans votre code. Voici un exemple de chaîne d’agent utilisateur complète, suivi par des étapes de débogage complètes.
 
 `User-Agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Win64; x64; Trident/6.0; MSAuthHost/1.0)`
 
-1.  Enable operational logs.
-2.  Run Contoso social application. ![event viewer displaying the webauth operational logs](images/wab-event-viewer-1.png)
-3.  The generated logs entries can be used to understand the behavior of Web authentication broker in greater detail. In this case, these can include:
-    -   Navigation Start: Logs when the AuthHost is started and contains information about the start and termination URLs.
-    -   ![illustrates the details of navigation start](images/wab-event-viewer-2.png)
-    -   Navigation Complete: Logs the completion of loading a web page.
-    -   Meta Tag: Logs when a meta-tag is encountered including the details.
-    -   Navigation Terminate: Navigation terminated by the user.
-    -   Navigation Error: AuthHost encounters a navigation error at a URL including HttpStatusCode.
-    -   Navigation End: Terminating URL is encountered.
+1.  Activez les journaux opérationnels.
+2.  Exécutez l’application sociale Contoso. ![Observateur d’événements affichant les journaux opérationnels WebAuth](images/wab-event-viewer-1.png)
+3.  Les entrées des journaux générés peuvent être utilisées pour comprendre le comportement du service Broker d’authentification web plus en détail. Dans ce cas, ces entrées peuvent être les suivantes :
+    -   Début de la navigation: consigne le moment où AuthHost démarre, et contient des informations sur les URL de démarrage et de terminaison.
+    -   ![Illustration des détails de la section Début de la navigation](images/wab-event-viewer-2.png)
+    -   Achèvement de la navigation: consigne l’achèvement du chargement d’une page web.
+    -   Balise META : consigne le moment où une balise META est rencontrée, y compris les détails.
+    -   Arrêt de la navigation : navigation arrêtée par l’utilisateur.
+    -   Erreur de navigation : AuthHost rencontre une erreur de navigation au niveau d’une URL incluant HttpStatusCode.
+    -   Fin de la navigation : une URL de terminaison est rencontrée.
 
 ### Fiddler
 
-The Fiddler web debugger can be used with apps.
+Le débogueur web Fiddler peut être utilisé avec des applications.
 
-1.  Since the AuthHost runs in its own app container to give it the private network capability, you must set a registry key: Windows Registry Editor Version 5.00
+1.  Étant donné qu’AuthHost s’exécute dans son propre conteneur d’application pour lui donner la fonctionnalité réseau privé, vous devez définir une clé de Registre: Windows Registry Editor Version5.00
 
-    **HKEY\_LOCAL\_MACHINE**\\**SOFTWARE**\\**Microsoft**\\**Windows NT**\\**CurrentVersion**\\**Image File Execution Options**\\**authhost.exe**\\**EnablePrivateNetwork** = 00000001
+    **HKEY\_LOCAL\_MACHINE** \\ **SOFTWARE** \\ **Microsoft** \\ **Windows NT** \\ **CurrentVersion** \\ **Image File Execution Options** \\ **authhost.exe** \\ **EnablePrivateNetwork** = 00000001
 
                          Data type  
                          DWORD
 
-2.  Add a rule for the AuthHost as this is what is generating the outbound traffic.
+2.  Ajoutez une règle pour AuthHost, car de là que provient le trafic sortant.
     ```syntax
     CheckNetIsolation.exe LoopbackExempt -a -n=microsoft.windows.authhost.a.p_8wekyb3d8bbwe
     CheckNetIsolation.exe LoopbackExempt -a -n=microsoft.windows.authhost.sso.p_8wekyb3d8bbwe
@@ -175,9 +175,9 @@ The Fiddler web debugger can be used with apps.
         SID:  S-1-15-2-3506084497-1208594716-3384433646-2514033508-1838198150-1980605558-3480344935
     ```
 
-3.  Add a firewall rule for incoming traffic to Fiddler.
+3.  Ajoutez une règle de pare-feu pour le trafic entrant vers Fiddler.
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

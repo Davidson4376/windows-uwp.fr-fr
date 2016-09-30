@@ -1,53 +1,53 @@
 ---
-title: Automate launching Windows 10 Universal Windows Platform (UWP) apps
-description: Developers can use protocol activation and launch activation to automate launching their UWP apps or games for automated testing.
+title: Automatisation du lancement des applications UWP Windows10
+description: "Les développeurs peuvent utiliser l’activation de protocole et de lancement pour automatiser le lancement de leurs jeux ou apps UWP pour les tests automatisés."
 author: listurm
 translationtype: Human Translation
-ms.sourcegitcommit: c5d0f685f4c733cbe4ba4c07aab565b888ddfe58
-ms.openlocfilehash: 4b31ec06b1ded4882d26cffed029eb8179ff47c3
+ms.sourcegitcommit: adf2d16f9c208631f91fbcad19d1ea8087cd9cb5
+ms.openlocfilehash: ae2f80a915f4aed90c269c37a11d01a2f6c9849e
 
 ---
 
-# Automate launching Windows 10 UWP apps
+# Automatisation du lancement des applications UWP Windows10
 
 ## Introduction
 
-Developers have several options for achieving automated launching of Universal Windows Platform (UWP) apps. In this paper we will explore methods of launching an app by using protocol activation and launch activation.
+Plusieurs options s’offrent aux développeurs qui souhaitent automatiser le lancement des applications de plateforme Windows universelle (UWP). Dans ce livre blanc, nous allons étudier les méthodes de lancement d’une application à l’aide de l’activation de protocole et de l’activation de lancement.
 
-*Protocol activation* allows an app to register itself as a handler for a given protocol. 
+*L’activation de protocole* permet à une application de s’enregistrer en tant que gestionnaire pour un protocole donné. 
 
-*Launch activation* is the normal launching of an app, such as launching from the app tile.
+*L’activation de lancement* correspond au lancement normal de l’application, par exemple le lancement à partir de la vignette de l’application.
 
-With each activation method, you have the option of using the command line or a launcher application. For all activation methods, if the app is currently running, the activation will bring the app to the foreground (which reactivates it) and provide the new activation arguments. This allows flexibility to use activation commands to provide new messages to the app. It is important to note that the project needs to be compiled and deployed for the activation method to run the newly updated app. 
+Pour chaque méthode d’activation, vous avez la possibilité d’utiliser la ligne de commande ou une application de lancement. Quelle que soit la méthode d’activation, si l’application est en cours d’exécution, l’activation amènera l’application au premier plan (ce qui la réactive) et fournira les nouveaux arguments d’activation. Cela offre la possibilité d’utiliser les commandes de l’activation pour fournir de nouveaux messages à l’application. Il est important de noter que le projet doit être compilé et déployé pour que la méthode d’activation exécute l’application récemment mise à jour. 
 
-## Protocol activation
+## Activation de protocole
 
-Follow these steps to set up protocol activation for apps: 
+Suivez ces étapes pour configurer l’activation de protocole pour les applications: 
 
-1. Open the **Package.appxmanifest** file in Visual Studio.
-2. Select the **Declarations** tab.
-3. Under the **Available Declarations** drop-down, select **Protocol**, and then select **Add**.
-4. Under **Properties**, in the **Name** field, enter a unique name to launch the app. 
+1. Ouvrez le fichier **Package.appxmanifest** dans Visual Studio.
+2. Sélectionnez l’onglet **Déclarations**.
+3. Dans la liste déroulante **Déclarations disponibles**, sélectionnez **Protocole**, puis **Ajouter**.
+4. Sous **Propriétés**, dans le champ **Nom**, saisissez un nom unique pour lancer l’application. 
 
-    ![Protocol activation](images/automate-uwp-apps-1.png)
+    ![Activation de protocole](images/automate-uwp-apps-1.png)
 
-5. Save the file and deploy the project. 
-6. After the project has been deployed, the protocol activation should be set. 
-7. Go to **Control Panel\All Control Panel Items\Default Programs** and select **Associate a file type or protocol with a specific program**. Scroll to the **Protocols** section to see if the protocol is listed. 
+5. Enregistrez le fichier et déployez le projet. 
+6. Une fois le projet déployé, vous devez définir l’activation de protocole. 
+7. Accédez à **Panneau de configuration\Tous les éléments du panneau de configuration\Programmes par défaut** et sélectionnez **Associer un type de fichier ou un protocole à un programme spécifique**. Faites défiler jusqu’à la section **Protocoles** pour voir si le protocole est répertorié. 
 
-Now that protocol activation is set up, you have two options (the command line or launcher application) for activating the app by using the protocol. 
+Maintenant que l’activation de protocole est configurée, vous avez deux options pour l’activation de l’application à l’aide du protocole (la ligne de commande ou une application de lancement). 
 
-### Command line
+### Ligne de commande
 
-The app can be protocol-activated by using the command line with the command start followed by the protocol name set previously, a colon (“:”), and any parameters. The parameters can be any arbitrary string; however, to take advantage of the Uniform Resource Identifier (URI) capabilities, it is advisable to follow the standard URI format: 
+L’application peut être activée par protocole à l’aide de la ligne de commande incluant la commande start, suivie du nom de protocole défini précédemment, du signe deux-points («:») et des paramètres. Les paramètres peuvent être n’importe quelle chaîne arbitraire; toutefois, pour tirer parti des fonctionnalités d’URI (Uniform Resource Identifier), il est conseillé de respecter le format URI standard: 
 
   ```
   scheme://username:password@host:port/path.extension?query#fragment
   ```
 
-The Uri object has methods of parsing a URI string in this format. For more information, see [Uri class (MSDN)](https://msdn.microsoft.com/library/windows/apps/windows.foundation.uri.aspx). 
+L’objet URI est capable d’analyser une chaîne URI dans ce format. Pour plus d’informations, voir [Classe URI (MSDN)](https://msdn.microsoft.com/en-us/library/windows/apps/windows.foundation.uri.aspx). 
 
-Examples:
+Exemples:
 
   ```
   >start bingnews:
@@ -55,11 +55,11 @@ Examples:
   >start myapplication://single-player/level3?godmode=1&ammo=200
   ```
 
-Protocol command-line activation supports Unicode characters up to a 2038-character limit on the raw URI. 
+L’activation de protocole par ligne de commande prend en charge les caractères Unicode jusqu'à un maximum de 2038caractères sur l’URI brut. 
 
-### Launcher application
+### Application de lancement
 
-For launching, create a separate application that supports the WinRT API. The C++ code for launching with protocol activation in a launcher program is shown in the following sample, where **PackageURI** is the URI for the application with any arguments; for example `myapplication:` or `myapplication:protocol activation arguments`.
+Pour le lancement, créez une application distincte qui prend en charge l’API WinRT. Le code C++ de lancement via l’activation de protocole dans un programme de lancement est présenté dans l’exemple suivant, où **PackageURI** est l’URI pour l’application avec n’importe quels arguments ; par exemple `myapplication:` ou `myapplication:protocol activation arguments`.
 
 ```
 bool ProtocolLaunchURI(Platform::String^ URI)
@@ -98,42 +98,42 @@ Uri(URI));
        }
 }
 ```
-Protocol activation with the launcher application has the same limitations for arguments as protocol activation with the command line. Both support Unicode characters up to a 2038-character limit on the raw URI. 
+L’activation de protocole avec l’application de lancement présente les mêmes limites d’arguments que l’activation de protocole à l’aide de la ligne de commande. Les deux prennent en charge les caractères Unicode jusqu'à un maximum de 2038caractères sur l’URI brut. 
 
-## Launch activation
+## Activation de lancement
 
-You can also launch the app by using launch activation. No setup is required, but the Application User Model ID (AUMID) of the UWP app is needed. The AUMID is the package family name followed by an exclamation point and the application ID. 
+Vous pouvez également lancer l’application à l’aide de l’activation de lancement. Aucune configuration n’est requise, mais l’ID de modèle utilisateur de l’application UWP est nécessaire. L’ID de modèle utilisateur de l’application correspond au nom de la famille de packages suivi d’un point d’exclamation et de l’ID d’application. 
 
-The best way to obtain the package family name is to complete these steps:
+Pour obtenir le nom de la famille de packages, la meilleure solution consiste à suivre les étapes suivantes:
 
-1. Open the **Package.appxmanifest** file.
-2. On the **Packaging** tab, enter the **Package name**.
+1. Ouvrez le fichier**Package.appxmanifest**.
+2. Dans l’onglet **Packages**, entrez le **nom du package**.
 
-    ![Launch activation](images/automate-uwp-apps-2.png)
+    ![Activation de lancement](images/automate-uwp-apps-2.png)
 
-3. If the **Package family name** is not listed, open PowerShell and run `>get-appxpackage MyPackageName` to find the **PackageFamilyName**.
+3. Si le **nom de la famille de packages** n’apparaît pas dans la liste, ouvrez PowerShell et exécutez `>get-appxpackage MyPackageName` pour rechercher la propriété **PackageFamilyName**.
 
-The application ID can be found in the **Package.appxmanifest** file (opened in XML view) under the `<Applications>` element.
+L’ID d’application se trouve dans le fichier **Package.appxmanifest** (ouvert dans la vue XML) sous l’élément `<Applications>`.
 
-### Command line
+### Ligne de commande
 
-A tool for performing a launch activation of a UWP app is installed with the Windows 10 SDK. It can be run from the command line, and it takes the AUMID of the app to be launched as an argument.
+Un outil permettant d’effectuer l’activation de lancement d’une application UWP est installé avec le Kit de développement logiciel Windows10. Il peut être exécuté à partir de la ligne de commande et utilise l’ID de modèle utilisateur de l’application comme argument pour le lancement.
 
 ```
 C:\Program Files (x86)\Windows Kits\10\App Certification Kit\microsoft.windows.softwarelogo.appxlauncher.exe <AUMID>
 ```
 
-It would look something like this:
+Voici à quoi cela devrait ressembler:
 
 ```
 "C:\Program Files (x86)\Windows Kits\10\App Certification Kit\microsoft.windows.softwarelogo.appxlauncher.exe" MyPackageName_ph1m9x8skttmg!AppId
 ```
 
-This option does not support command-line arguments. 
+Cette option ne prend pas en charge les arguments de ligne de commande. 
 
-### Launcher application
+### Application de lancement
 
-You can create a separate application that supports using COM to use for launching. The following example shows C++ code for launching with launch activation in a launcher program. With this code, you can create an **ApplicationActivationManager** object and call **ActivateApplication** passing in the AUMID found previously and any arguments. For more information about the other parameters, see [IApplicationActivationManager::ActivateApplication method (MSDN)](https://msdn.microsoft.com/library/windows/desktop/hh706903(v=vs.85).aspx).
+Pour le lancement, vous pouvez créer une application distincte qui prend en charge l’utilisation de COM. L’exemple suivant montre le code C++ pour le lancement avec l’activation de lancement dans un programme de lancement. Grâce à ce code, vous pouvez créer un objet **ApplicationActivationManager** et appeler **ActivateApplication** en passant l’ID de modèle utilisateur de l’application trouvé précédemment et les arguments. Pour plus d’informations sur les autres paramètres, voir [Méthode IApplicationActivationManager::ActivateApplication (MSDN)](https://msdn.microsoft.com/en-us/library/windows/desktop/hh706903(v=vs.85).aspx).
 
 ```
 #include <ShObjIdl.h>
@@ -175,13 +175,13 @@ Manager. hr = 0x%08lx \n", AUMID, hr);
 }
 ```
 
-It is worth noting that this method does support arguments being passed in, unlike the previous method for launching (that is, using the command line).
+Il est intéressant de noter que cette méthode prend en charge les arguments passés, contrairement à la méthode de lancement précédente (à l’aide de la ligne de commande).
 
-## Accepting arguments
+## Acceptation des arguments
 
-To accept arguments passed in on activation of the UWP app, you must add some code to the app. To determine if protocol activation or launch activation occurred, override the **OnActivated** event and check the argument type, and then get the raw string or Uri object’s pre-parsed values. 
+Pour accepter des arguments passés lors de l’activation de l’application UWP, vous devez ajouter du code à l’application. Pour déterminer si une activation de protocole ou une activation de lancement s’est produite, remplacez l’événement **OnActivated** et vérifiez le type d’argument afin d’obtenir la chaîne brute ou les valeurs de l’objet URI avant analyse. 
 
-This example shows how to get the raw string.
+L’exemple suivant explique comment obtenir la chaîne brute.
 
 ```
 void OnActivated(IActivatedEventArgs^ args)
@@ -204,15 +204,11 @@ Platform::String^ argval = launchArgs->Arguments;
     }
 ```
 
-## Summary
-In summary, you can use various methods to launch the UWP app. Depending on the requirements and use cases, different methods may be better suited than others. 
-
-## See also
-- [UWP on Xbox One](index.md)
+## Résumé
+En résumé, vous pouvez utiliser différentes méthodes pour lancer l’application UWP. Selon la configuration requise et les cas d’usage, certaines méthodes peuvent être mieux adaptées que d’autres. 
 
 
 
-
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

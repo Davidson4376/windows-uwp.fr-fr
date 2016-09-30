@@ -3,8 +3,8 @@ title: "Connexion à un fournisseur d’identité avec Gestionnaire de compte we
 description: "Cet article explique comment utiliser la classe AccountsSettingsPane pour connecter votre application de plateforme Windows universelle (UWP) à des fournisseurs d’identité externes, tels que Microsoft ou Facebook, à l’aide des nouvelles API du Gestionnaire de comptes web de Windows10."
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: f3cdb187ec4056d4c7db6acde471b0bc91c78390
-ms.openlocfilehash: 093ca8906853121bbf33a729c523717d26cb7b0d
+ms.sourcegitcommit: c9f6a0183edc3c01566311360417c256329ef904
+ms.openlocfilehash: 6ab12d6da9c4858cf6ab16d4143cf073bb0cb275
 
 ---
 # Connexion à un fournisseur d’identité avec Gestionnaire de compte web
@@ -174,7 +174,7 @@ Pour OneDrive, voir (Authentification et connexion OneDrive) [https://dev.onedri
 
 ## Utiliser le jeton
 
-La méthode RequestTokenAsync renvoie un objet WebTokenRequestResult, qui contient les résultats de votre demande. Si votre demande a abouti, elle contiendra un jeton.  
+La méthode RequestTokenAsync renvoie un objet WebTokenRequestResult, qui contient les résultats de votre demande. Si votre demande a réussi, il contient un jeton.  
 
 ```C#
 private async void GetMsaTokenAsync(WebAccountProviderCommand command)
@@ -188,8 +188,6 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
     }
 }
 ```
-
-> Remarque: si une erreur est générée lors de la demande d’un jeton, vérifiez que vous avez bien associé votre application à WindowsStore, comme décrit à l’étape1. Votre application ne pourra pas obtenir de jeton si vous avez ignoré cette étape. 
 
 Une fois le jeton en votre possession, vous pouvez l’utiliser pour appeler les API de votre fournisseur. Dans le code ci-dessous, nous allons appeler les API Microsoft Live pour obtenir des informations de base relatives à l’utilisateur et les afficher dans notre interface utilisateur. 
 
@@ -390,6 +388,6 @@ En théorie, vous pouvez utiliser les commandes de paramètres pour tout. Toutef
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

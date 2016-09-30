@@ -1,47 +1,48 @@
 ---
 author: Mtoepke
-title: UWP on Xbox One
-description: How to build apps for the Universal Windows Platform (UWP) on Xbox One.
+title: UWP sur XboxOne
+description: "Procédure de création d’applications pour la plateforme Windows universelle (UWP) sur XboxOne."
+area: Xbox
 translationtype: Human Translation
-ms.sourcegitcommit: 7a53a7a9e786ebe04963a827bdfbc5beb69819eb
-ms.openlocfilehash: d46add99bccd41b4d278e58f79b356714fa4a038
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: b615eaab90ef43026baedd0113ad28f43bede343
 
 ---
 
-# UWP on Xbox One
+# UWP sur XboxOne
 
-Get started building apps for the Universal Windows Platform (UWP) on Xbox One.
+Prise en main de la création d’applications pour la plateforme Windows universelle (UWP) sur XboxOne.
 
-UWP on Xbox One supports developing both apps and games. You don't need to be an [ID@Xbox](http://www.xbox.com/Developers/id) developer to experiment, create, and test games or apps on Xbox, but you do need to enroll with [ID@Xbox](http://www.xbox.com/Developers/id) if you want to publish and sell a game on Xbox One or take advantage of Xbox Live on Windows 10. To join our community of independent developers and enthusiasts, register for [ID@Xbox](http://www.xbox.com/Developers/id). 
+Cette version d’évaluation prend en charge le développement d’applications et de jeux. Vous n’avez pas besoin d’être développeur [ID@Xbox](http://www.xbox.com/Developers/id) pour expérimenter, créer et tester des jeux ou des applications sur Xbox, mais vous devez vous inscrire sur [ID@Xbox](http://www.xbox.com/Developers/id) pour publier et vendre un jeu sur Xbox One ou tirer parti de Xbox Live sur Windows 10. Pour rejoindre notre communauté de développeurs indépendants et passionnés, inscrivez-vous sur [ID@Xbox](http://www.xbox.com/Developers/id). 
 
-This section includes setup steps, a guide through the authentication process, information about installing the required versions of Visual Studio and Windows 10 tools, and the steps to build, run, and debug your first simple application. 
+Cette section comprend la procédure de configuration, un guide détaillant le processus d’authentification, des informations sur l’installation des versions requises de Visual Studio et des outils Windows 10, et la procédure de création, d’exécution et de débogage de votre première application simple. 
 
-| Topic      | Description |
+| Rubrique      | Description |
 |------------|-------------|
-|[Getting started](getting-started.md)| Getting started guide for UWP on Xbox One development. |
-|[What's new](whats-new.md)| Highlights new features in UWP on Xbox One. |
-|[Xbox best practices](tailoring-for-xbox.md)| How to turn off mouse mode, draw to the edges of the screen, and disable scaling. |
-|[Known issues](known-issues.md)| Known issues with UWP on Xbox One. |
-|[FAQ](frequently-asked-questions.md)| Frequently asked questions related to UWP on Xbox One. |
-|[Xbox One Developer Mode activation](devkit-activation.md)| Explains how to enable Developer Mode on Xbox One. |
-|[Tools](introduction-to-xbox-tools.md)| Describes the Xbox One-specific tool _Dev Home_, how to use the Windows Device Portal, and how to set up Visual Studio for development. This section also guides a new developer through their first Xbox UWP application and explains how to use the Fiddler tool to view network traffic. |
-|[Set up your UWP on Xbox development environment](development-environment-setup.md)| Describes the steps to set up and test your Xbox One development environment. |
-|[System resources for UWP apps and games on Xbox One](system-resource-allocation.md)| Describes the resources available to your application when it is running on Xbox One. | 
-|[Designing for Xbox and TV](..\input-and-devices\designing-for-tv.md)| Describes best practices for designing an app that will be viewed on a TV and will use a controller for input. |  
-|[Introduction to multi-user applications](multi-user-applications.md)| Describes multi-user applications (MUAs) on Xbox One. |
-|[Samples](samples.md)| Pointer to the github location – TVHelpers - where you will find useful XAML and JavaScript samples to get you started developing for Xbox. Samples include a full XAML Media App template as well as automatic controller navigation, rich media playback, and search for web-based technologies. |
-|[Bringing existing games to Xbox](development-lanes-landing.md)|Based on what technology your game is built on top of, we can direct you to step-by-step instructions that can expedite the process of bringing your game to Xbox using the UWP.|
-|[Disabling Developer Mode on Xbox One](devkit-deactivation.md)| Explains how to disable Developer Mode on Xbox One. |
-|[UWP features that aren’t yet supported on Xbox One](http://go.microsoft.com/fwlink/p/?LinkId=760755)|  Describes UWP feature areas that are not yet fully functional on Xbox One.|  
+|[Mise en route](getting-started.md)| Guide de prise en main pour le développement d’applications UWP sur XboxOne. |
+|[Nouveautés](whats-new.md)| Souligne les nouvelles fonctionnalités d’UWP sur la version préliminaire pour développeurs de XboxOne. |
+|[Problèmes connus](known-issues.md)| Problèmes connus avec UWP sur XboxOne Developer Preview. |
+|[FAQ](frequently-asked-questions.md)| FAQ relative à UWP sur Xbox One. |
+|[Activation du Mode développeur XboxOne](devkit-activation.md)| Explique comment activer le Mode développeur sur XboxOne. |
+|[Outils](introduction-to-xbox-tools.md)| Décrit l’outil XboxOne _Accueil du développeur_, l’utilisation de Windows Device Portal et la configuration de Visual Studio pour le développement. En outre, cette section guide les nouveaux développeurs pour leur première application UWP Xbox, et leur explique comment utiliser l’outil Fiddler pour afficher le trafic réseau. |
+|[Configurer votre plateforme UWP sur l’environnement de développement Xbox](development-environment-setup.md)| Décrit la procédure de configuration et de test de votre environnement de développement XboxOne. |
+|[Meilleures pratiques](tailoring-for-xbox.md)| Comment désactiver le mode souris, dessiner sur les bords de l’écran et désactiver la mise à l’échelle. |
+|[Ressources système pour les applications UWP et les jeux sur XboxOne](system-resource-allocation.md)| Décrit les ressources disponibles pour votre application quand elle s’exécute sur Xbox One. | 
+|[Conception pour Xbox et télévision](http://go.microsoft.com/fwlink/?LinkID=760736)| Décrit les meilleures pratiques de conception d’une application qui sera affichée sur un téléviseur et utilise un contrôleur pour les entrées. |  
+|[Présentation des applications multi-utilisateurs](multi-user-applications.md)| Décrit les applications multi-utilisateurs sur XboxOne. |
+|[Exemples](samples.md)| Pointeur vers l’emplacement github (TVHelpers) où vous trouverez des exemples utiles de codes XAML et JavaScript pour prendre en main le développement pour Xbox. Les exemples comprennent un modèle complet d’application multimédia XAML ainsi que la navigation automatique du contrôleur, la lecture de contenus multimédias enrichis et la recherche de technologies basées sur le web. |
+|[Intégration de jeux existants dansXbox](development-lanes-landing.md)|Selon la technologie sur laquelle est basé votre jeu, nous pouvons vous fournir des instructions détaillées permettant d’accélérer le processus de publication de votre jeu sur Xbox à l’aide des UWP.|
+|[Désactivation du Mode développeur sur Xbox One](devkit-deactivation.md)| Explique comment désactiver le Mode développeur sur XboxOne. |
+|[Fonctionnalités UWP qui ne sont pas encore prises en charge sur Xbox One](http://go.microsoft.com/fwlink/?LinkId=760755)|  Décrit les fonctionnalités UWP qui ne sont pas encore entièrement fonctionnelles sur Xbox One.|  
 
-## See also
-- [Overview of UWP apps on Xbox One](http://go.microsoft.com/fwlink/p/?LinkId=780786) 
-- [Automate launching Windows 10 UWP apps](automate-launching-uwp-apps.md)
-- [CPUSets for game development](cpusets-games.md)
+## Voir aussi
+- [Vue d’ensemble des applications UWP sur XboxOne](http://go.microsoft.com/fwlink/?LinkId=780786) 
+- [Automatisation du lancement des applications UWP Windows10](automate-launching-uwp-apps.md)
+- [API CPUSets pour le développement de jeux](cpusets-games.md)
   
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

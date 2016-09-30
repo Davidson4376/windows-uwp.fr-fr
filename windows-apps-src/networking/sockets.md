@@ -1,34 +1,34 @@
 ---
 author: DelfCo
-description: You can use both Windows.Networking.Sockets and Winsock to communicate with other devices as a Universal Windows Platform (UWP) app developer.
+description: "En tant que développeur d’applications de plateforme Windows universelles (UWP), vous pouvez utiliser tant Windows.Networking.Sockets que Winsock pour communiquer avec d’autres appareils."
 title: Sockets
 ms.assetid: 23B10A3C-E33F-4CD6-92CB-0FFB491472D6
 translationtype: Human Translation
 ms.sourcegitcommit: 4557fa59d377edc2ae5bf5a9be63516d152949bb
-ms.openlocfilehash: 49a9ae4d7d3994ad7fbb78fc9dc60cdd9dca07c3
+ms.openlocfilehash: 432d9849335c537836fd23a4cd95c79c51bc881d
 
 ---
 
 # Sockets
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-**Important APIs**
+**API importantes**
 
 -   [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960)
 -   [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms740673)
 
-You can use both [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) and [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms737523) to communicate with other devices as a Universal Windows Platform (UWP) app developer. This topic provides in-depth guidance on using the **Windows.Networking.Sockets** namespace to perform networking operations.
+En tant que développeur d’applications de plateforme Windows universelles (UWP), vous pouvez utiliser tant [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) que [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms737523) pour communiquer avec d’autres appareils. Cette rubrique fournit des instructions détaillées sur l’utilisation de l’espace de noms **Windows.Networking.Sockets** pour les opérations réseau.
 
->**Note** As part of [network isolation](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx), the system forbids establishing socket connections (Sockets or WinSock) between two UWP apps running on the same machine via either the local loopback address (127.0.0.0) or explicitly specifying the local IP address. This means that you cannot use sockets to communicate between two UWP apps. UWP supplies other mechanisms for communicating between apps. See [App-to-app communications](https://msdn.microsoft.com/windows/uwp/app-to-app/index) for details.
+>**Remarque** Dans le cadre de [l’isolement réseau](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx), le système refuse l’établissement de connexions de socket (Sockets ou WinSock) entre deux applications UWP qui s’exécutent sur le même ordinateur via soit l’adresse de bouclage locale (127.0.0.0) ou en spécifiant explicitement l’adresse IP locale. Cela signifie que vous ne pouvez pas utiliser des sockets pour faire communiquer deux applications UWP. UWP fournit d’autres mécanismes permettant de faire communiquer les applications. Voir [Communication entre les applications](https://msdn.microsoft.com/windows/uwp/app-to-app/index) pour plus d’informations.
 
-## Basic TCP socket operations
+## Opérations de base d’un socket TCP
 
-A TCP socket provides low-level network data transfers in either direction for long-lived connections. TCP sockets are the underlying feature used by most of the network protocols used on the Internet. This section shows how to enable a UWP app to send and receive data with a TCP stream socket using the [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) and [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) classes as part of the [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) namespace. For this section, we will be creating a very simple app that will function as an echo server and client to demonstrate basic TCP operations.
+Un socket TCP fournit des transferts de données réseau de bas niveau dans chaque direction pour des connexions à durée de vie longue. Les sockets TCP sont la fonctionnalité sous-jacente utilisée par la plupart des protocoles réseau utilisés sur Internet. Cette section montre comment activer une application UWP pour envoyer et recevoir des données avec un socket de flux TCP à l’aide des classes [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) et [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) dans le cadre de l’espace de noms [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960). Dans cette section, nous allons créer une application très simple fonctionnant en tant que client et serveur echo afin d’illustrer les opérations TCP de base.
 
-**Creating a TCP echo server**
+**Création d’un serveur echo TCP**
 
-The following code example demonstrates how to create a [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) object and start listening for incoming TCP connections.
+L’exemple de code suivant montre comment créer un objet [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) et démarrer l’écoute des connexions TCP entrantes.
 
 ```csharp
 try
@@ -48,7 +48,7 @@ catch (Exception e)
 }
 ```
 
-The following code example implements the SocketListener\_ConnectionReceived event handler that was attached to the [**StreamSocketListener.ConnectionReceived**](https://msdn.microsoft.com/library/windows/apps/hh701494) event in the above example. This event handler is called by the [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) class every time a remote client has established a connection with the echo server.
+L’exemple de code suivant implémente le gestionnaire d’événements SocketListener\_ConnectionReceived qui était joint à l’événement [**StreamSocketListener.ConnectionReceived**](https://msdn.microsoft.com/library/windows/apps/hh701494) dans l’exemple ci-dessus. Ce gestionnaire d’événements est appelé par la classe [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) chaque fois qu’un client distant établit une connexion avec le serveur echo.
 
 ```csharp
 private async void SocketListener_ConnectionReceived(Windows.Networking.Sockets.StreamSocketListener sender, 
@@ -67,9 +67,9 @@ private async void SocketListener_ConnectionReceived(Windows.Networking.Sockets.
 }
 ```
 
-**Creating a TCP echo client**
+**Création d’un client echo TCP**
 
-The following code example demonstrates how to create a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) object, establish a connection to the remote server, send a request, and receive a response.
+L’exemple de code suivant montre comment créer un objet [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882), établir une connexion au serveur distant, envoyer une requête et recevoir une réponse.
 
 ```csharp
 try
@@ -104,13 +104,13 @@ catch (Exception e)
 }
 ```
 
-## Basic UDP socket operations
+## Opérations de base d’un socket UDP
 
-A UDP socket provides low-level network data transfers in either direction for network communication that does not require an established connection. Because UDP sockets do not maintain connection on both endpoints they provide fast and simple solution for networking between remote machines. However, UDP sockets do not ensure integrity of the network packets or whether they make it to the remote destination at all. Some examples of applications that use UDP sockets are local network discovery and local chat clients. This section demonstrates the use of the [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) class to sending and receiving UDP messages by creating a simple echo server and client.
+Un socket UDP assure les transferts de données réseau de bas niveau dans chaque direction pour les communications réseau qui ne nécessitent pas une connexion établie. Dans la mesure où les sockets UDP ne conservent pas de connexion sur les deux points de terminaison, ils offrent une solution simple et rapide de mise en réseau entre des ordinateurs distants. Toutefois, les sockets UDP ne garantissent pas l’intégrité des paquets réseau et ne s’assurent pas qu’ils atteignent effectivement la destination distante. Les sockets UDP sont par exemple utilisés par les clients de conversation locale et les clients de découverte de réseau local. Cette section montre comment utiliser la classe [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) pour envoyer et recevoir des messages UDP en créant un client et un serveur echo simples.
 
-**Creating a UDP echo server**
+**Création d’un serveur echo UDP**
 
-The following code example demonstrates how to create a [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) object and bind it to a specific port so that you can listen for incoming UDP messages.
+L’exemple de code suivant montre comment créer un objet [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) et le lier à un port spécifique pour que vous puissiez écouter les messages UDP entrants.
 
 ```csharp
 Windows.Networking.Sockets.DatagramSocket socket = new Windows.Networking.Sockets.DatagramSocket();
@@ -124,7 +124,7 @@ string serverPort = "1337";
 await socket.BindServiceNameAsync(serverPort);
 ```
 
-The following code example implements the **Socket\_MessageReceived** event handler to read a message that was received from a client and send the same message back.
+L’exemple de code suivant implémente le gestionnaire d’événements **Socket\_MessageReceived** pour lire un message reçu d’un client et renvoyer le même message.
 
 ```csharp
 private async void Socket_MessageReceived(Windows.Networking.Sockets.DatagramSocket sender, Windows.Networking.Sockets.DatagramSocketMessageReceivedEventArgs args)
@@ -146,9 +146,9 @@ private async void Socket_MessageReceived(Windows.Networking.Sockets.DatagramSoc
 }
 ```
 
-**Creating a UDP echo client**
+**Création d’un client echo UDP**
 
-The following code example demonstrates how to create a [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) object and bind it to a specific port so that you can listen for incoming UDP messages and send a UDP message to the UDP echo server.
+L’exemple de code suivant montre comment créer un objet [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) et le lier à un port spécifique pour que vous puissiez écouter les messages UDP entrants et envoyer un message UDP au serveur echo UDP.
 
 ```csharp
 private async void testUdpSocketServer()
@@ -177,7 +177,7 @@ private async void testUdpSocketServer()
 }
 ```
 
-The following code example implements the **Socket\_MessageReceived** event handler to read a message that was received from the UDP echo server.
+L’exemple de code suivant implémente le gestionnaire d’événements **Socket\_MessageReceived** pour lire un message reçu du serveur echo UDP.
 
 ```csharp
 private async void Socket_MessageReceived(Windows.Networking.Sockets.DatagramSocket sender, 
@@ -190,17 +190,17 @@ private async void Socket_MessageReceived(Windows.Networking.Sockets.DatagramSoc
 }
 ```
 
-## Background operations and the socket broker
+## Opérations en arrière-plan et broker de socket
 
-If your app receives connections or data on sockets, then you must be prepared to perform those operations properly while your app is not in the foreground. To do so, you use the socket broker. For more information on how to use the socket broker, see [Network communications in the background](network-communications-in-the-background.md).
+Si votre application reçoit des connexions ou des données sur des sockets, vous devez être prêt à effectuer ces opérations correctement quand votre application n’est pas au premier plan. Pour ce faire, vous utilisez le broker de socket. Pour plus d’informations concernant la manière d’utiliser le broker de socket, voir [Communications réseau en arrière-plan](network-communications-in-the-background.md).
 
-## Batched sends
+## Envois par lot
 
-Starting with Windows 10, Windows.Networking.Sockets supports batched sends, a way for you to send multiple buffers of data together with much lower context-switching overhead than if you send each of the buffers separately. This is especially useful if your app is doing VoIP, VPN, or other tasks which involve moving a lot of data as efficiently as possible.
+À partir de Windows 10, Windows.Networking.Sockets prend en charge les envois par lot, qui vous permettent d’envoyer ensemble plusieurs tampons de données moyennant une surcharge de basculement entre contextes nettement moindre que celle qu’occasionnerait l’envoi de chaque tampon séparément. Cela est particulièrement utile si votre application effectue des tâches VoIP, VPN ou autres impliquant le déplacement d’un grand nombre de données aussi efficacement que possible.
 
-Each call to WriteAsync on a socket triggers a kernel transition to reach the network stack. When an app writes many buffers at a time, each write incurs a separate kernel transition, and this creates substantial overhead. The new batched sends pattern optimizes the frequency of kernel transitions. This functionality is currently limited to [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) and connected [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) instances.
+Chaque appel à WriteAsync sur un socket déclenche une transition de noyau pour atteindre la pile réseau. Quand une application écrit un grand nombre de tampons de données à la fois, chaque écriture entraîne une transition de noyau distincte, qui occasionne une surcharge substantielle. Le nouveau modèle d’envois par lot optimise la fréquence des transitions de noyau. Cette fonctionnalité est actuellement limitée à [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) et aux instances [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) connectées.
 
-Here is an example of how an app would send a large number of buffers in a non-optimal way.
+Voici par exemple comment une application envoie un grand nombre de tampons de données de manière non optimale.
 
 ```csharp
 // Send a set of packets inefficiently, one packet at a time.
@@ -215,7 +215,7 @@ foreach (IBuffer packet in packetsToSend)
 }
 ```
 
-This example shows a more efficient way to send a large number of buffers. Because this technique uses features unique to the C# language, it is only available to C# programmers. By sending multiple packets at a time, this example enables the system to batch sends, and thus optimize kernel transitions for improved performance.
+Cet exemple montre un moyen plus efficace d’envoyer un grand nombre de tampons. Étant donné que cette technique utilise des fonctionnalités propres au langage C#, elle est accessible uniquement aux programmeurs c#. En envoyant plusieurs paquets à la fois, cet exemple permet au système d’effectuer des envois par lot, optimisant ainsi les transitions de noyau pour améliorer les performances.
 
 ```csharp
 // More efficient way to send packets.
@@ -235,7 +235,7 @@ foreach (IBuffer packet in packetsToSend)
 await Task.WaitAll(pendingTasks);
 ```
 
-This example shows another way to send a large number of buffers in a way that's compatible with batched sends. And since it doesn't use any C#-specific features, it is applicable for all languages (though it is demonstrated here in C#). Instead, it uses changed behavior in the **OutputStream** member of the [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) and [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) classes that is new in Windows 10.
+Cet exemple montre une autre façon d’envoyer un grand nombre de tampons d’une manière compatible avec les envois par lot. Par ailleurs, dans la mesure où il n’utilise pas de fonctionnalités spécifiques de C#, il est applicable pour tous les langages (même s’il est illustré ici en C#). Au lieu de cela, il utilise un comportement modifié dans le membre **OutputStream** des classes [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) et [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319), qui constitue une nouveauté dans Windows 10.
 
 ```csharp
 // More efficient way to send packets in Windows 10, using the new behavior of OutputStream.FlushAsync().
@@ -255,24 +255,24 @@ foreach (IBuffer packet in packetsToSend)
 await outputStream.FlushAsync();
 ```
 
-In earlier versions of Windows, **FlushAsync** returned immediately, and did not guarantee that all operations on the stream had completed yet. In Windows 10, the behavior has changed. **FlushAsync** is now guaranteed to return after all operations on the output stream have completed.
+Dans les versions antérieures de Windows, **FlushAsync** retournait immédiatement et ne garantissait pas que toutes les opérations sur le flux étaient terminées. Dans Windows10, le comportement a changé. Il est désormais garanti que **FlushAsync** retourne une fois toutes les opérations sur le flux de sortie terminées.
 
-There are some important limitations imposed by using batched writes in your code.
+Certaines limitations importantes découlent de l’utilisation d’écritures par lot dans votre code.
 
--   You cannot modify the contents of the **IBuffer** instances being written until the asynchronous write is complete.
--   The **FlushAsync** pattern only works on **StreamSocket.OutputStream** and **DatagramSocket.OutputStream**.
--   The **FlushAsync** pattern only works in Windows 10 and onward.
--   In other cases, use **Task.WaitAll** instead of the **FlushAsync** pattern.
+-   Vous ne pouvez pas modifier le contenu des instances **IBuffer** en cours d’écriture tant que l’écriture asynchrone n’est pas terminée.
+-   Le modèle **FlushAsync** fonctionne uniquement sur **StreamSocket.OutputStream** et **DatagramSocket.OutputStream**.
+-   Le modèle **FlushAsync** fonctionne uniquement à partir de Windows 10.
+-   Dans les autres cas, utilisez **Task.WaitAll** au lieu du modèle **FlushAsync**.
 
-## Port sharing for DatagramSocket
+## Partage de port pour DatagramSocket
 
-Windows 10 introduces a new [**DatagramSocketControl**](https://msdn.microsoft.com/library/windows/apps/hh701190) property, [**MulticastOnly**](https://msdn.microsoft.com/library/windows/apps/dn895368), which enables you to specify that the **DatagramSocket** in question is able to coexist with other Win32 or WinRT multicast sockets bound to the same address/port.
+Windows 10 introduit une nouvelle propriété [**DatagramSocketControl**](https://msdn.microsoft.com/library/windows/apps/hh701190), [**MulticastOnly**](https://msdn.microsoft.com/library/windows/apps/dn895368), qui permet de spécifier que le **DatagramSocket** en question est en mesure de coexister avec d’autres sockets multidiffusion Win32 ou WinRT liés à la même adresse/au même port.
 
-## Providing a client certificate with the StreamSocket class
+## Fourniture d’un certificat client avec la classe StreamSocket
 
-The [**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) class supports using SSL/TLS to authenticate the server the app is talking to. In certain cases, the app also needs to authenticate itself to the server using a TLS client certificate. In Windows 10, you can provide a client certificate on the [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) object (this must be set before the TLS handshake is started). If the server requests the client certificate, Windows will respond with the certificate provided.
+La classe [**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) prend en charge l’utilisation des protocoles SSL/TLS pour authentifier le serveur avec lequel l’application communique. Dans certains cas, l’application doit également s’authentifier auprès du serveur à l’aide d’un certificat client TLS. Dans Windows 10, vous pouvez prévoir un certificat client sur l’objet [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) (cela doit être défini avant le début de la négociation TLS). Si le serveur demande le certificat client, Windows répond avec le certificat fourni.
 
-Here is a code snippet showing how to implement this:
+Voici un extrait de code montrant comment implémenter cela:
 
 ```csharp
 var socket = new StreamSocket();
@@ -281,26 +281,26 @@ socket.Control.ClientCertificate = certificate;
 await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 ```
 
-## Exceptions in Windows.Networking.Sockets
+## Exceptions dans Windows.Networking.Sockets
 
-The constructor for the [**HostName**](https://msdn.microsoft.com/library/windows/apps/br207113) class used with sockets can throw an exception if the string passed is not a valid hostname (contains characters that are not allowed in a host name). If an app gets input from the user for the **HostName**, the constructor should be in a try/catch block. If an exception is thrown, the app can notify the user and request a new hostname.
+Le constructeur pour la classe [**HostName**](https://msdn.microsoft.com/library/windows/apps/br207113) utilisée avec des sockets peut lever une exception si la chaîne passée n’est pas un nom d’hôte valide (c’est-à-dire si elle contient des caractères non autorisés dans un nom d’hôte). Si une application obtient une entrée de l’utilisateur pour la classe **HostName**, le constructeur doit se trouver dans un bloc try/catch. Si une exception est levée, l’application peut notifier l’utilisateur et demander un nouveau nom d’hôte.
 
-The [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) namespace has convenient helper methods and enumerations for handling errors when using sockets and WebSockets. This can be useful for handling specific network exceptions differently in your app.
+L’espace de noms [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) propose des méthodes et des énumérations d’assistance pratiques qui permettent de gérer les erreurs lorsque des sockets et des WebSockets sont utilisés. Ceci peut s’avérer utile pour gérer différemment certaines exceptions réseau dans votre application.
 
-An error encountered on [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319), [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882), or [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) operation is returned as an **HRESULT** value. The [**SocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701462) method is used to convert a network error from a socket operation to a [**SocketErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh701457) enumeration value. Most of the **SocketErrorStatus** enumeration values correspond to an error returned by the native Windows sockets operation. An app can filter on specific **SocketErrorStatus** enumeration values to modify app behavior depending on the cause of the exception.
+Une erreur rencontrée dans une opération [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319), [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) ou [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) est renvoyée sous forme de valeur **HRESULT**. La méthode [**SocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701462) sert à convertir une erreur réseau résultant d’une opération de socket en valeur d’énumération [**SocketErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh701457). La plupart des valeurs d’énumération **SocketErrorStatus** correspondent à une erreur renvoyée par l’opération de socket Windows native. Une application peut filtrer des valeurs d’énumération **SocketErrorStatus** spécifiques pour modifier son comportement en fonction de la cause de l’exception.
 
-An error encountered on a [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) or [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) operation is returned as an **HRESULT** value. The [**WebSocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701529) method is used to convert a network error from a WebSocket operation to a [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818) enumeration value. Most of the **WebErrorStatus** enumeration values correspond to an error returned by the native HTTP client operation. An app can filter on specific **WebErrorStatus** enumeration values to modify app behavior depending on the cause of the exception.
+Une erreur rencontrée dans une opération [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) ou [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) est renvoyée sous forme de valeur **HRESULT**. La méthode [**WebSocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701529) sert à convertir une erreur réseau résultant d’une opération WebSocket en valeur d’énumération [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818). La plupart des valeurs d’énumération **WebErrorStatus** correspondent à une erreur renvoyée par l’opération cliente HTTP native. Une application peut filtrer sur des valeurs d’énumération **WebErrorStatus** spécifiques pour modifier son comportement en fonction de la cause de l’exception.
 
-For parameter validation errors, an app can also use the **HRESULT** from the exception to learn more detailed information on the error that caused the exception. Possible **HRESULT** values are listed in the *Winerror.h* header file. For most parameter validation errors, the **HRESULT** returned is **E\_INVALIDARG**.
+Pour les erreurs de validation de paramètre, une application peut également utiliser la valeur **HRESULT** à partir de l’exception pour obtenir des informations plus détaillées sur l’erreur à l’origine de l’exception. Les valeurs **HRESULT** possibles sont répertoriées dans le fichier d’en-tête *Winerror.h*. Pour la plupart des erreurs de validation de paramètre, la valeur **HRESULT** renvoyée est **E\_INVALIDARG**.
 
-## The Winsock API
+## API Winsock
 
-You can use [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms740673) in your UWP app, as well. The supported Winsock API is based on that of Windows Phone 8.1Microsoft Silverlight and continues to support most of the types, properties and methods (some APIs that are considered obsolete have been removed). You can find more information on Winsock programming [here](https://msdn.microsoft.com/library/windows/desktop/ms740673).
-
-
+Vous pouvez également utiliser [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms740673) dans votre application UWP. L’API Winsock prise en charge est basée sur celle de Microsoft Silverlight pour Windows Phone8.1 et continue de prendre en charge la plupart des types, propriétés et méthodes (certaines API jugées obsolètes ont été supprimées). Pour plus d’informations sur la programmation de Winsock, voir [ici](https://msdn.microsoft.com/library/windows/desktop/ms740673).
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Jun16_HO4-->
 
 

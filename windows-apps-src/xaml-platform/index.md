@@ -1,33 +1,33 @@
 ---
 author: jwmsft
 ms.assetid: b632a6cc-3503-4ab8-bfd1-dde731bd89ab
-description: This section includes topics that explain programming concepts that are generally applicable to any app that you write.
-title: XAML platform
+description: "Cette section contient des rubriques qui décrivent des concepts de programmation généralement applicables aux applications que vous écrivez."
+title: Plateforme XAML
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: bd2423c9c58a2c6bf20b0b15715b9e9e7aa219dd
+ms.openlocfilehash: 4deae037857312f891c8c4beae2b6a89adc152cd
 
 ---
 
-# XAML platform
+# Plateforme XAML
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-This section includes topics that explain programming concepts that are generally applicable to any app that you write, if you are using C#, Microsoft Visual Basic, or Visual C++ component extensions (C++/CX) as your programming language and XAML for your UI definition. This includes basic programming concepts such as using properties and events, and how these apply to Universal Windows Platform (UWP) app programming. The Universal Windows Platform (UWP) extends C#, Visual Basic, or C++/CX concepts of properties and their values by adding the dependency property system. Topics in this section also document the XAML language as it is used by the UWP, and cover basic scenarios and advanced topics explaining how to use XAML to define the UI for your UWP app.
+Cette section comprend des rubriques qui décrivent des concepts de programmation généralement applicables aux applications que vous écrivez, dans la mesure où vous utilisez C#, Microsoft Visual Basic ou des extensions de composant Visual C++ (C++/CX) comme langage de programmation et XAML pour la définition de votre interface utilisateur. Il s’agit notamment de concepts de programmation de base tels que l’utilisation des propriétés et des événements, et la façon dont ces derniers s’appliquent à la programmation d’applications de plateforme Windows universelle (UWP). La plateforme Windows universelle (UWP) étend les concepts des propriétés C#, Visual Basic et C++/CX et leurs valeurs en ajoutant le système de propriétés de dépendance. Les rubriques de cette section documentent également le langage XAML tel qu’utilisé par UWP, et couvrent des cas de base et des sujets avancés sur l’utilisation du code XAML pour définir l’interface utilisateur de votre application UWP.
  
-| Topic | Description |
+| Rubrique | Description |
 |-------|-------------|
-| [XAML overview](xaml-overview.md) | We introduce the XAML language and XAML concepts to the Windows Runtime app developer audience, and describe the different ways to declare objects and set attributes in XAML as it is used for creating a Windows Runtime app. |
-| [Dependency properties overview](dependency-properties-overview.md) | This topic explains the dependency property system that is available when you write a Windows Runtime app using C++, C#, or Visual Basic along with XAML definitions for UI. |
-| [Custom dependency properties](custom-dependency-properties.md) | Explains how to define and implement custom dependency properties for a Windows Runtime app using C++, C#, or Visual Basic. |
-| [Attached properties overview](attached-properties-overview.md) | Explains the concept of an attached property in XAML, and provides some examples. |
-| [Custom attached properties](custom-attached-properties.md) | Explains how to implement a XAML attached property as a dependency property and how to define the accessor convention that is necessary for your attached property to be usable in XAML. |
-| [Events and routed events overview](events-and-routed-events-overview.md) | We describe the programming concept of events in a Windows Runtime app, when using C#, Visual Basic or C++/CX as your programming language, and XAML for your UI definition. You can assign handlers for events as part of the declarations for UI elements in XAML, or you can add the handlers in code. Windows Runtime supports **routed events**: certain input events and data events can be handled by objects beyond the object that fired the event. Routed events are useful when you define control templates, or use pages or layout containers. |
+| [Vue d’ensemble du langage XAML](xaml-overview.md) | Nous présentons le langage XAML et les concepts XAML aux développeurs d’applications Windows Runtime, puis nous décrivons les différentes manières de déclarer des objets et de définir des attributs en langage XAML tel qu’il est utilisé pour créer une application Windows Runtime. |
+| [Vue d’ensemble des propriétés de dépendance](dependency-properties-overview.md) | Cette rubrique décrit le système de propriétés de dépendance disponible quand vous écrivez une application Windows Runtime en C++, C# ou Visual Basic avec des définitions XAML pour l’interface utilisateur. |
+| [Propriétés de dépendance personnalisées](custom-dependency-properties.md) | Explique comment définir et implémenter des propriétés de dépendance personnalisées pour une application Windows Runtime en C++, C# ou Visual Basic. |
+| [Vue d’ensemble des propriétés jointes](attached-properties-overview.md) | Explique le concept de propriété jointe en XAML et fournit quelques exemples. |
+| [Propriétés jointes personnalisées](custom-attached-properties.md) | Explique comment implémenter une propriété jointe XAML en tant que propriété de dépendance et comment définir la convention d’accesseur nécessaire pour que votre propriété jointe soit utilisable en XAML. |
+| [Vue d’ensemble des événements et des événements routés](events-and-routed-events-overview.md) | Nous décrivons le concept de programmation des événements dans une application Windows Runtime, quand vous utilisez C#, Visual Basic ou les extensions de composants Visual C++ (C++/CX) comme langage de programmation et le langage XAML pour la définition de votre interface utilisateur. Vous pouvez assigner des gestionnaires pour les événements dans le cadre des déclarations des éléments d’interface utilisateur en XAML, ou vous pouvez ajouter les gestionnaires dans le code. Windows Runtime prend en charge les **événements routés** : certains événements d’entrée et événements de données peuvent être gérés par des objets autres que l’objet ayant déclenché l’événement. Les événements routés s’avèrent utiles quand vous définissez des modèles de contrôles ou utilisez des pages ou conteneurs de disposition. |
 
  
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Jun16_HO4-->
 
 

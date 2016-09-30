@@ -1,102 +1,91 @@
 ---
 author: Jwmsft
-Description: Consider how often we read text in our daily lives - in email, a book, a road sign, the prices on a menu, tire pressure markings, or posters on a street pole.
-title: Text controls
+Description: Nous lisons du texte en permanence &#58; nos e-mails, un livre, un panneau routier, les prix sur un menu, la pression des pneus ou des affiches sur des poteaux.
+title: "Contrôles de texte"
 ms.assetid: 43DC68BF-FA86-43D2-8807-70A359453048
 label: Text controls
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 201244521f8110181e268af47d52c1ac1315e9d3
+ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
+ms.openlocfilehash: b075820275d7b5e592cdae736ed92beef67a7b9a
 
 ---
-# Text controls
+# Contrôles de texte
+Les contrôles de texte comprennent les zones de saisie de texte, les zones de mot de passe, les zones de suggestion automatique et les blocs de texte. L’infrastructure XAML propose plusieurs contrôles de rendu, de saisie et de modification de texte, ainsi qu’un jeu de propriétés de mise en forme du texte.
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-
-Text controls consist of text input boxes, password boxes, auto-suggest boxes, and text blocks. The XAML framework provides several controls for rendering, entering, and editing text, and a set of properties for formatting the text.
-
-- The controls for displaying read-only text are [TextBlock](text-block.md) and [RichTextBlock](rich-text-block.md).
-- The controls for text entry and editing are: [TextBox](text-box.md), [AutoSuggestBox](auto-suggest-box.md), [PasswordBox](password-box.md), and [RichEditBox](rich-edit-box.md).
+- Les contrôles d’affichage de texte en lecture seule sont [TextBlock](text-block.md) et [RichTextBlock](rich-text-block.md).
+- Les contrôles de saisie et de modification de texte sont: [TextBox](text-box.md), [AutoSuggestBox](auto-suggest-box.md), [PasswordBox](password-box.md) et [RichEditBox](rich-edit-box.md).
 
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx"><strong>AutoSuggestBox class</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx"><strong>PasswordBox class</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx"><strong>RichEditBox class</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx"><strong>RichTextBlock class</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx"><strong>TextBlock class</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx"><strong>TextBox class</strong></a></li>
-</ul>
+**API importantes**
 
-</div>
-</div>
+-   [**Classe AutoSuggestBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)
+-   [**Classe PasswordBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)
+-   [**Classe RichEditBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)
+-   [**Classe RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)
+-   [**Classe TextBlock**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx)
+-   [**Classe TextBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)
 
+## Est-ce le contrôle approprié ?
 
+Le contrôle de texte utilisé dépend du scénario. Utilisez les informations fournies dans cet article pour sélectionner le contrôle de texte adapté à votre application.
 
+### Afficher un texte en lecture seule
 
-## Is this the right control?
+Pour afficher la majeure partie de votre texte en lecture seule dans votre application, utilisez un contrôle **TextBlock**. Ce contrôle vous permet d’afficher une ou plusieurs lignes de texte, des liens hypertexte inclus et du texte avec mise en forme de type gras, italique ou souligné.
 
-The text control you use depends on your scenario. Use this info to pick the right text control to use in your app.
+Le contrôle TextBlock est généralement plus facile à utiliser et offre de meilleures performances en termes de rendu de texte que le contrôle RichTextBlock. C’est la raison pour laquelle il est recommandé pour la plupart des textes d’interface utilisateur d’application. Vous pouvez facilement visualiser et utiliser le texte d’un contrôle TextBlock dans votre application en obtenant la valeur de la propriété [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.text.aspx).
 
-### Render read-only text
+Ce contrôle propose également de nombreuses options de mise en forme similaires pour personnaliser le mode de rendu de votre texte. Même si vous pouvez insérer des sauts de ligne dans le texte, TextBlock est conçu pour n’afficher qu’un seul paragraphe et ne prend pas en charge le retrait du texte.
 
-Use a **TextBlock** to display most read-only text in your app. You can use it to display single-line or multi-line text, inline hyperlinks, and text with formatting like bold, italic, or underlined.
+Utilisez un contrôle **RichTextBlock** si vous devez prendre en charge plusieurs paragraphes, du texte sur plusieurs colonnes, d’autres dispositions de texte complexes ou des éléments d’interface utilisateur inclus, tels que des images. RichTextBlock propose plusieurs fonctionnalités avancées de disposition du texte.
 
-TextBlock is typically easier to use and provides better text rendering performance than RichTextBlock, so it's preferred for most app UI text. You can easily access and use text from a TextBlock in your app by getting the value of the [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.text.aspx) property.
+La propriété de contenu de RichTextBlock est la propriété [Blocks](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.blocks.aspx), qui prend en charge du texte basé sur un paragraphe par le biais de l’élément [Paragraph](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx). Elle ne présente pas de propriété **Text** vous permettant d’accéder facilement au contenu de texte du contrôle dans votre application.  
 
-It also provides many of the same formatting options for customizing how your text is rendered. Although you can put line breaks in the text, TextBlock is designed to display a single paragraph and doesn’t support text indentation.
+### Saisie de texte
 
-Use a **RichTextBlock** when you need support for multiple paragraphs, multi-column text or other complex text layouts, or inline UI elements like images. RichTextBlock provides several features for advanced text layout.
+Utilisez un contrôle **TextBox** si vous souhaitez permettre à un utilisateur de saisir et de modifier du texte sans mise en forme, dans un formulaire par exemple. Vous pouvez utiliser la propriété [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx) pour obtenir et définir le texte d’un contrôle TextBox.
 
-The content property of RichTextBlock is the [Blocks](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.blocks.aspx) property, which supports paragraph based text via the [Paragraph](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx) element. It doesn't have a **Text** property that you can use to easily access the control's text content in your app.  
+Vous avez la possibilité de définir un contrôle TextBox en lecture seule, mais il doit s’agir d’un état conditionnel temporaire. Si le texte ne doit jamais être modifiable, envisagez plutôt d’utiliser un contrôle TextBlock.
 
-### Text input
+Si vous souhaitez recueillir un mot de passe ou d’autres données confidentielles, telles qu’un numéro de sécurité sociale, utilisez un contrôle **PasswordBox**. Une zone de mot de passe est une zone de saisie de texte qui masque les caractères entrés par souci de confidentialité. Une zone de mot de passe ressemble à une zone de saisie de texte, à la différence qu’elle affiche des puces à la place du texte entré. Le caractère puce est personnalisable.
 
-Use a **TextBox** control to let a user enter and edit unformatted text, such as in a form. You can use the [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx) property to get and set the text in a TextBox.
+Pour présenter à l’utilisateur une liste de suggestions dans laquelle il peut effectuer un choix pendant qu’il saisit du texte, utilisez un contrôle **AutoSuggestBox**. Une zone de suggestion automatique est une zone de texte qui déclenche une liste de suggestions de recherche de base. Les termes suggérés peuvent provenir d’une combinaison de termes de recherche courants et de termes entrés précédemment par l’utilisateur.
 
-You can make a TextBox read-only, but this should be a temporary, conditional state. If the text is never editable, consider using a TextBlock instead.
+Vous devez également utiliser un contrôle AutoSuggestBox pour implémenter une zone de recherche.
 
-Use a **PasswordBox** control to collect a password or other private data, such as a Social Security number. A password box is a text input box that conceals the characters typed in it for the sake of privacy. A password box looks like a text input box, except that it renders bullets in place of the text that has been entered. The bullet character can be customized.
+Utilisez un contrôle **RichEditBox** pour afficher et modifier les fichiers de texte. Vous n’utilisez pas un contrôle RichEditBox pour obtenir les données entrées dans votre application par l’utilisateur de la même façon que vous utilisez d’autres zones de saisie de texte standard. En fait, ce contrôle vous permet de travailler sur des fichiers de texte séparés de votre application. Le texte entré dans un contrôle RichEditBox est généralement enregistré dans un fichier.rtf.
 
-Use an **AutoSuggestBox** control to show the user a list of suggestions to choose from as they type. An auto-suggest box is a text entry box that triggers a list of basic search suggestions. Suggested terms can draw from a combination of popular search terms and historical user-entered terms.
+**La saisie de texte est-elle la meilleure option?**
 
-You should also use an AutoSuggestBox control to implement a search box.
+Vous disposez de nombreuses méthodes pour obtenir les entrées des utilisateurs de votre application. Les questions suivantes vous aideront à déterminer si le meilleur moyen d’obtenir les entrées utilisateur consiste à utiliser l’une des zones de saisie de texte standard ou un autre contrôle.
 
-Use a **RichEditBox** to display and edit text files. You don't use a RichEditBox to get user input into your app the way you use other standard text input boxes. Rather, you use it to work with text files that are separate from your app. You typically save text entered into a RichEditBox to a .rtf file.
+-   **L’énumération efficace de l’ensemble des valeurs valides est-elle souhaitable?** Si tel est le cas, envisagez le recours à des contrôles par sélection, du type [case à cocher](checkbox.md), [liste déroulante](lists.md), zone de liste, [case d’option](radio-button.md), [curseur](slider.md), [bouton-bascule](toggles.md), [sélecteur de dates](date-and-time.md) ou sélecteur d’heure.
+-   **L’ensemble de valeurs valides est-il restreint?** Si tel est le cas, utilisez plutôt une [liste déroulante](lists.md) ou une zone de liste, en particulier si les valeurs contiennent un grand nombre de caractères.
+-   **Les données valides sont entièrement sans contraintes? Ou sont-elles limitées par le format (contraintes de longueur ou portant sur les types de caractère)?** Si tel est le cas, utilisez un contrôle d’entrée de texte. Vous pouvez limiter le nombre de caractères pouvant être saisis et valider le format dans le code de votre application.
+-   **La valeur représente-t-elle un type de données auquel correspond un contrôle commun spécialisé?** Si tel est le cas, utilisez le contrôle approprié plutôt qu’un contrôle d’entrée de texte. Utilisez, par exemple, un contrôle [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/br211681) plutôt qu’un contrôle d’entrée de texte pour les saisies de date.
+-   Si les données sont strictement numériques:
+    -   **La valeur à entrer est-elle approximative et/ou relative à une autre quantité spécifiée sur la même page?** Si tel est le cas, utilisez un [curseur](slider.md).
+    -   **L’utilisateur bénéficiera-t-il de commentaires instantanés sur l’effet de toute modification apportée aux paramètres?** Si tel est le cas, utilisez un [curseur](slider.md), accompagné éventuellement d’un contrôle correspondant.
+    -   **La valeur entrée risque-t-elle d’être ajustée en fonction du résultat obtenu (par exemple, le volume ou la luminosité)?** Si tel est le cas, utilisez un [curseur](slider.md).
 
-**Is text input the best option?**
+## Exemples
 
-There are many ways you can get user input in your app. These questions will help answer whether one of the standard text input boxes or another control is the best fit for getting user input.
+Zone de texte
 
--   **Is it practical to efficiently enumerate all valid values?** If so, consider using one of the selection controls, such as a [check box](checkbox.md), [drop-down list](lists.md), list box, [radio button](radio-button.md), [slider](slider.md), [toggle switch](toggles.md), [date picker](date-and-time.md), or time picker.
--   **Is there a fairly small set of valid values?** If so, consider a [drop-down list](lists.md) or a list box, especially if the values are more than a few characters long.
--   **Is the valid data completely unconstrained? Or is the valid data only constrained by format (constrained length or character types)?** If so, use a text input control. You can limit the number of characters that can be entered, and you can validate the format in your app code.
--   **Does the value represent a data type that has a specialized common control?** If so, use the appropriate control instead of a text input control. For example, use a [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/br211681) instead of a text input control to accept a date entry.
--   If the data is strictly numeric:
-    -   **Is the value being entered approximate and/or relative to another quantity on the same page?** If so, use a [slider](slider.md).
-    -   **Would the user benefit from instant feedback on the effect of setting changes?** If so, use a [slider](slider.md), possibly with an accompanying control.
-    -   **Is the value entered likely to be adjusted after the result is observed, such as with volume or screen brightness?** If so, use a [slider](slider.md).
+![Zone de texte](images/text-box.png)
 
-## Examples
+Zone de suggestion automatique
 
-Text box
+![Exemple de contrôle de suggestion automatique développé](images/controls_autosuggest_expanded01.png)
 
-![A text box](images/text-box.png)
+Zone de mot de passe
 
-Auto suggest box
+![État de focus de la zone de mot de passe pendant la saisie](images/passwordbox-focus-typing.png)
 
-![Example of the expanded auto-suggest control](images/controls_autosuggest_expanded01.png)
+## Créer un contrôle de texte
 
-Password box
-
-![Password box focus state typing text](images/passwordbox-focus-typing.png)
-
-## Create a text control
-
-See these articles for info and examples specific to each text control.
+Pour plus d’informations et d’exemples propres à chaque contrôle de texte, voir les articles suivants.
 
 -   [**AutoSuggestBox**](auto-suggest-box.md)
 -   [**PasswordBox**](password-box.md)
@@ -105,100 +94,100 @@ See these articles for info and examples specific to each text control.
 -   [**TextBlock**](text-block.md)
 -   [**TextBox**](text-box.md)
 
-## Font and style guidelines
-See these articles for font guidelines:
+## Recommandations en matière de polices et de styles
+Pour découvrir les recommandations concernant les polices, voir les articles suivants:
 
-- [**Font guidelines**](fonts.md)
-- [**Segoe MDL2 icon list and guidelines**](segoe-ui-symbol-font.md)
+- [**Recommandations en matière de polices**](fonts.md)
+- [**Recommandations en matière d’icônes Segoe MDL2**](segoe-ui-symbol-font.md)
 
 
-## Choose the right keyboard for your text control
+## Choisir le clavier adapté à votre contrôle de texte
 
-**Applies to:** TextBox, PasswordBox RichEditBox
+**S’applique aux contrôles :** TextBox, PasswordBox, RichEditBox
 
-To help users to enter data using the touch keyboard, or Soft Input Panel (SIP), you can set the input scope of the text control to match the kind of data the user is expected to enter.
+Pour faciliter la saisie de données par les utilisateurs au moyen du clavier tactile, ou clavier virtuel, définissez l’étendue des entrées du contrôle de texte de façon qu’elle corresponde au type de données attendu par l’utilisateur.
 
->Tip This info applies only to the SIP. It does not apply to hardware keyboards or the On-Screen Keyboard available in the Windows Ease of Access options.
+>Conseil Ces informations s’appliquent uniquement au clavier virtuel. Elles ne concernent pas les claviers matériels ou visuels figurant dans les Options d’ergonomie de Windows.
 
-The touch keyboard can be used for text entry when your app runs on a device with a touch screen. The touch keyboard is invoked when the user taps on an editable input field, such as a TextBox or RichEditBox. You can make it much faster and easier for users to enter data in your app by setting the input scope of the text control to match the kind of data you expect the user to enter. The input scope provides a hint to the system about the type of text input expected by the control so the system can provide a specialized touch keyboard layout for the input type.
+Le clavier tactile permet d’entrer du texte lorsque l’application est exécutée sur un appareil disposant d’un écran tactile. Le clavier tactile est appelé lorsque l’utilisateur appuie sur un champ d’entrée modifiable, tel qu’un contrôle TextBox ou RichEditBox. Vous pouvez nettement faciliter et accélérer la saisie de données par les utilisateurs dans votre application en définissant l’étendue des entrées du contrôle de texte afin qu’elle corresponde au type de données attendu de la part de l’utilisateur. L’étendue des entrées fournit au système une indication sur le type d’entrée de texte attendu par le contrôle, afin que le système puisse fournir une disposition de clavier tactile spécialisée pour le type d’entrée.
 
-For example, if a text box is used only to enter a 4-digit PIN, set the [InputScope](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.inputscope.aspx) property to **Number**. This tells the system to show the number keypad layout, which makes it easier for the user to enter the PIN.
+Par exemple, si une zone de texte est utilisée uniquement pour la saisie d’un code confidentiel à 4 chiffres, définissez la propriété [InputScope](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.inputscope.aspx) sur **Number**. Cela indique au système qu’il doit afficher la disposition du pavé numérique, ce qui facilite la saisie d’un code confidentiel par l’utilisateur.
 
 >Important  
->The input scope does not cause any input validation to be performed, and does not prevent the user from providing any input through a hardware keyboard or other input device. You are still responsible for validating the input in your code as needed.
+>L’étendue des entrées n’entraîne l’exécution d’aucune validation des entrées et n’empêche pas l’utilisateur de saisir des données par le biais d’un clavier matériel ou d’un autre dispositif du même ordre. Vous restez responsable de la validation d’une entrée dans votre code, si nécessaire.
 
-For more info, see [Use input scope to change the touch keyboard](https://msdn.microsoft.com/library/windows/apps/mt280229).
+Pour plus d’informations, voir l’article [Utiliser l’étendue des entrées pour modifier le clavier tactile](https://msdn.microsoft.com/library/windows/apps/mt280229).
 
-## Color fonts
+## Polices en couleur
 
-**Applies to:** TextBlock, RichTextBlock, TextBox, RichEditBox
+**S’applique aux contrôles :** TextBlock, RichTextBlock, TextBox, RichEditBox
 
-Windows has the ability for fonts to include multiple colored layers for each glyph. For example, the Segoe UI Emoji font defines color versions of the Emoticon and other Emoji characters.
+Les polices Windows peuvent inclure plusieurs couches colorées pour chaque glyphe. Par exemple, la police Segoe UI Emoji définit les versions de couleur des émoticônes et des autres caractères Emoji.
 
-The standard and rich text controls support display color fonts. By default, the **IsColorFontEnabled** property is **true** and fonts with these additional layers are rendered in color. The default color font on the system is Segoe UI Emoji and the controls will fall back to this font to display the glyphs in color.
+Les contrôles de texte standard et enrichi prennent en charge l’affichage des polices en couleur. Par défaut, la propriété **IsColorFontEnabled** est définie sur **true**, et les polices dotées de ces couches supplémentaires s’affichent donc en couleur. La police en couleur par défaut sur le système est Segoe UI Emoji, et les contrôles utiliseront cette police pour afficher les glyphes en couleur.
 
 ```xaml
 <TextBlock FontSize="30">Hello ☺⛄☂♨⛅</TextBlock>
 ```
 
-The rendered text looks like this:
+Le texte affiché ressemble à ceci:
 
-![Text block with color font](images/text-block-color-fonts.png)
+![Bloc de texte avec police en couleur](images/text-block-color-fonts.png)
 
-For more info, see the [**IsColorFontEnabled**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.iscolorfontenabled.aspx) property.
+Pour plus d’informations, voir la propriété [**IsColorFontEnabled**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.iscolorfontenabled.aspx).
 
-## Guidelines for line and paragraph separators
+## Recommandations en matière de séparateurs de lignes et de paragraphes
 
-**Applies to:** TextBlock, RichTextBlock, multi-line TextBox, RichEditBox
+**S’applique aux contrôles :** TextBlock, RichTextBlock, TextBox multiligne, RichEditBox
 
-Use the line separator character (0x2028) and the paragraph separator character (0x2029) to divide plain text. A new line is begun after each line separator. A new paragraph is begun after each paragraph separator.
+Pour diviser un texte brut, utilisez le caractère séparateur de lignes (0x2028) et le caractère séparateur de paragraphes (0x2029). Une ligne est créée après chaque séparateur de lignes. Un paragraphe est créé après chaque séparateur de paragraphes.
 
-It isn't necessary to start the first line or paragraph in a file with these characters or to end the last line or paragraph with them; doing so indicates that there is an empty line or paragraph in that location.
+Il n’est pas nécessaire d’insérer ces caractères au début de la première ligne ou du premier paragraphe d’un fichier, ni à la fin de la dernière ligne ou du dernier paragraphe; cette opération signalerait l’existence d’une ligne vide ou d’un paragraphe vide à cet emplacement.
 
-Your app can use the line separator to indicate an unconditional end of line. However, line separators do not correspond to the separate carriage return and linefeed characters, or to a combination of these characters. Line separators must be processed separately from carriage return and linefeed characters.
+Votre application peut utiliser le séparateur de lignes pour indiquer une fin de ligne inconditionnelle. Toutefois, les séparateurs de lignes ne correspondent pas aux caractères distincts de retour chariot et de saut de ligne, ni à une combinaison de ces caractères. Les séparateurs de lignes doivent être traités séparément des caractères de saut de ligne et de retour chariot.
 
-Your app can insert a paragraph separator between paragraphs of text. Use of this separator allows creation of plain text files that can be formatted with different line widths on different operating systems. The target system can ignore any line separators and break paragraphs only at the paragraph separators.
+Votre application peut insérer un séparateur de paragraphes entre les paragraphes du texte. L’utilisation de ce séparateur vous permet de créer des fichiers de texte brut qui peuvent être mis en forme avec des largeurs de ligne distinctes sur différents systèmes d’exploitation. Le système cible peut ignorer les séparateurs de lignes et interrompre les paragraphes uniquement au niveau des séparateurs de paragraphes.
 
-## Guidelines for spell checking
+## Recommandations en matière de vérification orthographique
 
-**Applies to:** TextBox, RichEditBox
+**S’applique aux contrôles:** TextBox, RichEditBox
 
-During text entry and editing, spell checking informs the user that a word is misspelled by highlighting it with a red squiggle and provides a way for the user to correct the misspelling.
+Lors de la saisie et de la modification de texte, le vérificateur orthographique vous informe si un mot a été mal orthographié en le surlignant d’une ligne ondulée rouge et permet de corriger l’erreur.
 
-Here's an example of the built-in spell checker:
+Voici un exemple de vérificateur d’orthographe intégré:
 
-![the built-in spell checker](images/spellchecking.png)
+![Vérificateur d’orthographe intégré](images/spellchecking.png)
 
-Use spell checking with text input controls for these two purposes:
+Le vérificateur d’orthographe peut être utilisé avec des contrôles de saisie de texte dans deux objectifs:
 
--   **To auto-correct misspellings**
+-   **La correction automatique des fautes**
 
-    The spell checking engine automatically corrects misspelled words when it's confident about the correction. For example, the engine automatically changes "teh" to "the."
+    Le vérificateur d’orthographe corrige automatiquement les mots mal orthographiés, lorsqu’il est certain de la correction. Par exemple, il remplace automatiquement « puor » par « pour ».
 
--   **To show alternate spellings**
+-   **L’affichage d’autres graphies**
 
-    When the spell checking engine is not confident about the corrections, it adds a red line under the misspelled word and displays the alternates in a context menu when you tap or right-click the word.
+    Lorsque le vérificateur d’orthographe n’est pas sûr des corrections, il souligne le mot mal orthographié en rouge et affiche des suggestions dans un menu contextuel lorsque vous appuyez ou faites un clic droit sur le mot.
 
--   Use spell checking to help users as they enter words or sentences into text input controls. Spell checking works with touch, mouse, and keyboard inputs.
--   Don't use spell checking when a word is not likely to be in the dictionary or if users wouldn't value spell checking. For example, don't turn it on if the text box is intended to capture a telephone number or name.
--   Don't disable spell checking just because the current spell checking engine doesn't support your app language. When the spell checker doesn't support a language, it doesn't do anything, so there's no harm in leaving the option on. Also, some users might use an Input Method Editor (IME) to enter another language into your app, and that language might be supported. For example, when building a Japanese language app, even though the spell checking engine might not currently recognize that language, don't turn spell checking off. The user may switch to an English IME and type English into the app; if spell checking is enabled, the English will get spell checked.
+-   Utilisez la vérification orthographique pour aider l’utilisateur lors de la saisie de mots ou de phrases dans les contrôles de saisie de texte. La vérification orthographique fonctionne avec le pavé tactile et l’entrée à l’aide de la souris et du clavier.
+-   N’utilisez pas la vérification orthographique pour les mots peu susceptibles de figurer dans le dictionnaire ou quand cela n’apporte rien à l’utilisateur. Par exemple, ne l’activez pas si la zone de texte est conçue pour accueillir un nom ou un numéro de téléphone.
+-   Ne désactivez pas la vérification orthographique au seul motif que le vérificateur d’orthographe actuel ne prend pas en charge la langue de votre application. Si le vérificateur d’orthographe ne prend pas en charge une langue, rien ne se produit, il n’y a donc aucun risque à laisser l’option activée. En outre, certains utilisateurs peuvent utiliser un éditeur de méthode d’entrée (IME) pour saisir dans votre application une autre langue qui elle peut être prise en charge. Par exemple, lorsque vous créez une application en japonais, même si le vérificateur d’orthographe ne reconnaît pas actuellement cette langue, ne le désactivez pas. L’utilisateur pourrait utiliser un IME pour saisir de l’anglais dans l’application; si la vérification d’orthographe est activée, le texte anglais est vérifié.
 
-For TextBox and RichEditBox controls, spell checking is turned on by default. You can turn it off by setting the **IsSpellCheckEnabled** property to **false**.
+Pour les contrôles TextBox et RichEditBox, la vérification orthographique est activée par défaut. Vous pouvez la désactiver en affectant à la propriété **IsSpellCheckEnabled** la valeur **false**.
 
-## Related articles
+## Articles connexes
 
-**For designers**
-- [**Font guidelines**](fonts.md)
-- [**Segoe MDL2 icon list and guidelines**](segoe-ui-symbol-font.md)
-- [Adding search](https://msdn.microsoft.com/library/windows/apps/hh465231)
+**Pour les concepteurs**
+- [**Recommandations en matière de polices**](fonts.md)
+- [**Recommandations en matière d’icônes Segoe MDL2**](segoe-ui-symbol-font.md)
+- [Ajout de la fonctionnalité de recherche](https://msdn.microsoft.com/library/windows/apps/hh465231)
 
-**For developers (XAML)**
-- [**TextBox class**](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [**Windows.UI.Xaml.Controls PasswordBox class**](https://msdn.microsoft.com/library/windows/apps/br227519)
-- [String.Length property](https://msdn.microsoft.com/library/system.string.length.aspx)
+**Pour les développeurs (XAML)**
+- [**Classe TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683)
+- [**Classe PasswordBox Windows.UI.Xaml.Controls**](https://msdn.microsoft.com/library/windows/apps/br227519)
+- [Propriété String.Length](https://msdn.microsoft.com/library/system.string.length.aspx)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO1-->
 
 

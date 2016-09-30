@@ -1,40 +1,40 @@
 ---
 author: mtoepke
-title: Extend the game sample
-description: Congratulations! At this point, you understand the key components of a basic Universal Windows Platform (UWP) DirectX 3D game.
+title: "Développer l’exemple de jeu"
+description: "Félicitations! À ce stade, vous maîtrisez les principaux composants d’un jeu WUP DirectX3D de base."
 ms.assetid: a1432c45-569e-7ecd-4098-f5ad6da9327e
 keywords:
 - DirectX, XAML
 translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: 17d34f0edcbe6729fe63204123faf4b7393beea7
+ms.openlocfilehash: 02b8681c45c84e1cdd5b97dfc717a68015df1252
 
 ---
 
-# Extend the game sample
+# Développer l’exemple de jeu
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Congratulations! At this point, you understand the key components of a basic Universal Windows Platform (UWP) DirectX 3D game. You can set up the framework for a game, including the view provider and rendering pipeline, and implement a basic game loop. You can also create a basic user interface overlay, and incorporate sounds and controls. You're on your way to creating a game of your own, and here are some resources to further your knowledge of DirectX game development.
+Félicitations! À ce stade, vous maîtrisez les principaux composants d’un jeu WUP DirectX 3D de base. Vous pouvez configurer l’infrastructure d’un jeu, y compris le fournisseur de vues et le pipeline de rendu, et implémenter une boucle de jeu de base. Vous pouvez également créer une superposition de l’interface utilisateur de base, et incorporer des sons et des contrôles. Vous allez créer votre propre jeu, et voici donc quelques ressources pour approfondir vos connaissances en matière de développement de jeux DirectX.
 
--   [DirectX Graphics and Gaming](https://msdn.microsoft.com/library/windows/desktop/ee663274)
--   [Direct3D 11 Overview](https://msdn.microsoft.com/library/windows/desktop/ff476345)
--   [Direct3D 11 Reference](https://msdn.microsoft.com/library/windows/desktop/ff476147)
+-   [Jeux et graphiques DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274)
+-   [Vue d’ensemble de Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476345)
+-   [Référence de Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476147)
 
-## Extending the game sample: using XAML for the overlay
+## Extension de l’exemple de jeu : avec XAML pour la superposition
 
 
-One alternative that we didn't discuss in depth is the use of XAML instead of Direct2D for the overlay. XAML has many benefits over Direct2D for drawing user interface elements, and the most important one is that it makes incorporating the Windows 10 look and feel into your DirectX game more convenient. Many of the common elements, styles, and behaviors that define a UWP app are tightly integrated into the XAML model, making it far less work for a game developer to implement. If your own game design has a complicated user interface, consider using XAML instead of Direct2D.
+Une autre possibilité que nous n’avons pas détaillée est l’utilisation de XAML pour la superposition à la place de Direct2D. XAML présente de nombreux avantages par rapport à Direct2D pour le dessin des éléments de l’interface utilisateur, parmi lesquels le plus important est qu’il facilite l’incorporation de l’apparence Windows 10 dans votre jeu DirectX. Un grand nombre des éléments, styles et comportements communs qui définissent une application du Windows Store sont étroitement intégrés au modèle XAML, ce qui réduit les tâches d’implémentation d’un développeur de jeux. Si la conception de votre propre jeu a une interface utilisateur complexe, envisagez d’utiliser XAML à la place de Direct2D.
 
-So, what is the difference between the implementation of a user interface with Direct2D, and implementing that same interface with XAML?
+Quelle est donc la différence entre l’implémentation d’une interface utilisateur avec Direct2D et avec XAML?
 
--   You define the overlay in a XAML file, \*.xaml, rather than as a collection of Direct2D primitives and DirectWrite strings manually placed and written to a Direct2D target buffer. If you understand XAML, you'll find it much easier to create and configure more complicated overlays, especially if you use Visual Studio's XAML editing tools.
--   The user interface elements come from standardized elements that are part of the Windows Runtime XAML APIs, including [**Windows::UI::Xaml**](https://msdn.microsoft.com/library/windows/apps/br209045) and [**Windows::UI::Xaml::Controls**](https://msdn.microsoft.com/library/windows/apps/br227716). The code that handles the behavior of the XAML user interface elements is defined in a codebehind file, Main.xaml.cpp.
--   XAML, as a tightly integrated Windows Runtime component, naturally handles resize and view state change events, transforming the overlay accordingly, so you don't have to manually specify how to redraw the overlay's components.
--   The swap chain is not directly attached to a [**Windows::UI::Core::CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) object, or at least you don't have to do this. Instead, a DirectX app that incorporates XAML associates a swap chain when a new [**SwapChainBackgroundPanel**](https://msdn.microsoft.com/library/windows/apps/hh702626) object is constructed. The **SwapChainBackgroundPanel** object is set as the [**Content**](https://msdn.microsoft.com/library/windows/apps/br209051) property of the current window object created at launch by the app singleton, and the window is passed to **Simple3DGame::Initialize** as a **CoreWindow** object.
+-   Vous définissez la superposition dans un fichier XAML, \*.xaml, plutôt que sous la forme d’une collection de primitives Direct2D et de chaînes DirectWrite écrites et placées manuellement dans un tampon cible Direct2D. Si vous comprenez XAML, vous allez constater qu’il est beaucoup plus simple de créer et de configurer des superpositions plus complexes, en particulier si vous utilisez les outils d’édition XAML de VisualStudio.
+-   Les éléments de l’interface utilisateur proviennent d’éléments standardisés qui font partie des API XAML Windows Runtime, notamment [**Windows::UI::Xaml**](https://msdn.microsoft.com/library/windows/apps/br209045) et [**Windows::UI::Xaml::Controls**](https://msdn.microsoft.com/library/windows/apps/br227716). Le code qui gère le comportement des éléments de l’interface utilisateur XAML est défini dans un fichier code-behind, Main.xaml.cpp.
+-   XAML, en tant que composant Windows Store étroitement intégré, gère naturellement les événements de redimensionnement et de modification de l’état d’affichage, en transformant la superposition en conséquence, et vous n’avez donc pas à spécifier manuellement comment redessiner les composants de la superposition.
+-   La chaîne d’échange n’est pas directement attachée à un objet [**Windows::UI::Core::CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) ou, du moins, vous n’avez pas à le faire. Au lieu de cela, une application DirectX qui incorpore XAML associe une chaîne d’échange lors de la construction d’un objet [**SwapChainBackgroundPanel**](https://msdn.microsoft.com/library/windows/apps/hh702626). L’objet **SwapChainBackgroundPanel** est défini en tant que propriété [**Content**](https://msdn.microsoft.com/library/windows/apps/br209051) de l’objet fenêtre actuel créé lors du lancement par le singleton de l’application, et la fenêtre est transmise à **Simple3DGame::Initialize** en tant qu’objet **CoreWindow**.
 
-You declare the XAML for the **SwapChainBackgroundPanel** like this in **Main.app.xaml** file:
+Vous déclarez le code XAML pour **SwapChainBackgroundPanel** comme suit dans le fichier **Main.app.xaml**:
 
 ```xml
 <Page
@@ -145,7 +145,7 @@ void App::OnLaunched(LaunchActivatedEventArgs^ /* args */)
 }
 ```
 
-To attach the configured swap chain to the [**SwapChainBackgroundPanel**](https://msdn.microsoft.com/library/windows/apps/hh702626) panel instance defined by your XAML, you must obtain a pointer to the underlying native [**ISwapChainBackgroundPanel**](https://msdn.microsoft.com/library/windows/desktop/hh848326) interface implementation and call [**SetSwapChain**](https://msdn.microsoft.com/library/windows/desktop/hh848327) on it, passing it your configured swap chain. From a method derived from **DirectXBase::CreateWindowSizeDependentResources** specifically for DirectX/XAML interop:
+Pour attacher la chaîne d’échange configurée à l’instance du panneau [**SwapChainBackgroundPanel**](https://msdn.microsoft.com/library/windows/apps/hh702626) définie par votre code XAML, vous devez obtenir un pointeur vers l’implémentation de l’interface [**ISwapChainBackgroundPanel**](https://msdn.microsoft.com/library/windows/desktop/hh848326) native sous-jacente et appeler [**SetSwapChain**](https://msdn.microsoft.com/library/windows/desktop/hh848327) dessus, en lui transmettant votre chaîne d’échange configurée. À partir d’une méthode dérivée de **DirectXBase::CreateWindowSizeDependentResources** spécifiquement pour l’interopérabilité DirectX/XAML:
 
 ```cpp
         ComPtr<IDXGIDevice1> dxgiDevice;
@@ -189,14 +189,14 @@ To attach the configured swap chain to the [**SwapChainBackgroundPanel**](https:
             );
 ```
 
-For more info about this process, see [DirectX and XAML interop](https://msdn.microsoft.com/library/windows/apps/hh825871).
+Pour plus d’informations sur ce processus, voir [Technologie interop DirectX et XAML](https://msdn.microsoft.com/library/windows/apps/hh825871).
 
-## Complete code for the XAML game sample XAML codebehinds
+## Code complet pour les fichiers code-behind XAML de l’exemple de jeu XAML
 
 
-Here's the complete code for the codebehinds found in the XAML version of the Direct3D 11.1 shooting game sample.
+Voici le code complet pour les fichiers code-behind de la version XAML de l’exemple de jeu de tir Direct3D11.1.
 
-(Unlike the version of the game sample discussed in the rest of these topics, the XAML version defines its framework in the **App.xaml.cpp** and **MainPage.xaml.cpp** files, instead of **DirectXApp.cpp** and **GameInfoOverlay.cpp**, respectively.)
+(À la différence de la version de l’exemple de jeu abordée dans le reste de ces rubriques, la version XAML définit son infrastructure dans les fichiers **App.xaml.cpp** et **MainPage.xaml.cpp**, au lieu de **DirectXApp.cpp** et **GameInfoOverlay.cpp**, respectivement.)
 
 App.xaml.h
 
@@ -1279,7 +1279,7 @@ namespace Simple3DGameXaml
 }
 ```
 
-Main.xaml.cpp codebehind
+Fichier code-behind Main.xaml.cpp
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -1509,7 +1509,7 @@ void MainPage::OnResetButtonClicked(Object^ sender, RoutedEventArgs^ args)
 //----------------------------------------------------------------------
 ```
 
-To download a version of the sample game that uses XAML for the overlay, go to the [Direct3D shooting game sample (XAML)](http://go.microsoft.com/fwlink/p/?linkid=241418).
+Pour télécharger une version de l’exemple de jeu qui utilise XAML pour la superposition, accédez à l’[exemple de jeu de tir Direct3D (XAML)](http://go.microsoft.com/fwlink/p/?linkid=241418).
 
  
 
@@ -1521,6 +1521,6 @@ To download a version of the sample game that uses XAML for the overlay, go to t
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,32 +1,31 @@
 ---
 author: mcleanbyron
 ms.assetid: 527660fb-8e32-41b4-89cb-d422ed48c69b
-description: Use the walkthroughs in this section to learn how to add banner ads and video interstitial ads to apps by using the Microsoft advertising libraries.
-title: Developer walkthroughs for the Microsoft advertising libraries
+description: "Utilisez les procédures pas à pas de cette section pour découvrir comment ajouter des bannières et des spots publicitaires aux applications à l’aide des bibliothèques de publicités Microsoft."
+title: "Procédures pas à pas de développement pour les bibliothèques de publicités Microsoft"
 translationtype: Human Translation
-ms.sourcegitcommit: 20baef9a06b6cdb4ca4f48f71a8e9e2a34192b0f
-ms.openlocfilehash: 40759b1ca7c9e62c985e1ae5844bc3032a2940a2
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: b36b5d5ba747fbb71c988033ddd0cdb4cee0ed8b
 
 ---
 
-# Developer walkthroughs for the Microsoft advertising libraries
+# Procédures pas à pas de développement pour les bibliothèques de publicités Microsoft
 
 
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
+Les procédures pas à pas de cette section vous montrent comment ajouter des bannières et des spots publicitaires aux applications à l’aide des bibliothèques de publicités Microsoft.
 
-The walkthroughs in this section show you how to add banner ads and video interstitial ads to apps by using the Microsoft advertising libraries.
+Pour obtenir des exemples complets de projet qui montrent comment ajouter des bannières et des spots vidéo publicitaires à des applications HTML/JavaScript et XAML en C# et C++, voir [Exemples de publicité sur GitHub](http://aka.ms/githubads).
 
-For complete sample projects that demonstrate how to add banner and video interstitial ads to JavaScript/HTML apps and XAML apps using C# and C++, see the [advertising samples on GitHub](http://aka.ms/githubads).
+## Dans cette section
 
-## In this section
-
-|  Topic    | Description |               
+|  Rubrique    | Description |               
 |----------|-------|
-| [Interstitial Ads](interstitial-ads.md)    | Show a video interstitial ads in your app.        |
-| [AdControl in XAML and .NET](adcontrol-in-xaml-and--net.md)     | Add a banner ad in your XAML/.NET app.        |
-| [AdControl in HTML 5 and Javascript](adcontrol-in-html-5-and-javascript.md)     | Add a banner ad in your HTML5/JavaScript app.        |
-| [AdControl in Windows Phone Silverlight](adcontrol-in-windows-phone-silverlight.md)       | Add a banner ad in your Windows Phone 8.x Silverlight app. |
-| [Add advertisements to video content in HTML 5 and JavaScript](add-advertisements-to-video-content.md)     |  Add advertisements to video content in a Universal Windows Platform (UWP) app that was written using JavaScript with HTML. |
+| [Spots publicitaires](interstitial-ads.md)    | Présentez des spots vidéo publicitaires dans votre application.        |
+| [AdControl en XAML et .NET](adcontrol-in-xaml-and--net.md)     | Ajoutez une bannière publicitaire dans votre application XAML/.NET.        |
+| [AdControl en HTML5 et JavaScript](adcontrol-in-html-5-and-javascript.md)     | Ajoutez une bannière publicitaire dans votre application HTML5/JavaScript.        |
+| [AdControl dans Silverlight Windows Phone](adcontrol-in-windows-phone-silverlight.md)       | Ajoutez une bannière publicitaire dans votre application Silverlight Windows Phone8.x. |
 
 
 
@@ -36,6 +35,6 @@ For complete sample projects that demonstrate how to add banner and video inters
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,73 +1,73 @@
 ---
 author: DBirtolo
 ms.assetid: F8A741B4-7A6A-4160-8C5D-6B92E267E6EA
-title: Pair devices
-description: Some devices need to be paired before they can be used. The Windows.Devices.Enumeration namespace supports three different ways to pair devices.
+title: Jumeler des appareils
+description: "Pour pouvoir être utilisés, certains appareils doivent être jumelés. L’espace de noms Windows.Devices.Enumeration prend en charge troisméthodes différentes de jumelage des appareils."
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 502a1a650d327e914ffef049278581851ad4ec3b
+ms.openlocfilehash: e719e0ff5f97822f3d0dc937182131bf7f4224eb
 
 ---
-# Pair devices
+# Jumeler des appareils
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-** Important APIs **
+** API importantes **
 
 -   [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459)
 
-Some devices need to be paired before they can be used. The [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) namespace supports three different ways to pair devices.
+Pour pouvoir être utilisés, certains appareils doivent être jumelés. L’espace de noms [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) prend en charge troisméthodes différentes de jumelage des appareils.
 
--   Automatic pairing
--   Basic pairing
--   Custom pairing
+-   Jumelage automatique
+-   Jumelage de base
+-   Jumelage personnalisé
 
-**Tip**  Some devices do not need to be paired in order to be used. This is covered under the section on automatic pairing.
-
- 
-
-## Automatic pairing
-
-
-Sometimes you want to use a device in your application, but do not care whether or not the device is paired. You simply want to be able to use the functionality associated with a device. For example, if your app wants to simply capture an image from a webcam, you are not necessarily interested in the device itself, just the image capture. If there are device APIs available for the device you are interested in, this scenario would fall under automatic pairing.
-
-In this case, you simply use the APIs associated with the device, making the calls as necessary and trusting the system to handle any pairing that might be necessary. Some devices do not need to be paired in order for you to use their functionality. If the device does need to be paired, then the device APIs will handle the pairing action behind the scenes so you do not need to integrate that functionality into your app. Your app will have no knowledge about whether or not a given device is paired or needs to be, but you will still be able to access the device and use its functionality.
-
-## Basic pairing
-
-
-Basic pairing is when your application uses the [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) APIs in order to attempt to pair the device. In this scenario, you are letting Windows attempt the pairing process and handle it. If any user interaction is necessary, it will be handled by Windows. You would use basic pairing if you need to pair with a device and there is not a relevant device API that will attempt automatic pairing. You just want to be able to use the device and need to pair with it first.
-
-In order to attempt basic pairing, you first need to obtain the [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) object for the device you are interested in. Once you receive that object, you will interact with the [**DeviceInformation.Pairing**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx) property, which is a [**DeviceInformationPairing**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx) object. To attempt to pair, simply call [**DeviceInformationPairing.PairAsync**](https://msdn.microsoft.com/library/windows/apps/mt608800). You will need to **await** the result in order to give your app time to attempt to complete the pairing action. The result of the pairing action will be returned, and as long as no errors are returned, the device will be paired.
-
-If you are using basic pairing, you also have access to additional information about the pairing status of the device. For example you know the pairing status ([**IsPaired**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx_ispaired)) and whether the device can pair ([**CanPair**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx_canpair)). Both of these are properties of the [**DeviceInformationPairing**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx) object. If you are using automatic pairing, you might not have access to this information unless you obtain the relevant [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) objects.
-
-## Custom pairing
-
-
-Custom pairing enables your app to participate in the pairing process. This allows your app to specify the [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808) that are supported for the pairing process. You will also be responsible for creating your own user interface to interact with the user as needed. Use custom pairing when you want your app to have a little more influence over how the pairing process proceeds or to display your own pairing user interface.
-
-In order to implement custom pairing, you will need to obtain the [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) object for the device you are interested in, just like with basic pairing. However, the specific property your are interested in is [**DeviceInformation.Pairing.Custom**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationpairing.custom.aspx). This will give you a [**DeviceInformationCustomPairing**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationcustompairing.aspx) object. All of the [**DeviceInformationCustomPairing.PairAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationcustompairing.pairasync.aspx) methods require you to include a [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808) parameter. This indicates the actions that the user will need to take in order to attempt to pair the device. See the **DevicePairingKinds** reference page for more information about the different kinds and what actions the user will need to take. Just like with basic pairing, you will need to **await** the result in order to give your app time to attempt to complete the pairing action. The result of the pairing action will be returned, and as long as no errors are returned, the device will be paired.
-
-To support custom pairing, you will need to create a handler for the [**PairingRequested**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationcustompairing.pairingrequested.aspx) event. This handler needs to make sure to account for all the different [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808) that might be used in a custom pairing scenario. The appropriate action to take will depend on the **DevicePairingKinds** provided as part of the event arguments.
-
-It is important to be aware that custom pairing is always a system-level operation. Because of this, when you are operating on Desktop or Windows Phone, a system dialog will always be shown to the user when pairing is going to happen. This is because both of those platforms posses a user experience that requires user consent. Since that dialog is automatically generated, you will not need to create your own dialog when you are opting for a [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808) of **ConfirmOnly** when operating on these platforms. For the other **DevicePairingKinds**, you will need to perform some special handling depending on the specific **DevicePairingKinds** value. See the sample for examples of how to handle custom pairing for different **DevicePairingKinds** values.
-
-## Unpairing
-
-
-Unpairing a device is only relevant in the basic or custom pairing scenarios described above. If you are using automatic pairing, your app remains oblivious to the pairing status of the device and there is no need to unpair it. If you do choose to unpair a device, the process is identical whether you implement basic or custom pairing. This is because there is no need to provide additional information or interact in the unpairing process.
-
-The first step to unpairing a device is obtaining the [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) object for the device that you want to unpair. Then you need to retrieve the [**DeviceInformation.Pairing**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx) property and call [**DeviceInformationPairing.UnpairAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationpairing.unpairasync). Just like with pairing, you will want to **await** the result. The result of the unpairing action will be returned, and as long as no errors are returned, the device will be unpaired.
-
-## Sample
-
-
-To download a sample showing how to use the [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) APIs, click [here](http://go.microsoft.com/fwlink/?LinkID=620536).
+**Conseil** D’autres appareils, au contraire, n’ont pas besoin d’être jumelés pour être utilisés. Ce sujet est abordé dans la section sur le jumelage automatique.
 
  
 
+## Jumelage automatique
+
+
+Parfois, vous souhaitez utiliser un appareil dans votre application, sans pour autant chercher à le jumeler. Vous souhaitez simplement être en mesure d’utiliser la fonctionnalité associée à l’appareil. Par exemple, si votre application est dédiée à la capture d’images d’une webcam, ce n’est pas nécessairement l’appareil qui vous intéresse, mais plutôt la capture d’image. Si des API dédiées à l’appareil qui vous intéresse sont disponibles, vous êtes soumis au jumelage automatique.
+
+Le cas échéant, il vous suffit d’utiliser les API associées à l’appareil afin de transmettre les appels nécessaires, et de vous appuyer sur le système pour l’exécution des jumelages nécessaires. Pour utiliser la fonctionnalité de certains appareils, il n’est pas forcément nécessaire de procéder un jumelage. Si aucun jumelage n’est nécessaire, les API d’appareil exécutent en arrière-plan l’action de jumelage. Ainsi, vous n’êtes pas tenu d’intégrer cette fonctionnalité dans votre application. Votre application ne recevra aucune information relative au jumelage des appareils, ce qui ne vous empêchera pas d’accéder à ces derniers et d’utiliser leur fonctionnalité.
+
+## Jumelage de base
+
+
+Lors d’un jumelage de base, votre application utilise les API [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) pour tenter de jumeler l’appareil. Dans ce scénario, vous laissez Windows exécuter et gérer le processus de jumelage. Si une interaction utilisateur est nécessaire, elle est gérée par Windows. Vous devez utiliser le jumelage de base si vous devez effectuer un jumelage avec un appareil, et qu’il n’existe pas d’API d’appareil dédiée aux tentatives de jumelage automatique. Vous souhaitez seulement utiliser l’appareil et devez d’abord effectuer un jumelage avec ce dernier.
+
+Pour tenter de procéder à un jumelage de base, vous devez d’abord obtenir l’objet [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) associé à l’appareil qui vous intéresse. Une fois que vous recevez cet objet, vous interagissez avec la propriété [**DeviceInformation.Pairing**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx), qui est un objet [**DeviceInformationPairing**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx). Pour procéder à un jumelage, il vous suffit d’appeler [**DeviceInformationPairing.PairAsync**](https://msdn.microsoft.com/library/windows/apps/mt608800). Il vous faudra **await** le résultat, ceci pour octroyer à votre application le temps nécessaire à la tentative de jumelage. Le résultat de l’action de jumelage est alors renvoyé. Si aucune erreur n’est identifiée, l’appareil est jumelé.
+
+Si vous avez recours au jumelage de base, vous disposez également d’un accès à des informations supplémentaires sur l’état de l’appareil. Par exemple, vous connaissez l’état de jumelage ([**IsPaired**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx_ispaired)) et savez si l’appareil peut être jumelé ([**CanPair**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx_canpair)). Ces deux données sont des propriétés de l’objet [**DeviceInformationPairing**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx). Si vous utilisez le jumelage automatique, vous n’aurez pas forcément accès à ces informations, sauf si vous obtenez les objets [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) appropriés.
+
+## Jumelage personnalisé
+
+
+Grâce au jumelage personnalisé, votre application peut prendre part au processus de jumelage. Dès lors, votre application peut spécifier les éléments [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808) qui sont pris en charge pour le processus de jumelage. Vous êtes également chargé de créer votre propre interface utilisateur pour interagir avec l’utilisateur au besoin. Utilisez le jumelage personnalisé lorsque vous souhaitez que votre application possède un peu plus d’influence sur l’exécution du processus de jumelage ou pour afficher votre propre interface utilisateur de jumelage.
+
+Pour implémenter le jumelage personnalisé, vous devez obtenir l’objet [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) associé à l’appareil qui vous intéresse, tout comme avec le jumelage de base. Toutefois, la propriété spécifique qui vous intéresse est [**DeviceInformation.Pairing.Custom**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationpairing.custom.aspx). Cela vous octroie un objet [**DeviceInformationCustomPairing**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationcustompairing.aspx). L’ensemble des méthodes [**DeviceInformationCustomPairing.PairAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationcustompairing.pairasync.aspx) vous demandent d’inclure un paramètre [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808). Il indique les actions que l’utilisateur devra effectuer pour tenter de jumeler l’appareil. Consultez la page de référence **DevicePairingKinds** pour en savoir plus sur les différents types d’action que l’utilisateur devra effectuer. Tout comme avec le jumelage de base, il vous faudra **await** le résultat afin d’octroyer à votre application le temps nécessaire à la procédure de jumelage. Le résultat de l’action de jumelage est alors renvoyé. Si aucune erreur n’est identifiée, l’appareil est jumelé.
+
+Pour prendre en charge le jumelage personnalisé, il vous faudra créer un gestionnaire pour l’événement [**PairingRequested**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationcustompairing.pairingrequested.aspx). Ce gestionnaire doit vérifier qu’il prend en compte l’ensemble des éléments [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808) pouvant être utilisés dans un scénario de jumelage personnalisé. L’action appropriée à entreprendre dépend de l’élément **DevicePairingKinds** fourni avec les arguments de l’événement.
+
+Il est important de garder à l’esprit que le jumelage personnalisé est toujours une opération de niveau système. Pour cette raison, lorsque vous utilisez un ordinateur de bureau ou un appareil Windows Phone, une boîte de dialogue système apparaît juste avant l’opération de jumelage. En effet, ces deux plateformes valorisent une expérience utilisateur qui nécessite le consentement de l’utilisateur. Dans la mesure où cette boîte de dialogue est automatiquement générée, vous n’aurez pas besoin de créer votre propre boîte de dialogue lorsque vous sélectionnez un élément [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808) de **ConfirmOnly** avec ces plateformes. Pour les autres **DevicePairingKinds**, vous devrez exécuter certaines opérations spécifiques de gestion, en fonction de la valeur **DevicePairingKinds** spécifique. Pour savoir comment gérer le jumelage personnalisé associé à différentes valeurs **DevicePairingKinds**, voir les exemples.
+
+## Annulation du jumelage
+
+
+L’opération d’annulation s’applique uniquement aux scénarios de jumelage de base ou personnalisé décrits plus haut. Si vous utilisez le jumelage automatique, les informations d’état de jumelage de l’appareil ne sont pas transmises à l’application ; aucune annulation de jumelage n’est nécessaire. Les processus d’annulation des jumelages de base et personnalisé sont identiques. Pour quelle raison ? Il n’est pas nécessaire de fournir d’informations supplémentaires ou d’interagir dans le processus d’annulation de jumelage.
+
+Si vous souhaitez annuler le jumelage d’un appareil, vous devez commencer par obtenir l’objet [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) qui lui est associé. Vous devez ensuite récupérer la propriété [**DeviceInformation.Pairing**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx) et appeler [**DeviceInformationPairing.UnpairAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationpairing.unpairasync). Comme c’était le cas avec le jumelage, il vous faudra **await** le résultat. Le résultat de l’action d’annulation de jumelage est renvoyé. Si aucune erreur n’est identifiée, le jumelage de l’appareil est annulé.
+
+## Exemple
+
+
+Pour télécharger un exemple illustrant comment utiliser les API [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459), cliquez [ici](http://go.microsoft.com/fwlink/?LinkID=620536).
+
+ 
+
  
 
 
@@ -76,6 +76,6 @@ To download a sample showing how to use the [**Windows.Devices.Enumeration**](ht
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO2-->
 
 

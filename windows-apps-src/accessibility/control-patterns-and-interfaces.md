@@ -1,75 +1,75 @@
 ---
 author: Xansky
-Description: Lists the Microsoft UI Automation control patterns, the classes that clients use to access them, and the interfaces providers use to implement them.
+Description: "Répertorie les modèles de contrôle Microsoft UI Automation, les classes que les clients utilisent pour y accéder, ainsi que les interfaces que les fournisseurs utilisent pour les implémenter."
 ms.assetid: 2091883C-5D0C-44ED-936A-709022926A42
-title: Control patterns and interfaces
+title: "Modèles de contrôle et interfaces"
 label: Control patterns and interfaces
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 74e5af4c3eb5a2e17c95afce156474b613e966c5
-ms.openlocfilehash: d2ae98f95538c014ef256f5d4a400aabb36c3118
+ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
+ms.openlocfilehash: 9f38c3bd26ef7b409d4c743abf25a5b0a6455f20
 
 ---
 
-# Control patterns and interfaces  
+# Modèles de contrôle et interfaces  
 
 
 
-Lists the Microsoft UI Automation control patterns, the classes that clients use to access them, and the interfaces providers use to implement them.
+Répertorie les modèles de contrôle Microsoft UI Automation, les classes que les clients utilisent pour y accéder, ainsi que les interfaces que les fournisseurs utilisent pour les implémenter.
 
-The table in this topic describes the Microsoft UI Automation control patterns. The table also lists the classes used by UI Automation clients to access the control patterns and the interfaces used by UI Automation providers to implement them. The **Control pattern** column shows the pattern name from the UI Automation client perspective, as a constant value listed in [**Control Pattern Availability Property Identifiers**](https://msdn.microsoft.com/library/windows/desktop/Ee671199). From the UI Automation provider perspective, each of these patterns is a [**PatternInterface**](https://msdn.microsoft.com/library/windows/apps/BR242496) constant name. The **Class provider interface** column shows the name of the interface that providers implement to provide this pattern for a custom XAML control.
+Le tableau présenté dans cette rubrique décrit les modèles de contrôle Microsoft UI Automation. Par ailleurs, ce tableau recense les classes utilisées par les clients UI Automation pour accéder aux modèles de contrôle et aux interfaces utilisées par les fournisseurs UI Automation pour les implémenter. La colonne **Control pattern** indique le nom du modèle du point de vue du client UI Automation, sous la forme d’une valeur de constante répertoriée dans [**Control Pattern Availability Property Identifiers**](https://msdn.microsoft.com/library/windows/desktop/Ee671199). Du point de vue du fournisseur UI Automation, chacun de ces modèles est un nom de constante [**PatternInterface**](https://msdn.microsoft.com/library/windows/apps/BR242496). La colonne **Class provider interface** indique le nom de l’interface que les fournisseurs implémentent pour proposer ce modèle pour un contrôle XAML personnalisé.
 
-For more info about how to implement custom automation peers that expose control patterns and implement the interfaces, see [Custom automation peers](custom-automation-peers.md).
+Pour plus d’informations sur l’implémentation d’homologues d’automatisation personnalisés qui exposent des modèles de contrôle et implémentent les interfaces, voir [Homologues d’automatisation personnalisés](custom-automation-peers.md).
 
-When you implement a control pattern, you should also consult the UI Automation provider documentation that explains some of the expectations that clients will have of a control pattern regardless of which UI framework is used to implement it. Some of the info listed in the general UI Automation provider documentation will influence how you implement your peers and correctly support that pattern. See [Implementing UI Automation Control Patterns](https://msdn.microsoft.com/library/windows/desktop/Ee671292), and view the page that documents the pattern you intend to implement.
+Quand vous implémentez un modèle de contrôle, vous devez aussi consulter la documentation sur le fournisseur UI Automation qui décrit certaines des attentes qu’auront les clients concernant un modèle de contrôle, indépendamment de l’infrastructure de l’interface utilisateur utilisée pour l’implémenter. Certaines des informations répertoriées dans la documentation générale du fournisseur UI Automation influenceront votre implémentation de vos homologues et la prise en charge correcte de ce modèle. Reportez-vous à la rubrique [Implémentation de modèles de contrôle UI Automation](https://msdn.microsoft.com/library/windows/desktop/Ee671292), et consultez la page qui documente le modèle que vous envisagez d’implémenter.
 
-| Control pattern | Class provider interface | Description |
+| Classe du modèle | Interface du fournisseur de classes | Description |
 |-----------------|--------------------------|-------------|
-| **Annotation** | [**IAnnotationProvider**](https://msdn.microsoft.com/library/windows/apps/Hh738493) | Used to expose the properties of an annotation in a document. |
-| **Dock** | [**IDockProvider**](https://msdn.microsoft.com/library/windows/apps/BR242565) | Used for controls that can be docked in a docking container. For example, toolbars or tool palettes. |
-| **Drag** | [**IDragProvider**](https://msdn.microsoft.com/library/windows/apps/Hh750322) | Used to support draggable controls, or controls with draggable items. |
-| **DropTarget** | [**IDropTargetProvider**](https://msdn.microsoft.com/library/windows/apps/Hh750327) | Used to support controls that can be the target of a drag-and-drop operation. |
-| **ExpandCollapse** | [**IExpandCollapseProvider**](https://msdn.microsoft.com/library/windows/apps/BR242568) | Used to support controls that visually expand to display more content and collapse to hide content. |
-| **Grid** | [**IGridProvider**](https://msdn.microsoft.com/library/windows/apps/BR242578) | Used for controls that support grid functionality such as sizing and moving to a specified cell. Note that Grid itself does not implement this pattern because it provides layout but is not a control. |
-| **GridItem** | [**IGridItemProvider**](https://msdn.microsoft.com/library/windows/apps/BR242572) | Used for controls that have cells within grids. |
-| **Invoke** | [**IInvokeProvider**](https://msdn.microsoft.com/library/windows/apps/BR242582) | Used for controls that can be invoked, such as a  [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265). |
-| **ItemContainer** | [**IItemContainerProvider**](https://msdn.microsoft.com/library/windows/apps/BR242583) | Enables applications to find an element in a container, such as a virtualized list. |
-| **MultipleView** | [**IMultipleViewProvider**](https://msdn.microsoft.com/library/windows/apps/BR242585) | Used for controls that can switch between multiple representations of the same set of information, data, or children. |
-| **ObjectModel** | [**IObjectModelProvider**](https://msdn.microsoft.com/library/windows/apps/Dn251815) | Used to expose a pointer to the underlying object model of a document. |
-| **RangeValue** | [**IRangeValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242590) | Used for controls that have a range of values that can be applied to the control. For example, a spinner control containing years might have a range of 1900 to the current year, while another spinner control presenting months would have a range of 1 to 12. |
-| **Scroll** | [**IScrollProvider**](https://msdn.microsoft.com/library/windows/apps/BR242601) | Used for controls that can scroll. For example, a control that has scroll bars that are active when there is more information than can be displayed in the viewable area of the control. |
-| **ScrollItem** | [**IScrollItemProvider**](https://msdn.microsoft.com/library/windows/apps/BR242599) | Used for controls that have individual items in a list that scrolls. For example, a list control that has individual items in the scroll list, such as a combo box control. |
-| **Selection** | [**ISelectionProvider**](https://msdn.microsoft.com/library/windows/apps/BR242616) | Used for selection container controls. For example, [**ListBox**](https://msdn.microsoft.com/library/windows/apps/BR242868) and [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/BR209348). |
-| **SelectionItem** | [**ISelectionItemProvider**](https://msdn.microsoft.com/library/windows/apps/BR242610) | Used for individual items in selection container controls, such as list boxes and combo boxes. |
-| **Spreadsheet** | [**ISpreadsheetProvider**](https://msdn.microsoft.com/library/windows/apps/Dn251821) | Used to expose the contents of a spreadsheet or other grid-based document. |
-| **SpreadsheetItem** | [**ISpreadsheetItemProvider**](https://msdn.microsoft.com/library/windows/apps/Dn251817) | Used to expose the properties of a cell in a spreadsheet or other grid-based document. |
-| **Styles** | [**IStylesProvider**](https://msdn.microsoft.com/library/windows/apps/Dn251823) | Used to describe a UI element that has a specific style, fill color, fill pattern, or shape. |
-| **SynchronizedInput** | [**ISynchronizedInputProvider**](https://msdn.microsoft.com/library/windows/apps/Dn279198) | Enables UI Automation client apps to direct the mouse or keyboard input to a specific UI element. |
-| **Table** | [**ITableProvider**](https://msdn.microsoft.com/library/windows/apps/BR242623) | Used for controls that have a grid as well as header information. For example, a tabular calendar control. |
-| **TableItem** | [**ITableItemProvider**](https://msdn.microsoft.com/library/windows/apps/BR242620) | Used for items in a table. |
-| **Text** | [**ITextProvider**](https://msdn.microsoft.com/library/windows/apps/BR242627) | Used for edit controls and documents that expose textual information. See also [**ITextRangeProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextrangeprovider) and [**ITextProvider2**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextprovider2). |
-| **TextChild** | [**ITextChildProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextchildprovider) | Used to access an element’s nearest ancestor that supports the **Text** control pattern. |
-| **TextEdit** | No managed class available | Provides access to a control that modifies text, for example a control that performs auto-correction or enables input composition through an Input Method Editor (IME). |
-| **TextRange** | [**ITextRangeProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextrangeprovider) | Provides access to a span of continuous text in a text container that implements [**ITextProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextprovider). See also [**ITextRangeProvider2**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextrangeprovider2). |
-| **Toggle** | [**IToggleProvider**](https://msdn.microsoft.com/library/windows/apps/BR242653) | Used for controls where the state can be toggled. For example, [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/BR209316) and menu items that can be checked. |
-| **Transform** | [**ITransformProvider**](https://msdn.microsoft.com/library/windows/apps/BR242656) | Used for controls that can be resized, moved, and rotated. Typical uses for the Transform control pattern are in designers, forms, graphical editors, and drawing applications. |
-| **Value** | [**IValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242663) | Allows clients to get or set a value on controls that do not support a range of values. |
-| **VirtualizedItem** | [**IVirtualizedItemProvider**](https://msdn.microsoft.com/library/windows/apps/BR242668) | Exposes items inside containers that are virtualized and need to be made fully accessible as UI Automation elements. |
-| **Window** | [**IWindowProvider**](https://msdn.microsoft.com/library/windows/apps/BR242670) | Exposes information specific to windows, a fundamental concept to the Microsoft Windows operating system. Examples of controls that are windows are child windows and dialogs. |
+| **Annotation** | [**IAnnotationProvider**](https://msdn.microsoft.com/library/windows/apps/Hh738493) | Utilisé pour exposer les propriétés d’une annotation dans un document. |
+| **Dock** | [**IDockProvider**](https://msdn.microsoft.com/library/windows/apps/BR242565) | Utilisé pour les contrôles qui peuvent être ancrés dans un conteneur d’ancrage. Par exemple, les barres d’outils ou les palettes d’outils. |
+| **Drag** | [**IDragProvider**](https://msdn.microsoft.com/library/windows/apps/Hh750322) | Utilisé pour prendre en charge les contrôles pouvant être glissés, ou les contrôles qui comportent des éléments pouvant être glissés. |
+| **DropTarget** | [**IDropTargetProvider**](https://msdn.microsoft.com/library/windows/apps/Hh750327) | Utilisé pour prendre en charge les contrôles qui peuvent être la cible d’une opération glisser-déplacer. |
+| **ExpandCollapse** | [**IExpandCollapseProvider**](https://msdn.microsoft.com/library/windows/apps/BR242568) | Utilisé pour prendre en charge les contrôles qui se développent visuellement pour afficher plus de contenu et qui se réduisent pour masquer du contenu. |
+| **Grille** | [**IGridProvider**](https://msdn.microsoft.com/library/windows/apps/BR242578) | Utilisé pour les contrôles qui prennent en charge les fonctionnalités de grille telles que le dimensionnement et le déplacement vers une cellule spécifiée. La grille proprement dite n’implémente pas ce modèle, car bien qu’elle fournisse la disposition, il ne s’agit pas d’un contrôle. |
+| **GridItem** | [**IGridItemProvider**](https://msdn.microsoft.com/library/windows/apps/BR242572) | Utilisé pour les contrôles dont les grilles contiennent des cellules. |
+| **Invoke** | [**IInvokeProvider**](https://msdn.microsoft.com/library/windows/apps/BR242582) | Utilisé pour les contrôles qui peuvent être appelés, tels que [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265). |
+| **ItemContainer** | [**IItemContainerProvider**](https://msdn.microsoft.com/library/windows/apps/BR242583) | Permet aux applications de rechercher un élément dans un conteneur, tel qu’une liste virtualisée. |
+| **MultipleView** | [**IMultipleViewProvider**](https://msdn.microsoft.com/library/windows/apps/BR242585) | Utilisé pour les contrôles qui peuvent basculer entre plusieurs représentations du même jeu d’informations, de données ou d’enfants. |
+| **ObjectModel** | [**IObjectModelProvider**](https://msdn.microsoft.com/library/windows/apps/Dn251815) | Utilisé pour exposer un pointeur à un modèle objet sous-jacent d’un document. |
+| **RangeValue** | [**IRangeValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242590) | Utilisé pour les contrôles disposant d’une plage de valeurs qui peut s’appliquer au contrôle. Par exemple, un contrôle Spinner contenant des années peut avoir une plage s’échelonnant de 1900 à l’année en cours, pendant qu’un autre contrôle Spinner représentant les mois aura une plage allant de 1 à 12. |
+| **Scroll** | [**IScrollProvider**](https://msdn.microsoft.com/library/windows/apps/BR242601) | Utilisé pour les contrôles qui peuvent défiler. Tel est le cas, par exemple, pour un contrôle qui dispose de barres de défilement actives lorsque la quantité d’informations est trop importante pour être affichée dans la zone affichable du contrôle. |
+| **ScrollItem** | [**IScrollItemProvider**](https://msdn.microsoft.com/library/windows/apps/BR242599) | Utilisé pour les contrôles qui disposent d’éléments individuels dans une liste déroulante. Par exemple, un contrôle de liste qui dispose d’éléments individuels dans la liste modifiable, comme un contrôle zone de liste modifiable. |
+| **Selection** | [**ISelectionProvider**](https://msdn.microsoft.com/library/windows/apps/BR242616) | Utilisé pour les contrôles conteneur de sélection. Par exemple, [**ListBox**](https://msdn.microsoft.com/library/windows/apps/BR242868) et [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/BR209348). |
+| **SelectionItem** | [**ISelectionItemProvider**](https://msdn.microsoft.com/library/windows/apps/BR242610) | Utilisé pour les éléments individuels dans les contrôles conteneur de sélection, tels que les zones de liste et zones de liste modifiable. |
+| **Spreadsheet** | [**ISpreadsheetProvider**](https://msdn.microsoft.com/library/windows/apps/Dn251821) | Utilisé pour exposer le contenu d’une feuille de calcul ou d’un autre document de type grille. |
+| **SpreadsheetItem** | [**ISpreadsheetItemProvider**](https://msdn.microsoft.com/library/windows/apps/Dn251817) | Utilisé pour exposer les propriétés d’une cellule se trouvant dans une feuille de calcul ou un autre document de type grille. |
+| **Styles** | [**IStylesProvider**](https://msdn.microsoft.com/library/windows/apps/Dn251823) | Utilisé pour décrire un élément d’interface utilisateur ayant un style, une couleur de remplissage, un motif de remplissage ou une forme spécifiques. |
+| **SynchronizedInput** | [**ISynchronizedInputProvider**](https://msdn.microsoft.com/library/windows/apps/Dn279198) | Permet à des applications clientes UI Automation de diriger l’entrée de souris ou de clavier vers un élément spécifique de l’interface utilisateur. |
+| **Table** | [**ITableProvider**](https://msdn.microsoft.com/library/windows/apps/BR242623) | Utilisé pour les contrôles qui disposent d’une grille et d’informations d’en-tête. Par exemple, un contrôle de calendrier tabulaire. |
+| **TableItem** | [**ITableItemProvider**](https://msdn.microsoft.com/library/windows/apps/BR242620) | Utilisé pour les éléments d’un tableau. |
+| **Text** | [**ITextProvider**](https://msdn.microsoft.com/library/windows/apps/BR242627) | Utilisé pour les contrôles d’édition et les documents qui exposent des informations textuelles. Voir aussi [**ITextRangeProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextrangeprovider) et [**ITextProvider2**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextprovider2). |
+| **TextChild** | [**ITextChildProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextchildprovider) | Utilisé pour accéder à l’ancêtre le plus proche d’un élément qui prend en charge le modèle de contrôle **Text**. |
+| **TextEdit** | Aucune classe managée disponible | Fournit l’accès à un contrôle qui modifie du texte, par exemple un contrôle qui effectue une correction automatique ou permet une composition d’entrée via un éditeur de méthode d’entrée (IME). |
+| **TextRange** | [**ITextRangeProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextrangeprovider) | Fournit l’accès à une étendue de texte continu au sein d’un conteneur de texte qui implémente [**ITextProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextprovider). Voir aussi [**ITextRangeProvider2**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextrangeprovider2). |
+| **Toggle** | [**IToggleProvider**](https://msdn.microsoft.com/library/windows/apps/BR242653) | Utilisé pour les contrôles dans lesquels il est possible de faire basculer l’état. Par exemple, [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/BR209316) et les éléments de menu qui peuvent être activés. |
+| **Transform** | [**ITransformProvider**](https://msdn.microsoft.com/library/windows/apps/BR242656) | Utilisé pour les contrôles qui peuvent être redimensionnés, déplacés et pivotés. Les principales utilisations du modèle de contrôle Transform se font dans les applications de conception et de dessin, les formulaires et les éditeurs graphiques. |
+| **Value** | [**IValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242663) | Permet aux clients d’obtenir ou de définir une valeur sur des contrôles qui ne prennent pas en charge une plage de valeurs. |
+| **VirtualizedItem** | [**IVirtualizedItemProvider**](https://msdn.microsoft.com/library/windows/apps/BR242668) | Expose les éléments figurant à l’intérieur de conteneurs qui sont virtualisés et doivent être entièrement accessibles en tant qu’éléments UI Automation. |
+| **Window** | [**IWindowProvider**](https://msdn.microsoft.com/library/windows/apps/BR242670) | Expose des informations spécifiques aux fenêtres, concept fondamental du système d’exploitation Microsoft Windows. Les fenêtres et les boîtes de dialogue enfants sont des exemples de contrôles correspondant à des fenêtres. |
 
 > [!NOTE]
-> You won't necessarily find implementations of all these patterns in existing XAML controls. Some of the patterns have interfaces solely to support parity with the general UI Automation framework definition of patterns, and to support automation peer scenarios that will require a purely custom implementation to support that pattern.
+> Vous ne trouverez pas nécessairement des implémentations de tous ces modèles dans les contrôles XAML existants. Certains de ces modèles ont des interfaces uniquement pour prendre en charge la parité avec la définition de l’infrastructure UIAutomation générale des modèles, ainsi que pour prendre en charge des scénarios d’homologues d’automation qui nécessiteront une implémentation purement personnalisée pour prendre en charge ce modèle.
 
 > [!NOTE]
-> Windows Phone Store apps do not support all the UI Automation control patterns listed here. **Annotation**, **Dock**, **Drag**, **DropTarget**, **ObjectModel** are some of the unsupported patterns.
+> Les applications du WindowsPhoneStore ne prennent pas en charge tous les modèles de contrôle UIAutomation répertoriés ici. **Annotation**, **Dock**, **Drag**, **DropTarget** et **ObjectModel** font partie des modèles non pris en charge.
 
 <span id="related_topics"/>
-## Related topics  
-* [Custom automation peers](custom-automation-peers.md)
-* [Accessibility](accessibility.md) 
+## Rubriques connexes  
+* [Homologues d’automatisation personnalisés](custom-automation-peers.md)
+* [Accessibilité](accessibility.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

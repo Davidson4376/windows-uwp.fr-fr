@@ -1,35 +1,35 @@
 ---
 author: msatranjr
-title: Overlay tiled images on a map
-description: Overlay third-party or custom tiled images on a map by using tile sources. Use tile sources to overlay specialized information such as weather data, population data, or seismic data; or use tile sources to replace the default map entirely.
+title: Superposer des images sous forme de vignettes sur une carte
+description: "Superposez des images sous forme de vignettes tierces ou personnalisées sur une carte à l’aide de sources de vignettes. Utilisez des sources de vignette pour superposer des informations spécifiques (informations météorologiques, démographiques, sismiques...) ou pour remplacer entièrement la carte par défaut."
 ms.assetid: 066BD6E2-C22B-4F5B-AA94-5D6C86A09BDF
 translationtype: Human Translation
 ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
-ms.openlocfilehash: a00d3d27161310077a0690cef7e4d11a5209bee7
+ms.openlocfilehash: 71d044eb19e71786da39ca71d4f4fbd2d87645be
 
 ---
 
-# Overlay tiled images on a map
+# Superposer des images sous forme de vignettes sur une carte
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-Overlay third-party or custom tiled images on a map by using tile sources. Use tile sources to overlay specialized information such as weather data, population data, or seismic data; or use tile sources to replace the default map entirely.
+Superposez des images sous forme de vignettes tierces ou personnalisées sur une carte à l’aide de sources de vignettes. Utilisez des sources de vignette pour superposer des informations spécifiques (informations météorologiques, démographiques, sismiques...), ou pour remplacer entièrement la carte par défaut.
 
-**Tip** To learn more about using maps in your app, download the following sample from the [Windows-universal-samples repo](http://go.microsoft.com/fwlink/p/?LinkId=619979) on GitHub.
+**Conseil** Pour en savoir plus sur l’utilisation de cartes dans votre application, téléchargez l’exemple suivant à partir du [référentiel Windows-universal-samples](http://go.microsoft.com/fwlink/p/?LinkId=619979) sur GitHub.
 
--   [Universal Windows Platform (UWP) map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [Exemple de carte pour la plateforme Windows universelle (UWP, Universal Windows Platform)](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
-## Tiled image overview
+## Vue d’ensemble des images sous forme de vignettes
 
 
-Map services such as Nokia Maps and Bing Maps cut maps into square tiles for quick retrieval and display. These tiles are 256 pixels by 256 pixels in size, and are pre-rendered at multiple levels of detail. Many third-party services also provide map-based data that's cut into tiles. Use tile sources to retrieve third-party tiles, or to create your own custom tiles, and overlay them on the map displayed in the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
+Les différents services de carte (cartes Nokia et cartes Bing, par exemple) découpent les cartes en vignettes de forme carrée, afin de permettre une récupération et un affichage rapides. Ces vignettes sont au format 256 x 256 pixels et font l’objet d’un rendu préalable, selon différents niveaux de détail. De nombreux services tiers fournissent également des données cartographiques divisées en vignettes. Utilisez des sources de vignette pour récupérer des vignettes tierces ou pour créer vos propres vignettes personnalisées, avant de les superposer sur la carte affichée dans la classe [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
 
 **Important**  
-When you use tile sources, you don't have to write code to request or to position individual tiles. The [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) requests tiles as it needs them. Each request specifies the X and Y coordinates and the zoom level for the individual tile. You simply specify the format of the Uri or filename to use to retrieve the tiles in the **UriFormatString** property. That is, you insert replaceable parameters in the base Uri or filename to indicate where to pass the X and Y coordinates and the zoom level for each tile.
+Lorsque vous utilisez des sources de vignette, il est inutile d’écrire du code pour demander ou positionner des vignettes. La classe [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) demande les vignettes dont elle a besoin. Chaque demande spécifie les coordonnées X et Y et le niveau de zoom de la vignette individuelle. Il vous suffit de spécifier le format de l’URI ou le nom de fichier à utiliser pour récupérer les vignettes dans la propriété **UriFormatString**. Ainsi, vous insérez des paramètres remplaçables dans l’URI ou le nom de fichier de base afin d’indiquer où transmettre les coordonnées X et Y et le niveau de zoom de chaque vignette.
 
-Here's an example of the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) property for an [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) that shows the replaceable parameters for the X and Y coordinates and the zoom level.
+Voici un exemple de la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) pour une classe [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) qui affiche les paramètres remplaçables des coordonnéesX etY et le niveau de zoom.
 
 ``` syntax
     http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
@@ -37,67 +37,67 @@ Here's an example of the [**UriFormatString**](https://msdn.microsoft.com/librar
 
  
 
-(The X and Y coordinates represent the location of the individual tile within the map of the world at the specified level of detail. The tile numbering system starts from {0, 0} in the upper left corner of the map. For example, the tile at {1, 2} is in the second column of the third row of the grid of tiles.)
+(Les coordonnées X et Y représentent l’emplacement de la vignette individuelle au sein de la carte du monde, au niveau de détail spécifié. Le système de numérotation des vignettes démarre à partir de la valeur {0, 0}, dans le coin supérieur gauche de la carte. Par exemple, la vignette située à {1, 2} se trouve dans la deuxième colonne de la troisième ligne de la grille de vignettes.)
 
-For more info about the tile system used by mapping services, see [Bing Maps Tile System](http://go.microsoft.com/fwlink/p/?LinkId=626692).
+Pour plus d’informations sur le système de vignettes utilisé par les services cartographiques, voir [Système de vignette CartesBing](http://go.microsoft.com/fwlink/p/?LinkId=626692).
 
-### Overlay tiles from a tile source
+### Superposer des vignettes à partir d’une source de vignette
 
-Overlay tiled images from a tile source on a map by using the [**MapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn637141).
+Superposez des images sous forme de vignettes à partir d’une source de vignette sur une carte, à l’aide de la [**MapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn637141).
 
-1.  Instantiate one of the three tile data source classes that inherit from [**MapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn637141).
+1.  Instanciez l’une des troisclasses de source de données de vignette qui héritent des données de la classe [**MapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn637141).
 
     -   [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986)
     -   [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994)
     -   [**CustomMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636983)
 
-    Configure the **UriFormatString** to use to request the tiles by inserting replaceable parameters in the base Uri or filename.
+    Configurez le paramètre **UriFormatString** à utiliser pour demander des vignettes en insérant des paramètres remplaçables dans l’URI ou le nom de fichier de base.
 
-    The following example instantiates an [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986). This example specifies the value of the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) in the constructor of the **HttpMapTileDataSource**.
+    L’exemple suivant instancie une classe [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986). Cet exemple spécifie la valeur de la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) dans le constructeur de la classe **HttpMapTileDataSource**.
 
     ```cs
         HttpMapTileDataSource dataSource = new HttpMapTileDataSource(
           "http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}");
     ```
 
-2.  Instantiate and configure a [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144). Specify the [**MapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn637141) that you configured in the previous step as the [**DataSource**](https://msdn.microsoft.com/library/windows/apps/dn637149) of the **MapTileSource**.
+2.  Instanciez et configurez une classe [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144). Spécifiez la classe [**MapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn637141) que vous avez configurée à l’étape précédente en tant que propriété [**DataSource**](https://msdn.microsoft.com/library/windows/apps/dn637149) de la classe **MapTileSource**.
 
-    The following example specifies the [**DataSource**](https://msdn.microsoft.com/library/windows/apps/dn637149) in the constructor of the [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144).
+    L’exemple suivant spécifie la propriété [**DataSource**](https://msdn.microsoft.com/library/windows/apps/dn637149) dans le constructeur de la classe [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144).
 
     ```cs
         MapTileSource tileSource = new MapTileSource(dataSource);
     ```
 
-    You can restrict the conditions in which the tiles are displayed by using properties of the [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144).
+    Vous pouvez restreindre les conditions dans lesquelles les vignettes sont affichées à l’aide des propriétés de la classe [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144).
 
-    -   Display tiles only within a specific geographic area by providing a value for the [**Bounds**](https://msdn.microsoft.com/library/windows/apps/dn637147) property.
-    -   Display tiles only at certain levels of detail by providing a value for the [**ZoomLevelRange**](https://msdn.microsoft.com/library/windows/apps/dn637171) property.
+    -   Affichez les vignettes uniquement dans une zone géographique spécifique en affectant une valeur à la propriété [**Bounds**](https://msdn.microsoft.com/library/windows/apps/dn637147).
+    -   Affichez les vignettes selon certains niveaux de détail spécifiques en affectant une valeur à la propriété [**ZoomLevelRange**](https://msdn.microsoft.com/library/windows/apps/dn637171).
 
-    Optionally, configure other properties of the [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144) that affect the loading or the display of the tiles, such as [**Layer**](https://msdn.microsoft.com/library/windows/apps/dn637157), [**AllowOverstretch**](https://msdn.microsoft.com/library/windows/apps/dn637145), [**IsRetryEnabled**](https://msdn.microsoft.com/library/windows/apps/dn637153), and [**IsTransparencyEnabled**](https://msdn.microsoft.com/library/windows/apps/dn637155).
+    Vous pouvez également configurer d’autres propriétés de la [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144) qui affectent le chargement ou l’affichage de vignettes, comme [**Layer**](https://msdn.microsoft.com/library/windows/apps/dn637157), [**AllowOverstretch**](https://msdn.microsoft.com/library/windows/apps/dn637145), [**IsRetryEnabled**](https://msdn.microsoft.com/library/windows/apps/dn637153) et [**IsTransparencyEnabled**](https://msdn.microsoft.com/library/windows/apps/dn637155).
 
-3.  Add the [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144) to the [**TileSources**](https://msdn.microsoft.com/library/windows/apps/dn637053) collection of the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
+3.  Ajoutez la [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144) à la collection [**TileSources**](https://msdn.microsoft.com/library/windows/apps/dn637053) du [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
 
     ```cs
          MapControl1.TileSources.Add(tileSource);
     ```
 
-## Overlay tiles from a web service
+## Superposer des vignettes provenant d’un service web
 
 
-Overlay tiled images retrieved from a web service by using the [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986).
+Superposez des images sous forme de vignettes récupérées à partir d’un service web via la [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986).
 
-1.  Instantiate an [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986).
-2.  Specify the format of the Uri that the web service expects as the value of the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) property. To create this value, insert replaceable parameters in the base Uri. For example, in the following code sample, the value of the **UriFormatString** is:
+1.  Instanciez une [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986).
+2.  Spécifiez le format de l’URI que le service web attend, en tant que valeur de la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992). Pour créer cette valeur, insérez les paramètres remplaçables dans l’URI de base. Par exemple, dans l’exemple de code suivant, la valeur de l’élément **UriFormatString** est la suivante:
 
     ``` syntax
         http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
     ```
 
-    The web service has to support a Uri that contains the replaceable parameters {x}, {y}, and {zoomlevel}. Most web services (for example, Nokia, Bing, and Google) support Uris in this format. If the web service requires additional arguments that aren't available with the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) property, then you have to create a custom Uri. Create and return a custom Uri by handling the [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn636993) event. For more info, see the [Provide a custom URI](#customuri) section later in this topic.
+    Le service web doit prendre en charge un URI qui contient les paramètres remplaçables {zoomlevel}, {x} et {y}. La plupart des services web (par exemple ceux de Nokia, Bing et Google) prennent en charge les URI dans ce format. Si le service web requiert des arguments supplémentaires qui ne sont pas disponibles avec la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992), vous devez créer un URI personnalisé. Créez et renvoyez un URI personnalisé en gérant l’événement [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn636993). Pour plus d’informations, voir la section [Fournir un URI personnalisé](#customuri) plus loin dans cette rubrique.
 
-3.  Then, follow the remaining steps described previously in the [Tiled image overview](#tileintro).
+3.  Suivez ensuite les étapes restantes décrites précédemment dans [Vue d’ensemble des images sous forme de vignettes](#tileintro).
 
-The following example overlays tiles from a fictitious web service on a map of North America. The value of the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) is specified in the constructor of the [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986). In this example, tiles are only displayed within the geographic boundaries specified by the optional [**Bounds**](https://msdn.microsoft.com/library/windows/apps/dn637147) property.
+L’exemple suivant illustre la superposition de vignettes provenant d’un service web fictif sur une carte représentant l’Amérique du Nord. La valeur de la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) est spécifiée dans le constructeur de la classe [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986). Dans cet exemple, les vignettes sont uniquement affichées dans les limites géographiques spécifiées par la propriété facultative [**Bounds**](https://msdn.microsoft.com/library/windows/apps/dn637147).
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -144,36 +144,36 @@ void MainPage::AddHttpMapTileSource()
 }
 ```
 
-## Overlay tiles from local storage
+## Superposer des vignettes provenant d’un stockage local
 
 
-Overlay tiled images stored as files in local storage by using the [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994). Typically, you package and distribute these files with your app.
+Superposez des images sous forme de vignettes stockées en tant que fichiers dans le stockage local, à l’aide de la [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994). En règle générale, vous placez ces fichiers dans un package, puis vous les distribuez avec votre application.
 
-1.  Instantiate a [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994).
-2.  Specify the format of the file names as the value of the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) property. To create this value, insert replaceable parameters in the base filename. For example, in the following code sample, the value of the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) is:
+1.  Instanciez une [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994).
+2.  Spécifiez le format des noms de fichier en tant que valeur de la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998). Pour créer cette valeur, insérez les paramètres remplaçables dans le nom de fichier de base. Par exemple, dans l’exemple de code suivant, la valeur de l’élément [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) est la suivante:
 
     ``` syntax
         Tile_{zoomlevel}_{x}_{y}.png
     ```
 
-    If the format of the file names requires additional arguments that aren't available with the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) property, then you have to create a custom Uri. Create and return a custom Uri by handling the [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn637001) event. For more info, see the [Provide a custom URI](#customuri) section later in this topic.
+    Si le format de nom de fichiers nécessite des arguments supplémentaires qui ne sont pas fournis avec la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998), vous devez créer un URI personnalisé. Créez et renvoyez un URI personnalisé en gérant l’événement [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn637001). Pour plus d’informations, voir la section [Fournir un URI personnalisé](#customuri) plus loin dans cette rubrique.
 
-3.  Then, follow the remaining steps described previously in the [Tiled image overview](#tileintro).
+3.  Suivez ensuite les étapes restantes décrites précédemment dans [Vue d’ensemble des images sous forme de vignettes](#tileintro).
 
-You can use the following protocols and locations to load tiles from local storage:
+Vous pouvez utiliser les protocoles et les emplacements suivants pour charger les vignettes à partir du stockage local :
 
-| Uri | More info |
+| URI | Informations supplémentaires |
 |---------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| ms-appx:/// | Points to the root of the app's installation folder. |
-|  | This is the location referenced by the [Package.InstalledLocation](https://msdn.microsoft.com/library/windows/apps/br224681) property. |
-| ms-appdata:///local | Points to the root of the app's local storage. |
-|  | This is the location referenced by the [ApplicationData.LocalFolder](https://msdn.microsoft.com/library/windows/apps/br241621) property. |
-| ms-appdata:///temp | Points to the app's temp folder. |
-|  | This is the location referenced by the [ApplicationData.TemporaryFolder](https://msdn.microsoft.com/library/windows/apps/br241629) property. |
+| ms-appx:/// | Pointe vers la racine du dossier d’installation de l’application. |
+|  | Il s’agit de l’emplacement référencé par la propriété [Package.InstalledLocation](https://msdn.microsoft.com/library/windows/apps/br224681). |
+| ms-appdata:///local | Pointe vers la racine du stockage local de l’application. |
+|  | Il s’agit de l’emplacement référencé par la propriété [ApplicationData.LocalFolder](https://msdn.microsoft.com/library/windows/apps/br241621). |
+| ms-appdata:///temp | Pointe vers le dossier temporaire de l’application. |
+|  | Il s’agit de l’emplacement référencé par la propriété [ApplicationData.TemporaryFolder](https://msdn.microsoft.com/library/windows/apps/br241629). |
 
  
 
-The following example loads tiles that are stored as files in the app's installation folder by using the `ms-appx:///` protocol. The value for the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) is specified in the constructor of the [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994). In this example, tiles are only displayed when the zoom level of the map is within the range specified by the optional [**ZoomLevelRange**](https://msdn.microsoft.com/library/windows/apps/dn637171) property.
+L’exemple suivant illustre le chargement de vignettes stockées en tant que fichiers dans le dossier d’installation de l’application, via le protocole `ms-appx:///`. La valeur de la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) est spécifiée dans le constructeur de la classe [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994). Dans cet exemple, les vignettes sont uniquement affichées lorsque le niveau de zoom de la carte est inclus dans la plage indiquée par la propriété facultative [**ZoomLevelRange**](https://msdn.microsoft.com/library/windows/apps/dn637171).
 
 ```csharp
         void AddLocalMapTileSource()
@@ -195,15 +195,15 @@ The following example loads tiles that are stored as files in the app's installa
         }
 ```
 
-## Provide a custom URI
+## Fournir un URI personnalisé
 
 
-If the replaceable parameters available with the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) property of the [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) or the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) property of the [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994) aren't sufficient to retrieve your tiles, then you have to create a custom Uri. Create and return a custom Uri by providing a custom handler for the **UriRequested** event. The **UriRequested** event is raised for each individual tile.
+Si les paramètres remplaçables fournis avec la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) de la classe [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) ou la propriété [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) de la classe [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994) ne sont pas suffisants pour récupérer vos vignettes, vous devez créer un URI personnalisé. Créez et renvoyez un URI personnalisé en proposant un gestionnaire personnalisé pour l’événement **UriRequested**. L’événement **UriRequested** est déclenché pour chaque vignette individuelle.
 
-1.  In your custom handler for the **UriRequested** event, combine the required custom arguments with the [**X**](https://msdn.microsoft.com/library/windows/apps/dn610743), [**Y**](https://msdn.microsoft.com/library/windows/apps/dn610744), and [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn610745) properties of the [**MapTileUriRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637177) to create the custom Uri.
-2.  Return the custom Uri in the [**Uri**](https://msdn.microsoft.com/library/windows/apps/dn610748) property of the [**MapTileUriRequest**](https://msdn.microsoft.com/library/windows/apps/dn637173), which is contained in the [**Request**](https://msdn.microsoft.com/library/windows/apps/dn637179) property of the [**MapTileUriRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637177).
+1.  Dans le gestionnaire personnalisé de l’événement **UriRequested**, combinez les arguments personnalisés requis avec les propriétés [**X**](https://msdn.microsoft.com/library/windows/apps/dn610743), [**Y**](https://msdn.microsoft.com/library/windows/apps/dn610744)et [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn610745) de la classe [**MapTileUriRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637177) pour créer l’URI personnalisé.
+2.  Renvoyez l’URI personnalisé dans la propriété [**Uri**](https://msdn.microsoft.com/library/windows/apps/dn610748) de la classe [**MapTileUriRequest**](https://msdn.microsoft.com/library/windows/apps/dn637173), qui est contenue dans la propriété [**Request**](https://msdn.microsoft.com/library/windows/apps/dn637179) de la classe [**MapTileUriRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637177).
 
-The following example shows how to provide a custom Uri by creating a custom handler for the **UriRequested** event. It also shows how to implement the deferral pattern if you have to do something asynchronously to create the custom Uri.
+L’exemple suivant explique comment fournir un URI personnalisé en créant un gestionnaire personnalisé pour l’événement **UriRequested**. Il indique également comment implémenter le modèle de report si vous devez exécuter une action asynchrone pour créer l’URI personnalisé.
 
 ```csharp
 using Windows.UI.Xaml.Controls.Maps;
@@ -241,17 +241,17 @@ using System.Threading.Tasks;
         }
 ```
 
-## Overlay tiles from a custom source
+## Superposer des vignettes provenant d’une source personnalisée
 
 
-Overlay custom tiles by using the [**CustomMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636983). Create tiles programmatically in memory on the fly, or write your own code to load existing tiles from another source.
+Superposez des vignettes personnalisées à l’aide de la [**CustomMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636983). Créez des vignettes par programme en mémoire, à la volée, ou écrivez votre propre code pour charger les vignettes existantes à partir d’une autre source.
 
-To create or load custom tiles, provide a custom handler for the [**BitmapRequested**](https://msdn.microsoft.com/library/windows/apps/dn636984) event. The **BitmapRequested** event is raised for each individual tile.
+Pour créer ou charger des vignettes personnalisées, fournissez un gestionnaire personnalisé pour l’événement [**BitmapRequested**](https://msdn.microsoft.com/library/windows/apps/dn636984). L’événement **BitmapRequested** est déclenché pour chaque vignette individuelle.
 
-1.  In your custom handler for the [**BitmapRequested**](https://msdn.microsoft.com/library/windows/apps/dn636984) event, combine the required custom arguments with the [**X**](https://msdn.microsoft.com/library/windows/apps/dn637135), [**Y**](https://msdn.microsoft.com/library/windows/apps/dn637136), and [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637137) properties of the [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132) to create or retrieve a custom tile.
-2.  Return the custom tile in the [**PixelData**](https://msdn.microsoft.com/library/windows/apps/dn637140) property of the [**MapTileBitmapRequest**](https://msdn.microsoft.com/library/windows/apps/dn637128), which is contained in the [**Request**](https://msdn.microsoft.com/library/windows/apps/dn637134) property of the [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132). The **PixelData** property is of type [**IRandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701664).
+1.  Dans le gestionnaire personnalisé de l’événement [**BitmapRequested**](https://msdn.microsoft.com/library/windows/apps/dn636984), combinez les arguments personnalisés requis avec les propriétés [**X**](https://msdn.microsoft.com/library/windows/apps/dn637135), [**Y**](https://msdn.microsoft.com/library/windows/apps/dn637136) et [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637137) de la classe [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132) pour créer ou récupérer une vignette personnalisée.
+2.  Renvoyez la vignette personnalisée dans la propriété [**PixelData**](https://msdn.microsoft.com/library/windows/apps/dn637140) de la classe [**MapTileBitmapRequest**](https://msdn.microsoft.com/library/windows/apps/dn637128), qui est contenue dans la propriété [**Request**](https://msdn.microsoft.com/library/windows/apps/dn637134) de la classe [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132). La propriété **PixelData** présente le type [**IRandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701664).
 
-The following example shows how to provide custom tiles by creating a custom handler for the **BitmapRequested** event. This example creates identical red tiles that are partially opaque. The example ignores the [**X**](https://msdn.microsoft.com/library/windows/apps/dn637135), [**Y**](https://msdn.microsoft.com/library/windows/apps/dn637136), and [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637137) properties of the [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132). Although this is not a real world example, the example demonstrates how you can create in-memory custom tiles on the fly. The example also shows how to implement the deferral pattern if you have to do something asynchronously to create the custom tiles.
+L’exemple suivant indique comment fournir des vignettes personnalisées en créant un gestionnaire personnalisé pour l’événement **BitmapRequested**. Cet exemple permet de créer des vignettes rouges identiques, partiellement opaques. L’exemple ne tient pas compte des propriétés [**X**](https://msdn.microsoft.com/library/windows/apps/dn637135), [**Y**](https://msdn.microsoft.com/library/windows/apps/dn637136) et [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637137) de la classe [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132). Cet exemple n’est pas concret, mais il indique comment créer des vignettes personnalisées en mémoire, à la volée. Il indique également comment implémenter le modèle de report si vous devez exécuter une action asynchrone pour créer les vignettes personnalisées.
 
 ```csharp
 using Windows.UI.Xaml.Controls.Maps;
@@ -350,25 +350,25 @@ InMemoryRandomAccessStream^ TileSources::CustomRandomAccessSteram::get()
 }
 ```
 
-## Replace the default map
+## Remplacer la carte par défaut
 
 
-To replace the default map entirely with third-party or custom tiles:
+Pour remplacer entièrement la carte par défaut par des vignettes personnalisées ou tierces, procédez comme suit:
 
--   Specify [**MapTileLayer**](https://msdn.microsoft.com/library/windows/apps/dn637143).**BackgroundReplacement** as the value of the [**Layer**](https://msdn.microsoft.com/library/windows/apps/dn637157) property of the [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144).
--   Specify [**MapStyle**](https://msdn.microsoft.com/library/windows/apps/dn637127).**None** as the value of the [**Style**](https://msdn.microsoft.com/library/windows/apps/dn637051) property of the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
+-   Spécifiez [**MapTileLayer**](https://msdn.microsoft.com/library/windows/apps/dn637143).**BackgroundReplacement** en tant que valeur de la propriété [**Layer**](https://msdn.microsoft.com/library/windows/apps/dn637157) de la classe [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144).
+-   Spécifiez [**MapStyle**](https://msdn.microsoft.com/library/windows/apps/dn637127).**None** en tant que valeur de la propriété [**Style**](https://msdn.microsoft.com/library/windows/apps/dn637051) de la classe [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
 
-## Related topics
+## Rubriques connexes
 
-* [Bing Maps Developer Center](https://www.bingmapsportal.com/)
-* [UWP map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [Design guidelines for maps](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Build 2015 video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP traffic app sample](http://go.microsoft.com/fwlink/p/?LinkId=619982)
-
-
+* [Centre de développement Bing Cartes](https://www.bingmapsportal.com/)
+* [Exemple de carte UWP](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [Recommandations en matière de conception pour les cartes](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Vidéos de la build 2015: utilisation des cartes et de la localisation sur un téléphone, une tablette et un PC dans vos applications Windows](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [Exemple d’application de trafic UWP](http://go.microsoft.com/fwlink/p/?LinkId=619982)
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Jun16_HO5-->
 
 

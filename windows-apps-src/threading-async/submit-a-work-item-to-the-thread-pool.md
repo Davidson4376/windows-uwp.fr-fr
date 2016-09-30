@@ -1,33 +1,33 @@
 ---
 author: TylerMSFT
 ms.assetid: E2A1200C-9583-40FA-AE4D-C9E6F6C32BCF
-title: Submit a work item to the thread pool
-description: Learn how to do work in a separate thread by submitting a work item to the thread pool.
+title: "Envoyer un élément de travail au pool de threads"
+description: "Découvrez comment effectuer des tâches dans un thread distinct en envoyant un élément de travail au pool de threads."
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: d41f53a40c46087c5a1c21367a34c0f60486f24d
+ms.openlocfilehash: d8b0f512d075510fae527e563ef99f24cc201577
 
 ---
-# Submit a work item to the thread pool
+# Envoyer un élément de travail au pool de threads
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-** Important APIs **
+** API importantes **
 
 -   [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593)
 -   [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580)
 
-Learn how to do work in a separate thread by submitting a work item to the thread pool. Use this to maintain a responsive UI while still completing work that takes a noticeable amount of time, and use it to complete multiple tasks in parallel.
+Découvrez comment effectuer des tâches dans un thread distinct en envoyant un élément de travail au pool de threads. Cela vous permet de maintenir une interface utilisateur réactive tout en effectuant des tâches dont l’exécution nécessite un temps non négligeable, et utilisez-la pour accomplir plusieurs tâches en parallèle.
 
-## Create and submit the work item
+## Créer et envoyer l’élément de travail
 
-Create a work item by calling [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593). Supply a delegate to do the work (you can use a lambda, or a delegate function). Note that **RunAsync** returns an [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580) object; store this object for use in the next step.
+Créez un élément de travail en appelant [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593). Fournissez un délégué pour effectuer le travail (vous pouvez utiliser une expression lambda ou une fonction déléguée). Notez que **RunAsync** retourne un objet [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580). Stockez cet objet en vue de son utilisation à la prochaine étape.
 
-Three versions of [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593) are available so that you can optionally specify the priority of the work item, and control whether it runs concurrently with other work items.
+Trois versions de [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593) sont disponibles pour que vous puissiez éventuellement spécifier la priorité de l’élément de travail et contrôler s’il est exécuté simultanément avec d’autres éléments de travail.
 
-**Note**  Use [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) to access the UI thread and show progress from the work item.
+**Remarque** Utilisez [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) pour accéder au thread d’interface utilisateur et afficher la progression à partir de l’élément de travail.
 
-The following example creates a work item and supplies a lambda to do the work:
+L’exemple suivant crée un élément de travail et fournit une expression lambda pour effectuer la tâche:
 
 > [!div class="tabbedCodeSnippets"]
 ``` cpp
@@ -191,15 +191,15 @@ IAsyncAction asyncAction = Windows.System.Threading.ThreadPool.RunAsync(
 m_workItem = asyncAction;
 ```
 
-Following the call to [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593), the work item is queued by the thread pool and runs when a thread becomes available. Thread pool work items run asynchronously and they can run in any order, so make sure your work items function independently.
+Après l’appel à [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593), l’élément de travail est mis en file d’attente par le pool de threads et s’exécute lorsque le thread devient disponible. Les éléments de travail du pool de threads s’exécutent de manière asynchrone. De plus, étant donné qu’ils peuvent s’exécuter dans n’importe quel ordre, assurez-vous qu’ils fonctionnent de manière indépendante.
 
-Note that the work item checks the [**IAsyncInfo.Status**](https://msdn.microsoft.com/library/windows/apps/BR206593) property, and exits if the work item is cancelled.
+Notez que l’élément de travail vérifie la propriété [**IAsyncInfo.Status**](https://msdn.microsoft.com/library/windows/apps/BR206593) et se ferme s’il est annulé.
 
-## Handle work item completion
+## Gérer l’achèvement de l’élément de travail
 
-Provide a completion handler by setting the [**IAsyncAction.Completed**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.completed.aspx) property of the work item. Supply a delegate (you can use a lambda or a delegate function) to handle work item completion. For example, use [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) to access the UI thread and show the result.
+Fournissez un gestionnaire d’achèvement en définissant la propriété [**IAsyncAction.Completed**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.completed.aspx) de l’élément de travail. Fournissez un délégué (vous pouvez utiliser une expression lambda ou une fonction déléguée) pour gérer l’achèvement de l’élément de travail. Par exemple, utilisez [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) pour accéder au thread d’interface utilisateur et afficher le résultat.
 
-The following example updates the UI with the result of the work item submitted in step 1:
+L’exemple suivant met à jour l’interface utilisateur avec le résultat de l’élément de travail envoyé à l’étape1:
 
 > [!div class="tabbedCodeSnippets"]
 ``` cpp
@@ -247,22 +247,22 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 });
 ```
 
-Note that the completion handler checks whether the work item was cancelled before dispatching a UI update.
+Notez que le gestionnaire d’achèvement vérifie si l’élément de travail a été annulé avant de diffuser une mise à jour de l’interface utilisateur.
 
-## Summary and next steps
+## Récapitulatif et étapes suivantes
 
-You can learn more by downloading the code from this quickstart in the [Creating a ThreadPool work item sample](http://go.microsoft.com/fwlink/p/?LinkID=328569) written for Windows 8.1, and re-using the source code in a win\_unap Windows 10 app.
+Pour en savoir plus, vous pouvez télécharger le code de ce démarrage rapide à partir de l’[exemple de création d’élément de travail ThreadPool](http://go.microsoft.com/fwlink/p/?LinkID=328569) écrit pour Windows 8.1 et réutiliser le code source dans une application Windows 10 win\_unap.
 
-## Related topics
+## Rubriques connexes
 
-* [Submit a work item to the thread pool](submit-a-work-item-to-the-thread-pool.md)
-* [Best practices for using the thread pool](best-practices-for-using-the-thread-pool.md)
-* [Use a timer to submit a work item](use-a-timer-to-submit-a-work-item.md)
+* [Envoyer un élément de travail au pool de threads](submit-a-work-item-to-the-thread-pool.md)
+* [Meilleures pratiques pour l’utilisation du pool de threads](best-practices-for-using-the-thread-pool.md)
+* [Utiliser un minuteur pour envoyer un élément de travail](use-a-timer-to-submit-a-work-item.md)
  
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO2-->
 
 

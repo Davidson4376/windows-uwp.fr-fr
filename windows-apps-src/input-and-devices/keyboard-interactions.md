@@ -6,17 +6,18 @@ ms.assetid: FF819BAC-67C0-4EC9-8921-F087BE188138
 label: Keyboard interactions
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: f9c475a90c270270217999c5a7289e29e7fef208
-ms.openlocfilehash: a1d97c5a66db1b799ccc16769ff18130155743b8
+ms.sourcegitcommit: d65e1315e83fef5e53771adad0943c9cb59d9139
+ms.openlocfilehash: 9de90236d94522f1b80309c3fec51ce59aee0319
 
 ---
 
 # Interactions avec le clavier
 
 
-Les entrées via le clavier représentent une part importante de l’expérience d’interaction utilisateur globale pour les applications. Le clavier est indispensable pour certaines personnes souffrant d’un handicap et les utilisateurs qui le considèrent simplement comme un moyen plus efficace d’interaction avec une application. Par exemple, les utilisateurs doivent pouvoir naviguer dans votre application à l’aide des touches de direction et de tabulation, activer les éléments d’interface utilisateur à l’aide de la barre d’espace et des touches Entrée, et accéder aux commandes à l’aide de raccourcis clavier.  
-
+Les entrées via le clavier représentent une part importante de l’expérience d’interaction utilisateur globale pour les applications. Le clavier est indispensable pour certaines personnes souffrant d’un handicap et les utilisateurs qui le considèrent simplement comme un moyen plus efficace d’interaction avec une application. Par exemple, les utilisateurs doivent pouvoir naviguer dans votre application à l’aide des touches de direction et de tabulation, activer les éléments d’interface utilisateur à l’aide de la barre d’espace et des touches Entrée, et accéder aux commandes à l’aide de raccourcis clavier.
 ![image Hero du clavier](images/input-patterns/input-keyboard-small.jpg)
+
+
 
 **API importantes**
 
@@ -78,19 +79,19 @@ Voici quelques exemples des différents modes disponibles pour le clavier tactil
 <table>
 <tr>
     <td>**Clavier tactile en mode de disposition classique:  **</td>
-    <td>![clavier tactile en mode de disposition classique](images/touchkeyboard-standard.png)</td>
+    <td>![the touch keyboard in default layout mode](images/touchkeyboard-standard.png)</td>
 </tr>
 <tr>
     <td>**Clavier tactile en mode de disposition étendue:  **</td>
-    <td>![clavier tactile en mode de disposition étendue](images/touchkeyboard-expanded.png)</td>
+    <td>![the touch keyboard in expanded layout mode](images/touchkeyboard-expanded.png)</td>
 </tr>
 <tr>
     <td>**Clavier tactile en mode de disposition ergonomique classique:  **</td>
-    <td>![clavier tactile en mode de disposition ergonomique](images/touchkeyboard-thumb.png)</td>
+    <td>![the touch keyboard in thumb layout mode](images/touchkeyboard-thumb.png)</td>
 </tr>
 <tr>
     <td>**Clavier tactile en mode de disposition ergonomique numérique:  **</td>
-    <td>![clavier tactile en mode de disposition ergonomique numérique](images/touchkeyboard-numeric-thumb.png)</td>
+    <td>![the touch keyboard in numeric thumb layout mode](images/touchkeyboard-numeric-thumb.png)</td>
 </tr>
 </table>
 
@@ -702,6 +703,6 @@ Vous pouvez nettement faciliter et accélérer la saisie de données par les uti
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

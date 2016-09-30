@@ -1,66 +1,66 @@
 ---
 author: eliotcowley
 ms.assetid: A7E0DA1E-535A-459E-9A35-68A4150EE9F5
-description: This topic provides an overview of how to add PlayReady hardware-based digital rights management (DRM) to your Universal Windows Platform (UWP) app.
-title: Hardware DRM
+description: "Cette rubrique explique comment ajouter la gestion des droits numériques (DRM) en fonction du matériel par PlayReady à votre application pour plateforme Windows universelle (UWP)."
+title: "Gestion des droits numériques en fonction du matériel"
 translationtype: Human Translation
-ms.sourcegitcommit: 56d79a93704021fc18d3e72d00738d0ce7acba91
-ms.openlocfilehash: 643b67c3975a8aea6791c834a9ca3178b9762257
+ms.sourcegitcommit: 22ce05ab6f24c3ee41798732c35314b3dad87ea8
+ms.openlocfilehash: b7867317c37edf44d9edfaaf28d97a3f23b22814
 
 ---
 
-# Hardware DRM
+# Gestion des droits numériques en fonction du matériel
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-This topic provides an overview of how to add PlayReady hardware-based digital rights management (DRM) to your Universal Windows Platform (UWP) app.
+Cette rubrique explique comment ajouter la gestion des droits numériques (DRM) en fonction du matériel par PlayReady à votre application pour plateforme Windows universelle (UWP).
 
 > [!NOTE] 
-> Hardware-based PlayReady DRM is supported on a multitude of devices, including both Windows and non-Windows devices such as TV sets, phones, and tablets. For a Windows device to support PlayReady Hardware DRM, it must be running Windows 10 and have a supported hardware configuration.
+> La gestion des droits numériques en fonction du matériel par PlayReady est compatible avec une multitude d’appareils, y compris les appareilsWindows et tiers tels que les téléviseurs, les tablettes et les téléphones. Pour qu’un appareil Windows prenne en charge la gestion des droits numériques en fonction du matériel par PlayReady, il doit exécuter Windows10 et présente une configuration matérielle compatible.
 
-Increasingly, content providers are moving towards hardware-based protections for granting permission to play back full high value content in apps. Robust support for a hardware implementation of the cryptographic core has been added to PlayReady to meet this need. This support enables secure playback of high definition (1080p) and ultra-high definition (UHD) content on multiple device platforms. Key material (including private keys, content keys, and any other key material used to derive or unlock said keys), and decrypted compressed and uncompressed video samples are protected by leveraging hardware security.
+Les fournisseurs de contenu se tournent de plus en plus vers des protections matérielles pour autoriser la lecture de contenu à valeur élevée complet dans les applications. La prise en charge robuste d’une implémentation matérielle de la base de chiffrement a été ajoutée à PlayReady pour répondre à ce besoin. Cette prise en charge permet la lecture sécurisée de contenu en haute définition (1080p) et ultra haute définition (UHD) sur plusieurs plateformes d’appareils. Le matériel de clé (y compris les clés privées, les clés de contenu et tout autre matériel de clé utilisé pour dériver ou déverrouiller ces clés) et les échantillons vidéo compressés et non compressés déchiffrés sont protégés en tirant parti de la sécurité matérielle.
 
-## Windows TEE implementation
+## Implémentation TEE Windows
 
-This topic provides a brief overview of how Windows 10 implements the trusted execution environment (TEE).
+Cette rubrique offre une présentation succincte de la façon dont Windows 10 implémente l’environnement d’exécution de confiance (TEE).
 
-The details of the Windows TEE implementation is out of scope for this document. However, a brief discussion of the difference between the standard porting kit TEE port and the Windows port will be beneficial. Windows implements the OEM proxy layer and transfers the serialized PRITEE functions calls to a user mode driver in the Windows Media Foundation subsystem. This will eventually get routed to either the Windows TrEE (Trusted Execution Environment) driver or the OEM’s graphics driver. The details of either of these approaches is out of scope for this document. The following diagram shows the general component interaction for the Windows port. If you want to develop a Windows PlayReady TEE implementation, you can contact <WMLA@Microsoft.com>.
+Les détails de l’implémentation TEE Windows n’entrent pas dans le cadre de ce document. Cependant, une brève description de la différence entre le port TEE du kit de portage standard et le port Windows sera utile. Windows implémente la couche proxy OEM et transfère les appels de fonctions PRITEE en série à un pilote en mode utilisateur dans le sous-système Windows Media Foundation. Ceux-ci seront finalement acheminés vers le pilote TrEE (Trusted Execution Environment) Windows ou le pilote graphique OEM. Les détails de ces deux approches n’entrent pas dans le cadre de ce document. Le diagramme suivant illustre l’interaction générale des composants pour le port Windows. Si vous souhaitez développer une implémentation TEE Windows PlayReady, vous pouvez contacter <WMLA@Microsoft.com>.
 
-![windows tee component diagram](images/windowsteecomponentdiagram720.jpg)
+![diagramme des composants tee Windows](images/windowsteecomponentdiagram720.jpg)
 
-## Considerations for using hardware DRM
+## Considérations pour l’utilisation de la gestion des droits numériques en fonction du matériel
 
-This topic provides a brief list of items that should be considered when developing apps designed to use hardware DRM. As explained in [PlayReady DRM](playready-client-sdk.md#output-protection), with PlayReady HWDRM for Windows 10, all output protections are enforced from within the Windows TEE implementation, which has some consequences on output protection behaviors:
+Cette rubrique fournit une courte liste des éléments à prendre en compte lors du développement d’applications conçues pour utiliser la gestion des droits numériques en fonction du matériel. Comme expliqué dans [Gestion des droits numériques par PlayReady](playready-client-sdk.md#output-protection), avec la gestion des droits numériques en fonction du matériel par PlayReady pour Windows10, toutes les protections de sortie sont appliquées à partir de l’implémentationTEEWindows, ce qui a des répercussions sur les comportements de protection de sortie:
 
--   **Support for output protection level (OPL) for uncompressed digital video 270:** PlayReady HWDRM for Windows 10 doesn't support down-resolution and will enforce that HDCP is engaged. We recommend that high definition content for HWDRM have an OPL greater than 270 (although it is not required). Additionally, we recommend that you set HDCP type restriction in the license (HDCP version 2.2 on Windows 10).
--   **Unlike software DRM (SWDRM), output protections are enforced on all monitors based on the least capable monitor.** For example, if the user has two monitors connected where one of the monitors supports HDCP and the other does not, playback will fail if the license requires HDCP even if the content is only being rendered on the monitor that supports HDCP. In software DRM, content would play back as long as it is only being rendered on the monitor that supports HDCP.
--   **HWDRM is not guaranteed to be used by the client and secure unless the following conditions are met** by the content keys and licenses:
-    -   The license used for the video content key must have a Minimum Security level property of 3000.
-    -   Audio must be encrypted to a different content key than video, and the license used for the audio must have a Minimum Security level property of 2000. Alternatively, audio could be left in the clear.
+-   **Prise en charge du niveau de protection de sortie (normeOPL) 270 pour la vidéo numérique non compressée:** La gestion des droits numériques en fonction du matériel par PlayReady pour Windows10 n’accepte pas la résolution inférieure et s’assure que la protectionHDCP est enclenchée. Microsoft recommande que le contenu haute définition pour la gestion des droits numériques en fonction du matériel présente une norme OPL supérieure à270 (bien que cela ne soit pas obligatoire). En outre, Microsoft vous recommande de définir une restriction du type de protectionHDCP dans la licence (HDCP version2.2 sur Windows10).
+-   À la différence de la gestion des droits numériques en fonction du logiciel, les protections de sortie sont appliquées sur tous les moniteurs en fonction du moniteur le moins puissant. Par exemple, si l’utilisateur a deux moniteurs connectés dont un seul prend en charge la protection HDCP, la lecture échouera si la licence requiert la protection HDCP, même si le contenu est uniquement affiché sur l’écran qui prend en charge la protection HDCP. Avec la gestion des droits numériques en fonction du logiciel, le contenu est à condition qu’il soit affiché uniquement sur le moniteur qui prend en charge la protectionHDCP.
+-   L’utilisation par le client et la sécurisation de la gestion des droits numériques en fonction du matériel ne sont garanties que si les conditions suivantes soient remplies par les clés et les licences de contenu:
+    -   La licence utilisée pour la clé de contenu vidéo doit présenter un niveau de sécurité minimal de 3000.
+    -   L’audio doit être chiffré selon une clé de contenu différente de celle de la vidéo, et la licence utilisée pour l’audio doit afficher un niveau de sécurité minimal de 2000. Par ailleurs, l’audio peut rester en clair.
     
-Additionally, you should take the following items into consideration when using HWDRM:
+En outre, vous devez prendre les éléments suivants en considération lorsque vous utilisez la gestion des droits numériques en fonction du matériel:
 
--   Protected Media Process (PMP) is not supported.
--   Windows Media Video (also known as VC-1) is not supported (see [Override hardware DRM](#override-hardware-drm)).
--   Multiple graphics processing units (GPUs) are not supported for persistent licenses.
+-   Le processus de média protégé (PMP) n’est pas pris en charge.
+-   Le format Windows Media Video (également connu sous le nom de VC-1) n’est pas pris en charge (voir [Contourner la gestion des droits numériques en fonction du matériel](#override-hardware-drm)).
+-   Les processeurs graphiques (GPU) multiples ne sont pas pris en charge pour les licences persistantes.
 
-To handle persistent licenses on machines with multiple GPUs, consider the following scenario:
+Pour gérer les licences persistantes sur des ordinateurs dotés de plusieurs GPU, considérez le scénario suivant :
 
-1.  A customer buys a new machine with an integrated graphics card.
-2.  The customer uses an app that acquires persistent licenses while using hardware DRM.
-3.  The persistent license is now bound to that graphics card’s hardware keys.
-4.  The customer then installs a new graphics card.
-5.  All licenses in the hashed data store (HDS) are bound to the integrated video card, but the customer now wants to play back protected content using the newly-installed graphics card.
+1.  Un client achète un nouvel ordinateur équipé d’une carte graphique intégrée.
+2.  Le client utilise une application qui acquiert les licences persistantes lors de l’utilisation de la gestion des droits numériques en fonction du matériel.
+3.  La licence persistante est maintenant liée aux clés matérielles de la carte graphique.
+4.  Le client installe ensuite une nouvelle carte graphique.
+5.  Toutes les licences du magasin de données hachées (HDS) sont liées à la carte vidéo intégrée, mais le client souhaite maintenant lire du contenu protégé à l’aide de la carte graphique qu’il vient d’installer.
 
-To prevent playback from failing because the licenses can’t be decrypted by the hardware, PlayReady uses a separate HDS for each graphics card that it encounters. This will cause PlayReady to attempt license acquisition for a piece of content where PlayReady would normally already have a license (that is, in the software DRM case or any case without a hardware change, PlayReady wouldn’t need to reacquire a license). Therefore, if the app acquires a persistent license while using hardware DRM, your app needs to be able to handle the case where that license is effectively “lost” if the end user installs (or uninstalls) a graphics card. Because this is not a common scenario, you may decide to handle the support calls when the content no longer plays after a hardware change rather than figure out how to deal with a hardware change in the client/server code.
+Pour empêcher l’échec de la lecture dû au fait que les licences ne peuvent pas être déchiffrées par le matériel, PlayReady utilise un magasinHDS distinct pour chaque carte graphique rencontrée. PlayReady procédera ainsi à une tentative d’acquisition de licence pour un élément de contenu pour lequel PlayReady aurait normalement déjà une licence (autrement dit, en cas de gestion des droits numériques en fonction du logiciel ou dans toute situation n’impliquant pas de changement de matériel, PlayReady n’aurait pas besoin d’acquérir à nouveau une licence). Par conséquent, si l’application acquiert une licence persistante lors de l’utilisation de la gestion des droits numériques en fonction du matériel, votre application doit pouvoir gérer le cas où cette licence est effectivement « perdue » si l’utilisateur final installe (ou désinstalle) une carte graphique. Comme cela n’est pas un scénario courant, vous pouvez décider de gérer les appels au support lorsque le contenu n’est plus lu après un changement de matériel plutôt que de déterminer comment traiter un changement de matériel dans le code client/serveur.
 
-## Override hardware DRM
+## Contourner la gestion des droits numériques en fonction du matériel
 
-This section describes how to override hardware DRM (HWDRM) if the content to be played back does not support hardware DRM.
+Cette section explique comment contourner la gestion des droits numériques en fonction du matériel si le contenu à lire ne la prend pas en charge.
 
-By default, hardware DRM is used if the system supports it. However, some content is not supported in hardware DRM. One example of this is Cocktail content. Another example is any content that uses a video codec other than H.264 and HEVC. Another example is HEVC content, as some hardware DRM will support HEVC and some will not. Therefore, if you want to play a piece of content and hardware DRM doesn’t support it on the system in question, you may want to opt out of hardware DRM.
+Par défaut, la gestion des droits numériques en fonction du matériel est utilisée si le système la prend en charge. Cependant, certains contenus ne sont pas pris en charge par la gestion des droits numériques en fonction du matériel, par exemple le contenu Cocktail, tout contenu qui utilise un codec vidéo autre que H.264 et HEVC, ou encore le contenu HEVC, car certains types de gestion des droits numériques en fonction du matériel prennent en charge le codec HEVC et d’autres non. Par conséquent, si vous voulez lire un élément de contenu et que la gestion des droits numériques en fonction du matériel ne le prend pas en charge sur le système en question, vous voudrez peut-être désactiver la gestion des droits numériques en fonction du matériel.
 
-The following example shows how to opt-out of hardware DRM. You only need to do this before you switch. Also, make sure you don’t have any PlayReady object in memory, otherwise behavior is undefined.
+L’exemple suivant explique comment désactiver la gestion des droits numériques en fonction du matériel. Vous devez uniquement effectuer cette action avant de procéder à la modification. Assurez-vous également que vous n’avez aucun objet PlayReady en mémoire. Sinon, le comportement n’est pas défini.
 
 ```js
 var applicationData = Windows.Storage.ApplicationData.current;
@@ -68,39 +68,37 @@ var localSettings = applicationData.localSettings.createContainer("PlayReady", W
 localSettings.values["SoftwareOverride"] = 1;
 ```
 
-To switch back to hardware DRM, set the **SoftwareOverride** value to **0**.
+Pour revenir à la gestion des droits numériques en fonction du matériel, définissez la valeur **SoftwareOverride** sur **0**.
 
-For every media playback, you need to set **MediaProtectionManager** to:
+Pour chaque lecture multimédia, vous devez définir **MediaProtectionManager** sur:
 
 ```js
 mediaProtectionManager.properties["Windows.Media.Protection.UseSoftwareProtectionLayer"] = true;
 ```
 
-The best way to tell if you are in hardware DRM or software DRM is to look at C:\\Users\\&lt;username&gt;\\AppData\\Local\\Packages\\&lt;application name&gt;\\LocalState\\PlayReady\\\*
+Pour savoir si vous êtes en gestion des droits numériques en fonction du matériel ou en fonction du logiciel, regardez sous C:\\Users\\&lt;username&gt;\\AppData\\Local\\Packages\\&lt;application name&gt;\\LocalState\\PlayReady\\\*
 
--   If there is an mspr.hds file, you are in software DRM.
--   If you have another \*.hds file, you are in hardware DRM.
--   You can delete the entire PlayReady folder and retry your test as well.
+-   Si vous voyez un fichier mspr.hds, cela signifie que vous êtes en gestion des droits numériques en fonction du logiciel.
+-   Si vous voyez un autre fichier *.hds, cela signifie que vous êtes en gestion des droits numériques en fonction du matériel.
+-   Vous pouvez supprimer l’intégralité du dossier PlayReady et relancer votre test.
 
-## Detect the type of hardware DRM
+## Détecter le type de gestion des droits numériques en fonction du matériel
 
-This section describes how to detect what type of hardware DRM is supported on the system.
+Cette section explique comment détecter quel type de gestion des droits numériques en fonction du matériel est pris en charge sur le système.
 
-You can use the [**PlayReadyStatics.CheckSupportedHardware**](https://msdn.microsoft.com/library/windows/apps/dn986441) method to determine whether the system supports a specific hardware DRM feature. For example:
+Vous pouvez utiliser la méthode [**PlayReadyStatics.CheckSupportedHardware**](https://msdn.microsoft.com/library/windows/apps/dn986441) pour déterminer si le système prend en charge une fonctionnalité spécifique de gestion des droits numériques (DRM) en fonction du matériel. Par exemple :
 
 ```cpp
 boolean PlayReadyStatics->CheckSupportedHardware(PlayReadyHardwareDRMFeatures enum);
 ```
 
-The [**PlayReadyHardwareDRMFeatures**](https://msdn.microsoft.com/library/windows/apps/dn986265) enumeration contains the valid list of hardware DRM feature values that can be queried. To determine if hardware DRM is supported, use the **HardwareDRM** member in the query. To determine if the hardware supports the High Efficiency Video Coding (HEVC)/H.265 codec, use the **HEVC** member in the query.
+L’énumération [**PlayReadyHardwareDRMFeatures**](https://msdn.microsoft.com/library/windows/apps/dn986265) contient la liste valide des valeurs de fonctionnalité de gestion des droits numériques en fonction du matériel pouvant être interrogées. Pour déterminer si la gestion des droits numériques en fonction du matériel est prise en charge, utilisez le membre **HardwareDRM** dans la requête. Pour déterminer si le matériel prend en charge le codec HEVC (High Efficiency Video Coding)/H.265, utilisez le membre **HEVC** dans la requête.
 
-You can also use the [**PlayReadyStatics.PlayReadyCertificateSecurityLevel**](https://msdn.microsoft.com/library/windows/apps/windows.media.protection.playready.playreadystatics.playreadycertificatesecuritylevel.aspx) property to get the security level of the client certificate to determine if hardware DRM is supported. Unless the returned certificate security level is greater than or equal to 3000, either the client is not individualized or provisioned (in which case this property returns 0) or hardware DRM is not in use (in which case this property returns a value that is less than 3000).
-
-## See also
-- [PlayReady DRM](playready-client-sdk.md)
+Vous pouvez également utiliser la propriété [**PlayReadyStatics.PlayReadyCertificateSecurityLevel**](https://msdn.microsoft.com/library/windows/apps/windows.media.protection.playready.playreadystatics.playreadycertificatesecuritylevel.aspx) pour obtenir le niveau de sécurité du certificat client afin de déterminer si la gestion des droits numériques en fonction du matériel est prise en charge. À moins que le niveau de sécurité renvoyé pour le certificat soit supérieur ou égal à 3 000, le client n’est pas individualisé ou configuré (auquel cas cette propriété renvoie 0) ou la gestion des droits numériques en fonction du matériel n’est pas utilisée (auquel cas cette propriété renvoie une valeur inférieure à 3 000).
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO5-->
 
 

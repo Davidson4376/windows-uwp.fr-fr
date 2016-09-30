@@ -1,58 +1,58 @@
 ---
 author: mijacobs
-Description: Content transition animations let you change the content of an area of the screen while keeping the container or background constant. New content fades in. If there is existing content to be replaced, that content fades out.
-title: Guidelines for content transition animations
+Description: "Les animations de transition de contenu vous permettent de modifier le contenu d’une zone de l’écran tout en maintenant le conteneur ou l’arrière-plan constant. Le nouveau contenu apparaît. Si du contenu déjà à l’écran doit être remplacé, il disparaît."
+title: "Recommandations en matière d’animations de transition de contenu"
 ms.assetid: 0188FDB4-E183-466f-8A03-EE3FF5C474B1
 translationtype: Human Translation
-ms.sourcegitcommit: d7236006f2c620a4ff0de4e0f413f32a2eaf5687
-ms.openlocfilehash: 2b3e0196b573fb426c9cd71fc613819a2dd2d615
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: dc233ef821259701eb93c09d1bdefcfa3d9bb69f
 
 ---
 
-# Content transition animations
+# Animations de transition de contenu
 
 
 
 
 
-**Important APIs**
+**API importantes**
 
--   [**ContentThemeTransition class (XAML)**](https://msdn.microsoft.com/library/windows/apps/br243104)
--   [**enterContent function (HTML)**](https://msdn.microsoft.com/library/windows/apps/hh701582)
+-   [**Classe ContentThemeTransition (XAML)**](https://msdn.microsoft.com/library/windows/apps/br243104)
+-   [**Fonction enterContent (HTML)**](https://msdn.microsoft.com/library/windows/apps/hh701582)
 
-Content transition animations let you change the content of an area of the screen while keeping the container or background constant. New content fades in. If there is existing content to be replaced, that content fades out.
+Les animations de transition de contenu vous permettent de modifier le contenu d’une zone de l’écran tout en maintenant le conteneur ou l’arrière-plan constant. Le nouveau contenu apparaît. Si du contenu déjà à l’écran doit être remplacé, il disparaît.
 
-## Do's and don'ts
-
-
--   Use an entrance animation when there is a set of new items to bring into an empty container. For example, after the initial load of an app, part of the app's content might not be immediately available for display. When that content is ready to be shown, use a content transition animation to bring that late content into the view.
--   Use content transitions to replace one set of content with another set of content that already resides in the same container within a view.
--   When bringing in new content, slide that content up (from bottom to top) into the view against the general page flow or reading order.
--   Introduce new content in a logical manner, for example, introduce the most important piece of content last.
--   If you have more than one container whose content is to be updated, trigger all of the transition animations simultaneously without any staggering or delay.
--   Don't use content transition animations when the entire page is changing. In that case, use the page transition animations instead.
--   Don't use content transition animations if the content is only refreshing. Content transition animations are meant to show movement. For refreshes, use fade animations.
+## <span id="Recommendations"></span><span id="recommendations"></span><span id="RECOMMENDATIONS"></span>Pratiques conseillées et déconseillées
 
 
+-   Utilisez une animation d’ouverture lorsque vous devez insérer un ensemble de nouveaux éléments dans un conteneur vide. Par exemple, après le chargement initial d’une application, une partie de son contenu est susceptible de ne pas pouvoir s’afficher immédiatement. Une fois le contenu prêt à l’affichage, utilisez une animation de transition de contenu pour activer son affichage.
+-   Utilisez les transitions de contenu pour remplacer un ensemble de contenu par un autre résidant déjà dans le même conteneur sur la zone d’affichage.
+-   Lorsque vous intégrez un nouveau contenu, faites glisser ce dernier de bas en haut pour l’insérer dans l’affichage dans le sens contraire du flux de pages général ou du sens de lecture.
+-   Introduisez le nouveau contenu de manière logique, par exemple le contenu le plus important en dernier.
+-   Si vous avez plusieurs conteneurs dont le contenu doit être actualisé, déclenchez l’intégralité des animations de transition simultanément sans aucune étape ou délai.
+-   N’utilisez pas d’animations de transition de contenu quand la page entière est en cours de modification. Dans ce cas, utilisez plutôt les animations de transition entre les pages.
+-   N’utilisez pas d’animation de transition de contenu si le contenu est uniquement en cours d’actualisation. Les animations de transition de contenu sont destinées à représenter du mouvement. Pour les actualisations, utilisez les animations en fondu.
 
-## Related articles
 
-**For developers (XAML)**
-* [Animations overview](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [Animating content transitions](https://msdn.microsoft.com/library/windows/apps/xaml/jj649426)
-* [Quickstart: Animating your UI using library animations](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
-* [**ContentThemeTransition class**](https://msdn.microsoft.com/library/windows/apps/br243104)
 
- 
+## <span id="related_topics"></span>Articles connexes
+
+**Pour les développeurs (XAML)**
+* [Vue d’ensemble des animations](https://msdn.microsoft.com/library/windows/apps/mt187350)
+* [Animation de transitions de contenu](https://msdn.microsoft.com/library/windows/apps/xaml/jj649426)
+* [Démarrage rapide: animation de votre interface utilisateur avec des animations de la bibliothèque](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [**Classe ContentThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br243104)
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

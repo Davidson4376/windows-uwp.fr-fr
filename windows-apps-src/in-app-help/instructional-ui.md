@@ -1,77 +1,77 @@
 ---
 author: QuinnRadich
-Description: Design an instructional UI that teaches users how to work with your Windows app.
-title: Guidelines for designing instructional UI
+Description: "Concevez une interface utilisateur d’instructions qui apprend aux utilisateurs comment se servir de votre application Windows."
+title: "Recommandations en matière de conception d’une interface utilisateur d’instructions"
 label: Instructional UI
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: 08b0b88e8ef17c2a8f264df5db4f971c8c49ab2e
-ms.openlocfilehash: 6fc4840ce37d05bbaf0e423049d79b4e0c4febfc
+ms.openlocfilehash: f9f1f34bb02cda89d31caa9453b6e3eb056e7bc9
 
 ---
 
-# Instructional UI guidelines
+# Recommandations en matière d’interface utilisateur d’instructions
 
-\[ Updated for Universal Windows Platform (UWP) apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour des applications UniversalWindowsPlatform (UWP) sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Sometimes it can be helpful to teach the user about functions in your app that might not be obvious to them, such as specific touch interactions. In these cases, you need to present instructions to the user through the UI so they can discover and use features they might have missed.
+Dans certains cas, il peut être utile de former l’utilisateur aux fonctions les plus subtiles de votre application, telles que des interactions tactiles spécifiques. Vous devez alors fournir des instructions par le biais de l’interface utilisateur pour signaler à l’utilisateur les fonctionnalités dont il risque de ne pas encore avoir eu connaissance.
 
-## <span id="when_to_use_instructional_ui"></span><span id="WHEN_TO_USE_INSTRUCTIONAL_UI"></span>When to use instructional UI
+## <span id="when_to_use_instructional_ui"></span><span id="WHEN_TO_USE_INSTRUCTIONAL_UI"></span>Quand utiliser l’interface utilisateur d’instructions
 
-Instructional UI has to be used carefully. When overused it can be easily ignored by, or annoy, the user, making it ineffective.
+L’interface utilisateur d’instructions doit être utilisée avec parcimonie. Si vous en abusez, cette interface risque d’être rapidement ignorée ou d’incommoder l’utilisateur, et donc de se révéler inefficace.
 
-Instructional UI should be used to help the user discover important and non-obvious features of your app, such as touch gestures or settings they may be interested in. It can also be used to inform users about new features or changes in your app that they might have otherwise overlooked.
+L’interface utilisateur d’instructions doit permettre à l’utilisateur de découvrir les fonctionnalités importantes et subtiles de votre application, comme des mouvements tactiles ou des paramètres qui sont susceptibles de l’intéresser. Il est également possible de recourir à cette interface pour signaler aux utilisateurs les nouveautés ou modifications de votre application qui sont susceptibles de lui avoir échappé.
 
-Unless your app is dependent on touch gestures, instructional UI should not be used to teach users the fundamental features of your app.
+À moins que votre application ne dépende des mouvements tactiles, l’interface utilisateur d’instructions ne doit pas être utilisée pour enseigner aux utilisateurs les fonctionnalités fondamentales de votre application.
 
-## <span id="writing_instructional_ui"></span><span id="WRITING_INSTRUCTIONAL_UI"></span>Principles of writing instructional UI
+## <span id="writing_instructional_ui"></span><span id="WRITING_INSTRUCTIONAL_UI"></span>Principes de création d’une interface utilisateur d’instructions
 
-Good instructional UI is relevant and educational to the user, and enhances the user experience. It should be:
+Une interface utilisateur d’instructions allie pertinence et pédagogie, et améliore l’expérience utilisateur. Elle doit présenter les caractéristiques suivantes:
 
--   **Simple:** Users don't want their experience to be interrupted with complicated information.
--   **Memorable:** Users don't want to see the same instructions every time they attempt a task, so instructions need to be something they'll remember.
--   **Immediately relevant:** If the instructional UI doesn't teach a user about something that they immediately want to do, they won't have a reason to pay attention to it.
+-   **Simplicité:** Les utilisateurs ne veulent pas que leur expérience soit interrompue par des informations complexes.
+-   **Facilité de mémorisation:** les utilisateurs ne veulent pas voir s’afficher les mêmes instructions chaque fois qu’ils tentent d’exécuter une tâche spécifique. Les instructions doivent donc se révéler faciles à mémoriser.
+-   **Pertinence immédiate:** si l’interface utilisateur d’instructions ne présente pas une procédure directement liée à la tâche que l’utilisateur souhaite exécuter, celui-ci n’aura pas de raison d’y prêter attention.
 
-Avoid overusing instructional UI, and be sure to choose the right topics. Do not teach:
+N’abusez pas de l’interface utilisateur d’instructions et prenez soin de choisir les rubriques adéquates. N’abordez pas les éléments suivants:
 
--   **Fundamental features:** If a user needs instructions to use your app, consider making the app design more intuitive.
--   **Obvious features:** If a user can figure out a feature on their own without instruction, then the instructional UI will just get in the way.
--   **Complex features:** Instructional UI needs to be concise. Users interested in complex features are usually willing to seek out instructions.
+-   **Fonctionnalités fondamentales:** si les utilisateurs ont besoin de disposer d’instructions d’utilisation concernant votre application, envisagez de retravailler la conception de votre application pour la rendre plus intuitive.
+-   **Fonctionnalités évidentes:** si un utilisateur peut comprendre le rôle d’une fonctionnalité sans aucune instruction, l’interface utilisateur d’instructions ne fera que le gêner.
+-   **Fonctionnalités complexes:** L’interface utilisateur d’instructions doit rester concise. Les utilisateurs intéressés par des fonctionnalités complexes sont généralement disposés à rechercher les instructions correspondantes.
 
-Avoid inconveniencing the user with your instructional UI. Do not:
+Évitez de déranger l’utilisateur avec votre interface utilisateur d’instructions. Pratiques déconseillées:
 
--   **Obscure important information:** Instructional UI should never get in the way of other features of your app.
--   **Force users to participate:** Users should be able to ignore instructional UI and still progress through the app.
--   **Displaying repeat information:** Don't harass the user with instructional UI, even if they ignore it the first time. Adding a setting to display instructional UI again is a better solution.
+-   **Masquer des informations importantes:** l’interface utilisateur d’instructions ne doit jamais occulter d’autres fonctionnalités de votre application.
+-   **Exiger la participation des utilisateurs:** les utilisateurs doivent avoir la possibilité d’ignorer l’interface utilisateur d’instructions et de continuer à parcourir l’application.
+-   **Afficher des informations répétées:** votre interface utilisateur d’instructions ne doit pas harceler l’utilisateur, même si ce dernier l’a ignorée la première fois. L’ajout d’un paramètre permettant de réafficher l’interface utilisateur d’instructions constitue une solution plus judicieuse.
 
-## <span id="examples_of_instructional_ui"></span><span id="EXAMPLES_OF_INSTRUCTIONAL_UI"></span>Examples of instructional UI
+## <span id="examples_of_instructional_ui"></span><span id="EXAMPLES_OF_INSTRUCTIONAL_UI"></span>Exemples d’interfaces utilisateur d’instructions
 
-Here are a few examples of instructional UI that can help your users:
+Voici quelques exemples d’interfaces utilisateur d’instructions susceptibles d’aider vos utilisateurs:
 
--   **Help users discover touch interactions.** The following screen shot shows instructional UI teaching a player how to use touch gestures in the game *Cut the Rope*.
+-   **Aidez les utilisateurs à découvrir les interactions tactiles.** L’écran suivant illustre une interface utilisateur d’instructions qui apprend à un joueur à se servir des interactions tactiles dans le jeu *Cut the Rope*.
 
-    ![screen shot from game showing instructional ui message, "slide acress to cut the rope"](images/in-game-controls-3.png)
+    ![capture d’écran d’un jeu montrant un message d’interface utilisateur d’instruction, «Effectuer un balayage transversal pour couper la corde»](images/in-game-controls-3.png)
 
--   **Make a great first impression.** When Movie Moments launches for the first time, instructional UI prompts the user to begin creating movies without obstructing their experience.
+-   **Faites une bonne première impression.** Quand l’application Instants vidéos est lancée pour la première fois, l’interface utilisateur d’instructions invite l’utilisateur à créer des films sans gêner son utilisation.
 
-    ![launch screen for movie moments app](images/instructional-ui-movie.png)
+    ![Écran de démarrage de l’application Instants vidéos](images/instructional-ui-movie.png)
 
--   **Guide users to take the next step in a complicated task.** In the Windows Mail app, a hint at the bottom of the Inbox directs users to **Settings** to access older messages.
+-   **Guidez les utilisateurs dans les tâches compliquées.** Dans l’application Courrier Windows, un texte en bas de la Boîte de réception les invite à utiliser les **Paramètres** pour accéder à des messages plus anciens.
 
-    ![cropped screen shot of windows mail app showing instructional ui message](images/instructional-ui-mail-inbox.png)
+    ![partie d’une capture d’écran de l’application Courrier Windows qui montre un message d’interface utilisateur d’instruction](images/instructional-ui-mail-inbox.png)
 
-    When the user clicks the message, the app's **Settings** flyout appears on the right side of the screen, allowing the user to complete the task. These screen shots show the Mail app before and after a user selects the instructional UI message.
+    Quand l’utilisateur clique sur le message, le menu volant **Paramètres** de l’application s’affiche sur le côté droit de l’écran, ce qui permet à l’utilisateur d’effectuer la tâche. Les captures d’écran suivantes montrent l’application Courrier avant et après la sélection du message d’interface utilisateur d’instructions par l’utilisateur.
 
-    | Before                                                               | After                                                                                                        |
+    | Avant                                                               | Après                                                                                                        |
     |----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
-    | ![screen shot of windows mail app](images/instructional-ui-mail.png) | ![screen shot of windows mail app with an extended settings flyout](images/instructional-ui-mail-flyout.png) |
+    | ![Capture d’écran de l’application Courrier Windows](images/instructional-ui-mail.png) | ![capture d’écran de l’application courrier windows avec un menu volant paramètres étendu](images/instructional-ui-mail-flyout.png) |
 
-## <span id="related_topics"></span>Related articles
+## <span id="related_topics"></span>Articles connexes
 
-* [Guidelines for app help](guidelines-for-app-help.md)
+* [Recommandations en matière d’aide de l’application](guidelines-for-app-help.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO1-->
 
 

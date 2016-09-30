@@ -1,43 +1,43 @@
 ---
 author: DBirtolo
 ms.assetid: 5B30E32F-27E0-4656-A834-391A559AC8BC
-title: Use the compass
-description: Learn how to use the compass to determine the current heading.
+title: Utiliser la boussole
+description: "Découvrez comment utiliser la boussole pour déterminer l’orientation actuelle."
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 05c13ff71e1c6dcfb84d46e37445c1699211951a
+ms.openlocfilehash: 2c2135867586909328b8d1080c413b3524322246
 
 ---
-# Use the compass
+# Utiliser la boussole
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-** Important APIs **
+** API importantes **
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705)
 
-\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
+\[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.\]
 
-Learn how to use the compass to determine the current heading.
+Découvrez comment utiliser la boussole pour déterminer l’orientation actuelle.
 
-An app can retrieve the current heading with respect to magnetic, or true, north. Navigation apps use the compass to determine the direction a device is facing and then orient the map accordingly.
+Une application peut récupérer l’orientation actuelle par rapport au nord magnétique ou géographique. Les applications de navigation utilisent la boussole pour déterminer la direction à laquelle un appareil fait face, puis pour orienter la carte de façon appropriée.
 
-## Prerequisites
+## Prérequis
 
-You should be familiar with Extensible Application Markup Language (XAML), Microsoft Visual C#, and events.
+Vous devez maîtriser le langage XAML (Extensible Application Markup Language), Microsoft Visual C# et les événements.
 
-The device or emulator that you're using must support a compass.
+L’appareil ou émulateur que vous utilisez doit prendre en charge une boussole.
 
-## Create a simple compass app
+## Créer une application de boussole simple
 
-This section is divided into two subsections. The first subsection will take you through the steps necessary to create a simple compass application from scratch. The following subsection explains the app you have just created.
+Cette section se divise en deuxsous-sections. La première sous-section vous permet d’accéder aux étapes nécessaires pour créer de bout en bout une application simple de boussole. La sous-section suivante décrit l’application que vous venez de créer.
 
 ### Instructions
 
--   Create a new project, choosing a **Blank App (Universal Windows)** from the **Visual C#** project templates.
+-   Créez un projet en choisissant une **Application vide (Windows universel)** dans les modèles de projet **Visual C#**.
 
--   Open your project's MainPage.xaml.cs file and replace the existing code with the following.
+-   Ouvrez le fichier MainPage.xaml.cs de votre projet et remplacez le code existant par ce qui suit.
 
 ```csharp
     using System;
@@ -126,25 +126,25 @@ You'll need to rename the namespace in the previous snippet with the name you ga
     </Page>
 ```
 
-You'll need to replace the first part of the class name in the previous snippet with the namespace of your app. For example, if you created a project named **CompassCS**, you'd replace `x:Class="App1.MainPage"` with `x:Class="CompassCS.MainPage"`. You should also replace `xmlns:local="using:App1"` with `xmlns:local="using:CompassCS"`.
+Vous devez remplacer la première partie du nom de la classe dans l’extrait de code précédent par l’espace de noms de votre application. Par exemple, si vous avez créé un projet nommé **CompassCS**, vous devez remplacer `x:Class="App1.MainPage"` par `x:Class="CompassCS.MainPage"`. Vous devez aussi remplacer `xmlns:local="using:App1"` par `xmlns:local="using:CompassCS"`.
 
--   Press F5 or select **Debug** > **Start Debugging** to build, deploy, and run the app.
+-   Appuyez sur F5 ou sélectionnez **Déboguer** > **Démarrer le débogage** pour générer, déployer et exécuter l’application.
 
-Once the app is running, you can change the compass values by moving the device or using the emulator tools.
+Une fois l’application en cours d’exécution, vous pouvez modifier les valeurs de la boussole en déplaçant l’appareil ou à l’aide des outils de l’émulateur.
 
--   Stop the app by returning to Visual Studio and pressing Shift+F5 or select **Debug** > **Stop Debugging** to stop the app.
+-   Pour arrêter l’application, retournez dans Visual Studio et appuyez sur Maj+ 5, ou sélectionnez **Déboguer** > **Arrêter le débogage**.
 
-### Explanation
+### Explication
 
-The previous example demonstrates how little code you'll need to write in order to integrate compass input in your app.
+L’exemple précédent démontre la faible quantité de code que vous devrez écrire afin d’intégrer l’entrée de la boussole dans votre application.
 
-The app establishes a connection with the default compass in the **MainPage** method.
+L’application établit une connexion avec la boussole par défaut dans la méthode **MainPage**.
 
 ```csharp
 _compass = Compass.GetDefault(); // Get the default compass object
 ```
 
-The app establishes the report interval within the **MainPage** method. This code retrieves the minimum interval supported by the device and compares it to a requested interval of 16 milliseconds (which approximates a 60-Hz refresh rate). If the minimum supported interval is greater than the requested interval, the code sets the value to the minimum. Otherwise, it sets the value to the requested interval.
+L’application établit l’intervalle de rapport dans la méthode **MainPage**. Le code suivant récupère l’intervalle minimal pris en charge par l’appareil et le compare à un intervalle demandé de 16millisecondes (ce qui représente une fréquence de rafraîchissement de 60Hz). Si l’intervalle pris en charge minimum est supérieur à l’intervalle demandé, le code définit la valeur sur l’intervalle minimum. Sinon, il définit la valeur sur l’intervalle demandé.
 
 ```csharp
 uint minReportInterval = _compass.MinimumReportInterval;
@@ -152,14 +152,14 @@ uint reportInterval = minReportInterval > 16 ? minReportInterval : 16;
 _compass.ReportInterval = reportInterval;
 ```
 
-The new compass data is captured in the **ReadingChanged** method. Each time the sensor driver receives new data from the sensor, it passes the values to your app using this event handler. The app registers this event handler on the following line.
+Les nouvelles données de la boussole sont capturées dans la méthode **ReadingChanged**. Chaque fois que le pilote du capteur reçoit de nouvelles données du capteur, il transmet les valeurs à votre application à l’aide de ce gestionnaire d’événements. L’application inscrit ce gestionnaire d’événements sur la ligne suivante.
 
 ```csharp
 _compass.ReadingChanged += new TypedEventHandler<Compass, 
 CompassReadingChangedEventArgs>(ReadingChanged);
 ```
 
-These new values are written to the TextBlocks found in the project's XAML.
+Ces nouvelles valeurs sont écrites dans les TextBlocks identifiés dans le code XAML du projet.
 
 ```xml
  <TextBlock HorizontalAlignment="Left" Height="22" Margin="8,18,0,0" TextWrapping="Wrap" Text="Magnetic Heading:" VerticalAlignment="Top" Width="104" Foreground="#FFFBF9F9"/>
@@ -168,9 +168,9 @@ These new values are written to the TextBlocks found in the project's XAML.
  <TextBlock x:Name="txtNorth" HorizontalAlignment="Left" Height="18" Margin="130,58,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="116" Foreground="#FFF5F1F1"/>
 ```
 
-## Related topics
+## Rubriques connexes
 
-* [Compass Sample](http://go.microsoft.com/fwlink/p/?linkid=241378)
+* [Exemple de boussole](http://go.microsoft.com/fwlink/p/?linkid=241378)
  
 
  
@@ -181,6 +181,6 @@ These new values are written to the TextBlocks found in the project's XAML.
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

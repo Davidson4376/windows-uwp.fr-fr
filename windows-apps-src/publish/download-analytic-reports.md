@@ -1,33 +1,33 @@
 ---
 author: jnHs
-Description: You can download .files that contain your analytics data so that you can review your stats and info offline.
-title: Download analytics reports
+Description: "Vous pouvez télécharger des fichiers contenant vos données d’analyse afin d’examiner vos statistiques et informations hors connexion."
+title: "Télécharger des rapports d’analyse"
 ms.assetid: BCA61ABF-16ED-42C3-9014-68629CB5A24F
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 99b751146adc2394e10c6deae58bd0fdb124888d
+ms.openlocfilehash: 959007d6d7c4e4c768f196fe04c2fa4a8ac6fc2e
 
 ---
 
-# Download analytics reports
+# Télécharger des rapports d’analyse
 
 
-You can download .files that contain your analytics data so that you can review your stats and info offline. Data is provided in .tsv (tab-separated values) files, which can be opened in a number of programs.
+Vous pouvez télécharger des fichiers contenant vos données d&#39;analyse afin d&#39;examiner vos statistiques et informations hors connexion. Ces données sont fournies dans des fichiers TSV (valeurs séparées par une tabulation) exploitables dans différents programmes.
 
-## To download a specific report
+## Pour télécharger un rapport spécifique
 
-1.  First, select the app for which you'd like to download info.
+1.  Tout d’abord, sélectionnez l’application pour laquelle vous souhaitez télécharger des informations.
 
-    > **Tip**  You can choose to download info all of your apps or a specific app. Note that you're not limited to downloading a report for the app which you were working in when you accessed the **Download reports** page in its **Analytics** section.
+    > **Conseil** Vous pouvez choisir de télécharger les informations de toutes vos applications ou d’une application spécifique. Notez que vous n’êtes pas limité au téléchargement d’un rapport pour l’application que vous utilisiez lorsque vous avez ouvert la page **Télécharger des rapports** dans sa section **Analyse**.
 
-2.  Select one of the available reports.
+2.  Sélectionnez l'un des rapports disponibles.
 
-3.  Select from the available values in the **Aggregation level** and **Date range** drop-down lists. Note that the options may vary depending on the type of report you've selected.
+3.  Sélectionnez des valeurs dans les listes déroulantes **Niveau d'agrégation** et **Plage de dates**. Notez que les options peuvent varier en fonction du type de rapport que vous avez sélectionné.
 
-4.  Click the **Download reports** button, and then save or open the .tsv file.
+4.  Cliquez sur le bouton **Télécharger les rapports**, puis enregistrez ou ouvrez le fichier TSV.
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,27 +1,27 @@
 ---
 author: TylerMSFT
-title: Reserved file and URI scheme names
-description: You can use URI associations to automatically launch your app when another app launches a specific URI scheme.
+title: "Noms de schéma d’URI et de fichier réservés"
+description: "Vous pouvez utiliser des associations d’URI pour lancer automatiquement votre application quand une autre application lance un schéma d’URI spécifique."
 ms.assetid: 7428C4A2-1380-4EBB-9C2A-7DF7B5C468AE
 translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: 2d3d647985701a7bbccc606fd485ad9f6361f9e7
+ms.openlocfilehash: 2736267bf72b1cadd2c635b15daf6975a70937df
 
 ---
-# Reserved file and URI scheme names
+# Noms de schéma d’URI et de fichier réservés
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-You can use URI associations to automatically launch your app when another app launches a specific URI scheme. But there are some URI associations that you can’t use, associations that are reserved. If your app registers for a reserved association, that registration will be ignored. This topic lists the reserved file and URI scheme names that are not available to your app.
+Vous pouvez utiliser des associations d’URI pour lancer automatiquement votre application quand une autre application lance un schéma d’URI spécifique. Il existe cependant des associations d’URI que vous ne pouvez pas utiliser, car elles sont réservées. Si votre application s’inscrit pour une association réservée, cette inscription est ignorée. Cette rubrique répertorie les noms de schéma d’URI et de fichier réservés, indisponibles pour votre application.
 
-## Reserved file types
+## Types de fichiers réservés
 
 
-There are two types of reserved file types: file types reserved for built-in apps and file types reserved for the operating system. When a file type reserved for a built-in app is launched, only the built-in app will launch. Any attempt to register your app with that file type is ignored. Similarly, any attempt to register your app with a file type reserved for the operating system also will be ignored.
+Il existe deux types de fichiers réservés : réservés aux applications intégrées et réservés au système d’exploitation. En cas de lancement d’un type de fichier réservé pour une application intégrée, seule celle-ci est lancée. Toute tentative d’inscription de votre application avec ce type de fichier est ignorée. De même, toute tentative d’inscription de votre application avec un type de fichier réservé au système d’exploitation est également ignorée.
 
-File types reserved for built-in apps
+Types de fichier réservés aux applications intégrées
 
 | .aac  | .icon    | .pem  | .wdp   |
 |-------|----------|-------|--------|
@@ -38,12 +38,12 @@ File types reserved for built-in apps
 | .ico  | .p7b     | .wav  |        |
  
 
-## File types reserved for the operating system
+## Types de fichier réservés au système d’exploitation
 
 
-The following file types are reserved for the operating system
+Les types de fichiers suivants sont réservés au système d’exploitation
 
-| .accountpicture-ms | its      | .ops           | .url      |
+| .accountpicture-ms | .its      | .ops           | .url      |
 |--------------------|----------|----------------|-----------|
 | .ade               | .jar     | .pcd           | .vb       |
 | .adp               | .js      | .pif           | .vbe      |
@@ -82,7 +82,7 @@ The following file types are reserved for the operating system
 | .isp               | .ocx     | .ttf           |           |
  
 
-## Reserved URI scheme names
+## Noms de schéma d’URI réservés
 
 
 | application.manifest                        | internetshortcut                      | ms-settings:network-mobilehotspot | shbfile                 |
@@ -128,6 +128,6 @@ The following file types are reserved for the operating system
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

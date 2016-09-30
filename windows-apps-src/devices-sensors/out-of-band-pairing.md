@@ -1,18 +1,18 @@
 ---
 author: IvorB
 ms.assetid: E9ADC88F-BD4F-4721-8893-0E19EA94C8BA
-title: Out-of-band pairing
-description: Out-of-band pairing allows apps to connect to a Point-of-Service peripheral without requiring discovery.
+title: Couplage hors-bande
+description: "Le couplage hors-bande permet aux applications de se connecter à un périphérique de point de service sans qu’une découverte soit requise."
 translationtype: Human Translation
 ms.sourcegitcommit: 0bf96b70a915d659c754816f4c115f3b3f0a5660
-ms.openlocfilehash: 283f0a0cfc7b3827e70ea79490818bc259d98ad1
+ms.openlocfilehash: d8d37b779a0f9a4bec36d73fcd2d35272c587b11
 
 ---
-# Out-of-band pairing
+# Couplage hors-bande
 
-Out-of-band pairing allows apps to connect to a Point-of-Service peripheral without requiring discovery. Apps must use the [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/windows.devices.pointofservice.aspx) namespace and pass in a specifically formatted string (out-of-band blob) to the appropriate **FromIdAsync** method for the desired peripheral. When **FromIdAsync** is executed, the host device pairs and connects to the peripheral before the operation returns to the caller.
+Le couplage hors-bande permet aux applications de se connecter à un périphérique de point de service sans qu’une découverte soit requise. Les applications doivent utiliser l’espace de noms [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/windows.devices.pointofservice.aspx) et transmettre une chaîne spécialement formatée (objet blob hors-bande) à la méthode **FromIdAsync** appropriée pour le périphérique souhaité. Quand **FromIdAsync** est exécuté, l’appareil hôte se couple et se connecte au périphérique avant que l’opération ne soit renvoyée à l’appelant.
 
-## Out-of-band blob format
+## Format d’objet blob hors-bande
 
 ```json
     "connectionKind":"Network",
@@ -23,44 +23,44 @@ Out-of-band pairing allows apps to connect to a Point-of-Service peripheral with
     "providerName":"PrinterProtocolProvider.dll"
 ```
 
-**connectionKind** - The type of connection. Valid values are "Network" and "Bluetooth".
+**connectionKind**: type de connexion. Les valeurs valides sont «Network» et «Bluetooth».
 
-**physicalAddress** - The MAC address of the peripheral. For example, in case of a network printer, this would be the MAC address that is provided by the printer test sheet in AA:BB:CC:DD:EE:FF format.
+**physicalAddress**: adresse MAC du périphérique. Par exemple, dans le cas d’une imprimante réseau, il s’agirait de l’adresse MAC fournie par la feuille de test de l’imprimante au format AA:BB:CC:DD:EE:FF.
 
-**connectionString** - The connection string of the peripheral. For example, in the case of a network printer, this would be the IP address provided by the printer test sheet in 192.168.1.1:9001 format. This field is omitted for all Bluetooth peripherals.
+**connectionString**: chaîne de connexion du périphérique. Par exemple, dans le cas d’une imprimante réseau, il s’agirait de l’adresse IP fournie par la feuille de test de l’imprimante au format 192.168.1.1:9001. Ce champ est omis pour tous les périphériques Bluetooth.
 
-**peripheralKinds** - The GUID for the device type. Valid values are:
+**peripheralKinds**: GUID pour le type de périphérique. Valeurs valides:
 
-| Device type | GUID |
+| Type de périphérique | GUID |
 | ---- | ---- |
-| *POS printer* | C7BC9B22-21F0-4F0D-9BB6-66C229B8CD33 |
-| *Barcode scanner* | C243FFBD-3AFC-45E9-B3D3-2BA18BC7EBC5 |
-| *Cash drawer* | 772E18F2-8925-4229-A5AC-6453CB482FDA |
+| *Imprimante POS* | C7BC9B22-21F0-4F0D-9BB6-66C229B8CD33 |
+| *Scanneur de code-barres* | C243FFBD-3AFC-45E9-B3D3-2BA18BC7EBC5 |
+| *Caisse enregistreuse* | 772E18F2-8925-4229-A5AC-6453CB482FDA |
 
 
-**providerId** - The GUID for the protocol provider class. Valid values are:
+**providerId**: GUID de la classe de fournisseur de protocole. Valeurs valides:
 
-| Protocol provider class | GUID |
+| Classe de fournisseur de protocole | GUID |
 | ---- | ---- |
-| *Generic ESC/POS network printer* | 02FFF12E-7291-4A5D-ADFA-DA8FB7769CD2 |
-| *Generic ESC/POS BT printer* | CCD5B810-95B9-4320-BA7E-78C223CAF418 |
-| *Epson BT printer* | 94917594-544F-4AF8-B53B-EC6D9F8A4464 |
-| *Epson network printer* | 9F0F8BE3-4E59-4520-BFBA-AF77614A31CE |
-| *Star network printer* | 1E3A32C2-F411-4B8C-AC91-CC2C5FD21996 |
-| *Socket BT scanner* | 6E7C8178-A006-405E-85C3-084244885AD2 |
-| *APG network drawer* | E619E2FE-9489-4C74-BF57-70AED670B9B0 |
-| *APG BT drawer* | 332E6550-2E01-42EB-9401-C6A112D80185 |
+| *Imprimante réseau ESC/POS générique* | 02FFF12E-7291-4A5D-ADFA-DA8FB7769CD2 |
+| *Imprimante BT ESC/POS générique* | CCD5B810-95B9-4320-BA7E-78C223CAF418 |
+| *Imprimante BT Epson* | 94917594-544F-4AF8-B53B-EC6D9F8A4464 |
+| *Imprimante réseau Epson* | 9F0F8BE3-4E59-4520-BFBA-AF77614A31CE |
+| *Imprimante réseau Star* | 1E3A32C2-F411-4B8C-AC91-CC2C5FD21996 |
+| *Scanneur BT socket* | 6E7C8178-A006-405E-85C3-084244885AD2 |
+| *Caisse réseau APG* | E619E2FE-9489-4C74-BF57-70AED670B9B0 |
+| *Caisse BT APG* | 332E6550-2E01-42EB-9401-C6A112D80185 |
 
 
-**providerName** - The name of the provider DLL. The default providers are:
+**providerName**: nom de la DLL de fournisseur. Fournisseurs par défaut:
 
-| Provider | DLL name |
+| Fournisseur | Nom de la DLL |
 | ---- | ---- |
-| Printer | PrinterProtocolProvider.dll |
-| Cash drawer | CashDrawerProtocolProvider.dll |
-| Scanner | BarcodeScannerProtocolProvider.dll |
+| Imprimante | PrinterProtocolProvider.dll |
+| Caisse enregistreuse | CashDrawerProtocolProvider.dll |
+| Scanneur | BarcodeScannerProtocolProvider.dll |
 
-## Usage example: Network printer
+## Exemple d’utilisation: imprimante réseau
 
 ```csharp
 String oobBlobNetworkPrinter =
@@ -74,7 +74,7 @@ String oobBlobNetworkPrinter =
 printer = await PosPrinter.FromIdAsync(oobBlobNetworkPrinter);
 ```
 
-## Usage example: Bluetooth printer
+## Exemple d’utilisation: imprimante Bluetooth
 
 ```csharp
 string oobBlobBTPrinter =
@@ -90,6 +90,6 @@ printer = await PosPrinter.FromIdAsync(oobBlobBTPrinter);
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

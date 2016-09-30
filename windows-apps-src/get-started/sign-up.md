@@ -1,30 +1,30 @@
 ---
-author: GrantMeStrength
+author: martinekuan
 ms.assetid: 16AB1111-4BA8-4352-B796-E97AA9243E31
-title: Ready to sign up?
-description: Register now for a developer account so you can get your apps into the Windows Store and participate in other Microsoft programs.
+title: "Êtes-vous prêt à vous inscrire?"
+description: "Inscrivez-vous maintenant pour obtenir un compte de développeur qui vous permettra d’ajouter vos applications au Windows Store et de participer à d’autres programmes Microsoft."
 translationtype: Human Translation
-ms.sourcegitcommit: 43214b9e2c786a007b8d9cdef7700e275101aba5
-ms.openlocfilehash: ddba8a7fe517ecb538a5632355fcb73a17fe54f7
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 53d23b3f8502e1f182c728b9f787fbbc4b694d42
 
 ---
-# Ready to sign up?
+# Êtes-vous prêt à vous inscrire ?
 
-Register now for a developer account so you can get your apps into the Windows Store and participate in other Microsoft programs.
+Inscrivez-vous maintenant pour obtenir un compte de développeur qui vous permettra d’ajouter vos applications au Windows Store et de participer à d’autres programmes Microsoft.
 
-[Sign up now!](http://go.microsoft.com/fwlink/p/?LinkId=615100)
+[Inscrivez-vous maintenant !](http://go.microsoft.com/fwlink/p/?LinkId=615100)
 
-## Opening your developer account
+## Ouverture de votre compte de développeur
 
-We offer [individual and company accounts in locations around the world](../publish/account-types-locations-and-fees.md). Check out our [overview of the sign-up process](../publish/opening-a-developer-account.md) to see how it works.
+Nous offrons des [comptes aussi bien aux particuliers qu’aux entreprises à travers le monde](../publish/account-types-locations-and-fees.md). Consultez notre [présentation du processus d’inscription](../publish/opening-a-developer-account.md) pour savoir comment procéder.
 
-## Have a name for your app?
+## Besoin d’un nom pour votre application?
 
-As soon as you open your developer account, you can [create your app by reserving a name](https://msdn.microsoft.com/library/windows/apps/JJ657967).
-
-
+Dès que vous ouvrez votre compte de développeur, vous pouvez [créer votre application en réservant un nom](https://msdn.microsoft.com/library/windows/apps/JJ657967).
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Jun16_HO4-->
 
 

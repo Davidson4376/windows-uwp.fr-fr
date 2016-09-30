@@ -1,32 +1,32 @@
 ---
 author: jwmsft
-description: The Binding markup extension is converted at XAML load time into an instance of the Binding class.
-title: Binding markup extension'
+description: "L’extension de balisage Binding est convertie au moment du chargement XAML en une instance de la classe Binding."
+title: Extension de balisage Binding
 ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
 translationtype: Human Translation
-ms.sourcegitcommit: 0f9955b897c626e7f6abb5557658e1b1e5937ffd
-ms.openlocfilehash: 95b48b55f11c4de0b4a51106b6cf5439bfa784b9
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: 740110809845220d919c6ba3c90b1393dbc8ae94
 
 ---
 
-# {Binding} markup extension
+# Extension de balisage {Binding}
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-**Note**  A new binding mechanism is available for Windows 10, which is optimized for performance and developer productivity. See [{x:Bind} markup extension](x-bind-markup-extension.md).
+**Important** Un nouveau mécanisme de liaison est disponible pour Windows 10, qui est optimisé pour la productivité des développeurs et les performances. Voir [extension de balisage {x:Bind}](x-bind-markup-extension.md).
 
-**Note**  For general info about using data binding in your app with **{Binding}** (and for an all-up comparison between **{x:Bind}** and **{Binding}**), see [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946).
+**Important** Pour plus d’informations sur l’utilisation de la liaison de données dans votre application avec **{Binding}** (et pour une comparaison entre **{x:Bind}** et **{Binding}**), voir [Présentation détaillée de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
-The **{Binding}** markup extension is used to data bind properties on controls to values comming from a data source such as code. The **{Binding}** markup extension is converted at XAML load time into an instance of the [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) class. This binding object gets a value from a property on a data source, and pushes it to the property on the control. The binding object can optionally be configured to observe changes in the value of the data source property and update itself based on those changes. It can also optionally be configured to push changes to the control value back to the source property. The property that is the target of a data binding must be a dependency property. For more info, see [Dependency properties overview](dependency-properties-overview.md).
+L’extension de balisage **{Binding}** est convertie au moment du chargement XAML en une instance de la classe [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820). Cet objet de liaison obtient une valeur d’une propriété sur une source de données. L’objet de liaison peut éventuellement être configuré pour observer les modifications de la valeur de la propriété de source de données, et s’actualiser en fonction de ces modifications. Il peut également être configuré pour renvoyer les modifications dans sa propre valeur à la propriété source. La propriété qui est la cible de la liaison de données doit être une propriété de dépendance. Pour plus d’informations, voir [Vue d’ensemble des propriétés de dépendance](dependency-properties-overview.md).
 
-**{Binding}** has the same dependency property precedence as a local value, and setting a local value in imperative code removes the effect of any **{Binding}** set in markup.
+**{Binding}** a la même propriété de dépendance qu’une valeur locale, et définir une valeur locale en code impératif supprime l’effet de tout **{Binding}** défini dans le balisage.
 
-**Sample apps that demonstrate {Binding}**
+**Exemples d’applications illustrant {Binding}**
 
--   Download the [Bookstore1](http://go.microsoft.com/fwlink/?linkid=532950) app.
--   Download the [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952) app.
+-   Téléchargez l’application [Bookstore1](http://go.microsoft.com/fwlink/?linkid=532950).
+-   Téléchargez l’application [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952).
 
-## XAML attribute usage
+## Utilisation des attributs XAML
 
 
 ``` syntax
@@ -39,60 +39,57 @@ The **{Binding}** markup extension is used to data bind properties on controls t
 <object property="{Binding propertyPath, bindingProperties}" .../>
 ```
 
-| Term | Description |
+| Terme | Description |
 |------|-------------|
-| *propertyPath* | A string that specifies the property path for the binding. More info is in the [Property path](#property-path) section below. |
-| *bindingProperties* | *propName*=*value*\[, *propName*=*value*\]*<br/>One or more binding properties that are specified using a name/value pair syntax. |
-| *propName* | The string name of the property to set on the [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) object. For example, "Converter". |
-| *value* | The value to set the property to. The syntax of the argument depends on the property of [Properties of the Binding class that can be set with {Binding}](#properties-of-binding) section below. |
+| *propertyPath* | Chaîne qui spécifie le chemin de propriété pour la liaison. Pour plus d’informations, voir la section [Chemin de propriété](#property-path) ci-dessous. |
+| *bindingProperties* | *propName* = *value*\[, *propName*=*value*\]*<br/>Une ou plusieurs propriétés de liaison spécifiées à l’aide d’une syntaxe constituée d’une ou plusieurs paires nom/valeur. |
+| *propName* | Nom de chaîne de la propriété à définir sur l’objet [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820). Par exemple, «Convertisseur». | 
+| *value* | Valeur à attribuer à la propriété. La syntaxe de l’argument dépend de la propriété de la section [Propriétés de la classe de liaison pouvant être définies avec {Binding}](#properties-of-binding) ci-dessous. |
 
-## Property path
+## Chemin de propriété
 
-*PropertyPath* sets the value of [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830), which describes the property that you're binding to (the source property). PropertyPath is a positional parameter, so you can specify it as the first unnamed parameter: `{Binding Path=...}`. Or you can use the parameter name explicitly: `{Binding Path=...}`.
+*PropertyPath* définit la valeur de [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830), qui est la propriété à laquelle vous liez (propriété source). Vous pouvez mentionner explicitement le nom de propriété : `{Binding Path=...}`. Ou vous pouvez l’omettre : `{Binding ...}`.
 
-The type of [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) is a property path, which is a string that evaluates to a property or sub-property of either your custom type or a framework type. The type can be, but does not need to be, a [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356). Steps in a property path are delimited by dots (.), and you can include multiple delimiters to traverse successive sub-properties. Use the dot delimiter regardless of the programming language used to implement the object being bound to.
+Le type de [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) est un chemin de propriété, qui est une chaîne correspondant à une propriété ou sous-propriété de votre type personnalisé ou d’un type d’infrastructure. Le type peut être, mais n’est pas nécessairement, un [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356). Les étapes dans un chemin de propriété sont délimitées par des points (.), et vous pouvez inclure plusieurs délimiteurs pour parcourir des sous-propriétés successives. Utilisez le point délimiteur quel que soit le langage de programmation utilisé pour implémenter l’objet cible de la liaison.
 
-For example, to bind UI to an employee object's first name property, your property path might be "Employee.FirstName". If you are binding an items control to a property that contains an employee's dependents, your property path might be "Employee.Dependents", and the item template of the items control would take care of displaying the items in "Dependents".
+Par exemple, pour lier une interface utilisateur à la propriété Prénom d’un objet employé, votre chemin de propriété pourrait être «Employee.FirstName». Si vous liez un contrôle d’éléments à une propriété contenant des dépendances d’un employé, votre chemin de propriété pourrait être «Employee.Dependents», et le modèle d’élément du contrôle d’éléments se chargerait de l’affichage des éléments dans «Dependents».
 
-If the data source is a collection, then a property path can specify items in the collection by their position or index. For example, "Teams\[0\].Players", where the literal "\[\]" encloses the "0" that specifies the first item in a collection.
+Si la source de données est une collection, un chemin de propriété peut spécifier les éléments de la collection selon leur position ou index. Par exemple, «Teams\[0\].Players», où le littéral «\[\]» encadre le «0» qui spécifie le premier élément d’une collection.
 
-When using an [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828) binding to an existing [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356), you can use attached properties as part of the property path. To disambiguate an attached property so that the intermediate dot in the attached property name is not considered a step into a property path, put parentheses around the owner-qualified attached property name; for example, `(AutomationProperties.Name)`.
+Lorsque vous utilisez une liaison [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828) vers un objet [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) existant, vous pouvez utiliser des propriétés jointes comme parties intégrantes du chemin de propriété. Pour lever toute ambiguïté concernant une propriété jointe et éviter que le point intermédiaire figurant dans le nom de la propriété ne soit considéré comme une étape dans un chemin de propriété, mettez le nom de propriété jointe qualifié par le propriétaire entre parenthèses ; par exemple, `(AutomationProperties.Name)`.
 
-A property path intermediate object is stored as a [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) object in a run-time representation, but most scenarios won't need to interact with a **PropertyPath** object in code. You can usually specify the binding info you need using XAML.
+Un objet intermédiaire de chemin de propriété est stocké en tant qu’objet [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) dans une représentation d’exécution, mais la plupart des cas ne nécessitent pas d’interaction avec un objet **PropertyPath** dans le code. Vous pouvez généralement spécifier les informations de liaison dont vous avez besoin avec XAML.
 
-For more info about the string syntax for a property path, property paths in animation feature areas, and constructing a [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) object, see [Property-path syntax](property-path-syntax.md).
+Pour plus d’informations sur la syntaxe de chaîne d’un chemin de propriété, des chemins de propriété dans les zones de fonctionnalités d’animation et la construction d’un objet [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259), voir [Syntaxe de PropertyPath](property-path-syntax.md).
 
-## Properties of the Binding class that can be set with {Binding}
+## Propriétés de la classe de liaison pouvant être définies avec {Binding}
 
 
-**{Binding}** is illustrated with the *bindingProperties* placeholder syntax because there are multiple read/write properties of a [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) that can be set in the markup extension. The properties can be set in any order with comma-separated *propName*=*value* pairs. Some of the properties require types that don't have a type conversion, so these require markup extensions of their own nested within the **{Binding}**.
+**{Binding}** est illustrée avec la syntaxe de l’espace réservé *bindingProperties*, car plusieurs propriétés en lecture/écriture d’un [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) peuvent être définies dans l’extension de balisage. Les propriétés peuvent être définies dans n’importe quel ordre à l’aide de paires *propName*=*value* séparées par des virgules. Certaines propriétés requièrent des types sans conversion de type. Elles nécessitent donc leurs propres extensions de balisage imbriquées dans la **{Binding}**.
 
-| Property | Description |
+| Propriété | Description |
 |----------|-------------|
-| [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) | See the [Property path](#property-path) section above. |
-| [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826) | Specifies a converter object that is called by the binding engine. The converter can be set in markup using the [{StaticResource} markup extension](staticresource-markup-extension.md) to reference to that object from a resource dictionary. |
-| [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) | Specifies the culture to be used by the converter. (If you're setting [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826).) The culture is set as a standards-based identifier. For more info, see [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) |
-| [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827) | Specifies a converter parameter that can be used in converter logic. (If you're setting [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826).) Most converters use simple logic that get all the info they need from the passed value to convert, and don't need a **ConverterParameter** value. The **ConverterParameter** parameter is for more complex converter implementations that have conditional logic that keys off what's passed in **ConverterParameter**. You can write a converter that uses values other than strings but this is uncommon, see Remarks in **ConverterParameter** for more info. |
-| [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828) | Specifies a data source by referencing another element in the same XAML construct that has a **Name** property or [x:Name attribute](x-name-attribute.md). This is often use to share related values or use sub-properties of one UI element to provide a specific value for another element, for example in a XAML control template. |
-| [**FallbackValue**](https://msdn.microsoft.com/library/windows/apps/dn279345) | Specifies a value to display when the source or path cannot be resolved. |
-| [**Mode**](https://msdn.microsoft.com/library/windows/apps/br209829) | Specifies the binding mode, as one of these values: "OneTime", "OneWay", or "TwoWay". These correspond to the constant names of the [**BindingMode**](https://msdn.microsoft.com/library/windows/apps/br209822) enumeration. The default depends on the binding target but in most cases it is "OneWay". Note that this differs from the default for **{x:Bind}**, which is "OneTime". | 
-| [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) | Specifies a data source by describing the position of the binding source relative to the position of the binding target. This is most often used in bindings within XAML control templates. Setting the [{RelativeSource} markup extension](relativesource-markup-extension.md). |
-| [**Source**](https://msdn.microsoft.com/library/windows/apps/br209832) | Specifies the object data source. Within the **Binding** markup extension, the [**Source**](https://msdn.microsoft.com/library/windows/apps/br209832) property requires an object reference, such as a [{StaticResource} markup extension](staticresource-markup-extension.md) reference. If this property is not specified, the acting data context specifies the source. It's more typical to not specify a Source value in individual bindings, and instead to rely on the shared **DataContext** for multiple bindings. For more info see [**DataContext**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.datacontext.aspx) or [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946). |
-| [**TargetNullValue**](https://msdn.microsoft.com/library/windows/apps/dn279347) | Specifies a value to display when the source value resolves but is explicitly **null**. |
-| [**UpdateSourceTrigger**](https://msdn.microsoft.com/library/windows/apps/dn279350) | Specifies the timing of binding source updates. If unspecified, the default is **Default**. |
+| [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) | Voir la section [Chemin de propriété](#property-path) ci-dessus. |
+| [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826) | Spécifie l’objet convertisseur appelé par le moteur de liaison. Le convertisseur peut être défini en XAML, mais uniquement si vous faites référence à une instance d’objet que vous avez assignée dans une référence d’[extension de balisage {StaticResource}](staticresource-markup-extension.md) à cet objet dans le dictionnaire de ressources. |
+| [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) | Spécifie la culture que doit utiliser le convertisseur. (Si vous définissez [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826).) La culture est définie comme un identificateur basé sur des normes. Pour plus d’informations, voir **ConverterLanguage** | 
+| [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827) | Spécifie le paramètre de convertisseur qui peut être utilisé dans la logique du convertisseur. (Si vous définissez [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826).) La plupart des convertisseurs utilisent une logique simple qui obtient toutes les informations de la valeur transmise à convertir, et ne nécessitent aucune valeur **ConverterParameter**. Le paramètre **ConverterParameter** est destiné aux implémentations de convertisseur moyennement avancées qui comprennent plusieurs logiques basées sur ce qui est transmis dans **ConverterParameter**. Vous pouvez écrire un convertisseur qui utilise des valeurs qui ne sont pas des chaînes, mais il s’agit d’un scénario peu courant. Pour plus d’informations, voir Remarques dans **ConverterParameter**. |
+| [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828) | Spécifie une source de données en faisant référence à un autre élément dans la même construction XAML qui possède une propriété **Name** ou un attribut [x:Name](x-name-attribute.md). Cette propriété est souvent utilisée pour partager des valeurs associées ou utiliser des sous-propriétés d’un élément d’interface utilisateur pour fournir une valeur spécifique pour un autre élément, par exemple dans un modèle de contrôle XAML. |
+| [**FallbackValue**](https://msdn.microsoft.com/library/windows/apps/dn279345) | Spécifie une valeur à afficher quand la source ou le chemin ne peuvent pas être résolus. | 
+| [**Mode**](https://msdn.microsoft.com/library/windows/apps/br209829) | Spécifie le mode de liaison, sous la forme de l’une des chaînes suivantes: «OneTime», «OneWay» ou «TwoWay». Ces chaînes correspondent aux noms de constantes de l’énumération [**BindingMode**](https://msdn.microsoft.com/library/windows/apps/br209822). La valeur par défaut dépend de la cible de la liaison mais, dans la plupart des cas, il s’agit de «OneWay». Notez qu’elle diffère de la valeur par défaut de **{x:Bind}**, qui est « OneTime ». | 
+| [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) | Spécifie une source de données en décrivant la position de la source de liaison par rapport à la position de la cible de liaison. Elle est exprimée en termes de graphique d’objet d’exécution, par exemple en spécifiant le parent de l’objet. Définition de l’[extension de balisage {RelativeSource}](relativesource-markup-extension.md). |
+| [**Source**](https://msdn.microsoft.com/library/windows/apps/br209832) | Spécifie la source de données de l’objet. Dans l’extension de balisage **Binding**, la propriété [**Source**](https://msdn.microsoft.com/library/windows/apps/br209832) nécessite une référence d’objet comme par exemple une référence de [l’extension de balisage {StaticResource}](staticresource-markup-extension.md). Si cette propriété n’est pas spécifiée, le contexte de données actif spécifie la source. Il est plus normal de ne pas spécifier une valeur Source dans les liaisons individuelles et de compter plutôt sur l’élément **DataContext** partagé pour plusieurs liaisons. Pour plus d’informations, voir [**DataContext**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.datacontext.aspx) ou [Présentation détaillée de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt210946). |
+| [**TargetNullValue**](https://msdn.microsoft.com/library/windows/apps/dn279347) | Spécifie une valeur à afficher quand la valeur de la source est résolue, mais est explicitement **null**. |
+| [**UpdateSourceTrigger**](https://msdn.microsoft.com/library/windows/apps/dn279350) | Spécifie le minutage des mises à jour de la source de liaison. Si cette valeur n’est pas spécifiée, la valeur par défaut est **Default**. |
 
-**Note**  If you're converting markup from **{x:Bind}** to **{Binding}**, then be aware of the differences in default values for the **Mode** property.
+**Important** Si vous convertissez un balisage de **{x:Bind}** en **{Binding}**, soyez attentif aux différences de valeur par défaut de la propriété **Mode**.
 
-[**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826), [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) and **ConverterLanguage** are all related to the scenario of converting a value or type from the binding source into a type or value that is compatible with the binding target property. For more info and examples, see the "Data conversions" section of [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946).
+[ **Converter** ](https://msdn.microsoft.com/library/windows/apps/br209826), [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) et **ConverterLanguage** sont tous liés au scénario de conversion d’une valeur ou d’un type de la source de liaison en type ou valeur compatible avec la propriété cible de liaison. Pour obtenir plus d’informations et des exemples, voir la section « Conversions de données » de la rubrique [Présentation détaillée de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
-> [!NOTE]
-> Starting in Windows 10, version 1607, the XAML framework provides a built in Boolean to Visibility converter. The converter maps **true** to the **Visible** enumeration value and **false** to **Collapsed** so you can bind a Visibility property to a Boolean without creating a converter. To use the built in converter, your app's minimum target SDK version must be 14393 or later. You can't use it when your app targets earlier versions of Windows 10. For more info about target versions, see [Version adaptive code](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code).
+[**Source**](https://msdn.microsoft.com/library/windows/apps/br209832), [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) et [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828) spécifient une source de liaison, ils s’excluent donc mutuellement.
 
-[**Source**](https://msdn.microsoft.com/library/windows/apps/br209832), [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831), and [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828) specify a binding source, so they are mutually exclusive.
+**Conseil** Si vous avez besoin de spécifier une accolade simple pour une valeur, comme dans [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) ou [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827), faites-la précéder d’une barre oblique inverse : `\{`. Vous pouvez également placer l’ensemble de la chaîne qui contient les accolades à échapper dans une paire de guillemets secondaire. Par exemple : `ConverterParameter='{Mix}'`.
 
-**Tip**  If you need to specify a single curly brace for a value, such as in [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) or [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827), then precede it with a backslash: `\{`. Alternatively, enclose the entire string that contains the braces that need escaping in a secondary quotation set, for example `ConverterParameter='{Mix}'`.
-
-## Examples
+## Exemples
 
 ```XML
 <!-- binding a UI element to a view model -->    
@@ -115,22 +112,23 @@ For more info about the string syntax for a property path, property paths in ani
     <Slider x:Name="sliderValueConverter" ... />
     <TextBox Text="{Binding Path=Value, ElementName=sliderValueConverter,
         Mode=OneWay,
-        Converter={StaticResource GradeConverter}}"/>
+        Converter={StaticResource GradeConverter}}"/> 
 </Page>
 ```
 
-The second example sets four different [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) properties: [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828), [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830), [**Mode**](https://msdn.microsoft.com/library/windows/apps/br209829) and [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826). **Path** in this case is shown explicitly named as a **Binding** property. The **Path** is evaluated to a data binding source that is another object in the same run-time object tree, a [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) named `sliderValueConverter`.
+Ce deuxième exemple définit quatre propriétés de [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) différentes : [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828), [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830), [**Mode**](https://msdn.microsoft.com/library/windows/apps/br209829) et [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826). Dans le cas présent, **Path** est explicitement nommée comme étant une propriété de **Binding**. La propriété **Path** est évaluée à une source de liaison de données qui est un autre objet de la même arborescence d’objets d’exécution, un [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) nommé `sliderValueConverter`.
 
-Note how the [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826) property value uses another markup extension, [{StaticResource} markup extension](staticresource-markup-extension.md), so there are two nested markup extension usages here. The inner one is evaluated first, so that once the resource is obtained there's a practical [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903) (a custom class that's instantiated by the `local:S2Formatter` element in resources) that the binding can use.
+Notez comment la valeur de propriété [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826) utilise une autre extension de balisage, l’[extension de balisage {StaticResource}](staticresource-markup-extension.md). Il y a donc deux utilisations d’extensions de balisage imbriquées ici. L’utilisation la plus imbriquée est évaluée en premier. Ainsi, une fois la ressource obtenue, il y a une classe [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903) (classe personnalisée qui est instanciée par l’élément `local:S2Formatter` dans les ressources) que la liaison peut utiliser.
 
-## Tools support
+## Prise en charge des outils
 
-Microsoft IntelliSense in Microsoft Visual Studio displays the properties of the data context while authoring **{Binding}** in the XAML markup editor. As soon as you type "{Binding", data context properties appropriate for [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) are displayed in the dropdown. IntelliSense also helps with the other properties of [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820). For this to work, you must have either the data context or the design-time data context set in the markup page. **Go To Definition** (F12) also works with **{Binding}**. Alternatively, you can use the data binding dialog.
+Microsoft IntelliSense dans Microsoft Visual Studio affiche les propriétés du contexte de données lors de l’écriture de **{Binding}** dans l’éditeur de balisage XAML. Dès que vous tapez « {Binding », les propriétés de contexte de données appropriées pour [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) sont affichées dans la liste déroulante. IntelliSense est également utile avec les autres propriétés de [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820). Pour ce faire, vous devez disposer soit du contexte de données, soit du contexte de données au moment de la conception défini dans la page de balisage. **Atteindre la définition** (F12) fonctionne également avec **{Binding}**. Vous pouvez aussi utiliser la boîte de dialogue de liaison de données.
 
  
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

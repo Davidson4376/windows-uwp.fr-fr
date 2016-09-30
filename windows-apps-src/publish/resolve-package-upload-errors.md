@@ -1,47 +1,47 @@
 ---
 author: jnHs
-Description: If you encounter errors while uploading app packages during the app submission process, you must resolve them before you can submit your app to the Store.
-title: Resolve package upload errors
+Description: "Si vous rencontrez des erreurs de chargement des packages d’application au cours du processus de soumission d’application, vous devez les corriger avant de soumettre votre application au Windows Store."
+title: "Résolution des erreurs de chargement de package"
 ms.assetid: 0D01E43C-F3A7-4FA2-B479-1B5579FF531A
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c55314d6da819100cc3ed6782cc151d55dc1f8cb
+ms.openlocfilehash: afd2a08ed637502827e3207702d7659ed70148a0
 
 ---
 
-# Resolve package upload errors
+# Résolution des erreurs de chargement de package
 
 
-If you encounter errors while [uploading app packages](upload-app-packages.md) during the [app submission](app-submissions.md) process, you must resolve them before you can submit your app to the Store. The error message will indicate what the problem is and what you might need to do in order to fix the issue. Here are a few pointers to additional info to help you resolve these errors.
+Si vous rencontrez des erreurs de [chargement des packages d’application](upload-app-packages.md) au cours du processus de [soumission d’application](app-submissions.md), vous devez les corriger avant de soumettre votre application au Windows Store. Le message d’erreur indique la nature du problème et ce que vous devez faire pour le résoudre. Voici quelques liens vers des informations supplémentaires pour vous aider à résoudre ces erreurs.
 
-## Package type errors for Windows Phone 8.1
-
-
-When you are updating apps that were previously published for Windows Phone 8.1, you may encounter errors related to package types. For more info about package type requirements, see [Maintaining package compatibility for Windows Phone 8.1](guidance-for-app-package-management.md#maintaining-package-compatibility-for-windows-phone-8-1).
-
-Failure to follow these requirements will result in package upload errors that will prevent you from completing your submission.
-
-## Version number conflicts
+## Erreurs de type de package pour Windows Phone 8.1
 
 
-For info about resolving errors related to version numbers and the requirements when submitting updates, see [Package version numbering](package-version-numbering.md).
+Lors de la mise à jour d’applications précédemment publiées pour Windows Phone 8.1, vous risquez de rencontrer des erreurs liées aux types de packages. Pour plus d’informations sur les exigences relatives aux types de packages, voir [Maintien de la compatibilité de package pour Windows Phone 8.1](guidance-for-app-package-management.md#maintaining-package-compatibility-for-windows-phone-8-1).
 
-Additionally, be aware that if your submission has more than one Windows Phone 8.1 XAP, they must have the same version number.
+Le non-respect de ces exigences se traduit par des erreurs de chargement de package qui vous empêchent d’achever votre soumission.
 
-**Note**  For additional questions related to other error messages and help with resolving them, please visit our [forums](http://go.microsoft.com/fwlink/p/?LinkId=224196).
+## Conflits de numéros de version
 
- 
+
+Pour plus d’informations sur la résolution d’erreurs liées aux numéros de version et les exigences relatives à la soumission de mises à jour, voir [Numérotation des versions de package](package-version-numbering.md).
+
+Sachez en outre que, si votre soumission comprend plusieurs XAP Windows Phone8.1, ceux-ci doivent avoir le même numéro de version.
+
+**Remarque** Pour des questions supplémentaires sur d’autres messages d’erreur et une aide pour les résoudre, veuillez visiter nos [forums](http://go.microsoft.com/fwlink/p/?LinkId=224196).
 
  
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

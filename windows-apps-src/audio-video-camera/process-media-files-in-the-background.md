@@ -5,7 +5,7 @@ description: "Cet article vous montre comment utiliser MediaProcessingTrigger et
 title: "Traiter des fichiers multimédias en arrière-plan"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 704fa52a9e98382940b7863d6196ca0af5d33460
+ms.openlocfilehash: dcf655ff80c4463a567ade0b6d1cc784b60c18be
 
 ---
 
@@ -140,6 +140,6 @@ Le gestionnaire d’événements **OnCompleted** est appelé lorsque l’exécut
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

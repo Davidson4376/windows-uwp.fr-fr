@@ -1,34 +1,33 @@
 ---
 author: mcleanbyron
 ms.assetid: E322DFFE-8EEC-499D-87BC-EDA5CFC27551
-description: Each Windows Store transaction that results in a successful product purchase can optionally return a transaction receipt.
-title: Use receipts to verify product purchases
+description: "Chaque transaction du Windows Store qui se traduit par un achat de produit peut éventuellement renvoyer un reçu de transaction."
+title: "Utiliser des reçus pour vérifier les achats de produits"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 01b75d25c385d8dd856af79581fb4a346064c400
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: b1322b74bf1038f05cd1cba275e432e279ed362d
 
 ---
 
-# Use receipts to verify product purchases
+# Utiliser des reçus pour vérifier les achats de produits
 
 
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
->**Note**&nbsp;&nbsp;The examples in this article use members of the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace. If your app targets Windows 10, version 1607, or later, we recommend that you use members of the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace to manage in-app purchases instead of the Windows.ApplicationModel.Store namespace. For more information, see [In-app purchases and trials](in-app-purchases-and-trials.md).
-
-**Important APIs**
+**API importantes**
 
 -   [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765)
 -   [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766)
 
-Each Windows Store transaction that results in a successful product purchase can optionally return a transaction receipt. This receipt provides information about the listed product and monetary cost to the customer.
+Chaque transaction du WindowsStore qui se traduit par un achat de produit peut éventuellement renvoyer un reçu de transaction. Ce reçu fournit des informations sur le produit listé et le coût monétaire pour le client.
 
-Having access to this information supports scenarios where your app needs to verify that a user purchased your app, or has made in-app product purchases from the Windows Store. For example, imagine a game that offers downloaded content. If the user who purchased the game content wants to play it on a different device, you need to verify that the user already owns the content. Here's how.
+L’accès à ces informations permet les scénarios dans lesquels votre application doit vérifier qu’un utilisateur a acheté votre application ou qu’il a effectué des achats de produits dans l’application dans le Windows Store. Par exemple, imaginez un jeu qui offre du contenu téléchargé. Si l’utilisateur qui a acheté le contenu du jeu veut jouer à ce jeu sur un autre appareil, vous devez vérifier qu’il a bien acheté le contenu. Voici comment procéder :
 
-## Requesting a receipt
+## Demande d’un reçu
 
 
-The **Windows.ApplicationModel.Store** namespace supports two ways of getting a receipt: by using the [**CurrentApp.RequestProductPurchaseAsync | requestProductPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/dn263381) or [**CurrentApp.RequestAppPurchaseAsync | requestAppPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/hh967813) method and using the *includeReceipt* parameter, or by calling the [**CurrentApp.GetAppReceiptAsync | getAppReceiptAsync**](https://msdn.microsoft.com/library/windows/apps/hh967811) method. An app receipt looks something like this.
+L’espace de noms **Windows.ApplicationModel.Store** prend en charge deux façons d’obtenir un reçu : en utilisant la méthode [**CurrentApp.RequestProductPurchaseAsync | requestProductPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/dn263381) ou [**CurrentApp.RequestAppPurchaseAsync | requestAppPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/hh967813) et le paramètre *includeReceipt*, ou en appelant la méthode [**CurrentApp.GetAppReceiptAsync | getAppReceiptAsync**](https://msdn.microsoft.com/library/windows/apps/hh967811). Un reçu d’application ressemble à ceci.
 
 ```XML
 <Receipt Version="1.0" ReceiptDate="2012-08-30T23:10:05Z" CertificateId="b809e47cd0110a4db043b3f73e83acd917fe1336" ReceiptDeviceId="4e362949-acc3-fe3a-e71b-89893eb4f528">
@@ -51,7 +50,7 @@ The **Windows.ApplicationModel.Store** namespace supports two ways of getting a 
 </Receipt>
 ```
 
-A product receipt looks like this.
+Un reçu de produit ressemble à ceci.
 
 ```XML
 <Receipt Version="1.0" ReceiptDate="2012-08-30T23:08:52Z" CertificateId="b809e47cd0110a4db043b3f73e83acd917fe1336" ReceiptDeviceId="4e362949-acc3-fe3a-e71b-89893eb4f528">
@@ -73,12 +72,12 @@ A product receipt looks like this.
 </Receipt>
 ```
 
-You can use either of these receipt examples to test your validation code.
+Vous pouvez utiliser ces exemples de reçu pour tester votre code de validation.
 
-## Validating a receipt
+## Validation d’un reçu
 
 
-After you get a receipt, you need your back-end system (a web service or something similar) to validate it. Here's a .NET Framework example of that validation process.
+Après avoir obtenu un reçu, vous devez faire en sorte que votre système dorsal (un service Web ou quelque chose de similaire) le valide. Voici un exemple .NET Framework de ce processus de validation.
 
 ```CSharp
 using System;
@@ -157,7 +156,7 @@ namespace ReceiptVerificationSample
             {
                 const int MaxCertificateSize = 10000;
 
-                // We are attempting to retrieve the following url. The getAppReceiptAsync website at
+                // We are attempting to retrieve the following url. The getAppReceiptAsync website at 
                 // http://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.getappreceiptasync.aspx
                 // lists the following format for the certificate url.
                 String certificateUrl = String.Format("https://go.microsoft.com/fwlink/?LinkId=246509&cid={0}", certificateId);
@@ -242,6 +241,9 @@ namespace ReceiptVerificationSample
 
 
 
-<!--HONumber=Aug16_HO5-->
+
+
+
+<!--HONumber=Jun16_HO4-->
 
 

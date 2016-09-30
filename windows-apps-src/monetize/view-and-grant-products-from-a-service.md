@@ -1,49 +1,49 @@
 ---
 author: mcleanbyron
 ms.assetid: B071F6BC-49D3-4E74-98EA-0461A1A55EFB
-description: If you have a catalog of apps and add-ons, you can use the Windows Store collection API and Windows Store purchase API to access ownership information for these products from your services.
-title: View and grant products from a service
+description: "Si vous disposez d’un catalogue d’applications et de produits intégrés à l’application (PIA), vous pouvez utiliser l’API de collection du WindowsStore et l’API d’achat du WindowsStore pour accéder aux informations de propriété de ces produits à partir de vos services."
+title: "Afficher et octroyer des produits à partir d’un service"
 translationtype: Human Translation
-ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
-ms.openlocfilehash: 2bd637985441cf2f8fbe8366f207369b3a4dc696
+ms.sourcegitcommit: 204bace243fb082d3ca3b4259982d457f9c533da
+ms.openlocfilehash: 1e17703442ce539de941890a0616fc5e08391d70
 
 ---
 
-# View and grant products from a service
+# Afficher et octroyer des produits à partir d’un service
 
 
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
+Si vous disposez d’un catalogue d’applications et de produits intégrés à l’application (PIA), vous pouvez utiliser l’*API de collection du Windows Store* et l’*API d’achat du Windows Store* pour accéder aux informations de propriété de ces produits à partir de vos services.
 
-If you have a catalog of apps and add-ons (also known as in-app products or IAPs), you can use the *Windows Store collection API* and *Windows Store purchase API* to access ownership information for these products from your services.
+Ces API sont constituées des méthodes REST, qui sont conçues pour être utilisées par les développeurs dont les catalogues de PIA sont pris en charge par les services multiplateformes. Ces API vous permettent d’effectuer les actions suivantes :
 
-These APIs consist of REST methods that are designed to be used by developers with add-on catalogs that are supported by cross-platform services. These APIs enable you to do the following:
+-   API de collection du Windows Store : demander des applications ou des PIA possédés par un utilisateur donné ou signaler le traitement de la commande d’un produit consommable.
+-   API d’achat du Windows Store : octroyer une application ou un PIA gratuits à un utilisateur donné.
 
--   Windows Store collection API: Query for apps and add-ons owned by a given user, or report a consumable product as fulfilled.
--   Windows Store purchase API: Grant a free app or add-on to a given user.
-
-## Using the Windows Store collection API and Windows Store purchase API
+## Utilisation de l’API de collection et de l’API d’achat du Windows Store
 
 
-The Windows Store collection API and purchase API use Azure Active Directory (Azure AD) authentication to access customer ownership information. Before you can call these APIs, you must apply Azure AD metadata to your application in the Windows Dev Center dashboard and generate several required access tokens and keys. The following steps describe the end-to-end process:
+L’API de collection et l’API d’achat du Windows Store utilisent l’authentification Azure Active Directory (Azure AD) pour accéder aux informations de propriété client. Avant de pouvoir appeler ces API, vous devez appliquer des métadonnées Azure AD à votre application dans le tableau de bord du Centre de développement Windows et générer plusieurs jetons et clés d’accès requis. Les étapes suivantes décrivent le processus de bout en bout :
 
-1.  [Configure a Web application in Azure AD](#step-1:-configure-a-web-application-in-azure-ad). This application represents your cross-platform services in the context of Azure AD.
-2.  [Associate your Azure AD client ID with your application in the Windows Dev Center dashboard](#step-2:-associate-your-azure-ad-client-id-with-your-application-in-the-windows-dev-denter-dashboard).
-3.  In your service, [generate Azure AD access tokens](#step-3:-retrieve-access-tokens-from-azure-ad) that represent your publisher identity.
-4.  In client-side code in your Windows app, [generate a Windows Store ID key](#step-4:-generate-a-windows-store-id-key-from-client-side-code-in-your-app) that represents the identity of the current user, and pass the Windows Store ID key back to your service.
-5.  After you have the required Azure AD access token and Windows Store ID key, [call the Windows Store collection API or purchase API from your service](#step-5:-call-the-windows-store-collection-api-or-purchase-api-from-your-service).
+1.  [Configurer une application web dans Azure AD](#step-1:-configure-a-web-application-in-azure-ad). Cette application représente vos services inter-plateformes dans le contexte d’Azure AD.
+2.  [Associer votre ID client Azure AD à votre application dans le tableau de bord du Centre de développement Windows](#step-2:-associate-your-azure-ad-client-id-with-your-application-in-the-windows-dev-denter-dashboard).
+3.  Dans votre service, [générer des jetons d’accès Azure AD](#step-3:-retrieve-access-tokens-from-azure-ad) qui représentent votre identité d’éditeur.
+4.  Dans le code côté client de votre application Windows, [générer une clé d’ID du Windows Store](#step-4:-generate-a-windows-store-id-key-from-client-side-code-in-your-app) qui représente l’identité de l’utilisateur actuel et retransmettre la clé d’ID du Windows Store à votre service.
+5.  Lorsque vous disposez du jeton d’accès Azure AD et de la clé d’ID du Windows Store requis, [appelez l’API de collection et l’API d’achat du Windows Store à partir de votre service](#step-5:-call-the-windows-store-collection-api-or-purchase-api-from-your-service).
 
-The following sections provide more details about each of these steps.
+Les sections suivantes fournissent plus d’informations sur chacune de ces étapes.
 
-### Step 1: Configure a Web application in Azure AD
+### Étape 1 : Configurer une application web dans Azure AD
 
-1.  Follow the instructions in [Integrating Applications with Azure Active Directory](http://go.microsoft.com/fwlink/?LinkId=722502) to add a Web application to Azure AD.
+1.  Suivez les instructions de l’article [Intégration d’applications à Azure Active Directory](http://go.microsoft.com/fwlink/?LinkId=722502) pour ajouter une application web à Azure AD.
 
-    > **Note**  On the **Tell us about your application page**, make sure that you choose **Web application and/or web API**. This is required so that you can obtain a key (also called a *client secret*) for your application. In order to call the Windows Store collection API or purchase API, you must provide a client secret when you request an access token from Azure AD in a later step.
+    > **Remarque** Dans la page **Parlez-nous de votre application**, veillez à bien choisir **Application web et/ou API web**. Cette opération est nécessaire pour vous permettre d’obtenir une clé (également appelée *clé secrète client*) pour votre application. Pour appeler l’API de collection ou d’achat du WindowsStore, vous devez fournir une clé secrète client lorsque vous effectuez une demande de jeton d’accès auprès d’Azure AD au cours d’une étape ultérieure.
 
-2.  In the [Azure Management Portal](http://manage.windowsazure.com/), navigate to **Active Directory**. Select your directory, click the **Applications** tab at the top, and then select your application.
-3.  Click the **Configure** tab. On this tab, obtain the client ID for your application and request a key (this is called a *client secret* in later steps).
-4.  At the bottom of the screen, click **Manage manifest**. Download your Azure AD application manifest and replace the `"identifierUris"` section with the following text.
+2.  Dans le [Portail de gestion Azure](http://manage.windowsazure.com/), accédez à **Active Directory**. Sélectionnez votre répertoire, cliquez sur l’onglet **Applications** en haut, puis sélectionnez votre application.
+3.  Cliquez sur l’onglet **Configurer**. Dans cet onglet, obtenez l’ID client de votre application et demandez une clé (appelée *clé secrète client* dans les étapes suivantes).
+4.  En bas de l’écran, cliquez sur **Gérer le manifeste**. Téléchargez le manifeste de votre application Azure AD et remplacez la section `"identifierUris"` par le texte suivant.
 
     ```json
     "identifierUris" : [                                
@@ -53,89 +53,89 @@ The following sections provide more details about each of these steps.
         ],
     ```
 
-    These strings represent the audiences supported by your application. In a later step, you will create Azure AD access tokens that are associated with each of these audience values. For more information about how to download your application manifest, see [Understanding the Azure Active Directory application manifest]( http://go.microsoft.com/fwlink/?LinkId=722500).
+    Ces chaînes représentent les audiences prises en charge par votre application. Dans une étape ultérieure, vous allez créer des jetons d’accès Azure AD qui seront associés à chacune de ces valeurs d’audience. Pour plus d’informations sur le téléchargement du manifeste de votre application, voir [Présentation du manifeste de l’application Azure Active Directory]( http://go.microsoft.com/fwlink/?LinkId=722500).
 
-5.  Save your application manifest and upload it to your application in the [Azure Management Portal](http://manage.windowsazure.com/).
+5.  Enregistrez le manifeste de votre application et chargez-le sur votre application dans le [Portail de gestion Azure](http://manage.windowsazure.com/).
 
-### Step 2: Associate your Azure AD client ID with your application in the Windows Dev Center dashboard
+### Étape 2 : Associer votre ID client Azure AD à votre application dans le tableau de bord du Centre de développement Windows
 
-The Windows Store collection API and purchase API only provide access to a user's ownership information for apps and add-ons that you have associated with your Azure AD client ID.
+Les API de collection et d’achat du Windows Store permettent uniquement d’accéder aux informations de propriété d’un utilisateur relatives aux applications et aux PIA que vous avez associés à votre ID client Azure AD.
 
-1.  Sign in to the [Windows Dev Center dashboard](https://dev.windows.com/overview) and select your app.
-2.  Go to the **Services** &gt; **Product collections and purchases** page and enter your Azure AD client ID into one of the available fields.
+1.  Connectez-vous au [tableau de bord du Centre de développement Windows](https://dev.windows.com/overview) et sélectionnez votre application.
+2.  Accédez à la page **Services**&gt;**Collections et achats de produits** et entrez votre ID client Azure AD dans l’un des champs disponibles.
 
-### Step 3: Retrieve access tokens from Azure AD
+### Étape3: Récupérer des jetons d’accès d’AzureAD
 
-Before you can retrieve a Windows Store ID key or call the Windows Store collection API or purchase API, your service must request three Azure AD access tokens that represent your publisher identity. Each of these access tokens is associated with a different audience URI, and each token will be used with a different API call. The lifetime of each token is 60 minutes, and you can refresh them after they expire.
+Pour pouvoir récupérer une clé d’ID du Windows Store ou appeler les API de collection ou d’achat du Windows Store, votre service doit demander trois jetons d’accès Azure AD qui représentent votre identité d’éditeur. Chacun de ces jetons d’accès est associé à un URI d’audience différent, et chaque jeton est utilisé avec un appel d’API différent. La durée de vie de chacun des jetons est de 60 minutes, et vous pouvez les actualiser une fois qu’ils sont arrivés à expiration.
 
-To create the access tokens, use the OAuth 2.0 API in your service by following the instructions in [Service to Service Calls Using Client Credentials](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/). For each token, specify the following parameter data:
+Pour créer les jetons d’accès, utilisez l’API OAuth 2.0 dans votre service en suivant les instructions de la section [Appels de service à service à l’aide des informations d’identification du client](https://msdn.microsoft.com/library/azure/dn645543.aspx). Pour chaque jeton, spécifiez les données de paramètre suivantes:
 
--   For the *client\_id* and *client\_secret* parameters, specify the client ID and the client secret for your application as obtained from the [Azure Management Portal](http://manage.windowsazure.com/). Both of these parameters are required in order to generate an access token with the level of authentication required by the Windows Store collection API or purchase API.
--   For the *resource* parameter, specify one of the following app ID URIs (these are the same URIs that you previously added to the `"identifierUris"` section of the application manifest). At the end of this process, you should have three access tokens that each have one of these app ID URIs associated with them:
-    -   `https://onestore.microsoft.com/b2b/keys/create/collections`: In a later step, you will use the access token that you create with this URI to request a Windows Store ID key that you can use with the Windows Store collection API.
-    -   `https://onestore.microsoft.com/b2b/keys/create/purchase`: In a later step, you will use the access token that you create with this URI to request a Windows Store ID key that you can use with the Windows Store purchase API.
-    -   `https://onestore.microsoft.com`: In a later step, you will use the access token that you create with this URI in direct calls to the Windows Store collection API or purchase API.
+-   Pour les paramètres *client\_id* et *client\_secret* , spécifiez l’ID client et la clé secrète client de votre application, obtenus à partir du [Portail de gestion Azure](http://manage.windowsazure.com/). Ces deux paramètres sont nécessaires pour générer un jeton d’accès disposant du niveau d’authentification requis par les API de collection ou d’achat du WindowsStore.
+-   Pour le paramètre *resource*, spécifiez l’un des URI d’ID d’application suivants (il s’agit des URI que vous avez précédemment ajoutés à la section `"identifierUris"` du manifeste de l’application). À la fin de ce processus, vous devez disposer de trois jetons d’accès, à chacun desquels l’un de ces URI d’ID d’application est associé.
+    -   `https://onestore.microsoft.com/b2b/keys/create/collections`: dans une étape ultérieure, vous utiliserez le jeton d’accès que vous allez créer avec cetURI pour demander une clé d’ID du WindowsStore que vous pouvez utiliser avec l’API de collection du WindowsStore.
+    -   `https://onestore.microsoft.com/b2b/keys/create/purchase`: dans une étape ultérieure, vous allez utiliser le jeton d’accès que vous allez créer avec cetURI pour demander une clé d’ID du WindowsStore que vous pouvez utiliser avec l’API d’achat du WindowsStore.
+    -   `https://onestore.microsoft.com`: dans une étape ultérieure, vous utiliserez le jeton d’accès que vous allez créer avec cetURI pour diriger des appels vers lesAPI de collection ou d’achat du WindowsStore.
 
-    > **Important**  Use the `https://onestore.microsoft.com` audience only with access tokens that are stored securely within your service. Exposing access tokens with this audience outside your service could make your service vulnerable to replay attacks.
+    > **Important** Utilisez l’audience `https://onestore.microsoft.com` uniquement avec les jetons d’accès qui sont stockés en toute sécurité dans votre service. L’exposition des jetons d’accès avec cette audience en dehors de votre service peut rendre votre service vulnérable aux attaques par relecture.
 
-After your access token expires, you can refresh it by following the instructions [here](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens). For more details about the structure of an access token, see [Supported Token and Claim Types](http://go.microsoft.com/fwlink/?LinkId=722501).
+Pour plus d’informations sur la structure d’un jeton d’accès, voir [Jeton et types de réclamations pris en charge](http://go.microsoft.com/fwlink/?LinkId=722501).
 
-> **Important**  You should create Azure AD access tokens only in the context of your service, not in your app. Your client secret could be compromised if it is sent to your app.
+> **Important** Vous devez créer des jetons d’accès Azure AD uniquement dans le contexte de votre service, et non dans votre application. Votre clé secrète client risque d’être compromise si elle est envoyée à votre application.
 
-### Step 4: Generate a Windows Store ID key from client-side code in your app
+### Étape 4 : Générer une clé d’ID du Windows Store à partir du code côté client de votre application
 
-Before you can call the Windows Store collection API or purchase API, your service must obtain a Windows Store ID key. This is a JSON Web Token (JWT) that represents the identity of the user whose product ownership information you want to access. For more information about the claims in this key, see [Claims in a Windows Store ID key](#windowsstorekey).
+Pour que vous puissiez appeler l’API de collection ou d’achat du Windows Store, votre service doit obtenir une clé d’ID du Windows Store. Il s’agit d’une clé d’authentification web JSON (JWT) qui représente l’identité de l’utilisateur dont vous souhaitez accéder aux informations de propriété. Pour plus d’informations sur les revendications dans cette clé, voir [Revendications dans une clé d’ID du Windows Store](#windowsstorekey).
 
-Currently, the only way to obtain a Windows Store ID key is by calling a Universal Windows Platform (UWP) API from client-side code in your app to retrieve the identity of the user who is currently signed in to the Windows Store. To generate a Windows Store ID key:
+La seule méthode actuelle permettant d’obtenir une clé d’ID du Windows Store consiste à appeler une API de plateforme Windows universelle (UWP) à partir du code côté client de votre application pour récupérer l’identité de l’utilisateur qui est actuellement connecté au Windows Store. Pour générer une clé d’ID du Windows Store :
 
-1.  Pass one of the following access tokens from your service to your client app:
-    -   To get a Windows Store ID key that you can use with the Windows Store collection API, pass the Azure AD access token that you created with the `https://onestore.microsoft.com/b2b/keys/create/collections` audience URI.
-    -   To get a Windows Store ID key that you can use with the Windows Store purchase API, pass the Azure AD access token that you created with the `https://onestore.microsoft.com/b2b/keys/create/purchase` audience URI.
+1.  Transmettez l’un des jetons d’accès suivants de votre service à votre application cliente:
+    -   Pour obtenir une clé d’ID du WindowsStore que vous pouvez utiliser avec l’API de collection du WindowsStore, transmettez le jeton d’accès AzureAD qui a été créé avec l’URI d’audience `https://onestore.microsoft.com/b2b/keys/create/collections`.
+    -   Pour obtenir une clé d’ID du WindowsStore que vous pouvez utiliser avec l’API d’achat du WindowsStore, transmettez le jeton d’accès AzureAD qui a été créé avec l’URI d’audience `https://onestore.microsoft.com/b2b/keys/create/purchase`.
 
-2.  In your app code, call one of the following methods of the [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) class to retrieve a Windows Store ID key.
+2.  Dans le code de votre application, appelez l’une des méthodes suivantes de la classe [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) pour récupérer une clé d’ID du Windows Store.
 
-    -   [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674): Call this method if you intend to use the Windows Store collection API.
-    -   [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675): Call this method if you intend to use the Windows Store purchase API.
+    -   [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) : appelez cette méthode si vous envisagez d’utiliser l’API de collection du Windows Store.
+    -   [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675) : appelez cette méthode si vous envisagez d’utiliser l’API d’achat du Windows Store.
 
-    For either method, pass your Azure AD access token to the *serviceTicket* parameter. You can optionally pass an ID to the *publisherUserId* parameter that identifies the current user in the context of your services. If you maintain user IDs for your services, you can use this parameter to correlate these user IDs with the calls you make to the Windows Store collection API or purchase API.
+    Quelle que soit la méthode, transmettez votre jeton d’accès Azure AD au paramètre *serviceTicket*. Vous pouvez éventuellement transmettre un ID au paramètre *publisherUserId* qui identifie l’utilisateur actuel dans le contexte de vos services. Si vous gérez les identifiants utilisateur de vos services, vous pouvez utiliser ce paramètre pour mettre en corrélation ces identifiants avec les appels que vous effectuez pour les API de collection ou d’achat du WindowsStore.
 
-3.  After your app successfully retrieves a Windows Store ID key, pass the key back to your service.
+3.  Une fois que votre application a récupéré une clé d’ID du WindowsStore, retransmettez-la à votre service.
 
-> **Note**  Each Windows Store ID key is valid for 90 days. After a key expires, you can [renew the key](renew-a-windows-store-id-key.md). We recommend that you renew your Windows Store ID keys rather than creating new ones.
+> **Remarque** Chaque clé d’ID du Windows Store est valide pendant 90 jours. Après l’expiration d’une clé, vous pouvez [la renouveler](renew-a-windows-store-id-key.md). Nous vous recommandons de renouveler vos clés d’ID du Windows Store plutôt que d’en créer d’autres.
 
-### Step 5: Call the Windows Store collection API or purchase API from your service
+### Étape 5 : Appeler l’API de collection ou d’achat du Windows Store à partir de votre service
 
-After your service has a Windows Store ID key that enables it to access a specific user's product ownership information, your service can call the Windows Store collection API or purchase API. Use the instructions that apply to your scenario:
+Lorsque votre service dispose d’une clé d’ID du Windows Store qui lui permet d’accéder aux informations de propriété produit d’un utilisateur, votre service peut appeler l’API de collection ou d’achat du Windows Store. Suivez les instructions qui s’appliquent à votre scénario :
 
--   [Query for products](query-for-products.md)
--   [Report consumable products as fulfilled](report-consumable-products-as-fulfilled.md)
--   [Grant free products](grant-free-products.md)
+-   [Demander des produits](query-for-products.md)
+-   [Signaler le traitement de la commande d’un produit consommable](report-consumable-products-as-fulfilled.md)
+-   [Octroyer des produits gratuits](grant-free-products.md)
 
-For each scenario, pass the following information to the API:
+Pour chaque scénario, fournissez les informations suivantes à l’API:
 
--   The Azure AD access token that you created earlier with the `https://onestore.microsoft.com` audience URI. This token represents your publisher identity. Pass this token in the request header.
--   The Windows Store ID key you retrieved from [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) or [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675) in your app. This key represents the identity of the user whose product ownership information you want to access.
+-   Le jeton d’accès AzureAD que vous avez créé précédemment avec l’URI d’audience `https://onestore.microsoft.com`. Ce jeton représente votre identité d’éditeur. Transmettez ce jeton dans l’en-tête de requête.
+-   La clé d’ID du Windows Store récupérée à partir de [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) ou de [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675) dans votre application. Cette clé représente l’identité de l’utilisateur dont vous souhaitez accéder aux informations de propriété.
 
-## Claims in a Windows Store ID key
+## Revendications dans une clé d’ID du Windows Store
 
 
-A Windows Store ID key is a JSON Web Token (JWT) that represents the identity of the user whose product ownership information you want to access. When decoded using Base64, a Windows Store ID key contains the following claims.
+Une clé d’ID du Windows Store est une clé d’authentification web JSON (JWT) qui représente l’identité de l’utilisateur dont vous souhaitez accéder aux informations de propriété. Lorsqu’elle est décodée en Base64, une clé d’ID du Windows Store contient les revendications suivantes.
 
-| Claim name                                                             | Description                                                                                                                                                                                                                                                                                                                                                                             |
+| Nom de la revendication                                                             | Description                                                                                                                                                                                                                                                                                                                                                                             |
 |------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| iat                                                                    | Identifies the time at which the key was issued. This claim can be used to determine the age of the token. This value is expressed as epoch time.                                                                                                                                                                                                                                       |
-| iss                                                                    | Identifies the issuer. This has the same value as the *aud* claim.                                                                                                                                                                                                                                                                                                                      |
-| aud                                                                    | Identifies the audience. Must be one of the following values: `https://collections.mp.microsoft.com/v6.0/keys` or `https://purchase.mp.microsoft.com/v6.0/keys`.                                                                                                                                                                                                                    |
-| exp                                                                    | Identifies the expiration time on or after which the key will no longer be accepted for processing anything except for renewing keys. The value of this claim is expressed as epoch time.                                                                                                                                                                                               |
-| nbf                                                                    | Identifies the time at which the token will be accepted for processing. The value of this claim is expressed as epoch time.                                                                                                                                                                                                                                                             |
-| `http://schemas.microsoft.com/marketplace/2015/08/claims/key/clientId`   | The client ID that identifies the developer.                                                                                                                                                                                                                                                                                                                                            |
-| `http://schemas.microsoft.com/marketplace/2015/08/claims/key/payload`    | An opaque payload (encrypted and Base64 encoded) that contains information that is intended only for use by Windows Store services.                                                                                                                                                                                                                                                     |
-| `http://schemas.microsoft.com/marketplace/2015/08/claims/key/userId`     | A user ID that identifies the current user in the context of your services. This is the same value you pass into the optional *publisherUserId* parameter of the [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) or [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675) method when you create the key. |
-| `http://schemas.microsoft.com/marketplace/2015/08/claims/key/refreshUri` | The URI that you can use to renew the key.                                                                                                                                                                                                                                                                                                                                              |
+| iat                                                                    | Identifie l’heure à laquelle la clé a été émise. Cette revendication permet de déterminer l’âge du jeton. Cette valeur est exprimée en temps époque.                                                                                                                                                                                                                                       |
+| iss                                                                    | Identifie l’émetteur. Cette revendication a la même valeur que la revendication *aud*.                                                                                                                                                                                                                                                                                                                      |
+| aud                                                                    | Identifie l’audience. Doit être définie sur l’une des valeurs suivantes: `https://collections.mp.microsoft.com/v6.0/keys` ou `https://purchase.mp.microsoft.com/v6.0/keys`.                                                                                                                                                                                                                    |
+| exp                                                                    | Identifie l’heure d’expiration à laquelle ou après laquelle la clé ne sera plus acceptée pour traiter quoique ce soit, excepté le renouvellement des clés. La valeur de cette revendication est exprimée en temps époque.                                                                                                                                                                                               |
+| nbf                                                                    | Identifie l’heure à laquelle le jeton sera accepté pour le traitement. La valeur de cette revendication est exprimée en temps époque.                                                                                                                                                                                                                                                             |
+| `http://schemas.microsoft.com/marketplace/2015/08/claims/key/clientId`   | ID client qui identifie le développeur.                                                                                                                                                                                                                                                                                                                                            |
+| `http://schemas.microsoft.com/marketplace/2015/08/claims/key/payload`    | Charge utile opaque (chiffrée et codée au format Base64) qui contient des informations destinées uniquement à être utilisées par les services du WindowsStore.                                                                                                                                                                                                                                                     |
+| `http://schemas.microsoft.com/marketplace/2015/08/claims/key/userId`     | Identifiant utilisateur qui identifie l’utilisateur actuel dans le contexte de vos services. Il s’agit de la valeur que vous transmettez dans le paramètre facultatif *publisherUserId* de la méthode [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) ou [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675) lorsque vous créez la clé. |
+| `http://schemas.microsoft.com/marketplace/2015/08/claims/key/refreshUri` | URI qui permet de renouveler la clé.                                                                                                                                                                                                                                                                                                                                              |
 
  
 
-Here is an example of a decoded Windows Store ID key header.
+Voici un exemple d’en-tête de clé d’ID du Windows Store décodé.
 
 ```json
 {
@@ -145,7 +145,7 @@ Here is an example of a decoded Windows Store ID key header.
 }
 ```
 
-Here is an example of a decoded Windows Store ID key claim set.
+Voici un exemple de revendications de clé d’ID du WindowsStore décodées.
 
 ```json
 {
@@ -161,21 +161,21 @@ Here is an example of a decoded Windows Store ID key claim set.
 }
 ```
 
-## Related topics
+## Rubriques connexes
 
-* [Query for products](query-for-products.md)
-* [Report consumable products as fulfilled](report-consumable-products-as-fulfilled.md)
-* [Grant free products](grant-free-products.md)
-* [Renew a Windows Store ID key](renew-a-windows-store-id-key.md)
-* [Integrating Applications with Azure Active Directory](http://go.microsoft.com/fwlink/?LinkId=722502)
-* [Understanding the Azure Active Directory application manifest]( http://go.microsoft.com/fwlink/?LinkId=722500)
-* [Supported Token and Claim Types](http://go.microsoft.com/fwlink/?LinkId=722501)
+* [Demander des produits](query-for-products.md)
+* [Signaler le traitement de la commande d’un produit consommable](report-consumable-products-as-fulfilled.md)
+* [Octroyer des produits gratuits](grant-free-products.md)
+* [Renouveler une clé d’ID du Windows Store](renew-a-windows-store-id-key.md)
+* [Intégration d’applications à Azure Active Directory](http://go.microsoft.com/fwlink/?LinkId=722502)
+* [Présentation du manifeste de l’application Azure Active Directory]( http://go.microsoft.com/fwlink/?LinkId=722500)
+* [Jeton et types de réclamations pris en charge](http://go.microsoft.com/fwlink/?LinkId=722501)
  
 
  
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Jun16_HO5-->
 
 

@@ -1,23 +1,19 @@
 ---
 author: msatranjr
-title: "FAQ sur le Bluetooth pour les développeurs"
-description: "Cet article contient des réponses aux questions fréquentes relatives à l’API de bluetooth UWP."
-translationtype: Human Translation
-ms.sourcegitcommit: e4c95448262c6c62956fcb50581c98d8c34d6dc0
-ms.openlocfilehash: 2afc1250aa9d7a6cf6c9c8cb45dd2379b9d36984
-
+title: Bluetooth developer FAQ
+description: This article contains answers to commonly asked questions related to the UWP bluetooth APIs.
 ---
-# FAQ sur le Bluetooth pour les développeurs
+# Bluetooth Developer FAQ
 
-Cet article contient des réponses aux questions les plus fréquentes concernant les API Bluetooth UWP.
+This article contains answers to commonly asked UWP Bluetooth API questions.
 
-## Pourquoi mon périphérique Bluetooth LE ne répond plus après une déconnexion?
+## Why does my Bluetooth LE Device stop responding after a disconnect?
 
-La raison courante pour laquelle cela se produit est due au fait que l’appareil distant a perdu des informations de jumelage. Un grand nombre de périphériques Bluetooth antérieurs ne nécessitent pas d’authentification. Pour protéger l’utilisateur, tous les processus de jumelage effectués à partir de l’application Paramètres exigent une authentification et certains appareils ne savent pas comment les traiter. 
+The common reason this happens is because the remote device has lost pairing information. A lot of earlier Bluetooth devices don't require authentication. To protect the user, all pairing ceremonies performed from the Settings app will require authentication and some devices don't know how to deal with that. 
 
-À compter de Windows10 version1511, les développeurs contrôlent le processus de couplage. L’[exemple d’énumération des périphériques et de jumelage](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceEnumerationAndPairing) détaille les différents aspects liés à l’association de nouveaux périphériques.
+Starting with Windows 10 release 1511, developers have control over the pairing ceremony. The [Device Enumeration and Pairing Sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceEnumerationAndPairing) details the various aspects of associating new devices.
 
-Dans cet exemple, nous générons le jumelage avec un périphérique sans chiffrement. Notez que cela est possible uniquement si le périphérique à distance ne nécessite pas de chiffrement ou d’authentification pour fonctionner.
+In this example, we initiate pairing with a device using no encryption. Note, this will only work if the remote device does not require encryption or authentication to function.
 
 ```csharp
 // Get ceremony type and protection level selections
@@ -34,15 +30,9 @@ Dans cet exemple, nous générons le jumelage avec un périphérique sans chiffr
     DevicePairingResult result = await customPairing.PairAsync(ceremonySelected, protectionLevel);
 ```
 
-## Dois-je jumeler des périphériques Bluetooth avant de les utiliser?
+## Do I have to pair Bluetooth devices before using them?
 
-Vous n’êtes pas contraint de le faire pour les appareils Bluetooth RFCOMM (standard). À compter de Windows10 version1607, vous pouvez simplement interroger les appareils à proximité et vous y connecter. L’[exemple de discussion RFCOMM](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/BluetoothRfcommChat) mis à jour présente cette fonctionnalité. 
+You don't have to for Bluetooth RFCOMM (classic) devices. Starting with Windows 10 release 1607, you can simply query for nearby devices and connect to them. The updated [RFCOMM Chat Sample](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/BluetoothRfcommChat) shows this functionality. 
 
-Cette fonctionnalité n’est pas disponible pour Bluetooth Low Energy d’énergie (client GATT). Vous devrez donc continuer le jumelage par le biais de la page Paramètres ou à l’aide des API [Windows.Devices.Enumeration](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.aspx) afin d’accéder à ces périphériques.
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
+This feature is not available for Bluetooth Low Energy (GATT Client), so you will still have to pair either through the Settings page or using the [Windows.Devices.Enumeration](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.aspx) APIs in order access these devices.
 

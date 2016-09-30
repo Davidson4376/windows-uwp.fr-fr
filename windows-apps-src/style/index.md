@@ -1,24 +1,27 @@
 ---
-description: "Learn how to use color, typography and motion to define your UWP app’s personality with Windows Dev Center UWP style guide."
+description: "Découvrez comment utiliser la couleur, la typographie et le mouvement pour définir la personnalité de votre application UWP avec le guide de style UWP du Centre de développement Windows."
 keywords: uwp style guide, design guidance, typography, motion, sound, motion, app development
-title: UWP style guide - Windows app development
+title: "Guide de style UWP - Développement d’applications Windows"
 author: mijacobs
 translationtype: Human Translation
-ms.sourcegitcommit: 2f9d2059399efd949fc8a1d90a5b6c8c106a478e
-ms.openlocfilehash: 4a96db626f6f3682248e7e720c956fa343186b4a
+ms.sourcegitcommit: 0a7f655a6f122787873adac76ac4dec9d775a154
+ms.openlocfilehash: d55aab04696441dbbcba0cbda61fd599fdacec67
 
 ---
-# UWP style guide
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
+<div class="uwpd-banner">
+<h1 class="uwpd-ruledheader">Guide de style UWP</h1>
+</div>
+
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-  <p>Design guidance and code examples that teach you how to define your UWP app’s personality through color, typography, and motion.</p>
+  <p>Conseils de conception et exemples de code qui vous aideront à définir la personnalité de votre application UWP par le biais de la couleur, de la typographie et du mouvement.</p>
   </div>
   <div class="side-by-side-content-right">
-    ![Color, icon, motion, sound, and typography guidelines](images/style-header-v2.png)
+    ![Recommandations en matière de couleurs, d’icônes, de mouvement, de son et de typographie](images/style-header-v2.png)
   </div>
 </div>
 </div>
@@ -27,12 +30,12 @@ ms.openlocfilehash: 4a96db626f6f3682248e7e720c956fa343186b4a
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-   <p><b>[Color](color.md)</b><br/>
-Color provides intuitive wayfinding through an app's various levels of information and serves as a crucial tool for reinforcing the interaction model.</p>
+   <p><b>[Couleur](color.md)</b><br/>
+La couleur permet une orientation intuitive des différents niveaux d’information d’une application et joue un rôle crucial pour renforcer le modèle d’interaction.</p>
   </div>
   <div class="side-by-side-content-right">
-   <p><b>[Icons](icons.md)</b><br/>
-Good icons harmonize with typography and with the rest of the design language. They don’t mix metaphors, and they communicate only what’s needed, as speedily and simply as possible.</p>
+   <p><b>[Icônes](icons.md)</b><br/>
+Des icônes efficaces s’harmonisent efficacement avec la typographie et avec le reste du langage de conception. Elles ne mélangent pas les métaphores et communiquent uniquement les informations nécessaires, le plus rapidement et simplement possible.</p>
   </div>
 </div>
 </div>
@@ -40,12 +43,12 @@ Good icons harmonize with typography and with the rest of the design language. T
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-   <p><b>[Motion](motion.md)</b><br/>
-Purposeful, well-designed animations bring apps to life and make the experience feel crafted and polished. Help users understand context changes, and tie experiences together with visual transitions.</p>
+   <p><b>[Mouvement](motion.md)</b><br/>
+Avec des animations utiles et bien faites, vos applications prennent vie et donnent l’impression d’un travail soigné. Elles permettent aux utilisateurs de comprendre les changements de contexte et assurent l’homogénéité des expériences par des transitions visuelles.</p>
   </div>
   <div class="side-by-side-content-right">
-   <p><b>[Sound](sound.md)</b><br/>
-Sound helps complete an application's user experience, and gives them that extra audio edge they need to match the feel of Windows across all platforms.</p>
+   <p><b>[Son](sound.md)</b><br/>
+Le son vient compléter l’expérience utilisateur d’une application et offre à l’utilisateur cette touche audio supplémentaire qui l’aide à reconnaître Windows sur l’ensemble des plateformes.</p>
   </div>
 </div>
 </div>
@@ -53,20 +56,20 @@ Sound helps complete an application's user experience, and gives them that extra
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-   <p><b>[Typography](typography.md)</b><br/>
-As the visual representation of language, typography’s main task is to be clear. Its style should never get in the way of that goal. But typography also has an important role as a layout component—with a powerful effect on the density and complexity of the design—and on the user’s experience of that design.</p>
+   <p><b>[Typographie](typography.md)</b><br/>
+En tant que représentation visuelle du langage, la typographie doit avant tout apporter de la clarté. Son style doit toujours être aligné sur cet objectif. Parallèlement, la typographie a un rôle important en tant que composant de disposition, en affectant considérablement la densité et la complexité de la conception, ainsi que l’expérience vécue par l’utilisateur de cette conception.</p>
    <div class="uwpd-no-bullet-list">
    <ul>
-    <li>[Fonts](fonts.md)</li>
-    <li>[Segoe MDL2 icons](segoe-ui-symbol-font.md)</li>
+    <li>[Polices](fonts.md)</li>
+    <li>[Icônes Segoe MDL2](segoe-ui-symbol-font.md)</li>
    </ul>
    </div>
   </div>
   
   
   <div class="side-by-side-content-right">
-   <p><b>[Styling controls](../controls-and-patterns/styling-controls.md)</b><br/>
-You can customize the appearance of your apps in many ways by using the XAML framework. Styles let you set control properties and reuse those settings for a consistent appearance across multiple controls.</p>
+   <p><b>[Application de styles aux contrôles](../controls-and-patterns/styling-controls.md)</b><br/>
+Vous pouvez personnaliser l’apparence de vos applications de nombreuses manières à l’aide de l’infrastructure XAML. Les styles permettent de définir les propriétés des contrôles et de réutiliser ces paramètres pour uniformiser l’apparence de plusieurs contrôles.</p>
   </div>
 </div>
 </div>
@@ -74,6 +77,6 @@ You can customize the appearance of your apps in many ways by using the XAML fra
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

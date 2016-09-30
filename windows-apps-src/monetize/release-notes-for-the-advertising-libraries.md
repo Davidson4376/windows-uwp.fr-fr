@@ -1,52 +1,55 @@
 ---
 author: mcleanbyron
 ms.assetid: ca92bed1-ad9e-4947-ad91-87d12de727c0
-description: Review the release notes for the Microsoft advertising libraries in the Microsoft Store Services SDK.
-title: Release notes for the Microsoft advertising libraries
+description: "Passez en revue les notes de publication des bibliothèques de publicités Microsoft contenues dans le Kit de développement logiciel (SDK) d’engagement et de monétisation de la BoutiqueMicrosoft."
+title: "Notes de publication des bibliothèques de publicités Microsoft"
 translationtype: Human Translation
-ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
-ms.openlocfilehash: b82c4385b0e7089bdddbe094f47f0766f90aa21b
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 8e2114e969b27d579f62195f026cfcfd9672a94a
 
 ---
 
-# Release notes for the Microsoft advertising libraries
+# Notes de publication des bibliothèques de publicités Microsoft
 
 
+\[ Mise à jour pour les applicationsUWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-
-This section provides release notes for the current release of the Microsoft advertising libraries in the Microsoft Store Services SDK (for UWP apps) and the Microsoft Advertising SDK for Windows and Windows Phone 8.x (for Windows 8.1 and Windows Phone 8.x apps). These libraries support XAML and JavaScript/HTML apps for Windows 10, Windows 8.1, Windows Phone 8.1 and Windows Phone 8.
+Cette section fournit les notes de publication de la version actuelle des bibliothèques de publicités Microsoft contenues dans le Kit de développement logiciel (SDK) d’engagement et de monétisation de la BoutiqueMicrosoft. Ces bibliothèques prennent en charge les applications XAML et HTML/JavaScript pour Windows10, Windows8.1, Windows Phone8.1 et Windows Phone8.
 
 ## Installation
 
 
-The Microsoft advertising libraries are available as part of the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) (for UWP apps) and the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk) (for Windows 8.1 and Windows Phone 8.x apps). For more information about installing the SDKs and the libraries that are included in them, see [Install the Microsoft advertising libraries](install-the-microsoft-advertising-libraries.md).
+Les bibliothèques de publicités Microsoft sont incluses dans le [Kit de développement logiciel (SDK) d’engagement et de monétisation de la BoutiqueMicrosoft](http://aka.ms/store-em-sdk). Pour tous les types de projet autres que Silverlight Windows Phone8.x, les assemblys de MicrosoftAdvertising qui étaient distribués dans les versions autonomes précédentes du Kit de développement logiciel (SDK) Microsoft Universal Ad Client et du Kit de développement logiciel (SDK) Microsoft Advertising sont désormais installés avec le SDK d’engagement et de monétisation de la BoutiqueMicrosoft. Pour plus d’informations sur l’installation du SDK et des bibliothèques qu’il contient, voir [Installer les bibliothèques de publicités Microsoft](install-the-microsoft-advertising-libraries.md).
 
-To get the Microsoft advertising assemblies for Windows Phone 8.x Silverlight projects, install the [Microsoft Advertising SDK for Windows and Windows Phone 8.x](http://aka.ms/store-8-sdk), open your project in Visual Studio, and then go to **Project** > **Add Connected Service** > **Ad Mediator** to automatically download the assemblies. After doing this, you can remove the ad mediator references from your project if you do not want to use ad mediation. For more information, see [AdControl in Windows Phone Silverlight](adcontrol-in-windows-phone-silverlight.md).
+Pour obtenir les assemblys de publicités Microsoft pour des projets Silverlight Windows Phone 8.x, installez le [Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft](http://aka.ms/store-em-sdk), ouvrez votre projet dans Visual Studio, puis accédez à **Projet** > **Ajouter un service connecté** > **Ad Mediator** pour télécharger automatiquement les assemblys. Après quoi, vous pouvez supprimer les références au médiateur publicitaire dans votre projet si vous ne souhaitez pas utiliser la médiation publicitaire. Pour plus d’informations, voir [AdControl dans Silverlight WindowsPhone](adcontrol-in-windows-phone-silverlight.md).
 
+## Présentation des différences entre les bibliothèques de publicités Microsoft et la médiation publicitaire
 
-## Uninstall previous versions
+Même si les bibliothèques de publicités Microsoft et les bibliothèques de médiation publicitaire sont fournies par le Kit de développement logiciel (SDK) d’engagement et de monétisation de la BoutiqueMicrosoft, ces bibliothèques ont des objets différents. Utilisez les classes [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) et [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) des bibliothèques de publicités Microsoft si vous voulez afficher des bannières publicitaires et des spots vidéo publicitaires de Microsoft dans une application XAML ou JavaScript. Utilisez la classe **AdMediatorControl** des bibliothèques de médiation publicitaire si vous voulez afficher des bannières publicitaires provenant de plusieurs réseaux publicitaires dans une application XAML (la médiation publicitaire n’est pas prise en charge pour les applications JavaScript/HTML). Pour plus d’informations, voir [Quelle est la différence entre AdMediatorControl et AdControl?](what-is-the-difference-admediatorcontrol-or-adcontrol.md).
 
-Before you install the Microsoft Store Services SDK (for UWP apps) or the Microsoft Advertising SDK for Windows and Windows Phone 8.x (for Windows 8.1 and Windows Phone 8.x apps), it is highly recommended that you uninstall all prior instances of the Microsoft Universal Ad Client SDK or the Microsoft Advertising SDK.
+## Désinstaller les versions précédentes 
 
-## Target architecture-specific build outputs
+Avant d’installer le Kit de développement logiciel (SDK) d’engagement et de monétisation de la BoutiqueMicrosoft, il est vivement conseillé de désinstaller toutes les instances préalables du Kit de développement logiciel (SDK) Microsoft Universal Ad Client et du Kit de développement logiciel (SDK) Microsoft Advertising.
 
-When using the Microsoft advertising libraries, you cannot target **Any CPU** in your project. If your project targets the **Any CPU** platform, you may see a warning in your project after you add a reference to the Microsoft advertising libraries. To remove this warning, update your project to use an architecture-specific build output (for example, **x86**). For more information, see [Known issues](known-issues-for-the-advertising-libraries.md).
+## Cibler des sorties de génération propres à une architecture
 
-## C++ Support
+Lorsque vous utilisez les bibliothèques de publicités Microsoft, vous ne pouvez pas cibler **TouteUC** dans votre projet. Si votre projet cible la plateforme **TouteUC**, vous pouvez voir un message d’avertissement dans votre projet une fois que vous avez ajouté une référence aux bibliothèques de publicités Microsoft. Pour supprimer cet avertissement, mettez à jour votre projet pour utiliser une sortie de génération propre à l’architecture (par exemple, **x86**). Pour plus d’informations, voir [Problèmes connus](known-issues-for-the-advertising-libraries.md).
 
-The Microsoft advertising libraries (which include the **AdControl** and **InterstitialAd** classes) support apps written in C++ and DirectX using Windows Runtime Interoperability (*interop*). For more information and examples about programming using XAML and C++, see [Type System](https://msdn.microsoft.com/library/windows/apps/xaml/hh755822.aspx).
+## Support C++
 
-## No toolbox control
+Les bibliothèques de publicités Microsoft (qui incluent les classes **AdControl** et **InterstitialAd**) prennent en charge les applications écrites en C++ et DirectX à l’aide de l’interopérabilité de Windows Runtime (*interop*). Pour plus d’informations et d’exemples sur la programmation en C++ et XAML, voir [Système de types](https://msdn.microsoft.com/library/windows/apps/xaml/hh755822.aspx).
 
-In the current release of the Microsoft advertising libraries in the Microsoft Store Services SDK or the Microsoft Advertising SDK for Windows and Windows Phone 8.x, there is no toolbox control for dragging an **AdControl** or **InterstitialAd** to a design surface in your app. For instructions about adding these controls in your markup and code, see the [developer walkthroughs](developer-walkthroughs.md).
+## Aucun contrôle de boîte à outils
 
-## Latitude and longitude properties no longer available
+Dans la version actuelle des bibliothèques de publicités Microsoft contenues dans le SDK d’engagement et de monétisation de la BoutiqueMicrosoft, il n’existe aucun contrôle de boîte à outils pour faire glisser une classe **AdControl** ou **InterstitialAd** vers une aire de conception de votre application. Pour obtenir des instructions sur l’ajout de ces contrôles dans le balisage et le code, voir [Procédures pas à pas de développement](developer-walkthroughs.md).
 
-The **AdControl** class no longer has **Latitude** and **Longitude** properties for UWP apps. Instead, code built into the ad control will detect and send these values to the ad servers on the app’s behalf.
+## Les propriétés latitude et longitude ne sont plus disponibles
 
-## Important notice
+La classe **AdControl** ne possède plus les propriétés **Latitude** et **Longitude** pour les applicationsUWP. À la place, le code intégré au contrôle de publicité détecte et envoie ces valeurs aux serveurs de publicités pour le compte de l’application.
 
-Be sure to read the end user license agreement (EULA) in its entirety. See the topic [Important notice - EULA](important-notice-eula.md).
+## Remarque importante
+
+Veillez à lire le Contrat de Licence Utilisateur Final (CLUF) dans son intégralité. Voir la rubrique [Remarque importante: CLUF](important-notice-eula.md).
 
  
 
@@ -54,6 +57,6 @@ Be sure to read the end user license agreement (EULA) in its entirety. See the t
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,90 +1,90 @@
 ---
 author: mcleanbyron
-Description: Before you can run an experiment in your Universal Windows Platform (UWP) app with A/B testing, you must define your experiment in the Dev Center dashboard.
-title: Define your experiment in the Dev Center dashboard
+Description: "Pour exécuter une expérience sur votre application de plateformeWindows universelle (UWP) avec des testsA/B, vous devez définir votre expérience dans le tableau de bord du Centre de développement."
+title: "Définissez votre expérience dans le tableau de bord du Centre de développement"
 ms.assetid: 675F2ADE-0D4B-41EB-AA4E-56B9C8F32C41
 translationtype: Human Translation
-ms.sourcegitcommit: ce0431243866125eff83569e3b9b1c75e0703358
-ms.openlocfilehash: df6744cb9f4dd60c9eef07dc89f2265ac4244aab
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 7462c23de58b44f897a1737d0d54913144b14f75
 
 ---
 
-# Define your experiment in the Dev Center dashboard
+# Définissez votre expérience dans le tableau de bord du Centre de développement
 
-After you [create a project and define remote variables in the Dev Center dashboard](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md) and [code your app for experimentation](code-your-experiment-in-your-app.md), you are ready to create an experiment in the project. When you create the experiment, you will define the goals and variations that your users will receive.
+Pour exécuter une expérience sur votre application de plateformeWindows universelle (UWP) avec des testsA/B, définissez votre expérience dans le tableau de bord du Centre de développement.
 
-<span id="get-an-api-key" />
-<span id="create-an-experiment" />
-## Create your experiment
+Les sections suivantes décrivent le processus général de définition d’une expérience dans le tableau de bord. Pour une procédure pas à pas illustrant le processus de création et d’exécution d’une expérience de bout en bout, voir [Créer et exécuter votre première expérience avec des tests A/B](create-and-run-your-first-experiment-with-a-b-testing.md).
 
-1. Sign in to the [Dev Center dashboard](https://dev.windows.com/overview).
-2. Under **Your apps**, select the app for which you want to create an experiment.
-3. In the navigation pane, select **Services** and then select **Experimentation**.
-4. On the **Experimentation** page, identify the project where you want to add an experiment in the projects table, and click the **Add experiment** link for that project.
-5. In the **Experiment name** field, type a name that you can use to easily identify the experiment. After you create an experiment, this name appears in the list of existing experiments on the **Experimentation** page for your app and on the project's page.
-6. If you want to edit the experiment while it is active, click the **Editable experiment** check box. Check this box only if you are creating an experiment to validate all the variations through internal testing. For more information, see [Create an experiment for internal testing](define-your-experiment-in-the-dev-center-dashboard.md#test_experiments).
+## Obtenir une cléAPI
 
-  > **Note**&nbsp;&nbsp;Do not check this box if you are creating an experiment that you will release to customers (that is, an experiment that is associated with a project ID that is used in a version of your app that is available to customers). Editing an experiment while it is active will invalidate the experiment results.
-4. In the **Project name** drop-down, the current project is automatically selected. If you want to add the new experiment to a different project, you can select that project here. Otherwise, leave this selection alone.
-5.   Make note of the [Project ID](run-app-experiments-with-a-b-testing.md#terms) value. When you [code your app for experimentation](code-your-experiment-in-your-app.md), you must reference this ID in your code so you can receive variation data and report view and conversion events to Dev Center.
-5. In the **View event** section, type the name of the [view event](run-app-experiments-with-a-b-testing.md#terms) for your experiment in the **View event name** field.
-6. In the **Goals and conversion events** section, define at least one goal for your experiment:
-  * In the **Goal name** field, type a descriptive name for your goal. After you run an experiment, this name appears in the results summary for the experiment.
-  * In the **Conversion event name** field, type the name of the [conversion event](run-app-experiments-with-a-b-testing.md#terms) for this goal.
-  * In the **Objective** field, choose **Maximize** or **Minimize**, depending on whether you want to maximize or minimize the occurrences of the conversion event. This information is used in the results summary for the experiment.
+Pour commencer, accédez à la page **Expérimentation** du tableau de bord du Centre de développement et obtenez une *clé API* pour votre expérience.
 
-  >**Note**&nbsp;&nbsp;Dev Center reports only the first conversion event for each user view in a 24-hour time period. If a user triggers multiple conversion events in your app within a 24-hour period, only the first conversion event is reported. This is intended to help prevent a single user from skewing the experiment results for a sample group of users when the goal is to maximize the number of users who perform a conversion.
+Une cléAPI est un ID unique qui associe votre application à une expérience de votre compte du Centre de développement. Chaque expérience est associée à une cléAPI. Toutefois, une application peut avoir plusieurs clésAPI, et chaque cléAPI peut être associée à plusieurs expériences. Vous pouvez utiliser des clésAPI pour distinguer les différents ensembles d’expériences. Par exemple, vous pouvez publier un ensemble d’expériences à l’intention des testeurs de votre organisation, et un autre ensemble uniquement à l’intention des utilisateurs externes de votre application.
 
-<span id="define-the-variations-and-settings-for-the-experiment" />
-### Define the remote variables and variations for your experiment
+Vous devez utiliser cette cléAPI pour vous connecter au service des testsA/B dans le code de votre application. Pour en savoir plus, voir [Coder votre application à des fins d’expérimentation](code-your-experiment-in-your-app.md).
 
-Next, define the remote [variables](run-app-experiments-with-a-b-testing.md#terms) and [variations](run-app-experiments-with-a-b-testing.md#terms) for your experiment.
+1. Connectez-vous au [tableau de bord du Centre de développement](https://dev.windows.com/overview).
+2. Sous **Vos applications**, sélectionnez l’application pour laquelle vous voulez créer une expérience.
+3. Dans le volet de navigation, sélectionnez **Services** puis **Expérimentation**.
+4. La section **clés API** fournit une clé API par défaut pour votre application nommée **clé API 1**. Si vous voulez utiliser cette clé, saisissez un nom convivial pour cette clé (facultatif) et copiez-le dans votre code d’application. Pour générer une nouvelle clé API, sélectionnez **Nouvelle clé API** et entrez un nom convivial pour celle-ci.
 
-1. In the **Remote variables and variations** section, you should see two default variations, **Variation A (Control)** and **Variation B**. If you want more variations, click **Add variation**. Optionally, you can rename each variation.
-2. By default, variations are distributed equally to your app users. If you want to choose a specific distribution percentage, clear the **Distribute equally** check box and type the percentages in the **Distribution (%)** row.
-3. Add remote variables to your variations. In the drop-down control at the bottom of this section, choose each variable you want to add and click **Add variable**.
+## Créer une expérience
 
-  >**Note**&nbsp;&nbsp; The variables listed in this control are inherited from the project for the experiment. The default value for the variable (as defined in the project) is automatically assigned to the control variation. If you want to create new variables that aren't listed here, go to the related project page and add the variables there.
-4. Edit the variable values for each unique variation in the experiment (that is, the variations other than the control variation).
+Ensuite, créez une expérience et définissez les objectifs de cette dernière.
 
-<span id="save-and-activate-your-experiment" />
-### Save and activate your experiment
+1. Dans la section **Expériences**, cliquez sur le bouton **Nouvelle expérience**.
+2. Dans la section **Nom de clé API**, sélectionnez la clé API que vous voulez associer à cette expérience. Si vous n’avez qu’une clé d’API, celle-ci sera sélectionnée par défaut.
+3. Dans le champ **Nom d’expérience**, tapez un nom qui vous permet d’identifier facilement l’expérience. Une fois que vous avez créé une expérience, ce nom apparaît dans la liste des expériences brouillonnes, actives et terminées sur la page **Expérimentation**.
+4. Si vous souhaitez créer une expérience de test, cochez la case **Expérience de test**. La différence entre les expériences de test et les expériences normales réside dans le fait qu’une expérience de test peut être modifiée après avoir été activée.
 
-When you finish entering the required fields for your experiment, click **Save** to save your experiment.
+  Les expériences de test sont faites pour vous aider à tester toutes les variantes sur un appareil client avant la publication de votre expérience aux clients. Pour vous assurer qu’une variante est correctement publiée aux clients, vous pouvez activer une expérience de test avec une distribution à 100% allouée à une seule variante et une distribution à 0% allouée à d’autres variantes. Après avoir vérifié cette variante, vous pouvez répéter ce processus pour d’autres variantes.
+  > **Remarque** cochez uniquement cette case si vous créez une expérience de test pour valider des paramètres par le biais de tests internes. Ne cochez pas cette case si vous créez une expérience qui sera publiée aux clients.
 
-If you are satisfied with the parameters of your experiment and you are ready to activate it so you can start collecting experiment data from your app, click **Activate**. When the experiment is active, your app can retrieve variation variables and report view and conversion events to Dev Center. For more information, see [Run and manage your experiment in the Dev Center dashboard](manage-your-experiment.md).
+5. Dans le champ **Nom d’événement d’affichage**, tapez le nom de l’*événement d’affichage* pour votre expérience. L’événement d’affichage est une chaîne arbitraire qui représente une activité lorsque l’utilisateur affiche une variante faisant partie de votre expérience. Le code de votre application enverra cette chaîne d’événement d’affichage au Centre de développement lorsque l’utilisateur affiche une variante. Pour en savoir plus, voir [Coder votre application à des fins d’expérimentation](code-your-experiment-in-your-app.md).
+6. Dans la section **Objectifs et événements de conversion**, définissez au moins un objectif pour votre expérience :
+  * Dans le champ **Nom d’objectif**, tapez un nom descriptif pour votre objectif. Après avoir exécuté une expérience, ce nom apparaît dans le résumé des résultats pour l’expérience.
+  * Dans le champ **Nom de l’événement de conversion**, tapez le nom de l’*événement de conversion* pour cet objectif. Un événement de conversion est une chaîne arbitraire qui représente un objectif pour cet objectif. Le code de votre application enverra cette chaîne d’événement de conversion au Centre de développement lorsque l’utilisateur atteint un objectif. Pour en savoir plus, voir [Coder votre application à des fins d’expérimentation](code-your-experiment-in-your-app.md).
+  * Dans le champ **Objectif**, sélectionnez **Augmenter** ou **Réduire** si vous souhaitez augmenter ou réduire le nombre d’occurrences de l’événement de conversion. Ces informations sont utilisées dans le résumé des résultats de l’expérience.
 
-> **Important**  A project can only contain one active experiment at a time. After you activate an experiment, you can no longer modify the experiment parameters unless you selected the **Editable experiment** check box when you created the experiment. We recommend that you code the experiment in your app before activating your experiment.
+  >**Remarque** Le Centre de développement signale uniquement le premier événement de conversion pour chaque vue utilisateur sur une période de 24 heures. Si un utilisateur déclenche plusieurs événements de conversion dans votre application sur une période de 24heures, seul le premier événement de conversion est signalé. Ceci est conçu pour empêcher le fait qu’un utilisateur unique fausse les résultats de l’expérience pour un groupe représentatif d’utilisateurs alors que l’objectif est d’optimiser le nombre d’utilisateurs qui effectuent une conversion.
 
-<span id="test_experiments"/>
-## Create an experiment for internal testing
+## Définir les variantes et les paramètres pour l’expérience
 
-You might want to test your experiment with a controlled audience (for example, a set of internal testers) and confirm that all of the variations are working as expected before you activate the experiment for your customers. You can accomplish this by creating an experiment that has the **Editable experiment** option selected.
+Définissez ensuite les variantes et les paramètres pour l’expérience
 
-To test your experiment before releasing it to customers, follow this process:
+* Une *variante* est une collection d’un ou plusieurs paramètres que vous testez dans votre expérience. Chaque expérience doit contenir au moins un paramètre et deux variantes (y compris le contrôle). Une expérience peut avoir jusqu’à cinq variantes.
+* Un *paramètre* est une valeur que votre application utilise pour initialiser une variable de programme. Au cours de l’expérience, la valeur du paramètre change d’une variante à une autre. Une fois l’expérience terminée, le paramètre se voit affecter la même valeur que la variante que vous choisissez de publier à tous les utilisateurs de votre application. Les paramètres peuvent avoir les types suivants: string, Boolean, double, et integer.
 
-1. Create two projects: one for the public build of your app, and one for a private build of your app that is available only to your test audience. The following instructions refer to these projects as the public project and test project, respectively.
-2. When you [code your app for experimentation](code-your-experiment-in-your-app.md), reference the project ID from your public project in the public build of your app. In the private build of your app, reference the project ID from your test project.
-3. Create an experiment in the test project, and select the **Editable experiment** option for the experiment.
-4. Activate the experiment in the test project. Allocate 100% distribution to one variation and verify that this variation works as expected for your testers. Repeat the process for other variations.
-5. After you verify that the variations are working as expected, make any final changes to the experiment in the test project. When you are ready to release the experiment to your customers, clone the experiment to the public project. In this experiment, do not select the **Editable experiment** option.
-4. Ensure that the target variation distribution is correct in the cloned experiment.
-5. Activate the cloned experiment to release the experiment to your customers.
+Pour définir les variantes et les paramètres pour l’expérience:
+1. Dans la section **Variantes et paramètres**, vous devez voir deux variantes par défaut, **Variante A (contrôle)** et **Variante B**. Si vous voulez davantage de variantes, cliquez sur **Ajouter une variante**. Si vous le souhaitez, vous pouvez renommer chaque variation.
+2. Ensuite, créez les paramètres de vos variantes. Cliquez sur **Ajouter un paramètre** pour créer chaque nouveau paramètre, puis tapez le nom du paramètre et la valeur du paramètre dans chaque variante.
+3. Par défaut, les variantes sont réparties en valeurs égales entre les utilisateurs de l’application. Si vous souhaitez définir un pourcentage de distribution spécifique, décochez la case **Répartir en valeurs égales** et tapez les pourcentages dans la ligne **Distribution (%)**.
 
-## Next steps
+## Enregistrez votre expérience
 
-After you define your experiment in the Dev Center dashboard and code the experiment in your app, you are ready to [run and manage your experiment in the Dev Center dashboard](manage-your-experiment.md).
+Lorsque vous avez terminé la saisie des champs obligatoires pour votre expérience, cliquez sur **Enregistrer** pour enregistrer votre expérience.
 
-## Related topics
+> **Important** Lorsque vous enregistrez une expérience, vous ne pouvez plus modifier la clé API pour cette dernière, même si vous n’avez pas encore activé l’expérience.
 
-* [Create a project and define remote variables in the Dev Center dashboard](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
-* [Code your app for experimentation](code-your-experiment-in-your-app.md)
-* [Manage your experiment in the Dev Center dashboard](manage-your-experiment.md)
-* [Create and run your first experiment with A/B testing](create-and-run-your-first-experiment-with-a-b-testing.md)
-* [Run app experiments with A/B testing](run-app-experiments-with-a-b-testing.md)
+Si vous êtes satisfait des paramètres de votre expérience et êtes prêt à l’activer afin de pouvoir commencer la collecte des données de l’expérience depuis votre application, cliquez sur **Activer**. Lorsque l’expérience est active, votre application peut récupérer les paramètres des variantes et signaler les événements d’affichage et de conversion au Centre de développement.
+
+> **Important** Lorsque vous activez une expérience, vous ne pouvez plus modifier les paramètres de l’expérience, sauf s’il s’agit d’une expérience de test (vous avez coché la case **Expérience de test** lorsque vous avez créé l’expérience). Nous vous recommandons de coder l’expérience dans votre application avant d’activer votre expérience.
+
+## Étapes suivantes
+
+Après avoir défini votre expérience dans le tableau de bord du Centre de développement, vous êtes prêt pour les étapes suivantes:
+1. [Coder votre application à des fins d’expérimentation](code-your-experiment-in-your-app.md). Utilisez une API du Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft pour obtenir les paramètres de variante pour l’expérience, utiliser ces données pour modifier le comportement de la fonctionnalité que vous testez et envoyer des événements d’affichage et de conversion au Centre de développement.
+2. [Exécutez et gérez votre expérience dans le tableau de bord du Centre de développement](manage-your-experiment.md). Utilisez le tableau de bord pour examiner les résultats de l’expérience et pour la terminer.
+
+## Rubriques connexes
+
+  * [Coder votre application à des fins d’expérimentation](code-your-experiment-in-your-app.md)
+  * [Gérer votre expérience dans le tableau de bord du Centre de développement](manage-your-experiment.md)
+  * [Créer et exécuter votre première expérience avec des tests A/B](create-and-run-your-first-experiment-with-a-b-testing.md)
+  * [Exécuter des expériences d’application avec des tests A/B](run-app-experiments-with-a-b-testing.md)
 
 
 
-<!--HONumber=Sep16_HO1-->
+<!--HONumber=Jun16_HO4-->
 
 

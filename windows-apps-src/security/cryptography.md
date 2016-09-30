@@ -1,21 +1,21 @@
 ---
-title: Cryptography
-description: The article provides an overview of the cryptography features available to Universal Windows Platform (UWP) apps. For detailed information on particular tasks, see the table at the end of this article.
+title: Chiffrement
+description: "L’article fournit une vue d’ensemble des fonctionnalités de chiffrement disponibles pour les applications de plateforme Windows universelle (UWP). Pour plus d’informations sur des tâches particulières, voir le tableau à la fin de cet article."
 ms.assetid: 9C213036-47FD-4AA4-99E0-84006BE63F47
 author: awkoren
 translationtype: Human Translation
 ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: c5feae97563277dc14a64d5c96cb6229b6cfb8b1
+ms.openlocfilehash: b8cccf54e414de084c5b3fd080007b225b9a9b12
 
 ---
 
-# Cryptography
+# Chiffrement
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-The article provides an overview of the cryptography features available to Universal Windows Platform (UWP) apps. For detailed information on particular tasks, see the table at the end of this article.
+L’article fournit une vue d’ensemble des fonctionnalités de chiffrement disponibles pour les applications de plateforme Windows universelle (UWP). Pour plus d’informations sur des tâches particulières, voir le tableau à la fin de cet article.
 
 ## Terminology
 
@@ -90,9 +90,9 @@ The simplified application programming interface available for apps enables the 
 
 ### Cryptography support
 
-You can perform the following cryptographic tasks. For more information, see the [**Windows.Security.Cryptography.Core**](https://msdn.microsoft.com/library/windows/apps/br241547) namespace.
+Vous pouvez effectuer les tâches de chiffrement suivantes. Pour plus d’informations, voir l’espace de noms [**Windows.Security.Cryptography.Core**](https://msdn.microsoft.com/library/windows/apps/br241547).
 
--   Create symmetric keys
+-   Créer des clés symétriques
 -   Perform symmetric encryption
 -   Create asymmetric keys
 -   Perform asymmetric encryption
@@ -101,20 +101,20 @@ You can perform the following cryptographic tasks. For more information, see the
 -   Hash content
 -   Digitally sign content
 
-The SDK also provides a simplified interface for password-based data protection. You can use this to perform the following tasks. For more information, see the [**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585) namespace.
+The SDK also provides a simplified interface for password-based data protection. Vous pouvez l’utiliser pour effectuer les tâches suivantes. Pour plus d’informations, voir l’espace de noms [**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585).
 
--   Asynchronous protection of static data
+-   Protection asynchrone des données statiques
 -   Asynchronous protection of a data stream
 
-### Encoding support
+### Prise en charge du codage
 
-An app can encode cryptographic data for transmission across a network and decode data received from a network source. For more information, see the static methods available in the [**Windows.Security.Cryptography**](https://msdn.microsoft.com/library/windows/apps/br241404) namespace.
+Une application permet de coder les données de chiffrement avant leur transfert via un réseau et de décoder les données provenant d’une source réseau. Pour plus d’informations, voir les méthodes statiques disponibles dans l’espace de noms [**Windows.Security.Cryptography**](https://msdn.microsoft.com/library/windows/apps/br241404).
 
-### PKI support
+### Prise en charge de l’infrastructure à clé publique (PKI)
 
-Apps can perform the following PKI tasks. For more information, see the [**Windows.Security.Cryptography.Certificates**](https://msdn.microsoft.com/library/windows/apps/br241476) namespace.
+Les applications pouvez effectuer les tâches PKI suivantes. Pour plus d’informations, voir l’espace de noms [**Windows.Security.Cryptography.Certificates**](https://msdn.microsoft.com/library/windows/apps/br241476).
 
--   Create a certificate
+-   Créer un certificat
 -   Create a self-signed certificate
 -   Install a certificate response
 -   Import a certificate in PFX format
@@ -129,25 +129,25 @@ Additionally, you can use the manifest to perform the following actions:
 -   Specify the certificate selection criteria
     -   Hardware certificates only
     -   Certificates that chain through a specified set of issuers
-    -   Automatically select a certificate from the application store
+    -   Sélectionner automatiquement un certificat dans le magasin d’applications
 
-## Detailed articles
+## Articles détaillés
 
 
-The following articles provide more detail on security scenarios:
+Les articles suivants fournissent plus de détails sur la sécurité:
 
-| Topic                                                                         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| Rubrique                                                                         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 |-------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Certificates](certificates.md)                                               | This article discusses the use of certificates in UWP apps. Digital certificates are used in public key cryptography to bind a public key to a person, computer, or organization. The bound identities are most often used to authenticate one entity to another. For example, certificates are often used to authenticate a web server to a user and a user to a web server. You can create certificate requests and install or import issued certificates. You can also enroll a certificate in a certificate hierarchy. |
-| [Cryptographic keys](cryptographic-keys.md)                                   | This article shows how to use standard key derivation functions to derive keys and how to encrypt content using symmetric and asymmetric keys.                                                                                                                                                                                                                                                                                                                                                                             |
-| [Data protection](data-protection.md)                                         | This article explains how to use the [DataProtectionProvider](https://msdn.microsoft.com/library/windows/apps/br241559) class in the [Windows.Security.Cryptography.DataProtection](https://msdn.microsoft.com/library/windows/apps/br241585) namespace to encrypt and decrypt digital data in a UWP app.                                                                                                                                                                                                                  |
-| [MACs, hashes, and signatures](macs-hashes-and-signatures.md)               | This article discusses how message authentication codes (MACs), hashes, and signatures can be used in UWP apps to detect message tampering.                                                                                                                                                                                                                                                                                                                                                                                |
-| [Export restrictions on cryptography](export-restrictions-on-cryptography.md) | Use this info to determine if your app uses cryptography in a way that might prevent it from being listed in the Windows Store.                                                                                                                                                                                                                                                                                                                                                                                            |
-| [Common cryptography tasks](common-cryptography-tasks.md)                     | These articles provide example code for common UWP cryptography tasks, such as creating random numbers, comparing buffers, converting between strings and binary data, copying to and from byte arrays, and encoding and decoding data.                                                                                                                                                                                                                                                                                    |
+| [Certificats](certificates.md)                                               | Cet article traite de l’utilisation des certificats dans les applications UWP. Les certificats numériques sont utilisés dans le chiffrement à clé publique pour lier une clé publique à une personne, un ordinateur ou une organisation. Les identités liées sont le plus souvent utilisées pour authentifier une entité auprès d’une autre. Par exemple, les certificats sont souvent utilisés pour authentifier un serveur Web auprès d’un utilisateur ou vice versa. Vous pouvez créer des demandes de certificat et installer ou importer des certificats émis. Vous pouvez aussi inscrire un certificat dans une hiérarchie de certificats. |
+| [Clés de chiffrement](cryptographic-keys.md)                                   | Cet article montre comment utiliser les fonctions de dérivation de clés standard, et chiffrer du contenu à l’aide de clés symétriques et asymétriques.                                                                                                                                                                                                                                                                                                                                                                             |
+| [Protection des données](data-protection.md)                                         | Cet article explique comment utiliser la classe [DataProtectionProvider](https://msdn.microsoft.com/library/windows/apps/br241559) dans l’espace de noms [Windows.Security.Cryptography.DataProtection](https://msdn.microsoft.com/library/windows/apps/br241585) pour chiffrer et déchiffrer des données numériques dans une application UWP.                                                                                                                                                                                                                  |
+| [Codes d’authentification des messages, hachages et signatures](macs-hashes-and-signatures.md)               | Cet article explique comment les codes d’authentification des messages, les hachages et les signatures peuvent être utilisés dans les applications UWP pour détecter une falsification des messages.                                                                                                                                                                                                                                                                                                                                                                                |
+| [Restrictions à l’exportation liées à l’utilisation du chiffrement](export-restrictions-on-cryptography.md) | Utilisez ces informations pour déterminer si votre application emploie un type de chiffrement qui pourrait l’empêcher de figurer dans le Windows Store.                                                                                                                                                                                                                                                                                                                                                                                            |
+| [Tâches courantes de chiffrement](common-cryptography-tasks.md)                     | Ces articles fournissent des exemples de code pour les tâches de chiffrement UWP courantes, telles que la création de nombres aléatoires, la comparaison de mémoires tampon, la conversion entre chaînes et données binaires, la copie de tableaux d’octets, et le codage/décodage de données.                                                                                                                                                                                                                                                                                    |
 
  
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

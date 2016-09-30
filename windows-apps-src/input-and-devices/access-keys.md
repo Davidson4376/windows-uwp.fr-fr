@@ -1,145 +1,136 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "Activez l’accès via le clavier à l’aide des touches d’accès rapide et de la navigation par onglets, afin que les utilisateurs puissent naviguer entre les éléments d’interface utilisateur grâce au clavier."
-title: "Touches d’accès rapide"
+Description: Enable keyboard access using tab navigation and access keys so users can navigate across UI elements with the keyboard.
+title: Access keys
 ms.assetid: C2F3F3CE-737F-4652-98B7-5278A462F9D3
 label: Access keys
 template: detail.hbs
 keyword: Access keys, keyboard, accessibility
-translationtype: Human Translation
-ms.sourcegitcommit: ac86012b63646e53dbde492eef504cb8230f2afd
-ms.openlocfilehash: d96d507c6ce8537888619ce174e2ff0e5284dcce
-
 ---
 
-# Touches d’accès rapide
+# Access keys
 
-Les utilisateurs n’étant pas à l’aise avec la souris, tels que ceux souffrant d’un handicap moteur, comptent souvent sur le clavier pour naviguer dans une application et interagir avec celle-ci.  L’infrastructure XAML vous permet de proposer un accès via le clavier aux éléments d’interface utilisateur à l’aide des touches d’accès rapide et de la navigation par onglets.
+Users who cannot easily use a mouse, such as those with motor disabilities, often rely on the keyboard to navigate and interact with an app.  The XAML framework lets you enable keyboard access using tab navigation and access keys so users can navigate across UI elements with the keyboard.
 
-- La navigation par onglets est une affordance d’accessibilité via le clavier de base (activé par défaut) qui permet aux utilisateurs de déplacer le focus entre les éléments d’interface utilisateur à l’aide des touches de tabulation et de flèches sur le clavier.
-- Les touches d’accès rapide constituent une affordance d’accessibilité supplémentaire (que vous implémentez dans votre application) pour accéder rapidement aux commandes de l’application à l’aide d’une combinaison de modificateurs du clavier (touche Alt) et d’une ou de plusieurs touches alphanumériques (en général une lettre associée à la commande). Les touches d’accès rapide courantes incluent _Alt+F_ pour ouvrir le menu Fichier et _Alt+AL_ pour aligner à gauche.  
+- Tab navigation is a basic keyboard accessibility resource that’s enabled by default. Users press the tab and arrow keys on the keyboard to move focus around the UI elements.  
+- Access keys are an additional accessibility aid that you can implement. An access key uses the Alt key plus one or more alphanumeric characters associated with a UI element. For example, _Alt, F_ is commonly used to open the File menu, while _Alt, AL_ could invoke the Align Left option.  
 
-Pour plus d’informations sur l’accessibilité et la navigation via le clavier, consultez [Interaction avec le clavier](https://msdn.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions) et [Accessibilité du clavier](https://msdn.microsoft.com/windows/uwp/accessibility/keyboard-accessibility). Cet article part du principe que vous comprenez les concepts abordés dans ces articles.
+For more info about keyboard navigation and accessibility, see [Keyboard interaction](https://msdn.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions) and [Keyboard accessibility](https://msdn.microsoft.com/windows/uwp/accessibility/keyboard-accessibility). This article assumes you understand the concepts discussed in those articles.
 
-## Vue d’ensemble des touches d’accès rapide
+## Access key overview
 
-Les touches d’accès rapide permettent aux utilisateurs d’appeler des boutons ou de définir le focus directement à l’aide du clavier, sans devoir appuyer plusieurs fois sur les touches de flèches et de tabulation. Les touches d’accès rapide sont conçues pour être facilement détectables, vous devez donc les documenter directement dans l’interface utilisateur (à l’aide d’un badge flottant au-dessus du contrôle avec la touche d’accès rapide par exemple).
+Access keys let users directly invoke buttons or set focus with the keyboard without requiring them to repeatedly press the arrow keys and tab. Access keys are intended to be easily discoverable, so you should document them directly in the UI; for example, a floating badge over the control with the access key.
 
-![Exemple de touches d’accès rapide et d’indications sur les touches associées dans Microsoft Word](images/keyboard/accesskeys-keytips.png)
 
-_Figure1: Exemple de touches d’accès rapide et d’indications sur les touches associées dans Microsoft Word._
+_Figure 1: Example of Key Tips; floating badge access keys from Microsoft Word._
 
-Une touche d’accès rapide correspond à un ou plusieurs caractères alphanumériques associés à un élément d’interface utilisateur. Par exemple, Microsoft Word utilise _H_ pour l’onglet Accueil, _2_ pour le bouton Annuler ou _JI_ pour l’onglet Création.
+An access key is one or several alphanumeric characters associated with a UI element. For example, Microsoft Word uses _H_ for the Home tab, _2_ for Undo button, or _JI_ for the Draw tab.
 
-**Étendue de la touche d’accès rapide**
+**Access key scope**
 
-Une touche d’accès rapide fait partie d’une étendue spécifique. Par exemple, dans la Figure1, _F_, _H_, _N_ et _JI_ font partie de l’étendue de la page.  Lorsque l’utilisateur appuie sur _H_, l’étendue change et passe à l’étendue de l’onglet Accueil et ses touches d’accès rapide sont affichées comme illustré dans la Figure2. Les touches d’accès rapide _V_, _FP_, _FF_ et _FS_ font partie de l’étendue de l’onglet Accueil.
+An access key belongs to a specific scope. For example, in Figure 1, _F_, _H_, _N_, and _JI_, belong to the page’s scope.  When the user presses _H_, the scope changes to the Home tab’s scope and its access keys are shown as seen in Figure 2. The access keys, _V_, _FP_, _FF_, and _FS_ belong to the Home tab’s scope.
 
-![Exemple de touches d’accès rapide et d’indications sur les touches associées pour l’étendue de l’onglet Accueil dans Microsoft Word](images/keyboard/accesskeys-keytips-hometab.png)
 
-_Figure2: Exemple de touches d’accès rapide et d’indications sur les touches associées pour l’étendue de l’onglet Accueil dans Microsoft Word._
+_Figure 2: Access keys that belong to the Home tab’s scope_
 
-Deux éléments peuvent avoir les mêmes touches d’accès rapide si ceux-ci font partie d’étendues différentes. Par exemple, _2_ est la touche d’accès rapide correspondant à l’action Annuler dans l’étendue de la page (Figure1) et correspond également à la fonction de mise en italique dans l’étendue de l’onglet Accueil (Figure2). Toutes les touches d’accès rapide font partie de l’étendue par défaut, sauf si une autre étendue est spécifiée.
+Two elements can have the same access keys if the elements belong to different scopes. For example, _2_ is the access key for Undo on the page’s scope (Figure 1), and also for Italic in the Home tab’s scope (Figure 2). All access keys belong to the default scope unless another scope is specified.
 
-**Séquence de touches d’accès rapide**
+**Access key sequence**
 
-En règle générale pour les combinaisons de touches d’accès rapide, il faut appuyer sur une touche à la fois pour effectuer l’action plutôt que d’appuyer simultanément sur les touches. (Il existe une exception à cela, que nous aborderons dans la section suivante.) La séquence de touches nécessaire pour effectuer l’action est une _séquence de touches d’accès rapide_. L’utilisateur appuie sur la touche Alt pour initier la séquence de touches d’accès rapide. Une touche d’accès rapide est appelée lorsque l’utilisateur appuie sur la dernière touche d’une séquence de touches d’accès rapide. Par exemple, l’utilisateur doit appuyer sur les touches de la séquence de touches d’accès rapide _Alt, W_ pour ouvrir l’onglet Affichage.
+To use access keys, users typically press one key at a time to achieve an action rather than pressing keys simultaneously. (There is an exception to this that we discuss in the next section.) The sequence of keystrokes needed to achieve the action is an _access key sequence_. The user presses the Alt key to initiate the access key sequence. An access key is invoked when the user presses the last key in an access key sequence. For example, to open the View tab in Word, the user would press the _Alt, W_ access key sequence.
 
-Un utilisateur peut appeler plusieurs touches d’accès rapide dans une séquence de touches d’accès rapide. Par exemple, pour ouvrir la fonction Reproduire la mise en forme dans un document Word, l’utilisateur appuie sur Alt pour initialiser la séquence, puis sur _H_ pour accéder à la section Accueil et modifier l’étendue de la touche d’accès, sur _F_ et finalement sur_P_. _H_ et _FP_ sont, respectivement, les touches d’accès rapide pour l’onglet Accueil et le bouton Reproduire la mise en forme.
+A user can invoke several access keys in an access key sequence. For example, to open the Format Painter in a Word document, the user presses Alt to initialize the sequence, then presses _H_ to navigate to the Home section and change the access key scope, then _F_, and eventually _P_. _H_ and _FP_ are the access keys for the Home tab and the Format Painter button respectively.
 
-Certains éléments finalisent une séquence de touches d’accès rapide après avoir été appelés (comme le bouton Reproduire la mise en forme) et d’autres non (comme l’onglet Accueil). Appeler une touche d’accès rapide peut entraîner l’exécution d’une commande, le déplacement du focus, la modification de l’étendue de la touche d’accès rapide ou une autre action qui lui est associée.
+Some elements finalize an access key sequence after they’re invoked (like the Format Painter button) and others don’t (like the Home tab). Invoking an access key can result in executing a command, moving the focus, changing the access key scope, or some other action associated with it.
 
-## Interaction utilisateur avec les touches d’accès rapide
+## Access Key User Interaction
 
-Pour comprendre les API de touche d’accès rapide, il est d’abord nécessaire de comprendre le modèle d’interaction utilisateur. Vous trouverez ci-dessous un résumé du modèle d’interaction utilisateur avec les touches d’accès rapide:
+To understand the Access Key APIs, it is necessary to first understand the user interaction model. Below you can find a summary of the access key user interaction model:
 
-- Lorsque l’utilisateur appuie sur la touche Alt, la séquence de touches d’accès rapide démarre, même lorsque le focus se trouve sur un contrôle d’entrée. Ensuite, l’utilisateur peut appuyer sur la touche d’accès rapide pour appeler l’action associée. Cette interaction utilisateur nécessite que vous documentiez les touches d’accès rapide disponibles au sein de l’interface utilisateur avec des affordances visuelles, tels que des badges flottants, qui s’affichent lorsque l’utilisateur appuie sur la touche Alt.
-- Lorsque l’utilisateur appuie simultanément sur la touche Alt et la touche d’accès rapide, la touche d’accès rapide est appelée immédiatement. Cela est similaire à un raccourci clavier défini par Alt +_touche d’accès rapide_. Dans ce cas, les affordances visuelles de touche d’accès rapide ne s’affichent pas. Toutefois, appeler une touche d’accès rapide peut entraîner une modification de l’étendue de la touche d’accès rapide. Dans ce cas, une séquence de touches d’accès rapide est lancée et les affordances visuelles sont affichées pour la nouvelle étendue.
-    > [!NOTE]
-    > Seules les touches d’accès rapide avec un seul caractère peuvent tirer parti de cette interaction utilisateur. La combinaison Alt +_touche d’accès rapide_ n’est pas prise en charge pour les touches d’accès rapide avec plusieurs caractères.    
-- S’il existe plusieurs touches d’accès rapide multicaractères qui partagent certains caractères, alors, quand l’utilisateur appuie sur un caractère partagé, les touches d’accès rapide sont filtrées. Par exemple, supposons que trois touches d’accès rapide sont affichées: _A1_, _A2_ et _C_. Si l’utilisateur appuie sur _A_, alors seules les touches d’accès rapide _A1_ et _A2_ s’affichent et l’affordance visuelle pour C est masquée.
-- La touche Échap permet de supprimer un niveau de filtrage. Par exemple, s’il existe des touches d’accès rapide _B_, _ABC_, _ACD_ et _ABD_ et que l’utilisateur appuie sur _A_, alors seules les touches d’accès rapide _ABC_, _ACD_ et _ABD_ sont affichées. Si l’utilisateur appuie ensuite sur _B_, seules les touches d’accès rapide _ABC_ et _ABD_ sont affichées. Si l’utilisateur appuie sur Échap, un niveau de filtrage est supprimé et les touches d’accès rapide _ABC_, _ACD_ et _ABD_ sont affichées. Si l’utilisateur appuie une nouvelle fois sur Échap, un autre niveau de filtrage est supprimé et toutes les touches d’accès rapide _B_, _ABC_, _ACD_ et _ABD_ sont activées et leurs affordances visuelles sont affichées.
-- La touche Échap permet de revenir à l’étendue précédente. Les touches d’accès rapide peuvent faire partie d’étendues différentes pour faciliter la navigation entre les applications comprenant de nombreuses commandes. La séquence de touches d’accès rapide démarre toujours sur l’étendue principale. Toutes les touches d’accès rapide font partie de l’étendue principale, sauf celles qui spécifient un élément d’interface utilisateur particulier comme étant leur propriétaire d’étendue. Lorsque l’utilisateur appelle la touche d’accès rapide d’un élément qui est un propriétaire d’étendue, l’infrastructure XAML y déplace automatiquement l’étendue et l’ajoute à une pile de navigation de touches d’accès rapide interne. La touche Échap permet de revenir à la pile de navigation de touches d’accès rapide.
-- Il existe plusieurs façons pour quitter la séquence de touches d’accès rapide:
-    - L’utilisateur peut appuyer sur Alt pour quitter une séquence de touches d’accès rapide en cours d’exécution. N’oubliez pas qu’en appuyant sur Alt, vous initiez également la séquence de touches accès rapide.
-    - La touche Échap permet de quitter la séquence de touches d’accès rapide si elle se trouve dans l’étendue principale et qu’elle n’est pas filtrée.
-        > [!NOTE]
-        > La frappe de la touche Échap est transmise à la couche d’interface utilisateur pour y être traitée également.
-- La touche de tabulation permet de quitter la séquence de touches d’accès rapide et renvoie à la navigation par onglets.
-- La touche Entrée permet de quitter la séquence de touches d’accès rapide et envoie la séquence de touches à l’élément qui a le focus.
-- Les touches de flèches permettent de quitter la séquence de touches d’accès rapide et envoient la séquence de touches à l’élément qui a le focus.
-- Un événement de pointeur appuyé tel qu’un clic de souris ou une entrée tactile permet de quitter la séquence de touches d’accès rapide.
-- Par défaut, appeler une touche d’accès rapide permet de quitter la séquence de touches d’accès rapide.  Toutefois, vous pouvez remplacer ce comportement en définissant la propriété [ExitDisplayModeOnAccessKeyInvoked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.exitdisplaymodeonaccesskeyinvoked.aspx) sur **false**.
-- Des conflits de touches d’accès rapide se produisent lorsque l’utilisation d’un automate fini déterministe n’est pas possible. Les conflits de touches d’accès rapide sont déconseillés, mais peuvent se produire en raison d’un grand nombre de commandes, de problèmes de localisation ou de générations d’exécution de touches d’accès rapides.
+- When the user presses the Alt key, the access key sequence starts, even when the focus is on an input control. Then, the user can press the access key to invoke the associated action. This user interaction requires that you document the available access keys within the UI with some visual affordance, such as floating badges, that are shown when the Alt key is pressed
+- When the user presses the Alt key plus the access key simultaneously, the access key is invoked immediately. This is similar to having a keyboard shorcut defined by Alt+_access key_. In this case, the access key visual affordances are not shown. However, invoking an access key could result in changing the access key scope. In this case, an access key sequence is initiated and the visual affordances are shown for the new scope.
 
- Il existe deux cas pour lesquels des conflits se produisent:
- - Lorsque deux éléments d’interface utilisateur ont la même valeur de touche d’accès rapide et font partie de la même étendue de touche d’accès rapide. Par exemple, une touche d’accès rapide _A1_ pour un `button1` et une touche d’accès rapide _A1_ pour un `button2` qui fait partie de l’étendue par défaut. Dans ce cas, le système résout le conflit en traitant la touche d’accès rapide du premier élément ajouté à l’arborescence visuelle. Le reste est ignoré.
- - Quand il existe plusieurs options de calcul dans la même étendue de touches d’accès rapide. Par exemple, _A_ et _A1_. Lorsque l’utilisateur appuie sur _A_, le système propose deux options: appeler la touche d’accès rapide _A_ ou continuer et utiliser le caractère A à partir de la touche d’accès rapide _A1_. Dans ce cas, le système traite uniquement le premier appel de touche d’accès rapide atteint par l’automate. Dans l’exemple avec _A_ et _A1_, le système appelle uniquement la touche d’accès rapide_A_.
--   Lorsque l’utilisateur appuie sur une touche d’accès rapide non valide dans une séquence de touches d’accès rapide, rien ne se produit. Il existe deux catégories de touches considérées comme des touches d’accès rapide valides dans une séquence de touches d’accès rapide:
- - Les touches spéciales pour quitter la séquence de touches d’accès rapide: il s’agit des touches Échap, Alt, de flèches, Entrée et de tabulation.
- - Les caractères alphanumériques affectés aux touches d’accès rapide.
+    **NOTE**&nbsp;&nbsp;Only access keys with one character can take advantage of this user interaction. The Alt+_access key_ combination is not supported for access keys with more than one character.
+- When there are several multi-character access keys that share some characters, when the user presses a shared character, the access keys are filtered. For example, assume there are three access keys shown: _A1_, _A2_, and _C_. If the user presses _A_, then only the _A1_ and _A2_ access key are shown and the visual affordance for C is hidden.
+- The Esc key removes one level the filtering. For example, if there are access keys _B_, _ABC_, _ACD_, and _ABD_ and the user presses _A_, then only _ABC_, _ACD_ and _ABD_ are shown. If the user then presses _B_, only _ABC_ and _ABD_ are shown. If user presses Esc, one level of filtering is removed and _ABC_, _ACD_ and _ABD_ access keys are shown. If the user presses Esc again, another level of filtering is removed and all the access keys -   _B_, _ABC_, _ACD_, and _ABD_ – are enabled and their visual affordances are shown.
+- The Esc key navigates back to the previous scope. Access keys can belong to different scopes to make it easier to navigate across apps that have a lot of commands. The access key sequence always starts on the main scope. All access keys belong to the main scope except those that specify a particular UI element as their scope owner. When the user invokes the access key of an element that is a scope owner, the XAML framework automatically moves the scope to it and adds it to an internal access key navigation stack. The Esc key moves back through the access key navigation stack.
+- There are several ways to dismiss the access key sequence:
+    - The user can press Alt to dismiss an access key sequence that is in progress. Remember that pressing Alt initiates the access key sequence as well.
+    - The Esc key dismisses the access key sequence if it is in the main scope and is not filtered.
 
-## API de touche d’accès rapide
+        **NOTE**&nbsp;&nbsp;The Esc keystroke is passed to the UI layer to be handled there as well.
+    - The Tab key dismisses the access key sequence and returns to the Tab navigation.
+    - The Enter key dismisses the access key sequence and sends the keystroke to the element that has the focus.
+    - The arrow keys dismiss the access key sequence and send the keystroke to the element that has the focus.
+    - A pointer down event such a mouse click or a touch dismisses the access key sequence.
+    - By default, when an access key is invoked, the access key sequence is dismissed.  However, you can override this behavior by setting the [ExitDisplayModeOnAccessKeyInvoked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.exitdisplaymodeonaccesskeyinvoked.aspx) property to **false**.
+- Access key collisions occur when a deterministic finite automaton is not possible. Access key collisions are not desirable but can happen because of a large number of commands, localization issues, or runtime generation of access keys.
 
-Pour prendre en charge l’interaction utilisateur avec les touches d’accès rapide, l’infrastructure XAML fournit les API décrites ici.
+ There are two cases where collisions happen:
+ - When two UI elements have the same access key value and belong to the same access key scope. For example, an access key _A1_ for a `button1` and access key _A1_ for a `button2` that belongs to the default scope. In this case, the system resolves the collision by processing the access key of the first element added to the visual tree. The rest are ignored.
+ - When there is more than one computational option in the same access key scope. For example, _A_ and _A1_. When user presses _A_, the system has two options: invoke the _A_ access key or keep going and consume the A character from the _A1_ access key. In this case, the system will process only the first access key invocation reached by the automata. For the example, _A_ and _A1_, the system will only invoke the _A_ access key.
+- 	When the user presses an invalid access key value in an access key sequence, nothing happens. There are two categories of keys considered as valid access keys in an access key sequence:
+ - Special keys to exit the access key sequence: This is Esc, Alt, the arrow keys, Enter, and Tab.
+ - The alphanumeric characters assigned to the access keys.
+
+## Access key APIs
+
+To support the access key user interaction, the XAML framework provides the APIs described here.
 
 **AccessKeyManager**
 
-[AccessKeyManager](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.aspx) est une classe d’assistance que vous pouvez utiliser pour gérer votre interface utilisateur lorsque les touches d’accès rapide sont affichées ou masquées. L’événement [IsDisplayModeEnabledChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.isdisplaymodeenabledchanged.aspx) est déclenché chaque fois que l’application entre dans la séquence de touches d’accès rapide et la quitte. Vous pouvez interroger la propriété [IsDisplayModeEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.isdisplaymodeenabled.aspx) pour déterminer si les affordances visuelles sont affichées ou masquées.  Vous pouvez également appeler [ExitDisplayMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.exitdisplaymode.aspx) pour forcer le départ d’une séquence de touches d’accès rapide.
+The [AccessKeyManager](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.aspx) is a helper class that you can use to manage your UI when access keys are shown or hidden. The [IsDisplayModeEnabledChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.isdisplaymodeenabledchanged.aspx) event is raised each time the app enters and exits from the access key sequence. You can query the [IsDisplayModeEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.isdisplaymodeenabled.aspx) property to determine whether the visual affordances are shown or hidden.  You can also call [ExitDisplayMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.exitdisplaymode.aspx) to force dismissal of an access key sequence.
 
-> [!NOTE]
-> Il n’existe aucune implémentation intégrée de visuel de touche d’accès rapide, vous devez les fournir vous-même.  
+**NOTE**&nbsp;&nbsp;There is no built-in implementation of the access key's visual; you have to provide it.  
 
 **AccessKey**
 
-La propriété [AccessKey](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskey.aspx) vous permet de spécifier une touche d’accès rapide sur un élément UIElement ou [TextElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.accesskey.aspx). Si deux éléments ont la même touche d’accès rapide et la même étendue, seul le premier élément ajouté à l’arborescence visuelle est traité.
+The [AccessKey](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskey.aspx) property lets you specify an access key on a UIElement or [TextElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.accesskey.aspx). If two elements have the same access key and the same scope, only the first element added to the visual tree will be processed.
 
-Pour vous assurer que l’infrastructure XAML traite les touches d’accès rapide, les éléments d’interface utilisateur doivent être créés dans l’arborescence visuelle. S’il n’existe aucun élément dans l’arborescence visuelle avec une touche d’accès rapide, aucun événement de touche d’accès rapide n’est déclenché.
+To ensure the XAML Framework processes the access keys, the UI elements must be realized in the visual tree. If there are no elements in the visual tree with an access key, no access key events are raised.
 
-Les API de touche d’accès rapide ne prennent pas en charge les caractères qui ont besoin de deux frappes de touche pour être générés. Un caractère individuel doit correspondre à une touche sur une disposition du clavier native d’une langue particulière.  
+Access key APIs don’t support characters that need two keystrokes to be generated. An individual character must correspond to a key on a particular language’s native keyboard layout.  
 
 **AccessKeyDisplayRequested/Dismissed**
 
-Les événements [AccessKeyDisplayRequested](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeydisplayrequested.aspx) et [AccessKeyDisplayDismissed](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeydisplaydismissed.aspx) sont déclenchés lorsqu’une affordance visuelle de touche d’accès rapide doit être affichée ou fermée. Ces événements ne sont pas déclenchés pour les éléments dont la propriété [Visibility](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.visibility.aspx) est définie sur **Collapsed**. L’événement AccessKeyDisplayRequested est déclenché au cours d’une séquence de touches d’accès rapide chaque fois que l’utilisateur appuie sur un caractère qui est utilisé par la touche d’accès rapide. Par exemple, si une touche d’accès rapide est définie sur _AB_, cet événement est déclenché lorsque l’utilisateur appuie sur Alt, et une nouvelle fois lorsque l’utilisateur appuie sur _A_. Lorsque l’utilisateur appuie sur _B_, l’événement AccessKeyDisplayDismissed est déclenché.
+The [AccessKeyDisplayRequested](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeydisplayrequested.aspx) and the [AccessKeyDisplayDismissed](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeydisplaydismissed.aspx) events are raised when an access key visual affordance should be displayed or dismissed. These events are not raised for elements with their [Visibility](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.visibility.aspx) property set to **Collapsed**. The AccessKeyDisplayRequested event is raised during an access key sequence every time the user presses a character that is used by the access key. For example, if an access key is set to _AB_, this event is raised when the user presses Alt, and again when the user presses _A_. When user presses _B_, the AccessKeyDisplayDismissed event is raised
 
 **AccessKeyInvoked**
 
-L’événement [AccessKeyInvoked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeyinvoked.aspx) est déclenché lorsqu’un utilisateur atteint le dernier caractère d’une touche d’accès rapide. Une touche d’accès rapide peut comporter un ou plusieurs caractères. Par exemple, pour les touches d’accès rapide _A_ et _BC_, lorsqu’un utilisateur appuie sur _Alt, A_ ou _Alt, B, C_, l’événement est déclenché, mais pas lorsque l’utilisateur appuie juste sur _Alt, B_. Cet événement est déclenché lorsque la touche est enfoncée et non lorsqu’elle est relâchée.
+The [AccessKeyInvoked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeyinvoked.aspx) event is raised when a user reaches the last character of an access key. An access key can have one or several characters. For example, for access keys _A_ and _BC_, when a user presses _Alt, A_, or _Alt,  B, C_, the event is raised, but not when the user presses just _Alt, B_. This event is raised when the key is pressed, not when it’s released.
 
 **IsAccessKeyScope**
 
-La propriété [IsAccessKeyScope](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.isaccesskeyscope.aspx) vous permet de spécifier qu’un élément UIElement est la racine d’une étendue de touche d’accès rapide. L’événement AccessKeyDisplayRequested est déclenché pour cet élément, mais pas pour ses enfants. Quand un utilisateur appelle cet élément, l’infrastructure XAML modifie automatiquement l’étendue et déclenche l’événement AccessKeyDisplayRequested sur ses enfants et l’événement AccessKeyDisplayDismissed sur d’autres éléments d’interface utilisateur (y compris le parent).  La séquence de touches d’accès rapide n’est pas quittée lorsque l’étendue est modifiée.
+The [IsAccessKeyScope](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.isaccesskeyscope.aspx) property lets you specify that a UIElement is the root of an access key scope. The AccessKeyDisplayRequested event is raised for this element, but not for its children. When a user invokes this element, the XAML framework changes the scope automatically and raises the AccessKeyDisplayRequested event on its children and the AccessKeyDisplayDismissed event on other UI elements (including the parent).  The access key sequence is not exited when the scope is changed.
 
 **AccessKeyScopeOwner**
 
-Pour permettre à un élément de faire partie de l’étendue d’un autre élément (la source) qui n’est pas son parent dans l’arborescence visuelle, vous pouvez définir la propriété [AccessKeyScopeOwner](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeyscopeowner.aspx). L’élément lié à la propriété AccessKeyScopeOwner doit avoir l’élément IsAccessKeyScope défini sur **true**. Sinon, une exception est levée.
+To make an element participate in the scope of another element (the source) that is not its parent in the visual tree, you can set the [AccessKeyScopeOwner](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeyscopeowner.aspx) property. The element bound to the AccessKeyScopeOwner property must have IsAccessKeyScope set to **true**. Otherwise, an exception is thrown.
 
 **ExitDisplayModeOnAccessKeyInvoked**
 
-Par défaut, lorsqu’une touche d’accès rapide est appelée et que l’élément n’est pas un propriétaire de l’étendue, la séquence de touches d’accès rapide est finalisée et l’événement [AccessKeyManager.IsDisplayModeEnabledChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.isdisplaymodeenabledchanged.aspx) est déclenché. Vous pouvez définir la propriété [ExitDisplayModeOnAccessKeyInvoked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.exitdisplaymodeonaccesskeyinvoked.aspx) sur **false** pour remplacer ce comportement et empêcher le départ de la séquence de touches d’accès rapide après qu’elle est appelée. (Cette propriété se trouve sur les éléments [UIElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.exitdisplaymodeonaccesskeyinvoked.aspx) et [TextElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.exitdisplaymodeonaccesskeyinvoked.aspx)).
+By default, when an access key is invoked and the element is not a scope owner, the access key sequence is finalized and the [AccessKeyManager.IsDisplayModeEnabledChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.isdisplaymodeenabledchanged.aspx) event is raised. You can set the [ExitDisplayModeOnAccessKeyInvoked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.exitdisplaymodeonaccesskeyinvoked.aspx) property to **false** to override this behavior and prevent exiting from the access key sequence after its invoked. (This property is on both [UIElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.exitdisplaymodeonaccesskeyinvoked.aspx) and [TextElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.exitdisplaymodeonaccesskeyinvoked.aspx)).
 
-> [!NOTE]
-> Si l’élément est un propriétaire d’étendue (`IsAccessKeyScope="True"`), l’application entre dans une nouvelle étendue de touche d’accès rapide et l’événement IsDisplayModeEnabledChanged n’est pas déclenché.
+**NOTE**&nbsp;&nbsp;If the element is a scope owner (`IsAccessKeyScope="True"`), the app enters a new access key scope and the IsDisplayModeEnabledChanged event is not raised.
 
-**Localisation**
+**Localization**
 
-Les touches d’accès rapide peuvent être localisées en plusieurs langues et chargées à l’exécution à l’aide des API [ResourceLoader](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.resources.resourceloader.aspx).
+Access keys can be localized in multiple languages and loaded at runtime using the [ResourceLoader](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.resources.resourceloader.aspx) APIs.
 
-## Modèles de contrôle utilisés lorsqu’une touche d’accès rapide est appelée
+## Control patterns used when an access key is invoked
 
-Les modèles de contrôle sont les implémentations d’interface qui exposent les fonctionnalités des contrôles courants; par exemple, les boutons implémentent le modèle de contrôle **Invoke** et cela déclenche l’événement **Click**. Lorsqu’une touche d’accès rapide est appelée, l’infrastructure XAML recherche si l’élément appelé implémente un modèle de contrôle et l’exécute le cas échéant. Si l’élément comporte plusieurs modèles de contrôle, un seul est appelé et les autres sont ignorés. Les modèles de contrôle sont recherchés dans l’ordre suivant:
+Control patterns are interface implementations that expose common control functionality; for example, buttons implement the **Invoke** control pattern and this raises the **Click** event. When an access key is invoked, the XAML framework looks up whether the invoked element implements a control pattern and executes it if it does. If the element has more than one control pattern, only one is invoked, the rest are ignored. Control patterns are searched in the following order:
 
-1.  Invoke. Par exemple, un élément Button.
-2.  Toggle. Par exemple, un élément Checkbox.
-3.  Selection. Par exemple, un élément RadioButton.
-4.  Expand/Collapse. Par exemple, un élément ComboBox.
+1.	Invoke. For example, a Button.
+2.	Toggle. For example, a Checkbox.
+3.	Selection. For example, a RadioButton.
+4.	Expand/Collapse. For example, a ComboBox.
 
-Si un modèle de contrôle n’est pas trouvé, l’appel de touche d’accès rapide apparaît sous la forme d’un no-op, et un message de débogage est enregistré pour vous aider à résoudre cette situation : «Aucun modèle d’automation pour ce composant n’a été trouvé. Implémentez le comportement souhaité dans le gestionnaire d’événements pour AccessKeyInvoked. Définir la propriété Handled sur true dans votre gestionnaire d’événements supprime ce message.»
+If a control pattern is not found, the access key invocation will appear as a no-op and a debug message is recorded to assist you in debugging this situation: "No automation patterns for this component found. Implement desired behavior in the event handler for AccessKeyInvoked. Setting Handled to true in your event handler will suppress this message."
 
-> [!NOTE]
-> Le type de processus Application du débogueur doit être défini sur _Mixte (managé et natif)_ ou _Natif_ dans les paramètres de débogage de Visual Studio pour voir ce message.
+**NOTE**&nbsp;&nbsp;The debugger's Application process type must be _Mixed (Managed and Native)_ or _Native_ in Visual Studio's Debug Settings to see this message.
 
-Si vous ne souhaitez pas qu’une touche d’accès exécute son modèle de contrôle par défaut, ou si l’élément n’a pas de modèle de contrôle, vous devez gérer l’événement [AccessKeyInvoked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeyinvoked.aspx) et implémenter le comportement souhaité.
+If you do not want an access key to execute its default control pattern, or if the element does not have a control pattern, you should handle the [AccessKeyInvoked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeyinvoked.aspx) event and implement the desired behavior.
 ```csharp
 private void OnAccessKeyInvoked(UIElement sender, AccessKeyInvokedEventArgs args)
 {
@@ -148,20 +139,19 @@ private void OnAccessKeyInvoked(UIElement sender, AccessKeyInvokedEventArgs args
 }
 ```
 
-Pour plus d’informations sur les modèles de contrôle, consultez [Vue d’ensemble sur les modèles de contrôle UI Automation](https://msdn.microsoft.com/library/windows/desktop/ee671194.aspx).
+For more info about control patterns, see [UI Automation Control Patterns Overview](https://msdn.microsoft.com/library/windows/desktop/ee671194.aspx).
 
-## Touches d’accès rapide et Narrateur
+## Access keys and Narrator
 
-Windows Runtime a des fournisseurs UI Automation qui exposent des propriétés sur les éléments de Microsoft UI Automation. Ces propriétés permettent aux applications de client UI Automation de détecter des informations sur les parties de l’interface utilisateur. La propriété [AutomationProperties.AccessKey](https://msdn.microsoft.com/library/windows/apps/hh759763) permet aux clients, tels que Narrateur, de détecter la touche d’accès rapide associée à un élément. Narrateur lit cette propriété chaque fois qu’un élément a le focus. Si la propriété AutomationProperties.AccessKey n’a pas de valeur, l’infrastructure XAML renvoie la valeur de propriété [AccessKey](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskey.aspx) de l’élément UIElement ou TextElement. Vous n’avez pas besoin de configurer AutomationProperties.AccessKey si la propriété AccessKey possède déjà une valeur.
+Windows Runtime has UI Automation providers that expose properties on Microsoft UI Automation elements. These properties enable UI Automation client applications to discover information about pieces of the user interface. The [AutomationProperties.AccessKey](https://msdn.microsoft.com/library/windows/apps/hh759763) property lets clients, such as Narrator, discover the access key associated with an element. Narrator will read this property every time an element gets focus. If AutomationProperties.AccessKey is does not have value, the XAML framework returns the [AccessKey](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskey.aspx) property value from the UIElement or TextElement. You don't need to setup AutomationProperties.AccessKey if the AccessKey property already has a value.
 
-## Exemple: Touche d’accès rapide pour un bouton
+## Example: Access key for button
 
-Cet exemple montre comment créer une touche d’accès rapide pour un bouton. Des info-bulles sont utilisées comme affordances visuelles pour implémenter un badge flottant qui contient la touche d’accès rapide.
+This example shows how to create an access key for a Button. It uses Tooltips as a visual affordance to implement a floating badge that contains the access key.
 
-> [!NOTE]
-> Les info-bulles sont utilisées par souci de simplicité, mais nous vous recommandons de créer votre propre contrôle pour l’afficher à l’aide, par exemple, d’un élément [Popup](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.popup.aspx).
+**NOTE**&nbsp;&nbsp;Tooltip is used for simplicity, but we recommend that you create your own control to display it using, for example, [Popup](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.popup.aspx).
 
-L’infrastructure XAML appelle automatiquement le gestionnaire pour l’événement Click, vous n’avez donc pas besoin de gérer l’événement AccessKeyInvoked. L’exemple fournit des affordances visuelles seulement pour les caractères restant pour appeler la touche d’accès rapide à l’aide de la propriété [AccessKeyDisplayRequestedEventArgs.PressedKeys](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeydisplayrequestedeventargs.pressedkeys.aspx). Par exemple, s’il existe trois touches d’accès rapide affichées: _A1_, _A2_ et _C_, et que l’utilisateur appuie sur _A_, alors seules les touches d’accès rapide_A1_ et _A2_ ne sont pas filtrées et s’affichent sous la forme _1_ et _2_ au lieu de _A1_ et _A2_.
+The XAML framework automatically calls the handler for the Click event, so you don't need to handle the AccessKeyInvoked event. The example provides visual affordances for only the characters that are remaining to invoke the access key by using the [AccessKeyDisplayRequestedEventArgs.PressedKeys](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeydisplayrequestedeventargs.pressedkeys.aspx) property. For example, if there are three displayed access keys: _A1_, _A2_, and _C_, and the user presses _A_, then only _A1_ and _A2_ access key are unfiltered, and are displayed as _1_ and _2_ instead of _A1_ and _A2_.
 
 ```xaml
 <StackPanel
@@ -229,13 +219,13 @@ L’infrastructure XAML appelle automatiquement le gestionnaire pour l’événe
     }
 ```
 
-## Exemple: Touches d’accès rapide dans l’étendue
+## Example: Scoped access keys
 
-Cet exemple montre comment créer des touches d’accès rapide dans une étendue. La propriété IsAccessKeyScope de PivotItem empêche les touches d’accès rapide des éléments enfants de PivotItem de s’afficher quand l’utilisateur appuie sur Alt. Ces touches d’accès rapide sont affichées uniquement quand l’utilisateur appelle PivotItem, car l’infrastructure XAML bascule automatiquement l’étendue. L’infrastructure masque également les touches d’accès rapide des autres étendues.
+This example shows how to create scoped access keys. The PivotItem’s IsAccessKeyScope property prevents the access keys of the PivotItem's child elements from showing when user presses Alt. These access keys are shown only when the user invokes the PivotItem because the XAML framework automatically switches the scope. The framework also hides the access keys of the other scopes.
 
-Cet exemple montre également comment gérer l’événement AccessKeyInvoked. PivotItem n’implémente pas n’importe quel modèle de contrôle, afin que l’infrastructure XAML n’appelle pas n’importe quelle action par défaut. Cette implémentation montre comment sélectionner le PivotItem qui a été appelé à l’aide de la touche d’accès rapide.
+This example also shows how to handle the AccessKeyInvoked event. The PivotItem doesn’t implement any control pattern, so the XAML framework doesn't invoke any action by default. This implementation shows how to select the PivotItem that was invoked using the access key.
 
-Enfin, l’exemple illustre l’événement IsDisplayModeChanged dans lequel vous pouvez effectuer une action quand le mode d’affichage change. Dans cet exemple, le contrôle Pivot est réduit jusqu’à ce que l’utilisateur appuie sur Alt. Lorsque l’utilisateur arrête d’interagir avec le Pivot, il est réduit à nouveau. Vous pouvez utiliser IsDisplayModeEnabled pour vérifier si le mode d’affichage de touche d’accès rapide est activé ou désactivé.
+Finally, the example shows the IsDisplayModeChanged event where you can do something when the display mode changes. In this example, the Pivot control is collapsed until the user presses Alt. When the user finishes interacting with the Pivot, it collapses again. You can use IsDisplayModeEnabled to check if the access key display mode is enabled or disabled.
 
 ```xaml   
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -382,9 +372,3 @@ public sealed partial class ScopedAccessKeys : Page
         }
     }
 ```
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

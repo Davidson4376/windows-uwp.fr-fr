@@ -1,37 +1,37 @@
 ---
 author: DBirtolo
 ms.assetid: 70667353-152B-4B18-92C1-0178298052D4
-title: Epson ESC/POS with formatting
-description: Learn how to use the ESC/POS command language to format text, such as bold and double size characters, for your Point of Service printer.
+title: Epson ESC/POS avec mise en forme
+description: "Découvrez comment utiliser le langage de commandes ESC/POS pour mettre en forme le texte, par exemple pour le mettre en gras ou pour doubler la taille des caractères, pour l’imprimante de votre point de service."
 translationtype: Human Translation
 ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
-ms.openlocfilehash: b645e41d7456f1dff664e3f61721a3564d554202
+ms.openlocfilehash: 33231abb1e573d837193daeee21713f09c7d8448
 
 ---
-# Epson ESC/POS with formatting
+# Epson ESC/POS avec mise en forme
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-** Important APIs **
+** API importantes **
 
--   [PointofService Printer](https://msdn.microsoft.com/library/windows/apps/Mt426652)
+-   [Imprimante PointofService](https://msdn.microsoft.com/library/windows/apps/Mt426652)
 -   [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071)
 
-Learn how to use the ESC/POS command language to format text, such as bold and double size characters, for your Point of Service printer.
+Découvrez comment utiliser le langage de commandes ESC/POS pour mettre en forme le texte, par exemple pour le mettre en gras ou pour doubler la taille des caractères, pour l’imprimante de votre Point de service.
 
-## ESC/POS usage
+## Utilisation des commandes ESC/POS
 
-Windows Point of Service provides use of a variety of printers, including several Epson TM series printers (for a full list of supported printers, see the [PointofService Printer](https://msdn.microsoft.com/library/windows/apps/Mt426652) page). Windows supports printing through the ESC/POS printer control language, which provides efficient and functional commands for communicating with your printer.
+Le point de service Windows prend en charge l’utilisation d’une large gamme d’imprimantes, notamment plusieurs imprimantes de la gamme EPSON TM (pour consulter la liste complète des imprimantes prises en charge, consultez la page [Imprimante PointofService](https://msdn.microsoft.com/library/windows/apps/Mt426652)). Windows prend en charge l’impression via le langage de contrôle d’imprimante ESC/POS, qui fournit des commandes efficaces et fonctionnelles permettant de communiquer avec votre imprimante.
 
-ESC/POS is a command system created by Epson used across a wide range of POS printer systems, aimed at avoiding incompatible command sets by providing universal applicability. Most modern printers support ESC/POS.
+ESC/POS est un système de commande créé par Epson qui est utilisé sur une gamme élargie de systèmes d’imprimantesPOS. Il a vocation à éliminer l’incompatibilité des ensembles de commandes, en assurant une applicabilité universelle. La plupart des imprimantes modernes prennent en charge ESC/POS.
 
-All commands start with the ESC character (ASCII 27, HEX 1B) or GS (ASCII 29, HEX 1D), followed by another character that specifies the command. Normal text is simply sent to the printer, separated by line breaks.
+L’ensemble des commandes commencent par les caractères ESC (ASCII 27, HEX 1B) ou GS (ASCII 29, HEX 1D), suivis par un autre caractère spécifiant la commande. Les éléments textuels normaux sont simplement envoyés vers l’imprimante, séparés par des sauts de ligne.
 
-The [**Windows PointOfService API**](https://msdn.microsoft.com/library/windows/apps/Dn298071) provides much of that functionality for you via the **Print()** or **PrintLine()** methods. However, to get certain formatting or to send specific commands, you must use ESC/POS commands, built as a string and sent to the printer.
+L’élément [**Windows PointOfService API**](https://msdn.microsoft.com/library/windows/apps/Dn298071) vous offre une large part de cette fonctionnalité via les méthodes **Print()** ou **PrintLine()**. Toutefois, pour obtenir une mise en forme spécifique ou pour transmettre des commandes spécifiques, vous devez utiliser les commandes ESC/POS, développées en tant que chaînes et transmises à l’imprimante.
 
-## Example using bold and double size characters
+## Exemple utilisant des caractères en gras et de taille double
 
-The example below shows how to use ESC/POS commands to print in bold and double sized characters. Note that each command is built as a string, then inserted into the printJob calls.
+L’exemple ci-dessous vous explique comment utiliser les commandes ESC/POS pour imprimer les caractères en gras et de taille double. Notez que chaque commande est générée en tant que chaîne, puis insérée dans les appels de tâche d’impression.
 
 ```csharp
 // … prior plumbing code removed for brevity
@@ -55,12 +55,12 @@ printJob.PrintLine(DoubleOn + "Here is some large text." + DoubleOff);
 printJob.ExecuteAsync();
 ```
 
-For more information on ESC/POS, including available commands, check out the [Epson ESC/POS FAQ](http://content.epson.de/fileadmin/content/files/RSD/downloads/escpos.pdf). For details on [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071) and all the available functionality, see [PointofService Printer](https://msdn.microsoft.com/library/windows/apps/Mt426652) on MSDN.
+Pour plus d’informations sur ESC/POS, notamment sur les commandes disponibles, consultez le [FAQ sur le système ESC/POS d’Epson](http://content.epson.de/fileadmin/content/files/RSD/downloads/escpos.pdf). Pour plus d’informations sur [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071) et l’ensemble des fonctionnalités disponibles, consultez la page [Imprimante PointofService](https://msdn.microsoft.com/library/windows/apps/Mt426652) sur MSDN.
 
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

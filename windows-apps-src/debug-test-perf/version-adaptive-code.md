@@ -1,113 +1,116 @@
 ---
 author: jwmsft
-title: Version adaptive code
-description: Learn how to take advantage of new APIs while maintaining compatibility with previous versions
+title: Code adaptatif de version
+description: "Découvrez comment tirer parti des nouvellesAPI tout en conservant la compatibilité avec les versions précédentes"
 translationtype: Human Translation
-ms.sourcegitcommit: 24a62c9331d4f651937f3f795fb1e7c9704af2ca
-ms.openlocfilehash: 7656018c61688bddbf23f889a82af4fd6d58c3ea
+ms.sourcegitcommit: 3f81d80cef0fef6d24cad1b42ce9726b03857b5a
+ms.openlocfilehash: db6b9c83d36ac876661197dce81e5724e44bb640
 
 ---
 
-# Version adaptive code: Use new APIs while maintaining compatibility with previous versions
+# Code adaptatif de version&#58; Utilisez de nouvellesAPI tout en conservant la compatibilité avec les versions précédentes
 
-Each release of the Windows 10 SDK adds exciting new functionality that you'll want to take advantage of. However, not all your customers will update their devices to the latest version of Windows 10 at the same time, and you want to make sure your app works on the broadest possible range of devices. Here, we show you how to design your app so that it runs on earlier versions of Windows 10, but also takes advantage of new features whenever your app runs on a device with the latest update installed.
+Chaque version du Kit de développement logicielWindows10 apporte d’incroyables fonctionnalités qui vous raviront. Toutefois, vos clients ne mettent pas tous en même temps leurs appareils à jour vers la dernière version de Windows10, et vous voulez vous assurer que votre application fonctionne sur le plus large éventail possible d’appareils. Nous allons vous expliquer comment concevoir votre application afin qu’elle s’exécute sur les versions antérieures de Windows10, mais tire également parti des nouvelles fonctionnalités lorsque votre application s’exécute sur un appareil disposant de la dernière mise à jour.
 
-There are 2 steps to take to make sure your app supports the broadest range of Windows 10 devices. First, configure your Visual Studio project to target the latest APIs. This affects what happens when you compile your app. Second, perform runtime checks to ensure that you only call APIs that are present on the device your app is running on.
+Vous devez suivre 2étapes pour vous assurer que votre application prend en charge la plus large gamme d’appareils Windows10. Tout d’abord, configurez votre projet VisualStudio afin de cibler les dernièresAPI. Cela influe sur les résultats de la compilation de votre application. Ensuite, effectuez des vérifications à l’exécution pour vous assurer que vous appelez uniquement les API présentes sur l’appareil sur lequel votre application s’exécute.
 
-## Configure your Visual Studio project
+> [!NOTE] 
+> Cet article utilise des exemples du Kit de développement logiciel WindowsInsiderPreview pour Windows10, version1607 (mise à jour anniversaire). Le Kit de développement logiciel Preview est une version préliminaire et ne peut pas être utilisé dans un environnement de production. Installez uniquement le Kit de développement logiciel sur votre ordinateur de test. Le Kit de développement logiciel Preview contient des résolutions de bogues et les modifications de développement apportées à la surface d’exposition de l’API. Si vous travaillez sur une application que vous devrez soumettre au Store, vous ne devez pas installer la version d’évaluation.
 
-The first step in supporting multiple Windows 10 versions is to specify the *Target* and *Minimum* supported OS/SDK versions in your Visual Studio project.
-- *Target*: The SDK version that Visual Studio compiles your app code and run all tools against. All APIs and resources in this SDK version are available in your app code at compile time.
-- *Minimum*: The SDK version that supports the earliest OS version that your app can run on (and will be deployed to by the store) and the version that Visual Studio compiles your app markup code against. 
+## Configurer votre projet VisualStudio
 
-During runtime your app will run against the OS version that it is deployed to, so your app will throw exceptions if you use resources or call APIs that are not available in that version. We show you how to use runtime checks to call the correct APIs later in this article.
+La première étape de la prise en charge de plusieurs versions de Windows10 consiste à spécifier les versions de système d’exploitation et de Kit de développement logiciel *Cible* et *Minimum* prises en charge dans votre projet VisualStudio.
+- *Cible*: version du Kit de développement logiciel pour laquelle Visual Studio compile le code de votre application et exécute tous les outils. Toutes les API et les ressources de ce Kit de développement logiciel sont disponibles dans le code de votre application au moment de la compilation.
+- *Minimum*: version du Kit de développement logiciel qui prend en charge  la version la plus ancienne du système d’exploitation sur laquelle votre application peut s’exécuter (et qui sera déployée par le WindowsStore) et la version pour laquelle VisualStudio compile le code de balisage de votre application. 
 
-The Target and Minimum settings specify the ends of a range of OS/SDK versions. However, if you test your app on the minimum version, you can be sure it will run on any versions between the Minimum and Target.
+Pendant son exécution, votre application s’exécute par rapport à la version du système d’exploitation déployée: votre application lève donc des exceptions si vous utilisez des ressources ou si vous appelez des API qui ne sont pas disponibles dans cette version. Nous allons vous montrer comment effectuer des vérifications à l’exécution pour appeler les API appropriées dans la suite de cet article.
 
-> [!TIP]
-> Visual Studio does not warn you about API compatibility. It is your responsibility to test and ensure that your app performs as expected on all OS versions between and including the Minimum and Target.
-
-When you create a new project in Visual Studio 2015, Update 2 or later, you are prompted to set the Target and Minimum versions that your app supports. By default, the Target Version is the highest installed SDK version, and the Minimum Version is the lowest installed SDK version. You can choose Target and Minimum only from SDK versions that are installed on your machine. 
-
-![Set the target SDK in Visual Studio](images/vs-target-sdk-1.png)
-
-We typically recommend that you leave the defaults. However, if you have a Preview version of the SDK installed and you are writing production code, you should change the Target Version from the Preview SDK to the latest official SDK version. 
-
-To change the Minimum and Target version for a project that has already been created in Visual Studio, go to Project -> Properties -> Application tab -> Targeting.
-
-![Change the target SDK in Visual Studio](images/vs-target-sdk-2.png) 
-
-For reference these are the build numbers for each SDK:
-- Windows 10, version 1506: SDK version 10240
-- Windows 10, version 1511 (November Update): SDK version 10586
-- Windows 10, version 1607 (Anniversary Update): SDK version 14393.
-
-You can download any released version of the SDK from the [Windows SDK and emulator archive](https://developer.microsoft.com/downloads/sdk-archive). You can download the latest Windows Insider Preview SDK from the developer section of the [Windows Insider](https://insider.windows.com/) site.
-
-## Write adaptive code
-
-You can think about writing adaptive code similarly to how you think about [creating an adaptive UI](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml). You might design your base UI to run on the smallest screen, and then move or add elements when you detect that your app is running on a larger screen. With adaptive code, you write your base code to run on the lowest OS version, and you can add hand-selected features when you detect that your app is running on a higher version where the new feature is available.
-
-### Runtime API checks
-
-You use the [Windows.Foundation.Metadata.ApiInformation](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.aspx) class in a condition in your code to test for the presence of the API you want to call. This condition is evaluated wherever your app runs, but it evaluates to **true** only on devices where the API is present and therefore available to call. This lets you to write version adaptive code in order to create apps that use APIs that are available only on certain OS versions.
-
-Here we look at specific examples for targeting new features in the Windows Insider Preview. For a general overview of using **ApiInformation**, see [Guide to UWP apps](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) and the blog post [Dynamically detecting features with API contracts](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/).
+Les paramètres Cible et Minimum spécifient les limites de plage des versions de système d’exploitation et de Kit de développement logiciel. Toutefois, si vous testez votre application sur la version Minimum, vous pouvez être sûr qu’elle s’exécutera sur toutes les versions comprises entre la version Minimum et la version Cible.
 
 > [!TIP]
-> Numerous runtime API checks can affect the performance of your app. We show the checks inline in these examples. In production code, you should perform the check once and cache the result, then used the cached result throughout your app. 
+> VisualStudio ne donne aucune information sur la compatibilité des API. Il vous incombe de tester et de vous assurer que votre application fonctionne comme prévu sur toutes les versions de système d’exploitation, de la version Minimum à la version Cible incluses.
 
-### Unsupported scenarios
+Lorsque vous créez un projet dans VisualStudio2015, Update2 ou version ultérieure, vous êtes invité à définir les versions Cible et Minimum prises en charge par votre application. Par défaut, la version Cible est la version du Kit de développement logiciel installée la plus élevée, tandis que la version Minimum est la version du Kit de développement logiciel installée la moins élevée. Vous pouvez choisir les versions Cible et Minimum uniquement parmi les versions du Kit de développement logiciel installées sur votre ordinateur. 
 
-In most cases, you can keep your app's Minimum Version set to SDK version 10240 and use runtime checks to enable any new APIs when your app runs on later a version. However, there are some cases where you must increase your app's Minimum Version in order to use new features.
+![Définir le Kit de développement logiciel cible dans VisualStudio](images/vs-target-sdk-1.png)
 
-You must increase your app's Minimum Version if you use:
-- a new API that requires a capability that isn't available in an earlier version. You must increase the minimum supported version to one that includes that capability. For more info, see [App capability declarations](../packaging/app-capability-declarations.md).
-- any new resource keys added to generic.xaml and not available in a previous version. The version of generic.xaml used at runtime is determined by the OS version the device is running on. You can't use runtime API checks to determine the presence of XAML resources. So, you must only use resource keys that are available in the minimum version that your app supports or a [XAMLParseException](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.markup.xamlparseexception.aspx) will cause your app to crash at runtime.
+Nous vous recommandons généralement de conserver les valeurs par défaut. Toutefois, si vous avez installé une version d’évaluation du Kit de développement et si vous écrivez du code de production, vous devez modifier la version Cible en passant du Kit de développement logiciel d’évaluation à la dernière version officielle du Kit de développement logiciel. 
 
-### Adaptive code options
+Pour modifier la version Minimum et la version Cible d’un projet déjà créé dans VisualStudio, accédez à Projet -&gt; Propriétés -&gt; onglet Application -&gt; Ciblage.
 
-There are two ways to create adaptive code. In most cases, you write your app markup to run on the Minimum version, then use your app code to tap into newer OS features when present. However, if you need to update a property in a visual state, and there is only a property or enumeration value change between OS versions, you can create an extensible state trigger that’s activated based on the presence of an API.
+![Modifier le Kit de développement logiciel cible dans VisualStudio](images/vs-target-sdk-2.png) 
 
-Here, we compare these options.
+À titre de référence, voici les numéros de version pour chaque Kit de développement logiciel:
+- Windows10, version1506: SDKversion10240
+- Windows10, version1511 (mise à jour de novembre): SDK version10586
+- Windows10, version1607 Insider Preview (mise à jour anniversaire): à l’heure où nous écrivons ce document, [la dernière version du Kit de développement logiciel Insider Preview est 14332](https://blogs.windows.com/buildingapps/2016/04/28/windows-10-anniversary-sdk-preview-build-14332-released/).
 
-**App code**
+Vous pouvez télécharger les versions finales du Kit de développement logiciel dans les [archives de Kits de développement logiciel Windows et d’émulateurs](https://developer.microsoft.com/downloads/sdk-archive). Vous pouvez télécharger la dernière version du Kit de développement logiciel Windows Insider Preview dans la section du site [Windows Insider](https://insider.windows.com/) dédiée aux développeurs.
 
-When to use:
-- Recommended for all adaptive code scenarios except for specific cases defined below for extensible triggers.
+## Écrire du code adaptatif
 
-Benefits:
-- Avoids developer overhead/complexity of tying API differences into markup.
+Vous pouvez considérer l’écriture de code adaptatif de la même façon que vous envisagez la [création d’une interface utilisateur adaptative](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml). Vous pouvez concevoir une interface utilisateur de base qui s’exécute sur l’écran le plus petit, puis déplacer ou ajouter des éléments lorsque vous détectez un écran plus grand pendant l’exécution de votre application. Avec le code adaptatif, vous écrivez votre code de base pour qu’il s’exécute sur la version du système d’exploitation minimale, et vous pouvez ajouter des fonctionnalités choisies lorsque vous détectez une version supérieure pour laquelle la nouvelle fonctionnalité est disponible.
 
-Drawbacks:
-- No Designer support.
+### Vérification des API à l’exécution
 
-**State Triggers**
+Vous utilisez la classe [Windows.Foundation.Metadata.ApiInformation](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.aspx) dans une condition à l’intérieur de votre code pour tester la présence de l’API que vous voulez appeler. Cette condition est évaluée à chaque exécution de votre application, mais sa valeur est **true** uniquement sur les appareils sur lesquels l’API est présente et donc disponible pour un appel. Cela vous permet d’écrire du code adaptatif de version afin de créer des applications utilisant des API disponibles uniquement sur certaines versions de système d’exploitation.
 
-When to use:
-- Use when there is only a property or enum change between OS versions that doesn’t require logic changes, and is connected to a visual state.
-
-Benefits:
-- Lets you create specific visual states that are triggered based on the presence of an API.
-- Some designer support available.
-
-Drawbacks:
-- Use of custom triggers is restricted to visual states, which doesn’t lend itself to complicated adaptive layouts.
-- Must use Setters to specify value changes, so only simple changes are possible.
-- Custom state triggers are fairly verbose to set up and use.
-
-## Adaptive code examples
-
-In this section, we show several examples of adaptive code that use APIs that are new in Windows 10, version 1607 (Windows Insider Preview).
-
-### Example 1: New enum value
-
-Windows 10, version 1607 adds a new value to the [InputScopeNameValue](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.inputscopenamevalue.aspx) enumeration: **ChatWithoutEmoji**. This new input scope has the same input behavior as the **Chat** input scope (spellchecking, auto-complete, auto-capitalization), but it maps to a touch keyboard without an emoji button. This is useful if you create your own emoji picker and want to disable the built-in emoji button in the touch keyboard. 
-
-This example shows how to check if the **ChatWithoutEmoji** enum value is present and sets the [InputScope](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.inputscope.aspx) property of a **TextBox** if it is. If it’s not present on the system the app is run on, the **InputScope** is set to **Chat** instead. The code shown could be placed in a Page consructor or Page.Loaded event handler.
+Nous allons examiner des exemples spécifiques de ciblage des nouvelles fonctionnalités dans Windows Insider Preview. Pour obtenir une vision globale de l’utilisation d’**ApiInformation**, voir [Guide des applications UWP](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) et le billet de blog [Détection dynamique des fonctionnalités avec les contratsAPI](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/).
 
 > [!TIP]
-> When you check an API, use static strings instead of relying on .NET language features, otherwise your app might try to access a type that isn’t defined and crash at runtime.
+> De nombreuses vérifications des API à l’exécution peuvent affecter les performances de votre application. Les vérifications sont incluses dans ces exemples. Dans le code de production, vous devez effectuer la vérification une seule fois et mettre en cache les résultats, puis utiliser le résultat mis en cache dans toute votre application. 
+
+### Scénarios non pris en charge
+
+Dans la plupart des cas, vous pouvez conserver la version Minimum du Kit de développement logiciel version10240 pour votre application et utiliser les vérifications à l’exécution pour activer toutes les nouvelles API lorsque votre application s’exécute par la suite sur une autre version. Cependant, vous devez parfois choisir une version supérieure à la version Minimum de votre application pour utiliser de nouvelles fonctionnalités.
+
+Vous devez choisir une version supérieure à la version Minimum de votre application si vous utilisez:
+- une nouvelleAPI nécessitant une fonctionnalité qui n’est pas disponible dans une version antérieure. Vous devez choisir une version supérieure qui inclut cette fonctionnalité. Pour plus d’informations, voir [Déclarations des fonctionnalités d’application](../packaging/app-capability-declarations.md).
+- toutes les nouvelles clés de ressources ajoutées à generic.xaml et qui ne sont pas disponibles dans une version antérieure. La version de generic.xaml utilisée lors de l’exécution est déterminée par la version du système d’exploitation sur laquelle l’appareil s’exécute. Vous ne pouvez pas utiliser les vérificationsAPI à l’exécution pour déterminer la présence de ressourcesXAML. Par conséquent, vous devez uniquement utiliser des clés de ressources disponibles dans la version Minimum que votre application prend en charge, sans quoi [XAMLParseException](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.markup.xamlparseexception.aspx) entraînera le blocage de votre application à l’exécution.
+
+### Options de code adaptatif
+
+Il existe deux méthodes pour créer du code adaptatif. Dans la plupart des cas, vous écrivez votre balisage d’application pour une exécution sur la version Minimum, puis vous utilisez le code de votre application pour accéder aux nouvelles fonctionnalités du système d’exploitation disponibles. Toutefois, si vous devez mettre à jour une propriété dans un état visuel, et s’il n’y a qu’une modification de propriété ou de valeur d’énumération entre les versions de système d’exploitation, vous pouvez créer un déclencheur d’état extensible dont l’activation dépend de la présence d’une API.
+
+Nous allons comparer les différentes options.
+
+**Code de l’application**
+
+Quand l’utiliser:
+- Recommandé pour tous les scénarios de code adaptatif à l’exception des cas spécifiques définis ci-dessous pour les déclencheurs extensibles.
+
+Avantages:
+- Évite la surcharge pour le développeur/la complexité des relations avec les API dans le balisage.
+
+Inconvénients:
+- Aucune prise en charge du concepteur.
+
+**Déclencheurs d’état**
+
+Quand l’utiliser:
+- Quand il n’y a qu’une modification de propriété ou de valeur d’énumération entre les versions de système d’exploitation, qui ne nécessite pas de modification logique et qui est associée à un état visuel.
+
+Avantages:
+- Vous permet de créer des états visuels spécifiques déclenchés en fonction de la présence d’uneAPI.
+- Prise en charge disponible pour certains concepteurs.
+
+Inconvénients:
+- L’utilisation de déclencheurs personnalisés se limite aux états visuels et ne se prête pas aux dispositions adaptatives compliquées.
+- Doit utiliser la propriété Setters pour spécifier les modifications de valeur: seules les modifications simples sont donc possibles.
+- Les déclencheurs d’état personnalisés sont très détaillés pour la configuration et l’utilisation.
+
+## Exemples de code adaptatif
+
+Cette section présente plusieurs exemples de code adaptatif qui utilisent des API nouvelles dans Windows10, version1607 (WindowsInsiderPreview).
+
+### Exemple1: Nouvelle valeur d’énumération
+
+Windows10, version1607 ajoute une nouvelle valeur à l’énumération [InputScopeNameValue](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.inputscopenamevalue.aspx): **ChatWithoutEmoji**. Cette nouvelle étendue des entrées affiche le même comportement d’entrée que l’étendue des entrées **Chat** (vérification de l’orthographe, saisie semi-automatique, mise en majuscules automatique), mais elle est mappée à un clavier tactile sans bouton emoji. Elle est utile si vous créez votre propre sélecteur d’emoji et souhaitez désactiver le bouton emoji du clavier tactile. 
+
+Cet exemple explique comment vérifier la présence de la valeur d’énumération **ChatWithoutEmoji** et définit la propriété [InputScope](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.inputscope.aspx) d’une classe **TextBox** le cas échéant. En cas d’absence sur le système sur lequel l’application est exécutée, **InputScope** prend alors la valeur **Chat**. Le code présenté peut être placé dans un constructeur de page ou un gestionnaire d’événements Page.Loaded.
+
+> [!TIP]
+> Lorsque vous vérifiez une API, utilisez des chaînes statiques au lieu de vous appuyer sur les fonctionnalités de langage.NET. Sinon, votre application pourrait tenter d’accéder à un type qui n’est pas défini et se bloquer au moment de l’exécution.
 
 **C#**
 ```csharp
@@ -144,7 +147,7 @@ messageBox.Text = messageBox.InputScope.Names[0].NameValue.ToString();
 rootGrid.Children.Add(messageBox);
 ```
 
-In the previous example, the TextBox is created and all properties are set in code. However, if you have existing XAML, and just need to change the InputScope property on systems where the new value is supported, you can do that without changing your XAML, as shown here. You set the default value to **Chat** in XAML, but you override it in code if the **ChatWithoutEmoji** value is present.
+Dans l’exemple précédent, la classe TextBox est créée et toutes les propriétés sont définies dans le code. Toutefois, si un codeXAML existe déjà et si vous souhaitez simplement modifier la propriété InputScope sur les systèmes pour lesquels la nouvelle valeur est prise en charge, vous pouvez le faire sans modifier votre codeXAML, comme illustré ici. Vous définissez la valeur par défaut **Chat** dans le codeXAML, mais vous la remplacez dans le code si la valeur **ChatWithoutEmoji** est présente.
 
 **XAML**
 ```xaml
@@ -177,28 +180,28 @@ private void messageBox_Loaded(object sender, RoutedEventArgs e)
 }
 ```
 
-Now that we have a concrete example, let’s see how the Target and Minimum version settings apply to it.
+Maintenant que nous avons un exemple concret, nous allons voir comment s’appliquent les paramètres de version Cible et Minimum.
 
-In these examples, you can use the Chat enum value in XAML, or in code without a check, because it’s present in the minimum supported OS version. 
+Dans ces exemples, vous pouvez utiliser la valeur d’énumération Chat dans le codeXAML, ou dans un code sans vérification, car elle est présente dans la version Minimum du système d’exploitation pris en charge. 
 
-If you use the ChatWithoutEmoji value in XAML, or in code without a check, it will compile without error because it's present in the Target OS version. It will also run without error on a system with the Target OS version. However, when the app runs on a system with an OS using the Minimum version, it will crash at runtime because the ChatWithoutEmoji enum value is not present. Therefore, you must use this value only in code, and wrap it in a runtime API check so it’s called only if it’s supported on the current system.
+Si vous utilisez la valeur ChatWithoutEmoji dans un codeXAML, ou dans un code sans vérification, la compilation se fera sans erreur, car elle est présente dans la version Cible du système d’exploitation. Elle s’exécute également sans erreur sur un système disposant de la version du système d’exploitation Cible. Toutefois, lorsque l’application s’exécute sur un système doté de la version Minimum du système d’exploitation, elle se bloque lors de l’exécution en raison de l’absence de la valeur d’énumération ChatWithoutEmoji. Par conséquent, vous devez utiliser cette valeur uniquement dans le code et l’incorporer dans une vérification API à l’exécution afin qu’elle soit appelée uniquement si elle est prise en charge sur le système en cours d’exécution.
 
-### Example 2: New control
+### Exemple2: Nouveau contrôle
 
-A new version of Windows typically brings new controls to the UWP API surface that bring new functionality to the platform. To leverage the presence of a new control, use the  [ApiInformation.IsTypePresent](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.istypepresent.aspx) method.
+Une nouvelle version de Windows offre en règle générale de nouveaux contrôles à la surface d’API UWP apportant de nouvelles fonctionnalités à la plateforme. Pour tirer parti d’un nouveau contrôle, utilisez la méthode [ApiInformation.IsTypePresent](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.istypepresent.aspx).
 
-Windows 10, version 1607 introduces a new media control called [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx). This control builds on the [MediaPlayer](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.aspx) class, so it brings features like the ability to easily tie into background audio, and it makes use of architectural improvements in the media stack.
+Windows10, version1607 introduit un nouveau contrôle multimédia appelé [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx). Ce contrôle est basé sur la classe [MediaPlayer](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.aspx) et apporte donc des fonctionnalités telles que la capacité à s’adapter à la lecture audio en arrière-plan, et elle se sert des améliorations architecturales de Media stack.
 
-However, if the app runs on a device that’s running a version of Windows 10 older than version 1607, you must use the [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.aspx) control instead of the new **MediaPlayerElement** control. You can use the [**ApiInformation.IsTypePresent**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.istypepresent.aspx) method to check for the presence of the MediaPlayerElement control at runtime, and load whichever control is suitable for the system where the app is running.
+Toutefois, si l’application s’exécute sur un appareil exécutant lui-même une version de Windows10 antérieure à la version1607, vous devez choisir le contrôle [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.aspx) et non le nouveau contrôle **MediaPlayerElement**. Vous pouvez vous servir de la méthode [**ApiInformation.IsTypePresent**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.istypepresent.aspx) pour vérifier la présence du contrôle MediaPlayerElement lors de l’exécution, puis charger les contrôles adaptés au système dans lequel l’application est en cours d’exécution.
 
-This example shows how to create an app that uses either the new MediaPlayerElement or the old MediaElement depending on whether MediaPlayerElement type is present. In this code, you use the [UserControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.usercontrol.aspx) class to componentize the controls and their related UI and code so that you can switch them in and out based on the OS version. As an alternative, you can use a custom control, which provides more functionality and custom behavior than what’s needed for this simple example.
+Cet exemple montre comment créer une application qui utilise le nouveau contrôle MediaPlayerElement ou l’ancien contrôle MediaElement en fonction de la présence du type MediaPlayerElement. Dans ce code, vous utilisez la classe [UserControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.usercontrol.aspx) pour agencer les contrôles et leur code et interface utilisateur associés pour être en mesure de passer de l’un à l’autre en fonction de la version du système d’exploitation. Vous pouvez aussi utiliser un contrôle personnalisé qui offrira plus de fonctionnalités et de personnalisations que nécessaire dans cet exemple simple.
  
 **MediaPlayerUserControl** 
 
-The `MediaPlayerUserControl` encapsulates a **MediaPlayerElement** and several buttons that are used to skip through the media frame by frame. The UserControl lets you treat these controls as a single entity and makes it easier to switch with a MediaElement on older systems. This user control should be used only on systems where MediaPlayerElement is present, so you don’t use ApiInformation checks in the code inside this user control.
+`MediaPlayerUserControl` encapsule un contrôle **MediaPlayerElement** et plusieurs boutons permettant d’ignorer le média image par image. UserControl vous permet de traiter ces contrôles sous forme d’entité unique et de passer plus facilement à un contrôle MediaElement sur les systèmes plus anciens. Ce contrôle utilisateur doit être utilisé uniquement sur les systèmes où MediaPlayerElement est présent, afin que vous n’utilisiez pas les vérifications ApiInformation dans le code situé à l’intérieur de ce contrôle utilisateur.
 
 > [!NOTE]
-> To keep this example simple and focused, the frame step buttons are placed outside of the media player. For a better user experiance, you should customize the MediaTransportControls to include your custom buttons. See [Custom transport controls](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/custom-transport-controls) for more info. 
+> Pour que cet exemple reste simple et ciblé, les boutons d’étape d’image sont placés en dehors du lecteur multimédia. Pour améliorer l’expérience utilisateur, vous devez personnaliser MediaTransportControls afin d’inclure des boutons personnalisés. Voir [Contrôles de transport personnalisés](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/custom-transport-controls) pour plus d’informations. 
 
 **XAML**
 ```xaml
@@ -271,7 +274,7 @@ namespace MediaApp
 
 **MediaElementUserControl**
  
-The `MediaElementUserControl` encapsulates a **MediaElement** control.
+`MediaElementUserControl` encapsule un contrôle **MediaElement**.
 
 **XAML**
 ```xaml
@@ -294,11 +297,11 @@ The `MediaElementUserControl` encapsulates a **MediaElement** control.
 ```
 
 > [!NOTE]
-> The code page for `MediaElementUserControl` contains only generated code, so it's not shown.
+> La page de code de `MediaElementUserControl` contient uniquement du code généré: il n’est donc pas affiché.
 
-**Initialize a control based on IsTypePresent**
+**Initialiser un contrôle basé sur IsTypePresent**
 
-At runtime, you call **ApiInformation.IsTypePresent** to check for MediaPlayerElement. If it's present, you load `MediaPlayerUserControl`, if it's not, you load `MediaElementUserControl`.
+Lors de l’exécution, vous appelez la méthode **ApiInformation.IsTypePresent** afin de vérifier MediaPlayerElement. S’il est présent, vous chargez `MediaPlayerUserControl`. Dans le cas contraire, vous chargez `MediaElementUserControl`.
 
 **C#**
 ```csharp
@@ -324,17 +327,17 @@ public MainPage()
 ```
 
 > [!IMPORTANT]
-> Remember that this check only sets the `mediaControl` object to either `MediaPlayerUserControl` or `MediaElementUserControl`. You need to perform these conditional checks anywhere else in your code that you need to determine whether to use MediaPlayerElement or MediaElement APIs. You should perform the check once and cache the result, then used the cached result throughout your app.
+> N’oubliez pas que cette vérification définit uniquement l’objet `mediaControl` sur la valeur `MediaPlayerUserControl` ou `MediaElementUserControl`. Vous devez effectuer les vérifications conditionnelles suivantes dans votre code, partout où vous devez déterminer s’il convient d’utiliser les API MediaPlayerElement ou MediaElement. Vous devez effectuer la vérification une seule fois et mettre en cache les résultats, puis utiliser le résultat mis en cache dans toute votre application.
 
-## State trigger examples
+## Exemples de déclencheur d’état
 
-Extensible state triggers let you use markup and code together to trigger visual state changes based on a condition that you check in code; in this case, the presence of a specific API. We don’t recommend state triggers for common adaptive code scenarios because of the overhead involved, and the restriction to only visual states. 
+Les déclencheurs d’état extensibles permettent d’utiliser conjointement le balisage et le code afin de déclencher des changements d’état visuel basés sur une condition que vous vérifiez dans le code. Ici, il s’agit de la présence d’une API spécifique. Nous ne recommandons pas l’utilisation de déclencheurs d’état pour les scénarios courants de code adaptatif en raison de la surcharge impliquée, et de la restriction aux seuls états visuels. 
 
-You should use state triggers for adaptive code only when you have small UI changes between different OS versions that won’t impact the remaining UI, such as a property or enum value change on a control.
+Vous devez utiliser des déclencheurs d’état pour le code adaptatif uniquement en cas de modifications mineures d’interface utilisateur entre les différentes versions de système d’exploitation, qui n’affecteront pas le reste de l’interface utilisateur, comme un changement de propriété ou de valeur d’énumération sur un contrôle.
 
-### Example 1: New property
+### Exemple1: Nouvelle propriété
 
-The first step in setting up an extensible state trigger is subclassing the [StateTriggerBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.statetriggerbase.aspx) class to create a custom trigger that will be active based on the presence of an API. This example shows a trigger that activates if the property presence matches the `_isPresent` variable set in XAML.
+La première étape de la configuration d’un déclencheur d’état extensible consiste à sous-classer la classe [StateTriggerBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.statetriggerbase.aspx) afin de créer un déclencheur personnalisé dont l’activité dépendra de la présence d’une API. Cet exemple montre un déclencheur qui s’active si la présence de la propriété correspond à la variable `_isPresent` définie dans le codeXAML.
 
 **C#**
 ```csharp
@@ -366,11 +369,11 @@ class IsPropertyPresentTrigger : StateTriggerBase
 }
 ```
 
-The next step is setting up the visual state trigger in XAML so that two different visual states result based on the presence of the API. 
+L’étape suivante consiste à configurer le déclencheur d’état visuel dansXAML pour obtenir deux états visuels différents en fonction de la présence de l’API. 
 
-Windows 10, version 1607 introduces a new property on the [FrameworkElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.aspx) class called [AllowFocusOnInteraction](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.allowfocusoninteraction.aspx) that determines whether a control takes focus when  a user interacts with it. This is useful if you want to keep focus on a text box for data entry (and keep the touch keyboard showing) while the user clicks a button.
+Windows10, version1607 introduit une nouvelle propriété sur la classe [FrameworkElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.aspx), appelée [AllowFocusOnInteraction](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.allowfocusoninteraction.aspx), qui détermine si un contrôle prend le focus lorsque l’utilisateur interagit. Cette fonction est utile si vous souhaitez conserver le focus sur une zone de texte pour l’entrée de données (et garder le clavier tactile visible) pendant que l’utilisateur clique sur un bouton.
 
-The trigger in this example checks if the property is present. If the property is present it sets the **AllowFocusOnInteraction** property on a Button to **false**; if the property isn’t present, the Button retains its original state. The TextBox is included to make it easier to see the effect of this property when you run the code.
+Dans cet exemple, le déclencheur vérifie si la propriété est présente. Si la propriété est présente, il définit la propriété **AllowFocusOnInteraction** d’un Bouton sur **false**. Mais si la propriété n’est pas présente, le bouton conserve son état d’origine. La zone de texte est incluse pour permettre de mieux visualiser les effets de cette propriété lorsque vous exécutez le code.
 
 **XAML**
 ```xaml
@@ -400,9 +403,9 @@ The trigger in this example checks if the property is present. If the property i
 </Grid>
 ```
 
-### Example 2: New enum value
+### Exemple2: Nouvelle valeur d’énumération
 
-This example shows how to set different enumeration values based on whether a value is present. It uses a custom state trigger to achieve the same result as the previous chat example. In this example, you use the new ChatWithoutEmoji input scope if the device is running Windows 10, version 1607, otherwise the **Chat** input scope is used. The visual states that use this trigger are set up in an *if-else* style where the input scope is chosen based on the presence of the new enum value.
+Cet exemple explique comment définir des valeurs d’énumération différentes en fonction de la présence d’une valeur. Il utilise un déclencheur d’état personnalisé pour obtenir le même résultat que l’exemple précédent de Chat. Dans cet exemple, vous utilisez la nouvelle étendue des entrées ChatWithoutEmoji si l’appareil exécute Windows10, version1607. Sinon, c’est l’étendue des entrées **Chat** qui est utilisée. Les états visuels qui utilisent ce déclencheur sont configurés dans un style *if-else*, où l’étendue des entrées est choisie en fonction de la présence de la nouvelle valeur d’énumération.
 
 **C#**
 ```csharp
@@ -471,13 +474,13 @@ class IsEnumPresentTrigger : StateTriggerBase
     </VisualStateManager.VisualStateGroups>
 </Grid>
 ```
-## Related articles
+## Articles connexes
 
-- [Guide to UWP apps](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
-- [Dynamically detecting features with API contracts](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
+- [Guide des applicationsUWP](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)
+- [Détection dynamique des fonctionnalités avec les contrats d’API](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

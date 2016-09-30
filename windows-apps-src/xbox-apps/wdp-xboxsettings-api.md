@@ -1,142 +1,142 @@
 ---
 author: payzer
-title: Device Portal Xbox Developer settings API reference
-description: Learn how to access Xbox developer settings.
+title: "Référence des API des paramètres de développement Xbox Device Portal"
+description: "Découvrez comment accéder aux paramètres de développement Xbox."
 translationtype: Human Translation
-ms.sourcegitcommit: c51eff41e63d815f6298b4fc46a9b11314bc8bc9
-ms.openlocfilehash: 5a983714cda9b5a5f45e555e2cb6f980f082a003
+ms.sourcegitcommit: a9a2b6e58dfa0d1e77164a59f204deabf8f5c3e0
+ms.openlocfilehash: e3637f5a8481c0800af42c011fb811b908b946b1
 
 ---
 
-# Developer settings API reference   
-You can access Xbox One settings that are useful for development using this API.
+# Informations de référence sur les API des paramètres de développement   
+Cette API vous permet d’accéder aux paramètres Xbox One utiles pour le développement.
 
-## Get all developer settings at once
+## Obtenir tous les paramètres de développement à la fois
 
-**Request**
+**Requête**
 
-You can use the following request to get all developer settings in a single request.
+Vous pouvez utiliser la requête suivante pour obtenir tous les paramètres de développement en une seule requête.
 
-Method      | Request URI
+Méthode      | URI de la requête
 :------     | :-----
 GET | /ext/settings
 <br />
-**URI parameters**
+**Paramètres d’URI**
 
-- None
+- Aucun
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**   
-The response is a Settings JSON array containing all the settings. Each settings object contains the following fields:   
+**Réponse**   
+La réponse est un tableau de paramètres JSON contenant tous les paramètres. Chaque paramètre inclut les champs suivants:   
 
-Name - (String) The name of the setting.   
-Value - (String) The value of the setting.   
-RequiresReboot - ("Yes" | "No") This field indicates whether the setting requires a reboot to take effect.
-Category - (String) The category of the setting
+Name: (chaîne) le nom du paramètre.   
+Value: (chaîne) la valeur du paramètre.   
+RequiresReboot: («Oui» | «Non») ce champ indique si un redémarrage est nécessaire pour que le paramètre prenne effet.
+Category: (chaîne) la catégorie du paramètre.
 
-**Status code**
+**Code d’état**
 
-This API has the following expected status codes.
+Cette API comporte les codes d’état attendus suivants.
 
-HTTP status code      | Description
+Code d’état HTTP      | Description
 :------     | :-----
-200 | Request was successful
-4XX | Error codes
-5XX | Error codes
+200 | Demande réussie
+4XX | Codes d’erreur
+5XX | Codes d’erreur
 
-## Get settings one at a time
-Settings can also be retrieved individually.
+## Obtenir les paramètres un par un
+Les paramètres peuvent également être récupérés individuellement.
 
-**Request**
+**Requête**
 
-You can use the following request to get information about an individual setting.
+Vous pouvez utiliser la requête suivante pour obtenir des informations sur un paramètre individuel.
 
-Method      | Request URI
+Méthode      | URI de la requête
 :------     | :-----
-GET | /ext/settings/\<setting name\>
+GET | /ext/settings/<setting name>
 <br />
-**URI parameters**
+**Paramètres d’URI**
 
-- None
+- Aucun
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**   
-The response is a JSON object with following fields:   
+**Réponse**   
+La réponse est un objet JSON avec les champs suivants:   
 
-Name - (String) The name of the setting.   
-Value - (String) The value of the setting.   
-RequiresReboot - ("Yes" | "No") This field indicates whether the setting requires a reboot to take effect.
-Category - (String) The category of the setting
+Name: (chaîne) le nom du paramètre.   
+Value: (chaîne) la valeur du paramètre.   
+RequiresReboot: («Oui» | «Non») ce champ indique si un redémarrage est nécessaire pour que le paramètre prenne effet.
+Category: (chaîne) la catégorie du paramètre.
 
-**Status code**
+**Code d’état**
 
-This API has the following expected status codes.
+Cette API comporte les codes d’état attendus suivants.
 
-HTTP status code      | Description
+Code d’état HTTP      | Description
 :------     | :-----
-200 | Request was successful
-4XX | Error codes
-5XX | Error codes
+200 | Demande réussie
+4XX | Codes d’erreur
+5XX | Codes d’erreur
 
-## Set the value of a setting
-You can set the value of a setting.
+## Définir la valeur d’un paramètre
+Vous pouvez définir la valeur d’un paramètre.
 
-**Request**
+**Requête**
 
-You can use the following request to set the value for a setting.
+Vous pouvez utiliser la requête suivante pour définir la valeur d’un paramètre.
 
-Method      | Request URI
+Méthode      | URI de la requête
 :------     | :-----
-PUT | /ext/settings/\<setting name\>
+PUT | /ext/settings/<setting name>
 <br />
-**URI parameters**
+**Paramètres d’URI**
 
-- None
+- Aucun
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**   
-The request body is JSON object containing the following field:   
-Value - (String) The new value for the setting.
+**Corps de la requête**   
+Le corps de la requête est un objet JSON contenant le champ suivant:   
+Value: (chaîne) la nouvelle valeur du paramètre.
 
-**Response**   
+**Réponse**   
 
-- None
+- Aucun
 
-**Status code**
+**Code d’état**
 
-This API has the following expected status codes.
+Cette API comporte les codes d’état attendus suivants.
 
-HTTP status code      | Description
+Code d’état HTTP      | Description
 :------     | :-----
-200 | Request was successful
-4XX | Error codes
-5XX | Error codes
+200 | Demande réussie
+4XX | Codes d’erreur
+5XX | Codes d’erreur
 
 <br />
-**Available device families**
+**Familles d’appareils disponibles**
 
 * Windows Xbox
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO2-->
 
 

@@ -1,21 +1,21 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Learn how to manage issues with speech-recognition accuracy caused by audio-input quality.
-title: Manage issues with audio input
+Description: "Découvrez comment gérer les problèmes liés à la précision de la reconnaissance vocale qu’entraîne une baisse de qualité des entrées audio."
+title: "Gérer les problèmes liés aux entrées audio"
 ms.assetid: 3E36C683-C96A-4FEE-AD52-FDB87E0CC299
 label: Manage audio input issues
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 12f46dd0ec375977cc33efeb73757c5ec75077bd
+ms.openlocfilehash: 4f926969b5f9f20de904aeaf749e69c0ded3c052
 
 ---
 
-# Manage issues with audio input
+# Gérer les problèmes liés aux entrées audio
 
-Learn how to manage issues with speech-recognition accuracy caused by audio-input quality.
+Découvrez comment gérer les problèmes liés à la précision de la reconnaissance vocale qu’entraîne une baisse de qualité des entrées audio.
 
-**Important APIs**
+**API importantes**
 
 -   [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226)
 -   [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243)
@@ -24,14 +24,14 @@ Learn how to manage issues with speech-recognition accuracy caused by audio-inpu
 
 
 
-## Assess audio-input quality
+## Évaluer la qualité de l’entrée audio
 
 
-When speech recognition is active, use the [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243) event of your speech recognizer to determine whether one or more audio issues might be interfering with speech input. The event argument ([**SpeechRecognitionQualityDegradingEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn631430)) provides the [**Problem**](https://msdn.microsoft.com/library/windows/apps/dn631431) property, which describes the issues detected with the audio input.
+Lorsque la reconnaissance vocale est active, utilisez l’événement [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243) de votre moteur de reconnaissance vocale pour déterminer si un ou plusieurs problèmes audio peuvent interférer avec la saisie vocale. L’argument d’événement ([**SpeechRecognitionQualityDegradingEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn631430)) fournit la propriété [**Problem**](https://msdn.microsoft.com/library/windows/apps/dn631431), qui décrit les problèmes détectés liés à l’entrée audio.
 
-Recognition can be affected by too much background noise, a muted microphone, and the volume or speed of the speaker.
+En effet, la fonction de reconnaissance vocale peut être affectée par un trop grand bruit de fond, un microphone muet ainsi que le volume ou la vitesse du haut-parleur.
 
-Here, we configure a speech recognizer and start listening for the [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243) event.
+Ici, nous configurons un module de reconnaissance vocale et nous commençons à écouter l’événement [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243).
 
 ```CSharp
 private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
@@ -63,12 +63,12 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## Manage the speech-recognition experience
+## Gérer l’expérience de la fonction de reconnaissance vocale
 
 
-Use the description provided by the [**Problem**](https://msdn.microsoft.com/library/windows/apps/dn631431) property to help the user improve conditions for recognition.
+Utilisez la description fournie par la propriété [**Problem**](https://msdn.microsoft.com/library/windows/apps/dn631431) pour améliorer l’expérience de l’utilisateur en matière de reconnaissance vocale.
 
-Here, we create a handler for the [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243) event that checks for a low volume level. We then use a [**SpeechSynthesizer**](https://msdn.microsoft.com/library/windows/apps/dn298152) object to suggest that the user try speaking louder.
+Ici, nous créons un gestionnaire pour l’événement [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243) qui recherche un faible volume. Nous pouvons ensuite utiliser un objet [**SpeechSynthesizer**](https://msdn.microsoft.com/library/windows/apps/dn298152) pour suggérer que l’utilisateur essaye de parler plus fort.
 
 ```CSharp
 private async void speechRecognizer_RecognitionQualityDegrading(
@@ -103,13 +103,13 @@ private async void speechRecognizer_RecognitionQualityDegrading(
 }
 ```
 
-## Related articles
+## Articles connexes
 
 
-* [Speech interactions](speech-interactions.md)
+* [Interactions vocales](speech-interactions.md)
 
-**Samples**
-* [Speech recognition and speech synthesis sample](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+**Exemples**
+* [Exemple de reconnaissance vocale et de synthèse vocale](http://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  
@@ -120,6 +120,6 @@ private async void speechRecognizer_RecognitionQualityDegrading(
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

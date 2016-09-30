@@ -1,1420 +1,1420 @@
 ---
 author: mcleblanc
 ms.assetid: 41ac0142-4d86-4bb3-b580-36d0d6956091
-title: Device Portal API reference for HoloLens
-description: Learn about the Windows Device Portal for HoloLens REST API's that you can use to access the data and control your device programmatically.
+title: "Informations de référence sur les API Device Portal pour HoloLens"
+description: "Découvrez les API REST Windows Device Portal pour HoloLens que vous pouvez utiliser pour accéder aux données et contrôler votre appareil par programme."
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 638ebca167b2ca56f00a83aab13b15c57b2dca2a
+ms.openlocfilehash: 5ed8ffe0a409569777fbf4e56a90ab3b80cd395c
 
 ---
-# Device Portal API reference for HoloLens
+# Informations de référence sur les API Device Portal pour HoloLens
 
-Everything in the Windows Device Portal is built on top of REST API's that you can use to access the data and control your device programmatically.
+Dans Windows Device Portal, tout repose sur les API REST que vous pouvez utiliser pour accéder aux données et contrôler votre appareil par programme.
 
-## Holographic OS
+## Système d’exploitation holographique
 ---
-### Get HTTPS requirements for the Device Portal
+### Obtenir la spécification HTTPS pour Device Portal
 
-**Request**
+**Requête**
 
-You can get the HTTPS requirements for the Device Portal by using the following request format.
+Vous pouvez obtenir la spécification HTTPS pour Device Portal en utilisant le format de requête suivant.
  
-Method      | Request URI
+Méthode      | URI de la requête
 :------     | :-----
 GET | /api/holographic/os/webmanagement/settings/https
 
 
-**URI parameters**
+**Paramètres d’URI**
 
-- None
+- Aucun
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**
+**Réponse**
 
-- None
+- Aucun
 
-**Status code**
+**Code d’état**
 
-- Standard status codes.
+- Codes d’état standard.
 
 ---
-### Get the stored interpupillary distance (IPD)
+### Obtenir l’écart pupillaire stocké (IPD)
 
-**Request**
+**Requête**
 
-You can get the stored IPD value by using the following request format. The value is returned in millimeters.
+Vous pouvez obtenir la valeur de l’écart pupillaire stocké en utilisant le format de requête suivant. La valeur renvoyée est exprimée en millimètres.
  
-Method      | Request URI
+Méthode      | URI de la requête
 :------     | :-----
 GET | /api/holographic/os/settings/ipd
 
 
-**URI parameters**
+**Paramètres d’URI**
 
-- None
+- Aucun
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**
+**Réponse**
 
-- None
+- Aucun
 
-**Status code**
+**Code d’état**
 
-- Standard status codes.
+- Codes d’état standard.
 
 ---
-### Get a list of HoloLens specific ETW providers
+### Obtenir une liste des fournisseurs ETW spécifiques HoloLens
 
-**Request**
+**Requête**
 
-You can get a list of HoloLens specific ETW providers that are not registered with the system by using the following request format.
+Vous pouvez obtenir une liste des fournisseurs ETW spécifiques HoloLens qui ne sont pas enregistrés avec le système en utilisant le format de requête suivant.
  
-Method      | Request URI
+Méthode      | URI de la requête
 :------     | :-----
 GET | /api/holographic/os/etw/customproviders
 
 
-**URI parameters**
+**Paramètres d’URI**
 
-- None
+- Aucun
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**
+**Réponse**
 
-- None
+- Aucun
 
-**Status code**
+**Code d’état**
 
-- Standard status codes.
+- Codes d’état standard.
 
 ---
-### Return the state for all active services
+### Renvoie l’état de tous les services actifs
 
-**Request**
+**Requête**
 
-You can get the state of all services that are currently running by using the following request format.
+Vous pouvez obtenir l’état de tous les services en cours d’exécution en utilisant le format de requête suivant.
  
-Method      | Request URI
+Méthode      | URI de la requête
 :------     | :-----
 GET | /api/holographic/os/services
 
 
-**URI parameters**
+**Paramètres d’URI**
 
-- None
+- Aucun
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**
+**Réponse**
 
-- None
+- Aucun
 
-**Status code**
+**Code d’état**
 
-- Standard status codes.
+- Codes d’état standard.
 
 ---
-### Set the HTTPS requirement for the Device Portal.
+### Obtenir la spécification HTTPS pour Device Portal
 
-**Request**
+**Requête**
 
-You can set the HTTPS requirements for the Device Portal by using the following request format.
+Vous pouvez obtenir la spécification HTTPS pour Device Portal en utilisant le format de requête suivant.
  
-Method      | Request URI
+Méthode      | URI de la requête
 :------     | :-----
 POST | /api/holographic/management/settings/https
 
 
-**URI parameters**
+**Paramètres d’URI**
 
-You can specify the following additional parameters on the request URI:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
-URI parameter | Description
+Paramètre d’URI | Description
 :---          | :---
-required   | (**required**) Determines whether or not HTTPS is required for the Device Portal. Possible values are **yes**, **no**, and **default**.
+required   | (**requis**) Détermine si HTTPS est requis pour Device Portal. Les valeurs possibles sont **yes**, **no**, et **default**.
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**
+**Réponse**
 
-- None
+- Aucun
 
-**Status code**
+**Code d’état**
 
-- Standard status codes.
+- Codes d’état standard.
 
 ---
-### Set the interpupillary distance (IPD)
+### Définir l’écart pupillaire (IPD)
 
-**Request**
+**Requête**
 
-You can set the stored IPD by using the following request format.
+Vous pouvez définir l’écart pupillaire stocké en utilisant le format de requête suivant.
  
-Method      | Request URI
+Méthode      | URI de la requête
 :------     | :-----
 POST | /api/holographic/os/settings/ipd
 
 
-**URI parameters**
+**Paramètres d’URI**
 
-You can specify the following additional parameters on the request URI:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
-URI parameter | Description
+Paramètre d’URI | Description
 :---          | :---
-ipd   | (**required**) The new IPD value to be stored. This value should be in millimeters.
+ipd   | (**requis**) Nouvelle valeur IPD à stocker. Cette valeur doit être exprimée en millimètres.
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**
+**Réponse**
 
-- None
+- Aucun
 
-**Status code**
+**Code d’état**
 
-- Standard status codes.
+- Codes d’état standard.
 
 ---
-## Holographic perception
+## Perception holographique
 ---
-### Accept websocket upgrades and run a mirage client that sends updates
+### Accepter les mises à niveau websocket et exécuter un client mirage qui envoie des mises à jour
 
-**Request**
+**Requête**
 
-You can accept websocket upgrades and run a mirage client that sends updates at 30 fps by using the following request format.
+Vous pouvez accepter les mises à niveau websocket et exécuter un client mirage qui envoie des mises à jour à 30fps en utilisant le format de requête suivant.
  
-Method      | Request URI
+Méthode      | URI de requête
 :------     | :-----
 GET/WebSocket | /api/holographic/perception/client
 
 
-**URI parameters**
+**Paramètres d’URI**
 
-You can specify the following additional parameters on the request URI:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
-URI parameter | Description
+Paramètre d’URI | Description
 :---          | :---
-clientmode   | (**required**) Determines the tracking mode. A value of **active** forces visual tracking mode when it can't be established passively.
+clientmode   | (**requis**) Détermine le mode de suivi. La valeur **active** force le passage en mode de suivi visuel lorsqu’il est impossible de l’établir de manière passive.
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**
+**Réponse**
 
-- None
+- Aucun
 
-**Status code**
+**Code d’état**
 
-- Standard status codes.
+- Codes d’état standard.
 
 ---
-## Holographic thermal
+## Thermique holographique
 ---
-### Get the thermal stage of the device
+### Obtenir la phase thermique de l’appareil
 
-**Request**
+**Requête**
 
-You can get the thermal stage of the device by using the following request format.
+Vous pouvez obtenir la phase thermique de l’appareil en utilisant le format de requête suivant.
  
-Method      | Request URI
+Méthode      | URI de la requête
 :------     | :-----
 GET | /api/holographic/
 
-**URI parameters**
+**Paramètres d’URI**
 
-- None
+- Aucun
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**
+**Réponse**
 
-The possible values are indicated by the following table.
+Les valeurs possibles sont indiquées par le tableau suivant.
 
-Value | Description
+Valeur | Description
 --- | ---
 1 | Normal
-2 | Warm
-3 | Critical
+2 | Chaud
+3 | Critique
 
-**Status code**
+**Code d’état**
 
-- Standard status codes.
+- Codes d’état standard.
 
 ---
-## HSimulation control
+## Contrôle HSimulation
 ---
-### Create a control stream or post data to a created stream
+### Créer un flux de contrôle ou publier des données dans un flux créé
 
-**Request**
+**Requête**
 
-You can create a control stream or post data to a created stream by using the following request format. The posted data is expected to be of type **application/octet-stream**.
+Vous pouvez créer un flux de contrôle ou publier des données dans un flux créé en utilisant le format de requête suivant. Les données publiées doivent être de type **application/octet-stream**.
  
-Method      | Request URI
+Méthode      | URI de la requête
 :------     | :-----
 POST | /api/holographic/simulation/control/stream
 
 
-**URI parameters**
+**Paramètres d’URI**
 
-You can specify the following additional parameters on the request URI:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
-URI parameter | Description
+Paramètre d’URI | Description
 :---          | :---
-priority   | (**required if creating a control stream**) Indicates the priority of the stream.
-streamid   | (**required if posting to a created stream**) The identifier for the stream to post to.
+priority   | (**requis en cas de création d’un flux de contrôle**) Indique la priorité du flux.
+streamid   | (**requis en cas de publication dans un flux créé**) Identifiant du flux dans lequel publier.
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**
+**Réponse**
 
-- None
+- Aucun
 
-**Status code**
+**Code d’état**
 
-- Standard status codes.
+- Codes d’état standard.
 
 ---
-### Delete a control stream
+### Supprimer un flux de contrôle
 
-**Request**
+**Requête**
 
-You can delete a control stream by using the following request format.
+Vous pouvez supprimer un flux de contrôle en utilisant le format de requête suivant.
  
-Method      | Request URI
+Méthode      | URI de requête
 :------     | :-----
 DELETE | /api/holographic/simulation/control/stream
 
 
-**URI parameters**
+**Paramètres d’URI**
 
-- None
+- Aucun
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**
+**Réponse**
 
-- None
+- Aucun
 
-**Status code**
+**Code d’état**
 
-- Standard status codes.
+- Codes d’état standard.
 
 ---
-### Get a control stream
+### Obtenir un flux de contrôle
 
-**Request**
+**Requête**
 
-You can open a web socket connection for a control stream by using the following request format.
+Vous pouvez ouvrir une connexion web socket pour un flux de contrôle en utilisant le format de requête suivant.
  
-Method      | Request URI
+Méthode      | URI de requête
 :------     | :-----
 GET/WebSocket | /api/holographic/simulation/control/stream
 
 
-**URI parameters**
+**Paramètres d’URI**
 
-- None
+- Aucun
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**
+**Réponse**
 
-- None
+- Aucun
 
-**Status code**
+**Code d’état**
 
-- Standard status codes.
+- Codes d’état standard.
 
 ---
-### Get the simluation mode
+### Obtenir le mode de simluation
 
-**Request**
+**Requête**
 
-You can get the simluation mode by using the following request format.
+Vous pouvez obtenir le mode de simulation en utilisant le format de requête suivant.
  
-Method      | Request URI
+Méthode      | URI de la requête
 :------     | :-----
 GET | /api/holographic/simulation/control/mode
 
 
-**URI parameters**
+**Paramètres d’URI**
 
-- None
+- Aucun
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**
+**Réponse**
 
-- None
+- Aucun
 
-**Status code**
+**Code d’état**
 
-- Standard status codes.
+- Codes d’état standard.
 
 ---
-### Set the simluation mode
+### Définir le mode de simluation
 
-**Request**
+**Requête**
 
-You can set the simulation mode by using the following request format.
+Vous pouvez définir le mode de simulation en utilisant le format de requête suivant.
  
-Method      | Request URI
+Méthode      | URI de la requête
 :------     | :-----
 POST | /api/holographic/simluation/control/mode
 
 
-**URI parameters**
+**Paramètres d’URI**
 
-You can specify the following additional parameters on the request URI:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
-URI parameter | Description
+Paramètre d’URI | Description
 :---          | :---
-mode   | (**required**) Indicates the simulation mode. Possible values include **default**, **simulation**, **remote**, and **legacy**.
+mode   | (**requis**) Indique le mode de simulation. Les valeurs possibles sont **default**, **simulation**, **remote**, et **legacy**.
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**
+**Réponse**
 
-- None
+- Aucun
 
-**Status code**
+**Code d’état**
 
-- Standard status codes.
+- Codes d’état standard.
 
 ---
-## HSimulation playback
+## Lecture HSimulation
 ---
-### Delete a recording
+### Supprimer un enregistrement
 
-**Request**
+**Requête**
 
-You can delete a recording by using the following request format.
+Vous pouvez supprimer un enregistrement en utilisant le format de requête suivant.
  
-Method      | Request URI
+Méthode      | URI de requête
 :------     | :-----
 DELETE | /api/holographic/simulation/playback/file
 
 
-**URI parameters**
+**Paramètres d’URI**
 
-You can specify the following additional parameters on the request URI:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
-URI parameter | Description
+Paramètre d’URI | Description
 :---          | :---
-recording   | (**required**) The name of the recording to delete.
+recording   | (**requis**) Nom de l’enregistrement à supprimer.
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**
+**Réponse**
 
-- None
+- Aucun
 
-**Status code**
+**Code d’état**
 
-- Standard status codes.
+- Codes d’état standard.
 
 ---
-### Get all recordings
+### Obtenir tous les enregistrements
 
-**Request**
+**Requête**
 
-You can get all the available recordings by using the following request format.
+Vous pouvez obtenir tous les enregistrements disponibles en utilisant le format de requête suivant.
  
-Method      | Request URI
+Méthode      | URI de la requête
 :------     | :-----
 GET | /api/holographic/simulation/playback/files
 
 
-**URI parameters**
+**Paramètres d’URI**
 
-- None
+- Aucun
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**
+**Réponse**
 
-- None
+- Aucun
 
-**Status code**
+**Code d’état**
 
-- Standard status codes.
+- Codes d’état standard.
 
 ---
-### Get the types of data in a loaded recording
+### Obtenir les types de données dans un enregistrement chargé
 
-**Request**
+**Requête**
 
-You can get the types of data in a loaded recording by using the following request format.
+Vous pouvez obtenir les types de données dans un enregistrement chargé en utilisant le format suivant de la demande.
  
-Method      | Request URI
+Méthode      | URI de la requête
 :------     | :-----
 GET | /api/holographic/simulation/playback/session/types
 
 
-**URI parameters**
+**Paramètres d’URI**
 
-You can specify the following additional parameters on the request URI:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
-URI parameter | Description
+Paramètre d’URI | Description
 :---          | :---
-recording   | (**required**) The name of the recording you are interested in.
+recording   | (**requis**) Nom de l’enregistrement qui vous intéresse.
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**
+**Réponse**
 
-- None
+- Aucun
 
-**Status code**
+**Code d’état**
 
-- Standard status codes.
+- Codes d’état standard.
 
 ---
-### Get all the loaded recordings
+### Obtenir tous les enregistrements chargés
 
-**Request**
+**Requête**
 
-You can get all the loaded recordings by using the following request format.
+Vous pouvez obtenir tous les enregistrements chargés en utilisant le format de requête suivant.
  
-Method      | Request URI
+Méthode      | URI de la requête
 :------     | :-----
 GET | /api/holographic/simulation/playback/session/files
 
 
-**URI parameters**
+**Paramètres d’URI**
 
-- None
+- Aucun
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**
+**Réponse**
 
-- None
+- Aucun
 
-**Status code**
+**Code d’état**
 
-- Standard status codes.
+- Codes d’état standard.
 
 ---
-### Get the current playback state of a recording 
+### Obtenir l’état actuel de lecture d’un enregistrement 
 
-**Request**
+**Requête**
 
-You can get the current playback state of a recording by using the following request format.
+Vous pouvez obtenir l’état actuel de lecture d’un enregistrement en utilisant le format de requête suivant.
  
-Method      | Request URI
+Méthode      | URI de la requête
 :------     | :-----
 GET | /api/holographic/simulation/playback/session
 
 
-**URI parameters**
+**Paramètres d’URI**
 
-You can specify the following additional parameters on the request URI:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
-URI parameter | Description
+Paramètre d’URI | Description
 :---          | :---
-recording   | (**required**) The name of the recording that you are interested in.
+recording   | (**requis**) Nom de l’enregistrement qui vous intéresse.
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**
+**Réponse**
 
-- None
+- Aucun
 
-**Status code**
+**Code d’état**
 
-- Standard status codes.
+- Codes d’état standard.
 
 ---
-### Load a recording
+### Charger un enregistrement
 
-**Request**
+**Requête**
 
-You can load a recording by using the following request format.
+Vous pouvez charger un enregistrement en utilisant le format de requête suivant.
  
-Method      | Request URI
+Méthode      | URI de la requête
 :------     | :-----
 POST | /api/holographic/simulation/playback/session/file
 
 
-**URI parameters**
+**Paramètres d’URI**
 
-You can specify the following additional parameters on the request URI:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
-URI parameter | Description
+Paramètre d’URI | Description
 :---          | :---
-recording   | (**required**) The name of the recording to load.
+recording   | (**requis**) Nom de l’enregistrement à charger.
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**
+**Réponse**
 
-- None
+- Aucun
 
-**Status code**
+**Code d’état**
 
-- Standard status codes.
+- Codes d’état standard.
 
 ---
-### Pause a recording
+### Suspendre un enregistrement
 
-**Request**
+**Requête**
 
-You can pause a recording by using the following request format.
+Vous pouvez suspendre un enregistrement en utilisant le format de requête suivant.
  
-Method      | Request URI
+Méthode      | URI de la requête
 :------     | :-----
 POST | /api/holographic/simulation/playback/session/pause
 
 
-**URI parameters**
+**Paramètres d’URI**
 
-You can specify the following additional parameters on the request URI:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
-URI parameter | Description
+Paramètre d’URI | Description
 :---          | :---
-recording   | (**required**) The name of the recording to pause.
+recording   | (**requis**) Nom de l’enregistrement à suspendre.
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**
+**Réponse**
 
-- None
+- Aucun
 
-**Status code**
+**Code d’état**
 
-- Standard status codes.
+- Codes d’état standard.
 
 ---
-### Play a recording
+### Lire un enregistrement
 
-**Request**
+**Requête**
 
-You can play a recording by using the following request format.
+Vous pouvez lire un enregistrement en utilisant le format de requête suivant.
  
-Method      | Request URI
+Méthode      | URI de la requête
 :------     | :-----
 POST | /api/holographic/simulation/playback/session/play
 
 
-**URI parameters**
+**Paramètres d’URI**
 
-You can specify the following additional parameters on the request URI:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
-URI parameter | Description
+Paramètre d’URI | Description
 :---          | :---
-recording   | (**required**) The name of the recording to play.
+recording   | (**requis**) Nom de l’enregistrement à lire.
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**
+**Réponse**
 
-- None
+- Aucun
 
-**Status code**
+**Code d’état**
 
-- Standard status codes.
+- Codes d’état standard.
 
 ---
-### Stop a recording
+### Arrêter un enregistrement
 
-**Request**
+**Requête**
 
-You can stop a recording by using the following request format.
+Vous pouvez arrêter un enregistrement en utilisant le format de requête suivant.
  
-Method      | Request URI
+Méthode      | URI de la requête
 :------     | :-----
 POST | /api/holographic/simulation/playback/session/stop
 
 
-**URI parameters**
+**Paramètres d’URI**
 
-You can specify the following additional parameters on the request URI:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
-URI parameter | Description
+Paramètre d’URI | Description
 :---          | :---
-recording   | (**required**) The name of the recording to stop.
+recording   | (**requis**) Nom de l’enregistrement à arrêter.
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**
+**Réponse**
 
-- None
+- Aucun
 
-**Status code**
+**Code d’état**
 
-- Standard status codes.
+- Codes d’état standard.
 
 ---
-### Unload a recording
+### Décharger un enregistrement
 
-**Request**
+**Requête**
 
-You can unload a recording by using the following request format.
+Vous pouvez décharger un enregistrement en utilisant le format de requête suivant.
  
-Method      | Request URI
+Méthode      | URI de requête
 :------     | :-----
 DELETE | /api/holographic/simulation/playback/session/file
 
 
-**URI parameters**
+**Paramètres d’URI**
 
-You can specify the following additional parameters on the request URI:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
-URI parameter | Description
+Paramètre d’URI | Description
 :---          | :---
-recording   | (**required**) The name of the recording to unload.
+recording   | (**requis**) Nom de l’enregistrement à décharger.
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**
+**Réponse**
 
-- None
+- Aucun
 
-**Status code**
+**Code d’état**
 
-- Standard status codes.
+- Codes d’état standard.
 
 ---
-### Upload a recording
+### Charger un enregistrement
 
-**Request**
+**Requête**
 
-You can upload a recording by using the following request format.
+Vous pouvez décharger un enregistrement en utilisant le format de requête suivant.
  
-Method      | Request URI
+Méthode      | URI de la requête
 :------     | :-----
 POST | /api/holographic/simulation/playback/file
 
 
-**URI parameters**
+**Paramètres d’URI**
 
-- None
+- Aucun
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**
+**Réponse**
 
-- None
+- Aucun
 
-**Status code**
+**Code d’état**
 
-- Standard status codes.
+- Codes d’état standard.
 
 ---
-## HSimulation recording
+## Enregistrement HSimulation
 ---
-### Get the recording state
+### Obtenir l’état de l’enregistrement
 
-**Request**
+**Requête**
 
-You can get the current recording state by using the following request format.
+Vous pouvez obtenir l’état d’enregistrement actuel en utilisant le format de requête suivant.
  
-Method      | Request URI
+Méthode      | URI de la requête
 :------     | :-----
 GET | /api/holographic/simulation/recording/status
 
 
-**URI parameters**
+**Paramètres d’URI**
 
-- None
+- Aucun
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**
+**Réponse**
 
-- None
+- Aucun
 
-**Status code**
+**Code d’état**
 
-- Standard status codes.
+- Codes d’état standard.
 
 ---
-### Start a recording
+### Démarrer un enregistrement
 
-**Request**
+**Requête**
 
-You can start a recording by using the following request format. There can only be one active recording at a time. 
+Vous pouvez démarrer un enregistrement en utilisant le format de requête suivant. Vous ne pouvez effectuer qu’un seul enregistrement actif à la fois. 
  
-Method      | Request URI
+Méthode      | URI de la requête
 :------     | :-----
 POST | /api/holographic/simulation/recording/start
 
 
-**URI parameters**
+**Paramètres d’URI**
 
-You can specify the following additional parameters on the request URI:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
-URI parameter | Description
+Paramètre d’URI | Description
 :---          | :---
-head   | (**see below**) Set this value to 1 to indicate the system should record head data.
-hands   | (**see below**) Set this value to 1 to indicate the system should record hands data.
-spatialMapping   | (**see below**) Set this value to 1 to indicate the system should record spatial mapping data.
-environment   | (**see below**) Set this value to 1 to indicate the system should record environment data.
-name   | (**required**) The name of the recording.
-singleSpatialMappingFrame   | (**optional**) Set this value to 1 to indicate that only a single sptial mapping frame should be recorded.
+head   | (**voir ci-dessous**) Définissez cette valeur sur 1 pour indiquer que le système doit enregistrer des données de tête.
+hands   | (**voir ci-dessous**) Définissez cette valeur sur 1 pour indiquer que le système doit enregistrer des données hands.
+spatialMapping   | (**voir ci-dessous**) Définissez cette valeur sur 1 pour indiquer que le système doit enregistrer des données de mappage spatial.
+environment   | (**voir ci-dessous**) Définissez cette valeur sur 1 pour indiquer que le système doit enregistrer des données d’environnement.
+name   | (**requis**) Nom de l’enregistrement.
+singleSpatialMappingFrame   | (**facultatif**) Définissez cette valeur à 1 pour indiquer qu’une seule trame de mappage spatial doit être enregistrée.
 
-For these parameters, exactly one of the following parameters must be set to 1: *head*, *hands*, *spatialMapping*, or *environment*.
+Pour ces paramètres, un des paramètres suivants doit être défini sur 1 : *head*, *hands*, *spatialMapping*, ou *environment*.
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**
+**Réponse**
 
-- None
+- Aucun
 
-**Status code**
+**Code d’état**
 
-- Standard status codes.
+- Codes d’état standard.
 
 ---
-### Stop the current recording
+### Arrêter l’enregistrement en cours
 
-**Request**
+**Requête**
 
-You can stop the current recording by using the following request format. The recording will be returned as a file.
+Vous pouvez arrêter l’enregistrement en cours en utilisant le format de requête suivant. L’enregistrement est renvoyé sous forme de fichier.
  
-Method      | Request URI
+Méthode      | URI de la requête
 :------     | :-----
 POST | /api/holographic/simulation/recording/stop
 
 
-**URI parameters**
+**Paramètres d’URI**
 
-- None
+- Aucun
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**
+**Réponse**
 
-- None
+- Aucun
 
-**Status code**
+**Code d’état**
 
-- Standard status codes.
+- Codes d’état standard.
 
 ---
-## Mixed reality capture
+## MRC (Mixed Reality Capture)
 ---
-### Delete a mixed reality capture (MRC) recording from the device
+### Supprimer un enregistrement MRC à partir de l’appareil
 
-**Request**
+**Requête**
 
-You can delete an MRC recording by using the following request format.
+Vous pouvez supprimer un enregistrement MRC en utilisant le format de requête suivant.
  
-Method      | Request URI
+Méthode      | URI de requête
 :------     | :-----
 DELETE | /api/holographic/mrc/file
 
 
-**URI parameters**
+**Paramètres d’URI**
 
-You can specify the following additional parameters on the request URI:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
-URI parameter | Description
+Paramètre d’URI | Description
 :---          | :---
-filename   | (**required**) The name of the video file to delete. The name should be hex64 encoded.
+filename   | (**requis**) Nom du fichier vidéo à supprimer. Ce nom doit être codé en hex64.
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**
+**Réponse**
 
-- None
+- Aucun
 
-**Status code**
+**Code d’état**
 
-- Standard status codes.
+- Codes d’état standard.
 
 ---
-### Download a mixed reality capture (MRC) file
+### Télécharger un fichier MRC
 
-**Request**
+**Requête**
 
-You can download an MRC file from the device by using the following request format.
+Vous pouvez télécharger un fichier MRC à partir de l’appareil en utilisant le format de requête suivant.
  
-Method      | Request URI
+Méthode      | URI de la requête
 :------     | :-----
 GET | /api/holographic/mrc/file
 
 
-**URI parameters**
+**Paramètres d’URI**
 
-You can specify the following additional parameters on the request URI:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
-URI parameter | Description
+Paramètre d’URI | Description
 :---          | :---
-filename   | (**required**) The name of the video file you want to get. The name should be hex64 encoded.
-op   | (**optional**) Set this value to **stream** if you want to download a stream.
+filename   | (**requis**) Nom du fichier vidéo que vous souhaitez obtenir. Ce nom doit être codé en hex64.
+op   | (**facultatif**) Définissez cette valeur sur **stream** si vous voulez télécharger un flux.
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**
+**Réponse**
 
-- None
+- Aucun
 
-**Status code**
+**Code d’état**
 
-- Standard status codes.
+- Codes d’état standard.
 
 ---
-### Get the mixed reality capture (MRC) settings
+### Obtenir les paramètres MRC
 
-**Request**
+**Requête**
 
-You can get the MRC settings by using the following request format.
+Vous pouvez obtenir les paramètres MRC en utilisant le format de requête suivant.
  
-Method      | Request URI
+Méthode      | URI de la requête
 :------     | :-----
 GET | /api/holographic/mrc/settings
 
 
-**URI parameters**
+**Paramètres d’URI**
 
-- None
+- Aucun
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**
+**Réponse**
 
-- None
+- Aucun
 
-**Status code**
+**Code d’état**
 
-- Standard status codes.
+- Codes d’état standard.
 
 ---
-### Get the status of the mixed reality capture (MRC) recording
+### Obtenir l’état de l’enregistrement MRC
 
-**Request**
+**Requête**
 
-You can get the MRC recording status by using the following request format. The possible values include **running** and **stopped**.
+Vous pouvez obtenir l’état de l’enregistrement MRC en utilisant le format de requête suivant. Les valeurs possibles sont **running** et **stopped**.
  
-Method      | Request URI
+Méthode      | URI de la requête
 :------     | :-----
 GET | /api/holographic/mrc/status
 
 
-**URI parameters**
+**Paramètres d’URI**
 
-- None
+- Aucun
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**
+**Réponse**
 
-- None
+- Aucun
 
-**Status code**
+**Code d’état**
 
-- Standard status codes.
+- Codes d’état standard.
 
 ---
-### Get the list of mixed reality capture (MRC) files
+### Obtenir la liste des fichiers MRC
 
-**Request**
+**Requête**
 
-You can get the MRC files stored on the device by using the following request format.
+Vous pouvez obtenir les fichiers MRC stockés sur l’appareil en utilisant le format de requête suivant.
  
-Method      | Request URI
+Méthode      | URI de la requête
 :------     | :-----
 GET | /api/holographic/mrc/files
 
 
-**URI parameters**
+**Paramètres d’URI**
 
-- None
+- Aucun
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**
+**Réponse**
 
-- None
+- Aucun
 
-**Status code**
+**Code d’état**
 
-- Standard status codes.
+- Codes d’état standard.
 
 ---
-### Set the mixed reality capture (MRC) settings
+### Définir les paramètres MRC
 
-**Request**
+**Requête**
 
-You can set the MRC settings by using the following request format.
+Vous pouvez définir les paramètres MRC en utilisant le format de requête suivant.
  
-Method      | Request URI
+Méthode      | URI de la requête
 :------     | :-----
 POST | /api/holographic/mrc/settings
 
 
-**URI parameters**
+**Paramètres d’URI**
 
-- None
+- Aucun
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**
+**Réponse**
 
-- None
+- Aucun
 
-**Status code**
+**Code d’état**
 
-- Standard status codes.
+- Codes d’état standard.
 
 ---
-### Starts a mixed reality capture (MRC) recording
+### Démarre un enregistrement MRC
 
-**Request**
+**Requête**
 
-You can start an MRC recording by using the following request format.
+Vous pouvez démarrer un enregistrement MRC en utilisant le format de requête suivant.
  
-Method      | Request URI
+Méthode      | URI de la requête
 :------     | :-----
 POST | /api/holographic/mrc/video/control/start
 
 
-**URI parameters**
+**Paramètres d’URI**
 
-- None
+- Aucun
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**
+**Réponse**
 
-- None
+- Aucun
 
-**Status code**
+**Code d’état**
 
-- Standard status codes.
+- Codes d’état standard.
 
 ---
-### Stop the current mixed reality capture (MRC) recording
+### Arrêter l’enregistrement MRC actuel
 
-**Request**
+**Requête**
 
-You can stop the current MRC recording by using the following request format.
+Vous pouvez arrêter l’enregistrement MRC actuel en utilisant le format de requête suivant.
  
-Method      | Request URI
+Méthode      | URI de la requête
 :------     | :-----
 POST | /api/holographic/mrc/video/control/stop
 
 
-**URI parameters**
+**Paramètres d’URI**
 
-- None
+- Aucun
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**
+**Réponse**
 
-- None
+- Aucun
 
-**Status code**
+**Code d’état**
 
-- Standard status codes.
+- Codes d’état standard.
 
 ---
-### Take a mixed reality capture (MRC) photo
+### Prendre une photo MRC
 
-**Request**
+**Requête**
 
-You can take an MRC photo by using the following request format. The photo is returned in JPEG format.
+Vous pouvez prendre une photo MRC en utilisant le format de requête suivant. La photo est renvoyée au format JPEG.
  
-Method      | Request URI
+Méthode      | URI de la requête
 :------     | :-----
 GET | /api/holographic/mrc/photo
 
 
-**URI parameters**
+**Paramètres d’URI**
 
-- None
+- Aucun
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**
+**Réponse**
 
-- None
+- Aucun
 
-**Status code**
+**Code d’état**
 
-- Standard status codes.
+- Codes d’état standard.
 
 ---
-## Mixed reality streaming
+## Diffusion en continu de la réalité mixée
 ---
-### Initiates a chunked download of a fragmented mp4
+### Initie un téléchargement mémorisé en bloc d’un mp4 fragmenté
 
-**Request**
+**Requête**
 
-You can initiate a chunked download of a fragmented mp4 by using the following request format. This API uses the default quality.
+Vous pouvez lancer un téléchargement mémorisé en bloc d’un mp4 fragmenté en utilisant le format de requête suivant. Cette API utilise la qualité par défaut.
  
-Method      | Request URI
+Méthode      | URI de la requête
 :------     | :-----
 GET | /api/holographic/stream/live.mp4
 
 
-**URI parameters**
+**Paramètres d’URI**
 
-You can specify the following additional parameters on the request URI:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
-URI parameter | Description
+Paramètre d’URI | Description
 :---          | :---
-pv   | (**optional**) Indiates whether to capture the PV camera. Should be **true** or **false**.
-holo   | (**optional**) Indiates whether to capture holograms. Should be **true** or **false**.
-mic   | (**optional**) Indiates whether to capture the microphone. Should be **true** or **false**.
-loopback   | (**optional**) Indiates whether to capture the application audio. Should be **true** or **false**.
+pv   | (**facultatif**) Indique si vous souhaitez capturer la caméra PV. La valeur doit être **true** ou **false**.
+holo   | (**facultatif**) Indique si vous souhaitez capturer des hologrammes. La valeur doit être **true** ou **false**.
+mic   | (**facultatif**) Indique si vous souhaitez capturer le microphone. La valeur doit être **true** ou **false**.
+loopback   | (**facultatif**) Indique si vous souhaitez capturer le son de l’application. La valeur doit être **true** ou **false**.
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**
+**Réponse**
 
-- None
+- Aucun
 
-**Status code**
+**Code d’état**
 
-- Standard status codes.
+- Codes d’état standard.
 
 ---
-### Initiates a chunked download of a fragmented mp4
+### Initie un téléchargement mémorisé en bloc d’un mp4 fragmenté
 
-**Request**
+**Requête**
 
-You can initiate a chunked download of a fragmented mp4 by using the following request format. This API uses the high quality.
+Vous pouvez lancer un téléchargement mémorisé en bloc d’un mp4 fragmenté en utilisant le format de requête suivant. Cette API utilise une qualité de niveau élevé.
  
-Method      | Request URI
+Méthode      | URI de la requête
 :------     | :-----
 GET | /api/holographic/stream/live_high.mp4
 
 
-**URI parameters**
+**Paramètres d’URI**
 
-You can specify the following additional parameters on the request URI:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
-URI parameter | Description
+Paramètre d’URI | Description
 :---          | :---
-pv   | (**optional**) Indiates whether to capture the PV camera. Should be **true** or **false**.
-holo   | (**optional**) Indiates whether to capture holograms. Should be **true** or **false**.
-mic   | (**optional**) Indiates whether to capture the microphone. Should be **true** or **false**.
-loopback   | (**optional**) Indiates whether to capture the application audio. Should be **true** or **false**.
+pv   | (**facultatif**) Indique si vous souhaitez capturer la caméra PV. La valeur doit être **true** ou **false**.
+holo   | (**facultatif**) Indique si vous souhaitez capturer des hologrammes. La valeur doit être **true** ou **false**.
+mic   | (**facultatif**) Indique si vous souhaitez capturer le microphone. La valeur doit être **true** ou **false**.
+loopback   | (**facultatif**) Indique si vous souhaitez capturer le son de l’application. La valeur doit être **true** ou **false**.
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**
+**Réponse**
 
-- None
+- Aucun
 
-**Status code**
+**Code d’état**
 
-- Standard status codes.
+- Codes d’état standard.
 
 ---
-### Initiates a chunked download of a fragmented mp4
+### Initie un téléchargement mémorisé en bloc d’un mp4 fragmenté
 
-**Request**
+**Requête**
 
-You can initiate a chunked download of a fragmented mp4 by using the following request format. This API uses the low quality.
+Vous pouvez lancer un téléchargement mémorisé en bloc d’un mp4 fragmenté en utilisant le format de requête suivant. Cette API utilise une qualité de niveau faible.
  
-Method      | Request URI
+Méthode      | URI de la requête
 :------     | :-----
 GET | /api/holographic/stream/live_low.mp4
 
 
-**URI parameters**
+**Paramètres d’URI**
 
-You can specify the following additional parameters on the request URI:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
-URI parameter | Description
+Paramètre d’URI | Description
 :---          | :---
-pv   | (**optional**) Indiates whether to capture the PV camera. Should be **true** or **false**.
-holo   | (**optional**) Indiates whether to capture holograms. Should be **true** or **false**.
-mic   | (**optional**) Indiates whether to capture the microphone. Should be **true** or **false**.
-loopback   | (**optional**) Indiates whether to capture the application audio. Should be **true** or **false**.
+pv   | (**facultatif**) Indique si vous souhaitez capturer la caméra PV. La valeur doit être **true** ou **false**.
+holo   | (**facultatif**) Indique si vous souhaitez capturer des hologrammes. La valeur doit être **true** ou **false**.
+mic   | (**facultatif**) Indique si vous souhaitez capturer le microphone. La valeur doit être **true** ou **false**.
+loopback   | (**facultatif**) Indique si vous souhaitez capturer le son de l’application. La valeur doit être **true** ou **false**.
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**
+**Réponse**
 
-- None
+- Aucun
 
-**Status code**
+**Code d’état**
 
-- Standard status codes.
+- Codes d’état standard.
 
 ---
-### Initiates a chunked download of a fragmented mp4
+### Initie un téléchargement mémorisé en bloc d’un mp4 fragmenté
 
-**Request**
+**Requête**
 
-You can initiate a chunked download of a fragmented mp4 by using the following request format. This API uses the medium quality.
+Vous pouvez lancer un téléchargement mémorisé en bloc d’un mp4 fragmenté en utilisant le format de requête suivant. Cette API utilise une qualité de niveau moyenne.
  
-Method      | Request URI
+Méthode      | URI de la requête
 :------     | :-----
 GET | /api/holographic/stream/live_med.mp4
 
 
-**URI parameters**
+**Paramètres d’URI**
 
-You can specify the following additional parameters on the request URI:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
 
-URI parameter | Description
+Paramètre d’URI | Description
 :---          | :---
-pv   | (**optional**) Indiates whether to capture the PV camera. Should be **true** or **false**.
-holo   | (**optional**) Indiates whether to capture holograms. Should be **true** or **false**.
-mic   | (**optional**) Indiates whether to capture the microphone. Should be **true** or **false**.
-loopback   | (**optional**) Indiates whether to capture the application audio. Should be **true** or **false**.
+pv   | (**facultatif**) Indique si vous souhaitez capturer la caméra PV. La valeur doit être **true** ou **false**.
+holo   | (**facultatif**) Indique si vous souhaitez capturer des hologrammes. La valeur doit être **true** ou **false**.
+mic   | (**facultatif**) Indique si vous souhaitez capturer le microphone. La valeur doit être **true** ou **false**.
+loopback   | (**facultatif**) Indique si vous souhaitez capturer le son de l’application. La valeur doit être **true** ou **false**.
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**
+**Réponse**
 
-- None
+- Aucun
 
-**Status code**
+**Code d’état**
 
-- Standard status codes.
+- Codes d’état standard.
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

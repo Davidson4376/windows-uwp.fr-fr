@@ -1,61 +1,61 @@
 ---
 author: mtoepke
-title: Game technologies for Universal Windows Platform (UWP) apps
-description: In this guide, you'll learn about the technologies available for developing Universal Windows Platform (UWP) games.
+title: Technologies de jeu des applications pour la plateforme Windows universelle (UWP)
+description: "Ce guide décrit les technologies disponibles pour le développement de jeux UWP."
 ms.assetid: bc4d4648-0d6e-efbb-7608-80bd09decd6e
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 83c3fda490d7ab821e8e584291ded642c9c11dd1
+ms.openlocfilehash: 3c7807d0b46a32bfe90c79b7eee3111039ca94ab
 
 ---
 
-# Game technologies for Universal Windows Platform (UWP) apps
+# Technologies de jeu des applications pour la plateforme Windows universelle (UWP)
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-In this guide, you'll learn about the technologies available for developing Universal Windows Platform (UWP) games.
+Ce guide décrit les technologies disponibles pour le développement de jeux UWP.
 
-##  Benefits of Windows 10 for game development
-
-
-With the introduction of UWP in Windows 10, your Windows 10 titles will be able to span all of the Microsoft platforms. With free migration from previous versions of Windows, there is a steadily increasing number of Windows 10 clients. The combination of these two things means that your Windows 10 titles will be able to reach a huge number of customers through the Windows Store.
-
-In addition, Windows 10 offers many new features that are particularly beneficial to games:
-
--   Reduced memory paging and reduced overall memory system size
--   Improved graphics memory management actively allocates and protects more memory for the foreground game
-
-## UWP Games with C++ and DirectX
+##  Avantages de Windows 10 pour le développement de jeux
 
 
-Real-time games requiring high performance should make use of the DirectX APIs. DirectX is a collection of native APIs for creating games and multimedia applications that require high performance, such as 3D games. Because the DirectX APIs are native, C++ is the only language supported for use with DirectX.
+L’introduction de la plateforme Windows universelle (UWP) dans Windows 10 vous permet d’étendre vos titres Windows 10 à toutes les plateformes Microsoft. La migration gratuite à partir des versions précédentes de Windows génère un nombre sans cesse croissant de clients Windows 10. La combinaison de ces deux aspects signifie que vos titres Windows 10 pourront atteindre un nombre considérable de clients par le biais du Windows Store.
 
-## Development Environment
+En outre, Windows 10 présente de nombreuses nouveautés particulièrement avantageuses pour les jeux, à savoir :
 
+-   Réduction de la pagination de la mémoire et de la taille globale du système de mémoire
+-   Amélioration de la gestion de la mémoire graphique qui alloue et protège activement davantage de mémoire pour le jeu au premier plan
 
-To create games for UWP, you'll need to set up your development environment by installing a copy of Visual Studio 2015. Visual Studio 2015 allows you to create UWP apps and provides tools for game development:
-
--   Visual Studio tools for DX game programming - Visual Studio provides tools for creating, editing, previewing, and exporting image, model, and shader resources. There are also tools that you can use to convert resources at build time and debug DirectX graphics code. For more information, see [Use Visual Studio tools for game programming](set-up-visual-studio-for-game-development.md).
--   Visual Studio graphics diagnostics features - Graphics diagnostic tools are now available from within Windows as an optional feature. The diagnostic tools allow you to do graphics debugging, graphics frame analysis, and monitor GPU usage in real time. For more information, see [Use the DirectX runtime and Visual Studio graphics diagnostic features](use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md).
-
-For more information, see Prepare your Universal Windows Platform and DirectX game programming environment.
-
-## Getting Started with DirectX Game Project Templates
+## Jeux UWP avec C++ et DirectX
 
 
-After setting up you development environment, you can use one of the DirectX related project templates to create your UWP DirectX game. Visual Studio 2015 has three templates available for creating new UWP DirectX projects, **DirectX 11 App (Universal Windows)**, **DirectX 12 App (Universal Windows)**, and **DirectX 11 and XAML App (Universal Windows)**. For more information, see [Create a Universal Windows Platform and DirectX game project from a template](user-interface.md).
+Les jeux en temps réel exigeant des performances élevées doivent utiliser des API DirectX. DirectX est un ensemble d’API natives pour la création de jeux et d’applications multimédias qui exigent des performances élevées, tels les jeux 3D. Les API DirectX étant natives, C++ est le seul langage pris en charge pour une utilisation avec DirectX.
 
-## Windows 10 APIs
+## Environnement de développement
 
 
-Windows 10 provides a an extensive collection of APIs that are useful for game development. There are APIs for almost all aspects of games including, 3D Graphics, 2D Graphics, Audio, Input, Text Resources, User Interface, and networking.
+Pour créer des jeux UWP, vous devez configurer votre environnement de développement en installant une copie de Visual Studio 2015. Visual Studio 2015 permet de créer des applications UWP et fournit des outils de développement de jeux :
 
-There are many APIs related to game development, but not all games need to use all of the APIs. For example, some games will only use 3D graphics and only make use of Direct3D, some games may only use 2D graphics and only make use of Direct2D, and still other games may make use of both. The following diagram shows the game development related APIs grouped by functionality type.
+-   Outils Visual Studio pour la programmation de jeux DX - Visual Studio offre des outils permettant de créer, modifier, prévisualiser et exporter des ressources d’image, de modèle et de nuanceur. Il existe également des outils que vous pouvez utiliser pour convertir des ressources au moment de la création et pour déboguer le code graphique DirectX. Pour plus d’informations, voir [Utiliser Visual Studio Tools pour la programmation de jeux](set-up-visual-studio-for-game-development.md).
+-   Fonctionnalités de Graphics Diagnostics dans Visual Studio - Les outils de diagnostic de graphiques sont désormais disponibles dans Windows en tant que fonctionnalités facultatives. Les outils de diagnostic vous permettent d’effectuer des tâches de débogage graphique et d’analyse des frames graphiques, ainsi que de surveiller l’utilisation du processeur graphique (GPU) en temps réel. Pour plus d’informations, voir [Utiliser les fonctionnalités de diagnostic de graphiques de Visual Studio et du runtime DirectX](use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md).
 
-![game platform technologies](images/gameplatformtechnologies.png)
+Pour plus d’informations, voir « Préparer votre environnement de programmation de jeux DirectX et Plateforme Windows universelle ».
 
--   3D Graphics - Windows 10 supports two 3D graphics API sets, Direct3D 11, and [Direct3D 12](https://msdn.microsoft.com/library/windows/desktop/dn899121). Both of these APIs provide the capability to create 3D and 2D graphics. Direct3D 11 and Direct3D 12 are not used together, but either can be used with any of the APIs in the 2D Graphics and UI group. For more information about using the graphics APIs in your game, see [Basic 3D graphics for DirectX games](an-introduction-to-3d-graphics-with-directx.md).
+## Prise en main des modèles de projet de jeu DirectX
+
+
+Après avoir configuré votre environnement de développement, vous pouvez utiliser l’un des modèles de projet DirectX associés pour créer votre jeu DirectX UWP. Visual Studio2015 comporte troismodèles disponibles pour la création de projets DirectX UWP: **Application DirectX11 (Windows universel)**, **Application DirectX12 (Windows universel)** et **Application DirectX11 et XAML (Windows universel)**. Pour plus d’informations, voir [Créer un projet de jeux DirectX et Plateforme Windows universelle à partir d’un modèle](user-interface.md).
+
+## API Windows 10
+
+
+Windows 10 offre une collection complète d’API utiles pour le développement de jeux. Il existe des API pour quasiment tous les aspects des jeux : graphiques 3D, graphiques 2D, audio, entrée, ressources texte, interface utilisateur et réseau.
+
+De nombreuses API sont liées au développement de jeux, mais tous les jeux ne doivent utiliser toutes les API. Par exemple, certains jeux utilisant uniquement des éléments graphiques 3D n’ont besoin que de Direct3D, d’autres utilisant uniquement des éléments graphiques 2D n’ont besoin que de Direct2D, et d’autres encore utilisent les deux. Le diagramme suivant présente les API liées au développement de jeux, regroupées par type de fonctionnalité.
+
+![technologies de plateforme de jeu](images/gameplatformtechnologies.png)
+
+-   Graphiques3D: Windows10 prend en charge deuxjeux d’API graphiques3D, Direct3D11 et [Direct3D12](https://msdn.microsoft.com/library/windows/desktop/dn899121). Ces API permettent de créer des éléments graphiques 2D et 3D. Les jeux d’API graphiques Direct3D 11 et Direct3D 12 ne sont pas utilisés ensemble, mais chacun peut être utilisé avec toute API du groupe d’interfaces utilisateur et d’éléments graphiques 2D. Pour plus d’informations sur l’utilisation des API graphiques dans votre jeu, voir [Graphismes3D de base pour jeux DirectX](an-introduction-to-3d-graphics-with-directx.md).
 
     <table>
     <colgroup>
@@ -71,26 +71,26 @@ There are many APIs related to game development, but not all games need to use a
     <tbody>
     <tr class="odd">
     <td align="left">Direct3D 12</td>
-    <td align="left"><p>Direct3D 12 introduces the next version of Direct3D, the 3D graphics API at the heart of DirectX. This version of Direct3D is designed to be faster and more efficient than previous versions of Direct3D. The tradeoff for Direct3D 12's increased speed is that it is lower level and requires you to manage your graphics resources yourself and have more extensive graphics programming experience to realize the increased speed.</p>
-    <p><strong>When to use</strong></p>
-    <p>Use Direct3D 12 when you need to maximize your game's performance and your game is CPU bound.</p>
-    <p><strong>For more information</strong></p>
-    <p>See the [Direct3d 12](https://msdn.microsoft.com/library/windows/desktop/dn899121) documentation.</p></td>
+    <td align="left"><p>Direct3D 12 introduit la nouvelle version de Direct3D, l’API graphique 3D au cœur de DirectX. Cette version de Direct3D est conçue pour être plus rapide et plus efficace que les versions précédentes. La contrepartie de la vitesse accrue de l’API Direct3D12 est qu’étant de niveau inférieur, elle requiert que vous gériez vous-même vos ressources graphiques, et disposiez d’une plus vaste expérience en matière de programmation d’éléments graphiques pour tirer parti de cette vitesse accrue.</p>
+    <p><strong>Quand l’utiliser</strong></p>
+    <p>Utilisez Direct3D12 lorsque vous devez optimiser les performances de votre jeu et que celui-ci utilise le processeur de manière intensive.</p>
+    <p><strong>Pour plus d’informations</strong></p>
+    <p>Voir la documentation concernant [Direct3D12](https://msdn.microsoft.com/library/windows/desktop/dn899121).</p></td>
     </tr>
     <tr class="even">
     <td align="left">Direct3D 11</td>
-    <td align="left"><p>Direct3D 11 is the previous version of Direct3D and allows you to create 3D graphics using a higher level of hardware abstraction than D3D 12.</p>
-    <p><strong>When to use</strong></p>
-    <p>Use Direct3D 11 if you have existing Direct3D 11 code, your game is not CPU bound, or you want the benefit of having resources managed for you.</p>
-    <p><strong>For more information</strong></p>
-    <p>See the [Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476080) documentation.</p></td>
+    <td align="left"><p>Direct3D11 est la version précédente de Direct3D. Elle permet de créer des éléments graphiques3D avec un niveau d’abstraction matérielle supérieur à celui de Direct3D12.</p>
+    <p><strong>Quand l’utiliser</strong></p>
+    <p>Utilisez Direct3D 11 si vous avez du code Direct3D 11 existant, si votre jeu n’utilise pas le processeur de manière intensive, ou si voulez bénéficier de l’avantage de ne pas à avoir à gérer vous-même vos ressources.</p>
+    <p><strong>Pour plus d’informations</strong></p>
+    <p>Voir la documentation concernant [Direct3D11](https://msdn.microsoft.com/library/windows/desktop/ff476080).</p></td>
     </tr>
     </tbody>
     </table>
 
      
 
--   2D Graphics and UI - APIs concerning 2D graphics such as text and user interfaces. All of the 2D graphics and UI APIs are optional.
+-   Éléments graphiques et interfaces utilisateur 2D - API concernant les éléments graphiques 2D, tels que des textes et des interfaces utilisateur. Toutes les API pour éléments graphiques et interfaces utilisateur 2D sont facultatives.
 
     <table>
     <colgroup>
@@ -106,34 +106,34 @@ There are many APIs related to game development, but not all games need to use a
     <tbody>
     <tr class="odd">
     <td align="left">Direct2D</td>
-    <td align="left"><p>Direct2D is a hardware-accelerated, immediate-mode, 2-D graphics API that provides high performance and high-quality rendering for 2-D geometry, bitmaps, and text. The Direct2D API is built on Direct3D and is designed to interoperate well with GDI, GDI+, and Direct3D.</p>
-    <p><strong>When to use</strong></p>
-    <p>Direct2D can be used instead of Direct3D to provide graphics for pure 2D games such as a side-scroller or board game, or can be used with Direct3D to simplify creation of 2D graphics in a 3D game, such as a user interface or heads-up-display.</p>
-    <p><strong>For more information</strong></p>
-    <p>See the [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990) documentation.</p></td>
+    <td align="left"><p>Direct2D est une API graphique 2D à accélération matérielle et en mode immédiat, qui offre des performances élevées et un rendu de grande qualité pour les éléments géométriques, bitmaps et textes 2D. L’API Direct2D repose sur Direct3D. Elle est conçue pour fonctionner correctement avec GDI, GDI+ et Direct3D.</p>
+    <p><strong>Quand l’utiliser</strong></p>
+    <p>Vous pouvez utiliser Direct2D soit à la place de Direct3D afin de produire des graphismes pour des jeux purement2D, tels des jeux à défilement horizontal ou de plateau, soit avec Direct3D pour simplifier la création d’éléments graphiques2D dans des jeux3D tels que des interfaces utilisateur ou des affichages tête haute.</p>
+    <p><strong>Pour plus d’informations</strong></p>
+    <p>Voir la documentation concernant [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990).</p></td>
     </tr>
     <tr class="even">
     <td align="left">DirectWrite</td>
-    <td align="left"><p>DirectWrite provides extra capabilities for working with text and can be used with Direct3D or Direct2D to provide text output for user interfaces or other areas where text is required. DirectWrite supports measuring, drawing, and hit-testing of multi-format text. DirectWrite handles text in all supported languages for global and localized applications. DirectWrite also provides a low-level glyph rendering API for developers who want to perform their own layout and Unicode-to-glyph processing.</p>
-    <p><strong>When to use</strong></p>
+    <td align="left"><p>DirectWrite apporte des fonctionnalités supplémentaires de manipulation de texte. Il peut être utilisé avec Direct3D ou Direct2D afin de fournir une sortie de texte pour les interfaces utilisateur ou d’autres zones où du texte est requis. DirectWrite prend en charge la mesure, le dessin et le test de résultats de texte multiformat. DirectWrite gère le texte dans toutes les langues prises en charge pour les applications localisées et globales. DirectWrite fournit également une API de rendu de glyphe de bas niveau pour les développeurs désireux de réaliser leurs propres disposition et traitement d’Unicodeàglyphe.</p>
+    <p><strong>Quand l’utiliser</strong></p>
     <p></p>
-    <p><strong>For more information</strong></p>
-    <p>See the [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038) documentation.</p></td>
+    <p><strong>Pour plus d’informations</strong></p>
+    <p>Voir la documentation concernant [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038).</p></td>
     </tr>
     <tr class="odd">
     <td align="left">DirectComposition</td>
-    <td align="left"><p>DirectComposition is a Windows component that enables high-performance bitmap composition with transforms, effects, and animations. Application developers can use the DirectComposition API to create visually engaging user interfaces that feature rich and fluid animated transitions from one visual to another.</p>
-    <p><strong>When to use</strong></p>
-    <p>DirectComposition is designed to simplify the process of composing visuals and creating animated transitions. If your game requires complex user interfaces, you can use DirectComposition to simplify the creation and management of the UI.</p>
-    <p><strong>For more information</strong></p>
-    <p>See the [DirectComposition](https://msdn.microsoft.com/library/windows/desktop/hh437371) documentation.</p></td>
+    <td align="left"><p>DirectComposition est un composant Windows qui permet de composer des bitmaps complexes avec des transformations, des effets et des animations. Les développeurs d’applications peuvent utiliser l’API DirectComposition pour créer des interfaces utilisateur visuellement attrayantes avec des transitions riches et fluides d’un élément visuel à l’autre.</p>
+    <p><strong>Quand l’utiliser</strong></p>
+    <p>DirectComposition est conçue pour simplifier le processus de composition d’éléments visuels et de création de transitions animées. Si votre jeu nécessite des interfaces utilisateur complexes, vous pouvez utiliser DirectComposition pour simplifier la création et la gestion de l’interface utilisateur.</p>
+    <p><strong>Pour plus d’informations</strong></p>
+    <p>Voir la documentation concernant [DirectComposition](https://msdn.microsoft.com/library/windows/desktop/hh437371).</p></td>
     </tr>
     </tbody>
     </table>
 
      
 
--   Audio - APIs concerning playing audio and applying audio effects. For information about using the audio APIs in your game, see [Audio for games](working-with-audio-in-your-directx-game.md).
+-   Audio - API concernant la lecture audio et l’application d’effets audio. Pour plus d’informations sur l’utilisation des API audio dans votre jeu, voir [Audio pour les jeux](working-with-audio-in-your-directx-game.md).
 
     <table>
     <colgroup>
@@ -149,26 +149,26 @@ There are many APIs related to game development, but not all games need to use a
     <tbody>
     <tr class="odd">
     <td align="left">XAudio2</td>
-    <td align="left"><p>XAudio2 is a low-level audio API that provides a foundation for signal processing and mixing. XAudio is designed to be very responsive for game audio engines while maintaining the ability to create custom audio effects and complex chains of audio effects and filters.</p>
-    <p><strong>When to use</strong></p>
-    <p>Use XAudio2 when your game needs to play sounds with minimal overhead and delay.</p>
-    <p><strong>For more information</strong></p>
-    <p>See the [XAudio2](https://msdn.microsoft.com/library/windows/desktop/hh405049) documentation.</p></td>
+    <td align="left"><p>XAudio2 est une API audio de bas niveau qui constitue le fondement du traitement et du mixage du signal. XAudio est conçue pour être très réactive aux moteurs audio de jeu tout en conservant la possibilité de créer des effets audio personnalisés et des chaînes complexes d’effets et de filtres audio.</p>
+    <p><strong>Quand l’utiliser</strong></p>
+    <p>Utilisez XAudio2 quand votre jeu doit lire des sons en n’occasionnant qu’un minimum de surcharge et de ralentissement.</p>
+    <p><strong>Pour plus d’informations</strong></p>
+    <p>Voir la documentation concernant [XAudio2](https://msdn.microsoft.com/library/windows/desktop/hh405049).</p></td>
     </tr>
     <tr class="even">
     <td align="left">Media Foundation</td>
-    <td align="left"><p>Microsoft Media Foundation is designed for the playback of media files and streams, both audio and video, but can also be used in games when higher level functionality than XAudio2 is required and some additional overhead is acceptable.</p>
-    <p><strong>When to use</strong></p>
-    <p>Media foundation is particularly useful for cinematic scenes or non-interactive components of your game. Media foundation is also useful for decoding audio files for playback using XAudio2.</p>
-    <p><strong>For more information</strong></p>
-    <p>See the [Microsoft Media Foundation overview](https://msdn.microsoft.com/library/windows/desktop/ms694197).</p></td>
+    <td align="left"><p>Microsoft Media Foundation est conçue pour la lecture de fichiers multimédias et de flux audio et vidéo, mais peut également servir dans des jeux quand des fonctionnalités de niveau supérieur à XAudio2 sont requises et qu’une certaine surcharge supplémentaire est acceptable.</p>
+    <p><strong>Quand l’utiliser</strong></p>
+    <p>Media Foundation est particulièrement utile pour les scènes cinématographiques ou les composants non-interactifs de votre jeu. Media Foundation est également utile pour le décodage de fichiers audio avant leur lecture à l’aide de XAudio2.</p>
+    <p><strong>Pour plus d’informations</strong></p>
+    <p>Voir la [vue d’ensemble de Microsoft Media Foundation](https://msdn.microsoft.com/library/windows/desktop/ms694197).</p></td>
     </tr>
     </tbody>
     </table>
 
      
 
--   Input - APIs concerning input from the keyboard, mouse, gamepad, and other user input sources.
+-   Entrée - API concernant diverses sources d’entrée d’utilisateurs telles que le clavier, la souris, le boîtier de commande et autres.
 
     <table>
     <colgroup>
@@ -184,42 +184,42 @@ There are many APIs related to game development, but not all games need to use a
     <tbody>
     <tr class="odd">
     <td align="left">XInput</td>
-    <td align="left"><p>The XInput Game Controller API enables applications to receive input from game controllers.</p>
-    <p><strong>When to use</strong></p>
-    <p>If your game needs to support gampad input and you have existing XInput code, you can continue to make use of XInput. XInput has been replaced by Windows.Gaming.Input for UWP, and if you're writing new input code, you should use Windows.Gaming.Input instead of XInput.</p>
-    <p><strong>For more information</strong></p>
-    <p>See the [XInput](https://msdn.microsoft.com/library/windows/desktop/hh405053) documentation.</p></td>
+    <td align="left"><p>L’API de contrôleur de jeu XInput permet aux applications de recevoir des entrées de contrôleurs de jeu.</p>
+    <p><strong>Quand l’utiliser</strong></p>
+    <p>Si votre jeu doit prendre en charge l’entrée par le biais du boîtier de commande et que vous avez du code XInput existant, vous pouvez continuer à utiliser XInput. XInput ayant été remplacé par Windows.Gaming.Input pour UWP, si vous écrivez un nouveau code d’entrée, vous devez utiliser Windows.Gaming.Input au lieu de XInput.</p>
+    <p><strong>Pour plus d’informations</strong></p>
+    <p>Voir la documentation concernant [XInput](https://msdn.microsoft.com/library/windows/desktop/hh405053).</p></td>
     </tr>
     <tr class="even">
     <td align="left">Windows.Gaming.Input</td>
-    <td align="left"><p>The Windows.Gaming.Input API replaces XInput and provides the same functionality with the following advantages over Xinput:</p>
+    <td align="left"><p>L’API Windows.Gaming.Input remplaçant XInput offre les mêmes fonctionnalités que celle-ci, avec les avantages suivants :</p>
     <ul>
-    <li>Lower resource usage</li>
-    <li>Lower API call latency for retrieving input</li>
-    <li>The ability to work with more than 4 gamepads at once</li>
-    <li>The ability to access addition Xbox One gamepad features, such as the trigger vibration motors</li>
-    <li>The ability to be notified when controllers connect/disconnect via event instead of polling</li>
-    <li>The ability to attribute input to a specific user (Windows.System.User)</li>
+    <li>Moindre utilisation des ressources</li>
+    <li>Moindre latence d’appel d’API pour récupérer l’entrée</li>
+    <li>Possibilité d’utiliser plus de 4 boîtiers de commande à la fois</li>
+    <li>Possibilité d’accéder à des fonctionnalités supplémentaires de boîtier de commande Xbox One, telles que les moteurs de vibration de déclencheur</li>
+    <li>Possibilité d’être averti quand des contrôleurs se connectent/déconnectent via un événement au lieu d’une interrogation</li>
+    <li>Possibilité d’attribuer une entrée à un utilisateur spécifique  (Windows.System.User)</li>
     </ul>
-    <p><strong>When to use</strong></p>
-    <p>If your game needs to support gamepad input and is not using existing XInput code or you need one of the benefits listed above, you should make use of Windows.Gaming.Input.</p>
-    <p><strong>For more information</strong></p>
-    <p>See the [<strong>Windows.Gaming.Input</strong>](https://msdn.microsoft.com/library/windows/apps/dn707817) documentation.</p></td>
+    <p><strong>Quand l’utiliser</strong></p>
+    <p>Si votre jeu doit prendre en charge l’entrée de boîtier de commande et n’utilise pas de code XInput existant, ou si vous avez besoin d’un des avantages répertoriés ci-dessus, vous devez utiliser Windows.Gaming.Input.</p>
+    <p><strong>Pour plus d’informations</strong></p>
+    <p>Voir la documentation concernant [<strong>Windows.Gaming.Input</strong>](https://msdn.microsoft.com/library/windows/apps/dn707817).</p></td>
     </tr>
     <tr class="odd">
     <td align="left">Windows.UI.Core.CoreWindow</td>
-    <td align="left"><p>The Windows.UI.Core.CoreWindow class provides events for tracking pointer presses and movement, and key down and key up events.</p>
-    <p><strong>When to use</strong></p>
-    <p>Use Windows.UI.Core.CoreWindows events when you need to track the mouse or key presses in your game.</p>
-    <p><strong>For more information</strong></p>
-    <p>See [Move-look controls for games](tutorial--adding-move-look-controls-to-your-directx-game.md) for more information about using the mouse or keyboard in your game.</p></td>
+    <td align="left"><p>La classe Windows.UI.Core.CoreWindow fournit des événements pour suivre les actions d’activation et de déplacement du pointeur, ainsi que des touches Haut et Bas.</p>
+    <p><strong>Quand utiliser</strong></p>
+    <p>Utilisez des événements Windows.UI.Core.CoreWindows quand vous devez suivre les actions de la souris ou des touches dans votre jeu.</p>
+    <p><strong>Pour plus d’informations</strong></p>
+    <p>Pour plus d’informations sur l’utilisation de la souris ou du clavier dans votre jeu, voir [Contrôles de déplacement/vue pour les jeux](tutorial--adding-move-look-controls-to-your-directx-game.md).</p></td>
     </tr>
     </tbody>
     </table>
 
      
 
--   Math - APIs concerning simplifying commonly used mathematical operations.
+-   Math - API concernant la simplification d’opérations mathématiques couramment utilisées.
 
     <table>
     <colgroup>
@@ -235,18 +235,18 @@ There are many APIs related to game development, but not all games need to use a
     <tbody>
     <tr class="odd">
     <td align="left">DirectXMath</td>
-    <td align="left"><p>The DirectXMath API provides SIMD-friendly C++ types and functions for common linear algebra and graphics math operations common to games.</p>
-    <p><strong>When to use</strong></p>
-    <p>Use of DirectXMath is optional and simplifies common mathematical operations.</p>
-    <p><strong>For more information</strong></p>
-    <p>See the [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833) documentation.</p></td>
+    <td align="left"><p>L’API DirectXMath fournit des types et fonctions C++ compatibles SIMD pour des opérations mathématiques courantes d’algèbre linéaire et de graphiques communes aux jeux.</p>
+    <p><strong>Quand l’utiliser</strong></p>
+    <p>L’utilisation de DirectXMath est facultative. Elle simplifie les opérations mathématiques courantes.</p>
+    <p><strong>Pour plus d’informations</strong></p>
+    <p>Voir la documentation concernant [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833).</p></td>
     </tr>
     </tbody>
     </table>
 
      
 
--   Networking - APIs concerning communicating with other computers and devices over either the Internet or private networks.
+-   Réseau - API concernant la communication avec d’autres ordinateurs et appareils par le biais d’Internet ou de réseaux privés.
 
     <table>
     <colgroup>
@@ -262,26 +262,26 @@ There are many APIs related to game development, but not all games need to use a
     <tbody>
     <tr class="odd">
     <td align="left">Windows.Networking.Sockets</td>
-    <td align="left"><p>The Windows.Networking.Sockets namespace provides TCP and UDP sockets that allow reliable or unreliable network communication.</p>
-    <p><strong>When to use</strong></p>
-    <p>Use Windows.Networking.Sockets if your game needs to communicate with other computers or devices over the network.</p>
-    <p><strong>For more information</strong></p>
-    <p>See [Work with networking in your game](work-with-networking-in-your-directx-game.md).</p></td>
+    <td align="left"><p>L’espace de noms Windows.Networking.Sockets fournit des sockets TCP et UDP qui permettent une communication réseau fiable ou non fiable.</p>
+    <p><strong>Quand l’utiliser</strong></p>
+    <p>Utilisez Windows.Networking.Sockets si votre jeu doit communiquer avec d’autres ordinateurs ou appareils via le réseau.</p>
+    <p><strong>Pour plus d’informations</strong></p>
+    <p>Voir [Utiliser le réseau dans votre jeu](work-with-networking-in-your-directx-game.md).</p></td>
     </tr>
     <tr class="even">
     <td align="left">Windows.Web.HTTP</td>
-    <td align="left"><p>The Windows.Web.HTTP namespace provides a reliable connection to HTTP servers that can be used to access a web site.</p>
-    <p><strong>When to use</strong></p>
-    <p>Use Windows.Web.HTTP when your game needs to access a web site to retrieve or store information.</p>
-    <p><strong>For more information</strong></p>
-    <p>See [Work with networking in your game](work-with-networking-in-your-directx-game.md).</p></td>
+    <td align="left"><p>L’espace de noms Windows.Web.HTTP fournit aux serveurs HTTP une connexion fiable qui peut être utilisée pour accéder à un site web.</p>
+    <p><strong>Quand l’utiliser</strong></p>
+    <p>Utilisez Windows.Web.HTTP quand votre jeu doit accéder à un site web pour récupérer ou stocker des informations.</p>
+    <p><strong>Pour plus d’informations</strong></p>
+    <p>Voir [Utiliser le réseau dans votre jeu](work-with-networking-in-your-directx-game.md).</p></td>
     </tr>
     </tbody>
     </table>
 
      
 
--   Support Utilities - Libraries that build on the Windows 10 APIs.
+-   Utilitaires de support - Bibliothèques qui s’appuient sur les API de Windows 10.
 
     <table>
     <colgroup>
@@ -290,72 +290,72 @@ There are many APIs related to game development, but not all games need to use a
     </colgroup>
     <thead>
     <tr class="header">
-    <th align="left">Library</th>
+    <th align="left">Bibliothèque</th>
     <th align="left">Description</th>
     </tr>
     </thead>
     <tbody>
     <tr class="odd">
-    <td align="left">DirectX Tool Kit</td>
-    <td align="left"><p>The DirectX Tool Kit (DirectXTK) is a collection of helper classes for writing DirectX 11.x code in C++.</p>
-    <p><strong>When to use</strong></p>
-    <p>Use the DirectX Tool Kit if you're a C++ developer looking for a modern replacement to the legacy D3DX utility code or you're an XNA Game Studio developer transitioning to native C++.</p>
-    <p><strong>For more information</strong></p>
-    <p>See the DirectX Tool Kit project page, [https://github.com/Microsoft/DirectXTK](https://github.com/Microsoft/DirectXTK).</p></td>
+    <td align="left">Kit de ressources DirectX</td>
+    <td align="left"><p>Le Kit de ressources DirectX (DirectXTK) est une collection de classes d’assistance pour l’écriture de code DirectX11.x en C++.</p>
+    <p><strong>Quand l’utiliser</strong></p>
+    <p>Utilisez le Kit de ressources DirectX si vous êtes un développeur en C++ cherchant une alternative moderne au code hérité des utilitaires D3DX, ou un développeur en XNA Game Studio désireux de passer à C++ natif.</p>
+    <p><strong>Pour plus d’informations</strong></p>
+    <p>Voir la page de projet du Kit de ressources DirectX, accessible à l’adresse [https://github.com/Microsoft/DirectXTK](https://github.com/Microsoft/DirectXTK).</p></td>
     </tr>
     <tr class="even">
     <td align="left">Win2D</td>
-    <td align="left"><p>Win2D is an easy-to-use Windows Runtime API for immediate mode 2D graphics rendering.</p>
-    <p><strong>When to use</strong></p>
-    <p>Use Win2D if you're a C++ developer and want an easier to use WinRT wrapper for Direct2D and DirectWrite, or you're a C# developer wanting to use Direct2D and DirectWrite.</p>
-    <p><strong>For more information</strong></p>
-    <p>See the Win2D project page, [https://github.com/Microsoft/Win2D](https://github.com/Microsoft/Win2D).</p></td>
+    <td align="left"><p>Win2D est une API Windows Runtime facile à utiliser pour le rendu d’éléments graphiques 2D en mode immédiat.</p>
+    <p><strong>Quand l’utiliser</strong></p>
+    <p>Utilisez Win2D si vous êtes un développeur en C++ désireux de disposer d’un wrapper WinRT plus facile à utiliser pour Direct2D et DirectWrite, ou si vous êtes un développeur en C# souhaitant utiliser Direct2D et DirectWrite.</p>
+    <p><strong>Pour plus d’informations</strong></p>
+    <p>Voir la page de projet Win2D accessible à l’adresse [https://github.com/Microsoft/Win2D](https://github.com/Microsoft/Win2D).</p></td>
     </tr>
     </tbody>
     </table>
 
      
 
-## Xbox Live Services
+## Services Xbox Live
 
 
-The Xbox Live feature set – cross play with Xbox, Achievements, Gamerscore, and more – is coming to Windows 10. Soon, you'll be able to work with ID@Xbox to include Live in your UWP games! In the future, we’ll also help you ship your universal app platform games on Xbox One. For more information, see the [ID@Xbox](http://www.xbox.com/developers/id) page.
+Les fonctionnalités Xbox Live (jeu croisé, succès, score du joueur, etc.) arrivent dans Windows 10. Vous pourrez bientôt utiliser ID@Xbox pour inclure Live dans vos jeux UWP. À l’avenir, nous vous aiderons également à livrer vos jeux de plateforme d’application universelle sur Xbox One. Pour plus d’informations, voir la page [ID@Xbox](http://www.xbox.com/developers/id).
 
-##  Alternatives to writing games with DirectX and UWP
-
-
-### UWP Games without DirectX
-
-Simpler games with minimal performance requirements, such as card games or board games, can be written without DirectX and don't necessarily need to be written in C++. These sort of games can make use of any of the languages supported by UWP such as C#, Visual Basic, C++, and HTML/JavaScript. If performance and intensive graphics are not a requirement for your game, checkout [JavaScript and HTML5 touch game sample](http://code.msdn.microsoft.com/windowsapps/JavaScript-and-HTML5-touch-d96f6031) as an example.
-
-### Game Engines
-
-As an alternative to writing your own game engine using the Windows game development APIs, many high quality game engines that build on the Windows game development APIs are available for developing games on Windows platforms. When considering a game engine or library, you have multiple options:
-
--   Full game engine - A full game engine encapsulates most or all of the Windows 10 APIs you would use when writing a game engine from scratch, such as graphics, audio, input, and networking. Full game engines may also provide game logic functionality such as artificial intelligence and pathfinding.
--   Graphics engine - Graphics engines encapsulate the Windows 10 graphics APIs, manage graphics resources, and support a variety of model and world formats.
--   Audio engine - Audio engines encapsulate the Windows 10 audio APIs, manage audio resources, and provide advanced audio processing and effects.
--   Network engine - Network engines encapsulate Windows 10 networking APIs for adding peer-to-peer or server-based multiplayer support to your game, and may include advanced networking functionality to support large numbers of players.
--   Artificial intelligence and pathfinding engine - AI and pathfinding engines provide a framework for controlling the behavior of agents in your game.
--   Special purpose engines - A variety of additional engines exist for handling almost any game development related task you might run into, such as creating inventory systems and dialog trees.
-
-## Submitting a game to the Store
+##  Alternatives à l’écriture de jeux avec DirectX et UWP
 
 
-Once you’re ready to publish your game, you’ll need to create a developer account and submit your game to the Windows Store.
+### Jeux UWP sans DirectX
 
-For information about submitting your game to the Windows Store, see <https://dev.windows.com/publish>.
+Des jeux plus simples, sans exigences de performances minimales, tels des jeux de carte ou de plateau, peuvent être écrits sans DirectX et ne nécessitent pas nécessairement une écriture en C++. Ces types de jeux peuvent utiliser tout langage pris en charge par UWP, tel que C#, Visual Basic, C++ et HTML/JavaScript. Si votre jeu ne requiert pas une performance particulière ni un graphisme intensif, consultez l’[exemple de jeu tactile en JavaScript et HTML5](http://code.msdn.microsoft.com/windowsapps/JavaScript-and-HTML5-touch-d96f6031).
 
- 
+### Moteurs de jeu
+
+Comme alternative à l’écriture de votre propre moteur de jeu à l’aide des API de développement de jeux Windows, de nombreux moteurs de jeu de haute qualité qui s’appuient sur les API de développement de jeux Windows sont disponibles pour le développement de jeux sur les plateformes Windows. Lorsque vous envisagez un moteur de jeu ou une bibliothèque de jeux, plusieurs options s’offrent à vous :
+
+-   Moteur de jeu complet - Un moteur de jeu complet encapsule la plupart ou la totalité des API Windows 10 utiles lors de l’écriture d’un moteur de jeu à partir de rien, par exemple, en rapport avec les graphiques, l’audio, les entrées et l’utilisation du réseau. Les moteurs de jeu complets peuvent également offrir des fonctionnalités logiques de jeu, telles que l’intelligence artificielle et la recherche de chemin d’accès.
+-   Moteur graphique - Les moteurs graphiques encapsulent les API graphiques Windows 10, gèrent les ressources graphiques, et prennent en charge une variété de formats de modèle et d’environnement.
+-   Moteur audio - Les moteurs audio encapsulent les API audio Windows 10, gèrent les ressources audio et fournissent un traitement et des effets audio avancés.
+-   Moteur réseau - Les moteurs réseau encapsulent les API de réseau Windows 10 pour l’ajout à votre jeu de la prise en charge du mode multijoueur de pair à pair ou basé sur un serveur, et peuvent inclure des fonctionnalités de réseau avancées pour prendre en charge un grand nombre de joueurs.
+-   Intelligence artificielle et moteur de recherche de chemin d’accès - L’IA et les moteurs de recherche de chemin d’accès fournissent une infrastructure pour contrôler le comportement d’agents dans votre jeu.
+-   Moteurs spéciaux - Divers moteurs supplémentaires existent pour la gestion de toute tâche de développement de jeu vous pourriez être amené à exécuter, telle que la création de systèmes de stock et d’arborescences de boîte de dialogue.
+
+## Soumission d’un jeu au Store
+
+
+Lorsque vous êtes prêt à publier votre jeu, vous devez créer un compte de développeur et soumettre votre jeu au WindowsStore.
+
+Pour plus d’informations sur la soumission de votre jeu au WindowsStore, voir <https://dev.windows.com/publish>.
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

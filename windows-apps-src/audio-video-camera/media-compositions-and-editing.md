@@ -5,7 +5,7 @@ description: "Les API de l’espace de noms Windows.Media.Editing permettent de 
 title: "Compositions multimédias et modification"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: ee46b6d4ad116034cd84f062e7bf710ff8600479
+ms.openlocfilehash: 226ee9212f6688c48c4d4d7b3195ec5c27a3afdd
 
 ---
 
@@ -155,6 +155,6 @@ Les compositions multimédia peuvent être désérialisées à partir d’un fic
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

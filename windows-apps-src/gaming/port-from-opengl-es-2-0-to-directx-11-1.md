@@ -1,22 +1,22 @@
 ---
 author: mtoepke
-title: Port from OpenGL ES 2.0 to Direct3D 11
-description: Includes articles, overviews, and walkthroughs for porting an OpenGL ES 2.0 graphics pipeline to a Direct3D 11 and the Windows Runtime.
+title: "Portage d’OpenGL ES2.0 sur Direct3D11"
+description: "Cette section propose des articles, des vues d’ensemble et des procédures pas à pas concernant le portage d’un pipeline graphique d’OpenGL ES2.0 vers Direct3D11 et vers WindowsRuntime."
 ms.assetid: 1e1cf668-a15f-0c7b-8daf-3260d27c6d9c
 translationtype: Human Translation
 ms.sourcegitcommit: 814f056eaff5419b9c28ba63cf32012bd82cc554
-ms.openlocfilehash: aab0c3e9f3816e0657dfb6fec4917d62f2be5280
+ms.openlocfilehash: 40380582a9210cb705a5e7e591d4a8f37c42f8dd
 
 ---
 
-# Port from OpenGL ES 2.0 to Direct3D 11
+# Portage d’OpenGL ES2.0 vers Direct3D11
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Includes articles, overviews, and walkthroughs for porting an OpenGL ES 2.0 graphics pipeline to a Direct3D 11 and the Windows Runtime.
+Cette section propose des articles, des vues d’ensemble et des procédures pas à pas concernant le portage d’un pipeline graphique d’OpenGL ES2.0 sur Direct3D11 et sur Windows Runtime.
 
-> **Note**   An intermediate step to porting your OpenGL ES 2.0 project is to use ANGLE for Windows Store. ANGLE allows you to run OpenGL ES content on Windows by translating OpenGL ES API calls to DirectX 11 API calls. For more information about ANGLE, go to the [ANGLE for Windows Store Wiki](http://go.microsoft.com/fwlink/p/?linkid=618387).
+> **Remarque** Une étape intermédiaire pour le portage de votre projet OpenGLES2.0 consiste à utiliser ANGLE pour WindowsStore. ANGLE pour Windows Store vous permet d’exécuter le contenu OpenGL ES sous Windows en convertissant les appels d’API OpenGL ES en appels d’API DirectX11. Pour plus d’informations sur ANGLE, voir le [Wiki ANGLE pour WindowsStore](http://go.microsoft.com/fwlink/p/?linkid=618387).
 
  
 
@@ -27,30 +27,30 @@ Includes articles, overviews, and walkthroughs for porting an OpenGL ES 2.0 grap
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Topic</th>
+<th align="left">Rubrique</th>
 <th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Map OpenGL ES 2.0 to Direct3D 11.1](map-concepts-and-infrastructure.md)</p></td>
-<td align="left"><p>When starting the process of porting your graphics architecture from OpenGL ES 2.0 to Direct3D for the first time, familiarize yourself with the key differences between the APIs. The topics in this section help you plan your port strategy and the API changes that you must make when moving your graphics processing to Direct3D.</p></td>
+<td align="left"><p>[Mapper OpenGL ES2.0 à Direct3D11.1](map-concepts-and-infrastructure.md)</p></td>
+<td align="left"><p>Si vous vous apprêtez à porter votre architecture graphique OpenGLES2.0 sur Direct3D pour la première fois, commencez par vous familiariser avec les principales différences entre lesAPI. Les rubriques de cette section vous aideront à planifier votre stratégie de portage ainsi que les différentes modifications à apporter en vue du transfert de votre processus de traitement graphique sur Direct3D.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[How to: port a simple OpenGL ES 2.0 renderer to Direct3D 11.1](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)</p></td>
-<td align="left"><p>For this porting exercise, we'll start with the basics: bringing a simple renderer for a spinning, vertex-shaded cube from OpenGL ES 2.0 into Direct3D, such that it matches the DirectX 11 App (Universal Windows) template from Visual Studio 2015.</p></td>
+<td align="left"><p>[Procédure: porter un convertisseur OpenGLES2.0 simple vers Direct3D11.1](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)</p></td>
+<td align="left"><p>Cet exercice de portage permet de mettre en pratique une notion de base: porter un convertisseur simple d’OpenGLES2.0 sur Direct3D, afin d’adapter un cube en rotation inclus dans un nuanceur de vertex au modèle d’application DirectX11 (Windows universelle) fourni dans VisualStudio2015.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[OpenGL ES 2.0 to Direct3D 11.1 reference](opengl-es-2-0-to-directx-11-1-reference.md)</p></td>
-<td align="left"><p>Use these reference topics to look up API mapping and short code samples when porting from OpenGL ES 2.0 to Direct3D 11.</p></td>
+<td align="left"><p>[Informations de référence sur le passage d’OpenGL ES2.0 à Direct3D11.1](opengl-es-2-0-to-directx-11-1-reference.md)</p></td>
+<td align="left"><p>Vous trouverez dans ces rubriques de référence un index de mappage d’API ainsi que des exemples de code simples destinés à vous aider lors du portage d’OpenGLES2.0 vers Direct3D11.</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-> **Note**  
-This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Remarque**  
+Cet article s’adresse aux développeurs de Windows10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
@@ -64,6 +64,6 @@ This article is for Windows 10 developers writing Universal Windows Platform (UW
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO1-->
 
 

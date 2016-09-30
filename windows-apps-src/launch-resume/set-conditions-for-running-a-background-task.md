@@ -1,41 +1,44 @@
 ---
 author: TylerMSFT
-title: Set conditions for running a background task
-description: Learn how to set conditions that control when your background task will run.
+title: "Définir des conditions pour exécuter une tâche en arrière-plan"
+description: "Découvrez comment définir des conditions qui contrôlent le moment auquel votre tâche en arrière-plan s’exécutera."
 ms.assetid: 10ABAC9F-AA8C-41AC-A29D-871CD9AD9471
 translationtype: Human Translation
-ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
-ms.openlocfilehash: 0d90511c9fcfd722dfcc51a8ff8e5163e31e9fdf
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: 0f95bdcb197f472b743f81c0d941196d5e53f60a
 
 ---
 
-# Set conditions for running a background task
+# Définir des conditions pour exécuter une tâche en arrière-plan
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**Important APIs**
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+
+
+**API importantes**
 
 -   [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834)
 -   [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)
 -   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
 
-Learn how to set conditions that control when your background task will run.
+Découvrez comment définir des conditions qui contrôlent le moment auquel votre tâche en arrière-plan s’exécutera.
 
-Sometimes, background tasks require certain conditions to be met, in addition to the event that triggers the task, for the background task to succeed. You can specify one or more of the conditions specified by [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) when registering your background task. The condition will be checked after the trigger has been fired; the background task will be queued, but it will not run until all the required conditions are satisfied.
+Parfois, outre l’événement chargé de déclencher la tâche, une tâche en arrière-plan doit remplir certaines conditions pour pouvoir aboutir. Vous pouvez spécifier une ou plusieurs des conditions spécifiées par [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) au moment d’inscrire votre tâche en arrière-plan. La condition est vérifiée après que le déclencheur est activé ; la tâche en arrière-plan est mise en file d’attente et ne s’exécute qu’à partir du moment où toutes les conditions requises sont satisfaites.
 
-Putting conditions on background tasks saves battery life and CPU runtime by preventing tasks from running unnecessarily. For example, if your background task runs on a timer and requires Internet connectivity, add the **InternetAvailable** condition to the [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) before registering the task. This will help prevent the task from using system resources and battery life unnecessarily by only running the background task when the timer has elapsed *and* the Internet is available.
+L’affectation de conditions aux tâches en arrière-plan permet d’économiser l’autonomie de la batterie et le temps d’exécution processeur en empêchant toute exécution inutile des tâches. Par exemple, si votre tâche en arrière-plan est exécutée sur un minuteur et nécessite une connectivité Internet, ajoutez la condition **InternetAvailable** au [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) avant d’inscrire la tâche. Cela empêchera ainsi la tâche de faire inutilement appel aux ressources système et à l’autonomie de la batterie. Elle s’exécutera une fois que le minuteur sera arrivé à expiration et qu’Internet sera accessible.
 
-It is also possible to combine multiple conditions by calling AddCondition multiple times on the same [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Take care not to add conflicting conditions, such as **UserPresent** and **UserNotPresent**.
+**Remarque** Il est possible de combiner plusieurs conditions en appelant AddCondition plusieurs fois sur le même [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Veillez à ne pas ajouter de conditions conflictuelles, telles que **UserPresent** et **UserNotPresent**.
 
-## Create a SystemCondition object
+ 
 
-This topic assumes that you have a background task already associated with your app, and that your app already includes code that creates a [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) object named **taskBuilder**.  See [Create and register a single process background task](create-and-register-a-singleprocess-background-task.md) or [Create and register a background task that runs in a separate process](create-and-register-a-background-task.md) if you need to create a background task first.
+## Créer un objet SystemCondition
 
-This topic applies to background tasks that run in a separate process as well as those that run in the same process as the foreground app.
 
-Before adding the condition, create a [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) object representing the condition that must be in effect for a background task to run. In the constructor, specify the condition that must be met by providing a [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) enumeration value.
+Cette rubrique suppose qu’une tâche en arrière-plan est déjà associée à votre application et que cette dernière comporte déjà du code qui crée un objet [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) nommé **taskBuilder**.
 
-The following code creates a [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) object specifying Internet availability as the conditional requirement:
+Avant d’ajouter la condition, créez un objet [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) représentant la condition qui doit être effective pour qu’une tâche en arrière-plan soit exécutée. Dans le constructeur, spécifiez la condition qui doit être remplie en fournissant une valeur d’énumération [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
+
+Le code suivant crée un objet [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) qui spécifie l’accessibilité à Internet comme étant une condition essentielle:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -45,12 +48,12 @@ The following code creates a [**SystemCondition**](https://msdn.microsoft.com/li
 > SystemCondition ^ internetCondition = ref new SystemCondition(SystemConditionType::InternetAvailable);
 > ```
 
-## Add the SystemCondition object to your background task
+## Ajouter l’objet SystemCondition à votre tâche en arrière-plan
 
 
-To add the condition, call the [**AddCondition**](https://msdn.microsoft.com/library/windows/apps/br224769) method on the [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) object, and pass it the [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) object.
+Pour ajouter la condition, appelez la méthode [**AddCondition**](https://msdn.microsoft.com/library/windows/apps/br224769) sur l’objet [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) et transmettez-lui l’objet [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834).
 
-The following code registers the InternetAvailable background task condition with the TaskBuilder:
+Le code suivant inscrit la condition de tâche en arrière-plan InternetAvailable avec TaskBuilder :
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -60,12 +63,12 @@ The following code registers the InternetAvailable background task condition wit
 > taskBuilder->AddCondition(internetCondition);
 > ```
 
-## Register your background task
+## Inscrire votre tâche en arrière-plan
 
 
-Now you can register your background task with the [**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) method, and the task will not start until the specified condition is met.
+Vous pouvez à présent inscrire votre tâche en arrière-plan à l’aide de la méthode [**Register**](https://msdn.microsoft.com/library/windows/apps/br224772); la tâche ne démarrera pas tant que la condition spécifiée n’aura pas été satisfaite.
 
-The following code registers the task and stores the resulting BackgroundTaskRegistration object:
+Le code suivant inscrit la tâche et stocke l’objet BackgroundTaskRegistration obtenu:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -75,20 +78,20 @@ The following code registers the task and stores the resulting BackgroundTaskReg
 > BackgroundTaskRegistration ^ task = taskBuilder->Register();
 > ```
 
-> **Note**  Universal Windows apps must call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) before registering any of the background trigger types.
+> **Remarque** Les applications Windows universelles doivent appeler [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) avant d’inscrire tout type de déclencheur en arrière-plan.
 
-To ensure that your Universal Windows app continues to run properly after you release an update, you must call [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471) and then call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) when your app launches after being updated. For more information, see [Guidelines for background tasks](guidelines-for-background-tasks.md).
+Pour vous assurer que votre application Windows universelle continue de s’exécuter correctement après la publication d’une mise à jour, vous devez appeler [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471), puis [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) lorsque votre application est lancée après avoir été mise à jour. Pour plus d’informations, voir [Recommandations en matière de tâches en arrière-plan](guidelines-for-background-tasks.md).
 
-> **Note**  Background task registration parameters are validated at the time of registration. An error is returned if any of the registration parameters are invalid. Ensure that your app gracefully handles scenarios where background task registration fails - if instead your app depends on having a valid registration object after attempting to register a task, it may crash.
+> **Remarque** Les paramètres d’inscription de la tâche en arrière-plan sont validés au moment de l’inscription. Une erreur est retournée si l’un des paramètres d’inscription n’est pas valide. Vérifiez que votre application gère de façon fluide les scénarios dans lesquels l’inscription de la tâche en arrière-plan échoue. En revanche, si votre application dépend d’un objet d’inscription valide après la tentative d’inscription d’une tâche, elle peut se bloquer.
 
-## Place multiple conditions on your background task
+## Placer plusieurs conditions dans la tâche en arrière-plan
 
-To add multiple conditions, your app makes multiple calls to the [**AddCondition**](https://msdn.microsoft.com/library/windows/apps/br224769) method. These calls must come before task registration to be effective.
+Pour ajouter plusieurs conditions, votre application effectue plusieurs appels à la méthode [**AddCondition**](https://msdn.microsoft.com/library/windows/apps/br224769). Pour être effectifs, ces appels doivent intervenir avant l’inscription de la tâche.
 
-> **Note**  Take care not to add conflicting conditions to a background task.
+> **Remarque** Veillez à ne pas ajouter de conditions conflictuelles à une tâche en arrière-plan.
  
 
-The following snippet shows multiple conditions in the context of creating and registering a background task:
+L’extrait de code suivant présente plusieurs conditions dans un contexte de création et d’inscription d’une tâche en arrière-plan:
 
 > [!div class="tabbedCodeSnippets"]
 ```cs
@@ -150,33 +153,35 @@ The following snippet shows multiple conditions in the context of creating and r
 > BackgroundTaskRegistration ^ task = recurringTaskBuilder->Register();
 ```
 
-## Remarks
+## Remarques
 
 
-> **Note**  Choose conditions for your background task so that it only runs when it's needed, and doesn't run when it shouldn't. See [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) for descriptions of the different background task conditions.
+> **Remarque** Choisissez les conditions appropriées pour votre tâche en arrière-plan afin qu’elle s’exécute uniquement lorsque cela est nécessaire, et non à un moment où elle sera inopérante. Voir [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) pour obtenir une description des différentes conditions de tâche en arrière-plan.
 
-> **Note**  This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Remarque** Cet article s’adresse aux développeurs Windows10 qui créent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
-## Related topics
+ 
+
+## Rubriques connexes
+
 
 ****
 
-* [Create and register a background task that runs in a separate process](create-and-register-a-background-task.md)
-* [Create and register a single process background task](create-and-register-a-singleprocess-background-task.md)
-* [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md)
-* [Handle a cancelled background task](handle-a-cancelled-background-task.md)
-* [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
-* [Register a background task](register-a-background-task.md)
-* [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)
-* [Update a live tile from a background task](update-a-live-tile-from-a-background-task.md)
-* [Use a maintenance trigger](use-a-maintenance-trigger.md)
-* [Run a background task on a timer](run-a-background-task-on-a-timer-.md)
-* [Guidelines for background tasks](guidelines-for-background-tasks.md)
+* [Créer et inscrire une tâche en arrière-plan](create-and-register-a-background-task.md)
+* [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md)
+* [Gérer une tâche en arrière-plan annulée](handle-a-cancelled-background-task.md)
+* [Surveiller la progression et l’achèvement des tâches en arrière-plan](monitor-background-task-progress-and-completion.md)
+* [Inscrire une tâche en arrière-plan](register-a-background-task.md)
+* [Répondre aux événements système avec des tâches en arrière-plan](respond-to-system-events-with-background-tasks.md)
+* [Mettre à jour une vignette dynamique à partir d’une tâche en arrière-plan](update-a-live-tile-from-a-background-task.md)
+* [Utiliser un déclencheur de maintenance](use-a-maintenance-trigger.md)
+* [Exécuter une tâche en arrière-plan en fonction d’un minuteur](run-a-background-task-on-a-timer-.md)
+* [Recommandations en matière de tâches en arrière-plan](guidelines-for-background-tasks.md)
 
 ****
 
-* [Debug a background task](debug-a-background-task.md)
-* [How to trigger suspend, resume, and background events in Windows Store apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
+* [Comment déclencher des événements de suspension, des événements de reprise et des événements en arrière-plan dans des applications du Windows Store (lors du débogage)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
  
 
@@ -184,6 +189,6 @@ The following snippet shows multiple conditions in the context of creating and r
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

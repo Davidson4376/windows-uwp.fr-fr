@@ -1,32 +1,28 @@
 ---
-title: Bringing existing games to Xbox
-description: Bringing existing games to Xbox with UWP.
+title: "Intégration de jeux existants dansXbox"
+author: JordanEllis6809
 translationtype: Human Translation
-ms.sourcegitcommit: eec992d19d63778a46f97b76f3c8dea252a6a87b
-ms.openlocfilehash: 383e0f77ff9b810d5e5627b8df9ca09b03f4d0ae
+ms.sourcegitcommit: e0c273495321689e37df6b36d97870327cff6c5a
+ms.openlocfilehash: 54db2390b5df3b5c6bc7ca6f7d6e36454435c543
 
 ---
 
-# Bringing existing games to Xbox
+# Intégration de jeux existants dansXbox
 
 
-Depending on the technologies used by your game, following are some steps to help bring your game to UWP on Xbox.
+Selon les technologies utilisées par votre jeu, voici quelques étapes pour vous aider à intégrer votre jeu pour UWP dans Xbox.
 
-> [!NOTE]
-> Not all game engines that support the UWP are listed. If a technology that your game uses isn't listed, check with the product developer for information on UWP support.
+=======
+**Remarque&#58; tous les moteurs de jeu prenant en charge la plateforme Windows universelle (UWP) ne sont pas répertoriés. Si une technologie que votre jeu utilise n’est pas répertoriée, contactez les développeurs du produit pour plus d’informations sur la prise en charge UWP.**
 
-| Engine      | Description |
+| Moteur      | Description |
 |------------|-------------|
-|[Custom C++](development-lanes-custom-cpp.md)| Information pertaining to C++ game development on Xbox using the UWP. |
-|[Unity](development-lanes-unity.md)| Tutorial that helps take existing games from Unity to Xbox. |
-|[HTML / JS](development-lanes-html.md)| Information pertaining to HTML game development on Xbox. |
-
-## See also
-
-- [UWP on Xbox One](index.md)
+|[CustomC++](development-lanes-custom-cpp.md)| Informations relatives au développement de jeux C++ sur Xbox à l’aide de la plateforme Windows universelle (UWP). |
+|[Unity](development-lanes-unity.md)| Didacticiel vous aidant à faire passer des jeux existants d’Unity à Xbox. |
+|[HTML/JS](development-lanes-html.md)| Informations relatives au développement de jeux HTML sur Xbox. |
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO1-->
 
 

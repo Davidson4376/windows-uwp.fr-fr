@@ -1,52 +1,52 @@
 ---
 author: mcleanbyron
 ms.assetid: 141900dd-f1d3-4432-ac8b-b98eaa0b0da2
-description: Learn about solutions to common development issues with the Microsoft advertising libraries in XAML apps.
-title: XAML and C# troubleshooting guide
+description: "Découvrez les solutions aux problèmes de développement courants liés aux bibliothèques de publicités Microsoft dans les applications XAML."
+title: "Guide de résolution des problèmes pour XAML et C#"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: 0688ca6e0c88628803ad4e9a55b9285bd39351b4
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: ef9ad8f8056b17793d7ad8230e410e014edf2c95
 
 ---
 
-# XAML and C# troubleshooting guide
+# Guide de résolution des problèmes pour XAML et C#
 
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-
-This topic contains solutions to common development issues with the Microsoft advertising libraries in XAML apps.
+Cette rubrique contient les solutions aux problèmes de développement courants liés aux bibliothèques de publicités Microsoft dans les applications XAML.
 
 -   [XAML](#xaml)
 
-    -   [AdControl not appearing](#xaml-notappearing)
+    -   [AdControl invisible](#xaml-notappearing)
 
-    -   [Black box blinks and disappears](#xaml-blackboxblinksdisappears)
+    -   [Une boîte noire clignote et disparaît](#xaml-blackboxblinksdisappears)
 
-    -   [Ads not refreshing](#xaml-adsnotrefreshing)
+    -   [Non-actualisation des publicités](#xaml-adsnotrefreshing)
 
 -   [C#](#csharp)
 
-    -   [AdControl not appearing](#csharp-adcontrolnotappearing)
+    -   [AdControl invisible](#csharp-adcontrolnotappearing)
 
-    -   [Black box blinks and disappears](#csharp-blackboxblinksdisappears)
+    -   [Une boîte noire clignote et disparaît](#csharp-blackboxblinksdisappears)
 
-    -   [Ads bot refreshing](#csharp-adsnotrefreshing)
+    -   [Non-actualisation des publicités](#csharp-adsnotrefreshing)
 
 <span id="xaml"/>
 ## XAML
 
 <span id="xaml-notappearing"/>
-### AdControl not appearing
+### AdControl invisible
 
-1.  Ensure that the **Internet (Client)** capability is selected in Package.appxmanifest.
+1.  Assurez-vous que la fonctionnalité **Internet (client)** est sélectionnée dans le fichier Package.appxmanifest.
 
-2.  Check the application ID and ad unit ID. These IDs must match the application ID and ad unit ID that you obtained in Windows Dev Center. For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md).
+2.  Vérifiez l’ID de l’application et l’ID d’unité publicitaire. Ces ID doivent correspondre à l’ID de l’application et à l’ID d’unité publicitaire que vous avez obtenus dans le Centre de développement Windows. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre application](set-up-ad-units-in-your-app.md).
 
     ``` syntax
     <UI:AdControl AdUnitId="{AdUnitID}" ApplicationId="{ApplicationID}"
                   Width="728" Height="90" />
     ```
 
-3.  Check the **Height** and **Width** properties. These must be set to one of the [Supported ad sizes for banner ads](supported-ad-sizes-for-banner-ads.md).
+3.  Vérifiez les propriétés **Height** et **Width**. Elles doivent être définies sur l’une des [tailles de bannières publicitaires prises en charge](supported-ad-sizes-for-banner-ads.md).
 
     ``` syntax
     <UI:AdControl AdUnitId="{AdUnitID}"
@@ -54,9 +54,9 @@ This topic contains solutions to common development issues with the Microsoft ad
                   Width="728" Height="90" />
     ```
 
-4.  Check the element position. The [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) must be inside the viewable area.
+4.  Vérifiez la position des éléments. Le contrôle [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) doit se situer à l’intérieur de la zone d’affichage.
 
-5.  Check the **Visibility** property. The optional **Visibility** property must not be set to collapsed or hidden. This property can be set inline (as shown below) or in an external style sheet.
+5.  Vérifiez la propriété **Visibility**. La propriété facultative **Visibility** ne doit pas être définie sur collapsed ou hidden. Cette propriété peut être incluse (comme illustré ci-dessous) ou définie dans une feuille de style externe.
 
     ``` syntax
     <UI:AdControl AdUnitId="{AdUnitID}"
@@ -65,7 +65,7 @@ This topic contains solutions to common development issues with the Microsoft ad
                   Width="728" Height="90" />
     ```
 
-6.  Check the **IsEnabled** property. The optional `IsEnabled` property must be set to `True`.
+6.  Vérifiez la propriété **IsEnabled**. La propriété facultative `IsEnabled` doit être définie sur `True`.
 
     ``` syntax
     <UI:AdControl AdUnitId="{AdUnitID}"
@@ -74,7 +74,7 @@ This topic contains solutions to common development issues with the Microsoft ad
                   Width="728" Height="90" />
     ```
 
-7.  Check the parent of the **AdControl**. If the **AdControl** element resides in a parent element, the parent must be active and visible.
+7.  Vérifiez le parent du **AdControl**. Si l’élément **AdControl** réside dans un élément parent, ce dernier doit être actif et visible.
 
     ``` syntax
     <StackPanel>
@@ -84,18 +84,18 @@ This topic contains solutions to common development issues with the Microsoft ad
     </StackPanel>
     ```
 
-8.  Ensure the **AdControl** is not hidden from the viewport. The **AdControl** must be visible for ads to display properly.
+8.  Vérifiez que le **AdControl** n’est pas masqué dans la fenêtre d’affichage. Le **AdControl** doit être visible afin que les publicités s’affichent correctement.
 
-9.  Live values for **ApplicationId** and **AdUnitId** should not be tested in the emulator. To ensure the **AdControl** is functioning as expected, use the test IDs for both **ApplicationId** and **AdUnitId** found in [Test mode values](test-mode-values.md).
+9.  Les valeurs dynamiques des paramètres **ApplicationId** et **AdUnitId** ne doivent pas être testées dans l’émulateur. Pour vous assurer du bon fonctionnement du contrôle **AdControl**, utilisez les ID de test pour les valeurs **ApplicationId** et **AdUnitId** contenues dans [Valeurs du mode test](test-mode-values.md).
 
 <span id="xaml-blackboxblinksdisappears"/>
-### Black box blinks and disappears
+### Une boîte noire clignote et disparaît
 
-1.  Double-check all steps in the previous [AdControl not appearing](#xaml-notappearing) section.
+1.  Vérifiez toutes les étapes indiquées dans la section précédente [AdControl invisible](#xaml-notappearing).
 
-2.  Handle the **ErrorOccurred** event, and use the message that is passed to the event handler to determine whether an error occurred and what type of error was thrown. See [Error handling in XAML/C# walkthrough](error-handling-in-xamlc-walkthrough.md) for more information.
+2.  Gérez l’événement **ErrorOccurred**, puis utilisez le message transmis au gestionnaire d’événements pour déterminer si une erreur s’est produite et identifier le type d’erreur levée. Voir [Gestion des erreurs dans la procédure pas à pas pour XAML/C#](error-handling-in-xamlc-walkthrough.md) pour plus d’informations.
 
-    This example demonstrates an **ErrorOccurred** event handler. The first snippet is the XAML UI markup.
+    Cet exemple illustre un gestionnaire d’événements **ErrorOccurred**. Le premier extrait est le balisage d’interface utilisateur XAML.
 
     ``` syntax
     <UI:AdControl AdUnitId="{AdUnitID}"
@@ -106,7 +106,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     <TextBlock x:Name="TextBlock1" TextWrapping="Wrap" Width="500" Height="250" />
     ```
 
-    This example demonstrates of the the corresponding code.
+    Cet exemple présente le code correspondant.
 
     ``` syntax
     private void adControl_ErrorOccurred(object sender,               
@@ -116,16 +116,16 @@ This topic contains solutions to common development issues with the Microsoft ad
     }
     ```
 
-    The most common error that causes a black box is “No ad available.” This error means there is no ad available to return from the request.
+    L’erreur la plus courante provoquant une boîte noire est la suivante: «Aucune publicité disponible». Cette erreur signifie qu’aucune publicité n’est disponible pour être retourné à partir de la demande.
 
-3.  The [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) is behaving normally.
+3.  Le contrôle [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) se comporte normalement.
 
-    By default, the **AdControl** will collapse when it cannot display an ad. If other elements are children of the same parent they may move to fill the gap of the collapsed **AdControl** and expand when the next request is made.
+    Par défaut, le **AdControl** est réduit s’il ne peut pas afficher de publicité. Si d’autres éléments sont des enfants du même parent, ils peuvent être déplacés pour combler le vide du contrôle **AdControl** réduit, et développés à la prochaine demande.
 
 <span id="xaml-adsnotrefreshing"/>
-### Ads not refreshing
+### Non-actualisation des publicités
 
-1.  Check the [IsAutoRefreshEnabled](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled.aspx) property. By default, this optional property is set to **True**. When set to **False**, the [Refresh](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.refresh.aspx) method must be used to retrieve another ad.
+1.  Vérifiez la propriété [IsAutoRefreshEnabled](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled.aspx). Par défaut, cette propriété facultative est définie sur **True**. Si elle est définie sur **False**, la méthode [Refresh](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.refresh.aspx) doit être utilisée pour récupérer une autre publicité.
 
     ``` syntax
     <UI:AdControl AdUnitId="{AdUnitID}"
@@ -134,9 +134,9 @@ This topic contains solutions to common development issues with the Microsoft ad
                   IsAutoRefreshEnabled="True" />
     ```
 
-2.  Check calls to the **Refresh** method. When using automatic refresh, **Refresh** cannot be used to retrieve another ad. When using manual refresh, **Refresh** should be called only after a minimum of 30 to 60 seconds depending on the device’s current data connection.
+2.  Vérifiez les appels à la méthode **Refresh**. Si vous utilisez l’actualisation automatique, la méthode **Refresh** ne permet pas de récupérer une autre publicité. Si vous utilisez l’actualisation manuelle, la méthode **Refresh** doit être appelée uniquement après un minimum de 30à 60secondes en fonction de la connexion de données actuelle de l’appareil.
 
-    The following code snippets show an example of how to use the **Refresh** method. The first snippet is the XAML UI markup.
+    Les extraits de code suivants illustrent comment utiliser la méthode **Refresh**. Le premier extrait est le balisage d’interface utilisateur XAML.
 
     ``` syntax
     <UI:AdControl x:Name="adControl1"
@@ -146,7 +146,7 @@ This topic contains solutions to common development issues with the Microsoft ad
                   IsAutoRefreshEnabled="False" />
     ```
 
-    This code snippet shows an example of the C# code behind the UI markup.
+    Cet extrait de code présente un exemple de code C# derrière le balisage d’interface utilisateur.
 
     ``` syntax
     public Ads()
@@ -157,17 +157,17 @@ This topic contains solutions to common development issues with the Microsoft ad
     }
     ```
 
-3.  The **AdControl** is behaving normally. Sometimes the same ad will appear more than once in a row giving the appearance that ads are not refreshing.
+3.  Le contrôle **AdControl** se comporte normalement. Parfois, une même publicité s’affiche plusieurs fois dans une ligne, ce qui donne l’impression que les publicités ne sont pas actualisées.
 
 <span id="csharp"/>
 ## C\# #
 
 <span id="csharp-adcontrolnotappearing"/>
-### AdControl not appearing
+### AdControl invisible
 
-1.  Ensure that the **Internet (Client)** capability is selected in Package.appxmanifest.
+1.  Assurez-vous que la fonctionnalité **Internet (client)** est sélectionnée dans le fichier Package.appxmanifest.
 
-2.  Ensure the **AdControl** is instantiated. If the **AdControl** is not instantiated it will not be available.
+2.  Vérifiez que le contrôle **AdControl** est instancié. Si le contrôle **AdControl** n’est pas instancié, il ne sera pas disponible.
 
     ``` syntax
     using Microsoft.Advertising.WinRT.UI;
@@ -194,7 +194,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     }
     ```
 
-3.  Check the application ID and ad unit ID. These IDs must match the application ID and ad unit ID that you obtained in Windows Dev Center. For more information, see [Set up ad units in your app](set-up-ad-units-in-your-app.md).
+3.  Vérifiez l’ID de l’application et l’ID d’unité publicitaire. Ces ID doivent correspondre à l’ID de l’application et à l’ID d’unité publicitaire que vous avez obtenus dans le Centre de développement Windows. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre application](set-up-ad-units-in-your-app.md).
 
     ``` syntax
     adControl = new AdControl();
@@ -203,7 +203,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     adControl.Width = 728;
     ```
 
-4.  Check the **Height** and **Width** parameters. These must be set to one of the [supported ad sizes for banner ads](supported-ad-sizes-for-banner-ads.md).
+4.  Vérifiez les paramètres **Height** et **Width**. Ils doivent être définis sur l’une des [tailles de bannières publicitaires prises en charge](supported-ad-sizes-for-banner-ads.md).
 
     ``` syntax
     adControl = new AdControl();
@@ -212,15 +212,15 @@ This topic contains solutions to common development issues with the Microsoft ad
     adControl.Height = 90;adControl.Width = 728;
     ```
 
-5.  Ensure the **AdControl** is added to a parent element. To display, the **AdControl** must be added as a child to a parent control (for example, a **StackPanel** or **Grid**).
+5.  Assurez-vous que le contrôle **AdControl** est ajouté à un élément parent. Pour qu’il s’affiche, le contrôle **AdControl** doit être ajouté en tant qu’enfant d’un contrôle parent (par exemple, **StackPanel** ou **Grid**).
 
     ``` syntax
     ContentPanel.Children.Add(adControl);
     ```
 
-6.  Check the **Margin** parameter. The **AdControl** must be inside the viewable area.
+6.  Vérifiez le paramètre **Margin**. Le contrôle **AdControl** doit se situer à l’intérieur de la zone d’affichage.
 
-7.  Check the **Visibility** property. The optional **Visibility** property must be set to **Visible**.
+7.  Vérifiez la propriété **Visibility**. La propriété facultative **Visibility** doit être définie sur **Visible**.
 
     ``` syntax
     adControl = new AdControl();
@@ -231,7 +231,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     adControl.Visibility = System.Windows.Visibility.Visible;
     ```
 
-8.  Check the **IsEnabled** property. The optional **IsEnabled** property must be set to **True**.
+8.  Vérifiez la propriété **IsEnabled**. La propriété facultative **IsEnabled** doit être définie sur **True**.
 
     ``` syntax
     adControl = new AdControl();
@@ -242,24 +242,24 @@ This topic contains solutions to common development issues with the Microsoft ad
     adControl.IsEnabled = True;
     ```
 
-9.  Check the parent of the **AdControl**. The parent must be active and visible.
+9.  Vérifiez le parent du **AdControl**. Le parent doit être actif et visible.
 
-10. Live values for **ApplicationId** and **AdUnitId** should not be tested in the emulator. To ensure the **AdControl** is functioning as expected, use the test IDs for both **ApplicationId** and **AdUnitId** found in [Test mode values](test-mode-values.md).
+10. Les valeurs dynamiques des paramètres **ApplicationId** et **AdUnitId** ne doivent pas être testées dans l’émulateur. Pour vous assurer du bon fonctionnement du contrôle **AdControl**, utilisez les ID de test pour les valeurs **ApplicationId** et **AdUnitId** contenues dans [Valeurs du mode test](test-mode-values.md).
 
 <span id="csharp-blackboxblinksdisappears"/>
-### Black box blinks and disappears
+### Une boîte noire clignote et disparaît
 
-1.  Double-check all steps in the [AdControl not appearing](#csharp-adcontrolnotappearing) section above.
+1.  Vérifiez toutes les étapes indiquées dans la section [AdControl invisible](#csharp-adcontrolnotappearing) ci-dessus.
 
-2.  Handle the **ErrorOccurred** event, and use the message that is passed to the event handler to determine whether an error occurred and what type of error was thrown. See [Error handling in XAML/C# walkthrough](error-handling-in-xamlc-walkthrough.md) for more information.
+2.  Gérez l’événement **ErrorOccurred**, puis utilisez le message transmis au gestionnaire d’événements pour déterminer si une erreur s’est produite et identifier le type d’erreur levée. Voir [Gestion des erreurs dans la procédure pas à pas pour XAML/C#](error-handling-in-xamlc-walkthrough.md) pour plus d’informations.
 
-    The following examples show the basic code needed to implement an error call. This XAML code defines a **TextBlock** that is used to display the error message.
+    Les exemples suivants présentent le code de base requis pour implémenter un appel d’erreur. Ce code XAML définit un **TextBlock** utilisé pour afficher le message d’erreur.
 
     ``` syntax
     <TextBlock x:Name="TextBlock1" TextWrapping="Wrap" Width="500" Height="250" />
     ```
 
-    This C# code retrieves the error message and displays it in the **TextBlock**.
+    Ce code C# récupère le message d’erreur et l’affiche dans le **TextBlock**.
 
     ``` syntax
     using Microsoft.Advertising.WinRT.UI;
@@ -288,16 +288,16 @@ This topic contains solutions to common development issues with the Microsoft ad
     }
     ```
 
-    The most common error that causes a black box is “No ad available.” This error means there is no ad available to return from the request.
+    L’erreur la plus courante provoquant une boîte noire est la suivante: «Aucune publicité disponible». Cette erreur signifie qu’aucune publicité n’est disponible pour être retourné à partir de la demande.
 
-3.  **AdControl** is behaving normally. Sometimes the same ad will appear more than once in a row giving the appearance that ads are not refreshing.
+3.  Le contrôle **AdControl** se comporte normalement. Parfois, une même publicité s’affiche plusieurs fois dans une ligne, ce qui donne l’impression que les publicités ne sont pas actualisées.
 
 <span id="csharp-adsnotrefreshing"/>
-### Ads not refreshing
+### Non-actualisation des publicités
 
-1.  Check the **IsAutoRefreshEnabled** property. By default, this optional property is set to **True**. When set to **False**, the **Refresh** method must be used to retrieve another ad.
+1.  Vérifiez la propriété **IsAutoRefreshEnabled**. Par défaut, cette propriété facultative est définie sur **True**. Si elle est définie sur **False**, la méthode **Refresh** doit être utilisée pour récupérer une autre publicité.
 
-    The following example demonstrates how to use the **IsAutoRefreshEnabled** property.
+    L’exemple suivant montre comment utiliser la propriété **isAutoRefreshEnabled**.
 
     ``` syntax
     adControl = new AdControl();
@@ -308,9 +308,9 @@ This topic contains solutions to common development issues with the Microsoft ad
     adControl.IsAutoRefreshEnabled = true;
     ```
 
-2.  Check calls to the **Refresh** method. When using automatic refresh, **Refresh** cannot be used to retrieve another ad. When using manual refresh, **Refresh** should be called only after a minimum of 30 to 60 seconds depending on the device’s current data connection.
+2.  Vérifiez les appels à la méthode **Refresh**. Si vous utilisez l’actualisation automatique, la méthode **Refresh** ne permet pas de récupérer une autre publicité. Si vous utilisez l’actualisation manuelle, la méthode **Refresh** doit être appelée uniquement après un minimum de 30à 60secondes en fonction de la connexion de données actuelle de l’appareil.
 
-    The following example demonstrates how to call the **Refresh** method.
+    L’exemple suivant montre comment appeler la méthode **Refresh**.
 
     ``` syntax
     public MainPage()
@@ -332,7 +332,7 @@ This topic contains solutions to common development issues with the Microsoft ad
     }
     ```
 
-3.  The **AdControl** is behaving normally. Sometimes the same ad will appear more than once in a row giving the appearance that ads are not refreshing.
+3.  Le contrôle **AdControl** se comporte normalement. Parfois, une même publicité s’affiche plusieurs fois dans une ligne, ce qui donne l’impression que les publicités ne sont pas actualisées.
 
  
 
@@ -340,6 +340,6 @@ This topic contains solutions to common development issues with the Microsoft ad
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

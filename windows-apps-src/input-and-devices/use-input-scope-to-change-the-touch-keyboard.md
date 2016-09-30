@@ -9,7 +9,7 @@ ms.assetid: 6E5F55D7-24D6-47CC-B457-B6231EDE2A71
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 692905c1c6d9b3d706baeadc480041c77163c272
+ms.openlocfilehash: 02f06ee498b136f811b4b3b8080a9cb043693504
 
 ---
 
@@ -34,9 +34,9 @@ Par exemple, si une zone de texte est utilisée uniquement pour saisir un code c
 
 ## Modification de l’étendue des entrées d’un contrôle de texte
 
-Les étendues d’entrées disponibles pour votre application appartiennent à l’énumération [**InputScopeNameValue**](https://msdn.microsoft.com/library/windows/apps/hh702028). Vous pouvez attribuer l’une de ces valeurs à la propriété **InputScope** d’un élément [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) ou [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/br227548).
+Les étendues d’entrées disponibles pour votre application appartiennent à l’énumération [**InputScopeNameValue**](https://msdn.microsoft.com/library/windows/apps/hh702028). Vous pouvez définir la propriété **InputScope** d’un élément [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) ou [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/br227548) sur l’une de ces valeurs.
 
-> **Important**&nbsp;&nbsp;La propriété [**InputScope**](https://msdn.microsoft.com/library/windows/apps/dn996570) de l’élément [**PasswordBox**](https://msdn.microsoft.com/library/windows/apps/br227519) ne prend en charge que les valeurs **Password** et **NumericPin**. Toute autre valeur est ignorée.
+> **Important** &nbsp;&nbsp;La propriété [**InputScope**](https://msdn.microsoft.com/library/windows/apps/dn996570) de l’élément [**PasswordBox**](https://msdn.microsoft.com/library/windows/apps/br227519) prend uniquement en charge les valeurs **Password** et **NumericPin**. Toute autre valeur est ignorée.
 
 Ici, vous modifiez l’étendue des entrées de plusieurs zones de texte afin qu’elle corresponde aux données attendues pour chaque zone de texte.
 
@@ -117,25 +117,25 @@ phoneNumberTextBox.InputScope = new InputScope()
 
 Les contrôles [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) et [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/br227548) disposent de plusieurs propriétés influant sur le comportement du panneau de saisie. Pour fournir la meilleure expérience possible à vos utilisateurs, il est important de comprendre de quelle manière ces propriétés affectent la saisie tactile de texte.
 
--   [**IsSpellCheckEnabled**](https://msdn.microsoft.com/library/windows/apps/br209688): lorsque la vérification orthographique est activée pour un contrôle de texte, le contrôle interagit avec le moteur de vérification orthographique du système pour signaler les mots qui ne sont pas reconnus. Vous pouvez appuyer sur un mot pour afficher une liste de suggestions de corrections. La vérification orthographique est activée par défaut.
+-   [ **IsSpellCheckEnabled** ](https://msdn.microsoft.com/library/windows/apps/br209688): lorsque la vérification orthographique est activée pour un contrôle de texte, le contrôle interagit avec le moteur de vérification orthographique du système pour signaler les mots qui ne sont pas reconnus. Vous pouvez appuyer sur un mot pour afficher une liste de suggestions de corrections. La vérification orthographique est activée par défaut.
 
     Pour l’étendue d’entrée **Default**, cette propriété permet également la mise en majuscules automatique du premier mot dans une phrase, ainsi que la correction automatique des mots au fur et à mesure de la saisie. Ces fonctionnalités de correction automatique peuvent être désactivées dans les autres zones d’entrées. Pour en savoir plus, consultez les tableaux présentés plus loin dans cette rubrique.
 
--   [**IsTextPredictionEnabled**](https://msdn.microsoft.com/library/windows/apps/br209690): lorsque la prédiction de texte est activée pour un contrôle de texte, le système affiche une liste de mots susceptibles de correspondre à votre saisie. Vous pouvez sélectionner un élément dans la liste. Ainsi, vous n’avez pas besoin de saisir le mot entier. La prédiction de texte est activée par défaut.
+-   [ **IsTextPredictionEnabled** ](https://msdn.microsoft.com/library/windows/apps/br209690): lorsque la prédiction de texte est activée pour un contrôle de texte, le système affiche une liste de mots susceptibles de correspondre à votre saisie. Vous pouvez sélectionner un élément dans la liste. Ainsi, vous n’avez pas besoin de saisir le mot entier. La prédiction de texte est activée par défaut.
 
     La prédiction de texte peut être désactivée si l’étendue des entrées est différente de **Default**, même si la propriété [**IsTextPredictionEnabled**](https://msdn.microsoft.com/library/windows/apps/br209690) présente la valeur **true**. Pour en savoir plus, consultez les tableaux présentés plus loin dans cette rubrique.
 
-    **Remarque**&nbsp;&nbsp;Sur la famille d’appareils mobiles, les prédictions de texte et les corrections orthographiques s’affichent dans le panneau de saisie situé dans la zone au-dessus du clavier. Si l’élément [**IsTextPredictionEnabled**](https://msdn.microsoft.com/library/windows/apps/br209690) a pour valeur **false**, cette partie du panneau de saisie est masquée et la correction automatique est désactivée, même si l’élément [**IsSpellCheckEnabled**](https://msdn.microsoft.com/library/windows/apps/br209688) a pour valeur **true**.
+    **Remarque** &nbsp;&nbsp;Sur la famille d’appareils mobiles, les prédictions de texte et les corrections orthographiques sont affichées dans le panneau de saisie, dans la zone située au-dessus du clavier. Si l’élément [**IsTextPredictionEnabled**](https://msdn.microsoft.com/library/windows/apps/br209690) est défini sur **false**, cette partie du panneau de saisie est masquée et la correction automatique est désactivée, même si l’élément [**IsSpellCheckEnabled**](https://msdn.microsoft.com/library/windows/apps/br209688) présente la valeur **true**.
 
--   [**PreventKeyboardDisplayOnProgrammaticFocus**](https://msdn.microsoft.com/library/windows/apps/dn299273): définissez cette propriété sur **true** pour empêcher l’affichage du panneau de saisie quand le focus est défini par programme sur un contrôle de texte. Au lieu de cela, le clavier s’affiche uniquement lorsque l’utilisateur interagit avec le contrôle.
+-   [ **PreventKeyboardDisplayOnProgrammaticFocus** ](https://msdn.microsoft.com/library/windows/apps/dn299273): définissez cette propriété sur **true** pour empêcher l’affichage du panneau de saisie quand le focus est défini par programme sur un contrôle de texte. Au lieu de cela, le clavier s’affiche uniquement lorsque l’utilisateur interagit avec le contrôle.
 
 ## Index de clavier tactile pour Windows et Windows Phone
 
-Les tableaux suivants illustrent les différentes dispositions du panneau de saisie sur des appareils mobiles et de bureau pour les valeurs d’étendue d’entrées communes. L’effet de l’étendue des entrées sur les fonctionnalités activées par les propriétés **IsSpellCheckEnabled** et **IsTextPredictionEnabled** est répertorié pour chaque étendue des entrées. Cette liste des étendues des entrées disponibles n’est pas complète.
+Les tableaux suivants illustrent les différentes dispositions du panneau de saisie sur des appareils mobiles et de bureau pour les valeurs d’étendue d’entrées communes. L’effet de l’étendue des entrées sur les fonctionnalités activées par les propriétés **IsSpellCheckEnabled** et **IsTextPredictionEnabled** est répertorié pour chaque étendue des entrées. Cependant, il ne s’agit pas d’une liste complète des étendues d’entrées disponibles.
 
-> **Remarque**&nbsp;&nbsp;Comme le panneau de saisie est plus petit sur les appareils mobiles, il est très important de définir une étendue des entrées appropriée aux applications mobiles. Comme vous le voyez ici, WindowsPhone fournit une plus grande variété de dispositions de clavier spécialisées. Pour un champ de texte dont l’étendue des entrées n’a pas besoin d’être définie dans une application du WindowsStore, il peut être avantageux de définir cette étendue dans une application du WindowsPhoneStore.
+> **Remarque** &nbsp;&nbsp;Comme le panneau de saisie est plus petit sur les appareils mobiles, il est très important que vous définissiez une étendue d’entrées adéquate pour les applications mobiles. Comme illustré ici, WindowsPhone fournit une plus grande variété de dispositions de clavier spécialisées. Pour un champ de texte dont l’étendue d’entrées n’a pas besoin d’être définie dans une application du WindowsStore, il peut être bénéfique que cette étendue soit définie dans une application du WindowsPhoneStore.
 
-> **Conseil**&nbsp;&nbsp;Vous pouvez basculer la plupart des claviers tactiles entre une disposition alphabétique et une disposition numérique et symbolique. Sur Windows, activez la touche **&amp;123**. Sur WindowsPhone, appuyez sur la touche **&amp; 123** pour adopter la disposition numérique et symbolique, et sur la touche **abcd** pour sélectionner la disposition alphabétique.
+> **Conseil** &nbsp;&nbsp;Vous pouvez basculer la plupart des claviers tactiles entre une disposition alphabétique et une disposition numérique et symbolique. Sur Windows, activez la touche **&amp;123**. Sur WindowsPhone, appuyez sur la touche **&amp; 123** pour adopter la disposition numérique et symbolique, et sur la touche **abcd** pour sélectionner la disposition alphabétique.
 
 ### Par défaut
 
@@ -256,6 +256,6 @@ Inclut la touche **=**.
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

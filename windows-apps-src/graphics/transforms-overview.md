@@ -5,7 +5,7 @@ title: "Vue d’ensemble des transformations"
 description: "Apprenez à utiliser les transformations dans l’API Windows Runtime, en changeant le système de coordonnées relatives des éléments dans l’interface utilisateur."
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 6534e7337ecaa081d0bb05335425f5b58557ab32
+ms.openlocfilehash: 9e01a64f02d8a36e72c31263400130d0d808eb1b
 
 ---
 
@@ -139,6 +139,6 @@ Dans Windows10, XAML a introduit une nouvelle propriété, [**UIElement.Transfor
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO2-->
 
 

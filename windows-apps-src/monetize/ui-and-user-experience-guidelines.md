@@ -1,148 +1,148 @@
 ---
 author: mcleanbyron
 ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
-description: Learn about UI and user experience guidelines for ads in apps.
-title: UI and user experience guidelines for ads in apps
+description: "En savoir plus sur les recommandations en matière d’expérience utilisateur et d’interface utilisateur pour les publicités dans les applications."
+title: "Recommandations pour pubs in-app&#58; expérience et interface utilisateur"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: d464a2de442e6f1833f429c8460c27bf85e577d1
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 87be9f0f0a19094085d5c4ecbcfb8d40ceb20d2a
 
 
 ---
 
-# UI and user experience guidelines for ads in apps
+# Recommandations en matière d’expérience utilisateur et d’interface utilisateur pour les publicités dans les applications
 
 
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
+## Ressources UI générales pour applications Windows
 
-## General UI resources for Windows apps
+Vous trouverez des informations sur la façon de concevoir l’apparence des applications dans [Conception et interface utilisateur](https://developer.microsoft.com/windows/design).
 
-You can find information about how to design the look and feel for apps at [Design & UI](https://developer.microsoft.com/windows/design).
+## Meilleures pratiques AdControl
 
-## AdControl best practices
-
-* [AdControl best practices: DO](#adcontrolbestpracticesdo10)
-* [AdControl best practices: DON'T](#adcontrolbestpracticesdont10)
+* [Meilleures pratiques AdControl: À FAIRE](#adcontrolbestpracticesdo10)
+* [Meilleures pratiques AdControl: À NE PAS FAIRE](#adcontrolbestpracticesdont10)
 
 <span id="adcontrolbestpracticesdo10"/>
-### AdControl best practices: DO
+### Meilleures pratiques AdControl: À FAIRE
 
-* Design advertising into your experience. Give your designers a sample ad to plan how the advertising is going to look. Two examples of well-planned ads in apps are the ads-as-content layout and the split layout.
+* Intégrez des publicités à votre expérience. Donnez à vos concepteurs un exemple d’annonce pour planifier ce à quoi ressemblera la publicité. La disposition de publicités en tant que contenu et la disposition scindée sont deux exemples de publicités bien planifiées dans les applications.
 
-  To see how different ad sizes will look and function within your app, you can utilize our test mode ad units for Windows Phone, Windows 8.1, and Windows 10. When you’re done with the test mode ad units, remember to [update your app with real ad unit IDs](set-up-ad-units-in-your-app.md) before submitting the app for certification.
+  Pour bénéficier d’un aperçu du fonctionnement et de l’apparence de différentes tailles d’annonces au sein de votre application, vous pouvez utiliser nos unités de publicité en mode test pour Windows Phone, Windows 8.1 et Windows 10. Une fois vos tests terminés, pensez à [mettre à jour votre application avec des ID d’unité publicitaire réels](set-up-ad-units-in-your-app.md), avant d’envoyer l’application pour certification.
 
-* Plan for times when no ads are available. There may be times when ads aren't being sent to your app. Lay out your pages in such a way that they look great whether they showcase an ad or not. For more information, see [Error handling](error-handling-with-advertising-libraries.md).
+* Planifiez pour les périodes au cours desquelles aucune annonce ne sera disponible. Il peut arriver à certains moments qu’aucune annonce ne soit envoyée à votre application. Disposez vos pages de telle façon qu’elles s’affichent de manière optimale avec ou sans annonce. Pour plus d’informations, consultez [Gestion des erreurs](error-handling-with-advertising-libraries.md).
 
 <span id="adcontrolbestpracticesdont10"/>
-### AdControl Best Practices: DON'T
+### Meilleures pratiques AdControl: À NE PAS FAIRE
 
-* Bolt advertising into open real estate. Ad space shouldn't be placed into the first open piece of real estate you can find. Instead, it should be incorporated into your app's overall design.
+* Bloquer de la publicité dans les espaces ouverts. L’espace publicitaire ne doit pas être placé dans le premier espace libre que vous trouvez. Au lieu de cela, il doit être incorporé dans la conception globale de votre application.
 
-* Over-advertise and saturate your app. Too many ads in your app detract from its appearance and usability. You want to make money with advertising, but not at the expense of the app itself.
+* Publicité excessive et saturation de votre application. Trop de publicités dans votre application détournent l’attention de son apparence et de sa facilité d’utilisation. Vous souhaitez gagner de l’argent avec les publicités, mais pas au détriment de l’application elle-même.
 
-* Distract user from their core tasks. The primary focus should always be on the app. The ad space should be incorporated so it remains a secondary focus.
+* Distraire l’utilisateur de ses tâches de base. L’axe principal doit toujours être l’application. L’espace publicitaire doit être incorporé de manière à rester secondaire.
 
 <span id="interstitialbestpractices10"/>
-## Interstitial best practices
+## Meilleures pratiques Spots
 
-* [Interstitial best practices: DO](#interstitialbestpracticesdo10)
-* [Interstitial best practices: AVOID](#interstitialbestpracticesavoid10)
-* [Interstitial best practices: NEVER (Policy Enforced)](#interstitialbestpracticesnever10)
+* [Meilleures pratiques Spots: À FAIRE](#interstitialbestpracticesdo10)
+* [Meilleures pratiques Spots: À ÉVITER](#interstitialbestpracticesavoid10)
+* [Meilleures pratiques Spots: À NE JAMAIS FAIRE (Stratégie appliquée)](#interstitialbestpracticesnever10)
 
-When used elegantly, video interstitial ads can vastly increase your app revenue, without negatively impacting user satisfaction. When used improperly, such ads can have the exact opposite effect.
+Lorsqu’ils sont utilisés de façon élégante, les spots publicitaires vidéo peuvent augmenter considérablement vos revenus issus de l’application, sans impact négatif sur la satisfaction des utilisateurs. En cas d’utilisation incorrecte, ils peuvent produire l’effet inverse exact.
 
-Here we aim to help you achieve elegance. Since you know your app better than anyone, except where policy is concerned, we leave it up to you to make the best final decision. What’s most important to keep in mind is that your app ratings and revenue are tightly coupled.
+Ici, nous cherchons à vous aider à atteindre l’élégance. Étant donné que vous connaissez votre application mieux que quiconque, sauf en matière de stratégie, nous vous laissons prendre la meilleure décision finale. Ce qu’il faut absolument retenir c’est que les évaluations de vos applications et le montant vos recettes sont étroitement liés.
 
 <span id="interstitialbestpracticesdo10"/>
-### Interstitial best practices: DO
+### Meilleures pratiques Spots: À FAIRE
 
-* Fit interstitial ads within the natural flow of the app, such as between game levels.
+* Intégrez des spots publicitaires dans le flux naturel de l’application, par exemple entre les niveaux de jeu.
 
-* Associate ads with tangible upsides, such as:
+* Associez des annonces avec des avantages concrets, tels que:
 
-    * Hints towards level completion.
+    * Conseils concernant l’achèvement de niveau.
 
-    * Extra time to retry a level.
+    * Temps supplémentaire pour réessayer un niveau.
 
-    * Custom avatar features, like a tattoo or hat.
+    * Fonctionnalités d’avatar personnalisé, par exemple avec un tatouage ou un chapeau.
 
-* If your app requires that a video ad be watched to completion, mention that rule upfront so they aren’t surprised with an error message upon hitting the close button.
+* Si votre application requiert le visionnage complet d’une publicité vidéo, mentionnez cette règle d’emblée afin que les utilisateurs ne soient pas surpris par un message d’erreur en appuyant sur le bouton Fermer.
 
-* Pre-fetch the ad (by calling [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx)) ideally 30-60 seconds before you need to show it.
+* Récupérez d’abord la publicité (en appelant la méthode [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx)), dans l’idéal, 30 à 60secondes avant que vous ayez besoin de l’afficher.
 
-* Subscribe to all four events exposed in the [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) class (**Canceled**, **Completed**, **AdReady**, and **ErrorOccurred**) and use them to make the right decisions for your app.
+* Abonnez-vous aux quatre événements exposés dans la classe [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) (**Canceled**, **Completed**, **AdReady** et **ErrorOccurred**) et utilisez-les pour prendre les bonnes décisions pour votre application.
 
-* Have some built-in experience to use in lieu of a server-matched ad. You’ll find this useful in a few scenarios:
+* Bénéficiez d’une expérience intégrée au lieu d’annonces proposées par le serveur. Vous trouverez cela utile dans certains scénarios:
 
-    * Offline mode, when ad servers can’t be reached.
+    * En mode hors connexion, lorsque les serveurs publicitaires sont injoignables.
 
-    * When the **ErrorOccurred** event fires.
+    * Lorsque l’événement **ErrorOccurred** est déclenché.
 
-    * If you opt to save user bandwidth based on [ConnectionProfile](https://msdn.microsoft.com/library/windows/apps/windows.networking.connectivity.connectionprofile.aspx), there are APIs in the **ConnectionProfile** class which can help.
+    * Si vous choisissez d’économiser la bande passante de l’utilisateur en fonction de [ConnectionProfile](https://msdn.microsoft.com/library/windows/apps/windows.networking.connectivity.connectionprofile.aspx), il existe des API dans la classe **ConnectionProfile** qui peuvent vous aider.
 
-* Use the default (30s) timeout unless you have a valid reason to do otherwise, in which case don’t go below 10s.
+* Utilisez le délai d’expiration par défaut (30s), sauf si vous avez une raison valable de faire autrement, auquel cas n’allez pas en dessous de 10s.
 
-    * Video ads take substantially longer to download than banners, especially in markets that don’t have high speed connections.
+    * Les annonces vidéo sont beaucoup plus longues à télécharger que les bannières, en particulier dans les marchés ne disposant pas de connexions haut débit.
 
 
-* Be mindful of the user’s data plan. For example, either don’t show, or warn user, before serving a video ad on a mobile device that is near/over its data limit. There are APIs in the [ConnectionProfile](https://msdn.microsoft.com/library/windows/apps/windows.networking.connectivity.connectionprofile.aspx) class which can help.
+* Gardez à l’esprit les forfaits de données des utilisateurs. Par exemple, n’affichez pas d’annonce vidéo, ou avertissez l’utilisateur avant de le faire sur un appareil mobile approchant de ou ayant dépassé sa limite de données. Il existe des API dans la classe [ConnectionProfile](https://msdn.microsoft.com/library/windows/apps/windows.networking.connectivity.connectionprofile.aspx) qui peuvent vous aider.
 
-* Continuously improve your app after the initial submission. Look at the ad reports and make design changes to improve fill and video completion rates.
+* Améliorez en permanence votre application après la soumission initiale. Examinez les rapports de publicité et apportez des modifications de conception pour améliorer les taux de remplissage et d’achèvement vidéo.
 
 <span id="interstitialbestpracticesavoid10"/>
-### Interstitial best practices: AVOID
+### Meilleures pratiques Spots: À ÉVITER
 
-* Overdoing it. Don’t force ads more than every 5 minutes or so, unless the user explicitly engages with an optional tangible benefit, beyond just playing the game.
+* Exagération. N’envoyez pas de publicités à une fréquence supérieure à toutes les 5minutes environ, à moins que l’utilisateur ne bénéficie d’un avantage concret en option, au-delà du jeu.
 
-* Video interstitials at app launch, since users may believe they clicked the wrong tile.
+* Des spots vidéo au lancement de l’application, car les utilisateurs pourraient penser qu’ils ont cliqué sur la mauvaise vignette.
 
-* Video interstitials at exit. This is bad inventory, since completion rates will be near zero.
+* Des spots vidéo de sortie. Il s’agit d’un mauvais calcul, car les taux d’achèvement seront proches de zéro.
 
-    * Two or more video ads back to back.
+    * Deux annonces vidéo d’affilée.
 
-    * Users will be frustrated to see the ad progress bar reset to the starting point.
+    * Les utilisateurs seront contrariés de voir la barre de progression de l’annonce revenir au point de départ.
 
-    * Many will think it’s just a coding or ad serving bug.
+    * Beaucoup penseront qu’il s’agit d’un bogue de codage ou d’affichage de publicité.
 
-* Fetching a video ad more than 5 minutes before calling [Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx).
+* Récupération d’une annonce vidéo plus de 5minutes avant d’appeler [Afficher](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx).
 
-    * Good inventory will maximize the conversion of pre-fetched ads to billable impressions.
+    * Un bon inventaire va optimiser la conversion de publicités récupérées en impressions facturables.
 
 
-* Penalizing a user for failures in ad serving, such as no ad available. For example, if you show a UI option to “Watch an ad to get *xxx*”, you should provide *xxx* if the user did her part. Two options to consider:
+* Pénaliser un utilisateur pour les défaillances d’affichage de publicités, par exemple lorsqu’aucune publicité n’est disponible. Par exemple, si vous affichez une option d’interface utilisateur de type «Regarder une publicité pour obtenir *xxx*», vous devez fournir *xxx* si l’utilisateur a rempli sa part du contrat. Deux options à envisager:
 
-    * Don’t include the option unless the [AdReady](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.adready.aspx) event has fired.
+    * N’incluez pas l’option, sauf si l’événement [AdReady](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.adready.aspx) a été déclenché.
 
-    * Have the app include a built-in experience that yields the same benefit as a real ad.
+    * Proposez une application incluant une expérience intégrée qui procure les mêmes avantages qu’une annonce réelle.
 
-* Letting a user gain a competitive advantage in a multi-player game.
+* Permettre à un utilisateur de gagner un avantage compétitif dans un jeu multijoueur.
 
-    * A better gun in a first-person shooter game would clearly fall into this bucket.
+    * Une meilleure arme dans un jeu de tir entrerait clairement dans cette catégorie.
 
-    * A custom shirt on the player’s avatar is fine, so long as it doesn’t provide camouflage!
+    * Une chemise personnalisée sur l’avatar du joueur pourrait faire l’affaire, tant qu’elle ne sert pas de camouflage!
 
 <span id="interstitialbestpracticesnever10"/>
-### Interstitial best practices: NEVER (Policy Enforced)
+### Meilleures pratiques Spots: À NE JAMAIS FAIRE (Stratégie appliquée)
 
-* Put any UI elements over the ad container.
+* Placer les éléments de l’interface utilisateur sur le conteneur de publicité.
 
-    * Advertisers have paid for the full screen.
+    * Les annonceurs ont payé pour l’intégralité de l’écran.
 
 
-* Call **Show** while user is engaged with the app.
+* Appeler **Afficher** pendant que l’utilisateur utilise l’application.
 
-    * Because the **InterstitialAd** will create a full screen overlay, the user will find this jarring.
+    * Dans la mesure où **InterstitialAd** créera une superposition sur l’intégralité de l’écran, l’utilisateur risque d’être déstabilisé.
 
-    * It may also lead to exaggerated click-through rates.
+    * Cela peut également donner lieu à des taux de clic exagérés.
 
-* Use ads to obtain anything that may be consumed as a currency or traded with other users.
-
- 
+* Utiliser des annonces pour obtenir tout ce qui peut être utilisé comme une devise ou échangé avec d’autres utilisateurs.
 
  
 
+ 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

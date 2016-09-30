@@ -1,44 +1,44 @@
 ---
 author: mijacobs
-Description: Use the reposition animation to move an element or elements into a new position.
-title: Reposition animations in UWP apps
+Description: "Utilisez l’animation de repositionnement pour déplacer un ou des éléments à un autre endroit."
+title: Animations de repositionnement dans les applications UWP
 ms.assetid: 25D1EE31-5C25-4F21-B34C-FBD8FB1C8FFF
 label: Motion--Reposition
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 38c3cb8a31708722bb207f2ad39b073262c6ce6f
+ms.openlocfilehash: ba8679a5f06895cef52cbc229f4487997a17bf35
 
 ---
 
-# Reposition animations
+# Animations de repositionnement
 
 
 
 
-Use the reposition animation to move an element or elements into a new position.
+Utilisez l’animation de repositionnement pour déplacer un ou des éléments à un autre endroit.
 
-**Important APIs**
+**API importantes**
 
--   [**RepositionThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210421)
--   [**RepositionThemeTransition class**](https://msdn.microsoft.com/library/windows/apps/br210429)
-
-
-## Do's and don'ts
+-   [**Classe RepositionThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210421)
+-   [**Classe RepositionThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210429)
 
 
--   If you're showing or hiding edge-based UI, use [edge-based UI animations](motion-edgebased.md). Edge-based UI is an element or container that is anchored at one edge of the screen.
+## Pratiques conseillées et déconseillées
 
 
-## Related articles
+-   Si vous affichez ou masquez une interface utilisateur latérale, utilisez des [animations latérales de l’interface utilisateur](motion-edgebased.md). Une interface utilisateur latérale est un élément ou un conteneur qui est ancré au bord de l’écran.
 
 
-**For developers (XAML)**
-* [Animations overview](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [Animating repositions](https://msdn.microsoft.com/library/windows/apps/xaml/jj649434)
-* [Quickstart: Animating your UI using library animations](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
-* [**RepositionThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210421)
-* [**RepositionThemeTransition class**](https://msdn.microsoft.com/library/windows/apps/br210429)
+## Articles connexes
+
+
+**Pour les développeurs (XAML)**
+* [Vue d’ensemble des animations](https://msdn.microsoft.com/library/windows/apps/mt187350)
+* [Animation de repositionnements](https://msdn.microsoft.com/library/windows/apps/xaml/jj649434)
+* [Démarrage rapide: animation de votre interface utilisateur avec des animations de la bibliothèque](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [**Classe RepositionThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br210421)
+* [**Classe RepositionThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210429)
 
 
  
@@ -49,6 +49,6 @@ Use the reposition animation to move an element or elements into a new position.
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

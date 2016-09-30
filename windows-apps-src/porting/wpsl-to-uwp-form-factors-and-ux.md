@@ -1,77 +1,77 @@
 ---
 author: mcleblanc
-description: Windows apps share a common look-and-feel across PCs, mobile devices, and many other kinds of devices. The user interface, input, and interaction patterns are very similar, and a user moving between devices will welcome the familiar experience.
-title: Porting Windows Phone Silverlight to UWP for form factor and UX
+description: "Les applications Windows présentent le même aspect, que ce soit sur PC, sur appareil mobile ou sur tout autre type d’appareil. Les modèles d’interaction, d’entrée et d’interface utilisateur sont similaires ; un utilisateur passant d’un type d’appareil à un autre ne pourra que se féliciter de ces similitudes."
+title: "Portage d’une application Silverlight pour Windows Phone vers UWP pour différents facteurs de forme et expériences utilisateur"
 ms.assetid: 96244516-dd2c-494d-ab5a-14b7dcd2edbd
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d25a10db622980e2e93b5953a695d0ab6b0b027b
+ms.openlocfilehash: 7d5f1fa969e4ddf4a695a3ca77072a0f9c21316f
 
 ---
 
-#  Porting Windows Phone Silverlight to UWP for form factor and UX
+#  Portage d’une application Silverlight pour Windows Phone vers UWP pour différents facteurs de forme et expériences utilisateur
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-The previous topic was [Porting business and data layers](wpsl-to-uwp-business-and-data.md).
+Rubrique précédente : [Portage des couches métier et des couches de données](wpsl-to-uwp-business-and-data.md).
 
-Windows apps share a common look-and-feel across PCs, mobile devices, and many other kinds of devices. The user interface, input, and interaction patterns are very similar, and a user moving between devices will welcome the familiar experience. Differences between devices such as physical size, default orientation, and effective pixel resolution factor into the way a Universal Windows Platform (UWP) app is rendered by Windows 10. The good news is that much of the heavy lifting is handled for you by the system using smart concepts such as effective pixels.
+Les applications Windows présentent le même aspect, que ce soit sur PC, sur appareil mobile ou sur tout autre type d’appareil. Les modèles d’interaction, d’entrée et d’interface utilisateur sont similaires ; un utilisateur passant d’un type d’appareil à un autre ne pourra que se féliciter de ces similitudes. Toutefois, le rendu d’une application de plateforme Windows universelle (UWP) par Windows 10 présente certaines différences (taille physique, orientation par défaut, facteur de résolution en pixels effectifs, etc.) d’un appareil à l’autre. Heureusement, le système gère à votre place une grande partie des tâches les plus difficiles à l’aide de concepts novateurs tels que les pixels effectifs.
 
-## Different form factors and user experience
+## Des facteurs de forme différents pour une expérience utilisateur variée
 
-Different devices have multiple possible portrait and landscape resolutions, in a variety of aspect ratios. How will the visual aspects of its interface, text, and assets of your UWP app scale? How can you support touch as well as mouse and keyboard input? And with an app that supports touch on different-sized devices with different viewing distances, how can a control both be a right-sized touch target at different pixel densities *and* have its content readable at different distances? The following sections address the things you need to know.
+Les différents appareils peuvent présenter plusieurs résolutions en mode portrait et en mode paysage, ainsi que des proportions variées. Comment les aspects visuels de l’interface, du texte et des ressources de votre application UWP s’adapteront-ils ? Comment faire pour prendre en charge la technologie tactile ainsi que les entrées effectuées à l’aide d’un clavier et d’une souris ? Enfin, lorsque l’application prend en charge la technologie tactile sur des appareils de taille différente, à des distances d’affichage variées, comment faire pour qu’un contrôle joue le rôle d’élément d’une taille adéquate pour diverses densités de pixel *tout en présentant* un contenu lisible à des distances différentes ? Les sections suivantes fournissent des informations que vous devez connaître.
 
-## What is the size of a screen, really?
+## Quelle est la taille d’un écran, en réalité ?
 
-The short answer is that it's subjective, because it depends not only on the objective size of the display but also on how far away from it you are. The subjectivity means that we have to put ourselves in the shoes of the user, and that's something that developers of good apps do in any case.
+En un mot comme en cent, la réponse à cette question est subjective. En fait, cela dépend non seulement de la taille physique de l’affichage, mais également de votre distance par rapport à l’écran. Pour cela, il est nécessaire de se mettre à la place de l’utilisateur. Or, un bon développeur doit le faire en toutes circonstances.
 
-Objectively, a screen is measured in units of inches, and physical (raw) pixels. Knowing both of those metrics lets you know how many pixels fit into an inch. That's the pixel density, also known as DPI (dots per inch), also known as PPI (pixels per inch). And the reciprocal of the DPI is the physical size of the pixels as a fraction of an inch. Pixel density is also known as *resolution*, although that term is often used loosely to mean pixel count.
+Objectivement, la taille d’un écran est mesurée en pouces et en pixels physiques (bruts). La connaissance de ces deux métriques vous permet de déterminer le nombre de pixels inclus dans un pouce. La valeur obtenue porte le nom de densité en pixels (DPI, Dots Per Inch). On parle également de PPP, ou pixels par pouce. L’inverse de la densité en pixels est la taille physique des pixels, sous la forme d’une fraction d’un pouce. La densité en pixels est également appelée *résolution*, même si ce terme est souvent utilisé pour indiquer le nombre de pixels.
 
-As viewing distance increases, all those objective metrics *seem* smaller, and they resolve into the screen's *effective size*, and its *effective resolution*. Your phone is usually held closest to your eye; your tablet then your PC monitor are next, and furthest away are [Surface Hub](http://www.microsoft.com/microsoft-surface-hub) devices and TVs. To compensate, devices tend to get objectively larger with viewing distance. When you set sizes on your UI elements, you are setting those sizes in units called effective pixels (epx). And Windows 10 will take into account DPI, and the typical viewing distance from a device, to calculate the best size of your UI elements in physical pixels to give the best viewing experience. See [View/effective pixels, viewing distance, and scale factors](wpsl-to-uwp-porting-xaml-and-ui.md#effective-pixels).
+Lorsque la distance d’affichage augmente, toutes ces métriques objectives *semblent* correspondre à des valeurs plus petites et sont résolues sous la forme d’une *taille réelle* de l’écran, associée à la *résolution effective* de ce dernier. En général, l’appareil que vous placez le plus près de vos yeux est votre téléphone, suivi de votre tablette, puis de l’écran de votre PC. Enfin, les appareils plus éloignés sont les [Surface Hub](http://www.microsoft.com/microsoft-surface-hub) et les écrans de télévision. Pour compenser cette distance, les appareils ont tendance à être de plus en plus grands en fonction de la distance d’affichage. Lorsque vous définissez les tailles des éléments de votre interface utilisateur, vous les exprimez en unités appelées pixels effectifs (epx). Et Windows 10 prendra en compte la valeur PPP et la distance d’affichage type d’un appareil pour calculer la taille optimale des éléments de votre interface utilisateur en pixels physiques afin d’optimiser l’expérience de visualisation. Voir [Pixels d’affichage/effectifs, distance d’affichage et facteurs d’échelle](wpsl-to-uwp-porting-xaml-and-ui.md#effective-pixels).
 
-Even so, we recommend that you test your app with many different devices so that you can confirm each experience for yourself.
+Même dans ce cas, nous vous recommandons de tester votre application avec différents appareils afin que vous puissiez vérifier chaque expérience par vous-même.
 
-## Touch resolution and viewing resolution
+## Résolution tactile et résolution d’affichage
 
-Affordances (UI widgets) need to be the right size to touch. So, a touch target needs to more-or-less retain its physical size across different devices that might have different pixel densities. Effective pixels help you out here, too: they're scaled on different devices—taking pixel density into account—in order to achieve a more-or-less constant physical size that's ideal for touch targets.
+Les affordances (widgets d’interface utilisateur) doivent présenter la taille adéquate pour une interaction tactile. Ainsi, une cible tactile doit conserver grosso modo sa taille physique sur les différents appareils qui sont susceptibles de proposer des densités en pixels variées. Là encore, les pixels effectifs vous viennent en aide, car ils sont mis à l’échelle sur les différents appareils (la densité en pixels étant prise en compte) afin de garantir une taille physique plus ou moins constante idéale pour les cibles tactiles.
 
-Text needs to be the right size to read (12 point text at a 20 inch viewing distance is a good rule of thumb), and an image needs to be the right size and effective resolution, for the viewing distance. On different devices, that same effective pixel scaling keeps UI elements right-sized and readable. Text and other vector-based graphics scale automatically, and very well. Raster (bitmap)-based graphics are also scaled automatically if the developer provides an asset in a single, large size. But, it's preferable for the developer to provide each asset in a range of sizes so that the appropriate one for a target device's scaling factor can be automatically loaded. For more info on that, see [View/effective pixels, viewing distance, and scale factors](wpsl-to-uwp-porting-xaml-and-ui.md#effective-pixels).
+Pour pouvoir être lu correctement, le texte doit présenter une taille adéquate: de manière empirique, on considère qu’une distance 50cm pour lire un texte de 12points est appropriée. De plus, les images doivent présenter la taille et la résolution réelle les mieux adaptées à la distance d’affichage. Sur les différents appareils, la même valeur de mise à l’échelle des pixels effectifs permet d’assurer une taille adéquate des éléments de l’interface utilisateur, qui sont alors clairement lisibles. Le texte et les autres graphiques vectoriels sont automatiquement mis à l’échelle de manière efficace. Les graphiques raster (bitmap) sont également mis à l’échelle de manière automatique lorsque le développeur fournit une ressource présentant une taille unique élevée. Toutefois, le développeur est invité à proposer différentes tailles pour chaque ressource afin de permettre le chargement automatique de la taille idéale pour le facteur d’échelle d’un appareil cible. Pour plus d’informations, voir [Pixels d’affichage/effectifs, distance d’affichage et facteurs d’échelle](wpsl-to-uwp-porting-xaml-and-ui.md#effective-pixels).
 
-## Layout, and adaptive Visual State Manager
+## Disposition et Gestionnaire d’état visuel adaptatif
 
-We've described the factors involved in a meaningful understanding of screen size. Now, let's think about the layout of your app, and how to make use of extra screen real-estate when it's available. Consider this page from a very simple app that was designed to run on a narrow mobile device. What should this page look like on a larger screen?
+Nous avons décrit les facteurs qui entrent en jeu dans une connaissance approfondie de la taille de l’écran. À présent, penchons-nous sur la disposition de votre application et voyons comment utiliser l’éventuel excédent d’espace. Considérons l’exemple de cette page, qui provient d’une application très simple, conçue pour s’exécuter sur un appareil mobile de petite taille. À quoi doit-elle ressembler sur un écran plus grand?
 
-![the ported windows phone store app](images/wpsl-to-uwp-case-studies/c01-04-uni-phone-app-ported.png)
+![Application du Windows Phone Store portée](images/wpsl-to-uwp-case-studies/c01-04-uni-phone-app-ported.png)
 
-The mobile version is constrained to portrait-only orientation because that's the best aspect ratio for the book list; and we'd do the same for a page of text, which is best kept to a single column on mobile devices. But, PC and tablet screens are large in either orientation, so that mobile device constraint seems like an unnecessary limitation on larger devices.
+La version mobile de l’application propose uniquement une orientation en mode portrait, car cette dernière offre les meilleures proportions pour afficher la liste de livres. Nous procéderions de même pour afficher une page de texte, qui apparaît mieux sous la forme d’une colonne unique sur les appareils mobiles. Or, un écran de PC ou de tablette est plus grand, quelle que soit l’orientation. Sur ces types d’appareil, les limitations associées aux écrans d’appareils mobiles semblent donc inutiles.
 
-Optically zooming the app to look like the mobile version, just bigger, doesn't take advantage of the device and its additional space, and that doesn't serve the user well. We should be thinking of showing more content, rather than the same content bigger. Even on a phablet, we could show some more rows of content. We could use extra space to display different content, such as ads, or we could change the list box into a list view and have it wrap items into multiple columns, when it can, to use the space that way. See [Guidelines for list and grid view controls](https://msdn.microsoft.com/library/windows/apps/mt186889).
+Si vous exécutez un zoom optique sur l’application afin que le contenu s’affiche comme sur un appareil mobile (en plus gros caractères), vous ne tirez pas parti des avantages proposés par l’appareil, ni de l’espace supplémentaire qu’il offre. Par ailleurs, cela ne sert pas les intérêts de l’utilisateur. Nous devons penser à afficher davantage de contenu, plutôt que le même contenu en plus gros caractères. Même sur une phablette, nous pourrions afficher davantage de lignes de contenu. Ainsi, nous pourrions exploiter l’espace supplémentaire afin d’afficher d’autres contenus (comme des publicités), ou nous pourrions remplacer la zone de liste par une vue de liste, qui pourrait placer les éléments dans plusieurs colonnes (si possible) afin de valoriser l’espace. Voir [Recommandations en matière de contrôles d’affichages de liste et d’affichages de grille](https://msdn.microsoft.com/library/windows/apps/mt186889).
 
-In addition to new controls such as list view and grid view, most of the established layout types from Windows Phone Silverlight have equivalents in the Universal Windows Platform (UWP). For example, [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267), [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704), and [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635). Porting much of the UI that uses these types should be straightforward, but always look for ways to leverage the dynamic layout capabilities of these layout panels to automatically resize and re-lay out on devices of different sizes.
+En plus de nouveaux contrôles (tels que l’affichage Liste et l’affichage Grille), la plupart des types de disposition établis à partir de Silverlight pour Windows Phone comportent des équivalents dans la plateforme Windows universelle (UWP). Exemples : [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267), [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) et [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635). Le portage de la majorité des fonctions de l’interface utilisateur qui utilisent ces types doit être clair. Toutefois, recherchez toujours d’autres méthodes pour tirer parti des fonctions de disposition dynamiques de ces panneaux de disposition, afin de proposer le redimensionnement et la redisposition automatiques sur les appareils de tailles différentes.
 
-Going beyond the dynamic layout built into the system controls and layout panels, we can use a new Windows 10 feature called [Adaptive Visual State Manager](wpsl-to-uwp-porting-xaml-and-ui.md#adaptive-ui).
+Outre la disposition dynamique intégrée aux contrôles système et aux panneaux de disposition, nous pouvons utiliser une nouvelle fonctionnalité de Windows 10 appelée [Gestionnaire d’état visuel adaptatif](wpsl-to-uwp-porting-xaml-and-ui.md#adaptive-ui).
 
-## Input modalities
+## Modalités d’entrée
 
-A Windows Phone Silverlight interface is touch-specific. And your ported app's interface should of course also support touch, but you can choose to support other input modalities in addition, such as mouse and keyboard. In the UWP, mouse, pen, and touch input are unified as *pointer input*. For more info, see [Handle pointer input](https://msdn.microsoft.com/library/windows/apps/mt404610), and [Keyboard interactions](https://msdn.microsoft.com/library/windows/apps/mt185607).
+L’interface Silverlight pour Windows Phone est prévue pour les interactions tactiles. L’interface de votre application portée doit évidemment proposer des interactions tactiles ; toutefois, vous avez la possibilité de proposer d’autres modalités d’entrée, comme des interactions par le biais d’un clavier et d’une souris. Dans UWP, les entrées effectuées à l’aide d’une souris, d’un stylet et de fonctions tactiles sont regroupées en une seule catégorie : les *entrées de pointeur*. Pour en savoir plus, voir [Gérer les entrées du pointeur](https://msdn.microsoft.com/library/windows/apps/mt404610) et [Interactions avec le clavier](https://msdn.microsoft.com/library/windows/apps/mt185607).
 
-## Maximizing markup and code re-use
+## Valorisation de la réutilisation du code et du balisage
 
-Refer back to the [maximizing markup and code reuse](wpsl-to-uwp-porting-to-a-uwp-project.md#markup-and-code-reuse) list for techniques on sharing your UI to target devices with a wide range of form factors.
+Reportez-vous à la liste [Valorisation de la réutilisation du code et du balisage](wpsl-to-uwp-porting-to-a-uwp-project.md#markup-and-code-reuse) pour connaître les techniques de partage de votre interface utilisateur sur des appareils cibles présentant un large éventail de facteurs de forme.
 
-## More info and design guidelines
+## Informations supplémentaires et recommandations de conception
 
--   [Design UWP apps](http://dev.windows.com/design)
--   [Guidelines for fonts](https://msdn.microsoft.com/library/windows/apps/hh700394)
--   [Plan for different form factors](https://msdn.microsoft.com/library/windows/apps/dn958435)
+-   [Concevoir des UWP apps](http://dev.windows.com/design)
+-   [Recommandations en matière de polices](https://msdn.microsoft.com/library/windows/apps/hh700394)
+-   [Planifier différents facteurs de forme](https://msdn.microsoft.com/library/windows/apps/dn958435)
 
-## Related topics
+## Rubriques connexes
 
-* [Namespace and class mappings](wpsl-to-uwp-namespace-and-class-mappings.md)
-
-
+* [Mappages des espaces de noms et des classes](wpsl-to-uwp-namespace-and-class-mappings.md)
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Jun16_HO4-->
 
 

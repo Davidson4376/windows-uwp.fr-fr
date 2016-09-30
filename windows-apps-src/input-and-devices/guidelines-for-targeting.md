@@ -1,21 +1,21 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: This topic describes the use of contact geometry for touch targeting and provides best practices for targeting in Windows Runtime apps.
-title: Targeting
+Description: "Cette rubrique décrit l’utilisation de la géométrie de contact pour le ciblage tactile et indique les meilleures pratiques de ciblage dans les applications WindowsRuntime."
+title: Ciblage
 ms.assetid: 93ad2232-97f3-42f5-9e45-3fc2143ac4d2
 label: Targeting
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 5707d36533e1b6566efb23ca9b6bf2bbf659cc63
+ms.openlocfilehash: 50a285b484f7e9ed7b349921c3460bd7c9c81603
 
 ---
 
-# Guidelines for targeting
+# Recommandations en matière de ciblage
 
-Touch targeting in Windows uses the full contact area of each finger that is detected by a touch digitizer. The larger, more complex set of input data reported by the digitizer is used to increase precision when determining the user's intended (or most likely) target.
+Le ciblage tactile dans Windows utilise la zone de contact entière de chaque doigt détecté par un numériseur tactile. Le jeu de données d’entrée plus grand et plus complexe généré par le numériseur est utilisé pour accroître la précision lors de la détermination de la cible souhaitée (ou la plus probable) de l’utilisateur.
 
-**Important APIs**
+**API importantes**
 
 -   [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)
 -   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
@@ -23,44 +23,44 @@ Touch targeting in Windows uses the full contact area of each finger that is det
 
 
 
-This topic describes the use of contact geometry for touch targeting and provides best practices for targeting in UWP apps.
+Cette rubrique décrit l’utilisation de la géométrie de contact pour le ciblage tactile et indique les meilleures pratiques de ciblage dans les applications UWP.
 
-## Measurements and scaling
+## Mesures et mise à l’échelle
 
 
-To remain consistent across different screen sizes and pixel densities, all target sizes are represented in physical units (millimeters). Physical units can be converted to pixels by using the following equation:
+Pour conserver la cohérence des différentes tailles d’écran et densités de pixels, toutes les tailles de cibles sont représentées en unités physiques (millimètres). Pour convertir les unités physiques en pixels, utilisez l’équation suivante :
 
-Pixels = Pixel Density × Measurement
+Pixels = densité de pixels × mesure
 
-The following example uses this formula to calculate the pixel size of a 9 mm target on a 135 pixel per inch (PPI) display at a 1x scaling plateau:
+L’exemple suivant utilise cette formule pour calculer la taille des pixels d’une cible de 9 mm sur un affichage de 135 ppp (pixels par pouce) avec un plateau d’échelle de 1x :
 
-Pixels = 135 PPI × 9 mm
+Pixels = 135 ppp × 9 mm
 
-Pixels = 135 PPI × (0.03937 inches per mm × 9 mm)
+Pixels = 135 ppp × (0,03937 pouces/mm × 9 mm)
 
-Pixels = 135 PPI × 0.35433 inches
+Pixels = 135 ppp × 0,35433 pouces
 
 Pixels = 48 pixels
 
-This result must be adjusted according to each scaling plateau defined by the system.
+Ce résultat doit être ajusté en fonction de chaque plateau d’échelle défini par le système.
 
-## Thresholds
-
-
-Distance and time thresholds may be used to determine the outcome of an interaction.
-
-For example, when a touch-down is detected, a tap is registered if the object is dragged less than 2.7 mm from the touch-down point and the touch is lifted within 0.1 second or less of the touch-down. Moving the finger beyond this 2.7 mm threshold results in the object being dragged and either selected or moved (for more information, see [Guidelines for cross-slide](guidelines-for-cross-slide.md)). Depending on your app, holding the finger down for longer than 0.1 second may cause the system to perform a self-revealing interaction (for more information, see [Guidelines for visual feedback](guidelines-for-visualfeedback.md#selfreveal)).
-
-## Target sizes
+## Seuils
 
 
-In general, set your touch target size to 9 mm square or greater (48x48 pixels on a 135 PPI display at a 1.0x scaling plateau). Avoid using touch targets that are less than 7 mm square.
+Des seuils de distance et de temps peuvent être utilisés pour déterminer le résultat d’une interaction.
 
-The following diagram shows how target size is typically a combination of a visual target, actual target size, and any padding between the actual target and other potential targets.
+Par exemple, lorsqu’un appui est détecté, il est enregistré si l’objet est glissé de moins de 2,7 mm par rapport au point d’appui et que le doigt est levé dans les 0,1 seconde suivant l’appui. Le fait de déplacer le doigt sur l’écran au-delà de ce seuil de 2,7mm entraîne un glissement de l’objet et sa sélection ou son déplacement (pour plus d’informations, voir [Recommandations en matière de glisser transversal](guidelines-for-cross-slide.md)). En fonction de votre application, le fait de maintenir appuyé le doigt pendant plus de 0,1seconde peut provoquer de la part du système une interaction d’auto-révélation (pour plus d’informations, voir [Recommandations en matière de retour visuel](guidelines-for-visualfeedback.md#selfreveal)).
 
-![diagram showing the recommended sizes for the visual target, actual target, and padding.](images/targeting-size.png)
+## Taille des cibles
 
-The following table lists the minimum and recommended sizes for the components of a touch target.
+
+En général, vous devez définir votre cible tactile sur une taille de 9mm carrés ou plus (48x48pixels sur un affichage de 135PPP pour un plateau de mise à l’échelle de 1.0x). Évitez d’utiliser des cibles tactiles inférieures à 7 mm carrés.
+
+Le schéma suivant montre comment la taille de la cible est généralement une combinaison de la cible visuelle, de la taille réelle de la cible et de l’éventuel espacement entre la cible réelle et d’autres cibles potentielles.
+
+![schéma des tailles recommandées pour la cible visuelle, la cible réelle et l’espacement.](images/targeting-size.png)
+
+Le tableau suivant montre les tailles minimales et recommandées pour les composants d’une cible tactile.
 
 <table>
 <colgroup>
@@ -70,101 +70,101 @@ The following table lists the minimum and recommended sizes for the components o
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Target component</th>
-<th align="left">Minimum size</th>
-<th align="left">Recommended size</th>
+<th align="left">Composant de cible</th>
+<th align="left">Taille minimale</th>
+<th align="left">Taille recommandée</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Padding</td>
+<td align="left">Espacement</td>
 <td align="left">2 mm</td>
-<td align="left">Not applicable.</td>
+<td align="left">Non applicable</td>
 </tr>
 <tr class="even">
-<td align="left">Visual target size</td>
-<td align="left">&lt; 60% of actual size</td>
-<td align="left">90-100% of actual size
-<p>Most users won't realize a visual target is touchable if it's less than 4.2 mm square (60% of the recommended minimum target size of 7 mm).</p></td>
+<td align="left">Taille visuelle de la cible</td>
+<td align="left">&lt; 60% de la taille réelle</td>
+<td align="left">90 à 100% de la taille réelle
+<p>La plupart des utilisateurs ne se rendront pas compte qu’une cible visuelle est tactile si elle fait moins de 4,2 mm carrés (60 % de la taille de cible minimale recommandée, 7 mm).</p></td>
 </tr>
 <tr class="odd">
-<td align="left">Actual target size</td>
-<td align="left">7 mm square</td>
-<td align="left">Greater than or equal to 9 mm square (48 x 48 px @ 1x)</td>
+<td align="left">Taille réelle de la cible</td>
+<td align="left">7 mm carrés</td>
+<td align="left">Supérieure ou égale à 9 mm carrés (48 x 48 px @ 1x)</td>
 </tr>
 <tr class="even">
-<td align="left">Total target size</td>
-<td align="left">11 x 11 mm (approximately 60 px: three 20-px grid units @ 1x)</td>
-<td align="left">13.5 x 13.5 mm (72 x 72 px @ 1x)
-<p>This implies that the size of the actual target and padding combined should be larger than their respective minimums.</p></td>
+<td align="left">Taille totale de la cible</td>
+<td align="left">11 x 11 mm (environ 60 px : trois unités de grille de 20 px à 1x)</td>
+<td align="left">13,5 x 13,5 mm (72 x 72 px à 1x)
+<p>Ceci implique que la taille combinée de la cible réelle et de l’espacement soit supérieure à leurs valeurs minimales respectives.</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-These target size recommendations can be adjusted as required by your particular scenario. Some of the considerations that went into these recommendations include:
+Vous pouvez modifier ces recommandations en matière de tailles de cibles en fonction du scénario particulier de votre application. Certaines des remarques suivantes liées à ces recommandations doivent être prises en compte :
 
--   Frequency of Touches: Consider making targets that are repeatedly or frequently pressed larger than the minimum size.
--   Error Consequence: Targets that have severe consequences if touched in error should have greater padding and be placed further from the edge of the content area. This is especially true for targets that are touched frequently.
--   Position in the content area
--   Form factor and screen size
--   Finger posture
--   Touch visualizations
--   Hardware and touch digitizers
+-   Fréquences des interactions tactiles : il est recommandé que la taille des cibles utilisées de manière répétée ou fréquente soit supérieure à la taille minimale.
+-   Conséquences des erreurs : les cibles dont l’utilisation par erreur peut être lourde de conséquences doivent être affectées d’un espacement supplémentaire et placées à une distance plus éloignée du bord de la zone de contenu. Ceci concerne tout particulièrement les cibles fréquemment utilisées.
+-   Position dans la zone de contenu
+-   Facteur de forme et taille d’écran
+-   Position des doigts
+-   Visualisations tactiles
+-   Digitaliseurs matériel et tactile
 
-## Targeting assistance
-
-
-Windows provides targeting assistance to support scenarios where the minimum size or padding recommendations presented here are not applicable; for example, hyperlinks on a webpage, calendar controls, drop down lists and combo boxes, or text selection.
-
-These targeting platform improvements and user interface behaviors work together with visual feedback (disambiguation UI) to improve user accuracy and confidence. For more information, see [Guidelines for visual feedback](guidelines-for-visualfeedback.md).
-
-If a touchable element must be smaller than the recommended minimum target size, the following techniques can be used to minimize the targeting issues that result.
-
-## Tethering
+## Aide au ciblage
 
 
-Tethering is a visual cue (a connector from a contact point to the bounding rectangle of an object) used to indicate to a user that they are connected to, and interacting with, an object even though the input contact isn't directly in contact with the object. This can occur when:
+Windows offre une aide au ciblage pour prendre en charge les scénarios dans lesquels les recommandations en matière de taille ou d’espacement minimal présentées ici ne peuvent pas s’appliquer; par exemple, des liens hypertexte sur une page web, des contrôles de calendrier, des listes déroulantes et des zones de liste modifiable ou une sélection de texte.
 
--   A touch contact was first detected within some proximity threshold to an object and this object was identified as the most likely target of the contact.
--   A touch contact was moved off an object but the contact is still within a proximity threshold.
+Ces améliorations de la plateforme de ciblage et les comportement de l’interface utilisateur fonctionnent ensemble avec le retour visuel (interface utilisateur de résolution des ambiguïtés) afin d’améliorer la précision et la confiance de l’utilisateur. Pour plus d’informations, voir [Recommandations en matière de retour visuel](guidelines-for-visualfeedback.md).
 
-This feature is not exposed to Windows Store app using JavaScript developers.
+Si la taille d’un élément tactile doit être inférieure à la taille de cible minimale recommandée, vous pouvez utiliser les techniques suivantes pour réduire les problèmes de ciblage qui en découlent.
 
-## Scrubbing
-
-
-Scrubbing means to touch anywhere within a field of targets and slide to select the desired target without lifting the finger until it is over the desired target. This is also referred to as "take-off activation", where the object that is activated is the one that was last touched when the finger was lifted from the screen.
-
-Use the following guidelines when you design scrubbing interactions:
-
--   Scrubbing is used in conjunction with disambiguation UI. For more information, see [Guidelines for visual feedback](guidelines-for-visualfeedback.md).
--   The recommended minimum size for a scrubbing touch target is 20 px (3.75 mm @ 1x size).
--   Scrubbing takes precedence when performed on a pannable surface, such as a webpage.
--   Scrubbing targets should be close together.
--   An action is canceled when the user drags a finger off a scrubbing target.
--   Tethering to a scrubbing target is specified if the actions performed by the target are non-destructive, such as switching between dates on a calendar.
--   Tethering is specified in a single direction, horizontally or vertically.
-
-## Related articles
+## Connexion
 
 
-**Samples**
-* [Basic input sample](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Low latency input sample](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [User interaction mode sample](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Focus visuals sample](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+La connexion est un signal visuel (un connecteur situé entre un point de contact et le rectangle englobant d’un objet) qui sert à indiquer à l’utilisateur qu’il est connecté à un objet et qu’il interagit avec celui-ci, même si le contact d’entrée ne touche pas directement l’objet. Ceci peut se produire dans les cas suivants :
 
-**Archive samples**
-* [Input: XAML user input events sample](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Input: Device capabilities sample](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Input: Touch hit testing sample](http://go.microsoft.com/fwlink/p/?linkid=231590)
-* [XAML scrolling, panning, and zooming sample](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Input: Simplified ink sample](http://go.microsoft.com/fwlink/p/?linkid=246570)
-* [Input: Windows 8 gestures sample](http://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [Input: Manipulations and gestures (C++) sample](http://go.microsoft.com/fwlink/p/?linkid=231605)
-* [DirectX touch input sample](http://go.microsoft.com/fwlink/p/?LinkID=231627)
+-   Un contact tactile a été détecté pour la première fois dans un certain seuil de proximité d’un objet et cet objet a été identifié comme la cible la plus probable du contact.
+-   Un contact tactile a été éloigné d’un objet, mais il reste encore dans un seuil de proximité.
+
+Cette fonctionnalité n’est pas exposée aux développeurs d’applications du WindowsStore en JavaScript.
+
+## Frottement
+
+
+Le frottement consiste à toucher n’importe où dans un champ de cibles et de laisser glisser le doigt pour sélectionner la cible souhaitée sans le lever tant qu’il n’est pas sur la cible souhaitée. Avec cette technique, également appelée « activation par décollage », l’objet qui est activé, est celui qui a été touché en dernier lorsque l’utilisateur a levé le doigt de l’écran.
+
+Pour concevoir des interactions de frottement, tenez compte des recommandations suivantes :
+
+-   Le frottement est utilisé conjointement avec l’interface utilisateur de résolution des ambiguïtés. Pour plus d’informations, voir [Recommandations en matière de retour visuel](guidelines-for-visualfeedback.md).
+-   La taille minimale recommandée pour une cible tactile de frottement est de 20 px (3,75 mm à 1x).
+-   Le frottement est prioritaire lorsqu’il est effectué sur une surface de mouvement panoramique, telle qu’une page Web.
+-   Les cibles de frottement doivent être placées à proximité les unes des autres.
+-   L’action est annulée si l’utilisateur cesse de faire glisser son doigt sur la cible de frottement.
+-   La connexion à une cible de frottement est spécifiée si les actions effectuées par la cible sont sans danger ; par exemple, passer d’une date à une autre dans un calendrier.
+-   La connexion est spécifiée dans une seule direction, horizontalement ou verticalement.
+
+## Articles connexes
+
+
+**Exemples**
+* [Exemple d’entrée de base](http://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [Exemple d’entrée à faible latence](http://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [Exemple de mode d’interaction utilisateur](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [Exemple de visuels de focus](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+
+**Exemples d’archive**
+* [Entrée: exemple d’événements d’entrée utilisateurXAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [Entrée : exemple de fonctionnalités d’appareils](http://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Entrée : exemple de test de positionnement tactile](http://go.microsoft.com/fwlink/p/?linkid=231590)
+* [Exemple de zoom, de panoramique et de défilement XAML](http://go.microsoft.com/fwlink/p/?linkid=251717)
+* [Entrée : exemple d’entrée manuscrite simplifiée](http://go.microsoft.com/fwlink/p/?linkid=246570)
+* [Entrée : exemple de mouvements Windows 8](http://go.microsoft.com/fwlink/p/?LinkId=264995)
+* [Entrée : exemple de manipulations et de mouvements (C++)](http://go.microsoft.com/fwlink/p/?linkid=231605)
+* [Exemple d’entrée tactile DirectX](http://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 
  
@@ -175,6 +175,6 @@ Use the following guidelines when you design scrubbing interactions:
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO1-->
 
 

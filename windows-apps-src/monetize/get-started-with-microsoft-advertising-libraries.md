@@ -1,37 +1,39 @@
 ---
 author: mcleanbyron
 ms.assetid: ae45490f-3eb1-4b7f-8e18-bf82f0ca5d6d
-description: Get the information you need to get started using the Microsoft advertising libraries to add banner and video interstitial ads to your apps.
-title: Get started with the Microsoft advertising libraries
+description: "Obtenir les informations nécessaires à l’utilisation des bibliothèques de publicités Microsoft pour ajouter des bannières et spots vidéo publicitaires à vos applications."
+title: "Prise en main des bibliothèques de publicités Microsoft"
 translationtype: Human Translation
-ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
-ms.openlocfilehash: f57b9a2c7b36fc53b892a6316d1cd17d70ae99b5
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 08168dc15b33d99a044eedd7864848ed7a858991
 
 
 ---
 
-# Get started with the Microsoft advertising libraries
+# Prise en main des bibliothèques de publicités Microsoft
 
 
+\[ Mise à jour pour les applicationsUWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
+Cette rubrique fournit les informations nécessaires à l’utilisation des bibliothèques de publicités Microsoft pour ajouter des bannières et spots vidéo publicitaires à vos applications. Une fois que vous avez lu les rubriques de cette section, passez aux [Procédures pas à pas de développement](developer-walkthroughs.md) pour consulter les exemples illustrant l’écriture de code permettant d’afficher des publicités dans vos applications.
 
-This topic provides the information you need to get started using the Microsoft advertising libraries to add banner and video interstitial ads to your apps. After you have read the topics in this section, move on to the [developer walkthroughs](developer-walkthroughs.md) to see examples about how to write the code that will show ads in your apps.
+Pour obtenir des exemples complets de projet qui montrent comment ajouter des bannières et des spots vidéo publicitaires à des applications HTML/JavaScript et XAML en C# et C++, voir [Exemples de publicité sur GitHub](http://aka.ms/githubads).
 
-For complete sample projects that demonstrate how to add banner and video interstitial ads to JavaScript/HTML apps and XAML apps using C# and C++, see the [advertising samples on GitHub](http://aka.ms/githubads).
+>**Important** Les bibliothèques de publicités Microsoft constituent un ensemble différent d’extensions des bibliothèques de médiation publicitaire. Utilisez les classes [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) et [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) des bibliothèques de publicités Microsoft si vous voulez afficher des bannières publicitaires et spots vidéo publicitaires de Microsoft dans une application XAML ou JavaScript. Utilisez la classe **AdMediatorControl** des bibliothèques de médiation publicitaire si vous voulez afficher des bannières publicitaires provenant de plusieurs réseaux publicitaires dans une application XAML. Pour plus d’informations, voir [Quelle est la différence entre AdMediatorControl et AdControl?](what-is-the-difference-admediatorcontrol-or-adcontrol.md).
 
  
 
-## In this section
+## Dans cette section
 
-| Topic                                                                                                       | Description                 |
+| Rubrique                                                                                                       | Description                 |
 |-------------------------------------------------------------------------------------------------------------|-----------------------------|
-| [Install the Microsoft advertising libraries](install-the-microsoft-advertising-libraries.md) |  Provides installation details and lists the names of the Microsoft advertising libraries and the ad mediation libraries as they appear in the **Reference Manager** dialog box in Visual Studio.  |
-| [Workflows for creating apps with ads](workflows-for-creating-apps-with-ads.md)     |  Provides high-level steps that describe the process of developing and publishing an app with ads.   |
-| [Migrate from AdMediatorControl to AdControl for UWP apps](migrate-from-admediatorcontrol-to-adcontrol.md)  | Provide guidance about migrating from **AdMediatorControl** to **AdControl** in UWP apps. Ad mediation using the **AdMediatorControl** class is currently not supported for UWP apps using the [Microsoft Store Services SDK](http://aka.ms/store-em-sdk).   |
-| [Release notes](release-notes-for-the-advertising-libraries.md)         |  Provides release notes for the current release of the Microsoft advertising libraries in the Microsoft Store Services SDK (for UWP apps) and the Microsoft Advertising SDK for Windows and Windows Phone 8.x (for Windows 8.1 and Windows Phone 8.x apps).   |
-| [Known issues](known-issues-for-the-advertising-libraries.md)      |  Lists the known issues with the current release of the Microsoft advertising libraries in the Microsoft Store Services SDK (for UWP apps) and the Microsoft Advertising SDK for Windows and Windows Phone 8.x (for Windows 8.1 and Windows Phone 8.x apps).   |
-| [Additional help](additional-help.md)                                    |   Provides links to more resources about developing apps with ads.  |
-| [Important notice - EULA](important-notice-eula.md)                                    |   Provides details about the end user license agreement (EULA) for the Microsoft advertising libraries.   |
+| [Installer les bibliothèques de publicités Microsoft](install-the-microsoft-advertising-libraries.md) |  Fournit des détails sur l’installation, et répertorie les noms des bibliothèques de publicités Microsoft et des bibliothèques de médiation publicitaire tels qu’ils apparaissent dans la boîte de dialogue **Gestionnaire de références** de VisualStudio.  |
+| [Quelle est la différence entre AdMediatorControl et AdControl?](what-is-the-difference-admediatorcontrol-or-adcontrol.md)        |  Décrit les différences entre la classe **AdControl** des bibliothèques de publicités Microsoft et la classe **AdMediatorControl** des bibliothèques de médiation publicitaire.    |
+| [Flux de travail pour la création d’applications contenant des publicités](workflows-for-creating-apps-with-ads.md)     |  Indique les principales étapes du développement et de la publication d’une application contenant des publicités.   |
+| [Notes de publication](release-notes-for-the-advertising-libraries.md)         |  Fournit les notes de publication de la version actuelle des bibliothèques de publicités Microsoft contenues dans le Kit de développement logiciel (SDK) d’engagement et de monétisation de la BoutiqueMicrosoft.   |
+| [Problèmes connus](known-issues-for-the-advertising-libraries.md)      |  Répertorie les problèmes connus liés à la version actuelle des bibliothèques de publicités Microsoft contenues dans le Kit de développement logiciel (SDK) d’engagement et de monétisation de la BoutiqueMicrosoft.   |
+| [Aide supplémentaire](additional-help.md)                                    |   Fournit des liens vers des ressources supplémentaires relatives au développement d’applications comportant des publicités.  |
+| [Remarque importante: CLUF](important-notice-eula.md)                                    |   Fournit des détails sur le Contrat de Licence Utilisateur Final (CLUF) des bibliothèques de publicités Microsoft.   |
 
 
  
@@ -40,6 +42,6 @@ For complete sample projects that demonstrate how to add banner and video inters
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

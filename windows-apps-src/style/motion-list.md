@@ -1,59 +1,59 @@
 ---
 author: mijacobs
-Description: List animations let you insert or remove single or multiple items from a collection, such as a photo album or a list of search results.
-title: Add and delete animations in UWP apps
+Description: "Les animations de liste vous permettent d’insérer ou de supprimer un ou plusieurs éléments dans une collection telle qu’un album photo ou une liste de résultats de recherche."
+title: "Ajout et suppression d’animations dans les applications UWP"
 ms.assetid: A85006AE-4992-457a-B514-500B8BEF5DC8
 label: Motion--add and delete animations
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: b6c57d1ceadd0785a51c518bc51f93892aa472d5
+ms.openlocfilehash: a795cf52c3d062d2131832ac3bc765f45097e849
 
 ---
 
-# Add and delete animations
+# Ajout et suppression d’animations
 
 
 
 
-List animations let you insert or remove single or multiple items from a collection, such as a photo album or a list of search results.
+Les animations de liste vous permettent d’insérer ou de supprimer un ou plusieurs éléments dans une collection telle qu’un album photo ou une liste de résultats de recherche.
 
-**Important APIs**
+**API importantes**
 
--   [**AddDeleteThemeTransition class**](https://msdn.microsoft.com/library/windows/apps/br243048)
-
-
-## Do's and don'ts
+-   [**Classe AddDeleteThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br243048)
 
 
--   Use list animations to add a single new item to an existing set of items. For example, use them when a new email arrives or when a new photo is imported into an existing set.
--   Use list animations to add several items to a set at one time. For example, use them when you import a new set of photos to an existing collection. The addition or deletion of multiple items should happen at the same time, with no delay between the action on the individual objects.
--   Use add and delete list animations as a pair. Whenever you use one of these animations, use the corresponding animation for the opposite action.
--   Use list animations with a list of items to which you can add or delete one element or group of elements at once.
--   Don't use list animations to display or remove a container. These animations are for members of a collection or set that is already being displayed. Use pop-up animations to show or hide a transient container on top of the app surface. Use content transition animations to display or replace a container that is part of the app surface.
--   Don't use list animations on an entire set of items. Use the content transition animations to add or remove an entire collection within your container.
+## Pratiques conseillées et déconseillées
+
+
+-   Utilisez les animations de liste pour ajouter un nouvel élément unique à un ensemble d’éléments existants, par exemple, quand un nouveau courrier électronique arrive ou quand une nouvelle photo est importée dans un ensemble existant.
+-   Utilisez les animations de liste pour ajouter plusieurs éléments à la fois à un ensemble, par exemple, si vous importez un nouvel ensemble de photos dans une collection existante. L’ajout ou la suppression de plusieurs éléments doit s’effectuer en une seule opération, sans délai entre chaque objet.
+-   Utilisez les animations d’ajout et de suppression dans la liste en tant que paire. Chaque fois que vous faites appel à l’une de ces animations, utilisez l’autre pour effectuer l’action opposée correspondante.
+-   Utilisez les animations de liste avec une liste d’éléments à laquelle vous ajoutez ou supprimez un élément ou un groupe d’éléments en même temps.
+-   N’utilisez pas d’animation de liste pour afficher ou supprimer un conteneur. Ces animations sont conçues pour être employées sur les membres d’une collection ou d’un ensemble déjà affiché à l’écran. Utilisez les animations de menu contextuel pour afficher ou masquer un conteneur temporaire au premier plan de la surface de l’application. Utilisez les animations de transition de contenu pour afficher ou remplacer un conteneur faisant partie de la surface de l’application.
+-   N’utilisez pas d’animation de liste sur un ensemble entier d’éléments. Utilisez les animations de transition de contenu pour ajouter ou supprimer une collection entière dans votre conteneur.
 
 
 
-## Related articles
+## Articles connexes
 
 
-**For developers (XAML)**
-* [Animations overview](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [Animating list additions and deletions](https://msdn.microsoft.com/library/windows/apps/xaml/jj649430)
-* [Quickstart: Animating your UI using library animations](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
-* [**AddDeleteThemeTransition class**](https://msdn.microsoft.com/library/windows/apps/br243048)
-
- 
+**Pour les développeurs (XAML)**
+* [Vue d’ensemble des animations](https://msdn.microsoft.com/library/windows/apps/mt187350)
+* [Animation d’ajouts et de suppressions dans la liste](https://msdn.microsoft.com/library/windows/apps/xaml/jj649430)
+* [Démarrage rapide: animation de votre interface utilisateur avec des animations de la bibliothèque](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [**Classe AddDeleteThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br243048)
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

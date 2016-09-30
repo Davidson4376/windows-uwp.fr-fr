@@ -1,95 +1,95 @@
 ---
 author: payzer
-title: Device Portal Xbox Live sandbox API reference
-description: Learn how to access the Xbox Live Sandbox programatically.
+title: "Référence sur les API de sandbox Xbox Live Device Portal"
+description: "Découvrez comment accéder par programme au sandbox Xbox Live."
 translationtype: Human Translation
 ms.sourcegitcommit: a857ba338a971e651653193ff2149f08b1665a36
-ms.openlocfilehash: 2a0bfa2eecffb2b0f5ed0bc691cb90bcd7191321
+ms.openlocfilehash: c1671db55dcb05ab7a126fad271a5e49146fe9ac
 
 ---
 
-# Xbox Live Sandbox API reference   
-You can get and set your Xbox Live sandbox using this REST API.
+# Informations de référence sur les API de sandbox Xbox Live   
+Vous pouvez obtenir et définir vos sandbox Xbox Live à l’aide de cette API REST.
 
-## Get the Xbox Live sandbox
+## Obtenir le sandbox Xbox Live
 
-**Request**
+**Requête**
 
-You can read the current value for the device's Xbox Live sandbox using the following request:
+Vous pouvez lire la valeur actuelle du sandbox Xbox Live de l’appareil en utilisant la requête suivante:
 
-Method      | Request URI
+Méthode      | URI de la requête
 :------     | :-----
 GET | /ext/xboxlive/sandbox
 <br />
-**URI parameters**
+**Paramètres d’URI**
 
-- None
+- Aucun
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**   
-Sandbox - (String) The current Sandbox the device is in.   
+**Réponse**   
+Sandbox: (chaîne) le sandbox actuel dans lequel se trouve l’appareil.   
 
-**Status code**
+**Code d’état**
 
-This API has the following expected status codes.
+Cette API comporte les codes d’état attendus suivants.
 
-HTTP status code      | Description
+Code d’état HTTP      | Description
 :------     | :-----
-200 | The request to access the credentials for the file share was granted.
-4XX | Error codes
-5XX | Error codes
+200 | La requête pour accéder aux informations d’identification pour le partage de fichiers a été accordée.
+4XX | Codes d’erreur
+5XX | Codes d’erreur
 
-## Set the Xbox Live sandbox
-You can change the Xbox Live sandbox for the device using the following request. Note that on Xbox One, the device needs to be restarted before the setting takes effect.
+## Définir le sandbox Xbox Live
+Vous pouvez modifier le sandbox Xbox Live pour l’appareil en utilisant la requête suivante. Veuillez noter que sur Xbox One, vous devez redémarrer l’appareil pour que le paramètre prenne effet.
 
-**Request**
+**Requête**
 
-You can set the current value for the device's Xbox Live sandbox using the following request:
+Vous pouvez définir la valeur actuelle du sandbox Xbox Live de l’appareil en utilisant la requête suivante:
 
-Method      | Request URI
+Méthode      | URI de la requête
 :------     | :-----
 PUT | /ext/xboxlive/sandbox
 <br />
-**URI parameters**
+**Paramètres d’URI**
 
-- None
+- Aucun
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**   
-The request body is a JSON object containing the following field:   
-Sandbox - (String) The new value to set the device's sandbox to.
+**Corps de la requête**   
+Le corps de la requête est un objet JSON contenant le champ suivant:   
+Sandbox: (chaîne) la nouvelle valeur sur laquelle le sandbox de l’appareil doit être défini.
 
-**Response**   
-Sandbox - (String) The current Sandbox the device is in.   
+**Réponse**   
+Sandbox: (chaîne) le sandbox actuel dans lequel se trouve l’appareil.   
 
-**Status code**
+**Code d’état**
 
-This API has the following expected status codes.
+Cette API comporte les codes d’état attendus suivants.
 
-HTTP status code      | Description
+Code d’état HTTP      | Description
 :------     | :-----
-200 | The request to access the credentials for the file share was granted.
-4XX | Error codes
-5XX | Error codes
+200 | La requête pour accéder aux informations d’identification pour le partage de fichiers a été accordée.
+4XX | Codes d’erreur
+5XX | Codes d’erreur
 
 <br />
-**Available device families**
+**Familles d’appareils disponibles**
 
 * Windows Xbox
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO1-->
 
 

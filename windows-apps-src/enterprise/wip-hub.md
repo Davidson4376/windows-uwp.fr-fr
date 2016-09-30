@@ -1,84 +1,77 @@
 ---
 author: normesta
-Description: "Il s’agit d’une rubrique de hub destinée aux développeurs abordant de manière exhaustive la relation de la Protection des informations Windows avec les fichiers, les mémoires tampons, le Presse-papiers, la mise en réseau, les tâches en arrière-plan et la protection des données verrouillées."
-MS-HAID: dev\_enterprise.edp\_hub
-MSHAttr: PreferredLib:/library/windows/apps
+Description: 'This is a hub topic covering the full developer picture of how Windows Information Protection (WIP) relates to files, buffers, clipboard, networking, background tasks, and data protection under lock.'
+MS-HAID: 'dev\_enterprise.edp\_hub'
+MSHAttr: 'PreferredLib:/library/windows/apps'
 Search.Product: eADQiWindows 10XVcnh
-title: Protection des informations Windows (WIP)
-translationtype: Human Translation
-ms.sourcegitcommit: 1070561ea95cd1d884303fdd476b40a9ec88e390
-ms.openlocfilehash: 2beec354ed7dbb3cc2d4cb502977ce028b4eaf1d
-
+title: 'Windows Information Protection (WIP)'
 ---
 
-# Protection des informations Windows (WIP)
+# Windows Information Protection (WIP)
 
-__Remarque__ La stratégie de Protection des informations Windows peut être appliquée à Windows10, version1607.
+__Note__ Windows Information Protection (WIP) policy can be applied to Windows 10, version 1607.
 
-Cette stratégie protège les données qui appartiennent à une organisation en appliquant des stratégies qui sont définies par l’organisation. Si votre application est incluse dans ces stratégies, toutes les données générées par votre application sont soumises aux restrictions de stratégie. Cette rubrique vous aide à créer des applications qui appliquent ces stratégies plus en douceur sans avoir d’impact sur les données personnelles de l’utilisateur.
+This is a hub topic covering the full developer picture of how Windows Information Protection (WIP) relates to files, buffers, clipboard, networking, background tasks, and data protection under lock.
 
-## Tout d’abord, qu’est-ce que la Protection des informations Windows?
+For more info about WIP from the point of view of end-users and administrators, see [Windows Information Protection (WIP) overview](https://technet.microsoft.com/library/dn985838(v=vs.85).aspx).
 
-WIP est un ensemble de fonctionnalités prenant en charge la gestion des périphériques mobiles (GPM) de l’organisation sur les postes de travail, les ordinateurs de bureau, les tablettes et les téléphones. WIP permet à l’organisation de mieux maîtriser comment ses données sont gérées sur les appareils gérés par l’organisation. Par exemple, les administrateurs peuvent identifier les applications autorisées à accéder aux fichiers appartenant à l’organisation et indiquent si les utilisateurs peuvent copier des données à partir de ces fichiers pour les coller ensuite dans des documents personnels.
+## What is WIP?
 
-Voici le principe: Les utilisateurs inscrivent leurs appareils dans le système de gestion des appareils mobiles (GPM) de l’organisation. Un administrateur de l’organisation de gestion utilise Microsoft Intune ou System Center Configuration Manager (SCCM) pour définir, puis déployer une stratégie sur les appareils inscrits.
+WIP is a set of features on desktops, laptops, tablets, and phones for Mobile Device Management (MDM). WIP gives an enterprise greater control over how its data (enterprise files and data blobs) is handled on devices that the enterprise manages.
 
-Cette stratégie identifie les applications qui peuvent accéder aux données d’entreprise (appelée *liste des applications autorisées* de la stratégie). Ces applications peuvent accéder aux fichiers d’entreprise protégés, aux réseaux privés virtuels (VPN) et aux données d’entreprise sur le Presse-papiers ou via un contrat de partage. La stratégie définit également les règles qui régissent les données. Par exemple, si les données peuvent être copiées à partir de fichiers appartenant à l’entreprise, puis collées dans des fichiers n’appartenant pas à l’entreprise.
+-   Enterprise data is tagged with encryption. This is "enterprise-protected data", or just "protected data" for short.
+-   Only apps that the managing enterprise explicitly allows via WIP policy can access enterprise-protected data, for example, in files.
+-   Only apps explicitly allowed via WIP policy have enterprise Virtual Private Network (VPN) access.
+-   App-restriction policy also determines how allowed apps should handle enterprise data.
+-   Policy-based restrictions apply even to enterprise content exchanged via the Windows clipboard or via the Share contract.
+-   On demand, the managing enterprise can revoke the device's access to protected content, essentially wiping the device of enterprise data while leaving personal data intact.
+-   A channel app is an app that downloads protected data. Examples include mail and file-synchronization apps.
 
-Si les utilisateurs désinscrivent leur appareil à partir du système GPM de l’organisation, les administrateurs peuvent effacer à distance les données d’entreprise de l’appareil.
+WIP enhances the [Encrypting File System (EFS)](http://technet.microsoft.com/library/cc700811.aspx) and [Windows Selective Wipe](https://technet.microsoft.com/library/dn486874.aspx) to provide more security and flexibility options. New WIP APIs let you create apps that protect and revoke access to enterprise content, work with protected file properties, and access encrypted data in its raw form. In addition to introducing new APIs for protecting files and folders, it introduces APIs for protecting buffers and streams. It also introduces a set of APIs that allow apps to identify and indicate the enterprise that must enforce data protection policy.
 
-![Cycle de vie de la Protection des informations Windows](images/wip-lifecycle.png)
+So that the managing enterprise can control access to its protected data, the app-restriction policy defines a list of apps, and restrictions on those apps. By default, an app is unable to autonomously access protected data. To gain access, the app must be added to a list called the allowed list, and apps on the allowed list are called allowed apps. On a managed device, Windows can restrict and/or audit access to protected data on the clipboard or via the share contract, so that access by an app not on the allowed list is audited and/or requires user consent, or else is completely blocked.
 
-> **En savoir plus sur la Protection des informations Windows** <br>
-* [Présentation de la Protection des informations Windows](https://blogs.technet.microsoft.com/windowsitpro/2016/06/29/introducing-windows-information-protection/)
-* [Protéger vos données d’entreprise à l’aide de la Protection des informations Windows (WIP)](https://technet.microsoft.com/library/dn985838(v=vs.85).aspx)
+Policy for WIP is provided to a device by the managing enterprise (this makes the device a "managed device"). Provisioning of policy can happen through enrollment by the user in mobile device management (MDM), through manual configuration by IT, or through another management and policy delivery mechanism such as System Center Configuration Manager (SCCM).
 
-Si votre application se trouve sur la liste autorisée, toutes les données générées par votre application sont soumises aux restrictions de stratégie. Cela signifie que si les administrateurs révoquent l’accès de l’utilisateur aux données d’entreprise, ces utilisateurs perdent l’accès à toutes les données produites par votre application.
+WIP file protection leverages Rights Management Service (RMS) keys, if provisioned, since these keys can roam across devices and therefore allow protected data to roam. In the absence of RMS keys, these APIs will fall back to local Selective Wipe keys and limit roaming functionality. Data that roams encrypted will be accessible on down-level Windows and on third-party devices via platform-specific RMS apps provided by Microsoft, as well as with RMS-enlightened third party apps.
 
-Cela est approprié si votre application est conçue uniquement à des fins professionnelles Mais si votre application crée des données que les utilisateurs considèrent comme personnelles, vous souhaiterez rendre votre application *compatible* afin qu’elle fasse la distinction de manière intelligente entre les données personnelles et les données d’entreprise. Cette application est considérée comme *compatible avec l’entreprise* dans la mesure où elle peut appliquer la stratégie d’entreprise de manière fluide tout en préservant l’intégrité des données personnelles de l’utilisateur.
+In summary—data protected with the WIP APIs can be managed by the enterprise, so you can build your app in a way that helps the enterprise protect and manage its data. In other words, you can build an enterprise-ready app. And, helping you do just that is what the rest of this guide is about.
 
-## Créer une application compatible avec l’entreprise
+## Enterprise-enlightened apps
 
-Utiliser les API WIP pour rendre votre application compatible avec l’entreprise et la déclarer comme tel.
+Once your app is on the allowed list, it can read protected data. And, by default, any data output by your app is automatically protected by the system. That automatic protection is because the managing enterprise must, one way or another, ensure that enterprise data stays under its own control. But, keeping your app on such a short leash is only the default way to achieve that. A better way is to ask the system to trust you enough to give you more power and flexibility. And, the price of admission for that is to make your app smarter. That means going a step further than getting on the allowed list; it means making your app—and declaring it to be—enterprise-enlightened.
 
-Rendez votre application compatible si elle doit être utilisée à la fois à des fins personnelles et professionnelles.
+Your app is enlightened if it uses the techniques we'll describe to autonomously keep enterprise data protected whether the data is at rest, in use, or in flight. Your enlightened app recognizes enterprise data sources and enterprise data, and protects it when it arrives in your app. Being enlightened also means being aware of, and abiding by, WIP policy whenever enterprise data leaves your app. This includes disallowing content from going to a non-enterprise network end-point, wrapping the data in a portable encrypted form before allowing it to roam, and potentially (depending on policy settings), prompting the user before pasting enterprise data into an app not on the allowed list. Once you've made your app enlightened, your app announces to the system that it is enlightened by declaring the restricted **enterpriseDataPolicy** capability. For more info about working with restricted capabilities, see [Special and restricted capabilities](https://msdn.microsoft.com/library/windows/apps/mt270968#special_and_restricted_capabilities).
 
-Rendez votre application compatible si vous voulez gérer de manière fluide l’application des éléments de stratégie.
+Ideally, all enterprise data is protected data, both at rest and in flight. But, inevitably, there must be some brief period between enterprise data being initially generated and it being protected. And, sometimes enterprise data can exist on an enterprise network endpoint without being encrypted. An enlightened app is capable of autonomously protecting such data; allowed-but-not-enlightened apps will need to have protection imposed by the system.
 
-Par exemple, si la stratégie permet aux utilisateurs de coller des données d’entreprise dans un document personnel, vous pouvez empêcher les utilisateurs d’avoir à répondre à une boîte de dialogue de consentement avant le collage des données. De même, vous pouvez présenter des boîtes de dialogue informatives personnalisées en réponse à ces types d’événements.
+This is because an unenlightened app always runs in enterprise mode. The system makes sure of that. But, an enlightened app is free to move between enterprise mode and personal mode at will and as appropriate for the kind of data the app is working with at any given time. It's also important for an enlightened app to respect personal data, and not to tag personal data as enterprise data. An enlightened app may concurrently handle both enterprise data and personal data, so long as these promises are kept. The next section shows how to switch modes in code.
 
-Si vous êtes prêt à rendre votre application compatible, reportez-vous à l’un de ces guides:
+## WIP features at a glance
 
-**Pour les applications de plateforme Windows universelle (UWP) générées à l’aide de C#**
+**File and buffer protection**
 
-[Créer une application compatible qui utilise des données d’entreprise et personnelles](wip-dev-guide.md)
+-   Your app can protect, containerize and wipe data associated with an enterprise identity.
+-   Key-management is handled by Windows. Windows uses the enterprise’s RMS keys when they are available to the device; otherwise, Windows falls back to local Selective Wipe protection.
 
-**Pour les applications de bureau que vous créez à l’aide de C++**
+**Device policy management**
 
-[Créer une application compatible qui utilise des données d’entreprise et personnelles (C++)](http://go.microsoft.com/fwlink/?LinkId=822192)
+-   Your app can query the identity (enterprise or organization) that is managing the device.
+-   Your app can protect users from inadvertent data disclosure by associating an identity with the data in question.
+-   Your app can protect enterprise resources over the network by checking for enterprise-owned network endpoint connections (servers, IP ranges), and associating the data to a managed (that is, MDM-enrolled) identity.
+-   The WIP APIs only work with managed identities that have an WIP policy defined on the device. If an identity is not managed, then, the APIs indicate that to the application, when necessary.
 
-Entre autres choses, les applications d’entreprise compatibles partagent les qualités suivantes:
+## Enlighten your app
 
-* Elles protègent les données d’entreprise, que celles-ci soient au repos, en cours d’utilisation ou en cours de transfert.
-* Elles reconnaissent les données personnelles et évitent que ces données soient soumises aux restrictions de stratégie.
-* Elles reconnaissent les données d’entreprise et protègent ces données lorsqu’elles arrivent dans l’application.
-* Elles protègent les données d’entreprise qui quittent l’application.
+If you're ready to enlighten your app, see one of these guides:
 
-  Par exemple elles empêchent l’envoi de données vers un point de terminaison réseau n’appartenant pas à l’entreprise, habillent les données sous forme chiffrée portable avant d’autoriser leur itinérance et demandent potentiellement (selon les paramètres de stratégie) l’autorisation à l’utilisateur avant de coller les données d’entreprise dans une application qui ne figure pas sur la liste d’autorisation.
+**For Universal Windows Platform (UWP) apps that you build by using C#**
 
-> **Remarque**La protection des fichiers WIP exploite les clés Rights Management Services (RMS), si elles sont configurées, dans la mesure où ces clés sont conservées d’un appareil à l’autre et, par conséquent, permettent l’itinérance des données protégées. En l’absence de clés RMS, ces API reviennent aux clés de réinitialisation sélective locales et limitent les fonctionnalités d’itinérance. Les données itinérantes chiffrées seront accessibles sur Windows de niveau inférieur et sur les appareils tiers via des applications RMS spécifiques à la plateforme fournies par Microsoft, ainsi qu’avec des applications tierces compatibles RMS.
+[Build an enlightened app that consumes both enterprise and personal data](wip-dev-guide.md).
 
+**For Desktop apps that you build by using C++**
 
-
-
-
-
-
-
- 
-
-
-
-<!--HONumber=Aug16_HO3-->
+[Build an enlightened app that consumes both enterprise and personal data (C++)](http://go.microsoft.com/fwlink/?LinkId=822192).
 
 
+ 

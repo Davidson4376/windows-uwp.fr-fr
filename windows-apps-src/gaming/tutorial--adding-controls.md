@@ -5,7 +5,7 @@ description: "Examinons maintenant la façon dont l’exemple de jeu implémente
 ms.assetid: f9666abb-151a-74b4-ae0b-ef88f1f252f8
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 49214f3bc14b6a475a77c5dbb7c0f08bb0818df6
+ms.openlocfilehash: b3297ffd92d9a61d73c574def7e8101dc9196a69
 
 ---
 
@@ -1920,6 +1920,6 @@ Cet article s’adresse aux développeurs de Windows10 qui développent des appl
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

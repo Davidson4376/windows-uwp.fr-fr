@@ -4,44 +4,34 @@ ms.assetid: CB924E17-C726-48E7-A445-364781F4CCA1
 description: "Ici est décrite l’utilisation des API dans l’espace Windows.Media.Audio pour créer des graphiques pour le routage audio, le mixage et le traitement audio."
 title: Graphiques audio
 translationtype: Human Translation
-ms.sourcegitcommit: 26e9820a0a4a91462b1952f7ed8dc8eb5f3536f7
-ms.openlocfilehash: 087db9c426a643cc4c7ecfa7686409ed219b07a5
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 7e8df66a1fc4c95cb8b0b4be9eded8ef58b6803a
 
 ---
 
 # Graphiques audio
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cet article montre comment utiliser les API dans l’espace de noms [**Windows.Media.Audio**](https://msdn.microsoft.com/library/windows/apps/dn914341) pour créer des graphiques pour le routage audio, le mixage et les scénarios de traitement audio.
 
-Un *graphique audio* est un ensemble de nœuds audio interconnectés par lequel passe le flux des données audio. 
-
-- Les *nœuds d’entrée audio* transmettent au graphique les données en provenance des appareils d’entrée audio, des fichiers audio ou du code personnalisé. 
-
-- L’audio traitée par le graphique se dirige vers les *nœuds de sortie audio*. L’audio peut être routée à la sortie du graphique vers des appareils de sortie audio, des fichiers audio ou du code personnalisé. 
-
-- Les *nœuds prémixés* extraient l’audio à partir d’un ou plusieurs nœuds et la combine en une seule sortie pouvant être routée vers d’autres nœuds dans le graphique. 
-
-Une fois tous les nœuds créés et les connexions entre eux configurées, vous pouvez démarrer le graphique audio. Le flux de données audio est alors transmis des nœuds d’entrée aux nœuds de sortie, par le biais des nœuds prémixés. Ce modèle facilite et accélère l’implémentation de scénarios, tels que l’enregistrement sur un fichier audio à partir du microphone de l’appareil, la lecture audio à partir d’un fichier vers le haut-parleur de l’appareil ou le mixage audio à partir de plusieurs sources.
+Un graphique audio est un ensemble de nœuds audio interconnectés par lequel passe le flux des données audio. Les nœuds d’entrée audio transmettent au graphique les données en provenance des appareils d’entrée audio, des fichiers audio ou du code personnalisé. L’audio traitée par le graphique se dirige vers les nœuds de sortie audio. L’audio peut être routée à la sortie du graphique vers des appareils de sortie audio des fichiers audio ou du code personnalisé. Le dernier type de nœud est un nœud prémixé qui extrait l’audio à partir d’un ou plusieurs nœuds et la combine en une seule sortie pouvant être routée vers d’autres nœuds dans le graphique. Une fois tous les nœuds créés et les connexions entre eux configurées, vous pouvez démarrer le graphique audio. Le flux de données audio est alors transmis des nœuds d’entrée aux nœuds de sortie, par le biais des nœuds prémixés. Ce modèle facilite et accélère l’implémentation de scénarios, tels que l’enregistrement sur un fichier audio à partir du microphone de l’appareil, la lecture audio à partir d’un fichier vers le haut-parleur de l’appareil ou le mixage audio à partir de plusieurs sources.
 
 Des scénarios supplémentaires sont disponibles en ajoutant des effets audio au graphique audio. Chaque nœud d’un graphique audio peut contenir plusieurs effets audio qui effectuent le traitement sur l’audio traversant le nœud. Plusieurs effets intégrés comme l’écho, l’égaliseur, la limitation et la réverbération peuvent être attachés à un nœud audio simplement avec quelques lignes de code. Vous pouvez aussi créer vos propres effets audio pour produire les mêmes effets intégrés.
 
-> [!NOTE]  
-> L’[exemple AudioGraph UWP](http://go.microsoft.com/fwlink/?LinkId=619481) implémente le code décrit dans cette vue d’ensemble. Vous pouvez télécharger l’exemple pour voir le code en contexte ou pour vous en servir comme point de départ pour votre propre application.
+**Remarque**  
+L’[exemple AudioGraph UWP](http://go.microsoft.com/fwlink/?LinkId=619481) implémente le code décrit dans cette vue d’ensemble. Vous pouvez télécharger l’exemple pour voir le code en contexte ou pour vous en servir comme point de départ pour votre propre application.
 
 ## Choix de Windows Runtime AudioGraph ou XAudio2
 
 Les API de graphique audio Windows Runtime offrent des fonctionnalités qui peuvent également être implémentées à l’aide d’[API XAudio2](https://msdn.microsoft.com/library/windows/desktop/hh405049) COM. Les fonctionnalités de l’infrastructure de graphique audio suivantes diffèrent entre Windows Runtime et XAudio2.
 
-Les API de graphique audio Windows Runtime:
-
--   Sont bien plus simples d’utilisation que XAudio2.
--   Peuvent être utilisées à partir de C# , en plus de la prise en charge pour C++.
--   Peuvent utiliser directement des fichiers audio, notamment les formats de fichier compressé. XAudio2 fonctionne uniquement sur les mémoires tampons audio et n’offre pas de fonctionnalités d’E/S fichier.
--   Peuvent utiliser le pipeline audio à faible latence dans Windows10.
--   Prennent en charge le changement de point de terminaison automatique lorsque les paramètres de point de terminaison par défaut sont utilisés. Par exemple, si l’utilisateur bascule du haut-parleur de l’appareil à un casque, l’audio est automatiquement redirigée vers la nouvelle entrée.
+-   Les API de graphique audio Windows Runtime sont beaucoup plus faciles à utiliser que celles de XAudio2.
+-   Les API de graphique audio Windows Runtime peuvent être utilisées depuis C# et sont prises en charge par C++.
+-   Les API de graphique audio Windows Runtime peuvent utiliser directement des fichiers audio, notamment les formats de fichier compressé. XAudio2 fonctionne uniquement sur les mémoires tampons audio et n’offre pas de fonctionnalités d’E/S fichier.
+-   Les API de graphique audio Windows Runtime peuvent utiliser le pipeline audio de faible latence dans Windows 10.
+-   Les API de graphique audio Windows Runtime prennent en charge le changement de point de terminaison automatique lorsque les paramètres de point de terminaison par défaut sont utilisés. Par exemple, si l’utilisateur bascule du haut-parleur de l’appareil à un casque, l’audio est automatiquement redirigée vers la nouvelle entrée.
 
 ## Classe AudioGraph
 
@@ -210,34 +200,6 @@ L’API de graphique audio vous permet d’ajouter des effets audio pour chaque 
 -   Vous pouvez créer vos propres effets audio qui implémentent [**IAudioEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608044) et les appliquer à n’importe quel nœud dans un graphique audio.
 -   Chaque type de nœud expose une méthode **DisableEffectsByDefinition** qui désactive tous les effets dans la liste du nœud **EffectDefinitions** qui ont été ajoutés à l’aide de la définition spécifiée. **EnableEffectsByDefinition** active les effets avec la définition spécifiée.
 
-## Audio spatial
-À partir de Windows 10, version 1607, **AudioGraph** prend en charge l’audio spatial, ce qui vous permet de spécifier l’emplacement de l’espace3D à partir duquel l’audio est émis d’un nœud d’entrée ou prémixé. Vous pouvez également spécifier une forme et la direction d’émission de l’audio, une vitesse qui sera utilisée pour appliquer un effet Doppler à l’audio du nœud et définir un modèle de décroissance décrivant l’atténuation de l’audio avec la distance. 
-
-Pour créer un émetteur, vous pouvez dans un premier temps créer une forme dans laquelle l’audio est projeté de l’émetteur, qui peut être conique ou omnidirectionnel. La classe [**AudioNodeEmitterShape**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioNodeEmitterShape) fournit des méthodes statiques dédiées à la création de chacune de ces formes. Ensuite, créez un modèle de décroissance. Ce dernier définit la manière dont le volume de l’audio de l’émetteur décroît à mesure de l’augmentation de la distance avec l’écouteur. La méthode [**CreateNatural**](https://msdn.microsoft.com/library/windows/apps/mt711740) crée un modèle de décroissance qui émule la décroissance naturelle de l’audio à l’aide d’un modèle de décroissance fonction du carré de la distance. Enfin, créez un objet [**AudioNodeEmitterSettings**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioNodeEmitterSettings). Actuellement, cet objet est utilisé uniquement pour activer et désactiver l’atténuation de Doppler basée sur la vélocité de l’audio de l’émetteur. Appelez le constructeur [**AudioNodeEmitter**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioNodeEmitter.#ctor), en passant les objets d’initialisation nouvellement créés. Par défaut, l’émetteur est placé à l’origine, mais vous pouvez définir sa position avec la propriété [**Position**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioNodeEmitter.Position).
-
-> [!NOTE] 
-> Les émetteurs de nœud audio peuvent traiter uniquement de l’audio au format mono avec un taux d’échantillonnage de 48kHz. Toute tentative d’utilisation d’audio stéréo ou d’audio avec un taux d’échantillonnage différent provoquera la levée d’une exception.
-
-Vous affectez l’émetteur à un nœud audio lors de sa création en appliquant la méthode de création surchargée pour le type de nœud souhaité. Dans cet exemple, [**CreateFileInputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914225) est utilisé pour créer un nœud d’entrée de fichier à partir du fichier spécifié et l’objet [**AudioNodeEmitter**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioNodeEmitter) que vous souhaitez associer au nœud.
-
-[!code-cs[CreateEmitter](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateEmitter)]
-
-La classe [**AudioDeviceOutputNode**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioDeviceOutputNode) qui produit de l’audio du graphique à destination de l’utilisateur présente un objet écouteur, accessible avec la propriété [**Listener**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioDeviceOutputNode.Listener), qui représente l’emplacement, l’orientation et la vélocité de l’utilisateur dans l’espace3D. Les positions de l’ensemble des émetteurs dans le graphique sont relatives à la position et à l’orientation de l’objet émetteur. Par défaut, l’écouteur se trouve à l’origine (0,0,0) orientée vers l’avant le long de l’axeZ, mais vous pouvez définir sa position et son orientation avec les propriétés [**Position**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioNodeListener.Position) et [**Orientation**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioNodeListener.Orientation).
-
-[!code-cs[Listener](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetListener)]
-
-Vous pouvez mettre à jour l’emplacement, la vitesse et la direction des émetteurs lors de l’exécution pour simuler le mouvement d’une source audio par le biais de l’espace 3D.
-
-[!code-cs[UpdateEmitter](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetUpdateEmitter)]
-
-Vous pouvez également mettre à jour l’emplacement, la vitesse et la direction de l’objet écouteur lors de l’exécution pour simuler le mouvement de l’utilisateur par le biais de l’espace 3D.
-
-[!code-cs[UpdateListener](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetUpdateListener)]
-
-Par défaut, l’audio spatial est calculé à l’aide de l’algorithmeHRTF(Head-Relative Transfer Function) afin d’atténuer l’audio en fonction de sa forme, de sa vitesse et de sa position par rapport à l’écouteur. Vous pouvez définir la propriété [**SpatialAudioModel**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioNodeEmitter.SpatialAudioModel) sur **FoldDown** afin d’utiliser une méthode simple de mélange stéréo de simulation de l’audio spatial moins précise, mais également moins exigeante pour le processeur et les ressources mémoire.
-
-## Voir également
-- [Lecture de contenu multimédia](media-playback.md)
  
 
  
@@ -248,6 +210,6 @@ Par défaut, l’audio spatial est calculé à l’aide de l’algorithmeHRTF(He
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

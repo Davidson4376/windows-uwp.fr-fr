@@ -1,89 +1,80 @@
 ---
 author: Jwmsft
-Description: Use a tooltip to reveal more info about a control before asking the user to perform an action.
-title: Tooltips
+Description: "Utilisez une info-bulle pour fournir plus d’informations sur un contrôle avant d’inviter l’utilisateur à effectuer une action."
+title: Info-bulles
 ms.assetid: A21BB12B-301E-40C9-B84B-C055FD43D307
 label: Tooltips
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 4110f902adf01e5e25ac674faf9be8faf61f4ea0
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 0529f212e9fac290bb58925e992518ab0e803bfa
 
 
 ---
-# Tooltips
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
+# Info-bulles
 
 
 
+Une info-bulle est une brève description qui est liée à un autre contrôle ou objet. Les info-bulles aident à comprendre des objets peu familiers qui ne sont pas directement décrits dans l’interface utilisateur. Une info-bulle s’affiche automatiquement lorsque l’utilisateur déplace le focus, appuie de façon prolongée ou pointe avec sa souris sur un contrôle. L’info-bulle disparaît après quelques secondes, ou lorsque l’utilisateur déplace le focus du doigt, du pointeur ou du clavier/boîtier de commande.
 
-A tooltip is a short description that is linked to another control or object. Tooltips help users understand unfamiliar objects that aren't described directly in the UI. They display automatically when the user moves focus to, presses and holds, or hovers the mouse pointer over a control. The tooltip disappears after a few seconds, or when the user moves the finger, pointer or keyboard/gamepad focus.
+![Info-bulle](images/controls/tool-tip.png)
 
-![A tooltip](images/controls/tool-tip.png)
+<span class="sidebar_heading" style="font-weight: bold;">API importantes</span>
 
-<div class="important-apis" >
-<b>Important APIs</b><br/>
-<ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br227608"><strong>ToolTip class</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice"><strong>ToolTipService class</strong></a></li>
-</ul>
+-   [**Classe ToolTip**](https://msdn.microsoft.com/library/windows/apps/br227608)
+-   [**Classe ToolTipService**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice)
 
-</div>
-</div>
+## Est-ce le contrôle approprié?
 
+Utilisez une info-bulle pour fournir plus d’informations sur un contrôle avant d’inviter l’utilisateur à effectuer une action. Les info-bulles doivent être utilisées avec parcimonie, et uniquement quand elles aident l’utilisateur à accomplir une tâche. En règle générale, si les informations sont déjà disponibles autre part, n’ajoutez pas une info-bulle. Une info-bulle utile donne un éclairage sur une action qui n’est pas bien expliquée.
 
+Quand utiliser une info-bulle Pour vous décider, posez-vous les questions suivantes:
 
+-   **Les informations doivent-elles devenir visibles lors du passage du pointeur?**
+    Si ce n’est pas le cas, utilisez un autre contrôle. Les info-bulles doivent uniquement être affichées par une action de l’utilisateur; ne les laissez jamais s’afficher d’elles-mêmes.
 
-## Is this the right control?
+-   **Le contrôle a-t-il une étiquette avec un libellé ?**
+    Si ce n’est pas le cas, utilisez une info-bulle pour l’indiquer. Attribuer une étiquette à la plus grande partie des contrôles est une bonne habitude de conception de l’expérience utilisateur et pour ceci, vous n’avez pas besoin d’info-bulles. Les contrôles et les commandes des barres d’outils affichant seulement des icônes doivent être accompagnés d’une info-bulle.
 
-Use a tooltip to reveal more info about a control before asking the user to perform an action. Tooltips should be used sparingly, and only when they are adding distinct value for the user who is trying to complete a task. One rule of thumb is that if the information is available elsewhere in the same experience, you do not need a tooltip. A valuable tooltip will clarify an unclear action.
+-   **Un objet a-t-il besoin d’une description ou d’informations complémentaires ?**
+    Si c’est le cas, utilisez une info-bulle. Mais le texte doit être complémentaire, c’est-à-dire non essentiel aux tâches principales. S’il est essentiel, mettez-le directement dans l’interface utilisateur de sorte que les utilisateurs le trouvent sans peine.
 
-When should you use a tooltip? To decide, consider these questions:
+-   **L’information complémentaire est-elle une erreur, un avertissement ou un état ?**
+    Si c’est le cas, utilisez un autre élément d’interface utilisateur, tel un menu volant.
 
--   **Should info become visible based on pointer hover?**
-    If not, use another control. Display tips only as the result of user interaction, never display them on their own.
+-   **Les utilisateurs doivent-ils interagir avec l’info-bulle ?**
+    Le cas échéant, utilisez un autre contrôle. Il est impossible d’interagir avec une info-bulle parce qu’elle disparaît lorsqu’on déplace la souris.
 
--   **Does a control have a text label?**
-    If not, use a tooltip to provide the label. It is a good UX design practice to label most controls inline and for these you don't need tooltips. Toolbar controls and command buttons showing only icons need tooltips.
+-   **Les utilisateurs ont-ils besoin d’imprimer l’information complémentaire ?**
+    Le cas échéant, utilisez un autre contrôle.
 
--   **Does an object benefit from a description or further info?**
-    If so, use a tooltip. But the text must be supplemental — that is, not essential to the primary tasks. If it is essential, put it directly in the UI so that users don't have to discover or hunt for it.
+-   **Les utilisateurs pourraient-ils être ennuyés ou gênés par les info-bulles ?**
+    Si cela peut être le cas, envisagez une autre solution, notamment de ne rien ajouter du tout. Si les info-bulles sont susceptibles de gêner l’utilisateur, permettez-lui de les désactiver.
 
--   **Is the supplemental info an error, warning, or status?**
-    If so, use another UI element, such as a flyout.
+## Exemple
 
--   **Do users need to interact with the tip?**
-    If so, use another control. Users can't interact with tips because moving the mouse makes them disappear.
+Une info-bulle dans l’application Bing Cartes.
 
--   **Do users need to print the supplemental info?**
-    If so, use another control.
+![Une info-bulle dans l’application Bing Cartes](images/control-examples/tool-tip-maps.png)
 
--   **Will users find the tips annoying or distracting?**
-    If so, consider using another solution — including doing nothing at all. If you do use tips where they might be distracting, allow users to turn them off.
+## Recommandations
 
-## Example
+-   Utilisez les info-bulles avec parcimonie (ou pas du tout). Les info-bulles sont une interruption. Une info-bulle peut être aussi distrayante qu’une fenêtre contextuelle. Dès lors, utilisez-les seulement si elles apportent un plus.
+-   Veillez à ce que le texte de l’info-bulle soit concis. Les info-bulles sont adaptées aux phrases courtes et aux fragments de phrases. La lecture de grands blocs de texte peut prendre du temps et l’info-bulle risque d’expirer avant que l’utilisateur ait fini de la lire.
+-   Veillez à ce que l’information complémentaire soit utile et pertinente. Le texte de l’info-bulle doit être instructif. N’écrivez pas quelque chose qui est évident ou qui apparaît déjà à l’écran. Le texte de l’info-bulle n’étant pas toujours visible, il doit apporter une information complémentaire que l’utilisateur n’est pas obligé de lire. Les informations importantes doivent être communiquées via un étiquetage explicite des contrôles ou via un texte complémentaire placé directement dans l’interface utilisateur.
+-   Utilisez les images de façon appropriée. Il est parfois préférable d’utiliser une image dans une info-bulle. Par exemple, quand l’utilisateur passe le curseur sur un lien hypertexte, vous pouvez utiliser une info-bulle pour afficher un aperçu de la page liée.
+-   N’utilisez pas d’info-bulle pour afficher du texte déjà visible dans l’interface utilisateur. Par exemple, ne placez pas sur un bouton une info-bulle dont le texte est identique à celui du bouton.
+-   Ne placez pas de contrôles interactifs à l’intérieur de l’info-bulle.
+-   Ne placez pas d’images qui semblent être interactives à l’intérieur de l’info-bulle.
 
-A tooltip in the Bing Maps app.
-
-![A tooltip in the Bing Maps app](images/control-examples/tool-tip-maps.png)
-
-## Recommendations
-
--   Use tooltips sparingly (or not at all). Tooltips are an interruption. A tooltip can be as distracting as a pop-up, so don't use them unless they add significant value.
--   Keep the tooltip text concise. Tooltips are perfect for short sentences and sentence fragments. Large blocks of text can be overwhelming and the tooltip may time out before the user has finished reading.
--   Create helpful, supplemental tooltip text. Tooltip text must be informative. Don't make it obvious or just repeat what is already on the screen. Because tooltip text isn't always visible, it should be supplemental info that users don't have to read. Communicate important info using self-explanatory control labels or in-place supplemental text.
--   Use images when appropriate. Sometimes it's better to use an image in a tooltip. For example, when the user hovers over a hyperlink, you can use a tooltip to show a preview of the linked page.
--   Don't use a tooltip to display text already visible in the UI. For example, don't put a tooltip on a button that shows the same text of the button.
--   Don't put interactive controls inside the tooltip.
--   Don't put images that look like they are interactive inside the tooltip.
-
-Related topics
+<span id="related_topics"></span>Rubriques connexes
 -----------------------------------------------
 
-* [**ToolTip class**](https://msdn.microsoft.com/library/windows/apps/br227608)
+* [**Classe ToolTip**](https://msdn.microsoft.com/library/windows/apps/br227608)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

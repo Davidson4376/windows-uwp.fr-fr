@@ -1,27 +1,26 @@
 ---
 author: Mtoepke
-title: UWP on Xbox One samples
-description: Samples and libraries to help you build great Xbox One and TV experiences.
+title: "Exemples d’applications UWP sur XboxOne"
+description: "Exemples et bibliothèques pour vous aider à créer des applications réussies pour Xbox One et la télévision."
+area: Xbox
 translationtype: Human Translation
-ms.sourcegitcommit: cee28021caddaf017b32e9bbce3fa31f3f77f4f7
-ms.openlocfilehash: 21aeb9ed928d0a0e9676245e86617cd24d5e3257
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 6f38f5aabb6a409fab894bf7127ad4011162f7c6
 
 ---
 
-# UWP on Xbox One samples
+# Exemples d’applications UWP sur XboxOne
 
-TVHelpers is a set of JavaScript and XAML/C# samples and libraries to help you build great Xbox One and TV experiences in JavaScript and C#. TVJS is a library that helps you build premium Universal Windows Platform (UWP) apps for Xbox One. 
-
-TVJS includes support for automatic controller navigation, rich media playback, search, and more. You can use TVJS with your hosted web app just as easily as with a packaged web UWP app with full access to the Windows Runtime APIs.
+TVHelpers est un ensemble d’exemples et de bibliothèques JavaScript et XAML/C# pour vous aider à créer des applications réussies pour Xbox One et la télévision en JavaScript et C#. TVJS est une bibliothèque qui vous permet de créer des applications UWP de grande qualité pour XboxOne. TVJS inclut la prise en charge de la navigation automatique par manette, la lecture de contenus multimédias enrichis, la recherche et plus encore. Vous pouvez utiliser TVJS avec votre application web hébergée tout aussi facilement qu’avec une application UWP web empaqueté avec accès complet aux API WindowsRuntime.
   
-For more information, see the [TVHelpers](https://github.com/Microsoft/TVHelpers) project and the project [wiki](https://github.com/Microsoft/TVHelpers/wiki).
+Pour plus d’informations, voir le projet [TVHelpers](https://github.com/Microsoft/TVHelpers) et le projet [wiki](https://github.com/Microsoft/TVHelpers/wiki).
 
-## See also
+## Voir aussi
 
-- [UWP on Xbox One](index.md)
+- [UWP sur XboxOne](index.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

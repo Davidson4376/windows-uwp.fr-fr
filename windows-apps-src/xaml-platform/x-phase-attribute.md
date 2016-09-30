@@ -1,41 +1,41 @@
 ---
 author: jwmsft
-title: xPhase attribute
-description: Use xPhase with the xBind markup extension to render ListView and GridView items incrementally and improve the panning experience.
+title: Attribut xPhase
+description: "Utilisez xPhase avec l’extension de balisage {x&#58;Bind} pour rendre les éléments ListView et GridView de façon incrémentielle et améliorer l’expérience de mouvement panoramique."
 ms.assetid: BD17780E-6A34-4A38-8D11-9703107E247E
 translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: c6100f59bb91bc3c6451fc2167d914b0a4a36ded
+ms.openlocfilehash: dfa12909d19a44ed38939c612712c8fe90f3f584
 
 ---
 
-# x:Phase attribute
+# Attribut x&#58;Phase
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Use **x:Phase** with the [{x:Bind} markup extension](x-bind-markup-extension.md) to render [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) and [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) items incrementally and improve the panning experience. **x:Phase** provides a declarative way of achieving the same effect as using the [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/dn298914) event to manually control the rendering of list items. Also see [Update ListView and GridView items incrementally](../debug-test-perf/optimize-gridview-and-listview.md#update-items-incrementally).
+Utilisez **x:Phase** avec l’[extension de balisage {x:Bind}](x-bind-markup-extension.md) pour rendre les éléments [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) et [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) de façon incrémentielle et améliorer l’expérience de mouvement panoramique. **x:Phase** offre un moyen déclaratif d’obtenir le même effet que l’utilisation de l’événement [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/dn298914) pour contrôler manuellement le rendu des éléments de liste. Voir aussi [Mettre à jour les éléments ListView et GridView de façon incrémentielle](../debug-test-perf/optimize-gridview-and-listview.md#update-items-incrementally).
 
-## XAML attribute usage
+## Utilisation des attributs XAML
 
 
 ``` syntax
 <object x:Phase="PhaseValue".../>
 ```
 
-## XAML values
+## Valeurs XAML
 
 
-| Term | Description |
+| Terme | Description |
 |------|-------------|
-| PhaseValue | A number that indicates the phase in which the element will be processed. The default is 0. | 
+| PhaseValue | Valeur numérique indiquant la phase dans laquelle l’élément sera traité. La valeur par défaut est 0. | 
 
-## Remarks
+## Remarques
 
-If a list is panned fast with touch, or using the mouse wheel, then depending on the complexity of the data template, the list may not be able to render items fast enough to keep up with the speed of scrolling. This is particularly true for a portable device with a power-efficient CPU such as a phone or a tablet.
+Si une liste est rapidement panomariquée avec une interaction tactile ou à l’aide de la roulette de la souris, selon la complexité du modèle de données, la liste peut ne pas être pas en mesure de rendre des éléments assez rapidement pour suivre la vitesse de défilement. Cela est particulièrement vrai pour un appareil mobile doté d’un processeur économe en énergie, tel qu’un téléphone ou une tablette.
 
-Phasing enables incremental rendering of the data template so that the contents can be prioritized, and the most important elements rendered first. This enables the list to show some content for each item if panning fast, and will render more elements of each template as time permits.
+L’exécution par phases permet un rendu incrémentiel du modèle de données afin que le contenu puisse être hiérarchisé, et les éléments les plus importants rendus en priorité. La liste peut ainsi afficher du contenu pour chaque élément en cas de mouvement panoramique rapide, et rendre davantage d’éléments de chaque modèle si le temps le permet.
 
-## Example
+## Exemple
 
 ```xml
 <DataTemplate x:Key="PhasedFileTemplate" x:DataType="model:FileItem">
@@ -59,28 +59,28 @@ Phasing enables incremental rendering of the data template so that the contents 
 </DataTemplate>
 ```
 
-The data template describes 4 phases:
+Le modèle de données décrit 4 phases :
 
-1.  Presents the DisplayName text block. All controls without a phase specified will be implicitly considered to be part of phase 0.
-2.  Shows the prettyDate text block.
-3.  Shows the prettyFileSize and prettyImageSize text blocks.
-4.  Shows the image.
+1.  Présente le bloc de texte DisplayName. Tous les contrôles sans phase spécifiée sont implicitement considérés comme faisant partie de la phase de 0.
+2.  Affiche le bloc de texte prettyDate.
+3.  Affiche les blocs de texte prettyFileSize et prettyImageSize.
+4.  Affiche l’image.
 
-Phasing is a feature of [{x:Bind}](x-bind-markup-extension.md) that works with controls derived from [**ListViewBase**](https://msdn.microsoft.com/library/windows/apps/br242879) and that incrementally processes the item template for data binding. When rendering list items, **ListViewBase** renders a single phase for all items in the view before moving onto the next phase. The rendering work is performed in time-sliced batches so that as the list is scrolled, the work required can be re-assessed, and not performed for items that are no longer visible.
+L’exécution par phases est une fonctionnalité de [{x:Bind}](x-bind-markup-extension.md) qui opère avec des contrôles dérivés de [**ListViewBase**](https://msdn.microsoft.com/library/windows/apps/br242879), et traite de manière incrémentielle le modèle d’élément pour la liaison de données. Lors du rendu d’éléments de liste, **ListViewBase** rend une seule phase pour tous les éléments de la vue avant de passer à la phase suivante. Le travail de rendu étant effectué par lots correspondant à des tranches temporelles, à mesure que la liste défile, le travail nécessaire peut être réévalué et ne pas être effectué pour les éléments qui ne sont plus visibles.
 
-The **x:Phase** attribute can be specified on any element in a data template that uses [{x:Bind}](x-bind-markup-extension.md). When an element has a phase other than 0, the element will be hidden from view (via **Opacity**, not **Visibility**) until that phase is processed and bindings are updated. When a [**ListViewBase**](https://msdn.microsoft.com/library/windows/apps/br242879)-derived control is scrolled, it will recycle the item templates from items that are no longer on screen to render the newly visible items. UI elements within the template will retain their old values until they are data-bound again. Phasing causes that data-binding step to be delayed, and therefore phasing needs to hide the UI elements in case they are stale.
+L’attribut **x:Phase** peut être spécifié sur tout élément dans un modèle de données utilisant [{x:Bind}](x-bind-markup-extension.md). Quand un élément est associé à une phase différente de 0, l’élément est masqué (via **Opacity**, et non **Visibility**) jusqu’à ce que cette phase soit traitée et les liaisons mises à jour. Quand un contrôle dérivé de [**ListViewBase**](https://msdn.microsoft.com/library/windows/apps/br242879) défile, il recycle les modèles d’élément à partir des éléments qui ne sont plus à l’écran pour rendre les éléments nouvellement visibles. Les éléments d’interface utilisateur dans le modèle conservent leurs anciennes valeurs jusqu’à ce qu’ils soient à nouveau liés à des données. L’exécution par phases ayant pour effet de retarder l’étape de liaison aux données, elle doit masquer les éléments d’interface utilisateur obsolètes.
 
-Each UI element may have only one phase specified. If so, that will apply to all bindings on the element. If a phase is not specified, phase 0 is assumed.
+Il se peut qu’une seule phase soit spécifiée pour chaque élément d’interface utilisateur. Dans ce cas, cela s’applique à toutes les liaisons sur l’élément. Si aucune phase n’est pas spécifié, la phase 0 est supposée.
 
-Phase numbers do not need to be contiguous and are the same as the value of [**ContainerContentChangingEventArgs.Phase**](https://msdn.microsoft.com/library/windows/apps/dn298493). The [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/dn298914) event will be raised for each phase before the **x:Phase** bindings are processed.
+Les numéros de phase ne doivent pas nécessairement être contigus, et sont identiques à la valeur de [**ContainerContentChangingEventArgs.Phase**](https://msdn.microsoft.com/library/windows/apps/dn298493). L’événement [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/dn298914) est déclenché pour chaque phase avant le traitement des liaisons **x:Phase**.
 
-Phasing only affects [{x:Bind}](x-bind-markup-extension.md) bindings, not [{Binding}](binding-markup-extension.md) bindings.
+L’exécution par phases affecte uniquement les liaisons [{x:Bind}](x-bind-markup-extension.md), pas les liaisons [{Binding}](binding-markup-extension.md).
 
-Phasing will only apply when the item template is rendered using a control that is aware of phasing. For Windows 10, that means [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) and [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705). Phasing will not apply to data templates used in other item controls, or for other scenarios such as [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/br209369) or [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) sections—in those cases, all the UI elements will be data bound at once.
-
-
+L’exécution par phases s’applique uniquement quand le modèle d’élément est rendu à l’aide d’un contrôle qui la prend en charge. Dans Windows 10, cela signifie [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) et [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705). L’exécution par phases ne s’applique pas aux modèles de données utilisés dans d’autres contrôles d’élément, ou pour d’autres cas de figure tels que [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/br209369) ou des sections de [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843). Dans ces situations, tous les éléments d’interface utilisateur sont liés aux données en une fois.
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Jun16_HO4-->
 
 

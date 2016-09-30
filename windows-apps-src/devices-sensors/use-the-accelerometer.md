@@ -1,43 +1,43 @@
 ---
 author: DBirtolo
 ms.assetid: F90686F5-641A-42D9-BC44-EC6CA11B8A42
-title: Use the accelerometer
-description: Learn how to use the accelerometer to respond to user movement.
+title: "Utiliser l’accéléromètre"
+description: "Découvrez comment utiliser l’accéléromètre pour répondre aux mouvements de l’utilisateur."
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8ce3baf2b030096ae5cfc56f31b97ec58e138a44
+ms.openlocfilehash: f1ec749d7bec245632f1998ac5cc94b9bfcad533
 
 ---
-# Use the accelerometer
+# Utiliser l’accéléromètre
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-** Important APIs **
+** API importantes **
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687)
 
-\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
+\[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.\]
 
-Learn how to use the accelerometer to respond to user movement.
+Découvrez comment utiliser l’accéléromètre pour répondre aux mouvements de l’utilisateur.
 
-A simple game app relies on a single sensor, the accelerometer, as an input device. These apps typically use only one or two axes for input; but they may also use the shake event as another input source.
+Une application de jeu simple repose sur un capteur unique, l’accéléromètre, comme périphérique d’entrée. Ces applications utilisent généralement un ou deux axes pour l’entrée, mais elles peuvent aussi utiliser l’événement poignée comme autre source d’entrée.
 
-## Prerequisites
+## Prérequis
 
-You should be familiar with Extensible Application Markup Language (XAML), Microsoft Visual C#, and events.
+Vous devez maîtriser le langage XAML (Extensible Application Markup Language), Microsoft Visual C# et les événements.
 
-The device or emulator that you're using must support an accelerometer.
+L’appareil ou émulateur que vous utilisez doit prendre en charge un accéléromètre.
 
-## Create a simple accelerometer app
+## Créer une application simple d’accéléromètre
 
-This section is divided into two subsections. The first subsection will take you through the steps necessary to create a simple accelerometer application from scratch. The following subsection explains the app you have just created.
+Cette section se divise en deuxsous-sections. La première sous-section vous permet d’accéder aux étapes nécessaires pour créer de bout en bout une application simple d’accéléromètre. La sous-section suivante décrit l’application que vous venez de créer.
 
 ### Instructions
 
--   Create a new project, choosing a **Blank App (Universal Windows)** from the **Visual C#** project templates.
+-   Créez un projet en choisissant une **Application vide (Windows universel)** dans les modèles de projet **Visual C#**.
 
--   Open your project's MainPage.xaml.cs file and replace the existing code with the following.
+-   Ouvrez le fichier MainPage.xaml.cs de votre projet et remplacez le code existant par ce qui suit.
 
 ```csharp
     using System;
@@ -102,9 +102,9 @@ This section is divided into two subsections. The first subsection will take you
     }
 ```
 
-You'll need to rename the namespace in the previous snippet with the name you gave your project. For example, if you created a project named **AccelerometerCS**, you'd replace `namespace App1` with `namespace AccelerometerCS`.
+Vous devez remplacer le nom de l’espace de noms dans l’extrait de code précédent par le nom que vous avez donné à votre projet. Par exemple, si vous avez créé un projet nommé **AccelerometerCS**, vous devez remplacer `namespace App1` par `namespace AccelerometerCS`.
 
--   Open the file MainPage.xaml and replace the original contents with the following XML.
+-   Ouvrez le fichier MainPage.xaml et remplacez le contenu d’origine par le code XML suivant.
 
 ```xml
         <Page
@@ -128,25 +128,25 @@ You'll need to rename the namespace in the previous snippet with the name you ga
     </Page>
 ```
 
-You'll need to replace the first part of the class name in the previous snippet with the namespace of your app. For example, if you created a project named **AccelerometerCS**, you'd replace `x:Class="App1.MainPage"` with `x:Class="AccelerometerCS.MainPage"`. You should also replace `xmlns:local="using:App1"` with `xmlns:local="using:AccelerometerCS"`.
+Vous devez remplacer la première partie du nom de la classe dans l’extrait de code précédent par l’espace de noms de votre application. Par exemple, si vous avez créé un projet nommé **AccelerometerCS**, vous devez remplacer `x:Class="App1.MainPage"` par `x:Class="AccelerometerCS.MainPage"`. Vous devez aussi remplacer `xmlns:local="using:App1"` par `xmlns:local="using:AccelerometerCS"`.
 
--   Press F5 or select **Debug** &gt; **Start Debugging** to build, deploy, and run the app.
+-   Appuyez sur F5 ou sélectionnez **Déboguer**&gt;**Démarrer le débogage** pour générer, déployer et exécuter l’application.
 
-Once the app is running, you can change the accelerometer values by moving the device or using the emulator tools.
+Une fois l’application en cours d’exécution, vous pouvez modifier les valeurs de l’accéléromètre en déplaçant l’appareil ou à l’aide des outils de l’émulateur.
 
--   Stop the app by returning to Visual Studio and pressing Shift+F5 or select **Debug** &gt; **Stop Debugging** to stop the app.
+-   Pour arrêter l’application, retournez dans Visual Studio et appuyez sur Maj+ 5, ou sélectionnez **Déboguer**&gt;**Arrêter le débogage**.
 
-### Explanation
+### Explication
 
-The previous example demonstrates how little code you'll need to write in order to integrate accelerometer input in your app.
+L’exemple précédent démontre la faible quantité de code que vous devrez écrire afin d’intégrer l’entrée de l’accéléromètre dans votre application.
 
-The app establishes a connection with the default accelerometer in the **MainPage** method.
+L’application établit une connexion avec l’accéléromètre par défaut dans la méthode **MainPage**.
 
 ```csharp
 _accelerometer = Accelerometer.GetDefault();
 ```
 
-The app establishes the report interval within the **MainPage** method. This code retrieves the minimum interval supported by the device and compares it to a requested interval of 16 milliseconds (which approximates a 60-Hz refresh rate). If the minimum supported interval is greater than the requested interval, the code sets the value to the minimum. Otherwise, it sets the value to the requested interval.
+L’application établit l’intervalle de rapport dans la méthode **MainPage**. Le code suivant récupère l’intervalle minimal pris en charge par l’appareil et le compare à un intervalle demandé de 16millisecondes (ce qui représente une fréquence de rafraîchissement de 60Hz). Si l’intervalle pris en charge minimum est supérieur à l’intervalle demandé, le code définit la valeur sur l’intervalle minimum. Sinon, il définit la valeur sur l’intervalle demandé.
 
 ```csharp
 uint minReportInterval = _accelerometer.MinimumReportInterval;
@@ -154,27 +154,27 @@ uint reportInterval = minReportInterval > 16 ? minReportInterval : 16;
 _accelerometer.ReportInterval = reportInterval;
 ```
 
-The new accelerometer data is captured in the **ReadingChanged** method. Each time the sensor driver receives new data from the sensor, it passes the values to your app using this event handler. The app registers this event handler on the following line.
+Les nouvelles données de l’accéléromètre sont capturées dans la méthode **ReadingChanged**. Chaque fois que le pilote du capteur reçoit de nouvelles données du capteur, il transmet les valeurs à votre application à l’aide de ce gestionnaire d’événements. L’application inscrit ce gestionnaire d’événements sur la ligne suivante.
 
 ```csharp
 _accelerometer.ReadingChanged += new TypedEventHandler<Accelerometer, 
 AccelerometerReadingChangedEventArgs>(ReadingChanged);
 ```
 
-These new values are written to the TextBlocks found in the project's XAML.
+Ces nouvelles valeurs sont écrites dans les TextBlocks identifiés dans le code XAML du projet.
 
 ```xml
 <TextBlock x:Name="txtXAxis" HorizontalAlignment="Left" Height="15" Margin="70,16,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="61" Foreground="#FFF2F2F2"/>
  <TextBlock x:Name="txtYAxis" HorizontalAlignment="Left" Height="15" Margin="70,49,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="53" Foreground="#FFF2EEEE"/>
  <TextBlock x:Name="txtZAxis" HorizontalAlignment="Left" Height="15" Margin="70,80,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="53" Foreground="#FFFFF8F8"/>
 ```
-## Related topics
+## Rubriques connexes
 
-* [Accelerometer Sample](http://go.microsoft.com/fwlink/p/?linkid=241377)
-
-
+* [Exemple d’accéléromètre](http://go.microsoft.com/fwlink/p/?linkid=241377)
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Jun16_HO4-->
 
 

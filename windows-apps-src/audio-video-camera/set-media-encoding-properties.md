@@ -1,60 +1,60 @@
 ---
 author: drewbatgit
 ms.assetid: 09BA9250-A476-4803-910E-52F0A51704B1
-description: This article shows you how to use the IMediaEncodingProperties interface to set the resolution and frame rate of the camera preview stream and captured photos and video.
-title: Set media encoding properties for MediaCapture
+description: "Cet article vous montre comment utiliser l’interface IMediaEncodingProperties pour définir la résolution et la fréquence d’images du flux d’aperçu de caméra et des photos et vidéos capturées."
+title: "Définir les propriétés d’encodage du média"
 translationtype: Human Translation
-ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
-ms.openlocfilehash: 1b20578fe52c004a55c5099ccb89e8c180571009
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: d7b44ce9db2e3d540036525c4b43e155a9500010
 
 ---
 
-# Set media encoding properties for MediaCapture
+# Définir les propriétés d’encodage du média
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-This article shows you how to use the [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) interface to set the resolution and frame rate of the camera preview stream and captured photos and video. It also shows how to ensure that the aspect ratio of the preview stream matches that of the captured media.
+Cet article vous montre comment utiliser l’interface [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) pour définir la résolution et la fréquence d’images du flux d’aperçu de caméra et des photos et vidéos capturées. Il montre également comment s’assurer que les proportions du flux d’aperçu correspondent à celle du média capturé.
 
-Camera profiles offer a more advanced way of discovering and setting the stream properties of the camera, but they are not supported for all devices. For more information, see [Camera profiles](camera-profiles.md).
+Les profils de caméra offrent un moyen plus avancé de détecter et de définir les propriétés de flux de l’appareil photo, mais ne sont pas pris en charge pour tous les appareils. Pour plus d’informations voir [Profils d’appareil photo](camera-profiles.md).
 
-The code in this article was adapted from the [CameraResolution sample](http://go.microsoft.com/fwlink/p/?LinkId=624252&clcid=0x409). You can download the sample to see the code used in context or to use the sample as a starting point for your own app.
+Le code figurant dans cet article a été adapté à partir de l’[exemple CameraResolution](http://go.microsoft.com/fwlink/p/?LinkId=624252&clcid=0x409). Vous pouvez télécharger l’exemple pour voir le code utilisé en contexte ou pour vous en servir comme point de départ pour votre propre application.
 
-> [!NOTE] 
-> This article builds on concepts and code discussed in [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md), which describes the steps for implementing basic photo and video capture. It is recommended that you familiarize yourself with the basic media capture pattern in that article before moving on to more advanced capture scenarios. The code in this article assumes that your app already has an instance of MediaCapture that has been properly initialized.
+**Remarque**  
+Cet article repose sur les concepts et sur le code décrits dans [Capturer des photos et des vidéos à l’aide de MediaCapture](capture-photos-and-video-with-mediacapture.md), qui détaille les étapes d’implémentation de capture photo et vidéo de base. Il est recommandé de vous familiariser avec le modèle de capture multimédia de base dans cet article avant de passer à des scénarios de capture plus avancés. Le code de cet article repose sur l’hypothèse que votre application possède déjà une instance de MediaCapture initialisée correctement.
 
-## A media encoding properties helper class
+## Classe d’assistance des propriétés d’encodage du média
 
-Creating a simple helper class to wrap the functionality of the [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) interface makes it easier to select a set of encoding properties that meet particular criteria. This helper class is particularly useful due to the following behavior of the encoding properties feature:
+La création d’une classe d’assistance simple englobant la fonctionnalité de l’interface [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) simplifie la sélection d’un ensemble de propriétés d’encodage qui répondent à des critères particuliers. Cette classe d’assistance est particulièrement utile en raison du comportement de la fonctionnalité des propriétés d’encodage suivant:
 
-**Warning**  
-The [**VideoDeviceController.GetAvailableMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211994) method takes a member of the [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/br226640) enumeration, such as **VideoRecord** or **Photo**, and returns a list of either [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) or [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) objects that convey the stream encoding settings, such as the resolution of the captured photo or video. The results of calling **GetAvailableMediaStreamProperties** may include **ImageEncodingProperties** or **VideoEncodingProperties** regardless of what **MediaStreamType** value is specified. For this reason, you should always check the type of each returned value and cast it to the appropriate type before attempting to access any of the property values.
+**Avertissement**  
+La méthode [**VideoDeviceController.GetAvailableMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211994) utilise un membre de l’énumération [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/br226640), tel que **VideoRecord** ou **Photo**, et renvoie une liste d’objets [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) ou [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) transmettant les paramètres d’encodage du flux, tels que la résolution de la photo ou de la vidéo capturée. Les résultats de l’appel de **GetAvailableMediaStreamProperties** peuvent inclure **ImageEncodingProperties** ou **VideoEncodingProperties** quelle que soit la valeur de **MediaStreamType** spécifiée. Pour cette raison, vous devez toujours vérifier le type de chaque valeur renvoyée et le convertir dans le type approprié avant d’essayer d’accéder à une des valeurs de propriété.
 
-The helper class defined below handles the type checking and casting for [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) or [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) so that your app code doesn't need to distinguish between the two types. In addition to this, the helper class exposes properties for the aspect ratio of the properties, the frame rate (for video encoding properties only), and a friendly name that makes it easier to display the encoding properties in the app's UI.
+La classe d’assistance définie ci-dessous gère la vérification du type et son transtypage pour [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) ou [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) afin que votre code d’application n’ait pas besoin de faire la distinction entre les deux types. En outre, pour ce faire, la classe d’assistance expose les propriétés pour les proportions des propriétés, la fréquence d’images (pour les propriétés d’encodage vidéo uniquement) et un nom convivial qui facilite l’affichage des propriétés d’encodage dans l’interface utilisateur de l’application.
 
-You must include the [**Windows.Media.MediaProperties**](https://msdn.microsoft.com/library/windows/apps/hh701296) namespace in the source file for the helper class.
+Vous devez inclure l’espace de noms [**Windows.Media.MediaProperties**](https://msdn.microsoft.com/library/windows/apps/hh701296) dans le fichier source pour la classe d’assistance.
 
 [!code-cs[MediaEncodingPropertiesUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetMediaEncodingPropertiesUsing)]
 
 [!code-cs[StreamPropertiesHelper](./code/BasicMediaCaptureWin10/cs/StreamPropertiesHelper.cs#SnippetStreamPropertiesHelper)]
 
-## Determine if the preview and capture streams are independent
+## Déterminer si les flux de capture et d’aperçu sont indépendants
 
-On some devices, the same hardware pin is used for both preview and capture streams. On these devices, setting the encoding properties of one will also set the other. On devices that use different hardware pins for capture and preview, the properties can be set for each stream independently. Use the following code to determine if the preview and capture streams are independent. You should adjust your UI to enable or disable the setting of the streams independently based on the result of this test.
+Sur certains appareils, le même code confidentiel de matériel est utilisé pour afficher et capturer des flux. Sur ces appareils, la définition des propriétés d’encodage d’un flux a pour effet de définir l’autre. Sur les appareils utilisant différents codes de matériel pour la capture et l’aperçu, il est possible de définir les propriétés de chaque flux de manière indépendante. Utilisez le code suivant pour déterminer si les flux de capture et d’aperçu sont indépendants. Vous devez ajuster votre interface utilisateur pour activer ou désactiver le paramètre des flux de manière indépendante en fonction du résultat de ce test.
 
 [!code-cs[CheckIfStreamsAreIdentical](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCheckIfStreamsAreIdentical)]
 
-## Get a list of available stream properties
+## Obtenir une liste des propriétés de flux disponibles
 
-Get a list of the available stream properties for a capture device by getting the [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) for your app's [MediaCapture](capture-photos-and-video-with-mediacapture.md) object and then calling [**GetAvailableMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211994) and passing in one of the [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/br226640) values, **VideoPreview**, **VideoRecord**, or **Photo**. In this example, Linq syntax is used to create a list of **StreamPropertiesHelper** objects, defined previously in this article, for each of the [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) values returned from **GetAvailableMediaStreamProperties**. This example first uses Linq extension methods to order the returned properties based first on resolution and then on frame rate.
+Obtenez une liste des propriétés de flux disponibles pour un appareil de capture en obtenant l’élément [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) pour l’objet [MediaCapture](capture-photos-and-video-with-mediacapture.md) de votre application, puis en appelant [**GetAvailableMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211994) et en transmettant l’une des valeurs de [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/br226640) : **VideoPreview**, **VideoRecord** ou **Photo**. Dans cet exemple, la syntaxe Linq est utilisée pour créer une liste d’objets **StreamPropertiesHelper**, définis précédemment dans cet article, pour chacune des valeurs [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) renvoyées par **GetAvailableMediaStreamProperties**. Cet exemple utilise d’abord les méthodes d’extension Linq pour classer les propriétés renvoyées tout d’abord en fonction de la résolution, puis de la fréquence d’images.
 
-If your app has specific resolution or frame rate requirements, you can select a set of media encoding properties programmatically. A typical camera app will instead expose the list of available properties in the UI and allow the user to select their desired settings. A **ComboBoxItem** is created for each item in the list of **StreamPropertiesHelper** objects in the list. The content is set to the friendly name returned by the helper class and the tag is set to the helper class itself so it can be used later to retrieve the associated encoding properties. Each **ComboBoxItem** is then added to the **ComboBox** passed into the method.
+Si votre application exige une résolution ou une fréquence d’images spécifique, vous pouvez sélectionner un ensemble de propriétés d’encodage du média par programme. Une application de caméra classique expose plutôt la liste des propriétés disponibles dans l’interface utilisateur et permet à l’utilisateur de sélectionner les paramètres qu’il souhaite. Un **ComboBoxItem** est créé pour chaque élément dans la liste des objets **StreamPropertiesHelper** de la liste. Le contenu est défini sur le nom convivial renvoyé par la classe d’assistance, et la balise est définie sur la classe d’assistance elle-même pour une utilisation ultérieure à des fins de récupération des propriétés d’encodage associées. Chaque **ComboBoxItem** est ensuite ajouté à l’élément **ComboBox** transmis à la méthode.
 
 [!code-cs[PopulateStreamPropertiesUI](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPopulateStreamPropertiesUI)]
 
-## Set the desired stream properties
+## Définir les propriétés de flux souhaitées
 
-Tell the video device controller to use your desired encoding properties by calling [**SetMediaStreamPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh700895), passing in the **MediaStreamType** value indicating whether the photo, video, or preview properties should be set. This example sets the requested encoding properties when the user selects an item in one of the **ComboBox** objects populated with the **PopulateStreamPropertiesUI** helper method.
+Indiquez au contrôleur d’appareil vidéo d’utiliser les propriétés d’encodage voulues en appelant [**SetMediaStreamPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh700895) et en transmettant la valeur **MediaStreamType** indiquant si les propriétés de photo, de vidéo ou d’aperçu doivent être définies. Cet exemple définit les propriétés d’encodage demandées lorsque l’utilisateur sélectionne un élément dans l’un des objets **ComboBox** remplis à l’aide de la méthode d’assistance **PopulateStreamPropertiesUI**.
 
 [!code-cs[PreviewSettingsChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPreviewSettingsChanged)]
 
@@ -62,21 +62,21 @@ Tell the video device controller to use your desired encoding properties by call
 
 [!code-cs[VideoSettingsChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoSettingsChanged)]
 
-## Match the aspect ratio of the preview and capture streams
+## Faire correspondre les proportions des flux d’aperçu et de la capture
 
-A typical camera app will provide UI for the user to select the video or photo capture resolution but will programmatically set the preview resolution. There are a few different strategies for selecting the best preview stream resolution for your app:
+Une application de caméra classique fournira l’interface utilisateur permettant à l’utilisateur de sélectionner la résolution de capture vidéo ou photo, mais définira par programme la résolution de l’aperçu. Plusieurs stratégies différentes permettent de sélectionner la meilleure résolution de flux d’aperçu pour votre application :
 
--   Select the highest available preview resolution, letting the UI framework perform any necessary scaling of the preview.
+-   Sélectionnez la résolution de l’aperçu la plus élevée possible, en laissant le soin à l’infrastructure d’interface utilisateur d’effectuer la mise à l’échelle nécessaire de l’aperçu.
 
--   Select the preview resolution closest to the capture resolution so that the preview displays the closest representation to the final captured media.
+-   Sélectionnez la résolution de l’aperçu la plus proche possible de la résolution de capture pour que l’aperçu affiche la représentation la plus fidèle du contenu multimédia capturé final.
 
--   Select the preview resolution closest to the size of the [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) so that no more pixels than necessary are going through the preview stream pipeline.
+-   Sélectionnez la résolution de l’aperçu la plus proche possible de la taille de [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) afin qu’aucun pixel en plus de ceux nécessaires ne soit transmis dans le pipeline du flux d’aperçu.
 
 **Important**  
-It is possible, on some devices, to set a different aspect ratio for the camera's preview stream and capture stream. Frame cropping caused by this mismatch can result in content being present in the captured media that was not visible in the preview which can result in a negative user experience. It is strongly recommended that you use the same aspect ratio, within a small tolerance window, for the preview and capture streams. It is fine to have entirely different resolutions enabled for capture and preview as long as the aspect ratio match closely.
+Il est possible, sur certains appareils, de définir des proportions différentes pour le flux d’aperçu de la caméra et le flux de la capture. Le rognage d’image causé par cette incompatibilité peut entraîner la présence de contenu dans le média capturé qui n’était pas visible dans l’aperçu, ce qui peut aboutir à une expérience négative pour l’utilisateur. Il est fortement recommandé d’utiliser les mêmes proportions, dans une faible plage de tolérance, pour les flux d’aperçu et de capture. Il est bon que des résolutions entièrement différentes soient activées pour la capture et l’aperçu tant que les proportions correspondent étroitement.
 
 
-To ensure that the photo or video capture streams match the aspect ratio of the preview stream, this example calls [**VideoDeviceController.GetMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211995) and passes in the **VideoPreview** enum value to request the current stream properties for the preview stream. Next a small aspect ratio tolerance window is defined so that we can include aspect ratios that are not exactly the same as the preview stream, as long as they are close. Next, a Linq extension method is used to select just the **StreamPropertiesHelper** objects where the aspect ratio is within the defined tolerance range of the preview stream.
+Pour vous assurer que les flux de capture de photo ou de vidéo correspondent aux proportions du flux d’aperçu, cet exemple appelle [**VideoDeviceController.GetMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211995) et transmet la valeur enum **VideoPreview** pour demander les propriétés de flux actuelles du flux d’aperçu. Ensuite, une faible plage de tolérance des proportions est définie afin de pouvoir inclure des proportions qui ne sont pas exactement identiques au flux d’aperçu, tant qu’elles sont proches. Ensuite, une méthode d’extension Linq est utilisée pour sélectionner uniquement les objets **StreamPropertiesHelper** où les proportions sont comprises dans la plage de tolérance définie du flux d’aperçu.
 
 [!code-cs[MatchPreviewAspectRatio](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetMatchPreviewAspectRatio)]
 
@@ -90,6 +90,6 @@ To ensure that the photo or video capture streams match the aspect ratio of the 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

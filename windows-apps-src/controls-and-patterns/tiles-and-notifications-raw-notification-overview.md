@@ -1,124 +1,124 @@
 ---
 author: mijacobs
-Description: Raw notifications are short, general purpose push notifications.
-title: Raw notification overview
+Description: "Les notifications brutes sont des notifications Push courtes à usage général."
+title: "Vue d’ensemble des notifications brutes"
 ms.assetid: A867C75D-D16E-4AB5-8B44-614EEB9179C7
 label: TBD
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 2c50b2be763a0cc7045745baeef6e6282db27cc7
-ms.openlocfilehash: 6d0f2460e6b65173445cdf7c1fea207e6bdbd149
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 4b487e44c7acd882a86c0b24dd9994092d976b06
 
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-# Raw notification overview
+
+# Vue d’ensemble des notifications brutes
 
 
 
 
 
-Raw notifications are short, general purpose push notifications. They are strictly instructional and do not include a UI component. As with other push notifications, the Windows Push Notification Services (WNS) feature delivers raw notifications from your cloud service to your app.
+Les notifications brutes sont des notificationsPush courtes à usage général. Elles ont une finalité exclusivement didactique et n’incluent aucun composant d’interface utilisateur. Comme avec d’autres notifications Push, la fonctionnalité des services de notifications Push Windows (WNS) fournit des notifications brutes de votre service cloud à votre application.
 
-You can use raw notifications for a variety of purposes, including to trigger your app to run a background task if the user has given the app permission to do so. By using WNS to communicate with your app, you can avoid the processing overhead of creating persistent socket connections, sending HTTP GET messages, and other service-to-app connections.
+Les notifications brutes peuvent être employées à diverses fins, notamment pour inciter votre application à exécuter une tâche en arrière-plan si l’utilisateur a autorisé l’application à le faire. En faisant appel à la fonctionnalité WNS pour communiquer avec votre application, vous pouvez éviter la surcharge de traitement liée à la création de connexions de sockets permanentes, à l’envoi de messages HTTP GET et à d’autres connexions entre services et applications.
 
-**Important**   To understand raw notifications, it's best to be familiar with the concepts discussed in the [Windows Push Notification Services (WNS) overview](tiles-and-notifications-windows-push-notification-services--wns--overview.md).
-
- 
-
-As with toast, tile, and badge push notifications, a raw notification is pushed from your app's cloud service over an assigned channel Uniform Resource Identifier (URI) to WNS. WNS, in turn, delivers the notification to the device and user account associated with that channel. Unlike other push notifications, raw notifications don't have a specified format. The content of the payload is entirely app-defined.
-
-As an illustration of an app that could benefit from raw notifications, let's look at a theoretical document collaboration app. Consider two users who are editing the same document at the same time. The cloud service, which hosts the shared document, could use raw notifications to notify each user when changes are made by the other user. The raw notifications would not necessarily contain the changes to the document, but instead would signal each user's copy of the app to contact the central location and sync the available changes. By using raw notifications, the app and the its cloud service can save the overhead of maintaining persistent connections the entire time the document is open.
-
-## How raw notifications work
-
-
-All raw notifications are push notifications. Therefore, the setup required to send and receive push notifications applies to raw notifications as well:
-
--   You must have a valid WNS channel to send raw notifications. For more information about acquiring a push notification channel, see [How to request, create, and save a notification channel](https://msdn.microsoft.com/library/windows/apps/hh465412).
--   You must include the **Internet** capability in your app's manifest. In the Microsoft Visual Studio manifest editor, you will find this option under the **Capabilities** tab as **Internet (Client)**. For more information, see [**Capabilities**](https://msdn.microsoft.com/library/windows/apps/br211422).
-
-The body of the notification is in an app-defined format. The client receives the data as a null-terminated string (**HSTRING**) that only needs to be understood by the app.
-
-If the client is offline, raw notifications will be cached by WNS only if the [X-WNS-Cache-Policy](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_cache) header is included in the notification. However, only one raw notification will be cached and delivered once the device comes back online.
-
-There are only three possible paths for a raw notification to take on the client: they will be delivered to your running app through a notification delivery event, sent to a background task, or dropped. Therefore, if the client is offline and WNS attempts to deliver a raw notification, the notification is dropped.
-
-## Creating a raw notification
-
-
-Sending a raw notification is similar to sending a tile, toast, or badge push notification, with these differences:
-
--   The HTTP Content-Type header must be set to "application/octet-stream".
--   The HTTP [X-WNS-Type](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_type) header must be set to "wns/raw".
--   The notification body can contain any string payload smaller than 5 KB in size.
-
-Raw notifications are intended to be used as short messages that trigger your app to take an action, such as to directly contact the service to sync a larger amount of data or to make a local state modification based on the notification content. Note that WNS push notifications cannot be guaranteed to be delivered, so your app and cloud service must account for the possibility that the raw notification might not reach the client, such as when the client is offline.
-
-For more information on sending push notifications, see [Quickstart: Sending a push notification](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252).
-
-## Receiving a raw notification
-
-
-There are two avenues through which your app can be receive raw notifications:
-
--   Through [notification delivery events](#notification_delivery_events) while your application is running.
--   Through [background tasks triggered by the raw notification](#bg_tasks) if your app is enabled to run background tasks.
-
-An app can use both mechanisms to receive raw notifications. If an app implements both the notification delivery event handler and background tasks that are triggered by raw notifications, the notification delivery event will take priority when the app is running.
-
--   If the app is running, the notification delivery event will take priority over the background task and the app will have the first opportunity to process the notification.
--   The notification delivery event handler can specify, by setting the event's [**PushNotificationReceivedEventArgs.Cancel**](https://msdn.microsoft.com/library/windows/apps/br241297) property to **true**, that the raw notification should not be passed to its background task once the handler exits. If the **Cancel** property is set to **false** or is not set (the default value is **false**), the raw notification will trigger the background task after the notification delivery event handler has done its work.
-
-### Notification delivery events
-
-Your app can use a notification delivery event ([**PushNotificationReceived**](https://msdn.microsoft.com/library/windows/apps/br241292)) to receive raw notifications while the app is in use. When the cloud service sends a raw notification, the running app can receive it by handling the notification delivery event on the channel URI.
-
-If your app is not running and does not use [background tasks](#bg_tasks), any raw notification sent to that app is dropped by WNS on receipt. To avoid wasting your cloud service's resources, you should consider implementing logic on the service to track whether the app is active. There are two sources of this information: an app can explicitly tell the service that it's ready to start receiving notifications, and WNS can tell the service when to stop.
-
--   **The app notifies the cloud service**: The app can contact its service to let it know that the app is running in the foreground. The disadvantage of this approach is that the app can end up contacting your service very frequently. However, it has the advantage that the service will always know when the app is ready to receive incoming raw notifications. Another advantage is that when the app contacts its service, the service then knows to send raw notifications to the specific instance of that app rather than broadcast.
--   **The cloud service responds to WNS response messages** : Your app service can use the [X-WNS-NotificationStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_notification) and [X-WNS-DeviceConnectionStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_dcs) information returned by WNS to determine when to stop sending raw notifications to the app. When your service sends a notification to a channel as an HTTP POST, it can receive one of these messages in the response:
-
-    -   **X-WNS-NotificationStatus: dropped**: This indicates that the notification was not received by the client. It's a safe assumption that the **dropped** response is caused by your app no longer being in the foreground on the user's device.
-    -   **X-WNS-DeviceConnectionStatus: disconnected** or **X-WNS-DeviceConnectionStatus: tempconnected**: This indicates that the Windows client no longer has a connection to WNS. Note that to receive this message from WNS, you have to ask for it by setting the [X-WNS-RequestForStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_request) header in the notification's HTTP POST.
-
-    Your app's cloud service can use the information in these status messages to cease communication attempts through raw notifications. The service can resume sending raw notifications once it is contacted by the app, when the app switches back into the foreground.
-
-    Note that you should not rely on [X-WNS-NotificationStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_notification) to determine whether the notification was successfully delivered to the client.
-
-    For more information, see [Push notification service request and response headers](https://msdn.microsoft.com/library/windows/apps/hh465435)
-
-### Background tasks triggered by raw notifications
-
-**Important**   Before using raw notification background tasks, an app must be granted background access via [**BackgroundExecutionManager.RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485).
+**Important** Pour comprendre les notifications brutes, vous êtes invité à vous familiariser avec les concepts abordés dans la rubrique [Vue d’ensemble des services de notifications Push Windows (WNS)](tiles-and-notifications-windows-push-notification-services--wns--overview.md).
 
  
 
-Your background task must be registered with a [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543). If it is not registered, the task will not run when a raw notification is received.
+Comme pour les notifications Push par toast, vignette et badge, une notification brute est transmise à partir du service cloud de votre application vers WNS par le biais d’un URI (Uniform Resource Identifier) de canal affecté. WNS, à son tour, transmet la notification à l’appareil et au compte d’utilisateur associés à ce canal. Contrairement à d’autres notifications Push, les notifications brutes n’adoptent aucun format spécifique. Le contenu de la charge utile est entièrement défini par l’application.
 
-A background task that is triggered by a raw notification enables your app's cloud service to contact your app, even when the app is not running (though it might trigger it to run). This happens without the app having to maintain a continuous connection. Raw notifications are the only notification type that can trigger background tasks. However, while toast, tile, and badge push notifications cannot trigger background tasks, background tasks triggered by raw notifications can update tiles and invoke toast notifications through local API calls.
+Pour donner un exemple d’application pouvant bénéficier de notifications brutes, examinons une application de collaboration documentaire théorique. Considérons deux utilisateurs qui modifient le même document simultanément. Le service cloud qui héberge le document partagé peut utiliser des notifications brutes pour informer chaque utilisateur dès qu’un autre utilisateur apporte des modifications. Les notifications brutes ne doivent pas nécessairement contenir les modifications apportées au document mais doit plutôt inciter chaque copie de l’application de l’utilisateur à contacter l’emplacement central et à synchroniser les modifications disponibles. À l’aide de notifications brutes, l’application et son service cloud peut enregistrer la surcharge inhérente au maintien de connexions permanentes tant que le document reste ouvert.
 
-As an illustration of how background tasks that are triggered by raw notifications work, let's consider an app used to read e-books. First, a user purchases a book online, possibly on another device. In response, the app's cloud service can send a raw notification to each of the user's devices, with a payload that states that the book was purchased and the app should download it. The app then directly contacts the app's cloud service to begin a background download of the new book so that later, when the user launches the app, the book is already there and ready for reading.
-
-To use a raw notification to trigger a background task, your app must:
-
-1.  Request permission to run tasks in the background (which the user can revoke at any time) by using [**BackgroundExecutionManager.RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485).
-2.  Implement the background task. For more information, see [Supporting your app with background tasks](https://msdn.microsoft.com/library/windows/apps/hh977046)
-
-Your background task is then invoked in response to the [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543), each time a raw notification is received for your app. Your background task interprets the raw notification's app-specific payload and acts on it.
-
-For each app, only one background task can run at a time. If a background task is triggered for an app for which a background task is already running, the first background task must complete before the new one is run.
-
-## Other resources
+## <span id="How_raw_notifications_work"></span><span id="how_raw_notifications_work"></span><span id="HOW_RAW_NOTIFICATIONS_WORK"></span>Fonctionnement des notifications brutes
 
 
-You can learn more by downloading the [Raw notifications sample](http://go.microsoft.com/fwlink/p/?linkid=241553) for Windows 8.1, and the [Push and periodic notifications sample](http://go.microsoft.com/fwlink/p/?LinkId=231476) for Windows 8.1, and re-using their source code in your Windows 10 app.
+Toutes les notifications brutes sont des notificationsPush. C’est pourquoi la configuration requise pour envoyer et recevoir des notifications Push concerne également les notifications brutes :
 
-## Related topics
+-   Vous devez disposer d’un canal WNS valide pour envoyer des notifications brutes. Pour plus d’informations sur l’acquisition d’un canal de notification Push, voir [Comment demander, créer et enregistrer un canal de notification](https://msdn.microsoft.com/library/windows/apps/hh465412).
+-   Vous devez inclure la fonctionnalité **Internet** dans le manifeste de votre application. Vous trouverez cette option sous la forme **Internet (client)** dans l’onglet **Capacités** de l’éditeur de manifeste Microsoft Visual Studio. Pour plus d’informations, voir [**Capabilities**](https://msdn.microsoft.com/library/windows/apps/br211422).
+
+Le corps de la notification apparaît dans un format défini par l’application. Le client reçoit les données sous la forme d’une chaîne (**HSTRING**) terminée par un caractère NULL que seule l’application doit comprendre.
+
+Si le client est hors connexion, les notifications brutes seront mises en cache par la fonctionnalité WNS uniquement si l’en-tête [X-WNS-Cache-Policy](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_cache) est inclus dans la notification. Cependant, une seule notification brute sera mise en cache et publiée dès que le périphérique est de nouveau en ligne.
+
+Il existe trois options de traitement d’une notification brute sur le client : la remise à votre application via un événement de remise de notification, l’envoi à une tâche en arrière-plan ou l’abandon. Par conséquent, si le client est hors connexion et si WNS tente d’émettre une notification brute, la notification est annulée.
+
+## <span id="Creating_a_raw_notification"></span><span id="creating_a_raw_notification"></span><span id="CREATING_A_RAW_NOTIFICATION"></span>Création d’une notification brute
 
 
-* [Guidelines for raw notifications](https://msdn.microsoft.com/library/windows/apps/hh761463)
-* [Quickstart: Creating and registering a raw notification background task](https://msdn.microsoft.com/library/windows/apps/jj676800)
-* [Quickstart: Intercepting push notifications for running apps](https://msdn.microsoft.com/library/windows/apps/jj709908)
+L’envoi d’une notification brute est similaire à l’envoi d’une notificationpush par vignette, toast ou badge avec les différences suivantes:
+
+-   L’en-tête HTTP Content-Type doit être défini sur « application/octet-stream ».
+-   L’en-tête HTTP [X-WNS-Type](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_type) doit être défini sur «wns/raw».
+-   Le corps de la notification doit contenir une charge utile de chaînes d’une taille inférieure à 5 Ko.
+
+Les notifications brutes sont des messages brefs conçus pour inciter votre application à agir, notamment en contactant directement le service pour synchroniser une grande quantité de données ou modifier un état local fondé sur le contenu des notifications. Notez que la remise des notifications Push WNS est impossible à garantir ; votre application et votre service cloud doivent donc tenir compte de l’éventualité que la notification brute ne parvienne pas au client, notamment lorsque celui-ci est hors connexion.
+
+Pour plus d’informations sur l’envoi de notifications Push, voir [Démarrage rapide : envoi d’une notification Push](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252).
+
+## <span id="Receiving_a_raw_notification"></span><span id="receiving_a_raw_notification"></span><span id="RECEIVING_A_RAW_NOTIFICATION"></span>Réception d’une notification brute
+
+
+Il existe deux méthodes par lesquelles votre application peut recevoir des notifications brutes:
+
+-   Par le biais d’[événements de remise de notification](#notification_delivery_events) lorsque votre application est en cours d’exécution.
+-   Au moyen de [tâches en arrière-plan déclenchées par la notification brute](#bg_tasks) si votre application autorise l’exécution de tâches en arrière-plan.
+
+Une application peut recourir à ces deux mécanismes pour recevoir des notifications brutes. Si une application implémente à la fois le gestionnaire d’événements de remise de notification et les tâches en arrière-plan déclenchées par les notifications brutes, l’événement de remise de notification sera prioritaire lorsque l’application sera exécutée.
+
+-   Si l’application est en cours d’exécution, l’événement de remise de notification aura priorité sur la tâche en arrière-plan, et l’application aura l’occasion de traiter la notification.
+-   En définissant la propriété [**PushNotificationReceivedEventArgs.Cancel**](https://msdn.microsoft.com/library/windows/apps/br241297) de l’événement sur **true**, le gestionnaire d’événements de remise de notification peut préciser de ne pas transmettre la notification brute à sa tâche en arrière-plan dès que le gestionnaire se ferme. Si la propriété **Cancel** est définie sur **false** ou n’est pas définie (la valeur par défaut est **false**), la notification brute déclenchera la tâche en arrière-plan une fois le travail du gestionnaire d’événements de remise de notification terminé.
+
+### <span id="notification_delivery_events"></span><span id="NOTIFICATION_DELIVERY_EVENTS"></span>Événements de remise de notification
+
+Votre application peut utiliser un événement de remise de notification ([**PushNotificationReceived**](https://msdn.microsoft.com/library/windows/apps/br241292)) pour recevoir des notifications brutes lorsque l’application est en cours d’utilisation. Quand le service cloud envoie une notification brute, l’application est en cours d’exécution peut la recevoir en gérant l’événement de remise de notification sur l’URI de canal.
+
+Si votre application n’est pas en cours d’exécution et ne fait appel à aucune [tâche en arrière-plan](#bg_tasks), toutes les notifications brutes transmises à cette application sont ignorées par WNS dès réception. Pour éviter de gaspiller les ressources de votre service cloud, vous pouvez envisager la mise en place d’une logique sur le service pour contrôler si l’application est active ou non. Pour ces informations, il existe deux sources : une application peut explicitement indiquer au service qu’elle est prête à recevoir des notifications et la fonctionnalité WNS peut indiquer au service quand arrêter.
+
+-   **L’application informe le service cloud**: l’application peut contacter son service pour l’informer que l’application fonctionne au premier plan. L’inconvénient de cette approche est que l’application peut finir par contacter votre service de manière très fréquente. En revanche, elle présente l’avantage que le service saura toujours lorsque l’application est prête à recevoir des notifications brutes entrantes. Un autre avantage réside dans le fait que, lorsque l’application contacte son service, celui-ci sait alors qu’il faut envoyer des notifications brutes à l’instance spécifique de cette application plutôt que procéder à une diffusion.
+-   **Le service cloud répond aux messages de réponse WNS** : le service de votre application peut utiliser les informations [X-WNS-NotificationStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_notification) et [X-WNS-DeviceConnectionStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_dcs) renvoyées par la fonctionnalité WNS pour déterminer à quel moment cesser l’envoi de notifications brutes à l’application. Lorsque votre service envoie une notification à un canal sous la forme d’une demande POST HTTP, il peut recevoir l’un des messages suivants en guise de réponse:
+
+    -   **X-WNS-NotificationStatus: dropped**: cela signifie que le client n’a pas reçu la notification. On peut raisonnablement supposer que la réponse **dropped** est générée en raison du fait que votre application ne figure plus au premier plan de l’appareil de l’utilisateur.
+    -   **X-WNS-DeviceConnectionStatus: disconnected** ou **X-WNS-DeviceConnectionStatus: tempconnected**: ceci indique que le client Windows ne dispose plus d’une connexion à WNS. Notez que pour recevoir ce message de WNS, vous devez le demander en définissant l’en-tête [X-WNS-RequestForStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_request) dans la demande POST HTTP de la notification.
+
+    Le service cloud de votre application peut exploiter les informations incluses dans ces messages d’état pour cesser toute tentative de communication par le biais de notifications brutes. Le service peut reprendre l’envoi de notifications brutes dès que l’application le contacte, quand celle-ci revient au premier plan.
+
+    Notez qu’il est préférable de ne pas se fier aux informations [X-WNS-NotificationStatus](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_notification) pour déterminer si la notification a été correctement remise au client.
+
+    Pour plus d’informations, voir [En-têtes des demandes et des réponses des services de notifications Push](https://msdn.microsoft.com/library/windows/apps/hh465435).
+
+### <span id="bg_tasks"></span><span id="BG_TASKS"></span>Tâches en arrière-plan déclenchées par des notifications brutes
+
+**Important** Avant d’utiliser des tâches en arrière-plan de notification brute, une application doit bénéficier d’un accès en arrière-plan par le biais d’un élément [**BackgroundExecutionManager.RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485).
+
+ 
+
+Votre tâche en arrière-plan doit être inscrite avec un élément [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543). Si elle ne l’est pas, la tâche ne sera pas exécutée dès qu’une notification brute sera reçue.
+
+Une tâche en arrière-plan qui est déclenchée par une notification brute permet au service cloud de votre application de contacter cette dernière même quand elle n’est pas exécutée (il peut toutefois déclencher son exécution). Cela se produit sans que l’application ne doive maintenir une connexion permanente. Les notifications brutes sont le seul type de notification capable de déclencher des tâches en arrière-plan. Cependant, s’il est impossible pour les notifications Push par vignette, toast et badge de déclencher des tâches en arrière-plan, les tâches en arrière-plan déclenchées par les notifications brutes peuvent mettre à jour les vignettes et appeler des notifications toast via des appels d’API locaux.
+
+Pour donner un exemple illustrant la manière dont fonctionnent les tâches en arrière-plan déclenchées par des notifications brutes, imaginons une application conçue pour lire des livres électroniques. Pour commencer, un utilisateur achète un livre en ligne, peut-être sur un autre périphérique. En guise de réponse, le service cloud de l’application peut envoyer une notification brute à chacun des périphériques de l’utilisateur, avec une charge utile qui indique que le livre a été acheté et que l’application doit le télécharger. L’application contacte ensuite directement le service cloud de l’application pour lancer un téléchargement en arrière-plan du nouveau livre afin pour que, plus tard, dès que l’utilisateur démarre l’application, le livre soit déjà présent et prêt à être lu.
+
+Pour utiliser une notification brute déclenchant une tâche en arrière-plan, votre application doit effectuer les opérations suivantes :
+
+1.  demander l’autorisation d’exécuter des tâches en arrière-plan (que l’utilisateur peut révoquer à tout moment) à l’aide de l’élément [**BackgroundExecutionManager.RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485);
+2.  implémenter la tâche en arrière-plan. Pour plus d’informations, voir [Définition de tâches en arrière-plan pour les besoins de votre application](https://msdn.microsoft.com/library/windows/apps/hh977046).
+
+Votre tâche en arrière-plan est ensuite appelée en réponse à l’événement [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) chaque fois qu’une notification brute est reçue pour votre application. Votre tâche en arrière-plan interprète alors la charge utile spécifique à l’application de la notification brute et intervient en conséquence.
+
+Pour chaque application, une seule tâche en arrière-plan peut être exécutée à la fois. Si vous déclenchez une tâche en arrière-plan pour une application pour laquelle une tâche en arrière-plan est déjà en cours d’exécution, la première tâche en arrière-plan doit arriver à terme avant que la nouvelle ne soit exécutée.
+
+## <span id="Other_resources"></span><span id="other_resources"></span><span id="OTHER_RESOURCES"></span>Autres ressources
+
+
+Pour plus d’informations, téléchargez l’[exemple de notifications brutes](http://go.microsoft.com/fwlink/p/?linkid=241553) pour Windows8.1 et l’[exemple de notifications Push et périodiques](http://go.microsoft.com/fwlink/p/?LinkId=231476) pour Windows8.1, puis réutilisez leur code source dans votre application Windows10.
+
+## <span id="related_topics"></span>Rubriques connexes
+
+
+* [Recommandations en matière de notifications brutes](https://msdn.microsoft.com/library/windows/apps/hh761463)
+* [Démarrage rapide : création et inscription d’une tâche de notification brute en arrière-plan](https://msdn.microsoft.com/library/windows/apps/jj676800)
+* [Démarrage rapide: interception de notifications Push dans des applications en cours d’exécution](https://msdn.microsoft.com/library/windows/apps/jj709908)
 * [**RawNotification**](https://msdn.microsoft.com/library/windows/apps/br241304)
 * [**BackgroundExecutionManager.RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)
  
@@ -131,6 +131,6 @@ You can learn more by downloading the [Raw notifications sample](http://go.micro
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

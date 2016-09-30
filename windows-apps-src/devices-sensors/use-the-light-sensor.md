@@ -1,41 +1,41 @@
 ---
 author: DBirtolo
 ms.assetid: 15BAB25C-DA8C-4F13-9B8F-EA9E4270BCE9
-title: Use the light sensor
-description: Learn how to use the ambient light sensor to detect changes in lighting.
+title: "Utiliser le capteur de luminosité"
+description: "Découvrez comment utiliser le capteur de luminosité ambiante pour détecter les changements de luminosité."
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: fe1b9a508e3b540f202e187dbe1696423c7cd373
+ms.openlocfilehash: 289d50ff4f45147c46bd66c526cf109d8fdf6d32
 
 ---
-# Use the light sensor
+# Utiliser le capteur de luminosité
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-** Important APIs **
+** API importantes **
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**LightSensor**](https://msdn.microsoft.com/library/windows/apps/BR225790)
 
-Learn how to use the ambient light sensor to detect changes in lighting.
+Découvrez comment utiliser le capteur de luminosité ambiante pour détecter les changements de luminosité.
 
-An ambient light sensor is one of the several types of environmental sensors that allow apps to respond to changes in the user's environment.
+Un capteur de lumière ambiante est l’un des types de capteur d’environnement qui permettent à des applications de répondre aux modifications de l’environnement de l’utilisateur.
 
-## Prerequisites
+## Prérequis
 
-You should be familiar with Extensible Application Markup Language (XAML), Microsoft Visual C#, and events.
+Vous devez maîtriser le langage XAML (Extensible Application Markup Language), Microsoft Visual C# et les événements.
 
-The device or emulator that you're using must support an ambient light sensor.
+L’appareil ou émulateur que vous utilisez doit prendre en charge un capteur de luminosité ambiante.
 
-## Create a simple light-sensor app
+## Créer une application simple de capteur de luminosité
 
-This section is divided into two subsections. The first subsection will take you through the steps necessary to create a simple light-sensor application from scratch. The following subsection explains the app you have just created.
+Cette section se divise en deuxsous-sections. La première sous-section vous permet d’accéder aux étapes nécessaires pour créer de bout en bout une application simple de capteur de luminosité. La sous-section suivante décrit l’application que vous venez de créer.
 
 ###  Instructions
 
--   Create a new project, choosing a **Blank App (Universal Windows)** from the **Visual C#** project templates.
+-   Créez un projet en choisissant une **Application vide (Windows universel)** dans les modèles de projet **Visual C#**.
 
--   Open your project's BlankPage.xaml.cs file and replace the existing code with the following.
+-   Ouvrez le fichier BlankPage.xaml.cs de votre projet et remplacez le code existant par ce qui suit.
 
 ```csharp
     using System;
@@ -101,9 +101,9 @@ This section is divided into two subsections. The first subsection will take you
     }
 ```
 
-You'll need to rename the namespace in the previous snippet with the name you gave your project. For example, if you created a project named **LightingCS**, you'd replace `namespace App1` with `namespace LightingCS`.
+Vous devez remplacer le nom de l’espace de noms dans l’extrait de code précédent par le nom que vous avez donné à votre projet. Par exemple, si vous avez créé un projet nommé **LightingCS**, vous devez remplacer `namespace App1` par `namespace LightingCS`.
 
--   Open the file MainPage.xaml and replace the original contents with the following XML.
+-   Ouvrez le fichier MainPage.xaml et remplacez le contenu d’origine par le code XML suivant.
 
 ```xml
     <Page
@@ -125,53 +125,53 @@ You'll need to rename the namespace in the previous snippet with the name you ga
     </Page>
 ```
 
-You'll need to replace the first part of the class name in the previous snippet with the namespace of your app. For example, if you created a project named **LightingCS**, you'd replace `x:Class="App1.MainPage"` with `x:Class="LightingCS.MainPage"`. You should also replace `xmlns:local="using:App1"` with `xmlns:local="using:LightingCS"`.
+Vous devez remplacer la première partie du nom de la classe dans l’extrait de code précédent par l’espace de noms de votre application. Par exemple, si vous avez créé un projet nommé **LightingCS**, vous devez remplacer `x:Class="App1.MainPage"` par `x:Class="LightingCS.MainPage"`. Vous devez aussi remplacer `xmlns:local="using:App1"` par `xmlns:local="using:LightingCS"`.
 
--   Press F5 or select **Debug** > **Start Debugging** to build, deploy, and run the app.
+-   Appuyez sur F5 ou sélectionnez **Déboguer** > **Démarrer le débogage** pour générer, déployer et exécuter l’application.
 
-Once the app is running, you can change the light sensor values by altering the light available to the sensor or using the emulator tools.
+Une fois l’application en cours d’exécution, vous pouvez modifier les valeurs du capteur de luminosité en modifiant la lumière disponible pour le capteur ou à l’aide des outils de l’émulateur.
 
--   Stop the app by returning to Visual Studio and pressing Shift+F5 or select **Debug** > **Stop Debugging** to stop the app.
+-   Pour arrêter l’application, retournez dans Visual Studio et appuyez sur Maj+ 5, ou sélectionnez **Déboguer** > **Arrêter le débogage**.
 
-###  Explanation
+###  Explication
 
-The previous example demonstrates how little code you'll need to write in order to integrate light-sensor input in your app.
+L’exemple précédent démontre la faible quantité de code que vous devrez écrire afin d’intégrer l’entrée du capteur de luminosité dans votre application.
 
-The app establishes a connection with the default sensor in the **BlankPage** method.
+L’application établit une connexion avec le capteur par défaut dans la méthode **BlankPage**.
 
 ```csharp
 _lightsensor = LightSensor.GetDefault(); // Get the default light sensor object
 ```
 
-The app establishes the report interval within the **BlankPage** method. This code retrieves the minimum interval supported by the device and compares it to a requested interval of 16 milliseconds (which approximates a 60-Hz refresh rate). If the minimum supported interval is greater than the requested interval, the code sets the value to the minimum. Otherwise, it sets the value to the requested interval.
+L’application établit l’intervalle de rapport dans la méthode **BlankPage**. Le code suivant récupère l’intervalle minimal pris en charge par l’appareil et le compare à un intervalle demandé de 16millisecondes (ce qui représente une fréquence de rafraîchissement de 60Hz). Si l’intervalle pris en charge minimum est supérieur à l’intervalle demandé, le code définit la valeur sur l’intervalle minimum. Sinon, il définit la valeur sur l’intervalle demandé.
 
 ```csharp
 uint minReportInterval = _lightsensor.MinimumReportInterval;
 uint reportInterval = minReportInterval > 16 ? minReportInterval : 16;
 _lightsensor.ReportInterval = reportInterval;
 ```
-The new light-sensor data is captured in the **ReadingChanged** method. Each time the sensor driver receives new data from the sensor, it passes the value to your app using this event handler. The app registers this event handler on the following line.
+Les nouvelles données du capteur de luminosité sont capturées dans la méthode **ReadingChanged**. Chaque fois que le pilote du capteur reçoit de nouvelles données du capteur, il transmet la valeur à votre application à l’aide de ce gestionnaire d’événements. L’application inscrit ce gestionnaire d’événements sur la ligne suivante.
 
 ```csharp
 _lightsensor.ReadingChanged += new TypedEventHandler<LightSensor, 
 LightSensorReadingChangedEventArgs>(ReadingChanged);
 ```
 
-These new values are written to a TextBlock found in the project's XAML.
+Ces nouvelles valeurs sont écrites dans un TextBlock identifié dans le code XAML du projet.
 
 ```xml
 <TextBlock HorizontalAlignment="Left" Height="44" Margin="52,38,0,0" TextWrapping="Wrap" Text="LUX Reading" VerticalAlignment="Top" Width="150"/>
  <TextBlock x:Name="txtLuxValue" HorizontalAlignment="Left" Height="44" Margin="224,38,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="217"/>
 ```
 
-## Related topics
+## Rubriques connexes
 
-* [LightSensor Sample](http://go.microsoft.com/fwlink/p/?linkid=241381)
+* [Exemple de capteur de luminosité](http://go.microsoft.com/fwlink/p/?linkid=241381)
  
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

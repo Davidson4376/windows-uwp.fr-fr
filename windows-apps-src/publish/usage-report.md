@@ -1,51 +1,51 @@
 ---
 author: jnHs
-Description: The Usage report in the Windows Dev Center dashboard lets you see how customers are using your app.
-title: Usage report
+Description: "Le rapport Utilisation disponible dans le tableau de bord du Centre de développement Windows vous permet de déterminer la façon dont les clients utilisent votre application."
+title: "Rapport sur l’utilisation"
 ms.assetid: 5F0E7F94-D121-4AD3-A6E5-9C0DEC437BD3
 translationtype: Human Translation
-ms.sourcegitcommit: c413ff1d4fe709e92f7a306e671f9a4fe22a5999
-ms.openlocfilehash: 21be2064914189abe8ef68c858d33346b947550c
+ms.sourcegitcommit: 6dac44032ac217969148ff73c594f99d8a733355
+ms.openlocfilehash: 0cb9d09504a024cabe66661a5c77e21752b7e2e6
 
 ---
 
-# Usage report
+# Rapport sur l’utilisation
 
 
-The **Usage** report in the Windows Dev Center dashboard lets you see how customers on Windows 10 are using your app and get info about custom events that you've defined. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline.
+Le rapport **Utilisation** disponible dans le tableau de bord du Centre de développement Windows vous permet de déterminer la façon dont les clients sur Windows10 utilisent votre application et d’obtenir des informations sur les événements personnalisés que vous avez définis. Vous pouvez afficher ces données dans votre tableau de bord ou [télécharger le rapport](download-analytic-reports.md) et le consulter hors connexion.
 
-> **Note**  Previously, the **Usage** report only provided data if you activated the Visual Studio Application Insights SDK in your app. With the updated **Usage** report, this is no longer required.
+> **Remarque** Par le passé, le rapport **Utilisation** ne contenait des données que si vous aviez activé le Kit de développement logiciel (SDK) VisualStudio Application Insights dans votre application. Avec le rapport **Utilisation** mis à jour, cela n’est plus nécessaire.
 
-## Apply filters
+## Appliquer les filtres
 
 
-Near the top of the page, you can expand **Apply filters** to filter all of the data on this page by date range and/or by product group (related OS versions).
+Dans la zone supérieure de la page, vous pouvez développer la section **Appliquer les filtres** pour filtrer toutes les données de cette page par plage de dates et/ou par groupe de produits (versions de système d’exploitation associées).
 
--   **Date**: The default filter is **Last 30 days**, but you can expand this up to **Last 3 months**.
--   **Package version**: The default setting is **All**. If your app includes more than one package, you can choose a specific one here.
--   **Device type**: The default setting is **All**, but you can choose to show data for only one specific device type.
+-   **Date**: la valeur par défaut de ce filtre est **30derniers jours**, mais vous pouvez étendre cette période aux **3derniers mois**.
+-   **Version du package**: la valeur par défaut de ce filtre est **Toutes**. Si votre application comporte plusieurs packages, vous pouvez en choisir un ici.
+-   **Type d’appareil** : le paramètre par défaut est **Tous**, mais vous pouvez choisir d’afficher les données pour un seul type d’appareil donné.
 
-The info in all of the charts listed below will reflect the period of time selected in **Apply filters**. By default this will include data for all of your package versions and supported device types, unless you've used the **Apply filters** section to filter for only one.
+Les informations figurant dans tous les graphiques répertoriés ci-après correspondent à la période sélectionnée dans **Appliquer les filtres**. Par défaut, ces données porteront sur toutes les versions de vos packages et sur tous les types d’appareils pris en charge, sauf si vous avez utilisé la section **Appliquer les filtres** pour ne visualiser que les données d’une version ou d’un type spécifique.
 
-> **Note** Only usage data from customers on Windows 10 is included in this report.
+> **Remarque** Seules les données d’utilisation des clients sur Windows 10 sont incluses dans ce rapport.
 
-## Total user sessions
+## Nombre total de sessions utilisateur
 
-The **Total user sessions** chart shows the number of daily user sessions for your app over the selected period of time.
+Le graphique **Nombre total de sessions utilisateur** affiche le nombre de sessions utilisateur quotidiennes de votre application au cours de la période sélectionnée.
 
-Each user session represents a distinct period of time when a customer interacted with your app. Each user session is considered to end after a period of inactivity, so a single customer could have multiple user sessions over the same day. Note this chart does not track unique users for your app.
+Chaque session utilisateur représente une période distincte pendant laquelle un client a interagi avec votre application. Chaque session utilisateur est considérée comme prenant fin après une période d’inactivité, de sorte qu’un client unique peut être associé à plusieurs sessions utilisateur dans la même journée. Veuillez noter que ce graphique n’effectue pas le suivi des utilisateurs uniques pour votre application.
 
-## Active users
+## Utilisateurs actifs
 
-The **Active users** chart shows the number of customers who used your app on a specific day during the selected period of time.
+Le graphique **Utilisateurs actifs** affiche le nombre de clients qui ont utilisé votre application un jour spécifique de la période sélectionnée.
 
-Each active user represents a customer who used your app that day. This chart does not track unique user sessions (that is, a customer is represented in this chart whether they used your app just once or multiple times that day).
+Chaque utilisateur actif représente un client ayant utilisé votre application le jour en question. Ce graphique n'effectue pas le suivi des sessions utilisateur uniques (autrement dit, les clients qui figurent dans ce graphique peuvent avoir utilisé votre application une ou plusieurs fois ce jour-là).
 
-## Custom events
+## Événements personnalisés
 
-The **Custom events** chart shows the total occurrences for any custom events that you have defined for your app. This may include multiple occurrences for the same customer.
+Le graphique **Événements personnalisés** affiche le nombre total d'occurrences des événements personnalisés que vous avez définis pour votre application. Ces informations peuvent concerner plusieurs occurrences pour un même client.
 
-Custom events are implemented using the [StoreServicesCustomEventLogger.Log](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.log.aspx) method in the [Microsoft Store Services SDK](../monetize/microsoft-store-services-sdk.md).
+Les événements personnalisés sont implémentés à l’aide de [Journal](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomevents.log.aspx) dans le [SDK d’engagement et de monétisation de la Boutique Microsoft](../monetize/monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md).
 
 
 
@@ -53,6 +53,10 @@ Custom events are implemented using the [StoreServicesCustomEventLogger.Log](htt
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+
+
+<!--HONumber=Jun16_HO5-->
 
 

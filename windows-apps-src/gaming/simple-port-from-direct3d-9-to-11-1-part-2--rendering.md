@@ -1,34 +1,34 @@
 ---
 author: mtoepke
-title: Convert the rendering framework
-description: Shows how to convert a simple rendering framework from Direct3D 9 to Direct3D 11, including how to port geometry buffers, how to compile and load HLSL shader programs, and how to implement the rendering chain in Direct3D 11.
+title: "Convertir l’infrastructure de rendu"
+description: "Montre comment convertir une infrastructure de rendu simple de Direct3D9 à Direct3D11, notamment comment porter des tampons de géométrie, comment compiler et charger des programmes de nuanceurs HLSL et comment implémenter la chaîne de rendu dans Direct3D11."
 ms.assetid: f6ca1147-9bb8-719a-9a2c-b7ee3e34bd18
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c5cdddbf2bf75da761f4439ef2d890170c6681c5
+ms.openlocfilehash: 5cfdce2a62f6b5761ebf820418762a307dd051bb
 
 ---
 
-# Convert the rendering framework
+# Convertir l’infrastructure de rendu
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-**Summary**
+**Récapitulatif**
 
--   [Part 1: Initialize Direct3D 11](simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md)
--   Part 2: Convert the rendering framework
--   [Part 3: Port the game loop](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)
-
-
-Shows how to convert a simple rendering framework from Direct3D 9 to Direct3D 11, including how to port geometry buffers, how to compile and load HLSL shader programs, and how to implement the rendering chain in Direct3D 11. Part 2 of the [Port a simple Direct3D 9 app to DirectX 11 and Universal Windows Platform (UWP)](walkthrough--simple-port-from-direct3d-9-to-11-1.md) walkthrough.
-
-## Convert effects to HLSL shaders
+-   [Partie1: initialiser Direct3D11](simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md)
+-   Partie 2 : convertir l’infrastructure de rendu
+-   [Partie3: porter la boucle de jeu](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)
 
 
-The following example is a simple D3DX technique, written for the legacy Effects API, for hardware vertex transformation and pass-through color data.
+Montre comment convertir une infrastructure de rendu simple de Direct3D9 à Direct3D11, notamment comment porter des tampons de géométrie, comment compiler et charger des programmes de nuanceurs HLSL et comment implémenter la chaîne de rendu dans Direct3D11. Partie2 de la procédure pas à pas [Porter une application Direct3D9 simple vers DirectX11 et la plateforme Windows universelle (UWP)](walkthrough--simple-port-from-direct3d-9-to-11-1.md).
 
-Direct3D 9 shader code
+## Convertir des effets en nuanceurs HLSL
+
+
+L’exemple suivant est une technique D3DX simple, écrite pour l’API Effets héritée, pour la transformation de vertex matériel et les données de couleurs directes.
+
+Code de nuanceur Direct3D 9
 
 ```cpp
 // Global variables
@@ -90,24 +90,24 @@ technique RenderSceneSimple
 }
 ```
 
-In Direct3D 11, we can still use our HLSL shaders. We put each shader in its own HLSL file so that Visual Studio compiles them into separate files and later, we'll load them as separate Direct3D resources. We set the target level to [Shader Model 4 Level 9\_1 (/4\_0\_level\_9\_1)](https://msdn.microsoft.com/library/windows/desktop/ff476876) because these shaders are written for DirectX 9.1 GPUs.
+Dans Direct3D 11, nous pouvons toujours utiliser nos nuanceurs HLSL. Nous mettons chaque nuanceur dans son propre fichier HLSL afin que Visual Studio les compile dans des fichiers distincts et que nous les chargions plus tard en tant que ressources Direct3D distinctes. Nous définissons le niveau cible sur [Modèle de nuanceur4 niveau 9\_1 (/4\_0\_level\_9\_1)](https://msdn.microsoft.com/library/windows/desktop/ff476876), car ces nuanceurs sont écrits pour les GPU DirectX9.1.
 
-When we defined the input layout, we made sure it represented the same data structure we use to store per-vertex data in system memory and in GPU memory. Similarly, the output of a vertex shader should match the structure used as input to the pixel shader. The rules are not the same as passing data from one function to another in C++; you can omit unused variables at the end of the structure. But the order can't be rearranged and you can't skip content in the middle of the data structure.
+Quand nous avons défini le schéma d’entrée, nous avons vérifié qu’il représentait la même structure de données que celle que nous utilisons pour stocker les données par vertex dans la mémoire système et la mémoire GPU. De même, la sortie d’un nuanceur de vertex doit correspondre à la structure utilisée en tant qu’entrée du nuanceur de pixels. Les règles ne sont pas les mêmes que pour passer des données d’une fonction à une autre en C++ ; vous pouvez omettre les variables inutilisées à la fin de la structure. Mais il n’est pas possible de réorganiser l’ordre et vous ne pouvez pas ignorer le contenu du milieu de la structure de données.
 
-> **Note**  
-The rules in Direct3D 9 for binding vertex shaders to pixel shaders were more relaxed than the rules in Direct3D 11. The Direct3D 9 arrangement was flexible, but inefficient.
-
- 
-
-It's possible that your HLSL files uses older syntax for shader semantics - for example, COLOR instead of SV\_TARGET. If so you'll need to enable HLSL compatibility mode (/Gec compiler option) or update the shader [semantics](https://msdn.microsoft.com/library/windows/desktop/bb509647) to the current syntax. The vertex shader in this example has been updated with current syntax.
-
-Here's our hardware transformation vertex shader, this time defined in its own file.
-
-> **Note**  Vertex shaders are required to output the SV\_POSITION system value semantic. This semantic resolves the vertex position data to coordinate values where x is between -1 and 1, y is between -1 and 1, z is divided by the original homogeneous coordinate w value (z/w), and w is 1 divided by the original w value (1/w).
+> **Remarque**  
+Les règles de Direct3D9 pour lier des nuanceurs de vertex à des nuanceurs de pixels étaient plus souples que celles de Direct3D11. La disposition Direct3D9 était flexible, mais inefficace.
 
  
 
-HLSL vertex shader (feature level 9.1)
+Il est possible que vos fichiers HLSL utilisent une syntaxe plus ancienne pour la sémantique de nuanceur, par exemple, COLOR au lieu de SV\_TARGET. Le cas échéant, vous devez activer le mode de compatibilité HLSL (option de compilateur /Gec) ou mettre à jour la [sémantique](https://msdn.microsoft.com/library/windows/desktop/bb509647) de nuanceur vers la syntaxe actuelle. Le nuanceur de vertex de cet exemple a été mis à jour avec la syntaxe actuelle.
+
+Voici notre nuanceur de vertex de transformation matérielle, cette fois défini dans son propre fichier.
+
+> **Remarque** Les nuanceurs de vertex sont requis pour sortir la sémantique des valeurs système SV\_POSITION. Cette sémantique traduit les données de position du vertex en coordonnées, où x et y sont des valeurs comprises entre -1 et 1, z est divisé par la valeur w de la coordonnée homogène initiale (z/w), et w correspond à 1 divisé par la valeur w initiale (1/w).
+
+ 
+
+Nuanceur de vertex HLSL (niveau de fonctionnalité 9.1)
 
 ```cpp
 cbuffer ModelViewProjectionConstantBuffer : register(b0)
@@ -148,15 +148,15 @@ VS_OUTPUT main(VS_INPUT input) // main is the default function name
 }
 ```
 
-This is all we need for our pass-through pixel shader. Even though we call it a pass-through, it's actually getting perspective-correct interpolated color data for each pixel. Note that the SV\_TARGET system value semantic is applied to the color value output by our pixel shader as required by the API.
+C’est tout ce dont nous avons besoin pour notre nuanceur de pixels direct. Même si nous l’appelons direct, il obtient en fait des données de couleurs interpolées de perspective correcte pour chaque pixel. Notez que la sémantique des valeurs système SV\_TARGET est appliquée à la sortie des valeurs de couleurs par notre nuanceur de pixels comme exigé par l’API.
 
-> **Note**  Shader level 9\_x pixel shaders cannot read from the SV\_POSITION system value semantic. Model 4.0 (and higher) pixel shaders can use SV\_POSITION to retrieve the pixel location on the screen, where x is between 0 and the render target width and y is between 0 and the render target height (each offset by 0.5).
+> **Remarque** Les nuanceurs de pixels de niveau 9\_x ne peuvent pas lire à partir de la sémantique des valeurs système SV\_POSITION. Les nuanceurs de pixels du modèle4.0 (et ultérieur) peuvent utiliser SV\_POSITION pour récupérer l’emplacement des pixels sur l’écran, où x est compris entre 0 et la largeur cible de rendu et y est compris entre 0 et la hauteur cible de rendu (par décalage de 0,5).
 
  
 
-Most pixel shaders are much more complex than a pass through; note that higher Direct3D feature levels allow a much greater number of calculations per shader program.
+La plupart des nuanceurs de pixels sont beaucoup plus complexes qu’un nuanceur de pixels direct; notez que les niveaux de fonctionnalité Direct3D plus élevés permettent d’effectuer beaucoup plus de calculs par programme de nuanceur.
 
-HLSL pixel shader (feature level 9.1)
+Nuanceur de pixels HLSL (niveau de fonctionnalité 9.1)
 
 ```cpp
 struct PS_INPUT
@@ -180,12 +180,12 @@ PS_OUTPUT main(PS_INPUT In)
 }
 ```
 
-## Compile and load shaders
+## Compiler et charger des nuanceurs
 
 
-Direct3D 9 games often used the Effects library as a convenient way to implement programmable pipelines. Effects could be compiled at run-time using the [**D3DXCreateEffectFromFile function**](https://msdn.microsoft.com/library/windows/desktop/bb172768) method.
+Les jeux Direct3D 9 ont souvent utilisé la bibliothèque d’effets pour implémenter des pipelines programmables. Il était possible de compiler les effets au moment de l’exécution à l’aide de la méthode [**D3DXCreateEffectFromFile function**](https://msdn.microsoft.com/library/windows/desktop/bb172768).
 
-Loading an effect in Direct3D 9
+Chargement d’un effet dans Direct3D 9
 
 ```cpp
 // Turn off preshader optimization to keep calculations on the GPU
@@ -208,9 +208,9 @@ D3DXCreateEffectFromFile(
     );
 ```
 
-Direct3D 11 works with shader programs as binary resources. Shaders are compiled when the project is built and then treated as resources. So our example will load the shader bytecode into system memory, use the Direct3D device interface to create a Direct3D resource for each shader, and point to the Direct3D shader resources when we set up each frame.
+Direct3D 11 fonctionne avec les programmes de nuanceurs sous forme de ressources binaires. Les nuanceurs sont compilés quand le projet est créé, puis traités en tant que ressources. Par conséquent, notre exemple va charger le bytecode de nuanceur dans la mémoire système, utiliser l’interface de périphérique Direct3D pour créer une ressource Direct3D pour chaque nuanceur, puis pointer vers les ressources de nuanceurs Direct3D quand nous allons configurer chaque image.
 
-Loading a shader resource in Direct3D 11
+Chargement d’une ressource de nuanceur dans Direct3D 11
 
 ```cpp
 // BasicReaderWriter is a tested file loader used in SDK samples.
@@ -232,23 +232,23 @@ m_d3dDevice->CreateVertexShader(
     );
 ```
 
-To include the shader bytecode in your compiled app package, just add the HLSL file to the Visual Studio project. Visual Studio will use the [Effect-Compiler Tool](https://msdn.microsoft.com/library/windows/desktop/bb232919) (FXC) to compile HLSL files into compiled shader objects (.CSO files) and include them in the app package.
+Pour inclure le bytecode de nuanceur dans votre package d’application compilé, il suffit d’ajouter le fichier HLSL au projet Visual Studio. VisualStudio va utiliser l’[Outil compilateur d’effet](https://msdn.microsoft.com/library/windows/desktop/bb232919) (FXC) pour compiler les fichiers HLSL dans des objets de nuanceur compilés (fichiers .CSO) et les inclure dans le package d’application.
 
-> **Note**   Be sure to set the correct target feature level for the HLSL compiler: right-click the HLSL source file in Visual Studio, select Properties, and change the **Shader Model** setting under **HLSL Compiler -&gt; General**. Direct3D checks this property against the hardware capabilities when your app creates the Direct3D shader resource.
-
- 
-
-![hlsl shader properties](images/hlslshaderpropertiesmenu.png)![hlsl shader type](images/hlslshadertypeproperties.png)
-
-This is a good place to create the input layout, which corresponds to the vertex stream declaration in Direct3D 9. The per-vertex data structure needs to match what the vertex shader uses; in Direct3D 11 we have more control over the input layout; we can define the array size and bit length of floating-point vectors and specify semantics for the vertex shader. We create a [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) structure and use it to inform Direct3D what the per-vertex data will look like. We waited until after we loaded the vertex shader to define the input layout because the API validates the input layout against the vertex shader resource. If the input layout isn't compatible then Direct3D throws an exception.
-
-Per-vertex data has to be stored in compatible types in system memory. DirectXMath data types can help; for example, DXGI\_FORMAT\_R32G32B32\_FLOAT corresponds to [**XMFLOAT3**](https://msdn.microsoft.com/library/windows/desktop/ee419475).
-
-> **Note**   Constant buffers use a fixed input layout that aligns to four floating-point numbers at a time. [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608) (and its derivatives) are recommended for constant buffer data.
+> **Remarque** Veillez à définir le niveau de fonctionnalité cible correct pour le compilateur HLSL : cliquez avec le bouton droit sur le fichier source HLSL dans Visual Studio, sélectionnez Propriétés, puis modifiez le paramètre **Modèle de nuanceur** sous **Compilateur HLSL -&gt; Général**. Direct3D vérifie cette propriété par rapport aux fonctionnalités matérielles quand votre application crée la ressource de nuanceur Direct3D.
 
  
 
-Setting the input layout in Direct3D 11
+![Propriétés de nuanceur HLSL](images/hlslshaderpropertiesmenu.png)![Type de nuanceur HLSL](images/hlslshadertypeproperties.png)
+
+Voici un bon endroit pour créer le schéma d’entrée, qui correspond à la déclaration de flux de vertex dans Direct3D9. La structure de données par vertex a besoin de correspondre à ce que le nuanceur de vertex utilise; dans Direct3D11, nous avons plus de contrôle sur le schéma d’entrée. Nous pouvons définir la taille du tableau et la longueur en bits des vecteurs à virgule flottante et spécifier la sémantique pour le nuanceur de vertex. Nous créons une structure [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) et l’utilisons pour informer Direct3D sur l’aspect des données par vertex. Nous avons attendu la fin du chargement du nuanceur de vertex pour définir le schéma d’entrée car l’API valide ce dernier par rapport à la ressource de nuanceur de vertex. Si le nuanceur de vertex n’est pas compatible, alors Direct3D lève une exception.
+
+Les données par vertex doivent être stockées dans des types compatibles dans la mémoire système. Les types de données DirectXMath peuvent s’avérer utiles. Par exemple, DXGI\_FORMAT\_R32G32B32\_FLOAT correspond à [**XMFLOAT3**](https://msdn.microsoft.com/library/windows/desktop/ee419475).
+
+> **Remarque** Les tampons constants utilisent un schéma d’entrée fixe qui s’aligne sur quatrenombres à virgule flottante à la fois. [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608) (et ses dérivés) sont recommandés pour les données de mémoires tampons constantes.
+
+ 
+
+Définition du schéma d’entrée dans Direct3D 11
 
 ```cpp
 // Create input layout:
@@ -262,10 +262,10 @@ const D3D11_INPUT_ELEMENT_DESC vertexDesc[] =
 };
 ```
 
-## Create geometry resources
+## Créer des ressources de géométrie
 
 
-In Direct3D 9 we stored geometry resources by creating buffers on the Direct3D device, locking the memory, and copying data from CPU memory to GPU memory.
+Dans Direct3D 9, nous stockions les ressources de géométrie en créant des tampons sur le périphérique Direct3D, en verrouillant la mémoire et en copiant les données depuis la mémoire du processeur vers la mémoire GPU.
 
 Direct3D 9
 
@@ -293,7 +293,7 @@ memcpy(pVertices, CubeVertices, sizeof(CubeVertices));
 pVertexBuffer->Unlock();
 ```
 
-DirectX 11 follows a simpler process. The API automatically copies the data from system memory to the GPU. We can use COM smart pointers to help make programming easier.
+DirectX 11 suit un processus plus simple. L’API copie automatiquement les données depuis la mémoire système vers le GPU. Nous pouvons utiliser des pointeurs intelligents COM pour faciliter la programmation.
 
 DirectX 11
 
@@ -315,12 +315,12 @@ m_d3dDevice->CreateBuffer(
     );
 ```
 
-## Implement the rendering chain
+## Implémenter la chaîne de rendu
 
 
-Direct3D 9 games often used an effect-based rendering chain. This type of rendering chain sets up the effect object, provides it with the resources it needs, and lets it render each pass.
+Les jeux Direct3D 9 utilisaient souvent une chaîne de rendu basée sur un effet. Ce type de chaîne de rendu configure l’objet de l’effet, le fournit avec les ressources dont il a besoin, puis le laisse générer le rendu de chaque passage.
 
-Direct3D 9 rendering chain
+Chaîne de rendu Direct3D 9
 
 ```cpp
 // Clear the render target and the z-buffer.
@@ -381,11 +381,11 @@ if(SUCCEEDED(m_pd3dDevice->BeginScene()))
 m_pd3dDevice->Present(NULL, NULL, NULL, NULL);
 ```
 
-The DirectX 11 rendering chain will still do the same tasks, but the rendering passes need to be implemented differently. Instead of putting the specifics in FX files and letting the rendering techniques be more-or-less opaque to our C++ code, we'll set up all our rendering in C++.
+La chaîne de rendu DirectX 11 effectue toujours les mêmes tâches, mais les passages de rendu doivent être implémentés différemment. Au lien de placer les spécificités dans des fichiers FX et de laisser les techniques de rendu plus ou moins opaques pour notre code C++, nous allons configurer tout notre rendu en C++.
 
-Here's how our rendering chain will look. We need to supply the input layout we created after loading the vertex shader, supply each of the shader objects, and specify the constant buffers for each shader to use. This example doesn't include multiple rendering passes, but if it did we'd do a similar rendering chain for each pass, changing the setup as needed.
+Voici ce à quoi va ressembler notre chaîne de rendu. Nous avons besoin de fournir le schéma de rendu que nous avons créé après avoir chargé le nuanceur de vertex, de fournir chacun des objets de nuanceur et de spécifier les tampons constants à utiliser pour chaque nuanceur. Cet exemple n’inclut pas plusieurs passages de rendu, mais si c’était le cas, nous ferions une chaîne de rendu similaire pour chaque passage, en modifiant la configuration selon les besoins.
 
-Direct3D 11 rendering chain
+Chaîne de rendu Direct3D 11
 
 ```cpp
 // Clear the back buffer.
@@ -473,15 +473,15 @@ m_d3dContext->DrawIndexed(
     );
 ```
 
-The swap chain is part of graphics infrastructure, so we use our DXGI swap chain to present the completed frame. DXGI blocks the call until the next vsync; then it returns, and our game loop can continue to the next iteration.
+La chaîne de permutation fait partie de l’infrastructure graphique, donc nous utilisons notre chaîne de permutation DXGI pour présenter l’image terminée. DXGI bloque l’appel jusqu’à la prochaine synchronisation verticale, puis il revient et notre boucle de jeu peut passer à l’itération suivante.
 
-Presenting a frame to the screen using DirectX 11
+Présentation d’une image à l’écran avec DirectX 11
 
 ```cpp
 m_swapChain->Present(1, 0);
 ```
 
-The rendering chain we just created will be called from a game loop implemented in the [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) method. This is shown in [Part 3: Viewport and game loop](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md).
+La chaîne de rendu que nous venons de créer sera appelée à partir d’une boucle de jeu implémentée dans la méthode [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505). Une illustration est proposée dans la [Partie3: Fenêtre d’affichage et boucle de jeu](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md).
 
  
 
@@ -493,6 +493,6 @@ The rendering chain we just created will be called from a game loop implemented 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,52 +1,53 @@
 ---
 author: mijacobs
-Description: Sound helps complete an application's user experience, and gives them that extra audio edge they need to match the feel of Windows across all platforms.
+Description: "Le son vient compléter l’expérience utilisateur d’une application et offre à l’utilisateur cette touche audio supplémentaire qui l’aide à reconnaître Windows sur l’ensemble des plateformes."
 label: Sound
-title: Sound
+title: Son
 template: detail.hbs
 ms.assetid: 9fa77494-2525-4491-8f26-dc733b6a18f6
 translationtype: Human Translation
-ms.sourcegitcommit: e240197b4cc233b9fc1ecaa4a1835c4a4dcd3bf8
-ms.openlocfilehash: 91021d76b180e2bc26c0d502098e0a0b21f0219f
+ms.sourcegitcommit: 7bb23094d569bb29c7227ccd628abd0989b575a4
+ms.openlocfilehash: e6dab48935cd5345ee734e6fda7e6fd4d333bb90
 
 ---
+[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.] *Cet article fournit un aperçu de fonctionnalités qui ne sont pas encore disponibles.*
 
-# Sound
+# Son
 
-There are many ways to use sound to enhance your app. You can use to sound to supplement other UI elements, enabling users to recognize events audibly. Sound can be an effective user interface element for people with visual disabilities. You can use sound to create an atmosphere that immerses the user; for example, you might play a whimsical soundtrack in the background of puzzle game, or use ominous sound effects for a horror/survival game.
+Il existe de nombreuses manières d’utiliser le son pour améliorer votre application. Vous pouvez utiliser les sons pour compléter d’autres éléments de l’interface utilisateur, afin de permettre aux utilisateurs de reconnaître les événements par un son. Le son peut être un élément d’interface utilisateur efficace pour les personnes souffrant de handicaps visuels. Vous pouvez utiliser le son pour créer une atmosphère qui immerge totalement l’utilisateur; par exemple, vous pouvez lire une bande son fantaisiste en arrière-plan d’un jeu de puzzle ou utiliser des effets sonores menaçants pour un jeu d’horreur/de survie.
 
-## Sound Global API
+## API de son globale
 
-UWP provides an easily accessible sound system that allows you to simply "flip a switch" and get an immersive audio experience across your entire app.
+UWP fournit un système audio aisément accessible qui vous permet de bénéficier d’une expérience audio immersive dans l’ensemble de votre application par le simple actionnement d’un commutateur.
 
-The **ElementSoundPlayer** is an integrated sound system within XAML, and when turned on all default controls will play sounds automatically.
+**ElementSoundPlayer** est un système audio intégré dans le code XAML qui, une fois activé, déclenche la lecture automatique de sons par tous les contrôles par défaut.
 ```C#
 ElementSoundPlayer.State = ElementSoundPlayerState.On;
 ```
-The **ElementSoundPlayer** has three different states: **On** **Off** and **Auto**.
+**ElementSoundPlayer** peut prendre trois états : **On**, **Off** et **Auto**.
 
-If set to **Off**, no matter where your app is run, sound will never play. If set to **On** sounds for your app will play on every platform.
+S’il est défini sur **Off**, aucun son ne sera émis, quelle que soit la plateforme sur laquelle votre application s’exécute. Si le système audio est défini sur **On**, les sons de votre application seront émis sur chaque plateforme.
 
-### Sound for TV and Xbox
+### Son pour Xbox et télévision
 
-Sound is a key part of the 10-foot experience, and by default, the **ElementSoundPlayer**'s state is **Auto**, meaning that you will only get sound when your app is running on Xbox.
-To understand more about designing for Xbox and TV, please see [Designing for Xbox and TV](http://go.microsoft.com/fwlink/?LinkId=760736).
+Le son constitue un aspect essentiel de l’expérience d’interface à 3 mètres (ou « 10-foot ») et, par défaut, le système **ElementSoundPlayer** présente l’état **Auto**, ce qui signifie que vous n’entendrez le son que si votre application est exécutée sur Xbox.
+Pour plus d’informations sur la conception pour Xbox et télévision, voir [Conception pour Xbox et télévision](http://go.microsoft.com/fwlink/?LinkId=760736).
 
-## Sound Volume Override
+## Substitution du volume sonore
 
-All sounds within the app can be dimmed with the **Volume** control. However, sounds within the app cannot get *louder than the system volume*.
+Tous les sons au sein de l’application peuvent être atténués avec le contrôle **Volume**. En revanche, le volume des sons de l’application ne peut pas être *plus élevé que le volume système*.
 
-To set the app volume level, call:
+Pour définir le niveau de volume de l’application, appelez la méthode suivante:
 ```C#
 ElementSoundPlayer.Volume = 0.5f;
 ```
-Where maximum volume (relative to system volume) is 1.0, and minimum is 0.0 (essentially silent).
+où le volume maximal (par rapport au volume système) est de 1.0, et le volume minimal de 0.0 (essentiellement silencieux).
 
-## Control Level State
+## État du niveau d’un contrôle
 
-If a control's default sound is not desired, it can be disabled. This is done through the **ElementSoundMode** on the control.
+Si le son par défaut d’un contrôle n’est pas souhaité, il peut être désactivé. Cette opération est effectuée par le biais de l’utilisation de l’élément **ElementSoundMode** sur le contrôle.
 
-The **ElementSoundMode** has two states: **Off** and **Default**. When not set, it is **Default**. If set to **Off**, every sound that control plays will be muted *except for focus*.
+L’élément **ElementSoundMode** peut prendre deux états : **Off** et **Default**. Lorsqu’il n’est pas défini, il présente la valeur **Default**. S’il est défini sur **Off**, chaque son lu par le contrôle sera désactivé, *sauf pour le focus*.
 
 ```XAML
 <Button Name="ButtonName" Content="More Info" ElementSoundMode="Off"/>
@@ -56,97 +57,97 @@ The **ElementSoundMode** has two states: **Off** and **Default**. When not set, 
 ButtonName.ElementSoundState = ElementSoundMode.Off;
 ```
 
-## Is This The Right Sound?
+## Est-ce le son approprié?
 
-When creating a custom control, or changing an existing control's sound, it is important to understand the usages of all the sounds the system provides.
+Lorsque vous créez un contrôle personnalisé ou que vous modifiez le son d’un contrôle existant, il est important de bien comprendre les utilisations de tous les sons fournis par le système.
 
-Each sound relates to a certain basic user interaction, and although sounds can be customized to play on any interaction, this section serves to illustrate the scenarios where sounds should be used to maintain a consistent experience across all UWP apps.
+Chaque son se rapporte à une interaction utilisateur de base spécifique, et bien que vous puissiez personnaliser les sons afin qu’ils soient émis pour n’importe quelle interaction, cette section illustre les scénarios qui nécessitent l’utilisation de sons pour garantir une expérience cohérence dans l’ensemble des applications UWP.
 
-### Invoking an Element
+### Invocation d’un élément
 
-The most common control-triggered sound in our system today is the **Invoke** sound. This sound plays when a user invokes a control through a tap/click/enter/space or press of the 'A' button on a gamepad.
+Le son le plus courant déclenché par un contrôle dans notre système actuel est le son **Invoke**. Ce son est émis lorsqu’un utilisateur invoque un contrôle par le biais d’un appui, d’un clic, d’une sélection de la touche Entrée ou de la barre d’espace ou d’une pression de la touche «A» d’un boîtier de commande.
 
-Typically, this sound is only played when a user explicitly targets a simple control or control part through an [input device](../input-and-devices/input-primer.md).
+En règle générale, ce son est uniquement émis quand un utilisateur cible explicitement un contrôle simple ou une partie d’un contrôle par l’intermédiaire d’un [périphérique d’entrée](../input-and-devices/input-primer.md).
 
-<SelectButtonClick.mp3 sound clip here>
+&lt;Clip audio SelectButtonClick.mp3 ici&gt;
 
-To play this sound from any control event, simply call the Play method from **ElementSoundPlayer** and pass in **ElementSound.Invoke**:
+Pour lire ce son à partir d’un événement de contrôle quelconque, il vous suffit d’appeler la méthode Play à partir du système **ElementSoundPlayer** et de transmettre l’élément **ElementSound.Invoke** :
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.Invoke);
 ```
 
-### Showing & Hiding Content
+### Affichage et masquage de contenu
 
-There are many flyouts, dialogs and dismissible UIs in XAML, and any action that triggers one of these overlays should call a **Show** or **Hide** sound.
+Le code XAML offre de nombreux menus volants, boîtes de dialogue et interfaces utilisateur révocables, et toute action déclenchant l’une de ces superpositions doit appeler un son **Show** ou **Hide**.
 
-When an overlay content window is brought into view, the **Show** sound should be called:
+Lorsqu’une fenêtre de contenu superposée s’affiche, le son **Show** doit être appelé :
 
-<OverlayIn.mp3 sound clip here>
+&lt;Clip audio OverlayIn.mp3 ici&gt;
 
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.Show);
 ```
-Conversely when an overlay content window is closed (or is light dismissed), the **Hide** sound should be called:
+À l’inverse, quand une fenêtre de contenu superposée se ferme (ou fait l’objet d’un abandon interactif), il convient d’appeler le son **Hide** :
 
-<OverlayOut.mp3 sound clip here>
+&lt;Clip audio OverlayOut.mp3 ici&gt;
 
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.Hide);
 ```
-### Navigation Within a Page
+### Navigation dans une page
 
-When navigating between panels or views within an app's page (see [Hub](../controls-and-patterns/hub.md) or [Tabs and Pivots](../controls-and-patterns/tabs-pivot.md)), there is typically bidirectional movement. Meaning you can move to the next view/panel or the previous one, without leaving the current app page you're on.
+La navigation entre les panneaux ou les vues d’une page de l’application (voir [Hub](../controls-and-patterns/hub.md) ou [Onglets et sélecteurs de vue](../controls-and-patterns/tabs-pivot.md)) donne généralement lieu à un mouvement bidirectionnel. Cela signifie que vous pouvez accéder à la vue/au panneau suivants ou précédents sans quitter la page de l’application sur laquelle vous vous trouvez.
 
-The audio experience around this navigation concept is encompassed by the **MovePrevious** and **MoveNext** sounds.
+L’expérience audio associée à ce concept de navigation est représentée par les sons **MovePrevious** et **MoveNext**.
 
-When moving to a view/panel that is considered the *next item* in a list, call:
+Lors de l’accès à une vue/un panneau considérés comme l’*élément suivant* d’une liste, appelez la méthode :
 
-<PageTransitionRight.mp3 sound clip here>
+&lt;Clip audio PageTransitionRight.mp3 ici&gt;
 
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.MoveNext);
 ```
-And when moving to a previous view/panel in a list considered the *previous item*, call:
+Lors de l’accès à une vue/un panneau considérés comme l’*élément précédent* d’une liste, appelez la méthode :
 
-<PageTransitionLeft.mp3 sound clip here>
+&lt;Clip audio PageTransitionLeft.mp3 ici&gt;
 
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.MovePrevious);
 ```
-### Back Navigation
+### Navigation vers l’arrière
 
-When navigating from the current page to the previous page within an app the **GoBack** sound should be called:
+Lors de l’accès à la page précédente d’une application à partir d’une page donnée, le son **GoBack** doit être appelé :
 
-<BackButtonClick.mp3 sound clip here>
+&lt;Clip audio BackButtonClick.mp3 ici&gt;
 
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.GoBack);
 ```
-### Focusing on an Element
+### Placement du focus sur un élément
 
-The **Focus** sound is the only implicit sound in our system. Meaning a user isn't directly interacting with anything, but is still hearing a sound.
+Le son **Focus** est le seul son implicite dans notre système. Cela signifie que lorsqu’un utilisateur n’interagit directement avec aucun élément, il entend quand même un son.
 
-Focusing happens when a user navigates through an app, this can be with the gamepad/keyboard/remote or kinect. Typically the **Focus** sound *does not play on PointerEntered or mouse hover events*.
+Le placement du focus se produit quand un utilisateur parcourt une application, que ce soit au moyen d’un boîtier de commande, d’un clavier, d’une télécommande ou de Kinect. En règle générale, le son **Focus** *n’est pas émis lors des événements PointerEntered ou de pointage avec la souris*.
 
-To set up a control to play the **Focus** sound when your control receives focus, call:
+Pour configurer un contrôle afin qu’il lise le son **Focus** lorsqu’il reçoit le focus, appelez la méthode :
 
-<ElementFocus1.mp3 sound clip here>
+&lt;Clip audio ElementFocus1.mp3 ici&gt;
 
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.Focus);
 ```
-### Cycling Focus Sounds
+### Émission successive de différents sons de focus
 
-As an added feature to calling **ElementSound.Focus**, the sound system will, by default, cycle through 4 different sounds on each navigation trigger. Meaning that no two exact focus sounds will play right after the other.
+En complément de l’appel de l’élément **ElementSound.Focus**, le système audio émet successivement par défaut 4 sons différents lors de chaque déclencheur de navigation. Cela signifie que le système n’émettra pas deux fois de suite les deux mêmes sons de focus.
 
-The purpose behind this cycling feature is to keep the focus sounds from becoming monotonous and from being noticeable by the user; focus sounds will be played most often and therefore should be the most subtle.
+Cette fonctionnalité de lecture successive est destinée à empêcher que les sons de focus ne deviennent monotones ou gênants pour l’utilisateur; les sons de focus sont ceux qui seront émis le plus souvent, et doivent donc se révéler les plus subtils.
 
-## Related articles
+## Articles connexes
 
-* [Designing for Xbox and TV](http://go.microsoft.com/fwlink/?LinkId=760736)
+* [Conception pour Xbox et télévision](http://go.microsoft.com/fwlink/?LinkId=760736)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO1-->
 
 

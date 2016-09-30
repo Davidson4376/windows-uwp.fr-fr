@@ -1,23 +1,23 @@
 ---
 author: TylerMSFT
-title: Launch the People app
-description: This topic describes the ms-people URI scheme. Your app can use this URI scheme to launch the People app for specific actions.
+title: "Lancer l’application Contacts"
+description: "Cette rubrique décrit le schéma d’URI ms-people. Votre application peut utiliser ce schéma d’URI afin de lancer l’application Contacts pour des actions spécifiques."
 ms.assetid: 1E604599-26EF-421C-932F-E9935CDB248E
 translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: 3125ec2a73410f3d3f5b13e154ea30b1319a9a1e
+ms.openlocfilehash: fd3c38dd0b6df2f430d7be4c40e7131d4ae98616
 
 ---
 
-# Launch the People app
+# Lancer l’application Contacts
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-This topic describes the **ms-people:** URI scheme. Your app can use this URI scheme to launch the People app for specific actions.
+Cette rubrique décrit le schéma d’URI **ms-people:**. Votre application peut utiliser ce schéma d’URI afin de lancer l’application Contacts pour des actions spécifiques.
 
-## ms-people: URI scheme reference
+## Référence de schéma d’URI ms-people:
 
 
 <table>
@@ -27,25 +27,25 @@ This topic describes the **ms-people:** URI scheme. Your app can use this URI sc
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Results</th>
-<th align="left">URI scheme</th>
+<th align="left">Résultats</th>
+<th align="left">Schéma d’URI</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Allows other apps to launch the People app Main page.</td>
+<td align="left">Permet à d’autres applications de lancer la page Principaux de l’application Contacts.</td>
 <td align="left">ms-people:</td>
 </tr>
 <tr class="even">
-<td align="left">Allows other apps to launch the People app Settings page.</td>
+<td align="left">Permet à d’autres applications de lancer la page Paramètres de l’application Contacts.</td>
 <td align="left">ms-people:settings</td>
 </tr>
 <tr class="odd">
-<td align="left">Allows other apps to provide a search string that will launch the People app with the result page of the search.
+<td align="left">Permet à d’autres applications de fournir une chaîne de recherche qui lance l’application Contacts avec la page de résultats de la recherche.
 <div class="alert">
-**Note**  
-<p>The parameters are case sensitive.</p>
-<p>If you do not enter the syntax correctly, or are missing the search string value, the default behavior is to return a full list of contacts without any filtering.</p>
+**Remarque**  
+<p>Les paramètres respectent la casse.</p>
+<p>Si vous n’entrez pas la syntaxe correctement ou si la valeur de chaîne de recherche est manquante, le comportement par défaut consiste à renvoyer la liste complète des contacts sans aucun filtrage.</p>
 </div>
 <div>
  
@@ -53,12 +53,12 @@ This topic describes the **ms-people:** URI scheme. Your app can use this URI sc
 <td align="left">ms-people:search?SearchString=&lt;contactsearchinfo&gt;</td>
 </tr>
 <tr class="even">
-<td align="left">Launches to an existing contact card, if the contact is found. Or, launches to a temporary contact card, if no contact is found. If no input parameter is supplied, we will launch the People App with a contact list.
+<td align="left">Ouvre une carte de visite existante si le contact est trouvé. Ou bien ouvre une carte de visite temporaire si aucun contact n’est détecté. Si aucun paramètre d’entrée n’est fourni, nous lançons l’application Contacts avec une liste de contacts.
 <div class="alert">
-**Note**  
-<p>The parameters are case sensitive.</p>
-<p>The order of the parameters doesn’t matter.</p>
-<p>If there is more than one match, we will return the first match of the contact.</p>
+**Remarque**  
+<p>Les paramètres respectent la casse.</p>
+<p>Peu importe l’ordre des paramètres.</p>
+<p>S’il existe plusieurs correspondances, nous renvoyons la première correspondance du contact.</p>
 </div>
 <div>
  
@@ -66,11 +66,11 @@ This topic describes the **ms-people:** URI scheme. Your app can use this URI sc
 <td align="left">ms-people:viewcontact:?ContactId=&lt;contactid&gt;&amp;AggregatedId=&lt;aggid&gt;&amp;PhoneNumber= &lt;phonenum&gt;&amp;Email=&lt;email&gt;&amp;ContactName=&lt;name&gt;&amp;Contact=&lt;contactobj&gt;</td>
 </tr>
 <tr class="odd">
-<td align="left">Launches to a Save-contact page within the People app to save the given contact with the supplied phone number or email address.
+<td align="left">Ouvre une page d’enregistrement de contact dans l’application Contacts, permettant d’enregistrer le contact donné avec le numéro de téléphone ou l’adresse électronique fournis.
 <div class="alert">
-**Note**  
-<p>The parameters are case sensitive.</p>
-<p>The order of the parameters doesn’t matter.</p>
+**Remarque**  
+<p>Les paramètres respectent la casse.</p>
+<p>L’ordre des paramètres n’a pas d’importance.</p>
 </div>
 <div>
  
@@ -82,7 +82,7 @@ This topic describes the **ms-people:** URI scheme. Your app can use this URI sc
 
  
 
-## ms-people:search: parameter reference
+## Référence de paramètre ms-people:search:
 
 
 <table>
@@ -93,17 +93,17 @@ This topic describes the **ms-people:** URI scheme. Your app can use this URI sc
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Parameter</th>
+<th align="left">Paramètre</th>
 <th align="left">Description</th>
-<th align="left">Example</th>
+<th align="left">Exemple</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">**SearchString**</td>
-<td align="left"><p>Optional.</p>
-<p>The search string for the contact search information.</p>
-<p>The phone number or the contact name.</p></td>
+<td align="left"><p>Facultatif.</p>
+<p>Chaîne de recherche pour les informations de recherche de contact.</p>
+<p>Numéro de téléphone ou nom du contact.</p></td>
 <td align="left"><p>ms-people:search?SearchString=Smith</p></td>
 </tr>
 </tbody>
@@ -111,7 +111,7 @@ This topic describes the **ms-people:** URI scheme. Your app can use this URI sc
 
  
 
-## ms-people:viewcontact: parameter reference
+## Référence de paramètre ms-people:viewcontact:
 
 
 <table>
@@ -122,40 +122,40 @@ This topic describes the **ms-people:** URI scheme. Your app can use this URI sc
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Parameter</th>
+<th align="left">Paramètre</th>
 <th align="left">Description</th>
-<th align="left">Example</th>
+<th align="left">Exemple</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">**ContactId**</td>
-<td align="left"><p>Optional.</p>
-<p>Contact Id of the contact.</p></td>
+<td align="left"><p>Facultatif.</p>
+<p>ID de contact du contact.</p></td>
 <td align="left"><p>ms-people:viewcontact?ContactId={ContactId}</p></td>
 </tr>
 <tr class="even">
 <td align="left">**PhoneNumber**</td>
-<td align="left"><p>Optional.</p>
-<p>Phone number of the contact.</p></td>
+<td align="left"><p>Facultatif.</p>
+<p>Numéro de téléphone du contact.</p></td>
 <td align="left"><p>ms-people:viewcontact?PhoneNumber=%2014257069326</p></td>
 </tr>
 <tr class="odd">
 <td align="left">**Email**</td>
-<td align="left"><p>Optional.</p>
-<p>Email of the contact.</p></td>
+<td align="left"><p>Facultatif.</p>
+<p>Adresse électronique du contact.</p></td>
 <td align="left"><p>ms-people:viewcontact?Email=johnsmith@contsco.com</p></td>
 </tr>
 <tr class="even">
 <td align="left">**ContactName**</td>
-<td align="left"><p>Optional.</p>
-<p>Name of the contact.</p></td>
+<td align="left"><p>Facultatif.</p>
+<p>Nom du contact.</p></td>
 <td align="left"><p>ms-people:viewcontact?ContactName=John%20%Smith</p></td>
 </tr>
 <tr class="odd">
 <td align="left">**Contact**</td>
-<td align="left"><p>Optional.</p>
-<p>Contact object.</p></td>
+<td align="left"><p>Facultatif.</p>
+<p>Objet Contact.</p></td>
 <td align="left"><p>ms-people:viewcontact?Contact={Serialized Contact}</p></td>
 </tr>
 </tbody>
@@ -163,7 +163,7 @@ This topic describes the **ms-people:** URI scheme. Your app can use this URI sc
 
  
 
-## ms-people:savetocontact: parameter reference
+## Référence de paramètre ms-people:savetocontact:
 
 
 <table>
@@ -174,28 +174,28 @@ This topic describes the **ms-people:** URI scheme. Your app can use this URI sc
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Parameter</th>
+<th align="left">Paramètre</th>
 <th align="left">Description</th>
-<th align="left">Example</th>
+<th align="left">Exemple</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">**PhoneNumber**</td>
-<td align="left"><p>Optional.</p>
-<p>Phone number of the contact.</p></td>
+<td align="left"><p>Facultatif.</p>
+<p>Numéro de téléphone du contact.</p></td>
 <td align="left"><p>ms-people:savetocontact?PhoneNumber=%2014257069326</p></td>
 </tr>
 <tr class="even">
 <td align="left">**Email**</td>
-<td align="left"><p>Optional.</p>
-<p>Email of the contact.</p></td>
+<td align="left"><p>Facultatif.</p>
+<p>Adresse électronique du contact.</p></td>
 <td align="left"><p>ms-people:savetocontact?Email=johnsmith@contsco.com</p></td>
 </tr>
 <tr class="odd">
 <td align="left">**ContactName**</td>
-<td align="left"><p>Optional.</p>
-<p>Name of the contact.</p></td>
+<td align="left"><p>Facultatif.</p>
+<p>Nom du contact.</p></td>
 <td align="left"><p>ms-people:savetocontact?Email=johnsmith@contsco.com&amp;ContactName= John%20%Smith</p></td>
 </tr>
 </tbody>
@@ -209,6 +209,6 @@ This topic describes the **ms-people:** URI scheme. Your app can use this URI sc
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

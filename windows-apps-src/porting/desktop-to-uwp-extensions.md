@@ -1,66 +1,66 @@
 ---
 author: awkoren
-Description: In addition to the normal APIs available to all UWP apps, there are some extensions and APIs available only to converted desktop apps. This article describes these extensions and how to use them.
+Description: "En plus des API normales disponibles pour toutes les applications UWP, il existe certaines extensions et API disponibles uniquement pour les applications de bureau converties. Cet article décrit ces extensions et la manière de les utiliser."
 Search.Product: eADQiWindows 10XVcnh
-title: Converted desktop app extensions
+title: "Extensions d’applications de bureau converties"
 translationtype: Human Translation
-ms.sourcegitcommit: 09ddc8cad403a568a43e08f32abeaf0bbd40d59a
-ms.openlocfilehash: 2aa55797ed3a6588b3a27158282a02827fbd2109
+ms.sourcegitcommit: aa64c39c452beb2356186789a0d8bc44f79d82d2
+ms.openlocfilehash: 0ad7e8d0fe63ffbfa8668be8955859258887d6f0
 
 ---
 
-# Converted desktop app extensions
+# Extensions d’applications de bureau converties
 
-You can enhance your converted Desktop application with a wide range of Universal Windows Platform (UWP) APIs. However, in addition to the normal APIs available to all UWP apps, there are some extensions and APIs available only to converted desktop apps. These features focus on scenarios such as launching a process when the user logs on and File Explorer integration, and are designed to smooth the transition between the original desktop app and the converted app package.
+Vous pouvez améliorer votre application de bureau convertie avec un large éventail d’API de la plateforme Windows universelle (UWP). Toutefois, en plus des API normales disponibles pour toutes les applications UWP, il existe certaines extensions et API disponibles uniquement pour les applications de bureau converties. Ces fonctionnalités sont axées sur des scénarios tels que le lancement d’un processus lors de la connexion de l’utilisateur et l’intégration dans l’Explorateur de fichiers, et sont conçues pour faciliter la transition entre l’application de bureau d’origine et le package de l’application convertie.
 
-This article describes these extensions and how to use them. Most require manual modification of your converted app's manifest file, which contains declarations about the extensions your app makes use of. To edit the manifest, right-click the **Package.appxmanifest** file in your Visual Studio solution and select *View Code*. 
+Cet article décrit ces extensions et la manière de les utiliser. La plupart nécessitent la modification manuelle du fichier manifeste de votre application convertie, lequel contient des déclarations sur les extensions utilisées par votre application. Pour modifier le manifeste, cliquez avec le bouton droit sur le fichier **Package.appxmanifest** dans votre solution Visual Studio et sélectionnez *Afficher le code*. 
 
-## Startup tasks
+## Tâches de démarrage
 
-Startup tasks allow your app to run an executable automatically whenever a user logs on. 
+Les tâches de démarrage permettent à votre application d’exécuter un fichier exécutable automatiquement dès qu’un utilisateur se connecte. 
 
-To declare a startup task, add the following to your app's manifest: 
+Pour déclarer une tâche de démarrage, ajoutez le code suivant au manifeste de votre application: 
 
 ```XML
 <desktop:Extension Category="windows.startupTask" Executable="bin\MyStartupTask.exe" EntryPoint="Windows.FullTrustApplication">
     <desktop:StartupTask TaskId="MyStartupTask" Enabled="true" DisplayName="My App Service" />
 </desktop:Extension>
 ```
-- *Extension Category* should always have the value "windows.startupTask ".
-- *Extension Executable* is the relative path to the .exe to start.
-- *Extension EntryPoint* should always have the value "Windows.FullTrustApplication".
-- *StartupTask TaskId* is a unique identifier for your task. Using this identifier, your app can call the APIs in the **Windows.ApplicationModel.StartupTask** class to programmatically enable or disable a startup task.
-- *StartupTask Enabled* indicates whether the task first starts enabled or disabled. Enabled tasks will run the next time the user logs on (unless the user disables it). 
-- *StartupTask DisplayName* is the name of the task that appears in Task Manager. This string is localizable using ```ms-resource```. 
+- *Extension Category* doit toujours avoir la valeur «windows.startupTask».
+- *Extension Executable* correspond au chemin d’accès relatif du fichier .exe à démarrer.
+- *Extension EntryPoint* doit toujours avoir la valeur «Windows.FullTrustApplication».
+- *StartupTask TaskId* est un identificateur unique pour votre tâche. À l’aide de cet identificateur, votre application peut appeler les API de la classe **Windows.ApplicationModel.StartupTask** pour activer ou désactiver une tâche de démarrage par programmation.
+- *StartupTask Enabled* indique si la tâche est activée ou désactivée au démarrage. Les tâches activées seront exécutées la prochaine fois que l’utilisateur se connecte (sauf si celui-ci les désactive). 
+- *StartupTask DisplayName* est le nom de la tâche qui apparaît dans le Gestionnaire des tâches. Cette chaîne est localisable à l’aide de ```ms-resource```. 
 
-Apps can declare multiple startup tasks; each will fire and run independently. All startup tasks will appear in Task Manager under the **Startup** tab with the name specified in your app's manifest and your app's icon. Task Manager will automatically analyze the startup impact of your tasks. Users can opt to manually disable your app's startup task using Task Manager; if a user disables a task, you cannot programmatically re-enable it.
+Les applications peuvent déclarer plusieurs tâches de démarrage; chacune d’elles est déclenchée et exécutée de manière indépendante. Toutes les tâches de démarrage apparaissent dans le Gestionnaire des tâches sous l’onglet **Démarrage** avec le nom spécifié dans le manifeste de votre application et l’icône de votre application. Le Gestionnaire des tâches analyse automatiquement l’impact de vos tâches sur le démarrage. Les utilisateurs peuvent choisir de désactiver manuellement la tâche de démarrage de votre application à l’aide du Gestionnaire des tâches; si un utilisateur désactive une tâche, vous ne pouvez pas la réactiver par programmation.
 
-## App execution alias
+## Alias d’exécution d’application
 
-An app execution alias allows you to specify a keyword name for your app. Users or other processes can use this keyword to easily launch your app as though it were in the PATH variable - from Run or a command prompt, for instance - without providing the full path. For example, if you declare the alias "Foo," a user can type "Foo Bar.txt" from cmd.exe and your app will be activated with the path to "Bar.txt" as part of the activation event args.
+Un alias d’exécution d’application vous permet de spécifier un nom de mot clé pour votre application. Les utilisateurs ou les autres processus peuvent utiliser ce mot clé pour lancer facilement votre application, comme si elle se trouvait dans la variable PATH (à l’aide de la boîte de dialogue Exécuter ou d’une invite de commande, par exemple), sans fournir le chemin d’accès complet. Par exemple, si vous déclarez l’alias «Foo», un utilisateur peut taper «Foo Bar.txt» à partir de cmd.exe et votre application sera activée avec le chemin d’accès à «Bar.txt» inclus dans les arguments d’événement d’activation.
 
-To specify an app execution alias, add the following to your app's manifest: 
+Pour spécifier un alias d’exécution d’application, ajoutez le code suivant au manifeste de votre application: 
 
 ```XML 
 <uap3:Extension Category="windows.appExecutionAlias" Executable="exes\launcher.exe" EntryPoint="Windows.FullTrustApplication">
     <uap3:AppExecutionAlias>
-        <desktop:ExecutionAlias Alias="Foo.exe" />
+        <desktop:ExecutionAlias Alias="Foo.exe">
     </uap3:AppExecutionAlias>
 </uap3:Extension>
 ```
 
-- *Extension Category* should always have the value "windows.appExecutionAlias".
-- *Extension Executable* is the relative path to the executable to launch when the alias is invoked.
-- *Extension EntryPont* should always have the value "Windows.FullTrustApplication".
-- *ExecutionAlias Alias* is the short name for your app. It must always end with the ".exe" extension. 
+- *Extension Category* doit toujours avoir la valeur «windows.appExecutionAlias».
+- *Extension Executable* correspond au chemin d’accès relatif de l’exécutable à lancer lorsque l’alias est appelé.
+- *Extension EntryPoint* doit toujours avoir la valeur «Windows.FullTrustApplication».
+- *ExecutionAlias Alias* est le nom court de votre application. Il doit toujours se terminer par l’extension «.exe». 
 
-You can only specify a single app execution alias for each application in the package. If multiple apps register for the same alias, the system will invoke the last one that was registered, so make sure to choose a unique alias other apps are unlikely to override.
+Vous ne pouvez spécifier qu’un seul alias d’exécution d’application pour chaque application du package. Si plusieurs applications présentent le même alias, le système appellera la dernière inscrite. Prenez donc soin de choisir un alias peu susceptible d’être remplacé par d’autres applications.
 
-## Protocol associations 
+## Associations de protocole 
 
-Protocols associations enable interop scenarios between your converted app and other programs or system components. When your converted app is launched using a protocol, you can specify specific parameters to pass to its activation event args so it can behave accordingly. Note that parameters are only supported for converted, full-trust apps; UWP apps cannot use parameters.  
+Les associations de protocole permettent l’interopérabilité entre votre application convertie et les autres programmes ou les composants système. Lorsque votre application convertie est lancée à l’aide d’un protocole, vous pouvez spécifier des paramètres spécifiques à transmettre à ses arguments d’événement d’activation afin qu’elle puisse se comporter en conséquence. Notez que les paramètres sont uniquement pris en charge pour les applications de confiance totale converties; les applications UWP ne peuvent pas les utiliser.  
 
-To declare a protocol association, add the following to your app's manifest:
+Pour déclarer une association de protocole, ajoutez le code suivant au manifeste de votre application:
 
 ```XML
 <uap3:Extension Category="windows.protocol">
@@ -68,15 +68,15 @@ To declare a protocol association, add the following to your app's manifest:
 </uap3:Extension>
 ```
 
-- *Extension Category* should always have the value "windows.protocol". 
-- *Protocol Name* is the name of the protocol. 
-- *Protocol Parameters* is the list of parameters and values to pass to your app as event args when it is activated. Note that if a variable can contain a file path, you should wrap the value in quotes so it will not break if passed a path that includes spaces.
+- *Extension Category* doit toujours avoir la valeur «windows.protocol». 
+- *Protocol Name* correspond au nom du protocole. 
+- *Protocol Parameters* est la liste des paramètres et des valeurs à transmettre en tant qu’arguments d’événement à votre application lorsqu’elle est activée. Notez que si une variable peut contenir un chemin d’accès à un fichier, vous devez placer la valeur entre guillemets afin qu’elle ne soit pas rompue en cas de transmission d’un chemin d’accès comprenant des espaces.
 
-## Files and File Explorer integration
+## Gestion de fichiers et intégration dans l’Explorateur de fichiers
 
-Converted apps have a variety of options for registering to handle certain file types and integrating into File Explorer. This allows users to easily access your app as part of their normal workflow.
+Différentes options sont disponibles pour inscrire les applications converties en vue de la gestion de certains types de fichier et de l’intégration dans l’Explorateur de fichiers. Cela permet aux utilisateurs d’accéder facilement à votre application dans le cadre de leur flux de travail normal.
 
-To get started, first add the following to your app's manifest: 
+Pour commencer, ajoutez le code suivant au manifeste de votre application: 
 
 ```XML
 <uap3:Extension Category="windows.fileTypeAssociation">
@@ -86,16 +86,16 @@ To get started, first add the following to your app's manifest:
 </uap3:Extension>
 ```
 
-- *Extension Category* should always have the value "windows.fileTypeAssociation". 
-- *FileTypeAssociation Name* is a unique Id. This Id is used internally to generate a hashed ProgID associated with your file type association. You can use this Id to manage changes in future versions of your app. For example, if you want to change the icon for a file extension, you can move it a new FileTypeAssociation with a different name.  
+- *Extension Category* doit toujours avoir la valeur «windows.fileTypeAssociation». 
+- *FileTypeAssociation Name* est un ID unique. Cet ID est utilisé de façon interne pour générer un ProgID haché associé à votre association de type de fichier. Vous pouvez utiliser cet ID pour gérer les modifications dans les futures versions de votre application. Par exemple, si vous voulez modifier l’icône associée à une extension de fichier, vous pouvez la déplacer dans un nouvel élément FileTypeAssociation avec un autre nom.  
 
-Next, add additional child elements to this entry based on the specific features you need. The available options are described below.
+Ajoutez ensuite des éléments enfants supplémentaires à cette entrée en fonction des fonctionnalités spécifiques dont vous avez besoin. Les options disponibles sont décrites ci-dessous.
 
-### Supported file types
+### Types de fichiers pris en charge
 
-Your app can specify it supports opening specific types of files. If a user right-clicks a file and selects "Open With," your app will appear in the list of suggestions.
+Votre application peut indiquer qu’elle prend en charge l’ouverture de types de fichiers spécifiques. Si un utilisateur clique avec le bouton droit sur un fichier et sélectionne Ouvrir avec, votre application apparaît dans la liste de suggestions.
 
-Example:
+Exemple:
 
 ```XML
 <uap:SupportedFileTypes>
@@ -104,15 +104,15 @@ Example:
 </uap:SupportedFileTypes>
 ```
 
-- *FileType* is the extension your app supports.
+- *FileType* est l’extension prise en charge par votre application.
 
-### Context menu verbs 
+### Verbes de menu contextuel 
 
-Users normally open files by simply double-clicking them. However, when a user right-clicks a file, the context menu presents them with various options (known as "Verbs") that provide additional detail on how they wish to interact with the file, such as "Open", "Edit", "Preview," or "Print." 
+Pour ouvrir des fichiers, les utilisateurs double-cliquent généralement dessus. Cependant, lorsqu’un utilisateur clique avec le bouton droit sur un fichier, le menu contextuel présente différentes options (appelées «verbes») qui précisent le type d’interaction souhaité avec le fichier: Ouvrir, Modifier, Aperçu, Imprimer, etc. 
 
-Specifying a supported file type automatically adds the “Open” verb. However, apps can also add additional custom verbs to the File Explorer context menu. These allow the app to launch a certain way based on the user's selection when opening a file.
+La spécification d’un type de fichier pris en charge ajoute automatiquement le verbe «Ouvrir». Cependant, les applications peuvent également ajouter des verbes personnalisés supplémentaires au menu contextuel de l’Explorateur de fichiers. Ceux-ci permettent à l’application de se lancer d’une manière spécifique selon la sélection de l’utilisateur lors de l’ouverture d’un fichier.
 
-Example: 
+Exemple: 
 
 ```XML
 <uap2:SupportedVerbs>
@@ -121,42 +121,42 @@ Example:
 </uap2:SupportedVerbs>
 ```
 
-- *Verb Id* is a unique Id of the verb. If your app is a UWP app, this is passed to your app as part of its activation event args so it can handle the user’s selection appropriately. If your app is a full-trust converted app, it receives parameters instead (see the next bullet). 
-- *Verb Parameters* is the list of argument parameters and values associated with the verb. If your app is a full-trust converted app, these are passed to it as event args when it’s activated so you can customize its behavior for different activation verbs. If a variable can contain a file path, you should wrap the value in quotes so it will not break if passed a path that includes spaces. Note that if your app is a UWP app, you can’t pass parameters – it receives the Id instead (see the previous bullet). 
-- *Verb Extended* specifies that the verb should only appear if the user holds the **Shift** key before right-clicking the file to show the context menu. This attribute is optional and defaults to *False* (e.g., always show the verb) if not listed. You specify this behavior individually for each verb (except for "Open," which is always *False*). 
-- *Verb* is the name to display in the File Explorer context menu. This string is localizable using ```ms-resource```.
+- *Verb Id* est un ID unique du verbe. Si votre application est une application UWP, cet ID est transmis à votre application en tant qu’argument d’événement d’activation afin qu’elle puisse gérer la sélection de l’utilisateur de façon appropriée. Si votre application est une application convertie de confiance totale, elle reçoit des paramètres à la place (voir la puce suivante). 
+- *Verb Parameters* correspond à la liste des paramètres et des valeurs d’arguments associés au verbe. Si votre application est une application convertie de confiance totale, ceux-ci sont transmis en tant qu’arguments d’événements lorsqu’elle est activée pour vous permettre de personnaliser son comportement en fonction du verbe d’activation. Si une variable peut contenir un chemin d’accès à un fichier, vous devez placer la valeur entre guillemets afin qu’elle ne soit pas rompue en cas de transmission d’un chemin d’accès comprenant des espaces. Notez que si votre application est une application UWP, vous ne pouvez pas transmettre de paramètres; elle reçoit l’ID à la place (voir la puce précédente). 
+- *Verb Extended* indique que le verbe doit seulement apparaître si l’utilisateur maintient enfoncée la touche **Maj** avant de cliquer avec le bouton droit sur le fichier pour afficher le menu contextuel. Cet attribut est facultatif et est défini par défaut sur *False* (c’est-à-dire que le verbe est toujours affiché) s’il n’est pas répertorié. Vous devez spécifier ce comportement individuellement pour chaque verbe (à l’exception de «Ouvrir», qui est toujours défini sur *False*). 
+- *Verb* correspond au nom à afficher dans le menu contextuel de l’Explorateur de fichiers. Cette chaîne est localisable à l’aide de ```ms-resource```.
 
-### Multiple Selection Model
+### Modèle de sélection multiple
 
-Multiple selections allow you to specify how your app handles a user opening multiple files with it simultaneously (for example, by selecting 10 files in File Explorer and tapping "Open").
+Les sélections multiples vous permettent de spécifier le comportement de votre application lorsqu’elle est utilisée pour ouvrir plusieurs fichiers simultanément (par exemple, en sélectionnant 10fichiers dans l’Explorateur de fichiers et en appuyant sur Ouvrir).
 
-Converted desktop apps have the same three options as regular desktop apps. 
-- *Player*: Your app is activated once with all of the selected files passed as argument parameters.
-- *Single*: Your app is activated once for the first selected file. Other files are ignored. 
-- *Document*: A new, separate instance of your app is activated for each selected file.
+Les applications de bureau converties présentent les trois mêmes options que les applications de bureau standard. 
+- *Player*: votre application est activée une fois, tous les fichiers sélectionnés étant transmis en tant que paramètres d’arguments.
+- *Single*: votre application est activée une fois pour le premier fichier sélectionné. Les autres fichiers sont ignorés. 
+- *Document*: une nouvelle instance distincte de votre application est activée pour chaque fichier sélectionné.
 
-You can set different preferences for different file types and actions. For example, you may wish to open *Documents* in *Document* mode and *Images* in *Player* mode.
+Vous pouvez définir des préférences spécifiques pour les différents types de fichiers et d’actions. Par exemple, il se peut que vous souhaitiez ouvrir les *documents* en mode *Document* et les *images* en mode *Player*.
 
-To set your app's behavior, add the *MultiSelectModel* attribute to elements in your manifest that are related to file types and file launching. 
+Pour définir le comportement de votre application, ajoutez l’attribut *MultiSelectModel* aux éléments de votre manifeste liés aux types de fichiers et au lancement de fichiers. 
 
-Setting a model for a supported file type: 
+Définition d’un modèle pour un type de fichier pris en charge: 
 
 ```XML
 <uap:FileType MultiSelectModel="Document">.txt</uap:FileType>
 ```
 
-Setting a model for verbs:
+Définition d’un modèle pour des verbes:
 
 ```XML
 <uap3:Verb Id="Edit" MultiSelectModel="Player">Edit</uap:Verb>
 <uap3:Verb Id="Preview" MultiSelectModel="Document">Preview</uap:Verb>
 ```
 
-If your app doesn't specify a choice for multi-selection, the default is *Player* if the user is opening 15 or fewer files. Otherwise, if your app is a converted app, the default is *Document*. UWP apps are always launched as *Player*. 
+Si votre application ne spécifie pas d’option pour la sélection multiple, la valeur par défaut est *Player* si l’utilisateur ouvre jusqu’à 15fichiers. Autrement, si votre application est une application convertie, la valeur par défaut est *Document*. Les applications UWP sont toujours lancées en mode *Player*. 
 
-### Complete example
+### Exemple complet
 
-The following is a complete example that integrates many of the file and File Explorer related elements described above: 
+Voici un exemple complet qui intègre un grand nombre des éléments liés aux fichiers et à l’Explorateur de fichiers décrits ci-dessus: 
 
 ```XML
 <uap3:Extension Category="windows.fileTypeAssociation">
@@ -174,11 +174,11 @@ The following is a complete example that integrates many of the file and File Ex
 </uap3:Extension>
 ```
 
-## See also
+## Voir également
 
-- [App package manifest](https://msdn.microsoft.com/library/windows/apps/br211474.aspx)
+- [Manifeste du package de l’application](https://msdn.microsoft.com/library/windows/apps/br211474.aspx)
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jul16_HO1-->
 
 

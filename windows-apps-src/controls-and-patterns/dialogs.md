@@ -4,14 +4,10 @@ Description: Dialogs and flyouts display transient UI elements that appear when 
 title: Dialogs and flyouts
 label: Dialogs
 template: detail.hbs
-translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: ff9940c06276165dc139e120c4e9cdeb005ff125
-
 ---
-# Dialogs and flyouts
-
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
+# Dialogs and flyouts
 
 Dialogs and flyouts are transient UI elements that appear when something happens that requires notification, approval, or additional information from the user.
 
@@ -305,9 +301,3 @@ To style a Flyout, modify its [FlyoutPresenterStyle](https://msdn.microsoft.com/
 - [Menus and context menu](menus.md)
 - [**Flyout class**](https://msdn.microsoft.com/library/windows/apps/dn279496)
 - [**ContentDialog class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

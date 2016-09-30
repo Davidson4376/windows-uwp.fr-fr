@@ -5,7 +5,7 @@ title: "Arborescence d’éléments visuels de composition"
 description: "Les éléments visuels de composition constituent la structure de l’arborescence des éléments visuels sur laquelle reposent toutes les autres fonctionnalités de l’API Composition. L’API permet aux développeurs de définir et de créer un ou plusieurs objets visuels, qui représentent chacun un nœud unique dans une arborescence d’éléments visuels."
 translationtype: Human Translation
 ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
-ms.openlocfilehash: 0603939bb62b107a781cb3804bcf92aeac7a6155
+ms.openlocfilehash: 61adc6a894c56c6cfd292d89d4cd5c4ba6b0d017
 
 ---
 # Arborescence d’éléments visuels de composition
@@ -39,7 +39,7 @@ Cela illustre un certain nombre de concepts de base sur l’utilisation de l’A
 Cet exemple illustre également trois éléments visuels :
 
 -   [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) : objet de base. La plupart des propriétés sont répertoriées ici et héritées par les autres objets visuels.
--   [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) : dérive d’un élément visuel, et ajoute la possibilité de créer des enfants.
+-   [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) : dérive de Visual et ajoute la possibilité de créer des enfants.
 -   [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) : dérive d’un élément visuel, et offre la possibilité d’associer un pinceau afin que l’élément visuel puisse rendre les pixels notamment des images, des effets ou une couleur unie.
 
 Même si cet exemple ne couvre pas des concepts comme celui des animations ou des effets plus complexes, il contient les éléments fondamentaux utilisés par tous ces systèmes.
@@ -508,6 +508,6 @@ namespace compositionvisual
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

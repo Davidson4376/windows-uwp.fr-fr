@@ -1,46 +1,46 @@
 ---
 author: mtoepke
-title: Add a user interface
-description: You've seen how the sample game implements the main game object as well as the basic rendering framework.
+title: Ajouter une interface utilisateur
+description: "Vous venez de voir comment l’exemple de jeu implémente l’objet jeu principal ainsi que l’infrastructure de rendu de base."
 ms.assetid: fa40173e-6cde-b71b-e307-db90f0388485
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 4f4ca9626e38ce7449b6476345205d136b3d9a2d
+ms.openlocfilehash: d7af6683ab2def1af62e73be008e9189190cde95
 
 ---
 
-# Add a user interface
+# Ajouter une interface utilisateur
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-You've seen how the sample game implements the main game object as well as the basic rendering framework. Now, let's look at how the sample game provides feedback about game state to the player. Here, you learn how you can add simple menu options and heads-up display components on top of the 3-D graphics pipeline output.
+Vous venez de voir comment l’exemple de jeu implémente l’objet jeu principal ainsi que l’infrastructure de rendu de base. Examinons maintenant la façon dont l’exemple de jeu fournit des informations sur l’état du jeu au joueur. Ici, vous allez apprendre à ajouter de simples options de menu et composants d’affichage à tête haute sur la sortie de chaîne de transformations graphiques 3-D.
 
-## Objective
-
-
--   To add basic user interface graphics and behaviors to a Universal Windows Platform (UWP) DirectX game.
-
-## The user interface overlay
+## Objectif
 
 
-While there are many ways to display text and user interface elements in a DirectX game, we are going to focus on one, [Direct2D](https://msdn.microsoft.com/library/windows/apps/dd370990.aspx) (with [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038) for the text elements).
+-   Ajouter des comportements et graphiques d’interface utilisateur de base à un jeu de plateforme Windows universelle (UWP) DirectX.
 
-First, let's be clear about what Direct2D is not. It's not specifically designed for user interfaces or layouts, like HTML or XAML. It doesn't provide user interface components, like list boxes or buttons; and it doesn't provide layout components like divs, tables, or grids.
+## Superposition de l’interface utilisateur
 
-Direct2D is a set of 2-D drawing APIs used to draw pixel-based primitives and effects. When starting out with Direct2D, keep it simple. Complex layouts and interface behaviors need time and planning. If your game requires a complex user interface to play, like those found in simulation and strategy games, consider XAML instead.
 
-(For info about developing a user interface with XAML in a UWP DirectX game, see [Extending the game sample](tutorial-resources.md).)
+Alors qu’il existe de nombreuses façons d’afficher des éléments de texte et d’interface utilisateur dans un jeu DirectX, nous allons nous concentrer sur l’une d’elles, [Direct2D](https://msdn.microsoft.com/library/windows/apps/dd370990.aspx) (avec [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038) pour les éléments de texte).
 
-In this game sample, we have two major UI components: the heads-up display for the score and in-game controls; and an overlay used to display game state text and options (such as pause info and level start options).
+Définissons tout d’abord très précisément ce que Direct2D n’est pas. Il n’est pas spécifiquement conçu pour les interfaces utilisateur ni les dispositions, comme HTML ou XAML. Il ne fournit pas de composants d’interface utilisateur; tels que les zones de liste ou les boutons, ni de composants de disposition, par exemple les éléments div, les tables ou les grilles.
 
-### Using Direct2D for a heads-up display
+Direct2D est un ensemble d’API de dessin 2-D utilisées pour dessiner des primitives et effets basés sur des pixels. Lorsque vous commencez à utiliser Direct2D, restez simple. Des comportements d’interface et dispositions complexes nécessitent du temps et une certaine planification. Si votre jeu nécessite une interface utilisateur complexe pour fonctionner, comme celles qui figurent dans les jeux de stratégie et de simulation, envisagez plutôt d’utiliser XAML.
 
-This is the in-game heads-up display for the game sample without the game visuals. It's simple and uncluttered, allowing the player to focus on navigating the 3-D world and shooting the targets. A good interface or heads-up display must never obfuscate the ability of the player to process and react to the events in the game.
+(Pour plus d’informations sur le développement d’une interface utilisateur avec XAML dans un jeu WUP DirectX, voir [Extension de l’exemple de jeu](tutorial-resources.md).)
 
-![a screen shot of the game overlay](images/sample3dgame-overlay-nogame.png)
+Dans cet exemple de jeu, nous avons deux composants d’interface utilisateur majeur : l’affichage tête haute pour le score et les contrôles intégrés au jeu ; et une superposition utilisée pour afficher le texte de l’état de jeu et les options (comme les informations sur la suspension et les options de début de niveau).
 
-As you can see, the overlay consists of basic primitives: two intersecting line segments for the cross hairs, and two rectangles for the [move-look controller](tutorial--adding-controls.md). In the upper-right corner, DirectWrite text informs the player of the current number of successful hits, the number of shots the player has made, the time remaining in the level, and the current level number. The in-game heads-up display state of the overlay is drawn in the **Render** method of the **GameHud** class, and is coded like this:
+### Utilisation de Direct2D pour l’affichage à tête haute
+
+Il s’agit de l’affichage à tête haute intégré au jeu sans les effets visuels du jeu. Clair et simple, il permet au joueur de se concentrer sur la navigation du monde en 3-D et sur le tir des cibles. Une interface ou un affichage à tête haute de qualité ne doivent jamais obfusquer la capacité du joueur à traiter les événements du jeu et à y réagir.
+
+![Capture d’écran de la superposition du jeu](images/sample3dgame-overlay-nogame.png)
+
+Comme vous pouvez le constater, la superposition se compose de primitives de base : deux segments de ligne qui se croisent pour le réticule et deux rectangles pour le [contrôleur de déplacement/vue](tutorial--adding-controls.md). Dans le coin supérieur droit, un texte DirectWrite informe le joueur du nombre actuel de coups réussis, du nombre de tirs qu’il a effectués, du temps restant à ce niveau et du numéro de niveau actuel. L’état d’affichage à tête haute intégré au jeu de la superposition est écrit dans la méthode **Render** de la classe **GameHud**, et est codé comme suit :
 
 ```cpp
 void GameHud::Render(
@@ -171,43 +171,43 @@ void GameHud::Render(
 }
 ```
 
-In this code, the Direct2D render target established for the overlay is updated to reflect the changes in the number of hits, the time remaining, and the level number. The rectangles are drawn with calls to [**DrawRect**](https://msdn.microsoft.com/library/windows/desktop/dd371902), and the cross hairs are drawn with a pair of calls to [**DrawLine**](https://msdn.microsoft.com/library/windows/desktop/dd371895).
+Dans ce code, la cible de rendu Direct2D établie pour la superposition est mise à jour pour refléter les modifications du nombre de coups, du temps restant et du numéro de niveau. Les rectangles sont tracés avec des appels de [**DrawRect**](https://msdn.microsoft.com/library/windows/desktop/dd371902), et le réticule est tracé avec deux appels de [**DrawLine**](https://msdn.microsoft.com/library/windows/desktop/dd371895).
 
-> **Note**   You probably noticed the call to **GameHud::Render** takes a [**Windows::Foundation::Rect**](https://msdn.microsoft.com/library/windows/apps/br225994) parameter, which contains the size of the main window rectangle. This demonstrates an essential part of UI programming: obtaining the size of window in a measurement called DIPs (device independent pixels), where a DIP is defined as 1/96 of an inch. Direct2D scales the drawing units to actual pixels when the drawing occurs, and it does so by using the Windows dots per inch (DPI) setting. Similarly, when you draw text using DirectWrite, you specify DIPs rather than points for the size of the font. DIPs are expressed as floating point numbers.
+> **Remarque** Vous avez probablement noté que l’appel de **GameHud::Render** utilise un paramètre [**Windows::Foundation::Rect**](https://msdn.microsoft.com/library/windows/apps/br225994), qui contient la taille du rectangle de la fenêtre principale. Cela illustre une partie essentielle de la programmation de l’interface utilisateur: l’obtention de la taille d’une fenêtre dans une mesure appelée DIP (Device Independent Pixel, pixel indépendant des appareils), où une unité DIP est définie comme étant égale à 1/96e de pouce. Direct2D met à l’échelle les unités de dessin en pixels réel lors du dessin, en utilisant pour cela le paramètre PPP (Points Par Pouce) Windows. De même, lorsque vous écrivez un texte à l’aide de DirectWrite, vous indiquez des DIP plutôt que des points pour la taille de la police. Les DIP sont exprimés sous la forme de nombres à virgule flottante.
 
  
 
-### Displaying game state information with an overlay
+### Affichage des informations de l’état du jeu dans la superposition
 
-Besides the heads-up display, the game sample has an overlay that represents five game states, and all of which feature a large black rectangle primitive with text for the player to read. (Be aware that the move-look controller rectangles are not drawn, because they are not active in these states.) These overlay states are:
+Outre cet affichage à tête haute, l’exemple de jeu montre une superposition représentant cinq états de jeu, tous dotés d’une primitive de grand rectangle noir contenant du texte que le joueur doit lire. (Gardez à l’esprit que les rectangles du contrôleur de déplacement/vue ne sont pas tracés, car ils ne sont pas actifs dans ces états.) Ces états de superposition sont les suivants:
 
--   The game start overlay. We show this when the player starts the game. It contains the high score across game sessions.
+-   Superposition de démarrage du jeu. Elle s’affiche lorsque le joueur démarre le jeu. Elle contient les meilleurs scores des différentes sessions de parties.
 
-    ![a screen shot of the start screen for simple3dgamedx](images/simple3dgamestart.png)
+    ![Capture d’écran de l’écran d’accueil de Simple3DGameDX](images/simple3dgamestart.png)
 
--   The pause state.
+-   État de pause.
 
-    ![a screen shot of the pause screen for simple3dgamedx](images/simple3dgame-overlay-pause.png)
+    ![Capture d’écran de l’écran de pause de Simple3DGameDX](images/simple3dgame-overlay-pause.png)
 
--   The level start state. We show this when the player starts a new level.
+-   État de début de niveau. Nous l’affichons lorsque le joueur démarre un nouveau niveau.
 
-    ![a screen shot of the level start screen for simple3dgamedx](images/simple3dgame-overlay-newgame.png)
+    ![Capture d’écran de l’écran de début de niveau de Simple3DGameDX](images/simple3dgame-overlay-newgame.png)
 
--   The game over state. We show this when the player fails a level.
+-   État de fin de partie. Nous l’affichons lorsque le joueur échoue à un niveau.
 
-    ![a screen shot of the game over screen for simple3dgamedx](images/simple3dgame-overlay-gameover.png)
+    ![Capture d’écran de l’écran de fin de partie de Simple3DGameDX](images/simple3dgame-overlay-gameover.png)
 
--   The game stat display state. We show this when the player wins. It contains the final score the player has achieved.
+-   État d’affichage des statistiques du jeu. Nous l’affichons lorsque le joueur gagne. Il contient le dernier score obtenu par le joueur.
 
-    ![the victory screen for simple3dgamedx](images/simple3dgame-overlay-gamestats.png)
+    ![Écran de victoire de Simple3DGameDX](images/simple3dgame-overlay-gamestats.png)
 
-Let's look at how we initialize and draw the overlay for these five states.
+Voyons comment initialiser et tracer la superposition pour ces cinq états.
 
-### Initializing and drawing the overlay
+### Initialisation et tracé de la superposition
 
-The five explicit states have some things in common: one, they all use a black rectangle in the center of the screen as their background; two, the displayed text is either title text or body text; and three, the text uses the Segoe UI font and is drawn on top of the back rectangle. As a result, the resources they need and the methods that implement them are very similar.
+Les cinq états explicites ont des points communs : d’abord, ils utilisent tous un rectangle noir au centre de l’écran comme arrière-plan ; ensuite, le texte affiché est un texte de titre ou de corps ; enfin, le texte utilise la police Segoe UI et est écrit au-dessus du rectangle noir. Par conséquent, les ressources nécessaires et les méthodes qui les implémentent sont très semblables.
 
-The game sample has four methods( **GameInfoOverlay::Initialize**, **GameInfoOverlay::SetDpi**, **GameInfoOverlay::RecreateDirectXResources**, and **GameInfoOverlay::RecreateDpiDependentResources**) that it uses to initialize, set the dots per inch, recreate the DirectWrite resources (the text elements), and construct this overlay for display, respectively. This is the code for these four methods:
+L’exemple de jeu dispose de quatre méthodes (**GameInfoOverlay::Initialize**, **GameInfoOverlay::SetDpi**, **GameInfoOverlay::RecreateDirectXResources** et **GameInfoOverlay::RecreateDpiDependentResources**) qu’il utilise pour initialiser, définir les points par pouce, recréer les ressources DirectWrite (éléments texte) et construire cette superposition d’affichage, respectivement. Voici le code pour ces quatre méthodes:
 
 ```cpp
 void GameInfoOverlay::Initialize(
@@ -364,17 +364,17 @@ void GameInfoOverlay::RecreateDpiDependentResources()
 
 ```
 
-The **Initialize** method obtains a factory from the [**ID2D1Device**](https://msdn.microsoft.com/library/windows/desktop/hh404478) object passed to it, which it uses to create an [**ID2D1DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/hh404479) that the overlay object itself can draw into, and sets the **m\_dWriteFactory** field to the provided [**IDWriteFactory**](https://msdn.microsoft.com/library/windows/desktop/dd368183) reference. It also sets the DPI for the context. Then, it calls **RecreateDeviceResources** to assemble and draw the overlay.
+La méthode **Initialize** obtient une fabrique de l’objet [**ID2D1Device**](https://msdn.microsoft.com/library/windows/desktop/hh404478) qui lui est transmis, qu’elle utilise pour créer un élément [**ID2D1DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/hh404479) dans lequel l’objet de superposition proprement dit peut dessiner, puis affecte au champ **m\_dWriteFactory** la référence [**IDWriteFactory**](https://msdn.microsoft.com/library/windows/desktop/dd368183) fournie. Elle définit également le paramètre PPP pour le contexte. Ensuite, elle appelle **RecreateDeviceResources** pour assembler et tracer la superposition.
 
-**RecreateDeviceResources** uses the DirectWrite factory object to create formatters (brushes) for the title and body text strings that will be displayed on the overlay. It creates a white brush to draw the text, a black brush to draw the background, and an orange brush to draw action messages. Then, it calls **RecreateDpiDependentResources** to prepare a bitmap to draw the text on by calling [**ID2D1DeviceContext::CreateBitmap**](https://msdn.microsoft.com/library/windows/desktop/hh404480). Lastly, **RecreateDpiDependentResources** sets the render target for the Direct2D device context to the bitmap and clears it, which then sets each pixel in the bitmap to the color black.
+**RecreateDeviceResources** utilise l’objet de fabrique DirectWrite pour créer des formateurs (pinceaux) pour les chaînes de texte de titre et de corps qui s’affichent sur la superposition. Cette méthode crée un pinceau blanc pour dessiner le texte, un pinceau noir pour tracer l’arrière-plan et un pinceau orange pour dessiner des messages d’action. Elle appelle ensuite **RecreateDpiDependentResources** pour préparer une bitmap sur laquelle écrire le texte en appelant [**ID2D1DeviceContext::CreateBitmap**](https://msdn.microsoft.com/library/windows/desktop/hh404480). Enfin, **RecreateDpiDependentResources** affecte à la cible de rendu du contexte de périphérique Direct2D la bitmap et l’efface, ce qui attribue la couleur noire à chaque pixel de la bitmap.
 
-Now, all the overlay needs is some text to display!
+Tout ce dont la superposition a besoin à présent est du texte à afficher!
 
-### Representing game state in the overlay
+### Représentation de l’état du jeu dans la superposition
 
-Each of the five overlay states in the game sample has a corresponding method on the **GameInfoOverlay** object. These methods draw a variation of the overlay to communicate explicit info to the player about the game itself. This communication is, of course, represented as two strings: a title string, and a body string. Because the sample already configured the resources and layout for this info in the **RecreateDeviceResources** method, it only needs to provide the overlay state-specific strings.
+Chacun des cinq états de superposition dans l’exemple de jeu a une méthode correspondante sur l’objet **GameInfoOverlay**. Ces méthodes tracent une variation de la superposition pour communiquer des informations explicites au joueur sur le jeu proprement dit. Cette communication est, bien sûr, représentée sous la forme de deux chaînes: une chaîne de titre et une chaîne de corps. Dans la mesure où l’exemple a déjà configuré les ressources et la disposition pour ces informations dans la méthode **RecreateDeviceResources**, il doit uniquement fournir les chaînes propres à l’état de superposition.
 
-Now, in the definition of the **GameInfoOverlay** class, the sample declared three rectangular areas that correspond to specific regions of the overlay, as shown here:
+Désormais, dans la définition de la classe **GameInfoOverlay**, l’exemple a déclaré trois zones rectangulaires qui correspondent à des zones spécifiques de la superposition, comme suit :
 
 ```cpp
 static const D2D1_RECT_F titleRectangle = D2D1::RectF(50.0f, 50.0f, GameInfoOverlayConstant::Width - 50.0f, 100.0f);
@@ -382,13 +382,13 @@ static const D2D1_RECT_F bodyRectangle = D2D1::RectF(50.0f, 110.0f, GameInfoOver
 static const D2D1_RECT_F actionRectangle = D2D1::RectF(50.0f, GameInfoOverlayConstant::Height - 45.0f, GameInfoOverlayConstant::Width - 50.0f, GameInfoOverlayConstant::Height - 5.0f);
 ```
 
-These areas each have a specific purpose:
+Ces zones ont chacune une finalité spécifique:
 
--   **titleRectangle** is where the title text is drawn.
--   **bodyRectangle** is where the body text is drawn.
--   **actionRectangle** is where the text that informs the player to take a specific action is drawn. (It's in the bottom left of the overlay bitmap.)
+-   **titleRectangle** est l’emplacement d’écriture du texte du titre.
+-   **bodyRectangle** est l’emplacement d’écriture du texte du corps.
+-   **actionRectangle** est l’emplacement d’écriture du texte indiquant au joueur d’entreprendre une action spécifique. (Il figure dans la partie inférieure gauche de la bitmap de superposition.)
 
-With these areas in mind, let's look at one of the state-specific methods, **GameInfoOverlay::SetGameStats**, and see how the overlay is drawn.
+En gardant ces zones à l’esprit, examinons l’une des méthodes propres à l’état, **GameInfoOverlay::SetGameStats**, et voyons comment la superposition est tracée.
 
 ```cpp
 void GameInfoOverlay::SetGameStats(int maxLevel, int hitCount, int shotCount)
@@ -440,11 +440,11 @@ void GameInfoOverlay::SetGameStats(int maxLevel, int hitCount, int shotCount)
 }
 ```
 
-Using the Direct2D device context that the **GameInfoOverlay** object initialized and configured using **Initialize** and **RecreateDirectXResources**, this method fills the title and body rectangles with black using the background brush. It draws the text for the "High Score" string to the title rectangle and a string containing the updates game state information to the body rectangle using the white text brush.
+En utilisant le contexte de périphérique Direct2D que l’objet **GameInfoOverlay** a initialisé et configuré à l’aide d’**Initialize** et de **RecreateDirectXResources**, cette méthode remplit les rectangles de titre et de corps de noir avec le pinceau d’arrière-plan. Elle écrit le texte pour la chaîne «Meilleur score» dans le rectangle de titre, ainsi qu’une chaîne contenant les informations mises à jour sur l’état du jeu dans le rectangle de corps en utilisant le pinceau de texte blanc.
 
-The action rectangle is updated by a subsequent call to **GameInfoOverlay::SetAction** from a method on the **DirectXApp** object, which provides the game state info needed by **SetAction** to determine the right message to the player (such as "Tap to continue").
+Le rectangle d’action est mis à jour par un appel ultérieur de **GameInfoOverlay::SetAction** à partir d’une méthode sur l’objet **DirectXApp**, qui fournit les informations sur l’état du jeu nécessaires à **SetAction** pour déterminer le message approprié à l’intention du joueur (par exemple, « Appuyez pour continuer »).
 
-The overlay for any given state is chosen in the **SetGameInfoOverlay** method on **DirectXApp**, like this:
+La superposition pour tout état donné est choisie dans la méthode **SetGameInfoOverlay** sur **DirectXApp**, comme suit :
 
 ```cpp
 void DirectXApp::SetGameInfoOverlay(GameInfoOverlayState state)
@@ -500,13 +500,13 @@ void DirectXApp::SetGameInfoOverlay(GameInfoOverlayState state)
 }
 ```
 
-And now the game sample has a way to communicate text info to the player based on game state.
+L’exemple de jeu dispose maintenant d’un moyen de communiquer des informations de texte au joueur selon l’état du jeu.
 
-### Next steps
+### Étapes suivantes
 
-In the next topic, [Adding controls](tutorial--adding-controls.md), we look at how the player interacts with the game sample, and how input changes game state.
+Dans la rubrique suivante, [Ajout de contrôles](tutorial--adding-controls.md), nous étudions la façon dont le joueur interagit avec l’exemple de jeu et comment les entrées modifient l’état du jeu.
 
-### Complete sample code for this section
+### Exemple de code complet pour cette section
 
 GameHud.h
 
@@ -1478,21 +1478,21 @@ void GameInfoOverlay::SetAction(GameInfoOverlayCommand action)
 }
 ```
 
-## Related topics
+## Rubriques connexes
 
 
-[Create a simple UWP game with DirectX](tutorial--create-your-first-metro-style-directx-game.md)
-
- 
+[Créer un jeu UWP simple avec DirectX](tutorial--create-your-first-metro-style-directx-game.md)
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

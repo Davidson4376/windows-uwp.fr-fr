@@ -2,53 +2,53 @@
 author: msatranjr
 ms.assetid: 28B30708-FE08-4BE9-AE11-5429F963C330
 title: Bluetooth GATT
-description: This article provides an overview of Bluetooth Generic Attribute Profile (GATT) for Universal Windows Platform (UWP) apps, along with sample code for three common GATT scenarios.
+description: "Cet article fournit une vue d’ensemble du profil d’attribut générique (GATT) Bluetooth pour les applications de plateforme Windows universelle (UWP), ainsi qu’un exemple de code illustrant les troisutilisations communes de GATT."
 translationtype: Human Translation
 ms.sourcegitcommit: 62e97bdb8feb78981244c54c76a00910a8442532
-ms.openlocfilehash: 508acd449c156fa0f5b14298e4a7700748fc65bb
+ms.openlocfilehash: 664f6ce7829c9e9a6674daa6cdc21e7561ff094b
 
 ---
 # Bluetooth GATT
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-** Important APIs **
+** API importantes **
 
 -   [**Windows.Devices.Bluetooth**](https://msdn.microsoft.com/library/windows/apps/Dn263413)
 -   [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685)
 
-This article provides an overview of Bluetooth Generic Attribute Profile (GATT) for Universal Windows Platform (UWP) apps, along with sample code for three common GATT scenarios: retrieving Bluetooth data, controlling a Bluetooth LE thermometer device, and controlling the presentation of Bluetooth LE device data.
+Cet article fournit une vue d’ensemble du profil d’attribut générique (GATT) Bluetooth pour les applications de plateforme Windows universelle (UWP), ainsi qu’un exemple de code illustrant les trois utilisations communes de GATT: récupération de données Bluetooth, contrôle d’un appareil de thermométrie Bluetooth LE, et contrôle de la présentation des données d’appareil Bluetooth LE.
 
-## Overview
+## Vue d’ensemble
 
-Developers can use the APIs in the [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685) namespace to access Bluetooth LE services, descriptors, and characteristics. Bluetooth LE devices expose their functionality through a collection of:
+Les développeurs peuvent utiliser les API de l’espace de noms [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685) pour accéder aux services, descripteurs et caractéristiques Bluetooth LE. Les appareils Bluetooth LE exposent leurs fonctionnalités par le biais d’une collection de :
 
--   Primary Services
--   Included Services
--   Characteristics
--   Descriptors
+-   services principaux;
+-   services inclus;
+-   caractéristiques;
+-   descripteurs.
 
-Primary services define the functional contract of the LE device and contain a collection of characteristics that define the service. Those characteristics, in turn, contain descriptors that describe the characteristics.
+Les services principaux définissent le contrat fonctionnel du périphérique LE et contiennent une collection de caractéristiques qui décrivent le service. Ces caractéristiques, à leur tour, contiennent des descripteurs qui décrivent les caractéristiques.
 
-The Bluetooth GATT APIs expose objects and functions, rather than access to the raw transport. At the driver level primary services are enumerated as Child Device Nodes of the Bluetooth LE device using the [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) APIs.
+Les API GATT Bluetooth exposent des objets et des fonctions, plutôt que d’accéder simplement au transport. Au niveau du pilote, les services principaux sont énumérés en tant que nœuds d’appareils enfants de l’appareil Bluetooth LE à l’aide des API [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459).
 
-The Bluetooth GATT APIs also enable developers to work with Bluetooth LE devices with the ability to perform the following tasks:
+En outre, les API GATT Bluetooth permettent aux développeurs d’utiliser des appareils Bluetooth LE en vue d’effectuer les tâches suivantes :
 
--   Perform Service / Characteristic / Descriptor discovery
--   Read and Write Characteristic / Descriptor values
--   Register a callback for the Characteristic ValueChanged event
+-   Effectuer une découverte des services, caractéristiques et descripteurs
+-   Lire et écrire les valeurs des caractéristiques et des descripteurs
+-   Inscrire un rappel pour l’événement de modification de la valeur d’une caractéristique
 
-The Bluetooth GATT APIs simplify development by dealing with common properties and providing reasonable defaults to aid in device management and configuration. They provide a means for developers to access functionality of a Bluetooth LE device from an app.
+Les API GATT Bluetooth simplifient le développement en gérant des propriétés communes et en fournissant des valeurs par défaut qui facilitent raisonnablement la gestion et la configuration des appareils. Elles permettent aux développeurs d’accéder aux fonctionnalités d’un appareil BluetoothLE à partir d’une application.
 
-To create a useful implementation a developer has to have prior knowledge of the GATT services and characteristics the application intends to consume, and to process the specific characteristic values such that the binary data provided by the API is transformed into useful data before being presented to the user. The Bluetooth GATT APIs expose only the basic primitives required to communicate with a Bluetooth LE device. To interpret the data, an application profile must be defined, either by a Bluetooth SIG standard profile, or a custom profile implemented by a device vendor. A profile creates a binding contract between the application and the device, as to what the exchanged data represents and how to interpret it.
+Pour créer une implémentation utile, un développeur doit savoir au préalable quels sont les services et les caractéristiques GATT que l’application est susceptible d’utiliser et traiter les valeurs spécifiques des caractéristiques de manière à ce que les données binaires fournies par l’API soient transformées en données utiles avant d’être présentées à l’utilisateur. Les API GATT Bluetooth exposent uniquement les primitives de base nécessaires pour communiquer avec un périphérique Bluetooth LE. Pour interpréter les données, un profil d’application doit être défini, soit par un profil Bluetooth SIG standard, soit par un profil personnalisé implémenté par un fournisseur de périphérique. Un profil crée un contrat de liaison entre l’application et le périphérique, qui définit ce que représentent les données échangées et la façon de les interpréter.
 
-For convenience the Bluetooth SIG maintains a [list of public profiles](http://go.microsoft.com/fwlink/p/?LinkID=317977) available.
+Pour des raisons pratiques, le Bluetooth SIG gère une [liste de profils publics](http://go.microsoft.com/fwlink/p/?LinkID=317977) disponibles.
 
-## Retrieve Bluetooth data
+## Récupérer des données Bluetooth
 
-In this example, the app consumes temperature measurements from a Bluetooth device that implements the Bluetooth LE Health Thermometer Service. The app specifies that it wants to be notified when a new temperature measurement is available. By registering an event handler for the "Thermometer Characteristic Value Changed" event, the app will receive characteristic value changed event notifications while it is running in the foreground.
+Dans cet exemple, l’application utilise des mesures de température d’un appareil BluetoothLE qui implémente le service Health Thermometer Bluetooth LE. L’application spécifie qu’elle doit être avertie quand une nouvelle mesure de température est disponible. Grâce à l’inscription d’un gestionnaire d’événements pour la «modification de la valeur de la caractéristique Thermometer», l’application reçoit des notifications liées à la modification de la valeur de la caractéristique tout en s’exécutant au premier plan.
 
-Note that when the app is suspended, it must release all device resources and when it resumes, it must perform device enumeration and initialization once again. If device interaction in the background is desired, please take a look at  [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx) or [GattCharacteristicNotificationTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.gattcharacteristicnotificationtrigger.aspx). DeviceUseTrigger is typically better for higher frequency events whereas GattCharacteristicNotificationTrigger is better at handling infrequent events.  
+Quand l’application est suspendue, elle doit libérer toutes les ressources d’appareil, tandis qu’à sa reprise, elle doit réexécuter l’initialisation et l’énumération des appareils. Si l’interaction avec l’appareil en arrière-plan est souhaité, veuillez examiner [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx) ou [GattCharacteristicNotificationTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.gattcharacteristicnotificationtrigger.aspx). DeviceUseTrigger convient généralement mieux aux événements fréquents tandis que GattCharacteristicNotificationTrigger est mieux approprié pour gérer les événements plus rares.  
 
 ```csharp
 double convertTemperatureData(byte[] temperatureData)
@@ -165,9 +165,9 @@ void MainPage::TemperatureMeasurementChanged(
 }
 ```
 
-## Control a Bluetooth LE thermometer device
+## Contrôler un appareil de thermométrie Bluetooth LE
 
-In this example, an UWP app acts as a controller for a fictitious Bluetooth LE Thermometer device. The device also declares a format characteristic which allows users to retrieve the value reading in either Celsius or Fahrenheit degrees, in addition to the standard characteristics of the [**HealthThermometer**](https://msdn.microsoft.com/library/windows/apps/Dn297603) profile. The app uses reliable write transactions to make sure that the format and measurement interval are set as a single value.
+Dans cet exemple, une application UWP sert de contrôleur pour un appareil de thermométrie Bluetooth LE fictif. Outre les caractéristiques standard du profil [**HealthThermometer**](https://msdn.microsoft.com/library/windows/apps/Dn297603), l’appareil déclare une caractéristique Format qui permet aux utilisateurs de récupérer la valeur en degrés Celsius ou Fahrenheit. L’application utilise des transactions d’écriture fiables pour que le format et l’intervalle de mesure soient définis en tant que valeur unique.
 
 ```csharp
 // Uuid of the "Format" Characteristic Value
@@ -285,9 +285,9 @@ void MainPage::Initialize()
 
 ```
 
-## Control the presentation of Bluetooth LE device data
+## Contrôler la présentation des données d’appareil BluetoothLE
 
-A Bluetooth LE devices may expose a battery service that provides the current battery level to the user. The battery service includes an optional [**PresentationFormats**](https://msdn.microsoft.com/library/windows/apps/Dn263742) descriptor which allows some flexibility in interpretation of the battery level data. This scenario provides example of an app that works with such a device and uses the **PresentationFormats** property to format a characteristic value, before presenting it to the user.
+Un appareil Bluetooth LE peut exposer un service de batterie qui indique à l’utilisateur le niveau de batterie actuel. Le service de batterie comprend un descripteur [**PresentationFormats**](https://msdn.microsoft.com/library/windows/apps/Dn263742) facultatif qui permet d’interpréter les données du niveau de la batterie avec une certaine souplesse. Cette situation illustre une application qui utilise un appareil de ce type et se sert de la propriété **PresentationFormats** pour mettre en forme une valeur de caractéristique, avant de la présenter à l’utilisateur.
 
 ```csharp
 async void Initialize()
@@ -401,6 +401,6 @@ void MainPage::BatteryLevelChanged(
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

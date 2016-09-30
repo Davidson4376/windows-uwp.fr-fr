@@ -1,112 +1,112 @@
 ---
 author: jnHs
-Description: The Windows Store offers Mobile Operator Billing as a payment method for mobile operators who support this capability.
-title: Mobile operator billing
+Description: "Le Windows Store offre la facturation de l’opérateur mobile comme mode de paiement des opérateurs mobiles qui prennent en charge cette fonctionnalité."
+title: "Facturation de l’opérateur mobile"
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 translationtype: Human Translation
-ms.sourcegitcommit: 3afac16fb79262dd6a75cd44804747d173e60edf
-ms.openlocfilehash: 114783cb93d1d49eb1b2cd0d5218a35318a02df0
+ms.sourcegitcommit: 80a20f4f87ce2ef40ce4ff7c6551d74ac375da1c
+ms.openlocfilehash: bd70a3c5990909351f04ca4200f4ea522989d1e9
 
 ---
 
-# Mobile operator billing
+# Facturation de l’opérateur mobile
 
 
-The Windows Store offers Mobile Operator Billing as a payment method for mobile operators who support this capability. If a customer’s mobile operator supports this capability, the customer can make Store purchases using their mobile account.
+Le Windows Store offre la facturation de l’opérateur mobile comme mode de paiement des opérateurs mobiles qui prennent en charge cette fonctionnalité. Si l’opérateur mobile d’un client prend en charge cette fonctionnalité, le client peut effectuer des achats dans le Windows Store à l’aide de son compte mobile.
 
-> **Note**  If a customer’s mobile operator offers Mobile Operator Billing, but the customer does not have this option on their device, see these [troubleshooting steps](http://go.microsoft.com/fwlink/p/?LinkId=523993).
-
- 
-
-We are regularly working with mobile operators to expand the availability of this payment method. If you’d like to suggest that we support a mobile operator that you don’t see in the lists below, contact the mobile operator.
-
-## Mobile Operator Billing for Windows 10 devices
-
-
-Windows 10 introduces a new implementation of Mobile Operator Billing. On devices that include this implementation, customers can add Mobile Operator Billing as a payment method to the device. This implementation is available for PCs and tablets running Windows 10 and phones running Windows 10 Mobile.
-
-The Windows 10 implementation of Mobile Operator Billing is currently supported by these mobile operators.
-
-| Country/region  | Mobile operators |
-|-----------------|------------------|
-| Finland         | DNA, Elisa       |
-| Germany         | O2               |
-| Hungary         | Telenor          |
-| Italy           | Wind             |
-| Norway          | Telenor          |
-| Switzerland     | Swisscom         |
-| United States   | Sprint           |
-| United Kingdom  | O2               |
+> **Remarque** Si l’opérateur mobile d’un client offre la facturation de l’opérateur mobile, mais que le client n’a pas accès à cette option sur son appareil, voir les [étapes de dépannage](http://go.microsoft.com/fwlink/p/?LinkId=523993) suivantes.
 
  
 
-## Mobile Operator Billing for Windows Phone 8.x and Windows 10 Mobile devices
+Nous collaborons régulièrement avec les opérateurs mobiles pour développer la disponibilité de ce mode de paiement. Si vous souhaitez nous suggérer la prise en charge d'un opérateur mobile dont le nom est absent des listes ci-dessous, contactez l'opérateur mobile.
+
+## Facturation de l'opérateur mobile pour les appareils Windows 10
 
 
-A legacy implementation of Mobile Operator Billing is available to Windows Phone 8.x devices. Some mobile operators may choose to include this implementation on phones designed for Windows 10 Mobile. On devices that include this implementation, Mobile Operator Billing is offered automatically as a payment to users.
+Windows 10 introduit une nouvelle implémentation de facturation de l'opérateur mobile. Sur les appareils qui comprennent cette implémentation, les clients peuvent ajouter la facturation de l'opérateur mobile comme mode de paiement sur cet appareil. Cette implémentation est disponible pour les PC et tablettes qui exécutent Windows 10, et pour les téléphones qui exécutent Windows 10 Mobile.
 
-The legacy implementation of Mobile Operator Billing is supported by these mobile operators.
+L'implémentation sur Windows 10 de la facturation de l'opérateur mobile est actuellement prise en charge par les opérateurs mobiles suivants.
 
-| Country/region       | Mobile operators                                                   |
+| Pays/région | Opérateurs mobiles |
+|----------------|------------------|
+| Finlande        | DNA, Elisa       |
+| Allemagne        | O2               |
+| Italie          | Vent             |
+| Norvège         | Telenor          |
+| Suisse    | Swisscom         |
+| États-Unis  | Sprint           |
+
+ 
+
+## Facturation de l'opérateur mobile pour appareils Windows Phone 8.x et Windows 10 Mobile
+
+
+Une implémentation héritée de la facturation de l'opérateur mobile est disponible pour les appareils Windows Phone 8.x. Certains opérateurs mobiles peuvent choisir d'inclure cette implémentation sur les téléphones conçus pour Windows 10 Mobile. Sur les appareils qui comprennent cette implémentation, la facturation de l’opérateur mobile est proposée automatiquement comme mode de paiement aux utilisateurs.
+
+L'implémentation héritée de la facturation de l'opérateur mobile est prise en charge par les opérateurs mobiles suivants.
+
+| Pays/région       | Opérateurs mobiles                                                   |
 |----------------------|--------------------------------------------------------------------|
-| Australia            | Telstra                                                            |
-| Austria              | A1 Telekom, T-Mobile                                               |
-| Bahrain              | Zain, VIVA                                                         |
-| Belgium              | BASE, Mobistar, Proximus                                           |
-| Brazil               | Claro                                                              |
-| Bulgaria             | Telenor                                                            |
-| Canada               | Fido, Rogers                                                       |
-| Chile                | Claro                                                              |
-| China                | China Mobile                                                       |
-| Colombia             | Claro, Movistar                                                    |
+| Australie            | Telstra                                                            |
+| Autriche              | A1 Telekom, T-Mobile                                               |
+| Bahreïn              | Zain, VIVA                                                         |
+| Belgique              | BASE, Mobistar, Proximus                                                     |
+| Brésil               | Claro                                                              |
+| Bulgarie             | Telenor                                                            |
+| Canada               | Fido, Rogers, Telus                                                |
+| Chili                | Claro                                                              |
+| Chine                | China Mobile                                                       |
+| Colombie             | Claro, Movistar                                                    |
 | Costa Rica           | Claro                                                              |
-| Croatia              | Tomato, VIPnet, Tele2                                              |
-| Czech Republic       | T-Mobile, Vodafone, O2                                             |
-| Ecuador              | Claro                                                              |
-| Egypt                | Mobinil                                                            |
-| Estonia              | EMT, Tele2                                                         |
-| Finland              | Elisa, TeliaSonera, DNA                                            |
+| Croatie              | Tomato, VIPnet, Tele2                                              |
+| République tchèque       | T-Mobile, Vodafone, O2                                             |
+| Équateur (République de l’)              | Claro                                                              |
+| Égypte                | Mobinil                                                            |
+| Estonie              | EMT, Tele2                                                         |
+| Finlande              | Elisa, TeliaSonera, DNA                                            |
 | France               | Orange, Orange Réunion (La Réunion), SFR, Bouygues                 |
-| Germany              | Telefonica, Telekom Deutschland, Vodafone                          |
-| Greece               | Vodafone                                                           |
+| Allemagne              | Telefonica, Telekom Deutschland, Vodafone                          |
+| Grèce               | Vodafone                                                           |
 | Guatemala            | Claro                                                              |
-| Hungary              | Telenor, T-Mobile                                                  |
-| India                | Idea                                                               |
-| Indonesia            | Indosat, Telkomsel, XL Axiata, Hutchinson CP Telecommunications (HCPT)     |
-| Ireland              | O2, Vodafone, Three                                                |
-| Italy                | Telecom Italia, Vodafone, Wind, 3 Italia                           |
-| Jordan               | Zain, Umniah                                                       |
+| Hongrie              | Telenor, T-Mobile                                                  |
+| Inde                | Idea                                                               |
+| Indonésie            | Indosat, Telkomsel, XL Axiata                                |
+| Irlande              | O2, Vodafone, Three                                                      |
+| Italie                | Telecom Italia, Vodafone, Wind, 3 Italie                           |
+| Jordanie               | Zain, Umniah                                                       |
 | Kenya                | Safaricom                                                          |
-| Kuwait               | Zain, Viva, Ooredoo                                                |
-| Latvia               | Tele2                                                              |
-| Lithuania            | Tele2                                                              |
-| Malaysia             | DiGi                                                               |
-| Mexico               | Iusacell, Telcel, Movistar                                         |
-| Netherlands          | T-Mobile, Vodafone                                                 |
-| Norway               | Telenor                                                            |
+| Koweït               | Zain, Viva                                                         |
+| Lettonie               | Tele2                                                              |
+| Lituanie            | Tele2                                                              |
+| Malaisie             | DiGi                                                               |
+| Mexique               | Iusacell, Telcel, Unefon, Movistar                                 |
+| Pays-Bas          | T-Mobile, Vodafone                                                 |
+| Norvège               | Telenor                                                            |
 | Oman                 | Ooredoo                                                            |
 | Pakistan             | Telenor                                                            |
-| Peru                 | Claro                                                              |
-| Philippines          | Globe, Sun, Smart Communications                                   |
-| Poland               | T-Mobile, Orange, Polkomtel (Plus), Play                           |
-| Romania              | Orange, Vodafone                                                   |
-| Russia               | Beeline, MTS                                                       |
-| Saudi Arabia         | Zain                                                               |
-| Singapore            | M1, SingTel, StarHub                                               |
-| Slovakia             | T-Mobile                                                           |
-| Slovenia             | Si.mobil                                                           |
-| South Africa         | Vodacom                                                            |
-| Spain                | Movistar, Vodafone, Orange                                         |
-| Sweden               | Telenor, Tele2                                                     |
-| Switzerland          | Swisscom                                                           |
-| United Arab Emirates | Etisalat, Du                                                       |
-| United Kingdom       | Everything Everywhere (T-Mobile), Telefonica (O2), Three, Vodafone |
-| United States        | AT&T, Sprint, T-Mobile, Verizon                                    |
+| Pérou                 | Claro                                                              |
+| Philippines          | Globe, Sun                                                         |
+| Pologne               | T-Mobile, Orange, Polkomtel (Plus)                                 |
+| Porto Rico          | Claro                                                              |
+| Roumanie              | Orange, Vodafone                                                   |
+| Russie               | Beeline, MTS                                                          |
+| Arabie saoudite         | Zain                                                               |
+| Singapour            | M1, SingTel, StarHub                                               |
+| Slovaquie             | T-Mobile                                                           |
+| Slovénie             | Si.mobil                                                           |
+| Afrique du Sud         | Vodacom                                                            |
+| Espagne                | Movistar, Vodafone, Orange                                         |
+| Suède               | Telenor, Tele2                                                     |
+| Suisse          | Swisscom                                                           |
+| Thaïlande             | DTAC                                                               |
+| Émirats arabes unis | Etisalat, Du                                                       |
+| Royaume-Uni       | Everything Everywhere (T-Mobile), Telefonica (O2), Three, Vodafone |
+| États-Unis        | AT&amp;T, Sprint, T-Mobile, Verizon                                    |
 | Vietnam              | Viettel, Vietnamobile, Vinaphone, Mobifone                         |
 
  
 
-This list will be regularly updated as we expand support for Mobile Operator Billing.
+Cette liste sera régulièrement mise à jour au fur et à mesure que nous développerons la prise en charge de la facturation de l'opérateur mobile.
 
  
 
@@ -118,6 +118,6 @@ This list will be regularly updated as we expand support for Mobile Operator Bil
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Jun16_HO5-->
 
 

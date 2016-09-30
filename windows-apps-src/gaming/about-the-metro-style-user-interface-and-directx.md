@@ -5,7 +5,7 @@ description: "Les applications UWP intégrant des jeux DirectX n’utilisent pas
 ms.assetid: 46f92156-29f8-d65e-2587-7ba1de5b48a6
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 78e2bbcc4c9182b09138da457c839466b49ac31a
+ms.openlocfilehash: a8c8cb8fa8ccec54af4c824d23bc26cb91db7cf7
 
 ---
 
@@ -156,6 +156,6 @@ Globalement, lors de la conception de votre application UWP basée sur DirectX, 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

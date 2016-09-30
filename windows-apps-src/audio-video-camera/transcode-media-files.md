@@ -1,68 +1,68 @@
 ---
 author: drewbatgit
 ms.assetid: A1A0D99A-DCBF-4A14-80B9-7106BEF045EC
-description: You can use the Windows.Media.Transcoding APIs to transcode video files from one format to another.
-title: Transcode media files
+description: "Vous pouvez utiliser les API Windows.Media.Transcoding pour transcoder des fichiers vidéo d’un format vers un autre."
+title: "Transcoder des fichiers multimédias"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 7e96f12881e4f210a1bba57d2a9c298dbb1c32e3
+ms.openlocfilehash: 06c452291f10acd35dde9659c08a386ea38fa90a
 
 ---
 
-# Transcode media files
+# Transcoder des fichiers multimédias
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-You can use the [**Windows.Media.Transcoding**](https://msdn.microsoft.com/library/windows/apps/br207105) APIs to transcode video files from one format to another.
+Vous pouvez utiliser les API [**Windows.Media.Transcoding**](https://msdn.microsoft.com/library/windows/apps/br207105) pour transcoder des fichiers vidéo d’un format vers un autre.
 
-*Transcoding* is the conversion of a digital media file, such as a video or audio file, from one format to another. This is usually done by decoding and then re-encoding the file. For example, you might convert a Windows Media file to MP4 so that it can be played on a portable device that supports MP4 format. Or, you might convert a high-definition video file to a lower resolution. In that case, the re-encoded file might use the same codec as the original file, but it would have a different encoding profile.
+Le *transcodage* consiste à convertir un fichier multimédia numérique, tel qu’un fichier vidéo ou audio, d’un format vers un autre. Lors de ce processus, le fichier est généralement décodé puis réencodé. Par exemple, vous pouvez souhaiter convertir un fichier Windows Media au format MP4 pour qu’il puisse être lu sur un appareil mobile qui prend en charge le format MP4. Ou encore, vous pouvez souhaiter convertir un fichier vidéo à haute définition en fichier de résolution inférieure. Dans ce cas, le fichier réencodé peut utiliser le même codec que le fichier d’origine, mais il aura un profil d’encodage différent.
 
-## Set up your project for transcoding
+## Configurer votre projet pour le transcodage
 
-In addition to the namespaces referenced by the default project template, you will need to reference these namespaces in order to transcode media files using the code in this article.
+Outre les espaces de noms référencés par le modèle de projet par défaut, vous devrez référencer ces espaces de noms pour transcoder les fichiers multimédias en utilisant le code dans cet article.
 
 [!code-cs[Using](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetUsing)]
 
-## Select source and destination files
+## Sélectionner les fichiers source et de destination
 
-The way that your app determines the source and destination files for transcoding depends on your implementation. This example uses a [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) and a [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) to allow the user to pick a source and a destination file.
+La façon dont votre application détermine les fichiers source et de destination pour le transcodage dépend de votre implémentation. Cet exemple utilise un élément [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847)et un élément [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) pour permettre à l’utilisateur de choisir un fichier source et de destination.
 
 [!code-cs[TranscodeGetFile](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetTranscodeGetFile)]
 
-## Create a media encoding profile
+## Créer un profil d’encodage multimédia
 
-The encoding profile contains the settings that determine how the destination file will be encoded. This is where you have the greatest number of options when you transcode a file.
+Le profil d’encodage contient les paramètres qui déterminent le mode d’encodage du fichier de destination. C’est à ce stade du processus de transcodage d’un fichier que les options proposées sont les plus nombreuses.
 
-The [**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/hh701026) class provides static methods for creating predefined encoding profiles:
+La classe [**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/hh701026) fournit des méthodes statiques pour la création de profils d’encodage prédéfinis:
 
 -   Wav
--   AAC audio (M4A)
--   MP3 audio
--   Windows Media Audio (WMA)
+-   Audio AAC (M4A)
+-   Audio MP3
+-   Audio Windows Media (WMA)
 -   Avi
--   MP4 video (H.264 video plus AAC audio)
--   Windows Media Video (WMV)
+-   Vidéo MP4 (vidéo H.264 plus audio AAC)
+-   Vidéo Windows Media (WMV)
 
-The first four profiles in this list contain audio only. The other three contain video and audio.
+Les quatre premiers profils de cette liste contiennent uniquement de l’audio. Les trois autres contiennent de la vidéo et de l’audio.
 
-The following code creates a profile for MP4 video.
+Le code suivant crée un profil pour la vidéo MP4.
 
 [!code-cs[TranscodeMediaProfile](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetTranscodeMediaProfile)]
 
-The static [**CreateMp4**](https://msdn.microsoft.com/library/windows/apps/hh701078) method creates an MP4 encoding profile. The parameter for this method gives the target resolution for the video. In this case, [**VideoEncodingQuality.hd720p**](https://msdn.microsoft.com/library/windows/apps/hh701290) means 1280 x 720 pixels at 30 frames per second. ("720p" stands for 720 progressive scan lines per frame.) The other methods for creating predefined profiles all follow this pattern.
+La méthode statique [**CreateMp4**](https://msdn.microsoft.com/library/windows/apps/hh701078) permet de créer un profil d’encodage MP4. Le paramètre de cette méthode détermine la résolution cible de la vidéo. Dans ce cas, [**VideoEncodingQuality.hd720p**](https://msdn.microsoft.com/library/windows/apps/hh701290) signifie 1280x720pixels à 30images par seconde. («720p» correspond à un balayage progressif de 720lignes par image.) Les autres méthodes de création de profils prédéfinis suivent toutes ce modèle.
 
-Alternatively, you can create a profile that matches an existing media file by using the [**MediaEncodingProfile.CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701047) method. Or, if you know the exact encoding settings that you want, you can create a new [**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/hh701026) object and fill in the profile details.
+Une autre possibilité consiste à créer un profil qui correspond à un fichier multimédia existant à l’aide de la méthode [**MediaEncodingProfile.CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701047). Ou bien, si vous avez une idée précise des paramètres d’encodage que vous voulez utiliser, vous pouvez créer un objet [**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/hh701026) et compléter les détails du profil.
 
-## Transcode the file
+## Transcoder le fichier
 
-To transcode the file, create a new [**MediaTranscoder**](https://msdn.microsoft.com/library/windows/apps/br207080) object and call the [**MediaTranscoder.PrepareFileTranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700936) method. Pass in the source file, the destination file, and the encoding profile. Then call the [**TranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700946) method on the [**PrepareTranscodeResult**](https://msdn.microsoft.com/library/windows/apps/hh700941) object that was returned from the async transcode operation.
+Pour transcoder le fichier, créez un objet [**MediaTranscoder**](https://msdn.microsoft.com/library/windows/apps/br207080) et appelez la méthode [**MediaTranscoder.PrepareFileTranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700936). Transmettez le fichier source, le fichier de destination et le profil d’encodage. Appelez ensuite la méthode [**TranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700946) sur l’objet [**PrepareTranscodeResult**](https://msdn.microsoft.com/library/windows/apps/hh700941) qui a été renvoyé à partir de l’opération de transcodage asynchrone.
 
 [!code-cs[TranscodeTranscodeFile](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetTranscodeTranscodeFile)]
 
-## Respond to transcoding progress
+## Répondre à la progression du transcodage
 
-You can register events to respond when the progress of the asynchronous [**TranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700946) changes. These events are part of the async programming framework for Universal Windows Platform (UWP) apps and are not specific to the transcoding API.
+Vous pouvez enregistrer des événements pour répondre en cas de modification de la progression de l’élément [**TranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700946) asynchrone. Ces événements font partie de l’infrastructure de programmation asynchrone pour les applications de plateforme Windows universelle (UWP) et ne sont pas propres à l’API de transcodage.
 
 [!code-cs[TranscodeCallbacks](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetTranscodeCallbacks)]
 
@@ -76,6 +76,6 @@ You can register events to respond when the progress of the asynchronous [**Tran
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

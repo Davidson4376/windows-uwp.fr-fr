@@ -1,71 +1,63 @@
 ---
 author: drewbatgit
 ms.assetid: 
-description: "Cet article vous explique comment valoriser les fonctionnalités spécifiques d’interface utilisateur d’appareil photo présentes de manière exclusive sur les appareils mobiles."
-title: "Fonctionnalités d’interface utilisateur d’appareil photo pour les appareils mobiles"
-translationtype: Human Translation
-ms.sourcegitcommit: 77d1709cd42253c229b01df21ae3416e57c1c2ab
-ms.openlocfilehash: ec437d7111b1490f52bfc53b3ad2cd06f0c66ef3
-
+description: This article show you how to take advantage of special camera UI features that are only present on mobile devices.
+title: Camera UI features for mobile devices
 ---
 
-#Fonctionnalités d’interface utilisateur d’appareil photo pour les appareils mobiles
+#Camera UI features for mobile devices
 
-Cet article vous explique comment valoriser les fonctionnalités spécifiques d’interface utilisateur d’appareil photo présentes de manière exclusive sur les appareils mobiles. 
+This article show you how to take advantage of special camera UI features that are only present on mobile devices. 
 
-## Ajouter l’extension mobile à votre projet 
+## Add the mobile extension to your project 
 
-Pour utiliser ces fonctionnalités, vous devez ajouter à votre projet une référence au kit de développement logiciel (SDK) Microsoft Mobile Extension pour la plateforme d’application universelle.
+To use these features, you must add a reference to the Microsoft Mobile Extension SDK for Universal App Platform to your project.
 
-**Pour ajouter une référence au kit de développement logiciel (SDK) de l’extension mobile pour la prise en charge du bouton de l’appareil photo, procédez comme suit:**
+**To add a reference to the mobile extension SDK for hardware camera button support**
 
-1.  Dans **l’Explorateur de solutions**, cliquez avec le bouton droit sur **Références**, puis cliquez sur **Ajouter une référence**.
+1.  In **Solution Explorer**, right-click **References** and select **Add Reference...**
 
-2.  Développez le nœud **Universelle Windows** et sélectionnez**Extensions**.
+2.  Expand the **Windows Universal** node and select **Extensions**.
 
-3.  Sélectionnez la case **Kit de développement logiciel Microsoft Mobile Extension pour la plateforme d’application universelle**.
+3.  Click the checkbox next to **Microsoft Mobile Extension SDK for Universal App Platform**.
 
-## Masquer la barre d’état
+## Hide the status bar
 
-Les appareils mobiles disposent d’un contrôle [**StatusBar**](https://msdn.microsoft.com/library/windows/apps/dn633864) qui fournit à l’utilisateur des informations relatives à l’appareil. Ce contrôle occupe de l’espace sur l’écran , ce qui peut interférer avec l’interface utilisateur de capture multimédia. Vous pouvez masquer la barre d’état en appelant [**HideAsync**](https://msdn.microsoft.com/library/windows/apps/dn610339). Toutefois cet appel doit être effectué depuis un bloc conditionnel où vous utilisez la méthode [**ApiInformation.IsTypePresent**](https://msdn.microsoft.com/library/windows/apps/dn949016) pour déterminer si l’API est disponible. Cette méthode renvoie uniquement la valeur true sur les appareils mobiles qui prennent en charge la barre d’état. Vous devez masquer la barre d’état au lancement de votre application ou lorsque vous commencez à afficher un aperçu à partir de l’appareil photo.
+Mobile devices have a [**StatusBar**](https://msdn.microsoft.com/library/windows/apps/dn633864) control that provides the user with status information about the device. This control takes up space on the screen that can interfere with the media capture UI. You can hide the status bar by calling [**HideAsync**](https://msdn.microsoft.com/library/windows/apps/dn610339), but you must make this call from within a conditional block where you use the [**ApiInformation.IsTypePresent**](https://msdn.microsoft.com/library/windows/apps/dn949016) method to determine if the API is available. This method will only return true on mobile devices that support the status bar. You should hide the status bar when your app launches or when you begin previewing from the camera.
 
 [!code-cs[HideStatusBar](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetHideStatusBar)]
 
-Lorsque votre application s’arrête ou lorsque l’utilisateur quitte la page de capture multimédia de votre application, vous pouvez rendre le contrôle de nouveau visible.
+When your app is shutting down or when the user navigates away from the media capture page of your app, you make the control visible again.
 
 [!code-cs[ShowStatusBar](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetShowStatusBar)]
 
-## Utiliser le bouton matériel de l’appareil photo
+## Use the hardware camera button
 
-Certains appareils mobiles disposent d’un bouton matériel dédié à l’appareil photo que certains utilisateurs préfèrent à une commande tactile. Pour être averti de l’utilisation du bouton matériel de l’appareil photo, enregistrez un gestionnaire pour l’événement [**HardwareButtons.CameraPressed**](https://msdn.microsoft.com/library/windows/apps/dn653805). Cette API est disponible sur les appareils mobiles, par conséquent, vous devez utiliser de nouveau l’élément **IsTypePresent** pour vous assurer que l’API est prise en charge sur l’appareil actuel avant d’essayer d’y accéder.
+Some mobile devices have a dedicated hardware camera button that some users prefer over an on-screen control. To be notified when the hardware camera button is pressed, register a handler for the [**HardwareButtons.CameraPressed**](https://msdn.microsoft.com/library/windows/apps/dn653805) event. Because this API is available on mobile devices only, you must again use the **IsTypePresent** to make sure the API is supported on the current device before attempting to access it.
 
 [!code-cs[PhoneUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPhoneUsing)]
 
 [!code-cs[RegisterCameraButtonHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterCameraButtonHandler)]
 
-Dans le gestionnaire de l’événement **CameraPressed**, vous pouvez lancer une capture de photos.
+In the handler for the **CameraPressed** event, you can initiate a photo capture.
 
 [!code-cs[CameraPressed](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCameraPressed)]
 
-Lorsque votre application s’arrête ou que l’utilisateur quitte la page de capture multimédia de votre application, annulez l’enregistrement du gestionnaire de boutons matériels.
+When your app is shutting down or the user moves away from the media capture page of your app, unregister the hardware button handler.
 
 [!code-cs[UnregisterCameraButtonHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUnregisterCameraButtonHandler)]
 
-> [!NOTE]
-> Cet article s’adresse aux développeurs de Windows10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows8.x ou Windows Phone8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).                                                                                   |
+[!NOTE]
+This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you're developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).                                                                                   |
 
-## Rubriques connexes
+## Related topics
 
-* [Appareil photo](camera.md)
-* [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Camera](camera.md)
+* [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+ 
 
-
-
-
-
+ 
 
 
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -1,70 +1,65 @@
 ---
-author: GrantMeStrength
+author: martinekuan
 ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
-title: Get set up
-description: It's easier than you think to get set up. Follow these instructions and start creating Universal Windows Platform (UWP) apps for Windows 10.
+title: "Se préparer"
+description: "Se préparer est bien plus simple que vous l’imaginez. Suivez ces instructions et commencez à créer des applications de la plateforme Windows universelle (UWP) pour Windows 10."
 translationtype: Human Translation
-ms.sourcegitcommit: 75c036fc934a8071f17a8690a22a03e10c4fe1d4
-ms.openlocfilehash: 729c71fbe0db202bd4f5ce15bea87caa973adf80
+ms.sourcegitcommit: a47dc36129daaed02cb181dde625d440fa4cf6e4
+ms.openlocfilehash: f20707cab08998d86142f7d657b51faa78d9a777
 
 ---
-# Get set up
+# Préparation
 
-It's easier than you think to get going. Follow these instructions and start creating Universal Windows Platform (UWP) apps for Windows 10.
+Se préparer est bien plus simple que vous l’imaginez. Suivez ces instructions et commencez à créer des applications de la plateforme Windows universelle (UWP) pour Windows 10.
 
-> [!NOTE]
-> Are you a Mac user? Or maybe you don't want to install anything on your PC just yet? Try the [web-based virtual machines set up for Build2016's coding challenges](https://developer.microsoft.com/windows/projects/events/build2016/all/codingchallenges).
+## 1. Obtenir Windows 10
 
+Pour développer des applications UWP, vous avez besoin de la dernière version de Windows.
 
-## 1. Get Windows 10
+-   [Obtenir Windows 10 en ligne](http://go.microsoft.com/fwlink/p/?LinkId=619312)
 
-To develop UWP apps, you need the latest version of Windows.
+Êtes-vous un abonné MSDN ? Vous pouvez obtenir des téléchargements ISO ici :
 
--   [Get Windows 10 online](http://go.microsoft.com/fwlink/p/?LinkId=619312)
+-   Obtenir Windows 10 à partir de la page des [téléchargements réservés aux abonnés MSDN](http://go.microsoft.com/fwlink/p/?LinkId=266384)
 
-Are you an MSDN subscriber? You can get ISO downloads here:
+## 2. Télécharger ou mettre à jour Visual Studio
 
--   Get Windows 10 from [MSDN Subscriber Downloads](http://go.microsoft.com/fwlink/p/?LinkId=266384)
+Microsoft Visual Studio 2015 vous permet de concevoir, coder, tester et déboguer vos applications.
 
+Si vous ne possédez pas Visual Studio 2015, cliquez sur ce lien pour installer gratuitement Microsoft Visual Studio Community 2015. Ce téléchargement comprend des simulateurs d’appareil et de téléphone pour tester vos applications :
 
+-   [Télécharger les outils de développement de Windows10](https://go.microsoft.com/fwlink/p/?LinkID=534189)
 
-## 2. Download or update Visual Studio
+Lorsque vous installez Visual Studio, utilisez l’option personnalisée et assurez-vous que toutes les options d’outils de développement d’applications Windows universelles sont sélectionnées, comme illustré ici.
 
-Microsoft Visual Studio 2015 helps you design, code, test, and debug your apps.
+![Outils Visual Studio pour UWP](images/vs-2015-community-setup.png)
 
-If you don't already have Visual Studio 2015, click this link to install the free Microsoft Visual Studio Community 2015. This download includes device and phone simulators for testing your apps:
+## 3. Activer votre appareil pour le développement
 
--   [Download Windows 10 developer tools](https://go.microsoft.com/fwlink/p/?LinkID=534189)
+Il est important de tester vos applications UWP sur des PC et téléphones réels. Avant de déployer des applications sur votre PC ou Windows Phone, vous devez inscrire l’appareil pour le développement.
 
-When you install Visual Studio, use the custom option and make sure all Universal Windows App Development Tools options are selected, as shown here.
+-   Pour obtenir des instructions détaillées, voir [Activer votre appareil pour le développement](enable-your-device-for-development.md).
 
-![Visual Studio tools for UWP](images/vs-2015-community-setup.png)
+## 4. S’enregistrer en tant que développeur d’applications
 
-## 3. Enable your device for development
+Vous pouvez commencer à développer des applications immédiatement mais, avant de les soumettre au Store, vous devez disposer d’un compte de développeur.
 
-It’s important to test your UWP apps on a real PCs and phones. Before you can deploy apps to your PC or Windows Phone, you have to enable it for development.
+-   Pour obtenir un compte de développeur, accédez à la page [Êtes-vous prêt à vous inscrire ?](sign-up.md)
 
--   For detailed instructions, see [Enable your device for development](enable-your-device-for-development.md).
+## Et après ?
 
-## 4. Register as an app developer
+Après avoir installé les outils et obtenu une licence de développeur ou un compte de développeur, utilisez nos didacticiels pour créer votre première application :
 
-You can start developing apps now, but before you can submit them to the store, you need a developer account.
+-   Didacticiels [Créer votre première application](your-first-app.md)
 
--   To get a developer account, go to the [Sign up](sign-up.md) page.
+## Vous souhaitez davantage d’outils et de téléchargements ?
 
-## What's next?
-
-After you've installed the tools and gotten a developer license or a developer account, use our tutorials to create your first app:
-
--   [Create your first app](your-first-app.md) tutorials
-
-## Want more tools and downloads?
-
-For the complete list of tools and downloads, see [Downloads](http://go.microsoft.com/fwlink/p/?linkid=285935).
+Pour obtenir la liste complète des outils et des téléchargements, visitez la page [Téléchargements](http://go.microsoft.com/fwlink/p/?linkid=285935).
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jul16_HO1-->
 
 

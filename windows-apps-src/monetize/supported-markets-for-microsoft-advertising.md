@@ -1,185 +1,185 @@
 ---
 author: mcleanbyron
 ms.assetid: 4804e371-065e-4d5a-ab1a-9c5732f52a9e
-description: Learn about the supported countries and regions for interstitial and banner ads.
-title: Supported markets for Microsoft advertising
+description: "En savoir plus sur les pays et régions pris en charge pour les spots et bannières publicitaires."
+title: "Marchés pris en charge par MicrosoftAdvertising"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: 297659aa33d37bd8da29b0cb4e0d43ce29e5e7c0
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 2d17a3936a4932b0aa30c80a38bb492f3f21fb37
 
 ---
 
-# Supported markets for Microsoft advertising
+# Marchés pris en charge par MicrosoftAdvertising
 
 
+\[ Mise à jour pour les applicationsUWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-
-Interstitial ads and banner ads are supported in the following countries and regions.
+Les spots et bannières publicitaires sont pris en charge dans les régions et pays suivants.
 
 <span id="interstitialads"/>
-## Interstitial ads
+## Spots publicitaires
 
--   Australia
+-   Australie
 
--   Brazil
+-   Brésil
 
 -   Canada
 
 -   France
 
--   Germany
+-   Allemagne
 
--   Italy
+-   Italie
 
--   Japan
+-   Japon
 
--   Spain
+-   Espagne
 
--   United Kingdom
+-   Royaume-Uni
 
--   United States
+-   États-Unis
 
 <span id="bannerads"/>
-## Banner ads
+## Bannières publicitaires
 
 
 -   Afghanistan
 
--   Albania
+-   Albanie
 
--   Algeria
+-   Algérie
 
 -   Angola
 
--   Antigua and Barbuda
+-   Antigua et Barbuda
 
--   Argentina
+-   Argentine
 
--   Armenia
+-   Arménie
 
--   Australia
+-   Australie
 
--   Austria
+-   Autriche
 
--   Azerbaijan
+-   Azerbaïdjan
 
--   Bahrain
+-   Bahreïn
 
 -   Bangladesh
 
--   Belarus
+-   Bélarus
 
--   Belgium
+-   Belgique
 
--   Benin
+-   Bénin
 
--   Bolivia
+-   Bolivie
 
--   Bosnia and Herzegovina
+-   Bosnie-Herzégovine
 
 -   Botswana
 
--   Brazil
+-   Brésil
 
--   Burkina Faso
+-   Burkina-Faso
 
 -   Burundi
 
--   Cambodia
+-   Cambodge
 
--   Cameroon
+-   Cameroun
 
 -   Canada
 
--   Central African Republic
+-   République centrafricaine
 
--   Chad
+-   Tchad
 
--   Chile
+-   Chili
 
--   China
+-   Chine
 
--   Colombia
+-   Colombie
 
--   Comoros
+-   Comores (Les)
 
 -   Congo
 
--   Congo (DRC)
+-   Congo (RDC)
 
 -   Costa Rica
 
--   Côte d'Ivoire
+-   Côte d’Ivoire
 
--   Denmark
+-   Danemark
 
--   Dominica
+-   Dominique
 
--   Dominican Republic
+-   République dominicaine
 
--   Ecuador
+-   Équateur (République de)
 
--   Egypt
+-   Égypte
 
--   El Salvador
+-   Salvador
 
--   Eritrea
+-   Érythrée
 
--   Ethiopia
+-   Éthiopie
 
--   Fiji
+-   Fidji
 
--   Finland
+-   Finlande
 
 -   France
 
--   Georgia
+-   Géorgie
 
--   Germany
+-   Allemagne
 
 -   Ghana
 
--   Greece
+-   Grèce
 
 -   Guatemala
 
--   Guinea
+-   Guinée
 
--   Haiti
+-   Haïti
 
 -   Honduras
 
 -   Hong Kong
 
--   Iceland
+-   Islande
 
--   India
+-   Inde
 
--   Indonesia
+-   Indonésie
 
--   Iraq
+-   Irak
 
--   Ireland
+-   Irlande
 
--   Israel
+-   Israël
 
--   Italy
+-   Italie
 
--   Jamaica
+-   Jamaïque
 
--   Japan
+-   Japon
 
--   Jordan
+-   Jordanie
 
 -   Kazakhstan
 
 -   Kenya
 
--   Kuwait
+-   Koweït
 
 -   Laos
 
--   Lebanon
+-   Liban
 
 -   Liberia
 
@@ -187,35 +187,35 @@ Interstitial ads and banner ads are supported in the following countries and reg
 
 -   Luxembourg
 
--   Macedonia (FYROM)
+-   Macédoine (Ex-République yougoslave de Macédoine)
 
 -   Madagascar
 
 -   Malawi
 
--   Malaysia
+-   Malaisie
 
 -   Mali
 
--   Malta
+-   Malte
 
--   Mauritius
+-   Maurice (Île)
 
--   Mexico
+-   Mexique
 
 -   Monaco
 
--   Mongolia
+-   Mongolie
 
--   Montenegro
+-   Monténégro
 
--   Morocco
+-   Maroc
 
 -   Mozambique
 
--   Nepal
+-   Népal
 
--   New Zealand
+-   Nouvelle-Zélande
 
 -   Nicaragua
 
@@ -223,7 +223,7 @@ Interstitial ads and banner ads are supported in the following countries and reg
 
 -   Nigeria
 
--   Norway
+-   Norvège
 
 -   Oman
 
@@ -233,53 +233,53 @@ Interstitial ads and banner ads are supported in the following countries and reg
 
 -   Paraguay
 
--   Peru
+-   Pérou
 
 -   Philippines
 
--   Poland
+-   Pologne
 
 -   Portugal
 
 -   Qatar
 
--   Russia
+-   Russie
 
 -   Rwanda
 
--   Saint Vincent and the Grenadines
+-   Saint-Vincent-et-les-Grenadines
 
--   Saudi Arabia
+-   Arabie saoudite
 
--   Senegal
+-   Sénégal
 
 -   Sierra Leone
 
--   Singapore
+-   Singapour
 
--   Somalia
+-   Somalie
 
--   South Africa
+-   Afrique du Sud
 
--   South Korea
+-   Corée du Sud
 
--   Spain
+-   Espagne
 
 -   Sri Lanka
 
--   Sweden
+-   Suède
 
--   Switzerland
+-   Suisse
 
--   Taiwan
+-   Taïwan
 
--   Tajikistan
+-   Tadjikistan
 
--   Tanzania
+-   Tanzanie
 
--   Thailand
+-   Thaïlande
 
--   The Netherlands
+-   Pays-Bas
 
 -   Timor-Leste
 
@@ -287,21 +287,21 @@ Interstitial ads and banner ads are supported in the following countries and reg
 
 -   Tonga
 
--   Tunisia
+-   Tunisie
 
--   Turkey
+-   Turquie
 
--   Turkmenistan
+-   Turkménistan
 
--   Uganda
+-   Ouganda
 
 -   Ukraine
 
--   United Arab Emirates
+-   Émirats arabes unis
 
--   United Kingdom
+-   Royaume-Uni
 
--   Uzbekistan
+-   Ouzbékistan
 
 -   Venezuela
 
@@ -315,6 +315,6 @@ Interstitial ads and banner ads are supported in the following countries and reg
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

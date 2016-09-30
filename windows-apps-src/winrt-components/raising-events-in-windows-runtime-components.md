@@ -1,41 +1,41 @@
 ---
 author: msatranjr
-title: Raising Events in Windows Runtime Components
+title: "Déclenchement d’événements dans les composants Windows Runtime"
 ms.assetid: 3F7744E8-8A3C-4203-A1CE-B18584E89000
 description: 
 translationtype: Human Translation
 ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: cd1d92e584616a642a20d3df3ec52f3609061021
+ms.openlocfilehash: 54934cba0e26da547e09b95a63d2c63363eaf85d
 
 ---
 
-# Raising Events in Windows Runtime Components
+# Déclenchement d’événements dans les composants Windows Runtime
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-If your Windows Runtime component raises an event of a user-defined delegate type on a background thread (worker thread) and you want JavaScript to be able to receive the event, you can implement and/or raise it in one of these ways:
+Si votre composant Windows Runtime déclenche un événement d’un type délégué défini par l’utilisateur sur un thread d’arrière-plan (thread de travail) et vous souhaitez que JavaScript puisse recevoir l’événement, vous pouvez l’implémenter ou le déclencher de plusieurs manières:
 
--   (Option 1) Raise the event through the [Windows.UI.Core.CoreDispatcher](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.aspx) to marshal the event to the JavaScript thread context. Although typically this is the best option, in some scenarios it might not provide the fastest performance.
--   (Option 2) Use [Windows.Foundation.EventHandler](https://msdn.microsoft.com/library/windows/apps/br206577.aspx)&lt;Object&gt; but lose type information (but lose the event type information). If Option 1 is not feasible or its performance is not adequate, then this is a good second choice if loss of type information is acceptable.
--   (Option 3) Create your own proxy and stub for the component. This option is the most difficult to implement, but it preserves type information and might provide better performance compared to Option 1 in demanding scenarios.
+-   (Option nº 1) Déclencher l’événement via [Windows.UI.Core.CoreDispatcher](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.aspx) pour marshaler l’événement au contexte de thread JavaScript. Bien qu’il s’agisse en général de la meilleure option, elle peut dans certains cas ne pas fournir des performances optimales.
+-   (Option nº 2) Utiliser [Windows.Foundation.EventHandler](https://msdn.microsoft.com/library/windows/apps/br206577.aspx)&lt;Object&gt; mais perdre les informations sur le type d’événement. Si l’option nº1 n’est pas réalisable ou que ses performances ne sont pas adéquates, cela constitue la deuxième meilleure option si la perte des informations sur le type d’événement est acceptable.
+-   (Option nº 3) Créer vos propres proxy/stub pour le composant. Cette option est la plus difficile à implémenter, mais elle conserve les informations sur le type et peut offrir de meilleures performances que l’option nº 1 dans les scénarios exigeants.
 
-If you just raise an event on a background thread without using one of these options, a JavaScript client will not receive the event.
+Si vous déclenchez un événement sur un thread d’arrière-plan sans utiliser l’une de ces options, un client JavaScript ne recevra pas l’événement.
 
-## Background
-
-
-All Windows Runtime components and apps are fundamentally COM objects, no matter what language you use to create them. In the Windows API, most of the components are agile COM objects that can communicate equally well with objects on the background thread and on the UI thread. If a COM object can’t be made agile, then it requires helper objects known as proxies and stubs to communicate with other COM objects across the UI thread-background thread boundary. (In COM terms, this is known as communication between thread apartments.)
-
-Most of the objects in the Windows API are either agile or have proxies and stubs built in. However, proxies and stubs can’t be created for generic types such as Windows.Foundation.[TypedEventHandler&lt;TSender, TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br225997.aspx) because they are not complete types until you provide the type argument. It's only with JavaScript clients that the lack of proxies or stubs becomes an issue, but if you want your component to be usable from JavaScript as well as from C++ or a .NET language, then you must use one of the following three options.
-
-## (Option 1) Raise the event through the CoreDispatcher
+## Contexte
 
 
-You can send events of any user-defined delegate type by using the [Windows.UI.Core.CoreDispatcher](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.aspx), and JavaScript will be able to receive them. If you are unsure which option to use, try this one first. If latency between the event firing and the event handling becomes an issue, then try one of the other options.
+Tous les composants et applications Windows Runtime sont essentiellement des objets COM, quel que soit le langage utilisé pour les créer. Dans l’API Windows, la plupart des composants sont des objets COM agiles qui peuvent communiquer aussi bien avec les objets sur le thread d’arrière-plan qu’avec les objets sur le thread d’interface utilisateur. Si un objet COM ne peut pas être rendu agile, il requiert des objets d’assistance appelés proxys et stubs pour communiquer avec d’autres objets COM à travers la limite thread d’interface utilisateur-thread d’arrière-plan. (En termes COM, on parle de communication entre cloisonnements de threads.)
 
-The following example shows how to use the CoreDispatcher to raise a strongly-typed event. Notice that the type argument is Toast, not Object.
+La plupart des objets de l’API Windows sont agiles ou ont des proxys et des stubs incorporés. Toutefois, les proxys et les stubs ne peuvent pas être créés pour les types génériques comme Windows.Foundation.[TypedEventHandler&lt;TSender, TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br225997.aspx), car ces types ne sont pas complets tant que vous n’avez pas fourni l’argument de type. L’absence de proxys ou de stubs pose problème uniquement avec les clients JavaScript, mais si vous souhaitez que votre composant soit utilisable à partir de JavaScript, mais aussi de C++ ou d’un langage .NET, vous devez utiliser l’une des trois options suivantes.
+
+## (Option nº 1) Déclencher l’événement via CoreDispatcher
+
+
+Vous pouvez envoyer des événements de n’importe quel type délégué défini par l’utilisateur à l’aide de [Windows.UI.Core.CoreDispatcher](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.aspx), et JavaScript sera en mesure de les recevoir. Si vous n’êtes pas certain de l’option à utiliser, essayez celle-ci en premier. Si la latence entre le déclenchement des événements et la gestion des événements devient un problème, essayez l’une des autres options.
+
+L’exemple suivant montre comment utiliser CoreDispatcher pour déclencher un événement fortement typé. Notez que l’argument de type est Toast, et non Object.
 
 ```csharp
 public event EventHandler<Toast> ToastCompletedEvent;
@@ -70,12 +70,12 @@ public void MakeToastWithDispatcher(string message)
 }
 ```
 
-## (Option 2) Use EventHandler&lt;Object&gt; but lose type information
+## (Option nº 2) Utiliser EventHandler&lt;Object&gt; mais perdre les informations sur le type
 
 
-Another way to send an event from a background thread is to use [Windows.Foundation.EventHandler](https://msdn.microsoft.com/library/windows/apps/br206577.aspx)&lt;Object&gt; as the type of the event. Windows provides this concrete instantiation of the generic type and provides a proxy and stub for it. The downside is that the type information of your event args and sender is lost. C++ and .NET clients must know through documentation what type to cast back to when the event is received. JavaScript clients don’t need the original type information. They find the arg properties, based on their names in the metadata.
+Une autre méthode pour envoyer un événement à partir d’un thread d’arrière-plan consiste à utiliser [Windows.Foundation.EventHandler](https://msdn.microsoft.com/library/windows/apps/br206577.aspx)&lt;Object&gt; comme type de l’événement. Windows fournit cette instanciation concrète du type générique, ainsi qu’un proxy et un stub pour celui-ci. L’inconvénient est que les informations sur le type de vos arguments et de votre émetteur d’événement sont perdues. Les clients C++ et .NET doivent connaître via la documentation le type vers lequel effectuer un cast lorsque l’événement est reçu. Les clients JavaScript n’ont pas besoin des informations sur le type d’origine. Ils recherchent les propriétés des arguments, selon leurs noms dans les métadonnées.
 
-This example shows how to use Windows.Foundation.EventHandler&lt;Object&gt; in C#:
+Cet exemple montre comment utiliser Windows.Foundation.EventHandler&lt;Object&gt; en C# :
 
 ```csharp
 public sealed Class1
@@ -108,7 +108,7 @@ public event EventHandler<Object> ToastCompletedEvent;
 }
 ```
 
-You consume this event on the JavaScript side like this:
+Cet événement est utilisé du côté JavaScript comme suit:
 
 ```javascript
 toastCompletedEventHandler: function (event) {
@@ -117,38 +117,38 @@ toastCompletedEventHandler: function (event) {
 }
 ```
 
-## (Option 3) Create your own proxy and stub
+## (Option nº 3) Créer vos propres proxy/stub
 
 
-For potential performance gains on user-defined event types that have fully-preserved type information, you have to create your own proxy and stub objects and embed them in your app package. Typically, you have to use this option only in rare situations where neither of the other two options are adequate. Also, there is no guarantee that this option will provide better performance than the other two options. Actual performance depends on many factors. Use the Visual Studio profiler or other profiling tools to measure actual performance in your application and determine whether the event is in fact a bottleneck.
+Pour améliorer les performances potentielles sur les types d’événements définis par l’utilisateur qui présentent des informations entièrement préservées sur le type, vous devez créer vos propres objets proxy et stub et les inclure dans le package de votre application. En règle générale, vous devez utiliser cette option uniquement dans les rares cas où aucune des deux autres options n’est adaptée. En outre, il n’y a aucune garantie que cette option offrira de meilleures performances que les deux autres options. Les performances réelles dépendent de nombreux facteurs. Pour mesurer les performances réelles dans votre application et déterminer si l’événement est en fait un goulot d’étranglement, utilisez le profileur Visual Studio ou d’autres outils de profilage.
 
-The rest of this article shows how to use C# to create a basic Windows Runtime component, and then use C++ to create a DLL for the proxy and stub that will enable JavaScript to consume a Windows.Foundation.TypedEventHandler&lt;TSender, TResult&gt; event that's raised by the component in an async operation. (You can also use C++ or Visual Basic to create the component. The steps that are related to creating the proxies and stubs are the same.) This walkthrough is based on Creating a Windows Runtime in-process component sample (C++/CX) and helps explain its purposes.
+Le reste de cet article explique comment utiliser C# pour créer un composant Windows Runtime de base, puis comment utiliser C++ pour créer une DLL pour le proxy et le stub qui permettra à JavaScript d’utiliser un événement Windows.Foundation.TypedEventHandler&lt;TSender, TResult&gt; déclenché par le composant dans une opération asynchrone. (Vous pouvez également utiliser C++ ou Visual Basic pour créer le composant. Les étapes liées à la création des proxys et des stubs sont identiques.) Cette procédure pas à pas est basée sur l’article Création d’un exemple de composant in-process Windows Runtime (C++/CX) et contribue à expliquer les différents rôles de ce dernier.
 
-This walkthrough has these parts:
+Cette procédure pas à pas inclut les parties suivantes:
 
--   Here you will create two basic Windows Runtime classes. One class exposes an event of type [Windows.Foundation.TypedEventHandler&lt;TSender, TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br225997.aspx) and the other class is the type that's returned to JavaScript as the argument for TValue. These classes can't communicate with JavaScript until you complete the later steps.
--   This app activates the main class object, calls a method, and handles an event that's raised by the Windows Runtime component.
--   These are required by the tools that generate the proxy and stub classes.
--   You then use the IDL file to generate the C source code for the proxy and stub.
--   Register the proxy-stub objects so that the COM runtime can find them, and reference the proxy-stub DLL in the app project.
+-   Ici, vous allez créer deux classes Windows Runtime de base. L’une expose un événement de type [Windows.Foundation.TypedEventHandler&lt;TSender, TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br225997.aspx) et l’autre correspond au type retourné à JavaScript comme argument pour TValue. Ces classes ne peuvent pas communiquer avec JavaScript tant que vous n’avez pas effectué les étapes suivantes.
+-   Cette application active l’objet de classe principal, appelle une méthode et gère un événement déclenché par le composant Windows Runtime.
+-   Ces éléments sont requis par les outils qui génèrent les classes proxy et stub.
+-   Vous devez ensuite utiliser le fichier IDL pour générer le code source C pour le proxy et le stub.
+-   Inscrivez les objets proxy-stub afin que le runtime COM puisse les trouver, puis référencez la DLL de proxy-stub dans le projet d’application.
 
-## To create the Windows Runtime component
+## Pour créer le composant Windows Runtime
 
-In Visual Studio, on the menu bar, choose **File &gt; New Project**. In the **New Project** dialog box, expand **JavaScript &gt; Universal Windows** and then select **Blank App**. Name the project ToasterApplication and then choose the **OK** button.
+Dans Visual Studio, dans la barre de menus, choisissez **Fichier &gt; Nouveau Projet**. Dans la boîte de dialogue **Nouveau projet**, développez **JavaScript &gt; Windows universel**, puis sélectionnez **Application vide**. Nommez le projet ToasterApplication, puis cliquez sur le bouton **OK**.
 
-Add a C# Windows Runtime component to the solution: In Solution Explorer, open the shortcut menu for the solution and then choose **Add &gt; New Project**. Expand **Visual C# &gt; Windows Store** and then select **Windows Runtime Component**. Name the project ToasterComponent and then choose the **OK** button. ToasterComponent will be the root namespace for the components you will create in later steps.
+Ajoutez un composant Windows Runtime C# à la solution : dans l’Explorateur de solutions, ouvrez le menu contextuel de la solution, puis choisissez **Ajouter &gt; Nouveau projet**. Développez **Visual C# &gt; Windows Store**, puis sélectionnez **Composant Windows Runtime**. Nommez le projet ToasterComponent, puis cliquez sur le bouton **OK**. ToasterComponent sera l’espace de noms racine pour les composants que vous créerez lors des étapes ultérieures.
 
-In Solution Explorer, open the shortcut menu for the solution and then choose **Properties**. In the **Property Pages** dialog box, select **Configuration Properties** in the left pane, and then at the top of the dialog box, set **Configuration** to **Debug** and **Platform** to x86, x64, or ARM. Choose the **OK** button.
+Dans l’Explorateur de solutions, ouvrez le menu contextuel de la solution, puis choisissez **Propriétés**. Dans la boîte de dialogue **Pages de propriétés**, sélectionnez **Propriétés de configuration** dans le volet gauche, puis en haut de la boîte de dialogue, définissez **Configuration** sur **Déboguer** et **Plateforme** sur x86, x64 ou ARM. Cliquez sur le bouton **OK**.
 
-**Important** Platform = Any CPU won’t work because it's not valid for the native-code Win32 DLL that you'll add to the solution later.
+**Important** Plateforme = Toute CPU ne fonctionnera pas, car cette option n’est pas valide pour la DLL Win32 de code natif que vous ajouterez à la solution ultérieurement.
 
-In Solution Explorer, rename class1.cs to ToasterComponent.cs so that it matches the name of the project. Visual Studio automatically renames the class in the file to match the new file name.
+Dans l’Explorateur de solutions, remplacez le nom class1.cs par ToasterComponent.cs afin qu’il corresponde au nom du projet. Visual Studio renomme automatiquement la classe dans le fichier pour qu’elle corresponde au nouveau nom de fichier.
 
-In the .cs file, add a using directive for the Windows.Foundation namespace to bring TypedEventHandler into scope.
+Dans le fichier .cs, ajoutez une directive using pour l’espace de noms Windows.Foundation afin d’inclure TypedEventHandler dans la portée.
 
-When you require proxies and stubs, your component must use interfaces to expose its public members. In ToasterComponent.cs, define an interface for the toaster, and another one for the Toast that the toaster produces.
+Lorsque vous avez besoin de proxys et de stubs, votre composant doit utiliser des interfaces pour exposer ses membres publics. Dans ToasterComponent.cs, définissez une interface pour le générateur de toasts et une autre pour le toast que le générateur produit.
 
-**Note** In C# you can skip this step. Instead, first create a class, and then open its shortcut menu and choose **Refactor &gt; Extract Interface**. In the code that's generated, manually give the interfaces public accessibility.
+**Remarque** En C#, vous pouvez ignorer cette étape. À la place, créez d’abord une classe, puis ouvrez son menu contextuel et choisissez **Refactoriser &gt; Extraire l’interface**. Dans le code généré, donnez manuellement aux interfaces une accessibilité publique.
 
 ```csharp
     public interface IToaster
@@ -163,9 +163,9 @@ When you require proxies and stubs, your component must use interfaces to expose
         }
 ```
 
-The IToast interface has a string that can be retrieved to describe the type of toast. The IToaster interface has a method to make toast, and an event to indicate that the toast is made. Because this event returns the particular piece (that is, type) of toast, it's known as a typed event.
+L’interface IToast comporte qui peut être récupérée pour décrire le type de toast. L’interface IToaster dispose d’une méthode pour créer un toast et d’un événement pour indiquer que le toast est créé. Comme cet événement retourne le type particulier du toast, il est appelé événement typé.
 
-Next, we need classes that implement these interfaces, and are public and sealed so that they are accessible from the JavaScript app that you'll program later.
+Ensuite, nous avons besoin de classes qui implémentent ces interfaces, et qui soient publiques et verrouillées afin qu’elles soient accessibles depuis l’application JavaScript que vous programmerez ultérieurement.
 
 ```csharp
     public sealed class Toast : IToast
@@ -214,9 +214,9 @@ Next, we need classes that implement these interfaces, and are public and sealed
         }
 ```
 
-In the preceding code, we create the toast and then spin up a thread-pool work item to fire the notification. Although the IDE might suggest that you apply the await keyword to the async call, it isn’t necessary in this case because the method doesn’t do any work that depends on the results of the operation.
+Dans le code précédent, nous créons le toast, puis accélérons un élément de travail de pool de threads pour déclencher la notification. Bien que l’IDE puisse suggérer que vous appliquez le mot clé await à l’appel asynchrone, cela n’est pas nécessaire dans ce cas, parce que la méthode n’effectue aucun travail dépendant des résultats de l’opération.
 
-**Note** The async call in the preceding code uses ThreadPool.RunAsync solely to demonstrate a simple way to fire the event on a background thread. You could write this particular method as shown in the following example, and it would work fine because the .NET Task scheduler automatically marshals async/await calls back to the UI thread.
+**Remarque** L’appel asynchrone dans le code précédent utilise ThreadPool.RunAsync uniquement pour illustrer un moyen simple de déclencher l’événement sur un thread d’arrière-plan. Vous pouvez écrire cette méthode particulière comme indiqué dans l’exemple suivant, et elle s’exécutera correctement, car le planificateur de tâches .NET marshale automatiquement les appels asynchrones/d’attente vers le thread d’interface utilisateur.
   
 ````csharp
     public async void MakeToast(string message)
@@ -429,6 +429,6 @@ The project should now build. Run the project and verify that you can make toast
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

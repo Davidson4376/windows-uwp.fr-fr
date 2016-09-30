@@ -1,42 +1,42 @@
 ---
 author: jnHs
-Description: Review this list to help avoid issues that frequently prevent apps from getting certified, or that might be identified during a spot check after the app is published.
-title: Avoid common certification failures
+Description: "Consultez cette liste pour éviter les problèmes qui empêchent souvent les applications d’être certifiées, ou qui peuvent être identifiés au cours d’une vérification ponctuelle après la publication de l’application."
+title: "Éviter les échecs de certification courants"
 ms.assetid: 9E9E3841-2F9B-42D4-B5F8-4C7C31E42E3D
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 7de2083b2a29baed5a0e6baf0a1e4c4c2f71c9e4
+ms.openlocfilehash: 6af2842eeb5eeebfc9ffc5a7a3ec98fdcebddb74
 
 ---
 
-# Avoid common certification failures
+# Éviter les échecs de certification courants
 
 
-Review this list to help avoid issues that frequently prevent apps from getting certified, or that might be identified during a spot check after the app is published.
+Consultez cette liste pour éviter les problèmes qui empêchent souvent les applications d’être certifiées, ou qui peuvent être identifiés au cours d’une vérification ponctuelle après la publication de l’application.
 
-> **Note**  You should also review the [Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944) to ensure your app meets all of the requirements listed there.
-
- 
-
--   Submit your app only when it's finished. You're welcome to use your app's description to mention upcoming features, but make sure that your app doesn't contain incomplete sections, links to web pages that are under construction, or anything else that would give a customer the impression that your app is incomplete.
-
--   [Test your app with the Windows App Certification Kit](https://msdn.microsoft.com/library/windows/apps/mt186449) before you submit your app.
-
--   Test your app on several different configurations to ensure that it's as stable as possible.
-
--   Make sure that your app doesn't crash without network connectivity. Even if a connection is required to actually use your app, it needs to perform appropriately when no connection is present.
--   Make sure that your app's description clearly represents what your app does. For help, see our guidance on [writing a great app description](write-a-great-app-description.md).
-
--   Be sure to provide complete and accurate answers to all of the questions in the [Age ratings](age-ratings.md) section.
-
--   If your app uses the commerce APIs from the [**Windows.ApplicationModel.Store**](https://msdn.microsoft.com/library/windows/apps/br225197) namespace, make sure to test the app and verify that it handles typical exceptions. Also, make sure that your app uses the [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) class (not the [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) class, which is for testing purposes only).
-
--   Don't [declare your app as accessible](app-declarations.md#this-app-has-been-tested-to-meet-accessibility-guidelines) unless you have specifically engineered and tested it for accessibility scenarios.
-
--   Make sure that you [provide any necessary info](notes-for-certification.md) required to use your app, such as the user name and password for a test account if your app requires users to log in to a service, or any steps required to access hidden or locked features.
+> **Remarque** Reportez-vous également aux [Politiques du Windows Store](https://msdn.microsoft.com/library/windows/apps/dn764944) pour vous assurer que votre application remplit toutes les obligations spécifiées.
 
  
 
+-   Ne soumettez votre application que lorsqu’elle est terminée. Nous vous invitons à utiliser la description de votre application pour signaler les fonctionnalités à venir. Toutefois, assurez-vous que votre application ne contient pas de sections incomplètes, de liens vers des pages web en construction, ni toute autre chose qui donnerait au client l'impression que votre application est incomplète.
+
+-   [Procédez au test de votre application à l’aide du Kit de certification des applications Windows](https://msdn.microsoft.com/library/windows/apps/mt186449) avant de la soumettre.
+
+-   Testez votre application dans différentes configurations pour vérifier qu'elle est aussi stable que possible.
+
+-   Assurez-vous que votre application ne se bloque pas sans connectivité réseau. Même si une connexion est requise pour utiliser réellement votre application, cette dernière doit fonctionner correctement en l’absence de connexion.
+-   Vérifiez que la description de votre application indique clairement ce que fait votre application. Si vous avez besoin d'aide, consultez nos recommandations en matière de [rédaction d'une description d'application attractive](write-a-great-app-description.md).
+
+-   Veillez à fournir des réponses complètes et précises à l'ensemble des questions dans la section [Classification par âge](age-ratings.md).
+
+-   Si votre application utilise les API de commerce à partir de l’espace de noms [**Windows.ApplicationModel.Store**](https://msdn.microsoft.com/library/windows/apps/br225197), prenez soin de tester l’application et de vérifier qu’elle gère les exceptions par défaut. Assurez-vous également que votre application utilise la classe [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) (et non la classe [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766), qui est uniquement fournie à des fins de test).
+
+-   Ne [déclarez pas votre application comme accessible](app-declarations.md#this-app-has-been-tested-to-meet-accessibility-guidelines) à moins de l’avoir spécifiquement conçue et testée pour des scénarios d’accessibilité.
+
+-   Veillez à [fournir toutes les informations nécessaires](notes-for-certification.md) pour utiliser votre application, telles que le nom d’utilisateur et le mot de passe d’un compte de test si votre application requiert que les utilisateurs se connectent à un service, ou toutes les étapes requises pour accéder aux fonctionnalités masquées ou verrouillées.
+
+ 
+
  
 
 
@@ -45,6 +45,6 @@ Review this list to help avoid issues that frequently prevent apps from getting 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,22 +1,22 @@
 ---
 author: mcleanbyron
 ms.assetid: f54ae666-d609-49d6-90ba-e2e62ebc3652
-description: Learn about the supported banner ad sizes.
-title: Supported ad sizes for banner ads
+description: "En savoir plus sur les tailles des bannières publicitaires prises en charge."
+title: "Tailles de bannières publicitaires prises en charge"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 488c47e7fd3ab55c51454e867d802d632a0b4df2
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: f83febcb6c96ad85329633e652978f5c7724e743
 
 
 ---
 
-# Supported ad sizes for banner ads
+# Tailles de bannières publicitaires prises en charge
 
+\[ Mise à jour pour les applicationsUWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
+MicrosoftAdvertising prend en charge les tailles de bannières publicitaires suivantes:
 
-Microsoft advertising supports banner ads in the following ad sizes.
-
-## Windows 10 Mobile and Windows Phone 8.x
+## Windows10 Mobile et WindowsPhone8x
 
 <table>
 <colgroup>
@@ -25,8 +25,8 @@ Microsoft advertising supports banner ads in the following ad sizes.
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Ad Size</th>
-<th align="left">Example</th>
+<th align="left">Taille de bannière</th>
+<th align="left">Exemple</th>
 </tr>
 </thead>
 <tbody>
@@ -39,7 +39,7 @@ Microsoft advertising supports banner ads in the following ad sizes.
 <td align="left"><img src="images/13-f6f413da-ddde-4424-9364-41d8ba536d21.jpg" alt="AdSizesPhone320x50" /></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>480x80</p><p>**Note**&nbsp;&nbsp;This size is supported for Windows Phone Silverlight only.</p></td>
+<td align="left"><p>480x80</p><p>**Remarque** Cette taille est prise en charge uniquement pour Silverlight WindowsPhone.</p></td>
 <td align="left"><img src="images/13-0f11f562-0624-40d6-9720-400420f0a486.jpg" alt="AdSizesPhone480x80" /></td>
 </tr>
 <tr class="even">
@@ -51,7 +51,7 @@ Microsoft advertising supports banner ads in the following ad sizes.
 
  
 
-## Windows 10 (UWP) and Windows 8.1
+## Windows10 (UWP) et Windows8.1
 
 <table>
 <colgroup>
@@ -60,8 +60,8 @@ Microsoft advertising supports banner ads in the following ad sizes.
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Ad Size</th>
-<th align="left">Example</th>
+<th align="left">Taille de bannière</th>
+<th align="left">Exemple</th>
 </tr>
 </thead>
 <tbody>
@@ -92,6 +92,6 @@ Microsoft advertising supports banner ads in the following ad sizes.
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Jun16_HO4-->
 
 

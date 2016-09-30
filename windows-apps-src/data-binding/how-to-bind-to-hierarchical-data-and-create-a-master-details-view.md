@@ -1,39 +1,39 @@
 ---
 author: mcleblanc
 ms.assetid: 0C69521B-47E0-421F-857B-851B0E9605F2
-title: Bind hierarchical data and create a master/details view
-description: You can make a multi-level master/details (also known as list-details) view of hierarchical data by binding items controls to CollectionViewSource instances that are bound together in a chain.
+title: "Lier des données hiérarchiques et créer un affichage maître/détails"
+description: "Vous pouvez effectuer un affichage maître/détails (également appelé affichage liste/détails) de données hiérarchiques sur plusieurs niveaux en liant les contrôles d’éléments aux instances CollectionViewSource qui sont liées dans une chaîne."
 translationtype: Human Translation
 ms.sourcegitcommit: afb508fcbc2d4ab75188a2d4f705ea0bee385ed6
-ms.openlocfilehash: 91786a785eece1448a36ebf48b8c8ef5c131e609
+ms.openlocfilehash: 2ff66a1d6a80bb085f54dec8e35371ba0c9e6b27
 
 ---
-# Bind hierarchical data and create a master/details view
+# Lier des données hiérarchiques et créer un affichage maître/détails
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-> **Note**  Also see the [Master/detail sample](http://go.microsoft.com/fwlink/p/?linkid=619991).
+> **Remarque** Voir également l’[exemple Maître/Détails](http://go.microsoft.com/fwlink/p/?linkid=619991).
 
-You can make a multi-level master/details (also known as list-details) view of hierarchical data by binding items controls to [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) instances that are bound together in a chain. In this topic we use the [{x:Bind} markup extension](https://msdn.microsoft.com/library/windows/apps/Mt204783) where possible, and the more flexible (but less performant) [{Binding} markup extension](https://msdn.microsoft.com/library/windows/apps/Mt204782) where necessary.
+Vous pouvez effectuer un affichage maître/détails (également appelé affichage liste/détails) de données hiérarchiques sur plusieurs niveaux en liant les contrôles d’éléments aux instances [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) qui sont liées dans une chaîne. Dans cette rubrique, nous utilisons l’[extension de balisage {x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) lorsque cela est possible et l’[extension de balisage {Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782), plus souple (mais moins performante), si nécessaire.
 
-One common structure for Universal Windows Platform (UWP) apps is to navigate to different details pages when a user makes a selection in a master list. This is useful when you want to provide a rich visual representation of each item at every level in a hierarchy. Another option is to display multiple levels of data on a single page. This is useful when you want to display a few simple lists that let the user quickly drill down to an item of interest. This topic describes how to implement this interaction. The [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) instances keep track of the current selection at each hierarchical level.
+Une structure commune aux applications de plateforme Windows universelle (UWP) est la navigation vers différentes pages de détails quand un utilisateur effectue une sélection dans une liste principale. Cette technique est utile quand vous souhaitez fournir une représentation visuelle complète de chaque élément à tous les niveaux d’une hiérarchie. Une autre option consiste à afficher plusieurs niveaux de données sur une seule page. Cette technique est utile si vous voulez afficher un petit nombre de listes simples, que l’utilisateur peut parcourir rapidement pour trouver l’élément qui l’intéresse. Cette rubrique explique comment implémenter cette interaction. Les instances [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) assurent le suivi de la sélection actuelle à chaque niveau hiérarchique.
 
-We'll create a view of a sports team hierarchy that is organized into lists for leagues, divisions, and teams, and includes a team details view. When you select an item from any list, the subsequent views update automatically.
+Nous allons créer un affichage d’une hiérarchie d’équipes sportives organisé en plusieurs listes correspondant aux ligues, aux divisions et aux équipes, et qui inclut un affichage Détails pour chaque équipe. Lorsque vous sélectionnez un élément dans une de ces listes, les affichages suivants sont automatiquement actualisés.
 
-![master/details view of a sports hierarchy](images/xaml-masterdetails.png)
+![Affichage maître/détails d’une hiérarchie sportive](images/xaml-masterdetails.png)
 
-## Prerequisites
+## Connaissances requises
 
-This topic assumes that you know how to create a basic UWP app. For instructions on creating your first UWP app, see [Create your first UWP app using C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/Hh974581).
+Dans cette rubrique, nous partons du principe que vous savez créer une application UWP de base. Pour obtenir des instructions pour la création de votre première application UWP, consultez [Créer votre première application UWP en C# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/Hh974581).
 
-## Create the project
+## Créer le projet
 
-Create a new **Blank Application (Windows Universal)** project. Name it "MasterDetailsBinding".
+Commencez par créer un projet **Application vide (Windows universel)**. Nommez-le «MasterDetailsBinding».
 
-## Create the data model
+## Créer le modèle de données
 
-Add a new class to your project, name it ViewModel.cs, and add this code to it. This will be your binding source class.
+Ajoutez une nouvelle classe à votre projet, nommez-la ViewModel.cs et ajoutez-lui ce code. Il s’agira de votre classe de source de liaison.
 
 ```cs
 using System;
@@ -104,9 +104,9 @@ namespace MasterDetailsBinding
 }
 ```
 
-## Create the view
+## Créer l’affichage
 
-Next, expose the binding source class from the class that represents your page of markup. We do that by adding a property of type **LeagueList** to **MainPage**.
+Ensuite, exposez la classe de source de liaison à partir de la classe qui représente votre page de balisage. Pour ce faire, nous ajoutons une propriété de type **LeagueList** à **MainPage**.
 
 ```cs
 namespace MasterDetailsBinding
@@ -126,7 +126,7 @@ namespace MasterDetailsBinding
 }
 ```
 
-Finally, replace the contents of the MainPage.xaml file with the following markup, which declares three [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) instances and binds them together in a chain. The subsequent controls can then bind to the appropriate **CollectionViewSource**, depending on its level in the hierarchy.
+Enfin, remplacez le contenu du fichier MainPage.xaml avec le balisage suivant, qui déclare trois instances [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) et les lie dans une chaîne. Les contrôles suivants peuvent être liés à la classe **CollectionViewSource** appropriée, selon son niveau dans la hiérarchie.
 
 ```xml
 <Page
@@ -216,7 +216,7 @@ Finally, replace the contents of the MainPage.xaml file with the following marku
 </Page>
 ```
 
-Note that by binding directly to the [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833), you're implying that you want to bind to the current item in bindings where the path cannot be found on the collection itself. There's no need to specify the **CurrentItem** property as the path for the binding, although you can do that if there's any ambiguity. For example, the [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/BR209365) representing the team view has its [**Content**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content) property bound to the `Teams`**CollectionViewSource**. However, the controls in the [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348) bind to properties of the `Team` class because the **CollectionViewSource** automatically supplies the currently selected team from the teams list when necessary.
+Notez qu’en effectuant une liaison directe à la classe [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833), vous signifiez que vous souhaitez créer une liaison à l’élément actuel dans les liaisons où le chemin est introuvable au sein même de la collection. Il est inutile de spécifier la propriété **CurrentItem** en tant que chemin de la liaison, bien que vous puissiez le faire s’il existe la moindre ambiguïté. Par exemple, la classe [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/BR209365) de l’affichage de l’équipe a sa propriété [**Content**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content) liée à la classe `Teams`**CollectionViewSource**. Cependant, les contrôles de la classe [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348) sont liés aux propriétés de la classe `Team`, car la classe **CollectionViewSource** fournit automatiquement l’équipe actuellement sélectionnée à partir de la liste des équipes dès que nécessaire.
 
  
 
@@ -225,6 +225,6 @@ Note that by binding directly to the [**CollectionViewSource**](https://msdn.mic
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

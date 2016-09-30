@@ -1,61 +1,61 @@
 ---
 author: mcleblanc
 ms.assetid: 08C8F359-E8B6-4A45-8F4B-8A1962F0CE38
-description: Microsoft Visual Studio is to Windows as Xcode is to iOS and Mac OS. In this walkthrough, we help you get comfortable using Visual Studio.
-title: Creating a project in Visual Studio
+description: "Microsoft Visual Studio représente pour Windows ce que Xcode représente pour iOS et Mac OS. Cette procédure pas à pas vous permet de vous familiariser avec Visual Studio."
+title: "Création d’un projet dans Visual Studio"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 40dc6a52dbd495a78e5aa0d95a590d3e878d4068
+ms.openlocfilehash: 23d9ed066e2909a15b3106fd19bf6ce5ab09e7a9
 
 ---
 
-# Getting started: Creating a project
+# Prise en main &#58; Création d’un projet
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-## Creating a project
+## Création d’un projet
 
-Microsoft Visual Studio is to Windows as Xcode is to iOS and Mac OS. In this walkthrough, we help you get comfortable using Visual Studio. It shows you the absolute basics you'll need to know to get started. Each time you create an app, you'll follow steps similar to these.
+Microsoft Visual Studio représente pour Windows ce que Xcode représente pour iOS et Mac OS. Cette procédure pas à pas vous permet de vous familiariser avec Visual Studio. Elle vous présente les notions de base essentielles que vous devez connaître pour débuter. Chaque fois que vous créez une application, vous exécutez des étapes semblables à ce qui suit.
 
-The following video compares Xcode and Visual Studio.
+La vidéo suivante compare Xcode à Visual Studio.
 
-<iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/5b7bd91f-6a2f-40b6-9b19-eb2994931d0a/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no">One dev minute - Comparing Xcode to Visual Studio</iframe>
+<iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/5b7bd91f-6a2f-40b6-9b19-eb2994931d0a/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no">La minute du développeur - Comparaison de Xcode à Visual Studio</iframe>
 
-You will also find this [Building apps for Windows blog posting](https://blogs.windows.com/buildingapps/2016/01/27/visual-studio-walkthrough-for-ios-developers/) very helpful.
+Ce billet de blog [Building apps for Windows](https://blogs.windows.com/buildingapps/2016/01/27/visual-studio-walkthrough-for-ios-developers/) (en anglais) vous sera également très utile.
 
-Creating an app for Windows 10 (more formally referred to as a Universal Windows Platform (UWP) app) is rather like creating an iOS app using Storyboards. The Windows 10 app is often constructed over several pages, each page containing a different part of the user interface, like a web site. Each page usually has two associated source files: one to store the user interface in [XAML overview](https://msdn.microsoft.com/library/windows/apps/mt185595) format, and one that contains the source code, often C#. As your user interacts with your app, they will navigate between these pages. In this walkthrough, you will create an app with two pages.
+La création d’une application pour Windows 10, ou application de plateforme Windows universelle (UWP), est similaire à la création d’une application iOS à l’aide de tables de montage séquentiel. L’application Windows 10 est souvent construite sur plusieurs pages, dont chacune contient une partie de l’interface utilisateur, comme un site web. Généralement, chaque page possède deux fichiers sources associés: l’un pour stocker l’interface utilisateur au format [XAML](https://msdn.microsoft.com/library/windows/apps/mt185595), et l’autre contenant le code source, souvent C#. En interagissant avec votre application, l’utilisateur navigue entre ces pages. Dans ce guide pas à pas, vous allez créer une application sur deux pages.
 
-**Note**  An important feature of Windows 10 apps is the fact that the same source code, and the same API set, is available to you no matter the platform. As you know, when you are writing a universal iOS app for iPhone and iPad, you can determine at run-time which platform your app is running on, and take the appropriate action. In a similar way, Windows 10 apps can tell, at run-time, the device they are running on. With a UWP app, there is no need to use \#ifdef's in your source code to create phone versus desktop builds. Conveniently, Windows 10 apps also intelligently use their user interface controls depending on the device: for example, your app may reference a date picker control, and the control will automatically look and function differently depending on whether it's running on a desktop or a phone screen. Your source code, however, remains the same.
+**Remarque** Une caractéristique importante des applications Windows 10 est que le même code source et le même ensemble d’API sont disponibles, quelle que soit la plateforme. Comme vous le savez, lorsque vous écrivez une application iOS universelle pour iPhone et iPad, vous pouvez déterminer au moment de l’exécution la plateforme sur laquelle votre application s’exécute, et prendre les mesures nécessaires. De même, les applications Windows 10 peuvent déterminer au moment de l’exécution l’appareil sur lequel elles s’exécutent. Avec une application UWP, il est inutile d’utiliser des #ifdef dans le code source pour créer des builds spécifiquement adaptées aux ordinateurs de bureau ou aux téléphones. Heureusement, les applications Windows 10 utilisent intelligemment leurs contrôles d’interface utilisateur en fonction de l’appareil. Par exemple, votre application peut faire référence à un contrôle de sélecteur de dates. L’apparence et le fonctionnement du contrôle diffèrent selon que celui-ci s’exécute sur un ordinateur de bureau ou un écran de téléphone. Toutefois, le code source reste la même.
 
-Let's see how we can create a Windows 10 app. Start by running Visual Studio. The first time you run it, Visual Studio will ask you to get a developer license. A developer license lets you install and test Windows Store apps on your local computer before you submit them to the Windows Store. To get a license, follow the on-screen directions to sign in with a Microsoft account. If you don't have one, click the **Sign up** link in the **Developer License** dialog box, and follow the on-screen directions.
+Voyons comment créer une application Windows 10. Commencez par exécuter Visual Studio. Lors de sa première exécution, Visual Studio vous demande de vous procurer une licence de développeur. Ce type de licence vous permet d’installer et de tester des applications du Windows Store sur votre ordinateur local avant de les soumettre au Windows Store. Pour obtenir une licence, suivez les instructions à l’écran pour vous connecter à l’aide d’un compte Microsoft. Si vous n’en possédez pas, cliquez sur le lien **S’inscrire** dans la boîte de dialogue **Licence de développeur** et suivez les instructions à l’écran.
 
-For comparison, when you start Xcode, the first thing you see is the **Welcome to Xcode** screen, similar to the following figure.
+Par comparaison, lorsque vous démarrez Xcode, la première chose que vos voyez est l’écran de **bienvenue dans Xcode** présenté dans la figure qui suit.
 
-![xcode welcome screen](images/ios-to-uwp/ios-to-uwp-xcode-welcome.png)
+![écran de bienvenue Xcode](images/ios-to-uwp/ios-to-uwp-xcode-welcome.png)
 
-Visual Studio is very similar. You'll see the **Start Page**, as shown in the following figure.
+Visual Studio est très semblable. Vous allez voir la **page de démarrage**, présentée dans la figure suivante.
 
-![visual studio start screen](images/ios-to-uwp/ios-to-uwp-vs-welcome.png)
+![écran d’accueil Visual Studio](images/ios-to-uwp/ios-to-uwp-vs-welcome.png)
 
-To create a new app, start by making a project by doing one of the following:
+Pour créer une application, commencez par créer un projet en effectuant l’une des opérations suivantes:
 
--   In the **Start** area, tap **New Project**.
--   Tap the **File** menu, and then tap **New Project**.
+-   Dans la zone **Démarrer**, appuyez sur **Nouveau projet**.
+-   Appuyez sur le menu **Fichier**, puis sur **Nouveau projet**.
 
-For comparison, when you create a new project in Xcode, you see a list of project templates like those shown in the following figure.
+Par comparaison, lorsque vous créez un projet dans Xcode, vous voyez une liste de modèles de projet apparaître comme dans la figure ci-dessous.
 
-![xcode new project dialog box](images/ios-to-uwp/ios-to-uwp-xcode-choose-template.png)
+![boîte de dialogue nouveau projet dans xcode](images/ios-to-uwp/ios-to-uwp-xcode-choose-template.png)
 
-In Visual Studio, there are also several project templates to choose from, as shown in the following figure.
+Dans Visual Studio, plusieurs modèles de projet peuvent être choisis comme le montre la figure qui suit.
 
-![visual studio new project dialog box](images/ios-to-uwp/ios-to-uwp-vs-choose-template.png) For this walkthrough, tap **Visual C#**, and then tap **Windows**, **Windows Universal** and **Blank App (Windows Universal)**. In the **Name** box, type "MyApp", and then tap **OK**. Visual Studio creates and then displays your first project. Now, you can begin to design your app and add code to it.
+![boîte de dialogue nouveau projet dans visual studio](images/ios-to-uwp/ios-to-uwp-vs-choose-template.png) Pour cette procédure pas à pas, appuyez sur **Visual C#**, **Windows**, **Windows universel**, puis **Application vide (Windows universel)**. Dans la zone **Nom**, tapez « MyApp », puis appuyez sur **OK**. Visual Studio crée, puis affiche votre premier projet. Vous êtes maintenant prêt à concevoir votre application et à y ajouter du code.
 
-## Next step
+## Étape suivante
 
-[Getting started: Choosing a programming language](getting-started-choosing-a-programming-language.md)
+[Prise en main : Choix d’un langage de programmation](getting-started-choosing-a-programming-language.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

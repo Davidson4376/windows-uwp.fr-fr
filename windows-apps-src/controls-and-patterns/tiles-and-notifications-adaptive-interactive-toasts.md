@@ -1,41 +1,44 @@
 ---
 author: mijacobs
-Description: Adaptive and interactive toast notifications let you create flexible pop-up notifications with more content, optional inline images, and optional user interaction.
-title: Adaptive and interactive toast notifications
+Description: Les notifications toast adaptatives et interactives contextuelles et flexibles (plus de contenu, des images incluses/une interaction utilisateur facultatives).
+title: Notifications toast adaptatives et interactives
 ms.assetid: 1FCE66AF-34B4-436A-9FC9-D0CF4BDA5A01
 label: Adaptive and interactive toast notifications
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 55f5cd9e647e74d7861a7472872373d8949b79ba
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 17faf0ccb0207b318963e00655d7ac91b97e066b
 
 ---
-# Adaptive and interactive toast notifications
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+# Notifications toast adaptatives et interactives
 
-Adaptive and interactive toast notifications let you create flexible pop-up notifications with more content, optional inline images, and optional user interaction.
 
-The adaptive and interactive toast notifications model has these updates over the legacy toast template catalog:
 
--   The option to include buttons and inputs on the notifications.
--   Three different activation types for the main toast notification and for each action.
--   The option to create a notification for certain scenarios, including alarms, reminders, and incoming calls.
 
-**Note**   To see the legacy templates from Windows 8.1 and Windows Phone 8.1, see the [legacy toast template catalog](https://msdn.microsoft.com/library/windows/apps/hh761494).
+
+Les notifications toast adaptatives et interactives vous permettent de créer des notifications contextuelles flexibles présentant davantage de contenu, ainsi que des images incluses et une interaction utilisateur facultatives.
+
+Le modèle de notifications toast adaptatives et interactives comporte les mises à jour ci-après par rapport au catalogue de modèles de notifications toast hérité :
+
+-   possibilité d’inclure des boutons et des entrées sur les notifications ;
+-   trois différents types d’activations pour la notification toast principale et pour chaque action ;
+-   possibilité de créer une notification pour certains scénarios, comprenant les alarmes, les rappels et les appels entrants.
+
+**Remarque** Pour découvrir les modèles hérités de Windows8.1 et de Windows Phone8.1, voir le [catalogue de modèles de notifications toast hérité](https://msdn.microsoft.com/library/windows/apps/hh761494).
 
  
 
-## Toast notification structure
+## <span id="toast_structure"></span><span id="TOAST_STRUCTURE"></span>Structure de notification toast
 
 
-Toast notifications are constructed using XML, which would typically contain these key elements:
+Les notifications toast sont construites en XML et comprennent généralement les éléments clés suivants:
 
--   &lt;visual&gt; covers the content available for the users to visually see, including text and images
--   &lt;actions&gt; contains buttons/inputs the developer wants to add inside the notification
--   &lt;audio&gt; specifies the sound played when the notification pops
+-   &lt;visual&gt; indique le contenu visible par les utilisateurs, incluant le texte et les images
+-   &lt;actions&gt; contient les boutons/entrées que le développeur souhaite ajouter au sein de la notification
+-   &lt;audio&gt; spécifie le son émis lorsque la notification apparaît
 
-Here's a code example:
+Voici un exemple de code:
 
 ```XML
 <toast launch="app-defined-string">
@@ -54,67 +57,67 @@ Here's a code example:
 </toast>
 ```
 
-And a visual representation of the structure:
+Et voici une représentation visuelle de la structure:
 
-![toast notification structure](images/adaptivetoasts-structure.jpg)
+![structure de notification toast](images/adaptivetoasts-structure.jpg)
 
-### Visual
+### <span id="Visual"></span><span id="visual"></span><span id="VISUAL"></span>Éléments visuels
 
-Inside the visual element, you must have exactly one binding element that contains the visual content of the toast.
+L’élément «visual» doit contenir très exactement un seul élément de liaison («binding») intégrant le contenu visuel de la notification toast.
 
-Tile notifications in Universal Windows Platform (UWP) apps support multiple templates that are based on different tile sizes. Toast notifications, however, have only one template name: **ToastGeneric**. Having just the one template name means:
+Les notifications par vignette dans les applications de plateforme Windows universelle (UWP) prennent en charge plusieurs modèles reposant sur différentes tailles de vignette. Toutefois, les notifications toast n’emploient qu’un seul nom de modèle: **ToastGeneric**. L’utilisation d’un seul nom de modèle signifie plusieurs choses:
 
--   You can change the toast content, such as adding another line of text, adding an inline image, or changing the thumbnail image from displaying the app icon to something else, and do any of these things without worrying about changing the entire template or creating an invalid payload due to a mismatch between the template name and the content.
--   You can use the same code to construct the same payload for the **toast notification** that targets to deliver to different types of Microsoft Windows devices, including phones, tablets, PCs, and Xbox One. Each of these devices will accept the notification and display it to the user under their UI policies with the appropriate visual affordances and interaction model.
+-   Vous pouvez modifier le contenu des notifications toast, par exemple en ajoutant une autre ligne de texte ou une image incluse ou en modifiant le comportement de l’image miniature pour qu’elle affiche autre chose que l’icône de l’application, sans avoir besoin de modifier la totalité du modèle ni risquer de créer une charge utile incorrecte découlant d’une incohérence entre le nom du modèle et le contenu.
+-   Vous pouvez utiliser le même code pour construire la charge utile d’une **notification toast** ciblant différents types d’appareils Microsoft Windows, tels que les téléphones, les tablettes, les PC et les systèmes Xbox One. Chacun de ces appareils acceptera la notification et la présentera à l’utilisateur conformément à ses stratégies d’interface utilisateur avec les affordances visuelles et le modèle d’interaction appropriés.
 
-For all attributes supported in the visual section and its child elements, see the Schema section below. For more examples, see the XML examples section below.
+Pour découvrir tous les attributs pris en charge dans la section « visual » et tous les éléments enfants de cette dernière, voir la section « Schéma » ci-dessous. Pour consulter d’autres exemples, voir la section «Exemples XML» ci-après.
 
-### Actions
+### <span id="Actions"></span><span id="actions"></span><span id="ACTIONS"></span>Élément &lt;actions&gt;
 
-In UWP apps, you can add buttons and other inputs to your toast notifications, which lets users do more outside of the app. These actions are specified under the &lt;actions&gt; element, of which there are two types that you can specify:
+Dans les applications UWP, vous pouvez ajouter des boutons et d’autres entrées à vos notifications toast, ce qui permet aux utilisateurs d’effectuer d’autres opérations à l’extérieur de l’application. Vous spécifiez ces actions sous l’élément &lt;actions&gt; en utilisant l’un des deux types d’actions possibles:
 
--   &lt;action&gt; This appears as a button on desktop and mobile devices. You can specify up to five custom or system actions inside a toast notification.
--   &lt;input&gt; This allows users to provide input, such as quick replying to a message, or selecting an option from a drop-down menu.
+-   &lt;action&gt; Cet élément apparaît sous la forme d’un bouton sur les appareils de bureau et sur les appareils mobiles. Vous pouvez spécifier jusqu’à cinq actions personnalisées ou système dans une notification toast.
+-   &lt;input&gt; Cet élément permet aux utilisateurs d’entrer des données, telles qu’une réponse rapide à un message, ou de sélectionner une option dans un menu déroulant.
 
-Both &lt;action&gt; and &lt;input&gt; are adaptive within the Windows family of devices. For example, on mobile or desktop devices, an &lt;action&gt; to a user is a button on which to tap/click. A text &lt;input&gt; is a box in which users can input text using either a physical keyboard or an on-screen keyboard. These elements will also adapt to future interaction scenarios, such as an action announced by voice or a text input taken by dictation.
+Les éléments &lt;action&gt; et &lt;input&gt; sont tous deux adaptatifs dans la famille d’appareils Windows. Par exemple, sur les appareils mobiles ou de bureau, un élément &lt;action&gt; correspond à un bouton sur lequel l’utilisateur doit appuyer ou cliquer. Un élément &lt;input&gt; de type texte définit une zone permettant aux utilisateurs d’entrer du texte à l’aide d’un clavier physique ou visuel. Ces éléments s’adapteront également aux futurs scénarios d’interaction, tels qu’une action annoncée par la voix ou une entrée de texte dictée.
 
-When an action is taken by the user, you can do one of the following by specifying the [**ActivationType**](https://msdn.microsoft.com/library/windows/desktop/dn408447) attribute inside the &lt;action&gt; element:
+Quand une action est exécutée par l’utilisateur, vous pouvez effectuer l’une des opérations suivantes en spécifiant l’attribut [**ActivationType**](https://msdn.microsoft.com/library/windows/desktop/dn408447) à l’intérieur de l’élément &lt;action&gt;:
 
--   Activating the app in the foreground, with an action-specific argument that can be used to navigate to a specific page/context.
--   Activating the app's background task without affecting the user.
--   Activating another app via protocol launch.
--   Specify a system action to perform. The current available system actions are snoozing and dismissing scheduled alarm/reminder, which will be further explained in a section below.
+-   activation de l’application au premier plan à l’aide d’un argument propre à l’action qui permet d’accéder à une page ou à un contexte spécifiques ;
+-   activation de la tâche en arrière-plan de l’application sans affecter l’utilisateur ;
+-   activation d’une autre application par le biais d’un lancement par protocole ;
+-   spécification d’une action système à exécuter. Les actions système actuellement disponibles sont la répétition et le masquage d’une alarme ou d’un rappel planifiés et sont décrites en détail dans l’une des sections ci-après.
 
-For all attributes supported in the visual section and its child elements, see the Schema section below. For more examples, see the XML examples section below.
+Pour découvrir tous les attributs pris en charge dans la section « visual » et tous les éléments enfants de cette dernière, voir la section « Schéma » ci-dessous. Pour consulter d’autres exemples, voir la section «Exemples XML» ci-après.
 
-### Audio
+### <span id="Audio"></span><span id="audio"></span><span id="AUDIO"></span>Élément &lt;audio&gt;
 
-Custom sounds aren't currently supported on UWP apps that target the desktop platform; instead, you can choose from the list of ms-winsoundevents for your app on desktop. UWP apps on mobile platforms support both ms-winsoundevents, along with custom sounds in these formats:
+Pour l’instant, les sons personnalisés ne sont pas pris en charge dans les applications UWP qui ciblent la Plate-forme Desktop; à la place, vous pouvez choisir un son dans la liste ms-winsoundevents pour votre application destinée aux appareils de bureau. Les applications UWP ciblant les plateformes mobiles prennent en charge aussi bien les sons ms-winsoundevents que les sons personnalisés aux formats suivants :
 
 -   ms-appx:///
 -   ms-appdata:///
 
-See the [audio schema page](https://msdn.microsoft.com/library/windows/apps/br230842) for information on audio in toast notifications, which includes a complete list of ms-winsoundevents.
+Pour plus d’informations sur les éléments audio dans les notifications toast, voir la [page de schéma audio](https://msdn.microsoft.com/library/windows/apps/br230842) qui inclut la liste complète des sons ms-winsoundevents.
 
-## Alarms, reminders, and incoming calls
-
-
-You can use toast notifications for alarms, reminders, and incoming calls. These special toasts have an appearance that's consistent with standard toasts, though special toasts feature some custom, scenario-based UI and patterns:
-
--   A reminder toast notification will stay on screen until the user dismisses it or takes action. On Windows Mobile, the reminder toast notifications will also show up pre-expanded.
--   In addition to sharing the above behaviors with reminder notifications, alarm notifications also automatically play looping audio.
--   Incoming call notifications are displayed full screen on Windows Mobile devices. This is done by specifying the scenario attribute inside the root element of a toast notification – &lt;toast&gt;: &lt;toast scenario=" { default | alarm | reminder | incomingCall } " &gt;
-
-## XML examples
+## <span id="Alarms__reminders__and_incoming_calls"></span><span id="alarms__reminders__and_incoming_calls"></span><span id="ALARMS__REMINDERS__AND_INCOMING_CALLS"></span>Alarmes, rappels et appels entrants
 
 
-**Note**  The toast notification screenshots for these examples were taken from an app on desktop. On mobile devices, a toast notification may be collapsed when it pops up, with a grabber at the bottom of the toast to expand it.
+Vous pouvez utiliser des notifications toast pour les alarmes, les rappels et les appels entrants. Ces notifications toast spéciales ont une apparence semblable à celle des notifications toast standard, mais présentent certains motifs et éléments d’interface utilisateur personnalisés basés sur un scénario :
+
+-   Une notification toast de rappel reste affichée à l’écran jusqu’à ce que l’utilisateur la masque ou exécute une action. Sur Windows Mobile, les notifications toast de rappel s’affichent également sous leur forme pré-développée.
+-   Outre le fait de partager les comportements ci-dessus avec les notifications de rappel, les notifications d’alarme émettent automatiquement le son en boucle.
+-   Les notifications d’appel entrant s’affichent en plein écran sur les appareils Windows Mobile. Ce résultat est obtenu par la spécification de l’attribut « scenario » à l’intérieur de l’élément racine d’une notification toast, c’est-à-dire &lt;toast&gt; : &lt;toast scenario=" { default | alarm | reminder | incomingCall } " &gt;
+
+## <span id="xml_examples"></span><span id="XML_EXAMPLES"></span>Exemples XML
+
+
+**Remarque** Les captures d’écran de notification toast correspondant à ces exemples ont été effectuées à partir d’une application exécutée sur un appareil de bureau. Sur les appareils mobiles, une notification toast peut s’afficher sous sa forme réduite en présentant une poignée dans sa partie inférieure pour la développer.
 
  
 
-**Notification with rich visual contents**
+**Notification avec un contenu visuel enrichi**
 
-This example shows how you can have multiple lines of text, an optional small image to override the application logo, and an optional inline image thumbnail.
+Cet exemple illustre comment inclure plusieurs lignes de texte, une petite image facultative pour remplacer le logo de l’application et une miniature de l’image incluse facultative.
 
 ```XML
 <toast launch="app-defined-string">
@@ -130,13 +133,13 @@ This example shows how you can have multiple lines of text, an optional small im
 </toast>
 ```
 
-![notification with rich visual contents](images/adaptivetoasts-xmlsample01.png)
+![Notification avec un contenu visuel enrichi](images/adaptivetoasts-xmlsample01.png)
 
  
 
-**Notification with actions, example 1**
+**Notification avec des actions, exemple1**
 
-This example shows...
+Cet exemple illustre...
 
 ```XML
 <toast launch="app-defined-string">
@@ -154,13 +157,13 @@ This example shows...
 </toast>
 ```
 
-![notification with actions, example 1](images/adaptivetoasts-xmlsample02.png)
+![Notification avec des actions, exemple1](images/adaptivetoasts-xmlsample02.png)
 
  
 
-**Notification with actions, example 2**
+**Notification avec des actions, exemple2**
 
-This example shows...
+Cet exemple illustre...
 
 ```XML
 <toast launch="app-defined-string">
@@ -179,13 +182,13 @@ This example shows...
 </toast>
 ```
 
-![notification with actions, example 2](images/adaptivetoasts-xmlsample03.png)
+![Notification avec des actions, exemple2](images/adaptivetoasts-xmlsample03.png)
 
  
 
-**Notification with text input and actions, example 1**
+**Notification avec une entrée de texte et des actions, exemple1**
 
-This example shows...
+Cet exemple illustre...
 
 ```XML
 <toast launch="developer-defined-string">
@@ -204,13 +207,13 @@ This example shows...
 </toast>
 ```
 
-![notification with text and input actions](images/adaptivetoasts-xmlsample04.png)
+![Notification avec une entrée de texte et des actions d’entrée](images/adaptivetoasts-xmlsample04.png)
 
  
 
-**Notification with text input and actions, example 2**
+**Notification avec une entrée de texte et des actions, exemple2**
 
-This example shows...
+Cet exemple illustre...
 
 ```XML
 <toast launch="developer-defined-string">
@@ -228,13 +231,13 @@ This example shows...
 </toast>
 ```
 
-![notification with text input and actions](images/adaptivetoasts-xmlsample05.png)
+![Notification avec une entrée de texte et des actions](images/adaptivetoasts-xmlsample05.png)
 
  
 
-**Notification with selection input and actions**
+**Notification avec une entrée de sélection et des actions**
 
-This example shows...
+Cet exemple illustre...
 
 ```XML
 <toast launch="developer-defined-string">
@@ -257,13 +260,13 @@ This example shows...
 </toast>
 ```
 
-![notification with selection input and actions](images/adaptivetoasts-xmlsample06.png)
+![Notification avec une entrée de sélection et des actions](images/adaptivetoasts-xmlsample06.png)
 
  
 
-**Reminder notification**
+**Notification de rappel**
 
-This example shows...
+Cet exemple illustre...
 
 ```XML
 <toast scenario="reminder" launch="developer-pre-defined-string">
@@ -283,20 +286,20 @@ This example shows...
 </toast>
 ```
 
-![reminder notification](images/adaptivetoasts-xmlsample07.png)
+![Notification de rappel](images/adaptivetoasts-xmlsample07.png)
 
  
 
-## Activation samples
+## <span id="Activation_samples"></span><span id="activation_samples"></span><span id="ACTIVATION_SAMPLES"></span>Exemples d’activation
 
 
-Like mentioned above, the body and actions in the toast are capable of activating apps in different ways. The below sample will show you how to handle different type of activations from the toast body and/or toast actions.
+Comme indiqué ci-dessus, le corps et les actions de la notification toast peuvent activer des applications de différentes façons. L’exemple ci-dessous illustre comment gérer différents types d’activations à partir du corps et/ou des actions d’une notification toast.
 
-**Foreground**
+**Premier plan**
 
-In this scenario, an app uses foreground activation to respond to an action inside an actionable toast notification by launching the app and navigating to the correct content.
+Dans ce scénario, une application utilise l’activation de premier plan pour répondre à une action au sein d’une notification toast interactive en lançant l’application et en accédant au contenu approprié.
 
-Activation from toast notifications used to invoke OnLaunched(). In Windows 10, toast has its own activation kind and will invoke OnActivated().
+Auparavant, l’activation à partir des notifications toast appelait OnLaunched(). Dans Windows 10, les notifications toast possèdent leur propre type d’activation et appellent OnActivated().
 
 ```
 async protected override void OnActivated(IActivatedEventArgs args)
@@ -315,9 +318,9 @@ async protected override void OnActivated(IActivatedEventArgs args)
 }
 ```
 
-**Background**
+**Arrière-plan**
 
-In this scenario, an app uses a background task to handle an action inside an interactive toast notification. The below code shows how to declare this background task for handling toast activations inside your app manifest, and how to get arguments from the action and user inputs when the buttons are clicked.
+Dans ce scénario, une application utilise une tâche en arrière-plan pour gérer une action à l’intérieur d’une notification toast interactive. Le code ci-après illustre comment déclarer cette tâche en arrière-plan pour la gestion des activations de notification toast dans le manifeste de votre application, et comment obtenir les arguments à partir de l’action et des entrées utilisateur lorsque les utilisateurs cliquent sur les boutons.
 
 ```
 <!-- Manifest Declaration -->
@@ -349,10 +352,10 @@ namespace ToastNotificationTask
 }
 ```
 
-## Schemas: &lt;visual&gt; and &lt;audio&gt;
+## <span id="Schemas___visual__and__audio_"></span><span id="schemas___visual__and__audio_"></span><span id="SCHEMAS___VISUAL__AND__AUDIO_"></span>Schémas : &lt;visual&gt; et &lt;audio&gt;
 
 
-In the following schemas, a "?" suffix means that an attribute is optional.
+Dans les schémas ci-après, un suffixe «?» signifie qu’un attribut est facultatif.
 
 ```
 <toast launch? duration? activationType? scenario? >
@@ -369,130 +372,130 @@ In the following schemas, a "?" suffix means that an attribute is optional.
 </toast>
 ```
 
-**Attributes in &lt;toast&gt;**
+**Attributs dans &lt;toast&gt;**
 
 launch?
 
--   launch? = string
--   This is an optional attribute.
--   A string that is passed to the application when it is activated by the toast.
--   Depending on the value of activationType, this value can be received by the app in the foreground, inside the background task, or by another app that's protocol launched from the original app.
--   The format and contents of this string are defined by the app for its own use.
--   When the user taps or clicks the toast to launch its associated app, the launch string provides the context to the app that allows it to show the user a view relevant to the toast content, rather than launching in its default way.
--   If the activation is happened because user clicked on an action, instead of the body of the toast, the developer retrieves back the "arguments" pre-defined in that &lt;action&gt; tag, instead of "launch" pre-defined in the &lt;toast&gt; tag.
+-   launch? = chaîne
+-   Il s’agit d’un attribut facultatif.
+-   Chaîne transmise à l’application lorsqu’elle est activée par la notification toast.
+-   Selon la valeur d’activationType, cette valeur peut être reçue par l’application au premier plan, à l’intérieur de la tâche en arrière-plan ou par une autre application lancée par protocole à partir de l’application d’origine.
+-   L’application définit le format et le contenu de cette chaîne pour son propre usage.
+-   Lorsque l’utilisateur appuie ou clique sur la notification toast pour lancer l’application qui lui est associée, la chaîne de lancement précise le contexte à l’application pour permettre à cette dernière de présenter à l’utilisateur une vue adaptée au contenu de la notification toast plutôt qu’une vue par défaut.
+-   Si l’activation découle d’un clic par l’utilisateur sur une action plutôt que dans le corps de la notification toast, le développeur récupère les « arguments » prédéfinis dans cette balise &lt;action&gt; à la place de la chaîne « launch » prédéfinie dans la balise &lt;toast&gt;.
 
 duration?
 
 -   duration? = "short|long"
--   This is an optional attribute. Default value is "short".
--   This is only here for specific scenarios and appCompat. You don't need this for the alarm scenario anymore.
--   We don't recommend using this property.
+-   Il s’agit d’un attribut facultatif. La valeur par défaut est « short ».
+-   Cet attribut n’est proposé que pour des scénarios spécifiques et pour la base de données de compatibilité des applications (AppCompat). Vous n’en avez plus besoin pour le scénario d’alarme.
+-   Nous vous déconseillons d’utiliser cette propriété.
 
 activationType?
 
 -   activationType? = "foreground | background | protocol | system"
--   This is an optional attribute.
--   The default value is "foreground".
+-   Il s’agit d’un attribut facultatif.
+-   La valeur par défaut est « foreground ».
 
 scenario?
 
 -   scenario? = "default | alarm | reminder | incomingCall"
--   This is an optional attribute, default value is "default".
--   You do not need this unless your scenario is to pop an alarm, reminder, or incoming call.
--   Do not use this just for keeping your notification persistent on screen.
+-   Il s’agit d’un attribut facultatif, dont la valeur par défaut est « default ».
+-   Vous n’en avez pas besoin, sauf si votre scénario consiste à présenter une alarme, un rappel ou un appel entrant.
+-   Ne l’utilisez pas dans le seul but d’assurer la persistance de votre notification à l’écran.
 
-**Attributes in &lt;visual&gt;**
+**Attributs dans &lt;visual&gt;**
 
 version?
 
 -   version? = nonNegativeInteger
--   This attribute isn't necessary because versioning will be deprecated on &lt;visual&gt;. Stay tuned for a new versioning model that you'll specify from a higher hierarchy, if needed.
+-   Cet attribut n’est pas nécessaire, car le contrôle de version sera déconseillé dans la section &lt;visual&gt;. Nous vous proposerons prochainement un nouveau modèle de contrôle de version que vous spécifierez à partir d’une hiérarchie plus élevée en cas de besoin.
 
 lang?
 
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230847) for details on this optional attribute.
+-   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://msdn.microsoft.com/library/windows/apps/br230847).
 
 baseUri?
 
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230847) for details on this optional attribute.
+-   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://msdn.microsoft.com/library/windows/apps/br230847).
 
 addImageQuery?
 
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230847) for details on this optional attribute.
+-   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://msdn.microsoft.com/library/windows/apps/br230847).
 
-**Attributes in &lt;binding&gt;**
+**Attributs dans &lt;binding&gt;**
 
 template?
 
 -   \[Important\] template? = "ToastGeneric"
--   If you are using any of the new adaptive and interactive notification features, please make sure you start using "ToastGeneric" template instead of the legacy template.
--   Using the legacy templates with the new actions might work now, but that is not the intended use case, and we cannot guarantee that will continue working.
+-   Si vous avez recours à l’une des nouvelles fonctionnalités des notifications adaptatives et interactives, vérifiez que vous commencez par utiliser le modèle « ToastGeneric » plutôt que le modèle hérité.
+-   Même si l’utilisation des modèles hérités avec les nouvelles actions fonctionne encore, il ne s’agit pas du cas d’utilisation prévu, et nous ne pouvons pas garantir que cette approche continuera de fonctionner à l’avenir.
 
 lang?
 
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230847) for details on this optional attribute.
+-   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://msdn.microsoft.com/library/windows/apps/br230847).
 
 baseUri?
 
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230847) for details on this optional attribute.
+-   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://msdn.microsoft.com/library/windows/apps/br230847).
 
 addImageQuery?
 
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230847) for details on this optional attribute.
+-   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://msdn.microsoft.com/library/windows/apps/br230847).
 
-**Attributes in &lt;text&gt;**
+**Attributs dans &lt;text&gt;**
 
 lang?
 
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230847) for details on this optional attribute.
+-   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://msdn.microsoft.com/library/windows/apps/br230847).
 
-**Attributes in &lt;image&gt;**
+**Attributs dans &lt;image&gt;**
 
 src
 
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230844) for details on this required attribute.
+-   Pour plus de détails sur cet attribut obligatoire, voir [cet article concernant le schéma des éléments](https://msdn.microsoft.com/library/windows/apps/br230844).
 
 placement?
 
 -   placement? = "inline" | "appLogoOverride"
--   This attribute is optional.
--   This specifies where this image will be displayed.
--   "inline" means inside the toast body, below the text; "appLogoOverride" means replace the application icon (that shows up on the top left corner of the toast).
--   You can have up to one image for each placement value.
+-   Cet attribut est facultatif.
+-   Il spécifie l’endroit où cette image s’affichera.
+-   L’élément « inline » indique de placer l’image dans le corps de la notification toast, sous le texte ; L’élément « appLogoOverride » indique de remplacer l’icône de l’application (qui s’affiche dans le coin supérieur gauche de la notification toast).
+-   Vous ne pouvez définir qu’une seule image par attribut « placement ».
 
 alt?
 
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230844) for details on this optional attribute.
+-   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://msdn.microsoft.com/library/windows/apps/br230844).
 
 addImageQuery?
 
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230844) for details on this optional attribute.
+-   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://msdn.microsoft.com/library/windows/apps/br230844).
 
 hint-crop?
 
 -   hint-crop? = "none" | "circle"
--   This attribute is optional.
--   "none" is the default value which means no cropping.
--   "circle" crops the image to a circular shape. Use this for profile images of a contact, images of a person, and so on.
+-   Cet attribut est facultatif.
+-   L’élément « none » est la valeur par défaut qui signifie aucun rognage.
+-   L’élément « circle » rogne l’image pour lui donner une forme circulaire. Utilisez cette valeur pour les images de profil d’un contact, les images d’une personne, etc.
 
-**Attributes in &lt;audio&gt;**
+**Attributs dans &lt;audio&gt;**
 
 src?
 
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230842) for details on this optional attribute.
+-   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://msdn.microsoft.com/library/windows/apps/br230842).
 
 loop?
 
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230842) for details on this optional attribute.
+-   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://msdn.microsoft.com/library/windows/apps/br230842).
 
 silent?
 
--   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230842) for details on this optional attribute.
+-   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://msdn.microsoft.com/library/windows/apps/br230842).
 
-## Schemas: &lt;action&gt;
+## <span id="Schemas___action_"></span><span id="schemas___action_"></span><span id="SCHEMAS___ACTION_"></span>Schémas: &lt;action&gt;
 
 
-In the following schemas, a "?" suffix means that an attribute is optional.
+Dans les schémas ci-après, un suffixe «?» signifie qu’un attribut est facultatif.
 
 ```
 <toast>
@@ -508,85 +511,85 @@ In the following schemas, a "?" suffix means that an attribute is optional.
 </toast>
 ```
 
-**Attributes in &lt;input&gt;**
+**Attributs dans &lt;input&gt;**
 
 id
 
--   id = string
--   This attribute is required.
--   The id attribute is required and is used by developers to retrieve user inputs once the app is activated (in the foreground or background).
+-   id = chaîne
+-   Cet attribut est obligatoire.
+-   L’attribut « id » est obligatoire et permet aux développeurs de récupérer les entrées utilisateur une fois l’application activée (au premier plan ou en arrière-plan).
 
 type
 
 -   type = "text | selection"
--   This attribute is required.
--   It is used to specify a text input or input from a list of pre-defined selections.
--   On mobile and desktop, this is to specify whether you want a textbox input or a listbox input.
+-   Cet attribut est obligatoire.
+-   Il permet de spécifier une entrée de texte ou une entrée effectuée à partir d’une liste de sélections prédéfinies.
+-   Sur les appareils mobiles et de bureau, cet attribut sert à indiquer si vous souhaitez créer une entrée de zone de texte ou une entrée de zone de liste.
 
 title?
 
--   title? = string
--   The title attribute is optional and is for developers to specify a title for the input for shells to render when there is affordance.
--   For mobile and desktop, this title will be displayed above the input.
+-   title? = chaîne
+-   L’attribut « title » est facultatif et permet aux développeurs de spécifier un titre pour l’entrée à afficher par les interpréteurs de commande lorsqu’il existe une affordance.
+-   Sur les appareils mobiles et de bureau, ce titre apparaîtra au-dessus de l’entrée.
 
 placeHolderContent?
 
--   placeHolderContent? = string
--   The placeHolderContent attribute is optional and is the grey-out hint text for text input type. This attribute is ignored when the input type is not "text".
+-   placeHolderContent? = chaîne
+-   L’attribut « placeHolderContent » est facultatif et constitue le texte d’information grisé d’une entrée de type texte. Cet attribut est ignoré lorsque l’entrée ne présente pas le type « text ».
 
 defaultInput?
 
--   defaultInput? = string
--   The defaultInput attribute is optional and is used to provide a default input value.
--   If the input type is "text", this will be treated as a string input.
--   If the input type is "selection", this is expected to be the id of one of the available selections inside this input's elements.
+-   defaultInput? = chaîne
+-   L’attribut « defaultInput » est facultatif et permet de fournir une valeur d’entrée par défaut.
+-   Si l’entrée présente le type « text », cette valeur sera traitée comme une entrée de chaîne.
+-   Si l’entrée présente le type «selection», cette valeur doit correspondre à l’identificateur de l’une des sélections disponibles dans les éléments de cette entrée.
 
-**Attributes in &lt;selection&gt;**
+**Attributs dans &lt;selection&gt;**
 
 id
 
--   This attribute is required. It's used to identify user selections. The id is returned to your app.
+-   Cet attribut est obligatoire. Il permet d’identifier les sélections de l’utilisateur. L’identificateur est renvoyé à votre application.
 
 content
 
--   This attribute is required. It provides the string to display for this selection element.
+-   Cet attribut est obligatoire. Il fournit la chaîne à afficher pour cet élément de sélection.
 
-**Attributes in &lt;action&gt;**
+**Attributs dans &lt;action&gt;**
 
 content
 
--   content = string
--   The content attribute is required. It provides the text string displayed on the button.
+-   content = chaîne
+-   L’attribut « content » est obligatoire. Il fournit la chaîne de texte affichée sur le bouton.
 
 arguments
 
--   arguments = string
--   The arguments attribute it required. It describes the app-defined data that the app can later retrieve once it is activated from user taking this action.
+-   arguments = chaîne
+-   L’attribut « arguments » est obligatoire. Il décrit les données définies par l’application que cette dernière peut récupérer par la suite une fois activée par l’utilisateur exécutant cette action.
 
 activationType?
 
 -   activationType? = "foreground | background | protocol | system"
--   The activationType attribute is optional and its default value is "foreground".
--   It describes the kind of activation this action will cause: foreground, background, or launching another app via protocol launch, or invoking a system action.
+-   L’attribut « activationType » est facultatif et présente la valeur par défaut « foreground ».
+-   Il décrit le type d’activation généré par cette action : au premier plan, en arrière-plan, lancement d’une autre application par le biais d’un lancement par protocole ou appel d’une action système.
 
 imageUri?
 
--   imageUri? = string
--   imageUri is optional and is used to provide an image icon for this action to display inside the button alone with the text content.
+-   imageUri? = chaîne
+-   L’attribut « imageUri » est facultatif et permet de fournir une icône d’image pour cette action à afficher dans le bouton avec le contenu de texte.
 
 hint-inputId
 
--   hint-inputId = string
--   The hint-inpudId attribute is required. It's specifically used for the quick reply scenario.
--   The value needs to be the id of the input element desired to be associated with.
--   In mobile and desktop, this will put the button right next to the input box.
+-   hint-inputId = chaîne
+-   L’attribut « hint-inpudId » est obligatoire. Il est spécifiquement destiné au scénario de réponse rapide.
+-   Cette valeur doit correspondre à l’identificateur de l’élément d’entrée que vous souhaitez associer.
+-   Sur les appareils mobiles et de bureau, cet attribut placera le bouton juste à côté de la zone d’entrée.
 
-## Attributes for system-handled actions
+## <span id="Attributes_for_system-handled_actions"></span><span id="attributes_for_system-handled_actions"></span><span id="ATTRIBUTES_FOR_SYSTEM-HANDLED_ACTIONS"></span>Attributs pour les actions gérées par le système
 
 
-The system can handle actions for snoozing and dismissing notifications if you don't want your app to handle the snoozing/rescheduling of notifications as a background task. System-handled actions can be combined (or individually specified), but we don't recommend implementing a snooze action without a dismiss action.
+Le système peut gérer les actions de répétition et de masquage des notifications si vous ne voulez pas que votre application traite la répétition/replanification des notifications sous la forme d’une tâche en arrière-plan. Les actions gérées par le système peuvent être combinées (ou spécifiées individuellement), mais nous vous déconseillons d’implémenter une action de répétition sans une action de masquage.
 
-System commands combo: SnoozeAndDismiss
+Combinaison de commandes système : SnoozeAndDismiss
 
 ```
 <toast>
@@ -597,7 +600,7 @@ System commands combo: SnoozeAndDismiss
 </toast>
 ```
 
-Individual system-handled actions
+Actions gérées par le système individuelles
 
 ```
 <toast>
@@ -618,32 +621,32 @@ Individual system-handled actions
 </toast>
 ```
 
-To construct individual snooze and dismiss actions, do the following:
+Pour construire des actions de répétition et de masquage individuelles, procédez comme suit :
 
--   Specify activationType = "system"
--   Specify arguments = "snooze" | "dismiss"
--   Specify content:
-    -   If you want localized strings of "snooze" and "dismiss" to be displayed on the actions, specify content to be an empty string: &lt;action content = ""/&gt;
-    -   If you want a customized string, just provide its value: &lt;action content="Remind me later" /&gt;
--   Specify input:
-    -   If you don't want the user to select a snooze interval and instead just want your notification to snooze only once for a system-defined time interval (that is consistent across the OS), then don't construct any &lt;input&gt; at all.
-    -   If you want to provide snooze interval selections:
-        -   Specify hint-inputId in the snooze action
-        -   Match the id of the input with the hint-inputId of the snooze action: &lt;input id="snoozeTime"&gt;&lt;/input&gt;&lt;action hint-inputId="snoozeTime"/&gt;
-        -   Specify selection id to be a nonNegativeInteger which represents snooze interval in minutes: &lt;selection id="240" /&gt; means snoozing for 4 hours
-        -   Make sure that the value of defaultInput in &lt;input&gt; matches with one of the ids of the &lt;selection&gt; children elements
-        -   Provide up to (but no more than) 5 &lt;selection&gt; values
-
- 
+-   Spécifiez : activationType = "system".
+-   Spécifiez : arguments = "snooze" | "dismiss".
+-   Spécifiez le contenu:
+    -   Si vous souhaitez afficher les chaînes localisées de « snooze » et de « dismiss » sur les actions, spécifiez le contenu comme étant une chaîne vide : &lt;action content = ""/&gt;
+    -   Si vous voulez définir une chaîne personnalisée, fournissez simplement sa valeur : &lt;action content="Me le rappeler ultérieurement" /&gt;
+-   Spécifiez l’entrée:
+    -   Si vous ne voulez pas que l’utilisateur sélectionne un intervalle de répétition, mais souhaitez simplement que votre notification se répète une seule fois pendant un intervalle de temps défini par le système (et cohérent dans l’ensemble du système d’exploitation), ne construisez aucun élément &lt;input&gt;.
+    -   Si vous voulez fournir des sélections d’intervalle de répétition:
+        -   Spécifiez l’attribut «hint-inputId» dans l’action de répétition.
+        -   Faites correspondre l’identificateur de l’entrée avec la valeur de l’attribut «hint-inputId» de l’action de répétition: &lt;input id="snoozeTime"&gt;&lt;/input&gt;&lt;action hint-inputId="snoozeTime"/&gt;
+        -   Spécifiez l’identificateur de sélection comme étant un entier non négatif (nonNegativeInteger) qui représente l’intervalle de répétition en minutes: &lt;selection id="240" /&gt; signifie une répétition pendant 4heures.
+        -   Assurez-vous que la valeur de l’attribut « defaultInput » dans &lt;input&gt; correspond à l’un des identificateurs des éléments enfants &lt;selection&gt;.
+        -   Fournissez jusqu’à 5 valeurs &lt;selection&gt; (au maximum).
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 
