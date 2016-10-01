@@ -7,7 +7,7 @@ label: Specify the speech recognizer language
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 8af4fe64e586037d68ab5cd422d7195bd3a64b94
+ms.openlocfilehash: 1a70ac671c11d2ab3c34a95f2571685f4f851836
 
 ---
 
@@ -108,10 +108,10 @@ Une grammaire SRGS est un format XML standard ouvert représenté par la classe 
 
 
 **Développeurs**
-* [Interactions vocales](speech-interactions.md) 
-           **Concepteurs**
-* [Recommandations en matière de conception de fonctions vocales](https://msdn.microsoft.com/library/windows/apps/dn596121) 
-           **Exemples**
+* [Interactions vocales](speech-interactions.md)
+**Concepteurs**
+* [Recommandations en matière de conception de fonctions vocales](https://msdn.microsoft.com/library/windows/apps/dn596121)
+**Exemples**
 * [Exemple de reconnaissance vocale et de synthèse vocale](http://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
@@ -123,6 +123,6 @@ Une grammaire SRGS est un format XML standard ouvert représenté par la classe 
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,11 +1,11 @@
 ---
-author: martinekuan
+author: GrantMeStrength
 ms.assetid: DC235C16-8DAF-4078-9365-6612A10F3EC3
 title: "Créer une application Hello World en C++ (Windows 10)"
 description: "Microsoft Visual Studio 2015 permet d’utiliser C++ pour développer une application exécutable sur des appareils Windows 10, y compris sur des téléphones exécutant Windows 10. L’interface utilisateur de ces applications est définie en XAML (Extensible Application Markup Language)."
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 7836cb385cc37f39fa1af01ea981263fcf3f3634
+ms.sourcegitcommit: cedab04d2969809dca84097b027e973be9b9948b
+ms.openlocfilehash: 55d5b160bbf1d877408a52e981a030dee28515c4
 
 ---
 
@@ -13,13 +13,11 @@ ms.openlocfilehash: 7836cb385cc37f39fa1af01ea981263fcf3f3634
 
 Microsoft Visual Studio 2015 permet d’utiliser C++ pour développer une application exécutable sur des appareils Windows 10, y compris sur des téléphones. L’interface utilisateur de ces applications est définie en XAML (Extensible Application Markup Language).
 
-Pour développer une application exécutable sur Windows 8.1 et Windows Phone 8.1, utilisez Microsoft Visual Studio 2013 Update 3 ou ultérieur, et suivez les étapes décrites [ici](https://msdn.microsoft.com/library/windows/apps/Dn263168). La principale différence est que, pour Windows 8.1 et Windows Phone 8.1, vous utilisez une solution avec trois projets, l’un pour le bureau (ou tablette), l’un pour le téléphone et l’un pour le code partagé. Pour le développement d’applications sur Windows 10, tout le code partage le même projet.
-
-Pour suivre des didacticiels dans d’autres langages de programmation, voir :
+Pour suivre des didacticiels dans d’autres langages de programmation, consultez:
 
 -   [Créer votre première application du Windows Store en JavaScript](https://msdn.microsoft.com/library/windows/apps/BR211385)
 
--   [Créer votre première application du Windows Store en C# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/Hh974581)
+-   [Créer votre première application du Windows Store en C#](https://msdn.microsoft.com/library/windows/apps/Hh974581)
 
 ## Avant de commencer...
 
@@ -27,7 +25,7 @@ Pour suivre des didacticiels dans d’autres langages de programmation, voir :
 -   Installez le [Kit de développement logiciel (SDK)](http://go.microsoft.com/fwlink/?LinkId=533049) destiné au développement pour la plateforme Windows universelle.
 -   Nous supposons que vous avez une connaissance de base du langage C++ standard, du code XAML et des concepts présentés dans [Vue d’ensemble du langage XAML](https://msdn.microsoft.com/library/windows/apps/Mt185595).
 -   Nous partons du principe que vous utilisez la disposition de fenêtre par défaut dans Visual Studio. Pour rétablir la disposition par défaut, dans la barre de menus, choisissez **Fenêtre** > **Rétablir la disposition de la fenêtre**.
--   Notez qu’il existe un problème connu avec Visual Studio 2015 qui peut provoquer une exception NullReferenceException lors du chargement du concepteur XAML. Ce problème bloque certaines étapes de ce didacticiel, sauf si vous appliquez la solution de contournement. Pour plus d’informations sur ce problème et la solution de contournement, consultez [ce billet sur le forum MSDN](http://go.microsoft.com/fwlink/p/?LinkId=624036) .
+
 
 ## Comparatif entre les applications de bureau C++ et les applications Windows
 
@@ -111,96 +109,94 @@ Examinons tout d’abord les fichiers de projet.
 
 Si vous examinez le code dans les fichiers App.xaml.h et App.xaml.cpp dans le projet partagé, vous pouvez remarquer qu’il s’agit en majorité de code C++ que vous connaissez déjà. Toutefois, certains éléments de syntaxe peuvent ne pas vous être aussi familiers si vous découvrez les applications Windows Runtime ou si vous avez travaillé avec C++/CLI. Voici donc les éléments de syntaxe non standard les plus courants en C++/CX :
 
--   **Classes ref**
+**Classes ref**
 
 Presque toutes les classes Windows Runtime, qui incluent tous les types de l’API Windows (les contrôles XAML, les pages dans votre application, la classe App elle-même, tous les objets appareil et réseau, tous les types de conteneurs) sont déclarées sous forme de **ref class**. (Quelques types Windows correspondent à une **value class** ou **value struct**). Une classe ref est consommable à partir de tous les langages. En C++, la durée de vie de ces types est régie par le décompte de références automatique (et non le nettoyage de la mémoire), si bien que vous ne supprimez jamais explicitement ces objets. Vous pouvez créer vos propres classes ref également.
 
 ```cpp
-    namespace HelloWorld
-    {
-        /// <summary>
-        /// An empty page that can be used on its own or navigated to within a Frame.
-        /// </summary>
-        public ref class MainPage sealed
-        {
-        public:
-            MainPage();
-
-        };
-    }
+namespace HelloWorld
+{
+   /// <summary>
+   /// An empty page that can be used on its own or navigated to within a Frame.
+   /// </summary>
+   public ref class MainPage sealed
+   {
+      public:
+      MainPage();
+   };
+}
 ```    
 
 Tous les types Windows Runtime doivent être déclarés au sein d’un espace de noms alors qu’en C++ ISO, les types eux-mêmes possèdent un modificateur d’accessibilité. Le modificateur **public** rend la classe visible pour les composants Windows Runtime en dehors de l’espace de noms. Le mot clé **sealed** signifie que la classe ne peut pas servir de classe de base. Presque toutes les classes ref sont des classes «sealed»; l’héritage de classe n’est pas largement utilisé, car JavaScript ne le comprend pas.
 
--   **ref new** et **^ (hats)**
+**ref new** et **^ (hats)**
 
- Pour déclarer une variable d’une classe ref, vous utilisez l’opérateur ^ (accent circonflexe) et vous instanciez l’objet avec le nouveau mot-clé ref. Ensuite, vous accédez aux méthodes d’instance de l’objet avec l’opérateur -&gt;, à l’instar d’un pointeur C++. Pour accéder aux méthodes statiques, vous utilisez l’opérateur :: comme en C++ ISO.
+Pour déclarer une variable d’une classe ref, vous utilisez l’opérateur ^ (accent circonflexe) et vous instanciez l’objet avec le nouveau mot-clé ref. Ensuite, vous accédez aux méthodes d’instance de l’objet avec l’opérateur -&gt;, à l’instar d’un pointeur C++. Pour accéder aux méthodes statiques, vous utilisez l’opérateur :: comme en C++ ISO.
 
- Dans le code suivant, nous utilisons le nom complet pour instancier un objet et l’opérateur -&gt; pour appeler une méthode d’instance.
+Dans le code suivant, nous utilisons le nom complet pour instancier un objet et l’opérateur -&gt; pour appeler une méthode d’instance.
 
- ```cpp
-    Windows::UI::Xaml::Media::Imaging::BitmapImage^ bitmapImage =
-        ref new Windows::UI::Xaml::Media::Imaging::BitmapImage();
+```cpp
+Windows::UI::Xaml::Media::Imaging::BitmapImage^ bitmapImage =
+     ref new Windows::UI::Xaml::Media::Imaging::BitmapImage();
       
-    bitmapImage->SetSource(fileStream);
-    ```
-
-   En règle générale, dans un fichier .cpp, nous ajoutons une directive `using namespace  Windows::UI::Xaml::Media::Imaging` et le mot clé auto, pour que le même code ressemble à ce qui suit:
-
-```cpp
-    auto bitmapImage = ref new BitmapImage();
-    bitmapImage->SetSource(fileStream);
+bitmapImage->SetSource(fileStream);
 ```
 
--   **Propriétés**
-
-   Une classe ref peut avoir des propriétés, qui, comme dans les langages managés, sont des fonctions membres spéciales qui apparaissent sous forme de champs dans le code consommateur.
+En règle générale, dans un fichier .cpp, nous ajoutons une directive `using namespace  Windows::UI::Xaml::Media::Imaging` et le mot clé auto, pour que le même code ressemble à ce qui suit:
 
 ```cpp
-    public ref class SaveStateEventArgs sealed
-            {
-            public:
-
-                // Declare the property
-                property Windows::Foundation::Collections::IMap<Platform::String^, Platform::Object^>^ PageState
-                {
-                    Windows::Foundation::Collections::IMap<Platform::String^, Platform::Object^>^ get();
-                }
-    ...
-    };
-
-    ...
-    // consume the property like a public field
-    void PhotoPage::SaveState(Object^ sender, Common::SaveStateEventArgs^ e)
-    {    
-        if (mruToken != nullptr && !mruToken->IsEmpty())
-        {
-            e->PageState->Insert("mruToken", mruToken);
-        }
-    }
+auto bitmapImage = ref new BitmapImage();
+bitmapImage->SetSource(fileStream);
 ```
 
--   **Délégués**
+**Propriétés**
 
-   Comme dans les langages managés, un délégué est un type de référence qui encapsule une fonction avec une signature spécifique. Les délégués sont le plus souvent utilisés avec des événements et des gestionnaires d’événements.
+Une classe ref peut avoir des propriétés, qui, comme dans les langages managés, sont des fonctions membres spéciales qui apparaissent sous forme de champs dans le code consommateur.
 
 ```cpp
-    // Delegate declaration (within namespace scope)
-    public delegate void LoadStateEventHandler(Platform::Object^ sender, LoadStateEventArgs^ e);
+public ref class SaveStateEventArgs sealed
+{
+   public:
+   // Declare the property
+   property Windows::Foundation::Collections::IMap<Platform::String^, Platform::Object^>^ PageState
+   {
+      Windows::Foundation::Collections::IMap<Platform::String^, Platform::Object^>^ get();
+   }
+   ...
+};
 
-    // Event declaration (class scope)
-    public ref class NavigationHelper sealed
-    {
-      public:
-        event LoadStateEventHandler^ LoadState;
-    };
+   ...
+   // consume the property like a public field
+   void PhotoPage::SaveState(Object^ sender, Common::SaveStateEventArgs^ e)
+   {    
+      if (mruToken != nullptr && !mruToken->IsEmpty())
+   {
+      e->PageState->Insert("mruToken", mruToken);
+   }
+}
+```
 
-    // Create the event handler in consuming class
-    MainPage::MainPage()
-    {
-        auto navigationHelper = ref new Common::NavigationHelper(this);
-        navigationHelper->LoadState += ref new Common::LoadStateEventHandler(this, &MainPage::LoadState);
-    }
+**Délégués**
+
+Comme dans les langages managés, un délégué est un type de référence qui encapsule une fonction avec une signature spécifique. Les délégués sont le plus souvent utilisés avec des événements et des gestionnaires d’événements.
+
+```cpp
+// Delegate declaration (within namespace scope)
+public delegate void LoadStateEventHandler(Platform::Object^ sender, LoadStateEventArgs^ e);
+
+// Event declaration (class scope)
+public ref class NavigationHelper sealed
+{
+   public:
+   event LoadStateEventHandler^ LoadState;
+};
+
+// Create the event handler in consuming class
+MainPage::MainPage()
+{
+   auto navigationHelper = ref new Common::NavigationHelper(this);
+   navigationHelper->LoadState += ref new Common::LoadStateEventHandler(this, &MainPage::LoadState);
+}
 ```
 
 ## Ajout de contenu à l’application
@@ -212,7 +208,7 @@ Ajoutons du contenu à l’application.
 1.  Dans l’**Explorateur de solutions**, ouvrez MainPage.xaml.
 2.  Créez des contrôles pour l’interface utilisateur en ajoutant le code XAML suivant à la classe [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) racine, juste avant sa balise de fermeture. Il contient un [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) comportant un [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) qui demande le nom de l’utilisateur, un élément [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) qui accepte le nom de l’utilisateur, un [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265), puis un autre élément **TextBlock**.
 
-```xml
+    ```xaml
     <StackPanel x:Name="contentPanel" Margin="120,30,0,0">
         <TextBlock HorizontalAlignment="Left" Text="Hello World" FontSize="36"/>
         <TextBlock Text="What's your name?"/>
@@ -222,9 +218,7 @@ Ajoutons du contenu à l’application.
         </StackPanel>
         <TextBlock x:Name="greetingOutput"/>
     </StackPanel>
-```
-
-Davantage d’informations sur la disposition XAML sont disponibles dans l’article [Navigation, disposition et vues](https://msdn.microsoft.com/library/windows/apps/Dn263172).
+    ```
 
 3.  À ce stade, vous avez créé une application Windows universelle très basique. Pour voir à quoi l’application UWP ressemblera, appuyez sur F5 pour générer, déployer et exécuter l’application en mode débogage.
 
@@ -232,20 +226,17 @@ L’écran de démarrage par défaut s’affiche en premier. Il comporte une ima
 
 Quand l’écran de démarrage disparaît, votre application apparaît. La page principale de l’application apparaît.
 
-Appuyez sur la touche Windows ou cliquez sur le bouton Démarrer pour accéder au menu Démarrer. Notez que le déploiement de l’application ajoute celle-ci à la liste des applications installées du menu Démarrer. L’application s’affiche également quand vous cliquez sur le lien Nouvelle à côté du bouton Toutes les applications. Pour réexécuter l’application, appuyez ou cliquez sur sa vignette, ou appuyez sur F5 ou Ctrl+F5 dans Visual Studio comme d’habitude.
+![Écran de l’application du Windows Store, avec des contrôles](images/xaml-hw-app2.png)
 
- ![Écran de l’application du Windows Store, avec des contrôles](images/xaml-hw-app2.png)
+Félicitations ! Même si elle ne propose pas encore beaucoup de fonctions, vous venez de générer votre première application pour la plateforme Windows universelle.
 
-   Félicitations ! Même si elle ne propose pas encore beaucoup de fonctions, vous venez de générer votre première application pour la plateforme Windows universelle.
+Pour arrêter le débogage et fermer l’application, retournez dans Visual Studio et appuyez sur Maj+F5.
 
-   Pour arrêter le débogage et fermer l’application, retournez dans Visual Studio et appuyez sur Maj+F5.
+Pour plus d’informations, voir [Exécuter une application du Store à partir de Visual Studio](http://go.microsoft.com/fwlink/p/?LinkId=619619).
 
-   Pour plus d’informations, voir [Exécuter une application du Store à partir de Visual Studio](http://go.microsoft.com/fwlink/p/?LinkId=619619).
-
-   Dans l’application, vous pouvez taper dans le [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683), mais quand vous cliquez sur le [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265), il ne se passe rien. Dans les étapes suivantes, vous créez un gestionnaire d’événements pour l’événement [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) du bouton qui affiche une formule de salutation personnalisée.
+Dans l’application, vous pouvez taper dans le [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683), mais quand vous cliquez sur le [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265), il ne se passe rien. Dans les étapes suivantes, vous créez un gestionnaire d’événements pour l’événement [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) du bouton qui affiche une formule de salutation personnalisée.
 
 ## Démarrer l’application sur un émulateur d’appareil mobile
-
 
 Votre application s’exécute tout appareil Windows 10. Voyons à quoi elle ressemble sur un Windows Phone. Cette section nécessite l’utilisation d’un Windows Phone exécutant Windows 10, ou l’accès à un émulateur de Windows Phone. Elle nécessite également que Visual Studio soit en cours d’exécution sur un ordinateur physique (pas un virtuel) avec HyperV pris en charge et activé.
 
@@ -259,8 +250,6 @@ Outre les options de débogage sur un ordinateur de bureau, Visual Studio offre 
 
 Il est judicieux de tester votre application sur un appareil doté d’un petit écran et d’une mémoire limitée. Par conséquent, choisissez l’option **Émulateur 10.0.0.0 WVGA 4pouces 512Mo**.
 **Conseil** Pour plus d’informations sur l’utilisation de l’émulateur de téléphone, voir [Exécuter des applications Windows Phone dans l’émulateur](http://go.microsoft.com/fwlink/p/?LinkId=394233).
-
- 
 
 Pour déboguer votre application sur un appareil physique, vous devez disposer d’un appareil inscrit au développement. Pour plus d’informations, voir [Inscrire votre Windows Phone](https://msdn.microsoft.com/library/windows/apps/Dn614128).
 
@@ -289,28 +278,28 @@ Visual Studio démarre l’émulateur sélectionné, puis déploie et démarre v
 2.  Ouvrez la **Fenêtre Propriétés** en appuyant sur Alt+Entrée, puis choisissez le bouton Événements (![bouton Événements](images/eventsbutton.png)).
 3.  Recherchez l’événement [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737). Dans sa zone de texte, tapez le nom de la fonction qui gère l’événement **Click**. Pour cet exemple, tapez «Button\_Click».
 
-![Fenêtre Propriétés, vue Événements](images/xaml-hw-event.png)
+    ![Fenêtre Propriétés, vue Événements](images/xaml-hw-event.png)
 
 4.  Appuyez sur Entrée. La méthode du gestionnaire d’événements est créée dans MainPage.xaml.cpp et ouverte afin que vous puissiez ajouter le code qui est exécuté quand l’événement se produit.
 
    Au même moment, dans MainPage.xaml, le code XAML de [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) est mis à jour pour déclarer le gestionnaire d’événements [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) comme suit :
 
-```xml
+    ```xaml
     <Button Content="Say \"Hello\"" Click="Button_Click"/>
-```
+    ```
 
-Vous pourriez également avoir simplement ajouté cela au code xaml manuellement, ce qui peut être utile si le concepteur ne se charge pas. Si vous ajoutez cela manuellement, tapez « Click », puis laissez IntelliSense afficher l’option pour ajouter un nouveau gestionnaire d’événements. De cette façon, Visual Studio crée la déclaration de méthode nécessaire et un stub.
+    Vous pourriez également avoir simplement ajouté cela au code xaml manuellement, ce qui peut être utile si le concepteur ne se charge pas. Si vous ajoutez cela manuellement, tapez « Click », puis laissez IntelliSense afficher l’option pour ajouter un nouveau gestionnaire d’événements. De cette façon, Visual Studio crée la déclaration de méthode nécessaire et un stub.
 
-Le concepteur ne se charge pas si une exception non gérée se produit pendant l’opération de rendu. L’opération de rendu dans le concepteur implique l’exécution d’une version de conception de la page. Il peut être utile de désactiver l’exécution du code utilisateur. Vous pouvez le faire en modifiant le paramètre dans la boîte de dialogue **Outils, Options**. Sous **Concepteur XAML**, désactivez l’option **Exécuter le code du projet dans le concepteur XAML (si pris en charge)**.
+    Le concepteur ne se charge pas si une exception non gérée se produit pendant l’opération de rendu. L’opération de rendu dans le concepteur implique l’exécution d’une version de conception de la page. Il peut être utile de désactiver l’exécution du code utilisateur. Vous pouvez le faire en modifiant le paramètre dans la boîte de dialogue **Outils, Options**. Sous **Concepteur XAML**, désactivez l’option **Exécuter le code du projet dans le concepteur XAML (si pris en charge)**.
 
 5.  Dans MainPage.xaml.cpp, ajoutez le code suivant au gestionnaire d’événements **Button\_Click** que vous venez de créer. Ce code récupère le nom de l’utilisateur à partir du contrôle `nameInput` [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) et s’en sert pour créer une salutation. Le contrôle `greetingOutput` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) affiche le résultat.
 
-```cpp
+    ```cpp
     void HelloWorld::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
     {
         greetingOutput->Text = "Hello, " + nameInput->Text + "!";
     }
-```
+    ```
 
 6.  Définissez le projet comme projet de démarrage, puis appuyez sur F5 pour générer et exécuter l’application. Quand vous tapez un nom dans la zone de texte et que vous cliquez sur le bouton, l’application affiche une formule de salutation personnalisée.
 
@@ -327,20 +316,20 @@ Il est très simple de personnaliser l’apparence d’une application. Par déf
 1.  Ouvrez App.xaml.
 2.  Dans la balise de début [**Application**](https://msdn.microsoft.com/library/windows/apps/BR242324), modifiez la propriété [**RequestedTheme**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.requestedtheme) et attribuez-lui la valeur **Dark** :
 
-```xml
-   RequestedTheme="Light"
-```
+    ```xaml
+    RequestedTheme="Light"
+    ```
 
-Voici l’intégralité de la balise [**Application**](https://msdn.microsoft.com/library/windows/apps/BR242324) avec le thème foncé :
+    Voici l’intégralité de la balise [**Application**](https://msdn.microsoft.com/library/windows/apps/BR242324) avec le thème foncé :
 
-```xml 
+    ```xaml 
         <Application
         x:Class="HelloWorld.App"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:local="using:HelloWorld" 
+        xmlns:local="using:HelloWorld"
         RequestedTheme="Dark">
-```
+    ```
 
 3.  Appuyez sur la touche F5 pour générer et exécuter l’application. Remarquez qu’elle utilise le thème à dominante foncée.
 
@@ -363,23 +352,23 @@ Pour l’heure, le texte de l’application Windows est de très petite taille e
 5.  Développez le groupe **Divers** et recherchez la propriété **Style**.
 6.  Cliquez sur le marqueur de propriété (zone verte à droite de la propriété **Style**), puis, dans le menu, choisissez **Ressource système** > **BaseTextBlockStyle**.
 
- **BaseTextBlockStyle** est une ressource définie dans la classe [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) dans <root>\\Program Files\\Windows Kits\\10\\Include\\winrt\\xaml\\design\\generic.xaml.
+     **BaseTextBlockStyle** est une ressource définie dans la classe [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) dans <root>\\Program Files\\Windows Kits\\10\\Include\\winrt\\xaml\\design\\generic.xaml.
 
-![Fenêtre Propriétés, vue Propriétés](images/xaml-hw-style-cpp.png)
+    ![Fenêtre Propriétés, vue Propriétés](images/xaml-hw-style-cpp.png)
 
- Dans l’aire de conception XAML, l’apparence du texte change. Dans l’éditeur XAML, le code XAML de [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) est mis à jour :
+     Dans l’aire de conception XAML, l’apparence du texte change. Dans l’éditeur XAML, le code XAML de [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) est mis à jour :
 
-```xml
-   <TextBlock Text="What's your name?" Style="{StaticResource BasicTextStyle}"/><
-```
+    ```xaml
+    <TextBlock Text="What's your name?" Style="{StaticResource BasicTextStyle}"/><
+    ```
 
 7.  Répétez le processus pour définir la taille de la police et affectez **BaseTextBlockStyle** à l’élément `greetingOutput`[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652).
 
-  **Conseil** Bien que le [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) ne contienne pas de texte, quand vous placez le pointeur au-dessus de l’aire de conception XAML, un contour bleu indique son emplacement pour vous permettre de le sélectionner.  
+    **Conseil** Bien que le [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) ne contienne pas de texte, quand vous placez le pointeur au-dessus de l’aire de conception XAML, un contour bleu indique son emplacement pour vous permettre de le sélectionner.  
 
-  Votre code XAML doit maintenant se présenter ainsi:
+    Votre code XAML doit maintenant se présenter ainsi:
 
-```xml
+    ```xaml
     <StackPanel x:Name="contentPanel" Margin="120,30,0,0">
         <TextBlock Style="{ThemeResource BaseTextBlockStyle}" FontSize="16" Text="What's your name?"/>
         <StackPanel x:Name="inputPanel" Orientation="Horizontal" Margin="0,20,0,20">
@@ -388,11 +377,11 @@ Pour l’heure, le texte de l’application Windows est de très petite taille e
         </StackPanel>
         <TextBlock Style="{ThemeResource BaseTextBlockStyle}" FontSize="16" x:Name="greetingOutput"/>
     </StackPanel>
-```
+    ```
 
 8.  Appuyez sur la touche F5 pour générer et exécuter l’application. Elle se présente maintenant comme suit :
 
- ![Écran de l’application contenant du texte plus grand](images/xaml-hw-app5.png)
+![Écran de l’application contenant du texte plus grand](images/xaml-hw-app5.png)
 
 ### Étape 4 : adapter l’interface utilisateur à différentes tailles de fenêtre
 
@@ -402,7 +391,7 @@ Nous allons à présent adapter l’interface utilisateur à différentes taille
 
 1.  Dans l’éditeur XAML, ajoutez le bloc de code XAML ci-dessous après la balise de début de l’élément [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) racine.
 
-```xml
+    ```xaml
     <VisualStateManager.VisualStateGroups>
         <VisualStateGroup>
             <VisualState x:Name="wideState">
@@ -422,7 +411,7 @@ Nous allons à présent adapter l’interface utilisateur à différentes taille
             </VisualState>
         </VisualStateGroup>
     </VisualStateManager.VisualStateGroups>
-```
+    ```
 
 2.  Déboguez l’application sur l’ordinateur local. Notez que l’interface utilisateur présente le même aspect qu’auparavant, à moins que la fenêtre ne présente une taille inférieure à 641 DIP (device-independent pixel).
 3.  Déboguez l’application sur l’émulateur d’appareil mobile. Notez que l’interface utilisateur utilise les propriétés que vous avez définies dans l’élément `narrowState` et s’affiche correctement sur le petit écran.
@@ -452,6 +441,6 @@ Si vous disposez de code C++ existant que vous souhaitez intégrer avec une appl
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,173 +1,295 @@
 ---
 author: Xansky
-Description: "Décrit les étapes requises pour garantir que votre application UWP est utilisable lorsqu’un thème à contraste élevé est actif."
+description: "Décrit les étapes requises pour garantir que votre application UWP est utilisable lorsqu’un thème à contraste élevé est actif."
 ms.assetid: FD7CA6F6-A8F1-47D8-AA6C-3F2EC3168C45
 title: "Thèmes à contraste élevé"
-label: High-contrast themes
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
-ms.openlocfilehash: 4201f5a0b08f1fc8d691218da0803ee04ab2c86a
+ms.sourcegitcommit: f3da82cab8813653a6ee999976983937649b42b2
+ms.openlocfilehash: 30785998d11f09ef94f33789e3e74b0933d9c83e
 
 ---
 
 # Thèmes à contraste élevé  
 
-Décrit les étapes requises pour garantir que votre application UWP est utilisable lorsqu’un thème à contraste élevé est actif.
+Windows prend en charge les thèmes à contraste élevé pour les systèmes d’exploitation et les applications que les utilisateurs peuvent être amenés à activer. Les thèmes à contraste élevé utilisent une petite palette de couleurs contrastées qui facilitent l’affichage de l’interface.
 
-Une application UWP prend en charge les thèmes à contraste élevé par défaut. Si un utilisateur a décidé que le système doit utiliser un thème à contraste élevé parmi les outils d’accessibilité ou les paramètres système, l’infrastructure utilise automatiquement des couleurs et paramètres de style qui produisent une disposition à contraste élevé et un rendu pour les contrôles et composants dans l’interface utilisateur.
+**Figure1. Calculatrice représentée en thème clair et en thème noir à contraste élevé**
 
-Cette prise en charge par défaut est basée sur l’utilisation des thèmes et des modèles par défaut. Ces thèmes et modèles font référence aux couleurs système comme définitions de ressources, et les sources des ressources changent automatiquement quand le système utilise un mode de contraste élevé. Toutefois, si vous utilisez des modèles, thèmes et styles personnalisés pour votre contrôle, prenez soin de ne pas désactiver la prise en charge intégrée du contraste élevé. Si vous utilisez l’un des concepteurs XAML pour Microsoft Visual Studio pour les styles, le concepteur génère un thème à contraste élevé distinct en plus du thème principal chaque fois que vous définissez un modèle qui diffère sensiblement du modèle par défaut. Les dictionnaires de thèmes distincts s’inscrivent dans la collection [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.resourcedictionary.themedictionaries.aspx), une propriété dédiée d’un élément [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794).
+![Calculatrice représentée en thème clair et en thème noir à contraste élevé](images/high-contrast-calculators.png)
 
-Pour plus d’informations sur les thèmes et modèles de contrôles, voir [Démarrage rapide : modèles de contrôles](https://msdn.microsoft.com/library/windows/apps/xaml/Hh465374). Il est souvent très instructif d’examiner les thèmes et dictionnaires de ressources XAML pour des contrôles spécifiques, et de voir la façon dont les thèmes sont créés et dont ils font référence à des ressources qui sont similaires mais différentes pour chaque paramètre de contraste élevé possible.
+
+Pour basculer sur un thème à contraste élevé, accédez à *Paramètres &gt; Options d’ergonomie &gt; Contraste élevé*.
+
+> [!NOTE]
+> Ne confondez pas les thèmes à contraste élevé avec les thèmes Ombre et lumière, qui prennent en charge une palette de couleurs plus large, sans contraste élevé. Pour plus d’informations sur les thèmes Ombre et lumière, consultez l’article sur la [couleur](../style/color.md).
+
+Les contrôles communs sont pourvus d’une prise en charge gratuite complète du contraste élevé, mais nous vous recommandons de faire preuve de prudence lors de la personnalisation de votre interface utilisateur. Le bogue le plus courant lié au contraste élevé est provoqué par le codage en dur d’une couleur sur un contrôle inclus.
+
+```xaml
+<!-- Don't do this! -->
+<Grid Background="#E6E6E6">
+
+<!-- Instead, create BrandedPageBackgroundBrush and do this. -->
+<Grid Background="{ThemeResource BrandedPageBackgroundBrush}">
+```
+
+Lorsque la couleur `#E6E6E6` est incluse dans le premier exemple, la Grille conserve la couleur d’arrière-plan dans l’ensemble des thèmes. Si l’utilisateur bascule sur le thème noir à contraste élevé, il souhaitera disposer d’un arrière-plan noir sur votre application. Dans la mesure où `#E6E6E6` est presque blanc, certains utilisateurs peuvent ne pas pouvoir interagir avec votre application.
+
+Dans le second exemple, l’[**extension de balisage {ThemeResource}**](../xaml-platform/themeresource-markup-extension.md) est utilisée pour référencer une couleur dans la collection [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.resourcedictionary.themedictionaries.aspx), une propriété dédiée d’un élément [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794). ThemeDictionaries permet au code XAML de modifier automatiquement les couleurs en fonction du thème courant de l’utilisateur.
 
 ## Dictionnaires de thème
 
-Pour modifier la couleur par défaut ou pour embellir vos pages à l’aide d’images, comme des images d’arrière-plan, créez une collection **ThemeDictionaries** pour votre application.
+Lorsque vous devez modifier la couleur par défaut du système, créez une collection ThemeDictionaries pour votre application.
 
-* Commencez par créer le système approprié, le cas échéant. Dans App.xaml, créez une collection **ThemeDictionaries**:
-
-``` xaml
- <Application.Resources>
-    <ResourceDictionary>
-        <ResourceDictionary.ThemeDictionaries>
-            <!-- Default is a fallback if a more precise theme isn't called out below -->
-            <ResourceDictionary x:Key="Default">
-
-            </ResourceDictionary>
-            <!-- HighContrast is used in any high contrast theme -->
-            <ResourceDictionary x:Key="HighContrast">
-
-            </ResourceDictionary>
-        </ResourceDictionary.ThemeDictionaries>
-    </ResourceDictionary>
-</Application.Resources
-```
-
-* **HighContrast** n’est pas le seul nom de clé disponible. Vous pouvez aussi utiliser **HighContrastBlack**, **HighContrastWhite** et **HighContrastCustom**. Dans la plupart des cas, vous avez seulement besoin de **HighContrast**.
-* Dans **Default**, créez le type de classe [**Brush**](http://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.aspx) dont vous avez besoin, généralement **SolidColorBrush**. Attribuez-lui un nom **x: Key** spécifiant son utilisation:<br/>
-    `<SolidColorBrush x:Key="BrandedPageBackground" />`
-* Attribuez la **couleur** souhaitée:<br/>
-    `<SolidColorBrush x:Key="BrandedPageBackground" Color="Red" />`
-* Copiez cette classe **Brush** dans la propriété **HighContrast**:
+1. Commencez par créer le système approprié, le cas échéant. Dans App.xaml, créez une collection ThemeDictionaries, en incluant  **Default** et **HighContrast** à une valeur minimum.
+2. Dans Default, créez le type de [Brush](http://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.aspx) dont vous avez besoin, généralement SolidColorBrush. Attribuez-lui un nom x: Key spécifiant son utilisation.
+3. Attribuez la couleur souhaitée.
+4. Copiez cette classe Brush dans la propriété HighContrast.
 
 ``` xaml
 <Application.Resources>
     <ResourceDictionary>
         <ResourceDictionary.ThemeDictionaries>
-            <!-- Default is a fallback if a more precise theme isn't called out below -->
+            <!-- Default is a fallback if a more precise theme isn't called
+            out below -->
             <ResourceDictionary x:Key="Default">
-                <SolidColorBrush x:Key="BrandedPageBackground" Color="Red" />
+                <SolidColorBrush x:Key="BrandedPageBackgroundBrush" Color="#E6E6E6" />
             </ResourceDictionary>
-            <!-- HighContrast is used in any high contrast theme -->
+
+            <!-- Optional, Light is used in light theme.
+            If included, Default will be used for Dark theme -->
+            <ResourceDictionary x:Key="Light">
+                <SolidColorBrush x:Key="BrandedPageBackgroundBrush" Color="#E6E6E6" />
+            </ResourceDictionary>
+
+            <!-- HighContrast is used in all high contrast themes -->
             <ResourceDictionary x:Key="HighContrast">
-                <SolidColorBrush x:Key="BrandedPageBackground" Color="Red" />
+                <SolidColorBrush x:Key="BrandedPageBackgroundBrush" Color="#E6E6E6" />
             </ResourceDictionary>
         </ResourceDictionary.ThemeDictionaries>
     </ResourceDictionary>
 </Application.Resources>
 ```
 
-* Déterminez la couleur de votre classe **Brush** et modifiez-la dans la propriété **HighContrast**.
+La dernière étape, décrite dans la section suivante, consiste à identifier la couleur à utiliser dans le contraste élevé.
 
-La définition de la couleur d’un contraste élevé nécessite quelques connaissances. Le système que vous avez créé ci-dessus facilite la mise à jour.
+> [!NOTE]
+> HighContrast n’est pas le seul nom de clé disponible. Vous pouvez aussi utiliser HighContrastBlack, HighContrastWhite et HighContrastCustom. Dans la plupart des cas, vous avez seulement besoin de HighContrast.
 
 ## Couleurs à contraste élevé
 
-Les utilisateurs peuvent passer à un contraste élevé par le biais de la page de paramètres. Il existe 4thèmes à contraste élevé par défaut. Lorsque l’utilisateur sélectionne une option, la page montre un aperçu de l’apparence des applications.
+La page *Paramètres &gt; Options d’ergonomie &gt; Contraste élevé* comporte 4thèmes à contraste élevé par défaut. 
 
-![Paramètres de contraste élevé](images/high-contrast-settings.png)<br/>
-_Paramètres de contraste élevé_
+**Figure2. Lorsque l’utilisateur sélectionne une option, la page affiche un aperçu.**
 
- Vous pouvez cliquer sur chaque zone de l’aperçu pour en modifier la valeur. Chaque zone mappe aussi directement vers une ressource système.
+![Paramètres de contraste élevé](images/high-contrast-settings.png)
 
-![Ressources de contraste élevé](images/high-contrast-resources.png)<br/>
-_Ressources de contraste élevé_
+**Figure3. Pour changer la valeur des échantillons de couleur de l’aperçu, cliquez dessus. Par ailleurs, chaque échantillon est mappé directement sur une ressource de couleur XAML.**
 
-Si vous ajoutez aux noms ci-dessus le préfixe _SystemColor_ et le suffixe _Color_, par exemple: **SystemColorWindowTextColor**, les noms seront dynamiquement mis à jour pour correspondre à ce que l’utilisateur a spécifié. Cela vous évite d’avoir à choisir une couleur spécifique pour le contraste élevé. Il vous suffit de choisir une ressource système adaptée à l’utilisation de la couleur. Dans l’exemple ci-dessus, nous avons nommé la couleur d’arrière-plan de la page **SolidColorBrushBrandedPageBackground**. Dans la mesure où cette couleur est utilisée pour un arrière-plan, nous pouvons la mapper vers **SystemColorWindowColor** en contraste élevé:
+![Ressources de contraste élevé](images/high-contrast-resources.png)
+
+Chaque ressource `SystemColor*Color` est une variable qui met automatiquement à jour la couleur lorsque l’utilisateur bascule entre les thèmes à contraste élevé. Vous trouverez ci-après des recommandations vous indiquant quand et où utiliser chaque ressource.
+
+Ressource | Utilisation
+-------- | -----
+SystemColorWindowTextColor | Copie de texte de corps, titres, listes; tout texte ne pouvant faire l’objet d’aucune interaction
+SystemColorHotlightColor | Liens hypertexte
+SystemColorGrayTextColor | Interface utilisateur désactivée
+SystemColorHighlightTextColor | Couleur de premier plan pour le texte ou l’interface utilisateur activés, sélectionnés ou faisant l’objet d’une interaction
+SystemColorHighlightColor | Couleur d’arrière-plan pour le texte ou l’interface utilisateur activés, sélectionnés ou faisant l’objet d’une interaction
+SystemColorButtonTextColor | Couleur de premier plan des boutons; toute interface utilisateur ne pouvant faire l’objet d’aucune interaction
+SystemColorButtonFaceColor | Couleur d’arrière-plan des boutons; toute interface utilisateur ne pouvant faire l’objet d’aucune interaction
+SystemColorWindowColor | Arrière-plan des pages, des volets, des fenêtres contextuelles et des barres
+<br/>
+Il est souvent utile d’examiner les applications, menus Démarrer ou contrôles communs existants afin de savoir comment d’autres utilisateurs ont résolu des problèmes de conception de contraste élevé similaire au vôtre.
+
+**Pratiques conseillées**
+
+* Respectez les paires premier plan/arrière-plan autant que possible.
+* Testez l’ensemble des 4thèmes à contraste élevé pendant l’exécution de votre application. Lorsqu’il change de thème, l’utilisateur ne devrait pas avoir à redémarrer votre application.
+* Soyez cohérent.
+
+**Pratiques déconseillées**
+
+* Codez en dur une couleur dans le thème HighContrast; utilisez les ressources `SystemColor*Color`.
+* Choisissez une ressource de couleur à des fins esthétiques. N’oubliez pas que la couleur change avec le thème!
+* N’utilisez pas `SystemColorGrayTextColor` pour la copie du corps de texte secondaire ou agissant comme indication.
+
+
+Pour poursuivre l’exemple précédent, vous devez sélectionner une ressource pour `BrandedPageBackgroundBrush`. Son nom indiquant qu’elle sera utilisée en arrière-plan, `SystemColorWindowColor` est un choix pertinent.
 
 ``` xaml
 <Application.Resources>
     <ResourceDictionary>
         <ResourceDictionary.ThemeDictionaries>
-            <!-- Default is a fallback if a more precise theme isn't called out below -->
+            <!-- Default is a fallback if a more precise theme isn't called
+            out below -->
             <ResourceDictionary x:Key="Default">
-                <SolidColorBrush x:Key="BrandedPageBackground" Color="Red" />
+                <SolidColorBrush x:Key="BrandedPageBackgroundBrush" Color="#E6E6E6" />
             </ResourceDictionary>
-            <!-- HighContrast is used in any high contrast theme -->
+
+            <!-- Optional, Light is used in light theme.
+            If included, Default will be used for Dark theme -->
+            <ResourceDictionary x:Key="Light">
+                <SolidColorBrush x:Key="BrandedPageBackgroundBrush" Color="#E6E6E6" />
+            </ResourceDictionary>
+
+            <!-- HighContrast is used in all high contrast themes -->
             <ResourceDictionary x:Key="HighContrast">
-                <SolidColorBrush x:Key="BrandedPageBackground" Color="{ThemeResource SystemColorWindowColor}" />
+                <SolidColorBrush x:Key="BrandedPageBackgroundBrush" Color="{ThemeResource SystemColorWindowColor}" />
             </ResourceDictionary>
         </ResourceDictionary.ThemeDictionaries>
     </ResourceDictionary>
 </Application.Resources>
 ```
 
-Si vous conservez la palette de 8couleurs à contraste élevé, vous n’êtes pas obligé de créer de **ResourceDictionaries** de contraste élevé supplémentaires. Cette palette limitée pose souvent problème pour la représentation des états visuels complexes. Généralement, l’ajout d’une bordure à une zone en contraste élevé uniquement peut aider à clarifier la situation.
+Plus loin dans votre application,vous pouvez désormais définir l’arrière-plan.
 
-### À FAIRE ET À NE PAS FAIRE
-
-* Faites régulièrement et précocement des tests en mode de contraste élevé.
-* Utilisez les couleurs nommées dans leur but initial.
-* Ajoutez des primitives comme **Color**, **Brush** et **Thickness** dans les **ThemeDictionaries**. Évitez d’ajouter des ressources plus complexes, comme les éléments **Style**. L’exemple suivant fonctionne très bien:
-
-``` xaml
-<Application.Resources>
-    <ResourceDictionary>
-        <ResourceDictionary.ThemeDictionaries>
-            <!-- Default is a fallback if a more precise theme isn't called out below -->
-            <ResourceDictionary x:Key="Default">
-                <SolidColorBrush x:Key="BrandedPageBackground" Color="Red" />
-            </ResourceDictionary>
-            <!-- HighContrast is used in any high contrast theme -->
-            <ResourceDictionary x:Key="HighContrast">
-                <SolidColorBrush x:Key="BrandedPageBackground" Color="{ThemeResource SystemColorWindowColor}" />
-            </ResourceDictionary>
-        </ResourceDictionary.ThemeDictionaries>
-
-        <Style x:Key="MyButtonStyle" TargetType="Button">
-            <Setter Property="Foreground" Value="{ThemeResource BrandedPageBackground}" />
-        </Style>
-    </ResourceDictionary>
-</Application.Resources>
-
-...
-
-<Button Style="{StaticResource MyButtonStyle}" />
+```xaml
+<Grid Background="{ThemeResource BrandedPageBackgroundBrush}">
 ```
 
-* Utilisez des couleurs de premier plan à contraste élevé pour les éléments d’interface utilisateur au premier plan.
-* Utilisez des couleurs à contraste élevé en respectant les paires de couleurs définies. Par exemple, utilisez toujours **BUTTONTEXT** avec **BUTTONFACE**, en particulier dans une situation de premier plan/arrière-plan.
-* Utilisez les paires de couleurs à contraste élevé recommandées pour un élément d’interface utilisateur spécifique afin de vous assurer que le coefficient de contraste14:1 requis est satisfait.
-* Ne scindez pas les paires de couleur à contraste élevé et ne mélangez pas arbitrairement les couleurs à contraste élevé. Cela rend souvent l’interface utilisateur invisible pour au moins l’un des thèmes à contraste élevé préinstallés.
-* N’insérez pas d’objets **Brush** créés en dehors d’une collection **ThemeDictionaries**.
-* N’utilisez jamais **StaticResource** pour faire référence à une ressource dans une collection **ThemeDictionaries**. Cela semblera fonctionner jusqu’à ce que l’utilisateur modifie les thèmes pendant que votre application est en cours d’exécution. Utilisez **ThemeResource** à la place.
-* N’utilisez pas de valeurs de couleur codées en dur.
-* N’utilisez pas une couleur simplement parce que vous l’aimez.
-
-Voir [Ressources de thèmeXAML](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/xaml-theme-resources) pour plus d’informations.
+Notez comment `{ThemeResource}` est utilisée deuxfois, une pour référencer `SystemColorWindowColor` et une autre pour référencer `BrandedPageBackgroundBrush`. Les deuxinstances sont nécessaires pour la bonne définition du thème lors de l’exécution. Il s’agit d’un bon moment pour tester la fonctionnalité dans votre application. L’arrière-plan de la grille est automatiquement mis à jour lorsque vous définissez un thème à contraste élevé. Il est également mis à jour lorsque vous basculez entre deuxthèmes à contraste élevé différents.
 
 ## Quand utiliser les bordures
-En mode de contraste élevé, ajoutez une bordure à un élément d’interface utilisateur lorsqu’il faut conserver une limite reconnaissable pour l’élément. Utiliser des bordures pour faire la distinction entre les zones de contenu de navigation, les actions et le contenu.
 
-![Volet de navigation séparé du reste de la page](images/high-contrast-actions-content.png)<br/>
-_Volet de navigation séparé du reste de la page_
+L’ensemble des pages, des volets, des fenêtres contextuelles et des barres doivent utiliser `SystemColorWindowColor` pour leur arrière-plan en contraste élevé. Si nécessaire, ajoutez une bordure à contraste élevé uniquement afin de préserver les bordures importantes au sein de votre interface utilisateur.
 
-Si un élément d’interface utilisateur _n’a pas_ de bordure ou d’arrière-plan par défaut, n’ajoutez pas de bordure ou d’arrière-plan à l’état par défaut en mode de contraste élevé.
+**Figure4. Le volet de navigation et la page partagent la même couleur d’arrière-plan en contraste élevé. Il est nécessaire de les séparer avec une bordure en contraste élevé uniquement.**
 
-Si un élément d’interface utilisateur _comporte_ une bordure par défaut, conservez la bordure en mode de contraste élevé.
+![Volet de navigation séparé du reste de la page](images/high-contrast-actions-content.png)
 
-Les couleurs superposées ou adjacentes doivent pouvoir se distinguer les unes des autres, mais elles ne doivent pas forcément respecter un coefficient de contraste couleur de14:1. Toutefois, il est recommandé de choisir un rapport de contraste de3:1 pour ces types de scénarios.
+## Éléments de liste
 
-Si des couleurs d’arrière-plan à contraste élevé sont utilisées pour différencier les éléments d’interface utilisateur qui se chevauchent, la seule manière de garantir un contraste entre ces éléments est d’ajouter des bordures.
+En mode de contraste élevé, les éléments de [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) présentent un arrière-plan défini sur `SystemColorHighlightColor` lorsqu’ils sont survolés, activés ou sélectionnés. Les éléments de liste complexes présentent régulièrement un bogue, durant lequel la couleur du contenu de l’élément de liste ne peut pas être inversée lorsque ce dernier est survolé, activé ou sélectionné. Cela rend impossible sa lecture.
 
-## Détection de l’activation d’un thème à contraste élevé  
-Utilisez des membres de la classe [**AccessibilitySettings**](https://msdn.microsoft.com/library/windows/apps/BR242237) afin de détecter les paramètres actuels pour les thèmes à contraste élevé. La propriété [**HighContrast**](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.accessibilitysettings.highcontrast) détermine si un thème à contraste élevé est actuellement sélectionné. Si **HighContrast** a la valeur **true**, l’étape suivante consiste à vérifier la valeur de la propriété [**HighContrastScheme**](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.accessibilitysettings.highcontrastscheme) afin d’obtenir le nom du thème à contraste élevé utilisé. «Contraste blanc élevé» et «Contraste noir élevé» sont les valeurs normales de **HighContrastScheme** auxquelles votre code doit répondre. Comme les clés [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) définies en XAML ne peuvent pas contenir d’espaces, les clés de ces thèmes dans un dictionnaire de ressources sont généralement «HighContrastWhite» et «HighContrastBlack», respectivement. Vous devez également disposer d’une logique de remplacement pour un thème à contraste élevé par défaut au cas où la valeur serait une autre chaîne. L’[exemple de contraste élevé XAML](http://go.microsoft.com/fwlink/p/?linkid=254993) illustre cette logique.
+**Figure5. Liste simple en thème clair (à gauche) et en thème noir à contraste élevé (à droite). Le deuxième élément est sélectionné; notez comment la couleur du texte est inversée en contraste élevé.**
+
+![Liste simple en thème clair et en thème noir à contraste élevé](images/high-contrast-list1.png)
+
+
+
+### Éléments de liste avec du texte coloré
+
+Un coupable définit TextBlock.Foreground dans l’instance [DataTemplate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx).de ListView. Cette procédure est généralement effectuée dans le cadre de l’établissement de la hiérarchie visuelle. La propriété Foreground est définie sur [ListViewItem](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewitem.aspx), tandis que TextBlocks dans DataTemplate hérite de la couleur appropriée d’arrière-plan lorsque l’élément est survolé, activé ou sélectionné. Toutefois, la définition de Foreground rompt l’héritage.
+
+**Figure6. Liste complexe en thème clair (à gauche) et en thème noir à contraste élevé (à droite). Notez qu’en thème de contraste élevé, l’inversion de la seconde ligne de l’élément sélectionné est mise en échec.**
+
+![Liste complexe en thème clair et en thème noir à contraste élevé](images/high-contrast-list2.png)
+
+Vous pouvez contourner ce problème en définissant Foreground de manière conditionnelle, via un Style d’une collection ThemeDictionaries. Dans la mesure où Foreground n’est pas défini par SecondaryBodyTextBlockStyle dans HighContrast, sa couleur sera correctement inversée.
+
+```xaml
+<!-- In App.xaml... -->
+<ResourceDictionary.ThemeDictionaries>
+    <ResourceDictionary x:Key="Default">
+        <Style
+            x:Key="SecondaryBodyTextBlockStyle"
+            TargetType="TextBlock"
+            BasedOn="{StaticResource BodyTextBlockStyle}">
+            <Setter Property="Foreground" Value="{StaticResource SystemControlForegroundBaseMediumBrush}" />
+        </Style>
+    </ResourceDictionary>
+
+    <ResourceDictionary x:Key="Light">
+        <Style
+            x:Key="SecondaryBodyTextBlockStyle"
+            TargetType="TextBlock"
+            BasedOn="{StaticResource BodyTextBlockStyle}">
+            <Setter Property="Foreground" Value="{StaticResource SystemControlForegroundBaseMediumBrush}" />
+        </Style>
+    </ResourceDictionary>
+
+    <ResourceDictionary x:Key="HighContrast">
+        <!-- The Foreground Setter is omitted in HighContrast -->
+        <Style
+            x:Key="SecondaryBodyTextBlockStyle"
+            TargetType="TextBlock"
+            BasedOn="{StaticResource BodyTextBlockStyle}" />
+    </ResourceDictionary>
+</ResourceDictionary.ThemeDictionaries>
+
+<!-- Usage in your DataTemplate... -->
+<DataTemplate>
+    <StackPanel>
+        <TextBlock Style="{StaticResource BodyTextBlockStyle}" Text="Double line list item" />
+
+        <!-- Note how ThemeResource is used to reference the Style -->
+        <TextBlock Style="{ThemeResource SecondaryBodyTextBlockStyle}" Text="Second line of text" />
+    </StackPanel>
+</DataTemplate>
+```
+
+### Éléments de liste avec des boutons et liens
+
+Parfois, des éléments de liste disposent de contrôles plus complexes, comme [HyperlinkButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.hyperlinkbutton.aspx) ou [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx). Ces contrôles présentent leur propre état pour le survol, l’activation et parfois pour la sélection, qui ne fonctionnent pas sur un élément de liste. Les liens hypertextes sont également jaunes dans le thème noir à contraste élevé, ce qui complique leur lecture en cas de survol, d’activation ou de sélection.
+
+**Figure 7. Notez que le lien hypertexte est difficile à lire en thème de contraste élevé.**
+
+![Liste avec un lien hypertexte en thème clair et en thème noir à contraste élevé](images/high-contrast-list3.png)
+
+Une solution consiste à définir l’arrière-plan de DataTemplate sur `SystemColorWindowColor` en thème de contraste élevé. Cela crée l’effet d’une bordure en thème de contraste élevé.
+
+```xaml
+<!-- In App.xaml... -->
+<ResourceDictionary.ThemeDictionaries>
+    <ResourceDictionary x:Key="Default">
+        <SolidColorBrush x:Key="HighContrastOnlyBackgroundBrush" Color="Transparent" />
+    </ResourceDictionary>
+
+    <ResourceDictionary x:Key="HighContrast">
+        <SolidColorBrush x:Key="HighContrastOnlyBackgroundBrush" Color="{ThemeResource SystemColorWindowColor}" />
+    </ResourceDictionary>
+</ResourceDictionary.ThemeDictionaries>
+
+<!-- Usage in your ListView... -->
+<ListView>
+    <ListView.ItemContainerStyle>
+        <Style TargetType="ListViewItem">
+            <!-- Causes the DataTemplate to fill the entire width and height
+            of the list item -->
+            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+            <Setter Property="VerticalContentAlignment" Value="Stretch" />
+
+            <!-- Padding is handled in the DataTemplate -->
+            <Setter Property="Padding" Value="0" />
+        </Style>
+    </ListView.ItemContainerStyle>
+    <ListView.ItemTemplate>
+        <DataTemplate>
+            <!-- Margin of 2px allows some of the ListViewItem's background
+            to shine through. An additional left padding of 10px puts the
+            content a total of 12px from the left edge -->
+            <StackPanel
+                Margin="2,2,2,2"
+                Padding="10,0,0,0"
+                Background="{ThemeResource HighContrastOnlyBackgroundBrush}">
+
+                <!-- Foreground is explicitly set so that it doesn't
+                disappear on hovered, pressed, or selected -->
+                <TextBlock
+                    Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"
+                    Text="Double line list item" />
+
+                <HyperlinkButton Content="Hyperlink" />
+            </StackPanel>
+        </DataTemplate>
+    </ListView.ItemTemplate>
+</ListView>
+```
+**Figure8. L’effet bordure est adapté au lorsque vous disposez de contrôles plus complexes dans vos éléments de liste.**
+
+![Liste avec un lien hypertexte en thème clair et en thème noir à contraste élevé, fixe](images/high-contrast-list4.png)
+
+
+
+## Détection du contraste élevé
+
+Vous pouvez vérifier par programme si le thème actuel est un thème à contraste élevé à l’aide des membres de la classe [**AccessibilitySettings**](https://msdn.microsoft.com/library/windows/apps/BR242237).
 
 > [!NOTE]
-> Prenez soin d’appeler le constructeur [**AccessibilitySettings**](https://msdn.microsoft.com/library/windows/apps/BR242237) à partir d’une étendue dans laquelle l’application est initialisée et affiche déjà du contenu.
-
-Les applications peuvent utiliser des valeurs de ressource à contraste élevé pendant qu’elles sont en cours d’exécution. Cela ne fonctionne que si les ressources sont demandées à l’aide de l’[extension de balisage {ThemeResource}](https://msdn.microsoft.com/library/windows/apps/Mt185591) dans le code XAML du style ou du modèle. Comme les thèmes par défaut (generic.xaml) utilisent tous cette technique d’extension de balisage {ThemeResource}, vous obtenez ce comportement si vous utilisez des thèmes de contrôle par défaut. Les contrôles ou styles de contrôle personnalisés prennent cela en charge si vous avez également utilisé cette technique d’extension de balisage {ThemeResource} dans vos modèles et styles personnalisés.
+> Prenez soin d’appeler le constructeur **AccessibilitySettings** à partir d’une étendue dans laquelle l’application est initialisée et affiche déjà du contenu.
 
 ## Rubriques connexes  
 * [Accessibilité](accessibility.md)
@@ -178,6 +300,6 @@ Les applications peuvent utiliser des valeurs de ressource à contraste élevé 
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

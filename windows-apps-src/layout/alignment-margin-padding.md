@@ -7,7 +7,7 @@ label: Alignment, margin, and padding
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 86635255fbdae83fb2749e2aea7011a8b989e83f
+ms.openlocfilehash: ec16fa013e177529c517f91610b77ea22402a958
 
 ---
 # Alignement, marge et espacement
@@ -18,7 +18,7 @@ Outre les propriétés de dimension (largeur, hauteur et contraintes), les élé
 
 Les propriétés [**HorizontalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208720) et [**VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208749) décrivent comment un élément enfant doit être positionné dans l’espace de disposition alloué d’un élément parent. En associant ces propriétés, la logique de disposition d’un conteneur peut positionner les éléments enfants dans un conteneur (un panneau ou un contrôle). Les propriétés d’alignement sont censées suggérer la disposition souhaitée à un conteneur de disposition adaptative. Elles sont donc définies sur des enfants [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) et interprétées par un autre parent conteneur **FrameworkElement**. Les valeurs d’alignement peuvent spécifier si les éléments sont alignés par rapport à l’un des deux bords d’une orientation ou par rapport au centre. Toutefois, la valeur par défaut des deux propriétés d’alignement est **Stretch**. Avec l’alignement **Stretch**, les éléments remplissent l’espace qui leur est alloué dans la disposition. **Stretch** est la valeur par défaut, ce qui facilite l’utilisation de techniques de disposition adaptatives lorsqu’il n’existe aucune mesure explicite ou aucune valeur [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) résultant de la passe de mesure de disposition. Avec cette valeur par défaut, il n’y a aucun risque qu’une largeur ou hauteur explicite ne soit trop élevée pour le conteneur et soit coupée jusqu’à ce que vous dimensionniez chaque conteneur.
 
-> **Remarque** &nbsp;&nbsp;En règle générale, il est préférable de n’appliquer des mesures qu’à certains éléments clés et d’utiliser le comportement de disposition adaptative pour les autres éléments. Cela permet de bénéficier d’un comportement de disposition flexible quand l’utilisateur dimensionne la fenêtre de l’application supérieure, opération normalement possible à tout moment.
+> **Remarque**&nbsp;&nbsp;En règle générale, il est préférable de n’appliquer des mesures qu’à certains éléments clés et d’utiliser le comportement de disposition adaptative pour les autres éléments. Cela permet de bénéficier d’un comportement de disposition flexible quand l’utilisateur dimensionne la fenêtre de l’application supérieure, opération normalement possible à tout moment.
 
  
 S’il y a des valeurs [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) et [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) ou une troncature dans un conteneur adaptatif, même si **Stretch** est défini comme valeur d’alignement, la disposition est contrôlée par le comportement de son conteneur. Dans les panneaux, une valeur **Stretch** qui a été supplantée par **Height** et **Width** agit comme si la valeur était **Center**.
@@ -82,6 +82,6 @@ Les propriétés [**Height**](https://msdn.microsoft.com/library/windows/apps/br
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

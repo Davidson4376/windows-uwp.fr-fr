@@ -4,8 +4,8 @@ ms.assetid: 9146212C-8480-4C16-B74C-D7F08C7086AF
 description: "Cet article montre comment énumérer des périphériques MIDI et envoyer et recevoir des messages MIDI à partir d’une application Windows universelle."
 title: MIDI
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: a67b859cc2bd42abc13bcba0d405783b99a0ca5c
+ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
+ms.openlocfilehash: cc3553aff7c30a2e84b527dc9e108f7c45b7b21f
 
 ---
 
@@ -132,7 +132,8 @@ Lors de l’énumération des périphériques de sortie MIDI à l’aide de la t
 2.  Développez le nœud **Windows universel**.
 3.  Sélectionnez **Extensions**.
 4.  Dans la liste des extensions, sélectionnez **DLS General MIDI Microsoft pour les applications Windows universelles**.
-    **Remarque** S’il existe plusieurs versions de l’extension, veillez à sélectionner la version qui correspond à la cible de votre application. Pour connaître la version du Kit de développement logiciel (SDK) ciblée par votre application, cliquez sur l’onglet **Application** des propriétés du projet.
+    > [!NOTE] 
+    > S’il existe plusieurs versions de l’extension, veillez à sélectionner la version qui correspond à la cible de votre application. Pour connaître la version du Kit de développement logiciel (SDK) ciblée par votre application, cliquez sur l’onglet **Application** des propriétés du projet.
 
  
 
@@ -144,6 +145,6 @@ Lors de l’énumération des périphériques de sortie MIDI à l’aide de la t
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

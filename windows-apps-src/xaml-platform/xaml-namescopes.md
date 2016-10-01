@@ -5,7 +5,7 @@ title: Namescopes XAML
 ms.assetid: EB060CBD-A589-475E-B83D-B24068B54C21
 translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: b8b833f40bc38799acc8813d38ddea63426f05b3
+ms.openlocfilehash: 34ef0bf246abe49a5e19adef66bddda7004a3441
 
 ---
 
@@ -87,6 +87,6 @@ En raison des namescopes XAML distincts, la recherche d’éléments nommés au 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

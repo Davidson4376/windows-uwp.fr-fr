@@ -3,23 +3,31 @@ author: Jwmsft
 label: App bars/command bars
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a2f4e7a679ca47f2a034e19936c1115e87a2eb24
-ms.openlocfilehash: c7107599529d5af5b118a46cb065106f08afe113
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 4ce59951387542124bcea1cbd0f636c0e44e0d1e
 
 ---
-
 # Barre de l’application et barre de commandes
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 Les barres de commandes (également appelées «barres de l’application») permettent aux utilisateurs d’accéder facilement aux actions les plus courantes de votre application. Elles peuvent également servir à afficher les commandes ou les options propres au contexte de l’utilisateur, par exemple celles relatives à la sélection de photos ou au mode dessin. Elles peuvent également être utilisées pour la navigation entre les pages ou les sections de l’application. Les barres de commandes peuvent être utilisées avec n’importe quel modèle de navigation.
 
 ![Exemple d’une barre de commandes contenant des icônes](images/controls_appbar_icons.png)
 
+<div class="important-apis" >
+<b>API importantes</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx"><strong>CommandBar</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarbutton.aspx"><strong>AppBarButton</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbartogglebutton.aspx"><strong>AppBarToggleButton</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarseparator.aspx"><strong>AppBarSeparator</strong></a></li>
+</ul>
+
+</div>
+</div>
 
 
--   [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx)
--   [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarbutton.aspx)
--   [**AppBarToggleButton**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbartogglebutton.aspx)
--   [**AppBarSeparator**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarseparator.aspx)
 
 ## Est-ce le contrôle approprié?
 
@@ -51,7 +59,7 @@ Voici la même barre de commandes à l’état ouvert. Les étiquettes identifie
 ![Barre de commandes fermée](images/commandbar_anatomy_open.png)
 
 La barre de commandes est divisée en 4zones principales:
-- Le bouton «En savoir plus» \[•••\] apparaît à droite de la barre. Le fait d’appuyer sur «En savoir plus» \ [•••\] a 2effets: cela fait apparaître les libellés sur les boutons de commande principaux, et ouvre le menu de dépassement en présence de commandes secondaires. Dans le Kit de développement logiciel (SDK) le plus récent, le bouton ne sera pas visible si aucune commande secondaire ni aucune étiquette masquée ne sont présentes. La propriété [ **OverflowButtonVisibility** ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.overflowbuttonvisibility.aspx) permet aux applications de modifier ce comportement de masquage automatique par défaut.
+- Le bouton «En savoir plus» \[•••\] apparaît à droite de la barre. Le fait d’appuyer sur «En savoir plus» \ [•••\] a 2effets: cela fait apparaître les libellés sur les boutons de commande principaux, et ouvre le menu de dépassement en présence de commandes secondaires. Dans le Kit de développement logiciel (SDK) le plus récent, le bouton ne sera pas visible si aucune commande secondaire ni aucune étiquette masquée ne sont présentes. La propriété [**OverflowButtonVisibility**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.overflowbuttonvisibility.aspx) permet aux applications de modifier ce comportement de masquage automatique par défaut.
 - La zone de contenu est alignée sur le côté gauche de la barre. Elle s’affiche si la propriété [**Content**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx) est remplie.
 - La zone de commande principale est alignée à droite de la barre, en regard du bouton «En savoir plus» \ [•••\]. Elle s’affiche si la propriété [**PrimaryCommands**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.primarycommands.aspx) est remplie.  
 - Le menu de dépassement est visible uniquement quand la barre de commandes est ouverte et si la propriété [**SecondaryCommands**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.secondarycommands.aspx) est remplie. Le nouveau comportement de débordement dynamique déplace automatiquement les commandes principales dans la zone SecondaryCommands lorsque l’espace est limité.
@@ -213,7 +221,7 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 }
 ```
 
->**Remarque** &nbsp;&nbsp; Cet exemple ne porte pas sur l’implémentation des commandes d’édition. Pour plus d’informations, voir l’article [RichEditBox](rich-edit-box.md).
+>**Remarque**&nbsp;&nbsp; Cet exemple ne porte pas sur l’implémentation des commandes d’édition. Pour plus d’informations, voir l’article [RichEditBox](rich-edit-box.md).
 
 Bien que les modes Minimal et Hidden soient utiles dans certaines situations, n’oubliez pas que le masquage de toutes les actions peut prêter à confusion.
 
@@ -279,14 +287,14 @@ Envisagez le regroupement logique des commandes; placez par exemple les commande
 
 ## Articles connexes
 
-**Pour les concepteurs** 
-           [Informations de base relatives à la conception des commandes pour les applications UWP](../layout/commanding-basics.md)
+**Pour les concepteurs**
+[Informations de base relatives à la conception des commandes pour les applications UWP](../layout/commanding-basics.md)
 
-**Pour les développeurs (XAML)** 
-           [ **CommandBar** ](https://msdn.microsoft.com/library/windows/apps/dn279427)
+**Pour les développeurs (XAML)**
+[**CommandBar**](https://msdn.microsoft.com/library/windows/apps/dn279427)
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

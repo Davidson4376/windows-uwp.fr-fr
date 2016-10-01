@@ -4,8 +4,8 @@ ms.assetid: a2751e22-6842-073a-daec-425fb981bafe
 title: Couche visuelle
 description: "L’API Windows.UI.Composition vous donne accès à la couche de composition comprise entre la couche d’infrastructure (XAML) et la couche graphique (DirectX)."
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 1abb663d0ee27d7e57ab83dab2589557d1f9f29a
+ms.sourcegitcommit: 4a00847f0559d93eea199d7ddca0844b5ccaa5aa
+ms.openlocfilehash: 3a3dbf7b529d5d2848b161869d2f77fef3651488
 
 ---
 # Couche visuelle
@@ -65,7 +65,7 @@ Cet article s’adresse aux développeurs de Windows10 qui développent des appl
 -   Article MSDN de Kenny Kerr portant sur cette API: [Graphismes et animation: l’API Composition Windows passe à Windows10](https://msdn.microsoft.com/magazine/mt590968)
 -   Exemples d’interface utilisateur et de composition avancés dans le [GitHub WindowsUIDevLabs](https://github.com/microsoft/windowsuidevlabs).
 -   [**Documentation de référence complète pour l’API**](https://msdn.microsoft.com/library/windows/apps/Dn706878).
--   Problèmes connus : [Problèmes connus](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues).
+-   Problèmes connus : [Problèmes connus](http://go.microsoft.com/fwlink/?LinkId=823237).
 
  
 
@@ -77,6 +77,6 @@ Cet article s’adresse aux développeurs de Windows10 qui développent des appl
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 
