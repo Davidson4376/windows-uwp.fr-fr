@@ -1,11 +1,26 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 0
+ Total Files | 1
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [windows-apps-src\audio-video-camera\basic-photo-video-and-audio-capture-with-MediaCapture.md](https://github.com/Microsoft/windows-apps/blob/0c7355d442cd650f110042d5e01f51becbb51d0e/windows-apps-src/audio-video-camera/basic-photo-video-and-audio-capture-with-MediaCapture.md) | InSyncHandedBackSuccess | [Details](#19a546d4778d0edfbc5ca2e3acf0ded084445958153)
 
 ## Item Details
+##### <a name='19a546d4778d0edfbc5ca2e3acf0ded084445958153'></a> Source: [windows-apps-src\audio-video-camera\basic-photo-video-and-audio-capture-with-MediaCapture.md](https://github.com/Microsoft/windows-apps/blob/0c7355d442cd650f110042d5e01f51becbb51d0e/windows-apps-src/audio-video-camera/basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\audio-video-camera\basic-photo-video-and-audio-capture-with-MediaCapture.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/a3ee7a75314c597c86546b960e80a0204f0a5d01/windows-apps-src/audio-video-camera/basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* Handoff File: [basic-photo-video-and-audio-capture-with-MediaCapture.4348d0480d281f0eda313b7534c6981ba3181021.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/02a0610053c79672824189e62f8518ea508dbda5/ol-handoff/Microsoft/windows-apps.fr-fr/master/basic-photo-video-and-audio-capture-with-MediaCapture.4348d0480d281f0eda313b7534c6981ba3181021.fr-fr.xlf)
+* Handoff Datetime: 2016-08-18 00:21:37
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [basic-photo-video-and-audio-capture-with-MediaCapture.4348d0480d281f0eda313b7534c6981ba3181021.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/3347e2c916d3513ed7202c17af783231e315e3bd/ol-handback/Microsoft/windows-apps.fr-fr/master/basic-photo-video-and-audio-capture-with-MediaCapture.4348d0480d281f0eda313b7534c6981ba3181021.fr-fr.xlf)
+* Handback Datetime: 2016-10-01 18:15:17
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
