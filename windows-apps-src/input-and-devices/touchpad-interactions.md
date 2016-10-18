@@ -7,7 +7,7 @@ label: Touchpad interactions
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 361df3a06faa771a81a6d63c2fe873a1aace1125
+ms.openlocfilehash: 30607a9db9f5a7d5ea1085fa1105e6a2bd8ebd1b
 
 ---
 
@@ -149,13 +149,13 @@ Si vous avez besoin de personnaliser le curseur de la souris:
 
 
 * [Gérer les entrées du pointeur](handle-pointer-input.md)
-* [Identifier des périphériques d’entrée](identify-input-devices.md) 
-           **Exemples**
+* [Identifier des périphériques d’entrée](identify-input-devices.md)
+**Exemples**
 * [Exemple d’entrée de base](http://go.microsoft.com/fwlink/p/?LinkID=620302)
 * [Exemple d’entrée à faible latence](http://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [Exemple de mode d’interaction utilisateur](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Exemple de visuels de focus](http://go.microsoft.com/fwlink/p/?LinkID=619895) 
-           **Exemples d’archive**
+* [Exemple de visuels de focus](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+**Exemples d’archive**
 * [Entrée: exemple de fonctionnalités de périphériques](http://go.microsoft.com/fwlink/p/?linkid=231530)
 * [Entrée : exemple d’événements d’entrée utilisateur XAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [Exemple de zoom, de panoramique et de défilement XAML](http://go.microsoft.com/fwlink/p/?linkid=251717)
@@ -167,6 +167,6 @@ Si vous avez besoin de personnaliser le curseur de la souris:
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

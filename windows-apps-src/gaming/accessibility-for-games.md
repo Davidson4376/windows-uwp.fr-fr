@@ -4,8 +4,8 @@ title: Proposer des jeux accessibles
 description: "Découvrez comment assurer l’accessibilité de vos jeux. Appliquez le principe de conception de jeux inclusifs pour garantir l’accessibilité des jeux."
 ms.assetid: f5ba1e60-0d7c-11e6-91ec-0002a5d5c51b
 translationtype: Human Translation
-ms.sourcegitcommit: 2492ff5c8b3ba0331e831234943a1db124f8fa4f
-ms.openlocfilehash: 2b78d767a7ac75e27f759c0eb06953e6158fb88b
+ms.sourcegitcommit: d61b834adb50e71ba67ea32662069f257c33a676
+ms.openlocfilehash: 185e79b96cdc64f3ead6c85d067659b9087ec082
 
 ---
 #  Proposer des jeux accessibles
@@ -20,7 +20,7 @@ L’accessibilité contribue à accroître les capacités de l’ensemble des in
 
 Nombre d’utilisateurs pouvant jouer à votre jeu x niveau d’excellence du jeu = augmentation des ventes du jeu
 
-Si vous créez un jeu spectaculaire, mais si complexe ou alambiqué que seule une poignée de joueurs peuvent en profiter, vous limiterez votre nombre de ventes. De même, si vous concevez un jeu inutilisable par des personnes présentant des troubles physiques, sensoriels ou cognitifs, vous raterez des opportunités de ventes. Si l’on considère que [19% de la population souffre d’une forme quelconque de handicap ou d’invalidité rien qu’aux États-Unis](http://www.census.gov/newsroom/releases/archives/miscellaneous/cb12-134.html), cet aspect peut avoir une incidence considérable sur les revenus rapportés par votre jeu. 
+Si vous créez un jeu spectaculaire, mais si complexe ou alambiqué que seule une poignée de joueurs peuvent en profiter, vous limiterez votre nombre de ventes. De même, si vous concevez un jeu inutilisable par des personnes présentant des troubles physiques, sensoriels ou cognitifs, vous raterez des opportunités de ventes. Si l’on considère par exemple que [19% de la population américaine souffre d’une forme quelconque de handicap ou d’invalidité](http://www.census.gov/newsroom/releases/archives/miscellaneous/cb12-134.html), cet aspect peut avoir une incidence considérable sur les revenus générés par votre jeu. 
 
 Pour découvrir d’autres justifications commerciales, voir [Proposer des jeux vidéo accessibles](https://msdn.microsoft.com/library/windows/desktop/ee415219).
 
@@ -89,7 +89,7 @@ La conception inclusive est axée sur la création de produits et de services pl
 
 Pour atteindre cet objectif, les concepteurs de jeux doivent désormais viser davantage que la simple création de jeux distrayants destinés à un petit groupe d’utilisateurs. Il leur faut tenir compte de l’impact de leur décisions de conception sur l’accessibilité globale du jeu, autrement dit sur la facilité de manipulation du jeu par l’ensemble des utilisateurs auxquels ils s’adressent, y compris ceux atteints de handicaps ou d’invalidités.
 
-Les paradigmes de conception de jeux traditionnels doivent donc évoluer afin de prendre en compte le concept de conception de jeux inclusive. La conception de jeux inclusive implique de dépasser le processus élémentaire de développement de jeux uniquement axé sur le divertissement du public cible en créant des personnages supplémentaires ou modifiés afin d’inclure un plus large éventail de personnes. 
+Les paradigmes de conception de jeux traditionnels doivent donc évoluer afin de prendre en compte le concept de conception de jeux inclusive. La conception de jeux inclusive implique de dépasser le processus élémentaire de développement de jeux uniquement axé sur le divertissement du public cible en créant des personnages supplémentaires ou modifiés afin d’englober un plus large éventail de joueurs. 
 
 Cette étape supplémentaire permet d’identifier les lacunes dans la conception d’origine. En identifiant ces lacunes, vous pouvez itérer sur le concept de conception d’origine et améliorer ce dernier. Lorsque vous prenez le temps de mettre en place un processus de conception de jeux plus inclusif, vous améliorez l’accessibilité de votre jeu au final.
 
@@ -139,7 +139,7 @@ La rétine comporte deux types de cellules photoréceptrices: les cônes qui per
     * couleurs apparaissant comme similaires: toutes les nuances de rouge et de vert, y compris le marron et l’orange;
     * couleurs qui ressortent: le bleu et le jaune.
     
-  + L’identification des éléments de votre jeu ne doit pas reposer entièrement sur la couleur; elle doit également être rendue possible par les formes et les motifs.
+  + L’identification des éléments de votre jeu ne doit pas reposer entièrement sur la couleur; elle doit aussi être rendue possible par les formes et les motifs.
   
 ### Sous-titres et légendes
 
@@ -217,6 +217,6 @@ Vous trouverez ci-après quelques sites externes fournissant des informations su
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

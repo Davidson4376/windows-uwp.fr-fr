@@ -1,54 +1,42 @@
 ---
 author: DelfCo
-Description: "Développez une application dans une perspective de globalisation en mettant correctement en forme les dates, les heures, les nombres et les devises."
+Description: "Développez une app. dans une perspective de globalisation en mettant correctement en forme dates, heures, nombres, numéros de téléphone et devises."
 title: Utiliser des formats compatibles avec la globalisation
 ms.assetid: 6ECE8BA4-9A7D-49A6-81EE-AB2BE7F0254F
 label: Use global-ready formats
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: 77b5e7bd412936dd5d8c4bc252771631d6b884cf
+ms.sourcegitcommit: 5255da14ccdd0aed3852c41fa662de63a7160fba
+ms.openlocfilehash: 3615d1301a9d163390a2d709690c1e583c9b4f7e
 
 ---
 
-# <span id="dev_globalizing.use_global-ready_formats"></span>Utiliser des formats compatibles avec la globalisation
-
-
-
-
+# Utiliser des formats compatibles avec la globalisation
 
 **API importantes**
 
 -   [**Windows.Globalization.Calendar**](https://msdn.microsoft.com/library/windows/apps/br206724)
 -   [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)
 -   [**Windows.Globalization.NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136)
+-   [**Windows.Globalization.PhoneNumberFormatting**](https://msdn.microsoft.com/library/windows/apps/Windows.Globalization.PhoneNumberFormatting)
 
-Développez une application dans une perspective de globalisation en mettant correctement en forme les dates, les heures, les nombres et les devises. Cela vous permet de l’adapter plus tard à d’autres cultures, à d’autres régions et à d’autres langues pour le marché international.
+Développez une app. dans une perspective de globalisation en mettant correctement en forme dates, heures, nombres, numéros de téléphone et devises. Cela vous permet d’adapter ultérieurement votre application à d’autres cultures, à d’autres régions et à d’autres langues pour le marché international.
 
-## <span id="Introduction"></span><span id="introduction"></span><span id="INTRODUCTION"></span>Introduction
-
+## Introduction
 
 Beaucoup de développeurs créent spontanément leurs applications en pensant seulement à les adapter à leurs propres langue et culture. Or, lorsqu’une application commence à avoir du succès sur d’autres marchés, il peut s’avérer difficile de l’adapter ensuite pour d’autres langues et régions. Par exemple, les dates, les heures, les nombres, les calendriers, les devises, les numéros de téléphone, les unités de mesure et les formats du papier sont des éléments susceptibles de s’afficher différemment selon la culture ou la langue.
 
-Le processus d’adaptation d’une application à de nouveaux marchés peut être simplifié si vous prenez en compte certains éléments lorsque vous la développez.
+Le processus d’adaptation d’une application à de nouveaux marchés peut être simplifié si vous prenez en compte certains éléments au cours de son développement.
 
-## <span id="Prerequisites"></span><span id="prerequisites"></span><span id="PREREQUISITES"></span>Conditions préalables
+## Mettre correctement en forme les dates et les heures
 
+Il existe de nombreux formats d’affichage possibles pour les dates et les heures. Selon les régions et les cultures, les conventions diffèrent en ce qui concerne l’ordre d’affichage du jour et du mois dans la date, la séparation des heures et des minutes dans l’heure, et même le signe de ponctuation utilisé en tant que séparateur. En outre, les dates peuvent être affichées dans différents formats longs («mercredi28mars2012») ou formats courts («28/03/12»), ce qui est déterminé par la culture. Pour finir, les noms et les abréviations des jours de la semaine et des mois de l’année sont propres à chaque langue.
 
-[Planification en vue d’un marché international](https://msdn.microsoft.com/library/windows/apps/hh465405)
-## <span id="Tasks"></span><span id="tasks"></span><span id="TASKS"></span>Tâches
+Pour permettre aux utilisateurs de sélectionner une date ou une heure, utilisez les contrôles standard de type [sélecteur de date et heure](https://msdn.microsoft.com/library/windows/apps/hh465466). Ces contrôles appliquent automatiquement les formats de date et d’heure qui sont associés à la langue et à la région par défaut de l’utilisateur.
 
+Si vous souhaitez afficher vous-même les dates et l’heure, utilisez les formateurs [**Date/Time**](https://msdn.microsoft.com/library/windows/apps/br206859) et [**Number**](https://msdn.microsoft.com/library/windows/apps/br226136) qui permettent d’afficher automatiquement les dates, l’heure et les nombres dans le format par défaut de l’utilisateur. Le code ci-dessous met en forme une valeur DateTime dans le format associé à la langue et région par défaut. Par exemple, si la date du jour est le 3juin2012, le formateur affiche «6/3/2012» si l’utilisateur a choisi le format par défaut «Anglais (États-Unis)», mais «03.06.2012» s’il a choisi le format «Allemand (Allemagne)»:
 
-1.  **Mettez en forme les dates et l’heure de façon appropriée.**
-
-    Il existe de nombreux formats d’affichage possibles pour les dates et l’heure. Selon les régions et les cultures, les conventions diffèrent en ce qui concerne l’ordre d’affichage du jour et du mois dans la date, la séparation des heures et des minutes dans l’heure, et même le signe de ponctuation utilisé en tant que séparateur. En outre, les dates peuvent être affichées dans différents formats longs («mercredi28mars2012») ou formats courts («28/03/12»), ce qui est déterminé par la culture. Pour finir, les noms et les abréviations des jours de la semaine et des mois de l’année sont propres à chaque langue.
-
-    Pour permettre aux utilisateurs de sélectionner une date ou une heure, utilisez les contrôles standard de type [sélecteur de date et heure](https://msdn.microsoft.com/library/windows/apps/hh465466). Ces contrôles appliquent automatiquement les formats de date et d’heure qui sont associés à la langue et à la région par défaut de l’utilisateur.
-
-    Si vous souhaitez afficher vous-même les dates et l’heure, utilisez les formateurs [**Date/Time**](https://msdn.microsoft.com/library/windows/apps/br206859) et [**Number**](https://msdn.microsoft.com/library/windows/apps/br226136) qui permettent d’afficher automatiquement les dates, l’heure et les nombres dans le format par défaut de l’utilisateur. Le code ci-dessous met en forme une valeur DateTime dans le format associé à la langue et région par défaut. Par exemple, si la date du jour est le 3juin2012, le formateur affiche «6/3/2012» si l’utilisateur a choisi le format par défaut «Anglais (États-Unis)», mais «03.06.2012» s’il a choisi le format « Allemand (Allemagne)»:
-
-    **C#**
-    ```    CSharp
+```CSharp
     // Use the Windows.Globalization.DateTimeFormatting.DateTimeFormatter class
     // to display dates and times using basic formatters.
 
@@ -66,36 +54,15 @@ Le processus d’adaptation d’une application à de nouveaux marchés peut êt
     // Results for display.
     var results = "Short Date: " + sdate + "\n" +
                   "Short Time: " + stime;
-    ```
-    **JavaScript**
-    ```    JavaScript
-    // Use the Windows.Globalization.DateTimeFormatting.DateTimeFormatter class
-    // to display dates and times using basic formatters.
+```
 
-    // Formatters for dates and times, using shortdate format.
-    var sdatefmt = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("shortdate");
-    var stimefmt = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("shorttime");
+## Mettre correctement en forme les nombres et les devises
 
-    // Obtain the date that will be formatted.
-    var dateToFormat = new Date();
+La mise en forme des nombres varie en fonction des cultures. Les différences de mise en forme peuvent concerner le nombre de décimales affichées, le caractère servant de séparateur décimal et le symbole monétaire. Utilisez le formateur [**NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136) pour afficher les décimales, les pourcentages ou les nombres par mille, et les devises. Dans la plupart des cas, vous devrez simplement afficher les nombres et les devises en fonction des préférences utilisateur actuelles. Cependant, vous pouvez également choisir d’utiliser des formateurs pour afficher une devise d’une région ou d’un format spécifique.
 
-    // Perform the actual formatting.
-    var sdate = sdatefmt.format(dateToFormat);
-    var stime = stimefmt.format(dateToFormat);
+Le code suivant donne un exemple de présentation des devises en fonction de la langue et de la région préférées de l’utilisateur ou pour un système monétaire donné:
 
-    // Results for display.
-    var results = "Short Date: " + sdate + "\n" +
-                  "Short Time: " + stime;
-    ```
-
-2.  **Mettez en forme les nombres et les devises de façon appropriée.**
-
-    Selon les cultures, la mise en forme des nombres est différente. Les différences de mise en forme peuvent concerner le nombre de décimales affichées, le caractère servant de séparateur décimal et le symbole monétaire. Utilisez le formateur [**NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136) pour afficher les décimales, les pourcentages ou les nombres par mille, et les devises. Dans la plupart des cas, vous devrez simplement afficher les nombres et les devises en fonction des préférences utilisateur actuelles. Cependant, vous pouvez également choisir d’utiliser des formateurs pour afficher une devise d’une région ou d’un format spécifique.
-
-    Le code suivant illustre la façon d’afficher des devises correspondant à la langue et la région par défaut de l’utilisateur, ou à un système monétaire particulier:
-
-    **C#**
-    ```    CSharp
+```CSharp
     // This scenario uses the Windows.Globalization.NumberFormatting.CurrencyFormatter class
     // to format a number as a currency.
 
@@ -125,52 +92,59 @@ Le processus d’adaptation d’une application à de nouveaux marchés peut êt
                   "With user's default currency: " + currencyDefault + "\n" +
                   "Formatted US Dollar: " + currencyUSD + "\n" +
                   "Formatted Euro (fr-FR defaults): " + currencyEuroFR;
-    ```
-    **JavaScript**
-    ```    JavaScript
-    // This scenario uses the Windows.Globalization.NumberFormatting.CurrencyFormatter class
-    // to format a number as a currency.
+```
 
-    // Determine the current user's default currency.
-    var userCurrency = Windows.System.UserProfile.GlobalizationPreferences.currencies;
+## Utiliser un calendrier adapté à la culture
 
-    // Number to be formatted.
-    var fractionalNumber = 12345.67;
+Le calendrier peut être différent selon les régions et les langues. Le calendrier grégorien n’est pas le calendrier utilisé par défaut dans toutes les régions. Dans certaines régions, les utilisateurs choisissent parfois d’autres calendriers, comme le calendrier japonais basé sur les ères ou le calendrier lunaire arabe. Les dates et l’heure dans le calendrier dépendent également des fuseaux horaires et de l’heure d’été/hiver.
 
-    // Currency formatter using the current user's preference settings for number formatting.
-    var userCurrencyFormat = new Windows.Globalization.NumberFormatting.CurrencyFormatter(userCurrency);
-    var currencyDefault = userCurrencyFormat.format(fractionalNumber);
+Utilisez les contrôles standard de type [sélecteur de dates et d’heure](https://msdn.microsoft.com/library/windows/apps/hh465466) pour permettre aux utilisateurs de sélectionner des dates dans un calendrier affiché au format par défaut. Dans le cas de scénarios plus complexes nécessitant d’effectuer directement des opérations sur les dates du calendrier, Windows.Globalization propose une classe [**Calendar**](https://msdn.microsoft.com/library/windows/apps/br206724) qui permet de représenter correctement le calendrier selon la culture, la région et le type de calendrier.
 
-    // Create a formatter initialized to a specific currency,
-    // in this case US Dollar (specified as an ISO 4217 code) 
-    // but with the default number formatting for the current user.
-    var currencyFormatUSD = new Windows.Globalization.NumberFormatting.CurrencyFormatter("USD"); 
-    var currencyUSD = currencyFormatUSD.format(fractionalNumber);
+## Mettre correctement en forme les numéros de téléphone
+Les numéros de téléphone affichent une mise en forme différente selon les régions. Le nombre de chiffres, la façon dont ils sont regroupés et la signification de certaines parties du numéro de téléphone varient d’un pays à l’autre. À compter de Windows10, version1607, vous pouvez utiliser [**PhoneNumberFormatting**](https://msdn.microsoft.com/library/windows/apps/Windows.Globalization.PhoneNumberFormatting) pour adapter le format des numéros de téléphone à la région active.
 
-    // Create a formatter initialized to a specific currency.
-    // In this case it's the Euro with the default number formatting for France.
-    var currencyFormatEuroFR = new Windows.Globalization.NumberFormatting.CurrencyFormatter("EUR", ["fr-FR"], "FR");
-    var currencyEuroFR = currencyFormatEuroFR.format(fractionalNumber);
+[**PhoneNumberInfo**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.phonenumberformatting.phonenumberinfo.aspx) permet d’analyser une chaîne de chiffres pour déterminer si elle forme un numéro de téléphone valide dans la région active et de comparer deux nombres pour déterminer s’ils sont égaux. Par ailleurs, il permet d’extraire les différentes parties fonctionnelles du numéro de téléphone, telles que l’indicatif du pays ou d’indicatif régional.
 
-    // Results for display.
-    var results = "Fixed number (" + fractionalNumber + ")\n" +
-                  "With user's default currency: " + currencyDefault + "\n" +
-                  "Formatted US Dollar: " + currencyUSD + "\n" +
-                  "Formatted Euro (fr-FR defaults): " + currencyEuroFR;
-    ```
+[**PhoneNumberFormatter**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.phonenumberformatting.phonenumberformatter.aspx) permet de mettre en forme une chaîne de chiffres ou un élément PhoneNumberInfo en vue de l’afficher, même quand ladite chaîne de chiffres représente un numéro de téléphone partiel. (Vous pouvez utiliser cette mise en forme de numéro partiel pour mettre en forme un numéro à mesure que l’utilisateur le saisit.) 
 
-3.  **Utilisez un calendrier adapté à la culture.**
+Le code ci-dessous montre comment utiliser PhoneNumberFormatter pour mettre en forme un numéro de téléphone à mesure qu’il est saisi. Chaque fois que le texte est modifié dans un TextBox nommé gradualInput, le contenu de la zone de texte est mis en forme en fonction de la région par défaut active et s’affiche dans un TextBlock nommé outBox. À titre de démonstration, la chaîne est également mise en forme pour la région Nouvelle-Zélande et s’affiche dans un TextBlock nommé NZOutBox.
+    
+```csharp
+    using Windows.Globalization;
 
-    Le calendrier peut être différent selon les régions et les langues. Le calendrier grégorien n’est pas le calendrier utilisé par défaut dans toutes les régions. Dans certaines régions, les utilisateurs choisissent parfois d’autres calendriers, comme le calendrier japonais basé sur les ères ou le calendrier lunaire arabe. Les dates et l’heure dans le calendrier dépendent également des fuseaux horaires et de l’heure d’été/hiver.
+    PhoneNumberFormatter currentFormatter, NZFormatter;
 
-    Utilisez les contrôles standard de type [sélecteur de dates et d’heure](https://msdn.microsoft.com/library/windows/apps/hh465466) pour permettre aux utilisateurs de sélectionner des dates dans un calendrier affiché au format par défaut. Dans le cas de scénarios plus complexes nécessitant d’effectuer directement des opérations portant sur les dates du calendrier, Windows.Globalization fournit une classe [**Calendar**](https://msdn.microsoft.com/library/windows/apps/br206724) qui permet de représenter correctement le calendrier selon la culture, la région et le type de calendrier.
+    public MainPage()
+    {
+        this.InitializeComponent();
 
-4.  **Respectez les préférences culturelles et linguistiques de l’utilisateur.**
+        // Use the default formatter for the current region
+        currentFormatter = new PhoneNumberFormatter();
 
-    Pour les scénarios dans lesquels les fonctionnalités offertes varient en fonction des préférences définies par l’utilisateur pour la langue, la région ou la culture, Windows fournit la classe [**Windows.System.UserProfile.GlobalizationPreferences**](https://msdn.microsoft.com/library/windows/apps/br241825) qui permet d’accéder à ces préférences. Si nécessaire, utilisez la classe **GlobalizationPreferences** pour obtenir les préférences actuelles de l’utilisateur (emplacement géographique, langues par défaut, devises par défaut, etc.).
+        // Create an explicit formatter for New Zealand. 
+        // Note that you must check the results of TryCreate before you use the formatter.
+        PhoneNumberFormatter.TryCreate("NZ", out NZFormatter);
 
-## <span id="related_topics"></span>Rubriques connexes
+    }
 
+    private void gradualInput_TextChanged(object sender, TextChangedEventArgs e)
+    {
+        // Format for the default region into outBox.
+        outBox.Text = currentFormatter.FormatPartialString(gradualInput.Text);
+
+        // If the NZFormatter was created successfully, format the partial string for the NZOutBox.
+        if(NZFormatter != null)
+        {
+            NZOutBox.Text = NZFormatter.FormatPartialString(gradualInput.Text);
+        }
+    }
+```    
+
+## Respecter les préférences culturelles et linguistiques de l’utilisateur
+
+Pour les scénarios dans lesquels les fonctionnalités offertes varient en fonction des préférences définies par l’utilisateur pour la langue, la région ou la culture, Windows fournit la classe [**Windows.System.UserProfile.GlobalizationPreferences**](https://msdn.microsoft.com/library/windows/apps/br241825) qui permet d’accéder à ces préférences. Si nécessaire, utilisez la classe **GlobalizationPreferences** pour obtenir les préférences actuelles de l’utilisateur (emplacement géographique, langues par défaut, devises par défaut, etc.).
+
+## Rubriques connexes
 
 * [Planifier en vue d’un marché international](https://msdn.microsoft.com/library/windows/apps/hh465405)
 * [Recommandations en matière de contrôles de date et d’heure](https://msdn.microsoft.com/library/windows/apps/hh465466)
@@ -186,15 +160,9 @@ Le processus d’adaptation d’une application à de nouveaux marchés peut êt
 * [Exemple de mise en forme des dates et heures](http://go.microsoft.com/fwlink/p/?linkid=231618)
 * [Exemple de préférences de globalisation](http://go.microsoft.com/fwlink/p/?linkid=231608)
 * [Exemple de mise en forme et d’analyse des nombres](http://go.microsoft.com/fwlink/p/?linkid=231620)
- 
-
- 
 
 
 
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

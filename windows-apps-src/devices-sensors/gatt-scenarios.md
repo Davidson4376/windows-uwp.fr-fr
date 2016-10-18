@@ -5,7 +5,7 @@ title: Bluetooth GATT
 description: "Cet article fournit une vue d’ensemble du profil d’attribut générique (GATT) Bluetooth pour les applications de plateforme Windows universelle (UWP), ainsi qu’un exemple de code illustrant les troisutilisations communes de GATT."
 translationtype: Human Translation
 ms.sourcegitcommit: 62e97bdb8feb78981244c54c76a00910a8442532
-ms.openlocfilehash: 664f6ce7829c9e9a6674daa6cdc21e7561ff094b
+ms.openlocfilehash: 508acd449c156fa0f5b14298e4a7700748fc65bb
 
 ---
 # Bluetooth GATT
@@ -401,6 +401,6 @@ void MainPage::BatteryLevelChanged(
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

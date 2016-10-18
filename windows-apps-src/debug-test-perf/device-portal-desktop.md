@@ -4,8 +4,8 @@ ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: Device Portal pour Bureau
 description: "Découvrez comment WindowsDevicePortal ouvre les diagnostics et l’automatisation sur votre bureau Windows."
 translationtype: Human Translation
-ms.sourcegitcommit: f09f0233ec11b41989cf52da3c5e8cb37a97b607
-ms.openlocfilehash: 7be27f5fb15676c5330f22995dd044899eddfd3d
+ms.sourcegitcommit: b5d259172a7e3975d48a5ba669cfbe345869aebf
+ms.openlocfilehash: 3436a95124071045c8ec89ed8ddf644ccc80c29f
 
 ---
 # DevicePortal pour Bureau
@@ -74,10 +74,12 @@ Si vous souhaitez sélectionner des numéros de port pour DevicePortal (par exem
     - Port Http: un DWORD requis. Contient le numéro de port que DevicePortal va écouter pour les connexions HTTP.  
     - Port Https: un DWORD requis. Contient le numéro de port que Device Portal va écouter pour les connexions HTTPS.
 
-## Échec d’installation du package Mode développeur
-Parfois, en raison de problèmes réseau ou de compatibilité, le Mode développeur ne s’installe pas correctement. Le package Mode développeur est requis pour le déploiement à distance (DevicePortal et SSH) mais pas pour le développement local.  
+## Échec de l’installation du package Mode développeur ou du lancement de Device Portal
+Parfois, en raison de problèmes réseau ou de compatibilité, le Mode développeur ne s’installe pas correctement. Le package Mode développeur est nécessaire pour le déploiement **à distance** (DevicePortal et SSH), mais pas pour le développement local.  Même si vous rencontrez ces problèmes, vous pouvez toujours déployer votre application localement à l’aide de Visual Studio. 
 
-### Échec de localisation du package
+Voir le forum [Problèmes connus](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) pour rechercher des solutions de contournement à ces problèmes et bien plus encore. 
+
+### Échec de la localisation du package
 
 «Le package Mode développeur n’a pas pu être localisé dans la mise à jour Windows. Code d’erreur 0x001234. En savoir plus»   
 
@@ -106,6 +108,6 @@ Pour résoudre ce problème:
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO5-->
 
 

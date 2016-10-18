@@ -4,20 +4,21 @@ Description: "Une fois que votre application se trouve dans le Windows Store, le
 title: Promotion des applications et implication des clients
 ms.assetid: 86DA61A2-1B84-4B2B-8697-85A75D39A686
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 3511533f76294767ca409b09a718555a6194e451
+ms.sourcegitcommit: 4dec7ebaaeb0bc0dba24002f8cd8a805285de3d6
+ms.openlocfilehash: 1f43cb9fdf633cecf6848a4ef0dd49a0f07f79c3
 
 ---
 
 # Promotion des applications et implication des clients
 
 
-Une fois que votre application se trouve dans le Windows Store, le moment est venu de la promouvoir auprès du plus grand nombre de clients possible. Nous vous proposons plusieurs options pour promouvoir votre application et vous aider à susciter l'intérêt de vos clients.
+Une fois que votre application se trouve dans le Windows Store, le moment est venu de la promouvoir auprès du plus grand nombre de clients possible. Nous vous proposons plusieurs options pour promouvoir vos produits et vous aider à susciter l’intérêt de vos clients.
 
 -   [Créer une campagne de publicité pour votre application](create-an-ad-campaign-for-your-app.md)
 -   [Créer une campagne personnalisée de promotion d’applications](create-a-custom-app-promotion-campaign.md)
 -   [Générer des codes promotionnels](generate-promotional-codes.md)
--   [Commercialiser des applications et produits in-app](put-apps-and-iaps-on-sale.md)
+-   [Commercialiser des applications et composants additionnels](put-apps-and-add-ons-on-sale.md)
+-   [Répondre aux retours des clients](respond-to-customer-feedback.md)
 -   [Répondre aux avis des clients](respond-to-customer-reviews.md)
 -   [Recommandations en matière de marketing adapté aux applications du WindowsStore](app-marketing-guidelines.md)
 -   [Créer un lien vers votre application](link-to-your-app.md)
@@ -29,10 +30,6 @@ Une fois que votre application se trouve dans le Windows Store, le moment est ve
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

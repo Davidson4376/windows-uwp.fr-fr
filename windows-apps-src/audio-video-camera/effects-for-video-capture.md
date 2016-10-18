@@ -1,22 +1,22 @@
 ---
 author: drewbatgit
 ms.assetid: E0189423-1DF3-4052-AB2E-846EA18254C4
-description: "Cette rubrique décrit les effets conçus en vue d’être utilisés pour les scénarios de capture vidéo. Cela inclut l’effet de stabilisation vidéo."
+description: "Cette rubrique vous montre comment utiliser l’effet de stabilisation vidéo."
 title: "Effets de capture vidéo"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 3af5ed7146f2420c2a6d3035c26290cbeaff8375
+ms.sourcegitcommit: 367ab34663d66d8c454ff305c829be66834e4ebe
+ms.openlocfilehash: 3fe7abcc417db76b4375243d66b1c0ecb9092147
 
 ---
 
 # Effets de capture vidéo
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Cette rubrique décrit les effets conçus en vue d’être utilisés pour les scénarios de capture vidéo. Cela inclut l’effet de stabilisation vidéo.
+Cette rubrique vous montre comment utiliser l’effet de stabilisation vidéo.
 
-**Remarque**  
-Cet article repose sur les concepts et sur le code décrits dans [Capturer des photos et des vidéos à l’aide de MediaCapture](capture-photos-and-video-with-mediacapture.md), qui détaille les étapes d’implémentation de capture photo et vidéo de base. Il est recommandé de vous familiariser avec le modèle de capture multimédia de base dans cet article avant de passer à des scénarios de capture plus avancés. Le code de cet article part du principe que votre application possède déjà une instance de MediaCapture initialisée correctement.
+> [!NOTE] 
+> Cet article repose sur les concepts et le code décrits dans [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md), qui décrit comment implémenter la capture photo et vidéo de base. Nous vous recommandons de vous familiariser avec le modèle de capture simple de contenu multimédia de cet article avant d’adopter des scénarios de capture plus avancés. Le code de cet article suppose que votre application possède déjà une instance de MediaCapture correctement lancée.
 
 ## Effet de stabilisation vidéo
 
@@ -34,7 +34,7 @@ Déclarez une variable membre pour stocker l’objet [**VideoStabilizationEffect
 
 [!code-cs[DeclareVideoStabilizationEffect](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDeclareVideoStabilizationEffect)]
 
-Dans l’implémentation de capture vidéo de base décrite dans l’article [Capturer des photos et vidéos à l’aide de MediaCapture](capture-photos-and-video-with-mediacapture.md), l’objet de profil d’encodage multimédia est affecté à une variable locale, car celle-ci n’est utilisée nulle part ailleurs dans le code. Pour ce scénario, vous devez affecter l’objet à une variable membre afin de pouvoir y accéder ultérieurement.
+Pour ce scénario, vous devez attribuer l’objet de profil d’encodage multimédia à une variable membre afin de pouvoir y accéder plus tard.
 
 [!code-cs[EncodingProfileMember](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetEncodingProfileMember)]
 
@@ -58,7 +58,7 @@ Appelez [**VideoDeviceController.SetMediaStreamPropertiesAsync**](https://msdn.m
 
 Si l’effet de stabilisation vidéo doit rogner la vidéo de sortie, les propriétés d’encodage de sortie recommandées auront la taille de la vidéo rognée. Cela signifie que la résolution de sortie correspondra à la taille de la vidéo rognée. Si vous n’utilisez pas les propriétés de sortie recommandées, la vidéo est redimensionnée pour correspondre à la taille initiale de sortie, ce qui se traduit par une perte de fidélité visuelle.
 
-Définissez la propriété [**Video**](https://msdn.microsoft.com/library/windows/apps/hh701124) sur l’objet **MediaEncodingProfile**. Avant de définir les nouvelles propriétés, utilisez la variable membre pour stocker les propriétés d’encodage initiales afin de pouvoir modifier de nouveau les paramètres lorsque l’effet sera désactivé.
+Définissez la propriété [**Video**](https://msdn.microsoft.com/library/windows/apps/hh701124) de l’objet **MediaEncodingProfile**. Avant de définir les nouvelles propriétés, utilisez la variable membre pour stocker les propriétés d’encodage initiales afin de pouvoir modifier de nouveau les paramètres lorsque l’effet sera désactivé.
 
 [!code-cs[SetUpVideoStabilizationRecommendationAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetUpVideoStabilizationRecommendationAsync)]
 
@@ -78,7 +78,8 @@ Pour nettoyer l’effet de stabilisation vidéo, appelez [**ClearEffectsAsync**]
 
 ## Rubriques connexes
 
-* [Capturer des photos et des vidéos à l’aide de MediaCapture](capture-photos-and-video-with-mediacapture.md)
+* [Appareil photo](camera.md)
+* [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
  
 
  
@@ -89,6 +90,6 @@ Pour nettoyer l’effet de stabilisation vidéo, appelez [**ClearEffectsAsync**]
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

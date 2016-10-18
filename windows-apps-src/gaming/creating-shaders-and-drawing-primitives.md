@@ -5,7 +5,7 @@ description: "Nous vous montrons ici comment utiliser les fichiers HLSL sources 
 ms.assetid: 91113bbe-96c9-4ef9-6482-39f1ff1a70f4
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 15b5f83b45b928baaa484c10dc6e7bfe9c27a924
+ms.openlocfilehash: 36ce1c3c0df0dd9dd4f5cf3d31282d5b15050f5c
 
 ---
 
@@ -296,6 +296,6 @@ Nous allons à présent créer un cube 3D en orbite et lui appliquer des effets 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

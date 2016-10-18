@@ -5,7 +5,7 @@ title: "Créer une application de carte à puceNFC"
 description: "Auparavant, Windows Phone8.1 prenait en charge les applications d’émulation de carteNFC à l’aide d’un élément sécurisé sur carte SIM, mais ce modèle nécessitait le couplage fort d’applications de paiement sécurisé avec les opérateurs de réseau mobile."
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 1c131951d725107daffd8286e85c53acd9c0b88a
+ms.openlocfilehash: 52a8be1df522c6b5512a7fe560d01e8d840194af
 
 ---
 # Créer une application de carte à puceNFC
@@ -386,6 +386,6 @@ La prise en charge héritée de l’interception des SMS binaires de Windows Pho
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

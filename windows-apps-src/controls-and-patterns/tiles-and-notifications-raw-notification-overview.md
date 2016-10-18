@@ -6,11 +6,11 @@ ms.assetid: A867C75D-D16E-4AB5-8B44-614EEB9179C7
 label: TBD
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 4b487e44c7acd882a86c0b24dd9994092d976b06
+ms.sourcegitcommit: 2c50b2be763a0cc7045745baeef6e6282db27cc7
+ms.openlocfilehash: 6d0f2460e6b65173445cdf7c1fea207e6bdbd149
 
 ---
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 # Vue d’ensemble des notifications brutes
 
 
@@ -29,7 +29,7 @@ Comme pour les notifications Push par toast, vignette et badge, une notification
 
 Pour donner un exemple d’application pouvant bénéficier de notifications brutes, examinons une application de collaboration documentaire théorique. Considérons deux utilisateurs qui modifient le même document simultanément. Le service cloud qui héberge le document partagé peut utiliser des notifications brutes pour informer chaque utilisateur dès qu’un autre utilisateur apporte des modifications. Les notifications brutes ne doivent pas nécessairement contenir les modifications apportées au document mais doit plutôt inciter chaque copie de l’application de l’utilisateur à contacter l’emplacement central et à synchroniser les modifications disponibles. À l’aide de notifications brutes, l’application et son service cloud peut enregistrer la surcharge inhérente au maintien de connexions permanentes tant que le document reste ouvert.
 
-## <span id="How_raw_notifications_work"></span><span id="how_raw_notifications_work"></span><span id="HOW_RAW_NOTIFICATIONS_WORK"></span>Fonctionnement des notifications brutes
+## Fonctionnement des notifications brutes
 
 
 Toutes les notifications brutes sont des notificationsPush. C’est pourquoi la configuration requise pour envoyer et recevoir des notifications Push concerne également les notifications brutes :
@@ -43,7 +43,7 @@ Si le client est hors connexion, les notifications brutes seront mises en cache 
 
 Il existe trois options de traitement d’une notification brute sur le client : la remise à votre application via un événement de remise de notification, l’envoi à une tâche en arrière-plan ou l’abandon. Par conséquent, si le client est hors connexion et si WNS tente d’émettre une notification brute, la notification est annulée.
 
-## <span id="Creating_a_raw_notification"></span><span id="creating_a_raw_notification"></span><span id="CREATING_A_RAW_NOTIFICATION"></span>Création d’une notification brute
+## Création d’une notification brute
 
 
 L’envoi d’une notification brute est similaire à l’envoi d’une notificationpush par vignette, toast ou badge avec les différences suivantes:
@@ -56,7 +56,7 @@ Les notifications brutes sont des messages brefs conçus pour inciter votre appl
 
 Pour plus d’informations sur l’envoi de notifications Push, voir [Démarrage rapide : envoi d’une notification Push](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252).
 
-## <span id="Receiving_a_raw_notification"></span><span id="receiving_a_raw_notification"></span><span id="RECEIVING_A_RAW_NOTIFICATION"></span>Réception d’une notification brute
+## Réception d’une notification brute
 
 
 Il existe deux méthodes par lesquelles votre application peut recevoir des notifications brutes:
@@ -69,7 +69,7 @@ Une application peut recourir à ces deux mécanismes pour recevoir des notifica
 -   Si l’application est en cours d’exécution, l’événement de remise de notification aura priorité sur la tâche en arrière-plan, et l’application aura l’occasion de traiter la notification.
 -   En définissant la propriété [**PushNotificationReceivedEventArgs.Cancel**](https://msdn.microsoft.com/library/windows/apps/br241297) de l’événement sur **true**, le gestionnaire d’événements de remise de notification peut préciser de ne pas transmettre la notification brute à sa tâche en arrière-plan dès que le gestionnaire se ferme. Si la propriété **Cancel** est définie sur **false** ou n’est pas définie (la valeur par défaut est **false**), la notification brute déclenchera la tâche en arrière-plan une fois le travail du gestionnaire d’événements de remise de notification terminé.
 
-### <span id="notification_delivery_events"></span><span id="NOTIFICATION_DELIVERY_EVENTS"></span>Événements de remise de notification
+### Événements de remise de notification
 
 Votre application peut utiliser un événement de remise de notification ([**PushNotificationReceived**](https://msdn.microsoft.com/library/windows/apps/br241292)) pour recevoir des notifications brutes lorsque l’application est en cours d’utilisation. Quand le service cloud envoie une notification brute, l’application est en cours d’exécution peut la recevoir en gérant l’événement de remise de notification sur l’URI de canal.
 
@@ -87,7 +87,7 @@ Si votre application n’est pas en cours d’exécution et ne fait appel à auc
 
     Pour plus d’informations, voir [En-têtes des demandes et des réponses des services de notifications Push](https://msdn.microsoft.com/library/windows/apps/hh465435).
 
-### <span id="bg_tasks"></span><span id="BG_TASKS"></span>Tâches en arrière-plan déclenchées par des notifications brutes
+### Tâches en arrière-plan déclenchées par des notifications brutes
 
 **Important** Avant d’utiliser des tâches en arrière-plan de notification brute, une application doit bénéficier d’un accès en arrière-plan par le biais d’un élément [**BackgroundExecutionManager.RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485).
 
@@ -108,12 +108,12 @@ Votre tâche en arrière-plan est ensuite appelée en réponse à l’événemen
 
 Pour chaque application, une seule tâche en arrière-plan peut être exécutée à la fois. Si vous déclenchez une tâche en arrière-plan pour une application pour laquelle une tâche en arrière-plan est déjà en cours d’exécution, la première tâche en arrière-plan doit arriver à terme avant que la nouvelle ne soit exécutée.
 
-## <span id="Other_resources"></span><span id="other_resources"></span><span id="OTHER_RESOURCES"></span>Autres ressources
+## Autres ressources
 
 
 Pour plus d’informations, téléchargez l’[exemple de notifications brutes](http://go.microsoft.com/fwlink/p/?linkid=241553) pour Windows8.1 et l’[exemple de notifications Push et périodiques](http://go.microsoft.com/fwlink/p/?LinkId=231476) pour Windows8.1, puis réutilisez leur code source dans votre application Windows10.
 
-## <span id="related_topics"></span>Rubriques connexes
+## Rubriques connexes
 
 
 * [Recommandations en matière de notifications brutes](https://msdn.microsoft.com/library/windows/apps/hh761463)
@@ -131,6 +131,6 @@ Pour plus d’informations, téléchargez l’[exemple de notifications brutes](
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

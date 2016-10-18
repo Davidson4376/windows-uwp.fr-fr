@@ -1,21 +1,25 @@
 ---
 author: mijacobs
-Description: Dialogs and flyouts display transient UI elements that appear when the user requests them or when something happens that requires notification or approval.
-title: Dialogs and flyouts
+Description: "Les boîtes de dialogue et les menus volants affichent des éléments temporaires d’interface utilisateur quand l’utilisateur les sollicite ou quand un événement nécessite une notification ou une approbation."
+title: "Boîtes de dialogue et menus volants"
 label: Dialogs
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: ff9940c06276165dc139e120c4e9cdeb005ff125
+
 ---
+# Boîtes de dialogue et menus volants
+
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-# Dialogs and flyouts
-
-Dialogs and flyouts are transient UI elements that appear when something happens that requires notification, approval, or additional information from the user.
+Les boîtes de dialogue et les menus volants sont des éléments temporaires d’interface utilisateur qui s’affichent quand un événement se produit qui nécessite une notification, une approbation ou d’autres informations de l’utilisateur.
 
 <div class="important-apis" >
-<b>Important APIs</b><br/>
+<b>API importantes</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx">ContentDialog class</a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/dn279496">Flyout class</a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx">Classe ContentDialog</a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/dn279496">Classe Flyout</a></li>
 </ul>
 
 </div>
@@ -43,40 +47,40 @@ Dialogs and flyouts are transient UI elements that appear when something happens
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-   <p><b>Dialogs</b> <br/><br/>
-   ![Example of a full-button dialog](images/controls_dialog_twobutton.png)</p>
-<p>Dialogs are modal UI overlays that provide contextual app information. Dialogs block interactions with the app window until being explicitly dismissed. They often request some kind of action from the user.   
+   <p><b>Boîtes de dialogue</b> <br/><br/>
+   ![Exemple de boîte de dialogue à plusieurs boutons](images/controls_dialog_twobutton.png)</p>
+<p>Les boîtes de dialogue sont des superpositions d’interface utilisateur modales qui fournissent des informations contextuelles sur l’application. Les boîtes de dialogue bloquent les interactions avec la fenêtre de l’application jusqu’à ce qu’elles soient masquées explicitement. Elles exigent souvent une forme d’action de la part de l’utilisateur.   
 </p><br/>
 
   </div>
   <div class="side-by-side-content-right">
-   <p><b>Flyouts</b> <br/><br/>
-   ![Example of a flyout](images/flyout-example.png)</p>
-<p>A flyout is a lightweight contextual popup that displays UI related to what the user is doing. It includes placement and sizing logic, and can be used to reveal a hidden control, show more detail about an item, or ask the user to confirm an action. 
-</p><p>Unlike a dialog, a flyout can be quickly dismissed by tapping or clicking somewhere outside the flyout, pressing the Escape key or Back button, resizing the app window, or changing the device's orientation.
+   <p><b>Menus volants</b> <br/><br/>
+   ![Exemple de menu volant](images/flyout-example.png)</p>
+<p>Un menu volant est une fenêtre contextuelle légère qui affiche l’interface utilisateur liée aux opérations qu’effectue l’utilisateur. Il comprend une logique de placement et de dimensionnement, et peut être utilisé pour afficher un contrôle masqué, des détails supplémentaires sur un élément, ou pour demander à l’utilisateur de confirmer une action. 
+</p><p>Contrairement à une boîte de dialogue, un menu volant peut être fermé rapidement en appuyant ou en cliquant en dehors du menu volant, en appuyant sur la touche ÉCHAP ou le bouton Précédent, en redimensionnant la fenêtre d’application ou en modifiant l’orientation de l’appareil.
 </p><br/>
 
   </div>
 </div>
 </div>
 
-## Is this the right control?
+## Est-ce le contrôle approprié?
 
-* Use dialogs and flyouts to notify users of important information or to request confirmation or additional info before an action can be completed. 
-* Don't use a flyout instead of [tooltip](tooltips.md) or [context menu](menus.md). Use a tooltip to show a short description that hides after a specified time. Use a context menu for contextual actions related to a UI element, such as copy and paste.  
-
-
-Dialogs and flyouts make sure that users are aware of important information, but they also disrupt the user experience. Because dialogs are modal (blocking), they interupt users, preventing them from doing anything else until they interact with the dialog. Flyouts provide a less jarring experience, but displaying too many flyouts can be distracting. 
-
-Consider the importance of the information you want to share: is it important enough to interupt the user? Also consider how frequently the information needs to be shown; if you're showing a dialog or notification every few minutes, you might want to allocate space for this info in the primary UI instead. For example, in a chat client, rather than showing a flyout every time a friend logs in, you might display a list of friends who are online at the moment and highlight friends as they log on. 
-
-Flyouts and dialogs are frequently used to confirm an action (such as deleting a file) before executing it. If you expect the user to perform a particular action frequently, consider providing a way for the user to undo the action if it was a mistake, rather than forcing users to confirm the action every time. 
+* Utilisez les boîtes de dialogue et les menus volants pour notifier les utilisateurs d’informations importantes ou pour demander une confirmation ou des informations supplémentaires avant de pouvoir effectuer une action. 
+* N’utilisez pas de menu volant à la place d’une [info-bulle](tooltips.md) ou d’un [menu contextuel](menus.md). Utilisez une info-bulle pour afficher une brève description qui disparaît après une durée spécifiée. Utilisez un menu contextuel pour les actions contextuelles liées à un élément de l’interface utilisateur, comme copier et coller.  
 
 
+Les boîtes de dialogue et les menus volants permettent aux utilisateurs de prendre connaissance d’informations importantes, mais elles perturbent également l’expérience utilisateur. Les boîtes de dialogue étant modales (bloquantes), elles interrompent les utilisateurs et les empêchent de faire autre chose tant qu’ils n’interagissent pas avec la boîte de dialogue. Les menus volants sont moins dérangeants, mais si vous en affichez trop, vous perturbez également l’utilisateur. 
 
-## Dialogs vs. flyouts
+Mesurez l’importance des informations à partager: sont-elles suffisamment importantes pour interrompre l’utilisateur? Évaluez également la fréquence à laquelle les informations doivent être affichées. Si vous affichez une boîte de dialogue ou une notification toutes les 5minutes, vous pouvez peut-être plutôt leur allouer un emplacement dans l’interface utilisateur principale. Par exemple, dans un client de chat, au lieu d’afficher un menu volant chaque fois qu’un ami se connecte, vous pouvez afficher la liste des amis en ligne sur le moment et mettre en évidence les amis quand ils se connectent. 
 
-Once you've determined that you want to use a dialog or flyout, you need to choose which one to use. 
+Les menus volants et les boîtes de dialogue sont fréquemment utilisés pour confirmer une action (par exemple, la suppression d’un fichier) avant de l’exécuter. Si vous voulez que l’utilisateur effectue souvent une action particulière, fournissez un moyen d’annuler l’action quand il fait une erreur plutôt que de forcer l’utilisateur à confirmer l’action chaque fois. 
+
+
+
+## Comparaison des boîtes de dialogue et des menus volants
+
+Une fois que vous avez déterminé que vous voulez utiliser une boîte de dialogue ou un menu volant, vous devez choisir lequel utiliser. 
 
 <!--
 Dialogs are modal, which means they block all interaction with the app until the user selects a dialog button. To visually reinforce their modal behavior, dialogs draw an overlay layer which partially obscures the temporarily unreachable app UI.
@@ -91,34 +95,34 @@ A flyout is a light dismiss control, meaning that users can choose from a variet
 
 -->
 
-Given that dialogs block interactions and flyouts do not, dialogs should be reserved for situations where you want the user to drop everything to focus on a specific bit of information or answer a question. Flyouts, on the other hand, can be used when you want to call attention to something, but it's ok if the user wants to ignore it. 
+Étant donné que les boîtes de dialogue bloquent les interactions contrairement aux menus volants, elles doivent être réservées aux situations dans lesquelles vous voulez que l’utilisateur interrompe tout ce qu’il est en train de faire pour se concentrer sur une information particulière ou répondre à une question. Les menus volants, quant à eux, peuvent être utilisés quand vous voulez attirer l’attention de l’utilisateur sur quelque chose, mais qu’il a la possibilité de l’ignorer. 
 
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-   <p><b>Use a dialog for...</b> <br/>
+   <p><b>Utilisez une boîte de dialogue pour...</b> <br/>
 <ul>
-<li>Expressing important information that the user **must** read and acknowledge before proceeding. Examples include:
+<li>Afficher des informations importantes que l’utilisateur **doit** lire et accepter avant de poursuivre. Par exemple:
 <ul>
-  <li>When the user's security might be compromised</li>
-  <li>When the user is about to permanently alter a valuable asset</li>
-  <li>When the user is about to delete a valuable asset</li>
-  <li>To confirm an in-app purchase</li>
+  <li>Utilisez ce type de contrôle pour indiquer à l’utilisateur toute situation d’atteinte possible à la sécurité.</li>
+  <li>Utilisez ce type de contrôle pour signaler à l’utilisateur qu’il s’apprête à modifier de manière irrémédiable un élément utile.</li>
+  <li>Utilisez ce type de contrôle pour signaler à l’utilisateur qu’il s’apprête à supprimer un élément utile.</li>
+  <li>Pour confirmer un achat dans l’application</li>
 </ul>
 
 </li>
-<li>Error messages that apply to the overall app context, such as a connectivity error.</li>
-<li>Questions, when the app needs to ask the user a blocking question, such as when the app can't choose on the user's behalf. A blocking question can't be ignored or postponed, and should offer the user well-defined choices.</li>
+<li>Les messages d’erreur qui s’appliquent au contexte global de l’application, liés par exemple à une erreur de connectivité.</li>
+<li>Utilisez une boîte de dialogue à question pour indiquer que l’application doit poser à l’utilisateur une question bloquante, parce qu’elle ne peut pas choisir telle ou telle option à la place de l’utilisateur, par exemple. Une question bloquante ne peut pas être ignorée ni reportée, et doit offrir à l’utilisateur des options clairement définies.</li>
 </ul> 
 </p>
   </div>
   <div class="side-by-side-content-right">
-   <p><b>Use a flyout for...</b> <br/>
+   <p><b>Utilisez un menu volant pour...</b> <br/>
 <ul>
-<li>Collecting additional information needed before an action can be completed.</li>
-<li>Displaying info that's only relevent some of the time. For example, in a photo gallery app, when the user clicks an image thumbnail, you might use a flyout to display a large version of the image.</li>
-<li>Warnings and confirmations, including ones related to potentially destructive actions.</li>
-<li>Displaying more information, such as details or longer descriptions of an item on the page.</li>
+<li>Collecter des informations supplémentaires nécessaires pour pouvoir effectuer une action.</li>
+<li>Afficher des informations qui ne sont pas pertinentes le reste du temps. Par exemple, dans une application de galerie de photos, quand l’utilisateur clique sur une vignette d’image, vous pouvez utiliser un menu volant pour afficher une version agrandie de l’image.</li>
+<li>Afficher des avertissements et des confirmations, notamment ceux qui sont liés à des actions potentiellement destructrices.</li>
+<li>Afficher plus d’informations, comme des détails ou des descriptions plus longues concernant un élément de la page.</li>
 </ul></p>
   </div>
 </div>
@@ -126,24 +130,24 @@ Given that dialogs block interactions and flyouts do not, dialogs should be rese
 
 
 
-## Dialog usage guidelines
+## Instructions d’utilisation des boîtes de dialogue
 
--   Clearly identify the issue or the user's objective in the first line of the dialog's text.
--   The dialog title is the main instruction and is optional.
-    -   Use a short title to explain what people need to do with the dialog. Long titles do not wrap and are truncated.
-    -   If you're using the dialog to deliver a simple message, error or question, you can optionally omit the title. Rely on the content text to deliver that core information.
-    -   Make sure that the title relates directly to the button choices.
--   The dialog content contains the descriptive text and is required.
-    -   Present the message, error, or blocking question as simply as possible.
-    -   If a dialog title is used, use the content area to provide more detail or define terminology. Don't repeat the title with slightly different wording.
--   At least one dialog button must appear.
-    -   Buttons are the only mechanism for users to dismiss the dialog.
-    -   Use buttons with text that identifies specific responses to the main instruction or content. An example is, "Do you want to allow AppName to access your location?", followed by "Allow" and "Block" buttons. Specific responses can be understood more quickly, resulting in efficient decision making.
--   Error dialogs display the error message in the dialog box, along with any pertinent information. The only button used in an error dialog should be “Close” or a similar action.
--   Don't use dialogs for errors that are contextual to a specific place on the page, such as validation errors (in password fields, for example), use the app's canvas itself to show inline errors.
+-   Identifiez clairement le problème ou l’objectif de l’utilisateur dans la première ligne du texte de la boîte de dialogue.
+-   Le titre de la boîte de dialogue correspond à l’instruction principale. Il est facultatif.
+    -   Utilisez un titre court pour expliquer l’utilisation de cette boîte de dialogue. Les titres longs ne sont pas renvoyés à la ligne et sont tronqués.
+    -   Si la boîte de dialogue est destinée à indiquer un message, une erreur ou une question simple, vous pouvez ne pas indiquer de titre. Appuyez-vous sur le texte du contenu pour fournir les informations essentielles.
+    -   Assurez-vous que le titre est directement lié aux options des boutons.
+-   Le contenu de la boîte de dialogue inclut le texte descriptif. Il est requis.
+    -   Présentez le message, l’erreur ou la question bloquante aussi simplement que possible.
+    -   Si vous indiquez un titre dans la boîte de dialogue, la zone de contenu doit fournir des détails supplémentaires ou clarifier la terminologie utilisée. Ne répétez pas le titre en utilisant une formulation légèrement différente.
+-   Au moins un bouton de boîte de dialogue doit apparaître.
+    -   Les boutons sont le seul mécanisme permettant aux utilisateurs d’abandonner la boîte de dialogue.
+    -   Utilisez des boutons dont le texte identifie des réponses spécifiques au contenu ou à l’instruction principale. Par exemple, utilisez la question « Autorisez-vous NomApplication à accéder à votre emplacement ? », suivie des boutons Autoriser et Bloquer. Les réponses spécifiques peuvent être comprises plus rapidement, ce qui favorise une prise de décision efficace.
+-   Les boîtes de dialogue d’erreur incluent un message d’erreur, ainsi que les informations pertinentes. Le seul bouton utilisé dans une boîte de dialogue d’erreur doit être du type « Fermer », ou similaire.
+-   N’utilisez pas de boîtes de dialogue pour les erreurs qui sont liées à un emplacement spécifique de la page, telles que les erreurs de validation (dans les champs de mot de passe, par exemple). Utilisez plutôt le canevas de l’application afin d’afficher les erreurs insérées.
 
-## Create a dialog
-To create a dialog, you use the [ContentDialog class](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx). You can create a dialog in code or markup. Although its usually easier to define UI elements in XAML, in the case of a simple dialog, it's actually easier to just use code. This example creates a dialog to notify the user that there's no WiFi connection, and then uses the [ShowAsync](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialog.showasync.aspx) method to display it.
+## Créer une boîte de dialogue
+Pour créer une boîte de dialogue, vous utilisez la [classe ContentDialog](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx). Vous pouvez créer une boîte de dialogue dans le code ou dans le balisage. Bien qu’il soit généralement plus facile de définir des éléments d’interface utilisateur en XAML, dans le cas d’une boîte de dialogue simple, il est plus facile d’utiliser du code normal. Cet exemple crée une boîte de dialogue pour informer l’utilisateur qu’il n’y a pas de connexion Wi-Fi, puis utilise la méthode [ShowAsync](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialog.showasync.aspx) pour l’afficher.
 
 ```csharp
 private async void displayNoWifiDialog()
@@ -159,9 +163,9 @@ private async void displayNoWifiDialog()
 }
 ```
 
-When the user clicks a dialog button, the [ShowAsync](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialog.showasync.aspx) method returns a [ContentDialogResult](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialogresult.aspx) to let you know which button the user clicks. 
+Quand l’utilisateur clique sur un bouton de la boîte de dialogue, la méthode [ShowAsync](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialog.showasync.aspx) retourne un [ContentDialogResult](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialogresult.aspx) pour indiquer le bouton sur lequel l’utilisateur clique. 
 
-The dialog in this example asks a question and uses the returned [ContentDialogResult](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialogresult.aspx) to determine the user's response. 
+Dans cet exemple, la boîte de dialogue pose une question et utilise le [ContentDialogResult](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialogresult.aspx) retourné pour déterminer la réponse de l’utilisateur. 
 
 ```csharp
 private async void displayDeleteFileDialog()
@@ -186,13 +190,13 @@ private async void displayDeleteFileDialog()
 ```
 
 
-##  Create a flyout
+##  Créer un menu volant
 
-A flyout is an open-ended container that can show arbitrary UI as its content.  
+Un menu volant est un conteneur ouvert qui peut afficher l’interface utilisateur arbitraire comme étant son contenu.  
 
-Flyouts are attached to specific controls. You can use the [Placement](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.placement.aspx) property to specify where flyout appears: Top, Left, Bottom, Right, or Full. If you select the [Full placement mode](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutplacementmode.aspx), the app stretches the flyout and centers it inside the app window. When visible, they should be anchored to the invoking object and specify their preferred relative position to the object: Top, Left, Bottom, or Right. Flyout also has a Full placement mode which attempts to stretch the flyout and center it inside the app window. Some controls, such as [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx), provide a [Flyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx) property that you can use to associate a flyout. 
+Les menus volants sont attachés à des contrôles spécifiques. Vous pouvez utiliser la propriété [Placement](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.placement.aspx) pour spécifier l’emplacement où s’affiche le menu volant: Haut, Gauche, Bas, Droite ou Plein. Si vous sélectionnez le [mode de placement Plein](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutplacementmode.aspx), l’application étire le menu volant et le centre dans la fenêtre d’application. Quand ils sont visibles, les menus volants doivent être ancrés à l’objet appelant et spécifier leur position relative préférée par rapport à l’objet: Haut, Gauche, Bas ou Droite. Le menu volant dispose également d’un mode de placement complet qui tente d’étirer le menu volant et de le centrer à l’intérieur de la fenêtre d’application. Certains contrôles, tels que [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx), fournissent une propriété [Flyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx) que vous pouvez utiliser pour associer un menu volant. 
 
-This example creates a simple flyout that displays some text when the button is pressed. 
+Cet exemple crée un menu volant simple qui affiche du texte quand l’utilisateur appuie sur le bouton. 
 ````xaml
 <Button Content="Click me">
   <Button.Flyout>
@@ -203,9 +207,9 @@ This example creates a simple flyout that displays some text when the button is 
 </Button>
 ````
 
-If the control doesn't have a flyout property, you can use the [FlyoutBase.AttachedFlyout](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx) attached property instead. When you do this, you also need to call the [FlyoutBase.ShowAttachedFlyout](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.showattachedflyout) method to show the flyout. 
+Si le contrôle n’a pas de propriété Flyout, vous pouvez utiliser à la place la propriété [FlyoutBase.AttachedFlyout](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx) jointe. Dans ce cas, vous devez également appeler la méthode [FlyoutBase.ShowAttachedFlyout](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.showattachedflyout) pour afficher le menu volant. 
 
-This example adds a simple flyout to an image. When the user taps the image, the app shows the flyout. 
+Cet exemple ajoute un menu volant simple à une image. Quand l’utilisateur appuie sur l’image, l’application affiche le menu volant. 
 
 ````xaml
 <Image Source="Assets/cliff.jpg" Width="50" Height="50" 
@@ -225,7 +229,7 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 }
 ````
 
-The previous examples defined their flyouts inline. You can also define a flyout as a static resource and then use it with multiple elements. This example creates a more complicated flyout that displays a larger version of an image when its thumbnail is tapped. 
+Les exemples précédents ont défini des menus volants insérés. Vous pouvez également définir un menu volant en tant que ressource statique, puis l’utiliser avec plusieurs éléments. Cet exemple crée un menu volant plus compliqué qui affiche une version agrandie d’une image quand l’utilisateur appuie sur sa vignette. 
 
 ````xaml
 <!-- Declare the shared flyout as a resource. -->
@@ -274,8 +278,8 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 }
 ````
 
-## Style a flyout
-To style a Flyout, modify its [FlyoutPresenterStyle](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flyout.flyoutpresenterstyle.aspx). This example shows a paragraph of wrapping text and makes the text block accessible to a screen reader.
+## Appliquer un style à un menu volant
+Pour appliquer un style à un menu volant, modifiez sa propriété [FlyoutPresenterStyle](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flyout.flyoutpresenterstyle.aspx). Cet exemple montre un paragraphe d’habillage de texte et rend le bloc de texte accessible à un lecteur d’écran.
 
 ````xaml
 <Flyout>
@@ -292,12 +296,18 @@ To style a Flyout, modify its [FlyoutPresenterStyle](https://msdn.microsoft.com/
 </Flyout>
 ````
 
-## Get the samples
-*   [XAML UI basics](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)<br/>
-    See all of the XAML controls in an interactive format.
+## Obtenir les exemples
+*   [Informations de base sur l’interface utilisateur XAML](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)<br/>
+    Affichez tous les contrôles XAML dans un format interactif.
 
-## Related articles
-- [Tooltips](tooltips.md)
-- [Menus and context menu](menus.md)
-- [**Flyout class**](https://msdn.microsoft.com/library/windows/apps/dn279496)
-- [**ContentDialog class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx)
+## Articles connexes
+- [Info-bulles](tooltips.md)
+- [Menus et menus contextuels](menus.md)
+- [**Classe Flyout**](https://msdn.microsoft.com/library/windows/apps/dn279496)
+- [**Classe ContentDialog**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx)
+
+
+
+<!--HONumber=Aug16_HO3-->
+
+

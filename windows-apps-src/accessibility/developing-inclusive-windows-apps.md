@@ -6,20 +6,19 @@ title: "Développement d’applications Windows10 inclusives"
 label: Developing inclusive Windows 10 apps
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 826c6984962ecbe3b49ba3753e9cc795344f5057
+ms.sourcegitcommit: 9f68c2bdc92bfbdbc8328e4df161f7ecdfccf8e5
+ms.openlocfilehash: 19c90991ab86383fa259b05460cbd656d408e977
 
 ---
 
 # Développement d’applications Windows inclusives  
 
-Apprenez à développer des applications UWPWindows10 accessibles qui incluent la navigation au clavier, les paramètres de couleur et de contraste et la prise en charge des technologies d’assistance.
-
-Cet article traite du développement d’applications de plateforme Windows universelle (UWP). Plus précisément, il part du principe que vous comprenez comment concevoir la hiérarchie logique de votre application.  
+Cet article traite du développement d’applications de plateforme Windows universelle (UWP). Plus précisément, il part du principe que vous comprenez comment concevoir la hiérarchie logique de votre application. Apprenez à développer des applications UWPWindows10 accessibles qui incluent la navigation au clavier, les paramètres de couleur et de contraste et la prise en charge des technologies d’assistance.
 
 Si vous ne l’avez pas encore fait, commencez par lire [Conception de logiciels inclusifs](designing-inclusive-software.md).
 
-Voici trois opérations à effectuer pour vous assurer que votre application est accessible :
+Voici trois opérations à effectuer pour vérifier que votre application est accessible:
+
 1. Exposer vos éléments d’interface utilisateur pour [un accès par programme](#programmatic-access).
 2. Assurez-vous que votre application prend en charge la [navigation au clavier](#keyboard-navigation) pour les personnes qui ne parviennent pas à utiliser de souris ou d’écran tactile.
 3. Assurez-vous que votre application prend en charge les paramètres de [couleur et de contraste](#color-and-contrast) accessibles.
@@ -53,7 +52,7 @@ XAML
 ```xml
 <Button Background="{ThemeResource ButtonBackgroundThemeBrush}">OK</Button>
 ```
-Pour plus d’informations sur l’utilisation des couleurs système et des ressources, voir [Ressources de thème XAML](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/xaml-theme-resources).
+Pour plus d’informations sur l’utilisation des couleurs système et des ressources, voir [Ressources de thème XAML](../controls-and-patterns/xaml-theme-resources.md).
 
 Tant que vous n’avez pas remplacé les couleurs système, une application UWP prend en charge les thèmes à contraste élevé par défaut. Si un utilisateur a décidé que le système doit utiliser un thème à contraste élevé parmi les outils d’accessibilité ou les paramètres système, l’infrastructure utilise automatiquement des couleurs et des paramètres de style produisant une disposition à contraste élevé et un rendu pour les contrôles et les composants de l’interface utilisateur.   
 
@@ -66,7 +65,8 @@ Si vous avez décidé d’utiliser votre propre thème de couleur au lieu des co
 **Combinaisons de couleurs**: environ 7% des hommes (et moins de 1% des femmes) souffrent de problèmes de perception des couleurs. Les utilisateurs daltoniens ont des difficultés à distinguer certaines couleurs, il est donc important de ne pas se servir uniquement de la couleur pour communiquer un état ou une idée. Comme pour les images décoratives (par exemple, les icônes ou les arrière-plans), les combinaisons de couleurs doivent être choisies de manière à optimiser la perception de l’image par les utilisateurs daltoniens.  
 
 ## Liste de vérification de l’accessibilité  
-Voici une version abrégée de la liste de vérification de l’accessibilité:  
+Voici une version abrégée de la liste de vérification de l’accessibilité:
+
 1. Définissez le nom accessible (obligatoire) et la description accessible (facultative) du contenu et des éléments d’interface utilisateur interactifs de votre application.
 2. Mettez en œuvre l’accessibilité du clavier:
 3. Vérifiez visuellement votre interface utilisateur pour vous assurer que le contraste du texte est suffisant, que le rendu des éléments est correct dans les thèmes à contraste élevé et que les couleurs sont utilisées correctement.
@@ -82,9 +82,10 @@ Pour en savoir plus, consultez la rubrique [Liste de vérification de l’access
 * [Pratiques d’accessibilité à éviter](practices-to-avoid.md)
 * [Conception de logiciels accessibles](https://www.microsoft.com/download/details.aspx?id=19262)
 * [Hub de développeurs axés sur l’accessibilité Microsoft](https://msdn.microsoft.com/enable)
+* [Accessibilité](accessibility.md)
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

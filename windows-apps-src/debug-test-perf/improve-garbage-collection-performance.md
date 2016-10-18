@@ -5,7 +5,7 @@ title: "Améliorer les performances du nettoyage de la mémoire"
 description: "Les applications de plateforme Windows universelle (UWP) écrites en C# et Visual Basic bénéficient de la gestion automatique de la mémoire du récupérateur de mémoire .NET. Cette section résume les meilleures pratiques en termes de comportement et de performance du récupérateur de mémoire .NET pour les applications UWP."
 translationtype: Human Translation
 ms.sourcegitcommit: 5f9626c644315884ea8605a4e69e7e580a44010b
-ms.openlocfilehash: 3fb6a0469a0e7488c40fc03bce8c90780b524656
+ms.openlocfilehash: 32290820d4732f1a8b28fd18682514e3948e0356
 
 ---
 # Améliorer les performances du nettoyage de la mémoire
@@ -84,6 +84,6 @@ Le remplacement des références d’objet par des index peut représenter un ch
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

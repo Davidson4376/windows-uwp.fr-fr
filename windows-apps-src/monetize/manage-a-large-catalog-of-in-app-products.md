@@ -4,15 +4,17 @@ ms.assetid: 5E722AFF-539D-456E-8C4A-ADE90CF7674A
 description: "Si votre application propose un vaste catalogue de produits intégrés à l’application, vous pouvez éventuellement suivre la procédure décrite dans cette rubrique pour faciliter la gestion de votre catalogue."
 title: "Gérer un vaste catalogue de produits intégrés à l’application"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 0927df3cd696e5a6fbd3a235d2b87074f1d63929
+ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
+ms.openlocfilehash: 529735319848fc0b8fac12e51b8536b178db0646
 
 ---
 
-# Gérer un vaste catalogue de produits intégrés à l’application
+# Gérer un grand catalogue de produits in-app
 
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+
+
+>**Remarque**&nbsp;&nbsp;Cet article montre comment utiliser les membres de l’espace de noms [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx). Si votre application cible Windows10, version1607 ou ultérieure, nous vous recommandons d’utiliser des membres de l’espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) pour gérer les extensions (également appelées produits in-app ou PIA) plutôt que l’espace de noms **Windows.ApplicationModel.Store**. Pour plus d’informations, voir [Versions d’évaluation et achats in-app](in-app-purchases-and-trials.md).
 
 Si votre application propose un vaste catalogue de produits in-app, vous pouvez éventuellement suivre la procédure décrite dans cette rubrique pour faciliter la gestion de votre catalogue. Cette solution vous permet de ne créer que quelques références de produits pour des fourchettes de prix spécifiques, chacune d’elles pouvant représenter des centaines de produits dans un catalogue.
 
@@ -26,7 +28,7 @@ Le WindowsStore utilisera uniquement l’*offerId* provenant de la demande d’a
 
 -   Cette rubrique couvre la prise en charge par le Windows Store de la représentation de plusieurs offres in-app à l’aide d’un simple produit in-app listé dans le Windows Store. Si vous ne connaissez pas les achats dans l’application, passez en revue la section [Activer les achats de produits dans l’application](enable-in-app-product-purchases.md) pour en savoir plus sur les informations relatives aux licences et pour savoir comment répertorier correctement dans le WindowsStore votre achat dans l’application.
 -   Lorsque vous codez et testez de nouvelles offres intégrées à l’application pour la première fois, vous devez utiliser l’objet [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) au lieu de l’objet [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765). Cela vous permet de vérifier votre logique de licence à l’aide d’appels simulés au serveur de licences au lieu d’appels au serveur Live. Pour ce faire, vous devez personnaliser le fichier WindowsStoreProxy.xml dans %userprofile%\\AppData\\local\\packages\\&lt;package name&gt;\\LocalState\\Microsoft\\Windows Store\\ApiData. Le simulateur Microsoft VisualStudio crée ce fichier quand vous exécutez votre application pour la première fois. Vous pouvez également charger un fichier personnalisé au moment de l’exécution. Pour plus d’informations, voir **CurrentAppSimulator**.
--   Cette rubrique fait également référence à des exemples de code fournis dans l’[exemple du WindowsStore](http://go.microsoft.com/fwlink/p/?LinkID=627610). Cet exemple représente un excellent moyen d’obtenir une expérience pratique avec les différentes options de monétisation fournies pour les applications UWP.
+-   Cette rubrique fait également référence à des exemples de code fournis dans l’[exemple du WindowsStore](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store). Cet exemple représente un excellent moyen d’obtenir une expérience pratique avec les différentes options de monétisation fournies pour les applications UWP.
 
 ## Effectuer une demande d’achat d’un produit in-app
 
@@ -112,12 +114,12 @@ switch (result)
 
 * [Activer les achats de produits dans l’application](enable-in-app-product-purchases.md)
 * [Activer l’achat de produits in-app consommables](enable-consumable-in-app-product-purchases.md)
-* [Exemple du Windows Store (montre des versions d’évaluation et des achats in-app)](http://go.microsoft.com/fwlink/p/?LinkID=627610)
+* [Exemple du Windows Store (montre des versions d’évaluation et des achats in-app)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
 * [**RequestProductPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/dn263382)
 * [**ProductPurchaseDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/dn263384)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

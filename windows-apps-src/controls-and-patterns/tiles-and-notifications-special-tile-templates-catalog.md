@@ -6,11 +6,11 @@ ms.assetid: 1322C9BA-D5B2-45E2-B813-865884A467FF
 label: TBD
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: ab7366b8b3cbf75f1f7e9fe35ca83077ac21d081
+ms.sourcegitcommit: 2c50b2be763a0cc7045745baeef6e6282db27cc7
+ms.openlocfilehash: b03ea68ea2a0f66edac81a4c7e2671b2f756aa45
 
 ---
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 # Modèles de vignette spéciaux
 
 
@@ -19,14 +19,14 @@ ms.openlocfilehash: ab7366b8b3cbf75f1f7e9fe35ca83077ac21d081
 
 Les modèles de vignette spéciaux sont des modèles uniques qui sont animés, ou qui vous permettent simplement d’effectuer des opérations qui ne sont pas possibles avec des vignettes adaptatives. Chaque modèle de vignette spécial a été spécifiquement conçu pour Windows 10, sauf pour le modèle de vignette Icônes, modèle spécial classique qui a été mis à jour pour Windows 10. Cet article traite des trois modèles de vignette spéciaux: Icônes, Photos et Contacts.
 
-## <span id="Iconic_tile_template"></span><span id="iconic_tile_template"></span><span id="ICONIC_TILE_TEMPLATE"></span>Modèle de vignette Icônes
+## Modèle de vignette Icônes
 
 
 Le modèle Icônes (également connu sous le nom de modèle «IconWithBadge») vous permet d’afficher une petite image dans le centre de la vignette. Windows10 prend en charge le modèle à la fois sur les téléphones et sur les tablettes/ordinateurs de bureau.
 
 ![Vignettes de courrier petites et moyennes](images/iconic-template-mail-2sizes.png)
 
-### <span id="How_to_create_an_iconic_tile"></span><span id="how_to_create_an_iconic_tile"></span><span id="HOW_TO_CREATE_AN_ICONIC_TILE"></span>Comment créer une vignette Icônes
+### Comment créer une vignette Icônes
 
 Les étapes suivantes couvrent tout ce que vous devez savoir pour créer une vignette Icônes pour Windows10. D’un point de vue général, vous avez besoin de la ressource de votre image d’icône, puis vous envoyez une notification à la vignette à l’aide du modèle Icônes, et enfin vous envoyez une notification de badge qui fournit le numéro devant être affiché sur la vignette.
 
@@ -91,14 +91,14 @@ L’image suivante illustre la façon dont les différentes API et charges utile
 
 ![API et charges utiles associées au modèle de vignette Icônes](images/iconic-template-properties-info.png)
 
-## <span id="Photos_tile_template"></span><span id="photos_tile_template"></span><span id="PHOTOS_TILE_TEMPLATE"></span>Modèle de vignette Photos
+## Modèle de vignette Photos
 
 
 Le modèle de vignette Photos vous permet d’afficher un diaporama de photos sur votre vignette dynamique. Le modèle est pris en charge sur toutes les tailles de vignettes, y compris les petites, et se comporte de la même façon sur chacune des tailles. L’exemple ci-dessous montre cinq images de vignette moyenne qui utilisent le modèle Photos. Le modèle comprend un zoom et une animation en fondu enchaîné qui fait défiler les photos sélectionnées et s’exécute en boucle indéfiniment.
 
 ![Diaporama d’images à l’aide du modèle de vignette Photos](images/photo-tile-template-image01.jpg)
 
-### <span id="How_to_use_the_photos_template"></span><span id="how_to_use_the_photos_template"></span><span id="HOW_TO_USE_THE_PHOTOS_TEMPLATE"></span>Comment utiliser le modèle Photos
+### Comment utiliser le modèle Photos
 
 L’utilisation du modèle Photos est simple si vous avez installé la [version Windows10 de NotificationExtensions](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/08/20/introducing-notificationsextensions-for-windows-10.aspx). Même si vous pouvez utiliser le code XML brut, nous vous recommandons vivement de choisir NotificationExtensions pour ne pas avoir à vous soucier de la génération d’un contenu XML ou d’échappement XML valide.
 
@@ -106,7 +106,7 @@ Windows Phone affiche jusqu’à 9 photos dans un diaporama, et les tablettes, o
 
 Pour plus d’informations sur l’envoi de la notification par vignette, voir l’[article Envoyer des notifications](tiles-badges-notifications.md).
 
-<span codelanguage="XML"></span>
+
 ```XML
 <colgroup>
 <col width="100%" />
@@ -182,7 +182,7 @@ TileContent content = new TileContent()
 };
 ```
 
-## <span id="People_tile_template"></span><span id="people_tile_template"></span><span id="PEOPLE_TILE_TEMPLATE"></span>Modèle de vignette Contacts
+## Modèle de vignette Contacts
 
 
 L’application Contacts dans Windows10 utilise un modèle de vignette spécial qui affiche une collection d’images dans des cercles qui peuvent glisser verticalement ou horizontalement sur la vignette. Ce modèle de vignette est disponible depuis Windows 10 Build 10572 et tout le monde est invité à l’utiliser dans son application.
@@ -270,7 +270,7 @@ Avec ce nombre de photos, cela permet de garder quelques cercles vides, et la vi
 
 Pour envoyer la notification, voir [Choisir une méthode de remise de notification](tiles-and-notifications-choosing-a-notification-delivery-method.md).
 
-## <span id="related_topics"></span>Rubriques connexes
+## Rubriques connexes
 
 
 * [Exemple de code complet sur GitHub](https://github.com/WindowsNotifications/quickstart-people-tile-template)
@@ -288,6 +288,6 @@ Pour envoyer la notification, voir [Choisir une méthode de remise de notificati
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

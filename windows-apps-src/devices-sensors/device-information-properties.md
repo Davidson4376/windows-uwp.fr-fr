@@ -5,7 +5,7 @@ title: "Propriétés d’informations d’appareil"
 description: "Chaque appareil a associé des propriétés DeviceInformation que vous pouvez utiliser en cas de lorsque vous avez besoin d’informations spécifiques ou lorsque vous créez un sélecteur d’appareil."
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: d9cdd55df69941754729d8779ba11d7ce5fafc51
+ms.openlocfilehash: 8f95a0898d0b65f4ed402b5f05e843ace2a18767
 
 ---
 # Propriétés d’informations d’appareil
@@ -161,6 +161,6 @@ Certaines propriétés sont communes à tous les objets [**DeviceInformationKind
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

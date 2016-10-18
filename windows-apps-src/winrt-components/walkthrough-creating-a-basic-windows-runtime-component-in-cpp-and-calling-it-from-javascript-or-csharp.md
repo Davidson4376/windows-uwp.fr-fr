@@ -5,11 +5,11 @@ description: "Cette procédure pas à pas indique comment créer une DLL de comp
 ms.assetid: 764CD9C6-3565-4DFF-88D7-D92185C7E452
 translationtype: Human Translation
 ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: 860333e3239198cd54eea061195e2a51d786821b
+ms.openlocfilehash: 0085d3edb2ec1fbe14ce268c54532cd246a73dde
 
 ---
 
-<h1>Procédure pas à pas&#58; création d’un composant WindowsRuntime de base en C++ et appel de ce composant à partir de JavaScript ou C#</h1>
+<h1>Procédure pas à pas: création d’un composant WindowsRuntime de base en C++ et appel de ce composant à partir de JavaScript ou C#</h1>
 
 
 \[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
@@ -635,6 +635,6 @@ Si vous supprimez un projet de composant Windows Runtime C++ dans une solution, 
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -5,7 +5,7 @@ title: "Débogage, tests et analyse des performances"
 description: "Utilisez MicrosoftVisualStudio pour déboguer et tester votre application. Pour préparer votre application pour le processus de certification du Windows Store, utilisez le Kit de certification des applications Windows."
 translationtype: Human Translation
 ms.sourcegitcommit: 3867bca43bef549fc67b202e329e884ee1ff8fa0
-ms.openlocfilehash: c10c1443ac5a0f4cbf07cf0accc8361ad9100168
+ms.openlocfilehash: 527ad3c4ade1df2a4737df5fba81a1a72ee35c0f
 
 ---
 # Débogage, tests et analyse des performances
@@ -28,6 +28,6 @@ Utilisez Microsoft Visual Studio pour déboguer et tester votre application. Pou
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

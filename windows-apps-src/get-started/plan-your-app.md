@@ -1,11 +1,11 @@
 ---
-author: martinekuan
+author: GrantMeStrength
 title: Planifier votre application de plateforme Windows universelle (UWP)
-description: "Les équipes de conception Microsoft suivent un processus de création d’applications en cinqétapes distinctes&#58; concept, structure, dynamique, visuels et prototype. Nous vous encourageons à adopter un processus similaire en prenant plaisir à créer des expériences novatrices dont tout le monde pourra profiter."
+description: "Les équipes de conception Microsoft suivent un processus de création d’applications en cinqétapes distinctes: concept, structure, dynamique, visuels et prototype. Nous vous encourageons à adopter un processus similaire en prenant plaisir à créer des expériences novatrices dont tout le monde pourra profiter."
 ms.assetid: 9A5189CD-3B97-4967-8E7D-36D25F04F244
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9a3058aabdc6f710149a14d8f125b66efd076007
+ms.sourcegitcommit: 43214b9e2c786a007b8d9cdef7700e275101aba5
+ms.openlocfilehash: 4d17f7da6969910d2738377174cec9f1c1517dde
 
 ---
 
@@ -238,6 +238,6 @@ Utilisez la liste de [recommandations détaillées relatives à l’expérience 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,7 +1,7 @@
 ---
 author: jnHs
-Description: When submitting an add-on, the options on the Pricing and availability page determine what to charge for your add-on and how it should be offered to customers.
-title: Set add-on pricing and availability
+Description: "Lors de la soumission d’un module complémentaire, les options de la page Tarification et disponibilité déterminent le prix et les conditions de disponibilité."
+title: "Définir le prix et la disponibilité d’un module complémentaire"
 ms.assetid: B3D4B753-716B-460B-A3B1-ED5712ECD694
 translationtype: Human Translation
 ms.sourcegitcommit: 0edf45e997f36a82a8bfcb92c1d8fd2c79242461
@@ -9,51 +9,51 @@ ms.openlocfilehash: 17fe4e836dc75e0dfd44389a503a6a94afe44f42
 
 ---
 
-# Set add-on pricing and availability
+# Définir le prix et la disponibilité d’un module complémentaire
 
 
-When submitting an add-on, the options on the **Pricing and availability** page determine what to charge for your add-on and how it should be offered to customers.
+Quand vous soumettez un module complémentaire, les options de la page **Tarification et disponibilité** déterminent le prix auquel facturer ce module et la façon dont ce dernier doit être proposé aux clients.
 
-## Base price
-
-
-You must select a base price for your add-on. These price tiers are the same as the price tiers for apps, starting at .99 USD. You also have the option to offer your add-on for free.
-
-## Markets and custom prices
+## Prix de base
 
 
-By default, your add-on will be listed in all possible markets, including any future markets that we may add later, at its base price.
+Vous devez sélectionner un prix de base pour votre module complémentaire. Ces niveaux de prix sont identiques à ceux des applications et commencent à 0,99USD. Vous pouvez également mettre gratuitement à disposition votre module complémentaire.
 
-However, just as with an app, you have the option to choose the markets in which you'd like to offer your add-on. In most cases you'll want to pick the same set of markets as the app, but you have the flexibility to make changes as needed. You can also set custom prices so that you can charge different prices for the add-on in different markets.
-
-For more info and a full list of the available markets, see [Define pricing and market selection](define-pricing-and-market-selection.md).
-
-## Sale pricing
+## Marchés et prix personnalisés
 
 
-If you want to offer your add-on at a reduced price for a limited period of time, you can create and schedule a sale. For more info, see [Put apps and add-ons on sale](put-apps-and-add-ons-on-sale.md).
+Par défaut, votre module complémentaire sera indiqué à son prix de base dans tous les marchés possibles, y compris dans les éventuels marchés que nous ajouterons par la suite.
 
-## Distribution and visibility
+Toutefois, comme pour les applications, vous avez la possibilité de choisir les marchés dans lesquels vous souhaitez proposer votre module complémentaire. Dans la plupart des cas, vous sélectionnerez le même ensemble de marchés que l’application, mais vous pouvez modifier les marchés sélectionnés à votre convenance. En outre, vous pouvez définir des prix personnalisés afin d’être en mesure de facturer des prix différents pour votre module complémentaire selon les marchés.
+
+Pour en savoir plus et pour obtenir la liste complète des marchés disponibles, voir [Définition des prix et sélection du marché](define-pricing-and-market-selection.md).
+
+## Prix de vente
 
 
-You can determine whether your add-on should be offered for purchase to customers. Choose from one of the following options:
+Si vous souhaitez proposer votre module complémentaire à un prix réduit pendant une durée limitée, vous pouvez créer et planifier une vente. Pour plus d’informations, voir [Vendre des applications et des modules complémentaires à prix réduit](put-apps-and-add-ons-on-sale.md).
 
--   **Available for purchase. May be displayed in your app's listing:** This is the default setting and is recommended unless you want to restrict access to your add-on. Leave this option checked for add-ons that will be made available to any customer.
--   **Available for purchase. Not displayed in your app's listing:** Choosing this option allows customers to purchase the add-on from within your app, but the add-on will not be displayed in your app's Store listing. Use this only when the offer is not broadly available, for example during initial periods of internal testing.
--   **No longer available for purchase. Not displayed in your app's listing.** Choosing this option means that the add-on won't be displayed in your app's listing, and no new customers may purchase the add-on. However, **this option is not supported for customers on Windows 8.1 or earlier**. If your app is available on Windows 8.1 or earlier, the add-on will still be available for purchase to those customers. To stop offering the add-on to customers on Windows 8.1 or earlier, you'll need to update your app to remove the code that offers the add-on, then publish a new submission for the app. This is recommended even if your app doesn't target Windows 8.1 or earlier; it's a better experience for your customers if you never offer them an add-on that you've opted to make unavailable.
+## Distribution et visibilité
+
+
+Vous pouvez déterminer si votre module complémentaire doit être proposé à l’achat aux clients. Choisissez l’une des options suivantes:
+
+-   **Disponible à l’achat et affichable dans la description de votre application** : cette option constitue la sélection par défaut et le choix recommandé, sauf si vous voulez restreindre l’accès à votre module complémentaire. Laissez cette option sélectionnée pour les modules complémentaires qui seront disponibles pour tous les clients.
+-   **Disponible à l’achat, mais non affiché dans la description de votre application**: cette option permet aux clients d’acheter le module complémentaire à partir de votre application, mais n’affichera pas ce module dans la description de votre application dans le WindowsStore. Utilisez cette option uniquement si l’offre n’est pas largement disponible, par exemple lors des périodes initiales de test interne.
+-   **Plus disponible à l’achat et non affiché dans la description de votre application.** Le choix de cette option signifie que le module complémentaire ne s’affichera pas dans la description de votre application et qu’aucun nouveau client ne pourra l’acheter. Toutefois, **cette option n’est pas prise en charge pour les clients qui utilisent Windows8.1 ou une version antérieure**. Si votre application n’est pas disponible sur Windows8.1 ou une version antérieure, le module complémentaire restera disponible à l’achat pour ces clients. Pour arrêter de proposer ce module complémentaire aux clients qui utilisent Windows8.1 ou une version antérieure, vous devrez mettre à jour votre application en supprimant le code proposant le module complémentaire, puis publier une nouvelle soumission de l’application. Nous vous recommandons de suivre cette procédure, même si votre application ne cible pas Windows8.1 ou une version antérieure; en effet, vos clients bénéficieront d’une meilleure expérience si vous ne leur proposez jamais un module complémentaire dont vous avez décidé d’arrêter la mise à disposition.
     
- > **Note**  Choosing this setting, and/or submitting an app update that removes the add-on from your app's code, does not affect any customers who have already purchased the add-on, regardless of their operating system.
+ > **Remarque** Le choix de ce paramétrage et/ou la soumission d’une mise à jour d’application supprimant le module complémentaire du code de votre application n’ont pas d’incidence sur les clients qui ont déjà acheté ce module complémentaire, quel que soit le système d’exploitation qu’ils utilisent.
 
 
-## Publish date
+## Date de publication
 
-You can indicate when your add-on submission should be published by choosing an option in the **Publish date** section.
+Vous pouvez indiquer la date de publication de votre soumission d’application en choisissant une option dans la section **Date de publication**.
 
--   Choose **Publish my add-on as soon as it passes certification** to make this submission available in the Store as soon as possible.
--   Choose **Publish this add-on manually** if you don't want your submission to be published until you indicate that it should be. You can do this from the certification status page by clicking **Publish now**, or by selecting a specific date as described below.
--   Choose **No sooner than \[date\]** to ensure that the submission is not published until a certain date. With this option, your submission will be released as soon as possible on or after the date you specify. The date must be at least 24 hours in the future. Along with the date, you can also specify the time at which the submission should begin to be published.
+-   Pour que votre soumission devienne accessible dans le WindowsStore le plus tôt possible, choisissez l’option **Publier mon module complémentaire dès qu’il obtient une certification**.
+-   Pour choisir la date à laquelle votre soumission doit être publiée, sélectionnez l’option **Publier ce module complémentaire manuellement**. Vous pourrez alors effectuer cette opération à partir de la page de degré de certification en cliquant sur **Publier maintenant** ou en sélectionnant une date spécifique, comme décrit ci-après.
+-   Pour vous assurer que la soumission ne sera pas publiée avant une date donnée, choisissez l’option **Pas avant le \[date\]**. Avec cette option, votre soumission sera publiée aussitôt que possible à la date spécifiée ou après. La date doit être postérieure de 24 heures au moins. En parallèle de la date, vous pouvez également définir l’heure à laquelle la publication de la soumission doit démarrer.
 
- > **Note**  Delays during certification or publishing could cause the actual release date to be later than the date you request. The Windows Store cannot guarantee that your add-on (or update) will be available on a specific date.
+ > **Remarque** Des retards lors de la certification ou de la publication peuvent faire que la sortie réelle intervient plus tard que la date demandée. Le WindowsStore ne peut pas garantir que votre module complémentaire (ou mise à jour) sera disponible à une date spécifique.
  
 
  

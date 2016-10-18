@@ -4,8 +4,8 @@ description: Comment utiliser les informations relatives aux contacts et calendr
 title: Contacts et calendriers
 ms.assetid: b7e53ab5-2828-4fb7-8656-2bec70b3467f
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 4e40ac413e021aba26776053871a4c6f1a215b2a
+ms.sourcegitcommit: 5c0f6ef1f1a346a66ca554a415d9f24c8a314ae1
+ms.openlocfilehash: da73790ca9aec3fa16295eac4880c7b80db033ab
 
 ---
 
@@ -19,10 +19,12 @@ Pour en savoir plus sur les différentes façons d’accéder aux contacts et au
 
 | Rubrique | Description |
 |-------|-------------|
-| [Sélectionner des contacts](selecting-contacts.md) | L’espace de noms [<strong>Windows.ApplicationModel.Contacts</strong>](https://msdn.microsoft.com/library/windows/apps/BR225002) fournit plusieurs options de sélection des contacts. Ici, nous allons vous montrer comment sélectionner un ou plusieurs contacts, et comment configurer le sélecteur de contacts pour récupérer uniquement les informations de contact dont votre application a besoin. | 
+| [Sélectionner des contacts](selecting-contacts.md) | L’espace de noms [<strong>Windows.ApplicationModel.Contacts</strong>](https://msdn.microsoft.com/library/windows/apps/BR225002) fournit plusieurs options de sélection des contacts. Ici, nous allons vous montrer comment sélectionner un ou plusieurs contacts, et comment configurer le sélecteur de contacts pour récupérer uniquement les informations de contact dont votre application a besoin. |
 | [Envoyer un courrier électronique](sending-email.md) | Montre comment lancer la boîte de dialogue de rédaction d’un courrier électronique pour permettre à l’utilisateur d’envoyer un courrier électronique. Vous pouvez préremplir les champs de l’e-mail avec des données avant d’afficher la boîte de dialogue. Le message ne sera pas envoyé tant que l’utilisateur n’aura pas appuyé sur le bouton d’envoi. |
 | [Envoyer un SMS](sending-an-sms-message.md) | Cette rubrique vous montre comment lancer la boîte de dialogue de rédaction d’un SMS pour permettre à l’utilisateur d’envoyer un SMS. Vous pouvez préremplir les champs du message SMS avec des données avant d’afficher la boîte de dialogue. Le message ne sera pas envoyé tant que l’utilisateur n’aura pas appuyé sur le bouton d’envoi. |
-| [Gérer des rendez-vous](managing-appointments.md) | L’espace de noms [<strong>Windows.ApplicationModel.Appointments</strong>](https://msdn.microsoft.com/library/windows/apps/Dn263359) vous permet de créer et gérer des rendez-vous dans l’application Calendrier d’un utilisateur. Ici, nous allons vous montrer comment créer un rendez-vous, l’ajouter à l’application Calendrier, le remplacer dans l’application Calendrier et le supprimer de l’application Calendrier. Nous allons également vous montrer comment afficher une période de temps pour une application Calendrier et créer un objet appointment-recurrence. |
+| [Gérer des rendez-vous](managing-appointments.md) | L’espace de noms [<strong>Windows.ApplicationModel.Appointments</strong>](https://msdn.microsoft.com/library/windows/apps/Dn263359) vous permet de créer et gérer des rendez-vous dans l’application Calendrier d’un utilisateur. Ici, nous allons vous montrer comment créer un rendez-vous, l’ajouter à l’application Calendrier, le remplacer dans l’application Calendrier et le supprimer de l’application Calendrier. Nous allons également expliquer comment afficher une période de temps pour une application Calendrier et créer un objet appointment-recurrence. |
+| [Connecter votre application à des actions sur une carte de visite](integrating-with-contacts.md) | Explique comment faire apparaître votre application à côté des actions sur une carte de visite ou une mini carte de visite. Les utilisateurs peuvent choisir votre application pour effectuer une action comme ouvrir une page de profil, passer un appel ou envoyer un message. |
+| [Transmettre des flux de réseaux sociaux à l’application Contacts](integrating-social-feeds-into-contact-cards.md) | Intégrer des données de flux sociaux à partir de votre base de données dans l’application Contacts. Les données de votre flux apparaissent dans les pages <strong>Nouveautés</strong> de l’application Contacts ou dans la page <strong>Profil</strong> d’un contact. |
 
  
 
@@ -31,13 +33,12 @@ Pour en savoir plus sur les différentes façons d’accéder aux contacts et au
 * [Exemple d’API de rendez-vous](http://go.microsoft.com/fwlink/p/?linkid=309836)
 * [Exemple d’API du Gestionnaire de contacts](http://go.microsoft.com/fwlink/p/?LinkID=310079)
 * [Exemple d’application du sélecteur de contacts](http://go.microsoft.com/fwlink/p/?linkid=231575)
-* [Exemple de la gestion des actions de contact](http://go.microsoft.com/fwlink/p/?LinkID=320151)
+* [Exemple de gestion des actions de contact](http://go.microsoft.com/fwlink/p/?LinkID=320151)
+* [Exemple d’intégration à une carte de visite](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration)
+* [Exemple d’informations sur les réseaux sociaux](https://github.com/Microsoft/Windows-Social-Samples/tree/master/SocialInfoSampleApp)
 
 
 
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

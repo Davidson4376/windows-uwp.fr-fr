@@ -4,8 +4,8 @@ title: Copier et coller
 ms.assetid: E882DC15-E12D-4420-B49D-F495BB484BEE
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: 9a8fd6d34c4b89dae1ec4be2db69498b5d458b5a
-ms.openlocfilehash: 3e3ba8811f4fac283164143aad88913aaabbee49
+ms.sourcegitcommit: 0dceeb53737cc790e1c3810b0487e0a839968bef
+ms.openlocfilehash: 2655dc67b14ba665deabc879f13340202d97c494
 
 ---
 #Copier et coller
@@ -16,7 +16,6 @@ ms.openlocfilehash: 3e3ba8811f4fac283164143aad88913aaabbee49
 Cet article explique comment prendre en charge le copier-coller dans les applications UWP en utilisant le Presse-papiers. Le copier-coller est la méthode classique d’échanger des données entre les applications, ou dans une application, et presque chaque application peut prendre en charge les opérations du Presse-papiers dans une certaine mesure.
 
 ## Rechercher la prise en charge intégrée du Presse-papiers
-
 
 Le plus souvent, vous n’avez pas besoin d’écrire de code supplémentaire pour fournir une prise en charge des opérations du Presse-papiers. De nombreux contrôles XAML par défaut disponibles pour créer les applications offrent déjà une prise en charge des opérations du Presse-papiers. 
 
@@ -29,11 +28,11 @@ Tout d’abord, incluez l’espace de noms [**Windows.ApplicationModel.DataTrans
 DataPackage dataPackage = new DataPackage();
 ```
 
-AuthenticateAsync
+<!-- AuthenticateAsync-->
 
 ## Copier et Couper
 
-Copier et Couper (également appelé déplacement) fonctionne presque exactement de la même manière. Choisissez l’opération que vous souhaitez effectuer à l’aide de la propriété [**RequestedOperation**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage.RequestedOperation).
+Copier et Couper (également appelé *déplacement*) fonctionne presque exactement de la même manière. Choisissez l’opération que vous souhaitez effectuer à l’aide de la propriété [**RequestedOperation**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage.RequestedOperation).
 
 ```cs
 // copy 
@@ -41,7 +40,9 @@ dataPackage.RequestedOperation = DataPackageOperation.Copy;
 // or cut
 dataPackage.RequestedOperation = DataPackageOperation.Move;
 ```
-Glisser-déplacer Vous pouvez ensuite ajouter les données sélectionnées par l’utilisateur dans l’objet [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage). Si les données sont prises en charge par la classe **DataPackage**, utilisez l’une des méthodes correspondantes dans l’objet **DataPackage**. Voici comment ajouter du texte:
+## Glisser-déplacer
+
+Vous pouvez ensuite ajouter les données sélectionnées par l’utilisateur dans l’objet [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage). Si les données sont prises en charge par la classe **DataPackage**, utilisez l’une des méthodes correspondantes dans l’objet **DataPackage**. Voici comment ajouter du texte:
 
 ```cs
 dataPackage.SetText("Hello World!");
@@ -85,6 +86,7 @@ Clipboard.ContentChanged += (s, e) =>
 
 ## Voir également
 
+* [Communication entre les applications](index.md)
 * [DataTransfer](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.aspx)
 * [DataPackage](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datapackage.aspx)
 * [DataPackageView](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datapackageview.aspx)
@@ -104,6 +106,6 @@ Clipboard.ContentChanged += (s, e) =>
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

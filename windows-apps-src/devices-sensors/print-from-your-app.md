@@ -4,8 +4,8 @@ ms.assetid: 9A0F1852-A76B-4F43-ACFC-2CC56AAD1C03
 title: "Imprimer à partir de votre application"
 description: "Découvrez comment imprimer des documents à partir d’une application Windows universelle. Cette rubrique montre également comment imprimer des pages spécifiques."
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: effb04f4bd8acdf9dfcc7847341c4a4fcc543bb5
+ms.sourcegitcommit: 82edf9c3ee7f7303788b7a1272ecb261d3748c5a
+ms.openlocfilehash: 334b6d5faad641bbce67f7267be43700cd540569
 
 ---
 # Imprimer à partir de votre application
@@ -90,31 +90,44 @@ Ajoutez un bouton d’impression à l’emplacement de votre choix dans l’écr
 <Button x:Name="InvokePrintingButton" Content="Print" Click="OnPrintButtonClick"/>
 ```
 
-Ensuite, ajoutez un gestionnaire d’événements au code de votre application pour gérer l’événement Click. Utilisez la méthode [**ShowPrintUIAsync**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.printmanager.showprintuiasync) pour démarrer l’impression à partir de votre application. **ShowPrintUIAsync** est une méthode asynchrone qui affiche la fenêtre d’impression appropriée. Si l’impression ne peut pas être exécutée à ce moment précis, la méthode lève une exception. Nous vous recommandons d’intercepter ces exceptions et d’informer l’utilisateur quand l’impression ne peut pas continuer, comme illustré ici.
+Ensuite, ajoutez un gestionnaire d’événements au code de votre application pour gérer l’événement Click. Utilisez la méthode [**ShowPrintUIAsync**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.printmanager.showprintuiasync) pour démarrer l’impression à partir de votre application. **ShowPrintUIAsync** est une méthode asynchrone qui affiche la fenêtre d’impression appropriée. Nous vous recommandons d’appeler la méthode [**IsSupported**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Printing.PrintManager.IsSupported) en premier pour vérifier que l’application est exécutée sur un appareil qui prend en charge l’impression (et pour gérer la situation dans le cas contraire). Si l’impression ne peut pas être effectuée à ce moment pour toute autre raison, **ShowPrintUIAsync** lève une exception. Nous vous recommandons d’intercepter ces exceptions et d’informer l’utilisateur quand l’impression ne peut pas être effectuée.
 
 ```csharp
 async private void OnPrintButtonClick(object sender, RoutedEventArgs e)
 {
-    try
+    if (Windows.Graphics.Printing.PrintManager.IsSupported())
     {
-        // Show print UI
-        await Windows.Graphics.Printing.PrintManager.ShowPrintUIAsync();
+        try
+        {
+            // Show print UI
+            await Windows.Graphics.Printing.PrintManager.ShowPrintUIAsync();
 
+        }
+        catch
+        {
+            // Printing cannot proceed at this time
+            ContentDialog noPrintingDialog = new ContentDialog()
+            {
+                Title = "Printing error",
+                Content = "\nSorry, printing can' t proceed at this time.", PrimaryButtonText = "OK"
+            };
+            await noPrintingDialog.ShowAsync();
+        }
     }
-    catch
+    else
     {
-        // Printing cannot proceed at this time
+        // Printing is not supported on this device
         ContentDialog noPrintingDialog = new ContentDialog()
         {
-            Title = "Printing error",
-            Content = "\nSorry, printing can' t proceed at this time.", PrimaryButtonText = "OK"
+            Title = "Printing not supported",
+            Content = "\nSorry, printing is not supported on this device.",PrimaryButtonText = "OK"
         };
         await noPrintingDialog.ShowAsync();
     }
 }
 ```
 
-Dans cet exemple, une fenêtre d’impression s’affiche dans le gestionnaire des événements pour un événement Click du bouton. Si la méthode lève une exception (parce que l’impression ne peut pas être effectuée à ce moment précis), un contrôle [**ContentDialog**](https://msdn.microsoft.com/library/windows/apps/Dn633972) informe l’utilisateur de la situation.
+Dans cet exemple, une fenêtre d’impression s’affiche dans le gestionnaire d’événements pour un clic sur un bouton. Si la méthode lève une exception (parce que l’impression ne peut pas être effectuée à ce moment précis), un contrôle [**ContentDialog**](https://msdn.microsoft.com/library/windows/apps/Dn633972) informe l’utilisateur de la situation.
 
 ## Mettre en forme le contenu de votre application
 
@@ -383,6 +396,6 @@ Si vous imprimez un sous-ensemble de pages, plusieurs options s’offrent à vou
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

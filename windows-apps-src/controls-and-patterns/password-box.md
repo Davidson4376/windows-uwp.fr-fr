@@ -7,22 +7,35 @@ dev.assetid: 4BFDECC6-9BC5-4FF5-8C63-BB36F6DDF2EF
 label: Password box
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 1a2d5efbeacd5ce8a71f5261aa52f09400c75c97
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 4f08195bcd70429f103c730c6c4a6d69dcf5b55e
 
 ---
 # Zone de mot de passe
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
 Une zone de mot de passe (PasswordBox) est une zone d’entrée de texte qui masque les caractères saisis, pour des raisons de confidentialité. Une zone de mot de passe ressemble à une zone de texte, mais elle affiche des caractères espace réservé à la place du texte qui a été saisi. Vous pouvez configurer le caractère espace réservé.
 
 Par défaut, la zone de mot de passe permet à l’utilisateur d’afficher son mot de passe en appuyant sur un bouton d’affichage. Vous pouvez désactiver ce bouton, ou proposer un autre mécanisme pour faire apparaître le mot de passe, par exemple une case à cocher.
 
-<span class="sidebar_heading" style="font-weight: bold;">API importantes</span>
+<div class="important-apis" >
+<b>API importantes</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx"><strong>Classe PasswordBox</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.password.aspx"><strong>Propriété Password</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchar.aspx"><strong>Propriété PasswordChar</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx"><strong>Propriété PasswordRevealMode</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchanged.aspx"><strong>Événement PasswordChanged</strong></a></li>
+</ul>
 
--   [**Classe PasswordBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)
--   [**Propriété Password**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.password.aspx)
--   [**Propriété PasswordChar**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchar.aspx)
--   [**Propriété PasswordRevealMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx)
--   [**Événement PasswordChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchanged.aspx)
+</div>
+</div>
+
+
+
+
+
 
 ## Est-ce le contrôle approprié?
 
@@ -56,7 +69,7 @@ Vous trouverez ci-dessous le code XAML d’un contrôle de zone de mot de passe 
 <StackPanel>  
   <PasswordBox x:Name="passwordBox" Width="200" MaxLength="16"
              PasswordChanged="passwordBox_PasswordChanged"/>
-           
+
   <TextBlock x:Name="statusText" Margin="10" HorizontalAlignment="Center" />
 </StackPanel>   
 ```
@@ -116,7 +129,7 @@ Par défaut, le bouton d’affichage du mot de passe (ou «bouton d’aperçu»)
 
 La valeur de la propriété [PasswordRevealMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx) n’est pas le seul facteur déterminant si un bouton d’affichage du mot de passe est visible à l’utilisateur. Parmi les autres facteurs, figurent ceux indiquant si le contrôle est affiché au-dessus d’une largeur minimale, si le focus porte sur PasswordBox et si le champ de texte contient au moins un caractère. Le bouton d’affichage du mot de passe apparaît uniquement lorsque le focus porte sur PasswordBox pour la première fois et si un caractère est saisi. Si PasswordBox perd le focus, puis le reprend, le bouton d’affichage n’apparaît plus, sauf si le mot de passe est effacé et que la saisie de caractères recommence.
 
-> **Attention** &nbsp;&nbsp;Avant Windows 10, le bouton d’affichage du mot de passe ne s’affichait pas par défaut. Si la sécurité de votre application requiert que le mot de passe soit toujours masqué, veillez à définir PasswordRevealMode sur Hidden.
+> **Attention**&nbsp;&nbsp;Avant Windows10, le bouton d’affichage du mot de passe ne s’affichait pas par défaut. Si la sécurité de votre application nécessite que le mot de passe soit toujours masqué, définissez PasswordRevealMode sur Hidden.
 
 ### Modes Masqué et Visible
 
@@ -130,10 +143,10 @@ Cet exemple montre comment utiliser un élément [CheckBox](https://msdn.microso
 
 ```xaml
 <StackPanel Width="200">
-    <PasswordBox Name="passwordBox1" 
+    <PasswordBox Name="passwordBox1"
                  PasswordRevealMode="Hidden"/>
     <CheckBox Name="revealModeCheckBox" Content="Show password"
-              IsChecked="False" 
+              IsChecked="False"
               Checked="CheckBox_Changed" Unchecked="CheckBox_Changed"/>
 </StackPanel>
 ```
@@ -155,12 +168,12 @@ private void CheckBox_Changed(object sender, RoutedEventArgs e)
 Cet élément PasswordBox se présente comme suit:
 
 ![Zone de mot de passe avec un bouton d’affichage personnalisé](images/passwordbox-custom-reveal.png)
-    
+
 ## Choisir le clavier adapté à votre contrôle de texte
 
 Pour faciliter la saisie de données par les utilisateurs au moyen du clavier tactile, ou panneau de saisie, définissez l’étendue des entrées du contrôle de texte de façon qu’elle corresponde au type de données attendu de la part de l’utilisateur. PasswordBox prend en charge uniquement les valeurs d’étendue des entrées **Password** et **NumericPin**. Toute autre valeur est ignorée.
 
-Pour en savoir plus sur l’utilisation des étendues des entrées, voir [Utiliser l’étendue des entrées pour modifier le clavier tactile]().
+Pour en savoir plus sur l’utilisation des étendues des entrées, voir [Utiliser l’étendue des entrées pour modifier le clavier tactile](https://msdn.microsoft.com/library/windows/apps/mt280229).
 
 ## Recommandations
 
@@ -192,6 +205,6 @@ Pour en savoir plus sur l’utilisation des étendues des entrées, voir [Utilis
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

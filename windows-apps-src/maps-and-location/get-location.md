@@ -4,8 +4,8 @@ title: "Obtenir l’emplacement de l’utilisateur"
 description: "Déterminez l’emplacement de l’utilisateur et réagissez aux changements d’emplacement. L’accès à l’emplacement de l’utilisateur est géré par les paramètres de confidentialité définis dans l’application Paramètres. Cette rubrique montre également comment vérifier si votre application est autorisée à accéder à l’emplacement de l’utilisateur."
 ms.assetid: 24DC9A41-8CC1-48B0-BC6D-24BF571AFCC8
 translationtype: Human Translation
-ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: d35bf3ef13e2b36dfed6613a00f65d19b9013464
+ms.sourcegitcommit: bdb6cbd0b0ccb7b6aa04cf6ba98bb154af325515
+ms.openlocfilehash: 1172aae67169295ac6f2446c839a1cce5a84fa36
 
 ---
 
@@ -39,9 +39,9 @@ Déterminez l’emplacement de l’utilisateur et réagissez aux changements d�
 
 Cette section décrit comment détecter l’emplacement géographique de l’utilisateur à l’aide d’API dans l’espace de noms [**Windows.Devices.Geolocation**](https://msdn.microsoft.com/library/windows/apps/br225603).
 
-### Étape 1 : demander l’accès à l’emplacement de l’utilisateur
+### Étape1: Demander l’accès à l’emplacement de l’utilisateur
 
-**Important** Vous devez demander l’accès à l’emplacement de l’utilisateur à l’aide de la méthode [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) avant d’essayer d’y accéder. Vous devez appeler la méthode **RequestAccessAsync** à partir du thread de l’interface utilisateur et votre application doit être au premier plan. Votre application sera en mesure d’accéder aux informations d’emplacement de l’utilisateur une fois que l’utilisateur aura accordé l’autorisation à votre application.
+À moins que votre application dispose de la fonctionnalité de localisation sans consentement (voir remarque), vous devez demander l’accès à l’emplacement de l’utilisateur à l’aide de la méthode [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) avant d’essayer d’y accéder. Vous devez appeler la méthode **RequestAccessAsync** à partir du thread de l’interface utilisateur et votre application doit être au premier plan. Votre application ne pourra pas accéder aux informations de localisation de l’utilisateur tant que celui-ci ne lui en aura pas accordé l’autorisation.\*
 
 ```csharp
 using Windows.Devices.Geolocation;
@@ -49,9 +49,13 @@ using Windows.Devices.Geolocation;
 var accessStatus = await Geolocator.RequestAccessAsync();
 ```
 
-La méthode [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) demande à l’utilisateur l’autorisation d’accéder à son emplacement. L’utilisateur est invité une fois seulement (par application). Une fois la première autorisation accordée ou refusée, cette méthode ne demande plus d’autorisation. Pour aider l’utilisateur à modifier les autorisations d’emplacement une fois qu’il a été invité, nous vous recommandons de fournir un lien vers les paramètres d’emplacement, comme illustré plus loin dans cette rubrique.
 
-### Étape 2 : obtenir l’emplacement de l’utilisateur et inscrire les modifications des autorisations d’emplacement
+
+La méthode [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) demande à l’utilisateur l’autorisation d’accéder à son emplacement. L’utilisateur est invité une fois seulement (par application). Une fois la première autorisation accordée ou refusée, cette méthode ne demande plus d’autorisation. Pour permettre à l’utilisateur de modifier les autorisations de localisation une fois qu’il a été invité, nous vous recommandons de fournir un lien vers les paramètres de localisation, comme expliqué plus loin dans cette rubrique.
+
+>Remarque: la fonctionnalité de localisation sans consentement permet à votre application d’obtenir une localisation intentionnellement obfusquée (imprécise) sans obtenir l’autorisation explicite de l’utilisateur (le commutateur de localisation à l’échelle du système doit cependant toujours être **activé**). Pour savoir comment utiliser la localisation sans consentement dans votre application, voir la méthode [**AllowFallbackToConsentlessPositions**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Geolocation.Geolocator.AllowFallbackToConsentlessPositions) de la classe [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.aspx).
+
+### Étape 2: Obtenir l’emplacement de l’utilisateur et inscrire les changements d’autorisation de localisation
 
 La méthode [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) effectue une lecture unique de l’emplacement actuel. Ici, une instruction **switch** est utilisée avec l’élément **accessStatus** (de l’exemple précédent) afin d’agir uniquement lorsque l’accès à l’emplacement de l’utilisateur est autorisé. Si cette opération est autorisée, le code crée un objet [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534), inscrit les modifications dans les autorisations d’emplacement et demande l’emplacement de l’utilisateur.
 
@@ -268,6 +272,6 @@ Pour que votre application puisse accéder à l’emplacement de l’utilisateur
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -4,8 +4,8 @@ title: Utilisation des services de cloud computing pour les jeux UWP
 description: "Apprenez-en davantage sur l’implémentation de services de cloud computing en tant que serveur principal pour vos jeux UWP."
 ms.assetid: 1a7088e0-0d7b-11e6-8e05-0002a5d5c51b
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 8bf42e9c2c2e074240eb8e7b94efdfbca65cc7f9
+ms.sourcegitcommit: 0b2d81daa8bd0fd5694b81fa14fcd064e1600d35
+ms.openlocfilehash: b23c33fac9ac8fe5e2d5563a0af6824c82a3969b
 
 ---
 #  Utilisation des services de cloud computing pour les jeux UWP
@@ -27,9 +27,9 @@ Il est important de proposer aux joueurs une expérience de jeu incroyable. Éta
 
 Vous pouvez également utiliser des serveurs de cloud computing dédiés pour créer un vaste univers de jeu permanent, construire une communauté de joueurs, collecter et analyser les données des joueurs dans le temps afin d’améliorer l’expérience de jeu et optimiser le modèle de conception de monétisation de votre jeu.
 
-En outre, les jeux qui nécessitent des fonctionnalités de gestion des données de jeu et beaucoup de ressources (par exemple, les jeux sociaux dotés de mécanismes multijoueurs asynchrones) peuvent être implémentés à l’aide de services de cloud computing.
+Par ailleurs, les jeux qui nécessitent des fonctionnalités de gestion des données de jeu et beaucoup de ressources (par exemple, les jeux sociaux dotés de mécanismes multijoueurs asynchrones) peuvent être implémentés à l’aide de services de cloud computing.
 
-##  Comment les entreprises spécialisées dans le développement de jeux vidéo utilisent-elles la technologie de cloud computing?
+##  Comment les entreprises spécialisées dans le développement de jeux vidéo utilisent la technologie de cloud computing
 
 Découvrez comment des développeurs ont implémenté des solutions de cloud computing dans leurs jeux.
 
@@ -133,7 +133,7 @@ Tout d’abord, vous devez prendre en considération le niveau de service le mie
 
 * Logiciel en tant que service (SaaS)
 
-    Les logiciels en tant que service sont habituellement des applications déjà développées pour vous et hébergées sur une plateforme dans le cloud existante. Ils sont conçus pour aider à exécuter plus facilement votre jeu sur le service proposé.
+    Les logiciels en tant que service sont normalement des applications déjà développées automatiquement qui sont hébergées sur une plateforme cloud existante. Ces logiciels sont conçus pour faciliter l’exécution de votre jeu sur le service proposé.
 
 
 ### Conception de votre infrastructure de jeu avec MicrosoftAzure
@@ -152,7 +152,7 @@ Voici quelques-unes des façons dont vous pouvez utiliser les offres de services
 | Base de données de jeu relationnelle évolutive| Stockage structuré de données relationnelles de type transactions dans le jeu vers base de données | [Base de données SQL Azure](https://azure.microsoft.com/services/sql-database/)| Base de données SQL en tant que service ([comparaison avec SQL sur un ordinateur virtuel](https://azure.microsoft.com/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas/))  |
 | Base de données de jeu évolutive et distribuée à faible latence| Rapidité des lectures, écritures et requêtes de jeu et des données du joueur avec flexibilité du schéma | [Azure DocumentDB](https://azure.microsoft.com/services/documentdb/)| Base de données de documents NoSQL à faible latence, gérée en tant que service   |
 | Utilisation de votre propre centre de données avec les services Azure | Le jeu est récupéré depuis votre propre centre de données et envoyé sur les appareils du client | [Azure Stack](https://azure.microsoft.com/overview/azure-stack/) | Permet à votre organisation de transmettre des services WindowsAzure depuis votre propre centre de données pour plus d’efficacité  |
-| Transfert de blocs de données volumineux| Les fichiers volumineux comme les images de jeu, les fichiers audio et vidéo peuvent être envoyés aux utilisateurs de l’emplacement POP CDN (réseau de diffusion de contenu) le plus proche avec AzureCDN  | [Azure Content Delivery Network](https://azure.microsoft.com/services/cdn/) | Basé sur une topologie réseau moderne avec nœuds centralisés de grande taille, AzureCDN gère les pics soudains de trafic et les charges élevées pour augmenter considérablement la vitesse et la disponibilité, ce qui conduit à une amélioration significative de l’expérience utilisateur  |
+| Transfert de blocs de données volumineux| Les fichiers volumineux comme les images, les fichiers audio et les vidéos du jeu peuvent être envoyés aux utilisateurs à partir de l’emplacement POP CDN (réseau de diffusion de contenu) le plus proche avec AzureCDN    | [Azure Content Delivery Network](https://azure.microsoft.com/services/cdn/) | Basé sur une topologie réseau moderne avec nœuds centralisés de grande taille, AzureCDN gère les pics soudains de trafic et les charges élevées pour augmenter considérablement la vitesse et la disponibilité, ce qui conduit à une amélioration significative de l’expérience utilisateur  |
 | Faible latence               | Effectuer une mise en cache pour créer des jeux rapides et évolutifs, avec plus de contrôle et de garantie d’isolation des données; peut également être utilisé pour améliorer la fonctionnalité de matchmaking | [Azure Redis Cache](https://azure.microsoft.com/services/cache/) | Débit élevé et accès aux données cohérent et à faible latence pour alimenter rapidement les applications Azure évolutives  |
 | Évolutivité élevée, faible latence | Gère les fluctuations du nombre d’utilisateurs du jeu avec des lectures et des écritures à faible latence | [Azure Service Fabric](https://azure.microsoft.com/services/service-fabric/) | Possibilité d’alimenter les scénarios les plus complexes à faible latence avec volumes importants de données et d’assurer une mise à l’échelle fiable pour gérer un plus grand nombre d’utilisateurs à la fois Service Fabric vous permet de développer des jeux sans avoir à créer un magasin ou un cache séparé, tel que cela est demandé pour les applications sans état |
 | Capacité à collecter des millions d’événements par seconde depuis les appareils                         | Consigner des millions d’événements par seconde depuis les appareils | [Concentrateurs d’événement Azure](https://azure.microsoft.com/services/event-hubs/) | Ingestion de télémétrie à l’échelle du cloud depuis les jeux, les sites web, les applications et les appareils  |
@@ -202,6 +202,6 @@ Voici quelques sociétés qui proposent un serveur principal dans le cloud pour 
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

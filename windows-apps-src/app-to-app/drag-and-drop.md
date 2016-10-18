@@ -4,8 +4,8 @@ title: "Glisser-déplacer"
 ms.assetid: A15ED2F5-1649-4601-A761-0F6C707A8B7E
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: 03f3f86ed1310e6e3ac5f53cc5e81ebef708a1a2
-ms.openlocfilehash: ffa2f0f368a61ef4f3003c1fa03e143b26c6859b
+ms.sourcegitcommit: f2133ca15e30f7451a61f78b48e883db1a5687a6
+ms.openlocfilehash: ee3d0c40effc12382f6fd31154016953f172be70
 
 ---
 # Glisser-déplacer
@@ -19,11 +19,11 @@ Cet article vous explique comment ajouter le glisser-déplacer dans votre applic
 
 Utilisez les propriétés [**AllowDrop**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.AllowDrop) et [**CanDrag**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.CanDrag) pour désigner les zones de votre application qui sont valides pour le glisser-déplacer.
 
-Le balisage ci-dessous montre comment définir une zone spécifique de l’application valide pour l’opération Déplacer à l’aide de l’élément [**AllowDrop**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.AllowDrop) dans XAML. Si un utilisateur tente de déplacer vers un autre emplacement, le système l’en empêche. Si vous souhaitez que les utilisateurs puissent déplacer des éléments n’importe où dans votre application, définissez l’ensemble de l’arrière-plan en tant que cible de l’opération Déplacer.
+Le balisage suivant montre comment définir une zone spécifique de l’application valide pour l’opération Déplacer à l’aide de l’élément [**AllowDrop**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.AllowDrop) en XAML. Si un utilisateur tente d’effectuer le déplacement vers un autre emplacement, le système l’en empêche. Si vous souhaitez que les utilisateurs puissent déplacer des éléments n’importe où dans votre application, définissez l’ensemble de l’arrière-plan en tant que cible de l’opération Déplacer.
 
 [!code-xml[Principal](./code/drag_drop/cs/MainPage.xaml#SnippetDropArea)]
 
-Pour le glissement, vous devrez généralement être spécifique sur le contenu pouvant être glissé. Les utilisateurs souhaitent faire glisser certains éléments, comme les images, et non la totalité du contenu de l’application. Voici comment configurer l’élément [**CanDrag**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.CanDrag) à l’aide de XAML.
+Pour le glissement, vous devez généralement préciser le contenu pouvant être glissé. Les utilisateurs souhaitent faire glisser uniquement certains éléments, comme les images, et non la totalité du contenu de l’application. Voici comment définir l’élément [**CanDrag**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.CanDrag) à l’aide de XAML.
 
 [!code-xml[Principal](./code/drag_drop/cs/MainPage.xaml#SnippetDragArea)]
 
@@ -31,15 +31,15 @@ Vous n’avez besoin d’effectuer aucune autre action pour autoriser le glissem
 
 ## Gérer l’événement DragOver
 
-L’événement [**DragOver**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.DragOver) se déclenche lorsqu’un utilisateur a fait glisser un élément sur votre application, mais qu’il ne l’a pas encore déplacé. Dans ce gestionnaire, vous devez spécifier le type d’opérations que votre application prend en charge à l’aide de la propriété [**AcceptedOperation**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.DragEventArgs.AcceptedOperation). L’opération Copier est la plus courante.
+L’événement [**DragOver**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.DragOver) se déclenche quand un utilisateur a fait glisser un élément sur votre application, mais qu’il ne l’a pas encore déplacé. Dans ce gestionnaire, vous devez spécifier le type d’opérations que votre application prend en charge à l’aide de la propriété [**AcceptedOperation**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.DragEventArgs.AcceptedOperation). L’opération Copier est la plus courante.
 
 [!code-cs[Principal](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_DragOver)]
 
 ## Traiter l’événement Drop
 
-L’événement [**Drop**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.Drop) se produit lorsque l’utilisateur relâche des éléments dans une zone de dépôt valide. Traitez-les à l’aide de la propriété [**DataView**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.DragEventArgs.DataView).
+L’événement [**Drop**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.Drop) se produit quand l’utilisateur relâche des éléments dans une zone de dépôt valide. Traitez-les à l’aide de la propriété [**DataView**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.DragEventArgs.DataView).
 
-Pour simplifier l’exemple ci-dessous, supposons que l’utilisateur a déplacé une seule photo et un accès. En réalité, les utilisateurs peuvent déplacer plusieurs éléments de formats divers simultanément. Votre application doit gérer cette possibilité en vérifiant les types de fichiers qui ont été déplacés, en les traitant en conséquence, et en notifiant l’utilisateur s’il essaie d’effectuer une action non prise en charge.
+Pour simplifier, dans l’exemple ci-dessous, nous supposons que l’utilisateur a déplacé une seule photo et un accès. En réalité, les utilisateurs peuvent déplacer plusieurs éléments de formats divers simultanément. Votre application doit gérer cette possibilité en vérifiant les types de fichiers qui ont été déplacés, en les traitant en conséquence, et en notifiant l’utilisateur s’il essaie d’effectuer une action non prise en charge.
 
 [!code-cs[Principal](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_Drop)]
 
@@ -49,17 +49,34 @@ Le système fournit une interface utilisateur par défaut pour le glisser-dépos
 
 [!code-cs[Principal](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_DragOverCustom)]
 
+## Ouvrir un menu contextuel sur un élément que vous pouvez faire glisser avec une interface tactile
+
+Quand vous utilisez une interface tactile, pour faire glisser un élément [**UIElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement) et ouvrir son menu contextuel, vous utilisez des mouvements tactiles similaires qui commencent tous deux par un appui prolongé. Voici comment le système lève l’ambiguïté entre les deux actions pour les éléments de votre application qui prennent en charge les deux opérations: 
+
+* Si un utilisateur appuie de façon prolongée sur un élément et commence à le faire glisser dans un intervalle de 500millisecondes, l’élément est déplacé et le menu contextuel n’est pas affiché. 
+* Si l’utilisateur appuie de façon prolongée sur l’élément, mais ne le fait pas glisser dans l’intervalle de 500millisecondes, le menu contextuel est ouvert. 
+* Une fois que le menu contextuel est ouvert, si l’utilisateur essaie de faire glisser l’élément (sans lever le doigt), le menu contextuel se ferme et le déplacement commence.
+
+## Désigner un élément dans un contrôle ListView ou GridView en tant que dossier
+
+Vous pouvez spécifier un contrôle [**ListViewItem**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.ListViewItem) ou [**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.GridViewItem) en tant que dossier. Ceci est particulièrement utile dans les scénarios TreeView et Explorateur de fichiers. Pour ce faire, définissez explicitement la propriété [**AllowDrop**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.AllowDrop) sur **True** pour l’élément concerné. 
+
+Le système montre automatiquement les animations appropriées pour le déplacement dans un dossier plutôt que dans un élément autre qu’un dossier. Le code de votre application doit continuer à gérer l’événement [**Drop**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.Drop) sur l’élément de dossier (ainsi que sur l’élément autre qu’un dossier) afin de mettre à jour la source de données et d’ajouter l’élément déplacé dans le dossier cible.
+
 ## Voir également
 
+* [Communication entre les applications](index.md)
 * [AllowDrop](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.allowdrop.aspx)
 * [CanDrag](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.candrag.aspx)
 * [DragOver](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.dragover.aspx)
 * [AcceptedOperation](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.drageventargs.acceptedoperation.aspx)
 * [DataView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.drageventargs.dataview.aspx)
-* [DragUiOverride](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.drageventargs.draguioverride.aspx)
+* [DragUIOverride](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.drageventargs.draguioverride.aspx)
 * [Drop](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.drop.aspx)
+* [IsDragSource](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isdragsource.aspx)
 
 
-<!--HONumber=Jun16_HO5-->
+
+<!--HONumber=Aug16_HO3-->
 
 

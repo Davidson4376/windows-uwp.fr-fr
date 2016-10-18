@@ -5,7 +5,7 @@ title: "Optimisation des options d’interface ListView et GridView"
 description: "Optimisez ListView/GridView et le temps de démarrage via la virtualisation de l’interface, la réduction des éléments et la mise à jour progressive des éléments."
 translationtype: Human Translation
 ms.sourcegitcommit: afb508fcbc2d4ab75188a2d4f705ea0bee385ed6
-ms.openlocfilehash: 362fbb6b733e855a2126196f12c650bdf2a7665d
+ms.openlocfilehash: 1aba484afcb704b0b28ceee6027f5ae05d8e420d
 
 ---
 # Optimisation des options d’interface ListView et GridView
@@ -320,6 +320,6 @@ Lorsque la répartition des éléments utilisant différents modèles d’élém
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

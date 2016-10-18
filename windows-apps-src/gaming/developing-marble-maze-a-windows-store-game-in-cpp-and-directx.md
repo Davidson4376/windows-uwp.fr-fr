@@ -5,7 +5,7 @@ description: "Cette section de la documentation décrit comment utiliser DirectX
 ms.assetid: 43f1977a-7e1d-614c-696e-7669dd8a9cc7
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c74a455f84618cb57147c8f0c9baf343b41b02be
+ms.openlocfilehash: d660e05ab43f1c45f21b028a78c6cfa3e0897164
 
 ---
 
@@ -106,6 +106,6 @@ Nous vous recommandons de commencer par les Notions de base de l’exemple Marbl
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

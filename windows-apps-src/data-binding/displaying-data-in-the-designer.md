@@ -5,7 +5,7 @@ title: "Exemples de données sur l’aire de conception et pour la création d�
 description: "Il peut être impossible ou non souhaitable (peut-être pour des raisons de confidentialité ou de performances) pour votre application d’afficher des données actives sur la surface de conception dans Microsoft Visual Studio ou Blend pour Visual Studio."
 translationtype: Human Translation
 ms.sourcegitcommit: 53e807c0d9de8faf2d0b5dc0e1c8e9c380e42d86
-ms.openlocfilehash: 2f7ac4b269a167c3b521fa94d77e27091fa490a8
+ms.openlocfilehash: 6f157688cba014ffc1f8d09c2a291d62c564c8c9
 
 ---
 Exemples de données sur l’aire de conception et pour la création d’un prototype
@@ -90,7 +90,7 @@ Les diverses déclarations xmlns signifient que les attributs portant le préfix
 
 L’attribut **d:DataContext** et tous les autres attributs au moment de la conception, sont traités dans la rubrique [Attributs au moment de la conception](http://go.microsoft.com/fwlink/p/?LinkId=272504), qui est toujours valide pour les applications de plateforme Windows universelle (UWP).
 
-[ **CollectionViewSource** ](https://msdn.microsoft.com/library/windows/apps/BR209833) ne dispose pas de propriété **DataContext**, mais d’une propriété **Source**. Par conséquent, il existe une propriété **d:Source** que vous pouvez utiliser pour définir des exemples de données sur une classe **CollectionViewSource** uniquement au moment de la conception.
+[**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) ne dispose pas de propriété **DataContext**, mais d’une propriété **Source**. Par conséquent, il existe une propriété **d:Source** que vous pouvez utiliser pour définir des exemples de données sur une classe **CollectionViewSource** uniquement au moment de la conception.
 
 ``` xaml
     <Page.Resources>
@@ -145,6 +145,6 @@ La fonctionnalité **Nouvel exemple de données** utilise [**DataContext**](http
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

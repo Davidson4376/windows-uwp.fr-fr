@@ -4,15 +4,15 @@ Description: "Une fois que vous avez terminé de créer la soumission de votre a
 title: Processus de certification des applications
 ms.assetid: 0DCB4344-224D-4E5A-899F-FF7A89F23DBC
 translationtype: Human Translation
-ms.sourcegitcommit: 4ea19e85d1e151dd1e03d5acf085c186613be35f
-ms.openlocfilehash: 579d1ef306123f765e19fc9ab3b02c064b690aee
+ms.sourcegitcommit: 865d71374cf7d678804ce16548edd819faafed33
+ms.openlocfilehash: 07b3631ccc875222b8d2ea30a2b69e2995a09e23
 
 ---
 
 # Processus de certification des applications
 
 
-Une fois que vous avez terminé de créer la soumission de votre application et cliqué sur **Soumettre au Windows Store**, l’application passe à l’étape de certification. Ce processus s’effectue généralement en quelques heures, bien qu’il nécessite parfois une journée ouvrable entière. Une fois votre soumission certifiée, un maximum de 16heures peut s’écouler avant l’apparition de sa description (ou de vos mises à jour d’une application publiée précédemment) dans le WindowsStore. Une notification s’affiche lorsque votre soumission est publiée et disponible pour les clients; l’état de l’application dans le tableau de bord sera **dans le Windows Store**.
+Une fois que vous avez terminé de créer la soumission de votre application et cliqué sur **Soumettre au Windows Store**, l’application passe à l’étape de certification. Ce processus s’effectue généralement en quelques heures, bien qu’il nécessite parfois troisjournées ouvrables entières. Une fois votre soumission certifiée, un maximum de 16heures peut s’écouler avant l’apparition de sa description (ou de vos mises à jour d’une application publiée précédemment) dans le WindowsStore. Une notification s’affiche lorsque votre soumission est publiée et disponible pour les clients; l’état de l’application dans le tableau de bord sera **dans le Windows Store**.
 
 ## Prétraitement
 
@@ -56,6 +56,6 @@ Après avoir correctement effectué les étapes ci-dessus, l’état de la soumi
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

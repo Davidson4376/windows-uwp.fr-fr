@@ -1,16 +1,16 @@
 ---
 author: Xansky
 description: "Cette rubrique vous montre comment lancer la boîte de dialogue de rédaction d’un message SMS pour permettre à l’utilisateur d’envoyer un message SMS. Vous pouvez préremplir les champs du message SMS avec des données avant d’afficher la boîte de dialogue. Le message ne sera pas envoyé tant que l’utilisateur n’aura pas appuyé sur le bouton d’envoi."
-title: Envoyer un SMS
+title: Envoyer un message SMS
 ms.assetid: 4D7B509B-1CF0-4852-9691-E96D8352A4D6
-keywords: contacts, SMS, send
+keywords: contacts, SMS, envoi
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 738f7049b0a8fe5b42abfbc25f09501d0f6e7370
+ms.openlocfilehash: e00d2e9a701a2a23b5a98f2275abd55da12fa791
 
 ---
 
-# Envoyer un SMS
+# Envoyer un message SMS
 
 \[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
@@ -60,6 +60,6 @@ Cette rubrique vous a montré comment lancer la boîte de dialogue de rédaction
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

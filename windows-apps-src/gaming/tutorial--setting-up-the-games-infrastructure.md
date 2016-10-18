@@ -5,7 +5,7 @@ description: "La première étape de l’assemblage de votre jeu consiste à con
 ms.assetid: 9fde90b3-bf79-bcb3-03b6-d38ab85803f2
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d4d7864f9689df0919b53ee70b8e18f8d812b2b0
+ms.openlocfilehash: fd8e676e66c1df530aca41e05f2ea68d96d01a32
 
 ---
 
@@ -31,7 +31,7 @@ Vous pouvez écrire un jeu depuis le début, juste avec un éditeur de texte à 
 
 Un modèle Visual Studio est une collection de paramètres et de fichiers de code qui ciblent un type spécifique d’application selon la technologie et le langage préférés. Dans Microsoft Visual Studio 2015, vous trouverez de nombreux modèles qui peuvent considérablement simplifier le développement d’applications graphiques et de jeux. Si vous n’utilisez pas de modèle, vous devez développer vous-même une grande partie de l’infrastructure d’affichage et du rendu graphique de base, ce qui peut représenter une corvée pour un développeur de jeux débutant.
 
-Le modèle approprié pour ce didacticiel est celui intitulé Application DirectX11 (Windows universel). Dans Visual Studio 2015, cliquez sur **Fichier...**&gt;**Nouveau projet**, puis effectuez les opérations suivantes :
+Le modèle approprié pour ce didacticiel est celui intitulé Application DirectX11 (Windows universel). Dans Visual Studio 2015, cliquez sur **Fichier...** &gt; **Nouveau projet**, puis effectuez les opérations suivantes:
 
 1.  Dans **Modèles**, sélectionnez **Visual C++**, **Windows**, **Universel**.
 2.  Dans le volet central, sélectionnez **Application DirectX11 (Windows universel)**.
@@ -169,6 +169,6 @@ Dans le didacticiel suivant, [Définition de l’infrastructure UWP du jeu](tuto
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

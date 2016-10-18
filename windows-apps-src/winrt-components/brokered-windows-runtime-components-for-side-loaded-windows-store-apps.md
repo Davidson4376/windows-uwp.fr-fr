@@ -3,14 +3,14 @@ author: msatranjr
 title: Composants Windows Runtime
 description: "Ce livre blanc présente une fonctionnalité prise en charge par Windows10, destinée aux entreprises, qui permet aux applications .NET tactiles d’utiliser le code responsable des opérations d’entreprise stratégiques."
 translationtype: Human Translation
-ms.sourcegitcommit: 4e9f3de68c44cf545ceee2efd99d9db8cab08676
-ms.openlocfilehash: fa7e7404a9a3ab5d75d47b3a5271bd1fd84b5569
+ms.sourcegitcommit: 700eeb0416ba73a761030e15df8c7c6d8d212785
+ms.openlocfilehash: f1d9c4f782ddd0933ee82d766bf9c70acde4dc19
 
 ---
 
-#Composants WindowsRuntime négociés pour les applications installées hors Windows Store
+#Composants WindowsRuntime négociés pour les applications installées hors WindowsStore
 
-Cet article présente une fonctionnalité de la mise à jour Windows10, destinée aux entreprises, qui permet aux applications .NET tactiles d’utiliser le code responsable des opérations d’entreprise stratégiques.
+Cet article présente une fonctionnalité prise en charge par Windows10, destinée aux entreprises, qui permet aux applications .NET tactiles d’utiliser le code responsable des opérations d’entreprise stratégiques.
 
 ##Introduction
 
@@ -39,7 +39,7 @@ Le composant de bureau de cette fonctionnalité est un nouveau type d’applicat
 
 **Contrat**
 
-Le contrat entre l’application installée hors Windows Store et le composant du bureau est décrit en fonction du système de type UWP. Cela implique la déclaration d’une ou plusieurs classes C\# qui représentent une plateforme universelle Windows. Reportez-vous à la rubrique MSDN [Création de composants Windows Runtime en C\# et Visual Basic](https://msdn.microsoft.com/en-us/library/br230301.aspx) pour connaître les conditions spécifiques pour la création d’une classe Windows Runtime en C\#.
+Le contrat entre l’application installée hors Windows Store et le composant du bureau est décrit en fonction du système de type UWP. Cela implique la déclaration d’une ou plusieurs classes C\# qui représentent une plateforme universelle Windows. Reportez-vous à la rubrique MSDN [Création de composants Windows Runtime en C\# et Visual Basic](https://msdn.microsoft.com/library/br230301.aspx) pour connaître les conditions spécifiques pour la création d’une classe Windows Runtime en C\#.
 
 >**Remarque** Pour le moment, les énumérations ne sont pas prises en charge dans le contrat Composants Windows Runtime entre le composant de bureau et l’application installée hors Windows Store.
 
@@ -379,7 +379,7 @@ En règle générale, seules des références entre projets sont créées. Cepen
 
 Ces références sont un mélange précis de références qui sont nécessaires au fonctionnement correct de ce serveur hybride. Le protocole consiste à ouvrir le fichier .csproj (tel que décrit dans «Comment modifier le type de sortie du projet») et à ajouter ces références si nécessaire.
 
-Une fois ces références configurées correctement, la tâche suivante consiste à implémenter la fonctionnalité du serveur. Voir la rubrique MSDN [Meilleures pratiques en matière d’interopérabilité avec les composants Windows Runtime (applications du Windows Store en C\#/VB/C++ et XAML)](https://msdn.microsoft.com/en-us/library/windows/apps/hh750311.aspx).
+Une fois ces références configurées correctement, la tâche suivante consiste à implémenter la fonctionnalité du serveur. Voir la rubrique MSDN [Meilleures pratiques en matière d’interopérabilité avec les composants Windows Runtime (applications du Windows Store en C\#/VB/C++ et XAML)](https://msdn.microsoft.com/library/windows/apps/hh750311.aspx).
 Cette tâche consiste à créer une DLL de composant Windows Runtime qui est en mesure d’appeler le code de bureau dans le cadre de son implémentation. L’exemple fourni comprend les principaux modèles utilisés dans Windows Runtime:
 
 -   Appels de méthode
@@ -449,7 +449,7 @@ Dans la mesure où l’approche IPC comprend le marshaling des interfaces Window
 
 **Création du proxy dans Visual Studio**
 
-Les procédures de création et d’inscription de proxys et de stubs pour une utilisation dans un package d’application du Windows Store standard sont décrites dans la rubrique [Déclenchement d’événements dans les composants Windows Runtime](https://msdn.microsoft.com/en-us/library/windows/apps/dn169426.aspx).
+Les procédures de création et d’inscription de proxys et de stubs pour une utilisation dans un package d’application du Windows Store standard sont décrites dans la rubrique [Déclenchement d’événements dans les composants Windows Runtime](https://msdn.microsoft.com/library/windows/apps/dn169426.aspx).
 Les étapes décrites dans cet article sont plus compliquées que la procédure décrite ci-dessous, car elles décrivent l’inscription du proxy/stub dans le package de l’application (plutôt qu’une inscription globale).
 
 **Étape1:** en utilisant la solution du projet de composant de bureau, créez un projet Proxy/Stub dans Visual Studio:
@@ -569,7 +569,7 @@ Pour un serveur du service Broker, *clrhost.dll* doit figurer dans la liste des 
 
 -   [Création d’applications du Windows Store fiables et dignes de confiance](http://go.microsoft.com/fwlink/p/?LinkID=393644)
 
--   [Contrats et extensions des applications (applications du Windows Store)](https://msdn.microsoft.com/en-us/library/windows/apps/hh464906.aspx)
+-   [Contrats et extensions des applications (applications du Windows Store)](https://msdn.microsoft.com/library/windows/apps/hh464906.aspx)
 
 -   [Comment installer des applications hors Windows Store sur Windows10](https://msdn.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#GroupPolicy)
 
@@ -579,6 +579,6 @@ Pour un serveur du service Broker, *clrhost.dll* doit figurer dans la liste des 
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Sep16_HO2-->
 
 

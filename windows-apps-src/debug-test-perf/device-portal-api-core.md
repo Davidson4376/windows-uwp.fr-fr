@@ -2,16 +2,16 @@
 author: dbirtolo
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
 title: "Informations de référence sur les API principales Device Portal"
-description: "Découvrez les API REST principales WindowsDevicePortal que vous pouvez utiliser pour accéder aux données et contrôler votre appareil par programme."
+description: "Découvrez les API REST principales WindowsDevicePortal que vous pouvez utiliser pour accéder aux données et contrôler votre appareil par programmation."
 translationtype: Human Translation
-ms.sourcegitcommit: 30aeffcf090c881f84331ced4f7199fd0092b676
-ms.openlocfilehash: 0fa515d28431d4256b977ee3c3c41169661f129f
+ms.sourcegitcommit: fae2c6b31c9c6c07026abc4718959b02a36e6600
+ms.openlocfilehash: 226ecaecd93e4996e438f56f780926ca63c184fd
 
 ---
 
 # Référence sur les API principales DevicePortal
 
-Dans WindowsDevicePortal, tout repose sur les API REST que vous pouvez utiliser pour accéder aux données et contrôler votre appareil par programme.
+Dans WindowsDevicePortal, tout repose sur les API REST que vous pouvez utiliser pour accéder aux données et contrôler votre appareil par programmation.
 
 ## Déploiement des applications
 
@@ -38,9 +38,10 @@ package   | (**requis**) Nom de fichier du package à installer.
 
 - Aucun
 
-**Corps de la requête**
+**Corps de la demande**
 
-- Aucun
+- Fichier .appx ou .appxbundle, ainsi que toutes les dépendances dont l’application a besoin. 
+- Certificat utilisé pour signer l’application, s’il s’agit d’un appareil IoT ou de bureau Windows. Les autres plateformes n’exigent pas le certificat. 
 
 **Réponse**
 
@@ -58,6 +59,7 @@ Code d’état HTTP      | Description
 
 * Windows Mobile
 * Windows Desktop
+* Xbox
 * HoloLens
 * IoT
 
@@ -100,6 +102,7 @@ Code d’état HTTP      | Description
 
 * Windows Mobile
 * Windows Desktop
+* Xbox
 * HoloLens
 * IoT
 
@@ -117,9 +120,11 @@ DELETE | /api/app/packagemanager/package
 
 **Paramètres d’URI**
 
-- Aucun
+Paramètre d’URI | Description
+:---          | :---
+package   | (**obligatoire**) PackageFullName (à partir de GET /api/app/packagemanager/packages) de l’application cible
 
-**En-têtes de requête**
+**En-têtes de demande**
 
 - Aucun
 
@@ -3297,6 +3302,58 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
+### Renommer un fichier
+
+**Demande**
+
+Renommez un fichier dans un dossier.
+
+Méthode      | URI de la requête
+:------     | :-----
+POST | /api/filesystem/apps/rename
+
+<br />
+**Paramètres d’URI**
+
+Paramètre d’URI | Description
+:------     | :-----
+knownfolderid | (**obligatoire**) Répertoire de niveau supérieur dans lequel se trouve le fichier. Utilisez **LocalAppData** pour accéder aux applications avec chargement indépendant. 
+filename | (**obligatoire**) Nom d’origine du fichier renommé. 
+newfilename | (**obligatoire**) Nouveau nom du fichier.
+packagefullname | (**requis si *knownfolderid* == LocalAppData**) Nom complet du package de l’application qui vous intéresse. 
+path | (**facultatif**) Sous-répertoire du dossier ou du package spécifié ci-dessus. 
+
+**En-têtes de requête**
+
+- Aucun
+
+**Corps de la requête**
+
+- Aucun
+
+**Réponse**
+
+- Aucun
+
+**Code d’état**
+
+Cette API comporte les codes d’état attendus suivants.
+
+Code d’état HTTP      | Description
+:------     | :-----
+200 | OK. Le fichier est renommé
+404 | Fichier introuvable
+5XX | Codes d’erreur
+<br />
+**Familles d’appareils disponibles**
+
+* Windows Mobile
+* Windows Desktop
+* HoloLens
+* Xbox
+* IoT
+
+---
 ### Supprimer un fichier
 
 **Requête**
@@ -3325,6 +3382,8 @@ path | (**facultatif**) Sous-répertoire du dossier ou du package spécifié ci-
 - Aucun
 
 **Réponse**
+
+- Aucun 
 
 **Code d’état**
 
@@ -3393,6 +3452,6 @@ Code d’état HTTP      | Description
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

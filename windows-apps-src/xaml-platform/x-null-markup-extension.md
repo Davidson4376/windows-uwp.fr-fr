@@ -5,11 +5,11 @@ title: Extension de balisage xNull
 ms.assetid: E6A4038E-4ADA-4E82-9824-582FC16AB037
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 96ec27fa36d5a30d6bcf3b3c4ad4a330bf799a09
+ms.openlocfilehash: c81acb985c54a8dc799df5ad9c811577777dbf9b
 
 ---
 
-# Extension de balisage {x&#58;Null}
+# Extension de balisage {x:Null}
 
 \[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
@@ -38,6 +38,6 @@ Certains types Windows Runtime ont la valeur Nullable. Quand un type Nullable n�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

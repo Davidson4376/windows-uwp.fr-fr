@@ -5,7 +5,7 @@ description: "Ce document présente les principales caractéristiques du projet 
 ms.assetid: 73329b29-62e3-1b36-01db-b7744ee5b4c3
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 5a9df995078763df73542a4101e73e147517b1eb
+ms.openlocfilehash: c9aafbf7d8061893180a1a823c2c1cafd9ef7a7f
 
 ---
 
@@ -147,6 +147,6 @@ Pour plus d’informations sur la structure du code de l’application MarbleMaz
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

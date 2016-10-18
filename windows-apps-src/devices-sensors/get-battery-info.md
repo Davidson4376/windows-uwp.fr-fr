@@ -5,7 +5,7 @@ title: Obtenir des informations sur la batterie
 description: "Découvrez comment obtenir des informations détaillées sur la batterie à l’aide des API de l’espace de noms Windows.Devices.Power."
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 9b1394c28b25b8b1b7401fcc794659dcf38fed6f
+ms.openlocfilehash: 0671ad8deef7c0062172e3a441d206efb15de7dd
 
 ---
 # Obtenir des informations sur la batterie
@@ -339,6 +339,6 @@ Enfin, pour exécuter cette application de batterie de base, dans le menu **Déb
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

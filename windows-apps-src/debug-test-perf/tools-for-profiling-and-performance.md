@@ -5,7 +5,7 @@ title: Outils de profilage et de performances
 description: "Microsoft fournit plusieurs outils pour vous aider à améliorer les performances de vos applications de plateforme Windows universelle (UWP)."
 translationtype: Human Translation
 ms.sourcegitcommit: 5bbd14fb53cae67bbb827f94e695b2703e07fc34
-ms.openlocfilehash: f7f9821be7d1423b2f89367bd20c09981eca24eb
+ms.openlocfilehash: 3d0cf5f983efdee116bcf8b87398fe376efca3c6
 
 ---
 # Outils de profilage et de performances
@@ -30,6 +30,6 @@ Voir aussi:
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

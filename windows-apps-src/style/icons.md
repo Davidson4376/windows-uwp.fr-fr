@@ -7,7 +7,7 @@ label: Icons
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: e5e601bf3ff9d0b1518c86130a5b0fefbb86a773
+ms.openlocfilehash: 9d19107a29c471a811e87fc548656ff2d970754d
 
 ---
 
@@ -25,10 +25,10 @@ Des icônes efficaces s’harmonisent avec la typographie et avec le reste du la
         <td>48pxx48px</td>
     </tr>
     <tr> 
-        <td>![Icons at 16x16 effective pixels](images/icons-16x16.png)</td>
-        <td>![Icons at 24x24 effective pixels](images/icons-24x24.png)</td>
-        <td>![Icons at 32x32 effective pixels](images/icons-32x32.png)</td>
-        <td>![Icons at 48x48 effective pixels](images/icons-48x48.png)</td>
+        <td>![Icônes de 16 x 16 pixels effectifs](images/icons-16x16.png)</td>
+        <td>![Icônes de 24 x 24 pixels effectifs](images/icons-24x24.png)</td>
+        <td>![Icônes de 32 x 32 pixels effectifs](images/icons-32x32.png)</td>
+        <td>![Icônes de 48 x 48 pixels effectifs](images/icons-48x48.png)</td>
     </tr>
 </table>
 
@@ -47,17 +47,17 @@ Utilisez la forme qui correspond à l’orientation de l’icône et créez votr
         <td>Triangle</td>
     </tr>
     <tr>
-        <td>![A circle](images/icons-common-shapes-examples-1.png)<td>
-        <td>![A square](images/icons-common-shapes-examples-2.png)</td>
-        <td>![A triangle ](images/icons-common-shapes-examples-3.png)</td>
+        <td>![Un cercle](images/icons-common-shapes-examples-1.png)<td>
+        <td>![Un carré](images/icons-common-shapes-examples-2.png)</td>
+        <td>![Un triangle ](images/icons-common-shapes-examples-3.png)</td>
     </tr>
         <tr>
         <td>Rectangle horizontal<td>
         <td colspan="2">Rectangle vertical</td>        
         </tr>
     <tr>
-        <td>![A horizontal rectangle](images/icons-common-shapes-examples-4.png)<td>
-        <td colspan="2">![A vertical rectangle](images/icons-common-shapes-examples-5.png)</td>
+        <td>![Un rectangle horizontal](images/icons-common-shapes-examples-4.png)<td>
+        <td colspan="2">![Un rectangle vertical](images/icons-common-shapes-examples-5.png)</td>
          
     </tr>
 
@@ -91,10 +91,10 @@ Vous pouvez combiner, joindre, faire pivoter et refléter ces lignes lorsque vou
 
 <table>
     <tr>
-        <td>![A 1:1 angle example](images/icons-angles-examples-1.png)</td>
-        <td>![A 1:2 angle example](images/icons-angles-examples-2.png)</td>
-        <td>![A 1:3 angle example](images/icons-angles-examples-3.png)</td>
-        <td>![A 1:4 angle example](images/icons-angles-examples-4.png)</td>
+        <td>![Un exemple d’angle 1:1](images/icons-angles-examples-1.png)</td>
+        <td>![Un exemple d’angle 1:2](images/icons-angles-examples-2.png)</td>
+        <td>![Un exemple d’angle 1:3](images/icons-angles-examples-3.png)</td>
+        <td>![Un exemple d’angle 1:4](images/icons-angles-examples-4.png)</td>
     </tr>
 </table>
 
@@ -108,12 +108,12 @@ Les traits courbes sont créés à partir de sections d’un cercle complet et n
         <td>1/8 de cercle</td>
     </tr>
     <tr>
-        <td>![1/4 circle](images/icons-curves-14circle.png)</td>
-        <td>![1/8 circle](images/icons-curves-18circle.png)</td>
+        <td>![1/4 de cercle](images/icons-curves-14circle.png)</td>
+        <td>![1/8 de cercle](images/icons-curves-18circle.png)</td>
     </tr>
     <tr>
-        <td>![1/4 cirlce example](images/icons-curves-examples-1.png)</td>
-        <td>![1/8 circle example](images/icons-curves-examples-2.png)</td>
+        <td>![Exemple de 1/4 de cercle](images/icons-curves-examples-1.png)</td>
+        <td>![Exemple de 1/8 de cercle](images/icons-curves-examples-2.png)</td>
     </tr>    
 </table>
 
@@ -145,8 +145,8 @@ Les badges d’état utilisent un objet coloré rempli surmontant l’icône, ta
     <td>Badges d’action courants</td>
 </tr>
 <tr>
-    <td>![Status badge ](images/icons-badge-common-states-1.png)</td>
-    <td>![Action badge ](images/icons-badge-common-states-2.png)</td>
+    <td>![Badge d’état ](images/icons-badge-common-states-1.png)</td>
+    <td>![Badge d’action ](images/icons-badge-common-states-2.png)</td>
 </tr>
 </table>
 <p></p>
@@ -158,8 +158,8 @@ L’utilisation d’une couleur de badge ne doit être utilisée que pour commun
 <table>
 <tr><td>Vert: #128B44</td><td>Bleu: #2C71B9</td><td>Jaune: #FDC214</td></tr>
 <tr><td>Positif: effectué, terminé </td><td>Neutre: aide, notification </td><td>Mise en garde: alerte, avertissement </td></tr>
-<tr><td>![Green status](images/icons-color-inbadging-1.png)</td><td>![Blue status](images/icons-color-inbadging-2.png)</td>
-<td>![Yellow status](images/icons-color-inbadging-3.png)</td></tr>
+<tr><td>![État vert](images/icons-color-inbadging-1.png)</td><td>![État bleu](images/icons-color-inbadging-2.png)</td>
+<td>![État jaune](images/icons-color-inbadging-3.png)</td></tr>
 </table>
 <p></p>
 
@@ -177,6 +177,6 @@ Les badges doivent présenter une taille de 10 à 18px sur une grille de 32px ×
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

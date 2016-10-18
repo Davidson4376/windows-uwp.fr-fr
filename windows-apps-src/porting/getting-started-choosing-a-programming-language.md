@@ -5,11 +5,11 @@ ms.assetid: 6CA46432-BF03-4B20-9187-565B3503B497
 description: "Choix d’un langage de programmation"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 10fa4a349621c8e7b248c7daf4d7cdf967e25255
+ms.openlocfilehash: c7d99923a0deac61e289d3a2796b8dd1720430b4
 
 ---
 
-# Prise en main &#58; Choix d’un langage de programmation
+# Prise en main : Choix d’un langage de programmation
 
 \[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
@@ -145,6 +145,6 @@ C# est un langage facile à comprendre. Il est fourni avec les nombreuses classe
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

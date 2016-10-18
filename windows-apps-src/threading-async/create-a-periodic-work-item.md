@@ -5,7 +5,7 @@ title: "Créer un élément de travail périodique"
 description: "Découvrez comment créer un élément de travail qui se reproduit régulièrement."
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 8bf4bb511f84b314d48aedf9dd05c8955875029c
+ms.openlocfilehash: 11e4c5d2ece918854620a89062e164fba7f48953
 
 ---
 # Créer un élément de travail périodique
@@ -206,6 +206,6 @@ Pour obtenir des informations sur les minuteurs à déclenchement unique, voir [
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

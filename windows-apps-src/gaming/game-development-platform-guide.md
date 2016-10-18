@@ -5,7 +5,7 @@ description: "Ce guide décrit les technologies disponibles pour le développeme
 ms.assetid: bc4d4648-0d6e-efbb-7608-80bd09decd6e
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 3c7807d0b46a32bfe90c79b7eee3111039ca94ab
+ms.openlocfilehash: 83c3fda490d7ab821e8e584291ded642c9c11dd1
 
 ---
 
@@ -199,7 +199,7 @@ De nombreuses API sont liées au développement de jeux, mais tous les jeux ne d
     <li>Possibilité d’utiliser plus de 4 boîtiers de commande à la fois</li>
     <li>Possibilité d’accéder à des fonctionnalités supplémentaires de boîtier de commande Xbox One, telles que les moteurs de vibration de déclencheur</li>
     <li>Possibilité d’être averti quand des contrôleurs se connectent/déconnectent via un événement au lieu d’une interrogation</li>
-    <li>Possibilité d’attribuer une entrée à un utilisateur spécifique  (Windows.System.User)</li>
+    <li>Possibilité d’attribuer une entrée à un utilisateur spécifique (Windows.System.User)</li>
     </ul>
     <p><strong>Quand l’utiliser</strong></p>
     <p>Si votre jeu doit prendre en charge l’entrée de boîtier de commande et n’utilise pas de code XInput existant, ou si vous avez besoin d’un des avantages répertoriés ci-dessus, vous devez utiliser Windows.Gaming.Input.</p>
@@ -356,6 +356,6 @@ Pour plus d’informations sur la soumission de votre jeu au WindowsStore, voir 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

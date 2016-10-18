@@ -4,8 +4,8 @@ title: Outils Graphics Diagnostics
 description: "Découvrez comment obtenir et utiliser les fonctionnalités de diagnostic de graphiques, notamment le débogage graphique, l’analyse des frames graphiques et l’utilisation du processeur graphique (GPU) dans Visual Studio."
 ms.assetid: 629ea462-18ed-a333-07e9-cc87ea2dcd93
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: f266cb50893fd37162f21be169d6daf6e37c6bb9
+ms.sourcegitcommit: 765cde8afe32cef6515ee6ca9750365aa35984a2
+ms.openlocfilehash: 5d8f7a8dbba2da76c6093d034c2ca8c2b4592c7e
 
 ---
 
@@ -14,10 +14,11 @@ ms.openlocfilehash: f266cb50893fd37162f21be169d6daf6e37c6bb9
 
 \[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Dans Windows10, les outils de diagnostic de graphiques sont désormais disponibles au sein même de Windows sous la forme d’une fonctionnalité facultative. Pour utiliser les fonctionnalités de diagnostic de graphiques fournies dans le runtime et dans Visual Studio afin de développer des applications ou des jeux DirectX, installez la fonctionnalité facultative Outils graphiques :
+Dans Windows10, les outils de diagnostic de graphiques sont désormais disponibles au sein même de Windows sous la forme d’une fonctionnalité facultative. Pour utiliser les fonctionnalités de diagnostic de graphiques fournies dans le runtime et dans Visual Studio afin de développer des applications ou des jeux DirectX, installez la fonctionnalité facultative Outils graphiques:
 
-1.  Accédez à **Paramètres**, sélectionnez **Système**, sélectionnez **Fonctionnalités facultatives**, puis cliquez sur **Ajouter une fonctionnalité**. Accédez à **Paramètres**, sélectionnez **Système**, sélectionnez **Applications et fonctionnalités**, sélectionnez **Gérer les fonctionnalités facultatives**, puis cliquez sur **Ajouter une fonctionnalité**.
-2.  Dans la liste **Ajouter une fonctionnalité**, cliquez sur **Outils graphiques**.
+1.  Accédez à **Paramètres**, sélectionnez **Système**, sélectionnez **Applications et fonctionnalités**, puis cliquez sur **Gérer les fonctionnalités facultatives**.
+2.  Cliquez sur **Ajouter une fonctionnalité**.   
+3.  Dans la liste **Fonctionnalités facultatives**, sélectionnez **Outils graphiques**, puis cliquez sur **Installer**.
 
 Les fonctionnalités de diagnostic de graphiques incluent la possibilité de créer des périphériques de débogage Direct3D (par le biais des couches SDK Direct3D) dans le runtime DirectX, ainsi que les fonctions de débogage graphique, d’analyse des frames graphiques et d’utilisation du GPU.
 
@@ -40,6 +41,6 @@ Les fonctionnalités de diagnostic de graphiques incluent la possibilité de cr�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

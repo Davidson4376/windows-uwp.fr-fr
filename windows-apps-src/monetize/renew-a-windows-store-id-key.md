@@ -4,15 +4,15 @@ ms.assetid: 3569C505-8D8C-4D85-B383-4839F13B2466
 description: "Utilisez cette méthode pour renouveler une clé du Windows Store."
 title: "Renouveler une clé d’ID du Windows Store"
 translationtype: Human Translation
-ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
-ms.openlocfilehash: a3cef13e84c5bb06be4f3e3d4b2db4e02650df62
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: 1a2cb625f95a5ad8e94911ead2402cb2589e209a
 
 ---
 
-# Renouveler une clé d’ID du Windows Store
+# Renouveler une clé d’ID du WindowsStore
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+
 
 Utilisez cette méthode pour renouveler une clé du Windows Store. Lorsque vous générez une clé d’ID du Windows Store en appelant la méthode [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) ou [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675), la clé est valide pendant 90 jours. Après l’expiration de la clé, vous pouvez utiliser la clé arrivée à expiration pour en renégocier une nouvelle à l’aide de cette méthode.
 
@@ -119,6 +119,6 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

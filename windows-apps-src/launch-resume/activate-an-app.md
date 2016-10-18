@@ -4,20 +4,16 @@ title: "Gérer l’activation d’une application"
 description: "Découvrez comment gérer l’activation d’une application en remplaçant la méthode OnLaunched."
 ms.assetid: DA9A6A43-F09D-4512-A2AB-9B6132431007
 translationtype: Human Translation
-ms.sourcegitcommit: fb83213a4ce58285dae94da97fa20d397468bdc9
-ms.openlocfilehash: f47a3b7fcb4bec4138e11a079c3d10e918c1eb95
+ms.sourcegitcommit: a1bb0d5d24291fad1acab41c149dd9d763610907
+ms.openlocfilehash: e41a683026a4543545556e98f6b4e9194099b362
 
 ---
 
 # Gérer l’activation d’une application
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-
-**API importantes**
-
--   [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)
 
 Découvrez comment gérer l’activation d’une application en remplaçant la méthode [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335).
 
@@ -183,6 +179,6 @@ Si la valeur de [**PreviousExecutionState**](https://msdn.microsoft.com/library/
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

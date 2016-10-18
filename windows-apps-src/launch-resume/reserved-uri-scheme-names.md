@@ -5,7 +5,7 @@ description: "Vous pouvez utiliser des associations d’URI pour lancer automati
 ms.assetid: 7428C4A2-1380-4EBB-9C2A-7DF7B5C468AE
 translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: 2736267bf72b1cadd2c635b15daf6975a70937df
+ms.openlocfilehash: 2d3d647985701a7bbccc606fd485ad9f6361f9e7
 
 ---
 # Noms de schéma d’URI et de fichier réservés
@@ -128,6 +128,6 @@ Les types de fichiers suivants sont réservés au système d’exploitation
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

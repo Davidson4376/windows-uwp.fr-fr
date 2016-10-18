@@ -5,7 +5,7 @@ title: Utiliser des pinceaux
 description: "Les objets Brush permettent de peindre les intérieurs ou les contours de formes, de texte et de parties de contrôles, afin que l’objet peint soit visible dans une interface utilisateur."
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 38999529dda7f5e21ef7aee4a99b2420cb37bfa6
+ms.openlocfilehash: cc16b07931cf3f7740957c222e8c8821ddbab08a
 
 ---
 # Utiliser des pinceaux
@@ -179,6 +179,6 @@ Pour obtenir des exemples de code, voir les pages de référence pour les classe
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

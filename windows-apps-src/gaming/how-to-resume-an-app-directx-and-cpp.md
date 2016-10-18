@@ -5,7 +5,7 @@ description: "Cette rubrique montre comment restaurer des données d’applicati
 ms.assetid: 5e6bb673-6874-ace5-05eb-f88c045f2178
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d5383da7332c80d4337f0e0b3eef0a6851fcd527
+ms.openlocfilehash: 978f779eaeb732b549657751c11cd2192728999b
 
 ---
 
@@ -100,6 +100,6 @@ Le système suspend votre application chaque fois que l’utilisateur bascule ve
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

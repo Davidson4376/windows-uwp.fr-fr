@@ -6,8 +6,8 @@ title: "Modèles de contrôle et interfaces"
 label: Control patterns and interfaces
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
-ms.openlocfilehash: 9f38c3bd26ef7b409d4c743abf25a5b0a6455f20
+ms.sourcegitcommit: 74e5af4c3eb5a2e17c95afce156474b613e966c5
+ms.openlocfilehash: d2ae98f95538c014ef256f5d4a400aabb36c3118
 
 ---
 
@@ -66,10 +66,10 @@ Quand vous implémentez un modèle de contrôle, vous devez aussi consulter la d
 <span id="related_topics"/>
 ## Rubriques connexes  
 * [Homologues d’automatisation personnalisés](custom-automation-peers.md)
-* [Accessibilité](accessibility.md)
+* [Accessibilité](accessibility.md) 
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

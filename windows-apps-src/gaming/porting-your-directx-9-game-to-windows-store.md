@@ -5,7 +5,7 @@ description: "Cette section inclut des articles, des vues d’ensemble et des pr
 ms.assetid: 536c0b99-cdf3-1527-1ee2-4187f50a2cf0
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 1cb77db78fe368c567990c9521122b42ef10ec65
+ms.openlocfilehash: 3988d0cbfb3b7e585622af45c0d7ff3589ee020d
 
 ---
 
@@ -40,6 +40,6 @@ Cette section inclut des articles, des vues d’ensemble et des procédures pas 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

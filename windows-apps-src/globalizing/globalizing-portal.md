@@ -8,7 +8,7 @@ label: Intro
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: 1fc82ff462a5c0af6b10e7dc8455adc215558b4e
+ms.openlocfilehash: a34b682cc903555b9d6f64636c3d1cf7bee75b5d
 
 ---
 
@@ -99,6 +99,6 @@ Consultez également la documentation initialement créée pour Windows 8.x, qui
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

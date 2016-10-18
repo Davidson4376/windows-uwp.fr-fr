@@ -6,11 +6,13 @@ ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
 label: Lists
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
-ms.openlocfilehash: adf8e449cff846caebff3a80b772f801430871e5
+ms.sourcegitcommit: 508a09e0c12006c00dbdf7675516b41119eab8a6
+ms.openlocfilehash: 8b8820c9ab82ce0789fbe2fb9f62309e48f4ce9d
 
 ---
 # Listes
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 Les listes affichent et activent l’interaction avec du contenu basé sur des collections. Les quatre modèles de liste traités dans cet article sont les suivants:
 
@@ -21,11 +23,18 @@ Les listes affichent et activent l’interaction avec du contenu basé sur des c
 
 Des recommandations en matière de conception, des fonctionnalités et des exemples sont fournis pour chaque modèle de liste. À la fin de l’article figurent des liens vers des rubriques et des API connexes.
 
-## API importantes
+<div class="important-apis" >
+<b>API importantes</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/br242878"><strong>Classe ListView</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/br242705"><strong>Classe GridView</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/br209348"><strong>Classe ComboBox</strong></a></li>
+</ul>
 
--   [**Classe ListView**](https://msdn.microsoft.com/library/windows/apps/br242878)
--   [**Classe GridView**](https://msdn.microsoft.com/library/windows/apps/br242705)
--   [**Classe ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348)
+</div>
+</div>
+
+
 
 
 ## Affichages de liste
@@ -42,20 +51,50 @@ Utilisez un affichage Liste pour :
 
 ### Exemples
 
-Lorsque vous utilisez un [modèle Maître/Détails](master-details.md), vous pouvez utiliser un affichage Liste pour organiser le volet maître. Ce dernier affiche une liste d’éléments sélectionnables. Lorsque l’utilisateur sélectionne un élément dans le volet maître, des informations supplémentaires concernant l’élément sélectionné apparaissent dans le volet de détails. Le volet Détails contient souvent un affichage en mode Grille.
+Voici un affichage Liste simple montrant des données regroupées sur un téléphone.
 
-![Exemple de modèle Maître/Détails](images/Stock_Tracker/uap_finance_desktop700.png)
-
-Vous pouvez relier plusieurs listes pour créer des hiérarchies Maître/Détails complexes. Pour plus d’informations, voir le [modèle Maître/Détails](master-details.md).
-
-L’exemple de disposition de liste comporte des en-têtes de groupe, et s’affiche sous la forme d’une seule colonne :
-
-![Exemple d’affichage Liste avec quatre types d’unités principales](images/controls_listview_4types.png)
+![Un affichage Liste avec des données regroupées](images/simple-list-view-phone.png)
 
 ### Recommandations
 
 -   Les éléments d’une liste doivent avoir le même comportement.
 -   Si votre liste est répartie en groupes, vous pouvez utiliser un [zoom sémantique](semantic-zoom.md) pour permettre aux utilisateurs de naviguer plus facilement dans un contenu regroupé.
+
+### Articles sur l’affichage Liste
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Rubrique</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><p>[Affichage Liste et affichage Grille](listview-and-gridview.md)</p></td>
+<td align="left"><p>Découvrez les principaux éléments de l’utilisation d’un affichage Liste ou Grille dans votre application.</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>[Modèles d’élément d’affichage Liste](listview-item-templates.md)</p></td>
+<td align="left"><p>Les éléments que vous affichez dans une liste ou une grille peuvent jouer un rôle majeur dans l’apparence générale de votre application. Modifiez les modèles de contrôle et les modèles de données pour définir l’apparence des éléments et donner un aspect satisfaisant à votre application.</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>[Listes inversées](inverted-lists.md)</p></td>
+<td align="left"><p>Les listes inversées placent les nouveaux éléments ajoutés en bas, comme dans une application de chat. Suivez ces conseils pour utiliser une liste inversée dans votre application.</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>[Tirer pour actualiser](pull-to-refresh.md)</p></td>
+<td align="left"><p>Le modèle Tirer pour actualiser permet à l’utilisateur de dérouler une liste de données à l’aide de la fonction tactile pour récupérer plus de données. Utilisez ces instructions pour implémenter le modèle tirer pour actualiser dans votre affichage Liste.</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>[Interface utilisateur imbriquée](nested-ui.md)</p></td>
+<td align="left"><p>L’interface utilisateur imbriquée est une interface utilisateur qui expose des contrôles exploitables inclus dans un conteneur, lequel peut également être actionné par l’utilisateur. Par exemple, si un élément de l’affichage Liste contient un bouton, l’utilisateur peut sélectionner l’élément de liste ou appuyer sur le bouton imbriqué à l’intérieur. Suivez ces bonnes pratiques pour fournir la meilleure expérience d’interface utilisateur imbriquée à vos utilisateurs.</p></td>
+</tr>
+</tbody>
+</table>
 
 ## Affichages Grille
 
@@ -83,6 +122,34 @@ Un affichage Grille est une solution idéale pour une bibliothèque de contenu, 
 
 -   Les éléments d’une liste doivent avoir le même comportement.
 -   Si votre liste est répartie en groupes, vous pouvez utiliser un [zoom sémantique](semantic-zoom.md) pour permettre aux utilisateurs de naviguer plus facilement dans un contenu regroupé.
+
+### Articles sur l’affichage Grille
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Rubrique</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><p>[Affichage Liste et affichage Grille](listview-and-gridview.md)</p></td>
+<td align="left"><p>Découvrez les principaux éléments de l’utilisation d’un affichage Liste ou Grille dans votre application.</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>[Modèles d’élément d’affichage Liste](listview-item-templates.md)</p></td>
+<td align="left"><p>Les éléments que vous affichez dans une liste ou une grille peuvent jouer un rôle majeur dans l’apparence générale de votre application. Modifiez les modèles de contrôle et les modèles de données pour définir l’apparence des éléments et donner un aspect satisfaisant à votre application.</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>[Interface utilisateur imbriquée](nested-ui.md)</p></td>
+<td align="left"><p>L’interface utilisateur imbriquée est une interface utilisateur qui expose des contrôles exploitables inclus dans un conteneur, lequel peut également être actionné par l’utilisateur. Par exemple, si un élément de l’affichage Liste contient un bouton, l’utilisateur peut sélectionner l’élément de liste ou appuyer sur le bouton imbriqué à l’intérieur. Suivez ces bonnes pratiques pour fournir la meilleure expérience d’interface utilisateur imbriquée à vos utilisateurs.</p></td>
+</tr>
+</tbody>
+</table>
 
 ## Listes déroulantes
 
@@ -187,6 +254,7 @@ Pour des recommandations relatives à la barre de commandes, voir [Recommandatio
 - [Maître/détails](master-details.md)
 - [Volet de navigation](nav-pane.md)
 - [Zoom sémantique](semantic-zoom.md)
+- [Glisser-déplacer](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
 
 **Pour les développeurs**
 - [**Classe ListView**](https://msdn.microsoft.com/library/windows/apps/br242878)
@@ -196,6 +264,6 @@ Pour des recommandations relatives à la barre de commandes, voir [Recommandatio
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -4,8 +4,8 @@ ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
 title: "Vue d’ensemble de Windows Device Portal"
 description: "Découvrez comment Windows Device Portal vous permet de configurer et de gérer à distance votre appareil par le biais d’une connexion réseau ou USB."
 translationtype: Human Translation
-ms.sourcegitcommit: 01e83c14304891ff5eaa895e98bbebac33ee7614
-ms.openlocfilehash: 55cbdc077f839166f32605bbada8e0cc707cf5b3
+ms.sourcegitcommit: 7f6aba331ba27d2c0c2ca7925c452da58e155cb8
+ms.openlocfilehash: b316eab1f269dadbe65b7e93b5a33a8e4c4924d7
 
 ---
 # Vue d’ensemble de Windows Device Portal
@@ -35,7 +35,7 @@ Téléphone | Activer dans le mode de développement | 80| 443 | localhost:10080
 
 Pour obtenir des instructions d’installation spécifiques pour l’appareil, voir:
 - [Device Portal pour HoloLens](https://dev.windows.com/holographic/using_the_windows_device_portal)
-- [Device Portal pour IoT](http://ms-iot.github.io/content/win10/tools/DevicePortal.htm)
+- [Device Portal pour IoT](https://go.microsoft.com/fwlink/?LinkID=616499)
 - [Device Portal pour appareils mobiles](device-portal-mobile.md#set-up-device-portal-on-window-phone)
 - [Device Portal pour Xbox](device-portal-xbox.md)
 - [Device Portal pour Bureau](device-portal-desktop.md#set-up-device-portal-on-windows-desktop)
@@ -180,7 +180,7 @@ La connexion au portHTTPS est suggérée, car les appareils ne sont pas tous dé
 
 ### ProtectionCSRF et écriture de scripts
 
-Afin d’offrir une protection contre les [attaquesCSRF](https://wikipedia.org/wiki/Cross-site_request_forgery), un jeton unique est requis pour toutes les demandes nonGET. Ce jeton, qui est l’en-tête de demande  X-CSRF-Token, dérive d’un cookie de session, CSRF-Token. Dans l’interface utilisateur DevicePortal, le cookie CSRF-Token est copié dans l’en-tête X-CSRF-Token à chaque demande.
+Afin d’offrir une protection contre les [attaquesCSRF](https://wikipedia.org/wiki/Cross-site_request_forgery), un jeton unique est requis pour toutes les demandes nonGET. Ce jeton, qui est l’en-tête de demande X-CSRF-Token, dérive d’un cookie de session, CSRF-Token. Dans l’interface utilisateur DevicePortal, le cookie CSRF-Token est copié dans l’en-tête X-CSRF-Token à chaque demande.
 
 **Important** Cette protection empêche toute utilisation des APIREST à partir d’un client autonome (par exemple, utilitaires de ligne de commande). Cette situation peut être résolue de 3manières différentes: 
 
@@ -198,6 +198,6 @@ Afin d’éliminer les risques d’[attaques CSWSH](https://www.christian-schnei
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO5-->
 
 

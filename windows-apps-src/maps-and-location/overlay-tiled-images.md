@@ -5,7 +5,7 @@ description: "Superposez des images sous forme de vignettes tierces ou personnal
 ms.assetid: 066BD6E2-C22B-4F5B-AA94-5D6C86A09BDF
 translationtype: Human Translation
 ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
-ms.openlocfilehash: 71d044eb19e71786da39ca71d4f4fbd2d87645be
+ms.openlocfilehash: a00d3d27161310077a0690cef7e4d11a5209bee7
 
 ---
 
@@ -369,6 +369,6 @@ Pour remplacer entièrement la carte par défaut par des vignettes personnalisé
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

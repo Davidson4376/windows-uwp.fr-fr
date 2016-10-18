@@ -5,7 +5,7 @@ description: "Dans le cadre du portage du convertisseur simple OpenGL ES 2.0, vo
 ms.assetid: 0383b774-bc1b-910e-8eb6-cc969b3dcc08
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 17d66e217e40eca0653078820746746eb23185e1
+ms.openlocfilehash: 478b5615834ea946a6a327fc2cbf54651e21b695
 
 ---
 
@@ -323,6 +323,6 @@ La mémoire tampon de vertex est créée et mise à jour de manière similaire. 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

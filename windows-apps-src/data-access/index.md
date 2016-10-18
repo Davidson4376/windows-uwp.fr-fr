@@ -5,7 +5,7 @@ title: "Accès aux données"
 description: "Cette section présente le stockage des données sur l’appareil dans une base de données privée et l’utilisation du mappage relationnel objet dans les applications UWP."
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 007e07d05f4f89771f6a0b93fb4279783ca170f6
+ms.openlocfilehash: f67efa8a00439de719219f750f0244a17cc26182
 
 ---
 # Accès aux données
@@ -24,6 +24,6 @@ SQLite est inclus dans le SDKUWP. Entity Framework7 fonctionne avec SQLite dans 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

@@ -5,7 +5,7 @@ title: "Création d’une campagne de publicité pour votre application"
 ms.assetid: 10D94929-92C4-4379-AA5F-6FEF879F2463
 translationtype: Human Translation
 ms.sourcegitcommit: ce26f020480c3f45e3fc4130a49eb66ecbdf5ba7
-ms.openlocfilehash: 9596dd4de0c05ee6f85189e529ad18e528e954df
+ms.openlocfilehash: 856643dca5b7b25e20b7b5a782de6cef792b94a8
 
 ---
 
@@ -18,7 +18,7 @@ Vous pouvez créer une campagne de publicité à l’aide du tableau de bord du 
 
 Voici comment créer une campagne de publicité pour promouvoir votre application:
 
-1.  Dans le menu de navigation gauche de la page de votre application dans le tableau de bord du Centre de développement, cliquez sur **Monétisation**&gt;**Promouvoir votre application**.
+1.  Dans le menu de navigation gauche de la page de votre application dans le tableau de bord du Centre de développement, cliquez sur **Monétisation** &gt; **Promouvoir votre application**.
 2.  Effectuez l’une des opérations suivantes:
 
     -   Si vous n’avez pas encore créé de campagne de publicité pour cette application, la page **Promouvoir votre application** affiche les informations sur les avantages des campagnes de publicité. Cliquez sur **Prise en main** ou **Création d’une campagne de publicité**.
@@ -85,6 +85,6 @@ Si vous avez reçu un coupon d’un représentant Microsoft pour payer une campa
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

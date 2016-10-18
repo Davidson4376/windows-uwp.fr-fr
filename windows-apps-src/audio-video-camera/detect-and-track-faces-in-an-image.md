@@ -4,8 +4,8 @@ ms.assetid: 84729E44-10E9-4D7D-8575-6A9D97467ECD
 description: "Cette rubrique montre comment utiliser FaceDetector pour détecter des visages dans une images. FaceTracker est optimisé pour suivre les visages au fil du temps dans une séquence d’images vidéo."
 title: "Détecter les visages dans des images ou des vidéos"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 66730fcbaad2e3e059f2972475625d278d235002
+ms.sourcegitcommit: 7526d5ddfbaa6f5128ef5775bc75cc48768f647d
+ms.openlocfilehash: 4f0fa85639711302a2f6eb187cde8f7a94de70df
 
 ---
 
@@ -34,7 +34,7 @@ Déclarez une variable de membre de classe pour l’objet [**FaceDetector**](htt
 
 [!code-cs[ClassVariables1](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetClassVariables1)]
 
-La détection des visages fonctionne sur un objet [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) qui peut être créé de diverses manières. Dans cet exemple un élément [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) est utilisé pour permettre à l’utilisateur de choisir un fichier image dans lequel des visages seront détectés. Pour plus d’informations sur l’utilisation d’images bitmap de logiciel, voir [Acquisition d’images](imaging.md).
+La détection des visages fonctionne sur un objet [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) qui peut être créé de diverses manières. Dans cet exemple un élément [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) est utilisé pour permettre à l’utilisateur de choisir un fichier image dans lequel des visages sont détectés. Pour plus d’informations sur l’utilisation d’images bitmap de logiciel, voir [Acquisition d’images](imaging.md).
 
 [!code-cs[Sélecteur](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetPicker)]
 
@@ -88,7 +88,7 @@ La classe [**FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn97
 
 Comme avec **FaceDetector**, **FaceTracker** prend en charge un ensemble limité de formats de pixels. Cet exemple abandonne la détection des visages si l’image fournie n’est pas au format Nv12.
 
-Appelez [**ProcessNextFrameAsync**](https://msdn.microsoft.com/library/windows/apps/dn974157) pour récupérer une liste d’objets [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) représentant les visages dans le cadre. Dès que vous disposez de la liste des visages, vous pouvez les afficher de la même manière que celle décrite ci-dessus pour la détection des visages. Notez que dans la mesure où la méthode d’assistance de suivi des visages n’est pas appelée sur le thread d’interface utilisateur, vous devez effectuer les mises à jour de l’interface utilisateur dans une méthode [**CoredDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) d’appel.
+Appelez [**ProcessNextFrameAsync**](https://msdn.microsoft.com/library/windows/apps/dn974157) pour récupérer une liste d’objets [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) représentant les visages dans l’image. Une fois que vous disposez de la liste des visages, vous pouvez les afficher de la même manière que celle décrite ci-dessus pour la détection des visages. Notez que dans la mesure où la méthode d’assistance de suivi des visages n’est pas appelée sur le thread d’interface utilisateur, vous devez effectuer les mises à jour de l’interface utilisateur dans une méthode [**CoredDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) d’appel.
 
 [!code-cs[ProcessCurrentVideoFrame](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetProcessCurrentVideoFrame)]
 
@@ -97,10 +97,12 @@ Appelez [**ProcessNextFrameAsync**](https://msdn.microsoft.com/library/windows/a
 * [Analyse de scène de capture multimédia](scene-analysis-for-media-capture.md)
 * [Exemple de détection des visages de base](http://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
 * [Exemple de suivi des visages de base](http://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
-* [Capturer des photos et des vidéos à l’aide de MediaCapture](capture-photos-and-video-with-mediacapture.md)
+* [Camera](camera.md)
+* [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [Lecture de contenu multimédia](media-playback.md)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

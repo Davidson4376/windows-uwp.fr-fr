@@ -1,159 +1,131 @@
 ---
-author: martinekuan
+author: GrantMeStrength
 ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
 title: "Créer une application «Hello World» (XAML)"
 description: "Ce didacticiel vous apprend à utiliser le langage XAML (Extensible Application Markup Language) avec C# pour créer une application «Hello World» simple ciblant la plateforme Windows universelle (UWP) sur Windows10."
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 0a524d51f713c37ce2069b4e750bf3ed20fe19ab
+ms.sourcegitcommit: 275c5cf8f8960f2be7cd9566e59eeb3bf4ee8f46
+ms.openlocfilehash: 272eb87e47c398218df85fa33f70bf9fbf240a3e
 
 ---
 
 # Créer une application «Hello World» (XAML)
 
-Ce didacticiel vous apprend à utiliser le langage Extensible Application Markup Language (XAML) avec C# pour créer une application « Hello World » simple ciblant la plateforme UWP (Universal Windows Platform) sur Windows 10. À l’aide d’un seul projet dans Microsoft Visual Studio, vous pouvez générer une application qui s’exécute sur tout appareil Windows 10. Nous allons nous concentrer sur la création d’une application qui s’exécute aussi bien sur des ordinateurs de bureau que sur des appareils mobiles.
+Ce didacticiel vous explique comment utiliser XAML et C# pour créer une simple application «Hello World» pour la plateforme Windows universelle (UWP) sur Windows10. Dans Microsoft Visual Studio, un seul projet vous permet de générer une application qui s’exécute sur n’importe quel appareil Windows10.
 
-**Important** Ce didacticiel est destiné à être utilisé avec Microsoft Visual Studio 2015 et Windows 10. Il ne fonctionnera pas correctement avec les versions antérieures de ces applications.
+Vous allez apprendre à effectuer les opérations suivantes:
 
-Vous allez apprendre à effectuer les opérations suivantes :
-
--   créer un projet Visual Studio qui cible Windows 10 et UWP ;
--   ajouter du contenu XAML à votre page d’accueil ;
--   gérer les entrées tactiles, ainsi que les entrées effectuées à l’aide du stylet ou de la souris ;
--   exécuter le projet sur l’ordinateur local et sur l’émulateur de téléphone dans Visual Studio ;
--   adapter l’interface utilisateur à différentes tailles d’écran.
+-   créer un projet **Visual Studio2015** qui cible **Windows10** et la **plateforme Windows universelle (UWP)**;
+-   écrire du code XAML pour modifier l’interface utilisateur de votre page de démarrage;
+-   exécuter le projet sur l’ordinateur local et sur l’émulateur de téléphone dans Visual Studio;
+-   utilisez un objet SpeechSynthesizer pour faire parler l’application quand vous appuyez sur un bouton.
 
 ## Avant de commencer...
 
-
--   Nous allons accéder directement aux étapes permettant de créer une application universelle simple. Avant de commencer ce didacticiel, nous vous recommandons vivement de lire attentivement les informations de présentation des articles [Nouveautés de Windows 10](https://dev.windows.com/whats-new-windows-10-dev-preview) et [Qu’est-ce qu’une application Windows universelle ?](whats-a-uwp.md).
--   Pour suivre ce didacticiel, vous avez besoin de Windows 10 et de Visual Studio 2015. Pour plus d’informations, voir [Se préparer](get-set-up.md).
--   Nous supposons que vous possédez une connaissance de base du code XAML et des concepts décrits dans [Vue d’ensemble du langage XAML](https://msdn.microsoft.com/library/windows/apps/Mt185595).
+-   [Qu’est-ce qu’une application Windows universelle?](whats-a-uwp.md)
+-   [Nouveautés de Windows10](https://dev.windows.com/whats-new-windows-10-dev-preview)
+-   Pour suivre ce didacticiel, vous avez besoin de Windows10 et de Visual Studio2015. [Se préparer](get-set-up.md).
 -   Nous partons également du principe que vous utilisez la disposition de fenêtre par défaut de Visual Studio. Si vous modifiez la disposition par défaut, vous pouvez la réinitialiser dans le menu **Fenêtre** en choisissant la commande **Rétablir la disposition de fenêtre**.
 
-##  Étape 1 : créer un projet dans Visual Studio
+
+## Si vous préférez visionner une vidéo...
+
+<iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Writing-Your-First-Windows-10-App/player" width="640" height="360" allowFullScreen frameBorder="0"></iframe>
+
+Si vous préférez une approche visuelle plutôt qu’un guide pas à pas, cette vidéo aborde les mêmes sujets avec en prime une bande son séduisante.
+
+## Étape1: Créer un projet dans Visual Studio
+
+1.  Lancez Visual Studio2015.
+
+2.  Dans le menu **Fichier**, sélectionnez **Nouveau &gt; Projet...** pour ouvrir la boîte de dialogue *Nouveau projet*.
+
+3.  Dans la liste de modèles de gauche, ouvrez **Installé &gt; Modèles &gt; Visual C# &gt; Windows**, puis choisissez **Universel** pour afficher la liste des modèles de projet UWP.
+
+    (Si aucun modèle universel n’apparaît, c’est que vous n’avez pas Visual Studio2015 ou qu’il vous manque les composants permettant de créer des applications UWP. Voir [Préparation](get-set-up.md) pour réparer vos outils.)
+
+4.  Choisissez le modèle **Application vide (Windows universel)**, puis entrez «HelloWorld» comme **Nom**. Sélectionnez **OK**.
+
+    ![Fenêtre Nouveau projet](images/win10-cs-01.png)
+
+5.  La boîte de dialogue Version cible/Version minimale s’affiche. Les paramètres par défaut étant corrects, sélectionnez **OK** pour créer le projet.
+
+    ![Fenêtre Explorateur de solutions](images/win10-cs-02.png)
+
+6.  Votre nouveau projet s’ouvre en affichant ses fichiers dans le volet **Explorateur de solutions**, à droite. Vous devrez peut-être choisir l’onglet **Explorateur de solutions** à la place de l’onglet **Propriétés** pour voir vos fichiers.
+
+    ![Fenêtre Explorateur de solutions](images/win10-cs-03.png)
+
+Même si le modèle **Application vide (Windows universel)** est dépouillé, il contient cependant de nombreux fichiers. Ces fichiers sont indispensables pour toutes les applications UWP en C#. Ils se trouvent dans tous les projets que vous créez dans Visual Studio.
 
 
-1.  Lancez Visual Studio 2015.
+### Que contiennent les fichiers?
 
-   La page d’accueil de Visual Studio 2015 apparaît. (Désormais, nous désignerons Visual Studio2015 simplement sous le nom Visual Studio.)
+Pour afficher et modifier un fichier de votre projet, double-cliquez dessus dans l’**Explorateur de solutions**. Développez un fichier XAML à la manière d’un dossier pour afficher le fichier de code qui lui est associé. Les fichiers XAML s’ouvrent en mode Fractionné avec l’aire de conception et l’éditeur XAML tous deux affichés.
+> [!NOTE]
+> Qu’est-ce que le XAML? XAML (Extensible Application Markup Language) est le langage utilisé pour définir l’interface utilisateur de votre application. Vous pouvez entrer son code manuellement ou le créer avec les outils de conception VisualStudio. Un fichier .xaml s’accompagne d’un fichier code-behind .xaml.cs qui contient la logique. Ensemble, les fichiers XAML et code-behind forment une classe à part entière. Pour plus d’informations, voir [Vue d’ensemble du langage XAML](https://msdn.microsoft.com/library/windows/apps/Mt185595).
 
-2.  Dans le menu **Fichier**, sélectionnez **Nouveau** > **Projet**.
+*App.xaml et App.xaml.cs*
 
-   La boîte de dialogue **Nouveau projet** s’affiche. Le volet gauche de la boîte de dialogue vous permet de sélectionner le type de modèle à afficher.
+-   App.xaml est le fichier dans lequel vous déclarez les ressources utilisées dans l’application.
+-   App.xaml.cs est le fichier code-behind d’App.xaml. Comme toutes les pages code-behind, il contient un constructeur qui appelle la méthode `InitializeComponent`. Ce n’est pas vous qui écrivez la méthode `InitializeComponent`. Elle est générée par Visual Studio et vise essentiellement à initialiser les éléments déclarés dans le fichier XAML.
+-   App.xaml.cs est le point d’entrée de votre application.
+-   App.xaml.cs contient par ailleurs des méthodes destinées à gérer l’activation et la suspension de l’application.
 
-3.  Dans le volet gauche, développez **Installé &gt; Modèles &gt; Visual C# &gt; Windows**, puis sélectionnez le groupe de modèles **Universel**. Le volet central de la boîte de dialogue affiche une liste de modèles de projets pour les applications de plateforme Windows universelle (UWP).
+*MainPage.xaml*
 
-   ![Fenêtre Nouveau projet ](images/newproject-cs.png)
-   
-   (Si vous ne voyez pas ces options, assurez-vous que vous avez installé les outils de développement d’applications Windows universelles. Pour plus d’informations, voir [Se préparer](get-set-up.md).)
+-   MainPage.xaml est le fichier dans lequel vous définissez l’interface utilisateur de votre application. Vous pouvez y ajouter directement des éléments en utilisant du balisage XAML ou vous pouvez utiliser les outils de conception fournis avec Visual Studio.
+-   MainPage.xaml.cs est la page code-behind de MainPage.xaml. Cette page vous permet d’ajouter la logique de votre application et les gestionnaires d’événements.
+-   Ces deux fichiers définissent ensemble une nouvelle classe appelée `MainPage`, qui hérite de l’élément [**Page**](https://msdn.microsoft.com/library/windows/apps/BR227503), dans l’espace de noms `HelloWorld`.
 
-4.  Dans le volet central, sélectionnez le modèle **Application vide (Windows universel)**.
+*Package.appxmanifest*
+-   Fichier manifeste qui décrit votre application: nom, description, vignette, page de démarrage, etc..
+-   Comprend la liste des fichiers contenus dans votre application.
 
-   Le modèle **Application vide** crée une application UWP dépouillée qui peut être compilée et exécutée, mais qui ne contient aucun contrôle d’interface utilisateur ni aucune donnée. Au cours de ce didacticiel, vous allez ajouter des contrôles à l’application.
+*Ensemble d’images de logo*
+-   Assets/Square150x150Logo.scale-200.png représente votre application dans le menu Démarrer.
+-   Assets/StoreLogo.png représente votre application dans le WindowsStore.
+-   Assets/SplashScreen.scale-200.png est l’écran de démarrage qui s’affiche quand votre application démarre.
 
-5.  Dans la zone de texte **Name**, tapez « HelloWorld ».
-6.  Cliquez sur **OK** pour créer le projet.
+## Étape2: Ajouter un bouton
 
-   Visual Studio crée votre projet et l’affiche dans l’**Explorateur de solutions**.
+### En utilisant le mode concepteur
 
-   ![Explorateur de solutions Visual Studio pour le projet HelloWorld](images/solutionexplorer-cs.png)
+Ajoutons un bouton à la page. Dans ce didacticiel, vous n’utiliserez qu’une partie des fichiers mentionnés précédemment: App.xaml, MainPage.xaml et MainPage.xaml.cs.
 
-Même si le modèle **Application vide** est dépouillé, il contient cependant de nombreux fichiers:
+1.  Double-cliquez sur **MainPage.xaml** pour l’ouvrir en mode Création.
 
--   un fichier manifeste (Package.appxmanifest) qui décrit votre application (nom, description, vignette, page d’accueil, etc.) et répertorie les fichiers contenus dans cette dernière;
--   un ensemble d’images de logo (Assets/Square150x150Logo.scale-200.png, Assets/Square44x44Logo.scale-200.png et Assets/Wide310x150Logo.scale-200.png) à afficher dans le menu Démarrer;
--   une image (Assets/StoreLogo.png) représentant votre application dans le Windows Store;
--   un écran de démarrage (Assets/SplashScreen.scale-200.png) à afficher lorsque votre application démarre;
--   les fichiers XAML et de code de l’application (App.xaml et App.xaml.cs);
--   une page de démarrage (MainPage.xaml) et un fichier de code associé (MainPage.xaml.cs) qui s’exécute au démarrage de votre application.
+    Vous remarquerez dans la partie supérieure de l’écran la présence d’un affichage graphique et en dessous celle d’un affichage de code XAML. Même si les deux peuvent être modifiés, nous n’utiliserons pour le moment que l’affichage graphique.
 
-Ces fichiers sont indispensables pour toutes les applications UWP en C#. Ils figurent dans tous les projets que vous créez dans Visual Studio.
+    ![Fenêtre Explorateur de solutions](images/win10-cs-04.png)
 
-## Étape 2 : modifier votre page d’accueil
+2.  Cliquez sur l’onglet vertical **Boîte à outils** à gauche pour ouvrir la liste des contrôles d’interface utilisateur. (Vous pouvez cliquer sur l’épingle dans sa barre de titre pour qu’elle reste visible.)
 
+    ![Fenêtre Explorateur de solutions](images/win10-cs-05.png)
 
-### Que contiennent les fichiers ?
+3.  Développez **Contrôles XAML communs** et faites glisser le contrôle **Button** jusqu’au milieu de l’aire de conception.
 
-Pour afficher et modifier un fichier dans votre projet, double-cliquez sur ce fichier dans l’**Explorateur de solutions**. Par défaut, vous pouvez développer un fichier XAML de la même façon qu’un dossier pour afficher le fichier de code qui lui est associé. Les fichiers XAML s’ouvrent en mode Fractionné qui présente à la fois l’aire de conception et l’éditeur XAML.
+    ![Fenêtre Explorateur de solutions](images/win10-cs-06.png)
 
-Dans ce didacticiel, vous n’utiliserez qu’une partie des fichiers mentionnés précédemment: App.xaml, MainPage.xaml et MainPage.xaml.cs.
+    Si vous regardez dans la fenêtre de code XAML, vous constaterez que le contrôle Button y a été aussi ajouté:
 
-### App.xaml et App.xaml.cs
-
-App.xaml est le fichier dans lequel vous déclarez les ressources utilisées dans l’application. App.xaml.cs est le fichier code-behind d’App.xaml. Le code-behind est le code joint à la classe partielle de la page XAML. Ensemble, la page XAML et le code-behind forment une classe complète. App.xaml.cs est le point d’entrée de votre application. Comme toutes les pages code-behind, elle contient un constructeur qui appelle la méthode `InitializeComponent`. Ce n’est pas vous qui écrivez la méthode `InitializeComponent`. Elle est générée par Visual Studio et vise essentiellement à initialiser les éléments déclarés dans le fichier XAML. App.xaml.cs contient par ailleurs des méthodes destinées à gérer l’activation et la suspension de l’application.
-
-### MainPage.xaml
-
-Dans MainPage.xaml, vous définissez l’interface utilisateur de votre application. Vous pouvez ajouter des éléments directement en utilisant du balisage XAML ou les outils de conception fournis avec Visual Studio. MainPage.xaml.cs est la page code-behind de MainPage.xaml. Cette page vous permet d’ajouter la logique de votre application et les gestionnaires d’événements.
-
-Ces deux fichiers définissent ensemble une nouvelle classe appelée `MainPage`, qui hérite de l’élément [**Page**](https://msdn.microsoft.com/library/windows/apps/BR227503), dans l’espace de noms `HelloWorld`.
-
-MainPage.xaml
-
-```xml
-    <Page
-    x:Class="HelloWorld.MainPage"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:HelloWorld"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
-
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-    </Grid>
-</Page>
+    ```XAML
+<Button x:name="button" Content="Button" HorizontalAlignment="Left" Margin = "152,293,0,0" VerticalAlignment="Top"/>
 ```
 
-MainPage.xaml.cs
+4.  Modifiez le texte du bouton.
 
-```csharp
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
+    Cliquez dans l’affichage de code XAML et modifiez la valeur de Content en remplaçant «Button» par «Hello World!».
 
-namespace HelloWorld
-{
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
-    public sealed partial class MainPage : Page
-    {
-        public MainPage()
-        {
-            this.InitializeComponent();
-        }
-    }
-}
+    ```XAML
+<Button x:name="button" Content="Hello, world!" HorizontalAlignment="Left" Margin = "152,293,0,0" VerticalAlignment="Top"/>
 ```
 
-### Modifier la page d’accueil
+    Le bouton figurant dans l’aire de conception est alors mis à jour pour présenter le nouveau texte.
 
-Maintenant, ajoutons du contenu à l’application.
+    ![Fenêtre Explorateur de solutions](images/win10-cs-07.png)
 
-**Pour modifier la page de démarrage**
-
-1.  Dans l’**Explorateur de solutions**, double-cliquez sur MainPage.xaml pour l’ouvrir.
-2.  Dans l’éditeur XAML, ajoutez les contrôles pour l’interface utilisateur.
-
-   Dans l’élément [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) racine, ajoutez le code XAML ci-après. Il contient un élément [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) avec un élément [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) de titre, un élément **TextBlock** qui demande le nom de l’utilisateur, un élément [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) pour accepter le nom de l’utilisateur, un élément [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265), puis un autre élément **TextBlock** pour afficher des salutations. Certains de ces contrôles comportent des noms pour vous permettre de vous y référer ultérieurement dans votre code.
-
-```xml    
-    <StackPanel x:Name="contentPanel" Margin="8,32,0,0">
-        <TextBlock Text="Hello, world!" Margin="0,0,0,40"/>
-        <TextBlock Text="What' s your name?"/>
-        <StackPanel x:Name="inputPanel" Orientation="Horizontal" Margin="0,20,0,20">
-            <TextBox x:Name="nameInput" Width="280" HorizontalAlignment="Left"/>
-            <Button x:Name="inputButton" Content="Say &quot;Hello&quot;"/>
-        </StackPanel>
-        <TextBlock x:Name="greetingOutput"/>
-    </StackPanel>
-```    
-
-    The controls that you added in the XAML editor show up in the design view.
-
-## Étape 3: démarrer l’application
+## Étape 3: Démarrer l’application
 
 
 À ce stade, vous avez créé une application très simple. Le moment est bien choisi pour générer, déployer et lancer votre application et voir à quoi elle ressemble. Vous pouvez déboguer votre application sur l’ordinateur local, dans un simulateur ou un émulateur, ou sur un appareil distant. Voici le menu des périphériques cibles dans Visual Studio.
@@ -185,15 +157,15 @@ L’application s’ouvre dans une fenêtre, et un écran de démarrage par déf
 
 L’écran de démarrage disparaît pour céder la place à votre application. Cette dernière se présente comme suit.
 
-![Écran initial de l’application](images/helloworld-1-cs.png)
+![Écran initial de l’application](images/win10-cs-08.png)
 
-Appuyez sur la touche Windows pour ouvrir le menu **Démarrer**, puis affichez toutes les applications. Notez que le déploiement de l’application entraîne l’ajout local de sa vignette au menu **Démarrer**. Pour exécuter de nouveau l’application (non en mode débogage), appuyez ou cliquez sur sa vignette dans le menu **Démarrer**.
+Appuyez sur la touche Windows pour ouvrir le menu **Démarrer**, puis affichez toutes les applications. Notez que le déploiement de l’application entraîne l’ajout local de sa vignette au menu **Démarrer**. Pour exécuter de nouveau l’application à un moment ultérieur (pas en mode débogage), appuyez ou cliquez sur sa vignette dans le menu **Démarrer**.
 
-Félicitations! Vous venez de générer votre première application UWP, même si celle-ci ne propose pas (encore) beaucoup de fonctions.
+Félicitations! Vous venez de créer votre première application UWP, même si celle-ci ne propose pas (encore) beaucoup de fonctions.
 
 **Pour arrêter le débogage**
 
--   Cliquez sur le bouton **Arrêter le débogage** (![Bouton Arrêter le débogage](images/stopdebug.png)) dans la barre d’outils.
+   Cliquez sur le bouton **Arrêter le débogage** (![Bouton Arrêter le débogage](images/stopdebug.png)) dans la barre d’outils.
 
    –ou–
 
@@ -214,12 +186,12 @@ Outre les options de débogage sur un ordinateur de bureau, Visual Studio offre 
 -   **Émulateur <SDK version> WVGA 4pouces 1Go**
 -   etc. (Divers émulateurs associés à d’autres configurations)
 
-(Si vous ne voyez pas les émulateurs, assurez-vous que vous avez installé les outils de développement d’applications Windows universelles. Pour plus d’informations, voir [Se préparer](get-set-up.md).)
+(Vous ne voyez pas les émulateurs? Consultez [Préparation](get-set-up.md) pour vérifier que vous avez bien installé les outils de développement d’applications Windows universelles.)
 
-Il est judicieux de tester votre application sur un appareil doté d’un petit écran et d’une mémoire limitée. Par conséquent, choisissez l’option **Émulateur 10.0.10240.0 WVGA 4pouces 512Mo**.
 **Pour démarrer le débogage sur un émulateur d’appareil mobile**
 
-1.  Dans le menu des appareils cibles (![Menu Démarrer le débogage](images/startdebug-full.png)) situé dans la barre d’outils **Standard**, choisissez **Émulateur 10.0.10240.0 WVGA 4 pouces 512 Mo**.
+1.  En guise de bonne pratique, nous vous conseillons de tester votre application sur un appareil équipé d’un petit écran et d’une mémoire limitée. Pour cela, dans le menu de l’appareil cible (![menu Démarrer le débogage](images/startdebug-full.png)), dans la barre d’outils **Standard**, sélectionnez **Emulator 10.0.14393.0 WVGA 4pouces 512 Mo**.
+
 2.  Cliquez sur le bouton **Démarrer le débogage** (![Bouton Démarrer le débogage](images/startdebug-sm.png)) dans la barre d’outils.
 
    –ou–
@@ -230,95 +202,53 @@ Il est judicieux de tester votre application sur un appareil doté d’un petit 
 
    Appuyez sur F5.
 
-Visual Studio démarre l’émulateur sélectionné, puis déploie et démarre votre application. Sur l’émulateur d’appareil mobile, l’application se présente comme suit.
+Visual Studio démarre l’émulateur sélectionné, puis déploie et démarre votre application. Cette opération peut prendre un peu de temps au premier démarrage de l’émulateur. Sur l’émulateur d’appareil mobile, l’application se présente comme suit.
 
-![Écran initial de l’application sur un appareil mobile](images/helloworld-1-cs-phone.png)
+![Écran initial de l’application sur un appareil mobile](images/win10-cs-09.png)
 
-La première chose que vous remarquez est que le bouton se trouve hors de l’écran plus petit d’un appareil mobile. Dans la suite de ce didacticiel, vous apprendrez à adapter l’interface utilisateur à différentes tailles d’écran pour que votre application s’affiche correctement sur tous les appareils.
-
-Vous pouvez également remarquer que vous pouvez taper du texte dans la [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683), mais qu’un clic ou un appui sur le [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) est sans effet. Dans les étapes suivantes, vous allez créer un gestionnaire d’événements pour l’événement [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) du bouton de façon à afficher des salutations personnalisées. Vous ajouterez le code du gestionnaire d’événements au fichier MainPage.xaml.cs.
-
-## Étape4: créer un gestionnaire d’événements
+Si vous possédez un Windows Phone exécutant Windows10, vous pouvez le connecter à l’ordinateur pour y déployer l’application et l’exécuter directement (vous devez au préalable [activer le mode développeur](enable-your-device-for-development.md)).
 
 
-Les éléments XAML peuvent envoyer des messages lorsque certains événements se produisent. Ces messages d’événement vous permettent de réagir en réponse à l’événement. Insérez votre code de réponse à l’événement dans une méthode de gestionnaire d’événements. L’un des événements les plus courants dans bon nombre d’applications est un clic d’utilisateur sur un [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265).
+## Étape3: Gestionnaires d’événements
 
-Créons un gestionnaire d’événements pour l’événement [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) de votre bouton. Le gestionnaire d’événements obtient le nom de l’utilisateur auprès du contrôle [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) `nameInput` et l’utilise pour générer une salutation dans le contrôle [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) `greetingOutput`.
+Si le terme «gestionnaire d’événements» vous paraît compliqué, il s’agit simplement d’un autre nom pour désigner le code qui est appelé quand un événement se produit (par exemple, quand l’utilisateur clique sur votre bouton).
 
-### Utilisation d’événements qui fonctionnent pour les entrées tactiles, de la souris et du stylet
+1.  Arrêtez l’exécution de l’application, si ce n’est déjà fait.
 
-Quels événements devez-vous gérer ? Sachant que vos applications du Windows Store peuvent s’exécuter sur divers appareils, concevez-les de manière à prendre en charge les entrées tactiles. Votre application doit être en mesure de gérer les entrées d’une souris ou d’un stylet. Heureusement, les événements tels que [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) et [**DoubleTapped**](https://msdn.microsoft.com/library/windows/apps/BR208922) sont indépendants de l’appareil. Si vous êtes rompu à la programmation Microsoft .NET, vous avez peut-être noté l’existence d’événements distincts pour les entrées tactiles, de la souris et du stylet, comme **TouchMove**, **MouseMove** et **StylusMove**. Dans les applications du Windows Store, ces événements séparés sont remplacés par un seul et même événement [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/BR208970) qui fonctionne tout aussi bien pour les entrées tactiles, de la souris et du stylet.
+2.  Double-cliquez sur le contrôle de bouton dans l’aire de conception pour que Visual Studio crée un gestionnaire d’événements pour votre bouton.
 
-**Pour ajouter un gestionnaire d’événements**
+  Bien entendu, vous pouvez créer l’intégralité du code manuellement. Vous pouvez aussi sélectionner le bouton en cliquant dessus et consulter le volet **Propriétés** en bas à droite. Si vous basculez dans **Événements** (le petit boulon clignotant), vous pouvez ajouter le nom de votre gestionnaire d’événements.
 
-1.  En mode XAML ou Création, sélectionnez l’élément [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) «Say Hello» que vous avez ajouté à MainPage.xaml.
-2.  Dans la **fenêtre Propriétés**, cliquez sur le bouton Événements (![bouton Événements](images/eventsbutton.png)).
-3.  Recherchez l’événement [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) en haut de la liste des événements. Dans la zone de texte correspondant à l’événement, tapez le nom de la fonction qui gère l’événement **Click**. Pour cet exemple, tapez «Button\_Click».
+3.  Modifiez le code du gestionnaire d’événements dans *MainPage.xaml.cs*, la page code-behind. C’est là où les choses deviennent intéressantes. Le gestionnaire d’événements par défaut se présente ceci:
 
-   ![Liste des événements dans la fenêtre Propriétés](images/xaml-hw-event.png)
+```C#
+private void button_Click(object sender, RouteEventArgs e)
+{
 
-4.  Appuyez sur Entrée. La méthode de gestionnaire d’événements est créée et ouverte dans l’éditeur de code pour vous permettre d’ajouter le code à exécuter lorsque l’événement se produit.
+}
+```
 
-    Dans l’éditeur XAML, le code XAML correspondant à [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) est mis à jour pour déclarer le gestionnaire d’événements [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) comme suit.
+  Modifions-le de sorte qu’il se présente comme ceci:
 
-```xml   
-   <Button x:Name="inputButton" Content="Say &quot;Hello&quot;" Click="Button_Click"/>
-```    
+```C#
+private async void button_Click(object sender, RoutedEventArgs e)
+        {
+            MediaElement mediaElement = new MediaElement();
+            var synth = new Windows.Media.SpeechSynthesis.SpeechSynthesizer();
+            Windows.Media.SpeechSynthesis.SpeechSynthesisStream stream = await synth.SynthesizeTextToStreamAsync("Hello, World!");
+            mediaElement.SetSource(stream, stream.ContentType);
+            mediaElement.Play();
+        }
+```
 
-5.  Ajoutez du code au gestionnaire d’événements que vous avez créé dans la page code-behind. Dans le gestionnaire d’événements, récupérez le nom de l’utilisateur à partir du contrôle [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) `nameInput` et servez-vous-en pour créer une salutation. Utilisez le contrôle [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) `greetingOutput` pour afficher le résultat.
-    
-```csharp    
-    private void Button_Click(object sender, RoutedEventArgs e)
-    {
-        greetingOutput.Text = "Hello, " + nameInput.Text + "!";
-    }
-```    
+Veillez aussi à inclure le mot clé **async** car à défaut, vous obtiendrez une erreur en essayant d’exécuter l’application.
 
-6.  Déboguez l’application sur l’ordinateur local. Lorsque vous entrez votre nom dans la zone de texte et que vous cliquez sur le bouton, l’application affiche alors un message de salutations personnalisé.
+### Que venons-nous de faire?
 
-## Étape 5 : adapter l’interface utilisateur à différentes tailles de fenêtre
+Ce code utilise certaines API Windows pour créer un objet de synthèse vocale et lui donne du texte à prononcer. (Pour plus d’informations sur l’utilisation de SpeechSynthesis, voir la documentation [Espace de noms SpeechSynthesis](https://msdn.microsoft.com/library/windows/apps/windows.media.speechsynthesis.aspx).)
 
+Quand vous exécutez l’application et que vous cliquez sur le bouton, votre ordinateur (ou téléphone) prononce «Hello World!».
 
-Nous allons à présent adapter l’interface utilisateur à différentes tailles d’écran afin qu’elle s’affiche correctement sur des appareils mobiles. Pour ce faire, vous ajoutez un élément [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) et vous définissez des propriétés qui s’appliquent à différents états visuels.
-
-**Pour ajuster la disposition de l’interface utilisateur**
-
-1.  Dans l’éditeur XAML, ajoutez le bloc de code XAML ci-dessous après la balise de début de l’élément [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) racine.
-
-```xml    
-    <VisualStateManager.VisualStateGroups>
-        <VisualStateGroup>
-            <VisualState x:Name="wideState">
-                <VisualState.StateTriggers>
-                    <AdaptiveTrigger MinWindowWidth="641" />
-                </VisualState.StateTriggers>
-            </VisualState>
-            <VisualState x:Name="narrowState">
-                <VisualState.StateTriggers>
-                    <AdaptiveTrigger MinWindowWidth="0" />
-                </VisualState.StateTriggers>
-                <VisualState.Setters>
-                    <Setter Target="inputPanel.Orientation" Value="Vertical"/>
-                    <Setter Target="inputButton.Margin" Value="0,4,0,0"/>
-                </VisualState.Setters>
-            </VisualState>
-        </VisualStateGroup>
-    </VisualStateManager.VisualStateGroups>
-```    
-
-2.  Déboguez l’application sur l’ordinateur local. Notez que l’interface utilisateur présente le même aspect qu’auparavant, à moins que la fenêtre ne présente une taille inférieure à 641 pixels.
-3.  Déboguez l’application sur l’émulateur d’appareil mobile. Notez que l’interface utilisateur utilise les propriétés que vous avez définies dans l’élément `narrowState` et s’affiche correctement sur le petit écran.
-
-![Écran de l’application mobile](images/helloworld-2-cs-phone.png)
-
-Si vous avez utilisé un élément [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) dans des versions précédentes du langage XAML, vous pouvez remarquer que le code XAML spécifié ici utilise une syntaxe simplifiée.
-
-L’élément [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) nommé `wideState` comporte un élément [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn890382) dont la propriété [**MinWindowWidth**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.adaptivetrigger.minwindowwidth) est définie sur 641. Cela signifie que l’état ne doit s’appliquer que si la largeur de la fenêtre n’est pas inférieure à la valeur minimale de 641pixels. Vous ne définissez aucun objet [**Setter**](https://msdn.microsoft.com/library/windows/apps/BR208817) pour cet état, de sorte qu’il utilise les propriétés de disposition que vous avez définies dans le code XAML pour le contenu de la page.
-
-Le second élément [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007), `narrowState`, comporte un élément [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn890382) dont la propriété [**MinWindowWidth**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.adaptivetrigger.minwindowwidth) est définie sur 0. Cet état est appliqué lorsque la largeur de la fenêtre est supérieure à0, mais inférieure à 641pixels. (À 641 pixels, l’état `wideState` s’applique.) Dans cet état, vous définissez certains objets [**Setter**](https://msdn.microsoft.com/library/windows/apps/BR208817) de façon à modifier les propriétés de disposition des contrôles dans l’interface utilisateur :
-
--   Vous remplacez l’[**Orientation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.orientation) **Horizontal** de l’élément `inputPanel` par l’orientation **Vertical**.
--   Vous ajoutez une marge supérieure de 4 à l’élément `inputButton`.
 
 ## Récapitulatif
 
@@ -327,6 +257,6 @@ Félicitations ! Vous venez de créer votre première application pour Windows 1
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Sep16_HO1-->
 
 

@@ -6,8 +6,8 @@ ms.assetid: 73008F80-FE62-457D-BAEC-412ED6BAB0C8
 label: Interaction primer
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: c65bb525e953228e95286d5c6a5bffdb11475e53
-ms.openlocfilehash: 6084a49a8d8d9884c3bd777160ca219059d1654b
+ms.sourcegitcommit: fe012189566a20203b2bf8cae72f80655eeadfd1
+ms.openlocfilehash: 29a33550c3b8c80c1ae2c8349fc0b771717325f1
 
 ---
 
@@ -332,6 +332,6 @@ Tout comme les personnes ont recours à une combinaison de voix et de mouvement 
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Aug16_HO3-->
 
 

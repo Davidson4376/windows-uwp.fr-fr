@@ -2,14 +2,14 @@
 author: awkoren
 Description: "Déployez et déboguez une app UWP convertie à partir d’une application de bureau Windows (Win32, WPF, Windows Forms) avec les extensions de conversion de bureau."
 Search.Product: eADQiWindows 10XVcnh
-title: "Déployer et déboguer une app UWP convertie depuis une app de bureau Windows"
+title: "Déployer et déboguer une application de plateforme Windows universelle (UWP) convertie à partir d’une application de bureau Windows"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 618b129449d285054604008615c32de74c8bfd9b
+ms.sourcegitcommit: 2c1a8ea38081c947f90ea835447a617c388aec08
+ms.openlocfilehash: 75e176f17845bdbd618c6ca63fbbb5765bef54fb
 
 ---
 
-# Déployer et déboguer votre application UWP convertie (Projet Centennial)
+# Déployer et déboguer votre application UWP convertie
 
 \[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.\]
 
@@ -17,7 +17,7 @@ Cette rubrique contient des informations pour vous aider à réussir le déploie
 
 ## Déboguer votre application UWP convertie
 
-Deux options principales s’offrent à vous pour le débogage de votre application convertie à l’aide de Visual Studio.
+Plusieurs options s’offrent à vous pour le débogage de votre application convertie.
 
 ### Attacher au processus
 
@@ -29,7 +29,7 @@ Désormais, Visual Studio prend en charge un nouveau projet de création de pack
 
 Voici comment débuter: 
 
-1. Tout d’abord, vérifiez que vous êtes prêt pour utiliser Centennial. Pour obtenir des instructions, consultez [Aperçu du Convertisseur d’applications de bureau (projet Centennial)](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter). 
+1. Tout d’abord, vérifiez que vous êtes prêt pour utiliser Desktop App Converter. Pour obtenir des instructions, voir [Desktop App Converter Preview (Aperçu de Desktop App Converter)](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter). 
 
 2. Exécutez le convertisseur, puis le programme d’installation pour votre application Win32. Le convertisseur capture la disposition et toute modification apportée au Registre et génère un Appx avec manifeste et registery.dat pour virtualiser le Registre:
 
@@ -164,9 +164,32 @@ Vous pouvez également utiliser la compilation conditionnelle pour activer des c
 
 4.  Vous pouvez maintenant basculer la cible de build vers DesktopUWP si vous souhaitez créer pour cibler l’API UWP que vous avez ajoutée.
 
+### PLMDebug 
+
+Les options Visual Studio F5 et Attacher au processus sont utiles pour le débogage de votre application pendant qu’elle s’exécute. Dans certains cas, toutefois, vous pouvez souhaiter un contrôle plus fin sur le processus de débogage, notamment la possibilité de déboguer votre application avant son démarrage. Dans ces scénarios plus avancés, utilisez [**PLMDebug**](https://msdn.microsoft.com/library/windows/hardware/jj680085%28v=vs.85%29.aspx?f=255&MSPPError=-2147217396). Cet outil vous permet de déboguer votre application convertie à l’aide du débogueur Windows et propose un contrôle total sur le cycle de vie de l’application, ce qui inclut la suspension, la reprise et l’arrêt. 
+
+PLMDebug.exe est inclus dans le SDK Windows. Pour plus d’informations, voir [**PLMDebug**](https://msdn.microsoft.com/library/windows/hardware/jj680085%28v=vs.85%29.aspx?f=255&MSPPError=-2147217396). 
+
+### Exécution d’un autre processus à l’intérieur du conteneur d’un niveau de confiance totale 
+
+Vous pouvez appeler des processus personnalisés à l’intérieur du conteneur d’un package d’application spécifié. Cela peut être utile pour les scénarios de tests (par exemple, si vous avez un atelier de test personnalisé et que vous voulez tester la sortie de l’application). Pour ce faire, utilisez l’applet de commande PowerShell ```Invoke-CommandInDesktopPackage```: 
+
+```CMD
+Invoke-CommandInDesktopPackage [-PackageFamilyName] <string> [-AppId] <string> [-Command] <string> [[-Args]
+    <string>]  [<CommonParameters>]
+```
+
 ## Déployer votre application UWP convertie
 
-Pour déployer votre application au cours du développement, exécutez l’applet de commande PowerShell suivante: 
+Il existe 2façons de déployer votre application convertie: l’inscription de fichiers libres et le déploiement du packageappx. 
+
+L’inscription de fichiers libres est utile à des fins de débogage quand les fichiers sont placés sur un disque dans un emplacement auquel vous pouvez facilement accéder et que vous pouvez facilement mettre à jour. De plus, elle ne nécessite pas de signature ou de certificat.  
+
+Le déploiement du packageAppx permet de facilement déployer et charger de manière indépendante l’application entre plusieurs ordinateurs, mais nécessite que le package soit signé et que le certificat soit approuvé sur l’ordinateur.
+
+### Inscription de fichier libres
+
+Pour déployer votre application pendant le développement, exécutez l’applet de commande PowerShell suivante: 
 
 ```Add-AppxPackage –Register AppxManifest.xml```
 
@@ -174,16 +197,25 @@ Pour mettre à jour les fichiers .exe ou .dll de votre application, remplacez si
 
 Points à prendre en considération: 
 
-Tout lecteur sur lequel vous installez votre application convertie doit être formaté au format NTFS.
+* Tout lecteur sur lequel vous installez votre application convertie doit être formaté au format NTFS.
 
-Une application convertie s’exécute toujours en tant qu’utilisateur interactif. Cela revêt une importance particulière pour une application .NET dont le manifeste spécifie un niveau d’exécution __requireAdministrator__. Si l’utilisateur interactif bénéficie de privilèges d’administrateur, une invite de contrôle de compte d’utilisateur apparaît _chaque fois que l’application est lancée_. Pour les utilisateurs standard, le démarrage de l’application échoue.
+* Une application convertie s’exécute toujours en tant qu’utilisateur interactif.
 
-Si vous essayez d’exécuter l’applet de commande Add-AppxPackage sur un ordinateur où vous n’avez pas importé le certificat que vous avez créé, vous obtiendrez une erreur.
+### Déploiement du package AppX 
 
 Avant de déployer votre application, vous devez la signer avec un certificat. Pour plus d’informations sur la création d’un certificat, voir [Signature de votre package .Appx](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter#deploy-your-converted-appx). 
 
-Voici comment vous importez un certificat que vous avez créé précédemment. Vous pouvez l’installer directement, ou à partir d’un appx que vous avez signé, comme le client le fera.
-1.  Dans l’Explorateur de fichiers, cliquez avec le bouton droit sur un appx que vous avez signé avec un certificat de test, et choisissez **Propriétés** dans le menu contextuel.
+Voici comment vous importez un certificat que vous avez créé précédemment. Vous pouvez importer le certificat directement à l’aide de CERTUTIL, ou l’installer à partir d’un Appx que vous avez signé, comme le fera le client. 
+
+Pour installer le certificat à l’aide de CERTUTIL, exécutez la commande suivante à partir d’une invite de commandes administrateur:
+
+```cmd
+Certutil -addStore TrustedPeople <testcert.cer>
+```
+
+Pour importer le certificat à partir de l’Appx, comme le ferait un client:
+
+1.  Dans l’Explorateur de fichiers, cliquez avec le bouton droit sur un Appx que vous avez signé avec un certificat de test, puis choisissez **Propriétés** dans le menu contextuel.
 2.  Cliquez ou appuyez sur l’onglet **Signatures numériques**.
 3.  Cliquez ou appuyez sur le certificat et choisissez **Détails**.
 4.  Cliquez ou appuyez sur **Afficher le certificat**.
@@ -193,9 +225,9 @@ Voici comment vous importez un certificat que vous avez créé précédemment. V
 8.  Dans l’écran suivant de l’Assistant Importation du certificat, remplacez l’option sélectionnée par **Placer tous les certificats dans le magasin suivant**.
 9.  Cliquez ou appuyez sur **Parcourir**. Dans la fenêtre Sélectionner un magasin de certificats, faites défiler et sélectionnez **Personnes autorisées**, puis cliquez ou appuyez sur **OK**.
 10. Cliquez ou appuyez sur **Suivant**. Un nouvel écran s’affiche. Cliquez ou appuyez sur **Terminer**.
-11. Une boîte de dialogue de confirmation doit s’afficher. Si tel est le cas, cliquez sur **OK**. Si une boîte de dialogue indique que le certificat pose problème, vous devrez peut-être résoudre des problèmes de certificat.
+11. Une boîte de dialogue de confirmation doit s’afficher. Si tel est le cas, cliquez sur **OK**. Si une autre boîte de dialogue indique que le certificat pose problème, vous devrez peut-être résoudre les problèmes liés au certificat.
 
-Pour que Windows approuve le certificat, ce dernier doit se trouver dans le nœud **Certificats (Ordinateur local) &gt; Autorités de certification racines de confiance &gt; Certificats** ou dans le nœud **Certificats (Ordinateur local) &gt; Personnes autorisées &gt; Certificats**. Seuls les certificats figurant à ces deux emplacements peuvent valider les certificats de confiance dans le contexte de l’ordinateur local. Autrement, un message d’erreur ressemblant à la chaîne suivante apparaît:
+Remarque: Pour que Windows approuve le certificat, ce dernier doit se trouver dans le nœud **Certificats (Ordinateur local)&gt; Autorités de certification racines de confiance&gt; Certificats** ou dans le nœud **Certificats (Ordinateur local)&gt; Personnes autorisées&gt; Certificats**. Seuls les certificats figurant à ces deux emplacements peuvent valider les certificats de confiance dans le contexte de l’ordinateur local. Autrement, un message d’erreur ressemblant à la chaîne suivante s’affiche:
 ```CMD
 "Add-AppxPackage : Deployment failed with HRESULT: 0x800B0109, A certificate chain processed,
 but terminated in a rootcertificate which is not trusted by the trust provider.
@@ -203,24 +235,51 @@ but terminated in a rootcertificate which is not trusted by the trust provider.
 in the app package must be trusted."
 ```
 
-### En arrière-plan
+Maintenant que le certificat a été approuvé, il existe 2façons d’installer le package: par le biais de PowerShell ou en double-cliquant simplement sur le fichier de package Appx pour l’installer.  Pour effectuer l’installation par le biais de PowerShell, exécutez l’applet de commande suivante:
+
+```powershell
+Add-AppxPackage <MyApp>.appx
+```
+
+## En arrière-plan
 
 Lorsque vous exécutez votre application convertie, votre package d’application UWP est lancé à partir de \Program Files\WindowsApps\\&lt;_nom du package_&gt;\\&lt;_nom de l’application_&gt;.exe. Si vous cherchez à cet emplacement, vous verrez que votre application possède un manifeste du package de l’application (nommé AppxManifest.xml), qui fait référence à un espace de noms xml spécial, utilisé pour les applications converties. À l’intérieur de ce fichier manifeste, vous trouverez un élément __&lt;EntryPoint&gt;__, qui fait référence à une application de confiance totale. Lorsque cette application est lancée, elle ne s’exécute pas à l’intérieur d’un conteneur d’applications, mais comme un utilisateur le ferait normalement.
 
 Toutefois, l’application s’exécute dans un environnement spécial dans lequel tous les accès de l’application au système de fichiers et au Registre sont redirigés. Le fichier nommé Registry.dat est utilisé pour la redirection du Registre. Il s’agit en fait d’une ruche du Registre, vous pouvez donc l’afficher dans l’Éditeur du Registre Windows (Regedit). Notez que ce mécanisme signifie que vous ne pouvez pas utiliser le Registre pour la communication entre processus. Le Registre n’a pas été conçu et n’est pas adapté pour cette pratique dans tous les cas. En ce qui concerne le système de fichiers, le seul élément redirigé est le dossier AppData; il est redirigé vers le même emplacement que les données d’application stockées pour toutes les applications UWP. Cet emplacement est connu comme le magasin de données de l’application locale, et vous y accédez à l’aide de la propriété [ApplicationData.LocalFolder](https://msdn.microsoft.com/library/windows/apps/br241621). De cette façon, votre code est déjà porté pour lire et écrire des données d’application à l’emplacement approprié sans action de votre part. Vous pouvez également écrire directement à cet emplacement. L’un des avantages de la redirection du système de fichiers est une expérience de désinstallation plus fluide.
 
-À l’intérieur d’un dossier nommé VFS, vous verrez des dossiers qui contiennent les fichiers DLL sur lesquels votre application a des dépendances. Ces DLL sont installés dans les dossiers système pour la version de bureau classique de votre application. Toutefois, pour l’application UWP, les fichiers DLL sont installés en local sur votre application. Ainsi, il n’existe aucun problème de contrôle lors de l’installation et de la désinstallation des applications UWP.
+À l’intérieur d’un dossier nommé VFS, vous verrez des dossiers qui contiennent les fichiers DLL sur lesquels votre application a des dépendances. Ces DLL sont installés dans les dossiers système pour la version de bureau classique de votre application. Toutefois, pour l’application UWP, les fichiers DLL sont installés en local sur votre application. Ainsi, il n’existe aucun problème de gestion de version lors de l’installation et de la désinstallation des applications UWP.
 
-## Voir également
-[Convertir votre application de bureau en une application UWP (plateforme Windows universelle)](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-root)
+### Emplacements de VFS empaquetés
 
-[Aperçu du Convertisseur d’applications de bureau (projet Centennial)](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter)
+Le tableau suivant montre où les fichiers intégrés à votre package sont superposés sur le système de l’application. Votre application détectera ces fichiers comme se trouvant dans les emplacements système répertoriés, alors qu’en réalité, ils se trouvent dans les emplacements redirigés à l’intérieur de [Racine du package]\VFS\. Les emplacements FOLDERID proviennent des constantes [**KNOWNFOLDERID**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd378457.aspx).
+
+Emplacement système | Emplacement redirigé (sous [Racine du package] \VFS\) | Valide sur les architectures
+ :---- | :---- | :---
+FOLDERID_SystemX86 | SystemX86 | x86, amd64 
+FOLDERID_System | SystemX64 | amd64 
+FOLDERID_ProgramFilesX86 | ProgramFilesX86 | x86, amd6 
+FOLDERID_ProgramFilesX64 | ProgramFilesX64 | amd64 
+FOLDERID_ProgramFilesCommonX86 | ProgramFilesCommonX86 | x86, amd64
+FOLDERID_ProgramFilesCommonX64 | ProgramFilesCommonX64 | amd64 
+FOLDERID_Windows | Windows | x86, amd64 
+FOLDERID_ProgramData | Common AppData | x86, amd64 
+FOLDERID_System\catroot | AppVSystem32Catroot | x86, amd64 
+FOLDERID_System\catroot2 | AppVSystem32Catroot2 | x86, amd64 
+FOLDERID_System\drivers\etc | AppVSystem32DriversEtc | x86, amd64 
+FOLDERID_System\driverstore | AppVSystem32Driverstore | x86, amd64 
+FOLDERID_System\logfiles | AppVSystem32Logfiles | x86, amd64 
+FOLDERID_System\spool | AppVSystem32Spool | x86, amd64 
+
+## Voir aussi
+[Convertir votre application de bureau en une application UWP](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-root)
+
+[Desktop App Converter Preview (Aperçu de Desktop App Converter)](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter)
 
 [Convertir manuellement votre application de bureau Windows en une application de plateforme Windows universelle (UWP)](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-manual-conversion)
 
 [Pont d’application de bureau pour les exemples de code UWP dans GitHub](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Sep16_HO2-->
 
 

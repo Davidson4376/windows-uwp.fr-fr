@@ -1,43 +1,43 @@
 ---
 author: QuinnRadich
-title: Choose a UWP version
-description: When writing a UWP app in Microsoft Visual Studio, you can choose which version to target. Learn about the difference between different UWP versions, and how to configure your choices in new and existing projects.
+title: Choisir une version UWP
+description: "Lors de l’écriture d’applications UWP dans Microsoft Visual Studio, vous pouvez choisir la version à cibler. Découvrez ce qui distingue les différentes versions d’UWP et apprenez à configurer vos choix dans les projets nouveaux et existants."
 translationtype: Human Translation
 ms.sourcegitcommit: 46852d305b2c19b46a904cabf928978c6c9f1606
 ms.openlocfilehash: 249bba67b844585b590294a456e3d0e74c392c95
 
 ---
 
-# Choose a UWP version
+# Choisir une version UWP
 
-When writing a UWP app in Microsoft Visual Studio, you can choose which version to target. Currently, there are only three possible versions.
+Lors de l’écriture d’applications UWP dans Microsoft Visual Studio, vous pouvez choisir la version à cibler. Actuellement, trois versions seulement sont possibles.
 
 | Version | Description |
 | --- | --- |
-| Build 14393 (Anniversary Edition) | This is the most recent version of Windows 10, released in July 2016. Some highlighted features from this release include: </br> \* **Windows Ink:** New InkCanvas and InkToolbar controls. </br> \* **Cortana APIs:** Use new Cortana Actions to integrate Cortana support with specific functions of your app. </br> \* **Windows Hello:** Mirosoft Edge now supports Windows Hello, giving web developers access to biometric authentication. </br> For information on these and many other features added in this release of windows, visit [the Dev Center](https://developer.microsoft.com/en-us/windows/windows-10-for-developers) or the more in-depth page on [What's new in Windows 10 for developers](../whats-new/windows-10-version-1607.md)  |
-| Build 10586 | This version of Windows 10 was released in November 2015. Highlighted features include the introduction of ORTC (object real-time communications) APIs for video communication in Microsoft Edge and Providers APIs to enable apps to use Windows Hello face authentication. [More information on features introduced in this build.](../whats-new/windows-10-version-1511.md) |
-| Build 10240 | This is the initial release version of Windows 10, from July 2015. [More information on features introduced in this build.](../whats-new/windows-10-version-1507.md) |
+| Build 14393 (Édition anniversaire) | Il s’agit de la version la plus récente de Windows10, publiée en juillet2016. Voici quelques fonctionnalités phares de cette version: </br> \* **Windows Ink**: nouvelles commandes InkCanvas et InkToolbar. </br> \* **API Cortana**: les nouvelles actions de Cortana permettent d’intégrer la prise en charge de Cortana à des fonctions spécifiques de votre application. </br> \* **Windows Hello**: Microsoft Edge prend désormais en charge Windows Hello, ce qui donne aux développeurs web l’accès à l’authentification biométrique. </br> Pour plus d’informations sur ces fonctionnalités et de nombreuses autres ajoutées dans cette version de Windows, visitez le [Centre de développement](https://developer.microsoft.com/en-us/windows/windows-10-for-developers) ou consultez la page [Nouveautés de Windows](../whats-new/windows-10-version-1607.md).  |
+| Build 10586 | Cette version de Windows10 a été publiée en novembre2015. Les fonctionnalités phares comprennent l’introduction des API ORTC (Object Real-Time Communications) pour la communication vidéo dans Microsoft Edge et des API fournisseurs permettant aux applications d’utiliser l’authentification faciale Windows Hello. [Plus d’informations sur les fonctionnalités introduites dans cette version.](../whats-new/windows-10-version-1511.md) |
+| Build 10240 | Il s’agit de la version initiale de Windows10 publiée en juillet2015. [Plus d’informations sur les fonctionnalités introduites dans cette version.](../whats-new/windows-10-version-1507.md) |
 
-We highly recommend that new developers and developers writing code for a general audience always use the latest build of Windows (14393). Developers writing Enterprise apps should strongly consider supporting an older **Minimum Version**.
+Nous recommandons vivement aux nouveaux développeurs et aux développeurs qui écrivent du code pour le grand public de toujours utiliser la dernière version de Windows (build 14393). Les développeurs écrivant des applications d’entreprise doivent sérieusement envisager de prendre en charge une **version minimale** antérieure.
 
-## What's different in each UWP version?
+## Qu’est-ce qui différencie chaque version UWP?
 
-New and changed APIs for UWP are available in every successive version of Windows 10. For specific information about what features were added in which version, see [What's new for developers in Windows 10](../whats-new/windows-10-version-1607.md).
+Les API nouvelles et modifiées pour UWP sont disponibles dans toutes les versions successives de Windows10. Pour savoir quelles fonctionnalités ont été ajoutées dans quelle version, consultez [Nouveautés de Windows](../whats-new/windows-10-version-1607.md).
 
-For reference topics that enumerate all device families and their versions, and all API contrats and their versions, see [Device families](https://msdn.microsoft.com/library/windows/apps/dn706137.aspx) and [API contracts](https://msdn.microsoft.com/library/windows/apps/dn706135.aspx).
+Pour consulter des rubriques de référence qui énumèrent toutes les familles d’appareils et leurs versions, ainsi que les contrats d’API et leurs versions, voir [Familles d’appareils](https://msdn.microsoft.com/library/windows/apps/dn706137.aspx) et [Contrats d’API](https://msdn.microsoft.com/library/windows/apps/dn706135.aspx).
 
-## Choose which version to use for your app
+## Choisir la version à utiliser pour votre application
 
-In the **New Universal Windows Project** dialog in Visual Studio, you can choose a version for **Target Version** and for **Minimum Version**.
+Dans la boîte de dialogue **Nouveau projet Windows universel** de Visual Studio, vous pouvez choisir une version pour **Version cible** et pour **Version minimale**.
 
-* **Target Version**. This sets the *TargetPlatformVersion* setting in your project file. It also determines the value of the *TargetDeviceFamily@MaxVersionTested* attribute in your app package manifest. The value you choose specifies the version of the UWP platform that your project is targeting—and therefore the set of APIs available to your app—so we recommend that you choose the most recent version possible. For more info about your app package manifest, and some guidelines around configuring TargetDeviceFamily manually, see [TargetDeviceFamily](https://msdn.microsoft.com/library/windows/apps/dn986903).
-* **Minimum Version**. This sets the *TargetPlatformMinVersion* setting in your project file. It also determines the value of the *TargetDeviceFamily@MinVersion* attribute in your app package manifest. The value you choose specifies the minimum version of the UWP platform that your project can work with.
+* **Version cible**. Définit le paramètre *TargetPlatformVersion* de votre fichier projet. Détermine également la valeur de l’attribut *TargetDeviceFamily@MaxVersionTested* dans le manifeste de votre package d’application. La valeur que vous choisissez spécifie la version de la plateforme UWP ciblée par votre projet et par conséquent, l’ensemble d’API disponibles pour votre application. Nous vous recommandons donc de choisir la version la plus récente. Pour plus d’informations sur le manifeste de votre package d’application et pour obtenir des recommandations sur la configuration manuelle de TargetDeviceFamily, voir [TargetDeviceFamily](https://msdn.microsoft.com/library/windows/apps/dn986903).
+* **Version minimale**. Définit le paramètre *TargetPlatformMinVersion* de votre fichier projet. Détermine également la valeur de l’attribut *TargetDeviceFamily@MinVersion* dans le manifeste de votre package d’application. La valeur que vous choisissez spécifie la version minimale de la plateforme UWP avec laquelle votre projet peut fonctionner.
 
-Be aware that you're declaring that your app works on any version of Windows in the range from **Minimum Version** to **Target Version**. If those two are the same version then you don't need to do anything special. If they're different then here are some things to be aware of.
+Sachez que vous déclarez que votre application fonctionne sur n’importe quelle version de Windows entre la **Version minimale** et la **Version cible**. Si ces deux versions sont les mêmes, aucune action de votre part n’est nécessaire. Si elles sont différentes, voici quelques points à noter.
 
-* In your code, you can freely (that is, without conditional checks) call any API that exists in the version specified by **Minimum Version**.
-* Ensure that you test your code on the **Minimum Version**, to be sure that it works without requiring APIs only present in the **Target Version**.
-* The value of **Target Version** is used to identify all the references (contract winmds) used to compile your project. But those references will enable you to compile your code with calls to APIs that won't necessarily exist on devices that you've declared that you support (via **Minimum Version**). Therefore, any API that was introduced after **Minimum Version** will need to be called via adaptive code. For more information about adaptive code, see [Guide to Universal Windows Platform (UWP) apps](../get-started/universal-application-platform-guide.md).
+* Dans votre code, vous pouvez appeler librement (autrement dit, sans contrôles conditionnels) toute API qui existe dans la version spécifiée par **Version minimale**.
+* Veillez à tester votre code sur la **Version minimale** afin de vous assurer qu’il fonctionne sans avoir besoin d’API présentes uniquement dans la **Version cible**.
+* La valeur de **Version cible** permet d’identifier toutes les références (contrat winmd) utilisées pour compiler votre projet. Mais ces références vous permettront de compiler votre code avec des appels à des API qui n’existeront pas nécessairement sur les appareils que vous avez déclaré prendre en charge (via **Version minimale**). Par conséquent, toute API introduite après la **Version minimale** doit être appelée via un code adaptatif. Pour plus d’informations sur le code adaptatif, voir [Guide des applications de plateforme Windows universelle (UWP)](../get-started/universal-application-platform-guide.md).
 
 
 

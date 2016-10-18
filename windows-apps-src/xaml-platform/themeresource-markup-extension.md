@@ -5,7 +5,7 @@ title: Extension de balisage ThemeResource
 ms.assetid: 8A1C79D2-9566-44AA-B8E1-CC7ADAD1BCC5
 translationtype: Human Translation
 ms.sourcegitcommit: 9c657f906e6dedb259b8a98373f56ac5a63bd845
-ms.openlocfilehash: 246c991bbdbc95e73ea8d4884cd4d617592bfc51
+ms.openlocfilehash: 803c62987c3a019fc576c6f1d0c343e042ba947b
 
 ---
 
@@ -156,6 +156,6 @@ Lorsqu’une clé de ressource fait partie intégrante d’une utilisation quelc
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

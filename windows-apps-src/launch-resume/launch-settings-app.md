@@ -4,8 +4,8 @@ title: "Lancer l’application Paramètres Windows"
 description: "Découvrez comment lancer l’application Paramètres Windows à partir de votre application. Cette rubrique décrit le schéma d’URI ms-settings. Utilisez ce schéma d’URI pour lancer l’application Paramètres Windows en ouvrant des pages de paramètres spécifiques."
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
 translationtype: Human Translation
-ms.sourcegitcommit: 3cf9dd4ab83139a2b4b0f44a36c2e57a92900903
-ms.openlocfilehash: e52a4245e8697a68bfc5c5605dc54e5ea510c662
+ms.sourcegitcommit: f90ba930db60f338ee0ebcc80934281363de01ee
+ms.openlocfilehash: 249e485f74364475ff96a8256ee88bdb79749259
 
 ---
 
@@ -27,10 +27,7 @@ Le lancement de l’application Paramètres est une partie importante de l’éc
 
 ## Comment lancer l’application Paramètres
 
-
-Si les paramètres de confidentialité n’autorisent votre application à accéder à une ressource sensible, nous vous recommandons de fournir un lien pratique permettant d’accéder aux paramètres de confidentialité dans l’application **Paramètres**. Cela peut aider les utilisateurs à modifier leurs paramètres.
-
-Pour lancer directement l’application **Paramètres**, utilisez le schéma d’URI `ms-settings:` comme illustré dans les exemples suivants.
+Pour lancer l’application **Paramètres**, utilisez le schéma d’URI `ms-settings:` comme illustré dans les exemples suivants.
 
 Dans cet exemple, un contrôle Hyperlink XAML est utilisé pour ouvrir la page des paramètres de confidentialité relatifs au microphone en utilisant l’URI `ms-settings:privacy-microphone`.
 
@@ -46,7 +43,7 @@ Dans cet exemple, un contrôle Hyperlink XAML est utilisé pour ouvrir la page d
 </TextBlock>
 ```
 
-Par ailleurs, votre application peut appeler la méthode[**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) pour lancer l’application **Paramètres** à partir du code.
+Par ailleurs, votre application peut appeler la méthode[**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) pour lancer l’application **Paramètres** à partir du code. Cet exemple montre comment ouvrir la page des paramètres de confidentialité relatifs à l’appareil photo en utilisant l’URI `ms-settings:privacy-webcam`.
 
 ```cs
 using Windows.System;
@@ -54,9 +51,11 @@ using Windows.System;
 bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-webcam"));
 ```
 
-Cet exemple montre comment ouvrir la page des paramètres de confidentialité relatifs à l’appareil photo en utilisant l’URI `ms-settings:privacy-webcam`.
+Le code ci-dessus ouvre la page des paramètres de confidentialité relatifs à l’appareil photo:
 
 ![paramètres de confidentialité de l’appareil photo.](images/privacyawarenesssettingsapp.png)
+
+
 
 Pour plus d’informations sur les URI de lancement, voir [Lancer l’application par défaut pour un URI](launch-default-app.md).
 
@@ -72,9 +71,9 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 |                    | Notifications et actions                | Les deux           | ms-settings:notifications                 |
 |                    | Téléphone                                  | Mobile uniquement    | ms-settings:phone                         |
 |                    | Messagerie                              | Mobile uniquement    | ms-settings:messaging                     |
-|                    | Économiseur de batterie                          | Mobiles et bureau sur les appareils dotés d’une batterie, comme les tablettes    | ms-settings:batterysaver                  |
+|                    | Économiseur de batterie                          | Mobiles et bureau sur les appareils dotés d’une batterie, comme les tablettes | ms-settings:batterysaver                  |
 |                    | Économiseur de batterie/paramètres d’économiseur de batterie | Mobiles et bureau sur les appareils dotés d’une batterie, comme les tablettes | ms-settings:batterysaver-settings         |
-|                    | Économiseur de batterie/utilisation de batterie            | Mobiles et bureau sur les appareils dotés d’une batterie, comme les tablettes    | ms-settings:batterysaver-usagedetails     |
+|                    | Économiseur de batterie/utilisation de batterie            | Mobiles et bureau sur les appareils dotés d’une batterie, comme les tablettes | ms-settings:batterysaver-usagedetails     |
 |                    | Alimentation et mise en veille                          | Bureau uniquement   | ms-settings:powersleep                    |
 |                    | Bureau: Informations système                         | Les deux           | ms-settings:deviceencryption              |
 |                    |                                        |                |                                           |
@@ -91,14 +90,19 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 |                    | Réseau cellulaire et SIM                         | Les deux           | ms-settings:network-cellular              |
 |                    | Point d’accès sans fil mobile                         | Les deux           | ms-settings:network-mobilehotspot         |
 |                    | Proxy                                  | Les deux           | ms-settings:network-proxy                 |
+|                    | État                                 | Bureau uniquement   | ms-settings:network-status                |
 | Personnalisation    | Personnalisation (catégorie)             | Les deux           | ms-settings:personalization               |
 |                    | Arrière-plan                             | Bureau uniquement   | ms-settings:personalization-background    |
 |                    | Couleurs                                 | Les deux           | ms-settings:personalization-colors        |
 |                    | Sons                                 | Mobile uniquement    | ms-settings:sounds                        |
 |                    | Écran de verrouillage                            | Les deux           | ms-settings:lockscreen                    |
-| Comptes           | Adresse de messagerie et comptes                | Les deux           | ms-settings:emailandaccounts              |
-|                    | Accès professionnel                            | Les deux           | ms-settings:workplace                     |
+| Comptes           | Accéder à un compte professionnel ou scolaire                  | Les deux           | ms-settings:workplace                     |
+|                    | Adresse électronique et comptes                   | Les deux           | ms-settings:emailandaccounts              |
+|                    | Famille et autres personnes                  | Les deux           | ms-settings:otherusers                    |
+|                    | Options de connexion                        | Les deux           | ms-settings:signinoptions                 |
 |                    | Synchroniser vos paramètres                     | Les deux           | ms-settings:sync                          |
+|                    | Autres personnes                           | Les deux           | ms-settings:otherusers                    |
+|                    | Vos informations                              | Les deux           | ms-settings:yourinfo                      |
 | Heure et langue  | Date et heure                            | Les deux           | ms-settings:dateandtime                   |
 |                    | Region &amp; language                      | Poste de travail uniquement   | ms-settings:regionlanguage                |
 | Options d’ergonomie     | Narrateur                               | Les deux           | ms-settings:easeofaccess-narrator         |
@@ -128,6 +132,6 @@ Utilisez les URI suivants pour ouvrir diverses pages de l’application Paramèt
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO4-->
 
 

@@ -5,7 +5,7 @@ description: Fournit des guides relatifs au portage de vos jeux existants vers D
 ms.assetid: 1dff815b-d3bd-557e-52c1-58e40f4dd6b1
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 0cf7f4e6679d362691cea8ccbd45786176715cad
+ms.openlocfilehash: 3cfc483052d12b89cf2707e7b9ebd666e5c49e3d
 
 ---
 
@@ -55,6 +55,6 @@ Fournit des guides relatifs au portage de vos jeux existants vers Direct3D11, la
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

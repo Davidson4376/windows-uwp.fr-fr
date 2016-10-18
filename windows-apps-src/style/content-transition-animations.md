@@ -4,8 +4,8 @@ Description: "Les animations de transition de contenu vous permettent de modifie
 title: "Recommandations en matière d’animations de transition de contenu"
 ms.assetid: 0188FDB4-E183-466f-8A03-EE3FF5C474B1
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: dc233ef821259701eb93c09d1bdefcfa3d9bb69f
+ms.sourcegitcommit: d7236006f2c620a4ff0de4e0f413f32a2eaf5687
+ms.openlocfilehash: 2b3e0196b573fb426c9cd71fc613819a2dd2d615
 
 ---
 
@@ -22,7 +22,7 @@ ms.openlocfilehash: dc233ef821259701eb93c09d1bdefcfa3d9bb69f
 
 Les animations de transition de contenu vous permettent de modifier le contenu d’une zone de l’écran tout en maintenant le conteneur ou l’arrière-plan constant. Le nouveau contenu apparaît. Si du contenu déjà à l’écran doit être remplacé, il disparaît.
 
-## <span id="Recommendations"></span><span id="recommendations"></span><span id="RECOMMENDATIONS"></span>Pratiques conseillées et déconseillées
+## Pratiques conseillées et déconseillées
 
 
 -   Utilisez une animation d’ouverture lorsque vous devez insérer un ensemble de nouveaux éléments dans un conteneur vide. Par exemple, après le chargement initial d’une application, une partie de son contenu est susceptible de ne pas pouvoir s’afficher immédiatement. Une fois le contenu prêt à l’affichage, utilisez une animation de transition de contenu pour activer son affichage.
@@ -35,7 +35,7 @@ Les animations de transition de contenu vous permettent de modifier le contenu d
 
 
 
-## <span id="related_topics"></span>Articles connexes
+## Articles connexes
 
 **Pour les développeurs (XAML)**
 * [Vue d’ensemble des animations](https://msdn.microsoft.com/library/windows/apps/mt187350)
@@ -53,6 +53,6 @@ Les animations de transition de contenu vous permettent de modifier le contenu d
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

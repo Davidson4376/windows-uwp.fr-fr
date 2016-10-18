@@ -1,7 +1,7 @@
 ---
 author: QuinnRadich
-title: Choose a UWP version
-description: When writing a UWP app in Microsoft Visual Studio, you can choose which version to target. Learn about the difference between different UWP versions, and how to configure your choices in new and existing projects.
+title: "Choisir une version d’UWP"
+description: "Quand vous écrivez une application UWP dans Microsoft Visual Studio, vous pouvez choisir la version que vous ciblez. Découvrez ce qui distingue les différentes versions d’UWP et apprenez à configurer vos choix dans les projets nouveaux et existants."
 redirect_url: ../updates-and-versions/choose-a-uwp-version/
 translationtype: Human Translation
 ms.sourcegitcommit: a86002c944841536d37735bb8c4b657905582144
@@ -9,29 +9,29 @@ ms.openlocfilehash: d6d2be6c91ddf5fb85cdec759c753db1561f066f
 
 ---
 
-# Choose a UWP version
+# Choisir une version d’UWP
 
-**This page has been relocated to ../updates-and-versions/choose-a-uwp-version/**
+**Cette page a été déplacée vers ../updates-and-versions/choose-a-uwp-version/**
 
-When writing a UWP app in Microsoft Visual Studio, you can choose which version to target. Learn about the difference between different UWP versions, and how to configure your choices in new and existing projects.
+Quand vous écrivez une application UWP dans Microsoft Visual Studio, vous pouvez choisir la version que vous ciblez. Découvrez ce qui distingue les différentes versions d’UWP et apprenez à configurer vos choix dans les projets nouveaux et existants.
 
-## What's different in each UWP version?
+## Qu’est-ce qui différencie chaque version d’UWP?
 
-New and changed APIs for UWP are available in every successive version of Windows 10. For specific information about what features were added in which version, see [What's new for developers in Windows 10](../whats-new/windows-10-version-1607.md).
+Les API nouvelles et modifiées pour UWP sont disponibles dans toutes les versions successives de Windows10. Pour connaître le détail des fonctionnalités qui ont été ajoutées dans chaque version, voir [Nouveautés pour les développeurs Windows10](../whats-new/windows-10-version-1607.md).
 
-For reference topics that enumerate all device families and their versions, and all API contrats and their versions, see [Device families](https://msdn.microsoft.com/library/windows/apps/dn706137.aspx) and [API contracts](https://msdn.microsoft.com/library/windows/apps/dn706135.aspx).
+Pour consulter des rubriques de référence qui énumèrent toutes les familles d’appareils et leurs versions, ainsi que tous les contrats d’API et leurs versions, voir [Familles d’appareils](https://msdn.microsoft.com/library/windows/apps/dn706137.aspx) et [Contrats d’API](https://msdn.microsoft.com/library/windows/apps/dn706135.aspx).
 
-## Choose which version to use for your app
+## Choisir la version à utiliser pour votre application
 
-In the **New Universal Windows Project** dialog in Visual Studio, you can choose a version for **Target Version** and for **Minimum Version**.
+Dans la boîte de dialogue **Nouveau projet Windows universel** de Visual Studio, vous pouvez choisir une version pour **Version cible** et **Version minimale**.
 
-* **Target Version**. This sets the *TargetPlatformVersion* setting in your project file. It also determines the value of the *TargetDeviceFamily@MaxVersionTested* attribute in your app package manifest. The value you choose specifies the version of the UWP platform that your project is targeting—and therefore the set of APIs available to your app—so we recommend that you choose the most recent version possible. For more info about your app package manifest, and some guidelines around configuring TargetDeviceFamily manually, see [TargetDeviceFamily](https://msdn.microsoft.com/library/windows/apps/dn986903).
-* **Minimum Version**. This sets the *TargetPlatformMinVersion* setting in your project file. It also determines the value of the *TargetDeviceFamily@MinVersion* attribute in your app package manifest. The value you choose specifies the minimum version of the UWP platform that your project can work with.
+* **Version cible**: cette valeur définit le paramètre *TargetPlatformVersion* dans votre fichier projet. Elle détermine aussi la valeur de l’attribut *TargetDeviceFamily@MaxVersionTested* dans le manifeste de votre package d’application. La valeur que vous choisissez détermine la version de la plateforme UWP ciblée par votre projet et par conséquent, l’ensemble d’API auxquelles votre application a accès. Nous vous recommandons donc de choisir la version la plus récente. Pour plus d’informations sur le manifeste de votre package d’application et pour obtenir des recommandations sur la configuration manuelle de TargetDeviceFamily, voir [TargetDeviceFamily](https://msdn.microsoft.com/library/windows/apps/dn986903).
+* **Version minimale**: cette valeur définit le paramètre *TargetPlatformMinVersion* dans votre fichier projet. Elle détermine aussi la valeur de l’attribut *TargetDeviceFamily@MinVersion* dans le manifeste de votre package d’application. La valeur que vous choisissez détermine la version minimale de la plateforme UWP que votre projet peut utiliser.
 
-Be aware that you're declaring that your app works on any version of Windows in the range from **Minimum Version** to **Target Version**. If those two are the same version then you don't need to do anything special. If they're different then here are some things to be aware of.
+Sachez que vous déclarez que votre application fonctionne sur n’importe quelle version de Windows entre la **Version minimale** et la **Version cible**. Si ces deux versions sont identiques, aucune action de votre part n’est nécessaire. Si elles sont différentes, voici ce que vous devez savoir.
 
-* In your code, you can freely (that is, without conditional checks) call any API that exists in the version specified by **Minimum Version**.
-* The value of **Target Version** is used to identify all the references (contract winmds) used to compile your project. But those references will enable you to compile your code with calls to APIs that won't necessarily exist on devices that you've declared that you support (via **Minimum Version**). Therefore, any API that was introduced after **Minimum Version** will need to be called via adaptive code. For more information about adaptive code, see [Guide to Universal Windows Platform (UWP) apps](universal-application-platform-guide.md).
+* Dans votre code, vous pouvez appeler librement (autrement dit, sans contrôles conditionnels) toute API qui existe dans la version spécifiée par **Version minimale**.
+* La valeur de **Version cible** permet d’identifier toutes les références (contrat winmd) utilisées pour compiler votre projet. Mais ces références vous permettent de compiler votre code avec des appels à des API qui n’existent pas nécessairement sur les appareils que vous avez déclaré prendre en charge (via **Version minimale**). Par conséquent, toute API introduite après la **Version minimale** doit être appelée via un code adaptatif. Pour plus d’informations sur le code adaptatif, voir [Guide des applications de plateforme Windows universelle (UWP)](universal-application-platform-guide.md).
 
 
 <!--HONumber=Aug16_HO5-->

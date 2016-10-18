@@ -1,75 +1,75 @@
 ---
 author: mcleanbyron
 ms.assetid: BF296C25-A2E6-48E4-9D08-0CCDB5FAE0C8
-description: Use this method in the Windows Store submission API to get data for an existing app submission.
-title: Get an app submission using the Windows Store submission API
+description: "Utilisez cette méthode dans l’API de soumission du Windows Store pour obtenir des données pour une soumission d’application existante."
+title: "Obtenir une soumission d’application à l’aide de l’API de soumission du Windows Store"
 translationtype: Human Translation
 ms.sourcegitcommit: 178b70db1583790c174d65e060c8bce6e4f69243
 ms.openlocfilehash: c845b59919a3a487949bc8926f7261992dac60ae
 
 ---
 
-# Get an app submission using the Windows Store submission API
+# Obtenir une soumission d’application à l’aide de l’API de soumission du Windows Store
 
 
 
 
-Use this method in the Windows Store submission API to get data for an existing app submission. For more information about the process of process of creating an app submission by using the Windows Store submission API, see [Manage app submissions](manage-app-submissions.md).
+Utilisez cette méthode dans l’API de soumission du Windows Store pour obtenir des données pour une soumission d’application existante. Pour plus d’informations sur le processus de création d’une soumission d’application à l’aide de l’API de soumission du Windows Store, voir [Gérer les soumissions d’applications](manage-app-submissions.md).
 
-## Prerequisites
+## Conditions préalables
 
-To use this method, you need to first do the following:
+Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
 
-* If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Windows Store submission API.
-* [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
-* Create a submission for an app in your Dev Center account. You can do this in the Dev Center dashboard, or you can do this by using the [create an app submission](create-an-app-submission.md) method.
+* Si ce n’est pas déjà le cas, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
+* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
+* Créez une soumission pour une application dans votre compte du Centre de développement. Pour cela, vous pouvez utiliser le tableau de bord du Centre de développement ou la méthode [Créer une soumission d’application](create-an-app-submission.md).
 
->**Note**&nbsp;&nbsp;This method can only be used for Windows Dev Center accounts that have been given permission to use the Windows Store submission API. Not all accounts have this permission enabled.
+>**Remarque**&nbsp;&nbsp;Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
 
-## Request
+## Requête
 
-This method has the following syntax. See the following sections for usage examples and descriptions of the header and request body.
+Cette méthode présente la syntaxe suivante. Voir les sections suivantes pour obtenir des exemples d’utilisation et une description de l’en-tête et du corps de la requête.
 
-| Method | Request URI                                                      |
+| Méthode | URI de la requête                                                      |
 |--------|------------------------------------------------------------------|
 | GET   | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId} ``` |
 
 <span/>
  
 
-### Request header
+### En-tête de requête
 
-| Header        | Type   | Description                                                                 |
+| En-tête        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
+| Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;. |
 
 <span/>
 
-### Request parameters
+### Paramètres de la requête
 
-| Name        | Type   | Description                                                                 |
+| Nom        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | string | Required. The Store ID of the app for which you want to update a submission. For more information about the Store ID, see [View app identity details](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
-| submissionId | string | Required. The ID of the submission to get. This ID is available in the Dev Center dashboard, and it is included in the response data for requests to [create an app submission](create-an-app-submission.md).  |
+| applicationId | chaîne | Obligatoire. ID Windows Store de l’application pour laquelle vous voulez mettre à jour une soumission. Pour plus d’informations sur l’ID Windows Store, voir [Visualiser les informations d’identité des applications](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
+| submissionId | chaîne | Obligatoire. ID de la soumission à obtenir. Cet ID est disponible dans le tableau de bord du Centre de développement et figure également dans les données de réponse aux requêtes visant à [créer une soumission d’application](create-an-app-submission.md).  |
 
 <span/>
 
-### Request body
+### Corps de la requête
 
-Do not provide a request body for this method.
+Ne fournissez pas de corps de requête pour cette méthode.
 
-### Request example
+### Exemple de requête
 
-The following example demonstrates how to get an app submission.
+L’exemple suivant montre comment obtenir une soumission d’application.
 
 ```
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/submissions/1152921504621243680 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-## Response
+## Réponse
 
-The following example demonstrates the JSON response body for a successful call to this method. The response body contains information about the specified submission. For more details about the values in the response body, see [App submission resource](manage-app-submissions.md#app-submission-object).
+L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à cette méthode. Le corps de la réponse contient des informations sur la soumission spécifiée. Pour plus d’informations sur les valeurs figurant dans le corps de la réponse, voir [Ressource de soumission d’application](manage-app-submissions.md#app-submission-object).
 
 ```json
 {
@@ -161,26 +161,26 @@ The following example demonstrates the JSON response body for a successful call 
 }
 ```
 
-## Error codes
+## Codes d’erreur
 
-If the request cannot be successfully completed, the response will contain one of the following HTTP error codes.
+Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’erreur HTTP suivants.
 
-| Error code |  Description   |
+| Code d’erreur |  Description   |
 |--------|------------------|
-| 404  | The submission could not be found. |
-| 409  | The submission does not belong to the specified app, or the app uses a Dev Center dashboard feature that is [currently not supported by the Windows Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
+| 404  | La soumission est introuvable. |
+| 409  | La soumission n’appartient pas à l’application spécifiée, ou l’application utilise une fonctionnalité du tableau de bord du Centre de développement qui n’est [actuellement pas prise en charge par l’API de soumission du Windows Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
 <span/>
 
 
-## Related topics
+## Rubriques connexes
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
-* [Create an app submission](create-an-app-submission.md)
-* [Commit an app submission](commit-an-app-submission.md)
-* [Update an app submission](update-an-app-submission.md)
-* [Delete an app submission](delete-an-app-submission.md)
-* [Get the status of an app submission](get-status-for-an-app-submission.md)
+* [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md)
+* [Créer une soumission d’application](create-an-app-submission.md)
+* [Valider une soumission d’application](commit-an-app-submission.md)
+* [Mettre à jour une soumission d’application](update-an-app-submission.md)
+* [Supprimer une soumission d’application](delete-an-app-submission.md)
+* [Obtenir l’état d’une soumission d’application](get-status-for-an-app-submission.md)
 
 
 

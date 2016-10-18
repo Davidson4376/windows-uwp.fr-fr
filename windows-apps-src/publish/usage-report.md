@@ -4,8 +4,8 @@ Description: "Le rapport Utilisation disponible dans le tableau de bord du Centr
 title: "Rapport sur l’utilisation"
 ms.assetid: 5F0E7F94-D121-4AD3-A6E5-9C0DEC437BD3
 translationtype: Human Translation
-ms.sourcegitcommit: 6dac44032ac217969148ff73c594f99d8a733355
-ms.openlocfilehash: 0cb9d09504a024cabe66661a5c77e21752b7e2e6
+ms.sourcegitcommit: c413ff1d4fe709e92f7a306e671f9a4fe22a5999
+ms.openlocfilehash: 21be2064914189abe8ef68c858d33346b947550c
 
 ---
 
@@ -45,7 +45,7 @@ Chaque utilisateur actif représente un client ayant utilisé votre application 
 
 Le graphique **Événements personnalisés** affiche le nombre total d'occurrences des événements personnalisés que vous avez définis pour votre application. Ces informations peuvent concerner plusieurs occurrences pour un même client.
 
-Les événements personnalisés sont implémentés à l’aide de [Journal](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomevents.log.aspx) dans le [SDK d’engagement et de monétisation de la Boutique Microsoft](../monetize/monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md).
+Les événements personnalisés sont implémentés à l’aide de la méthode [StoreServicesCustomEventLogger.Log](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.log.aspx) de [Microsoft Store Services SDK](../monetize/microsoft-store-services-sdk.md).
 
 
 
@@ -53,10 +53,6 @@ Les événements personnalisés sont implémentés à l’aide de [Journal](http
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

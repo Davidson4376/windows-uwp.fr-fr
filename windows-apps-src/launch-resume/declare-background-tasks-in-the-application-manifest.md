@@ -4,8 +4,8 @@ title: "Déclarer des tâches en arrière-plan dans le manifeste de l’applicat
 description: "Activez l’utilisation des tâches en arrière-plan en les déclarant comme extensions dans le manifeste de l’application."
 ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
 translationtype: Human Translation
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: d7dbdab0e8d404e6607585045d49bb3dd1407de6
+ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
+ms.openlocfilehash: 6ec298a956673c114d34d64b026394ece2c33506
 
 ---
 
@@ -22,7 +22,10 @@ ms.openlocfilehash: d7dbdab0e8d404e6607585045d49bb3dd1407de6
 
 Activez l’utilisation des tâches en arrière-plan en les déclarant comme extensions dans le manifeste de l’application.
 
-Les tâches en arrière-plan doivent être déclarées dans le manifeste de l’application. Autrement, votre application n’est pas en mesure de les inscrire (une exception est levée). De plus, les tâches en arrière-plan doivent être déclarées dans le manifeste de l’application pour réussir la certification.
+> [!Important]
+>  Cet article concerne uniquement les tâches en arrière-plan qui s’exécutent dans un processus distinct. Les tâches en arrière-plan à processus unique ne sont pas déclarées dans le manifeste.
+
+Les tâches en arrière-plan qui s’exécutent dans un processus distinct doivent être déclarées dans le manifeste de l’application. Autrement, votre application n’est pas en mesure de les inscrire (une exception est levée). De plus, les tâches en arrière-plan doivent être déclarées dans le manifeste de l’application pour réussir la certification.
 
 Cette rubrique suppose que vous avez créé une ou plusieurs classes de tâche en arrière-plan et que votre application inscrit chaque tâche en arrière-plan à exécuter en réponse à un déclencheur au minimum.
 
@@ -60,28 +63,28 @@ Déclarez votre première tâche en arrière-plan.
 Copiez ce code dans l’élément Extensions (vous ajouterez des attributs aux étapes suivantes).
 
 ```xml
-      <Extensions>
-        <Extension Category="windows.backgroundTasks" EntryPoint="">
-          <BackgroundTasks>
-            <Task Type="" />
-          </BackgroundTasks>
-        </Extension>
-      </Extensions>
+<Extensions>
+    <Extension Category="windows.backgroundTasks" EntryPoint="">
+      <BackgroundTasks>
+        <Task Type="" />
+      </BackgroundTasks>
+    </Extension>
+</Extensions>
 ```
 
 1.  Modifiez l’attribut EntryPoint afin que votre code utilise la même chaîne comme point d’entrée lors de l’inscription de votre tâche en arrière-plan (**namespace.classname**).
 
     Dans cet exemple, le point d’entrée est ExampleBackgroundTaskNameSpace.ExampleBackgroundTaskClassName:
 
-    ```xml
-          <Extensions>
-            <Extension Category="windows.backgroundTasks" EntryPoint="Tasks.ExampleBackgroundTaskClassName">
-              <BackgroundTasks>
-                <Task Type="" />
-              </BackgroundTasks>
-            </Extension>
-          </Extensions>
-    ```
+```xml
+<Extensions>
+    <Extension Category="windows.backgroundTasks" EntryPoint="Tasks.ExampleBackgroundTaskClassName">
+       <BackgroundTasks>
+         <Task Type="" />
+       </BackgroundTasks>
+    </Extension>
+</Extensions>
+```
 
 2.  Modifiez la liste de l’attribut Task Type pour indiquer le type d’inscription de tâche utilisé avec cette tâche en arrière-plan. Si la tâche en arrière-plan est inscrite avec plusieurs types de déclencheur, ajoutez des éléments Task et des attributs Type supplémentaires pour chacun d’eux.
 
@@ -89,19 +92,17 @@ Copiez ce code dans l’élément Extensions (vous ajouterez des attributs aux �
 
     Cet extrait de code montre que des déclencheurs d’événements système et des notifications Push sont utilisés:
 
-    ```xml
-                <Extension Category="windows.backgroundTasks" EntryPoint="Tasks.BackgroundTaskClass">
-                  <BackgroundTasks>
-                    <Task Type="systemEvent" />
-                    <Task Type="pushNotification" />
-                  </BackgroundTasks>
-                </Extension>
-    ```
+```xml
+<Extension Category="windows.backgroundTasks" EntryPoint="Tasks.BackgroundTaskClass">
+    <BackgroundTasks>
+        <Task Type="systemEvent" />
+        <Task Type="pushNotification" />
+    </BackgroundTasks>
+</Extension>
+```
 
-    > **Remarque** Normalement, une application s’exécute dans un processus spécial appelé BackgroundTaskHost.exe. Il est possible d’ajouter un élément Executable à l’élément Extension et de permettre ainsi à la tâche en arrière-plan de s’exécuter dans le contexte de l’application. Utilisez uniquement l’élément Executable avec les tâches en arrière-plan qui le requièrent, telles que [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).    
 
 ## Ajouter des extensions de tâche en arrière-plan supplémentaires
-
 
 Répétez l’étape2 pour chaque classe de tâche en arrière-plan supplémentaire inscrite par votre application.
 
@@ -146,7 +147,64 @@ L’exemple suivant représente l’élément Application complet de l’[exempl
 </Applications>
 ```
 
+## Déclarer votre tâche en arrière-plan pour qu’elle s’exécute dans un autre processus
+
+Cette nouvelle fonctionnalité de Windows10 version1507 vous permet d’exécuter votre tâche en arrière-plan dans un autre processus que BackgroundTaskHost.exe (le processus dans lequel les tâches en arrière-plan s’exécutent par défaut).  Vous avez deux options: exécuter la tâche dans le même processus que votre application au premier plan, ou exécuter la tâche dans une instance de BackgroundTaskHost.exe distincte des autres instances de tâches en arrière-plan de la même application.  
+
+### Exécuter la tâche dans l’application au premier plan
+
+Voici un exemple de code XML déclarant une tâche en arrière-plan qui s’exécute dans le même processus que l’application au premier plan. Notez l’attribut `Executable`:
+
+```xml
+<Extensions>
+    <Extension Category="windows.backgroundTasks" EntryPoint="ExecModelTestBackgroundTasks.ApplicationTriggerTask" Executable="$targetnametoken$.exe">
+        <BackgroundTasks>
+            <Task Type="systemEvent" />
+        </BackgroundTasks>
+    </Extension>
+</Extensions>
+```
+
+> [!Note]
+> Utilisez uniquement l’élément Executable avec les tâches en arrière-plan qui le requièrent, telles que [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).  
+
+### Exécuter la tâche dans un processus hôte en arrière-plan différent
+
+Voici un exemple de code XML déclarant une tâche en arrière-plan qui s’exécute dans un processus BackgroundTaskHost.exe distinct des autres instances de tâches en arrière-plan de la même application. Notez l’attribut `ResourceGroup`, qui définit quelles tâches en arrière-plan vont s’exécuter en même temps.
+
+```xml
+<Extensions>
+    <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundTasks.SessionConnectedTriggerTask" ResourceGroup="foo">
+      <BackgroundTasks>
+        <Task Type="systemEvent" />
+      </BackgroundTasks>
+    </Extension>
+    <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundTasks.TimeZoneTriggerTask" ResourceGroup="foo">
+      <BackgroundTasks>
+        <Task Type="systemEvent" />
+      </BackgroundTasks>
+    </Extension>
+    <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundTasks.TimerTriggerTask" ResourceGroup="bar">
+      <BackgroundTasks>
+        <Task Type="timer" />
+      </BackgroundTasks>
+    </Extension>
+    <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundTasks.ApplicationTriggerTask" ResourceGroup="bar">
+      <BackgroundTasks>
+        <Task Type="general" />
+      </BackgroundTasks>
+    </Extension>
+    <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundTasks.MaintenanceTriggerTask" ResourceGroup="foobar">
+      <BackgroundTasks>
+        <Task Type="general" />
+      </BackgroundTasks>
+    </Extension>
+</Extensions>
+```
+
+
 ## Rubriques connexes
+
 
 * [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
 * [Inscrire une tâche en arrière-plan](register-a-background-task.md)
@@ -154,6 +212,6 @@ L’exemple suivant représente l’élément Application complet de l’[exempl
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

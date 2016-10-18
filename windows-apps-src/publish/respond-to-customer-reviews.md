@@ -4,8 +4,8 @@ Description: "Vous pouvez répondre directement aux avis concernant votre applic
 title: "Répondre aux avis des clients"
 ms.assetid: 96AA2108-E793-4DD0-8CDA-0D115423C68D
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 06228d7816f371f669ad4e6db7310e903f5f0683
+ms.sourcegitcommit: 934715cc2681f613982d081335155e29fa7af775
+ms.openlocfilehash: 24d327a92a6a58ecf265f9cdadd5a49d24c0857d
 
 ---
 
@@ -43,7 +43,7 @@ Lorsque vous répondez à l’avis d’un clients, respectez les consignes suiva
 > **Remarque** Les clients peuvent signaler à Microsoft toute réponse inappropriée d’un développeur à l’un de leurs avis. Ils peuvent également choisir de ne pas recevoir de réponses à leurs avis.
 Microsoft se réserve le droit de révoquer la possibilité pour un développeur d'envoyer des réponses, notamment si les réponses de ce développeur entraînent un nombre anormalement élevé de signalements de réponses inappropriées ou un nombre inhabituel de clients choisissant de ne pas recevoir de réponses aux avis.
 
-Votre relation avec vos clients est de votre responsabilité. Microsoft ne prend pas parti en cas de litiges entre les développeurs et les clients. Toutefois, si vous pensez que le contenu de l'avis d'un client sur votre application est inapproprié, veuillez soumettre un [ticket de support](http://go.microsoft.com/fwlink/p/?LinkID=401178).
+Votre relation avec vos clients est de votre responsabilité. Microsoft ne prend pas parti en cas de litiges entre les développeurs et les clients. Toutefois, si une évaluation de votre application contient des propos injurieux, profanes ou abusif, nous vous invitons à créer un [ticket de support](http://go.microsoft.com/fwlink/p/?LinkID=401178).
 
 ## Utiliser les commentaires des clients pour améliorer votre application
 
@@ -52,6 +52,6 @@ Votre relation avec vos clients est de votre responsabilité. Microsoft ne prend
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

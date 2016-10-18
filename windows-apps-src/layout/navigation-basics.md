@@ -6,8 +6,8 @@ ms.assetid: B65D33BA-AAFE-434D-B6D5-1A0C49F59664
 label: Navigation design basics
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 6926d70c7140b1545a8b5492981d6d0b61af3784
+ms.sourcegitcommit: a55e7d0945902ce44ebad481475e8324c9859054
+ms.openlocfilehash: 2a4005aa12a123c0f9e98486fa1c69839a14276c
 
 ---
 
@@ -97,13 +97,13 @@ Quand devez-vous organiser les pages en hiérarchies et quand devez-vous les org
 ## <span id="Use_the_right_navigation_elements"></span><span id="use_the_right_navigation_elements"></span><span id="USE_THE_RIGHT_NAVIGATION_ELEMENTS"></span>Utiliser les éléments de navigation appropriés
 
 
-Les éléments de navigation peuvent fournir deuxservices: ils aident l’utilisateur à accéder au contenu souhaité, et certains éléments lui permettent également de savoir où il se trouve dans l’application. Toutefois, ils occupent aussi l’espace que l’application pourrait utiliser pour les éléments de contenu ou de commande. Il est donc important d’utiliser les éléments de navigation qui sont adaptés à la structure de votre application.
+Les éléments de navigation peuvent fournir deuxservices: ils aident l’utilisateur à accéder au contenu souhaité, et certains éléments lui permettent également de savoir où il se trouve dans l’application. Cependant, ils occupent aussi l’espace que l’application pourrait utiliser pour les éléments de contenu ou de commande. Il est donc important d’utiliser les éléments de navigation qui sont adaptés à la structure de votre application.
 
-### <span id="Peer-to-peer_navigation_elements"></span><span id="peer-to-peer_navigation_elements"></span><span id="PEER-TO-PEER_NAVIGATION_ELEMENTS"></span>Éléments de navigation pair à pair
+### <span id="Peer_navigation_elements"></span><span id="peer_navigation_elements"></span><span id="PEER_NAVIGATION_ELEMENTS"></span>Éléments de navigation parmi les homologues
 
-Les éléments de navigation pair à pair permettent de naviguer entre les pages d’un même niveau d’une même sous-arborescence.
+Les éléments de navigation parmi les homologues permettent de naviguer entre les pages d’un même niveau d’une même sous-arborescence.
 
-![Navigation pair à pair](images/nav/nav-lateralmovement.png)
+![navigation parmi les homologues](images/nav/nav-lateralmovement.png)
 
 Pour ce type de navigation, nous vous recommandons d’utiliser des onglets ou un volet de navigation.
 
@@ -123,7 +123,7 @@ Pour ce type de navigation, nous vous recommandons d’utiliser des onglets ou u
 <td align="left"><p>[Onglets et pivot](../controls-and-patterns/tabs-pivot.md)</p>
 <p><img src="images/nav/nav-tabs-sm-300.png" alt="Tab-based navigation" /></p></td>
 <td align="left">Affiche une liste permanente de liens vers les pages du même niveau.
-<p>Utilisez les onglets/pivots lorsque...</p>
+<p>Utilisez les onglets/pivots lorsque.</p>
 <ul>
 <li><p>Il y a 2 à 5 pages.</p>
 <p>(Utilisez les onglets/pivots lorsqu’il y a plus de 5 pages, mais qu’il peut être difficile d’ajuster l’ensemble des onglets/pivots à l’écran.)</p></li>
@@ -136,7 +136,7 @@ Pour ce type de navigation, nous vous recommandons d’utiliser des onglets ou u
 <td align="left"><p>[Volet de navigation](../controls-and-patterns/nav-pane.md)</p>
 <p><img src="images/nav/nav-navpane-4page-thumb.png" alt="A navigation pane" /></p></td>
 <td align="left">Affiche une liste de liens vers les pages de niveau supérieur.
-<p>Utilisez un volet de navigation lorsque...</p>
+<p>Utilisez un volet de navigation lorsque.</p>
 <ul>
 <li>Vous ne pensez pas que les utilisateurs passeront fréquemment d’une page à l’autre.</li>
 <li>Vous souhaitez économiser de l’espace, même si cela ralentit les opérations de navigation.</li>
@@ -151,11 +151,11 @@ Pour ce type de navigation, nous vous recommandons d’utiliser des onglets ou u
 
  
 
-Si votre structure de navigation comporte plusieurs niveaux, nous vous recommandons de lier les éléments de navigation pair à pair uniquement aux homologues au sein de leur sous-arborescence actuelle. Considérez l’illustration suivante, qui montre une structure de navigation à trois niveaux:
+Si votre structure de navigation comporte plusieurs niveaux, nous vous recommandons de lier les éléments de navigation parmi les homologues uniquement aux homologues au sein de leur sous-arborescence actuelle. Prenez en considération l’illustration suivante, qui montre une structure de navigation à trois niveaux:
 
-![Application avec deux sous-arborescences](images/nav/nav-subtrees.png)
--   Pour le niveau1, l’élément de navigation pair à pair doit permettre d’accéder aux pages A, B, C et D.
--   Au niveau 2, les éléments de navigation pair à pair des pages A2 doivent uniquement être liés aux autres pages A2. Ils ne doivent pas renvoyer aux pages de niveau2 de la sous-arborescenceC.
+![application avec deux sous-arborescences](images/nav/nav-subtrees.png)
+-   Pour le niveau1, l’élément de navigation parmi les homologues doit donner accès aux pages A, B, C et D.
+-   Au niveau2, les éléments de navigation parmi les homologues des pages A2 doivent uniquement être liés aux autres pages A2. Ils ne doivent pas renvoyer aux pages de niveau2 de la sous-arborescenceC.
 
 ![Application avec deuxsous-arborescences](images/nav/nav-subtrees2.png)
 
@@ -181,7 +181,7 @@ Les éléments de navigation hiérarchique permettent de naviguer entre une page
 <td align="left"><p>[Hub](../controls-and-patterns/hub.md)</p>
 <p><img src="images/higsecone-hub-thumb.png" alt="Hub" /></p></td>
 <td align="left">Un hub est un type spécial de contrôle de navigation qui fournit des aperçus/synthèses de ses pages enfants. Contrairement aux onglets ou au volet de navigation, il permet de naviguer vers ces pages enfants via des liens et des en-têtes de section, incorporés dans la page proprement dite.
-<p>Utilisez un hub lorsque...</p>
+<p>Utilisez un hub lorsque.</p>
 <ul>
 <li>Vous pensez que l’utilisateur souhaitera afficher une partie du contenu des pages enfants sans devoir naviguer vers chacune d’elles.</li>
 </ul>
@@ -192,7 +192,7 @@ Les éléments de navigation hiérarchique permettent de naviguer entre une page
 <td align="left"><p>[Maître/Détails](../controls-and-patterns/master-details.md)</p>
 <p><img src="images/higsecone-masterdetail-thumb.png" alt="Master/details" /></p></td>
 <td align="left">Affiche la liste (affichage Maître) des résumés des éléments. La sélection d’un élément affiche sa page d’éléments correspondante dans la section Détails.
-<p>Utilisez l’élément maître/détails lorsque...</p>
+<p>Utilisez l’élément maître/détails lorsque.</p>
 <ul>
 <li>Vous pensez que les utilisateurs passeront fréquemment d’un élément enfant à un autre.</li>
 <li>Vous voulez permettre à l’utilisateur d’effectuer des opérations générales, comme la suppression ou le tri, sur des éléments individuels ou des groupes d’éléments. Vous voulez également lui permettre d’afficher ou de mettre à jour les détails de chaque élément.</li>
@@ -265,10 +265,6 @@ Vous pouvez combiner des éléments de navigation pour créer une expérience de
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

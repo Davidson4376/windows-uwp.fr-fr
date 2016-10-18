@@ -5,7 +5,7 @@ title: "Portage d’une application Windows Runtime 8.x vers UWP pour le modèle
 ms.assetid: bb13fb8f-bdec-46f5-8640-57fb0dd2d85b
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: e5e560ca4f40496edf9d11c3eef546fdc4c3b079
+ms.openlocfilehash: 4f7a73eb48d898ed99a5145eccc04da259fe4871
 
 ---
 
@@ -78,6 +78,6 @@ Lorsqu’une application déclarant la fonctionnalité de localisation dans son 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

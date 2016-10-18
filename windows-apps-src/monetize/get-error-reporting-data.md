@@ -4,28 +4,25 @@ ms.assetid: 252C44DF-A2B8-4F4F-9D47-33E423F48584
 description: "Utilisez cette méthode dans l’API d’analyse du WindowsStore pour récupérer les données agrégées de rapport d’erreurs, pour une plage de dates données et en fonction d’autres filtres facultatifs."
 title: "Obtenir les données de rapport d’erreurs"
 translationtype: Human Translation
-ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
-ms.openlocfilehash: 682f727a21d74f5cea8fddc4886c873d537e1cfb
+ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
+ms.openlocfilehash: 64bd3491bc8ff37f5eb7ca852ad6dc738f6e2711
 
 ---
 
 # Obtenir les données de rapport d’erreurs
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+
 
 Utilisez cette méthode dans l’API d’analyse du WindowsStore pour récupérer les données agrégées de rapport d’erreurs, pour une plage de dates données et en fonction d’autres filtres facultatifs. Cette méthode renvoie les données au format JSON.
 
-## Prérequis
+## Conditions préalables
 
 
-Pour utiliser cette méthode, procédez comme suit:
+Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
 
--   Associez l’application Azure AD que vous utiliserez pour appeler cette méthode à votre compte du Centre de développement.
-
--   Obtenez un jeton d’accès Azure AD pour votre application.
-
-Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide des services du WindowsStore](access-analytics-data-using-windows-store-services.md).
+* Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](access-analytics-data-using-windows-store-services.md#prerequisites) relatives à l’API d’analyse du Windows Store.
+* [Obtenez un jeton d’accès Azure AD](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 
 ## Requête
 
@@ -42,7 +39,7 @@ Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide 
 
 | En-tête        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer**&lt;*token*&gt;. |
+| Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;. |
 
 <span/> 
 
@@ -277,7 +274,7 @@ Les éléments du tableau *Value* comportent les valeurs suivantes:
 | Valeur           | Type    | Description                                                                                                                                                                                                                              |
 |-----------------|---------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | date            | chaîne  | Première date dans la plage de dates des données d’acquisition. Si la requête était relative à un jour unique, cette valeur correspond à la date associée. Si la requête était relative à une semaine, un mois ou toute autre plage de dates, cette valeur correspond à la première date de la plage de dates. |
-| applicationId   | chaîne  | L’ID WindowsStore de l’application pour laquelle vous souhaitez récupérer les données d’acquisition de produits in-app.                                                                                                                                                           |
+| applicationId   | chaîne  | ID WindowsStore de l’application pour laquelle vous voulez récupérer des données d’acquisition d’extension.                                                                                                                                                           |
 | applicationName | chaîne  | Nom d’affichage de l’application.                                                                                                                                                                                                             |
 | failureName     | chaîne  | Le nom de l’erreur.                                                                                                                                                                                                                 |
 | failureHash     | chaîne  | L’identificateur unique de l’erreur.                                                                                                                                                                                                   |
@@ -327,12 +324,12 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 
 * [Accéder aux données d’analyse à l’aide des services du Windows Store](access-analytics-data-using-windows-store-services.md)
 * [Obtenir des acquisitions d’applications](get-app-acquisitions.md)
-* [Obtenir les acquisitions de produits in-app](get-in-app-acquisitions.md)
+* [Obtenir des acquisitions d’extensions](get-in-app-acquisitions.md)
 * [Obtenir les classifications des applications](get-app-ratings.md)
 * [Obtenir les avis sur les applications](get-app-reviews.md)
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

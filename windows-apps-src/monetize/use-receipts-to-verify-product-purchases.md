@@ -4,25 +4,26 @@ ms.assetid: E322DFFE-8EEC-499D-87BC-EDA5CFC27551
 description: "Chaque transaction du Windows Store qui se traduit par un achat de produit peut éventuellement renvoyer un reçu de transaction."
 title: "Utiliser des reçus pour vérifier les achats de produits"
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: b1322b74bf1038f05cd1cba275e432e279ed362d
+ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
+ms.openlocfilehash: 01b75d25c385d8dd856af79581fb4a346064c400
 
 ---
 
 # Utiliser des reçus pour vérifier les achats de produits
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
+
+>**Remarque**&nbsp;&nbsp;Les exemples de cet article utilisent les membres de l’espace de noms [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx). Si votre application cible Windows10, version1607 ou ultérieure, nous vous recommandons d’utiliser des membres de l’espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) pour gérer les achats in-app plutôt que l’espace de noms Windows.ApplicationModel.Store. Pour plus d’informations, voir [Versions d’évaluation et achats in-app](in-app-purchases-and-trials.md).
 
 **API importantes**
 
 -   [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765)
 -   [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766)
 
-Chaque transaction du WindowsStore qui se traduit par un achat de produit peut éventuellement renvoyer un reçu de transaction. Ce reçu fournit des informations sur le produit listé et le coût monétaire pour le client.
+Chaque transaction du Windows Store qui se traduit par un achat de produit peut éventuellement retourner un reçu de transaction. Ce reçu fournit des informations sur le produit et le coût monétaire listés pour le client.
 
-L’accès à ces informations permet les scénarios dans lesquels votre application doit vérifier qu’un utilisateur a acheté votre application ou qu’il a effectué des achats de produits dans l’application dans le Windows Store. Par exemple, imaginez un jeu qui offre du contenu téléchargé. Si l’utilisateur qui a acheté le contenu du jeu veut jouer à ce jeu sur un autre appareil, vous devez vérifier qu’il a bien acheté le contenu. Voici comment procéder :
+L’accès à ces informations permet les scénarios dans lesquels votre application doit vérifier qu’un utilisateur a acheté votre application ou qu’il a effectué des achats in-app de produits à partir du Windows Store. Par exemple, imaginez un jeu qui offre du contenu téléchargé. Si l’utilisateur qui a acheté le contenu du jeu veut jouer à ce jeu sur un autre appareil, vous devez vérifier qu’il a bien acheté le contenu. Voici comment procéder.
 
 ## Demande d’un reçu
 
@@ -156,7 +157,7 @@ namespace ReceiptVerificationSample
             {
                 const int MaxCertificateSize = 10000;
 
-                // We are attempting to retrieve the following url. The getAppReceiptAsync website at 
+                // We are attempting to retrieve the following url. The getAppReceiptAsync website at
                 // http://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.getappreceiptasync.aspx
                 // lists the following format for the certificate url.
                 String certificateUrl = String.Format("https://go.microsoft.com/fwlink/?LinkId=246509&cid={0}", certificateId);
@@ -241,9 +242,6 @@ namespace ReceiptVerificationSample
 
 
 
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

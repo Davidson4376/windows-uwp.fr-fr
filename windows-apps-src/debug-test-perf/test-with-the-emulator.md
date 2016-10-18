@@ -5,7 +5,7 @@ title: "Tester à l’aide de l’émulateur Microsoft pour Windows10 Mobile"
 description: "Simulez une interaction réaliste avec un appareil et testez les fonctionnalités de votre application à l’aide des outils fournis avec l’émulateur Microsoft pour Windows 10 Mobile."
 translationtype: Human Translation
 ms.sourcegitcommit: 9a33710315486c23a204a528d3d87421c6990b85
-ms.openlocfilehash: c53bda2329cd984e3a03d4a166e7353097e62cef
+ms.openlocfilehash: 6889c80d9879295fec31685aa3fd9bea9e6aea3e
 
 ---
 # Tester à l’aide de l’émulateur Microsoft pour Windows10 Mobile
@@ -659,6 +659,6 @@ Pour trouver des réponses à vos questions et résoudre vos problèmes lorsque 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

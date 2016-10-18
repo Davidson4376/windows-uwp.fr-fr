@@ -1,15 +1,15 @@
 ---
 author: mtoepke
-title: "Procédure pas à pas&#58; Porter une application Direct3D9 simple vers DirectX11 et la plateforme Windows universelle (UWP)"
+title: "Procédure pas à pas: Porter une application Direct3D9 simple vers DirectX11 et la plateforme Windows universelle (UWP)"
 description: "Cet exercice de portage indique comment faire passer une infrastructure de rendu simple de Direct3D9 à Direct3D11 et à la plateforme Windows universelle (UWP)."
 ms.assetid: d4467e1f-929b-a4b8-b233-e142a8714c96
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 27c6f82e97e9eb24dedcc5d83a18e6aba6961194
+ms.openlocfilehash: 53e0b3f5a69f133e74430b1a2e32a13180569f06
 
 ---
 
-# Procédure pas à pas&#58; Porter une application Direct3D9 simple vers DirectX11 et la plateforme Windows universelle (UWP)
+# Procédure pas à pas: Porter une application Direct3D9 simple vers DirectX11 et la plateforme Windows universelle (UWP)
 
 
 \[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
@@ -73,12 +73,12 @@ Pour vous familiariser avec les concepts de programmation pour DirectX11 et UWP 
 
 
 **Direct3D** 
-           [Écriture de nuanceurs HLSL dans Direct3D 9](https://msdn.microsoft.com/library/windows/desktop/bb944006)
+ [Écriture de nuanceurs HLSL dans Direct3D9](https://msdn.microsoft.com/library/windows/desktop/bb944006)
 
-[Créer un projet DirectX 11 pour UWP](user-interface.md)
+[Créer un projet DirectX11 pour UWP](user-interface.md)
 
-**Windows Store** 
-           [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)
+**Windows Store**
+[**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)
 
 [**Handle sur l’opérateur Object (^)**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx
 
@@ -92,6 +92,6 @@ Pour vous familiariser avec les concepts de programmation pour DirectX11 et UWP 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

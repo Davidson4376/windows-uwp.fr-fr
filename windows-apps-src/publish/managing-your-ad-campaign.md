@@ -5,14 +5,14 @@ title: "Gestion de votre campagne de publicité"
 ms.assetid: 42A9457E-15BD-4A61-B828-1C51D0FC9DA0
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8e6305f3e6904833245013ef7eb63809c97ec423
+ms.openlocfilehash: 71fb1e13c3db45043b312d24ea739ae68751dfb0
 
 ---
 
 # Gestion de votre campagne de publicité
 
 
-Pour gérer les campagnes de publicité de votre application, cliquez sur **Monétisation**&gt;**Promouvoir votre application** sur la page de votre application dans le tableau de bord du Centre de développement Windows. La page **Promouvoir votre application** répertorie l’ensemble des campagnes de publicité associées à votre application et affiche les impressions, les clics et installations associés à chacune d’entre elles. Pour en savoir plus sur les impressions, les clics et les installations, consultez les définitions de ces termes dans l’article [Rapport de publicité sur l’installation d’applications](app-install-ads-reports.md).
+Pour gérer les campagnes de publicité de votre application, cliquez sur **Monétisation** &gt; **Promouvoir votre application** sur la page de votre application dans le tableau de bord du Centre de développement Windows. La page **Promouvoir votre application** répertorie l’ensemble des campagnes de publicité associées à votre application et affiche les impressions, les clics et installations associés à chacune d’entre elles. Pour en savoir plus sur les impressions, les clics et les installations, consultez les définitions de ces termes dans l’article [Rapport de publicité sur l’installation d’applications](app-install-ads-reports.md).
 
 Pour filtrer la liste des campagnes de publicité, cliquez sur la liste déroulante **Filtres de section** et faites votre choix parmi les filtres suivants :
 
@@ -27,7 +27,7 @@ Pour filtrer la liste des campagnes de publicité, cliquez sur la liste déroula
 ## Rapport
 
 
-Pour contrôler l'efficacité de vos campagnes de publicité, cliquez sur **Analyse**&gt;**Publicité d'installation d'applications** dans le volet de navigation du tableau de bord. Pour en savoir plus sur ce rapport, consultez l’article [Rapport de publicité sur l’installation d’applications](app-install-ads-reports.md).
+Pour contrôler l’efficacité de vos campagnes de publicité, cliquez sur **Analyse** &gt; **Publicité d’installation d’applications** dans le volet de navigation du tableau de bord. Pour en savoir plus sur ce rapport, consultez l’article [Rapport de publicité sur l’installation d’applications](app-install-ads-reports.md).
 
 ## Modifier une campagne de publicité
 
@@ -51,6 +51,6 @@ Pour apporter des modifications à une campagne de publicité, cliquez sur son n
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -3,8 +3,8 @@ title: "API CPUSets pour le développement de jeux"
 description: "Cet article présente la nouvelle APICPUSets disponible sur la plateformeUWP et aborde des informations clés sur le développement de jeux et d’applications."
 author: hammondsp
 translationtype: Human Translation
-ms.sourcegitcommit: 3cefaf4e527d2a0da412dab474a348b55ad409c9
-ms.openlocfilehash: f125ae7e268a8d35b477a1557c498762869f859b
+ms.sourcegitcommit: 9f15d551715d9ccf23e4eb397637f4fafacec350
+ms.openlocfilehash: 6065435dc3add0d9bde15dc6bdd355935b8f53cd
 
 ---
 
@@ -42,7 +42,7 @@ Chaque instance **SYSTEM_CPU_SET_INFORMATION** renvoyée contient des informatio
 
 ### SYSTEM_CPU_SET_INFORMATION
 
-Les informations contenues dans chaque instance de cette structure de données renvoyée par la fonction **GetSystemCpuSetInformation** contient des informations sur une unité de traitement unique sur laquelle l’exécution de threads peut être planifiée. Étant donné la portée possible des appareils cibles, une grande partie des informations de la structure de données **SYSTEM_CPU_SET_INFORMATION** peut ne pas être applicable pour le développement de jeux. Le tableau1 fournit une explication sur les membres de données qui sont utiles pour le développement de jeux.
+Les informations contenues dans chaque instance de cette structure de données renvoyée par la fonction **GetSystemCpuSetInformation** contiennentt des informations sur une unité de traitement unique sur laquelle l’exécution de threads peut être planifiée. Étant donné la portée possible des appareils cibles, une grande partie des informations de la structure de données **SYSTEM_CPU_SET_INFORMATION** peut ne pas être applicable pour le développement de jeux. Le tableau1 fournit une explication sur les membres de données qui sont utiles pour le développement de jeux.
 
  **Tableau1. Membres de données utiles pour le développement de jeux.**
 
@@ -129,13 +129,13 @@ bool hyperthreaded = processors.size() != cores.size();
 
 Si le système s’appuie sur l’hyperthreading, il est important que l’ensemble des jeux de processeurs par défaut n’inclue pas de cœurs logiques sur le même cœur physique comme tous les threads en temps réel. Si le système n’utilise pas l’hyperthreading, vous devez simplement vous assurer que les jeux de processeurs par défaut n’incluent pas le même cœur que le jeu de processeurs exécutant votre thread audio.
 
-Vous trouverez un exemple d’organisation des threads en fonction des cœurs physiques dans l’exemple d’API CPUSets disponible au sein du référentiel GitHub lié à la rubrique [Ressources supplémentaires](#additional-resources).
+Vous trouverez un exemple d’organisation des threads en fonction des cœurs physiques dans l’exemple de jeux de processeurs disponible au sein du référentiel GitHub lié à la rubrique [Ressources supplémentaires](#additional-resources).
 
 ### Réduction des coûts liés à la gestion de la cohérence du cache avec le cache de dernier niveau
 
 Le principe de la cohérence du cache indique que la mémoire en cache est identique sur les différentes ressources matérielles agissant sur les mêmes données. Si les threads sont planifiés sur des cœurs différents, mais fonctionnent sur les mêmes données, ils s’exécutent peut-être sur des copies distinctes de ces données, situées dans des caches différents. Pour obtenir des résultats corrects, ces caches doivent rester cohérents les uns avec les autres. La gestion de la cohérence entre plusieurs caches est relativement coûteuse, mais elle est nécessaire pour tous les systèmes multicœur qui doivent s’exécuter. Par ailleurs, elle ne dépend pas du tout du code client; le système sous-jacent s’efforce de garder les caches à jour de manière indépendante, en accédant à des ressources mémoire partagées entre les cœurs.
 
-Si votre jeu possède plusieurs threads qui partagent une très grande quantité de données, vous pouvez réduire le coût de gestion de la cohérence du cache en vous assurant que leur exécution est planifiée sur des jeux de processeurs partageant un cache de dernier niveau. Le cache de dernier niveau est le cache le plus lent proposé à un cœur sur des systèmes qui n’utilisent aucun nœud NUMA. Il est très rare qu’un PC de jeu utilise des nœuds NUMA. Si cœurs ne partagent aucun cache de dernier niveau, la gestion de la cohérence nécessite l’accès à des ressources mémoire de niveau supérieur et, partant, nettement plus lentes. Le fait de verrouiller deux threads sur des jeux de processeurs distincts partageant un même cache et un cœur physique peut offrir des performances supérieures à la planification de ces threads sur des cœurs physiques distincts, s’ils ne nécessitent pas plus de 50% du temps disponible pour une image quelconque. 
+Si votre jeu possède plusieurs threads qui partagent une très grande quantité de données, vous pouvez réduire le coût de gestion de la cohérence du cache en vous assurant que leur exécution est planifiée sur des jeux de processeurs partageant un cache de dernier niveau. Le cache de dernier niveau est le cache le plus lent proposé à un cœur sur des systèmes qui n’utilisent aucun nœud NUMA. Il est très rare qu’un PC de jeu utilise des nœuds NUMA. Si les cœurs ne partagent aucun cache de dernier niveau, la gestion de la cohérence nécessite l’accès à des ressources mémoire de niveau supérieur et, partant, nettement plus lentes. Le fait de verrouiller deux threads sur des jeux de processeurs distincts partageant un même cache et un cœur physique peut offrir des performances supérieures à la planification de ces threads sur des cœurs physiques distincts, s’ils ne nécessitent pas plus de 50% du temps disponible pour une image quelconque. 
 
 Cet exemple de code indique comment déterminer si des threads qui communiquent fréquemment entre eux peuvent partager un cache de dernier niveau.
 
@@ -189,11 +189,12 @@ L’APICPUSets disponible pour le développementUWP fournit une quantité consid
 
 ## Ressources supplémentaires
 - [Jeux de processeurs (MSDN)](https://msdn.microsoft.com/library/windows/desktop/mt186420(v=vs.85).aspx)
-- [Exemple de d’APICPUSets fournis par ATG](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/CPUSets)
+- [Exemple de jeux de processeurs fournis par ATG](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/CPUSets)
+- [UWP sur XboxOne](index.md)
 
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

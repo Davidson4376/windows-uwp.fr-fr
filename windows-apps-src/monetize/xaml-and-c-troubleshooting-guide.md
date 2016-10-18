@@ -4,14 +4,14 @@ ms.assetid: 141900dd-f1d3-4432-ac8b-b98eaa0b0da2
 description: "Découvrez les solutions aux problèmes de développement courants liés aux bibliothèques de publicités Microsoft dans les applications XAML."
 title: "Guide de résolution des problèmes pour XAML et C#"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: ef9ad8f8056b17793d7ad8230e410e014edf2c95
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: 0688ca6e0c88628803ad4e9a55b9285bd39351b4
 
 ---
 
 # Guide de résolution des problèmes pour XAML et C#
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+
 
 Cette rubrique contient les solutions aux problèmes de développement courants liés aux bibliothèques de publicités Microsoft dans les applications XAML.
 
@@ -340,6 +340,6 @@ Cette rubrique contient les solutions aux problèmes de développement courants 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

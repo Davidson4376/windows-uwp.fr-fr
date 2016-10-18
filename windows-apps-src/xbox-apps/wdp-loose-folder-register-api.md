@@ -4,7 +4,7 @@ title: "Référence sur les API d’inscription dans dossier isolé Device Porta
 description: "Découvrez comment accéder par programme aux API d’inscription dans des dossiers isolés."
 translationtype: Human Translation
 ms.sourcegitcommit: ef0f1339b77a8d1f60a677b2ff19a63b68f0d6cd
-ms.openlocfilehash: 41e4cc67120b9e32fac34404ca918edcf58ba267
+ms.openlocfilehash: 42dc5e16065f1a2252f63743269970cf85fb0b95
 
 ---
 
@@ -62,6 +62,6 @@ La troisième méthode consiste à copier un dossier complet en une fois via [/a
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

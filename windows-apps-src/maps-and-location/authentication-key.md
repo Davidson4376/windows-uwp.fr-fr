@@ -5,7 +5,7 @@ description: "Votre application Windows universelle doit être authentifiée pou
 ms.assetid: 13B400D7-E13F-4F07-ACC3-9C34087F0F73
 translationtype: Human Translation
 ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
-ms.openlocfilehash: b7c981e071f70ab0a76d73333a94580b3c497b0e
+ms.openlocfilehash: 4cbc0142e7d76795bb147ce4cc98b3da48715b85
 
 ---
 
@@ -96,6 +96,6 @@ Pour utiliser les services dans l’espace de noms [**Windows.Services.Maps**](h
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

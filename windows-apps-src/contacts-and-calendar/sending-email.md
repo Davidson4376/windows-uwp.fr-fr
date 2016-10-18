@@ -1,16 +1,16 @@
 ---
 author: Xansky
 description: "Montre comment lancer la boîte de dialogue de rédaction d’un message électronique pour permettre à l’utilisateur d’envoyer un message électronique. Vous pouvez préremplir les champs de l’e-mail avec des données avant d’afficher la boîte de dialogue. Le message ne sera pas envoyé tant que l’utilisateur n’aura pas appuyé sur le bouton d’envoi."
-title: "Envoyer un courrier électronique"
+title: Envoyer un e-mail
 ms.assetid: 74511E90-9438-430E-B2DE-24E196A111E5
-keywords: contacts, email, send
+keywords: contacts, e-mail, envoi
 translationtype: Human Translation
 ms.sourcegitcommit: 252e144b2436f047f7b0849bb6e5aee87b2e3464
-ms.openlocfilehash: ff0d2cd86f8ba422db7a26565c52293a3e21a018
+ms.openlocfilehash: ff09393af072eb8aee8c3001e7323cc20201da70
 
 ---
 
-# Envoyer un courrier électronique
+# Envoyer un e-mail
 
 \[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
@@ -76,6 +76,6 @@ Cette rubrique vous a montré comment lancer la boîte de dialogue de rédaction
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

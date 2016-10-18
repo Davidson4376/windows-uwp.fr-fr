@@ -1,78 +1,78 @@
 ---
 author: mcleanbyron
 ms.assetid: F94AF8F6-0742-4A3F-938E-177472F96C00
-description: Use this method in the Windows Store submission API to commit a new or updated package flight submission to Windows Dev Center.
-title: Commit a package flight submission using the Windows Store submission API
+description: "Utilisez cette méthode ds l’API de soum. du Windows Store pr valider une soum. de version d’éval. de pack. nouvelle ou mise à jour vers le Ctre de dév. Windows."
+title: "Val. soum. de version d’éval. de pack. av l’API de soum. Windows Store"
 translationtype: Human Translation
 ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
 ms.openlocfilehash: a9ea8de7b92b254c7bb8d63a5a3ea41afdd2d966
 
 ---
 
-# Commit a package flight submission using the Windows Store submission API
+# Val. soum. de version d’éval. de pack. av l’API de soum. Windows Store
 
 
 
 
-Use this method in the Windows Store submission API to commit a new or updated package flight submission to Windows Dev Center. The commit action alerts Dev Center that the submission data has been uploaded (including any related packages). In response, Dev Center commits the changes to the submission data for ingestion and publishing. After the commit operation succeeds, the changes to the submission are shown in the Dev Center dashboard.
+Utilisez cette méthode ds l’API de soum. du Windows Store pr valider une soum. de version d’éval. de pack. nouvelle ou mise à jour vers le Ctre de dév. Windows. L’action de validation alerte le Centre de développement que les données de soumission ont été chargées sur le serveur (y compris les packages associées, le cas échéant). En réponse, le Centre de développement valide les modifications apportées aux données de soumission en vue de leur intégration et publication. Dès lors que l’opération de validation a abouti, les modifications apportées à la soumission s’affichent dans le tableau de bord du Centre de développement.
 
-For more information about how the commit operation fits into the process of creating a package flight submission by using the Windows Store submission API, see [Manage package flight submissions](manage-flight-submissions.md).
+Pour plus d’informations sur la façon dont cette opération de validation s’inscrit dans le processus de création d’une soumission de version d’évaluation de package à l’aide de l’API de soumission du Windows Store, consultez [Gérer les soumissions de versions d’évaluation de package](manage-flight-submissions.md).
 
-## Prerequisites
+## Conditions préalables
 
-To use this method, you need to first do the following:
+Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
 
-* If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Windows Store submission API.
-* [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
-* [Create a package flight submission](create-a-flight-submission.md) and then [update the submission](update-a-flight-submission.md) with any necessary changes to the submission data.
+* Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
+* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous disposez de 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
+* [Créez une soumission de version d’évaluation de package ](create-a-flight-submission.md), puis [mettez à jour cette soumission](update-a-flight-submission.md) avec les éventuelles modifications nécessaires apportées aux données de soumission.
 
->**Note**&nbsp;&nbsp;This method can only be used for Windows Dev Center accounts that have been given permission to use the Windows Store submission API. Not all accounts have this permission enabled.
+>**Remarque**&nbsp;&nbsp;Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
 
-## Request
+## Requête
 
-This method has the following syntax. See the following sections for usage examples and descriptions of the header and request body.
+Cette méthode présente la syntaxe suivante. Voir les sections suivantes pour obtenir des exemples d’utilisation et une description de l’en-tête et du corps de la requête.
 
-| Method | Request URI                                                      |
+| Méthode | URI de la requête                                                      |
 |--------|------------------------------------------------------------------|
 | POST    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit``` |
 
 <span/>
  
 
-### Request header
+### En-tête de requête
 
-| Header        | Type   | Description                                                                 |
+| En-tête        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
+| Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;. |
 
 <span/>
 
-### Request parameters
+### Paramètres de la requête
 
-| Name        | Type   | Description                                                                 |
+| Nom        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | string | Required. The Store ID of the app that contains the package flight submission you want to commit. The Store ID for the app is available on the Dev Center dashboard.  |
-| flightId | string | Required. The ID of the package flight that contains the submission to commit. This ID is available in the Dev Center dashboard, and it is included in the response data for requests to [create a package flight](create-a-flight.md) and [get package flights for an app](get-flights-for-an-app.md).  |
-| submissionId | string | Required. The ID of the submission to commit. This ID is available in the Dev Center dashboard, and it is included in the response data for requests to [create a package flight submission](create-a-flight-submission.md).  |
+| applicationId | chaîne | Obligatoire. L’ID Windows Store de l’application qui contient la soumission de version d’évaluation de package à valider. L’ID Windows Store est disponible dans le tableau de bord du Centre de développement.  |
+| flightId | chaîne | Obligatoire. ID de la version d’évaluation de package qui contient la soumission à valider. Cet ID est disponible dans le tableau de bord du Centre de développement et figure également dans les données de réponse des requêtes pour [créer une version d’évaluation de package](create-a-flight.md) ou [obtenir des versions d’évaluation de package pour une application](get-flights-for-an-app.md).  |
+| submissionId | chaîne | Obligatoire. ID de la soumission à valider. Cet ID est disponible dans le tableau de bord du Centre de développement et figure également dans les données de réponse des requêtes pour [créer une soumission de version d’évaluation de package](create-a-flight-submission.md).  |
 
 <span/>
 
-### Request body
+### Corps de la requête
 
-Do not provide a request body for this method.
+Ne fournissez pas de corps de requête pour cette méthode.
 
-### Request example
+### Exemple de requête
 
-The following example demonstrates how to commit a package flight submission.
+L’exemple suivant montre comment valider une soumission de version d’évaluation de package.
 
 ```
 POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/flights/43e448df-97c9-4a43-a0bc-2a445e736bcd/submissions/1152921504621243649/commit HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-## Response
+## Réponse
 
-The following example demonstrates the JSON response body for a successful call to this method. For more details about the values in the response body, see the following sections.
+L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à cette méthode. Pour plus d’informations sur les valeurs figurant dans le corps de réponse, voir les sections suivantes.
 
 ```json
 {
@@ -80,36 +80,36 @@ The following example demonstrates the JSON response body for a successful call 
 }
 ```
 
-### Response body
+### Corps de la réponse
 
-| Value      | Type   | Description                                                                                                                                                                                                                                                                         |
+| Valeur      | Type   | Description                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| status           | string  | The status of the submission. This can be one of the following values: <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>  |
+| status           | chaîne  | État de la soumission. Les valeurs possibles sont les suivantes: <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>  |
 
 <span/>
 
-## Error codes
+## Codes d’erreur
 
-If the request cannot be successfully completed, the response will contain one of the following HTTP error codes.
+Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’erreur HTTP suivants.
 
-| Error code |  Description   |
+| Code d’erreur |  Description   |
 |--------|------------------|
-| 400  | The request parameters are invalid. |
-| 404  | The specified submission could not be found. |
-| 409  | The specified submission was found but it could not be committed in its current state, or the app uses a Dev Center dashboard feature that is [currently not supported by the Windows Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |
+| 400  | Les paramètres de la requête ne sont pas valides. |
+| 404  | La soumission spécifiée est introuvable. |
+| 409  | La soumission spécifiée a été trouvée, mais elle n’a pas pu être validée en raison de son état actuel, ou l’application utilise une fonctionnalité du tableau de bord du Centre de développement qui n’est [actuellement pas prise en charge par l’API de soumission du Windows Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |
 
 <span/>
 
 
-## Related topics
+## Rubriques connexes
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
-* [Manage package flight submissions](manage-flight-submissions.md)
-* [Get a package flight submission](get-a-flight-submission.md)
-* [Create a package flight submission](create-a-flight-submission.md)
-* [Update a package flight submission](update-a-flight-submission.md)
-* [Delete a package flight submission](delete-a-flight-submission.md)
-* [Get the status of a package flight submission](get-status-for-a-flight-submission.md)
+* [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md)
+* [Gérer les soumissions de versions d’évaluation de package](manage-flight-submissions.md)
+* [Obtenir une soumission de version d’évaluation de package](get-a-flight-submission.md)
+* [Créer une soumission de version d’évaluation de package](create-a-flight-submission.md)
+* [Mettre à jour une soumission de version d’évaluation de package](update-a-flight-submission.md)
+* [Supprimer une soumission de version d’évaluation de package](delete-a-flight-submission.md)
+* [Obtenir l’état d’une soumission de version d’évaluation de package](get-status-for-a-flight-submission.md)
 
 
 

@@ -7,7 +7,7 @@ label: Speech recognition
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 66bab97e7108a1728e9659a04ea2f1ecf15f68b7
+ms.openlocfilehash: 59cebc2235b8ae4214156a4140b0b003c717375d
 
 ---
 
@@ -208,10 +208,10 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 
 
 **Développeurs**
-* [Interactions vocales](speech-interactions.md) 
-           **Concepteurs**
-* [Recommandations en matière de conception de fonctions vocales](https://msdn.microsoft.com/library/windows/apps/dn596121) 
-           **Exemples**
+* [Interactions vocales](speech-interactions.md)
+**Concepteurs**
+* [Recommandations en matière de conception de fonctions vocales](https://msdn.microsoft.com/library/windows/apps/dn596121)
+**Exemples**
 * [Exemple de reconnaissance vocale et de synthèse vocale](http://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
@@ -223,6 +223,6 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,41 +1,41 @@
 ---
 author: mcleanbyron
 ms.assetid: 8D4AE532-22EF-4743-9555-A828B24B8F16
-description: Use these methods in the Windows Store submission API to retrieve data for apps that are registered to your Windows Dev Center account.
-title: Get app data using the Windows Store submission API
+description: "Utilisez ces méthodes de l’API de soumission du Windows Store pour récupérer des données pour les applications inscrites dans votre compte du Centre de développement Windows."
+title: "Obtenir des données d’application à l’aide de l’API de soumission du Windows Store"
 translationtype: Human Translation
 ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
 ms.openlocfilehash: 99d609decc8c38952961deac5bb8ec6926d91c88
 
 ---
 
-# Get app data using the Windows Store submission API
+# Obtenir des données d’application à l’aide de l’API de soumission du Windows Store
 
-Use the following methods in the Windows Store submission API to get data for apps that are registered to your Windows Dev Center account. For an introduction to the Windows Store submission API, see [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md).
+Utilisez les méthodes suivantes dans l’API de soumission du Windows Store pour obtenir des données pour les applications inscrites dans votre compte du Centre de développement Windows. Pour obtenir une présentation de l’API de soumission du Windows Store, voir [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md).
 
->**Note**&nbsp;&nbsp;These methods can only be used for Windows Dev Center accounts that have been given permission to use the Windows Store submission API. Not all accounts have this permission enabled. These methods can only be used to get data for apps. To create or manage submissions for apps, see the methods in [Manage app submissions](manage-app-submissions.md).
+>**Remarque**&nbsp;&nbsp;Ces méthodes ne peuvent être utilisées que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation. Ces méthodes peuvent uniquement être utilisées pour obtenir des données pour les applications. Pour créer ou gérer des soumissions pour des applications, voir les méthodes dans [Gérer les soumissions d’applications](manage-app-submissions.md).
 
-| Method        | URI    | Description                                                                 |
+| Méthode        | URI    | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications``` | Retrieves data for all the apps that are registered to your Windows Dev Center account. For more information, see [Get all apps](get-all-apps.md). |
-| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}``` | Retrieves data about a specific app that is registered to your Windows Dev Center account. For more information, see [Get an app](get-an-app.md). |
-| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listinappproducts``` | Lists the add-ons (also known as in-app products or IAPs) for an app that is registered to your Windows Dev Center account. For more information, see [Get add-ons for an app](get-add-ons-for-an-app.md). |
-| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights``` | Lists the package flights for an app that is registered to your Windows Dev Center account. For more information, see [Get package flights for an app](get-flights-for-an-app.md). |
+| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications``` | Récupère les données de toutes les applications inscrites dans votre compte du Centre de développement Windows. Pour plus d’informations, voir [Obtenir toutes les applications](get-all-apps.md). |
+| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}``` | Récupère les données relatives à une application spécifique inscrite dans votre compte du Centre de développement Windows. Pour plus d’informations, voir [Obtenir une application](get-an-app.md). |
+| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listinappproducts``` | Répertorie les extensions (également connues sous le nom PIA ou produits in-app) pour une application inscrite dans votre compte du Centre de développement Windows. Pour plus d’informations, voir [Obtenir des extensions pour une application](get-add-ons-for-an-app.md). |
+| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights``` | Répertorie les versions d’évaluation du package pour une application inscrite dans votre compte du Centre de développement Windows. Pour plus d’informations, voir [Obtenir des versions d’évaluation du package pour une application](get-flights-for-an-app.md). |
 
 <span/>
 
-## Prerequisites
+## Conditions préalables
 
-If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Windows Store submission API before trying to use any of these methods.
+Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store avant d’essayer d’utiliser l’une de ces méthodes.
 
-## Resources
+## Ressources
 
-These methods use the following resources to format data.
+Ces méthodes utilisent les ressources suivantes pour formater les données.
 
 <span id="application_object" />
 ### Application
 
-This resource represents an app that is registered to your account. The following example demonstrates the format of this resource.
+Cette ressource représente une application inscrite dans votre compte. L’exemple suivant illustre le format de cette ressource.
 
 ```json
 {
@@ -56,24 +56,24 @@ This resource represents an app that is registered to your account. The followin
 }
 ```
 
-This resource has the following values.
+Cette ressource a les valeurs suivantes.
 
-| Value           | Type    | Description                                                                                                                                                                                                                          |
+| Valeur           | Type    | Description                                                                                                                                                                                                                          |
 |-----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| id            | string  | The Store ID of the app. For more information about the Store ID, see [View app identity details](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).   |
-| primaryName   | string  | The primary name of the app.                                                                                                                                                   |
-| packageFamilyName | string  | The package family name of the app.                                                                                                                                                                                                         |
-| packageIdentityName          | string  | The package identity name of the app.                                                                                                                                                              |
-| publisherName       | string  | The Windows publisher ID that is associated with the app. This corresponds to the **Package/Identity/Publisher** value that appears on the [App identity](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details) page for the app in the Windows Dev Center dashboard.                                                                                             |
-| firstPublishedDate      | string  | The date the app was first published, in ISO 8601 format.                                                                                         |
-| lastPublishedApplicationSubmission       | object | An object that provides information about the last published submission for the app. For more information, see the [Submission](#submission_object) section below.                                                                                                                                                          |
-| pendingApplicationSubmission        | object  |  An object that provides information about the current pending submission for the app. For more information, see the [Submission](#submission_object) section below.  |   |
+| id            | chaîne  | ID Windows Store de l’application. Pour plus d’informations sur l’ID Windows Store, voir [Visualiser les informations d’identité des applications](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).   |
+| primaryName   | chaîne  | Nom principal de l’application.                                                                                                                                                   |
+| packageFamilyName | chaîne  | Nom de la famille de packages de l’application.                                                                                                                                                                                                         |
+| packageIdentityName          | chaîne  | Nom de l’identité du package de l’application.                                                                                                                                                              |
+| publisherName       | chaîne  | ID de l’éditeur Windows associé à l’application. Celui-ci correspond à la valeur **Package/Identité/Éditeur** qui apparaît dans la page [Identité de l’application](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details) de l’application dans le tableau de bord du Centre de développement Windows.                                                                                             |
+| firstPublishedDate      | chaîne  | Date de la première publication de l’application, au format ISO8601.                                                                                         |
+| lastPublishedApplicationSubmission       | objet | Objet qui fournit des informations sur la dernière soumission publiée de l’application. Pour plus d’informations, voir la section [Soumission](#submission_object) ci-dessous.                                                                                                                                                          |
+| pendingApplicationSubmission        | objet  |  Objet qui fournit des informations sur la soumission actuellement en attente pour l’application. Pour plus d’informations, voir la section [Soumission](#submission_object) ci-dessous.  |   |
 
 
 <span id="add-on-object" />
-### Add-on
+### Extension
 
-This resource provides information about an add-on. The following example demonstrates the format of this resource.
+Cette ressource fournit des informations sur une extension. L’exemple suivant illustre le format de cette ressource.
 
 ```json
 {
@@ -81,17 +81,17 @@ This resource provides information about an add-on. The following example demons
 }
 ```
 
-This resource has the following values.
+Cette ressource a les valeurs suivantes.
 
-| Value           | Type    | Description                                                                                                                                                                                                                          |
+| Valeur           | Type    | Description                                                                                                                                                                                                                          |
 |-----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| inAppProductId            | string  | The Store ID of the add-on. This value is supplied by the Store. An example Store ID is 9NBLGGH4TNMP.   |
+| inAppProductId            | chaîne  | ID Windows Store de l’extension. Cette valeur est fournie par le Windows Store. Exemple d’ID Windows Store: 9NBLGGH4TNMP.   |
 
 
 <span id="flight-object" />
-### Flight
+### Version d’évaluation
 
-This resource provides information about a package flight for an app. The following example demonstrates the format of this resource.
+Cette ressource fournit des informations sur une version d’évaluation du package pour une application. L’exemple suivant illustre le format de cette ressource.
 
 ```json
 {
@@ -112,22 +112,22 @@ This resource provides information about a package flight for an app. The follow
 }
 ```
 
-This resource has the following values.
+Cette ressource a les valeurs suivantes.
 
-| Value           | Type    | Description                                                                                                                                                                                                                          |
+| Valeur           | Type    | Description                                                                                                                                                                                                                          |
 |-----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| flightId            | string  | The ID for the package flight. This value is supplied by Dev Center.  |
-| friendlyName           | string  | The name of the package flight, as specified by the developer.   |
-| lastPublishedFlightSubmission       | object | An object that provides information about the last published submission for the package flight. For more information, see the [Submission](#submission_object) section below.  |
-| pendingFlightSubmission        | object  |  An object that provides information about the current pending submission for the package flight. For more information, see the [Submission](#submission_object) section below.  |    
-| groupIds           | array  | An array of strings that contain the IDs of the flight groups that are associated with the package flight. For more information about flight groups, see [Package flights](https://msdn.microsoft.com/windows/uwp/publish/package-flights).   |
-| rankHigherThan           | string  | The friendly name of the package flight that is ranked immediately lower than the current package flight. For more information about ranking flight groups, see [Package flights](https://msdn.microsoft.com/windows/uwp/publish/package-flights).  |
+| flightId            | chaîne  | ID de la version d’évaluation du package. Cette valeur est fournie par le Centre de développement.  |
+| friendlyName           | chaîne  | Nom de la version d’évaluation du package, tel que spécifié par le développeur.   |
+| lastPublishedFlightSubmission       | objet | Objet qui fournit des informations sur la dernière soumission publiée de la version d’évaluation du package. Pour plus d’informations, voir la section [Soumission](#submission_object) ci-dessous.  |
+| pendingFlightSubmission        | objet  |  Objet qui fournit des informations sur la soumission actuellement en attente pour la version d’évaluation du package. Pour plus d’informations, voir la section [Soumission](#submission_object) ci-dessous.  |    
+| groupIds           | tableau  | Tableau de chaînes qui contiennent les ID des groupes de versions d’évaluation associés à la version d’évaluation du package. Pour plus d’informations sur les groupes de versions d’évaluation, voir [Versions d’évaluation du package](https://msdn.microsoft.com/windows/uwp/publish/package-flights).   |
+| rankHigherThan           | chaîne  | Nom convivial de la version d’évaluation du package classée juste en dessous de la version d’évaluation du package actuelle. Pour plus d’informations sur le classement des groupes de versions d’évaluation, voir [Versions d’évaluation du package](https://msdn.microsoft.com/windows/uwp/publish/package-flights).  |
 
 
 <span id="submission_object" />
-### Submission
+### Soumission
 
-This resource provides information about a submission. The following example demonstrates the format of this resource.
+Cette ressource fournit des informations sur une soumission. L’exemple suivant illustre le format de cette ressource.
 
 ```json
 {
@@ -138,23 +138,23 @@ This resource provides information about a submission. The following example dem
 }
 ```
 
-This resource has the following values.
+Cette ressource a les valeurs suivantes.
 
-| Value           | Type    | Description                                                                                                                                                                                                                          |
+| Valeur           | Type    | Description                                                                                                                                                                                                                          |
 |-----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| id            | string  | The ID of the submission.    |
-| resourceLocation   | string  | A relative path that you can append to the base ```https://manage.devcenter.microsoft.com/v1.0/my/``` request URI to retrieve the complete data for the submission.                                                                                                                                               |
+| id            | chaîne  | ID de la soumission.    |
+| resourceLocation   | chaîne  | Chemin relatif à ajouter à l’URI de requête ```https://manage.devcenter.microsoft.com/v1.0/my/``` de base pour récupérer les données complètes de la soumission.                                                                                                                                               |
  
 <span/>
 
-## Related topics
+## Rubriques connexes
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
-* [Manage app submissions using the Windows Store submission API](manage-app-submissions.md)
-* [Get all apps](get-all-apps.md)
-* [Get an app](get-an-app.md)
-* [Get add-ons for an app](get-add-ons-for-an-app.md)
-* [Get package flights for an app](get-flights-for-an-app.md)
+* [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md)
+* [Gérer les soumissions d’applications à l’aide de l’API de soumission du Windows Store](manage-app-submissions.md)
+* [Obtenir toutes les applications](get-all-apps.md)
+* [Obtenir une application](get-an-app.md)
+* [Obtenir des modules complémentaires pour une application](get-add-ons-for-an-app.md)
+* [Obtenir des versions d’évaluation du package pour une application](get-flights-for-an-app.md)
 
 
 

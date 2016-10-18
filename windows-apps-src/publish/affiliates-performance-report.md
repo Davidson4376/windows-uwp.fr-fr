@@ -5,7 +5,7 @@ title: "Rapport de performances des annonces des affiliés"
 ms.assetid: 38AD494C-0F85-4FED-8732-9064D1FC503D
 translationtype: Human Translation
 ms.sourcegitcommit: 577b238875b2d0edd47d9ad0e5e73ca79a6acf75
-ms.openlocfilehash: 8c200c4f4b743aeaae71d6a6179fc15db0e7ec5e
+ms.openlocfilehash: cfb05b2919f40aeeb83c2ba1a75206cf74d8c51d
 
 ---
 
@@ -22,7 +22,7 @@ Les sections suivantes fournissent plus d’informations sur ces rapports.
 
 ## Rapport de performances des annonces des affiliés au niveau de l’application.
 
-Ce rapport fournit, sous forme de graphiques et de tableaux, des données de performances pour les annonces des affiliés dans l’application actuellement sélectionnée dans le tableau de bord. Pour afficher ce rapport, sélectionnez l’une de vos applications dans le tableau de bord et cliquez sur **Analyse**&gt;**Performances des annonces des affiliés** dans le volet de navigation.
+Ce rapport fournit, sous forme de graphiques et de tableaux, des données de performances pour les annonces des affiliés dans l’application actuellement sélectionnée dans le tableau de bord. Pour afficher ce rapport, sélectionnez l’une de vos applications dans le tableau de bord et cliquez sur **Analyse** &gt; **Performances des annonces des affiliés** dans le volet de navigation.
 
 Les données sont obtenues à partir des sept métriques de performances suivantes que nous suivons pour les publicités intégrées dans votre application:
 
@@ -50,6 +50,6 @@ La section **Performance des annonces des affiliés** sur la page de **présenta
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

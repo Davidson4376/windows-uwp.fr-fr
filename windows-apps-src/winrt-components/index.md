@@ -5,7 +5,7 @@ description: "Les composants Windows Runtime sont des objets autonomes que vous 
 ms.assetid: 55887622-828b-4318-87f2-25592268f7c1
 translationtype: Human Translation
 ms.sourcegitcommit: 4e9f3de68c44cf545ceee2efd99d9db8cab08676
-ms.openlocfilehash: ddbfc30f765bdb1dacbf5c6b72255233fe134073
+ms.openlocfilehash: e0dfdce921ee910d0440f01b4f816598499925f5
 
 ---
 
@@ -37,6 +37,6 @@ Vous pouvez utiliser Visual Studio et C#, Visual Basic ou C++ pour créer des co
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

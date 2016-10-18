@@ -4,8 +4,8 @@ title: "Gérer une tâche en arrière-plan annulée"
 description: "Découvrez comment faire en sorte qu’une tâche en arrière-plan reconnaisse les demandes d’annulation et arrête le travail, tout en signalant l’annulation à l’application utilisant le stockage persistant."
 ms.assetid: B7E23072-F7B0-4567-985B-737DD2A8728E
 translationtype: Human Translation
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: ab575415e5e6a091fb45dab49af21d0552834406
+ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
+ms.openlocfilehash: e1a843448accb5ae2d689a6105c8254b0f868b5b
 
 ---
 
@@ -19,19 +19,19 @@ ms.openlocfilehash: ab575415e5e6a091fb45dab49af21d0552834406
 -   [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797)
 -   [**ApplicationData.Current**](https://msdn.microsoft.com/library/windows/apps/br241619)
 
-Découvrez comment faire en sorte qu’une tâche en arrière-plan reconnaisse les demandes d’annulation et arrête le travail, tout en signalant l’annulation à l’application utilisant le stockage persistant.
+Découvrez comment créer une tâche en arrière-plan qui reconnaît une demande d’annulation, arrête le travail et signale l’annulation à l’application en utilisant le dispositif de stockage persistant.
 
-> **Remarque** Pour toutes les familles d’appareils, à l’exception des ordinateurs de bureau, les tâches en arrière-plan peuvent être arrêtées en cas de mémoire insuffisante de l’appareil. Si aucune exception de mémoire insuffisante n’est exposée ou que l’application ne la gère pas, la tâche en arrière-plan est arrêtée sans avertissement ni déclenchement de l’événement OnCanceled. Cela permet de garantir l’expérience utilisateur de l’application au premier plan. Votre tâche en arrière-plan doit être conçue de manière à gérer ce scénario.
+Cette rubrique suppose que vous avez déjà créé une classe de tâche en arrière-plan, incluant la méthode Run utilisée comme point d’entrée de la tâche en arrière-plan. Pour savoir comment créer une tâche en arrière-plan, consultez la rubrique [Créer et inscrire une tâche en arrière-plan dans un processus distinct](create-and-register-a-background-task.md). Pour des informations plus détaillées sur les conditions et les déclencheurs, voir [Définition de tâches en arrière-plan pour les besoins de votre application](support-your-app-with-background-tasks.md).
 
-Cette rubrique suppose que vous avez déjà créé une classe de tâche en arrière-plan, incluant la méthode Run utilisée comme point d’entrée de la tâche en arrière-plan. Pour vous lancer rapidement dans la génération d’une tâche en arrière-plan, voir [Créer et inscrire une tâche en arrière-plan](create-and-register-a-background-task.md). Pour des informations plus détaillées sur les conditions et les déclencheurs, voir [Définition de tâches en arrière-plan pour les besoins de votre application](support-your-app-with-background-tasks.md).
+Cette rubrique s’applique également aux tâches en arrière-plan à processus unique. Il faut simplement remplacer la méthode Run() par OnBackgroundActivated(). Pour les tâches en arrière-plan à processus unique, il n’est pas nécessaire d’utiliser un dispositif de stockage persistant pour signaler l’annulation. En effet, vous pouvez signaler l’annulation via le paramètre d’état de l’application car la tâche en arrière-plan s’exécute dans le même processus que votre application au premier plan.
 
 ## Utiliser la méthode OnCanceled pour reconnaître les demandes d’annulation
 
 Écrivez une méthode permettant de gérer l’événement d’annulation.
 
-Créez une méthode nommée OnCanceled qui possède l’empreinte suivante. Cette méthode est le point d’entrée appelé par Windows Runtime chaque fois qu’une demande d’annulation est formulée pour votre tâche en arrière-plan.
+> **Remarque** Pour toutes les familles d’appareils, à l’exception des ordinateurs de bureau, les tâches en arrière-plan peuvent être arrêtées en cas de mémoire insuffisante de l’appareil. Si aucune exception de mémoire insuffisante n’est exposée ou que l’application ne la gère pas, la tâche en arrière-plan est arrêtée sans avertissement ni déclenchement de l’événement OnCanceled. Cela permet de garantir l’expérience utilisateur de l’application au premier plan. Votre tâche en arrière-plan doit être conçue de manière à gérer ce scénario.
 
-La méthode OnCanceled doit avoir l’empreinte suivante:
+Créez une méthode nommée OnCanceled en procédant comme suit. Cette méthode constitue le point d’entrée appelé par Windows Runtime lorsqu’une demande d’annulation est formulée pour votre tâche en arrière-plan.
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -86,7 +86,7 @@ La méthode OnCanceled de l’[exemple complet de tâche en arrière-plan]( http
 >     }
 > ```
 
-Dans la méthode Run de la tâche en arrière-plan, inscrivez la méthode de gestionnaire d’événements OnCanceled avant de lancer le travail. Par exemple, utilisez la ligne de code suivante:
+Dans la méthode Run de la tâche en arrière-plan, inscrivez la méthode de gestionnaire d’événements OnCanceled avant de lancer le travail. Dans le cas d’une tâche en arrière-plan à processus unique, vous pouvez effectuer cette inscription dans le cadre de l’initialisation de votre application. Par exemple, utilisez la ligne de code suivante:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -96,10 +96,9 @@ Dans la méthode Run de la tâche en arrière-plan, inscrivez la méthode de ges
 >     taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &SampleBackgroundTask::OnCanceled);
 > ```
 
-## Gérer une annulation en quittant la méthode Run
+## Gérer une annulation en fermant votre tâche en arrière-plan
 
-
-Lors de la réception d’une demande d’annulation, la méthode Run doit arrêter le travail et quitter en reconnaissant que **_cancelRequested** a la valeur **true**.
+Lors de la réception d’une demande d’annulation, la méthode qui effectue la tâche en arrière-plan doit arrêter le travail et se fermer en reconnaissant que **_cancelRequested** est défini sur la valeur **true**. Pour les tâches en arrière-plan à processus unique, cela implique un retour à partir de la méthode `OnBackgroundActivated()`. Pour les tâches en arrière-plan qui s’exécutent dans un processus distinct, cela implique un retour à partir de la méthode `Run()`.
 
 Modifiez le code de votre classe de tâche en arrière-plan pour vérifier la variable d’indicateur pendant qu’elle est utilisée. Si **_cancelRequested** a la valeur true, le travail s’arrête.
 
@@ -135,9 +134,9 @@ L’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkI
 
 > **Remarque** L’exemple de code présenté ci-dessus utilise la propriété [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797).[**Progress**](https://msdn.microsoft.com/library/windows/apps/br224800) qui sert à enregistrer la progression de la tâche en arrière-plan. La progression est indiquée à l’application à l’aide de la classe [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782).
 
-Modifiez la méthode Run de sorte qu’une fois le travail arrêté, elle enregistre l’état de la tâche (terminé ou annulé).
+Modifiez la méthode Run de sorte qu’une fois le travail arrêté, elle enregistre l’état de la tâche (terminé ou annulé). Cette étape s’applique aux tâches en arrière-plan qui s’exécutent dans un processus distinct, car vous avez besoin d’un moyen pour communiquer entre les processus lorsque la tâche en arrière-plan a été annulée. Pour les tâches en arrière-plan à processus unique, vous pouvez simplement partager l’état avec l’application pour indiquer que la tâche a été annulée.
 
-L’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) enregistre l’état dans LocalSettings :
+L’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) enregistre l’état dans LocalSettings:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -348,6 +347,6 @@ L’intégralité de la méthode Run ainsi que le code de rappel de minuteur de 
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -5,7 +5,7 @@ title: "À propos des publicités maison"
 ms.assetid: C6507C8B-351B-49E7-A194-35AB05BC3358
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c9b73bb1963839640243fce4caaa7f3701b1eb45
+ms.openlocfilehash: 6d0c9aa276a624966b6294db2be8e08a716d42c2
 
 ---
 
@@ -37,6 +37,6 @@ Quand une publicité maison pour l’application A apparaît dans l’applicatio
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

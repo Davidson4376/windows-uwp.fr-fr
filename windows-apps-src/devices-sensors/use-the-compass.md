@@ -5,7 +5,7 @@ title: Utiliser la boussole
 description: "Découvrez comment utiliser la boussole pour déterminer l’orientation actuelle."
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 2c2135867586909328b8d1080c413b3524322246
+ms.openlocfilehash: 05c13ff71e1c6dcfb84d46e37445c1699211951a
 
 ---
 # Utiliser la boussole
@@ -181,6 +181,6 @@ Ces nouvelles valeurs sont écrites dans les TextBlocks identifiés dans le code
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

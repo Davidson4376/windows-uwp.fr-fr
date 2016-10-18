@@ -1,11 +1,11 @@
 ---
-author: TylerMSFT
+author: normesta
 ms.assetid: 12ECEA89-59D2-4BCE-B24C-5A4DD525E0C7
 title: "Accès au contenu du Groupement résidentiel"
 description: "Accédez au contenu stocké dans le dossier Groupement résidentiel de l’utilisateur, qui contient des images, de la musique et des vidéos."
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c4853e2ed73f11637b45729bc04b1c089cd1f86e
+ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
+ms.openlocfilehash: d8f755b64d9a8b0a87dc7d37fb24ffd6ea1b5044
 
 ---
 # Accès au contenu du Groupement résidentiel
@@ -57,7 +57,7 @@ Suivez ces étapes pour ouvrir une instance du sélecteur de fichiers qui permet
     picker.FileTypeFilter.Clear();
     picker.FileTypeFilter.Add("*");
     ```
-  
+
 2.  **Montrer le sélecteur de fichiers et traiter le fichier sélectionné.**
 
     Une fois que vous avez créé et personnalisé le sélecteur de fichiers, offrez à l’utilisateur la possibilité de choisir un fichier en appelant [**FileOpenPicker.PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275), ou plusieurs fichiers en appelant [**FileOpenPicker.PickMultipleFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br207851).
@@ -93,11 +93,11 @@ Cette sélection illustre comment trouver des éléments du Groupement résident
 
     Cet exemple définit des options de requête qui trient les résultats de recherche par pertinence, puis par date de modification. Le filtre de recherche est le terme de requête que l’utilisateur a entré à l’étape précédente :
     ```csharp
-    Windows.Storage.Search.QueryOptions queryOptions = 
+    Windows.Storage.Search.QueryOptions queryOptions =
             new Windows.Storage.Search.QueryOptions
                 (Windows.Storage.Search.CommonFileQuery.OrderBySearchRank, null);
     queryOptions.UserSearchFilter = queryTerm.Text;
-    Windows.Storage.Search.StorageFileQueryResult queryResults = 
+    Windows.Storage.Search.StorageFileQueryResult queryResults =
             Windows.Storage.KnownFolders.HomeGroup.CreateFileQueryWithOptions(queryOptions);    
     ```
 
@@ -105,7 +105,7 @@ Cette sélection illustre comment trouver des éléments du Groupement résident
 
     L’exemple suivant exécute la requête de recherche dans le Groupement résidentiel et enregistre les noms de tout fichier correspondant sous forme de liste de chaînes.
     ```csharp
-    System.Collections.Generic.IReadOnlyList<Windows.Storage.StorageFile> files = 
+    System.Collections.Generic.IReadOnlyList<Windows.Storage.StorageFile> files =
         await queryResults.GetFilesAsync();
 
     if (files.Count > 0)
@@ -127,7 +127,7 @@ Cette section vous montre comment trouver les fichiers du Groupement résidentie
 
     Chacun des dossiers de premier niveau du Groupement résidentiel représente un utilisateur individuel. Ainsi, pour obtenir la collection d’utilisateurs du Groupement résidentiel, appelez [**GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br227279) pour récupérer les dossiers du Groupement résidentiel du niveau supérieur.
     ```csharp
-    System.Collections.Generic.IReadOnlyList<Windows.Storage.StorageFolder> hgFolders = 
+    System.Collections.Generic.IReadOnlyList<Windows.Storage.StorageFolder> hgFolders =
         await Windows.Storage.KnownFolders.HomeGroup.GetFoldersAsync();    
     ```
 
@@ -142,7 +142,7 @@ Cette section vous montre comment trouver les fichiers du Groupement résidentie
         {
             // Found the target user's folder, now find all files in the folder.
             userFound = true;
-            Windows.Storage.Search.QueryOptions queryOptions = 
+            Windows.Storage.Search.QueryOptions queryOptions =
                 new Windows.Storage.Search.QueryOptions
                     (Windows.Storage.Search.CommonFileQuery.OrderBySearchRank, null);
             queryOptions.UserSearchFilter = "*";
@@ -211,10 +211,6 @@ Suivez les étapes suivantes pour lire en continu le contenu vidéo du Groupemen
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -6,20 +6,17 @@ ms.assetid: 09C7E1B1-F78D-4659-8086-2E428E797653
 label: Tiles
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: d3fe62d4de00c42079d62d105acdbb21e296ba5f
-ms.openlocfilehash: a9f5d25dfd359364fa8e16666b03c7c105a867dd
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 37de1a413ac9b5e74c905c140899ec7577a6fae5
 
 ---
-
 # Vignettes pour les applications UWP
 
-
-
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 Une *vignette* est la représentation d’une application dans le menu Démarrer. Chaque application dispose d’une vignette. Lorsque vous créez un projet d’application de plateforme Windows universelle (UWP) dans Microsoft Visual Studio, il inclut une vignette par défaut qui affiche le nom et le logo de l’application. Windows affiche cette vignette lors de la première installation de l’application. Une fois votre application installée, vous pouvez modifier le contenu de votre vignette via des notifications. Par exemple, vous pouvez modifier la vignette pour communiquer de nouvelles informations à l’utilisateur, telles que des titres d’actualités, ou l’objet du dernier message non lu.
 
-## <span id="Configure_the_default_tile"></span><span id="configure_the_default_tile"></span><span id="CONFIGURE_THE_DEFAULT_TILE"></span>Configurer la vignette par défaut
+## Configurer la vignette par défaut
 
 
 Lorsque vous créez un projet dans Visual Studio, cela a pour effet de créer une vignette par défaut simple qui affiche le nom et le logo de votre application.
@@ -47,12 +44,12 @@ Vous devez mettre à jour quelques éléments :
 -   ShortName : l’espace disponible pour le nom d’affichage sur les vignettes étant limité, nous vous recommandons de spécifier ce nom court pour éviter que le nom de votre application soit tronqué.
 -   Images de logo :
 
-    Vous devez remplacer ces images par vos propres images. Vous avez la possibilité de fournir des images pour différentes échelles visuelles, mais vous n’êtes pas obligé de le faire pour toutes. Pour vous assurer que votre application s’affiche correctement sur divers appareils, nous vous recommandons de fournir des versions de chaque image aux échelles 100 %, 200 % et 400 %.
+    Vous devez remplacer ces images par vos propres images. Vous avez la possibilité de fournir des images pour différentes échelles visuelles, mais vous n’êtes pas obligé de le faire pour toutes. Pour vérifier que votre application s’affiche correctement sur divers appareils, nous vous recommandons de fournir des versions de chaque image aux échelles 100%, 200% et 400%.
 
-    Les images mises à l’échelle suivent la convention d’affectation de noms suivante: 
+    Les images mises à l’échelle suivent cette convention de nommage: tests
     
-    *&lt;nom de l’image&gt;*.scale-*&lt;facteur d’échelle&gt;*.*&lt;extension de fichier image&gt;*  
-    
+    *&lt;nom de l’image&gt;*.scale-*&lt;facteur d’échelle&gt;*.*&lt;extension de fichier image&gt;* 
+
     Par exemple: SmallLogo.scale-100.png
 
     Lorsque vous faites référence à l’image, vous spécifiez *&lt;nom de l’image&gt;*.*&lt;extension de fichier image&gt;* (« SmallLogo.png » dans cet exemple). Le système sélectionne automatiquement l’image à l’échelle appropriée pour l’appareil parmi les images que vous avez fournies.
@@ -79,7 +76,7 @@ Vous devez mettre à jour quelques éléments :
       </Applications>
 ```
 
-## <span id="Use_notifications_to_customize_your_tile"></span><span id="use_notifications_to_customize_your_tile"></span><span id="USE_NOTIFICATIONS_TO_CUSTOMIZE_YOUR_TILE"></span>Utiliser les notifications pour personnaliser votre vignette
+## Utiliser les notifications pour personnaliser votre vignette
 
 
 Une fois votre application installée, vous pouvez utiliser les notifications pour personnaliser votre vignette. Vous pouvez le faire lors du premier lancement de l’application ou en réponse à certains événements tels qu’une notification Push.
@@ -107,6 +104,6 @@ Une fois votre application installée, vous pouvez utiliser les notifications po
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

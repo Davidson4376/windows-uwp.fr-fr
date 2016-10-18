@@ -5,7 +5,7 @@ title: "Syntaxe des commandes de déplacement et de dessin"
 ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
 translationtype: Human Translation
 ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
-ms.openlocfilehash: 49c3a061c51c07677ffb43a230e0900220ba0299
+ms.openlocfilehash: 832e757c5bbdc10c2f0f10db127d3f21932313b3
 
 ---
 
@@ -48,7 +48,7 @@ Les règles générales de cette syntaxe sont les suivantes :
 -   Chaque commande, sauf la commande de fermeture, est généralement suivie d’un ou plusieurs nombres.
 -   Si vous avez plusieurs nombres par commande, séparez-les par une virgule ou un espace.
 
-**\[** _fillRule_ **\]** _moveCommand_ _drawCommand_ **\[**_drawCommand_**\*\]** **\[**_closeCommand_**\]**
+**\[**_fillRule_**\]** _moveCommand_ _drawCommand_ **\[**_drawCommand_**\*\]** **\[**_closeCommand_**\]**
 
 De nombreuses commandes de dessin utilisent des points qui nécessitent la définition d’une valeur _x,y_. Chaque fois que vous voyez un espace réservé \*_points_, vous pouvez supposer que vous donnez deux valeurs décimales à la valeur _x,y_ d’un point.
 
@@ -240,6 +240,6 @@ Des exportateurs ou des plug-ins sont disponibles pour d’autres outils de conc
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

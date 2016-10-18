@@ -5,7 +5,7 @@ title: "Éviter les échecs de certification courants"
 ms.assetid: 9E9E3841-2F9B-42D4-B5F8-4C7C31E42E3D
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 6af2842eeb5eeebfc9ffc5a7a3ec98fdcebddb74
+ms.openlocfilehash: 7de2083b2a29baed5a0e6baf0a1e4c4c2f71c9e4
 
 ---
 
@@ -45,6 +45,6 @@ Consultez cette liste pour éviter les problèmes qui empêchent souvent les app
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

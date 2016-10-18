@@ -1,7 +1,7 @@
 ---
 author: jnHs
-Description: If you've provided packages targeting different operating systems, you have the option to customize parts of your Store listing for different targeted operating systems.
-title: Create platform-specific Store listings
+Description: "Si vous avez fourni des packages ciblant différents systèmes d’exploitation, vous pouvez personnaliser certaines parties de votre description dans le Windows Store pour ces différents systèmes."
+title: "Créer des descriptions dans le WindowsStore spécifiques à la plateforme"
 ms.assetid: 5BE66BE2-669C-49E0-8915-60F1027EF94A
 translationtype: Human Translation
 ms.sourcegitcommit: fc7b0d7dd85e661e1688f4df3f67280c16eb6742
@@ -9,36 +9,36 @@ ms.openlocfilehash: 8d9b026cf09d076cd7f7dc8a72d611e68ddd61c7
 
 ---
 
-# Create platform-specific Store listings
+# Créer des descriptions dans le WindowsStore spécifiques à la plateforme
 
 
-If you've provided packages targeting different operating systems, you have the option to customize parts of your Store listing for different targeted operating systems. You will not see this option unless you have already uploaded packages, and include packages for earlier OS versions (Windows 8.x or earlier and/or Windows Phone 8.x or earlier).
+Si vous avez fourni des packages ciblant différents systèmes d’exploitation, vous pouvez personnaliser certaines parties de votre description dans le Windows Store pour ces différents systèmes. Vous ne voyez cette option que si vous avez déjà chargé les packages et intégré des packages pour les versions antérieures du système d’exploitation (Windows8.x ou version antérieure et/ou Windows Phone8.x ou version antérieure).
 
-> **Important**  Customers on Windows 10 will always see your default Store listing.
+> **Important** Les clients sur Windows10 voient toujours votre description dans le Windows Store par défaut.
 
-Platform-specific Store listings can be useful if you want to mention features that appear only in one OS version, or want to provide screenshots that are specific to a particular OS (independent of device type), rather than having all customers see the same Store listing.
+Les descriptions dans le Windows Store spécifiques à la plateforme peuvent être utiles si vous voulez mentionner des fonctionnalités qui apparaissent uniquement dans une version de système d’exploitation, ou fournir des captures d’écran spécifiques d’un système d’exploitation particulier (indépendamment du type d’appareil), au lieu que tous les clients voient la même description.
 
-> **Note**  Creating a platform-specific Store listing in one language does not create a platform-specific Store listing in other languages that your app supports, even if you have [entered Store listing info](create-app-store-listings.md) for those languages. You'll need to create the platform-specific Store listing separately for each language.
+> **Remarque** La création d’une description dans le Windows Store spécifique à la plateforme dans une langue donnée n’entraîne pas la création de cette description dans toutes les autres langues prises en charge par votre application, même si vous avez [saisi les informations de description dans le Windows Store](create-app-store-listings.md) associées à ces langues. Il vous faudra créer la description dans le Windows Store spécifique à la plateforme pour chacune des langues.
 
-## Creating a platform-specific Store listing
+## Création d’une description dans le WindowsStore spécifique à la plateforme
 
-Near the top of your **Store listing** page, you'll see a link to **create a platform-specific app Store listing** if you have uploaded packages that support earlier OS versions ((Windows 8.x or earlier and/or Windows Phone 8.x or earlier).
+Dans la partie supérieure de votre page **Description dans le Windows Store**, vous pouvez voir un lien vers **créer une description dans le Windows Store spécifique à la plateforme** si vous avez chargé des packages prenant en charge des versions antérieures du système d’exploitation ((Windows8.x ou version antérieure et/ou Windows Phone8.x ou version antérieure).
 
-> **Tip** You can't create platform-specific Store listings until after you've uploaded packages.
+> **Conseil** Vous ne pouvez pas créer des descriptions dans le Windows Store spécifiques à la plateforme avant d’avoir chargé les packages.
 
-When you click the link to **create a platform-specific app Store listing**, a popup will appear asking you to choose from your supported targeted operating systems. Windows 10 is not included in the list of choices, because customers on Windows 10 will always see the app's default Store listing.
+Lorsque vous cliquez sur ce lien pour **créer un description de l’application dans le Windows Store spécifique à la plateforme**, une fenêtre contextuelle s’affiche, vous demandant de choisir parmi les systèmes d’exploitation ciblés pris en charge. Windows10 n’est pas inclus dans la liste des choix, car les clients sur Windows10 voient toujours la description par défaut de l’application dans le Windows Store.
 
-> **Note**  If you've already created platform-specific Store listings for all of the OS versions your app targets, you won't be able to make a selection.
+> **Remarque** Si vous avez déjà créé des descriptions dans le Windows Store spécifiques à la plateforme pour toutes les versions de système d’exploitation ciblées par votre application, vous ne pourrez pas effectuer de sélection.
 
-You can use your default Store listing as a starting point, which will bring over all of the text and images you've entered for your default Store listing; you'll then be able to make any changes you'd like before saving. You can also start from a completely blank Store listing if you prefer.
+Vous pouvez choisir d’utiliser votre description par défaut dans le Windows Store comme point de départ, ce qui réaffichera l’ensemble du texte et des images que vous avez entrés pour cette description; vous serez alors en mesure de modifier ces éléments à votre convenance avant d’enregistrer ces modifications. Vous pouvez également choisir de partir d’une description vide.
 
-After you click **Continue**, your **Store listing** page will now include a section for the platform-specific Store listing you've just created (underneath the [Default Store listing](create-app-store-listings.md#default-store-listing-fields) section). This section will include its own set of fields for **Description** (required), **Release notes**, **Screenshots**, **App tile icon**, **App features**, and **Additional system requirements**. Make sure to enter info into each field where you want to display info in the custom Store listing, even if it's the same info as in your default Store listing. If you leave any of these fields blank, no info will appear for that field in the custom Store listing.
+Une fois que vous aurez cliqué sur **Continuer**, votre page **Description dans le Windows Store** inclura une section pour la description spécifique à la plateforme que vous venez de créer (sous la section [Description par défaut dans le Windows Store](create-app-store-listings.md#default-store-listing-fields)). Cette section inclut son propre ensemble de champs pour **Description** (obligatoire), **Notes de publication**, **Captures d’écran**, **Icône de vignette de l’application**, **Fonctionnalités de l’application** et **Configuration système supplémentaire requise**. Veillez à entrer des informations dans chaque champ où vous souhaitez afficher des informations pour la description personnalisée dans le Windows Store, même si ces informations sont identiques à celles de la description par défaut. Si vous laissez un de ces champs vide, aucune information ne s’affiche pour ce champ dans la description personnalisée dans le Windows Store.
 
-> **Note**  Not all fields of your app's Store listing can be customized for a specific targeted OS. For more info, see [Shared fields](create-app-store-listings.md#shared-fields).
+> **Remarque** Vous ne pouvez pas personnaliser tous les champs de la description de votre application dans le Windows Store pour un système d’exploitation ciblé. Pour plus d’informations, voir l’article [Champs partagés](create-app-store-listings.md#shared-fields).
 
-## Removing a platform-specific Store listing
+## Suppression d’une description dans le WindowsStore spécifique à la plateforme
 
-If you create a platform-specific Store listing and later decide you'd rather show your default Store listing to customers on that operating system, click the **Delete** link. After confirming that you'd like to show those customers your default Store listing, click **OK**. The platform-specific Store listing will be removed. If you decide you want it back later, you can always create a new platform-specific Store listing for that operating system by following the steps listed above.
+Si vous créez une description dans le Windows Store spécifique à la plateforme, puis décidez d’afficher plutôt votre description par défaut aux clients sur ce système d’exploitation, cliquez sur le lien **Supprimer**. Après avoir confirmé la présentation de la description par défaut dans le Windows Store à ces clients, cliquez sur **OK**. La description dans le Windows Store spécifique à la plateforme sera supprimée. Si vous décidez de l’afficher à nouveau, vous pouvez toujours créer une nouvelle description dans le Windows Store spécifique à la plateforme pour ce système d’exploitation en suivant les étapes indiquées ci-dessus.
 
  
 

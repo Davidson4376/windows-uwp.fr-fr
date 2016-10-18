@@ -6,8 +6,8 @@ title: "Test de l’accessibilité"
 label: Accessibility testing
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
-ms.openlocfilehash: ec436f939c672d6e6d852d3dd6713fd6ca20a53b
+ms.sourcegitcommit: 82d43f6553be280831c0a739680a2f9c833286f9
+ms.openlocfilehash: cc988037a8b3270045c7dd5faac4bf7d69fd6274
 
 ---
 
@@ -60,7 +60,7 @@ L’image suivante illustre l’outil [**Inspect**](https://msdn.microsoft.com/l
 <span id="test_keyboard_accessibility"/>
 <span id="TEST_KEYBOARD_ACCESSIBILITY"/>
 ## Tester l’accessibilité du clavier  
-Le meilleur moyen de tester l’accessibilité de votre clavier consiste à débrancher la souris et à utiliser le Clavier visuel si vous utilisez une tablette. Testez la navigation de l’accessibilité du clavier à l’aide de la touche Tab. Vous devez pouvoir parcourir tous les éléments d’interface utilisateur interactifs à l’aide de la touche Tab. Pour les éléments d’interface utilisateur composites, vérifiez que vous pouvez naviguer parmi les parties des éléments à l’aide des touches de direction. Par exemple, vous devriez pouvoir naviguer parmi des listes d’éléments à l’aide des touches du clavier. Pour finir, vérifiez que vous pouvez appeler tous les éléments d’interface utilisateur interactifs avec le clavier une fois que ces éléments ont le focus, généralement à l’aide de la touche Entrée ou Espace.
+Le meilleur moyen de tester l’accessibilité de votre clavier consiste à débrancher la souris et à utiliser le Clavier visuel si vous utilisez une tablette. Testez la navigation de l’accessibilité du clavier à l’aide de la touche _Tab_. Vous devez pouvoir parcourir tous les éléments d’interface utilisateur interactifs à l’aide de la touche _Tab_. Pour les éléments d’interface utilisateur composites, vérifiez que vous pouvez naviguer entre les parties des éléments à l’aide des touches de direction. Par exemple, vous devriez pouvoir naviguer parmi des listes d’éléments à l’aide des touches du clavier. Pour finir, vérifiez que vous pouvez appeler tous les éléments d’interface utilisateur interactifs avec le clavier une fois que ces éléments ont le focus, généralement à l’aide de la touche Entrée ou Espace.
 
 <span id="verify_the_contrast_ratio_of_visible_text"/>
 <span id="VERIFY_THE_CONTRAST_RATIO_OF_VISIBLE_TEXT"/>
@@ -85,30 +85,32 @@ Utilisez les options d’affichage du système qui ajustent la valeur ppp de l�
 ## Vérifier les scénarios d’application principaux à l’aide du Narrateur  
 Utilisez le Narrateur pour tester l’expérience de lecture d’écran pour votre application en effectuant les étapes suivantes :
 
-**Effectuez la procédure ci-dessous pour tester votre application à l’aide du Narrateur avec une souris et le clavier :**
-1.  Démarrez le Narrateur en appuyant sur la touche Windows + Entrée.
-2.  Naviguez dans votre application à l’aide du clavier en utilisant la touche Tab, les touches de direction et la touche Verr. maj + les touches de direction.
-3.  À mesure que vous naviguez dans votre application, écoutez le Narrateur lire les éléments de votre interface utilisateur et vérifiez les points suivants :
-    * Pour chaque contrôle, vérifiez que le Narrateur lit tout le contenu visible. Vérifiez également qu’il lit le nom de chaque contrôle, tout état applicable (activé, sélectionné, etc.) et le type du contrôle (bouton, case à cocher, élément de liste, etc.).
-    * Si l’élément est interactif, vérifiez que vous pouvez utiliser le Narrateur pour appeler son action en appuyant sur Verr. maj + Espace.
+**Procédez comme suit pour tester votre application à l’aide du Narrateur avec une souris et le clavier:**
+1.  Démarrez le Narrateur en appuyant sur _la touche Windows + Entrée_.
+2.  Naviguez dans votre application à l’aide du clavier en utilisant la touche _Tab_, les touches de direction et la _touche Verr. maj + les touches de direction_.
+3.  À mesure que vous naviguez dans votre application, écoutez le Narrateur lire les éléments de votre interface utilisateur et vérifiez les points suivants:
+    * Pour chaque contrôle, vérifiez que le Narrateur lit tout le contenu visible. Vérifiez également qu’il lit le nom de chaque contrôle, tout état applicable (coché, sélectionné, etc.) et le type du contrôle (bouton, case à cocher, élément de liste, etc.).
+    * Si l’élément est interactif, vérifiez que vous pouvez utiliser le Narrateur pour appeler son action en appuyant sur _Verr. maj + Entrée_.
     * Pour chaque tableau, vérifiez que le Narrateur lit correctement le nom du tableau, sa description (le cas échéant) et les en-têtes de lignes et de colonnes.
 
-4.  Appuyez sur la touche Verr. maj + Entrée pour effectuer des recherches dans votre application et vérifier que tous vos contrôles apparaissent dans la liste de recherche, et que les noms des contrôles sont localisés et lisibles.
-5.  Éteignez votre moniteur et essayez d’accomplir les scénarios d’application principaux en utilisant uniquement le clavier et le Narrateur. Pour obtenir la liste complète des commandes et des raccourcis du Narrateur, appuyez sur la touche Verr. maj + F1.
+4.  Appuyez sur _Verr. maj + Maj + Entrée_ pour effectuer des recherches dans votre application et vérifier que tous vos contrôles apparaissent dans la liste de recherche, et que les noms des contrôles sont localisés et lisibles.
+5.  Éteignez votre moniteur et essayez d’accomplir les scénarios d’application principaux en utilisant uniquement le clavier et le Narrateur. Pour obtenir la liste complète des commandes et des raccourcis du Narrateur, appuyez sur _Verr. maj + F1_.
 
-**Utilisez la procédure ci-dessous pour tester votre application à l’aide du mode tactile du Narrateur :**
+À compter de Windows10 version1607, nous avons introduit un nouveau mode développeur dans le Narrateur. Activez le mode développeur quand le Narrateur est déjà en cours d’exécution en appuyant sur _Verr. maj + Maj + F12_. Quand le mode développeur est activé, l’écran est masqué et met en évidence uniquement les objets accessibles et le texte associé exposé par programmation au Narrateur. Vous avez ainsi une bonne représentation visuelle des informations qui sont exposées au Narrateur.
+
+**Procédez comme suit pour tester votre application à l’aide du mode tactile du Narrateur:**
 
 > [!NOTE]
 > Le Narrateur passe automatiquement en mode tactile sur les appareils qui prennent en charge les contacts 4+. Le Narrateur ne prend pas en charge les scénarios à plusieurs moniteurs ou les numériseurs d’interaction tactile multipoint sur l’écran principal.
 
 1.  Familiarisez-vous avec l’interface utilisateur et explorez la disposition.
 
-    * **Naviguez dans l’interface utilisateur en effectuant des mouvements de balayage à l’aide d’un seul doigt.** Effectuez des mouvements de balayage vers la gauche ou la droite pour naviguer entre les éléments et vers le haut ou le bas pour changer la catégorie des éléments parmi lesquels vous naviguez. Les catégories incluent tous les éléments, liens, tableaux, en-têtes, etc. La navigation par mouvements de balayage à l’aide d’un seul doigt est similaire à la navigation avec Verr. maj + les touches de direction.
-    * **Utilisez les mouvements d’insertion d’une tabulation pour naviguer parmi les éléments pouvant être actifs.** Un balayage à trois doigts vers la droite ou la gauche est équivalent à l’utilisation de la touche Tab et des touches Maj + Tab sur un clavier.
+    * **Naviguez dans l’interface utilisateur en effectuant des mouvements de balayage à l’aide d’un seul doigt.** Effectuez des mouvements de balayage vers la gauche ou la droite pour naviguer entre les éléments et vers le haut ou le bas pour changer la catégorie des éléments parmi lesquels vous naviguez. Les catégories incluent tous les éléments, liens, tableaux, en-têtes, etc. La navigation par mouvements de balayage à l’aide d’un seul doigt est similaire à la navigation avec _Verr. maj + les touches de direction_.
+    * **Utilisez les mouvements d’insertion d’une tabulation pour naviguer entre les éléments pouvant être actifs.** Un balayage à trois doigts vers la droite ou la gauche est équivalent à l’utilisation de la touche _Tab_ et des touches _Maj + Tab_ sur un clavier.
     * **Explorez spatialement l’interface utilisateur à l’aide d’un seul doigt.** Déplacez un seul doigt vers le haut et le bas, ou la gauche et la droite, pour que le Narrateur lise les éléments placés sous votre doigt. Vous pouvez utiliser la souris comme alternative, car elle utilise la même logique de test de positionnement avancé que le déplacement d’un seul doigt.
-    * **Lisez la fenêtre entière et tout son contenu en balayant l’écran vers le haut avec trois doigts**. Ceci est équivalent à l’utilisation de Verr. maj + W.
+    * **Lisez la fenêtre entière et tout son contenu en balayant l’écran vers le haut avec trois doigts**. Ceci est équivalent à l’utilisation de _Verr. maj + W_.
 
-    Si des éléments d’interface utilisateur importants sont inaccessibles, vous êtes peut-être en présence d’un problème d’accessibilité.
+    Si des éléments d’interface utilisateur importants sont inaccessibles, il s’agit peut-être d’un problème d’accessibilité.
 
 2.  Interagissez avec un contrôle pour tester ses actions principales et secondaires, ainsi que son comportement de défilement.
 
@@ -139,10 +141,10 @@ La présence d’éléments apparaissant à tort dans l’affichage des élémen
 * [Accessibilité](accessibility.md)
 * [Pratiques à éviter](practices-to-avoid.md)
 * [UI Automation](https://msdn.microsoft.com/library/windows/desktop/Ee684009)
-* [Accessibilité dans Windows](http://go.microsoft.com/fwlink/p/?LinkId=320802)
+* [Accessibilité dans Windows](http://go.microsoft.com/fwlink/p/?LinkId=320802) 
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

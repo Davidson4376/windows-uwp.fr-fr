@@ -5,11 +5,11 @@ description: "Cette rubrique présente une étude de cas de portage d’une appl
 title: "Étude de cas de portage d’une application Silverlight pour Windows Phone vers UWP, Bookstore1"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: dbffb4245efece2d39b4eba8979e323fd71626d0
+ms.openlocfilehash: 86cccfd462717483720c412c1de9eaf6bbc1c5cd
 
 ---
 
-# Étude de cas de portage d’une application Silverlight pour Windows Phone vers UWP &#58; Bookstore1
+# Étude de cas de portage d’une application Silverlight pour Windows Phone vers UWP : Bookstore1
 
 \[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
@@ -84,9 +84,9 @@ Pour cette application, l’élément n\º3 n’est pas manquant, puisque la bar
 | PhoneTextNormalStyle                | CaptionTextBlockStyle  |
 | PhoneTextTitle1Style                | HeaderTextBlockStyle   |
  
-Pour définir ces styles, il vous suffit de les taper dans l’éditeur de balisage. Vous pouvez également utiliser les outils XAML de Visual Studio et les définir sans rien taper. Pour ce faire, cliquez avec le bouton droit sur un **TextBlock**, puis cliquez sur **Modifier le style**&gt;**Appliquer la ressource**. Pour procéder ainsi avec les **TextBlock** dans le modèle d’élément, cliquez avec le bouton droit sur la **ListBox**, puis cliquez sur **Modifier des modèles supplémentaires**&gt;**Modifier les éléments générés (ItemTemplate)**.
+Pour définir ces styles, il vous suffit de les taper dans l’éditeur de balisage. Vous pouvez également utiliser les outils XAML de Visual Studio et les définir sans rien taper. Pour ce faire, cliquez avec le bouton droit sur un **TextBlock**, puis cliquez sur **Modifier le style** &gt; **Appliquer la ressource**. Pour procéder ainsi avec les objets **TextBlock** dans le modèle d’élément, cliquez avec le bouton droit sur **ListBox**, puis cliquez sur **Modifier des modèles supplémentaires** &gt; **Modifier les éléments générés (ItemTemplate)**.
 
-Il existe un arrière-plan blanc opaque à 80 % derrière les éléments, car le style par défaut du contrôle **ListBox** définit son arrière-plan sur la ressource système `ListBoxBackgroundThemeBrush`. Définissez `Background="Transparent"` sur l’élément **ListBox** pour effacer cet arrière-plan. Pour aligner à gauche les objets **TextBlock** dans le modèle d’élément, modifiez-les de nouveau comme décrit ci-dessus et définissez un élément **Margin** de `"9.6,0"` dans les deux objets **TextBlock**.
+Il existe un arrière-plan blanc opaque à 80% derrière les éléments, car le style par défaut du contrôle **ListBox** définit son arrière-plan sur la ressource système `ListBoxBackgroundThemeBrush`. Définissez `Background="Transparent"` sur l’élément **ListBox** pour effacer cet arrière-plan. Pour aligner à gauche les objets **TextBlock** dans le modèle d’élément, modifiez-les de nouveau comme décrit ci-dessus et définissez un élément **Margin** de `"9.6,0"` dans les deux objets **TextBlock**.
 
 Une fois cette opération effectuée, en raison des [modifications associées aux pixels d’affichage](wpsl-to-uwp-porting-xaml-and-ui.md#effective-pixels), nous devons passer en revue et multiplier toutes les dimensions de taille fixe que nous n’avons pas encore modifiées (marges, largeur, hauteur, etc.) par 0,8. Par exemple, les images doivent passer de 70 x 70 px à 56 x 56 px.
 
@@ -136,6 +136,6 @@ Dans l’étude de cas suivante, [Bookstore2](wpsl-to-uwp-case-study-bookstore2.
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -5,7 +5,7 @@ title: Dessiner des formes
 description: "Découvrez comment dessiner des formes, telles que des ellipses, des rectangles, des polygones et des tracés. La classe Path permet de visualiser un langage de dessin vectoriel complexe dans une interface utilisateur XAML. Vous pouvez, par exemple, dessiner des courbes de Bézier."
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 3add60b9067f40c5d330bd66a84eea41b465e8d7
+ms.openlocfilehash: 2fd20e07c9b7e54559baeeb8324f11065a25444c
 
 ---
 # Dessiner des formes
@@ -200,6 +200,6 @@ L’utilisation de [**PathGeometry**](https://msdn.microsoft.com/library/windows
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

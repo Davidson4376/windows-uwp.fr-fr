@@ -6,16 +6,13 @@ ms.assetid: 1FCE66AF-34B4-436A-9FC9-D0CF4BDA5A01
 label: Adaptive and interactive toast notifications
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 17faf0ccb0207b318963e00655d7ac91b97e066b
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 55f5cd9e647e74d7861a7472872373d8949b79ba
 
 ---
-
 # Notifications toast adaptatives et interactives
 
-
-
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 Les notifications toast adaptatives et interactives vous permettent de créer des notifications contextuelles flexibles présentant davantage de contenu, ainsi que des images incluses et une interaction utilisateur facultatives.
 
@@ -29,7 +26,7 @@ Le modèle de notifications toast adaptatives et interactives comporte les mises
 
  
 
-## <span id="toast_structure"></span><span id="TOAST_STRUCTURE"></span>Structure de notification toast
+## Structure de notification toast
 
 
 Les notifications toast sont construites en XML et comprennent généralement les éléments clés suivants:
@@ -61,7 +58,7 @@ Et voici une représentation visuelle de la structure:
 
 ![structure de notification toast](images/adaptivetoasts-structure.jpg)
 
-### <span id="Visual"></span><span id="visual"></span><span id="VISUAL"></span>Éléments visuels
+### Éléments visuels
 
 L’élément «visual» doit contenir très exactement un seul élément de liaison («binding») intégrant le contenu visuel de la notification toast.
 
@@ -72,7 +69,7 @@ Les notifications par vignette dans les applications de plateforme Windows unive
 
 Pour découvrir tous les attributs pris en charge dans la section « visual » et tous les éléments enfants de cette dernière, voir la section « Schéma » ci-dessous. Pour consulter d’autres exemples, voir la section «Exemples XML» ci-après.
 
-### <span id="Actions"></span><span id="actions"></span><span id="ACTIONS"></span>Élément &lt;actions&gt;
+### Élément &lt;actions&gt;
 
 Dans les applications UWP, vous pouvez ajouter des boutons et d’autres entrées à vos notifications toast, ce qui permet aux utilisateurs d’effectuer d’autres opérations à l’extérieur de l’application. Vous spécifiez ces actions sous l’élément &lt;actions&gt; en utilisant l’un des deux types d’actions possibles:
 
@@ -90,7 +87,7 @@ Quand une action est exécutée par l’utilisateur, vous pouvez effectuer l’u
 
 Pour découvrir tous les attributs pris en charge dans la section « visual » et tous les éléments enfants de cette dernière, voir la section « Schéma » ci-dessous. Pour consulter d’autres exemples, voir la section «Exemples XML» ci-après.
 
-### <span id="Audio"></span><span id="audio"></span><span id="AUDIO"></span>Élément &lt;audio&gt;
+### Élément &lt;audio&gt;
 
 Pour l’instant, les sons personnalisés ne sont pas pris en charge dans les applications UWP qui ciblent la Plate-forme Desktop; à la place, vous pouvez choisir un son dans la liste ms-winsoundevents pour votre application destinée aux appareils de bureau. Les applications UWP ciblant les plateformes mobiles prennent en charge aussi bien les sons ms-winsoundevents que les sons personnalisés aux formats suivants :
 
@@ -99,7 +96,7 @@ Pour l’instant, les sons personnalisés ne sont pas pris en charge dans les ap
 
 Pour plus d’informations sur les éléments audio dans les notifications toast, voir la [page de schéma audio](https://msdn.microsoft.com/library/windows/apps/br230842) qui inclut la liste complète des sons ms-winsoundevents.
 
-## <span id="Alarms__reminders__and_incoming_calls"></span><span id="alarms__reminders__and_incoming_calls"></span><span id="ALARMS__REMINDERS__AND_INCOMING_CALLS"></span>Alarmes, rappels et appels entrants
+## Alarmes, rappels et appels entrants
 
 
 Vous pouvez utiliser des notifications toast pour les alarmes, les rappels et les appels entrants. Ces notifications toast spéciales ont une apparence semblable à celle des notifications toast standard, mais présentent certains motifs et éléments d’interface utilisateur personnalisés basés sur un scénario :
@@ -108,7 +105,7 @@ Vous pouvez utiliser des notifications toast pour les alarmes, les rappels et le
 -   Outre le fait de partager les comportements ci-dessus avec les notifications de rappel, les notifications d’alarme émettent automatiquement le son en boucle.
 -   Les notifications d’appel entrant s’affichent en plein écran sur les appareils Windows Mobile. Ce résultat est obtenu par la spécification de l’attribut « scenario » à l’intérieur de l’élément racine d’une notification toast, c’est-à-dire &lt;toast&gt; : &lt;toast scenario=" { default | alarm | reminder | incomingCall } " &gt;
 
-## <span id="xml_examples"></span><span id="XML_EXAMPLES"></span>Exemples XML
+## Exemples XML
 
 
 **Remarque** Les captures d’écran de notification toast correspondant à ces exemples ont été effectuées à partir d’une application exécutée sur un appareil de bureau. Sur les appareils mobiles, une notification toast peut s’afficher sous sa forme réduite en présentant une poignée dans sa partie inférieure pour la développer.
@@ -290,7 +287,7 @@ Cet exemple illustre...
 
  
 
-## <span id="Activation_samples"></span><span id="activation_samples"></span><span id="ACTIVATION_SAMPLES"></span>Exemples d’activation
+## Exemples d’activation
 
 
 Comme indiqué ci-dessus, le corps et les actions de la notification toast peuvent activer des applications de différentes façons. L’exemple ci-dessous illustre comment gérer différents types d’activations à partir du corps et/ou des actions d’une notification toast.
@@ -352,7 +349,7 @@ namespace ToastNotificationTask
 }
 ```
 
-## <span id="Schemas___visual__and__audio_"></span><span id="schemas___visual__and__audio_"></span><span id="SCHEMAS___VISUAL__AND__AUDIO_"></span>Schémas : &lt;visual&gt; et &lt;audio&gt;
+## Schémas : &lt;visual&gt; et &lt;audio&gt;
 
 
 Dans les schémas ci-après, un suffixe «?» signifie qu’un attribut est facultatif.
@@ -492,7 +489,7 @@ silent?
 
 -   Pour plus de détails sur cet attribut facultatif, voir [cet article concernant le schéma des éléments](https://msdn.microsoft.com/library/windows/apps/br230842).
 
-## <span id="Schemas___action_"></span><span id="schemas___action_"></span><span id="SCHEMAS___ACTION_"></span>Schémas: &lt;action&gt;
+## Schémas: &lt;action&gt;
 
 
 Dans les schémas ci-après, un suffixe «?» signifie qu’un attribut est facultatif.
@@ -584,7 +581,7 @@ hint-inputId
 -   Cette valeur doit correspondre à l’identificateur de l’élément d’entrée que vous souhaitez associer.
 -   Sur les appareils mobiles et de bureau, cet attribut placera le bouton juste à côté de la zone d’entrée.
 
-## <span id="Attributes_for_system-handled_actions"></span><span id="attributes_for_system-handled_actions"></span><span id="ATTRIBUTES_FOR_SYSTEM-HANDLED_ACTIONS"></span>Attributs pour les actions gérées par le système
+## Attributs pour les actions gérées par le système
 
 
 Le système peut gérer les actions de répétition et de masquage des notifications si vous ne voulez pas que votre application traite la répétition/replanification des notifications sous la forme d’une tâche en arrière-plan. Les actions gérées par le système peuvent être combinées (ou spécifiées individuellement), mais nous vous déconseillons d’implémenter une action de répétition sans une action de masquage.
@@ -647,6 +644,6 @@ Pour construire des actions de répétition et de masquage individuelles, procé
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -5,7 +5,7 @@ title: "Utiliser le capteur d’orientation"
 description: "Découvrez comment utiliser les capteurs d’orientation pour déterminer l’orientation de l’appareil."
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 67c23795be54207c54c1e871dad045e6c0cd7c77
+ms.openlocfilehash: 1265697f03e0de74444fc936a3041d1e88147e77
 
 ---
 # Utiliser le capteur d’orientation
@@ -353,6 +353,6 @@ Ces nouvelles valeurs sont écrites dans un TextBlock identifié dans le code XA
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

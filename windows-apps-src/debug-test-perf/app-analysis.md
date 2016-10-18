@@ -1,44 +1,44 @@
-# App Analysis overview
+# Vue d’ensemble de l’analyse d’application
 
-App Analysis  is a tool that provides developers with a heads up notification of performance issues. App Analysis runs your app code against a set of performance guidelines and best practices.
+L’analyse d’application est un outil qui envoie aux développeurs une notification qui les avertit de problèmes de performances. L’analyse d’application teste le code de votre application par rapport à un ensemble de bonnes pratiques et de recommandations en matière de performances.
 
-App Analysis identifies problems from a ruleset of common performance issues that apps run into. When appropriate, app analysis will point to Visual Studio's timeline tool, source information, and documentation to give you the means to investigate.
+L’analyse d’application identifie les problèmes à partir d’un ensemble de règles de problèmes de performances courants rencontrés par les applications. Le cas échéant, l’analyse d’application pointe sur l’outil chronologie de Visual Studio, les informations sur la source et la documentation pour vous donner les moyens de rechercher les causes.
 
-Rules in App Analysis refer to a guideline or best practice that your app is being checked against.
+Les règles de l’analyse d’application font référence à une recommandation ou une bonne pratique par rapport à laquelle votre application est testée.
 
-## Decoded image size larger than render size
+## Taille d’image décodée supérieure à la taille de rendu
 
-Images are captured at very high resolutions, which can lead to apps using more CPU when decoding the image data and more memory after it’s loaded from disk. But there’s no sense decoding and saving a high-resolution image in memory only to display it smaller than its native size. Instead, create a version of the image at the exact size it will be drawn on-screen using the DecodePixelWidth and DecodePixelHeight properties.
+Les images sont capturées dans des résolutions très élevées, par conséquent, les applications peuvent être amenées à utiliser davantage de processeur pendant le décodage des données d’image et de mémoire après leur chargement à partir du disque. Mais cela ne fait aucun sens de décoder et d’enregistrer une image en haute résolution en mémoire si elle doit être affichée uniquement dans une taille plus petite que sa taille d’origine. Créez plutôt une version de l’image avec une taille correspondant exactement à celle qui sera affichée à l’écran à l’aide des propriétés DecodePixelWidth et DecodePixelHeight.
 
 ### Impact
 
-Displaying images at their non-native sizes can negatively impact both CPU time (due to decoding to the proper size and download time) and memory.
+L’affichage d’images dans une taille non native peut avoir un effet négatif à la fois sur le temps processeur (décodage de la taille appropriée et temps de téléchargement) et sur la mémoire.
 
-### Causes and solutions
+### Causes et solutions
 
-#### Image is not being set asynchronously
+#### L’image n’est pas définie en mode asynchrone
 
-App is using SetSource() instead of SetSourceAsync(). You should always avoid using [**SetSource**](https://msdn.microsoft.com/library/windows/apps/BR243255) and instead use [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) when setting a stream to decode images asynchronously. 
+L’application utilise SetSource() au lieu de SetSourceAsync(). Évitez toujours d’utiliser [**SetSource**](https://msdn.microsoft.com/library/windows/apps/BR243255) et utilisez plutôt [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) quand vous définissez un flux pour décoder des images de manière asynchrone. 
 
-#### Image is being called when the ImageSource is not in the live tree
+#### L’image est appelée quand ImageSource n’est pas dans l’arborescence live
 
-The BitmapImage is connected to the live XAML tree after setting the content with SetSourceAsync or UriSource. You should always attach a [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235) to the live tree before setting the source. Any time an image element or brush is specified in markup, this will automatically be the case. Examples are provided below. 
+Le BitmapImage est associé à l’arborescence XAML live après la définition du contenu avec SetSourceAsync ou UriSource. Vous devez toujours associer un [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235) à l’arborescence live avant de définir la source. C’est automatiquement le cas quand un élément ou pinceau image est spécifié dans le balisage. Vous trouverez ci-dessous des exemples. 
 
-**Live tree examples**
+**Exemples d’arborescences live**
 
-Example 1 (good)—Uniform Resource Identifier (URI) specified in markup.
+Exemple1 (correct): Uniform Resource Identifier (URI) spécifié dans le balisage.
 
 ```xml
 <Image x:Name="myImage" UriSource="Assets/cool-image.png"/>
 ```
 
-Example 2 markup—URI specified in code-behind.
+Exemple2 balisage: URI spécifié dans le code-behind.
 
 ```xml
 <Image x:Name="myImage"/>
 ```
 
-Example 2 code-behind (good)—connecting the BitmapImage to the tree before setting its UriSource.
+Exemple2 code-behind (correct): association de la BitmapImage à l’arborescence avant de définir son UriSource.
 
 ```vb
 var bitmapImage = new BitmapImage();
@@ -46,7 +46,7 @@ myImage.Source = bitmapImage;
 bitmapImage.UriSource = new URI("ms-appx:///Assets/cool-image.png", UriKind.RelativeOrAbsolute);
 ```
 
-Example 2 code-behind (bad)—setting the the BitmapImage's UriSource before connecting it to the tree.
+Exemple2 code-behind (incorrect): définition de l’UriSouce de BitmapImage avant de l’associer à l’arborescence.
 
 ```vb
 var bitmapImage = new BitmapImage();
@@ -54,11 +54,11 @@ bitmapImage.UriSource = new URI("ms-appx:///Assets/cool-image.png", UriKind.Rela
 myImage.Source = bitmapImage;
 ```
 
-#### Image brush is non-rectangular 
+#### Le pinceau image n’est pas rectangulaire 
 
-When an image is used for a non-rectangular brush, the image will use a software rasterization path, which will not scale images at all. Additionally, it must store a copy of the image in both software and hardware memory. For example, if an image is used as a brush for an ellipse, the potentially large full image will be stored twice internally. When using a non-rectangular brush, your app should pre-scale its images to approximately the size they will be rendered at.
+Quand une image est utilisée pour un pinceau non rectangulaire, elle utilise un chemin de rastérisation logicielle qui ne met pas du tout les images à l’échelle. En outre, elle doit stocker une copie de l’image dans la mémoire logicielle et matérielle. Par exemple, si une image est utilisée comme pinceau pour une ellipse, l’image complète, éventuellement de grande taille, sera stockée deux fois en interne. Quand vous utilisez un pinceau non rectangulaire, votre application doit effectuer une mise à l’échelle préalable de ses images à leur taille de rendu approximative.
 
-Alternatively, you can set an explicit decode size to create a version of the image at the exact size it will be drawn on-screen using the [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) and [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) properties.
+Vous pouvez aussi définir une taille de décodage explicite pour créer une version de l’image à la taille exacte qui sera affichée à l’écran à l’aide des propriétés [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) et [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241).
 
 ```xml
 <Image>
@@ -69,185 +69,185 @@ Alternatively, you can set an explicit decode size to create a version of the im
 </Image>
 ```
 
-The units for [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) and [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) are by default physical pixels. The [**DecodePixelType**](https://msdn.microsoft.com/library/windows/apps/Dn298545) property can be used to change this behavior: setting **DecodePixelType** to **Logical** results in the decode size automatically accounting for the system’s current scale factor, similar to other XAML content. It would therefore be generally appropriate to set **DecodePixelType** to **Logical** if, for example, you want **DecodePixelWidth** and **DecodePixelHeight** to match the Height and Width properties of the Image control that the image will be displayed in. With the default behavior of using physical pixels, you must account for the system’s current scale factor yourself, and you should listen for scale change notifications in case the user changes their display preferences.
+Les unités pour [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) et [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) sont en pixels physiques par défaut. La propriété [**DecodePixelType**](https://msdn.microsoft.com/library/windows/apps/Dn298545) peut être utilisée pour modifier ce comportement: en définissant **DecodePixelType** sur **Logical**, la taille de décodage tient compte automatiquement du facteur d’échelle actuel du système, comme c’est le cas pour d’autres contenus XAML. Il est donc généralement approprié de définir **DecodePixelType** sur **Logical** si, par exemple, vous voulez que **DecodePixelWidth** et **DecodePixelHeight** correspondent aux propriétés de hauteur et de largeur du contrôle d’image dans lequel s’affiche l’image. Si vous utilisez le comportement par défaut qui consiste à utiliser des pixels physiques, vous devez tenir compte du facteur d’échelle du système actuel et être attentif aux notifications de modification d’échelle au cas où l’utilisateur modifie ses préférences d’affichage.
 
-In some cases where an appropriate decode size cannot be determined ahead of time, you should defer to XAML’s automatic right-size-decoding, which will make a best effort attempt to decode the image at the appropriate size if an explicit DecodePixelWidth/DecodePixelHeight is not specified.
+Dans certains cas, quand une taille de décodage appropriée ne peut pas être déterminée à l’avance, vous devez vous en remettre au décodage automatique à la taille adéquate du code XAML qui tente de décoder au mieux l’image à la taille appropriée si aucun paramètre DecodePixelWidth/DecodePixelHeight explicite n’est spécifié.
 
-You should set an explicit decode size if you know the size of the image content ahead of time. You should also in conjunction set [**DecodePixelType**](https://msdn.microsoft.com/library/windows/apps/Dn298545) to **Logical** if the supplied decode size is relative to other XAML element sizes. For example, if you explicitly set the content size with Image.Width and Image.Height, you could set DecodePixelType to DecodePixelType.Logical to use the same logical pixel dimensions as an Image control, and then explicitly use BitmapImage.DecodePixelWidth and/or BitmapImage.DecodePixelHeight to control the size of the image to achieve potentially large memory savings.
+Vous devez définir une taille de décodage explicite si vous connaissez à l’avance la taille du contenu image. Vous devez également définir [**DecodePixelType**](https://msdn.microsoft.com/library/windows/apps/Dn298545) sur **Logical** si la taille de décodage fournie dépend de la taille d’autres éléments XAML. Par exemple, si vous définissez explicitement la taille du contenu avec Image.Width et Image.Height, vous pouvez définir DecodePixelType sur DecodePixelType.Logical pour utiliser les mêmes dimensions de pixels logiques qu’un contrôle d’image, puis utiliser explicitement BitmapImage.DecodePixelWidth et/ou BitmapImage.DecodePixelHeight pour contrôler la taille de l’image afin de pouvoir éventuellement économiser une grande capacité de mémoire.
 
-Note that Image.Stretch should be considered when determining the size of the decoded content.
+Remarque : Prenez en considération Image.Stretch quand vous déterminez la taille du contenu décodé.
 
-#### Images used inside of BitmapIcons fall back to decoding to natural size 
+#### Les images utilisées à l’intérieur de BitmapIcons utilisent le décodage à la taille naturelle 
 
-Set an explicit decode size to create a version of the image at the exact size it will be drawn on-screen by using the [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) and [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) properties.
+Définissez une taille de décodage explicite pour créer une version de l’image à la taille exacte qui sera affichée à l’écran à l’aide des propriétés [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) et [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241).
 
-#### Images that appear extremely large on screen fall back to decoding to natural size 
+#### Les images qui s’affichent très grandes à l’écran utilisent le décodage à la taille naturelle 
 
-Images that appear extremely large on screen fall back to decoding to natural size. Set an explicit decode size to create a version of the image at the exact size it will be drawn on-screen by using the [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) and [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) properties.
+Les images qui s’affichent très grandes à l’écran utilisent le décodage à la taille naturelle. Définissez une taille de décodage explicite pour créer une version de l’image à la taille exacte qui sera affichée à l’écran à l’aide des propriétés [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) et [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241).
 
-#### Image is hidden
+#### L’image est masquée
 
-The image is hidden via setting Opacity to 0 or Visibility to Collapsed on the host image element or brush or any parent element. Images not visible on screen due to clipping or transparency may fall back to decoding to natural size. 
+L’image est masquée en définissant Opacity sur0 ou Visibility sur Collapsed sur l’élément ou pinceau image hôte, ou tout autre élément parent. Les images qui ne sont pas visibles à l’écran en raison du détourage ou de la transparence peuvent utiliser le décodage à la taille naturelle. 
 
-#### Image is using NineGrid property
+#### L’image utilise la propriété NineGrid
 
-When an image is used for a [**NineGrid**](https://msdn.microsoft.com/library/windows/apps/BR242756), the image will use a software rasterization path, which will not scale images at all. Additionally, it must store a copy of the image in both software and hardware memory. When using **NineGrid**, your app should pre-scale its images to approximately the size they will be rendered at.
+Quand une image est utilisée pour un [**NineGrid**](https://msdn.microsoft.com/library/windows/apps/BR242756), elle utilise un chemin de rastérisation logicielle qui ne met pas du tout les images à l’échelle. En outre, elle doit stocker une copie de l’image dans la mémoire logicielle et matérielle. Quand vous utilisez **NineGrid**, votre application doit effectuer une mise à l’échelle préalable de ses images à leur taille de rendu approximative.
 
-Images that use the NineGrid property fall back to decoding to natural size. Consider adding the ninegrid effect to the original image.
+Les images qui utilisent la propriété NineGrid utilisent le décodage à la taille naturelle. Ajoutez l’effet ninegrid à l’image d’origine.
 
-#### DecodePixelWidth or DecodePixelHeight are set to a size that's larger than the image will appear on screen 
+#### DecodePixelWidth ou DecodePixelHeight sont définis sur une taille plus grande que celle de l’image qui s’affiche à l’écran 
 
-If DecodePixelWidth/Height are explicitly set larger than the image that will be displayed on-screen, the app will unnecessarily use extra memory, up to 4 bytes per pixel, which quickly becomes expensive for large images. The image will also be scaled down using bilinear scaling, which could cause it to appear blurry for large scale factors.
+Si les paramètres DecodePixelWidth/Height sont explicitement définis sur des valeurs plus grandes que la taille de l’image affichée à l’écran, l’application utilise inutilement de la mémoire supplémentaire (jusqu’à 4octets par pixel), ce qui devient rapidement coûteux pour les grandes images. L’image est également réduite à l’aide d’une mise à l’échelle bilinéaire, ce qui risque de la faire apparaître floue pour les grands facteurs d’échelle.
 
-#### Image is decoded as part of producing a Drag and Drop image
+#### L’image est décodée dans le cadre de la production d’une image de Glisser- déplacer
 
-Set an explicit decode size to create a version of the image at the exact size it will be drawn on-screen by using the [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) and [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) properties.
+Définissez une taille de décodage explicite pour créer une version de l’image à la taille exacte qui sera affichée à l’écran à l’aide des propriétés [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) et [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241).
 
-## Collapsed elements at load time
+## Éléments réduits au moment du chargement
 
-A common pattern in apps is to hide elements in the UI initially and show them at a later time. In most cases these elements should be deferred using x:DeferLoadStrategy to avoid paying the cost of creating the element at load time.
+Un modèle courant dans les applications consiste à d’abord masquer des éléments dans l’interface utilisateur pour les afficher plus tard. Dans la plupart des cas, ces éléments doivent être différés à l’aide de x:DeferLoadStrategy pour éviter de payer le coût de création de l’élément au moment du chargement.
 
-This includes cases where a boolean to visibility converter is used to hide items until a later time.
-
-### Impact
-
-Collapsed elements are loaded alongside other elements and contribute to an increase in load time.
-
-### Cause
-
-This rule was triggered because an element was collapsed at load time. Collapsing an element, or setting its opacity to 0, does not prevent the element from being created. This rule could be caused by an app that uses a Boolean to visibility converter that defaults to false.
-
-### Solution
-
-Using x:DeferLoadStrategy, you can delay the loading of a piece of UI, and load it when needed. This is good way to delay processing UI that is not visible in the first frame. You can opt to load the element when needed, or as part of a set of delayed logic. To trigger loading, call findName on the element you wish to load.
-
-In some cases, using findName to show a piece of UI may not be the answer. This is true if you are expecting to realize a significant piece of UI on the click of a button with very low latency. In this case, you should use x:DeferLoadStrategy and set Visibility to Collapsed on the element you wish to realize. After the page has been loaded and the UI thread is free, you can call findName when necessary to load the elements. The elements won't be visible to the user until you set the Visibility of the element to Visible.
-
-## ListView is not virtualized
-
-UI virtualization is the most important improvement you can make to improve collection performance. This means that UI elements representing the items are created on demand. For an items control bound to a 1000-item collection, it would be a waste of resources to create the UI for all the items at the same time because they can't all be displayed at the same time. ListView and GridView (and other standard ItemsControl-derived controls) perform UI virtualization for you. When items are close to being scrolled into view (a few pages away), the framework generates the UI for the items and caches them. When it's unlikely that the items will be shown again, the framework re-claims the memory.
-
-UI virtualization is just one of several key factors to improving collection performance. Reducing the complexity of collection items and data virtualization are two other important aspects to improving collection performance. For more information about improving collection performance within ListViews and GridViews, see the articles on [ListView and GridView UI optimization](https://msdn.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview) and [ListView and Gridview data virtualization](https://msdn.microsoft.com/windows/uwp/debug-test-perf/listview-and-gridview-data-optimization).
+C’est le cas notamment quand un convertisseur de valeur booléenne en valeur visibility est utilisé pour masquer des éléments afin de les afficher plus tard.
 
 ### Impact
 
-A non-virtualized ItemsControl will increase load time and resource usage by loading more of its child items than necessary.
+Les éléments réduits sont chargés avec d’autres éléments et contribuent à une augmentation du temps de chargement.
 
 ### Cause
 
-The concept of a viewport is critical to UI virtualization because the framework must create the elements that are likely to be shown. In general, the viewport of an ItemsControl is the extent of the logical control. For example, the viewport of a ListView is the width and height of the ListView element. Some panels allow child elements unlimited space, examples being ScrollViewer and a Grid, with auto-sized rows or columns. When a virtualized ItemsControl is placed in a panel like that, it takes enough room to display all of its items, which defeats virtualization. 
+Cette règle a été déclenchée, car un élément a été réduit au moment du chargement. Le fait de réduire un élément ou de définir son opacité sur0 n’empêche pas la création de l’élément. Cette règle peut être déclenchée par une application qui utilise un convertisseur de valeur booléenne en valeur Visibility défini par défaut sur false.
 
 ### Solution
 
-Restore virtualization by setting a width and height on the ItemsControl you are using.
+x:DeferLoadStrategy vous permet de retarder le chargement d’un élément d’interface utilisateur et de le charger quand c’est nécessaire. C’est un bon moyen de retarder le traitement de l’interface utilisateur qui n’est pas visible dans le premier frame. Vous pouvez choisir de charger l’élément selon les besoins, ou dans le cadre d’un ensemble de logique différée. Pour déclencher le chargement, appelez findName sur l’élément que vous voulez charger.
 
-## UI thread blocked or idle during load
+Dans certains cas, l’utilisation de findName pour afficher un élément d’interface utilisateur n’est peut-être pas appropriée. Cela est vrai si vous prévoyez de réaliser une partie significative de l’interface utilisateur à partir d’un clic sur un bouton avec une très faible latence. Dans ce cas, vous devez utiliser x:DeferLoadStrategy et définir Visibility sur Collapsed pour l’élément que vous voulez réaliser. Une fois que la page est chargée et que le thread d’interface utilisateur est libre, vous pouvez appeler findName selon vos besoins pour charger les éléments. Les éléments ne sont pas visibles pour l’utilisateur si la propriété Visibility de l’élément n’est pas définie sur Visible.
 
-UI thread blocking refers to synchronous calls to functions executing off-thread that block the UI thread.  
+## ListView n’est pas virtualisé
 
-For a full list of best practices to improve your app's startup performance, see [Best practices for your app's startup performance](https://msdn.microsoft.com/windows/uwp/debug-test-perf/best-practices-for-your-app-s-startup-performance) and [Keep the UI thread responsive](https://msdn.microsoft.com/windows/uwp/debug-test-perf/keep-the-ui-thread-responsive).
+La virtualisation de l’interface utilisateur est le point le plus important que vous pouvez améliorer pour augmenter les performances des collections. Elle implique la création à la demande des éléments d’interface utilisateur. Pour un contrôle d’éléments lié à une collection de 1000éléments, créer l’interface utilisateur simultanément pour tous les éléments constituerait un gaspillage de ressources, car il n’est pas possible d’afficher tous les éléments en même temps. Les contrôles ListView et GridView (et d’autres contrôles standard dérivés de ItemsControl) effectuent la virtualisation de l’interface utilisateur à votre place. Quand des éléments vont bientôt défiler dans l’affichage (quelques pages plus loin), l’infrastructure génère l’interface utilisateur pour ces éléments et les met en cache. Quand il est peu probable que les éléments soient réaffichés, l’infrastructure récupère la mémoire qui leur était allouée.
+
+La virtualisation de l’interface utilisateur est l’un des nombreux facteurs clés qui permettent d’améliorer les performances des collections. La réduction de la complexité des éléments d’une collection et la virtualisation des données sont deux autres aspects importants qui contribuent à l’amélioration des performances des collections. Pour plus d’informations sur l’amélioration des performances des collections dans les contrôles ListView et GridView, voir les articles sur l’[Optimisation des options d’interface ListView et GridView](https://msdn.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview) et [Virtualisation des données ListView et Gridview](https://msdn.microsoft.com/windows/uwp/debug-test-perf/listview-and-gridview-data-optimization).
 
 ### Impact
 
-A blocked or idle UI thread during load time will prevent layout and other UI operations, increasing startup time.
+Un ItemsControl non virtualisé augmente le temps de chargement et l’utilisation des ressources en chargeant plus d’éléments enfants que nécessaire.
 
 ### Cause
 
-Platform code for UI and your app’s code for UI all are executed on the same UI thread. Only one instruction can execute on that thread at a time, so if your app code takes too long to process an event, the framework can’t run layout or raise new events representing user interaction. The responsiveness of your app is related to the availability of the UI thread to process work.
+La fenêtre d’affichage est un concept essentiel de la virtualisation de l’interface utilisateur, car l’infrastructure doit créer les éléments qui sont susceptibles d’être affichés. La fenêtre d’affichage d’un contrôle ItemsControl est généralement l’extension du contrôle logique. Par exemple, la fenêtre d’affichage d’un contrôle ListView correspond à la largeur et à la hauteur de l’élément ListView. Certains volets offrent un espace illimité aux éléments enfants (par exemple, ScrollViewer et Grid) avec un dimensionnement automatique des lignes ou des colonnes. Quand un contrôle ItemsControl virtualisé est placé dans un panneau de ce type, il occupe suffisamment d’espace pour afficher tous ses éléments, au détriment de la virtualisation. 
 
 ### Solution
 
-Your app can be interactive even though there are parts of the app that aren't fully functional. For example, if your app displays data that takes a while to retrieve, you can make that code execute independently of the app's startup code by retrieving the data asynchronously. When the data is available, populate the app's user interface with the data. To help keep your app responsive, the platform provides asynchronous versions of many of its APIs. An asynchronous API ensures that your active execution thread never blocks for a significant amount of time. When you call an API from the UI thread, use the asynchronous version if it's available.
+Restaurez la virtualisation en définissant une largeur et une hauteur pour le ItemsControl que vous utilisez.
 
-## {Binding} is being used instead of {x:Bind}
+## Thread d’interface utilisateur bloqué ou inactif pendant le chargement
 
-This rule is fired when your app uses a {Binding} statement. To improve app performance, apps should consider using {x:Bind}.
+Le thread d’interface utilisateur est bloqué en cas d’appels synchrones à des fonctions qui s’exécutent en dehors du thread.  
+
+Pour obtenir la liste complète des bonnes pratiques qui permettent d’améliorer les performances de démarrage de votre application, voir [Meilleures pratiques en matière de performances de démarrage de votre application](https://msdn.microsoft.com/windows/uwp/debug-test-perf/best-practices-for-your-app-s-startup-performance) et [Assurer la réactivité du thread de l’interface utilisateur](https://msdn.microsoft.com/windows/uwp/debug-test-perf/keep-the-ui-thread-responsive).
 
 ### Impact
 
-{Binding} runs in more time and more memory than {x:Bind}.
+Un thread d’interface utilisateur bloqué ou inactif au moment du chargement empêche l’exécution de la disposition et d’autres opérations de l’interface utilisateur, ce qui augmente le temps de démarrage.
 
 ### Cause
 
-App is using {Binding} instead of {x:Bind}. {Binding} brings with it non-trivial working set and CPU overhead. Creating a {Binding} causes a series of allocations, and updating a binding target can cause reflection and boxing.
+Le code de la plateforme et le code de votre application pour l’interface utilisateur sont exécutés sur le même thread d’interface utilisateur. Une seule instruction à la fois peut être exécutée sur ce thread. Par conséquent, si le code de votre application met trop longtemps à traiter un événement, l’infrastructure ne peut pas exécuter la disposition ou déclencher de nouveaux événements représentant une interaction utilisateur. La réactivité de votre application est liée à la disponibilité du thread d’interface utilisateur pour exécuter les tâches.
 
 ### Solution
 
-Use the {x:Bind} markup extension, which compiles bindings at build time. {x:Bind} bindings (often referred-to as compiled bindings) have great performance, provide compile-time validation of your binding expressions, and support debugging by enabling you to set breakpoints in the code files that are generated as the partial class for your page. 
+Votre application peut être interactive même si certaines de ses parties ne sont pas totalement fonctionnelles. Par exemple, si votre application affiche des données qui sont longues à récupérer, vous pouvez faire en sorte que le code chargé de récupérer ces données s’exécute indépendamment du code de démarrage de l’application en récupérant les données de façon asynchrone. Quand les données sont disponibles, fournissez-les à l’interface utilisateur de l’application. Pour que l’application reste réactive, la plateforme fournit des versions asynchrones de plusieurs de ses API. Une API asynchrone permet de garantir que votre thread d’exécution actif n’est jamais bloqué pendant un laps de temps significatif. Si vous appelez une API à partir du thread d’interface utilisateur, utilisez la version asynchrone si elle est disponible.
 
-Note that x:Bind is not suitable in all cases such as late-bound scenarios. For a full list of cases not covered by {x:Bind}, see the {x:Bind} documentation.
+## {Binding} est utilisé au lieu de {x:Bind}
 
-## x:Name is being used instead of x:Key
-
-ResourceDictionaries are generally used to store your resources at a somewhat global level, that is, resources that your app wants to reference in multiple places; for example, styles, brushes, templates, and so on. In general, we have optimized ResourceDictionaries to not instantiate resources unless they're asked for. But there are few places where you need to be a little careful.
+Cette règle est déclenchée quand votre application utilise une instruction {Binding}. Pour améliorer leurs performances, les applications doivent utiliser {x:Bind}.
 
 ### Impact
 
-Any resource with x:Name will be instantiated as soon as the ResourceDictionary is created. This happens because x:Name tells the platform that your app needs field access to this resource, so the platform needs to create something to create a reference to.
+L’exécution de {Binding} demande plus de temps et de mémoire que celle de {x:Bind}.
 
 ### Cause
 
-Your app is setting x:Name on a resource.
+L’application utilise {Binding} plutôt que {x:Bind}. {Binding} entraîne une plage de travail non triviale et une surcharge de processeur. La création d’un {Binding} entraîne une série d’allocations, et la mise à jour d’une cible de liaison peut entraîner des événements de boxing et de réflexion.
 
 ### Solution
 
-Use x:Key instead of x:Name when you are not referencing resources from code-behind.
+Utilisez l’extension de balisage {x:Bind}, qui compile les liaisons au moment de la génération. Les liaisons {x:Bind} (souvent appelées liaisons compilées) offrent d’excellentes performances, valident vos expressions de liaison au moment de la compilation et prennent en charge le débogage en vous permettant de définir des points d’arrêt dans les fichiers de code générés en tant que classe partielle pour votre page. 
 
-## Collections control is using a non-virtualizing panel
+Notez que x:Bind ne convient pas dans tous les cas, comme dans les scénarios à liaison tardive. Pour obtenir la liste complète des cas non couverts par {x:Bind}, voir la documentation de {x:Bind}.
 
-If you provide a custom items panel template (see ItemsPanel), make sure you use a virtualizing panel such as ItemsWrapGrid or ItemsStackPanel. If you use VariableSizedWrapGrid, WrapGrid, or StackPanel, you will not get virtualization. Additionally, the following ListView events are raised only when using an ItemsWrapGrid or an ItemsStackPanel: ChoosingGroupHeaderContainer, ChoosingItemContainer, and ContainerContentChanging.
+## x:Name est utilisé au lieu de x:Key
 
-UI virtualization is the most important improvement you can make to improve collection performance. This means that UI elements representing the items are created on demand. For an items control bound to a 1000-item collection, it would be a waste of resources to create the UI for all the items at the same time because they can't all be displayed at the same time. ListView and GridView (and other standard ItemsControl-derived controls) perform UI virtualization for you. When items are close to being scrolled into view (a few pages away), the framework generates the UI for the items and caches them. When it's unlikely that the items will be shown again, the framework re-claims the memory.
-
-UI virtualization is just one of several key factors to improving collection performance. Reducing the complexity of collection items and data virtualization are two other important aspects to improving collection performance. For more information about improving collection performance within ListViews and GridViews, see the articles on [ListView and GridView UI optimization](https://msdn.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview) and [ListView and Gridview data virtualization](https://msdn.microsoft.com/windows/uwp/debug-test-perf/listview-and-gridview-data-optimization).
+Les ResourceDictionaries sont généralement utilisés pour stocker vos ressources à un niveau global, c’est-à-dire les ressources que votre application veut référencer à plusieurs endroits. Par exemple, les styles, les pinceaux, les modèles et ainsi de suite. En règle générale, nous avons optimisé les ResourceDictionaries pour qu’ils n’instancient pas de ressources, sauf demande contraire. Cependant, vous devez être prudent dans quelques emplacements.
 
 ### Impact
 
-A non-virtualized ItemsControl will increase load time and resource usage by loading more of its child items than necessary.
+Toutes les ressources comprenant x:Name sont instanciées dès que le ResourceDictionary est créé. En effet, x:Name indique à la plateforme que votre application doit accéder à cette ressource. La plateforme doit donc créer un élément à référencer.
 
 ### Cause
 
-You are using a panel that does not support virtualization.
+Votre application définit x:Name sur une ressource.
 
 ### Solution
 
-Use a virtualizing panel such as ItemsWrapGrid or ItemsStackPanel.
+Utilisez x:Key à la place de x:Name quand vous ne référencez pas de ressources à partir de code-behind.
 
-## Accessibility: UIA elements with no name
+## Le contrôle Collections utilise un panneau de non-virtualisation
 
-In XAML, you can provide a name by setting AutomationProperties.Name. Many automation peers provide a default name to UIA if AutomationProperties.Name is unset. 
+Si vous fournissez un modèle de panneau d’éléments personnalisé (voir ItemsPanel), utilisez un panneau de virtualisation tel que ItemsWrapGrid ou ItemsStackPanel. Si vous utilisez VariableSizedWrapGrid, WrapGrid ou StackPanel, vous ne pouvez pas bénéficier de la virtualisation. Par ailleurs, les événements ListView suivants sont déclenchés uniquement quand un ItemsWrapGrid ou un ItemsStackPanel sont utilisés: ChoosingGroupHeaderContainer, ChoosingItemContainer et ContainerContentChanging.
+
+La virtualisation de l’interface utilisateur est le point le plus important que vous pouvez améliorer pour augmenter les performances des collections. Elle implique la création à la demande des éléments d’interface utilisateur. Pour un contrôle d’éléments lié à une collection de 1000éléments, créer l’interface utilisateur simultanément pour tous les éléments constituerait un gaspillage de ressources, car il n’est pas possible d’afficher tous les éléments en même temps. Les contrôles ListView et GridView (et d’autres contrôles standard dérivés de ItemsControl) effectuent la virtualisation de l’interface utilisateur à votre place. Quand des éléments vont bientôt défiler dans l’affichage (quelques pages plus loin), l’infrastructure génère l’interface utilisateur pour ces éléments et les met en cache. Quand il est peu probable que les éléments soient réaffichés, l’infrastructure récupère la mémoire qui leur était allouée.
+
+La virtualisation de l’interface utilisateur est l’un des nombreux facteurs clés qui permettent d’améliorer les performances des collections. La réduction de la complexité des éléments d’une collection et la virtualisation des données sont deux autres aspects importants qui contribuent à l’amélioration des performances des collections. Pour plus d’informations sur l’amélioration des performances des collections dans les contrôles ListView et GridView, voir les articles sur l’[Optimisation des options d’interface ListView et GridView](https://msdn.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview) et [Virtualisation des données ListView et Gridview](https://msdn.microsoft.com/windows/uwp/debug-test-perf/listview-and-gridview-data-optimization).
 
 ### Impact
 
-If a user reaches an element with no name, they often will have no way of knowing what the element relates to. 
+Un ItemsControl non virtualisé augmente le temps de chargement et l’utilisation des ressources en chargeant plus d’éléments enfants que nécessaire.
 
 ### Cause
 
-Element’s UIA name is null or empty. This rule checks what UIA sees, not the value of the AutomationProperties.Name.
+Vous utilisez un panneau qui ne prend pas en charge la virtualisation.
 
 ### Solution
 
-Set the AutomationProperties.Name property in the control's XAML to an appropriate localized string.
+Utilisez un panneau de virtualisation tel que ItemsWrapGrid ou ItemsStackPanel.
 
-Sometimes the right application fix isn't to provide a name, it's to remove the UIA element from all but the raw trees. You can do that in XAML by setting AutomationProperties.AccessibilityView = “Raw”.
+## Accessibilité: Éléments UIA sans nom
 
-## Accessibility: UIA elements with the same Controltype should not have the same name
-
-Two UIA elements with the same UIA parent must not have the same Name and ControlType. It's okay to have two controls with the same Name if they have different ControlTypes. 
-
-This rule doesn't check for duplicate names with different parents. However, in most cases, you shouldn't duplicate Names and ControlTypes within an entire window, even with different parents. Cases where duplicate names within a window are acceptable are two lists with identical items. In this case, the list items are expected to have identical Names and ControlTypes.
+En XAML, vous pouvez indiquer un nom en définissant AutomationProperties.Name. De nombreux pairs Automation fournissent un nom par défaut à UIA si AutomationProperties.Name n’est pas défini. 
 
 ### Impact
 
-If a user reaches an element with the same Name and ControlType as another element with the same UIA parent, the user may not be able to distinguish the difference between the elements.
+Si un utilisateur accède à un élément sans nom, il n’a souvent aucun moyen de savoir ce à quoi ce dernier fait référence. 
 
 ### Cause
 
-UIA elements with the same UIA parent have the same Name and ControlType.
+Le nom UIA de l’élément est null ou vide. Cette règle vérifie ce que voit UIA, et non la valeur d’AutomationProperties.Name.
 
 ### Solution
 
-Set a name in XAML using AutomationProperties.Name. In lists where this commonly occurs, use binding to bind the value of the AutomationProperties.Name to a data source.
+Définissez la propriété AutomationProperties.Name dans le code XAML du contrôle sur une chaîne localisée appropriée.
+
+Parfois, le correctif d’application approprié n’est pas de fournir un nom, mais de supprimer l’élément UIA de tous les emplacements à part l’arborescence brute. Pour ce faire, définissez dans le code XAML la propriété AutomationProperties.AccessibilityView sur Raw.
+
+## Accessibilité: Les éléments UIA avec le même Controltype ne doivent pas avoir le même nom
+
+Deux éléments UIA avec le même parent UIA ne doivent pas avoir le même nom ni le même ControlType. Il est possible d’avoir deux contrôles du même nom s’ils ont des ControlTypes différents. 
+
+Cette règle ne vérifie pas si les noms en double ont des parents différents. Toutefois, dans la plupart des cas, vous ne devez pas dupliquer les noms et les ControlTypes au sein d’une fenêtre, même avec des parents différent. Les noms dupliqués au sein d’une fenêtre sont acceptés en cas de deux listes avec des éléments identiques. Dans ce cas, les éléments de liste doivent avoir des noms et des ControlTypes identiques.
+
+### Impact
+
+Si un utilisateur accède à un élément de même nom et ControlType qu’un autre élément qui a le même parent UIA, l’utilisateur peut ne pas être capable de distinguer la différence entre les éléments.
+
+### Cause
+
+Les éléments UIA qui ont le même parent UIA ont le même nom et le même ControlType.
+
+### Solution
+
+Définissez un nom dans le code XAML à l’aide d’AutomationProperties.Name. Dans les listes où cette situation se produit fréquemment, utilisez une liaison pour lier la valeur d’AutomationProperties.Name à une source de données.
 
 
 

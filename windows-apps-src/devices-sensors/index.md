@@ -5,7 +5,7 @@ title: Appareils, capteurs et alimentation
 description: "Pour offrir une expérience riche à vos utilisateurs, vous serez peut-être amené à intégrer des appareils ou capteurs externes dans votre application."
 translationtype: Human Translation
 ms.sourcegitcommit: d6757aba4be1a9e326e9e0dade16663286d24f72
-ms.openlocfilehash: ae6ab11963ed06083e581ce42f39ce483d53e0d6
+ms.openlocfilehash: 25eb40c8e6e1c840d2943b4dca3e42e1c164478d
 
 ---
 # Appareils, capteurs et alimentation
@@ -35,6 +35,6 @@ Pour offrir une expérience riche à vos utilisateurs, vous serez peut-être ame
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

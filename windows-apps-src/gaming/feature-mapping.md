@@ -5,7 +5,7 @@ description: "Découvrez comment les fonctionnalités utilisées par votre jeu D
 ms.assetid: 3aa8a114-4e47-ae0a-9447-88ba324377b8
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 3a9e9c32ed2d892674592f32d0f067fed668d9d1
+ms.openlocfilehash: 6ab76921f1e8b613010f99eba6a141daca128ea5
 
 ---
 
@@ -674,6 +674,6 @@ Utilisez le tableau suivant pour convertir les formats Direct3D 9 en formats DXG
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

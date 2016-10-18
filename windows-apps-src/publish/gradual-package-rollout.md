@@ -1,42 +1,42 @@
 ---
 author: JnHs
-Description: If your app uses an AdMediatorControl or AdControl to display banner ads, you could increase your ad fill rate and revenue by showing Microsoft affiliate ads in your app.
-title: Gradual package rollout
+Description: "Si votre application utilise AdMediatorControl ou AdControl pour afficher des bannières publicitaires, vous pourriez augmenter votre taux de remplissage et vos revenus publicitaires en présentant des annonces des affiliés Microsoft dans votre application."
+title: "Déploiement progressif de packages"
 translationtype: Human Translation
 ms.sourcegitcommit: ac9eed95edba99cdba914ff21b25383f35a20012
 ms.openlocfilehash: 3ec642ef0a21d06b20cabb12a47d2abcfd19fe59
 
 ---
 
-# Gradual package rollout
+# Déploiement progressif de packages
 
-When you publish an update to a submission, you can choose to gradually roll out the updated packages to a percentage of your app’s customers on Windows 10. This allows you to monitor feedback and analytic data for the specific packages to make sure you’re confident about the update before rolling it out more broadly. You can increase the percentage (or halt the update) any time without having to create a new submission. 
+Lorsque vous publiez une mise à jour d’une soumission, vous pouvez choisir de déployer progressivement les packages de mise à jour pour un pourcentage des clients de votre application sur Windows10. Cela vous permet de surveiller les commentaires et les données d’analyse des packages spécifiques et de vérifier l’adéquation de votre mise à jour avant de la déployer plus largement. Vous pouvez augmenter le pourcentage (ou arrêter la mise à jour) à tout moment sans avoir à créer une nouvelle soumission. 
 
-> **Important** Your rollout selections apply to all of your packages, but will only apply to your customers running OS versions that support package flights (Windows.Desktop build 10586 or later; Windows.Mobile build 10586.63 or later, and Xbox), including any customers who get the app via [Store-managed (online) licensing](organizational-licensing.md) via the [Windows Store for Business](https://www.microsoft.com/business-store). When using gradual package rollout, customers on earlier OS versions will not get packages from the latest submission until you finalize the package rollout as described below.
+> **Important** Vos choix de déploiement s’appliquent à tous vos packages, mais uniquement pour les clients qui exécutent des versions de système d’exploitation prenant en charge des versions d’évaluation de package (Windows.Desktop build10586 ou version ultérieure, Windows.Mobile build10586.63 ou version ultérieure et Xbox), y compris les clients qui obtiennent l’application via le [service de gestion de licences (en ligne) du Windows Store](organizational-licensing.md) dans [Windows Store pour Entreprises](https://www.microsoft.com/business-store). Lorsque vous utilisez le déploiement progressif de packages, les clients utilisant des versions antérieures du système d’exploitation n’obtiennent pas les packages de la dernière soumission tant que vous n’avez pas finalisé le déploiement de packages comme décrit ci-dessous.
 
-Note that all of your customers will see the Store listing details that you entered with your latest submission. The rollout settings only apply to the packages that customers receive, both for new acquisitions and for updates to existing customers.
+Notez que les informations de description du Windows Store que vous avez entrées lors de votre dernière soumission sont visibles de tous les clients. Les paramètres de déploiement s’appliquent uniquement aux packages reçus par les clients. Cela concerne les nouvelles acquisitions et les mises à jour reçues par les clients existants.
 
-> **Tip** Package rollout distributes packages to a random selection of customers in the percentages that you specify. To distribute specific packages to selected customers that you specify, you can use package flights.  You can also combine rollout with your package flights if you want to gradually distribute an update to one of your flight groups.
+> **Conseil** Le déploiement de packages distribue les packages à un ensemble aléatoire de clients conformément au pourcentage que vous avez spécifié. Pour distribuer des packages spécifiques à des clients sélectionnés par vous, vous pouvez utiliser des versions d’évaluation de package.  Vous pouvez également combiner le lancement avec vos versions d’évaluation de package si vous souhaitez distribuer progressivement une mise à jour à l’un de vos groupes de versions d’évaluation.
 
-## Setting the rollout percentage
+## Définition du pourcentage de déploiement
 
-You can select to roll out your update on the **Packages** page of an updated submission. To do so, check the box that says **Roll out update gradually after this submission is published (to Windows 10 customers only)**. Then enter the percentage of customers who should get the update when the submission is first published. For example, you might enter 5 if you want to start by rolling the update out to only a small percentage of your app’s customers.
+Vous pouvez choisir de déployer votre mise à jour sur la page **Packages** d’une soumission mise à jour. Pour ce faire, activez la case à cocher **Déployer progressivement la mise à jour après la publication de cette soumission (pour les clients Windows10 uniquement)**. Ensuite, entrez le pourcentage de clients qui devront obtenir la mise à jour lors de la première publication de la soumission. Par exemple, vous pouvez entrer5 si vous souhaitez commencer par déployer la mise à jour pour un faible pourcentage de clients de votre application.
 
-Click **Update** to save your selections. After your app completes the certification process, the packages will be distributed to customers according to the percentage that you specified, both for new acquisitions and for updates to existing customers.
+Cliquez sur **Mettre à jour** pour enregistrer vos choix. Une fois que votre application a terminé le processus de certification, les packages sont distribués aux clients conformément au pourcentage que vous avez spécifié. Cela concerne les nouvelles acquisitions et les mises à jour effectuées par les clients existants.
 
-## Adjusting the rollout after the submission is published
+## Réglage du déploiement après la publication de la soumission
 
-To adjust the rollout after the submission has been published, go to your app’s Overview page. You can drag the selector to change the percentage of customers getting the packages from your newest submission. Click **Update** to save your selections. The packages will then start to be distributed to customers according to the percentage that you specified, both for new acquisitions and for updates to existing customers.
+Pour ajuster le déploiement après la publication de la soumission, accédez à la page de vue d’ensemble de votre application. Vous pouvez faire glisser le sélecteur pour modifier le pourcentage de clients qui obtiendront les packages de la dernière soumission. Cliquez sur **Mettre à jour** pour enregistrer vos choix. Les packages commencent ensuite à être distribués aux clients conformément au pourcentage que vous avez spécifié. Cela concerne les nouvelles acquisitions et les mises à jour effectuées par des clients existants.
 
-## Completing the rollout
+## Fin du déploiement
 
-Before you can create a new submission, you'll need to complete the package rollout. You can **finalize** the rollout and distribute the latest packages to all of your customers, or **halt** the rollout to stop distributing the latest packages.
+Avant de pouvoir créer une nouvelle soumission, vous devez mettre un terme au déploiement de packages. Vous pouvez **finaliser** le déploiement et distribuer les derniers packages à tous vos clients, ou **arrêter** le déploiement pour mettre un terme à la distribution des derniers packages.
 
-If you have confidence in the update and would like to make it available to all of your customers, click **Finalize package rollout** to distribute the newest packages to all of your customers.
+Si vous avez confiance dans la mise à jour et que vous voulez la rendre disponible pour tous vos clients, cliquez sur **Finaliser le déploiement de package** pour distribuer les derniers packages à tous vos clients.
 
-> **Tip** Changing the rollout percentage to 100% does not ensure that all of your customers will get the packages from the latest submissions, because some customers may be on OS versions that don’t support rollout. You must finalize the rollout in order to stop distributing the older packages and update all existing customers to the newer ones.
+> **Conseil** Le fait de redéfinir le pourcentage de déploiement sur 100% ne garantit pas que tous vos clients obtiendront les packages des dernières soumissions, car certains clients utilisent sans doute des versions de système d’exploitation ne prenant pas en charge le déploiement. Vous devez finaliser le déploiement pour arrêter la distribution des packages plus anciens et mettre à jour les clients existants avec les nouvelles versions.
 
-If you find that there are problems with the update and you don’t want to distribute it any further, you can click **Halt package rollout** to stop distributing packages from the latest submission. Once you halt a package rollout, those packages will no longer be distributed to any customers; only the packages from the previous submission will be used for any new or updating customers. However, any customers who already had the newer packages will keep those packages; they won’t be rolled back to the previous version. To provide an update to these customers, you’ll need to create a new submission with the packages you’d like them to get. Note that if you use a gradual rollout in your next submission, customers who had the package you halted will be offered the new update in the same order they were offered the halted package. The new rollout will be between your last finalized submission and your newest submission; once you halt a package rollout, those packages will no longer be distributed to any customers.
+Si vous constatez des problèmes avec la mise à jour et que vous ne souhaitez plus la distribuer, vous pouvez cliquer sur **Arrêter le déploiement de l’application** pour arrêter la distribution des packages de la dernière soumission. Une fois que vous arrêtez un déploiement de packages, ces packages ne sont plus distribués aux clients. Seuls les packages de la soumission précédente sont utilisés pour les nouveaux clients ou ceux qui effectuent une mise à jour. Toutefois, les clients qui disposaient déjà des packages les plus récents conservent ces packages. La version précédente ne sera pas rétablie pour eux. Pour fournir une mise à jour à ces clients, vous devez créer une nouvelle soumission avec les packages que vous souhaitez qu’ils obtiennent. Notez que si vous utilisez un déploiement progressif lors de votre soumission suivante, les clients qui disposaient du package que vous avez interrompu pourront s’ils le souhaitent obtenir la mise à jour comme ils pouvaient obtenir le package interrompu. Le nouveau déploiement se situera entre votre dernière soumission finalisée et votre soumission la plus récente. Une fois que vous interrompez un déploiement de packages, ces packages ne sont plus distribués à aucun client.
 
 
 

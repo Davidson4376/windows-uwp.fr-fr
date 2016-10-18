@@ -4,8 +4,8 @@ ms.assetid: 79C284CA-C53A-4C24-807E-6D4CE1A29BFA
 description: "Cette section explique comment modifier votre application web PlayReady pour prendre en charge les modifications apportées entre la version Windows8.1 précédente et la version Windows10."
 title: Extension EME (Encrypted Media Extension) PlayReady
 translationtype: Human Translation
-ms.sourcegitcommit: 965443672e52938d39069f14fe23b0c5dbd0ffa8
-ms.openlocfilehash: c575125f1d35f44b873fd3db46d62f89bb726b0b
+ms.sourcegitcommit: 15b8c2cac08e59cfd9bd2c97c3a146cbc2be5548
+ms.openlocfilehash: eb85d9ea29917788612e0aa755465dbd6d1b9ba9
 
 ---
 
@@ -20,9 +20,9 @@ L’utilisation d’éléments multimédias PlayReady dans Internet Explorer per
 
 ## Nouveautés de l’extension EME (Encrypted Media Extension) PlayReady
 
-Cette section répertorie les modifications apportées à l’extension EME PlayReady pour permettre la protection de contenu PlayReady sur Windows 10.
+Cette section fournit la liste des modifications apportées à l’extension EME (Encrypted Media Extension) PlayReady pour activer la protection de contenu PlayReady sur Windows10.
 
-La liste suivante décrit les nouvelles fonctionnalités et les modifications apportées à l’extension EME PlayReady pour Windows 10 :
+La liste suivante décrit les nouvelles fonctionnalités et les modifications apportées à l’extension EME PlayReady pour Windows10:
 
 -   Ajout de la gestion des droits numériques (DRM) en fonction du matériel.
 
@@ -31,11 +31,10 @@ La liste suivante décrit les nouvelles fonctionnalités et les modifications ap
 -   Acquisition proactive de licences non persistantes.
 -   Acquisition de plusieurs licences en un message.
 
-    Vous pouvez utiliser un objet PlayReady avec plusieurs identificateurs de clé (KeyID) dans Windows8.1 ou utiliser des [données de modèle de déchiffrement de contenu (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819) avec plusieurs KeyID.
+    Vous pouvez utiliser un objet PlayReady avec plusieurs identificateurs de clé (KeyID) comme dans Windows8.1 ou utiliser des [données de modèle de déchiffrement de contenu (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819) avec plusieurs KeyID.
 
-    **Remarque** Dans Windows 10, plusieurs identificateurs de clé sont pris en charge sous &lt;KeyID&gt; dans CDMData.
-
-     
+    > [!NOTE]
+    > Dans Windows10, plusieurs identificateurs de clé sont pris en charge sous &lt;KeyID&gt; dans CDMData.
 
 -   Ajout de la prise en charge du délai d’expiration en temps réel ou licence à durée limitée (LDL).
 
@@ -67,11 +66,10 @@ Cette section explique comment votre application web peut utiliser la gestion de
 
 Pour utiliser la gestion des droits numériques en fonction du matériel par PlayReady, votre application web JavaScript doit utiliser la méthode EME **isTypeSupported** avec un identificateur système de clé `com.microsoft.playready.hardware` pour vérifier la prise en charge de la gestion des droits numériques en fonction du matériel par PlayReady à partir du navigateur.
 
-Il arrive que certains contenus ne soient pas pris en charge par la gestion des droits numériques en fonction du matériel. Le contenu Cocktail n’est jamais pris en charge par la gestion des droits numériques en fonction du matériel. Si vous souhaitez lire du contenu Cocktail, vous devez désactiver la gestion des droits numériques en fonction du matériel. Certains types de gestion des droits numériques en fonction du matériel prennent en charge le contenu HEVC et d’autres non. Si vous voulez lire du contenu HEVC et que la gestion des droits numériques en fonction du matériel ne le prend pas en charge, vous voudrez la désactiver.
+Il arrive que certains contenus ne soient pas pris en charge par la gestion des droits numériques en fonction du matériel. Le contenu Cocktail n’est jamais pris en charge par la gestion des droits numériques en fonction du matériel. Si vous souhaitez lire du contenu Cocktail, vous devez désactiver la gestion des droits numériques en fonction du matériel. Certains types de gestion des droits numériques en fonction du matériel prennent en charge le contenu HEVC et d’autres non. Si vous voulez lire du contenu HEVC et que la gestion des droits numériques en fonction du matériel ne le prend pas en charge, vous pouvez la désactiver.
 
-**Remarque** Pour déterminer si le contenu HEVC est pris en charge, après l’instanciation de `com.microsoft.playready`, utilisez la méthode [**PlayReadyStatics.CheckSupportedHardware**](https://msdn.microsoft.com/library/windows/apps/dn986441).
-
- 
+> [!NOTE]
+> Pour déterminer si le contenu HEVC est pris en charge, après l’instanciation de `com.microsoft.playready`, utilisez la méthode [**PlayReadyStatics.CheckSupportedHardware**](https://msdn.microsoft.com/library/windows/apps/dn986441).
 
 ## Ajouter un arrêt sécurisé à votre application web
 
@@ -260,13 +258,14 @@ function formatSecureStopCDMData(encodedSessionId, customData, encodedPublisherC
 }
 ```
 
-**Remarque** La ligne de code `<SessionID>B64 encoded session ID</SessionID>` des données d’arrêt sécurisé dans l’exemple ci-dessus peut être un astérisque (\*), qui constitue un caractère générique pour toutes les sessions d’arrêt sécurisé enregistrées. Autrement dit, la balise **SessionID** peut être une session spécifique, ou un caractère générique (\*) pour sélectionner toutes les sessions d’arrêt sécurisé.
+> [!NOTE]
+> La ligne de code `<SessionID>B64 encoded session ID</SessionID>` des données d’arrêt sécurisé dans l’exemple ci-dessus peut être un astérisque (\*), qui constitue un caractère générique pour toutes les sessions d’arrêt sécurisé enregistrées. Autrement dit, la balise **SessionID** peut être une session spécifique ou un caractère générique (\*) pour sélectionner toutes les sessions d’arrêt sécurisé.
 
 ## Considérations en matière de programmation de l’extension EME (Encrypted Media Extension)
 
 Cette section répertorie les considérations en matière de programmation que vous devez prendre en compte lors de la création de votre application web compatible PlayReady pour Windows10.
 
-Les objets **MSMediaKeys** et **MSMediaKeySession** créés par votre application doivent être maintenus actifs jusqu’à la fermeture de votre application. Pour garantir que ces objets restent actifs, vous pouvez les affecter en tant que variables globales (les variables deviennent hors de portée et sont mises à la corbeille si elles sont déclarées comme variables locales à l’intérieur d’une fonction). L’exemple suivant affecte les variables *g\_msMediaKeys* et *g\_mediaKeySession* en tant que variables globales, avant de les affecter aux objets **MSMediaKeys** et **MSMediaKeySession** dans la fonction.
+Les objets **MSMediaKeys** et **MSMediaKeySession** créés par votre application doivent être maintenus actifs jusqu’à la fermeture de votre application. Pour garantir que ces objets restent actifs, vous pouvez les affecter en tant que variables globales (les variables deviennent hors de portée et sont mises à la corbeille si elles sont déclarées comme variables locales à l’intérieur d’une fonction). L’exemple suivant attribue les variables *g\_msMediaKeys* et *g\_mediaKeySession* en tant que variables globales, avant de les attribuer aux objets **MSMediaKeys** et **MSMediaKeySession** dans la fonction.
 
 ``` syntax
 var g_msMediaKeys;
@@ -294,18 +293,17 @@ function foo() {
 }
 ```
 
-Pour plus d’informations, reportez-vous aux [exemples d’applications](https://code.msdn.microsoft.com/windowsapps/PlayReady-samples-for-124a3738).
+Pour plus d’informations, voir les [exemples d’applications](https://code.msdn.microsoft.com/windowsapps/PlayReady-samples-for-124a3738).
 
- 
-
- 
-
+## Voir également
+- [Gestion des droits numériques PlayReady](playready-client-sdk.md)
 
 
 
 
 
 
-<!--HONumber=Jun16_HO5-->
+
+<!--HONumber=Aug16_HO3-->
 
 

@@ -3,8 +3,8 @@ author: payzer
 title: "Référence des API des paramètres de développement Xbox Device Portal"
 description: "Découvrez comment accéder aux paramètres de développement Xbox."
 translationtype: Human Translation
-ms.sourcegitcommit: a9a2b6e58dfa0d1e77164a59f204deabf8f5c3e0
-ms.openlocfilehash: e3637f5a8481c0800af42c011fb811b908b946b1
+ms.sourcegitcommit: c51eff41e63d815f6298b4fc46a9b11314bc8bc9
+ms.openlocfilehash: 5a983714cda9b5a5f45e555e2cb6f980f082a003
 
 ---
 
@@ -60,7 +60,7 @@ Vous pouvez utiliser la requête suivante pour obtenir des informations sur un p
 
 Méthode      | URI de la requête
 :------     | :-----
-GET | /ext/settings/<setting name>
+GET | /ext/settings/\&lt;nom paramètre\&gt;
 <br />
 **Paramètres d’URI**
 
@@ -101,7 +101,7 @@ Vous pouvez utiliser la requête suivante pour définir la valeur d’un paramè
 
 Méthode      | URI de la requête
 :------     | :-----
-PUT | /ext/settings/<setting name>
+PUT | /ext/settings/\&lt;nom paramètre\&gt;
 <br />
 **Paramètres d’URI**
 
@@ -137,6 +137,6 @@ Code d’état HTTP      | Description
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

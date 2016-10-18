@@ -110,19 +110,19 @@ Bien qu’il s’agisse de la configuration par défaut, vous choisissez les bou
 
 L’élément InkToolbar se compose de deux groupes de types de boutons distincts:
 
-1. Un groupe de boutons «outil» comprenant les boutons intégrés de dessin,d’effacement et de surlignage. Les outils et stylets personnalisés sont ajoutés ici.
-> **Remarque**&nbsp;&nbsp;La sélection des fonctionnalités est mutuellement exclusive.
+1. Un groupe de boutons «outil» comprenant les boutons intégrés de dessin, d’effacement et de surlignage. Les outils et stylets personnalisés sont ajoutés ici.
+> **Remarque**&nbsp;&nbsp;La sélection de fonctionnalités est mutuellement exclusive.
 
-2. Un groupe de boutons «bascule» contenant le bouton intégré de règle. Les boutons de bascule personnalisés sont ajoutés ici.
+2. Un groupe de boutons «bascules» contenant le bouton intégré de règle. Les boutons bascules personnalisés sont ajoutés ici.
 > **Remarque**&nbsp;&nbsp;Les fonctionnalités ne s’excluent pas mutuellement et peuvent être utilisées simultanément avec d’autres outils actifs.
 
-En fonction de votre application et de la fonctionnalité d’entrée manuscrite requise, vous pouvez ajouter n’importe lequel des boutons suivants (liés à vos fonctionnalités d’entrée manuscrite personnalisées) à l’élément InkToolbar:
+En fonction de votre application et de la fonctionnalité d’entrée manuscrite requise, vous pouvez ajouter n’importe lequel des boutons suivants (liés à vos fonctionnalités d’entrée manuscrite personnalisées) au contrôle InkToolbar:
 
 - Stylet personnalisé: un stylet dont les propriétés de palette de couleurs de l’encre et de pointe de stylet, telles que la forme, la rotation et la taille, sont définies par l’application hôte.
 - Outil personnalisé: un outil autre qu’un stylet, défini par l’application hôte.
 - Bascule personnalisée: définit l’état d’une fonctionnalité définie par l’application sur activé ou désactivé. Lorsqu’elle est activée, la fonctionnalité fonctionne conjointement avec l’outil actif.
 
-> **Remarque**&nbsp;&nbsp;Vous ne pouvez pas modifier l’ordre d’affichage des boutons intégrés. L’ordre d’affichage par défaut est le suivant: stylo à bille, crayon, surligneur, gomme et règle. Les stylets personnalisés sont ajoutés au dernier stylet par défaut, les boutons d’outil personnalisé sont ajoutés entre le dernier bouton de stylet et le bouton de gomme, et les boutons de bascule personnalisée sont ajoutés après le bouton de règle. (Les boutons personnalisés sont ajoutés dans l’ordre que vous avez spécifié.)
+> **Remarque**&nbsp;&nbsp;Vous ne pouvez pas modifier l’ordre d’affichage des boutons intégrés. L’ordre d’affichage par défaut est le suivant: stylo à bille, crayon, surligneur, gomme et règle. Les stylets personnalisés sont ajoutés au dernier stylet par défaut, les boutons d’outil personnalisé sont ajoutés entre le dernier bouton de stylet et le bouton de gomme, et les boutons de bascule personnalisés sont ajoutés après le bouton de règle. (Les boutons personnalisés sont ajoutés dans l’ordre que vous avez spécifié.)
 
 Bien que l’élément InkToolbar peut être un élément de niveau supérieur, il est généralement exposé par le biais d’un bouton «Entrée manuscrite» ou d’une commande. Nous vous recommandons d’utiliser le glyphe EE56 de la police Segoe MLD2 Assets comme une icône de niveau supérieur.
 

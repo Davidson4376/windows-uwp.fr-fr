@@ -5,7 +5,7 @@ description: Vous pouvez distribuer votre composant Windows Runtime par copie de
 ms.assetid: 80262992-89FC-42FC-8298-5AABF58F8212
 translationtype: Human Translation
 ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: 3d7a51ed13f63ca9d6070fbbe860c653c4deaf07
+ms.openlocfilehash: 3a82ee44b748c2c8748ed063cbc67e02200a4e31
 
 ---
 
@@ -76,6 +76,6 @@ Un composant complexe inclut généralement des ressources Windows, mais reporte
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

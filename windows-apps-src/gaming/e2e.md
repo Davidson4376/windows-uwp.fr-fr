@@ -4,8 +4,8 @@ title: "Guide de développement de jeux Windows10"
 description: "Guide complet sur les ressources et les informations nécessaires au développement de jeux de plateforme Windows universelle (UWP)."
 ms.assetid: 6061F498-96A8-44EF-9711-68AE5A1218C9
 translationtype: Human Translation
-ms.sourcegitcommit: a9beb420ac13eb74c0109b30508e49d5305bc67c
-ms.openlocfilehash: 30f8408e6d125423e69615a3f9341e8f7d886fc8
+ms.sourcegitcommit: 1c3f222b4b3ddb14a48cef138984b07ac58cc66b
+ms.openlocfilehash: 7bc6694f94eeeb6188470fee00d432b2d71e52e6
 
 ---
 
@@ -62,7 +62,11 @@ Tout au long de ce guide, vous trouverez des liens ciblés vers la documentation
     </tr>
     <tr>
         <td>Présentations et informations de référence sur DirectX</td>
-        <td>[Jeux et graphismes DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274)</td>
+        <td>[Jeux et graphiques DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274)</td>
+    </tr>
+    <tr>
+        <td>UWP sur XboxOne</td>
+        <td>[Création d’applications UWP sur XboxOne](https://msdn.microsoft.com/windows/uwp/xbox-apps/index)</td>
     </tr>
     <tr>
         <td>Documentation Xbox Live</td>
@@ -70,11 +74,11 @@ Tout au long de ce guide, vous trouverez des liens ciblés vers la documentation
     </tr>
     <tr>
         <td>Documentation pour développeurs Xbox One (GDN)</td>
-        <td>[Documentation du XDK Xbox One](https://developer.xboxlive.com/platform/development/documentation/Pages/home.aspx)</td>
+        <td>[Documentation du XDK Xbox One](https://developer.xboxlive.com/en-us/platform/development/documentation/Pages/home.aspx)</td>
     </tr>
     <tr>
         <td>Livres blancs pour développeurs Xbox One (GDN)</td>
-        <td>[Livres blancs](https://developer.xboxlive.com/platform/development/education/Pages/WhitePapers.aspx)</td>
+        <td>[Livres blancs](https://developer.xboxlive.com/en-us/platform/development/education/Pages/WhitePapers.aspx)</td>
     </tr>     
 </table>
 
@@ -82,7 +86,7 @@ Tout au long de ce guide, vous trouverez des liens ciblés vers la documentation
 
 Microsoft propose plusieurs programmes pour développeurs pour vous aider à développer et à publier des jeux Windows. Pour publier un jeu dans le Windows Store, vous devez créer un compte de développeur dans le Centre de développement Windows. Les autres programmes peuvent être intéressants selon les besoins de votre jeu et de votre studio, et peuvent créer des opportunités comme le développement Xbox One et l’intégration Xbox Live.
 
-### Centre de développement Windows
+#### Centre de développement Windows
 
 L’inscription d’un compte de développeur dans le Centre de développement Windows est la première étape de la publication du jeu Windows. Un compte de développeur vous permet de réserver le nom de votre jeu et de soumettre des jeux gratuits ou payants au Windows Store pour tous les appareils Windows. Utilisez votre compte de développeur pour gérer votre jeu et les produits intégrés au jeu, obtenir des analyses détaillées et activer des services qui créent des expériences exceptionnelles pour vos joueurs dans le monde entier.
 
@@ -95,10 +99,9 @@ L’inscription d’un compte de développeur dans le Centre de développement W
         <td>Inscrire un compte de développeur</td>
         <td>[Êtes-vous prêt à vous inscrire ?](https://msdn.microsoft.com/library/windows/apps/bg124287)</td>
     </tr> 
-</table>  
+</table>
 
-
-### ID@Xbox
+#### ID@Xbox
 
 Le programme ID@Xbox permet aux développeurs de jeux qualifiés de publier eux-mêmes sur Windows et Xbox One. Si vous voulez développer des jeux pour Xbox One ou ajouter des fonctionnalités Xbox Live telles que les scores des joueurs, les succès et les classements à votre jeu Windows 10, inscrivez-vous sur ID@Xbox. Devenez développeur ID@Xbox pour obtenir les outils et l’aide dont vous avez besoin pour laisser libre cours à votre créativité et optimiser votre succès. Avant de faire une demande sur ID@Xbox, inscrivez un compte de développeur dans le Centre de développement Windows.
 
@@ -117,24 +120,7 @@ Le programme ID@Xbox permet aux développeurs de jeux qualifiés de publier eux-
     </tr>
 </table>
 
-
-### Programme d’accès en avant-première à DirectX
-
-Les développeurs de jeux professionnels qui souhaitent recevoir les aperçus préliminaires des modifications de l’API Direct3D 12 et envoyer des commentaires sur les forums peuvent participer au programme d’accès en avant-première à DirectX.
-
-<table>
-    <colgroup>
-    <col width="50%" />
-    <col width="50%" />
-    </colgroup>
-    <tr>
-        <td>S’inscrire au programme d’accès en avant-première à DirectX 12</td>
-        <td>[Programme d’accès en avant-première à DirectX](http://1drv.ms/1dgelm6)</td>
-    </tr>
-</table>
-
-
-### Outils et intergiciels (middleware) Xbox
+#### Outils et intergiciels (middleware) Xbox
 
 Les outils Xbox et le programme intergiciel cèdent sous licence des kits de développement Xbox aux développeurs professionnels d’outils de jeux et d’intergiciels. Les développeurs acceptés dans le programme peuvent partager et distribuer leurs technologies XDK Xbox à d’autres développeurs Xbox sous licence.
 
@@ -164,11 +150,19 @@ De nombreux exemples de jeu et d’application Windows10 sont disponibles pour v
         <td>[Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples)</td>
     </tr>
     <tr>
-        <td>Exemples de graphisme Direct3D 12</td>
+        <td>Exemples publics Xbox Advanced Technology Group</td>
+        <td>[Xbox-ATG-Samples](https://github.com/Microsoft/Xbox-ATG-Samples)</td>
+    </tr>
+    <tr>
+        <td>Exemples de graphiques Direct3D12</td>
         <td>[DirectX-Graphics-Samples](https://github.com/Microsoft/DirectX-Graphics-Samples)</td>
     </tr>
     <tr>
-        <td>Exemple de jeu subjectif Direct3D 11</td>
+        <td>Exemples de graphiques Direct3D11</td>
+        <td>[directx-sdk-samples](https://github.com/walbourn/directx-sdk-samples)</td>
+    </tr>
+    <tr>
+        <td>Exemple de jeu à la première personne Direct3D11</td>
         <td>[Créer un jeu UWP simple avec DirectX](tutorial--create-your-first-metro-style-directx-game.md)</td>
     </tr>
     <tr>
@@ -185,7 +179,7 @@ De nombreux exemples de jeu et d’application Windows10 sont disponibles pour v
     </tr>
     <tr>
         <td>Exemples de jeu Xbox One (GDN)</td>
-        <td>[Exemples](https://developer.xboxlive.com/platform/development/education/Pages/Samples.aspx)</td>
+        <td>[Exemples](https://developer.xboxlive.com/en-us/platform/development/education/Pages/Samples.aspx)</td>
     </tr>
     <tr>
         <td>Exemples de jeu Windows 8 (MSDN Code Gallery)</td>
@@ -585,11 +579,11 @@ Les ponts de plateforme Windows universelle sont des technologies qui amènent v
     </tr>
     <tr>
         <td>Pont Windows pour iOS</td>
-        <td>[Importer vos applications iOS dans Windows](https://dev.windows.com/bridges/ios)</td>
+        <td>[Porter vos applications iOS vers Windows](https://dev.windows.com/bridges/ios)</td>
     </tr>
     <tr>
-        <td>Version d’évaluation du pont Windows pour .NET et Win32 («Projet Centennial»)</td>
-        <td>[Programmes Windows Developer Preview](http://go.microsoft.com/fwlink/p/?LinkID=624543)</td>
+        <td>Pont Windows pour les applications de bureau (.NET et Win32)</td>
+        <td>[Convertir votre application de bureau en application UWP](https://developer.microsoft.com/windows/bridges/desktop)</td>
     </tr>
 </table>
  
@@ -619,7 +613,7 @@ D’après le site [Unity roadmap](https://unity3d.com/unity/roadmap), la prise 
     </tr>
     <tr>
         <td>Documentation Unity pour Windows</td>
-        <td>[Manuel Unity/Windows](http://docs.unity3d.com/Manual/Windows.mdl)</td>
+        <td>[Manuel Unity/Windows](http://docs.unity3d.com/Manual/Windows.html)</td>
     </tr>
     <tr>
         <td>Publier votre jeu Unity en tant qu’application Windows universelle (vidéo)</td>
@@ -690,7 +684,7 @@ Cocos2d-X est une suite d’outils et de moteurs de jeu open source multiplatefo
 
 #### Unreal Engine
 
-Unreal Engine 4 est une suite complète d’outils de développement de jeux destinée à tous les types de jeu et de développement. Destiné aux jeux pour consoles et PC très exigeants, Unreal Engine est utilisé par les développeurs de jeux dans le monde entier. Les membres du [programme d’accès en avant-première à DirectX 12](#dxeap) qui s’abonnent à Unreal Engine 4 peuvent bénéficier de l’accès à un projet de développement Unreal Engine 4.4 prenant en charge DirectX 12.
+Unreal Engine 4 est une suite complète d’outils de développement de jeux destinée à tous les types de jeu et de développement. Destiné aux jeux pour consoles et PC très exigeants, Unreal Engine est utilisé par les développeurs de jeux du monde entier.
 
 <table>
     <colgroup>
@@ -698,15 +692,37 @@ Unreal Engine 4 est une suite complète d’outils de développement de jeux des
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Vue d’ensemble de Unreal Engine</td>
-        <td>[Qu’est-ce que Unreal Engine 4?](https://www.unrealengine.com/what-is-unreal-engine-4)</td>
+        <td>Vue d’ensemble d’Unreal Engine</td>
+        <td>[Unreal Engine4](https://www.unrealengine.com/what-is-unreal-engine-4)</td>
     </tr>
 </table>
- 
+
+#### BabylonJS
+
+BabylonJS est une infrastructure JavaScript complète destinée à créer des jeux en 3D avec HTML5, WebGL et Web Audio.
+
+<table>
+    <colgroup>
+    <col width="50%" />
+    <col width="50%" />
+    </colgroup>
+    <tr>
+        <td>BabylonJS</td>
+        <td>[BabylonJS](http://www.babylonjs.com/)</td>
+    </tr>
+    <tr>
+        <td>WebGL 3D avec HTML5 et BabylonJS (série de vidéos)</td>
+        <td>[Découverte de 3D WebGL et BabylonJS](https://channel9.msdn.com/Series/Introduction-to-WebGL-3D-with-HTML5-and-Babylonjs/01)</td>
+    </tr>
+    <tr>
+        <td>Création d’un jeu WebGL multiplateforme avec BabylonJS</td>
+        <td>[Utiliser BabylonJS pour développer un jeu multiplateforme](https://www.smashingmagazine.com/2016/07/babylon-js-building-sponza-a-cross-platform-webgl-game/)</td>
+    </tr>    
+</table>
 
 ### Intergiciels (middleware) et partenaires
 
-De nombreux autres partenaires proposant des intergiciels et des moteurs peuvent fournir des solutions en fonction de vos besoins de développement de jeux.
+De nombreux autres partenaires proposant des intergiciels et des moteurs qui peuvent fournir des solutions en fonction de vos besoins de développement de jeux.
 
 <table>
     <colgroup>
@@ -714,12 +730,8 @@ De nombreux autres partenaires proposant des intergiciels et des moteurs peuvent
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Partenaires de jeux du Centre de développement Windows</td>
-        <td>[Partenaires du Centre de développement (jeux)](https://devcenterpartners.windows.com/directory#filter=gaming)</td>
-    </tr>
-    <tr>
         <td>Partenaires du Centre de développement Windows</td>
-        <td>[Partenaires du Centre de développement](https://devcenterpartners.windows.com/directory)</td>
+        <td>[Partenaires du Centre de développement](https://developer.microsoft.com/windows/app-middleware-partners)</td>
     </tr>
 </table>
  
@@ -755,7 +767,7 @@ Si vous disposez d’un jeu, nombre de ressources et de guides disponibles vous 
     </tr>
     <tr>
         <td>Portage d’une application Xbox vers une application de plateforme Windows universelle</td>
-        <td>[Portage de Xbox One vers Windows 10 UWP](https://developer.xboxlive.com/platform/development/education/Documents/Porting%20from%20Xbox%20One%20to%20Windows%2010.aspx)</td>
+        <td>[Portage de Xbox One vers Windows 10 UWP](https://developer.xboxlive.com/en-us/platform/development/education/Documents/Porting%20from%20Xbox%20One%20to%20Windows%2010.aspx)</td>
     </tr>
     <tr>
         <td>Portage de DirectX 9 vers DirectX 11</td>
@@ -1267,9 +1279,7 @@ Développez des jeux prêts à l’emploi pour la plateforme Windows et découvr
     </tr>
 </table>
 
-
 ## Envoi et publication du jeu
-
 
 Les informations et guides suivants contribuent à rendre le processus de soumission et de publication aussi aisé que possible.
 
@@ -1496,6 +1506,6 @@ Pour mettre à jour votre jeu publié, soumettez un nouveau package d’applicat
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Sep16_HO2-->
 
 

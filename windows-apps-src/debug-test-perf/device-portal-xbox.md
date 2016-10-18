@@ -5,7 +5,7 @@ title: Device Portal pour Xbox
 description: "Découvrez comment activer Device Portal pour Xbox."
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: e1bfdf8e4ee4ed1f88c514acb9ef555c07fd0746
+ms.openlocfilehash: 77f542b2fed80271082e97437790b33ea7b54172
 
 ---
 # Device Portal pour Xbox
@@ -38,6 +38,6 @@ Device Portal sur XBox propose un ensemble de pages standard. Pour obtenir une d
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

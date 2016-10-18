@@ -1,15 +1,15 @@
 ---
 author: mcleblanc
-title: Prise en main &#58; Et ensuite ?
+title: 'Prise en main : Et ensuite ?'
 ms.assetid: 903046E7-581F-4845-AB80-1A57C42B1B02
 description: "Avec ces informations de base, vous pouvez commencer à écrire des applications UWP plus intéressantes."
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 2b11133fda76fb42f3a850848c426cbb33fb8366
+ms.openlocfilehash: d71c0026c8658e8aa88827915b8f2d815f10c6ef
 
 ---
 
-# Prise en main &#58; Et ensuite ?
+# Prise en main : Et ensuite ?
 
 \[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
@@ -38,6 +38,6 @@ Nous pensons que Windows 10 vous ouvrira un vaste champ de nouvelles opportunit�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

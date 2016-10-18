@@ -5,7 +5,7 @@ description: "Découvrez comment démarrer une application à partir d’une aut
 ms.assetid: AFC53D75-B3DD-4FF6-9FC0-9335242EE327
 translationtype: Human Translation
 ms.sourcegitcommit: 213384a194513a0f98a5f37e7f0e0849bf0a66e2
-ms.openlocfilehash: 5826b370df3dccd1590e3f67c15126b4e78c2c32
+ms.openlocfilehash: d8d7f73e06d627eaa53deaf26f778c122113a9d6
 
 ---
 
@@ -204,6 +204,6 @@ transférez-le ensuite à l’application lancée via **LaunchUriForResultsAsync
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

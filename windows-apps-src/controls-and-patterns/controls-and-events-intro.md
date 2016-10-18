@@ -1,18 +1,26 @@
 ---
 author: Jwmsft
 Description: "Pour créer l’interface utilisateur de votre application, utilisez des contrôles tels que des boutons, des zones de texte et des zones de liste modifiable pour afficher les données et obtenir les entrées utilisateur. Cette rubrique indique comment ajouter des contrôles à votre application."
-title: "Ajouter des contrôles et gérer les événements"
+title: "Présentation des contrôles et des modèles"
 ms.assetid: 64740BF2-CAA1-419E-85D1-42EE7E15F1A5
-label: Intro to controls and events
+label: Intro to controls and patterns
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 709771424daba7c034dc6f19d6998469705a24da
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: c597b2e5a1da23247a2100aeae88beaf1bfdaa64
 
 ---
-# Présentation des contrôles et des événements
+# Présentation des contrôles et des modèles
 
-Pour créer l’interface utilisateur de votre application, utilisez des contrôles tels que des boutons, des zones de texte et des zones de liste modifiable pour afficher les données et obtenir les entrées utilisateur. Cette rubrique indique comment ajouter des contrôles à votre application. Il existe 3 étapes principales pour l’ajout de contrôles à votre application : 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
+Dans le développement d’applications UWP, un *contrôle* est un élément d’interface utilisateur qui affiche du contenu ou permet une interaction. Pour créer l’interface utilisateur de votre application, utilisez des contrôles tels que des boutons, des zones de texte et des listes modifiables pour afficher les données et obtenir les entrées utilisateur.
+
+Un *modèle* est en quelque sorte une recette qui permet de modifier un contrôle ou d’associer plusieurs contrôles pour créer un élément nouveau. Par exemple, le modèle [Volet de navigation](nav-pane.md) est une façon d’utiliser un contrôle [SplitView](split-view.md) pour la navigation dans l’application. De la même façon, vous pouvez personnaliser le modèle d’un contrôle [Pivot](tabs-pivot.md) pour implémenter le modèle d’onglet.
+
+Dans de nombreux cas, vous pouvez utiliser un contrôle en l’état. Toutefois, les contrôles XAML distinguent la fonction de la structure et de l’apparence, vous pouvez donc apporter des modifications à différents niveaux pour les adapter à vos besoins. Dans la section [Style](../style/index.md), vous pouvez apprendre à utiliser des [styles XAML](xaml-styles.md) et des [modèles de contrôle](control-templates.md) pour modifier un contrôle.
+
+Dans cette section, nous fournissons des indications pour chaque contrôle XAML que vous pouvez utiliser pour créer l’interface utilisateur de votre application. Pour commencer, cet article explique comment ajouter des contrôles à votre application. Il existe 3étapes principales pour utiliser des contrôles dans votre application: 
 
 - Ajoutez un contrôle à l’interface utilisateur de votre application. 
 - Définissez des propriétés sur le contrôle, telles que la largeur, la hauteur ou la couleur de premier plan. 
@@ -132,12 +140,14 @@ Button1.Click += new RoutedEventHandler(Button_Click);
 
 ## Rubriques connexes
 
--   [**Barre de commandes**](app-bars.md)
--   [Rechercher](search.md)
--   [Menus volants](dialogs-popups-menus.md)
+-   [Index des contrôles par fonction](controls-by-function.md)
+-   [Espace de noms Windows.UI.Xaml.Controls](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
+-   [Disposition](../layout/index.md)
+-   [Style](../style/index.md)
+-   [Usage](../usability/index.md)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

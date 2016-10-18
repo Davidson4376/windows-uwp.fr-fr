@@ -4,8 +4,8 @@ Description: "Le Windows Store offre la facturation de l’opérateur mobile com
 title: "Facturation de l’opérateur mobile"
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 translationtype: Human Translation
-ms.sourcegitcommit: 80a20f4f87ce2ef40ce4ff7c6551d74ac375da1c
-ms.openlocfilehash: bd70a3c5990909351f04ca4200f4ea522989d1e9
+ms.sourcegitcommit: 3afac16fb79262dd6a75cd44804747d173e60edf
+ms.openlocfilehash: 114783cb93d1d49eb1b2cd0d5218a35318a02df0
 
 ---
 
@@ -27,18 +27,20 @@ Windows 10 introduit une nouvelle implémentation de facturation de l'opérateur
 
 L'implémentation sur Windows 10 de la facturation de l'opérateur mobile est actuellement prise en charge par les opérateurs mobiles suivants.
 
-| Pays/région | Opérateurs mobiles |
-|----------------|------------------|
-| Finlande        | DNA, Elisa       |
-| Allemagne        | O2               |
-| Italie          | Vent             |
-| Norvège         | Telenor          |
-| Suisse    | Swisscom         |
-| États-Unis  | Sprint           |
+| Pays/région  | Opérateurs mobiles |
+|-----------------|------------------|
+| Finlande         | DNA, Elisa       |
+| Allemagne         | O2               |
+| Hongrie         | Telenor          |
+| Italie           | Vent             |
+| Norvège          | Telenor          |
+| Suisse     | Swisscom         |
+| États-Unis   | Sprint           |
+| Royaume-Uni  | O2               |
 
  
 
-## Facturation de l'opérateur mobile pour appareils Windows Phone 8.x et Windows 10 Mobile
+## Facturation de l’opérateur mobile pour appareils WindowsPhone8.x et Windows10Mobile
 
 
 Une implémentation héritée de la facturation de l'opérateur mobile est disponible pour les appareils Windows Phone 8.x. Certains opérateurs mobiles peuvent choisir d'inclure cette implémentation sur les téléphones conçus pour Windows 10 Mobile. Sur les appareils qui comprennent cette implémentation, la facturation de l’opérateur mobile est proposée automatiquement comme mode de paiement aux utilisateurs.
@@ -50,10 +52,10 @@ L'implémentation héritée de la facturation de l'opérateur mobile est prise e
 | Australie            | Telstra                                                            |
 | Autriche              | A1 Telekom, T-Mobile                                               |
 | Bahreïn              | Zain, VIVA                                                         |
-| Belgique              | BASE, Mobistar, Proximus                                                     |
+| Belgique              | BASE, Mobistar, Proximus                                           |
 | Brésil               | Claro                                                              |
 | Bulgarie             | Telenor                                                            |
-| Canada               | Fido, Rogers, Telus                                                |
+| Canada               | Fido, Rogers                                                       |
 | Chili                | Claro                                                              |
 | Chine                | China Mobile                                                       |
 | Colombie             | Claro, Movistar                                                    |
@@ -70,26 +72,25 @@ L'implémentation héritée de la facturation de l'opérateur mobile est prise e
 | Guatemala            | Claro                                                              |
 | Hongrie              | Telenor, T-Mobile                                                  |
 | Inde                | Idea                                                               |
-| Indonésie            | Indosat, Telkomsel, XL Axiata                                |
-| Irlande              | O2, Vodafone, Three                                                      |
+| Indonésie            | Indosat, Telkomsel, XL Axiata, Hutchinson CP Telecommunications (HCPT)     |
+| Irlande              | O2, Vodafone, Three                                                |
 | Italie                | Telecom Italia, Vodafone, Wind, 3 Italie                           |
 | Jordanie               | Zain, Umniah                                                       |
 | Kenya                | Safaricom                                                          |
-| Koweït               | Zain, Viva                                                         |
+| Koweït               | Zain, Viva, Ooredoo                                                |
 | Lettonie               | Tele2                                                              |
 | Lituanie            | Tele2                                                              |
 | Malaisie             | DiGi                                                               |
-| Mexique               | Iusacell, Telcel, Unefon, Movistar                                 |
+| Mexique               | Iusacell, Telcel, Movistar                                         |
 | Pays-Bas          | T-Mobile, Vodafone                                                 |
 | Norvège               | Telenor                                                            |
 | Oman                 | Ooredoo                                                            |
 | Pakistan             | Telenor                                                            |
 | Pérou                 | Claro                                                              |
-| Philippines          | Globe, Sun                                                         |
-| Pologne               | T-Mobile, Orange, Polkomtel (Plus)                                 |
-| Porto Rico          | Claro                                                              |
+| Philippines          | Globe, Sun, Smart Communications                                   |
+| Pologne               | T-Mobile, Orange, Polkomtel (Plus), Play                           |
 | Roumanie              | Orange, Vodafone                                                   |
-| Russie               | Beeline, MTS                                                          |
+| Russie               | Beeline, MTS                                                       |
 | Arabie saoudite         | Zain                                                               |
 | Singapour            | M1, SingTel, StarHub                                               |
 | Slovaquie             | T-Mobile                                                           |
@@ -98,7 +99,6 @@ L'implémentation héritée de la facturation de l'opérateur mobile est prise e
 | Espagne                | Movistar, Vodafone, Orange                                         |
 | Suède               | Telenor, Tele2                                                     |
 | Suisse          | Swisscom                                                           |
-| Thaïlande             | DTAC                                                               |
 | Émirats arabes unis | Etisalat, Du                                                       |
 | Royaume-Uni       | Everything Everywhere (T-Mobile), Telefonica (O2), Three, Vodafone |
 | États-Unis        | AT&amp;T, Sprint, T-Mobile, Verizon                                    |
@@ -118,6 +118,6 @@ Cette liste sera régulièrement mise à jour au fur et à mesure que nous déve
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Sep16_HO2-->
 
 

@@ -4,8 +4,8 @@ ms.assetid: D20C8E01-4E78-4115-A2E8-07BB3E67DDDC
 description: "Cet article montre comment accéder à la lampe d’un appareil et comment l’utiliser, le cas échéant. La fonctionnalité de lampe est gérée indépendamment des fonctionnalités de flash et d’appareil photo."
 title: "Lampe torche indépendante de l’appareil photo"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 022ca2848c575f545402b13e19c0854a9e3ec74a
+ms.sourcegitcommit: 1b32633abc9365bf88137dff7c36ba0f2ad05d72
+ms.openlocfilehash: 8c256d8aba08d42fa00b46a01c8b7e773a0ab40c
 
 ---
 
@@ -14,7 +14,7 @@ ms.openlocfilehash: 022ca2848c575f545402b13e19c0854a9e3ec74a
 \[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-Cet article montre comment accéder à la lampe d’un appareil et comment l’utiliser, le cas échéant. La fonctionnalité de lampe est gérée indépendamment des fonctionnalités de flash et d’appareil photo. En plus d’acquérir une référence à la lampe et d’apprendre à ajuster ses paramètres, cet article vous montre comment libérer la ressource de la lampe lorsqu’elle n’est pas utilisée et comment détecter les changements de disponibilité de la lampe lorsqu’elle est utilisée par une autre application.
+Cet article montre comment accéder à la lampe d’un appareil et comment l’utiliser, le cas échéant. La fonctionnalité de lampe est gérée indépendamment des fonctionnalités de flash et d’appareil photo de l’appareil. Outre des informations de références sur la lampe et le réglage de ses paramètres, cet article vous montre comment libérer la ressource de la lampe quand elle n’est pas utilisée et comment détecter les changements de disponibilité de la lampe quand elle est utilisée par une autre application.
 
 ## Accéder à la lampe par défaut de l’appareil
 
@@ -40,7 +40,7 @@ Les API [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/
 
 [!code-cs[GetLampWithSelectionString](./code/Lamp/cs/MainPage.xaml.cs#SnippetGetLampWithSelectionString)]
 
-## Régler les paramètres de lampe
+## Régler les paramètres de la lampe
 
 Une fois que vous avez une instance de la classe [**Lamp**](https://msdn.microsoft.com/library/windows/apps/dn894310), activez la lampe en définissant la propriété [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn894330) sur **true**.
 
@@ -70,7 +70,8 @@ Lorsque vous n’utilisez plus la lampe, vous devez la désactiver et appeler [*
 
 [!code-cs[DisposeLamp](./code/Lamp/cs/MainPage.xaml.cs#SnippetDisposeLamp)]
 
- 
+## Rubriques connexes
+- [Lecture de contenu multimédia](media-playback.md)
 
  
 
@@ -80,6 +81,6 @@ Lorsque vous n’utilisez plus la lampe, vous devez la désactiver et appeler [*
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

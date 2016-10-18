@@ -4,12 +4,12 @@ description: "Identifie de manière unique les éléments objet pour l’accès 
 title: Attribut xName
 ms.assetid: 4FF1F3ED-903A-4305-B2BD-DCD29E0C9E6D
 translationtype: Human Translation
-ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
-ms.openlocfilehash: 442c2fa103e1e968ef47ea990bfe8e166daec88b
+ms.sourcegitcommit: ebda34ce4d9483ea72dec3bf620de41c98d7a9aa
+ms.openlocfilehash: 1a70bffd6e6990ece4565b919846503b95ae8f61
 
 ---
 
-# Attribut x&#58;Name
+# Attribut x:Name
 
 \[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
@@ -66,11 +66,11 @@ Si **Name** est disponible en tant que propriété définissable sur un élémen
 
 ### x:Name et x:Key
 
-**x:Name** peut être appliqué en tant qu’attribut à des éléments dans un [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) pour agir en tant que substitut de l’[attribut x:Key](x-key-attribute.md). (En règle générale, tous les éléments d’une classe **ResourceDictionary** doivent avoir un attribut x:Key.) Cela est courant dans le cas des [Animations dans une table de montage séquentiel](https://msdn.microsoft.com/library/windows/apps/mt187354). Pour plus d’informations, voir la section correspondante de [Références aux ressources ResourceDictionary et XAML](https://msdn.microsoft.com/library/windows/apps/mt187273).
+**x:Name** peut être appliqué en tant qu’attribut à des éléments dans un [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) pour agir en tant que substitut de l’[attribut x:Key](x-key-attribute.md). (C’est une règle que tous les éléments d’un **ResourceDictionary** doivent avoir un attribut x:Key.) Cela est courant dans le cas des [Animations dans une table de montage séquentiel](https://msdn.microsoft.com/library/windows/apps/mt187354). Pour plus d’informations, voir la section correspondante de [Références aux ressources ResourceDictionary et XAML](https://msdn.microsoft.com/library/windows/apps/mt187273).
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

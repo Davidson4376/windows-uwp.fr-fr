@@ -1,28 +1,28 @@
 ---
 author: TylerMSFT
-title: ms-tonepicker scheme
-description: This topic describes the ms-tonepicker URI scheme and how to use it to display a tone picker to select a tone, save a tone, and get the friendly name for a tone.
+title: "Schéma ms-tonepicker"
+description: "Cette rubrique décrit le schéma ms-tonepicker et comment il affiche un sélecteur pour sélectionner/enregistrer une tonalité et lui attribuer un nom convivial."
 translationtype: Human Translation
 ms.sourcegitcommit: 4c7037cc91603af97a64285fd6610445de0523d6
 ms.openlocfilehash: ef605f9d749148240ecee5e0ecfd473f8440ca25
 
 ---
 
-# Choose and save tones using the ms-tonepicker URI scheme
+# Sélectionner et enregistrer des tonalités à l’aide du schéma d’URI ms-tonepicker
 
-This topic describes how to use the **ms-tonepicker:** URI scheme. This URI scheme can be used to:
-- Determine if the tone picker is available on the device.
-- Display the tone picker to list available ringtones, system sounds, text tones, and alarm sounds; and get a tone token which represents the sound the user selected.
-- Display the tone saver, which takes a sound file token as input and saves it to the device. Saved tones are then available via the tone picker. Users can also give the tone a friendly name.
-- Convert a tone token to its friendly name.
+Cette rubrique décrit comment utiliser le schéma d’URI **ms-tonepicker:**. Ce schéma d’URI peut être utilisé pour:
+- Vérifier si le sélecteur de tonalités est disponible sur l’appareil.
+- Afficher le sélecteur de tonalités pour répertorier les sonneries d’appel, sons système, sonneries de SMS et sonneries d’alarme disponibles; et obtenir un jeton de tonalité qui représente la tonalité sélectionnée par l’utilisateur.
+- Afficher l’enregistreur de tonalités, qui utilise un jeton de fichier audio comme entrée et l’enregistre sur l’appareil. Les tonalités enregistrées sont alors accessibles dans le sélecteur de tonalités. Les utilisateurs peuvent également attribuer un nom convivial à la tonalité.
+- Convertir un jeton de tonalité en nom convivial de la tonalité.
 
-## ms-tonepicker: URI scheme reference
+## Référence de schéma d’URI ms-tonepicker:
 
-This URI scheme does not pass arguments via the URI scheme string, but instead passes arguments via a [ValueSet](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset.aspx). All strings are case-sensitive.
+Ce schéma d’URI ne transmet pas les arguments via la chaîne de schéma d’URI, mais via une classe [ValueSet](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset.aspx). Toutes les chaînes sont sensibles à la casse.
 
-The sections below indicate which arguments should be passed to accomplish the specified task.
+Les sections ci-dessous indiquent quels arguments doivent être transmis pour effectuer la tâche spécifiée.
 
-## Task: Determine if the tone picker is available on the device
+## Tâche: vérifier si le sélecteur de tonalités est disponible sur l’appareil
 ```cs
 var status = await Launcher.QueryUriSupportAsync(new Uri("ms-tonepicker:"),     
                                      LaunchQuerySupportType.UriForResults,
@@ -34,25 +34,25 @@ if (status != LaunchQuerySupportStatus.Available)
 }
 ```
 
-## Task: Display the tone picker
+## Tâche: afficher le sélecteur de tonalités
 
-The arguments you can pass to display the tone picker are as follows:
+Les arguments que vous pouvez transmettre pour afficher le sélecteur de tonalités sont les suivants:
 
-| Parameter | Type | Required | Possible values | Description |
+| Paramètre | Type | Obligatoire | Valeurs possibles | Description |
 |-----------|------|----------|-------|-------------|
-| Action | string | yes | "PickRingtone" | Opens the tone picker. |
-| CurrentToneFilePath | string | no | An existing tone token. | The tone to show as the current tone in the tone picker. If this value is not set, the first tone on the list is selected by default.<br>This is not, strictly speaking, a file path. You can get a suitable value for `CurrenttoneFilePath` from the `ToneToken` value returned from the tone picker.  |
-| TypeFilter | string | no | "Ringtones", "Notifications", "Alarms", "None" | Selects which tones to add to the picker. If no filter is specified then all tones are displayed. |
+| Action | chaîne | oui | «PickRingtone» | Ouvre le sélecteur de tonalités. |
+| CurrentToneFilePath | chaîne | non | Jeton de tonalité existant. | Tonalité à afficher en tant que tonalité actuelle dans le sélecteur de tonalités. Si cette valeur n’est pas définie, la première tonalité de la liste est sélectionnée par défaut.<br>Cela n’est pas réellement un chemin d’accès au fichier. Vous pouvez obtenir une valeur adaptée pour `CurrenttoneFilePath` à partir de la valeur `ToneToken` renvoyée par le sélecteur de tonalités.  |
+| TypeFilter | chaîne | non | «Sonneries», «Notifications», «Alarmes», «Aucun» | Sélectionne les tonalités à ajouter au sélecteur. Si aucun filtre n’est spécifié, toutes les tonalités s’affichent. |
 
-<br>The values that are returned in [LaunchUriResults.Result](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.launchuriresult.result.aspx):
+<br>Valeurs renvoyées dans [LaunchUriResults.Result](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.launchuriresult.result.aspx):
 
-| Return values | Type | Possible values | Description |
+| Valeurs renvoyées | Type | Valeurs possibles | Description |
 |--------------|------|-------|-------------|
-| Result | Int32 | 0-success. <br> 1-cancelled. <br> 7-invalid parameters. <br> 8 - no tones match the filter criteria. <br> 255 - specified action is not implemented. | The result of the picker operation. |
-| ToneToken | string | The selected tone's token. <br> The string is empty if the user selects **default** in the picker. | This token can be used in a toast notification payload, or can be assigned as a contact’s ringtone or text tone. The parameter is returned in the ValueSet only if **Result** is 0. |
-| DisplayName | string | The specified tone’s friendly name. | A string that can be shown to the user to represent the selected tone. The parameter is returned in the ValueSet only if **Result** is 0. |
+| Résultat | Int32 | 0 - succès. <br> 1 - opération annulée. <br> 7 - paramètres non valides. <br> 8 - aucune tonalité correspondant aux critères de filtre. <br> 255 - l’action spécifiée n’est pas implémentée. | Résultat de l’opération de sélection. |
+| ToneToken | chaîne | Jeton de la tonalité sélectionnée. <br> La chaîne est vide si l’utilisateur sélectionne **par défaut** dans le sélecteur. | Ce jeton peut être utilisé dans une charge utile de notification toast, ou attribué en tant que sonnerie d’appel ou de SMS d’un contact. Le paramètre est renvoyé dans le ValueSet uniquement si la valeur **Résultat** est 0. |
+| DisplayName | chaîne | Nom convivial de la tonalité spécifiée. | Une chaîne, visible par l’utilisateur, qui représente la tonalité sélectionnée. Le paramètre est renvoyé dans le ValueSet uniquement si la valeur **Résultat** est 0. |
 <br>
-**Example: Open the tone picker so that the user can select a tone**
+**Exemple: Ouvrir le sélecteur de tonalités afin que l’utilisateur puisse sélectionner une tonalité**
 
 ``` cs
 LauncherOptions options = new LauncherOptions();
@@ -80,23 +80,23 @@ if (result.Status == LaunchUriStatus.Success)
 }
 ```
 
-## Task: Display the tone saver
+## Tâche: afficher l’enregistreur de tonalités
 
-The arguments you can pass to display the tone saver are as follows:
+Les arguments que vous pouvez transmettre pour afficher l’enregistreur de tonalités sont les suivants:
 
-| Parameter | Type | Required | Possible values | Description |
+| Paramètre | Type | Obligatoire | Valeurs possibles | Description |
 |-----------|------|----------|-------|-------------|
-| Action | string | yes | "SaveRingtone" | Opens the picker to save a ringtone. |
-| ToneFileSharingToken | string | yes | [SharedStorageAccessManager](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.aspx) file sharing token for the ringtone file to save. | Saves a specific sound file as a ringtone. The supported content types for the file are mpeg audio and x-ms-wma audio. |
-| DisplayName | string | no | The specified tone’s friendly name. | Sets the display name to use when saving the specified ringtone. |
+| Action | chaîne | oui | «SaveRingtone» | Ouvre le sélecteur pour enregistrer une sonnerie. |
+| ToneFileSharingToken | chaîne | oui | Jeton de partage de fichier [SharedStorageAccessManager](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.aspx) pour l’enregistrement du fichier de la sonnerie. | Enregistre un fichier audio spécifique en tant que sonnerie. Le fichier audio doit être au format mpeg ou x-ms-wma. |
+| DisplayName | chaîne | non | Nom convivial de la tonalité spécifiée. | Définit le nom d’affichage à utiliser lors de l’enregistrement de la sonnerie spécifiée. |
 
-<br>The values that are returned in [LaunchUriResults.Result](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.launchuriresult.result.aspx):
+<br>Valeurs renvoyées dans [LaunchUriResults.Result](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.launchuriresult.result.aspx):
 
-| Return values | Type | Possible values | Description |
+| Valeurs renvoyées | Type | Valeurs possibles | Description |
 |--------------|------|-------|-------------|
-| Result | Int32 | 0-success.<br>1-cancelled by user.<br>2-Invalid file.<br>3-Invalid file content type.<br>4-file exceeds maximum ringtone size (1MB in Windows 10).<br>5-File exceeds 40 second length limit.<br>6-File is protected by digital rights management.<br>7-invalid  parameters. | The result of the picker operation. |
+| Résultat | Int32 | 0 - succès.<br>1 - opération annulée par l’utilisateur.<br>2 - fichier non valide.<br>3 - type de contenu non valide.<br>4 - le fichier dépasse la taille de sonnerie maximale autorisée (1Mo dans Windows10).<br>5 - le fichier dépasse la longueur maximale autorisée (40secondes).<br>6 - le fichier est protégé par la gestion des droits numériques (DRM).<br>7 - paramètres non valides. | Résultat de l’opération de sélection. |
 <br>
-**Example: Save a local music file as a ringtone**
+**Exemple: Enregistrer un fichier de musique local en tant que sonnerie**
 
 ``` cs
 LauncherOptions options = new LauncherOptions();
@@ -144,23 +144,23 @@ if (result.Status == LaunchUriStatus.Success)
  }
 ```
 
-## Task: Convert a tone token to its friendly name
+## Tâche: convertir un jeton de tonalité en nom convivial de la tonalité
 
-The arguments you can pass to get the friendly name of a tone are as follows:
+Les arguments que vous pouvez transmettre pour obtenir le nom convivial d’une tonalité sont les suivants:
 
-| Parameter | Type | Required | Possible values | Description |
+| Paramètre | Type | Obligatoire | Valeurs possibles | Description |
 |-----------|------|----------|-------|-------------|
-| Action | string | yes | "GetToneName" | Indicates that you want to get the friendly name of a tone. |
-| ToneToken | string | yes | The tone token | The tone token from which to obtain a display name. |
+| Action | chaîne | oui | «GetToneName» | Indique que vous souhaitez obtenir le nom convivial d’une tonalité. |
+| ToneToken | chaîne | oui | Jeton de tonalité | Jeton de tonalité à partir duquel vous souhaitez obtenir un nom d’affichage. |
 
-<br>The values that are returned in [LaunchUriResults.Result](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.launchuriresult.result.aspx):
+<br>Valeurs renvoyées dans [LaunchUriResults.Result](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.launchuriresult.result.aspx):
 
-| Return value | Type | Possible values | Description |
+| Valeur renvoyée | Type | Valeurs possibles | Description |
 |--------------|------|-------|-------------|
-| Result | Int32 | 0-The picker operation succeeded.<br>7-Incorrect parameter (for example, no ToneToken provided).<br>9-Error reading the name for the specified token.<br>10-Unable to find specified tone token. | The result of the picker operation.
-| DisplayName | string | The tone's friendly name. | Returns the selected tone's display name. This parameter is only returned in the ValueSet if **Result** is 0. |
+| Résultat | Int32 | 0 - opération de sélection réussie.<br>7 - paramètre incorrect (par exemple, aucune valeur ToneToken fournie).<br>9 - erreur lors de la lecture du nom du jeton spécifié.<br>10 - impossible de trouver le jeton de tonalité spécifié. | Résultat de l’opération de sélection.
+| DisplayName | chaîne | Nom convivial de la tonalité. | Renvoie le nom d’affichage de la tonalité sélectionnée. Ce paramètre est renvoyé dans le ValueSet uniquement si la valeur **Résultat** est 0. |
 <br>
-**Example: Retrieve a tone token from Contact.RingToneToken and display its friendly name in the contact card.**
+**Exemple: Récupérer un jeton de tonalité à partir de Contact.RingToneToken et afficher son nom convivial sur la carte de visite.**
 
 ```cs
 using (var connection = new AppServiceConnection())

@@ -1,35 +1,32 @@
 ---
 author: mcleanbyron
 ms.assetid: ca92bed1-ad9e-4947-ad91-87d12de727c0
-description: "Passez en revue les notes de publication des bibliothèques de publicités Microsoft contenues dans le Kit de développement logiciel (SDK) d’engagement et de monétisation de la BoutiqueMicrosoft."
+description: "Passez en revue les notes de publication des bibliothèques de publicités Microsoft contenues dans le Microsoft Store Services SDK"
 title: "Notes de publication des bibliothèques de publicités Microsoft"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 8e2114e969b27d579f62195f026cfcfd9672a94a
+ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
+ms.openlocfilehash: b82c4385b0e7089bdddbe094f47f0766f90aa21b
 
 ---
 
 # Notes de publication des bibliothèques de publicités Microsoft
 
 
-\[ Mise à jour pour les applicationsUWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Cette section fournit les notes de publication de la version actuelle des bibliothèques de publicités Microsoft contenues dans le Kit de développement logiciel (SDK) d’engagement et de monétisation de la BoutiqueMicrosoft. Ces bibliothèques prennent en charge les applications XAML et HTML/JavaScript pour Windows10, Windows8.1, Windows Phone8.1 et Windows Phone8.
+
+Cette section fournit des notes de publication de la version actuelle des bibliothèques de publicités de Microsoft dans le Microsoft Store Services SDK (pour les applications UWP) et dans le Kit SDK Microsoft Advertising pour Windows et Windows Phone8.x (pour les applications Windows8.1 et Windows Phone8.x). Ces bibliothèques prennent en charge les applications XAML et HTML/JavaScript pour Windows10, Windows8.1, Windows Phone8.1 et Windows Phone8.
 
 ## Installation
 
 
-Les bibliothèques de publicités Microsoft sont incluses dans le [Kit de développement logiciel (SDK) d’engagement et de monétisation de la BoutiqueMicrosoft](http://aka.ms/store-em-sdk). Pour tous les types de projet autres que Silverlight Windows Phone8.x, les assemblys de MicrosoftAdvertising qui étaient distribués dans les versions autonomes précédentes du Kit de développement logiciel (SDK) Microsoft Universal Ad Client et du Kit de développement logiciel (SDK) Microsoft Advertising sont désormais installés avec le SDK d’engagement et de monétisation de la BoutiqueMicrosoft. Pour plus d’informations sur l’installation du SDK et des bibliothèques qu’il contient, voir [Installer les bibliothèques de publicités Microsoft](install-the-microsoft-advertising-libraries.md).
+Les bibliothèques de publicités de Microsoft sont disponibles dans le cadre du [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) (pour les applications UWP) et du [Kit SDK Microsoft Advertising pour Windows et Windows Phone8.x](http://aka.ms/store-8-sdk) (pour les applications Windows8.1 et Windows Phone8.x). Pour plus d’informations sur l’installation des SDK et des bibliothèques qu’ils contiennent, voir [Installer les bibliothèques de publicités Microsoft](install-the-microsoft-advertising-libraries.md).
 
-Pour obtenir les assemblys de publicités Microsoft pour des projets Silverlight Windows Phone 8.x, installez le [Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft](http://aka.ms/store-em-sdk), ouvrez votre projet dans Visual Studio, puis accédez à **Projet** > **Ajouter un service connecté** > **Ad Mediator** pour télécharger automatiquement les assemblys. Après quoi, vous pouvez supprimer les références au médiateur publicitaire dans votre projet si vous ne souhaitez pas utiliser la médiation publicitaire. Pour plus d’informations, voir [AdControl dans Silverlight WindowsPhone](adcontrol-in-windows-phone-silverlight.md).
+Pour obtenir les assemblys de publicités Microsoft pour des projets Silverlight Windows Phone8.x, installez le [Kit SDK Microsoft Advertising pour Windows et Windows Phone8.x](http://aka.ms/store-8-sdk), ouvrez votre projet dans Visual Studio, puis accédez à **Projet** > **Ajouter un service connecté** > **AdMediator** pour télécharger automatiquement les assemblys. Après quoi, vous pouvez supprimer les références au médiateur publicitaire de votre projet si vous ne souhaitez pas utiliser la médiation publicitaire. Pour plus d’informations, voir [AdControl dans Silverlight WindowsPhone](adcontrol-in-windows-phone-silverlight.md).
 
-## Présentation des différences entre les bibliothèques de publicités Microsoft et la médiation publicitaire
 
-Même si les bibliothèques de publicités Microsoft et les bibliothèques de médiation publicitaire sont fournies par le Kit de développement logiciel (SDK) d’engagement et de monétisation de la BoutiqueMicrosoft, ces bibliothèques ont des objets différents. Utilisez les classes [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) et [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) des bibliothèques de publicités Microsoft si vous voulez afficher des bannières publicitaires et des spots vidéo publicitaires de Microsoft dans une application XAML ou JavaScript. Utilisez la classe **AdMediatorControl** des bibliothèques de médiation publicitaire si vous voulez afficher des bannières publicitaires provenant de plusieurs réseaux publicitaires dans une application XAML (la médiation publicitaire n’est pas prise en charge pour les applications JavaScript/HTML). Pour plus d’informations, voir [Quelle est la différence entre AdMediatorControl et AdControl?](what-is-the-difference-admediatorcontrol-or-adcontrol.md).
+## Désinstaller les versions précédentes
 
-## Désinstaller les versions précédentes 
-
-Avant d’installer le Kit de développement logiciel (SDK) d’engagement et de monétisation de la BoutiqueMicrosoft, il est vivement conseillé de désinstaller toutes les instances préalables du Kit de développement logiciel (SDK) Microsoft Universal Ad Client et du Kit de développement logiciel (SDK) Microsoft Advertising.
+Avant d’installer le Microsoft Store Services SDK (pour les applications UWP) ou le Kit SDK Microsoft Advertising pour Windows et Windows Phone8.x (pour les applications Windows8.1 et Windows Phone8.x), il est vivement conseillé de désinstaller toutes les instances précédentes du Kit de développement logiciel (SDK) Microsoft Universal AdClient ou du Kit SDK Microsoft Advertising.
 
 ## Cibler des sorties de génération propres à une architecture
 
@@ -41,7 +38,7 @@ Les bibliothèques de publicités Microsoft (qui incluent les classes **AdContro
 
 ## Aucun contrôle de boîte à outils
 
-Dans la version actuelle des bibliothèques de publicités Microsoft contenues dans le SDK d’engagement et de monétisation de la BoutiqueMicrosoft, il n’existe aucun contrôle de boîte à outils pour faire glisser une classe **AdControl** ou **InterstitialAd** vers une aire de conception de votre application. Pour obtenir des instructions sur l’ajout de ces contrôles dans le balisage et le code, voir [Procédures pas à pas de développement](developer-walkthroughs.md).
+Dans la version actuelle des bibliothèques de publicités Microsoft contenues dans le Microsoft Store Services SDK et dans le Kit SDK Microsoft Advertising pour Windows et Windows Phone8.x, il n’existe aucun contrôle de boîte à outils pour faire glisser une classe **AdControl** ou **InterstitialAd** vers une aire de conception de votre application. Pour obtenir des instructions sur l’ajout de ces contrôles dans votre balisage et votre code, voir [Procédures pas à pas de développement](developer-walkthroughs.md).
 
 ## Les propriétés latitude et longitude ne sont plus disponibles
 
@@ -57,6 +54,6 @@ Veillez à lire le Contrat de Licence Utilisateur Final (CLUF) dans son intégra
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

@@ -5,11 +5,11 @@ ms.assetid: C1C3F5EA-B775-4700-9C45-695E78C16205
 description: "Dans ce projet, nous allons déplacer un rectangle, luis appliquer un effet de fondu, puis de nouveau l’afficher."
 translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: 6e0b92af1d3c5f61aa2341d43ca40330fcc359f4
+ms.openlocfilehash: ae08bb25d8ac56ca6e03a5c200e8a0d4e05fbfe3
 
 ---
 
-# Prise en main &#58; Animation
+# Prise en main : Animation
 
 \[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
@@ -131,6 +131,6 @@ Vous pouvez modifier ce code XAML manuellement, ou retourner à Blend pour conti
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

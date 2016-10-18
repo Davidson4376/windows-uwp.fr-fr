@@ -1,11 +1,11 @@
 ---
 author: mtoepke
 title: Planifier votre portage DirectX
-description: "Planifiez le portage de votre jeu DirectX9 sur DirectX11 et la plateforme Windows universelle (UWP)&#58; mettez à niveau votre code graphique et préparez votre jeu pour l’environnement WindowsRuntime."
+description: "Planifiez le portage de votre jeu DirectX9 sur DirectX11 et la plateforme Windows universelle (UWP): mettez à niveau votre code graphique et préparez votre jeu pour l’environnement WindowsRuntime."
 ms.assetid: 3c0c33ca-5d15-ae12-33f8-9b5d8da08155
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 929ad82ce057754ee04f1f27537e03520e95157a
+ms.openlocfilehash: fbd582b2cc90ee763cb167c65dac88cee4e7a025
 
 ---
 
@@ -68,6 +68,6 @@ Les deuxconcepts suivants vous seront souvent utiles:
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

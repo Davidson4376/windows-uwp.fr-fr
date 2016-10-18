@@ -4,7 +4,7 @@ title: "Infos de référence sur les API de chargement du dossier Device Portal"
 description: "Découvrez comment accéder par programme aux API de chargement des dossiers."
 translationtype: Human Translation
 ms.sourcegitcommit: fdc25fa4bd7bd5bfa598b993f23cd0ae9783dd0e
-ms.openlocfilehash: 942ddc13b0deba382ad7758bc30bd9a5b0cceb11
+ms.openlocfilehash: 6c3eeccdbb2bca315dc84293a36d0923f46e746d
 
 ---
 
@@ -54,6 +54,6 @@ Code d’état HTTP      | Description
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

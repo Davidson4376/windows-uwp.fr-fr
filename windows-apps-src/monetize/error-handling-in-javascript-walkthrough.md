@@ -4,8 +4,8 @@ ms.assetid: 08b4ae43-69e8-4424-b3c0-a07c93d275c3
 description: "Découvrez comment intercepter les erreurs AdControl dans votre application."
 title: "Gestion des erreurs dans la procédure pas à pas pour JavaScript"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: d26a8efeb253c6c793d8edd21d7452bbf15da261
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: e7ce3cd96286454aaa987483ed4df1cefbee5b57
 
 
 ---
@@ -13,7 +13,7 @@ ms.openlocfilehash: d26a8efeb253c6c793d8edd21d7452bbf15da261
 # Gestion des erreurs dans la procédure pas à pas pour JavaScript
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+
 
 Cette rubrique montre comment intercepter les erreurs [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) dans votre application.
 
@@ -87,6 +87,6 @@ Vous pouvez voir la publicité d’origine de l’exemple d’application géné
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -2,16 +2,14 @@
 description: "Bénéficiez de recommandations en matière de conception ainsi que d’instructions de codage pour l’ajout de contrôles et de modèles à votre application UWP. Vous trouverez plus de 45contrôles puissants utilisables avec votre application."
 title: "Contrôles et modèles UWP - Développement d’applications Windows"
 author: mijacobs
-keywords: uwp controls, user interface, app controls
+keywords: "contrôles uwp, interface utilisateur, contrôles d’application"
 translationtype: Human Translation
-ms.sourcegitcommit: 7c45a464be250e210df48d3fdef35f00d77e16d5
-ms.openlocfilehash: 23fdd3513d11a0fa0171e50fe71d49c8e3db7376
+ms.sourcegitcommit: 2f9d2059399efd949fc8a1d90a5b6c8c106a478e
+ms.openlocfilehash: ef383e46f2c610b57eec1c7767d5100e42075f6c
 
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-
-
 # Contrôles et modèles pour applications UWP
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 Dans le développement d’applications UWP, un <i>contrôle</i> est un élément d’interface utilisateur qui affiche du contenu ou permet une interaction. Les contrôles constituent les blocs de construction de l’interface utilisateur. Nous vous proposons plus de 45contrôles, des simples boutons aux contrôles de données puissants, tels que l’affichage Grille. Un <i>modèle</i> est en quelque sorte une recette permettant d’associer plusieurs contrôles pour créer un élément nouveau.
 
@@ -67,7 +65,7 @@ Informations détaillées en matière de contrôles et de modèles spécifiques.
 </li>
 
 
-<li>[Boîtes de dialogue, fenêtres contextuelles et menus](dialogs-popups-menus.md)</li>
+<li>[Boîtes de dialogue et menus volants](dialogs.md)</li>
 
 <li>[Vue symétrique](flipview.md)</li>
 
@@ -88,6 +86,8 @@ Informations détaillées en matière de contrôles et de modèles spécifiques.
 <li>[Contrôles de transport personnalisés](custom-transport-controls.md)</li>
 </ul>
 </li>
+
+<li>[Menus et menus contextuels](menus.md)</li>
 
 <li>[Volet de navigation](nav-pane.md)</li>
 
@@ -143,6 +143,8 @@ Informations détaillées en matière de contrôles et de modèles spécifiques.
 
 <li>[Notifications toast adaptatives et interactives](tiles-and-notifications-adaptive-interactive-toasts.md)</li>
 
+<li>[Notifications de badge](tiles-and-notifications-badges.md)</li>
+
 <li>[Notifications Visualizer](tiles-and-notifications-notifications-visualizer.md)</li>
 
 <li>[Modes de remise des notifications](tiles-and-notifications-choosing-a-notification-delivery-method.md)</li>
@@ -167,6 +169,6 @@ Informations détaillées en matière de contrôles et de modèles spécifiques.
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO5-->
 
 

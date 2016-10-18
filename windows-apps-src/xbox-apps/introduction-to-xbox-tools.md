@@ -2,10 +2,9 @@
 author: Mtoepke
 title: "Présentation des outils XboxOne"
 description: "Outil Accueil du développeur propre à XboxOne, utilisant Windows Device Portal."
-area: Xbox
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 4414677e942818506020888fa15e7e16ecaf4733
+ms.sourcegitcommit: b3e1a6f1dfe3537d0db8e917163cfbba7b8705fe
+ms.openlocfilehash: 6030f666f213865a92d071210fe66f587c1bffb1
 
 ---
 
@@ -32,7 +31,7 @@ L’en-tête contient des informations importantes visibles d’un seul coup d�
 #### Fenêtres d’outil
 L’en-tête est suivi de la zone principale de l’application, qui contient un ensemble de fenêtres d’outil configurables. Ces fenêtres sont conçues pour permettre aux développeurs de personnaliser l’application afin d’offrir un accès à différents outils et ensembles d’informations. Pour plus d’informations sur les différents outils, voir les descriptions de chacun d’eux fournies dans la suite de cet article. Pour plus d’informations sur la procédure de configuration de la disposition et de l’apparence des fenêtres d’outil, voir la section [Personnalisation de l’outil Accueil du développeur](#customizing-dev-home) plus loin sur cette page.
 
-##### Menu principal
+#### Menu principal
 Vous pouvez appuyer sur la touche **Menu** de votre manette ou accéder au bouton de menu (« Hamburger ») dans le coin supérieur gauche de l’écran pour afficher le menu principal qui vous permet de configurer la couleur de thème et l’image d’arrière-plan de l’espace de travail de l’application, et de formuler des commentaires sur l’application.
 
   ![Menu principal](images/devhome_mainmenu.png)
@@ -48,7 +47,7 @@ L’outil Accueil du développeur s’ancrera à droite de l’écran. Vous pouv
 
   ![Nexus](images/devhome_nexus.png)
 
-##### Description des outils
+#### Description des outils
 | Outil  | Fonctionnalités |
 |-------|--------------|
 | Jeux et applications  | Répertorie les titres et applications installés dans le kit de développement et permet de les ouvrir rapidement. Vous pouvez également visualiser l’état PLM (Gestion de la durée de vie des processus) des jeux et des applications, et modifier les états PLM à partir d’un menu contextuel. |
@@ -57,10 +56,11 @@ L’outil Accueil du développeur s’ancrera à droite de l’écran. Vous pouv
 | VisualStudio | Permet de coupler la console avec une instance de VisualStudio pour permettre le déploiement. Si nécessaire, vous pouvez supprimer toutes les instances VisualStudio couplées existantes pour empêcher le déploiement d’applications de plateforme Windows universelle (UWP) dans un kit. |
 | [WindowsDevicePortal](#windows-device-portal) | Active WindowsDevicePortal, ou WDP (un outil de gestion d’appareils basé sur le navigateur) dans le kit. |
 | État XboxLive | Fournit l’état actuel du service XboxLive. |
-
+<br/>
 ### Gestion de la taille de l’allocation de stockage de développement
 
 Pour augmenter ou diminuer la quantité d’espace disque utilisée pour le stockage de développement, sélectionnez **Gérer le stockage de développement** dans le menu principal. Modifiez la valeur de la barre **Stockage de développement**, puis sélectionnez **Enregistrer et redémarrer** pour redémarrer votre console.
+
   ![Gérer l’allocation de stockage de développement](images/devhome_storage.png)
 
 ### Personnalisation de l’outil Accueil du développeur
@@ -90,10 +90,14 @@ Lorsque vous communiquez avec la console à partir de votre PC de développement
 
 Pour définir un nom d’hôte pour un kit de développement, accédez à l’outil Paramètres de la console et tapez le nom d’hôte dans la zone __Nom d’hôte__.  
 
-  > **Remarque**&nbsp;&nbsp;L’unicité de nom n’est pas appliquée lorsque le nom d’hôte est créé. Veillez à éviter les doublons de nom. Une façon de procéder consiste à dériver le nom d’hôte du nom de votre ordinateur de développement, qui est généralement unique au sein d’une organisation.
+> [!NOTE]
+> L’unicité de nom n’est pas appliquée lorsque le nom d’hôte est créé. Veillez à éviter les doublons. Une façon de procéder consiste à dériver le nom d’hôte du nom de votre ordinateur de développement, qui est généralement unique au sein d’une organisation.
 
 ## WindowsDevicePortal
 Windows Device Portal (WDP) est un outil de gestion d’appareils OneCore basé sur le navigateur.
+
+> [!NOTE]
+> Pour plus d’informations sur WDP, voir [Vue d’ensemble de Windows Device Portal](../debug-test-perf/device-portal.md).
 
 Pour activer WDP sur votre console XboxOne:
 
@@ -114,17 +118,19 @@ Pour activer WDP sur votre console XboxOne:
 
   ![Avertissement concernant le certificat de sécurité](images/security_cert_warning.jpg)
 
+## Compagnon du mode de développement Xbox
+Le Compagnon du mode de développement Xbox est un outil qui vous permet de travailler sur votre console sans quitter votre PC. L’application vous permet d’afficher l’écran de la console et d’y envoyer des données. Pour plus d’informations, voir [Compagnon du mode de développement Xbox](xbox-dev-mode-companion.md).
+
 ## Voir également
 - [Utilisation de Fiddler avec XboxOne lors du développement pour UWP](uwp-fiddler.md)
-- [Technologies du développeur Microsoft: Windows Device Portal (en anglais)](https://msdn.microsoft.com/windows/uwp/debug-test-perf/device-portal-xbox)
+- [Vue d’ensemble de Windows Device Portal](../debug-test-perf/device-portal.md)
 - [UWP sur XboxOne](index.md)
-
 
 
 ----
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Sep16_HO1-->
 
 

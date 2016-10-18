@@ -1,15 +1,15 @@
 ---
 author: jwmsft
 description: "Configure la compilation XAML afin de joindre des classes partielles entre le balisage et le code-behind. La classe partielle du code est définie dans un fichier de code distinct et la classe partielle de balisage est créée par la génération du code lors de la compilation XAML."
-title: Attribut x&#58;Class
+title: Attribut x:Class
 ms.assetid: 40A7C036-133A-44DF-9D11-0D39232C948F
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 83267df025baeb802bfdd0ec03ecd3bf7b01db76
+ms.sourcegitcommit: 3144758352b99f8c145a3c7be8a6c43d6a002104
+ms.openlocfilehash: 1d04755cc9a2b7689d5373772803b6697227b18a
 
 ---
 
-# Attribut x&#58;Class
+# Attribut x:Class
 
 \[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
@@ -33,7 +33,7 @@ Configure la compilation XAML afin de joindre des classes partielles entre le ba
 
 ## Remarques
 
-Il est possible de déclarer **x:Class** en tant qu’attribut pour un élément qui est la racine d’une arborescence d’objets/d’un fichier XAML et qui est compilé par des actions de génération, ou pour la racine de la classe [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) dans la définition d’application d’une application compilée. La déclaration de **x:Class** sur un élément autre qu’une racine de page ou une racine d’application, et dans toutes les circonstances pour un fichier XAML qui n’est pas compilé avec l’action de génération **Page**, engendre une erreur au moment de la compilation.
+Il est possible de déclarer **x:Class** en tant qu’attribut pour un élément qui est la racine d’une arborescence d’objets/d’un fichier XAML et qui est compilé par des actions de génération, ou pour la racine de la classe [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) dans la définition d’application d’une application compilée. La déclaration de **x:Class** sur un élément autre qu’un nœud racine, et dans toutes les circonstances pour un fichier XAML qui n’est pas compilé avec l’action de génération **Page**, engendre une erreur au moment de la compilation.
 
 La classe utilisée en tant que **x:Class** ne peut pas être une classe imbriquée.
 
@@ -46,6 +46,6 @@ Bien que votre fichier code-behind puisse être un fichier C++, il existe certai
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

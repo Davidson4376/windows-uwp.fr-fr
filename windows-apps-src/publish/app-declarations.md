@@ -4,8 +4,8 @@ Description: "Vous pouvez fournir des informations complémentaires sur votre ap
 title: "Déclarations d’application"
 ms.assetid: 3AF618F3-2B47-4A57-B7E8-1DF979D4A82C
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: ee2e54494a868fbec8c4a8bd7bbb9bdcd6cbf9ae
+ms.sourcegitcommit: 3afdf00864e023d913b635beef0c506735881b23
+ms.openlocfilehash: 419d41de3ba26f6470ad99b44826f2935aea4eff
 
 ---
 
@@ -15,9 +15,9 @@ Vous pouvez fournir des informations complémentaires sur votre application dans
 
 Les sections suivantes décrivent chaque déclaration et ce que vous avez besoin de prendre en compte au moment de déterminer si chaque déclaration s'applique à votre application.
 
-## Cette application permet aux utilisateurs d'effectuer des achats, mais n'utilise pas le système de commerce du Windows Store.
+## Cette application permet aux utilisateurs d’effectuer des achats, mais n’utilise pas le système de commerce du Windows Store.
 
-La plupart des applications doivent laisser cette case désactivée, car les applications qui offrent des possibilités d’effectuer des achats in-app utilisent généralement l’API d’achat in-app Microsoft pour créer et [soumettre les produits in-app](iap-submissions.md). En vertu du [Contrat développeur d’applications](https://msdn.microsoft.com/library/windows/apps/hh694058), les applications créées et soumises avant le 29 juin 2015 peuvent continuer à offrir la fonctionnalité d’achat in-app sans utiliser le moteur de commerce de Microsoft, pour autant que la fonctionnalité d’achat soit conforme aux [Politiques du Windows Store](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_8). Si cela s’applique à votre application, vous devez activer cette case. Sinon, laissez-la désactivée.
+La plupart des applications doivent laisser cette case désactivée, car les applications qui offrent des possibilités d’effectuer des achats in-app utilisent généralement l’API d’achat in-app Microsoft pour créer et [soumettre les modules complémentaires](add-on-submissions.md). En vertu du [Contrat développeur d’applications](https://msdn.microsoft.com/library/windows/apps/hh694058), les applications créées et soumises avant le 29juin2015 peuvent continuer à offrir la fonctionnalité d’achat in-app sans utiliser le moteur de commerce de Microsoft, pour autant que la fonctionnalité d’achat soit conforme aux [Politiques du Windows Store](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_8). Si cela s’applique à votre application, vous devez activer cette case. Sinon, laissez-la désactivée.
 
 ## Cette application a fait l'objet de tests pour voir si elle est conforme aux recommandations d'accessibilité.
 
@@ -67,6 +67,6 @@ Si vous voulez empêcher l’insertion des données de votre application dans le
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

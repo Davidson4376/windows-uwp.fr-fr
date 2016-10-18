@@ -5,7 +5,7 @@ description: "La latence d’entrée peut avoir un impact important sur un jeu. 
 ms.assetid: e18cd1a8-860f-95fb-098d-29bf424de0c0
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 19bcf043f3fc8c729f5f9fbbeee237bd1749443d
+ms.openlocfilehash: ae99f88126192866ed18df55497af6390bc38c26
 
 ---
 
@@ -261,6 +261,6 @@ Ces schémas nous montrent que les jeux peuvent réduire la latence d’entrée 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

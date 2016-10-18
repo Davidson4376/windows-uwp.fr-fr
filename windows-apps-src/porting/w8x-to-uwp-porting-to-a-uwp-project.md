@@ -5,7 +5,7 @@ title: "Portage d’un projet Windows Runtime 8.x vers un projet UWP"
 ms.assetid: 2dee149f-d81e-45e0-99a4-209a178d415a
 translationtype: Human Translation
 ms.sourcegitcommit: 07058b48a527414b76d55b153359712905aa9786
-ms.openlocfilehash: 60f59c58aedc56da58350a050acd184a376b8067
+ms.openlocfilehash: 97b187b5e1ee988d4e1d514f139cec48088be3f2
 
 ---
 
@@ -44,7 +44,7 @@ La plupart des API WindowsRuntime déjà appelées par votre application8.1 univ
 
 Si vous obtenez des erreurs de compilation à propos d’espaces de noms, de types ou de membres introuvables, cela en est probablement la cause. Ouvrez la rubrique concernant l’API dans la documentation de référence sur les API et accédez à la section Configuration requise pour connaître la famille d’appareils d’implémentation. Si celle-ci ne correspond pas à votre famille d’appareils cible, vous avez besoin d’ajouter une référence au SDK d’extension pour cette famille d’appareils afin que l’API soit disponible pour votre projet.
 
-Cliquez sur **Projet**&gt;**Ajouter une référence**&gt;**Applications universelles Windows**&gt;**Extensions** et cochez le SDK d’extension approprié. Par exemple, si les API que vous voulez appeler sont uniquement disponibles dans la famille d’appareils mobiles et qu’elles ont été introduites dans la version 10.0.x.y, cochez **Extensions Windows Mobile pour UWP**.
+Cliquez sur **Projet** &gt; **Ajouter une référence** &gt; **Windows universel** &gt; **Extensions**, puis sélectionnez le SDK d’extension approprié. Par exemple, si les API que vous voulez appeler sont uniquement disponibles dans la famille d’appareils mobiles et qu’elles ont été introduites dans la version10.0.x.y, cochez **Extensions Windows Mobile pour UWP**.
 
 La référence suivante sera ajoutée à votre fichier de projet:
 
@@ -177,6 +177,6 @@ Rubrique suivante : [Résolution des problèmes](w8x-to-uwp-troubleshooting.md).
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

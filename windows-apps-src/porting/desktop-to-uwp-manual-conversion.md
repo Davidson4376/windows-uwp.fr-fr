@@ -3,8 +3,8 @@ Description: Montre comment convertir manuellement une application de bureau Win
 Search.Product: eADQiWindows 10XVcnh
 title: Convertir manuellement une application de bureau Windows en appli UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 606d5237cb67cb4439704f81b180c3c48cc1556f
-ms.openlocfilehash: be7599403e78c8db7ba91fe5a7c25b1c1a1ab644
+ms.sourcegitcommit: 2c1a8ea38081c947f90ea835447a617c388aec08
+ms.openlocfilehash: 646a5b88cb7ca97f18bf4552950979a2ceead398
 
 ---
 
@@ -14,9 +14,9 @@ ms.openlocfilehash: be7599403e78c8db7ba91fe5a7c25b1c1a1ab644
 
 L’utilisation du convertisseur est pratique et automatique; celui-ci est très utile en cas d’incertitude sur ce que fait votre programme d’installation. Toutefois, si votre application est installée à l’aide de xcopy, ou si vous connaissez les modifications que le programme d’installation de votre application apporte au système, vous pouvez choisir de créer manuellement un package d’application et un manifeste.
 
-Voici la procédure pour créer un package Centennial manuellement:
+Voici la procédure pour créer un package manuellement:
 
-## Créez un manifeste manuellement.
+## Créer un manifeste manuellement
 
 Votre fichier _appxmanifest.xml_ doit présenter le contenu suivant (au minimum). Modifiez les espaces réservés mis en forme comme \*\*\*CECI\*\*\* en valeurs réelles pour votre application.
 
@@ -103,6 +103,6 @@ Lorsque vous exécutez MakeCert.exe et que vous êtes invité à entrer un mot d
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Sep16_HO2-->
 
 

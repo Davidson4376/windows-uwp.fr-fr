@@ -1,26 +1,32 @@
 ---
-author: martinekuan
+author: GrantMeStrength
 ms.assetid: C9787269-B54F-4FFA-A884-D4A3BF28F80D
 title: "Qu’est-ce qu’une application de plateforme Windows universelle (UWP) ?"
-description: "Découvrez les différents types d’application que recouvre l’appellation « applications Windows universelles » &#58; applications du Windows Store, applications du Windows Phone Store et applications Windows Runtime."
+description: "Découvrez les différents types d’application que recouvre l’appellation « applications Windows universelles » : applications du Windows Store, applications du Windows Phone Store et applications Windows Runtime."
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: f02851d848a82af7104a6038c5d8850d5362c832
+ms.sourcegitcommit: 6be8bb0a78b614e160fb40629601bdab2d7fc71a
+ms.openlocfilehash: 3fd9f4d539977c4b531e08efe0719328365c757c
 
 ---
 
-# Qu’est-ce qu’une application de plateforme Windows universelle (UWP) ?
+# Qu’est-ce qu’une application de plateforme Windows universelle (UWP)?
 
-Une application de plateforme Windows universelle est une expérience Windows qui repose sur la plateforme Windows universelle (UWP), introduite pour la première fois dans Windows8 en tant que Windows Runtime. Au cœur des applications de plateforme Windows universelle est l’idée que les utilisateurs souhaitent que leurs *expériences* soient mobiles sur TOUS leurs appareils, et pouvoir utiliser l’appareil le plus pratique ou le plus productif à leur disposition pour la tâche à effectuer.
+Si vous découvrez la plateforme Windows ou que vous venez de l’univers de .NET, Windows Forms ou Silverlight, vous vous posez peut-être la question suivante: qu’*est-ce* au juste qu’une application UWP? 
 
-Windows 10 facilite le développement d’applications pour UWP avec un seul ensemble d’API, un seul package d’application et un seul Store pour atteindre tous les appareils Windows 10 : PC, tablettes, téléphones et plus encore. Il est plus facile de prendre en charge plusieurs tailles d’écran, ainsi que divers modèles d’interaction, que ce soit à l’aide d’impulsions tactiles, de la souris et du clavier, d’une manette de jeu ou d’un stylet.
+Tout d’abord, sachez qu’il n’y a pas lieu de paniquer. Bientôt, tout vous paraîtra évident. 
 
-![Appareils fonctionnant sous Windows](images/1894834-hig-device-primer-01-500.png)
+Une application de plateforme Windows universelle est une expérience Windows qui repose sur la plateforme Windows universelle (UWP), introduite pour la première fois dans Windows8 en tant que Windows Runtime. Au cœur des applications UWP est l’idée que les utilisateurs souhaitent que leurs *expériences* soient mobiles sur TOUS leurs appareils, et qu’ils puissent utiliser l’appareil le plus adapté ou le plus productif pour la tâche qu’ils ont à effectuer.
 
-##Par conséquent, qu’est-ce qu’une application UWP ?
+Windows10 facilite le développement d’applications pour UWP avec un seul ensemble d’API, un seul package d’application et un seul Store pour atteindre tous les appareils Windows 10: PC, tablettes, téléphones, Xbox, HoloLens, Surface Hub, etc. Il est plus facile de prendre en charge plusieurs tailles d’écran et plusieurs modèles d’interaction, qu’il s’agisse d’impulsions tactiles, de la souris et du clavier, d’une manette de jeu ou d’un stylet.
+
+Résultat: vous pouvez passer votre temps à utiliser les langages de programmation et les API que vous maîtrisez le mieux, le tout dans un même projet, et aboutir à l’exécution d’un même code sur les divers types d’appareils Windows qui existent aujourd’hui.
+
+![Appareils avec Windows](images/1894834-hig-device-primer-01-500.png)
+
+##Donc, qu’est-ce *exactement* qu’une application UWP?
 
 
-Qu’est-ce qui différencie une application UWP ? Voici quelques-unes des caractéristiques qui rendent différentes les applications UWP sur Windows 10.
+Qu’est-ce qui différencie une application UWP? Voici quelques-unes des caractéristiques qui rendent différentes les applications UWP sur Windows 10.
 
 -   Vous ciblez des familles d’appareils, pas un système d’exploitation.
 
@@ -91,10 +97,16 @@ Pour une présentation plus détaillée d’UWP, lisez le [Guide des application
 
 
 * [Guide des applications de plateforme Windows universelle](universal-application-platform-guide.md)
-* [Se préparer](get-set-up.md)
+* [Préparation](get-set-up.md)
+
+## Rubriques plus avancées
+
+* [.NET Native - What it means for Universal Windows Platform (UWP) developers [Les implications de .NET Native pour les développeurs d’applications de plateforme Windows universelle (UWP)]](https://blogs.windows.com/buildingapps/2015/08/20/net-native-what-it-means-for-universal-windows-platform-uwp-developers/#TYsD3tJuBJpK3Hc7.97)
+* [Universal Windows apps in .NET (Applications Windows universelles dans .NET)](https://blogs.msdn.microsoft.com/dotnet/2015/07/30/universal-windows-apps-in-net)
+* [.NET pour les applications UWP](https://msdn.microsoft.com/en-us/library/mt185501.aspx)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

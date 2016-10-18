@@ -4,18 +4,27 @@ ms.assetid: 4311D293-94F0-4BBD-A22D-F007382B4DB8
 title: "Énumérer les appareils"
 description: "L’espace de noms d’énumération vous permet de rechercher des appareils connectés au système, en interne, en externe ou détectables sur les protocoles sans fil ou réseau."
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 296ca0ece8cead74112c3e665f13b5e5547e6da3
+ms.sourcegitcommit: 23a600fdcf972fcb291653e8aac447e035c12c6d
+ms.openlocfilehash: 2aa1a86a2cb0b413fae5fbcd87599a9f1a822324
 
 ---
 # Énumérer les appareils
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
+## Exemples
 
-** API importantes **
+Le moyen le plus simple d’énumérer tous les appareils disponibles consiste à prendre un instantané avec la commande [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.findallasync.aspx) (expliquée plus en détail dans la section ci-dessous).
 
--   [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459)
+```CSharp
+async void enumerateSnapshot(){
+  DeviceInformationCollection collection = await DeviceInformation.FindAllAsync();
+}
+```
+
+Pour télécharger un exemple illustrant des utilisations plus avancées des API [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459), cliquez [ici](http://go.microsoft.com/fwlink/?LinkID=620536).
+
+## API d’énumération
 
 L’espace de noms d’énumération vous permet de rechercher des appareils connectés au système, en interne, en externe ou détectables sur les protocoles sans fil ou réseau. Les API que vous utilisez pour énumérer les appareils possibles sont l’espace de noms [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459). Voici quelques raisons d’utiliser ces API.
 
@@ -82,7 +91,13 @@ Dans certains scénarios, le [**DevicePicker**](https://msdn.microsoft.com/libra
 
 Pour énumérer une capture instantanée d’appareils, utilisez la méthode [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.findallasync.aspx). Cette méthode attend que le processus d’énumération soit terminé et renvoie tous les résultats sous la forme d’un seul objet [**DeviceInformationCollection**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationcollection.aspx). Cette méthode est également surchargée pour vous offrir plusieurs options de filtrage des résultats et limiter ceux-ci aux appareils qui vous intéressent. Pour ce faire, fournissez une [**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381) ou transmettez un sélecteur d’appareil. Le sélecteur d’appareil est une chaîne AQS qui spécifie les appareils que vous voulez énumérer. Pour plus d’informations, voir [Créer un sélecteur d’appareil](build-a-device-selector.md).
 
+Vous trouverez ci-dessous l’exemple d’un instantané d’énumération d’appareil:
+
+
+
 En plus de limiter les résultats, vous pouvez spécifier les propriétés à récupérer pour les appareils. Dans ce cas, les propriétés spécifiées seront disponibles dans le conteneur des propriétés pour chacun des objets [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) renvoyés dans la collection. Il est important de noter que toutes les propriétés ne sont pas disponibles pour tous les genres d’appareils. Pour voir les propriétés disponibles selon les genres d’appareils, voir [Propriétés d’informations d’appareil](device-information-properties.md).
+
+
 
 ## Énumérer et observer des appareils
 
@@ -134,12 +149,8 @@ Lors de l’énumération d’objets **AssociationEndpoint**, **AssociationEndpo
 ## Enregistrer un appareil en vue d’une utilisation ultérieure
 
 
-Tout objet [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) est identifié de façon unique par une combinaison de deux éléments d’information : [**DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id) et [**DeviceInformation.Kind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.kind.aspx). Si vous conservez ces deux éléments d’information, vous pouvez recréer l’objet **DeviceInformation** après sa perte en fournissant ces informations à [**CreateFromIdAsync**](https://msdn.microsoft.com/library/windows/apps/br225425.aspx). Dans ce cas, vous pouvez enregistrer les préférences de l’utilisateur pour un appareil qui s’intègre à votre application.
+Tout objet [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) est identifié de façon unique par une combinaison de deux éléments d’information : [**DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id) et [**DeviceInformation.Kind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.kind.aspx). Si vous conservez ces deux éléments d’information, vous pouvez recréer l’objet **DeviceInformation** après sa perte en fournissant ces informations à [**CreateFromIdAsync**](https://msdn.microsoft.com/library/windows/apps/br225425.aspx). Dans ce cas, vous pouvez enregistrer les préférences utilisateur pour un appareil qui s’intègre à votre application.
 
-## Exemple
-
-
-Pour télécharger un exemple illustrant comment utiliser les API [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459), cliquez [ici](http://go.microsoft.com/fwlink/?LinkID=620536).
 
  
 
@@ -151,6 +162,6 @@ Pour télécharger un exemple illustrant comment utiliser les API [**Windows.Dev
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO5-->
 
 

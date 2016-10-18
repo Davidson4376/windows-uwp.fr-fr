@@ -6,35 +6,33 @@ MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: "Effets vidéo personnalisés"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d6ad5b2488f79787c07b4057b34fcbfd3a4df3c3
+ms.sourcegitcommit: 2d10a9a3732612cff8da81ee1921eaed0e838099
+ms.openlocfilehash: 57908ff3329968bba2eea3d8d51cb0277a2afba5
 
 ---
 
 # Effets vidéo personnalisés
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-\[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.\]
-
-Cet article explique comment créer un composant WindowsRuntime qui implémente l’interface [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) pour vous permettre de créer des effets personnalisés pour les flux vidéo. Vous pouvez utiliser les effets personnalisés avec plusieurs API Windows Runtime différentes, notamment [MediaCapture](https://msdn.microsoft.com/library/windows/apps/br241124), qui fournit un accès à la caméra d’un appareil, et [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646), qui vous permet de créer des compositions complexes à partir de clips multimédias.
+Cet article explique comment créer un composant WindowsRuntime implémentant l’interface [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) pour créer des effets personnalisés de flux vidéo. Vous pouvez utiliser les effets personnalisés avec plusieurs API Windows Runtime différentes, notamment [MediaCapture](https://msdn.microsoft.com/library/windows/apps/br241124), qui fournit un accès à la caméra d’un appareil, et [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646), qui vous permet de créer des compositions complexes à partir de clips multimédias.
 
 ## Ajouter un effet personnalisé à votre application
 
 
-Un effet vidéo personnalisé est défini dans une classe qui implémente l’interface [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788). Cette classe ne peut pas être incluse directement dans le projet de votre application. À la place, vous devez utiliser un composant Windows Runtime pour héberger votre classe effet vidéo.
+Un effet vidéo personnalisé est défini dans une classe qui implémente l’interface [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788). Cette classe ne peut pas être incluse directement dans le projet de votre application. À la place, vous devez utiliser un composant Windows Runtime pour héberger votre classe d’effet vidéo.
 
 **Ajouter un composant Windows Runtime pour votre effet vidéo**
 
-1.  Dans Microsoft Visual Studio, lorsque votre solution est ouverte, accédez au menu **Fichier**, sélectionnez **Ajouter-&gt;Nouveau projet...**
+1.  Dans Microsoft Visual Studio, quand votre solution est ouverte, accédez au menu **Fichier**, sélectionnez **Ajouter-&gt;Nouveau projet.**
 2.  Sélectionnez le type de projet **Composant Windows Runtime (Windows universel)**.
-3.  Pour cet exemple, nommez le projet «VideoEffectComponent». Ce nom sera référencé dans le code ultérieurement.
+3.  Pour cet exemple, nommez le projet *VideoEffectComponent*. Ce nom sera référencé dans le code ultérieurement.
 4.  Cliquez sur **OK**.
 5.  Le modèle de projet crée une classe appelée Class1.cs. Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur l’icône de Class1.cs et sélectionnez **Renommer**.
-6.  Renommez le fichier «ExampleVideoEffect.cs». Visual Studio affiche une invite vous demandant si vous voulez mettre à jour toutes les références sous le nouveau nom. Cliquez sur **Oui**.
-7.  Ouvrez «ExampleVideoEffect.cs» et mettez à jour la définition de classe pour implémenter l’interface [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788).
+6.  Renommez le fichier *ExampleVideoEffect.cs*. Visual Studio affiche une invite vous demandant si vous voulez mettre à jour toutes les références sous le nouveau nom. Cliquez sur **Oui**.
+7.  Ouvrez **ExampleVideoEffect.cs** et mettez à jour la définition de classe pour implémenter l’interface [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788).
 
 [!code-cs[ImplementIBasicVideoEffect](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetImplementIBasicVideoEffect)]
 
@@ -51,14 +49,14 @@ Votre effet vidéo doit implémenter toutes les méthodes et propriétés de l�
 
 ### Méthode Close
 
-Le système appelle la méthode [**Fermer**](https://msdn.microsoft.com/library/windows/apps/dn764789) sur votre classe lorsque l’effet doit être arrêté. Vous devez utiliser cette méthode pour supprimer les ressources que vous avez créées. L’argument de la méthode est un MediaEffectClosedReason qui vous permet de savoir si l’effet a été fermé normalement, si une erreur s’est produite, ou si l’effet ne prend pas en charge le format de codage requis.
+Le système appelle la méthode [**Fermer**](https://msdn.microsoft.com/library/windows/apps/dn764789) sur votre classe lorsque l’effet doit être arrêté. Vous devez utiliser cette méthode pour supprimer les ressources que vous avez créées. L’argument de la méthode est un [**MediaEffectClosedReason**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.MediaEffectClosedReason) qui vous permet de savoir si l’effet a été fermé normalement, si une erreur s’est produite, ou si l’effet ne prend pas en charge le format de codage nécessaire.
 
 [!code-cs[Close](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetClose)]
 
 
 ### Méthode DiscardQueuedFrames
 
-La méthode [**DiscardQueuedFrames**](https://msdn.microsoft.com/library/windows/apps/dn764790) est appelée lorsque l’effet doit être réinitialisé. Dans ce cas, le scénario courant est que l’effet stocke les trames précédemment traitées pour les utiliser dans le traitement de la trame active. Quand cette méthode est appelée, vous devez supprimer l’ensemble des trames précédentes que vous avez enregistrées. Toutefois, cette méthode peut être utilisée pour réinitialiser un état associé aux trames précédentes, pas seulement les trames vidéo cumulées.
+La méthode [**DiscardQueuedFrames**](https://msdn.microsoft.com/library/windows/apps/dn764790) est appelée lorsque l’effet doit être réinitialisé. Dans ce cas, le scénario courant est que l’effet stocke les trames précédemment traitées pour les utiliser dans le traitement de la trame active. Quand cette méthode est appelée, vous devez supprimer l’ensemble des trames précédentes que vous avez enregistrées. Cette méthode peut être utilisée pour réinitialiser un état associé aux trames précédentes, pas seulement les trames vidéo cumulées.
 
 
 [!code-cs[DiscardQueuedFrames](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetDiscardQueuedFrames)]
@@ -67,9 +65,10 @@ La méthode [**DiscardQueuedFrames**](https://msdn.microsoft.com/library/windows
 
 ### Propriété IsReadOnly
 
-La propriété [**IsReadOnly**](https://msdn.microsoft.com/library/windows/apps/dn764792) permet d’indiquer au système si votre effet va écrire dans la sortie de l’effet. Si votre application ne modifie pas les trames vidéo (par exemple, un effet qui effectue seulement une analyse des trames vidéo), vous devez définir cette propriété sur true. Ainsi, le système copiera efficacement l’entrée de trame sur la sortie de trame pour vous.
+La propriété [**IsReadOnly**](https://msdn.microsoft.com/library/windows/apps/dn764792) permet d’indiquer au système si votre effet va écrire dans la sortie de l’effet. Si votre application ne modifie pas les trames vidéo (par exemple, un effet qui effectue seulement une analyse des trames vidéo), vous devez définir cette propriété sur true. Ainsi, le système copie efficacement à votre place l’entrée de trame dans la sortie de trame.
 
-**Conseil** Lorsque la propriété [**IsReadOnly**](https://msdn.microsoft.com/library/windows/apps/dn764792) est définie sur true, le système copie la trame en entrée sur la trame en sortie avant l’appel de [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794). Le fait de définir la propriété **IsReadOnly** sur true ne vous empêche pas d’écrire sur les trames en sortie de l’effet dans **ProcessFrame**.
+> [!TIP]
+> Quand la propriété [**IsReadOnly**](https://msdn.microsoft.com/library/windows/apps/dn764792) est définie sur true, le système copie la trame d’entrée sur la trame de sortie avant l’appel de [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794). Le fait de définir la propriété **IsReadOnly** sur true ne vous empêche pas d’écrire sur les trames de sortie de l’effet dans **ProcessFrame**.
 
 [!code-cs[IsReadOnly](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetIsReadOnly)] 
 
@@ -89,18 +88,20 @@ Le système vérifie la propriété [**SupportedEncodingProperties**](https://ms
 [!code-cs[SupportedEncodingProperties](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetSupportedEncodingProperties)]
 
 
-**Remarque** Si vous renvoyez une liste vide d’objets [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) à partir de **SupportedEncodingProperties**, le système utilise par défaut le codage ARGB32.
+> [!NOTE] 
+> Si vous renvoyez une liste vide d’objets [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) à partir de **SupportedEncodingProperties**, le système utilise par défaut le codage ARGB32.
 
  
 
 ### Propriété SupportedMemoryTypes
 
-Le système vérifie que la propriété [**SupportedMemoryTypes**](https://msdn.microsoft.com/library/windows/apps/dn764801) pour déterminer si l’effet va accéder aux trames vidéo dans la mémoire du logiciel ou dans la mémoire du matériel (GPU). Si vous renvoyez  [**MediaMemoryTypes.Cpu**](https://msdn.microsoft.com/library/windows/apps/dn764822), l’effet sera transmis aux trames d’entrée et de sortie qui contiennent des données d’image dans les objets [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358). Si vous renvoyez **MediaMemoryTypes.Gpu**, l’effet sera transmis aux trames en entrée et en sortie qui contiennent des données d’image dans les objets [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn965505).
+Le système vérifie que la propriété [**SupportedMemoryTypes**](https://msdn.microsoft.com/library/windows/apps/dn764801) pour déterminer si l’effet va accéder aux trames vidéo dans la mémoire du logiciel ou dans la mémoire du matériel (GPU). Si vous renvoyez [**MediaMemoryTypes.Cpu**](https://msdn.microsoft.com/library/windows/apps/dn764822), l’effet sera transmis aux trames d’entrée et de sortie qui contiennent des données d’image dans les objets [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358). Si vous renvoyez **MediaMemoryTypes.Gpu**, l’effet sera transmis aux trames en entrée et en sortie qui contiennent des données d’image dans les objets [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn965505).
 
 [!code-cs[SupportedMemoryTypes](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetSupportedMemoryTypes)]
 
 
-**Remarque** Si vous spécifiez [**MediaMemoryTypes.GpuAndCpu**](https://msdn.microsoft.com/library/windows/apps/dn764822), le système utilisera la mémoire du GPU ou du système, selon laquelle est la plus performante pour le pipeline. Lorsque vous utilisez cette valeur, vous devez vérifier la méthode [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794) pour voir si le [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) ou le [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn965505) transmis dans la méthode contient des données, puis traiter la trame en fonction.
+> [!NOTE]
+> Si vous spécifiez [**MediaMemoryTypes.GpuAndCpu**](https://msdn.microsoft.com/library/windows/apps/dn764822), le système utilise la mémoire du GPU ou du système, selon laquelle est la plus performante pour le pipeline. Quand vous utilisez cette valeur, vous devez vérifier la méthode [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794) pour voir si le [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) ou le [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn965505) transmis dans la méthode contient des données, puis traiter la trame en fonction.
 
  
 
@@ -127,7 +128,7 @@ Cet exemple simple estompe les pixels dans chaque trame vidéo en fonction d’u
 
 C’est dans la méthode [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794) que l’effet modifie les données d’image de la vidéo. La méthode est appelée une fois par trame et un objet [**ProcessVideoFrameContext**](https://msdn.microsoft.com/library/windows/apps/dn764826) lui est transmis. Cet objet contient un objet [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) en entrée qui contient la trame entrante à traiter et un objet **VideoFrame** en sortie sur lequel vous écrivez des données d’image qui seront transmises dans le reste du pipeline vidéo. Chacun de ces objets **VideoFrame** comporte une propriété [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn930926) et une propriété [**Direct3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn930920), mais lesquels d’entre eux peuvent être utilisés est déterminé par la valeur renvoyée à partir de la propriété [**SupportedMemoryTypes**](https://msdn.microsoft.com/library/windows/apps/dn764801).
 
-Cette exemple montre une implémentation simple de la méthode **ProcessFrame** à l’aide du traitement logiciel. Pour plus d’informations sur l’utilisation des objets [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358), consultez [Acquisition d’images](imaging.md). Un exemple d’implémentation de **ProcessFrame** à l’aide du traitement logiciel est illustré plus loin dans cet article.
+Cet exemple montre une implémentation simple de la méthode **ProcessFrame** à l’aide du traitement logiciel. Pour plus d’informations sur l’utilisation des objets [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358), voir [Acquisition d’images](imaging.md). Un exemple d’implémentation de **ProcessFrame** à l’aide du traitement logiciel est illustré plus loin dans cet article.
 
 L’accès à la mémoire tampon de données d’un **SoftwareBitmap** nécessite l’interopérabilité COM. Vous devez donc inclure l’espace de noms **System.Runtime.InteropServices** dans votre fichier de classe effet.
 
@@ -139,10 +140,11 @@ Ajoutez le code suivant à l’intérieur de l’espace de noms de l’effet pou
 [!code-cs[COMImport](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetCOMImport)]
 
 
-**Remarque** Dans la mesure où cette technique accède à une mémoire tampon d’image native non gérée, vous devez configurer votre projet pour autoriser le code non sécurisé.
-1.  Dans l’Explorateur de solutions, cliquez avec le bouton droit sur le projet VideoEffectComponent et sélectionnez Propriétés....
-2.  Sélectionnez l’onglet Générer.
-3.  Cochez la case «Autoriser le code non sécurisé».
+> [!NOTE]
+> Dans la mesure où cette technique accède à une mémoire tampon d’image native non gérée, vous devez configurer votre projet pour autoriser du code unsafe.
+> 1.  Dans l’Explorateur de solutions, cliquez avec le bouton droit sur le projet VideoEffectComponent et sélectionnez **Propriétés**.
+> 2.  Sélectionnez l’onglet **Générer**.
+> 3.  Cochez la case **Autoriser du code unsafe**.
 
  
 
@@ -153,19 +155,19 @@ Maintenant que les tampons de données ont été obtenus, vous pouvez lire à pa
 [!code-cs[ProcessFrameSoftwareBitmap](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetProcessFrameSoftwareBitmap)]
 
 
-## Implémentez l’interface IBasicVideoEffect à l’aide du traitement matériel
+## Implémenter l’interface IBasicVideoEffect à l’aide du traitement matériel
 
 
-La création d’un effet vidéo personnalisé à l’aide du traitement matériel (GPU) est presque identique à l’utilisation du traitement logiciel tel que décrit ci-dessus. Cette section vous explique les quelques différences dans un effet qui utilise le traitement matériel. Cet exemple utilise l’API Windows Runtime Win2D. Pour plus d’informations sur l’utilisation de Win2D, consultez la [documentation Win2D](http://go.microsoft.com/fwlink/?LinkId=519078).
+La création d’un effet vidéo personnalisé à l’aide du traitement matériel (GPU) est presque identique à l’utilisation du traitement logiciel tel que décrit ci-dessus. Cette section vous explique les différences dans un effet qui utilise le traitement matériel. Cet exemple utilise l’API Windows Runtime Win2D. Pour plus d’informations sur l’utilisation de Win2D, voir la [documentation Win2D](http://go.microsoft.com/fwlink/?LinkId=519078).
 
 Utilisez les étapes suivantes pour ajouter le package NuGet Win2D au projet que vous avez créé comme décrit dans la section [Ajouter un effet personnalisé à votre application](#addacustomeffect) au début de cet article.
 
-**Ajouter le package NuGet Win2D à votre projet d’effet**
+**Pour ajouter le package NuGet Win2D à votre projet d’effet**
 
-1.  Dans l’**Explorateur de solutions**, cliquez avec le bouton droit  sur le projet **VideoEffectComponent** et sélectionnez **Gérer les packages NuGet...**
+1.  Dans l’**Explorateur de solutions**, cliquez avec le bouton droit sur le projet **VideoEffectComponent** et sélectionnez **Gérer les packages NuGet**.
 2.  En haut de la fenêtre, sélectionnez l’onglet **Explorer**.
-3.  Dans la zone de recherche, tapez «Win2D».
-4.  Cliquez sur **Win2D.uwp**, puis cliquez sur Installer dans le volet droit.
+3.  Dans la zone de recherche, entrez **Win2D**.
+4.  Sélectionnez **Win2D.uwp**, puis **Installer** dans le volet droit.
 5.  La boîte de dialogue **Examiner les modifications** vous indique le package à installer. Cliquez sur **OK**.
 6.  Acceptez la licence de package.
 
@@ -179,7 +181,7 @@ Dans la mesure où cet effet utilisera la mémoire GPU pour les opérations sur 
 [!code-cs[SupportedMemoryTypesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSupportedMemoryTypesWin2D)]
 
 
-Définissez les propriétés de codage que votre effet prendra en charge avec la propriété [**SupportedEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn764799). Lorsque vous travaillez avec Win2D, vous devez utiliser le codage ARGB32.
+Définissez les propriétés de codage que votre effet prend en charge avec la propriété [**SupportedEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn764799). Quand vous utilisez Win2D, vous devez utiliser le codage ARGB32.
 
 [!code-cs[SupportedEncodingPropertiesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSupportedEncodingPropertiesWin2D)]
 
@@ -189,7 +191,7 @@ Utilisez la méthode [**SetEncodingProperties**](https://msdn.microsoft.com/libr
 [!code-cs[SetEncodingPropertiesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSetEncodingPropertiesWin2D)]
 
 
-L’implémentation [**SetProperties**](https://msdn.microsoft.com/library/windows/apps/br240986) est identique à l’exemple de traitement logiciel ci-dessus. Cet exemple utilise une propriété **BlurAmount** pour configurer un effet de flou Win2D.
+L’implémentation de [**SetProperties**](https://msdn.microsoft.com/library/windows/apps/br240986) est identique à l’exemple de traitement logiciel précédent. Cet exemple utilise une propriété **BlurAmount** pour configurer un effet de flou Win2D.
 
 [!code-cs[SetPropertiesWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetSetPropertiesWin2D)]
 
@@ -206,17 +208,17 @@ La dernière étape consiste à implémenter la méthode [**ProcessFrame**](http
 ## Ajout d’un effet personnalisé à votre application
 
 
-Pour utiliser votre effet vidéo à partir de votre application, vous devez ajouter une référence au projet d’effet à votre application.
+Pour utiliser votre effet vidéo dans votre application, vous devez ajouter une référence au projet d’effet à votre application.
 
-1.  Dans l’Explorateur de solutions, sous votre projet d’application, cliquez avec le bouton droit sur Références, puis sélectionnez Ajouter une référence….
-2.  Développez l’onglet Projets, cliquez sur Solution, puis sélectionnez la case à cocher pour le nom de votre projet d’effet. Pour cet exemple, le nom est VideoEffectComponent.
-3.  Cliquez sur OK.
+1.  Dans l’Explorateur de solutions, sous votre projet d’application, cliquez avec le bouton droit sur **Références**, puis sélectionnez **Ajouter une référence**.
+2.  Développez l’onglet **Projets**, sélectionnez **Solution**, puis cochez la case du nom de votre projet d’effet. Dans cet exemple, le nom est *VideoEffectComponent*.
+3.  Cliquez sur **OK**.
 
 ### Ajouter un effet personnalisé à un flux vidéo de caméra
 
 Vous pouvez configurer un flux d’aperçu simple à partir de la caméra en suivant les étapes décrites dans l’article [Accès à l’aperçu simple de l’appareil photo](simple-camera-preview-access.md). En suivant ces étapes, vous obtiendrez un objet [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) initialisé qui est utilisé pour accéder au flux vidéo de la caméra.
 
-Pour ajouter votre effet vidéo personnalisé à un flux de caméra, créez d’abord un nouvel objet [**VideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608055), en transmettant l’espace de noms et le nom de classe de votre effet. Appelez ensuite la méthode [**AddVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn878035) de l’objet **MediaCapture** pour ajouter l’effet au flux spécifié. Cet exemple utilise la valeur [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640) pour indiquer que l’effet doit être ajouté au flux d’aperçu. Si votre application prend en charge la capture vidéo, vous pouvez également utiliser **MediaStreamType.VideoRecord** pour ajouter l’effet au flux de capture. **AddVideoEffect** renvoie un objet [**IMediaExtension**](https://msdn.microsoft.com/library/windows/apps/br240985) représentant votre effet personnalisé. Vous pouvez utiliser la méthode SetProperties pour définir la configuration de votre effet.
+Pour ajouter votre effet vidéo personnalisé à un flux de caméra, créez d’abord un objet [**VideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608055), en transmettant l’espace de noms et le nom de classe de votre effet. Appelez ensuite la méthode [**AddVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn878035) de l’objet **MediaCapture** pour ajouter l’effet au flux spécifié. Cet exemple utilise la valeur [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640) pour indiquer que l’effet doit être ajouté au flux d’aperçu. Si votre application prend en charge la capture vidéo, vous pouvez également utiliser **MediaStreamType.VideoRecord** pour ajouter l’effet au flux de capture. **AddVideoEffect** renvoie un objet [**IMediaExtension**](https://msdn.microsoft.com/library/windows/apps/br240985) représentant votre effet personnalisé. Vous pouvez utiliser la méthode SetProperties pour définir la configuration de votre effet.
 
 Une fois l’effet ajouté, [**StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226613) est appelé pour démarrer le flux d’aperçu.
 
@@ -224,21 +226,19 @@ Une fois l’effet ajouté, [**StartPreviewAsync**](https://msdn.microsoft.com/l
 
 
 
-### Ajouter un effet personnalisé à un clip dans une MediaComposition
+### Ajouter un effet personnalisé à un clip dans une composition multimédia
 
-Pour obtenir des instructions générales sur la création des compositions multimédias à partir de clips vidéo, consultez [Compositions multimédias et modification](media-compositions-and-editing.md). L’extrait de code suivant illustre la création d’une composition multimédia simple à l’aide d’un effet vidéo personnalisé. Un objet [**MediaClip**](https://msdn.microsoft.com/library/windows/apps/dn652596) est créé en appelant [**CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652607), en transmettant un fichier vidéo sélectionné par l’utilisateur avec un [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) et le clip est ajouté à une nouvelle [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646). Ensuite, un nouvel objet [**VideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608055) est créé, en transmettant l’espace de noms et le nom de classe de votre effet au constructeur. Enfin, la définition de l’effet est ajoutée à la collection [**VideoEffectDefinitions**](https://msdn.microsoft.com/library/windows/apps/dn652643) de l’objet **MediaClip**.
+Pour obtenir des instructions générales sur la création des compositions multimédias à partir de clips vidéo, voir [Compositions multimédias et modification](media-compositions-and-editing.md). L’extrait de code suivant illustre la création d’une composition multimédia simple qui utilise un effet vidéo personnalisé. Un objet [**MediaClip**](https://msdn.microsoft.com/library/windows/apps/dn652596) est créé en appelant [**CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652607), en transmettant un fichier vidéo sélectionné par l’utilisateur avec un [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) et le clip est ajouté à un nouveau [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646). Ensuite, un objet [**VideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608055) est créé, en transmettant l’espace de noms et le nom de classe de votre effet au constructeur. Enfin, la définition de l’effet est ajoutée à la collection [**VideoEffectDefinitions**](https://msdn.microsoft.com/library/windows/apps/dn652643) de l’objet **MediaClip**.
 
 
 [!code-cs[AddEffectToComposition](./code/VideoEffect_Win10/cs/VideoEffect_Win10/MainPage.xaml.cs#SnippetAddEffectToComposition)]
 
 
 ## Rubriques connexes
-
-
-[Accès à l’aperçu simple de l’appareil photo](simple-camera-preview-access.md) 
-           [Compositions multimédias et modification](media-compositions-and-editing.md) 
-           [Documentation Win2D](http://go.microsoft.com/fwlink/?LinkId=519078)
- 
+* [Accès à l’aperçu simple de l’appareil photo](simple-camera-preview-access.md)
+* [Compositions multimédias et modification](media-compositions-and-editing.md)
+* [Documentation Win2D](http://go.microsoft.com/fwlink/p/?LinkId=519078)
+* [Lecture de contenu multimédia](media-playback.md)
 
  
 
@@ -247,6 +247,6 @@ Pour obtenir des instructions générales sur la création des compositions mult
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

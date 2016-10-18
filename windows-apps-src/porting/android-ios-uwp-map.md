@@ -4,8 +4,8 @@ Description: "Comparez les fonctionnalités de la plateforme sous iOS, Android e
 Search.Product: eADQiWindows 10XVcnh
 title: "Mappage de concepts d’applications Windows pour développeurs iOS et Android"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 640ddc7b77d5a23562dba2ecd9812464beb8a422
+ms.sourcegitcommit: a55e7d0945902ce44ebad481475e8324c9859054
+ms.openlocfilehash: 8acd22c44cf6423aba01083d1e32d282c87f44cb
 
 ---
 
@@ -54,7 +54,7 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 </tr>
 <tr class="even">
 <td align="left"><strong>Gestion des événements de contrôle.</strong> <br><br>Définition de la logique qui s’exécute lorsque des événements sont déclenchés dans des contrôles d’interface utilisateur.</td>
-<td align="left"><strong>Des gestionnaires d’événements</strong> et <strong>détecteurs d’événements</strong> sont ajoutés dans le langage XML ou par programme.</td>
+<td align="left"><strong>Des gestionnaires d’événements</strong> et <strong>détecteurs d’événements</strong> sont ajoutés dans le langage XML ou par programmation.</td>
 <td align="left">Les contrôles envoient des messages d’<strong>action</strong> aux <strong>cibles</strong>.</td>
 <td align="left">Vous pouvez définir des méthodes pour gérer les événements d’un contrôle XAML dans un <strong>fichier code-behind</strong> attaché à la page XAML. <strong>Des gestionnaires d’événements</strong> sont toujours écrits dans le code. Toutefois, vous pouvez associer ces gestionnaires à des événements dans le balisage XAML ou le code.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt228345.aspx">Ajouter des contrôles et gérer les événements</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt185584.aspx">Vue d’ensemble des événements et des événements routés</a></td>
 </tr>
@@ -65,16 +65,16 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 <td align="left">La plateforme UWP traite pour vous la <strong>liaison de données</strong>. Vous utilisez l’extension de balisage <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt204783.aspx">{x:Bind}</a></strong> pour tirer parti de la liaison de données hautes performances ou <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt204782.aspx">{Binding}</a></strong> pour exploiter d’autres fonctionnalités. Il suffit alors de configurer votre liaison pour choisir si la plateforme utilise une <strong>liaison à sens unique</strong> pour afficher les valeurs provenant d’une source de données dans votre interface utilisateur, ou si elle observe ces valeurs et met à jour votre interface utilisateur lors du passage en <strong>liaison bidirectionnelle</strong>.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt210947.aspx">Liaison de données</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Automatisation de l’interface utilisateur.</strong> <br><br>Accès par programme aux éléments d’interface utilisateur, rendant les applications accessibles aux produits de technologie d’assistance et permettant aux scripts automatisés d’interagir avec votre interface utilisateur.</td>
+<td align="left"><strong>Automatisation de l’interface utilisateur.</strong> <br><br>Accès par programmation aux éléments d’interface utilisateur, rendant les applications accessibles aux produits de technologie d’assistance et permettant aux scripts automatisés d’interagir avec votre interface utilisateur.</td>
 <td align="left"><strong>Les valeurs Text labels</strong>, <strong>contentDescription</strong> et <strong>hint</strong> permettent de garantir que les éléments d’interface utilisateur puissent être trouvés par le biais de l’automatisation. Android Studio vous permet d’écrire des tests d’interface utilisateur à l’aide des infrastructures de test <strong>UI Automator</strong> et <strong>Espresso</strong>.</td>
 <td align="left">L’<strong>instrument d’automatisation</strong> vous permet d’écrire des scripts de test d’interface utilisateur automatisés qui identifient les éléments à l’aide de paramètres d’<strong>accessibilité</strong> ou de la position de l’élément dans la <strong>hiérarchie d’éléments</strong>.</td>
-<td align="left">Vous obtenez un accès par programme aux éléments d’interface utilisateur intégrés dans UWP fournie avec <strong><a href="https://msdn.microsoft.com/library/windows/apps/ee684076.aspx">UI Automation</a></strong>.<br/><strong><a href="https://msdn.microsoft.com/library/windows/apps/mt297667.aspx">Les homologues d’automatisation personnalisés</a></strong> vous permettent de fournir la prise en charge de l’automatisation pour vos propres classes d’interface utilisateur personnalisées. Le <strong><a href="https://msdn.microsoft.com/library/dd286726.aspx#VerifyingCodeUsingCUITCreate">projet de test codé de l’interface utilisateur</a></strong> dans Visual Studio vous permet de tester automatiquement l’ensemble de votre application par le biais de l’interface utilisateur ou de tester l’interface utilisateur de manière isolée.</td>
+<td align="left">Vous obtenez un accès par programmation aux éléments d’interface utilisateur intégrés dans UWP fournie avec <strong><a href="https://msdn.microsoft.com/library/windows/apps/ee684076.aspx">UI Automation</a></strong>.<br/><strong><a href="https://msdn.microsoft.com/library/windows/apps/mt297667.aspx">Les homologues d’automatisation personnalisés</a></strong> vous permettent de fournir la prise en charge de l’automatisation pour vos propres classes d’interface utilisateur personnalisées. Le <strong><a href="https://msdn.microsoft.com/library/dd286726.aspx#VerifyingCodeUsingCUITCreate">projet de test codé de l’interface utilisateur</a></strong> dans Visual Studio vous permet de tester automatiquement l’ensemble de votre application par le biais de l’interface utilisateur ou de tester l’interface utilisateur de manière isolée.</td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>Modification de l’apparence d’un contrôle.</strong> <br><br>Modification de la taille, de la couleur et d’autres attributs.</td>
-<td align="left">Les contrôles possèdent des <strong>propriétés</strong> qui peuvent être modifiées à l’aide de l’outil de conception, dans le balisage XML ou par programme.</td>
-<td align="left">Les contrôles possèdent des <strong>attributs</strong> que vous pouvez modifier à l’aide de l’<strong>Attributes Inspector</strong> dans Interface Builder ou par programme.</td>
-<td align="left">Vous pouvez modifier les <strong>propriétés</strong> des contrôles dans le balisage XAML ou par programme, à l’aide de Visual Studio et de Blend pour Visual Studio.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt228345.aspx">Ajouter des contrôles et gérer les événements</a></td>
+<td align="left">Les contrôles possèdent des <strong>propriétés</strong> qui peuvent être modifiées à l’aide de l’outil de conception, dans le balisage XML ou par programmation.</td>
+<td align="left">Les contrôles possèdent des <strong>attributs</strong> que vous pouvez modifier à l’aide de l’<strong>Attributes Inspector</strong> dans Interface Builder ou par programmation.</td>
+<td align="left">Vous pouvez modifier les <strong>propriétés</strong> des contrôles dans le balisage XAML ou par programmation, à l’aide de Visual Studio et de Blend pour Visual Studio.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt228345.aspx">Ajouter des contrôles et gérer les événements</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>Styles visuels réutilisables.</strong> <br><br>Application de modifications visuelles à un certain nombre de contrôles, dans un format réutilisable.</td>
@@ -120,16 +120,16 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 <td align="left">XAML fournissant un système de disposition flexible composé de <strong>classes de panneau de disposition</strong>, telles que <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.canvas.aspx">Canvas</a></strong>, <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.aspx">Grid</a></strong>, <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.relativepanel.aspx">RelativePanel</a></strong> et <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.aspx">StackPanel</a></strong> pour les dispositions statiques et réactives. <strong><a href="https://msdn.microsoft.com/library/ms171352.aspx">Les propriétés</a></strong> permettent de contrôler la taille et la position des éléments.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt228350.aspx">Définir des dispositions avec XAML</a><br/></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Navigation pair à pair.</strong> <br><br>Présentation à l’utilisateur de méthodes de navigation entre les pages d’importance hiérarchique équivalente.</td>
+<td align="left"><strong>Navigation parmi les homologues.</strong> <br><br>Présentation à l’utilisateur de méthodes de navigation entre les pages d’importance hiérarchique équivalente.</td>
 <td align="left"><strong>Les onglets</strong>, <strong>vues à balayage</strong> et <strong>panneaux de navigation</strong> permettent une <strong>navigation latérale</strong>.</td>
 <td align="left"><strong>Les contrôleurs de la barre d’onglets</strong>, les <strong>contrôleurs du mode fractionné</strong> et les <strong>contrôleurs d’affichage de page</strong> permettent de naviguer entre les vues de hiérarchie équivalente.</td>
-<td align="left">Vous pouvez afficher une liste permanente de liens/onglets au-dessus du contenu à l’aide d’<strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997788.aspx">onglets/de pivots</a></strong>. Le <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997787.aspx">mode fractionné/volet de navigation</a></strong> vous permet d’afficher une liste de liens avec le contenu.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187344.aspx">Navigation</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt465735.aspx">Navigation pair à pair entre deux pages</a></td>
+<td align="left">Vous pouvez afficher une liste permanente de liens/onglets au-dessus du contenu à l’aide d’<strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997788.aspx">onglets/de pivots</a></strong>. Le <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997787.aspx">mode fractionné/volet de navigation</a></strong> vous permet d’afficher une liste de liens avec le contenu.<br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigation-basics">Navigation</a><br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigate-between-two-pages">Naviguer entre deux pages</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>Navigation hiérarchique.</strong> <br><br>Navigation entre les pages parent et enfant d’une hiérarchie.</td>
 <td align="left"><strong>Les listes</strong>, <strong>listes de quadrillage</strong>, <strong>boutons</strong> et autres contrôles permettent une <strong>navigation par descendants</strong> lorsqu’ils sont utilisés dans l’<strong>intention</strong> de charger d’autres <strong>activités</strong>.</td>
 <td align="left"><strong>Les contrôleurs de navigation</strong> permettent aux utilisateurs de naviguer entre les niveaux d’une hiérarchie.</td>
-<td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/dn449149.aspx">Les concentrateurs</a></strong> permettent de présenter à l’utilisateur un aperçu du contenu qui peut être sélectionné pour naviguer vers les pages enfant. <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997765.aspx">Maître/détails</a></strong> permet aux utilisateurs de faire une sélection parmi une liste de résumés d’éléments qui s’affichent en regard de la section correspondante relative aux détails.<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187344.aspx">Navigation</a></td>
+<td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/dn449149.aspx">Les concentrateurs</a></strong> permettent de présenter à l’utilisateur un aperçu du contenu qui peut être sélectionné pour naviguer vers les pages enfant. <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997765.aspx">Maître/détails</a></strong> permet aux utilisateurs de faire une sélection parmi une liste de résumés d’éléments qui s’affichent en regard de la section correspondante relative aux détails.<br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigation-basics">Navigation</a><br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigate-between-two-pages">Naviguer entre deux pages</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>Navigation via le bouton Précédent.</strong> <br><br>Retour à une application.</td>
@@ -665,6 +665,6 @@ Voir également le contenu de portage dans [Migrer d’iOS vers UWP](ios-to-uwp-
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

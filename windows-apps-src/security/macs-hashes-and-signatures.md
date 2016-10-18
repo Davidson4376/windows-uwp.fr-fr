@@ -5,7 +5,7 @@ ms.assetid: E674312F-6678-44C5-91D9-B489F49C4D3C
 author: awkoren
 translationtype: Human Translation
 ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: d7c66d9ead6e3dbf750f1d058e311ef3c84a204f
+ms.openlocfilehash: 2c43e8ea726827d263fd397ea28058c04d30a7aa
 
 ---
 
@@ -191,6 +191,6 @@ La signature permet uniquement de s’assurer que le message d’origine n’a p
 Vous pouvez utiliser un objet [**AsymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241478) pour énumérer les algorithmes de signature disponibles et générer ou importer une paire de clés. Vous pouvez utiliser des méthodes statiques sur la classe [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) pour signer un message ou vérifier une signature.
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

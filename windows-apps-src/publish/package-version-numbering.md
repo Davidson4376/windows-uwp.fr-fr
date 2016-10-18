@@ -4,8 +4,8 @@ Description: "Le Windows Store applique certaines règles relatives aux numéros
 title: "Numérotation des versions de packages"
 ms.assetid: DD7BAE5F-C2EE-44EE-8796-055D4BCB3152
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9910ca5b5a3fd5d24643a1dfc6da3644d561c617
+ms.sourcegitcommit: ca273ab6d881b350c2f5a48eafee38c74ac0f36a
+ms.openlocfilehash: 2668152ba471986e00831bdcf46e5a2feba54dcd
 
 ---
 
@@ -19,9 +19,9 @@ Chaque package que vous fournissez doit avoir un numéro de version (fourni sous
 ## Numérotation des versions pour les packages Windows10
 
 
-Le numéro de version de tous vos packages Windows 10 doit toujours être supérieur à ceux des packages Windows 8, Windows 8.1 et/ou Windows Phone 8.1 que vous publiez (ou avez publié) pour la même application. (Pour plus d’informations, voir [Ajout de packages pour Windows 10 à une application publiée précédemment](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app).)
+Le numéro de version de tous vos packages Windows 10 doit toujours être supérieur à ceux des packages Windows 8, Windows 8.1 et/ou Windows Phone 8.1 que vous publiez (ou avez publié) pour la même application. (Pour plus d’informations, voir [Ajout de packages pour Windows10 à une application publiée précédemment](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app).)
 
-> **Remarque** La dernière partie (quatrième) du numéro de version est réservée à l’utilisation du Windows Store et doit demeurer 0.
+> **Important** La dernière (quatrième) partie du numéro de version est réservée au WindowsStore. Vous devez conserver la valeur de 0 lorsque vous générez votre package (bien que le WindowsStore puisse modifier la valeur de cette partie du numéro).
 
 Lors du choix d’un package Windows10 à partir de votre soumission publiée, le Windows Store utilise toujours le package dont le numéro de version est le plus élevé et qui s’applique à l’appareil du client. Cela vous offre une plus grande souplesse et vous permet de contrôler les packages fournis aux clients sur des types spécifiques d’appareils. Il est important de noter que vous pouvez soumettre ces packages dans n’importe quel ordre ; vous n’êtes pas obligé de fournir des packages dont le numéro de version est supérieur avec chaque soumission ultérieure.
 
@@ -82,6 +82,6 @@ Voici quelques exemples de ce qui se passe dans les différents scénarios de mi
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

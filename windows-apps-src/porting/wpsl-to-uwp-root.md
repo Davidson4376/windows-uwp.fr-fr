@@ -5,7 +5,7 @@ title: "Passer de Silverlight pour Windows Phone à UWP"
 ms.assetid: 9E0C0315-6097-488B-A3AF-7120CCED651A
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 19dde1c9b0df3b2a5e464feb15e43af9dd283661
+ms.openlocfilehash: c75d1871364a837047c1bd81bc094c5120900a4e
 
 ---
 
@@ -78,17 +78,17 @@ Concernant les fonctionnalités, il est bon de noter qu’UWP en prend en charge
 **Documentation**
 * [Nouveautés pour les développeurs dans Windows 10](https://dev.windows.com/getstarted/whats-new-windows-10)
 * [Guide des applications de plateforme Windows universelle (UWP)](https://msdn.microsoft.com/library/windows/apps/dn894631)
-* [Feuille de route pour les applications de plateforme Windows universelle (UWP) en C# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/br229583)
-* [Étapes suivantes pour les développeurs Windows Phone 8](https://msdn.microsoft.com/library/windows/apps/xaml/dn655121.aspx) 
-           **Articles de magazine**
-* [Visual Studio Magazine: Windows Phone 8.1: A Giant Leap Forward for Convergence](http://go.microsoft.com/fwlink/p/?LinkID=398541)
-           **Presentations** (en anglais)
+* [Feuille de route pour les applications de plateforme Windows universelle (UWP) enC# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/br229583)
+* [Étapes suivantes pour les développeurs Windows Phone8](https://msdn.microsoft.com/library/windows/apps/xaml/dn655121.aspx)
+**Articles de magazine**
+* [Visual Studio Magazine: Windows Phone8.1: A Giant Leap Forward for Convergence](http://go.microsoft.com/fwlink/p/?LinkID=398541)
+**Presentations**
 * [Le passage de Nokia Musique de Windows Phone à Windows8](http://go.microsoft.com/fwlink/p/?LinkId=321521)
  
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

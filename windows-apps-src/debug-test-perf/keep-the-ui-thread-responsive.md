@@ -5,7 +5,7 @@ title: "Assurer la réactivité du thread de l’interface utilisateur"
 description: "Les utilisateurs attendent de leurs applications qu’elles restent réactives pendant les opérations de calcul, et ce sur n’importe quel type d’ordinateur."
 translationtype: Human Translation
 ms.sourcegitcommit: 165105c141405cd752f876c822f76a5002d38678
-ms.openlocfilehash: 6144b5b60a0092efd1056dd5de166a64733356ec
+ms.openlocfilehash: 2a215264db018dfecff897b13b24ba535e7483ec
 
 ---
 # Assurer la réactivité du thread de l’interface utilisateur
@@ -106,6 +106,6 @@ Dans cet exemple, le gestionnaire `NextMove-Click` effectue son retour lorsqu’
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

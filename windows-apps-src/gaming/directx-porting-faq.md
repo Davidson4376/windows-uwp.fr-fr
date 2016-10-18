@@ -1,15 +1,15 @@
 ---
 author: mtoepke
-title: Portage DirectX 11 &#58; FAQ
+title: 'Portage DirectX 11 : FAQ'
 description: "Réponses aux questions fréquemment posées sur le portage de jeux vers la plateforme Windows universelle (UWP)."
 ms.assetid: 79c3b4c0-86eb-5019-97bb-5feee5667a2d
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: dc98f15d80fb70fb6e106555659d699c41fbfa0b
+ms.openlocfilehash: 908da9d15a49291f6a1c2467858b525c2f3dc7da
 
 ---
 
-# Portage DirectX 11 &#58; FAQ
+# Portage DirectX 11 : FAQ
 
 
 \[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
@@ -140,6 +140,6 @@ Voir le [mappage des formats de surface](feature-mapping.md#surface-format-mappi
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

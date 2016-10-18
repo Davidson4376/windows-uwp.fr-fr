@@ -1,19 +1,16 @@
 ---
 description: "Découvrez comment utiliser la couleur, la typographie et le mouvement pour définir la personnalité de votre application UWP avec le guide de style UWP du Centre de développement Windows."
-keywords: uwp style guide, design guidance, typography, motion, sound, motion, app development
+keywords: "guide de style uwp, guide de conception,  typographie, mouvement, son, développement d’applications"
 title: "Guide de style UWP - Développement d’applications Windows"
 author: mijacobs
 translationtype: Human Translation
-ms.sourcegitcommit: 0a7f655a6f122787873adac76ac4dec9d775a154
-ms.openlocfilehash: d55aab04696441dbbcba0cbda61fd599fdacec67
+ms.sourcegitcommit: 2f9d2059399efd949fc8a1d90a5b6c8c106a478e
+ms.openlocfilehash: 4a96db626f6f3682248e7e720c956fa343186b4a
 
 ---
+# Guide de style UWP
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-
-<div class="uwpd-banner">
-<h1 class="uwpd-ruledheader">Guide de style UWP</h1>
-</div>
 
 <div class="side-by-side">
 <div class="side-by-side-content">
@@ -77,6 +74,6 @@ Vous pouvez personnaliser l’apparence de vos applications de nombreuses maniè
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO5-->
 
 

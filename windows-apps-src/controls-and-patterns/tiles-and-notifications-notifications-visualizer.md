@@ -6,20 +6,18 @@ ms.assetid: FCBB7BB1-2C79-484B-8FFC-26FE1934EC1C
 label: TBD
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: dcbf05669093047bd76dc01c217daf353d8fb9da
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: a954404ccc2e986c1603402315c8497f802ad254
 
 ---
-
 # Notifications Visualizer
 
-
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
 Notifications Visualizer est une nouvelle application de plateforme Windows universelle (UWP) dans [le Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1) qui permet aux développeurs de concevoir des vignettes dynamiques adaptatives pour Windows10.
 
-## <span id="Overview"></span><span id="overview"></span><span id="OVERVIEW"></span>Vue d’ensemble
+## Vue d’ensemble
 
 
 L’application Notifications Visualizer fournit des aperçus visuels instantanés de votre vignette pendant que vous effectuez des modifications, similaires à la vue de l’éditeur/de la conception XAML de Visual Studio. L’application contrôle également les erreurs, ce qui vous permet de créer une charge utile de vignette valide.
@@ -36,7 +34,7 @@ Avec Notifications Visualizer, vous pouvez créer et tester des charges utiles d
 
  
 
-## <span id="Features"></span><span id="features"></span><span id="FEATURES"></span>Fonctionnalités
+## Fonctionnalités
 
 
 Notifications Visualizer est fourni avec quelques exemples de charges utiles pour montrer ce qu’il est possible de réaliser avec des vignettes dynamiques adaptatives et vous aider à démarrer. Vous pouvez tester les différentes options de texte, les gorupes/sous-groupes, les images d’arrière-plan, et vous pouvoir voir de quelle façon les vignettes s’adaptent aux différents écrans et appareils. Une fois les modifications effectuées, vous pouvez enregistrer votre charge utile mise à jour dans un fichier pour l’utiliser ultérieurement.
@@ -51,7 +49,7 @@ Cette capture d’écran de l’application montre l’éditeur de vignettes:
 
  
 
-## <span id="related_topics"></span>Rubriques connexes
+## Rubriques connexes
 
 
 * [Obtenir Notifications Visualizer dans le WindowsStore](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)
@@ -69,6 +67,6 @@ Cette capture d’écran de l’application montre l’éditeur de vignettes:
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

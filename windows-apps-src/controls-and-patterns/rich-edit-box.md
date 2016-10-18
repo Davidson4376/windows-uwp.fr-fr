@@ -6,19 +6,32 @@ ms.assetid: 4AFC0DFA-3B89-434D-9F86-4309CCFF7839
 label: Rich edit box
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: fc685b952db7292a9eea4d8a54bd6e2685cb13c0
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: f26bcc596417f607ee348e93009905ec4a3e27c8
 
 ---
 # Zone d’édition enrichie
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
 Vous pouvez utiliser un contrôle RichEditBox pour entrer et modifier des documents au format RTF qui contiennent du texte mis en forme, des liens hypertexte et des images. Vous pouvez faire en sorte que RichEditBox soit en lecture seule en définissant sa propriété IsReadOnly sur **true**.
 
-<span class="sidebar_heading" style="font-weight: bold;">API importantes</span>
+<div class="important-apis" >
+<b>API importantes</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx"><strong>Classe RichEditBox</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx"><strong>Propriété Document</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isreadonly.aspx"><strong>Propriété IsReadOnly</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx"><strong>Propriété IsSpellCheckEnabled</strong></a></li>
+</ul>
 
--   [**Classe RichEditBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)
--   [**Propriété Document**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx)
--   [**Propriété IsReadOnly**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isreadonly.aspx)
--   [**Propriété IsSpellCheckEnabled**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx)
+</div>
+</div>
+
+
+
+
+
 
 ## Est-ce le contrôle approprié?
 
@@ -38,7 +51,7 @@ Un document au format RTF est ouvert dans cette zone d’édition enrichie. Les 
 
 ## Créer une zone d’édition enrichie
 
-Par défaut, le contrôle RichEditBox prend en charge la vérification orthographique. Pour désactiver le vérificateur d’orthographe, affectez à la propriété [IsSpellCheckEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx) la valeur **false**. Pour plus d’informations, voir Recommandations et liste de vérification pour la vérification orthographique.
+Par défaut, le contrôle RichEditBox prend en charge la vérification orthographique. Pour désactiver le vérificateur d’orthographe, définissez la propriété [IsSpellCheckEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx) sur **false**. Pour plus d’informations, voir l’article [Recommandations en matière de vérification orthographique](spell-checking-and-prediction.md).
 
 Vous utilisez la propriété [Document](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx) du contrôle RichEditBox pour obtenir son contenu. Le contenu d’une classe RichEditBox est un objet [Windows.UI.Text.ITextDocument](https://msdn.microsoft.com/library/windows/apps/xaml/bb774052.aspx), contrairement au contrôle RichTextBlock, qui utilise des objets [Windows.UI.Xaml.Documents.Block](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.block.aspx) en tant que contenu. L’interface ITextDocument permet de charger et d’enregistrer le document dans un flux, de récupérer des plages de texte, d’obtenir la sélection active, d’annuler et de répéter des modifications, de définir des attributs de mise en forme par défaut, etc.
 
@@ -51,20 +64,20 @@ Cet exemple montre comment modifier, charger et enregistrer un fichier au format
             <Setter Property="IsCompact" Value="True"/>
         </Style>
     </RelativePanel.Resources>
-    <AppBarButton x:Name="openFileButton" Icon="OpenFile" 
+    <AppBarButton x:Name="openFileButton" Icon="OpenFile"
                   Click="OpenButton_Click" ToolTipService.ToolTip="Open file"/>
-    <AppBarButton Icon="Save" Click="SaveButton_Click" 
-                  ToolTipService.ToolTip="Save file" 
+    <AppBarButton Icon="Save" Click="SaveButton_Click"
+                  ToolTipService.ToolTip="Save file"
                   RelativePanel.RightOf="openFileButton" Margin="8,0,0,0"/>
 
-    <AppBarButton Icon="Bold" Click="BoldButton_Click" ToolTipService.ToolTip="Bold" 
+    <AppBarButton Icon="Bold" Click="BoldButton_Click" ToolTipService.ToolTip="Bold"
                   RelativePanel.LeftOf="italicButton" Margin="0,0,8,0"/>
-    <AppBarButton x:Name="italicButton" Icon="Italic" Click="ItalicButton_Click" 
+    <AppBarButton x:Name="italicButton" Icon="Italic" Click="ItalicButton_Click"
                   ToolTipService.ToolTip="Italic" RelativePanel.LeftOf="underlineButton" Margin="0,0,8,0"/>
-    <AppBarButton x:Name="underlineButton" Icon="Underline" Click="UnderlineButton_Click" 
+    <AppBarButton x:Name="underlineButton" Icon="Underline" Click="UnderlineButton_Click"
                   ToolTipService.ToolTip="Underline" RelativePanel.AlignRightWithPanel="True"/>
 
-    <RichEditBox x:Name="editor" Height="200" RelativePanel.Below="openFileButton" 
+    <RichEditBox x:Name="editor" Height="200" RelativePanel.Below="openFileButton"
                  RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True"/>
 </RelativePanel>
 ```
@@ -120,7 +133,7 @@ private async void SaveButton_Click(object sender, RoutedEventArgs e)
     Windows.Storage.StorageFile file = await savePicker.PickSaveFileAsync();
     if (file != null)
     {
-        // Prevent updates to the remote version of the file until we 
+        // Prevent updates to the remote version of the file until we
         // finish making changes and call CompleteUpdatesAsync.
         Windows.Storage.CachedFileManager.DeferUpdates(file);
         // write to file
@@ -129,7 +142,7 @@ private async void SaveButton_Click(object sender, RoutedEventArgs e)
 
         editor.Document.SaveToStream(Windows.UI.Text.TextGetOptions.FormatRtf, randAccStream);
 
-        // Let Windows know that we're finished changing the file so the 
+        // Let Windows know that we're finished changing the file so the
         // other app can update the remote version of the file.
         Windows.Storage.Provider.FileUpdateStatus status = await Windows.Storage.CachedFileManager.CompleteUpdatesAsync(file);
         if (status != Windows.Storage.Provider.FileUpdateStatus.Complete)
@@ -185,7 +198,7 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 
 Pour faciliter la saisie de données par les utilisateurs au moyen du clavier tactile, ou panneau de saisie, définissez l’étendue des entrées du contrôle de texte de sorte qu’elle corresponde au type de données attendu de la part de l’utilisateur. La disposition de clavier par défaut est généralement appropriée pour l’utilisation de documents au format RTF.
 
-Pour en savoir plus sur l’utilisation des étendues des entrées, voir [Utiliser l’étendue des entrées pour modifier le clavier tactile]().
+Pour en savoir plus sur l’utilisation des étendues des entrées, voir [Utiliser l’étendue des entrées pour modifier le clavier tactile](https://msdn.microsoft.com/library/windows/apps/mt280229).
 
 ## Recommandations
 
@@ -206,7 +219,7 @@ Pour en savoir plus sur l’utilisation des étendues des entrées, voir [Utilis
 
 **Pour les concepteurs**
 - [Recommandations en matière de vérification orthographique](spell-checking-and-prediction.md)
-- [Ajout de la fonctionnalité de recherche](https://msdn.microsoft.com/library/windows/apps/hh465231)
+- [Ajout de la fonctionnalité de recherche](search.md)
 - [Recommandations en matière de saisie de texte](text-controls.md)
 
 **Pour les développeurs (XAML)**
@@ -215,7 +228,6 @@ Pour en savoir plus sur l’utilisation des étendues des entrées, voir [Utilis
 
 
 
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

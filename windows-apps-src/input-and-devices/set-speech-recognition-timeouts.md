@@ -7,7 +7,7 @@ label: Speech recognition timeouts
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 99ead02e8886ae79b8e8423ac0f78609b4fa1f6f
+ms.openlocfilehash: 0e5b60b2a59478899343ed4dee9d9c2039607491
 
 ---
 
@@ -43,9 +43,9 @@ recognizer.Timeouts.EndSilenceTimeout = TimeSpan.FromSeconds(1.2);
 ## Articles connexes
 
 
-* [Interactions vocales](speech-interactions.md) 
-           **Exemples**
-* [Exemple de reconnaissance vocale et de synthèse vocale](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [Interactions vocales](speech-interactions.md)
+**Exemples**
+* [Reconnaissance vocale et exemple de synthèse vocale](http://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  
@@ -56,6 +56,6 @@ recognizer.Timeouts.EndSilenceTimeout = TimeSpan.FromSeconds(1.2);
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,7 +1,7 @@
 ---
 author: jnHs
-Description: Add-ons are published through the Windows Dev Center dashboard.
-title: Add-on submissions
+Description: "Les modules complémentaires sont publiés par le biais du tableau de bord du Centre de développement Windows."
+title: "Soumissions de modules complémentaires"
 ms.assetid: E175AF9E-A1D4-45DF-B353-5E24E573AE67
 translationtype: Human Translation
 ms.sourcegitcommit: d67931b4ab23d2b6aef945e839d193e140240cf9
@@ -9,75 +9,75 @@ ms.openlocfilehash: 400c2e2ee65e408c996193230b05c68264830f0d
 
 ---
 
-# Add-on submissions
+# Soumissions de modules complémentaires
 
-Add-ons (also sometimes referred to as in-app products) are supplementary items for your app that can be purchased by customers. An add-on can be a fun new add-on feature, a new game level, or anything else you think will keep users engaged. Not only are add-ons a great way to make money, but they help to drive customer interaction and engagement.
+Les modules complémentaires (parfois appelés produits in-app) sont des éléments qui complètent votre application et qui peuvent être achetés par les clients. Il peut s’agir d’une nouvelle fonctionnalité amusante, d’un nouveau niveau de jeu ou de tout ce qui selon vous contribuera à maintenir les utilisateurs impliqués. Les modules complémentaires constituent non seulement une excellente façon de gagner de l’argent, mais également un bon moyen de renforcer le niveau d’interactivité et d’implication des clients avec votre application.
 
-Add-ons are published through the Windows Dev Center dashboard. You'll also need to [enable the add-ons](../monetize/in-app-purchases-and-trials.md) in your app's code.
+Les modules complémentaires sont publiés par le biais du tableau de bord du Centre de développement Windows. Vous devez également [activer les modules complémentaires](../monetize/in-app-purchases-and-trials.md) dans le code de votre application.
 
-The first step in the add-on submission process is to create the add-on in the dashboard by [defining its product type and product ID](set-your-add-on-product-id.md). After that, you can create a submission so that your add-on can be purchased via the Windows Store. You can submit an add-on at the same time you [submit your app](app-submissions.md), or you can work on it independently. And you can make [updates](#updating-an-add-on-after-submission) to add-ons after the app is in the Store without having to resubmit the app again.
+La première étape de la procédure de soumission d’un module complémentaire consiste à créer ce module dans le tableau de bord en [définissant son type de produit et son ID produit](set-your-add-on-product-id.md). Vous pouvez ensuite créer une soumission afin que votre module complémentaire puisse être acheté par le biais du Windows Store. Vous pouvez soumettre un module complémentaire au moment où vous [soumettez votre application](app-submissions.md), ou le soumettre séparément. Enfin, après avoir publié une application dans le Windows Store, vous pouvez proposer des [mises à jour](#updating-an-add-on-after-submission) des modules complémentaires sans avoir à soumettre une nouvelle fois l’application.
 
-> **Note**&nbsp;&nbsp;This section of the documentation describes how to create an add-on submission on the Dev Center dashboard. Alternatively, you can use the [Windows Store submission API](../monetize/create-and-manage-submissions-using-windows-store-services.md) to automate add-on submissions.
+> **Remarque**&nbsp;&nbsp;Cette section de la documentation explique comment créer une soumission de module complémentaire sur le tableau de bord du Centre de développement. Sinon, vous pouvez utiliser [l’API de soumission du Windows Store](../monetize/create-and-manage-submissions-using-windows-store-services.md) pour automatiser la soumission des modules complémentaires.
 
-## Checklist for submitting an add-on
+## Liste de vérification relative à la soumission d’un module complémentaire
 
-Here's a list of the info that you provide when creating your add-on submission. The items that you are required to provide are noted below. Some of these are optional, or have default values already provided that you can change as desired.
+Voici la liste des informations que vous fournissez quand vous créez la soumission d’un module complémentaire. Les éléments que vous devez obligatoirement spécifier sont signalés ci-dessous. Quelques-uns sont facultatifs ou présentent déjà des valeurs par défaut que vous pouvez modifier selon vos besoins.
 
-### Create a new add-on page
-| Field name                    | Notes                            |
+### Créer une nouvelle page de module complémentaire
+| Nom du champ                    | Remarques                            |
 |-------------------------------|----------------------------------|
-| [**Product type**](set-your-add-on-product-id.md#product-type)      | Required. If **Durable**, a **Product lifetime** is required. |  
-| [**Product ID**](set-your-add-on-product-id.md#product-id)          | Required |        
+| [**Type de produit**](set-your-add-on-product-id.md#product-type)      | Obligatoire. Si le produit est de type **Durable**, vous devez renseigner le champ **Durée de vie du produit**. |  
+| [**ID de produit**](set-your-add-on-product-id.md#product-id)          | Obligatoire |        
 
 <span/>
 
-### Properties page
-| Field name                    | Notes                              |   
+### Page Propriétés
+| Nom du champ                    | Remarques                              |   
 |-------------------------------|------------------------------------|
-| [**Product lifetime**](enter-add-on-properties.md#product-lifetime)  | Required if the product type is **Durable**. Not applicable to other product types. |
-| [**Quantity**](enter-add-on-properties.md#quantity)  | Required if the product type is **Store-managed consumable**. Not applicable to other product types.
-| [**Content type**](enter-add-on-properties.md#content-type)          | Required       |               
-| [**Keywords**](enter-add-on-properties.md#keywords)                  | Optional (up to 10 keywords, 30 character limit each) |
-| [**Custom developer data**](enter-add-on-properties.md#custom-developer-data)                               | Optional (3000 character limit)             |
+| [**Durée de vie du produit**](enter-add-on-properties.md#product-lifetime)  | Obligatoire si le type de produit est **Durable**. Non applicable à d’autres types de produit. |
+| [**Quantité**](enter-add-on-properties.md#quantity)  | Obligatoire si le type de produit est **Consommable géré par le Windows Store**. Non applicable à d’autres types de produit.
+| [**Type de contenu**](enter-add-on-properties.md#content-type)          | Obligatoire       |               
+| [**Mots clés**](enter-add-on-properties.md#keywords)                  | Facultatif (jusqu’à 10mots clés d’un maximum de 30caractères chacun) |
+| [**Données personnalisées du développeur**](enter-add-on-properties.md#custom-developer-data)                               | Facultatif (3000 caractères maximum)             |
 
 <span/>
 
-### Pricing and availability page
-| Field name                    | Notes                                       |
+### Page Tarification et disponibilité
+| Nom du champ                    | Remarques                                       |
 |-------------------------------|---------------------------------------------|
-| [**Base price**](set-add-on-pricing-and-availability.md#base-price)                | Required                                    |
-| [**Markets and custom pricing**](set-add-on-pricing-and-availability.md#markets-and-custom-prices)  | Default: available in all possible markets |
-| [**Sale pricing**](put-apps-and-add-ons-on-sale.md)               | Optional                             |
-| [**Distribution and visibility**](set-add-on-pricing-and-availability.md#distribution-and-visibility)   | Default: add-on can be found by customers browsing or searching the Store |
-| [**Publish date**](set-add-on-pricing-and-availability.md#publish-date)                | Default: Publish as soon as the add-on passes certification |
+| [**Prix de base**](set-add-on-pricing-and-availability.md#base-price)                | Obligatoire                                    |
+| [**Marchés et prix personnalisés**](set-add-on-pricing-and-availability.md#markets-and-custom-prices)  | Valeur par défaut : produit disponible dans tous les marchés possibles |
+| [**Prix de vente**](put-apps-and-add-ons-on-sale.md)               | Facultatif                             |
+| [**Distribution et visibilité**](set-add-on-pricing-and-availability.md#distribution-and-visibility)   | Valeur par défaut: les clients peuvent trouver le module complémentaire à l’application en parcourant le WindowsStore ou en effectuant une recherche dans ce dernier |
+| [**Date de publication**](set-add-on-pricing-and-availability.md#publish-date)                | Valeur par défaut: publication dès que le module complémentaire a obtenu la certification |
 
 <span/>
 
-### Store listings
-One Store listing required. We recommend providing Store listings for every [language](create-add-on-descriptions.md#languages) your app supports.
+### Descriptions dans le Windows Store
+Une description est requise dans le Windows Store. Nous vous recommandons de fournir une description dans le Windows Store pour chaque [langue](create-add-on-descriptions.md#languages) prise en charge par votre application.
 
-| Field name                    | Notes                                       |
+| Nom du champ                    | Remarques                                       |
 |-------------------------------|---------------------------------------------|
-| [**Title**](create-add-on-store-listings.md#title)                    | Required (100 character limit)              |
-| [**Description**](create-add-on-store-listings.md#description)       | Optional (200 character limit)              |
-| [**Icon**](create-add-on-store-listings.md#icon)                    | Optional (.png, 300x300 pixels)             |
+| [**Titre**](create-add-on-store-listings.md#title)                    | Obligatoire (100 caractères maximum)              |
+| [**Description**](create-add-on-store-listings.md#description)       | Facultatif (200caractères maximum)              |
+| [**Icône**](create-add-on-store-listings.md#icon)                    | Facultatif (fichier .png, 300 x 300 pixels)             |
 
 <span/>
 
-When you've finished entering this info, click **Submit to the Store**. In most cases, the certification process takes about an hour. After that, your add-on will be published to the Store and ready for customers to purchase.
+Quand vous avez terminé d'entrer ces informations, cliquez sur **Soumettre au Windows Store**. Dans la plupart des cas, le processus de certification prend environ une heure. Au terme de ce processus, votre module complémentaire est publié sur le WindowsStore et devient aussitôt disponible à l’achat par les clients.
 
-**Note**  The add-on must also be implemented in your app's code. For more info, see [Enable in-app product purchases](../monetize/enable-in-app-product-purchases.md).
+**Remarque** Les modules complémentaires doivent également être implémentés dans le code de votre application. Pour plus d’informations, voir [Activer les achats de produits in-app](../monetize/enable-in-app-product-purchases.md).
 
 
-## Updating an add-on after publication
+## Mise à jour d’un module complémentaire après sa publication
 
-You can make changes to a published add-on at any time. add-on changes are submitted and published independently of your app, so you generally don't need to update the entire app in order to make changes to an add-on such as updating its price or description.
+Un module complémentaire est modifiable à tout moment après sa publication. Les modifications apportées à un module complémentaire sont soumises et publiées indépendamment de votre application. Par conséquent, vous n’avez généralement pas besoin de mettre à jour la totalité de l’application pour modifier un module complémentaire, par exemple afin de mettre à jour son prix ou sa description.
 
-> **Important**  If your app is available to customers on Windows 8.x, you will need to create and publish a new app submission in order to make the add-on updates visible to those customers. Similarly, if you add new add-ons to an app targeting Windows 8.x after the app has been published, you'll need to update your app's code to reference those add-ons, then resubmit the app. Otherwise, the new add-ons won't be visible to customers on Windows 8.x.
+> **Important** Si votre application est accessible aux clients utilisant Windows 8.x, vous devrez créer et publier une nouvelle soumission d’application pour faire en sorte que les mises à jour de module complémentaire soient visibles par ces clients. De même, si vous ajoutez de nouveaux modules complémentaires dans une application ciblant Windows 8.x après la publication de cette dernière, vous devrez mettre à jour le code de votre application pour référencer ces modules, puis soumettre de nouveau l’application. Dans le cas contraire, les nouveaux modules complémentaires ne seront pas visibles par les clients utilisant Windows8.x.
 
-To submit updates, go to the add-on's page in your dashboard and click **Update**. This will create a new submission for the add-on using the info from your previous submission as a starting point. Change the info you'd like, and then click **Submit to the Store**.
+Pour soumettre des mises à jour, accédez à la page du module complémentaire dans votre tableau de bord, puis cliquez sur **Mettre à jour**. Cette opération crée une autre soumission pour le module complémentaire, initialement renseignée avec les informations de votre soumission précédente. Modifiez les informations souhaitées, puis cliquez sur **Envoyer au Store**.
 
-If you'd like to remove an add-on you've previously offered, you can do this by creating a new submission and changing the [Distribution and visibility](set-add-on-pricing-and-availability.md) option to **No longer available for purchase. Not displayed in your app's listing**. Be sure to update your app's code as needed to also remove references to the add-on.
+Si vous voulez supprimer un module complémentaire précédemment proposé, vous pouvez créer une soumission et modifier l’option [Distribution et visibilité](set-add-on-pricing-and-availability.md) en la définissant sur **Plus disponible à l’achat. Non affiché dans la description de votre application**. Veillez à mettre à jour le code de votre application comme nécessaire pour supprimer les références à ce module complémentaire.
 
 
 

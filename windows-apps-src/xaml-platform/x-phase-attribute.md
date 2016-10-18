@@ -1,15 +1,15 @@
 ---
 author: jwmsft
 title: Attribut xPhase
-description: "Utilisez xPhase avec l’extension de balisage {x&#58;Bind} pour rendre les éléments ListView et GridView de façon incrémentielle et améliorer l’expérience de mouvement panoramique."
+description: "Utilisez xPhase avec l’extension de balisage {x:Bind} pour rendre les éléments ListView et GridView de façon incrémentielle et améliorer l’expérience de mouvement panoramique."
 ms.assetid: BD17780E-6A34-4A38-8D11-9703107E247E
 translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: dfa12909d19a44ed38939c612712c8fe90f3f584
+ms.openlocfilehash: c6100f59bb91bc3c6451fc2167d914b0a4a36ded
 
 ---
 
-# Attribut x&#58;Phase
+# Attribut x:Phase
 
 \[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
@@ -81,6 +81,6 @@ L’exécution par phases s’applique uniquement quand le modèle d’élément
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,15 +1,15 @@
 ---
 author: mcleblanc
 ms.assetid: E2B73380-D673-48C6-9026-96976D745017
-description: "Prise en main &#58; Contrôles courants"
-title: "Prise en main &#58; Contrôles courants"
+description: "Prise en main : Contrôles courants"
+title: "Prise en main : Contrôles courants"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9d67cf02f80b5aa9d49fe3a0c5eb47a89419991a
+ms.openlocfilehash: 2cd4b7344074c795f14a56cddbe7807c9ffefafe
 
 ---
 
-# Prise en main &#58; Contrôles courants
+# Prise en main : Contrôles courants
 
 \[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
@@ -62,6 +62,6 @@ Pour obtenir d’autres contrôles, voir [Liste des contrôles](https://msdn.mic
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

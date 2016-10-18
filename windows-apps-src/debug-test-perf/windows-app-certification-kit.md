@@ -5,7 +5,7 @@ title: Kit de certification des applications Windows
 description: "Pour maximiser les chances de publication sur le Windows Store ou de certification Windows de votre application, validez-la et testez-la sur votre ordinateur avant de l’envoyer pour certification. Cette rubrique explique comment installer et exécuter le Kit de certification des applications Windows."
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 16e116c2a92a6ad751b0e4fe58fc7b41de0455cb
+ms.openlocfilehash: 478ba4a24cff3c2df34d98157624c9c4339d432a
 
 ---
 # Kit de certification des applications Windows
@@ -100,6 +100,6 @@ Les caractéristiques de l’ordinateur sur lequel le test est exécuté peuvent
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

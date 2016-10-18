@@ -5,7 +5,7 @@ description: "Cet article décrit la meilleure façon d’utiliser des méthodes
 title: Programmation asynchrone en C++
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: b0a3faa56249ccfe693438c1077b7500736f3ec5
+ms.openlocfilehash: 12fdf79cbf3a79e4789131d0da8eee978b82cdf8
 
 ---
 
@@ -319,6 +319,6 @@ Les méthodes qui prennent en charge [**IAsyncOperationWithProgress**](https://m
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

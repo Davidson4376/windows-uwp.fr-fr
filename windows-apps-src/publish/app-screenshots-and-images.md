@@ -4,17 +4,17 @@ Description: "Votre application doit inclure différents logos, différentes cap
 title: "Images et captures d’écran de l’application"
 ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
 translationtype: Human Translation
-ms.sourcegitcommit: ecb030b7c529f765eded46e4e3e9db99ad0c27e8
-ms.openlocfilehash: 9eac5658e2ac04b2abc1bf06abf5c73b16260bc7
+ms.sourcegitcommit: 70020d3c6e0fb0fea321ce1951720803fd25f9c0
+ms.openlocfilehash: eb61c9bca6b8ddfba5287482508e7d04b240d29f
 
 ---
 
 # Images et captures d’écran de l’application
 
 
-Votre application doit inclure différents logos, différentes captures d&#39;écran et différentes images. Certains de ces éléments sont obligatoires et d’autres facultatifs. Gardez à l’esprit que vos images sont l’un des principaux moyens de représenter votre application. Des images bien conçues ont leur utilité pour rendre votre application attrayante pour les clients.
+Votre application doit inclure différents logos, différentes captures d'écran et différentes images. Certains de ces éléments sont obligatoires et d’autres facultatifs. Gardez à l’esprit que vos images sont l’un des principaux moyens de représenter votre application. Des images bien conçues ont leur utilité pour rendre votre application attrayante pour les clients.
 
-Pendant le [processus de soumission de l'application](app-submissions.md), vous fournissez des [captures d'écran](#screenshots) et des [illustrations publicitaires](#promotional-artwork) à l'étape [Descriptions](create-app-descriptions.md). Ces images aident à afficher votre application dans le Windows Store.
+Pendant le [processus de soumission de l’application](app-submissions.md), vous fournissez des [captures d’écran](#screenshots) et des [illustrations publicitaires](#promotional-artwork) à l’étape [Descriptions dans le Windows Store](create-app-store-listings.md). Ces images aident à afficher votre application dans le Windows Store.
 
 Le Store utilise également la vignette et d’autres images de votre application que vous incluez dans le package de votre application. Exécutez le [Kit de certification des applications Windows](https://msdn.microsoft.com/library/windows/apps/mt186449) pour déterminer si une image requise est manquante. Pour obtenir des conseils et des recommandations sur ces images, voir [Ressources de vignette et d’icône](../controls-and-patterns/tiles-and-notifications-app-assets.md).
 
@@ -23,7 +23,7 @@ Le Store utilise également la vignette et d’autres images de votre applicatio
 
 ## Images fournies pendant le processus de soumission
 
-Lorsque vous entrez les informations de description de votre application, vous pouvez fournir plusieurs captures d'écran (au minimum une) et des conceptions graphiques promotionnelles. Ces images ne proviennent pas du package de votre application. Vous devez les fournir à l'étape **Description** pour chaque langue prise en charge.
+Lorsque vous entrez les informations de description de votre application dans le Windows Store, vous pouvez fournir plusieurs captures d’écran (au minimum une) et des conceptions graphiques promotionnelles. Ces images ne proviennent pas du package de votre application. Vous devez les fournir à l’étape **Description dans le Windows Store** pour chaque langue prise en charge.
 
 Le tableau suivant répertorie les différentes images que vous pouvez charger et explique comment les utiliser. Plus de détails sont fournis dans les sections ci-dessous.
 
@@ -42,9 +42,9 @@ Le tableau suivant répertorie les différentes images que vous pouvez charger e
 
 Les captures d’écran sont les images de votre application que voient vos clients dans la description du Windows Store.
 
-Vous verrez plusieurs champs sur la page **Description**, où vous avez la possibilité de fournir des captures d’écran pour différentes familles d’appareils (qui seront affichées lorsqu’un client consulte la description de votre application dans le Windows Store sur ce type d’appareil).
+Vous verrez plusieurs champs sur la page **Description dans le Windows Store**, où vous avez la possibilité de fournir des captures d’écran pour différentes familles d’appareils (qui seront affichées lorsqu’un client consulte la description de votre application dans le Windows Store sur ce type d’appareil).
 
-La soumission de votre application ne nécessite qu’une seule capture d’écran, mais vous pouvez en fournir plusieurs, jusqu’à 9 pour les ordinateurs de bureau et 8 pour les appareils mobiles et holographiques). Vous n’êtes pas tenu de proposer des captures d’écran distinctes pour chaque famille d’appareils, mais nous recommandons de fournir des captures d’écran pour celles prises en charge par votre application afin que les clients sachent à quoi cette dernière ressemblera sur leur appareil.
+La soumission de votre application ne nécessite qu’une seule capture d’écran, mais vous pouvez en fournir plusieurs, jusqu’à9 pour les ordinateurs de bureau et8 pour les appareils mobiles et holographiques). Vous n’êtes pas tenu de proposer des captures d’écran distinctes pour chaque famille d’appareils, mais nous recommandons de fournir des captures d’écran pour celles prises en charge par votre application afin que les clients sachent à quoi cette dernière ressemblera sur leur appareil.
 
 > **Remarque** Microsoft Visual Studio contient un [outil vous permettant d’effectuer des captures d’écran](http://go.microsoft.com/fwlink/p/?LinkId=221135).
 
@@ -57,14 +57,16 @@ Les exigences de taille varient en fonction de la famille d’appareils:
 
 Vous pouvez fournir un bref sous-titre pour chaque capture d’écran (au maximum 200caractères).
 
-> **Remarque** Si vous créez des descriptions pour [plusieurs langues](supported-languages.md), vous disposez d’une page **Description** pour chacune d’elles. Vous devez charger des images pour chaque langue séparément (même si vous utilisez les mêmes images), et fournir des sous-titres à utiliser pour chaque langue.
+> **Remarque** Si vous créez des descriptions dans le Windows Store pour [plusieurs langues](supported-languages.md), vous disposez d’une page **Description dans le Windows Store** pour chacune d’elles. Vous devez charger des images pour chaque langue séparément (même si vous utilisez les mêmes images), et fournir des sous-titres à utiliser pour chaque langue.
 
 
 ## Icône de vignette d’application
 
-Elle n’est pas requise pour toutes les soumissions, mais est fortement recommandée si votre application s’exécute sur Windows Phone 8.1 ou versions antérieures. Cette icône est utilisée lors de l’affichage de la description de votre application aux clients sur Windows Phone 8.1 et versions antérieures. Si vous ne fournissez pas cette image, les clients sur Windows Phone 8.1 ou versions antérieures verront une icône vide associée à la description de votre application. (Cela s’applique également aux clients sur Windows 10, si votre application est dotée uniquement de packages ciblant Windows Phone 8.1 ou versions antérieures.)
+Elle n’est pas requise pour toutes les soumissions, mais est fortement recommandée si votre application s’exécute sur Windows Phone8.1 ou versions antérieures. Cette icône est utilisée lors de l’affichage de la description de votre application dans le Windows Store aux clients sur Windows Phone8.1 et versions antérieures. Si vous ne fournissez pas cette image, les clients sur Windows Phone8.1 ou versions antérieures verront une icône vide associée à la description de votre application. (Cela s’applique également aux clients sur Windows10, si votre application est dotée uniquement de packages ciblant Windows Phone8.1 ou versions antérieures.)
 
-Cette icône doit être un fichier .png de 300 x 300 pixels.
+Si votre soumission inclut **seulement** des packagesUWP, vous n’avez pas besoin de fournir cette image. Notez que si votre soumission inclut des packages UWP et que vous fournissez une icône de vignette d’application, elle peut s’afficher avec la description de votre application sur Windows10 dans certaines dispositions du Store. Pour éviter que l’icône de vignette d’application soit visible des clients dans Windows10, vous pouvez créer une [description spécifique à la plateforme](create-platform-specific-descriptions.md) pour les versions de système d’exploitation antérieures et inclure l’icône de vignette d’application seulement à cet endroit.
+
+Cette icône doit être un fichier .png de 300x300pixels.
 
 ## Conception graphique promotionnelle
 
@@ -107,6 +109,6 @@ Dans le Windows Store sur Windows8.1 et versions antérieures, les mises en form
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

@@ -5,7 +5,7 @@ description: "Découvrez comment ajouter des contrôles tactiles de base à votr
 ms.assetid: 9d40e6e4-46a9-97e9-b848-522d61e8e109
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: a2460ba2ffcf191fe87132180b2cca7519e87141
+ms.openlocfilehash: 901b83b1c4a2e572e4fe41e1df59910432982687
 
 ---
 
@@ -353,6 +353,6 @@ Cet article s’adresse aux développeurs de Windows10 qui développent des appl
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

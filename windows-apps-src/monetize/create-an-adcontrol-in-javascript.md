@@ -1,11 +1,11 @@
 ---
 author: mcleanbyron
 ms.assetid: 48a1ef86-8514-4af8-9c93-81e869d36de7
-description: "Découvrez comment créer par programme un contrôle **AdControl** en JavaScript."
+description: "Découvrez comment créer par programmation un contrôle **AdControl** en JavaScript."
 title: "Créer un AdControl en JavaScript"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 481f9d785181ca197debdb807bb0b0c7b4168632
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: 68bc124aea079bc60fa22e1e6a038caf95fe765c
 
 
 ---
@@ -13,9 +13,9 @@ ms.openlocfilehash: 481f9d785181ca197debdb807bb0b0c7b4168632
 # Créer un AdControl en JavaScript
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Cet exemple montre comment créer par programme un [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) en JavaScript.
+
+Cet exemple montre comment créer par programmation un [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) en JavaScript.
 
 ## Élément div HTML pour un AdControl
 
@@ -62,6 +62,6 @@ Si vous utilisez ce code et que vous ne voyez pas de publicités, vous pouvez es
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -7,7 +7,7 @@ label: Screen sizes and break points
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 153652c9fcc9745bdee087033d65eec2bc860e53
+ms.openlocfilehash: 5977b6253e2ee10fa0153d79053f89b705c2e1a3
 
 ---
 
@@ -99,6 +99,6 @@ Avec [**Continuum pour téléphones**](http://go.microsoft.com/fwlink/p/?LinkID=
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

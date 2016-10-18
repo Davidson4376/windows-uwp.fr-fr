@@ -4,13 +4,13 @@ ms.assetid: DA495F9D-49B8-45A6-BBE0-27F0C804D240
 title: "Gestion de vos paramètres de compte et des informations sur le profil"
 description: "Vous pouvez afficher et mettre à jour les paramètres de votre compte de développeur et les informations sur le profil dans la section Paramètres du compte du tableau de bord unifié du Centre de développement Windows."
 translationtype: Human Translation
-ms.sourcegitcommit: a9aae8fdc3cb4eaf151934a773a7cc3e6ced177f
-ms.openlocfilehash: 20a995f1a67bfdf0d52340c0964eb05c10935af1
+ms.sourcegitcommit: 3afdf00864e023d913b635beef0c506735881b23
+ms.openlocfilehash: 3859918d94ad7ffcf1c331ca5a0ca6540387886f
 
 ---
 # Gestion de vos paramètres de compte et des informations sur le profil
 
-Vous pouvez afficher et mettre à jour les paramètres de votre compte de développeur et les informations sur le profil dans la section **Paramètres du compte** du [tableau de bord du Centre de développement Windows](https://msdn.microsoft.com/library/windows/apps/Mt169843).
+Vous pouvez afficher et mettre à jour les paramètres de votre compte de développeur et les informations sur le profil dans la section **Paramètres du compte** du [tableau de bord du Centre de développement Windows](using-the-windows-dev-center-dashboard.md).
 
 ## Paramètres de compte
 
@@ -18,7 +18,7 @@ La page **Paramètres du compte** affiche des détails sur votre compte et compr
 
 Dans la section **Détails du compte**, vous pouvez afficher le statut et le type de votre compte. Cette page contient également les informations sur l’ID de l’éditeur, notamment l’ID de vendeur, l’ID d’éditeur Windows et l’ID d’éditeur Windows Phone. Ces valeurs sont allouées par Microsoft afin d’identifier de manière unique votre compte de développeur. Vous ne pouvez pas les modifier.
 
-**Remarque** Les détails d’identité de vos applications respectives sont accessibles sur la page [Identité de l’application](https://msdn.microsoft.com/library/windows/apps/Mt148561) de chacune des applications.
+**Remarque** Les détails d’identité de vos applications respectives sont accessibles sur la page [Identité de l’application](view-app-identity-details.md) de chacune des applications.
 
 ## Coordonnées
 
@@ -30,13 +30,13 @@ Si vous modifiez le nom complet de l’éditeur, nous devons vérifier de nouvea
 
 ## Paramètres et informations supplémentaires
 
-Cette section comprend également des liens dédiés à la [configuration de votre compte de revenu et de vos formulaires fiscaux](https://msdn.microsoft.com/library/windows/apps/Bg124529). Vous devez effectuer cette action avant de facturer les applications ou les produits dans l’application.
+Cette section comprend également des liens dédiés à la [configuration de votre compte de revenu et de vos formulaires fiscaux](setting-up-your-payout-account-and-tax-forms.md). Vous devez effectuer cette action avant de facturer des applications ou des modules complémentaires.
 
 Certains programmes peuvent fournir un code vous permettant d’étendre les fonctionnalités de votre compte; le cas échéant, accédez aux **Paramètres du compte**. Cette page comporte également des détails sur les [appareils Windows Phone8 ou Windows Phone8.1 que vous avez déverrouillés pour le test](http://go.microsoft.com/fwlink/p/?LinkId=533897), et vous permet de vous inscrire ou de vous désinscrire du [Programme Insider du Centre de développement](dev-center-insider-program.md).
 
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -5,7 +5,7 @@ title: "Envoyer un élément de travail au pool de threads"
 description: "Découvrez comment effectuer des tâches dans un thread distinct en envoyant un élément de travail au pool de threads."
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: d8b0f512d075510fae527e563ef99f24cc201577
+ms.openlocfilehash: d41f53a40c46087c5a1c21367a34c0f60486f24d
 
 ---
 # Envoyer un élément de travail au pool de threads
@@ -263,6 +263,6 @@ Pour en savoir plus, vous pouvez télécharger le code de ce démarrage rapide �
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

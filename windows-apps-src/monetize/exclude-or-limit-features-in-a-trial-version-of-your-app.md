@@ -3,17 +3,19 @@ author: mcleanbyron
 Description: "Si vous donnez aux clients la possibilité d’utiliser votre application gratuitement pendant une période d’évaluation, vous pouvez leur donner envie de mettre à niveau vers la version complète de votre application en excluant ou en limitant certaines fonctionnalités pendant la période d’évaluation."
 title: "Exclure ou limiter des fonctionnalités de la version d’évaluation"
 ms.assetid: 1B62318F-9EF5-432A-8593-F3E095CA7056
-keywords: free trial code sample
+keywords: "exemple de code d’évaluation gratuit"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9c38784325f4dc51052f70a819012508f2a0bdbb
+ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
+ms.openlocfilehash: fdca95a6e925ca2238fdcd8791ade2ed4ea5a310
 
 ---
 
 # Exclure ou limiter des fonctionnalités de la version d’évaluation
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+
+
+>**Remarque**&nbsp;&nbsp;Cet article montre comment utiliser les membres de l’espace de noms [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx). Si votre application cible Windows10, version1607 ou ultérieure, nous vous recommandons d’utiliser des membres de l’espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) pour implémenter une version d’évaluation, plutôt que l’espace de noms **Windows.ApplicationModel.Store**. Pour plus d’informations, voir [Implémenter une version d’évaluation de votre application](implement-a-trial-version-of-your-app.md).
 
 Si vous donnez aux clients la possibilité d’utiliser votre application gratuitement pendant une période d’évaluation, vous pouvez leur donner envie de mettre à niveau vers la version complète de votre application en excluant ou en limitant certaines fonctionnalités pendant la période d’évaluation. Choisissez les fonctionnalités à limiter avant de commencer à coder, puis faites en sorte que votre application ne les rende disponibles qu’à l’achat de la licence complète. Vous pouvez également activer certaines fonctionnalités, telles que des bannières ou des filigranes, qui ne s’afficheront que pendant la période d’évaluation, avant l’achat de votre application par un client.
 
@@ -73,7 +75,7 @@ void initializeLicense()
     // Initialize the license info for testing.
     // comment the next line for release
     licenseInformation = CurrentAppSimulator.LicenseInformation;
-      
+
 }
 ```
 
@@ -144,8 +146,8 @@ void DisplayTrialVersionExpirationTime()
         if (licenseInformation.IsTrial)
         {
             var longDateFormat = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("longdate");
-                                                
-            // Display the expiration date using the DateTimeFormatter. 
+
+            // Display the expiration date using the DateTimeFormatter.
             // For example, longDateFormat.Format(licenseInformation.ExpirationDate)
 
             var daysRemaining = (licenseInformation.ExpirationDate - DateTime.Now).Days;
@@ -222,7 +224,7 @@ Pour plus d’informations sur la description de votre application, voir [Créer
 
 ## Rubriques connexes
 
-* [Exemple du Windows Store (montre des versions d’évaluation et des achats in-app)](http://go.microsoft.com/fwlink/p/?LinkID=627610)
+* [Exemple du Windows Store (montre des versions d’évaluation et des achats in-app)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
 * [Définir la tarification et la disponibilité d’une application](https://msdn.microsoft.com/library/windows/apps/mt148548)
 * [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765)
 * [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766)
@@ -232,10 +234,6 @@ Pour plus d’informations sur la description de votre application, voir [Créer
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

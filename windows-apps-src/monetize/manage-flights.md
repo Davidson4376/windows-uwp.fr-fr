@@ -1,38 +1,38 @@
 ---
 author: mcleanbyron
 ms.assetid: 37F2C162-4910-4336-BEED-8536C88DCA65
-description: Use these methods in the Windows Store submission API to manage package flights for apps that are registered to your Windows Dev Center account.
-title: Manage package flights using the Windows Store submission API
+description: "Utilisez ces méthodes dans l’API de soumission du Windows Store pour gérer les versions d’évaluation de package pour les applications inscrites dans votre compte du Centre de développement Windows."
+title: "Gérer les versions d’évaluation du package à l’aide de l’API de soumission du Windows Store"
 translationtype: Human Translation
 ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
 ms.openlocfilehash: de1c23d721cee67d813520e3a23eb553cd90b7e9
 
 ---
 
-# Manage package flights using the Windows Store submission API
+# Gérer les versions d’évaluation du package à l’aide de l’API de soumission du Windows Store
 
 
 
 
-Use the following methods in the Windows Store submission API to manage package flights for apps that are registered to your Windows Dev Center account. For an introduction to the Windows Store submission API, including prerequisites for using the API, see [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md).
+Utilisez les méthodes suivantes dans l’API de soumission du Windows Store pour gérer les versions d’évaluation de package pour les applications qui sont inscrites dans votre compte du Centre de développement Windows. Pour obtenir une présentation de l’API de soumission du Windows Store, notamment les conditions préalables à l’utilisation de l’API, voir [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md).
 
->**Note**&nbsp;&nbsp;These methods can only be used for Windows Dev Center accounts that have been given permission to use the Windows Store submission API. Not all accounts have this permission enabled. These methods can only be used to get, create, or delete package flights. To create submissions for package flights, see the methods in [Manage package flight submissions](manage-flight-submissions.md).
+>**Remarque**&nbsp;&nbsp;Ces méthodes ne peuvent être utilisées que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation. Ces méthodes peuvent uniquement être utilisées pour obtenir, créer ou supprimer des versions d’évaluation de package. Pour créer des soumissions pour des versions d’évaluation de package, voir les méthodes présentées dans l’article [Gérer les soumissions de version d’évaluation de package](manage-flight-submissions.md).
 
-| Method        | URI    | Description                                                                 |
+| Méthode        | URI    | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}``` | Gets data for a package flight for an app that is registered to your Windows Dev Center account. For more information, see [Get a package flight](get-a-flight.md). |
-| POST | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights``` | Creates a new package flight. For more information, see [Create a package flight](create-a-flight.md).|
-| DELETE | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}``` | Deletes a package flight. For more information, see [Delete a package flight](delete-a-flight.md). |
+| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}``` | Obtient les données relatives à une version d’évaluation du package pour une application inscrite dans votre compte du Centre de développement Windows. Pour plus d’informations, voir [Obtenir une version d’évaluation de package](get-a-flight.md). |
+| POST | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights``` | Crée une version d’évaluation de package. Pour plus d’informations, voir [Créer une version d’évaluation de package](create-a-flight.md).|
+| DELETE | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}``` | Supprime une version d’évaluation de package. Pour plus d’informations, voir [Supprimer une version d’évaluation de package](delete-a-flight.md). |
 
 
-## Prerequisites
+## Conditions préalables
 
-If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Windows Store submission API before trying to use any of these methods.
+Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store avant d’essayer d’utiliser l’une de ces méthodes.
 
-## Related topics
+## Rubriques connexes
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
-* [Manage package flight submissions](manage-flight-submissions.md)
+* [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md)
+* [Gérer les soumissions de versions d’évaluation de package](manage-flight-submissions.md)
 
 
 

@@ -1,18 +1,19 @@
 ---
 author: QuinnRadich
-title: "Nouveautés de Windows10"
-description: "La version d’évaluationSDK Windows10Anniversary et les outils de développement offrent outils, fonctions et expertise sur la plateforme Windows universelle."
+title: "Nouveautés de Windows10 version1607 Preview"
+description: "Windows10 version1607 Preview et les nouveaux outils de développement offrent les outils, fonctionnalités et expériences optimisés par la nouvelle plateforme Windows universelle."
+keywords: "nouveautés, nouveauté, mise à jour, mises à jour, fonctionnalités, nouveau, Windows10, 1607 Preview"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 9623e10b15dbc5f9480d1cd9bd740fa8e914b3c6
+ms.sourcegitcommit: 5646bf7681b5b028031eab02f8dd5c352d4b9cc1
+ms.openlocfilehash: 33c1888620d4e3c2d95cbf701e9128ce006961da
 
 ---
 
 # Nouveautés de Windows
 
-La version préliminaire14295 du kit de développement logiciel (SDK) Windows10Anniversary et les mises à jour des outils de développeur Windows continuent de fournir les outils, les fonctionnalités et les expériences de la plateforme Windows universelle. [Installez les outils et le kit de développement logiciel (SDK)](https://developer.microsoft.com/windows/downloads#_blank) sur Windows10 et vous pourrez ainsi [créer une application universelle Windows](https://msdn.microsoft.com/library/windows/apps/bg124288) ou explorer la procédure permettant d’utiliser votre [code d’application existant sur Windows](https://msdn.microsoft.com/library/windows/apps/mt238321).
+Windows10, version1607 Preview et les mises à jour des outils de développement de Windows continuent de fournir les outils, fonctionnalités et expériences optimisés par la plateforme Windows universelle. [Installez les outils et le kit de développement logiciel (SDK)](http://go.microsoft.com/fwlink/?LinkId=821431) sur Windows10 et vous pourrez ainsi [créer une application universelle Windows](https://msdn.microsoft.com/library/windows/apps/bg124288) ou explorer la procédure permettant d’utiliser votre [code d’application existant sur Windows](https://msdn.microsoft.com/library/windows/apps/mt238321).
 
-## Version préliminaire12295 du kit de développement logiciel (SDK) Windows10Anniversary
+## Windows10, version1607 Preview
 
 Fonctionnalité | Description
  :---- | :----
@@ -29,6 +30,6 @@ API de cartes | Le contrôle [MapControl](https://msdn.microsoft.com/library/win
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO4-->
 
 

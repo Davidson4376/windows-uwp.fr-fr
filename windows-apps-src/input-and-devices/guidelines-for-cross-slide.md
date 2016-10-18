@@ -7,7 +7,7 @@ label: Cross-slide
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 47a16acc4025541b1cc19582c2c7d59755fd2594
+ms.openlocfilehash: 6f89875b5ef14c029103155f4e3c333dbdad0cab
 
 ---
 
@@ -135,8 +135,8 @@ Si plusieurs objets doivent être déplacés, permettez aux utilisateurs de sél
 * [Exemple d’entrée de base](http://go.microsoft.com/fwlink/p/?LinkID=620302)
 * [Exemple d’entrée à faible latence](http://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [Exemple de mode d’interaction utilisateur](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Exemple de visuels de focus](http://go.microsoft.com/fwlink/p/?LinkID=619895) 
-           **Exemples d’archive**
+* [Exemple de visuels de focus](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+**Exemples d’archive**
 * [Entrée: exemple d’événements d’entrée utilisateur XAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [Entrée : exemple de fonctionnalités d’appareils](http://go.microsoft.com/fwlink/p/?linkid=231530)
 * [Entrée : exemple de test de positionnement tactile](http://go.microsoft.com/fwlink/p/?linkid=231590)
@@ -155,6 +155,6 @@ Si plusieurs objets doivent être déplacés, permettez aux utilisateurs de sél
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

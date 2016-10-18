@@ -1,19 +1,18 @@
 ---
 description: "Personnalisez votre application UWP pour des types d’entrée et d’appareils donnés. Tirez parti des commandes tactiles et vocales. Exécutez vos applications sur des Xbox, des téléphones et même des TV."
-title: "Conception selon l’entrée et l’appareil pour les applications UWP - Développement d’applications Windows"
+title: "Conc. selon l’entrée et l’appareil pr app. UWP - Dév. d’app. Windows"
 author: mijacobs
-keywords: device primer, app inputs, customize UWP application
+keywords: "notions fondamentales sur les appareils, entrées d’application, personnaliser une application UWP"
 translationtype: Human Translation
-ms.sourcegitcommit: 350de23331f7fe951304ba877c40e07feb424adc
-ms.openlocfilehash: 2d3f0588b56b26e125652c12eeca3028bfe6573e
+ms.sourcegitcommit: 5a6666d4e706d4d49d646b5bb2e43b82394eb215
+ms.openlocfilehash: 85bcd15d4b9262188f0821642faf0d3d0cb7dbad
 
 ---
+# Entrées et appareils
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-# Entrée et appareils
-
-Les applications UWP gèrent automatiquement un grand nombre de saisies et fonctionnent sur différents appareils. Aucune action supplémentaire de votre part n’est requise pour activer la saisie tactile ou la compatibilité avec un téléphone, par exemple. 
+Les applications UWP gèrent automatiquement un grand nombre d’entrées et fonctionnent sur différents appareils. Aucune action supplémentaire de votre part n’est nécessaire pour activer l’entrée tactile ou la compatibilité avec un téléphone, par exemple. 
 
 Mais il peut arriver que vous souhaitiez optimiser votre application pour certains types de saisies ou d’appareils. Par exemple, si vous créez une application de peinture, vous voudrez peut-être personnaliser la gestion des saisies au stylet. 
 
@@ -169,6 +168,6 @@ Une bonne connaissance des appareils qui prennent en charge les applications UWP
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

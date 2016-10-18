@@ -5,7 +5,7 @@ title: "Espaces de noms XAML et mappage d’espaces de noms"
 ms.assetid: A19DFF78-E692-47AE-8221-AB5EA9470E8B
 translationtype: Human Translation
 ms.sourcegitcommit: 3ca9492b334bf4b3d4f0fcab8fca5625f4e23fa5
-ms.openlocfilehash: fe24a66836d85e8d102ebc6b23b42c32a687c593
+ms.openlocfilehash: cca962e4d99599206b8a559c2595ea2b0d8a52c7
 
 ---
 
@@ -114,6 +114,6 @@ Si vous référencez des propriétés jointes, la partie du type de propriétair
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

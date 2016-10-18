@@ -5,14 +5,14 @@ title: "Monétisation à l’aide des annonces"
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 97eeeedb9e73b6c67abe6e2ff8cadbc744a6a7c4
+ms.openlocfilehash: af322795be849bdaa2b1babeaec29d09f5d73fcf
 
 ---
 
-# Monétisation à l’aide des annonces
+# Monétiser à l’aide des publicités
 
 
-Si votre application utilise un contrôle **AdMediatorControl**, **AdControl** ou **InterstitialAd** pour afficher des bannières ou des spots publicitaires, utilisez la page **Monétisation**&gt;**Monétiser avec des publicités** afin de gérer votre utilisation des publicités.
+Si votre application utilise un contrôle **AdMediatorControl**, **AdControl** ou **InterstitialAd** pour afficher des bannières ou des spots publicitaires, utilisez la page **Monétisation** &gt; **Monétiser avec des publicités** afin de gérer votre utilisation des publicités.
 
 ## Médiation publicitaire Windows
 
@@ -70,6 +70,6 @@ Vos unités publicitaires apparaissent dans un tableau situé en bas de cette se
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

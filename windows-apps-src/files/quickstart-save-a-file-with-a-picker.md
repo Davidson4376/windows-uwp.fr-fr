@@ -1,11 +1,11 @@
 ---
-author: TylerMSFT
+author: normesta
 ms.assetid: 8BDDE64A-77D2-4F9D-A1A0-E4C634BCD890
 title: "Enregistrer un fichier avec un sélecteur"
 description: "Utilisez FileSavePicker pour permettre aux utilisateurs de spécifier le nom et l’emplacement où ils souhaitent que votre application enregistre un fichier."
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 68c7fcedbea40541632aa0a7ae65aa77db206280
+ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
+ms.openlocfilehash: 8e65131a913f5ea69438ff986151da11d3126314
 
 ---
 
@@ -46,7 +46,7 @@ Utilisez un [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps
 
 ```cs
 var savePicker = new Windows.Storage.Pickers.FileSavePicker();
-savePicker.SuggestedStartLocation = 
+savePicker.SuggestedStartLocation =
     Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
 // Dropdown of file types the user can save the file as
 savePicker.FileTypeChoices.Add("Plain Text", new List<string>() { ".txt" });
@@ -62,7 +62,7 @@ Cet exemple définit trois propriétés : [**SuggestedStartLocation**](https://m
 
      
 - Comme l’utilisateur enregistre un document ou un fichier texte, l’exemple définit [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207880) sur le dossier local de l’application, avec la propriété [**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621). Définissez [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) sur un emplacement approprié pour le type de fichier enregistré, par exemple, Musique, Images, Vidéos ou Documents. À partir de l’emplacement de départ, l’utilisateur peut accéder à d’autres emplacements.
- 
+
 - Pour nous assurer que l’application puisse ouvrir le fichier une fois celui-ci enregistré, nous utilisons [**FileTypeChoices**](https://msdn.microsoft.com/library/windows/apps/br207875) pour spécifier les types de fichiers que l’exemple prend en charge (documents Microsoft Word et fichiers texte). Assurez-vous que tous les types de fichiers que vous spécifiez sont pris en charge par votre application. L’utilisateur peut enregistrer son fichier sous tout type de fichier que vous spécifiez. Il peut également modifier le type de fichier en sélectionnant un autre type que vous avez spécifié. Le premier choix de type de fichier dans la liste est sélectionné par défaut : pour contrôler cela, définissez la propriété [**DefaultFileExtension**](https://msdn.microsoft.com/library/windows/apps/br207873).
 
 > **Remarque** Le sélecteur de fichiers utilise également le type de fichier actuellement sélectionné pour filtrer les fichiers affichés afin que seuls ceux du type sélectionné soient présentés à l’utilisateur.
@@ -85,7 +85,7 @@ Windows.Storage.StorageFile file = await savePicker.PickSaveFileAsync();
         // Let Windows know that we're finished changing the file so
         // the other app can update the remote version of the file.
         // Completing updates may require Windows to ask for user input.
-        Windows.Storage.Provider.FileUpdateStatus status = 
+        Windows.Storage.Provider.FileUpdateStatus status =
             await Windows.Storage.CachedFileManager.CompleteUpdatesAsync(file);
         if (status == Windows.Storage.Provider.FileUpdateStatus.Complete)
         {
@@ -114,10 +114,6 @@ L’exemple vérifie que le fichier est valide et y écrit son propre nom de fic
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -6,11 +6,10 @@ title: Son
 template: detail.hbs
 ms.assetid: 9fa77494-2525-4491-8f26-dc733b6a18f6
 translationtype: Human Translation
-ms.sourcegitcommit: 7bb23094d569bb29c7227ccd628abd0989b575a4
-ms.openlocfilehash: e6dab48935cd5345ee734e6fda7e6fd4d333bb90
+ms.sourcegitcommit: e240197b4cc233b9fc1ecaa4a1835c4a4dcd3bf8
+ms.openlocfilehash: 91021d76b180e2bc26c0d502098e0a0b21f0219f
 
 ---
-[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.] *Cet article fournit un aperçu de fonctionnalités qui ne sont pas encore disponibles.*
 
 # Son
 
@@ -148,6 +147,6 @@ Cette fonctionnalité de lecture successive est destinée à empêcher que les s
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

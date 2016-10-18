@@ -4,8 +4,8 @@ Description: "Vous pouvez publier des applications métier directement à l’at
 title: "Distribuer des applications métier aux entreprises"
 ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
 translationtype: Human Translation
-ms.sourcegitcommit: 9ad7589344d2af986e52ae43acc3e48de6374ae6
-ms.openlocfilehash: d7551e0456ce0e59dbbfa92690ddd5ba2ebaf8b4
+ms.sourcegitcommit: 44485b32a7c5580e1a7a0ca9ca7c642e0b9b29d2
+ms.openlocfilehash: 76fc4e5cfa70d06d6f378409ecd9f331f64c0803
 
 ---
 
@@ -30,7 +30,7 @@ Pour confirmer l'association, cliquez sur **Accepter**. Votre compte pourra dés
 ## Soumission d'une application métier
 
 
-Lorsque vous êtes prêt à publier une application destinée à une utilisation exclusive par une entreprise, vous suivez un processus similaire au processus de soumission d'application. L'application est soumise au même processus de certification et doit être conforme à l'ensemble des [stratégies du Windows Store](https://msdn.microsoft.com/library/windows/apps/dn764944). Seuls deux aspects du processus sont différents.
+Lorsque vous êtes prêt à publier une application destinée à une utilisation exclusive par une entreprise, vous suivez un processus similaire au processus de soumission d'application. L’application est soumise au même processus de certification et doit être conforme à l’ensemble des [stratégies du Windows Store](https://msdn.microsoft.com/library/windows/apps/dn764944). Seuls quelques aspects du processus sont différents.
 
 ### Distribution et visibilité
 
@@ -48,9 +48,12 @@ Par défaut, la case **Proposer mon application aux organisations via le service
 
 Si vous souhaitez mettre l’application à disposition de l’entreprise à l’aide de licences en mode hors connexion, vous pouvez également cocher la case **Permettre aux entreprises d’acheter des licences en mode hors connexion**.
 
-Pour plus d'informations, voir [Options de gestion des licences organisationnelles](organizational-licensing.md).
+Pour plus d’informations, voir [Options de gestion des licences organisationnelles](organizational-licensing.md).
 
-### Déploiement d'applications métier dans les entreprises
+### Classification par âge
+Pour les applications métier, la [classification par âge](age-ratings.md) du processus de soumission fonctionne comme pour les applications commerciales. Toutefois, une option supplémentaire vous permet d’indiquer manuellement la classification par âge de votre application dans le Windows Store au lieu de remplir le questionnaire ou d’importer un identificateur de classification IARC existant. Cette classification manuelle ne peut être utilisée qu’avec la distribution métier, donc si vous changez le paramètre **Distribution et visibilité** de l’application en **Vente au détail**, vous devrez répondre au questionnaire de classification par âge avant de pouvoir publier la soumission.
+
+### Déploiement d’applications métier dans les entreprises
 
 Lorsque vous cliquez sur **Envoyer au Store**, le processus de certification de l'application s'exécute. À l'issue de ce processus, un administrateur de l'entreprise doit l'ajouter à son magasin privé dans le portail Windows Store pour Entreprises. L'entreprise peut alors déployer l'application à l'attention de ses utilisateurs.
 
@@ -64,7 +67,9 @@ Pour publier les mises à jour d'une application que vous avez déjà publiée e
 
 Si vous souhaitez ne plus offrir une application que vous avez déjà publiée en tant qu’application métier et que vous souhaitez empêcher toute nouvelle acquisition, vous devez créer une soumission. En premier lieu, vous devez modifier votre sélection sous **Distribution et visibilité** et choisir **Vente au détail** au lieu de **Distribution d’applications métier**. Ensuite, sous **Distribution et visibilité**, choisissez l'option **Masquer cette application et empêcher l'acquisition**. Une fois le processus de certification appliqué à la soumission, l’application n’est plus disponible pour de nouvelles acquisitions (les personnes qui en disposent déjà pourront cependant continuer à l’utiliser).
 
-### Distribution d'applications métier par chargement indépendant
+> **Remarque** Lors de la modification du paramètre d’une application en **Vente au détail**, vous devez répondre au [questionnaire de classification par âge](age-ratings.md) si vous ne l’avez pas déjà fait (même si l’application n’est pas disponible pour de nouvelles acquisitions).
+
+### Distribution d’applications métier par chargement indépendant
 
 En mettant votre application à disposition par le biais du Windows Store pour Entreprises, vous vous assurez qu'elle a été signée par le Store et qu'elle est conforme aux stratégies standard du Store.
 
@@ -82,6 +87,6 @@ Pour plus d'informations, voir [Charger la version test d'applications métier d
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Sep16_HO1-->
 
 

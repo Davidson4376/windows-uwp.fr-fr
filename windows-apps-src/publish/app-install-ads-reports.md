@@ -5,7 +5,7 @@ ms.assetid: 8C5907A6-8059-4CAF-951F-C97301A5EEDF
 description: 
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: acd91c578d7222e5fb115a4784f3360333f2a063
+ms.openlocfilehash: 45dd0b2cb34e724313fe431a5b8b7a6df9b5a5cf
 
 ---
 
@@ -13,8 +13,8 @@ ms.openlocfilehash: acd91c578d7222e5fb115a4784f3360333f2a063
 
 Il existe deux façons d’accéder à la page des **Rapports de publicité sur l’installation d’applications** dans le Centre de développement:
 
--   Sur la page de votre application, dans le menu de navigation de gauche, cliquez sur **Analyse**&gt;**Publicités d’installation d’application**.
--   Sur la page de votre application, dans le menu de navigation de gauche, cliquez sur **Monétisation**&gt;**Promouvoir votre application**, puis sur le lien **Rapport** d’une campagne.
+-   Sur la page de votre application, dans le menu de navigation de gauche, cliquez sur **Analyse** &gt; **Publicités d’installation d’applications**.
+-   Sur la page de votre application, dans le menu de navigation de gauche, cliquez sur **Monétisation** &gt;**Promouvoir votre application**, puis sur le lien **Rapport** d’une campagne.
 
 Vous accédez à deux sections : **Performance de l’annonce** et **Historique de facturation du compte**.
 
@@ -70,6 +70,6 @@ Ici, vous pouvez voir toutes les transactions associées à votre compte. Pour c
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -4,8 +4,8 @@ description: "Vous pouvez utiliser la classe PropertyPath et la syntaxe de chaî
 title: Syntaxe de Property-path
 ms.assetid: FF3ECF47-D81F-46E3-BE01-C839E0398025
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 0b1851bc9d19de5b678f8c6c3a255c0ba3057a85
+ms.sourcegitcommit: 3144758352b99f8c145a3c7be8a6c43d6a002104
+ms.openlocfilehash: 867fd859823c23cec9666095793871a4b78e7e52
 
 ---
 
@@ -13,7 +13,7 @@ ms.openlocfilehash: 0b1851bc9d19de5b678f8c6c3a255c0ba3057a85
 
 \[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Vous pouvez utiliser la classe [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) et la syntaxe de chaîne pour instancier une valeur **PropertyPath** en XAML ou dans le code. Les valeurs **PropertyPath** sont utilisées par la liaison de données. Une syntaxe similaire est utilisée pour cibler les animations dans une table de montage séquentiel. Toutefois, le ciblage d’animations ne crée pas de valeurs de syntaxe Property-path sous-jacentes, mais conserve l’information sous forme de chaîne. Dans les deux scénarios, un chemin de propriété décrit la traversée d’une ou de plusieurs relations de propriétés d’objet qui finissent par devenir une seule propriété.
+Vous pouvez utiliser la classe [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) et la syntaxe de chaîne pour instancier une valeur **PropertyPath** en XAML ou dans le code. Les valeurs **PropertyPath** sont utilisées par la liaison de données. Une syntaxe similaire est utilisée pour cibler les animations dans une table de montage séquentiel. Dans les deux scénarios, un chemin de propriété décrit la traversée d’une ou de plusieurs relations de propriétés d’objet qui finissent par devenir une seule propriété.
 
 Vous pouvez affecter une chaîne de chemin de propriété directement à un attribut en XAML. Vous pouvez utiliser la même syntaxe de chaîne pour construire un [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) qui définit [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) dans du code, ou pour définir un ciblage d’animation dans du code via [**SetTargetProperty**](https://msdn.microsoft.com/library/windows/apps/br210503). Il existe deux zones de fonctionnalités distinctes dans Windows Runtime qui utilisent un chemin de propriété: la liaison de données et le ciblage d’animation. Le ciblage d’animation ne crée pas de valeurs de syntaxe Property-path sous-jacentes dans l’implémentation Windows Runtime; il conserve l’information sous forme de chaîne. Toutefois, les concepts de traversée de propriété d’objet sont très similaires. La liaison de données et le ciblage d’animation évaluent chacun un chemin de propriété de façon légèrement différente. C’est la raison pour laquelle nous décrivons séparément la syntaxe du chemin de propriété dans chaque cas.
 
@@ -28,7 +28,7 @@ Vous pouvez lier soit une valeur de propriété individuelle, soit une propriét
 L’élément de la syntaxe qui désigne la traversée d’une relation de propriété d’objet dans un graphique d’objet est le point (**.**). Chaque point d’une chaîne de chemin de propriété indique une division entre un objet (côté gauche du point) et une propriété de cet objet (côté droit du point). La chaîne est évaluée de gauche à droite, ce qui permet d’exécuter le code pas à pas dans plusieurs relations de propriétés d’objet. Voyons un exemple:
 
 ``` syntax
-<Binding Path="Customer.Address.StreetAddress1"
+"{Binding Path=Customer.Address.StreetAddress1}"
 ```
 
 Voici comment ce chemin d’accès est évalué:
@@ -119,6 +119,6 @@ La plupart du temps, vous pouvez appliquer [**PropertyPath**](https://msdn.micro
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

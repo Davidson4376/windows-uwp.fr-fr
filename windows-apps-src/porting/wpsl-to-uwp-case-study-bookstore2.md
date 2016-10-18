@@ -5,11 +5,11 @@ description: "Cette étude de cas, qui repose sur les informations fournies dans
 title: "Étude de cas de portage d’une application Silverlight pour Windows Phone vers UWP, Bookstore2"
 translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: 019f9ae1fc226c9aa1d921ce58cd2e5fa2424a2b
+ms.openlocfilehash: f421b42798d9472cd97ec9ed51036bd312c3e79e
 
 ---
 
-# Étude de cas de portage d’une application Silverlight pour Windows Phone vers UWP &#58; Bookstore2
+# Étude de cas de portage d’une application Silverlight pour Windows Phone vers UWP : Bookstore2
 
 \[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
@@ -302,6 +302,6 @@ Cette étude de cas reposait sur une interface utilisateur plus ambitieuse que c
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

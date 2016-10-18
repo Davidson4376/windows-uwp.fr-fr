@@ -5,7 +5,7 @@ title: "Portage d’un projet Silverlight pour Windows Phone vers un projet UWP"
 ms.assetid: d86c99c5-eb13-4e37-b000-6a657543d8f4
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 74cbd9789636383e6d04798435780dcda6b897d0
+ms.openlocfilehash: ffcc7a76a8604deb4f7cb57ac32b9a29de7be46d
 
 ---
 
@@ -31,7 +31,7 @@ La plupart des API de plateforme Windows universelle (UWP) que votre application
 
 Si vous obtenez des erreurs de compilation à propos d’espaces de noms, de types ou de membres introuvables, cela en est probablement la cause. Ouvrez la rubrique concernant l’API dans la documentation de référence sur les API et accédez à la section Configuration requise pour connaître la famille d’appareils d’implémentation. Si celle-ci ne correspond pas à votre famille d’appareils cible, vous avez besoin d’ajouter une référence au SDK d’extension pour cette famille d’appareils afin que l’API soit disponible pour votre projet.
 
-Cliquez sur **Projet**&gt;**Ajouter une référence**&gt;**Applications universelles Windows**&gt;**Extensions** et cochez le SDK d’extension approprié. Par exemple, si les API que vous voulez appeler sont uniquement disponibles dans la famille d’appareils mobiles et qu’elles ont été introduites dans la version 10.0.x.y, cochez **Extensions Windows Mobile pour UWP**.
+Cliquez sur **Projet** &gt; **Ajouter une référence** &gt; **Windows universel** &gt; **Extensions**, puis sélectionnez le SDK d’extension approprié. Par exemple, si les API que vous voulez appeler sont uniquement disponibles dans la famille d’appareils mobiles et qu’elles ont été introduites dans la version10.0.x.y, cochez **Extensions Windows Mobile pour UWP**.
 
 La référence suivante sera ajoutée à votre fichier de projet:
 
@@ -149,6 +149,6 @@ Rubrique suivante : [Résolution des problèmes](wpsl-to-uwp-troubleshooting.md)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

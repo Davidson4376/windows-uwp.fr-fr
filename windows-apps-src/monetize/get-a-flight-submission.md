@@ -1,76 +1,76 @@
 ---
 author: mcleanbyron
 ms.assetid: A0DFF26B-FE06-459B-ABDC-3EA4FEB7A21E
-description: Use this method in the Windows Store submission API to get data for an existing package flight submission.
-title: Get a package flight submission using the Windows Store submission API
+description: "Utilisez cette méthode de l’API de soumission du Windows Store pour obtenir des données pour une soumission de version d’évaluation du package existante."
+title: "Obtenir une soumission de version d’évaluation du package à l’aide de l’API de soumission du Windows Store"
 translationtype: Human Translation
 ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
 ms.openlocfilehash: d9b445361f9931a4745f5c0b17222637b5d83c4d
 
 ---
 
-# Get a package flight submission using the Windows Store submission API
+# Obtenir une soumission de version d’évaluation du package à l’aide de l’API de soumission du Windows Store
 
 
 
 
-Use this method in the Windows Store submission API to get data for an existing package flight submission. For more information about the process of process of creating a package flight submission by using the Windows Store submission API, see [Manage package flight submissions](manage-flight-submissions.md).
+Utilisez cette méthode de l’API de soumission du Windows Store pour obtenir des données pour une soumission de version d’évaluation du package existante. Pour plus d’informations sur le processus de création d’une soumission de version d’évaluation de package à l’aide de l’API de soumission du Windows Store, voir [Gérer les soumissions de versions d’évaluation du package](manage-flight-submissions.md).
 
-## Prerequisites
+## Conditions préalables
 
-To use this method, you need to first do the following:
+Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
 
-* If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Windows Store submission API.
-* [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
-* Create a package flight submission for an app in your Dev Center account. You can do this in the Dev Center dashboard, or you can do this by using the [create a package flight submission](create-a-flight-submission.md) method.
+* Si ce n’est pas déjà le cas, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
+* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
+* Créez une soumission de version d’évaluation du package pour une application dans votre compte du Centre de développement. Pour cela, vous pouvez utiliser le tableau de bord du Centre de développement ou la méthode [Créer une soumission de version d’évaluation du package](create-a-flight-submission.md).
 
->**Note**&nbsp;&nbsp;This method can only be used for Windows Dev Center accounts that have been given permission to use the Windows Store submission API. Not all accounts have this permission enabled.
+>**Remarque**&nbsp;&nbsp;Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
 
-## Request
+## Requête
 
-This method has the following syntax. See the following sections for usage examples and descriptions of the header and request body.
+Cette méthode présente la syntaxe suivante. Voir les sections suivantes pour obtenir des exemples d’utilisation et une description de l’en-tête et du corps de la requête.
 
-| Method | Request URI                                                      |
+| Méthode | URI de la requête                                                      |
 |--------|------------------------------------------------------------------|
 | GET   | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions{submissionId}``` |
 
 <span/>
  
 
-### Request header
+### En-tête de requête
 
-| Header        | Type   | Description                                                                 |
+| En-tête        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
+| Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;. |
 
 <span/>
 
-### Request parameters
+### Paramètres de la requête
 
-| Name        | Type   | Description                                                                 |
+| Nom        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | string | Required. The Store ID of the app that contains the package flight submission you want to get. For more information about the Store ID, see [View app identity details](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
-| flightId | string | Required. The ID of the package flight that contains the submission you want to get. This ID is available in the Dev Center dashboard, and it is included in the response data for requests to [create a package flight](create-a-flight.md) and [get package flights for an app](get-flights-for-an-app.md).  |
-| submissionId | string | Required. The ID of the submission to get. This ID is available in the Dev Center dashboard, and it is included in the response data for requests to [create a package flight submission](create-a-flight-submission.md).  |
+| applicationId | chaîne | Obligatoire. ID Windows Store de l’application qui contient la soumission de version d’évaluation du package à obtenir. Pour plus d’informations sur l’ID Windows Store, voir [Visualiser les informations d’identité des applications](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
+| flightId | chaîne | Obligatoire. ID de la version d’évaluation du package qui contient la soumission à obtenir. Cet ID est disponible dans le tableau de bord du Centre de développement et figure également dans les données de réponse aux requêtes visant à [créer une version d’évaluation du package](create-a-flight.md) ou à [obtenir des versions d’évaluation du package pour une application](get-flights-for-an-app.md).  |
+| submissionId | chaîne | Obligatoire. ID de la soumission à obtenir. Cet ID est disponible dans le tableau de bord du Centre de développement et figure également dans les données de réponse aux requêtes visant à [créer une soumission de version d’évaluation du package](create-a-flight-submission.md).  |
 
 <span/>
 
-### Request body
+### Corps de la requête
 
-Do not provide a request body for this method.
+Ne fournissez pas de corps de requête pour cette méthode.
 
-### Request example
+### Exemple de requête
 
-The following example demonstrates how to get a package flight submission for an app that has the Store ID 9WZDNCRD91MD.
+L’exemple suivant montre comment obtenir une soumission de version d’évaluation du package pour une application dont l’ID Windows Store est 9WZDNCRD91MD.
 
 ```
 POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/flights/43e448df-97c9-4a43-a0bc-2a445e736bcd/submissions/1152921504621243649 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-## Response
+## Réponse
 
-The following example demonstrates the JSON response body for a successful call to this method. The response body contains information about the specified submission. For more details about the values in the response body, see [Package flight submission resource](manage-flight-submissions.md#flight-submission-object).
+L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à cette méthode. Le corps de la réponse contient des informations sur la soumission spécifiée. Pour plus d’informations sur les valeurs figurant dans le corps de la réponse, voir la [ressource de soumission de version d’évaluation du package](manage-flight-submissions.md#flight-submission-object).
 
 ```json
 {
@@ -101,26 +101,26 @@ The following example demonstrates the JSON response body for a successful call 
 }
 ```
 
-## Error codes
+## Codes d’erreur
 
-If the request cannot be successfully completed, the response will contain one of the following HTTP error codes.
+Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’erreur HTTP suivants.
 
-| Error code |  Description   |
+| Code d’erreur |  Description   |
 |--------|------------------|
-| 404  | The package flight submission could not be found. |
-| 409  | The package flight submission does not belong to the specified package flight, or the app uses a Dev Center dashboard feature that is [currently not supported by the Windows Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
+| 404  | La soumission de version d’évaluation du package est introuvable. |
+| 409  | La soumission de version d’évaluation du package n’appartient pas à la version d’évaluation du package spécifiée, ou l’application utilise une fonctionnalité du tableau de bord du Centre de développement qui n’est [actuellement pas prise en charge par l’API de soumission du Windows Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
 <span/>
 
 
-## Related topics
+## Rubriques connexes
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
-* [Manage package flight submissions](manage-flight-submissions.md)
-* [Create a package flight submission](create-a-flight-submission.md)
-* [Commit a package flight submission](commit-a-flight-submission.md)
-* [Update a package flight submission](update-a-flight-submission.md)
-* [Delete a package flight submission](delete-a-flight-submission.md)
+* [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md)
+* [Gérer les soumissions de versions d’évaluation du package](manage-flight-submissions.md)
+* [Créer une soumission de version d’évaluation du package](create-a-flight-submission.md)
+* [Valider une soumission de version d’évaluation de package](commit-a-flight-submission.md)
+* [Mettre à jour une soumission de version d’évaluation de package](update-a-flight-submission.md)
+* [Supprimer une soumission de version d’évaluation du package](delete-a-flight-submission.md)
 
 
 

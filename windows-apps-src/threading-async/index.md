@@ -5,7 +5,7 @@ title: Threads et programmation asynchrone
 description: "Les threads et la programmation asynchrone permettent à votre application d’accomplir des tâches de manière asynchrone dans des threads parallèles."
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d69259d449ffb7d4dfc1824c77c16eb9e1cdb026
+ms.openlocfilehash: 8962e24e393f0b7961f618f90cd38ead9e54dda4
 
 ---
 # Threads et programmation asynchrone
@@ -42,6 +42,6 @@ Le pool de threads est plus efficace pour la gestion des threads car il réduit 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

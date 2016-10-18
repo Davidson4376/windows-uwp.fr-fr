@@ -5,7 +5,7 @@ description: "Découvrez comment utiliser l’échantillonnage multiple dans des
 ms.assetid: 1cd482b8-32ff-1eb0-4c91-83eb52f08484
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 7b240de9ab3c7b53877d38eb9097dde25b2a40be
+ms.openlocfilehash: cf82c34e23a1c66bfc2d59f9ea3b4ebce99ab52e
 
 ---
 
@@ -210,6 +210,6 @@ Les niveaux de fonctionnalités Direct3D garantissent la prise en charge des pos
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

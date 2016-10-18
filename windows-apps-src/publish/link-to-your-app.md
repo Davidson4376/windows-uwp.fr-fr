@@ -5,7 +5,7 @@ title: "Créer un lien vers votre application"
 ms.assetid: 5420B65C-7ECE-4364-8959-D1683684E146
 translationtype: Human Translation
 ms.sourcegitcommit: d36f14604bd8c2ce0d5778a67f5b5b9460d9fbf3
-ms.openlocfilehash: 891b99b52f7e3b347c0e2f9d298f144313cc7b2d
+ms.openlocfilehash: 8e4756fa7cb7b808e543453e69b5bb3f09ffd5ce
 
 ---
 
@@ -61,6 +61,6 @@ Pour plus d’informations sur l’utilisation du protocole Windows Store, voir 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

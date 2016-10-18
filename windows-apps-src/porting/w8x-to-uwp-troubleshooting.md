@@ -5,7 +5,7 @@ title: "Résolution des problèmes de portage de Windows Runtime 8.x vers UWP"
 ms.assetid: 1882b477-bb5d-4f29-ba99-b61096f45e50
 translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: e5758472d303f4baaf80d45d6b23b54f2a21e002
+ms.openlocfilehash: a6901946f873b751515cb5d9805158e4b78b92bb
 
 ---
 
@@ -54,6 +54,6 @@ Rubrique suivante : [Portage du balisage XAML et de la couche interface utilisat
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

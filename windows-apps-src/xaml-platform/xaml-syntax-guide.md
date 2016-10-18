@@ -5,7 +5,7 @@ title: Guide de la syntaxe XAML
 ms.assetid: A57FE7B4-9947-4AA0-BC99-5FE4686B611D
 translationtype: Human Translation
 ms.sourcegitcommit: 07058b48a527414b76d55b153359712905aa9786
-ms.openlocfilehash: 8e7819b02d7a22a16cf16091d08bef0aabc8d36e
+ms.openlocfilehash: 1fb5f64b5fe58843c06603045a3de9576887d1c7
 
 ---
 
@@ -124,11 +124,11 @@ Dans la grammaire suivante, *property* est le nom de la propriété que vous vou
 
 `<`*object*`>`
 
-`<`*object* `.` *property*`>`
+`<`*object*`.`*property*`>`
 
 *propertyValueAsObjectElement*
 
-`</`*object* `.` *property*`>`
+`</`*object*`.`*property*`>`
 
 `</`*object*`>`
 
@@ -297,9 +297,9 @@ De nombreuses sections de syntaxe XAML incluent des espaces réservés dans « U
 
 Les sections d’utilisation XAML emploient également différents espaces réservés généralisés. Ces espaces réservés ne sont pas redéfinis chaque fois dans **Valeurs XAML**, car vous devinerez ou finirez par savoir ce qu’ils représentent. Comme nous pensons que la plupart des lecteurs se fatigueraient de les voir encore et toujours dans **Valeurs XAML**, nous les avons exclus des définitions. Pour référence, voici une liste de certains de ces espaces réservés et leur signification globale:
 
--   *object* : en théorie toute valeur d’objet, mais souvent en pratique limité à certains types d’objets, tels que le choix entre chaîne et objet, et vous devez consulter les remarques sur la page de référence pour obtenir d’autres informations.
--   *object* *property* : *object* *property* ensemble sont utilisés pour les cas où la syntaxe affichée est celle pour un type qui peut servir de valeur d’attribut pour de nombreuses propriétés. Par exemple, **Utilisation des attributs XAML** pour une classe [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) comprend : &lt;*object* *property*="*predefinedColorName*"/&gt;.
--   *eventhandler* : cet espace réservé apparaît en tant que valeur d’attribut pour toute syntaxe XAML affichée pour un attribut d’événement. Ce que vous indiquez ici est le nom d’une fonction de gestionnaire d’événements. Cette fonction doit être définie dans le code-behind pour la page XAML. Au niveau de la programmation, cette fonction doit correspondre à la signature du délégué de l’événement que vous gérez, ou le code de votre application ne sera pas compilé. Toutefois, comme il s’agit vraiment d’une considération relative à la programmation et non à XAML, nous n’allons en rien aborder le type délégué dans la syntaxe XAML. Si vous voulez connaître le délégué à implémenter pour un événement, la réponse se trouve dans la section **Informations sur les événements** de la rubrique de référence relative à l’événement, dans une ligne de tableau intitulée **Délégué**.
+-   *object*: en théorie toute valeur d’objet, mais souvent en pratique limité à certains types d’objets, tels que le choix entre chaîne et objet, et vous devez consulter les remarques sur la page de référence pour obtenir d’autres informations.
+-   *object* *property*: *object* *property* ensemble sont utilisés pour les cas où la syntaxe affichée est celle pour un type qui peut servir de valeur d’attribut pour de nombreuses propriétés. Par exemple, **Utilisation des attributs XAML** pour une classe [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) comprend: &lt;*object* *property*="*predefinedColorName*"/&gt;.
+-   *eventhandler*: cet espace réservé apparaît en tant que valeur d’attribut pour toute syntaxe XAML affichée pour un attribut d’événement. Ce que vous indiquez ici est le nom d’une fonction de gestionnaire d’événements. Cette fonction doit être définie dans le code-behind pour la page XAML. Au niveau de la programmation, cette fonction doit correspondre à la signature du délégué de l’événement que vous gérez, ou le code de votre application ne sera pas compilé. Toutefois, comme il s’agit vraiment d’une considération relative à la programmation et non à XAML, nous n’allons en rien aborder le type délégué dans la syntaxe XAML. Si vous voulez connaître le délégué à implémenter pour un événement, la réponse se trouve dans la section **Informations sur les événements** de la rubrique de référence relative à l’événement, dans une ligne de tableau intitulée **Délégué**.
 -   *enumMemberName* : affiché dans la syntaxe d’attribut pour toutes les énumérations. Il existe un espace réservé similaire pour les propriétés qui utilisent une valeur d’énumération, mais il comprend généralement en préfixe un indicateur du nom de l’énumération. Par exemple, la syntaxe affichée pour [**FrameworkElement.FlowDirection**](https://msdn.microsoft.com/library/windows/apps/br208716) est &lt;*frameworkElement***FlowDirection**="*flowDirectionMemberName*"/&gt;. Si vous vous trouvez sur l’une de ces pages de référence de propriétés, cliquez sur le lien vers le type d’énumération qui s’affiche dans la section **Valeur de propriété**, en regard du texte **Type :**. Pour connaître la valeur d’attribut d’une propriété qui utilise cette énumération, vous pouvez utiliser toute chaîne répertoriée dans la colonne **Membre** du tableau **Membres**.
 -   *double*, *int*, *string*, *bool* : il s’agit des types de primitives connus en langage XAML. Si vous programmez en C# ou Visual Basic, ces types sont projetés en types équivalents Microsoft .NET comme [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx), [**Int32**](https://msdn.microsoft.com/library/windows/apps/xaml/system.int32.aspx), [**String**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.aspx) et [**Boolean**](https://msdn.microsoft.com/library/windows/apps/xaml/system.boolean.aspx), et vous pouvez utiliser tous les membres sur ces types .NET lorsque vous employez vos valeurs définies en XAML dans du code-behind en .NET. Si vous programmez en C++/CX, vous utiliserez les types de primitives C++, mais vous pouvez également les considérer comme équivalents aux types définis par l’espace de noms [**Platform**](https://msdn.microsoft.com/library/windows/apps/xaml/hh710417.aspx), par exemple [**Platform::String**](https://msdn.microsoft.com/library/windows/apps/xaml/hh755812.aspx). Il y aura parfois d’autres restrictions de valeurs pour des propriétés particulières. Cependant, celles-ci sont généralement indiquées dans une section **Valeur de propriété** ou Remarques et non dans une section XAML, car de telles restrictions s’appliquent à la fois aux utilisations de code et XAML.
 
@@ -318,6 +318,6 @@ Les sections d’utilisation XAML emploient également différents espaces rése
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

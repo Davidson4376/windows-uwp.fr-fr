@@ -1,15 +1,15 @@
 ---
 author: mtoepke
-title: "Procédure &#58; portage d’un convertisseur simple OpenGL ES 2.0 sur Direct3D 11"
-description: "Le premier exercice de portage nous permettra de mettre en pratique une notion de base &#58; porter un convertisseur simple d’OpenGL ES 2.0 sur Direct3D, afin d’adapter un cube en rotation inclus dans un nuanceur de vertex au modèle d’application DirectX 11 (Windows universelle) fourni dans Visual Studio 2015."
+title: "Procédure : portage d’un convertisseur simple OpenGL ES 2.0 sur Direct3D 11"
+description: "Le premier exercice de portage nous permettra de mettre en pratique une notion de base : porter un convertisseur simple d’OpenGL ES 2.0 sur Direct3D, afin d’adapter un cube en rotation inclus dans un nuanceur de vertex au modèle d’application DirectX 11 (Windows universelle) fourni dans Visual Studio 2015."
 ms.assetid: e7f6fa41-ab05-8a1e-a154-704834e72e6d
 translationtype: Human Translation
 ms.sourcegitcommit: 814f056eaff5419b9c28ba63cf32012bd82cc554
-ms.openlocfilehash: f70d4ec46743d930f8cb45084e55cce2e60e2460
+ms.openlocfilehash: 307b611eece3de6288d67e1e340368763f26fa2e
 
 ---
 
-# Procédure &#58; portage d’un convertisseur simple OpenGL ES 2.0 sur Direct3D 11
+# Procédure : portage d’un convertisseur simple OpenGL ES 2.0 sur Direct3D 11
 
 
 \[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
@@ -146,6 +146,6 @@ Cette structure n’a qu’une seule instance; elle contient tous les éléments
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

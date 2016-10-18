@@ -4,8 +4,8 @@ ms.assetid: 7bb9fd81-8ab5-4f8d-a854-ce285b0669a4
 description: "Technologies d’accès aux services réseau et web."
 title: "Réseau et services web"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: b4e291c0948a7734b8ba188bc060dfba2e9a83d1
+ms.sourcegitcommit: 82edf9c3ee7f7303788b7a1272ecb261d3748c5a
+ms.openlocfilehash: 03a5ce2b8d5f501d4254cbe0ee3d47f575775f7a
 
 ---
 
@@ -25,10 +25,9 @@ Les technologies de réseau et services web suivantes sont disponibles pour les 
 | [HttpClient](httpclient.md)                                                             | Utilisez l’API d’espace de noms [Windows.Web.Http](https://msdn.microsoft.com/library/windows/apps/dn279692) pour envoyer et recevoir des informations à l’aide des protocoles HTTP 2.0 et HTTP 1.1.             |
 | [Flux RSS/Atom](web-feeds.md)                                                          | Récupérez ou créez le contenu web le plus actualisé et le plus populaire à l’aide de flux syndiqués générés conformément aux normes RSS et Atom via les fonctionnalités de l’espace de noms [Windows.Web.Syndication](https://msdn.microsoft.com/library/windows/apps/br243632).                   |
 | [Transferts en arrière-plan](background-transfers.md)                                         | Utilisez l’API de transfert en arrière-plan pour copier des fichiers de manière fiable sur le réseau.           |
-| [Marquage de connexions réseau avec l’identitéEDP](tagging_network_connections_with_edp_identity.md) | Cette rubrique vous explique comment générer un contexte de thread protégé avant de créer les connexions réseau dans un scénario de protection des données d’entreprise (EDP, Enterprise Data Protection). |
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO5-->
 
 

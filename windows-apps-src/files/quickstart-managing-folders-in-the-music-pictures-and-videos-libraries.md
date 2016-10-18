@@ -1,11 +1,11 @@
 ---
-author: TylerMSFT
+author: normesta
 ms.assetid: 1AE29512-7A7D-4179-ADAC-F02819AC2C39
 title: "Fichiers et dossiers dans les bibliothèques de musique, d’images et de vidéos"
 description: "Ajoutez les dossiers existants de musique, images ou vidéos dans les bibliothèques correspondantes. Vous pouvez également supprimer des dossiers de bibliothèques, obtenir la liste des dossiers d’une bibliothèque et découvrir des photos, de la musique et des vidéos."
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 332f89f53a55d5783f7497ca5c6cd601dcee5217
+ms.sourcegitcommit: affe6002e22bd10e714dc4782a60ef528c31a407
+ms.openlocfilehash: def1c5c8d9d062a81731744e1e1465472225494a
 
 ---
 
@@ -62,7 +62,7 @@ Pour obtenir la liste des dossiers d’une bibliothèque, obtenez la valeur de l
     using Windows.Foundation.Collections;
 
     // ...
-            
+
     IObservableVector<Windows.Storage.StorageFolder> myPictureFolders = myPictures.Folders;
 ```
 
@@ -136,6 +136,33 @@ Les utilisateurs ou applications peuvent également stocker des fichiers multim�
 
 ## Interrogation des bibliothèques multimédias
 
+Pour obtenir une collection de fichiers, spécifiez la bibliothèque et le type des fichiers souhaités.
+
+```cs
+...
+using Windows.Storage;
+using Windows.Storage.Search;
+...
+
+private async void getSongs()
+{
+    QueryOptions queryOption = new QueryOptions
+        (CommonFileQuery.OrderByTitle, new string[] { ".mp3", ".mp4", ".wma" });
+
+    queryOption.FolderDepth = FolderDepth.Deep
+
+    Queue<IStorageFolder> folders = new Queue<IStorageFolder>();
+
+    var files = await KnownFolders.MusicLibrary.CreateFileQueryWithOptions
+      (queryOption).GetFilesAsync();
+
+    foreach (var file in files)
+    {
+        // do something with the music files.
+    }
+
+}
+```
 
 ### Les résultats de requête incluent à la fois le stockage interne et amovible
 
@@ -149,110 +176,6 @@ Examinons l’état du stockage de l’appareil illustré dans l’image suivant
 
 Si vous interrogez le contenu de la bibliothèque d’images en appelant `await KnownFolders.PicturesLibrary.GetFilesAsync()`, les résultats incluent à la fois internalPic.jpg et SDPic.jpg.
 
-### Requêtes profondes
-
-Utilisez les requêtes profondes pour énumérer rapidement tout le contenu d’une bibliothèque multimédia.
-
-Les requêtes profondes retournent uniquement les fichiers du type de média spécifié. Par exemple, si vous interrogez la médiathèque avec une requête profonde, les résultats obtenus n’incluent pas les fichiers image trouvés dans le dossier Musique.
-
-Sur les périphériques où l’appareil photo enregistre à la fois une image basse résolution et une image haute résolution de chaque photo, les requêtes profondes retournent uniquement l’image basse résolution.
-
-Les dossiers Pellicule et Images enregistrées ne prennent pas en charge les requêtes profondes.
-
-Les requêtes profondes suivantes sont disponibles :
-
-**Bibliothèque d’images**
-
--   `GetFilesAsync(CommonFileQuery.OrderByDate)`
-
-**Médiathèque**
-
--   `GetFilesAsync(CommonFileQuery.OrderByName)`
--   `GetFoldersAsync(CommonFolderQuery.GroupByArtist)`
--   `GetFoldersAysnc(CommonFolderQuery.GroupByAlbum)`
--   `GetFoldersAysnc(CommonFolderQuery.GroupByAlbumArtist)`
--   `GetFoldersAsync(CommonFolderQuery.GroupByGenre)`
-
-**Vidéothèque**
-
--   `GetFilesAsync(CommonFileQuery.OrderByDate)`
-
-### Requêtes plates
-
-Pour obtenir la liste complète de tous les fichiers et dossiers inclus dans une bibliothèque, appelez `GetFilesAsync(CommonFileQuery.DefaultQuery)`. Cette méthode retourne tous les fichiers inclus dans la bibliothèque, quel que soit leur type. Il s’agit d’une requête superficielle, donc vous devez énumérer le contenu des sous-dossiers de manière récursive si l’utilisateur a créé des sous-dossiers dans la bibliothèque.
-
-Utilisez des requêtes plates pour retourner les fichiers multimédias dont le type n’est pas reconnu par les requêtes intégrées, ou pour retourner tous les fichiers inclus dans une bibliothèque, notamment les fichiers qui ne sont pas du type spécifié. Par exemple, si vous interrogez la médiathèque avec une requête plate, les résultats obtenus incluent tous les fichiers image trouvés par la requête dans le dossier Musique.
-
-### Exemple de requêtes
-
-Supposons que l’appareil et sa carte SD optionnelle contiennent les dossiers et fichiers représentés dans l’image suivante:
-
-![Fichiers activés ](images/phone-media-queries.png)
-
-Voici quelques exemples de requêtes et les résultats qu’elles renvoient.
-
-| Requête | Résultats |
-|--------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
-| KnownFolders.PicturesLibrary.GetItemsAsync();  | - Dossier Pellicule du stockage interne <br>- Dossier Pellicule de la carte SD <br>- Dossier Images enregistrées du stockage interne <br>- Dossier Images enregistrées de la carte SD <br><br>Il s’agit d’une requête plate, donc seuls les enfants immédiats du dossier Images sont renvoyés. |
-| KnownFolders.PicturesLibrary.GetFilesAsync();  | Aucun résultat. <br><br>Il s’agit d’une requête plate et le dossier Images ne contient pas de fichiers enfants immédiats. |
-| KnownFolders.PicturesLibrary.GetFilesAsync(CommonFileQuery.OrderByDate); | - Fichier 4-3-2012.jpg de la carte SD <br>- Fichier 1-1-2014.jpg du stockage interne <br>- Fichier 1-2-2014.jpg du stockage interne <br>- Fichier 1-6-2014.jpg de la carte SD <br><br>Il s’agit d’une requête profonde, donc le contenu du dossier Images et de ses dossiers enfants est renvoyé. |
-| KnownFolders.CameraRoll.GetFilesAsync(); | - Fichier 1-1-2014.jpg du stockage interne <br>- Fichier 4-3-2012.jpg de la carte SD <br><br>Il s’agit d’une requête plate. L’ordre des résultats n’est pas garanti. |
-
- 
-## Fonctionnalités et types de fichiers des bibliothèques multimédias
-
-
-Voici les fonctionnalités que vous pouvez spécifier dans le fichier manifeste de l’application pour accéder aux fichiers multimédias de votre application.
-
--   **Musique**. Spécifiez la fonctionnalité **Music Library** dans le fichier manifeste de l’application pour permettre à votre application de voir les types de fichiers suivants et d’y accéder :
-
-    -   .qcp
-    -   .wav
-    -   .mp3
-    -   .m4r
-    -   .m4a
-    -   .aac
-    -   .amr
-    -   .wma
-    -   .3g2
-    -   .3gp
-    -   .mp4
-    -   .wm
-    -   .asf
-    -   .3gpp
-    -   .3gp2
-    -   .mpa
-    -   .adt
-    -   .adts
-    -   .pya
--   **Photos**. Spécifiez la fonctionnalité **Pictures Library** dans le fichier manifeste de l’application pour permettre à votre application de voir les types de fichiers suivants et d’y accéder :
-
-    -   .jpeg
-    -   .jpe
-    -   .jpg
-    -   .gif
-    -   .tiff
-    -   .tif
-    -   .png
-    -   .bmp
-    -   .wdp
-    -   .jxr
-    -   .hdp
--   **Vidéos**. Spécifiez la fonctionnalité **Video Library** dans le fichier manifeste de l’application pour permettre à votre application de voir les types de fichiers suivants et d’y accéder :
-
-    -   .wm
-    -   .m4v
-    -   .wmv
-    -   .asf
-    -   .mov
-    -   .mp4
-    -   .3g2
-    -   .3gp
-    -   .mp4v
-    -   .avi
-    -   .pyv
-    -   .3gpp
-    -   .3gp2
 
 ## Utilisation de photos
 
@@ -270,7 +193,7 @@ Si vous voulez laisser l’utilisateur rouvrir une photo dans l’application qu
 
   propertiesToSave.Add("System.CreatorOpenWithUIOptions", 1);
   propertiesToSave.Add("System.CreatorAppId", appId);
- 
+
   testPhoto.Properties.SavePropertiesAsync(propertiesToSave).AsyncWait();   
 ```
 
@@ -323,10 +246,6 @@ using (var sourceStream = await sourceFile.OpenReadAsync())
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

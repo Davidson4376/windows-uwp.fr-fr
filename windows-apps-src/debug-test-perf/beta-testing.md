@@ -5,7 +5,7 @@ title: "Tests bêta"
 description: "Le test de la version bêta vous permet d’améliorer votre application en fonction des commentaires des personnes ne faisant pas partie de votre équipe de développement d’applications, qui essaient votre application non publiée sur leur propre appareil."
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 7404a90fc9efc05d4e2bb83321bb2ba80b8378ce
+ms.openlocfilehash: 13857b2ba5946149d04ad4f6eda6828cc11a0640
 
 ---
 # Bêta-test
@@ -50,6 +50,6 @@ Pour savoir comment soumettre votre application au Windows Store pour le bêta-t
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

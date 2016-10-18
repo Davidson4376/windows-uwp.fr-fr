@@ -5,7 +5,7 @@ title: "Vue d’ensemble des animations"
 description: "Utilisez les animations de la bibliothèque d’animations du Windows Runtime pour intégrer l’apparence de Windows dans votre application."
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 5d50bf2b24d134fd50ae2bea976509b30a511652
+ms.openlocfilehash: d622465ce3da70cdb8dbd064b68ea6983f9fe3f7
 
 ---
 # Vue d’ensemble des animations
@@ -57,7 +57,7 @@ Les animations suivantes sont fournies dans la bibliothèque d’animations. Cli
 
 ### Transition de page
 
-Utilisez les transitions de page pour animer la navigation au sein d’une application. Étant donné que la plupart des applications utilisent un type de navigation quelconque, les animations de transition de page constituent le type le plus courant d’animation de thème utilisé par les applications. Pour plus d’informations sur les API de transition de page, voir [**NavigationThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.navigationthemetransition) 
+Utilisez les transitions de page pour animer la navigation au sein d’une application. Étant donné que la plupart des applications utilisent un type de navigation quelconque, les animations de transition de page constituent le type le plus courant d’animation de thème utilisé par les applications. Pour plus d’informations sur les API de transition de page, voir [**NavigationThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.navigationthemetransition)
 
 
 
@@ -384,6 +384,6 @@ Le scénario de définition d’interface utilisateur d’application le plus co
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -6,20 +6,30 @@ ms.assetid: 74302FF0-65FC-4820-B59A-718A765EF7F0
 label: Hyperlinks
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
-ms.openlocfilehash: 1d19cfa9c272ee511fbaf89ac0076697ede470b9
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 71749f09eb11f779427bc450ae607f3fa99c2490
 
 ---
 # Liens hypertexte
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 Les liens hypertexte redirigent l’utilisateur vers une autre partie de l’application ou une autre application, ou lancent un URI spécifique dans une application de navigateur distincte. Vous pouvez ajouter un lien hypertexte à une application XAML de deux façons : à l’aide d’un élément de texte **Hyperlink** ou d’un contrôle **HyperlinkButton**.
 
 ![Bouton Lien hypertexte](images/controls/hyperlink-button.png)
 
+<div class="important-apis" >
+<b>API importantes</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/dn279356"><strong>Élément de texte Hyperlink|</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/br242739"><strong>Contrôle HyperlinkButton</strong></a></li>
+</ul>
+
+</div>
+</div>
 
 
--   [**Élément de texte Hyperlink|**](https://msdn.microsoft.com/library/windows/apps/dn279356)
--   [**Contrôle HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739)
+
 
 ## Est-ce le contrôle approprié?
 
@@ -54,7 +64,7 @@ Le lien hypertexte s’affiche en ligne avec le texte qui l’entoure:
 
 ![Exemple de lien hypertexte en tant qu’élément de texte](images/controls_hyperlink-element.png) 
 
-> **Conseil** &nbsp;&nbsp;Lorsque vous utilisez un élément Hyperlink dans un contrôle de texte avec d’autres éléments de texte dans le code XAML, placez le contenu dans un conteneur [Span](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) et appliquez l’attribut`xml:space="default"` au conteneur Span pour conserver l’espace blanc entre l’élément Hyperlink et les autres éléments.
+> **Conseil**&nbsp;&nbsp;Quand vous utilisez un élément Hyperlink dans un contrôle de texte avec d’autres éléments de texte en XAML, placez le contenu dans un conteneur [Span](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) et appliquez l’attribut `xml:space="preserve"` au conteneur Span pour conserver l’espace blanc entre l’élément Hyperlink et les autres éléments.
 
 ## Créer un HyperlinkButton
 
@@ -85,7 +95,7 @@ Pour les deux types de liens hypertexte, vous gérez navigation de la même mani
 
 Pour utiliser le lien hypertexte afin d’accéder à un URI, définissez la propriété NavigateUri. Lorsqu’un utilisateur clique ou appuie sur le lien hypertexte, l’URI spécifié s’ouvre dans le navigateur par défaut. Le navigateur par défaut s’exécute dans un processus distinct de votre application.
 
-> **Remarque** &nbsp;&nbsp;Vous n’êtes pas obligé d’utiliser les schémas http: ou https:.ous n’êtes pas obligé d’utiliser les schémas http: ou https:. Vous pouvez utiliser des schémas tels que ms-appx:, ms-appdata: ou ms-ressources: si le contenu des ressources de ces emplacements peut être chargé dans un navigateur. Toutefois, le schéma file: est bloqué. Pour plus d’informations, voir [Schémas d’URI](https://msdn.microsoft.com/library/windows/apps/jj655406.aspx).
+> **Remarque**&nbsp;&nbsp;Vous n’êtes pas obligé d’utiliser les schémas http: ou https:. Vous pouvez utiliser des schémas tels que ms-appx:, ms-appdata: ou ms-ressources: si le contenu des ressources à ces emplacements peut être chargé dans un navigateur. Toutefois, le schéma file: est bloqué. Pour plus d’informations, voir [Schémas d’URI](https://msdn.microsoft.com/library/windows/apps/jj655406.aspx).
 
 > Quand un utilisateur clique sur le lien hypertexte, la valeur de la propriété NavigateUri est transmise à un gestionnaire de système pour les schémas et types d’URI. Ensuite, le système lance l’application qui est inscrite pour le schéma d’URI fourni pour NavigateUri.
 
@@ -155,6 +165,6 @@ La couleur par défaut du lien hypertexte est la couleur d’accentuation du sys
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -4,8 +4,8 @@ description: "Explique le concept de propriété jointe en XAML et fournit quelq
 title: "Vue d’ensemble des propriétés jointes"
 ms.assetid: 098C1DE0-D640-48B1-9961-D0ADF33266E2
 translationtype: Human Translation
-ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: b676110274bacc8aeacb2527099534cf0e26fa6b
+ms.sourcegitcommit: ebda34ce4d9483ea72dec3bf620de41c98d7a9aa
+ms.openlocfilehash: 06797a616ab828932db6c9d4250b7de253e5d0b2
 
 ---
 
@@ -13,7 +13,7 @@ ms.openlocfilehash: b676110274bacc8aeacb2527099534cf0e26fa6b
 
 \[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Une *propriété jointe* est un concept XAML. D’un point de vue conceptuel, elle est comparable à une propriété globale pouvant être définie dans un élément objet en XAML. Les propriétés jointes sont généralement définies comme une forme spécialisée de propriété de dépendance dont le modèle objet du type du propriétaire ne comporte pas de wrapper de propriété conventionnel.
+Une *propriété jointe* est un concept XAML. Les propriétés jointes permettent de définir des paires propriété/valeur supplémentaires sur un objet, mais les propriétés ne font pas partie de la définition d’objet d’origine. Les propriétés jointes sont généralement définies comme une forme spécialisée de propriété de dépendance dont le modèle objet du type du propriétaire ne comporte pas de wrapper de propriété conventionnel.
 
 ## Conditions préalables
 
@@ -21,7 +21,7 @@ Nous supposons que vous connaissez les principes de base des propriétés de dé
 
 ## Propriétés jointes en XAML
 
-Les propriétés jointes existent principalement parce qu’elles ont permis une syntaxe XAML. En XAML, on définit les propriétés jointes à l’aide de la syntaxe _AttachedPropertyProvider.PropertyName_. Voici un exemple montrant comment définir [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) en XAML.
+En XAML, les propriétés jointes sont définies à l’aide de la syntaxe _AttachedPropertyProvider.PropertyName_. Voici un exemple montrant comment définir [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) en XAML.
 
 ```XML
 <Canvas>
@@ -29,13 +29,11 @@ Les propriétés jointes existent principalement parce qu’elles ont permis une
 </Canvas>
 ```
 
-Notez que l’utilisation s’apparente quelque peu à une propriété statique ; on fait toujours référence au type **Canvas** qui détient et inscrit la propriété jointe, plutôt que de faire référence à une instance par nom.
-
 **Remarque** Nous utilisons simplement [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) comme exemple de propriété jointe sans expliquer de manière exhaustive la raison de cette utilisation. Si vous voulez en savoir plus sur le rôle de **Canvas.Left** et la façon dont [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) gère ses enfants de disposition, voir la rubrique de référence [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) ou [Définir des dispositions avec XAML](https://msdn.microsoft.com/library/windows/apps/mt228350).
 
 ## Pourquoi utiliser des propriétés jointes?
 
-Les propriétés jointes sont un moyen d’échapper aux conventions de codage qui pourraient empêcher différents objets d’une relation d’échanger des informations au moment de l’exécution. Il est certainement possible de placer des propriétés sur une classe de base courante afin que chaque objet puisse juste obtenir et définir ces propriétés. Mais au final, le nombre considérable de scénarios où vous souhaiterez le faire encombrera vos classes de base de propriétés partageables. Cette approche pourrait même créer des situations où seuls deux des centaines de descendants essaieraient d’utiliser une propriété. Cela ne constitue pas une bonne conception de classe. Pour résoudre ce problème, le concept des propriétés jointes permet à un objet d’affecter une valeur pour une propriété que sa propre structure de classe ne définit pas. La classe de définition peut lire cette valeur à partir des objets enfants au moment de l’exécution, après que les différents objets ont été créés dans des relations dans une arborescence d’objets.
+Les propriétés jointes sont un moyen d’échapper aux conventions de codage qui pourraient empêcher différents objets d’une relation d’échanger des informations au moment de l’exécution. Il est certainement possible de placer des propriétés sur une classe de base courante afin que chaque objet puisse juste obtenir et définir ces propriétés. Mais au final, le nombre considérable de scénarios où vous souhaiterez le faire encombrera vos classes de base de propriétés partageables. Cette approche pourrait même créer des situations où seuls deux des centaines de descendants essaieraient d’utiliser une propriété. Cela ne constitue pas une bonne conception de classe. Pour résoudre ce problème, le concept des propriétés jointes permet à un objet d’affecter une valeur pour une propriété que sa propre structure de classe ne définit pas. La classe de définition peut lire cette valeur à partir des objets enfants au moment de l’exécution, après que les différents objets ont été créés dans une arborescence d’objets.
 
 Par exemple, des éléments enfants peuvent utiliser des propriétés jointes pour indiquer à leur élément parent la manière dont ils doivent être présentés dans l’interface utilisateur. C’est le cas avec la propriété jointe [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771). **Canvas.Left** est créée en tant que propriété jointe car elle est définie au niveau d’éléments contenus dans un élément [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267), et non dans la classe **Canvas** proprement dite. Tous les éléments enfants possibles utilisent alors **Canvas.Left** et [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/hh759772) pour spécifier leur décalage de disposition au sein du parent du conteneur de disposition **Canvas**. Les propriétés jointes permettent à ce scénario de fonctionner sans encombrer le modèle objet de l’élément de base de nombreuses propriétés qui s’appliquent chacune uniquement à un des nombreux conteneurs de disposition possibles. Au lieu de cela, la plupart des conteneurs de disposition implémentent leur propre jeu de propriétés jointes.
 
@@ -59,7 +57,7 @@ Il existe deux façons de définir une propriété jointe dans le code : soit en
 
 ### Utilisation du système de propriétés
 
-Pour le Windows Runtime, les propriétés jointes sont implémentées en tant que propriétés de dépendance. De ce fait, le système de propriétés peut stocker les valeurs dans la banque de propriétés de dépendance partagée, à l’instar de nombreuses propriétés d’instance classiques. Par conséquent, les propriétés jointes exposent un identificateur de propriété de dépendance dans la classe propriétaire.
+Pour le Windows Runtime, les propriétés jointes sont implémentées en tant que propriétés de dépendance. De ce fait, le système de propriétés peut stocker les valeurs dans la banque de propriétés de dépendance partagée. Par conséquent, les propriétés jointes exposent un identificateur de propriété de dépendance dans la classe propriétaire.
 
 Pour définir une propriété jointe dans le code, vous devez appeler la méthode [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) et passer le champ [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362), qui fait office d’identificateur pour cette propriété jointe. (Vous devez aussi passer la valeur à définir.)
 
@@ -123,6 +121,6 @@ Le point figurant dans un nom de propriété jointe est un élément clé du mod
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

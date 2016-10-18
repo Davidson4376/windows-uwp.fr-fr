@@ -4,22 +4,22 @@ ms.assetid: 96361CAF-C347-4671-9721-8208CE118CA4
 title: "Création de packages d’application UWP"
 description: "Pour vendre ou distribuer votre application UWP à d’autres utilisateurs, vous devez créer un package d’application appxupload."
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: a77e441cbd1b6826e06064dbd4be449813754b25
+ms.sourcegitcommit: 68081887e16801cd28726a2a33fb7993edf71e89
+ms.openlocfilehash: e274557883071c65313893ce725cc2307856174b
 
 ---
 # Création de packages d’application UWP
 
 \[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Pour vendre ou distribuer votre application UWP à d’autres utilisateurs, vous devez créer un package d’application appxupload. Lorsque vous créez l’appxupload, un autre package appx est alors généré pour le test et le chargement indépendant. Vous pouvez distribuer votre application directement en chargeant de manière indépendante le package appx sur un appareil. Cet article décrit le processus de configuration, de création et de test d’un package d’application UWP. Pour plus d’informations sur le chargement indépendant, voir [Charger de manière indépendante des applications avec DISM](http://go.microsoft.com/fwlink/?LinkID=231020).
+Pour vendre ou distribuer votre application UWP à d’autres utilisateurs, vous devez créer un package d’application appxupload. Lorsque vous créez l’appxupload, un autre package appx est alors généré pour le test et le chargement indépendant. Vous pouvez distribuer votre application directement en chargeant de manière indépendante le package appx sur un appareil. Cet article décrit le processus de configuration, de création et de test d’un package d’application UWP. Pour plus d’informations sur le chargement indépendant, voir [Charger de manière indépendante des applications dans Windows10](https://technet.microsoft.com/library/mt269549.aspx).
 
-Pour Windows 10, vous générez un package (.appxupload) qui peut être chargé sur le Windows Store. Votre application est ensuite disponible pour être installée et exécutée sur tout appareil Windows 10. Voici les étapes pour créer un package d’application.
+Pour Windows10, vous générez un package (.appxupload) qui peut être chargé sur le Windows Store. Votre application est ensuite disponible pour être installée et exécutée sur tout appareil Windows 10. Voici les étapes pour créer un package d’application.
 
 1.  [Avant de créer un package pour votre application](#before-packaging-your-app). Suivez ces étapes pour vous assurer que votre application est prête à être placée dans un package pour son envoi au Windows Store.
 2.  [Configurer un package d’application.](#configure-an-app-package) Utilisez le concepteur de manifeste pour configurer le package. Par exemple, ajoutez des images de vignette et choisissez les orientations prises en charge par votre application.
 3.  [Créer un package d’application](#create-an-app-package). Utilisez l’Assistant dans Microsoft Visual Studio pour créer un package d’application, puis certifiez votre package à l’aide du kit de certification des applications Windows.
-4.  [Charger de manière indépendante votre package d’application](#sideload-your-app-package). Après le chargement de manière indépendante de votre application sur un appareil, vous pouvez tester qu’elle fonctionne correctement.
+4.  [Chargez de manière indépendante votre package d’application](#sideload-your-app-package). Après le chargement de manière indépendante de votre application sur un appareil, vous pouvez tester qu’elle fonctionne correctement.
 
 Après avoir effectué les étapes ci-dessus, vous êtes prêt à vendre votre application dans le Windows Store. Si vous avez une application métier que vous ne prévoyez pas de vendre puisqu’elle est destinée aux utilisateurs internes uniquement, vous pouvez charger de manière indépendante cette application pour l’installer sur tout appareil Windows 10.
 
@@ -141,6 +141,6 @@ La liste suivante fournit les conditions requises pour le chargement indépendan
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

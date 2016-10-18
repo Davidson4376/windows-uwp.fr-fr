@@ -1,23 +1,23 @@
 ---
 author: drewbatgit
 ms.assetid: 42A06423-670F-4CCC-88B7-3DCEEDDEBA57
-description: "Cet article explique comment utiliser les profils d’appareil photo pour découvrir et gérer les fonctionnalités des différents appareils de capture vidéo."
-title: "Profils d’appareil photo"
+description: "Cet article explique comment utiliser les profils d’appareil photo pour découvrir et gérer les capacités des différents appareils de capture vidéo. Cela inclut les tâches telles que la sélection des profils qui prennent en charge des résolutions ou des fréquences d’images spécifiques, des profils qui prennent en charge un accès simultané à plusieurs appareils photos et des profils qui prennent en charge la capture HDR."
+title: "Découvrir et sélectionner des capacités d’appareil photo avec des profils d’appareil photo"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 755b2747b2250c4ad19970095aed220551389471
+ms.sourcegitcommit: 625cf715a88837cb920433fa34e47a1e1828a4c8
+ms.openlocfilehash: 09cb41f834de52d541addee4e44715c52f5e99dc
 
 ---
 
-# Profils d’appareil photo
+# Découvrir et sélectionner des capacités d’appareil photo avec des profils d’appareil photo
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-Cet article explique comment utiliser les profils d’appareil photo pour découvrir et gérer les fonctionnalités des différents appareils de capture vidéo.
+Cet article explique comment utiliser les profils d’appareil photo pour découvrir et gérer les capacités des différents appareils de capture vidéo. Cela inclut les tâches telles que la sélection des profils qui prennent en charge des résolutions ou des fréquences d’images spécifiques, des profils qui prennent en charge un accès simultané à plusieurs appareils photos et des profils qui prennent en charge la capture HDR.
 
-**Remarque**  
-Cet article repose sur les concepts et sur le code décrits dans [Capturer des photos et des vidéos à l’aide de MediaCapture](capture-photos-and-video-with-mediacapture.md), qui détaille les étapes d’implémentation de capture photo et vidéo de base. Il est recommandé de vous familiariser avec le modèle de capture multimédia de base dans cet article avant de passer à des scénarios de capture plus avancés. Le code de cet article part du principe que votre application possède déjà une instance de MediaCapture initialisée correctement.
+> [!NOTE] 
+> Cet article repose sur les concepts et le code décrits dans [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md), qui décrit comment implémenter la capture photo et vidéo de base. Nous vous recommandons de vous familiariser avec le modèle de capture multimédia de base dans cet article avant de passer à des scénarios de capture plus avancés. Le code de cet article part du principe que votre application possède déjà une instance de MediaCapture initialisée correctement.
 
  
 
@@ -25,9 +25,7 @@ Cet article repose sur les concepts et sur le code décrits dans [Capturer des p
 
 Les appareils photo offrent différentes fonctionnalités, notamment l’ensemble des résolutions de capture, la fréquence d’images pour la capture vidéo, et si les vidéos HDR ou les captures de fréquence d’images variable sont prises en charge. L’infrastructure de capture multimédia de plateforme Windows universelle (UWP) stocke cet ensemble de fonctionnalités dans une [**MediaCaptureVideoProfileMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926695). Un profil d’appareil photo, représenté par un objet [**MediaCaptureVideoProfile**](https://msdn.microsoft.com/library/windows/apps/dn926694), comporte trois ensembles de descriptions du média : un premier pour la capture photo, un deuxième pour la capture vidéo et un dernier pour l’aperçu vidéo.
 
-Avant d’initialiser votre objet [MediaCapture](capture-photos-and-video-with-mediacapture.md), vous pouvez interroger les appareils de capture de l’appareil actuel pour découvrir les profils pris en charge. Lorsque vous sélectionnez un profil pris en charge, vous savez que l’appareil de capture prend en charge toutes les fonctionnalités dans les descriptions du média du profil. Cela permet de ne pas tâtonner pour déterminer quelles combinaisons de fonctionnalités sont prises en charge sur un appareil particulier.
-
-Dans l’article sur la capture multimédia de base, [Capturer des photos et des vidéos à l’aide de MediaCapture](capture-photos-and-video-with-mediacapture.md), le [**MediaCaptureInitializationSettings**](https://msdn.microsoft.com/library/windows/apps/br226573) utilisé pour initialiser la capture multimédia est créé uniquement avec la chaîne d’ID de l’appareil de capture (quantité minimale de données requises pour l’initialisation).
+Avant d’initialiser votre objet [MediaCapture](capture-photos-and-video-with-mediacapture.md), vous pouvez interroger les appareils de capture de l’appareil actuel pour découvrir les profils pris en charge. Lorsque vous sélectionnez un profil pris en charge, vous savez que l’appareil de capture prend en charge toutes les fonctionnalités dans les descriptions du média du profil. Cela permet de déterminer directement les combinaisons de capacités prises en charge sur un appareil particulier.
 
 [!code-cs[BasicInitExample](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetBasicInitExample)]
 
@@ -55,7 +53,7 @@ Cet exemple utilise une méthode de requête Linq, incluse dans l’espace de no
 
 [!code-cs[FindWVGA30FPSProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindWVGA30FPSProfile)]
 
-Une fois que vous avez rempli le **MediaCaptureInitializationSettings** avec le profil d’appareil photo souhaité, il vous suffit d’appeler [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) sur l’objet de capture multimédia pour le configurer sur le profil de votre choix.
+Une fois que vous avez rempli **MediaCaptureInitializationSettings** avec le profil d’appareil photo souhaité, il vous suffit d’appeler [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) sur l’objet de capture multimédia pour le configurer sur le profil de votre choix.
 
 [!code-cs[InitCaptureWithProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetInitCaptureWithProfile)]
 
@@ -85,7 +83,7 @@ Utilisez la méthode d’assistance **GetVideoProfileSupportedDeviceIdAsync** d�
 
 La méthode statique [**MediaCapture.FindKnownVideoProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926710) renvoie les profils d’appareil photo pris en charge par l’appareil spécifié classé par la valeur [**KnownVideoProfile**](https://msdn.microsoft.com/library/windows/apps/dn948843) spécifiée. Pour ce scénario, la valeur **VideoRecording** est spécifiée de manière à limiter les profils d’appareil photo renvoyés à ceux prenant en charge l’enregistrement vidéo.
 
-Parcourez la liste renvoyée des profils d’appareil photo. Pour chaque profil d’appareil photo, parcourez chaque [**VideoProfileMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926695) dans le profil pour vérifier si la propriété [**IsHdrVideoSupported**](https://msdn.microsoft.com/library/windows/apps/dn926698) est définie sur la valeur True. Une fois qu’une description du média appropriée est détectée, quittez la boucle et affectez le profil et les objets de description à l’objet **MediaCaptureInitializationSettings**.
+Parcourez la liste renvoyée des profils d’appareil photo. Pour chaque profil d’appareil photo, parcourez chaque [**VideoProfileMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926695) dans le profil pour vérifier si la propriété [**IsHdrVideoSupported**](https://msdn.microsoft.com/library/windows/apps/dn926698) est définie sur true. Une fois qu’une description du média appropriée est détectée, quittez la boucle et attribuez le profil et les objets de description à l’objet **MediaCaptureInitializationSettings**.
 
 [!code-cs[FindHDRProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindHDRProfile)]
 
@@ -99,7 +97,8 @@ Vous pouvez affiner la requête pour rechercher des profils qui prennent en char
 
 ## Rubriques connexes
 
-* [Capturer des photos et des vidéos à l’aide de MediaCapture](capture-photos-and-video-with-mediacapture.md)
+* [Appareil photo](camera.md)
+* [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
  
 
  
@@ -110,6 +109,6 @@ Vous pouvez affiner la requête pour rechercher des profils qui prennent en char
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

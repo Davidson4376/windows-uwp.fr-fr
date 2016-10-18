@@ -5,7 +5,7 @@ title: Optimiser votre disposition XAML
 description: "La disposition peut s’avérer coûteuse pour une application XAML, tant au niveau de l’utilisation du processeur que de la surcharge de la mémoire. Voici quelques mesures simples que vous pouvez entreprendre pour améliorer les performances de la disposition de votre application XAML."
 translationtype: Human Translation
 ms.sourcegitcommit: afb508fcbc2d4ab75188a2d4f705ea0bee385ed6
-ms.openlocfilehash: dbec176310896164ebc99c20aefca4c5b2b29ee9
+ms.openlocfilehash: ae6ad7a761737613c323eb80af993ab5dfcd7977
 
 ---
 # Optimiser votre disposition XAML
@@ -186,6 +186,6 @@ Chaque panneau XAML est optimisé pour des performances optimales, et tous les p
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

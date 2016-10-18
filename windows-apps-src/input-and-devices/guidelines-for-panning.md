@@ -7,7 +7,7 @@ label: Panning
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 45a2d3cb8cd1db1b138d62b7d6525ed7077207b0
+ms.openlocfilehash: 5d82af288d389c6eeb5373d1b1f4230fc992a441
 
 ---
 
@@ -118,10 +118,10 @@ Il existe deuxmodes d’affichage du mouvement panoramique qui dépendent du pé
 
 Le schéma suivant montre deux zones de mouvement panoramique de différentes longueurs et leurs indicateurs.
 
-![images de deuxzones de mouvement panoramique de différentes longueurs avec leurs indicateurs.](images/scrolling-indicators.png)
+![images de deux zones de mouvement panoramique de différentes longueurs avec leurs indicateurs.](images/scrolling-indicators.png)
 
-**Comportements panoramiques** 
-           **Points d’ancrage** Le mouvement panoramique avec le mouvement de balayage introduit un comportement inertiel dans l’interaction quand le contact est relâché. Avec l’inertie, le contenu continue de défiler jusqu’à ce qu’un seuil de distance soit atteint sans entrée directe de l’utilisateur. Utilisez des points d’ancrage pour modifier ce comportement inertiel.
+**Comportements panoramiques**
+**Points d’ancrage** Le mouvement panoramique avec le mouvement de balayage introduit un comportement inertiel dans l’interaction quand le contact est relâché. Avec l’inertie, le contenu continue de défiler jusqu’à ce qu’un seuil de distance soit atteint sans entrée directe de l’utilisateur. Utilisez des points d’ancrage pour modifier ce comportement inertiel.
 
 Les points d’ancrage spécifient des arrêts logiques dans le contenu de votre application. Sur le plan cognitif, les points d’ancrage font office de mécanisme de pagination pour l’utilisateur et réduisent la fatigue résultant de l’exécution excessive de mouvements de glissement ou de balayage dans des régions de mouvement panoramiques importantes. Ils vous permettent de gérer une entrée utilisateur imprécise et garantissent l’affichage d’un sous-ensemble spécifique de contenu ou d’informations clés dans la fenêtre d’affichage.
 
@@ -195,6 +195,6 @@ Ces recommandations s’avèrent utiles pour des applications telles que les alb
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,94 +1,94 @@
 ---
 author: mcleanbyron
 ms.assetid: 16D4C3B9-FC9B-46ED-9F87-1517E1B549FA
-description: Use this method in the Windows Store submission API to delete an add-on for an app that is registered to your Windows Dev Center account.
-title: Delete an add-on using the Windows Store submission API
+description: "Utilisez cette méthode dans l’API de soumission du Windows Store pour supprimer une extension pour une application inscrite dans votre compte du Centre de développement Windows."
+title: "Supprimer une extension à l’aide de l’API de soumission du Windows Store"
 translationtype: Human Translation
 ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
 ms.openlocfilehash: 8c28205ca004bd63b3f6a3fea2971cf927f7e2e4
 
 ---
 
-# Delete an add-on using the Windows Store submission API
+# Supprimer une extension à l’aide de l’API de soumission du Windows Store
 
 
 
 
-Use this method in the Windows Store submission API to delete an add-on (also known as in-app product or IAP) for an app that is registered to your Windows Dev Center account.
+Utilisez cette méthode dans l’API de soumission du Windows Store pour supprimer une extension (également connue sous le nom PIA ou produit in-app) pour une application inscrite dans votre compte du Centre de développement Windows.
 
-## Prerequisites
+## Conditions préalables
 
-To use this method, you need to first do the following:
+Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
 
-* If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Windows Store submission API.
-* [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
+* Si ce n’est pas déjà le cas, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
+* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 
->**Note**&nbsp;&nbsp;This method can only be used for Windows Dev Center accounts that have been given permission to use the Windows Store submission API. Not all accounts have this permission enabled.
+>**Remarque**&nbsp;&nbsp;Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
 
-## Request
+## Requête
 
-This method has the following syntax. See the following sections for usage examples and descriptions of the header and request body.
+Cette méthode présente la syntaxe suivante. Voir les sections suivantes pour obtenir des exemples d’utilisation et une description de l’en-tête et du corps de la requête.
 
-| Method | Request URI                                                      |
+| Méthode | URI de requête                                                      |
 |--------|------------------------------------------------------------------|
 | DELETE    | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}``` |
 
 <span/>
  
 
-### Request header
+### En-tête de requête
 
-| Header        | Type   | Description                                                                 |
+| En-tête        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
+| Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;. |
 
 <span/>
 
-### Request parameters
+### Paramètres de la requête
 
-| Name        | Type   | Description                                                                 |
+| Nom        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| id | string | Required. The Store ID of the add-on to delete. The Store ID is available on the Dev Center dashboard.  |
+| id | chaîne | Obligatoire. ID Windows Store de l’extension à supprimer. L’ID Windows Store est disponible dans le tableau de bord du Centre de développement.  |
 
 <span/>
 
-### Request body
+### Corps de la requête
 
-Do not provide a request body for this method.
+Ne fournissez pas de corps de requête pour cette méthode.
 
 <span/>
 
-### Request example
+### Exemple de requête
 
-The following example demonstrates how to delete an add-on.
+L’exemple suivant montre comment supprimer une extension.
 
 ```
 DELETE https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/9NBLGGH4TNMP HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-## Response
+## Réponse
 
-If successful, this method returns an empty response body.
+En cas de succès, cette méthode retourne un corps de réponse vide.
 
-## Error codes
+## Codes d’erreur
 
-If the request cannot be successfully completed, the response will contain one of the following HTTP error codes.
+Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’erreur HTTP suivants.
 
-| Error code |  Description                                                                                                                                                                           |
+| Code d’erreur |  Description                                                                                                                                                                           |
 |--------|------------------|
-| 400  | The request is invalid. |
-| 404  | The specified add-on could not be found.  |
-| 409  | The specified add-on was found but it could not be deleted in its current state, or the add-on uses a Dev Center dashboard feature that is [currently not supported by the Windows Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
+| 400  | La requête n’est pas valide. |
+| 404  | L’extension spécifiée est introuvable.  |
+| 409  | L’extension spécifiée a été trouvée, mais elle n’a pas pu être supprimée en raison de son état actuel, ou l’extension utilise une fonctionnalité du tableau de bord du Centre de développement qui n’est [actuellement pas prise en charge par l’API de soumission du Windows Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
 <span/>
 
-## Related topics
+## Rubriques connexes
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
-* [Get all add-ons](get-all-add-ons.md)
-* [Get an add-on](get-an-add-on.md)
-* [Create an add-on](create-an-add-on.md)
+* [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md)
+* [Obtenir toutes les extensions](get-all-add-ons.md)
+* [Obtenir une extension](get-an-add-on.md)
+* [Créer une extension](create-an-add-on.md)
 
 
 

@@ -1,76 +1,33 @@
 ---
 author: Mtoepke
-title: "Problèmes connus avec UWP sur la version prélim. pour dév. XboxOne"
+title: "Problèmes connus avec UWP dans le programme pour les développeurs XboxOne"
 description: 
-area: Xbox
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: e016be20af9a0d7a67fa383cbdc93083d12a1113
+ms.sourcegitcommit: 5774ada049e5f300e9cb990f5a079c8c21796f8b
+ms.openlocfilehash: 5892e00f4da74af5aa4e24fdd12b0df0e8a4a7d9
 
 ---
 
-# Problèmes connus avec UWP sur la version préliminaire pour développeurs de Xbox
+# Problèmes connus avec UWP dans  le programme pour les développeurs Xbox
 
-Cette rubrique décrit les problèmes connus liés à la plateforme UWP sur la version préliminaire pour développeurs de Xbox. Pour plus d’informations sur cette version préliminaire pour développeurs, voir [UWP sur Xbox](index.md). 
+Cette rubrique décrit les problèmes connus liés à la plateforme UWP dans le programme pour les développeurs Xbox. Pour plus d’informations sur ce programme, voir [UWP sur Xbox](index.md). 
 
 \[Si vous avez accédé à cette page à partir d’un lien dans une rubrique de référence d’une API et que vous recherchez des informations sur les API pour la famille d’appareils universels, consultez [Fonctionnalités UWP qui ne sont pas encore prises en charge sur Xbox](http://go.microsoft.com/fwlink/?LinkID=760755).\]
 
-La Mise à jour système de la version préliminaire pour développeurs du programme Xbox inclut des versions logicielles préliminaires anticipées et expérimentales. Cela signifie que certains jeux et applications courants ne fonctionneront pas comme prévu, et que vous risquez d’être confronté à des blocages occasionnels et à une perte de données. Si vous quittez la version d’évaluation pour développeurs, votre console procédera à une réinitialisation aux paramètres d’usine. Vous devrez, par conséquent, réinstaller l’ensemble de vos jeux, de vos applications et de votre contenu.
-
-Pour les développeurs, cela implique que certains outils et API de développement ne fonctionneront pas correctement. Les fonctionnalités destinées à la version finale ne seront pas toutes incluses ou de qualité de mise en production. 
-**En conséquence, les performances système de cette version préliminaire ne refléteront pas celles de la version finale.**
-
 La liste ci-après met en relief certains problèmes connus que vous pouvez rencontrer dans cette version, mais cette liste n’est pas exhaustive. 
 
-**Vos commentaires nous intéressent**. Par conséquent, n’hésitez pas à nous faire part de vos éventuels problèmes sur le forum [Développement d’applications Windows universelles](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop). 
+**Vos commentaires nous intéressent**. Par conséquent, n’hésitez pas à nous faire part de vos éventuels problèmes sur le forum [Développement d’applications de plateforme Windows universelle](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop). 
 
 Si vous êtes bloqué, lisez les informations présentées dans cette rubrique, consultez le [Forum aux questions](frequently-asked-questions.md) et utilisez les forums pour demander de l’aide.
 
 
 <!--## Developing games-->
-
-## Prise en charge du mode souris
-
-À partir de cette version d’évaluation, le _mode souris_ est activé par défaut pourXAML et les applicationsweb hébergées. Toutes les applications qui ne le refusent pas recevront un pointeur de souris semblable à celui du navigateurMicrosoftEdge Xbox.
-
-**Nous recommandons vivement aux développeurs de désactiver le modesouris et d’optimiser l’application pour la navigation de contrôleur (X-Y).**
-
-Pour désactiver ce mode dans le code XAML, appuyez-vous sur l’exemple suivant:
-
-```code
-public App() {
-    this.InitializeComponent();
-    this.RequiresPointerMode = Windows.UI.Xaml.ApplicationRequiresPointerMode.WhenRequested;
-    this.Suspending += OnSuspending;
-}
-```
-
-Pour désactiver ce mode dans une applicationHTML/JavaScript, appuyez-vous sur l’exemple suivant:
-
-```code
-// Turn off mouse mode
-navigator.gamepadInputEmulation = "keyboard";
-```
-
-Pour plus d’informations, notamment sur la manière d’activer la navigation directionnelle dans une application HTML/JavaScript, voir [Comment désactiver le mode souris](how-to-disable-mouse-mode.md#html).
-
-> **Remarque**&nbsp;&nbsp;Dans cette version préliminaire pour développeurs, lorsque le mode souris est activé, un mouvement panoramique effectué avec une manette de jeu sur le contrôleur peut entraîner le blocage de la console. Si vous rencontrez ce problème, vous devez redémarrer votre console.
-
-Pour en savoir plus sur la prise en charge du modesouris, voir [Conception pour Xbox et télévision](https://msdn.microsoft.com/windows/uwp/input-and-devices/designing-for-tv?f=255&MSPPError=-2147217396#mouse-mode). Cette rubrique inclut des informations sur l’activation et la désactivation du modesouris, afin de vous permettre de choisir le comportement approprié pour votre application.
-
-## Vous devez disposer d’un utilisateur connecté afin de déployer une application (erreur0x87e10008)
-
-Les applications requièrent désormais l’ouverture d’une session par un utilisateur pour pouvoir être lancées (un utilisateur doit être connecté pour que vous puissiez démarrer le débogage à partir de Visual Studio2015 (toucheF5)). Le message d’erreur actuellement affiché par VS n’est pas limpide:
  
-![Impossible d’activer l’application WindowsStore](images/windows-store-app-activation-error.jpg)
+## Les limites de mémoire des applications en arrière-plan sont partiellement appliquées
  
-Pour contourner ce problème, connectez-vous à l’aide d’un utilisateur à partir de l’interpréteur de commandesXbox ou DevHome avant de déployer votre application.
+L’encombrement mémoire maximal pour les applications qui s’exécutent en arrière-plan est de 128mégaoctets. Dans la version actuelle d’UWP sur Xbox One, votre application est suspendue si elle est au-dessus de cette limite lorsqu’elle passe en arrière-plan. Actuellement, cette limite n’est pas appliquée si votre application dépasse la limite alors qu’elle est déjà en cours d’exécution en arrière-plan. Ainsi, si votre application dépasse 128Mo alors qu’elle s’exécute en arrière-plan, elle sera toujours en mesure d’allouer de la mémoire.
  
-## Les limites de mémoire des applications en arrière-plan ne sont pas encore appliquées
- 
-La limite de 128Mo pour les applications qui s’exécutent en arrière-plan n’est pas appliquée dans cette version d’évaluation. Ainsi, si votre application dépasse la limite de 128Mo lors de son exécution en arrière-plan, elle sera toujours en mesure d’allouer de la mémoire.
- 
-Il n’existe actuellement aucun moyen de contourner ce problème. Vous devez contrôler l’utilisation de la mémoire de manière appropriée. Dans une version d’évaluation à venir, votre application rencontrera des échecs d’allocation de mémoire si elle dépasse la limite de 128Mo.
+Il n’existe actuellement aucun moyen de contourner ce problème. Les applications doivent contrôler leur utilisation de la mémoire en conséquence et continuer de rester sous la limite de 128Mo pendant l’exécution en arrière-plan.
  
 ## Le déploiement à partir de VisualStudio échoue lorsque les paramètres de contrôle parental sont activés
 
@@ -112,26 +69,14 @@ Please use the forum to report any issues you see.-->
 
 ## Prise en charge de DirectX12
 
-UWP sur XboxOne prend en charge la fonctionnalité DirectX11 niveau10. DirectX12 n’est pas pris en charge pour l’instant. À l’instar de toutes les consoles de jeu traditionnelles, XboxOne est un matériel spécialisé qui requiert un Kit de développement logiciel (SDK) spécifique pour fonctionner au maximum de ses capacités. Si vous travaillez sur un jeu sollicitant les capacités maximales du matériel Xbox One, vous pouvez vous inscrire auprès du programme [ID@XBOX](http://www.xbox.com/Developers/id) pour accéder à ce Kit de développement logiciel, qui inclut la prise en charge de DirectX 12.
+UWP sur XboxOne prend en charge la fonctionnalité DirectX11 niveau10. DirectX12 n’est pas pris en charge pour l’instant. 
+
+À l’instar de toutes les consoles de jeu traditionnelles, XboxOne est un matériel spécialisé qui requiert un Kit de développement logiciel (SDK) spécifique pour fonctionner au maximum de ses capacités. Si vous travaillez sur un jeu sollicitant les capacités maximales du matériel Xbox One, vous pouvez vous inscrire au programme [ID@XBOX](http://www.xbox.com/Developers/id) pour accéder à ce Kit SDK, qui inclut la prise en charge de DirectX 12.
 
 <!-- ### Xbox One Developer Preview disables game streaming to Windows 10
 
 Activating the Xbox One Developer Preview on your console will prevent you from streaming games from your Xbox One to the Xbox app on Windows 10, even if your console is set to retail mode. 
 To restore the game streaming feature, you must leave the developer preview. -->
-
-## Problème connu avec la zone adaptée à l’écran de TV
-
-Par défaut, la zone d’affichage des applications UWP sur Xbox doit être insérée dans la zone adaptée à l’écran de TV. Toutefois, il existe un bogue connu dans la version préliminaire pour développeurs de XboxOne: la zone adaptée à l’écran de TV commence à [0, 0] plutôt qu’à [_décalage_, _décalage_].
-
-> **Remarque**&nbsp;&nbsp;Cela s’applique uniquement aux applicationsUWP qui utilisentJavaScript.
-
-La meilleure façon de contourner ce problème consiste à désactiver la zone adaptée à l’écran de TV, comme illustré dans l’exempleJavaScript suivant.
-
-    var applicationView = Windows.UI.ViewManagement.ApplicationView.getForCurrentView();
-
-    applicationView.setDesiredBoundsMode(Windows.UI.ViewManagement.ApplicationViewBoundsMode.useCoreWindow);
-
-Pour en savoir plus sur cette zone, voir [Conception pour Xbox et télévision](https://msdn.microsoft.com/windows/uwp/input-and-devices/designing-for-tv).
 
 <!--## System resources for UWP apps and games on Xbox One
 
@@ -146,10 +91,13 @@ In this developer preview, inbound and outbound network access from the console 
 Developers can still use HTTP and WebSockets.
 --> 
 
+## Ports réseau bloqués sur Xbox One
+
+Les applications de plateforme Windows universelle (UWP) sur les appareils Xbox One ne sont pas autorisées à établir une liaison aux ports dans la plage [49152, 65535]. Même si la liaison à ces ports semble réussir au moment de l’exécution, le trafic réseau peut être annulé sans avertissement avant d’atteindre votre application. Votre application doit si possible établir une liaison au port 0, ce qui permet au système de sélectionner le port local. Si vous avez besoin d’utiliser un port spécifique, le numéro de port doit être dans la plage [1025, 49151]. Vous devez vérifier dans le Registre IANA et éviter les conflits. Pour plus d’informations, voir le [Registre des noms de services et des numéros de ports des protocoles de transport](http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml).
 
 ## Couverture des API UWP
 
-Les APIUWP ne sont pas toutes prises en charge sur Xbox. Pour obtenir la liste des API dont nous savons qu’elles ne fonctionnent pas, consultez [Fonctionnalités UWP qui ne sont pas encore prises en charge sur Xbox](http://go.microsoft.com/fwlink/p/?LinkId=760755). Si vous rencontrez des problèmes avec d’autres API, signalez-les sur les forums. 
+Les APIUWP ne sont pas toutes prises en charge sur Xbox. Pour obtenir la liste des API dont nous savons qu’elles ne fonctionnent pas, voir [Fonctionnalités UWP qui ne sont pas encore prises en charge sur Xbox](http://go.microsoft.com/fwlink/p/?LinkId=760755). Si vous rencontrez des problèmes avec d’autres API, signalez-les sur les forums. 
 
 <!--## XAML controls do not look like or behave like the controls in the Xbox One shell
 
@@ -188,7 +136,7 @@ It is possible to get into a state where the PIN pairing between Visual Studio a
 If PIN pairing fails, use the “Remove all pairings” button in Dev Home, restart Xbox One, restart your development PC, and then try again.--> 
 
 
-## Version préliminaire de WindowsDevicePortal (WDP)
+<!--## Windows Device Portal (WDP) preview-->
 
 <!--### Starting WDP from Dev Home crashes Dev Home
 
@@ -212,13 +160,9 @@ This will delete all of your games, apps, settings and content, deactivate Devel
 
 Sometimes this is resolved by sorting a column on the table.-->
 
-### Affichage incorrect de l’interface utilisateur de WDP dans InternetExplorer7 
+## Avertissement de sécurité déclenché par l’accès à WDP
 
-Par défaut, l’interface utilisateur de WDP ne s’affiche pas correctement dans le navigateur lorsque vous utilisez InternetExplorer7. Vous pouvez résoudre ce problème en désactivant l’Affichage de compatibilité d’Internet Explorer7 pour WDP.
-
-### Avertissement de sécurité déclenché par l’accès à WDP
-
-Vous recevrez un avertissement concernant le certificat fourni, semblable à la capture d’écran ci-dessous, car le certificat de sécurité signé par votre console XboxOne n’est pas considéré comme un éditeur approuvé bien connu. Cliquez sur «Poursuivre sur ce site web» pour accéder à Windows Device Portal.
+Vous recevrez un avertissement concernant le certificat fourni, semblable à la capture d’écran ci-dessous, car le certificat de sécurité signé par votre console XboxOne n’est pas considéré comme un éditeur approuvé bien connu. Pour accéder à Windows Device Portal, cliquez sur **Poursuivre sur ce site web**.
 
 ![Avertissement concernant le certificat de sécurité d’un site web](images/security_cert_warning.jpg)
 
@@ -233,6 +177,6 @@ This is caused by a failure in the WDP infrastructure on the console and can be 
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO4-->
 
 

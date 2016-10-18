@@ -5,7 +5,7 @@ title: Performances
 description: "Les utilisateurs attendent de leurs applications qu’elles soient réactives, conviviales et qu’elles ne déchargent pas la batterie."
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 68f9080cedcc2840fb1e92b81e2fb6bc0b53bee8
+ms.openlocfilehash: f4589b187d05ae122839fab74d8086779847b120
 
 ---
 # Performances
@@ -36,6 +36,6 @@ Si vous ne l’avez pas encore fait, nous vous conseillons de porter votre appli
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

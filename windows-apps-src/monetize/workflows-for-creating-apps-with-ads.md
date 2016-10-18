@@ -4,8 +4,8 @@ ms.assetid: fcebd659-438b-4d03-bc73-6b662ed6f1f3
 description: "En savoir plus sur le processus de bout en bout de développement et de publication d’une application avec des publicités."
 title: "Flux de travail de création d’applications contenant des publicités"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 69dd1a17290b7ffbc14dbc58404868119403f7c0
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: 0f832674f0e635f609f09fa15acead109b1d67ff
 
 
 ---
@@ -13,7 +13,7 @@ ms.openlocfilehash: 69dd1a17290b7ffbc14dbc58404868119403f7c0
 # Flux de travail de création d’applications contenant des publicités
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+
 
 Pour afficher des publicités dans vos applications, votre application doit être en mesure de recevoir des publicités à partir d’un réseau publicitaire. Microsoft fournit un service web permettant aux développeurs d’applications Windows de recevoir des publicités. Lorsque l’utilisateur clique sur la publicité dans votre application, vous (en tant qu’*éditeur* de la publicité) touchez de l’argent de la part du créateur de la publicité (l’*annonceur*). L’argent ainsi gagné auprès des publicitaires vous est payé à l’aide de votre compte.
 
@@ -66,6 +66,6 @@ Une fois votre application publiée et disponible dans le Windows Store, vous po
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

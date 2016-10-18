@@ -4,8 +4,8 @@ Description: "La page Tarification et disponibilité du processus de soumission 
 title: "Définir la tarification et la disponibilité d’une application"
 ms.assetid: 37BE7C25-AA74-43CD-8969-CBA3BD481575
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 509ef3b8b9ec06907fccc2dbbe29fa3c72cb8e5d
+ms.sourcegitcommit: fc5265cf7d455e34225fd74f9792cdb46b0029d7
+ms.openlocfilehash: 91a65020c29e990d96ab26f5abbd777da7810658
 
 ---
 
@@ -40,7 +40,7 @@ Par défaut, votre application sera indiquée à son prix de base dans tous les 
 ## Prix de vente
 
 
-Si vous souhaitez proposer votre application à un prix réduit pendant une durée limitée, vous pouvez créer et planifier une vente. Pour plus d’informations, voir [Vendre des applications et des produits in-app à prix réduit](put-apps-and-iaps-on-sale.md).
+Si vous souhaitez proposer votre application à un prix réduit pendant une durée limitée, vous pouvez créer et planifier une vente. Pour plus d’informations, voir [Vendre des applications et des modules complémentaires à prix réduit](put-apps-and-add-ons-on-sale.md).
 
 ## Distribution et visibilité
 
@@ -57,23 +57,9 @@ Si vous souhaitez masquer votre application dans le Windows Store tout en la ren
 
 > **Remarque** Pour arrêter d’offrir une application aux nouveaux clients, cliquez sur **Rendre votre application indisponible**, sur la page Vue d’ensemble de l’application. Quelques heures après que vous avez confirmé vouloir la rendre indisponible, votre application disparaît du Windows Store. Dès lors, aucun nouveau client ne pourra y accéder, quelle que soit la méthode. Cette action remplacera les options définies ici: aucun nouveau client ne disposera d’un accès. Si vous décidez de la remettre à disposition des clients, vous pouvez à tout moment cliquer sur **Rendre votre application disponible** sur la page Vue d’ensemble de l’application. Pour en savoir plus, consultez l’article [Suppression d’une application du Windows Store](guidance-for-app-package-management.md#removing-an-app-from-the-store).
 
-## Familles d’appareils Windows 10
+## Familles d’appareils Windows10
 
-Cette section vous permet d’indiquer quels types d’appareils Windows10 les clients peuvent utiliser pour acquérir l’application. (Si votre package ne fonctionne pas sur un certain type d’appareil, nous ne le proposons pas en téléchargement pour ce type d’appareil.)
-
-> **Important** Pour empêcher complètement une certaine famille d’appareils Windows 10 d’obtenir votre application, vous devez mettre à jour l’élément [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903) dans votre manifeste appx pour cibler uniquement la famille d’appareils que vous voulez prendre en charge (c’est-à-dire, **Windows.Mobile** ou **Windows.Desktop**), au lieu de laisser la valeur **Windows.Universal** (pour la famille d’appareils universelle) que Microsoft Visual Studio inclut dans le manifeste appx par défaut.
-
-Par défaut, les cases **Mobile** et **Bureau** sont cochées. Nous vous recommandons de laisser les cases à cocher activées, sauf si vous avez une raison spécifique de limiter les types d’appareils Windows10 pouvant acquérir votre application. Par exemple, vous avez peut-être créé des packages Windows universels, mais savez que vous devez encore tester certaines fonctionnalités de l’application sur des appareils mobiles. Dans ce cas, pour empêcher de nouveaux clients de télécharger l’application sur des appareils mobiles Windows 10, vous pouvez désactiver la case à cocher **Mobile**. Si vous estimez ultérieurement être prêt à proposer l’application aux clients sur appareils mobiles Windows 10, vous pouvez créer une soumission en activant la case à cocher **Mobile**.
-
-Si vous avez testé votre application pour vous assurer qu’elle s’exécute correctement sur Microsoft HoloLens, vous pouvez également cocher la case **Holographique** pour proposer l’application aux clients HoloLens. Pour plus d’informations sur la création, le test et la publication d’applications holographiques, voir la [Vue d’ensemble du développement holographique Windows](http://dev.windows.com/holographic/development_overview).
-
-Notez que les sélections effectuées dans cette section s’appliquent à l’ensemble de vos packages d’application, indépendamment de la version de système d’exploitation ciblée (Windows10, Windows8.x, Windows Phone8.x, etc.). Toutefois, elles affectent la disponibilité uniquement pour les clients qui utilisent des appareils Windows 10 (non pas Windows 8.x ou Windows Phone 8.x).
-
-Il est également important de savoir que les sélections que vous opérez ici s’appliquent uniquement aux nouvelles acquisitions. Quiconque disposant déjà de votre application peut continuer à l’utiliser et obtenir les mises à jour que vous soumettez, même si vous supprimez cette famille d’appareils ici. Cela s’applique même aux clients ayant acquis votre application avant la mise à niveau vers Windows 10. Par exemple, si vous avez une application publiée avec des packages Windows Phone 8.1, puis ajoutez un package Windows 10 (UWP) à la même application, qui cible la famille d’appareils universelle, les clients mobiles Windows 10 qui disposaient de votre package Windows Phone 8.1 recevront une mise à jour vers ce package Windows 10 (UWP), même si vous avez désactivé la case à cocher **Mobile** (car il ne s’agit pas d’une nouvelle acquisition, mais d’une mise à jour). En revanche, si vous ne fournissez pas de package Windows 10 (UWP) ciblant la famille d’appareils universelle ou d’appareils mobiles, vos clients mobiles Windows 10 resteront avec le package Windows Phone 8.1.
-
-Pour plus d’informations sur les familles d’appareils, voir le [Guide des applications pour la plateforme Windows universelle (UWP)](https://msdn.microsoft.com/library/windows/apps/dn894631) et [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903).
-
-> **Remarque** Vous verrez également une case à cocher permettant d’indiquer si vous souhaitez permettre à Microsoft de rendre l’application disponible pour de futures familles d’appareils Windows 10. Nous recommandons de conserver cette case à cocher activée pour que votre application puisse être disponible pour davantage de clients potentiels à mesure que de nouvelles familles d’appareils seront introduites.
+la disponibilité de la famille d’appareils est désormais gérée sur la page **Packages** de votre soumission. Pour plus d’informations, consultez la section [Disponibilité de la famille d’appareils](upload-app-packages.md#device-family-availability).
 
 ## Gestion des licences organisationnelles
 
@@ -90,7 +76,8 @@ Vous pouvez indiquer le moment de la publication de votre application (ou de la 
 -   Pour que votre soumission devienne accessible dans le Windows Store le plus tôt possible, choisissez l’option **Publier cette soumission dès qu’elle aura obtenu la certification**.
 -   Pour choisir la date à laquelle votre soumission doit être publiée, sélectionnez l’option **Publier cette soumission manuellement**. Vous pourrez alors effectuer cette opération à partir de la page de degré de certification en cliquant sur **Publier maintenant** ou en sélectionnant une date spécifique, comme décrit ci-après.
 -   Pour vous assurer que la soumission ne sera pas publiée avant une date donnée, choisissez l’option **Pas avant le \[date\]**. Avec cette option, votre soumission sera publiée aussitôt que possible à la date spécifiée ou après. La date doit être postérieure de 24 heures au moins. En parallèle de la date, vous pouvez également définir l’heure à laquelle la publication de la soumission doit démarrer.
-    > **Remarque** Des retards lors de la certification ou de la publication peuvent faire que la sortie réelle intervient plus tard que la date demandée. Le Windows Store ne peut pas garantir que votre application (ou mise à jour) sera disponible à une date spécifique.
+
+   > **Remarque** Des retards lors de la certification ou de la publication peuvent faire que la sortie réelle intervient plus tard que la date demandée. Le Windows Store ne peut pas garantir que votre application (ou mise à jour) sera disponible à une date spécifique.
 
 Vous pouvez également modifier la date de sortie après avoir soumis votre application, à condition que l’étape **Publier** n’ait pas encore commencé pour l’application.
  
@@ -103,6 +90,6 @@ Vous pouvez également modifier la date de sortie après avoir soumis votre appl
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

@@ -1,11 +1,11 @@
 ---
-author: TylerMSFT
+author: normesta
 ms.assetid: 3A404CC0-A997-45C8-B2E8-44745539759D
 title: "Autorisations d’accès aux fichiers"
 description: "Les applications peuvent accéder à certains emplacements du système de fichiers par défaut. Les applications peuvent également accéder à des emplacements supplémentaires par le biais du sélecteur de fichiers, ou en déclarant des fonctionnalités."
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: abcd6c1747566c7f8464016fadcb5a0441652afb
+ms.sourcegitcommit: ef8d0e7ad9063fa57a9db7c3cbdcb6846d3b1133
+ms.openlocfilehash: e58cdce7f803cd15b66371e3b03c4405cbdeb3ff
 
 ---
 # Autorisations d’accès aux fichiers
@@ -47,7 +47,7 @@ Lorsque vous créez une application, vous pouvez accéder par défaut aux emplac
             }
         );
         ```
-        
+
         Une fois la méthode [**GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) exécutée, elle renvoie une classe [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) qui représente le fichier *file.txt* dans le répertoire d’installation de l’application (`file`, dans cet exemple).
 
         Le préfixe «ms-appx:///» de l’URI fait référence au répertoire d’installation de l’application. Pour en savoir plus sur l’utilisation des URI d’application, voir [Comment utiliser des URI pour référencer du contenu](https://msdn.microsoft.com/library/windows/apps/hh781215).
@@ -71,7 +71,7 @@ Lorsque vous créez une application, vous pouvez accéder par défaut aux emplac
         ```javascript
         var localFolder = Windows.Storage.ApplicationData.current.localFolder;
         ```
- 
+
         Si vous souhaitez accéder au dossier roaming ou temporary de votre application, utilisez la propriété [**RoamingFolder**](https://msdn.microsoft.com/library/windows/apps/br241623) ou [**TemporaryFolder**](https://msdn.microsoft.com/library/windows/apps/br241629) à la place.
 
         Une fois que vous avez récupéré une classe [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) qui représente un emplacement des données de l’application, vous pouvez accéder aux fichiers et dossiers situés dans cet emplacement en utilisant les méthodes **StorageFolder**. Dans cet exemple, ces objets **StorageFolder** sont stockés dans la variable `localFolder`. Pour en savoir plus sur l’utilisation des emplacements des données de l’application, consultez [Gestion des données d’application](https://msdn.microsoft.com/library/windows/apps/hh465109), puis téléchargez l’[exemple de données d’application](http://go.microsoft.com/fwlink/p/?linkid=231478) pour Windows8.1 et réutilisez son code source dans votre application Windows10.
@@ -80,7 +80,7 @@ Lorsque vous créez une application, vous pouvez accéder par défaut aux emplac
         > [!div class="tabbedCodeSnippets"]
         ```csharp
         using Windows.Storage;
-        StorageFile file = await StorageFile.GetFileFromApplicationUriAsync("ms-appdata:///local/file.txt");
+        StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///file.txt"));
         ```
         ```javascript
         Windows.Storage.StorageFile.getFileFromApplicationUriAsync("ms-appdata:///local/file.txt").done(
@@ -125,7 +125,7 @@ Lorsque vous créez une application, vous pouvez accéder par défaut aux emplac
             }
         );
         ```
- 
+
         [**DownloadsFolder**](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh996761) est surchargé afin que vous puissiez spécifier ce que le système doit faire si le dossier Téléchargements contient déjà un fichier du même nom. Une fois ces méthodes exécutées, elles renvoient une classe [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) qui représente le fichier qui a été créé. Ce fichier est appelé `newFile` dans cet exemple.
 
     -   Vous pouvez créer un sous-dossier dans le dossier Téléchargements de l’utilisateur comme suit:
@@ -141,7 +141,7 @@ Lorsque vous créez une application, vous pouvez accéder par défaut aux emplac
             }
         );
         ```
- 
+
         [**DownloadsFolder**](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFolderAsync**](https://msdn.microsoft.com/library/windows/apps/hh996763) est surchargé afin que vous puissiez spécifier ce que le système doit faire si le dossier Téléchargements contient déjà un sous-dossier du même nom. Une fois ces méthodes exécutées, elles renvoient une classe [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) qui représente le sous-dossier qui a été créé. Ce fichier est appelé `newFolder` dans cet exemple.
 
     Si vous créez un fichier ou un dossier dans le dossier Téléchargements, nous vous recommandons d’ajouter cet élément à la propriété [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) de votre application afin qu’elle puisse accéder à cet élément dans le futur.
@@ -160,12 +160,11 @@ Le tableau qui suit dresse une liste d’emplacements supplémentaires auxquels 
 | Vidéos    | VideosLibrary<br>Voir également [Fichiers et dossiers dans les bibliothèques de musique, d’images et de vidéos](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md). | [KnownFolders.VideosLibrary](https://msdn.microsoft.com/library/windows/apps/br227159) |   
 | Périphériques amovibles  | RemovableDevices <br><br>Remarque: vous devez ajouter des associations de types de fichiers dans le manifeste de l’application pour déclarer les types de fichiers spécifiques auxquels votre application pourra accéder dans cet emplacement. <br><br>Voir également [Accéder à la carteSD](access-the-sd-card.md). | [KnownFolders.RemovableDevices](https://msdn.microsoft.com/library/windows/apps/br227158) |  
 | Bibliothèques du groupe résidentiel  | Au moins une des fonctionnalités suivantes est requise. <br>- MusicLibrary <br>- PicturesLibrary <br>- VideosLibrary | [KnownFolders.HomeGroup](https://msdn.microsoft.com/library/windows/apps/br227153) |      
-| Appareils de serveur multimédia (DLNA) | Au moins une des fonctionnalités suivantes est requise. <br>- MusicLibrary <br>- PicturesLibrary <br>- VideosLibrary | [KnownFolders.MediaServerDevices](https://msdn.microsoft.com/library/windows/apps/br227154) | 
+| Appareils de serveur multimédia (DLNA) | Au moins une des fonctionnalités suivantes est requise. <br>- MusicLibrary <br>- PicturesLibrary <br>- VideosLibrary | [KnownFolders.MediaServerDevices](https://msdn.microsoft.com/library/windows/apps/br227154) |
 | Dossiers UNC (Universal Naming Convention) | Une combinaison des fonctionnalités suivantes est requise. <br><br>Fonctionnalité des réseaux domestiques et d’entreprise: <br>- PrivateNetworkClientServer <br><br>Et au moins une fonctionnalité de réseaux Internet et publics: <br>- InternetClient <br>- InternetClientServer <br><br>Et, le cas échéant, la fonctionnalité des informations d’identification de domaine:<br>- EnterpriseAuthentication <br><br>Remarque: vous devez ajouter des associations de types de fichiers dans le manifeste de l’application pour déclarer les types de fichiers spécifiques auxquels votre application pourra accéder dans cet emplacement. | Récupérez un dossier en utilisant: <br>[StorageFolder.GetFolderFromPathAsync](https://msdn.microsoft.com/library/windows/apps/br227278) <br><br>Récupérez un fichier en utilisant: <br>[StorageFile.GetFileFromPathAsync](https://msdn.microsoft.com/library/windows/apps/br227206) |
 
 
 
-
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO4-->
 
 

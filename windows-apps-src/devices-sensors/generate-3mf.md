@@ -6,8 +6,8 @@ MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: "Générer un package 3MF"
 translationtype: Human Translation
-ms.sourcegitcommit: 0bf96b70a915d659c754816f4c115f3b3f0a5660
-ms.openlocfilehash: fd85530d27a157bd65a6feec8a20cca8cadfb88f
+ms.sourcegitcommit: c790d57e72a75ec28e376722f8d87c2655b18c42
+ms.openlocfilehash: 1d291173cc68d4eedcbc2918f308be1489105a08
 
 ---
 
@@ -23,13 +23,13 @@ ms.openlocfilehash: fd85530d27a157bd65a6feec8a20cca8cadfb88f
 
 \[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.\]
 
-Décrit la structure du document3D Manufacturing Format, ainsi que les procédures de création et de manipulation de ce type de fichier avec l’API [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx).
+Ce guide décrit la structure du document3D Manufacturing Format, ainsi que les procédures de création et de manipulation de ce type de fichier avec l’API [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx).
 
 ## Qu’est-ce que 3MF?
 
 3MF (3D Manufacturing Format) est un ensemble de conventions régissant la description en langage XML de l’apparence et de la structure de modèles3D à des fins de fabrication (impression 3D). Ce format définit une série de pièces (dont certaines sont requises et d’autres facultatives) et leurs relations, de façon à fournir toutes les informations nécessaires à un périphérique de fabrication 3D. Un jeu de données conforme au format 3MF peut être enregistré dans un fichier présentant l’extension.3mf.
 
-Dans Windows10, la classe [**Printing3D3MFPackage**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3d3mfpackage.aspx) de l’espace de noms **Windows.Graphics.Printing3D** est analogue à un fichier .3mf unique, tandis que d’autres classes sont mappées sur les différents éléments XML de ce fichier. Ce guide décrit la façon dont chacune des parties principales d’un document3MF peut être créée et définie par programme, le mode d’utilisation de l’extension3MF Materials, ainsi que les procédures de conversion et d’enregistrement d’un objet **Printing3D3MFPackage** en C\# sous la forme d’un fichier.3mf. Pour plus d’informations sur les normes3MF ou sur l’extension3MF Materials, voir la [spécification 3MF](http://3mf.io/what-is-3mf/3mf-specification/) (en anglais).
+Dans Windows10, la classe [**Printing3D3MFPackage**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3d3mfpackage.aspx) de l’espace de noms **Windows.Graphics.Printing3D** est analogue à un fichier .3mf unique, tandis que d’autres classes sont mappées sur les différents éléments XML de ce fichier. Ce guide décrit la façon dont chacune des parties principales d’un document3MF peut être créée et définie par programmation, le mode d’utilisation de l’extension3MF Materials, ainsi que les procédures de conversion et d’enregistrement d’un objet **Printing3D3MFPackage** en fichier.3mf. Pour plus d’informations sur les normes3MF ou sur l’extension3MF Materials, voir la [Spécification 3MF](http://3mf.io/what-is-3mf/3mf-specification/).
 
 <!-- >**Note** This guide describes how to construct a 3MF document from scratch. If you wish to make changes to an already existing 3MF document provided in the form of a .3mf file, you simply need to convert it to a **Printing3D3MFPackage** and alter the contained classes/properties in the same way (see [link]) below). -->
 
@@ -60,7 +60,8 @@ La méthode suivante définit tous les triangles qui doivent être dessinés ent
 
 [!code-cs[TriangleIndices](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetTriangleIndices)]
 
-> **Remarque** Les index de tous les triangles doivent être définis dans le sens inverse des aiguilles d’une montre (lorsque l’on visualise le triangle à partir de l’extérieur de l’objet de maillage), afin que leurs vecteurs normaux à la face pointent vers l’extérieur.
+> [!NOTE]
+> Les index de tous les triangles doivent être définis dans le sens inverse des aiguilles d’une montre (quand on regarde le triangle à partir de l’extérieur de l’objet de maillage), afin que leurs vecteurs normaux à la face pointent sur l’extérieur.
 
 Une fois qu’un objet Printing3DMesh contient des ensembles valides de sommets et de triangles, il doit être ajouté à la propriété **Meshes** du modèle. Tous les objets **Printing3DMesh** d’un package doivent être stockés sous la propriété **Meshes** de la classe **Printing3DModel**.
 
@@ -82,7 +83,8 @@ Le type de matériau par défaut est le type **Matériau de base**, qui comporte
 
 [!code-cs[BaseMaterialGroup](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetBaseMaterialGroup)]
 
-**Remarque** Le périphérique de fabrication3D détermine le mappage entre les matériaux physiques disponibles et les éléments de matériau virtuels stockés dans le fichier3MF. Le mappage des matériaux n’est pas nécessairement du type 1:1. En effet, si une imprimante 3D n’utilise qu’un seul matériau, elle imprimera la totalité du modèle dans ce matériau, quels que soient les différents matériaux attribués à des objets ou faces spécifiques.
+> [!NOTE]
+> Le périphérique de fabrication3D détermine le mappage entre les matériaux physiques disponibles et les éléments de matériau virtuels stockés dans le fichier3MF. Le mappage des matériaux n’est pas nécessairement de type1:1. En effet, si une imprimante 3D n’utilise qu’un seul matériau, elle imprimera la totalité du modèle dans ce matériau, quels que soient les différents matériaux attribués à des objets ou faces spécifiques.
 
 ### Matériaux de couleur
 
@@ -102,7 +104,8 @@ Les **matériaux composites** demandent simplement au périphérique de fabricat
 
 [!code-cs[TextureResource](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetTextureResource)]
 
-**Remarque** Les données de texture appartiennent au package3MF proprement dit, et non à la partie modèle du package.
+> [!NOTE]
+> Les données de texture appartiennent au package3MF proprement dit, et non à la partie modèle du package.
 
 Nous renseignons ensuite les **matériaux Texture3Coord**. Chacun d’eux référence une ressource de texture et spécifie un point spécifique sur l’image (en coordonnéesUV).
 
@@ -137,14 +140,16 @@ La méthode suivante sélectionne un objet **Printing3D3MFPackage** finalisé et
 
 ## Rubriques connexes
 
-[Impression3D à partir de votre application](https://msdn.microsoft.com/windows/uwp/devices-sensors/3d-print-from-app)
-
+[Impression3D à partir de votre application](https://msdn.microsoft.com/windows/uwp/devices-sensors/3d-print-from-app)  
+[Exemple d’impression3DUWP](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
  
 
  
 
+ 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO4-->
 
 

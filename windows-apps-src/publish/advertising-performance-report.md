@@ -5,14 +5,14 @@ title: Rapport sur les performances publicitaires
 ms.assetid: 32E555C3-C34D-4503-82BB-4C3F5CAE4500
 translationtype: Human Translation
 ms.sourcegitcommit: 6b354b1b009bf9e4f2899f7ef97ef8791712f52b
-ms.openlocfilehash: 2b06e25a7e96c3645d7067dc0082da3fc942249d
+ms.openlocfilehash: b75d9310e577c77d1caed3e9f34762e925eb11ae
 
 ---
 
 # Rapport sur les performances publicitaires
 
 
-Pour afficher les données de performances pour les unités publicitaires dans vos applications, vous pouvez utiliser les rapports suivants dans le tableau de bord du centre de développement Windows &#58;
+Pour afficher les données de performances pour les unités publicitaires dans vos applications, vous pouvez utiliser les rapports suivants dans le tableau de bord du centre de développement Windows :
 
 -   [Rapport sur les performances publicitaires au niveau de l’application](advertising-performance-report.md#app-level-advertising-performance-report). Ce rapport fournit des données de performances pour les unités publicitairesMicrosoft dans l’application actuellement sélectionnée dans le tableau de bord.
 -   [Rapport sur les performances publicitaires au niveau du compte](advertising-performance-report.md#account-level-advertising-performance-report). Ce rapport fournit des données de performances détaillées pour les unités publicitairesMicrosoft et les annonces de la communauté pour toutes les applications qui sont enregistrées sur votre compte de développeur.
@@ -99,6 +99,6 @@ Voici quelques éléments à prendre en considération lors de l’utilisation d
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

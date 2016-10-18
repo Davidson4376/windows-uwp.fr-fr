@@ -2,10 +2,9 @@
 author: Mtoepke
 title: "Configurer votre plateforme UWP sur l’environnement de développement Xbox"
 description: "Étapes relatives à la configuration et au test de votre plateforme Windows universelle sur l’environnement de développement Xbox."
-area: Xbox
 translationtype: Human Translation
-ms.sourcegitcommit: bdf7a32d2f0673ab6c176a775b805eff2b7cf437
-ms.openlocfilehash: d56206f990e7885af4935401356bd3a2ce2cd292
+ms.sourcegitcommit: e273cc55935f961e0b5493c0648347cba399fa3d
+ms.openlocfilehash: 5ffe0ce35e4aabcfc74e9bfa9017248320925603
 
 ---
 
@@ -29,17 +28,22 @@ Cet article couvre les étapes relatives à la configuration et au test de votre
 
 Installez la dernière version d’évaluation du Kit de développement logiciel (SDK) Windows10. Pour obtenir des informations sur l’installation, voir [Télécharger les mises à jour Insider Preview pour les développeurs](http://go.microsoft.com/fwlink/p/?LinkId=780552).
 
-  > **Important** &nbsp;&nbsp;Vous devez installer la dernière version du Kit de développement logiciel (SDK), toutefois, vous n’avez _pas_ à installer la dernière version de Windows Insider Preview du système d’exploitation.
+> [!IMPORTANT]
+> Vous devez installer la dernière version du Kit de développement logiciel (SDK), toutefois, vous n’avez _pas_ à installer la dernière version de Windows Insider Preview du système d’exploitation.
+
+## Activation du mode développeur
+
+Avant de pouvoir déployer des applications à partir de votre ordinateur de développement, vous devez activer le mode développeur via le menu Windows: Paramètres / Mise à jour et sécurité / Pour les développeurs / Mode développeur.
 
 ## Configuration de votre XboxOne
 
-Avant de pouvoir déployer une application vers votre XboxOne, un utilisateur doit être connecté à la console. Vous pouvez utiliser votre compte XboxLive existant ou créer un compte pour votre console en Mode développeur. 
+Avant de pouvoir déployer une application sur votre XboxOne, un utilisateur doit être connecté à la console. Vous pouvez utiliser votre compte XboxLive existant ou créer un compte pour votre console en mode développeur. 
 
 ## Créer votre première application
 
 1. Assurez-vous que l’ordinateur de développement se trouve sur le même réseau local que la console Xbox One cible. En règle générale, cela signifie qu’ils doivent utiliser le même routeur et être sur le même sous-réseau. Une connexion réseau câblée est recommandée.
 
-1. Assurez-vous que votre console Xbox One se trouve en Mode développeur.  Pour plus d’informations, voir [Activation du Mode développeur sur Xbox One](devkit-activation.md).
+1. Assurez-vous que votre console Xbox One se trouve en Mode développeur.  Pour plus d’informations, voir [Activation du mode développeur sur Xbox One](devkit-activation.md).
 
 1. Déterminez le langage de programmation que vous voulez utiliser pour votre application UWP.
 
@@ -109,6 +113,6 @@ Félicitations, vous avez correctement créé et déployé votre première appli
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

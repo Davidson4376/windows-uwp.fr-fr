@@ -6,13 +6,14 @@ ms.assetid: A21BB12B-301E-40C9-B84B-C055FD43D307
 label: Tooltips
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 0529f212e9fac290bb58925e992518ab0e803bfa
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 4110f902adf01e5e25ac674faf9be8faf61f4ea0
 
 
 ---
-
 # Info-bulles
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
 
 
 
@@ -20,10 +21,18 @@ Une info-bulle est une brève description qui est liée à un autre contrôle ou
 
 ![Info-bulle](images/controls/tool-tip.png)
 
-<span class="sidebar_heading" style="font-weight: bold;">API importantes</span>
+<div class="important-apis" >
+<b>API importantes</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/br227608"><strong>Classe ToolTip</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice"><strong>Classe ToolTipService</strong></a></li>
+</ul>
 
--   [**Classe ToolTip**](https://msdn.microsoft.com/library/windows/apps/br227608)
--   [**Classe ToolTipService**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice)
+</div>
+</div>
+
+
+
 
 ## Est-ce le contrôle approprié?
 
@@ -68,13 +77,13 @@ Une info-bulle dans l’application Bing Cartes.
 -   Ne placez pas de contrôles interactifs à l’intérieur de l’info-bulle.
 -   Ne placez pas d’images qui semblent être interactives à l’intérieur de l’info-bulle.
 
-<span id="related_topics"></span>Rubriques connexes
+Rubriques connexes
 -----------------------------------------------
 
 * [**Classe ToolTip**](https://msdn.microsoft.com/library/windows/apps/br227608)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,22 +1,22 @@
 ---
 author: mcleanbyron
 ms.assetid: 1f970d38-2338-470e-b5ba-811402752fc4
-description: "Découvrez comment utiliser les bibliothèques de publicités Microsoft du Kit de développement logiciel (SDK) d’engagement et de monétisation de la BoutiqueMicrosoft pour insérer des spots publicitaires dans une application pour Windows10, Windows8.1 ou Windows Phone8.1."
+description: "Découvrez comment utiliser les bibliothèques de publicités Microsoft de Microsoft Store Services SDK pour insérer des spots publicitaires dans une application pour Windows10, Windows8.1 ou Windows Phone8.1."
 title: Spots publicitaires
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 0f159409bb584aacaf66550efe8d147cd8fddd50
+ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
+ms.openlocfilehash: 4082fdd17ba42fd2b6a7659095b019c1ad4875a0
 
 ---
 
 # Spots publicitaires
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Cette procédure pas à pas montre comment utiliser les bibliothèques de publicités Microsoft du Kit de développement logiciel (SDK) d’engagement et de monétisation de la BoutiqueMicrosoft pour insérer des spots publicitaires dans une application pour Windows10, Windows8.1 ou Windows Phone8.1.
 
-Pour obtenir des exemples complets de projet qui montrent comment ajouter des spots publicitaires à des applications HTML/JavaScript et XAML en C# et C++, voir [Exemples de publicité sur GitHub](http://aka.ms/githubads).
+Cette procédure pas à pas montre comment utiliser les bibliothèques de publicités Microsoft de Microsoft Store Services SDK pour insérer des spots publicitaires dans une application pour Windows10, Windows8.1 ou Windows Phone8.1.
+
+Pour obtenir des exemples complets de projet qui montrent comment ajouter des spots publicitaires à des applications JavaScript/HTML et XAML en C# et C++, voir [Exemples de publicité sur GitHub](http://aka.ms/githubads).
 
 <span id="whatareinterstitialads10"/>
 ## Que sont les spots publicitaires?
@@ -36,16 +36,13 @@ Contrairement aux bannières publicitaires, les spots publicitaires (ou *publici
 
 ### Conditions préalables
 
-1.  Installez le [Kit de développement logiciel (SDK) d’engagement et de monétisation de la BoutiqueMicrosoft](http://aka.ms/store-em-sdk) avec VisualStudio2015 ou VisualStudio2013.
-
-2.  Dans VisualStudio, ouvrez votre projet ou créez-en un.
+* Pour les applications UWP: installez [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) avec Visual Studio2015.
+* Pour les applicationsWindows8.1 ou WindowsPhone8.1: [installe Microsoft Advertising SDK pour Windows et Windows Phone8.x](http://aka.ms/store-8-sdk) avec Visual Studio2015 ou Visual Studio2013.
 
 ### Développement du code
 
 * [Étapes pour une application XAML/.NET](#interstitialadsxaml10)
-
 * [Étapes pour HTML/JavaScript](#interstitialadshtml10)
-
 * [Étapes pour C++ (DirectX Interop)](#interstitialadsdirectx10)
 
 <span id="interstitialadsxaml10"/>
@@ -354,7 +351,7 @@ Cet exemple part du principe que vous avez créé un projet d’application univ
 
 ### Publier l’application avec des publicités dynamiques à l’aide du Centre de développement Windows
 
-1.  Dans le tableau de bord du Centre de développement, accédez à la page **Monétisation**&gt;**Monétiser avec des publicités** de votre application, puis [créez une unité Microsoft Advertising autonome](../publish/monetize-with-ads.md). Pour le type d’unité publicitaire, spécifiez **Spot vidéo**. Prenez note de l’ID d’unité publicitaire et de l’ID de l’application.
+1.  Dans le tableau de bord du Centre de développement, accédez à la page **Monétisation** &gt; **Monétiser avec des publicités** de votre application, puis [créez une unité Microsoft Advertising autonome](../publish/monetize-with-ads.md). Pour le type d’unité publicitaire, spécifiez **Spot vidéo**. Prenez note de l’ID d’unité publicitaire et de l’ID de l’application.
 
 2.  Dans votre code, remplacez les valeurs de test de l’unité publicitaire par les valeurs dynamiques que vous avez générées dans le Centre de développement.
 
@@ -387,6 +384,6 @@ Lorsque vous utilisez les bibliothèques de publicités Microsoft, vous ne pouve
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

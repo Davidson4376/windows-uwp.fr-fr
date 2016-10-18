@@ -32,6 +32,8 @@ Certaines API UWP disponibles pour les applications de bureau complètes ne sont
 
 Voici une liste complète des API UWP prises en charge dans les applications converties. Vous pouvez afficher les [API nouvellement prises en charge dans les applications converties](#new) ou les [API prises en charge à la fois dans les applications converties et dans les applications de bureau](#both). 
 
+Pour obtenir des exemples sur la façon d’appeler des API UWP à partir d’une application convertie, voir les [exemples de code Desktop Bridge sur GitHub](https://github.com/Microsoft/DesktopBridgeToUWP-Samples).
+
 <span id="new" />
 ### API prises en charge dans les applications récemment converties
 
@@ -1028,6 +1030,6 @@ Voici une liste complète des API UWP prises en charge dans les applications con
 
 
 
-<!--HONumber=Sep16_HO1-->
+<!--HONumber=Sep16_HO5-->
 
 

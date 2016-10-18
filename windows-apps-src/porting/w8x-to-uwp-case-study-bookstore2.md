@@ -2,14 +2,14 @@
 author: mcleblanc
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
 description: "Cette étude de cas, qui repose sur les informations fournies dans Bookstore1, commence par une application 8.1 universelle qui affiche des données groupées dans un contrôle SemanticZoom."
-title: "Étude de cas de portage d’application Windows Runtime 8.x vers UWP &#58; Bookstore2"
+title: "Étude de cas de portage d’application Windows Runtime 8.x vers UWP : Bookstore2"
 translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: 97682b2b914707874dcac998f7db5f2029ad433e
+ms.openlocfilehash: 2d142ddb5522daf5467ce5690b3fe8e7a356ac0a
 
 ---
 
-# Étude de cas de portage d’application Windows Runtime 8.x vers UWP &#58; Bookstore2
+# Étude de cas de portage d’application Windows Runtime 8.x vers UWP : Bookstore2
 
 \[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
@@ -174,6 +174,6 @@ Dans l’étude de cas suivante, [QuizGame](w8x-to-uwp-case-study-quizgame.md), 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

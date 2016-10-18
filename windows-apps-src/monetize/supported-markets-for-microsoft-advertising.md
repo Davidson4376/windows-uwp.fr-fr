@@ -4,15 +4,15 @@ ms.assetid: 4804e371-065e-4d5a-ab1a-9c5732f52a9e
 description: "En savoir plus sur les pays et régions pris en charge pour les spots et bannières publicitaires."
 title: "Marchés pris en charge par MicrosoftAdvertising"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 2d17a3936a4932b0aa30c80a38bb492f3f21fb37
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: 297659aa33d37bd8da29b0cb4e0d43ce29e5e7c0
 
 ---
 
 # Marchés pris en charge par MicrosoftAdvertising
 
 
-\[ Mise à jour pour les applicationsUWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+
 
 Les spots et bannières publicitaires sont pris en charge dans les régions et pays suivants.
 
@@ -315,6 +315,6 @@ Les spots et bannières publicitaires sont pris en charge dans les régions et p
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

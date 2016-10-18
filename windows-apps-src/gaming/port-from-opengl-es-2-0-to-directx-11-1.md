@@ -5,7 +5,7 @@ description: "Cette section propose des articles, des vues d’ensemble et des p
 ms.assetid: 1e1cf668-a15f-0c7b-8daf-3260d27c6d9c
 translationtype: Human Translation
 ms.sourcegitcommit: 814f056eaff5419b9c28ba63cf32012bd82cc554
-ms.openlocfilehash: 40380582a9210cb705a5e7e591d4a8f37c42f8dd
+ms.openlocfilehash: aab0c3e9f3816e0657dfb6fec4917d62f2be5280
 
 ---
 
@@ -64,6 +64,6 @@ Cet article s’adresse aux développeurs de Windows10 qui développent des appl
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

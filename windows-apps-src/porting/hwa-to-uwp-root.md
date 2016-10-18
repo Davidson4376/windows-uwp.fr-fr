@@ -3,8 +3,8 @@ title: "Apps web hébergées - Convertir votre appweb en app UWP et accéder aux
 description: "Créez une application de plateforme Windows universelle (UWP) à partir de l’URL de votre site web. Accédez aux fonctionnalités d’appareil natives Windows10 à partir du code de votre application web. Avec les ponts Windows Microsoft (anciennement appelés Project Westminster) pour applications web hébergées, vous pouvez rapidement et facilement inclure votre application web dans le Windows Store."
 author: seksenov
 translationtype: Human Translation
-ms.sourcegitcommit: 765789ef83f9b6a845ab79505b1b9ecbfd987126
-ms.openlocfilehash: 491665558f713dcbaae7ea20739ed72c61a12cd2
+ms.sourcegitcommit: 7fe6e240e4ef221b49f9b103cf30192449ce4502
+ms.openlocfilehash: 95d50aa37f349f494f260ea3af97211a085623a9
 
 ---
 
@@ -45,6 +45,6 @@ Nous avons simplifié le processus visant à [convertir votre application héber
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

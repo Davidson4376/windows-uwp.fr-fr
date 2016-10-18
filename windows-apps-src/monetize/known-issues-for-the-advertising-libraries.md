@@ -1,28 +1,30 @@
 ---
 author: mcleanbyron
 ms.assetid: 9ca1f880-2ced-46b4-8ea7-aba43d2ff863
-description: "Découvrez les problèmes connus de la version actuelle des bibliothèques de publicités Microsoft contenues dans le Kit de développement logiciel (SDK) d’engagement et de monétisation de la BoutiqueMicrosoft."
+description: "Découvrez les problèmes connus de la version actuelle des bibliothèques de publicités Microsoft contenues dans Microsoft Store Services SDK."
 title: "Problèmes connus des bibliothèques de publicités Microsoft"
 translationtype: Human Translation
-ms.sourcegitcommit: 5b6d3e034b73e6ae693fbeab3ecd3b2b81f38bb1
-ms.openlocfilehash: cfaa108cc93b6bae903e86ad141656bf613f185d
+ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
+ms.openlocfilehash: 7d0eeda4deac304fb9b573b6ed206a191f037a3e
 
 ---
 
 # Problèmes connus des bibliothèques de publicités Microsoft
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Cette rubrique répertorie les problèmes connus liés à la version actuelle des bibliothèques de publicités Microsoft contenues dans le Kit de développement logiciel (SDK) d’engagement et de monétisation de la BoutiqueMicrosoft.
 
-## VisualStudioTools pour applications Windows universelles requis pour l’installation
+Cette rubrique répertorie les problèmes connus avec la version actuelle des bibliothèques de publicités Microsoft dans Microsoft Store Services SDK (pour les applications UWP) et dans Microsoft Advertising SDK pour Windows et Windows Phone8.x (pour les applications Windows8.1 et Windows Phone8.x).
 
-Pour installer le [Kit de développement logiciel (SDK) d’engagement et de monétisation de la BoutiqueMicrosoft](http://aka.ms/store-em-sdk) avec VisualStudio2015, vous devez avoir installé la version1.1 ou ultérieure de VisualStudioTools pour applications Windows universelles. Pour plus d’informations, consultez les [notes de publication](http://go.microsoft.com/fwlink/?LinkID=624516) de VisualStudio.
+## L’installation de Microsoft Store Services SDK requiert Visual Studio Tools pour les applications Windows universelles
+
+Pour installer [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) avec Visual Studio2015, vous devez disposer d’une version1.1 ou ultérieure de Visual Studio Tools for Universal Windows Apps. Pour plus d’informations, voir les [notes de publication](http://go.microsoft.com/fwlink/?LinkID=624516) de VisualStudio.
 
 ## Projets Silverlight Windows Phone8.x
 
-Pour obtenir les assemblys de publicités Microsoft pour des projets Silverlight Windows Phone 8.x, installez le [Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft](http://aka.ms/store-em-sdk), ouvrez votre projet dans Visual Studio, puis accédez à **Projet** > **Ajouter un service connecté** > **Ad Mediator** pour télécharger automatiquement les assemblys. Après quoi, vous pouvez supprimer les références au médiateur publicitaire dans votre projet si vous ne souhaitez pas utiliser la médiation publicitaire. Pour plus d’informations, voir [AdControl dans Silverlight WindowsPhone](adcontrol-in-windows-phone-silverlight.md).
+Microsoft Advertising SDK pour Windows et Windows Phone8.x assure une prise en charge limitée des projets Silverlight Windows Phone8.x. Pour plus d’informations, voir [Afficher des publicités dans votre application](display-ads-in-your-app.md#silverlight_support).
+
+Pour obtenir les assemblys de publicités Microsoft pour des projets Silverlight Windows Phone8.x, installez [Microsoft Advertising SDK pour Windows et Windows Phone8.x](http://aka.ms/store-8-sdk), ouvrez votre projet dans Visual Studio, puis accédez à **Projet** > **Ajouter un service connecté** > **AdMediator** pour télécharger automatiquement les assemblys. Après quoi, vous pouvez supprimer les références au médiateur publicitaire de votre projet si vous ne souhaitez pas utiliser la médiation publicitaire. Pour plus d’informations, voir [AdControl dans Silverlight WindowsPhone](adcontrol-in-windows-phone-silverlight.md).
 
 ## Interface AdControl inconnue en XAML
 
@@ -117,6 +119,6 @@ Pour contacter le support produit à propos des problèmes liés aux bibliothèq
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

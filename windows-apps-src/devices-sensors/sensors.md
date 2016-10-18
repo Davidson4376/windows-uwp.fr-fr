@@ -5,7 +5,7 @@ title: Capteurs
 description: "Les capteurs permettent à votre application de connaître la relation entre un appareil et le monde physique qui l’entoure. Ils peuvent indiquer à votre application la direction, l’orientation et le mouvement de l’appareil."
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 15f9fbdc48d43feb02f46313cea4001392d7f0fe
+ms.openlocfilehash: 73ee42a275d0c0f0a08ddf19ddde4eabd21a7191
 
 ---
 # Capteurs
@@ -129,6 +129,6 @@ Pour découvrir certains exemples illustrant l’utilisation de deux capteurs di
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

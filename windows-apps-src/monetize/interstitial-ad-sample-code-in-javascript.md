@@ -4,8 +4,8 @@ ms.assetid: 646977ed-1705-4ea7-a3db-a6b9aac70703
 description: "Découvrez comment lancer un spot publicitaire en JavaScript/HTML."
 title: Exemple de code pour spot publicitaire en JavaScript
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: d6a561aaff834cd782118abb72b4770985176bf0
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: 5317895c2f28166c2905d0d49c5e98da5567943a
 
 
 ---
@@ -13,7 +13,7 @@ ms.openlocfilehash: d6a561aaff834cd782118abb72b4770985176bf0
 # Exemple de code pour spot publicitaire en JavaScript
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+
 
 Cette rubrique montre comment lancer un spot publicitaire en JavaScript/HTML. Pour connaître les instructions pas à pas pour configurer votre projet pour qu’il utilise ce code, voir [Spots publicitaires](interstitial-ads.md). Pour un exemple de projet complet illustrant l’ajout de spots vidéo publicitaires à une application JavaScript/HTML, voir [Exemples de publicité sur GitHub](http://aka.ms/githubads).
 
@@ -238,6 +238,6 @@ ad.</b>");
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

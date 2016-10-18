@@ -5,7 +5,7 @@ description: "Lors de cette étape, vous allez définir les mémoires tampons de
 ms.assetid: 9a8138a5-0797-8532-6c00-58b907197a25
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9692b33303099f9d1193b93ab458a19a5d95abe3
+ms.openlocfilehash: ee8b3f693e40d9c0fba679a44ebcd4986d06d7ac
 
 ---
 
@@ -318,6 +318,6 @@ Lorsque vous définissez vos structures Direct3D, séparez le code qui appelle l
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

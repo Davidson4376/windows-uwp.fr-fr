@@ -5,7 +5,7 @@ description: "Générez le rendu du point de vue de la lumière pour créer un m
 ms.assetid: 7f3d0208-c379-8871-cc48-027047c6c2d0
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 644e2084baa750965a5283208fde1cea24ecfdea
+ms.openlocfilehash: 337aa63ee30b05da51d5b224cb0013519e11504d
 
 ---
 
@@ -157,6 +157,6 @@ Dans la partie suivante de cette procédure pas à pas, découvrez comment ajout
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -6,8 +6,8 @@ title: "Accessibilité"
 label: Accessibility
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: 3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3
+ms.sourcegitcommit: 13894c199a95060395886635ebb7c294f18c9d6b
+ms.openlocfilehash: 8974ea067e033796c491781997067aafea773d96
 
 ---
 
@@ -25,7 +25,7 @@ L’accessibilité consiste en des expériences rendant votre application dispon
 | Article | Description |
 |---------|-------------|
 | [Vue d’ensemble de l’accessibilité](accessibility-overview.md) | Cet article est une vue d’ensemble des concepts et technologies associés aux scénarios d’accessibilité des applications UWP. |
-| [Conception de logiciels inclusifs](designing-inclusive-software.md) | En savoir plus sur l’évolution de la conception inclusive avec les applications de la plateforme Windows universelle(UWP) pour Windows10.  Concevez et développez un logiciel inclusif en tenant compte de l’accessibilité. |
+| [Conception de logiciels inclusifs](designing-inclusive-software.md) | En savoir plus sur l’évolution de la conception inclusive avec les applications UWP pour Windows10.  Concevez et développez un logiciel inclusif en tenant compte de l’accessibilité. |
 | [Développement d’applications Windows inclusives](developing-inclusive-windows-apps.md) | Cet article fait office de feuille de route pour développer des applications UWP accessibles. |
 | [Test de l’accessibilité](accessibility-testing.md) | Procédures de test à appliquer pour s’assurer de l’accessibilité de votre application UWP. |
 | [Accessibilité dans le WindowsStore](accessibility-in-the-store.md) | Décrit la configuration requise pour la déclaration de votre application UWP comme étant accessible dans le Windows Store. |
@@ -40,10 +40,10 @@ L’accessibilité consiste en des expériences rendant votre application dispon
 
 <span id="related_topics"/>
 ## Rubriques connexes  
-* [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179)
+* [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179) 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

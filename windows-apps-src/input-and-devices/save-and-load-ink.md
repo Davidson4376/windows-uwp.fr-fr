@@ -7,8 +7,8 @@ label: Store and retrieve Windows Ink stroke data
 template: detail.hbs
 keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, ISF, Ink Serialized Format
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: cdef00304e1835532eceb8e51fecc8045f2ff300
+ms.sourcegitcommit: 75e93920422b5ad8ad0e9399bccc403ea69e7feb
+ms.openlocfilehash: 8ba48ed9aa7589ddee6009c5a8cb8ec1091d51ef
 
 ---
 
@@ -25,8 +25,8 @@ Les applications UWP qui prennent en charge WindowsInk peuvent sérialiser et d�
 
 
 
-**Remarque**  
-ISF constitue la représentation persistante la plus compacte de l’entrée manuscrite. Vous pouvez l’intégrer dans un format de document binaire, tel qu’un fichier GIF, ou placer le fichier directement dans le Presse-papiers.
+> [!NOTE]
+> ISF est la représentation persistante la plus compacte de l’entrée manuscrite. Vous pouvez l’intégrer dans un format de document binaire, tel qu’un fichier GIF, ou placer le fichier directement dans le Presse-papiers.
 
  
 
@@ -157,13 +157,10 @@ public MainPage()
     }
 ```
 
-[!NOTE]  
-Le format GIF est le seul pris en charge pour l’enregistrement des données d’entrée manuscrite. Toutefois, la méthode [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) (expliquée dans la section suivante) prend en charge des formats supplémentaires à des fins de compatibilité descendante.
-
- 
+> [!NOTE]  
+> Le format de fichier GIF est le seul pris en charge pour l’enregistrement des données d’entrée manuscrite. Cependant, la méthode [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) (expliquée dans la section suivante) prend en charge des formats supplémentaires à des fins de compatibilité descendante.
 
 ## Charger des traits d’encre à partir d’un fichier
-
 
 Ici, nous montrons comment charger des traits d’encre à partir d’un fichier et les restituer sur un contrôle [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
 
@@ -226,6 +223,10 @@ public MainPage()
     Une fois qu’un fichier est sélectionné, nous ouvrons un flux [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) défini sur [**Read**](https://msdn.microsoft.com/library/windows/apps/br241635).
 
     Nous appelons ensuite [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) pour lire, désérialiser et charger les traits d’encre enregistrés dans l’élément [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492). Le chargement des traits dans l’élément **InkStrokeContainer** entraîne leur restitution immédiate dans [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) par l’élément [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081).
+
+    > [!NOTE]
+    > Tous les traits existants dans InkStrokeContainer sont effacés avant que de nouveaux traits soient chargés.
+
 ``` csharp
 // Load ink data from a file.
 private async void btnLoad_Click(object sender, RoutedEventArgs e)
@@ -247,7 +248,7 @@ private async void btnLoad_Click(object sender, RoutedEventArgs e)
         // Read from file.
         using (var inputStream = stream.GetInputStreamAt(0))
         {
-            await inkCanvas.InkPresenter.StrokeContainer.LoadAsync(stream);
+            await inkCanvas.InkPresenter.StrokeContainer.LoadAsync(inputStream);
         }
         stream.Dispose();
     }
@@ -259,8 +260,8 @@ private async void btnLoad_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-**Remarque**  
-Le format GIF est le seul pris en charge pour l’enregistrement des données d’entrée manuscrite. Toutefois, la méthode [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) prend en charge les formats suivants pour la compatibilité descendante.
+> [!NOTE]
+> Le format de fichier GIF est le seul pris en charge pour l’enregistrement des données d’entrée manuscrite. Cependant, la méthode [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) prend en charge les formats suivants pour la compatibilité descendante.
 
 | Format                    | Description |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -445,6 +446,6 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

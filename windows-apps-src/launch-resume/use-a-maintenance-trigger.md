@@ -4,16 +4,14 @@ title: "Utiliser un déclencheur de maintenance"
 description: "Découvrez comment utiliser la classe MaintenanceTrigger pour exécuter du code léger en arrière-plan tandis que l’appareil est branché."
 ms.assetid: 727D9D84-6C1D-4DF3-B3B0-2204EA4D76DD
 translationtype: Human Translation
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: 0da08ba5431f4d5c56d06657d3d6123a67ba5079
+ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
+ms.openlocfilehash: 1181605c097f876af49e8055e245a2c445fc30d3
 
 ---
 
 # Utiliser un déclencheur de maintenance
 
-
 \[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
-
 
 **API importantes**
 
@@ -25,14 +23,13 @@ Découvrez comment utiliser la classe [**MaintenanceTrigger**](https://msdn.micr
 
 ## Créer un objet déclencheur de maintenance
 
+Cet exemple suppose que vous disposez d’un code léger à exécuter en arrière-plan qui vous permettra d’améliorer votre application pendant que l’appareil est branché. Cette rubrique porte sur le déclencheur [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517), qui est semblable au déclencheur [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839).
 
-Cet exemple suppose que vous disposez d’un code léger à exécuter en arrière-plan qui vous permettra d’améliorer votre application pendant que l’appareil est branché. Cette rubrique porte sur la classe [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517), qui est semblable à [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839). Pour plus d’informations sur l’écriture d’une classe de tâche en arrière-plan, voir [Créer et inscrire une tâche en arrière-plan](create-and-register-a-background-task.md).
+Pour obtenir davantage d’informations sur l’écriture d’une classe de tâche en arrière-plan, consultez les rubriques [Créer et inscrire une tâche en arrière-plan à processus unique](create-and-register-a-singleprocess-background-task.md) ou [Créer et inscrire une tâche en arrière-plan dans un processus distinct](create-and-register-a-background-task.md).
 
-Créez un objet [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843). Le deuxième paramètre, *OneShot*, indique si la tâche de maintenance s’exécute une seule fois ou régulièrement. Si *OneShot* présente la valeur true, le premier paramètre (*FreshnessTime*) indique le nombre de minutes à attendre avant de planifier la tâche en arrière-plan. Si *OneShot* est défini sur false, *FreshnessTime* indique la fréquence d’exécution de la tâche en arrière-plan.
+Créez un objet [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843). Le deuxième paramètre, *OneShot*, indique si la tâche de maintenance s’exécute une seule fois ou régulièrement. Si *OneShot* est défini sur true, le premier paramètre (*FreshnessTime*) indique le nombre de minutes à attendre avant de planifier la tâche en arrière-plan. Si *OneShot* est défini sur false, *FreshnessTime* indique la fréquence d’exécution de la tâche en arrière-plan.
 
-> **Remarque** Si *FreshnessTime* présente une fréquence inférieure à 15 minutes, une exception est levée lors de la tentative d’inscription de la tâche en arrière-plan.
-
- 
+> **Remarque** Si *FreshnessTime* indique une fréquence inférieure à 15minutes, une exception est levée lors de la tentative d’inscription de la tâche en arrière-plan.
 
 Cet exemple de code crée un déclencheur qui s’exécute une fois par heure:
 
@@ -52,24 +49,23 @@ Cet exemple de code crée un déclencheur qui s’exécute une fois par heure:
 
 -   Si besoin est, créez une condition de tâche en arrière-plan afin de contrôler le moment où la tâche est exécutée. Une condition empêche votre tâche en arrière-plan de s’exécuter tant que la condition n’est pas satisfaite. Pour plus d’informations, voir [Définir des conditions pour exécuter une tâche en arrière-plan](set-conditions-for-running-a-background-task.md).
 
-    Dans cet exemple, la condition est définie sur **InternetAvailable**, de sorte que la maintenance s’exécute quand Internet est accessible (ou le devient). Pour obtenir la liste des conditions de tâche en arrière-plan possibles, voir [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
+Dans cet exemple, la condition est définie sur **InternetAvailable**, de sorte que la maintenance s’exécute quand Internet est accessible (ou le devient). Pour obtenir la liste des conditions de tâche en arrière-plan possibles, voir [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
 
-    Le code suivant ajoute une condition au générateur de tâches de maintenance:
+Le code suivant ajoute une condition au générateur de tâches de maintenance:
 
-    > [!div class="tabbedCodeSnippets"]
-    > ```cs
-    > SystemCondition exampleCondition = new SystemCondition(SystemConditionType.InternetAvailable);
-    > ```
-    > ```cpp
-    > SystemCondition ^ exampleCondition = ref new SystemCondition(SystemConditionType::InternetAvailable);
-    > ```
+> [!div class="tabbedCodeSnippets"]
+> ```cs
+> SystemCondition exampleCondition = new SystemCondition(SystemConditionType.InternetAvailable);
+> ```
+> ```cpp
+> SystemCondition ^ exampleCondition = ref new SystemCondition(SystemConditionType::InternetAvailable);
+> ```
 
 ## Inscrire la tâche en arrière-plan
 
-
 -   Inscrivez la tâche en arrière-plan en appelant la fonction qui vous permet de le faire. Pour plus d’informations sur l’inscription des tâches en arrière-plan, voir [Inscrire une tâche en arrière-plan](register-a-background-task.md).
 
-    Le code suivant inscrit la tâche de maintenance:
+    Le code suivant inscrit la tâche de maintenance. Notez qu’il part du principe que votre tâche en arrière-plan s’exécute dans un processus distinct de celui de votre application, car il spécifie `entryPoint`. Si votre tâche en arrière-plan s’exécute dans le même processus que votre application, vous ne devez pas spécifier `entryPoint`.
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -89,7 +85,7 @@ Cet exemple de code crée un déclencheur qui s’exécute une fois par heure:
 
     > **Remarque** Les applications Windows universelles doivent appeler [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) avant d’inscrire tout type de déclencheur en arrière-plan.
 
-    Pour vous assurer que votre application Windows universelle continue de s’exécuter correctement après la publication d’une mise à jour, vous devez appeler [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471), puis [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) lorsque votre application est lancée après avoir été mise à jour. Pour plus d’informations, voir [Recommandations en matière de tâches en arrière-plan](guidelines-for-background-tasks.md).
+    Pour vous assurer que votre application Windows universelle continue de s’exécuter correctement après une mise à jour, vous devez appeler [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471), puis [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) lorsque votre application est lancée après avoir été mise à jour. Pour plus d’informations, voir [Recommandations en matière de tâches en arrière-plan](guidelines-for-background-tasks.md).
 
     > **Remarque** Les paramètres d’inscription de la tâche en arrière-plan sont validés au moment de l’inscription. Une erreur est retournée si l’un des paramètres d’inscription n’est pas valide. Vérifiez que votre application gère de façon fluide les scénarios dans lesquels l’inscription de la tâche en arrière-plan échoue. En revanche, si votre application dépend d’un objet d’inscription valide après la tentative d’inscription d’une tâche, elle peut se bloquer.
 
@@ -98,9 +94,9 @@ Cet exemple de code crée un déclencheur qui s’exécute une fois par heure:
 
 ## Rubriques connexes
 
-
 ****
 
+* [Créer et inscrire une tâche en arrière-plan à processus unique](create-and-register-a-singleprocess-background-task.md)
 * [Créer et inscrire une tâche en arrière-plan](create-and-register-a-background-task.md)
 * [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md)
 * [Gérer une tâche en arrière-plan annulée](handle-a-cancelled-background-task.md)
@@ -117,12 +113,8 @@ Cet exemple de code crée un déclencheur qui s’exécute une fois par heure:
 * [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
 * [Comment déclencher des événements de suspension, des événements de reprise et des événements en arrière-plan dans des applications du Windows Store (lors du débogage)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
- 
-
- 
 
 
-
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

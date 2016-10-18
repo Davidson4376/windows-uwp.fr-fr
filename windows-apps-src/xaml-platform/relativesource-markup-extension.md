@@ -5,7 +5,7 @@ title: Extension de balisage RelativeSource
 ms.assetid: B87DEF36-BE1F-4C16-B32E-7A896BD09272
 translationtype: Human Translation
 ms.sourcegitcommit: ec4c9b87655425e82a1cb792d0acc6bee265e9d2
-ms.openlocfilehash: 9f0bb49e701806f8635d93fa495cdab6486a4ea3
+ms.openlocfilehash: b6af0ce865713ed0da39a87aa63799d3f89b7e89
 
 ---
 
@@ -70,6 +70,6 @@ Une autre utilisation de `RelativeSource={RelativeSource Self}` sert à définir
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

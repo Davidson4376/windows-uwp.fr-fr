@@ -4,8 +4,8 @@ Description: "Suivez ces instructions pour préparer les packages de votre appli
 title: "Exigences relatives au package de l’application"
 ms.assetid: 651B82BA-9D0C-45AC-8997-88CD93DC903C
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 951c00f9fd2c945ac44d47bfae701049e937b98f
+ms.sourcegitcommit: c15d4153f6ae83cc7bf1ae02d834bd07189e38ab
+ms.openlocfilehash: 250e94c2766227cabad791db6d994bcfb1a2ac33
 
 ---
 
@@ -24,7 +24,7 @@ Si vous utilisez Visual Studio comme environnement de développement, vous dispo
 > **Remarque** Vérifiez que tous vos noms de fichiers utilisent le format ANSI. 
 
 
-Quand vous créez votre package dans Visual Studio, vérifiez que vous êtes connecté au même compte Microsoft que celui associé à votre compte de développeur. Les informations contenues dans certaines parties du manifeste du package font référence à votre compte. Ces informations sont automatiquement détectées et ajoutées.
+Quand vous créez votre package dans Visual Studio, vérifiez que vous êtes connecté au même compte que celui associé à votre compte de développeur. Les informations contenues dans certaines parties du manifeste du package font référence à votre compte. Ces informations sont automatiquement détectées et ajoutées.
 
 Quand vous générez les packages de votre application, Visual Studio peut créer un fichier .appx ou .appxupload (ou encore un fichier .xap pour Windows Phone 8.1 et versions antérieures). Pour les applications qui ciblent Windows 10, chargez toujours le fichier .appxupload dans la page [Packages](upload-app-packages.md). Pour plus d’informations sur l’empaquetage d’applications pour UWP pour le Windows Store, consultez [Empaquetage d’applications Windows universelles pour Windows 10](http://go.microsoft.com/fwlink/p/?LinkId=620193 ).
 
@@ -85,6 +85,6 @@ Le fichier StoreManifest.xml est un fichier de configuration facultatif qui peut
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

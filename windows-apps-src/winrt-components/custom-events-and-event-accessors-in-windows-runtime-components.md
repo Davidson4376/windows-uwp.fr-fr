@@ -5,7 +5,7 @@ description: "La prise en charge de .NET Framework pour les composants Windows R
 ms.assetid: 6A66D80A-5481-47F8-9499-42AC8FDA0EB4
 translationtype: Human Translation
 ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: 1308989c8d1c6959560458dd4d87119b4bfa74b0
+ms.openlocfilehash: c1beff6cbfefdfd3c11c9b16e18519c02c201930
 
 ---
 
@@ -127,6 +127,6 @@ Utilisateurs de Visual Basic : dans .NET Framework, un événement est simplemen
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

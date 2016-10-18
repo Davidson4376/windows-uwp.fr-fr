@@ -4,8 +4,8 @@ description: "Explique comment implémenter une propriété jointe XAML en tant 
 title: "Propriétés jointes personnalisées"
 ms.assetid: E9C0C57E-6098-4875-AA3E-9D7B36E160E0
 translationtype: Human Translation
-ms.sourcegitcommit: 07058b48a527414b76d55b153359712905aa9786
-ms.openlocfilehash: cf6ca169623311e515f02a174224d57652afc753
+ms.sourcegitcommit: 21ca5391fc4f29c33b3501d05d5ebed986188a3e
+ms.openlocfilehash: 77858a864929c99425f9c008e8f6fb8dfbad0b44
 
 ---
 
@@ -29,7 +29,7 @@ Vous pourriez créer une propriété jointe quand il y a une raison de disposer 
 
 Si vous définissez la propriété jointe pour une utilisation strictement sur d’autres types, il n’est pas obligatoire que la classe dans laquelle la propriété est inscrite dérive de [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356). En revanche, vous devez faire en sorte que le paramètre cible des accesseurs utilise **DependencyObject** si vous suivez le modèle ordinaire selon lequel votre propriété jointe est également une propriété de dépendance, de manière à pouvoir utiliser la banque de propriétés de stockage.
 
-Définissez votre propriété jointe en tant que propriété de dépendance en déclarant une propriété **public** **static** **readonly** de type [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362). Vous définissez cette propriété à l’aide de la valeur de retour de la méthode [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833). Le nom de la propriété doit correspondre à celui de la propriété jointe que vous spécifiez comme paramètre **RegisterAttached** *name*, avec la chaîne « Property » ajoutée à la fin. Il s’agit de la convention établie pour l’affectation de noms aux identificateurs de propriétés de dépendance en fonction des propriétés qu’ils représentent.
+Définissez votre propriété jointe en tant que propriété de dépendance en déclarant une propriété **public** **static** **readonly** de type [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362). Vous définissez cette propriété à l’aide de la valeur de retour de la méthode [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833). Le nom de la propriété doit correspondre à celui de la propriété jointe que vous spécifiez comme paramètre **RegisterAttached** *name*, avec la chaîne «Property» ajoutée à la fin. Il s’agit de la convention établie pour l’affectation de noms aux identificateurs de propriétés de dépendance en fonction des propriétés qu’ils représentent.
 
 La définition d’une propriété jointe personnalisée et d’une propriété de dépendance personnalisée diffèrent principalement dans la manière dont vous définissez les accesseurs ou wrappers. Au lieu d’utiliser la technique d’enveloppement décrite dans [Propriétés de dépendance personnalisées](custom-dependency-properties.md), vous devez également fournir des méthodes **Get***PropertyName* et **Set***PropertyName* statiques en tant qu’accesseurs pour la propriété jointe. Les accesseurs sont utilisés principalement par l’analyseur XAML, bien que n’importe quel autre appelant puisse aussi les utiliser pour définir des valeurs dans les scénarios non-XAML.
 
@@ -39,21 +39,21 @@ La définition d’une propriété jointe personnalisée et d’une propriété 
 
 La signature de l’accesseur **Get**_PropertyName_ doit être la suivante.
 
-`public static` _valueType_ **Get** _PropertyName_ `(DependencyObject target)`
+`public static` _valueType_ **Get**_PropertyName_ `(DependencyObject target)`
 
 Pour MicrosoftVisualBasic, il s’agit de ceci.
 
-` Public Shared Function Get`_PropertyName_ `(ByVal target As DependencyObject) As ` _valueType_`)`
+` Public Shared Function Get`_PropertyName_`(ByVal target As DependencyObject) As `_valueType_`)`
 
 L’objet *target* peut être d’un type plus spécifique dans votre implémentation, mais il doit dériver de [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356). La valeur de retour *valueType* peut aussi être d’un type plus spécifique dans votre implémentation. Le type **Object** de base est acceptable, mais bien souvent vous souhaiterez que votre propriété jointe applique la sécurité de type. Le recours au typage dans les signatures getter et setter est une technique de sécurisation de type recommandée.
 
 La signature de l’accesseur **Set***PropertyName* doit être la suivante.
 
-`  public static void Set`_PropertyName_ ` (DependencyObject target , ` _valueType_` value)`
+`  public static void Set`_PropertyName_` (DependencyObject target , `_valueType_` value)`
 
 Pour Visual Basic, il s’agit de ceci.
 
-`Public Shared Sub Set`_PropertyName_ ` (ByVal target As DependencyObject, ByVal value As ` _valueType_`)`
+`Public Shared Sub Set`_PropertyName_` (ByVal target As DependencyObject, ByVal value As `_valueType_`)`
 
 L’objet *target* peut être d’un type plus spécifique dans votre implémentation, mais il doit dériver de [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356). L’objet *value* et son *valueType* peuvent aussi être d’un type plus spécifique dans votre implémentation. Souvenez-vous que la valeur de cette méthode est l’entrée qui provient du processeur XAML quand elle rencontre votre propriété jointe dans le balisage. Il doit exister une conversion de type ou une prise en charge de l’extension de balisage existant pour le type que vous utilisez, afin que le type approprié puisse être créé à partir de la valeur d’un attribut (qui n’est en fin de compte qu’une chaîne). Le type **Object** de base est acceptable, mais bien souvent vous souhaiterez bénéficier d’une sécurité de type supplémentaire. Pour cela, placez l’application du type dans les accesseurs.
 
@@ -84,6 +84,7 @@ Cet exemple illustre l’inscription de propriété de dépendance (à l’aide 
         }
     }
 ```
+
 ```vb
 Public Class GameService
     Inherits DependencyObject
@@ -246,6 +247,6 @@ Le code ressemble au pseudo-code suivant:
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

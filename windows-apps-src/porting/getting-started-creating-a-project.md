@@ -5,11 +5,11 @@ description: "Microsoft Visual Studio représente pour Windows ce que Xcode repr
 title: "Création d’un projet dans Visual Studio"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 23d9ed066e2909a15b3106fd19bf6ce5ab09e7a9
+ms.openlocfilehash: 40dc6a52dbd495a78e5aa0d95a590d3e878d4068
 
 ---
 
-# Prise en main &#58; Création d’un projet
+# Prise en main : Création d’un projet
 
 \[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
@@ -56,6 +56,6 @@ Dans Visual Studio, plusieurs modèles de projet peuvent être choisis comme le 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

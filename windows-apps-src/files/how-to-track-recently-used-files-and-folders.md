@@ -1,11 +1,11 @@
 ---
-author: TylerMSFT
+author: normesta
 ms.assetid: BF929A68-9C82-4866-BC13-A32B3A550005
 title: "Suivre les fichiers et dossiers récemment utilisés"
 description: "Effectuez le suivi des fichiers auxquels l’utilisateur accède fréquemment en les ajoutant à la liste Utilisés récemment de votre application."
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 83100d1246dd18324104a63c9cd950e2ff1fce0b
+ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
+ms.openlocfilehash: 84b78cc4af9490f142c0f74fec127e1d003ce6df
 
 ---
 # Suivre les fichiers et dossiers récemment utilisés
@@ -46,13 +46,13 @@ Les éléments récents de votre application sont représentés par la classe [*
 
     ```CSharp
     ...
-    
+
     Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
 
     var mru = Windows.Storage.AccessCache.StorageApplicationPermissions.MostRecentlyUsedList;
     string mruToken = mru.Add(file, "profile pic");
     ```
-    
+
     [**StorageItemMostRecentlyUsedList.Add**](https://msdn.microsoft.com/library/windows/apps/br207476) est surchargé. Dans l’exemple, nous utilisons [**Add(IStorageItem, String)**](https://msdn.microsoft.com/library/windows/apps/br207481) afin de pouvoir associer des métadonnées au fichier. La définition des métadonnées vous permet d’enregistrer la finalité de l’élément, par exemple, «image du profil». Vous pouvez également ajouter le fichier à la liste Utilisés récemment sans métadonnées en appelant [**Add(IStorageItem)**](https://msdn.microsoft.com/library/windows/apps/br207480). Chaque fois que vous ajoutez un élément aux éléments récents, la méthode retourne une chaîne d’identification unique, ou jeton, qui est utilisée pour récupérer l’élément.
 
     **Conseil** Le jeton étant nécessaire pour récupérer un élément de la liste Utilisés récemment, il convient de le conserver quelque part. Pour plus d’informations sur les données d’application, consultez [Gestion des données d’application](https://msdn.microsoft.com/library/windows/apps/hh465109).
@@ -106,10 +106,6 @@ Quand un utilisateur sélectionne un élément, songez à ajouter celui-ci à vo
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

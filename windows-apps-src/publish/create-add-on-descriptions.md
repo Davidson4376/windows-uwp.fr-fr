@@ -6,9 +6,9 @@ ms.openlocfilehash: bab1d5b520b3272f08cfa87d32834d913e54be9f
 
 ---
 
-# Create Add-on descriptions
+# Créer des descriptions de module complémentaire
 
-This page has been redirected to: Create add-on Store listings
+Cette page a été redirigée vers: Créer des descriptions de module complémentaire dans le Windows Store
 
 
 <!--HONumber=Aug16_HO5-->

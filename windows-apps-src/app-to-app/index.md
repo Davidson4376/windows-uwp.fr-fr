@@ -4,8 +4,8 @@ description: "Cette section explique comment partager des données entre des app
 title: Communication entre les applications
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: dcd542257761083f3ec04eb0da2b13d5d68a19e2
-ms.openlocfilehash: 63550064b6f31b85cd3b6fa2a09bac4b7cfcf895
+ms.sourcegitcommit: 94e1586a73743e8918ef160897b1b22c8c545ea0
+ms.openlocfilehash: 05ac668e0e3c33f6dd9da9f578335bab96c6429c
 
 ---
 
@@ -29,10 +29,12 @@ Outre le contrat de partage, les applications peuvent également intégrer des t
 | [Recevoir des données](receive-data.md) | Cet article explique comment recevoir dans votre application UWP du contenu partagé à partir d’une autre application à l’aide du contrat de partage. Ce contrat de partage permet à votre application d’être présentée en tant qu’option quand l’utilisateur appelle l’option Partager. |
 | [Copier et coller](copy-and-paste.md) | Cet article explique comment prendre en charge le copier-coller dans les applications UWP en utilisant le Presse-papiers. Le copier-coller est la méthode classique utiliser pour échanger des données entre les applications, ou dans une application, et presque chaque application peut prendre en charge les opérations du Presse-papiers dans une certaine mesure. |
 | [Glisser-déplacer](drag-and-drop.md) | Cet article explique comment ajouter le glisser-déplacer dans votre application UWP. Glisser-déplacer est une méthode naturelle et classique d’interaction avec le contenu comme les images et les fichiers. Une fois implémenté, le glisser-déplacer fonctionne parfaitement dans toutes les directions, notamment d’application à application, d’application à bureau et de bureau à application. |
-| [Utiliser EDP pour protéger les données d’entreprise transférées entre les applications](use-edp-to-protect-enterprise-data-transferred-between-apps.md) | Cette rubrique présente des exemples de tâches de codage nécessaires pour réaliser certains des scénarios de protection des données d’entreprise (EDP) relatifs au transfert de fichiers les plus courants. |
+
+## Voir également
+- [Développer des applicationsUWP](https://developer.microsoft.com/en-us/windows/develop)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

@@ -1,31 +1,28 @@
 ---
 author: mcleanbyron
 ms.assetid: 1599605B-4243-4081-8D14-40F6F7734E25
-description: "Utilisez cette méthode dans l’API d’analyse du WindowsStore pour obtenir les données d’acquisition agrégées d’un produit in-app pour une plage de dates données, et en fonction de filtres facultatifs."
-title: Obtenir les acquisitions de produits in-app
+description: "Utilisez cette méthode dans l’API d’analyse du WindowsStore pour obtenir les données d’acquisition agrégées d’une extension pour une plage de dates données, et en fonction de filtres facultatifs."
+title: "Obtenir des acquisitions d’extensions"
 translationtype: Human Translation
-ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
-ms.openlocfilehash: bff5eb8ecf5a11067a590393d443343dc6ed94bc
+ms.sourcegitcommit: ecb0f5263b7f7f470484e9bd579b7bdb6efcdfa4
+ms.openlocfilehash: 9d895200e6d1bc823ebcb52e0b034883f5a059e0
 
 ---
 
-# Obtenir les acquisitions de produits in-app
+# Obtenir des acquisitions d’extensions
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
-
-Utilisez cette méthode dans l’API d’analyse du WindowsStore pour obtenir les données d’acquisition agrégées d’un produit in-app pour une plage de dates données, et en fonction de filtres facultatifs. Cette méthode renvoie les données au format JSON.
-
-## Prérequis
 
 
-Pour utiliser cette méthode, procédez comme suit:
+Utilisez cette méthode dans l’API d’analyse du WindowsStore pour obtenir les données d’acquisition agrégées d’une extension (également connue sous le nom produit in-app ou PIA) pour une plage de dates données, et en fonction de filtres facultatifs. Cette méthode renvoie les données au format JSON.
 
--   Associez l’application Azure AD que vous utiliserez pour appeler cette méthode à votre compte du Centre de développement.
+## Conditions préalables
 
--   Obtenez un jeton d’accès Azure AD pour votre application.
 
-Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide des services du WindowsStore](access-analytics-data-using-windows-store-services.md).
+Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
+
+* Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](access-analytics-data-using-windows-store-services.md#prerequisites) relatives à l’API d’analyse du Windows Store.
+* [Obtenez un jeton d’accès Azure AD](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 
 ## Requête
 
@@ -42,13 +39,13 @@ Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide 
 
 | En-tête        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer**&lt;*token*&gt;. |
+| Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;. |
 
 <span/> 
 
 ### Paramètres de la requête
 
-Le paramètre *applicationId* ou *inAppProductId* est requis. Pour récupérer les données d’acquisition de l’ensemble desPIA inscrits dans l’application, spécifiez le paramètre *applicationId*. Pour récupérer les données d’acquisition d’unPIA donné, spécifiez le paramètre *inAppProductId*. Si vous spécifiez les deuxvaleurs, le paramètre *inAppProductId* est ignoré.
+Le paramètre *applicationId* ou *inAppProductId* est obligatoire. Pour récupérer les données d’acquisition de toutes les extensions inscrites dans l’application, spécifiez le paramètre *applicationId*. Pour récupérer les données d’acquisition d’une seule extension, spécifiez le paramètre *inAppProductId*. Si vous spécifiez les deuxvaleurs, le paramètre *applicationId* est ignoré.
 
 <table>
 <colgroup>
@@ -69,25 +66,25 @@ Le paramètre *applicationId* ou *inAppProductId* est requis. Pour récupérer l
 <tr class="odd">
 <td align="left">applicationId</td>
 <td align="left">chaîne</td>
-<td align="left">L’ID WindowsStore de l’application pour laquelle vous souhaitez récupérer les données d’acquisition de produits in-app. L’ID WindowsStore est disponible dans la page [Identité de l’application](../publish/view-app-identity-details.md) du tableau de bord du Centre de développement. Exemple d’ID WindowsStore: 9WZDNCRFJ3Q8.</td>
+<td align="left">ID WindowsStore de l’application pour laquelle vous voulez récupérer des données d’acquisition d’extension. L’ID WindowsStore est disponible dans la [page Identité de l’application](../publish/view-app-identity-details.md) du tableau de bord du Centre de développement. Exemple d’ID WindowsStore: 9WZDNCRFJ3Q8.</td>
 <td align="left">Oui</td>
 </tr>
 <tr class="even">
 <td align="left">inAppProductId</td>
 <td align="left">chaîne</td>
-<td align="left">L’ID produit du produit in-app pour lequel vous souhaitez récupérer les données d’acquisition.</td>
+<td align="left">ID WindowsStore de l’extension pour laquelle vous voulez récupérer des données d’acquisition. L’ID Windows Store est disponible dans l’URL de la page de la vue d’ensemble de l’extension dans le tableau de bord du Centre de développement Windows. Par exemple, si l’URL de la page du tableau de bord d’une extension est ```https://developer.microsoft.com/en-us/dashboard/iaps/9NBLGGH4SCZS?appId=9NBLGGH29DM8```, l’ID Windows Store de cette extension est la chaîne 9NBLGGH4SCZS.</td>
 <td align="left">Oui</td>
 </tr>
 <tr class="odd">
 <td align="left">startDate</td>
 <td align="left">date</td>
-<td align="left">Dans la plage de dates, la date de début de la récupération des données d’acquisition des produits in-app. La valeur par défaut est la date actuelle.</td>
+<td align="left">Dans la plage de dates, date de début de la récupération des données d’acquisition. La valeur par défaut est la date du jour.</td>
 <td align="left">Non</td>
 </tr>
 <tr class="even">
 <td align="left">endDate</td>
 <td align="left">date</td>
-<td align="left">Dans la plage de dates, la date de fin de la récupération des données d’acquisition des produits in-app. La valeur par défaut est la date actuelle.</td>
+<td align="left">Dans la plage de dates, date de fin de la récupération des données d’acquisition. La valeur par défaut est la date du jour.</td>
 <td align="left">Non</td>
 </tr>
 <tr class="odd">
@@ -117,7 +114,7 @@ Le paramètre *applicationId* ou *inAppProductId* est requis. Pour récupérer l
 <tr class="odd">
 <td align="left">orderby</td>
 <td align="left">chaîne</td>
-<td align="left">Une instruction qui commande les valeurs de données de résultats pour chaque acquisition de produit in-app. Syntaxe : <em>orderby=field [order],field [order],...</em>. Le paramètre <em>field</em> peut comporter l’une des chaînes suivantes :
+<td align="left">Instruction qui commande les valeurs de données de résultats pour chaque acquisition d’extension. Syntaxe: <em>orderby=field [order],field [order],...</em>. Le paramètre <em>field</em> peut comporter l’une des chaînes suivantes :
 <ul>
 <li><strong>date</strong></li>
 <li><strong>acquisitionType</strong></li>
@@ -247,7 +244,7 @@ Pour obtenir la liste des champs pris en charge, consultez le tableau suivant: L
 
 ### Exemple de requête
 
-L’exemple suivant illustre quelques requêtes de récupération de données d’acquisition de produits in-app. Remplacez les valeurs *inAppProductId* et *applicationId* par l’ID produit approprié associé à votre PIA et ID WindowsStore pour votre application.
+L’exemple suivant illustre quelques requêtes d’obtention de données d’acquisition d’extensions. Remplacez les valeurs *inAppProductId* et *applicationId* par l’ID WindowsStore qui correspond à votre extension ou application.
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappacquisitions?inAppProductId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1
@@ -267,22 +264,23 @@ Authorization: Bearer <your access token>
 
 | Valeur      | Type   | Description                                                                                                                                                                                                                                                                                |
 |------------|--------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Valeur      | tableau  | Tableau d’objets contenant les données agrégées d’acquisition de produits in-app. Pour plus d’informations sur les données de chaque objet, consultez la section [Valeurs d’acquisition des produits in-app](#iap-acquisition-values) ci-dessous.                                                                                                              |
-| @nextLink  | chaîne | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour solliciter la page suivante de données. Par exemple, cette valeur est renvoyée si le paramètre **top** de la demande est défini sur 10000, mais que plus de 10000lignes de données d’acquisition dePIA sont associées à la requête. |
-| TotalCount | entier    | Nombre total de lignes des résultats de données pour la requête.                                                                                                                                                                                                                                 |
+| Valeur      | tableau  | Tableau d’objets contenant des données d’acquisition agrégées d’extensions. Pour plus d’informations sur les données incluses dans chaque objet, voir [Valeurs d’acquisition d’extensions](#add-on-acquisition-values) ci-dessous.                                                                                                              |
+| @nextLink  | chaîne | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour solliciter la page suivante de données. Par exemple, cette valeur est renvoyée si le paramètre **top** de la requête a la valeur 10000, mais qu’il existe plus de 10000lignes de données d’acquisition d’extensions pour la demande. |
+| TotalCount | entier    | Nombre total de lignes dans les résultats de données de la requête.                                                                                                                                                                                                                                 |
 
 <span/>
 
-### Valeurs d’acquisition des produits in-app
+<span id="add-on-acquisition-values" />
+### Valeurs d’acquisition d’extensions
 
 Les éléments du tableau *Value* comportent les valeurs suivantes:
 
 | Valeur               | Type    | Description                                                                                                                                                                                                                              |
 |---------------------|---------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | date                | chaîne  | Première date dans la plage de dates des données d’acquisition. Si la requête était relative à un jour unique, cette valeur correspond à la date associée. Si la requête était relative à une semaine, un mois ou toute autre plage de dates, cette valeur correspond à la première date de la plage de dates. |
-| inAppProductId      | chaîne  | L’ID produit du produit in-app pour lequel vous récupérez les données d’acquisition.                                                                                                                                                                 |
-| inAppProductName    | chaîne  | Nom d’affichage du produit in-app.                                                                                                                                                                                                             |
-| applicationId       | chaîne  | L’ID WindowsStore de l’application pour laquelle vous souhaitez récupérer les données d’acquisition de produits in-app.                                                                                                                                                           |
+| inAppProductId      | chaîne  | ID WindowsStore de l’extension pour laquelle vous récupérez des données d’acquisition.                                                                                                                                                                 |
+| inAppProductName    | chaîne  | Nom d’affichage de l’extension.                                                                                                                                                                                                             |
+| applicationId       | chaîne  | ID WindowsStore de l’application pour laquelle vous voulez récupérer des données d’acquisition d’extension.                                                                                                                                                           |
 | applicationName     | chaîne  | Nom d’affichage de l’application.                                                                                                                                                                                                             |
 | deviceType          | chaîne  | Le type d’appareil ayant effectué l’acquisition. Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                                  |
 | orderName           | chaîne  | Le nom de la commande.                                                                                                                                                                                                                   |
@@ -306,7 +304,7 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
     {
       "date": "2015-01-02",
       "inAppProductId": "9NBLGGH3LHKL",
-      "inAppProductName": "Contoso IAP 7",
+      "inAppProductName": "Contoso add-on 7",
       "applicationId": "9NBLGGGZ5QDR",
       "applicationName": "Contoso Demo",
       "deviceType": "Phone",
@@ -316,7 +314,7 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
       "market": "GB",
       "gender": "m",
       "ageGroup": "50orover",
-      "acquisitionType": "Iap",
+      "acquisitionType": "iap",
       "acquisitionQuantity": 1
     }
   ],
@@ -339,6 +337,6 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Sep16_HO2-->
 
 

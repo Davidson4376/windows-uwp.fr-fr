@@ -5,7 +5,7 @@ title: Sockets
 ms.assetid: 23B10A3C-E33F-4CD6-92CB-0FFB491472D6
 translationtype: Human Translation
 ms.sourcegitcommit: 4557fa59d377edc2ae5bf5a9be63516d152949bb
-ms.openlocfilehash: 432d9849335c537836fd23a4cd95c79c51bc881d
+ms.openlocfilehash: 49a9ae4d7d3994ad7fbb78fc9dc60cdd9dca07c3
 
 ---
 
@@ -301,6 +301,6 @@ Vous pouvez également utiliser [Winsock](https://msdn.microsoft.com/library/win
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

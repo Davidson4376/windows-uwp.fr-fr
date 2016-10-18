@@ -7,8 +7,8 @@ isNew: true
 label: History and backwards navigation
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: a35b76f04d450aeafcc50c307dc058c52f6aebe4
+ms.sourcegitcommit: 75e8c342775f7d6c564cb1014519f8e4707a0632
+ms.openlocfilehash: f18fc0806313cc1656860b0fd8b5ae692fa3d4c6
 
 ---
 
@@ -30,7 +30,7 @@ Voici les facteurs de forme principaux avec l’interface utilisateur du bouton 
      </tr>
     <tr>
         <td>Téléphone</td>
-        <td>![system back on a phone](images/back-systemback-phone.png)</td>
+        <td>![système de retour sur un téléphone](images/back-systemback-phone.png)</td>
         <td>
         <ul>
 <li>Toujours présent.</li>
@@ -41,7 +41,7 @@ Voici les facteurs de forme principaux avec l’interface utilisateur du bouton 
      </tr>
      <tr>
         <td>Tablette</td>
-        <td>![system back on a tablet (in tablet mode)](images/back-systemback-tablet.png)</td>
+        <td>![système de retour sur une tablette (en mode tablette)](images/back-systemback-tablet.png)</td>
         <td>
 <ul>
 <li>Toujours présent en mode tablette.
@@ -56,10 +56,10 @@ Voici les facteurs de forme principaux avec l’interface utilisateur du bouton 
      </tr>
     <tr>
         <td>PC, ordinateur portable, tablette</td>
-        <td>![system back on a pc or laptop](images/back-systemback-pc.png)</td>
+        <td>![système de retour sur un pc ou un ordinateur portable](images/back-systemback-pc.png)</td>
         <td>
 <ul>
-<li>Facultatif en mode bureau.
+<li>Facultatif en mode Bureau.
 
     Not available in Tablet mode. See [Tablet](#Tablet).
 
@@ -73,7 +73,7 @@ Voici les facteurs de forme principaux avec l’interface utilisateur du bouton 
      </tr>
     <tr>
         <td>Surface Hub</td>
-        <td>![system back on a surface hub](images/nav/nav-back-surfacehub.png)</td>
+        <td>![système de retour sur un surface hub](images/nav/nav-back-surfacehub.png)</td>
         <td>
 <ul>
 <li>Facultatif.</li>
@@ -90,74 +90,75 @@ Voici d’autres types d’entrée qui ne font pas appel à une interface utilis
 
 <table>
 <tr><td colspan="3">Appareils d’entrée</td></tr>
-<tr><td>Clavier</td><td>![keyboard](images/keyboard-wireframe.png)</td><td>Touche Windows + Retour arrière</td></tr>
-<tr><td>Cortana</td><td>![speech](images/speech-wireframe.png)</td><td>Dites «Hey Cortana, reviens en arrière»</td></tr>
+<tr><td>Clavier</td><td>![clavier](images/keyboard-wireframe.png)</td><td>Touche Windows + Retour arrière</td></tr>
+<tr><td>Cortana</td><td>![fonctions vocales](images/speech-wireframe.png)</td><td>Dites «Hey Cortana, reviens en arrière»</td></tr>
 </table>
  
 
 Lorsque votre application est exécutée sur un téléphone, une tablette, un PC ou un ordinateur portable sur lequel un retour système est activé, le système informe votre application lorsque l’utilisateur appuie sur le bouton Précédent. Lorsqu’il appuie sur le bouton Précédent, l’utilisateur s’attend à accéder à l’emplacement précédent dans l’historique de navigation de l’application. C’est à vous qu’il incombe de décider des actions de navigation à ajouter à l’historique de navigation et de la réponse à un appui sur le bouton Précédent.
 
 
-## <span id="Enable_system_back_navigation_support"></span><span id="enable_system_back_navigation_support"></span><span id="ENABLE_SYSTEM_BACK_NAVIGATION_SUPPORT"></span>Comment activer la prise en charge de la navigation vers l’arrière du système
+## Comment activer la prise en charge de la navigation vers l’arrière du système
 
 
 Les applications doivent activer la navigation vers l’arrière pour tous les boutons Précédent des systèmes matériels et logiciels. Pour ce faire, vous devez inscrire un écouteur pour l’événement [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) et définir un gestionnaire correspondant.
 
 Ici, nous inscrivons un écouteur global pour l’événement [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) dans le fichier code-behind App.xaml. Vous pouvez vous inscrire pour cet événement dans chaque page si vous souhaitez exclure des pages spécifiques de la navigation vers l’arrière, ou si vous souhaitez exécuter du code de niveau page avant d’afficher la page.
 
-```CSharp
+> [!div class="tabbedCodeSnippets"]
+```csharp
+Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += 
+    App_BackRequested;
+```
+```cpp
 Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->
     BackRequested += ref new Windows::Foundation::EventHandler<
     Windows::UI::Core::BackRequestedEventArgs^>(
         this, &amp;App::App_BackRequested);
 ```
 
-```CSharp
-Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += 
-    App_BackRequested;
-```
-
 Voici le gestionnaire d’événements [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) correspondant qui appelle [**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568) dans l’image racine de l'application.
 
 Ce gestionnaire est appelé sur un événement arrière global. Si la pile Back dans l’application est vide, le système peut naviguer jusqu’à l’application précédente dans la pile de l’application ou jusqu’à l’écran de démarrage. Il n’existe aucune pile Back in-app en mode bureau, et l’utilisateur reste dans l’application même lorsque la pile Back de l’application est épuisée.
 
-```CSharp
-void App::App_BackRequested(
-    Platform::Object^ sender, 
-    Windows::UI::Core::BackRequestedEventArgs^ e)
-{
-    Frame^ rootFrame = dynamic_cast<Frame^>(Window::Current->Content);
-    if (rootFrame == nullptr)
-        return;
-
-    // Navigate back if possible, and if the event has not
-    // already been handled.
-    if (rootFrame->CanGoBack &amp;&amp; e->Handled == false)
-    {
-        e->Handled = true;
-        rootFrame->GoBack();
-    }
-}
+> [!div class="tabbedCodeSnippets"]
+```csharp
+>private void App_BackRequested(object sender, 
+>    Windows.UI.Core.BackRequestedEventArgs e)
+>{
+>    Frame rootFrame = Window.Current.Content as Frame;
+>    if (rootFrame == null)
+>        return;
+>
+>    // Navigate back if possible, and if the event has not 
+>    // already been handled .
+>    if (rootFrame.CanGoBack &amp;&amp; e.Handled == false)
+>    {
+>        e.Handled = true;
+>        rootFrame.GoBack();
+>    }
+>}
+```
+```cpp
+>void App::App_BackRequested(
+>    Platform::Object^ sender, 
+>    Windows::UI::Core::BackRequestedEventArgs^ e)
+>{
+>    Frame^ rootFrame = dynamic_cast<Frame^>(Window::Current->Content);
+>    if (rootFrame == nullptr)
+>        return;
+>
+>    // Navigate back if possible, and if the event has not
+>    // already been handled.
+>    if (rootFrame->CanGoBack && e->Handled == false)
+>    {
+>        e->Handled = true;
+>        rootFrame->GoBack();
+>    }
+>}
 ```
 
-```CSharp
-private void App_BackRequested(object sender, 
-    Windows.UI.Core.BackRequestedEventArgs e)
-{
-    Frame rootFrame = Window.Current.Content as Frame;
-    if (rootFrame == null)
-        return;
-
-    // Navigate back if possible, and if the event has not 
-    // already been handled .
-    if (rootFrame.CanGoBack &amp;&amp; e.Handled == false)
-    {
-        e.Handled = true;
-        rootFrame.GoBack();
-    }
-}
-```
-## <span id="Enable_the_title_bar_back_button"></span><span id="enable_the_title_bar_back_button"></span><span id="ENABLE_THE_TITLE_BAR_BACK_BUTTON"></span>Comment activer le bouton Précédent de la barre de titre
+## Comment activer le bouton Précédent de la barre de titre
 
 
 Les appareils qui prennent en charge le mode bureau (en règle générale, les PC et ordinateurs portables, mais également certaines tablettes) et sur lesquels le paramètre est activé (**Paramètres &gt; Système &gt; Mode tablette**) ne fournissent pas de barre de navigation globale avec le bouton Précédent du système.
@@ -181,63 +182,64 @@ Remplacez l’événement [**OnNavigatedTo**](https://msdn.microsoft.com/library
 
 Pour cet exemple, nous répertorions chaque page de la pile Back et nous activons le bouton Précédent si la propriété [**CanGoBack**](https://msdn.microsoft.com/library/windows/apps/br242685) de l’image a la valeur **true**.
 
-```ManagedCPlusPlus
-void StartPage::OnNavigatedTo(NavigationEventArgs^ e)
-{
-    auto rootFrame = dynamic_cast<Windows::UI::Xaml::Controls::Frame^>(Window::Current->Content);
+> [!div class="tabbedCodeSnippets"]
+>```csharp
+>protected override void OnNavigatedTo(NavigationEventArgs e)
+>{
+>    Frame rootFrame = Window.Current.Content as Frame;
+>
+>    string myPages = "";
+>    foreach (PageStackEntry page in rootFrame.BackStack)
+>    {
+>        myPages += page.SourcePageType.ToString() + "\n";
+>    }
+>    stackCount.Text = myPages;
+>
+>    if (rootFrame.CanGoBack)
+>    {
+>        // Show UI in title bar if opted-in and in-app backstack is not empty.
+>        SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = 
+>            AppViewBackButtonVisibility.Visible;
+>    }
+>    else
+>    {
+>        // Remove the UI from the title bar if in-app back stack is empty.
+>        SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = 
+>            AppViewBackButtonVisibility.Collapsed;
+>    }
+>}
+>```
+>```cpp
+>void StartPage::OnNavigatedTo(NavigationEventArgs^ e)
+>{
+>    auto rootFrame = dynamic_cast<Windows::UI::Xaml::Controls::Frame^>(Window::Current->Content);
+>
+>    Platform::String^ myPages = "";
+>
+>    if (rootFrame == nullptr)
+>        return;
+>
+>    for each (PageStackEntry^ page in rootFrame->BackStack)
+>    {
+>        myPages += page->SourcePageType.ToString() + "\n";
+>    }
+>    stackCount->Text = myPages;
+>
+>    if (rootFrame->CanGoBack)
+>    {
+>        // If we have pages in our in-app backstack and have opted in to showing back, do so
+>        Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->AppViewBackButtonVisibility =
+>            Windows::UI::Core::AppViewBackButtonVisibility::Visible;
+>    }
+>    else
+>    {
+>        // Remove the UI from the title bar if there are no pages in our in-app back stack
+>        Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->AppViewBackButtonVisibility =
+>            Windows::UI::Core::AppViewBackButtonVisibility::Collapsed;
+>    }
+>}
+>```
 
-    Platform::String^ myPages = "";
-
-    if (rootFrame == nullptr)
-        return;
-
-    for each (PageStackEntry^ page in rootFrame->BackStack)
-    {
-        myPages += page->SourcePageType.ToString() + "\n";
-    }
-    stackCount->Text = myPages;
-
-    if (rootFrame->CanGoBack)
-    {
-        // If we have pages in our in-app backstack and have opted in to showing back, do so
-        Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->AppViewBackButtonVisibility =
-            Windows::UI::Core::AppViewBackButtonVisibility::Visible;
-    }
-    else
-    {
-        // Remove the UI from the title bar if there are no pages in our in-app back stack
-        Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->AppViewBackButtonVisibility =
-            Windows::UI::Core::AppViewBackButtonVisibility::Collapsed;
-    }
-}
-```
-
-```CSharp
-protected override void OnNavigatedTo(NavigationEventArgs e)
-{
-    Frame rootFrame = Window.Current.Content as Frame;
-
-    string myPages = "";
-    foreach (PageStackEntry page in rootFrame.BackStack)
-    {
-        myPages += page.SourcePageType.ToString() + "\n";
-    }
-    stackCount.Text = myPages;
-
-    if (rootFrame.CanGoBack)
-    {
-        // Show UI in title bar if opted-in and in-app backstack is not empty.
-        SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = 
-            AppViewBackButtonVisibility.Visible;
-    }
-    else
-    {
-        // Remove the UI from the title bar if in-app back stack is empty.
-        SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = 
-            AppViewBackButtonVisibility.Collapsed;
-    }
-}
-```
 
 ### Recommandations sur le comportement personnalisé de navigation vers l’arrière
 
@@ -295,14 +297,17 @@ Si vous choisissez de fournir votre propre navigation de pile Back, l’expérie
 </table>
 
 
-### <span id="Resuming"></span><span id="resuming"></span><span id="RESUMING"></span>Reprise
+### Reprise
 
-Lorsque l’utilisateur bascule vers une autre application et retourne vers votre application, nous recommandons de retourner à la dernière page de l’historique de navigation.
-
-
+Quand l’utilisateur bascule vers une autre application et retourne dans votre application, nous recommandons un retour à la dernière page de l’historique de navigation.
 
 
+## Obtenir les exemples
+*   [Exemple de bouton Précédent](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/BackButton)<br/>
+    Montre comment configurer un gestionnaire d’événements pour l’événement de bouton Précédent et comment activer le bouton Précédent de la barre de titre quand l’application est en mode Bureau avec fenêtres.
 
+## Articles connexes
+* [Notions de base sur la navigation](navigation-basics.md)
 
  
 
@@ -312,6 +317,6 @@ Lorsque l’utilisateur bascule vers une autre application et retourne vers votr
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

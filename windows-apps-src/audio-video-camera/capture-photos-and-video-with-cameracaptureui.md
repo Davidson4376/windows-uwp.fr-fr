@@ -1,22 +1,22 @@
 ---
 author: drewbatgit
 ms.assetid: CC0D6E9B-128D-488B-912F-318F5EE2B8D3
-description: "Cet article décrit comment utiliser la classe CameraCaptureUI afin de capturer des photos ou des vidéos à l’aide de l’interface utilisateur de l’appareil photo intégré à Windows."
-title: "Capturer des photos et des vidéos à l’aide de CameraCaptureUI"
+description: "Cet article décrit comment utiliser la classe CameraCaptureUI pour capturer des photos ou des vidéos à l’aide de l’interface utilisateur de l’appareil photo intégré à Windows."
+title: "Capturer des photos et des vidéos à l’aide de l’interface utilisateur de l’appareil photo intégré à Windows"
 translationtype: Human Translation
-ms.sourcegitcommit: 72abc006de1925c3c06ecd1b78665e72e2ffb816
-ms.openlocfilehash: a98edd0b4c52271fad4255af5ab0a005b0c66d68
+ms.sourcegitcommit: b4bf4d74ae291186100a553a90fd93f890b8ece4
+ms.openlocfilehash: fea1c2f8f52ec9ac485d9a4846cc0661243a7ccc
 
 ---
 
-# Capturer des photos et des vidéos à l’aide de CameraCaptureUI
+# Capturer des photos et des vidéos à l’aide de l’interface utilisateur de l’appareil photo intégré à Windows
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Cet article décrit comment utiliser la classe CameraCaptureUI afin de capturer des photos ou des vidéos à l’aide de l’interface utilisateur de l’appareil photo intégré à Windows. Cette fonctionnalité est facile à utiliser et permet à votre application d’obtenir une photo ou une vidéo capturée par l’utilisateur avec seulement quelques lignes de code.
 
-Si votre scénario requiert un contrôle de bas niveau plus robuste de l’opération de capture, utilisez l’objet [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) et implémentez votre propre expérience de capture. Pour plus d’informations, voir [Capturer des photos et des vidéos avec MediaCapture](capture-photos-and-video-with-mediacapture.md).
+Si vous voulez fournir votre propre interface utilisateur d’appareil photo ou si votre scénario nécessite un contrôle de bas niveau plus robuste de l’opération de capture, utilisez l’objet [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) et implémentez votre propre expérience de capture. Pour plus d’informations, voir [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md).
 
 ## Capturer une photo avec CameraCaptureUI
 
@@ -24,15 +24,20 @@ Pour utiliser l’interface utilisateur de capture d’appareil photo, incluez l
 
 [!code-cs[UsingCaptureUI](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetUsingCaptureUI)]
 
-Pour capturer une photo, créez un objet [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030). À l’aide de la propriété [**PhotoSettings**](https://msdn.microsoft.com/library/windows/apps/br241058) de l’objet, vous pouvez spécifier les propriétés de la photo renvoyée, comme le format d’image. Par défaut, l’interface utilisateur de capture de l’appareil photo permet à l’utilisateur de rogner la photo avant de la renvoyer. Cette fonctionnalité peut être désactivée avec la propriété [**AllowCropping**](https://msdn.microsoft.com/library/windows/apps/br241042). Cet exemple définit la [**CroppedSizeInPixels**](https://msdn.microsoft.com/library/windows/apps/br241044) pour demander que l’image renvoyée soit au format 200 x 200 pixels.
+Pour capturer une photo, créez un objet [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030). À l’aide de la propriété [**PhotoSettings**](https://msdn.microsoft.com/library/windows/apps/br241058) de l’objet, vous pouvez spécifier les propriétés de la photo renvoyée, comme le format d’image. Par défaut, l’interface utilisateur de capture de l’appareil photo permet à l’utilisateur de rogner la photo avant de la renvoyer. Cette fonctionnalité peut être désactivée avec la propriété [**AllowCropping**](https://msdn.microsoft.com/library/windows/apps/br241042). Cet exemple définit [**CroppedSizeInPixels**](https://msdn.microsoft.com/library/windows/apps/br241044) pour demander que l’image renvoyée soit au format 200x200pixels.
 
-**Important** Le rognage d’images via CameraCaptureUI n’est pas pris en charge pour les appareils de la famille d’appareils mobiles. La valeur de la propriété [**AllowCropping**](https://msdn.microsoft.com/library/windows/apps/br241042) est ignorée lorsque votre application est exécutée sur ces appareils.
+> [!NOTE]
+> Le rognage d’images dans **CameraCaptureUI** n’est pas pris en charge pour les appareils de la famille d’appareils mobiles. La valeur de la propriété [**AllowCropping**](https://msdn.microsoft.com/library/windows/apps/br241042) est ignorée quand votre application est exécutée sur ces appareils.
 
 Appelez [**CaptureFileAsync**](https://msdn.microsoft.com/library/windows/apps/br241057) et spécifiez [**CameraCaptureUIMode.Photo**](https://msdn.microsoft.com/library/windows/apps/br241040) pour indiquer qu’une photo doit être capturée. La méthode renvoie une instance [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) contenant l’image si la capture est réussie. Si l’utilisateur annule la capture, l’objet renvoyé est null.
 
 [!code-cs[CapturePhoto](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetCapturePhoto)]
 
-Une fois que vous avez le **StorageFile** contenant la photo capturée, vous pouvez créer un objet [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) qui à utiliser avec plusieurs fonctionnalités d’application Windows universelle différentes.
+L’élément **StorageFile** qui contient la photo capturée reçoit un nom généré de manière dynamique et est enregistré dans le dossier local de votre application. Pour mieux organiser vos photos capturées, vous pouvez déplacer le fichier dans un autre dossier.
+
+[!code-cs[CopyAndDeletePhoto](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetCopyAndDeletePhoto)]
+
+Pour utiliser votre photo dans votre application, vous pouvez créer un objet [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) qui peut être utilisé avec plusieurs fonctionnalités différentes des applications Windows universelles.
 
 Vous devez d’abord inclure l’espace de noms [**Windows.Graphics.Imaging**](https://msdn.microsoft.com/library/windows/apps/br226400) dans votre projet.
 
@@ -93,15 +98,16 @@ Enfin, définissez la source de flux de manière à utiliser la méthode [**SetM
 
 Vous pouvez continuer à capturer des clips vidéo et les ajouter à la composition. Pour plus d’informations sur les compositions multimédias, voir [Compositions multimédias et modification](media-compositions-and-editing.md).
 
-**Remarque**  
-Cet article s’adresse aux développeurs de Windows10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> [!NOTE] 
+> Cet article s’adresse aux développeurs de Windows 10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
 ## Rubriques connexes
 
-* [Capturer des photos et des vidéos à l’aide de MediaCapture](capture-photos-and-video-with-mediacapture.md)
-* [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030)
+* [Appareil photo](camera.md)
+* [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+* [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) 
  
 
  
@@ -112,6 +118,6 @@ Cet article s’adresse aux développeurs de Windows10 qui développent des appl
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

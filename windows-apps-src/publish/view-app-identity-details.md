@@ -5,14 +5,14 @@ title: "Visualiser les informations d’identité des applications"
 ms.assetid: 86F05A79-EFBC-4705-9A71-3A056323AC65
 translationtype: Human Translation
 ms.sourcegitcommit: a25d87556bb85718f818af5b586f54e6985aaaa4
-ms.openlocfilehash: f00d817616d473ef220ebc1817c2bf9207a7aea0
+ms.openlocfilehash: dc61971865a05e1de17cdcf55ab495fee4917b74
 
 ---
 
 # Visualiser les informations d’identité des applications
 
 
-Quand vous travaillez sur une application dans le tableau de bord du Centre de développement Windows, vous pouvez visualiser les informations concernant l&#39;identité unique qui lui est affectée par le Windows Store et obtenir un lien d&#39;accès à la description de votre application dans le Windows Store.
+Quand vous travaillez sur une application dans le tableau de bord du Centre de développement Windows, vous pouvez visualiser les informations concernant l'identité unique qui lui est affectée par le Windows Store et obtenir un lien d'accès à la description de votre application dans le Windows Store.
 
 Pour consulter ces informations, accédez à l’une de vos applications, puis développez l’option **Gestion des applications** dans le menu de navigation gauche. Cliquez sur **Identité de l’application** pour afficher les détails correspondants.
 
@@ -58,6 +58,6 @@ L’**ID Windows Store** de votre application figure également dans cette secti
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

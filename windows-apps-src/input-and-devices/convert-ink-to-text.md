@@ -7,14 +7,14 @@ label: Recognize Windows Ink strokes as text
 template: detail.hbs
 keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, handwriting recognition
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 4351901984f9b1f134cfc42acbbc7f756dc6c11f
+ms.sourcegitcommit: dfb790980a8016da0ed9a080d7cf56b5a8a784ff
+ms.openlocfilehash: 26dc8910c779dc46d19be75abd49c20b750a9843
 
 ---
 
 # Reconnaître les traits d’encre Windows en tant que texte
 
-Convertissez des traits d’encre en texte à l’aide de la reconnaissance de l’écriture manuscrite ou en formes à l’aide de la reconnaissance personnalisée.
+Convertissez les traits d’encre en texte grâce à la prise en charge de la reconnaissance de l’écriture manuscrite de Windows Ink.
 
 **API importantes**
 
@@ -674,6 +674,6 @@ string str = "Recognition result\n";
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

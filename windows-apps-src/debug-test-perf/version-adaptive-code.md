@@ -3,25 +3,22 @@ author: jwmsft
 title: Code adaptatif de version
 description: "Découvrez comment tirer parti des nouvellesAPI tout en conservant la compatibilité avec les versions précédentes"
 translationtype: Human Translation
-ms.sourcegitcommit: 3f81d80cef0fef6d24cad1b42ce9726b03857b5a
-ms.openlocfilehash: db6b9c83d36ac876661197dce81e5724e44bb640
+ms.sourcegitcommit: 24a62c9331d4f651937f3f795fb1e7c9704af2ca
+ms.openlocfilehash: 7656018c61688bddbf23f889a82af4fd6d58c3ea
 
 ---
 
-# Code adaptatif de version&#58; Utilisez de nouvellesAPI tout en conservant la compatibilité avec les versions précédentes
+# Code adaptatif de version: Utilisez de nouvellesAPI tout en conservant la compatibilité avec les versions précédentes
 
 Chaque version du Kit de développement logicielWindows10 apporte d’incroyables fonctionnalités qui vous raviront. Toutefois, vos clients ne mettent pas tous en même temps leurs appareils à jour vers la dernière version de Windows10, et vous voulez vous assurer que votre application fonctionne sur le plus large éventail possible d’appareils. Nous allons vous expliquer comment concevoir votre application afin qu’elle s’exécute sur les versions antérieures de Windows10, mais tire également parti des nouvelles fonctionnalités lorsque votre application s’exécute sur un appareil disposant de la dernière mise à jour.
 
-Vous devez suivre 2étapes pour vous assurer que votre application prend en charge la plus large gamme d’appareils Windows10. Tout d’abord, configurez votre projet VisualStudio afin de cibler les dernièresAPI. Cela influe sur les résultats de la compilation de votre application. Ensuite, effectuez des vérifications à l’exécution pour vous assurer que vous appelez uniquement les API présentes sur l’appareil sur lequel votre application s’exécute.
-
-> [!NOTE] 
-> Cet article utilise des exemples du Kit de développement logiciel WindowsInsiderPreview pour Windows10, version1607 (mise à jour anniversaire). Le Kit de développement logiciel Preview est une version préliminaire et ne peut pas être utilisé dans un environnement de production. Installez uniquement le Kit de développement logiciel sur votre ordinateur de test. Le Kit de développement logiciel Preview contient des résolutions de bogues et les modifications de développement apportées à la surface d’exposition de l’API. Si vous travaillez sur une application que vous devrez soumettre au Store, vous ne devez pas installer la version d’évaluation.
+Vous devez suivre 2étapes pour vous assurer que votre application prend en charge la plus large gamme d’appareils Windows10. Tout d’abord, configurez votre projet VisualStudio afin de cibler les dernièresAPI. Cela influe sur les résultats de la compilation de votre application. Ensuite, effectuez des vérifications à l’exécution pour vérifier que vous appelez uniquement les API présentes sur l’appareil sur lequel votre application s’exécute.
 
 ## Configurer votre projet VisualStudio
 
 La première étape de la prise en charge de plusieurs versions de Windows10 consiste à spécifier les versions de système d’exploitation et de Kit de développement logiciel *Cible* et *Minimum* prises en charge dans votre projet VisualStudio.
 - *Cible*: version du Kit de développement logiciel pour laquelle Visual Studio compile le code de votre application et exécute tous les outils. Toutes les API et les ressources de ce Kit de développement logiciel sont disponibles dans le code de votre application au moment de la compilation.
-- *Minimum*: version du Kit de développement logiciel qui prend en charge  la version la plus ancienne du système d’exploitation sur laquelle votre application peut s’exécuter (et qui sera déployée par le WindowsStore) et la version pour laquelle VisualStudio compile le code de balisage de votre application. 
+- *Minimum*: version du Kit de développement logiciel qui prend en charge la version la plus ancienne du système d’exploitation sur laquelle votre application peut s’exécuter (et qui sera déployée par le WindowsStore) et la version pour laquelle VisualStudio compile le code de balisage de votre application. 
 
 Pendant son exécution, votre application s’exécute par rapport à la version du système d’exploitation déployée: votre application lève donc des exceptions si vous utilisez des ressources ou si vous appelez des API qui ne sont pas disponibles dans cette version. Nous allons vous montrer comment effectuer des vérifications à l’exécution pour appeler les API appropriées dans la suite de cet article.
 
@@ -43,9 +40,9 @@ Pour modifier la version Minimum et la version Cible d’un projet déjà créé
 À titre de référence, voici les numéros de version pour chaque Kit de développement logiciel:
 - Windows10, version1506: SDKversion10240
 - Windows10, version1511 (mise à jour de novembre): SDK version10586
-- Windows10, version1607 Insider Preview (mise à jour anniversaire): à l’heure où nous écrivons ce document, [la dernière version du Kit de développement logiciel Insider Preview est 14332](https://blogs.windows.com/buildingapps/2016/04/28/windows-10-anniversary-sdk-preview-build-14332-released/).
+- Windows10, version1607 (mise à jour anniversaire): SDK version14393
 
-Vous pouvez télécharger les versions finales du Kit de développement logiciel dans les [archives de Kits de développement logiciel Windows et d’émulateurs](https://developer.microsoft.com/downloads/sdk-archive). Vous pouvez télécharger la dernière version du Kit de développement logiciel Windows Insider Preview dans la section du site [Windows Insider](https://insider.windows.com/) dédiée aux développeurs.
+Vous pouvez télécharger les versions finales du SDK à partir des [archives de Windows SDK et de l’émulateur](https://developer.microsoft.com/downloads/sdk-archive). Vous pouvez télécharger la dernière version du Kit de développement logiciel Windows Insider Preview dans la section du site [Windows Insider](https://insider.windows.com/) dédiée aux développeurs.
 
 ## Écrire du code adaptatif
 
@@ -481,6 +478,6 @@ class IsEnumPresentTrigger : StateTriggerBase
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

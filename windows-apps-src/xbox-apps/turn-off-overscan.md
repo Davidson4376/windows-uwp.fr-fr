@@ -1,23 +1,31 @@
 ---
 author: payzer
-title: "Comment désactiver le balayage"
+title: "Comment étirer l’IU vers le bord de l’écran"
 description: 
-area: Xbox
 translationtype: Human Translation
-ms.sourcegitcommit: 32a875348debac9aec9f5a26bc4e7e0af2a0a5b4
-ms.openlocfilehash: abd06e78364ff32cc10d733e33b153b854dbc467
+ms.sourcegitcommit: b5961d3266a031ab09a9da63319e9883cf050789
+ms.openlocfilehash: cddde27a17e897ab8a68bbed099e532a8cd48f07
 
 ---
 
 # Comment étirer l’IU vers le bord de l’écran   
-Par défaut, des bordures sont placées sur les angles de la fenêtre d’affichage de l’application. Elles permettent de tenir compte de la zone adaptée à l’écran de TV. Pour en savoir plus, voir [Conception pour Xbox et télévision](http://go.microsoft.com/fwlink/?LinkID=760736#tv-safe-area).  Nous vous recommandons de désactiver cette fonctionnalité et d’étirer l’IU vers le bord de l’écran. Pour ce faire, ajoutez le code suivant lorsque l’application démarre:
+Par défaut, des bordures sont placées autour de la fenêtre d’affichage de l’application. Elles permettent de tenir compte de la zone adaptée à l’écran de télévision. Pour plus d’informations, voir [Conception pour Xbox et TV](../input-and-devices/designing-for-tv.md#tv-safe-area). 
+
+Nous vous recommandons de désactiver cette fonctionnalité et d’étirer l’IU vers le bord de l’écran. Pour ce faire, ajoutez le code suivant lorsque l’application démarre:
    
-`Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMode(Windows.UI.ViewManagement.ApplicationViewBoundsMode.UseCoreWindow);`
+```
+Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMode(Windows.UI.ViewManagement.ApplicationViewBoundsMode.UseCoreWindow);
+```
    
-Remarque: les applications C++/DirectX n’ont pas besoin de prendre ce facteur en compte. Le système affiche toujours votre application au niveau du bord de l’écran.
+> [!NOTE]
+> Les applications C++/DirectX n’ont pas besoin de prendre ce facteur en compte. Le système affiche toujours votre application jusqu’au bord de l’écran.
+
+## Voir également
+- [Bonnes pratiques pourXbox](tailoring-for-xbox.md)
+- [UWP sur XboxOne](index.md)
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

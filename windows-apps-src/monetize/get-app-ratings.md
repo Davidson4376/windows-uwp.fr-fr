@@ -4,28 +4,26 @@ ms.assetid: DD4F6BC4-67CD-4AEF-9444-F184353B0072
 description: "Utilisez cette méthode dans l’API d’analyse du WindowsStore pour récupérer les données de classification agrégées pour une plage de dates donnée, et suivant d’autres filtres facultatifs."
 title: Obtenir les classifications des applications
 translationtype: Human Translation
-ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
-ms.openlocfilehash: 6f6a94e030f1733ca4224766526386ef1956ff03
+ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
+ms.openlocfilehash: 8ec588ceb0a7c8bd6a75f72bf0a2d48c697a8e6a
 
 ---
 
 # Obtenir les classifications des applications
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+
 
 Utilisez cette méthode dans l’API d’analyse du WindowsStore pour récupérer les données de classification agrégées pour une plage de dates donnée, et suivant d’autres filtres facultatifs. Cette méthode renvoie les données au format JSON.
 
-## Prérequis
+## Conditions préalables
 
 
-Pour utiliser cette méthode, procédez comme suit:
+Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
 
--   Associez l’application Azure AD que vous utiliserez pour appeler cette méthode à votre compte du Centre de développement.
+* Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](access-analytics-data-using-windows-store-services.md#prerequisites) relatives à l’API d’analyse du Windows Store.
+* [Obtenez un jeton d’accès Azure AD](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 
--   Obtenez un jeton d’accès Azure AD pour votre application.
-
-Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide des services du WindowsStore](access-analytics-data-using-windows-store-services.md).
 
 ## Requête
 
@@ -42,7 +40,7 @@ Pour plus d’informations, voir [Accéder aux données d’analyse à l’aide 
 
 | En-tête        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer**&lt;*token*&gt;. |
+| Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;. |
 
 <span/> 
 
@@ -265,12 +263,12 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 
 * [Accéder aux données d’analyse à l’aide des services du Windows Store](access-analytics-data-using-windows-store-services.md)
 * [Obtenir des acquisitions d’applications](get-app-acquisitions.md)
-* [Obtenir les acquisitions de produits in-app](get-in-app-acquisitions.md)
+* [Obtenir des acquisitions d’extensions](get-in-app-acquisitions.md)
 * [Obtenir les données de rapport d’erreurs](get-error-reporting-data.md)
 * [Obtenir les avis sur les applications](get-app-reviews.md)
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

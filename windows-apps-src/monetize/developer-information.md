@@ -1,11 +1,11 @@
 ---
 author: mcleanbyron
 ms.assetid: 278114aa-2a44-4d63-a1d2-d512d8aababc
-description: "Obtenez des informations de développement générales sur les bibliothèques de publicités Microsoft du Kit de développement logiciel (SDK) d’engagement et de monétisation de la BoutiqueMicrosoft."
+description: "Obtenez des informations de développement générales sur les bibliothèques de publicités Microsoft dans Microsoft Store Services SDK."
 title: "Informations destinées aux développeurs sur les bibliothèques de publicités Microsoft"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: ec3b1d5c33a24da4ad2a4c5c8e4e11c71ece4828
+ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
+ms.openlocfilehash: 70692d09c037d9e5802734bc5de6a6c79799bffb
 
 
 ---
@@ -13,11 +13,10 @@ ms.openlocfilehash: ec3b1d5c33a24da4ad2a4c5c8e4e11c71ece4828
 # Informations destinées aux développeurs sur les bibliothèques de publicités Microsoft
 
 
-\[ Mise à jour pour les applicationsUWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Les rubriques de cette section contiennent des informations utiles destinées aux développeurs sur les bibliothèques de publicités Microsoft du Kit de développement logiciel (SDK) d’engagement et de monétisation de la BoutiqueMicrosoft.
 
-  > **Important** Les bibliothèques de publicités Microsoft constituent un ensemble différent d’extensions des bibliothèques de médiation publicitaire. Utilisez les classes [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) et [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) des bibliothèques de publicités Microsoft si vous voulez afficher des bannières publicitaires et spots vidéo publicitaires de Microsoft dans une application XAML ou JavaScript. Utilisez la classe **AdMediatorControl** des bibliothèques de médiation publicitaire si vous voulez afficher des bannières publicitaires provenant de plusieurs réseaux publicitaires dans une application XAML. Pour plus d’informations, voir [Quelle est la différence entre AdMediatorControl et AdControl?](what-is-the-difference-admediatorcontrol-or-adcontrol.md).
+Les rubriques de cette section fournissent des informations utiles aux développeurs sur les bibliothèques de publicités de Microsoft dans Microsoft Store Services SDK (pour les applications UWP) et Microsoft Advertising SDK pour Windows et Windows Phone8.x (pour les applications Windows 8.1 et Windows Phone8.x).
+
 
 ## Dans cette section
 
@@ -39,6 +38,6 @@ Les rubriques de cette section contiennent des informations utiles destinées au
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

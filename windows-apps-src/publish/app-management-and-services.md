@@ -4,8 +4,8 @@ Description: "Vous pouvez gérer chacune de vos applications dans le tableau de 
 title: Gestion des applications et services
 ms.assetid: 99DA2BC1-9B5D-4746-8BC0-EC723D516EEF
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 71077ac3f64e10734021e5fb655168f7273e3cb6
+ms.sourcegitcommit: 3afdf00864e023d913b635beef0c506735881b23
+ms.openlocfilehash: 9787ef724622a95d291b4631196b3e13bcb1298a
 
 ---
 
@@ -45,7 +45,7 @@ Pour plus d’informations, voir [Utiliser les services cartographiques](use-map
 
 ### Collections et achats de produits
 
-Pour utiliser l’API de collection du Windows Store et l’API d’achat du Windows Store afin d’accéder aux informations de propriété relatives aux applications et aux produits in-app, vous devez entrer les ID clients Azure AD associés ici. Notez que la prise en compte de ces modifications peut prendre jusqu’à 16 heures.
+Pour utiliser l’API de collection du Windows Store et l’API d’achat du Windows Store afin d’accéder aux informations de propriété relatives aux applications et aux modules complémentaires, vous devez entrer les ID clients Azure AD associés ici. Notez que la prise en compte de ces modifications peut prendre jusqu’à 16heures.
 
 Pour plus d’informations, voir [Visualiser et accorder des produits à partir d’un service](https://msdn.microsoft.com/library/windows/apps/mt609002).
 
@@ -83,6 +83,6 @@ Les développeurs ayant des autorisations OEM peuvent également [générer des 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

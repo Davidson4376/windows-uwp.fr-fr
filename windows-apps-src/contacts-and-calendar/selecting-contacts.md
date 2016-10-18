@@ -3,10 +3,10 @@ author: Xansky
 description: "L’espace de noms Windows.ApplicationModel.Contacts fournit plusieurs options de sélection des contacts."
 title: "Sélectionner des contacts"
 ms.assetid: 35FEDEE6-2B0E-4391-84BA-5E9191D4E442
-keywords: contact, selecting specific fields
+keywords: "contact, sélection de champs spécifiques"
 translationtype: Human Translation
 ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
-ms.openlocfilehash: 6f2c6a546ed3daa0ef0311bc54ca47f31d01f3d8
+ms.openlocfilehash: 70abebb53f96b7d9d818f3542c33ed477ff0c8a4
 
 ---
 
@@ -232,6 +232,6 @@ public class ContactItemAdapter
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

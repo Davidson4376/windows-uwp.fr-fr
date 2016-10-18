@@ -5,7 +5,7 @@ title: "Recommandations concernant la clôture virtuelle des applications"
 ms.assetid: F817FA55-325F-4302-81BE-37E6C7ADC281
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d631885eced58d360d3e0442cbb49ede7b9b86c3
+ms.openlocfilehash: 0a152fbc444e252ed8c2a822036e00b8869703ac
 
 ---
 
@@ -137,6 +137,6 @@ Si votre application doit utiliser une clôture virtuelle avec un petit rayon, c
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

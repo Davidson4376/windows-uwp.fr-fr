@@ -5,14 +5,14 @@ title: "Télécharger des rapports d’analyse"
 ms.assetid: BCA61ABF-16ED-42C3-9014-68629CB5A24F
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 959007d6d7c4e4c768f196fe04c2fa4a8ac6fc2e
+ms.openlocfilehash: 99b751146adc2394e10c6deae58bd0fdb124888d
 
 ---
 
 # Télécharger des rapports d’analyse
 
 
-Vous pouvez télécharger des fichiers contenant vos données d&#39;analyse afin d&#39;examiner vos statistiques et informations hors connexion. Ces données sont fournies dans des fichiers TSV (valeurs séparées par une tabulation) exploitables dans différents programmes.
+Vous pouvez télécharger des fichiers contenant vos données d'analyse afin d'examiner vos statistiques et informations hors connexion. Ces données sont fournies dans des fichiers TSV (valeurs séparées par une tabulation) exploitables dans différents programmes.
 
 ## Pour télécharger un rapport spécifique
 
@@ -28,6 +28,6 @@ Vous pouvez télécharger des fichiers contenant vos données d&#39;analyse afin
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

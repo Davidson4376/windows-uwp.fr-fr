@@ -1,112 +1,112 @@
 ---
 author: payzer
-title: Device Portal Xbox Developer devkit update policy API reference
-description: Learn how to programatically set the update policy for your console.
+title: "Informations de référence sur l’API de stratégie de mise à jour du Kit de développement Device Portal pour Xbox"
+description: "Découvrez comment définir par programmation la stratégie de mise à jour de votre console."
 translationtype: Human Translation
 ms.sourcegitcommit: 8f02e0c2f6fa30a3ac56945347c5bec253189bd8
 ms.openlocfilehash: f9313d3c8b93ba13074c547f1f63c9f3204f0f58
 
 ---
 
-NOTE: This API is coming in the next developer preview.
+REMARQUE: Cette API sera disponible dans la prochaine préversion pour les développeurs.
 
-# System Update Policy API reference   
-You can use this API to see which update policy is applied to your console and change the update policy to a new one.
+# Informations de référence sur l’API de stratégie de mise à jour du système   
+Vous pouvez utiliser cette API pour savoir quelle stratégie de mise à jour s’applique à votre console et remplacer la stratégie de mise à jour actuelle par une nouvelle.
 
-IMPORTANT: Most consoles will receive an "access denied" response when trying to call this API. That is because not all development consoles have the ability to change their update policy.
+IMPORTANT: La plupart des consoles reçoivent une réponse «accès refusé» lors d’une tentative d’appel de cette API. Toutes les consoles de développement n’ont en effet pas la possibilité de modifier leur stratégie de mise à jour.
 
-This API affects the update policy for consoles in developer mode, not for retail consoles.
+Cette API affecte la stratégie de mise à jour pour les consoles en mode développeur, pas pour les consoles en mode commercial.
 
-## Get the console update policy
+## Obtenir la stratégie de mise à jour de la console
 
-**Request**
+**Requête**
 
-You can use the following request to get the update policy of your console.
+Vous pouvez utiliser la requête suivante pour obtenir la stratégie de mise à jour de votre console.
 
-Method      | Request URI
+Méthode      | URI de la requête
 :------     | :-----
 GET | /ext/update/policy
 <br />
-**URI parameters**
+**Paramètres d’URI**
 
-- None
+- Aucun
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**
+**Corps de la requête**
 
-- None
+- Aucun
 
-**Response**   
-The response is a JSON array containing the console's system update group memberships. Each object has the following fields:   
+**Réponse**   
+La réponse est un tableau JSON contenant les groupes de mise à jour du système auxquels la console appartient. Chaque objet comprend les champs suivants:   
 
-Id - (String) The ID of the update group.   
-Friendly Name - (String) The display name for the update group.   
-Description - ("String") The description for the update group.
-IsDevKitGroup - (true | false) Indicates whether the update group is for developer builds.
-ResourceSetID - (String) Ignore - used by the system update infrastructure.
+ID - (Chaîne) ID du groupe de mise à jour.   
+Nom convivial - (Chaîne) Nom d’affichage du groupe de mise à jour.   
+Description - («chaîne») Description du groupe de mise à jour.
+IsDevKitGroup - (true | false) Indique si le groupe de mise à jour s’adresse aux builds développeurs.
+ResourceSetID - (Chaîne) Ignore - utilisé par l’infrastructure de mise à jour du système.
 
-**Status code**
+**Code d’état**
 
-This API has the following expected status codes.
+Cette API comporte les codes d’état attendus suivants.
 
-HTTP status code      | Description
+Code d’état HTTP      | Description
 :------     | :-----
-200 | Request was successful
-4XX | Error codes
-5XX | Error codes
+200 | Demande réussie
+4XX | Codes d’erreur
+5XX | Codes d’erreur
 
-## Set a console's system update policy
-You can use this API to switch the console's system update group membership.
+## Définir la stratégie de mise à jour du système d’une console
+Vous pouvez utiliser cette API pour modifier les groupes de mise à jour du système auxquels la console appartient.
 
-Note: Consoles may only be in one system update group at a time.
+Remarque: Les consoles ne peuvent appartenir qu’à un groupe de mise à jour du système à la fois.
 
-**Request**
+**Requête**
 
-You can use the following request to set the system update group membership of a conole.
+Vous pouvez utiliser la requête suivante pour définir le groupe de mise à jour du système auquel une console appartient.
 
-Method      | Request URI
+Méthode      | URI de la requête
 :------     | :-----
 POST | /ext/update/policy
 <br />
-**URI parameters**
+**Paramètres d’URI**
 
-- None
+- Aucun
 
-**Request headers**
+**En-têtes de requête**
 
-- None
+- Aucun
 
-**Request body**   
-The request body is JSON object containing the following fields:   
-GroupIdToJoin - (String) The ID of the system update group you want the console to join.  
-GroupIdToLeave - (String) The ID of the system update group you want the console to leave.
+**Corps de la requête**   
+Le corps de la requête est un objet JSON contenant les champs suivants:   
+GroupIdToJoin - (Chaîne) ID du groupe de mise à jour système que la console doit rejoindre.  
+GroupIdToLeave - (Chaîne) ID du groupe de mise à jour du système que la console doit quitter.
 
-All fields are required.
+Tous les champs sont obligatoires.
 
-The possible GroupIDs are:   
-* No update - "b2dbed33-2845-44cc-a7a1-4a9afb29d8d9"   
-* Latest production recovery - "7432ae99-8c09-48dd-99f9-a2697499e240"   
-* Latest preview recovery - "a8153054-1a1b-47cc-acc9-9aed90c1f8db"    
+Les ID de groupe peuvent avoir les valeurs suivantes:   
+* Aucune mise à jour - «b2dbed33-2845-44cc-a7a1-4a9afb29d8d9»   
+* Dernière récupération de production - «7432ae99-8c09-48dd-99f9-a2697499e240»   
+* Dernière récupération de préversion - «a8153054-1a1b-47cc-acc9-9aed90c1f8db»    
 
-**Response**   
+**Réponse**   
 
-- None
+- Aucun
 
-**Status code**
+**Code d’état**
 
-This API has the following expected status codes.
+Cette API comporte les codes d’état attendus suivants.
 
-HTTP status code      | Description
+Code d’état HTTP      | Description
 :------     | :-----
-200 | Request was successful
-4XX | Error codes
-5XX | Error codes
+200 | Demande réussie
+4XX | Codes d’erreur
+5XX | Codes d’erreur
 
 <br />
-**Available device families**
+**Familles d’appareils disponibles**
 
 * Windows Xbox
 

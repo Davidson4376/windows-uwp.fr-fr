@@ -4,8 +4,8 @@ ms.assetid: DD8FFA8C-DFF0-41E3-8F7A-345C5A248FC2
 description: "Cette rubrique explique comment ajouter du contenu multimédia PlayReady protégé à votre application de plateforme Windows universelle (UWP)."
 title: "Gestion des droits numériques par PlayReady"
 translationtype: Human Translation
-ms.sourcegitcommit: 5cae0870142282eaf2f3db05e0e202db7e74ef26
-ms.openlocfilehash: eef128afc0da6f55a76b8c664f9049dc1ec48da1
+ms.sourcegitcommit: 549826e6c355d6b8150fa20736db20a147ed41e9
+ms.openlocfilehash: 735fdfb04bcf7e4fab8265b294b117be5c614870
 
 ---
 
@@ -20,8 +20,8 @@ La gestion des droits numériques par PlayReady permet aux développeurs de cré
  
 | Rubrique                                                                     | Description                                                                                                                                                                                                                                                                             |
 |---------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Gestion des droits numériques en fonction du matériel](hardware-drm.md)                                           | Cette rubrique explique comment ajouter la gestion des droits numériques en fonction du matériel par PlayReady à votre application du UWP.                                                                                                                                                                 |
-| [Diffusion en continu adaptative avec PlayReady](adaptive-streaming-with-playready.md) | Cet article décrit comment ajouter la diffusion en continu adaptative de contenu multimédia avec la protection de contenu Microsoft PlayReady à une application UWP. Cette fonctionnalité prend actuellement en charge la lecture de contenu vidéo en flux continu HTTP (HLS) et de contenu à diffusion en continu dynamique sur HTTP (DASH). |
+| [Gestion des droits numériques en fonction du matériel](hardware-drm.md)                                           | Cette rubrique explique comment ajouter la gestion des droits numériques en fonction du matériel par PlayReady à votre application UWP.                                                                                                                                                                 |
+| [Streaming adaptatif avec PlayReady](adaptive-streaming-with-playready.md) | Cet article décrit comment ajouter le streaming adaptatif de contenu multimédia avec la protection de contenu Microsoft PlayReady à une application UWP. Cette fonctionnalité prend actuellement en charge la lecture de contenu vidéo en streaming HTTP (HLS) et de contenu en streaming dynamique sur HTTP (DASH). |
 
 ## Nouveautés de la gestion des droits numériques par PlayReady
 
@@ -54,7 +54,7 @@ La liste suivante décrit les nouvelles fonctionnalités et les modifications ap
 -   Miracast est désormais une sortie implicite.
 -   Ajout de l’arrêt sécurisé.
 
-    L’arrêt sécurisé permet à un périphérique PlayReady de confirmer de manière sûre à un service de diffusion multimédia que la lecture multimédia a été stoppée sur un contenu donné. Cette fonctionnalité permet à vos services de diffusion multimédia de contrôler et de rapporter avec précision les limites d’utilisation sur différents appareils pour un compte donné.
+    L’arrêt sécurisé permet à un périphérique PlayReady de confirmer de manière sûre à un service de diffusion multimédia que la lecture multimédia a été stoppée sur un contenu donné. Cette fonctionnalité permet à vos services de streaming multimédia de contrôler et de rapporter avec précision les limites d’utilisation sur différents appareils pour un compte donné.
 
 -   Ajout d’une séparation de licence audio et vidéo.
 
@@ -95,11 +95,12 @@ Un nouvel exemple a été créé pour montrer comment utiliser les nouvelles fon
 
 La section suivante décrit le comportement de l’interface utilisateur lors de l’utilisation de la gestion des droits numériques par PlayReady pour Windows10 avec les stratégies de protection de sortie dans une licencePlayReady.
 
-La gestion des droits numériques par PlayReady prend en charge les niveaux de protection de sortie contenus dans les **spécifications relatives aux droits d’utilisation du contenu multimédia extensible MicrosoftPlayReady**. Ce document est disponible dans la documentation fournie avec les produits sous licence PlayReady.
+La gestion des droits numériques par PlayReady prend en charge les niveaux de protection de sortie contenus dans les **spécifications relatives aux droits d’utilisation du contenu multimédia extensible MicrosoftPlayReady**. Ce document est disponible dans la documentation fournie avec les produits PlayReady sous licence.
 
-> **Remarque** &nbsp;&nbsp;Les valeurs autorisées pour les niveaux de protection de sortie qui peuvent être définis par un serveur de gestion de licences sont régies par les [règles de conformité PlayReady](https://www.microsoft.com/playready/licensing/compliance/).
+> [!NOTE]
+> Les valeurs autorisées pour les niveaux de protection de sortie qui peuvent être définis par un serveur de gestion de licences sont régies par les [règles de conformité PlayReady](https://www.microsoft.com/playready/licensing/compliance/).
 
-La gestion des droits numériques par PlayReady permet la lecture de contenu avec les stratégies de protection de sortie uniquement sur les connecteurs de sortie, comme indiqué dans les règles de conformité PlayReady. Pour plus d’informations sur les conditions relatives aux connecteurs de sortie spécifiées dans les règles de conformité PlayReady, reportez-vous aux [conditions définies pour les règles de conformité et de robustesse de PlayReady](https://www.microsoft.com/playready/licensing/compliance/).
+La gestion des droits numériques par PlayReady permet de lire du contenu avec des stratégies de protection de sortie uniquement sur les connecteurs de sortie, comme indiqué dans les règles de conformité PlayReady. Pour plus d’informations sur les conditions relatives aux connecteurs de sortie spécifiées dans les règles de conformité PlayReady, reportez-vous aux [conditions définies pour les règles de conformité et de robustesse de PlayReady](https://www.microsoft.com/playready/licensing/compliance/).
 
 Cette section est axée sur les scénarios de protection de sortie avec la gestion des droits numériques par PlayReady pour Windows10 et la gestion des droits numériques en fonction du matériel par PlayReady pour Windows10, également disponible sur certains clients Windows. Avec la gestion des droits numériques en fonction du matériel par PlayReady, toutes les protections de sortie sont appliquées à partir de l’implémentationTEE Windows (voir [Gestion des droits numériques en fonction du matériel](hardware-drm.md)). Par conséquent, certains comportements diffèrent de l’utilisation de la gestion des droits numériques en fonction du logiciel par PlayReady:
 
@@ -168,7 +169,7 @@ Le tableau suivant recense les mappages entre les différentes normesOPL dans la
         <td colspan="2">NE transmet PAS le contenu</td>
     </tr>
 </table>
-
+<br/>
 #### Audio
 
 <table>
@@ -207,7 +208,7 @@ Le tableau suivant recense les mappages entre les différentes normesOPL dans la
         <td>NE transmet PAS le contenu</td>
     </tr>
 </table>
-
+<br/>
 ### Miracast
 
 La gestion des droits numériques par PlayReady vous permet de lire le contenu sur la sortie Miracast dès que la protectionHDCP2.0 ou ultérieure est enclenchée. Cependant, sous Windows10, Miracast est considérée comme une sortie *numérique*. Pour plus d’informations sur les scénarios Miracast, reportez-vous aux [règles de conformité PlayReady](https://www.microsoft.com/playready/licensing/compliance/). Le tableau suivant recense les mappages entre les différentes normesOPL dans la licence PlayReady et indique comment la gestion des droits numériques par PlayReady les applique sur les sortiesMiracast.
@@ -248,7 +249,7 @@ La gestion des droits numériques par PlayReady vous permet de lire le contenu s
         <td>NE transmet PAS le contenu</td>
     </tr>
 </table>
-
+<br/>
 ### Restrictions de sortie explicite supplémentaires
 
 Le tableau suivant décrit la gestion des droits numériques par PlayReady pour l’implémentation sous Windows10 des restrictions de protection de sortie vidéo numérique explicite.
@@ -266,8 +267,7 @@ Le tableau suivant décrit la gestion des droits numériques par PlayReady pour 
         <td>La sortie connectée est: une sortie vidéo numérique, Miracast, HDMI, DVI, etc.</td>
         <td>
             <p>
-                Transmet le contenu lorsque:  
-            </p>
+Transmet le contenu lorsque: </p>
             <ul>
                 <li>(a)la largeur de l’image doit être inférieure ou égale à la largeur maximale de l’image en pixels, et la hauteur de l’image doit être inférieure ou égale à la hauteur maximale de l’image en pixels, ou</li>
                 <li>(b)la hauteur de l’image doit être inférieure ou égale à la largeur maximale de l’image en pixels, et la largeur de l’image doit être inférieure ou égale à la hauteur maximale de l’image en pixels</li>
@@ -281,7 +281,7 @@ Le tableau suivant décrit la gestion des droits numériques par PlayReady pour 
         <td>Transmet le contenu avec la protectionHDCP2.2 et le type de flux de contenu défini sur1. Si la protectionHDCP2.2 ne s’enclenche pas ou si le type de flux de contenu ne peut pas être défini sur1, le contenu N’EST PAS transmis. Un niveau de protection de sortie vidéo numérique non compressée d’une valeur supérieure ou égale à 271 doit également être indiqué</td>
     </tr>
 </table>
-
+<br/>
 Le tableau suivant décrit la gestion des droits numériques par PlayReady pour l’implémentation sous Windows10 des restrictions de protection de sortie vidéo analogique explicite.
 
 <table>
@@ -329,8 +329,9 @@ Le tableau suivant décrit la gestion des droits numériques par PlayReady pour 
         <td colspan="2">Ne transmet pas le contenu</td>
     </tr>
 </table>
-
-> **Remarque** Lorsque vous utilisez un dongle d’adaptation tel que «Mini DisplayPort to VGA» pour la lecture, Windows10 considère la sortie comme une sortie vidéo numérique et ne peut donc pas appliquer les stratégies de vidéo analogique.
+<br/>
+> [!NOTE]
+&gt; Quand vous utilisez un dongle d’adaptation tel que «Mini DisplayPort to VGA» pour la lecture, Windows10 considère la sortie comme une sortie vidéo numérique et ne peut donc pas appliquer les stratégies de vidéo analogiques.
 
 Le tableau suivant décrit la gestion des droits numériques par PlayReady pour l’implémentation de Windows10 qui permet la lecture dans d’autres circonstances.
 
@@ -356,7 +357,7 @@ Le tableau suivant décrit la gestion des droits numériques par PlayReady pour 
         <td>**Gestion des droits numériques en fonction du matériel:** NE transmet PAS le contenu</td>
     </tr>
 </table>
-
+<br/>
 ## Prérequis
 
 Avant de commencer la création de votre application pour UWP protégée par PlayReady, le logiciel suivant doit être installé sur votre système :
@@ -436,7 +437,7 @@ Dans les versions précédentes de la gestion des droits numériques par PlayRea
 
 Cette section explique comment ajouter un arrêt sécurisé à votre application pour UWP.
 
-L’arrêt sécurisé permet à un appareil PlayReady de confirmer de manière sûre à un service de diffusion multimédia que la lecture multimédia a été stoppée sur un contenu donné. Cette fonctionnalité permet à vos services de diffusion multimédia de contrôler et de rapporter avec précision les limites d’utilisation sur différents appareils pour un compte donné.
+L’arrêt sécurisé permet à un appareil PlayReady de confirmer de manière sûre à un service de streaming multimédia que la lecture multimédia a été stoppée sur un contenu donné. Cette fonctionnalité permet à vos services de streaming multimédia de contrôler et de rapporter avec précision les limites d’utilisation sur différents appareils pour un compte donné.
 
 Il existe deux scénarios principaux pour l’envoi d’une demande d’arrêt sécurisé :
 
@@ -445,9 +446,20 @@ Il existe deux scénarios principaux pour l’envoi d’une demande d’arrêt s
 
 Pour un exemple d’implémentation de l’arrêt sécurisé, voir le fichier securestop.cs dans l’exemple PlayReady disponible à l’adresse [http://go.microsoft.com/fwlink/p/?linkid=331670&amp;clcid=0x409](http://go.microsoft.com/fwlink/p/?linkid=331670).
 
- 
+## Utiliser la gestion des droits numériques par PlayReady sur XboxOne
 
- 
+Pour utiliser la gestion des droits numériques par PlayReady dans une application UWP sur Xbox One, vous devez ajouter un autre `<DeviceCapability>` au manifeste de l’application. Vous devez l’ajouter manuellement, car aucun paramètre n’est actuellement disponible dans le concepteur de manifeste d’application. Pour le configurer, procédez comme suit:
+
+1. Le projet étant ouvert dans Visual Studio, ouvrez l’**Explorateur de solutions** et cliquez avec le bouton droit sur **Package.appxmanifest**.
+2. Sélectionnez **Ouvrir avec…**, choisissez **Éditeur XML (Texte)**, puis cliquez sur **OK**.
+3. Entre les balises `<Capabilities>`, ajoutez le `<DeviceCapability>` suivant:
+```xml
+<DeviceCapability Name="6a7e5907-885c-4bcb-b40a-073c067bd3d5" />
+```
+4. Enregistrez le fichier.
+
+## Voir également
+- [Lecture de contenu multimédia](media-playback.md)
 
 
 
@@ -455,6 +467,6 @@ Pour un exemple d’implémentation de l’arrêt sécurisé, voir le fichier se
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

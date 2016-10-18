@@ -5,7 +5,7 @@ title: "Créer un sélecteur d’appareil"
 description: "La création d’un sélecteur d’appareil permet de limiter les appareils que vous parcourez lors de l’énumération de ceux-ci."
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 67bf2795a7d555dc5cd236eeafb07009511fe5d3
+ms.openlocfilehash: 091767d6f223ce2b4538dafb1c81595015589013
 
 ---
 # Créer un sélecteur d’appareil
@@ -113,6 +113,6 @@ System.Devices.IpAddress:=[]
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

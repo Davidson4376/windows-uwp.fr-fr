@@ -4,21 +4,21 @@ ms.assetid: 05E418B4-5A62-42BD-BF66-A0762216D033
 description: "Cette rubrique vous montre comment obtenir une image d’aperçu à partir du flux d’aperçu de capture multimédia."
 title: "Obtenir une image d’aperçu"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c512ec92272ab03cfd8e91602018f09ef8225652
+ms.sourcegitcommit: e19fa2a574e6824941c89db1db1e7e69f9e38ae9
+ms.openlocfilehash: d8d5780672592b1888a9c894dcc3ed58ebc2be36
 
 ---
 
 # Obtenir une image d’aperçu
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cette rubrique vous montre comment obtenir une image d’aperçu à partir du flux d’aperçu de capture multimédia.
 
-**Remarque**  
-Cet article repose sur les concepts et sur le code décrits dans [Capturer des photos et des vidéos à l’aide de MediaCapture](capture-photos-and-video-with-mediacapture.md), qui détaille les étapes d’implémentation de capture photo et vidéo de base. Il est recommandé de vous familiariser avec le modèle de capture multimédia de base dans cet article avant de passer à des scénarios de capture plus avancés. Le code de cet article part du principe que votre application possède déjà une instance de MediaCapture initialisée correctement et que vous disposez d’un [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) avec un flux d’aperçu vidéo actif.
+> [!NOTE] 
+> Cet article repose sur les concepts et le code décrits dans [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md), qui décrit comment implémenter la capture photo et vidéo de base. Nous vous recommandons de vous familiariser avec le modèle de capture multimédia de base de cet article avant de passer à des scénarios de capture plus avancés. Le code de cet article part du principe que votre application possède déjà une instance de MediaCapture correctement lancée et que vous disposez d’un [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) avec un flux d’aperçu vidéo actif.
 
-Outre les espaces de noms nécessaires pour la capture multimédia de base, capturer une image d’aperçu requiert les espaces de noms suivants.
+Outre les espaces de noms nécessaires pour la capture multimédia de base, la capture d’une image d’aperçu nécessite les espaces de noms suivants.
 
 [!code-cs[PreviewFrameUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPreviewFrameUsing)]
 
@@ -30,7 +30,7 @@ Si votre objet [**MediaCapture**](https://msdn.microsoft.com/library/windows/app
 
 [!code-cs[GetPreviewFrameAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetPreviewFrameAsync)]
 
-Obtenez une représentation [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) de l’image d’aperçu en accédant à la propriété [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn930926) de l’objet [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917). Pour plus d’informations sur l’enregistrement, le chargement et la modification des images bitmap logicielles, voir [Imagerie](imaging.md).
+Obtenez une représentation [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) de l’image d’aperçu en accédant à la propriété [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn930926) de l’objet [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917). Pour plus d’informations sur l’enregistrement, le chargement et la modification des images bitmap logicielles, voir [Acquisition d’images](imaging.md).
 
 [!code-cs[GetPreviewBitmap](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetPreviewBitmap)]
 
@@ -38,12 +38,12 @@ Vous pouvez également obtenir une représentation [**IDirect3DSurface**](https:
 
 [!code-cs[GetPreviewSurface](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetPreviewSurface)]
 
-**Important**  
-La propriété [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn930926) ou la propriété [**Direct3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn930920) de l’objet **VideoFrame** renvoyé peut être null en fonction de la manière dont vous avez appelé **GetPreviewFrameAsync** et également en fonction de l’appareil sur lequel votre application est exécutée.
+> [!IMPORTANT]
+> La propriété [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn930926) ou la propriété [**Direct3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn930920) de l’objet **VideoFrame** renvoyé peut être null selon la manière dont vous appelez **GetPreviewFrameAsync** et en fonction de l’appareil sur lequel votre application est exécutée.
 
--   Si vous appelez la surcharge de [**GetPreviewFrameAsync**](https://msdn.microsoft.com/library/windows/apps/dn926713) qui accepte un argument **VideoFrame**, l’objet **VideoFrame** renvoyé aura une valeur **SoftwareBitmap** non null et la propriété **Direct3DSurface** sera null.
--   Si vous appelez la surcharge de [**GetPreviewFrameAsync**](https://msdn.microsoft.com/library/windows/apps/dn926712) qui n’a aucun argument sur un appareil utilisant une surface Direct3D pour représenter l’image en interne, la propriété **Direct3DSurface** sera non null et la propriété **SoftwareBitmap** sera null.
--   Si vous appelez la surcharge de [**GetPreviewFrameAsync**](https://msdn.microsoft.com/library/windows/apps/dn926712) qui n’a aucun argument sur un appareil n’utilisant pas une surface Direct3D pour représenter l’image en interne, la propriété **SoftwareBitmap** sera non null et la propriété **Direct3DSurface** sera null.
+> - Si vous appelez la surcharge de [**GetPreviewFrameAsync**](https://msdn.microsoft.com/library/windows/apps/dn926713) qui accepte un argument **VideoFrame**, l’objet **VideoFrame** renvoyé a une valeur **SoftwareBitmap** non null et la propriété **Direct3DSurface** est null.
+> - Si vous appelez la surcharge de [**GetPreviewFrameAsync**](https://msdn.microsoft.com/library/windows/apps/dn926712) qui n’a aucun argument sur un appareil utilisant une surface Direct3D pour représenter l’image en interne, la propriété **Direct3DSurface** est non null et la propriété **SoftwareBitmap** est null.
+> - Si vous appelez la surcharge de [**GetPreviewFrameAsync**](https://msdn.microsoft.com/library/windows/apps/dn926712) qui n’a aucun argument sur un appareil n’utilisant pas une surface Direct3D pour représenter l’image en interne, la propriété **SoftwareBitmap** sera non null et la propriété **Direct3DSurface** sera null.
 
 Votre application doit toujours rechercher une valeur null avant d’essayer d’agir sur des objets renvoyés par les propriétés **SoftwareBitmap** ou **Direct3DSurface**.
 
@@ -53,7 +53,8 @@ Lorsque vous avez fini d’utiliser l’image d’aperçu, veillez à appeler sa
 
 ## Rubriques connexes
 
-* [Capturer des photos et des vidéos à l’aide de MediaCapture](capture-photos-and-video-with-mediacapture.md)
+* [Appareil photo](camera.md)
+* [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
  
 
  
@@ -64,6 +65,6 @@ Lorsque vous avez fini d’utiliser l’image d’aperçu, veillez à appeler sa
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

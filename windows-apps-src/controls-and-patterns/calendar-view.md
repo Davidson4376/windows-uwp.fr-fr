@@ -6,17 +6,30 @@ ms.assetid: d8ec5ba8-7a9d-405d-a1a5-5a1b502b9e64
 label: Calendar view
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
-ms.openlocfilehash: 466d8fe25cb2dfe8ce3b4efef995d9e3cb682dc1
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 4d67cf41bf44904e094476d6350ad68cc46ab52f
 
 ---
-
 # Affichage Calendrier
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 Un affichage Calendrier permet à un utilisateur d’afficher un calendrier qu’il peut parcourir par mois, par année ou par décennie, et d’interagir avec celui-ci. Un utilisateur peut sélectionner une seule date ou une plage de dates. Il n’y a pas de surface de sélection et le calendrier est toujours visible. 
 
-- [**Classe CalendarView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx)
-- [**Événement SelectedDatesChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx)
+<div class="important-apis" >
+<b>API importantes</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx"><strong>Classe CalendarView</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx"><strong>Événement SelectedDatesChanged</strong></a></li>
+</ul>
+
+</div>
+</div>
+
+
+
+
+
 
 ## Est-ce le contrôle approprié?
 Utilisez un affichage Calendrier pour permettre à un utilisateur de sélectionner une date unique ou une plage de dates à partir d’un calendrier toujours visible.
@@ -58,11 +71,11 @@ calendarView1.SelectedDates.Add(new DateTime(1977, 1, 5));
 
 Un utilisateur peut désélectionner une date sélectionnée en cliquant ou en appuyant sur la grille du calendrier.
 
-Vous pouvez gérer l’événement [**SelectedDatesChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx) pour être averti lorsque la collection [**SelectedDates**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddates.aspx) a changé.
+Vous pouvez gérer l’événement [**SelectedDatesChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx) pour être averti quand la collection [**SelectedDates**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddates.aspx) a changé.
 
-> **Remarque** &nbsp;&nbsp;Pour obtenir des informations importantes sur les valeurs de date, consultez [Valeurs DateTime et Calendar](date-and-time.md#datetime-and-calendar-values) dans l’article Contrôles de date et d’heure.
+> **Remarque**&nbsp;&nbsp;Pour obtenir des informations importantes sur les valeurs de date, voir [Valeurs DateTime et Calendar](date-and-time.md#datetime-and-calendar-values) dans l’article Contrôles de date et d’heure.
 
-### Personnalisation de l’apparence de l’affichage Calendrier
+### Personnalisation de l’apparence de l’affichage du calendrier
 
 L’affichage Calendrier est constitué d’éléments XAML définis dans le ControlTemplate et d’éléments visuels rendus directement par le contrôle. 
 - Les éléments XAML définis dans le modèle de contrôle incluent la bordure qui encadre le contrôle, l’en-tête, les boutons Précédent et Suivant et les éléments DayOfWeek. À l’instar de tout contrôle XAML, vous pouvez appliquer un style et redéfinir le modèle de ces éléments. 
@@ -194,6 +207,6 @@ private void CalendarView_CalendarViewDayItemChanging(CalendarView sender,
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

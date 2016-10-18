@@ -4,7 +4,7 @@ title: "Activer l’accès en mode utilisateur sur Windows10IoTStandard"
 description: "Ce didacticiel explique comment activer l’accès en mode utilisateur à GPIO, I2C, SPI et UART sur Windows10IoTStandard."
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: eddb2ca0aaa4bdbc19b2c3015ec8d599e0ef5584
+ms.openlocfilehash: 363e73101157e1c9cc233d87b3964736c260f665
 
 ---
 # Activer l’accès en mode utilisateur sur Windows10IoTStandard
@@ -268,8 +268,8 @@ Si un signal GPIO passe à travers un convertisseur de niveau avant d’atteindr
 
 Windows prend en charge deux modèles de numérotation de broche: 
 
-* Numérotation séquentielle de broche: les utilisateurs voient des nombres comme 0, 1, 2... jusqu’au nombre de broches exposées. 0 est la première ressource GpioIo déclarée dans ASL, 1 est la deuxième ressource GpioIo déclarée dans ASL et ainsi de suite. 
-* Numérotation native de broche: les utilisateurs, voit les numéros de broche spécifiés dans les descripteurs GpioIo, par exemple, 4, 5, 12, 13,... .  
+* Numérotation séquentielle de broche: les utilisateurs voient des nombres comme 0, 1, 2. jusqu’au nombre de broches exposées. 0 est la première ressource GpioIo déclarée dans ASL, 1 est la deuxième ressource GpioIo déclarée dans ASL et ainsi de suite. 
+* Numérotation native de broche: les utilisateurs, voit les numéros de broche spécifiés dans les descripteurs GpioIo, par exemple, 4, 5, 12, 13,. .  
 
 ```cpp
 Package (2) { “GPIO-UseDescriptorPinNumbers”, 1 }, 
@@ -1086,6 +1086,6 @@ GpioInt(Edge, ActiveBoth, Shared, $($_.PullConfig), 0, "\\_SB.GPI0",) { $($_.Pin
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

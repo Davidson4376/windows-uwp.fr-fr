@@ -4,8 +4,8 @@ ms.assetid: 7a61c328-77be-4614-b117-a32a592c9efe
 description: "Découvrez les solutions aux problèmes de développement courants liés aux bibliothèques de publicités Microsoft dans les applications JavaScript/HTML."
 title: "Guide de résolution des problèmes pour HTML et JavaScript"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: af4ea6f3360ea85d1c70ec9b757db65ec23c88af
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: 2b86d307dfbaf6d82e99a323762cfb5515f865da
 
 
 ---
@@ -13,7 +13,7 @@ ms.openlocfilehash: af4ea6f3360ea85d1c70ec9b757db65ec23c88af
 # Guide de résolution des problèmes pour HTML et JavaScript
 
 
-\[ Mise à jour pour les applicationsUWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+
 
 Cette rubrique contient des solutions aux problèmes de développement courants liés aux bibliothèques de publicités Microsoft dans les applications JavaScript/HTML.
 
@@ -383,6 +383,6 @@ Cette rubrique contient des solutions aux problèmes de développement courants 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

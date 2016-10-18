@@ -3,8 +3,8 @@ title: Automatisation du lancement des applications UWP Windows10
 description: "Les développeurs peuvent utiliser l’activation de protocole et de lancement pour automatiser le lancement de leurs jeux ou apps UWP pour les tests automatisés."
 author: listurm
 translationtype: Human Translation
-ms.sourcegitcommit: adf2d16f9c208631f91fbcad19d1ea8087cd9cb5
-ms.openlocfilehash: ae2f80a915f4aed90c269c37a11d01a2f6c9849e
+ms.sourcegitcommit: c5d0f685f4c733cbe4ba4c07aab565b888ddfe58
+ms.openlocfilehash: 4b31ec06b1ded4882d26cffed029eb8179ff47c3
 
 ---
 
@@ -45,7 +45,7 @@ L’application peut être activée par protocole à l’aide de la ligne de com
   scheme://username:password@host:port/path.extension?query#fragment
   ```
 
-L’objet URI est capable d’analyser une chaîne URI dans ce format. Pour plus d’informations, voir [Classe URI (MSDN)](https://msdn.microsoft.com/en-us/library/windows/apps/windows.foundation.uri.aspx). 
+L’objet URI est capable d’analyser une chaîne URI dans ce format. Pour plus d’informations, voir [Classe URI (MSDN)](https://msdn.microsoft.com/library/windows/apps/windows.foundation.uri.aspx). 
 
 Exemples:
 
@@ -133,7 +133,7 @@ Cette option ne prend pas en charge les arguments de ligne de commande.
 
 ### Application de lancement
 
-Pour le lancement, vous pouvez créer une application distincte qui prend en charge l’utilisation de COM. L’exemple suivant montre le code C++ pour le lancement avec l’activation de lancement dans un programme de lancement. Grâce à ce code, vous pouvez créer un objet **ApplicationActivationManager** et appeler **ActivateApplication** en passant l’ID de modèle utilisateur de l’application trouvé précédemment et les arguments. Pour plus d’informations sur les autres paramètres, voir [Méthode IApplicationActivationManager::ActivateApplication (MSDN)](https://msdn.microsoft.com/en-us/library/windows/desktop/hh706903(v=vs.85).aspx).
+Pour le lancement, vous pouvez créer une application distincte qui prend en charge l’utilisation de COM. L’exemple suivant montre le code C++ pour le lancement avec l’activation de lancement dans un programme de lancement. Grâce à ce code, vous pouvez créer un objet **ApplicationActivationManager** et appeler **ActivateApplication** en passant l’ID de modèle utilisateur de l’application trouvé précédemment et les arguments. Pour plus d’informations sur les autres paramètres, voir [Méthode IApplicationActivationManager::ActivateApplication (MSDN)](https://msdn.microsoft.com/library/windows/desktop/hh706903(v=vs.85).aspx).
 
 ```
 #include <ShObjIdl.h>
@@ -207,8 +207,12 @@ Platform::String^ argval = launchArgs->Arguments;
 ## Résumé
 En résumé, vous pouvez utiliser différentes méthodes pour lancer l’application UWP. Selon la configuration requise et les cas d’usage, certaines méthodes peuvent être mieux adaptées que d’autres. 
 
+## Voir également
+- [UWP sur XboxOne](index.md)
 
 
-<!--HONumber=Jun16_HO4-->
+
+
+<!--HONumber=Aug16_HO3-->
 
 

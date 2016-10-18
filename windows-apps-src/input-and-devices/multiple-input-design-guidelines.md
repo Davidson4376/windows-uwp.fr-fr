@@ -7,7 +7,7 @@ label: Multiple inputs
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 71c5994e1a308993aef6603ba77ab5e695bde293
+ms.openlocfilehash: d4238e0d1becee719148b38acf5a91d74230601d
 
 ---
 
@@ -45,6 +45,6 @@ L’utilisateur sélectionne une photo en appuyant de façon prolongée dessus, 
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

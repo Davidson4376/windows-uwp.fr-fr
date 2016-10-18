@@ -5,7 +5,7 @@ title: "Passer de Windows Runtime 8.x à UWP"
 ms.assetid: ac163b57-dee0-43fa-bab9-8c37fbee3913
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 3aa24e61482054dadd9b798063d46abf36623e9b
+ms.openlocfilehash: e1f0e9727a36536fe292902fa7313dcc851932f6
 
 ---
 
@@ -80,6 +80,6 @@ Si vous disposez d’un projet Windows 10 que vous avez créé avec Visual Studi
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

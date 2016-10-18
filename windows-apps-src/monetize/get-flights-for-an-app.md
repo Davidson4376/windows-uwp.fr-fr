@@ -1,81 +1,81 @@
 ---
 author: mcleanbyron
 ms.assetid: B0AD0B8E-867E-4403-9CF6-43C81F3C30CA
-description: Use this method in the Windows Store submission API to retrieve package flight information for an app that is registered to your Windows Dev Center account.
-title: Get package flights for an app using the Windows Store submission API
+description: "Utilisez cette méthode de l’API de soumission du Windows Store pour récupérer des informations sur une version d’évaluation du package pour une application inscrite dans votre compte du Centre de développement Windows."
+title: "Obtenir des versions d’évaluation du package pour une application à l’aide de l’API de soumission du Windows Store"
 translationtype: Human Translation
 ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
 ms.openlocfilehash: a49e4f2cf7110e12dd33a5baa37e328a39bae348
 
 ---
 
-# Get package flights for an app using the Windows Store submission API
+# Obtenir des versions d’évaluation du package pour une application à l’aide de l’API de soumission du Windows Store
 
 
 
 
-Use this method in the Windows Store submission API to list the package flights for an app that is registered to your Windows Dev Center account. For more information about package flights, see [Package flights](https://msdn.microsoft.com/windows/uwp/publish/package-flights).
+Utilisez cette méthode dans l’API de soumission du Windows Store pour répertorier les versions d’évaluation du package pour une application inscrite dans votre compte du Centre de développement Windows. Pour plus d’informations sur les versions d’évaluation du package, voir [Versions d’évaluation du package](https://msdn.microsoft.com/windows/uwp/publish/package-flights).
 
-## Prerequisites
+## Conditions préalables
 
-To use this method, you need to first do the following:
+Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
 
-* If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Windows Store submission API.
-* [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
+* Si ce n’est pas déjà le cas, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
+* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 
->**Note**&nbsp;&nbsp;This method can only be used for Windows Dev Center accounts that have been given permission to use the Windows Store submission API. Not all accounts have this permission enabled.
+>**Remarque**&nbsp;&nbsp;Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
 
-## Request
+## Requête
 
-This method has the following syntax. See the following sections for usage examples and descriptions of the header and request body.
+Cette méthode présente la syntaxe suivante. Voir les sections suivantes pour obtenir des exemples d’utilisation et une description de l’en-tête et du corps de la requête.
 
-| Method | Request URI                                                      |
+| Méthode | URI de la requête                                                      |
 |--------|------------------------------------------------------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights``` |
 
 <span/>
  
-### Request header
+### En-tête de requête
 
-| Header        | Type   | Description                                                                 |
+| En-tête        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
+| Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;. |
 
 <span/>
 
-### Request parameters
+### Paramètres de la requête
 
-| Name        | Type   | Description  |  Required  |    
+| Nom        | Type   | Description  |  Requis  |    
 |---------------|--------|----------------------------------|
-| applicationId | string | Required. The Store ID of the app for which you want to retrieve the package flights. For more information about the Store ID, see [View app identity details](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |  Yes  |
-|  top  |  int  |  The number of items to return in the request (that is, the number of package flights to return). If the app has more package flights than the value you specify in the query, the response body includes a relative URI path that you can append to the method URI to request the next page of data.  |  No  |
-|  skip  |  int  |  The number of items to bypass in the query before returning the remaining items. Use this parameter to page through data sets. For example, top=10 and skip=0 retrieves items 1 through 10, top=10 and skip=10 retrieves items 11 through 20, and so on.  |  No  |
+| applicationId | chaîne | Obligatoire. ID WindowsStore de l’application pour laquelle vous voulez récupérer les versions d’évaluation du package. Pour plus d’informations sur l’ID Windows Store, voir [Visualiser les informations d’identité des applications](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |  Oui  |
+|  top  |  entier  |  Nombre d’éléments à retourner dans la requête (autrement dit, nombre de versions d’évaluation du package à retourner). Si l’application comporte plus de versions d’évaluation du package que la valeur que vous spécifiez dans la requête, le corps de la réponse comprend un chemin d’URI relatif que vous pouvez ajouter à l’URI de la méthode pour solliciter la page suivante de données.  |  Non  |
+|  skip  |  entier  |  Nombre d’éléments à ignorer dans la requête avant de retourner les éléments restants. Utilisez ce paramètre pour parcourir des ensembles de données. Par exemple, top=10 et skip=0 permettent de récupérer les éléments 1 à10, top=10 et skip=10 permettent de récupérer les éléments 11 à20, et ainsi de suite.  |  Non  |
 
 <span/>
 
-### Request body
+### Corps de la requête
 
-Do not provide a request body for this method.
+Ne fournissez pas de corps de requête pour cette méthode.
 
-### Request examples
+### Exemples de requête
 
-The following example demonstrates how to list all the package flights for an app.
+L’exemple suivant montre comment répertorier toutes les versions d’évaluation du package pour une application.
 
 ```
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/listflights HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-The following example demonstrates how to list the first package flight for an app.
+L’exemple suivant montre comment répertorier la première version d’évaluation du package pour une application.
 
 ```
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/listflights?top=1 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-## Response
+## Réponse
 
-The following example demonstrates the JSON response body returned by a successful request for the first package flight for an app with three total package flights. For more details about the values in the response body, see the following section.
+L’exemple suivant illustre le corps de réponse JSON renvoyé par une requête réussie de la première version d’évaluation du package pour une application qui en comporte trois au total. Pour plus d’informations sur les valeurs figurant dans le corps de réponse, voir la section suivante.
 
 ```json
 {
@@ -101,33 +101,33 @@ The following example demonstrates the JSON response body returned by a successf
 }
 ```
 
-### Response body
+### Corps de la réponse
 
-| Value      | Type   | Description                                                                                                                                                                                                                                                                         |
+| Valeur      | Type   | Description                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| @nextLink  | string | If there are additional pages of data, this string contains a relative path that you can append to the base ```https://manage.devcenter.microsoft.com/v1.0/my/``` request URI to request the next page of data. For example, if the *top* parameter of the initial request body is set to 2 but there are 4 package flights for the app, the response body will include a @nextLink value of ```applications/{applicationid}/listflights/?skip=2&top=2```, which indicates that you can call ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationid}/listflights/?skip=2&top=2``` to request the next 2 package flights. |
-| value      | array  | An array of objects that provide information about package flights for the specified app. For more information about the data in each object, see [Flight resource](get-app-data.md#flight-object).                                                                                                                           |
-| totalCount | int    | The total number of rows in the data result for the query (that is, the total number of package flights for the specified app).                                                                                                                                                                                                                             |
+| @nextLink  | chaîne | S’il existe des pages supplémentaires de données, cette chaîne contient un chemin relatif que vous pouvez ajouter à l’URI de requête ```https://manage.devcenter.microsoft.com/v1.0/my/``` de base pour solliciter la page suivante de données. Par exemple, si le paramètre *top* du corps de requête initial a la valeur 2, mais qu’il existe 4versions d’évaluation du package pour l’application, le corps de réponse comprendra une valeur @nextLink de ```applications/{applicationid}/listflights/?skip=2&top=2```, ce qui indique que vous pouvez appeler ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationid}/listflights/?skip=2&top=2``` pour solliciter les 2versions d’évaluation du package suivantes. |
+| value      | tableau  | Tableau d’objets qui fournissent des informations sur les versions d’évaluation du package pour l’application spécifiée. Pour plus d’informations sur les données incluses dans chaque objet, voir [Ressource de version d’évaluation du package ](get-app-data.md#flight-object).                                                                                                                           |
+| totalCount | entier    | Nombre total de lignes dans les résultats de données pour la requête (autrement dit, nombre total de versions d’évaluation du package pour l’application spécifiée).                                                                                                                                                                                                                             |
 
 <span/>
 
-## Error codes
+## Codes d’erreur
 
-If the request cannot be successfully completed, the response will contain one of the following HTTP error codes.
+Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’erreur HTTP suivants.
 
-| Error code |  Description   |
+| Code d’erreur |  Description   |
 |--------|------------------|
-| 404  | No package flights were found. |
-| 409  | The app uses a Dev Center dashboard feature that is [currently not supported by the Windows Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
+| 404  | Aucune version d’évaluation du package n’a été trouvée. |
+| 409  | L’application utilise une fonctionnalité du tableau de bord du Centre de développement qui n’est [actuellement pas prise en charge par l’API de soumission du Windows Store](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
 
 <span/>
 
-## Related topics
+## Rubriques connexes
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
-* [Get all apps](get-all-apps.md)
-* [Get an app](get-an-app.md)
-* [Get add-ons for an app](get-add-ons-for-an-app.md)
+* [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md)
+* [Obtenir toutes les applications](get-all-apps.md)
+* [Obtenir une application](get-an-app.md)
+* [Obtenir des extensions pour une application](get-add-ons-for-an-app.md)
 
 
 

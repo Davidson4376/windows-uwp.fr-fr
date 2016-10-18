@@ -4,15 +4,15 @@ Description: "Le rapport Canaux et conversions dans le tableau de bord du Centre
 title: Rapport sur les canaux et conversions
 ms.assetid: C359B9FB-A17B-4A8E-B8EE-19F2F98AA4FF
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: e82299f156a7e4f82e9219dc9b0ef6171e72c74e
+ms.sourcegitcommit: 3afdf00864e023d913b635beef0c506735881b23
+ms.openlocfilehash: 48128577d41a9810062288ae908646c391aae849
 
 ---
 
 # Rapport sur les canaux et conversions
 
 
-Le rapport **Canaux et conversions** dans le tableau de bord du Centre de développement Windows vous permet de voir comment les clients de Windows 10 sont arrivés à votre application. Il vous permet de suivre les [campagnes de promotion personnalisées](create-a-custom-app-promotion-campaign.md) pour votre application ou ses produits in-app, et de voir combien de ces visites ont généré des nouvelles acquisitions. Vous pouvez afficher ces données dans votre tableau de bord ou [télécharger le rapport](download-analytic-reports.md) et le consulter hors connexion.
+Le rapport **Canaux et conversions** dans le tableau de bord du Centre de développement Windows vous permet de voir comment les clients de Windows10 sont arrivés à votre application. Il vous permet de suivre les [campagnes de promotion personnalisées](create-a-custom-app-promotion-campaign.md) pour votre application ou ses modules complémentaires, et de voir combien de ces visites ont généré des nouvelles acquisitions. Vous pouvez afficher ces données dans votre tableau de bord ou [télécharger le rapport](download-analytic-reports.md) et le consulter hors connexion.
 
 > **Important** Ce rapport n’affiche que les données de conversion et les vues de page des clients sur Windows 10.
 
@@ -25,9 +25,9 @@ Dans ce rapport, un *canal* fait référence à la méthode par laquelle un clie
 -   **Moteur de recherche :** le client suivait un lien vers la description de votre application qui a été renvoyée par un moteur de recherche en ligne.
 -   **Campagne personnalisée :** le client suivait un lien qui a utilisé un [ID de campagne personnalisée](create-a-custom-app-promotion-campaign.md).
 
-Une *vue de page* signifie qu'un client a consulté la description de votre application dans le Store, soit via le Store sur le web, soit depuis l’application du Store sur Windows 10.
+Une *vue de page* signifie qu’un client a consulté la description de votre application dans le Windows Store, soit via le Windows Store sur le web, soit depuis l’application du Windows Store sur Windows10.
 
-Une *conversion* signifie qu’un client a obtenu une licence pour votre application (qu’elle soit payante ou gratuite) ou un produit in-app.
+Une *conversion* signifie qu’un client a obtenu une licence pour votre application (qu’elle soit payante ou gratuite) ou un module complémentaire.
 
 > **Important** Les données de conversion ne sont disponibles que pour vos campagnes personnalisées. Pour les autres types de canal, seules les données sur les vues de page sont incluses dans ce rapport.
 
@@ -60,21 +60,21 @@ L’onglet **Conversions** de ce graphique indique le nombre de conversions (nou
 ## Performances de campagne par canal
 
 
-Le graphique **Performances de campagne par canal** affiche le nombre de vues de page pour chaque type de canal. Il indique également le nombre de conversions d’application et de produit in-app depuis vos campagnes personnalisées sur la période sélectionnée.
+Le graphique **Performances de campagne par canal** affiche le nombre de vues de page pour chaque type de canal. Il indique également le nombre de conversions d’application et de module complémentaire depuis vos campagnes personnalisées sur la période sélectionnée.
 
 ## Vues et conversions de la page de l’application par ID de campagne
 
 
 Le graphique **Vues et conversions de la page de l’application par ID de campagne** affiche le nombre de vues de page et les conversions pour chacun de vos [ID de campagne](create-a-custom-app-promotion-campaign.md) pendant la période sélectionnée.
 
-##  Conversions de produit in-app par ID de campagne
+##  Conversions de module complémentaire par ID de campagne
 
 
-Le graphique **Conversions de produit in-app par ID de campagne** indique le nombre de conversions de produit in-app par ID de campagne personnalisée.
+Le graphique **Conversions de module complémentaire par ID de campagne** indique le nombre de conversions de module complémentaire par ID de campagne personnalisée.
 
-Lorsqu’une installation d’application est comptabilisée comme une conversion pour une campagne personnalisée, tout achat de produit in-app dans cette application est également comptabilisé comme une conversion pour la même campagne personnalisée.
+Lorsqu’une installation d’application est comptabilisée comme une conversion pour une campagne personnalisée, tout achat de module complémentaire dans cette application est également comptabilisé comme une conversion pour la même campagne personnalisée.
 
-Par défaut, ce rapport inclut les produits in-app pour lesquels une conversion provient d’un lien utilisant un ID de campagne personnalisée pendant la période sélectionnée. Pour afficher les données d'un produit in-app spécifique, sélectionnez-le dans **Filtres de section**.
+Par défaut, ce rapport inclut les modules complémentaires pour lesquels une conversion provient d’un lien utilisant un ID de campagne personnalisée pendant la période sélectionnée. Pour afficher les données d’un module complémentaire spécifique, sélectionnez-le dans **Filtres de section**.
 
 ## Répartition des conversions
 
@@ -84,20 +84,20 @@ Le graphique **Répartition des conversions** affiche des détails supplémentai
 -   **Campagne personnalisée :** affiche les ID de campagne spécifiques.
 -   **Site web externe :** affiche le domaine du site web lié à l'application.
 -   **Trafic du magasin :** indique si le client utilisait l’application cliente du magasin ou le magasin en ligne.
--   **Moteur de recherche :** affiche les termes de recherche spécifiques utilisés par le client.
+-   **Moteur de recherche:** affiche les termes de recherche spécifiques utilisés par le client.
 
-Pour les campagnes personnalisées, vous pouvez également voir le nombre de conversions d’application et de conversions de produit in-app résultant de chaque ID de campagne spécifique.
-
- 
+Pour les campagnes personnalisées, vous pouvez également voir le nombre de conversions d’application et de conversions de module complémentaire résultant de chaque ID de campagne spécifique.
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Aug16_HO3-->
 
 

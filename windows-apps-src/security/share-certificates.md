@@ -5,7 +5,7 @@ ms.assetid: 159BA284-9FD4-441A-BB45-A00E36A386F9
 author: awkoren
 translationtype: Human Translation
 ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 2bb1b601e1ab35115c88692f6c36dccc70836541
+ms.openlocfilehash: 189e95695be3621754414708f1a394fe4cea4ecf
 
 ---
 
@@ -32,7 +32,7 @@ Cet article utilise Microsoft Internet Information Services (IIS) à titre d’e
 ## Créer et publier un service web sécurisé
 
 
-1.  Exécutez Microsoft Visual Studio en tant qu’administrateur et sélectionnez **Nouveau projet** dans la page de démarrage. Un accès administrateur est requis pour publier un service web sur un serveur IIS. Dans la boîte de dialogue Nouveau projet, sélectionnez **.NET Framework 3.5**. Sélectionnez **Visual C#** -&gt;**Web** -&gt;**Visual Studio** -&gt;**Application de service Web ASP.NET**. Nommez l’application «FirstContosoBank». Cliquez sur **OK** pour créer le projet.
+1.  Exécutez Microsoft Visual Studio en tant qu’administrateur et sélectionnez **Nouveau projet** dans la page de démarrage. Un accès administrateur est requis pour publier un service web sur un serveur IIS. Dans la boîte de dialogue Nouveau projet, sélectionnez **.NET Framework3.5**. Sélectionnez **VisualC#** -&gt; **Web** -&gt; **Visual Studio** -&gt; **Application de service Web ASP.NET**. Nommez l’application «FirstContosoBank». Cliquez sur **OK** pour créer le projet.
 2.  Dans le fichier **Service1.asmx.cs**, remplacez la méthode Web **HelloWorld** par défaut par la méthode « Login » suivante.
     ```cs
             [WebMethod]
@@ -205,6 +205,6 @@ Si aucun certificat client n’est disponible, l’utilisateur doit ajouter un c
 Vous pouvez utiliser ces étapes pour créer plusieurs applications utilisant le même certificat utilisateur pour accéder à des services web sécurisés identiques ou différents.
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

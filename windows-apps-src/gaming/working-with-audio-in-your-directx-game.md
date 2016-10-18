@@ -5,7 +5,7 @@ description: "Apprenez à développer et à incorporer de la musique et des sons
 ms.assetid: ab29297a-9588-c79b-24c5-3b94b85e74a8
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 98896d4966ee2adb3bf494dcba22656fc8bb6414
+ms.openlocfilehash: 51e941becdaa55de3ec81757dddf01e6c04aed2d
 
 ---
 
@@ -320,6 +320,6 @@ Cet article s’adresse aux développeurs de Windows10 qui développent des appl
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -7,7 +7,7 @@ label: Rotation
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: a43bdd27ff7b79f561789a14d1a8e6caed08dc89
+ms.openlocfilehash: 2fe8814d98dd5ce4471530c7367b8ad266cc6b05
 
 ---
 
@@ -128,6 +128,6 @@ Windows 8 prend en charge trois types de rotations: libre, contrainte et combin√
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

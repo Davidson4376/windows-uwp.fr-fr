@@ -5,7 +5,7 @@ title: "Composants UWP et optimisation de l’interopérabilité"
 description: "Créez des applications de plateforme Windows universelle (UWP) qui utilisent des composants UWP et l’interopérabilité entre les types natifs et managés, tout en évitant les problèmes de performances liés à l’interopérabilité."
 translationtype: Human Translation
 ms.sourcegitcommit: 5c7a49558ed11f82b7afea1ea96271c45c2f9139
-ms.openlocfilehash: b9300b3feb1e5229951f3e1ebe454b61ba8065ae
+ms.openlocfilehash: bfbf4a630b1874f718a1ebd41caf96c72e2f05c5
 
 ---
 # Composants UWP et optimisation de l’interopérabilité
@@ -90,6 +90,6 @@ Toutes les suggestions pour obtenir des performances optimales dans les applicat
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -5,7 +5,7 @@ title: "Meilleures pratiques en matière de performances lors du démarrage de v
 description: "Créez des applications de plateforme Windows universelle (UWP) dont le temps de démarrage est optimal en améliorant la gestion du lancement et de l’activation."
 translationtype: Human Translation
 ms.sourcegitcommit: 5411faa3af685e1a285119ba456a440725845711
-ms.openlocfilehash: 46e78612c0f4391b9448ea9bd7a001722fb08a28
+ms.openlocfilehash: 2224c6c2ca0a606492d381af85e665170601f054
 
 ---
 # Meilleures pratiques en matière de performances lors du démarrage de votre application
@@ -364,6 +364,6 @@ C’est la raison pour laquelle nous vous conseillons d’utiliser la mise en ca
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -5,7 +5,7 @@ title: "Utiliser le capteur de luminosité"
 description: "Découvrez comment utiliser le capteur de luminosité ambiante pour détecter les changements de luminosité."
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 289d50ff4f45147c46bd66c526cf109d8fdf6d32
+ms.openlocfilehash: fe1b9a508e3b540f202e187dbe1696423c7cd373
 
 ---
 # Utiliser le capteur de luminosité
@@ -172,6 +172,6 @@ Ces nouvelles valeurs sont écrites dans un TextBlock identifié dans le code XA
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

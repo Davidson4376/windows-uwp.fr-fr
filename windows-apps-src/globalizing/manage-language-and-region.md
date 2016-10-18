@@ -7,7 +7,7 @@ label: Manage language and region
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: 294f087fffeefda67ddacd09636915144bf18ff4
+ms.openlocfilehash: 5a7519d9ea7a121e3e3087debba6d6193b1d8155
 
 ---
 
@@ -47,7 +47,7 @@ Pour obtenir la liste des balises de langue prises en charge par le WindowsStore
 
 La liste des préférences linguistiques de l’utilisateur est une liste ordonnée des langues de l’utilisateur, classées par ordre de préférence.
 
-L’utilisateur définit cette liste dans **Paramètres**&gt;**Heure et langue**&gt;**Région et langue**. Il peut également utiliser le **Panneau de configuration**&gt;**Horloge, langue et région**.
+L’utilisateur définit cette liste dans **Paramètres** &gt; **Heure et langue** &gt; **Région et langue**. Il peut aussi utiliser le **Panneau de configuration** &gt; **Horloge, langue et région**.
 
 La liste des préférences linguistiques de l’utilisateur peut contenir plusieurs langues et des variantes régionales ou spécifiques. Par exemple, l’utilisateur peut préférer fr-CA, mais peut également comprendre en-GB.
 
@@ -124,11 +124,11 @@ Voir la section Remarques ci-dessous pour consulter des exemples.
 
 ### <span id="Set_the_HTTP_Accept_Language_header."></span><span id="set_the_http_accept_language_header."></span><span id="SET_THE_HTTP_ACCEPT_LANGUAGE_HEADER."></span>Définissez l’en-tête HTTP Accept-Language.
 
-Les requêtes HTTP envoyées à partir d’applications du WindowsStore et d’applications de bureau dans des requêtes web standard et XMLHttpRequest (XHR) utilisent l’en-tête HTTP Accept-Language standard. Par défaut, l’en-tête HTTP est défini conformément aux langues de l’utilisateur, dans l’ordre de préférence de ce dernier, comme spécifié dans **Paramètres**&gt;**Heure et langue**&gt;**Région et langue**. Chaque langue de la liste est développée pour inclure les éléments neutres de la langue et un poids (q). Par exemple, la liste des langues d’un utilisateur comprenant fr-FR et en-US produit un en-tête Accept-Language HTTP comprenant fr-FR, fr, en-US, en («fr-FR,fr;q=0.8,en-US;q=0.5,en;q=0.3»).
+Les requêtes HTTP envoyées à partir d’applications du WindowsStore et d’applications de bureau dans des requêtes web standard et XMLHttpRequest (XHR) utilisent l’en-tête HTTP Accept-Language standard. Par défaut, l’en-tête HTTP est défini conformément aux préférences linguistiques de l’utilisateur, dans l’ordre de préférence qu’il a spécifié dans **Paramètres** &gt; **Heure et langue** &gt; **Région et langue**. Chaque langue de la liste est développée pour inclure les éléments neutres de la langue et un poids (q). Par exemple, la liste des langues d’un utilisateur comprenant fr-FR et en-US produit un en-tête Accept-Language HTTP comprenant fr-FR, fr, en-US, en («fr-FR,fr;q=0.8,en-US;q=0.5,en;q=0.3»).
 
 ### <span id="Use_the_APIs_in_the_Windows.Globalization_namespace."></span><span id="use_the_apis_in_the_windows.globalization_namespace."></span><span id="USE_THE_APIS_IN_THE_WINDOWS.GLOBALIZATION_NAMESPACE."></span>Utilisez les API de l’espace de noms Windows.Globalization.
 
-En règle générale, les éléments d’API de l’espace de noms [**Windows.Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) utilisent la liste des langues de l’application pour déterminer la langue. Si aucune de ces langues ne possède de format correspondant, les paramètres régionaux de l’utilisateur sont utilisés. Il s’agit des paramètres régionaux utilisés pour l’horloge système. Les paramètres régionaux utilisateur sont disponibles dans **Paramètres**&gt;**Heure et langue**&gt;**Région et langue**&gt;**Paramètres de date, d’heure et régionaux supplémentaires**&gt;**Région : Modifier les formats de date, d’heure ou de nombre**. Les API **Windows.Globalization** acceptent également une substitution pour spécifier une liste de langues, à utiliser à la place de la liste des langues de l’application.
+En règle générale, les éléments d’API de l’espace de noms [**Windows.Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) utilisent la liste des langues de l’application pour déterminer la langue. Si aucune de ces langues ne possède de format correspondant, les paramètres régionaux de l’utilisateur sont utilisés. Il s’agit des paramètres régionaux utilisés pour l’horloge système. Les paramètres régionaux utilisateur sont accessibles à partir de **Paramètres** &gt; **Heure et langue** &gt; **Région et langue** &gt; **Paramètres de date, d’heure et régionaux supplémentaires** &gt; **Région: Modifier les formats de date, d’heure ou de nombre**. Les API **Windows.Globalization** permettent aussi l’utilisation d’une liste de langues de substitution à la place de celle de l’application.
 
 [**Windows.Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) possède également un objet [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) qui est fourni en tant qu’objet Application d’assistance. Il permet aux applications d’inspecter des détails relatifs à la langue, tels que le script de la langue, le nom complet et le nom natif.
 
@@ -224,6 +224,6 @@ Le tableau ci-dessous contient des exemples de ce que l’utilisateur verrait da
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

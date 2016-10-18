@@ -1,19 +1,19 @@
 ---
 author: mcleanbyron
 ms.assetid: FA55C65C-584A-4B9B-8451-E9C659882EDE
-description: "Utilisez cette méthode dans l’API d’achat du WindowsStore pour octroyer une application gratuite ou un produit intégré à l’application (PIA) gratuit à un utilisateur donné."
+description: "Utilisez cette méthode dans l’API d’achat du WindowsStore pour octroyer une application ou extension gratuite à un utilisateur donné."
 title: Octroyer des produits gratuits
 translationtype: Human Translation
-ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
-ms.openlocfilehash: 64c600460c1cbcbd6bb486649e2bc98298ca9dbe
+ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
+ms.openlocfilehash: a04918a562d132f6a721b96c7f4ad78218eb8819
 
 ---
 
 # Octroyer des produits gratuits
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Utilisez cette méthode dans l’API d’achat du Windows Store pour octroyer une application gratuite ou un produit intégré à l’application (PIA) gratuit à un utilisateur donné.
+
+Utilisez cette méthode dans l’API d’achat du WindowsStore pour octroyer une application ou extension gratuite (également connue sous le nom de produit in-app ou PIA) à un utilisateur donné.
 
 Actuellement, vous ne pouvez octroyer que des produits gratuits. Si votre service tente d’utiliser cette méthode pour octroyer un produit qui n’est pas gratuit, cette méthode retourne une erreur.
 
@@ -41,7 +41,7 @@ Pour plus d’informations, voir [Afficher et octroyer des produits à partir d�
 
 | En-tête         | Type   | Description                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
-| Authorization  | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer**&lt;*token*&gt;.                           |
+| Authorization  | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;.                           |
 | Host           | chaîne | Doit être défini sur la valeur **collections.mp.microsoft.com**.                                            |
 | Content-Length | nombre | Longueur du corps de la requête.                                                                       |
 | Content-Type   | chaîne | Spécifie le type de requête et de réponse. Actuellement, la seule valeur prise en charge est **application/json**. |
@@ -58,7 +58,7 @@ Pour plus d’informations, voir [Afficher et octroyer des produits à partir d�
 | language       | chaîne | Langue de l’utilisateur.                                                                                                                                                                                                                                                                                              | Oui      |
 | market         | chaîne | Marché de l’utilisateur.                                                                                                                                                                                                                                                                                                | Oui      |
 | orderId        | GUID   | GUID généré pour la commande. Cette valeur doit être propre à l’utilisateur, mais il n’est pas impératif qu’elle soit unique dans toutes les commandes.                                                                                                                                                                                              | Oui      |
-| productId      | chaîne | L’ID WindowsStore du catalogue du WindowsStore. L’ID WindowsStore est disponible dans la page [Identité de l’application](../publish/view-app-identity-details.md) du tableau de bord du Centre de développement. Exemple d’ID WindowsStore: 9WZDNCRFJ3Q8. | Oui      |
+| productId      | chaîne | ID WindowsStore issue du catalogue du WindowsStore. Pour une application, l’ID WindowsStore est disponible dans la [page Identité de l’application](../publish/view-app-identity-details.md) du tableau de bord du Centre de développement. Pour une extension, l’ID Windows Store est disponible dans l’URL de la page de la vue d’ensemble de l’extension dans le tableau de bord du Centre de développement Windows. Exemple d’ID WindowsStore: 9WZDNCRFJ3Q8. | Oui      |
 | quantity       | entier    | Quantité à acheter. Actuellement, la seule valeur prise en charge est 1. Si aucune valeur n’est spécifiée, la valeur par défaut est 1.                                                                                                                                                                                                                | Non       |
 | skuId          | chaîne | ID de référence du catalogue du Windows Store. Exemple d’ID de référence : 0010.                                                                                                                                                                                                                                                | Oui      |
 
@@ -128,7 +128,7 @@ L’objet OrderLineItemV6 contient les paramètres ci-dessous.
 | billingState            | chaîne         | État de facturation de la commande. Défini sur **Charged** lorsque la commande est terminée.                                   | Non       |
 | campaignId              | chaîne         | ID campagne de cette commande.                                                                              | Non       |
 | currencyCode            | chaîne         | Code de devise utilisé pour les détails de prix.                                                                    | Oui      |
-| Description             | chaîne         | Description localisée de l’article.                                                                    | Oui      |
+| description             | chaîne         | Description localisée de l’article.                                                                    | Oui      |
 | devofferId              | chaîne         | ID d’offre de la commande particulière, le cas échéant.                                                           | Non       |
 | fulfillmentDate         | datetimeoffset | Date du traitement de la commande.                                                                           | Non       |
 | fulfillmentState        | chaîne         | État du traitement de la commande de cet article. Défini sur **Fulfilled** lorsque le traitement est effectué.                      | Non       |
@@ -137,9 +137,9 @@ L’objet OrderLineItemV6 contient les paramètres ci-dessous.
 | legacyBillingOrderId    | chaîne         | ID de facturation hérité.                                                                                       | Non       |
 | lineItemId              | chaîne         | ID de l’article de cette commande.                                                                 | Oui      |
 | listPrice               | décimal        | Prix catalogue de l’article de cette commande.                                                                    | Oui      |
-| productId               | chaîne         | ID produit du Windows Store de l’article.                                                               | Oui      |
+| productId               | chaîne         | ID Windows Store de l’article.                                                               | Oui      |
 | productType             | chaîne         | Type du produit. Les valeurs prises en charge sont **Durable**, **Application** et **UnmanagedConsumable**. | Oui      |
-| Quantity                | entier            | Quantité de l’article commandé.                                                                            | Oui      |
+| quantity                | entier            | Quantité de l’article commandé.                                                                            | Oui      |
 | retailPrice             | décimal        | Prix de vente au détail de l’article commandé.                                                                        | Oui      |
 | revenueRecognitionState | chaîne         | État de prise en compte de revenu.                                                                               | Oui      |
 | skuId                   | chaîne         | ID de référence du Windows Store de l’article.                                                                   | Oui      |
@@ -245,6 +245,6 @@ Date: Tue, 13 Oct 2015 21:21:51 GMT
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

@@ -5,7 +5,7 @@ title: Orientation de capteur
 description: "Les données du capteur provenant des classes Accelerometer, Gyrometer, Compass, Inclinometer et OrientationSensor sont définies par leurs axes de référence. Ces axes sont définis par l’orientation paysage de l’appareil et pivotent avec celui-ci à mesure que l’utilisateur le fait tourner."
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 0f1123d3be66973d5b56a4789b1ff6e171f94900
+ms.openlocfilehash: f0f9c7184c81edf8136849bf8a7bd9d04c340f62
 
 ---
 # Orientation de capteur
@@ -171,6 +171,6 @@ Les données [**OrientationSensor**](https://msdn.microsoft.com/library/windows/
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

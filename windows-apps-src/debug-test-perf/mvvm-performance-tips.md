@@ -5,7 +5,7 @@ title: "Conseils relatifs aux performances du langage de programmation et du mod
 description: "Cette rubrique décrit certaines considérations en matière de performances liées à vos choix de modèles de conception de logiciel et de langage de programmation."
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 77a162076e14b4726e1fb29673b14be65be37a16
+ms.openlocfilehash: 4be8fd69752dac70c316164fca79bb73c6666c43
 
 ---
 # Conseils relatifs aux performances du langage de programmation et du modèle MVVM
@@ -45,6 +45,6 @@ Il existe plusieurs définitions concrètes du modèle MVVM, et des infrastructu
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

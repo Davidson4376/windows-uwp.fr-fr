@@ -2,17 +2,17 @@
 author: mcleanbyron
 ms.assetid: 5efb4f40-a021-4dd2-82b4-7c95c3849485
 description: "Lisez le Contrat de Licence Utilisateur Final (CLUF) dans son intégralité pour connaître les informations importantes."
-title: Remarque importante&#58; CLUF
+title: 'Remarque importante: CLUF'
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 89af54f5b8cf52366100b4751ed37ddd7a7bacb7
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: 1482450a8e5039ffd61a90f7cd38738115c5f2f0
 
 ---
 
-# Remarque importante&#58; CLUF
+# Remarque importante: CLUF
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+
 
 Lisez le Contrat de Licence Utilisateur Final (CLUF) dans son intégralité.
 
@@ -30,6 +30,6 @@ Le CLUF se trouve dans le dossier qui contient vos Kits de développement logici
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,24 +1,20 @@
 ---
 author: drewbatgit
 ms.assetid: C5623861-6280-4352-8F22-80EB009D662C
-description: "La classe MediaSource offre une méthode courante de référencement et de lecture de contenu multimédia à partir de différentes sources telles que des fichiers locaux ou à distance et elle présente un modèle commun d’accès aux données multimédias, quel que soit le format multimédia sous-jacent."
-title: "Lecture de contenu multimédia avec MediaSource"
+description: "Cet article vous montre comment utiliser MediaSource, qui offre une méthode courante de référencement et de lecture de contenu multimédia à partir de différentes sources telles que des fichiers locaux ou distants, et présente un modèle commun d’accès aux données multimédias, quel que soit le format multimédia sous-jacent."
+title: "Éléments, playlists et pistes multimédias"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d64f4484566d80eaf2a353b1aba954c15079343c
+ms.sourcegitcommit: c2e337e88f9dda3380dd62c32ca6e5d942366636
+ms.openlocfilehash: bb49af7a386356647000e268bcc6983351eaf4b8
 
 ---
 
-# Lecture de contenu multimédia avec MediaSource
+# Éléments, playlists et pistes multimédias
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
+ Cet article vous montre comment utiliser la classe [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaSource), qui offre une méthode courante de référencement et de lecture de contenu multimédia à partir de différentes sources telles que des fichiers locaux ou distants, et présente un modèle commun d’accès aux données multimédias, quel que soit le format multimédia sous-jacent. La classe [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/dn930939) étend les fonctionnalités de **MediaSource**, vous permettant ainsi de gérer et de sélectionner à partir de plusieurs pistes audio, vidéo et de métadonnées contenues dans un élément multimédia. [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) vous permet de créer des listes de lecture à partir d’un ou plusieurs éléments de la lecture multimédia.
 
-\[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.\]
-
-La classe [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/dn930905) offre une méthode courante de référencement et de lecture de contenu multimédia à partir de différentes sources telles que des fichiers locaux ou à distance et elle présente un modèle commun d’accès aux données multimédias, quel que soit le format multimédia sous-jacent. La classe [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/dn930939) étend les fonctionnalités de **MediaSource**, vous permettant ainsi de gérer et de sélectionner à partir de plusieurs pistes audio, vidéo et de métadonnées contenues dans un élément multimédia. [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) vous permet de créer des listes de lecture à partir d’un ou plusieurs éléments de la lecture de contenu multimédia.
-
-Le code figurant dans cet article a été adapté à partir de l’exemple [Kit de développement logiciel (SDK) de lecture vidéo](http://go.microsoft.com/fwlink/p/?LinkId=620020&clcid=0x409). Vous pouvez télécharger cet exemple pour voir le code utilisé en contexte ou pour vous en servir comme point de départ pour votre propre application.
 
 ## Créer et lire un MediaSource
 
@@ -33,9 +29,11 @@ Créez une instance de **MediaSource** en appelant l’une des méthodes de fabr
 -   [**CreateFromStreamReference**](https://msdn.microsoft.com/library/windows/apps/dn930911)
 -   [**CreateFromUri**](https://msdn.microsoft.com/library/windows/apps/dn930912)
 
-Après avoir créé un **MediaSource**, vous pouvez lire la source directement avec un [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) en appelant [**SetPlaybackSource**](https://msdn.microsoft.com/library/windows/apps/dn899085), ou avec un [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535) en définissant la propriété [**Source**](https://msdn.microsoft.com/library/windows/apps/dn987010). L’exemple suivant montre comment lire un fichier multimédia sélectionné par l’utilisateur dans un **MediaElement** à l’aide de **MediaSource**.
+Après avoir créé un **MediaSource**, vous pouvez le lire avec un [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535) en définissant la propriété [**Source**](https://msdn.microsoft.com/library/windows/apps/dn987010). À compter de Windows10, version1607, vous pouvez attribuer un **MediaPlayer** à un [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement) en appelant [**SetMediaPlayer**](https://msdn.microsoft.com/library/windows/apps/mt708764) pour afficher le contenu du lecteur multimédia dans une page XAML. Cette méthode est préférée à l’utilisation de **MediaElement**. Pour plus d’informations sur l’utilisation de **MediaPlayer**, voir [**Lire du contenu audio et vidéo avec MediaPlayer**](play-audio-and-video-with-mediaplayer.md).
 
-Vous devez inclure les espaces de noms [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) et [**Windows.Media.Playback**](https://msdn.microsoft.com/library/windows/apps/dn640562) pour pouvoir terminer ce scénario.
+L’exemple suivant montre comment lire un fichier multimédia sélectionné par l’utilisateur dans un **MediaPlayer** à l’aide de **MediaSource**.
+
+Vous devez inclure les espaces de noms [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) et [**Windows.Media.Playback**](https://msdn.microsoft.com/library/windows/apps/dn640562) pour pouvoir effectuer ce scénario.
 
 [!code-cs[Using](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetUsing)]
 
@@ -43,13 +41,27 @@ Déclarez une variable de type **MediaSource**. Pour les exemples de cet article
 
 [!code-cs[DeclareMediaSource](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetDeclareMediaSource)]
 
+Déclarez une variable pour stocker l’objet **MediaPlayer** et, si vous voulez afficher le contenu multimédia en XAML, ajoutez un contrôle **MediaPlayerElement** à votre page.
+
+[!code-cs[DeclareMediaPlayer](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetDeclareMediaPlayer)]
+
+[!code-xml[MediaPlayerElement](./code/MediaSource_RS1/cs/MainPage.xaml#SnippetMediaPlayerElement)]
+
 Pour permettre à l’utilisateur de sélectionner un fichier multimédia à lire, utilisez un [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847). Avec l’objet [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) retourné de la méthode [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) du sélecteur, initialisez un nouveau MediaObject en appelant [**MediaSource.CreateFromStorageFile**](https://msdn.microsoft.com/library/windows/apps/dn930909). Enfin, définissez la source du média en tant que source de lecture de **MediaElement** en appelant la méthode [**SetPlaybackSource**](https://msdn.microsoft.com/library/windows/apps/dn899085).
 
 [!code-cs[PlayMediaSource](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetPlayMediaSource)]
 
+Par défaut, le **MediaPlayer** ne commence pas automatiquement la lecture quand la source du média est définie. Vous pouvez démarrer manuellement la lecture en appelant [**Play**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Play).
+
+[!code-cs[Play](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetPlay)]
+
+Vous pouvez également définir la propriété [**AutoPlay**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.AutoPlay) de **MediaPlayer** sur true pour indiquer au lecteur de commencer la lecture dès que la source du média est définie.
+
+[!code-cs[AutoPlay](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetAutoPlay)]
+
 ## Gérer plusieurs pistes audio, vidéo et de métadonnées avec MediaPlaybackItem
 
-L’utilisation d’un [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/dn930905) pour la lecture est pratique car il offre une méthode courante de lecture de contenu multimédia à partir de différents types de sources. Un comportement plus avancé est toutefois disponible à l’aide d’un [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/dn930939). Il inclut la possibilité d’accéder et de gérer plusieurs pistes audio, vidéo et de données pour un élément multimédia.
+L’utilisation d’un objet [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/dn930905) pour la lecture est pratique car il offre une méthode courante de lecture multimédia à partir de différents types de sources. Un comportement plus avancé est toutefois disponible en créant un [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/dn930939) à partir de **MediaSource**. Il inclut la possibilité d’accéder et de gérer plusieurs pistes audio, vidéo et de données pour un élément multimédia.
 
 Déclarez une variable pour stocker votre **MediaPlaybackItem**.
 
@@ -63,10 +75,10 @@ Enfin, définissez la source de la lecture de **MediaElement** ou **MediaPlayer*
 
 [!code-cs[PlayMediaPlaybackItem](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetPlayMediaPlaybackItem)]
 
-**Remarque**  
-Un **MediaSource** ne peut être associé qu’à un seul **MediaPlaybackItem**. Après avoir créé un **MediaPlaybackItem** à partir d’une source, toute tentative de création d’un autre élément de lecture à partir de la même source entraînera une erreur. De plus, après avoir créé un **MediaPlaybackItem** à partir d’une source multimédia, vous ne pouvez pas définir l’objet **MediaSource** directement en tant que source d’un **MediaElement** ou **MediaPlayer**, mais vous devez plutôt utiliser le **MediaPlaybackItem**.
+> [!NOTE] 
+> Un **MediaSource** ne peut être associé qu’à un seul **MediaPlaybackItem**. Après avoir créé un **MediaPlaybackItem** à partir d’une source, toute tentative de création d’un autre élément de lecture à partir de la même source entraîne une erreur. De plus, après avoir créé un **MediaPlaybackItem** à partir d’une source de média, vous ne pouvez pas définir l’objet **MediaSource** directement en tant que source d’un **MediaPlayer**, mais vous devez plutôt utiliser le **MediaPlaybackItem**.
 
-L’événement [**VideoTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930954) est déclenché après qu’un **MediaPlaybackItem** contenant plusieurs pistes vidéo a été affecté en tant que source de lecture, et peut être déclenché à nouveau si la liste des pistes vidéo change pour l’élément. Le gestionnaire de cet événement vous permet de mettre à jour votre interface utilisateur, permettant ainsi à l’utilisateur de basculer entre les pistes disponibles. Cet exemple utilise un [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348) pour afficher les pistes vidéo disponibles.
+L’événement [**VideoTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930954) est déclenché après qu’un **MediaPlaybackItem** contenant plusieurs pistes vidéo a été attribué en tant que source de lecture, et peut être redéclenché si la liste des pistes vidéo change pour l’élément. Le gestionnaire de cet événement vous permet de mettre à jour votre interface utilisateur, permettant ainsi à l’utilisateur de basculer entre les pistes disponibles. Cet exemple utilise un [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348) pour afficher les pistes vidéo disponibles.
 
 [!code-xml[VideoComboBox](./code/MediaSource_Win10/cs/MainPage.xaml#SnippetVideoComboBox)]
 
@@ -99,6 +111,28 @@ Comme les pistes audio et vidéo, les pistes de métadonnées synchronisées d�
 [!code-cs[ToggleChecked](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetToggleChecked)]
 
 [!code-cs[ToggleUnchecked](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetToggleUnchecked)]
+
+Comme vous traitez les pistes de métadonnées, vous pouvez accéder à l’ensemble des repères de la piste avec les propriétés [**Cues**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.TimedMetadataTrack.Cues) ou [**ActiveCues**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.TimedMetadataTrack.ActiveCues). Pour ce faire, mettez à jour votre interface utilisateur pour afficher les emplacements de repère d’un élément multimédia.
+
+## Gérer les codecs non pris en charge et les erreurs inconnues à l’ouverture des éléments multimédias
+À compter de Windows10, version1607, vous pouvez vérifier si le codec nécessaire pour lire un élément multimédia est pris en charge entièrement ou partiellement sur l’appareil sur lequel s’exécute votre application. Dans le gestionnaire des événements de modification de pistes **MediaPlaybackItem**, comme [**AudioTracksChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.AudioTracksChanged), vérifiez d’abord si la modification de la piste consiste en l’insertion d’une nouvelle piste. Auquel cas, vous pouvez obtenir une référence à la piste insérée à l’aide de l’index transmis dans le paramètre **IVectorChangedEventArgs.Index** avec la collection de pistes appropriée du paramètre **MediaPlaybackItem**, comme la collection [**AudioTracks**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.AudioTracks).
+
+Une fois que vous avez une référence à la piste insérée, vérifiez le [**DecoderStatus**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrackSupportInfo.DecoderStatus) de la propriété [**SupportInfo**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrack.SupportInfo) de la piste. Si la valeur est [**FullySupported**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus), le codec approprié nécessaire pour lire la piste est présent sur l’appareil. Si la valeur est [**Degraded**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus), la piste peut être lue par le système, mais la lecture est détériorée d’une certaine façon. Par exemple, une piste audio5.1 peut être lue à la place comme une piste stéréo bicanale. Si c’est le cas, vous pouvez mettre à jour votre interface utilisateur pour alerter l’utilisateur de la détérioration. Si la valeur est [**UnsupportedSubtype**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus) ou [**UnsupportedEncoderProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaDecoderStatus), la piste ne peut pas être lue du tout avec les codecs actuels de l’appareil. Vous pouvez alerter l’utilisateur et ignorez la lecture de l’élément ou implémenter une interface utilisateur pour permettre à l’utilisateur de télécharger le codec correct. La méthode [**GetEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrack.GetEncodingProperties) de la piste peut être utilisée pour déterminer le codec nécessaire pour la lecture.
+
+Enfin, vous pouvez vous inscrire à l’événement [**OpenFailed**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrack.OpenFailed) de la piste, qui est déclenché si la piste est prise en charge sur l’appareil, mais qu’elle ne peut pas s’ouvrir en raison d’une erreur inconnue dans le pipeline.
+
+[!code-cs[AudioTracksChanged_CodecCheck](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetAudioTracksChanged_CodecCheck)]
+
+Dans le gestionnaire d’événements [**OpenFailed**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.AudioTrack.OpenFailed), vous pouvez vérifier si l’état de **MediaSource** est inconnu et si tel est le cas, vous pouvez sélectionner par programmation une autre piste à lire, autoriser l’utilisateur à choisir une autre piste ou abandonner la lecture.
+
+[!code-cs[OpenFailed](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetOpenFailed)]
+
+## Définir les propriétés d’affichage utilisées par les contrôles de transport de média système
+À compter de Windows10, version1607, le contenu multimédia lu dans un [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) est automatiquement intégré aux contrôles de transport de média système par défaut. Vous pouvez spécifier les métadonnées que les contrôles de transport de média système doivent afficher en mettant à jour les propriétés d’affichage d’un **MediaPlaybackItem**. Obtenez un objet qui représente les propriétés d’affichage d’un élément en appelant [**GetDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.GetDisplayProperties). Déterminez si l’élément de lecture est de la musique ou une vidéo en définissant la propriété [**Type**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.Type). Ensuite, définissez les propriétés [**VideoProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.VideoProperties) ou [**MusicProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.MusicProperties) de l’objet. Appelez [**ApplyDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/mt489923) pour définir les propriétés de l’élément sur les valeurs que vous avez indiquées. En règle générale, une application récupère les valeurs d’affichage de manière dynamique à partir d’un service web, mais l’exemple suivant illustre ce processus avec des valeurs codées en dur.
+
+[!code-cs[SetVideoProperties](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetSetVideoProperties)]
+
+[!code-cs[SetMusicProperties](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetSetMusicProperties)]
 
 ## Ajouter du texte synchronisé externe avec TimedTextSource
 
@@ -148,11 +182,18 @@ Pour commencer, déclarez une variable pour stocker votre **MediaPlaybackList**.
 
 [!code-cs[DeclareMediaPlaybackList](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetDeclareMediaPlaybackList)]
 
-Créez un **MediaPlaybackItem** pour chaque élément multimédia que vous voulez ajouter à votre liste en suivant la procédure décrite précédemment dans cet article. Initialisez votre objet **MediaPlaybackList** et ajoutez-y les éléments de lecture multimédia. Inscrivez un gestionnaire pour l’événement [**CurrentItemChanged**](https://msdn.microsoft.com/library/windows/apps/dn930957). Cet événement vous permet de mettre à jour votre interface utilisateur afin de refléter l’élément multimédia en cours de lecture. Enfin, définissez la source de la lecture de **MediaElement** ou **MediaPlayer** sur votre **MediaPlaybackList**.
+Créez un **MediaPlaybackItem** pour chaque élément multimédia que vous voulez ajouter à votre liste en suivant la procédure décrite précédemment dans cet article. Initialisez votre objet **MediaPlaybackList** et ajoutez-y les éléments de lecture multimédia. Inscrivez un gestionnaire pour l’événement [**CurrentItemChanged**](https://msdn.microsoft.com/library/windows/apps/dn930957). Cet événement vous permet de mettre à jour votre interface utilisateur afin de refléter l’élément multimédia en cours de lecture. Enfin, définissez la source de lecture de **MediaPlayer** sur votre **MediaPlaybackList**.
 
 [!code-cs[PlayMediaPlaybackList](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetPlayMediaPlaybackList)]
 
 Dans le gestionnaire d’événements **CurrentItemChanged**, mettez à jour votre interface utilisateur afin de refléter l’élément en cours de lecture, qui peut être récupéré à l’aide de la propriété [**NewItem**](https://msdn.microsoft.com/library/windows/apps/dn930930) de l’objet [**CurrentMediaPlaybackItemChangedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn930929) transmis dans l’événement. N’oubliez pas que si vous mettez à jour l’interface utilisateur à partir de cet événement, vous devez le faire dans le cadre d’un appel à [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) afin que les mises à jour soient effectuées sur le thread d’interface utilisateur.
+
+> [!NOTE] 
+> Le système ne supprime pas automatiquement les éléments multimédias après leur lecture. Cela signifie que si l’utilisateur remonte dans la liste, les morceaux lus précédemment peuvent être relus sans interruption, mais cela signifie aussi que plus il y a d’éléments dans la liste, plus l’utilisation de la mémoire de votre application augmente. Vous devez faire en sorte de libérer régulièrement les ressources des éléments multimédias lus. Cela est particulièrement important quand votre application lit en arrière-plan et qu’elle est limitée en ressources. 
+
+Vous pouvez utiliser l’événement **CurrentItemChanged** pour libérer les ressources des éléments multimédias lus précédemment. Pour conserver une référence à des éléments lus précédemment, créez une collection **Queue**. Définissez aussi une variable qui détermine le nombre maximal d’éléments multimédias à conserver en mémoire. Dans le gestionnaire, obtenez une référence à l’élément lu précédemment et ajoutez-le à la file d’attente en retirant l’entrée la plus ancienne. Appelez [**Reset**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaSource.Reset) sur l’élément retourné pour libérer ses ressources, mais vérifiez d’abord qu’il n’est plus dans la file d’attente ou qu’il n’est pas lu actuellement afin de gérer les cas où l’élément est lu plusieurs fois.
+
+[!code-cs[DeclareItemQueue](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetDeclareItemQueue)]
 
 [!code-cs[MediaPlaybackListItemChanged](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetMediaPlaybackListItemChanged)]
 
@@ -170,16 +211,21 @@ Définissez la propriété [**AutoRepeatEnabled**](https://msdn.microsoft.com/li
 
 [!code-cs[RepeatButton](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetRepeatButton)]
 
- 
 
- 
+###Gérer l’échec d’éléments multimédias dans une liste de lecture
+L’événement [**ItemFailed**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackList.ItemFailed) est déclenché quand un élément dans la liste ne parvient pas à s’ouvrir. La propriété [**ErrorCode**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItemError.ErrorCode) de l’objet [**MediaPlaybackItemError**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItemError) transmis au gestionnaire énumère la cause spécifique de l’échec dans la mesure du possible, y compris les erreurs réseau, les erreurs de décodage ou les erreurs de chiffrement.
+
+[!code-cs[ItemFailed](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetItemFailed)]
+
+## Rubriques connexes
+* [Lecture de contenu multimédia](media-playback.md)
+* [Lire du contenu audio et vidéo avec MediaPlayer](play-audio-and-video-with-mediaplayer.md)
+* [Intégrer aux contrôles de transport de média système](integrate-with-systemmediatransportcontrols.md)
+* [Lire du contenu multimédia en arrière-plan](background-audio.md)
 
 
 
 
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

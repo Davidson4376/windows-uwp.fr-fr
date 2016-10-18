@@ -5,7 +5,7 @@ description: "D’un point de vue conceptuel, le pipeline nuanceur de Direct3D11
 ms.assetid: 3678a264-e3f9-72d2-be91-f79cd6f7c4ca
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: bc13df5e7f2648897be31b5cda634d23ffae8b6b
+ms.openlocfilehash: 144e3374c16118418872f6c473c5f39101fbfce0
 
 ---
 
@@ -250,6 +250,6 @@ Pour plus d’informations sur l’utilisation de la sémantique avec Direct3D, 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

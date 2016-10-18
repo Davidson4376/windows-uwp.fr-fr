@@ -4,8 +4,8 @@ Description: "Ajoutez des utilisateurs à votre compte du Centre de développeme
 title: "Gérer des utilisateurs de compte"
 ms.assetid: 9245F0D0-7D8F-4741-AFB4-FBA5601D0A9B
 translationtype: Human Translation
-ms.sourcegitcommit: 3cfc50e56f3fa65a9dfa2c8b4582c1a53c2b13d1
-ms.openlocfilehash: 18e25d0064652089d450eec811a7a5d24b8dc3e8
+ms.sourcegitcommit: 3b4dc64cd4dfda07bb55ffc69bb9a99740fc951a
+ms.openlocfilehash: ce50957f133fe612ca4a3d5b90a0a34145a960a4
 
 ---
 
@@ -20,28 +20,32 @@ Vous pouvez utiliser Azure Active Directory pour ajouter des utilisateurs à vot
 
 ## Associer votre compte du Centre de développement au service Azure Active Directory de votre organisation
 
-
-Le Centre de développement Windows tire parti d’Azure Active Directory pour la gestion multi-utilisateurs et l’attribution des rôles. Si votre organisation utilise déjà Office 365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’Azure AD. Dans le cas contraire, vous pouvez créer un AzureAD depuis le Centre de développement sans frais supplémentaires. 
+Le Centre de développement Windows tire parti d’Azure Active Directory pour la gestion multi-utilisateurs et l’attribution des rôles. Si votre organisation utilise déjà Office 365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’Azure AD. Dans le cas contraire, vous pouvez créer un AzureAD depuis le Centre de développement sans frais supplémentaires.
 
 Notez que vous ne pouvez associer qu’un seul compte du Centre de développement à un service Azure AD. De même, il n’est possible d’associer qu’un seul service Azure AD à un compte du Centre de développement.
 
 > **Remarque** Vous ne pouvez ajouter des utilisateurs à votre compte du Centre de développement que s’ils font partie du service Azure AD de votre organisation (ou si vous créez des comptes Azure AD pour eux). Vous ne pourrez pas ajouter d’utilisateurs à votre compte du Centre de développement en utilisant leur compte Microsoft personnel.
 
-Pour associer votre compte du Centre de développement au service Azure AD existant de votre organisation:
+### Associer votre compte du Centre de développement au service Azure AD existant de votre organisation
+
+Si votre organisation utilise déjà AzureAD, suivez ces étapes pour lier votre compte du Centre de développement.
 
 1.  Sous **Paramètres du compte**, cliquez sur **Gérer les utilisateurs**.
 2.  Cliquez sur le bouton **Associer Azure AD avec votre compte du Centre de développement**.
 3.  Connectez-vous à votre compte Azure AD. La configuration de l’association implique que ce compte dispose de l’autorisation [Administrateur général](http://go.microsoft.com/fwlink/?LinkId=746654).
 4.  Vérifiez le nom d’organisation et le nom de domaine pour votre compte Azure AD. Pour valider l’association, cliquez sur **Confirmer**.
 5.  Si l’association réussit, vous êtes prêt à ajouter et gérer des utilisateurs de comptes sur la page **Gérer les utilisateurs** de votre compte, tel que décrit dans les sections ci-dessous.
-  
-Pour créer un tout nouvel Azure AD à associer à votre compte du Centre de développement: 
+
+### Créer un tout nouvel AzureAD à associer à votre compte du Centre de développement
+
+Si vous avez besoin de configurer un nouvel Azure AD à lier à votre compte du Centre de développement, procédez comme suit.
+
 1.  Sous **Paramètres du compte**, cliquez sur **Gérer les utilisateurs**.
 2.  Cliquez sur le bouton **Créer Azure AD**.
 3.  Entrez les informations de répertoire de votre nouvel Azure AD:
-- **Nom de domaine**: nom unique que nous utiliserons pour votre domaine Azure AD, avec «.onmicrosoft.com». Par exemple, si vous avez entré «exemple», votre domaine Azure AD sera «exemple.onmicrosoft.com». 
-- **E-mail de contact**: adresse de messagerie à laquelle nous pouvons vous contacter à propos de votre compte si nécessaire.
-- **Informations de compte d’utilisateur administrateur général**: prénom, nom, nom d’utilisateur et mot de passe que vous souhaitez utiliser pour le nouveau compte d’administrateur. 
+ - **Nom de domaine**: nom unique que nous utiliserons pour votre domaine Azure AD, avec «.onmicrosoft.com». Par exemple, si vous avez entré «exemple», votre domaine Azure AD sera «exemple.onmicrosoft.com».
+ - **E-mail de contact**: adresse de messagerie à laquelle nous pouvons vous contacter à propos de votre compte si nécessaire.
+ - **Informations de compte d’utilisateur administrateur général**: prénom, nom, nom d’utilisateur et mot de passe que vous souhaitez utiliser pour le nouveau compte d’administrateur.
 4.  Cliquez sur **Créer** pour confirmer les nouvelles informations de domaine et de compte.
 5.  Connectez-vous avec vos nouveaux nom d’utilisateur et mot de passe d’administrateur général Azure AD pour commencer à ajouter et à gérer des utilisateurs de compte supplémentaires sur la page **Gérer les utilisateurs** de votre compte, tel que décrit dans les sections ci-dessous.
 
@@ -60,7 +64,7 @@ Lorsque vous gérez des utilisateurs, gardez à l’esprit les points suivants :
 -   Tous les utilisateurs du Centre de développement doivent disposer d’un compte actif auprès du service Azure AD de votre organisation.
 -   Lorsque vous **créez** un utilisateur ou un groupe dans le Centre de développement, il est également ajouté au service Azure AD de votre organisation.
 -   Lorsque vous modifiez le nom d’un utilisateur ou d’un groupe dans le Centre de développement, les modifications sont répercutées dans le service Azure AD de votre organisation.
--   Les utilisateurs (y compris les groupes et applications Azure AD) pourront accéder à l’ensemble du compte du Centre de développement avec les autorisations associées au rôle qui leur est attribué. Vous ne pouvez pas limiter l’accès d’un utilisateur de sorte qu’il puisse utiliser uniquement des applications et/ou produits in-app spécifiques.
+-   Les utilisateurs (y compris les groupes et applications Azure AD) pourront accéder à l’ensemble du compte du Centre de développement avec les autorisations associées au rôle qui leur est attribué. Vous ne pouvez pas limiter l’accès d’un utilisateur de sorte qu’il puisse utiliser uniquement des applications et/ou modules complémentaires.
 -   Vous pouvez autoriser un utilisateur, un groupe ou une application Azure AD à accéder aux fonctionnalités de différents rôles en sélectionnant plusieurs rôles.
 -   Un utilisateur ayant un rôle spécifique peut également faire partie d’un groupe ayant un rôle différent. Dans ce cas, il aura accès aux fonctionnalités associées aux deux rôles.
 
@@ -68,17 +72,15 @@ Lorsque vous gérez des utilisateurs, gardez à l’esprit les points suivants :
 
 Chaque utilisateur, groupe ou application Azure AD que vous ajoutez à un compte doit se voir attribuer l’un ou plusieurs des rôles ci-après. Chaque rôle dispose d’un ensemble d’autorisations spécifique lui permettant d’exécuter certaines fonctions dans le cadre du compte.
 
-> **Remarque** Le propriétaire du compte est la personne qui l’a créé en premier avec un compte Microsoft (et non l’un des utilisateurs ajoutés par le biais d’Azure AD). Il est le seul à disposer d’un accès complet au compte et à pouvoir notamment supprimer des applications, créer et modifier l’ensemble des utilisateurs du compte et modifier tous les paramètres financiers et de compte. Le compte Microsoft utilisé pour créer le compte doit être utilisé lors de la création de packages d’application dans Microsoft Visual Studio.
+> **Remarque** Le propriétaire du compte est la personne qui l’a créé en premier avec un compte Microsoft (et non l’un des utilisateurs ajoutés par le biais d’Azure AD). Il est le seul à disposer d’un accès complet au compte et à pouvoir notamment supprimer des applications, créer et modifier l’ensemble des utilisateurs du compte et modifier tous les paramètres financiers et de compte. 
 
 | Rôle                 | Description              |
 |----------------------|--------------------------|
 | Manager              | Dispose d’un accès complet au compte, mais ne peut pas modifier les paramètres fiscaux et de revenus. Ceci inclut la gestion des utilisateurs dans le Centre de développement. Cependant, notez que la possibilité de créer et supprimer des utilisateurs dépend des autorisations du compte dans Azure AD. Ainsi, si le rôle Manager est attribué à un utilisateur mais que celui-ci ne dispose pas des autorisations d’administration dans le service Azure AD de l’organisation, il ne pourra pas créer d’utilisateurs ni supprimer des utilisateurs de l’annuaire (mais pourra modifier le rôle d’un utilisateur dans le Centre de développement). |
-| Développeur            | Peut charger des packages, soumettre des applications et produits in-app et afficher le [Rapport d’utilisation](usage-report.md) pour obtenir des informations de télémétrie détaillées. Il ne peut pas afficher les informations financières ni les paramètres de compte.                                                                                                                                                                                                                                                                                                                     |
-| Contributeur professionnel | Peut accéder aux informations financières et définir les détails de tarification. Il ne peut pas créer ou soumettre de nouveaux produits in-app ou applications ni modifier les paramètres de compte.                                                                                                                                                                                                                                                                                                                                                              |
-| Contributeur financier  | Peut afficher les [rapports de revenus](payout-summary.md). Il ne peut apporter aucune modification aux applications, produits in-app et paramètres de compte.                                                                                                                                                                                                                                                                                                                                                                                 |
-| Responsable marketing             | Peut [répondre aux avis de clients](respond-to-customer-reviews.md) et afficher des [rapports analytiques](analytics.md) non financiers. Il ne peut apporter aucune modification aux applications, produits in-app et paramètres de compte.                                                                                                                                                                                                                                                                                                            |
-
-> **Remarque** Les utilisateurs présentant le rôle Manager ou Développeur peuvent soumettre des applications par le biais du tableau de bord. Toutefois, lors de la création de packages d’application dans Visual Studio, il convient d’utiliser le compte Microsoft ayant servi à ouvrir le compte de développeur, plutôt qu’un compte Azure AD.
+| Développeur            | Peut charger des packages, soumettre des applications et modules complémentaires et afficher le [Rapport d’utilisation](usage-report.md) pour obtenir des informations de télémétrie détaillées. Il ne peut afficher ni les informations financières ni les paramètres de compte.                                                                                                                                                                                                                                                                                                                     |
+| Contributeur professionnel | Peut accéder aux informations financières et définir les détails de tarification. Il ne peut pas créer ou soumettre de nouvelles applications ou de nouveaux modules complémentaires ni modifier les paramètres de compte.                                                                                                                                                                                                                                                                                                                                                              |
+| Contributeur financier  | Peut afficher les [rapports de revenus](payout-summary.md). Il ne peut apporter aucune modification aux applications, modules complémentaires et paramètres de compte.                                                                                                                                                                                                                                                                                                                                                                                 |
+| Responsable marketing             | Peut [répondre aux avis de clients](respond-to-customer-reviews.md) et afficher des [rapports analytiques](analytics.md) non financiers. Il ne peut apporter aucune modification aux applications, modules complémentaires et paramètres de compte.                                                                                                                                                                                                                                                                                                            |
 
 ### Ajouter et gérer des utilisateurs du compte
 
@@ -178,6 +180,8 @@ Notez que lorsque vous ajoutez plusieurs applications Azure AD simultanément, v
 
 Si vous souhaitez accorder à un nouveau compte d’application Azure AD l’accès au Centre de développement, vous pouvez créer ce compte dans la section **Gérer les utilisateurs**. Notez que le compte sera créé non seulement dans votre compte du Centre de développement, mais également dans l’annuaire de votre organisation.
 
+> **Conseil** Si vous utilisez principalement cette application Azure AD pour vous authentifier auprès du Centre de développement et que vous n’avez pas besoin de permettre à des utilisateurs d’y accéder directement, vous pouvez saisir une adresse valide dans les champs **URL de réponse** et **URI ID d’application** à condition que ces valeurs ne soient pas utilisées par une autre application Azure AD de votre répertoire.
+
 **Créer une application Azure AD**
 
 1.  Sur la page **Gérer les utilisateurs**, cliquez sur **Ajouter des applications Azure AD**.
@@ -186,6 +190,10 @@ Si vous souhaitez accorder à un nouveau compte d’application Azure AD l’acc
 4.  Renseignez le champ **URI ID d’application** pour la nouvelle application Azure AD. Il s’agit d’un identificateur logique pour l’application Azure AD qui est présenté lors de l’envoi d’une demande d’authentification unique à Azure AD. Notez que l’**URI ID d’application** doit être unique pour chaque application Azure AD de votre annuaire et ne doit pas comporter plus de 256 caractères.
 5.  Dans la section **Rôles**, sélectionnez un ou plusieurs rôles à attribuer à la nouvelle application Azure AD.
 6.  Cliquez sur **Enregistrer**.
+
+Après avoir ajouté ou créé une application Azure AD, revenez à la section **Gérer les utilisateurs**, puis cliquez sur le nom de l’application pour revoir les paramètres de l’application, y compris l’ID de locataire, l’ID de client, l’URL de réponse et l’URI d’ID d’application.
+
+>**Remarque** Si vous envisagez d’utiliser les API REST fournies par les [services du Windows Store](../monetize/using-windows-store-services.md), vous aurez besoin des valeurs ID de locataire et ID de client indiquées sur cette page pour obtenir un jeton d’accès AzureAD que vous pourrez utiliser pour authentifier les appels aux services.   
 
 Vous pouvez modifier les applications Azure AD que vous avez ajoutées à votre compte du Centre de développement dans la section **Gérer les utilisateurs**. Notez que les modifications apportées à l’URL de réponse et à l’URI d’ID d’application seront non seulement répercutées dans votre compte du Centre de développement, mais également dans l’annuaire de votre organisation. Les modifications de rôle affecteront uniquement les autorisations de l’application Azure AD dans le Centre de développement.
 
@@ -226,10 +234,6 @@ Pour supprimer un utilisateur, un groupe ou une application Azure AD de votre co
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO1-->
 
 

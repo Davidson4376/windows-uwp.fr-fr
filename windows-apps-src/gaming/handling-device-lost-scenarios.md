@@ -5,7 +5,7 @@ description: "Cette rubrique explique comment recréer la chaîne d’interface 
 ms.assetid: 8f905acd-08f3-ff6f-85a5-aaa99acb389a
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8d522a309386b06f97bc63b9eead1ca4cecf165c
+ms.openlocfilehash: 3cb625886add852d9faa36a0ad5bc611c1929077
 
 ---
 
@@ -177,6 +177,6 @@ L’invite de commandes de développeur de Visual Studio prend en charge un outi
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

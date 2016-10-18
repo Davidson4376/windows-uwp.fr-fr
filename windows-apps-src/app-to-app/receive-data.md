@@ -4,8 +4,8 @@ title: "Recevoir des données"
 ms.assetid: 0AFF9E0D-DFF4-4018-B393-A26B11AFDB41
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: 7069e55b92e69a0af9ba23a0a737b61d427c615c
-ms.openlocfilehash: 806bcb591ec3b7c786f8aa98d854863539d723e2
+ms.sourcegitcommit: b8d627da82da463b87ace2a2ef6e739b1caafaa2
+ms.openlocfilehash: 0092fe2832eeafbc4e7cfa36a3444b9551a4f672
 
 ---
 
@@ -18,33 +18,33 @@ Cet article explique comment recevoir dans votre application UWP du contenu part
 
 ## Déclaration de votre application comme cible de partage
 
-Le système affiche une liste des applications cibles possibles lorsqu’un utilisateur appelle l’option Partager. Pour figurer dans la liste, votre application doit déclarer qu’elle prend en charge le contrat de partage. Cela indique au système que votre application est apte à recevoir du contenu.
+Le système affiche une liste des applications cibles possibles quand un utilisateur appelle l’option Partager. Pour figurer dans la liste, votre application doit déclarer qu’elle prend en charge le contrat de partage. Cela indique au système que votre application est apte à recevoir du contenu.
 
 1.  Ouvrez le fichier manifeste. Il doit normalement porter un nom similaire à **package.appxmanifest**.
 2.  Ouvrez l’onglet **Déclarations**.
-3.  Choisissez **Cible du partage** dans la liste **Déclarations disponibles**, puis cliquez sur **Ajouter**.
+3.  Choisissez **Cible du partage** dans la liste **Déclarations disponibles**, puis sélectionnez **Ajouter**.
 
-## Choix des types de fichiers et formats
+## Choix des types et formats de fichier
 
-Ensuite, déterminez les types de fichiers et les formats de données qui sont pris en charge. Les API de partage prennent en charge plusieurs formats standard, parmi lesquels les formats texte, HTML et bitmap. Vous pouvez également spécifier des types de fichiers et formats de données personnalisés. Dans ce cas, veillez à ce que les applications sources connaissent ces types et formats afin qu’elles puissent les utiliser pour partager des données.
+Ensuite, déterminez les types de fichiers et les formats de données qui sont pris en charge. Les API de partage prennent en charge plusieurs formats standard, parmi lesquels les formats texte, HTML et bitmap. Vous pouvez également spécifier des types de fichiers et formats de données personnalisés. Dans ce cas, vérifiez que les applications sources connaissent ces types et formats afin qu’elles puissent les utiliser pour partager des données.
 
 Enregistrez uniquement les formats gérés par votre application. Seules les applications cibles qui prennent en charge les données partagées apparaissent quand l’utilisateur appelle l’option Partager.
 
-Pour définir les types de fichier :
+Pour définir les types de fichier:
 
-1.  Ouvrez le fichier manifeste. Il doit normalement porter un nom similaire à **package.appxmanifest**.
-2.  Dans la section **Types de fichiers pris en charge** de la page **Déclarations**, cliquez sur **Ajouter nouveau**.
-3.  Tapez l’extension de nom de fichier associée au type de fichiers à prendre en charge. Par exemple, .docx. Vous devez inclure le point. Pour prendre en charge tous les types de fichiers, activez la case à cocher **Prend en charge tout type de fichier**.
+1.  Ouvrez le fichier manifeste. Il doit normalement avoir un nom similaire à **package.appxmanifest**.
+2.  Dans la section **Types de fichiers pris en charge** de la page **Déclarations**, sélectionnez **Ajouter nouveau**.
+3.  Tapez l’extension de nom de fichier que vous voulez prendre en charge, par exemple, «.docx». Vous devez inclure le point. Pour prendre en charge tous les types de fichiers, cochez la case **SupportsAnyFileType**.
 
 Pour définir les formats de données:
 
 1.  Ouvrez le fichier manifeste.
-2.  Ouvrez la section **Formats de données** de la page **Déclarations** et cliquez sur **Ajouter nouveau**.
-3.  Tapez le nom du format de données à prendre en charge. Par exemple, «Texte».
+2.  Ouvrez la section **Formats de données** de la page **Déclarations** et sélectionnez **Ajouter nouveau**.
+3.  Tapez le nom du format de données à prendre en charge, par exemple, «Texte».
 
 ## Gestion de l’activation du partage
 
-Lorsqu’un utilisateur choisit votre application (généralement en la sélectionnant dans une liste d’applications cibles disponibles affichée dans l’interface utilisateur de partage), un événement [**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Application.OnShareTargetActivated(Windows.ApplicationModel.Activation.ShareTargetActivatedEventArgs)) est déclenché. Votre application doit gérer cet événement afin de traiter les données que l’utilisateur veut partager.
+Quand un utilisateur sélectionne votre application (généralement en la choisissant dans une liste d’applications cibles disponibles dans l’interface utilisateur de partage), un événement [**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Application.OnShareTargetActivated(Windows.ApplicationModel.Activation.ShareTargetActivatedEventArgs)) est déclenché. Votre application doit gérer cet événement afin de traiter les données que l’utilisateur veut partager.
 
 <!-- For some reason, the snippets in this file are all inline in the WDCML topic. Suggest moving to VS project with rest of snippets. -->
 ```cs
@@ -96,7 +96,7 @@ Enfin, lorsque votre application a terminé de traiter le contenu partagé, appe
 shareOperation.ReportCompleted();
 ```
 
-Généralement, vous appelez ces méthodes selon l’ordre indiqué, une seule fois chacune. Toutefois, certaines fois une application cible peut appeler [**ReportDataRetrieved**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportDataRetrieved) avant [**ReportStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportStarted). Par exemple, l’application peut récupérer les données comme partie d’une tâche dans le gestionnaire d’activation, mais ne pas appeler **ReportStarted** jusqu’à ce que l’utilisateur clique sur un bouton Partager.
+Généralement, vous appelez ces méthodes selon l’ordre indiqué, une seule fois chacune. Toutefois, une application cible peut parfois appeler [**ReportDataRetrieved**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportDataRetrieved) avant [**ReportStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportStarted). Par exemple, l’application peut récupérer les données dans le cadre d’une tâche dans le gestionnaire d’activation, mais ne pas appeler **ReportStarted** tant que l’utilisateur ne sélectionne pas un bouton **Partager**.
 
 ## Renvoi d’un QuickLink si le partage a réussi
 
@@ -130,6 +130,7 @@ async void ReportCompleted(ShareOperation shareOperation, string quickLinkId, st
 
 ## Voir également 
 
+* [Communication entre les applications](index.md)
 * [Partager des données](share-data.md)
 * [OnShareTargetActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onsharetargetactivated.aspx)
 * [ReportStarted](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.shareoperation.reportstarted.aspx)
@@ -141,6 +142,7 @@ async void ReportCompleted(ShareOperation shareOperation, string quickLinkId, st
 * [QuickLInkId](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.quicklink.id.aspx)
 
 
-<!--HONumber=Jun16_HO5-->
+
+<!--HONumber=Aug16_HO3-->
 
 

@@ -4,8 +4,8 @@ ms.assetid: bb105fbe-bbbd-4d78-899b-345af2757720
 description: "Découvrez comment ajouter des valeurs d’ID d’application et d’ID d’unité publicitaire du tableau de bord du Centre de développement Windows à votre application avant de la soumettre au WindowsStore."
 title: "Configurer des unités publicitaires dans votre application"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 96c09de9321f67dc26cc3538f2655bd598f134f9
+ms.sourcegitcommit: c6e0cf98c6eb2cdc656d5b4555d794ff6a94d2bc
+ms.openlocfilehash: 705955faf7ddd67f80098f8c3ac7b2844553de95
 
 
 ---
@@ -13,7 +13,7 @@ ms.openlocfilehash: 96c09de9321f67dc26cc3538f2655bd598f134f9
 # Configurer des unités publicitaires dans votre application
 
 
-\[ Mise à jour pour les applicationsUWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+
 
 Lorsque vous utilisez une classe [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) ou [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) pour afficher des publicités dans votre application, vous devez spécifier un ID d’application et un ID d’unité publicitaire. Lors du développement de votre application, utilisez les [valeurs de test d’ID d’application et d’ID d’unité publicitaire](test-mode-values.md) pour voir comment votre application restitue les publicités au cours du test.
 
@@ -30,8 +30,6 @@ Pour configurer l’ID d’application et les unités publicitaires pour votre a
 
     * Si votre application affiche des spots publicitaires, transmettez ces valeurs à la méthode **RequestAd** de votre objet **InterstitialAd**.
 
-> **Important** Si votre application utilise la médiation publicitaire pour afficher les bannières publicitaires de Microsoft (elle utilise un objet **AdMediatorControl**), il n’est pas nécessaire de demander des unités publicitaires. Dans ce scénario, les unités publicitaires sont automatiquement générées pour vous. Pour plus d’informations, voir [Quelle est la différence entre AdMediatorControl et AdControl?](what-is-the-difference-admediatorcontrol-or-adcontrol.md).
-
  
 
 ## Rubriques connexes
@@ -45,6 +43,6 @@ Pour configurer l’ID d’application et les unités publicitaires pour votre a
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

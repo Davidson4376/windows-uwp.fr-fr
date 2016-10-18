@@ -5,7 +5,7 @@ title: "Tester les applications de Surface Hub à l’aide de VisualStudio"
 description: "Le simulateur de VisualStudio fournit un environnement permettant de concevoir, développer, déboguer et tester des applications UWP, y compris les applications générées pour SurfaceHub."
 translationtype: Human Translation
 ms.sourcegitcommit: 0bf96b70a915d659c754816f4c115f3b3f0a5660
-ms.openlocfilehash: 655dffb5f1948724c894de291e119be1322f6e77
+ms.openlocfilehash: 1939508e8ace2fe3ed9210d6969d1c68843c32a9
 
 ---
 
@@ -57,13 +57,13 @@ Pour ajouter des résolutions de SurfaceHub au simulateur:
 
 3. Copiez ces deux fichiers XML dans **C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Simulator\\&lt;numéro de version&gt;\HardwareConfigurations**.
 
-   > **Remarque** &nbsp;&nbsp;L’enregistrement de fichiers dans ce dossier requiert des privilèges administratifs.
+   > **Remarque**&nbsp;&nbsp;L’enregistrement de fichiers dans ce dossier nécessite des privilèges d’administration.
 
-4. Exécutez votre application dans le simulateur de VisualStudio. Cliquez sur le bouton **Modifier la résolution** de la palette et sélectionnez une configuration de Surface Hub dans la liste.
+4. Exécutez votre application dans le simulateur VisualStudio. Cliquez sur le bouton **Modifier la résolution** de la palette et sélectionnez une configuration de Surface Hub dans la liste.
 
-    ![Résolutions de simulateur de VisualStudio](images/vs-simulator-resolutions.png)
+    ![Résolutions du simulateur VisualStudio](images/vs-simulator-resolutions.png)
 
-   > **Conseil** &nbsp;&nbsp; [Activez le mode tablette](http://windows.microsoft.com/windows-10/getstarted-like-a-tablet) afin de simuler plus précisément l’expérience sur un appareil Surface Hub.
+   > **Conseil**&nbsp;&nbsp;[Activez le mode tablette](http://windows.microsoft.com/windows-10/getstarted-like-a-tablet) pour simuler plus précisément l’expérience sur un appareil Surface Hub.
 
 ## Déployer des applications sur un appareil Surface Hub à partir de VisualStudio
 Le déploiement manuel d’une application est un processus simple.
@@ -71,37 +71,37 @@ Le déploiement manuel d’une application est un processus simple.
 ### Activer le mode développeur
 Par défaut, Surface Hub installe uniquement des applications du WindowsStore. Pour installer des applications signées par d’autres sources, vous devez activer le mode développeur.
 
-> **Remarque** &nbsp;&nbsp;Une fois que le mode développeur a été activé, vous devez réinitialiser l’appareil Surface Hub pour désactiver de nouveau ce mode. La réinitialisation de l’appareil supprime l’ensemble des configurations et des fichiers utilisateur locaux, puis réinstalle Windows.
+> **Remarque**&nbsp;&nbsp;Une fois que le mode développeur a été activé, vous devez réinitialiser l’appareil Surface Hub pour le redésactiver. La réinitialisation de l’appareil supprime l’ensemble des configurations et des fichiers utilisateur locaux, puis réinstalle Windows.
 
 1. À partir du menu **Démarrer** de l’appareil Surface Hub, ouvrez l’application Paramètres.
 
-   >  **Remarque** &nbsp;&nbsp;L’accès à l’application Paramètres requiert des privilèges administratifs.
+   >  **Remarque**&nbsp;&nbsp;L’accès à l’application Paramètres nécessite des privilèges d’administration.
 
-2. Accédez à **Mise à jour et sécurité &gt; Pour les développeurs**.
+2. Accédez à **Mise à jour et sécurité&gt; Pour les développeurs**.
 
 3. Choisissez **Mode développeur** et acceptez le message d’avertissement.
 
 ### Déployer votre application à partir de VisualStudio
 Pour plus d’informations, voir [Déploiement et débogage des applications de plateforme Windows universelle (UWP)](https://msdn.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps).
 
-   > **Remarque**&nbsp;&nbsp;Cette fonctionnalité nécessite au moins **Visual Studio 2015 Update 1**.
+   > **Remarque**&nbsp;&nbsp;Cette fonctionnalité nécessite au moins **Visual Studio2015 Update1**.
 
-1. Accédez à la liste déroulante des cibles de débogage en regard du bouton **Démarrer le débogage**, puis sélectionnez **Ordinateur distant**.
+1. Accédez à la liste déroulante des cibles de débogage à côté du bouton **Démarrer le débogage**, puis sélectionnez **Ordinateur distant**.
 
     <!--lcap: in your screenshot, you have local machine selected-->
 
    ![Liste déroulante des cibles de débogage VisualStudio](images/vs-debug-target.png)
 
-2. Entrez l’adresseIP de l’appareil SurfaceHub. Assurez-vous que le mode d’authentification **Universel** est sélectionné.
+2. Entrez l’adresseIP de l’appareil SurfaceHub. Vérifiez que le mode d’authentification **Universel** est sélectionné.
 
-   > **Conseil** &nbsp;&nbsp;Une fois que vous avez activé le mode développeur, vous pouvez trouver l’adresse IP de l’appareil Surface Hub sur l’écran d’accueil.
+   > **Conseil**&nbsp;&nbsp;Une fois que vous avez activé le mode développeur, vous pouvez trouver l’adresse IP de l’appareil Surface Hub sur l’écran d’accueil.
 
 3. Choisissez **Démarrer le débogage (F5)** pour déployer et déboguer votre application sur l’appareil Surface Hub, ou appuyez sur Ctrl+F5 pour déployer uniquement votre application.
 
-   > **Conseil** &nbsp;&nbsp;Si l’appareil Surface Hub apparaît sur l’écran d’accueil, masquez-le en appuyant sur n’importe quel bouton.
+   > **Conseil**&nbsp;&nbsp;Si l’appareil Surface Hub apparaît sur l’écran d’accueil, masquez-le en appuyant sur n’importe quel bouton.
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

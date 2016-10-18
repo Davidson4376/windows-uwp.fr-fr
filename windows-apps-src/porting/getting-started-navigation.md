@@ -1,15 +1,15 @@
 ---
 author: mcleblanc
-title: Prise en main &#58; Navigation
-description: Prise en main &#58; Navigation
+title: 'Prise en main : Navigation'
+description: 'Prise en main : Navigation'
 ms.assetid: F4DF5C5F-C886-4483-BBDA-498C4E2C1BAF
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c542faa6365c8558988162bee12f266d67474461
+ms.openlocfilehash: daf56299b3a5e81bb756bc9fcb8112da044b00f3
 
 ---
 
-# Prise en main &#58; Navigation
+# Prise en main : Navigation
 
 \[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
@@ -87,6 +87,6 @@ Pour plus d’informations sur la navigation, voir [Navigation](https://msdn.mic
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

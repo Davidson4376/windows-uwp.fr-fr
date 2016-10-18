@@ -5,7 +5,7 @@ title: "Informations de référence sur les API Device Portal pour HoloLens"
 description: "Découvrez les API REST Windows Device Portal pour HoloLens que vous pouvez utiliser pour accéder aux données et contrôler votre appareil par programme."
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 5ed8ffe0a409569777fbf4e56a90ab3b80cd395c
+ms.openlocfilehash: 638ebca167b2ca56f00a83aab13b15c57b2dca2a
 
 ---
 # Informations de référence sur les API Device Portal pour HoloLens
@@ -1415,6 +1415,6 @@ loopback   | (**facultatif**) Indique si vous souhaitez capturer le son de l’a
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

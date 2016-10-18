@@ -5,7 +5,7 @@ title: "Utiliser l’accéléromètre"
 description: "Découvrez comment utiliser l’accéléromètre pour répondre aux mouvements de l’utilisateur."
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: f1ec749d7bec245632f1998ac5cc94b9bfcad533
+ms.openlocfilehash: 8ce3baf2b030096ae5cfc56f31b97ec58e138a44
 
 ---
 # Utiliser l’accéléromètre
@@ -130,11 +130,11 @@ Vous devez remplacer le nom de l’espace de noms dans l’extrait de code préc
 
 Vous devez remplacer la première partie du nom de la classe dans l’extrait de code précédent par l’espace de noms de votre application. Par exemple, si vous avez créé un projet nommé **AccelerometerCS**, vous devez remplacer `x:Class="App1.MainPage"` par `x:Class="AccelerometerCS.MainPage"`. Vous devez aussi remplacer `xmlns:local="using:App1"` par `xmlns:local="using:AccelerometerCS"`.
 
--   Appuyez sur F5 ou sélectionnez **Déboguer**&gt;**Démarrer le débogage** pour générer, déployer et exécuter l’application.
+-   Appuyez sur F5 ou sélectionnez **Déboguer** &gt; **Démarrer le débogage** pour générer, déployer et exécuter l’application.
 
 Une fois l’application en cours d’exécution, vous pouvez modifier les valeurs de l’accéléromètre en déplaçant l’appareil ou à l’aide des outils de l’émulateur.
 
--   Pour arrêter l’application, retournez dans Visual Studio et appuyez sur Maj+ 5, ou sélectionnez **Déboguer**&gt;**Arrêter le débogage**.
+-   Pour arrêter l’application, retournez dans Visual Studio et appuyez sur Maj+F5, ou sélectionnez **Déboguer** &gt; **Arrêter le débogage**.
 
 ### Explication
 
@@ -175,6 +175,6 @@ Ces nouvelles valeurs sont écrites dans les TextBlocks identifiés dans le code
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

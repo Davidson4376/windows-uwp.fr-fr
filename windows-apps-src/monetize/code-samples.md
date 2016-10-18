@@ -4,17 +4,17 @@ ms.assetid: 4a311d20-ba8c-4816-8091-35726428dc94
 description: "Obtenez des exemples supplémentaires qui montrent comment utiliser les propriétés, méthodes et événements des classes AdControl et InterstitialAd dans les bibliothèques de publicités Microsoft."
 title: Exemples de code
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 1a7bf9ed90ed2dadf6de7a141fa03972b06ef144
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: 0a852a4bf8404d7ab0d8a2a169a16451c0388122
 
 ---
 
 # Exemples de code
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Cette section contient des exemples qui montrent comment utiliser les propriétés, méthodes et événements des classes [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) et [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) dans les bibliothèques de publicités Microsoft afin de cibler des utilisateurs, actualiser manuellement les publicités et gérer les événements. Pour passer en revue les procédures pas à pas d’introduction qui montrent comment ajouter ces contrôles à votre application, voir [Procédures pas à pas pour développeurs](developer-walkthroughs.md).
+
+Cette section propose des exemples qui montrent comment utiliser les propriétés, méthodes et événements des classes [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) et [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) dans les bibliothèques de publicités Microsoft afin de cibler des utilisateurs, actualiser manuellement les publicités et gérer les événements. Pour passer en revue les procédures pas à pas d’introduction qui montrent comment ajouter ces contrôles à votre application, voir [Procédures pas à pas pour développeurs](developer-walkthroughs.md).
 
 Pour obtenir des exemples complets de projet qui montrent comment ajouter des bannières et des spots vidéo publicitaires à des applications HTML/JavaScript et XAML en C# et C++, voir [Exemples de publicité sur GitHub](http://aka.ms/githubads).
 
@@ -41,6 +41,6 @@ Pour obtenir des exemples complets de projet qui montrent comment ajouter des ba
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

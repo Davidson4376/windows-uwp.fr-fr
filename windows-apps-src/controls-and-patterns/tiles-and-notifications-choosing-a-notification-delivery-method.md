@@ -6,20 +6,18 @@ ms.assetid: FDB43EDE-C5F2-493F-952C-55401EC5172B
 label: Choose a notification delivery method
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: b79a6f771afe63c9a42567875db5ef8107611afc
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: a61c9ce609856ff3addba557558c6bffec504ed7
 
 ---
-
 # Choisir une méthode de remise de notification
 
-
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
 Ce article présente les quatre options de notification (locale, planifiée, périodique et Push) disponibles pour remettre des mises à jour de vignette et de badge, ainsi que du contenu de notification toast. Une vignette ou une notification toast peuvent transmettre des informations à votre utilisateur, même si celui-ci n’est pas en train d’utiliser votre application. La nature et le contenu de votre application et des informations que vous voulez remettre peuvent vous aider à déterminer la méthode de notification la mieux appropriée à votre cas.
 
-## <span id="Notification_delivery_methods__overview"></span><span id="notification_delivery_methods__overview"></span><span id="NOTIFICATION_DELIVERY_METHODS__OVERVIEW"></span>Vue d’ensemble des méthodes de remise des notifications
+## Vue d’ensemble des méthodes de remise des notifications
 
 
 Une application peut utiliser quatre méthodes pour remettre une notification:
@@ -91,7 +89,7 @@ Ce tableau récapitule les types de remise des notifications.
 
  
 
-## <span id="Local_notifications"></span><span id="local_notifications"></span><span id="LOCAL_NOTIFICATIONS"></span>Notifications locales
+## Notifications locales
 
 
 La mise à jour de la vignette ou du badge de l’application, ou le déclenchement d’une notification toast pendant que l’application s’exécute constitue le mécanisme de remise des notifications le plus simple; il requiert uniquement des appels d’API locaux. Chaque application peut donner des informations utiles ou intéressantes sur la vignette, même si ce contenu ne change qu’une fois que l’utilisateur a lancé l’application ou interagi avec elle. Les notifications locales sont également un bon moyen d’assurer l’actualisation de la vignette de l’application, même si vous utilisez également l’un des autres mécanismes de notification. Par exemple, la vignette d’une application de photo peut montrer des photos d’un album récemment ajouté.
@@ -110,7 +108,7 @@ Pour plus d’informations, voir les rubriques suivantes :
 -   [Envoyer une notification par vignette locale](tiles-and-notifications-sending-a-local-tile-notification.md)
 -   [Exemples de code de notification de plateforme Windows universelle (UWP)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
-## <span id="Scheduled_notifications"></span><span id="scheduled_notifications"></span><span id="SCHEDULED_NOTIFICATIONS"></span>Notifications planifiées
+## Notifications planifiées
 
 
 Les notifications planifiées sont le sous-ensemble des notifications locales pouvant indiquer l’heure précise à laquelle une vignette doit être mise à jour ou une notification toast envoyée. Les notifications planifiées sont idéales pour les situations dans lesquelles le contenu à mettre à jour est connu d’avance, comme dans une invitation à une réunion. Si vous ne connaissez pas le contenu de la notification à l’avance, il est préférable d’utiliser une notification Push ou périodique.
@@ -122,7 +120,7 @@ Pour plus d’informations, voir les rubriques suivantes :
 -   [Recommandations en matière de notifications planifiées](https://msdn.microsoft.com/library/windows/apps/hh761464)
 -   [Exemples de code de notification de plateforme Windows universelle (UWP)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
-## <span id="Periodic_notifications"></span><span id="periodic_notifications"></span><span id="PERIODIC_NOTIFICATIONS"></span>Notifications périodiques
+## Notifications périodiques
 
 
 Les notifications périodiques vous donnent des mises à jour de vignette en direct avec un minimum de service cloud et d’investissement client. Elles sont également une excellente méthode de distribution du même contenu à un large public. Votre code client spécifie l’URL d’un emplacement cloud que Windows interroge afin d’obtenir les mises à jour de vignette ou de badge, ainsi que la fréquence d’interrogation de cet emplacement. À chaque interrogation, Windows contacte l’URL afin de télécharger le contenu XML spécifié pour l’afficher sur la vignette.
@@ -136,7 +134,7 @@ Pour plus d’informations, voir les rubriques suivantes :
 -   [Vue d’ensemble des notifications périodiques](tiles-and-notifications-periodic-notification-overview.md)
 -   [Exemples de code de notification de plateforme Windows universelle (UWP)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
-## <span id="Push_notifications"></span><span id="push_notifications"></span><span id="PUSH_NOTIFICATIONS"></span>Notifications Push
+## Notifications Push
 
 
 Les notifications Push sont idéales pour communiquer des données en temps réel ou des données personnalisées pour l’utilisateur. Les notifications Push servent au contenu généré à des moments imprévus, comme les actualités, les mises à jour de réseaux sociaux ou les messages instantanés. Les notifications Push s’avèrent également utiles dans les situations dans lesquelles les données sont ponctuelles d’une manière qui ne convient pas aux notifications périodiques, notamment comme l’évolution des scores pendant un événement sportif.
@@ -152,7 +150,7 @@ Pour plus d’informations, voir :
 -   [Exemples de code de notification de plateforme Windows universelle (UWP)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 
-## <span id="related_topics"></span>Rubriques connexes
+## Rubriques connexes
 
 
 * [Envoyer une notification par vignette locale](tiles-and-notifications-sending-a-local-tile-notification.md)
@@ -172,6 +170,6 @@ Pour plus d’informations, voir :
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

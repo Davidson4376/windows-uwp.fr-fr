@@ -5,7 +5,7 @@ description: "Les jeux d’application de plateforme UWP s’exécutent sur diff
 ms.assetid: b946bf62-c0ca-f9ec-1a87-8195b89a5ab4
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 563ee292ec7189b0c365ae5ee0d1c41fd6fd1a09
+ms.openlocfilehash: ddaa13c6bf7d1bcf5a01d7525389a893a077f4f4
 
 ---
 
@@ -527,6 +527,6 @@ Consultez [Ajout d’audio à l’exemple Marble Maze](adding-audio-to-the-marbl
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

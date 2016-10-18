@@ -5,7 +5,7 @@ title: "Ouverture d’un compte de développeur"
 description: "Cette vue d’ensemble, qui explique comment s’inscrire afin d’obtenir un compte de développeur pour le Windows Store et d’autres programmes Microsoft, vous aidera à comprendre le processus de configuration de votre compte."
 translationtype: Human Translation
 ms.sourcegitcommit: c4a753b7642354c4fe42cff721fb21337b14528f
-ms.openlocfilehash: 979df6390fef01a32fb1728956622fbfe38bafa9
+ms.openlocfilehash: b9ccd8e4756dd35fd775d91747710dd13b9ca7ed
 
 ---
 # Ouverture d’un compte de développeur
@@ -82,6 +82,6 @@ Lorsque vous fermez votre compte, il est important que vous en compreniez les r�
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

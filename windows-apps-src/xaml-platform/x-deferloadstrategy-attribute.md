@@ -4,16 +4,18 @@ title: Attribut xDeferLoadStrategy
 description: "xDeferLoadStrategy retarde la création d’un élément et ses enfants. Cela réduit le temps de démarrage, mais augmente légèrement l’utilisation de la mémoire. Chaque élément affecté ajoute environ 600 octets à l’utilisation de la mémoire."
 ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: a5230a92ad919fc52c40c19646ff799453e64fa4
+ms.sourcegitcommit: 82edf9c3ee7f7303788b7a1272ecb261d3748c5a
+ms.openlocfilehash: c1a0515ea4298b6eb870bdf69e452f774962cdd8
 
 ---
 
-# Attribut x&#58;DeferLoadStrategy
+# Attribut x:DeferLoadStrategy
 
 \[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-**x:DeferLoadStrategy="Lazy"** retarde la création d’un élément et ses enfants. Cela réduit le temps de démarrage, mais augmente légèrement l’utilisation de la mémoire. Chaque élément affecté ajoute environ 600octets à l’utilisation de la mémoire. Plus l’arborescence d’éléments que vous différez est importante, plus vous gagnez du temps de démarrage, mais au prix d’un encombrement mémoire supérieur. Par conséquent, un usage abusif de cet attribut peut entraîner une diminution des performances.
+**x:DeferLoadStrategy="Lazy"** est une fonctionnalité qui peut être utilisée pour optimiser les performances des scénarios de démarrage et de création d’arborescence d’une application XAML. L’utilisation de **x:DeferLoadStrategy="Lazy"** retarde la création d’un élément et de ses enfants, ce qui réduit le temps de démarrage et les coûts mémoire. Cela permet de réduire les coûts des éléments qui ne sont pas souvent nécessaires ou qui le sont dans certaines conditions. L’élément est réalisé lorsqu’il est référencé dans le code ou dans VisualStateManager.
+
+Toutefois, la gestion des reports accroît d’environ 600octets l’utilisation de la mémoire pour chaque élément affecté. Plus l’arborescence d’éléments que vous reportez est importante, plus vous économisez de temps de démarrage, mais au prix d’une plus grande empreinte mémoire. Par conséquent, un usage abusif de cet attribut peut entraîner une diminution des performances.
 
 ## Utilisation des attributs XAML
 
@@ -27,7 +29,7 @@ Les restrictions pour l’utilisation de **x:DeferLoadStrategy** sont les suivan
 
 -   Nécessite un [x: Name](x-name-attribute.md) défini, car il doit être possible de trouver l’élément ultérieurement.
 -   Seul un [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) peut être marqué comme différé, à l’exception des types dérivés de [**FlyoutBase**](https://msdn.microsoft.com/library/windows/apps/dn279249).
--   Des éléments racines ne peuvent pas être différés dans [**Page**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page), [**UserControls**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.usercontrol) ou [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348).
+-   Des éléments racines ne peuvent pas être différés dans [**Page**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.page), [**UserControls**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.usercontrol) ou [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348).
 -   Les éléments d’un [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) ne peuvent pas être différés.
 -   Ne fonctionne pas avec un XAML libre chargé avec [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048).
 -   Le déplacement d’un élément parent efface tous les éléments qui n’ont pas été réalisés.
@@ -88,6 +90,6 @@ private void RealizeElements_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

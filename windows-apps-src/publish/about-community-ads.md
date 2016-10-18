@@ -5,7 +5,7 @@ title: "À propos des annonces de la communauté"
 ms.assetid: F55CE478-99AF-4B70-90D1-D16419562136
 translationtype: Human Translation
 ms.sourcegitcommit: 90e63d53c68e25816fd1f7b532792d9ad6dc2cc6
-ms.openlocfilehash: 582b26d2dde6cf4f3c7dd6f6d7b182ec4b7002ea
+ms.openlocfilehash: db771fbd56db55b5767e4e335dcb10514f7a0bae
 
 ---
 
@@ -24,9 +24,9 @@ Voici comment fonctionne ce programme:
 
 ## Comment participer aux annonces de la communauté
 
-Suivez les étapes ci-dessous pour participer aux annonces de la communauté: 
+Suivez les étapes ci-dessous pour participer aux annonces de la communauté:
 
-1. Accédez à la page **Monétisation**&gt;**Monétiser avec des publicités** dans le tableau de bord du Centre de développement Windows.
+1. Accédez à la page **Monétisation** &gt; **Monétiser avec des publicités** dans le tableau de bord du Centre de développement Windows.
 2. Dans la section **Annonces de la communauté**, cochez la case **Afficher des annonces de la communauté dans mon application**.
    > **Remarque** Une fois que vous avez coché ou décoché cette case, il n’est pas nécessaire de republier l’application pour que les modifications prennent effet.
 
@@ -40,6 +40,6 @@ Suivez les étapes ci-dessous pour participer aux annonces de la communauté:
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

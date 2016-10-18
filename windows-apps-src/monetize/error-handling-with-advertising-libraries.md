@@ -4,15 +4,15 @@ ms.assetid: cb7380d0-bc14-4936-aa1c-206304b3dc70
 description: "Découvrez comment gérer les erreurs générées par la classe AdControl dans les bibliothèques de publicités Microsoft."
 title: "Gestion des erreurs liées aux bibliothèques de publicités Microsoft"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 5e0c7e6328247e5f686b14b10c80d8aafc13e0e4
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: dedac33d86f50b63de300f78a9f9961efc1c016b
 
 ---
 
 # Gestion des erreurs liées aux bibliothèques de publicités Microsoft
 
 
-\[ Mise à jour pour les applicationsUWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+
 
 Cette rubrique fournit des informations de base sur la gestion des erreurs générées par la classe [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) dans les bibliothèques de publicités Microsoft.
 
@@ -81,6 +81,6 @@ Voir [Gestion des erreurs dans la procédure pas à pas pour XAML/C#](error-hand
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

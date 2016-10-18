@@ -6,22 +6,35 @@ ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
 label: Radio buttons
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: 317df548e72f9aff475ba0959668b6441ac29d3d
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 435a2a6f1b9707d1f64587a693bd9a60d587ca83
 
 ---
 # Cases d’option
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
 Les cases d’option permettent aux utilisateurs de faire un choix parmi au moins deux possibilités. Chaque option est représentée par une seule case d’option ; un utilisateur peut activer une seule case d’option dans un groupe de cases d’option.
 
 (Si le nom vous intrigue, sachez que les cases d’option s’apparentent à des boutons de radio.)
 
 ![Cases d’option](images/controls/radio-button.png)
 
-<span class="sidebar_heading" style="font-weight: bold;">API importantes</span>
+<div class="important-apis" >
+<b>API importantes</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/br227544"><strong>Classe RadioButton</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx"><strong>Événement Checked</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx"><strong>Propriété IsChecked</strong></a></li>
+</ul>
 
--   [**Classe RadioButton**](https://msdn.microsoft.com/library/windows/apps/br227544)
--   [**Événement Checked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)
--   [**Propriété IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)
+</div>
+</div>
+
+
+
+
+
 
 ## Est-ce le contrôle approprié?
 
@@ -58,7 +71,7 @@ Les cases d’option s’utilisent en groupes. Les 2méthodes permettant de grou
 - Placez-les dans le même conteneur parent.
 - Définissez la propriété [**GroupName**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.radiobutton.groupname.aspx) de chaque case d’option sur la même valeur.
 
-> **Remarque** &nbsp;&nbsp;Un groupe de cases d’options se comporte comme un seul contrôle quand l’utilisateur y accède via le clavier. Seule l’option sélectionnée est accessible à l’aide de la touche Tabulation, mais les utilisateurs peuvent passer d’une option à l’autre dans le groupe à l’aide des touches de direction.
+> **Remarque**&nbsp;&nbsp;Un groupe de cases d’options se comporte comme un seul contrôle quand l’utilisateur y accède via le clavier. Seule l’option sélectionnée est accessible à l’aide de la touche Tab, mais les utilisateurs peuvent passer d’une option à l’autre dans le groupe à l’aide des touches de direction.
 
 Dans cet exemple, le premier groupe de cases d’option est implicitement formé en raison de son appartenance au même panneau d’empilement. Le second groupe est divisé entre 2panneaux d’empilement, si bien que les cases d’option sont explicitement groupées par GroupName.
 
@@ -185,6 +198,6 @@ Cette illustration montre la manière convenable de positionner et espacer les c
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

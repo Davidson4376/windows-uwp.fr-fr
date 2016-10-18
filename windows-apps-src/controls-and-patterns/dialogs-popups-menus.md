@@ -1,24 +1,37 @@
 ---
 author: Jwmsft
+redirect_url: https://msdn.microsoft.com/windows/uwp/controls-and-patterns/dialogs
 Description: "Un menu volant est une fenêtre contextuelle légère utilisée pour afficher de manière temporaire des éléments de l’interface utilisateur qui sont liés à ce que l’utilisateur est en train de faire."
 title: "Menus contextuels et boîtes de dialogue"
 ms.assetid: 7CA2600C-A1DB-46AE-8F72-24C25E224417
 label: Menus, dialogs, and popups
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: e268a5facebbdb80d7cc5cdd52c1a6f944ef7d00
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 6572acefa25e464b6edaca9fee5b2b3e3b46ff3f
 
 ---
 # Menus, boîtes de dialogue, menus volants et fenêtres contextuelles
 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
 Les menus, boîtes de dialogue, menus volants et fenêtres contextuelles affichent des éléments temporaires d’interface utilisateur quand l’utilisateur les sollicite ou lorsqu’un événement nécessite une notification ou une approbation.
 
-<span class="sidebar_heading" style="font-weight: bold;">API importantes</span>
+<div class="important-apis" >
+<b>API importantes</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/dn299030">Classe MenuFlyout</a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/dn279496">Classe Flyout</a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx">Classe ContentDialog</a></li>
+</ul>
 
--   [Classe MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030)
--   [Classe Flyout](https://msdn.microsoft.com/library/windows/apps/dn279496)
--   [Classe ContentDialog](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx)
+</div>
+</div>
+
+
+
+
+
 
 Un menu contextuel fournit les actions instantanées à l’utilisateur. Vous pouvez insérer des commandes texte dans ce type de menu. Vous pouvez abandonner interactivement un menu contextuel en appuyant ou en cliquant sur un élément à l’extérieur du menu.
 
@@ -100,31 +113,11 @@ Les menus volants et les menus contextuels sont des contrôles d’abandon inter
 -   Les boîtes de dialogue d’erreur incluent un message d’erreur, ainsi que les informations pertinentes. Le seul bouton utilisé dans une boîte de dialogue d’erreur doit être du type « Fermer », ou similaire.
 -   N’utilisez pas de boîtes de dialogue pour les erreurs qui sont liées à un emplacement spécifique de la page, telles que les erreurs de validation (dans les champs de mot de passe, par exemple). Utilisez plutôt le canevas de l’application afin d’afficher les erreurs insérées.
 
-## Menus contextuels et menus volants
+## Menu volant
 
-Les menus volants et les menus contextuels sont des contrôles étroitement liés qui partagent des comportements d’interaction. La principale différence entre ces contrôles est le type de contenu qu’ils acceptent.
+Un menu volant est un conteneur ouvert qui peut afficher l’interface utilisateur arbitraire comme étant son contenu.  Les menus volants n’ont pas leurs propres parties visuelles, ils sont simplement des contrôles de contenu. Les menus volants comportent une marge et des barres de défilement facultatives qu’ils ajoutent autour de leur contenu. Pour appliquer un style à un menu volant, modifiez sa propriété [FlyoutPresenterStyle](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flyout.flyoutpresenterstyle.aspx).
 
-### MenuFlyout
-Un menu contextuel, implémenté avec la classe MenuFlyout, peut contenir [**MenuFlyoutItem**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.menuflyoutitem.aspx), [**ToggleMenuFlyoutItem**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.togglemenuflyoutitem.aspx), [**MenuFlyoutSubItem**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.menuflyoutsubitem.aspx) et [**MenuFlyoutSeparator**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.menuflyoutseparator.aspx). Pour afficher un autre type d’interface utilisateur, utilisez Flyout.
-
-- **Instructions d’utilisation**
-  - Utilisez un séparateur entre les groupes de commandes d’un menu contextuel pour effectuer les actions suivantes:
-    - différencier des groupes de commandes connexes ;
-    - regrouper des ensembles de commandes ;
-    - séparer un ensemble prédictible de commandes, telles que les commandes du Presse-papiers (Couper/Copier/Coller) des commandes propres à l’application ou à l’affichage.
-  -   Sur les portables et ordinateurs de bureau, les info-bulles et les menus contextuels ne sont pas limités à la fenêtre de l’application et peuvent déborder partiellement de celle-ci. Si l’application essaie d’afficher un menu contextuel complètement en dehors de sa fenêtre, une exception est levée.
-
-- **Pratiques conseillées et déconseillées**
-  -   Faites en sorte que les commandes de menu contextuel soient courtes. Les commandes plus longues finissent par être tronquées.
-  -   Mettez une majuscule au début de chaque nom de commande.
-  -   Dans un menu contextuel, affichez le moins possible de commandes.
-  -   Si la manipulation directe d’un élément d’interface utilisateur est possible, évitez de placer cette commande dans un menu contextuel. Un menu contextuel doit être réservé pour les commandes contextuelles qui ne sont pas visibles à l’écran en conditions normales.
-
-### Menu volant
-
-Un menu volant est un conteneur ouvert qui peut afficher l’interface utilisateur arbitraire comme étant son contenu.  Les menus volants n’ont pas leurs propres parties visuelles, ils sont simplement des contrôles de contenu. Les menus volants comportent une marge et des barres de défilement facultatives qu’ils ajoutent autour de leur contenu. Pour appliquer un style à un menu volant, modifiez son `FlyoutPresenterStyle`.
-
-Le code suivant affiche un paragraphe d’habillage de texte et rend le bloc de texte accessible à un lecteur d’écran.
+Le code suivant montre un paragraphe d’habillage de texte et rend le bloc de texte accessible à un lecteur d’écran.
 
 ````xaml
 <Flyout>
@@ -144,7 +137,7 @@ Le code suivant affiche un paragraphe d’habillage de texte et rend le bloc de 
 
 Les menus volants et les menus contextuels sont attachés à des contrôles spécifiques. Lorsqu’ils sont visibles, ils doivent être ancrés à l’objet appelant et spécifier leur position relative à l’objet privilégiée: haut, gauche, bas ou droite. Le menu volant dispose également d’un mode de placement complet qui tente d’étirer le menu volant et de le centrer à l’intérieur de la fenêtre d’application.
 
-La [classe Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx) inclut une propriété `Flyout` qui vous permet de spécifier l’interface utilisateur temporaire qui s’ouvrira quand l’utilisateur cliquera ou appuiera sur le bouton.
+La [classe Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx) inclut une propriété [**Flyout**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx) qui vous permet de spécifier l’interface utilisateur temporaire qui s’ouvre quand l’utilisateur clique ou appuie sur le bouton.
 
 ````xaml
 <Button Content="Click me">
@@ -156,24 +149,6 @@ La [classe Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xa
 </Button>
 ````
 
-Pour ouvrir un menu contextuel, les utilisateurs peuvent effectuer l’une des actions suivantes:
-- Effectuer un clic droit avec la souris
-- Appuyer longuement sur l’interface tactile
-- Taper Maj + F10
-- Appuyer sur la touche de menu du clavier
-- Appuyer sur le bouton de menu du boîtier de commande
-
-Pour ouvrir facilement un menu volant ou un menu contextuel en réponse à l’une des actions ci-dessus, les applications peuvent tirer parti de la nouvelle propriété [`ContextFlyout`](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) sur [UIElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.aspx), la classe de base de la plupart des contrôles.
-
-````xaml
-<Rectangle Height="100" Width="100" Fill="Red">
-  <Rectangle.ContextFlyout>
-     <MenuFlyout>
-        <MenuFlyoutItem Text="Close"/>
-     </MenuFlyout>
-  </Rectangle.Flyout>
-</Rectangle>
-````
 
 ## Articles connexes
 
@@ -184,6 +159,6 @@ Pour ouvrir facilement un menu volant ou un menu contextuel en réponse à l’u
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

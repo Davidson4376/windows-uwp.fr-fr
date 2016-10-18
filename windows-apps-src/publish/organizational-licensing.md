@@ -4,8 +4,8 @@ Description: "Vous pouvez indiquer si et comment votre application peut être pr
 title: Options de gestion des licences organisationnelles
 ms.assetid: 1EB139B0-67E7-4F66-AAEF-491B1E52E96F
 translationtype: Human Translation
-ms.sourcegitcommit: 13603b66bd6168073b855bbe37ea92763e14a5a0
-ms.openlocfilehash: e4adbc66b4b4a88ca3787737e9bbddf0d937b604
+ms.sourcegitcommit: 4a297b7a2a2383a825a848ed6939f9743733253f
+ms.openlocfilehash: f3c1ee23e53e3c31a577eb3be03e3fc3055f1ec2
 
 ---
 
@@ -18,9 +18,9 @@ Ces paramètres vous permettent d'autoriser que votre application soit disponibl
 
 > **Remarque** Les sélections pour chacune de vos applications sont configurées indépendamment les unes des autres. Vous pouvez modifier vos préférences concernant une application à tout moment en créant une nouvelle soumission. Vos modifications prennent effet dès la fin du [processus de certification](the-app-certification-process.md) de la soumission.
 
-## Autorisation de l'offre de votre application aux organisations
+## Autorisation de l’offre de votre application aux organisations
 
-Par défaut, la case à cocher **Proposer mon application aux organisations via le service de gestion de licences en volume (en ligne) du Store** est activée. Cela signifie que vous souhaitez que votre application puisse être incluse dans les catalogues d’applications que nous mettons à la disposition des organisations pour l’acquisition en volume, avec des licences d’application gérées par le biais du système de gestion de licences en ligne du Windows Store.
+Par défaut, la case à cocher **Proposer mon application aux organisations via le service de gestion de licences et de distribution (en ligne) du Store** est activée. Cela signifie que vous souhaitez que votre application puisse être incluse dans les catalogues d’applications que nous mettons à la disposition des organisations pour l’acquisition en volume, avec des licences d’application gérées par le biais du système de gestion de licences en ligne du Windows Store.
 
 > **Remarque** Cela ne garantit pas que votre application sera mise à la disposition de toutes les organisations.
 
@@ -31,9 +31,9 @@ Si vous ne souhaitez pas nous autoriser à proposer votre application à l’acq
 ## Autorisation de l’achat de licences en mode hors connexion
 
 
-De nombreuses organisations ont besoin d’applications dont la licence peut être achetée hors connexion. Par exemple, certaines organisations doivent déployer des applications sur des appareils qui se connectent rarement ou jamais à Internet. Si vous souhaitez autoriser que votre application soit disponible pour ces clients, activez la case à cocher **Permettre aux entreprises d’acheter des licences en mode hors connexion**.
+De nombreuses organisations ont besoin d’applications dont la licence peut être achetée hors connexion. Par exemple, certaines organisations doivent déployer des applications sur des appareils qui se connectent rarement ou jamais à Internet. Si vous souhaitez autoriser que votre application soit disponible pour ces clients, activez la case à cocher **Autoriser la gestion et la distribution des licences aux organisations en mode hors connexion**.
 
-> **Remarque** Cette case à cocher est désactivée par défaut. Vous devez l’activer pour nous permettre de rendre votre application disponible à des organisations vérifiées qui l’installent via une acquisition de licence hors connexion. Pour pouvoir installer des applications payantes pour leurs utilisateurs finaux de cette manière, les organisations doivent se soumettre à un processus de validation supplémentaire.
+> **Remarque** Cette case à cocher est désactivée par défaut. Vous devez l’activer pour nous permettre de rendre votre application disponible à des organisations vérifiées qui l’installent via une licence gérée en mode hors connexion. Pour pouvoir installer des applications payantes pour leurs utilisateurs finaux de cette manière, les organisations doivent se soumettre à un processus de validation supplémentaire.
 
 L’achat de licences en mode hors connexion permet aux organisations d’acquérir votre application en volume, puis de l’installer sans que chaque appareil doive contacter le système de gestion de licences du Windows Store. L'organisation peut télécharger le package de votre application en même temps qu'une licence lui permettant de l'installer sur des appareils (via ses propres outils de gestion ou en préchargeant l'application sur des images du système d'exploitation) sans informer le Store quand une licence particulière a été utilisée. L’activation de ce scénario accroît sensiblement la flexibilité de déploiement et peut augmenter considérablement l’attrait de votre application auprès de ces clients.
 
@@ -88,6 +88,6 @@ Si votre pays ou votre région n’est pas répertorié ci-dessous, vos applicat
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Sep16_HO3-->
 
 

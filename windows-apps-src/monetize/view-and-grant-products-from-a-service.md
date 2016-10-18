@@ -1,26 +1,26 @@
 ---
 author: mcleanbyron
 ms.assetid: B071F6BC-49D3-4E74-98EA-0461A1A55EFB
-description: "Si vous disposez d’un catalogue d’applications et de produits intégrés à l’application (PIA), vous pouvez utiliser l’API de collection du WindowsStore et l’API d’achat du WindowsStore pour accéder aux informations de propriété de ces produits à partir de vos services."
+description: "Si vous disposez d’un catalogue d’applications et d’extensions, vous pouvez utiliser l’API de collection du WindowsStore et l’API d’achat du WindowsStore pour accéder aux informations de propriété de ces produits à partir de vos services."
 title: "Afficher et octroyer des produits à partir d’un service"
 translationtype: Human Translation
-ms.sourcegitcommit: 204bace243fb082d3ca3b4259982d457f9c533da
-ms.openlocfilehash: 1e17703442ce539de941890a0616fc5e08391d70
+ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
+ms.openlocfilehash: 2bd637985441cf2f8fbe8366f207369b3a4dc696
 
 ---
 
 # Afficher et octroyer des produits à partir d’un service
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-Si vous disposez d’un catalogue d’applications et de produits intégrés à l’application (PIA), vous pouvez utiliser l’*API de collection du Windows Store* et l’*API d’achat du Windows Store* pour accéder aux informations de propriété de ces produits à partir de vos services.
 
-Ces API sont constituées des méthodes REST, qui sont conçues pour être utilisées par les développeurs dont les catalogues de PIA sont pris en charge par les services multiplateformes. Ces API vous permettent d’effectuer les actions suivantes :
+Si vous disposez d’un catalogue d’applications et d’extensions (également connue sous le nom PIA ou produits in-app), vous pouvez utiliser l’*API de collection du WindowsStore* et l’*API d’achat du WindowsStore* pour accéder aux informations de propriété de ces produits à partir de vos services.
 
--   API de collection du Windows Store : demander des applications ou des PIA possédés par un utilisateur donné ou signaler le traitement de la commande d’un produit consommable.
--   API d’achat du Windows Store : octroyer une application ou un PIA gratuits à un utilisateur donné.
+Ces API sont constituées des méthodes REST, qui sont conçues pour être utilisées par les développeurs dont les catalogues d’extensions sont pris en charge par les services multiplateformes. Ces API vous permettent d’effectuer les actions suivantes:
+
+-   API de collection du Windows Store: demander des applications ou des extensions possédées par un utilisateur donné ou signaler le traitement de la commande d’un produit consommable.
+-   API d’achat du Windows Store: octroyer une application ou une extension gratuites à un utilisateur donné.
 
 ## Utilisation de l’API de collection et de l’API d’achat du Windows Store
 
@@ -57,18 +57,18 @@ Les sections suivantes fournissent plus d’informations sur chacune de ces éta
 
 5.  Enregistrez le manifeste de votre application et chargez-le sur votre application dans le [Portail de gestion Azure](http://manage.windowsazure.com/).
 
-### Étape 2 : Associer votre ID client Azure AD à votre application dans le tableau de bord du Centre de développement Windows
+### Étape2: Associer votre ID client AzureAD à votre application dans le tableau de bord du Centre de développement Windows
 
-Les API de collection et d’achat du Windows Store permettent uniquement d’accéder aux informations de propriété d’un utilisateur relatives aux applications et aux PIA que vous avez associés à votre ID client Azure AD.
+Les API de collection et d’achat du Windows Store permettent uniquement d’accéder aux informations de propriété d’un utilisateur relatives aux applications et aux extensions que vous avez associées à votre ID client AzureAD.
 
 1.  Connectez-vous au [tableau de bord du Centre de développement Windows](https://dev.windows.com/overview) et sélectionnez votre application.
-2.  Accédez à la page **Services**&gt;**Collections et achats de produits** et entrez votre ID client Azure AD dans l’un des champs disponibles.
+2.  Accédez à la page **Services** &gt; **Collections et achats de produits**, puis entrez votre ID client AzureAD dans l’un des champs disponibles.
 
 ### Étape3: Récupérer des jetons d’accès d’AzureAD
 
 Pour pouvoir récupérer une clé d’ID du Windows Store ou appeler les API de collection ou d’achat du Windows Store, votre service doit demander trois jetons d’accès Azure AD qui représentent votre identité d’éditeur. Chacun de ces jetons d’accès est associé à un URI d’audience différent, et chaque jeton est utilisé avec un appel d’API différent. La durée de vie de chacun des jetons est de 60 minutes, et vous pouvez les actualiser une fois qu’ils sont arrivés à expiration.
 
-Pour créer les jetons d’accès, utilisez l’API OAuth 2.0 dans votre service en suivant les instructions de la section [Appels de service à service à l’aide des informations d’identification du client](https://msdn.microsoft.com/library/azure/dn645543.aspx). Pour chaque jeton, spécifiez les données de paramètre suivantes:
+Pour créer les jetons d’accès, utilisez l’API OAuth 2.0 dans votre service en suivant les instructions de la section [Appels de service à service à l’aide des informations d’identification du client](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/). Pour chaque jeton, spécifiez les données de paramètre suivantes:
 
 -   Pour les paramètres *client\_id* et *client\_secret* , spécifiez l’ID client et la clé secrète client de votre application, obtenus à partir du [Portail de gestion Azure](http://manage.windowsazure.com/). Ces deux paramètres sont nécessaires pour générer un jeton d’accès disposant du niveau d’authentification requis par les API de collection ou d’achat du WindowsStore.
 -   Pour le paramètre *resource*, spécifiez l’un des URI d’ID d’application suivants (il s’agit des URI que vous avez précédemment ajoutés à la section `"identifierUris"` du manifeste de l’application). À la fin de ce processus, vous devez disposer de trois jetons d’accès, à chacun desquels l’un de ces URI d’ID d’application est associé.
@@ -78,7 +78,7 @@ Pour créer les jetons d’accès, utilisez l’API OAuth 2.0 dans votre service
 
     > **Important** Utilisez l’audience `https://onestore.microsoft.com` uniquement avec les jetons d’accès qui sont stockés en toute sécurité dans votre service. L’exposition des jetons d’accès avec cette audience en dehors de votre service peut rendre votre service vulnérable aux attaques par relecture.
 
-Pour plus d’informations sur la structure d’un jeton d’accès, voir [Jeton et types de réclamations pris en charge](http://go.microsoft.com/fwlink/?LinkId=722501).
+Une fois votre jeton d’accès arrivé à expiration, vous pouvez l’actualiser en suivant les instructions fournies [ici](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens). Pour plus d’informations sur la structure d’un jeton d’accès, voir [Jeton et types de réclamations pris en charge](http://go.microsoft.com/fwlink/?LinkId=722501).
 
 > **Important** Vous devez créer des jetons d’accès Azure AD uniquement dans le contexte de votre service, et non dans votre application. Votre clé secrète client risque d’être compromise si elle est envoyée à votre application.
 
@@ -176,6 +176,6 @@ Voici un exemple de revendications de clé d’ID du WindowsStore décodées.
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO5-->
 
 

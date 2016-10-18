@@ -5,7 +5,7 @@ title: "Portage d’une application Silverlight pour Windows Phone vers UWP pour
 ms.assetid: 96244516-dd2c-494d-ab5a-14b7dcd2edbd
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 7d5f1fa969e4ddf4a695a3ca77072a0f9c21316f
+ms.openlocfilehash: d25a10db622980e2e93b5953a695d0ab6b0b027b
 
 ---
 
@@ -72,6 +72,6 @@ Reportez-vous à la liste [Valorisation de la réutilisation du code et du balis
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -6,15 +6,13 @@ ms.assetid: 1246B58E-D6E3-48C7-AD7F-475D113600F9
 label: Create adaptive tiles
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a6632c7b8fdee5320f35e316abd318193a254c51
-ms.openlocfilehash: 6cd4519007d1241cb7c411dade1a092140b598c4
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 38ee8ae177898e20d45545c1cfd51a0dd24f7858
 
 ---
-
 # Créer des vignettes adaptatives
 
-
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
 Les modèles de vignette adaptative sont une nouvelle fonctionnalité de Windows10, qui vous permet de concevoir votre propre contenu de notification par vignette à l’aide d’un langage de balisage simple et flexible adapté à différentes densités d’écran. Cet article vous indique comment créer des vignettes dynamiques adaptatives pour votre application de plateforme Windows universelle (UWP). Pour obtenir la liste complète des éléments et attributs adaptatifs, voir [Schéma des vignettes adaptatives](tiles-and-notifications-adaptive-tiles-schema.md).
@@ -1495,6 +1493,6 @@ TileWide = new TileBinding()
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

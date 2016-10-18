@@ -2,14 +2,14 @@
 author: drewbatgit
 ms.assetid: 3FD2AA71-EF67-47B2-9332-3FFA5D3703EA
 description: "Cet article explique comment charger et enregistrer des fichiers image à l’aide de BitmapDecoder et de BitmapEncoder, et comment utiliser l’objet SoftwareBitmap pour représenter des images bitmap."
-title: "Acquisition d’images"
+title: "Créer, modifier et enregistrer des images bitmap"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8da8c78a848c4eea565d432bdf62d3d1528c5a85
+ms.sourcegitcommit: c61bad4b4a5440531c0177247c425addaf452920
+ms.openlocfilehash: ff6bff692c4e0e73b2c99e06b46e8a3050ba12c4
 
 ---
 
-# Acquisition d’images
+# Créer, modifier et enregistrer des images bitmap
 
 \[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -61,6 +61,8 @@ Vous pouvez spécifier des options d’encodage supplémentaires lorsque vous cr
 Pour afficher une image dans une page XAML à l’aide du contrôle [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752), commencez par définir un contrôle **Image** dans votre page XAML.
 
 [!code-xml[ImageControl](./code/ImagingWin10/cs/MainPage.xaml#SnippetImageControl)]
+
+Actuellement, le contrôle **Image** prend en charge uniquement les images qui utilisent le codage BGRA8 et le canal prémultiplié ou non alpha. Avant d’essayer d’afficher une image, testez-la pour vérifier qu’elle a le format correct, sinon, utilisez la méthode statique [**Convert**](https://msdn.microsoft.com/library/windows/apps/dn887362) de **SoftwareBitmap** pour convertir l’image au format pris en charge.
 
 Créez un objet [**SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/dn997854). Définissez le contenu de l’objet source en appelant [**SetBitmapAsync**](https://msdn.microsoft.com/library/windows/apps/dn997856), en transmettant un élément **SoftwareBitmap**. Vous pouvez ensuite définir la propriété [**Source**](https://msdn.microsoft.com/library/windows/apps/br242760) du contrôle **Image** sur l’élément **SoftwareBitmapSource** créé.
 
@@ -130,6 +132,6 @@ Vous pouvez transcoder un fichier image directement à partir de [**BitmapDecode
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

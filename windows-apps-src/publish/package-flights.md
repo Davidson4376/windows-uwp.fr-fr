@@ -4,8 +4,8 @@ Description: "Si votre application utilise AdMediatorControl ou AdControl pour a
 title: "Versions d’évaluation de package"
 ms.assetid: 5B094822-A8DE-4EE3-B55D-3E306C04EE79
 translationtype: Human Translation
-ms.sourcegitcommit: 9e62a7aa18950f7e1cc26b42762e3bb937c389ac
-ms.openlocfilehash: c538da2a58f38925938b9e28ec7ca65cdb9858a3
+ms.sourcegitcommit: baa8212b7ec26be1f50e051fa06bff4bf8095227
+ms.openlocfilehash: 34321a5fd3db10833b958049597ebf830599cfb4
 
 ---
 
@@ -17,7 +17,15 @@ Vous avez ainsi la possibilité de proposer des packages différents à un ensem
 
 Notez que les versions d’évaluation de package doivent réussir le [processus de certification](the-app-certification-process.md), tout comme dans le cas d’une soumission standard sans version d’évaluation. Si vous décidez par la suite de mettre les packages d’une version d’évaluation à la disposition de l’ensemble de vos clients, vous pouvez déplacer ces packages dans votre soumission standard, comme décrit ci-après.
 
-Lorsque vous configurez des versions d’évaluation de package, vous pouvez choisir les utilisateurs devant bénéficier de packages spécifiques en les ajoutant à un groupe de versions d’évaluation. Tout membre d’un groupe de versions d’évaluation disposant d’un appareil qui exécute une version de Windows10 prenant en charge les versions d’évaluation de package (build Windows.Desktop 10586 ou ultérieure, build Windows.Mobile 10586.63 ou ultérieure) bénéficiera des versions d’évaluation de package que vous attribuez à ce groupe spécifique. Les utilisateurs qui n’ont été ajoutés à aucun de vos groupes de versions d’évaluation ou dont l’appareil ne prend pas en charge les versions d’évaluation de package obtiendront les packages de la soumission standard.
+Lorsque vous configurez des versions d’évaluation de package, vous pouvez choisir les utilisateurs devant bénéficier de packages spécifiques en les ajoutant à un groupe de versions d’évaluation. Tout membre d’un groupe de versions d’évaluation disposant d’un appareil qui exécute une version de Windows10 prenant en charge les versions d’évaluation de package (build Windows.Desktop 10586 ou ultérieure, build Windows.Mobile 10586.63 ou ultérieure, ou XboxOne) bénéficiera des versions d’évaluation de package que vous attribuez à ce groupe spécifique. Les utilisateurs qui n’ont été ajoutés à aucun de vos groupes de versions d’évaluation ou dont l’appareil ne prend pas en charge les versions d’évaluation de package obtiendront les packages de la soumission standard.
+
+> **Important** Sur les appareils mobiles et de bureau, les membres de vos groupes de versions d’évaluation accèderont automatiquement aux packages de votre version d’évaluation chaque fois que vous fournirez des mises à jour. Toutefois, **les membres de vos groupes de versions d’évaluation qui utilisent des appareils Xbox devront rechercher manuellement les mises à jour** afin d’obtenir les derniers packages. Pour cela, ils devront se connecter à leur appareil à l’aide de leur compte Microsoft (avec l’adresse de messagerie associée que vous avez incluse dans votre groupe de versions d’évaluation).
+
+Notez que les versions d’évaluation de packages ne seront pas distribuées par le biais du [Windows Store pour Entreprises](https://www.microsoft.com/business-store). En effet, les membres de vos groupes de versions d’évaluation doivent être connectés avec leur compte Microsoft afin de pouvoir recevoir une version d’évaluation de package. Tous les achats effectués via le Windows Store pour Entreprises recevront vos packages standard.
+
+> **Conseil** Les versions d’évaluation de packages offrent des packages uniquement pour les clients sélectionnés que vous avez vous-même spécifiés. Pour distribuer des packages à une sélection aléatoire de clients selon un pourcentage donné, vous pouvez utiliser le [lancement de package progressif](gradual-package-rollout.md). Vous pouvez également combiner le lancement avec vos versions d’évaluation de package si vous souhaitez distribuer progressivement une mise à jour à l’un de vos groupes de versions d’évaluation.
+
+> À la différence des versions d’évaluation de package, vos sélections de lancement de package progressif s’appliquent aux clients qui achètent votre application via le Windows Store pour Entreprises. 
 
 Une fois que vous avez publié une soumission pour votre application, une section **Versions d’évaluation de package** s’affiche sur la page de présentation de l’application. Cliquez sur **Nouvelle version d’évaluation de package** pour commencer. Si vous n’avez pas encore configuré de groupes de versions d’évaluation, vous êtes invité à en créer un avant de continuer.
 
@@ -51,6 +59,14 @@ Vous pouvez sélectionner des packages associés à une soumission précédemmen
 Si votre application prend en charge plusieurs familles d’appareils, veillez à inclure les packages permettant de prendre en charge les mêmes familles d’appareils dans votre version d’évaluation. Les utilisateurs inclus dans vos groupes de versions d’évaluation pourront **uniquement** obtenir des packages à partir de cette version d’évaluation. Ils ne pourront pas accéder aux packages des autres versions d’évaluation, ni de votre soumission standard. 
 
 Sachez également que les données de description sur le Store proviennent de votre soumission standard, y compris les familles d’appareils que votre application prend en charge. Les clients de vos groupes de versions d’évaluation pourront uniquement télécharger l’application sur une famille d’appareils prise en charge par votre soumission standard. Pour plus d’informations, voir [Prise en charge des familles d’appareils](#device-family-support). 
+
+## Lancement de package progressif
+
+Par défaut, les packages de votre soumission seront disponibles simultanément pour tous les membres de votre groupe de versions d’évaluation. Pour modifier ce comportement, vous pouvez cocher la case **Déployer progressivement la mise à jour après la publication de cette soumission (pour les clients Windows10 uniquement)**. Vous pouvez choisir un pourcentage de personnes dans votre groupe de versions d’évaluation pour obtenir les packages à partir de la nouvelle soumission, afin d’être en mesure d’analyser les commentaires et les données analytiques et de vérifier le contenu de la mise à jour avant de la déployer au reste du groupe de versions d’évaluation. Vous pouvez augmenter le pourcentage (ou arrêter la mise à jour) à tout moment sans avoir à créer une nouvelle soumission pour votre version d’évaluation de package. 
+
+> **Important** Lors d’un lancement progressif de packages dans une version d’évaluation de package, les personnes qui ne sont pas incluses dans le pourcentage et qui récupèrent vos nouveaux packages obtiendront les packages de la soumission précédente (sauf si une version d’évaluation de niveau supérieur est disponible).
+
+Pour plus d’informations, voir [Lancement de package progressif](gradual-package-rollout.md).
 
 ## Configurer des options de versions d’évaluation de package supplémentaires
 
@@ -108,6 +124,6 @@ Lorsque vous supprimez une version d’évaluation d’un package, les clients q
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO5-->
 
 

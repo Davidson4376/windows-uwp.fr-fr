@@ -5,7 +5,7 @@ description: "Montre comment convertir une infrastructure de rendu simple de Dir
 ms.assetid: f6ca1147-9bb8-719a-9a2c-b7ee3e34bd18
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 5cfdce2a62f6b5761ebf820418762a307dd051bb
+ms.openlocfilehash: c5cdddbf2bf75da761f4439ef2d890170c6681c5
 
 ---
 
@@ -493,6 +493,6 @@ La chaîne de rendu que nous venons de créer sera appelée à partir d’une bo
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

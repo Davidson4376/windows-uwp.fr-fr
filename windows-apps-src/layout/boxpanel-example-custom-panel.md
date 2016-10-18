@@ -10,7 +10,7 @@ label: BoxPanel, an example custom panel
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: e03a4c9d2116d779545cb1fb8e87fa86a632bca8
+ms.openlocfilehash: 4427219987f0524858233cf382cd13121cf77b07
 
 ---
 
@@ -126,9 +126,9 @@ La manière dont `BoxPanel` divise la taille est assez simple : il divise son es
 
 Que fait donc la passe de mesure? Elle définit une valeur pour la propriété [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) en lecture seule sur chaque élément où la méthode [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) a été appelée. Le fait d’avoir une valeur **DesiredSize** peut être important une fois la passe d’organisation atteinte, car la propriété **DesiredSize** indique ce que peut ou doit être la taille lors de l’organisation et du rendu final. Même si vous n’utilisez pas **DesiredSize** dans votre propre logique, le système en a besoin.
 
-Ce panneau peut être utilisé quand le composant hauteur de *availableSize* est sans limite. Dans ce cas, le panneau n’a aucune hauteur connue à diviser. La logique de la passe de mesure signale alors à chaque enfant qu’il n’a pas encore de hauteur limitée. Pour cela, elle transmet un objet [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) à l’appel de [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) pour les enfants pour lesquels la propriété [**Size.Height**](https://msdn.microsoft.com/library/windows/apps/hh763910) est infinie. Cette opération est autorisée. Quand la méthode **Measure** est appelée, la valeur affectée à la propriété [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) est la plus petite parmi les suivantes: la valeur transmise à **Measure** ou la taille naturelle de l’élément provenant de facteurs tels que les valeurs [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) et [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) définies de manière explicite.
+Ce panneau peut être utilisé quand le composant hauteur de *availableSize* est sans limite. Dans ce cas, le panneau n’a aucune hauteur connue à diviser. La logique de la passe de mesure signale alors à chaque enfant qu’il n’a pas encore de hauteur limitée. Pour cela, elle transmet un objet [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) à l’appel de [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) pour les enfants pour lesquels la propriété [**Size.Height**](https://msdn.microsoft.com/library/windows/apps/hh763910) est infinie. Cette opération est autorisée. Quand la méthode **Measure** est appelée, la logique veut que [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) prenne la plus petite de ces valeurs: la valeur transmise à **Measure** ou la taille naturelle de l’élément tirée de facteurs tels que les valeurs [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) et [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) définies de manière explicite.
 
-**Remarque** &nbsp;&nbsp;La logique interne de [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) présente aussi le comportement suivant : **StackPanel** transmet une valeur de dimension infinie à [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) sur les enfants pour indiquer l’absence de contraintes sur les enfants dans la dimension d’orientation. **StackPanel** se dimensionne en général de manière dynamique afin de contenir tous les enfants d’une pile qui croît dans cette dimension.
+**Remarque**&nbsp;&nbsp; La logique interne de [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) affiche également le comportement suivant : **StackPanel** passe une valeur de dimension infinie à [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) sur les enfants pour indiquer l’absence de contraintes sur les enfants de la dimension d’orientation. **StackPanel** se dimensionne en général de manière dynamique pour pouvoir accueillir tous les enfants d’une pile qui croît dans cette dimension.
 
 Toutefois, le panneau proprement dit ne peut pas retourner d’objet [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) avec une valeur infinie à partir de [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730); cela lève une exception durant la disposition. Une partie de la logique consiste donc à trouver la hauteur maximale demandée par chaque enfant et à utiliser cette hauteur comme hauteur de cellule dans le cas où elle ne provient pas déjà des propres contraintes de taille du panneau. Voici la fonction d’assistance `LimitUnboundedSize` référencée dans le code précédent, qui prend ensuite cette hauteur maximale de cellule et l’utilise pour donner au panneau une hauteur finie à retourner et garantit que `cellheight` est un nombre fini avant d’initier la passe d’organisation :
 
@@ -211,9 +211,9 @@ Mais les scénarios d’application ne se prêtent pas tous à la liaison de don
 
 Un scénario avancé pour étendre `BoxPanel` (non illustré ici) consisterait à la fois à gérer les enfants dynamiques et à utiliser la valeur [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) d’un enfant comme facteur prioritaire pour le dimensionnement des cellules individuelles. Ce scénario pourrait utiliser des tailles de lignes et de colonnes variables ou des formes autres que des grilles afin de réduire l’espace «perdu». Cela requiert une stratégie afin de déterminer comment plusieurs rectangles de différentes tailles et proportions peuvent rentrer dans un rectangle contenant du point de vue esthétique et en cas de très petite taille. `BoxPanel` n’offre pas cette fonctionnalité. Il utilise une technique plus simple pour diviser l’espace. `BoxPanel`La technique employée par consiste à déterminer le plus petit nombre de carré supérieur au nombre d’enfants. Par exemple, 9éléments pourraient être contenus dans un carré de 3x3. 10éléments nécessitent un carré de 4x4. Toutefois, vous pouvez souvent ajuster les éléments tout en supprimant une ligne ou une colonne dans le carré de départ, pour gagner de l’espace. Avec 10éléments, par exemple, vous pourriez utiliser un rectangle de 4x3 ou de 3x4.
 
-Vous vous demandez peut-être pourquoi le panneau ne choisirait pas plutôt un rectangle de 5x2 pour 10éléments. En pratique, les panneaux sont dimensionnés sous la forme de rectangles qui ont rarement des proportions fortement orientées. La technique du nombre de carré le plus petit permet à la logique de dimensionnement de bien fonctionner avec les formes de disposition classiques tout en évitant les dimensionnements où des proportions irrégulières sont appliquées aux cellules.
+Vous vous demandez peut-être pourquoi le panneau ne choisirait pas plutôt un rectangle de 5x2 pour 10éléments. En pratique, les panneaux sont dimensionnés sous la forme de rectangles qui ont rarement des proportions fortement orientées. La technique des moindres carrés permet à la logique de dimensionnement de bien fonctionner avec les formes de disposition classiques tout en évitant les dimensionnements où des proportions irrégulières sont appliquées aux cellules.
 
-**Remarque** &nbsp;&nbsp;Cet article s’adresse aux développeurs de Windows 10 qui créent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows8.x ou Windows Phone8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+**Remarque**&nbsp;&nbsp; Cet article s’adresse aux développeurs Windows10 qui développent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows8.x ou Windows Phone8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
 ## Rubriques connexes
 
@@ -231,6 +231,6 @@ Vous vous demandez peut-être pourquoi le panneau ne choisirait pas plutôt un r
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

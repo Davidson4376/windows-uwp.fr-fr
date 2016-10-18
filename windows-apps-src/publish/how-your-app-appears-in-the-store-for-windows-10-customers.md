@@ -4,8 +4,8 @@ Description: "Si vous avez déjà publié des applications pour Windows ou Windo
 title: "Apparence de votre application dans le Store pour les clients dotés de Windows 10"
 ms.assetid: 487BB57E-F547-4764-99B1-84FE396E6D3A
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 5e8d25264a17307c61f4e8b1295ded3f920ee2cf
+ms.sourcegitcommit: fc7b0d7dd85e661e1688f4df3f67280c16eb6742
+ms.openlocfilehash: a3ecb8a4a1aebc719f8a8a4eb140776685f53b4e
 
 ---
 
@@ -23,12 +23,12 @@ Si vous avez déjà publié des applications pour Windows ou Windows Phone sur l
 
 Si vous avez utilisé le même nom réservé pour une application publiée dans les deux Stores (on parle également de partage d’identité de votre application), ces deux Stores considèrent qu’il existe une application, et non deux. Dans le tableau de bord, elles figurent sous la forme d’une seule application disponible en packages Windows et Windows Phone.
 
-La plupart des développeurs définissent des prix et d’autres propriétés identiques pour l’application et tout produit in-app dans les deux Stores. Cependant, si certaines de ces valeurs diffèrent, vous devez absolument déterminer celles qui sont affichées pour les clients Windows 10.
+La plupart des développeurs définissent des prix et d’autres propriétés identiques pour l’application et tout module complémentaire dans les deux Stores. Cependant, si certaines de ces valeurs diffèrent, vous devez absolument déterminer celles qui sont affichées pour les clients Windows10.
 
 ### Tarification
-Si vous avez choisi des prix de base différents pour votre application ou produit in-app dans chaque Store, le prix de base proposé dans le Windows Store a la priorité.
+Si vous avez choisi des prix de base différents pour votre application ou module complémentaire dans chaque Store, le prix de base proposé dans le Windows Store a la priorité.
 
-**Remarque** Si vous avez défini une tarification par marché dans le Windows Phone Store, les prix personnalisés s’affichent également au clients Windows 10.
+**Remarque** Si vous avez défini une tarification par marché dans le Windows Phone Store, les prix personnalisés s’affichent également aux clients Windows10.
 
 ### Évaluation gratuite
 les options d’évaluation déféraient dans les deux anciens Stores. Ainsi, si vous les avez utilisés, il se peut que vous ayez choisi des options différentes pour chacun d’eux. L’option d’évaluation disponible pour les clients Windows 10 est déterminée d’après le tableau suivant.
@@ -57,10 +57,10 @@ Si votre application inclut une politique de confidentialité, c’est celle que
 ### Captures d’écran
 Nous récupérons toutes les captures d’écran que vous avez soumises, en affichant la version appropriée de celles-ci aux clients Windows 10, selon le type d’appareil qu’ils utilisent. Dans les rares cas où les langues prises en charge par votre application diffèrent selon le Store, certains clients peuvent voir une capture d’écran dans une autre langue, choisie de manière à représenter au mieux l’expérience dont ils profiteront lorsqu’ils achèteront l’application.
 
-### Descriptions
-Nous nous efforçons de choisir la description la plus appropriée pour les clients Windows 10 en fonction de leur langue. Lorsque des descriptions sont disponibles à partir de plusieurs sources dans la même langue, la description de votre application du Windows Store est présentée aux clients Windows 10. Dans les rares cas où vos langues prises en charge diffèrent pour chaque Store, certains clients peuvent voir une description de votre application Windows Phone, s’il s’agit de la seule description que vous avez fournie dans cette langue.
+### Descriptions dans le Windows Store
+Nous nous efforçons de choisir la description la plus appropriée dans le Windows Store pour les clients Windows10 en fonction de leur langue. Lorsque des descriptions sont disponibles à partir de plusieurs sources dans la même langue, la description de votre application dans le Windows Store est présentée aux clients Windows10. Dans les rares cas où vos langues prises en charge diffèrent pour chaque Store, certains clients peuvent voir une description de votre application Windows Phone dans le Windows Store, s’il s’agit de la seule description que vous avez fournie dans cette langue.
 
-Si vous voulez mettre à jour la description visible par vos clients Windows 10 afin de leur indiquer les expériences fonctionnant sur plusieurs appareils, vous pouvez le faire en mettant à jour la [description de votre application](create-app-descriptions.md). Les clients Windows 10 voient la description par défaut de votre application, mais vous pouvez également [créer des descriptions spécifiques de la plateforme](create-platform-specific-descriptions.md) si vous souhaitez que votre description diffère en fonction de la version du système d’exploitation.
+Si vous voulez mettre à jour la description du Windows Store visible par vos clients Windows 10 afin de leur indiquer les expériences fonctionnant sur plusieurs appareils, vous pouvez le faire en mettant à jour la [description de votre application](create-app-store-listings.md). Les clients Windows10 voient la description par défaut de votre application, mais vous pouvez également [créer des descriptions dans le Windows Store spécifiques à la plateforme](create-platform-specific-store-listings.md) si vous souhaitez que votre description diffère en fonction de la version du système d’exploitation.
 
 ## Changements de catégorie
 
@@ -122,6 +122,6 @@ Dans de nombreux cas, les nouvelles [catégories et sous-catégories](category-a
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

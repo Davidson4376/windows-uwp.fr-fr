@@ -1,17 +1,17 @@
 ---
 author: mtoepke
 title: "Développer l’exemple de jeu"
-description: "Félicitations! À ce stade, vous maîtrisez les principaux composants d’un jeu WUP DirectX3D de base."
+description: "Félicitations! À ce stade, vous maîtrisez les principaux composants d’un jeu de plateforme Windows universelle (UWP) DirectX 3D de base."
 ms.assetid: a1432c45-569e-7ecd-4098-f5ad6da9327e
 keywords:
 - DirectX, XAML
 translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: 02b8681c45c84e1cdd5b97dfc717a68015df1252
+ms.openlocfilehash: 17d34f0edcbe6729fe63204123faf4b7393beea7
 
 ---
 
-# Développer l’exemple de jeu
+# Étendre l’exemple de jeu
 
 
 \[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
@@ -1521,6 +1521,6 @@ Pour télécharger une version de l’exemple de jeu qui utilise XAML pour la su
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

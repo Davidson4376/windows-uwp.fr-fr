@@ -4,8 +4,8 @@ title: "Gérer l’activation des fichiers"
 description: "Une application peut s’inscrire afin de devenir le gestionnaire par défaut pour un certain type de fichier."
 ms.assetid: A0F914C5-62BC-4FF7-9236-E34C5277C363
 translationtype: Human Translation
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: 9c6358bccdea55a7c3749388c35aa770f4325960
+ms.sourcegitcommit: 0e0fa6cf082034110e11b9bde910564de8f5048c
+ms.openlocfilehash: dffbccad62f48667a0495ceb205c751ccce0a3e0
 
 ---
 
@@ -154,6 +154,6 @@ Les fichiers que vous recevez peuvent provenir d’une source non approuvée. No
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,62 +1,62 @@
 ---
 author: mcleanbyron
 ms.assetid: 2A454057-FF14-40D2-8ED2-CEB5F27E0226
-description: Use these methods in the Windows Store submission API to manage package flight submissions for apps that are registered to your Windows Dev Center account.
-title: Manage package flight submissions using the Windows Store submission API
+description: "Utilisez ces méthodes dans l’API de soumission du Windows Store pour gérer les soumissions de versions d’évaluation de package pour les applications qui sont inscrites dans votre compte du Centre de développement Windows."
+title: "Gérer les soumissions de versions d’évaluation de package à l’aide de l’API de soumission du Windows Store"
 translationtype: Human Translation
 ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
 ms.openlocfilehash: 18d28495b80101cf5cfe53869b0f5cd3d61b50c9
 
 ---
 
-# Manage package flight submissions using the Windows Store submission API
+# Gérer les soumissions de versions d’évaluation de package à l’aide de l’API de soumission du Windows Store
 
 
 
 
-Use the following methods in the Windows Store submission API to manage package flight submissions for apps that are registered to your Windows Dev Center account. For an introduction to the Windows Store submission API, including prerequisites for using the API, see [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md).
+Utilisez les méthodes suivantes dans l’API de soumission du Windows Store pour gérer les soumissions de versions d’évaluation de package pour les applications qui sont inscrites dans votre compte du Centre de développement Windows. Pour obtenir une présentation de l’API de soumission du Windows Store, notamment les conditions préalables à l’utilisation de l’API, voir [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md).
 
->**Note**&nbsp;&nbsp;These methods can only be used for Windows Dev Center accounts that have been given permission to use the Windows Store submission API. Not all accounts have this permission enabled. Before you can use these methods to create or manage submissions for package flight, the package flight must already exist in your Dev Center account. You can create a package flight by [using the Dev Center dashboard](https://msdn.microsoft.com/windows/uwp/publish/package-flights) or by using the Windows Store submission API methods in described in [Manage package flights](manage-flights.md).
+>**Remarque**&nbsp;&nbsp;Ces méthodes ne peuvent être utilisées que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation. Avant de pouvoir utiliser ces méthodes pour créer ou gérer les soumissions de version d’évaluation de package, la version d’évaluation de package doit déjà exister dans votre compte du Centre de développement. Vous pouvez créer une version d’évaluation de package en [utilisant le tableau de bord du Centre de développement](https://msdn.microsoft.com/windows/uwp/publish/package-flights) ou en utilisant les méthodes de l’API de soumission du Windows Store décrites dans [Gérer les versions d’évaluation de package](manage-flights.md).
 
-| Method        | URI    | Description                                                                 |
+| Méthode        | URI    | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}``` | Gets data for an existing package flight submission. For more information, see [Get a package flight submission](get-a-flight-submission.md). |
-| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/status``` | Gets the status of an existing package flight submission. For more information, see [Get the status of a package flight submission](get-status-for-a-flight-submission.md). |
-| POST | ```https://manage.devcenter.microsoft.com/v1.0/applications/{applicationId}/flights/{flightId}/submissions``` | Creates a new package flight submission for an app that is registered to your Windows Dev Center account. For more information, see [Create a package flight submission](create-a-flight-submission.md). |
-| POST | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit``` | Commits a new or updated package flight submission to Windows Dev Center. For more information, see [Commit a package flight submission](commit-a-flight-submission.md). |
-| PUT | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}``` | Updates an existing package flight submission. For more information, see [Update a package flight submission](update-a-flight-submission.md). |
-| DELETE | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}``` | Deletes a package flight submission. For more information, see [Delete a package flight submission](delete-a-flight-submission.md). |
+| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}``` | Obtient les données d’une soumission de version d’évaluation de package existante. Pour plus d’informations, voir [Obtenir une soumission de version d’évaluation de package](get-a-flight-submission.md). |
+| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/status``` | Obtient l’état d’une soumission de version d’évaluation de package existante. Pour plus d’informations, voir [Obtenir l’état d’une soumission de version d’évaluation de package](get-status-for-a-flight-submission.md). |
+| POST | ```https://manage.devcenter.microsoft.com/v1.0/applications/{applicationId}/flights/{flightId}/submissions``` | Crée une soumission de version d’évaluation de package pour une application inscrite dans votre compte du Centre de développement Windows. Pour plus d’informations, voir [Créer une soumission de version d’évaluation de package](create-a-flight-submission.md). |
+| POST | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit``` | Valide une soumission de version d’évaluation de package nouvelle ou mise à jour dans le Centre de développement Windows. Pour plus d’informations, voir [Valider une soumission de version d’évaluation de package](commit-a-flight-submission.md). |
+| PUT | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}``` | Met à jour une soumission de version d’évaluation de package existante. Pour plus d’informations, voir [Mettre à jour une soumission de version d’évaluation de package](update-a-flight-submission.md). |
+| DELETE | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}``` | Supprime une soumission de version d’évaluation de package. Pour plus d’informations, voir [Supprimer une soumission de version d’évaluation de package](delete-a-flight-submission.md). |
 
 <span id="create-a-package-flight-submission">
-## Create a package flight submission
+## Créer une soumission de version d’évaluation du package
 
-To create a submission for a package flight, follow this process.
+Pour créer une soumission pour une version d’évaluation de package, procédez comme suit.
 
-1. If you have not yet done so, complete the prerequisites described in [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md), including associating an Azure AD application with your Windows Dev Center account and obtaining your client ID and key. You only need to do this one time; after you have the client ID and key, you can reuse them any time you need to create a new Azure AD access token.  
+1. Si vous ne l’avez pas encore fait, remplissez les conditions préalables décrites dans [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md), notamment l’association d’une application AzureAD à votre compte du Centre de développement Windows et l’obtention de votre ID client et de votre clé. Vous n’aurez à le faire qu’une seule fois. Une fois à votre disposition, l’ID client et la clé sont réutilisables chaque fois que vous avez besoin de créer un jeton d’accès AzureAD.  
 
-2. [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token). You must pass this access token to the methods in the Windows Store submission API. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
+2. [Obtenir un jeton d’accès AzureAD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token). Vous devez transmettre ce jeton d’accès aux méthodes de l’API de soumission du Windows Store. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 
-3. Execute the following method in the Windows Store submission API. This method creates a new in-progress submission, which is a copy of your last published submission. For more information, see [Create a package flight submission](create-a-flight-submission.md).
+3. Exécutez la méthode suivante de l’API de soumission du Windows Store. Cette méthode crée une soumission en cours, qui est une copie de votre dernière soumission publiée. Pour plus d’informations, voir [Créer une soumission de version d’évaluation de package](create-a-flight-submission.md).
 
   ```
   POST https://manage.devcenter.microsoft.com/v1.0/my/applications{applicationId}/flights/{flightId}/submissions
   ```
 
-  The response body contains three items: the ID of the new submission, the data for the new submission (including all the listings and pricing information), and the shared access signature (SAS) URI for uploading any packages for the submission. For more information about SAS, see [Shared Access Signatures, Part 1: Understanding the SAS model](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/).
+  Le corps de la réponse contient trois éléments: l’ID de la nouvelle soumission, ses données (notamment toutes les listes et informations tarifaires), ainsi que l’URI de signatures d’accès partagé (SAS) pour le chargement de tous les packages de la soumission. Pour plus d’informations sur SAS, voir [Signatures d’accès partagé, partie1: présentation du modèle SAS](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/).
 
-4. If you are adding new packages for the submission, [prepare the packages](https://msdn.microsoft.com/windows/uwp/publish/app-package-requirements) and add them to a ZIP archive.
+4. Si vous ajoutez de nouveaux packages pour la soumission, [préparez-les](https://msdn.microsoft.com/windows/uwp/publish/app-package-requirements) et ajoutez-les à une archive ZIP.
 
-5. Update the submission data with any required changes for the new submission, and execute the following method to update the submission. For more information, see [Update a package flight submission](update-a-flight-submission.md).
+5. Mettez à jour les données de la soumission avec toutes les modifications nécessaires pour la nouvelle soumission, puis exécutez la méthode suivante pour mettre à jour la soumission. Pour plus d’informations, voir [Mettre à jour une soumission de version d’évaluation de package](update-a-flight-submission.md).
 
   ```
   PUT https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}
   ```
 
-  >**Note**&nbsp;&nbsp;If you are adding new packages for the submission, make sure you update the submission data to refer to the name and relative path of these files in the ZIP archive.
+  >**Remarque**&nbsp;&nbsp;Si vous ajoutez de nouveaux packages pour la soumission, veillez à mettre à jour les données de la soumission pour faire référence au nom et au chemin relatif de ces fichiers dans l’archiveZIP.
 
-4. If you are adding new packages for the submission, upload the ZIP archive to the SAS URI that was provided in the response body of the POST method you called in step 2. For more information, see [Shared Access Signatures, Part 2: Create and use a SAS with Blob storage](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/).
+4. Si vous ajoutez de nouveaux packages pour la soumission, chargez l’archiveZIP sur l’URI SAS fourni dans le corps de la réponse de la méthode POST appelée à l’étape2. Pour plus d’informations, voir [Signatures d’accès partagé, partie 2: créer et utiliser une SAS avec le stockage d’objets blob](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/).
 
-  The following code snippet demonstrates how to upload the archive using the [CloudBlockBlob](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.blob.cloudblockblob.aspx) class in the Azure Storage Client Library for .NET.
+  L’extrait de code suivant montre comment charger l’archive à l’aide de la classe [CloudBlockBlob](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.blob.cloudblockblob.aspx) incluse dans la bibliothèque cliente de stockage Azure pour.NET.
 
   ```csharp
   string sasUrl = "https://productingestionbin1.blob.core.windows.net/ingestion/26920f66-b592-4439-9a9d-fb0f014902ec?sv=2014-02-14&sr=b&sig=usAN0kNFNnYE2tGQBI%2BARQWejX1Guiz7hdFtRhyK%2Bog%3D&se=2016-06-17T20:45:51Z&sp=rwl";
@@ -66,30 +66,30 @@ To create a submission for a package flight, follow this process.
   await blockBob.UploadFromStreamAsync(stream);
   ```
 
-5. Commit the submission by executing the following method. This will alert Dev Center that you are done with your submission and that your updates should now be applied to your account. For more information, see [Commit a package flight submission](commit-a-flight-submission.md).
+5. Validez la soumission en exécutant la méthode suivante. Le Centre de développement est ainsi informé que vous avez terminé votre soumission et que vos mises à jour doivent être appliqués à votre compte. Pour plus d’informations, voir [Valider une soumission de version d’évaluation de package](commit-a-flight-submission.md).
 
   ```
   POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit
   ```
 
-6. Check on the commit status by executing the following method. For more information, see [Get the status of a package flight submission](get-status-for-a-flight-submission.md).
+6. Vérifiez l’état de validation en exécutant la méthode suivante. Pour plus d’informations, voir [Obtenir l’état d’une soumission de version d’évaluation de package](get-status-for-a-flight-submission.md).
 
   ```
   GET https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/status
   ```
 
-  To confirm the submission status, review the *status* value in the response body. This value should change from **CommitStarted** to either **PreProcessing** if the request succeeds or to **CommitFailed** if there are errors in the request. If there are errors, the *statusDetails* field contains further details about the error.
+  Pour vérifier l’état de la soumission, examinez la valeur *status* dans le corps de la réponse. Cette valeur doit passer de **CommitStarted** à **PreProcessing** si la demande aboutit ou à **CommitFailed** la demande contient des erreurs. S’il existe des erreurs, le champ *statusDetails* contient d’autres détails s’y rapportant.
 
-7. After the commit has successfully completed, the submission is sent to the Store for ingestion. You can continue to monitor the submission progress by using the previous method, or by visiting the Dev Center dashboard.
+7. Une fois la validation correctement terminée, la soumission est envoyée au Windows Store en vue de son intégration. Vous pouvez continuer à surveiller la progression de la soumission à l’aide de la méthode précédente ou en consultant le tableau de bord du Centre de développement.
 
-## Resources
+## Ressources
 
-These methods use the following data resources.
+Ces méthodes utilisent les ressources de données suivantes.
 
 <span id="flight-submission-object" />
-### Package flight submission
+### Soumission de version d’évaluation de package
 
-This resource represents a submission for a package flight. The following example demonstrates the format of this resource.
+Cette ressource représente une soumission pour une version d’évaluation de package. L’exemple suivant illustre le format de cette ressource.
 
 ```json
 {
@@ -120,58 +120,58 @@ This resource represents a submission for a package flight. The following exampl
 }
 ```
 
-This resource has the following values.
+Cette ressource a les valeurs suivantes.
 
-| Value      | Type   | Description                                                                                                                                                                                                                                                                         |
+| Valeur      | Type   | Description                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| id            | string  | The ID for the submission.  |
-| flightId           | string  |  The ID of the package flight that the submission is associated with.  |  
-| status           | string  | The status of the submission. This can be one of the following values: <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>   |
-| statusDetails           | object  |  Contains additional details about the status of the submission, including information about any errors. For more information, see the [Status details](#status-details-object) section below. |
-| flightPackages           | array  | Contains objects that provide details about each package in the submission. For more information, see the [Flight package](#flight-package-object) section below.  |
-| fileUploadUrl           | string  | The shared access signature (SAS) URI for uploading any packages for the submission. If you are adding new packages for the submission, upload the ZIP archive that contains the packages to this URI. For more information, see [Create a package flight submission](#create-a-package-flight-submission).  |
-| targetPublishMode           | string  | The publish mode for the submission. This can be one of the following values: <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
-| targetPublishDate           | string  | The publish date for the submission in ISO 8601 format, if the *targetPublishMode* is set to SpecificDate.  |
-| notesForCertification           | string  |  Provides additional info for the certification testers, such as test account credentials and steps to access and verify features. For more information, see [Notes for certification](https://msdn.microsoft.com/windows/uwp/publish/notes-for-certification). |
+| id            | chaîne  | ID de la soumission.  |
+| flightId           | chaîne  |  ID de la version d’évaluation du package auquel la soumission est associée.  |  
+| status           | chaîne  | État de la soumission. Les valeurs possibles sont les suivantes: <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>   |
+| statusDetails           | objet  |  Contient des détails supplémentaires sur l’état de la soumission, notamment des informations sur les éventuelles erreurs. Pour plus d’informations, voir la section [Détails d’état](#status-details-object) ci-après. |
+| flightPackages           | tableau  | Contient des objets qui fournissent des détails sur chaque package de la soumission. Pour plus d’informations, voir la section [Package de version d’évaluation](#flight-package-object) ci-après.  |
+| fileUploadUrl           | chaîne  | URI de la signature d’accès partagé (SAS) pour le chargement des packages de la soumission. Si vous ajoutez de nouveaux packages à la soumission, chargez l’archive ZIP contenant les packages vers cet URI. Pour plus d’informations, voir [Créer une soumission de version d’évaluation de package](#create-a-package-flight-submission).  |
+| targetPublishMode           | chaîne  | Mode de publication pour la soumission. Les valeurs possibles sont les suivantes: <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
+| targetPublishDate           | chaîne  | Date de publication de la soumission au format ISO8601, si le paramètre *targetPublishMode* a la valeur SpecificDate.  |
+| notesForCertification           | chaîne  |  Fournit des informations supplémentaires aux testeurs de certification, telles que les informations d’identification du compte de test et les étapes permettant d’accéder aux fonctionnalités et de les vérifier. Pour plus d’informations, voir [Notes de certification](https://msdn.microsoft.com/windows/uwp/publish/notes-for-certification). |
 
 <span id="status-details-object" />
-### Status details
+### Détails d’état
 
-This resource contains additional details about the status of a submission. This resource has the following values.
+Cette ressource contient des détails supplémentaires sur l’état d’une soumission. Cette ressource a les valeurs suivantes.
 
-| Value           | Type    | Description                                                                                                                                                                                                                          |
+| Valeur           | Type    | Description                                                                                                                                                                                                                          |
 |-----------------|---------|------|
-|  errors               |    object     |   An array of objects that contain error details for the submission. For more information, see the [Status detail](#status-detail-object) section below.   |     
-|  warnings               |   object      | An array of objects that contain warning details for the submission. For more information, see the [Status detail](#status-detail-object) section below.     |
-|  certificationReports               |     object    |   An array of objects that provide access to the certification report data for the submission. You can examine these reports for more information if the certification fails. For more information, see the [Certification report](#certification-report-object) section below.   |  
+|  errors               |    objet     |   Tableau d’objets qui contiennent des détails d’erreur pour la soumission. Pour plus d’informations, voir la section [Détail d’état](#status-detail-object) ci-après.   |     
+|  warnings               |   objet      | Tableau d’objets qui contiennent des détails d’avertissement pour la soumission. Pour plus d’informations, voir la section [Détail d’état](#status-detail-object) ci-après.     |
+|  certificationReports               |     objet    |   Tableau d’objets qui donnent accès aux données du rapport de certification pour la soumission. Vous pouvez examiner ces rapports pour obtenir plus d’informations en cas d’échec de la certification. Pour plus d’informations, voir la section [Rapport de certification](#certification-report-object) ci-dessous.   |  
 
 
 <span id="status-detail-object" />
-### Status detail
+### Détail d’état
 
-This resource contains additional information about any related errors or warnings for a submission. This resource has the following values.
+Cette ressource contient des informations supplémentaires sur les éventuels erreurs ou avertissements pour une soumission. Cette ressource a les valeurs suivantes.
 
-| Value           | Type    | Description                                                                                                                                                                                                                          |
+| Valeur           | Type    | Description                                                                                                                                                                                                                          |
 |-----------------|---------|------|
-|  code               |    string     |   A string that describes the type of error or warning. For more information, see the [Submission status code](#submission-status-code) section below.   |     
-|  details               |     string    |  A message with more details about the issue.     |
+|  code               |    chaîne     |   Chaîne qui décrit le type d’erreur ou d’avertissement. Pour plus d’informations, voir la section [Code d’état de soumission](#submission-status-code) ci-dessous.   |     
+|  details               |     chaîne    |  Message contenant des détails sur le problème.     |
 
 
 <span id="certification-report-object" />
-### Certification report
+### Rapport de certification
 
-This resource provides access to the certification report data for a submission. This resource has the following values.
+Cette ressource donne accès aux données du rapport de certification pour une soumission. Cette ressource a les valeurs suivantes.
 
-| Value           | Type    | Description                                                                                                                                                                                                                          |
+| Valeur           | Type    | Description                                                                                                                                                                                                                          |
 |-----------------|---------|------|
-|     date            |    string     |  The date and time the report was generated, in in ISO 8601 format.    |
-|     reportUrl            |    string     |  The URL at which you can access the report.    |
+|     date            |    chaîne     |  Date et heure de génération du rapport, au format ISO8601.    |
+|     reportUrl            |    chaîne     |  URL vous permettant d’accéder au rapport.    |
 
 
 <span id="flight-package-object" />
-### Flight package
+### Package de version d’évaluation
 
-This resource provides details about a package in a submission. The following example demonstrates the format of this resource.
+Cette ressource fournit des détails sur un package d’une soumission. L’exemple suivant illustre le format de cette ressource.
 
 ```json
 {
@@ -190,62 +190,62 @@ This resource provides details about a package in a submission. The following ex
 }
 ```
 
-This resource has the following values.
+Cette ressource a les valeurs suivantes.
 
->**Note**&nbsp;&nbsp;When calling the [update a package flight submission](update-a-flight-submission.md) method, only the *fileName*, *fileStatus*, *minimumDirectXVersion*, and *minimumSystemRam* values of this object are required in the request body. The other values are populated by Dev Center.
+>**Remarque**&nbsp;&nbsp;Quand vous appelez la méthode de [mise à jour d’une soumission de version d’évaluation](update-a-flight-submission.md), seules les valeurs *fileName*, *fileStatus*, *minimumDirectXVersion* et *minimumSystemRam* de cet objet sont nécessaires dans le corps de la requête. Les autres valeurs sont renseignées par le Centre de développement.
 
-| Value           | Type    | Description                                                                                                                                                                                                                          |
+| Valeur           | Type    | Description                                                                                                                                                                                                                          |
 |-----------------|---------|------|
-| fileName   |   string      |  The name of the package.    |  
-| fileStatus    | string    |  The status of the package. This can be one of the following values: <ul><li>None</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>    |  
-| id    |  string   |  An ID that uniquely identifies the package. This value is used by Dev Center.   |     
-| version    |  string   |  The version of the app package. For more information, see [Package version numbering](https://msdn.microsoft.com/windows/uwp/publish/package-version-numbering).   |   
-| architecture    |  string   |  The architecture of the app package (for example, ARM).   |     
-| languages    | array    |  An array of language codes for the languages the app supports. For more information, see For more information, see [Supported languages](https://msdn.microsoft.com/windows/uwp/publish/supported-languages).    |     
-| capabilities    |  array   |  An array of capabilities required by the package. For more information about capabilities, see [App capability declarations](https://msdn.microsoft.com/windows/uwp/packaging/app-capability-declarations).   |     
-| minimumDirectXVersion    |  string   |  The minimum DirectX version that is supported by the app package. This can be set only for apps that target Windows 8.x; it is ignored for apps that target other versions. This can be one of the following values: <ul><li>None</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
-| minimumSystemRam    | string    |  The minimum RAM that is required by the app package. This can be set only for apps that target Windows 8.x; it is ignored for apps that target other versions. This can be one of the following values: <ul><li>None</li><li>Memory2GB</li></ul>   |    
+| fileName   |   chaîne      |  Nom du package.    |  
+| fileStatus    | chaîne    |  État du package. Les valeurs possibles sont les suivantes: <ul><li>None</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>    |  
+| id    |  chaîne   |  ID qui identifie de manière unique le package. Cette valeur est utilisée par le Centre de développement.   |     
+| version    |  chaîne   |  Version du package d’application. Pour plus d’informations, voir [Numérotation des versions de packages](https://msdn.microsoft.com/windows/uwp/publish/package-version-numbering).   |   
+| architecture    |  chaîne   |  Architecture du package d’application (par exemple, ARM).   |     
+| languages    | tableau    |  Tableau de codes de langue pour les langues prises en charge par l’application. Pour plus d’informations, voir [Langues prises en charge](https://msdn.microsoft.com/windows/uwp/publish/supported-languages).    |     
+| capabilities    |  tableau   |  Tableau des fonctionnalités exigées par le package. Pour plus d’informations sur les fonctionnalités, voir [Déclarations des fonctionnalités d’application](https://msdn.microsoft.com/windows/uwp/packaging/app-capability-declarations).   |     
+| minimumDirectXVersion    |  chaîne   |  Version DirectX minimale prise en charge par le package d’application. Cette valeur peut être définie uniquement pour les applications qui ciblent Windows8.x. Elle est ignorée pour les applications qui ciblent d’autres versions. Les valeurs possibles sont les suivantes: <ul><li>None</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
+| minimumSystemRam    | chaîne    |  Mémoire RAM minimale exigée par le package d’application. Cette valeur peut être définie uniquement pour les applications qui ciblent Windows8.x. Elle est ignorée pour les applications qui ciblent d’autres versions. Les valeurs possibles sont les suivantes: <ul><li>None</li><li>Memory2GB</li></ul>   |    
 
 <span/>
 
 ## Enums
 
-These methods use the following enums.
+Ces méthodes utilisent les énumérations suivantes.
 
 <span id="submission-status-code" />
-### Submission status code
+### Code d’état de la soumission
 
-The following codes represent the status of a submission.
+Les codes suivants représentent l’état d’une soumission.
 
 | Code           |  Description      |
 |-----------------|---------------|
-|  None            |     No code was specified.         |     
-|      InvalidArchive        |     The ZIP archive containing the package is invalid or has an unrecognized archive format.  |
-| MissingFiles | The ZIP archive does not have all files which were listed in your submission data, or they are in the wrong location in the archive. |
-| PackageValidationFailed | One or more packages in your submission failed to validate. |
-| InvalidParameterValue | One of the parameters in the request body is invalid. |
-| InvalidOperation | The operation you attempted is invalid. |
-| InvalidState | The operation you attempted is not valid for the current state of the package flight. |
-| ResourceNotFound | The specified package flight could not be found. |
-| ServiceError | An internal service error prevented the request from succeeding. Try the request again. |
-| ListingOptOutWarning | The developer removed a listing from a previous submission, or did not include listing information that is supported by the package. |
-| ListingOptInWarning  | The developer added a listing. |
-| UpdateOnlyWarning | The developer is trying to insert something that only has update support. |
-| Other  | The submission is in an unrecognized or uncategorized state. |
-| PackageValidationWarning | The package validation process resulted in a warning. |
+|  None            |     Aucun code n’a été spécifié.         |     
+|      InvalidArchive        |     L’archive ZIP contenant le package n’est pas valide ou a un format d’archive non reconnu.  |
+| MissingFiles | L’archive ZIP ne dispose pas de tous les fichiers qui ont été répertoriés dans les données de votre soumission, ou ils se trouvent dans un emplacement incorrect dans l’archive. |
+| PackageValidationFailed | La validation d’un ou de plusieurs packages de votre soumission a échoué. |
+| InvalidParameterValue | Un des paramètres dans le corps de la requête n’est pas valide. |
+| InvalidOperation | L’opération que vous avez tentée n’est pas valide. |
+| InvalidState | L’opération que vous avez tentée n’est pas valide pour l’état actuel de la version d’évaluation du package. |
+| ResourceNotFound | La version d’évaluation du package spécifiée est introuvable. |
+| ServiceError | Une erreur de service interne a empêché la demande de réussir. Relancez la demande. |
+| ListingOptOutWarning | Le développeur a supprimé une liste d’une soumission précédente ou il n’a pas inclus d’informations de référencement prises en charge par le package. |
+| ListingOptInWarning  | Le développeur a ajouté une description. |
+| UpdateOnlyWarning | Le développeur essaie d’insérer une opération qui prend uniquement en charge la mise à jour. |
+| Other  | La soumission est dans un état non reconnu ou n’appartenant aucune catégorie. |
+| PackageValidationWarning | Le processus de validation du package a généré un avertissement. |
 
 <span/>
 
-## Related topics
+## Rubriques connexes
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
-* [Manage package flights using the Windows Store submission API](manage-flights.md)
-* [Get a package flight submission](get-a-flight-submission.md)
-* [Create a package flight submission](create-a-flight-submission.md)
-* [Update a package flight submission](update-a-flight-submission.md)
-* [Commit a package flight submission](commit-a-flight-submission.md)
-* [Delete a package flight submission](delete-a-flight-submission.md)
-* [Get the status of a package flight submission](get-status-for-a-flight-submission.md)
+* [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md)
+* [Gérer les versions d’évaluation du package à l’aide de l’API de soumission du Windows Store](manage-flights.md)
+* [Obtenir une soumission de version d’évaluation du package](get-a-flight-submission.md)
+* [Créer une soumission de version d’évaluation du package](create-a-flight-submission.md)
+* [Mettre à jour une soumission de version d’évaluation de package](update-a-flight-submission.md)
+* [Valider une soumission de version d’évaluation du package](commit-a-flight-submission.md)
+* [Supprimer une soumission de version d’évaluation du package](delete-a-flight-submission.md)
+* [Obtenir l’état d’une soumission de version d’évaluation du package](get-status-for-a-flight-submission.md)
 
 
 

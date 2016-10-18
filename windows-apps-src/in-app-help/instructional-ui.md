@@ -6,7 +6,7 @@ label: Instructional UI
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: 08b0b88e8ef17c2a8f264df5db4f971c8c49ab2e
-ms.openlocfilehash: f9f1f34bb02cda89d31caa9453b6e3eb056e7bc9
+ms.openlocfilehash: 6fc4840ce37d05bbaf0e423049d79b4e0c4febfc
 
 ---
 
@@ -72,6 +72,6 @@ Voici quelques exemples d’interfaces utilisateur d’instructions susceptibles
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

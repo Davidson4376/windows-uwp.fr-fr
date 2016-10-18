@@ -5,7 +5,7 @@ description: "La structure d’une application de plateforme Windows universelle
 ms.assetid: 6080f0d3-478a-8bbe-d064-73fd3d432074
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: e9cc290fa77471f315daf7f29f605412d2ec45cc
+ms.openlocfilehash: 84dbe1730274bd39b1ba359c588bc68976a2d19e
 
 ---
 
@@ -378,6 +378,6 @@ Pour plus d’informations sur certaines pratiques importantes à garder à l’
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

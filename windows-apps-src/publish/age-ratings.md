@@ -4,41 +4,41 @@ Description: "La page Classification par âge du processus de soumission d’app
 title: "Classification par âge"
 ms.assetid: B501A773-517B-4158-8364-C1BE630DC512
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 559842fb6740236780756018d01036b835660309
+ms.sourcegitcommit: 8781eb0e5ea352216a1f4e1c6deedbd04d4b588c
+ms.openlocfilehash: d190a32f16d1e7c1d98e33d1757bc9047277b62b
 
 ---
 
 # Classification par âge
 
-La page **Classification par âge** du [processus de soumission d'application](app-submissions.md) comporte des champs dans lesquels vous renseignez des informations sur votre application, afin que cette dernière puisse recevoir la classification par âge appropriée de l'[International Age Ratings Coalition (IARC)](http://go.microsoft.com/fwlink/p/?LinkId=716854). Cette classification fait référence à l'adéquation du contenu de l'application et de ses métadonnées, plutôt qu'à l'âge du public cible de votre application.
+La page **Classification par âge** du [processus de soumission d’application](app-submissions.md) vous permet de fournir des informations sur votre application, afin que cette dernière reçoive les classifications par âge et contenu administrées par le système d’évaluation de [l’International Age Ratings Coalition (IARC)](http://go.microsoft.com/fwlink/p/?LinkId=716854). Cette classification fait référence à l’adéquation du contenu de l’application, plutôt qu’à l’âge du public cible de votre application.
 
 ## Répondre au questionnaire relatif à la classification par âge
 
 La première fois que vous soumettez une application (ou la première fois que vous mettez à jour une application publiée à l’aide de l’ancien processus de classification par âge), un questionnaire à choix multiple s’affiche pour déterminer la classification par âge de votre application.
 
-> **Important** vSi vous avez déjà répondu au questionnaire pour votre application dans une autre vitrine et possédez un ID de classification de l’IARC, vous pouvez décider de nous communiquer votre ID de classification. Nous utiliserons votre ID pour associer les classifications existantes à votre application dans le Windows Store.
+> **Important** Si vous avez déjà répondu au questionnaire pour votre application dans une autre vitrine et possédez un ID de classification de l’IARC, vous pouvez décider de nous communiquer votre ID de classification. Nous utiliserons votre ID pour associer les classifications existantes à votre application dans le Windows Store.
 
-Vous devez répondre aux questions avec exactitude. Dans le cadre de ce processus, nous communiquons votre nom complet d'éditeur et votre adresse de messagerie à l'IARC. Une fois que vous avez complété le questionnaire, l'IARC attribue une classification par âge en fonction de vos réponses. Nous utilisons cette classification lors de l'affichage de votre application aux clients des différents marchés. Vous recevez également un e-mail provenant de l'IARC et contenant des informations sur la classification de l'application.
+Vous devez répondre aux questions avec exactitude. Dans le cadre de ce processus, nous communiquons votre nom complet d’éditeur et votre adresse de messagerie à l’IARC. Après avoir répondu au questionnaire, le système d’évaluation de l’IARC fournit les informations de classification par âge et contenu en fonction de vos réponses. Nous utilisons ces informations de classification lors de l’affichage de votre application aux clients des différents marchés. Vous recevez également un e-mail de l’IARC vous confirmant la classification de l’application une fois qu’elle a été publiée.
 
-La première question vous demande d'indiquer la catégorie qui décrit le mieux votre application (et ses métadonnées). Une fois que vous avez effectué une sélection, d'autres questions s'affichent. Les questions spécifiques affichées varient en fonction des réponses précédentes. Si vous commettez une erreur, vous pouvez recommencer le questionnaire pour fournir les réponses appropriées.
+La première question vous demande d’indiquer la catégorie qui décrit le mieux votre application (et ses métadonnées). Une fois que vous avez effectué une sélection, d'autres questions s'affichent. Les questions spécifiques affichées varient en fonction des réponses précédentes. Si vous commettez une erreur, vous pouvez revenir en arrière ou recommencer le questionnaire pour fournir les réponses appropriées.
 
-Une fois que vous avez fini de répondre aux questions, cliquez sur **Enregistrer et générer**. Vous pouvez alors voir toutes les évaluations attribuées à l’application et poursuivre la soumission. Pour répondre de nouveau au questionnaire, cliquez sur **Modifier**.
+Une fois que vous avez fini de répondre aux questions, cliquez sur **Enregistrer et générer**. Vous pouvez alors voir toutes les évaluations attribuées à l’application et poursuivre la soumission. Vous pouvez également cliquer sur **Modifier** pour corriger l’une de vos réponses au questionnaire.
 
-La prochaine fois que vous mettez à jour votre application, l’ensemble des classifications attribuées à l’application s’afficheront sur cette page. Pour répondre de nouveau au questionnaire, cliquez sur **Modifier**. Répondez de nouveau au questionnaire si le contenu de votre application a été modifié de telle sorte que vous deviez modifier une ou plusieurs réponses. Il arrive également de temps en temps que l'IARC mette à jour les questions. Le cas échéant, vous pouvez être invité à reprendre le questionnaire lorsque vous soumettez une mise à jour.
+La prochaine fois que vous mettrez à jour votre application, l’ensemble des classifications attribuées à l’application s’affichera sur cette page. Vous pouvez également cliquer sur **Modifier** pour répondre de nouveau au questionnaire si le contenu de votre application a été modifié de telle sorte que vous deviez modifier une ou plusieurs réponses. Il arrive également de temps en temps que l’IARC mette à jour les questions. Le cas échéant, vous pouvez être invité à répondre à nouveau au questionnaire lorsque vous soumettez une mise à jour.
 
 > **Remarque** La loi sud-coréenne exige que les jeux disponibles en Corée du Sud soient évalués par rapport au [GRB (Game Rating Board)](http://go.microsoft.com/fwlink/p/?LinkId=228256) de Corée du Sud. Si votre application est un jeu et que vous souhaitez la proposer en Corée du Sud, vous devez renseigner cette section supplémentaire et charger votre certificat d’évaluation. Notez que si votre application n'est pas un jeu ou que vous ne souhaitez pas la proposer en Corée du Sud, vous pouvez laisser cette section vide.
 
 ## Appel des évaluations ou des classifications refusées
 
-Si vous avez des questions sur la classification par âge attribuée à votre application, ou souhaitez y faire appel, vous pouvez contacter l'IARC via le lien affiché dans l'e-mail de certification d'évaluation que vous allez recevoir après la publication de votre application.
+Si vous avez des questions sur la classification par âge attribuée à votre application, ou souhaitez y faire appel, vous pouvez contacter l’IARC via le lien affiché dans l’e-mail de certification d’évaluation que vous allez recevoir après la publication de votre application.
 
-Dans certains cas, l'évaluation de votre application peut provoquer sa classification inappropriée pour une région ou un pays particuliers. Si tel est le cas, un message s'affiche indiquant les marchés pour lesquels votre application ne peut pas être proposée. Si vous n'êtes pas d'accord avec cette classification, vous pouvez demander un appel en utilisant le lien affiché dans l'e-mail de certification d'évaluation que vous a envoyé l'IARC.
+Dans certains cas, l’évaluation de votre application peut provoquer sa classification inappropriée pour une région ou un pays particuliers. Si tel est le cas, un message s’affiche indiquant les marchés pour lesquels votre application ne peut pas être proposée. Si vous n’êtes pas d’accord avec cette classification (ou toute autre classification), vous pouvez demander un appel en utilisant le lien affiché dans l’e-mail de certification d’évaluation que vous a envoyé l’IARC.
 
 ## Classification par âge précédente du Windows Store
 
 
-Auparavant, les développeurs spécifiaient la classification par âge pour leur application au lieu de répondre au questionnaire. Vous trouverez ci-dessous la répartition des classifications par âge précédentes du Windows Store :
+Auparavant, les développeurs spécifiaient la classification par âge pour leur application au lieu de répondre au questionnaire. Vous trouverez ci-dessous la répartition des classifications par âge précédentes du Windows Store:
 
 | Classification par âge                           | Description                            |
 |--------------------------------------|----------------------------------------|
@@ -50,6 +50,6 @@ Auparavant, les développeurs spécifiaient la classification par âge pour leur
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

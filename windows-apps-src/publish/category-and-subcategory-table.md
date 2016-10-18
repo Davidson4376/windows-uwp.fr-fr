@@ -4,25 +4,25 @@ Description: "Le classement de votre application dans la catégorie et la sous-c
 title: "Tableau des catégories et sous-catégories"
 ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9f9f5da100109af5dc38f7ffbc3cadca842b1214
+ms.sourcegitcommit: b31e399d950a99f0cb6f1e912e391429b5463136
+ms.openlocfilehash: 40891ade1c3383f89eed99176b4e9cf979e1fb64
 
 ---
 
 # Tableau des catégories et sous-catégories
 
 
-Le classement de votre application dans la catégorie et la sous-catégorie adéquates permet aux utilisateurs de la trouver facilement et d&#39;en savoir plus sur elle.
+Le classement de votre application dans la catégorie et la sous-catégorie adéquates permet aux utilisateurs de la trouver facilement et d'en savoir plus sur elle.
 
 Choisissez la catégorie qui correspond le mieux à votre application. Ensuite, sélectionnez une sous-catégorie, le cas échéant.
 
 > **Important** Si vous choisissez la catégorie **Jeux**, vous devez définir une sous-catégorie.
 
- 
-
 Une application ne peut être répertoriée que dans une seule catégorie (et une seule sous-catégorie, le cas échéant.) Si vous ne savez pas quelle catégorie ou sous-catégorie utiliser, choisissez celle que, selon vous, les clients vont très certainement parcourir lorsqu’ils rechercheront des applications comme les vôtres.
 
 Si vous souhaitez modifier la catégorie ou la sous-catégorie d’une application déjà publiée dans le Windows Store, vous devez [créer une autre soumission](app-submissions.md) et sélectionner la nouvelle catégorie.
+
+> **Important** Si vous publiez l’application dans la catégorie **Jeux**, vous ne pourrez pas sélectionner une autre catégorie lors d’une nouvelle soumission. Vous ne pouvez pas sélectionner la catégorie **Jeux** pour la mise à jour d’une application que vous avez précédemment publiée dans une catégorie différente.
 
 Le Windows Store organise les applications dans les catégories et sous-catégories ci-après.
 
@@ -64,6 +64,6 @@ Seules certaines catégories ont des sous-catégories. N’oubliez pas que vous 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

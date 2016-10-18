@@ -1,7 +1,7 @@
 ---
 author: jnHs
-Description: When you create a new add-on in the Windows Dev Center dashboard, you need to specify a product type and assign it a product ID.
-title: Set your add-on product type and product ID
+Description: "Lorsque vous créez un module complémentaire dans le tableau de bord du Centre de développement Windows, affectez-lui un type et un ID de produit."
+title: "Définir le type et l’ID de produit d’un module complémentaire"
 ms.assetid: 59497B0F-82F0-4CEE-B628-040EF9ED8D3D
 translationtype: Human Translation
 ms.sourcegitcommit: e59324aca65cf8baacb085da22a20d952fdb8c9a
@@ -9,39 +9,39 @@ ms.openlocfilehash: 2a469506c8b440e1aa8555ac57b88f2026ae4d8e
 
 ---
 
-# Set your add-on product type and product ID
+# Définir le type et l’ID de produit d’un module complémentaire
 
-An add-on must be associated with an app that you've created in the dashboard already (even if you haven't submitted it yet). You can find the button to **Create a new add-on** on either your app's **Overview** page or its **Add-ons** page.
+Un module complémentaire doit être associé à une application que vous avez déjà créée dans le tableau de bord (même si vous ne l’avez pas encore soumise). Recherchez le bouton **Créer un module complémentaire** sur la page **Vue d’ensemble** ou **Modules complémentaires** de votre application.
 
-Once you've clicked the button, you'll see the **Create a new add-on** page. Here, you'll need to specify a product type and assign it a product ID.
+Une fois que vous avez cliqué sur ce bouton, la page **Créer un module complémentaire** s’affiche. Ici, vous devez spécifier un type de produit et lui attribuer un ID de produit.
 
-## Product type
+## Type de produit
 
-First, you'll need to indicate which type of add-on you are offering. This selection refers to how the customer can use your add-on.
+Vous devez commencer par indiquer le type de module complémentaire que vous proposez. Cette sélection détermine la façon dont le client pourra utiliser votre module complémentaire.
 
-> **Note** You won't be able to change the product type after you save this page to create the add-on. If you did choose the wrong product type, you can always delete your in-progress add-on submission and start over by creating a new add-on.
+> **Remarque** Vous ne pourrez pas modifier le type de produit après avoir enregistré cette page pour créer le module complémentaire. Si vous avez choisi un type de produit incorrect, vous pouvez toujours supprimer votre soumission de module complémentaire en cours et recommencer en créant un autre module complémentaire.
 
-If the product can be purchased, used (consumed), and then purchased again, you'll want to select one of the **consumable** proudct types. Consumable add-ons are often used for things like in-game currency (gold, coins, etc.) which can be purchased in set amounts and then used up by the customer. For more info on including consumable add-ons in your app, see [Enable consumable add-on purchases](../monetize/enable-consumable-add-on-purchases.md).
+Si le produit peut être acheté, utilisé (consommé), puis racheté, vous devez sélectionner un type de produit **consommable**. Les modules complémentaires consommables sont souvent utilisés pour la monnaie d’un jeu par exemple (or, pièces, etc.), qui peuvent être achetés en montants prédéfinis puis dépensés par le client. Pour plus d’informations sur l’ajout de modules complémentaires consommables dans votre application, voir [Activer les achats de modules complémentaires consommables](../monetize/enable-consumable-add-on-purchases.md).
 
-There are two types of consumable add-ons that you can select:
+Vous pouvez sélectionner deux types de modules complémentaires consommables:
 
-- **Developer-managed consumable**: Supported on all OS versions. Balance and fulfillment must be managed within your app. 
-- **Store-managed consumable:** Balance will be tracked by Microsoft across all of the customer’s devices running Windows 10, version 1607 or later; not supported on any earlier OS versions. To use this option, the parent product must be compiled using Windows 10 SDK version 14393 or later. Also note that you cannot submit a Store-managed consumable add-on to the Store until the parent product has been published (though you can create the submission in your dashboard and begin working on it at any time). You'll need to enter the quantity for your Store-managed consumable add-on in the **Properties** page.
+- **Consommable géré par le développeur**: pris en charge sur toutes les versions de système d’exploitation. Le solde et l’acquisition doivent être gérés dans votre application. 
+- **Consommable géré par le Windows store:** Microsoft assure le suivi du solde sur tous les appareils du client fonctionnant sous Windows10, version1607 ou ultérieure; non pris en charge sur les versions antérieures du système d’exploitation. Pour utiliser cette option, le produit parent doit être compilé à l’aide du Kit de développement logiciel Windows10 version14393 ou ultérieure. Notez également que vous ne pouvez pas soumettre au Windows Store un module complémentaire consommable géré par le WindowsStore tant que le produit parent n’a pas été publié (vous pouvez cependant créer la soumission dans votre tableau de bord et commencer à travailler dessus à tout moment). Vous devez renseigner la quantité concernant votre module complémentaire consommable géré par le WindowsStore dans la page **Propriétés**.
 
-You should select **Durable** if your product can be purchased only once. Durable add-ons are often used to unlock additional functionality in an app. Durable add-ons are not consumed, but you can set the **Product lifetime** so that they expire after a set duration (with options from 1-365 days). The default **Product lifetime** for a durable add-on is **Forever**, which means the add-on never expires. You can change this to a different duration in the [Add-on properties](enter-add-on-properties.md) step of the add-on submission process.
+Si votre produit ne peut être acheté qu’une seule fois, vous devez sélectionner **Durable**. Les modules complémentaires durables servent généralement à déverrouiller des fonctionnalités supplémentaires d’une application. Ils ne sont pas consommés, mais vous pouvez définir le champ **Durée de vie du produit** pour qu’ils arrivent à expiration au bout d’un laps de temps défini (compris entre 1 et 365jours). Par défaut, le champ **Durée de vie du produit** d’un module complémentaire durable affiche **Toujours**, ce qui signifie que ce module n’expire jamais. Vous pouvez changer la durée à l’étape [Propriétés du module complémentaire](enter-add-on-properties.md) du processus de soumission du module complémentaire.
 
-## Product ID
+## ID de produit
 
-Enter a unique product ID for your add-on. This is the same identifier that you will need to reference in [your app's code to call the add-on](https://msdn.microsoft.com/library/windows/apps/mt219684).
+Entrez un ID de produit unique pour votre module complémentaire. Cet ID produit correspond à l’identificateur que vous devrez référencer dans le [code de votre application pour appeler le module complémentaire](https://msdn.microsoft.com/library/windows/apps/mt219684).
 
-Here are a few things to keep in mind when choosing a product ID:
+Voici quelques éléments à prendre en considération lors du choix d’un ID produit:
 
--   Customers won't see this product ID. (Later, you can enter a [title and description](create-add-on-descriptions.md) to be displayed to customers.)
--   You can’t change or delete an add-on's product ID after it's been published.
--   A product ID can't be more than 100 characters in length.
--   A product ID cannot include any of the following characters: **&lt; &gt; \* % & : \\ ? + ,**
--   To offer your add-on on all devices, you must only use alphanumeric characters, periods, and/or underscores. If you use any other types of characters, the add-on will not be available for purchase to customers running Windows Phone 8.1 or earlier.
--   A product ID doesn't have to be unique within the Windows Store, but it must be unique to your developer account.
+-   Les clients ne verront pas cet ID produit. (Par la suite, vous pourrez entrer un [titre et une description](create-add-on-descriptions.md) qui seront visibles par les clients.)
+-   Vous ne pouvez plus modifier ni supprimer l’ID produit d’un module complémentaire après la publication de ce dernier.
+-   Un ID produit ne peut pas comporter plus de 100caractères.
+-   Un ID produit ne peut pas inclure les caractères suivants: **&lt; &gt; \* % &amp; : \\ ? + ,**
+-   Pour offrir votre module complémentaire sur tous les appareils, utilisez uniquement des caractères alphanumériques, des points et/ou des traits de soulignement. Si vous utilisez d’autres types de caractère, le module complémentaire ne sera pas disponible à l’achat pour les clients utilisant WindowsPhone8.1 ou une version antérieure.
+-   Un ID produit ne doit pas nécessairement être unique dans le Windows Store, mais doit l’être dans votre compte de développeur.
  
 
 

@@ -6,21 +6,33 @@ ms.assetid: 7EC7EA33-BE7E-4FD5-B205-B8FA7B729ACC
 label: Sliders
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: 64ae11c8c7e46d973c13cacb69482fd957e0488d
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 9b21a15edcead96fdc1a335a1c6e58cc0a279858
 
 ---
 # Curseurs
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 Un curseur est un contrôle qui permet à l’utilisateur d’effectuer une sélection parmi une plage de valeurs en déplaçant un contrôle curseur de position le long d’une ligne.
 
 ![Contrôle de curseur](images/controls/slider.png)
 
-<span class="sidebar_heading" style="font-weight: bold;">API importantes</span>
+<div class="important-apis" >
+<b>API importantes</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx"><strong>Classe Slider</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx"><strong>Propriété Value</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx"><strong>Événement ValueChanged</strong></a></li>
+</ul>
 
--   [**Classe Slider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx)
--   [**Propriété Value**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx)
--   [**Événement ValueChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx)
+</div>
+</div>
+
+
+
+
+
 
 ## Est-ce le contrôle approprié?
 
@@ -167,12 +179,12 @@ Lors de la conception d’un curseur personnalisé, réfléchissez à la meilleu
 ## Rubriques connexes
 
 **Pour les concepteurs**
-- [Recommandations en matière de boutons bascule](toggles.md) 
-           **Pour les développeurs (XAML)**
+- [Recommandations en matière de boutons bascule](toggles.md)
+**Pour les développeurs (XAML)**
 - [**Classe Slider**](https://msdn.microsoft.com/library/windows/apps/br209614)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

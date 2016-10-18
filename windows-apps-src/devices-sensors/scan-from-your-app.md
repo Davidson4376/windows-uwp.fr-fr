@@ -5,7 +5,7 @@ title: "Numériser à partir de votre application"
 description: "Découvrez ici comment numériser du contenu à partir de votre application à l’aide d’un scanneur à plat, à chargeur ou configuré automatiquement."
 translationtype: Human Translation
 ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: fe01ccf5b0b91ffcca7937842cf0152622d59f9e
+ms.openlocfilehash: 9f06f774fd1ed3a13386a4403f98336babeb1506
 
 ---
 # Numériser à partir de votre application
@@ -175,6 +175,6 @@ Grâce à la classe [**FolderPicker**](https://msdn.microsoft.com/library/window
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

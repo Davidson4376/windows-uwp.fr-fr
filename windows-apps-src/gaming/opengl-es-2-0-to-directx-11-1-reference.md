@@ -5,7 +5,7 @@ description: "Vous trouverez dans ces rubriques de référence un index de mappa
 ms.assetid: fe18c8a9-b113-8f5d-9c31-c294dede8560
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: ad6da83773bf5b791f4b2921b8ea55345aae999b
+ms.openlocfilehash: dff8bf0f8723055e955cd32042f14f58037494b5
 
 ---
 
@@ -47,6 +47,6 @@ Vous trouverez dans ces rubriques de référence un index de mappage d’API ain
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

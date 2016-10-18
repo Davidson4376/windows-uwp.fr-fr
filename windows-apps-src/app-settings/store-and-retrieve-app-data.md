@@ -200,7 +200,7 @@ Les développeurs peuvent verrouiller leur appareil pour déclencher une synchro
 
 ### S’inscrire pour recevoir les notifications sur les changements de données en itinérance
 
-Pour utiliser des données d’application itinérante, vous devez vous inscrire aux modifications de données itinérantes et récupérer les conteneurs de données itinérantes afin de pouvoir lire et écrire des paramètres.
+Pour utiliser des données d’application itinérante, vous devez vous inscrite aux modifications de données itinérantes et récupérer les conteneurs de données itinérantes afin de pouvoir lire et écrire des paramètres.
 
 1.  Inscrivez-vous pour recevoir une notification quand les données d’itinérance changent.
 
@@ -311,7 +311,7 @@ async void ReadTimestamp()
 ## Données d’application temporaires
 
 
-Le magasin de données d’application temporaires fonctionne comme un cache. Ses fichiers n’utilisent pas de profil itinérant et ne peuvent pas être supprimés à tout moment. La tâche Maintenance du système peut supprimer automatiquement les données stockées à cet emplacement à tout moment. L’utilisateur peut également effacer les fichiers du magasin de données temporaires à l’aide de l’outil Nettoyage de disque. Les données d’application temporaires sont utilisables pour stocker des informations provisoires au cours d’une session d’application. Il n’existe aucune garantie de persistance de ces données au-delà de la fin de la session d’application, car le système peut récupérer l’espace utilisé si nécessaire. L’emplacement est disponible via la propriété [**temporaryFolder**](https://msdn.microsoft.com/library/windows/apps/br241629).
+Le magasin de données d’application temporaires fonctionne comme un cache. Ses fichiers n’utilisent pas de profil itinérant et ne peuvent pas être supprimées à tout moment. La tâche Maintenance du système peut supprimer automatiquement les données stockées à cet emplacement à tout moment. L’utilisateur peut également effacer les fichiers du magasin de données temporaires à l’aide de l’outil Nettoyage de disque. Les données d’application temporaires sont utilisables pour stocker des informations provisoires au cours d’une session d’application. Il n’existe aucune garantie de persistance de ces données au-delà de la fin de la session d’application, car le système peut récupérer l’espace utilisé si nécessaire. L’emplacement est disponible via la propriété [**temporaryFolder**](https://msdn.microsoft.com/library/windows/apps/br241629).
 
 ### Récupérer le conteneur de données temporaires
 

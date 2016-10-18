@@ -5,13 +5,13 @@ title: Types de compte, emplacements et frais
 description: "Nous proposons des comptes de développeur individuels et d’entreprise dans un grand nombre de pays et de régions."
 translationtype: Human Translation
 ms.sourcegitcommit: 93b6d952e42949917a0fff5b39f3f194f49531d5
-ms.openlocfilehash: b4707f53aa1a1bd7bd7c03c74f2d18a0f9f55b10
+ms.openlocfilehash: 0712a74ffaa691a90a1f57d0ee7f9c0ea3fcc510
 
 ---
 
 # Types de compte, emplacements et frais
 
-Nous proposons deux types de comptes de développeur &#58; les comptes pour les particuliers et les comptes pour les entreprises. Les comptes de développeur sont proposés dans de nombreux [pays et régions](#developer-account-and-app-submission-markets). Ces deux types de compte vous permettent de publier des applications dans le Windows Store et de participer à d’autres programmes pour développeurs Microsoft.
+Nous proposons deux types de comptes de développeur : les comptes pour les particuliers et les comptes pour les entreprises. Les comptes de développeur sont proposés dans de nombreux [pays et régions](#developer-account-and-app-submission-markets). Ces deux types de compte vous permettent de publier des applications dans le Windows Store et de participer à d’autres programmes pour développeurs Microsoft.
 
 > **Remarque** Que vous créiez un compte pour une entreprise ou pour un particulier, vous ne pouvez associer qu’un seul compte Microsoft au compte de développeur. Quand vous vous inscrivez pour obtenir un compte, veillez à vous connecter à l’aide du compte Microsoft que vous voulez utiliser pour votre compte de développeur.
 
@@ -260,6 +260,6 @@ La colonne **PayPal** indique si PayPal est un mode de paiement pris en charge q
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -5,7 +5,7 @@ description: "Définissez l’image et la couleur d’arrière-plan de l’écra
 ms.assetid: 41F53046-8AB7-4782-9E90-964D744B7D66
 translationtype: Human Translation
 ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: 261b52d1835e992a784aa5fa356230fdd326b8c5
+ms.openlocfilehash: 4d8a00cf7bd151ab97e9abc10a09a3794a0e292f
 
 ---
 
@@ -23,7 +23,7 @@ Définissez l’image et la couleur d’arrière-plan de l’écran de démarrag
 Quand vous utilisez un modèle Visual Studio 2015 pour créer votre application, une image par défaut est ajoutée à votre projet et définie en tant qu’image de l’écran de démarrage. Par défaut, la couleur d’arrière-plan de votre écran de démarrage est gris clair. Pour modifier l’image ou la couleur par défaut de l’écran de démarrage de votre application, procédez comme suit :
 
 1.  Ouvrez votre projet existant d’application de plateforme Windows universelle (UWP) dans Visual Studio2015.
-2.  Dans l’**Explorateur de solutions**, ouvrez le fichier Package.appxmanifest. Vous pouvez également ouvrir ce fichier à partir de la barre de menus en choisissant **Projet**&gt;**Windows Store**&gt;**Modifier le manifeste d’application**.
+2.  Dans l’**Explorateur de solutions**, ouvrez le fichier Package.appxmanifest. Vous pouvez également ouvrir ce fichier à partir de la barre de menus en choisissant **Projet** &gt; **Windows Store** &gt; **Modifier le manifeste d’application**.
 3.  Ouvrez l’onglet **Ressources visuelles** et sélectionnez **Écran de démarrage** dans le volet **Tous les composants de l’image** du côté gauche de la fenêtre Package.appxmanifest. Si vous changez votre écran de démarrage pour la première fois, le chemin d’accès Assets\SplashScreen.png s’affiche dans le champ **Écran de démarrage**.
 
     La capture d’écran suivante montre la fenêtre Package.appxmanifest dans Visual Studio2015. Selon le type de projet, l’ensemble des ressources visuelles peut différer légèrement.
@@ -77,6 +77,6 @@ Cet article s’adresse aux développeurs de Windows10 qui développent des appl
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

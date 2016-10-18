@@ -4,15 +4,15 @@ ms.assetid: 4e7c2388-b94e-4828-a104-14fa33f6eb2d
 description: "Découvrez comment utiliser la classe AdControl pour afficher des bannières publicitaires dans une application XAML pour Windows10 (UWP), Windows8.1 ou Windows Phone8.1."
 title: AdControl en XAML et .NET
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: d17d8a39f31bfcbf3172b4592e918f0be4a6bf92
+ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
+ms.openlocfilehash: e3cc04e2c039223729a1e24224ddd19d6485d434
 
 ---
 
 # AdControl en XAML et .NET
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 Cette procédure pas à pas montre comment utiliser la classe [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) pour afficher des bannières publicitaires dans une application XAML pour Windows10 (UWP), Windows8.1 ou Windows Phone8.1. Cette procédure pas à pas n’utilise ni **AdMediatorControl** ni la médiation publicitaire.
 
@@ -20,7 +20,8 @@ Pour un exemple de projet complet illustrant l’ajout de bannières publicitair
 
 ## Conditions préalables
 
-* Installez le [Kit de développement logiciel (SDK) d’engagement et de monétisation de la Boutique Microsoft](http://aka.ms/store-em-sdk) avec Visual Studio2015 ou Visual Studio2013.
+* Pour les applications UWP: installez [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) avec Visual Studio2015.
+* Pour les applicationsWindows8.1 ou WindowsPhone8.1: [installez le Kit de développement logiciel (SDK) Microsoft Advertising pour Windows et Windows Phone8.x](http://aka.ms/store-8-sdk) avec Visual Studio2015 ou Visual Studio2013.
 
 ## Développement du code
 
@@ -28,7 +29,7 @@ Pour un exemple de projet complet illustrant l’ajout de bannières publicitair
 
 2. Si votre projet cible **Toute UC**, mettez-le à jour pour utiliser une sortie de génération propre à l’architecture (par exemple, **x86**). Si votre projet cible **Toute UC**, vous ne pourrez pas ajouter une référence à la bibliothèque de publicités Microsoft dans les étapes suivantes. Pour plus d’informations, voir [Erreurs de référence provoquées par le ciblage de Toute UC dans votre projet](known-issues-for-the-advertising-libraries.md#reference_errors).
 
-1.  Dans la fenêtre **Explorateur de solutions**, cliquez avec le bouton droit sur **Références**, puis sélectionnez **Ajouter une référence...**
+1.  Dans la fenêtre **Explorateur de solutions**, cliquez avec le bouton droit sur **Références**, puis sélectionnez **Ajouter une référence.**
 
 2.  Dans **Gestionnaire de références**, sélectionnez l’une des références suivantes en fonction de votre type de projet:
 
@@ -131,10 +132,10 @@ Pour un exemple de projet complet illustrant l’ajout de bannières publicitair
 
 6.  Compilez et exécutez l’application pour la voir avec une publicité.
 
-## Publier l’application avec des publicités dynamiques à l’aide du Centre de développement Windows
+## Publier l’application avec des publicités dynamiques via le Centre de développement Windows
 
 
-1.  Dans le tableau de bord du Centre de développement, accédez à la page **Monétisation**&gt;**Monétiser avec des publicités** de votre application, puis [créez une unité Microsoft Advertising autonome](../publish/monetize-with-ads.md). Pour le type d’unité publicitaire, spécifiez **Bannière**. Prenez note de l’ID d’unité publicitaire et de l’ID de l’application.
+1.  Dans le tableau de bord du Centre de développement, accédez à la page **Monétisation** &gt; **Monétiser avec des publicités** de votre application, puis [créez une unité Microsoft Advertising autonome](../publish/monetize-with-ads.md). Pour le type d’unité publicitaire, spécifiez **Bannière**. Prenez note de l’ID d’unité publicitaire et de l’ID de l’application.
 
 2.  Dans votre code, remplacez les valeurs de test de l’unité publicitaire (**ApplicationId** et **AdUnitId**) par les valeurs dynamiques que vous avez générées dans le Centre de développement.
 
@@ -160,6 +161,6 @@ Gestion des erreurs: pour en savoir plus sur la gestion des erreurs, voir [Gesti
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO2-->
 
 

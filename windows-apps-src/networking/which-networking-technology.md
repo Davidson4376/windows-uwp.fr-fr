@@ -5,7 +5,7 @@ description: "Une vue d’ensemble des technologies de réseau disponibles pour 
 title: "Quelle technologie de réseau ?"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d2f7a4a2bd0f94c4923b33fbd62a8b2ff6eddd65
+ms.openlocfilehash: fc7793926275dd732ee6c814c9e65a6b656654d2
 
 
 ---
@@ -138,6 +138,6 @@ L’espace de noms [**Windows.Devices.Sms**](https://msdn.microsoft.com/library/
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

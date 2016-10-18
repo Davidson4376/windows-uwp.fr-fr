@@ -4,8 +4,8 @@ ms.assetid: 6AA037C0-35ED-4B9C-80A3-5E144D7EE94B
 title: "Installer des applications avec l’outil WinAppDeployCmd.exe"
 description: "Le déploiement d’applications Windows (WinAppDeployCmd.exe) est un outil de ligne de commande qui permet de déployer une application de plateforme Windows universelle (UWP) à partir d’un PC Windows10 et vers tout appareil Windows10."
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 5f6bfb13e2e80f21902ec923e32f68046f313a13
+ms.sourcegitcommit: 7b04e2e9980da4bbdd6d9d10fc493eb05e21afc4
+ms.openlocfilehash: 87af49dc04a94bac8896b33a1d7e8b4993b0f2c3
 
 ---
 # Installer des applications avec l’outil WinAppDeployCmd.exe
@@ -74,7 +74,7 @@ Le tableau suivant décrit les options pour **WinAppDeployCmd.exe**.
 | -d (-dependency) | (Facultatif) Spécifie le chemin d’accès de dépendance pour chacune des dépendances du package. <br />Si aucun chemin d’accès n’est spécifié, l’outil recherche des dépendances dans le répertoire racine pour le package d’application et les répertoires du kit de développement logiciel (SDK).|
 | -f (-file)       | Chemin d’accès de fichier pour le package d’application à installer, mettre à jour ou désinstaller.|
 | -p (-package)    | Le nom complet du package pour le package d’application à désinstaller. <br />(Vous pouvez utiliser la commande « list » pour rechercher le nom complet des packages déjà installés sur l’appareil.)|
-| -pin             | Un code confidentiel ,s’il est nécessaire pour établir une connexion avec l’appareil cible. <br />(Vous serez invité à réessayer avec l’option -pin si une authentification est nécessaire.)|
+| -pin             | Un code confidentiel, s’il est nécessaire pour établir une connexion avec l’appareil cible. <br />(Vous serez invité à réessayer avec l’option -pin si une authentification est nécessaire.)|
 | -credserver      | Nom de serveur des informations d’identification réseau à utiliser par la cible.|
 | -credusername    | Nom d’utilisateur des informations d’identification réseau à utiliser par la cible.|
 | -credpassword    | Mot de passe des informations d’identification réseau à utiliser par la cible.|
@@ -133,14 +133,25 @@ Déploie les fichiers d’une application présents dans le même dossier que le
 WinAppDeployCmd deployfiles -file "C:\apps\App1\AppxManifest.xml" -remotedeploydir app1_F5 -ip 192.168.0.1
 ```
 
-Inscrit l’application dans le répertoire app1_F5 sous le chemin d’accès de déploiement du PC ou de la Xbox à l’adresse IP 192.168.0.1.
+Inscrit l’application dans le répertoire app1_F5 sous le chemin de déploiement du PC ou de la Xbox à l’adresseIP 192.168.0.1.
 
 ``` syntax
 WinAppDeployCmd registerfiles -file app1_F5 -ip 192.168.0.1
 ```
 
+## Utilisation de WinAppDeployCmd pour configurer un déploiement d’exécution à partir d’un PC sur une console XboxOne
+
+L’exécution à partir d’un PC vous permet de déployer une application UWP sur une console XboxOne sans copier les fichiers binaires dessus. Au lieu de cela, les fichiers binaires sont hébergés sur un partage réseau sur le même réseau que la Xbox.  Pour ce faire, vous avez besoin d’une console XboxOne déverrouillée par le développeur et d’un application UWP à fichier libre sur un lecteur réseau auquel la Xbox peut accéder.
+
+Exécutez la commande suivante pour inscrire l’application:
+``` syntax
+WinAppDeployCmd registerfiles -ip <Xbox One IP> -remotedeploydir <location of app> -username <user for network> -password <password for user>
+
+ex. WinAppDeployCmd register files -ip 192.168.0.1 -remotedeploydir \\driveA\myAppLocation -username admin -password A1B2C3
+```
 
 
-<!--HONumber=Jul16_HO2-->
+
+<!--HONumber=Aug16_HO3-->
 
 

@@ -5,7 +5,7 @@ title: "Portage d’une application Silverlight pour Windows Phone vers UWP pour
 ms.assetid: bf9f2c03-12c1-49e4-934b-e3fa98919c53
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 6b29e741c9cad68083502b25445b965fc266ef6e
+ms.openlocfilehash: f3b3e32461b7804639c1c0e8ff9b55fa57a23cf0
 
 ---
 
@@ -29,9 +29,9 @@ Pour plus d’informations, voir [Cycle de vie de l’application](https://msdn.
 
 ## Appareil photo
 
-Le code de capture d’appareil photo de Silverlight pour Windows Phone utilise les classes **Microsoft.Devices.Camera**, **Microsoft.Devices.PhotoCamera** ou **Microsoft.Phone.Tasks.CameraCaptureTask**. Pour porter ce code vers la plateforme Windows universelle (UWP), vous pouvez utiliser la classe [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124). La rubrique [**CapturePhotoToStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh700836) contient un exemple de code. Cette méthode vous permet de capturer une photo dans un fichier de stockage. Elle nécessite la définition des fonctionnalités **microphone** et **webcam**[**device capabilities**](https://msdn.microsoft.com/library/windows/apps/dn934747) dans le manifeste du package d’application.
+Le code de capture d’appareil photo de Silverlight pour Windows Phone utilise les classes **Microsoft.Devices.Camera**, **Microsoft.Devices.PhotoCamera** ou **Microsoft.Phone.Tasks.CameraCaptureTask**. Pour porter ce code vers la plateforme Windows universelle (UWP), vous pouvez utiliser la classe [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124). La rubrique [**CapturePhotoToStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh700836) contient un exemple de code. Cette méthode vous permet de capturer une photo dans un fichier de stockage. Elle nécessite la définition des fonctionnalités **microphone** et **webcam** à l’aide d’éléments [**DeviceCapability**](https://msdn.microsoft.com/library/windows/apps/dn934747) dans le manifeste du package d’application.
 
-Une autre option correspond à la classe [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030), qui requiert également les fonctionnalités **microphone** et **webcam**[**device capabilities**](https://msdn.microsoft.com/library/windows/apps/dn934747).
+Une autre option correspond à la classe [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030), qui requiert également la définition des fonctionnalités **microphone** et **webcam** à l’aide d’éléments [**DeviceCapability**](https://msdn.microsoft.com/library/windows/apps/dn934747).
 
 Les applications de filtre ne sont pas prises en charge pour les applications UWP.
 
@@ -96,6 +96,6 @@ Rubrique suivante : [Portage des couches métier et des couches de données](wps
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

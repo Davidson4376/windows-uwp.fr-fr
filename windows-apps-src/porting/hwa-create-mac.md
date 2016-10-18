@@ -5,7 +5,7 @@ description: Utilisez un Mac pour transformer votre site web en application de p
 kw: Hosted Web Apps with a Mac, Porting to Windows 10 with a Mac, Convert website to Windows with Mac, Packaging web application with ManfoldJS for Windows Store, Add website to Windows Store with App Studio
 translationtype: Human Translation
 ms.sourcegitcommit: 0458dcd2aab862ccdecf1ebbc51e883405a929a6
-ms.openlocfilehash: 775963ae3d12023488c79ded1cc83d464e84169c
+ms.openlocfilehash: 3ba820e2ec8a3556874c0c7c7e328831bab783ca
 
 ---
 
@@ -39,9 +39,9 @@ manifoldjs http://codepen.io/seksenov/pen/wBbVyb/?editors=101
 
 4. Suivez les étapes de la vidéo ci-dessous pour terminer la création de packages et publier votre application web hébergée dans le Windows Store.
 
-[ ![Publication d’une application web UWP sur un Mac avec ManifoldJS] (images/hwa-to-uwp/mac_manifoldjs_video.png)](https://sec.ch9.ms/ch9/0a67/9b06e5c7-d7aa-478d-b30d-f99e145a0a67/ManifoldJS_high.mp4 "Publication d’une application web UWP sur un Mac avec ManifoldJS")
+[ ![Publication d’une application web UWP sur un Mac avec ManifoldJS](images/hwa-to-uwp/mac_manifoldjs_video.png)](https://sec.ch9.ms/ch9/0a67/9b06e5c7-d7aa-478d-b30d-f99e145a0a67/ManifoldJS_high.mp4 "Publication d’une application web UWP sur un Mac avec ManifoldJS")
 
-## Option 2: AppStudio
+## Option2: AppStudio
 
 [App Studio](http://appstudio.windows.com/) est un outil de création d’application gratuit et en ligne qui vous permet de développer rapidement des applications Windows10.
 
@@ -61,6 +61,6 @@ manifoldjs http://codepen.io/seksenov/pen/wBbVyb/?editors=101
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

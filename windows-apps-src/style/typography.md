@@ -1,21 +1,18 @@
 ---
 author: mijacobs
-Description: "En tant que représentation visuelle du langage, la typographie a pour mission principale d’être claire. Son style doit toujours être aligné sur cet objectif. Mais la typographie joue également un rôle important en tant que composant de la disposition, grâce à son puissant effet sur la densité et la complexité de la conception, ainsi que sur l’expérience de l’utilisateur concernant cette conception."
+description: "En tant que représentation visuelle du langage, la typographie a pour mission principale d’être claire. Son style doit toujours être aligné sur cet objectif. Mais la typographie joue également un rôle important en tant que composant de la disposition, grâce à son puissant effet sur la densité et la complexité de la conception, ainsi que sur l’expérience de l’utilisateur concernant cette conception."
 title: Typographie
 ms.assetid: ca35f78a-e4da-423d-9f5b-75896e0b8f82
-label: Typography
 template: detail.hbs
-extraBodyClass: style-typography
-brief: "As the visual representation of language, typography’s main task is to be clear. Its style should never get in the way of that goal. But typography also has an important role as a layout component—with a powerful effect on the density and complexity of the design—and on the user’s experience of that design."
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 7ec2c80fd571de98060282d2b321d1895e2b3dc8
+ms.sourcegitcommit: 8338b4ebcdd73f1b7ebf1dedafe68d861cd9d93b
+ms.openlocfilehash: 481c66e3edd42722cfd59bf420fe5b6286706245
 
 ---
 
-# Typographie des applications UWP
+# Typographie
 
-En tant que représentation visuelle du langage, la typographie a pour mission principale d’être claire. Son style doit toujours être aligné sur cet objectif. Mais la typographie joue également un rôle important en tant que composant de la disposition, grâce à son puissant effet sur la densité et la complexité de la conception, ainsi que sur l’expérience de l’utilisateur concernant cette conception.
+En tant que représentation visuelle du langage, la typographie doit avant tout apporter de la clarté. Son style doit toujours être aligné sur cet objectif. Mais la typographie joue également un rôle important en tant que composant de la disposition, grâce à son puissant effet sur la densité et la complexité de la conception, ainsi que sur l’expérience de l’utilisateur concernant cette conception.
 
 ## Police
 
@@ -39,9 +36,9 @@ Lorsque vous empilez une grande taille de caractère sur une taille de caractèr
 
 ![Mode d’empilement d’une grande taille de caractère sur une petite taille de caractère](images/line-height-stacking.png)
 
-En XAML, cette opération est effectuée par l’empilement de deux éléments [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) et par la définition de la marge appropriée.
+En XAML, cette opération est effectuée par l’empilement de deux éléments [TextBlock](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) et par la définition de la marge appropriée.
 
-```xaml
+```xml
 <StackPanel Width="200">
     <!-- Setting a bottom margin of 3px on the header
          puts the baseline of the body text exactly 24px
@@ -61,7 +58,7 @@ En XAML, cette opération est effectuée par l’empilement de deux éléments [
 </StackPanel>
 ```
 
-<!-- OP version -->
+
 
 ## Crénage et interlettrage
 
@@ -69,7 +66,10 @@ Segoe est une police proche de l’écriture humaine, dotée d’une apparence d
 
 Le crénage doit être défini sur «metrics», et l’interlettrage doit présenter la valeur «0».
 
-<img src="images/kerning-tracking.png" alt="Shows the difference between kerning and tracking" />
+
+![Montre la différence entre le crénage et l’interlettrage](images/kerning-tracking.png)
+
+
 
 ## Espacement entre les mots et entre les lettres
 
@@ -77,29 +77,29 @@ Comme pour le crénage et l’interlettrage, les paramètres d’espacement entr
 
 L’espacement entre les mots est toujours de 100% par défaut, et l’espacement entre les lettres doit être défini sur «0».
 
-<img src="images/word-letter.png" alt="Shows the difference between word and letter spacing" />
 
-<aside class="aside-dev">
-    <div class="aside-dev-title">
-    </div>
-    <div class="aside-dev-content">
-Dans un contrôle de texteXAML, utilisez [Typogrphy.Kerning](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) pour contrôler le crénage et [FontStretch](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.fontstretch.aspx) pour contrôler le suivi. Par défaut, Typography.Kerning est défini sur «true», tandis que FontStretch est défini sur «Normal»; il s’agit des valeurs recommandées.
-    </div>
-</aside>
+![Montre la différence entre l’espacement entre les mots et l’espacement entre les lettres](images/word-letter.png)
+
+**Note**&nbsp;&nbsp;Dans un contrôle de texteXAML, utilisez [Typogrphy.Kerning](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) pour contrôler le crénage et [FontStretch](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.control.fontstretch.aspx) pour contrôler l’interlettrage. Par défaut, Typography.Kerning est défini sur «true», tandis que FontStretch est défini sur «Normal»; il s’agit des valeurs recommandées.
 
 
-<!-- OP version -->
+
+
 ## Alignement
 
 En règle générale, nous recommandons que les éléments visuels et les colonnes de caractères soient alignés à gauche. Dans la plupart des cas, cette approche d’alignement à gauche et de non-alignement à droite garantit un ancrage cohérent du contenu et une disposition uniforme.
 
-<img src="images/alignment.png" alt="Shows flush-left text" />
+
+![Montre un texte aligné à gauche](images/alignment.png)
+
+
 
 ## Fins de ligne
 
 Lorsque la typographie n’est pas positionnée comme étant alignée à gauche et non alignée à droite, essayez de garantir des fins de ligne égales et d’éviter la coupure de mots.
 
-<img src="images/line-endings.png" alt="Shows even line endings" />
+
+![Montre des fins de lignes égales](images/line-endings.png)
 
 ## Paragraphes
 
@@ -123,15 +123,9 @@ L’alignement horizontal d’icônes avec du texte peut être géré de différ
 
 Lorsque la hauteur du texte dépasse celle de l’icône, la première ligne de texte doit être alignée verticalement, et le texte supplémentaire doit se dérouler naturellement sous cette ligne. Si vous utilisez des caractères en majuscules et des jambages supérieurs et inférieurs, prenez soin d’observer les mêmes consignes d’alignement.
 
-![Différentes associations d’icônes et de texte](images/hanging-text-alignment.png)
+![Montre différentes associations d’icônes et de texte](images/hanging-text-alignment.png)
 
-<aside class="aside-dev">
-    <div class="aside-dev-title">
-    </div>
-    <div class="aside-dev-content">
-La propriété [TextBlock.TextLineBounds](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) du codeXAML fournit un accès aux mesures de police de base et de hauteur de majuscule. Elle peut être utilisée pour les types de textes centrés verticalement ou alignés vers le haut.
-    </div>
-</aside>
+**Note**&nbsp;&nbsp;La propriété [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) du codeXAML fournit un accès aux mesures de police de base et de hauteur de majuscule. Elle peut être utilisée pour les types de textes centrés verticalement ou alignés vers le haut.
 
 ## Détourage et ellipses
 
@@ -141,22 +135,13 @@ Exceptions: pour les conteneurs qui sont pas clairement définis (par exemple, s
 
 ![Cadre d’appareil avec détourage de texte](images/clipping.png)
 
-# Gamme de caractères
+## Gamme de caractères
+La gamme de types établit une relation fondamentale entre les titres et le corps du texte et garantit une hiérarchie claire et compréhensible entre les différents niveaux. Cette hiérarchie crée une structure qui permet aux utilisateurs de parcourir aisément une communication écrite.
 
-Vous devez utiliser différentes tailles de caractères Segoe UI pour créer une hiérarchie dans une gamme de caractères. Cette hiérarchie crée une structure qui permet aux utilisateurs de parcourir aisément une communication écrite.
+![Montre la gamme de caractères](images/type-ramp.png) Toutes les tailles sont exprimées en pixels effectifs. 
 
-<figure class="figure-img" >
-    <img src="images/type-ramp.png" alt="Shows the type ramp"  />
-        <figcaption>Toutes les tailles sont exprimées en pixels effectifs. Pour plus de détails, voir le lien TODO.</figcaption>
-</figure>
 
-<aside class="aside-dev">
-    <div class="aside-dev-title">
-    </div>
-    <div class="aside-dev-content">
-La plupart des niveaux de la gamme sont disponibles en tant que [ressources statiques](https://msdn.microsoft.com/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp) XAML qui suivent la convention d’affectation de noms `*TextBlockStyle` (ex:`HeaderTextBlockStyle`). 
-    </div>
-</aside>
+**Note**&nbsp;&nbsp; La plupart des niveaux de la gamme sont disponibles en tant que [ressources statiques](https://msdn.microsoft.com/en-us/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp) XAML qui suivent la convention d’affectation de noms `*TextBlockStyle` (ex: `HeaderTextBlockStyle`).
 
 
 ## Texte principal et secondaire
@@ -171,13 +156,25 @@ Certains titres de page doivent apparaître TOUT EN MAJUSCULES pour ajouter enco
 Toutefois, dans certaines langues, les noms propres changent de signification lorsqu’ils sont écrits en majuscules ; par conséquent, les titres de page reposant sur des noms ou des entrées utilisateur ne doivent *pas* être convertis intégralement en majuscules.
 
 
-## Pratiques conseillées et déconseillées
+**Pratiques conseillées**
+
+
+
 * Utilisez Body pour la plus grande partie du texte.
 * Utilisez Base pour les titres lorsque l’espace est restreint.
 * Incorporez SubtitleAlt pour créer un contraste et une hiérarchie en mettant en évidence le contenu de premier niveau.
+
+
+
+**Pratiques déconseillées**
+
+
+
 * N’utilisez pas Caption pour les chaînes longues ou pour une action principale.
 * N’utilisez pas Header ou Subheader si le texte doit faire l’objet d’un retour automatique à la ligne.
 * Ne combinez pas Subtitle et SubtitleAlt sur une même page.
+
+
 
 ## Articles connexes
 
@@ -185,6 +182,6 @@ Toutefois, dans certaines langues, les noms propres changent de signification lo
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

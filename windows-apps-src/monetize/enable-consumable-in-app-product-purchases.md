@@ -1,19 +1,21 @@
 ---
 author: mcleanbyron
 Description: "Proposez des produits consommables dans l’application&amp;\\#8212; qui peuvent être achetés, utilisés et rachetés&amp;\\#8212;via la plateforme commerciale du Windows Store, afin d’offrir à vos clients une expérience d’achat à la fois solide et fiable au sein de l’application."
-title: "Activer l’achat de produits consommables dans l’application"
+title: Activer les achats de produits consommables in-app
 ms.assetid: F79EE369-ACFC-4156-AF6A-72D1C7D3BDA4
-keywords: in-app offer code sample
+keywords: "exemple de code d’une offre intégrée à l’application"
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 25f09e043d61f1705f9f0a4fa34114fd06166fa4
+ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
+ms.openlocfilehash: 15092f726283f36c8dc5970157d3cd54dea9b837
 
 ---
 
-# Activer l’achat de produits consommables dans l’application
+# Activer les achats de produits consommables in-app
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+
+
+>**Remarque**&nbsp;&nbsp;Cet article montre comment utiliser les membres de l’espace de noms [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx). Si votre application cible Windows10, version1607 ou ultérieure, nous vous recommandons d’utiliser des membres de l’espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) pour gérer les extensions (également appelées produits in-app ou PIA) plutôt que l’espace de noms **Windows.ApplicationModel.Store**. Pour plus d’informations, voir [Versions d’évaluation et achats in-app](in-app-purchases-and-trials.md).
 
 Proposez des produits consommables dans l’application qui peuvent être achetés, utilisés et rachetés via la plateforme commerciale du Windows Store, afin d’offrir à vos clients une expérience d’achat à la fois solide et fiable au sein de l’application. Cette fonction est particulièrement utile pour différents aspects du jeu, comme les devises (or, pièces, etc.) susceptibles d’être achetées, puis utilisées pour acheter des améliorations spécifiques.
 
@@ -21,7 +23,7 @@ Proposez des produits consommables dans l’application qui peuvent être achet�
 
 -   Cette rubrique porte sur les rapports relatifs aux achats et acquisitions de produits in-app consommables. Si vous ne connaissez pas les produits intégrés à l’application, passez en revue la section [Activer les achats de produits intégrés à l’application](enable-in-app-product-purchases.md) pour en savoir plus sur les informations relatives aux licences et savoir comment répertorier correctement les produits intégrés à l’application dans le WindowsStore.
 -   Lorsque vous codez et testez de nouveaux produits intégrés à l’application pour la première fois, vous devez utiliser l’objet [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) au lieu de l’objet [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765). Cela vous permet de vérifier votre logique de licence à l’aide d’appels simulés au serveur de licences au lieu d’appels au serveur Live. Pour ce faire, vous devez personnaliser le fichier WindowsStoreProxy.xml dans %userprofile%\\AppData\\local\\packages\\&lt;package name&gt;\\LocalState\\Microsoft\\Windows Store\\ApiData. Le simulateur Microsoft VisualStudio crée ce fichier quand vous exécutez votre application pour la première fois. Vous pouvez également charger un fichier personnalisé au moment de l’exécution. Pour plus d’informations, voir **CurrentAppSimulator**.
--   Cette rubrique fait également référence à des exemples de code fournis dans l’[exemple du WindowsStore](http://go.microsoft.com/fwlink/p/?LinkID=627610). Cet exemple représente un excellent moyen d’obtenir une expérience pratique avec les différentes options de monétisation fournies pour les applications UWP.
+-   Cette rubrique fait également référence à des exemples de code fournis dans l’[exemple du WindowsStore](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store). Cet exemple représente un excellent moyen d’obtenir une expérience pratique avec les différentes options de monétisation fournies pour les applications UWP.
 
 ## Étape 1 : Établissement de la demande d’achat
 
@@ -115,7 +117,7 @@ private async void GetUnfulfilledConsumables()
 ## Rubriques connexes
 
 * [Activer les achats de produits dans l’application](enable-in-app-product-purchases.md)
-* [Exemple du Windows Store (montre des versions d’évaluation et des achats in-app)](http://go.microsoft.com/fwlink/p/?LinkID=627610)
+* [Exemple du Windows Store (montre des versions d’évaluation et des achats in-app)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
 * [**Windows.ApplicationModel.Store**](https://msdn.microsoft.com/library/windows/apps/br225197)
  
 
@@ -123,10 +125,6 @@ private async void GetUnfulfilledConsumables()
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

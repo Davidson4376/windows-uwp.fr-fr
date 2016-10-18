@@ -1,23 +1,34 @@
 ---
 author: Jwmsft
+Description: "Un bouton permet à l’utilisateur de déclencher une action immédiate."
 label: Buttons
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: de5af77435b34b8f28005351a7de125f211ca522
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 845aa9935908aa68b64c856ee5e263490a3340c4
 
 ---
 # Boutons
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+
 Un bouton permet à l’utilisateur de déclencher une action immédiate.
 
 ![Exemple de boutons](images/controls/button.png)
 
+<div class="important-apis" >
+<b>API importantes</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx"><strong>Classe Button</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx"><strong>Classe RepeatButton</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx"><strong>Événement Click</strong></a></li>
+</ul>
 
-<span class="sidebar_heading" style="font-weight: bold;">API importantes</span>
+</div>
+</div>
 
--   [**Classe Button**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)
--   [**Classe RepeatButton**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx)
--   [**Événement Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx)
+
+
+
 
 ## Est-ce le contrôle approprié?
 
@@ -71,7 +82,7 @@ private async void SubmitButton_Click(object sender, RoutedEventArgs e)
 
 Lorsque vous appuyez sur un bouton avec un doigt ou un stylet, ou lorsque vous cliquez dessus avec le bouton de la souris, le bouton déclenche l’événement [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx). Si un bouton est sélectionné au clavier, une pression sur la touche Entrée ou sur la barre d’espace déclenche également l’événement Click.
 
-Généralement, vous ne pouvez pas gérer les événements [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx) de bas niveau sur un bouton, car un comportement Click lui est affecté à la place. Pour plus d’informations, voir [Vue d’ensemble des événements et des événements routés](https://msdn.microsoft.com/library/windows/apps/mt185584.aspx).
+Généralement, vous ne pouvez pas gérer les événements [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx) de bas niveau sur un bouton, car un comportement Click lui est affecté à la place. Pour plus d’informations, voir [Vue d’ensemble des événements et des événements routés](https://msdn.microsoft.com/en-us/library/windows/apps/mt185584.aspx).
 
 Vous pouvez modifier la façon dont un bouton déclenche l’événement Click en modifiant la propriété [**ClickMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.clickmode.aspx). La valeur ClickMode par défaut est **Release**. Si ClickMode est défini sur **Hover**, l’événement Click ne peut pas être déclenché avec le clavier ou le mode tactile. 
 
@@ -150,85 +161,24 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 -   Ne surchargez pas le contenu d’un bouton. Faites en sorte que le contenu soit concis et facile à comprendre (rien d’autre qu’une image et du texte).
 
 ## Boutons Précédent
-Le bouton Précédent est une affordance de l’interface utilisateur fournie par le système qui permet de revenir en arrière dans la pile Back ou dans l’historique de navigation de l’utilisateur.
+Le bouton Précédent est un élément de l’interface utilisateur fournie par le système qui permet de revenir en arrière dans la pile Back ou dans l’historique de navigation de l’utilisateur. Vous n’avez pas besoin de créer votre propre bouton précédent, mais vous devez peut-être effectuer certaines opérations pour obtenir une bonne expérience de navigation vers l’arrière. Pour plus d’informations, voir [Navigation dans l’historique et navigation vers l’arrière](../layout/navigation-history-and-backwards-navigation.md)
 
-L’étendue de l’historique de navigation (intégré à l’application ou global) dépend de l’appareil et du mode de ce dernier.
+## Obtenir les exemples
+*   [Exemple d’éléments de base d’une interface utilisateur XAML](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)<br/>
+    Affichez tous les contrôles XAML dans un format interactif.
 
-## <span id="examples"></span><span id="EXAMPLES"></span>Exemple
-
-
-L’interface utilisateur pour le bouton Précédent du système est optimisée pour chaque type d’appareil et d’entrée, mais l’expérience de navigation est globale et cohérente sur les différents appareils et applications pour plateforme Windows universelle (UWP). Voici quelques exemples d’expérience:
-
-Téléphone ![système de retour sur un téléphone](images/nav-back-phone.png)
--   Toujours présent.
--   Bouton logiciel ou matériel en bas de l’appareil.
--   Navigation vers l’arrière globale au sein de l’application et entre les applications.
-
-<span id="Tablet"></span><span id="tablet"></span><span id="TABLET"></span>Tablette ![système de retour sur une tablette (en mode tablette)](images/nav-back-tablet.png)
--   Toujours présent en mode tablette.
-
-    Non disponible en mode bureau. Le bouton Précédent de la barre de titre peut être activé à la place. Voir [PC, ordinateur portable, tablette](#PC).
-
-    Les utilisateurs peuvent basculer entre le mode tablette et le mode bureau en accédant à **Paramètres &gt; Système &gt; Mode tablette** et en définissant **Optimiser les fonctions tactiles de Windows lors de l’utilisation de votre appareil en mode tablette**.
-
--   Bouton logiciel dans la barre de navigation en bas de l’appareil.
--   Navigation vers l’arrière globale au sein de l’application et entre les applications.
-
-<span id="PC"></span><span id="pc"></span>PC, ordinateur portable, tablette ![système de retour sur un pc ou un portable](images/nav-back-pc.png)
--   Facultatif en mode bureau.
-
-    Non disponible en mode tablette. Voir [Tablette](#Tablet).
-
-    Désactivé par défaut. Choisir pour l’activer.
-
-    Les utilisateurs peuvent basculer entre le mode tablette et le mode bureau en accédant à **Paramètres &gt; Système &gt; Mode tablette** et en définissant **Optimiser les fonctions tactiles de Windows lors de l’utilisation de votre appareil en mode tablette**.
-
--   Bouton logiciel dans la barre de titre de l’application.
--   Navigation vers l’arrière au sein de l’application uniquement. Ne prend pas en charge la navigation entre les applications.
-
-Surface Hub ![système de retour sur un surface hub](images/nav-back-surfacehub.png)
--   Toujours présent.
--   Bouton logiciel en bas de l’appareil.
--   Navigation vers l’arrière au sein de l’application et entre les applications.
-
- 
-
-## Pratiques conseillées et déconseillées
-
-
--   Activer la navigation vers l’arrière.
-
-    Si la navigation vers l’arrière n’est pas activée, votre application est incluse dans la pile Back globale, mais l’historique de navigation de page in-app n’est pas conservée.
-
--   Activer le bouton Précédent de la barre de titre en mode bureau.
-
-    L’historique de navigation de page in-app est conservé, mais la navigation vers l’arrière entre les applications n’est pas prise en charge.
-
-    **Important** En mode tablette, la barre de titre s’affiche lorsqu’un utilisateur effectue un balayage vers le bas à partir du haut de l’appareil ou place le pointeur de la souris vers le haut de l’appareil. Pour éviter toute confusion ou duplication, le bouton Précédent de la barre de titre ne s’affiche pas en mode tablette.
-
-     
-
--   Masquer ou désactiver le bouton Précédent de la barre de titre en mode bureau lorsque l’historique de navigation in-app est épuisé ou indisponible.
-
-    Indique à l’utilisateur qu’il ne peut pas revenir davantage en arrière.
-
--   Chaque commande Précédent doit revenir à la page précédente dans la pile Back ou, si l’utilisateur n’est pas en mode bureau, à la dernière application utilisée.
-
-    Une navigation vers l’arrière non intuitive, incohérente et non prévisible peut semer le trouble chez les utilisateurs.
 
 ## Articles connexes
 
 - [Cases d’option](radio-button.md)
 - [Boutons bascule](toggles.md)
 - [Cases à cocher](checkbox.md)
-
-**Pour les développeurs (XAML)**
 - [**Classe Button**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)
 
 
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -6,24 +6,37 @@ ms.assetid: 1BFF0E81-BF9C-43F7-95F6-EFC6BDD5EC31
 label: Scroll bars
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: b390f8a2cbabf243bd4d73c16122648e3d4a0586
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 3dd5912bdd210751257bb9e495c5a95ce0be20a5
 
 ---
 # Barres de défilement
 
-<span class="sidebar_heading" style="font-weight: bold;">API importantes</span>
-
--   [**Classe ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527)
--   [**Propriété ZoomMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.zoommode.aspx)
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 Le mouvement panoramique et le défilement permettent aux utilisateurs d’atteindre du contenu qui s’étend au-delà des limites de l’écran.
 
 Un contrôle de visionneuse à défilement est composé d’autant de contenu que la fenêtre d’affichage peut en contenir et d’une ou deux barres de défilement. Vous pouvez utiliser des mouvements tactiles pour agrandir ou effectuer un panoramique (les barres de défilement apparaissent en fondu uniquement durant la manipulation) et utiliser le pointeur pour le défilement. Le mouvement de raccourci effectue un panoramique avec l’inertie.
 
-**Remarque** Windows: il existe deux modes d’affichage de panoramique en fonction de l’appareil d’entrée détecté: les indicateurs de mouvement panoramique pour l’interaction tactile et les barres de défilement pour les autres appareils d’entrée, notamment la souris, le pavé tactile, le clavier et le stylet.
+**Remarque** Windows dispose de deux visualisations de barre de défilement, qui sont basées sur le mode d’entrée de l’utilisateur: les indicateurs de défilement en cas d’utilisation de l’interface tactile ou du boîtier de commande, et les barres de défilement interactif pour d’autres périphériques d’entrée, y compris la souris, le clavier et le stylet.
 
-![Un exemple de contrôles de barre de défilement et d’indicateur de mouvement panoramique standard](images/SCROLLBAR.png)
+![Exemple de l’aspect des contrôles de barre de défilement et d’indicateur de mouvement panoramique standard](images/SCROLLBAR.png)
+
+
+<div class="important-apis" >
+<b>API importantes</b><br/>
+<ul>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/br209527"><strong>Classe ScrollViewer</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.scrollbar.aspx"><strong>Classe ScrollBar</strong></a></li>
+</ul>
+
+</div>
+</div>
+
+
+
+
+
 
 ## Exemples
 
@@ -32,11 +45,27 @@ Un [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/xaml/windo
 ![Capture d’écran du contrôle de barre de défilement standard](images/ScrollBar_Standard.jpg)
 
 ## Créer une visionneuse à défilement
+Pour ajouter un défilement vertical à votre page, placez le contenu de la page dans une visionneuse à défilement.
 
+```xaml
+<Page
+    x:Class="App1.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App1">
+
+    <ScrollViewer>
+        <StackPanel>
+            <TextBlock Text="My Page Title" Style="{StaticResource TitleTextBlockStyle}"/>
+            <!-- more page content -->
+        </StackPanel>
+    </ScrollViewer>
+</Page>
+```
 Ce code XAML montre comment placer une image dans une visionneuse à défilement et activer le zoom.
 
 ```xaml
-<ScrollViewer ZoomMode="Enabled" MaxZoomFactor="10" 
+<ScrollViewer ZoomMode="Enabled" MaxZoomFactor="10"
               HorizontalScrollMode="Enabled" HorizontalScrollBarVisibility="Visible"
               Height="200" Width="200">
     <Image Source="Assets/Logo.png" Height="400" Width="400"/>
@@ -54,18 +83,18 @@ Pour permettre aux contrôles qui incluent un ScrollViewer d’influencer certai
 **Propriétés XAML jointes de ScrollViewer**
 
 ScrollViewer définit les propriétés XAML jointes suivantes:
-- [ScrollViewer.BringIntoViewOnFocusChange](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.bringintoviewonfocuschange.aspx) 
-- [ScrollViewer.HorizontalScrollBarVisibility](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.horizontalscrollbarvisibility.aspx) 
+- [ScrollViewer.BringIntoViewOnFocusChange](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.bringintoviewonfocuschange.aspx)
+- [ScrollViewer.HorizontalScrollBarVisibility](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.horizontalscrollbarvisibility.aspx)
 - [ScrollViewer.HorizontalScrollMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.horizontalscrollmode.aspx)
-- [ScrollViewer.IsDeferredScrollingEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.isdeferredscrollingenabled.aspx) 
+- [ScrollViewer.IsDeferredScrollingEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.isdeferredscrollingenabled.aspx)
 - [ScrollViewer.IsHorizontalRailEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.ishorizontalrailenabled.aspx)
-- [ScrollViewer.IsHorizontalScrollChainingEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.ishorizontalscrollchainingenabled.aspx) 
+- [ScrollViewer.IsHorizontalScrollChainingEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.ishorizontalscrollchainingenabled.aspx)
 - [ScrollViewer.IsScrollInertiaEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.isscrollinertiaenabled.aspx)
 - [ScrollViewer.IsVerticalRailEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.isverticalrailenabled.aspx)
-- [ScrollViewer.IsVerticalScrollChainingEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.isverticalscrollchainingenabled.aspx) 
+- [ScrollViewer.IsVerticalScrollChainingEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.isverticalscrollchainingenabled.aspx)
 - [ScrollViewer.IsZoomChainingEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.iszoominertiaenabled.aspx)
 - [ScrollViewer.IsZoomInertiaEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.iszoominertiaenabled.aspx)
-- [ScrollViewer.VerticalScrollBarVisibility](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.verticalscrollbarvisibilityproperty.aspx) 
+- [ScrollViewer.VerticalScrollBarVisibility](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.verticalscrollbarvisibilityproperty.aspx)
 - [ScrollViewer.VerticalScrollMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.verticalscrollmode.aspx)
 - [ScrollViewer.ZoomMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.zoommode.aspx)
 
@@ -73,7 +102,7 @@ Ces propriétés XAML jointes sont conçues pour les cas où le ScrollViewer est
 
 Par exemple, voici comment rendre les barres de défilement vertical toujours visibles pour une visionneuse à défilement intégrée d’un contrôle ListView.
 ```xaml
-<ListView ScrollViewer.VerticalScrollBarVisibility="Visible"/> 
+<ListView ScrollViewer.VerticalScrollBarVisibility="Visible"/>
 ```
 
 Pour les cas où un ScrollViewer est explicite dans votre code XAML, comme indiqué dans l’exemple de code, vous n’avez pas besoin d’utiliser une syntaxe de propriété jointe. Utilisez simplement une syntaxe d’attribut, par exemple `<ScrollViewer VerticalScrollBarVisibility="Visible"/>`.
@@ -81,11 +110,13 @@ Pour les cas où un ScrollViewer est explicite dans votre code XAML, comme indiq
 
 ## Recommandations
 
+-   Dans la mesure du possible, privilégiez le défilement vertical plutôt qu’horizontal.
 -   Utilisez le mouvement panoramique sur un axe pour les régions de contenu qui s’étendent au-delà des contours de la fenêtre d’affichage (vertical ou horizontal). Utilisez le mouvement panoramique sur deux axes pour les régions de contenu qui s’étendent au-delà des contours de la fenêtre d’affichage (à la fois vertical et horizontal).
--   Utilisez la fonctionnalité de défilement intégrée dans les contrôles hub, de zone de liste, de liste déroulante, de zone d’entrée de texte, d’affichage de grille et d’affichage de liste. Avec ces contrôles, s’il y a trop d’éléments à afficher simultanément, l’utilisateur peut faire défiler horizontalement ou verticalement par-dessus la liste d’éléments.
+-   Utilisez la fonctionnalité de défilement intégrée dans les contrôles hub, d’affichage de liste, d’affichage de grille, de zone de liste modifiable, de zone de liste et de zone d’entrée de texte. Avec ces contrôles, s’il y a trop d’éléments à afficher simultanément, l’utilisateur peut faire défiler la liste d’éléments horizontalement ou verticalement.
 -   Si vous voulez que l’utilisateur puisse effectuer un panoramique dans les deux directions autour d’une zone plus grande et qu’il puisse éventuellement zoomer, par exemple sur une image taille réelle (au lieu d’une image adaptée à la taille de l’écran), placez l’image dans une visionneuse à défilement.
 -   Si l’utilisateur doit faire défiler un long passage de texte, configurez la visionneuse à défilement pour qu’elle défile uniquement verticalement.
--   Une visionneuse à défilement ne doit contenir qu’un seul objet. Notez que cet objet peut être un panneau de disposition contenant quant à lui une quantité quelconque d’objets.
+-   Une visionneuse à défilement ne doit contenir qu’un seul objet. Notez que cet objet peut être un panneau de disposition contenant à son tour un nombre quelconque d’objets.
+-   Ne placez pas de contrôle [Pivot](tabs-pivot.md) dans une visionneuse à défilement pour éviter les conflits avec la logique de défilement du sélecteur de vue.
 
 ## Rubriques connexes
 
@@ -94,6 +125,6 @@ Pour les cas où un ScrollViewer est explicite dans votre code XAML, comme indiq
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

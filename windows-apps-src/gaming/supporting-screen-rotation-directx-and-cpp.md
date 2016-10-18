@@ -5,7 +5,7 @@ description: "Dans cette rubrique, nous allons examiner les meilleures pratiques
 ms.assetid: f23818a6-e372-735d-912b-89cabeddb6d4
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8da32494e0bb0bd48d485c946df1c9a5baec7fbe
+ms.openlocfilehash: 101ee7a6d0760abfc40145b21478947c0563a346
 
 ---
 
@@ -558,6 +558,6 @@ Désormais, lorsque vous appelez votre méthode de rendu, elle multiplie la matr
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

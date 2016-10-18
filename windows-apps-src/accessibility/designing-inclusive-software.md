@@ -6,8 +6,8 @@ title: Conception de logiciels inclusifs dans Windows10
 label: Designing inclusive software
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: cdd41595ee2727c0eeefab7b041c1adfefc15dfa
+ms.sourcegitcommit: c5ccae0e095b7c8e403a230fe8f3442754aa2ad7
+ms.openlocfilehash: 94848fd1acf51e7ab8dab0f45584d3214be58830
 
 ---
 
@@ -103,10 +103,11 @@ En résumé, suivez ces sept étapes pour vous assurer que votre logiciel est in
 * [Conception inclusive](http://design.microsoft.com/inclusive)
 * [Conception de logiciels accessibles](https://www.microsoft.com/download/details.aspx?id=19262)
 * [Hub de développeurs axés sur l’accessibilité Microsoft](https://developer.microsoft.com/windows/accessible-apps)
-* [Développement d’applications Windows inclusives](developing-inclusive-windows-apps.md)  
+* [Développement d’applications Windows inclusives](developing-inclusive-windows-apps.md) 
+* [Accessibilité](accessibility.md)
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

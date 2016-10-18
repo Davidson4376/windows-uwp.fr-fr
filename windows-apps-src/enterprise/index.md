@@ -1,11 +1,11 @@
 ---
 ms.assetid: 4b0c86d3-f05b-450b-bf9c-6ab4d3f07d31
-description: "Cette feuille de route propose une vue d’ensemble sur les fonctionnalités principales d’entreprise des applications de la plateforme Windowsuniverselle(UWP)&amp;\\#160;Windows10."
+description: "Cette feuille de route propose une vue d’ensemble des principales fonct. d’entreprise pour les app. de plateforme Windowsuniverselle(UWP) et Windows10."
 title: Entreprise
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 58f7c9739a000b6cac1c000570807587233018ce
+ms.sourcegitcommit: 8f4b9e7b1b30beb8974a17af77e4d7138bd8f829
+ms.openlocfilehash: 75a7723fb8934a59d44da2f075184dd6bbd85d45
 
 ---
 
@@ -30,7 +30,7 @@ Windows 10 fournit un ensemble de fonctionnalités de sécurité pour les dével
 | [Présentation du développement d’applications Windows sécurisées](https://msdn.microsoft.com/library/windows/apps/mt622741) | Cet article introductif décrit les différentes fonctionnalités d’entreprise Windows lors des phases d’authentification, de données en transit et de données au repos. Il explique également comment vous pouvez intégrer ces phases dans vos applications. Il couvre une large gamme de rubriques et vise essentiellement à aider les architectes d’application à mieux comprendre les fonctionnalités Windows qui facilitent et accélèrent la création d’applications de plateforme Windows universelle. |
 | [Authentification et identité des utilisateurs](https://msdn.microsoft.com/library/windows/apps/mt270184) | Les applications UWP disposent de plusieurs options pour l’authentification des utilisateurs qui sont décrites dans cet article. Pour l’entreprise, l’utilisation de la nouvelle fonctionnalité Microsoft Passport est fortement recommandée. Microsoft Passport remplace les mots de passe par la méthode d’authentification à 2 facteurs (2FA) forte en vérifiant les informations d’identification existantes et en créant une information d’identification propre à l’appareil protégée par un mouvement de l’utilisateur basé sur la biométrie ou sur l’entrée du PIN de ce dernier. |
 | [Chiffrement](https://msdn.microsoft.com/library/windows/apps/mt270191) | La section relative au chiffrement fournit une vue d’ensemble des fonctionnalités de chiffrement disponibles pour les applications UWP. Les articles comprennent des procédures pas à pas introductives pour chiffrer facilement les données professionnelles sensibles et couvrent également des sujets avancés tels que la manipulation des clés de chiffrement et l’utilisation des codes d’authentification de message (MAC), codes de hachage et signatures. |
-| [Protection des données d’entreprise (EDP, EnterpriseDataProtection)](edp-hub.md) | Cette rubrique fournit un aperçu complet du point de vue développeurs de la manière dont la fonctionnalité de protection des données d’entreprise (EDP) est liée aux fichiers, aux mémoires tampons, au Presse-papiers, à la mise en réseau, aux tâches en arrière-plan et à la protection des données verrouillées. |
+| [Protection des informations Windows (WIP)](wip-hub.md) | Il s’agit d’une rubrique de hub destinée aux développeurs qui aborde de manière exhaustive la relation de la protection des informations Windows (WIP) avec les fichiers, les mémoires tampons, le Presse-papiers, la mise en réseau, les tâches en arrière-plan et la protection des données verrouillées. |
 
  
 
@@ -113,9 +113,6 @@ Pour plus d’informations sur Prism, voir le [référentiel GitHub](https://git
 
 
 
-
-
-
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO5-->
 
 

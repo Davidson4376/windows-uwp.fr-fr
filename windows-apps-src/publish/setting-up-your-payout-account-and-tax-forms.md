@@ -4,8 +4,8 @@ Description: "Afin de recevoir l’argent provenant des ventes d’applications 
 title: "Configuration de votre compte de revenu et de vos déclarations fiscales"
 ms.assetid: 690A2EBC-11B1-4547-B422-54F15A6C26A7
 translationtype: Human Translation
-ms.sourcegitcommit: f17132514a42c50d6bfe716f6be706748c287043
-ms.openlocfilehash: 45cb4e8b65f1aeb75c049a88c143a23350d47b64
+ms.sourcegitcommit: ea9ea2d39ecd0fc54381df8d5fa7dd7cdc2fae51
+ms.openlocfilehash: 7de230aeee932f781a282ab7555e1c90bcd76460
 
 ---
 
@@ -16,14 +16,14 @@ Afin de recevoir l’argent provenant des ventes d’applications dans le Window
 
 > **Remarque** Dès le 1er avril 2016, vos revenus Microsoft Advertising seront reversés sur le compte de revenu défini dans le Centre de développement. Pour en savoir plus, consultez l’article [Consolidation du profil fiscal et du compte de paiement de pubCenter dans le Centre de développement](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md).
 
-Si vous envisagez de référencer uniquement des applications gratuites (et que vous ne voulez pas proposer d’achats in-app ou utiliser Microsoft Advertising), vous n’avez pas besoin de configurer de compte de revenu ni de remplir de déclaration fiscale. Si vous changez d’avis par la suite et décidez de vendre des applications (ou de proposer des produits in-app), vous pourrez alors configurer votre compte de revenu et remplir vos déclarations fiscales à ce moment-là. Vous ne pourrez pas soumettre d’applications payées ou de produits in-app avant d’avoir créé votre compte de revenu et votre profil fiscal.
+Si vous envisagez de référencer uniquement des applications gratuites (et que vous ne voulez pas proposer d’achats in-app ou utiliser Microsoft Advertising), vous n’avez pas besoin de configurer de compte de revenu ni de remplir de déclaration fiscale. Si vous changez d’avis par la suite et décidez de vendre des applications (ou de proposer des produits in-app), vous pourrez alors configurer votre compte de revenu et remplir vos déclarations fiscales à ce moment-là. Vous ne pourrez pas soumettre d’applications payées ou de produits in-app avant d’avoir créé votre compte de paiement et votre profil fiscal.
 
-> **Remarque** Sur [certains marchés](account-types-locations-and-fees.md#developer-account-and-app-submission-markets), les développeurs peuvent uniquement soumettre des applications gratuites. Si votre compte est enregistré sur l’un de ces marchés, vous n’aurez pas la possibilité de configurer un compte de revenu.
+> **Remarque** Sur [certains marchés](account-types-locations-and-fees.md#developer-account-and-app-submission-markets), les développeurs peuvent uniquement soumettre des applications gratuites. Si votre compte est enregistré sur l’un de ces marchés, vous n’aurez pas la possibilité de configurer un compte de paiement.
 
 
-Après avoir [configuré votre compte de développeur](opening-a-developer-account.md), vous devez effectuer deux opérations avant de pouvoir vendre des applications (ou des produits in-app) dans le Windows Store :
+Après avoir [configuré votre compte de développeur](opening-a-developer-account.md), vous devez effectuer deux opérations avant de pouvoir vendre des applications (ou des modules complémentaires) dans le Windows Store:
 
--   [Configurer votre compte de revenu](#setting_up_your_payout_account)
+-   [Configurer votre compte de paiement](#setting_up_your_payout_account)
 -   [Remplir vos déclarations fiscales](#paying_taxes)
 
 > **Remarque** Pour plus d’informations sur le mode et l’échéance des paiements de l’argent que vos applications vous ont rapporté, voir [Rémunération](getting-paid-apps.md).
@@ -86,10 +86,10 @@ Une fois que le paiement a été soumis à votre banque, vous disposez de 30 jou
 
 ### Russie
 
-Si vous êtes un développeur vivant en Russie, vous pouvez avoir besoin de fournir des documents à votre banque pour que celle-ci puisse déposer des fonds sur votre compte. Lorsque vous avez le droit d'être payé, nous vous fournissons les documents suivants dans un message e-mail :
+Si vous êtes un développeur vivant en Russie, vous pouvez avoir besoin de fournir des documents à votre banque pour que celle-ci puisse déposer des fonds sur votre compte. Si vous pouvez bénéficier d’une rémunération, nous vous fournirons les documents suivants dans un e-mail:
 
-1.  Certificate of Acceptance (CoA) - contient le montant du paiement transféré sur votre compte.
-2.  App Developer Agreement (ADA) - copie signée de l'accord de développeur qui doit être contresignée.
+1.  Acceptance Certificate (AC) - contient le montant du paiement transféré sur votre compte.
+2.  App Developer Agreement (ADA) - copie signée de l’accord de développeur qui doit être contresignée.
 
 Pour garantir le succès du paiement, notez les points suivants :
 
@@ -100,13 +100,13 @@ Pour garantir le succès du paiement, notez les points suivants :
 
 ### Ukraine
 
-Si vous êtes un développeur vivant en Ukraine, vous pouvez avoir besoin de fournir des documents à votre banque pour que celle-ci puisse déposer des fonds sur votre compte. Si vous pouvez bénéficier d’une rémunération, nous vous fournirons les documents suivants dans un e-mail :
+Si vous êtes un développeur vivant en Ukraine, vous pouvez avoir besoin de fournir des documents à votre banque pour que celle-ci puisse déposer des fonds sur votre compte. Si vous pouvez bénéficier d’une rémunération, nous vous fournirons les documents suivants dans un e-mail:
 
-1.  Certificate of Acceptance (CoA) - contient le montant du paiement transféré sur votre compte.
-2.  App Developer Agreement (ADA) - copie signée de l'accord de développeur qui doit être contresignée.
+1.  Acceptance Certificate (AC) - contient le montant du paiement transféré sur votre compte.
+2.  App Developer Agreement (ADA) - copie signée de l’accord de développeur qui doit être contresignée.
 3.  Amendment Agreement (AA) – ce document est utilisable par votre banque pour faciliter l’identification de vos fonds de paiement.
 
-Microsoft fournit ces trois documents lors de la première tentative de paiement. Pour les paiements ultérieurs, vous ne recevrez plus que le document CoA. Conservez les documents ADA et AA au cas où vous en auriez besoin pour recevoir de futurs paiements de votre banque.
+Microsoft fournit ces trois documents lors de la première tentative de paiement. Pour les paiements ultérieurs, vous ne recevrez plus que le document AC. Conservez les documents ADA et AA au cas où vous en auriez besoin pour recevoir de futurs paiements de votre banque.
 
 Pour garantir le succès du paiement, notez les points suivants :
 
@@ -160,6 +160,6 @@ Si vous résidez en dehors des États-Unis, vous pouvez tirer parti d’avantage
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

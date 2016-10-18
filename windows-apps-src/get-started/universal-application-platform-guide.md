@@ -1,20 +1,17 @@
 ---
 author: TylerMSFT
-title: Guide des applications de plateforme Windows universelle (UWP)
-description: "Découvrez les applications de plateforme Windows universelle (UWP) qui peuvent s’exécuter sur un vaste éventail d’appareils."
+title: "Introduction à la plateforme Windows universelle"
+description: "Découvrez les applications de plateforme Windows universelle (UWP) qui peuvent s’exécuter sur un large éventail d’appareils exécutant Windows10."
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
 translationtype: Human Translation
-ms.sourcegitcommit: 2df873ad451e2bb1196a1ce42e3fcd40f8c3ac8e
-ms.openlocfilehash: 925db2c5242eb49229f41298f1db4e2653f3499d
+ms.sourcegitcommit: 0f2ed552898f7cbb476055a6d6b7aa76545113b1
+ms.openlocfilehash: c433bd2eba2a5be114680f52a8da0b5c7b563186
 
 ---
 
-# Guide des applications de plateforme Windows universelle (UWP)
+# Introduction à la plateforme Windows universelle
 
-
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
-
-Dans ce guide, vous allez découvrir ce qui suit:
+Voici ce que vous allez apprendre dans ce guide:
 
 -   Ce qu’est une *famille d’appareils* et comment choisir celle à cibler.
 -   Nouveaux contrôles et panneaux d’interface utilisateur qui vous permettent d’adapter votre interface utilisateur aux différents facteurs de forme d’appareil.
@@ -284,6 +281,6 @@ Pour savoir comment soumettre vos applications en vue de leur publication dans l
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Sep16_HO3-->
 
 

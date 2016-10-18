@@ -5,7 +5,7 @@ title: "Optimiser l’accès aux fichiers"
 description: "Créez des applications UWP qui accèdent au système de fichiers efficacement, en évitant les problèmes de performances dus à la latence de disque et aux cycles de la mémoire et du processeur."
 translationtype: Human Translation
 ms.sourcegitcommit: 165105c141405cd752f876c822f76a5002d38678
-ms.openlocfilehash: 354a11fefd7164fd6ba5b21ec871ecbe7916ad25
+ms.openlocfilehash: 53fd6f4c28eaa7d3976658a84dd0aefb4255ff91
 
 ---
 # Optimiser l’accès aux fichiers
@@ -238,6 +238,6 @@ Dans une application de conversation, vous pourriez utiliser un flux sur une int
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

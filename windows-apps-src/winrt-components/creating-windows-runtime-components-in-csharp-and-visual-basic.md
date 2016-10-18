@@ -5,7 +5,7 @@ description: "Depuis le .NET Framework 4.5, vous pouvez utiliser du code managé
 ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
 translationtype: Human Translation
 ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: e8fd48b99d6a05af57e67e503c7bd3058b07569c
+ms.openlocfilehash: e7793cd27d996ce2adbfebfbad91541bdccf0d82
 
 ---
 
@@ -294,6 +294,6 @@ Pour plus d’informations sur les fonctionnalités de langage Visual Basic et C
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -5,7 +5,7 @@ title: "Optimiser les animations, les éléments multimédias et les images"
 description: "Créez des applications UWP avec des animations fluides, une fréquence d’images élevée et une capture/lecture multimédia hautement performante."
 translationtype: Human Translation
 ms.sourcegitcommit: 622df404dbf85740aa0029f53a0b4e0d541608f9
-ms.openlocfilehash: 8fd9ce5f43159ae00414d05ddb757c507aaa370d
+ms.openlocfilehash: 62e35ef31a5c2c4c3ca1ce6f6749057d59c22af3
 
 ---
 # Optimiser les animations, les éléments multimédias et les images
@@ -256,7 +256,7 @@ Votre application doit utiliser [**SoftwareBitmap**](https://msdn.microsoft.com/
 
 ### Utiliser GetThumbnailAsync pour les miniatures
 
-Un exemple d’utilisation des images mises à l’échelle : la création des miniatures. Bien que vous puissiez utiliser [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) et [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) pour fournir des petites versions des images, UWP fournit des API plus efficaces pour récupérer les miniatures. [**GetThumbnailAsync**](https://msdn.microsoft.com/library/windows/apps/BR227210) fournit les miniatures pour les images dont le système de fichiers est déjà mis en cache. Vous obtenez ainsi une bien meilleure performance qu’avec les API XAML, car l’image n’a pas besoin d’être ouverte ni décodée.
+Un exemple d’utilisation des images mises à l’échelle : la création des miniatures. Bien que vous puissiez utiliser [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) et [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) pour fournir des petites versions des images, UWP fournit des API plus efficaces pour récupérer les miniatures. [**GetThumbnailAsync**](https://msdn.microsoft.com/library/windows/apps/BR227210) fournit les miniatures pour les images dont le système de fichiers est déjà mis en cache. Vous obtenez ainsi une bien meilleure performance qu’avec les API XAML, car l’image n’a pas besoin d’être ouverte ou décodée.
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -303,6 +303,6 @@ Pour éviter de décoder les images plus d’une fois, assignez la propriété [
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

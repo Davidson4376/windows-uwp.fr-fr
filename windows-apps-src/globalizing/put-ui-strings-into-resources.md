@@ -7,7 +7,7 @@ label: Put UI strings into resources
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: b44d9235e34b8d4c75f663029d1dde3f87bd0eb7
+ms.openlocfilehash: e404eceb4aad562474cff264bb992a3d71a3bed4
 
 ---
 
@@ -34,18 +34,18 @@ Cette rubrique décrit la procédure requise pour ajouter plusieurs ressources d
 2.  Ouvrez package.appxmanifest dans VisualStudio, accédez à l’onglet **Application**, puis (pour cet exemple) définissez la langue par défaut sur «en-US». Si votre solution comporte plusieurs fichiers package.appxmanifest, effectuez cette opération pour chacun d’eux.
     <br>**Remarque** Cette opération spécifie la langue par défaut du projet. Les ressources linguistiques par défaut sont utilisées si la langue par défaut de l’utilisateur ou les langues d’affichage ne correspondent pas aux ressources linguistiques fournies dans l’application.
 3.  Créez un dossier destiné à contenir les fichiers de ressources.
-    1.  Dans l’Explorateur de solutions, cliquez avec le bouton droit sur le projet (projet partagé si votre solution contient plusieurs projets) et sélectionnez **Ajouter**&gt;**Nouveau dossier**.
+    1.  Dans l’Explorateur de solutions, cliquez avec le bouton droit sur le projet (projet partagé si votre solution en contient plusieurs) et sélectionnez **Ajouter** &gt; **Nouveau dossier**.
     2.  Nommez le nouveau dossier «Strings».
-    3.  Si le nouveau dossier n’apparaît pas dans l’Explorateur de solutions, sélectionnez **Projet**&gt;**Afficher tous les fichiers** dans le menu Microsoft Visual Studio en veillant à ce que le projet soit toujours sélectionné.
+    3.  Si le nouveau dossier ne figure pas dans l’Explorateur de solutions, sélectionnez **Projet** &gt; **Afficher tous les fichiers** dans le menu Microsoft Visual Studio en veillant à ce que le projet soit toujours sélectionné.
 
 4.  Créez un sous-dossier et un fichier de ressources pour l’anglais (États-Unis).
-    1.  Cliquez avec le bouton droit sur le dossier Strings et ajoutez un dossier sous celui-ci. Nommez-le «en-US». Le fichier de ressources doit être placé dans un dossier qui a été nommé pour la balise de langue [BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302). Pour obtenir plus de détails sur le qualificateur de langue ainsi qu’une liste des balises de langue usuelles, voir [Comment nommer des ressources à l’aide de qualificateurs](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324).
-    2.  Cliquez avec le bouton droit sur le dossier en-US et sélectionnez **Ajouter**&gt;**Nouvel élément...**
+    1.  Cliquez avec le bouton droit sur le dossier Strings et ajoutez un dossier sous celui-ci. Nommez-le «en-US». Le fichier de ressources doit être placé dans un dossier qui a été nommé pour la balise de langue [BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302). Pour plus d’informations sur le qualificateur de langue et pour obtenir une liste des balises de langue usuelles, voir [Comment nommer des ressources à l’aide de qualificateurs](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324).
+    2.  Cliquez avec le bouton droit sur le dossier en-US, puis sélectionnez **Ajouter** &gt; **Nouvel élément…**.
     3.  **XAML:** sélectionnez Resources File (.resw).
         <br>**HTML:** sélectionnez Resources File (.resjson).
 
-    4.  Cliquez sur **Ajouter**. Un fichier de ressources est ajouté avec le nom par défaut Resources.resw (pour **XAML**) ou resources.rejson (pour **HTML**). Nous vous recommandons d’utiliser ce nom de fichier par défaut. Les applications peuvent partitionner leurs ressources dans d’autres fichiers. Toutefois, elles doivent y faire référence correctement (voir [Comment charger des ressources de type chaîne](https://msdn.microsoft.com/library/windows/apps/xaml/hh965323)).
-    5.  **XAML uniquement :**si vous disposez de fichiers .resx contenant uniquement des ressources de type chaîne provenant de précédents projets .NET, sélectionnez **Ajouter**&gt;**Élément existant...**, ajoutez le fichier .resx, puis renommez-le avec l’extension .resw.
+    4.  Cliquez sur **Ajouter**. Un fichier de ressources est ajouté avec le nom par défaut Resources.resw (pour **XAML**) ou resources.rejson (pour **HTML**). Nous vous recommandons d’utiliser ce nom de fichier par défaut. Les applications peuvent partitionner leurs ressources dans d’autres fichiers, mais vous devez veiller à y faire correctement référence (voir [Comment charger des ressources de type chaîne](https://msdn.microsoft.com/library/windows/apps/xaml/hh965323)).
+    5.  **XAML uniquement**: si vous disposez de fichiers .resx contenant uniquement des ressources de type chaîne provenant de projets .NET précédents, sélectionnez **Ajouter** &gt; **Élément existant…**, ajoutez le fichier .resx, puis renommez-le avec l’extension .resw.
     6.  Ouvrez le fichier et utilisez l’éditeur pour ajouter les ressources suivantes:
 
         **XAML:**
@@ -249,6 +249,6 @@ Testez l’application avec les autres langues.
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

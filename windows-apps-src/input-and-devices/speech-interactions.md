@@ -7,7 +7,7 @@ label: Speech interactions
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: ecd002e6f3a92702459426858693dd7547b0ca02
+ms.openlocfilehash: d32c38c2f939e03375630439f2aa512004601a70
 
 ---
 
@@ -169,7 +169,7 @@ Ces grammaires prédéfinies peuvent être utilisées pour reconnaître jusqu’
 
 Une grammaire personnalisée est conçue et créée par vous-même, et installé sur votre application. La reconnaissance vocale à l’aide d’une contrainte personnalisée est effectuée sur l’appareil.
 
--   Les contraintes de liste de programmation permettent de créer facilement une grammaire simple sous la forme d’une liste de mots ou d’expressions. Une contrainte de liste fonctionne correctement pour la reconnaissance d’expressions distinctes courtes. En indiquant explicitement des mots dans une grammaire, vous améliorez également la précision de la reconnaissance, car le traitement de la parole par le moteur de reconnaissance se limite à la confirmation d’une correspondance. La liste peut également être mise à jour par programme.
+-   Les contraintes de liste de programmation permettent de créer facilement une grammaire simple sous la forme d’une liste de mots ou d’expressions. Une contrainte de liste fonctionne correctement pour la reconnaissance d’expressions distinctes courtes. En indiquant explicitement des mots dans une grammaire, vous améliorez également la précision de la reconnaissance, car le traitement de la parole par le moteur de reconnaissance se limite à la confirmation d’une correspondance. La liste peut également être mise à jour par programmation.
 -   Contrairement à une contrainte de liste de programmation, une grammaire SRGS est un document statique au format XML défini par la norme [SRGS version1.0](http://go.microsoft.com/fwlink/p/?LinkID=262302). Une grammaire SRGS permet de contrôler au maximum l’expérience de la reconnaissance vocale en capturant plusieurs significations sémantiques dans une même reconnaissance.
 
     Voici quelques conseils pour la création de grammaires SRGS :
@@ -231,9 +231,9 @@ Vous pouvez traiter les deux problèmes en fournissant au synthétiseur vocal un
 ## Articles connexes
 
 * [Interactions vocales](https://msdn.microsoft.com/library/windows/apps/mt185614)
-* [Interactions avec Cortana](https://msdn.microsoft.com/library/windows/apps/mt185598) 
-            **Exemples**
-* [Exemple de reconnaissance vocale et de synthèse vocale](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [Interactions avec Cortana](https://msdn.microsoft.com/library/windows/apps/mt185598)
+ **Exemple**
+* [Reconnaissance vocale et exemple de synthèse vocale](http://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  
@@ -243,6 +243,6 @@ Vous pouvez traiter les deux problèmes en fournissant au synthétiseur vocal un
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

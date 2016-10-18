@@ -5,7 +5,7 @@ title: "InteropérationDirectX et Direct2D de composition en mode natif avec Beg
 description: "L’API Windows.UI.Composition fournit des interfaces pour interopération en mode natif, permettant ainsi de déplacer directement le contenu dans le compositeur."
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: c2086e703e3972d4dd38dc1b7147bfa5f01231cf
+ms.openlocfilehash: 4d1bf75fee06c8f4c31ce23c89bf6267ab9e6394
 
 ---
 # Interopération DirectX et Direct2D de composition en mode natif avec BeginDraw et EndDraw
@@ -270,6 +270,6 @@ private:
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

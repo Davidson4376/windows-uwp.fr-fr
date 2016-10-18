@@ -5,7 +5,7 @@ title: Graphismes et animation
 description: "Les rubriques de cette section vous aident à prendre en main l’utilisation de graphismes et d’animations dans vos applications du WindowsStore."
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d46498e6e584d85cfce0be237878aff68dee9c50
+ms.openlocfilehash: e06be76cadffd0ee116b0cfd28c90176e25656d5
 
 ---
 # Graphismes et animation
@@ -39,6 +39,6 @@ Les graphismes et animations sont destinés aux développeurs d’applications e
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

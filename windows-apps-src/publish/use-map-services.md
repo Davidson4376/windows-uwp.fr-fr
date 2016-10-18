@@ -5,7 +5,7 @@ title: Utiliser les services cartographiques
 ms.assetid: E5EE6B56-B86F-4D62-B16A-F023FE98EFAB
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 0d775c67492fd6afe9f65f3e5dede865f9037342
+ms.openlocfilehash: 5ba722ae17fce33ff3a6860c17c1ed5f3e6790b8
 
 ---
 
@@ -32,6 +32,6 @@ Vous devez également veiller à ajouter les informations **ApplicationID** et *
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -6,8 +6,8 @@ ms.assetid: BAF9956F-FAAF-47FB-A7DB-8557D2548D88
 label: Show multiple views for an app
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 23e999f86fb0552b96cddbd3b9d11803106bf6c2
+ms.sourcegitcommit: 0d67e3cef26ca6aca07556312a18be93fe758c85
+ms.openlocfilehash: ccbcb1f3f5ee31724416f512138757865ffabc98
 
 ---
 
@@ -27,7 +27,7 @@ Quand vous créez plusieurs fenêtres pour une application, chacune d’elles se
 
 Une vue d’application est l’association de type1:1 d’un thread et d’une fenêtre que l’application utilise pour afficher le contenu. Elle est représentée par un objet [**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017).
 
-Les vues sont gérées par l’objet [**CoreApplication**](https://msdn.microsoft.com/library/windows/apps/br225016). Vous appelez [**CoreApplication.CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278) pour créer un objet [**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017). La **CoreApplicationView** rassemble une [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) et un [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) (stockés dans les propriétés [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019) et [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/dn433264)). Vous pouvez considérer la **CoreApplicationView** comme l’objet qui utilise WindowsRuntime pour interagir avec le système Windows principal.
+Les vues sont gérées par l’objet [**CoreApplication**](https://msdn.microsoft.com/library/windows/apps/br225016). Vous devez appeler [**CoreApplication.CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278) pour créer un objet [**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017). L’objet **CoreApplicationView** réunit [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) et [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) (stockés dans les propriétés [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019) et [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/dn433264)). Vous pouvez considérer la **CoreApplicationView** comme l’objet qui utilise WindowsRuntime pour interagir avec le système Windows principal.
 
 En règle générale, vous ne travaillez pas directement avec la [**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017). À la place, WindowsRuntime fournit la classe [**ApplicationView**](https://msdn.microsoft.com/library/windows/apps/hh701658) dans l’espace de noms [**Windows.UI.ViewManagement**](https://msdn.microsoft.com/library/windows/apps/br242295). Cette classe fournit des propriétés, des méthodes et des événements que vous utilisez quand votre application interagit avec le système de fenêtrage. Pour fonctionner avec une **ApplicationView**, appelez la méthode statique [**ApplicationView.GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/hh701672), qui obtient une instance **ApplicationView** liée au thread actuel de la **CoreApplicationView**.
 
@@ -94,9 +94,9 @@ int newViewId = 0;</code></pre></td>
 
     Vous devez utiliser la méthode [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) pour planifier le travail sur le thread d’interface utilisateur de la nouvelle vue. Vous utilisez une [expression lambda](http://go.microsoft.com/fwlink/p/?LinkId=389615) pour transmettre une fonction en tant qu’argument à la méthode **RunAsync**. Le travail que vous effectuez dans la fonction lambda se répercute sur le thread de la nouvelle vue.
 
-    En code XAML, vous ajoutez généralement une [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) à la propriété [**Content**](https://msdn.microsoft.com/library/windows/apps/br209051) de la [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041), puis parcourez **Frame** vers une [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) XAML où vous avez défini le contenu de votre application. Pour plus d’informations, voir [Navigation pair à pair entre deuxpages](peer-to-peer-navigation-between-two-pages.md).
+    En XAML, vous ajoutez généralement [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) à la propriété [**Content**](https://msdn.microsoft.com/library/windows/apps/br209051) de [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041), puis parcourez **Frame** vers une [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) XAML où vous avez défini le contenu de votre application. Pour plus d’informations, consultez [Naviguer entre deux pages](navigate-between-two-pages.md).
 
-    Une fois la nouvelle [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) remplie, vous devez appeler la méthode **[Activate](https://msdn.microsoft.com/library/windows/apps/br209046)** de la **Window** afin d’afficher la **Window** plus tard. Cela se produit sur le thread de la nouvelle vue; ainsi la nouvelle **Window** est activée.
+    Une fois le nouvel élément [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) rempli, vous devez appeler la méthode **[Activate](https://msdn.microsoft.com/library/windows/apps/br209046)** de **Window** pour afficher **Window** ultérieurement. Cela se produit sur le thread de la nouvelle vue; ainsi la nouvelle **Window** est activée.
 
     Enfin, récupérez l’élément [**Id**](https://msdn.microsoft.com/library/windows/apps/dn281120) de la nouvelle vue que vous utilisez pour afficher la vue plus tard. Une fois encore, cela se produit sur le thread de la nouvelle vue; ainsi [**ApplicationView.GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/hh701672) obtient l’élément **Id** de la nouvelle vue.
 
@@ -182,10 +182,6 @@ Lorsque vous utilisez [**SwitchAsync**](https://msdn.microsoft.com/library/windo
 
 
 
-
-
-
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

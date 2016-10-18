@@ -4,8 +4,8 @@ Description: "Cette rubrique décrit les recommandations en matière de performa
 title: "Recommandations pour les applications avec la géolocalisation"
 ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
 translationtype: Human Translation
-ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
-ms.openlocfilehash: bbdd4d5a54deba11161c1865cd8f6f2fb47bcad4
+ms.sourcegitcommit: 7159aea3feef96781575825d019a379e0eadc603
+ms.openlocfilehash: 133add15e0e5681ec85a0800c52605262a82f8b4
 
 ---
 
@@ -100,7 +100,8 @@ Cette rubrique décrit les recommandations en matière de performance des applic
 
     Les API Windows Runtime peuvent accéder à tous ces capteurs à l’exception du magnétomètre. Les capteurs de fusion sont plus précis et stables que les capteurs bruts, mais ils consomment plus. Utilisez le capteur adapté à vos besoins. Pour plus d’informations, voir [Capteurs](https://msdn.microsoft.com/library/windows/apps/mt187358).
 
-**Veille connectée:**Lorsque le PC est à l’état de veille connectée, les objets [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) peuvent toujours être instanciés. Toutefois, l’objet **Geolocator** ne trouvera aucun capteur à agréger et, par conséquent, les appels à [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) expireront au bout de 7 secondes, les détecteurs d’événements [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) ne seront jamais appelés et les détecteurs d’événements [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) seront appelés une fois avec l’état **NoData**.
+**Veille connectée** 
+- Quand le PC est à l’état de veille connectée, les objets [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) peuvent toujours être instanciés. Cependant, l’objet **Geolocator** ne trouvera aucun capteur à agréger et, par conséquent, les appels à [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) expireront au bout de 7secondes, les détecteurs d’événements [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) ne seront jamais appelés et les détecteurs d’événements [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) seront appelés une fois avec l’état **NoData**.
 
 ## Indications d’utilisation supplémentaires
 
@@ -172,6 +173,6 @@ La géolocalisation d’un utilisateur correspond à des informations d’identi
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Sep16_HO3-->
 
 

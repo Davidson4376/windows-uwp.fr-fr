@@ -5,7 +5,7 @@ ms.assetid: 05F06961-1768-44A7-B185-BCDB74488F85
 author: awkoren
 translationtype: Human Translation
 ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 96ca8d019fe6cbf742c98edf0b8bf04b35f71dfd
+ms.openlocfilehash: ea3d3e1df07c8cf9701e7bd39af006cd681ef1fe
 
 ---
 
@@ -87,7 +87,7 @@ En plus de [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/ap
 ## Connexion par authentification unique (SSO).
 
 
-Par défaut, le service Broker d’authentification web n’autorise pas la persistance des cookies. C’est pourquoi, même si l’utilisateur de l’application indique qu’il souhaite rester connecté (par exemple, en activant une case à cocher dans la boîte de dialogue de connexion du fournisseur), il doit se connecter chaque fois qu’il souhaite accéder aux ressources de ce fournisseur. Pour se connecter avec l’authentification unique, votre fournisseur d’identité en ligne doit avoir activé l’authentification unique pour le service Broker d’authentification web et votre application doit appeler la surcharge de la méthode [**authenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212068) qui ne prend pas de paramètre *callbackUri*.
+Par défaut, le service Broker d’authentification web n’autorise pas la persistance des cookies. C’est pourquoi, même si l’utilisateur de l’application indique qu’il souhaite rester connecté (par exemple, en activant une case à cocher dans la boîte de dialogue de connexion du fournisseur), il doit se connecter chaque fois qu’il souhaite accéder aux ressources de ce fournisseur. Pour se connecter avec l’authentification unique, votre fournisseur d’identité en ligne doit avoir activé l’authentification unique pour le service Broker d’authentification web et votre application doit appeler la surcharge de la méthode [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212068) qui ne prend pas de paramètre *callbackUri*.
 
 Pour prendre en charge l’authentification unique, le fournisseur en ligne doit vous permettre d’inscrire un URI de redirection sous la forme `ms-app://`*appSID*, où *appSID* correspond au SID de l’application. Vous pouvez obtenir le SID de votre application depuis la page du développeur correspondant à votre application ou en appelant la méthode [**GetCurrentApplicationCallbackUri**](https://msdn.microsoft.com/library/windows/apps/br212069).
 
@@ -152,12 +152,12 @@ Le débogueur web Fiddler peut être utilisé avec des applications.
 
 1.  Étant donné qu’AuthHost s’exécute dans son propre conteneur d’application pour lui donner la fonctionnalité réseau privé, vous devez définir une clé de Registre: Windows Registry Editor Version5.00
 
-    **HKEY\_LOCAL\_MACHINE** \\ **SOFTWARE** \\ **Microsoft** \\ **Windows NT** \\ **CurrentVersion** \\ **Image File Execution Options** \\ **authhost.exe** \\ **EnablePrivateNetwork** = 00000001
+    **HKEY\_LOCAL\_MACHINE**\\**SOFTWARE**\\**Microsoft**\\**WindowsNT**\\**CurrentVersion**\\**Image File Execution Options**\\**authhost.exe**\\**EnablePrivateNetwork** = 00000001
 
                          Data type  
                          DWORD
 
-2.  Ajoutez une règle pour AuthHost, car de là que provient le trafic sortant.
+2.  Ajoutez une règle pour AuthHost, car c’est de là que provient le trafic sortant.
     ```syntax
     CheckNetIsolation.exe LoopbackExempt -a -n=microsoft.windows.authhost.a.p_8wekyb3d8bbwe
     CheckNetIsolation.exe LoopbackExempt -a -n=microsoft.windows.authhost.sso.p_8wekyb3d8bbwe
@@ -178,6 +178,6 @@ Le débogueur web Fiddler peut être utilisé avec des applications.
 3.  Ajoutez une règle de pare-feu pour le trafic entrant vers Fiddler.
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

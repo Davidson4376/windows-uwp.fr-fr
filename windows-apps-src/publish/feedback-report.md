@@ -4,22 +4,22 @@ Description: "Le rapport sur les commentaires du tableau de bord du Centre de d�
 title: Rapport sur les commentaires
 ms.assetid: 9EA8B456-CA57-40CE-A55B-7BFDC55CA8A8
 translationtype: Human Translation
-ms.sourcegitcommit: 4e857ec7ee98459afdd0d8ec85b5ec3a761049f3
-ms.openlocfilehash: 9ad3025f7890de3677801b309b6714b1b46a0607
+ms.sourcegitcommit: 70020d3c6e0fb0fea321ce1951720803fd25f9c0
+ms.openlocfilehash: e6266ff7c45a49b3eece8ffaf3d0603d55a04761
 
 ---
 
 # Rapport sur les commentaires
 
-Inciter vos clients à faire des commentaires sur votre application est un excellent moyen d’en savoir plus sur les problèmes et les fonctionnalités qui sont plus importantes pour eux. Lorsque vos clients savent qu’ils peuvent vous envoyer directement leurs commentaires, ils sont moins susceptibles de le faire par le biais d’un avis négatif. 
+Le **rapport sur les commentaires** du tableau de bord du Centre de développement Windows vous permet de voir les problèmes, les suggestions et les votes pour soumis par vos clients Windows10 par le biais du Hub de commentaires. Vous pouvez afficher ces données dans votre tableau de bord ou exporter les données à consulter hors connexion.
 
-> **Remarque** Le rapport Commentaires qui est décrit dans cet article n’est pas encore disponible pour tous les comptes de développeur.
+Inciter vos clients à faire des commentaires sur votre application est un excellent moyen d’en savoir plus sur les problèmes et les fonctionnalités qui sont plus importantes pour eux. Lorsque vos clients savent qu’ils peuvent vous envoyer directement leurs commentaires, ils sont moins susceptibles de le faire par le biais d’un avis négatif.
 
-Vous pouvez utiliser l’API de commentaires dans le [SDK d’engagement et de monétisation de la Boutique Microsoft](http://aka.ms/store-em-sdk) pour permettre aux clients de [lancer directement le Hub de commentaires à partir de votre application](../monetize/launch-feedback-hub-from-your-app.md). N’oubliez pas que tout client ayant téléchargé votre application sur un appareil Windows10 prenant en charge le Hub de commentaires a la possibilité de laisser des commentaires à son sujet à l’aide de cette application. C’est la raison pour laquelle vous pouvez voir des commentaires de clients dans ce rapport, même si vous n’avez pas spécifiquement demandé de commentaires depuis votre application.
+> **Remarque** Vous pouvez également [répondre aux commentaires](respond-to-customer-feedback.md) directement à partir de ce rapport pour faire savoir aux clients que vous êtes à leur écoute.
+
+Vous pouvez utiliser l’API de commentaires dans le [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) pour permettre aux clients de [lancer directement le Hub de commentaires à partir de votre application](../monetize/launch-feedback-hub-from-your-app.md). N’oubliez pas que tout client ayant téléchargé votre application sur un appareil Windows10 prenant en charge le Hub de commentaires a la possibilité de laisser des commentaires à son sujet à l’aide de cette application. C’est la raison pour laquelle vous pouvez voir des commentaires de clients dans ce rapport, même si vous n’avez pas spécifiquement demandé de commentaires depuis votre application.
 
 > **Conseil** Les commentaires deviennent particulièrement utiles si vous utilisez la [version d’évaluation de package](package-flights.md) dans la mesure où le rapport sur les commentaires indique le package spécifique installé par chaque client sur son appareil au moment où il a laissé son commentaire.
-
-Le rapport sur les **commentaires** du tableau de bord du Centre de développement Windows vous permet de voir les problèmes, les suggestions et les votes pour soumis par vos clients Windows10 par le biais du Hub de commentaires. Vous pouvez afficher ces données dans votre tableau de bord ou exporter les données à consulter hors connexion. 
 
 ## Affichage des détails de vos commentaires
 
@@ -27,7 +27,7 @@ Dans la section **Détails** de ce rapport, vous trouverez les commentaires indi
 
 - **Votes pour** (par défaut) : affiche les commentaires pour lesquels les autres clients ont voté, en commençant par le commentaire ayant reçu le plus de votes.
 - **Fréquents** : affiche les commentaires pour lesquels les autres clients ont voté au cours des sept derniers jours en commençant par le commentaire ayant fait l’objet de l’activité la plus récente.
-- **Les plus récents** : montre tous les commentaires en commençant par le commentaire laissé le plus récemment. 
+- **Les plus récents** : montre tous les commentaires en commençant par le commentaire laissé le plus récemment.
 
 La date à laquelle le commentaire a été laissé et le type de commentaire s’affiche en regard de chaque commentaire. Vous verrez également le marché du client, le package spécifique de votre application installé sur l’appareil utilisé lorsqu’il a laissé le commentaire, le type d’appareil, et **Windows Insider** si le client ayant laissé le commentaire est un membre du programme Windows Insider.
 
@@ -57,6 +57,6 @@ Comme indiqué plus haut, nous vous recommandons d’intégrer un lien direct ve
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

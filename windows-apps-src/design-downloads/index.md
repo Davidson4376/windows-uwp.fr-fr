@@ -1,11 +1,11 @@
 ---
-description: "Obtenez les derniers téléchargements et outils pour les conceptions de disposition et de contrôles d’interface utilisateur des applications UWP."
-keywords: uwp app layout, UI, user interface designs, downloads, uwp tools
-title: "Téléchargements de conceptions pour les apps UWP - Dév. d’apps Windows"
+description: "Obtenez les derniers téléchargements et outils pour concevoir la disposition et les contrôles d’interface utilisateur des applications UWP."
+keywords: "disposition des applications uwp, interface utilisateur, conceptions d’interface utilisateur, téléchargements, outils uwp"
+title: "Téléchargements de conceptions pour les apps UWP - Développement d’applications Windows"
 author: mijacobs
 translationtype: Human Translation
-ms.sourcegitcommit: 1370af75dcd45d52d0d31f57acb958d366f9bee5
-ms.openlocfilehash: 4ac5db9da4cd9ba0edff5b08dfff6ed6473ab4e3
+ms.sourcegitcommit: f1ea979f5179cce0bb059534b064c2ecf805ce89
+ms.openlocfilehash: da21817eea3a26ffd162bd19c8eb69345ac1d726
 
 ---
 
@@ -73,7 +73,7 @@ Cet ensemble d’actions pour AdobePhotoshop génère les 68vignettes et icônes
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
             <p><b>Outil Profileur pour AdobeIllustrator</b><br/>
-Générez facilement des lignes rouges à partir de vos prototypesIllustrator. <br/>[Télécharger l’outil Profileur pour AdobeIllustrator](https://go.microsoft.com/fwlink/p/?LinkId=534641)</p>    
+Générez facilement des lignes rouges à partir de vos prototypesIllustrator. (Nécessite Adobe Illustrator CC ou version ultérieure.)<br/>[Télécharger l’outil Profileur pour AdobeIllustrator](https://go.microsoft.com/fwlink/p/?LinkId=534641)</p>  
   </div>
   <div class="side-by-side-content-right">
 <a href="https://go.microsoft.com/fwlink/p/?LinkId=534641"><img src="images/redliner-tool.png" alt="Download the Redliner tool for Adobe Illustrator" /></a>
@@ -109,6 +109,6 @@ Cet exemple intègre des fonctionnalités Windows avec une automatisation domest
 <b>Vous voulez plus de code?</b> Consultez la page d’exemples Windows pour obtenir la liste complète de tous nos exemples d’applications UWP. [Accédez au portail d’exemples](https://developer.microsoft.com/samples)
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

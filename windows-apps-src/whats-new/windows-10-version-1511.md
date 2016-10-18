@@ -1,16 +1,17 @@
 ---
 author: QuinnRadich
 title: "Nouveautés de Windows10 version 1511- Novembre2015"
-description: "Windows10 version1511 et les nouveaux outils de développement offrent outils, fonctionnalités et expertise sur la nouvelle plateforme Windows universelle."
+description: "Windows10, version1511 et les nouveaux outils de développement offrent outils, fonctionnalités et expertise sur la nouvelle plateforme Windows universelle."
+keywords: "nouveautés, nouveauté, mise à jour, mises à jour, fonctionnalités, nouveau, Windows10, 1511, novembre"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 0bcec2e82afd81f68b36eab5719902d5fb7991fb
+ms.sourcegitcommit: 5646bf7681b5b028031eab02f8dd5c352d4b9cc1
+ms.openlocfilehash: 7f6a0879db5e3ec660866c0c08b9b7c7ca773644
 
 ---
 
-# Nouveautés de Windows10
+# Nouveautés de Windows
 
-La version préliminaire14295 du kit de développement logiciel (SDK) Windows10Anniversary et les mises à jour des outils de développeur Windows continuent de fournir les outils, les fonctionnalités et les expériences de la plateforme Windows universelle. [Installez les outils et le kit de développement logiciel (SDK)](https://developer.microsoft.com/windows/downloads#_blank) sur Windows10 et vous pourrez ainsi [créer une application universelle Windows](https://msdn.microsoft.com/library/windows/apps/bg124288) ou explorer la procédure permettant d’utiliser votre [code d’application existant sur Windows](https://msdn.microsoft.com/library/windows/apps/mt238321).
+Windows10, version1511 et les mises à jour des outils de développement de Windows continuent à fournir les outils, les fonctionnalités et l’expertise de la plateforme Windows universelle. [Installez les outils et le kit de développement logiciel (SDK)](http://go.microsoft.com/fwlink/?LinkId=821431) sur Windows10 et vous pourrez ainsi [créer une application universelle Windows](https://msdn.microsoft.com/library/windows/apps/bg124288) ou explorer la procédure permettant d’utiliser votre [code d’application existant sur Windows](https://msdn.microsoft.com/library/windows/apps/mt238321).
 
 ## Windows10 version1511- Novembre2015
 
@@ -31,6 +32,6 @@ Téléchargements de conceptions | Consultez nos nouveaux modèles de conception
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO4-->
 
 

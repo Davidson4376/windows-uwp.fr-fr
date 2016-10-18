@@ -4,8 +4,8 @@ Description: "En plus de créer une campagne de publicité pour votre applicatio
 title: "Créer une campagne personnalisée de promotion d’applications"
 ms.assetid: 7C9BF73E-B811-4FC7-B1DD-4A0C2E17E95D
 translationtype: Human Translation
-ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: b6fa63727ac636d37c52e2f3247c52efb1f8b763
+ms.sourcegitcommit: 3afdf00864e023d913b635beef0c506735881b23
+ms.openlocfilehash: a6e97968df4e9ab986d364b2573a31b4ba9d1958
 
 ---
 
@@ -22,9 +22,9 @@ Il existe deux types principaux de données associées à des campagnes personna
 Pour récupérer les données de performances de campagne personnalisée de votre application, procédez comme suit:
 
 -   Si votre application est une application de plateforme Windows universelle (UWP), elle peut utiliser la méthode [**GetAppPurchaseCampaignIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt186445) pour récupérer par programme l’ID de campagne personnalisée qui a abouti à une conversion.
--   Vous pouvez afficher les données sur les vues de page et les conversions de votre application ou de votre produit in-app dans le [rapport Canaux et conversions](channels-and-conversions-report.md) accessible via le tableau de bord du Centre de développement.
+-   Vous pouvez afficher les données sur les vues de page et les conversions de votre application ou de votre module complémentaire dans le [rapport Canaux et conversions](channels-and-conversions-report.md) accessible via le tableau de bord du Centre de développement.
 
-> **Important** Ces données ne font l’objet d’un suivi que pour les clients exécutant Windows 10. Les clients utilisant d’autres systèmes d’exploitation peuvent suivre le lien vers la description de votre application, mais les données sur les activités de ces clients ne seront pas incluses.
+> **Important** Ces données ne font l’objet d’un suivi que pour les clients exécutant Windows10. Les clients utilisant d’autres systèmes d’exploitation peuvent suivre le lien vers la description de votre application, mais les données sur les activités de ces clients ne seront pas incluses.
 
  
 
@@ -38,7 +38,7 @@ Pour suivre le succès de chacun de ces canaux de promotion, le développeur cr�
 -   L’URL publiée sur sa page Facebook inclut l’ID de campagne personnalisée `my-facebook-campaign`.
 -   L’URL publiée sur Twitter inclut l’ID de campagne personnalisée `my-twitter-campaign`.
 
-Lorsque ses abonnés sur Facebook et Twitter cliquent sur l’URL, Microsoft suit chaque clic et l’associe à la campagne personnalisée correspondante. Les acquisitions éligibles du jeu et achats de produit in-app (intégré à l’application) sont associés à la campagne personnalisée et déclarés comme autant de conversions.
+Lorsque ses abonnés sur Facebook et Twitter cliquent sur l’URL, Microsoft suit chaque clic et l’associe à la campagne personnalisée correspondante. Les acquisitions éligibles du jeu et achats de modules complémentaires sont associés à la campagne personnalisée et déclarés comme autant de conversions.
 
 ## Comprendre comment les installations d’application sont éligibles en tant que conversions
 
@@ -49,7 +49,7 @@ Pour figurer comme une conversion dans le [rapport Canaux et conversions](channe
 
 -   Un client disposant d’un compte Microsoft reconnu clique sur une URL d’application contenant un ID de campagne personnalisée, et est redirigé vers la page de l’application dans le Windows Store.
 -   Le même client (identifié par le même compte Microsoft) installe l’application dans les 24 heures suivant le premier clic sur l’URL du Windows Store correspondant à l’ID de la campagne personnalisée. Cette action est éligible en tant que conversion, même si le client installe l’application sur un ordinateur ou appareil autre que celui à partir duquel il a cliqué sur l’URL du Windows Store correspondant à l’ID de la campagne personnalisée.
-    > **Remarque** Pour les installations d’application comptant comme conversions dans le cadre d’une campagne personnalisée, les achats de produit in-app dans cette application sont également comptabilisés comme conversions pour la même campagne personnalisée.
+    > **Remarque** Pour les installations d’application comptant comme conversions dans le cadre d’une campagne personnalisée, les achats de module complémentaire dans cette application sont également comptabilisés comme conversions pour la même campagne personnalisée.
 
      
 
@@ -135,6 +135,6 @@ Avant de promouvoir une URL de campagne personnalisée, nous vous recommandons d
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

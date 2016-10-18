@@ -1,13 +1,21 @@
 ---
-Description&#58; author&#58; mijacobs Avec des animations utiles et bien faites, vos applications prennent vie et donnent l’impression d’un travail soigné. Elles permettent aux utilisateurs de comprendre les changements de contexte et assurent l’homogénéité des expériences par des transitions visuelles.
-title&#58; Mouvement et animation dans les applications UWP ms.assetid&#58; 21AA1335-765E-433A-85D8-560B340AE966 tag&#58; mouvement template&#58; detail.hbs testmetadata&#58; test tocnode&#58; conception et interface utilisateur
+author: mijacobs
+Description: "Avec des animations utiles et bien faites, vos applications prennent vie et donnent l’impression d’un travail soigné. Elles permettent aux utilisateurs de comprendre les changements de contexte et assure l’homogénéité des expériences par des transitions visuelles."
+title: Animations dans les applications UWP
+ms.assetid: 21AA1335-765E-433A-85D8-560B340AE966
+label: Motion
+template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: d7236006f2c620a4ff0de4e0f413f32a2eaf5687
+ms.openlocfilehash: 1cdbb81c783d17af16743a4ff5f82dc1c92df6b4
+
 ---
 
 # Animations pour les applications UWP
 
 Avec des animations utiles et bien faites, vos applications prennent vie et donnent l’impression d’un travail soigné. Elles permettent aux utilisateurs de comprendre les changements de contexte et assure l’homogénéité des expériences par des transitions visuelles.
 
-## <span id="Benefits_of_animation"></span><span id="benefits_of_animation"></span><span id="BENEFITS_OF_ANIMATION"></span>Avantages de l’animation
+## Avantages de l’animation
 
 
 Une animation ne consiste pas simplement à faire bouger des objets. L’animation est un outil qui permet de créer un écosystème physique dans lequel l’utilisateur peut évoluer et qu’il peut manipuler de façon tactile. La qualité de l’expérience dépend de la façon dont l’application répond à l’utilisateur et du type de personnalité communiqué par l’interface utilisateur.
@@ -54,7 +62,7 @@ Plus un utilisateur passe de temps dans votre application (ou plus les tâches d
         </td>
         <td>Les animations de liste vous permettent d’insérer ou de supprimer un ou plusieurs éléments dans une collection telle qu’un album photo ou une liste de résultats de recherche.
         </td>
-    </tr> 
+    </tr>
     <tr>
         <td>[Glisser-déplacer](motion-dragdrop.md)
         </td>
@@ -103,10 +111,6 @@ Plus un utilisateur passe de temps dans votre application (ou plus les tâches d
 
 
 
-
-
-
-
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -5,7 +5,7 @@ title: Tests du Kit de certification des applications Windows
 description: "Le Kit de certification des applications Windows contient un certain nombre de tests qui permettent de vérifier si une application est prête à être publiée sur le Windows Store."
 translationtype: Human Translation
 ms.sourcegitcommit: 0bf96b70a915d659c754816f4c115f3b3f0a5660
-ms.openlocfilehash: 816b147c91a340505348aa579c8b1540962a1df5
+ms.openlocfilehash: 78a1a2ad4aea11275aa3db1d13790c490a50c232
 
 ---
 ## Tests du Kit de certification des applications Windows
@@ -671,6 +671,6 @@ Mettez à jour le code JavaScript en arrière-plan pour appeler Close() correcte
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

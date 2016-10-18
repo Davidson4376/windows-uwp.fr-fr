@@ -2,10 +2,10 @@
 author: mcleanbyron
 ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
 description: "En savoir plus sur les recommandations en matière d’expérience utilisateur et d’interface utilisateur pour les publicités dans les applications."
-title: "Recommandations pour pubs in-app&#58; expérience et interface utilisateur"
+title: "Recommandations pour pubs in-app: expérience et interface utilisateur"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 87be9f0f0a19094085d5c4ecbcfb8d40ceb20d2a
+ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
+ms.openlocfilehash: d464a2de442e6f1833f429c8460c27bf85e577d1
 
 
 ---
@@ -13,9 +13,9 @@ ms.openlocfilehash: 87be9f0f0a19094085d5c4ecbcfb8d40ceb20d2a
 # Recommandations en matière d’expérience utilisateur et d’interface utilisateur pour les publicités dans les applications
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-## Ressources UI générales pour applications Windows
+
+## Ressources d’interface utilisateur générales pour applications Windows
 
 Vous trouverez des informations sur la façon de concevoir l’apparence des applications dans [Conception et interface utilisateur](https://developer.microsoft.com/windows/design).
 
@@ -51,7 +51,7 @@ Vous trouverez des informations sur la façon de concevoir l’apparence des app
 
 Lorsqu’ils sont utilisés de façon élégante, les spots publicitaires vidéo peuvent augmenter considérablement vos revenus issus de l’application, sans impact négatif sur la satisfaction des utilisateurs. En cas d’utilisation incorrecte, ils peuvent produire l’effet inverse exact.
 
-Ici, nous cherchons à vous aider à atteindre l’élégance. Étant donné que vous connaissez votre application mieux que quiconque, sauf en matière de stratégie, nous vous laissons prendre la meilleure décision finale. Ce qu’il faut absolument retenir c’est que les évaluations de vos applications et le montant vos recettes sont étroitement liés.
+Ici, nous cherchons à vous aider à atteindre l’élégance. Étant donné que vous connaissez votre application mieux que quiconque, sauf en matière de stratégie, nous vous laissons prendre la meilleure décision finale. Ce qu’il faut absolument retenir c’est que les évaluations de vos applications et le montant de vos recettes sont étroitement liés.
 
 <span id="interstitialbestpracticesdo10"/>
 ### Meilleures pratiques Spots: À FAIRE
@@ -143,6 +143,6 @@ Ici, nous cherchons à vous aider à atteindre l’élégance. Étant donné que
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

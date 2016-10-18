@@ -5,7 +5,7 @@ description: "Créez un effet d’ombre en ajoutant un test de profondeur à vot
 ms.assetid: bf496dfb-d7f5-af6b-d588-501164608560
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 2bac8e8337a10a8411b02eeed53d772dbb5abad6
+ms.openlocfilehash: 6351cc9f6efe0d4bffb54961624a35b4a9f4136a
 
 ---
 
@@ -165,6 +165,6 @@ Dans la partie suivante de cette procédure pas à pas, découvrez comment [pren
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

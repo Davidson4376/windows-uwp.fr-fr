@@ -5,7 +5,7 @@ title: Jumeler des appareils
 description: "Pour pouvoir être utilisés, certains appareils doivent être jumelés. L’espace de noms Windows.Devices.Enumeration prend en charge troisméthodes différentes de jumelage des appareils."
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: e719e0ff5f97822f3d0dc937182131bf7f4224eb
+ms.openlocfilehash: 502a1a650d327e914ffef049278581851ad4ec3b
 
 ---
 # Jumeler des appareils
@@ -76,6 +76,6 @@ Pour télécharger un exemple illustrant comment utiliser les API [**Windows.Dev
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

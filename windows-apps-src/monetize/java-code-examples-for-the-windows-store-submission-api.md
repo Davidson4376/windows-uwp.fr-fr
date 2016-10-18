@@ -1,40 +1,40 @@
 ---
 author: mcleanbyron
 ms.assetid: 4920D262-B810-409E-BA3A-F68AADF1B1BC
-description: Use the Java code examples in this section to learn more about using the Windows Store submission API.
-title: Java code examples for the Windows Store submission API
+description: "Servez-vous des exemples de code Java présentés dans cette section pour en apprendre un peu plus sur l’utilisation de l’API de soumission du Windows Store."
+title: "Exemples de code Java pour l’API de soumission du WindowsStore"
 translationtype: Human Translation
 ms.sourcegitcommit: b0154cc0669dd97e57ed75fa1f65afa8d23ae0b7
 ms.openlocfilehash: 26d5812e41531cf852606227805d0a84255a3f47
 
 ---
 
-# Java code examples for the Windows Store submission API
+# Exemples de code Java pour l’API de soumission du WindowsStore
 
-This article provides Java code examples for using the *Windows Store submission API*. For more information about this API, see [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md).
+Cet article fournit des exemples de code Java pour l’utilisation de l’*API de soumission du Windows Store*. Pour plus d’informations sur cette API, voir [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md).
 
-These code examples demonstrate the following tasks:
+Ces exemples de code illustrent les tâches suivantes:
 
-* [Obtain an Azure AD access token](java-code-examples-for-the-windows-store-submission-api.md#token).
-* [Create an add-on](java-code-examples-for-the-windows-store-submission-api.md#create-add-on).
-* [Create a package flight](java-code-examples-for-the-windows-store-submission-api.md#create-package-flight).
-* [Create and commit an app submission](java-code-examples-for-the-windows-store-submission-api.md#create-app-submission).
-* [Create and commit an add-on submission](java-code-examples-for-the-windows-store-submission-api.md#create-add-on-submission).
-* [Create and commit a package flight submission](java-code-examples-for-the-windows-store-submission-api.md#create-flight-submission).
+* [Obtenir un jeton d’accès AzureAD](java-code-examples-for-the-windows-store-submission-api.md#token).
+* [Créer une extension](java-code-examples-for-the-windows-store-submission-api.md#create-add-on).
+* [Créer une version d’évaluation du package](java-code-examples-for-the-windows-store-submission-api.md#create-package-flight).
+* [Créer et valider une soumission d’application](java-code-examples-for-the-windows-store-submission-api.md#create-app-submission).
+* [Créer et valider une soumission d’extension](java-code-examples-for-the-windows-store-submission-api.md#create-add-on-submission).
+* [Créer et valider une soumission de version d’évaluation du package](java-code-examples-for-the-windows-store-submission-api.md#create-flight-submission).
 
-You can review each example to learn more about the task it demonstrates, or you can build all the code examples in this article into a console application. For the complete code listing, see the [code listing](java-code-examples-for-the-windows-store-submission-api.md#code-listing) section at the end of this article.
+Vous pouvez passer en revue chaque exemple pour en savoir plus sur la tâche qu’elle illustre, ou vous pouvez générer tous les exemples de code de cet article dans une application console. Pour obtenir le listing du code complet, voir la section du [listing du code](java-code-examples-for-the-windows-store-submission-api.md#code-listing) à la fin de cet article.
 
-## Prerequisites
+## Conditions préalables
 
-These examples use the following libraries:
+Ces exemples utilisent les bibliothèques suivantes:
 
-* [Apache Commons Logging 1.2](http://commons.apache.org/proper/commons-logging)  (commons-logging-1.2.jar).
-* [Apache HttpComponents Core 4.4.5 and Apache HttpComponents Client 4.5.2](https://hc.apache.org/) (httpcore-4.4.5.jar and httpclient-4.5.2.jar).
-* [JSR 353 JSON Processing API 1.0](https://mvnrepository.com/artifact/javax.json/javax.json-api/1.0) and [JSR 353 JSON Processing Default Provider API 1.0.4](https://mvnrepository.com/artifact/org.glassfish/javax.json/1.0.4) (javax.json-api-1.0.jar and javax.json-1.0.4.jar).
+* [Apache Commons Logging1.2](http://commons.apache.org/proper/commons-logging) (commons-logging-1.2.jar).
+* [Apache HttpComponents Core4.4.5 et Apache HttpComponents Client4.5.2](https://hc.apache.org/) (httpcore-4.4.5.jar et httpclient-4.5.2.jar).
+* [JSR353 JSON Processing API1.0](https://mvnrepository.com/artifact/javax.json/javax.json-api/1.0) et [JSR353 JSON Processing Default Provider API1.0.4](https://mvnrepository.com/artifact/org.glassfish/javax.json/1.0.4) (javax.json-api-1.0.jar et javax.json-1.0.4.jar).
 
-## Main program and imports
+## Programme principal et importations
 
-The following example shows the imports statements used by all of the code examples and implements a command line program that calls the other example methods.
+L’exemple suivant montre les instructions d’importation utilisées par tous les exemples de code et implémente un programme de ligne de commande qui appelle les autres exemples de méthode.
 
 ```java
 import java.io.ByteArrayInputStream;
@@ -102,9 +102,9 @@ public class IngestionServiceJavaSamples {
 ```
 
 <span id="token" />
-## Obtain an Azure AD access token
+## Obtenir un jeton d’accès Azure AD
 
-The following example demonstrates how to [obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token).
+L’exemple suivant montre comment [obtenir un jeton d’accès AzureAD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token).
 
 ```java
 public static String GenerateAccessToken(String tenantId, String clientId, String clientSecret) {        
@@ -139,9 +139,9 @@ public static String GenerateAccessToken(String tenantId, String clientId, Strin
 ```
 
 <span id="create-add-on" />
-## Create an add-on
+## Créer une extension
 
-The following example demonstrates how to [create a new add-on](manage-add-ons.md) (add-ons are also known as in-app products or IAPs).
+L’exemple suivant montre comment [créer une extension](manage-add-ons.md) (également connue sous le nom produit in-app ou PIA).
 
 ```java
 public static void CreateNewInAppProduct(String accessToken, String inAppProductRequestJson) throws InterruptedException, IOException {
@@ -216,9 +216,9 @@ private static ResponseHandler<JsonObject> CreateJsonResponseHandler(){
 ```
 
 <span id="create-package-flight" />
-## Create a package flight
+## Créer une version d’évaluation du package
 
-The following example demonstrates how to [create a new package flight](manage-flights.md).
+L’exemple suivant montre comment [créer une version d’évaluation du package](manage-flights.md).
 
 ```java
 public static void CreateNewFlight(String accessToken, String applicationId, String flightRequestJson) throws InterruptedException, IOException {
@@ -294,9 +294,9 @@ private static ResponseHandler<JsonObject> CreateJsonResponseHandler(){
 ```
 
 <span id="create-app-submission" />
-## Create and commit an app submission
+## Créer et valider une soumission d’application
 
-The following example demonstrates how to [create and commit a new app submission](manage-app-submissions.md).
+L’exemple suivant montre comment [créer et valider une une nouvelle soumission d’application](manage-app-submissions.md).
 
 ```java
 public static void SubmitNewApplicationSubmission(String accessToken, String applicationId, String appSubmissionRequestJson, String zipFilePath) throws InterruptedException, IOException {
@@ -430,9 +430,9 @@ private static void UploadZipFile(String fileUploadUrl, String zipFilePath) thro
 ```
 
 <span id="create-add-on-submission" />
-## Create and commit an add-on submission
+## Créer et valider une soumission d’extension
 
-The following example demonstrates how to [create and commit a new add-on submission](manage-add-on-submissions.md) (add-ons are also known as in-app products or IAPs).
+L’exemple suivant montre comment [créer et valider une soumission de nouvelle extension](manage-add-on-submissions.md) (également connue sous le nom PIA, produit in-app).
 
 ```java
 public static void SubmitNewInAppProductSubmission(String accessToken, String inAppProductId, String iapSubmissionRequestJson, String zipFilePath) throws InterruptedException, IOException {
@@ -564,9 +564,9 @@ private static void UploadZipFile(String fileUploadUrl, String zipFilePath) thro
 ```
 
 <span id="create-flight-submission" />
-## Create and commit a package flight submission
+## Créer et valider une soumission de version d’évaluation du package
 
-The following example demonstrates how to [create and commit a new package flight submission](manage-flight-submissions.md).
+L’exemple suivant montre comment [créer et valider une nouvelle soumission de version d’évaluation du package](manage-flight-submissions.md).
 
 ```java
 public static void SubmitNewFlightSubmission(String accessToken, String applicationId, String flightId, String flightSubmissionRequestJson, String zipFilePath) throws InterruptedException, URISyntaxException, IOException {
@@ -699,9 +699,9 @@ private static void UploadZipFile(String fileUploadUrl, String zipFilePath) thro
 ```
 
 <span id="code-listing" />
-## Complete code listing
+## Listing du code complet
 
-The following code listing contains all of the previous examples organized into one source file.
+Le listing du code suivant contient tous les exemples précédents organisés dans un seul fichier source.
 
 ```java
 import java.io.ByteArrayInputStream;
@@ -1133,9 +1133,9 @@ public class IngestionServiceJavaSamples {
 }
 ```
 
-## Related topics
+## Rubriques connexes
 
-* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
+* [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md)
 
 
 
