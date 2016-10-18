@@ -2221,9 +2221,6 @@
   "c433bd2eba2a5be114680f52a8da0b5c7b563186": [
     "windows-apps-src\\get-started\\universal-application-platform-guide.md"
   ],
-  "925db2c5242eb49229f41298f1db4e2653f3499d": [
-    "windows-apps-src\\get-started\\universal-application-platform-guide.md"
-  ],
   "3fd9f4d539977c4b531e08efe0719328365c757c": [
     "windows-apps-src\\get-started\\whats-a-uwp.md"
   ],
@@ -3337,9 +3334,6 @@
   "133add15e0e5681ec85a0800c52605262a82f8b4": [
     "windows-apps-src\\maps-and-location\\guidelines-and-checklist-for-detecting-location.md"
   ],
-  "bbdd4d5a54deba11161c1865cd8f6f2fb47bcad4": [
-    "windows-apps-src\\maps-and-location\\guidelines-and-checklist-for-detecting-location.md"
-  ],
   "0a152fbc444e252ed8c2a822036e00b8869703ac": [
     "windows-apps-src\\maps-and-location\\guidelines-for-geofencing.md"
   ],
@@ -3749,9 +3743,6 @@
     "windows-apps-src\\porting\\desktop-to-uwp-root.md"
   ],
   "c0ed8386cb823ea83e5b1f80cd584f370a85f278": [
-    "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
-  ],
-  "daa29e4e96219bd1eaf7f2dca29fc685b6589774": [
     "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
   ],
   "ae08bb25d8ac56ca6e03a5c200e8a0d4e05fbfe3": [
@@ -5419,9 +5410,6 @@
   "2582cacb6333cd90440caa3c57a3cd8f06bf94e3": [
     "windows-apps-src\\porting\\desktop-to-uwp-supported-api.md"
   ],
-  "b2500ea797329277c0f866294bcc04292238d18a": [
-    "windows-apps-src\\porting\\desktop-to-uwp-supported-api.md"
-  ],
   "2b553e9adc0c31eed9266853a158c622dd4deb31": [
     "windows-apps-src\\apps-for-education\\index.md"
   ],
@@ -5782,9 +5770,6 @@
   "c4a5b0ae2893fda7697457b9e7449a996707de4b": [
     "windows-apps-src\\input-and-devices\\ink-toolbar.md"
   ],
-  "4c50c8ded127b2261df901d9da3210ff397b00ca": [
-    "windows-apps-src\\input-and-devices\\ink-toolbar.md"
-  ],
   "bff77a63d0f88907410c74d4dce19fb422c1bd3f": [
     "windows-apps-src\\launch-resume\\communicate-with-a-remote-app-service.md"
   ],
@@ -5837,9 +5822,6 @@
     "windows-apps-src\\whats-new\\windows-10-version-1607.md"
   ],
   "e897c68c97b4cdeb5cdf2a4df454d40d774cbc90": [
-    "windows-apps-src\\whats-new\\windows-10-version-1607-api-diff.md"
-  ],
-  "9d3d69899c6a3762330f5f4ef8b44250a38be037": [
     "windows-apps-src\\whats-new\\windows-10-version-1607-api-diff.md"
   ],
   "b035e81776039fba60f239b18efef8fe5b43b2f6": [
@@ -6063,9 +6045,6 @@
     "windows-apps-src\\get-started\\images\\icon7.png"
   ],
   "1513c5b7714a1f2169ad7f5b08819dd06448d58c": [
-    "windows-apps-src\\publish\\payment-thresholds-methods-and-timeframes.md"
-  ],
-  "ccfe1f397be1b3d49d4ef771016ec76eabd2974f": [
     "windows-apps-src\\publish\\payment-thresholds-methods-and-timeframes.md"
   ],
   "249bba67b844585b590294a456e3d0e74c392c95": [
