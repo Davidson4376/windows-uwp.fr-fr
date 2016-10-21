@@ -1,28 +1,11 @@
 # <a name='report-top'></a> Localization Bilingual Report
 
 ## Summary
- Total Files | 1
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [windows-apps-src\whats-new\windows-10-version-1607-api-diff.md](https://github.com/Microsoft/windows-apps/blob/8935c0792c1bafbbde907a3eb228c9b3761c8a68/windows-apps-src/whats-new/windows-10-version-1607-api-diff.md) | InSyncHandedBackSuccess | [Details](#e897c68c97b4cdeb5cdf2a4df454d40d774cbc908011)
 
 ## Item Details
-##### <a name='e897c68c97b4cdeb5cdf2a4df454d40d774cbc908011'></a> Source: [windows-apps-src\whats-new\windows-10-version-1607-api-diff.md](https://github.com/Microsoft/windows-apps/blob/8935c0792c1bafbbde907a3eb228c9b3761c8a68/windows-apps-src/whats-new/windows-10-version-1607-api-diff.md)
-* Status: InSyncHandedBackSuccess
-* Target File: [windows-apps-src\whats-new\windows-10-version-1607-api-diff.md](https://github.com/Microsoft/windows-apps.fr-fr/blob/5bf3daf71cd8f7a945ec878e8d84937b38d16d09/windows-apps-src/whats-new/windows-10-version-1607-api-diff.md)
-* Handoff File: [windows-10-version-1607-api-diff.3f27db6e828e403f589951962a160d763082dafe.fr-fr.xlf](https://github.com/Microsoft/WDG.handoff/blob/2ff2d56e906140db2d09f9e116285cdafd8dedfd/ol-handoff/Microsoft/windows-apps.fr-fr/master/windows-10-version-1607-api-diff.3f27db6e828e403f589951962a160d763082dafe.fr-fr.xlf)
-* Handoff Datetime: 2016-09-06 23:38:11
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: [windows-10-version-1607-api-diff.3f27db6e828e403f589951962a160d763082dafe.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/e6a0357fb8ac60ea1b67b018a13764c4a5aec180/ol-handback/Microsoft/windows-apps.fr-fr/master/windows-10-version-1607-api-diff.3f27db6e828e403f589951962a160d763082dafe.fr-fr.xlf)
-* Handback Datetime: 2016-10-18 17:20:24
-* Bilingual File: [windows-10-version-1607-api-diff.3f27db6e828e403f589951962a160d763082dafe.fr-fr.xlf](https://github.com/Microsoft/WDG.handback/blob/e6a0357fb8ac60ea1b67b018a13764c4a5aec180/ol-handback/Microsoft/windows-apps.fr-fr/master/windows-10-version-1607-api-diff.3f27db6e828e403f589951962a160d763082dafe.fr-fr.xlf)
-* Bilingual Datetime: 2016-10-21 08:05:19
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
