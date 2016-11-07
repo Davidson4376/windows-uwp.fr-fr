@@ -6,23 +6,23 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\networking\networking-basics.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/28cf7084fd7ea6ad41c7c2817522891617928abb?path=windows-apps-src%2Fnetworking%2Fnetworking-basics.md&_a=contents) | HandedOffSuccess | [Details](#13457b7da3472f3530805198a74b3a6b2ff78f505247)
+ [windows-apps-src\audio-video-camera\process-media-frames-with-mediaframereader.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/881f806a61d247c6c4f73aa770ba4c5dab91af00?path=windows-apps-src%2Faudio-video-camera%2Fprocess-media-frames-with-mediaframereader.md&_a=contents) | HandedOffSuccess | [Details](#648874a50dbe333f1bb6291de646d9088eec15281653)
 
 ## Item Details
-##### <a name='13457b7da3472f3530805198a74b3a6b2ff78f505247'></a> Source: [windows-apps-src\networking\networking-basics.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/28cf7084fd7ea6ad41c7c2817522891617928abb?path=windows-apps-src%2Fnetworking%2Fnetworking-basics.md&_a=contents)
+##### <a name='648874a50dbe333f1bb6291de646d9088eec15281653'></a> Source: [windows-apps-src\audio-video-camera\process-media-frames-with-mediaframereader.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/881f806a61d247c6c4f73aa770ba4c5dab91af00?path=windows-apps-src%2Faudio-video-camera%2Fprocess-media-frames-with-mediaframereader.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [networking-basics.1ef0558ddfd03583f74afa064763b4b28e0dad43.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/6fbffcfbce1c312fea0ac19195ead24f7031e29a?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Fnetworking-basics.1ef0558ddfd03583f74afa064763b4b28e0dad43.fr-fr.xlf&_a=contents)
-* Handoff Datetime: 2016-11-07 19:54:11
+* Handoff File: [process-media-frames-with-mediaframereader.dfb8fca5fe561e04bb32c505d5166978a70919c5.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/7ec39cb44f470ea2bb0c7816605ac5c007ccd3fb?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Fprocess-media-frames-with-mediaframereader.dfb8fca5fe561e04bb32c505d5166978a70919c5.fr-fr.xlf&_a=contents)
+* Handoff Datetime: 2016-11-07 21:49:16
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\networking\networking-basics.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.fr-fr/commit/5bf3daf71cd8f7a945ec878e8d84937b38d16d09?path=windows-apps-src%2Fnetworking%2Fnetworking-basics.md&_a=contents)
-* Current Handback File: [networking-basics.1ef0558ddfd03583f74afa064763b4b28e0dad43.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/e6a0357fb8ac60ea1b67b018a13764c4a5aec180?path=ol-handback%2FMicrosoft%2Fwindows-apps.fr-fr%2Fmaster%2Fnetworking-basics.1ef0558ddfd03583f74afa064763b4b28e0dad43.fr-fr.xlf&_a=contents)
+* Current Target File: [windows-apps-src\audio-video-camera\process-media-frames-with-mediaframereader.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.fr-fr/commit/5bf3daf71cd8f7a945ec878e8d84937b38d16d09?path=windows-apps-src%2Faudio-video-camera%2Fprocess-media-frames-with-mediaframereader.md&_a=contents)
+* Current Handback File: [process-media-frames-with-mediaframereader.dfb8fca5fe561e04bb32c505d5166978a70919c5.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/e6a0357fb8ac60ea1b67b018a13764c4a5aec180?path=ol-handback%2FMicrosoft%2Fwindows-apps.fr-fr%2Fmaster%2Fprocess-media-frames-with-mediaframereader.dfb8fca5fe561e04bb32c505d5166978a70919c5.fr-fr.xlf&_a=contents)
 * Current Handback Datetime: 2016-10-18 17:20:24
-* Bilingual File: [networking-basics.1ef0558ddfd03583f74afa064763b4b28e0dad43.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/e6a0357fb8ac60ea1b67b018a13764c4a5aec180?path=ol-handback%2FMicrosoft%2Fwindows-apps.fr-fr%2Fmaster%2Fnetworking-basics.1ef0558ddfd03583f74afa064763b4b28e0dad43.fr-fr.xlf&_a=contents)
+* Bilingual File: [process-media-frames-with-mediaframereader.dfb8fca5fe561e04bb32c505d5166978a70919c5.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/e6a0357fb8ac60ea1b67b018a13764c4a5aec180?path=ol-handback%2FMicrosoft%2Fwindows-apps.fr-fr%2Fmaster%2Fprocess-media-frames-with-mediaframereader.dfb8fca5fe561e04bb32c505d5166978a70919c5.fr-fr.xlf&_a=contents)
 * Bilingual Datetime: 2016-10-18 17:30:18
 * [Back to Top](#report-top)
 
