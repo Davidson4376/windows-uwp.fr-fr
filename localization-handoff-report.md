@@ -1,47 +1,29 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\resolve-package-upload-errors.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/2ff09d43cd39967028b39b4f602f4dfdf2cbcdcc?path=windows-apps-src%2Fpublish%2Fresolve-package-upload-errors.md&_a=contents) | HandedOffSuccess | [Details](#4f7f9698d8b8b17654b6f2e0420c7cdc6031f0185497)
- [windows-apps-src\style\typography.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/0356d9420d85fbf54718223df77ed501d4b6f5e5?path=windows-apps-src%2Fstyle%2Ftypography.md&_a=contents) | HandedOffSuccess | [Details](#45b4bbc86c69cabae4a2ee83d2d43c7189a710ce8369)
+ [windows-apps-src\get-started\learn-more.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/0be48e7825a28a416df93161b2ad11fb967945fb?path=windows-apps-src%2Fget-started%2Flearn-more.md&_a=contents) | HandedOffSuccess | [Details](#dc8b4ee0048c7c9ac3dfe019aab48f50382558e13978)
 
 ## Item Details
-##### <a name='4f7f9698d8b8b17654b6f2e0420c7cdc6031f0185497'></a> Source: [windows-apps-src\publish\resolve-package-upload-errors.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/2ff09d43cd39967028b39b4f602f4dfdf2cbcdcc?path=windows-apps-src%2Fpublish%2Fresolve-package-upload-errors.md&_a=contents)
+##### <a name='dc8b4ee0048c7c9ac3dfe019aab48f50382558e13978'></a> Source: [windows-apps-src\get-started\learn-more.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/0be48e7825a28a416df93161b2ad11fb967945fb?path=windows-apps-src%2Fget-started%2Flearn-more.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [resolve-package-upload-errors.feff838cf5ab6d62bcb3e3ccb7a29783eb186656.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/8074e8b10e615a14719de8ea3c171887825c49fe?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Fresolve-package-upload-errors.feff838cf5ab6d62bcb3e3ccb7a29783eb186656.fr-fr.xlf&_a=contents)
-* Handoff Datetime: 2016-11-11 00:06:09
+* Handoff File: [learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/e5fbf02d15a8eff3a1b983901d46dc6ce72c94c8?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Flearn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.fr-fr.xlf&_a=contents)
+* Handoff Datetime: 2016-11-11 18:06:33
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\publish\resolve-package-upload-errors.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.fr-fr/commit/5bf3daf71cd8f7a945ec878e8d84937b38d16d09?path=windows-apps-src%2Fpublish%2Fresolve-package-upload-errors.md&_a=contents)
-* Current Handback File: [resolve-package-upload-errors.feff838cf5ab6d62bcb3e3ccb7a29783eb186656.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/e6a0357fb8ac60ea1b67b018a13764c4a5aec180?path=ol-handback%2FMicrosoft%2Fwindows-apps.fr-fr%2Fmaster%2Fresolve-package-upload-errors.feff838cf5ab6d62bcb3e3ccb7a29783eb186656.fr-fr.xlf&_a=contents)
+* Current Target File: [windows-apps-src\get-started\learn-more.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.fr-fr/commit/5bf3daf71cd8f7a945ec878e8d84937b38d16d09?path=windows-apps-src%2Fget-started%2Flearn-more.md&_a=contents)
+* Current Handback File: [learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/e6a0357fb8ac60ea1b67b018a13764c4a5aec180?path=ol-handback%2FMicrosoft%2Fwindows-apps.fr-fr%2Fmaster%2Flearn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.fr-fr.xlf&_a=contents)
 * Current Handback Datetime: 2016-10-18 17:20:24
-* Bilingual File: [resolve-package-upload-errors.feff838cf5ab6d62bcb3e3ccb7a29783eb186656.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/e6a0357fb8ac60ea1b67b018a13764c4a5aec180?path=ol-handback%2FMicrosoft%2Fwindows-apps.fr-fr%2Fmaster%2Fresolve-package-upload-errors.feff838cf5ab6d62bcb3e3ccb7a29783eb186656.fr-fr.xlf&_a=contents)
+* Bilingual File: [learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/e6a0357fb8ac60ea1b67b018a13764c4a5aec180?path=ol-handback%2FMicrosoft%2Fwindows-apps.fr-fr%2Fmaster%2Flearn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.fr-fr.xlf&_a=contents)
 * Bilingual Datetime: 2016-10-18 17:30:18
-* [Back to Top](#report-top)
-
-##### <a name='45b4bbc86c69cabae4a2ee83d2d43c7189a710ce8369'></a> Source: [windows-apps-src\style\typography.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/0356d9420d85fbf54718223df77ed501d4b6f5e5?path=windows-apps-src%2Fstyle%2Ftypography.md&_a=contents)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [typography.4206d1eaa813ffdc0f1da4c7d33d63c3a5d928d3.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/8074e8b10e615a14719de8ea3c171887825c49fe?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Ftypography.4206d1eaa813ffdc0f1da4c7d33d63c3a5d928d3.fr-fr.xlf&_a=contents)
-* Handoff Datetime: 2016-11-11 00:06:09
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\style\typography.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.fr-fr/commit/5bf3daf71cd8f7a945ec878e8d84937b38d16d09?path=windows-apps-src%2Fstyle%2Ftypography.md&_a=contents)
-* Current Handback File: [typography.4206d1eaa813ffdc0f1da4c7d33d63c3a5d928d3.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/e6a0357fb8ac60ea1b67b018a13764c4a5aec180?path=ol-handback%2FMicrosoft%2Fwindows-apps.fr-fr%2Fmaster%2Ftypography.4206d1eaa813ffdc0f1da4c7d33d63c3a5d928d3.fr-fr.xlf&_a=contents)
-* Current Handback Datetime: 2016-10-18 17:20:24
-* Bilingual File: [typography.4206d1eaa813ffdc0f1da4c7d33d63c3a5d928d3.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/e6a0357fb8ac60ea1b67b018a13764c4a5aec180?path=ol-handback%2FMicrosoft%2Fwindows-apps.fr-fr%2Fmaster%2Ftypography.4206d1eaa813ffdc0f1da4c7d33d63c3a5d928d3.fr-fr.xlf&_a=contents)
-* Bilingual Datetime: 2016-10-18 20:38:58
 * [Back to Top](#report-top)
 
 
