@@ -6,23 +6,23 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\controls-and-patterns\tiles-and-notifications-adaptive-interactive-toasts.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/9dcf720679a8e36d9ce57fd71f173b1d0d28189b?path=windows-apps-src%2Fcontrols-and-patterns%2Ftiles-and-notifications-adaptive-interactive-toasts.md&_a=contents) | HandedOffSuccess | [Details](#14b44ef2f0dcd87fe57f1dce609ea88d626abe7e3198)
+ [windows-apps-src\gaming\handling-device-lost-scenarios.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/5ed3815397b076ab3ee14fd3c22b235b46da5f09?path=windows-apps-src%2Fgaming%2Fhandling-device-lost-scenarios.md&_a=contents) | HandedOffSuccess | [Details](#b88d85c78ba5d08718b7e2c844f94beb71e5134a3506)
 
 ## Item Details
-##### <a name='14b44ef2f0dcd87fe57f1dce609ea88d626abe7e3198'></a> Source: [windows-apps-src\controls-and-patterns\tiles-and-notifications-adaptive-interactive-toasts.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/9dcf720679a8e36d9ce57fd71f173b1d0d28189b?path=windows-apps-src%2Fcontrols-and-patterns%2Ftiles-and-notifications-adaptive-interactive-toasts.md&_a=contents)
+##### <a name='b88d85c78ba5d08718b7e2c844f94beb71e5134a3506'></a> Source: [windows-apps-src\gaming\handling-device-lost-scenarios.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/5ed3815397b076ab3ee14fd3c22b235b46da5f09?path=windows-apps-src%2Fgaming%2Fhandling-device-lost-scenarios.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [tiles-and-notifications-adaptive-interactive-toasts.754babe558bdbd1c80d4acd94c1873c54d9426c8.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/bffa973e680027d81ccfda45644657c51c8c7fea?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Ftiles-and-notifications-adaptive-interactive-toasts.754babe558bdbd1c80d4acd94c1873c54d9426c8.fr-fr.xlf&_a=contents)
-* Handoff Datetime: 2016-11-17 02:45:44
+* Handoff File: [handling-device-lost-scenarios.8f9af80df9b93fbbe49916bd6b2c3092e16d01b5.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/764efa6603d27164b7efe49a4a388d9e6648255b?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Fhandling-device-lost-scenarios.8f9af80df9b93fbbe49916bd6b2c3092e16d01b5.fr-fr.xlf&_a=contents)
+* Handoff Datetime: 2016-11-18 00:45:46
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\controls-and-patterns\tiles-and-notifications-adaptive-interactive-toasts.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.fr-fr/commit/5bf3daf71cd8f7a945ec878e8d84937b38d16d09?path=windows-apps-src%2Fcontrols-and-patterns%2Ftiles-and-notifications-adaptive-interactive-toasts.md&_a=contents)
-* Current Handback File: [tiles-and-notifications-adaptive-interactive-toasts.754babe558bdbd1c80d4acd94c1873c54d9426c8.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/e6a0357fb8ac60ea1b67b018a13764c4a5aec180?path=ol-handback%2FMicrosoft%2Fwindows-apps.fr-fr%2Fmaster%2Ftiles-and-notifications-adaptive-interactive-toasts.754babe558bdbd1c80d4acd94c1873c54d9426c8.fr-fr.xlf&_a=contents)
+* Current Target File: [windows-apps-src\gaming\handling-device-lost-scenarios.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.fr-fr/commit/5bf3daf71cd8f7a945ec878e8d84937b38d16d09?path=windows-apps-src%2Fgaming%2Fhandling-device-lost-scenarios.md&_a=contents)
+* Current Handback File: [handling-device-lost-scenarios.8f9af80df9b93fbbe49916bd6b2c3092e16d01b5.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/e6a0357fb8ac60ea1b67b018a13764c4a5aec180?path=ol-handback%2FMicrosoft%2Fwindows-apps.fr-fr%2Fmaster%2Fhandling-device-lost-scenarios.8f9af80df9b93fbbe49916bd6b2c3092e16d01b5.fr-fr.xlf&_a=contents)
 * Current Handback Datetime: 2016-10-18 17:20:24
-* Bilingual File: [tiles-and-notifications-adaptive-interactive-toasts.754babe558bdbd1c80d4acd94c1873c54d9426c8.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/e6a0357fb8ac60ea1b67b018a13764c4a5aec180?path=ol-handback%2FMicrosoft%2Fwindows-apps.fr-fr%2Fmaster%2Ftiles-and-notifications-adaptive-interactive-toasts.754babe558bdbd1c80d4acd94c1873c54d9426c8.fr-fr.xlf&_a=contents)
+* Bilingual File: [handling-device-lost-scenarios.8f9af80df9b93fbbe49916bd6b2c3092e16d01b5.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/e6a0357fb8ac60ea1b67b018a13764c4a5aec180?path=ol-handback%2FMicrosoft%2Fwindows-apps.fr-fr%2Fmaster%2Fhandling-device-lost-scenarios.8f9af80df9b93fbbe49916bd6b2c3092e16d01b5.fr-fr.xlf&_a=contents)
 * Bilingual Datetime: 2016-10-18 17:30:18
 * [Back to Top](#report-top)
 
