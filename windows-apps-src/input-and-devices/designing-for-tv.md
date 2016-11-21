@@ -7,8 +7,8 @@ label: Designing for Xbox and TV
 template: detail.hbs
 isNew: true
 translationtype: Human Translation
-ms.sourcegitcommit: 96a35ded526b09dd1ce1cb8528bb4a99e3511b32
-ms.openlocfilehash: 734a0f0574ac7698dd6bd963bf3e20225b26d401
+ms.sourcegitcommit: 8bf3a4384d97d59d2844614b981a2e837ccb493d
+ms.openlocfilehash: d168c358a3dd68f05b5d0962edb1fb62dfe0570e
 
 ---
 
@@ -164,7 +164,8 @@ Le tableau suivant répertorie la prise en charge intégrée des accélérateurs
 | Page vers le haut/bas  | Page vers le haut/bas | Gâchette gauche/droite | [CalendarView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.calendarview.aspx), [ListBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listbox.aspx), [ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx), [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), `ScrollViewer`, [Selector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.aspx), [LoopingSelector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.loopingselector.aspx), [ComboBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.combobox.aspx), [FlipView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx) | Affichages qui prennent en charge le défilement vertical
 | Page vers la gauche/droite | Aucun | Gâchettes hautes gauche/droite | [Pivot](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.pivot.aspx), [ListBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listbox.aspx), [ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx), [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), `ScrollViewer`, [Selector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.aspx), [LoopingSelector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.loopingselector.aspx), [FlipView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx) | Affichages qui prennent en charge le défilement horizontal
 | Zoom avant/arrière        | Ctrl+/- | Gâchette gauche/droite | Aucun | `ScrollViewer`, les affichages qui prennent en charge le zoom avant et arrière |
-| Ouvrir/fermer le volet de navigation | Aucun | Affichage | Aucun | Volets de navigation
+| Ouvrir/fermer le volet de navigation | Aucun | Affichage | Aucun | Volets de navigation |
+| [Rechercher](#search-experience) | Aucun | Bouton Y | Aucun | Raccourci pour la fonction de recherche principale dans l’application |
 
 ## Interaction et navigation en mode focusXY
 
@@ -1030,6 +1031,16 @@ Pour en savoir plus sur l’ajout de médias à votre application, consultez l�
 
 > ![REMARQUE] L’objet `MediaPlayerElement` est uniquement disponible dans Windows10, version1607 et ultérieure. Si vous développez une application pour une version antérieure de Windows10, vous devez utiliser l’objet [MediaElement](https://msdn.microsoft.com/library/windows/apps/br242926) à la place. Les recommandations ci-dessus s’appliquent également à l’objet `MediaElement` et la propriété `TransportControls` est accessible de la même manière.
 
+### Expérience de recherche
+
+La recherche de contenu est l’une des fonctions les plus fréquemment exécutées dans le cadre d’une expérience «10-foot». Si votre application offre une fonction de recherche, l’utilisateur doit pouvoir y accéder rapidement en utilisant le bouton accélérateur **Y** sur le boîtier de commande.
+
+La plupart des clients connaissent probablement déjà cet accélérateur. Toutefois, si vous le souhaitez, vous pouvez ajouter un glyphe visuel **Y** à l’interface utilisateur pour indiquer que le client peut utiliser le bouton pour accéder à la fonctionnalité de recherche. Si vous n’ajoutez pas cet indicateur, veillez à utiliser le symbole de police **Segoe Xbox Symbol MDL2** (E426) pour fournir une expérience cohérente avec l’interpréteur de commandes Xbox et d’autres applications.
+
+Dans la mesure où le bouton **Y** est uniquement disponible sur le boîtier de commande, veillez à fournir d’autres méthodes d’accès à la recherche, par exemple des boutons dans l’interface utilisateur. Sinon, certains clients risquent de ne pas pouvoir accéder à la fonctionnalité.
+
+Dans l’expérience «10-foot», il est souvent plus facile pour les clients d’utiliser une fonction de recherche en mode plein écran, car l’espace disponible sur l’écran est limité. En mode plein écran ou écran partiel, il est préférable que le clavier visuel affiché soit déjà ouvert lorsque l’utilisateur sélectionne la fonction de recherche. Ainsi il peut immédiatement saisir les termes de sa recherche.
+
 ## Déclencheur d’état visuel personnalisé pour Xbox
 
 Pour personnaliser votre applicationUWP pour l’expérience «10-foot», nous vous recommandons d’effectuer des modifications de disposition lorsque l’application détecte son lancement sur une console Xbox. L’une des méthodes utilisées pour cette fin est le *déclencheur d’état visuel* personnalisé. Les déclencheurs d’état visuel sont particulièrement utiles lorsque vous souhaitez apporter des modifications dans **Blend pour Visual Studio**. L’extrait de code suivant montre comment créer un déclencheur d’état visuel pour Xbox:
@@ -1105,6 +1116,6 @@ La conception pour l’expérience «10-foot» implique de prendre en compte des
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

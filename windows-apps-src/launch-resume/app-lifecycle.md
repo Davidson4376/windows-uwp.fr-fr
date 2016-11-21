@@ -5,8 +5,8 @@ description: "Cette rubrique décrit le cycle de vie d’une application de plat
 keywords: "cycle de vie d’application suspendue reprise lancement activer"
 ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
 translationtype: Human Translation
-ms.sourcegitcommit: 79d0b4c7208d2fa79ceb7f5e212255ff94d6fe3a
-ms.openlocfilehash: 86e0f10e45445df82585bd58b0f2583c07a19cb7
+ms.sourcegitcommit: df297d442a4c636fac886b113ada8a01aa37a015
+ms.openlocfilehash: 6e7b92e81aa0a00e579e0ca89234a90e68c253f1
 
 ---
 
@@ -85,7 +85,7 @@ Les données d’événement de ces méthodes incluent la propriété [**Previou
 
 ## Exécution en arrière-plan ##
 
-La possibilité d’exécuter du code en arrière-plan dans un processus est une nouveauté de Windows10 version1607. Pour en savoir plus, consultez [Activité en arrière-plan avec le modèle à processus unique](https://blogs.windows.com/buildingapps/2016/06/07/background-activity-with-the-single-process-model/#tMmI7wUuYu5CEeRm.99). Nous n’étudierons pas le traitement en arrière-plan à processus unique dans cet article, mais nous allons examiner son impact sur le cycle de vie, avec les deuxnouveaux événements qui se rapportent à votre application lorsqu’elle est en arrière-plan. Il s’agit de [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) et de [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground).
+À partir de Windows10, version 1607, les applications peuvent exécuter des tâches en arrière-plan dans le même processus que l’application elle-même. Pour en savoir plus, consultez [Activité en arrière-plan avec le modèle à processus unique](https://blogs.windows.com/buildingapps/2016/06/07/background-activity-with-the-single-process-model/#tMmI7wUuYu5CEeRm.99). Nous n’étudierons pas le traitement en arrière-plan intégré au processus dans cet article, mais nous allons examiner son impact sur le cycle de vie, avec les deuxnouveaux événements qui se rapportent à votre application lorsqu’elle est en arrière-plan. Il s’agit de [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) et de [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground).
 
 Ces événements indiquent également si l’utilisateur peut voir l’interface utilisateur de votre application.
 
@@ -210,7 +210,7 @@ Le code de base approprié au cycle de vie de l’application est fourni dans le
 -   Classe [**Windows.UI.Xaml.Window**](https://msdn.microsoft.com/library/windows/apps/br209041) (XAML)
 
 **Remarque**  
-Cet article s’adresse aux développeurs de Windows10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Cet article s’adresse aux développeurs de Windows10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
 ## Rubriques connexes
 
@@ -220,7 +220,6 @@ Cet article s’adresse aux développeurs de Windows10 qui développent des appl
 * [Gérer l’activation d’une application](activate-an-app.md)
 * [Gérer la suspension d’une application](suspend-an-app.md)
 * [Gérer la reprise d’une application](resume-an-app.md)
-* [Gérer le prélancement d’une application](handle-app-prelaunch.md)
 * [Activité en arrière-plan avec le modèle à processus unique](https://blogs.windows.com/buildingapps/2016/06/07/background-activity-with-the-single-process-model/#tMmI7wUuYu5CEeRm.99)
 * [Contenu audio en arrière-plan](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)
 
@@ -230,6 +229,6 @@ Cet article s’adresse aux développeurs de Windows10 qui développent des appl
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

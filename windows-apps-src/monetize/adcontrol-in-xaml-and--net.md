@@ -4,8 +4,8 @@ ms.assetid: 4e7c2388-b94e-4828-a104-14fa33f6eb2d
 description: "Découvrez comment utiliser la classe AdControl pour afficher des bannières publicitaires dans une application XAML pour Windows10 (UWP), Windows8.1 ou Windows Phone8.1."
 title: AdControl en XAML et .NET
 translationtype: Human Translation
-ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
-ms.openlocfilehash: e3cc04e2c039223729a1e24224ddd19d6485d434
+ms.sourcegitcommit: 35f07c73a72e5242d59c6b45e6d5b4ac62f40741
+ms.openlocfilehash: 0652bd1c3e52c9026b26e14b2475a4b34997ac91
 
 ---
 
@@ -21,7 +21,7 @@ Pour un exemple de projet complet illustrant l’ajout de bannières publicitair
 ## Conditions préalables
 
 * Pour les applications UWP: installez [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) avec Visual Studio2015.
-* Pour les applicationsWindows8.1 ou WindowsPhone8.1: [installez le Kit de développement logiciel (SDK) Microsoft Advertising pour Windows et Windows Phone8.x](http://aka.ms/store-8-sdk) avec Visual Studio2015 ou Visual Studio2013.
+* Pour les applicationsWindows8.1 ou WindowsPhone8.1: [installe Microsoft Advertising SDK pour Windows et Windows Phone8.x](http://aka.ms/store-8-sdk) avec Visual Studio2015 ou Visual Studio2013.
 
 ## Développement du code
 
@@ -145,13 +145,13 @@ Pour un exemple de projet complet illustrant l’ajout de bannières publicitair
 
 ## Remarques
 
-C#: consultez l’article [Exemple de propriétés XAML](xaml-properties-example.md) pour voir comment affecter des gestionnaires d’événements aux événements **AdControl**. Vous pouvez ensuite consulter [Événements AdControl en C#](adcontrol-events-in-c.md) pour obtenir un exemple de code illustrant des gestionnaires d’événements écrits en C#.
+* C#: consultez l’article [Exemple de propriétés XAML](xaml-properties-example.md) pour voir comment affecter des gestionnaires d’événements aux événements **AdControl**. Vous pouvez ensuite consulter [Événements AdControl en C#](adcontrol-events-in-c.md) pour obtenir un exemple de code illustrant des gestionnaires d’événements écrits en C#.
 
-Visual Basic: consultez l’article [Exemple de propriétés XAML](xaml-properties-example.md) pour voir comment affecter des gestionnaires d’événements aux événements **AdControl**.
+* C++: la version actuelle des bibliothèques de publicités Microsoft prend en charge C++. La classe **AdControl** est implémentée dans le code C++ natif et ne charge pas .NET CLR. Pour obtenir des exemples de code qui illustrent l’utilisation de **AdControl** en C++, voir [Exemples de publicité sur GitHub](http://aka.ms/githubads).
 
-C++: la version actuelle des bibliothèques de publicités Microsoft prend en charge C++. La classe **AdControl** charge CLR et utilise C++ managé.
+* Visual Basic: consultez l’article [Exemple de propriétés XAML](xaml-properties-example.md) pour voir comment affecter des gestionnaires d’événements aux événements **AdControl**.
 
-Gestion des erreurs: pour en savoir plus sur la gestion des erreurs, voir [Gestion des erreurs AdControl](adcontrol-error-handling.md).
+* Gestion des erreurs: pour en savoir plus sur la gestion des erreurs, voir [Gestion des erreurs AdControl](adcontrol-error-handling.md).
 
 ## Rubriques connexes
 
@@ -161,6 +161,6 @@ Gestion des erreurs: pour en savoir plus sur la gestion des erreurs, voir [Gesti
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

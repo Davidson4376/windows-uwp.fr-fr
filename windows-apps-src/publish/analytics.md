@@ -4,8 +4,8 @@ Description: "Vous pouvez voir les analyses détaillées de vos applications dan
 title: Analyses
 ms.assetid: 3A3C6F10-0DB1-416D-B632-CD388EA66759
 translationtype: Human Translation
-ms.sourcegitcommit: 3afdf00864e023d913b635beef0c506735881b23
-ms.openlocfilehash: fd03b13d4169f265575de921ef9c42303babe972
+ms.sourcegitcommit: fa6e5945855defc99e9f5636543ec072eb777a5a
+ms.openlocfilehash: c628b1fb29601ff1d4ff3629da45409586274f6b
 
 ---
 
@@ -18,9 +18,7 @@ Vous pouvez voir les analyses détaillées de vos applications dans le tableau d
 
 ## Analyse de toutes vos applications
 
-La page de présentation de votre tableau de bord propose également un affichage multiniveau avec des détails sur toutes vos applications. Les statistiques proposées sur cette page de présentation dépendent de vos applications.
-
-Lorsque vous [téléchargez des rapports d’analyse](download-analytic-reports.md), vous avez également la possibilité de télécharger des rapports sur toutes vos applications. Notez que vous devez accéder à la page **Télécharger les rapports** dans la section **Analyse** de l’une de vos applications, mais que vous n’êtes pas limité au téléchargement des seules données de cette application particulière.
+Pour afficher les principales analyses concernant les applications les plus téléchargées, dans le menu de navigation supérieur, sélectionnez **Analyse** > **Vue d’ensemble**. Par défaut, la page **Vue d’ensemble de l’analyse** affiche des informations sur les cinq applications qui ont été acquises le plus souvent au cours de leur durée de vie. Pour choisir d’autres applications à afficher, sélectionnez **Modifier les filtres**.
 
 ## Rapports disponibles pour chaque application
 
@@ -35,6 +33,7 @@ Cette section détaille les informations présentées dans chacun des rapports s
 -   [Rapport sur les acquisitions de modules complémentaires](add-on-acquisitions-report.md)
 -   [Rapport de médiation publicitaire](ad-mediation-report.md)
 -   [Rapport sur les performances publicitaires](advertising-performance-report.md)
+-   [Rapport de performances des annonces des affiliés](affiliates-performance-report.md)
 -   [Rapport de publicité sur l’installation d’applications](app-install-ads-reports.md)
 -   [Rapport sur les canaux et conversions](channels-and-conversions-report.md)
 
@@ -73,13 +72,13 @@ Utilisez les ressources suivantes pour commencer à utiliser PowerBI pour accéd
 
 ### Application Centre de développement
 
-Installez l’application [Centre de développement](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws) pour afficher rapidement des informations sur l’intégrité et les performances de vos applications sur tout appareil Windows10. 
+Installez l’application [Centre de développement](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws) pour afficher rapidement des informations sur l’intégrité et les performances de vos applications sur tout appareil Windows10.
 
 ## Rubriques connexes
 - [Publier des applications Windows](index.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

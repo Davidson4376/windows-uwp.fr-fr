@@ -5,8 +5,8 @@ title: "Et après ?"
 description: "Maintenant que vous avez créé votre première application, consultez le reste du Centre de développement. Les différentes sections qu’il contient sont présentées ci-après."
 keywords: "Centre de développement, Prise en main"
 translationtype: Human Translation
-ms.sourcegitcommit: 743a3649613d39083520f8d79f4c0daf97336568
-ms.openlocfilehash: 5a1b5dbb3b9d841ca0c3f14f591acd716c153c54
+ms.sourcegitcommit: 1c059edde92a48af610af1033c3b18ca729410aa
+ms.openlocfilehash: 6b7985137e02a348fafabf0aaf298c5d20095bd7
 
 ---
 
@@ -18,10 +18,9 @@ Vous voulez créer une application et ne savez pas par où commencer? Voici quel
 
 Nous vous recommandons dans un premier temps de parcourir les rubriques sur UWP de façon à vous faire une idée générale de la plateforme. Dans un deuxième temps, essayez de créer votre interface utilisateur à partir de contrôles XAML, que vous pourrez ensuite personnaliser. Le principal atout du langage XAML est l’utilisation de la *liaison de données* qui associe les contrôles aux informations que votre application souhaite afficher: si vous débutez sur la plateforme Windows, il s’agit d’un concept important que vous devez assimiler.
 
-De même, vous trouverez sur le site [Developer Toolkit](https://developer.microsoft.com/windows/projects/campaigns/welcome-toolbox) une mine d’informations qui vous aideront à vous lancer.
+Si vous souhaitez explorer les dernières techniques de programmation de Windows10, notamment l’ajout d’animations et d’effets à vos applications, consultez le [Blog des développeurs Windows](https://blogs.windows.com/buildingapps).
 
 <table class="wdg-noborder">
-
 <tr>
  <td width=60><img src="images/icon3.png" width=64></td>
     <td><h2>UWP et cycle de vie des applications UWP</h2><p>Comment une application démarre-t-elle et que se passe-t-il quand vous en démarrez une autre? Voici la réponse.</p> <ul>
@@ -40,6 +39,7 @@ De même, vous trouverez sur le site [Developer Toolkit](https://developer.micro
       <li><a href="https://msdn.microsoft.com/windows/uwp/controls-and-patterns/controls-and-events-intro">Présentation des contrôles et des modèles</a></li>
      <li><a href="https://msdn.microsoft.com/windows/uwp/controls-and-patterns/styling-controls">Application de styles aux contrôles</a></li>
       <li><a href="https://msdn.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design">Tailles d’écran et points d’arrêt pour la conception réactive</a></li>
+      <li><a href="https://developer.microsoft.com/windows/projects/campaigns/welcome-toolbox">Utilisez le kit de ressources de la communauté UWP pour obtenir une sélection de modèles et de contrôles préintégrés</a></li>
     </ul></td>  
 </tr>
  
@@ -162,6 +162,6 @@ Voici la liste des principales sections de contenu dans le Centre de développem
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

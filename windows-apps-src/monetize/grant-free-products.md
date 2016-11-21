@@ -4,8 +4,8 @@ ms.assetid: FA55C65C-584A-4B9B-8451-E9C659882EDE
 description: "Utilisez cette méthode dans l’API d’achat du WindowsStore pour octroyer une application ou extension gratuite à un utilisateur donné."
 title: Octroyer des produits gratuits
 translationtype: Human Translation
-ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
-ms.openlocfilehash: a04918a562d132f6a721b96c7f4ad78218eb8819
+ms.sourcegitcommit: ac9c921c7f39a1bdc6dc9fc9283bc667f67cd820
+ms.openlocfilehash: 2eca8712075ce1f9d876f3ae441381734bd52370
 
 ---
 
@@ -21,8 +21,8 @@ Actuellement, vous ne pouvez octroyer que des produits gratuits. Si votre servic
 
 Pour utiliser cette méthode, vous devez disposer des éléments suivants:
 
--   un jeton d’accès AzureAD créé avec l’URI d’audience `https://onestore.microsoft.com`;
--   une clé d’ID du WindowsStore générée en appelant la méthode [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675) à partir du code côté client de votre application.
+* un jeton d’accès AzureAD créé avec l’URI d’audience `https://onestore.microsoft.com`;
+* une clé d’ID du Windows Store [générée à partir du code côté client de votre application](view-and-grant-products-from-a-service.md#step-4).
 
 Pour plus d’informations, voir [Afficher et octroyer des produits à partir d’un service](view-and-grant-products-from-a-service.md).
 
@@ -53,7 +53,7 @@ Pour plus d’informations, voir [Afficher et octroyer des produits à partir d�
 | Paramètre      | Type   | Description                                                                                                                                                                                                                                                                                                            | Obligatoire |
 |----------------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
 | availabilityId | chaîne | ID de disponibilité du produit à acheter dans le catalogue du Windows Store.                                                                                                                                                                                                                                     | Oui      |
-| b2bKey         | chaîne | Clé d’ID du Windows Store qui représente l’identité du client.                                                                                                                                                                                                                                                        | Oui      |
+| b2bKey         | chaîne | La clé d’ID du Windows Store [générée à partir du code côté client de votre application](view-and-grant-products-from-a-service.md#step-4).                                                                                                                                                                                                                                                        | Oui      |
 | devOfferId     | chaîne | ID d’offre spécifié par le développeur qui s’affiche dans l’élément de collection après l’achat.                                                                                                                                                                                                                                 | Non       |
 | language       | chaîne | Langue de l’utilisateur.                                                                                                                                                                                                                                                                                              | Oui      |
 | market         | chaîne | Marché de l’utilisateur.                                                                                                                                                                                                                                                                                                | Oui      |
@@ -245,6 +245,6 @@ Date: Tue, 13 Oct 2015 21:21:51 GMT
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

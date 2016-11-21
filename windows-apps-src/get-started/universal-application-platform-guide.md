@@ -4,8 +4,8 @@ title: "Introduction à la plateforme Windows universelle"
 description: "Découvrez les applications de plateforme Windows universelle (UWP) qui peuvent s’exécuter sur un large éventail d’appareils exécutant Windows10."
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
 translationtype: Human Translation
-ms.sourcegitcommit: 0f2ed552898f7cbb476055a6d6b7aa76545113b1
-ms.openlocfilehash: c433bd2eba2a5be114680f52a8da0b5c7b563186
+ms.sourcegitcommit: 98dd2da8e16552fcde9790bd77f17a2100b63d4f
+ms.openlocfilehash: 170bbb4e22b3ac642b0dfd0c9136d3dd39d519d0
 
 ---
 
@@ -17,11 +17,11 @@ Voici ce que vous allez apprendre dans ce guide:
 -   Nouveaux contrôles et panneaux d’interface utilisateur qui vous permettent d’adapter votre interface utilisateur aux différents facteurs de forme d’appareil.
 -   Comment comprendre et contrôler la surface d’API disponible pour votre application.
 
-Windows 8 a introduit Windows Runtime (WinRT), qui était une évolution du modèle d’application Windows. Elle devait constituer une architecture d’application commune.
+Windows8 a introduit Windows Runtime (WinRT), qui était une évolution du modèle d’application Windows. Elle devait constituer une architecture d’application commune.
 
-Lorsque Windows Phone 8.1 est devenue disponible, Windows Runtime a été aligné entre Windows Phone 8.1 et Windows. Cela a permis aux développeurs de créer des *applications Windows 8 universelles* ciblant Windows et Windows Phone à l’aide d’une base de code partagée.
+Lorsque Windows Phone 8.1 est devenue disponible, Windows Runtime a été aligné entre Windows Phone 8.1 et Windows. Cela a permis aux développeurs de créer des *applications Windows8 universelles* ciblant Windows et Windows Phone à l’aide d’une base de code partagée.
 
-Windows 10 introduit la plateforme Windows universelle (UWP), qui développe le modèle Windows Runtime et l’intègre dans le noyau unifié Windows 10. Intégrée au noyau, l’UWP offre désormais une plateforme d’application commune disponible sur chaque appareil exécutant Windows 10. Avec cette évolution, les applications qui ciblent l’UWP peuvent appeler non seulement les API WinRT communes à tous les appareils, mais aussi des API (notamment des API Win32 et .NET) spécifiques de la famille d’appareils sur lesquels l’application s’exécute. L’UWP fournit une couche API de noyau garantie sur divers appareils. Cela signifie que vous pouvez créer un package d’application unique installable sur un vaste éventail d’appareils. Avec ce package d’application unique, le WindowsStore fournit un canal de distribution unifié pour atteindre tous les types d’appareils sur lesquels votre application peut s’exécuter.
+Windows10 introduit la plateforme Windows universelle (UWP), qui développe le modèle Windows Runtime et l’intègre dans le noyau unifié Windows10. Intégrée au noyau, l’UWP offre désormais une plateforme d’application commune disponible sur chaque appareil exécutant Windows10. Avec cette évolution, les applications qui ciblent l’UWP peuvent appeler non seulement les API WinRT communes à tous les appareils, mais aussi des API (notamment des API Win32 et .NET) spécifiques de la famille d’appareils sur lesquels l’application s’exécute. L’UWP fournit une couche API de noyau garantie sur divers appareils. Cela signifie que vous pouvez créer un package d’application unique installable sur un vaste éventail d’appareils. Avec ce package d’application unique, le WindowsStore fournit un canal de distribution unifié pour atteindre tous les types d’appareils sur lesquels votre application peut s’exécuter.
 
 ![Les applications de la plateforme Windows universelle s’exécutent sur divers appareils et prennent en charge l’interface utilisateur adaptative, l’entrée utilisateur naturelle, un Windows Store, un centre de développement et des services cloud.](images/universalapps-overview.png)
 
@@ -29,7 +29,7 @@ Windows 10 introduit la plateforme Windows universelle (UWP), qui développe le 
 
 ## Familles d’appareils
 
-Les applications Windows 8.1 et Windows Phone 8.1 ciblent un système d’exploitation (SE) : Windows ou Windows Phone. Avec Windows 10, votre application ne cible plus un système d’exploitation, mais une ou plusieurs familles d’appareils. Une famille d’appareils identifie les API, les caractéristiques système et les comportements que vous pouvez attendre sur les différents appareils de cette famille. Elle détermine également l’ensemble des appareils sur lesquels votre application peut être installée à partir du Store. Voici la hiérarchie des familles d’appareils.
+Les applications Windows8.1 et Windows Phone 8.1 ciblent un système d’exploitation (SE) : Windows ou Windows Phone. Avec Windows10, votre application ne cible plus un système d’exploitation, mais une ou plusieurs familles d’appareils. Une famille d’appareils identifie les API, les caractéristiques système et les comportements que vous pouvez attendre sur les différents appareils de cette famille. Elle détermine également l’ensemble des appareils sur lesquels votre application peut être installée à partir du Store. Voici la hiérarchie des familles d’appareils.
 
 ![Familles d’appareils](images/device-family-tree.png)
 
@@ -73,7 +73,7 @@ Par défaut, Microsoft Visual Studio spécifie **Windows.Universal** comme la fa
 
 ## Interface utilisateur et entrée universelle
 
-Une application UWP peut s’exécuter sur de nombreux types d’appareils qui ont différentes formes d’entrée, de résolutions d’écran, de densité PPP et d’autres caractéristiques uniques. Windows 10 comprend de nouveaux contrôles, panneaux de disposition et outils universels pour vous aider à adapter votre interface utilisateur aux appareils sur lesquels votre application peut s’exécuter. Par exemple, vous pouvez adapter l’interface utilisateur pour tirer de la différence de résolution d’écran lorsque votre application s’exécute sur un ordinateur de bureau ou sur un appareil mobile.
+Une application UWP peut s’exécuter sur de nombreux types d’appareils qui ont différentes formes d’entrée, de résolutions d’écran, de densité PPP et d’autres caractéristiques uniques. Windows10 comprend de nouveaux contrôles, panneaux de disposition et outils universels pour vous aider à adapter votre interface utilisateur aux appareils sur lesquels votre application peut s’exécuter. Par exemple, vous pouvez adapter l’interface utilisateur pour tirer de la différence de résolution d’écran lorsque votre application s’exécute sur un ordinateur de bureau ou sur un appareil mobile.
 
 Certains aspects de l’interface utilisateur de votre application s’adaptent automatiquement aux divers appareils. Les contrôles tels que les boutons et les curseurs s’adaptent automatiquement aux différents modes d’entrée et familles d’appareils. La conception de l’expérience utilisateur de votre application peut cependant nécessiter une adaptation en fonction de l’appareil sur lequel l’application s’exécute. Par exemple, une application de photos doit adapter son interface utilisateur quand elle s’exécute sur un appareil portatif de petite taille, afin d’être utilisable d’une seule main. Quand une application de photos s’exécute sur un ordinateur de bureau, l’interface utilisateur doit s’adapter pour tirer parti de l’espace d’écran supplémentaire.
 
@@ -86,7 +86,7 @@ Windows vous aide à cibler votre interface utilisateur sur plusieurs appareils 
 
 ### Contrôles et panneaux de disposition universels
 
-Windows 10 inclut de nouveaux contrôles tels que l’affichage du calendrier et l’affichage fractionné. Le contrôle Pivot, qui était auparavant disponible uniquement pour Windows Phone, est désormais également disponible pour la famille d’appareils universelle.
+Windows10 inclut de nouveaux contrôles tels que l’affichage du calendrier et l’affichage fractionné. Le contrôle Pivot, qui était auparavant disponible uniquement pour Windows Phone, est désormais également disponible pour la famille d’appareils universelle.
 
 Des contrôles ont été mis à jour pour fonctionner correctement sur des écrans plus grands, s’adapter en fonction du nombre de pixels disponibles sur l’écran de l’appareil, et fonctionner correctement avec plusieurs types d’entrées tels que clavier, souris, impulsions tactiles, stylet ou contrôleur de type manette Xbox.
 
@@ -172,13 +172,13 @@ Vous n’êtes pas obligé de décider à l’avance des différents types d’a
 
 ### Mise à l’échelle adaptative
 
-Windows 10 introduit une évolution du modèle de mise à l’échelle existant. En plus de la mise à l’échelle du contenu vectoriel, il existe un ensemble unifié de facteurs d’échelle qui assurent la cohérence de taille des éléments d’interface utilisateur en fonction de diverses tailles d’écran et résolutions d’affichage. Ces facteurs d’échelle sont également compatibles avec les facteurs d’échelle d’autres systèmes d’exploitation tels qu’iOS et Android. Cela facilite le partage de ressources entre ces plateformes.
+Windows10 introduit une évolution du modèle de mise à l’échelle existant. En plus de la mise à l’échelle du contenu vectoriel, il existe un ensemble unifié de facteurs d’échelle qui assurent la cohérence de taille des éléments d’interface utilisateur en fonction de diverses tailles d’écran et résolutions d’affichage. Ces facteurs d’échelle sont également compatibles avec les facteurs d’échelle d’autres systèmes d’exploitation tels qu’iOS et Android. Cela facilite le partage de ressources entre ces plateformes.
 
 Le Store sélectionne les ressources à télécharger notamment en fonction de la résolution de l’appareil. Seules les ressources correspondant au mieux à l’appareil sont téléchargées.
 
 ### Gestion commune des entrées
 
-Vous pouvez créer une application Windows universelle utilisant des contrôles universels qui gèrent diverses sources d’entrée, telle qu’une souris, un clavier, des impulsions tactiles, un stylet et des contrôleurs (par exemple, une manette Xbox). En règle générale, l’entrée manuscrite est associée uniquement à un stylet. En revanche, avec Windows 10, ce type d’entrée est possible via l’interface tactile de certains appareils et n’importe quel pointeur. L’entrée manuscrite est prise en charge sur de nombreux appareils (y compris mobiles), et peut être facilement incorporée avec quelques lignes de code.
+Vous pouvez créer une application Windows universelle utilisant des contrôles universels qui gèrent diverses sources d’entrée, telle qu’une souris, un clavier, des impulsions tactiles, un stylet et des contrôleurs (par exemple, une manette Xbox). En règle générale, l’entrée manuscrite est associée uniquement à un stylet. En revanche, avec Windows10, ce type d’entrée est possible via l’interface tactile de certains appareils et n’importe quel pointeur. L’entrée manuscrite est prise en charge sur de nombreux appareils (y compris mobiles), et peut être facilement incorporée avec quelques lignes de code.
 
 Les API suivantes donnent accès à l’entrée :
 
@@ -189,8 +189,7 @@ Les API suivantes donnent accès à l’entrée :
 
 ## Écriture de code
 
-
-Les options de langage de programmation pour votre [projet Windows 10 dans Visual Studio](https://msdn.microsoft.com/library/windows/apps/dn609832.aspx#target_win10) incluent Visual C++, C#, Visual Basic et JavaScript. Pour Visual C++, C# et Visual Basic, vous pouvez utiliser XAML pour une expérience haute fidélité de l’interface utilisateur native. Pour Visual C++, vous pouvez choisir de dessiner avec DirectX, soit à la place de XAML, soit en même temps que XAML. Pour JavaScript, votre couche présentation sera au format HTML, qui est évidemment une norme web interplateforme. Votre code et l’interface utilisateur seront en grande partie universels et s’exécuteront partout de la même façon. En revanche, pour un code adapté à des familles d’appareils particulières, et pour une interface utilisateur adaptée à des facteurs de forme particuliers, vous avez la possibilité d’utiliser un code et une interface utilisateur adaptatifs. Examinons ces différents cas.
+Les options de langage de programmation pour votre [projet Windows10 dans Visual Studio](https://msdn.microsoft.com/library/windows/apps/dn609832.aspx#target_win10) incluent Visual C++, C#, Visual Basic et JavaScript. Pour Visual C++, C# et Visual Basic, vous pouvez utiliser XAML pour une expérience haute fidélité de l’interface utilisateur native. Pour Visual C++, vous pouvez choisir de dessiner avec DirectX, soit à la place de XAML, soit en même temps que XAML. Pour JavaScript, votre couche présentation sera au format HTML, qui est évidemment une norme web interplateforme. Votre code et l’interface utilisateur seront en grande partie universels et s’exécuteront partout de la même façon. En revanche, pour un code adapté à des familles d’appareils particulières, et pour une interface utilisateur adaptée à des facteurs de forme particuliers, vous avez la possibilité d’utiliser un code et une interface utilisateur adaptatifs. Examinons ces différents cas.
 
 **Appel d’une API implémentée par votre famille d’appareils cible**
 
@@ -246,7 +245,7 @@ L’ensemble des API au sein d’une famille d’appareils comprend des subdivis
 
 **API Win32 dans l’UWP**
 
-Une application UWP ou un composant Windows Runtime écrits en C++/CX ont accès aux API Win32 faisant partie de l’UWP. Ces API Win32 sont implémentées par toutes les familles d’appareils Windows 10. Lier votre application avec Windowsapp.lib. Windowsapp.lib est une bibliothèque « PARAPLUIE » qui assure les exportations pour les API UWP. La liaison à Windowsapp.lib ajoute à votre application des dépendances de DLL qui sont présentes sur tous les familles d’appareils Windows 10.
+Une application UWP ou un composant Windows Runtime écrits en C++/CX ont accès aux API Win32 faisant partie de l’UWP. Ces API Win32 sont implémentées par toutes les familles d’appareils Windows10. Lier votre application avec Windowsapp.lib. Windowsapp.lib est une bibliothèque « PARAPLUIE » qui assure les exportations pour les API UWP. La liaison à Windowsapp.lib ajoute à votre application des dépendances de DLL qui sont présentes sur tous les familles d’appareils Windows10.
 
 Pour obtenir la liste complète des API Win32 disponibles pour les applications UWP, voir [Ensembles d’API pour les applications UWP](https://msdn.microsoft.com/library/windows/desktop/mt186421) et [DLL pour les applications UWP](https://msdn.microsoft.com/library/windows/desktop/mt186422).
 
@@ -279,8 +278,11 @@ Le nouveau tableau de bord unifié du Centre de développement Windows vous perm
 
 Pour savoir comment soumettre vos applications en vue de leur publication dans le Windows Store, voir [Utilisation du nouveau tableau de bord unifié du Centre de développement Windows](../publish/using-the-windows-dev-center-dashboard.md).
 
+## Voir aussi ##
+Pour obtenir une introduction plus générale, voir [Windows10 - Introduction au développement d’applications Windows pour appareils Windows10](https://msdn.microsoft.com/en-us/magazine/dn973012.aspx)
 
 
-<!--HONumber=Sep16_HO3-->
+
+<!--HONumber=Nov16_HO1-->
 
 

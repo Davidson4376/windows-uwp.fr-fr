@@ -4,14 +4,14 @@ ms.assetid: EFCF84D0-2F4C-454D-97DA-249E9EAA806C
 description: "La classe SystemMediaTransportControls permet à votre application d’utiliser les contrôles dédiés intégrés à Windows et de mettre à jour les métadonnées affichées par les contrôles concernant le média lu actuellement par votre application."
 title: "Contrôle manuel des contrôles de transport de média système"
 translationtype: Human Translation
-ms.sourcegitcommit: 2cf432bc9d6eb0e564b6d6aa7fdbfd78c7eef272
-ms.openlocfilehash: 6643f6bee55c1c9631ca20d2fe7eb6ac1c5ae3e2
+ms.sourcegitcommit: 34cb2fec3071add8617fe2bee2eaf50356611ac6
+ms.openlocfilehash: 471cf095109fc9bbfcb241dd6eb480603c3df655
 
 ---
 
 # Contrôle manuel des contrôles de transport de média système
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 À partir de Windows10, version1607, les applications UWP utilisant la classe [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) pour lire du contenu multimédia sont automatiquement intégrés avec les contrôles de transport de média système par défaut. Il s’agit de la méthode recommandée d’interaction avec les contrôles de transport de média système, pour la plupart des scénarios. Pour plus d’informations sur la personnalisation de l’intégration par défaut des contrôles de transport de média système avec **MediaPlayer**, consultez la section [Intégration avec les contrôles de transport de média système](integrate-with-systemmediatransportcontrols.md).
 
@@ -19,6 +19,9 @@ Certains scénarios peuvent nécessiter l’implémentation d’un contrôle man
 
 ## Installer les contrôles de transport
 Si vous utilisez **MediaPlayer** pour lire du contenu multimédia, vous pouvez obtenir une instance de la classe [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.SystemMediaTransportControls) en accédant à la propriété [**MediaPlayer.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.SystemMediaTransportControls). SI vous envisagez de contrôler manuellement les contrôles de transport de média système, vous devez désactiver l’intégration automatique fournie par **MediaPlayer** en définissant la propriété [**CommandManager.IsEnabled**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager.IsEnabled) sur False.
+
+> [!NOTE] 
+> Si vous désactivez l’élément [**MediaPlaybackCommandManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager) de l’instance [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) en définissant [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager.IsEnabled) sur false, le lien entre **MediaPlayer** et [**TransportControls**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement.TransportControls) fourni par **MediaPlayerElement** est rompu; autrement dit, les contrôles de transport intégrés ne contrôleront plus automatiquement la lecture du lecteur. Vous devrez donc implémenter vos propres contrôles pour pouvoir contrôler le **MediaPlayer**.
 
 [!code-cs[InitSMTCMediaPlayer](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetInitSMTCMediaPlayer)]
 
@@ -116,6 +119,6 @@ Pour plus d’informations sur la lecture de l’audio dans l’arrière-plan, c
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

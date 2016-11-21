@@ -4,8 +4,8 @@ title: "Accéder aux capteurs et aux périphériques à partir d’une tâche en
 description: "DeviceUseTrigger permet à votre application Windows universelle d’accéder aux capteurs et aux périphériques en arrière-plan, même si votre application au premier plan est suspendue."
 ms.assetid: B540200D-9FF2-49AF-A224-50877705156B
 translationtype: Human Translation
-ms.sourcegitcommit: 42697a185eb941d44714a682931b3e418a123ad1
-ms.openlocfilehash: dcaae6cace6a95cbd03af1571395656a8ee3a4fa
+ms.sourcegitcommit: 7d1c160f8b725cd848bf8357325c6ca284b632ae
+ms.openlocfilehash: 060cec50933860407679edbad5d2cd8a6d3e0396
 
 ---
 
@@ -20,7 +20,7 @@ ms.openlocfilehash: dcaae6cace6a95cbd03af1571395656a8ee3a4fa
 Pour accéder aux capteurs ou aux périphériques en arrière-plan, créez une tâche en arrière-plan qui utilise [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337). Pour voir comment procéder sur un PC, consultez l’article [Exemple de périphérique USB personnalisé](http://go.microsoft.com/fwlink/p/?LinkId=301975 ). Pour voir comment procéder sur un téléphone, consultez l’article [Exemple de capteurs en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=393307).
 
 > [!Important]
-> **DeviceUseTrigger** ne peut pas être utilisé avec des tâches en arrière-plan à processus unique. Les informations fournies dans cette rubrique s’appliquent uniquement aux tâches en arrière-plan qui s’exécutent dans un processus distinct.
+> **DeviceUseTrigger** ne peut pas être utilisé avec des tâches en arrière-plan intégrées au processus. Les informations fournies dans cette rubrique s’appliquent uniquement aux tâches en arrière-plan qui s’exécutent en dehors du processus.
 
 ## Présentation de la tâche d’appareil en arrière-plan
 
@@ -178,6 +178,6 @@ Outre [**Unregister**](https://msdn.microsoft.com/library/windows/apps/br229869)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -6,8 +6,8 @@ MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: Protection des informations Windows (WIP)
 translationtype: Human Translation
-ms.sourcegitcommit: 1070561ea95cd1d884303fdd476b40a9ec88e390
-ms.openlocfilehash: 2beec354ed7dbb3cc2d4cb502977ce028b4eaf1d
+ms.sourcegitcommit: 724d9edf67d0f73ceb3eb2ac323e0a0f42f2dd0d
+ms.openlocfilehash: f9cfa8d1d7ea4e78208a4fb3fc853884a13a676c
 
 ---
 
@@ -66,9 +66,6 @@ Entre autres choses, les applications d’entreprise compatibles partagent les q
 
   Par exemple elles empêchent l’envoi de données vers un point de terminaison réseau n’appartenant pas à l’entreprise, habillent les données sous forme chiffrée portable avant d’autoriser leur itinérance et demandent potentiellement (selon les paramètres de stratégie) l’autorisation à l’utilisateur avant de coller les données d’entreprise dans une application qui ne figure pas sur la liste d’autorisation.
 
-> **Remarque**La protection des fichiers WIP exploite les clés Rights Management Services (RMS), si elles sont configurées, dans la mesure où ces clés sont conservées d’un appareil à l’autre et, par conséquent, permettent l’itinérance des données protégées. En l’absence de clés RMS, ces API reviennent aux clés de réinitialisation sélective locales et limitent les fonctionnalités d’itinérance. Les données itinérantes chiffrées seront accessibles sur Windows de niveau inférieur et sur les appareils tiers via des applications RMS spécifiques à la plateforme fournies par Microsoft, ainsi qu’avec des applications tierces compatibles RMS.
-
-
 
 
 
@@ -79,6 +76,6 @@ Entre autres choses, les applications d’entreprise compatibles partagent les q
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

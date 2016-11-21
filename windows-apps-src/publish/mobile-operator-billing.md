@@ -4,8 +4,8 @@ Description: "Le Windows Store offre la facturation de l’opérateur mobile com
 title: "Facturation de l’opérateur mobile"
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 translationtype: Human Translation
-ms.sourcegitcommit: 3afac16fb79262dd6a75cd44804747d173e60edf
-ms.openlocfilehash: 114783cb93d1d49eb1b2cd0d5218a35318a02df0
+ms.sourcegitcommit: ac4cf2fd0514fba5446f11f07719f62bec75d960
+ms.openlocfilehash: 827a07f45c64722eaf8be25c4f3eb3fb03780494
 
 ---
 
@@ -16,16 +16,13 @@ Le Windows Store offre la facturation de l’opérateur mobile comme mode de pai
 
 > **Remarque** Si l’opérateur mobile d’un client offre la facturation de l’opérateur mobile, mais que le client n’a pas accès à cette option sur son appareil, voir les [étapes de dépannage](http://go.microsoft.com/fwlink/p/?LinkId=523993) suivantes.
 
- 
+Nous collaborons régulièrement avec les opérateurs mobiles pour développer la disponibilité de ce mode de paiement. Si vous souhaitez nous suggérer la prise en charge d’un opérateur mobile dont le nom est absent des listes ci-dessous, contactez l’opérateur mobile.
 
-Nous collaborons régulièrement avec les opérateurs mobiles pour développer la disponibilité de ce mode de paiement. Si vous souhaitez nous suggérer la prise en charge d'un opérateur mobile dont le nom est absent des listes ci-dessous, contactez l'opérateur mobile.
+## Facturation de l’opérateur mobile pour les appareils Windows10 et Xbox One
 
-## Facturation de l'opérateur mobile pour les appareils Windows 10
+Windows10 introduit une nouvelle implémentation de facturation de l’opérateur mobile. Cette implémentation est disponible pour tous les appareils exécutant Windows10, les téléphones exécutant Windows10 Mobile et les consoles Xbox One. Sur ces appareils, les clients peuvent ajouter la facturation de l’opérateur mobile comme mode de paiement et l’utiliser pour effectuer des achats. 
 
-
-Windows 10 introduit une nouvelle implémentation de facturation de l'opérateur mobile. Sur les appareils qui comprennent cette implémentation, les clients peuvent ajouter la facturation de l'opérateur mobile comme mode de paiement sur cet appareil. Cette implémentation est disponible pour les PC et tablettes qui exécutent Windows 10, et pour les téléphones qui exécutent Windows 10 Mobile.
-
-L'implémentation sur Windows 10 de la facturation de l'opérateur mobile est actuellement prise en charge par les opérateurs mobiles suivants.
+L’implémentation sur Windows10 de la facturation de l’opérateur mobile est actuellement prise en charge par les opérateurs mobiles suivants.
 
 | Pays/région  | Opérateurs mobiles |
 |-----------------|------------------|
@@ -34,6 +31,9 @@ L'implémentation sur Windows 10 de la facturation de l'opérateur mobile est ac
 | Hongrie         | Telenor          |
 | Italie           | Vent             |
 | Norvège          | Telenor          |
+| Pologne          | Orange           |
+| Russie          | Beeline          |
+| Suède          | Telenor          |
 | Suisse     | Swisscom         |
 | États-Unis   | Sprint           |
 | Royaume-Uni  | O2               |
@@ -43,7 +43,7 @@ L'implémentation sur Windows 10 de la facturation de l'opérateur mobile est ac
 ## Facturation de l’opérateur mobile pour appareils WindowsPhone8.x et Windows10Mobile
 
 
-Une implémentation héritée de la facturation de l'opérateur mobile est disponible pour les appareils Windows Phone 8.x. Certains opérateurs mobiles peuvent choisir d'inclure cette implémentation sur les téléphones conçus pour Windows 10 Mobile. Sur les appareils qui comprennent cette implémentation, la facturation de l’opérateur mobile est proposée automatiquement comme mode de paiement aux utilisateurs.
+Une implémentation héritée de la facturation de l'opérateur mobile est disponible pour les appareils Windows Phone 8.x. Certains opérateurs mobiles peuvent choisir d'inclure cette implémentation sur les téléphones conçus pour Windows10 Mobile. Sur les appareils qui comprennent cette implémentation, la facturation de l’opérateur mobile est proposée automatiquement comme mode de paiement aux utilisateurs.
 
 L'implémentation héritée de la facturation de l'opérateur mobile est prise en charge par les opérateurs mobiles suivants.
 
@@ -98,7 +98,6 @@ L'implémentation héritée de la facturation de l'opérateur mobile est prise e
 | Afrique du Sud         | Vodacom                                                            |
 | Espagne                | Movistar, Vodafone, Orange                                         |
 | Suède               | Telenor, Tele2                                                     |
-| Suisse          | Swisscom                                                           |
 | Émirats arabes unis | Etisalat, Du                                                       |
 | Royaume-Uni       | Everything Everywhere (T-Mobile), Telefonica (O2), Three, Vodafone |
 | États-Unis        | AT&amp;T, Sprint, T-Mobile, Verizon                                    |
@@ -118,6 +117,6 @@ Cette liste sera régulièrement mise à jour au fur et à mesure que nous déve
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

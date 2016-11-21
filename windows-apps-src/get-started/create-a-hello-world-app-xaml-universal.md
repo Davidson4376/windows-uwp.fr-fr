@@ -4,8 +4,8 @@ ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
 title: "Créer une application «Hello World» (XAML)"
 description: "Ce didacticiel vous apprend à utiliser le langage XAML (Extensible Application Markup Language) avec C# pour créer une application «Hello World» simple ciblant la plateforme Windows universelle (UWP) sur Windows10."
 translationtype: Human Translation
-ms.sourcegitcommit: 275c5cf8f8960f2be7cd9566e59eeb3bf4ee8f46
-ms.openlocfilehash: 272eb87e47c398218df85fa33f70bf9fbf240a3e
+ms.sourcegitcommit: 344ffda398c789f82973b5f08a0e3b791fc5ad10
+ms.openlocfilehash: 6cf960781862649588f361b6bfcd87605f3e8d55
 
 ---
 
@@ -109,21 +109,21 @@ Ajoutons un bouton à la page. Dans ce didacticiel, vous n’utiliserez qu’une
 
     Si vous regardez dans la fenêtre de code XAML, vous constaterez que le contrôle Button y a été aussi ajouté:
 
-    ```XAML
+ ```XAML
 <Button x:name="button" Content="Button" HorizontalAlignment="Left" Margin = "152,293,0,0" VerticalAlignment="Top"/>
-```
+ ```
 
 4.  Modifiez le texte du bouton.
 
     Cliquez dans l’affichage de code XAML et modifiez la valeur de Content en remplaçant «Button» par «Hello World!».
 
-    ```XAML
+```XAML
 <Button x:name="button" Content="Hello, world!" HorizontalAlignment="Left" Margin = "152,293,0,0" VerticalAlignment="Top"/>
 ```
 
-    Le bouton figurant dans l’aire de conception est alors mis à jour pour présenter le nouveau texte.
+Le bouton figurant dans l’aire de conception est alors mis à jour pour présenter le nouveau texte.
 
-    ![Fenêtre Explorateur de solutions](images/win10-cs-07.png)
+![Fenêtre Explorateur de solutions](images/win10-cs-07.png)
 
 ## Étape 3: Démarrer l’application
 
@@ -177,7 +177,7 @@ Félicitations! Vous venez de créer votre première application UWP, même si c
 
 ### Démarrer l’application sur un émulateur d’appareil mobile
 
-Votre application s’exécute sur n’importe quel appareil Windows 10. Examinons donc son aspect sur un Windows Phone.
+Votre application s’exécute sur n’importe quel appareil Windows10. Examinons donc son aspect sur un Windows Phone.
 
 Outre les options de débogage sur un ordinateur de bureau, Visual Studio offre des options de déploiement et de débogage de votre application sur un appareil mobile physique connecté à l’ordinateur ou sur un émulateur d’appareil mobile. Vous pouvez choisir parmi plusieurs émulateurs d’appareil correspondant à différentes configurations de mémoire et d’affichage.
 
@@ -253,10 +253,10 @@ Quand vous exécutez l’application et que vous cliquez sur le bouton, votre or
 ## Récapitulatif
 
 
-Félicitations ! Vous venez de créer votre première application pour Windows 10 et UWP.
+Félicitations! Vous venez de créer votre première application pour Windows10 et UWP. Prêt pour [l’étape suivante](learn-more.md)?
 
 
 
-<!--HONumber=Sep16_HO1-->
+<!--HONumber=Nov16_HO1-->
 
 

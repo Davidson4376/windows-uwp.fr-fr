@@ -4,30 +4,27 @@ ms.assetid: 3569C505-8D8C-4D85-B383-4839F13B2466
 description: "Utilisez cette méthode pour renouveler une clé du Windows Store."
 title: "Renouveler une clé d’ID du Windows Store"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: 1a2cb625f95a5ad8e94911ead2402cb2589e209a
+ms.sourcegitcommit: ac9c921c7f39a1bdc6dc9fc9283bc667f67cd820
+ms.openlocfilehash: 4e0ca6fe88218faef1f7c9192a5e19569e9c00b4
 
 ---
 
 # Renouveler une clé d’ID du WindowsStore
 
 
-
-
-Utilisez cette méthode pour renouveler une clé du Windows Store. Lorsque vous générez une clé d’ID du Windows Store en appelant la méthode [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) ou [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675), la clé est valide pendant 90 jours. Après l’expiration de la clé, vous pouvez utiliser la clé arrivée à expiration pour en renégocier une nouvelle à l’aide de cette méthode.
+Utilisez cette méthode pour renouveler une clé du Windows Store. Lorsque vous [générez une clé d’ID du Windows Store](view-and-grant-products-from-a-service.md#step-4), la clé est valide pendant 90jours. Après l’expiration de la clé, vous pouvez utiliser la clé arrivée à expiration pour en renégocier une nouvelle à l’aide de cette méthode.
 
 ## Conditions préalables
 
 
 Pour utiliser cette méthode, vous devez disposer des éléments suivants:
 
--   un jeton d’accès AzureAD créé avec l’URI d’audience `https://onestore.microsoft.com`;
--   une clé d’ID du Windows Store arrivée à expiration, qui a été générée en appelant la méthode [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) ou [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675) à partir du code côté client de votre application.
+* un jeton d’accès AzureAD créé avec l’URI d’audience `https://onestore.microsoft.com`;
+* La clé expirée d’ID du WindowsStore [générée à partir du code côté client de votre application](view-and-grant-products-from-a-service.md#step-4).
 
 Pour plus d’informations, voir [Afficher et octroyer des produits à partir d’un service](view-and-grant-products-from-a-service.md).
 
 ## Requête
-
 
 ### Syntaxe de la requête
 
@@ -119,6 +116,6 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

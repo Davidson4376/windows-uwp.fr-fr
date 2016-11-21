@@ -4,26 +4,26 @@ title: "Déboguer une tâche en arrière-plan"
 description: "Découvrez comment déboguer une tâche en arrière-plan, notamment dans le cadre de son activation et du suivi de débogage dans le journal des événements Windows."
 ms.assetid: 24E5AC88-1FD3-46ED-9811-C7E102E01E9C
 translationtype: Human Translation
-ms.sourcegitcommit: c05c004f99e5892291aaca0dcc85c176a821d351
-ms.openlocfilehash: f7b311cef1d6a28b472f47985ebca437b7a80e3d
+ms.sourcegitcommit: e094ed9e0110fee33275721c4b6547ba53c1da3e
+ms.openlocfilehash: c4717ac41992d9a0c04d098067881ce5ca6952f0
 
 ---
 
 # Déboguer une tâche en arrière-plan
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **API importantes**
 -   [Windows.ApplicationModel.Background](https://msdn.microsoft.com/library/windows/apps/br224847)
 
 Découvrez comment déboguer une tâche en arrière-plan et assurer le suivi de son activation ainsi que de son débogage dans le journal des événements Windows.
 
-## Débogage de tâches en arrière-plan à processus unique ou à plusieurs processus
-Cette rubrique concerne principalement les tâches en arrière-plan qui s’exécutent dans un processus distinct que celui de l’application hôte. Si vous déboguez une tâche en arrière-plan à processus unique, vous n’avez pas une tâche en arrière-plan. Vous pouvez définir un point d’arrêt sur **OnBackgroundActivated()** (où votre code en arrière-plan à processus unique s’exécute) et consulter l’étape2 dans la section [Déclencher des tâches en arrière-plan manuellement pour déboguer le code de la tâche en arrière-plan](#Trigger-background-tasks-manually-to-debug-background-task-code), pour obtenir des instructions sur le déclenchement de votre code en arrière-plan à exécuter.
+## Déboguer des tâches en arrière-plan hors processus ou in-process
+Cette rubrique concerne principalement les tâches en arrière-plan qui s’exécutent dans un processus distinct que celui de l’application hôte. Si vous déboguez une tâche en arrière-plan in-process, vous n’avez pas de projet de tâche en arrière-plan distinct. Vous pouvez définir un point d’arrêt sur **OnBackgroundActivated()** (où votre code en arrière-plan in-process s’exécute) et consulter l’étape2 dans la section [Déclencher des tâches en arrière-plan manuellement pour déboguer le code de la tâche en arrière-plan](#Trigger-background-tasks-manually-to-debug-background-task-code), pour obtenir des instructions sur le déclenchement de votre code en arrière-plan à exécuter.
 
 ## Vérifier que le projet de tâche en arrière-plan est configuré comme il se doit
 
-Cette rubrique part du principe que vous disposez d’une application avec une tâche en arrière-plan à déboguer. La suite concerne les tâches en arrière-plan qui s’exécutent dans un processus distinct et non les tâches en arrière-plan à processus unique.
+Cette rubrique part du principe que vous disposez d’une application avec une tâche en arrière-plan à déboguer. La suite concerne les tâches en arrière-plan qui s’exécutent hors processus et non les tâches en arrière-plan in-process.
 
 -   En C# etC++, vérifiez que le projet principal fait référence au projet de tâche en arrière-plan. En l’absence de cette référence, la tâche en arrière-plan n’est pas incluse dans le package d’application.
 -   En C# et C++, vérifiez que le **Output type** du projet de tâches en arrière-plan est «Composant Windows Runtime».
@@ -33,9 +33,9 @@ Cette rubrique part du principe que vous disposez d’une application avec une t
 
 Les tâches en arrière-plan peuvent être déclenchées manuellement par le biais de Microsoft Visual Studio. Vous pouvez ensuite exécuter pas à pas le code et le déboguer.
 
-1.  En C#, insérez un point d’arrêt dans la méthode Run de la classe en arrière-plan (pour les tâches en arrière-plan à processus unique, placez le point d’arrêt dans App.OnBackgroundActivated()) et/ou écrivez la sortie de débogage à l’aide de [**System.Diagnostics**](https://msdn.microsoft.com/library/windows/apps/xaml/hh441592.aspx).
+1.  En C#, insérez un point d’arrêt dans la méthode Run de la classe en arrière-plan (pour les tâches en arrière-plan in-process, placez le point d’arrêt dans App.OnBackgroundActivated()) et/ou écrivez la sortie de débogage à l’aide de [**System.Diagnostics**](https://msdn.microsoft.com/library/windows/apps/xaml/hh441592.aspx).
 
-    En C++, insérez un point d’arrêt dans la fonction Run de la classe en arrière-plan (pour les tâches en arrière-plan à processus unique, placez le point d’arrêt dans App.OnBackgroundActivated()) et/ou écrivez la sortie de débogage à l’aide de [**OutputDebugString**](https://msdn.microsoft.com/library/windows/desktop/aa363362).
+    En C++, insérez un point d’arrêt dans la fonction Run de la classe en arrière-plan (pour les tâches en arrière-plan in-process, placez le point d’arrêt dans App.OnBackgroundActivated()) et/ou écrivez la sortie de débogage à l’aide de [**OutputDebugString**](https://msdn.microsoft.com/library/windows/desktop/aa363362).
 
 2.  Exécutez votre application dans le débogueur, puis déclenchez la tâche en arrière-plan à l’aide de la barre d’outils **Événements de cycle de vie**. Ce menu déroulant affiche le nom des tâches en arrière-plan qu’il est possible d’activer à l’aide de VisualStudio.
 
@@ -52,7 +52,7 @@ Les tâches en arrière-plan peuvent être déclenchées manuellement par le bia
 ## Déboguer l’activation de la tâche en arrière-plan
 
 > [!NOTE]
-> Cette section concerne les tâches en arrière-plan qui s’exécutent dans un processus distinct et non les tâches en arrière-plan à processus unique.
+> Cette section concerne les tâches en arrière-plan qui s’exécutent hors processus et non les tâches en arrière-plan in-process.
 
 L’activation de la tâche en arrière-plan dépend de troiséléments:
 
@@ -102,8 +102,8 @@ Pour plus d’informations sur l’utilisation de Visual Studio pour déboguer u
 
 ## Rubriques connexes
 
-* [Créer et inscrire une tâche en arrière-plan](create-and-register-a-background-task.md)
-* [Créer et inscrire une tâche en arrière-plan à processus unique](create-and-register-a-singleprocess-background-task.md)
+* [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-an-outofproc-background-task.md)
+* [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md)
 * [Inscrire une tâche en arrière-plan](register-a-background-task.md)
 * [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md)
 * [Recommandations pour les tâches en arrière-plan](guidelines-for-background-tasks.md)
@@ -116,6 +116,6 @@ Pour plus d’informations sur l’utilisation de Visual Studio pour déboguer u
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

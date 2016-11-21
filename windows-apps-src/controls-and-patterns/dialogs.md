@@ -5,8 +5,8 @@ title: "Boîtes de dialogue et menus volants"
 label: Dialogs
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: ff9940c06276165dc139e120c4e9cdeb005ff125
+ms.sourcegitcommit: 86f28a0509ead0632c942c6746fea19acac54931
+ms.openlocfilehash: 6b0b680cd85d6f57c3ca06758ab7dcaef3f7ffe5
 
 ---
 # Boîtes de dialogue et menus volants
@@ -48,7 +48,7 @@ Les boîtes de dialogue et les menus volants sont des éléments temporaires d�
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
    <p><b>Boîtes de dialogue</b> <br/><br/>
-   ![Exemple de boîte de dialogue à plusieurs boutons](images/controls_dialog_twobutton.png)</p>
+    ![Exemple de boîte de dialogue](images/dialogs/dialog-delete-file-example.png)</p>
 <p>Les boîtes de dialogue sont des superpositions d’interface utilisateur modales qui fournissent des informations contextuelles sur l’application. Les boîtes de dialogue bloquent les interactions avec la fenêtre de l’application jusqu’à ce qu’elles soient masquées explicitement. Elles exigent souvent une forme d’action de la part de l’utilisateur.   
 </p><br/>
 
@@ -122,7 +122,7 @@ A flyout is a light dismiss control, meaning that users can choose from a variet
 <li>Collecter des informations supplémentaires nécessaires pour pouvoir effectuer une action.</li>
 <li>Afficher des informations qui ne sont pas pertinentes le reste du temps. Par exemple, dans une application de galerie de photos, quand l’utilisateur clique sur une vignette d’image, vous pouvez utiliser un menu volant pour afficher une version agrandie de l’image.</li>
 <li>Afficher des avertissements et des confirmations, notamment ceux qui sont liés à des actions potentiellement destructrices.</li>
-<li>Afficher plus d’informations, comme des détails ou des descriptions plus longues concernant un élément de la page.</li>
+<li>Affichage d’informations supplémentaires, comme des détails ou des descriptions plus longues sur un élément de la page.</li>
 </ul></p>
   </div>
 </div>
@@ -130,7 +130,8 @@ A flyout is a light dismiss control, meaning that users can choose from a variet
 
 
 
-## Instructions d’utilisation des boîtes de dialogue
+## Boîtes de dialogue
+### Recommandations générales
 
 -   Identifiez clairement le problème ou l’objectif de l’utilisateur dans la première ligne du texte de la boîte de dialogue.
 -   Le titre de la boîte de dialogue correspond à l’instruction principale. Il est facultatif.
@@ -146,7 +147,23 @@ A flyout is a light dismiss control, meaning that users can choose from a variet
 -   Les boîtes de dialogue d’erreur incluent un message d’erreur, ainsi que les informations pertinentes. Le seul bouton utilisé dans une boîte de dialogue d’erreur doit être du type « Fermer », ou similaire.
 -   N’utilisez pas de boîtes de dialogue pour les erreurs qui sont liées à un emplacement spécifique de la page, telles que les erreurs de validation (dans les champs de mot de passe, par exemple). Utilisez plutôt le canevas de l’application afin d’afficher les erreurs insérées.
 
-## Créer une boîte de dialogue
+### Boîtes de dialogue de confirmation (OK/Annuler)
+Une boîte de dialogue de confirmation permet aux utilisateurs de confirmer qu’ils souhaitent effectuer une action. Ils peuvent confirmer l’action ou l’annuler.  
+Une boîte de dialogue de confirmation classique comprend deux boutons: un bouton d’affirmation («OK») et un bouton d’annulation.  
+
+<ul>
+    <li>
+        <p>En règle générale, le bouton d’affirmation doit se trouver sur la gauche (bouton principal) et le bouton Annuler (bouton secondaire) sur la droite.</p>
+         ![Boîte de dialogue OK/Annuler](images/dialogs/dialog-delete-file-example.png)
+        
+    </li>
+    <li>Comme indiqué dans la section Recommandations générales, utilisez des boutons dont le texte identifie des réponses spécifiques au contenu ou à l’instruction principale.
+    </li>
+</ul>
+
+> Certaines plateformes placent le bouton d’affirmation à droite, et non à gauche. Pourquoi est-il conseillé de le placer sur la gauche?  Si vous partons du principe que la plupart des utilisateurs sont droitiers et qu’ils tiennent leur téléphone de la main droite, ils trouveront certainement plus confortable d’appuyer sur le bouton lorsqu’il se trouve à gauche, autrement dit dans le prolongement du pouce. Les boutons placés à droite de l’écran obligent l’utilisateur à rentrer leur pouce, ce qui représente une position moins confortable.
+
+### Créer une boîte de dialogue
 Pour créer une boîte de dialogue, vous utilisez la [classe ContentDialog](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx). Vous pouvez créer une boîte de dialogue dans le code ou dans le balisage. Bien qu’il soit généralement plus facile de définir des éléments d’interface utilisateur en XAML, dans le cas d’une boîte de dialogue simple, il est plus facile d’utiliser du code normal. Cet exemple crée une boîte de dialogue pour informer l’utilisateur qu’il n’y a pas de connexion Wi-Fi, puis utilise la méthode [ShowAsync](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialog.showasync.aspx) pour l’afficher.
 
 ```csharp
@@ -174,23 +191,23 @@ private async void displayDeleteFileDialog()
     {
         Title = "Delete file permanently?",
         Content = "If you delete this file, you won't be able to recover it. Do you want to delete it?",
-        PrimaryButtonText = "Cancel",
-        SecondaryButtonText = "Delete file permanently"
+        PrimaryButtonText = "Delete",
+        SecondaryButtonText = "Cancel"
     };
 
     ContentDialogResult result = await deleteFileDialog.ShowAsync();
     
-    // Delete the file if the user clicked the second button. 
+    // Delete the file if the user clicked the primary button. 
     /// Otherwise, do nothing. 
-    if (result == ContentDialogResult.Secondary)
+    if (result == ContentDialogResult.Primary)
     {
         // Delete the file. 
     }
 }
 ```
 
-
-##  Créer un menu volant
+## Menus volants
+###  Créer un menu volant
 
 Un menu volant est un conteneur ouvert qui peut afficher l’interface utilisateur arbitraire comme étant son contenu.  
 
@@ -278,7 +295,7 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 }
 ````
 
-## Appliquer un style à un menu volant
+### Appliquer un style à un menu volant
 Pour appliquer un style à un menu volant, modifiez sa propriété [FlyoutPresenterStyle](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flyout.flyoutpresenterstyle.aspx). Cet exemple montre un paragraphe d’habillage de texte et rend le bloc de texte accessible à un lecteur d’écran.
 
 ````xaml
@@ -308,6 +325,6 @@ Pour appliquer un style à un menu volant, modifiez sa propriété [FlyoutPresen
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

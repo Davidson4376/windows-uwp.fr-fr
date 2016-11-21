@@ -4,14 +4,14 @@ ms.assetid: 9BA3F85A-970F-411C-ACB1-B65768B8548A
 description: "Cet article décrit comment afficher rapidement le flux d’aperçu de l’appareil photo sur une page XAML dans une application UWP."
 title: "Afficher l’aperçu de l’appareil photo"
 translationtype: Human Translation
-ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
-ms.openlocfilehash: 8330ee43089207faab5f6f72e2ac7b32aada72ce
+ms.sourcegitcommit: 6aacd5ef8043c9c89116a1d287174210f02f7d62
+ms.openlocfilehash: 5eb53d1527f2cd002dfb66110f1f1f3618458b3a
 
 ---
 
 # Afficher l’aperçu de l’appareil photo
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cet article décrit comment afficher rapidement le flux d’aperçu de l’appareil photo sur une page XAML dans une application de plateforme Windows universelle (UWP). La création d’une application qui capture des photos et des vidéos à l’aide de l’appareil photo nécessite que vous effectuiez des tâches telles que la gestion de l’orientation de l’appareil et de la caméra ou la définition des options de codage pour le fichier capturé. Pour certains scénarios d’application, vous pouvez simplement afficher le flux d’aperçu à partir de l’appareil photo sans tenir compte de ces autres considérations. Cet article vous montre comment effectuer cette opération avec un minimum de code. Vous devez toujours arrêter le flux d’aperçu correctement lorsque vous avez fini de l’utiliser en suivant les étapes ci-dessous.
 
@@ -65,8 +65,8 @@ Connectez **MediaCapture** à **CaptureElement** en définissant la propriété 
 Lorsque vous avez fini d’utiliser le flux d’aperçu, vous devez toujours arrêter le flux et supprimer correctement les ressources associées afin de garantir que l’appareil photo est disponible pour d’autres applications sur l’appareil. Les étapes nécessaires à l’arrêt du flux d’aperçu sont les suivantes:
 
 -   Si l’aperçu est activé sur l’appareil photo, appelez [**StopPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226622) afin d’arrêter le flux d’aperçu. Une exception est levée si vous appelez **StopPreviewAsync** alors que l’aperçu n’est pas exécuté.
--   Définissez la propriété [**Source**](https://msdn.microsoft.com/library/windows/apps/br209280) de **CaptureElement** sur null. Utilisez [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Core.CoreDispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority,Windows.UI.Core.DispatchedHandler) pour garantir que cet appel est exécuté sur le thread d’interface utilisateur.
--   Appelez la méthode [**Dispose**](https://msdn.microsoft.com/library/windows/apps/dn278858) de l’objet **MediaCapture** pour libérer l’objet. Là encore, utilisez [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Core.CoreDispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority,Windows.UI.Core.DispatchedHandler) pour garantir que cet appel est exécuté sur le thread d’interface utilisateur.
+-   Définissez la propriété [**Source**](https://msdn.microsoft.com/library/windows/apps/br209280) de **CaptureElement** sur null. Utilisez [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.core.coredispatcher.runasync.aspx) pour vous assurer que cet appel est exécuté sur le thread de l’interface utilisateur.
+-   Appelez la méthode [**Dispose**](https://msdn.microsoft.com/library/windows/apps/dn278858) de l’objet **MediaCapture** pour libérer l’objet. Là encore, utilisez [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.core.coredispatcher.runasync.aspx) pour vous assurer que cet appel est exécuté sur le thread de l’interface utilisateur.
 -   Définissez la variable membre **MediaCapture** sur null.
 -   Appelez la méthode [**RequestRelease**](https://msdn.microsoft.com/library/windows/apps/Windows.System.Display.DisplayRequest.RequestRelease) pour activer l’extinction de l’écran en cas d’inactivité.
 
@@ -93,6 +93,6 @@ Dans le gestionnaire d’événements **Suspending**, vérifiez que la page est 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

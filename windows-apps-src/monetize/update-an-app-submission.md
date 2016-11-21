@@ -4,8 +4,8 @@ ms.assetid: E8751EBF-AE0F-4107-80A1-23C186453B1C
 description: "Utilisez cette méthode de l’API de soumission du Windows Store pour mettre à jour une soumission d’application existante."
 title: "Mettre à jour une soumission d’application à l’aide de l’API de soumission du Windows Store"
 translationtype: Human Translation
-ms.sourcegitcommit: 178b70db1583790c174d65e060c8bce6e4f69243
-ms.openlocfilehash: ad1c565f1ec84127b2ac689cc7cb23d2b39764ef
+ms.sourcegitcommit: 819843c8ba1e4a073f70f7de36fe98dd4087cdc6
+ms.openlocfilehash: 8b1a6da557b966e69345e90c48f90a6df0f27442
 
 ---
 
@@ -16,9 +16,11 @@ ms.openlocfilehash: ad1c565f1ec84127b2ac689cc7cb23d2b39764ef
 
 Utilisez cette méthode de l’API de soumission du Windows Store pour mettre à jour une soumission d’application existante. Après avoir mis à jour une soumission à l’aide de cette méthode, vous devez [valider la soumission](commit-an-app-submission.md) en vue de son intégration et de sa publication.
 
-Pour plus d’informations sur la façon dont cette méthode s’inscrit dans le processus de création d’une soumission d’application à l’aide de l’API de soumission du Windows Store, voir [Gérer les soumissions d’application](manage-app-submissions.md).
+Pour plus d’informations sur la façon dont cette méthode s’inscrit dans le processus de création d’une soumission d’application à l’aide de l’API de soumission du Windows Store, voir [Gérer les soumissions d’applications](manage-app-submissions.md).
 
-## Conditions préalables
+>**Important**&nbsp;&nbsp;Microsoft va bientôt changer le modèle de données de tarification pour les soumissions d’application dans le Centre de développement Windows. Une fois cette modification implémentée, la ressource **Pricing** dans le corps de la demande de cette méthode sera ignorée et vous ne pourrez temporairement pas modifier les données relatives à la période d’évaluation, à la tarification et à la vente d’une soumission d’application à l’aide de cette méthode. Nous allons mettre à jour l’API de soumission du Windows Store à l’avenir pour introduire une nouvelle façon d’accéder par programmation aux informations de tarification des soumissions d’application. Pour plus d’informations, voir la [ressource Pricing](manage-app-submissions.md#pricing-object).
+
+## Prérequis
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
 
@@ -76,7 +78,8 @@ Le corps de la requête contient les paramètres suivants.
 | meetAccessibilityGuidelines           |    booléen           |  Indique si votre application a fait l’objet de tests pour voir si elle est conforme aux recommandations d’accessibilité. Pour plus d’informations, voir [Déclarations d’application](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).      |   
 | notesForCertification           |  chaîne  |   Contient des [notes de certification](https://msdn.microsoft.com/windows/uwp/publish/notes-for-certification) pour votre application.    |    
 | applicationPackages           |   tableau  | Contient des objets qui fournissent des détails sur chaque package de la soumission. Pour plus d’informations, voir la section [Package d’application](manage-app-submissions.md#application-package-object). Quand vous appelez cette méthode pour mettre à jour une soumission d’application, seules les valeurs *fileName*, *fileStatus*, *minimumDirectXVersion* et *minimumSystemRam* de ces objets sont nécessaires dans le corps de la requête. Les autres valeurs sont renseignées par le Centre de développement.   |    
-| enterpriseLicensing           |  chaîne  |  Une des [valeur de gestion des licences d’entreprise](#enterprise-licensing) qui indiquent le comportement de la gestion des licences d’entreprise pour l’application.  |    
+| packageDeliveryOptions    | objet  | Contient les paramètres de déploiement de package progressif et de mise à jour obligatoire de la soumission. Pour plus d’informations, consultez [Objet options de remise du package](manage-app-submissions.md#package-delivery-options-object).  |
+| enterpriseLicensing           |  chaîne  |  Une des [valeur de gestion des licences d’entreprise](manage-app-submissions.md#enterprise-licensing) qui indiquent le comportement de la gestion des licences d’entreprise pour l’application.  |    
 | allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  booléen   |  Indique si Microsoft est autorisé à [rendre l’application disponible pour les futures familles d’appareils Windows10](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families).    |    
 | allowTargetFutureDeviceFamilies           | booléen   |  Indique si votre application est autorisée à [cibler les futures familles d’appareils Windows10](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families).     |    
 
@@ -144,6 +147,16 @@ Content-Type: application/json
       "minimumSystemRam": "None"
     }
   ],
+  "packageDeliveryOptions": {
+    "packageRollout": {
+        "isPackageRollout": false,
+        "packageRolloutPercentage": 0,
+        "packageRolloutStatus": "PackageRolloutNotStarted",
+        "fallbackSubmissionId": "0"
+    },
+    "isMandatoryUpdate": false,
+    "mandatoryUpdateEffectiveDate": "1601-01-01T00:00:00.0000000Z"
+  },
   "enterpriseLicensing": "Online",
   "allowMicrosoftDecideAppAvailabilityToFutureDeviceFamilies": true,
   "allowTargetFutureDeviceFamilies": {
@@ -237,6 +250,16 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
       ]
     }
   ],
+  "packageDeliveryOptions": {
+    "packageRollout": {
+        "isPackageRollout": false,
+        "packageRolloutPercentage": 0,
+        "packageRolloutStatus": "PackageRolloutNotStarted",
+        "fallbackSubmissionId": "0"
+    },
+    "isMandatoryUpdate": false,
+    "mandatoryUpdateEffectiveDate": "1601-01-01T00:00:00.0000000Z"
+  },
   "enterpriseLicensing": "Online",
   "allowMicrosoftDecideAppAvailabilityToFutureDeviceFamilies": true,
   "allowTargetFutureDeviceFamilies": {
@@ -273,6 +296,6 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

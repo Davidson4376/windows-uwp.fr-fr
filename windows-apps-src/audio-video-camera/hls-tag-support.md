@@ -4,8 +4,8 @@ ms.assetid:
 description: "Cet article répertorie les balises du protocole HTTP Live Streaming (HLS) prises en charge pour les applications UWP."
 title: Prise en charge des balises HTTP Live Streaming (HLS)
 translationtype: Human Translation
-ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
-ms.openlocfilehash: 779e5d0da7186a6f94251b89cf27636170923d5c
+ms.sourcegitcommit: 3d61f5272e4d11acfb7e0a85436ca60ba458dcae
+ms.openlocfilehash: a561f11a1638d5fea21d1d3b3f8bc47f71271f3f
 
 ---
 
@@ -16,7 +16,7 @@ Le tableau suivant répertorie les balises HLS prises en charge pour les applica
 > Les balises personnalisées qui démarrent avec le préfixe «X» sont accessibles en tant que métadonnées synchronisées, tel que décrit dans l’article [Éléments, playlists et pistes multimédias](media-playback-with-mediasource.md).
 
 |Balise |Introduite dans la version du protocole HLS|Version brouillon du document du protocole HLS|Requis sur le client|Version de juillet de Windows10|Windows10, version1511|Windows10, version1606 |
-|---------------------|-----------|--------------|---------|--------------|
+|---------------------|-----------|--------------|---------|--------------|-----|-----|
 |4.3.1.  Balises de base                 |             |                   |         |             |     |    |
 | 4.3.1.1.  EXTM3U |1|0|OBLIGATOIRE|Prise en charge|Pris en charge|Prise en charge|
 | 4.3.1.2.  EXT-X-VERSION |2|3|OBLIGATOIRE|Prise en charge|Pris en charge|Prise en charge
@@ -86,6 +86,6 @@ Le tableau suivant répertorie les balises HLS prises en charge pour les applica
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

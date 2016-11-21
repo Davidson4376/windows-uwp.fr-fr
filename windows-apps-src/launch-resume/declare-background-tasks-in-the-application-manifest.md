@@ -4,15 +4,15 @@ title: "Déclarer des tâches en arrière-plan dans le manifeste de l’applicat
 description: "Activez l’utilisation des tâches en arrière-plan en les déclarant comme extensions dans le manifeste de l’application."
 ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
 translationtype: Human Translation
-ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
-ms.openlocfilehash: 6ec298a956673c114d34d64b026394ece2c33506
+ms.sourcegitcommit: 7d1c160f8b725cd848bf8357325c6ca284b632ae
+ms.openlocfilehash: b3518780600b9fe8f9be5af48eb5ee6022ec350f
 
 ---
 
 # Déclarer des tâches en arrière-plan dans le manifeste de l’application
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -23,9 +23,9 @@ ms.openlocfilehash: 6ec298a956673c114d34d64b026394ece2c33506
 Activez l’utilisation des tâches en arrière-plan en les déclarant comme extensions dans le manifeste de l’application.
 
 > [!Important]
->  Cet article concerne uniquement les tâches en arrière-plan qui s’exécutent dans un processus distinct. Les tâches en arrière-plan à processus unique ne sont pas déclarées dans le manifeste.
+>  Cet article est spécifique aux tâches en arrière-plan hors processus. Les tâches en arrière-plan in-process ne sont pas déclarées dans le manifeste.
 
-Les tâches en arrière-plan qui s’exécutent dans un processus distinct doivent être déclarées dans le manifeste de l’application. Autrement, votre application n’est pas en mesure de les inscrire (une exception est levée). De plus, les tâches en arrière-plan doivent être déclarées dans le manifeste de l’application pour réussir la certification.
+Les tâches en arrière-plan hors processus doivent être déclarées dans le manifeste de l’application. Autrement, votre application n’est pas en mesure de les inscrire (une exception est levée). De plus, les tâches en arrière-plan hors processus doivent être déclarées dans le manifeste de l’application pour réussir la certification.
 
 Cette rubrique suppose que vous avez créé une ou plusieurs classes de tâche en arrière-plan et que votre application inscrit chaque tâche en arrière-plan à exécuter en réponse à un déclencheur au minimum.
 
@@ -212,6 +212,6 @@ Voici un exemple de code XML déclarant une tâche en arrière-plan qui s’exé
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

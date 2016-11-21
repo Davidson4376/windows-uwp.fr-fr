@@ -20,14 +20,14 @@ Utilisez cette méthode de l’API de soumission du Windows Store pour supprimer
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
 
-* Si ce n’est pas déjà le cas, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
+* Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
 * [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 
 >**Remarque**&nbsp;&nbsp;Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
 
 ## Requête
 
-Cette méthode présente la syntaxe suivante. Voir les sections suivantes pour obtenir des exemples d’utilisation et une description de l’en-tête et du corps de la requête.
+Cette méthode présente la syntaxe suivante. Consultez les sections suivantes pour obtenir des exemples d’utilisation et une description de l’en-tête et du corps de la requête.
 
 | Méthode | URI de requête                                                      |
 |--------|------------------------------------------------------------------|
@@ -77,7 +77,7 @@ En cas de succès, cette méthode retourne un corps de réponse vide.
 
 Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’erreur HTTP suivants.
 
-| Code d’erreur |  Description   |
+| Error code |  Description   |
 |--------|------------------|
 | 400  | Les paramètres de la requête ne sont pas valides. |
 | 404  | La soumission spécifiée est introuvable. |
@@ -88,7 +88,7 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 ## Rubriques connexes
 
 * [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md)
-* [Gérer les soumissions de versions d’évaluation du package](manage-flight-submissions.md)
+* [Gérer les soumissions de versions d’évaluation de package](manage-flight-submissions.md)
 * [Obtenir une soumission de version d’évaluation du package](get-a-flight-submission.md)
 * [Créer une soumission de version d’évaluation du package](create-a-flight-submission.md)
 * [Valider une soumission de version d’évaluation de package](commit-a-flight-submission.md)

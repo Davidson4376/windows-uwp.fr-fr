@@ -1,41 +1,40 @@
 ---
 author: TylerMSFT
 Description: "L’API JavaScript pour Microsoft Examen vous permet de sécuriser les évaluations. L’application Examen inclut un navigateur sécurisé qui empêche les étudiants d’utiliser un autre ordinateur ou des ressources Internet pendant l’examen."
-title: API JavaScript de Microsoft Examen.
+title: API JavaScript Examen.
 translationtype: Human Translation
-ms.sourcegitcommit: f2838d95da66eda32d9cea725a33fc4084d32359
-ms.openlocfilehash: d7f185e83e81583fd6d7920e5412f76f3a97edd0
+ms.sourcegitcommit: 7f578d73a9a625b0ac7d9c10f6dc8118c36b07d0
+ms.openlocfilehash: c2e1832489d36f4ccbeae4e2f67e18caf941a68f
 
 ---
 
-# API JavaScript de Microsoft Examen
+# API JavaScript Examen
 
-**Examen** est une application de navigateur qui génère des évaluations en ligne dans un environnement verrouillé pour des examens dont les enjeux sont importants. Elle prend en charge la norme d’API de navigateur SBAC pour les examens de tronc commun dont les enjeux sont importants et vous permet de vous concentrer sur le contenu de l’évaluation plutôt que sur la façon de verrouiller Windows.
+[Examen](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10) est une application de navigateur qui génère des évaluations en ligne dans un environnement verrouillé pour des examens dont les enjeux sont importants. Elle prend en charge la norme d’API de navigateur SBAC pour les examens de tronc commun dont les enjeux sont importants et vous permet de vous concentrer sur le contenu de l’évaluation plutôt que sur la façon de verrouiller Windows.
 
-L’application **Examen**, optimisée par le navigateur Edge de Microsoft, fournit une API JavaScript que les applications web peuvent utiliser pour proposer une expérience verrouillée pour passer des examens.
+L’application Examen, optimisée par le navigateur Edge de Microsoft, intègre une API JavaScript que les applications web peuvent utiliser pour proposer une expérience verrouillée pour passer des examens.
 
-L’API (basée sur l’[API Common Core SBAC](http://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf)) fournit la conversion de texte par synthèse vocale et la capacité de demander si l’appareil est verrouillé, quels sont les processus système et utilisateur en cours d’exécution, etc.
+L’API (basée sur [l’API Common Core SBAC](http://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf)) fournit une fonction de conversion de texte par synthèse vocale, avec la possibilité de demander si l’appareil est verrouillé, quels sont les processus système et utilisateur en cours d’exécution, etc.
 
 Voir les [Informations techniques de référence sur l’application Examen](https://technet.microsoft.com/en-us/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396) pour plus d’informations sur l’application elle-même.
 
-**Important**
-
-Les API ne fonctionnent pas dans une session à distance.  
-L’application Examen ne gère pas les demandes de nouvelle fenêtre HTTP.
+> [!Important]
+> Ces API ne fonctionnent pas dans une session à distance.  
 
 Pour obtenir de l’aide pour la résolution des problèmes, voir [Résoudre les problèmes de Microsoft Examen avec l’observateur d’événements](troubleshooting.md).
 
-**L’API Examen inclut les espaces de noms suivants:**  
+## Documentation de référence
+L’API Examen inclut les espaces de noms suivants. 
 
 | Espace de noms | Description |
 |-----------|-------------|
-|[espace de noms de sécurité](#security-namespace)| Fonctionnalité de conversion de texte par synthèse vocale|
-|[espace de noms tts](#tts-namespace)|Vous permet de verrouiller l’appareil|
+|[espace de noms de sécurité](#security-namespace)|Vous permet de verrouiller l’appareil|
+|[espace de noms tts](#tts-namespace)|Fonctionnalité de conversion de texte par synthèse vocale|
 
 
- ## espace de noms de sécurité
+ ### Espace de noms de sécurité
 
-Vous permet de verrouiller l’appareil, vérifier la liste des processus utilisateur et système, obtenir des adresses IP et MAC, et effacer des ressources web mises en cache.
+L’espace de noms de sécurité vous permet de verrouiller l’appareil, de vérifier la liste des processus utilisateur et système, d’obtenir des adresses IP et MAC, et d’effacer des ressources web mises en cache.
 
 | Méthode | Description   |
 |--------|---------------|
@@ -45,9 +44,10 @@ Vous permet de verrouiller l’appareil, vérifier la liste des processus utilis
 |[getIPAddressList](#getIPAddressList) | Obtient la liste des adresses IP pour l’appareil |
 |[getMACAddress](#getMACAddress)|Obtient la liste des adresses MAC pour l’appareil|
 |[getProcessList](#getProcessList)|Obtient la liste des processus utilisateur et système en cours d’exécution|
-|[isEnvironmentSecure](#isEnvironmentSecure)|Détermine si le contexte de verrouillage est toujours appliqué à l’appareil|
+|[isEnvironmentSecure](#isEnvironmentSecure)|Détermine si le contexte de verrouillage est toujours appliqué à l’appareil|  
 
-<span id="clearCache" />
+---
+<span id="clearCache"/>
 ### void clearCache()
 Efface les ressources web mises en cache.
 
@@ -114,6 +114,8 @@ Obtient la liste des adresses IP pour l’appareil.
 **Valeur de retour**  
 `An array of IP addresses.`
 
+---
+
 <span id="getMACAddress" />
 ### string[] getMACAddress()
 Obtient la liste des adresses MAC pour l’appareil.
@@ -170,7 +172,10 @@ Windows10, version1607
 
 ---
 
-## espace de noms tts
+### Espace de noms tts
+
+L’espace de noms tts gère la fonctionnalité de conversion de texte par synthèse vocale de l’application.
+
 | Méthode | Description |
 |--------|-------------|
 |[getStatus](#getStatus) | Obtient l’état de lecture des fonctions vocales|
@@ -181,7 +186,9 @@ Windows10, version1607
 |[stop](#stop)|Arrête la synthèse vocale|
 
 > [!Tip]
-> L’[API Speech Synthesis de Microsoft Edge](https://blogs.windows.com/msedgedev/2016/06/01/introducing-speech-synthesis-api/) est une implémentation de l’[API W3C Speech](https://dvcs.w3.org/hg/speech-api/raw-file/tip/webspeechapi.html) et nous recommandons aux développeurs de l’utiliser quand cela est possible.
+> [L’API Speech Synthesis de Microsoft Edge](https://blogs.windows.com/msedgedev/2016/06/01/introducing-speech-synthesis-api/) est une implémentation de l’[API W3C Speech](https://dvcs.w3.org/hg/speech-api/raw-file/tip/webspeechapi.html) et nous recommandons aux développeurs de l’utiliser quand cela est possible.
+
+---
 
 <span id="getStatus" />
 ### string getStatus()
@@ -260,7 +267,7 @@ Windows10, version1607
 
 <span id="speak" />
 ### void speak(string text, object options, function callback)
-Conversion de texte par synthèse vocale côté client.
+Démarre la conversion de texte par synthèse vocale côté client.
 
 **Syntaxe**  
 `void browser.tts.speak(“Hello world”, options, callback);`
@@ -283,13 +290,13 @@ var options = {
 
 **Remarques** Les variables des options doivent être en minuscules. Les paramètres vocaux, de langue et de sexe acceptent les chaînes.
 Le volume, la tonalité et le taux doivent être marqués dans le fichier SSML (Speech Synthesis Markup Language), et non dans l’objet options.
-
 L’objet options doit suivre l’ordre, le nommage et la casse illustrés dans l’exemple suivant.
 
 **Configuration requise**  
 Windows10, version1607
 
 ---
+
 <span id="stop" />
 ### void stop()
 Arrête la synthèse vocale.
@@ -308,6 +315,6 @@ Windows10, version1607
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

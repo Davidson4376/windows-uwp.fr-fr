@@ -4,14 +4,14 @@ title: "Utiliser un déclencheur de maintenance"
 description: "Découvrez comment utiliser la classe MaintenanceTrigger pour exécuter du code léger en arrière-plan tandis que l’appareil est branché."
 ms.assetid: 727D9D84-6C1D-4DF3-B3B0-2204EA4D76DD
 translationtype: Human Translation
-ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
-ms.openlocfilehash: 1181605c097f876af49e8055e245a2c445fc30d3
+ms.sourcegitcommit: 7d1c160f8b725cd848bf8357325c6ca284b632ae
+ms.openlocfilehash: 2f459156ac8bc52c79b9b6d3b902882693120028
 
 ---
 
 # Utiliser un déclencheur de maintenance
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **API importantes**
 
@@ -25,7 +25,7 @@ Découvrez comment utiliser la classe [**MaintenanceTrigger**](https://msdn.micr
 
 Cet exemple suppose que vous disposez d’un code léger à exécuter en arrière-plan qui vous permettra d’améliorer votre application pendant que l’appareil est branché. Cette rubrique porte sur le déclencheur [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517), qui est semblable au déclencheur [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839).
 
-Pour obtenir davantage d’informations sur l’écriture d’une classe de tâche en arrière-plan, consultez les rubriques [Créer et inscrire une tâche en arrière-plan à processus unique](create-and-register-a-singleprocess-background-task.md) ou [Créer et inscrire une tâche en arrière-plan dans un processus distinct](create-and-register-a-background-task.md).
+Des informations supplémentaires sur l’écriture d’une classe de tâche en arrière-plan sont disponibles dans les rubriques [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md) ou [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-an-outofproc-background-task.md).
 
 Créez un objet [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843). Le deuxième paramètre, *OneShot*, indique si la tâche de maintenance s’exécute une seule fois ou régulièrement. Si *OneShot* est défini sur true, le premier paramètre (*FreshnessTime*) indique le nombre de minutes à attendre avant de planifier la tâche en arrière-plan. Si *OneShot* est défini sur false, *FreshnessTime* indique la fréquence d’exécution de la tâche en arrière-plan.
 
@@ -90,14 +90,15 @@ Le code suivant ajoute une condition au générateur de tâches de maintenance:
     > **Remarque** Les paramètres d’inscription de la tâche en arrière-plan sont validés au moment de l’inscription. Une erreur est retournée si l’un des paramètres d’inscription n’est pas valide. Vérifiez que votre application gère de façon fluide les scénarios dans lesquels l’inscription de la tâche en arrière-plan échoue. En revanche, si votre application dépend d’un objet d’inscription valide après la tentative d’inscription d’une tâche, elle peut se bloquer.
 
 
-> **Remarque** Cet article s’adresse aux développeurs de Windows 10 qui créent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> 
+  **Remarque** Cet article s’adresse aux développeurs de Windows10 qui créent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
 ## Rubriques connexes
 
 ****
 
-* [Créer et inscrire une tâche en arrière-plan à processus unique](create-and-register-a-singleprocess-background-task.md)
-* [Créer et inscrire une tâche en arrière-plan](create-and-register-a-background-task.md)
+* [Créez et inscrivez une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md).
+* [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-an-outofproc-background-task.md)
 * [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md)
 * [Gérer une tâche en arrière-plan annulée](handle-a-cancelled-background-task.md)
 * [Surveiller la progression et l’achèvement des tâches en arrière-plan](monitor-background-task-progress-and-completion.md)
@@ -107,14 +108,11 @@ Le code suivant ajoute une condition au générateur de tâches de maintenance:
 * [Mettre à jour une vignette dynamique à partir d’une tâche en arrière-plan](update-a-live-tile-from-a-background-task.md)
 * [Exécuter une tâche en arrière-plan en fonction d’un minuteur](run-a-background-task-on-a-timer-.md)
 * [Recommandations en matière de tâches en arrière-plan](guidelines-for-background-tasks.md)
-
-****
-
 * [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
 * [Comment déclencher des événements de suspension, des événements de reprise et des événements en arrière-plan dans des applications du Windows Store (lors du débogage)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

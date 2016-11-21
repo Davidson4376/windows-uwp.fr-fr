@@ -4,8 +4,8 @@ ms.assetid: E9BEB2D2-155F-45F6-95F8-6B36C3E81649
 description: "Utilisez cette méthode dans l’API de collection du WindowsStore pour indiquer le traitement de la commande d’un produit consommable pour un client donné. Pour qu’un utilisateur puisse racheter un produit consommable, votre application ou votre service doit indiquer que la commande de ce produit a été traitée pour cet utilisateur."
 title: "Signaler le traitement de la commande d’un produit consommable"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: dd3e687d49e538187c123b7123c184f9182905de
+ms.sourcegitcommit: ac9c921c7f39a1bdc6dc9fc9283bc667f67cd820
+ms.openlocfilehash: 54095c7fd3c29fe7596be4c4b5a7148d078a7091
 
 ---
 
@@ -18,16 +18,16 @@ Utilisez cette méthode dans l’API de collection du Windows Store pour indique
 
 Vous pouvez utiliser cette méthode pour indiquer que la commande d’un produit consommable a été traitée de deux façons:
 
--   Indiquez l’ID d’article du produit consommable (tel qu’il est retourné dans le paramètre **itemId** d’une [demande de produits](query-for-products.md)) et un ID de suivi unique que vous fournissez. Si le même ID de suivi est utilisé pour plusieurs tentatives, le même résultat est retourné, même si l’article est déjà consommé. Si vous ne savez pas si une demande de consommation a abouti, votre service doit de nouveau la soumettre avec le même ID de suivi. L’ID de suivi sera toujours lié à cette demande de consommation et peut être soumis indéfiniment.
--   Indiquez l’ID produit (tel qu’il est retourné dans le paramètre **productId** d’une [demande de produits](query-for-products.md)) et un ID de transaction qui est obtenu à partir de l’une des sources indiquées dans la description du paramètre **transactionId** dans la section Corps de la requête ci-dessous.
+* Indiquez l’ID d’article du produit consommable (tel qu’il est retourné dans le paramètre **itemId** d’une [demande de produits](query-for-products.md)) et un ID de suivi unique que vous fournissez. Si le même ID de suivi est utilisé pour plusieurs tentatives, le même résultat est retourné, même si l’article est déjà consommé. Si vous ne savez pas si une demande de consommation a abouti, votre service doit de nouveau la soumettre avec le même ID de suivi. L’ID de suivi sera toujours lié à cette demande de consommation et peut être soumis indéfiniment.
+* Indiquez l’ID produit (tel qu’il est retourné dans le paramètre **productId** d’une [demande de produits](query-for-products.md)) et un ID de transaction qui est obtenu à partir de l’une des sources indiquées dans la description du paramètre **transactionId** dans la section Corps de la requête ci-dessous.
 
 ## Prérequis
 
 
 Pour utiliser cette méthode, vous devez disposer des éléments suivants:
 
--   un jeton d’accès AzureAD créé avec l’URI d’audience `https://onestore.microsoft.com`;
--   une clé d’ID du WindowsStore générée en appelant la méthode [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) à partir du code côté client de votre application.
+* un jeton d’accès AzureAD créé avec l’URI d’audience `https://onestore.microsoft.com`;
+* une clé d’ID du Windows Store [générée à partir du code côté client de votre application](view-and-grant-products-from-a-service.md#step-4).
 
 Pour plus d’informations, voir [Afficher et octroyer des produits à partir d’un service](view-and-grant-products-from-a-service.md).
 
@@ -71,7 +71,7 @@ L’objet UserIdentity contient les paramètres ci-dessous.
 | Paramètre            | Type   | Description                                                                                                                                 | Obligatoire |
 |----------------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------|----------|
 | identityType         | chaîne | Spécifiez la valeur chaîne **b2b**.                                                                                                           | Oui      |
-| identityValue        | chaîne | Valeur chaîne de la clé d’ID du Windows Store.                                                                                                   | Oui      |
+| identityValue        | chaîne | La clé d’ID du Windows Store [générée à partir du code côté client de votre application](view-and-grant-products-from-a-service.md#step-4).                                                                                                   | Oui      |
 | localTicketReference | chaîne | Identificateur demandé pour la réponse retournée. Nous vous recommandons d’utiliser la même valeur que la revendication *userId* dans la clé d’ID du WindowsStore. | Oui      |
 
 <span/> 
@@ -158,6 +158,6 @@ Date: Tue, 22 Sep 2015 20:40:55 GMT
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

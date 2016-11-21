@@ -4,8 +4,8 @@ Description: "Une fois que votre application se trouve dans le Windows Store, le
 title: Promotion des applications et implication des clients
 ms.assetid: 86DA61A2-1B84-4B2B-8697-85A75D39A686
 translationtype: Human Translation
-ms.sourcegitcommit: 4dec7ebaaeb0bc0dba24002f8cd8a805285de3d6
-ms.openlocfilehash: 1f43cb9fdf633cecf6848a4ef0dd49a0f07f79c3
+ms.sourcegitcommit: cb816efb9bac6b401a8be93e3fded217a031769e
+ms.openlocfilehash: 1d1f66fad9f4b0c1ef01e1a797526029d54ce33a
 
 ---
 
@@ -16,6 +16,7 @@ Une fois que votre application se trouve dans le Windows Store, le moment est ve
 
 -   [Créer une campagne de publicité pour votre application](create-an-ad-campaign-for-your-app.md)
 -   [Créer une campagne personnalisée de promotion d’applications](create-a-custom-app-promotion-campaign.md)
+-   [Envoyer des notifications push ciblées aux clients de votre application](/send-push-notifications-to-your-apps-customers.md)
 -   [Générer des codes promotionnels](generate-promotional-codes.md)
 -   [Commercialiser des applications et composants additionnels](put-apps-and-add-ons-on-sale.md)
 -   [Répondre aux retours des clients](respond-to-customer-feedback.md)
@@ -30,6 +31,6 @@ Une fois que votre application se trouve dans le Windows Store, le moment est ve
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -7,8 +7,8 @@ label: Pen interactions and Windows Ink in UWP apps
 template: detail.hbs
 keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas
 translationtype: Human Translation
-ms.sourcegitcommit: 8bc5612c0fc9273d32ccbfcd5b4334566d24b017
-ms.openlocfilehash: 67149f51cc16fee6f5ba818915432b18d2c1a549
+ms.sourcegitcommit: f7bc2ccbdd34bec671864323df53ab7bdda25a87
+ms.openlocfilehash: 4c87dea0387b2da055d07df5bab14c4ad61638d7
 
 ---
 
@@ -304,7 +304,7 @@ Pour cet exemple, nous utilisons les fichiers MainPage.xaml et MainPage.xaml.cs 
     ![Lasso de sélection](images/ink-unprocessed-3-small.png)
 
       ```csharp
-        // Handle unprocessed pointer events from modifed input.
+        // Handle unprocessed pointer events from modified input.
         // The input is used to provide selection functionality.
         // Selection UI is drawn on a canvas under the InkCanvas.
         private void UnprocessedInput_PointerPressed(
@@ -437,6 +437,9 @@ En appelant [**ActivateCustomDrying**](https://msdn.microsoft.com/library/window
 
 Pour obtenir un exemple complet de cette fonctionnalité, consultez [l’exemple d’entrée manuscrite complexe](http://go.microsoft.com/fwlink/p/?LinkID=620314).
 
+> [!NOTE]
+> Séchage personnalisé et élément [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)  
+> Si votre application remplace le comportement par défaut du rendu d’entrée manuscrite de l’élément [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) par une implémentation de séchage personnalisé, les traits d’encre restitués ne sont plus disponibles pour l’élément InkToolbar et les commandes d’effacement intégrées de l’élément InkToolbar ne fonctionneront pas comme prévu. Pour fournir des fonctionnalités d’effacement, vous devez gérer tous les événements de pointeur, effectuer le test de positionnement sur chaque trait et remplacer la commande intégrée «Effacer toutes les entrées manuscrites».
 
 ## Autres articles de cette section
 
@@ -471,6 +474,6 @@ Pour obtenir un exemple complet de cette fonctionnalité, consultez [l’exemple
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

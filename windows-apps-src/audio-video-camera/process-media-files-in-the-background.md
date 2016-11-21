@@ -4,14 +4,14 @@ ms.assetid: B5E3A66D-0453-4D95-A3DB-8E650540A300
 description: "Cet article vous montre comment utiliser MediaProcessingTrigger et une tâche en arrière-plan pour traiter des fichiers multimédias en arrière-plan."
 title: "Traiter des fichiers multimédias en arrière-plan"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 704fa52a9e98382940b7863d6196ca0af5d33460
+ms.sourcegitcommit: fb0e8a535ff4e27530fa45aca80b21f17a523c7b
+ms.openlocfilehash: 8a65ce9ed9de050bbcee2612bf53c5bfd44ffc72
 
 ---
 
 # Traiter des fichiers multimédias en arrière-plan
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cet article vous montre comment utiliser [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) et une tâche en arrière-plan pour traiter des fichiers multimédias en arrière-plan.
@@ -78,6 +78,10 @@ La méthode d’assistance **SendToastNotification** crée une notification toas
 
 [!code-cs[SendToastNotification](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetSendToastNotification)]
 
+Dans le gestionnaire de l’événement [**Canceled**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.IBackgroundTaskInstance.Canceled), qui est appelé lorsque le système annule la tâche en arrière-plan, vous pouvez consigner l’erreur à des fins de télémétrie.
+
+[!code-cs[OnCanceled](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetOnCanceled)]
+
 ## Enregistrer et lancer la tâche en arrière-plan
 
 Avant de pouvoir lancer la tâche en arrière-plan à partir de votre application au premier plan, vous devez mettre à jour le fichier Package.appmanifest de votre application au premier plan pour indiquer au système que votre application utilise une tâche en arrière-plan.
@@ -140,6 +144,6 @@ Le gestionnaire d’événements **OnCompleted** est appelé lorsque l’exécut
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

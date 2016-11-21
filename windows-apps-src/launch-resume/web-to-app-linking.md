@@ -4,8 +4,8 @@ title: "Liaisons application-site web avec les gestionnaires d’URI"
 description: "Rendez votre application plus attractive pour vos utilisateurs à l’aide des gestionnaires d’URI d’application"
 keywords: "Liaison Windows ciblées"
 translationtype: Human Translation
-ms.sourcegitcommit: 9ef86dcd4ae3d922b713d585543f1def48fcb645
-ms.openlocfilehash: c9833f29d6080509c849e9d624f2bfcd0b0af04c
+ms.sourcegitcommit: cb3dbf7fd55c92339c77124bd22b3484fa389285
+ms.openlocfilehash: d7ce1dbfdf8ce0069b4d882323de8fd6f1b242f7
 
 ---
 
@@ -53,7 +53,7 @@ Créez un fichier JSON (sans l’extension de fichier .json) nommé **windows-ap
 [{
   "packageFamilyName": "YourAppsPFN",
   "paths": [ "*" ],
-  "excludePaths" : [ "/news/*, /blog/*" ]
+  "excludePaths" : [ "/news/*", "/blog/*" ]
  }]
 ```
 
@@ -68,7 +68,7 @@ L’exemple de fichier JSON ci-dessus illustre l’utilisation des caractères g
 | *****       | Représente une sous-chaîne      |
 | **?**        | Représente un caractère unique |
 
-Par exemple, avec la ligne `"excludePaths" : [ "/news/*, /blog/*" ]` donnée dans l’exemple ci-dessus, votre application prendra en charge tous les chemins d’accès qui commencent par l’adresse de votre site web (par exemple, msn.com), **sauf** ceux qui se trouvent sous `/news/` et `/blog/`. **msn.com/weather.html** sera donc pris en charge, mais pas ****msn.com/news/topnews.html****.
+Par exemple, avec la ligne `"excludePaths" : [ "/news/*", "/blog/*" ]` donnée dans l’exemple ci-dessus, votre application prendra en charge tous les chemins d’accès qui commencent par l’adresse de votre site web (par exemple, msn.com), **sauf** ceux qui se trouvent sous `/news/` et `/blog/`. **msn.com/weather.html** sera donc pris en charge, mais pas ****msn.com/news/topnews.html****.
 
 
 ### Applications multiples
@@ -79,17 +79,17 @@ Si vous avez deux applications que vous voulez lier à votre site web, répertor
 [{
   "packageFamilyName": "YourAppsPFN",
   "paths": [ "*" ],
-  "excludedPaths" : [ "/news/*, /blog/*" ]
+  "excludePaths" : [ "/news/*", "/blog/*" ]
  },
  {
   "packageFamilyName": "Your2ndAppsPFN",
-  "paths": [ "/example/*, /links/*" ]
+  "paths": [ "/example/*", "/links/*" ]
  }]
 ```
 
-Pour offrir à vos utilisateurs la meilleure expérience possible, utilisez les chemins d’accès exclus pour vous assurer que le contenu uniquement en ligne est exclu des chemins d’accès pris en charge dans votre fichier JSON.
+Pour offrir à vos utilisateurs la meilleure expérience possible, utilisez les chemins d’accès des exclusions pour vous assurer que le contenu uniquement en ligne est exclu des chemins d’accès pris en charge dans votre fichier JSON.
 
-Les chemins d’accès exclus sont vérifiés en premier lieu et, s’il existe une correspondance, la page correspondante s’ouvre avec le navigateur au lieu de l’application désignée. Dans l’exemple ci-dessus, «/news/\*» inclut toutes les pages qui se trouvent sous ce chemin d’accès, tandis que «/news\*» (sans barre oblique après «news») inclut les chemins d’accès sous «news\*», comme «newslocal/», «newsinternational/», etc.
+Les chemins d’accès des exclusions sont vérifiés en premier lieu et, s’il existe une correspondance, la page correspondante s’ouvre avec le navigateur au lieu de l’application désignée. Dans l’exemple ci-dessus, «/news/\*» inclut toutes les pages qui se trouvent sous ce chemin d’accès, tandis que «/news\*» (sans barre oblique après «news») inclut les chemins d’accès sous «news\*», comme «newslocal/», «newsinternational/», etc.
 
 ## Gérer les liens à l’activation pour créer un lien vers le contenu
 
@@ -195,6 +195,6 @@ Si vous souhaitez suivre la logique d’activation du protocole, définissez un 
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -4,13 +4,13 @@ ms.assetid: a2751e22-6842-073a-daec-425fb981bafe
 title: Couche visuelle
 description: "L’API Windows.UI.Composition vous donne accès à la couche de composition comprise entre la couche d’infrastructure (XAML) et la couche graphique (DirectX)."
 translationtype: Human Translation
-ms.sourcegitcommit: 4a00847f0559d93eea199d7ddca0844b5ccaa5aa
-ms.openlocfilehash: 3a3dbf7b529d5d2848b161869d2f77fef3651488
+ms.sourcegitcommit: ad262cc6dcfd53156f3f3a3e850f9cfe99e87dc6
+ms.openlocfilehash: 066e5aea48340f96878a41aa28f0fef0c3bda9f5
 
 ---
 # Couche visuelle
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Dans Windows10, un travail considérable a été effectué pour créer un compositeur unifié et un moteur de rendu pour toutes les applications Windows, qu’elles soient pour ordinateurs de bureau ou pour appareils mobiles. Conséquence de ce travail, l’API WinRT Composition unifiée, appelée Windows.UI.Composition, qui permet d’accéder à de nouveaux objets de composition légers et aux animations et effets du nouveau compositeur.
 
@@ -29,8 +29,9 @@ Les éléments visuels peuvent être des conteneurs d’autres éléments visuel
 
 -   [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) : objet de base. La plupart des propriétés sont répertoriées ici et héritées par les autres objets visuels.
 -   [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) : dérive de [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858), et ajoute la possibilité d’insérer des éléments visuels enfants.
--   [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) : dérive de [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810), et contient des images, des effets et des chaînes de permutation.
--   [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) : fabrique d’objet qui gère la relation entre une application et le processus de composition du système.
+-   [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433): dérive de [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810), et contient des images, des effets et des chaînes de permutation.
+-   [**LayerVisual**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.layervisual.aspx): ContainerVisual dont les enfants sont aplatis en une seule couche.  
+-   [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789): fabrique d’objet qui gère la relation entre une application et le processus de composition du système.
 
 Le compositeur est également une fabrique pour plusieurs autres objets de composition utilisés pour découper ou transformer des éléments visuels de l’arborescence, ainsi qu’un riche ensemble d’animations et d’effets.
 
@@ -56,7 +57,7 @@ En plus de créer une arborescence d’éléments visuels de toutes pièces, l�
 
 
 **Remarque**  
-Cet article s’adresse aux développeurs de Windows10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Cet article s’adresse aux développeurs de Windows10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
@@ -65,7 +66,7 @@ Cet article s’adresse aux développeurs de Windows10 qui développent des appl
 -   Article MSDN de Kenny Kerr portant sur cette API: [Graphismes et animation: l’API Composition Windows passe à Windows10](https://msdn.microsoft.com/magazine/mt590968)
 -   Exemples d’interface utilisateur et de composition avancés dans le [GitHub WindowsUIDevLabs](https://github.com/microsoft/windowsuidevlabs).
 -   [**Documentation de référence complète pour l’API**](https://msdn.microsoft.com/library/windows/apps/Dn706878).
--   Problèmes connus : [Problèmes connus](http://go.microsoft.com/fwlink/?LinkId=823237).
+-   [Problèmes connus](http://go.microsoft.com/fwlink/?LinkId=823237).
 
  
 
@@ -77,6 +78,6 @@ Cet article s’adresse aux développeurs de Windows10 qui développent des appl
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

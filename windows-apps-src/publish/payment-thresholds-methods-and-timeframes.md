@@ -3,9 +3,8 @@
 Description: "auteur&#58; jnHs Le temps estimatif nécessaire au transfert des paiements, les seuils de paiement applicables et les places de marché Microsoft à partir desquels vous pouvez percevoir des paiements peuvent varier en fonction de votre pays/région et de votre type de compte de paiement. Cette rubrique décrit les seuils et les modes de paiement pris en charge dans chaque pays/région."
 title: "Délais, méthodes et seuils de paiement"
 translationtype: Human Translation
-ms.sourcegitcommit: 842221e9596f5bb132e9109a1c4f8a5d9e9439dd
-ms.openlocfilehash: 1513c5b7714a1f2169ad7f5b08819dd06448d58c
-
+ms.sourcegitcommit: 85b9993334ecfb3ea2dc5a196cb5b5f9dc99c985
+ms.openlocfilehash: b4f98e31b52b77f6675771fc09bb492ca5cf9021
 
 ---
 
@@ -3383,6 +3382,6 @@ Pour connaître les pays/régions dans lesquels ces modes de paiement sont utili
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

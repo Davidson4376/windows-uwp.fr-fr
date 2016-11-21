@@ -1,18 +1,17 @@
 ---
+author: awkoren
 Description: Montre comment convertir manuellement une application de bureau Windows (Win32, WPF, Windows Forms) en une application de plateforme Windows universelle (UWP).
 Search.Product: eADQiWindows 10XVcnh
-title: Convertir manuellement une application de bureau Windows en appli UWP
+title: Convertir manuellement une application de bureau Windows en application UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 2c1a8ea38081c947f90ea835447a617c388aec08
-ms.openlocfilehash: 646a5b88cb7ca97f18bf4552950979a2ceead398
+ms.sourcegitcommit: fe96945759739e9260d0cdfc501e3e59fb915b1e
+ms.openlocfilehash: 6ca48fd829b7437fe2db8aa1251f6ed8976919ab
 
 ---
 
-# Convertir manuellement votre application de bureau Windows en une application de plateforme Windows universelle (UWP)
+# Convertir manuellement votre application en application UWP à l’aide de Desktop Bridge
 
-\[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.\]
-
-L’utilisation du convertisseur est pratique et automatique; celui-ci est très utile en cas d’incertitude sur ce que fait votre programme d’installation. Toutefois, si votre application est installée à l’aide de xcopy, ou si vous connaissez les modifications que le programme d’installation de votre application apporte au système, vous pouvez choisir de créer manuellement un package d’application et un manifeste.
+L’utilisation de Desktop App Converter (DAC) est pratique et automatique; celui-ci est très utile en cas d’incertitude sur ce que fait votre programme d’installation. Toutefois, si votre application est installée à l’aide de xcopy, ou si vous connaissez les modifications que le programme d’installation de votre application apporte au système, vous pouvez choisir de créer manuellement un package d’application et un manifeste.
 
 Voici la procédure pour créer un package manuellement:
 
@@ -60,7 +59,7 @@ Votre fichier _appxmanifest.xml_ doit présenter le contenu suivant (au minimum)
 
 ## Exécutez l’outil MakeAppX.
 
-Utilisez l’[outil de création de package de l’application (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx) pour générer un AppX pour votre projet. MakeAppx.exe est inclus dans le SDK Windows 10. 
+Utilisez l’[outil de création de package de l’application (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx) pour générer un AppX pour votre projet. MakeAppx.exe est inclus dans le SDK Windows10. 
 
 Pour exécuter MakeAppx, assurez-vous d’abord que vous avez créé un fichier manifeste, tel que décrit ci-dessus. 
 
@@ -82,7 +81,7 @@ MakeAppx.exe pack /f mapping_filepath /p filepath.appx
 
 ## Signer votre package AppX
 
-L’applet de commande Add-AppxPackage nécessite que le package d’application (.appx) déployé soit signé. Utilisez [SignTool.exe](https://msdn.microsoft.com/library/windows/desktop/aa387764(v=vs.85).aspx), fourni dans le SDK Microsoft Windows 10 pour signer le package .appx.
+L’applet de commande Add-AppxPackage nécessite que le package d’application (.appx) déployé soit signé. Utilisez [SignTool.exe](https://msdn.microsoft.com/library/windows/desktop/aa387764(v=vs.85).aspx), fourni dans le SDK Microsoft Windows10 pour signer le package .appx.
 
 Exemple d’utilisation: 
 
@@ -103,6 +102,6 @@ Lorsque vous exécutez MakeCert.exe et que vous êtes invité à entrer un mot d
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

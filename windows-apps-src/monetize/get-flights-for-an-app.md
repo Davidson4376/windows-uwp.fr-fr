@@ -4,8 +4,8 @@ ms.assetid: B0AD0B8E-867E-4403-9CF6-43C81F3C30CA
 description: "Utilisez cette méthode de l’API de soumission du Windows Store pour récupérer des informations sur une version d’évaluation du package pour une application inscrite dans votre compte du Centre de développement Windows."
 title: "Obtenir des versions d’évaluation du package pour une application à l’aide de l’API de soumission du Windows Store"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: a49e4f2cf7110e12dd33a5baa37e328a39bae348
+ms.sourcegitcommit: ef90390fcf7d4aa2e040eae65119ac7959f3423f
+ms.openlocfilehash: eddac4b37f6f00bad33f543f0e55415a5dcea887
 
 ---
 
@@ -20,14 +20,14 @@ Utilisez cette méthode dans l’API de soumission du Windows Store pour répert
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
 
-* Si ce n’est pas déjà le cas, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
+* Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
 * [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 
 >**Remarque**&nbsp;&nbsp;Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
 
 ## Requête
 
-Cette méthode présente la syntaxe suivante. Voir les sections suivantes pour obtenir des exemples d’utilisation et une description de l’en-tête et du corps de la requête.
+Cette méthode présente la syntaxe suivante. Consultez les sections suivantes pour obtenir des exemples d’utilisation et une description de l’en-tête et du corps de la requête.
 
 | Méthode | URI de la requête                                                      |
 |--------|------------------------------------------------------------------|
@@ -45,10 +45,10 @@ Cette méthode présente la syntaxe suivante. Voir les sections suivantes pour o
 
 ### Paramètres de la requête
 
-| Nom        | Type   | Description  |  Requis  |    
-|---------------|--------|----------------------------------|
-| applicationId | chaîne | Obligatoire. ID WindowsStore de l’application pour laquelle vous voulez récupérer les versions d’évaluation du package. Pour plus d’informations sur l’ID Windows Store, voir [Visualiser les informations d’identité des applications](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |  Oui  |
-|  top  |  entier  |  Nombre d’éléments à retourner dans la requête (autrement dit, nombre de versions d’évaluation du package à retourner). Si l’application comporte plus de versions d’évaluation du package que la valeur que vous spécifiez dans la requête, le corps de la réponse comprend un chemin d’URI relatif que vous pouvez ajouter à l’URI de la méthode pour solliciter la page suivante de données.  |  Non  |
+|  Nom  |  Type  |  Description  |  Requis  |
+|------|------|------|------|
+|  applicationId  |  chaîne  |  ID WindowsStore de l’application pour laquelle vous voulez récupérer les versions d’évaluation du package. Pour plus d’informations sur l’ID Windows Store, voir [Visualiser les informations d’identité des applications](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |  Oui  |
+|  top  |  entier  |  Nombre d’éléments à retourner dans la requête (autrement dit, nombre de versions d’évaluation du package à retourner). Si votre compte comporte plus de versions d’évaluation du package que la valeur que vous spécifiez dans la requête, le corps de la réponse comprend un chemin d’URI relatif que vous pouvez ajouter à l’URI de la méthode pour solliciter la page suivante de données.  |  Non  |
 |  skip  |  entier  |  Nombre d’éléments à ignorer dans la requête avant de retourner les éléments restants. Utilisez ce paramètre pour parcourir des ensembles de données. Par exemple, top=10 et skip=0 permettent de récupérer les éléments 1 à10, top=10 et skip=10 permettent de récupérer les éléments 11 à20, et ainsi de suite.  |  Non  |
 
 <span/>
@@ -115,7 +115,7 @@ L’exemple suivant illustre le corps de réponse JSON renvoyé par une requête
 
 Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’erreur HTTP suivants.
 
-| Code d’erreur |  Description   |
+| Error code |  Description   |
 |--------|------------------|
 | 404  | Aucune version d’évaluation du package n’a été trouvée. |
 | 409  | L’application utilise une fonctionnalité du tableau de bord du Centre de développement qui n’est [actuellement pas prise en charge par l’API de soumission du Windows Store](create-and-manage-submissions-using-windows-store-services.md#not_supported).  |
@@ -131,6 +131,6 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -17,7 +17,7 @@ Ces exemples de code illustrent les tâches suivantes:
 
 * [Obtenir un jeton d’accès AzureAD](java-code-examples-for-the-windows-store-submission-api.md#token).
 * [Créer une extension](java-code-examples-for-the-windows-store-submission-api.md#create-add-on).
-* [Créer une version d’évaluation du package](java-code-examples-for-the-windows-store-submission-api.md#create-package-flight).
+* [Créer une version d’évaluation de package](java-code-examples-for-the-windows-store-submission-api.md#create-package-flight).
 * [Créer et valider une soumission d’application](java-code-examples-for-the-windows-store-submission-api.md#create-app-submission).
 * [Créer et valider une soumission d’extension](java-code-examples-for-the-windows-store-submission-api.md#create-add-on-submission).
 * [Créer et valider une soumission de version d’évaluation du package](java-code-examples-for-the-windows-store-submission-api.md#create-flight-submission).
@@ -141,7 +141,7 @@ public static String GenerateAccessToken(String tenantId, String clientId, Strin
 <span id="create-add-on" />
 ## Créer une extension
 
-L’exemple suivant montre comment [créer une extension](manage-add-ons.md) (également connue sous le nom produit in-app ou PIA).
+L’exemple suivant montre comment [créer une extension](manage-add-ons.md) (également connue sous le nom PIA, produit in-app).
 
 ```java
 public static void CreateNewInAppProduct(String accessToken, String inAppProductRequestJson) throws InterruptedException, IOException {
@@ -216,9 +216,9 @@ private static ResponseHandler<JsonObject> CreateJsonResponseHandler(){
 ```
 
 <span id="create-package-flight" />
-## Créer une version d’évaluation du package
+## Créer une version d’évaluation de package
 
-L’exemple suivant montre comment [créer une version d’évaluation du package](manage-flights.md).
+L’exemple suivant montre comment [créer une version d’évaluation de package](manage-flights.md).
 
 ```java
 public static void CreateNewFlight(String accessToken, String applicationId, String flightRequestJson) throws InterruptedException, IOException {
@@ -296,7 +296,7 @@ private static ResponseHandler<JsonObject> CreateJsonResponseHandler(){
 <span id="create-app-submission" />
 ## Créer et valider une soumission d’application
 
-L’exemple suivant montre comment [créer et valider une une nouvelle soumission d’application](manage-app-submissions.md).
+L’exemple suivant montre comment [créer et valider une nouvelle soumission d’application](manage-app-submissions.md).
 
 ```java
 public static void SubmitNewApplicationSubmission(String accessToken, String applicationId, String appSubmissionRequestJson, String zipFilePath) throws InterruptedException, IOException {
@@ -564,7 +564,7 @@ private static void UploadZipFile(String fileUploadUrl, String zipFilePath) thro
 ```
 
 <span id="create-flight-submission" />
-## Créer et valider une soumission de version d’évaluation du package
+## Créer et valider une soumission de version d’évaluation de package
 
 L’exemple suivant montre comment [créer et valider une nouvelle soumission de version d’évaluation du package](manage-flight-submissions.md).
 

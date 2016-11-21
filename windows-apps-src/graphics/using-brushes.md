@@ -4,8 +4,8 @@ ms.assetid: 02141F86-355E-4046-86EA-2A89D615B7DB
 title: Utiliser des pinceaux
 description: "Les objets Brush permettent de peindre les intérieurs ou les contours de formes, de texte et de parties de contrôles, afin que l’objet peint soit visible dans une interface utilisateur."
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: cc16b07931cf3f7740957c222e8c8821ddbab08a
+ms.sourcegitcommit: f5934600cc185c952acc57ae38e0b190466e0dfa
+ms.openlocfilehash: dc415135a05a63226a6b2d0b828245fe2f713788
 
 ---
 # Utiliser des pinceaux
@@ -13,7 +13,7 @@ ms.openlocfilehash: cc16b07931cf3f7740957c222e8c8821ddbab08a
 \[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-** API importantes **
+**API importantes**
 
 -   [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076)
 
@@ -179,6 +179,6 @@ Pour obtenir des exemples de code, voir les pages de référence pour les classe
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

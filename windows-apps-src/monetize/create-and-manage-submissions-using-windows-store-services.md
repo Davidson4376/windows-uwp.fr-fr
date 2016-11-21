@@ -4,8 +4,8 @@ ms.assetid: 7CC11888-8DC6-4FEE-ACED-9FA476B2125E
 description: "L’API de soumission du Windows Store permet de créer et de gérer par programmation les soumissions d’app. inscrites dans le compte du Centre de dév. Windows."
 title: "Créer et gérer des soumissions à l’aide des services du Windows Store"
 translationtype: Human Translation
-ms.sourcegitcommit: 47e0ac11178af98589e75cc562631c6904b40da4
-ms.openlocfilehash: 0a566dfee8f7fe08c06ce4963435a70c30b1650d
+ms.sourcegitcommit: 03942eb9015487cfd5690e4b1933e4febd705971
+ms.openlocfilehash: 40855465fa2f9b1c32602b1b636761b608d88fc0
 
 ---
 
@@ -26,8 +26,11 @@ Les étapes suivantes décrivent le processus complet d’utilisation de l’API
 >**Important**
 
 > * Cette API ne peut être utilisée que pour les comptes du Centre de développement Windows qui en ont l’autorisation. L’octroi de cette autorisation se fait en plusieurs étapes. Elle est accordée aux comptes de développeur, et tous les comptes n’en bénéficient pas pour le moment. Pour demander un accès anticipé, connectez-vous au tableau de bord du Centre de développement, cliquez sur **Commentaires** au bas du tableau de bord, sélectionnez **API de soumission** dans la zone de commentaires, puis soumettez votre demande. Vous recevrez un message électronique dès que cette autorisation sera accordée à votre compte.
+<br/><br/>
+> * Cette API ne peut pas être utilisée avec les applications ou les extensions qui utilisent certaines des fonctionnalités introduites au tableau de bord du Centre de développement en août 2016, comme notamment les mises à jour d’applications obligatoires et les extensions consommables gérées par le Store. Si vous utilisez l’API de soumission du Windows Store avec une application ou une extension qui utilise l’une de ces fonctionnalités, l’API retourne le code d’erreur409. Dans ce cas, vous devez utiliser le tableau de bord pour gérer les soumissions pour l’application ou le composant additionnel.
+<br/><br/>
+> * Microsoft va bientôt changer le modèle de données de tarification pour les soumissions d’applications dans le Centre de développement Windows. Une fois cette modification implémentée, les ressources **Tarification** pour les soumissions d’applications et de composants additionnels ne seront plus prises en charge, et vous ne pourrez temporairement plus obtenir la période d’évaluation, les prix et les données de ventes de ces soumissions à l’aide de l’API de soumission du Windows Store. Nous allons mettre à jour l’API à l’avenir pour introduire une nouvelle façon d’accéder par programmation aux informations de tarification des soumissions d’applications et de composants additionnels. Pour plus d’informations, voir [Tarification pour les soumissions d’applications](manage-app-submissions.md#pricing-object) et [Tarification pour les soumissions de composants additionnels](manage-add-on-submissions.md#pricing-object).
 
-> * Cette API ne peut pas être utilisée avec les applications ou les extensions qui utilisent certaines des fonctionnalités introduites au tableau de bord du Centre de développement en août 2016, comme notamment les mises à jour d’applications obligatoires et les extensions consommables gérées par le Store. Si vous utilisez l’API de soumission du Windows Store avec une application ou une extension qui utilise l’une de ces fonctionnalités, l’API retourne le code d’erreur409. Dans ce cas, vous devez utiliser le tableau de bord pour gérer les soumissions pour l’application ou l’extension.
 
 <span id="prerequisites" />
 ## Étape 1: Remplir les conditions préalables pour utiliser l’API de soumission du Windows Store
@@ -135,6 +138,6 @@ Si vous avez des questions sur l’API de soumission du Windows Store ou si vous
 
 
 
-<!--HONumber=Sep16_HO1-->
+<!--HONumber=Nov16_HO1-->
 
 

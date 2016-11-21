@@ -6,8 +6,8 @@ MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: "Effets vidéo personnalisés"
 translationtype: Human Translation
-ms.sourcegitcommit: 2d10a9a3732612cff8da81ee1921eaed0e838099
-ms.openlocfilehash: 57908ff3329968bba2eea3d8d51cb0277a2afba5
+ms.sourcegitcommit: 26ed53934ab9237731deda544b8830a26e5ad914
+ms.openlocfilehash: 5e8d8de1c4e4c5068603c60586859dfb3ab76a54
 
 ---
 
@@ -107,7 +107,7 @@ Le système vérifie que la propriété [**SupportedMemoryTypes**](https://msdn.
 
 ### Propriété TimeIndependent
 
-La propriété [**TimeIndependent**](https://msdn.microsoft.com/library/windows/apps/dn764803) permet au système de savoir si votre effet exige un minutage uniforme. Lorsqu’elle est définie sur true, le système peut utiliser les optimisations qui améliorent la performance de l’effet.
+La propriété [**TimeIndependent**](https://msdn.microsoft.com/library/windows/apps/dn764803) permet au système de savoir si votre effet n’exige pas un minutage uniforme. Lorsqu’elle est définie sur true, le système peut utiliser les optimisations qui améliorent la performance de l’effet.
 
 [!code-cs[TimeIndependent](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetTimeIndependent)]
 
@@ -247,6 +247,6 @@ Pour obtenir des instructions générales sur la création des compositions mult
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

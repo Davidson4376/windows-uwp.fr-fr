@@ -1,27 +1,27 @@
 ---
-title: "Développement d’applications pour Windows en tant que service (Windows 10)"
+title: "Développement d’applications pour Windows en tant que service (Windows10)"
 description: "Dissocier la publication et le support des applications des builds Windows spécifiques."
 author: jdeckerMS
 translationtype: Human Translation
-ms.sourcegitcommit: a86002c944841536d37735bb8c4b657905582144
-ms.openlocfilehash: 72ac67b17fc519d374798e5121b309f664ff6b1b
+ms.sourcegitcommit: a98d35162c81f720e4d45990befa289abd2f2c5c
+ms.openlocfilehash: c61800c32e8ab98c13a356e7a61b11ff5b364ffe
 
 ---
 
 # Développement d’applications pour Windows en tant que service
 
 **S’applique à**
--   Windows 10
--   Windows 10 Mobile
+-   Windows10
+-   Windows10 Mobile
 -   Windows10IoTStandard 
 
-Dans l’environnement d’aujourd’hui, où les attentes des utilisateurs sont souvent déterminées par des expériences liées à des appareils spécifiques, les cycles de produit complets se mesurent en mois, plutôt qu’en années. En outre, de nouvelles versions doivent être rendues disponibles en permanence, dont le déploiement ne doit avoir qu’un impact minimal sur les utilisateurs. Microsoft a conçu Windows10 pour répondre à ces exigences, en implémentant une nouvelle approche en termes d’innovation, de développement et de remise appelée [Windows en tant que service (WaaS)](https://technet.microsoft.com/itpro/windows/manage/introduction-to-windows-10-servicing). La clé de la mise en place de cycles de produit sensiblement plus courts tout en conservant des niveaux élevés de qualité est une approche innovante de la phase de test, centrée sur une communauté d’initiés, que Microsoft a implémentée pour Windows 10. Cette communauté d’initiés, appelés « Windows Insiders », compte des millions d’utilisateurs dans le monde entier. Les Windows Insiders qui décident de rejoindre la communauté testent de nombreuses builds tout au long du cycle d’un produit, et leurs commentaires apportent à Microsoft un retour d’expérience via une méthodologie itérative nommée distribution de version d’évaluation.
+Dans l’environnement d’aujourd’hui, où les attentes des utilisateurs sont souvent déterminées par des expériences liées à des appareils spécifiques, les cycles de produit complets se mesurent en mois, plutôt qu’en années. En outre, de nouvelles versions doivent être rendues disponibles en permanence, dont le déploiement ne doit avoir qu’un impact minimal sur les utilisateurs. Microsoft a conçu Windows10 pour répondre à ces exigences, en implémentant une nouvelle approche en termes d’innovation, de développement et de remise appelée [Windows en tant que service (WaaS)](https://technet.microsoft.com/itpro/windows/manage/introduction-to-windows-10-servicing). La clé de la mise en place de cycles de produit sensiblement plus courts tout en conservant des niveaux élevés de qualité est une approche innovante de la phase de test, centrée sur une communauté d’initiés, que Microsoft a implémentée pour Windows10. Cette communauté d’initiés, appelés « Windows Insiders », compte des millions d’utilisateurs dans le monde entier. Les Windows Insiders qui décident de rejoindre la communauté testent de nombreuses builds tout au long du cycle d’un produit, et leurs commentaires apportent à Microsoft un retour d’expérience via une méthodologie itérative nommée distribution de version d’évaluation.
 
 Les builds distribuées en tant que versions d’évaluation permettent à l’équipe d’ingénieurs de Windows de recueillir des données importantes relatives aux performances des builds dans des conditions d’utilisation réelle. La distribution de version d’évaluation avec la collaboration des Windows Insiders permet également à Microsoft de tester les builds dans des environnements matériels, d’applications et réseau sensiblement plus variés que par le passé, et d’identifier les problèmes beaucoup plus rapidement. Par conséquent, Microsoft estime que la phase de distribution de version d’évaluation axée sur la communauté permettra, plus que jamais, d’accélérer le rythme de la fourniture d’innovations et d’améliorer la qualité des versions publiques.
 
-## Types et cadences de versions de Windows 10
+## Types et cadences de versions de Windows10
 
-Parallèlement au lancement de builds Insider Preview destinées aux Windows Insiders, Microsoft publie en permanence deux types de versions de Windows 10 destinées au grand public :
+Parallèlement au lancement de builds Insider Preview destinées aux Windows Insiders, Microsoft publie en permanence deux types de versions de Windows10 destinées au grand public :
 
 Les **mises à jour des fonctionnalités** installent les nouvelles fonctions, expériences et fonctionnalités sur des appareils exécutant déjà Windows10. Ces mises à jour contenant une copie complète de Windows, elles permettent également aux clients d’installer Windows10 sur des appareils exécutant déjà Windows7 ou Windows8.1, ainsi que sur de nouveaux appareils sur lesquels aucun système d’exploitation n’est encore installé. Microsoft compte publier en moyenne une à deux nouvelles mises à jour des fonctionnalités par an.
 
@@ -33,9 +33,9 @@ Le tableau ci-après décrit les différentes branches de maintenance et leurs p
 
 | Option de maintenance                  | Disponibilité de nouvelles mises à niveau de fonctionnalités pour installation     | Longueur minimale de la durée de vie de maintenance | Principaux avantages                                                                              | Éditions prises en charge                                                                         |
 |-----------------------------------|-----------------------------------------------------------|--------------------------------------|-------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|
-| Branche actuelle (CB)               | Immédiatement après la première publication par Microsoft            | Environ 4 mois               | Met les nouvelles fonctionnalités à la disposition des utilisateurs dès que possible                                 | Famille, Professionnel, Éducation, Entreprise, Mobile, IoT Standard, Windows 10 IoT Standard Professionnel (IoT Standard Professionnel) |
+| Branche actuelle (CB)               | Immédiatement après la première publication par Microsoft            | Environ 4 mois               | Met les nouvelles fonctionnalités à la disposition des utilisateurs dès que possible                                 | Famille, Professionnel, Éducation, Entreprise, Mobile, IoT Standard, Windows10 IoT Standard Professionnel (IoT Standard Professionnel) |
 | Current Branch for Business (CBB) | Environ 4 mois après la première publication par Microsoft | Environ 8 mois               | Offre plus de temps pour tester les nouvelles mises à niveau de fonctionnalités avant le déploiement                   | Professionnel, Éducation, Entreprise, Mobile Entreprise, IoT Standard Professionnel                                |
-| Long-Term Servicing Branch (LTSB) | Immédiatement après la publication par Microsoft                  | 10 ans                             | Permet le déploiement à long terme de versions sélectionnées de Windows 10 dans des configurations impliquant peur de changement | Entreprise LTSB                                                                            |
+| Long-Term Servicing Branch (LTSB) | Immédiatement après la publication par Microsoft                  | 10 ans                             | Permet le déploiement à long terme de versions sélectionnées de Windows10 dans des configurations impliquant peur de changement | Entreprise LTSB                                                                            |
  
 Pour plus d’informations, voir [Options de maintenance de Windows10 pour les mises à jour et les mises à niveau](https://technet.microsoft.com/itpro/windows/manage/introduction-to-windows-10-servicing).
 
@@ -151,14 +151,14 @@ Une fois que vous avez procédé à une mise à jour vers une build avec version
 
 Faites-nous savoir comment votre application se comporte par rapport aux builds avec version d’évaluation. Lorsque vous découvrez des problèmes avec votre application au cours des tests, consignez les bogues via le portail du partenaire si vous y avez accès ou en contactant votre représentant Microsoft. Nous vous encourageons à nous transmettre ces informations afin que nous puissions générer une expérience de qualité pour nos utilisateurs.
 
-### Étape4: Inscrivez-vous sur Windows10
-Le site web [Préparation pour Windows10](http://go.microsoft.com/fwlink/?LinkID=780580) est un répertoire de logiciels prenant en charge Windows10. Il est destiné aux administrateurs informatiques d’entreprises et d’organisations du monde entier qui envisagent d’utiliser Windows10 pour leurs déploiements. Les administrateurs informatiques peuvent consulter le site pour voir si les logiciels déployés dans leur entreprise sont pris en charge dans Windows10.
+### Étape 4: Inscrivez-vous sur Ready for Windows
+Le site web [Ready for Windows](http://go.microsoft.com/fwlink/?LinkID=780580) est un répertoire de logiciels prenant en charge Windows10. Il est destiné aux administrateurs informatiques d’entreprises et d’organisations du monde entier qui envisagent d’utiliser Windows10 pour leurs déploiements. Les administrateurs informatiques peuvent consulter le site pour voir si les logiciels déployés dans leur entreprise sont pris en charge dans Windows10.
 
 ## Articles connexes
 [Options de maintenance de Windows10 pour les mises à jour et les mises à niveau](https://technet.microsoft.com/itpro/windows/manage/introduction-to-windows-10-servicing)
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

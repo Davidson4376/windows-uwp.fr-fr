@@ -4,15 +4,15 @@ Description: "Le rapport Acquisitions disponible dans le tableau de bord du Cent
 title: Rapport sur les acquisitions
 ms.assetid: 21126362-F3CD-4006-AD3F-82FC88E3B862
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 2556e7bd8f827287c917c3b9ffa2da980d0d5d88
+ms.sourcegitcommit: 7b73682ea36574f8b675193a174d6e4b4ef85841
+ms.openlocfilehash: afac76ac5b1e1ef2a0ffef3dddf10e8e0023a275
 
 ---
 
 # Rapport sur les acquisitions
 
 
-Le rapport **Acquisitions** disponible dans le tableau de bord du Centre de développement Windows vous permet de déterminer la façon dont les clients utilisent votre application, et vous fournit des informations sur la plateforme ainsi que des données démographiques. Vous pouvez afficher ces données dans votre tableau de bord ou [télécharger le rapport](download-analytic-reports.md) et le consulter hors connexion. Vous pouvez également récupérer ces données par programme à l’aide de l’[API REST d’analyse du Windows Store](../monetize/access-analytics-data-using-windows-store-services.md).
+Le rapport **Acquisitions** disponible dans le tableau de bord du Centre de développement Windows vous permet de déterminer la façon dont les clients utilisent votre application, et vous fournit des informations sur la plateforme ainsi que des données démographiques. Vous pouvez afficher ces données dans votre tableau de bord ou [télécharger le rapport](download-analytic-reports.md) et le consulter hors connexion. Vous pouvez également récupérer ces données par programme à l’aide de la méthode [obtenir des acquisitions d’applications](../monetize/get-app-acquisitions.md) dans [l’API REST d’analyse du Windows Store](../monetize/access-analytics-data-using-windows-store-services.md).
 
 Dans ce rapport, une acquisition signifie qu’un nouveau client a obtenu une licence pour votre application (qu’elle soit payante ou gratuite).
 
@@ -68,6 +68,6 @@ Le graphique **Version du système d'exploitation** présente le nombre total d'
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -4,14 +4,14 @@ ms.assetid: DD8FFA8C-DFF0-41E3-8F7A-345C5A248FC2
 description: "Cette rubrique explique comment ajouter du contenu multimédia PlayReady protégé à votre application de plateforme Windows universelle (UWP)."
 title: "Gestion des droits numériques par PlayReady"
 translationtype: Human Translation
-ms.sourcegitcommit: 549826e6c355d6b8150fa20736db20a147ed41e9
-ms.openlocfilehash: 735fdfb04bcf7e4fab8265b294b117be5c614870
+ms.sourcegitcommit: 94f3145716edee7f9b86e97fb01e98b4bf71a084
+ms.openlocfilehash: b2748f0e48b25027441b183c287aa995dc6d9a9c
 
 ---
 
 # Gestion des droits numériques par PlayReady
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cette rubrique explique comment ajouter du contenu multimédia PlayReady protégé à votre application de plateforme Windows universelle (UWP).
@@ -131,7 +131,7 @@ Le tableau suivant recense les mappages entre les différentes normesOPL dans la
     </tr>
     <tr>
         <th>0-100</th>
-        <td rowspan="7">Windows 10 ne transmet jamais le contenu vidéo numérique compressé vers les sorties, quelle que soit la valeurOPL ultérieure. Pour plus d’informations sur le contenu vidéo numérique compressé, reportez-vous aux [règles de conformité pour les produits PlayReady](https://www.microsoft.com/playready/licensing/compliance/)</td>
+        <td rowspan="7">Windows10 ne transmet jamais le contenu vidéo numérique compressé vers les sorties, quelle que soit la valeurOPL ultérieure. Pour plus d’informations sur le contenu vidéo numérique compressé, reportez-vous aux [règles de conformité pour les produits PlayReady](https://www.microsoft.com/playready/licensing/compliance/)</td>
         <td rowspan="3" colspan="2">Transmet le contenu</td>
         <td>Transmet le contenu</td>
     </tr>
@@ -225,7 +225,7 @@ La gestion des droits numériques par PlayReady vous permet de lire le contenu s
         <th>0-100</th>
         <td rowspan="3">Transmet le contenu lorsque la protectionHDCP2.0 ou version ultérieure est enclenchée. Si l’enclenchement échoue, le contenu N’EST PAS transmis</td>
         <td>Transmet le contenu lorsque la protectionHDCP2.0 ou version ultérieure est enclenchée. Si l’enclenchement échoue, le contenu N’EST PAS transmis</td>
-        <td rowspan="4">Windows 10 ne transmet jamais le contenu vidéo numérique compressé vers les sorties, quelle que soit la valeurOPL ultérieure. Pour plus d’informations sur le contenu vidéo numérique compressé, reportez-vous aux [règles de conformité PlayReady](https://www.microsoft.com/playready/licensing/compliance/)</td>
+        <td rowspan="4">Windows10 ne transmet jamais le contenu vidéo numérique compressé vers les sorties, quelle que soit la valeurOPL ultérieure. Pour plus d’informations sur le contenu vidéo numérique compressé, reportez-vous aux [règles de conformité PlayReady](https://www.microsoft.com/playready/licensing/compliance/)</td>
         <td rowspan="2">Transmet le contenu lorsque la protectionHDCP2.0 ou version ultérieure est enclenchée. Si l’enclenchement échoue, le contenu N’EST PAS transmis</td>
     </tr>
     <tr>
@@ -362,16 +362,16 @@ Le tableau suivant décrit la gestion des droits numériques par PlayReady pour 
 
 Avant de commencer la création de votre application pour UWP protégée par PlayReady, le logiciel suivant doit être installé sur votre système :
 
--   Windows 10.
--   Si vous compilez les exemples de la gestion des droits numériques par PlayReady pour les applications pour UWP, vous devez utiliser Microsoft Visual Studio 2015 ou version ultérieure. Vous pouvez toujours utiliser Microsoft Visual Studio 2013 pour compiler les exemples de la gestion des droits numériques par PlayReady pour les applications du Windows Store Windows 8.1.
+-   Windows10.
+-   Si vous compilez les exemples de la gestion des droits numériques par PlayReady pour les applications pour UWP, vous devez utiliser Microsoft Visual Studio 2015 ou version ultérieure. Vous pouvez toujours utiliser Microsoft Visual Studio 2013 pour compiler les exemples de la gestion des droits numériques par PlayReady pour les applications du Windows Store Windows8.1.
 
-Si vous envisagez de lire du contenu MPEG-2/H.262 sur votre application, vous devez également télécharger et installer le [Pack Media Center pour Windows 8.1](http://go.microsoft.com/fwlink/p/?LinkId=626876).
+Si vous envisagez de lire du contenu MPEG-2/H.262 sur votre application, vous devez également télécharger et installer le [Pack Media Center pour Windows8.1](http://go.microsoft.com/fwlink/p/?LinkId=626876).
 
 ## Guide de migration des applications du WindowsStore PlayReady
 
 Cette section inclut des informations sur la façon de migrer vos applications du Windows Store Windows8.x PlayReady existantes vers Windows10.
 
-L’espace de noms pour les applications pour UWP PlayReady sur Windows 10 est passé de **Microsoft.Media.PlayReadyClient** à [**Windows.Media.Protection.PlayReady**](https://msdn.microsoft.com/library/windows/apps/dn986454). Cela signifie que vous devez rechercher l’ancien espace de noms et le remplacer par le nouvel espace de noms dans votre code. Vous devrez toujours référencer un fichier winmd. Ce fichier fait partie de windows.media.winmd sur le système d’exploitation Windows 10. Il se trouve sous windows.winmd et fait partie du kit de développement logiciel (SDK) Windows. Pour la plateforme Windows universelle, il est référencé sous windows.foundation.univeralappcontract.winmd.
+L’espace de noms pour les applications pour UWP PlayReady sur Windows10 est passé de **Microsoft.Media.PlayReadyClient** à [**Windows.Media.Protection.PlayReady**](https://msdn.microsoft.com/library/windows/apps/dn986454). Cela signifie que vous devez rechercher l’ancien espace de noms et le remplacer par le nouvel espace de noms dans votre code. Vous devrez toujours référencer un fichier winmd. Ce fichier fait partie de windows.media.winmd sur le système d’exploitation Windows10. Il se trouve sous windows.winmd et fait partie du kit de développement logiciel (SDK) Windows. Pour la plateforme Windows universelle, il est référencé sous windows.foundation.univeralappcontract.winmd.
 
 Pour lire du contenu haute définition (1080p) et ultra haute définition (UHD) protégé par PlayReady, vous devez implémenter la gestion des droits numériques en fonction du matériel par PlayReady. Pour plus d’informations sur l’implémentation de la gestion des droits numériques en fonction du matériel par PlayReady, voir [Gestion des droits numériques en fonction du matériel](hardware-drm.md).
 
@@ -448,17 +448,31 @@ Pour un exemple d’implémentation de l’arrêt sécurisé, voir le fichier se
 
 ## Utiliser la gestion des droits numériques par PlayReady sur XboxOne
 
-Pour utiliser la gestion des droits numériques par PlayReady dans une application UWP sur Xbox One, vous devez ajouter un autre `<DeviceCapability>` au manifeste de l’application. Vous devez l’ajouter manuellement, car aucun paramètre n’est actuellement disponible dans le concepteur de manifeste d’application. Pour le configurer, procédez comme suit:
+Pour utiliser la gestion des droits numériques PlayReady dans une application UWP sur XboxOne, vous devez tout d’abord inscrire le compte du Centre de développement que vous utilisez pour publier l’application afin d’obtenir l’autorisation d’utiliser PlayReady. Vous pouvez le faire de deux manières:
+
+* Demander à votre interlocuteur Microsoft de faire le nécessaire pour obtenir l’autorisation.
+* Demandez votre autorisation en envoyant les informations relatives à votre compte du Centre de développement et le nom de votre société à l’adresse [pronxbox@microsoft.com](mailto:pronxbox@microsoft.com).
+
+Une fois que vous recevez d’autorisation, vous devrez ajouter un objet `<DeviceCapability>`  supplémentaire au manifeste de l’application. Vous devez l’ajouter manuellement, car aucun paramètre n’est actuellement disponible dans le concepteur de manifeste d’application. Pour le configurer, procédez comme suit:
 
 1. Le projet étant ouvert dans Visual Studio, ouvrez l’**Explorateur de solutions** et cliquez avec le bouton droit sur **Package.appxmanifest**.
 2. Sélectionnez **Ouvrir avec…**, choisissez **Éditeur XML (Texte)**, puis cliquez sur **OK**.
 3. Entre les balises `<Capabilities>`, ajoutez le `<DeviceCapability>` suivant:
-```xml
-<DeviceCapability Name="6a7e5907-885c-4bcb-b40a-073c067bd3d5" />
-```
+
+    ```xml
+    <DeviceCapability Name="6a7e5907-885c-4bcb-b40a-073c067bd3d5" />
+    ```
+
 4. Enregistrez le fichier.
 
-## Voir également
+Vous devez tenir compte d’un dernier aspect lors de l’utilisation de PlayReady sur XboxOne: les kits de développement sont limités au contenu SL150 (autrement dit, ils ne peuvent pas lire du contenu SL2000 ou SL3000). Les appareils du commerce peuvent lire du contenu associé à des niveaux de sécurité plus élevés, mais pour tester votre application sur un kit de développement, vous devrez utiliser du contenu SL150. Vous pouvez tester ce contenu de l’une des manières suivantes:
+
+* Utiliser un contenu de test surveillé qui requiert des licences SL150.
+* Implémentez la logique afin que seuls certains comptes de test authentifiés soient en mesure d’acquérir des licences SL150 pour certains contenus.
+
+Utilisez l’approche qui convient pour votre produit et pour votre entreprise.
+
+## Voir aussi
 - [Lecture de contenu multimédia](media-playback.md)
 
 
@@ -467,6 +481,6 @@ Pour utiliser la gestion des droits numériques par PlayReady dans une applicati
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

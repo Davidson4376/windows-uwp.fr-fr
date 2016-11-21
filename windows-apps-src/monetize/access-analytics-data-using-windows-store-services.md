@@ -4,8 +4,8 @@ ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
 description: "Utilisez l’API d’analyse du WindowsStore pour récupérer par programmation les données d’analyse pour les applications qui sont enregistrées sur votre compte personnel ou compte d’organisation du Centre de développement Windows."
 title: "Accéder aux données d’analyse à l’aide des services du Windows Store"
 translationtype: Human Translation
-ms.sourcegitcommit: 47e0ac11178af98589e75cc562631c6904b40da4
-ms.openlocfilehash: 1293bb5beb927425928d832f887129263db5a895
+ms.sourcegitcommit: 67845c76448ed13fd458cb3ee9eb2b75430faade
+ms.openlocfilehash: 468be96b70d07567163b2caccebaa8e2f6ecd592
 
 ---
 
@@ -72,6 +72,8 @@ Une fois que vous disposez d’un jeton d’accès Azure AD, vous pouvez appeler
 -   [Obtenir les données de rapport d’erreurs](get-error-reporting-data.md)
 -   [Obtenir les classifications des applications](get-app-ratings.md)
 -   [Obtenir les avis sur les applications](get-app-reviews.md)
+-   [Obtenir les données relatives aux performances publicitaires](get-ad-performance-data.md)
+-   [Obtenir les données relatives aux performances de la campagne publicitaire](get-ad-campaign-performance-data.md)
 
 ## Exemple de code
 
@@ -233,10 +235,12 @@ L’API d’analyse du Windows Store renvoie les réponses d’erreur dans un ob
 * [Obtenir les données de rapport d’erreurs](get-error-reporting-data.md)
 * [Obtenir les classifications des applications](get-app-ratings.md)
 * [Obtenir les avis sur les applications](get-app-reviews.md)
+* [Obtenir les données relatives aux performances publicitaires](get-ad-performance-data.md)
+* [Obtenir les données relatives aux performances de la campagne publicitaire](get-ad-campaign-performance-data.md)
  
 
 
 
-<!--HONumber=Sep16_HO1-->
+<!--HONumber=Nov16_HO1-->
 
 

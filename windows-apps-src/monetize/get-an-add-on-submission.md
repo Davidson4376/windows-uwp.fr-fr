@@ -4,8 +4,8 @@ ms.assetid: E3DF5D11-8791-4CFC-8131-4F59B928A228
 description: "Utilisez cette méthode dans l’API de soumission du Windows Store pour obtenir des données pour une soumission d’extension existante."
 title: "Obtenir une soumission d’extension à l’aide de l’API de soumission du Windows Store"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 699f26e8a73e1777f5966faf346945807d460315
+ms.sourcegitcommit: 03942eb9015487cfd5690e4b1933e4febd705971
+ms.openlocfilehash: ecdd4292c7980a647075c55abf7d14edd39d23d6
 
 ---
 
@@ -16,11 +16,13 @@ ms.openlocfilehash: 699f26e8a73e1777f5966faf346945807d460315
 
 Utilisez cette méthode dans l’API de soumission du Windows Store pour obtenir des données pour une soumission d’extension existante (également connue sous le nom PIA ou produit in-app). Pour plus d’informations sur le processus de création d’une soumission d’extensions à l’aide de l’API de soumission du Windows Store, voir [Gérer les soumissions d’extensions](manage-add-on-submissions.md).
 
-## Conditions préalables
+>**Important**&nbsp;&nbsp;Microsoft va bientôt changer le modèle de données de tarification pour les soumissions d’extensions dans le Centre de développement Windows. Une fois la modification implémentée, la ressource **Tarification** dans le corps de la demande de cette méthode sera vide et vous ne pourrez temporairement pas modifier les données relatives à la tarification et à la vente d’une soumission d’extension à l’aide de cette méthode. Nous allons mettre à jour l’API de soumission du Windows Store à l’avenir pour introduire une nouvelle façon d’accéder par programmation aux informations de tarification des soumissions d’extensions. Pour plus d’informations, voir la [ressource Tarification](manage-add-on-submissions.md#pricing-object).
+
+## Prérequis
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
 
-* Si ce n’est pas déjà le cas, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
+* Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
 * [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 * Créez une soumission d’extension pour une application dans votre compte du Centre de développement. Pour cela, vous pouvez utiliser le tableau de bord du Centre de développement ou la méthode [Créer une soumission d’extension](create-an-add-on-submission.md).
 
@@ -28,7 +30,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 ## Requête
 
-Cette méthode présente la syntaxe suivante. Voir les sections suivantes pour obtenir des exemples d’utilisation et une description de l’en-tête et du corps de la requête.
+Cette méthode présente la syntaxe suivante. Consultez les sections suivantes pour obtenir des exemples d’utilisation et une description de l’en-tête et du corps de la requête.
 
 | Méthode | URI de la requête                                                      |
 |--------|------------------------------------------------------------------|
@@ -148,7 +150,7 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
 
 Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’erreur HTTP suivants.
 
-| Code d’erreur |  Description   |
+| Error code |  Description   |
 |--------|------------------|
 | 404  | La soumission est introuvable. |
 | 409  | La soumission n’appartient pas à l’extension spécifiée, ou l’extension utilise une fonctionnalité du tableau de bord du Centre de développement qui n’est [actuellement pas prise en charge par l’API de soumission du Windows Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
@@ -167,6 +169,6 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

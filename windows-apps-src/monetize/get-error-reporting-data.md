@@ -4,19 +4,16 @@ ms.assetid: 252C44DF-A2B8-4F4F-9D47-33E423F48584
 description: "Utilisez cette méthode dans l’API d’analyse du WindowsStore pour récupérer les données agrégées de rapport d’erreurs, pour une plage de dates données et en fonction d’autres filtres facultatifs."
 title: "Obtenir les données de rapport d’erreurs"
 translationtype: Human Translation
-ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
-ms.openlocfilehash: 64bd3491bc8ff37f5eb7ca852ad6dc738f6e2711
+ms.sourcegitcommit: 7b73682ea36574f8b675193a174d6e4b4ef85841
+ms.openlocfilehash: 89b1c9b44aaabb49f78953877ae11d2d7a0a2a2f
 
 ---
 
 # Obtenir les données de rapport d’erreurs
 
+Utilisez cette méthode dans l’API d’analyse du WindowsStore pour récupérer les données agrégées de rapport d’erreurs au formatJSON, pour une plage de dates données et en fonction d’autres filtres facultatifs. Ces informations sont également disponibles dans le [rapport d’intégrité](../publish/health-report.md) du tableau de bord du Centre de développement.
 
-
-
-Utilisez cette méthode dans l’API d’analyse du WindowsStore pour récupérer les données agrégées de rapport d’erreurs, pour une plage de dates données et en fonction d’autres filtres facultatifs. Cette méthode renvoie les données au format JSON.
-
-## Conditions préalables
+## Prérequis
 
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
@@ -195,9 +192,9 @@ Pour obtenir la liste des champs pris en charge, consultez le tableau suivant: L
 <li><strong>Windows Phone 8</strong></li>
 <li><strong>Windows Phone 8.1</strong></li>
 <li><strong>Windows Phone 10</strong></li>
-<li><strong>Windows 8</strong></li>
-<li><strong>Windows 8.1</strong></li>
-<li><strong>Windows 10</strong></li>
+<li><strong>Windows8</strong></li>
+<li><strong>Windows8.1</strong></li>
+<li><strong>Windows10</strong></li>
 <li><strong>Unknown</strong></li>
 </ul></td>
 </tr>
@@ -322,6 +319,7 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 
 ## Rubriques connexes
 
+* [Rapport d’intégrité](../publish/health-report.md)
 * [Accéder aux données d’analyse à l’aide des services du Windows Store](access-analytics-data-using-windows-store-services.md)
 * [Obtenir des acquisitions d’applications](get-app-acquisitions.md)
 * [Obtenir des acquisitions d’extensions](get-in-app-acquisitions.md)
@@ -330,6 +328,6 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

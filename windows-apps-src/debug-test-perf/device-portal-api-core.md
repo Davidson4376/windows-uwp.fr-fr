@@ -900,7 +900,8 @@ Ces commandes sont envoyées du client vers le serveur.
 
 Commande | Description
 :----- | :-----
-provider *{guid}* enable *{level}* | Activez le fournisseur marqué par *{guid}* (sans crochets) au niveau spécifié. *{level}* est un entier **int** de 1 (peu détaillé) à 5 (très détaillé).
+provider *{guid}* enable *{level}* | Activez le fournisseur marqué par *{guid}* (sans crochets) au niveau spécifié. 
+            *{level}* est un entier **int** de 1 (peu détaillé) à 5 (très détaillé).
 provider *{guid}* disable | Désactivez le fournisseur marqué par *{guid}* (sans crochets).
 
 Cette réponse est envoyée du serveur vers le client. Elle est envoyée sous forme de texte et vous obtenez le format suivant en analysant le JSON.
@@ -1507,7 +1508,7 @@ Vous pouvez obtenir la sous-valeur pour un schéma d’alimentation actif en uti
  
 Méthode      | URI de la requête
 :------     | :-----
-GET | /api/power/cfg/*<power scheme path>*
+GET | /api/power/cfg/
 <br />
 Options:
 - SCHEME_CURRENT
@@ -1642,7 +1643,7 @@ Vous pouvez obtenir la sous-valeur pour un schéma d’alimentation en utilisant
  
 Méthode      | URI de la requête
 :------     | :-----
-POST | /api/power/cfg/*<power scheme path>*
+POST | /api/power/cfg/
 <br />
 
 **Paramètres d’URI**
@@ -2722,7 +2723,8 @@ GET | /api/wpr/trace
 
 **Réponse**
 
-- Aucune.  **Remarque:** il s’agit d’une opération longue.  Elle renverra une réponse à la fin de l’écriture de l’ETL sur le disque.  
+- Aucune.  
+            **Remarque:** il s’agit d’une opération longue.  Elle renverra une réponse à la fin de l’écriture de l’ETL sur le disque.  
 
 **Code d’état**
 
@@ -2974,7 +2976,8 @@ GET | /api/dns-sd/tags
 
 - Aucun
 
-**Réponse** Balises actuellement appliquées au format suivant. 
+
+            **Réponse** Balises actuellement appliquées au format suivant. 
 ```
  {
     "tags": [
@@ -3167,7 +3170,8 @@ GET | /api/filesystem/apps/knownfolders
 
 - Aucun
 
-**Réponse** Dossiers disponibles au format suivant. 
+
+            **Réponse** Dossiers disponibles au format suivant. 
 ```
  {"KnownFolders": [
     "folder0",
@@ -3221,7 +3225,8 @@ path | (**facultatif**) Sous-répertoire du dossier ou du package spécifié ci-
 
 - Aucun
 
-**Réponse** Dossiers disponibles au format suivant. 
+
+            **Réponse** Dossiers disponibles au format suivant. 
 ```
 {"Items": [
     {

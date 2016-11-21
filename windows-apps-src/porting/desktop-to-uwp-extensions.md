@@ -4,12 +4,12 @@ Description: "En plus des API normales disponibles pour toutes les applications 
 Search.Product: eADQiWindows 10XVcnh
 title: "Extensions d’applications de bureau converties"
 translationtype: Human Translation
-ms.sourcegitcommit: 09ddc8cad403a568a43e08f32abeaf0bbd40d59a
-ms.openlocfilehash: 2aa55797ed3a6588b3a27158282a02827fbd2109
+ms.sourcegitcommit: 8429e6e21319a03fc2a0260c68223437b9aed02e
+ms.openlocfilehash: 405b9b100be93f7098eb384d6b48b8690f5e6309
 
 ---
 
-# Extensions d’applications de bureau converties
+# Extensions d’application Desktop Bridge
 
 Vous pouvez améliorer votre application de bureau convertie avec un large éventail d’API de la plateforme Windows universelle (UWP). Toutefois, en plus des API normales disponibles pour toutes les applications UWP, il existe certaines extensions et API disponibles uniquement pour les applications de bureau converties. Ces fonctionnalités sont axées sur des scénarios tels que le lancement d’un processus lors de la connexion de l’utilisateur et l’intégration dans l’Explorateur de fichiers, et sont conçues pour faciliter la transition entre l’application de bureau d’origine et le package de l’application convertie.
 
@@ -106,7 +106,7 @@ Exemple:
 
 - *FileType* est l’extension prise en charge par votre application.
 
-### Verbes de menu contextuel 
+### Verbes du menu contextuel du fichier 
 
 Pour ouvrir des fichiers, les utilisateurs double-cliquent généralement dessus. Cependant, lorsqu’un utilisateur clique avec le bouton droit sur un fichier, le menu contextuel présente différentes options (appelées «verbes») qui précisent le type d’interaction souhaité avec le fichier: Ouvrir, Modifier, Aperçu, Imprimer, etc. 
 
@@ -125,6 +125,10 @@ Exemple:
 - *Verb Parameters* correspond à la liste des paramètres et des valeurs d’arguments associés au verbe. Si votre application est une application convertie de confiance totale, ceux-ci sont transmis en tant qu’arguments d’événements lorsqu’elle est activée pour vous permettre de personnaliser son comportement en fonction du verbe d’activation. Si une variable peut contenir un chemin d’accès à un fichier, vous devez placer la valeur entre guillemets afin qu’elle ne soit pas rompue en cas de transmission d’un chemin d’accès comprenant des espaces. Notez que si votre application est une application UWP, vous ne pouvez pas transmettre de paramètres; elle reçoit l’ID à la place (voir la puce précédente). 
 - *Verb Extended* indique que le verbe doit seulement apparaître si l’utilisateur maintient enfoncée la touche **Maj** avant de cliquer avec le bouton droit sur le fichier pour afficher le menu contextuel. Cet attribut est facultatif et est défini par défaut sur *False* (c’est-à-dire que le verbe est toujours affiché) s’il n’est pas répertorié. Vous devez spécifier ce comportement individuellement pour chaque verbe (à l’exception de «Ouvrir», qui est toujours défini sur *False*). 
 - *Verb* correspond au nom à afficher dans le menu contextuel de l’Explorateur de fichiers. Cette chaîne est localisable à l’aide de ```ms-resource```.
+
+### Verbes du menu contextuel de l’interpréteur de commande
+
+L’ajout d’éléments au menu contextuel du dossier de l’interpréteur de commandes n’est pas pris en charge actuellement. 
 
 ### Modèle de sélection multiple
 
@@ -179,6 +183,6 @@ Voici un exemple complet qui intègre un grand nombre des éléments liés aux f
 - [Manifeste du package de l’application](https://msdn.microsoft.com/library/windows/apps/br211474.aspx)
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

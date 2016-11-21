@@ -1,4 +1,14 @@
-# API UWP prises en charge pour les applications de bureau converties
+---
+author: awkoren
+Description: "Cet article explique comment signer une application de bureau que vous avez convertie à la plateforme Windows universelle (UWP)."
+Search.Product: eADQiWindows 10XVcnh
+title: API UWP prises en charge pour les applications de bureau converties
+translationtype: Human Translation
+ms.sourcegitcommit: 3751b16837a1e12f68954b2dec7dfaf0fb8554b6
+ms.openlocfilehash: c99d103fe5d613c5b654ba2b0bb83987a7fcb944
+
+---
+# API UWP prises en charge pour les applications converties avec Desktop Bridge
 
 Les applications de bureau converties peuvent utiliser un large éventail d’API de la plateforme Windows universelle (UWP), ce même si elles n’ont pas été entièrement converties en applications UWP. Cet article répertorie les classes disponibles que votre application convertie peut utiliser. 
 
@@ -32,7 +42,7 @@ Certaines API UWP disponibles pour les applications de bureau complètes ne sont
 
 Voici une liste complète des API UWP prises en charge dans les applications converties. Vous pouvez afficher les [API nouvellement prises en charge dans les applications converties](#new) ou les [API prises en charge à la fois dans les applications converties et dans les applications de bureau](#both). 
 
-Pour obtenir des exemples sur la façon d’appeler des API UWP à partir d’une application convertie, voir les [exemples de code Desktop Bridge sur GitHub](https://github.com/Microsoft/DesktopBridgeToUWP-Samples).
+Pour des exemples d’utilisation des API WinRT, consultez [Exemples de pont d’application de bureau en UWP](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) et [Exemples d’applications de plateforme Windows universelle (UWP)](https://github.com/Microsoft/Windows-universal-samples) sur GitHub.
 
 <span id="new" />
 ### API prises en charge dans les applications récemment converties
@@ -1030,6 +1040,6 @@ Pour obtenir des exemples sur la façon d’appeler des API UWP à partir d’un
 
 
 
-<!--HONumber=Sep16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

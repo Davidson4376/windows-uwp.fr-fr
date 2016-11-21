@@ -4,8 +4,8 @@ ms.assetid: 1f970d38-2338-470e-b5ba-811402752fc4
 description: "Découvrez comment utiliser les bibliothèques de publicités Microsoft de Microsoft Store Services SDK pour insérer des spots publicitaires dans une application pour Windows10, Windows8.1 ou Windows Phone8.1."
 title: Spots publicitaires
 translationtype: Human Translation
-ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
-ms.openlocfilehash: 4082fdd17ba42fd2b6a7659095b019c1ad4875a0
+ms.sourcegitcommit: 8574695fe12042e44831227f81e1f6ea45e9c0da
+ms.openlocfilehash: fdc9bddafc7b80f66bb160183a6c416a8573883a
 
 ---
 
@@ -360,10 +360,10 @@ Cet exemple part du principe que vous avez créé un projet d’application univ
 4.  Passez en revue vos [rapports de performances des publicités](../publish/advertising-performance-report.md) dans le tableau de bord du Centre de développement.
 
 <span id="interstitialbestpractices10"/>
-## Meilleures pratiques Spots
+## Meilleures pratiques et politiques Spots
 
 
-Pour plus d’informations sur l’utilisation efficace des spots publicitaires, voir [Recommandations en matière d’expérience utilisateur et d’interface utilisateur](ui-and-user-experience-guidelines.md).
+Pour plus d’informations sur l’utilisation efficace des spots publicitaires et les stratégies à respecter, consultez [Meilleures pratiques et politiques Spots](ui-and-user-experience-guidelines.md#interstitialbestpractices10).
 
 <span id="targetplatform10"/>
 ## Supprimer des erreurs de référence: Cibler une plateformeUC spécifique (XAML et HTML)
@@ -384,6 +384,6 @@ Lorsque vous utilisez les bibliothèques de publicités Microsoft, vous ne pouve
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

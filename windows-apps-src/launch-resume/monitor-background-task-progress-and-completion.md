@@ -4,15 +4,15 @@ title: "Surveiller la progression et l’achèvement des tâches en arrière-pla
 description: "Découvrez comment votre application peut reconnaître la progression et l’achèvement signalés par une tâche en arrière-plan."
 ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
 translationtype: Human Translation
-ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
-ms.openlocfilehash: 0488e47c35b2f7c8a8db2b2aca4527c4c3b67d28
+ms.sourcegitcommit: 7d1c160f8b725cd848bf8357325c6ca284b632ae
+ms.openlocfilehash: c12c3184cf6f4dce3d3ee2a4cf49843c8b9828d3
 
 ---
 
 # Surveiller la progression et l’achèvement des tâches en arrière-plan
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -21,11 +21,11 @@ ms.openlocfilehash: 0488e47c35b2f7c8a8db2b2aca4527c4c3b67d28
 -   [**BackgroundTaskProgressEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224785)
 -   [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781)
 
-Découvrez comment votre application peut reconnaître la progression et l’achèvement signalés par une tâche en arrière-plan qui s’exécute dans un processus distinct. (Pour les tâches en arrière-plan à processus unique, vous pouvez définir des variables partagées pour signaler la progression et l’achèvement.)
+Découvrez comment votre application peut reconnaître la progression et l’achèvement signalés par une tâche en arrière-plan qui s’exécute hors processus. (Pour les tâches en arrière-plan in-process, vous pouvez définir des variables partagées pour signaler la progression et l’achèvement.)
 
- Les tâches en arrière-plan sont découplées de l’application et sont exécutées séparément. Toutefois, la progression et l’achèvement des tâches en arrière-plan peuvent être surveillés par le code de l’application. Pour ce faire, l’application s’abonne aux événements des tâches en arrière-plan qu’elle a inscrites auprès du système.
+ La progression et l’achèvement des tâches en arrière-plan peuvent être surveillés par le code de l’application. Pour ce faire, l’application s’abonne aux événements des tâches en arrière-plan qu’elle a inscrites auprès du système.
 
--   Cette rubrique suppose que vous disposez d’une application qui inscrit les tâches en arrière-plan. Pour vous lancer rapidement dans la génération d’une tâche en arrière-plan, voir [Créer et inscrire une tâche en arrière-plan](create-and-register-a-background-task.md). Pour des informations plus détaillées sur les conditions et les déclencheurs, voir [Prendre en charge votre application avec des tâches en arrière-plan](support-your-app-with-background-tasks.md).
+-   Cette rubrique suppose que vous disposez d’une application qui inscrit les tâches en arrière-plan. Pour commencer rapidement à créer une tâche en arrière-plan, consultez [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md) ou [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-an-outofproc-background-task.md). Pour des informations plus détaillées sur les conditions et les déclencheurs, voir [Définition de tâches en arrière-plan pour les besoins de votre application](support-your-app-with-background-tasks.md).
 
 ## Créer un gestionnaire d’événements pour gérer les tâches en arrière-plan achevées
 
@@ -197,7 +197,8 @@ Découvrez comment votre application peut reconnaître la progression et l’ach
 
 ## Rubriques connexes
 
-* [Créer et inscrire une tâche en arrière-plan](create-and-register-a-background-task.md)
+* [Créez et inscrivez une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md).
+* [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-an-outofproc-background-task.md)
 * [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md)
 * [Gérer une tâche en arrière-plan annulée](handle-a-cancelled-background-task.md)
 * [Inscrire une tâche en arrière-plan](register-a-background-task.md)
@@ -212,6 +213,6 @@ Découvrez comment votre application peut reconnaître la progression et l’ach
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

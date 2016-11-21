@@ -1,16 +1,16 @@
 ---
 author: GrantMeStrength
 ms.assetid: CFB3601D-3459-465F-80E2-520F57B88F62
-title: "Créer une application « Hello World » (JS)"
-description: "Ce didacticiel vous expliquer comment utiliser JavaScript et HTML pour créer une simple application &amp;\\#0034;Hello, world&amp;\\#0034; ciblant la plateforme Windows universelle (UWP) sur Windows 10."
+title: Create a "Hello, world" app (JS)
+description: "Ce didacticiel vous expliquer comment utiliser JavaScript et HTML pour créer une simple application &amp;\\#0034;Hello, world&amp;\\#0034; ciblant la plateforme Windows universelle (UWP) sur Windows10."
 translationtype: Human Translation
-ms.sourcegitcommit: 2e0965f964f6f2e10b895d99244b66458eb15903
-ms.openlocfilehash: 6c81b24f7fa9abe036d4ccd22ee8fa24c011fe77
+ms.sourcegitcommit: 7b4676e5c5a66450b321ab6f5f8670f9491b7a9d
+ms.openlocfilehash: 31bd2d40750e5acf09679d8ff5ea1a1540f60934
 
 ---
 # Créer une application « Hello World » (JS)
 
-Ce didacticiel vous expliquer comment utiliser JavaScript et HTML pour créer une simple application « Hello World » ciblant la plateforme Windows universelle (UWP) sur Windows 10. À l’aide d’un seul projet dans Microsoft Visual Studio, vous pouvez générer une application qui s’exécute sur tout appareil Windows10.
+Ce didacticiel vous expliquer comment utiliser JavaScript et HTML pour créer une simple application « Hello World » ciblant la plateforme Windows universelle (UWP) sur Windows10. À l’aide d’un seul projet dans Microsoft Visual Studio, vous pouvez générer une application qui s’exécute sur tout appareil Windows10.
 
 Vous allez apprendre à effectuer les opérations suivantes:
 
@@ -114,7 +114,7 @@ Félicitations! Vous venez de générer votre première application UWP, même s
 
 ### Démarrer l’application sur un émulateur d’appareil mobile
 
-Votre application s’exécute sur n’importe quel appareil Windows 10. Examinons donc son aspect sur un Windows Phone.
+Votre application s’exécute sur n’importe quel appareil Windows10. Examinons donc son aspect sur un Windows Phone.
 
 Outre les options de débogage sur un ordinateur de bureau, Visual Studio offre des options de déploiement et de débogage de votre application sur un appareil mobile physique connecté à l’ordinateur ou sur un émulateur d’appareil mobile. Vous pouvez choisir parmi plusieurs émulateurs d’appareil correspondant à différentes configurations de mémoire et d’affichage.
 
@@ -338,7 +338,7 @@ En plus des contrôles HTML standard, votre application peut utiliser tout contr
 
 1.  Dans votre fichier index.html, ajoutez un élément [label](https://msdn.microsoft.com/library/windows/apps/Hh453321) et un contrôle [Rating](https://msdn.microsoft.com/library/windows/apps/BR211895) après l’élément **div** `greetingOutput`.
 
-    ```html
+```html
     <body class="win-type-body">
         <h1>Hello, world!</h1>
         <p>What's your name?</p>
@@ -351,7 +351,7 @@ En plus des contrôles HTML standard, votre application peut utiliser tout contr
         <div id="ratingControlDiv" data-win-control="WinJS.UI.Rating">
         </div>
     </body>
-    ```
+```
 
 2.  Exécutez l’application sur l’ordinateur local. Notez le nouveau contrôle [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895).
 
@@ -384,7 +384,7 @@ En ajoutant votre code à une fonction «completed» et en la passant à la mét
 
 1.  Dans votre fichier index.html, créez un élément [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) pour afficher la valeur d’évaluation et affectez-lui **l’id** «ratingOutput».
 
-    ```html
+```html
         <body class="win-type-body">
         <h1>Hello, world!</h1>
         <p>What's your name?</p>
@@ -402,7 +402,7 @@ En ajoutant votre code à une fonction «completed» et en la passant à la mét
 
 2.  Dans le fichier main.js, créez un gestionnaire d’événements pour l’événement [change](https://msdn.microsoft.com/library/windows/apps/BR211891) du contrôle **Rating** nommé `ratingChanged`. Le paramètre [eventInfo](https://msdn.microsoft.com/library/windows/apps/Hh465776) contient une propriété **detail.tentativeRating** qui fournit la nouvelle évaluation de l’utilisateur. Récupérez cette valeur et affichez-la dans l’élément **div** de sortie.
 
-    ```javascript
+```javascript
         function ratingChanged(eventInfo) {
 
             var ratingOutput = document.getElementById("ratingOutput");
@@ -412,7 +412,7 @@ En ajoutant votre code à une fonction «completed» et en la passant à la mét
 
 3.  Mettez à jour le code dans le gestionnaire d’événements [onactivated](https://msdn.microsoft.com/library/windows/apps/BR212679) qui appelle [WinJS.UI.processAll](https://msdn.microsoft.com/library/windows/apps/Hh440975) en ajoutant un appel à la méthode [then](https://msdn.microsoft.com/library/windows/apps/BR229728) et en lui passant une fonction `completed`. Dans la fonction `completed`, récupérez l’élément `ratingControlDiv` qui héberge le contrôle [Rating](https://msdn.microsoft.com/library/windows/apps/BR211895). Utilisez ensuite la propriété [winControl](https://msdn.microsoft.com/library/windows/apps/Hh770814) pour récupérer le contrôle **Rating** réel. (Cet exemple définit la fonction `completed` en ligne.)
 
-    ```javascript
+```javascript
            args.setPromise(WinJS.UI.processAll().then(function completed() {
 
                     // Retrieve the div that hosts the Rating control.
@@ -431,7 +431,7 @@ En ajoutant votre code à une fonction «completed» et en la passant à la mét
 
     Voici le gestionnaire d’événements [**onactivated**](https://msdn.microsoft.com/library/windows/apps/BR212679) mis à jour:
 
-    ```javascript
+```javascript
     (function () {
     "use strict";
 
@@ -484,18 +484,18 @@ En ajoutant votre code à une fonction «completed» et en la passant à la mét
         isFirstActivation = false;
     };
 
-    ```        
+```        
 
-    Exécutez l’application. Lorsque vous sélectionnez une valeur d’évaluation, la valeur numérique est générée sous le contrôle [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895).
+    Run the app. When you select a rating value, it outputs the numeric value below the [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) control.
 
 ![L’application Hello World terminée sur un PC](images/helloworld-5-winjs.png)
 
 ## Résumé
 
-Félicitations, vous avez créé votre première application pour Windows 10 et l’UWP en JavaScript et HTML.
+Félicitations, vous avez créé votre première application pour Windows10 et l’UWP en JavaScript et HTML.
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

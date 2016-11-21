@@ -4,8 +4,8 @@ ms.assetid: 32572890-26E3-4FBB-985B-47D61FF7F387
 description: "Découvrez comment activer les achats in-app et les versions d’évaluation dans les applications UWP qui ciblent les versions antérieures à Windows10 version1607."
 title: "Versions d’évaluation et achats in-app utilisant l’espace de noms Windows.ApplicationModel.Store"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 649d082cddcf301fe602a5ab99637ad7bea67d49
+ms.sourcegitcommit: 812fa1789c5c86657b8e73e45a851c7a58a1c84e
+ms.openlocfilehash: 5a4f943357660a22217351f04d735c14cab828ff
 
 ---
 
@@ -13,11 +13,15 @@ ms.openlocfilehash: 649d082cddcf301fe602a5ab99637ad7bea67d49
 
 Le SDK Windows fournit des membres dans l’espace de noms [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) que vous pouvez utiliser pour ajouter des achats in-app et la fonctionnalité d’évaluation à votre application de plateforme Windows universelle (UWP) afin de monétiser votre application et d’enrichir ses fonctionnalités. Ces API permettent également d’accéder aux informations de licence de votre application.
 
->**Remarque**&nbsp;&nbsp;Si votre application cible Windows10, version1607 ou ultérieure, nous vous recommandons d’utiliser les membres de l’espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) plutôt que l’espace de noms **Windows.ApplicationModel.Store**. L’espace de noms **Windows.Services.Store** prend en charge les types d’extension les plus récents, comme les extensions consommables gérées par le Windows Store. Il est conçu pour être compatible avec les futurs types de produits et de fonctionnalités pris en charge par le Centre de développement Windows et le WindowsStore. L’espace de noms **Windows.Services.Store** affiche également de meilleures performances. Pour plus d’informations, voir [Versions d’évaluation et achats in-app](in-app-purchases-and-trials.md).
-
 Les articles de cette section indiquent des instructions détaillées et des exemples de code liés à l’utilisation des membres de l’espace de noms **Windows.ApplicationModel.Store** pour plusieurs scénarios courants. Pour obtenir une vue d’ensemble des concepts liés aux achats in-app dans les applications UWP, voir [Achats in-app et versions d’évaluation](in-app-purchases-and-trials.md).
 
 Pour obtenir un exemple complet montrant comment implémenter des versions d’évaluation et des achats in-app à l’aide de l’espace de noms **Windows.ApplicationModel.Store**, voir [Exemple Windows Store](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store).
+
+>**Remarques**&nbsp;&nbsp;
+>
+> * Si votre application cible Windows10, version1607 ou ultérieure, nous vous recommandons d’utiliser les membres de l’espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) plutôt que l’espace de noms **Windows.ApplicationModel.Store**. L’espace de noms **Windows.Services.Store** prend en charge les types d’extension les plus récents, comme les extensions consommables gérées par le Windows Store. Il est conçu pour être compatible avec les futurs types de produits et de fonctionnalités pris en charge par le Centre de développement Windows et le WindowsStore. L’espace de noms **Windows.Services.Store** affiche également de meilleures performances. Pour plus d’informations, voir [Versions d’évaluation et achats in-app](in-app-purchases-and-trials.md).
+<br/><br/>
+> * L’espace de noms **Windows.ApplicationModel.Store** n’est pas pris en charge dans les applications de bureau Windows qui utilisent [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop). Ces applications doivent utiliser l’espace de noms **Windows.Services.Store** pour implémenter les achats in-app et les versions d’évaluation.
 
 ## Dans cette section
 
@@ -32,6 +36,6 @@ Pour obtenir un exemple complet montrant comment implémenter des versions d’�
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

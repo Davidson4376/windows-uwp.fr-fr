@@ -4,17 +4,17 @@ ms.assetid: C1E42E8B-B97D-4B09-9326-25E968680A0F
 description: "Utilisez cette méthode dans l’API d’analyse du WindowsStore pour obtenir les données d’acquisition agrégées d’une application pour une plage de dates données, et en fonction de filtres facultatifs."
 title: "Obtenir des acquisitions d’applications"
 translationtype: Human Translation
-ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
-ms.openlocfilehash: c3efa347d11c2694d8814eb31f7e5f6825c7173a
+ms.sourcegitcommit: 7b73682ea36574f8b675193a174d6e4b4ef85841
+ms.openlocfilehash: db271b0d1ec3b20ab2ead2e35e06fd97adb2ce0c
 
 ---
 
 # Obtenir des acquisitions d’applications
 
 
-Utilisez cette méthode dans l’API d’analyse du WindowsStore pour obtenir les données d’acquisition agrégées d’une application pour une plage de dates données, et en fonction de filtres facultatifs. Cette méthode renvoie les données au format JSON.
+Utilisez cette méthode dans l’API d’analyse du WindowsStore pour obtenir les données d’acquisition agrégées au format JSON d’une application pour une plage de dates données, et en fonction de filtres facultatifs. Ces informations sont également disponibles dans le [rapport Acquisitions](../publish/acquisitions-report.md) du tableau de bord du Centre de développement.
 
-## Conditions préalables
+## Prérequis
 
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
@@ -120,6 +120,31 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 <p>Voici un exemple de chaîne <em>orderby</em> : <em>orderby=date,market</em></p></td>
 <td align="left">Non</td>
 </tr>
+<tr class="odd">
+<td align="left">groupby</td>
+<td align="left">chaîne</td>
+<td align="left"><p>Une instruction qui applique l’agrégation des données uniquement sur les champs spécifiés. Vous pouvez spécifier les champs suivants:</p>
+<ul>
+<li><strong>date</strong></li>
+<li><strong>applicationName</strong></li>
+<li><strong>acquisitionType</strong></li>
+<li><strong>ageGroup</strong></li>
+<li><strong>storeClient</strong></li>
+<li><strong>gender</strong></li>
+<li><strong>market</strong></li>
+<li><strong>osVersion</strong></li>
+<li><strong>deviceType</strong></li>
+<li><strong>orderName</strong></li>
+</ul>
+<p>Les lignes de données renvoyées comportent les champs spécifiés dans le paramètre <em>groupby</em>, ainsi que dans les paramètres suivants :</p>
+<ul>
+<li><strong>date</strong></li>
+<li><strong>applicationId</strong></li>
+<li><strong>acquisitionQuantity</strong></li>
+</ul>
+<p>Le paramètre <em>groupby</em> peut être utilisé avec le paramètre <em>aggregationLevel</em>. Par exemple: <em>&amp;groupby=ageGroup,market&amp;aggregationLevel=week</em></p></td>
+<td align="left"></td>
+</tr>
 </tbody>
 </table>
 
@@ -203,9 +228,9 @@ Pour obtenir la liste des champs pris en charge, consultez le tableau suivant: L
 <li><strong>Windows Phone 8</strong></li>
 <li><strong>Windows Phone 8.1</strong></li>
 <li><strong>Windows Phone 10</strong></li>
-<li><strong>Windows 8</strong></li>
-<li><strong>Windows 8.1</strong></li>
-<li><strong>Windows 10</strong></li>
+<li><strong>Windows8</strong></li>
+<li><strong>Windows8.1</strong></li>
+<li><strong>Windows10</strong></li>
 <li><strong>Unknown</strong></li>
 </ul></td>
 </tr>
@@ -307,6 +332,7 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 
 ## Rubriques connexes
 
+* [Rapport Acquisitions](../publish/acquisitions-report.md)
 * [Accéder aux données d’analyse à l’aide des services du Windows Store](access-analytics-data-using-windows-store-services.md)
 * [Obtenir des acquisitions d’extensions](get-in-app-acquisitions.md)
 * [Obtenir les données de rapport d’erreurs](get-error-reporting-data.md)
@@ -315,6 +341,6 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

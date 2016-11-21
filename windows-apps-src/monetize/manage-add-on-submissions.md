@@ -4,8 +4,8 @@ ms.assetid: 66400066-24BF-4AF2-B52A-577F5C3CA474
 description: "Utilisez ces méthodes dans l’API de soumission du Windows Store pour gérer les soumissions d’extensions des applications qui sont inscrites dans votre compte du Centre de développement Windows."
 title: "Gérer les soumissions d’extensions à l’aide de l’API de soumission du Windows Store"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 52e589c90a8d78905a9617dc2802d76a2f0f0360
+ms.sourcegitcommit: 4a1ea50d72e0f754658d8ee99755b873619e1969
+ms.openlocfilehash: 9d19ecae9d5c43c28e887627372aabb58bf0aab2
 
 ---
 
@@ -16,6 +16,8 @@ ms.openlocfilehash: 52e589c90a8d78905a9617dc2802d76a2f0f0360
 Utilisez les méthodes suivantes dans l’API de soumission du Windows Store pour gérer les soumissions d’extensions (également connue sous le nom produit in-app ou PIA) pour les applications inscrites dans votre compte du Centre de développement Windows. Pour obtenir une présentation de l’API de soumission du Windows Store, notamment les conditions préalables à l’utilisation de l’API, voir [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md).
 
 >**Remarque**&nbsp;&nbsp;Ces méthodes ne peuvent être utilisées que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation. Pour pouvoir utiliser ces méthodes pour créer ou gérer des soumissions pour une extension, l’extension doit déjà exister dans votre compte du Centre de développement. Vous pouvez créer une extension [à l’aide du tableau de bord du Centre de développement](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions) ou en utilisant les méthodes de l’API de soumission du Windows Store décrites dans [Gérer les extensions](manage-add-ons.md).
+
+>**Important**&nbsp;&nbsp;Microsoft va bientôt changer le modèle de données de tarification pour les soumissions d’extensions dans le Centre de développement Windows. Une fois cette modification implémentée, la ressource **Tarification** ne sera plus prise en charge, et vous ne pourrez temporairement plus obtenir ou modifier les données relatives à la tarification et à la vente d’une soumission d’extension à l’aide de l’API de soumission du Windows Store. Nous allons mettre à jour l’API à l’avenir pour introduire une nouvelle façon d’accéder par programmation aux informations de tarification des soumissions d’extensions. Pour plus d’informations, voir la section relative à la [ressource de tarification](#pricing-object).
 
 | Méthode        | URI    | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -31,7 +33,7 @@ Utilisez les méthodes suivantes dans l’API de soumission du Windows Store pou
 
 Pour créer une soumission pour une extension, suivez ce processus.
 
-1. Si vous ne l’avez pas encore fait, remplissez les conditions préalables décrites dans [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md), notamment l’association d’une application Azure AD à votre compte du Centre de développement Windows et l’obtention de votre ID client et de votre clé. Vous n’aurez à le faire qu’une seule fois. L’ID client et la clé une fois à votre disposition sont réutilisables chaque fois que vous avez besoin de créer un jeton d’accès Azure AD.  
+1. Si vous ne l’avez pas encore fait, remplissez les conditions préalables décrites dans [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md), notamment l’association d’une application Azure AD à votre compte du Centre de développement Windows et l’obtention de votre ID client et de votre clé. Vous n’aurez à le faire qu’une seule fois. Une fois à votre disposition, l’ID client et la clé sont réutilisables chaque fois que vous avez besoin de créer un jeton d’accès AzureAD.  
 
 2. [Obtenir un jeton d’accès AzureAD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token). Vous devez transmettre ce jeton d’accès aux méthodes de l’API de soumission du Windows Store. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 
@@ -79,7 +81,7 @@ Pour créer une soumission pour une extension, suivez ce processus.
 
   Pour vérifier l’état de la soumission, examinez la valeur *status* dans le corps de la réponse. Cette valeur doit passer de **CommitStarted** à **PreProcessing** si la requête aboutit ou à **CommitFailed** si elle contient des erreurs. S’il existe des erreurs, le champ *statusDetails* contient d’autres détails s’y rapportant.
 
-7. Une fois la validation correctement terminée, la soumission est envoyée au Windows Store en vue de son intégration. Vous pouvez continuer à surveiller la progression de la soumission à l’aide de la méthode précédente ou en visitant le tableau de bord du Centre de développement.
+7. Une fois la validation correctement terminée, la soumission est envoyée au Windows Store en vue de son intégration. Vous pouvez continuer à surveiller la progression de la soumission à l’aide de la méthode précédente ou en consultant le tableau de bord du Centre de développement.
 
 ## Ressources
 
@@ -168,14 +170,14 @@ Cette ressource a les valeurs suivantes.
 | Valeur      | Type   | Description                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | id            | chaîne  | ID de la soumission.  |
-| contentType           | chaîne  |  [Type de contenu](https://msdn.microsoft.com/windows/uwp/publish/enter-iap-properties#content-type) fourni dans l’extension. Les valeurs possibles sont les suivantes: <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
-| keywords           | tableau  | Tableau de chaînes qui contiennent jusqu’à 10[motsclés](../publish/enter-iap-properties.md#keywords) pour l’extension. Votre application peut rechercher des extensions à l’aide de ces motsclés.   |
+| contentType           | chaîne  |  [Type de contenu](../publish/enter-add-on-properties.md#content-type) qui est fourni dans l’extension. Les valeurs possibles sont les suivantes: <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
+| keywords           | tableau  | Tableau de chaînes qui contiennent jusqu’à 10[motsclés](../publish/enter-add-on-properties.md#keywords) pour l’extension. Votre application peut rechercher des extensions à l’aide de ces motsclés.   |
 | lifetime           | chaîne  |  Durée de vie de l’extension. Les valeurs possibles sont les suivantes: <ul><li>Forever</li><li>OneDay</li><li>ThreeDays</li><li>FiveDays</li><li>OneWeek</li><li>TwoWeeks</li><li>OneMonth</li><li>TwoMonths</li><li>ThreeMonths</li><li>SixMonths</li><li>OneYear</li></ul> |
 | listings           | objet  |  Dictionnaire de paires clé/valeur, où chaque clé est un code de pays à deux lettres ISO 3166-1 alpha-2 et chaque valeur est un objet de [ressource de listing](#listing-object) qui contient les informations de listing pour l’application.  |
 | pricing           | objet  | Objet qui contient des informations de tarification pour l’extension. Pour plus d’informations, voir la section relative à la [ressource de tarification](#pricing-object) ci-après.  |
 | targetPublishMode           | chaîne  | Mode de publication pour la soumission. Les valeurs possibles sont les suivantes: <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | chaîne  | Date de publication de la soumission au format ISO8601, si le paramètre *targetPublishMode* a la valeur SpecificDate.  |
-| tag           | chaîne  |  [Balise](../publish/enter-iap-properties.md#tag) associée à l’extension.   |
+| tag           | chaîne  |  [Données développeur personnalisées](../publish/enter-add-on-properties.md#custom-developer-data) de l’extension (ces informations étaient précédemment appelées *tag*).   |
 | visibility  | chaîne  |  Visibilité de l’extension. Les valeurs possibles sont les suivantes: <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>  |
 | status  | chaîne  |  État de la soumission. Les valeurs possibles sont les suivantes: <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>   |
 | statusDetails           | objet  |  Contient des détails supplémentaires sur l’état de la soumission, notamment des informations sur les éventuelles erreurs. Pour plus d’informations, voir la section [Détails d’état](#status-details-object) ci-après. |
@@ -206,19 +208,32 @@ Cette ressource contient les données d’icône du listing d’extensions. Cett
 <span id="pricing-object" />
 ### Tarification
 
-Cette ressource contient des informations de tarification pour l’extension. Cette ressource a les valeurs suivantes.
+Cette ressource contient des informations de tarification pour l’extension.
+
+>**Important**&nbsp;&nbsp;Microsoft va bientôt changer le modèle de données de tarification pour les soumissions d’extensions dans le Centre de développement Windows. Une fois cette modification implémentée, la ressource **Tarification** ne sera plus prise en charge, et vous ne pourrez temporairement plus obtenir ou modifier les données relatives à la tarification et à la vente d’une soumission d’extension à l’aide de l’API de soumission du Windows Store. Vous allez constater les changements de comportement suivants:
+
+   > * Après avoir appelé la [méthode GET pour obtenir une soumission d’extension](get-an-add-on-submission.md), la ressource **Tarification** est vide. Vous pouvez continuer à utiliser le tableau de bord du Centre de développement pour obtenir les données de tarification de votre soumission d’extension.
+   > * Lors de l’appel à la [méthode PUT pour mettre à jour une soumission d’extension](update-an-add-on-submission.md), les informations dans la ressource **Tarification** sont ignorées. Vous pouvez continuer à utiliser le tableau de bord du Centre de développement pour changer les données de tarification de votre soumission d’extension.
+
+> Nous allons mettre à jour l’API de soumission du Windows Store à l’avenir afin d’introduire une nouvelle façon d’obtenir et de mettre à jour les informations de tarification des soumissions d’extension par programmation.
+
+Cette ressource a les valeurs suivantes.
 
 | Valeur           | Type    | Description                                                                                                                                                                                                                          |
 |-----------------|---------|------|
 |  marketSpecificPricings               |    objet     |  Dictionnaire de paires clé/valeur, où chaque clé est un code de pays à deux lettres ISO 3166-1 alpha-2 et chaque valeur est un [niveau de prix](#price-tiers). Ces éléments représentent les [prix personnalisés de votre extension sur des marchés spécifiques](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#markets-and-custom-prices). Tous les éléments de ce dictionnaire remplacent le prix de base spécifié par la valeur *priceId* du marché spécifié.     |     
 |  sales               |   tableau      |  Tableau d’objets qui contiennent des informations commerciales pour l’extension. Pour plus d’informations, consultez la section [Vente](#sale-object) ci-dessous.    |     
-|  priceId               |   chaîne      |  [Niveau de prix](#price-tier) qui spécifie le [prix de base](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#base-price) de l’extension.    |
+|  priceId               |   chaîne      |  [Niveau de prix](#price-tiers) qui spécifie le [prix de base](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#base-price) de l’extension.    |
 
 
 <span id="sale-object" />
 ### Vente
 
-Cette ressources contient des informations commerciales pour une extension. Cette ressource a les valeurs suivantes.
+Cette ressources contient des informations commerciales pour une extension.
+
+>**Important**&nbsp;&nbsp;Microsoft va bientôt changer le modèle de données de tarification pour les soumissions d’extensions dans le Centre de développement Windows. Une fois cette modification implémentée, la ressource **Vente** ne sera plus prise en charge, et vous ne pourrez temporairement plus obtenir ou modifier les données de ventes d’une soumission d’application à l’aide de l’API de soumission du Windows Store. Nous allons mettre à jour l’API à l’avenir pour introduire une nouvelle façon d’accéder par programmation aux informations de vente des soumissions d’extension. Pour plus d’informations, voir la section relative à la [ressource de tarification](#pricing-object).
+
+Cette ressource a les valeurs suivantes.
 
 | Valeur           | Type    | Description                                                                                                                                                                                                                          |
 |-----------------|---------|------|
@@ -315,6 +330,6 @@ Les valeurs suivantes représentent le code d’état d’une soumission.
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

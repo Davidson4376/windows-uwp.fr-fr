@@ -6,8 +6,8 @@ ms.assetid: 73008F80-FE62-457D-BAEC-412ED6BAB0C8
 label: Interaction primer
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: fe012189566a20203b2bf8cae72f80655eeadfd1
-ms.openlocfilehash: 29a33550c3b8c80c1ae2c8349fc0b771717325f1
+ms.sourcegitcommit: 19e033455caf677c4e65ffb7bd7ce11a5a93b7a9
+ms.openlocfilehash: 5f6aee51984f86c67db9dc77eace614e385df088
 
 ---
 
@@ -21,6 +21,24 @@ Dans la plateforme Windows universelle (UWP), les interactions utilisateur repos
 La plateforme UWP utilise un système d’interactions contextuelles intelligent qui, dans la plupart des cas, élimine la nécessité de traiter individuellement les types d’entrées uniques reçus par votre application. Cela inclut la gestion des entrées effectuées par le biais d’une interface tactile, d’un pavé tactile, d’une souris et d’un stylet en tant que type de pointeur générique pour prendre en charge les actions statiques (comme l’appui ou l’appui long), les actions de manipulation (comme le glissement pour le mouvement panoramique) ou le rendu d’entrée manuscrite.
 
 Familiarisez-vous avec chaque type de périphérique d’entrée, ses comportements, ses fonctionnalités et ses limites, selon son association à certains facteurs de forme. Cela vous aidera à déterminer si les contrôles et l’intuitivité de la plateforme sont suffisants pour votre application ou requièrent une personnalisation de l’expérience d’interaction utilisateur.
+
+## Surface Dial
+
+À l’occasion de la mise à jour anniversaire de Windows10, nous introduisons une nouvelle catégorie de périphérique de saisie appelé Windows Wheel. Surface Dial est le premier de cette classe de périphérique. 
+
+### Prise en charge des appareils
+
+-   Tablette
+-   PC et portables
+
+### Utilisation type
+
+Avec un format appelant à une action de rotation (ou un mouvement), Surface Dial est conçu à la manière d’un périphérique de saisie secondaire multimode venant compléter ou modifier la saisie à partir d’un périphérique principal. Dans la plupart des cas, l’utilisateur manipule le périphérique avec la main qu’il utilise le moins tout en effectuant une tâche avec sa main dominante (par exemple, la saisie manuscrite avec un stylet).
+
+### Informations supplémentaires
+
+[Recommandations de conception de Surface Dial](windows-wheel-interactions.md)
+
 
 ## Cortana
 
@@ -332,6 +350,6 @@ Tout comme les personnes ont recours à une combinaison de voix et de mouvement 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -2,8 +2,8 @@
 author: jnHs
 Description: "Découvrez comment publier vos applications Windows dans le Windows Store."
 translationtype: Human Translation
-ms.sourcegitcommit: fc7b0d7dd85e661e1688f4df3f67280c16eb6742
-ms.openlocfilehash: 3cc56e61be85e0938c5b923ae402ca1da881888d
+ms.sourcegitcommit: f894decad6a88ad3923e0bd5c54a6f4906555081
+ms.openlocfilehash: 6e2b6158a586fa82780664cd2ef2de0b425a1f1d
 
 
 ---
@@ -23,7 +23,7 @@ Cette section contient des informations concernant la publication et la gestion 
 | [Soumissions d’application](app-submissions.md) | Une soumission d’application inclut les [informations de tarification et de disponibilité](set-app-pricing-and-availability.md), les [propriétés](enter-app-properties.md), la [classification en fonction de l’âge](age-ratings.md), les [packages](upload-app-packages.md) et la [description de l’application dans le Store](create-app-store-listings.md). Votre soumission passera par le [processus de certification](the-app-certification-process.md) avant d’être publiée dans le Windows Store. Parmi les fonctionnalités optionnelles que vous pouvez utiliser figurent: la [version d’évaluation de package](package-flights.md), le [test de la version bêta](beta-testing-and-targeted-distribution.md) et la [distribution d’applications métier directement aux entreprises](distribute-lob-apps-to-enterprises.md). |
 | [Soumissions de modules complémentaires](add-on-submissions.md) | Découvrez comment publier des modules complémentaires (produits in-app) par le biais du tableau de bord du Centre de développement Windows. |
 | [Monétiser à l’aide des publicités](monetize-with-ads.md) | Gérez votre utilisation des publicités, y compris les configurations de médiation publicitaire personnalisées et la publicité affiliée. |
-| [Gestion des applications et services](app-management-and-services.md) | Utilisez des services comme les notifications push, l’expérimentation et les cartes, et découvrez comment [visualiser les informations d’identité des applications](view-app-identity-details.md) et [réserver des noms d’application supplémentaires](manage-app-names.md). |
+| [Gestion des applications et services](app-management-and-services.md) | Utilisez des services comme les tests A/B (expérimentation) et les cartes, et découvrez comment [visualiser les informations d’identité des applications](view-app-identity-details.md) et [réserver des noms d’application supplémentaires](manage-app-names.md). |
 | [Analyses](analytics.md) | Bénéficiez de données analytiques détaillées pour vos applications pour savoir où en sont vos applications: combien de clients vous avez atteint, la façon dont ils utilisent votre application et ce qu’ils en pensent. Vous obtenez également des informations sur l’intégrité de l’application, l’utilisation des publicités, etc. |
 | [Promotion des applications et implication des clients](app-promotion-and-customer-engagement.md) | Faites la promotion de votre application à l’aide de [campagnes publicitaires](create-an-ad-campaign-for-your-app.md), de [codes promotionnels](generate-promotional-codes.md), du [prix de vente](put-apps-and-add-ons-on-sale.md), et bien plus encore. 
 | [Rémunération](getting-paid-apps.md) | Obtenez des informations sur la rémunération obtenue grâce à vos applications, vos modules complémentaires et Microsoft Advertising. |
@@ -32,6 +32,6 @@ Cette section contient des informations concernant la publication et la gestion 
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

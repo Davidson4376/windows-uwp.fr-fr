@@ -4,8 +4,8 @@ ms.assetid:
 description: "Cet article vous explique comment lire du contenu multimédia dans votre application Windows universelle avec MediaPlayer."
 title: "Lire du contenu audio et vidéo avec MediaPlayer"
 translationtype: Human Translation
-ms.sourcegitcommit: 3d6f79ea55718d988415557bc4ac9a1f746f9053
-ms.openlocfilehash: 32df2810710e78eeb8c257548c39c0d5d978e888
+ms.sourcegitcommit: 34cb2fec3071add8617fe2bee2eaf50356611ac6
+ms.openlocfilehash: 66240809d47247312d9d4c49c7bf36ff70295559
 
 ---
 
@@ -39,6 +39,9 @@ Vous pouvez définir l’instance **MediaPlayer** à laquelle l’élément est 
 Vous pouvez également définir la source de lecture sur l’instance **MediaPlayerElement**. Le cas échéant, l’élément crée automatiquement une nouvelle instance **MediaPlayer** à laquelle vous pouvez accéder à l’aide de la propriété [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement.MediaPlayer).
 
 [!code-cs[GetPlayerFromElement](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetGetPlayerFromElement)]
+
+> [!NOTE] 
+> Si vous désactivez l’élément [**MediaPlaybackCommandManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager) de l’instance [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) en définissant [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager.IsEnabled) sur false, le lien entre **MediaPlayer** et [**TransportControls**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement.TransportControls) fourni par **MediaPlayerElement** est rompu; autrement dit, les contrôles de transport intégrés ne contrôleront plus automatiquement la lecture du lecteur. Vous devrez donc implémenter vos propres contrôles pour pouvoir contrôler le **MediaPlayer**.
 
 ##Tâches courantes de MediaPlayer
 Cette section vous explique comment utiliser certaines des fonctionnalités de l’instance **MediaPlayer**.
@@ -92,7 +95,7 @@ Dans le gestionnaire d’événement [**DoubleTapped**](https://msdn.microsoft.c
 [!code-cs[DoubleTapped](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetDoubleTapped)]
         
 ##Utilisez MediaPlayerSurface afin d’afficher la vidéo sur une surface Windows.UI.Composition
-À partir de Windows 10, version 1607, vous pouvez utiliser l’instance **MediaPlayer** afin d’afficher le contenu vidéo sur une interface [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Composition.ICompositionSurface), ce qui permet au lecteur d’intergir avec les API dans l’espace de noms [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Composition). L’infrastructure de composition peut être mise à profit pour travailler avec des graphiques dans la couche visuelle située entre les API XAML et les API graphiques DirectX de niveau inférieur. Cela permet la prise en charge de scénarios tels que le rendu de contenus vidéo dans tout contrôle XAML. Pour plus d’informations sur l’utilisation des API de composition, consultez la page [Couche visuelle](https://msdn.microsoft.com/windows/uwp/graphics/visual-layer).
+À partir de Windows10, version 1607, vous pouvez utiliser l’instance **MediaPlayer** afin d’afficher le contenu vidéo sur une interface [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Composition.ICompositionSurface), ce qui permet au lecteur d’intergir avec les API dans l’espace de noms [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Composition). L’infrastructure de composition peut être mise à profit pour travailler avec des graphiques dans la couche visuelle située entre les API XAML et les API graphiques DirectX de niveau inférieur. Cela permet la prise en charge de scénarios tels que le rendu de contenus vidéo dans tout contrôle XAML. Pour plus d’informations sur l’utilisation des API de composition, consultez la page [Couche visuelle](https://msdn.microsoft.com/windows/uwp/graphics/visual-layer).
 
 L’exemple suivant illustre l’affichage d’un contenu de lecteur vidéo sur un contrôle [**Canvas**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.Canvas). Les appels spécifiques au lecteur multimédias de cet exemple sont [**SetSurfaceSize**](https://msdn.microsoft.com/library/windows/apps/mt489968) et [**GetSurface**](https://msdn.microsoft.com/library/windows/apps/mt489963). **SetSurfaceSize** indique au système la talle de la mémoire tampon à allouer pour l’affichage du contenu. **GetSurface** prend un élément [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Composition.Compositor) en tant qu’argument et récupère une instance de la classe [**MediaPlayerSurface**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayerSurface). Cette classe procure un accès aux éléments **MediaPlayer** et **Compositor** utilisés pour créer la surface et l’expose via la propriété [**CompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayerSurface.CompositionSurface).
 
@@ -101,7 +104,7 @@ Le reste du code de cet exemple crée un élément [**SpriteVisual**](https://ms
 [!code-cs[Compositeur](./code/MediaPlayer_RS1/cs/MainPage.xaml.cs#SnippetCompositor)]
         
 ##Utilisez MediaTimelineController afin de synchroniser du contenu entre plusieurs couches.
-Comme indiqué précédemment dans cet article, vous application peut disposer de plusieurs objets **MediaPlayer** actifs simultanément. Par défaut, chaque instance **MediaPlayer** créée fonctionne indépendamment. Pour certains scénarios, tels que la synchronisation d’une piste de commentaires sur une vidéo, vous voudrez synchroniser l’état du lecteur, la position de lecture et la vitesse de lecture de plusieurs couches. À partir de Windows 10, version 1607, vous pouvez implémenter ce comportement à l’aide de la classe [**MediaTimelineController**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaTimelineController).
+Comme indiqué précédemment dans cet article, vous application peut disposer de plusieurs objets **MediaPlayer** actifs simultanément. Par défaut, chaque instance **MediaPlayer** créée fonctionne indépendamment. Pour certains scénarios, tels que la synchronisation d’une piste de commentaires sur une vidéo, vous voudrez synchroniser l’état du lecteur, la position de lecture et la vitesse de lecture de plusieurs couches. À partir de Windows10, version 1607, vous pouvez implémenter ce comportement à l’aide de la classe [**MediaTimelineController**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaTimelineController).
 
 ###Implémenter des contrôles de lecture
 L’exemple suivant vous explique l’utilisation d’une classe **MediaTimelineController** pour contrôler deuxinstances de **MediaPlayer**. Tout d’abord, chaque instance de **MediaPlayer** est instanciée et l’objet **Source** est défini sur un fichier multimédia. Ensuite, une nouvelle classe **MediaTimelineController** est créée. Pour chaque instance **MediaPlayer**, la classe [**MediaPlaybackCommandManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager) associée à chaque lecteur est désactivée par la définition de la propriété [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager.IsEnabled) sur False. Ensuite, la propriété [**TimelineController**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.TimelineController) est définie sur l’objet du contrôleur de chronologie.
@@ -174,6 +177,6 @@ Notez que si la valeur de décalage d’un lecteur correspond à une position de
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

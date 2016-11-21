@@ -4,8 +4,8 @@ ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
 description: "En savoir plus sur les recommandations en matière d’expérience utilisateur et d’interface utilisateur pour les publicités dans les applications."
 title: "Recommandations pour pubs in-app: expérience et interface utilisateur"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: d464a2de442e6f1833f429c8460c27bf85e577d1
+ms.sourcegitcommit: 8574695fe12042e44831227f81e1f6ea45e9c0da
+ms.openlocfilehash: 3019834a314e552654d74358f4b1eed8451d5119
 
 
 ---
@@ -29,7 +29,7 @@ Vous trouverez des informations sur la façon de concevoir l’apparence des app
 
 * Intégrez des publicités à votre expérience. Donnez à vos concepteurs un exemple d’annonce pour planifier ce à quoi ressemblera la publicité. La disposition de publicités en tant que contenu et la disposition scindée sont deux exemples de publicités bien planifiées dans les applications.
 
-  Pour bénéficier d’un aperçu du fonctionnement et de l’apparence de différentes tailles d’annonces au sein de votre application, vous pouvez utiliser nos unités de publicité en mode test pour Windows Phone, Windows 8.1 et Windows 10. Une fois vos tests terminés, pensez à [mettre à jour votre application avec des ID d’unité publicitaire réels](set-up-ad-units-in-your-app.md), avant d’envoyer l’application pour certification.
+  Pour bénéficier d’un aperçu du fonctionnement et de l’apparence de différentes tailles d’annonces au sein de votre application, vous pouvez utiliser nos unités de publicité en mode test pour Windows Phone, Windows8.1 et Windows10. Une fois vos tests terminés, pensez à [mettre à jour votre application avec des ID d’unité publicitaire réels](set-up-ad-units-in-your-app.md), avant d’envoyer l’application pour certification.
 
 * Planifiez pour les périodes au cours desquelles aucune annonce ne sera disponible. Il peut arriver à certains moments qu’aucune annonce ne soit envoyée à votre application. Disposez vos pages de telle façon qu’elles s’affichent de manière optimale avec ou sans annonce. Pour plus d’informations, consultez [Gestion des erreurs](error-handling-with-advertising-libraries.md).
 
@@ -43,7 +43,7 @@ Vous trouverez des informations sur la façon de concevoir l’apparence des app
 * Distraire l’utilisateur de ses tâches de base. L’axe principal doit toujours être l’application. L’espace publicitaire doit être incorporé de manière à rester secondaire.
 
 <span id="interstitialbestpractices10"/>
-## Meilleures pratiques Spots
+## Meilleures pratiques et politiques Spots
 
 * [Meilleures pratiques Spots: À FAIRE](#interstitialbestpracticesdo10)
 * [Meilleures pratiques Spots: À ÉVITER](#interstitialbestpracticesavoid10)
@@ -124,18 +124,23 @@ Ici, nous cherchons à vous aider à atteindre l’élégance. Étant donné que
 <span id="interstitialbestpracticesnever10"/>
 ### Meilleures pratiques Spots: À NE JAMAIS FAIRE (Stratégie appliquée)
 
-* Placer les éléments de l’interface utilisateur sur le conteneur de publicité.
+* Ne jamais placer les éléments de l’interface utilisateur sur le conteneur de publicité.
 
     * Les annonceurs ont payé pour l’intégralité de l’écran.
 
+<span/>
 
-* Appeler **Afficher** pendant que l’utilisateur utilise l’application.
+* Ne jamais appeler **Afficher** pendant que l’utilisateur utilise l’application.
 
     * Dans la mesure où **InterstitialAd** créera une superposition sur l’intégralité de l’écran, l’utilisateur risque d’être déstabilisé.
 
     * Cela peut également donner lieu à des taux de clic exagérés.
 
-* Utiliser des annonces pour obtenir tout ce qui peut être utilisé comme une devise ou échangé avec d’autres utilisateurs.
+* Ne jamais utiliser des annonces pour obtenir tout ce qui peut être utilisé comme une devise ou échangé avec d’autres utilisateurs.
+
+* Ne jamais demander une nouvelle publicité dans le contexte du gestionnaire d’événements pour l’événement [ErrorOccurred](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.erroroccurred.aspx). Cela peut produire une boucle infinie et provoquer des problèmes de fonctionnement du service publicitaire.
+
+* Ne jamais demander un spot publicitaire, puis négliger d’afficher la publicité fournie à votre application. Si vous demandez une publicité et recevez ensuite l’événement [AdReady](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.adready.aspx) en réponse à votre demande, vous devez afficher la publicité. Si vous implémentez votre propre solution de médiation publicitaire avec d’autres réseaux publicitaires, ne demandez une publicité pour le contrôle **InterstitialAd** qu’après l’échec des demandes auprès d’autres réseaux publicitaires.
 
  
 
@@ -143,6 +148,6 @@ Ici, nous cherchons à vous aider à atteindre l’élégance. Étant donné que
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

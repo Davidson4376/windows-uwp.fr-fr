@@ -1,4 +1,15 @@
-# Signer votre application de bureau convertie
+---
+author: awkoren
+Description: "Cet article explique comment signer une application de bureau que vous avez convertie à la plateforme Windows universelle (UWP)."
+Search.Product: eADQiWindows 10XVcnh
+title: Signer une application convertie avec Desktop to UWP Bridge
+translationtype: Human Translation
+ms.sourcegitcommit: fe96945759739e9260d0cdfc501e3e59fb915b1e
+ms.openlocfilehash: 2db978089a6334214c3b4c85dbde8d4a4e846092
+
+---
+
+# Signer une application convertie avec Desktop Bridge
 
 Cet article explique comment signer une application de bureau que vous avez convertie à la plateforme Windows universelle (UWP). Vous devez signer votre package.appx avec un certificat avant de pouvoir le déployer.
 
@@ -80,6 +91,7 @@ Pour réparer ces fichiers binaires endommagés, assurez-vous qu’ils respecten
 - [SignTool.exe (Sign Tool)](https://msdn.microsoft.com/library/8s9b9yaz.aspx)
 - [Comment signer un package d’application à l’aide de SignTool](https://msdn.microsoft.com/library/windows/desktop/jj835835.aspx)
 
-<!--HONumber=Sep16_HO2-->
+
+<!--HONumber=Nov16_HO1-->
 
 

@@ -4,8 +4,8 @@ ms.assetid:
 description: "Cet article vous explique comment interagir avec les contrôles de transport de média système."
 title: "Intégration avec les contrôles de transport de média système"
 translationtype: Human Translation
-ms.sourcegitcommit: 53b1cb94f90cd697a96bca49c5f2109d4749dbd1
-ms.openlocfilehash: c490ea43a6f49e09828cb6b07a6fbf1920acca74
+ms.sourcegitcommit: 34cb2fec3071add8617fe2bee2eaf50356611ac6
+ms.openlocfilehash: 702d5911f6e76d6c047fcc97c1117456ae04c3e5
 
 ---
 
@@ -70,6 +70,7 @@ Enfin, la commande [**Complete**](https://msdn.microsoft.com/library/windows/app
 Comme mentionné précédemment dans cet article, les contrôles de transport de média système détectent et affichent automatiquement les informations pour chaque instance de **MediaPlayer** créée par votre application. SI vous souhaitez utiliser plusieurs instances de **MediaPlayer** mais voulez que les contrôles de transport de média système fournissent une seule entrée pour votre application, vous devez définir manuellement le comportement des contrôles de transport de média système, au lieu de vous appuyer sur l’intégration automatique. Par ailleurs, si vous utilisez [**MediaTimelineController**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaTimelineController) pour contrôler un ou plusieurs lecteurs multimédias, vous devez recourir à l’intégration manuelle des contrôles de transport de média système. En outre, si votre application utilise une API différente de **MediaPlayer**, comme la classe [**AudioGraph**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Audio.AudioGraph) pour lire du contenu multimédia, vous devez implémenter l’intégration manuelle des contrôles de transport de média système pour que l’utilisateur les utilise pour contrôler votre application. Pour plus d’informations sur le contrôle manuel des contrôles de transport de média système, consultez la section [Contrôle manuel des contrôles de transport de média système](system-media-transport-controls.md).
 
 
+
 ## Rubriques connexes
 * [Lecture de contenu multimédia](media-playback.md)
 * [Lire du contenu audio et vidéo avec MediaPlayer](play-audio-and-video-with-mediaplayer.md)
@@ -85,6 +86,6 @@ Comme mentionné précédemment dans cet article, les contrôles de transport de
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -4,14 +4,14 @@ title: "Définir des conditions pour exécuter une tâche en arrière-plan"
 description: "Découvrez comment définir des conditions qui contrôlent le moment auquel votre tâche en arrière-plan s’exécutera."
 ms.assetid: 10ABAC9F-AA8C-41AC-A29D-871CD9AD9471
 translationtype: Human Translation
-ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
-ms.openlocfilehash: 0d90511c9fcfd722dfcc51a8ff8e5163e31e9fdf
+ms.sourcegitcommit: 7d1c160f8b725cd848bf8357325c6ca284b632ae
+ms.openlocfilehash: c22fed27b77f3287dd11a05c32405fe18521af65
 
 ---
 
 # Définir des conditions pour exécuter une tâche en arrière-plan
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **API importantes**
 
@@ -29,9 +29,9 @@ Il est également possible de combiner plusieurs conditions en appelant AddCondi
 
 ## Créer un objet SystemCondition
 
-Cette rubrique suppose qu’une tâche en arrière-plan est déjà associée à votre application et que cette dernière comporte déjà du code qui crée un objet [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) nommé **taskBuilder**.  Consultez les rubriques [Créer et inscrire une tâche en arrière-plan à processus unique](create-and-register-a-singleprocess-background-task.md) ou [Créer et inscrire une tâche en arrière-plan dans un processus distinct](create-and-register-a-background-task.md) si vous devez d’abord créer une tâche en arrière-plan.
+Cette rubrique suppose qu’une tâche en arrière-plan est déjà associée à votre application et que cette dernière comporte déjà du code qui crée un objet [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) nommé **taskBuilder**.  Consultez [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md) ou [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-an-outofproc-background-task.md) si vous devez commencer par créer une tâche en arrière-plan.
 
-Cette rubrique concerne aussi bien les tâches en arrière-plan qui s’exécutent dans un processus distinct que celles qui s’exécutent dans le même processus que l’application au premier plan.
+Cette rubrique concerne aussi bien les tâches en arrière-plan qui s’exécutent hors processus que celles qui s’exécutent dans le même processus que l’application au premier plan.
 
 Avant d’ajouter la condition, créez un objet [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) représentant la condition qui doit être effective pour qu’une tâche en arrière-plan soit exécutée. Dans le constructeur, spécifiez la condition qui doit être remplie en fournissant une valeur d’énumération [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
 
@@ -155,14 +155,14 @@ L’extrait de code suivant présente plusieurs conditions dans un contexte de c
 
 > **Remarque** Choisissez les conditions appropriées pour votre tâche en arrière-plan afin qu’elle s’exécute uniquement lorsque cela est nécessaire, et non à un moment inopportun. Voir [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) pour obtenir une description des différentes conditions de tâche en arrière-plan.
 
-> **Remarque** Cet article s’adresse aux développeurs Windows10 qui créent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Remarque** Cet article s’adresse aux développeurs Windows10 qui créent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
 ## Rubriques connexes
 
 ****
 
-* [Créer et inscrire une tâche en arrière-plan dans un processus distinct](create-and-register-a-background-task.md)
-* [Créer et inscrire une tâche en arrière-plan à processus unique](create-and-register-a-singleprocess-background-task.md)
+* [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-an-outofproc-background-task.md)
+* [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md)
 * [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md)
 * [Gérer une tâche en arrière-plan annulée](handle-a-cancelled-background-task.md)
 * [Surveiller la progression et l’achèvement des tâches en arrière-plan](monitor-background-task-progress-and-completion.md)
@@ -172,9 +172,6 @@ L’extrait de code suivant présente plusieurs conditions dans un contexte de c
 * [Utiliser un déclencheur de maintenance](use-a-maintenance-trigger.md)
 * [Exécuter une tâche en arrière-plan en fonction d’un minuteur](run-a-background-task-on-a-timer-.md)
 * [Recommandations en matière de tâches en arrière-plan](guidelines-for-background-tasks.md)
-
-****
-
 * [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
 * [Comment déclencher des événements de suspension, des événements de reprise et des événements en arrière-plan dans des applications du Windows Store (lors du débogage)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
@@ -184,6 +181,6 @@ L’extrait de code suivant présente plusieurs conditions dans un contexte de c
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

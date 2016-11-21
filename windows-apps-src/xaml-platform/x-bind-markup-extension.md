@@ -4,18 +4,18 @@ description: "Au lieu de recourir à la méthode Binding, vous pouvez utiliser l
 title: Extension de balisage xBind
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 translationtype: Human Translation
-ms.sourcegitcommit: 0f9955b897c626e7f6abb5557658e1b1e5937ffd
-ms.openlocfilehash: 7380386a77338c1fce7a7184b558a06605ffdf33
+ms.sourcegitcommit: 2dc706412684ded7fe4e98c6d01fb75ae65abd5f
+ms.openlocfilehash: b7d1dd183ba35e4b694a80d3e43628c928b218e5
 
 ---
 
 # Extension de balisage {x:Bind}
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **Remarque** Pour plus d’informations sur l’utilisation de la liaison de données dans votre application avec **{x:Bind}** (et pour une comparaison entre **{x:Bind}** et **{Binding}**), voir [Présentation détaillée de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
-L’extension de balisage **{x:Bind}**, nouveauté de Windows 10, peut être utilisée en remplacement de la méthode **{Binding}**. L’extension de balisage **{x:Bind}** n’offre pas certaines des fonctionnalités de **{Binding}**, mais elle s’exécute en moins de temps et en utilisant moins de mémoire que **{Binding}**, et prend mieux en charge le débogage.
+L’extension de balisage **{x:Bind}**, nouveauté de Windows10, peut être utilisée en remplacement de la méthode **{Binding}**. L’extension de balisage **{x:Bind}** n’offre pas certaines des fonctionnalités de **{Binding}**, mais elle s’exécute en moins de temps et en utilisant moins de mémoire que **{Binding}**, et prend mieux en charge le débogage.
 
 Lors de la compilation du XAML, l’extension de balisage **{x: Bind}** est convertie en code qui récupère une valeur à partir d’une propriété sur une source de données et la définit sur la propriété spécifiée dans le balisage. L’objet de liaison peut éventuellement être configuré pour observer les modifications de la valeur de la propriété de source de données, et s’actualiser en fonction de ces modifications. Il peut également être configuré pour renvoyer les modifications dans sa propre valeur à la propriété source. Les objets de liaison créés par **{x:Bind}** et **{Binding}** sont en grande partie équivalents du point de vue fonctionnel. Toutefois, **{x:Bind}** exécute un code spécial qu’il génère au moment de la compilation, et **{Binding}** utilise une inspection d’objet runtime à usage général. Par conséquent, les liaisons **{x:Bind}** (souvent appelées des liaisons compilées) offrent des performances remarquables, valident vos expressions de liaison lors de la compilation, et prennent en charge le débogage en vous permettant de définir des points d’arrêt dans les fichiers de code générés en tant que la classe partielle pour votre page. Ces fichiers se trouvent dans votre dossier `obj`, et portent des noms tels que `<view name>.g.cs` (pour C#).
 
@@ -191,7 +191,7 @@ Les liaisons compilées dépendent de la génération du code. Par conséquent, 
 
 Le code généré des pages et des contrôles utilisateur incluant des liaisons compilées contiendra une propriété «Bindings». Celle-ci comprend les méthodes suivantes:
 - **Update()** - Met à jour les valeurs de toutes les liaisons compilées. Toutes les liaisons unidirectionnelles/bidirectionnelles contiennent des écouteurs afin de détecter les modifications.
-- **Initiatlize()** - Si les liaisons n’ont pas encore été initialisées, appelle Update () pour initialiser les liaisons.
+- **Initialize()** - Si les liaisons n’ont pas encore été initialisées, appelle Update() pour initialiser les liaisons.
 - **StopTracking()** - Déconnecte tous les écouteurs créés pour les liaisons uni- et bidirectionnelles. Elles peuvent être réinitialisées à l’aide de la méthode Update().
 
 > [!NOTE]
@@ -224,6 +224,6 @@ Cet exemple de XAML utilise **{x:Bind}** avec une propriété **ListView.ItemTem
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -5,8 +5,8 @@ description: "Découvrez comment utiliser l’espace de noms Windows.Services.St
 title: "Activer les achats de modules complémentaires consommables"
 keywords: "exemple de code d’une offre intégrée à l’application"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 1e9ecad5abb9addbe41b38d0b56b84404716f2a8
+ms.sourcegitcommit: 962bee0cae8c50407fe1509b8000dc9cf9e847f8
+ms.openlocfilehash: eb188ed8e69f90727c5b57af1c407fac07eaf87d
 
 ---
 
@@ -48,10 +48,12 @@ Le code de ces exemples respecte les présupposés suivants:
 * Le fichier de code contient une instruction **using** pour l’espace de noms **Windows.Services.Store**.
 * Cette application mono-utilisateur ne s’exécute que dans le contexte de l’utilisateur qui l’a lancée. Pour plus d’informations, consultez [Versions d’évaluation et achats in-app](in-app-purchases-and-trials.md#api_intro).
 
-Pour un exemple d’application complète, consultez la section [Exemple Store](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store).
+Pour obtenir un exemple d’application complète, voir l’[exemple du Windows Store](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store).
+
+>**Remarque**&nbsp;&nbsp;Si vous disposez d’une application de bureau qui utilise [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop), vous devrez peut-être ajouter du code supplémentaire non affiché dans ces exemples pour configurer l’objet [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx). Pour plus d’informations, voir [Utilisation de la classe StoreContext dans une application de bureau qui utilise Desktop Bridge](in-app-purchases-and-trials.md#desktop).
 
 <span id="report_fulfilled" />
-## Signaler un module complémentaire consommable comme épuisé
+## Signaler un composant additionnel consommable comme épuisé
 
 Lorsque l’utilisateur [achète le module complémentaire](enable-in-app-purchases-of-apps-and-add-ons.md) à votre application et qu’il le consomme, votre application doit le signaler comme épuisé en appelant la méthode [ReportConsumableFulfillmentAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.reportconsumablefulfillmentasync.aspx) de la classe [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx). Vous devez transmettre les informations suivantes à cette méthode:
 
@@ -71,6 +73,9 @@ public async void ConsumeAddOn(string storeId)
     if (context == null)
     {
         context = StoreContext.GetDefault();
+        // If your app is a desktop app that uses the Desktop Bridge, you
+        // may need additional code to configure the StoreContext object.
+        // For more info, see https://aka.ms/storecontext-for-desktop.
     }
 
     // This is an example for a Store-managed consumable, where you specify the actual number
@@ -133,6 +138,9 @@ public async void GetRemainingBalance(string storeId)
     if (context == null)
     {
         context = StoreContext.GetDefault();
+        // If your app is a desktop app that uses the Desktop Bridge, you
+        // may need additional code to configure the StoreContext object.
+        // For more info, see https://aka.ms/storecontext-for-desktop.
     }
 
     string addOnStoreId = "9NBLGGH4TNNR";
@@ -180,6 +188,6 @@ public async void GetRemainingBalance(string storeId)
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

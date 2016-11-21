@@ -4,8 +4,8 @@ ms.assetid: 2967C757-9D8A-4B37-8AA4-A325F7A060C5
 description: "Utilisez cette méthode dans l’API d’analyse du WindowsStore pour obtenir les avis relatifs à une plage de dates donnée, et suivant d’autres filtres facultatifs."
 title: Obtenir les avis sur les applications
 translationtype: Human Translation
-ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
-ms.openlocfilehash: 4190012c08e22f4efb086c711183332b23ccee38
+ms.sourcegitcommit: 7b73682ea36574f8b675193a174d6e4b4ef85841
+ms.openlocfilehash: 581532b56851d486f7804364d1d555b81829c1d1
 
 ---
 
@@ -14,9 +14,9 @@ ms.openlocfilehash: 4190012c08e22f4efb086c711183332b23ccee38
 
 
 
-Utilisez cette méthode dans l’API d’analyse du WindowsStore pour obtenir les avis relatifs à une plage de dates donnée, et suivant d’autres filtres facultatifs. Cette méthode renvoie les données au format JSON.
+Utilisez cette méthode dans l’API d’analyse du WindowsStore pour obtenir, au formatJSON, les avis relatifs à une plage de dates donnée, et suivant d’autres filtres facultatifs. Ces informations sont également disponibles dans le [rapport Avis](../publish/reviews-report.md) du tableau de bord du Centre de développement Windows.
 
-## Conditions préalables
+## Prérequis
 
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
@@ -168,9 +168,9 @@ Pour obtenir une liste des champs pris en charge et des opérateurs associés à
 <li><strong>Windows Phone 8</strong></li>
 <li><strong>Windows Phone 8.1</strong></li>
 <li><strong>Windows Phone 10</strong></li>
-<li><strong>Windows 8</strong></li>
-<li><strong>Windows 8.1</strong></li>
-<li><strong>Windows 10</strong></li>
+<li><strong>Windows8</strong></li>
+<li><strong>Windows8.1</strong></li>
+<li><strong>Windows10</strong></li>
 <li><strong>Unknown</strong></li>
 </ul></td>
 </tr>
@@ -378,6 +378,7 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 
 ## Rubriques connexes
 
+* [Rapport Avis](../publish/reviews-report.md)
 * [Accéder aux données d’analyse à l’aide des services du Windows Store](access-analytics-data-using-windows-store-services.md)
 * [Obtenir des acquisitions d’applications](get-app-acquisitions.md)
 * [Obtenir des acquisitions d’extensions](get-in-app-acquisitions.md)
@@ -386,6 +387,6 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

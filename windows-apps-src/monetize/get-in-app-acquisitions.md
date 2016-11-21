@@ -4,8 +4,8 @@ ms.assetid: 1599605B-4243-4081-8D14-40F6F7734E25
 description: "Utilisez cette méthode dans l’API d’analyse du WindowsStore pour obtenir les données d’acquisition agrégées d’une extension pour une plage de dates données, et en fonction de filtres facultatifs."
 title: "Obtenir des acquisitions d’extensions"
 translationtype: Human Translation
-ms.sourcegitcommit: ecb0f5263b7f7f470484e9bd579b7bdb6efcdfa4
-ms.openlocfilehash: 9d895200e6d1bc823ebcb52e0b034883f5a059e0
+ms.sourcegitcommit: 7b73682ea36574f8b675193a174d6e4b4ef85841
+ms.openlocfilehash: 642bcab934a18631477e3709dcdeab0a9289844e
 
 ---
 
@@ -14,9 +14,9 @@ ms.openlocfilehash: 9d895200e6d1bc823ebcb52e0b034883f5a059e0
 
 
 
-Utilisez cette méthode dans l’API d’analyse du WindowsStore pour obtenir les données d’acquisition agrégées d’une extension (également connue sous le nom produit in-app ou PIA) pour une plage de dates données, et en fonction de filtres facultatifs. Cette méthode renvoie les données au format JSON.
+Utilisez cette méthode dans l’API d’analyse du WindowsStore pour obtenir les données d’acquisition agrégées des extensions (également connue sous le nom produit in-app ou PIA) au formatJSON pour votre application, pour une plage de dates données, et en fonction de filtres facultatifs. Ces informations sont également disponibles dans le [rapport sur les acquisitions des extensions](../publish/add-on-acquisitions-report.md) du tableau de bord du Centre de développement.
 
-## Conditions préalables
+## Prérequis
 
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
@@ -130,6 +130,33 @@ Le paramètre *applicationId* ou *inAppProductId* est obligatoire. Pour récupé
 <p>Voici un exemple de chaîne <em>orderby</em> : <em>orderby=date,market</em></p></td>
 <td align="left">Non</td>
 </tr>
+<tr class="even">
+<td align="left">groupby</td>
+<td align="left">chaîne</td>
+<td align="left"><p>Une instruction qui applique l’agrégation des données uniquement sur les champs spécifiés. Vous pouvez spécifier les champs suivants:</p>
+<ul>
+<li><strong>date</strong></li>
+<li><strong>applicationName</strong></li>
+<li><strong>inAppProductName</strong></li>
+<li><strong>acquisitionType</strong></li>
+<li><strong>ageGroup</strong></li>
+<li><strong>storeClient</strong></li>
+<li><strong>gender</strong></li>
+<li><strong>market</strong></li>
+<li><strong>osVersion</strong></li>
+<li><strong>deviceType</strong></li>
+<li><strong>orderName</strong></li>
+</ul>
+<p>Les lignes de données renvoyées comportent les champs spécifiés dans le paramètre <em>groupby</em>, ainsi que dans les paramètres suivants :</p>
+<ul>
+<li><strong>date</strong></li>
+<li><strong>applicationId</strong></li>
+<li><strong>inAppProductId</strong></li>
+<li><strong>acquisitionQuantity</strong></li>
+</ul>
+<p>Le paramètre <em>groupby</em> peut être utilisé avec le paramètre <em>aggregationLevel</em>. Par exemple: <em>&amp;groupby=ageGroup,market&amp;aggregationLevel=week</em></p></td>
+<td align="left"></td>
+</tr>
 </tbody>
 </table>
 
@@ -213,9 +240,9 @@ Pour obtenir la liste des champs pris en charge, consultez le tableau suivant: L
 <li><strong>Windows Phone 8</strong></li>
 <li><strong>Windows Phone 8.1</strong></li>
 <li><strong>Windows Phone 10</strong></li>
-<li><strong>Windows 8</strong></li>
-<li><strong>Windows 8.1</strong></li>
-<li><strong>Windows 10</strong></li>
+<li><strong>Windows8</strong></li>
+<li><strong>Windows8.1</strong></li>
+<li><strong>Windows10</strong></li>
 <li><strong>Unknown</strong></li>
 </ul></td>
 </tr>
@@ -279,7 +306,7 @@ Les éléments du tableau *Value* comportent les valeurs suivantes:
 |---------------------|---------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | date                | chaîne  | Première date dans la plage de dates des données d’acquisition. Si la requête était relative à un jour unique, cette valeur correspond à la date associée. Si la requête était relative à une semaine, un mois ou toute autre plage de dates, cette valeur correspond à la première date de la plage de dates. |
 | inAppProductId      | chaîne  | ID WindowsStore de l’extension pour laquelle vous récupérez des données d’acquisition.                                                                                                                                                                 |
-| inAppProductName    | chaîne  | Nom d’affichage de l’extension.                                                                                                                                                                                                             |
+| inAppProductName    | chaîne  | Nom d’affichage de l’extension. Cette valeur apparaît dans les données de la réponse uniquement si le paramètre *aggregationLevel* est défini sur **day**, sauf si vous définissez le champ **inAppProductName** dans le paramètre *groupby*.                                                                                                                                                                                                            |
 | applicationId       | chaîne  | ID WindowsStore de l’application pour laquelle vous voulez récupérer des données d’acquisition d’extension.                                                                                                                                                           |
 | applicationName     | chaîne  | Nom d’affichage de l’application.                                                                                                                                                                                                             |
 | deviceType          | chaîne  | Le type d’appareil ayant effectué l’acquisition. Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                                  |
@@ -325,6 +352,7 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 
 ## Rubriques connexes
 
+* [Rapport sur les acquisitions des extensions](../publish/add-on-acquisitions-report.md)
 * [Accéder aux données d’analyse à l’aide des services du Windows Store](access-analytics-data-using-windows-store-services.md)
 * [Obtenir des acquisitions d’applications](get-app-acquisitions.md)
 * [Obtenir les données de rapport d’erreurs](get-error-reporting-data.md)
@@ -337,6 +365,6 @@ L’exemple suivant représente un corps de réponse JSON pour cette requête.
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

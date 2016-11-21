@@ -4,8 +4,8 @@ Description: "La page Tarification et disponibilité du processus de soumission 
 title: "Définir la tarification et la disponibilité d’une application"
 ms.assetid: 37BE7C25-AA74-43CD-8969-CBA3BD481575
 translationtype: Human Translation
-ms.sourcegitcommit: fc5265cf7d455e34225fd74f9792cdb46b0029d7
-ms.openlocfilehash: 91a65020c29e990d96ab26f5abbd777da7810658
+ms.sourcegitcommit: 2ce776b69eed7d5803db7a37b54c4b00f58dc6c0
+ms.openlocfilehash: e5b956f819af3cbbd7e00d77de77a15678a2ab4c
 
 ---
 
@@ -17,7 +17,7 @@ La page **Tarification et disponibilité** du [processus de soumission d’appli
 ## Prix de base
 
 
-Le premier élément de cette page vous permet de sélectionner un prix de base pour votre application. Vous pouvez choisir de mettre à disposition votre application gratuitement ou sélectionner l’un des niveaux de prix disponibles. Vous devez définir un prix de base pour être en mesure de soumettre votre application.
+Le premier élément de cette page vous permet de sélectionner un prix de base pour votre application. Vous pouvez choisir de mettre à disposition votre application gratuitement ou sélectionner l'un des niveaux de prix disponibles. Vous devez définir un prix de base pour être en mesure de soumettre votre application.
 
 Pour plus d’informations, voir l’article [Définition des prix et sélection du marché](define-pricing-and-market-selection.md).
 
@@ -26,7 +26,7 @@ Pour plus d’informations, voir l’article [Définition des prix et sélection
 
 De nombreux développeurs offrent aux utilisateurs la possibilité d’essayer gratuitement leur application à l’aide de la fonctionnalité d’essai fournie par le Windows Store. Par défaut, une application n’est pas disponible sous forme de version d’évaluation gratuite ; si vous souhaitez en proposer une, sélectionnez une valeur dans la liste déroulante **Évaluation gratuite**.
 
-Choisissez **La version d’évaluation n’expire jamais** pour permettre aux clients d’accéder à votre application gratuitement pendant une période indéfinie. Si vous voulez les inciter à acheter la version complète ultérieurement, veillez à ajouter du code pour [exclure ou limiter des fonctionnalités de la version d’évaluation](https://msdn.microsoft.com/library/windows/apps/mt219685).
+Choisissez **La version d’évaluation n’expire jamais** pour permettre aux clients d’accéder à votre application gratuitement pendant une période indéfinie. Si vous voulez les inciter à acheter la version complète ultérieurement, veillez à ajouter du code pour [exclure ou limiter des fonctionnalités de la version d’évaluation](../monetize/in-app-purchases-and-trials.md).
 
 Vous avez également la possibilité de sélectionner une évaluation limitée dans le temps, d’**1 jour**, de **7 jours**, de **15 jours** ou de **30 jours**. Vous pouvez toujours limiter certaines fonctionnalités ou donner accès à toutes les fonctionnalités pendant la période d’évaluation.
 
@@ -86,10 +86,6 @@ Vous pouvez également modifier la date de sortie après avoir soumis votre appl
 
 
 
-
-
-
-
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

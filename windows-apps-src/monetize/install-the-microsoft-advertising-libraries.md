@@ -4,8 +4,8 @@ ms.assetid: 3aeddb83-5314-447b-b294-9fc28273cd39
 description: "Découvrez comment installer les bibliothèques de publicités Microsoft."
 title: "Installer les bibliothèques de publicités Microsoft"
 translationtype: Human Translation
-ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
-ms.openlocfilehash: a18822b167b7b4dab2dee02439c82c1a0dafcf31
+ms.sourcegitcommit: 126fee708d82f64fd2a49b844306c53bb3d4cc86
+ms.openlocfilehash: c717fa693c6edf8757c3eef79d60193434104bd8
 
 
 ---
@@ -15,7 +15,7 @@ ms.openlocfilehash: a18822b167b7b4dab2dee02439c82c1a0dafcf31
 
 
 
-Pour les applications de plateforme Windows universelle (UWP) pour Windows10, les bibliothèques de publicités Microsoft sont incluses dans [Microsoft Store Services SDK](http://aka.ms/store-em-sdk). Ce kit de développement logiciel (SDK) est une extension de Visual Studio2015. Pour plus d’informations sur ce SDK, voir [cet article](https://msdn.microsoft.com/windows/uwp/monetize/microsoft-store-services-sdk).
+Pour les applications de plateforme Windows universelle (UWP) pour Windows10, les bibliothèques de publicités Microsoft sont incluses dans [Microsoft Store Services SDK](http://aka.ms/store-em-sdk). Ce kit de développement logiciel(SDK) est une extension de VisualStudio2015 et des versions ultérieures. Pour plus d’informations sur l’installation de ce SDK, consultez [cet article](microsoft-store-services-sdk.md).
 
 > **Remarque**&nbsp;&nbsp;Si vous avez installé le SDK Windows10 (14393) ou version ultérieure, vous devez également installer la bibliothèque WinJS si vous voulez ajouter des publicités à une application UWP JavaScript/HTML. Cette bibliothèque était incluse dans les versions précédentes du SDK Windows10, mais à partir du SDK Windows10 (14393), vous devez l’installer séparément. Pour installer WinJS, voir [Obtenir WinJS](http://try.buildwinjs.com/download/GetWinJS/).
 
@@ -103,6 +103,6 @@ Pour pouvoir utiliser les contrôles de publicité dans le code de votre applica
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

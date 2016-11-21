@@ -1,17 +1,17 @@
 ---
-author: drewbatgit
+author: laurenhughes
 ms.assetid: 98BD79B3-F420-43C5-98D3-52EBDDB479A0
 description: "Cet article répertorie les options de codage qui peuvent être utilisées avec BitmapEncoder."
 title: "Référence des options BitmapEncoder"
 translationtype: Human Translation
-ms.sourcegitcommit: de54d389488d8298ea1341b0a6f27a476d38584e
-ms.openlocfilehash: 0ccaf55215cb82633313e145a126db92aa6d16e6
+ms.sourcegitcommit: fd5b52a1d431b9396a4b162077d4f8d6246cd597
+ms.openlocfilehash: 4edf119d0f8830fec9ece34f1a7eb8f3ffbe67dd
 
 ---
 
 # Référence des options BitmapEncoder
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Cet article répertorie les options de codage qui peuvent être utilisées avec [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206). Une option de codage se définit par son nom (à savoir une chaîne) et par une valeur dans un type de données particulier ([**Windows.Foundation.PropertyType**](https://msdn.microsoft.com/library/windows/apps/br225871)). Pour plus d’informations sur l’utilisation des images, voir [Créer, modifier et enregistrer des images bitmap](imaging.md).
 
@@ -34,7 +34,7 @@ Cet article répertorie les options de codage qui peuvent être utilisées avec 
 ## Rubriques connexes
 
 * [Créer, modifier et enregistrer des images bitmap](imaging.md)
- 
+* [Codecs pris en charge](supported-codecs.md)
 
  
 
@@ -44,6 +44,6 @@ Cet article répertorie les options de codage qui peuvent être utilisées avec 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

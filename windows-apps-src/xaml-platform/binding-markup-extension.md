@@ -4,27 +4,23 @@ description: "L’extension de balisage Binding est convertie au moment du charg
 title: Extension de balisage Binding
 ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
 translationtype: Human Translation
-ms.sourcegitcommit: 0f9955b897c626e7f6abb5557658e1b1e5937ffd
-ms.openlocfilehash: 95b48b55f11c4de0b4a51106b6cf5439bfa784b9
+ms.sourcegitcommit: 3ad7dd8261ceb549de6bd9a5ae513e6f6fdb8d49
+ms.openlocfilehash: a6431aed9941079bd05c623229f4ae3236a1b327
 
 ---
 
 # Extension de balisage {Binding}
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-**Important** Un nouveau mécanisme de liaison est disponible pour Windows 10, qui est optimisé pour la productivité des développeurs et les performances. Voir [extension de balisage {x:Bind}](x-bind-markup-extension.md).
+
+  **Important** Un nouveau mécanisme de liaison est disponible pour Windows10, qui est optimisé pour la productivité des développeurs et les performances. Voir [extension de balisage {x:Bind}](x-bind-markup-extension.md).
 
 **Remarque** Pour plus d’informations sur l’utilisation de la liaison de données dans votre application avec **{Binding}** (et pour une comparaison entre **{x:Bind}** et **{Binding}**), voir [Présentation détaillée de la liaison de données](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
 L’extension de balisage **{Binding}** est utilisée pour lier les données de propriétés sur des contrôles à des valeurs provenant d’une source de données, comme du code. L’extension de balisage **{Binding}** est convertie au moment du chargement XAML en une instance de la classe [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820). Cet objet de liaison obtient une valeur d’une propriété sur une source de données et la transmet à la propriété sur le contrôle. L’objet de liaison peut éventuellement être configuré pour observer les modifications de la valeur de la propriété de source de données, et se mettre à jour en fonction de ces modifications. Il peut également être configuré pour renvoyer les modifications de la valeur de contrôle à la propriété source. La propriété qui est la cible de la liaison de données doit être une propriété de dépendance. Pour plus d’informations, voir [Vue d’ensemble des propriétés de dépendance](dependency-properties-overview.md).
 
 **{Binding}** a la même propriété de dépendance qu’une valeur locale, et définir une valeur locale en code impératif supprime l’effet de tout **{Binding}** défini dans le balisage.
-
-**Exemples d’applications illustrant {Binding}**
-
--   Téléchargez l’application [Bookstore1](http://go.microsoft.com/fwlink/?linkid=532950).
--   Téléchargez l’application [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952).
 
 ## Utilisation des attributs XAML
 
@@ -48,7 +44,7 @@ L’extension de balisage **{Binding}** est utilisée pour lier les données de 
 
 ## Chemin de propriété
 
-*PropertyPath* définit la valeur de [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830), qui décrit la propriété à laquelle vous liez (propriété source). PropertyPath est un paramètre de position, vous pouvez donc le définir comme premier paramètre sans nom: `{Binding Path=...}`. Vous pouvez également utiliser explicitement le nom du paramètre: `{Binding Path=...}`.
+[**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) décrit la propriété à laquelle vous liez (propriété source). Path est un paramètre positionnel, ce qui signifie que vous pouvez utiliser le nom du paramètre explicitement (`{Binding Path=EmployeeID}`) ou que vous pouvez le spécifier comme premier paramètre sans nom (`{Binding EmployeeID}`).
 
 Le type de [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) est un chemin de propriété, qui est une chaîne correspondant à une propriété ou sous-propriété de votre type personnalisé ou d’un type d’infrastructure. Le type peut être, mais n’est pas nécessairement, un [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356). Les étapes dans un chemin de propriété sont délimitées par des points (.), et vous pouvez inclure plusieurs délimiteurs pour parcourir des sous-propriétés successives. Utilisez le point délimiteur quel que soit le langage de programmation utilisé pour implémenter l’objet cible de la liaison.
 
@@ -131,6 +127,6 @@ Microsoft IntelliSense dans Microsoft Visual Studio affiche les propriétés du 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

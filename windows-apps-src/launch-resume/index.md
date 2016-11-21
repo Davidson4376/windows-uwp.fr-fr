@@ -4,8 +4,8 @@ title: "Lancement, reprise et tâches en arrière-plan"
 description: "Cette section décrit ce qui se produit en cas de démarrage, de suspension, de reprise et d’arrêt d’une application de plateforme Windows universelle (UWP)."
 ms.assetid: 75011D52-1511-4ECF-9DF6-52CBBDB15BD7
 translationtype: Human Translation
-ms.sourcegitcommit: 5d0fffc46b1fc4ca2fba1422f2094bd411a65058
-ms.openlocfilehash: 6950f2f4eeee947eb2f7e8b37f72de7c03f53b01
+ms.sourcegitcommit: 7ed2596c33338c3954b6cfe1e779284283ae7769
+ms.openlocfilehash: 3b1be5b6951b72d5699e7b31e95702b827b741b5
 
 ---
 
@@ -58,10 +58,10 @@ Cette section décrit les éléments suivants:
 |------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [Prendre en charge votre application avec des tâches en arrière-plan](support-your-app-with-background-tasks.md)                             | Les rubriques de cette section expliquent comment exécuter votre propre code léger en arrière-plan en répondant aux déclencheurs au moyen de tâches en arrière-plan.                                                       |
 | [Accéder aux capteurs et aux périphériques à partir d’une tâche en arrière-plan](access-sensors-and-devices-from-a-background-task.md)       | [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) permet à votre application Windows universelle d’accéder aux capteurs et aux périphériques en arrière-plan, même si votre application au premier plan est suspendue. |
-| [Recommandations pour les tâches en arrière-plan](guidelines-for-background-tasks.md)                                           | Vérifiez que votre application répond aux exigences relatives à l’exécution de tâches en arrière-plan.                                                                                                                          |
-| [Créer et inscrire une tâche en arrière-plan](create-and-register-a-background-task.md)                               | Créez une classe de tâches en arrière-plan et inscrivez-la pour l’exécuter dans un processus distinct lorsque votre application ne se trouve pas au premier plan.                                                                                                 |
-| [Créer et inscrire une tâche en arrière-plan qui s’exécute dans un processus unique](create-and-register-a-singleprocess-background-task.md)                               | Créez une classe de tâches en arrière-plan qui s’exécute dans le même processus que votre application au premier plan.                                                                                                 |
-| [Convertir une tâche en arrière-plan à plusieurs processus en une tâche en arrière-plan à processus unique](convert-multiple-process-background-task.md)                               | Découvrez comment convertir votre tâche en arrière-plan conçue pour s’exécuter dans un processus distinct lorsque votre application est à l’arrière-plan, en une tâche en arrière-plan à processus unique qui s’exécute dans le même processus que votre application au premier plan.
+| [Recommandations pour les tâches en arrière-plan](guidelines-for-background-tasks.md)                                           | Assurez-vous que votre application répond aux exigences relatives à l’exécution de tâches en arrière-plan.                                                                                                                          |
+| [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-an-outofproc-background-task.md)                               | Créez et inscrivez une tâche en arrière-plan qui s’exécute dans un processus distinct de votre application, et inscrivez-la pour qu’elle s’exécute lorsque votre application ne se trouve pas au premier plan.                                                                                                 |
+| [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md)                               | Créez et inscrivez une tâche en arrière-plan in-process qui s’exécute dans le même processus que votre application au premier plan.                                                                                                 |
+| [Convertir une tâche en arrière-plan hors processus en une tâche en arrière-plan in-process](convert-out-of-process-background-task.md)                               | Découvrez comment convertir une tâche en arrière-plan hors processus en une tâche en arrière-plan in-process qui s’exécute dans le même processus que votre application au premier plan.
 | [Déboguer une tâche en arrière-plan](debug-a-background-task.md)                                                           | Découvrez comment déboguer une tâche en arrière-plan, notamment dans le cadre de son activation et du suivi de débogage dans le journal des événements Windows.                                                                        |
 | [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md) | Activez l’utilisation des tâches en arrière-plan en les déclarant comme extensions dans le manifeste de l’application.                                                                                                       |
 | [Gérer une tâche en arrière-plan annulée](handle-a-cancelled-background-task.md)                                     | Découvrez comment faire en sorte qu’une tâche en arrière-plan reconnaisse les demandes d’annulation et arrête le travail, tout en signalant l’annulation à l’application utilisant le dispositif de stockage persistant.                                     |
@@ -80,7 +80,7 @@ Cette section décrit les éléments suivants:
 |------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [Créer et utiliser un service d’application](how-to-create-and-consume-an-app-service.md)                                | Découvrez comment écrire une applicationUWP capable de fournir des services à d’autres applications UWP, et comment utiliser ces services.                                                                                  |
 | [Communiquer avec un service d’application distant](communicate-with-a-remote-app-service.md) | Découvrez comment échanger des messages avec un service d’application exécuté sur un appareil distant. |
-| [Convertir un service d’application pour qu’il s’exécute dans le même processus que son application hôte](convert-app-service-single-process.md)                                | Découvrez comment convertir le code de service d’application qui s’exécute dans un processus en arrière-plan distinct, en code qui s’exécute dans le même processus que l’application hôte de votre service d’application.                                                                                  |
+| [Convertir un service d’application pour qu’il s’exécute dans le même processus que son application hôte](convert-app-service-in-process.md)                                | Découvrez comment convertir le code de service d’application qui s’exécute dans un processus en arrière-plan distinct, en code qui s’exécute dans le même processus que l’application qui héberge votre service d’application.                                                                                  |
 
 ## Ajouter un écran de démarrage
 
@@ -111,6 +111,6 @@ De plus, vous pouvez utiliser la classe [**SplashScreen**](https://msdn.microsof
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

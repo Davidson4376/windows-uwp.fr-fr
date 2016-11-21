@@ -4,8 +4,8 @@ Description: "Vous pouvez utiliser le tableau de bord du Centre de développemen
 title: "Exécuter des expériences d’application avec des tests A/B"
 ms.assetid: 790B4B37-C72D-4CEA-97AF-D226B2216DCC
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: 50f7ad90c04d5b5672fa7910f2df669798761472
+ms.sourcegitcommit: 126fee708d82f64fd2a49b844306c53bb3d4cc86
+ms.openlocfilehash: f6c8e830a3ffcff8db9c280b6a9df5b515b1a356
 
 ---
 
@@ -33,9 +33,9 @@ Les tests A/B test dans le Centre de développement Windows sont uniquement pris
 Avant d’être en mesure d’exécuter des expériences avec des tests A/B, vous devez configurer votre ordinateur de développement:
 
 * Suivez les instructions mentionnées [ici](../get-started/get-set-up.md) pour configurer votre ordinateur de développement pour le développement UWP.
-* Installez le [Microsoft Store Services SDK](http://aka.ms/store-em-sdk). Outre l’API relative aux expériences, ce SDK fournit des API pour d’autres fonctionnalités, telles que l’affichage d’annonces publicitaires et l’orientation de vos clients vers le Hub de commentaires pour vous permettre de recueillir des commentaires concernant votre application. Pour plus d’informations sur ce SDK, voir [Microsoft Store Services SDK](microsoft-store-services-sdk.md).
+* [Installez le Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk). Outre l’API relative aux expériences, ce SDK fournit des API pour d’autres fonctionnalités, telles que l’affichage d’annonces publicitaires et l’orientation de vos clients vers le Hub de commentaires pour vous permettre de recueillir des commentaires concernant votre application. 
 
-## Bonnes pratiques
+## Meilleures pratiques
 
 Pour obtenir des résultats optimaux, suivez les recommandations ci-après lorsque vous exécutez des expériences avec les tests A/B:
 
@@ -65,6 +65,6 @@ Pour obtenir des résultats optimaux, suivez les recommandations ci-après lorsq
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

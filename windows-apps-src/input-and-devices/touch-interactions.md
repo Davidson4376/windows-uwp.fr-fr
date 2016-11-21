@@ -6,8 +6,8 @@ ms.assetid: DA6EBC88-EB18-4418-A98A-457EA1DEA88A
 label: Touch interactions
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: ca4ab33a58391f36e376323ca29d27961a2a7404
+ms.sourcegitcommit: 526493614666424089199063013b5fc72d9bc5d8
+ms.openlocfilehash: db38bfecadb7568e602646222358e0a111c638bc
 
 ---
 
@@ -621,13 +621,17 @@ Tous les événements de pointeur, événements de mouvement et événements de 
 
 * [Gérer les entrées du pointeur](handle-pointer-input.md)
 * [Identifier des périphériques d’entrée](identify-input-devices.md)
+
 **Exemples**
+
 * [Exemple d’entrée de base](http://go.microsoft.com/fwlink/p/?LinkID=620302)
 * [Exemple d’entrée à faible latence](http://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [Exemple de mode d’interaction utilisateur](http://go.microsoft.com/fwlink/p/?LinkID=619894)
 * [Exemple de visuels de focus](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+
 **Exemples d’archive**
-* [Entrée: exemple de fonctionnalités de périphériques](http://go.microsoft.com/fwlink/p/?linkid=231530)
+
+* [Entrée : exemple de fonctionnalités de périphériques](http://go.microsoft.com/fwlink/p/?linkid=231530)
 * [Entrée : exemple d’événements d’entrée utilisateur XAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [Exemple de zoom, de panoramique et de défilement XAML](http://go.microsoft.com/fwlink/p/?linkid=251717)
 * [Entrée : mouvements et manipulations avec GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkID=231605)
@@ -641,6 +645,6 @@ Tous les événements de pointeur, événements de mouvement et événements de 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -4,14 +4,14 @@ title: "Gérer une tâche en arrière-plan annulée"
 description: "Découvrez comment faire en sorte qu’une tâche en arrière-plan reconnaisse les demandes d’annulation et arrête le travail, tout en signalant l’annulation à l’application utilisant le stockage persistant."
 ms.assetid: B7E23072-F7B0-4567-985B-737DD2A8728E
 translationtype: Human Translation
-ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
-ms.openlocfilehash: e1a843448accb5ae2d689a6105c8254b0f868b5b
+ms.sourcegitcommit: 7d1c160f8b725cd848bf8357325c6ca284b632ae
+ms.openlocfilehash: a8fe98ab60012c2183e8394bfc8d7089f51552f0
 
 ---
 
 # Gérer une tâche en arrière-plan annulée
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **API importantes**
 
@@ -21,9 +21,9 @@ ms.openlocfilehash: e1a843448accb5ae2d689a6105c8254b0f868b5b
 
 Découvrez comment créer une tâche en arrière-plan qui reconnaît une demande d’annulation, arrête le travail et signale l’annulation à l’application en utilisant le dispositif de stockage persistant.
 
-Cette rubrique suppose que vous avez déjà créé une classe de tâche en arrière-plan, incluant la méthode Run utilisée comme point d’entrée de la tâche en arrière-plan. Pour savoir comment créer une tâche en arrière-plan, consultez la rubrique [Créer et inscrire une tâche en arrière-plan dans un processus distinct](create-and-register-a-background-task.md). Pour des informations plus détaillées sur les conditions et les déclencheurs, voir [Définition de tâches en arrière-plan pour les besoins de votre application](support-your-app-with-background-tasks.md).
+Cette rubrique suppose que vous avez déjà créé une classe de tâche en arrière-plan, incluant la méthode Run utilisée comme point d’entrée de la tâche en arrière-plan. Pour commencer rapidement à créer une tâche en arrière-plan, consultez [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-an-outofproc-background-task.md) ou [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md). Pour des informations plus détaillées sur les conditions et les déclencheurs, voir [Définition de tâches en arrière-plan pour les besoins de votre application](support-your-app-with-background-tasks.md).
 
-Cette rubrique s’applique également aux tâches en arrière-plan à processus unique. Il faut simplement remplacer la méthode Run() par OnBackgroundActivated(). Pour les tâches en arrière-plan à processus unique, il n’est pas nécessaire d’utiliser un dispositif de stockage persistant pour signaler l’annulation. En effet, vous pouvez signaler l’annulation via le paramètre d’état de l’application car la tâche en arrière-plan s’exécute dans le même processus que votre application au premier plan.
+Cette rubrique s’applique également aux tâches en arrière-plan in-process. Il faut simplement remplacer la méthode Run() par OnBackgroundActivated(). Pour les tâches en arrière-plan in-process, il n’est pas nécessaire d’utiliser un dispositif de stockage persistant pour signaler l’annulation. En effet, vous pouvez signaler l’annulation via le paramètre d’état de l’application, car la tâche en arrière-plan s’exécute dans le même processus que votre application au premier plan.
 
 ## Utiliser la méthode OnCanceled pour reconnaître les demandes d’annulation
 
@@ -86,7 +86,7 @@ La méthode OnCanceled de l’[exemple complet de tâche en arrière-plan]( http
 >     }
 > ```
 
-Dans la méthode Run de la tâche en arrière-plan, inscrivez la méthode de gestionnaire d’événements OnCanceled avant de lancer le travail. Dans le cas d’une tâche en arrière-plan à processus unique, vous pouvez effectuer cette inscription dans le cadre de l’initialisation de votre application. Par exemple, utilisez la ligne de code suivante:
+Dans la méthode Run de la tâche en arrière-plan, inscrivez la méthode de gestionnaire d’événements OnCanceled avant de lancer le travail. Dans le cas d’une tâche en arrière-plan in-process, vous pouvez effectuer cette inscription dans le cadre de l’initialisation de votre application. Par exemple, utilisez la ligne de code suivante:
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -98,7 +98,7 @@ Dans la méthode Run de la tâche en arrière-plan, inscrivez la méthode de ges
 
 ## Gérer une annulation en fermant votre tâche en arrière-plan
 
-Lors de la réception d’une demande d’annulation, la méthode qui effectue la tâche en arrière-plan doit arrêter le travail et se fermer en reconnaissant que **_cancelRequested** est défini sur la valeur **true**. Pour les tâches en arrière-plan à processus unique, cela implique un retour à partir de la méthode `OnBackgroundActivated()`. Pour les tâches en arrière-plan qui s’exécutent dans un processus distinct, cela implique un retour à partir de la méthode `Run()`.
+Lors de la réception d’une demande d’annulation, la méthode qui effectue la tâche en arrière-plan doit arrêter le travail et se fermer en reconnaissant que **\_cancelRequested** est défini sur la valeur **true**. Pour les tâches en arrière-plan in-process, cela implique un retour à partir de la méthode `OnBackgroundActivated()`. Pour les tâches en arrière-plan hors processus, cela implique un retour à partir de la méthode `Run()`.
 
 Modifiez le code de votre classe de tâche en arrière-plan pour vérifier la variable d’indicateur pendant qu’elle est utilisée. Si **_cancelRequested** a la valeur true, le travail s’arrête.
 
@@ -134,7 +134,7 @@ L’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkI
 
 > **Remarque** L’exemple de code présenté ci-dessus utilise la propriété [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797).[**Progress**](https://msdn.microsoft.com/library/windows/apps/br224800) qui sert à enregistrer la progression de la tâche en arrière-plan. La progression est indiquée à l’application à l’aide de la classe [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782).
 
-Modifiez la méthode Run de sorte qu’une fois le travail arrêté, elle enregistre l’état de la tâche (terminé ou annulé). Cette étape s’applique aux tâches en arrière-plan qui s’exécutent dans un processus distinct, car vous avez besoin d’un moyen pour communiquer entre les processus lorsque la tâche en arrière-plan a été annulée. Pour les tâches en arrière-plan à processus unique, vous pouvez simplement partager l’état avec l’application pour indiquer que la tâche a été annulée.
+Modifiez la méthode Run de sorte qu’une fois le travail arrêté, elle enregistre l’état de la tâche (terminé ou annulé). Cette étape s’applique aux tâches en arrière-plan hors processus, car vous avez besoin d’un moyen pour communiquer entre les processus lorsque la tâche en arrière-plan a été annulée. Pour les tâches en arrière-plan in-process, vous pouvez simplement partager l’état avec l’application pour indiquer que la tâche a été annulée.
 
 L’[exemple de tâche en arrière-plan](http://go.microsoft.com/fwlink/p/?LinkId=618666) enregistre l’état dans LocalSettings:
 
@@ -327,11 +327,12 @@ L’intégralité de la méthode Run ainsi que le code de rappel de minuteur de 
 > }
 > ```
 
-> **Remarque** Cet article s’adresse aux développeurs Windows10 qui développent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Remarque** Cet article s’adresse aux développeurs Windows10 qui développent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
 ## Rubriques connexes
 
-* [Créer et inscrire une tâche en arrière-plan](create-and-register-a-background-task.md)
+* [Créez et inscrivez une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md).
+* [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-an-outofproc-background-task.md)
 * [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md)
 * [Recommandations pour les tâches en arrière-plan](guidelines-for-background-tasks.md)
 * [Surveiller la progression et l’achèvement des tâches en arrière-plan](monitor-background-task-progress-and-completion.md)
@@ -341,12 +342,11 @@ L’intégralité de la méthode Run ainsi que le code de rappel de minuteur de 
 * [Définir des conditions pour exécuter une tâche en arrière-plan](set-conditions-for-running-a-background-task.md)
 * [Mettre à jour une vignette dynamique à partir d’une tâche en arrière-plan](update-a-live-tile-from-a-background-task.md)
 * [Utiliser un déclencheur de maintenance](use-a-maintenance-trigger.md)
-
 * [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
 * [Comment déclencher des événements de suspension, des événements de reprise et des événements en arrière-plan dans des applications du Windows Store (lors du débogage)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

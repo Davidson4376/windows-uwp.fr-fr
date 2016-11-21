@@ -4,40 +4,41 @@ title: "Guide de développement de jeux Windows10"
 description: "Guide complet sur les ressources et les informations nécessaires au développement de jeux de plateforme Windows universelle (UWP)."
 ms.assetid: 6061F498-96A8-44EF-9711-68AE5A1218C9
 translationtype: Human Translation
-ms.sourcegitcommit: 1c3f222b4b3ddb14a48cef138984b07ac58cc66b
-ms.openlocfilehash: 7bc6694f94eeeb6188470fee00d432b2d71e52e6
+ms.sourcegitcommit: 2584a08e0a869ab3c5f11c192f0a5a6eeb223d61
+ms.openlocfilehash: af9252d172bab96ce50eb7ff12d8f0503f010d15
 
 ---
 
 # Guide de développement de jeux Windows10
 
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Bienvenue dans le guide de développement de jeux Windows 10!
+Bienvenue dans le guide de développement de jeux Windows10!
 
 Ce guide regroupe les ressources et les informations dont vous avez besoin pour développer un jeu UWP.
 
 ## Présentation du développement de jeux pour la plateforme Windows universelle (UWP)
 
 
-Lorsque vous créez un jeu Windows 10, vous pouvez toucher des millions de joueurs dans le monde sur leur téléphone, leur PC et leur Xbox One. Avec Xbox sur Windows, Xbox Live, des jeux multijoueurs multiplateforme, une incroyable communauté de joueurs, ainsi que des nouvelles fonctionnalités puissantes comme les jeux de plateforme Windows universelle (UWP) et DirectX 12, les jeux Windows 10 enchantent les joueurs de tous les âges et de tous les genres. La nouvelle plateforme Windows universelle (UWP) garantit la compatibilité de votre jeu sur les appareils Windows 10 avec une API commune pour le téléphone, le PC et Xbox One, et équipés des outils et des options permettant d’adapter votre jeu à chaque performance de l’appareil.
+Lorsque vous créez un jeu Windows10, vous pouvez toucher des millions de joueurs dans le monde sur leur téléphone, leur PC et leur Xbox One. Avec Xbox sur Windows, Xbox Live, des jeux multijoueurs multiplateforme, une incroyable communauté de joueurs, ainsi que des nouvelles fonctionnalités puissantes comme les jeux de plateforme Windows universelle (UWP) et DirectX 12, les jeux Windows10 enchantent les joueurs de tous les âges et de tous les genres. La nouvelle plateforme Windows universelle (UWP) garantit la compatibilité de votre jeu sur les appareils Windows10 avec une API commune pour le téléphone, le PC et Xbox One, et équipés des outils et des options permettant d’adapter votre jeu à chaque performance de l’appareil.
 
 Ce guide fournit une collection complète des informations et des ressources qui vous aideront lors du développement de votre jeu. Les sections sont organisées en fonction des étapes de développement du jeu. Vous savez donc où rechercher les informations lorsque vous en avez besoin.
 
 Pour commencer, la section [Ressources de développement de jeux](#resources) indique une vue d’ensemble de la documentation, des programmes et des autres ressources qui sont utiles lors de la création d’un jeu.
 
-Ce guide sera mis à jour lorsque des ressources et des documents relatifs au développement de jeux Windows 10 seront disponibles.
+Ce guide sera mis à jour lorsque des ressources et des documents relatifs au développement de jeux Windows10 seront disponibles.
 
 ## Ressources de développement de jeux
 
-De la documentation aux programmes de développement, en passant par les forums, les blogs et les exemples, de nombreuses ressources sont disponibles pour vous aider à développer des jeux. Voici un résumé des ressources à connaître lorsque vous commencez à développer votre jeu Windows 10.
+De la documentation aux programmes de développement, en passant par les forums, les blogs et les exemples, de nombreuses ressources sont disponibles pour vous aider à développer des jeux. Voici un résumé des ressources à connaître lorsque vous commencez à développer votre jeu Windows10.
 
-> **Remarque** Le développement de Xbox One et certaines fonctionnalités de jeux Windows 10 (les services Xbox Live par exemple) sont gérés via des programmes comme ID@Xbox et Microsoft Studios. Comme ce guide couvre une large gamme de ressources, vous pouvez donc constater que certaines ressources ne sont pas accessibles selon le programme que vous utilisez ou votre rôle de développement. Les exemples sont les liens developer.xboxlive.com, forums.xboxlive.com, xdi.xboxlive.com ou réseau GDN (Game Developer Network). Pour plus d’informations sur le partenariat avec Microsoft, voir [Programmes pour développeurs](#programs).
+> 
+  **Remarque** Le développement de Xbox One et certaines fonctionnalités de jeux Windows10 (les services Xbox Live par exemple) sont gérés via des programmes comme ID@Xbox et Microsoft Studios. Comme ce guide couvre une large gamme de ressources, vous pouvez donc constater que certaines ressources ne sont pas accessibles selon le programme que vous utilisez ou votre rôle de développement. Les exemples sont les liens developer.xboxlive.com, forums.xboxlive.com, xdi.xboxlive.com ou réseau GDN (Game Developer Network). Pour plus d’informations sur le partenariat avec Microsoft, voir [Programmes pour développeurs](#programs).
 
 ### Documentation sur le développement de jeux
 
-Tout au long de ce guide, vous trouverez des liens ciblés vers la documentation appropriée, organisés par tâche, technologie et étape du développement du jeu. Pour vous donner une vue d’ensemble de ce qui est disponible, voici les principaux portails de documentation destinés au développement de jeux Windows 10.
+Tout au long de ce guide, vous trouverez des liens ciblés vers la documentation appropriée, organisés par tâche, technologie et étape du développement du jeu. Pour vous donner une vue d’ensemble de ce qui est disponible, voici les principaux portails de documentation destinés au développement de jeux Windows10.
 
 <table>
     <colgroup>
@@ -54,7 +55,7 @@ Tout au long de ce guide, vous trouverez des liens ciblés vers la documentation
     </tr>
     <tr>
         <td>Développement d’une application de plateforme universelle Windows</td>
-        <td>[Guides de procédure pour les applications Windows 10](https://msdn.microsoft.com/library/windows/apps/mt244352)</td>
+        <td>[Guides de procédure pour les applications Windows10](https://msdn.microsoft.com/library/windows/apps/mt244352)</td>
     </tr>
     <tr>
         <td>Guides de procédure pour les jeux UWP</td>
@@ -63,6 +64,10 @@ Tout au long de ce guide, vous trouverez des liens ciblés vers la documentation
     <tr>
         <td>Présentations et informations de référence sur DirectX</td>
         <td>[Jeux et graphiques DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274)</td>
+    </tr>
+    <tr>
+        <td>Azure pour les jeux</td>
+        <td>[Utiliser Azure pour développer et faire évoluer vos jeux](https://azure.microsoft.com/solutions/gaming/)</td>
     </tr>
     <tr>
         <td>UWP sur XboxOne</td>
@@ -103,7 +108,7 @@ L’inscription d’un compte de développeur dans le Centre de développement W
 
 #### ID@Xbox
 
-Le programme ID@Xbox permet aux développeurs de jeux qualifiés de publier eux-mêmes sur Windows et Xbox One. Si vous voulez développer des jeux pour Xbox One ou ajouter des fonctionnalités Xbox Live telles que les scores des joueurs, les succès et les classements à votre jeu Windows 10, inscrivez-vous sur ID@Xbox. Devenez développeur ID@Xbox pour obtenir les outils et l’aide dont vous avez besoin pour laisser libre cours à votre créativité et optimiser votre succès. Avant de faire une demande sur ID@Xbox, inscrivez un compte de développeur dans le Centre de développement Windows.
+Le programme ID@Xbox permet aux développeurs de jeux qualifiés de publier eux-mêmes sur Windows et Xbox One. Si vous voulez développer des jeux pour Xbox One ou ajouter des fonctionnalités Xbox Live telles que les scores des joueurs, les succès et les classements à votre jeu Windows10, inscrivez-vous sur ID@Xbox. Devenez développeur ID@Xbox pour obtenir les outils et l’aide dont vous avez besoin pour laisser libre cours à votre créativité et optimiser votre succès. Avant de faire une demande sur ID@Xbox, inscrivez un compte de développeur dans le Centre de développement Windows.
 
 <table>
     <colgroup>
@@ -182,7 +187,7 @@ De nombreux exemples de jeu et d’application Windows10 sont disponibles pour v
         <td>[Exemples](https://developer.xboxlive.com/en-us/platform/development/education/Pages/Samples.aspx)</td>
     </tr>
     <tr>
-        <td>Exemples de jeu Windows 8 (MSDN Code Gallery)</td>
+        <td>Exemples de jeu Windows8 (MSDN Code Gallery)</td>
         <td>[Exemples de jeu du Windows Store](https://code.msdn.microsoft.com/windowsapps/site/search?f%5B0%5D.Type=SearchText&f%5B0%5D.Value=game&f%5B1%5D.Type=Contributors&f%5B1%5D.Value=Microsoft&f%5B1%5D.Text=Microsoft)</td>
     </tr>
     <tr>
@@ -219,8 +224,8 @@ Les forums de développement sont un lieu d’échange intéressant pour poser d
         <td>[Création de jeux du Windows Store en DirectX (archivés)](https://social.msdn.microsoft.com/Forums/vstudio/home?forum=wingameswithdirectx)</td>
     </tr>
     <tr>
-        <td>Forums de développeurs partenaires gérés Windows 10</td>
-        <td>[Forum des développeurs Xbox : Windows 10](http://aka.ms/win10devforums)</td>
+        <td>Forums de développeurs partenaires gérés Windows10</td>
+        <td>[Forum des développeurs Xbox : Windows10](http://aka.ms/win10devforums)</td>
     </tr>
     <tr>
         <td>Forums du programme d’accès en avant-première à DirectX</td>
@@ -243,8 +248,8 @@ Les blogs de développement sont également une excellente ressource pour obteni
         <td>[Création d’applications pour Windows](http://blogs.windows.com/buildingapps/)</td>
     </tr>
     <tr>
-        <td>Windows 10 (billets de blog)</td>
-        <td>[Publications dans Windows 10](http://blogs.windows.com/blog/tag/windows-10/)</td>
+        <td>Windows10 (billets de blog)</td>
+        <td>[Publications dans Windows10](http://blogs.windows.com/blog/tag/windows-10/)</td>
     </tr>
     <tr>
         <td>Blog de l’équipe d’ingénierie de Visual Studio</td>
@@ -300,7 +305,7 @@ Si vous avez déjà choisi toutes les technologies que vous utiliserez dans votr
 </table>
  
 
-Ces trois vidéos du GDC 2015 constituent une bonne vue d’ensemble du développement de jeux Windows 10 et de l’expérience de jeu Windows 10.
+Ces trois vidéos du GDC 2015 constituent une bonne vue d’ensemble du développement de jeux Windows10 et de l’expérience de jeu Windows10.
 
 <table>
     <colgroup>
@@ -308,12 +313,12 @@ Ces trois vidéos du GDC 2015 constituent une bonne vue d’ensemble du dévelop
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Vue d’ensemble du développement de jeux Windows 10 (vidéo)</td>
-        <td>[Développement de jeux pour Windows 10](http://channel9.msdn.com/Events/GDC/GDC-2015/Developing-Games-for-Windows-10)</td>
+        <td>Vue d’ensemble du développement de jeux Windows10 (vidéo)</td>
+        <td>[Développement de jeux pour Windows10](http://channel9.msdn.com/Events/GDC/GDC-2015/Developing-Games-for-Windows-10)</td>
     </tr>
     <tr>
-        <td>Expérience de jeu Windows 10 (vidéo)</td>
-        <td>[Expérience de consommateur de jeux sur Windows 10](http://channel9.msdn.com/Events/GDC/GDC-2015/Gaming-Consumer-Experience-on-Windows-10)</td>
+        <td>Expérience de jeu Windows10 (vidéo)</td>
+        <td>[Expérience de consommateur de jeux sur Windows10](http://channel9.msdn.com/Events/GDC/GDC-2015/Gaming-Consumer-Experience-on-Windows-10)</td>
     </tr>
     <tr>
         <td>Les jeux à travers l’écosystème Microsoft (vidéo)</td>
@@ -344,13 +349,13 @@ Voici quelques concepts et questions d’ordre général à prendre en compte lo
 
 ### Choix de la technologie graphique et du langage de programmation
 
-Plusieurs langages de programmation et technologies graphiques peuvent être utilisés dans les jeux Windows 10. Votre choix dépend du type de jeu développé, de l’expérience et des préférences de votre studio de développement, et des conditions requises spécifiques pour les fonctionnalités de votre jeu. Allez-vous utiliserC#, C++ ou JavaScript? DirectX, XAML ou HTML5 ?
+Plusieurs langages de programmation et technologies graphiques peuvent être utilisés dans les jeux Windows10. Votre choix dépend du type de jeu développé, de l’expérience et des préférences de votre studio de développement, et des conditions requises spécifiques pour les fonctionnalités de votre jeu. Allez-vous utiliserC#, C++ ou JavaScript? DirectX, XAML ou HTML5 ?
 
 #### DirectX
 
 Microsoft DirectX représente le choix à faire pour obtenir des graphismes et des éléments multimédias2D et 3D haute performances. 
 
-Direct3D12, nouvelle fonctionnalité de Windows10, apporte la puissance d’uneAPI du type console, et sa rapidité et son efficacité sont sans commune mesure. Votre jeu peut pleinement utiliser le matériel vidéo moderne et présenter plus d’objets, des scènes enrichies et des effets améliorés. Direct3D 12 fournit des graphismes optimisés sur les PC Windows 10 et sur Xbox One. Si vous souhaitez utiliser le pipeline graphique familier de Direct3D 11, vous bénéficierez cependant des nouvelles fonctionnalités de rendu et d’optimisation ajoutées à Direct3D 11.3. Et si vous êtes un développeur éprouvé d’API de bureau pour Windows utilisant Win32, vous avez toujours cette option dans Windows10.
+Direct3D12, nouvelle fonctionnalité de Windows10, apporte la puissance d’uneAPI du type console, et sa rapidité et son efficacité sont sans commune mesure. Votre jeu peut pleinement utiliser le matériel vidéo moderne et présenter plus d’objets, des scènes enrichies et des effets améliorés. Direct3D 12 fournit des graphismes optimisés sur les PC Windows10 et sur Xbox One. Si vous souhaitez utiliser le pipeline graphique familier de Direct3D 11, vous bénéficierez cependant des nouvelles fonctionnalités de rendu et d’optimisation ajoutées à Direct3D 11.3. Et si vous êtes un développeur éprouvé d’API de bureau pour Windows utilisant Win32, vous avez toujours cette option dans Windows10.
 
 Les fonctionnalités complètes et la solide intégration à la plateforme de DirectX fournissent la puissance et les performances nécessaires aux jeux les plus exigeants.
 
@@ -546,8 +551,8 @@ En fonction des besoins de votre jeu, l’utilisation de ponts, de moteurs de je
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Ponts et moteurs de jeu pour Windows 10 (billet de blog)</td>
-        <td>[Autres moyens d’importer du code dans les applications Windows 10 du Windows Store à croissance rapide](http://blogs.windows.com/buildingapps/2015/09/17/more-ways-to-bring-your-code-to-fast-growing-windows-10-store/)</td>
+        <td>Ponts et moteurs de jeu pour Windows10 (billet de blog)</td>
+        <td>[Autres moyens d’importer du code dans les applications Windows10 du Windows Store à croissance rapide](http://blogs.windows.com/buildingapps/2015/09/17/more-ways-to-bring-your-code-to-fast-growing-windows-10-store/)</td>
     </tr>
     <tr>
         <td>Développement de jeux avec des intergiciels (vidéo)</td>
@@ -609,7 +614,7 @@ D’après le site [Unity roadmap](https://unity3d.com/unity/roadmap), la prise 
     </tr>
     <tr>
         <td>Prise en charge des applications Windows universelles dans Unity5.2 (billet de blog)</td>
-        <td>[Applications de la plateformeWindows 10 universelle dans Unity 5.2](http://blogs.unity3d.com/2015/09/09/windows-10-universal-apps-in-unity-5-2/)</td>
+        <td>[Applications de la plateformeWindows10 universelle dans Unity 5.2](http://blogs.unity3d.com/2015/09/09/windows-10-universal-apps-in-unity-5-2/)</td>
     </tr>
     <tr>
         <td>Documentation Unity pour Windows</td>
@@ -654,6 +659,30 @@ Avec la suite modulaire d’outils et de technologies de Havok, les créateurs d
 </table>
  
 
+#### MonoGame
+
+MonoGame est une infrastructure de développement open source inter-plateforme initialement basée sur Microsoft XNA Framework4.0. Monogame prend actuellement en charge Windows, WindowsPhone, Xbox, ainsi que Linux, MacOS, iOS, Android et certaines autres plateformes.
+
+<table>
+    <colgroup>
+    <col width="50%" />
+    <col width="50%" />
+    </colgroup>
+    <tr>
+        <td>MonoGame</td>
+        <td>[Site web de MonoGame](http://www.monogame.net)</td>
+    </tr>
+    <tr>
+        <td>Documentation MonoGame</td>
+        <td>[Documentation MonoGame (version la plus récente)](http://www.monogame.net/documentation/)</td>
+    </tr>
+    <tr>
+        <td>Téléchargements MonoGame</td>
+        <td>[Téléchargez des versions, des builds de développement et du code source](http://www.monogame.net/downloads/) sur le site web de MonoGame, ou [obtenez la version la plus récente via NuGet](https://www.nuget.org/profiles/MonoGame).
+    </tr>
+</table>
+
+
 #### Cocos2d
 
 Cocos2d-X est une suite d’outils et de moteurs de jeu open source multiplateforme qui prend en charge la création de jeux UWP. Depuis la version 3, des fonctionnalités 3D sont également ajoutées.
@@ -672,8 +701,8 @@ Cocos2d-X est une suite d’outils et de moteurs de jeu open source multiplatefo
         <td>[Guide du programmeur Cocos2d-x v3.8](http://www.cocos2d-x.org/programmersguide/)</td>
     </tr>
     <tr>
-        <td>Cocos2d-x sur Windows 10 (billet de blog)</td>
-        <td>[Exécution de Cocos2d-x sur Windows 10](https://blogs.windows.com/buildingapps/2015/06/15/running-cocos2d-x-on-windows-10/)</td>
+        <td>Cocos2d-x sur Windows10 (billet de blog)</td>
+        <td>[Exécution de Cocos2d-x sur Windows10](https://blogs.windows.com/buildingapps/2015/06/15/running-cocos2d-x-on-windows-10/)</td>
     </tr>
     <tr>
         <td>Jeux du Windows Store avec Cocos2d-x (vidéo)</td>
@@ -751,7 +780,7 @@ Si vous disposez d’un jeu, nombre de ressources et de guides disponibles vous 
     </tr>
     <tr>
         <td>Portage d’une application Windows8 vers une application de plateforme Windows universelle (vidéo)</td>
-        <td>[Portage d’applications Windows 8.1 vers Windows 10](https://channel9.msdn.com/Series/A-Developers-Guide-to-Windows-10/21)</td>
+        <td>[Portage d’applications Windows8.1 vers Windows10](https://channel9.msdn.com/Series/A-Developers-Guide-to-Windows-10/21)</td>
     </tr>
     <tr>
         <td>Portage d’une application iOS vers une application de plateforme Windows universelle (vidéo)</td>
@@ -763,11 +792,11 @@ Si vous disposez d’un jeu, nombre de ressources et de guides disponibles vous 
     </tr>
     <tr>
         <td>Portage d’une application Silverlight ou XAML vers une application de plateforme Windows universelle (vidéo)</td>
-        <td>[Portage d’une application XAML ou Silverlight vers Windows 10](https://channel9.msdn.com/Events/Build/2015/3-741)</td>
+        <td>[Portage d’une application XAML ou Silverlight vers Windows10](https://channel9.msdn.com/Events/Build/2015/3-741)</td>
     </tr>
     <tr>
         <td>Portage d’une application Xbox vers une application de plateforme Windows universelle</td>
-        <td>[Portage de Xbox One vers Windows 10 UWP](https://developer.xboxlive.com/en-us/platform/development/education/Documents/Porting%20from%20Xbox%20One%20to%20Windows%2010.aspx)</td>
+        <td>[Portage de Xbox One vers Windows10 UWP](https://developer.xboxlive.com/en-us/platform/development/education/Documents/Porting%20from%20Xbox%20One%20to%20Windows%2010.aspx)</td>
     </tr>
     <tr>
         <td>Portage de DirectX 9 vers DirectX 11</td>
@@ -799,7 +828,7 @@ Maintenant que vous avez choisi le type de jeu à créer et les outils et la tec
 
 ### Présentation de la plateforme Windows universelle (UWP)
 
-Windows 10 introduit la plateforme Windows universelle (UWP), qui fournit une plateforme des API courantes des appareils Windows 10. UWP évolue et développe le modèle Windows Runtime pour le perfectionner et le transformer en noyau cohérent et unifié. Les jeux qui ciblent la plateforme UWP peuvent appeler les API WinRT qui sont communes à tous les appareils. Comme la plateforme UWP fournit une couche API système garantie, vous pouvez choisir de créer un package d’application unique qui s’installera sur les appareils Windows 10. Et si vous le souhaitez, votre jeu peut toujours appeler les API (y compris des API Windows classiques de Win32 et .NET) propres aux appareils sur lesquels votre jeu s’exécute.
+Windows10 introduit la plateforme Windows universelle (UWP), qui fournit une plateforme des API courantes des appareils Windows10. UWP évolue et développe le modèle Windows Runtime pour le perfectionner et le transformer en noyau cohérent et unifié. Les jeux qui ciblent la plateforme UWP peuvent appeler les API WinRT qui sont communes à tous les appareils. Comme la plateforme UWP fournit une couche API système garantie, vous pouvez choisir de créer un package d’application unique qui s’installera sur les appareils Windows10. Et si vous le souhaitez, votre jeu peut toujours appeler les API (y compris des API Windows classiques de Win32 et .NET) propres aux appareils sur lesquels votre jeu s’exécute.
 
 L’objectif de la plateforme UWP est d’avoir :
 
@@ -846,7 +875,7 @@ La préparation au développement d’une application Windows universelle est ra
     </tr>
 </table>
 
-Si vous ne connaissez pas du tout la programmation UWP et que vous envisagez d’utiliser XAML dans votre jeu (voir [Choix de la technologie graphique et du langage de programmation](#choosing_technology)), la série de vidéos [Développement sur Windows 10 pour les néophytes](https://channel9.msdn.com/Series/Windows-10-development-for-absolute-beginners) est idéale pour commencer.
+Si vous ne connaissez pas du tout la programmation UWP et que vous envisagez d’utiliser XAML dans votre jeu (voir [Choix de la technologie graphique et du langage de programmation](#choosing_technology)), la série de vidéos [Développement sur Windows10 pour les néophytes](https://channel9.msdn.com/Series/Windows-10-development-for-absolute-beginners) est idéale pour commencer.
 
 <table>
     <colgroup>
@@ -854,12 +883,12 @@ Si vous ne connaissez pas du tout la programmation UWP et que vous envisagez d�
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Guide des débutants pour le développement pour Windows 10 avec le langage XAML (série de vidéos)</td>
-        <td>[Développement sur Windows 10 pour les néophytes](https://channel9.msdn.com/Series/Windows-10-development-for-absolute-beginners)</td>
+        <td>Guide des débutants pour le développement pour Windows10 avec le langage XAML (série de vidéos)</td>
+        <td>[Développement sur Windows10 pour les néophytes](https://channel9.msdn.com/Series/Windows-10-development-for-absolute-beginners)</td>
     </tr>
     <tr>
-        <td>Annonce de la série sur Windows 10 pour néophytes utilisant XAML (billet de blog)</td>
-        <td>[Développement sur Windows 10 pour les néophytes](http://blogs.windows.com/buildingapps/2015/09/30/windows-10-development-for-absolute-beginners/)</td>
+        <td>Annonce de la série sur Windows10 pour néophytes utilisant XAML (billet de blog)</td>
+        <td>[Développement sur Windows10 pour les néophytes](http://blogs.windows.com/buildingapps/2015/09/30/windows-10-development-for-absolute-beginners/)</td>
     </tr>
 </table>
 
@@ -1153,7 +1182,7 @@ Une vignette est la représentation de votre jeu dans le menu Démarrer. Les vig
         <td>[Recommandations en matière de vignettes et de badges](https://msdn.microsoft.com/library/windows/apps/hh465403)</td>
     </tr>
     <tr>
-        <td>Application Windows 10 pour le développement interactif des modèles de vignette dynamique</td>
+        <td>Application Windows10 pour le développement interactif des modèles de vignette dynamique</td>
         <td>[Notifications Visualizer](https://www.microsoft.com/store/apps/9nblggh5xsl1)</td>
     </tr>
     <tr>
@@ -1204,7 +1233,7 @@ Le KitWindowsPerformanceToolkit est composé d’outils d’analyse des performa
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Obtenir le KitWindowsPerformanceToolkit à partir de Windows 10 SDK</td>
+        <td>Obtenir le KitWindowsPerformanceToolkit à partir de Windows10 SDK</td>
         <td>[Kit de développement logiciel (SDK) Windows10](https://developer.microsoft.com/windows/downloads/windows-10-sdk)</td>
     </tr>
     <tr>
@@ -1358,7 +1387,7 @@ Le manifeste de magasin (StoreManifest.xml) est un fichier de configuration facu
     </colgroup>
     <tr>
         <td>Schéma du manifeste de magasin</td>
-        <td>[Schéma StoreManifest (Windows 10)](https://msdn.microsoft.com/library/windows/apps/mt617335)</td>
+        <td>[Schéma StoreManifest (Windows10)](https://msdn.microsoft.com/library/windows/apps/mt617335)</td>
     </tr>
 </table>
  
@@ -1454,11 +1483,11 @@ Pour mettre à jour votre jeu publié, soumettez un nouveau package d’applicat
     </tr>
     <tr>
         <td>Configuration requise pour les jeux utilisant Xbox Live</td>
-        <td>[Configuration Xbox requise pour Xbox Live sur Windows 10](http://go.microsoft.com/fwlink/?LinkId=533217)</td>
+        <td>[Configuration Xbox requise pour Xbox Live sur Windows10](http://go.microsoft.com/fwlink/?LinkId=533217)</td>
     </tr>
     <tr>
         <td>Vue d’ensemble du développement de jeux Xbox Live (vidéo)</td>
-        <td>[Développement avec Xbox Live pour Windows 10](http://channel9.msdn.com/Events/GDC/GDC-2015/Developing-with-Xbox-Live-for-Windows-10)</td>
+        <td>[Développement avec Xbox Live pour Windows10](http://channel9.msdn.com/Events/GDC/GDC-2015/Developing-with-Xbox-Live-for-Windows-10)</td>
     </tr>
     <tr>
         <td>Matchmaking multiplateforme (vidéo)</td>
@@ -1491,8 +1520,8 @@ Pour mettre à jour votre jeu publié, soumettez un nouveau package d’applicat
         <td>[Performances de jeu soutenues sur les appareils mobiles multicœurs](http://channel9.msdn.com/Events/GDC/GDC-2015/Sustained-gaming-performance-in-multi-core-mobile-devices)</td>
     </tr>
     <tr>
-        <td>Développement de jeux de bureau Windows 10 (vidéo)</td>
-        <td>[Jeux pour PC Windows 10](http://channel9.msdn.com/Events/GDC/GDC-2015/PC-Games-for-Windows-10)</td>
+        <td>Développement de jeux de bureau Windows10 (vidéo)</td>
+        <td>[Jeux pour PC Windows10](http://channel9.msdn.com/Events/GDC/GDC-2015/PC-Games-for-Windows-10)</td>
     </tr>
 </table>
 
@@ -1506,6 +1535,6 @@ Pour mettre à jour votre jeu publié, soumettez un nouveau package d’applicat
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

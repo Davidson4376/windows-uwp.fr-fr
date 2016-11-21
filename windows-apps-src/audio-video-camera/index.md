@@ -4,8 +4,8 @@ ms.assetid: 0fc12d26-f1cf-4da7-b5a7-735a5074b74a
 description: "Cette section fournit des informations sur la création d’une application Windows universelle (UWP) qui capture, lit ou modifie des photos, des vidéos ou des fichiers audio."
 title: "Audio, vidéo et appareil photo"
 translationtype: Human Translation
-ms.sourcegitcommit: 18e97dd5e607960c1c1fd640fe6fe6ae5e9f9085
-ms.openlocfilehash: 1914690b6417a5ae382e74ec76b54d9db411c213
+ms.sourcegitcommit: fd5b52a1d431b9396a4b162077d4f8d6246cd597
+ms.openlocfilehash: 6e67f57fbc00e596bb07cc37f2c9f762a5c9f557
 
 ---
 
@@ -30,10 +30,10 @@ Cette section fournit des informations sur la création d’une application Wind
 | [MIDI](midi.md) | Explique comment énumérer des appareils MIDI (Musical Instrument Digital Interface), et envoyer et recevoir des messages MIDI à partir d’une application UWP. |
 | [Importer des fichiers multimédias à partir d’un appareil](import-media-from-a-device.md) | Décrit comment importer des fichiers multimédias à partir d’un appareil, notamment la recherche de sources multimédias disponibles, l’importation de vidéos, de photos et de fichiers sidecar, et la suppression des fichiers importés de l’appareil source. |
 | [Lampe torche indépendante de l’appareil photo](camera-independent-flashlight.md) | Explique comment accéder à la lampe d’un appareil et l’utiliser, le cas échéant. La fonctionnalité de lampe est gérée indépendamment des fonctionnalités de flash et d’appareil photo de l’appareil. |
-| [Codecs pris en charge](supported-codecs.md) | Répertorie les codecs et formats audio et vidéo pris en charge dans les applications UWP. |
+| [Codecs pris en charge](supported-codecs.md) | Répertorie les codecs et formats audio, vidéo et d’image pris en charge dans les applications UWP. |
 
 
-## Voir également
+## Voir aussi
 - [Développer des applicationsUWP](https://developer.microsoft.com/en-us/windows/develop)
 
  
@@ -48,6 +48,6 @@ Cette section fournit des informations sur la création d’une application Wind
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

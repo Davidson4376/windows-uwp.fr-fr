@@ -4,15 +4,15 @@ ms.assetid: 27914C0A-2A02-473F-BDD5-C931E3943AA0
 title: "Créer, écrire et lire un fichier"
 description: "Lisez et écrivez un fichier à l’aide d’un objet StorageFile."
 translationtype: Human Translation
-ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
-ms.openlocfilehash: 145acd5a5a6143a31b792df721d94f9ddc5718fa
+ms.sourcegitcommit: 24f50f2c4ac7fcfe931759d42ba73e758d77f6e8
+ms.openlocfilehash: 2a9f5de71712e657bc9a0a39b668085c399ce9fb
 
 ---
 
 # Créer, écrire et lire un fichier
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -139,7 +139,6 @@ using (var dataWriter = new Windows.Storage.Streams.DataWriter(outputStream))
 ```
 ```vb
     Dim dataWriter As New DataWriter(outputStream)
-
     dataWriter.WriteString("DataWriter has methods to write to various types, such as DataTimeOffset.")
 ```
 
@@ -181,9 +180,9 @@ string text = await Windows.Storage.FileIO.ReadTextAsync(sampleFile);
 Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
 ```
 
-**Lecture d’octets dans un fichier via une mémoire tampon (2 étapes)**
+**Lecture de texte dans un fichier via une mémoire tampon (2étapes)**
 
-1.  Commencez par lire les octets à partir de votre mémoire tampon dans votre fichier en appelant la méthode [**ReadBufferAsync**](https://msdn.microsoft.com/library/windows/apps/hh701468) de la classe [**FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440).
+1.  Commencez par appeler la méthode [**ReadBufferAsync**](https://msdn.microsoft.com/library/windows/apps/hh701468) de la classe [**FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440).
 > [!div class="tabbedCodeSnippets"]
 ```cs
 var buffer = await Windows.Storage.FileIO.ReadBufferAsync(sampleFile);
@@ -260,6 +259,6 @@ Dim dataReader As New DataReader(inputStream)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

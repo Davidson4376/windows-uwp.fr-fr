@@ -4,14 +4,16 @@ Description: "Pour exécuter une expérience sur votre application de plateforme
 title: "Définissez votre expérience dans le tableau de bord du Centre de développement"
 ms.assetid: 675F2ADE-0D4B-41EB-AA4E-56B9C8F32C41
 translationtype: Human Translation
-ms.sourcegitcommit: ce0431243866125eff83569e3b9b1c75e0703358
-ms.openlocfilehash: df6744cb9f4dd60c9eef07dc89f2265ac4244aab
+ms.sourcegitcommit: b33e003af6e12df5eedfe150155db6777c5c62f6
+ms.openlocfilehash: fa209464e247e7073da2197ddd0b9a5344f3763b
 
 ---
 
 # Définir votre expérience dans le tableau de bord du Centre de développement
 
 Après avoir [créé un projet et défini des variables distantes dans le tableau de bord du Centre de développement](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md), puis [codé votre application pour l’expérimentation](code-your-experiment-in-your-app.md), vous êtes prêt à créer une expérience dans le projet. Quand vous créez l’expérience, vous définissez les objectifs et les variantes que vos utilisateurs reçoivent.
+
+Pour découvrir une procédure pas à pas illustrant le processus de création et d’exécution d’une expérience de bout en bout, voir [Créer et exécuter votre première expérience avec des tests A/B](create-and-run-your-first-experiment-with-a-b-testing.md).
 
 <span id="get-an-api-key" />
 <span id="create-an-experiment" />
@@ -85,6 +87,6 @@ Après avoir défini votre expérience dans le tableau de bord du Centre de dév
 
 
 
-<!--HONumber=Sep16_HO1-->
+<!--HONumber=Nov16_HO1-->
 
 

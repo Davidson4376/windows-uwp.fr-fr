@@ -4,14 +4,14 @@ title: "Exécuter une tâche en arrière-plan en fonction d’un minuteur"
 description: "Découvrez comment planifier une tâche en arrière-plan unique ou exécuter une tâche en arrière-plan périodique."
 ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
 translationtype: Human Translation
-ms.sourcegitcommit: 16202eeb37421acf75a9032dfc1eec397d23ce4f
-ms.openlocfilehash: dd0d0fe0081eac112ce22e8a035b4bb70be3bef0
+ms.sourcegitcommit: 7d1c160f8b725cd848bf8357325c6ca284b632ae
+ms.openlocfilehash: 1ad44208b3442e80212656db943ff088514cc954
 
 ---
 
 # Exécuter une tâche en arrière-plan en fonction d’un minuteur
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **API importantes**
 
@@ -22,7 +22,7 @@ ms.openlocfilehash: dd0d0fe0081eac112ce22e8a035b4bb70be3bef0
 Découvrez comment planifier une tâche en arrière-plan unique ou exécuter une tâche en arrière-plan périodique.
 
 -   Cet exemple suppose que vous disposez d’une tâche en arrière-plan qui doit être exécutée régulièrement, ou à une heure spécifique, pour prendre en charge votre application. Une tâche en arrière-plan ne s’exécutera qu’à l’aide d’un [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) si vous avez appelé [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485).
--   Cette rubrique part du principe que vous avez déjà créé une classe de tâche en arrière-plan. (Pour savoir comment créer une tâche en arrière-plan, consultez les rubriques [Créer et inscrire une tâche en arrière-plan à processus unique](create-and-register-a-singleprocess-background-task.md) ou [Créer et inscrire une tâche en arrière-plan dans un processus distinct](create-and-register-a-background-task.md)). Pour des informations plus détaillées sur les conditions et les déclencheurs, voir [Définition de tâches en arrière-plan pour les besoins de votre application](support-your-app-with-background-tasks.md).
+-   Cette rubrique part du principe que vous avez déjà créé une classe de tâche en arrière-plan. Pour commencer rapidement à créer une tâche en arrière-plan, consultez [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md) ou [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-an-outofproc-background-task.md). Pour des informations plus détaillées sur les conditions et les déclencheurs, voir [Définition de tâches en arrière-plan pour les besoins de votre application](support-your-app-with-background-tasks.md).
 
 ## Créer un déclencheur de temps
 
@@ -80,7 +80,7 @@ Découvrez comment planifier une tâche en arrière-plan unique ou exécuter une
 > [!Important]
 > Pour les tâches en arrière-plan qui s’exécutent dans le même processus que votre application, ne définissez pas `entryPoint`. Pour les tâches en arrière-plan qui s’exécutent dans un processus distinct de celui de votre application, définissez `entryPoint` au format suivant: espace de noms, «.» et nom de la classe qui contient l’implémentation de votre tâche en arrière-plan.
 
-    The following code registers a background task that runs in a separate process:
+    The following code registers a background task that runs out-of-process:
 
     > > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -103,12 +103,12 @@ Découvrez comment planifier une tâche en arrière-plan unique ou exécuter une
 
 > **Remarque** Depuis Windows10, il n’est plus nécessaire pour l’utilisateur d’ajouter votre application à l’écran de verrouillage pour utiliser des tâches en arrière-plan. Pour obtenir des indications sur les types de déclencheur de tâche en arrière-plan, voir [Prendre en charge votre application avec des tâches en arrière-plan](support-your-app-with-background-tasks.md).
 
-> **Remarque** Cet article s’adresse aux développeurs Windows10 qui créent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Remarque** Cet article s’adresse aux développeurs Windows10 qui créent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
 ## Rubriques connexes
 
-* [Créer et inscrire une tâche en arrière-plan à processus unique](create-and-register-a-singleprocess-background-task.md)
-* [Créer et inscrire une tâche en arrière-plan](create-and-register-a-background-task.md)
+* [Créez et inscrivez une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md).
+* [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-an-outofproc-background-task.md)
 * [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md)
 * [Gérer une tâche en arrière-plan annulée](handle-a-cancelled-background-task.md)
 * [Surveiller la progression et l’achèvement des tâches en arrière-plan](monitor-background-task-progress-and-completion.md)
@@ -123,6 +123,6 @@ Découvrez comment planifier une tâche en arrière-plan unique ou exécuter une
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

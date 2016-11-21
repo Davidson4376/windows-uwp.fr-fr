@@ -5,8 +5,8 @@ MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: "Créer une application compatible qui utilise des données d’entreprise et personnelles"
 translationtype: Human Translation
-ms.sourcegitcommit: 0da731e1211544ce6b07e783ddc2407da57781c2
-ms.openlocfilehash: 8ead30471371b9b6aca32088f115da9f68784922
+ms.sourcegitcommit: bf1c47e9cca45b626a45ca664bf2bb4be9c529e0
+ms.openlocfilehash: 82b674c72126c66aff34b0396a2c32f88023dd25
 
 ---
 
@@ -28,25 +28,17 @@ Si vous êtes prêt à réaliser toutes les tâches, commençons.
 
 Éléments requis:
 
-* Accès à un compte Microsoft Intune.
+* Une machine virtuelle (VM) de test exécutée sous Windows10, version1607. Vous allez déboguer votre application par rapport à cette machine virtuelle de test.
 
-* Ordinateur de développement qui exécute Windows10, version1607.
-
-* Appareil de test qui exécute Windows10, version1607. Vous allez déboguer votre application par rapport à ce périphérique de test.
-
-  Vous ne pouvez pas procéder au débogage par rapport au même appareil que celui inscrit dans la GPM. C’est pourquoi vous avez besoin d’un appareil de test distinct.
-
-  Pour parler simplement, supposons que votre appareil de test est un ordinateur ou un ordinateur virtuel.
+* Un ordinateur de développement qui exécute Windows10, version1607. Il peut s’agir de votre machine virtuelle si vous y avez installé VisualStudio.
 
 ## Configurer votre environnement de développement
 
 Vous allez effectuer les opérations suivantes:
 
-* Inscrire votre ordinateur de test.
+* Installer l’outil WIP Setup Developer Assistant sur votre machine virtuelle de test.
 
-* Créer une stratégie de protection.
-
-* Télécharger la stratégie sur votre ordinateur de test.
+* Créer une stratégie de protection à l’aide de l’outil WIP Setup Developer Assistant.
 
 * Configurer un projet VisualStudio.
 
@@ -54,23 +46,17 @@ Vous allez effectuer les opérations suivantes:
 
 * Ajouter des espaces de noms aux fichiers de code.
 
-**Inscrire votre ordinateur de test**
+**Installer l’outil WIP Setup Developer Assistant sur votre machine virtuelle de test**
 
- Pour inscrire votre ordinateur de test, ajoutez votre compte Intune à la page **Paramètres**->**Accéder à un compte professionnel ou scolaire** sur votre ordinateur de test.
+ Utilisez cet outil pour configurer une stratégie de protection des informations Windows (WIP) sur votre machine virtuelle de test.
 
- ![connexion à la GPM](images/connect-v2.png)
-
- Le nom de votre ordinateur s’affiche ensuite dans la console d’administration Intune.
+ Téléchargez l’outil ici: [WIP Setup Developer Assistant](https://www.microsoft.com/store/p/wip-setup-developer-assistant/9nblggh526jf).
 
 **Créer une stratégie de protection**
 
-Créez une stratégie et déployez-la sur votre ordinateur de test. Voir [Créer une stratégie Protection des informations Windows (WIP) à l’aide de MicrosoftIntune](https://technet.microsoft.com/itpro/windows/keep-secure/create-edp-policy-using-intune).
+Définissez votre stratégie en ajoutant des informations dans chaque section de l’outil WIP Setup Developer Assistant. Cliquez sur l’icône d’aide située en regard d’un paramètre pour en savoir plus sur la manière de l’utiliser.
 
-**Télécharger la stratégie sur votre appareil**
-
-Sur votre ordinateur de test, accédez à la page **Paramètres**, puis sélectionnez **Accéder à un compte professionnel ou scolaire**-> **Informations**->**Synchronisation**.
-
-![Synchroniser les paramètres avec GPM](images/sync.png)
+Pour obtenir des recommandations plus générales sur la façon d’utiliser cet outil, voir la section relative aux notes de version sur la page de téléchargement de l’application.
 
 **Configurer un projet VisualStudio**
 
@@ -103,7 +89,7 @@ Sur votre ordinateur de test, accédez à la page **Paramètres**, puis sélecti
 
 **Configurer le débogage à distance**
 
-Installez les Outils de contrôle à distance de Visual Studio sur votre ordinateur de test. Ensuite, lancez le débogueur à distance sur votre ordinateur de développement et voyez si votre application s’exécute sur l’ordinateur cible.
+Installez Visual Studio Remote Tools sur votre machine virtuelle de test uniquement si vous développez votre application sur un ordinateur autre que votre machine virtuelle. Ensuite, lancez le débogueur à distance sur votre ordinateur de développement et voyez si votre application s’exécute sur la machine virtuelle de test.
 
 Voir [Instructions pour un PC distant](https://msdn.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps#remote-pc-instructions).
 
@@ -1104,6 +1090,6 @@ private void ProtectionPolicyManager_ProtectedContentRevoked(object sender, Prot
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

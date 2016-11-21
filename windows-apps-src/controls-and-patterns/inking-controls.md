@@ -5,8 +5,8 @@ title: "Contrôles pour l’entrée manuscrite"
 label: Inking Controls
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 7198f4084df8ce484cdc5f6b3231a4bdb02f18b5
+ms.sourcegitcommit: 2fe53747da7995b5442eda0a6c20b120b3b615e5
+ms.openlocfilehash: aacf45c90458d3ca1bd295f904e8f2393d27542d
 
 ---
 # Contrôles pour l’entrée manuscrite
@@ -143,6 +143,7 @@ La gomme dispose également d’un menu volant proposant la commande **Supprimer
 - Utilisez le contrôle InkToolbar avec l’élément InkCanvas pour fournir les paramètres et les fonctionnalités d’entrée manuscrite de base. InkCanvas et InkToolbar peuvent être personnalisés par programme.
 - InkToolbar et l’entrée manuscrite en règle générale sont conseillés avec un style actif. Toutefois, l’entrée manuscrite avec une souris et la fonctionnalité tactile peut être prise en charge si votre application l’impose.
 - En cas de prise en charge de l’entrée manuscrite avec la fonctionnalité tactile, nous recommandons d’utiliser l’icône ED5F de la police Segoe MLD2 Assets pour le bouton «bascule», avec une info-bulle «écriture tactile».
+- Dans le cas d’une sélection du trait, nous recommandons d’utiliser l’icône EF20 de la police Segoe MLD2 Assets pour le bouton «outil», avec une info-bulle «outil de sélection».
 - Si vous utilisez plusieurs InkCanvas, nous recommandons l’utilisation d’un seul élément InkToolbar pour contrôler l’entrée manuscrite dans les zones de dessin.
 - Pour des performances optimales, nous vous recommandons de modifier le menu volant par défaut plutôt que d’en créer un personnalisé pour les outils personnalisés et par défaut.
 
@@ -160,6 +161,6 @@ Pour obtenir un exemple d’entrée manuscrite plus avancé, voir [Exemple de Co
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

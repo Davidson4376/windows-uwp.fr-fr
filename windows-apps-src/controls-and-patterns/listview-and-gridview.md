@@ -5,8 +5,8 @@ title: Affichage Liste et affichage Grille
 label: List view and grid view
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: aeb339e54a1363dbfe5ee5a764ad762a42a40ed9
+ms.sourcegitcommit: 8f9d85f0cb15c9fe4ceec9c397e23a134a442d3f
+ms.openlocfilehash: 8a14fa69089f6d796a803c1c1ff9bb678af3c913
 
 ---
 # ListView et GridView
@@ -314,8 +314,8 @@ Le tableau suivant décrit le clavier, la souris et les interactions tactiles, l
 
 Touche de modification | Interaction
 -------------|------------
-Aucun | <li>Un utilisateur peut sélectionner un seul élément à l’aide de la barre d’espace, du clic de souris ou de l’appui tactile.</li>
-Ctrl | <li>Un utilisateur peut désélectionner un seul élément à l’aide de la barre d’espace, du clic de souris ou de l’appui tactile.</li><li>À l’aide des touches de direction, un utilisateur peut déplacer le focus indépendamment de la sélection.</li>
+Aucun | <ul><li>Un utilisateur peut sélectionner un seul élément à l’aide de la barre d’espace, du clic de souris ou de l’appui tactile.</li></ul>
+Ctrl | <ul><li>Un utilisateur peut désélectionner un seul élément à l’aide de la barre d’espace, du clic de souris ou de l’appui tactile.</li><li>À l’aide des touches de direction, un utilisateur peut déplacer le focus indépendamment de la sélection.</li></ul>
 
 Lorsque SelectionMode est défini sur **Simple**, vous pouvez obtenir l’élément de données sélectionné à partir de la propriété [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selecteditem.aspx). Vous pouvez obtenir l’index dans la collection de l’élément sélectionné en utilisant la propriété [**SelectedIndex**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.selectedindex.aspx). Si aucun élément n’est sélectionné, SelectedItem est défini sur **null**, et SelectedIndex est -1. 
  
@@ -327,8 +327,8 @@ Le tableau suivant décrit le clavier, la souris et les interactions tactiles, l
 
 Touche de modification | Interaction
 -------------|------------
-Aucun | <li>Un utilisateur peut sélectionner plusieurs éléments à l’aide de la barre d’espace, du clic de souris ou de l’appui tactile pour activer/désactiver la sélection sur l’élément sélectionné.</li><li>À l’aide des touches de direction, un utilisateur peut déplacer le focus indépendamment de la sélection.</li>
-Maj | <li>Un utilisateur peut sélectionner plusieurs éléments contigus en cliquant ou en appuyant sur le premier élément de la sélection, puis sur le dernier.</li><li>À l’aide des touches de direction, un utilisateur peut créer une sélection contiguë à partir de l’élément sélectionné lorsque la touche MAJ est enfoncée.</li>
+Aucun | <ul><li>Un utilisateur peut sélectionner plusieurs éléments à l’aide de la barre d’espace, du clic de souris ou de l’appui tactile pour activer/désactiver la sélection sur l’élément sélectionné.</li><li>À l’aide des touches de direction, un utilisateur peut déplacer le focus indépendamment de la sélection.</li></ul>
+Maj | <ul><li>Un utilisateur peut sélectionner plusieurs éléments contigus en cliquant ou en appuyant sur le premier élément de la sélection, puis sur le dernier.</li><li>À l’aide des touches de direction, un utilisateur peut créer une sélection contiguë à partir de l’élément sélectionné lorsque la touche MAJ est enfoncée.</li></ul>
 
 ### Sélection étendue
 
@@ -336,9 +336,9 @@ Le tableau suivant décrit le clavier, la souris et les interactions tactiles, l
 
 Touche de modification | Interaction
 -------------|------------
-Aucun | <li>Le comportement est identique à celui de la sélection **Simple**.</li>
-Ctrl | <li>Un utilisateur peut sélectionner plusieurs éléments à l’aide de la barre d’espace, du clic de souris ou de l’appui tactile pour activer/désactiver la sélection sur l’élément sélectionné.</li><li>À l’aide des touches de direction, un utilisateur peut déplacer le focus indépendamment de la sélection.</li>
-Maj | <li>Un utilisateur peut sélectionner plusieurs éléments contigus en cliquant ou en appuyant sur le premier élément de la sélection, puis sur le dernier.</li><li>À l’aide des touches de direction, un utilisateur peut créer une sélection contiguë à partir de l’élément sélectionné lorsque la touche MAJ est enfoncée.</li>
+Aucun | <ul><li>Le comportement est identique à celui de la sélection **Simple**.</li></ul>
+Ctrl | <ul><li>Un utilisateur peut sélectionner plusieurs éléments à l’aide de la barre d’espace, du clic de souris ou de l’appui tactile pour activer/désactiver la sélection sur l’élément sélectionné.</li><li>À l’aide des touches de direction, un utilisateur peut déplacer le focus indépendamment de la sélection.</li></ul>
+Maj | <ul><li>Un utilisateur peut sélectionner plusieurs éléments contigus en cliquant ou en appuyant sur le premier élément de la sélection, puis sur le dernier.</li><li>À l’aide des touches de direction, un utilisateur peut créer une sélection contiguë à partir de l’élément sélectionné lorsque la touche MAJ est enfoncée.</li></ul>
 
 Lorsque SelectionMode est défini sur **Multiple** ou **Étendu**, vous pouvez obtenir les éléments de données sélectionnés à partir de la propriété [**SelectedItems**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selecteditems.aspx). 
 
@@ -522,6 +522,6 @@ Les contrôles ListView et GridView prennent en charge le glisser-déplacer des 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

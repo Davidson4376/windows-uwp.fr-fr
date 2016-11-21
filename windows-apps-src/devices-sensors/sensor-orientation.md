@@ -4,13 +4,13 @@ ms.assetid: B4A550E7-1639-4C9A-A229-31E22B1415E7
 title: Orientation de capteur
 description: "Les données du capteur provenant des classes Accelerometer, Gyrometer, Compass, Inclinometer et OrientationSensor sont définies par leurs axes de référence. Ces axes sont définis par l’orientation paysage de l’appareil et pivotent avec celui-ci à mesure que l’utilisateur le fait tourner."
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: f0f9c7184c81edf8136849bf8a7bd9d04c340f62
+ms.sourcegitcommit: 62b4042cf1c6296c908a12feb5b2fcbd2b9b8734
+ms.openlocfilehash: 9deb0327f67350af49ba19224a75e766ff9805d7
 
 ---
 # Orientation de capteur
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 ** API importantes **
 
@@ -21,30 +21,30 @@ Les données du capteur provenant des classes [**Accelerometer**](https://msdn.m
 
 ## Orientation de l’affichage et orientation de l’appareil
 
-Pour comprendre les axes de référence pour les capteurs, vous devez distinguer l’orientation de l’affichage de l’orientation de l’appareil. L’orientation de l’affichage correspond au sens dans lequel le texte et les images sont affichés à l’écran, alors que l’orientation de l’appareil correspond au positionnement physique de l’appareil. Sur l’image suivante, l’orientation de l’affichage et celle de l’appareil ont la valeur **Landscape**.
+Pour comprendre les axes de référence pour les capteurs, vous devez distinguer l’orientation de l’affichage de l’orientation de l’appareil. L’orientation de l’affichage correspond au sens dans lequel le texte et les images sont affichés à l’écran, alors que l’orientation de l’appareil correspond au positionnement physique de l’appareil. Dans l’image suivante, l’orientation de l’appareil et de l’affichage se trouve en mode **Paysage** (notez que les axes de capteur indiqués s’appliquent uniquement aux appareils à priorité Paysage).
 
-![Orientation de l’affichage et de l’appareil en mode Landscape](images/accelerometer-axis-orientation-landscape-with-text.png)
+![Orientation de l’affichage et de l’appareil en mode Landscape](images/sensor-orientation-a.PNG)
 
 L’image suivante montre l’orientation de l’affichage et de l’appareil en mode **LandscapeFlipped**.
 
-![Orientation de l’affichage et de l’appareil en mode LandscapeFlipped](images/accelerometer-axis-orientation-landscape-180-with-text.png)
+![Orientation de l’affichage et de l’appareil en mode LandscapeFlipped](images/sensor-orientation-b.PNG)
 
 L’image suivante montre l’orientation d’affichage en mode Landscape tandis que l’orientation de l’appareil est en mode LandscapeFlipped.
 
-![Orientation d’affichage en mode Landscape tandis que l’orientation de l’appareil est en mode LandscapeFlipped.](images/accelerometer-axis-orientation-landscape-180-with-text-inverted.png)
+![Orientation d’affichage en mode Landscape tandis que l’orientation de l’appareil est en mode LandscapeFlipped.](images/sensor-orientation-c.PNG)
 
 Vous pouvez effectuer une requête sur les valeurs d’orientation dans la classe [**DisplayInformation**](https://msdn.microsoft.com/library/windows/apps/Dn264258) à l’aide de la méthode [**GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.display.displayinformation.getforcurrentview.aspx) avec la propriété [**CurrentOrientation**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.display.displayinformation.currentorientation.aspx). Vous pouvez ensuite créer une logique en comparant ces valeurs avec l’énumération [**DisplayOrientations**](https://msdn.microsoft.com/library/windows/apps/BR226142). Souvenez-vous que, pour chaque orientation que vous prenez en charge, vous devez prendre en charge une conversion des axes de référence dans cette orientation.
 
 ## Appareils à priorité Paysage ou à priorité Portrait
 
-Les fabricants produisent des appareils à priorité Paysage ou Portrait. Quand ils intègrent des composants dans des appareils, ils le font de manière cohérente et unifiée pour que tous les appareils opèrent dans le même cadre de référence. Le tableau suivant montre les axes de capteur pour les appareils à priorité Paysage et Portrait.
+Les fabricants produisent des appareils à priorité Paysage ou Portrait. Le cadre de référence varie selon que les appareils sont à priorité Paysage (tels que les ordinateurs de bureau et ordinateurs portables) ou à priorité Portrait (comme les téléphones et certaines tablettes). Le tableau suivant montre les axes de capteur pour les appareils à priorité Paysage et Portrait.
 
 | Orientation | Priorité Paysage | Priorité Portrait |
 |-------------|-----------------|----------------|
-| **Paysage** | ![Appareil à priorité Paysage en mode d’orientation Landscape](images/accelerometer-axis-orientation-landscape.png) | ![Appareil à priorité Portrait en mode d’orientation Landscape](images/accelerometer-axis-orientation-portrait-270.png) |
-| **Portrait** | ![Appareil à priorité Paysage en mode d’orientation Portrait](images/accelerometer-axis-orientation-landscape-90.png) | ![Appareil à priorité Portrait en mode d’orientation Portrait](images/accelerometer-axis-orientation-portrait.png) |
-| **LandscapeFlipped ** | ![Appareil à priorité Paysage en mode d’orientation LandscapeFlipped](images/accelerometer-axis-orientation-landscape-180.png) | ![Appareil à priorité Portrait en mode d’orientation LandscapeFlipped](images/accelerometer-axis-orientation-portrait-90.png) | 
-| **PortraitFlipped** | ![Appareil à priorité Paysage en mode d’orientation PortraitFlipped](images/accelerometer-axis-orientation-landscape-270.png)| ![Appareil à priorité Portrait en mode d’orientation PortraitFlipped](images/accelerometer-axis-orientation-portrait-180.png) |
+| **Paysage** | ![Appareil à priorité Paysage en mode d’orientation Landscape](images/sensor-orientation-0.PNG) | ![Appareil à priorité Portrait en mode d’orientation Landscape](images/sensor-orientation-1.PNG) |
+| **Portrait** | ![Appareil à priorité Paysage en mode d’orientation Portrait](images/sensor-orientation-2.PNG) | ![Appareil à priorité Portrait en mode d’orientation Portrait](images/sensor-orientation-3.PNG) |
+| **LandscapeFlipped ** | ![Appareil à priorité Paysage en mode d’orientation LandscapeFlipped](images/sensor-orientation-4.PNG) | ![Appareil à priorité Portrait en mode d’orientation LandscapeFlipped](images/sensor-orientation-5.PNG) | 
+| **PortraitFlipped** | ![Appareil à priorité Paysage en mode d’orientation PortraitFlipped](images/sensor-orientation-6.PNG)| ![Appareil à priorité Portrait en mode d’orientation PortraitFlipped](images/sensor-orientation-7.PNG) |
 
 ## Appareils diffusant leur affichage et appareils sans affichage
 
@@ -171,6 +171,6 @@ Les données [**OrientationSensor**](https://msdn.microsoft.com/library/windows/
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

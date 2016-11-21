@@ -1,11 +1,11 @@
 ---
-author: drewbatgit
+author: laurenhughes
 ms.assetid: 3FD2AA71-EF67-47B2-9332-3FFA5D3703EA
 description: "Cet article explique comment charger et enregistrer des fichiers image à l’aide de BitmapDecoder et de BitmapEncoder, et comment utiliser l’objet SoftwareBitmap pour représenter des images bitmap."
 title: "Créer, modifier et enregistrer des images bitmap"
 translationtype: Human Translation
-ms.sourcegitcommit: c61bad4b4a5440531c0177247c425addaf452920
-ms.openlocfilehash: ff6bff692c4e0e73b2c99e06b46e8a3050ba12c4
+ms.sourcegitcommit: fd5b52a1d431b9396a4b162077d4f8d6246cd597
+ms.openlocfilehash: ed153b4ebd2f1b6b26f922786b3c005a57d8255d
 
 ---
 
@@ -132,6 +132,6 @@ Vous pouvez transcoder un fichier image directement à partir de [**BitmapDecode
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

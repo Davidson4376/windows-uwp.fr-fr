@@ -4,19 +4,19 @@ ms.assetid: 9347AD7C-3A90-4073-BFF4-9E8237398343
 description: "Cet article répertorie la prise en charge des codecs et formats audio et vidéo pour les applications UWP."
 title: Codecs pris en charge
 translationtype: Human Translation
-ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
-ms.openlocfilehash: 0f6da61ba167328968694d240e250dbc454d5e7b
+ms.sourcegitcommit: 7bd0002d62519757cf582d6070a22890a0e1837e
+ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
 ---
 
 # Codecs pris en charge
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir [l’archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
 
-Cet article répertorie la prise en charge des codecs et formats audio et vidéo pour les applications UWP.
+Cet article répertorie les codecs et formats audio, vidéo et d’image pris en charge dans les applications UWP.
 
-Dans les tableaux ci-dessous, la lettre « D » indique la prise en charge de décodeurs et la lettre « E », la prise en charge d’encodeurs.
+Dans les tableaux ci-dessous, la lettre «D» indique la prise en charge de décodeurs et la lettre «E» la prise en charge d’encodeurs.
 
 ## Prise en charge des codecs et formats audio
 
@@ -2685,18 +2685,80 @@ Les tableaux suivants indiquent la prise en charge des codecs et formats vidéo 
 </tbody>
 </table>
 
- 
+## Prise en charge des codecs et formats d’image 
 
- 
+<table>
+<colgroup>
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Codec</th>
+<th align="left">Ordinateur de bureau</th>
+<th align="left">Autres familles d’appareils</th>
+</tr>
+</thead>
+<tr class="odd">
+<td align="left">BMP</td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+</tr>
+<tr class="even">
+<td align="left">DDS</td>
+<td align="left">D/E<sup>1</sup></td>
+<td align="left">D/E<sup>1</sup></td>
+</tr>
+<tr class="odd">
+<td align="left">DNG</td>
+<td align="left">D<sup>2</sup></td>
+<td align="left">D<sup>2</sup></td>
+</tr>
+<tr class="even">
+<td align="left">GIF</td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+</tr>
+<tr class="odd">
+<td align="left">ICO</td>
+<td align="left">D</td>
+<td align="left">D</td>
+</tr>
+<tr class="even">
+<td align="left">JPEG</td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+</tr>
+<tr class="odd">
+<td align="left">JPEG-XR</td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+</tr>
+<tr class="even">
+<td align="left">PNG</td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+</tr>
+<tr class="odd">
+<td align="left">TIFF</td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+</tr>
+<tr class="even">
+<td align="left">RAW (appareil photo)</td>
+<td align="left">D<sup>3</sup></td>
+<td align="left">Non</td>
+</tr>
+</table>
 
- 
+<sup>1</sup> Les images DDS utilisant BC1 par le biais de la compression BC5 sont prises en charge.  
+<sup>2</sup> Les images DNG avec un aperçu incorporé non RAW sont prises en charge.  
+<sup>3</sup> Seuls certains formats RAW d’appareil photo sont pris en charge.  
+
+Pour plus d’informations sur les codecs d’image, voir [Codecs WIC natifs](https://msdn.microsoft.com/library/windows/desktop/gg430027.aspx).
 
 
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

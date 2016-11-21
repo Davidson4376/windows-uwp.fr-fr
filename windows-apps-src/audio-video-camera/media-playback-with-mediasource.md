@@ -4,8 +4,8 @@ ms.assetid: C5623861-6280-4352-8F22-80EB009D662C
 description: "Cet article vous montre comment utiliser MediaSource, qui offre une méthode courante de référencement et de lecture de contenu multimédia à partir de différentes sources telles que des fichiers locaux ou distants, et présente un modèle commun d’accès aux données multimédias, quel que soit le format multimédia sous-jacent."
 title: "Éléments, playlists et pistes multimédias"
 translationtype: Human Translation
-ms.sourcegitcommit: c2e337e88f9dda3380dd62c32ca6e5d942366636
-ms.openlocfilehash: bb49af7a386356647000e268bcc6983351eaf4b8
+ms.sourcegitcommit: 9999805c8a3bf946aa323b921cea6d63f9a48789
+ms.openlocfilehash: 4c4c6fdb1ea2d42d5bda1034df082bf836d8b803
 
 ---
 
@@ -128,7 +128,7 @@ Dans le gestionnaire d’événements [**OpenFailed**](https://msdn.microsoft.co
 [!code-cs[OpenFailed](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetOpenFailed)]
 
 ## Définir les propriétés d’affichage utilisées par les contrôles de transport de média système
-À compter de Windows10, version1607, le contenu multimédia lu dans un [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) est automatiquement intégré aux contrôles de transport de média système par défaut. Vous pouvez spécifier les métadonnées que les contrôles de transport de média système doivent afficher en mettant à jour les propriétés d’affichage d’un **MediaPlaybackItem**. Obtenez un objet qui représente les propriétés d’affichage d’un élément en appelant [**GetDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.GetDisplayProperties). Déterminez si l’élément de lecture est de la musique ou une vidéo en définissant la propriété [**Type**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.Type). Ensuite, définissez les propriétés [**VideoProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.VideoProperties) ou [**MusicProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.MusicProperties) de l’objet. Appelez [**ApplyDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/mt489923) pour définir les propriétés de l’élément sur les valeurs que vous avez indiquées. En règle générale, une application récupère les valeurs d’affichage de manière dynamique à partir d’un service web, mais l’exemple suivant illustre ce processus avec des valeurs codées en dur.
+À compter de Windows10, version1607, le contenu multimédia lu dans un [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) est automatiquement intégré aux contrôles de transport de média système par défaut. Vous pouvez spécifier les métadonnées que les contrôles de transport de média système doivent afficher en mettant à jour les propriétés d’affichage d’un **MediaPlaybackItem**. Obtenez un objet qui représente les propriétés d’affichage d’un élément en appelant [**GetDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.GetDisplayProperties). Déterminez si l’élément de lecture est de la musique ou une vidéo en définissant la propriété [**Type**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.Type). Ensuite, définissez les propriétés [**VideoProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.VideoProperties) ou [**MusicProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaItemDisplayProperties.MusicProperties) de l’objet. Appelez [**ApplyDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/mt489923) pour mettre à jour les propriétés de l’élément sur les valeurs que vous avez indiquées. En règle générale, une application récupère les valeurs d’affichage de manière dynamique à partir d’un service web, mais l’exemple suivant illustre ce processus avec des valeurs codées en dur.
 
 [!code-cs[SetVideoProperties](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetSetVideoProperties)]
 
@@ -226,6 +226,6 @@ L’événement [**ItemFailed**](https://msdn.microsoft.com/library/windows/apps
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

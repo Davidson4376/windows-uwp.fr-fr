@@ -4,14 +4,18 @@ Description: "Pour lancer une expérience dans votre application de plateformeWi
 title: "Créer un projet et de définir des variables distantes dans le tableau de bord du Centre de développement"
 ms.assetid: C3809FF1-0A6A-4715-B989-BE9D0E8C9013
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: ea455892717546f7f789054609664ca1c0017699
+ms.sourcegitcommit: 32c1b379ee3913e267664e6d125fbc3daf480bb3
+ms.openlocfilehash: 88a55c9ed64d5f52f959a1c68618dc5296dc24d6
 
 ---
 
 # Créer un projet et de définir des variables distantes dans le tableau de bord du Centre de développement
 
 Pour débuter l’expérimentation, créez un [projet](run-app-experiments-with-a-b-testing.md#terms) d’expérimentation pour votre application dans le tableau de bord du Centre de développement et définissez les variables distantes auxquelles votre application peut accéder.
+
+Les instructions suivantes décrivent les étapes de base pour créer un projet. Pour découvrir une procédure pas à pas détaillée illustrant le processus de création d’un projet, puis exécuter une expérience de bout en bout, voir [Créer et exécuter votre première expérience avec des tests A/B](create-and-run-your-first-experiment-with-a-b-testing.md).
+
+## Instructions
 
 1. Connectez-vous au [tableau de bord du Centre de développement](https://dev.windows.com/overview).
 2. Sous **Vos applications**, sélectionnez l’application pour laquelle vous voulez créer une expérience.
@@ -41,6 +45,6 @@ Une fois le projet créé, vous pouvez [coder votre application à des fins d’
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

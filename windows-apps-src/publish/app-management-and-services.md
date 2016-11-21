@@ -1,27 +1,29 @@
 ---
 author: jnHs
-Description: "Vous pouvez gérer chacune de vos applications dans le tableau de bord du Centre de développement Windows, en afficher les détails et configurer des services comme les notifications Push et les cartes."
+Description: "Gérez chacune de vos applications dans le tableau de bord du Centre de développement Windows, affichez-en les détails et configurez des services comme les notifications Push, les tests A/B et les cartes."
 title: Gestion des applications et services
 ms.assetid: 99DA2BC1-9B5D-4746-8BC0-EC723D516EEF
 translationtype: Human Translation
-ms.sourcegitcommit: 3afdf00864e023d913b635beef0c506735881b23
-ms.openlocfilehash: 9787ef724622a95d291b4631196b3e13bcb1298a
+ms.sourcegitcommit: 9611b3cc87c29e29a19b87a5b5f37bef1a71dfbb
+ms.openlocfilehash: d5244bda2cefa146e3c481270fe72fdb8f2d35cf
 
 ---
 
 # Gestion des applications et services
 
-Vous pouvez gérer chacune de vos applications dans le tableau de bord du Centre de développement Windows, en afficher les détails et configurer des services comme les notifications Push et les cartes.
+Vous pouvez gérer chacune de vos applications dans le tableau de bord du Centre de développement Windows, en afficher les détails et configurer des services comme les notifications Push, les tests A/B et les cartes.
 
-Quand vous travaillez avec une application dans votre tableau de bord, vous visualisez les sections relatives à la gestion des applications et aux services dans le menu de navigation de gauche. Développez ces sections pour accéder aux fonctionnalités décrites ci-après.
+Quand vous travaillez avec une application dans votre tableau de bord, vous visualisez les sections **Gestion des applications** et **Services** dans le menu de navigation de gauche. Développez ces sections pour accéder aux fonctionnalités décrites ci-après.
 
 ## Services
 
 La section **Services** vous permet de gérer les différents services pour vos applications.
 
-### NotificationsPush
+### Notifications Push
 
-En fonction du type de package de votre application et de sa configuration spécifique, vous pouvez utiliser l’une des options suivantes pour les notifications Push :
+La section **Notifications Push** vous permet de créer et d’envoyer des notifications push ciblées aux clients de votre application. Vous pouvez les envoyer à tous les clients de votre application ou à un sous-ensemble de vos clients Windows10 remplissant les critères définis par vous dans un [segment de clients](create-customer-segments.md). Pour plus d’informations, consultez [Envoyer des notifications Push ciblées aux clients de votre application](send-push-notifications-to-your-apps-customers.md).
+
+En fonction du type de package de votre application et de sa configuration spécifique, vous pouvez utiliser l’une des options suivantes pour les notifications Push en cliquant sur la page **WNS/MPNS** dans le menu de navigation de gauche: 
 
 -   **Windows Push Notification Services (WNS)** vous permet d’envoyer un toast, une vignette, un badge et des mises à jour brutes depuis votre propre service cloud. Pour plus d’informations, voir l’article [Vue d’ensemble des services de notifications Push Windows (WNS)](https://msdn.microsoft.com/library/windows/apps/mt187203).
 
@@ -39,7 +41,7 @@ Pour plus d’informations, voir [Exécuter des expériences d’application ave
 
 Pour utiliser les services cartographiques dans les applications pour Windows Phone 8.1 et versions antérieures, vous devez insérer un identifiant et un jeton d’application de service cartographique dans le code de votre application. Ce jeton est accessible sur la page **Cartes**, dans la section **Services**.
 
-> **Remarque** Pour utiliser les services cartographiques dans des applications ciblant d’autres systèmes d’exploitation, visitez le [Centre de développement Bing Cartes](http://go.microsoft.com/fwlink/p/?LinkId=614880). Pour plus d’informations, voir [Demander une clé d’authentification de cartes](https://msdn.microsoft.com/library/windows/apps/mt219694).
+> **Remarque** Pour utiliser les services cartographiques dans des applications ciblant Windows10 ou Windows8.x, visitez le [Centre de développement Bing Cartes](http://go.microsoft.com/fwlink/p/?LinkId=614880). Pour plus d’informations, voir [Demander une clé d’authentification de cartes](https://msdn.microsoft.com/library/windows/apps/mt219694).
 
 Pour plus d’informations, voir [Utiliser les services cartographiques](use-map-services.md).
 
@@ -71,9 +73,7 @@ Cette page propose des informations détaillées sur tous vos packages publiés.
 
 > **Remarque** Aucune information n’est proposée ici avant la publication de votre application.
 
-Nous affichons le nom, la version et l’architecture de chaque package. Cliquez sur **Détails** pour accéder à des informations complémentaires comme la langue prise en charge, les fonctionnalités de l’application et les tailles de fichier.
-
-Les informations exactes affichées pour chaque package peuvent varier en fonction du système d’exploitation ciblé et d’autres facteurs. Par exemple, si vous avez ajouté [Médiation publicitaire Windows](https://msdn.microsoft.com/library/windows/apps/mt219691) dans votre package, un lien permettant de configurer la médiation pour ce package figure ici.
+Nous affichons le nom, la version et l’architecture de chaque package. Cliquez sur **Détails** pour accéder à des informations complémentaires comme la langue prise en charge, les fonctionnalités de l’application et les tailles de fichier. Les informations affichées pour chaque package peuvent varier en fonction du système d’exploitation ciblé et d’autres facteurs. 
 
 Les développeurs ayant des autorisations OEM peuvent également [générer des packages de préinstallation](generate-preinstall-packages-for-oems.md) depuis la page **Packages actuels**.
 
@@ -83,6 +83,6 @@ Les développeurs ayant des autorisations OEM peuvent également [générer des 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

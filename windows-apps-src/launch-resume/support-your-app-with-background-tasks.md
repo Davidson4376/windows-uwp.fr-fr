@@ -4,8 +4,8 @@ title: "Prendre en charge votre application avec des tâches en arrière-plan"
 description: "Cette section explique comment exécuter votre propre code léger en arrière-plan en répondant aux déclencheurs au moyen de tâches en arrière-plan."
 ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
 translationtype: Human Translation
-ms.sourcegitcommit: 30b3b8b3b40a96c4cd063ebab2794617568fa7a3
-ms.openlocfilehash: a583cd3e40bda9ab6c5c00d528183a9d8b3bd0e0
+ms.sourcegitcommit: 0f1bf88b1470cc5205f2e98ef15300da705203b1
+ms.openlocfilehash: 35b64637904e35413217d4cf500658999db07088
 
 ---
 
@@ -19,9 +19,9 @@ Les rubriques de cette section expliquent comment exécuter votre propre code l�
 
 À partir de Windows10, version1607, il est beaucoup plus facile de lire du contenu audio en arrière-plan. Voir [Lire du contenu multimédia en arrière-plan](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio) pour obtenir plus d’informations.
 
-## Tâches en arrière-plan à plusieurs processus et à processus unique
+## Tâches en arrière-plan in-process et hors processus
 
-Il existe deux approches pour implémenter des tâches en arrière-plan: l’approche intra-processus et l’approche hors processus. L’approche intra-processus a été introduite dans Windows10 version1607 pour simplifier l’écriture des tâches en arrière-plan. Toutefois, vous pouvez toujours écrire des tâches en arrière-plan hors processus. Consultez la rubrique [Recommandations en matière de tâches en arrière-plan](guidelines-for-background-tasks.md) pour savoir quand utiliser une approche hors processus ou intra-processus pour écrire une tâche en arrière-plan.
+Il existe deux approches pour implémenter des tâches en arrière-plan: in-process, dans lequel l’application et son processus en arrière-plan s’exécutent dans le même processus; et hors processus, où l’application et le processus en arrière-plan s’exécutent dans des processus distincts. L’approche in-process a été introduite dans Windows10 version1607 pour simplifier l’écriture des tâches en arrière-plan. Toutefois, vous pouvez toujours écrire des tâches en arrière-plan hors processus. Consultez la rubrique [Recommandations en matière de tâches en arrière-plan](guidelines-for-background-tasks.md) pour savoir quand utiliser une approche hors processus ou intra-processus pour écrire une tâche en arrière-plan.
 
 Les tâches en arrière-plan hors processus offrent une meilleure résilience, car votre processus en arrière-plan ne peut pas bloquer le processus de votre application en cas de problème. Mais la résilience implique une plus grande complexité lorsqu’il s’agit de gérer la communication entre les processus.
 
@@ -29,9 +29,9 @@ Les tâches en arrière-plan hors processus sont implémentées en tant que clas
 
 Dans Windows10 version1607, vous pouvez activer l’activité en arrière-plan sans avoir à créer de tâche en arrière-plan. Vous pouvez exécuter votre code en arrière-plan directement à l’intérieur de l’application au premier plan.
 
-Pour savoir comment créer une tâche en arrière-plan à processus unique, consultez la rubrique [Créer et inscrire une tâche en arrière-plan à processus unique](create-and-register-a-singleprocess-background-task.md).
+Pour savoir comment créer des tâches en arrière-plan in-process, consultez la rubrique [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md).
 
-Pour savoir comment créer une tâche en arrière-plan à plusieurs processus, consultez la rubrique [Créer et inscrire une tâche en arrière-plan dans un processus distinct](create-and-register-a-background-task.md).
+Pour savoir comment créer des tâches en arrière-plan hors processus, consultez la rubrique [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-an-outofproc-background-task.md).
 
 > [!TIP]
 > À partir de Windows10, il n’est plus nécessaire de placer une application sur l’écran de verrouillage pour qu’elle inscrive une tâche en arrière-plan.
@@ -68,7 +68,7 @@ Pour plus d’informations, voir [Définir des conditions pour exécuter une tâ
 
 ## Conditions requises pour le manifeste de l’application
 
-Pour que votre application puisse inscrire une tâche en arrière-plan qui s’exécute dans un processus distinct, vous devez au préalable la déclarer dans le manifeste de l’application. Il n’est pas nécessaire de déclarer dans le manifeste de l’application les tâches en arrière-plan qui s’exécutent dans le même processus que leur application hôte. Pour plus d’informations, voir [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md).
+Pour que votre application puisse inscrire une tâche en arrière-plan qui s’exécute hors processus, vous devez au préalable la déclarer dans le manifeste de l’application. Il n’est pas nécessaire de déclarer dans le manifeste de l’application les tâches en arrière-plan qui s’exécutent dans le même processus que leur application hôte. Pour plus d’informations, voir [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md).
 
 ## Tâches en arrière-plan
 
@@ -140,7 +140,7 @@ Les tâches de maintenance s’exécutent uniquement lorsque l’appareil est br
 Votre application peut accéder à des capteurs et des périphériques à partir d’une tâche en arrière-plan à l’aide de la classe [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337). Vous pouvez utiliser ce déclencheur pour des opérations longues telles que la synchronisation ou la surveillance de données. Contrairement aux tâches associées aux événements système, une tâche **DeviceUseTrigger** peut être déclenchée uniquement lorsque votre application s’exécute au premier plan et ne prend en charge aucune condition.
 
 > [!IMPORTANT]
-> Les déclencheurs **DeviceUseTrigger** et **DeviceServicingTrigger** ne peuvent pas être utilisés avec des tâches en arrière-plan à processus unique.
+> Les déclencheurs **DeviceUseTrigger** et **DeviceServicingTrigger** ne peuvent pas être utilisés avec des tâches en arrière-plan in-process.
 
 Certaines opérations d’appareil critiques, comme les longues mises à jour de microprogrammes, ne peuvent pas être exécutées avec le déclencheur [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337). De telles opérations ne peuvent être effectuées que sur le PC, et uniquement par une application privilégiée utilisant le [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315). Une *application privilégiée* est une application autorisée par le fabricant de l’appareil à effectuer ces opérations. Les métadonnées de l’appareil permettent de spécifier l’application définie, le cas échéant, comme application privilégiée d’un appareil. Pour plus d’informations, voir [Synchronisation et mise à jour des périphériques pour les applications de périphérique du Windows Store](http://go.microsoft.com/fwlink/p/?LinkId=306619).
 
@@ -152,7 +152,7 @@ Les tâches en arrière-plan peuvent signaler leur progression, leur annulation 
 [Surveiller la progression et l’achèvement des tâches en arrière-plan](monitor-background-task-progress-and-completion.md)
 
 **Remarque**  
-Cet article s’adresse aux développeurs de Windows10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Cet article s’adresse aux développeurs de Windows10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  ## Rubriques connexes
 
@@ -165,8 +165,8 @@ Cet article s’adresse aux développeurs de Windows10 qui développent des appl
 * [Lire du contenu multimédia en arrière-plan](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)
 * [Accéder aux capteurs et aux périphériques à partir d’une tâche en arrière-plan](access-sensors-and-devices-from-a-background-task.md)
 * [Recommandations en matière de tâches en arrière-plan](guidelines-for-background-tasks.md)
-* [Créer et inscrire une tâche en arrière-plan dans un processus distinct](create-and-register-a-background-task.md)
-* [Créer et inscrire une tâche en arrière-plan à processus unique](create-and-register-a-singleprocess-background-task.md)
+* [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-an-outofproc-background-task.md)
+* [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md)
 * [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
 * [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md)
 * [Gérer une tâche en arrière-plan annulée](handle-a-cancelled-background-task.md)
@@ -182,6 +182,6 @@ Cet article s’adresse aux développeurs de Windows10 qui développent des appl
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

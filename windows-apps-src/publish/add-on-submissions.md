@@ -4,8 +4,8 @@ Description: "Les modules complémentaires sont publiés par le biais du tableau
 title: "Soumissions de modules complémentaires"
 ms.assetid: E175AF9E-A1D4-45DF-B353-5E24E573AE67
 translationtype: Human Translation
-ms.sourcegitcommit: d67931b4ab23d2b6aef945e839d193e140240cf9
-ms.openlocfilehash: 400c2e2ee65e408c996193230b05c68264830f0d
+ms.sourcegitcommit: b0d877e46ba6958bfc61dd87687c30e91b6cd937
+ms.openlocfilehash: 7b44dabfd4badcad795e38a97590d98e1601092d
 
 ---
 
@@ -17,7 +17,7 @@ Les modules complémentaires sont publiés par le biais du tableau de bord du Ce
 
 La première étape de la procédure de soumission d’un module complémentaire consiste à créer ce module dans le tableau de bord en [définissant son type de produit et son ID produit](set-your-add-on-product-id.md). Vous pouvez ensuite créer une soumission afin que votre module complémentaire puisse être acheté par le biais du Windows Store. Vous pouvez soumettre un module complémentaire au moment où vous [soumettez votre application](app-submissions.md), ou le soumettre séparément. Enfin, après avoir publié une application dans le Windows Store, vous pouvez proposer des [mises à jour](#updating-an-add-on-after-submission) des modules complémentaires sans avoir à soumettre une nouvelle fois l’application.
 
-> **Remarque**&nbsp;&nbsp;Cette section de la documentation explique comment créer une soumission de module complémentaire sur le tableau de bord du Centre de développement. Sinon, vous pouvez utiliser [l’API de soumission du Windows Store](../monetize/create-and-manage-submissions-using-windows-store-services.md) pour automatiser la soumission des modules complémentaires.
+> **Remarque**&nbsp;&nbsp;Cette section de la documentation explique comment soumettre des extensions dans le tableau de bord du Centre de développement. Sinon, vous pouvez utiliser [l’API de soumission du Windows Store](../monetize/create-and-manage-submissions-using-windows-store-services.md) pour automatiser la soumission des modules complémentaires.
 
 ## Liste de vérification relative à la soumission d’un module complémentaire
 
@@ -73,7 +73,8 @@ Quand vous avez terminé d'entrer ces informations, cliquez sur **Soumettre au W
 
 Un module complémentaire est modifiable à tout moment après sa publication. Les modifications apportées à un module complémentaire sont soumises et publiées indépendamment de votre application. Par conséquent, vous n’avez généralement pas besoin de mettre à jour la totalité de l’application pour modifier un module complémentaire, par exemple afin de mettre à jour son prix ou sa description.
 
-> **Important** Si votre application est accessible aux clients utilisant Windows 8.x, vous devrez créer et publier une nouvelle soumission d’application pour faire en sorte que les mises à jour de module complémentaire soient visibles par ces clients. De même, si vous ajoutez de nouveaux modules complémentaires dans une application ciblant Windows 8.x après la publication de cette dernière, vous devrez mettre à jour le code de votre application pour référencer ces modules, puis soumettre de nouveau l’application. Dans le cas contraire, les nouveaux modules complémentaires ne seront pas visibles par les clients utilisant Windows8.x.
+> 
+  **Important** Si votre application est accessible aux clients utilisant Windows8.x, vous devrez créer et publier une nouvelle soumission d’application pour faire en sorte que les mises à jour de module complémentaire soient visibles par ces clients. De même, si vous ajoutez de nouveaux modules complémentaires dans une application ciblant Windows8.x après la publication de cette dernière, vous devrez mettre à jour le code de votre application pour référencer ces modules, puis soumettre de nouveau l’application. Dans le cas contraire, les nouveaux modules complémentaires ne seront pas visibles par les clients utilisant Windows8.x.
 
 Pour soumettre des mises à jour, accédez à la page du module complémentaire dans votre tableau de bord, puis cliquez sur **Mettre à jour**. Cette opération crée une autre soumission pour le module complémentaire, initialement renseignée avec les informations de votre soumission précédente. Modifiez les informations souhaitées, puis cliquez sur **Envoyer au Store**.
 
@@ -81,6 +82,6 @@ Si vous voulez supprimer un module complémentaire précédemment proposé, vous
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

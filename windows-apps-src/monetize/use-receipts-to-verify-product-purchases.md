@@ -4,17 +4,15 @@ ms.assetid: E322DFFE-8EEC-499D-87BC-EDA5CFC27551
 description: "Chaque transaction du Windows Store qui se traduit par un achat de produit peut éventuellement renvoyer un reçu de transaction."
 title: "Utiliser des reçus pour vérifier les achats de produits"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 01b75d25c385d8dd856af79581fb4a346064c400
+ms.sourcegitcommit: 18d5c2ecf7d438355c3103ad2aae32dc84fc89ed
+ms.openlocfilehash: ea79a33a52bc45a9c8609e12bfac953c3f92db09
 
 ---
 
 # Utiliser des reçus pour vérifier les achats de produits
 
 
-
-
->**Remarque**&nbsp;&nbsp;Les exemples de cet article utilisent les membres de l’espace de noms [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx). Si votre application cible Windows10, version1607 ou ultérieure, nous vous recommandons d’utiliser des membres de l’espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) pour gérer les achats in-app plutôt que l’espace de noms Windows.ApplicationModel.Store. Pour plus d’informations, voir [Versions d’évaluation et achats in-app](in-app-purchases-and-trials.md).
+>**Remarque**&nbsp;&nbsp;Les exemples de cet article utilisent les membres de l’espace de noms [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx). Si votre application cible Windows10 version1607 ou ultérieure, nous vous recommandons d’utiliser des membres de l’espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) pour gérer les achats in-app plutôt que l’espace de noms **Windows.ApplicationModel.Store**. Pour plus d’informations, voir [Versions d’évaluation et achats in-app](in-app-purchases-and-trials.md).
 
 **API importantes**
 
@@ -242,6 +240,6 @@ namespace ReceiptVerificationSample
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

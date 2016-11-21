@@ -4,15 +4,15 @@ Description: "Le rapport sur les acquisitions de modules complémentaires dispon
 title: "Rapport sur les acquisitions de modules complémentaires"
 ms.assetid: F2DF9188-0A98-4AC3-81C0-3E2C37B15582
 translationtype: Human Translation
-ms.sourcegitcommit: 0edf45e997f36a82a8bfcb92c1d8fd2c79242461
-ms.openlocfilehash: 144a8400acf0333fcd50e698b333c02942081ef3
+ms.sourcegitcommit: 7b73682ea36574f8b675193a174d6e4b4ef85841
+ms.openlocfilehash: 76ea807f1f8306bb964a61d1c81e9bf578e4b344
 
 ---
 
 # Rapport sur les acquisitions de modules complémentaires
 
 
-Le rapport **Acquisitions de modules complémentaires** disponible dans le tableau de bord du Centre de développement Windows vous permet de visualiser le nombre de modules complémentaires que vous avez vendus, et vous fournit des informations sur la plateforme ainsi que des données démographiques. Vous pouvez afficher ces données dans votre tableau de bord ou [télécharger le rapport](download-analytic-reports.md) et le consulter hors connexion. Vous pouvez également récupérer ces données par programme à l’aide de l’[API REST d’analyse du Windows Store](../monetize/access-analytics-data-using-windows-store-services.md).
+Le rapport **Acquisitions de modules complémentaires** disponible dans le tableau de bord du Centre de développement Windows vous permet de visualiser le nombre de modules complémentaires que vous avez vendus, et vous fournit des informations sur la plateforme ainsi que des données démographiques. Vous pouvez afficher ces données dans votre tableau de bord ou [télécharger le rapport](download-analytic-reports.md) et le consulter hors connexion. Vous pouvez également récupérer ces données par programme à l’aide de la méthode [obtenir des acquisitions d’extensions](../monetize/get-in-app-acquisitions.md) dans [l’API REST d’analyse du Windows Store](../monetize/access-analytics-data-using-windows-store-services.md).
 
 Dans ce rapport, une acquisition de module complémentaire signifie qu’un client vous a acheté l’un de ces modules. Plusieurs achats d’un même module complémentaire de type consommable effectués par le même client sont comptabilisés comme différentes acquisitions de modules complémentaires.
 
@@ -66,6 +66,6 @@ Le graphique **Version du système d'exploitation** présente le nombre total d'
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

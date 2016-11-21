@@ -6,8 +6,8 @@ label: Add an InkToolbar to a Universal Windows Platform (UWP) inking app
 template: detail.hbs
 keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, InkToolbar, Universal Windows Platform, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 71b73605bab71dad36977d0506c090c34359a3e2
-ms.openlocfilehash: c4a5b0ae2893fda7697457b9e7449a996707de4b
+ms.sourcegitcommit: 9e971104a7f7de9425787f32edcb7c376fb0c934
+ms.openlocfilehash: f5c8f7f8e60317a3ef30ff1900d99f9f6d63d391
 
 ---
 
@@ -284,6 +284,8 @@ En fonction de votre application et de la fonctionnalité d’entrée manuscrite
 
 ### Stylet personnalisé
 
+Vous pouvez créer un stylet personnalisé (activé par le biais d’un bouton de stylet personnalisé) dans lequel vous définissez la palette de couleurs d’entrée manuscrite et les propriétés de la pointe du stylet, telles que la forme, la rotation et la taille.
+
 ![Bouton de stylo de calligraphie personnalisé](.\images\ink\ink-tools-custompen.png)  
 *Bouton de stylo de calligraphie personnalisé*
 
@@ -394,14 +396,404 @@ Ensuite, nous ajoutons les références nécessaires au stylet personnalisé dan
 </Grid>
 ```
 
-<!--
-### Custom toggle
+### Bascule personnalisée
 
-Enable touch inking
+Vous pouvez créer une bascule personnalisée (activée par le biais d’un bouton bascule personnalisé) pour activer ou désactiver une fonction définie par l’application. Lorsqu’elle est activée, la fonctionnalité fonctionne conjointement avec l’outil actif.
 
->**Note**&nbsp;&nbsp;InkToolbar supports pen and mouse input and can be configured to recognize touch input.
--->
+Dans cet exemple, nous définissons un bouton bascule personnalisé qui permet l’entrée manuscrite et l’entrée tactile (par défaut, l’entrée manuscrite tactile n’est pas activée).
 
+> [!NOTE]  
+> Si vous avez besoin de prendre en charge l’entrée manuscrite avec une interface tactile, il est recommandé de l’activer à l’aide d’un bouton bascule personnalisé, avec l’icône et l’info-bulle spécifiés dans cet exemple.
+
+En règle générale, l’entrée tactile est utilisée pour la manipulation directe d’un objet ou l’interface utilisateur de l’application. Pour illustrer les différences de comportement lorsque l’entrée manuscrite tactile est activée, nous plaçons InkCanvas au sein d’un conteneur ScrollViewer, et nous définissions les dimensions de ScrollViewer de manière à ce qu’elles soient inférieures à celles de InkCanvas. 
+
+Au démarrage de l’application, seule l’entrée manuscrite à l’aide du stylet est prise en charge et la fonction tactile est utilisée pour faire un panoramique ou un zoom sur la surface d’entrée manuscrite. Lorsque l’entrée manuscrite tactile est activée, il n’est pas possible de faire de panoramique ou de zoom sur la surface d’entrée manuscrite par le biais de l’entrée tactile.
+
+> [!NOTE]
+> Voir [Contrôles pour l’entrée manuscrite](..\controls-and-patterns\inking-controls.md) pour des recommandations en matière d’expérience utilisateur sur [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.InkCanvas) et [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.InkToolbar). Les recommandations suivantes sont pertinentes pour cet exemple:
+> - [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.InkToolbar) et l’entrée manuscrite en règle générale sont conseillés avec un stylet actif. Toutefois, l’entrée manuscrite avec une souris et la fonctionnalité tactile peut être prise en charge si votre application l’impose. 
+> - En cas de prise en charge de l’entrée manuscrite avec la fonctionnalité tactile, nous recommandons d’utiliser l’icône «ED5F» de la police «Segoe MLD2 Assets» pour le bouton bascule, avec une info-bulle «écriture tactile». 
+
+**XAML**
+
+1. Tout d’abord, nous déclarons un élément [**InkToolbarCustomToggleButton**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.InkToolbarCustomToggleButton) (toggleButton) avec un écouteur d’événements Click qui spécifie le gestionnaire d’événements (Toggle_Custom).
+
+```xaml 
+<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+
+    <StackPanel Grid.Row="0" 
+                x:Name="HeaderPanel" 
+                Orientation="Horizontal">
+        <TextBlock x:Name="Header" 
+                   Text="Basic ink sample" 
+                   Style="{ThemeResource HeaderTextBlockStyle}" 
+                   Margin="10" />
+    </StackPanel>
+
+    <ScrollViewer Grid.Row="1" 
+                  HorizontalScrollBarVisibility="Auto" 
+                  VerticalScrollBarVisibility="Auto">
+        
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <InkToolbar Grid.Row="0" 
+                        Margin="10"
+                        x:Name="inkToolbar" 
+                        VerticalAlignment="Top"
+                        TargetInkCanvas="{x:Bind inkCanvas}">
+                <InkToolbarCustomToggleButton 
+                x:Name="toggleButton" 
+                Click="CustomToggle_Click" 
+                ToolTipService.ToolTip="Touch Writing">
+                    <SymbolIcon Symbol="{x:Bind TouchWritingIcon}"/>
+                </InkToolbarCustomToggleButton>
+            </InkToolbar>
+            
+            <ScrollViewer Grid.Row="1" 
+                          Height="500"
+                          Width="500"
+                          x:Name="scrollViewer" 
+                          ZoomMode="Enabled" 
+                          MinZoomFactor=".1" 
+                          VerticalScrollMode="Enabled" 
+                          VerticalScrollBarVisibility="Auto" 
+                          HorizontalScrollMode="Enabled" 
+                          HorizontalScrollBarVisibility="Auto">
+                
+                <Grid x:Name="outputGrid" 
+                      Height="1000"
+                      Width="1000"
+                      Background="{ThemeResource SystemControlBackgroundChromeWhiteBrush}">
+                    <InkCanvas x:Name="inkCanvas"/>
+                </Grid>
+                
+            </ScrollViewer>
+        </Grid>
+    </ScrollViewer>
+</Grid>
+```
+
+**Code-behind**
+
+2. Dans l’extrait de code précédent, nous avons déclaré un écouteur d’événements Click et le gestionnaire (Toggle_Custom) sur le bouton bascule personnalisé pour les entrées manuscrites tactiles (toggleButton). Ce gestionnaire bascule simplement la prise en charge de CoreInputDeviceTypes.Touch sur la propriété InputDeviceTypes de InkPresenter.
+
+   Nous avons également spécifié une icône pour le bouton à l’aide de l’élément SymbolIcon et de l’extension de balisage {x:Bind} qui l’associe à un champ défini dans le fichier code-behind (TouchWritingIcon).
+
+   L’extrait de code suivant inclut à la fois le gestionnaire d’événements Click et la définition de TouchWritingIcon.
+
+```csharp 
+namespace Ink_Basic_InkToolbar
+{
+    /// <summary>
+    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// </summary>
+    public sealed partial class MainPage_AddCustomToggle : Page
+    {
+        Symbol TouchWritingIcon = (Symbol)0xED5F;
+
+        public MainPage_AddCustomToggle()
+        {
+            this.InitializeComponent();
+        }
+
+        // Handler for the custom toggle button that enables touch inking.
+        private void CustomToggle_Click(object sender, RoutedEventArgs e)
+        {
+            if (toggleButton.IsChecked == true)
+            {
+                inkCanvas.InkPresenter.InputDeviceTypes |= CoreInputDeviceTypes.Touch;
+            }
+            else
+            {
+                inkCanvas.InkPresenter.InputDeviceTypes &= ~CoreInputDeviceTypes.Touch;
+            }
+        }
+    }
+}
+```
+
+### Outil personnalisé
+
+Vous pouvez créer un bouton d’outil personnalisé pour appeler un outil autre qu’un stylet défini par votre application.
+
+Par défaut, [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkPresenter) traite toutes les entrées sous forme de trait d’encre ou d’effacement. Cela inclut les entrées modifiées par une affordance de matériel secondaire, telle qu’un bouton de stylet, un bouton droit de souris ou un élément similaire. Toutefois, [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkPresenter) peut être configuré pour laisser des entrées spécifiques non traitées, qui peuvent ensuite être transmises à votre application pour un traitement personnalisé.
+
+Dans cet exemple, nous définissons un bouton d’outil personnalisé qui, lorsqu’il est sélectionné, entraîne le traitement des traits ultérieurs et leur rendu sous forme de lasso de sélection (ligne en pointillé) et non d’entrée manuscrite. Tous les traits d’entrée manuscrite dans les limites de la zone de sélection sont définis sur [**Selected**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkStroke.Selected).
+
+> [!NOTE]
+> Voir Contrôles pour l’entrée manuscrite pour des recommandations en matière d’expérience utilisateur sur InkCanvas et InkToolbar. La recommandation suivante est pertinente pour cet exemple:
+> - Dans le cas d’une sélection du trait, nous recommandons d’utiliser l’icône «EF20» de la police «Segoe MLD2 Assets» pour le bouton outil, avec une info-bulle «outil de sélection». 
+ 
+**XAML**
+
+1. Tout d’abord, nous déclarons un élément [**InkToolbarCustomToolButton**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.InkToolbarCustomToolButton) (customToolButton) avec un écouteur d’événements Click qui spécifie le gestionnaire d’événements (customToolButton_Click) dans lequel la sélection de traits est configurée. (Nous avons également ajouté un ensemble de boutons pour copier, couper et coller la sélection de traits).
+
+2. En outre, nous ajoutons un élément de zone de dessin pour dessiner notre trait de sélection. Une couche distincte permet de dessiner le trait de sélection en s’abstenant de modifier l’élément [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.InkCanvas) ou son contenu. 
+
+```xaml
+<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <StackPanel x:Name="HeaderPanel" Orientation="Horizontal" Grid.Row="0">
+        <TextBlock x:Name="Header" 
+                   Text="Basic ink sample" 
+                   Style="{ThemeResource HeaderTextBlockStyle}" 
+                   Margin="10,0,0,0" />
+    </StackPanel>
+    <StackPanel x:Name="ToolPanel" Orientation="Horizontal" Grid.Row="1">
+        <InkToolbar x:Name="inkToolbar" 
+                    VerticalAlignment="Top" 
+                    TargetInkCanvas="{x:Bind inkCanvas}">
+            <InkToolbarCustomToolButton 
+                x:Name="customToolButton" 
+                Click="customToolButton_Click" 
+                ToolTipService.ToolTip="Selection tool">
+                <SymbolIcon Symbol="{x:Bind SelectIcon}"/>
+            </InkToolbarCustomToolButton>
+        </InkToolbar>
+        <Button x:Name="cutButton" 
+                Content="Cut" 
+                Click="cutButton_Click"
+                Width="100"
+                Margin="5,0,0,0"/>
+        <Button x:Name="copyButton" 
+                Content="Copy"  
+                Click="copyButton_Click"
+                Width="100"
+                Margin="5,0,0,0"/>
+        <Button x:Name="pasteButton" 
+                Content="Paste"  
+                Click="pasteButton_Click"
+                Width="100"
+                Margin="5,0,0,0"/>
+    </StackPanel>
+    <Grid Grid.Row="2" x:Name="outputGrid" 
+              Background="{ThemeResource SystemControlBackgroundChromeWhiteBrush}" 
+              Height="Auto">
+        <!-- Canvas for displaying selection UI. -->
+        <Canvas x:Name="selectionCanvas"/>
+        <!-- Canvas for displaying ink. -->
+        <InkCanvas x:Name="inkCanvas" />
+    </Grid>
+</Grid>
+```
+
+**Code-behind**
+
+2. Ensuite, nous gérons l’événement Click [**InkToolbarCustomToolButton**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.InkToolbarCustomToolButton) dans le fichier code-behind MainPage.xaml.cs
+
+   Ce gestionnaire configure [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkPresenter) pour transmettre les entrées non traitées à l’application. 
+
+   Pour une procédure plus détaillée de ce code, voir la section Entrée directe pour traitement avancé de [Interactions avec le stylet et WindowsInk dans les applications UWP](pen-and-stylus-interactions.md).
+
+   Nous avons également spécifié une icône pour le bouton à l’aide de l’élément SymbolIcon et de l’extension de balisage {x:Bind} qui l’associe à un champ défini dans le fichier code-behind (SelectIcon).
+
+   L’extrait de code suivant inclut à la fois le gestionnaire d’événements Click et la définition de SelectIcon.
+
+```csharp
+namespace Ink_Basic_InkToolbar
+{
+    /// <summary>
+    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// </summary>
+    public sealed partial class MainPage_AddCustomTool : Page
+    {
+        // Icon for custom selection tool button.
+        Symbol SelectIcon = (Symbol)0xEF20;
+
+        // Stroke selection tool.
+        private Polyline lasso;
+        // Stroke selection area.
+        private Rect boundingRect;
+
+        public MainPage_AddCustomTool()
+        {
+            this.InitializeComponent();
+
+            // Listen for new ink or erase strokes to clean up selection UI.
+            inkCanvas.InkPresenter.StrokeInput.StrokeStarted +=
+                StrokeInput_StrokeStarted;
+            inkCanvas.InkPresenter.StrokesErased +=
+                InkPresenter_StrokesErased;
+        }
+
+        private void customToolButton_Click(object sender, RoutedEventArgs e)
+        {
+            // By default, the InkPresenter processes input modified by 
+            // a secondary affordance (pen barrel button, right mouse 
+            // button, or similar) as ink.
+            // To pass through modified input to the app for custom processing 
+            // on the app UI thread instead of the background ink thread, set 
+            // InputProcessingConfiguration.RightDragAction to LeaveUnprocessed.
+            inkCanvas.InkPresenter.InputProcessingConfiguration.RightDragAction =
+                InkInputRightDragAction.LeaveUnprocessed;
+
+            // Listen for unprocessed pointer events from modified input.
+            // The input is used to provide selection functionality.
+            inkCanvas.InkPresenter.UnprocessedInput.PointerPressed +=
+                UnprocessedInput_PointerPressed;
+            inkCanvas.InkPresenter.UnprocessedInput.PointerMoved +=
+                UnprocessedInput_PointerMoved;
+            inkCanvas.InkPresenter.UnprocessedInput.PointerReleased +=
+                UnprocessedInput_PointerReleased;
+        }
+
+        // Handle new ink or erase strokes to clean up selection UI.
+        private void StrokeInput_StrokeStarted(
+            InkStrokeInput sender, Windows.UI.Core.PointerEventArgs args)
+        {
+            ClearSelection();
+        }
+
+        private void InkPresenter_StrokesErased(
+            InkPresenter sender, InkStrokesErasedEventArgs args)
+        {
+            ClearSelection();
+        }
+
+        private void cutButton_Click(object sender, RoutedEventArgs e)
+        {
+            inkCanvas.InkPresenter.StrokeContainer.CopySelectedToClipboard();
+            inkCanvas.InkPresenter.StrokeContainer.DeleteSelected();
+            ClearSelection();
+        }
+
+        private void copyButton_Click(object sender, RoutedEventArgs e)
+        {
+            inkCanvas.InkPresenter.StrokeContainer.CopySelectedToClipboard();
+        }
+
+        private void pasteButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (inkCanvas.InkPresenter.StrokeContainer.CanPasteFromClipboard())
+            {
+                inkCanvas.InkPresenter.StrokeContainer.PasteFromClipboard(
+                    new Point(0, 0));
+            }
+            else
+            {
+                // Cannot paste from clipboard.
+            }
+        }
+
+        // Clean up selection UI.
+        private void ClearSelection()
+        {
+            var strokes = inkCanvas.InkPresenter.StrokeContainer.GetStrokes();
+            foreach (var stroke in strokes)
+            {
+                stroke.Selected = false;
+            }
+            ClearBoundingRect();
+        }
+
+        private void ClearBoundingRect()
+        {
+            if (selectionCanvas.Children.Any())
+            {
+                selectionCanvas.Children.Clear();
+                boundingRect = Rect.Empty;
+            }
+        }
+
+        // Handle unprocessed pointer events from modifed input.
+        // The input is used to provide selection functionality.
+        // Selection UI is drawn on a canvas under the InkCanvas.
+        private void UnprocessedInput_PointerPressed(
+            InkUnprocessedInput sender, PointerEventArgs args)
+        {
+            // Initialize a selection lasso.
+            lasso = new Polyline()
+            {
+                Stroke = new SolidColorBrush(Windows.UI.Colors.Blue),
+                StrokeThickness = 1,
+                StrokeDashArray = new DoubleCollection() { 5, 2 },
+            };
+
+            lasso.Points.Add(args.CurrentPoint.RawPosition);
+
+            selectionCanvas.Children.Add(lasso);
+        }
+
+        private void UnprocessedInput_PointerMoved(
+            InkUnprocessedInput sender, PointerEventArgs args)
+        {
+            // Add a point to the lasso Polyline object.
+            lasso.Points.Add(args.CurrentPoint.RawPosition);
+        }
+
+        private void UnprocessedInput_PointerReleased(
+            InkUnprocessedInput sender, PointerEventArgs args)
+        {
+            // Add the final point to the Polyline object and 
+            // select strokes within the lasso area.
+            // Draw a bounding box on the selection canvas 
+            // around the selected ink strokes.
+            lasso.Points.Add(args.CurrentPoint.RawPosition);
+
+            boundingRect =
+                inkCanvas.InkPresenter.StrokeContainer.SelectWithPolyLine(
+                    lasso.Points);
+
+            DrawBoundingRect();
+        }
+
+        // Draw a bounding rectangle, on the selection canvas, encompassing 
+        // all ink strokes within the lasso area.
+        private void DrawBoundingRect()
+        {
+            // Clear all existing content from the selection canvas.
+            selectionCanvas.Children.Clear();
+
+            // Draw a bounding rectangle only if there are ink strokes 
+            // within the lasso area.
+            if (!((boundingRect.Width == 0) ||
+                (boundingRect.Height == 0) ||
+                boundingRect.IsEmpty))
+            {
+                var rectangle = new Rectangle()
+                {
+                    Stroke = new SolidColorBrush(Windows.UI.Colors.Blue),
+                    StrokeThickness = 1,
+                    StrokeDashArray = new DoubleCollection() { 5, 2 },
+                    Width = boundingRect.Width,
+                    Height = boundingRect.Height
+                };
+
+                Canvas.SetLeft(rectangle, boundingRect.X);
+                Canvas.SetTop(rectangle, boundingRect.Y);
+
+                selectionCanvas.Children.Add(rectangle);
+            }
+        }
+    }
+}
+```
+
+
+
+### Restitution d’une entrée manuscrite personnalisée
+
+Par défaut, l’entrée manuscrite est traitée sur un thread d’arrière-plan de faible latence et restituée «humide» comme elle est dessinée. Lorsque le trait est terminé (stylet ou doigt relevé, ou bouton de la souris relâché), le trait est traité sur le thread de l’interface utilisateur et restitué « sec » à la couche [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) (au-dessus du contenu de l’application et en remplaçant l’encre humide).
+
+La plateforme d’entrée manuscrite vous permet de remplacer ce comportement et de personnaliser entièrement l’expérience d’entrée manuscrite par un séchage personnalisé de cette dernière.
+
+Pour plus d’informations sur le séchage personnalisé, voir [Interactions avec le stylet et WindowsInk dans les applications UWP](https://msdn.microsoft.com/en-us/windows/uwp/input-and-devices/pen-and-stylus-interactions#custom-ink-rendering).
+
+> [!NOTE]
+> Séchage personnalisé et [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)  
+> Si votre application remplace le comportement par défaut du rendu d’entrée manuscrite de l’élément [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) par une implémentation de séchage personnalisé, les traits d’encre restitués ne sont plus disponibles pour l’élément InkToolbar et les commandes d’effacement intégrées de l’élément InkToolbar ne fonctionneront pas comme prévu. Pour fournir des fonctionnalités d’effacement, vous devez gérer tous les événements de pointeur, effectuer le test de positionnement sur chaque trait et remplacer la commande intégrée «Effacer toutes les entrées manuscrites».
 
 ## Articles connexes
 
@@ -414,6 +806,6 @@ Enable touch inking
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Nov16_HO1-->
 
 

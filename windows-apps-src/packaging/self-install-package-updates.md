@@ -4,8 +4,8 @@ ms.assetid: 414ACC73-2A72-465C-BD15-1B51CB2334F2
 title: "Télécharger et installer des mises à jour de package pour votre application"
 description: "Apprenez à marquer des packages comme obligatoires dans le tableau de bord du Centre de développement et à écrire du code dans votre application pour télécharger et installer des mises à jour de packages."
 translationtype: Human Translation
-ms.sourcegitcommit: 7df130e13685b519d5cc1353c8d64878ecc3d213
-ms.openlocfilehash: adb9b999c88649fc2c8ade838dfa0dabc407c075
+ms.sourcegitcommit: b96d4074a8960db314313c612955900c6a05dc48
+ms.openlocfilehash: 4da8ffe72435501876a1e859d10a16cf19eb11fd
 
 ---
 # Télécharger et installer des mises à jour de package pour votre application
@@ -16,22 +16,28 @@ ms.openlocfilehash: adb9b999c88649fc2c8ade838dfa0dabc407c075
 
 Ces fonctionnalités vous permettent de maintenir à jour votre base d’utilisateurs avec la dernière version de votre application et des services associés.
 
-## Télécharger et installer des mises à jour de package dans votre application
+## Vue d’ensemble des API
 
-Les applications ciblant Windows10, version1607 ou ultérieure, peuvent utiliser les méthodes suivantes de la classe [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) pour télécharger et installer les mises à jour de packages:
+Les applications ciblant Windows10, version1607 ou ultérieure, peuvent utiliser les méthodes suivantes de la classe [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) pour télécharger et installer les mises à jour de packages.
 
-* Utilisez [GetAppAndOptionalStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getappandoptionalstorepackageupdatesasync.aspx) pour déterminer quelles mises à jour de packages sont disponibles.
-* Utilisez [RequestDownloadStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/mt706586.aspx) pour télécharger (mais pas installer) les mises à jour de packages.
-* Utilisez [RequestDownloadAndInstallStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/mt706585.aspx) pour télécharger et installer les mises à jour de packages. Si vous avez déjà téléchargé les mises à jour de packages en appelant la méthode [RequestDownloadStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/mt706586.aspx), cette méthode ignore le processus de téléchargement et ne fait qu’installer les mises à jour.
+|  Méthode  |  Description  |
+|----------|---------------|
+| [GetAppAndOptionalStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getappandoptionalstorepackageupdatesasync.aspx) | Appelez cette méthode pour obtenir la liste des mises à jour de package disponibles.<br/><br/>**Important**&nbsp;&nbsp;Il y a un temps de latence pouvant aller jusqu’à un jour entre le moment où un package réussit le processus de certification et le moment où la méthode [GetAppAndOptionalStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getappandoptionalstorepackageupdatesasync.aspx) reconnaît que la mise à jour du package est disponible pour l’application. |
+| [RequestDownloadStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/mt706586.aspx) | Appelez cette méthode pour télécharger (mais pas installer) les mises à jour de package disponibles. Ce système d’exploitation affiche une boîte de dialogue qui demande à l’utilisateur l’autorisation de télécharger les mises à jour. |
+| [RequestDownloadAndInstallStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/mt706585.aspx) | Appelez cette méthode pour télécharger et installer les mises à jour de package disponibles. Le système d’exploitation affiche une boîte de dialogue qui demande à l’utilisateur l’autorisation de télécharger et d’installer les mises à jour. Si vous avez déjà téléchargé les mises à jour de packages en appelant la méthode [RequestDownloadStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/mt706586.aspx), cette méthode ignore le processus de téléchargement et ne fait qu’installer les mises à jour.  |
 
-La classe [StorePackageUpdate](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storepackageupdate.aspx) représente un package de mise à jour disponible:
-* Utilisez la propriété [Mandatory](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storepackageupdate.mandatory.aspx) pour déterminer si le package est marqué comme obligatoire dans le tableau de bord du Centre de développement.
-* Utilisez la propriété [Package](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storepackageupdate.package.aspx) pour accéder à d’autres données liées au package.
+<span/>
 
->**Remarque** Il y a un temps de latence pouvant aller jusqu’à un jour entre le moment où un package réussit le processus de certification et le moment où la méthode [GetAppAndOptionalStorePackageUpdatesAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getappandoptionalstorepackageupdatesasync.aspx) reconnaît que la mise à jour du package est disponible pour l’application.
+Ces méthodes utilisent des objets [StorePackageUpdate](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storepackageupdate.aspx) pour représenter les packages de mise à jour disponibles. Utilisez les propriétés [StorePackageUpdate](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storepackageupdate.aspx) suivantes pour obtenir des informations sur un package de mise à jour.
 
+|  Propriété  |  Description  |
+|----------|---------------|
+| [Mandatory](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storepackageupdate.mandatory.aspx) | Utilisez cette propriété pour déterminer si le package est marqué comme obligatoire dans le tableau de bord du Centre de développement. |
+| [Package](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storepackageupdate.package.aspx) | Utilisez cette propriété pour accéder aux données sous-jacentes relatives au package. |
 
-### Exemples de code
+<span/>
+
+## Exemples de code
 
 Les exemples de code suivants montrent comment télécharger et installer des mises à jour de packages dans votre application. Ces exemples supposent les point suivants:
 * Le code s’exécute dans le contexte d’une [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx).
@@ -39,7 +45,9 @@ Les exemples de code suivants montrent comment télécharger et installer des mi
 * Le fichier de code contient une instruction **using** pour l’espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx).
 * Cette application mono-utilisateur ne s’exécute que dans le contexte de l’utilisateur qui l’a lancée. Pour une [application multi-utilisateur](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications), utilisez la méthode [GetForUser](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getforuser.aspx) plutôt que la méthode [GetDefault](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.getdefault.aspx) pour obtenir un objet [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx).
 
-#### Télécharger et installer toutes les mises à jour de package
+<span/>
+
+### Télécharger et installer toutes les mises à jour de package
 
 L’exemple de code suivant montre comment télécharger et installer toutes les mises à jour de packages disponibles.  
 
@@ -90,7 +98,7 @@ public async Task DownloadAndInstallAllUpdatesAsync()
 }
 ```
 
-#### Gérer les mises à jour de packages obligatoires
+### Gérer les mises à jour de packages obligatoires
 
 L’exemple de code suivant dérive de l’exemple précédent et montre comment déterminer si des packages de mise à jour ont été [marqués comme obligatoires dans le tableau de bord du Centre de développement Windows](#mandatory-dashboard). En général, vous devez rétrograder l’expérience d’utilisation de votre application normalement pour l’utilisateur si le téléchargement ou l’installation d’une mise à jour de package obligatoire échoue.
 
@@ -209,7 +217,7 @@ private void HandleMandatoryPackageError()
 
 Quand vous créez une soumission de package pour une application qui cible Windows10, version1607 ou ultérieure, vous pouvez marquer le package comme obligatoire, ainsi que la date et l’heure auxquelles il devient obligatoire. Lorsque cette propriété est définie et que votre application détecte que la mise à jour du package est disponible à l’aide de l’API décrite précédemment dans cet article, votre application peut déterminer si le package de mise à jour est obligatoire et modifier son comportement jusqu’à ce que la mise à jour soit installée (par exemple, votre application peut désactiver certaines fonctionnalités).
 
->**Remarque** L’état obligatoire d’un package n’est pas appliqué par Microsoft. Les développeurs doivent utiliser le paramètre obligatoire pour appliquer des mises à jour obligatoires dans leur propre code.
+>**Remarque**&nbsp;&nbsp;L’état obligatoire d’une mise à jour de package n’est pas appliqué par Microsoft et le système d’exploitation ne fournit pas d’interface utilisateur pour indiquer aux utilisateurs qu’une mise à jour d’application obligatoire doit être installée. Les développeurs doivent utiliser le paramètre obligatoire pour appliquer des mises à jour d’application obligatoires dans leur propre code.  
 
 Pour marquer une soumission de package comme obligatoire:
 
@@ -219,10 +227,10 @@ Pour marquer une soumission de package comme obligatoire:
 
 Pour plus d’informations sur la configuration des packages dans le tableau de bord du Centre de développement, voir [Chargement des packages d’application](https://msdn.microsoft.com/windows/uwp/publish/upload-app-packages).
 
-  >**Remarque** Si vous créez une [version d’évaluation de package](https://msdn.microsoft.com/windows/uwp/publish/package-flights), vous pouvez marquer les packages comme obligatoires à l’aide d’une interface utilisateur similaire dans la page **Packages** de la version d’évaluation. Dans ce cas, la mise à jour de package obligatoire s’applique uniquement aux clients qui font partie du groupe de versions d’évaluation.
+  >**Remarque**&nbsp;&nbsp;Si vous créez une [version d’évaluation de package](https://msdn.microsoft.com/windows/uwp/publish/package-flights), vous pouvez marquer les packages comme obligatoires à l’aide d’une interface utilisateur similaire dans la page **Packages** de la version d’évaluation. Dans ce cas, la mise à jour de package obligatoire s’applique uniquement aux clients qui font partie du groupe de versions d’évaluation.
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

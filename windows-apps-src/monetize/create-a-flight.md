@@ -23,13 +23,13 @@ Utilisez cette méth. dans l’API de soum. du Windows Store pour créer une ver
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
 
 * Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
-* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous disposez de 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
+* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 
 >**Remarque**&nbsp;&nbsp;Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
 
 ## Requête
 
-Cette méthode présente la syntaxe suivante. Voir les sections suivantes pour obtenir des exemples d’utilisation et une description de l’en-tête et du corps de la requête.
+Cette méthode présente la syntaxe suivante. Consultez les sections suivantes pour obtenir des exemples d’utilisation et une description de l’en-tête et du corps de la requête.
 
 | Méthode | URI de la requête                                                      |
 |--------|------------------------------------------------------------------|
@@ -61,7 +61,7 @@ Le corps de la requête contient les paramètres suivants.
 |  Paramètre  |  Type  |  Description  |  Obligatoire  |
 |------|------|------|------|
 |  friendlyName  |  chaîne  |  Nom de la version d’évaluation du package, tel que spécifié par le développeur.  |  Non  |
-|  groupIds  |  tableau  |  Tableau de chaînes qui contiennent les ID des groupes de versions d’évaluation associés à la version d’évaluation de package. Pour plus d’informations sur les groupes de versions d’évaluation, voir [Versions d’évaluation de package](https://msdn.microsoft.com/windows/uwp/publish/package-flights).  |  Non  |
+|  groupIds  |  tableau  |  Tableau de chaînes qui contiennent les ID des groupes de versions d’évaluation associés à la version d’évaluation du package. Pour plus d’informations sur les groupes de versions d’évaluation, voir [Versions d’évaluation de package](https://msdn.microsoft.com/windows/uwp/publish/package-flights).  |  Non  |
 |  rankHigherThan  |  chaîne  |  Nom convivial de la version d’évaluation de package qui est classée juste en dessous de la version d’évaluation de package actuelle. Si vous ne définissez pas ce paramètre, la nouvelle version d’évaluation de package est classée au-dessus de toutes les autres. Pour plus d’informations sur le classement des groupes de versions d’évaluation, voir [Versions d’évaluation de package](https://msdn.microsoft.com/windows/uwp/publish/package-flights).    |  Non  |
 
 <span/>
@@ -114,7 +114,7 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
 
 Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’erreur HTTP suivants.
 
-| Code d’erreur |  Description   |
+| Error code |  Description   |
 |--------|------------------|
 | 400  | La requête n’est pas valide. |
 | 409  | La version d’évaluation de package n’a pas pu être créée en raison de son état actuel, ou l’application utilise une fonctionnalité du tableau de bord du Centre de développement qui n’est [actuellement pas prise en charge par l’API de soumission du Windows Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   

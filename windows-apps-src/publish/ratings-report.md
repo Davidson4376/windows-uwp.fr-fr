@@ -4,15 +4,15 @@ Description: "Le rapport Évaluations disponible dans le tableau de bord du Cent
 title: "Rapport Évaluations"
 ms.assetid: CAFEC20B-04FB-48C8-B663-1238C0B85ECD
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 1613c8a5e5a28ba431fcfb186a0fcd5fe9bd7582
+ms.sourcegitcommit: 7b73682ea36574f8b675193a174d6e4b4ef85841
+ms.openlocfilehash: 45d22b46a750655cc723658b476ba40d18b4f745
 
 ---
 
 # Rapport Évaluations
 
 
-Le rapport **Évaluations** disponible dans le tableau de bord du Centre de développement Windows vous permet de visualiser la répartition des évaluations de votre application par les clients dans le Windows Store. Vous pouvez afficher ces données dans votre tableau de bord ou [télécharger le rapport](download-analytic-reports.md) et le consulter hors connexion. Vous pouvez également récupérer ces données par programme à l’aide de l’[API REST d’analyse du Windows Store](../monetize/access-analytics-data-using-windows-store-services.md).
+Le rapport **Évaluations** disponible dans le tableau de bord du Centre de développement Windows vous permet de visualiser la répartition des évaluations de votre application par les clients dans le Windows Store. Vous pouvez afficher ces données dans votre tableau de bord ou [télécharger le rapport](download-analytic-reports.md) et le consulter hors connexion. Vous pouvez également récupérer ces données par programme à l’aide de la méthode [obtenir les classifications des applications](../monetize/get-app-ratings.md) dans [l’API REST d’analyse du Windows Store](../monetize/access-analytics-data-using-windows-store-services.md).
 
 Dans ce rapport, une évaluation correspond au nombre d’étoiles (compris entre 1 et 5) qu’un client a attribué à votre application dans le WindowsStore. Le rapport **Évaluations** ne fournit aucune information sur les commentaires formulés sous forme d’avis ; ces derniers sont consultables dans le [rapport sur les avis](reviews-report.md).
 
@@ -73,6 +73,6 @@ Par défaut, les marchés ayant fait l’objet du plus grand nombre d’évaluat
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

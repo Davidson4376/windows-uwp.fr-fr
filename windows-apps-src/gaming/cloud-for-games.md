@@ -4,8 +4,8 @@ title: Utilisation des services de cloud computing pour les jeux UWP
 description: "Apprenez-en davantage sur l’implémentation de services de cloud computing en tant que serveur principal pour vos jeux UWP."
 ms.assetid: 1a7088e0-0d7b-11e6-8e05-0002a5d5c51b
 translationtype: Human Translation
-ms.sourcegitcommit: 0b2d81daa8bd0fd5694b81fa14fcd064e1600d35
-ms.openlocfilehash: b23c33fac9ac8fe5e2d5563a0af6824c82a3969b
+ms.sourcegitcommit: 2584a08e0a869ab3c5f11c192f0a5a6eeb223d61
+ms.openlocfilehash: 598384993e0e2931773cdb30e0909af6b771590e
 
 ---
 #  Utilisation des services de cloud computing pour les jeux UWP
@@ -111,7 +111,7 @@ Découvrez comment des développeurs ont implémenté des solutions de cloud com
 
 ## Comment concevoir votre serveur principal dans le cloud
 
-Alors que les fabricants et les concepteurs de jeu discutent des fonctions et fonctionnalités nécessaires, nous vous recommandons de vous pencher sur la façon dont vous voulez concevoir votre infrastructure de jeu. À partir du moment où vous voulez développer des jeux pour différents appareils et sur différentes plateformes parmi les principales, pensez à AzureCloud comme serveur principal pour votre jeu.
+Alors que les fabricants et les concepteurs de jeu discutent des fonctions et fonctionnalités nécessaires, nous vous recommandons de vous pencher sur la façon dont vous voulez concevoir votre infrastructure de jeu. À partir du moment où vous voulez développer des jeux pour différents appareils et sur différentes plateformes parmi les principales, pensez à Azure comme serveur principal pour votre jeu.
 
 ### Guides de formation étape par étape
 
@@ -138,9 +138,9 @@ Tout d’abord, vous devez prendre en considération le niveau de service le mie
 
 ### Conception de votre infrastructure de jeu avec MicrosoftAzure
 
-Voici quelques-unes des façons dont vous pouvez utiliser les offres de services de cloud computing Azure pour un jeu. Azure fonctionne avec Windows, Linux et les technologies Open Source que vous connaissez comme Ruby, Python, Java et PHP. Pour plus d’informations, voir [AzureCloud](https://azure.microsoft.com).
+Voici quelques-unes des façons dont vous pouvez utiliser les offres de services de cloud computing Azure pour un jeu. Azure fonctionne avec Windows, Linux et les technologies Open Source que vous connaissez comme Ruby, Python, Java et PHP. Pour plus d’informations, voir [Azure pour les jeux](https://azure.microsoft.com/solutions/gaming/).
 
-| Conditions requises                 | Scénarios d’activité                            | Offre de produit                      | Fonctionnalités de produit                               |
+| Configuration requise                 | Scénarios d’activité                            | Offre de produit                      | Fonctionnalités de produit                               |
 |-----------------------------------|-----------------------------------------------|---------------------------------------|----------------------------------------------------|
 | Hébergement de votre domaine dans le cloud     | Répondre efficacement aux requêtes DNS            | [Azure DNS](https://azure.microsoft.com/services/dns/) | Hébergement de votre domaine avec des performances et une disponibilité élevées  |
 | Connexion et vérification d’identité      | Le joueur se connecte et son identité est authentifiée  | [Azure Active Directory](https://azure.microsoft.com/services/active-directory/) | Authentification unique à toute application web sur site et dans le cloud avec une authentification multifacteur            |
@@ -191,7 +191,7 @@ Voici quelques sociétés qui proposent un serveur principal dans le cloud pour 
 ## Liens connexes
 
 * [Guide de développement de jeux Windows10](https://msdn.microsoft.com/windows/uwp/gaming/e2e)
-* [MicrosoftAzure](https://azure.microsoft.com/)
+* [Azure pour les jeux](https://azure.microsoft.com/solutions/gaming/)
 * [Microsoft BizSpark](https://www.microsoft.com/bizspark/)
 * [ID@Xbox](http://www.xbox.com/Developers/id)
 
@@ -202,6 +202,6 @@ Voici quelques sociétés qui proposent un serveur principal dans le cloud pour 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

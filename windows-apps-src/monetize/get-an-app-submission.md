@@ -4,8 +4,8 @@ ms.assetid: BF296C25-A2E6-48E4-9D08-0CCDB5FAE0C8
 description: "Utilisez cette méthode dans l’API de soumission du Windows Store pour obtenir des données pour une soumission d’application existante."
 title: "Obtenir une soumission d’application à l’aide de l’API de soumission du Windows Store"
 translationtype: Human Translation
-ms.sourcegitcommit: 178b70db1583790c174d65e060c8bce6e4f69243
-ms.openlocfilehash: c845b59919a3a487949bc8926f7261992dac60ae
+ms.sourcegitcommit: 27d8385c7250feba89c6970033ad7ec170f0646c
+ms.openlocfilehash: d7e4e0f355828b3d9b7bbcdd5ceee43dad9fe37c
 
 ---
 
@@ -16,11 +16,13 @@ ms.openlocfilehash: c845b59919a3a487949bc8926f7261992dac60ae
 
 Utilisez cette méthode dans l’API de soumission du Windows Store pour obtenir des données pour une soumission d’application existante. Pour plus d’informations sur le processus de création d’une soumission d’application à l’aide de l’API de soumission du Windows Store, voir [Gérer les soumissions d’applications](manage-app-submissions.md).
 
-## Conditions préalables
+>**Important**&nbsp;&nbsp;Microsoft va bientôt changer le modèle de données de tarification pour les soumissions d’application dans le Centre de développement Windows. Une fois la modification implémentée, la ressource **Tarification** dans le corps de la demande de cette méthode sera vide et vous ne pourrez temporairement pas récupérer les données relatives à la période de tarification, à la tarification et à la vente d’une soumission d’application à l’aide de cette méthode. Nous allons mettre à jour l’API de soumission du Windows Store à l’avenir pour introduire une nouvelle façon d’accéder par programmation aux informations de tarification des soumissions d’application. Pour plus d’informations, voir la [ressource Tarification](manage-app-submissions.md#pricing-object).
+
+## Prérequis
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
 
-* Si ce n’est pas déjà le cas, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
+* Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
 * [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 * Créez une soumission pour une application dans votre compte du Centre de développement. Pour cela, vous pouvez utiliser le tableau de bord du Centre de développement ou la méthode [Créer une soumission d’application](create-an-app-submission.md).
 
@@ -28,7 +30,7 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 ## Requête
 
-Cette méthode présente la syntaxe suivante. Voir les sections suivantes pour obtenir des exemples d’utilisation et une description de l’en-tête et du corps de la requête.
+Cette méthode présente la syntaxe suivante. Consultez les sections suivantes pour obtenir des exemples d’utilisation et une description de l’en-tête et du corps de la requête.
 
 | Méthode | URI de la requête                                                      |
 |--------|------------------------------------------------------------------|
@@ -49,7 +51,7 @@ Cette méthode présente la syntaxe suivante. Voir les sections suivantes pour o
 
 | Nom        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | chaîne | Obligatoire. ID Windows Store de l’application pour laquelle vous voulez mettre à jour une soumission. Pour plus d’informations sur l’ID Windows Store, voir [Visualiser les informations d’identité des applications](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
+| applicationId | chaîne | Obligatoire. L’ID Windows Store de l’application qui contient la soumission à obtenir. Pour plus d’informations sur l’ID Windows Store, voir [Visualiser les informations d’identité des applications](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).  |
 | submissionId | chaîne | Obligatoire. ID de la soumission à obtenir. Cet ID est disponible dans le tableau de bord du Centre de développement et figure également dans les données de réponse aux requêtes visant à [créer une soumission d’application](create-an-app-submission.md).  |
 
 <span/>
@@ -148,6 +150,16 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
       ]
     }
   ],
+  "packageDeliveryOptions": {
+    "packageRollout": {
+        "isPackageRollout": false,
+        "packageRolloutPercentage": 0,
+        "packageRolloutStatus": "PackageRolloutNotStarted",
+        "fallbackSubmissionId": "0"
+    },
+    "isMandatoryUpdate": false,
+    "mandatoryUpdateEffectiveDate": "1601-01-01T00:00:00.0000000Z"
+  },
   "enterpriseLicensing": "Online",
   "allowMicrosoftDecideAppAvailabilityToFutureDeviceFamilies": true,
   "allowTargetFutureDeviceFamilies": {
@@ -165,7 +177,7 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
 
 Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’erreur HTTP suivants.
 
-| Code d’erreur |  Description   |
+| Error code |  Description   |
 |--------|------------------|
 | 404  | La soumission est introuvable. |
 | 409  | La soumission n’appartient pas à l’application spécifiée, ou l’application utilise une fonctionnalité du tableau de bord du Centre de développement qui n’est [actuellement pas prise en charge par l’API de soumission du Windows Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
@@ -184,6 +196,6 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

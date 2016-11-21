@@ -4,14 +4,14 @@ title: "Répondre aux événements système avec des tâches en arrière-plan"
 description: "Découvrez comment créer une tâche en arrière-plan qui répond aux événements SystemTrigger."
 ms.assetid: 43C21FEA-28B9-401D-80BE-A61B71F01A89
 translationtype: Human Translation
-ms.sourcegitcommit: b877ec7a02082cbfeb7cdfd6c66490ec608d9a50
-ms.openlocfilehash: 37a11b573267726707ee3743309083b774727886
+ms.sourcegitcommit: 7d1c160f8b725cd848bf8357325c6ca284b632ae
+ms.openlocfilehash: a3d7ac01724b1e8dcabe3219855eabe172924764
 
 ---
 
 # Répondre aux événements système avec des tâches en arrière-plan
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **API importantes**
 
@@ -21,8 +21,7 @@ ms.openlocfilehash: 37a11b573267726707ee3743309083b774727886
 
 Découvrez comment créer une tâche en arrière-plan qui répond aux événements [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839).
 
-Cette rubrique suppose qu’une classe de tâche en arrière-plan est écrite pour votre application et que cette tâche s’exécute en réponse à un événement déclenché par le système (par exemple lorsqu’Internet devient accessible/inaccessible ou que l’utilisateur se connecte). Cette rubrique porte sur la classe [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839). Pour plus d’informations sur l’écriture d’une classe de tâche en arrière-plan, voir [Créer et inscrire une tâche en arrière-plan à processus unique](create-and-register-a-singleprocess-background-task.md) ou
-* [Créez et inscrivez une tâche en arrière-plan qui s’exécute dans un processus distinct](create-and-register-a-background-task.md).
+Cette rubrique suppose qu’une classe de tâche en arrière-plan est écrite pour votre application et que cette tâche s’exécute en réponse à un événement déclenché par le système (par exemple lorsqu’Internet devient accessible/inaccessible ou que l’utilisateur se connecte). Cette rubrique porte sur la classe [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839). Des informations supplémentaires sur l’écriture d’une classe de tâche en arrière-plan sont disponibles dans les rubriques [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md) ou [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-an-outofproc-background-task.md).
 
 ## Créer un objet SystemTrigger
 
@@ -44,7 +43,7 @@ Cette rubrique suppose qu’une classe de tâche en arrière-plan est écrite po
 
 -   Inscrivez la tâche en arrière-plan en appelant la fonction qui vous permet de le faire. Pour plus d’informations sur l’inscription des tâches en arrière-plan, voir [Inscrire une tâche en arrière-plan](register-a-background-task.md).
 
-    Le code suivant inscrit la tâche en arrière-plan qui s’exécute dans un processus distinct. Si vous appeliez une tâche en arrière-plan qui s’exécute dans le même processus que l’application hôte, vous ne définiriez pas `entrypoint`:
+    Le code suivant inscrit la tâche en arrière-plan pour un processus en arrière-plan qui s’exécute hors processus. Si vous appeliez une tâche en arrière-plan qui s’exécute dans le même processus que l’application hôte, vous ne définiriez pas `entrypoint`:
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -54,7 +53,7 @@ Cette rubrique suppose qu’une classe de tâche en arrière-plan est écrite po
     > BackgroundTaskRegistration task = RegisterBackgroundTask(entryPoint, taskName, internetTrigger, exampleCondition);
     > ```
     > ```cpp
-    > String ^ entryPoint = "Tasks.ExampleBackgroundTaskClass"; // don't set for single-process background tasks
+    > String ^ entryPoint = "Tasks.ExampleBackgroundTaskClass"; // don't set for in-process background tasks
     > String ^ taskName   = "Internet-based background task";
     >
     > BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName, internetTrigger, exampleCondition);
@@ -74,14 +73,15 @@ Les tâches en arrière-plan peuvent s’exécuter en réponse à des événemen
 
 Les applications peuvent inscrire des tâches en arrière-plan qui répondent aux événements [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843), [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) et [**NetworkOperatorNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/br224831), ce qui leur permet d’assurer une communication en temps réel avec l’utilisateur même lorsque l’application n’est pas au premier plan. Pour plus d’informations, voir [Prendre en charge votre application avec des tâches en arrière-plan](support-your-app-with-background-tasks.md).
 
-> **Remarque** Cet article s’adresse aux développeurs de Windows 10 qui créent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> 
+  **Remarque** Cet article s’adresse aux développeurs de Windows10 qui créent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
 ## Rubriques connexes
 
 ****
 
-* [Créer et inscrire une tâche en arrière-plan](create-and-register-a-background-task.md)
-* [Créer et inscrire une tâche en arrière-plan à processus unique](create-and-register-a-singleprocess-background-task.md)
+* [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-an-outofproc-background-task.md)
+* [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md)
 * [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md)
 * [Gérer une tâche en arrière-plan annulée](handle-a-cancelled-background-task.md)
 * [Surveiller la progression et l’achèvement des tâches en arrière-plan](monitor-background-task-progress-and-completion.md)
@@ -91,14 +91,11 @@ Les applications peuvent inscrire des tâches en arrière-plan qui répondent au
 * [Utiliser un déclencheur de maintenance](use-a-maintenance-trigger.md)
 * [Exécuter une tâche en arrière-plan en fonction d’un minuteur](run-a-background-task-on-a-timer-.md)
 * [Recommandations en matière de tâches en arrière-plan](guidelines-for-background-tasks.md)
-
-****
-
 * [Déboguer une tâche en arrière-plan](debug-a-background-task.md)
 * [Comment déclencher des événements de suspension, des événements de reprise et des événements en arrière-plan dans des applications du Windows Store (lors du débogage)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

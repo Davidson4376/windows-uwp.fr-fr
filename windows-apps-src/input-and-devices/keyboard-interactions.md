@@ -6,8 +6,8 @@ ms.assetid: FF819BAC-67C0-4EC9-8921-F087BE188138
 label: Keyboard interactions
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: f9c475a90c270270217999c5a7289e29e7fef208
-ms.openlocfilehash: a1d97c5a66db1b799ccc16769ff18130155743b8
+ms.sourcegitcommit: 667228e10456ffbc64b7d0782d5a8bdc02f2f203
+ms.openlocfilehash: 5ab84def6e73329f59d8ae6ef8be335d66ef4334
 
 ---
 
@@ -360,7 +360,7 @@ Un gestionnaire d’événements d’entrée implémente un délégué qui fourn
 
 Vous pouvez attacher les fonctions des gestionnaires d’événements de clavier pour n’importe quel objet qui inclut l’événement en tant que membre. Cela inclut toute classe dérivée [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911). L’exemple de code XAML suivant montre comment attacher des gestionnaires pour l’événement [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) d’un [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704).
 
-```XAML
+```xaml
 <Grid KeyUp="Grid_KeyUp">
   ...
 </Grid>
@@ -372,24 +372,26 @@ Vous pouvez également associer un gestionnaire d’événements à du code. Pou
 
 L’exemple suivant montre la définition incomplète du gestionnaire d’événements [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) attaché dans l’exemple précédent.
 
-```CSharp
+```csharp
 void Grid_KeyUp(object sender, KeyRoutedEventArgs e)
 {
     //handling code here
 }
 ```
 
-```VisualBasic
+```vb
 Private Sub Grid_KeyUp(ByVal sender As Object, ByVal e As KeyRoutedEventArgs)
-    &#39;handling code here
+    ' handling code here
 End Sub
 ```
 
-```ManagedCPlusPlus
+```c++
 void MyProject::MainPage::Grid_KeyUp(
   Platform::Object^ sender,
   Windows::UI::Xaml::Input::KeyRoutedEventArgs^ e)
-{//handling code here}
+  {
+      //handling code here
+  }
 ```
 
 ### Utilisation de KeyRoutedEventArgs
@@ -411,18 +413,19 @@ Les touches de modification sont des touches, telles que Ctrl ou Maj, sur lesque
 
 Vous pouvez détecter des combinaisons de touches de raccourci à l’aide de code dans vos gestionnaires d’événements [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) et [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942). Vous pouvez ensuite effectuer le suivi de l’état d’appui des touches de modification qui vous intéressent. Lorsqu’un événement de clavier se produit pour une touche qui n’est pas une touche de modification, vous pouvez vérifier en même temps si une touche de modification est à l’état appuyé.
 
-**Remarque** La touche Alt est représentée par la valeur **VirtualKey.Menu**.
+> [!NOTE]
+> La touche Alt est représentée par la valeur **VirtualKey.Menu**.
 
  
 
-## Exemple de touches de raccourci
+### Exemple de touches de raccourci
 
 
 L’exemple suivant explique comment implémenter des touches de raccourci. Dans cet exemple, les utilisateurs peuvent contrôler la lecture du contenu multimédia à l’aide des boutons Lecture, Pause et Arrêt ou des raccourcis clavier Ctrl+P, Ctrl+A et Ctrl+S. Le bouton XAML affiche les touches de raccourci à l’aide des info-bulles et des propriétés [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/br209081) des étiquettes de boutons. Cette documentation d’auto-apprentissage est importante afin d’augmenter la facilité d’utilisation et l’accessibilité de votre application. Pour plus d’informations, voir [Accessibilité du clavier](https://msdn.microsoft.com/library/windows/apps/mt244347).
 
 Notez également que la page définit le focus d’entrée sur elle-même lors de son chargement. Sans cette étape, aucun contrôle n’a le focus d’entrée initial et l’application ne déclenche pas les événements d’entrée tant qu’un utilisateur n’a pas défini le focus d’entrée manuellement (par exemple en utilisant la touche de tabulation ou en cliquant sur un contrôle).
 
-```XAML
+```xaml
 <Grid KeyDown="Grid_KeyDown">
 
   <Grid.RowDefinitions>
@@ -459,7 +462,7 @@ Notez également que la page définit le focus d’entrée sur elle-même lors d
 </Grid>
 ```
 
-```ManagedCPlusPlus
+```c++
 //showing implementations but not header definitions
 void MainPage::OnNavigatedTo(NavigationEventArgs^ e)
 {
@@ -487,7 +490,7 @@ void KeyboardSupport::MainPage::Grid_KeyDown(Platform::Object^ sender, Windows::
 
 void KeyboardSupport::MainPage::Grid_KeyUp(Platform::Object^ sender, Windows::UI::Xaml::Input::KeyRoutedEventArgs^ e)
 {
-    if (e->Key == VirtualKey::Control) isCtrlKeyPressed = true;
+    if (e->Key == VirtualKey::Control) isCtrlKeyPressed = false;
     else if (isCtrlKeyPressed) {
         if (e->Key==VirtualKey::P) {
             DemoMovie->Play();
@@ -498,11 +501,21 @@ void KeyboardSupport::MainPage::Grid_KeyUp(Platform::Object^ sender, Windows::UI
 }
 ```
 
-```CSharp
+```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
 {
     // Set the input focus to ensure that keyboard events are raised.
     this.Loaded += delegate { this.Focus(FocusState.Programmatic); };
+}
+
+private void MediaButton_Click(object sender, RoutedEventArgs e)
+{
+    switch ((sender as Button).Name)
+    {
+        case "PlayButton": DemoMovie.Play(); break;
+        case "PauseButton": DemoMovie.Pause(); break;
+        case "StopButton": DemoMovie.Stop(); break;
+    }
 }
 
 private void Grid_KeyUp(object sender, KeyRoutedEventArgs e)
@@ -521,16 +534,6 @@ private void Grid_KeyDown(object sender, KeyRoutedEventArgs e)
             case VirtualKey.A: DemoMovie.Pause(); break;
             case VirtualKey.S: DemoMovie.Stop(); break;
         }
-    }
-}
-
-private void MediaButton_Click(object sender, RoutedEventArgs e)
-{
-    switch ((sender as Button).Name)
-    {
-        case "PlayButton": DemoMovie.Play(); break;
-        case "PauseButton": DemoMovie.Pause(); break;
-        case "StopButton": DemoMovie.Stop(); break;
     }
 }
 ```
@@ -574,7 +577,10 @@ Private Sub MediaButton_Click(sender As Object, e As RoutedEventArgs)
 End Sub
 ```
 
-**Remarque** La définition d’[**AutomationProperties.AcceleratorKey**](https://msdn.microsoft.com/library/windows/apps/hh759762) ou d’[**AutomationProperties.AccessKey**](https://msdn.microsoft.com/library/windows/apps/hh759763) en XAML fournit des informations de chaîne qui documentent la touche de raccourci d’appel de cette action particulière. Les informations sont capturées par des clients Microsoft UI Automation, tels que le Narrateur, et généralement fournis directement à l’utilisateur. La définition d’**AutomationProperties.AcceleratorKey** ou d’**AutomationProperties.AccessKey** ne constitue pas une action proprement dite. Vous devrez quand même associer des gestionnaires pour les événements [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) ou [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) afin de mettre réellement en œuvre le comportement de la touche de raccourci dans l’application. De même, l’ornement de soulignement du texte n’est pas fourni automatiquement pour une touche d’accès. Si vous voulez afficher du texte souligné dans l’interface utilisateur, vous devez souligner le texte de manière explicite pour la touche en question dans votre mnémonique en insérant une mise en forme [**Underline**](https://msdn.microsoft.com/library/windows/apps/br209982).
+> [!NOTE]
+> La définition [**d’AutomationProperties.AcceleratorKey**](https://msdn.microsoft.com/library/windows/apps/hh759762) ou [**d’AutomationProperties.AccessKey**](https://msdn.microsoft.com/library/windows/apps/hh759763) en XAML fournit des informations de chaîne qui documentent la touche de raccourci d’appel de cette action particulière. Les informations sont capturées par des clients Microsoft UI Automation, tels que le Narrateur, et généralement fournis directement à l’utilisateur.
+>
+> La définition d’**AutomationProperties.AcceleratorKey** ou d’**AutomationProperties.AccessKey** ne constitue pas une action proprement dite. Vous devrez quand même associer des gestionnaires pour les événements [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) ou [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) afin de mettre réellement en œuvre le comportement de la touche de raccourci dans l’application. De même, l’ornement de soulignement du texte n’est pas fourni automatiquement pour une touche d’accès. Si vous voulez afficher du texte souligné dans l’interface utilisateur, vous devez souligner le texte de manière explicite pour la touche en question dans votre mnémonique en insérant une mise en forme [**Underline**](https://msdn.microsoft.com/library/windows/apps/br209982).
 
  
 
@@ -585,7 +591,7 @@ Certains événements sont des événements routés, comme [**KeyDown**](https:/
 
 Considérez l’exemple de code XAML suivant, dans lequel des événements [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) sont définis pour un objet [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) et deux objets [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265). Dans ce cas, si vous relâchez une touche tandis que le focus est détenu par l’un des objets **Button**, l’événement **KeyUp** est déclenché. L’événement est ensuite propagé à l’objet **Canvas** parent.
 
-```XAML
+```xaml
 <StackPanel KeyUp="StackPanel_KeyUp">
   <Button Name="ButtonA" Content="Button A"/>
   <Button Name="ButtonB" Content="Button B"/>
@@ -595,7 +601,7 @@ Considérez l’exemple de code XAML suivant, dans lequel des événements [**Ke
 
 L’exemple suivant montre comment implémenter le gestionnaire d’événements [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) pour le contenu XAML correspondant dans l’exemple précédent.
 
-```CSharp
+```csharp
 void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 {
     statusTextBlock.Text = String.Format(
@@ -614,10 +620,37 @@ Le rôle de la propriété [**Handled**](https://msdn.microsoft.com/library/wind
 
 ### AddHandler et événements de clavier déjà gérés
 
-Vous pouvez utiliser une technique spéciale pour associer des gestionnaires pouvant agir sur des événements déjà marqués comme étant gérés. Cette technique utilise la méthode [**AddHandler**](https://msdn.microsoft.com/library/windows/apps/hh702399) pour inscrire un gestionnaire, plutôt que d’utiliser des attributs XAML ou une syntaxe spécifique au langage pour l’ajout de gestionnaires, telle que += en C\#. L’une des limitations générales de cette technique est le fait que l’API **AddHandler** utilise un paramètre de type [**RoutedEvent**](https://msdn.microsoft.com/library/windows/apps/br208808) qui identifie l’événement routé en question. Tous les événements routés ne fournissent pas un identificateur **RoutedEvent** et cette considération affecte par conséquent les événements routés qui peuvent encore être gérés dans le cas [**Handled**](https://msdn.microsoft.com/library/windows/apps/hh943073). Les événements [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) et [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) possèdent des identificateurs d’événements routés ([**KeyDownEvent**](https://msdn.microsoft.com/library/windows/apps/hh702416) et [**KeyUpEvent**](https://msdn.microsoft.com/library/windows/apps/hh702418)) sur [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911). Toutefois, les autres événements tels que [**TextBox.TextChanged**](https://msdn.microsoft.com/library/windows/apps/br209706) ne possèdent pas d’identificateurs d’événements routés. Par conséquent, ils ne peuvent pas être utilisés pour la technique **AddHandler**.
+Vous pouvez utiliser une technique spéciale pour associer des gestionnaires pouvant agir sur des événements déjà marqués comme étant gérés. Cette technique utilise la méthode [**AddHandler**](https://msdn.microsoft.com/library/windows/apps/hh702399) pour inscrire un gestionnaire, plutôt que d’utiliser des attributs XAML ou une syntaxe spécifique au langage pour l’ajout de gestionnaires, telle que += en C\#. 
+
+L’une des limitations générales de cette technique est le fait que l’API **AddHandler** utilise un paramètre de type [**RoutedEvent**](https://msdn.microsoft.com/library/windows/apps/br208808) qui identifie l’événement routé en question. Tous les événements routés ne fournissent pas un identificateur **RoutedEvent** et cette considération affecte par conséquent les événements routés qui peuvent encore être gérés dans le cas [**Handled**](https://msdn.microsoft.com/library/windows/apps/hh943073). Les événements [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) et [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) possèdent des identificateurs d’événements routés ([**KeyDownEvent**](https://msdn.microsoft.com/library/windows/apps/hh702416) et [**KeyUpEvent**](https://msdn.microsoft.com/library/windows/apps/hh702418)) sur [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911). Toutefois, les autres événements tels que [**TextBox.TextChanged**](https://msdn.microsoft.com/library/windows/apps/br209706) ne possèdent pas d’identificateurs d’événements routés. Par conséquent, ils ne peuvent pas être utilisés pour la technique **AddHandler**.
+
+### Remplacement des événements et du comportement du clavier
+
+Vous pouvez remplacer les événements de touche pour certains contrôles spécifiques (tels que [**GridView**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.GridView)) pour garantir une navigation cohérente pour différents périphériques de saisie, notamment le clavier et le boîtier de commande.
+
+Dans l’exemple suivant, nous sous-classons le contrôle et remplaçons le comportement KeyDown pour cibler le contenu GridView lorsque l’utilisateur appuie sur une touche fléchée.
+
+```csharp
+public class CustomGridView : GridView
+  {
+    protected override void OnKeyDown(KeyRoutedEventArgs e)
+    {
+      // Override arrow key behaviors.
+      if (e.Key != Windows.System.VirtualKey.Left && e.Key !=
+        Windows.System.VirtualKey.Right && e.Key != 
+          Windows.System.VirtualKey.Down && e.Key != 
+            Windows.System.VirtualKey.Up)
+              base.OnKeyDown(e);
+      else
+        FocusManager.TryMoveFocus(FocusNavigationDirection.Down);
+    }
+  }
+```
+
+> [!NOTE]
+> Si vous utilisez un contrôle GridView uniquement pour la mise en page, pensez à utiliser d’autres contrôles tels que [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.ItemsControl) avec [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.ItemsWrapGrid).
 
 ## Commandes
-
 
 Un petit nombre d’éléments d’interface utilisateur fournit la prise en charge intégrée pour les commandes. Les commandes utilisent les événements routés associés à une entrée dans leur implémentation sous-jacente et permettent de traiter l’entrée d’interface utilisateur associée (une certaine action du pointeur, une touche d’accès rapide spécifique), en invoquant un seul gestionnaire de commandes.
 
@@ -626,7 +659,6 @@ Si les commandes sont disponibles pour un élément d’interface utilisateur, e
 Vous pouvez également implémenter [**ICommand**](https://msdn.microsoft.com/library/windows/apps/br227885) afin d’encapsuler les fonctionnalités de commande que vous appelez à partir de gestionnaires d’événements ordinaires, ce qui vous permet d’utiliser les commandes même lorsqu’aucune propriété **Command** n’est disponible.
 
 ## Entrée de texte et contrôles
-
 
 Certains contrôles réagissent aux événements de clavier avec leur propre gestion. Par exemple, [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) est un contrôle conçu pour capturer puis représenter visuellement du texte entré à l’aide du clavier. Il utilise [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) et [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) dans sa propre logique en vue de capturer les frappes de touches, puis il déclenche également son propre événement [**TextChanged**](https://msdn.microsoft.com/library/windows/apps/br209706) si le texte a changé.
 
@@ -640,7 +672,6 @@ Les contrôles personnalisés peuvent implémenter leur propre comportement simi
 
 ## Le clavier tactile
 
-
 Les contrôles de saisie de texte fournissent le support automatique du clavier tactile. Lorsque l’utilisateur définit le focus d’entrée sur un contrôle de texte à l’aide de l’entrée tactile, le clavier tactile apparaît automatiquement. Lorsque le focus d’entrée n’est pas placé sur un contrôle de texte, le clavier tactile est masqué.
 
 Lorsque le clavier tactile apparaît, votre interface utilisateur est automatiquement repositionnée afin que l’élément ciblé reste visible. Des zones importantes de l’interface utilisateur peuvent alors sortir de l’écran. Vous pouvez désactiver ce comportement par défaut et effectuer vos propres ajustements de l’interface utilisateur lorsque le clavier tactile apparaît. Pour plus d’informations, voir [Exemple de réponse à l’apparition du Clavier visuel](http://go.microsoft.com/fwlink/p/?linkid=231633).
@@ -653,6 +684,7 @@ Vous pouvez nettement faciliter et accélérer la saisie de données par les uti
 
 
 ## Articles supplémentaires dans cette section
+
 <table>
 <colgroup>
 <col width="50%" />
@@ -672,11 +704,7 @@ Vous pouvez nettement faciliter et accélérer la saisie de données par les uti
 </tbody>
 </table>
 
- 
-
-
 ## Articles connexes
-
 
 **Développeurs**
 * [Identifier des appareils d’entrée](identify-input-devices.md)
@@ -702,6 +730,6 @@ Vous pouvez nettement faciliter et accélérer la saisie de données par les uti
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

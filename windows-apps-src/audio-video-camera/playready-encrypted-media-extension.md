@@ -75,7 +75,7 @@ Il arrive que certains contenus ne soient pas pris en charge par la gestion des 
 
 Cette section explique comment ajouter un arrêt sécurisé à votre application web.
 
-L’arrêt sécurisé permet à un appareil PlayReady de confirmer de manière sûre à un service de diffusion multimédia que la lecture multimédia a été stoppée sur un contenu donné. Cette fonctionnalité permet à vos services de diffusion multimédia de contrôler et de rapporter avec précision les limites d’utilisation sur différents appareils pour un compte donné.
+L’arrêt sécurisé permet à un appareil PlayReady de confirmer de manière sûre à un service de diffusion multimédia que la lecture multimédia a été stoppée sur un contenu donné. Cette fonctionnalité permet à vos services de streaming multimédia de contrôler et de rapporter avec précision les limites d’utilisation sur différents appareils pour un compte donné.
 
 Il existe deux scénarios principaux pour l’envoi d’une demande d’arrêt sécurisé :
 

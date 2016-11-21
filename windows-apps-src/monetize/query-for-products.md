@@ -4,8 +4,8 @@ ms.assetid: D1F233EC-24B5-4F84-A92F-2030753E608E
 description: "Utilisez cette méthode dans l’API de collection du WindowsStore pour obtenir tous les produits possédés par un client pour les applications associées à votre ID client AzureAD. Vous pouvez limiter votre requête à un produit spécifique ou utiliser d’autres filtres."
 title: Demander des produits
 translationtype: Human Translation
-ms.sourcegitcommit: 6d0fa3d3b57bcc01234aac7d6856416fcf9f4419
-ms.openlocfilehash: ea517d66dbb6f373b191937de8c1cbe42c74846f
+ms.sourcegitcommit: ac9c921c7f39a1bdc6dc9fc9283bc667f67cd820
+ms.openlocfilehash: d614919debd979a475e93909199851390d242deb
 
 ---
 
@@ -23,8 +23,8 @@ Cette méthode est conçue pour être appelée par votre service en réponse à 
 
 Pour utiliser cette méthode, vous devez disposer des éléments suivants:
 
--   un jeton d’accès AzureAD créé avec l’URI d’audience `https://onestore.microsoft.com`;
--   une clé d’ID du WindowsStore générée en appelant la méthode [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) à partir du code côté client de votre application.
+* un jeton d’accès AzureAD créé avec l’URI d’audience `https://onestore.microsoft.com`;
+* une clé d’ID du Windows Store [générée à partir du code côté client de votre application](view-and-grant-products-from-a-service.md#step-4).
 
 Pour plus d’informations, voir [Afficher et octroyer des produits à partir d’un service](view-and-grant-products-from-a-service.md).
 
@@ -69,7 +69,7 @@ L’objet UserIdentity contient les paramètres ci-dessous.
 | Paramètre            | Type   | Description                                                                                                                                                                                                                  | Obligatoire |
 |----------------------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
 | identityType         | chaîne | Spécifiez la valeur chaîne **b2b**.                                                                                                                                                                                            | Oui      |
-| identityValue        | chaîne | Valeur chaîne de la clé d’ID du Windows Store.                                                                                                                                                                                    | Oui      |
+| identityValue        | chaîne | La clé d’ID du Windows Store [générée à partir du code côté client de votre application](view-and-grant-products-from-a-service.md#step-4).                                                                                                                                                                                     | Oui      |
 | localTicketReference | chaîne | Identificateur demandé pour les produits retournés. Les articles retournés dans le corps de la réponse ont un paramètre *localTicketReference* correspondant. Nous vous recommandons d’utiliser la même valeur que la revendication *userId* dans la clé d’ID du WindowsStore. | Oui      |
 
 <span/> 
@@ -217,6 +217,6 @@ Date: Tue, 22 Sep 2015 20:28:18 GMT
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -1,11 +1,11 @@
 ---
 author: jnHs
-Description: "Si votre application utilise AdMediatorControl ou AdControl pour afficher des bannières publicitaires, vous pourriez augmenter votre taux de remplissage et vos revenus publicitaires en présentant des annonces des affiliés Microsoft dans votre application."
+Description: "Vous pouvez utiliser les versions d’évaluation de package pour distribuer les packages proposés uniquement à un groupe de test limité."
 title: "Versions d’évaluation de package"
 ms.assetid: 5B094822-A8DE-4EE3-B55D-3E306C04EE79
 translationtype: Human Translation
-ms.sourcegitcommit: baa8212b7ec26be1f50e051fa06bff4bf8095227
-ms.openlocfilehash: 34321a5fd3db10833b958049597ebf830599cfb4
+ms.sourcegitcommit: 0eef2f719dce460662215e9b5d692d6caebe5a37
+ms.openlocfilehash: 4fd74afc3935b443a5723c3ebdb0ebcf8bef18f0
 
 ---
 
@@ -17,9 +17,9 @@ Vous avez ainsi la possibilité de proposer des packages différents à un ensem
 
 Notez que les versions d’évaluation de package doivent réussir le [processus de certification](the-app-certification-process.md), tout comme dans le cas d’une soumission standard sans version d’évaluation. Si vous décidez par la suite de mettre les packages d’une version d’évaluation à la disposition de l’ensemble de vos clients, vous pouvez déplacer ces packages dans votre soumission standard, comme décrit ci-après.
 
-Lorsque vous configurez des versions d’évaluation de package, vous pouvez choisir les utilisateurs devant bénéficier de packages spécifiques en les ajoutant à un groupe de versions d’évaluation. Tout membre d’un groupe de versions d’évaluation disposant d’un appareil qui exécute une version de Windows10 prenant en charge les versions d’évaluation de package (build Windows.Desktop 10586 ou ultérieure, build Windows.Mobile 10586.63 ou ultérieure, ou XboxOne) bénéficiera des versions d’évaluation de package que vous attribuez à ce groupe spécifique. Les utilisateurs qui n’ont été ajoutés à aucun de vos groupes de versions d’évaluation ou dont l’appareil ne prend pas en charge les versions d’évaluation de package obtiendront les packages de la soumission standard.
+Lorsque vous configurez des versions d’évaluation de package, vous pouvez choisir les utilisateurs devant bénéficier de packages spécifiques en les ajoutant à un **groupe de versions d’évaluation**. Tout membre d’un groupe de versions d’évaluation disposant d’un appareil qui exécute une version de Windows10 prenant en charge les versions d’évaluation de package (build Windows.Desktop 10586 ou ultérieure, build Windows.Mobile 10586.63 ou ultérieure, ou XboxOne) bénéficie des versions d’évaluation de package que vous attribuez à ce groupe spécifique. (Vos versions d’évaluation de package peuvent inclure des packages ciblant une version quelconque de système d’exploitation, y compris Windows8.1/Windows Phone8.1 ou une version antérieure). Les utilisateurs qui n’ont été ajoutés à aucun de vos groupes d’évaluation ou dont l’appareil ne prend pas en charge les versions d’évaluation de package obtiendront les packages de la soumission standard.
 
-> **Important** Sur les appareils mobiles et de bureau, les membres de vos groupes de versions d’évaluation accèderont automatiquement aux packages de votre version d’évaluation chaque fois que vous fournirez des mises à jour. Toutefois, **les membres de vos groupes de versions d’évaluation qui utilisent des appareils Xbox devront rechercher manuellement les mises à jour** afin d’obtenir les derniers packages. Pour cela, ils devront se connecter à leur appareil à l’aide de leur compte Microsoft (avec l’adresse de messagerie associée que vous avez incluse dans votre groupe de versions d’évaluation).
+> **Important** Sur les appareils mobiles et de bureau, les membres de vos groupes d’évaluation accèderont automatiquement aux packages de votre version d’évaluation chaque fois que vous fournirez des mises à jour. Toutefois, **les membres de vos groupes de versions d’évaluation qui utilisent des appareils Xbox devront rechercher manuellement les mises à jour** afin d’obtenir les derniers packages. Pour cela, ils devront se connecter à leur appareil à l’aide de leur compte Microsoft (avec l’adresse de messagerie associée que vous avez incluse dans votre groupe de versions d’évaluation).
 
 Notez que les versions d’évaluation de packages ne seront pas distribuées par le biais du [Windows Store pour Entreprises](https://www.microsoft.com/business-store). En effet, les membres de vos groupes de versions d’évaluation doivent être connectés avec leur compte Microsoft afin de pouvoir recevoir une version d’évaluation de package. Tous les achats effectués via le Windows Store pour Entreprises recevront vos packages standard.
 
@@ -38,9 +38,10 @@ Attribuez un nom au groupe de versions d’évaluation lors de sa création. Cha
 Cliquez sur **Créer un groupe** pour enregistrer le groupe et continuer la configuration de la version d’évaluation du package.
 
 > **Important** Veillez à obtenir le consentement des utilisateurs ajoutés à votre groupe de versions d’évaluation, et vérifiez qu’ils comprennent que les packages qui leur seront proposés seront différents de ceux de votre soumission standard. 
-> Vous pouvez également réfléchir à la manière dont vous souhaitez que les utilisateurs de votre version d’évaluation de package donnent leur avis sur l’application. Nous vous suggérons d’[inclure dans votre application un contrôle lançant le Hub de commentaires](../monetize/launch-feedback-hub-from-your-app.md) pour permettre à vos clients de communiquer directement leur avis ; vous pourrez ensuite consulter leurs commentaires dans le [Rapport sur les commentaires](feedback-report.md) de votre application).
 
-Pour modifier ultérieurement votre groupe de versions d’évaluation, cliquez sur **Exporter au format CSV** afin d’enregistrer les données de votre groupe dans un fichier .csv. Effectuez vos modifications dans ce fichier, puis cliquez sur **Importer au format CSV** pour utiliser la nouvelle version afin de mettre à jour l’appartenance au groupe. Notez que l’implémentation des modifications d’appartenance au groupe de versions d’évaluation peut prendre jusqu’à 30minutes. Si vous ajoutez des contacts à un groupe de versions d’évaluation après avoir publié une version d’évaluation de package associée, les packages seront automatiquement transférés aux nouveaux contacts; vous n’êtes pas obligé de créer et publier une nouvelle soumission pour cette version d’évaluation de package. 
+> Vous pouvez également réfléchir à la manière dont vous souhaitez que les utilisateurs de votre version d’évaluation de package donnent leur avis sur l’application. Nous vous suggérons [d’inclure dans votre application un contrôle lançant le Hub de commentaires](../monetize/launch-feedback-hub-from-your-app.md) pour permettre à vos clients de communiquer directement leur avis. Vous pourrez ensuite consulter leurs commentaires dans le [Rapport sur les commentaires](feedback-report.md) de votre application).
+
+Pour modifier votre groupe de versions d’évaluation ultérieurement, cliquez sur **Afficher et gérer les groupes existants** lors de la création d’une nouvelle version d’évaluation, puis sélectionnez le groupe de versions d’évaluation que vous souhaitez modifier ou cliquez sur le nom du groupe de versions d’évaluation à partir de la page de présentation de la version d’évaluation du package. Vous pouvez ajouter ou supprimer des adresses e-mail directement dans le champ ou, pour des modifications plus importantes, cliquer sur **Exporter au format .csv** pour enregistrer les informations d’appartenance du groupe de versions d’évaluation dans un fichier .csv. Effectuez vos modifications dans ce fichier, puis cliquez sur **Importer au format CSV** pour utiliser la nouvelle version afin de mettre à jour l’appartenance au groupe. Notez que l’implémentation des modifications d’appartenance au groupe de versions d’évaluation peut prendre jusqu’à 30minutes. Si vous ajoutez des contacts à un groupe de versions d’évaluation après avoir publié une version d’évaluation de package associée, les packages seront automatiquement transférés aux nouveaux contacts; vous n’êtes pas obligé de créer et publier une nouvelle soumission pour cette version d’évaluation de package. 
 
 ## Créer une version d’évaluation de package
 
@@ -52,13 +53,13 @@ Cliquez sur **Créer une version d’évaluation** une fois que vous avez entré
 
 ## Indiquez les packages à inclure dans votre version d’évaluation de package.
 
-Une fois que vous avez enregistré les informations de la version d’évaluation de package, la page de synthèse correspondante s’affiche. Cliquez sur **Packages** pour indiquer les packages que vous souhaitez inclure dans la version d’évaluation.
+Une fois que vous avez enregistré les informations de la version d’évaluation de package, la page de synthèse correspondante s’affiche. Cliquez sur **Packages** pour indiquer les packages que vous souhaitez inclure dans la version d’évaluation. Vous pouvez inclure des packages ciblant n’importe quelle version de système d’exploitation, y compris Windows10, Windows8.x et Windows Phone8.x ou une version antérieure.
 
 Vous pouvez sélectionner des packages associés à une soumission précédemment publiée (une soumission standard ou l’une de vos autres versions d’évaluation de package, si vous en possédez plusieurs). Si vous avez besoin de charger de nouveaux packages à utiliser pour cette version d’évaluation de package, vous pouvez le faire à ce stade (en suivant le processus permettant de [charger des packages d’application](upload-app-packages.md) dans une soumission standard). Cliquez sur **Enregistrer** dès que vous avez fini d’indiquer les packages à inclure dans cette version d’évaluation de package.
 
 Si votre application prend en charge plusieurs familles d’appareils, veillez à inclure les packages permettant de prendre en charge les mêmes familles d’appareils dans votre version d’évaluation. Les utilisateurs inclus dans vos groupes de versions d’évaluation pourront **uniquement** obtenir des packages à partir de cette version d’évaluation. Ils ne pourront pas accéder aux packages des autres versions d’évaluation, ni de votre soumission standard. 
 
-Sachez également que les données de description sur le Store proviennent de votre soumission standard, y compris les familles d’appareils que votre application prend en charge. Les clients de vos groupes de versions d’évaluation pourront uniquement télécharger l’application sur une famille d’appareils prise en charge par votre soumission standard. Pour plus d’informations, voir [Prise en charge des familles d’appareils](#device-family-support). 
+Sachez également que les données de description sur le Windows Store proviennent de votre soumission standard, y compris les familles d’appareils que votre application prend en charge. Les clients de vos groupes de versions d’évaluation peuvent uniquement télécharger l’application sur une famille d’appareils prise en charge par votre soumission standard. Pour plus d’informations, consultez [Prise en charge des familles d’appareils](#device-family-support). 
 
 ## Lancement de package progressif
 
@@ -124,6 +125,6 @@ Lorsque vous supprimez une version d’évaluation d’un package, les clients q
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

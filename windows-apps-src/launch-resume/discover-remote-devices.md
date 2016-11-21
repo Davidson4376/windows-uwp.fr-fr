@@ -1,15 +1,15 @@
 ---
 author: PatrickFarley
 title: "Détecter des appareils distants"
-description: "Découvrez comment détecter des appareils distants à partir de votre application à l’aide du projet «Rome»."
+description: Learn how to discover remote devices from your app using Project "Rome".
 translationtype: Human Translation
-ms.sourcegitcommit: ff8e16d0e376d502157ae42b9cdae11875008554
-ms.openlocfilehash: cb1f9cf6915378203919fdf63bcebc935af74a30
+ms.sourcegitcommit: dc5030fea8e149b3926b926b09bfec3eeb5092ee
+ms.openlocfilehash: b4b4eb28ea56ab3d84e2fe0bc0c281cb53149d5d
 
 ---
 
 # Détecter des appareils distants
-Votre application peut utiliser une connexion réseau sans fil, Bluetooth et cloud pour détecter les appareils Windows authentifiés avec le même compte Microsoft que l’appareil détecteur. Les appareils communs qui peuvent accepter des connexions anonymes, comme SurfaceHub et XboxOne, sont également détectables. Aucun logiciel particulier n’est nécessaire sur les appareils distants pour qu’ils soient détectables.
+Votre application peut utiliser une connexion réseau sans fil, Bluetooth et cloud pour détecter les appareils Windows signés avec le même compte Microsoft que l’appareil détecteur. Les appareils communs qui peuvent accepter des connexions anonymes, comme SurfaceHub et XboxOne, sont également détectables. Aucun logiciel particulier n’est nécessaire sur les appareils distants pour qu’ils soient détectables.
 
 > [!NOTE]
 > Ce guide suppose que vous avez déjà accès à la fonctionnalité Systèmes distants, conformément à la procédure décrite dans [Lancer une application sur un appareil distant](launch-a-remote-app.md).
@@ -50,6 +50,6 @@ L’[exemple Systèmes distants](https://github.com/Microsoft/Windows-universal-
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

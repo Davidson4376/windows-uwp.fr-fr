@@ -3,8 +3,8 @@ title: "Connexion à un fournisseur d’identité avec Gestionnaire de compte we
 description: "Cet article explique comment utiliser la classe AccountsSettingsPane pour connecter votre application de plateforme Windows universelle (UWP) à des fournisseurs d’identité externes, tels que Microsoft ou Facebook, à l’aide des nouvelles API du Gestionnaire de comptes web de Windows10."
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: f3cdb187ec4056d4c7db6acde471b0bc91c78390
-ms.openlocfilehash: 093ca8906853121bbf33a729c523717d26cb7b0d
+ms.sourcegitcommit: e16977a9a11b292ea9624ff421aa964c11d615be
+ms.openlocfilehash: d234811b395790a35ad50dea9ef4cc56d60458e8
 
 ---
 # Connexion à un fournisseur d’identité avec Gestionnaire de compte web
@@ -121,9 +121,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s,
 }
 ```
 
-Notez que nous passons également la chaîne «consumers» au paramètre facultatif *authority*. En effet, Microsoft fournit deux types d’authentification: les comptes Microsoft (MSA) pour les «consommateurs» et Azure Active Directory (AAD) pour les «entreprises». L’autorité «consumers» indique au fournisseur que nous sommes intéressés par la première option.
-
-Si vous développez une application d’entreprise, vous voudrez peut-être utiliser le point de terminaison graphique AAD à la place. Pour plus d’informations sur la marche à suivre, consultez [l’exemple complet WebAccountManagement sur GitHub](http://go.microsoft.com/fwlink/p/?LinkId=620621) et la documentation Azure. 
+Notez que nous passons également la chaîne «consumers» au paramètre facultatif *authority*. En effet, Microsoft fournit deux types d’authentification: les comptes Microsoft (MSA) pour les «consommateurs» et Azure Active Directory (AAD) pour les «entreprises». Le paramètre «consumers» indique que nous voulons l’option MSA. Si vous développez une application d’entreprise, utilisez la chaîne «organizations» à la place.
 
 Enfin, ajoutez le fournisseur à la classe AccountsSettingsPane en créant une nouvelle commande WebAccountProviderCommand comme suit: 
 
@@ -168,9 +166,22 @@ Dans cet exemple, nous passons la chaîne «wl.basic» au paramètre d’étendu
 
 Les fournisseurs de services proposeront une documentation dans laquelle les étendues devront être spécifiées pour obtenir des jetons à utiliser avec leurs services. 
 
-Pour les étendues Office365 et Outlook.com, voir (Authentification des API Office365 et Outlook.com à l’aide du point de terminaison d’authentification v2.0) [https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2]. 
+* Pour les étendues Office365 et Outlook.com, voir (Authentification des API Office365 et Outlook.com à l’aide du point de terminaison d’authentification v2.0) [https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2]. 
+* Pour OneDrive, voir (Authentification et connexion OneDrive) [https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes]. 
 
-Pour OneDrive, voir (Authentification et connexion OneDrive) [https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes]. 
+Si vous développez une application d’entreprise, vous souhaiterez probablement vous connecter à une instance Azure Active Directory (AAD) et utiliser l’API Microsoft Graph plutôt que les services MSA classiques. Dans ce cas, utilisez le code suivant: 
+
+```C#
+private async void GetAadTokenAsync(WebAccountProviderCommand command)
+{
+    string clientId = "your_guid_here"; // Obtain your clientId from the Azure Portal
+    WebTokenRequest request = new WebTokenRequest(provider, "User.Read", clientId);
+    request.Properties.Add("resource", "https://graph.microsoft.com");
+    WebTokenRequestResult = await WebAuthenticationCoreManager.RequestTokenAsync(request);
+}
+```
+
+Le reste de cet article décrit la suite du scénario MSA, mais le code pour AAD est très similaire. Pour plus d’informations sur AAD/Microsoft Graph, notamment un exemple complet sur GitHub, voir la [documentation Microsoft Graph](https://graph.microsoft.io/docs/platform/get-started).
 
 ## Utiliser le jeton
 
@@ -390,6 +401,6 @@ En théorie, vous pouvez utiliser les commandes de paramètres pour tout. Toutef
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

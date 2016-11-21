@@ -6,8 +6,8 @@ ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
 label: Radio buttons
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 435a2a6f1b9707d1f64587a693bd9a60d587ca83
+ms.sourcegitcommit: f26b042bb7efb6599993b8fd7cee6ee35e1765fd
+ms.openlocfilehash: 0e9cd8db21577bdbfe4c53fc9a17fbcbf5c81f76
 
 ---
 # Cases d’option
@@ -155,7 +155,7 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 }
 ```
 
-Les groupes de cases d’option ressemblent à ceci.
+Les groupes de cases d’option ressemblent à ceci une fois que l’utilisateur a sélectionné un arrière-plan bleu et une bordure verte.
 
 ![Cases d’option en deux groupes](images/radio-button-groups.png)
 
@@ -198,6 +198,6 @@ Cette illustration montre la manière convenable de positionner et espacer les c
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

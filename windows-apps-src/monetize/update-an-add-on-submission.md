@@ -4,21 +4,21 @@ ms.assetid: 8C63D33B-557D-436E-9DDA-11F7A5BFA2D7
 description: "Utilisez cette méthode dans l’API de soumission du Windows Store pour mettre à jour une soumission d’extension existante."
 title: "Mettre à jour une soumission d’extension à l’aide de l’API de soumission du Windows Store"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: b7a8e1d39d5ee0a0858382b84ab00cc2c481da5d
+ms.sourcegitcommit: 7307ca70467a751d5adb53f3718c7e9cf0b70dbb
+ms.openlocfilehash: f42f2dba155aa0a29e0769fd96cce6d3a0de870b
 
 ---
 
 # Mettre à jour une soumission d’extension à l’aide de l’API de soumission du Windows Store
 
 
-
-
 Utilisez cette méthode dans l’API de soumission du Windows Store pour mettre à jour une extension existante (également connue sous le nom PIA ou produit in-app). Après avoir mis à jour une soumission à l’aide de cette méthode, vous devez [valider la soumission](commit-an-add-on-submission.md) en vue de son intégration et de sa publication.
 
-Pour plus d’informations sur la façon dont cette méthode s’inscrit dans le processus de création d’une soumission d’extension à l’aide de l’API de soumission du Windows Store, voir [Gérer les soumissions d’extension](manage-add-on-submissions.md).
+Pour plus d’informations sur la façon dont cette méthode s’inscrit dans le processus de création d’une soumission d’extension à l’aide de l’API de soumission du Windows Store, consultez [Gérer les soumissions d’extensions](manage-add-on-submissions.md).
 
-## Conditions préalables
+>**Important**&nbsp;&nbsp;Microsoft va bientôt changer le modèle de données de tarification pour les soumissions d’extensions dans le Centre de développement Windows. Une fois la modification implémentée, la ressource **Pricing** dans le corps de la demande de cette méthode sera ignorée et vous ne pourrez temporairement pas modifier les données relatives à la tarification et à la vente d’une soumission d’extension à l’aide de cette méthode. Nous allons mettre à jour l’API de soumission du Windows Store à l’avenir pour introduire une nouvelle façon d’accéder par programmation aux informations de tarification des soumissions d’extensions. Pour plus d’informations, voir la [ressource Pricing](manage-add-on-submissions.md#pricing-object).
+
+## Prérequis
 
 Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
 
@@ -62,14 +62,14 @@ Le corps de la requête contient les paramètres suivants.
 
 | Valeur      | Type   | Description                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| contentType           | chaîne  |  [Type de contenu](../publish/enter-iap-properties.md#content-type) qui est fourni dans l’extension. Les valeurs possibles sont les suivantes: <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
-| keywords           | tableau  | Tableau de chaînes qui contiennent jusqu’à 10[motsclés](../publish/enter-iap-properties.md#keywords) pour l’extension. Votre application peut rechercher des extensions à l’aide de ces motsclés.   |
+| contentType           | chaîne  |  [Type de contenu](../publish/enter-add-on-properties.md#content-type) qui est fourni dans l’extension. Les valeurs possibles sont les suivantes: <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
+| keywords           | tableau  | Tableau de chaînes qui contiennent jusqu’à 10[motsclés](../publish/enter-add-on-properties.md#keywords) pour l’extension. Votre application peut rechercher des extensions à l’aide de ces motsclés.   |
 | lifetime           | chaîne  |  Durée de vie de l’extension. Les valeurs possibles sont les suivantes: <ul><li>Forever</li><li>OneDay</li><li>ThreeDays</li><li>FiveDays</li><li>OneWeek</li><li>TwoWeeks</li><li>OneMonth</li><li>TwoMonths</li><li>ThreeMonths</li><li>SixMonths</li><li>OneYear</li></ul> |
 | listings           | objet  | Objet qui contient des informations de référencement pour l’extension. Pour plus d’informations, voir la [ressource de référencement](manage-add-on-submissions.md#listing-object).  |
 | pricing           | objet  | Objet qui contient des informations de tarification pour l’extension. Pour plus d’informations, voir la [ressource de tarification](manage-add-on-submissions.md#pricing-object).  |
 | targetPublishMode           | chaîne  | Mode de publication pour la soumission. Les valeurs possibles sont les suivantes: <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | chaîne  | Date de publication de la soumission au format ISO8601, si le paramètre *targetPublishMode* a la valeur SpecificDate.  |
-| tag           | chaîne  |  [alise](../publish/enter-iap-properties.md#tag) associée à l’extension.   |
+| tag           | chaîne  |  [Données développeur personnalisées](../publish/enter-add-on-properties.md#custom-developer-data) de l’extension (ces informations étaient précédemment appelées *tag*).   |
 | visibility  | chaîne  |  Visibilité de l’extension. Les valeurs possibles sont les suivantes: <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>  |
 
 <span/>
@@ -231,6 +231,6 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

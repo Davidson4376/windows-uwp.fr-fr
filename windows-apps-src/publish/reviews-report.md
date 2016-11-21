@@ -4,15 +4,15 @@ Description: "Le rapport Avis disponible dans le tableau de bord du Centre de d�
 title: Rapport Avis
 ms.assetid: E50C3A4D-1D8A-4E5B-8182-3FAD049F2A2D
 translationtype: Human Translation
-ms.sourcegitcommit: ccadaad34ac0854ab95646eda4e3451d1b178b7e
-ms.openlocfilehash: d08eb446977ebab2eeee346f8f17ff79ae57c19b
+ms.sourcegitcommit: 7b73682ea36574f8b675193a174d6e4b4ef85841
+ms.openlocfilehash: b4667c5a3b2af76bc2ceea3013ffcf951909907a
 
 ---
 
 # Rapport Avis
 
 
-Le rapport **Avis** disponible dans le tableau de bord du Centre de développement Windows vous permet de consulter les commentaires que les clients ont formulés pendant l'évaluation de votre application dans le Windows Store. Vous pouvez afficher ces données dans votre tableau de bord ou [télécharger le rapport](download-analytic-reports.md) et le consulter hors connexion. Vous pouvez également récupérer ces données par programme à l’aide de l’[API REST d’analyse du Windows Store](../monetize/access-analytics-data-using-windows-store-services.md).
+Le rapport **Avis** disponible dans le tableau de bord du Centre de développement Windows vous permet de consulter les commentaires que les clients ont formulés pendant l'évaluation de votre application dans le Windows Store. Vous pouvez afficher ces données dans votre tableau de bord ou [télécharger le rapport](download-analytic-reports.md) et le consulter hors connexion. Vous pouvez également récupérer ces données par programme à l’aide de la méthode [obtenir les avis sur les applications](../monetize/get-app-reviews.md) dans [l’API REST d’analyse du Windows Store](../monetize/access-analytics-data-using-windows-store-services.md).
 
 > **Remarque** Vous pouvez également [répondre aux avis de clients](respond-to-customer-reviews.md) à partir de cette page.
 
@@ -26,9 +26,9 @@ Chaque avis de client contient les éléments suivants :
 -   La date de l'avis.
 -   Le nom de l'auteur de l'avis tel qu'il apparaît dans le Windows Store.
 -   Le pays ou la région de l'auteur de l'avis.
--   La version du package de l'application installée sur l'appareil du client au moment de la rédaction de l'avis. (Cette information n'est pas disponible pour les avis soumis par les clients qui utilisent Windows 8.1 ou une version antérieure.)
+-   La version du package de l'application installée sur l'appareil du client au moment de la rédaction de l'avis. (Cette information n'est pas disponible pour les avis soumis par les clients qui utilisent Windows8.1 ou une version antérieure.)
 -   La version du système d'exploitation installée sur l'appareil du client au moment de la rédaction de l'avis.
--   Le nom de l'appareil utilisé par le client au moment de la rédaction de l'avis. (Cette information n'est pas disponible pour les avis soumis par les clients qui utilisent Windows 8.1 ou une version antérieure.)
+-   Le nom de l'appareil utilisé par le client au moment de la rédaction de l'avis. (Cette information n'est pas disponible pour les avis soumis par les clients qui utilisent Windows8.1 ou une version antérieure.)
 -   La « note d'utilité » de l'avis signalant le nombre de fois où l'avis a été considéré comme utile par d'autres clients. Cette information est indiquée sous la forme de deux valeurs : la première spécifie le nombre de clients ayant jugé l'avis utile, la seconde correspond au nombre total de clients ayant laissé une évaluation. Par exemple, une note d'utilité de 4/10 signifie que sur 10 personnes, 4 ont trouvé l'avis utile, et 6 non. (Si aucun utilisateur n’a évalué l’utilité d’un avis, aucune note d’utilité ne s'affiche.)
 
 > **Remarque** Les avis peuvent ponctuellement disparaître de ce rapport. Cela peut se produire lorsque Microsoft supprime des avis du WindowsStore qui ont été rédigés par des clients qui utilisent certaines versions préliminaires ou builds de Windows10 réservées aux Insiders. Nous procédons ainsi afin de réduire le risque de publication d’avis négatifs liés à un problème d’une version préliminaire de Windows. Nous pouvons également supprimer les avis du Windows Store qui ont été identifiés comme indésirables, inappropriés, offensants ou contraires à notre politique. Nous pensons que cette action va améliorer l’expérience utilisateur.
@@ -42,7 +42,7 @@ Dans la zone supérieure de la page, vous pouvez développer l’option **Appliq
 
 -   **Évaluation**: les évaluations Toutes les étoiles sont contrôlées par défaut, mais vous pouvez choisir une ou plusieurs évaluations spécifiques (entre 1 et 5 étoiles) si vous voulez ne visualiser que les avis associés à une évaluation donnée.
 -   **De**: la valeur par défaut (vide) permet d’afficher les avis publiés depuis la date de publication de votre application. Vous pouvez choisir une autre date si vous souhaitez afficher uniquement les avis publiés à la date ou depuis la date de votre choix.
--   **À**: la valeur par défaut (vide) permet d’afficher les avis publiés jusqu’à la date du jour. Vous pouvez choisir une autre date si vous souhaitez afficher uniquement les avis publiés à la date ou avant la date de votre choix. 
+-   **À**: la valeur par défaut (vide) permet d’afficher les avis publiés jusqu’à la date du jour. Vous pouvez choisir une autre date si vous souhaitez afficher uniquement les avis publiés à la date ou avant la date de votre choix.
 -   **Contenu d’avis**: par défaut, ce filtre est défini sur la valeur **Tous**, qui demande d’inclure les évaluations ne comportant aucun avis. Vous pouvez sélectionner l'option **Évaluations avec avis** pour ne visualiser que les évaluations qui comportent un avis.
 -   **Système d’exploitation cible** : la valeur par défaut de ce filtre est **Tous**. Vous pouvez choisir un système d'exploitation ciblé spécifique pour ne visualiser que les évaluations émanant de clients qui utilisent votre ou vos package(s) sur ce système d'exploitation.
 -   **Réponses** : la valeur par défaut de ce filtre est **Tous**. Vous pouvez choisir de ne visualiser que les avis pour lesquels vous avez [répondu aux clients](respond-to-customer-reviews.md), ou uniquement ceux auxquels vous n'avez pas encore répondu.
@@ -85,6 +85,6 @@ Vous découvrirez ci-après certaines actions supplémentaires à envisager en f
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 

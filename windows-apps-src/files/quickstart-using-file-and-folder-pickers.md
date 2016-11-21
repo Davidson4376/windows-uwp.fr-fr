@@ -4,15 +4,15 @@ ms.assetid: F87DBE2F-77DB-4573-8172-29E11ABEFD34
 title: "Ouvrir des fichiers et dossiers à l’aide d’un sélecteur"
 description: "Accédez aux fichiers et dossiers en permettant à l’utilisateur d’interagir avec ceux-ci à l’aide d’un sélecteur. Vous pouvez utiliser les classes FileOpenPicker et FileSavePicker pour accéder à des fichiers et la classe FolderPicker pour accéder à un dossier."
 translationtype: Human Translation
-ms.sourcegitcommit: 82edf9c3ee7f7303788b7a1272ecb261d3748c5a
-ms.openlocfilehash: 91128639cea8948579ec128e4cd695bdfeb5fe86
+ms.sourcegitcommit: 232008b7f80aceab201d5bedd744eedfe995648e
+ms.openlocfilehash: a27f81be16b5f032d852b377b14f1aaf89b93a2f
 
 ---
 
 # Ouvrir des fichiers et dossiers à l’aide d’un sélecteur
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -23,7 +23,7 @@ ms.openlocfilehash: 91128639cea8948579ec128e4cd695bdfeb5fe86
 
 Accédez aux fichiers et dossiers en permettant à l’utilisateur d’interagir avec ceux-ci à l’aide d’un sélecteur. Vous pouvez utiliser les classes [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) et [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) pour accéder à des fichiers et la classe [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881) pour accéder à un dossier.
 
-**Remarque** Consultez aussi l’[exemple de sélecteur de fichiers](http://go.microsoft.com/fwlink/p/?linkid=619994).
+**Remarque** Pour obtenir un exemple complet, voir [l’Exemple de sélecteur de fichiers](http://go.microsoft.com/fwlink/p/?linkid=619994).
 
  
 
@@ -43,7 +43,7 @@ Accédez aux fichiers et dossiers en permettant à l’utilisateur d’interagir
 
 Un sélecteur de fichiers affiche des informations pour guider les utilisateurs et leur offrir une expérience cohérente quand ils ouvrent ou enregistrent des fichiers.
 
-Ces informations sont les suivantes :
+Ces informations sont les suivantes:
 
 -   emplacement actuel ;
 -   éléments que l'utilisateur a sélectionnés ;
@@ -56,15 +56,15 @@ Une application de messagerie peut afficher un sélecteur de fichiers pour perme
 ## Fonctionnement des sélecteurs de fichiers
 
 
-Via un sélecteur de fichiers, votre application peut accéder à des fichiers et dossiers sur le système de l’utilisateur. Via le sélecteur de fichiers, l'utilisateur accède à son système pour sélectionner des fichiers (ou dossiers) à ouvrir ou dans lesquels enregistrer. Votre application reçoit ces sélections en tant qu’objets [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) et [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) que vous pouvez ensuite utiliser.
+Grâce à un sélecteur de fichiers, votre application peut consulter, parcourir et enregistrer des fichiers et dossiers sur le système de l’utilisateur. Votre application reçoit ces sélections en tant qu’objets [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) et [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) que vous pouvez ensuite utiliser.
 
-Le sélecteur de fichiers utilise une interface unique et unifiée permettant à l’utilisateur de sélectionner des fichiers et dossiers à partir du système de fichiers ou d’autres applications. Les fichiers sélectionnés à partir d’autres applications sont comme ceux du système de fichiers : ils sont renvoyés en tant qu’objets [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171). En règle générale, votre application peut travailler sur ces fichiers de la même manière que sur les autres objets de ce type. D’autres applications rendent les fichiers disponibles en participant à des contrats de sélecteurs de fichiers. Pour que votre application indique des fichiers, un emplacement d’enregistrement ou des mises à jour de fichiers aux autres applications, voir [Intégration aux contrats du sélecteur de fichiers](https://msdn.microsoft.com/library/windows/apps/hh465192).
+Le sélecteur de fichiers utilise une interface unique et unifiée permettant à l’utilisateur de sélectionner des fichiers et dossiers à partir du système de fichiers ou d’autres applications. Les fichiers sélectionnés à partir d’autres applications sont comme ceux du système de fichiers: ils sont renvoyés en tant qu’objets [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171). En règle générale, votre application peut travailler sur ces fichiers de la même manière que sur les autres objets. D’autres applications rendent les fichiers disponibles en participant à des contrats de sélecteurs de fichiers. Pour que votre application indique des fichiers, un emplacement d’enregistrement ou des mises à jour de fichiers aux autres applications, voir [Intégration aux contrats du sélecteur de fichiers](https://msdn.microsoft.com/library/windows/apps/hh465192).
 
-Par exemple, vous pouvez appeler le sélecteur de fichiers dans votre application de sorte que votre utilisateur puisse ouvrir un fichier. Cela fait de votre application l’application d’appel. Le sélecteur de fichiers interagit avec le système ou d’autres applications pour permettre à l’utilisateur de naviguer et de sélectionner le fichier. Lorsque l’utilisateur choisit un fichier, le sélecteur de fichiers retourne celui-ci à votre application. Voici le processus quand l’utilisateur choisit un fichier à partir d’une autre application telle que OneDrive. Dans ce cas, OneDrive est l’application fournisseuse.
+Par exemple, vous pouvez appeler le sélecteur de fichiers dans votre application de sorte que votre utilisateur puisse ouvrir un fichier. Cela fait de votre application l’application d’appel. Le sélecteur de fichiers interagit avec le système ou d’autres applications pour permettre à l’utilisateur de naviguer et de sélectionner le fichier. Lorsque l’utilisateur choisit un fichier, le sélecteur de fichiers retourne celui-ci à votre application. Voici le processus quand l’utilisateur choisit un fichier à partir d’une application de distribution telle que OneDrive.
 
 ![Diagramme illustrant le processus au cours duquel une application obtient un fichier à ouvrir à partir d’une autre application en utilisant le sélecteur de fichiers en tant qu’interface entre les deux applications.](images/app-to-app-diagram-600px.png)
 
-## Sélectionner un fichier pour l’ouvrir: code complet
+## Sélectionner un seul fichier: code complet
 
 
 ```CSharp
@@ -88,9 +88,7 @@ else
 }
 ```
 
-Pour connaître le code permettant de sélectionner plusieurs fichiers, consultez l’[exemple de sélecteur de fichiers](http://go.microsoft.com/fwlink/p/?linkid=619994).
-
-## Sélectionner un fichier pour l'ouvrir : pas à pas
+## Sélectionner un seul fichier: procédure pas à pas
 
 
 Utiliser un sélecteur de fichiers consiste à créer et à personnaliser un objet sélecteur de fichiers, puis à afficher le sélecteur à l'utilisateur afin de lui permettre de sélectionner un ou plusieurs éléments.
@@ -107,11 +105,11 @@ var picker = new Windows.Storage.Pickers.FileOpenPicker();
     picker.FileTypeFilter.Add(".png");
 ```
 
-Définissez des propriétés sur l’objet sélecteur de fichiers qui sont pertinentes pour vos utilisateurs et votre application. Pour obtenir des instructions sur la personnalisation du sélecteur de fichiers, consultez [Recommandations et liste de vérification sur les sélecteurs de fichiers](https://msdn.microsoft.com/library/windows/apps/hh465182).
+Définissez des propriétés sur l’objet sélecteur de fichiers qui sont pertinentes pour vos utilisateurs et votre application. Pour obtenir des directives susceptibles de vous aider à choisir comment personnaliser le sélecteur de fichiers, consultez [Recommandations et liste de vérification sur les sélecteurs de fichiers](https://msdn.microsoft.com/library/windows/apps/hh465182).
 
 Cet exemple crée un riche éventail visuel d’images dans un emplacement approprié où l’utilisateur peut opérer une sélection en définissant trois propriétés: [**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855), [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) et [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850).
 
--   Définir [**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855) sur la valeur enum **Thumbnail** [**PickerViewMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#thumbnail) crée un riche éventail visuel en utilisant des images miniatures pour représenter les fichiers dans le sélecteur de fichiers. Procédez de la sorte pour sélectionner des fichiers visuels tels que des images ou des vidéos. Autrement, utilisez [**PickerViewMode.List**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#list). Une application de messagerie hypothétique offrant des fonctionnalités permettant de **joindre une image ou une vidéo** et de **joindre un document** définirait la propriété **ViewMode** appropriée pour la fonctionnalité avant d’afficher le sélecteur de fichiers.
+-   La définition de [**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855) sur la valeur enum **Thumbnail** [**PickerViewMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#thumbnail) crée un riche éventail visuel en utilisant des images miniatures pour représenter les fichiers dans le sélecteur de fichiers. Procédez de la sorte pour sélectionner des fichiers visuels tels que des images ou des vidéos. Autrement, utilisez [**PickerViewMode.List**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#list). Une application de messagerie hypothétique offrant des fonctionnalités permettant de **joindre une image ou une vidéo** et de **joindre un document** définirait la propriété **ViewMode** appropriée pour la fonctionnalité avant d’afficher le sélecteur de fichiers.
 
 -   Définir [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) sur Images avec [**PickerLocationId.PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br207890) permet à l’utilisateur de démarrer à un emplacement où il est susceptible de trouver des images. Définissez **SuggestedStartLocation** sur un emplacement approprié pour le type de fichier sélectionné, par exemple, Musique, Images, Vidéos ou Documents. À partir de l’emplacement de départ, l’utilisateur peut accéder à d’autres emplacements.
 
@@ -134,7 +132,7 @@ Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
         }
 ```
 
-    -   **To pick multiple files**
+    -   **Pour sélectionner plusieurs fichiers**
 
 ```CSharp
 var files = await picker.PickMultipleFilesAsync();
@@ -187,6 +185,6 @@ else
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

@@ -4,8 +4,8 @@ ms.assetid: 284EBA1F-BFB4-4CDA-9F05-4927CDACDAA7
 title: "Ouverture d’un compte de développeur"
 description: "Cette vue d’ensemble, qui explique comment s’inscrire afin d’obtenir un compte de développeur pour le Windows Store et d’autres programmes Microsoft, vous aidera à comprendre le processus de configuration de votre compte."
 translationtype: Human Translation
-ms.sourcegitcommit: c4a753b7642354c4fe42cff721fb21337b14528f
-ms.openlocfilehash: b9ccd8e4756dd35fd775d91747710dd13b9ca7ed
+ms.sourcegitcommit: 10446e136d324cd8490f7547f853e75b534368b0
+ms.openlocfilehash: 1f847b9c3302b092dce6eb73dd01f761ec17c0a5
 
 ---
 # Ouverture d’un compte de développeur
@@ -27,9 +27,13 @@ Cette vue d’ensemble, qui explique comment s’inscrire afin d’obtenir un co
 
    Si vous vous inscrivez en tant qu’entreprise, vous devez également entrer le nom, l’adresse de messagerie et le numéro de téléphone de la personne qui approuvera le compte de votre société.
 
-5.  Entrez le **nom complet de l’éditeur** que vous souhaitez utiliser (50caractères maximum). Si vous entrez un nom déjà sélectionné, ou s’il apparaît que quelqu’un d’autre dispose des droits d’utilisation de ce nom, vous n’êtes pas autorisé à sélectionner ce nom. Pour les comptes d’entreprise, le nom complet de l’éditeur doit être la dénomination commerciale officielle de la structure. Choisissez-le soigneusement, car les clients pourront le voir quand ils navigueront et en viendront à connaître vos applications par ce nom.
+5.  Pour les comptes individuels, entrez le **nom complet de l’éditeur** que vous souhaitez utiliser (50caractères maximum). Choisissez-le soigneusement, car les clients pourront le voir quand ils navigueront et en viendront à connaître vos applications par ce nom.
 
-  >  **Remarque** Vérifiez que vous disposez des droits d’utilisation de ce nom. Si quelqu’un d’autre a déposé la marque ou protégé par copyright le nom que vous avez choisi, votre compte risque d’être fermé. Pour plus d’informations, voir votre [Contrat du développeur d’applications](https://msdn.microsoft.com/library/windows/apps/Hh694058). Si une autre personne utilise un nom d’éditeur pour lequel vous détenez un quelconque droit, [contactez Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=233777).    
+    Pour les comptes d’entreprise, entrez le **nom d’enregistrement** de votre société (le nom d’entreprise ou le nom commercial enregistré pour votre société). Il sera utilisé comme nom complet de l’éditeur.
+    
+    Si vous entrez un nom déjà sélectionné, ou s’il apparaît que quelqu’un d’autre dispose des droits d’utilisation de ce nom, vous n’êtes pas autorisé à utiliser ce nom. 
+
+  >  **Remarque** Vérifiez que vous disposez des droits d’utilisation du nom entré ici. Si quelqu’un d’autre a déposé la marque ou protégé par copyright le nom que vous avez choisi, votre compte risque d’être fermé. Pour plus d’informations, voir votre [Contrat du développeur d’applications](https://msdn.microsoft.com/library/windows/apps/Hh694058). Si une autre personne utilise un nom d’éditeur pour lequel vous détenez un quelconque droit, [contactez Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=233777).    
 
 6.  Entrez les coordonnées associées au compte. S’il s’agit d’un compte d’entreprise, vous devrez également fournir les coordonnées de la personne habilitée à vérifier que vous êtes autorisé à créer le compte pour le compte de votre société. Quand vous avez terminé, cliquez sur **Suivant** afin d’accéder à la section **Paiement**.
 
@@ -37,7 +41,9 @@ Cette vue d’ensemble, qui explique comment s’inscrire afin d’obtenir un co
 
 8.  Passez en revue les informations de votre compte et vérifiez que l’ensemble des éléments sont corrects. Ensuite, lisez et acceptez les conditions générales du [Contrat du développeur de l’application](https://msdn.microsoft.com/library/windows/apps/Hh694058). Cochez la base pour indiquer que vous avez lu et accepté les conditions.
 
-9.  Cliquez sur **Terminer** pour confirmer votre achat. Un message de confirmation vous parviendra à votre adresse de messagerie de développeur.
+9.  Cliquez sur **Terminer** pour confirmer votre achat. Un message de confirmation parvient à votre adresse e-mail de développeur.
+
+Une fois le processus d’inscription terminé, votre compte est soumis au processus de vérification. Pour les comptes individuels, nous vérifions qu’aucune autre société n’utilise déjà votre nom d’éditeur complet. Pour les comptes d’entreprise, le processus prend un peu plus de temps, car nous devons nous assurer que vous êtes bien habilité à créer un compte au nom de votre entreprise. Cette procédure de contrôle, qui peut prendre de quelques jours à quelques semaines, inclut un appel téléphonique à votre entreprise. Vous pouvez vérifier l’état de la vérification dans la page **Paramètres du compte**. 
 
 ## Recommandations supplémentaires pour les comptes d’entreprise
 
@@ -82,6 +88,6 @@ Lorsque vous fermez votre compte, il est important que vous en compreniez les r�
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

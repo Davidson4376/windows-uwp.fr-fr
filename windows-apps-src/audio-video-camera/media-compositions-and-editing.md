@@ -4,14 +4,14 @@ ms.assetid: C4DB495D-1F91-40EF-A55C-5CABBF3269A2
 description: "Les API de l’espace de noms Windows.Media.Editing permettent de développer rapidement des applications permettant aux utilisateurs de créer des compositions multimédias à partir de fichiers sources audio et vidéo."
 title: "Compositions multimédias et modification"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: ee46b6d4ad116034cd84f062e7bf710ff8600479
+ms.sourcegitcommit: 018d7c85aae007a1fd887de0daf6625ccce37a64
+ms.openlocfilehash: a317c0e1714cc782c951733cf65a4c02c4a0ad9c
 
 ---
 
 # Compositions multimédias et modification
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Cet article vous montre comment utiliser les API de l’espace de noms [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) pour développer rapidement des applications qui permettent aux utilisateurs de créer des compositions multimédias à partir de fichiers sources audio et vidéo. Les fonctionnalités de l’infrastructure incluent la possibilité d’ajouter simultanément plusieurs clips vidéo, d’ajouter des superpositions d’images et de vidéos, d’ajouter du son en arrière-plan et d’appliquer des effets audio et vidéos, par programme. Une fois créées, les compositions multimédias peuvent être rendues dans un fichier multimédia plat pour lecture ou partage, mais il est également possible de les sérialiser et désérialiser à partir du disque en permettant à l’utilisateur de charger et de modifier les compositions précédemment créées. Toutes ces fonctionnalités sont proposées dans l’interface simple d’utilisation Windows Runtime, qui réduit considérablement la quantité de code requis et sa complexité pour effectuer ces tâches, en comparaison avec l’APi [Microsoft Media Foundation](https://msdn.microsoft.com/library/windows/desktop/ms694197) de bas niveau.
@@ -21,6 +21,7 @@ Cet article vous montre comment utiliser les API de l’espace de noms [**Window
 La classe [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) est le conteneur de tous les clips multimédias qui constituent la composition et est responsable du rendu de la composition finale, du chargement et de l’enregistrement des compositions sur le disque et de fournir un flux d’aperçu de la composition afin que l’utilisateur puisse l’afficher dans l’interface utilisateur. Pour utiliser **MediaComposition** dans votre application, vous devez inclure l’espace de noms [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565), ainsi que l’espace de noms [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) qui fournit les API associées dont vous aurez besoin.
 
 [!code-cs[Namespace1](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetNamespace1)]
+
 
 L’objet **MediaComposition** est accessible à partir de plusieurs points dans votre code. Vous allez généralement déclarer une variable de membre qui permettra de le stocker.
 
@@ -54,7 +55,7 @@ Les compositions multimédia contiennent généralement un ou plusieurs clips vi
 
 ## Afficher un aperçu de la composition dans un objet MediaElement
 
-Pour permettre à l’utilisateur d’afficher la composition multimédia, ajoutez une classe [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) au fichier XAML qui définit votre interface utilisateur.
+Pour permettre à l’utilisateur d’afficher la composition multimédia, ajoutez une classe [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement) au fichier XAML qui définit votre interface utilisateur.
 
 [!code-xml[MediaElement](./code/MediaEditing/cs/MainPage.xaml#SnippetMediaElement)]
 
@@ -63,16 +64,16 @@ Déclarez une variable de membre de type [**MediaStreamSource**](https://msdn.mi
 
 [!code-cs[DeclareMediaStreamSource](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetDeclareMediaStreamSource)]
 
-Appelez la méthode [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) de l’objet **MediaComposition** pour créer un élément **MediaStreamSource** pour la composition, puis appelez la méthode [**SetMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn299029) de l’élément **MediaElement**. La composition peut désormais être affichée dans l’interface utilisateur.
+Appelez la méthode [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) de l’objet **MediaComposition** pour créer un élément **MediaStreamSource**. Créez un objet [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaSource) en appelant la méthode de fabrique [**CreateFromMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn930907) et affectez-le à la propriété [**Source**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement.Source) de **MediaPlayerElement**. La composition peut désormais être affichée dans l’interface utilisateur.
 
 
 [!code-cs[UpdateMediaElementSource](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetUpdateMediaElementSource)]
 
 -   L’élément **MediaComposition** doit contenir au moins un clip multimédia avant d’appeler [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674), sans quoi l’objet renvoyé sera null.
 
--   La chronologie de **MediaElement** n’est pas automatiquement mise à jour de manière à refléter les changements relatifs à la composition. Il est recommandé d’appeler à la fois **GeneratePreviewMediaStreamSource** et **SetMediaStreamSource** chaque fois que vous apportez des modifications à la composition et que vous voulez mettre à jour l’interface utilisateur.
+-   La chronologie de **MediaElement** n’est pas automatiquement mise à jour de manière à refléter les changements relatifs à la composition. Il est recommandé à la fois d’appeler **GeneratePreviewMediaStreamSource** et de définir la propriété **Source** de **MediaPlayerElement** chaque fois que vous apportez des modifications à la composition et que vous voulez mettre à jour l’interface utilisateur.
 
-Il est recommandé de définir l’objet **MediaStreamSource** et la propriété [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) de **MediaElement** sur null lorsque l’utilisateur quitte la page afin de libérer les ressources associées.
+Il est recommandé de définir l’objet **MediaStreamSource** et la propriété [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) de **MediaPlayerElement** sur null lorsque l’utilisateur quitte la page afin de libérer les ressources associées.
 
 [!code-cs[OnNavigatedFrom](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetOnNavigatedFrom)]
 
@@ -94,7 +95,7 @@ Réduisez la durée d’un clip vidéo d’une composition en définissant la pr
 
 [!code-cs[TrimClipBeforeCurrentPosition](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetTrimClipBeforeCurrentPosition)]
 
--   Vous pouvez utiliser l’interface utilisateur que vous souhaitez pour permettre à l’utilisateur de spécifier les valeurs de découpage de début et de fin. L’exemple ci-dessus utilise la propriété [**Position**](https://msdn.microsoft.com/library/windows/apps/br227407) de l’élément **MediaElement**, pour commencer par déterminer quel MediaClip est lu au niveau de la position actuelle de la composition en vérifiant les propriétés [**StartTimeInComposition**](https://msdn.microsoft.com/library/windows/apps/dn652629) et [**EndTimeInComposition**](https://msdn.microsoft.com/library/windows/apps/dn652618). Les propriétés **Position** et **StartTimeInComposition** servent à nouveau pour calculer la durée à découper depuis le début du clip. La méthode **FirstOrDefault** est une méthode d’extension à partir de l’espace de noms **System.Linq** qui simplifie le code permettant de sélectionner les éléments d’une liste.
+-   Vous pouvez utiliser l’interface utilisateur que vous souhaitez pour permettre à l’utilisateur de spécifier les valeurs de découpage de début et de fin. L’exemple ci-dessus utilise la propriété [**Position**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.Position) de l’objet [**MediaPlaybackSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession) associé à l’élément **MediaPlayerElement**, pour commencer par déterminer quel **MediaClip** est lu au niveau de la position actuelle de la composition en vérifiant les propriétés [**StartTimeInComposition**](https://msdn.microsoft.com/library/windows/apps/dn652629) et [**EndTimeInComposition**](https://msdn.microsoft.com/library/windows/apps/dn652618). Les propriétés **Position** et **StartTimeInComposition** servent à nouveau pour calculer la durée à découper depuis le début du clip. La méthode **FirstOrDefault** est une méthode d’extension à partir de l’espace de noms **System.Linq** qui simplifie le code permettant de sélectionner les éléments d’une liste.
 -   La propriété [**OriginalDuration**](https://msdn.microsoft.com/library/windows/apps/dn652625) de l’objet **MediaClip** vous permet de connaître la durée du clip multimédia sans découpage.
 -   La propriété [**TrimmedDuration**](https://msdn.microsoft.com/library/windows/apps/dn652631) vous permet de connaître la durée du clip multimédia après découpage.
 -   La spécification d’une valeur de découpage supérieure à la durée initiale du clip ne génère pas d’erreur. Toutefois, si une composition ne contient qu’un seul clip, et que celui-ci a subi un découpage complet le ramenant à une durée égale à zéro dû à la spécification d’une valeur de découpage importante, un appel ultérieur à [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) renvoie la valeur null, comme si la composition ne comportait aucun clip.
@@ -127,7 +128,7 @@ Les superpositions permettent d’empiler plusieurs couches de vidéos les unes 
 
 ## Ajouter des effets à un clip multimédia
 
-Chaque **MediaClip** d’une composition possède une liste d’effets audio et vidéo auxquels plusieurs effets peuvent être ajoutés. Les effets doivent respectivement implémenter [**IAudioEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608044) et [**IVideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608047). L’exemple suivant utilise la position actuelle de l’élément multimédia de manière à choisir l’élément **MediaClip** affiché actuellement, puis crée une nouvelle instance de la classe [**VideoStabilizationEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn926762) et l’ajoute à la liste [**VideoEffectDefinitions**](https://msdn.microsoft.com/library/windows/apps/dn652643) du clip multimédia.
+Chaque **MediaClip** d’une composition possède une liste d’effets audio et vidéo auxquels plusieurs effets peuvent être ajoutés. Les effets doivent respectivement implémenter [**IAudioEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608044) et [**IVideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608047). L’exemple suivant utilise la position actuelle de l’élément **MediaPlayerElement** de manière à choisir l’élément **MediaClip** affiché actuellement, puis crée une nouvelle instance de la classe [**VideoStabilizationEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn926762) et l’ajoute à la liste [**VideoEffectDefinitions**](https://msdn.microsoft.com/library/windows/apps/dn652643) du clip multimédia.
 
 [!code-cs[AddVideoEffect](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetAddVideoEffect)]
 
@@ -155,6 +156,6 @@ Les compositions multimédia peuvent être désérialisées à partir d’un fic
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 
