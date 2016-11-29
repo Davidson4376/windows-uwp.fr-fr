@@ -6,23 +6,23 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\launch-resume\reserved-uri-scheme-names.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/e84b798a5fe0b4cfca853a0adc86ae701379ff07?path=windows-apps-src%2Flaunch-resume%2Freserved-uri-scheme-names.md&_a=contents) | HandedOffSuccess | [Details](#230b117d99fca1a36bc4e8bfc8e1c1e427a41cd64783)
+ [windows-apps-src\input-and-devices\designing-for-tv.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/1f1cf56a7855bda6a1f2a6a6f999a8897a86e201?path=windows-apps-src%2Finput-and-devices%2Fdesigning-for-tv.md&_a=contents) | HandedOffSuccess | [Details](#c5c44c3aa73b96e6dd85a555390e2d4c795704be4357)
 
 ## Item Details
-##### <a name='230b117d99fca1a36bc4e8bfc8e1c1e427a41cd64783'></a> Source: [windows-apps-src\launch-resume\reserved-uri-scheme-names.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/e84b798a5fe0b4cfca853a0adc86ae701379ff07?path=windows-apps-src%2Flaunch-resume%2Freserved-uri-scheme-names.md&_a=contents)
+##### <a name='c5c44c3aa73b96e6dd85a555390e2d4c795704be4357'></a> Source: [windows-apps-src\input-and-devices\designing-for-tv.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/1f1cf56a7855bda6a1f2a6a6f999a8897a86e201?path=windows-apps-src%2Finput-and-devices%2Fdesigning-for-tv.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [reserved-uri-scheme-names.6fce7ecb3f48ec0466c056cef411b95fdfbe5fe5.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/42422600ed9f7924e1d38b42ca0c3fcdc24608df?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Freserved-uri-scheme-names.6fce7ecb3f48ec0466c056cef411b95fdfbe5fe5.fr-fr.xlf&_a=contents)
-* Handoff Datetime: 2016-11-28 22:35:41
+* Handoff File: [designing-for-tv.ebcfeb21893a2cb83ca725bf72e3392606de4620.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/11d866dd7e6cf315693825486a859221eb3104c9?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Fdesigning-for-tv.ebcfeb21893a2cb83ca725bf72e3392606de4620.fr-fr.xlf&_a=contents)
+* Handoff Datetime: 2016-11-29 00:39:09
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\launch-resume\reserved-uri-scheme-names.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.fr-fr/commit/b499722b387bb5bf9961078746547751e280aace?path=windows-apps-src%2Flaunch-resume%2Freserved-uri-scheme-names.md&_a=contents)
-* Current Handback File: [reserved-uri-scheme-names.6fce7ecb3f48ec0466c056cef411b95fdfbe5fe5.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/a2b58f321961fe8e5a80c86cd6d53f983c3d6f0e?path=ol-handback%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Freserved-uri-scheme-names.6fce7ecb3f48ec0466c056cef411b95fdfbe5fe5.fr-fr.xlf&_a=contents)
+* Current Target File: [windows-apps-src\input-and-devices\designing-for-tv.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.fr-fr/commit/b499722b387bb5bf9961078746547751e280aace?path=windows-apps-src%2Finput-and-devices%2Fdesigning-for-tv.md&_a=contents)
+* Current Handback File: [designing-for-tv.ebcfeb21893a2cb83ca725bf72e3392606de4620.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/a2b58f321961fe8e5a80c86cd6d53f983c3d6f0e?path=ol-handback%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Fdesigning-for-tv.ebcfeb21893a2cb83ca725bf72e3392606de4620.fr-fr.xlf&_a=contents)
 * Current Handback Datetime: 2016-11-21 16:54:33
-* Bilingual File: [reserved-uri-scheme-names.6fce7ecb3f48ec0466c056cef411b95fdfbe5fe5.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/a2b58f321961fe8e5a80c86cd6d53f983c3d6f0e?path=ol-handback%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Freserved-uri-scheme-names.6fce7ecb3f48ec0466c056cef411b95fdfbe5fe5.fr-fr.xlf&_a=contents)
+* Bilingual File: [designing-for-tv.ebcfeb21893a2cb83ca725bf72e3392606de4620.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/a2b58f321961fe8e5a80c86cd6d53f983c3d6f0e?path=ol-handback%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Fdesigning-for-tv.ebcfeb21893a2cb83ca725bf72e3392606de4620.fr-fr.xlf&_a=contents)
 * Bilingual Datetime: 2016-11-21 17:10:43
 * [Back to Top](#report-top)
 
