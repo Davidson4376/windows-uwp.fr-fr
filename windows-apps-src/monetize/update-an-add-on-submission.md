@@ -1,82 +1,80 @@
 ---
 author: mcleanbyron
 ms.assetid: 8C63D33B-557D-436E-9DDA-11F7A5BFA2D7
-description: "Utilisez cette méthode dans l’API de soumission du Windows Store pour mettre à jour une soumission d’extension existante."
-title: "Mettre à jour une soumission d’extension à l’aide de l’API de soumission du Windows Store"
+description: Use this method in the Windows Store submission API to update an existing add-on submission.
+title: Update an add-on submission using the Windows Store submission API
 translationtype: Human Translation
-ms.sourcegitcommit: 7307ca70467a751d5adb53f3718c7e9cf0b70dbb
-ms.openlocfilehash: f42f2dba155aa0a29e0769fd96cce6d3a0de870b
+ms.sourcegitcommit: f52059a37194b78db2f9bb29a5e8959b2df435b4
+ms.openlocfilehash: ac126d8e8cf8301399a3248a1d65e19805e70255
 
 ---
 
-# Mettre à jour une soumission d’extension à l’aide de l’API de soumission du Windows Store
+# <a name="update-an-add-on-submission-using-the-windows-store-submission-api"></a>Update an add-on submission using the Windows Store submission API
 
 
-Utilisez cette méthode dans l’API de soumission du Windows Store pour mettre à jour une extension existante (également connue sous le nom PIA ou produit in-app). Après avoir mis à jour une soumission à l’aide de cette méthode, vous devez [valider la soumission](commit-an-add-on-submission.md) en vue de son intégration et de sa publication.
+Use this method in the Windows Store submission API to update an existing add-on (also known as in-app product or IAP) submission. After you successfully update a submission by using this method, you must [commit the submission](commit-an-add-on-submission.md) for ingestion and publishing.
 
-Pour plus d’informations sur la façon dont cette méthode s’inscrit dans le processus de création d’une soumission d’extension à l’aide de l’API de soumission du Windows Store, consultez [Gérer les soumissions d’extensions](manage-add-on-submissions.md).
+For more information about how this method fits into the process of creating an add-on submission by using the Windows Store submission API, see [Manage add-on submissions](manage-add-on-submissions.md).
 
->**Important**&nbsp;&nbsp;Microsoft va bientôt changer le modèle de données de tarification pour les soumissions d’extensions dans le Centre de développement Windows. Une fois la modification implémentée, la ressource **Pricing** dans le corps de la demande de cette méthode sera ignorée et vous ne pourrez temporairement pas modifier les données relatives à la tarification et à la vente d’une soumission d’extension à l’aide de cette méthode. Nous allons mettre à jour l’API de soumission du Windows Store à l’avenir pour introduire une nouvelle façon d’accéder par programmation aux informations de tarification des soumissions d’extensions. Pour plus d’informations, voir la [ressource Pricing](manage-add-on-submissions.md#pricing-object).
+## <a name="prerequisites"></a>Prerequisites
 
-## Prérequis
+To use this method, you need to first do the following:
 
-Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
+* If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Windows Store submission API.
+* [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
+* Create an add-on submission for an app in your Dev Center account. You can do this in the Dev Center dashboard, or you can do this by using the [Create an add-on submission](create-an-add-on-submission.md) method.
 
-* Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
-* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
-* Créez une soumission d’extension pour une application dans votre compte du Centre de développement. Pour cela, vous pouvez utiliser le tableau de bord du Centre de développement ou la méthode [Créer une soumission d’extension](create-an-add-on-submission.md).
+>**Note**&nbsp;&nbsp;This method can only be used for Windows Dev Center accounts that have been given permission to use the Windows Store submission API. Not all accounts have this permission enabled.
 
->**Remarque**&nbsp;&nbsp;Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
+## <a name="request"></a>Request
 
-## Requête
+This method has the following syntax. See the following sections for usage examples and descriptions of the header and request body.
 
-Cette méthode présente la syntaxe suivante. Consultez les sections suivantes pour obtenir des exemples d’utilisation et une description de l’en-tête et du corps de la requête.
-
-| Méthode | URI de la requête                                                      |
+| Method | Request URI                                                      |
 |--------|------------------------------------------------------------------|
 | PUT    | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}/submissions/{submissionId} ``` |
 
 <span/>
  
 
-### En-tête de requête
+### <a name="request-header"></a>Request header
 
-| En-tête        | Type   | Description                                                                 |
+| Header        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;. |
+| Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 
 <span/>
 
-### Paramètres de la requête
+### <a name="request-parameters"></a>Request parameters
 
-| Nom        | Type   | Description                                                                 |
+| Name        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| inAppProductId | chaîne | Obligatoire. ID Windows Store de l’extension pour laquelle vous voulez mettre à jour une soumission. L’ID Windows Store est disponible dans le tableau de bord du Centre de développement. Il figure également dans les données de réponse aux requêtes visant à [créer une extension](create-an-add-on.md) ou à [obtenir les détails d’une extension](get-all-add-ons.md).  |
-| submissionId | chaîne | Obligatoire. ID de la soumission à mettre à jour. Cet ID est disponible dans le tableau de bord du Centre de développement et figure également dans les données de réponse aux requêtes visant à [créer une soumission d’extension](create-an-add-on-submission.md).  |
+| inAppProductId | string | Required. The Store ID of the add-on for which you want to update a submission. The Store ID is available on the Dev Center dashboard, and it is included in the response data for requests to [Create an add-on](create-an-add-on.md) or [get add-on details](get-all-add-ons.md).  |
+| submissionId | string | Required. The ID of the submission to update. This ID is available in the Dev Center dashboard, and it is included in the response data for requests to [Create an add-on submission](create-an-add-on-submission.md).  |
 
 <span/>
 
-### Corps de la requête
+### <a name="request-body"></a>Request body
 
-Le corps de la requête contient les paramètres suivants.
+The request body has the following parameters.
 
-| Valeur      | Type   | Description                                                                                                                                                                                                                                                                         |
+| Value      | Type   | Description                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| contentType           | chaîne  |  [Type de contenu](../publish/enter-add-on-properties.md#content-type) qui est fourni dans l’extension. Les valeurs possibles sont les suivantes: <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
-| keywords           | tableau  | Tableau de chaînes qui contiennent jusqu’à 10[motsclés](../publish/enter-add-on-properties.md#keywords) pour l’extension. Votre application peut rechercher des extensions à l’aide de ces motsclés.   |
-| lifetime           | chaîne  |  Durée de vie de l’extension. Les valeurs possibles sont les suivantes: <ul><li>Forever</li><li>OneDay</li><li>ThreeDays</li><li>FiveDays</li><li>OneWeek</li><li>TwoWeeks</li><li>OneMonth</li><li>TwoMonths</li><li>ThreeMonths</li><li>SixMonths</li><li>OneYear</li></ul> |
-| listings           | objet  | Objet qui contient des informations de référencement pour l’extension. Pour plus d’informations, voir la [ressource de référencement](manage-add-on-submissions.md#listing-object).  |
-| pricing           | objet  | Objet qui contient des informations de tarification pour l’extension. Pour plus d’informations, voir la [ressource de tarification](manage-add-on-submissions.md#pricing-object).  |
-| targetPublishMode           | chaîne  | Mode de publication pour la soumission. Les valeurs possibles sont les suivantes: <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
-| targetPublishDate           | chaîne  | Date de publication de la soumission au format ISO8601, si le paramètre *targetPublishMode* a la valeur SpecificDate.  |
-| tag           | chaîne  |  [Données développeur personnalisées](../publish/enter-add-on-properties.md#custom-developer-data) de l’extension (ces informations étaient précédemment appelées *tag*).   |
-| visibility  | chaîne  |  Visibilité de l’extension. Les valeurs possibles sont les suivantes: <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>  |
+| contentType           | string  |  The [type of content](../publish/enter-add-on-properties.md#content-type) that is provided in the add-on. This can be one of the following values: <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
+| keywords           | array  | An array of strings that contain up to 10 [keywords](../publish/enter-add-on-properties.md#keywords) for the add-on. Your app can query for add-ons using these keywords.   |
+| lifetime           | string  |  The lifetime of the add-on. This can be one of the following values: <ul><li>Forever</li><li>OneDay</li><li>ThreeDays</li><li>FiveDays</li><li>OneWeek</li><li>TwoWeeks</li><li>OneMonth</li><li>TwoMonths</li><li>ThreeMonths</li><li>SixMonths</li><li>OneYear</li></ul> |
+| listings           | object  | An object that contains listing info for the add-on. For more information, see [Listing resource](manage-add-on-submissions.md#listing-object).  |
+| pricing           | object  | An object that contains pricing info for the add-on. For more information, see [Pricing resource](manage-add-on-submissions.md#pricing-object).  |
+| targetPublishMode           | string  | The publish mode for the submission. This can be one of the following values: <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
+| targetPublishDate           | string  | The publish date for the submission in ISO 8601 format, if the *targetPublishMode* is set to SpecificDate.  |
+| tag           | string  |  The [custom developer data](../publish/enter-add-on-properties.md#custom-developer-data) for the add-on (this information was previously called the *tag*).   |
+| visibility  | string  |  The visibility of the add-on. This can be one of the following values: <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>  |
 
 <span/>
 
-### Exemple de requête
+### <a name="request-example"></a>Request example
 
-L’exemple suivant montre comment mettre à jour une soumission d’extension.
+The following example demonstrates how to update an add-on submission.
 
 ```json
 PUT https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/9NBLGGH4TNMP/submissions/1152921504621230023 HTTP/1.1
@@ -111,17 +109,7 @@ Content-Type: application/json
       "RU": "Tier3",
       "US": "Tier4",
     },
-    "sales": [
-      {
-         "name": "Sale1",
-         "basePriceId": "Free",
-         "startDate": "2016-05-21T18:40:11.7369008Z",
-         "endDate": "2016-05-22T18:40:11.7369008Z",
-         "marketSpecificPricings": {
-            "RU": "NotAvailable"
-         }
-      }
-    ],
+    "sales": [],
     "priceId": "Free"
   },
   "targetPublishDate": "2016-03-15T05:10:58.047Z",
@@ -131,9 +119,9 @@ Content-Type: application/json
 }
 ```
 
-## Réponse
+## <a name="response"></a>Response
 
-L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à cette méthode. Le corps de la réponse contient des informations sur la soumission mise à jour. Pour plus d’informations sur les valeurs figurant dans le corps de la réponse, voir la [ressource de soumission d’extension](manage-add-on-submissions.md#add-on-submission-object).
+The following example demonstrates the JSON response body for a successful call to this method. The response body contains information about the updated submission. For more details about the values in the response body, see [Add-on submission resource](manage-add-on-submissions.md#add-on-submission-object).
 
 ```json
 {
@@ -166,17 +154,7 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
       "RU": "Tier3",
       "US": "Tier4",
     },
-    "sales": [
-      {
-         "name": "Sale1",
-         "basePriceId": "Free",
-         "startDate": "2016-05-21T18:40:11.7369008Z",
-         "endDate": "2016-05-22T18:40:11.7369008Z",
-         "marketSpecificPricings": {
-            "RU": "NotAvailable"
-         }
-      }
-    ],
+    "sales": [],
     "priceId": "Free"
   },
   "targetPublishDate": "2016-03-15T05:10:58.047Z",
@@ -207,30 +185,30 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
 }
 ```
 
-## Codes d’erreur
+## <a name="error-codes"></a>Error codes
 
-Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’erreur HTTP suivants.
+If the request cannot be successfully completed, the response will contain one of the following HTTP error codes.
 
 | Error code |  Description   |
 |--------|------------------|
-| 400  | Impossible de mettre à jour la soumission, car la requête n’est pas valide. |
-| 409  | La soumission n’a pas pu être mise à jour en raison de l’état actuel de l’extension, ou celle-ci utilise une fonctionnalité du tableau de bord du Centre de développement qui n’est [actuellement pas prise en charge par l’API de soumission du Windows Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
+| 400  | The submission could not be updated because the request is invalid. |
+| 409  | The submission could not be updated because of the current state of the add-on, or the add-on uses a Dev Center dashboard feature that is [currently not supported by the Windows Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
 <span/>
 
 
-## Rubriques connexes
+## <a name="related-topics"></a>Related topics
 
-* [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md)
-* [Gérer les soumissions d’extensions](manage-add-on-submissions.md)
-* [Obtenir une soumission d’extension](get-an-add-on-submission.md)
-* [Créer une soumission d’extension](create-an-add-on-submission.md)
-* [Valider une soumission d’extension](commit-an-add-on-submission.md)
-* [Supprimer une soumission d’extension](delete-an-add-on-submission.md)
-* [Obtenir l’état d’une soumission d’extension](get-status-for-an-add-on-submission.md)
+* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
+* [Manage add-on submissions](manage-add-on-submissions.md)
+* [Get an add-on submission](get-an-add-on-submission.md)
+* [Create an add-on submission](create-an-add-on-submission.md)
+* [Commit an add-on submission](commit-an-add-on-submission.md)
+* [Delete an add-on submission](delete-an-add-on-submission.md)
+* [Get the status of an add-on submission](get-status-for-an-add-on-submission.md)
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

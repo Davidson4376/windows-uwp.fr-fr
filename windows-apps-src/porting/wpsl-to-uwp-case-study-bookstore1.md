@@ -1,141 +1,141 @@
 ---
 author: mcleblanc
 ms.assetid: 2b63a4c8-b1c0-4c77-95ab-0b9549ba3c0e
-description: "Cette rubrique présente une étude de cas de portage d’une application Silverlight pour Windows Phone très simple vers une application de plateforme Windows universelle (UWP)Windows 10."
-title: "Étude de cas de portage d’une application Silverlight pour Windows Phone vers UWP, Bookstore1"
+description: This topic presents a case study of porting a very simple Windows Phone Silverlight app to a Windows 10 Universal Windows Platform (UWP) app.
+title: Windows Phone Silverlight to UWP case study, Bookstore1
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 86cccfd462717483720c412c1de9eaf6bbc1c5cd
+ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
+ms.openlocfilehash: 631dab52c1d8f5745179d79182d299688be05d05
 
 ---
 
-# Étude de cas de portage d’une application Silverlight pour Windows Phone vers UWP : Bookstore1
+# <a name="windows-phone-silverlight-to-uwp-case-study-bookstore1"></a>Windows Phone Silverlight to UWP case study: Bookstore1
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Cette rubrique présente une étude de cas de portage d’une application Silverlight pour Windows Phone très simple vers une application de plateforme Windows universelle (UWP) Windows10. Grâce à Windows10, vous pouvez créer un package d’application unique que vos clients peuvent installer sur un large éventail d’appareils. C’est ce que nous allons faire dans la présente étude de cas. Voir le [Guide des applications UWP](https://msdn.microsoft.com/library/windows/apps/dn894631).
+This topic presents a case study of porting a very simple Windows Phone Silverlight app to a Windows 10 Universal Windows Platform (UWP) app. With Windows 10, you can create a single app package that your customers can install onto a wide range of devices, and that's what we'll do in this case study. See [Guide to UWP apps](https://msdn.microsoft.com/library/windows/apps/dn894631).
 
-L’application que nous porterons se compose d’une classe **ListBox** liée à un modèle d’affichage. Ce modèle comporte une liste de livres qui indique leur titre, leur auteur et leur couverture. Les images de couverture de livre possèdent l’attribut **Action de génération** défini sur **Contenu** et l’attribut **Copier dans le répertoire de sortie** défini sur **Ne pas copier**.
+The app we'll port consists of a **ListBox** bound to a view model. The view model has a list of books that shows title, author, and book cover. The book cover images have **Build Action** set to **Content** and **Copy to Output Directory** set to **Do not copy**.
 
-Les rubriques précédentes de cette section décrivent les différences entre les plateformes et fournissent des détails et des recommandations sur le processus de portage des différents aspects d’une application dans le balisage XAML, de la liaison à un modèle d’affichage à l’accès aux données. Une étude de cas vise à compléter ces recommandations en les appliquant à un exemple concret. Elle part du principe que vous avez lu les recommandations, qui ne sont donc pas répétées.
+The previous topics in this section describe the differences between the platforms, and they give details and guidance on the porting process for various aspects of an app from XAML markup, through binding to a view model, down to accessing data. A case study aims to complement that guidance by showing it in action in a real example. The case studies assume you've read the guidance, which they do not repeat.
 
-**Remarque** Lorsque vous ouvrez Bookstore1Universal\_10 dans Visual Studio, si vous voyez apparaître le message suivant : « Mise à jour de Visual Studio requise », suivez les étapes de la section [TargetPlatformVersion](wpsl-to-uwp-troubleshooting.md#targetplatformversion).
+**Note**   When opening Bookstore1Universal\_10 in Visual Studio, if you see the message "Visual Studio update required", then follow the steps for selecting a Target Platform Versioning in [TargetPlatformVersion](wpsl-to-uwp-troubleshooting.md).
 
-## Téléchargements
+## <a name="downloads"></a>Downloads
 
-[Téléchargez l’application Silverlight pour Windows Phone Bookstore1WPSL8](http://go.microsoft.com/fwlink/?linkid=517053).
+[Download the Bookstore1WPSL8 Windows Phone Silverlight app](http://go.microsoft.com/fwlink/?linkid=517053).
 
-[Téléchargez l’application Windows 10 Bookstore1Universal\_10](http://go.microsoft.com/fwlink/?linkid=532950).
+[Download the Bookstore1Universal\_10 Windows 10 app](http://go.microsoft.com/fwlink/?linkid=532950).
 
-## Application Silverlight pour Windows Phone
+## <a name="the-windows-phone-silverlight-app"></a>The Windows Phone Silverlight app
 
-Voici à quoi ressemble Bookstore1WPSL8, l’application que nous allons porter. Il s’agit simplement d’une zone de liste à défilement vertical répertoriant des livres au-dessous de l’en-tête constitué du nom de l’application et du titre de la page.
+Here’s what Bookstore1WPSL8—the app that we're going to port—looks like. It's just a vertically-scrolling list box of books beneath the heading of the app's name and page title.
 
-![Apparence de l’application Bookstore1WPSL8](images/wpsl-to-uwp-case-studies/c01-01-wpsl-how-the-app-looks.png)
+![how bookstore1wpsl8 looks](images/wpsl-to-uwp-case-studies/c01-01-wpsl-how-the-app-looks.png)
 
-## Portage d’une application vers un projet Windows10
+## <a name="porting-to-a-windows-10-project"></a>Porting to a Windows 10 project
 
-La procédure consistant à créer un projet dans Visual Studio, puis à copier des fichiers de Bookstore1WPSL8 dans ce nouveau projet, est très rapide. Commencez par créer un projet Application vide (universelle Windows). Nommez-le Bookstore1Universal\_10. Voici les fichiers à copier de Bookstore1WPSL8 dans Bookstore1Universal\_10.
+It's a very quick task to create a new project in Visual Studio, copy files over to it from Bookstore1WPSL8, and include the copied files in the new project. Start by creating a new Blank Application (Windows Universal) project. Name it Bookstore1Universal\_10. These are the files to copy over from Bookstore1WPSL8 to Bookstore1Universal\_10.
 
--   Copiez le dossier contenant les fichiers PNG d’image de couverture de livre (dossier \\Assets\\CoverImages). Une fois le dossier copié, dans l’**Explorateur de solutions**, assurez-vous que l’option **Afficher tous les fichiers** est activée. Cliquez avec le bouton droit de la souris sur le dossier que vous avez copié et sélectionnez **Inclure dans le projet**. Cette commande correspond à ce que nous avons voulu dire par «insertion» de fichiers ou de dossiers dans un projet. Chaque fois que vous copiez un fichier ou un dossier, sélectionnez **Actualiser** dans l’**Explorateur de solutions**, puis incluez le fichier ou dossier dans le projet. Cette opération n’est pas nécessaire pour les fichiers dont vous modifiez la destination.
--   Copiez le dossier contenant le fichier source de modèle d’affichage (dossier \\ViewModel).
--   Copiez le fichier MainPage.xaml et remplacez le fichier dans la destination.
+-   Copy the folder containing the book cover image PNG files (the folder is \\Assets\\CoverImages). After copying the folder, in **Solution Explorer**, make sure **Show All Files** is toggled on. Right-click the folder that you copied and click **Include In Project**. That command is what we mean by "including" files or folders in a project. Each time you copy a file or folder, click **Refresh** in **Solution Explorer** and then include the file or folder in the project. There's no need to do this for files that you're replacing in the destination.
+-   Copy the folder containing the view model source file (the folder is \\ViewModel).
+-   Copy MainPage.xaml and replace the file in the destination.
 
-Nous pouvons conserver les fichiers App.xaml et App.xaml.cs générés par Visual Studio dans le projet Windows10.
+We can keep the App.xaml, and App.xaml.cs that Visual Studio generated for us in the Windows 10 project.
 
-Modifiez les fichiers de code source et de balisage que vous venez de copier et remplacez toutes les références à l’espace de noms Bookstore1WPSL8 par Bookstore1Universal\_10. Une méthode rapide consiste à utiliser la fonctionnalité **Remplacer dans les fichiers**. Dans le code impératif du fichier source du modèle d’affichage, apportez les modifications de portage suivantes:
+Edit the source code and markup files that you just copied and change any references to the Bookstore1WPSL8 namespace to Bookstore1Universal\_10. A quick way to do that is to use the **Replace In Files** feature. In the imperative code in the view model source file, these porting changes are needed:
 
--   Remplacez `System.ComponentModel.DesignerProperties` par `DesignMode`, puis appliquez-lui la commande **Résoudre**. Supprimez la propriété `IsInDesignTool` et utilisez IntelliSense pour ajouter le nom de propriété correct : `DesignModeEnabled`.
--   Utilisez la commande **Résoudre** sur `ImageSource`.
--   Utilisez la commande **Résoudre** sur `BitmapImage`.
--   Supprimez using `System.Windows.Media;` et `using System.Windows.Media.Imaging;`.
--   Modifiez la valeur renvoyée par la propriété **Bookstore1Universal\_10.BookstoreViewModel.AppName** en remplaçant « BOOKSTORE1WPSL8 » par « BOOKSTORE1UNIVERSAL ».
+-   Change `System.ComponentModel.DesignerProperties` to `DesignMode` and then use the **Resolve** command on it. Delete the `IsInDesignTool` property and use IntelliSense to add the correct property name: `DesignModeEnabled`.
+-   Use the **Resolve** command on `ImageSource`.
+-   Use the **Resolve** command on `BitmapImage`.
+-   Delete using `System.Windows.Media;` and `using System.Windows.Media.Imaging;`.
+-   Change the value returned by the **Bookstore1Universal\_10.BookstoreViewModel.AppName** property from "BOOKSTORE1WPSL8" to "BOOKSTORE1UNIVERSAL".
 
-Dans le fichier MainPage.xaml, apportez les modifications de portage suivantes:
+In MainPage.xaml, these porting changes are needed:
 
--   Remplacez l’élément `phone:PhoneApplicationPage` par `Page` (en incluant les occurrences figurant dans la syntaxe des éléments de propriété).
--   Supprimez les déclarations de préfixe d’espace de noms `phone` et `shell`.
--   Remplacez l’élément «clr-namespace» par «using» dans la déclaration de préfixe d’espace de noms restante.
+-   Change `phone:PhoneApplicationPage` to `Page` (don't forget the occurrences in property element syntax).
+-   Delete the `phone` and `shell` namespace prefix declarations.
+-   Change "clr-namespace" to "using" in the remaining namespace prefix declaration.
 
-Nous pouvons choisir de corriger les erreurs de compilation de balisage très facilement si nous voulons afficher les résultats le plus tôt possible, même si cela implique la suppression temporaire du balisage. Conservons néanmoins un enregistrement des éléments supprimés en procédant ainsi. Voici ce dont il s’agit dans notre cas.
+We can choose to correct markup compilation errors very cheaply if we want to see results soonest, even if that means temporarily removing markup. But, let's keep a record of the debt we accrue by doing so. Here it is in this case.
 
-1.  Dans l’élément **Page** racine du fichier **MainPage.xaml**, supprimez `SupportedOrientations="Portrait"`.
-2.  Dans l’élément **Page** racine du fichier **MainPage.xaml**, supprimez `Orientation="Portrait"`.
-3.  Dans l’élément **Page** racine du fichier **MainPage.xaml**, supprimez `shell:SystemTray.IsVisible="True"`.
-4.  Dans le modèle de données `BookTemplate`, supprimez les références aux styles `PhoneTextExtraLargeStyle` et `PhoneTextSubtleStyle` **TextBlock**.
-5.  Dans le modèle de données `TitlePanel` **StackPanel**, supprimez les références aux styles `PhoneTextNormalStyle` et `PhoneTextTitle1Style` **TextBlock**.
+1.  In the root **Page** element in **MainPage.xaml**, delete `SupportedOrientations="Portrait"`.
+2.  In the root **Page** element in **MainPage.xaml**, delete `Orientation="Portrait"`.
+3.  In the root **Page** element in **MainPage.xaml**, delete `shell:SystemTray.IsVisible="True"`.
+4.  In the `BookTemplate` data template, delete the references to the `PhoneTextExtraLargeStyle` and `PhoneTextSubtleStyle` **TextBlock** styles.
+5.  In the `TitlePanel` **StackPanel**, delete the references to the `PhoneTextNormalStyle` and `PhoneTextTitle1Style` **TextBlock** styles.
 
-Commençons par travailler sur l’interface utilisateur de la famille d’appareils mobiles, après quoi nous pourrons envisager les autres facteurs de forme. Vous pouvez à présent générer et exécuter l’application. Voici comment cette dernière apparaît sur l’émulateur d’appareil mobile.
+Let's work on the UI for the mobile device family first, and we can consider other form factors after that. You can build and run the app now. Here's how it looks on the mobile emulator.
 
-![Application UWP sur un appareil mobile avec les modifications du code source initial](images/wpsl-to-uwp-case-studies/c01-02-mob10-initial-source-code-changes.png)
+![the uwp app on mobile with initial source code changes](images/wpsl-to-uwp-case-studies/c01-02-mob10-initial-source-code-changes.png)
 
-L’association de l’affichage et du modèle d’affichage fonctionne correctement, tout comme la classe **ListBox**. Il nous reste principalement à corriger les styles et à faire en sorte que les images s’affichent.
+The view and the view model are working together correctly, and the **ListBox** is functioning. We mostly just need to fix the styling and get the images to show up.
 
-## Récupération des éléments supprimés et stylisation initiale
+## <a name="paying-off-the-debt-items-and-some-initial-styling"></a>Paying off the debt items, and some initial styling
 
-Par défaut, toutes les orientations sont prises en charge. L’application Silverlight pour Windows Phone se limite explicitement à l’orientation portrait. Les éléments supprimés n\º 1 et n\º 2 sont donc compensés par l’accès au manifeste du package d’application dans le nouveau projet et par la sélection de l’option **Portrait** sous **Orientations prises en charge**.
+By default, all orientations are supported. The Windows Phone Silverlight app explicitly constrains itself to portrait-only, though, so debt items \#1 and \#2 are paid off by going into the app package manifest in the new project and checking **Portrait** under **Supported orientations**.
 
-Pour cette application, l’élément n\º3 n’est pas manquant, puisque la barre d’état (appelée auparavant barre d’état système) est affichée par défaut. Pour les éléments n\º 4 et n\º 5, nous devons rechercher quatre styles  **TextBlock** de plateforme Windows universelle (UWP) correspondant aux styles que nous utilisions dans Silverlight pour Windows Phone. Vous pouvez exécuter l’application Silverlight pour Windows Phone dans l’émulateur et la comparer côte à côte avec l’illustration de la section [Texte](wpsl-to-uwp-porting-xaml-and-ui.md#text). À partir de là et en examinant les propriétés des styles système Silverlight pour Windows Phone, nous pouvons élaborer le tableau ci-après.
+For this app, item \#3 is not a debt since the status bar (formerly called the system tray) is shown by default. For items \#4 and \#5, we need to find four Universal Windows Platform (UWP) **TextBlock** styles that correspond to the Windows Phone Silverlight styles that we were using. You can run the Windows Phone Silverlight app in the emulator and compare it side-by-side with the illustration in the [Text](wpsl-to-uwp-porting-xaml-and-ui.md) section. From doing that, and from looking at the properties of the Windows Phone Silverlight system styles, we can make this table.
 
-| Clé de style Silverlight pour Windows Phone | Clé de style UWP          |
+| Windows Phone Silverlight style key | UWP style key          |
 |-------------------------------------|------------------------|
 | PhoneTextExtraLargeStyle            | TitleTextBlockStyle    |
 | PhoneTextSubtleStyle                | SubtitleTextBlockStyle |
 | PhoneTextNormalStyle                | CaptionTextBlockStyle  |
 | PhoneTextTitle1Style                | HeaderTextBlockStyle   |
  
-Pour définir ces styles, il vous suffit de les taper dans l’éditeur de balisage. Vous pouvez également utiliser les outils XAML de Visual Studio et les définir sans rien taper. Pour ce faire, cliquez avec le bouton droit sur un **TextBlock**, puis cliquez sur **Modifier le style** &gt; **Appliquer la ressource**. Pour procéder ainsi avec les objets **TextBlock** dans le modèle d’élément, cliquez avec le bouton droit sur **ListBox**, puis cliquez sur **Modifier des modèles supplémentaires** &gt; **Modifier les éléments générés (ItemTemplate)**.
+To set those styles, you can just type them into the markup editor or you can use the Visual Studio XAML Tools and set them without typing a thing. To do that, you right-click a **TextBlock** and click **Edit Style** &gt; **Apply Resource**. To do that with the **TextBlock**s in the item template, right click the **ListBox** and click **Edit Additional Templates** &gt; **Edit Generated Items (ItemTemplate)**.
 
-Il existe un arrière-plan blanc opaque à 80% derrière les éléments, car le style par défaut du contrôle **ListBox** définit son arrière-plan sur la ressource système `ListBoxBackgroundThemeBrush`. Définissez `Background="Transparent"` sur l’élément **ListBox** pour effacer cet arrière-plan. Pour aligner à gauche les objets **TextBlock** dans le modèle d’élément, modifiez-les de nouveau comme décrit ci-dessus et définissez un élément **Margin** de `"9.6,0"` dans les deux objets **TextBlock**.
+There is an 80% opaque white background behind the items, because the default style of the **ListBox** control sets its background to the `ListBoxBackgroundThemeBrush` system resource. Set `Background="Transparent"` on the **ListBox** to clear that background. To left-align the **TextBlock**s in the item template, edit it again the same way as described above and set a **Margin** of `"9.6,0"` on both **TextBlock**s.
 
-Une fois cette opération effectuée, en raison des [modifications associées aux pixels d’affichage](wpsl-to-uwp-porting-xaml-and-ui.md#effective-pixels), nous devons passer en revue et multiplier toutes les dimensions de taille fixe que nous n’avons pas encore modifiées (marges, largeur, hauteur, etc.) par 0,8. Par exemple, les images doivent passer de 70 x 70 px à 56 x 56 px.
+After that is done, because of [changes related to view pixels](wpsl-to-uwp-porting-xaml-and-ui.md), we need to go through and multiply any fixed size dimension that we haven’t yet changed (margins, width, height, etc) by 0.8. So, for example, the images should change from 70x70px to 56x56px.
 
-Mais récupérons ces images pour le rendu avant de montrer les résultats de notre stylisation.
+But, let’s get those images to render before we show the results of our styling.
 
-## Liaison d’une propriété Image à un modèle d’affichage
+## <a name="binding-an-image-to-a-view-model"></a>Binding an Image to a view model
 
-Dans Bookstore1WPSL8, nous avons fait cela :
+In Bookstore1WPSL8, we did this:
 
 ```csharp
     // this.BookCoverImagePath contains a path of the form "/Assets/CoverImages/one.png".
     return new BitmapImage(new Uri(this.CoverImagePath, UriKind.Relative));
 ```
 
-Dans Bookstore1Universal, nous utilisons le [schéma d’URI](https://msdn.microsoft.com/library/windows/apps/jj655406) ms-appx. Pour laisser le reste de notre code inchangé, nous pouvons utiliser une surcharge différente du constructeur **System.Uri** pour placer le schéma d’URI dans un URI de base et y ajouter le reste du chemin d’accès. Comme ceci:
+In Bookstore1Universal, we use the ms-appx [URI scheme](https://msdn.microsoft.com/library/windows/apps/jj655406). So that we can keep the rest of our code the same, we can use a different overload of the **System.Uri** constructor to put the ms-appx URI scheme in a base URI and append the rest of the path onto that. Like this:
 
 ```csharp
     // this.BookCoverImagePath contains a path of the form "/Assets/CoverImages/one.png".
     return new BitmapImage(new Uri(new Uri("ms-appx://"), this.CoverImagePath));
 ```
 
-## Stylisation universelle
+## <a name="universal-styling"></a>Universal styling
 
-À présent, il ne nous reste plus qu’à apporter quelques adaptations de stylisation finales et à vérifier que l’application s’affiche correctement sur les facteurs de forme des appareils de bureau (et autres), ainsi que sur les appareils mobiles. Les étapes sont les suivantes. Et vous pouvez utiliser les liens en haut de cette rubrique pour télécharger les projets et afficher les résultats de toutes les modifications entre ce stade et la fin de l’étude de cas.
+Now, we just need to make some final styling tweaks and confirm that the app looks good on desktop (and other) form factors as well as mobile. The steps are below. And you can use the links at the top of this topic to download the projects and see the results of all the changes between here and the end of the case study.
 
--   Pour réduire l’espacement entre les éléments, recherchez le modèle de données `BookTemplate` dans le fichier MainPage.xaml et supprimez l’attribut `Margin` de l’élément **Grid** racine.
--   Si vous souhaitez aérer légèrement le titre de la page, vous pouvez réduire la marge inférieure de la valeur `-5.6` à la valeur `0` sur l’élément **TextBlock** du titre de la page.
--   À présent, nous devons définir l’arrière-plan de `LayoutRoot` sur la valeur par défaut appropriée afin que l’application se présente correctement lorsqu’elle est exécutée sur tous les appareils, quel que soit le thème. Remplacez sa valeur `"Transparent"` par la valeur `"{ThemeResource ApplicationPageBackgroundThemeBrush}"`.
+-   To tighten up the spacing between items, find the `BookTemplate` data template in MainPage.xaml and delete the `Margin` attribute from the root **Grid**.
+-   If you want to give the page title a little more breathing room, you can reset the bottom margin of `-5.6` to `0` on the page title **TextBlock**.
+-   Now, we need to set `LayoutRoot`'s Background to the correct default value so that the app looks appropriate when running on all devices no matter what the theme is. Change it from `"Transparent"` to `"{ThemeResource ApplicationPageBackgroundThemeBrush}"`.
 
-Dans le cas d’une application plus élaborée, le moment serait bien choisi pour utiliser les recommandations de l’article [Portage d’une application Silverlight pour Windows Phone vers UWP pour différents facteurs de forme et expériences utilisateur](wpsl-to-uwp-form-factors-and-ux.md) et pour optimiser l’utilisation du facteur de forme de chacun des nombreux appareils sur lesquels l’application peut désormais s’exécuter. Mais, dans le cas de cette application simple, nous pouvons nous arrêter là et examiner l’apparence de l’application après cette dernière séquence d’opérations de stylisation. L’application présente le même aspect sur les appareils mobiles que sur les appareils de bureau, bien qu’elle ne tire pas le meilleur parti de l’espace sur les facteurs de forme larges (mais nous étudierons comment rectifier cet aspect dans une étude de cas ultérieure).
+With a more sophisticated app, this would be the point at which we'd use the guidance in [Porting for form factor and user experience](wpsl-to-uwp-form-factors-and-ux.md) and really make optimal use of the form factor of each of the many devices the app can now run on. But, for this simple app, we can stop here and see how the app looks after that last sequence of styling operations. It actually looks the same on mobile and desktop devices, although it's not making best use of space on wide form factors (but we'll investigate how to do that in a later case study).
 
-Pour connaître la procédure à suivre pour contrôler le thème de votre application, voir [Modifications de thème](wpsl-to-uwp-porting-xaml-and-ui.md#theme-changes).
+See [Theme changes](wpsl-to-uwp-porting-xaml-and-ui.md) to see how to control the theme of your app.
 
-![Application Windows10 portée](images/w8x-to-uwp-case-studies/c01-07-mob10-ported.png)
+![the ported windows 10 app](images/w8x-to-uwp-case-studies/c01-07-mob10-ported.png)
 
-Application Windows10 portée, exécutée sur un appareil mobile
+The ported Windows 10 app running on a Mobile device
 
-## Ajustement facultatif de la zone de liste pour les appareils mobiles
+## <a name="an-optional-adjustment-to-the-list-box-for-mobile-devices"></a>An optional adjustment to the list box for Mobile devices
 
-Lorsque l’application s’exécute sur un appareil mobile, l’arrière-plan d’une zone de liste est clair par défaut dans les deux thèmes. S’il s’agit de votre thème de prédilection, vous n’avez rien d’autre à faire. Toutefois, les contrôles sont conçus pour que vous puissiez personnaliser leur apparence tout en préservant leur comportement. Par conséquent, si vous souhaitez que la zone de liste soit sombre dans le thème à dominante foncée (l’apparence de l’application d’origine), suivez [ces instructions](w8x-to-uwp-case-study-bookstore1.md#an-optional-adjustment).
+When the app is running on a Mobile device, the background of a list box is light by default in both themes. That may be the style that you prefer and, if so, then there's nothing more to do. But, controls are designed so that you can customize their look while leaving their behavior unaffected. So, if you want the list box to be dark in the dark theme—the way the original app looked—then follow [these instructions](w8x-to-uwp-case-study-bookstore1.md) under "An optional adjustment".
 
-## Conclusion
+## <a name="conclusion"></a>Conclusion
 
-Cette étude de cas vous a décrit le processus de portage d’une application très simple, probablement non réaliste. Par exemple, il est possible d’utiliser des contrôles de liste pour la sélection ou pour la création d’un contexte de navigation. L’application accède alors à une page contenant plus de détails sur l’élément sélectionné. Cette application spécifique ne fait rien avec la sélection de l’utilisateur et est dépourvue de navigation. Malgré tout, l’étude de cas a servi à briser la glace, afin d’introduire le processus de portage et d’illustrer les techniques importantes que vous pouvez utiliser dans les applications UWP réelles.
+This case study showed the process of porting a very simple app—arguably an unrealistically simple one. For instance, list controls can be used for selection or for establishing a context for navigation; the app navigates to a page with more details about the item that was tapped. This particular app does nothing with the user's selection, and it has no navigation. Even so, the case study served to break the ice, to introduce the porting process, and to demonstrate important techniques that you can use in real UWP apps.
 
-Dans l’étude de cas suivante, [Bookstore2](wpsl-to-uwp-case-study-bookstore2.md), nous examinons l’accès aux données groupées et l’affichage de ces dernières.
+The next case study is [Bookstore2](wpsl-to-uwp-case-study-bookstore2.md), in which we look at accessing and displaying grouped data.
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

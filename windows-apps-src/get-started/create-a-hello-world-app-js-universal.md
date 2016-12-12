@@ -2,148 +2,147 @@
 author: GrantMeStrength
 ms.assetid: CFB3601D-3459-465F-80E2-520F57B88F62
 title: Create a "Hello, world" app (JS)
-description: "Ce didacticiel vous expliquer comment utiliser JavaScript et HTML pour créer une simple application &amp;\\#0034;Hello, world&amp;\\#0034; ciblant la plateforme Windows universelle (UWP) sur Windows10."
+description: This tutorial teaches you how to use JavaScript and HTML to create a simple &\#0034;Hello, world&\#0034; app that targets the Universal Windows Platform (UWP) on Windows 10.
 translationtype: Human Translation
-ms.sourcegitcommit: 7b4676e5c5a66450b321ab6f5f8670f9491b7a9d
-ms.openlocfilehash: 31bd2d40750e5acf09679d8ff5ea1a1540f60934
+ms.sourcegitcommit: 1a4aea3d31bad97fa0933e1274c037a4bb8d81bb
+ms.openlocfilehash: ad34b1bc62abf6c93f5124e774ad374f5b767f2c
 
 ---
-# Créer une application « Hello World » (JS)
+# <a name="create-a-hello-world-app-js"></a>Create a "Hello, world" app (JS)
 
-Ce didacticiel vous expliquer comment utiliser JavaScript et HTML pour créer une simple application « Hello World » ciblant la plateforme Windows universelle (UWP) sur Windows10. À l’aide d’un seul projet dans Microsoft Visual Studio, vous pouvez générer une application qui s’exécute sur tout appareil Windows10.
+This tutorial teaches you how to use JavaScript and HTML to create a simple "Hello, world" app that targets the Universal Windows Platform (UWP) on Windows 10. With a single project in Microsoft Visual Studio, you can build an app that runs on any Windows 10 device.
 
-Vous allez apprendre à effectuer les opérations suivantes:
+Here you'll learn how to:
 
--   créer un projet **Visual Studio2015** qui cible **Windows10** et la **plateforme  Windows universelle (UWP)**;
--   ajouter du contenu HTML à votre page de démarrage;
--   gérer les entrées tactiles, les entrées effectuées à l’aide du stylet et de la souris;
--   exécuter le projet sur l’ordinateur local et sur l’émulateur de téléphone dans Visual Studio;
--   utiliser un contrôle de la bibliothèque Windows pour JavaScript.
+-   Create a new **Visual Studio 2015** project that targets **Windows 10** and the **UWP**.
+-   Add HTML content to your start page
+-   Handle touch, pen, and mouse input
+-   Run the project on the local desktop and on the phone emulator in Visual Studio
+-   Use a Windows Library for JavaScript control
 
-## Avant de commencer...
+## <a name="before-you-start"></a>Before you start...
 
--   [Qu’est-ce qu’une application Windows universelle?](whats-a-uwp.md)
--   [Nouveautés de Windows10](https://dev.windows.com/whats-new-windows-10-dev-preview)
--   Pour suivre ce didacticiel, vous avez besoin de Windows10 et de Visual Studio2015. [Se préparer](get-set-up.md).
--   Nous partons également du principe que vous utilisez la disposition de fenêtre par défaut de Visual Studio. Si vous modifiez la disposition par défaut, vous pouvez la réinitialiser dans le menu **Fenêtre** en choisissant la commande **Rétablir la disposition de fenêtre**.
+-   [What's a Universal Windows app](whats-a-uwp.md)?
+-   To complete this tutorial, you need Windows 10 and Visual Studio 2015. [Get set up](get-set-up.md).
+-   We also assume you're using the default window layout in Visual Studio. If you change the default layout, you can reset it in the **Window** menu by using the **Reset Window Layout** command.
 
-## Étape1: créer un projet dans Visual Studio
+## <a name="step-1-create-a-new-project-in-visual-studio"></a>Step 1: Create a new project in Visual Studio
 
-Créons une application intitulée `HelloWorld`. Voici comment procéder:
-1.  Lancez Visual Studio2015.
+Let's create a new app named `HelloWorld`. Here's how:
+1.  Launch Visual Studio 2015.
 
-2.  À partir du menu **Fichier**, sélectionnez **Nouveau &gt; Projet...** pour ouvrir la boîte de dialogue *Nouveau projet*.
+2.  From the **File** menu, select **New > Project...** to open the *New Project* dialog.
 
-3.  Dans la liste de modèles de gauche, développez **Installés &gt; Modèles &gt; JavaScript &gt; Windows**, puis choisissez **Universel** pour afficher la liste des modèles de projet UWP. Choisissez **Application WinJS (Windows universel)**.
+3.  From the list of templates on the left, expand **Installed > Templates > JavaScript > Windows**, and then choose **Universal** to see the list of UWP project templates. Choose **WinJS App (Universal Windows)**.
 
-    ![La fenêtre Nouveau projet ](images/winjs-tut-newproject.png)
+    ![The New Project window ](images/winjs-tut-newproject.png)
 
-    Pour ce didacticiel, nous utilisons le modèle **Application WinJS**. Ce modèle crée une application UWP dépouillée qui peut être compilée et exécutée, mais qui ne contient ni contrôles d’interface utilisateur, ni données. Dans le cadre de ce didacticiel, vous allez ajoutez des contrôles et des données à l’application.
+    For this tutorial, we use the **WinJS App** template. This template creates a minimal UWP app that compiles and runs, but contains no user interface controls or data. You add controls and data to the app over the course of this tutorials.
 
-   (Si vous ne voyez pas ces options, assurez-vous que vous avez installé les outils de développement d’applications Windows universelles. Pour plus d’informations, consultez [Se préparer](get-set-up.md).)
+   (If you don't see these options, make sure you have the Universal Windows App Development Tools installed. See [Get set up](get-set-up.md) for more info.)
 
-4.  Dans la zone de texte **Nom**, tapez «HelloWorld».
-5.  Cliquez sur **OK** pour créer le projet.
-6.  Vous serez invité à sélectionner une **version cible** et une **version minimale** de Windows pour la prise en charge. Les paramètres par défaut sont corrects, donc cliquez sur **OK**.
+4.  In the **Name** text box, type "HelloWorld".
+5.  Click **OK** to create the project.
+6.  You will be asked to select a **Target Version** and **Minimum Version** of Windows to support. The default settings are fine, so click **OK**.
 
-    Visual Studio crée votre projet et l’affiche dans **l’Explorateur de solutions**.
+    Visual Studio creates your project and displays it in the **Solution Explorer**.
 
-    ![Explorateur de solutions Visual Studio pour le projet HelloWorld](images/winjs-tut-helloworld.png)
+    ![Visual Studio Solution Explorer for the HelloWorld project](images/winjs-tut-helloworld.png)
 
-Même si le modèle **Application WinJS** est dépouillé, il contient quelques fichiers:
+Although the **WinJS App** is a minimal template, it still contains a handful of files:
 
--   un fichier manifeste (package.appxmanifest) qui décrit votre application (nom, description, vignette, page de démarrage, écran de démarrage, etc.) et répertorie les fichiers contenus dans votre application;
--   un ensemble d’images de logo (images/Square150x150Logo.scale-200.png, images/Square44x44Logo.scale-200.png, et images/Wide310x150Logo.scale-200.png) à afficher dans le menu Démarrer;
--   une image (images/StoreLogo.png) pour représenter votre application dans le Windows Store;
--   un écran de démarrage (images/SplashScreen.scale-200.png) pour indiquer quand votre application démarre;
--   une page de démarrage (index.html) et un fichier JavaScript associé (main.js) qui s’exécute au démarrage de l’application.
+-   A manifest file (package.appxmanifest) that describes your app (its name, description, tile, start page, splash screen, and so on) and lists the files that your app contains.
+-   A set of logo images (images/Square150x150Logo.scale-200.png, images/Square44x44Logo.scale-200.png, and images/Wide310x150Logo.scale-200.png)to display in the start menu.
+-   An image (images/StoreLogo.png) to represent your app in the Windows Store.
+-   A splash screen (images/SplashScreen.scale-200.png) to show when your app starts.
+-   A start page (index.html) and an accompanying JavaScript file (main.js) that run when your app starts.
 
-Pour afficher et modifier les fichiers, double-cliquez dessus dans **l’Explorateur de solutions**.
+To view and edit the files, double-click the file in the **Solution Explorer**.
 
-Ces fichiers sont indispensables pour toutes les applications UWP en JavaScript. Ils figurent dans tous les projets que vous créez dans Visual Studio.
+These files are essential to all UWP apps using JavaScript. Any project that you create in Visual Studio contains them.
 
-## Étape 2 : lancer l’application
-
-
-À ce stade, vous avez créé une application très simple. Le moment est bien choisi pour générer, déployer et lancer votre application et voir à quoi elle ressemble. Vous pouvez déboguer votre application sur l’ordinateur local, dans un simulateur ou un émulateur, ou sur un appareil distant. Voici le menu des périphériques cibles dans Visual Studio.
-
-![Liste déroulante des périphériques cibles pour le débogage de votre application](images/uap-debug.png)
-
-### Démarrer l’application sur un ordinateur de bureau
-
-Par défaut, l’application s’exécute sur l’ordinateur local. Le menu des périphériques cibles vous offre plusieurs options pour le débogage de votre application sur des périphériques de la famille des ordinateurs de bureau.
-
--   **Simulateur**
--   **Ordinateur local**
--   **Ordinateur distant**
-
-**Pour démarrer le débogage sur l’ordinateur local**
-
-1.  Dans le menu des appareils cibles (![Menu Démarrer le débogage](images/startdebug-full.png)) figurant sur la barre d’outils **Standard**, assurez-vous que l’option **Ordinateur local** est sélectionnée. (Il s’agit de la sélection par défaut.)
-2.  Cliquez sur le bouton **Démarrer le débogage** (![Bouton Démarrer le débogage](images/startdebug-sm.png)) de la barre d’outils.
-
-   –ou–
-
-   Dans le menu **Déboguer**, cliquez sur **Démarrer le débogage**.
-
-   –ou–
-
-   Appuyez sur F5.
-
-L’application s’ouvre dans une fenêtre, et un écran de démarrage par défaut s’affiche en premier. Cet écran est défini par une image (SplashScreen.png) et par une couleur d’arrière-plan (spécifiées dans le fichier manifeste de votre application).
-
-L’écran de démarrage disparaît pour céder la place à votre application. Elle contient un écran noir avec la mention «Le contenu s’affiche ici».
-
-![Application HelloWorld sur un PC](images/helloworld-1-winjs.png)
-
-Appuyez sur la touche Windows pour ouvrir le menu **Démarrer**, puis affichez toutes les applications. Notez que le déploiement de l’application entraîne l’ajout local de sa vignette au menu **Démarrer**. Pour exécuter de nouveau l’application (non en mode débogage), appuyez ou cliquez sur sa vignette dans le menu **Démarrer**.
-
-Félicitations! Vous venez de générer votre première application UWP, même si celle-ci ne propose pas (encore) beaucoup de fonctions.
-
-**Pour arrêter le débogage**
-
--   Cliquez sur le bouton **Arrêter le débogage** (![Bouton Arrêter le débogage](images/stopdebug.png)) dans la barre d’outils.
-
-   –ou–
-
-   Dans le menu **Déboguer**, cliquez sur **Arrêter le débogage**.
-
-   –ou–
-
-   Fermez la fenêtre de l’application.
-
-### Démarrer l’application sur un émulateur d’appareil mobile
-
-Votre application s’exécute sur n’importe quel appareil Windows10. Examinons donc son aspect sur un Windows Phone.
-
-Outre les options de débogage sur un ordinateur de bureau, Visual Studio offre des options de déploiement et de débogage de votre application sur un appareil mobile physique connecté à l’ordinateur ou sur un émulateur d’appareil mobile. Vous pouvez choisir parmi plusieurs émulateurs d’appareil correspondant à différentes configurations de mémoire et d’affichage.
-
--   **Appareil**
--   **Émulateur <SDK version> WVGA 4pouces 512Mo**
--   **Émulateur <SDK version> WVGA 4pouces 1Go**
--   etc. (Divers émulateurs associés à d’autres configurations)
-
-(Si vous ne voyez pas les émulateurs, assurez-vous que vous avez installé les outils de développement d’applications Windows universelles. Pour plus d’informations, consultez [Se préparer](get-set-up.md).)
-
-Il est judicieux de tester votre application sur un appareil doté d’un petit écran et d’une mémoire limitée. Par conséquent, choisissez l’option **Émulateur 10.0.14393.0 WVGA 4pouces 512Mo**.
-
-**Pour démarrer le débogage sur un émulateur d’appareil mobile**
-
-1.  Dans le menu des appareils cibles (![Menu Démarrer le débogage](images/startdebug-full.png)) situé sur la barre d’outils **Standard**, choisissez **Émulateur 10.0.14393.0 WVGA 4 pouces 512Mo**.
-2.  Cliquez sur le bouton **Démarrer le débogage** (![Bouton Démarrer le débogage](images/startdebug-sm.png)) dans la barre d’outils.
-
-   –ou–
-
-   Dans le menu **Déboguer**, cliquez sur **Démarrer le débogage**.
+## <a name="step-2-launch-the-app"></a>Step 2: Launch the app
 
 
-Visual Studio démarre l’émulateur sélectionné, puis déploie et démarre votre application. Lors du lancement initial, l’émulateur peut prendre un peu de temps pour démarrer. Si vous rencontrez une erreur concernant HyperV, cliquer sur **Réessayer** devrait résoudre ce problème. Sur l’émulateur d’appareil mobile, l’application se présente comme suit.
+At this point, you've created a very simple app. This is a good time to build, deploy, and launch your app and see what it looks like. You can debug your app on the local machine, in a simulator or emulator, or on a remote device. Here's the target device menu in Visual Studio.
 
-![Écran initial de l’application sur un appareil mobile](images/helloworld-1-winjs-phone.png)
+![Drop-down list of device targets for debugging your app](images/uap-debug.png)
 
-## Étape3: modifier votre page de démarrage
+### <a name="start-the-app-on-a-desktop-device"></a>Start the app on a Desktop device
 
-**index.html** est l’un des fichiers créés automatiquement par Visual Studio. Il s’agit de la page de démarrage de votre application. Quand l’application s’exécute, elle affiche le contenu de sa page de démarrage. La page de démarrage contient également des références aux fichiers de code et aux feuilles de style de l’application. Voici la page d’accueil automatiquement créée par Visual Studio pour vous:
+By default, the app runs on the local machine. The target device menu provides several options for debugging your app on devices from the desktop device family.
+
+-   **Simulator**
+-   **Local Machine**
+-   **Remote Machine**
+
+**To start debugging on the local machine**
+
+1.  In the target device menu (![Start debugging menu](images/startdebug-full.png)) on the **Standard** toolbar, make sure that **Local Machine** is selected. (It's the default selection.)
+2.  Click the **Start Debugging** button (![Start debugging button](images/startdebug-sm.png)) on the toolbar.
+
+   –or–
+
+   From the **Debug** menu, click **Start Debugging**.
+
+   –or–
+
+   Press F5.
+
+The app opens in a window, and a default splash screen appears first. The splash screen is defined by an image (SplashScreen.png) and a background color (specified in your app's manifest file).
+
+The splash screen disappears, and then your app appears. It contains a black screen with the text "Content goes here".
+
+![The HelloWorld app on a PC](images/helloworld-1-winjs.png)
+
+Press the Windows key to open the **Start** menu, then show all apps. Notice that deploying the app locally adds its tile to the **Start** menu. To run the app again (not in debugging mode), tap or click its tile in the **Start** menu.
+
+It doesn't do much—yet—but congratulations, you've built your first UWP app!
+
+**To stop debugging**
+
+-   Click the **Stop Debugging** button (![Stop debugging button](images/stopdebug.png)) in the toolbar.
+
+   –or–
+
+   From the **Debug** menu, click **Stop debugging**.
+
+   –or–
+
+   Close the app window.
+
+### <a name="start-the-app-on-a-mobile-device-emulator"></a>Start the app on a mobile device emulator
+
+Your app runs on any Windows 10 device, so let’s see how it looks on a Windows Phone.
+
+In addition to the options to debug on a desktop device, Visual Studio provides options for deploying and debugging your app on a physical mobile device connected to the computer, or on a mobile device emulator. You can choose among emulators for devices with different memory and display configurations.
+
+-   **Device**
+-   **Emulator <SDK version> WVGA 4 inch 512MB**
+-   **Emulator <SDK version> WVGA 4 inch 1GB**
+-   etc... (Various emulators in other configurations)
+
+(If you don't see the emulators, make sure you have the Universal Windows App Development Tools installed. See [Get set up](get-set-up.md) for more info.)
+
+It's a good idea to test your app on a device with a small screen and limited memory, so use the **Emulator 10.0.14393.0 WVGA 4 inch 512MB** option.
+
+**To start debugging on a mobile device emulator**
+
+1.  In the target device menu (![Start debugging menu](images/startdebug-full.png)) on the **Standard** toolbar, pick **Emulator 10.0.14393.0 WVGA 4 inch 512MB**.
+2.  Click the **Start Debugging** button (![Start debugging button](images/startdebug-sm.png)) in the toolbar.
+
+   –or–
+
+   From the **Debug** menu, click **Start Debugging**.
+
+
+Visual Studio starts the selected emulator and then deploys and starts your app. On the initial launch, the emulator may take a little time to start. You may see an error regarding HyperV, and clicking **Retry** should resolve this. On the mobile device emulator, the app looks like this.
+
+![Initial app screen on mobile device](images/helloworld-1-winjs-phone.png)
+
+## <a name="step-3-modify-your-start-page"></a>Step 3: Modify your start page
+
+One of the files that Visual Studio created for you is **index.html**, your app's start page. When the app runs, it displays the content of its start page. The start page also contains references to the app's code files and style sheets. Here's the start page that Visual Studio created for you:
 
 ```html
 <!DOCTYPE html>
@@ -167,11 +166,11 @@ Visual Studio démarre l’émulateur sélectionné, puis déploie et démarre v
 </html>
 ```
 
-Ajoutons du contenu au fichier default.html. Vous devez ajouter votre contenu à l’intérieur de l’élément [body](https://msdn.microsoft.com/library/windows/apps/Hh453011), comme vous le feriez pour n’importe quel autre fichier HTML. Vous pouvez utiliser des éléments HTML5 pour créer votre application (à [quelques exceptions](https://msdn.microsoft.com/library/windows/apps/Hh465380) près). En d’autres termes, vous pouvez utiliser des éléments HTML5 comme [h1](https://msdn.microsoft.com/library/windows/apps/Hh441078), [p](https://msdn.microsoft.com/library/windows/apps/Hh453431), [button](https://msdn.microsoft.com/library/windows/apps/Hh453017), [div](https://msdn.microsoft.com/library/windows/apps/Hh453133) et [img](https://msdn.microsoft.com/library/windows/apps/Hh466114).
+Let's add some new content to your default.html file. Just as you would add content to any other HTML file, you add your content inside the [body](https://msdn.microsoft.com/library/windows/apps/Hh453011) element. You can use HTML5 elements to create your app (with a [few exceptions](https://msdn.microsoft.com/library/windows/apps/Hh465380)). That means you can use HTML5 elements like [h1](https://msdn.microsoft.com/library/windows/apps/Hh441078), [p](https://msdn.microsoft.com/library/windows/apps/Hh453431), [button](https://msdn.microsoft.com/library/windows/apps/Hh453017), [div](https://msdn.microsoft.com/library/windows/apps/Hh453133), and [img](https://msdn.microsoft.com/library/windows/apps/Hh466114).
 
-**Modifier votre page de démarrage**
+**Edit your start page**
 
-1.  Remplacez le contenu existant de l’élément **body** par le titre de premier niveau «Hello, world!», du texte qui demande le nom de l’utilisateur, un élément **input** pour accepter le nom de l’utilisateur, un élément **button** et un élément **div**. Assignez des ID aux éléments **input**, **button** et **div**.
+1.  Replace the existing content in the **body** element with a first-level heading that says "Hello, world!", some text that asks the user's name, an **input** element to accept the user's name, a **button**, and a **div** element. Assign IDs to the **input**, the **button**, and the **div**.
 
  ```html
     <body class="win-type-body">
@@ -183,21 +182,21 @@ Ajoutons du contenu au fichier default.html. Vous devez ajouter votre contenu à
     </body>
  ```
 
-2.  Exécutez l’application sur l’ordinateur local. Elle se présente comme suit :
+2.  Run the app on the local machine. It look like this.
 
-![L’application HelloWorld avec le nouveau contenu](images/helloworld-2-winjs.png)
+![The HelloWorld app with new content](images/helloworld-2-winjs.png)
 
-   Vous pouvez écrire dans l’élément **input**, mais rien ne se produit pour l’instant si vous cliquez sur l’élément **button**. Des objets tels que l’élément **button** peuvent envoyer des messages lorsque certains événements se produisent. Ces messages d’événement vous permettent de réagir en réponse à l’événement. Insérez le code de réponse à l’événement dans une méthode de gestionnaire d’événements.
+   You can type in the **input** element, but right now, clicking the **button** doesn't do anything. Some objects, such as **button**, can send messages when certain events occur. These event messages give you the opportunity to take some action in response to the event. You put code to respond to the event in an event handler method.
 
-   Dans les étapes suivantes, nous allons créer un gestionnaire d’événements pour l’élément **button** qui affiche une formule de salutation personnalisée. Nous ajouterons notre code de gestionnaire d’événements au fichier main.js.
+   In the next steps, we create an event handler for the **button** that displays a personalized greeting. We add our event handler code to our main.js file.
 
-## Étape4: créer un gestionnaire d’événements
+## <a name="step-4-create-an-event-handler"></a>Step 4: Create an event handler
 
-Lorsque nous avons créé notre projet, Visual Studio a créé un fichier /js/main.js. Ce fichier contient du code permettant de gérer le cycle de vie de votre application. C’est également ici que vous écrivez le code supplémentaire assurant l’interactivité du fichier index.html.
+When we created our new project, Visual Studio created a /js/main.js file for us. This file contains code for handling your app's life cycle. It's also where you write additional code that provides interactivity for your index.html file.
 
-Ouvrez le fichier main.js.
+Open the main.js file.
 
-Avant d’ajouter notre propre code, examinons les premières et dernières lignes de code du fichier:
+Before we start adding our own code, let's take a look at the first and the last few lines of code in the file:
 
 ```javascript
 (function () {
@@ -208,11 +207,11 @@ Avant d’ajouter notre propre code, examinons les premières et dernières lign
  })();
 ```
 
-Vous vous demandez peut-être ce à quoi tout ceci correspond. Ces lignes de code encapsulent le reste du code main.js dans une fonction anonyme qui s’exécute automatiquement. Une fonction anonyme s’exécutant automatiquement permet d’éviter plus facilement des conflits de noms ou des situations dans lesquelles vous modifiez accidentellement une valeur. De même, cela maintient les identificateurs inutiles à l’extérieur de l’espace de noms global, ce qui favorise les performances. Même si cela paraît un peu étrange, il s’agit d’une bonne pratique de programmation.
+You might be wondering what's going on here. These lines of code wrap the rest of the main.js code in a self-executing anonymous function. A self-executing anonymous function makes it easier to avoid naming conflicts or situations where you accidently modify a value that you didn't intend to modify. It also keeps unnecessary identifiers out of the global namespace, which helps performance. It looks a little strange, but it's a good programming practice.
 
-La ligne de code suivante active le [mode strict](https://msdn.microsoft.com/library/windows/apps/br230269.aspx) pour votre code JavaScript. Le mode strict assure une vérification supplémentaire des erreurs au niveau de votre code. Par exemple, il vous empêche d’utiliser des variables déclarées implicitement ou d’assigner une valeur à une propriété en lecture seule.
+The next line of code turns on [strict mode](https://msdn.microsoft.com/library/windows/apps/br230269.aspx) for your JavaScript code. Strict mode provides additional error checking for your code. For example, it prevents you from using implicitly declared variables or assigning a value to a read-only property.
 
-Examinez le reste du code dans main.js. Il gère les événements [activated](https://msdn.microsoft.com/library/windows/apps/BR212679) et [checkpoint](https://msdn.microsoft.com/library/windows/apps/BR229839) de votre application. Nous nous pencherons plus en détail sur ces événements ultérieurement. Pour l’heure, sachez simplement que l’événement **activated** se déclenche au démarrage de votre application.
+Take a look at the rest of the code in main.js. It handles your app's [activated](https://msdn.microsoft.com/library/windows/apps/BR212679) and [checkpoint](https://msdn.microsoft.com/library/windows/apps/BR229839) events. We go into more detail about these events later. For now, just know that the **activated** event fires when your app starts.
 
 ```javascript
    (function () {
@@ -259,26 +258,26 @@ Examinez le reste du code dans main.js. Il gère les événements [activated](ht
     };
 ```
 
-Définissons un gestionnaire d’événements pour votre élément [button](https://msdn.microsoft.com/library/windows/apps/Hh453017). Notre nouveau gestionnaire d’événements obtient le nom de l’utilisateur auprès du contrôle [input](https://msdn.microsoft.com/library/windows/apps/Hh453271) `nameInput` et l’utilise pour générer une salutation à destination de l’élément **div** `greetingOutput` que vous avez créé dans la section précédente.
+Let's define an event handler for your [button](https://msdn.microsoft.com/library/windows/apps/Hh453017). Our new event handler gets the user's name from the `nameInput` [input](https://msdn.microsoft.com/library/windows/apps/Hh453271) control and uses it to output a greeting to the `greetingOutput` **div** element that you created in the last section.
 
-### Utilisation d’événements qui fonctionnent pour les entrées tactiles et effectuées à l’aide de la souris et du stylet
+### <a name="using-events-that-work-for-touch-mouse-and-pen-input"></a>Using events that work for touch, mouse, and pen input
 
-Dans une application UWP, vous n’avez pas besoin de vous inquiéter des différences entre les entrées tactiles, les entrées effectuées à l’aide de la souris et les autres formes d’entrée de pointeur. Vous pouvez simplement utiliser les événements que vous connaissez, comme [click](https://msdn.microsoft.com/library/windows/apps/Hh441312), qui fonctionnent pour toutes les formes d’entrée.
+In a UWP app, you don’t need to worry about the differences between touch, mouse, and other forms of pointer input. You can just use events that you know, like [click](https://msdn.microsoft.com/library/windows/apps/Hh441312), and they work for all forms of input.
 
-**Conseil** Votre application peut également utiliser les nouveaux événements *MSPointer\** et *MSGesture\**, qui fonctionnent pour les entrées tactiles et les entrées effectuées à l’aide de la souris et du stylet. Ils peuvent également fournir des informations supplémentaires sur l’appareil qui a déclenché l’événement. Pour plus d’informations, voir [Réponse à l’interaction utilisateur](https://msdn.microsoft.com/library/windows/apps/Hh700412) et [Mouvements, manipulations et interactions](https://msdn.microsoft.com/library/windows/apps/Hh761498).
+**Tip**   Your app can also use the new *MSPointer\** and *MSGesture\** events, which work for touch, mouse, and pen input and can provide additional info about the device that triggered the event. For more info, see [Responding to user interaction](https://msdn.microsoft.com/library/windows/apps/Hh700412) and [Gestures, manipulations, and interactions](https://msdn.microsoft.com/library/windows/apps/Hh761498).
 
-Poursuivons en créant le gestionnaire d’événements.
+Let's go ahead and create the event handler.
 
-**Créer le gestionnaire d’événements**
+**Create the event handler**
 
-1.  Dans main.js, après le gestionnaire d’événements [**app.oncheckpoint**](https://msdn.microsoft.com/library/windows/apps/BR229839) et avant l’appel à [**app.start**](https://msdn.microsoft.com/library/windows/apps/BR229705), créez une fonction de gestionnaire d’événements [**click**](https://msdn.microsoft.com/library/windows/apps/Hh441312) nommée `buttonClickHandler` qui prend un paramètre unique nommé `eventInfo`.
+1.  In main.js, after the [**app.oncheckpoint**](https://msdn.microsoft.com/library/windows/apps/BR229839) event handler and before the call to [**app.start**](https://msdn.microsoft.com/library/windows/apps/BR229705), create a [**click**](https://msdn.microsoft.com/library/windows/apps/Hh441312) event handler function named `buttonClickHandler` that takes a single parameter named `eventInfo`.
 ```javascript
     function buttonClickHandler(eventInfo) {
 
         }
 ```
 
-2.  À l’intérieur de notre gestionnaire d’événements, récupérez le nom de l’utilisateur à partir du contrôle [**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) `nameInput` et servez-vous en pour créer une salutation. Utilisez le contrôle [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) `greetingOutput` pour afficher le résultat.
+2.  Inside our event handler, retrieve the user's name from the `nameInput` [**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) control and use it to create a greeting. Use the `greetingOutput` [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) to display the result.
 ```javascript
     function buttonClickHandler(eventInfo) {
             var userName = document.getElementById("nameInput").value;
@@ -287,25 +286,25 @@ Poursuivons en créant le gestionnaire d’événements.
         }
  ```
 
-Vous avez ajouté votre gestionnaire d’événements à main.js. Vous devez à présent l’inscrire.
+You added your event handler to main.js. Now you need to register it.
 
-## Étape 5 : inscrire le gestionnaire d’événements au lancement de votre application
-
-
-Il ne vous reste plus qu’à inscrire le gestionnaire d’événements avec le bouton. Pour inscrire un gestionnaire d’événements, nous vous recommandons d’appeler [addEventListener](https://msdn.microsoft.com/library/windows/apps/Hh441145) à partir de notre code. Il est tout indiqué de le faire lors de l’activation de l’application. Heureusement, Visual Studio a généré du code automatiquement dans notre fichier main.js chargé de gérer l’activation de notre application.
+## <a name="step-5-register-the-event-handler-when-your-app-launches"></a>Step 5: Register the event handler when your app launches
 
 
-À l’intérieur du gestionnaire [onactivated](https://msdn.microsoft.com/library/windows/apps/BR212679), le code vérifie le type d’activation qui s’est produit. Il existe différents types d’activation. Par exemple, votre application est activée lorsque l’utilisateur lance votre application et lorsqu’il cherche à ouvrir un fichier associé à votre application. (Pour plus d’informations, consultez [Cycle de vie de l’application](https://msdn.microsoft.com/library/windows/apps/Mt243287).)
+The only thing we need to do now is register the event handler with the button. The recommended way to register an event handler is to call [addEventListener](https://msdn.microsoft.com/library/windows/apps/Hh441145) from our code. A good place to register the event handler is when our app is activated. Fortunately, as you saw Visual Studio generated some code for us in our main.js file that handles our app's activation.
 
-Celui qui nous intéresse est l’activation [launch](https://msdn.microsoft.com/library/windows/apps/BR224693). Le *lancement* d’une application intervient chaque fois qu’un utilisateur active l’application alors qu’elle n’est pas en cours d’exécution. L’appel à [WinJS.UI.processAll](https://msdn.microsoft.com/library/windows/apps/Hh440975) se produit systématiquement, que l’application ait été arrêtée antérieurement ou qu’il s’agisse de son tout premier lancement. **WinJS.UI.processAll** est incorporé dans un appel à la méthode [setPromise](https://msdn.microsoft.com/library/windows/apps/JJ215609) chargée de maintenir l’écran de démarrage affiché jusqu’à ce que la page de l’application soit prête.
 
-**Conseil** La fonction **WinJS.UI.processAll** analyse le fichier default.html à la recherche de contrôles WinJS et les initialise. Jusqu’ici, nous n’avons ajouté aucun de ces contrôles, mais il est judicieux de conserver ce code au cas où vous voudriez en ajouter par la suite.
+Inside the [onactivated](https://msdn.microsoft.com/library/windows/apps/BR212679) handler, the code checks to see what type of activation occurred. There are many different types of activations. For example, your app is activated when the user launches your app and when the user wants to open a file that is associated with your app. (For more info, see [App lifecycle](https://msdn.microsoft.com/library/windows/apps/Mt243287).)
 
-L’inscription de gestionnaires d’événements pour des contrôles autres que les contrôles WinJS se fera, de préférence, juste après l’appel à **WinJS.UI.processAll**.
+We're interested in the [launch](https://msdn.microsoft.com/library/windows/apps/BR224693) activation. An app is *launched* whenever it is not running and then a user activates it. It calls [WinJS.UI.processAll](https://msdn.microsoft.com/library/windows/apps/Hh440975) regardless of whether the app had been shut down in the past or whether this is the very first time it's being launched. The **WinJS.UI.processAll** is enclosed in a call to the [setPromise](https://msdn.microsoft.com/library/windows/apps/JJ215609) method, which makes sure the splash screen isn't taken down until the app's page is ready.
 
-**Inscrire votre gestionnaire d’événements**
+**Tip**   The **WinJS.UI.processAll** function scans your default.html file for WinJS controls and initializes them. So far, we haven't added any of these controls, but it's a good idea to leave this code in case you want to add them later.
 
--   Dans le gestionnaire d’événements [**onactivated**](https://msdn.microsoft.com/library/windows/apps/BR212679) du fichier main.js, récupérez `helloButton` et utilisez [**addEventListener**](https://msdn.microsoft.com/library/windows/apps/Hh441145) pour inscrire le gestionnaire d’événements pour l’événement [**click**](https://msdn.microsoft.com/library/windows/apps/Hh441312). Ajoutez ce code après l’appel à [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975).
+A good place to register event handlers for non-WinJS controls is just after the call to **WinJS.UI.processAll**.
+
+**Register your event handler**
+
+-   In the [**onactivated**](https://msdn.microsoft.com/library/windows/apps/BR212679) event handler in main.js, retrieve `helloButton` and use [**addEventListener**](https://msdn.microsoft.com/library/windows/apps/Hh441145) to register our event handler for the [**click**](https://msdn.microsoft.com/library/windows/apps/Hh441312) event. Add this code after the call to [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975).
 
 ```javascript
    app.onactivated = function (args) {
@@ -323,20 +322,20 @@ L’inscription de gestionnaires d’événements pour des contrôles autres que
 
 
 
-Exécutez l’application. Lorsque vous entrez votre nom dans la zone de texte et que vous cliquez sur le bouton, l’application affiche alors un message de salutations personnalisé.
+Run the app. When you enter your name in the text box and click the button, the app displays a personalized greeting.
 
-**Remarque** Si vous êtes curieux de savoir pourquoi nous utilisons [addEventListener](https://msdn.microsoft.com/library/windows/apps/Hh441145) pour inscrire l’événement dans le code au lieu de définir l’événement [onclick](https://msdn.microsoft.com/library/windows/apps/Hh441312) dans le code HTML, consultez [Codage d’applications de base](https://msdn.microsoft.com/library/windows/apps/Hh780660) pour une explication détaillée.
+**Note**   If you're curious as to why we use [addEventListener](https://msdn.microsoft.com/library/windows/apps/Hh441145) to register our event in code rather than setting the [onclick](https://msdn.microsoft.com/library/windows/apps/Hh441312) event in our HTML, see [Coding basic apps](https://msdn.microsoft.com/library/windows/apps/Hh780660) for a detailed explanation.
 
-## Étape6: ajouter un contrôle de bibliothèque Windows pour JavaScript
+## <a name="step-6-add-a-windows-library-for-javascript-control"></a>Step 6: Add a Windows Library for JavaScript control
 
 
-En plus des contrôles HTML standard, votre application peut utiliser tout contrôle de la [bibliothèque Windows pour JavaScript](https://msdn.microsoft.com/library/windows/apps/BR229782), tels que [WinJS.UI.DatePicker](https://msdn.microsoft.com/library/windows/apps/BR211681), [WinJS.UI.FlipView](https://msdn.microsoft.com/library/windows/apps/BR211711), [WinjS.UI.ListView](https://msdn.microsoft.com/library/windows/apps/BR211837) et [WinJS.UI.Rating](https://msdn.microsoft.com/library/windows/apps/BR211895).
+In addition to standard HTML controls, your app can use any of the controls in the [Windows Library for JavaScript](https://msdn.microsoft.com/library/windows/apps/BR229782), such as the [WinJS.UI.DatePicker](https://msdn.microsoft.com/library/windows/apps/BR211681), [WinJS.UI.FlipView](https://msdn.microsoft.com/library/windows/apps/BR211711), [WinjS.UI.ListView](https://msdn.microsoft.com/library/windows/apps/BR211837), and [WinJS.UI.Rating](https://msdn.microsoft.com/library/windows/apps/BR211895) controls.
 
-À la différence des contrôles HTML, les contrôles WinJS ne possèdent pas d’éléments de balisage dédiés: vous ne pouvez pas créer de contrôle [Rating](https://msdn.microsoft.com/library/windows/apps/BR211895) en ajoutant un élément `<rating />`, par exemple. Pour ajouter un contrôle WinJS, créez un élément **div** et utilisez l’attribut [data-win-control](https://msdn.microsoft.com/library/windows/apps/Hh440969) pour spécifier le type de contrôle souhaité. Pour ajouter un contrôle **Rating**, affectez à l’attribut la valeur «WinJS.UI.Rating».
+Unlike HTML controls, WinJS controls don't have dedicated markup elements: you can't create a [Rating](https://msdn.microsoft.com/library/windows/apps/BR211895) control by adding a `<rating />` element, for example. To add a WinJS control, you create a **div** element and use the [data-win-control](https://msdn.microsoft.com/library/windows/apps/Hh440969) attribute to specify the type of control you want. To add a **Rating** control, you set the attribute to "WinJS.UI.Rating".
 
-**Ajoutons un contrôle Rating à votre application.**
+**Add a Rating control to your app.**
 
-1.  Dans votre fichier index.html, ajoutez un élément [label](https://msdn.microsoft.com/library/windows/apps/Hh453321) et un contrôle [Rating](https://msdn.microsoft.com/library/windows/apps/BR211895) après l’élément **div** `greetingOutput`.
+1.  In your index.html file, add a [label](https://msdn.microsoft.com/library/windows/apps/Hh453321) and a [Rating](https://msdn.microsoft.com/library/windows/apps/BR211895) control after the `greetingOutput` **div**.
 
 ```html
     <body class="win-type-body">
@@ -353,36 +352,36 @@ En plus des contrôles HTML standard, votre application peut utiliser tout contr
     </body>
 ```
 
-2.  Exécutez l’application sur l’ordinateur local. Notez le nouveau contrôle [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895).
+2.  Run the app on the local machine. Notice the new [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) control.
 
-   ![L’application Hello world! avec un contrôle de la bibliothèque Windows pour JavaScript](images/helloworld-4-winjs.png)
+   ![The Hello, world app, with a Windows Library for JavaScript control](images/helloworld-4-winjs.png)
 
-> Pour le chargement du contrôle **Rating**, votre page doit appeler [WinJS.UI.processAll](https://msdn.microsoft.com/library/windows/apps/Hh440975). Étant donné que notre application utilise l’un des modèles Visual Studio, votre main.js contient déjà un appel à **WinJS.UI.processAll**, comme décrit plus tôt, et vous n’avez donc pas à ajouter du code.
+> For the **Rating** to load, your page must call [WinJS.UI.processAll](https://msdn.microsoft.com/library/windows/apps/Hh440975). Because our app is using one of the Visual Studio templates, your main.js already includes a call to **WinJS.UI.processAll**, as described earlier, so you don't have to add any code.
 
-Pour l’instant, un clic sur le contrôle **Rating** ne fait que modifier l’évaluation, rien de plus. Utilisons un gestionnaire d’événements pour effectuer une action quand l’utilisateur modifie l’évaluation.
+Right now, clicking the **Rating** control changes the rating, but it doesn't do anything else. Let's use an event handler to do something when the user changes the rating.
 
-## Étape 7 : inscrire un gestionnaire d’événements pour un contrôle de la bibliothèque Windows pour JavaScript
+## <a name="step-7-register-an-event-handler-for-a-windows-library-for-javascript-control"></a>Step 7: Register an event handler for a Windows Library for JavaScript control
 
 
-L’inscription d’un gestionnaire d’événements pour un contrôle WinJS diffère quelque peu de l’inscription d’un gestionnaire d’événements pour un contrôle HTML standard. Nous avons mentionné plus tôt que le gestionnaire d’événements **onactivated** appelle la méthode **WinJS.UI.processAll** pour initialiser la bibliothèque WinJS dans votre balisage. L’appel à **WinJS.UI.processAll** est incorporé dans un appel à la méthode **setPromise**.
+Registering an event handler for a WinJS control is a little different than registering an event handler for a standard HTML control. Earlier, we mentioned that the **onactivated** event handler calls **WinJS.UI.processAll** method to initialize WinJS in your markup. The **WinJS.UI.processAll** call is enclosed in a call to the **setPromise** method, like this:
 
 ```javascript
             args.setPromise(WinJS.UI.processAll());           
 ```
 
-Si **Rating** était un contrôle HTML standard, vous pourriez ajouter votre gestionnaire d’événements après cet appel à **WinJS.UI.processAll**. Mais cela est un peu plus compliqué pour un contrôle WinJS comme **Rating**. Comme **WinJS.UI.processAll** crée le contrôle **Rating**, nous ne pouvons pas ajouter le gestionnaire d’événements à **Rating** tant que **WinJS.UI.processAll** n’a pas fini son traitement.
+If **Rating** was a standard HTML control, you could add your event handler after this call to **WinJS.UI.processAll**. But it's a little more complicated for a WinJS control like our **Rating**. Because **WinJS.UI.processAll** creates the **Rating** control for us, we can't add the event handler to **Rating** until after **WinJS.UI.processAll** has finished its processing.
 
-Si **WinJS.UI.processAll** était une méthode classique, nous pourrions inscrire le gestionnaire d’événements **Rating** juste après l’avoir appelée. La méthode **WinJS.UI.processAll** étant asynchrone, tout code qui la suit peut s’exécuter avant la fin de l’exécution de **WinJS.UI.processAll**. Alors, que faire? Nous utilisons un objet [Promise](https://msdn.microsoft.com/library/windows/apps/BR211867) pour recevoir une notification à la fin de l’exécution de **WinJS.UI.processAll**.
+If **WinJS.UI.processAll** were a typical method, we could register the **Rating** event handler right after we call it. But the **WinJS.UI.processAll** method is asynchronous, so any code that follows it might run before **WinJS.UI.processAll** completes. So, what do we do? We use a [Promise](https://msdn.microsoft.com/library/windows/apps/BR211867) object to receive notification when **WinJS.UI.processAll** completes.
 
-Comme toutes les méthodes WinJS asynchrones, **WinJS.UI.processAll** retourne un objet **Promise**. Un objet **Promise** est une «promesse» qu’un événement va se produire à l’avenir; lorsqu’il se produit, l’objet **Promise** est considéré comme ayant terminé.
+Like all asynchronous WinJS methods, **WinJS.UI.processAll** returns a **Promise** object. A **Promise** is a "promise" that something will happen in the future; when that thing happens, the **Promise** is said to have completed.
 
-Les objets [Promise](https://msdn.microsoft.com/library/windows/apps/BR211867) incluent une méthode [then](https://msdn.microsoft.com/library/windows/apps/BR229728) qui accepte une fonction «completed» comme paramètre. L’objet **Promise** appelle cette fonction lorsqu’il a terminé.
+[Promise](https://msdn.microsoft.com/library/windows/apps/BR211867) objects have a [then](https://msdn.microsoft.com/library/windows/apps/BR229728) method that takes a "completed" function as a parameter. The **Promise** calls this function when it completes.
 
-En ajoutant votre code à une fonction «completed» et en la passant à la méthode **then** de l’objet **Promise**, vous pouvez être sûr que votre code est exécuté à la fin de **WinJS.UI.processAll**.
+By adding your code to a "completed" function and passing it to the **Promise** object's **then** method, you can be sure your code executes after **WinJS.UI.processAll** is complete.
 
-**Générer la valeur d’évaluation que l’utilisateur sélectionne**
+**Output the rating value the user selects**
 
-1.  Dans votre fichier index.html, créez un élément [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) pour afficher la valeur d’évaluation et affectez-lui **l’id** «ratingOutput».
+1.  In your index.html file, create a [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) element to display the rating value and give it the **id** "ratingOutput".
 
 ```html
         <body class="win-type-body">
@@ -400,7 +399,7 @@ En ajoutant votre code à une fonction «completed» et en la passant à la mét
     </body>
 ```
 
-2.  Dans le fichier main.js, créez un gestionnaire d’événements pour l’événement [change](https://msdn.microsoft.com/library/windows/apps/BR211891) du contrôle **Rating** nommé `ratingChanged`. Le paramètre [eventInfo](https://msdn.microsoft.com/library/windows/apps/Hh465776) contient une propriété **detail.tentativeRating** qui fournit la nouvelle évaluation de l’utilisateur. Récupérez cette valeur et affichez-la dans l’élément **div** de sortie.
+2.  In our main.js file, create an event handler for the **Rating** control's [change](https://msdn.microsoft.com/library/windows/apps/BR211891) event named `ratingChanged`. The [eventInfo](https://msdn.microsoft.com/library/windows/apps/Hh465776) parameter contains a **detail.tentativeRating** property that provides the new user rating. Retrieve this value and display it in the output **div**.
 
 ```javascript
         function ratingChanged(eventInfo) {
@@ -410,7 +409,7 @@ En ajoutant votre code à une fonction «completed» et en la passant à la mét
         }
 ```
 
-3.  Mettez à jour le code dans le gestionnaire d’événements [onactivated](https://msdn.microsoft.com/library/windows/apps/BR212679) qui appelle [WinJS.UI.processAll](https://msdn.microsoft.com/library/windows/apps/Hh440975) en ajoutant un appel à la méthode [then](https://msdn.microsoft.com/library/windows/apps/BR229728) et en lui passant une fonction `completed`. Dans la fonction `completed`, récupérez l’élément `ratingControlDiv` qui héberge le contrôle [Rating](https://msdn.microsoft.com/library/windows/apps/BR211895). Utilisez ensuite la propriété [winControl](https://msdn.microsoft.com/library/windows/apps/Hh770814) pour récupérer le contrôle **Rating** réel. (Cet exemple définit la fonction `completed` en ligne.)
+3.  Update the code in the [onactivated](https://msdn.microsoft.com/library/windows/apps/BR212679) event handler that calls [WinJS.UI.processAll](https://msdn.microsoft.com/library/windows/apps/Hh440975) by adding a call to the [then](https://msdn.microsoft.com/library/windows/apps/BR229728) method and passing it a `completed` function. In the `completed` function, retrieve the `ratingControlDiv` element that hosts the [Rating](https://msdn.microsoft.com/library/windows/apps/BR211895) control. Then use the [winControl](https://msdn.microsoft.com/library/windows/apps/Hh770814) property to retrieve the actual **Rating** control. (This example defines the `completed` function inline.)
 
 ```javascript
            args.setPromise(WinJS.UI.processAll().then(function completed() {
@@ -427,9 +426,9 @@ En ajoutant votre code à une fonction «completed» et en la passant à la mét
                 }));
 ```
 
-4.  Même s’il est bien d’inscrire des gestionnaires d’événements pour les contrôles HTML après l’appel à [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975), il est également judicieux de les inscrire à l’intérieur de votre fonction `completed`. Pour simplifier, poursuivons en déplaçant toutes les inscriptions de gestionnaires d’événements à l’intérieur du gestionnaire d’événements [**then**](https://msdn.microsoft.com/library/windows/apps/BR229728).
+4.  While it's fine to register event handlers for HTML controls after the call to [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975), it's also OK to register them inside your `completed` function. For simplicity, let's go ahead and move all your event handler registrations inside the [**then**](https://msdn.microsoft.com/library/windows/apps/BR229728) event handler.
 
-    Voici le gestionnaire d’événements [**onactivated**](https://msdn.microsoft.com/library/windows/apps/BR212679) mis à jour:
+    Here's the updated [**onactivated**](https://msdn.microsoft.com/library/windows/apps/BR212679) event handler:
 
 ```javascript
     (function () {
@@ -488,14 +487,16 @@ En ajoutant votre code à une fonction «completed» et en la passant à la mét
 
     Run the app. When you select a rating value, it outputs the numeric value below the [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) control.
 
-![L’application Hello World terminée sur un PC](images/helloworld-5-winjs.png)
+![The completed Hello world app on a PC](images/helloworld-5-winjs.png)
 
-## Résumé
+## <a name="summary"></a>Summary
 
-Félicitations, vous avez créé votre première application pour Windows10 et l’UWP en JavaScript et HTML.
+Congratulations, you've created your first app for Windows 10 and the UWP using JavaScript and HTML!
+
+What's next? The [WinJS](https://developer.microsoft.com/en-us/windows/develop/winjs) docs will get you going with the Windows library for JavaScript.
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

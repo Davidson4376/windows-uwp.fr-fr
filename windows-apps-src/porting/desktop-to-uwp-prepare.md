@@ -1,67 +1,74 @@
 ---
 author: awkoren
-Description: "Cet article rappelle les points à connaître avant de convertir une application avec Desktop to UWP Bridge. Il est possible que vous n’ayez que peu à faire pour préparer votre application pour le processus de conversion."
+Description: This article lists things you need to know before converting your app with the Desktop to UWP Bridge. You may not need to do much to get your app ready for the conversion process.
 Search.Product: eADQiWindows 10XVcnh
-title: "Préparer votre application pour Desktop to UWP Bridge"
+title: Prepare your app for the Desktop to UWP Bridge
 translationtype: Human Translation
-ms.sourcegitcommit: 8429e6e21319a03fc2a0260c68223437b9aed02e
-ms.openlocfilehash: 4cf9c509be52a8b2c03cdaa9ac68b98ba49b7094
+ms.sourcegitcommit: f7a8b8d586983f42fe108cd8935ef084eb108e35
+ms.openlocfilehash: 81a2485d5be22dd392c21aaff281c1c9263883a9
 
 ---
 
-# Préparer une application pour la conversion avec Desktop Bridge
+# <a name="prepare-an-app-for-conversion-with-the-desktop-bridge"></a>Prepare an app for conversion with the Desktop Bridge
 
-Cet article rappelle les points à connaître avant de convertir une application avec Desktop to UWP Bridge. Il est possible que vous n’ayez que peu à faire pour préparer votre application pour le processus de conversion. Toutefois, si l’un des éléments ci-dessous s’applique à votre application, vous devez y remédier au préalable. N’oubliez pas que Windows Store gère le Gestionnaire de licences et les mises à jour automatiques pour vous, par conséquent, vous pouvez supprimer ces fonctionnalités de votre code de base.
+This article lists things you need to know before converting your app with the Desktop to UWP Bridge. You may not need to do much to get your app ready for the conversion process, but if any of the items below applies to your application, you need to address it before conversion. Remember that the Windows Store handles licensing and automatic updating for you, so you can remove those features from your codebase.
 
-+ __Votre application utilise une version de .NET antérieure à 4.6.1__. Seul .NET4.6.1 est pris en charge. Vous devez recibler votre application vers .NET4.6.1 avant la conversion. 
++ __Your app uses a version of .NET earlier than 4.6.1__. Only .NET 4.6.1 is supported. You must retarget your app to .NET 4.6.1 before converting. 
 
-+ __Votre application s’exécute toujours avec des privilèges élevés de sécurité__. Votre application a besoin de travailler lors de l’exécution en tant qu’utilisateur interactif. Les utilisateurs qui installent votre application depuis le Windows Store ne sont peut-être pas des administrateurs système. Par conséquent, exiger que votre application s’exécute avec élévation de privilèges signifie qu’elle ne s’exécutera pas correctement pour les utilisateurs standard.
++ __Your app always runs with elevated security privileges__. Your app needs to work while running as the interactive user. Users who install your app from the Windows Store may not be system administrators, so requiring your app to run elevated means that it won't run correctly for standard users.
 
-+ __Votre application nécessite un pilote en mode noyau ou un service Windows__. Le pont est approprié pour une application, mais il ne prend pas en charge un pilote en mode noyau ou un service Windows devant être exécutés sous un compte système. Au lieu d’un service Windows, utilisez une [tâche en arrière-plan](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task).
++ __Your app requires a kernel-mode driver or a Windows service__. The bridge is suitable for an app, but it does not support a kernel-mode driver or a Windows service that needs to run under a system account. Instead of a Windows service, use a [background task](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task).
 
-+ __Les modules de votre application sont chargés in-process sur les processus ne figurant pas dans votre package AppX__. Cela n’est pas autorisé, ce qui signifie que les extensions in-process, par exemple les [extensions d’environnement](https://msdn.microsoft.com/library/windows/desktop/dd758089.aspx), ne sont pas prises en charge. Mais si vous disposez de deux applications dans le même package, vous pouvez créer une communication entre processus entre elles.
++ __Your app's modules are loaded in-process to processes that are not in your AppX package__. This isn't permitted, which means that in-process extensions, like [shell extensions](https://msdn.microsoft.com/library/windows/desktop/dd758089.aspx), aren't supported. But if you have two apps in the same package, you can do inter-process communication between them.
 
-+ __Votre application appelle [SetDllDirectory](https://msdn.microsoft.com/library/windows/desktop/ms686203) ou [AddDllDirectory](https://msdn.microsoft.com/library/windows/desktop/hh310513)__. Ces fonctions ne sont actuellement pas prises en charge pour les applications converties. Nous travaillons sur l’ajout d’une prise en charge dans une version future. Pour contourner le problème, vous pouvez copier tous les fichiers.dll que vous localisiez à l’aide de ces fonctions vers la racine de votre package. 
++ __Your app calls [SetDllDirectory](https://msdn.microsoft.com/library/windows/desktop/ms686203) or [AddDllDirectory](https://msdn.microsoft.com/library/windows/desktop/hh310513)__. These functions are not currently supported for converted apps. We are working on adding support in a future release. As a workaround, you can copy any .dlls you were locating using these functions to your package root. 
 
-+ __Votre application utilise un ID de modèle utilisateur de l’application (AUMID) personnalisé__. Si votre processus appelle [SetCurrentProcessExplicitAppUserModelID](https://msdn.microsoft.com/library/windows/desktop/dd378422.aspx) pour définir son propre AUMID, il peut uniquement utiliser l’AUMID généré pour lui par l’environnement de modèle de l’application/du package AppX. Vous ne pouvez pas définir d’AUMID personnalisés.
++ __Your app uses a custom Application User Model ID (AUMID)__. If your process calls [SetCurrentProcessExplicitAppUserModelID](https://msdn.microsoft.com/library/windows/desktop/dd378422.aspx) to set its own AUMID, then it may only use the AUMID generated for it by the app model environment/AppX package. You can't define custom AUMIDs.
 
-+ __Votre application modifie la ruche du Registre HKEY_LOCAL_MACHINE (HKLM)__. Toute tentative par votre application de créer une clé HKLM ou d’en ouvrir une pour modification donnera lieu à une erreur d’accès refusé. N’oubliez pas que votre application dispose de sa propre vue privée virtualisée du Registre. La notion de ruche du Registre de l’utilisateur ou de l’ordinateur (la définition de HKLM) ne s’applique pas. Vous devez trouver un autre moyen d’obtenir ce pour quoi vous utilisiez HKLM, comme l’écriture sur HKEY_CURRENT_USER (HKCU) à la place.
++ __Your app modifies the HKEY_LOCAL_MACHINE (HKLM) registry hive__. Any attempt by your app to create an HKLM key, or to open one for modification, will result in an access-denied failure. Remember that your app has its own private virtualized view of the registry, so the notion of a user- and machine-wide registry hive (which is what HKLM is) does not apply. You will need to find another way of achieving what you were using HKLM for, like writing to HKEY_CURRENT_USER (HKCU) instead.
 
-+ __Votre application utilise une sous-clé de Registre ddeexec comme moyen de lancement d’une autre application__. Utilisez plutôt l’un des gestionnaires de verbe DelegateExecute tel que configuré par les différentes extensions activables* dans votre [manifeste du package de l’application](https://msdn.microsoft.com/library/windows/apps/br211474.aspx).
++ __Your app uses a ddeexec registry subkey as a means of launching another app__. Instead, use one of the DelegateExecute verb handlers as configured by the various Activatable* extensions in your [app package manifest](https://msdn.microsoft.com/library/windows/apps/br211474.aspx).
 
-+ __Votre application écrit dans le dossier AppData dans le but de partager des données avec une autre application__. Après la conversion, AppData est redirigé vers le magasin de données de l’application locale, qui est un magasin privé pour chaque application UWP. Utilisez un autre moyen de partager des données entre processus. Pour plus d’informations, voir [Stocker et récupérer des paramètres et autres données d’application](https://msdn.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data).
++ __Your app writes to the AppData folder with the intention of sharing data with another app__. After conversion, AppData is redirected to the local app data store, which is a private store for each UWP app. Use a different means of inter-process data sharing. For more info, see [Store and retrieve settings and other app data](https://msdn.microsoft.com/windows/uwp/app-settings/store-and-retrieve-app-data).
 
-+ __Votre application écrit dans le répertoire d’installation de votre application__. Par exemple, votre application écrit dans un fichier journal que vous avez placé dans le même répertoire que votre fichier exe. Cela n’est pas pris en charge; vous devez donc trouver un autre emplacement, comme le magasin de données de l’application locale.
++ __Your app writes to the install directory for your app__. For example, your app writes to a log file that you put in the same directory as your exe. This isn't supported, so you'll need to find another location, like the local app data store.
 
-+ __L’installation de votre application requiert l’intervention de l’utilisateur__. Le programme d’installation de votre application doit être en mesure de s’exécuter en silence, et il doit installer tous les éléments requis qui ne sont pas disponibles par défaut sur une nouvelle image de système d’exploitation.
++ __Your app installation requires user interaction__. Your app installer must be able to run silently, and it must install all of its prerequisites that aren't on by default on a clean OS image.
 
-+ __Votre application utilise le répertoire de travail actuel__. Lors de l’exécution, votre application convertie ne dispose pas du même répertoire de travail que celui spécifié précédemment dans le raccourci .LNK sur votre bureau. Vous devez modifier votre répertoire de travail actuel lors de l’exécution si le fait de disposer du répertoire correct est important pour le bon fonctionnement de votre application.
++ __Your app uses the Current Working Directory__. At runtime, your converted app won't get the same Working Directory that you previously specified in your desktop .LNK shortcut. You need to change your CWD at runtime if having the correct directory is important for your app to function correctly.
 
-+ __Votre application requiert UIAccess__. Si votre application spécifie `UIAccess=true` dans l’élément `requestedExecutionLevel` du manifeste de contrôle de compte d’utilisateur, la conversion vers UWP n’est pas prise en charge actuellement. Pour plus d’informations, consultez [Vue d’ensemble de la sécurité UI Automation](https://msdn.microsoft.com/library/ms742884.aspx).
++ __Your app requires UIAccess__. If your application specifies `UIAccess=true` in the `requestedExecutionLevel` element of the UAC manifest, conversion to UWP isn't supported currently. For more info, see [UI Automation Security Overview](https://msdn.microsoft.com/library/ms742884.aspx).
 
-+ __Votre application expose des objets COM ou des assemblys GAC pour que ces derniers soient utilisés par d’autres processus__. Dans la version actuelle, votre application ne peut pas exposer des objets COM ou des assemblys GAC pour une utilisation par des processus issus de fichiers exécutables externes à votre package AppX. Les processus issus du package peuvent enregistrer et utiliser des objets COM et des assemblys GAC normalement, mais ceux-ci ne seront pas visibles en externe. Cela signifie que les scénarios d’interopération, comme OLE, ne fonctionneront pas si ces derniers sont appelés par des processus externes. 
++ __Your app exposes COM objects or GAC assemblies for use by other processes__. In the current release, your app cannot expose COM objects or GAC assemblies for use by processes originating from executables external to your AppX package. Processes from within the package can register and use COM objects and GAC assemblies as normal, but they will not be visible externally. This means interop scenarios like OLE will not function if invoked by external processes. 
 
-+ __Votre application lie des bibliothèques runtimeC d’une manière non prise en charge__. La bibliothèque runtime C/C++ Microsoft fournit des routines de programmation pour le système d’exploitation MicrosoftWindows. Ces routines automatisent de nombreuses tâches de programmation courantes qui ne sont pas fournies par les langages C et C++. Si votre application utilise la bibliothèque runtime C/C++, vous devez vous assurer que la liaison de celle-ci est prise en charge. 
++ __Your app is linking C runtime libraries (CRT) in an unsupported manner__. The Microsoft C/C++ runtime library provides routines for programming for the Microsoft Windows operating system. These routines automate many common programming tasks that are not provided by the C and C++ languages. If your app utilizes C/C++ runtime library, you need to ensure it is linked in a supported manner. 
     
-    VisualStudio2015 prend en charge à la fois la liaison dynamique (pour que votre code puisse utiliser des fichiers DLL courants) et la liaison statique (pour lier la bibliothèque directement dans votre code) à la version actuelle du CRT. Si possible, nous vous recommandons d’utiliser la liaison dynamique avec VisualStudio2015 pour votre application. 
+    Visual Studio 2015 supports both dynamic linking, to let your code use common DLL files, or static linking, to link the library directly into your code, to the current version of the CRT. If possible, we recommend your app use dynamic linking with VS 2015. 
 
-    La prise en charge des versions antérieures de VisualStudio peut varier. Pour plus d’informations, voir le tableau suivant: 
+    Support in previous versions of Visual Studio varies. See the following table for details: 
 
     <table>
-    <th>Version de VisualStudio</td><th>Liaison dynamique</th><th>Liaison statique</th></th>
-    <tr><td>2005 (VC8)</td><td>Non pris en charge</td><td>Pris en charge</td>
-    <tr><td>2008 (VC9)</td><td>Non pris en charge</td><td>Pris en charge</td>
-    <tr><td>2010 (VC10)</td><td>Pris en charge</td><td>Pris en charge</td>
-    <tr><td>2012 (VC11)</td><td>Prise en charge</td><td>Non pris en charge</td>
-    <tr><td>2013 (VC12)</td><td>Prise en charge</td><td>Non pris en charge</td>
-    <tr><td>2015 (VC14)</td><td>Pris en charge</td><td>Pris en charge</td>
+    <th>Visual Studio version</td><th>Dynamic linking</th><th>Static linking</th></th>
+    <tr><td>2005 (VC 8)</td><td>Not supported</td><td>Supported</td>
+    <tr><td>2008 (VC 9)</td><td>Not supported</td><td>Supported</td>
+    <tr><td>2010 (VC 10)</td><td>Supported</td><td>Supported</td>
+    <tr><td>2012 (VC 11)</td><td>Supported</td><td>Not supported</td>
+    <tr><td>2013 (VC 12)</td><td>Supported</td><td>Not supported</td>
+    <tr><td>2015 (VC 14)</td><td>Supported</td><td>Supported</td>
     </table>
     
-    Remarque: dans tous les cas, vous devez créer une liaison vers la toute dernière version de CRT disponible publiquement.
+    Note: In all cases, you must link to the latest publically available CRT.
 
-+ __Votre application installe et charge des assemblys à partir du dossier Windows côte-à-côte__. Par exemple, votre application utilise des bibliothèques runtimeC VC8 ou VC9 et les lie dynamiquement à partir du dossier Windows côte-à-côte, ce qui signifie que votre code utilise les fichiers DLL courants à partir d’un dossier partagé. Ceci n’est pas pris en charge. Vous devez les lier statiquement en créant un lien vers les fichiers de bibliothèque redistribuables directement dans votre code.
++ __Your app installs and loads assemblies from the Windows side-by-side folder__. For example, your app uses C runtime libraries VC8 or VC9 and is dynamically linking them from Windows side-by-side folder, meaning your code is using the common DLL files from a shared folder. This is not supported. You will need to statically link them by linking to the redistributable library files directly into your code.
+
++ __Your app uses a dependency in the System32/SysWOW64 folder__. To get these DLLs to work, you must include them in the virtual file system portion of you AppX package. This ensures that the app behaves as if the DLLs were installed in the **System32**/**SysWOW64** folder. In the root of the package, create a folder called **VFS**. Inside that folder create a **SystemX64** and **SystemX86** folder. Then, place the 32-bit version of your DLL in the **SystemX86** folder, and place the 64-bit version in the **SystemX64** folder.
+
++ __Your app uses the Dev11 VCLibs framework package__. The VCLibs 11 libraries can be directly installed from the Windows Store if they are defined as a dependency in the AppX package. To do this, make the following change to your app package manifest: Under the `<Dependencies>` node, add:  
+`<PackageDependency Name="Microsoft.VCLibs.110.00.UWPDesktop" MinVersion="11.0.24217.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />`  
+During installation from the Windows Store, the appropriate version (x86 or x64) of the VCLibs 11 framework will get installed prior to the installation of the app.  
+The dependencies will not get installed if the app is installed by sideloading. To install the dependencies manually on your machine, you must download and install the [VC 11.0 framework packages for Desktop Bridge](https://www.microsoft.com/download/details.aspx?id=53340&WT.mc_id=DX_MVP4025064). For more information on these scenarios, see [Using Visual C++ Runtime in Centennial project](https://blogs.msdn.microsoft.com/vcblog/2016/07/07/using-visual-c-runtime-in-centennial-project/).
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

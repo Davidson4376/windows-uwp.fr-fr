@@ -1,25 +1,25 @@
 ---
 author: awkoren
-Description: Montre comment convertir manuellement une application de bureau Windows (Win32, WPF, Windows Forms) en une application de plateforme Windows universelle (UWP).
+Description: Shows how to manually convert a Windows desktop application (like Win32, WPF, and Windows Forms) to a Universal Windows Platform (UWP) app.
 Search.Product: eADQiWindows 10XVcnh
-title: Convertir manuellement une application de bureau Windows en application UWP
+title: Manually convert a Windows desktop application to a Universal Windows Platform (UWP) app
 translationtype: Human Translation
-ms.sourcegitcommit: fe96945759739e9260d0cdfc501e3e59fb915b1e
-ms.openlocfilehash: 6ca48fd829b7437fe2db8aa1251f6ed8976919ab
+ms.sourcegitcommit: ee697323af75f13c0d36914f65ba70f544d046ff
+ms.openlocfilehash: f55f3bd6479cdf076c51cf574b07bfb5ce3a805c
 
 ---
 
-# Convertir manuellement votre application en application UWP à l’aide de Desktop Bridge
+# <a name="manually-convert-your-app-to-uwp-using-the-desktop-bridge"></a>Manually convert your app to UWP using the Desktop Bridge
 
-L’utilisation de Desktop App Converter (DAC) est pratique et automatique; celui-ci est très utile en cas d’incertitude sur ce que fait votre programme d’installation. Toutefois, si votre application est installée à l’aide de xcopy, ou si vous connaissez les modifications que le programme d’installation de votre application apporte au système, vous pouvez choisir de créer manuellement un package d’application et un manifeste.
+Using the [Desktop App Converter (DAC)](desktop-to-uwp-run-desktop-app-converter.md) is convenient and automatic, and it's useful if there's any uncertainty about what your installer does. But if your app is installed by using xcopy, or if you're familiar with the changes that your app's installer makes to the system, you may want to create an app package and manifest manually. This article contains the steps for getting started. It also explains how to add unplated assets to your app, which is not covered by the DAC. 
 
-Voici la procédure pour créer un package manuellement:
+Here's how to get started:
 
-## Créer un manifeste manuellement
+## <a name="create-a-manifest-by-hand"></a>Create a manifest by hand
 
-Votre fichier _appxmanifest.xml_ doit présenter le contenu suivant (au minimum). Modifiez les espaces réservés mis en forme comme \*\*\*CECI\*\*\* en valeurs réelles pour votre application.
+Your _appxmanifest.xml_ file needs to have the following content (at the minimum). Change placeholders that are formatted like \*\*\*THIS\*\*\* to actual values for your application.
 
-    ```XML
+```XML
     <?xml version="1.0" encoding="utf-8"?>
     <Package
        xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
@@ -55,15 +55,31 @@ Votre fichier _appxmanifest.xml_ doit présenter le contenu suivant (au minimum)
         </Application>
       </Applications>
     </Package>
-    ```
+```
 
-## Exécutez l’outil MakeAppX.
+## <a name="add-unplated-assets"></a>Add unplated assets
 
-Utilisez l’[outil de création de package de l’application (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx) pour générer un AppX pour votre projet. MakeAppx.exe est inclus dans le SDK Windows10. 
+Here's how to configure the 44x44 assets for your app that show up on the taskbar.
 
-Pour exécuter MakeAppx, assurez-vous d’abord que vous avez créé un fichier manifeste, tel que décrit ci-dessus. 
+1. Obtain the correct 44x44 images and copy them into the folder that contains your images (i.e., Assets).
 
-Ensuite, créez un fichier de mappage. Le fichier doit commencer par **[Files]**, puis répertorier chacun de vos fichiers sources sur le disque, suivis de leur chemin de destination dans le package. Voici un exemple: 
+2. For each 44x44 image, create a copy in the same folder and append *.targetsize-44_altform-unplated* to the file name. You should have two copies of each icon, each named in a specific way. For example, after completing the process, your assets folder might contain *MYAPP_44x44.png* and *MYAPP_44x44.targetsize-44_altform-unplated.png* (note: the former is the icon referenced in the appxmanifest under VisualElements attribute *Square44x44Logo*). 
+
+3.  In the AppXManifest, set the BackgroundColor for every icon you are fixing to transparent. This attribute can be found under VisualElements for each application.
+
+4.  Open CMD, change directory to the package's root folder, and create a priconfig.xml file by running the command ```makepri createconfig /cf priconfig.xml /dq en-US```.
+
+5.  Using CMD, staying in the package’s root folder, create the resources.pri file(s) using the command ```makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml```. For example, the command for your app might look like ```makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml```. 
+
+6.  Package your AppX using the instructions in the next step to see the results.
+
+## <a name="run-the-makeappx-tool"></a>Run the MakeAppX tool
+
+Use the [App packager (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx) to generate an AppX for your project. MakeAppx.exe is included with the Windows 10 SDK. 
+
+To run MakeAppx, first ensure you've created an manifest file as described above. 
+
+Next, create a mapping file. The file should start with **[Files]**, then list each of your source files on disk followed by their destination path in the package. Here's an example: 
 
 ```
 [Files]
@@ -73,17 +89,17 @@ Ensuite, créez un fichier de mappage. Le fichier doit commencer par **[Files]**
 "MyCustomManifest.xml"       "AppxManifest.xml"
 ```
 
-Enfin, exécutez la commande suivante: 
+Finally, run the following command: 
 
 ```cmd
 MakeAppx.exe pack /f mapping_filepath /p filepath.appx
 ```
 
-## Signer votre package AppX
+## <a name="sign-your-appx-package"></a>Sign your AppX package
 
-L’applet de commande Add-AppxPackage nécessite que le package d’application (.appx) déployé soit signé. Utilisez [SignTool.exe](https://msdn.microsoft.com/library/windows/desktop/aa387764(v=vs.85).aspx), fourni dans le SDK Microsoft Windows10 pour signer le package .appx.
+The Add-AppxPackage cmdlet requires that the application package (.appx) being deployed must be signed. Use [SignTool.exe](https://msdn.microsoft.com/library/windows/desktop/aa387764(v=vs.85).aspx), which ships in the Microsoft Windows 10 SDK, to sign the .appx package.
 
-Exemple d’utilisation: 
+Example usage: 
 
 ```cmd
 C:\> MakeCert.exe -r -h 0 -n "CN=<publisher_name>" -eku 1.3.6.1.5.5.7.3.3 -pe -sv <my.pvk> <my.cer>
@@ -91,9 +107,9 @@ C:\> pvk2pfx.exe -pvk <my.pvk> -spc <my.cer> -pfx <my.pfx>
 C:\> signtool.exe sign -f <my.pfx> -fd SHA256 -v .\<outputAppX>.appx
 ```
 
-Lorsque vous exécutez MakeCert.exe et que vous êtes invité à entrer un mot de passe, sélectionnez **Aucun**. Pour plus d’informations sur les certificats et la signature, consultez les rubriques suivantes: 
+When you run MakeCert.exe and you're asked to enter a password, select **none**. For more info on certificates and signing, see the following: 
 
-- [Procédure: Créer des certificats temporaires à utiliser pendant le développement](https://msdn.microsoft.com/library/ms733813.aspx)
+- [How to: Create Temporary Certificates for Use During Development](https://msdn.microsoft.com/library/ms733813.aspx)
 
 - [SignTool](https://msdn.microsoft.com/library/windows/desktop/aa387764.aspx)
 
@@ -102,6 +118,6 @@ Lorsque vous exécutez MakeCert.exe et que vous êtes invité à entrer un mot d
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

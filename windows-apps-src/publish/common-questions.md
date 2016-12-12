@@ -1,66 +1,72 @@
 ---
 author: jnHs
-Description: "Questions courantes sur les campagnes de publicité"
-title: "Questions courantes sur les campagnes de publicité"
+Description: Common questions about ad campaigns
+title: Common questions about ad campaigns
 ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
 translationtype: Human Translation
-ms.sourcegitcommit: 3f0664e0387e206c432ce92aa221bb5c604bb675
-ms.openlocfilehash: 737ae16e7a6b0219730520f09ac4f79fe4da7a7f
+ms.sourcegitcommit: 584407ea0e0fee4ec74dac0b656db59b7f694391
+ms.openlocfilehash: ac18d3b036c1ec9290212097a0f9a0feb962d915
 
 ---
 
-# Questions courantes sur les campagnes de publicité
+# <a name="common-questions-about-ad-campaigns"></a>Common questions about ad campaigns
 
-## Combien coûte l’exécution d’une publicité pour mon application ?
+## <a name="how-much-does-it-cost-to-run-an-ad-for-my-app"></a>How much does it cost to run an ad for my app?
 
-Cela dépend de vous, mais n’oubliez pas : plus vous dépensez, plus le nombre de personnes qui voient votre publicité est important. Plus le nombre de personnes qui voient votre publicité est important, plus vous obtenez de clics et d’installations. Pour plus d’informations sur la création d’une campagne de publicité pour votre application, lisez [cet article](create-an-ad-campaign-for-your-app.md).
+It’s really up to you, but remember: the more you spend, the more people will see your ad. The more people see your ad, the more clicks and installs you should get. Take a look at [this article](create-an-ad-campaign-for-your-app.md) for information about creating an ad campaign for your app.
 
-## Puis-je exécuter des publicités pour l’une de mes applications dans mes autres applications?
+## <a name="how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign"></a>How can I increase the maximum monthly budget amount allowed for my ad campaign?
 
-Oui. C’est ce que nous appelons des *publicités maison*, et leur exécution est gratuite. Pour plus d’informations sur les publicités communautaires, lisez [cet article](about-house-ads.md).
+If you plan to spend more than $10,000 in a month on your ad campaigns, please contact [aiacare@microsoft.com](mailto:aiacare@microsoft.com). We will upgrade you to a premium account, which lets you spend up to $50,000 per campaign. A premium account also gives you additional capabilities, such as the ability to set campaign start and end dates and to specify a destination URL for your campaign.
 
-## Puis-je promouvoir mon application auprès d’applications émanant d’autres développeurs dans le Windows Store?
+## <a name="can-i-run-ads-for-one-of-my-apps-in-my-other-apps"></a>Can I run ads for one of my apps in my other apps?
 
-Oui. C’est ce que nous appelons des *annonces de la communauté*, et leur exécution est gratuite. Après avoir [accepté de participer aux annonces de la communauté](about-community-ads.md#how-to-opt-in-to-community-ads), vous pouvez [créer une campagne d’annonces de la communauté gratuite](create-an-ad-campaign-for-your-app.md); votre application partagera un espace publicitaire promotionnel avec d’autres développeurs ayant également accepté de participer aux annonces de la communauté. Pour plus d’informations, lisez [cet article](about-community-ads.md).
+Yes. We call these *house ads*, and you can run them free of charge. Check out [this article](about-house-ads.md) for more information about community ads.
 
-## Comment personnaliser ma publicité?
+## <a name="can-i-cross-promote-my-app-with-apps-from-other-developers-in-the-store"></a>Can I cross-promote my app with apps from other developers in the Store?
 
-Si vous utilisez un des modèles de publicité par défaut, vous pouvez choisir la taille, les images et couleur d’arrière-plan de votre publicité. Si vous le souhaitez, vous pouvez également ajouter un slogan personnalisé à votre publicité. Par ailleurs, vous pouvez charger vos propres conceptions d'annonces qui répondent à nos exigences. Pour plus d'informations, voir [Création d'une campagne de publicité pour votre application](create-an-ad-campaign-for-your-app.md).
+Yes. We call these *community ads*, and you can run them free of charge. After you [opt-in to community ads](about-community-ads.md#how-to-opt-in-to-community-ads), you can [create a free community ad campaign](create-an-ad-campaign-for-your-app.md) and your app will share promotional ad space with other developers who also opt in to community ads. Check out [this article](about-community-ads.md) for more information.
 
-## Où apparaît ma publicité ?
+## <a name="how-can-i-customize-my-ad"></a>How can I customize my ad?
 
-Votre publicité apparaît dans les applications qui utilisent la même évaluation de l'âge et la même version de système d'exploitation que votre application. Vous définissez ces propriétés lorsque vous publiez votre application dans le Windows Store.
+If you use one of the default ad templates, you can choose the size, imagery, and background color of your ad. You can also add a custom tag line to your ad if you want. Alternatively, you can upload your own ad designs that meet our requirements. For more information, see [Create an ad campaign for your app.](create-an-ad-campaign-for-your-app.md)
 
-Les campagnes de publicité sont actuellement prises en charge dans les pays et régions suivants :
+## <a name="where-will-my-ad-appear"></a>Where will my ad appear?
 
-Afrique du Sud, Algérie, Allemagne, Arabie saoudite, Argentine, Australie, Autriche, Bahamas, Bahreïn, Barbade, Belgique, Belize, Bolivie, Brésil, Canada, Chili, Chine, Colombie, Danemark, Égypte, El Salvador, Émirats arabes unis, Équateur, Espagne, États-Unis, Finlande, France, Guatemala, Haïti, Honduras, Hong Kong (R.A.S.), Inde, Indonésie, Irak, Irlande, Italie, Jamaïque, Jordanie, Koweït, Liban, Malaisie, Maroc, Mexique, Nicaragua, Norvège, Nouvelle-Zélande, Oman, Panama, Paraguay, Pays-Bas, Pérou, Philippines, Porto Rico, Qatar, République dominicaine, Royaume-Uni, Singapour, Suède, Suisse, Taïwan, Thaïlande, Trinité-et-Tobago, Tunisie, Uruguay, Venezuela, Vietnam.
+Your ad will appear in apps that share your app's age rating and OS version. You set these properties when you publish your app in the Windows Store.
 
-## Quelles langues sont prises en charge pour les campagnes de publicité ?
+Ad campaigns are currently supported in these countries and regions:
 
-Vous pouvez créer des campagnes de publicité dans les langues suivantes :
+Algeria, Argentina, Australia, Austria, Bahamas, Bahrain, Barbados, Belgium, Belize, Bolivia, Brazil, Canada, Chile, China, Colombia, Denmark, Dominican Republic, Ecuador, Egypt, El Salvador, Finland, France, Germany, Guatemala, Haiti, Honduras, Hong Kong SAR, India, Indonesia, Iraq, Ireland, Italy, Jamaica, Jordan, Kuwait, Lebanon, Malaysia, Mexico, Morocco, New Zealand, Netherlands, Nicaragua, Norway, Oman, Panama, Paraguay, Peru, Philippines, Puerto Rico, Qatar, Saudi Arabia, Singapore, Spain, South Africa, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Tunisia, United Arab Emirates, United Kingdom, United States, Uruguay, Venezuela, Vietnam.
 
-Allemand, anglais, arabe, chinois (simplifié), chinois (traditionnel), danois, espagnol, finnois, français, italien, néerlandais, norvégien, portugais (Brésil), portugais (Portugal), suédois.
+## <a name="what-languages-are-supported-for-ad-campaigns"></a>What languages are supported for ad campaigns?
 
-## Quand suis-je facturé ?
+You can create ad campaigns in the following languages:
 
-Vous êtes facturé chaque fois que votre compte atteint 50$ de frais (ou le montant équivalent dans la devise locale de votre marché ou région) pour l’ensemble des campagnes payantes de votre compte.
+Arabic, Chinese (Simplified), Chinese (Traditional), Danish, Dutch, English, Finnish, French, German, Italian, Norwegian, Portuguese (Brazil), Portuguese (Portugal), Spanish, Swedish.
 
-Si votre compte n’atteint pas 50$ de frais dans les 30jours suivant votre dernière facturation, ces frais vous seront facturés tôt dans le mois suivant. Cela permet de garantir que le solde courant de votre compte relatif aux frais de campagne de publicité ne dépasse pas les 30jours.
+## <a name="when-will-i-be-billed"></a>When will I be billed?
 
-## Comment supprimer une carte de crédit ou modifier les détails d’une carte de crédit ?
+You will be billed each time your account accrues $50 of charges (or the equivalent amount in the local currency of your market or region) for all paid campaigns for your account.
 
-Accédez à <http://commerce.microsoft.com>, ouvrez une session avec vos informations d’identification de compte Microsoft et apportez les modifications nécessaires.
+If your account accrues less than $50 of charges in the 30-day period after your last billing date, you will be billed for those charges early in the following month. This helps to ensure that your account doesn’t maintain a running balance of ad campaign charges for more than a month.
 
-## Rubriques connexes
+If you don’t want to wait to be billed, you can pay your bill immediately by selecting **Charge now** on the **Billing summary** page (**Promotions** > **Billing history**). Your payment method will be charged the amount listed under **Unbilled amount**.
 
-* [Création d’une campagne de publicité pour votre application](create-an-ad-campaign-for-your-app.md)
-* [Gestion de votre campagne de publicité](managing-your-ad-campaign.md)
-* [À propos des publicités maison](about-house-ads.md)
-* [À propos des annonces de la communauté](about-community-ads.md)
-* [Rapport de publicité sur l’installation d’applications](app-install-ads-reports.md)
+## <a name="how-do-i-delete-a-credit-card-or-edit-the-details-of-a-credit-card"></a>How do I delete a credit card or edit the details of a credit card?
+
+Go to <http://commerce.microsoft.com>, log in with your Microsoft account credentials, and make the necessary changes.
+
+## <a name="related-topics"></a>Related topics
+
+* [Create an ad campaign for your app](create-an-ad-campaign-for-your-app.md)
+* [Managing your ad campaign](managing-your-ad-campaign.md)
+* [About house ads](about-house-ads.md)
+* [About community ads](about-community-ads.md)
+* [App install ads report](app-install-ads-reports.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

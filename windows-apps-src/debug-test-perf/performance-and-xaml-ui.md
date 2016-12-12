@@ -1,41 +1,42 @@
 ---
 author: mcleblanc
 ms.assetid: 64F7FC51-E8AC-4098-9C5F-0172E4724B5C
-title: Performances
-description: "Les utilisateurs attendent de leurs applications qu’elles soient réactives, conviviales et qu’elles ne déchargent pas la batterie."
+title: Performance
+description: Users expect their apps to remain responsive, to feel natural, and not to drain their battery.
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: f4589b187d05ae122839fab74d8086779847b120
+ms.sourcegitcommit: 73b19e54b863693aece045e5b653bc0583a676bb
+ms.openlocfilehash: b9395e80bca7a46076e20e42fa7ceee5df7cc0d5
 
 ---
-# Performances
+# <a name="performance"></a>Performance
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Les utilisateurs attendent de leurs applications qu’elles soient réactives, conviviales et qu’elles ne déchargent pas la batterie. Techniquement, la performance est une exigence non fonctionnelle mais le fait de considérer les performances comme une fonctionnalité vous aidera à répondre aux attentes de vos utilisateurs. La spécification des objectifs et la mesure sont des facteurs essentiels. Déterminez quels sont les scénarios pour lesquels les performances sont essentielles et définissez ce que vous entendez par bonnes performances. Effectuez ensuite des mesures précoces et régulières tout au long du cycle de vie de votre projet pour être sûr d’atteindre vos objectifs. Cette section vous montre comment organiser votre flux de travail de performances, corriger les problèmes d’animation et de fréquence d’images, et régler le temps de démarrage, la durée de navigation par page et l’utilisation de la mémoire.
+Users expect their apps to remain responsive, to feel natural, and not to drain their battery. Technically, performance is a non-functional requirement but treating performance as a feature will help you deliver on your users' expectations. Specifying goals, and measuring, are key factors. Determine what your performance-critical scenarios are; define what good performance mean. Then measure early and often enough throughout the lifecycle of your project to be confident you'll hit your goals.. This section shows you how to organize your performance workflow, fix animation glitches and frame rate problems, and tune your startup time, page navigation time, and memory usage.
 
-Si vous ne l’avez pas encore fait, nous vous conseillons de porter votre application vers Windows 10 ; vous devriez constater une amélioration significative des performances. Certaines optimisations XAML (par exemple, [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)) sont uniquement disponibles dans les applications Windows10. Voir [Portage d’applications vers Windows10](https://msdn.microsoft.com/library/windows/apps/Mt238321)et la session //build/ [Déplacement vers la plateforme Windows universelle](http://channel9.msdn.com/Events/Build/2015/3-741).
+If you haven't done so already, a step that we've seen result in significant performance improvements is just porting your app to target Windows 10. Several XAML optimizations (for example, [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)) are only available in Windows 10 apps. See [Porting apps to Windows 10](https://msdn.microsoft.com/library/windows/apps/Mt238321) and the //build/ session [Moving to the Universal Windows Platform](http://channel9.msdn.com/Events/Build/2015/3-741).
 
-| Rubrique | Description |
+| Topic | Description |
 |-------|-------------|
-| [Planification des performances](planning-and-measuring-performance.md) | Les utilisateurs attendent de leurs applications qu’elles soient réactives, conviviales et qu’elles ne déchargent pas la batterie. Techniquement, la performance est une exigence non fonctionnelle mais le fait de considérer les performances comme une fonctionnalité vous aidera à répondre aux attentes de vos utilisateurs. La spécification des objectifs et la mesure sont des facteurs essentiels. Déterminez quels sont les scénarios pour lesquels les performances sont essentielles et définissez ce que vous entendez par bonnes performances. Effectuez ensuite des mesures précoces et régulières tout au long du cycle de vie de votre projet pour être sûr d’atteindre vos objectifs. |
-| [Optimisation des options d’interface ListView et GridView](optimize-gridview-and-listview.md) | Améliorez les performances du contrôle [<strong>GridView</strong>](https://msdn.microsoft.com/library/windows/apps/BR242705) et le temps de démarrage à travers la virtualisation de l’interface utilisateur, la réduction des éléments et la mise à jour progressive des éléments. |
-| [Virtualisation des données ListView et GridView](listview-and-gridview-data-optimization.md) | Améliorez les performances du contrôle [<strong>GridView</strong>](https://msdn.microsoft.com/library/windows/apps/BR242705) et le temps de démarrage avec la virtualisation des données. |
-| [Améliorer les performances du nettoyage de la mémoire (garbage collection)](improve-garbage-collection-performance.md) | Les applications de plateforme Windows universelle (UWP) écrites en C# et Visual Basic bénéficient de la gestion automatique de la mémoire du récupérateur de mémoire .NET. Cette section résume les meilleures pratiques en termes de comportement et de performance du récupérateur de mémoire .NET pour les applications UWP. |
-| [Assurer la réactivité du thread de l’interface utilisateur](keep-the-ui-thread-responsive.md) | Les utilisateurs attendent de leurs applications qu’elles restent réactives pendant les opérations de calcul, et ce sur n’importe quel type d’ordinateur. Les implications sont différentes selon les applications. Pour certaines applications, cela implique de fournir des propriétés physiques plus réalistes, d’accélérer le chargement des données à partir d’un disque ou du Web, de représenter des scènes complexes et naviguer entre les pages plus vite, de trouver un itinéraire en un clin d’œil ou encore de traiter rapidement les données. Quel que soit le type de calcul effectué, les utilisateurs veulent que leur application continue de réagir à leurs interactions et qu’elle ne donne pas l’impression de ne plus répondre pendant l’opération de &quot;calcul&quot;. |
-| [Optimiser votre balisage XAML](optimize-xaml-loading.md) | L’analyse du balisage XAML pour la construction d’objets en mémoire est chronophage pour une interface utilisateur complexe. Voici quelques astuces pour améliorer l’analyse du balisage XAML ainsi que l’efficacité du temps de chargement et de la mémoire de votre application. | 
-| [Optimiser votre disposition XAML](optimize-your-xaml-layout.md) | La disposition peut s’avérer coûteuse pour l’application XAML, tant au niveau de l’utilisation du processeur que de la surcharge de la mémoire. Voici quelques mesures simples que vous pouvez entreprendre pour améliorer les performances de la disposition de votre application XAML. | 
-| [Conseils relatifs aux performances du langage de programmation et du modèle MVVM](mvvm-performance-tips.md) | Cette rubrique décrit certaines considérations en matière de performances liées à vos choix de modèles de conception de logiciel et de langage de programmation. |
-| [Meilleures pratiques en matière de performances lors du démarrage de votre application](best-practices-for-your-app-s-startup-performance.md) | Créez des applications UWP dont le temps de démarrage est optimal en améliorant la gestion du lancement et de l’activation. |
-| [Optimiser les animations, les éléments multimédias et les images](optimize-animations-and-media.md) | Créez des applications de plateforme Windows universelle (UWP) avec des animations fluides, une fréquence d’images élevée et une capture/lecture multimédia hautement performante. |
-| [Optimiser l’interruption/la reprise](optimize-suspend-resume.md) | Créez des applications UWP qui simplifient l’utilisation du système de gestion de la durée de vie des processus afin d’assurer une reprise efficace après une suspension ou un arrêt. |
-| [Optimiser l’accès aux fichiers](optimize-file-access.md) | Créez des applications UWP qui accèdent au système de fichiers efficacement, en évitant les problèmes de performances dus à la latence de disque et aux cycles de la mémoire et du processeur. |
-| [Composants Windows Runtime et optimisation de l’interopérabilité](windows-runtime-components-and-optimizing-interop.md) | Créez des applications UWP qui utilisent des composants UWP et l’interopérabilité entre les types natifs et managés, tout en évitant les problèmes de performance d’interopérabilité. |
-| [Outils de profilage et de performances](tools-for-profiling-and-performance.md) | Microsoft fournit plusieurs outils pour vous aider à améliorer les performances de votre application UWP.|
+| [Planning for performance](planning-and-measuring-performance.md) | Users expect their apps to remain responsive, to feel natural, and not to drain their battery. Technically, performance is a non-functional requirement but treating performance as a feature will help you deliver on your users' expectations. Specifying goals, and measuring, are key factors. Determine what your performance-critical scenarios are; define what good performance mean. Then measure early and often enough throughout the lifecycle of your project to be confident you'll hit your goals. |
+| [Optimize background activity](optimize-background-activity.md) | Create UWP apps that work with the system to use background tasks in a battery-efficient way. |
+| [ListView and GridView UI optimization](optimize-gridview-and-listview.md) | Improve [<strong>GridView</strong>](https://msdn.microsoft.com/library/windows/apps/BR242705) performance and startup time through UI virtualization, element reduction, and progressive updating of items. |
+| [ListView and GridView data virtualization](listview-and-gridview-data-optimization.md) | Improve [<strong>GridView</strong>](https://msdn.microsoft.com/library/windows/apps/BR242705) performance and startup time through data virtualization. |
+| [Improve garbage collection performance](improve-garbage-collection-performance.md) | Universal Windows Platform (UWP) apps written in C# and Visual Basic get automatic memory management from the .NET garbage collector. This section summarizes the behavior and performance best practices for the .NET garbage collector in UWP apps. |
+| [Keep the UI thread responsive](keep-the-ui-thread-responsive.md) | Users expect an app to remain responsive while it does computation, regardless of the type of machine. This means different things for different apps. For some, this translates to providing more realistic physics, loading data from disk or the web faster, quickly presenting complex scenes and navigating between pages, finding directions in a snap, or rapidly processing data. Regardless of the type of computation, users want their app to act on their input and eliminate instances where it appears unresponsive while it &quot;thinks&quot;. |
+| [Optimize your XAML markup](optimize-xaml-loading.md) | Parsing XAML markup to construct objects in memory is time-consuming for a complex UI. Here are some things you can do to improve XAML markup parse and load time and memory efficiency for your app. | 
+| [Optimize your XAML layout](optimize-your-xaml-layout.md) | Layout can be an expensive part of a XAML app—both in CPU usage and memory overhead. Here are some simple steps you can take to improve the layout performance of your XAML app. | 
+| [MVVM and language performance tips](mvvm-performance-tips.md) | This topic discusses some performance considerations related to your choice of software design patterns, and programming language. |
+| [Best practices for your app's startup performance](best-practices-for-your-app-s-startup-performance.md) | Create UWP apps with optimal startup times by improving the way you handle launch and activation. |
+| [Optimize animations, media, and images](optimize-animations-and-media.md) | Create Universal Windows Platform (UWP) apps with smooth animations, high frame rate, and high-performance media capture and playback. |
+| [Optimize suspend/resume](optimize-suspend-resume.md) | Create UWP apps that streamline their use of the process lifetime system to resume efficiently after suspension or termination. |
+| [Optimize file access](optimize-file-access.md) | Create UWP apps that access the file system efficiently, avoiding performance issues due to disk latency and memory/CPU cycles. |
+| [Windows Runtime Components and optimizing interop](windows-runtime-components-and-optimizing-interop.md) | Create UWP apps that use UWP Components and interop between native and managed types while avoiding interop performance issues. |
+| [Tools for profiling and performance](tools-for-profiling-and-performance.md) | Microsoft provides several tools to help you improve the performance of your UWP app.|
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

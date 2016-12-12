@@ -1,59 +1,59 @@
 ---
 author: mcleblanc
-description: "Nous vous recommandons vivement de lire ce guide de portage jusqu’à la fin, mais nous comprenons également que vous soyez impatient d’avancer et de passer à l’étape de développement et d’exécution de votre projet."
-title: "Résolution des problèmes de portage de Windows Runtime 8.x vers UWP"
+description: We highly recommend reading to the end of this porting guide, but we also understand that you&quot;re eager to forge ahead and get to the stage where your project builds and runs.
+title: Troubleshooting porting Windows Runtime 8.x to UWP&quot;
 ms.assetid: 1882b477-bb5d-4f29-ba99-b61096f45e50
 translationtype: Human Translation
-ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: a6901946f873b751515cb5d9805158e4b78b92bb
+ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
+ms.openlocfilehash: 6bb6035757c2629c5cbcc3e773703b4f659c5237
 
 ---
 
-# Résolution des problèmes de portage de Windows Runtime 8.x vers UWP
+# <a name="troubleshooting-porting-windows-runtime-8x-to-uwp"></a>Troubleshooting porting Windows Runtime 8.x to UWP
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Rubrique précédente : [Portage du projet](w8x-to-uwp-porting-to-a-uwp-project.md).
+The previous topic was [Porting the project](w8x-to-uwp-porting-to-a-uwp-project.md).
 
-Nous vous recommandons vivement de lire ce guide de portage jusqu’à la fin, mais nous comprenons également que vous soyez impatient d’avancer et de passer à l’étape de développement et d’exécution de votre projet. À cette fin, vous pouvez avancer provisoirement en commentant ou en remplaçant du code non essentiel, pour revenir ensuite afin de combler cette lacune ultérieurement. Le tableau de résolution des problèmes et des solutions de cette rubrique peuvent vous être utiles à ce stade, même s’il ne se substitue pas à la lecture des rubriques suivantes. Vous pouvez toujours revenir au tableau lorsque vous avancez dans les rubriques ultérieures.
+We highly recommend reading to the end of this porting guide, but we also understand that you're eager to forge ahead and get to the stage where your project builds and runs. To that end, you can make temporary progress by commenting or stubbing out any non-essential code, and then returning to pay off that debt later. The table of troubleshooting symptoms and remedies in this topic may be helpful to you at this stage, although it's not a substitute for reading the next few topics. You can always refer back to the table as you progress through the later topics.
 
-## Suivi des problèmes
+## <a name="tracking-down-issues"></a>Tracking down issues
 
-Les exceptions d’analyse XAML peuvent être difficiles à diagnostiquer, en particulier si l’exception ne présente aucun message d’erreur explicite. Assurez-vous que le débogueur est configuré pour intercepter les exceptions de première chance (pour essayer d’intercepter l’exception d’analyse le plus tôt possible). Vous pourrez peut-être inspecter la variable d’exception dans le débogueur pour déterminer si la valeur HRESULT ou le message comportent des informations utiles. Vérifiez également la fenêtre de sortie de VisualStudio pour voir si elle contient des messages d’erreur de l’analyseur XAML.
+XAML parse exceptions can be difficult to diagnose, particularly if there are no meaningful error messages within the exception. Make sure that the debugger is configured to catch first-chance exceptions (to try and catch the parsing exception early on). You may be able to inspect the exception variable in the debugger to determine whether the HRESULT or message has any useful information. Also, check Visual Studio's output window for error messages output by the XAML parser.
 
-Si votre application s’arrête et que tout ce vous savez, c’est qu’une exception non gérée a été levée pendant l’analyse du balisage XAML, ce peut être le résultat d’une référence à une ressource manquante (c’est-à-dire à une ressource dont la clé existe pour les applications 8.1 universelles, mais non pour les applications Windows 10, par exemple certaines clés système de style **TextBlock**). Il peut également s’agir d’une exception levée à l’intérieur d’un **UserControl**, d’un contrôle personnalisé ou d’un panneau de disposition personnalisé.
+If your app terminates and all you know is that an unhandled exception was thrown during XAML markup parsing, then that could be the result of a reference to a missing resource (that is, a resource whose key exists for Universal 8.1 apps but not for Windows 10 apps, such as some system **TextBlock** Style keys). Or it could be an exception thrown inside a **UserControl**, a custom control, or a custom layout panel.
 
-En dernier recours, vous pouvez effectuer un fractionnement binaire. Supprimez environ la moitié du balisage d’une page et réexécutez l’application. Vous saurez alors si l’erreur se situe quelque part dans la moitié que vous avez supprimée (que vous devez restaurer maintenant dans tous les cas) ou dans la partie que vous n’avez *pas* supprimée. Répétez ce processus en fractionnant la moitié qui contient l’erreur et ainsi de suite jusqu’à ce que vous ayez ciblé le problème.
+A last resort is a binary split. Remove about half of the markup from a Page and re-run the app. You will then know whether the error is somewhere inside the half you removed (which you should now restore in any case) or in the half you did *not* remove. Repeat the process by splitting the half that contains the error, and so on, until you've zeroed in on the issue.
 
-## TargetPlatformVersion
+## <a name="targetplatformversion"></a>TargetPlatformVersion
 
-Cette section explique comment procéder si, lorsque vous ouvrez un projet Windows10 dans Visual Studio, vous voyez apparaître le message suivant: «Mise à jour de Visual Studio requise. Un ou plusieurs projets nécessitent un Kit de développement de plate-forme <version> qui n’est pas installé ou qui est inclus comme élément d’une prochaine mise à jour de Visual Studio.»
+This section explains what to do if, on opening a Windows 10 project in Visual Studio, you see the message "Visual Studio update required. One or more projects require a platform SDK <version> that is either not installed or is included as part of a future update to Visual Studio."
 
--   Commencez par déterminer le numéro de version du Kit de développement logiciel (SDK) pour Windows10 que vous avez installé. Accédez à **C:\\Program Files (x86)\\Windows Kits\\10\\Include\\<versionfoldername>** et notez la valeur de *<versionfoldername>* à quatre éléments, « Major.Minor.Build.Revision ».
--   Ouvrez le fichier de votre projet à des fins de modification, puis recherchez les éléments `TargetPlatformVersion` et `TargetPlatformMinVersion`. Modifiez-les comme suit, en remplaçant *<versionfoldername>* par le numéro de version à quatre éléments que vous avez trouvé sur le disque :
+-   First, determine the version number of the SDK for Windows 10 that you have installed. Navigate to **C:\\Program Files (x86)\\Windows Kits\\10\\Include\\<versionfoldername>** and make a note of *<versionfoldername>*, which will be in quad notation, "Major.Minor.Build.Revision".
+-   Open your project file for edit and find the `TargetPlatformVersion` and `TargetPlatformMinVersion` elements. Edit them to look like this, replacing *<versionfoldername>* with the quad notation version number you found on disk:
 
 ```xml
    <TargetPlatformVersion><versionfoldername></TargetPlatformVersion>
     <TargetPlatformMinVersion><versionfoldername></TargetPlatformMinVersion>
 ```
 
-## Résolution des problèmes et solutions
+## <a name="troubleshooting-symptoms-and-remedies"></a>Troubleshooting symptoms and remedies
 
-Les informations sur les solutions contenues dans le tableau sont destinées à vous donner suffisamment d’informations pour débloquer votre situation. Vous trouverez d’autres détails sur chacun de ces problèmes en parcourant les rubriques suivantes.
+The remedy information in the table is intended to give you enough info to unblock yourself. You'll find further details about each of these issues as you read through later topics.
 
-| Symptôme | Solution |
+| Symptom | Remedy |
 |---------|--------|
-| En ouvrant un projet Windows10 dans Visual Studio, vous voyez apparaître le message suivant: «Mise à jour de Visual Studio requise. Un ou plusieurs projets nécessitent un Kit de développement de plate-forme &lt;version&gt; qui n’est pas installé ou qui est inclus comme élément d’une prochaine mise à jour de Visual Studio. » | Voir la section [TargetPlatformVersion](#targetplatformversion) dans cette rubrique. |
-| Une exception System.InvalidCastException est levée lorsque le paramètre InitializeComponent est appelé dans un fichier xaml.cs.| Cela peut se produire lorsque vous disposez de plusieurs fichiers xaml (dont l’un est qualifié pour MRT, au minimum) qui partagent le même fichier xaml.cs et que les éléments présentent des attributs x: Name qui ne correspondent pas d’un fichier xaml à l’autre. Essayez d’ajouter le même nom à ces éléments identiques dans les deux fichiers xaml, ou omettez complètement les noms. |
-| Lors de son exécution sur l’appareil, l’application est arrêtée, ou lors de son lancement à partir de VisualStudio, le message d’erreur «Impossible d’activer l’application du WindowsStore [...].» s’affiche. La demande d’activation a échoué avec l’erreur «Windows n’a pas pu communiquer avec l’application cible. Cela indique généralement que le processus de l’application cible a été abandonné. \[…\]». | Le problème peut être lié au code impératif en cours d’exécution dans vos propres pages ou dans les propriétés de liaison (ou d’autres types) lors de l’initialisation. Il peut également se produire lors de l’analyse du fichier XAML sur le point d’être affiché lorsque l’application est arrêtée (en cas de lancement dans Visual Studio, il s’agira de la page de démarrage). Recherchez les clés de ressources non valides ou essayez de suivre certaines des recommandations de la section «Suivi des problèmes» dans cette rubrique.|
-| L’analyseur ou le compilateur XAML (ou une exception runtime) indiquent l’erreur suivante : « *Impossible de résoudre la ressource « <resourcekey> ».* ». | La clé de ressource ne s’applique pas aux applications de plateforme Windows universelle (UWP) (c’est le cas pour certaines ressources WindowsPhone, par exemple). Recherchez la ressource équivalente appropriée et mettez votre balisage à jour. Les exemples que vous pouvez rencontrer immédiatement correspondent à des clés système, comme `PhoneAccentBrush`. |
-| Le compilateur C# indique l’erreur « *Le nom de type ou d’espace de noms « <name> » est introuvable \[...\]* » ou « *Le nom de type ou d’espace de noms « <name> » n’existe pas dans l’espace de noms \[...\]* » ou « *Le nom de type ou de l’espace de noms « <name> » n’existe pas dans le contexte actuel* ». | Cela signifie probablement que le type est implémenté dans un SDK d’extension (même si dans certains cas, la solution n’est pas aussi simple). Utilisez le contenu de référence des [API Windows](https://msdn.microsoft.com/library/windows/apps/bg124285) pour déterminer le SDK d’extension qui implémente l’API, puis la commande **Ajouter** > **Référence** de Visual Studio pour ajouter une référence à ce SDK dans votre projet. Si votre application cible l’ensemble d’API désigné sous le terme de famille d’appareils universels, vous devez impérativement utiliser la classe [**ApiInformation**](https://msdn.microsoft.com/library/windows/apps/dn949001) pour vérifier la présence du SDK d’extension lors de l’exécution avant de les appeler (on parle de « code adaptatif »). S’il existe une API universelle, elle sera toujours préférable à une API figurant dans un SDK d’extension. Pour plus d’informations, voir [Kits de développement logiciel (SDK) d’extension](w8x-to-uwp-porting-to-a-uwp-project.md#extension-sdks). |
+| On opening a Windows 10 project in Visual Studio, you see the message "Visual Studio update required. One or more projects require a platform SDK &lt;version&gt; that is either not installed or is included as part of a future update to Visual Studio." | See the [TargetPlatformVersion](#targetplatformversion) section in this topic. |
+| A System.InvalidCastException is thrown when InitializeComponent is called in a xaml.cs file.| This can happen when you have more than one xaml file (at least one of which is MRT-qualified) sharing the same xaml.cs file and elements have x:Name attributes that are inconsistent between the two xaml files. Try adding the same name to the same elements in both xaml files, or omit names altogether. |
+| When run on the device, the app terminates, or when launched from Visual Studio, you see the error “Unable to activate Windows Store app \[…\]. The activation request failed with error ‘Windows was unable to communicate with the target application. This usually indicates that the target application’s process aborted. \[…\]”. | The problem could be the imperative code running in your own Pages or in bound properties (or other types) during initialization. Or it could be happening while parsing the XAML file about to be displayed when the app terminated (if launching from Visual Studio, that will be the startup page). Look for invalid resource keys, and/or try some of the guidance in the "Tracking down issues" section in this topic.|
+| The XAML parser or compiler, or a runtime exception, gives the error "*The resource "<resourcekey>" could not be resolved.*". | The resource key doesn't apply to Universal Windows Platform (UWP) apps (this is the case with some Windows Phone resources, for example). Find the correct equivalent resource and update your markup. Examples you might encounter right away are system keys such as `PhoneAccentBrush`. |
+| The C# compiler gives the error "*The type or namespace name '<name>' could not be found \[...\]*" or "*The type or namespace name '<name>' does not exist in the namespace \[...\]*" or "*The type or namespace name '<name>' does not exist in the current context*". | This is likely to mean that type is implemented in an extension SDK (although there may be cases where the remedy is not so straightforward). Use the [Windows APIs](https://msdn.microsoft.com/library/windows/apps/bg124285) reference content to determine what extension SDK implements the API and then use Visual Studio's **Add** > **Reference** command to add a reference to that SDK to your project. If your app targets the set of APIs known as the universal device family then it's vital that you use the [**ApiInformation**](https://msdn.microsoft.com/library/windows/apps/dn949001) class to test at runtime for the presence of extension SDK before you call them (this is called adaptive code). If a universal API exists, then that's always preferable to an API in an extension SDK. For more info, see [Extension SDKs](w8x-to-uwp-porting-to-a-uwp-project.md). |
 
-Rubrique suivante : [Portage du balisage XAML et de la couche interface utilisateur](w8x-to-uwp-porting-xaml-and-ui.md).
-
-
+The next topic is [Porting XAML and UI](w8x-to-uwp-porting-xaml-and-ui.md).
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Dec16_HO1-->
 
 

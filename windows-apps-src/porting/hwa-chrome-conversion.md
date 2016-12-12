@@ -1,106 +1,106 @@
 ---
 author: seksenov
-title: "Apps web hébergées – Convertir votre application Chrome en app UWP"
-description: Convertissez votre application Chrome ou votre extension Chrome en application de plateforme Windows universelle (UWP) pour le Windows Store.
+title: Hosted Web Apps - Convert your Chrome app to a Universal Windows Platform app
+description: Convert your Chrome App or Chrome Extension in to a Universal Windows Platform (UWP) app for the Windows Store.
 kw: Package Chrome Extension for Windows Store tutorial, Port Chrome Extension to Windows 10, How to convert Chrome App to Windows, How to add Chrome Extension to Windows Store, hwa-cli, Hosted Web Apps Command Line Interface CLI Tool, Install Chrome Extension on Windows 10 Device, convert .crx to .AppX
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 7847f69c85708cb42b878253839b06929f837708
+ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
+ms.openlocfilehash: 84cdd12e2a38aafeb989c0f33b1212077dc1d98e
 
 ---
 
-# Convertir votre application Chrome existante en application de plateforme Windows universelle
+# <a name="convert-your-existing-chrome-app-to-a-universal-windows-platform-app"></a>Convert your existing Chrome app to a Universal Windows Platform app
 
-Nous avons simplifié la conversion de votre application hébergée Chrome existante en application exécutée sur la plateforme Windows universelle (UWP). Deux moyens s’offrent à vous pour convertir votre application Chrome:
+We have made it easy to convert your existing Chrome hosted app to an app running on the Universal Windows Platform (UWP). There are two ways to convert your Chrome app:
 
-- Option1: [ManifoldJS](http://manifoldjs.com/) accepte désormais les manifestes Chrome comme type d’entrée. 
+- Option #1: [ManifoldJS](http://manifoldjs.com/) now accepts Chrome manifests as a form of input. 
 
-- Option2: nous avons développé un [outil d’interface de ligne de commande](https://github.com/MicrosoftEdge/hwa-cli) qui génère un package `.appx` à partir de vos fichiers `.zip` ou `.crx` existants.
+- Option #2: We have developed a [CLI tool](https://github.com/MicrosoftEdge/hwa-cli) that generates an `.appx` package from your existing `.zip` or `.crx` files.
 
-## Convertir votre application Chrome existante à l’aide de l’interface de ligne de commande
+## <a name="convert-your-existing-chrome-app-using-the-command-line-interface"></a>Convert your existing Chrome app using the Command-Line Interface
 
-1. Installez [NodeJS](https://nodejs.org/en/) et son gestionnaire de packages [NPM](https://www.npmjs.com/). 
-
-
-2. Ouvrir une fenêtre d’invite de commandes dans le répertoire de votre choix
+1. Install [NodeJS](https://nodejs.org/en/) and it's package manager, [npm](https://www.npmjs.com/). 
 
 
-3. Installez l’interface de ligne de commande des applications web hébergées en entrant la commande suivante dans votre ligne de commande: `npm i -g hwa-cli`
+2. Open a command prompt window to the directory of your choice
 
-4. Convertissez votre package Chrome (`.crx` et `.zip` sont les formats de package pris en charge), en entrant la commande suivante dans votre ligne de commande: `hwa convert path/to/chrome/app.crx`, ou `hwa convert path/to/chrome/app.zip`
 
-    **Remplacez `path/to/chrome/app` par les informations du chemin menant à votre application Chrome.*
+3. Install Hosted Web Apps (HWA) Command Line Interface (CLI) by entering the following in your command line: `npm i -g hwa-cli`
+
+4. Convert your Chrome package (`.crx` and `.zip` are the supported package formats), by entering the following in your command line: `hwa convert path/to/chrome/app.crx` or `hwa convert path/to/chrome/app.zip`
+
+    **Replace `path/to/chrome/app` with the path information leading to your chrome app.*
     
-5. L’élément `.appx` généré apparaîtra dans le même dossier que votre package Chrome. Vous êtes désormais prêt à charger votre application dans le Windows Store. 
+5. The generated `.appx` will appear in the same folder as your Chrome package. You are now ready to upload your app to the Windows Store. 
 
-## Chargement de votre application dans le Windows Store
+## <a name="uploading-your-app-to-the-windows-store"></a>Uploading your app to the Windows Store
 
-Pour charger votre application, consultez le tableau de bord dans le [Centre de développement Windows](https://developer.microsoft.com/windows). Cliquez sur «[Créer une application](https://developer.microsoft.com/dashboard/Application/New)» et réservez le nom de votre application.
-![Réservation d’un nom dans le tableau de bord du Centre de développement Windows](images/hwa-to-uwp/reserve_a_name.png)
+To upload your app, visit the Dashboard in the [Windows Dev Center](https://developer.microsoft.com/windows). Click on "[Create a new app](https://developer.microsoft.com/dashboard/Application/New)" and and reserve your app name.
+![Windows Dev Center Dashboard Reserve a Name](images/hwa-to-uwp/reserve_a_name.png)
 
 
-Chargez votre package `AppX` en accédant à la page «Packages» dans la section Soumissions.
+Upload your `AppX` package by navigating to the "Packages" page in the Submissions section.
 
-Renseignez les invites du Windows Store.
+Fill out the Windows Store prompts.
 
     During the conversion process, you will be prompted for an Identity Name, Publisher Identity, and Publisher Display Name. To retrieve these values, visit the Dashboard in the [Windows Dev Center](https://developer.microsoft.com/windows).
     - Click on "[Create a new app](https://developer.microsoft.com/dashboard/Application/New)" and reserve your app name.
-![Réservation d’un nom dans le tableau de bord du Centre de développement Windows](images/hwa-to-uwp/reserve_a_name.png)
- Ensuite, cliquez sur «Identité de l’application» dans le menu situé à gauche, sous la section «Gestion des applications».
-    ![Identité de l’application dans le tableau de bord du Centre de développement Windows](images/hwa-to-uwp/app_identity.png)
- Vous devriez voir les trois valeurs que vous êtes invité à renseigner sur la page: 1. Nom d’identité: `Package/Identity/Name`
- 2. Identité de l’éditeur: `Package/Identity/Publisher`
- 3. Nom complet de l’éditeur: `Package/Properties/PublisherDisplayName`
+![Windows Dev Center Dashboard Reserve a Name](images/hwa-to-uwp/reserve_a_name.png)
+    - Next, click on "App identity" in the menu on the left under the "App management" section.
+    ![Windows Dev Center Dashboard App Identity](images/hwa-to-uwp/app_identity.png)
+    - You should see the three values for which you are prompted listed on the page: 1. Identity Name: `Package/Identity/Name`
+        2. Publisher Identity: `Package/Identity/Publisher`
+        3. Publisher Display Name: `Package/Properties/PublisherDisplayName`
 
 
-## Guide pour la migration de votre application web hébergée
+## <a name="guide-for-migrating-your-hosted-web-app"></a>Guide for migrating your Hosted Web App
 
-Après avoir créé le package de votre application web pour le Windows Store, personnalisez-le pour qu’il fonctionne de manière optimale sur tous les appareils Windows, notamment les PC, tablettes, téléphones, HoloLens, Surface Hub, Xbox et RaspberryPi.
+After packaging your web app for the Windows Store, customize it so that it works great across all Windows-based devices, including PCs, tablets, phones, HoloLens, Surface Hub, Xbox and Raspberry Pi.
 
-### Règles URI de contenu de l’application
+### <a name="application-content-uri-rules"></a>Application Content URI Rules
 
-Les [règles URI de contenu de l’application (ACUR)](/hwa-access-features.md#keep-your-app-secure-setting-application-content-uri-rules-acurs) ou les URI de contenu définissent la portée de votre application web hébergée par le biais d’une liste d’URL autorisées dans le manifeste du package de votre application. Afin de contrôler les communications vers et depuis du contenu distant, vous devez définir les URL incluses dans et/ou exclues de cette liste. Si un utilisateur clique sur une URL qui n’est pas explicitement incluse, Windows ouvre le chemin d’accès cible dans le navigateur par défaut. Avec les règles ACUR, vous êtes en mesure d’accorder un accès URL aux [API Windows universelles](https://msdn.microsoft.com/library/windows/apps/br211377.aspx).
+[Application Content URI Rules (ACURs)](/hwa-access-features.md) or Content URIs define the scope of your Hosted Web App through a URL allow list in your app package manifest. In order to control the communication to and from remote content, you must define which URLs are included in, and/or excluded from, this list. If a user clicks a URL that is not explicitly included, Windows will open the target path in the default browser. With ACURs, you are also able to grant a URL access to [Universal Windows APIs](https://msdn.microsoft.com/library/windows/apps/br211377.aspx).
 
-Vos règles doivent, au minimum, inclure la page de démarrage de votre application. L’outil de conversion créera automatiquement un ensemble de règles ACUR pour vous, en fonction de votre page de démarrage et de son domaine. Toutefois, en cas de redirection par programme, que ce soit sur le serveur ou sur le client, ces destinations devront être ajoutées à la liste autorisée.
+At the very minimum, your rules should include your app’s start page. The conversion tool will automatically create a set of ACURs for you, based on your start page and its domain. However, if there are any programmatic redirects, whether on the server or on the client, those destinations will need to be added to the allow list.
 
-*Remarque: les règles ACUR s’appliquent uniquement à la navigation entre les pages. Les images, bibliothèques JavaScript et autres ressources similaires ne sont pas affectées par ces restrictions.*
+*Note: ACURs only apply to page navigation. Images, JavaScript libraries, and other similar assets are not affected by these restrictions.*
 
-De nombreuses applications utilisent des sites tiers pour leurs flux de connexion, par exemple, Facebook et Google. L’outil de conversion créera automatiquement un ensemble de règles ACUR pour vous, en fonction des sites les plus populaires. Si votre méthode d’authentification n’est pas incluse dans cette liste, et s’il s’agit d’un flux de redirection, vous devrez ajouter son ou ses chemins d’accès sous forme de règles ACUR. Vous pouvez également envisager d’utiliser un [service Broker d’authentification web](/hwa-access-features.md#web-authentication-broker).
+Many apps use third-party sites for their login flows, e.g. Facebook and Google. The conversion tool will automatically create a set of ACURs for you, based on the most popular sites. If your method of authentication is not included in that list, and it’s a redirect flow, you will need to add its path(s) as an ACUR. You can also consider using a [web authentication broker](/hwa-access-features.md).
 
-### Flash
+### <a name="flash"></a>Flash
 
-La technologie Flash n’est pas autorisée dans les applications Windows10. Vous devrez vous assurer que son absence n’affecte pas l’expérience d’utilisation de votre application.
+Flash is not allowed in Windows 10 apps. You will need to make sure your app experience is not affected by its absence.
 
-Pour les publicités, assurez-vous que votre fournisseur de publicités intègre une option HTML5. Vous pouvez consulter [Bing Ads](https://bingads.microsoft.com/) et [Publicités dans les applications](http://adsinapps.microsoft.com/).
+For ads, you will need to make sure your ad provider has an HTML5 option. You can check out [Bing Ads](https://bingads.microsoft.com/) and [Ads in Apps](http://adsinapps.microsoft.com/).
 
-Les vidéos YouTube devraient encore fonctionner, car elles utilisent désormais [par défaut HTML5 `<video>`,](http://youtube-eng.blogspot.com/2015/01/youtube-now-defaults-to-html5_27.html) pourvu que vous utilisiez la [`<iframe>` méthode intégrée](https://developers.google.com/youtube/iframe_api_reference). Si votre application utilise toujours l’API Flash, vous devrez basculer vers le style d’intégration mentionné précédemment.
+YouTube videos should still work, as they now [default to HTML5 `<video>`,](http://youtube-eng.blogspot.com/2015/01/youtube-now-defaults-to-html5_27.html) so long as you are using the [`<iframe>` embed method](https://developers.google.com/youtube/iframe_api_reference). If your app still uses the Flash API, you will need to switch to the aforementioned style of embed.
 
-### Ressources d’image
+### <a name="image-assets"></a>Image assets
 
-Le Chrome Web Store [exige déjà une image d’icône d’application au format 128x128](https://developer.chrome.com/webstore/images) dans le package de votre application. Pour les applications Windows10, vous devez, au minimum, fournir des images d’icônes d’application au format 44x44, 50x50, 150x150 et 600x350. L’outil de conversion créera automatiquement ces images pour vous, sur la base de l’image au format 128x128. Pour une expérience plus riche et plus fluide, nous vous recommandons vivement de créer vos propres fichiers image. Voici des [recommandations en matière de ressources de vignette et d’icône](https://msdn.microsoft.com/library/windows/apps/mt412102.aspx).
+The Chrome web store already [requires a 128x128 app icon image](https://developer.chrome.com/webstore/images) in your app package. For Windows 10 apps, you must supply 44x44, 50x50, 150x150, and 600x350 app icon images, at the very minimum. The conversion tool will automatically create these images for you, based on the 128x128 image. For a richer, more polished app experience, we highly recommend creating your own image files. Here are some [guidelines for tile and icon assets](https://msdn.microsoft.com/library/windows/apps/mt412102.aspx).
 
-### Fonctionnalités
+### <a name="capabilities"></a>Capabilities
 
-Les fonctionnalités de l’application doivent être [déclarées](https://msdn.microsoft.com/windows/uwp/packaging/app-capability-declarations) dans le manifeste de votre package afin d’accéder à certaines API et ressources. L’outil de conversion permet d’activer automatiquement pour vous trois fonctionnalités populaires sur votre appareil: la localisation, le microphone et la webcam. Avec l’ancien outil, le système demandait systématiquement l’autorisation de l’utilisateur avant d’accorder l’accès.
+App capabilities must be [declared](https://msdn.microsoft.com/windows/uwp/packaging/app-capability-declarations) in your package manifest in order to access certain APIs and resources. The conversion tool will automatically enable three popular device capabilities for you: location, microphone, and webcam. With the former, the system will still prompt the user for permission before granting access.
 
-*Remarque: les utilisateurs sont informés de toutes les fonctionnalités que déclare une application. Nous vous recommandons de supprimer les fonctionnalités dont votre application n’a pas besoin.*
+*Note: Users are notified of all the capabilities that an app declares. We would recommend removing any capabilities that your app does not need.*
 
-### Téléchargements de fichiers
+### <a name="file-downloads"></a>File downloads
 
-Actuellement, les téléchargements classiques de fichiers, comme vous le voyez dans le navigateur, ne sont pas pris en charge.
+Traditional file downloads, like you see in the browser, are not currently supported.
 
-### API de la plateforme Chrome
+### <a name="chrome-platform-apis"></a>Chrome platform APIs
 
-Chrome fournit des applications avec des [API à usage spécifique](https://developer.chrome.com/apps/api_index) qui peuvent être exécutées en tant que script en arrière-plan. Elles ne sont pas prises en charge. Vous pouvez trouver des fonctionnalités équivalentes et bien plus encore, avec les [API Windows Runtime](https://msdn.microsoft.com/library/windows/apps/br211377.aspx).
+Chrome provides apps with [special-purpose APIs](https://developer.chrome.com/apps/api_index) that can be run as background script. These are not supported. You can find equivalent functionality, and much more, with the [Windows Runtime APIs](https://msdn.microsoft.com/library/windows/apps/br211377.aspx).
 
-## Rubriques connexes
+## <a name="related-topics"></a>Related topics
 
-- [Améliorer votre applicationweb en accédant aux fonctionnalités de plateforme Windows universelle (UWP)](/hwa-access-features.md)
-- [Guide des applications de plateforme Windows universelle (UWP)](http://go.microsoft.com/fwlink/p/?LinkID=397871)
-- [Télécharger des ressources de conception pour les applications du WindowsStore](https://msdn.microsoft.com/library/windows/apps/xaml/bg125377.aspx)
+- [Enhance your web app by accessing Universal Windows Platform (UWP) features](/hwa-access-features.md)
+- [Guide to Universal Windows Platform (UWP) apps](http://go.microsoft.com/fwlink/p/?LinkID=397871)
+- [Download design assets for Windows Store apps](https://msdn.microsoft.com/library/windows/apps/xaml/bg125377.aspx)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

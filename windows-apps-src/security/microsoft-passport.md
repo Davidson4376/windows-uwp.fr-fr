@@ -1,123 +1,123 @@
 ---
-title: MicrosoftPassport et WindowsHello
-description: "Cet article décrit la nouvelle technologie Microsoft Passport intégrée au système d’exploitation Windows10 et explique comment les développeurs peuvent implémenter cette technologie pour protéger leurs applications UWP et services principaux. Il présente des fonctionnalités spécifiques de ces technologies qui contribuent à atténuer les menaces découlant de l’utilisation des informations d’identification classiques et fournit des recommandations sur la conception et le déploiement de ces technologies dans le cadre de votre lancement de Windows 10."
+title: Microsoft Passport and Windows Hello
+description: This article describes the new Microsoft Passport technology that is shipping as part of the Windows 10 operating system and discusses how developers can implement this technology to protect their Universal Windows Platform (UWP) apps and backend services. It highlights specific capabilities of these technologies that help mitigate threats that arise from using conventional credentials and provides guidance about designing and deploying these technologies as part of a Windows 10 rollout.
 ms.assetid: 0B907160-B344-4237-AF82-F9D47BCEE646
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 979eb3c6ac41f304e19093055574db7805a115ff
+ms.sourcegitcommit: 6dbc98867c3a1a14a04590c65ba54ca3c37cd426
+ms.openlocfilehash: cb24b1e75dbb8f37fcd4482e3e0d468855155f04
 
 ---
 
-# Microsoft Passport et Windows Hello
+# <a name="microsoft-passport-and-windows-hello"></a>Microsoft Passport and Windows Hello
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Cet article décrit la nouvelle technologie Microsoft Passport intégrée au système d’exploitation Windows10 et explique comment les développeurs peuvent implémenter cette technologie pour protéger leurs applications UWP et services principaux. Il présente des fonctionnalités spécifiques de ces technologies qui contribuent à atténuer les menaces découlant de l’utilisation des informations d’identification classiques et fournit des recommandations sur la conception et le déploiement de ces technologies dans le cadre de votre lancement de Windows 10.
+This article describes the new Microsoft Passport technology that is shipping as part of the Windows 10 operating system and discusses how developers can implement this technology to protect their Universal Windows Platform (UWP) apps and backend services. It highlights specific capabilities of these technologies that help mitigate threats that arise from using conventional credentials and provides guidance about designing and deploying these technologies as part of a Windows 10 rollout.
 
-Notez que cet article est axé sur le développement d’applications. Pour plus d’informations sur l’architecture et l’implémentation de Microsoft Passport et de Windows Hello, voir le [Guide de Microsoft Passport sur TechNet](https://technet.microsoft.com/library/mt589441.aspx).
+Note that this article focuses on app development. For information on the architecture and implementation details of Microsoft Passport and Windows Hello, see the [Microsoft Passport Guide on TechNet](https://technet.microsoft.com/library/mt589441.aspx).
 
-Pour obtenir un exemple du code complet, voir l’[exemple de code Microsoft Passport sur GitHub](http://go.microsoft.com/fwlink/?LinkID=717812).
+For a complete code sample, see the [Microsoft Passport code sample on GitHub](http://go.microsoft.com/fwlink/?LinkID=717812).
 
-Pour une procédure pas à pas sur la création d’une application UWP à l’aide de Microsoft Passport et le service d’authentification de stockage, voir les articles [Application de connexion Microsoft Passport](microsoft-passport-login.md) et [Service de connexion Microsoft Passport](microsoft-passport-login-auth-service.md).
+For a step-by-step walkthrough on creating a UWP app using Microsoft Passport and the backing authentication service, see the [Microsoft Passport login app](microsoft-passport-login.md) and [Microsoft Passport login service](microsoft-passport-login-auth-service.md) articles.
 
-## 1 Introduction
-
-
-La sécurité des informations repose notamment sur le principe fondamental qu’un système peut identifier les personnes qui l’utilisent. L’identification d’un utilisateur permet au système de décider si l’utilisateur s’est correctement identifié (processus appelé authentification), puis de déterminer ce que cet utilisateur correctement authentifié peut faire (autorisation). La grande majorité des systèmes informatiques déployés dans le monde entier dépendent des informations d’identification de l’utilisateur pour prendre des décisions d’authentification et d’autorisation, ce qui signifie que la sécurité de ces systèmes dépend de mots de passe réutilisables créés par l’utilisateur. La maxime fréquemment citée selon laquelle l’authentification peut impliquer des « éléments que vous connaissez, dont vous disposez ou qui vous caractérisent » met habilement en évidence le problème suivant : un mot de passe réutilisable est un facteur d’authentification en lui-même, de sorte que quiconque connaît ce mot de passe peut emprunter l’identité de l’utilisateur qui le détient.
-
-## 1.1 Problèmes liés aux informations d’identification traditionnelles
+## <a name="1-introduction"></a>1 Introduction
 
 
-Jamais depuis le milieu des années 1960, lorsque Fernando Corbató et son équipe du Massachusetts Institute of Technology ont été à l’origine de l’introduction du mot de passe, les utilisateurs et les administrateurs n’avaient eu à gérer l’utilisation de mots de passe pour l’authentification et l’autorisation de l’utilisateur. Au fil du temps, les techniques en matière de stockage et d’utilisation de mots de passe ont quelque peu évolué (par exemple, avec le salt et le hachage sécurisé du mot de passe), mais nous sommes toujours confrontés à deux problèmes. Les mots de passe sont faciles à cloner et à dérober. En outre, des erreurs d’implémentation peuvent compromettre leur intégrité, et les utilisateurs sont confrontés à un dilemme important entre commodité et sécurité.
+A fundamental assumption about information security is that a system can identify who is using it. Identifying a user allows the system to decide whether the user is identified appropriately (a process known as authentication), and then decide what a properly authenticated user should be able to do (authorization). The overwhelming majority of computer systems deployed throughout the world depend on user credentials for making authentication and authorization decisions, which means that these systems depend on reusable, user-created passwords as the basis for their security. The oft-cited maxim that authentication can involve "something you know, something you have, or something you are" neatly highlights the issue: a reusable password is an authentication factor all by itself, so anyone who knows the password can impersonate the user who owns it.
 
-## 1.1.1 Vol d’informations d’identification
-
-
-Le principal risque lié aux mots de passe est simple : un attaquant peut les voler facilement. Chaque endroit où un mot de passe est entré, traité ou stocké est vulnérable. Par exemple, un attaquant peut voler un ensemble de mots de passe ou de codes de hachage sur un serveur d’authentification en espionnant le trafic réseau vers un serveur d’applications, en implantant un logiciel malveillant dans une application ou sur un appareil, en consignant les frappes de l’utilisateur sur un appareil, ou en observant les caractères tapés par un utilisateur, et il ne s’agit là que des méthodes d’attaque les plus courantes.
-
-Un autre risque associé aux mots de passe correspond à la relecture des informations d’identification, au cours de laquelle un attaquant recueille une information d’identification valide en espionnant un réseau non sécurisé, puis la relit pour usurper l’identité d’un utilisateur légitime. La plupart des protocoles d’authentification (notamment Kerberos et OAuth) offrent une protection contre les attaques par relecture en incluant un horodatage dans le processus d’échange des informations d’identification. Or, cette méthode ne protège que le jeton généré par le système d’authentification, et non le mot de passe que l’utilisateur fournit pour obtenir le ticket.
-
-## 1.1.2 Réutilisation d’informations d’identification
+## <a name="11-problems-with-traditional-credentials"></a>1.1 Problems with traditional credentials
 
 
+Ever since the mid-1960s, when Fernando Corbató and his team at the Massachusetts Institute of Technology championed the introduction of the password, users and administrators have had to deal with the use of passwords for user authentication and authorization. Over time, the state of the art for password storage and use has advanced somewhat (with secure hashing and salting, for example), but we are still faced with two problems. Passwords are easy to clone and they are easy to steal. In addition, implementation faults may render them insecure, and users have a hard time balancing convenience and security.
+
+## <a name="111-credential-theft"></a>1.1.1 Credential theft
 
 
-L’approche courante qui consiste à utiliser une adresse e-mail comme nom d’utilisateur accentue le problème. Un attaquant qui récupère une paire nom d’utilisateur/mot de passe sur un système compromis peut ensuite l’essayer sur d’autres systèmes. Cette méthode permet souvent aux attaquants de se servir d’un système compromis comme d’un tremplin vers d’autres systèmes. L’utilisation d’une adresse e-mail comme nom d’utilisateur entraîne des problèmes supplémentaires, que nous aborderons plus loin dans ce guide.
+The biggest risk of passwords is simple: an attacker can steal them easily. Every place a password is entered, processed, or stored is vulnerable. For example, an attacker can steal a collection of passwords or hashes from an authentication server by eavesdropping on network traffic to an application server, by implanting malware in an application or on a device, by logging user keystrokes on a device, or by watching to see which characters a user types. These are just the most common attack methods.
 
-## 1.2 Résolution des problèmes liés aux informations d’identification
+Another related risk is that of credential replay, in which an attacker captures a valid credential by eavesdropping on an insecure network, and then replays it later to impersonate a valid user. Most authentication protocols (including Kerberos and OAuth) protect against replay attacks by including a time stamp in the credential exchange process, but that tactic only protects the token that the authentication system issues, not the password that the user provides to get the ticket in the first place.
 
-
-La résolution des problèmes posés par les mots de passe est délicate. Le renforcement des stratégies de mot de passe ne suffit pas : en effet, les utilisateurs peuvent recycler, partager ou noter les mots de passe. Bien que la sensibilisation des utilisateurs dans ce domaine soit essentielle pour la sécurité de l’authentification, elle ne suffit pas non plus à résoudre le problème.
-
-Microsoft Passport remplace les mots de passe par la méthode d’authentification à 2 facteurs (2FA) forte en vérifiant les informations d’identification existantes et en créant une information d’identification propre à l’appareil protégée par un mouvement de l’utilisateur basé sur la biométrie de l’utilisateur ou sur la saisie du code confidentiel de ce dernier. 
-
-## 2 Qu’est-ce que Microsoft Passport ?
+## <a name="112-credential-reuse"></a>1.1.2 Credential reuse
 
 
-## 2.1 Qu’est-ce que Windows Hello ?
 
 
-Windows Hello est le nom que Microsoft a donné au nouveau système de connexion biométrique inclus dans Windows 10. Étant donné qu’il est directement intégré au système d’exploitation, Windows Hello peut identifier le visage ou les empreintes digitales pour déverrouiller les appareils des utilisateurs. L’authentification se produit lorsque l’utilisateur fournit son identificateur biométrique unique pour accéder aux informations d’identification de Microsoft Passport spécifiques à l’appareil. Une personne malveillante qui vole l’appareil ne peut donc s’y connecter que si elle dispose du code PIN. Le magasin d’informations d’identification sécurisées Windows protège les données biométriques sur l’appareil. En utilisant Windows Hello pour déverrouiller un appareil, l’utilisateur autorisé accède à l’ensemble de son utilisation Windows, applications, données, sites Web et services.
+The common approach of using an email address as the username makes a bad problem worse. An attacker who successfully recovers a username–password pair from a compromised system can then try that same pair on other systems. This tactic works surprisingly often to allow attackers to springboard from a compromised system into other systems. The use of email addresses as usernames leads to additional problems that we will explore later in this guide.
 
-L’authentificateur Windows Hello est appelé un Hello. Un Hello est propre à la combinaison d’un appareil et d’un utilisateur spécifiques. Il n’est pas transmis entre plusieurs appareils, il n’est pas partagé avec un serveur ou une application appelante et ne peut pas être extrait facilement d’un appareil. Si plusieurs utilisateurs partagent un appareil, chaque utilisateur doit configurer son propre compte. Chaque compte dispose d’un Hello unique pour cet appareil. Imaginez un Hello comme un jeton que vous pouvez utiliser pour déverrouiller (ou libérer) une information d’identification stockée. Le Hello proprement dit ne vous authentifie pas auprès d’une application ou d’un service, mais libère les informations d’identification qui le peuvent. En d’autres termes, un Hello est une méthode d’authentification par second facteur, et non par informations d’identification de l’utilisateur, pour Microsoft Passport.
-
-## 2.2 Qu’est-ce que Microsoft Passport ?
+## <a name="12-solving-credential-problems"></a>1.2 Solving credential problems
 
 
-Avec Windows Hello, un appareil dispose d’une méthode fiable de reconnaissance de l’utilisateur, ce qui permet de traiter la première partie du chemin d’accès entre un utilisateur et un service ou un élément de données demandé. Une fois que l’appareil a reconnu l’utilisateur, il doit toujours authentifier ce dernier avant de déterminer s’il lui accorde l’accès à une ressource demandée. Microsoft Passport propose une authentification 2FA forte, entièrement intégrée à Windows, qui remplace les mots de passe réutilisables par la combinaison d’un appareil spécifique et d’un mouvement biométrique ou d’un code confidentiel.
+Solving the problems that passwords pose is tricky. Tightening password policies alone will not do it; users may just recycle, share, or write down passwords. Although user education is critical for authentication security, education alone does not eliminate the problem either.
 
-Toutefois, Microsoft Passport n’est pas un simple substitut aux systèmes 2FA traditionnels. Sa conception est semblable à celle des cartes à puce : l’authentification est effectuée à l’aide de primitives de chiffrement plutôt que par comparaison de chaînes, et le matériel de clé de l’utilisateur est protégé au sein d’un matériel inviolable. Microsoft Passport ne requiert pas non plus les composants d’infrastructure supplémentaires nécessaires au déploiement de cartes à puce. Par exemple, vous n’avez pas besoin d’une infrastructure à clé publique (PKI) pour gérer les certificats, si vous n’en êtes pas encore équipé. Microsoft Passport offre les principaux avantages des cartes à puce (flexibilité de déploiement pour les cartes à puce virtuelles et sécurité fiable pour les cartes à puce physiques), sans aucun de leurs inconvénients.
+Microsoft Passport replaces passwords with strong two-factor authentication (2FA) by verifying existing credentials and by creating a device-specific credential that a biometric or PIN-based user gesture protects. 
 
-## 2.3 Fonctionnement de Microsoft Passport
-
-
-Lorsque l’utilisateur installe Microsoft Passport sur sa machine, Microsoft Passport génère une nouvelle paire de clés publique/privée sur l’appareil. Le module de plateforme sécurisée (TPM) génère et protège cette clé privée. Si l’appareil n’intègre pas de TPM, la clé privée est chiffrée et protégée par le logiciel. En outre, les appareils avec TPM génèrent un bloc de données pouvant être utilisé pour attester qu’une clé est liée au TPM. Vous pouvez utiliser ces informations d’attestation dans votre solution pour décider par exemple si l’utilisateur peut recevoir un niveau d’autorisation différent.
-
-Pour activer Microsoft Passport sur un appareil, l’utilisateur doit disposer d’un compte Azure Active Directory ou d’un compte Microsoft connecté dans les paramètres Windows.
-
-## 2.3.1 Protection des clés
+## <a name="2-what-is-microsoft-passport"></a>2 What is Microsoft Passport?
 
 
-Chaque fois qu’un document de clé est généré, il doit être protégé contre les attaques. La meilleure façon de procéder consiste à utiliser un matériel dédié. Depuis longtemps, les modules de sécurité matériels (HSM) sont utilisés pour générer, stocker et traiter les clés des applications de sécurité critiques. Les cartes à puce constituent un type spécial de HSM, comme les appareils compatibles avec la norme TPM de Trusted Computing Group. Dans la mesure du possible, la mise en œuvre de Microsoft Passport tire profit du module de plateforme sécurisée (TPM) matériel intégré pour générer, stocker et traiter les clés. Toutefois, Microsoft Passport et Microsoft Passport for Work n’ont pas nécessairement besoin d’un TPM intégré.
-
-Dans la mesure du possible, Microsoft vous recommande d’utiliser un TPM matériel. Le TPM offre une protection contre diverses attaques connues et potentielles, notamment les attaques par force brute du code confidentiel. Le TPM offre également une couche de protection supplémentaire après le verrouillage du compte. Une fois que le TPM a verrouillé le matériel de clé, l’utilisateur doit réinitialiser le code confidentiel. La réinitialisation du code confidentiel signifie que toutes les clés et tous les certificats chiffrés avec l’ancien matériel de clé seront supprimés.
-
-## 2.3.2 Authentification
+## <a name="21-what-is-windows-hello"></a>2.1 What is Windows Hello?
 
 
-Lorsqu’un utilisateur souhaite accéder à un matériel de clé protégé, le processus d’authentification commence quand l’utilisateur entre un code confidentiel ou un mouvement biométrique pour déverrouiller l’appareil, ce processus étant parfois appelé «libération de la clé».
+Windows Hello is the name Microsoft has given to the new biometric sign-in system built into Windows 10. Because it is built directly into the operating system, Windows Hello allows face or fingerprint identification to unlock users’ devices. Authentication happens when the user supplies his or her unique biometric identifier to access the device-specific Microsoft Passport credentials, which means that an attacker who steals the device can’t log on to it unless that attacker has the PIN. The Windows secure credential store protects biometric data on the device. By using Windows Hello to unlock a device, the authorized user gains access to all of his or her Windows experience, apps, data, websites, and services.
 
-Une application ne peut jamais utiliser les clés d’une autre application, tout comme une personne ne peut jamais utiliser les clés d’un autre utilisateur. Ces clés sont utilisées pour signer les demandes d’accès à des ressources spécifiées envoyées au fournisseur d’identité ou IdP. Les applications peuvent utiliser des API spécifiques pour demander des opérations qui nécessitent un matériel de clé pour certaines actions. L’accès par le biais de ces API implique une validation explicite à l’aide d’un mouvement de l’utilisateur. Le matériel de clé n’est pas exposé à l’application à l’origine de la demande. L’application demande plutôt des actions spécifiques, comme la signature d’un élément de données, et la couche Microsoft Passport gère la tâche réelle et renvoie les résultats.
+The Windows Hello authenticator is known as a Hello. A Hello is unique to the combination of an individual device and a specific user. It does not roam across devices, is not shared with a server or calling app, and cannot easily be extracted from a device. If multiple users share a device, each user needs to set up his or her own account. Every account gets a unique Hello for that device. You can think of a Hello as a token you can use to unlock (or release) a stored credential. The Hello itself does not authenticate you to an app or service, but it releases credentials that can. In other words, the Hello is not a user credential but it is a second factor for Microsoft Passport.
 
-## 2.4 Préparation de l’implémentation de Microsoft Passport
-
-
-Maintenant que vous connaissez le fonctionnement de base de Microsoft Passport et de Windows Hello, nous allons vous expliquer comment les implémenter dans vos propres applications. Avant tout, voici un petit rappel : lorsque nous mentionnons les API, nous parlons des API Microsoft Passport. Pour l’instant, il n’existe aucune API pour Windows Hello.
-
-Nous pouvons implémenter différents scénarios à l’aide de Microsoft Passport, par exemple une simple connexion à votre application sur un appareil. Un autre scénario courant est l’authentification auprès d’un service. Au lieu d’utiliser un nom et un mot de passe de connexion, vous utiliserez Microsoft Passport. Dans les chapitres suivants, nous présenterons l’implémentation de deux scénarios, en indiquant comment effectuer une authentification auprès de vos services à l’aide de Microsoft Passport et comment convertir un système nom d’utilisateur/mot de passe existant en un système Microsoft Passport.
-
-Enfin, n’oubliez pas que les API Microsoft Passport nécessitent l’utilisation du Kit de développement logiciel (SDK) Windows 10 correspondant au système d’exploitation sur lequel l’application sera utilisée. En d’autres termes, vous devez utiliser le SDK Windows 10.0.10240 pour les applications déployées sur Windows 10, et le SDK 10.0.10586 pour les applications déployées sur Windows 10, version 1511.
-
-## 3 Implémentation de Microsoft Passport
+## <a name="22-what-is-microsoft-passport"></a>2.2 What is Microsoft Passport?
 
 
-Dans ce chapitre, nous commencerons par un scénario dans lequel n’existe aucun système d’authentification, et nous expliquerons comment implémenter Microsoft Passport.
+Windows Hello provides a robust way for a device to recognize an individual user, which addresses the first part of the path between a user and a requested service or data item. After the device has recognized the user, it still must authenticate the user before determining whether to grant access to a requested resource. Microsoft Passport provides strong 2FA that is fully integrated into Windows and replaces reusable passwords with the combination of a specific device, and a biometric gesture or PIN.
 
-Le chapitre suivant vous indiquera comment effectuer une migration à partir d’un système nom d’utilisateur/mot de passe existant. Toutefois, même si cet aspect vous intéresse davantage, vous pourrez avoir besoin de parcourir le présent chapitre pour acquérir une connaissance de base du processus et du code requis.
+Microsoft Passport is not just a replacement for traditional 2FA systems, though. It is conceptually similar to smart cards: authentication is performed by using cryptographic primitives instead of string comparisons, and the user’s key material is secure inside tamper-resistant hardware. Microsoft Passport does not require the extra infrastructure components required for smart card deployment, either. In particular, you do not need a Public Key Infrastructure (PKI) to manage certificates, if you do not currently have one. Microsoft Passport combines the major advantages of smart cards—deployment flexibility for virtual smart cards and robust security for physical smart cards—without any of their drawbacks.
 
-## 3.1 Inscription de nouveaux utilisateurs
+## <a name="23-how-microsoft-passport-works"></a>2.3 How Microsoft Passport works
 
 
-Nous allons commencer par un tout nouveau service qui utilisera Microsoft Passport et par un nouvel utilisateur hypothétique prêt à s’inscrire sur un nouvel appareil.
+When the user sets up Microsoft Passport on his or her machine, Microsoft Passport generates a new public–private key pair on the device. The [trusted platform module](https://technet.microsoft.com/itpro/windows/keep-secure/trusted-platform-module-overview) (TPM) generates and protects this private key. If the device does not have a TPM chip, the private key is encrypted and protected by software. In addition TPM-enabled devices generate a block of data that can be used to attest that a key is bound to TPM. This attestation information can be used in your solution to decide if the user is granted a different authorization level for example.
 
-La première étape consiste à vérifier que l’utilisateur est en mesure d’utiliser Passport. L’application vérifie les paramètres de l’utilisateur et les fonctionnalités de l’appareil pour s’assurer qu’elle peut créer des clés d’identificateur d’utilisateur. Si l’application détermine que l’utilisateur n’a pas encore activé Microsoft Passport, elle invite ce dernier à effectuer cette installation avant d’utiliser l’application.
+To enable Microsoft Passport on a device, the user must have either their Azure Active Directory account or Microsoft Account connected in Windows settings.
 
-Pour activer Microsoft Passport, l’utilisateur doit simplement configurer un code confidentiel dans les paramètres Windows, à moins qu’il ait déjà procédé à cette opération pendant la phase OOBE (Out-Of-Box Experience).
+## <a name="231-how-keys-are-protected"></a>2.3.1 How keys are protected
 
-Les lignes de code ci-après indiquent un moyen simple de vérifier si l’utilisateur est prêt pour Microsoft Passport.
+
+Any time key material is generated, it must be protected against attack. The most robust way to do this is through specialized hardware. There is a long history of using hardware security modules (HSMs) to generate, store, and process keys for security-critical applications. Smart cards are a special type of HSM, as are devices that are compliant with the Trusted Computing Group TPM standard. Wherever possible, the Microsoft Passport implementation takes advantage of onboard TPM hardware to generate, store, and process keys. However, Microsoft Passport and Microsoft Passport for Work do not require an onboard TPM.
+
+Whenever feasible, Microsoft recommends the use of TPM hardware. The TPM protects against a variety of known and potential attacks, including PIN brute-force attacks. The TPM provides an additional layer of protection after an account lockout as well. When the TPM has locked the key material, the user must reset the PIN. Resetting the PIN means that all keys and certificates encrypted with the old key material will be removed.
+
+## <a name="232-authentication"></a>2.3.2 Authentication
+
+
+When a user wants to access protected key material, the authentication process begins with the user entering a PIN or biometric gesture to unlock the device, a process sometimes called "releasing the key".
+
+An application can never use the keys from another application, nor can someone ever use the keys from another user. These keys are used to sign requests that are sent to the identity provider or IDP, seeking access to specified resources. Applications can use specific APIs to request operations that require key material for particular actions. Access through these APIs does require explicit validation through a user gesture, and the key material is not exposed to the requesting application. Rather, the application asks for a specific action like signing a piece of data, and the Microsoft Passport layer handles the actual work and returns the results.
+
+## <a name="24-getting-ready-to-implement-passport"></a>2.4 Getting ready to implement Passport
+
+
+Now that we have a basic understanding of how Microsoft Passport and Windows Hello work, let us take a look at how to implement them in our own applications. Just to be very clear: When we are talking about the APIs, we are talking about the Microsoft Passport APIs. At this moment, there are no APIs for Windows Hello.
+
+There are different scenarios we can implement using Microsoft Passport. For example, just logging on to your app on a device. The other common scenario would be to authenticate against a service. Instead of using a logon name and password, you will be using Microsoft Passport. In the following chapters, we will discuss implementing a couple of different scenarios, including how to authenticate against your services with Microsoft Passport, and how to convert from an existing username/password system to a Microsoft Passport system.
+
+Finally, be aware that the Microsoft Passport APIs require the use of the Windows 10 SDK that matches the operating system the app will be used on. In other words, the 10.0.10240 Windows SDK must be used for apps that will be deployed to Windows 10 and the 10.0.10586 must be used for apps that will be deployed to Windows 10, version 1511.
+
+## <a name="3-implementing-microsoft-passport"></a>3 Implementing Microsoft Passport
+
+
+In this chapter, we begin with a greenfield scenario with no existing authentication system, and we explain how to implement Microsoft Passport.
+
+The next section covers how to migrate from an existing username/password system. However, even if that chapter interests you more, you may want to look through this one to get a basic understanding of the process and the code required.
+
+## <a name="31-enrolling-new-users"></a>3.1 Enrolling new users
+
+
+We begin with a brand new service that will use Microsoft Passport, and a hypothetical new user who is ready to sign up on a new device.
+
+The first step is to verify that the user is able to use Passport. The app verifies user settings and machine capabilities to make sure it can create user ID keys. If the app determines the user has not yet enabled Microsoft Passport, it prompts the user to set this up before using the app.
+
+To enable Microsoft Passport, the user just needs to set up a PIN in Windows settings, unless the user set it up during the Out of Box Experience (OOBE).
+
+The following lines of code show a simple way to check if the user is set up for Microsoft Passport.
 
 ```cs
 var keyCredentialAvailable = await KeyCredentialManager.IsSupportedAsync();
@@ -128,34 +128,34 @@ if (!keyCredentialAvailable)
 }
 ```
 
-L’étape suivante consiste à inviter l’utilisateur à fournir les informations qui lui permettront de s’inscrire auprès de votre service. Vous pouvez par exemple lui demander d’indiquer son prénom, son nom de famille, son adresse e-mail et un nom d’utilisateur unique. Si vous le souhaitez, vous pouvez choisir d’utiliser l’adresse e-mail comme identificateur unique.
+The next step is to ask the user for information to sign up with your service. You may choose to ask the user for first name, last name, email address, and a unique username. You could use the email address as the unique identifier; it is up to you.
 
-Dans ce scénario, nous utilisons l’adresse e-mail en tant qu’identificateur unique de l’utilisateur. Une fois que l’utilisateur s’est inscrit, vous pouvez envisager d’envoyer un e-mail de validation pour vérifier la validité de cette adresse. Cette approche vous offre un mécanisme pour réinitialiser le compte si nécessaire.
+In this scenario, we use the email address as the unique identifier for the user. Once the user signs up, you should consider sending a validation email to ensure the address is valid. This gives you a mechanism to reset the account if necessary.
 
-Si l’utilisateur a configuré son code confidentiel, l’application crée l’élément [**KeyCredential**](https://msdn.microsoft.com/library/windows/apps/dn973029) de l’utilisateur. L’application obtient également les informations d’attestation de clé facultatives afin d’avoir la preuve par chiffrement que la clé est générée sur le TPM. La clé publique générée, et éventuellement l’attestation, sont envoyées au serveur principal pour inscrire l’appareil utilisé. Chaque paire de clés générée sur chaque appareil est unique.
+If the user has set up his or her PIN, the app creates the user’s [**KeyCredential**](https://msdn.microsoft.com/library/windows/apps/dn973029). The app also gets the optional key attestation information to acquire cryptographic proof that the key is generated on the TPM. The generated public key, and optionally the attestation, is sent to the backend server to register the device being used. Every key pair generated on every device will be unique.
 
-Le code permettant de créer l’élément [**KeyCredential**](https://msdn.microsoft.com/library/windows/apps/dn973029) se présente comme suit :
+The code to create the [**KeyCredential**](https://msdn.microsoft.com/library/windows/apps/dn973029) looks like this:
 
 ```cs
 var keyCreationResult = await KeyCredentialManager
     .RequestCreateAsync(AccountId, KeyCredentialCreationOption.ReplaceExisting);
 ```
 
-La méthode [**RequestCreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn973048) est la partie qui crée la clé publique et privée. Si l’appareil intègre la puce TPM appropriée, les API demandent à celle-ci de créer la clé publique et privée et de stocker le résultat. S’il n’y a pas de puce TPM, le système d’exploitation crée la paire de clés dans le code. L’application ne peut en aucun cas accéder directement aux clés privées. Une partie de la création des paires de clés produit également les informations d’attestation correspondantes. (Pour plus d’informations sur l’attestation, voir la section suivante.)
+The [**RequestCreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn973048) is the part that creates the public and private key. If the device has the right TPM chip, the APIs will request the TPM chip to create the private and public key and store the result; if there is no TPM chip available, the OS will create the key pair in code. There is no way for the app to access the created private keys directly. Part of the creation of the key pairs is also the resulting Attestation information. (See the next section for more information about attestation.)
 
-Une fois la paire de clés et les informations d’attestation créées sur l’appareil, la clé publique, les informations d’attestation facultatives et l’identificateur unique (tel que l’adresse e-mail) doivent être envoyés au service d’inscription principal et stockés dans le système principal.
+After the key pair and attestation information are created on the device, the public key, the optional attestation information, and the unique identifier (such as the email address) need to be sent to the backend registration service and stored in the backend.
 
-Pour permettre à l’utilisateur d’accéder à l’application sur plusieurs appareils, le service principal doit pouvoir stocker plusieurs clés pour le même utilisateur. Étant donné que chaque clé est unique pour chaque appareil, toutes ces clés vont être stockées en étant connectées au même utilisateur. Un identificateur d’appareil est utilisé pour optimiser le composant serveur lors de l’authentification des utilisateurs. Nous aborderons ce sujet plus en détail dans le chapitre suivant.
+To allow the user to access the app on multiple devices, the backend service needs to be able to store multiple keys for the same user. Because every key is unique for every device, we will store all these keys connected to the same user. A device identifier is used to help optimize the server part when authenticating users. We talk about this in more detail in the next chapter.
 
-Voici un exemple de schéma de base de données permettant de stocker ces informations sur le système principal:
+A sample database schema to store this information at the backend might look like this:
 
-![Exemple de schéma de base de données Passport](images/passport-db.png)
+![passport sample database schema](images/passport-db.png)
 
-La logique d’inscription peut ressembler à ceci:
+The registration logic might look like this:
 
-![Logique d’inscription auprès de Microsoft Passport](images/passport-registration.png)
+![passport registration logic](images/passport-registration.png)
 
-Les informations d’inscription que vous collectez peuvent bien entendu inclure beaucoup d’autres informations d’identification que celles que nous mentionnons dans ce scénario simple. Par exemple, si votre application accède à un service sécurisé tel qu’un service bancaire, votre processus d’inscription doit demander une preuve d’identité et d’autres informations. Une fois toutes les conditions remplies, la clé publique de cet utilisateur est stockée dans le système principal et est utilisée pour la validation lors de l’utilisation suivante du service par l’utilisateur.
+The registration information you collect may of course include a lot more identifying information than we include in this simple scenario. For example, if your app accesses a secured service such as one for banking, you would need to request proof of identity and other things as part of the sign-up process. Once all the conditions are met, the public key of this user will be stored in the backend and used to validate the next time the user uses the service.
 
 ```cs
 using System;
@@ -213,35 +213,35 @@ static async void RegisterUser(string AccountId)
 }
 ```
 
-## 3.1.1 Attestation
+## <a name="311-attestation"></a>3.1.1 Attestation
 
 
-Lors de la création de la paire de clés, il existe également une option permettant de demander les informations d’attestation, qui sont générées par le processeur du TPM. Ces informations facultatives peuvent être envoyées au serveur dans le cadre du processus d’inscription. Une attestation de clé de TPM est un protocole qui prouve par le biais du chiffrement qu’une clé est liée au TPM. Vous pouvez utiliser ce type d’attestation pour vérifier si une certaine opération de chiffrement s’est produite dans le TPM d’un ordinateur donné.
+When creating the key pair, there is also an option to request the attestation information, which is generated by the TPM chip. This optional information can be sent to the server as part of the sign-up process. TPM key attestation is a protocol that cryptographically proves that a key is TPM-bound. This type of attestation can be used to guarantee that a certain cryptographic operation occurred in the TPM of a particular computer.
 
-Lorsque le serveur reçoit la clé RSA générée, la déclaration d’attestation et le certificat de clé d’attestation d’identité (AIK), il vérifie que les conditions ci-après sont remplies :
+When it receives the generated RSA key, the attestation statement, and the AIK certificate, the server verifies the following conditions:
 
--   La signature du certificat AIK est valide.
--   Le certificat AIK forme une chaîne jusqu’à une racine de confiance.
--   Le certificat AIK et sa chaîne sont activés pour EKU OID «2.23.133.8.3» (son nom développé est «certificat de clé d’attestation d’identité»).
--   Le certificat AIK a une limite de validité.
--   Tous les certificats d’autorité de certification de la chaîne ont une limite de validité et ne sont pas révoqués.
--   La déclaration d’attestation présente un format correct.
--   La signature de l’objet blob [**KeyAttestation**](https://msdn.microsoft.com/library/windows/apps/dn298288) utilise une clé publique AIK.
--   La clé publique incluse dans l’objet blob [**KeyAttestation**](https://msdn.microsoft.com/library/windows/apps/dn298288) correspond à la clé publique RSA envoyée en même temps que la déclaration d’attestation par le client.
+-   The AIK certificate signature is valid.
+-   The AIK certificate chains up to a trusted root.
+-   The AIK certificate and its chain is enabled for EKU OID "2.23.133.8.3" (friendly name is "Attestation Identity Key Certificate").
+-   The AIK certificate is time valid.
+-   All issuing CA certificates in the chain are time-valid and not revoked.
+-   The attestation statement is formed correctly.
+-   The signature on [**KeyAttestation**](https://msdn.microsoft.com/library/windows/apps/dn298288) blob uses an AIK public key.
+-   The public key included in the [**KeyAttestation**](https://msdn.microsoft.com/library/windows/apps/dn298288) blob matches the public RSA key that client sent alongside the attestation statement.
 
-En fonction de ces conditions, votre application peut affecter à l’utilisateur un autre niveau d’autorisation. Par exemple, si l’une de ces vérifications échoue, l’application peut ne pas inscrire l’utilisateur ou limiter les opérations que ce dernier pourra effectuer.
+Your app might assign the user a different authorization level, depending on these conditions. For instance, if one of these checks fail, it might not enroll the user or it might limit what the user can do.
 
-## 3.2 Connexion avec Microsoft Passport
-
-
-Une fois que l’utilisateur est inscrit dans votre système, il peut utiliser l’application. Selon le scénario, vous pouvez demander aux utilisateurs de s’authentifier avant de commencer à utiliser l’application ou simplement leur demander de s’authentifier une fois qu’ils ont commencé à utiliser vos services principaux.
-
-## 3.3 Obliger l’utilisateur à se reconnecter
+## <a name="32-logging-on-with-microsoft-passport"></a>3.2 Logging on with Microsoft Passport
 
 
-Dans certains scénarios, vous voudrez peut-être que l’utilisateur prouve qu’il est bien la personne actuellement connectée avant d’accéder à l’application ou avant d’exécuter une action spécifique au sein de votre application. Par exemple, avant qu’une application bancaire envoie une commande de transfert d’argent au serveur, vous voudrez vous assurer que l’utilisateur connecté est bien l’utilisateur légitime, et non une personne ayant trouvé un appareil connecté et tentant d’effectuer une transaction sur ce dernier. Vous pouvez obliger l’utilisateur à se reconnecter dans votre application à l’aide de la classe [**UserConsentVerifier**](https://msdn.microsoft.com/library/windows/apps/dn279134). La ligne de code ci-après forcera l’utilisateur à entrer ses informations d’identification.
+Once the user is enrolled in your system, he or she can use the app. Depending on the scenario, you can ask users to authenticate before they can start using the app or just ask them to authenticate once they start using your backend services.
 
-La ligne de code ci-après forcera l’utilisateur à entrer ses informations d’identification.
+## <a name="33-force-the-user-to-sign-in-again"></a>3.3 Force the user to sign in again
+
+
+For some scenarios, you may want the user to prove he or she is the person who is currently signed in, before accessing the app or sometimes before performing a certain action inside of your app. For example, before a banking app sends the transfer money command to the server, you want to make sure it is the user, rather than someone who found a logged-in device, attempting to perform a transaction. You can force the user to sign in again in your app by using the [**UserConsentVerifier**](https://msdn.microsoft.com/library/windows/apps/dn279134) class. The following line of code will force the user to enter their credentials.
+
+The following line of code will force the user to enter their credentials.
 
 ```cs
 UserConsentVerificationResult consentResult = await UserConsentVerifier.RequestVerificationAsync("userMessage");
@@ -251,22 +251,22 @@ if (consentResult.Equals(UserConsentVerificationResult.Verified))
 }
 ```
 
-Bien entendu, vous pouvez également utiliser le mécanisme de réponse à la demande du serveur, qui demande à l’utilisateur d’entrer son code confidentiel ou ses informations d’identification biométriques. Cela dépend du scénario que vous avez besoin d’implémenter en tant que développeur. Ce mécanisme est décrit à la section suivante.
+Of course, you can also use the challenge response mechanism from the server, which requires a user to enter his or her PIN code or biometric credentials. It depends on the scenario you as a developer need to implement. This mechanism is described in the following section.
 
-## 3.4 Authentification sur le système principal
+## <a name="34-authentication-at-the-backend"></a>3.4 Authentication at the backend
 
 
-Quand l’application tente d’accéder à un service principal protégé, le service envoie une demande à l’application. L’application utilise la clé privée de l’utilisateur pour signer la demande et la renvoie au serveur. Dans la mesure où le serveur a stocké la clé publique de l’utilisateur, il utilise des API de chiffrement standard pour s’assurer que le message a bien été signé avec la clé privée correcte. Sur le client, la signature est effectuée par les API Microsoft Passport. Le développeur n’a jamais accès à la clé privée de l’utilisateur.
+When the app attempts to access a protected backend service, the service sends a challenge to the app. The app uses the private key from the user to sign the challenge and sends it back to the server. Since the server has stored the public key for that user, it uses standard crypto APIs to make sure the message was indeed signed with the correct private key. On the client, the signing is done by the Microsoft Passport APIs; the developer will never have access to any user’s private key.
 
-En plus de vérifier les clés, le service peut également vérifier l’attestation de clé et déterminer si des limitations sont invoquées concernant le stockage des clés sur l’appareil. Par exemple, le fait que l’appareil utilise le TPM pour protéger les clés constitue une approche bien plus sécurisée que le stockage des clés sans le TPM. La logique du système principal peut décider, par exemple, que l’utilisateur est uniquement autorisé à virer une certaine somme d’argent lorsqu’aucun TPM n’est utilisé, afin de réduire les risques.
+In addition to checking the keys, the service can also check the key attestation and discern if there are any limitations invoked on how the keys are stored on the device. For example, when the device uses TPM to protect the keys, it is more secure than devices storing the keys without TPM. The backend logic could decide, for example, that the user is only allowed to transfer a certain amount of money when no TPM is used to reduce the risks.
 
-Une attestation est uniquement disponible pour les appareils dotés d’un processeur de TPM version 2.0 ou ultérieure. Vous devez donc tenir compte du fait que ces informations risquent de ne pas être disponibles sur certains appareils.
+Attestation is only available for devices with a TPM chip that’s version 2.0 or higher. Therefore, you need to take into account that this information might not be available on every device.
 
-Le flux de travail du client pourra ressembler à ceci:
+The client workflow might look like the following chart:
 
-![Flux de travail du client Passport](images/passport-client-workflow.png)
+![passport client workflow](images/passport-client-workflow.png)
 
-Lorsque l’application appelle le service sur le système principal, le serveur envoie une demande. La demande est signée à l’aide du code suivant :
+When the app calls the service on the backend, the server sends a challenge. The challenge is signed with the following code:
 
 ```cs
 var openKeyResult = await KeyCredentialManager.OpenAsync(AccountId);
@@ -288,17 +288,17 @@ if (openKeyResult.Status == KeyCredentialStatus.Success)
 }
 ```
 
-La première ligne, [**KeyCredentialManager.OpenAsync**](https://msdn.microsoft.com/library/windows/apps/dn973046), demande au système d’exploitation d’ouvrir le handle de clé. Si cette opération aboutit, vous pouvez signer le message de demande avec la méthode [**KeyCredential.RequestSignAsync**](https://msdn.microsoft.com/library/windows/apps/dn973058), qui amène le système d’exploitation à demander aux utilisateurs leur code confidentiel ou leur identification biométrique par le biais de Windows Hello. Le développeur n’aura jamais accès à la clé privée de l’utilisateur. Les API assurent la sécurisation de l’ensemble.
+The first line, [**KeyCredentialManager.OpenAsync**](https://msdn.microsoft.com/library/windows/apps/dn973046), will ask the OS to open the key handle. If that is done successfully, you can sign the challenge message with the [**KeyCredential.RequestSignAsync**](https://msdn.microsoft.com/library/windows/apps/dn973058) method will trigger the OS to request the user’s PIN or biometrics through Windows Hello. At no time will the developer have access to the private key of the user. This is all kept secure through the APIs.
 
-Les API demandent au système d’exploitation de signer la demande avec la clé privée. Le système demande ensuite à l’utilisateur son code confidentiel ou une identification biométrique configurée. Si les informations entrées sont correctes, le système peut demander au processeur du TPM d’exécuter les fonctions de chiffrement et de signer la demande (ou d’utiliser la solution logicielle de secours, si aucun TPM n’est disponible). Le client doit renvoyer la demande signée au serveur.
+The APIs request the OS to sign the challenge with the private key. The system then asks the user for a PIN code or a configured biometric logon. When the correct information is entered, the system can ask the TPM chip to perform the cryptographic functions and sign the challenge. (Or use the fallback software solution, if no TPM is available). The client must send the signed challenge back to the server.
 
-Le diagramme de séquence ci-après illustre un flux de demande-réponse:
+A basic challenge–response flow is shown in this sequence diagram:
 
-![Flux de demande-réponse de Passport](images/passport-challenge-response.png)
+![passport challenge response](images/passport-challenge-response.png)
 
-Ensuite, le serveur doit valider la signature. Lorsque vous demandez la clé publique et que vous l’envoyez au serveur à des fins de future validation, elle figure dans un objet blob publicKeyInfo codé ASN.1. Si vous observez l’[exemple de code Microsoft Passport sur GitHub](http://go.microsoft.com/fwlink/?LinkID=717812), vous verrez que des classes d’assistance incluent les fonctions Crypt32 pour traduire l’objet blob codé ASN.1 en objet blob CNG, qui est plus couramment utilisé. L’objet blob contient l’algorithme de clé publique (RSA) et la clé publique RSA.
+Next, the server must validate the signature. When you request the public key and send it to the server to use for future validation, it is in an ASN.1-encoded publicKeyInfo blob.If you look at the [Microsoft Passport code sample on GitHub](http://go.microsoft.com/fwlink/?LinkID=717812), you will see there are helper classes to wrap Crypt32 functions to translate the ASN.1-encoded blob to a CNG blob, which is more commonly used. The blob contains the public key algorithm, which is RSA, and the RSA public key.
 
-Une fois que vous disposez de l’objet blob CNG, vous devez valider la demande signée par rapport à la clé publique de l’utilisateur. Étant donné que tout le monde utilise son propre système ou sa propre technologie principale, il n’existe pas de méthode générique pour implémenter cette logique. Nous utilisons SHA256 comme algorithme de hachage et Pkcs1 pour SignaturePadding. Vous devez donc vous assurer que vous les utilisez lorsque vous validez la réponse signée à partir du client. Consultez l’exemple pour connaître le fonctionnement de ce mécanisme sur votre serveur dans .NET 4.6 mais, en général, cela ressemble à ce qui suit :
+Once you have the CNG blob, you need to validate the signed challenge against the public key of the user. Since everyone uses his or her own system or backend technology, there is no generic way to implement this logic. We are using SHA256 as the hash algorithm and Pkcs1 for SignaturePadding, so make sure that’s what you use when you validate the signed response from the client. Again, refer to the sample for a way to do it on your server in .NET 4.6, but in general it will look something like this:
 
 ```cs
 using (RSACng pubKey = new RSACng(publicKey))
@@ -307,9 +307,9 @@ using (RSACng pubKey = new RSACng(publicKey))
 }
 ```
 
-Nous lisons la clé publique stockée, qui est une clé RSA. Nous vérifions le message de demande signé avec la clé publique, et si celui-ci est validé, nous autorisons l’utilisateur. Si l’utilisateur est authentifié, l’application peut appeler les services principaux de la manière habituelle.
+We read the stored public key, which is an RSA key. We validate the signed challenge message with the public key and if this checks out, we authorize the user. If the user is authenticated, the app can call the backend services as normal.
 
-Le code complet peut ressembler à ce qui suit :
+The complete code might look something like the following:
 
 ```cs
 using System;
@@ -353,107 +353,107 @@ static async Task<IBuffer> GetAuthenticationMessageAsync(IBuffer message, String
 }
 ```
 
-L’implémentation du mécanisme de demande-réponse correct n’est pas couverte dans ce document, mais elle doit être prise en compte pour créer un mécanisme sécurisé évitant notamment les attaques par relecture ou les attaques de l’intercepteur (« man in the middle »).
+Implementing the correct challenge–response mechanism is outside the scope of this document, but this topic is something that requires attention in order to successfully create a secure mechanism to prevent things like replay attacks or man-in-the-middle attacks.
 
-## 3.5 Inscription d’un autre appareil
+## <a name="35-enrolling-another-device"></a>3.5 Enrolling another device
 
 
-De nos jours, les utilisateurs possèdent couramment plusieurs appareils équipés des mêmes applications. Comment fonctionne l’utilisation de Microsoft Passport avec différents appareils ?
+Nowadays, it is common for users to have multiple devices with the same apps installed. How does this work when using Microsoft Passport with multiple devices?
 
-Chaque appareil qui utilise Microsoft Passport crée un ensemble unique de clés publiques et privées. Cela signifie que si vous voulez qu’un utilisateur puisse utiliser plusieurs appareils, votre système principal doit être en mesure de stocker plusieurs clés publiques de cet utilisateur. Pour découvrir un exemple de la structure de table, reportez-vous au schéma de base de données de la section 2.1.
+When using Microsoft Passport every device will create a unique private and public key set. This means that if you want a user to be able to use multiple devices, your backend must be able to store multiple public keys from this user. Refer to the database diagram in section 2.1 for an example of the table structure.
 
-L’inscription d’un autre appareil est presque identique à l’inscription d’un utilisateur pour la première fois. Vous devez seulement vous assurer que l’utilisateur qui inscrit ce nouvel appareil est réellement la personne qu’il prétend être. Vous pouvez effectuer cette opération avec n’importe quel mécanisme d’authentification à 2 facteurs actuellement utilisé. Il existe plusieurs façons de procéder de manière sécurisée. Tout dépend de votre scénario.
+Registering another device is almost the same as registering a user for the first time. You still need to be sure the user registering for this new device is really the user he or she claims to be. You can do so with any two-factor authentication mechanism that is used today. There are several ways to accomplish this in a secure way. It all depends on your scenario.
 
-Par exemple, si vous utilisez toujours le nom d’utilisateur et le mot de passe de connexion, vous pouvez vous en servir pour authentifier l’utilisateur et lui demander d’utiliser l’une de ses méthodes de vérification (SMS ou e-mail par exemple). Si vous ne disposez pas d’un nom d’utilisateur et d’un mot de passe de connexion, vous pouvez également utiliser l’un des appareils déjà inscrits et envoyer une notification à l’application sur cet appareil (l’application d’authentification MSA, par exemple). En résumé, vous devez utiliser un mécanisme 2FA courant pour inscrire des appareils supplémentaires pour l’utilisateur.
+For example, if you still use login name and password you can use that to authenticate the user and ask them to use one of their verification methods like SMS or email. If you don’t have a login name and password, you can also use one of the already registered devices and send a notification to the app on that device. The MSA authenticator app is an example of this. In short, you should use a common 2FA mechanism to register extra devices for the user.
 
-Le code permettant d’inscrire le nouvel appareil est exactement le même que celui utilisé pour la toute première inscription de l’utilisateur (à partir de l’application).
+The code to register the new device is exactly the same as registering the user for the first time (from within the app).
 
 ```cs
 var keyCreationResult = await KeyCredentialManager.RequestCreateAsync(
     AccountId, KeyCredentialCreationOption.ReplaceExisting);
 ```
 
-Pour permettre à l’utilisateur de reconnaître facilement les appareils inscrits, vous pouvez choisir d’envoyer le nom de l’appareil ou un autre identificateur dans le cadre de l’inscription. Cela est également utile, par exemple, si vous voulez implémenter un service sur votre système principal permettant aux utilisateurs d’annuler l’inscription d’un appareil en cas de perte de ce dernier.
+To make it easier for the user to recognize which devices are registered, you can choose to send the device name or another identifier as part of the registration. This is also useful, for example, if you want to implement a service on your backend where users can unregister devices when a device is lost.
 
-## 3.6 Utilisation de plusieurs comptes dans votre application
+## <a name="36-using-multiple-accounts-in-your-app"></a>3.6 Using multiple accounts in your app
 
 
-Outre la prise en charge de plusieurs appareils pour un même compte, il est également courant de prendre en charge plusieurs comptes dans une seule application. Par exemple, vous vous connectez peut-être à plusieurs comptes Twitter à partir de votre application. Avec Microsoft Passport, vous pouvez créer plusieurs paires de clés et prendre en charge plusieurs comptes au sein de votre application.
+In addition to supporting multiple devices for a single account, it is also common to support multiple accounts in a single app. For example, maybe you are connecting to multiple Twitter accounts from within your app. With Microsoft Passport, you can create multiple key pairs and support multiple accounts inside your app.
 
-L’un des moyens d’effectuer cette opération consiste à conserver le nom d’utilisateur ou l’identificateur unique décrits au chapitre précédent dans un stockage séparé. Ainsi, chaque fois que vous créez un compte, vous stockez l’ID de compte dans un stockage distinct.
+One way of doing this is keeping the username or unique identifier described in the previous chapter in isolated storage. Therefore, every time you create a new account, you store the account ID in isolated storage.
 
-Dans l’interface utilisateur de l’application, vous permettez à l’utilisateur de choisir l’un des comptes précédemment créés ou de s’inscrire avec un nouveau compte. Le flux de la création d’un compte est le même que celui décrit précédemment. Pour permettre à l’utilisateur de choisir un compte, il convient de lui présenter à l’écran la liste des comptes stockés. Une fois que l’utilisateur a choisi un compte, utilisez l’ID du compte pour connecter l’utilisateur à votre application :
+In the app UI, you allow the user to either choose one of the previously created accounts or sign up with a new one. The flow of creating a new account is the same as described before. Choosing an account is a matter of listing the stored accounts on the screen. Once the user selects an account, use the account ID to log on the user in your app:
 
 ```cs
 var openKeyResult = await KeyCredentialManager.OpenAsync(AccountId);
 ```
 
-Le reste du flux est le même que celui décrit précédemment. En clair, tous ces comptes sont protégés par le même code confidentiel ou par le même mouvement biométrique, car dans ce scénario, ils sont utilisés sur un appareil avec le même compte Windows.
+The rest of the flow is the same as described earlier. To be clear, all these accounts are protected by the same PIN or biometric gesture since in this scenario they are being used on a single device with the same Windows Account.
 
-## 4 Migration d’un système existant vers Microsoft Passport
+## <a name="4-migrating-an-existing-system-to-microsoft-passport"></a>4 Migrating an Existing System to Microsoft Passport
 
 
-Dans cette courte section, nous considérons l’exemple d’une application de plateforme Windows universelle existante et d’un système principal utilisant une base de données qui stocke le nom d’utilisateur et le mot de passe haché. Ces applications collectent les informations d’identification de l’utilisateur lorsque l’application démarre, et les utilisent lorsque le système principal renvoie la demande d’authentification.
+In this short section, we will address an existing Universal Windows Platform app and backend system that uses a database that stores the username and hashed password. These apps collect credentials from the user when the app starts and use them when the backend system returns the authentication challenge.
 
-Ici, nous allons vous présenter les éléments à changer ou à remplacer pour que Microsoft Passport fonctionne.
+Here, we will describe what pieces need to be changed or replaced to make Microsoft Passport work.
 
-Nous avons déjà décrit la plupart des techniques dans les chapitres précédents. L’ajout de Microsoft Passport à votre système existant implique l’ajout de quelques flux différents dans la partie inscription et authentification de votre code.
+We have already described most of the techniques in the earlier chapters. Adding Microsoft Passport to your existing system involves adding a couple of different flows in the registration and authentication part of your code.
 
-L’une des approches consiste à laisser l’utilisateur décider du moment où il souhaite effectuer la mise à niveau. Une fois que l’utilisateur s’est connecté à l’application et que vous avez déterminé que l’application et le système d’exploitation sont en mesure de prendre en charge Microsoft Passport, vous pouvez demander à l’utilisateur s’il souhaite mettre à niveau ses informations d’identification pour utiliser ce système moderne et plus sécurisé. Vous pouvez utiliser le code ci-après pour vérifier si l’utilisateur est en mesure d’utiliser Microsoft Passport.
+One approach is to let the user choose when to upgrade. After the user logs on to the app and you detect that the app and OS are capable of supporting Microsoft Passport, you can ask the user if he or she wants to upgrade credentials to use this modern and more secure system. You can use the following code to check whether the user is capable of using Microsoft Passport.
 
 ```cs
 var keyCredentialAvailable = await KeyCredentialManager.IsSupportedAsync();
 ```
 
-L’interface utilisateur peut ressembler à ce qui suit:
+The UI might look something like this:
 
-![Interface utilisateur de Passport](images/passport-ui.png)
+![passport ui](images/passport-ui.png)
 
-Si l’utilisateur choisit de commencer à utiliser Microsoft Passport, vous créez l’élément [**KeyCredential**](https://msdn.microsoft.com/library/windows/apps/dn973029) décrit précédemment. Le serveur d’inscription principal ajoute la clé publique et la déclaration d’attestation facultative à la base de données. Dans la mesure où l’utilisateur est déjà authentifié avec le nom d’utilisateur et le mot de passe, le serveur peut lier les nouvelles informations d’identification aux informations actuelles de l’utilisateur dans la base de données. Le modèle de base de données peut être identique à l’exemple décrit précédemment.
+If the user elects to start using Microsoft Passport, you create the [**KeyCredential**](https://msdn.microsoft.com/library/windows/apps/dn973029) described before. The backend registration server adds the public key and optional attestation statement to the database. Because the user is already authenticated with username and password, the server can link the new credentials to the current user information in the database. The database model could be the same as the example described earlier.
 
-Si l’application est parvenue à créer l’élément [**KeyCredential**](https://msdn.microsoft.com/library/windows/apps/dn973029) des utilisateurs, elle stocke l’identificateur d’utilisateur dans un stockage séparé pour que l’utilisateur puisse choisir ce compte dans la liste une fois l’application redémarrée. À partir de ce stade, le flux suit exactement les exemples décrits aux chapitres précédents.
+If the app was able to create the users [**KeyCredential**](https://msdn.microsoft.com/library/windows/apps/dn973029), it stores the user ID in isolated storage so the user can pick this account from the list once the app is started again. From this point on, the flow exactly follows the examples described in earlier chapters.
 
-La dernière étape de migration vers un scénario de mise en œuvre complète de Microsoft Passport consiste à désactiver l’option du nom et du mot de passe de connexion dans l’application et à supprimer les mots de passe hachés stockés dans la base de données.
+The final step in migrating to a full Microsoft Passport scenario is disabling the logon name and password option in the app and removing the stored hashed passwords from your database.
 
-## 5 Récapitulatif
-
-
-Windows 10 introduit un niveau supérieur de sécurité qui est également facile à mettre en pratique. Windows Hello fournit un nouveau système d’identification biométrique qui reconnaît l’utilisateur et décourage activement les tentatives de contournement des identifications. Microsoft Passport fonctionne avec Windows Hello pour transmettre plusieurs couches de clés et les certificats qui ne peuvent jamais être affichés ou utilisés en dehors du module de plateforme sécurisée. En outre, une couche supplémentaire de sécurité est disponible par le biais de l’utilisation facultative de certificats et de clés d’identité d’attestation.
-
-En tant que développeur, vous pouvez utiliser ces conseils en matière de conception et de déploiement de ces technologies pour ajouter facilement une authentification sécurisée à vos déploiements Windows 10 afin de protéger les applications et les services principaux. Le code requis est minime et facile à comprendre. Windows 10 se charge d’effectuer les tâches les plus lourdes.
-
-Les options d’implémentation flexibles permettent à Microsoft Passport et Windows Hello de remplacer ou d’utiliser parallèlement votre système d’authentification existant. L’expérience de déploiement est simple et économique. Aucune infrastructure supplémentaire n’est nécessaire pour déployer la sécurité de Windows 10. Grâce à l’intégration de Microsoft Passport et Microsoft Hello au système d’exploitation, Windows 10 offre la solution la plus sécurisée aux problèmes d’authentification rencontrés par le développeur d’aujourd’hui.
-
-Mission accomplie ! Vous venez de contribuer à rendre Internet plus sûr !
-
-## 6 Ressources
+## <a name="5-summary"></a>5 Summary
 
 
-### 6.1 Articles et exemple de code
+Windows 10 introduces a higher level of security that is also simple to put into practice. Windows Hello provides a new biometric sign-in system that recognizes the user and actively defeats efforts to circumvent proper identification. Microsoft Passport works with Windows Hello to deliver multiple layers of keys and certificates that can never be revealed or used outside the trusted platform module. In addition, a further layer of security is available through the optional use of attestation identity keys and certificates.
 
--   [Présentation de Windows Hello](http://windows.microsoft.com/windows-10/getstarted-what-is-hello)
--   [Détails d’implémentation concernant Microsoft Passport et Windows Hello](https://msdn.microsoft.com/library/mt589441)
--   [Exemple de code Microsoft Passport sur GitHub](http://go.microsoft.com/fwlink/?LinkID=717812)
+As a developer, you can use this guidance on design and deployment of these technologies to easily add secure authentication to your Windows 10 rollouts to protect apps and backend services. The code required is minimal and easy to understand. Windows 10 does the heavy lifting.
 
-### 6.2 Terminologie
+Flexible implementation options allow Microsoft Passport and Windows Hello to replace or work alongside your existing authentication system. The deployment experience is painless and economical. No additional infrastructure is needed to deploy Windows 10 security. With Microsoft Passport and Microsoft Hello built in to the operating system, Windows 10 offers the most secure solution to the authentication problems facing the modern developer.
+
+Mission accomplished! You just made the Internet a safer place!
+
+## <a name="6-resources"></a>6 Resources
+
+
+### <a name="61-articles-and-sample-code"></a>6.1 Articles and sample code
+
+-   [Windows Hello overview](http://windows.microsoft.com/windows-10/getstarted-what-is-hello)
+-   [Implementation details for Microsoft Passport and Windows Hello](https://msdn.microsoft.com/library/mt589441)
+-   [Microsoft Passport code sample on GitHub](http://go.microsoft.com/fwlink/?LinkID=717812)
+
+### <a name="62-terminology"></a>6.2 Terminology
 
 |                     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AIK                 | Une clé d’identité d’attestation sert à fournir une preuve par chiffrement (attestation de clé TPM) en signant les propriétés de la clé non migrable et en fournissant les propriétés et la signature à la partie de confiance pour la vérification. La signature qui en résulte est appelée « déclaration d’attestation ». Dans la mesure où la signature est créée à l’aide de la clé privée AIK (qui n’est utilisable que dans le TPM qui l’a créée), la partie de confiance peut être certaine que la clé attestée ne peut vraiment pas faire l’objet d’une migration ni être utilisée en dehors de ce TPM. |
-| Certificat AIK     | Un certificat AIK permet d’attester de la présence d’un AIK au sein d’un module de plateforme sécurisée (TPM). Il permet également d’attester que les autres clés certifiées par la clé d’identité d’attestation provenaient de ce TPM spécifique.                                                                                                                                                                                                                                                                                                                                              |
-| IdP                 | Un IDP est un fournisseur d’identité. Il peut par exemple s’agir de l’IdP généré par Microsoft pour les comptes Microsoft. Chaque fois qu’une application doit s’authentifier auprès d’un compte Microsoft (MSA), elle peut appeler l’IdP MSA.                                                                                                                                                                                                                                                                                                                                        |
-| PKI                 | L’infrastructure à clé publique est couramment utilisée pour pointer vers un environnement hébergé par une organisation proprement dite et responsable de la création de clés, de la révocation de clés, etc.                                                                                                                                                                                                                                                                                                                                                           |
-| Module de plateforme sécurisée                 | Le module de plateforme sécurisée peut être utilisé pour créer des paires de clés de chiffrement publiques/privées de façon à ce que la clé privée ne puisse jamais être révélée ni utilisée en dehors du TPM (autrement dit, la clé ne peut pas faire l’objet d’une migration).                                                                                                                                                                                                                                                                                                               |
-| Attestation de clé TPM | Protocole qui prouve par le biais du chiffrement qu’une clé est liée au TPM. Vous pouvez utiliser ce type d’attestation pour vérifier si une certaine opération de chiffrement s’est produite dans le TPM d’un ordinateur donné.                                                                                                                                                                                                                                                                                                                       |
+| AIK                 | An attestation identity key is used to provide such a cryptographic proof (TPM key attestation) by signing the properties of the non-migratable key and providing the properties and signature to the relying party for verification. The resulting signature is called an “attestation statement.” Since the signature is created using the AIK private key—which can only be used in the TPM that created it—the relying party can trust that the attested key is truly non-migratable and cannot be used outside that TPM. |
+| AIK Certificate     | An AIK certificate is used to attest to the presence of an AIK within a TPM. It is also used to attest that other keys certified by the AIK originated from that particular TPM.                                                                                                                                                                                                                                                                                                                                              |
+| IDP                 | An IDP is an identity provider. An example is the IDP build by Microsoft for Microsoft Accounts. Every time an application needs to authenticate with an MSA, it can call the MSA IDP.                                                                                                                                                                                                                                                                                                                                        |
+| PKI                 | Public key infrastructure is commonly used to point to an environment hosted by an organization itself and being responsible for creating keys, revoking keys, etc.                                                                                                                                                                                                                                                                                                                                                           |
+| TPM                 | The trusted platform module can be used to create cryptographic public/private key pairs in such a way that the private key can never be revealed or used outside the TPM (that is, the key is non-migratable).                                                                                                                                                                                                                                                                                                               |
+| TPM Key Attestation | A protocol that cryptographically proves that a key is TPM-bound. This type of attestation can be used to guarantee that a certain cryptographic operation occurred in the TPM of a particular computer                                                                                                                                                                                                                                                                                                                       |
 
  
 
-## Rubriques connexes
+## <a name="related-topics"></a>Related topics
 
-* [Application de connexion Microsoft Passport](microsoft-passport-login.md)
-* [Service de connexion Microsoft Passport](microsoft-passport-login-auth-service.md)
+* [Microsoft Passport login app](microsoft-passport-login.md)
+* [Microsoft Passport login service](microsoft-passport-login-auth-service.md)
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

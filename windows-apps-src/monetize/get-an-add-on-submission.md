@@ -1,77 +1,72 @@
 ---
 author: mcleanbyron
 ms.assetid: E3DF5D11-8791-4CFC-8131-4F59B928A228
-description: "Utilisez cette méthode dans l’API de soumission du Windows Store pour obtenir des données pour une soumission d’extension existante."
-title: "Obtenir une soumission d’extension à l’aide de l’API de soumission du Windows Store"
+description: Use this method in the Windows Store submission API to get data for an existing add-on submission.
+title: Get an add-on submission using the Windows Store submission API
 translationtype: Human Translation
-ms.sourcegitcommit: 03942eb9015487cfd5690e4b1933e4febd705971
-ms.openlocfilehash: ecdd4292c7980a647075c55abf7d14edd39d23d6
+ms.sourcegitcommit: f52059a37194b78db2f9bb29a5e8959b2df435b4
+ms.openlocfilehash: 887615bfc07549d82a295bae99dd31f722546341
 
 ---
 
-# Obtenir une soumission d’extension à l’aide de l’API de soumission du Windows Store
+# <a name="get-an-add-on-submission-using-the-windows-store-submission-api"></a>Get an add-on submission using the Windows Store submission API
 
+Use this method in the Windows Store submission API to get data for an existing add-on (also known as in-app product or IAP) submission. For more information about the process of process of creating an add-on submission by using the Windows Store submission API, see [Manage add-on submissions](manage-add-on-submissions.md).
 
+## <a name="prerequisites"></a>Prerequisites
 
+To use this method, you need to first do the following:
 
-Utilisez cette méthode dans l’API de soumission du Windows Store pour obtenir des données pour une soumission d’extension existante (également connue sous le nom PIA ou produit in-app). Pour plus d’informations sur le processus de création d’une soumission d’extensions à l’aide de l’API de soumission du Windows Store, voir [Gérer les soumissions d’extensions](manage-add-on-submissions.md).
+* If you have not done so already, complete all the [prerequisites](create-and-manage-submissions-using-windows-store-services.md#prerequisites) for the Windows Store submission API.
+* [Obtain an Azure AD access token](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
+* Create an add-on submission for an app in your Dev Center account. You can do this in the Dev Center dashboard, or you can do this by using the [Create an add-on submission](create-an-add-on-submission.md) method.
 
->**Important**&nbsp;&nbsp;Microsoft va bientôt changer le modèle de données de tarification pour les soumissions d’extensions dans le Centre de développement Windows. Une fois la modification implémentée, la ressource **Tarification** dans le corps de la demande de cette méthode sera vide et vous ne pourrez temporairement pas modifier les données relatives à la tarification et à la vente d’une soumission d’extension à l’aide de cette méthode. Nous allons mettre à jour l’API de soumission du Windows Store à l’avenir pour introduire une nouvelle façon d’accéder par programmation aux informations de tarification des soumissions d’extensions. Pour plus d’informations, voir la [ressource Tarification](manage-add-on-submissions.md#pricing-object).
+>**Note**&nbsp;&nbsp;This method can only be used for Windows Dev Center accounts that have been given permission to use the Windows Store submission API. Not all accounts have this permission enabled.
 
-## Prérequis
+## <a name="request"></a>Request
 
-Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
+This method has the following syntax. See the following sections for usage examples and descriptions of the header and request body.
 
-* Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
-* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
-* Créez une soumission d’extension pour une application dans votre compte du Centre de développement. Pour cela, vous pouvez utiliser le tableau de bord du Centre de développement ou la méthode [Créer une soumission d’extension](create-an-add-on-submission.md).
-
->**Remarque**&nbsp;&nbsp;Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
-
-## Requête
-
-Cette méthode présente la syntaxe suivante. Consultez les sections suivantes pour obtenir des exemples d’utilisation et une description de l’en-tête et du corps de la requête.
-
-| Méthode | URI de la requête                                                      |
+| Method | Request URI                                                      |
 |--------|------------------------------------------------------------------|
 | GET   | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}/submissions/{submissionId} ``` |
 
 <span/>
  
 
-### En-tête de requête
+### <a name="request-header"></a>Request header
 
-| En-tête        | Type   | Description                                                                 |
+| Header        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;. |
+| Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
 
 <span/>
 
-### Paramètres de la requête
+### <a name="request-parameters"></a>Request parameters
 
-| Nom        | Type   | Description                                                                 |
+| Name        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| inAppProductId | chaîne | Obligatoire. ID Windows Store de l’extension qui contient la soumission à obtenir. L’ID Windows Store est disponible dans le tableau de bord du Centre de développement. Il figure également dans les données de réponse aux requêtes visant à [créer une extension](create-an-add-on.md) ou à [obtenir les détails d’une extension](get-all-add-ons.md).  |
-| submissionId | chaîne | Obligatoire. ID de la soumission à obtenir. Cet ID est disponible dans le tableau de bord du Centre de développement et figure également dans les données de réponse aux requêtes visant à [créer une soumission d’extension](create-an-add-on-submission.md).  |
+| inAppProductId | string | Required. The Store ID of the add-on that contains the submission you want to get. The Store ID is available on the Dev Center dashboard, and it is included in the response data for requests to [Create an add-on](create-an-add-on.md) or [get add-on details](get-all-add-ons.md).  |
+| submissionId | string | Required. The ID of the submission to get. This ID is available in the Dev Center dashboard, and it is included in the response data for requests to [Create an add-on submission](create-an-add-on-submission.md).  |
 
 <span/>
 
-### Corps de la requête
+### <a name="request-body"></a>Request body
 
-Ne fournissez pas de corps de requête pour cette méthode.
+Do not provide a request body for this method.
 
-### Exemple de requête
+### <a name="request-example"></a>Request example
 
-L’exemple suivant montre comment obtenir une soumission d’extension.
+The following example demonstrates how to get an add-on submission.
 
 ```
 GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/9NBLGGH4TNMP/submissions/1152921504621243680 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-## Réponse
+## <a name="response"></a>Response
 
-L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à cette méthode. Le corps de la réponse contient des informations sur la soumission spécifiée. Pour plus d’informations sur les valeurs figurant dans le corps de réponse, voir [ressource de soumission d’extension](manage-add-on-submissions.md#add-on-submission-object).
+The following example demonstrates the JSON response body for a successful call to this method. The response body contains information about the specified submission. For more details about the values in the response body, see [add-on submission resource](manage-add-on-submissions.md#add-on-submission-object).
 
 ```json
 {
@@ -104,17 +99,7 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
       "RU": "Tier3",
       "US": "Tier4",
     },
-    "sales": [
-      {
-         "name": "Sale1",
-         "basePriceId": "Free",
-         "startDate": "2016-05-21T18:40:11.7369008Z",
-         "endDate": "2016-05-22T18:40:11.7369008Z",
-         "marketSpecificPricings": {
-            "RU": "NotAvailable"
-         }
-      }
-    ],
+    "sales": [],
     "priceId": "Free"
   },
   "targetPublishDate": "2016-03-15T05:10:58.047Z",
@@ -146,29 +131,29 @@ L’exemple suivant illustre le corps de réponse JSON d’un appel réussi à c
 }
 ```
 
-## Codes d’erreur
+## <a name="error-codes"></a>Error codes
 
-Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’erreur HTTP suivants.
+If the request cannot be successfully completed, the response will contain one of the following HTTP error codes.
 
 | Error code |  Description   |
 |--------|------------------|
-| 404  | La soumission est introuvable. |
-| 409  | La soumission n’appartient pas à l’extension spécifiée, ou l’extension utilise une fonctionnalité du tableau de bord du Centre de développement qui n’est [actuellement pas prise en charge par l’API de soumission du Windows Store](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
+| 404  | The submission could not be found. |
+| 409  | The submission does not belong to the specified add-on, or the add-on uses a Dev Center dashboard feature that is [currently not supported by the Windows Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
 
 <span/>
 
 
-## Rubriques connexes
+## <a name="related-topics"></a>Related topics
 
-* [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md)
-* [Créer une soumission d’extension](create-an-add-on-submission.md)
-* [Valider une soumission d’extension](commit-an-add-on-submission.md)
-* [Mettre à jour une soumission d’extension](update-an-add-on-submission.md)
-* [Supprimer une soumission d’extension](delete-an-add-on-submission.md)
-* [Obtenir l’état d’une soumission d’extension](get-status-for-an-add-on-submission.md)
+* [Create and manage submissions using Windows Store services](create-and-manage-submissions-using-windows-store-services.md)
+* [Create an add-on submission](create-an-add-on-submission.md)
+* [Commit an add-on submission](commit-an-add-on-submission.md)
+* [Update an add-on submission](update-an-add-on-submission.md)
+* [Delete an add-on submission](delete-an-add-on-submission.md)
+* [Get the status of an add-on submission](get-status-for-an-add-on-submission.md)
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -1,61 +1,61 @@
 ---
 author: dbirtolo
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
-title: "Informations de référence sur les API principales Device Portal"
-description: "Découvrez les API REST principales WindowsDevicePortal que vous pouvez utiliser pour accéder aux données et contrôler votre appareil par programmation."
+title: Device Portal core API reference
+description: Learn about the Windows Device Portal core REST APIs that you can use to access the data and control your device programmatically.
 translationtype: Human Translation
-ms.sourcegitcommit: fae2c6b31c9c6c07026abc4718959b02a36e6600
-ms.openlocfilehash: 226ecaecd93e4996e438f56f780926ca63c184fd
+ms.sourcegitcommit: b4222774dc4b0f9cdcac871311f5ead69c1e70a9
+ms.openlocfilehash: 3bacb9ac42e157afaed5e9e0e6438654db03ff28
 
 ---
 
-# Référence sur les API principales DevicePortal
+# <a name="device-portal-core-api-reference"></a>Device Portal core API reference
 
-Dans WindowsDevicePortal, tout repose sur les API REST que vous pouvez utiliser pour accéder aux données et contrôler votre appareil par programmation.
+Everything in the Windows Device Portal is built on top of REST APIs that you can use to access the data and control your device programmatically.
 
-## Déploiement des applications
+## <a name="app-deployment"></a>App deployment
 
 ---
-### Installer une application
+### <a name="install-an-app"></a>Install an app
 
-**Requête**
+**Request**
 
-Vous pouvez installer une application en utilisant le format de requête suivant.
+You can install an app by using the following request format.
 
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 POST | /api/app/packagemanager/package
 <br />
-**Paramètres d’URI**
+**URI parameters**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+You can specify the following additional parameters on the request URI:
 
-Paramètre d’URI | Description
+URI parameter | Description
 :---          | :---
-package   | (**requis**) Nom de fichier du package à installer.
+package   | (**required**) The file name of the package to be installed.
 <br />
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la demande**
+**Request body**
 
-- Fichier .appx ou .appxbundle, ainsi que toutes les dépendances dont l’application a besoin. 
-- Certificat utilisé pour signer l’application, s’il s’agit d’un appareil IoT ou de bureau Windows. Les autres plateformes n’exigent pas le certificat. 
+- The .appx or .appxbundle file, as well as any dependencies the app requires. 
+- The certificate used to sign the app, if the device is IoT or Windows Desktop. Other platforms do not require the certificate. 
 
-**Réponse**
+**Response**
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
-200 | Requête de déploiement acceptée et traitée
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+200 | Deploy request accepted and being processed
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Mobile
 * Windows Desktop
@@ -64,41 +64,41 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Obtenir l’état de l’installation de l’application
+### <a name="get-app-installation-status"></a>Get app installation status
 
-**Requête**
+**Request**
 
-Vous pouvez obtenir l’état d’installation d’une application actuellement en cours d’exécution en utilisant le format de requête suivant.
+You can get the status of an app installation that is currently in progress by using the following request format.
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 GET | /api/app/packagemanager/state
 <br />
-**Paramètres d’URI**
+**URI parameters**
 
-- Aucun
+- None
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
-200 | Le résultat du dernier déploiement
-204 | L’installation est en cours d’exécution
-404 | Aucune action d’installation n’a été détectée
+200 | The result of the last deployment
+204 | The installation is running
+404 | No installation action was found
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Mobile
 * Windows Desktop
@@ -107,44 +107,44 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Désinstaller une application
+### <a name="uninstall-an-app"></a>Uninstall an app
 
-**Requête**
+**Request**
 
-Vous pouvez désinstaller une application en utilisant le format de requête suivant.
+You can uninstall an app by using the following request format.
  
-Méthode      | URI de requête
+Method      | Request URI
 :------     | :-----
 DELETE | /api/app/packagemanager/package
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-Paramètre d’URI | Description
+URI parameter | Description
 :---          | :---
-package   | (**obligatoire**) PackageFullName (à partir de GET /api/app/packagemanager/packages) de l’application cible
+package   | (**required**) The PackageFullName (from GET /api/app/packagemanager/packages) of the target app
 
-**En-têtes de demande**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Mobile
 * Windows Desktop
@@ -153,32 +153,32 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Obtenir des applications installées
+### <a name="get-installed-apps"></a>Get installed apps
 
-**Requête**
+**Request**
 
-Vous pouvez obtenir une liste des applications installées sur le système en utilisant le format de requête suivant.
+You can get a list of apps installed on the system by using the following request format.
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 GET | /api/app/packagemanager/packages
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-- Aucun
+- None
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-La réponse comprend une liste des packages installés avec les détails associés. Le modèle de cette réponse est le suivant.
+The response includes a list of installed packages with associated details. The template for this response is as follows.
 ```
 {"InstalledPackages": [
     {
@@ -203,17 +203,17 @@ La réponse comprend une liste des packages installés avec les détails associ�
     },...
 ]}
 ```
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Mobile
 * Windows Desktop
@@ -222,34 +222,34 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-## Gestionnaire de périphériques
+## <a name="device-manager"></a>Device manager
 ---
-### Obtenir les périphériques installés sur l’ordinateur
+### <a name="get-the-installed-devices-on-the-machine"></a>Get the installed devices on the machine
 
-**Requête**
+**Request**
 
-Vous pouvez obtenir une liste des périphériques installés sur l’ordinateur en utilisant le format de requête suivant.
+You can get a list of devices that are installed on the machine by using the following request format.
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 GET | /api/devicemanager/devices
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-- Aucun
+- None
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-La réponse inclut un tableau d’appareils JSON joint à l’appareil.
+The response includes a JSON array of devices attached to the device.
 ``` 
 {"DeviceList": [
     {
@@ -264,647 +264,662 @@ La réponse inclut un tableau d’appareils JSON joint à l’appareil.
 ]}
 ```
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Mobile
 * Windows Desktop
 * IoT
 
 ---
-## Collection de vidages
+## <a name="dump-collection"></a>Dump collection
 ---
-### Obtenir la liste de tous les vidages sur incident pour les applications
+### <a name="get-the-list-of-all-crash-dumps-for-apps"></a>Get the list of all crash dumps for apps
 
-**Requête**
+**Request**
 
-Vous pouvez obtenir la liste de tous les vidages sur incident disponibles pour toutes les applications chargées de manière indépendante en utilisant le format de requête suivant.
+You can get the list of all the available crash dumps for all sideloaded apps by using the following request format.
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 GET | /api/debug/dump/usermode/dumps
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-- Aucun
+- None
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-La réponse comprend une liste des vidages sur incident pour chaque application chargée de manière indépendante.
+The response includes a list of crash dumps for each sideloaded application.
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
+* Window Mobile (in Windows Insider Program)
 * Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### Obtenir les paramètres de collection de vidage sur incident pour une application
+### <a name="get-the-crash-dump-collection-settings-for-an-app"></a>Get the crash dump collection settings for an app
 
-**Requête**
+**Request**
 
-Vous pouvez obtenir les paramètres de collection de vidage sur incident d’une application chargée de manière indépendante en utilisant le format de requête suivant.
+You can get the crash dump collection settings for a sideloaded app by using the following request format.
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 GET | /api/debug/dump/usermode/crashcontrol
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+You can specify the following additional parameters on the request URI:
 
-Paramètre d’URI | Description
+URI parameter | Description
 :---          | :---
-packageFullname   | (**requis**) Nom complet du package pour l’application chargée de manière indépendante.
+packageFullname   | (**required**) The full name of the package for the sideloaded app.
 <br />
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-La réponse a le format suivant.
+The response has the following format.
 ```
 {"CrashDumpEnabled": bool}
 ```
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
+* Window Mobile (in Windows Insider Program)
 * Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### Supprimer un vidage sur incident pour une application chargée de manière indépendante
+### <a name="delete-a-crash-dump-for-a-sideloaded-app"></a>Delete a crash dump for a sideloaded app
 
-**Requête**
+**Request**
 
-Vous pouvez supprimer le vidage sur incident d’une application chargée de manière indépendante en utilisant le format de requête suivant.
+You can delete a sideloaded app's crash dump by using the following request format.
  
-Méthode      | URI de requête
+Method      | Request URI
 :------     | :-----
 DELETE | /api/debug/dump/usermode/crashdump
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+You can specify the following additional parameters on the request URI:
 
-Paramètre d’URI | Description
+URI parameter | Description
 :---          | :---
-packageFullname   | (**requis**) Nom complet du package pour l’application chargée de manière indépendante.
-fileName   | (**requis**) Nom du fichier de vidage à supprimer.
+packageFullname   | (**required**) The full name of the package for the sideloaded app.
+fileName   | (**required**) The name of the dump file that should be deleted.
 <br />
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
+* Window Mobile (in Windows Insider Program)
 * Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### Désactiver les vidages sur incident pour une application chargée de manière indépendante
+### <a name="disable-crash-dumps-for-a-sideloaded-app"></a>Disable crash dumps for a sideloaded app
 
-**Requête**
+**Request**
 
-Vous pouvez désactiver les vidages sur incident pour une application chargée de manière indépendante en utilisant le format de requête suivant.
+You can disable crash dumps for a sideloaded app by using the following request format.
  
-Méthode      | URI de requête
+Method      | Request URI
 :------     | :-----
 DELETE | /api/debug/dump/usermode/crashcontrol
 
 <br />
-**Paramètres d’URI**
+**URI parameters**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+You can specify the following additional parameters on the request URI:
 
-Paramètre d’URI | Description
+URI parameter | Description
 :---          | :---
-packageFullname   | (**requis**) Nom complet du package pour l’application chargée de manière indépendante.
+packageFullname   | (**required**) The full name of the package for the sideloaded app.
 <br />
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
+* Window Mobile (in Windows Insider Program)
 * Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### Télécharger le vidage sur incident pour une application chargée de manière indépendante
+### <a name="download-the-crash-dump-for-a-sideloaded-app"></a>Download the crash dump for a sideloaded app
 
-**Requête**
+**Request**
 
-Vous pouvez télécharger le vidage sur incident d’une application chargée de manière indépendante en utilisant le format de requête suivant.
+You can download a sideloaded app's crash dump by using the following request format.
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 GET | /api/debug/dump/usermode/crashdump
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+You can specify the following additional parameters on the request URI:
 
-Paramètre d’URI | Description
+URI parameter | Description
 :---          | :---
-packageFullname   | (**requis**) Nom complet du package pour l’application chargée de manière indépendante.
-fileName   | (**requis**) Nom du fichier de vidage à télécharger.
+packageFullname   | (**required**) The full name of the package for the sideloaded app.
+fileName   | (**required**) The name of the dump file that you want to download.
 <br />
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-La réponse comprend un fichier de vidage. Vous pouvez utiliser WinDbg ou Visual Studio pour examiner le fichier de vidage.
+The response includes a dump file. You can use WinDbg or Visual Studio to examine the dump file.
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
+* Window Mobile (in Windows Insider Program)
 * Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### Désactiver les vidages sur incident pour une application chargée de manière indépendante
+### <a name="enable-crash-dumps-for-a-sideloaded-app"></a>Enable crash dumps for a sideloaded app
 
-**Requête**
+**Request**
 
-Vous pouvez activer les vidages sur incident pour une application chargée de manière indépendante en utilisant le format de requête suivant.
+You can enable crash dumps for a sideloaded app by using the following request format.
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 POST | /api/debug/dump/usermode/crashcontrol
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+You can specify the following additional parameters on the request URI:
 
-Paramètre d’URI | Description
+URI parameter | Description
 :---          | :---
-packageFullname   | (**requis**) Nom complet du package pour l’application chargée de manière indépendante.
+packageFullname   | (**required**) The full name of the package for the sideloaded app.
 <br />
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
+* Window Mobile (in Windows Insider Program)
 * Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### Obtenir la liste des fichiers de vérification d’erreur
+### <a name="get-the-list-of-bugcheck-files"></a>Get the list of bugcheck files
 
-**Requête**
+**Request**
 
-Vous pouvez obtenir la liste des fichiers minidump de vérification d’erreur en utilisant le format de demande suivant.
+You can get the list of bugcheck minidump files by using the following request format.
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 GET | /api/debug/dump/kernel/dumplist
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-- Aucun
+- None
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-La réponse comprend une liste des noms de fichier de vidage et leur taille. Cette liste doit avoir le format suivant. Le second paramètre *FileName* correspond à la taille du fichier. Il s’agit d’un bogue connu.
+The response includes a list of dump file names and the sizes of these files. This list will be in the following format. 
 ```
 {"DumpFiles": [
     {
         "FileName": string,
-        "FileName": string
+        "FileSize": int
     },...
 ]}
 ```
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Desktop
 * IoT
 
 ---
-### Télécharger un fichier de vidage de vérification d’erreur
+### <a name="download-a-bugcheck-dump-file"></a>Download a bugcheck dump file
 
-**Requête**
+**Request**
 
-Vous pouvez télécharger un fichier de vidage de vérification d’erreur en utilisant le format de requête suivant.
+You can download a bugcheck dump file by using the following request format.
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 GET | /api/debug/dump/kernel/dump
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+You can specify the following additional parameters on the request URI:
 
-Paramètre d’URI | Description
+URI parameter | Description
 :---          | :---
-filename   | (**requis**) Nom du fichier de vidage. Vous pouvez le rechercher à l’aide de l’API pour obtenir la liste de vidage.
+filename   | (**required**) The file name of the dump file. You can find this by using the API to get the dump list.
 <br />
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-La réponse comprend le fichier de vidage. Vous pouvez examiner ce fichier à l’aide de WinDbg.
+The response includes the dump file. You can inspect this file using WinDbg.
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Desktop
 * IoT
 
 ---
-### Obtenir les paramètres de contrôle d’incident de la vérification d’erreur
+### <a name="get-the-bugcheck-crash-control-settings"></a>Get the bugcheck crash control settings
 
-**Requête**
+**Request**
 
-Vous pouvez obtenir la liste des paramètres de contrôle d’incident de la vérification d’erreur en utilisant le format de demande suivant.
+You can get the bugcheck crash control settings by using the following request format.
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 GET | /api/debug/dump/kernel/crashcontrol
 
 <br />
-**Paramètres d’URI**
+**URI parameters**
 
-- Aucun
+- None
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-La réponse comprend les paramètres de contrôle d’incident. Pour plus d’informations sur CrashControl, voir l’article [CrashControl](https://technet.microsoft.com/library/cc951703.aspx). Le modèle de la réponse est le suivant.
+The response includes the crash control settings. For more information about CrashControl, see the [CrashControl](https://technet.microsoft.com/library/cc951703.aspx) article. The template for the response is as follows.
 ```
 {
-    "autoreboot": int,
-    "dumptype": int,
+    "autoreboot": bool (0 or 1),
+    "dumptype": int (0 to 4),
     "maxdumpcount": int,
-    "overwrite": int
+    "overwrite": bool (0 or 1)
 }
 ```
 
-**Code d’état**
+**Dump types**
 
-Cette API comporte les codes d’état attendus suivants.
+0: Disabled
 
-Code d’état HTTP      | Description
+1: Complete memory dump (collects all in-use memory)
+
+2: Kernel memory dump (ignores user mode memory)
+
+3: Limited kernel minidump
+
+**Status code**
+
+This API has the following expected status codes.
+
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Desktop
 * IoT
 
 ---
-### Obtenir un vidage du noyau dynamique
+### <a name="get-a-live-kernel-dump"></a>Get a live kernel dump
 
-**Requête**
+**Request**
 
-Vous pouvez obtenir un vidage du noyau dynamique en utilisant le format de requête suivant.
+You can get a live kernel dump by using the following request format.
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 GET | /api/debug/dump/livekernel
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-- Aucun
+- None
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-La réponse comprend le vidage en mode noyau complet. Vous pouvez examiner ce fichier à l’aide de WinDbg.
+The response includes the full kernel mode dump. You can inspect this file using WinDbg.
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Desktop
 * IoT
 
 ---
-### Obtenir un vidage à partir d’un processus utilisateur dynamique
+### <a name="get-a-dump-from-a-live-user-process"></a>Get a dump from a live user process
 
-**Requête**
+**Request**
 
-Vous pouvez obtenir le vidage pour le processus utilisateur dynamique en utilisant le format de requête suivant.
+You can get the dump for live user process by using the following request format.
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 GET | /api/debug/dump/usermode/live
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+You can specify the following additional parameters on the request URI:
 
-Paramètre d’URI | Description
+URI parameter | Description
 :---          | :---
-pid   | (**requis**) Id unique du processus qui vous intéresse.
+pid   | (**required**) The unique process id for the process you are interested in.
 <br />
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-La réponse comprend le fichier de vidage du processus. Vous pouvez examiner ce fichier à l’aide de WinDbg ou de Visual Studio.
+The response includes the process dump. You can inspect this file using WinDbg or Visual Studio.
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Desktop
 * IoT
 
 ---
-### Obtenir les paramètres de contrôle d’incident de la vérification d’erreur
+### <a name="set-the-bugcheck-crash-control-settings"></a>Set the bugcheck crash control settings
 
-**Requête**
+**Request**
 
-Vous pouvez définir les paramètres de la collecte de données de vérification d’erreur en utilisant le format de requête suivant.
+You can set the settings for collecting bugcheck data by using the following request format.
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 POST | /api/debug/dump/kernel/crashcontrol
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+You can specify the following additional parameters on the request URI:
 
-Paramètre d’URI | Description
+URI parameter | Description
 :---          | :---
-autoreboot   | (**facultatif**) True ou false. Cette valeur indique si le système redémarre automatiquement suite à un échec ou à un verrouillage.
-dumptype   | (**facultatif**) Type de vidage. Pour les valeurs prises en charge, consultez [Énumération CrashDumpType](https://msdn.microsoft.com/library/azure/microsoft.azure.management.insights.models.crashdumptype.aspx).
-maxdumpcount   | (**facultatif**) Le nombre maximal de vidages à enregistrer.
-overwrite   | (**facultatif**) True ou false. Cela indique s’il convient d’écraser ou non les anciens vidages lorsque le seuil du nombre de vidages défini par *maxdumpcount* est atteint.
+autoreboot   | (**optional**) True or false. This indicates whether the system restarts automatically after it fails or locks.
+dumptype   | (**optional**) The dump type. For the supported values, see the [CrashDumpType Enumeration](https://msdn.microsoft.com/library/azure/microsoft.azure.management.insights.models.crashdumptype.aspx).
+maxdumpcount   | (**optional**) The maximum number of dumps to save.
+overwrite   | (**optional**) True of false. This indicates whether or not to overwrite old dumps when the dump counter limit specified by *maxdumpcount* has been reached.
 <br />
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Desktop
 * IoT
 
 ---
-## ETW
+## <a name="etw"></a>ETW
 ---
-### Créer une session ETW en temps réel via un websocket
+### <a name="create-a-realtime-etw-session-over-a-websocket"></a>Create a realtime ETW session over a websocket
 
-**Requête**
+**Request**
 
-Vous pouvez créer une session ETW en temps réel en utilisant le format de requête suivant. Cette opération est gérée via un websocket.  Les événements ETW sont regroupés sur le serveur et envoyés vers le client une fois par seconde. 
+You can create a realtime ETW session by using the following request format. This will be managed over a websocket.  ETW events are batched on the server and sent to the client once per second. 
  
-Méthode      | URI de requête
+Method      | Request URI
 :------     | :-----
 GET/WebSocket | /api/etw/session/realtime
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-- Aucun
+- None
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-La réponse comprend les événements ETW issus des fournisseurs activés.  Voir les commandes WebSocketETW ci-dessous. 
+The response includes the ETW events from the enabled providers.  See ETW WebSocket commands below. 
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Mobile
 * Windows Desktop
 * HoloLens
 * IoT
 
-### Commandes WebSocket ETW
-Ces commandes sont envoyées du client vers le serveur.
+### <a name="etw-websocket-commands"></a>ETW WebSocket commands
+These commands are sent from the client to the server.
 
-Commande | Description
+Command | Description
 :----- | :-----
-provider *{guid}* enable *{level}* | Activez le fournisseur marqué par *{guid}* (sans crochets) au niveau spécifié. 
-            *{level}* est un entier **int** de 1 (peu détaillé) à 5 (très détaillé).
-provider *{guid}* disable | Désactivez le fournisseur marqué par *{guid}* (sans crochets).
+provider *{guid}* enable *{level}* | Enable the provider marked by *{guid}* (without brackets) at the specified level. *{level}* is an **int** from 1 (least detail) to 5 (verbose).
+provider *{guid}* disable | Disable the provider marked by *{guid}* (without brackets).
 
-Cette réponse est envoyée du serveur vers le client. Elle est envoyée sous forme de texte et vous obtenez le format suivant en analysant le JSON.
+This responses is sent from the server to the client. This is sent as text and you get the following format by parsing the JSON.
 ```
 {
     "Events":[
@@ -922,9 +937,9 @@ Cette réponse est envoyée du serveur vers le client. Elle est envoyée sous fo
 }
 ```
 
-Les objets de charge utile sont des paires clé-valeur supplémentaires (chaîne:chaîne) qui sont fournies dans l’événement ETW d’origine.
+Payload objects are extra key-value pairs (string:string) that are provided in the original ETW event.
 
-Exemple:
+Example:
 ```
 {
     "ID" : 42, 
@@ -946,32 +961,32 @@ Exemple:
 ```
 
 ---
-### Énumérer les fournisseurs ETW enregistrés
+### <a name="enumerate-the-registered-etw-providers"></a>Enumerate the registered ETW providers
 
-**Requête**
+**Request**
 
-Vous pouvez énumérer les fournisseurs enregistrés en utilisant le format de requête suivant.
+You can enumerate through the registered providers by using the following request format.
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 GET | /api/etw/providers
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-- Aucun
+- None
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-La réponse comprend la liste des fournisseurs ETW. La liste comprend le nom convivial et le GUID de chaque fournisseur au format suivant.
+The response includes the list of ETW providers. The list will include the friendly name and GUID for each provider in the following format.
 ```
 {"Providers": [
     {
@@ -981,15 +996,15 @@ La réponse comprend la liste des fournisseurs ETW. La liste comprend le nom con
 ]}
 ```
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Mobile
 * Windows Desktop
@@ -997,32 +1012,32 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Énumérez les fournisseurs ETW personnalisés exposés par la plate-forme.
+### <a name="enumerate-the-custom-etw-providers-exposed-by-the-platform"></a>Enumerate the custom ETW providers exposed by the platform.
 
-**Requête**
+**Request**
 
-Vous pouvez énumérer les fournisseurs enregistrés en utilisant le format de requête suivant.
+You can enumerate through the registered providers by using the following request format.
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 GET | /api/etw/customproviders
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-- Aucun
+- None
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-200 OK. La réponse comprend la liste des fournisseurs ETW. La liste comprend le nom convivial et le GUID de chaque fournisseur.
+200 OK. The response includes the list of ETW providers. The list will include the friendly name and GUID for each provider.
 
 ```
 {"Providers": [
@@ -1033,11 +1048,11 @@ GET | /api/etw/customproviders
 ]}
 ```
 
-**Code d’état**
+**Status code**
 
-- Codes d’état standard.
+- Standard status codes.
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Mobile
 * Windows Desktop
@@ -1045,50 +1060,50 @@ GET | /api/etw/customproviders
 * IoT
 
 ---
-## Informations sur le système d’exploitation
+## <a name="os-information"></a>OS information
 ---
-### Obtenir le nom de l’ordinateur
+### <a name="get-the-machine-name"></a>Get the machine name
 
-**Requête**
+**Request**
 
-Vous pouvez obtenir le nom d’un ordinateur en utilisant le format de requête suivant.
+You can get the name of a machine by using the following request format.
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 GET | /api/os/machinename
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-- Aucun
+- None
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-La réponse inclut le nom de l’ordinateur au format suivant. 
+The response includes the computer name in the following format. 
 
 ```
 {"ComputerName": string}
 ```
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Mobile
 * Windows Desktop
@@ -1097,32 +1112,32 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Obtenir les informations du système d’exploitation
+### <a name="get-the-operating-system-information"></a>Get the operating system information
 
-**Requête**
+**Request**
 
-Vous pouvez obtenir les informations du système d’exploitation pour un ordinateur en utilisant le format de requête suivant.
+You can get the OS information for a machine by using the following request format.
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 GET | /api/os/info
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-- Aucun
+- None
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-La réponse inclut des informations sur le système d’exploitation au format suivant.
+The response includes the OS information in the following format.
 
 ```
 {
@@ -1134,17 +1149,17 @@ La réponse inclut des informations sur le système d’exploitation au format s
 }
 ```
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Mobile
 * Windows Desktop
@@ -1153,32 +1168,32 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Obtenir la famille d’appareils 
+### <a name="get-the-device-family"></a>Get the device family 
 
-**Requête**
+**Request**
 
-Vous pouvez obtenir la famille d’appareils (Xbox, téléphone, ordinateur de bureau, etc.) en utilisant le format de requête suivant.
+You can get the device family (Xbox, phone, desktop, etc) using the following request format.
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 GET | /api/os/devicefamily
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-- Aucun
+- None
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-La réponse comprend la famille d’appareils (référence: ordinateur de bureau, Xbox, etc.).
+The response includes the device family (SKU - Desktop, Xbox, etc).
 
 ```
 {
@@ -1186,19 +1201,19 @@ La réponse comprend la famille d’appareils (référence: ordinateur de bureau
 }
 ```
 
-DeviceType aura pour valeur une chaîne du type «Windows.Xbox», «Windows.Desktop», etc. 
+DeviceType will look like "Windows.Xbox", "Windows.Desktop", etc. 
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Mobile
 * Windows Desktop
@@ -1207,44 +1222,44 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Obtenir le nom de l’ordinateur
+### <a name="set-the-machine-name"></a>Set the machine name
 
-**Requête**
+**Request**
 
-Vous pouvez définir le nom d’un ordinateur en utilisant le format de requête suivant.
+You can set the name of a machine by using the following request format.
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 POST | /api/os/machinename
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+You can specify the following additional parameters on the request URI:
 
-Paramètre d’URI | Description
+URI parameter | Description
 :---          | :---
-name | (**requis**) Nouveau nom de l’ordinateur.
+name | (**required**) The new name for the machine.
 <br />
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Mobile
 * Windows Desktop
@@ -1253,35 +1268,35 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-## Données relatives aux performances
+## <a name="performance-data"></a>Performance data
 ---
-### Obtenir la liste des processus en cours d’exécution
+### <a name="get-the-list-of-running-processes"></a>Get the list of running processes
 
-**Requête**
+**Request**
 
-Vous pouvez obtenir la liste des processus en cours d’exécution en utilisant le format de requête suivant.  Il peut également être mis à niveau vers une connexion WebSocket, avec les mêmes données JSON transmises au client une fois par seconde. 
+You can get the list of currently running processes by using the following request format.  this can be upgraded to a WebSocket connection as well, with the same JSON data being pushed to the client once per second. 
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 GET | /api/resourcemanager/processes
 GET/WebSocket | /api/resourcemanager/processes
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-- Aucun
+- None
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-La réponse comprend une liste des processus et les détails associés. Les informations sont au format JSON et suivent le modèle suivant.
+The response includes a list of processes with details for each process. The information is in JSON format and has the following template.
 ```
 {"Processes": [
     {
@@ -1298,17 +1313,17 @@ La réponse comprend une liste des processus et les détails associés. Les info
 ]}
 ```
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Mobile
 * Windows Desktop
@@ -1316,34 +1331,34 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Obtenir les statistiques des performances du système
+### <a name="get-the-system-performance-statistics"></a>Get the system performance statistics
 
-**Requête**
+**Request**
 
-Vous pouvez obtenir les statistiques des performances du système en utilisant le format de requête suivant. Cela comprend des informations relatives aux cycles de lecture et d’écriture, par exemple, et la quantité de mémoire utilisée.
+You can get the system performance statistics by using the following request format. This includes information such as read and write cycles and how much memory has been used.
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 GET | /api/resourcemanager/systemperf
 GET/WebSocket | /api/resourcemanager/systemperf
 <br />
-Ce format peut être mis à niveau vers une connexion WebSocket.  Il fournit les mêmes données JSON ci-dessous une fois toutes les secondes. 
+This can also be upgraded to a WebSocket connection.  It provides the same JSON data below once every second. 
 
-**Paramètres d’URI**
+**URI parameters**
 
-- Aucun
+- None
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-La réponse comprend les statistiques relatives aux performances du système, notamment sur l’utilisation du processeur et du GPU, ainsi que sur l’accès à la mémoire et au réseau. Ces informations sont au format JSON et suivent le modèle suivant.
+The response includes the performance statistics for the system such as CPU and GPU usage, memory access, and network access. This information is in JSON format and has the following template.
 ```
 {
     "AvailablePages": int,
@@ -1376,17 +1391,17 @@ La réponse comprend les statistiques relatives aux performances du système, no
 }
 ```
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Mobile
 * Windows Desktop
@@ -1395,34 +1410,34 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-## Alimentation
+## <a name="power"></a>Power
 ---
-### Obtenir l’état actuel de la batterie
+### <a name="get-the-current-battery-state"></a>Get the current battery state
 
-**Requête**
+**Request**
 
-Vous pouvez obtenir l’état actuel de la batterie en utilisant le format de requête suivant.
+You can get the current state of the battery by using the following request format.
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 GET | /api/power/battery
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-- Aucun
+- None
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-Les informations d’état actuel de la batterie sont renvoyées à l’aide du format suivant.
+The current battery state information is returned using the following format.
 ```
 {
     "AcOnline": int (0 | 1),
@@ -1436,318 +1451,318 @@ Les informations d’état actuel de la batterie sont renvoyées à l’aide du 
 }
 ```
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
+* Windows Mobile
 * Windows Desktop
 * HoloLens
 * IoT
-* Mobile
 
 ---
-### Obtenir le schéma d’alimentation actif
+### <a name="get-the-active-power-scheme"></a>Get the active power scheme
 
-**Requête**
+**Request**
 
-Vous pouvez obtenir le schéma d’alimentation actif en utilisant le format de requête suivant.
+You can get the active power scheme by using the following request format.
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 GET | /api/power/activecfg
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-- Aucun
+- None
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-Le schéma d’alimentation actif a le format suivant.
+The active power scheme has the following format.
 ```
 {"ActivePowerScheme": string (guid of scheme)}
 ```
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Desktop
 * IoT
 
 ---
-### Obtenir la sous-valeur pour un schéma d’alimentation
+### <a name="get-the-sub-value-for-a-power-scheme"></a>Get the sub-value for a power scheme
 
-**Requête**
+**Request**
 
-Vous pouvez obtenir la sous-valeur pour un schéma d’alimentation actif en utilisant le format de requête suivant.
+You can get the sub-value for a power scheme by using the following request format.
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
-GET | /api/power/cfg/
+GET | /api/power/cfg/*<power scheme path>*
 <br />
 Options:
 - SCHEME_CURRENT
 
-**Paramètres d’URI**
+**URI parameters**
 
-- Aucun
+- None
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-Liste complète des états d’alimentation disponibles déterminée par application et paramètres de marquage des différents états d’alimentation comme le niveau faible ou critique de la batterie. 
+A full listing of power states available is on a per-application basis and the settings for flagging various power states like low and critical batterty. 
 
-**Réponse**
+**Response**
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Desktop
 * IoT
 
 ---
-### Obtenir l’état d’alimentation du système
+### <a name="get-the-power-state-of-the-system"></a>Get the power state of the system
 
-**Requête**
+**Request**
 
-Vous pouvez obtenir l’état d’alimentation du système en utilisant le format de requête suivant. Cela vous permet de vérifier s’il se trouve en mode de faible consommation d’énergie.
+You can check the power state of the system by using the following request format. This will let you check to see if it is in a low power state.
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 GET | /api/power/state
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-- Aucun
+- None
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-Les informations sur l’état d’alimentation suivent le modèle suivant.
+The power state information has the following template.
 ```
 {"LowPowerStateAvailable": bool}
 ```
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### Définir le schéma d’alimentation actif
+### <a name="set-the-active-power-scheme"></a>Set the active power scheme
 
-**Requête**
+**Request**
 
-Vous pouvez définir le schéma d’alimentation actif en utilisant le format de requête suivant.
+You can set the active power scheme by using the following request format.
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 POST | /api/power/activecfg
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+You can specify the following additional parameters on the request URI:
 
-Paramètre d’URI | Description
+URI parameter | Description
 :---          | :---
-scheme | (**requis**) GUID du schéma que vous voulez définir en tant que schéma d’alimentation actif pour le système.
+scheme | (**required**) The GUID of the scheme you want to set as the active power scheme for the system.
 <br />
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Desktop
 * IoT
 
 ---
-### Obtenir la sous-valeur pour un schéma d’alimentation
+### <a name="set-the-sub-value-for-a-power-scheme"></a>Set the sub-value for a power scheme
 
-**Requête**
+**Request**
 
-Vous pouvez obtenir la sous-valeur pour un schéma d’alimentation en utilisant le format de requête suivant.
+You can set the sub-value for a power scheme by using the following request format.
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
-POST | /api/power/cfg/
+POST | /api/power/cfg/*<power scheme path>*
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+You can specify the following additional parameters on the request URI:
 
-Paramètre d’URI | Description
+URI parameter | Description
 :---          | :---
-valueAC | (**requis**) Valeur à utiliser pour l’alimentation secteur.
-valueDC | (**requis**) Valeur à utiliser pour l’alimentation de la batterie.
+valueAC | (**required**) The value to use for A/C power.
+valueDC | (**required**) The value to use for battery power.
 <br />
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Desktop
 * IoT
 
 ---
-### Obtenir un rapport d’étude sur la suspension d’activité
+### <a name="get-a-sleep-study-report"></a>Get a sleep study report
 
-**Requête**
+**Request**
 
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 GET | /api/power/sleepstudy/report
 <br />
-Vous pouvez obtenir un rapport d’étude sur la suspension d’activité en utilisant le format de requête suivant.
+You can get a sleep study report by using the following request format.
 
-**Paramètres d’URI**
-Paramètre d’URI | Description
+**URI parameters**
+URI parameter | Description
 :---          | :---
-FileName | (**requis**) Nom complet du fichier que vous voulez télécharger. Cette valeur doit être codée en hex64.
+FileName | (**required**) The full name for the file you want to download. This value should be hex64 encoded.
 <br />
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-La réponse est un fichier contenant l’étude de veille. 
+The response is a file containing the sleep study. 
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Desktop
 * IoT
 
 ---
-### Énumérer les rapports d’étude sur la suspension d’activité disponibles
+### <a name="enumerate-the-available-sleep-study-reports"></a>Enumerate the available sleep study reports
 
-**Requête**
+**Request**
 
-Vous pouvez obtenir les rapports d’étude sur la suspension d’activité disponibles en utilisant le format de requête suivant.
+You can enumerate the available sleep study reports by using the following request format.
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 GET | /api/power/sleepstudy/reports
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-- Aucun
+- None
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-La liste des rapports disponibles suit le modèle suivant.
+The list of available reports has the following template.
 
 ```
 {"Reports": [
@@ -1757,101 +1772,101 @@ La liste des rapports disponibles suit le modèle suivant.
 ]}
 ```
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Desktop
 * IoT
 
 ---
-### Obtenir la transformation de l’étude sur la suspension d’activité
+### <a name="get-the-sleep-study-transform"></a>Get the sleep study transform
 
-**Requête**
+**Request**
 
-Vous pouvez obtenir la transformation de l’étude sur la suspension d’activité en utilisant le format de requête suivant. Il s’agit d’une XSLT qui convertit le rapport d’étude sur la suspension d’activité en un format XML pouvant être lu par une personne.
+You can get the sleep study transform by using the following request format. This transform is an XSLT that converts the sleep study report into an XML format that can be read by a person.
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 GET | /api/power/sleepstudy/transform
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-- Aucun
+- None
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-La réponse contient la transformation de l’étude de veille.
+The response contains the sleep study transform.
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Desktop
 * IoT
 
 ---
-## Contrôle à distance
+## <a name="remote-control"></a>Remote control
 ---
-### Redémarrer l’ordinateur cible.
+### <a name="restart-the-target-computer"></a>Restart the target computer
 
-**Requête**
+**Request**
 
-Vous pouvez redémarrer l’ordinateur cible en utilisant le format de requête suivant.
+You can restart the target computer by using the following request format.
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 POST | /api/control/restart
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-- Aucun
+- None
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Mobile
 * Windows Desktop
@@ -1860,42 +1875,42 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Arrêter l’ordinateur cible
+### <a name="shut-down-the-target-computer"></a>Shut down the target computer
 
-**Requête**
+**Request**
 
-Vous pouvez éteindre l’ordinateur cible en utilisant le format de requête suivant.
+You can shut down the target computer by using the following request format.
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 POST | /api/control/shutdown
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-- Aucun
+- None
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Mobile
 * Windows Desktop
@@ -1904,49 +1919,49 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-## Gestionnaire des tâches
+## <a name="task-manager"></a>Task manager
 ---
-### Démarrer une application moderne
+### <a name="start-a-modern-app"></a>Start a modern app
 
-**Requête**
+**Request**
 
-Vous pouvez démarrer une application moderne en utilisant le format de requête suivant.
+You can start a modern app by using the following request format.
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 POST | /api/taskmanager/app
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+You can specify the following additional parameters on the request URI:
 
-Paramètre d’URI | Description
+URI parameter | Description
 :---          | :---
-appid   | (**requis**) PRAID de l’application que vous voulez démarrer. Cette valeur doit être codée en hex64.
-package   | (**requis**)Nom complet du package d’application que vous voulez démarrer. Cette valeur doit être codée en hex64.
+appid   | (**required**) The PRAID for the app you want to start. This value should be hex64 encoded.
+package   | (**required**) The full name for the app package you want to start. This value should be hex64 encoded.
 <br />
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Mobile
 * Windows Desktop
@@ -1955,47 +1970,47 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Arrêter une application moderne
+### <a name="stop-a-modern-app"></a>Stop a modern app
 
-**Requête**
+**Request**
 
-Vous pouvez arrêter une application moderne en utilisant le format de requête suivant.
+You can stop a modern app by using the following request format.
  
-Méthode      | URI de requête
+Method      | Request URI
 :------     | :-----
 DELETE | /api/taskmanager/app
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+You can specify the following additional parameters on the request URI:
 
-Paramètre d’URI | Description
+URI parameter | Description
 :---          | :---
-package   | (**requis**) Nom complet du package d’application que vous voulez arrêter. Cette valeur doit être codée en hex64.
-forcestop   | (**facultatif**) La valeur **yes** indique que le système doit forcer tous les processus à s’arrêter.
+package   | (**required**) The full name of the app packages that you want to stop. This value should be hex64 encoded.
+forcestop   | (**optional**) A value of **yes** indicates that the system should force all processes to stop.
 <br />
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Mobile
 * Windows Desktop
@@ -2004,34 +2019,34 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-## Mise en réseau
+## <a name="networking"></a>Networking
 ---
-### Obtenir la configuration IP actuelle
+### <a name="get-the-current-ip-configuration"></a>Get the current IP configuration
 
-**Requête**
+**Request**
 
-Vous pouvez obtenir la configuration IP actuelle en utilisant le format de requête suivant.
+You can get the current IP configuration by using the following request format.
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 GET | /api/networking/ipconfig
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-- Aucun
+- None
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-La réponse inclut la configuration IP dans le modèle suivant.
+The response includes the IP configuration in the following template.
 
 ```
 {"Adapters": [
@@ -2073,17 +2088,17 @@ La réponse inclut la configuration IP dans le modèle suivant.
 ]}
 ```
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Mobile
 * Windows Desktop
@@ -2092,32 +2107,32 @@ Code d’état HTTP      | Description
 * IoT
 
 --
-### Énumérer les interfaces réseau sans fil
+### <a name="enumerate-wireless-network-interfaces"></a>Enumerate wireless network interfaces
 
-**Requête**
+**Request**
 
-Vous pouvez énumérer les interfaces sans fil disponibles en utilisant le format de requête suivant.
+You can enumerate the available wireless network interfaces by using the following request format.
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 GET | /api/wifi/interfaces
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-- Aucun
+- None
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-Liste des interfaces sans fil disponibles et leurs détails au format suivant.
+A list of the available wireless interfaces with details in the following format.
 
 ``` 
 {"Interfaces": [{
@@ -2135,17 +2150,17 @@ Liste des interfaces sans fil disponibles et leurs détails au format suivant.
 ]}
 ```
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Mobile
 * Windows Desktop
@@ -2154,36 +2169,36 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Énumérer les réseaux sans fil
+### <a name="enumerate-wireless-networks"></a>Enumerate wireless networks
 
-**Requête**
+**Request**
 
-Vous pouvez énumérer la liste des réseaux sans fil disponibles sur l’interface spécifiée en utilisant le format de requête suivant.
+You can enumerate the list of wireless networks on the specified interface by using the following request format.
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 GET | /api/wifi/networks
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+You can specify the following additional parameters on the request URI:
 
-Paramètre d’URI | Description
+URI parameter | Description
 :---          | :---
-interface   | (**requis**) GUID de l’interface réseau à utiliser pour rechercher des réseaux sans fil, sans crochets. 
+interface   | (**required**) The GUID for the network interface to use to search for wireless networks, without brackets. 
 <br />
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-Liste des réseaux sans fil détectés sur l’*interface* fournie. Cela comprend les détails pour les réseaux au format suivant.
+The list of wireless networks found on the provided *interface*. This includes details for the networks in the following format.
 
 ```
 {"AvailableNetworks": [
@@ -2205,17 +2220,17 @@ Liste des réseaux sans fil détectés sur l’*interface* fournie. Cela compren
 ]}
 ```
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Mobile
 * Windows Desktop
@@ -2224,48 +2239,48 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Se connecter à un réseau Wi-Fi et se déconnecter
+### <a name="connect-and-disconnect-to-a-wi-fi-network"></a>Connect and disconnect to a Wi-Fi network.
 
-**Requête**
+**Request**
 
-Vous pouvez vous connecter à un réseau Wi-Fi ou vous déconnecter en utilisant le format de requête suivant.
+You can connect or disconnect to a Wi-Fi network by using the following request format.
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 POST | /api/wifi/network
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+You can specify the following additional parameters on the request URI:
 
-Paramètre d’URI | Description
+URI parameter | Description
 :---          | :---
-interface   | (**requis**) GUID de l’interface réseau à utiliser pour se connecter au réseau.
-op   | (**requis**) Indique l’action à entreprendre. Les valeurs possibles sont connect ou disconnect.
-ssid   | (*requis si *op* == connect***) SSID auquel se connecter.
-key   | (**requis si *op* == connecter et le réseau exige une authentification**) La clé partagée.
-createprofile | (**requis**) Créez un profil pour le réseau sur l’appareil.  Cela obligera l’appareil à se connecter automatiquement au réseau à l’avenir. Cela peut être **yes** ou **no**. 
+interface   | (**required**) The GUID for the network interface you use to connect to the network.
+op   | (**required**) Indicates the action to take. Possible values are connect or disconnect.
+ssid   | (**required if *op* == connect**) The SSID to connect to.
+key   | (**required if *op* == connect and network requires authentication**) The shared key.
+createprofile | (**required**) Create a profile for the network on the device.  This will cause the device to auto-connect to the network in the future. This can be **yes** or **no**. 
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Mobile
 * Windows Desktop
@@ -2274,45 +2289,45 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Supprimer un profil Wi-Fi
+### <a name="delete-a-wi-fi-profile"></a>Delete a Wi-Fi profile
 
-**Requête**
+**Request**
 
-Vous pouvez supprimer un profil associé à un réseau sur une interface spécifique en utilisant le format de requête suivant.
+You can delete a profile associated with a network on a specific interface by using the following request format.
  
-Méthode      | URI de requête
+Method      | Request URI
 :------     | :-----
 DELETE | /api/wifi/network
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+You can specify the following additional parameters on the request URI:
 
-Paramètre d’URI | Description
+URI parameter | Description
 :---          | :---
-interface   | (**requis**) GUID de l’interface réseau associée au profil à supprimer.
-profile   | (**requis**) Nom du profil à supprimer.
+interface   | (**required**) The GUID for the network interface associated with the profile to delete.
+profile   | (**required**) The name of the profile to delete.
 <br />
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Mobile
 * Windows Desktop
@@ -2321,85 +2336,85 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-## Rapport d’erreurs Windows
+## <a name="windows-error-reporting-wer"></a>Windows Error Reporting (WER)
 ---
-### Télécharger un fichier de rapport d’erreurs Windows
+### <a name="download-a-windows-error-reporting-wer-file"></a>Download a Windows error reporting (WER) file
 
-**Requête**
+**Request**
 
-Vous pouvez télécharger un fichier associé à un rapport d’erreurs Windows en utilisant le format de requête suivant.
+You can download a WER-related file by using the following request format.
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 GET | /api/wer/report/file
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+You can specify the following additional parameters on the request URI:
 
-Paramètre d’URI | Description
+URI parameter | Description
 :---          | :---
-user   | (**requis**) Nom d’utilisateur associé au rapport.
-type   | (**requis**) Type de rapport. Il peut s’agir du type **queried** ou **archived**.
-name   | (**requis**) Nom du rapport. Doit être codé en base64. 
-file   | (**requis**) Nom du fichier à télécharger à partir du rapport. Doit être codé en base64. 
+user   | (**required**) The user name associated with the report.
+type   | (**required**) The type of report. This can be either **queried** or **archived**.
+name   | (**required**) The name of the report. This should be base64 encoded. 
+file   | (**required**) The name of the file to download from the report. This should be base64 encoded. 
 <br />
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-- La réponse contient le fichier demandé. 
+- Response contains the requested file. 
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### Énumérer les fichiers dans un rapport d’erreurs Windows
+### <a name="enumerate-files-in-a-windows-error-reporting-wer-report"></a>Enumerate files in a Windows error reporting (WER) report
 
-**Requête**
+**Request**
 
-Vous pouvez énumérer les fichiers dans un rapport d’erreurs Windows en utilisant le format de requête suivant.
+You can enumerate the files in a WER report by using the following request format.
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 GET | /api/wer/report/files
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+You can specify the following additional parameters on the request URI:
 
-Paramètre d’URI | Description
+URI parameter | Description
 :---          | :---
-user   | (**requis**) Utilisateur associé au rapport.
-type   | (**requis**) Type de rapport. Il peut s’agir du type **queried** ou **archived**.
-name   | (**requis**) Nom du rapport. Doit être codé en base64. 
+user   | (**required**) The user associated with the report.
+type   | (**required**) The type of report. This can be either **queried** or **archived**.
+name   | (**required**) The name of the report. This should be base64 encoded. 
 <br />
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
 ```
 {"Files": [
@@ -2410,51 +2425,51 @@ name   | (**requis**) Nom du rapport. Doit être codé en base64.
 ]}
 ```
 
-**Réponse**
+**Response**
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### Répertorier les rapports d’erreurs Windows
+### <a name="list-the-windows-error-reporting-wer-reports"></a>List the Windows error reporting (WER) reports
 
-**Requête**
+**Request**
 
-Vous pouvez obtenir les rapports d’erreurs Windows en utilisant le format de requête suivant.
+You can get the WER reports by using the following request format.
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 GET | /api/wer/reports
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-- Aucun
+- None
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-Les rapports d’erreur suivants sont présentés au format suivant.
+The WER reports in the following format.
 
 ```
 {"WerReports": [
@@ -2470,51 +2485,51 @@ Les rapports d’erreur suivants sont présentés au format suivant.
 ]}
 ```
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Desktop
 * HoloLens
 * IoT
 
 ---
-## Enregistreur de performance Windows (WPR) 
+## <a name="windows-performance-recorder-wpr"></a>Windows Performance Recorder (WPR) 
 ---
-### Démarrer le suivi avec un profil personnalisé
+### <a name="start-tracing-with-a-custom-profile"></a>Start tracing with a custom profile
 
-**Requête**
+**Request**
 
-Vous pouvez charger un profil WPR et démarrer le suivi à l’aide de ce profil en utilisant le format de requête suivant.  Une seule trace peut s’exécuter à la fois. Le profil ne restera pas sur l’appareil. 
+You can upload a WPR profile and start tracing using that profile by using the following request format.  Only one trace can run at a time. The profile will not remain on the device. 
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 POST | /api/wpr/customtrace
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-- Aucun
+- None
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Corps HTTP à parties multiples conforme contenant le profil WPR personnalisé.
+- A multi-part conforming http body that contains the custom WPR profile.
 
-**Réponse**
+**Response**
 
-L’état de session WPR au format suivant.
+The WPR session status in the following format.
 
 ```
 {
@@ -2523,17 +2538,17 @@ L’état de session WPR au format suivant.
 }
 ```
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Mobile
 * Windows Desktop
@@ -2541,36 +2556,36 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Démarrer une session de suivi des performances de démarrage
+### <a name="start-a-boot-performance-tracing-session"></a>Start a boot performance tracing session
 
-**Requête**
+**Request**
 
-Vous pouvez démarrer une session de suivi WPR en utilisant le format de requête suivant. Également connue sous le nom de session de suivi des performances.
+You can start a boot WPR tracing session by using the following request format. This is also known as a performance tracing session.
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 POST | /api/wpr/boottrace
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+You can specify the following additional parameters on the request URI:
 
-Paramètre d’URI | Description
+URI parameter | Description
 :---          | :---
-profile   | (**requis**) Ce paramètre est requis au démarrage. Nom du profil devant démarrer une session de suivi des performances. Les profils possibles sont stockés dans perfprofiles/profiles.json.
+profile   | (**required**) This parameter is required on start. The name of the profile that should start a performance tracing session. The possible profiles are stored in perfprofiles/profiles.json.
 <br />
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-Au démarrage, cette API renvoie l’état de session WPR au format suivant.
+On start, this API returns the WPR session status in the following format.
 
 ```
 {
@@ -2579,17 +2594,17 @@ Au démarrage, cette API renvoie l’état de session WPR au format suivant.
 }
 ```
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Mobile
 * Windows Desktop
@@ -2597,44 +2612,44 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Arrêter une session de suivi des performances de démarrage
+### <a name="stop-a-boot-performance-tracing-session"></a>Stop a boot performance tracing session
 
-**Requête**
+**Request**
 
-Vous pouvez arrêter une session de suivi WPR en utilisant le format de requête suivant. Également connue sous le nom de session de suivi des performances.
+You can stop a boot WPR tracing session by using the following request format. This is also known as a performance tracing session.
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 GET | /api/wpr/boottrace
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-- Aucun
+- None
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-- Renvoie le fichier ETL de suivi.
+-  None.  **Note:** This is a long running operation.  It will return when the ETL is finished writing to disk.
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Mobile
 * Windows Desktop
@@ -2642,36 +2657,36 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Démarrer une session de suivi des performances
+### <a name="start-a-performance-tracing-session"></a>Start a performance tracing session
 
-**Requête**
+**Request**
 
-Vous pouvez démarrer une session de suivi WPR en utilisant le format de requête suivant. Également connue sous le nom de session de suivi des performances.  Une seule trace peut s’exécuter à la fois. 
+You can start a WPR tracing session by using the following request format. This is also known as a performance tracing session.  Only one trace can run at a time. 
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 POST | /api/wpr/trace
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+You can specify the following additional parameters on the request URI:
 
-Paramètre d’URI | Description
+URI parameter | Description
 :---          | :---
-profile   | (**requis**) Nom du profil devant démarrer une session de suivi des performances. Les profils possibles sont stockés dans perfprofiles/profiles.json.
+profile   | (**required**) The name of the profile that should start a performance tracing session. The possible profiles are stored in perfprofiles/profiles.json.
 <br />
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-Au démarrage, cette API renvoie l’état de session WPR au format suivant.
+On start, this API returns the WPR session status in the following format.
 
 ```
 {
@@ -2680,17 +2695,17 @@ Au démarrage, cette API renvoie l’état de session WPR au format suivant.
 }
 ```
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Mobile
 * Windows Desktop
@@ -2698,45 +2713,44 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Arrêter une session de suivi des performances
+### <a name="stop-a-performance-tracing-session"></a>Stop a performance tracing session
 
-**Requête**
+**Request**
 
-Vous pouvez arrêter une session de suivi WPR en utilisant le format de requête suivant. Également connue sous le nom de session de suivi des performances.
+You can stop a WPR tracing session by using the following request format. This is also known as a performance tracing session.
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 GET | /api/wpr/trace
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-- Aucun
+- None
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-- Aucune.  
-            **Remarque:** il s’agit d’une opération longue.  Elle renverra une réponse à la fin de l’écriture de l’ETL sur le disque.  
+- None.  **Note:** This is a long running operation.  It will return when the ETL is finished writing to disk.  
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Mobile
 * Windows Desktop
@@ -2744,32 +2758,32 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Récupérer l’état d’une session de suivi
+### <a name="retrieve-the-status-of-a-tracing-session"></a>Retrieve the status of a tracing session
 
-**Requête**
+**Request**
 
-Vous pouvez récupérer l’état de la session WPR actuelle en utilisant le format de requête suivant.
+You can retrieve the status of the current WPR session by using the following request format.
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 GET | /api/wpr/status
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-- Aucun
+- None
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-L’état de la session de suivi WPR au format suivant.
+The status of the WPR tracing session in the following format.
 
 ```
 {
@@ -2778,17 +2792,17 @@ L’état de la session de suivi WPR au format suivant.
 }
 ```
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Mobile
 * Windows Desktop
@@ -2796,32 +2810,32 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Répertorier les sessions de suivi terminées (ETL)
+### <a name="list-completed-tracing-sessions-etls"></a>List completed tracing sessions (ETLs)
 
-**Requête**
+**Request**
 
-Vous pouvez obtenir une liste des traces ETL sur l’appareil en utilisant le format de requête suivant. 
+You can get a listing of ETL traces on the device using the following request format. 
 
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 GET | /api/wpr/tracefiles
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-- Aucun
+- None
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-La liste des sessions de suivi terminées est fournie dans le format suivant.
+The listing of completed tracing sessions is provided in the following format.
 
 ```
 {"Items": [{
@@ -2835,17 +2849,17 @@ La liste des sessions de suivi terminées est fournie dans le format suivant.
 }]}
 ```
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Mobile
 * Windows Desktop
@@ -2853,48 +2867,48 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Télécharger une session de suivi (ETL)
+### <a name="download-a-tracing-session-etl"></a>Download a tracing session (ETL)
 
-**Requête**
+**Request**
 
-Vous pouvez télécharger un fichier de suivi (suivi de démarrage ou suivi en mode utilisateur) en utilisant le format de requête suivant. 
+You can download a tracefile (boot trace or user-mode trace) using the following request format. 
 
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 GET | /api/wpr/tracefile
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-Vous pouvez spécifier le paramètre supplémentaire suivant dans l’URI de requête:
+You can specify the following additional parameter on the request URI:
 
-Paramètre d’URI | Description
+URI parameter | Description
 :---          | :---
-filename   | (**requis**) Nom de la trace ETL à télécharger.  Les traces ETL se trouvent dans /api/wpr/tracefiles.
+filename   | (**required**) The name of the ETL trace to download.  These can be found in /api/wpr/tracefiles
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-- Renvoie le fichier ETL de suivi.
+- Returns the trace ETL file.
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Mobile
 * Windows Desktop
@@ -2902,48 +2916,48 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Supprimer une session de suivi (ETL)
+### <a name="delete-a-tracing-session-etl"></a>Delete a tracing session (ETL)
 
-**Requête**
+**Request**
 
-Vous pouvez supprimer un fichier de suivi (suivi de démarrage ou suivi en mode utilisateur) en utilisant le format de requête suivant. 
+You can delete a tracefile (boot trace or user-mode trace) using the following request format. 
 
-Méthode      | URI de requête
+Method      | Request URI
 :------     | :-----
 DELETE | /api/wpr/tracefile
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-Vous pouvez spécifier le paramètre supplémentaire suivant dans l’URI de requête:
+You can specify the following additional parameter on the request URI:
 
-Paramètre d’URI | Description
+URI parameter | Description
 :---          | :---
-filename   | (**requis**) Nom de la trace ETL à supprimer.  Les traces ETL se trouvent dans /api/wpr/tracefiles.
+filename   | (**required**) The name of the ETL trace to delete.  These can be found in /api/wpr/tracefiles
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-- Renvoie le fichier ETL de suivi.
+- Returns the trace ETL file.
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Mobile
 * Windows Desktop
@@ -2951,33 +2965,32 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-## BalisesDNS-SD 
+## <a name="dns-sd-tags"></a>DNS-SD Tags 
 ---
-### Afficher les balises
+### <a name="view-tags"></a>View Tags
 
-**Requête**
+**Request**
 
-Affichez les balises actuellement appliquées pour l’appareil.  Ces balises sont annoncées par le biais d’enregistrementsDNS-SDTXT dans la cléT.  
+View the currently applied tags for the device.  These are advertised via DNS-SD TXT records in the T key.  
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 GET | /api/dns-sd/tags
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-- Aucun
+- None
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-
-            **Réponse** Balises actuellement appliquées au format suivant. 
+**Response** The currently applied tags in the following format. 
 ```
  {
     "tags": [
@@ -2988,17 +3001,17 @@ GET | /api/dns-sd/tags
 }
 ```
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-5XX | Erreur de serveur 
+5XX | Server Error 
 
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Mobile
 * Windows Desktop
@@ -3007,43 +3020,43 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Supprimer des balises
+### <a name="delete-tags"></a>Delete Tags
 
-**Requête**
+**Request**
 
-Supprimez toutes les balises actuellement signalées parDNS-SD.   
+Delete all tags currently advertised by DNS-SD.   
  
-Méthode      | URI de requête
+Method      | Request URI
 :------     | :-----
 DELETE | /api/dns-sd/tags
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-- Aucun
+- None
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
- - Aucun
+**Response**
+ - None
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-5XX | Erreur de serveur 
+5XX | Server Error 
 
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Mobile
 * Windows Desktop
@@ -3052,44 +3065,44 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Supprimer une balise
+### <a name="delete-tag"></a>Delete Tag
 
-**Requête**
+**Request**
 
-Supprimez une balise actuellement signalée parDNS-SD.   
+Delete a tag currently advertised by DNS-SD.   
  
-Méthode      | URI de requête
+Method      | Request URI
 :------     | :-----
 DELETE | /api/dns-sd/tag
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-Paramètre d’URI | Description
+URI parameter | Description
 :------     | :-----
-tagValue | (**requis**) Balise à supprimer.
+tagValue | (**required**) The tag to be removed.
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
- - Aucun
+**Response**
+ - None
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
 
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Mobile
 * Windows Desktop
@@ -3098,45 +3111,45 @@ Code d’état HTTP      | Description
 * IoT
  
 ---
-### Ajouter une balise
+### <a name="add-a-tag"></a>Add a Tag
 
-**Requête**
+**Request**
 
-Ajoutez une balise à l’annonceDNS-SD.   
+Add a tag to the DNS-SD advertisement.   
  
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 POST | /api/dns-sd/tag
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-Paramètre d’URI | Description
+URI parameter | Description
 :------     | :-----
-tagValue | (**requis**) Balise à ajouter.
+tagValue | (**required**) The tag to be added.
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
- - Aucun
+**Response**
+ - None
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-401 | Dépassement de capacité pour l’espace de balise.  Survient lorsque la balise proposée est trop longue pour l’enregistrement de serviceDNS-SD résultant.  
+401 | Tag space Overflow.  Results when the proposed tag is too long for the resulting DNS-SD service record.  
 
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Mobile
 * Windows Desktop
@@ -3144,52 +3157,51 @@ Code d’état HTTP      | Description
 * HoloLens
 * IoT
 
-## Explorateur de fichiers de l’application
+## <a name="app-file-explorer"></a>App File Explorer
 
 ---
-### Obtenir les dossiers connus
+### <a name="get-known-folders"></a>Get known folders
 
-**Requête**
+**Request**
 
-Obtenez la liste des dossiers de niveau supérieur accessibles.
+Obtain a list of accessible top-level folders.
 
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 GET | /api/filesystem/apps/knownfolders
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-- Aucun
+- None
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-
-            **Réponse** Dossiers disponibles au format suivant. 
+**Response** The available folders in the following format. 
 ```
  {"KnownFolders": [
     "folder0",
     "folder1",...
 ]}
 ```
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
-200 | Requête de déploiement acceptée et traitée
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+200 | Deploy request accepted and being processed
+4XX | Error codes
+5XX | Error codes
 <br />
 
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Mobile
 * Windows Desktop
@@ -3198,35 +3210,34 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Obtenir des fichiers
+### <a name="get-files"></a>Get files
 
-**Requête**
+**Request**
 
-Obtenez la liste des fichiers d’un dossier.
+Obtain a list of files in a folder.
 
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 GET | /api/filesystem/apps/files
 <br />
 
-**Paramètres d’URI**
+**URI parameters**
 
-Paramètre d’URI | Description
+URI parameter | Description
 :------     | :-----
-knownfolderid | (**requis**) Répertoire de niveau supérieur dans lequel vous voulez faire apparaître la liste des fichiers. Utilisez **LocalAppData** pour accéder aux applications dont la version de test a été chargée par le développeur. 
-packagefullname | (**requis si *knownfolderid* == LocalAppData**) Nom complet du package de l’application qui vous intéresse. 
-path | (**facultatif**) Sous-répertoire du dossier ou du package spécifié ci-dessus. 
+knownfolderid | (**required**) The top-level directory where you want the list of files. Use **LocalAppData** for access to sideloaded apps. 
+packagefullname | (**required if *knownfolderid* == LocalAppData**) The package full name of the app you are interested in. 
+path | (**optional**) The sub-directory within the folder or package specified above. 
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-
-            **Réponse** Dossiers disponibles au format suivant. 
+**Response** The available folders in the following format. 
 ```
 {"Items": [
     {
@@ -3240,17 +3251,17 @@ path | (**facultatif**) Sous-répertoire du dossier ou du package spécifié ci-
     },...
 ]}
 ```
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
 200 | OK
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Mobile
 * Windows Desktop
@@ -3259,46 +3270,46 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Télécharger un fichier
+### <a name="download-a-file"></a>Download a file
 
-**Requête**
+**Request**
 
-Obtenir un fichier à partir d’un dossier connu ou d’appLocalData.
+Obtain a file from a known folder or appLocalData.
 
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 GET | /api/filesystem/apps/file
 
-**Paramètres d’URI**
+**URI parameters**
 
-Paramètre d’URI | Description
+URI parameter | Description
 :------     | :-----
-knownfolderid | (**requis**) Répertoire de niveau supérieur dans lequel vous voulez télécharger les fichiers. Utilisez **LocalAppData** pour accéder aux applications dont la version de test a été chargée par le développeur. 
-filename | (**requis**) Nom du fichier en cours de téléchargement. 
-packagefullname | (**requis si *knownfolderid* == LocalAppData**) Nom complet du package qui vous intéresse. 
-path | (**facultatif**) Sous-répertoire du dossier ou du package spécifié ci-dessus.
+knownfolderid | (**required**) The top-level directory where you want to download files. Use **LocalAppData** for access to sideloaded apps. 
+filename | (**required**) The name of the file being downloaded. 
+packagefullname | (**required if *knownfolderid* == LocalAppData**) The package full name you are interested in. 
+path | (**optional**) The sub-directory within the folder or package specified above.
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Fichier demandé, le cas échéant
+- The file requested, if present
 
-**Réponse**
+**Response**
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
-200 | Fichier demandé
-404 | Fichier introuvable
-5XX | Codes d’erreur
+200 | The requested file
+404 | File not found
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Mobile
 * Windows Desktop
@@ -3307,50 +3318,50 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Renommer un fichier
+### <a name="rename-a-file"></a>Rename a file
 
-**Demande**
+**Request**
 
-Renommez un fichier dans un dossier.
+Rename a file in a folder.
 
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 POST | /api/filesystem/apps/rename
 
 <br />
-**Paramètres d’URI**
+**URI parameters**
 
-Paramètre d’URI | Description
+URI parameter | Description
 :------     | :-----
-knownfolderid | (**obligatoire**) Répertoire de niveau supérieur dans lequel se trouve le fichier. Utilisez **LocalAppData** pour accéder aux applications avec chargement indépendant. 
-filename | (**obligatoire**) Nom d’origine du fichier renommé. 
-newfilename | (**obligatoire**) Nouveau nom du fichier.
-packagefullname | (**requis si *knownfolderid* == LocalAppData**) Nom complet du package de l’application qui vous intéresse. 
-path | (**facultatif**) Sous-répertoire du dossier ou du package spécifié ci-dessus. 
+knownfolderid | (**required**) The top-level directory where the file is located. Use **LocalAppData** for access to sideloaded apps. 
+filename | (**required**) The original name of the file being renamed. 
+newfilename | (**required**) The new name of the file.
+packagefullname | (**required if *knownfolderid* == LocalAppData**) The package full name of the app you are interested in. 
+path | (**optional**) The sub-directory within the folder or package specified above. 
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-- Aucun
+- None
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
-200 | OK. Le fichier est renommé
-404 | Fichier introuvable
-5XX | Codes d’erreur
+200 | OK. The file is renamed
+404 | File not found
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Mobile
 * Windows Desktop
@@ -3359,48 +3370,48 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Supprimer un fichier
+### <a name="delete-a-file"></a>Delete a file
 
-**Requête**
+**Request**
 
-Supprimez un fichier dans un dossier.
+Delete a file in a folder.
 
-Méthode      | URI de requête
+Method      | Request URI
 :------     | :-----
 DELETE | /api/filesystem/apps/file
 <br />
-**Paramètres d’URI**
+**URI parameters**
 
-Paramètre d’URI | Description
+URI parameter | Description
 :------     | :-----
-knownfolderid | (**requis**) Répertoire de niveau supérieur dans lequel vous voulez supprimer des fichiers. Utilisez **LocalAppData** pour accéder aux applications dont la version de test a été chargée par le développeur. 
-filename | (**requis**) Nom du fichier en cours de suppression. 
-packagefullname | (**requis si *knownfolderid* == LocalAppData**) Nom complet du package de l’application qui vous intéresse. 
-path | (**facultatif**) Sous-répertoire du dossier ou du package spécifié ci-dessus.
+knownfolderid | (**required**) The top-level directory where you want to delete files. Use **LocalAppData** for access to sideloaded apps. 
+filename | (**required**) The name of the file being deleted. 
+packagefullname | (**required if *knownfolderid* == LocalAppData**) The package full name of the app you are interested in. 
+path | (**optional**) The sub-directory within the folder or package specified above.
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-- Aucun 
+- None 
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
-200 | OK. Le fichier est supprimé.
-404 | Fichier introuvable
-5XX | Codes d’erreur
+200 | OK. The file is deleted
+404 | File not found
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Mobile
 * Windows Desktop
@@ -3409,45 +3420,45 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Charger un fichier
+### <a name="upload-a-file"></a>Upload a file
 
-**Requête**
+**Request**
 
-Chargez un fichier dans un dossier.  Ce fichier remplace un fichier existant du même nom, mais ne crée pas de dossier. 
+Upload a file to a folder.  This will overwrite an existing file with the same name, but will not create new folders. 
 
-Méthode      | URI de la requête
+Method      | Request URI
 :------     | :-----
 POST | /api/filesystem/apps/file
 <br />
-**Paramètres d’URI**
+**URI parameters**
 
-Paramètre d’URI | Description
+URI parameter | Description
 :------     | :-----
-knownfolderid | (**requis**) Répertoire de niveau supérieur dans lequel vous voulez charger les fichiers. Utilisez **LocalAppData** pour accéder aux applications dont la version de test a été chargée par le développeur.
-packagefullname | (**requis si *knownfolderid* == LocalAppData**) Nom complet du package de l’application qui vous intéresse. 
-path | (**facultatif**) Sous-répertoire du dossier ou du package spécifié ci-dessus.
+knownfolderid | (**required**) The top-level directory where you want to upload files. Use **LocalAppData** for access to sideloaded apps.
+packagefullname | (**required if *knownfolderid* == LocalAppData**) The package full name of the app you are interested in. 
+path | (**optional**) The sub-directory within the folder or package specified above.
 
-**En-têtes de requête**
+**Request headers**
 
-- Aucun
+- None
 
-**Corps de la requête**
+**Request body**
 
-- Aucun
+- None
 
-**Réponse**
+**Response**
 
-**Code d’état**
+**Status code**
 
-Cette API comporte les codes d’état attendus suivants.
+This API has the following expected status codes.
 
-Code d’état HTTP      | Description
+HTTP status code      | Description
 :------     | :-----
-200 | OK. Le fichier est chargé
-4XX | Codes d’erreur
-5XX | Codes d’erreur
+200 | OK. The file is uploaded
+4XX | Error codes
+5XX | Error codes
 <br />
-**Familles d’appareils disponibles**
+**Available device families**
 
 * Windows Mobile
 * Windows Desktop
@@ -3456,7 +3467,6 @@ Code d’état HTTP      | Description
 * IoT
 
 
-
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

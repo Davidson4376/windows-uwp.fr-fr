@@ -1,66 +1,66 @@
 ---
 author: mcleanbyron
-Description: "Après avoir défini votre expérience dans le tableau de bord du Centre de développement et codé cette expérience dans votre application, vous voici prêt à activer l’expérience et à en visualiser les résultats dans le tableau de bord du Centre de développement."
-title: "Gérer votre expérience dans le tableau de bord du Centre de développement"
+Description: After you define your experiment in the Dev Center dashboard and code your experiment in your app, you are ready to active your experiment and use the Dev Center dashboard to review the results of your experiment.
+title: Manage your experiment in the Dev Center dashboard
 ms.assetid: D48EE0B4-47F2-455C-8FB9-630769AC5ACE
 translationtype: Human Translation
-ms.sourcegitcommit: ce0431243866125eff83569e3b9b1c75e0703358
-ms.openlocfilehash: 730a7a23b577d92c995da0970c33328cecc2db9b
+ms.sourcegitcommit: bedaa31018d24f23e3e63c6b552b0d3116d7f415
+ms.openlocfilehash: 18e7956e627589dca694b46472fea631c1ebe6b7
 
 ---
 
-# Gérer votre expérience dans le tableau de bord du Centre de développement
+# <a name="manage-your-experiment-in-the-dev-center-dashboard"></a>Manage your experiment in the Dev Center dashboard
 
-Après avoir [défini votre expérience dans le tableau de bord du Centre de développement](define-your-experiment-in-the-dev-center-dashboard.md) et [codé votre application à des fins d’expérimentation](code-your-experiment-in-your-app.md), vous voici prêt à activer votre expérience et à en examiner les résultats dans le tableau de bord du Centre de développement. Après avoir obtenu toutes les données dont vous avez besoin, vous pourrez mettre fin à votre expérience et décider si vous souhaitez continuer à utiliser les valeurs des variables dans la variante de contrôle pour toutes vos applications, ou si vous voulez utiliser les valeurs des variables dans l’une de vos autres variantes.
+After you [define your experiment in the Dev Center dashboard](define-your-experiment-in-the-dev-center-dashboard.md) and [code your app for experimentation](code-your-experiment-in-your-app.md), you are ready to activate your experiment and use the Dev Center dashboard to review the results of your experiment. After you have obtained all the data you need, you can end your experiment and choose whether to keep using the variable values in the control variation for all your apps, or switch to using the variable values in one of your other variations.
 
-> **Remarque**&nbsp;&nbsp; Lorsque vous activez une expérience, le Centre de développement lance immédiatement la collecte de données de toutes les applications consignant des données pour votre expérience. L’apparition des données de l’expérience dans le tableau de bord peut cependant prendre plusieurs heures.
+> **Note**&nbsp;&nbsp;When you activate an experiment, Dev Center immediately starts collecting data from any apps that are instrumented to log data for your experiment. However, it can take several hours for experiment data to appear in the dashboard.
 
-Pour découvrir une procédure pas à pas illustrant le processus de création et d’exécution d’une expérience de bout en bout, voir [Créer et exécuter votre première expérience avec des tests A/B](create-and-run-your-first-experiment-with-a-b-testing.md).
+For a walkthrough that demonstrates the end-to-end process of creating and running an experiment, see [Create and run your first experiment with A/B testing](create-and-run-your-first-experiment-with-a-b-testing.md).
 
-## Activer votre expérience
+## <a name="activate-your-experiment"></a>Activate your experiment
 
-Une fois que vous êtes satisfait des paramètres de votre expérience dans le tableau de bord et que vous avez mis à jour le code de votre application, vous êtes prêt à activer l’expérience afin de commencer à collecter les données correspondantes à partir de votre application. Quand l’expérience est active, votre application peut récupérer les valeurs de variante, et signaler les événements d’affichage et de conversion au Centre de développement.
+When you are satisfied with the parameters of your experiment on the dashboard and you have updated your app code, you are ready to activate your experiment so you can start collecting experiment data from your app. When the experiment is active, your app can retrieve variation values and report view and conversion events to Dev Center.
 
-1. Connectez-vous au [tableau de bord du Centre de développement](https://dev.windows.com/overview).
-2. Sous **Vos applications**, sélectionnez l’application présentant l’expérience que vous souhaitez activer.
-3. Dans le volet de navigation, sélectionnez **Services**, puis **Expérimentation**.
-4. Dans la table des projets de la section **Projets**, développez le projet qui contient votre expérience, puis effectuez l’une des opérations suivantes:
-  * Cliquez sur le lien **Activer** lien correspondant à votre expérience. Votre expérience est ajoutée à la section **Active experiments** (Expériences actives) en haut de la page.
-  * Cliquez sur le nom de l’expérience, faites défiler la page de l’expérience vers le bas, puis cliquez sur **Activer**.
+1. Sign in to the [Dev Center dashboard](https://dev.windows.com/overview).
+2. Under **Your apps**, select the app with the experiment that you want to activate.
+3. In the navigation pane, select **Services** and then select **Experimentation**.
+4. In the table of projects in the **Projects** section, expand the project that contains your experiment and then do one of the following:
+  * Click the **Activate** link for your experiment. Your experiment is added to the **Active experiments** section near the top of the page.
+  * Click the experiment name, scroll to the bottom of the experiment page, and click **Activate**.
 
-> **Important**&nbsp;&nbsp;Une fois que vous avez activé une expérience, vous ne pouvez plus en modifier les paramètres, sauf si vous avez coché la case **Editable experiment** (Expérience modifiable) quand vous avez créé l’expérience. Nous vous recommandons de coder l’expérience dans votre application avant d’activer votre expérience.
-
-
-## Passer en revue les résultats de votre expérience
-
-1. Dans le Centre de développement, revenez à la page **Expérimentation** de votre application.
-2. Dans la section **Active experiments** (Expériences actives), cliquez sur le nom de votre expérience active pour accéder à la page correspondante.
-3. Dans le cas d’une expérience active ou terminée, les deux premières sections de cette page fournissent les résultats de votre expérience:
-  * La section **Résumé des résultats** répertorie les objectifs de votre expérience et le taux de conversion pour chaque variante.
-  * La section **Détails des résultats** fournit des informations supplémentaires sur chacun des objectifs de votre expérience, notamment les vues, les conversions, le taux de conversion, le pourcentage d’écart, la confiance et l’importance. La *confiance* est une mesure statistique de la fiabilité d’une estimation, qui calcule la marge d’erreur. L’*importance* est une mesure statistique, reposant sur la taille de l’échantillon, qui détermine la probabilité qu’un résultat ne soit pas dû au hasard, mais qu’il soit plutôt attribué à une cause spécifique.
-
-  >**Remarque**&nbsp;&nbsp;Le Centre de développement signale uniquement le premier événement de conversion pour chaque utilisateur sur une période de 24heures. Si un utilisateur déclenche plusieurs événements de conversion dans votre application au cours d’une période de 24heures, seul le premier événement de conversion est signalé. Cette approche est destinée à éviter qu’un utilisateur unique avec de nombreux événements de conversion ne fausse les résultats de l’expérience pour un groupe représentatif d’utilisateurs.
+> **Important**&nbsp;&nbsp;After you activate an experiment, you can no longer modify the experiment parameters unless you clicked the **Editable experiment** check box when you created the experiment. We recommend that you code the experiment in your app before activating your experiment.
 
 
-## Terminer votre expérience
+## <a name="review-the-results-of-your-experiment"></a>Review the results of your experiment
 
-1. Dans le tableau de bord, revenez à la page de votre expérience. Pour obtenir les instructions correspondantes, voir la section précédente.
-2. Dans la section **Résumé des résultats**, effectuez l’une des opérations suivantes:
-  * Si vous souhaitez mettre fin à l’expérience et continuer à utiliser les valeurs des variables dans la variante de contrôle de votre application, cliquez sur **Conserver**.
-  * Si vous souhaitez mettre fin à l’expérience, mais utiliser les valeurs des variables dans une autre variante de votre application, cliquez sur **Basculer** sous la variante vers laquelle vous voulez basculer.
-3. Cliquez sur **OK** pour confirmer que vous souhaitez mettre fin à l’expérience.
+1. In Dev Center, return to the **Experimentation** page for your app.
+2. In the **Active experiments** section, click the name of your active experiment to go to the experiment page.
+3. For an active or completed experiment, the first two sections in this page provide the results of your experiment:
+  * The **Results summary** section lists your experiment goals and the conversion rate percentage for each variation.
+  * The **Results details** section provides more details for each variation of all the goals in your experiment, including the views, conversions, unique users, conversion rate, delta %, confidence, and significance. The *confidence* is a statistical measure of the reliability of an estimate, which calculates the margin of error. The *significance* is a statistical measure, based on sample size, to determine the likelihood that a result is not due to chance, but is instead attributed to a specific cause.
 
-
-## Rubriques connexes
-
-* [Créer un projet et définir des variables distantes dans le tableau de bord du Centre de développement](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
-* [Coder votre application à des fins d’expérimentation](code-your-experiment-in-your-app.md)
-* [Définir votre expérience dans le tableau de bord du Centre de développement](define-your-experiment-in-the-dev-center-dashboard.md)
-* [Créer et exécuter votre première expérience avec des testsA/B](create-and-run-your-first-experiment-with-a-b-testing.md)
-* [Exécuter des expériences d’application avec des tests A/B](run-app-experiments-with-a-b-testing.md)
+  >**Note**&nbsp;&nbsp;Dev Center reports only the first conversion event for each user in a 24-hour time period. If a user triggers multiple conversion events in your app within a 24-hour period, only the first conversion event is reported. This is intended to help prevent a single user with many conversion events from skewing the experiment results for a sample group of users.
 
 
+## <a name="complete-your-experiment"></a>Complete your experiment
 
-<!--HONumber=Sep16_HO1-->
+1. In the dashboard, return to your experiment page. For instructions, see the previous section.
+2. In the **Results summary** section, do one of the following:
+  * If you want to end the experiment and continue using the variable values in the control variation in your app, click **Keep**.
+  * If you want to end the experiment but switch to using the variable values in a different variation in your app, click **Switch** under the variation to which you want to switch.
+3. Click **OK** to confirm that you want to end the experiment.
+
+
+## <a name="related-topics"></a>Related topics
+
+* [Create a project and define remote variables in the Dev Center dashboard](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
+* [Code your app for experimentation](code-your-experiment-in-your-app.md)
+* [Define your experiment in the Dev Center dashboard](define-your-experiment-in-the-dev-center-dashboard.md)
+* [Create and run your first experiment with A/B testing](create-and-run-your-first-experiment-with-a-b-testing.md)
+* [Run app experiments with A/B testing](run-app-experiments-with-a-b-testing.md)
+
+
+
+<!--HONumber=Dec16_HO1-->
 
 

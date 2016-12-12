@@ -1,3387 +1,4169 @@
-
 ---
-Description: "auteur&#58; jnHs Le temps estimatif nécessaire au transfert des paiements, les seuils de paiement applicables et les places de marché Microsoft à partir desquels vous pouvez percevoir des paiements peuvent varier en fonction de votre pays/région et de votre type de compte de paiement. Cette rubrique décrit les seuils et les modes de paiement pris en charge dans chaque pays/région."
-title: "Délais, méthodes et seuils de paiement"
+author: jnHs
+Description: The estimated time to transfer payments, applicable payment thresholds, and Microsoft marketplaces from which you can receive payments can vary depending on your country/region and payout account type.
+title: Payment thresholds, methods, and timeframes
 translationtype: Human Translation
-ms.sourcegitcommit: 85b9993334ecfb3ea2dc5a196cb5b5f9dc99c985
-ms.openlocfilehash: b4f98e31b52b77f6675771fc09bb492ca5cf9021
+ms.sourcegitcommit: d5ec64bbd1e8b10c17ff5c43d89e6652eadb2367
+ms.openlocfilehash: 4fd7a23f6d6c880e490f93dba248b6c1e43c7053
 
 ---
 
 
-# Délais, méthodes et seuils de paiement
+# <a name="payment-thresholds-methods-and-timeframes"></a>Payment thresholds, methods, and timeframes
 
-Le temps estimatif nécessaire au transfert des paiements, les seuils de paiement applicables et les places de marché Microsoft à partir desquels vous pouvez percevoir des paiements peuvent varier en fonction de votre pays/région et de votre type de compte de paiement. Cette rubrique décrit les seuils de paiement et les modes de paiement pris en charge dans chaque pays/région.
+The estimated time to transfer payments, applicable payment threshold(s), and Microsoft marketplaces from which you can receive payments can vary depending on your country/region and payout account type. This topic outlines the payment thresholds and payment methods supported in each country/region.
 
-Pour n’importe quel pays ou région, nous utiliserons soit un virement ACH/SEPA, soit un virement bancaire pour transmettre nos paiements. En outre, certains pays ou régions prennent en charge le mode de paiement PayPal.
+For any given country/region, we will either use ACH/SEPA or wire transfer to deliver our payments. Additionally, some countries/regions support PayPal as a payment method.
 
-## Nombre de jours d’attente avant que le compte de revenu soit crédité
+## <a name="number-of-days-for-payments-to-reach-payout-account"></a>Number of days for payments to reach payout account
 
-Tout paiement dû au cours d’un mois donné sera généralement effectué le 15e jour du mois en question, mais un délai supplémentaire peut être nécessaire pour que le paiement soit crédité sur votre compte. Le nombre de jours varie en fonction du mode de paiement que nous utilisons pour votre compte, comme décrit ci-dessous. 
+We'll typically send any payment due in a given month by the 15th day of that month, but it will take additional time for the payment to reach your account. The amount of days will vary depending on the payment method we use for your account, as described below. 
 
-> 
-            **Remarque** Les jours indiqués ci-dessous sont donnés à titre approximatif; tout paiement donné peut impliquer un délai plus ou moins long.
+> **Note** The days shown below are approximate; any given payout may take a longer or shorter amount of time.
 
 
-| Moyen de paiement | Nombre de jours d’attente avant que le compte de revenu soit crédité |
+| Payment method | Number of days to reach payout account |
 |--------------------|--------------------------------------------|
-| PayPal | 1jour ouvrable | 
-| ACH/SEPA |2 à 3jours ouvrables |
-| Virement bancaire | 7 à 10jours ouvrables |
+| PayPal | 1 business day | 
+| ACH/SEPA |2-3 business days |
+| Wire Transfer | 7-10 business days |
 
 &nbsp;
 
-Pour connaître les pays/régions dans lesquels ces modes de paiement sont utilisés pour chaque marché, consultez les tableaux ci-dessous.
+To see the countries/regions in which these payment methods are used for each marketplace, see the tables below.
 
-## Seuils et modes de paiement
+## <a name="payment-thresholds-and-methods"></a>Payment thresholds and methods
 
-> 
-            **Remarque** Les seuils de paiement sont indiqués en dollars américains (USD). Certains marchés utilisent l’équivalent dans la devise locale. 
+> **Note** Payment thresholds are listed in USD. In some markets, the equivalent in local currency is used. 
 
-### Windows Store 
+### <a name="windows-store"></a>Windows Store 
 
 <table>
   <tr>
     <th>&nbsp;</th>
-    <th colspan="2">Compte de revenu = compte bancaire</th>
-    <th colspan="2">Compte de revenu = PayPal</th>
+    <th colspan="2">Payout account = Bank account</th>
+    <th colspan="2">Payout account = PayPal</th>
   </tr>
   <tr>
-    <td><strong>Pays/région</strong></td>
-    <td><strong>Seuil de paiement</strong></td>
-    <td><strong>Moyen de paiement</strong></td>
-    <td><strong>Seuil de paiement</strong></td>
-    <td><strong>Moyen de paiement</strong></td>
+    <td><strong>Country/region</strong></td>
+    <td><strong>Payment threshold</strong></td>
+    <td><strong>Payment method</strong></td>
+    <td><strong>Payment threshold</strong></td>
+    <td><strong>Payment method</strong></td>
   </tr>
   <tr>
     <td>Afghanistan</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Albanie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Albania</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Algérie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Algeria</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Angola</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Antigua-et-Barbuda</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Antigua and Barbuda</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Argentine</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Argentina</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Arménie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Armenia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Australie</td>
-    <td>25USD</td>
+    <td>Australia</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Autriche</td>
-    <td>25USD</td>
+    <td>Austria</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Azerbaïdjan</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Azerbaijan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Bahreïn</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Bahrain</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Bangladesh</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Bélarus</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Belarus</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Belgique</td>
-    <td>25USD</td>
+    <td>Belgium</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Bénin</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Benin</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Bolivie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Bolivia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Bosnie-Herzégovine</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Bosnia and Herzegovina</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Botswana</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Brésil</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Brazil</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Bulgarie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Bulgaria</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Burkina Faso</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Burundi</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Cambodge</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Cambodia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Cameroun</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Cameroon</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Canada</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>République centrafricaine</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Central African Republic</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Tchad</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Chad</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Chili</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Chile</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Chine</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>25USD</td>
+    <td>China</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Colombie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Colombia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Comores</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Comoros</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Congo</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Congo (République démocratique du)</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Congo (DRC)</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Costa Rica</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Côte d’Ivoire</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Côte d'Ivoire</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Croatie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Croatia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Chypre</td>
-    <td>25USD</td>
+    <td>Cyprus</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>République tchèque</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>25USD</td>
+    <td>Czech Republic</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Danemark</td>
-    <td>25USD</td>
+    <td>Denmark</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Dominique</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Dominica</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>République dominicaine</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Dominican Republic</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Équateur</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Ecuador</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Égypte</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Egypt</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Salvador</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>El Salvador</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Érythrée</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Eritrea</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Estonie</td>
-    <td>25USD</td>
+    <td>Estonia</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Éthiopie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Ethiopia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Fidji</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Fiji</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Finlande</td>
-    <td>25USD</td>
+    <td>Finland</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
     <td>France</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Géorgie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Georgia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Allemagne</td>
-    <td>25USD</td>
+    <td>Germany</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
     <td>Ghana</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Grèce</td>
-    <td>25USD</td>
+    <td>Greece</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
     <td>Guatemala</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Guinée</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Guinea</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Haïti</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Haiti</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Honduras</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Hong Kong (R.A.S.)</td>
-    <td>25USD</td>
+    <td>Hong Kong SAR</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Hongrie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>25USD</td>
+    <td>Hungary</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Islande</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Iceland</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Inde</td>
-    <td>25USD</td>
+    <td>India</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Indonésie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Indonesia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Irak</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Iraq</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Irlande</td>
-    <td>25USD</td>
+    <td>Ireland</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Israël</td>
-    <td>25USD</td>
+    <td>Israel</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Italie</td>
-    <td>25USD</td>
+    <td>Italy</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Jamaïque</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Jamaica</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Japon</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>25USD</td>
+    <td>Japan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Jordanie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Jordan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Kazakhstan</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Kenya</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Corée</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Korea</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Koweït</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Kuwait</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Laos</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Lettonie</td>
-    <td>25USD</td>
+    <td>Latvia</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Liban</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Lebanon</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Libéria</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Liberia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Liechtenstein</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>25USD</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Lituanie</td>
-    <td>25USD</td>
+    <td>Lithuania</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Luxembourg</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Macédoine (Ex-République yougoslave de)</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Macedonia (FYROM)</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Madagascar</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Malawi</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Malaisie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Malaysia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Mali</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Malte</td>
-    <td>25USD</td>
+    <td>Malta</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Maurice</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Mauritius</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Mexique</td>
-    <td>25USD</td>
+    <td>Mexico</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
     <td>Monaco</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Mongolie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Mongolia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Monténégro</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Montenegro</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Maroc</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Morocco</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Mozambique</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Népal</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Nepal</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Pays-Bas</td>
-    <td>25USD</td>
+    <td>Netherlands</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Nouvelle-Zélande</td>
-    <td>25USD</td>
+    <td>New Zealand</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
     <td>Nicaragua</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Niger</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Nigeria</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Norvège</td>
-    <td>25USD</td>
+    <td>Norway</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
     <td>Oman</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Pakistan</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Panama</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Paraguay</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Pérou</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Peru</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Philippines</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>25USD</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Pologne</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>25USD</td>
+    <td>Poland</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
     <td>Portugal</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
     <td>Qatar</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Roumanie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Romania</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Russie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>25USD</td>
+    <td>Russia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
     <td>Rwanda</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Saint-Vincent-et-les Grenadines</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Saint Vincent and the Grenadines</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Arabie saoudite</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Saudi Arabia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Sénégal</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Senegal</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Serbie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Serbia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Sierra Leone</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Singapour</td>
-    <td>25USD</td>
+    <td>Singapore</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Slovaquie</td>
-    <td>25USD</td>
+    <td>Slovakia</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Slovénie</td>
-    <td>25USD</td>
+    <td>Slovenia</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Somalie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Somalia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Afrique du Sud</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>South Africa</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Espagne</td>
-    <td>25USD</td>
+    <td>Spain</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
     <td>Sri Lanka</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Suède</td>
-    <td>25USD</td>
+    <td>Sweden</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Suisse</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>25USD</td>
+    <td>Switzerland</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Taïwan</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>25USD</td>
+    <td>Taiwan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Tadjikistan</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Tajikistan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Tanzanie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Tanzania</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Thaïlande</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>25USD</td>
+    <td>Thailand</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
     <td>Timor-Leste</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Togo</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Tonga</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Trinité-et-Tobago</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Trinidad and Tobago</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Tunisie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Tunisia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Turquie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Turkey</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Turkménistan</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Turkmenistan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Ouganda</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Uganda</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Ukraine</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Émirats arabes unis</td>
-    <td>25USD</td>
+    <td>United Arab Emirates</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Royaume-Uni</td>
-    <td>25USD</td>
+    <td>United Kingdom</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>États-Unis</td>
-    <td>25USD</td>
+    <td>United States</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
     <td>Uruguay</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Ouzbékistan</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Uzbekistan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Venezuela</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Vietnam</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Zambie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Zambia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Zimbabwe</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
 </table>
 
 &nbsp;
 
-### MicrosoftAdvertising 
+### <a name="microsoft-advertising"></a>Microsoft Advertising 
 
 <table>
   <tr>
     <th>&nbsp;</th>
-    <th colspan="2">Compte de revenu = compte bancaire</th>
-    <th colspan="2">Compte de revenu = PayPal</th>
+    <th colspan="2">Payout account = Bank account</th>
+    <th colspan="2">Payout account = PayPal</th>
   </tr>
   <tr>
-    <td><strong>Pays/région</strong></td>
-    <td><strong>Seuil de paiement</strong></td>
-    <td><strong>Moyen de paiement</strong></td>
-    <td><strong>Seuil de paiement</strong></td>
-    <td><strong>Moyen de paiement</strong></td>
+    <td><strong>Country/region</strong></td>
+    <td><strong>Payment threshold</strong></td>
+    <td><strong>Payment method</strong></td>
+    <td><strong>Payment threshold</strong></td>
+    <td><strong>Payment method</strong></td>
   </tr>
   <tr>
     <td>Afghanistan</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Albanie</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Albania</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Algérie</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Algeria</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Angola</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Antigua-et-Barbuda</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Antigua and Barbuda</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Argentine</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Argentina</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Arménie</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Armenia</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Australie</td>
-    <td>50USD</td>
+    <td>Australia</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50USD</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Autriche</td>
-    <td>50USD</td>
+    <td>Austria</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50USD</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Azerbaïdjan</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Azerbaijan</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Bahreïn</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Bahrain</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Bangladesh</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Bélarus</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Belarus</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Belgique</td>
-    <td>50USD</td>
+    <td>Belgium</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50USD</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Bénin</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Benin</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Bolivie</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Bolivia</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Bosnie-Herzégovine</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Bosnia and Herzegovina</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Botswana</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Brésil</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Brazil</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Bulgarie</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Bulgaria</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Burkina Faso</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Burundi</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Cambodge</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Cambodia</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Cameroun</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Cameroon</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Canada</td>
-    <td>50USD</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50USD</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>République centrafricaine</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Central African Republic</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Tchad</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Chad</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Chili</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Chile</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Chine</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>50USD</td>
+    <td>China</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Colombie</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Colombia</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Comores</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Comoros</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Congo</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Congo (République démocratique du)</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Congo (DRC)</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Costa Rica</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Côte d’Ivoire</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Côte d'Ivoire</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Croatie</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Croatia</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Chypre</td>
-    <td>50USD</td>
+    <td>Cyprus</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50USD</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>République tchèque</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>50USD</td>
+    <td>Czech Republic</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Danemark</td>
-    <td>50USD</td>
+    <td>Denmark</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50USD</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Dominique</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Dominica</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>République dominicaine</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Dominican Republic</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Équateur</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Ecuador</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Égypte</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Egypt</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Salvador</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>El Salvador</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Érythrée</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Eritrea</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Estonie</td>
-    <td>50USD</td>
+    <td>Estonia</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50USD</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Éthiopie</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Ethiopia</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Fidji</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Fiji</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Finlande</td>
-    <td>50USD</td>
+    <td>Finland</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50USD</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
     <td>France</td>
-    <td>50USD</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50USD</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Géorgie</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Georgia</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Allemagne</td>
-    <td>50USD</td>
+    <td>Germany</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50USD</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
     <td>Ghana</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Grèce</td>
-    <td>50USD</td>
+    <td>Greece</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50USD</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
     <td>Guatemala</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Guinée</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Guinea</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Haïti</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Haiti</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Honduras</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Hong Kong (R.A.S.)</td>
-    <td>50USD</td>
+    <td>Hong Kong SAR</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50USD</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Hongrie</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>50USD</td>
+    <td>Hungary</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Islande</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Iceland</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Inde</td>
-    <td>50USD</td>
+    <td>India</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Indonésie</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Indonesia</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Irak</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Iraq</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Irlande</td>
-    <td>50USD</td>
+    <td>Ireland</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50USD</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Israël</td>
-    <td>50USD</td>
+    <td>Israel</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50USD</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Italie</td>
-    <td>50USD</td>
+    <td>Italy</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50USD</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Jamaïque</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Jamaica</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Japon</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>50USD</td>
+    <td>Japan</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Jordanie</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Jordan</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Kazakhstan</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Kenya</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Corée</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Korea</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Koweït</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Kuwait</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Laos</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Lettonie</td>
-    <td>50USD</td>
+    <td>Latvia</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Liban</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Lebanon</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Libéria</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Liberia</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Liechtenstein</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>50USD</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Lituanie</td>
-    <td>50USD</td>
+    <td>Lithuania</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Luxembourg</td>
-    <td>50USD</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50USD</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Macédoine (Ex-République yougoslave de)</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Macedonia (FYROM)</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Madagascar</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Malawi</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Malaisie</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Malaysia</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Mali</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Malte</td>
-    <td>50USD</td>
+    <td>Malta</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50USD</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Maurice</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Mauritius</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Mexique</td>
-    <td>50USD</td>
+    <td>Mexico</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50USD</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
     <td>Monaco</td>
-    <td>50USD</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Mongolie</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Mongolia</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Monténégro</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Montenegro</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Maroc</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Morocco</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Mozambique</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Népal</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Nepal</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Pays-Bas</td>
-    <td>50USD</td>
+    <td>Netherlands</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50USD</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Nouvelle-Zélande</td>
-    <td>50USD</td>
+    <td>New Zealand</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50USD</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
     <td>Nicaragua</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Niger</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Nigeria</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Norvège</td>
-    <td>50USD</td>
+    <td>Norway</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50USD</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
     <td>Oman</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Pakistan</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Panama</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Paraguay</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Pérou</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Peru</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Philippines</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>50USD</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Pologne</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>50USD</td>
+    <td>Poland</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
     <td>Portugal</td>
-    <td>50USD</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50USD</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
     <td>Qatar</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Roumanie</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Romania</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Russie</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>50USD</td>
+    <td>Russia</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
     <td>Rwanda</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Saint-Vincent-et-les Grenadines</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Saint Vincent and the Grenadines</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Arabie saoudite</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Saudi Arabia</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Sénégal</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Senegal</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Serbie</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Serbia</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Sierra Leone</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Singapour</td>
-    <td>50USD</td>
+    <td>Singapore</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50USD</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Slovaquie</td>
-    <td>50USD</td>
+    <td>Slovakia</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50USD</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Slovénie</td>
-    <td>50USD</td>
+    <td>Slovenia</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50USD</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Somalie</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Somalia</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Afrique du Sud</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>South Africa</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Espagne</td>
-    <td>50USD</td>
+    <td>Spain</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50USD</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
     <td>Sri Lanka</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Suède</td>
-    <td>50USD</td>
+    <td>Sweden</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50USD</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Suisse</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>50USD</td>
+    <td>Switzerland</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Taïwan</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>50USD</td>
+    <td>Taiwan</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Tadjikistan</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Tajikistan</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Tanzanie</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Tanzania</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Thaïlande</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>50USD</td>
+    <td>Thailand</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
     <td>Timor-Leste</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Togo</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Tonga</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Trinité-et-Tobago</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Trinidad and Tobago</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Tunisie</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Tunisia</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Turquie</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Turkey</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Turkménistan</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Turkmenistan</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Ouganda</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Uganda</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Ukraine</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Émirats arabes unis</td>
-    <td>50USD</td>
+    <td>United Arab Emirates</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50USD</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Royaume-Uni</td>
-    <td>50USD</td>
+    <td>United Kingdom</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50USD</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>États-Unis</td>
-    <td>50USD</td>
+    <td>United States</td>
+    <td>50 USD</td>
     <td>ACH/SEPA</td>
-    <td>50USD</td>
+    <td>50 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
     <td>Uruguay</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Ouzbékistan</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Uzbekistan</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Venezuela</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Vietnam</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Zambie</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Zambia</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Zimbabwe</td>
-    <td>50USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>50 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
 </table>
 
 &nbsp;
 
-### Azure Marketplace
+### <a name="azure-marketplace"></a>Azure Marketplace
 
 <table>
   <tr>
     <th>&nbsp;</th>
-    <th colspan="2">Compte de revenu = compte bancaire</th>
-    <th colspan="2">Compte de revenu = PayPal</th>
+    <th colspan="2">Payout account = Bank account</th>
+    <th colspan="2">Payout account = PayPal</th>
   </tr>
   <tr>
-    <td><strong>Pays/région</strong></td>
-    <td><strong>Seuil de paiement</strong></td>
-    <td><strong>Moyen de paiement</strong></td>
-    <td><strong>Seuil de paiement</strong></td>
-    <td><strong>Moyen de paiement</strong></td>
+    <td><strong>Country/region</strong></td>
+    <td><strong>Payment threshold</strong></td>
+    <td><strong>Payment method</strong></td>
+    <td><strong>Payment threshold</strong></td>
+    <td><strong>Payment method</strong></td>
+  </tr>
+  <tr>
+    <td>Afghanistan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Albania</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Algeria</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Angola</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+<tr>
+    <td>Antigua and Barbuda</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+ <tr>
+    <td>Argentina</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Armenia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Australia</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
   </tr>
     <tr>
-    <td>Autriche</td>
-    <td>25USD</td>
+    <td>Austria</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
+<tr>
+    <td>Azerbaijan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
   <tr>
-    <td>Belgique</td>
-    <td>25USD</td>
+    <td>Bahrain</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Bangladesh</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Belarus</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+    <tr>
+    <td>Belgium</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
-  <tr>
-    <td>Bulgarie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+ <tr>
+    <td>Benin</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
+    <td>Bolivia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Bosnia and Herzegovina</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Botswana</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Brazil</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+   <tr>
+    <td>Bulgaria</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+<tr>
+    <td>Burkina Faso</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Burundi</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Cambodia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Cameroon</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+    <tr>
     <td>Canada</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+<tr>
+    <td>Central African Republic</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Chad</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Chile</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Colombia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Comoros</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Congo</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Congo (DRC)</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Costa Rica</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Côte d'Ivoire</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Croatia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Cyprus</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Croatie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
-  </tr>
-  <tr>
-    <td>Chypre</td>
-    <td>25USD</td>
-    <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>Czech Republic</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>République tchèque</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>25USD</td>
+    <td>Denmark</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Danemark</td>
-    <td>25USD</td>
+    <td>Dominica</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Dominican Republic</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Ecuador</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Egypt</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>El Salvador</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Eritrea</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Estonia</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Estonie</td>
-    <td>25USD</td>
-    <td>ACH/SEPA</td>
-    <td>25USD</td>
-    <td>PayPal</td>
+    <td>Ethiopia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Finlande</td>
-    <td>25USD</td>
+    <td>Fiji</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Finland</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
     <td>France</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
-  <tr>
-    <td>Allemagne</td>
-    <td>25USD</td>
+   <tr>
+    <td>Georgia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+ <tr>
+    <td>Germany</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
-  <tr>
-    <td>Grèce</td>
-    <td>25USD</td>
+   <tr>
+    <td>Ghana</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+ <tr>
+    <td>Greece</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
+ <tr>
+    <td>Guatemala</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
   <tr>
-    <td>Hong Kong (R.A.S.)</td>
-    <td>25USD</td>
+    <td>Guinea</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Haiti</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Honduras</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+   <tr>
+    <td>Hong Kong SAR</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Hongrie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>25USD</td>
+    <td>Hungary</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Irlande</td>
-    <td>25USD</td>
+    <td>Iceland</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>India</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
-    <td>PayPal</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Italie</td>
-    <td>25USD</td>
+    <td>Indonesia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Iraq</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Ireland</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
-  <tr>
-    <td>Japon</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>25USD</td>
-    <td>PayPal</td>
-  </tr>
-  <tr>
-    <td>Lettonie</td>
-    <td>25USD</td>
+ <tr>
+    <td>Israel</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+   <tr>
+    <td>Italy</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+   <tr>
+    <td>Jamaica</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+ <tr>
+    <td>Japan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+ <tr>
+    <td>Jordan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Kazakhstan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Kenya</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Korea</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Kuwait</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Laos</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+   <tr>
+    <td>Latvia</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Lebanon</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Liberia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Liechtenstein</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>25USD</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Lituanie</td>
-    <td>25USD</td>
+    <td>Lithuania</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Luxembourg</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+ <tr>
+    <td>Macedonia (FYROM)</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Madagascar</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Malawi</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Malaysia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Mali</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+   <tr>
+    <td>Malta</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+ <tr>
+    <td>Mauritius</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Mexico</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Malte</td>
-    <td>25USD</td>
+    <td>Monaco</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
-    <td>PayPal</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Pays-Bas</td>
-    <td>25USD</td>
-    <td>ACH/SEPA</td>
-    <td>25USD</td>
-    <td>PayPal</td>
+    <td>Mongolia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Norvège</td>
-    <td>25USD</td>
-    <td>ACH/SEPA</td>
-    <td>25USD</td>
-    <td>PayPal</td>
+    <td>Montenegro</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Pologne</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>25USD</td>
+    <td>Morocco</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Mozambique</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Nepal</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+   <tr>
+    <td>Netherlands</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+ <tr>
+    <td>Nicaragua</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Niger</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Nigeria</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+   <tr>
+    <td>Norway</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+ <tr>
+    <td>Oman</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Pakistan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Panama</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Paraguay</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Peru</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Philippines</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+   <tr>
+    <td>Poland</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
     <td>Portugal</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Roumanie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Qatar</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Slovaquie</td>
-    <td>25USD</td>
+    <td>Romania</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+ <tr>
+    <td>Russia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>Rwanda</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Saint Vincent and the Grenadines</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Saudi Arabia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Senegal</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Serbia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Sierra Leone</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Singapore</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
-  <tr>
-    <td>Slovénie</td>
-    <td>25USD</td>
+   <tr>
+    <td>Slovakia</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Espagne</td>
-    <td>25USD</td>
+    <td>Slovenia</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
+ <tr>
+    <td>Somalia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
   <tr>
-    <td>Suède</td>
-    <td>25USD</td>
+    <td>South Africa</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+   <tr>
+    <td>Spain</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Suisse</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>25USD</td>
-    <td>PayPal</td>
+    <td>Sri Lanka</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Royaume-Uni</td>
-    <td>25USD</td>
+    <td>Sweden</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>États-Unis</td>
-    <td>25USD</td>
-    <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>Switzerland</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
-</table>
+ <tr>
+    <td>Taiwan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>Tajikistan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Tanzania</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Thailand</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+ <tr>
+    <td>Timor-Leste</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Togo</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Tonga</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Trinidad and Tobago</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Tunisia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Turkey</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Turkmenistan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Uganda</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Ukraine</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>United Arab Emirates</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+    <tr>
+    <td>United Kingdom</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+  <tr>
+    <td>United States</td>
+    <td>25 USD</td>
+    <td>ACH/SEPA</td>
+    <td>25 USD</td>
+    <td>PayPal</td>
+  </tr>
+ <tr>
+    <td>Uruguay</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Uzbekistan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Venezuela</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Vietnam</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Zambia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>Zimbabwe</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+ </table>
 
 &nbsp;
 
-### Office Store
+### <a name="office-store"></a>Office Store
 <table>
   <tr>
     <th>&nbsp;</th>
-    <th colspan="2">Compte de revenu = compte bancaire</th>
-    <th colspan="2">Compte de revenu = PayPal</th>
+    <th colspan="2">Payout account = Bank account</th>
+    <th colspan="2">Payout account = PayPal</th>
   </tr>
   <tr>
-    <td><strong>Pays/région</strong></td>
-    <td><strong>Seuil de paiement</strong></td>
-    <td><strong>Moyen de paiement</strong></td>
-    <td><strong>Seuil de paiement</strong></td>
-    <td><strong>Moyen de paiement</strong></td>
+    <td><strong>Country/region</strong></td>
+    <td><strong>Payment threshold</strong></td>
+    <td><strong>Payment method</strong></td>
+    <td><strong>Payment threshold</strong></td>
+    <td><strong>Payment method</strong></td>
   </tr>
   <tr>
-    <td>Albanie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Albania</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Algérie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Algeria</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Andorre</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Andorra</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Angola</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Argentine</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Argentina</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Australie</td>
-    <td>25USD</td>
+    <td>Australia</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Autriche</td>
-    <td>25USD</td>
+    <td>Austria</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Azerbaïdjan</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Azerbaijan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Bahreïn</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Bahrain</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Bangladesh</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Bélarus</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Belarus</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Belgique</td>
-    <td>25USD</td>
+    <td>Belgium</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Bénin</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Benin</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Bolivie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Bolivia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Bosnie-Herzégovine</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Bosnia and Herzegovina</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Brésil</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Brazil</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Bulgarie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Bulgaria</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Burkina Faso</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Burundi</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Cambodge</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Cambodia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Cameroun</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Cameroon</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Canada</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>République centrafricaine</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Central African Republic</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Tchad</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Chad</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Chili</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Chile</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Chine</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>25USD</td>
+    <td>China</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Colombie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Colombia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Congo</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Congo (République démocratique du)</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Congo (DRC)</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Costa Rica</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Côte d’Ivoire</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Côte d'Ivoire</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Croatie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Croatia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Chypre</td>
-    <td>25USD</td>
+    <td>Cyprus</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>République tchèque</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>25USD</td>
+    <td>Czech Republic</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Danemark</td>
-    <td>25USD</td>
+    <td>Denmark</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>République dominicaine</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Dominican Republic</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Équateur</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Ecuador</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Égypte</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Egypt</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Salvador</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>El Salvador</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Érythrée</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Eritrea</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Estonie</td>
-    <td>25USD</td>
+    <td>Estonia</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Éthiopie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Ethiopia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Finlande</td>
-    <td>25USD</td>
+    <td>Finland</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
     <td>France</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Géorgie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Georgia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Allemagne</td>
-    <td>25USD</td>
+    <td>Germany</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
     <td>Ghana</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Grèce</td>
-    <td>25USD</td>
+    <td>Greece</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
     <td>Guatemala</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Guinée</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Guinea</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Haïti</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Haiti</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Honduras</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Hong Kong (R.A.S.)</td>
-    <td>25USD</td>
+    <td>Hong Kong SAR</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Hongrie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>25USD</td>
+    <td>Hungary</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Islande</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Iceland</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Inde</td>
-    <td>25USD</td>
+    <td>India</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Indonésie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Indonesia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Irlande</td>
-    <td>25USD</td>
+    <td>Ireland</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Israël</td>
-    <td>25USD</td>
+    <td>Israel</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Italie</td>
-    <td>25USD</td>
+    <td>Italy</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Jamaïque</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Jamaica</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Japon</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>25USD</td>
+    <td>Japan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Jordanie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Jordan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Kazakhstan</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Kenya</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Corée</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Korea</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Koweït</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Kuwait</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Kirghizistan</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Kyrgyzstan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Laos</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Lettonie</td>
-    <td>25USD</td>
+    <td>Latvia</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Libéria</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Liberia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Liechtenstein</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>25USD</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Lituanie</td>
-    <td>25USD</td>
+    <td>Lithuania</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Luxembourg</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Macédoine (Ex-République yougoslave de)</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Macedonia (FYROM)</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Madagascar</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Malawi</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Malaisie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Malaysia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Mali</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Malte</td>
-    <td>25USD</td>
+    <td>Malta</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Mexique</td>
-    <td>25USD</td>
+    <td>Mexico</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Mongolie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Mongolia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Monténégro</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Montenegro</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Maroc</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Morocco</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Mozambique</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Népal</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Nepal</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Pays-Bas</td>
-    <td>25USD</td>
+    <td>Netherlands</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Nouvelle-Zélande</td>
-    <td>25USD</td>
+    <td>New Zealand</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
     <td>Nicaragua</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Niger</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Nigeria</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Norvège</td>
-    <td>25USD</td>
+    <td>Norway</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
     <td>Oman</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Pakistan</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Panama</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Paraguay</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Pérou</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Peru</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Philippines</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>25USD</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Pologne</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>25USD</td>
+    <td>Poland</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
     <td>Portugal</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
     <td>Puerto Rico</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Qatar</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Roumanie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Romania</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Rwanda</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Arabie saoudite</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Saudi Arabia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Sénégal</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Senegal</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Serbie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Serbia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Sierra Leone</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Singapour</td>
-    <td>25USD</td>
+    <td>Singapore</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Slovaquie</td>
-    <td>25USD</td>
+    <td>Slovakia</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Slovénie</td>
-    <td>25USD</td>
+    <td>Slovenia</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Somalie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Somalia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Afrique du Sud</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>South Africa</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Espagne</td>
-    <td>25USD</td>
+    <td>Spain</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
     <td>Sri Lanka</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Suède</td>
-    <td>25USD</td>
+    <td>Sweden</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Suisse</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>25USD</td>
+    <td>Switzerland</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Taïwan</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>25USD</td>
+    <td>Taiwan</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Tanzanie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Tanzania</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Thaïlande</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>25USD</td>
+    <td>Thailand</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
     <td>Timor-Leste</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Togo</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Trinité-et-Tobago</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Trinidad and Tobago</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Tunisie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Tunisia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Turquie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Turkey</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Ouganda</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Uganda</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Émirats arabes unis</td>
-    <td>25USD</td>
+    <td>United Arab Emirates</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Royaume-Uni</td>
-    <td>25USD</td>
+    <td>United Kingdom</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>États-Unis</td>
-    <td>25USD</td>
+    <td>United States</td>
+    <td>25 USD</td>
     <td>ACH/SEPA</td>
-    <td>25USD</td>
+    <td>25 USD</td>
     <td>PayPal</td>
   </tr>
   <tr>
     <td>Uruguay</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Venezuela</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Vietnam</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
-    <td>Zambie</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>Zambia</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
   <tr>
     <td>Zimbabwe</td>
-    <td>200USD</td>
-    <td>Virement bancaire</td>
-    <td>Non applicable</td>
-    <td>Non applicable</td>
+    <td>200 USD</td>
+    <td>Wire transfer</td>
+    <td>N/A</td>
+    <td>N/A</td>
   </tr>
 </table>
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

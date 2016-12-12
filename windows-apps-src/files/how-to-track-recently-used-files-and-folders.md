@@ -1,48 +1,48 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: BF929A68-9C82-4866-BC13-A32B3A550005
-title: "Suivre les fichiers et dossiers récemment utilisés"
-description: "Effectuez le suivi des fichiers auxquels l’utilisateur accède fréquemment en les ajoutant à la liste Utilisés récemment de votre application."
+title: Track recently used files and folders
+description: Track files that your user accesses frequently by adding them to your app&quot;s most recently used list (MRU).
 translationtype: Human Translation
-ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
-ms.openlocfilehash: 84b78cc4af9490f142c0f74fec127e1d003ce6df
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: fc873da2d0b48cdc614fa319a294e67642440cdf
 
 ---
-# Suivre les fichiers et dossiers récemment utilisés
+# <a name="track-recently-used-files-and-folders"></a>Track recently used files and folders
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** API importantes **
+** Important APIs **
 
 - [**MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458)
 - [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/hh738369)
 
-Effectuez le suivi des fichiers auxquels l’utilisateur accède fréquemment en les ajoutant à la liste des éléments utilisés récemment de votre application. La plateforme gère les éléments récents pour vous, en les triant selon le critère du dernier accès, et en supprimant l’élément le plus ancien quand la limite de 25 éléments est atteinte. Toutes les applications ont leurs propres éléments récents.
+Track files that your user accesses frequently by adding them to your app's most recently used list (MRU). The platform manages the MRU for you by sorting items based on when they were last accessed, and by removing the oldest item when the list's 25-item limit is reached. All apps have their own MRU.
 
-Les éléments récents de votre application sont représentés par la classe [**StorageItemMostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207475), que vous pouvez obtenir à partir de la propriété [**StorageApplicationPermissions.MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458) statique. Les éléments récents sont stockés en tant qu’objets [**IStorageItem**](https://msdn.microsoft.com/library/windows/apps/br227129), ce qui signifie que des objets [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) (qui représentent des fichiers) et [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) (qui représentent des dossiers) peuvent être ajoutés aux éléments récents.
+Your app's MRU is represented by the [**StorageItemMostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207475) class, which you obtain from the static [**StorageApplicationPermissions.MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458) property. MRU items are stored as [**IStorageItem**](https://msdn.microsoft.com/library/windows/apps/br227129) objects, so both [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) objects (which represent files) and [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) objects (which represent folders) can be added to the MRU.
 
-**Remarque** Voir aussi l’[exemple de sélecteur de fichiers](http://go.microsoft.com/fwlink/p/?linkid=619994) et l’[exemple d’accès aux fichiers](http://go.microsoft.com/fwlink/p/?linkid=619995).
+**Note**  Also see the [File picker sample](http://go.microsoft.com/fwlink/p/?linkid=619994) and the [File access sample](http://go.microsoft.com/fwlink/p/?linkid=619995).
 
  
 
-## Prérequis
+## <a name="prerequisites"></a>Prerequisites
 
--   **Comprendre la programmation asynchrone pour les applications pour la plateforme Windows universelle (UWP)**
+-   **Understand async programming for Universal Windows Platform (UWP) apps**
 
-    Pour apprendre à écrire des applications asynchrones en C# ou Visual Basic, voir [Appeler des API asynchrones en C# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). Pour apprendre à écrire des applications asynchrones en C++, voir [Programmation asynchrone en C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
+    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
 
--   **Autorisations d’accès à l’emplacement**
+-   **Access permissions to the location**
 
-    Voir [Autorisations d’accès aux fichiers](file-access-permissions.md).
+    See [File access permissions](file-access-permissions.md).
 
--   [Ouvrir des fichiers et dossiers à l’aide d’un sélecteur](quickstart-using-file-and-folder-pickers.md)
+-   [Open files and folders with a picker](quickstart-using-file-and-folder-pickers.md)
 
-    Les fichiers sélectionnés sont souvent ceux auxquels les utilisateurs reviennent inlassablement.
+    Picked files are often the same files that users return to again and again.
 
- ## Ajouter un fichier sélectionné au éléments récents
+ ## <a name="add-a-picked-file-to-the-mru"></a>Add a picked file to the MRU
 
--   Les fichiers que l'utilisateur sélectionne sont souvent des fichiers auxquels il revient à plusieurs reprises. Par conséquent, songez à ajouter des fichiers sélectionnés à la liste d’éléments récents de votre application dès leur sélection. Voici comment procéder.
+-   The files that your user picks are often files that they return to repeatedly. So consider adding picked files to your app's MRU as soon as they are picked. Here's how.
 
     ```CSharp
     ...
@@ -53,27 +53,27 @@ Les éléments récents de votre application sont représentés par la classe [*
     string mruToken = mru.Add(file, "profile pic");
     ```
 
-    [**StorageItemMostRecentlyUsedList.Add**](https://msdn.microsoft.com/library/windows/apps/br207476) est surchargé. Dans l’exemple, nous utilisons [**Add(IStorageItem, String)**](https://msdn.microsoft.com/library/windows/apps/br207481) afin de pouvoir associer des métadonnées au fichier. La définition des métadonnées vous permet d’enregistrer la finalité de l’élément, par exemple, «image du profil». Vous pouvez également ajouter le fichier à la liste Utilisés récemment sans métadonnées en appelant [**Add(IStorageItem)**](https://msdn.microsoft.com/library/windows/apps/br207480). Chaque fois que vous ajoutez un élément aux éléments récents, la méthode retourne une chaîne d’identification unique, ou jeton, qui est utilisée pour récupérer l’élément.
+    [**StorageItemMostRecentlyUsedList.Add**](https://msdn.microsoft.com/library/windows/apps/br207476) is overloaded. In the example, we use [**Add(IStorageItem, String)**](https://msdn.microsoft.com/library/windows/apps/br207481) so that we can associate metadata with the file. Setting metadata lets you record the item's purpose, for example "profile pic". You can also add the file to the MRU without metadata by calling [**Add(IStorageItem)**](https://msdn.microsoft.com/library/windows/apps/br207480). When you add an item to the MRU, the method returns a uniquely identifying string, called a token, which is used to retrieve the item.
 
-    **Conseil** Le jeton étant nécessaire pour récupérer un élément de la liste Utilisés récemment, il convient de le conserver quelque part. Pour plus d’informations sur les données d’application, consultez [Gestion des données d’application](https://msdn.microsoft.com/library/windows/apps/hh465109).
+    **Tip**   You'll need the token to retrieve an item from the MRU, so persist it somewhere. For more info about app data, see [Managing application data](https://msdn.microsoft.com/library/windows/apps/hh465109).
 
      
 
-## Utiliser un jeton pour récupérer un élément de la liste des éléments récents
+## <a name="use-a-token-to-retrieve-an-item-from-the-mru"></a>Use a token to retrieve an item from the MRU
 
-Utilisez la méthode de récupération la plus appropriée pour l’élément à récupérer.
+Use the retrieval method most appropriate for the item you want to retrieve.
 
--   Récupérer un fichier en tant que [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) en utilisant [**GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br207486).
--   Récupérer un dossier en tant que [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) en utilisant [**GetFolderAsync**](https://msdn.microsoft.com/library/windows/apps/br207489).
--   Récupérer un [**IStorageItem**](https://msdn.microsoft.com/library/windows/apps/br227129) générique représentant un fichier ou un dossier en utilisant [**GetItemAsync**](https://msdn.microsoft.com/library/windows/apps/br207492).
+-   Retrieve a file as a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) by using [**GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br207486).
+-   Retrieve a folder as a [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) by using [**GetFolderAsync**](https://msdn.microsoft.com/library/windows/apps/br207489).
+-   Retrieve a generic [**IStorageItem**](https://msdn.microsoft.com/library/windows/apps/br227129), which can represent either a file or folder, by using [**GetItemAsync**](https://msdn.microsoft.com/library/windows/apps/br207492).
 
-Voici comment récupérer le fichier que nous venons d'ajouter.
+Here's how to get back the file we just added.
 
 ```csharp
 StorageFile retrievedFile = await mru.GetFileAsync(mruToken);
 ```
 
-Voici comment itérer dans toutes les entrées pour obtenir des jetons, puis des éléments.
+Here's how to iterate all the entries to get tokens and then items.
 
 ```csharp
 foreach (Windows.Storage.AccessCache.AccessListEntry entry in mru.Entries)
@@ -85,27 +85,27 @@ foreach (Windows.Storage.AccessCache.AccessListEntry entry in mru.Entries)
 }
 ```
 
-La [**AccessListEntryView**](https://msdn.microsoft.com/library/windows/apps/br227349) vous permet d’itérer des entrées dans la liste Utilisés récemment. Ces entrées sont des structures [**AccessListEntry**](https://msdn.microsoft.com/library/windows/apps/br227348) contenant le jeton et les métadonnées d’un élément.
+The [**AccessListEntryView**](https://msdn.microsoft.com/library/windows/apps/br227349) lets you iterate entries in the MRU. These entries are [**AccessListEntry**](https://msdn.microsoft.com/library/windows/apps/br227348) structures that contain the token and metadata for an item.
 
-## Suppression d’éléments de la liste des éléments récents quand celle-ci est pleine
+## <a name="removing-items-from-the-mru-when-its-full"></a>Removing items from the MRU when it's full
 
-Quand cette limite de 25 éléments est atteinte et que vous essayez d’ajouter un nouvel élément, l’élément auquel l’utilisateur a accédé dans le passé le plus lointain est automatiquement supprimé. Par conséquent, vous devez jamais supprimer un élément avant d'en ajouter un nouveau.
+When the MRU's 25-item limit is reached and you try to add a new item, the item that was accessed the longest time ago is automatically removed. So, you never need to remove an item before you add a new one.
 
-## Liste d'accès futurs
+## <a name="future-access-list"></a>Future-access list
 
-Comme pour les éléments récents, votre application dispose d’une liste d'accès futurs. En sélectionnant des fichiers et dossiers, votre utilisateur autorise votre application à accéder à des éléments qui pourraient ne pas être accessibles autrement. En ajoutant ces éléments à votre liste d'accès futurs, vous conservez cette autorisation au cas où votre application devrait accéder à ces éléments ultérieurement. La liste d’accès futurs de votre application est représentée par la classe [**StorageItemAccessList**](https://msdn.microsoft.com/library/windows/apps/br207459) que vous obtenez à partir de la propriété [**StorageApplicationPermissions.FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) statique.
+As well as an MRU, your app also has a future-access list. By picking files and folders, your user grants your app permission to access items that might not be accessible otherwise. If you add these items to your future-access list then you'll retain that permission when your app wants to access those items again later. Your app's future-access list is represented by the [**StorageItemAccessList**](https://msdn.microsoft.com/library/windows/apps/br207459) class, which you obtain from the static [**StorageApplicationPermissions.FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) property.
 
-Quand un utilisateur sélectionne un élément, songez à ajouter celui-ci à votre liste d'accès futurs ainsi qu’aux éléments récents.
+When a user picks an item, consider adding it to your future-access list as well as your MRU.
 
--   La [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) peut contenir jusqu’à 1000éléments. N'oubliez pas que ce nombre comprend les dossiers et les fichiers.
--   La plateforme ne supprime jamais d’éléments de la [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) à votre place. Lorsque vous avez atteint la limite des 1000éléments, vous ne pouvez plus en ajouter sans libérer préalablement de l’espace avec la méthode [**Remove**](https://msdn.microsoft.com/library/windows/apps/br207497).
-
- 
+-   The [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) can hold up to 1000 items. Remember: it can hold folders as well as files, so that's a lot of folders.
+-   The platform never removes items from the [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) for you. When you reach the 1000-item limit, you can't add another until you make room with the [**Remove**](https://msdn.microsoft.com/library/windows/apps/br207497) method.
 
  
 
+ 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Dec16_HO1-->
 
 

@@ -1,53 +1,53 @@
 ---
 author: mcleblanc
-description: "Derrière votre interface utilisateur se trouvent les couches métier et les couches de données."
-title: "Portage des couches métier et des couches de données de Silverlight pour Windows Phone vers UWP"
+description: Behind your UI are your business and data layers.
+title: Porting Windows Phone Silverlight business and data layers to UWP
 ms.assetid: 27c66759-2b35-41f5-9f7a-ceb97f4a0e3f
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 57288b13af0f2ff4f677e2425442b43f3e76d4d8
+ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
+ms.openlocfilehash: 6e6cea49064f49a15b557aad037c5baaa1e9b57b
 
 ---
 
-#  Portage des couches métier et des couches de données de Silverlight pour Windows Phone vers UWP
+#  <a name="porting-windows-phone-silverlight-business-and-data-layers-to-uwp"></a>Porting Windows Phone Silverlight business and data layers to UWP
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Rubrique précédente : [Portage pour le modèle d’E/S, d’appareil et d’application](wpsl-to-uwp-input-and-sensors.md).
+The previous topic was [Porting for I/O, device, and app model](wpsl-to-uwp-input-and-sensors.md).
 
-Derrière votre interface utilisateur se trouvent les couches métier et les couches de données. Le code de ces couches appelle le système d’exploitation et les API .NET Framework (par exemple, pour le traitement en arrière-plan, l’emplacement, l’appareil photo, le système de fichiers, le réseau et l’accès à d’autres données). La grande majorité de ces éléments sont [disponibles pour une application de plateforme Windows universelle (UWP)](https://msdn.microsoft.com/library/windows/apps/br211369). Vous pouvez donc espérer être en mesure de porter la plus grande partie de ce code sans avoir à le modifier.
+Behind your UI are your business and data layers. The code in these layers calls operating system and .NET Framework APIs (for example, background processing, location, the camera, the file system, network, and other data access). The vast majority of those are [available to a Universal Windows Platform (UWP) app](https://msdn.microsoft.com/library/windows/apps/br211369), so you can expect to be able to port much of this code without change.
 
-## Méthodes asynchrones
+## <a name="asynchronous-methods"></a>Asynchronous methods
 
-L’une des priorités de la plateforme Windows universelle (UWP) consiste à vous permettre de générer des applications qui réagissent efficacement et de manière cohérente. Les animations sont toujours fluides, et les interactions tactiles (telles que le balayage et les mouvements panoramiques) sont instantanées, sans retard, ce qui donne le sentiment que l’interface utilisateur ne fait qu’un avec votre doigt. Pour ce faire, toute API UWP qui ne peut pas garantir qu’elle s’exécutera en 50 millisecondes maximum est rendue asynchrone ; son nom comprend le suffixe suivant : **Async**. Votre thread d’interface utilisateur réapparaît immédiatement suite à l’appel d’une méthode **Async** ; le travail est alors effectué sur un autre thread. L’utilisation d’une méthode **Async** a été facilitée via l’optimisation de la syntaxe, au moyen de l’opérateur C# **await**, des objets de promesse JavaScript et des continuations C++. Pour en savoir plus, voir [Programmation asynchrone](https://msdn.microsoft.com/library/windows/apps/mt187335).
+One of the priorities of the Universal Windows Platform (UWP) is to enable you to build apps that are truly, and consistently, responsive. Animations are always smooth, and touch interactions such as panning and swiping are instantaneous and free of lag, making it feel like the UI is glued to your finger. To achieve this, any UWP API that can't guarantee to complete within 50ms has been made asynchronous and its name suffixed with **Async**. Your UI thread will return immediately from calling an **Async** method, and the work will take place on another thread. Consuming an **Async** method is made very easy, syntactically, using the C# **await** operator, JavaScript promise objects, and C++ continuations. For more info, see [Asynchronous programming](https://msdn.microsoft.com/library/windows/apps/mt187335).
 
-## Traitement en arrière-plan
+## <a name="background-processing"></a>Background processing
 
-Une application Silverlight pour Windows Phone peut utiliser un objet **ScheduledTaskAgent** managé pour effectuer une tâche lorsque l’application n’est pas affichée au premier plan. Une application UWP utilise la classe [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) pour créer et enregistrer une tâche en arrière-plan, de la même manière. Vous définissez une classe qui implémente le travail effectué par votre tâche en arrière-plan. Le système exécute régulièrement votre tâche en arrière-plan, en appelant la méthode [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811) de votre classe pour exécuter le travail. Dans une application UWP, n’oubliez pas de définir la déclaration **Tâches en arrière-plan** dans le manifeste du package d’application. Pour plus d’informations, voir [Définir des tâches en arrière-plan pour les besoins de votre application](https://msdn.microsoft.com/library/windows/apps/mt299103).
+A Windows Phone Silverlight app can use a managed **ScheduledTaskAgent** object to perform a task while the app is not in the foreground. A UWP app uses the [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) class to create and register a background task in a similar way. You define a class that implements the work of your background task. The system runs your background task periodically, calling the [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811) method of your class to execute the work. In a UWP app, remember to set the **Background Tasks** declaration in the app package manifest. For more info, see [Support your app with background tasks](https://msdn.microsoft.com/library/windows/apps/mt299103).
 
-Pour transférer des fichiers de données volumineux en arrière-plan, une application Silverlight pour Windows Phone utilise la classe **BackgroundTransferService**. Pour effectuer cette opération, une application UWP utilise des API de l’espace de noms [**Windows.Networking.BackgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242). Les fonctions utilisent un modèle semblable pour lancer des transferts, mais la nouvelle API présente des performances et fonctionnalités optimisées. Pour en savoir plus, voir [Transfert de données en arrière-plan](https://msdn.microsoft.com/library/windows/apps/xaml/hh452975).
+To transfer large data files in the background, a Windows Phone Silverlight app uses the **BackgroundTransferService** class. A UWP app uses APIs in the [**Windows.Networking.BackgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242) namespace to do this. The features use a similar pattern to initiate transfers, but the new API has improved capabilities and performance. For more info, see [Transferring data in the background](https://msdn.microsoft.com/library/windows/apps/xaml/hh452975).
 
-Une application Silverlight pour Windows Phone utilise les classes managées de l’espace de noms **Microsoft.Phone.BackgroundAudio** pour lire les données audio alors que l’application n’est pas au premier plan. UWP utilise le modèle d’application Windows Phone Store. Voir [Contenu audio en arrière-plan](https://msdn.microsoft.com/library/windows/apps/mt282140) et l’exemple [Contenu audio en arrière-plan](http://go.microsoft.com/fwlink/p/?linkid=619997).
+A Windows Phone Silverlight app uses the managed classes in the **Microsoft.Phone.BackgroundAudio** namespace to play audio while the app is not in the foreground. The UWP uses the Windows Phone Store app model, see [Background Audio](https://msdn.microsoft.com/library/windows/apps/mt282140) and the [Background audio](http://go.microsoft.com/fwlink/p/?linkid=619997) sample.
 
-## Services cloud, mise en réseau et bases de données
+## <a name="cloud-services-networking-and-databases"></a>Cloud services, networking, and databases
 
-L’hébergement de services de données et d’application dans le cloud est possible par le biais de la plateforme Azure. Voir [Prise en main de Mobile Services](http://go.microsoft.com/fwlink/p/?LinkID=403138). Pour les solutions qui nécessitent à la fois des données en ligne et des données hors connexion, voir [Utilisation de la synchronisation des données hors connexion dans Mobile Services](http://azure.microsoft.com/documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data/).
+Hosting data and app services in the cloud is possible using Azure. See [Getting Started with Mobile Services](http://go.microsoft.com/fwlink/p/?LinkID=403138). For solutions that require both online and offline data see: [Using offline data sync in Mobile Services](http://azure.microsoft.com/documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data/).
 
-UWP offre une prise en charge partielle de la classe **System.Net.HttpWebRequest**, mais ne prend pas en charge la classe **System.Net.WebClient**. L’alternative prospective recommandée est la classe [**Windows.Web.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) (ou [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx) si vous avez besoin que votre code soit portable vers d’autres plateformes prenant en charge .NET). Ces API utilisent [System.Net.Http.HttpRequestMessage](https://msdn.microsoft.com/library/system.net.http.httprequestmessage.aspx) pour représenter une requête HTTP.
+The UWP has partial support for the **System.Net.HttpWebRequest** class, but the **System.Net.WebClient** class is not supported. The recommended, forward-looking alternative is the [**Windows.Web.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) class (or [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx) if you need your code to be portable to other platforms that support .NET). These APIs use [System.Net.Http.HttpRequestMessage](https://msdn.microsoft.com/library/system.net.http.httprequestmessage.aspx) to represent an HTTP request.
 
-À l’heure actuelle, les applications UWP ne prennent pas en charge les scénarios qui impliquent une utilisation intensive des données, notamment les scénarios métier. Toutefois, vous pouvez utiliser SQLite pour gérer les services de base de données transactionnelle en local. Pour plus d’informations, voir [SQLite](https://visualstudiogallery.msdn.microsoft.com/4913e7d5-96c9-4dde-a1a1-69820d615936).
+UWP apps do not currently include built-in support for data-intensive scenarios such as line of business (LOB) scenarios. However, you can make use SQLite for local transactional database services. For more info, see [SQLite](https://visualstudiogallery.msdn.microsoft.com/4913e7d5-96c9-4dde-a1a1-69820d615936).
 
-Transmettez les URI absolus, et non relatifs, aux types Windows Runtime. Voir [Transmission d’un URI au Windows Runtime](https://msdn.microsoft.com/library/hh763341.aspx).
+Pass absolute URIs, not relative URIs, to Windows Runtime types. See [Passing a URI to the Windows Runtime](https://msdn.microsoft.com/library/hh763341.aspx).
 
-## Lanceurs et sélecteurs
+## <a name="launchers-and-choosers"></a>Launchers and Choosers
 
-Grâce aux lanceurs et aux sélecteurs (qui figurent dans l’espace de noms **Microsoft.Phone.Tasks**), une application Silverlight pour Windows Phone peut interagir avec le système d’exploitation pour effectuer des opérations courantes (composition d’un e-mail, sélection d’une photo ou partage de différents types de données avec une autre application, par exemple). Recherchez l’élément **Microsoft.Phone.Tasks** dans la rubrique [Mappages des espaces de noms et des classes de Silverlight pour Windows Phone vers Windows 10](wpsl-to-uwp-namespace-and-class-mappings.md) pour trouver le type UWP équivalent. Ces éléments vont des mécanismes du même ordre (lanceurs et sélecteurs) à l’implémentation d’un contrat de partage de données entre applications.
+With Launchers and Choosers (found in the **Microsoft.Phone.Tasks** namespace), a Windows Phone Silverlight app can interact with the operating system to perform common operations such as composing an email, choosing a photo, or sharing certain kinds of data with another app. Search for **Microsoft.Phone.Tasks** in the topic [Windows Phone Silverlight to Windows 10 namespace and class mappings](wpsl-to-uwp-namespace-and-class-mappings.md) to find the equivalent UWP type. These range from similar mechanisms, called launchers and pickers, to implementing a contract for sharing data between apps.
 
-Une application Silverlight pour Windows Phone peut être placée à l’état dormant, voire désactivée, même si vous utilisez la tâche de sélecteur de photos, par exemple. Une application UWP reste active et en cours d’exécution lors de l’utilisation de la classe [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847).
+A Windows Phone Silverlight app can be put into a dormant state or even tombstoned when using, for example, the photo Chooser task. A UWP app remains active and running while using the [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) class.
 
-## Monétisation (mode d’évaluation et achats dans l’application)
+## <a name="monetization-trial-mode-and-in-app-purchases"></a>Monetization (trial mode and in-app purchases)
 
-Une application Silverlight pour Windows Phone peut utiliser la classe UWP [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) pour la plupart de ses fonctionnalités d’achat dans l’application et de mode d’évaluation. Ainsi, le code n’a pas besoin d’être porté. Toutefois, une application Silverlight pour Windows Phone appelle l’élément **MarketplaceDetailTask.Show** pour proposer l’application à l’achat :
+A Windows Phone Silverlight app can use the UWP [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) class for most of its trial mode and in-app purchase functionality, so that code doesn't need to be ported. But, a Windows Phone Silverlight app calls **MarketplaceDetailTask.Show** to offer the app for purchase:
 
 ```csharp
     private void Buy()
@@ -58,7 +58,7 @@ Une application Silverlight pour Windows Phone peut utiliser la classe UWP [**
     }
 ```
 
-Portez le code suivant pour appeler la méthode UWP [**RequestAppPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/hh967813) :
+Port that code to call the UWP [**RequestAppPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/hh967813) method:
 
 ```csharp
     private async void Buy()
@@ -67,19 +67,19 @@ Portez le code suivant pour appeler la méthode UWP [**RequestAppPurchaseAsync
     }
 ```
 
-Si vous disposez de code qui simule les fonctionnalités d’achat dans l’application et d’achat d’application à des fins de test, vous pouvez porter ce code afin qu’il utilise plutôt la classe [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766).
+If you have code that simulates your app purchase and in-app purchase features for testing purposes, then you can port that to use the [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) class instead.
 
-## Notifications relatives aux mises à jour de vignette ou toast
+## <a name="notifications-for-tile-or-toast-updates"></a>Notifications for tile or toast updates
 
-Les notifications sont une extension du modèle de notifications Push pour les applications Silverlight pour Windows Phone. Lorsque vous recevez une notification provenant des services de notifications Push Windows (WNS), vous pouvez faire apparaître les informations sur l’interface utilisateur, avec une mise à jour de vignette ou avec un toast. Pour le portage du côté de l’interface utilisateur dédié à vos fonctionnalités de notification, voir [Vignettes et toasts](w8x-to-uwp-porting-xaml-and-ui.md#tiles-and-toasts).
+Notifications are an extension of the push notification model for Windows Phone Silverlight apps. When you receive a notification from the Windows Push Notification Service (WNS), you can surface the info to the UI with a tile update or with a toast. For porting the UI side of your notification features, see [Tiles and toasts](w8x-to-uwp-porting-xaml-and-ui.md).
 
-Pour plus d’informations sur l’utilisation des notifications dans une application UWP, voir [Envoi de notifications toast](https://msdn.microsoft.com/library/windows/apps/xaml/hh868266).
+For more details on the use of notifications in a UWP app, see [Sending toast notifications](https://msdn.microsoft.com/library/windows/apps/xaml/hh868266).
 
-Pour obtenir des informations et des didacticiels sur l’utilisation des vignettes, des toasts, des badges, des bannières et des notifications dans une application Windows Runtime utilisant C++, C# ou Visual Basic, voir [Utilisation de vignettes, de badges et de notifications toast](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259).
+For info and tutorials on using tiles, toasts, badges, banners, and notifications in a Windows Runtime app using C++, C#, or Visual Basic, see [Working with tiles, badges, and toast notifications](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259).
 
-## Stockage (accès aux fichiers)
+## <a name="storage-file-access"></a>Storage (file access)
 
-Le code Silverlight pour Windows Phone qui stocke des paramètres d’application sous forme de paires clé-valeur dans le stockage isolé est porté facilement. Voici un exemple de type avant/après. Tout d’abord, la version Silverlight pour Windows Phone :
+Windows Phone Silverlight code that stores app settings as key-value pairs in isolated storage is easily ported. Here is a before-and-after example, first the Windows Phone Silverlight version:
 
 ```csharp
     var propertySet = IsolatedStorageSettings.ApplicationSettings;
@@ -89,7 +89,7 @@ Le code Silverlight pour Windows Phone qui stocke des paramètres d’applicatio
     string myFavoriteAuthor = propertySet.Contains(key) ? (string)propertySet[key] : "<none>";
 ```
 
-Et son équivalent UWP:
+And the UWP equivalent:
 
 ```csharp
     var propertySet = Windows.Storage.ApplicationData.Current.LocalSettings.Values;
@@ -98,7 +98,7 @@ Et son équivalent UWP:
     string myFavoriteAuthor = propertySet.ContainsKey(key) ? (string)propertySet[key] : "<none>";
 ```
 
-Bien qu’un sous-ensemble de l’espace de noms **Windows.Storage** soit mis à leur disposition, de nombreuses applications Silverlight pour Windows Phone effectuent les E/S de fichiers avec la classe **IsolatedStorageFile**, car elle est prise en charge depuis plus longtemps. Si l’on part du principe que l’élément **IsolatedStorageFile** est utilisé, voici un exemple d’écriture et de lecture d’un fichier (avant et après l’opération), dans la version Silverlight pour Windows Phone pour commencer :
+Although a subset of the **Windows.Storage** namespace is available to them, many Windows Phone Silverlight apps perform file i/o with the **IsolatedStorageFile** class because it has been supported for longer. Assuming that **IsolatedStorageFile** is being used, here's a before-and-after example of writing and reading a file, first the Windows Phone Silverlight version:
 
 ```csharp
     const string filename = "FavoriteAuthor.txt";
@@ -115,7 +115,7 @@ Bien qu’un sous-ensemble de l’espace de noms **Windows.Storage** soit mis à
     }
 ```
 
-Et son équivalent pour UWP:
+And the same functionality using the UWP:
 
 ```csharp
     const string filename = "FavoriteAuthor.txt";
@@ -126,22 +126,22 @@ Et son équivalent pour UWP:
     string myFavoriteAuthor = await Windows.Storage.FileIO.ReadTextAsync(file);
 ```
 
-Une application Silverlight pour Windows Phone dispose d’un accès en lecture seule à la carte mémoire Secure Digital en option. Une application UWP présente quant à elle un accès en lecture et en écriture à la carte mémoire Secure Digital. Pour plus d’informations, voir [Accéder à la carte SD](https://msdn.microsoft.com/library/windows/apps/mt188699).
+A Windows Phone Silverlight app has read-only access to the optional SD card. A UWP app has read-write access to the SD card. For more info, see [Access the SD card](https://msdn.microsoft.com/library/windows/apps/mt188699).
 
-Pour plus d’informations sur l’accès aux fichiers photo, musique et vidéo dans une application UWP, voir [Fichiers et dossiers dans les bibliothèques de musique, d’images et de vidéos](https://msdn.microsoft.com/library/windows/apps/mt188703).
+For info about accessing photos, music, and video files in a UWP app, see [Files and folders in the Music, Pictures, and Videos libraries](https://msdn.microsoft.com/library/windows/apps/mt188703).
 
-Pour plus d’informations, voir [Fichiers, dossiers et bibliothèques](https://msdn.microsoft.com/library/windows/apps/mt185399).
+For more info, see [Files, folders, and libraries](https://msdn.microsoft.com/library/windows/apps/mt185399).
 
-Rubrique suivante : [Portage pour différents facteurs de forme et expériences utilisateur](wpsl-to-uwp-form-factors-and-ux.md).
+The next topic is [Porting for form factor and UX](wpsl-to-uwp-form-factors-and-ux.md).
 
-## Rubriques connexes
+## <a name="related-topics"></a>Related topics
 
-* [Mappages des espaces de noms et des classes](wpsl-to-uwp-namespace-and-class-mappings.md)
+* [Namespace and class mappings](wpsl-to-uwp-namespace-and-class-mappings.md)
  
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

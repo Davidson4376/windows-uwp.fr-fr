@@ -1,125 +1,59 @@
 ---
 author: mcleanbyron
 ms.assetid: 5E722AFF-539D-456E-8C4A-ADE90CF7674A
-description: "Si votre application propose un vaste catalogue de produits intégrés à l’application, vous pouvez éventuellement suivre la procédure décrite dans cette rubrique pour faciliter la gestion de votre catalogue."
-title: "Gérer un vaste catalogue de produits intégrés à l’application"
+description: If your app offers a large in-app product catalog, you can optionally follow the process described in this topic to help manage your catalog.
+title: Manage a large catalog of in-app products
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 529735319848fc0b8fac12e51b8536b178db0646
+ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
+ms.openlocfilehash: ccbf6f99820ebc9a9245066899b2bd3be69319e7
 
 ---
 
-# Gérer un grand catalogue de produits in-app
+# <a name="manage-a-large-catalog-of-in-app-products"></a>Manage a large catalog of in-app products
+
+
+>**Note**&nbsp;&nbsp;This article demonstrates how to use members of the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace. If your app targets Windows 10, version 1607, or later, we recommend that you use members of the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace to manage add-ons (also known as in-app products or IAPs) instead of the **Windows.ApplicationModel.Store** namespace. For more information, see [In-app purchases and trials](in-app-purchases-and-trials.md).
+
+If your app offers a large in-app product catalog, you can optionally follow the process described in this topic to help manage your catalog. In releases before Windows 10, the Store has a limit of 200 product listings per developer account, and the process described in this topic can be used to work around that limitation. Starting with Windows 10, the Store has no limit to the number of product listings per developer account, and the process described in this article is no longer necessary. 
+
+To enable this capability, you will create a handful of product entries for specific price tiers, with each one able to represent hundreds of products within a catalog. Use the [RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/dn263382) method overload that specifies an app-defined offer associated with an in-app product listed in the Store. In addition to specifying an offer and product association during the call, your app should also pass a [ProductPurchaseDisplayProperties](https://msdn.microsoft.com/library/windows/apps/dn263384) object that contains the large catalog offer details. If these details are not provided, the details for the listed product will be used instead.
+
+The Store will only use the *offerId* from the purchase request in the resulting [PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392). This process does not directly modify the information originally provided when [listing the in-app product in the Store](https://msdn.microsoft.com/library/windows/apps/mt148551).
+
+## <a name="prerequisites"></a>Prerequisites
+
+-   This topic covers Store support for the representation of multiple in-app offers using a single in-app product listed in the Store. If you are unfamiliar with in-app purchases please review [Enable in-app product purchases](enable-in-app-product-purchases.md) to learn about license information, and how to properly list your in-app purchase in the Store.
+-   When you code and test new in-app offers for the first time, you must use the [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) object instead of the [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765) object. This way you can verify your license logic using simulated calls to the license server instead of calling the live server. To do this, you need to customize the file named WindowsStoreProxy.xml in %userprofile%\\AppData\\local\\packages\\&lt;package name&gt;\\LocalState\\Microsoft\\Windows Store\\ApiData. The Microsoft Visual Studio simulator creates this file when you run your app for the first time—or you can also load a custom one at runtime. For more info, see [Using the WindowsStoreProxy.xml file with CurrentAppSimulator](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#proxy).
+-   This topic also references code examples provided in the [Store sample](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store). This sample is a great way to get hands-on experience with the different monetization options provided for Universal Windows Platform (UWP) apps.
+
+## <a name="make-the-purchase-request-for-the-in-app-product"></a>Make the purchase request for the in-app product
+
+The purchase request for a specific product within a large catalog is handled in much the same way as any other purchase request within an app. When your app calls the new [RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/dn263382) method overload, your app provides both an *OfferId* and a [ProductPurchaseDisplayProperties](https://msdn.microsoft.com/library/windows/apps/dn263390) object populated with the name of the in-app product.
+
+> [!div class="tabbedCodeSnippets"]
+[!code-cs[ManageCatalog](./code/InAppPurchasesAndLicenses/cs/ManageCatalog.cs#MakePurchaseRequest)]
+
+## <a name="report-fulfillment-of-the-in-app-offer"></a>Report fulfillment of the in-app offer
+
+Your app will need to report product fulfillment to the Store as soon as the offer has been fulfilled locally. In a large catalog scenario, if your app does not report offer fulfillment, the user will be unable to purchase any in-app offers using that same Store product listing.
+
+As mentioned earlier, the Store only uses provided offer info to populate the [PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392), and does not create a persistent association between a large catalog offer and Store product listing. As a result you need to track user entitlement for products, and provide product-specific context (such as the name of the item being purchased or details about it) to the user outside of the [RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/dn263382) operation.
+
+The following code demonstrates the fulfillment call, and a UI messaging pattern in which the specific offer info is inserted. In the absence of that specific product info, the example uses info from the product [ListingInformation](https://msdn.microsoft.com/library/windows/apps/br225163).
+
+> [!div class="tabbedCodeSnippets"]
+[!code-cs[ManageCatalog](./code/InAppPurchasesAndLicenses/cs/ManageCatalog.cs#ReportFulfillment)]
+
+## <a name="related-topics"></a>Related topics
+
+* [Enable in-app product purchases](enable-in-app-product-purchases.md)
+* [Enable consumable in-app product purchases](enable-consumable-in-app-product-purchases.md)
+* [Store sample (demonstrates trials and in-app purchases)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
+* [RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/dn263382)
+* [ProductPurchaseDisplayProperties](https://msdn.microsoft.com/library/windows/apps/dn263384)
 
 
 
-
->**Remarque**&nbsp;&nbsp;Cet article montre comment utiliser les membres de l’espace de noms [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx). Si votre application cible Windows10, version1607 ou ultérieure, nous vous recommandons d’utiliser des membres de l’espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) pour gérer les extensions (également appelées produits in-app ou PIA) plutôt que l’espace de noms **Windows.ApplicationModel.Store**. Pour plus d’informations, voir [Versions d’évaluation et achats in-app](in-app-purchases-and-trials.md).
-
-Si votre application propose un vaste catalogue de produits in-app, vous pouvez éventuellement suivre la procédure décrite dans cette rubrique pour faciliter la gestion de votre catalogue. Cette solution vous permet de ne créer que quelques références de produits pour des fourchettes de prix spécifiques, chacune d’elles pouvant représenter des centaines de produits dans un catalogue.
-
-Pour activer cette fonctionnalité, utilisez la surcharge de la méthode [**RequestProductPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/dn263382) qui spécifie une offre définie par application associée à un produit intégré à l’application, listé dans le WindowsStore. En plus de spécifier une association d’offre et de produit au cours de l’appel, votre application doit également transférer un objet [**ProductPurchaseDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/dn263384) qui contient les détails de l’offre du grand catalogue. Si ces détails ne sont pas fournis, ceux du produit listé seront utilisés à la place.
-
-Le WindowsStore utilisera uniquement l’*offerId* provenant de la demande d’achat, dans les [**PurchaseResults**](https://msdn.microsoft.com/library/windows/apps/dn263392) résultant de la demande. Ce processus ne modifie pas directement les informations fournies à l’origine lors de l’établissement de la [liste des produits intégrés à l’application dans le WindowsStore](https://msdn.microsoft.com/library/windows/apps/mt148551).
-
-**Remarque** Depuis Windows10, le WindowsStore ne présente aucune limite quant au nombre de produits listés par compte de développeur. Dans les versions précédentes, le Windows Store présentait une limite de 200 produits listés par compte de développeur et la procédure décrite dans cette rubrique pouvait être utilisée pour contourner cette limite.
-
-## Prérequis
-
--   Cette rubrique couvre la prise en charge par le Windows Store de la représentation de plusieurs offres in-app à l’aide d’un simple produit in-app listé dans le Windows Store. Si vous ne connaissez pas les achats dans l’application, passez en revue la section [Activer les achats de produits dans l’application](enable-in-app-product-purchases.md) pour en savoir plus sur les informations relatives aux licences et pour savoir comment répertorier correctement dans le WindowsStore votre achat dans l’application.
--   Lorsque vous codez et testez de nouvelles offres intégrées à l’application pour la première fois, vous devez utiliser l’objet [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) au lieu de l’objet [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765). Cela vous permet de vérifier votre logique de licence à l’aide d’appels simulés au serveur de licences au lieu d’appels au serveur Live. Pour ce faire, vous devez personnaliser le fichier WindowsStoreProxy.xml dans %userprofile%\\AppData\\local\\packages\\&lt;package name&gt;\\LocalState\\Microsoft\\Windows Store\\ApiData. Le simulateur Microsoft VisualStudio crée ce fichier quand vous exécutez votre application pour la première fois. Vous pouvez également charger un fichier personnalisé au moment de l’exécution. Pour plus d’informations, voir **CurrentAppSimulator**.
--   Cette rubrique fait également référence à des exemples de code fournis dans l’[exemple du WindowsStore](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store). Cet exemple représente un excellent moyen d’obtenir une expérience pratique avec les différentes options de monétisation fournies pour les applications UWP.
-
-## Effectuer une demande d’achat d’un produit in-app
-
-La demande d’achat d’un produit spécifique dans un vaste catalogue est traitée de la même manière que n’importe quelle autre demande d’achat dans l’application. Lorsque votre application appelle la nouvelle surcharge de méthode [**RequestProductPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/dn263382), votre application fournit à la fois un élément *OfferId* et un objet [**ProductPurchaseDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/dn263390) contenant le nom du produit intégré à l’application.
-
-```CSharp
-string offerId = "1234";
-string displayPropertiesName = "MusicOffer1";
-var displayProperties = new ProductPurchaseDisplayProperties(displayPropertiesName);
-
-try
-{
-    PurchaseResults purchaseResults = await CurrentAppSimulator.RequestProductPurchaseAsync("product1", offerId, displayProperties);
-    switch (purchaseResults.Status)
-    {
-        case ProductPurchaseStatus.Succeeded:
-            // Grant the user their purchase here, and then pass the product ID and transaction ID to currentAppSimulator.reportConsumableFulfillment
-            // To indicate local fulfillment to the Windows Store.
-            break;
-        case ProductPurchaseStatus.NotFulfilled:
-            // First check for unfulfilled purchases and grant any unfulfilled purchases from an earlier transaction.
-            // Once products are fulfilled pass the product ID and transaction ID to currentAppSimulator.reportConsumableFulfillment
-            // To indicate local fulfillment to the Windows Store.
-            break;
-        case ProductPurchaseStatus.NotPurchased:
-            // Notify user that the purchase was not completed due to cancellation or error.
-            break;
-    }
-}
-catch (Exception)
-{
-    //Notify the user of the purchase error.
-}
-```
-
-## Signaler l’acquisition de l’offre in-app
-
-Votre application devra signaler l’acquisition du produit au Store dès que l’offre aura été acquise localement. Dans le cas d’un grand catalogue, si votre application ne signale pas l’acquisition de l’offre, l’utilisateur ne pourra pas acheter d’offres dans l’application à l’aide de la même liste de produits du Windows Store.
-
-Comme mentionné précédemment, le WindowsStore utilise uniquement les informations sur les offres fournies pour renseigner l’élément [**PurchaseResults**](https://msdn.microsoft.com/library/windows/apps/dn263392), sans créer d’association durable entre une offre d’un vaste catalogue et une liste de produits du WindowsStore. Par conséquent, vous devez vérifier l’autorisation des utilisateurs à accéder aux produits et fournir un contexte spécifique au produit (tel que le nom de l’article acheté ou des détails le concernant) pour l’utilisateur extérieur à l’opération [**RequestProductPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/dn263382).
-
-Le code suivant illustre l’appel d’acquisition et un schéma de message d’interface utilisateur dans lequel sont insérées les informations sur l’offre spécifique. En l’absence de ces informations sur un produit spécifique, l’exemple utilise les informations du produit [**ListingInformation**](https://msdn.microsoft.com/library/windows/apps/br225163).
-
-```CSharp
-string offerId = "1234";
-product1ListingName = product1.Name;
-string displayPropertiesName = "MusicOffer1";
-
-if (String.IsNullOrEmpty(displayPropertiesName))
-{
-    displayPropertiesName = product1ListingName;
-}
-var offerIdMsg = " with offer id " + offerId;
-if (String.IsNullOrEmpty(offerId))
-{
-    offerIdMsg = " with no offer id";
-}
-
-FulfillmentResult result = await CurrentAppSimulator.ReportConsumableFulfillmentAsync(productId, transactionId);
-switch (result)
-{
-    case FulfillmentResult.Succeeded:
-        Log("You bought and fulfilled " + displayPropertiesName + offerIdMsg, NotifyType.StatusMessage);
-        break;
-    case FulfillmentResult.NothingToFulfill:
-        Log("There is no purchased product 1 to fulfill.", NotifyType.StatusMessage);
-        break;
-    case FulfillmentResult.PurchasePending:
-        Log("You bought product 1. The purchase is pending so we cannot fulfill the product.", NotifyType.StatusMessage);
-        break;
-    case FulfillmentResult.PurchaseReverted:
-        Log("You bought product 1. But your purchase has been reverted.", NotifyType.StatusMessage);
-        // Since the user' s purchase was revoked, they got their money back.
-        // You may want to revoke the user' s access to the consumable content that was granted.
-        break;
-    case FulfillmentResult.ServerError:
-        Log("You bought product 1. There was an error when fulfilling.", NotifyType.StatusMessage);
-        break;
-}
-```
-
-## Rubriques connexes
-
-* [Activer les achats de produits dans l’application](enable-in-app-product-purchases.md)
-* [Activer l’achat de produits in-app consommables](enable-consumable-in-app-product-purchases.md)
-* [Exemple du Windows Store (montre des versions d’évaluation et des achats in-app)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
-* [**RequestProductPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/dn263382)
-* [**ProductPurchaseDisplayProperties**](https://msdn.microsoft.com/library/windows/apps/dn263384)
-
-
-
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Dec16_HO1-->
 
 

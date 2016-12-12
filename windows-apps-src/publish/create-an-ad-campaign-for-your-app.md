@@ -1,106 +1,110 @@
 ---
 author: jnHs
-Description: "Vous pouvez créer une campagne de publicité à l’aide du tableau de bord du Centre de développement pour vous aider à promouvoir votre application et à développer la base des utilisateurs de votre application."
-title: "Création d’une campagne de publicité pour votre application"
+Description: You can create an ad campaign using the Dev Center dashboard to help promote your app and grow your app&quot;s user base.
+title: Create an ad campaign for your app
 ms.assetid: 10D94929-92C4-4379-AA5F-6FEF879F2463
 translationtype: Human Translation
-ms.sourcegitcommit: 0cd83d5e93952689386bf2ae08fa3bf4e924dbdb
-ms.openlocfilehash: fd756ffa54cf6d81ff2d78878d03aadf0e46ca52
+ms.sourcegitcommit: 65b82f422e602515e9531664e35f1e1c1e9f5932
+ms.openlocfilehash: 3ea67f9e4f0d834bd77ef116c5e0b16008f4ae5f
 
 ---
 
-# Création d’une campagne de publicité pour votre application
+# <a name="create-an-ad-campaign-for-your-app"></a>Create an ad campaign for your app
 
 
-Vous pouvez créer une campagne de publicité à l’aide du tableau de bord du Centre de développement pour vous aider à promouvoir votre application et à développer la base des utilisateurs de votre application. Par défaut, nous allons choisir le public cible de vos publicités d’après les paramètres de votre application dans le tableau de bord du Centre de développement. Vous avez toutefois la possibilité de définir votre propre public. Vous pouvez également utiliser un ensemble de modèles de publicité par défaut ou charger vers le serveur vos propres conceptions d’annonces. Pour plus d’informations sur les campagnes de publicité, voir [Questions courantes sur les campagnes de publicité](common-questions.md).
+You can create an ad campaign using the Dev Center dashboard to help promote your app and grow your app's user base. By default, we will choose the target audience for your ads based on the settings for your app in the Dev Center dashboard, but you can optionally define your own audience. You can also use a default set of ad templates or upload your own ad designs. For more details about ad campaigns, see [Common questions about ad campaigns](common-questions.md).
 
-> **Remarque** Vous ne pouvez créer des campagnes de publicité que pour les applications qui ont réussi la phase de publication finale du [processus de certification des applications](the-app-certification-process.md).
+> **Note**  You can create ad campaigns only for apps that have passed the final publishing phase of the [app certification process](the-app-certification-process.md).
 
-Voici comment créer une campagne de publicité pour promouvoir votre application:
+Here's how to create an ad campaign to promote your app.
 
-1.  Dans le menu de navigation gauche de la page de votre application dans le tableau de bord du Centre de développement, cliquez sur **Monétisation** &gt; **Promouvoir votre application**.
-2.  Effectuez l’une des opérations suivantes:
+1.  From the left navigation menu on your app's page in the Dev Center dashboard, click **Monetization** &gt; **Promote your app**.
+2.  Do one of the following:
 
-    -   Si vous n’avez pas encore créé de campagne de publicité pour cette application, la page **Promouvoir votre application** affiche les informations sur les avantages des campagnes de publicité. Cliquez sur **Prise en main** ou **Création d’une campagne de publicité**.
-    -   Si vous avez déjà créé une campagne de publicité pour cette application, la page **Promouvoir votre application** répertorie vos campagnes de publicité existantes. Cliquez sur **Nouvelle campagne**.
-3.  Sur la page **Nouvelle campagne**, dans la section **Objectif de campagne**, choisissez l’une des options suivantes:
-    -   **Augmenter les installations de votre application**. Sélectionnez cette option si votre campagne de publicité est conçue pour convaincre les clients d’installer votre application.
-    -   **Augmenter l’intérêt pour votre application**. Sélectionnez cette option si votre campagne de publicité est conçue pour amener les clients à augmenter leur utilisation de votre application.
+    -   If you have not yet created an ad campaign for this app, the **Promote your app** page displays information about the benefits of ad campaigns. Click **Get started** or **Create an ad campaign**.
+    -   If you have already created an ad campaign for this app, the **Promote your app** page lists your existing ad campaigns. Click **New campaign**.
+3.  On the **New campaign** page, in the **Campaign objective** section, choose one of the following:
+    -   **Increase installs for your app**. Select this option if your ad campaign is intended to get people to install your app.
+    -   **Increase engagement in your app**. Select this option if your ad campaign is intended to get your customers to increase their usage of your app. When you select this option, you can target your ad campaign at specific [customer segments](create-customer-segments.md) that you define.
 
-4.  Dans la section **Détails de la campagne**, définissez les paramètres globaux de votre campagne.
-    -   Donnez un nom à votre campagne de publicité dans le champ **Nom de la campagne**.
-    -   Sous **Type de campagne**, choisissez l’une des options suivantes :
-        -   **Payé** : ces publicités s’exécutent dans n’importe quelle application correspondant à l’appareil et à la catégorie de votre application.
-        -   **Annonces de la communauté (gratuites)**: ces publicités s’exécutent dans les applications publiées par d’autres développeurs, qui créent également des campagnes de publicité à base d’annonces de la communauté. Avant de sélectionner cette option, cochez la case **Afficher des annonces de la communauté dans mon application** de la page **Monétiser avec des publicités** du tableau de bord. Pour en savoir plus, voir [À propos des annonces de la communauté](about-community-ads.md).
-        -   **Publicités maison (gratuites)**: ces publicités s’exécutent uniquement dans vos applications (correspondant à l’appareil de l’application publiée). Les publicités maison sont gratuites. Pour plus d’informations, consultez [À propos des publicités maison](about-house-ads.md).
-    -   Sous **Durée de la campagne**, choisissez l’une des options suivantes:
-        - **Personnalisée**. Si vous choisissez cette option, le budget de votre campagne est utilisé dans l’intervalle date/heure spécifié.
-        - **Mensuelle**. Si vous choisissez cette option, votre budget de campagne est utilisé de manière récurrente jusqu’à l’arrêt de la campagne.
+4.  In the **Campaign details** section, define the overall settings for your campaign.
+    -   Name your ad campaign in the **Campaign name** field.
+    -   Under **Campaign type**, choose one of these options:
+        -   **Paid**: These ads will run in any app that matches your app’s device and category.
+        -   **Community (free)**: These ads will run in apps published by other developers who also create community ad campaigns. Before you can select this option, you must first check the **Show community ads in my app** box in the **Monetize with ads** page of the dashboard. For more information, see [About community ads](about-community-ads.md).
+        -   **House (free)**: These ads will only run in your apps (that match the advertised app’s device). House ads are free of charge. For more information, see [About house ads](about-house-ads.md).
+    -   Under **Campaign duration**, choose one of these options:
+        - **Custom**. If you choose this option, your campaign budget will be spent during the date and time range you specify. This option is only available to developers who have a premium account. For more info about premium accounts, see [Common questions about ad campaigns](common-questions.md#how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign).
+        - **Monthly**. If you choose this option, your campaign budget will be spent every month on a recurring basis until you stop the campaign.
 
-    > **Remarque** Si votre application n’a pas encore été publiée, un message d’erreur s’affiche sur la page **Nouvelle campagne**. Vous devez attendre que votre application soit publiée pour être en mesure de créer une campagne de publicité concernant cette dernière.
+    > **Note**  If your app is not yet published, you will receive an error message on the **New campaign** page. You must wait for your app to be published before you can create an ad campaign for it.
 
-5.  Si vous choisissez **Augmenter les installations de l’application** comme objectif de campagne, nous allons choisir le public de vos publicités, d’après les paramètres que vous avez sélectionnés lors de la création de l’application dans le tableau de bord du Centre de développement. Si vous préférez choisir vous-même le public pour vos publicités, sélectionnez **Manuel** pour développer la section **Audience**. Si vous souhaitez revenir au ciblage par défaut, sélectionnez **Automatique**.
+5.  If you chose **Increase app installations** as your campaign objective, we will choose the audience for your ads, based on the settings you selected when creating the app in the Dev Center dashboard. If you would rather choose the audience for your ads yourself, select **Manual** to expand the **Audience** section. If you want to go back to default targeting, select **Automatic**.
 
-    Si vous sélectionnez **Manuel**, vous pouvez modifier les informations de ciblage suivantes:
+    If you select **Manual**, you can edit the following targeting information:
 
-    -   Choisissez les pays ou les régions dans lesquels vous souhaitez que ces publicités apparaissent. Vous pouvez en choisir 5 maximum. Pour obtenir la liste des pays ou régions pris en charge, consultez les [questions courantes](common-questions.md).
-    -   Choisissez les types d’appareils sur lesquels vous voulez que ces publicités apparaissent. Seuls les types d’appareils pris en charge par votre application sont affichés.
-    -   Choisissez le système d’exploitation. Seuls les systèmes d’exploitation pris en charge par votre application sont affichés.
-    -   Choisissez le sexe et la tranche d’âge de l’audience ciblée.
+    -   Choose the countries or regions in which you want these ads to appear. You can choose up to 5. For a list of the supported countries or regions, see [Common questions about ad campaigns](common-questions.md#where-will-my-ad-appear).
+    -   Choose the device types on which you want these ads to appear. Only the device types supported by your app are shown.
+    -   Choose the operating system. Only the operating systems supported by your app are shown.
+    -   Select the gender and age range of your desired audience.
 
-    Cette section affiche également un graphique **Portée estimée**. Ce graphique montre l’audience que vous pouvez atteindre avec les choix de ciblage en cours. Il s’agit d’un pourcentage de l’ensemble des utilisateurs d’applications Windows affichant des publicités sur les marchés sélectionnés.
+    This section also displays an **Estimated Reach** graph. This graph shows the audience you can reach with your current targeting selections as a percentage of all Windows ad-enabled app users in the selected markets.
 
-6.  Si vous avez choisi **Augmenter l’intérêt pour l’application** comme objectif de campagne, vous pouvez sélectionner l’un des segments de clients à cibler.
+6.  If you chose **Increase app engagement** as your campaign objective, you can select one of your customer segments to target.
 
-    > **Remarque** Les publicités créées à l’aide de cette campagne sont vues seulement par les clients qui sont inclus dans le segment. Vous ne pouvez sélectionner qu’un seul segment par campagne de publicité.
-
-
-7.  Dans la section **Conception d’annonces**, choisissez l’une des options suivantes:
-    -   **Personnalisée**. Choisissez cette option pour utiliser vos propres conceptions d’annonces. Notez que si vous avez sélectionné un segment de clients à l’étape6, vous devez utiliser des options créatives personnalisées. Vous pouvez charger différents fichiers pour chacune des tailles d’annonce disponibles. Les fichiers doivent répondre aux exigences et directives suivantes:
-        -   Chaque fichier doit être un .png ou .jpg inférieur ou égal à 40Ko.
-        -   Vos conceptions d’annonces doivent respecter les critères spécifiés dans la [Microsoft Creative Acceptance Policy](http://go.microsoft.com/fwlink?LinkId=532595).
-        -   Le contenu de vos conceptions d’annonces doit être approprié à l’application dont vous faites la promotion. Les conceptions d’annonces qui ne sont pas liées à l’application ne seront pas distribuées aux publicités au sein des autres applications.
-        -   Tout le contenu de vos conceptions d’annonces doit être clairement lisible. Par exemple, le contenu ne doit pas être flou, pixelisé ou déformé.
-    -   **Auto-généré**. Choisissez cette option pour utiliser les annonces d’une liste de modèles par défaut. Vous disposez des options suivantes pour personnaliser le contenu des annonces. À mesure que vous effectuez des sélections, les aperçus de vos annonces sont automatiquement mis à jour.
-        -   Dans la liste déroulante **Langue**, sélectionnez la langue des annonces. Le texte du badge Windows Store et le texte de votre slogan personnalisé (si vous en avez spécifié un) apparaissent dans la langue sélectionnée.
-        -   Pour ajouter une ligne supplémentaire à votre annonce, entrez le texte dans le champ **Slogan personnalisé**.
-            > **Remarque** Le texte que vous entrez doit être localisé dans la langue sélectionnée. Le slogan personnalisé sera rejeté si le texte n’est pas conforme aux [politiques Bing Ads](http://go.microsoft.com/fwlink?LinkId=398341). Lisez cette page pour obtenir des conseils sur le style et les contenus non autorisés.
-
-        -   Pour choisir de personnaliser davantage l’annonce, développez **Personnaliser la conception d’annonce/Voir toutes les tailles d’annonces** et choisissez l’une des options suivantes:
-            - **Couleur d’arrière-plan**. Choisissez parmi les options disponibles.
-            - **Images**. Les images disponibles sont les images que vous avez associées à votre application dans le Windows Store.
-            - **Afficher la notation de mon application**. Activez cette case à cocher si vous souhaitez afficher la notation de l’application.
-            - **Indiquer que mon application est gratuite**. Si votre application est gratuite sur l’ensemble des marchés sélectionnés, vous avez également la possibilité d’activer cette case à cocher.
-            - **Appel à l’action**. Choisissez **Ouvrir**, **Jouer**, **Lire**, **Écouter** ou **Acheter**.
+    > **Note**  Ads created using this campaign will be shown only to the customers who are included in the segment. Only one segment can be selected per ad campaign. For info about segments, see [Create customer segments](create-customer-segments.md).
 
 
-8. Si vous utilisez Kochava ou Tune pour mesurer les données d’installation de votre application, cliquez sur **URL de suivi d’installation tierce (Kochava ou Tune)** et entrez votre URL de suivi à partir de Kochava ou de Tune. Lorsque vous enregistrez la campagne, l’URL de suivi est validée pour garantir sa résolution en page de description pour votre application dans le WindowsStore. Pour plus d’informations sur le suivi d’installation avec Kochava et Tune, voir la documentation [Kochava](http://support.kochava.com/) et [Tune](https://help.tune.com/).
+7.  In the **Ad design** section, choose one of these options:
+    -   **Custom**. Choose this option to use your own ad designs. Note that if you selected a customer segment in Step 6, you must use custom creatives. You can upload different files for each of the available ad sizes. The files must meet the following requirements and guidelines:
+        -   Each file must be a .png or .jpg that is 40 KB or smaller.
+        -   Your ad designs must meet the requirements specified in the [Microsoft Creative Acceptance Policy](http://go.microsoft.com/fwlink?LinkId=532595).
+        -   The content in your ad designs must be relevant to the app you are promoting. Ad designs that are not related to the app will not be distributed to ads in other apps.
+        -   All content in your ad designs should be clearly legible. For example, content should not be blurred, pixelated or stretched.
+    -   **Auto-generated**. Choose this option to use ads from a list of default templates. You have the following options to customize the content in the ads. As you make selections, the previews of your ads will update automatically.
+        -   In the **Language** drop-down, select the language of the ads. The text for the Windows Store badge and your custom tag line text (if specified) will show in the language you select.
+        -   To add an extra line of text to your ad, enter the text in the **Custom tag line** field.
+            > **Note**  The text you enter must be localized into the selected language. The custom tag line will be rejected if the text does not align with [Bing Ads policies](http://go.microsoft.com/fwlink?LinkId=398341). Consult this page for guidance on style and disallowed content.
 
-9.  À présent, choisissez les paramètres financiers de votre campagne de publicité dans la section **Budget et paiement**.
-   > **Remarque** Si vous créez une campagne maison ou à base d’annonces de la communauté, la section **Budget et paiement** n’apparaît pas dans la mesure où ces publicités sont gratuites.
+        -   To further customize the ad, expand **Customize ad design / See all ad sizes** and choose any of the following:
+            - **Background color**. Choose from the available options.
+            - **Images**. The available images are the images you have associated with your app in the Store.
+            - **Show my app rating**. Select this checkbox if you want to show the app's rating.
+            - **Show that my app is free**. If your app is free in all the selected markets, you will also have the option to select this checkbox.
+            - **Call to action**. If you chose **Increase app engagement** as your campaign objective, you can set your ad's call to action button to **Open**, **Play**, **Read**, **Listen**, or **Shop**.  
 
-    -   Sous **Budget**, utilisez le curseur pour définir le montant que vous souhaitez dépenser chaque mois pour exécuter cette annonce.
+8.  If you have a [premium account](common-questions.md#how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign), you can use the **Destination URL** box to control what happens when a customer clicks your ad.
+    - If you leave the box empty, when a customer clicks your ad, your app's Store listing will be displayed.
+    - If you are using Kochava or Tune to measure install analytics for your app, enter your install tracking URL from Kochava or Tune. When you save the campaign, the tracking URL is validated to make sure that it resolves to the listing page for your app in the Windows Store. For more information about install tracking with Kochava and Tune, see the [Kochava](http://support.kochava.com/) and [Tune](https://help.tune.com/) documentation.
+    - If you chose **Increase app engagement** as your campaign objective, you can specify a [deep-link URI](../launch-resume/handle-uri-activation.md) to redirect customers in the selected segment to a specific page within your app.
+    - If you specify any destination that is not your app description page or a page inside of your app, your campaign will automatically be paused.
 
-        Le budget mensuel est calculé au prorata du mois au cours duquel vous avez créé la campagne de publicité. En d’autres termes, si vous créez une campagne au milieu du mois, vous êtes facturé la moitié du budget mensuel fixé pour le mois concerné.
+9.  Now choose your ad campaign's financial settings in the **Budget and payment** section.
+   > **Note**  If you are creating a house campaign or community campaign, the **Budget and payment** section will not appear, since these campaigns are free of charge.
 
-    -   Définissez un instrument de paiement pour votre campagne de publicité en cliquant sur **Ajouter un nouvel instrument de paiement**, puis renseignez les détails de votre compte.
-        > **Important** Le pays ou la région de l’adresse de facturation de votre instrument de paiement doit correspondre au pays ou à la région associée à votre compte du Centre de développement.
-Si vous avez reçu un coupon d’un représentant Microsoft pour payer une campagne de publicité, cliquez sur **Utiliser un coupon**, entrez le code du coupon, puis cliquez sur **Appliquer** pour appliquer le coupon à la campagne.
+    -   Under **Budget**, use the slider to set the amount of money you want to spend each month to run this ad.
 
-10.  Enfin, cliquez sur **Révision** pour vérifier les paramètres de votre campagne de publicité et pour vérifier son budget et les informations de paiement s’il s’agit d’une campagne de publicité payante. Cliquez sur **Confirmer**. Dans les heures qui suivent, vos publicités apparaîtront progressivement sur les appareils.
+        The monthly budget is prorated for the month in which the ad campaign is created. In other words, if you create an ad campaign halfway through a calendar month, you will be charged for half of your monthly budget for that month.
 
-## Rubriques connexes
+    -   Set a payment instrument for your ad campaign by clicking **Add new payment instrument** and fill in your account details.
+        > **Important**  The country/region of your payment instrument's billing address must match the country/region associated with your Dev Center account.
+-   If you have received a coupon from a Microsoft representative to pay for an ad campaign, click **Use a coupon**, enter the coupon code, and click **Apply** to apply the coupon to the campaign.
 
-* [Gestion de votre campagne de publicité](managing-your-ad-campaign.md)
-* [À propos des publicités maison](about-house-ads.md)
-* [Rapport de publicité sur l’installation d’applications](app-install-ads-reports.md)
-* [Questions courantes sur les campagnes de publicité](common-questions.md)
+10.  Finally, click **Review** to confirm your ad campaign's settings and, if it's a paid ad campaign, its budget and payment information. Click **Confirm** and your ads will typically start appearing on devices within a few hours.
+   > **Tip**  To see how your campaigns are performing, in the top navigation menu of the dashboard, select **Promotions**. Select **Section filters** to scope what's included in the report by **Date**, **Campaign objective**, **App name**, **Campaign type**, or **Status**. In addition to seeing info about your campaign's **Impressions**, **Clicks**, **Conversions**, and **Spend**, you can use the report to **Pause** or **Resume** a campaign. To edit a campaign, select its name in the list.
+
+## <a name="related-topics"></a>Related topics
+
+* [Managing your ad campaign](managing-your-ad-campaign.md)
+* [About house ads](about-house-ads.md)
+* [App install ads report](app-install-ads-reports.md)
+* [Common questions about ad campaigns](common-questions.md)
  
 
  
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 
