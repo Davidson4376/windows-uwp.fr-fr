@@ -1,62 +1,62 @@
 ---
 author: shawjohn
-Description: Learn how to create customer segments so you can target a subset of your customer base for promotional or engagement purposes.
-title: Create customer segments
+Description: "Découvrez comment créer des segments de clients afin de cibler un sous-ensemble de votre clientèle à des fins de promotion ou d’engagement."
+title: "Créer des segments de clients"
 translationtype: Human Translation
 ms.sourcegitcommit: eed71b2fc06db71fd105df37a73bd0cd0832931f
 ms.openlocfilehash: 28906c98d2826f5312e01713e2621159c6b24923
 
 ---
 
-# <a name="create-customer-segments"></a>Create customer segments
+# <a name="create-customer-segments"></a>Créer des segments de clients
 
-There are times when you may want to target a subset of your customer base for promotional and engagement purposes. You can accomplish this in Windows Dev Center by creating a type of [customer group](create-customer-groups.md) known as a *segment* that includes the Windows 10 customers who meet the demographic or revenue criteria that you choose.
+Parfois, vous avez besoin de cibler un sous-ensemble de votre clientèle à des fins de promotion et d’engagement. Vous pouvez accomplir cela dans le Centre de développement Windows en créant un type de [groupe de clients](create-customer-groups.md) appelé *segment* qui inclut les clients Windows&nbsp;10 correspondant aux critères démographiques ou de revenus de votre choix.
 
-For example, you could create a segment that includes only customers who are age 50 or older, or that includes customers who’ve spent more than $10 in the Windows Store. You could also combine these criteria and create a segment that includes all customers over 50 who have spent more than $10 in the Store. We provide a few segment templates to help get you started, but you can define and combine the criteria however you'd like.
+Par exemple, vous pouvez créer un segment incluant uniquement les clients âgés de 50&nbsp;ans ou plus, ou incluant les clients ayant dépensé plus de 10&nbsp;$ dans le Windows Store. Vous pouvez également combiner ces critères et créer un segment qui inclut tous les clients de plus de 50&nbsp;ans qui ont dépensé plus de 10&nbsp;$ dans le Windows Store. Nous fournissons quelques modèles de segment pour démarrer, mais vous pouvez définir et combiner les critères comme bon vous semble.
 
-> **Tip** Segments can be used to [send targeted push notifications](send-push-notifications-to-your-apps-customers.md) to a group of customers as part of an engagement campaign.
+> **Conseil** Vous pouvez utiliser les segments pour [envoyer des notifications push ciblées](send-push-notifications-to-your-apps-customers.md) à un groupe de clients dans le cadre d’une campagne visant à susciter l’intérêt.
 
-## <a name="to-create-a-customer-segment"></a>To create a customer segment
+## <a name="to-create-a-customer-segment"></a>Pour créer un segment de clients
 
-1.  In the [Windows Dev Center dashboard](https://developer.microsoft.com/dashboard/overview), select **Customers** in the top menu.
-2.  On the **Customer groups** page, do one of the following:
- - In the **My customer groups** section, select **Create new group** to define a segment from scratch. Be sure that **Segment** is selected in the **Group type** dropdown list.
- - In the **Segment templates** section, select **Copy to use a predefined segment** that you can use as is or modify to suit your needs.
-3.  In the **Include customers from this app** list, select one of your apps to target.
-4.  In the **Segment name** box, choose a name for your segment.
-5.  In the **Define inclusion conditions** section, choose the filter criteria for the segment.
+1.  Dans le menu supérieur du [tableau de bord du Centre de développement Windows](https://developer.microsoft.com/dashboard/overview), sélectionnez **Clients**.
+2.  Sur la page **Groupes de clients**, effectuez l’une des opérations suivantes&nbsp;:
+ - Dans la section **Mes groupes de clients**, sélectionnez **Créer un groupe** pour définir entièrement un segment. Assurez-vous que **Segment** est sélectionné dans la liste déroulante **Type de groupe**.
+ - Dans la section **Modèles de segment**, sélectionnez **Copier pour utiliser un segment prédéfini** que vous pouvez utiliser en l’état ou modifier selon vos besoins.
+3.  Dans la liste **Inclure des clients à partir de cette application**, sélectionnez l’une de vos applications à cibler.
+4.  Dans la zone **Nom du segment**, choisissez un nom pour votre segment.
+5.  Dans la section **Définir des conditions d’inclusion**, choisissez les critères de filtre du segment.
 
-    You can choose from a variety of filter criteria, including **Acquisition source**, **Acquisitions**, **Demographic**, **Rating**, **Store acquisitions**, **Store purchases**, and **Store spend**.
+    Vous pouvez choisir parmi différents critères de filtre, dont **Source d’acquisition**, **Acquisitions**, **Démographie**, **Évaluation**, **Acquisitions dans Windows Store**, **Achats dans Windows Store** et **Dépenses dans Windows Store**.
 
-    For example, if you wanted to create a segment that only included your app customers who are 18- to 24-years old, you’d select the filter criteria [**Demographic**] [**Age group**] [**is**] [**18 to 24**] from the drop-down lists.
+    Par exemple, si vous voulez créer un segment ne comprenant que les clients de votre application âgés de&nbsp;18&nbsp;à&nbsp;24&nbsp;ans, vous devez sélectionner les critères de filtre [**Démographie**] [**Groupe d’âges**] [**est**] [**18 à 24**] dans les listes déroulantes.
 
-    You can build more complex segments by using AND/OR queries to include or exclude customers based on various attributes. To add an OR query, select **+ OR statement**. To add an ADD query, select **Add another filter**.
+    Vous pouvez générer des segments plus complexes à l’aide des requêtes AND/OR pour inclure et exclure des clients en fonction de différents attributs. Pour ajouter une requête OR, sélectionnez **+ instruction OR**. Pour ajouter une requête ADD, sélectionnez **Ajouter un autre filtre**.
 
-    So, if you wanted to refine that segment to only include male customers who are in the specified age range, you would select **Add another filter** and then select the additional filter criteria [**Demographic**] [**Gender**] [**is**] [**Male**]. For this example, the **Segment definition** would display **Age group == 18 to 24 && Gender == Male**.
+    Par conséquent, si vous souhaitez affiner ce segment pour inclure seulement des clients masculins se trouvant dans la tranche d’âge spécifiée, sélectionnez **Ajouter un autre filtre**, puis sélectionnez les critères de filtre supplémentaires [**Démographie**] [**Sexe**] [**est**] [**Masculin**]. Dans cet exemple, **Définition du segment** affiche **Groupe d’âge == 18 à 24 &amp;&amp; Sexe == Masculin**.
 
-    ![Example of filter criteria for a segment](images/create-segment-inclusions.png)
-6. Select **Save**.
+    ![Exemple de critères de filtre pour un segment](images/create-segment-inclusions.png)
+6. Sélectionnez **Enregistrer**.
 
-> **Important** You won't be able to use a segment that includes too few customers. If your segment definition does not include enough customers, you can adjust the segment criteria, or try again later, when your app may have acquired more customers that meet your segment criteria.
+> **Important** Vous ne pouvez pas utiliser un segment comprenant un trop petit nombre de clients. Si votre définition de segment n’inclut pas suffisamment de clients, vous pouvez ajuster les critères du segment ou réessayer plus tard, si votre application a acquis plus de clients répondant à vos critères de segment.
 
-Things to keep in mind about customer segments:
-- After you save a segment, it takes 24 hours before you’ll be able to use it for [targeted push notifications](send-push-notifications-to-your-apps-customers.md).
-- Segment results are refreshed daily, so you may see the total count of customers in a segment change from day to day as customers drop in or out of the segment criteria.
-- Most of these attributes are calculated using all historical data, although there are some exceptions. For example, **App acquisition date**, **Campaign ID**, **Store page view date**, and **Referrer URI domain** are limited to the last 90 days of data.
-- The segment will only include customers who have acquired your app on Windows 10. If your app supports older OS versions, customers using those older OS versions will not be included in any segments you create.
-- Segments automatically exclude any customers who are younger than 17 years old.
+Éléments à se rappeler concernant les segments de clients&nbsp;:
+- Après avoir enregistré un segment, vous devez patienter 24&nbsp;heures avant de pouvoir l’utiliser pour les [notifications push ciblées](send-push-notifications-to-your-apps-customers.md).
+- Les résultats du segment sont actualisés quotidiennement. Vous pouvez donc voir le nombre total de clients d’un segment changer d’un jour sur l’autre selon que les clients satisfont ou non les critères du segment.
+- La plupart de ces attributs sont calculés à l’aide de toutes les données historiques, même s’il existe des exceptions. Par exemple, les champs **Date d’acquisition de l’application**, **ID de campagne**, **Stocker la date d’affichage de la page** et **Domaine URI référent** sont limités aux 90&nbsp;derniers jours de données.
+- Le segment inclut seulement les clients qui ont acquis votre application sur Windows&nbsp;10. Si votre application prend en charge les anciennes versions du système d’exploitation, les clients utilisant ces anciennes versions du système d’exploitation ne sont pas inclus dans les segments que vous créez.
+- Les clients excluent automatiquement tous les clients de moins de 17&nbsp;ans.
 
 
-## <a name="app-statistics"></a>App statistics
+## <a name="app-statistics"></a>Statistiques de l’application
 
-The **App statistics** section on the segment provides some info about your app, as well as the size of the segment you just created.
+La section **Statistiques de l’application** du segment fournit des informations sur votre application, ainsi que la taille du segment que vous venez de créer.
 
-Note that **Available app customers** does not reflect the actual number of customers who have acquired your app, but only the number of customers that are available to be included in segments (that is, customers that we can determine meet age requirements, have acquired your app on Windows 10, and who are associated with a valid Microsoft account).
+Notez que le champ **Clients de l’application disponibles** ne reflète pas le nombre réel de clients qui ont acquis votre application, mais uniquement le nombre de clients disponibles pouvant être inclus dans les segments (c’est-à-dire, les clients dont nous pouvons déterminer qu’ils satisfont aux conditions d’âge, ont acquis votre application sur Windows&nbsp;10 et qui sont associés à un compte Microsoft valide).
 
-If you view the results and **Customers in this segment** says **Small**, the segment doesn't include enough customers and the segment is marked inactive. Inactive segments can't be used for notifications or other features. You might be able to activate and use a segment by doing one of the following:
+Si das les résultats, le champ **Clients dans ce segment** indique **Peu**, le segment n’inclut pas suffisamment de clients et est marqué comme inactif. Vous ne pouvez pas utiliser les segments inactifs pour les notifications ou d’autres fonctionnalités. Vous pouvez activer et utiliser un segment en effectuant l’une des opérations suivantes&nbsp;:
 
-- In the **Define inclusion conditions** section, adjust the filter criteria so the segment includes more customers.
-- On the **Customer groups** page, in the **Inactive segments** section, select **Refresh** to see if the segment currently contains enough customers. This tactic might work, for example, if more customers who meet your segment criteria have downloaded your app since you first created the segment.
+- Dans la section **Définir des conditions d’inclusion**, ajustez les critères de filtre pour que le segment inclut davantage de clients.
+- Sur la page **Groupes de clients**, dans la section **Segments inactifs**, sélectionnez **Actualiser** pour voir si le segment contient actuellement suffisamment clients. Cette méthode peut fonctionner, par exemple, si les clients satisfaisant vos critères de segment qui téléchargent votre application sont plus nombreux depuis que vous avez créé le segment pour la première fois.
 
 
 

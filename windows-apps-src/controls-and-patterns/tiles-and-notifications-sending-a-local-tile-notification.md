@@ -1,7 +1,7 @@
 ---
 author: mijacobs
-Description: This article describes how to send a local tile notification to a primary tile and a secondary tile using adaptive tile templates.
-title: Send a local tile notification
+Description: "Cet article décrit comment envoyer une notification par vignette locale à une vignette principale et une vignette secondaire à l’aide de modèles de vignette adaptative."
+title: Envoyer une notification par vignette locale
 ms.assetid: D34B0514-AEC6-4C41-B318-F0985B51AF8A
 label: TBD
 template: detail.hbs
@@ -11,43 +11,43 @@ ms.openlocfilehash: 8fc2fc007d14bd9c5d08ca4eb7e61a2dfdf04d3b
 
 ---
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-# <a name="send-a-local-tile-notification"></a>Send a local tile notification
+# <a name="send-a-local-tile-notification"></a>Envoyer une notification par vignette locale
 
 
 
 
 
-Primary app tiles in Windows 10 are defined in your app manifest, while secondary tiles are programmatically created and defined by your app code. This article describes how to send a local tile notification to a primary tile and a secondary tile using adaptive tile templates. (A local notification is one that's sent from app code as opposed to one that's pushed or pulled from a web server.)
+Les vignettes d’application principales de Windows&nbsp;10 sont définies dans le manifeste de votre application, tandis que les vignettes secondaires sont créées et définies par programme par le code de votre application. Cet article décrit comment envoyer une notification par vignette locale à une vignette principale et une vignette secondaire à l’aide de modèles de vignette adaptative. (Une notification locale est une notification envoyée à partir du code d’application, par opposition à une notification qui fait l’objet d’une transmission de type push ou pull à partir d’un serveur web).
 
-![default tile and tile with notification](images/sending-local-tile-01.png)
+![Vignette par défaut et vignette avec notification](images/sending-local-tile-01.png)
 
-**Note**   Learn about [creating adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md) and [adaptive tile template schema](tiles-and-notifications-adaptive-tiles-schema.md).
+**Remarque** Pour plus d’informations, voir [Créer des vignettes adaptatives](tiles-and-notifications-create-adaptive-tiles.md) et [Modèles de vignette adaptative&nbsp;: schéma et conseils](tiles-and-notifications-adaptive-tiles-schema.md).
 
  
 
-## <a name="install-the-nuget-package"></a>Install the NuGet package
+## <a name="install-the-nuget-package"></a>Installation du package NuGet
 
 
-We recommend installing the [Notifications library NuGet package](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/), which simplifies things by generating tile payloads with objects instead of raw XML.
+Nous vous recommandons d’installer le [package NuGet de la bibliothèque Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) qui simplifie les choses en générant les charges utiles de vignettes à l’aide d’objets au lieu de code XML brut.
 
-The inline code examples in this article are for C# using the Notifications library. (If you'd prefer to create your own XML, you can find code examples without the Notifications library toward the end of the article.)
+Les exemples de code inclus dans cet article utilisent C# et la bibliothèque Notifications. (Si vous préférez créer votre propre code XML, vous trouverez des exemples de code sans la bibliothèque Notifications vers la fin de l’article.)
 
-## <a name="add-namespace-declarations"></a>Add namespace declarations
+## <a name="add-namespace-declarations"></a>Ajouter des déclarations d’espace de noms
 
 
-To access the tile APIs, include the [**Windows.UI.Notifications**](https://msdn.microsoft.com/library/windows/apps/br208661) namespace. We also recommend including the **NotificationsExtensions.Tiles** namespace so that you can take advantage of our tile helper APIs (you must install the [Notifications library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) NuGet package to access these APIs).
+Pour accéder aux API de vignette, incluez l’espace de noms [**Windows.UI.Notifications**](https://msdn.microsoft.com/library/windows/apps/br208661). Nous vous recommandons également d’inclure l’espace de noms **NotificationsExtensions.Tiles** pour tirer parti de nos API d’assistance de vignette (vous devez installer le package NuGet de la [bibliothèque Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) pour accéder à ces API).
 
 ```CSharp
 using Windows.UI.Notifications;
 using Microsoft.Toolkit.Uwp.Notifications; // Notifications library
 ```
 
-## <a name="create-the-notification-content"></a>Create the notification content
+## <a name="create-the-notification-content"></a>Créer le contenu d’une notification
 
 
-In Windows 10, tile payloads are defined using adaptive tile templates, which allow you to create custom visual layouts for your notifications. (To learn what's possible with adaptive tiles, see the [Create adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md) and [Adaptive tile templates](tiles-and-notifications-adaptive-tiles-schema.md) articles.)
+Dans Windows&nbsp;10, les charges utiles de vignette sont définies à l’aide de modèles de vignette adaptative qui vous permettent de créer des dispositions visuelles personnalisées pour vos notifications. (Pour plus de possibilités avec les vignettes adaptatives, voir les articles [Créer des vignettes adaptatives](tiles-and-notifications-create-adaptive-tiles.md) et [Modèles de vignette adaptative](tiles-and-notifications-adaptive-tiles-schema.md).)
 
-This code example creates adaptive tile content for medium and wide tiles.
+Cet exemple de code crée le contenu de vignette adaptative pour les vignettes moyennes et larges.
 
 ```CSharp
 // In a real app, these would be initialized with actual data
@@ -117,43 +117,43 @@ TileContent content = new TileContent()
 };
 ```
 
-The notification content looks like the following when displayed on a medium tile:
+Le contenu de la notification se présente comme suit pour une vignette moyenne&nbsp;:
 
-![notification content on a medium tile](images/sending-local-tile-02.png)
+![Contenu de la notification sur une vignette moyenne](images/sending-local-tile-02.png)
 
-## <a name="create-the-notification"></a>Create the notification
+## <a name="create-the-notification"></a>Créer la notification
 
 
-Once you have your notification content, you'll need to create a new [**TileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616). The **TileNotification** constructor takes a Windows Runtime [**XmlDocument**](https://msdn.microsoft.com/library/windows/apps/br208620) object, which you can obtain from the **TileContent.GetXml** method if you're using the [Notifications library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/).
+Une fois que vous avez le contenu de votre notification, vous devez créer un élément [**TileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616). Le constructeur **TileNotification** prend un objet Windows Runtime [**XmlDocument**](https://msdn.microsoft.com/library/windows/apps/br208620) que vous pouvez obtenir de la méthode **TileContent.GetXml** si vous utilisez la [bibliothèque Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/).
 
-This code example creates a notification for a new tile.
+Cet exemple de code crée une notification pour une nouvelle vignette.
 
 ```CSharp
 // Create the tile notification
 var notification = new TileNotification(content.GetXml());
 ```
 
-## <a name="set-an-expiration-time-for-the-notification-optional"></a>Set an expiration time for the notification (optional)
+## <a name="set-an-expiration-time-for-the-notification-optional"></a>Définir un délai d’expiration pour la notification (facultatif)
 
 
-By default, local tile and badge notifications don't expire, while push, periodic, and scheduled notifications expire after three days. Because tile content shouldn't persist longer than necessary, it's a best practice to set an expiration time that makes sense for your app, especially on local tile and badge notifications.
+Par défaut, les notifications locales par vignette et de badge n’expirent pas, alors que les notifications Push, périodiques et planifiées expirent après trois jours. Étant donné que le contenu de la vignette ne doit pas être conservé plus longtemps que nécessaire, il est recommandé de définir un délai d’expiration approprié pour votre application, en particulier sur les notifications locales par vignette et de badge.
 
-This code example creates a notification that expires and will be removed from the tile after ten minutes.
+Cet exemple de code crée une notification qui arrive à expiration et est supprimée de la vignette au bout de 10&nbsp;minutes.
 
 ```CSharp
 tileNotification.ExpirationTime = DateTimeOffset.UtcNow.AddMinutes(10);
 ```
 
-## <a name="send-the-notification"></a>Send the notification
+## <a name="send-the-notification"></a>Envoyer la notification
 
 
-Although locally sending a tile notification is simple, sending the notification to a primary or secondary tile is a bit different.
+Bien que l’envoi local d’une notification par vignette soit simple, l’envoi de la notification à une vignette principale ou secondaire est légèrement différent.
 
-**Primary tile**
+**Vignette principale**
 
-To send a notification to a primary tile, use the [**TileUpdateManager**](https://msdn.microsoft.com/library/windows/apps/br208622) to create a tile updater for the primary tile, and send the notification by calling "Update". Regardless of whether it's visible, your app's primary tile always exists, so you can send notifications to it even when it's not pinned. If the user pins your primary tile later, the notifications that you sent will appear then.
+Pour envoyer une notification à une vignette principale, utilisez le [**TileUpdateManager**](https://msdn.microsoft.com/library/windows/apps/br208622) pour créer une mise à jour de vignette pour la vignette principale et envoyez la notification en appelant la méthode «&nbsp;Update&nbsp;». Qu’elle soit visible ou non, la vignette principale de votre application existe toujours ; vous pouvez donc lui envoyer des notifications même si elle n’est pas épinglée. Si l’utilisateur épingle votre vignette principale ultérieurement, les notifications que vous avez envoyées seront alors affichées.
 
-This code example sends a notification to a primary tile.
+Cet exemple de code envoie une notification à une vignette principale.
 
 
 ```CSharp
@@ -161,11 +161,11 @@ This code example sends a notification to a primary tile.
 TileUpdateManager.CreateTileUpdaterForApplication().Update(notification);
 ```
 
-**Secondary tile**
+**Vignette secondaire**
 
-To send a notification to a secondary tile, first make sure that the secondary tile exists. If you try to create a tile updater for a secondary tile that doesn't exist (for example, if the user unpinned the secondary tile), an exception will be thrown. You can use [**SecondaryTile.Exists**](https://msdn.microsoft.com/library/windows/apps/br242205)(tileId) to discover if your secondary tile is pinned, and then create a tile updater for the secondary tile and send the notification.
+Pour envoyer une notification à une vignette secondaire, assurez-vous d’abord que la vignette secondaire existe. Si vous essayez de créer une mise à jour pour une vignette secondaire qui n’existe pas (par exemple, si l’utilisateur a désépinglé la vignette secondaire), une exception est levée. Vous pouvez utiliser [**SecondaryTile.Exists**](https://msdn.microsoft.com/library/windows/apps/br242205)(tileId) pour détecter si votre vignette secondaire est épinglée, puis créer une mise à jour pour la vignette secondaire et envoyer la notification.
 
-This code example sends a notification to a secondary tile.
+Cet exemple de code envoie une notification à une vignette secondaire.
 
 ```CSharp
 // If the secondary tile is pinned
@@ -179,39 +179,39 @@ if (SecondaryTile.Exists("MySecondaryTile"))
 }
 ```
 
-![default tile and tile with notification](images/sending-local-tile-01.png)
+![Vignette par défaut et vignette avec notification](images/sending-local-tile-01.png)
 
-## <a name="clear-notifications-on-the-tile-optional"></a>Clear notifications on the tile (optional)
+## <a name="clear-notifications-on-the-tile-optional"></a>Effacer des notifications sur la vignette (facultatif)
 
 
-In most cases, you should clear a notification once the user has interacted with that content. For example, when the user launches your app, you might want to clear all the notifications from the tile. If your notifications are time-bound, we recommend that you set an expiration time on the notification instead of explicitly clearing the notification.
+Dans la plupart des cas, vous devez effacer une notification une fois que l’utilisateur a interagi avec ce contenu. Par exemple, lorsque l’utilisateur lance votre application, il peut être judicieux d’effacer toutes les notifications de la vignette. Si vos modifications sont temporaires, nous vous recommandons de définir un délai d’expiration sur la notification au lieu de supprimer celle-ci explicitement.
 
-This code example clears the tile notification for the primary tile. You can do the same for secondary tiles by creating a tile updater for the secondary tile.
+Cet exemple de code supprime la notification de la vignette principale. Vous pouvez effectuer la même opération pour les vignettes secondaires en créant un outil de mise à jour pour la vignette secondaire.
 
 ```CSharp
 TileUpdateManager.CreateTileUpdaterForApplication().Clear();
 ```
 
-For a tile with the notification queue enabled and notifications in the queue, calling the Clear method empties the queue. You can't, however, clear a notification via your app's server; only the local app code can clear notifications.
+Si la file d’attente est activée pour une vignette et qu’il y a des notifications en attente, l’appel de la méthode Clear a pour effet de vider la file d’attente. Vous ne pouvez pas, cependant, effacer une notification via un serveur de votre application ; seul le code d’application local peut effacer des notifications.
 
-Periodic or push notifications can only add new notifications or replace existing notifications. A local call to the Clear method will clear the tile whether or not the notifications themselves came via push, periodic, or local. Scheduled notifications that haven't yet appeared are not cleared by this method.
+Les notifications périodiques ou Push peuvent uniquement ajouter de nouvelles notifications ou remplacer les notifications existantes. Un appel local à la méthode Clear effacera la vignette, que les notifications aient été fournies ou non par le biais push, périodique ou local. Les notifications planifiées qui n’ont pas encore été affichées ne sont pas effacées par cette méthode.
 
-![tile with notification and tile after being cleared](images/sending-local-tile-03.png)
+![Vignette avec notification et vignette après effacement](images/sending-local-tile-03.png)
 
-## <a name="next-steps"></a>Next steps
+## <a name="next-steps"></a>Étapes suivantes
 
 
-**Using the notification queue**
+**Utilisation de la file d’attente de notifications**
 
-Now that you have done your first tile update, you can expand the functionality of the tile by enabling a [notification queue](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234).
+Maintenant que vous avez réalisé votre première mise à jour de vignette, vous pouvez développer les fonctionnalités de la vignette en activant une [file d’attente de notifications](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234).
 
-**Other notification delivery methods**
+**Autres modes de remise des notifications**
 
-This article shows you how to send the tile update as a notification. To explore other methods of notification delivery, including scheduled, periodic, and push, see [Delivering notifications](tiles-and-notifications-choosing-a-notification-delivery-method.md).
+Cet article vous montre comment envoyer la mise à jour de vignette sous forme de notification. Pour découvrir d’autres modes de remise de notification, y compris les notifications planifiées, périodiques et Push, voir [Remise de notifications](tiles-and-notifications-choosing-a-notification-delivery-method.md).
 
-**XmlEncode delivery method**
+**Méthode de remise XmlEncode**
 
-If you're not using the [Notifications library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/), this notification delivery method is another alternative.
+Si vous n’utilisez pas la [bibliothèque Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/), ce mode de remise de notification représente une autre solution.
 
 
 ```CSharp
@@ -227,19 +227,19 @@ public string XmlEncode(string text)
 }
 ```
 
-## <a name="code-examples-without-notifications-library"></a>Code examples without Notifications library
+## <a name="code-examples-without-notifications-library"></a>Exemples de code sans la bibliothèque Notifications
 
 
-If you prefer to work with raw XML instead of the [Notifications library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) NuGet package, use these alternate code examples to first three examples provided in this article. The rest of the code examples can be used either with the [Notifications library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) or with raw XML.
+Si vous préférez utiliser du code XML brut à la place du package NuGet de la [bibliothèque Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/), utilisez ces autres exemples de code pour les trois&nbsp;premiers exemples fournis dans cet article. Les exemples de code restants peuvent être utilisés avec la [bibliothèque Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) ou du code&nbsp;XML brut.
 
-Add namespace declarations
+Ajouter des déclarations d’espace de noms
 
 ```CSharp
 using Windows.UI.Notifications;
 using Windows.Data.Xml.Dom;
 ```
 
-Create the notification content
+Créer le contenu d’une notification
 
 ```CSharp
 // In a real app, these would be initialized with actual data
@@ -272,7 +272,7 @@ string content = $@"
 </tile>";
 ```
 
-Create the notification
+Créer la notification
 
 ```CSharp
 // Load the string into an XmlDocument
@@ -283,16 +283,16 @@ doc.LoadXml(content);
 var notification = new TileNotification(doc);
 ```
 
-## <a name="related-topics"></a>Related topics
+## <a name="related-topics"></a>Rubriques connexes
 
 
-* [Create adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md)
-* [Adaptive tile templates: schema and documentation](tiles-and-notifications-adaptive-tiles-schema.md)
-* [Notifications library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
-* [Full code sample on GitHub](https://github.com/WindowsNotifications/quickstart-sending-local-tile-win10)
-* [**Windows.UI.Notifications namespace**](https://msdn.microsoft.com/library/windows/apps/br208661)
-* [How to use the notification queue (XAML)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234)
-* [Delivering notifications](tiles-and-notifications-choosing-a-notification-delivery-method.md)
+* [Créer des vignettes adaptatives](tiles-and-notifications-create-adaptive-tiles.md)
+* [Modèles de vignette adaptative&nbsp;: schéma et documentation](tiles-and-notifications-adaptive-tiles-schema.md)
+* [Bibliothèque Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
+* [Exemple de code complet sur GitHub](https://github.com/WindowsNotifications/quickstart-sending-local-tile-win10)
+* [**Espace de noms Windows.UI.Notifications**](https://msdn.microsoft.com/library/windows/apps/br208661)
+* [Comment utiliser la file d’attente de notifications (XAML)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234)
+* [Remise de notifications](tiles-and-notifications-choosing-a-notification-delivery-method.md)
  
 
  

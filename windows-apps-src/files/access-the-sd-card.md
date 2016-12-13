@@ -1,72 +1,72 @@
 ---
 author: laurenhughes
 ms.assetid: CAC6A7C7-3348-4EC4-8327-D47EB6E0C238
-title: Access the SD card
-description: You can store and access non-essential data on an optional microSD card, especially on low-cost mobile devices that have limited internal storage.
+title: "Accéder à la carte SD"
+description: "Vous pouvez stocker des données non essentielles et y accéder sur une carte microSD en option, plus particulièrement sur les appareils mobiles à faible coût dont le stockage interne est limité."
 translationtype: Human Translation
 ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
 ms.openlocfilehash: a13f351af3cba8d3d9e645a6f6040dff6e81e1ff
 
 ---
-# <a name="access-the-sd-card"></a>Access the SD card
+# <a name="access-the-sd-card"></a>Accéder à la carte SD
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows&nbsp;10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-You can store and access non-essential data on an optional microSD card, especially on low-cost mobile devices that have limited internal storage.
+Vous pouvez stocker des données non essentielles et y accéder sur une carte microSD en option, plus particulièrement sur les appareils mobiles à faible coût dont le stockage interne est limité.
 
-In most cases, you have to specify the **removableStorage** capability in the app manifest file before your app can store and access files on the SD card. Typically you also have to register to handle the type of files that your app stores and accesses.
+Dans la plupart des cas, vous devez spécifier la fonctionnalité **removableStorage** dans le fichier manifeste de l’application pour que votre application puisse stocker des fichiers sur la carte SD et y accéder. En général, vous devez également inscrire les types de fichier stockés et accessibles que votre application peut gérer.
 
-You can store and access files on the optional SD card by using the following methods:
+Utilisez les moyens suivants pour stocker des fichiers sur la carte&nbsp;SD en option et y accéder&nbsp;:
 
-- File pickers.
+- Sélecteurs de fichiers.
 
-- The [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) APIs.
+- API [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346).
 
-## <a name="what-you-can-and-cant-access-on-the-sd-card"></a>What you can and can't access on the SD card
+## <a name="what-you-can-and-cant-access-on-the-sd-card"></a>Éléments accessibles et non accessibles sur la carte SD
 
-### <a name="what-you-can-access"></a>What you can access
+### <a name="what-you-can-access"></a>Ce à quoi vous pouvez accéder
 
-- Your app can only read and write files of file types that the app has registered to handle in the app manifest file.
+- Votre application peut uniquement lire et écrire des fichiers dont le type a été inscrit à des fins de gestion dans le fichier manifeste de l’application.
 
-- Your app can also create and manage folders.
+- Votre application peut également créer et gérer des dossiers.
 
-### <a name="what-you-cant-access"></a>What you can't access
+### <a name="what-you-cant-access"></a>Ce à quoi vous ne pouvez pas accéder
 
-- Your app can't see or access system folders and the files that they contain.
+- Votre application ne peut pas voir les dossiers système et les fichiers qu’ils contiennent, ni y accéder.
 
-- Your app can't see files that are marked with the Hidden attribute. The Hidden attribute is typically used to reduce the risk of deleting data accidentally.
+- Votre application ne peut pas voir les fichiers marqués de l’attribut Hidden (masqué). L’attribut Hidden sert généralement à réduire le risque de suppression accidentelle de données.
 
-- Your app can't see or access the Documents library by using [**KnownFolders.DocumentsLibrary**](https://msdn.microsoft.com/library/windows/apps/br227152). However you can access the Documents library on the SD card by traversing the file system.
+- Votre application ne peut pas voir la bibliothèque de documents ni y accéder à l’aide de la propriété [**KnownFolders.DocumentsLibrary**](https://msdn.microsoft.com/library/windows/apps/br227152). En revanche, vous pouvez accéder à la bibliothèque de documents sur la carte SD en parcourant le système de fichiers.
 
-## <a name="security-and-privacy-considerations"></a>Security and privacy considerations
+## <a name="security-and-privacy-considerations"></a>Considérations liées à la sécurité et à la confidentialité
 
-When an app saves files in a global location on the SD card, those files are not encrypted so they are typically accessible to other apps.
+Quand une application enregistre des fichiers à un emplacement global sur la carte SD, ces fichiers n’étant pas chiffrés, ils sont en général accessibles à d’autres applications.
 
-- While the SD card is in the device, your files are accessible to other apps that have registered to handle the same file type.
+- Tant que la carte SD se trouve dans l’appareil, vos fichiers sont accessibles à d’autres applications dès lors que celles-ci se sont inscrites pour gérer les types de fichiers correspondants.
 
-- When the SD card is removed from the device and opened from a PC, your files are visible in File Explorer and accessible to other apps.
+- Quand vous retirez la carte SD de l’appareil et que vous l’ouvrez à partir d’un ordinateur, vos fichiers sont visibles dans l’Explorateur de fichiers et accessibles aux autres applications.
 
-When an app installed on the SD card saves files in its [**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621), however, those files are encrypted and are not accessible to other apps.
+Lorsqu’une application installée sur la carte SD enregistre des fichiers dans son élément [**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621), ces fichiers sont chiffrés et ne sont pas accessibles aux autres applications.
 
-## <a name="requirements-for-accessing-files-on-the-sd-card"></a>Requirements for accessing files on the SD card
+## <a name="requirements-for-accessing-files-on-the-sd-card"></a>Exigences relatives à l’accès aux fichiers sur la carte SD
 
-To access files on the SD card, typically you have to specify the following things.
+Pour accéder aux fichiers sur la carte SD, vous devez généralement spécifier les éléments suivants.
 
-1.  You have to specify the **removableStorage** capability in the app manifest file.
-2.  You also have to register to handle the file extensions associated with the type of media that you want to access.
+1.  Vous devez spécifier la capacité **removableStorage** dans le fichier manifeste de l’application.
+2.  À des fins de gestion, vous devez aussi inscrire les extensions de fichier associées au type de média auquel vous voulez accéder.
 
-Use the preceding method also to access media files on the SD card without referencing a known folder like **KnownFolders.MusicLibrary**, or to access media files that are stored outside of the media library folders.
+Vous pouvez également utiliser la méthode ci-dessus pour accéder aux fichiers multimédias figurant sur la carte SD sans référencer de dossier connu comme **KnownFolders.MusicLibrary**, ou pour accéder aux fichiers multimédias stockés hors des dossiers de bibliothèque multimédia.
 
-To access media files stored in the media libraries—Music, Photos, or Videos—by using known folders, you only have to specify the associated capability in the app manifest file—**musicLibrary**, **picturesLibrary**, or **videoLibrary**. You do not have to specify the **removableStorage** capability. For more info, see [Files and folders in the Music, Pictures, and Videos libraries](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md).
+Pour accéder aux fichiers multimédias stockés dans les bibliothèques multimédias (Musique, Photos ou Vidéos) en utilisant les dossiers connus, il suffit de spécifier la fonctionnalité associée dans le fichier manifeste de l’application : **musicLibrary**, **picturesLibrary**, ou **videoLibrary**. Vous n’avez pas besoin de spécifier la fonctionnalité **removableStorage**. Pour plus d’informations, voir [Fichiers et dossiers dans les bibliothèques de musique, d’images et de vidéos](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md).
 
-## <a name="accessing-files-on-the-sd-card"></a>Accessing files on the SD card
+## <a name="accessing-files-on-the-sd-card"></a>Accès aux fichiers sur la carte SD
 
-### <a name="getting-a-reference-to-the-sd-card"></a>Getting a reference to the SD card
+### <a name="getting-a-reference-to-the-sd-card"></a>Obtention d’une référence à la carte SD
 
-The [**KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158) folder is the logical root [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) for the set of removable devices currently connected to the device. If an SD card is present, the first (and only) **StorageFolder** underneath the **KnownFolders.RemovableDevices** folder represents the SD card.
+Le dossier [**KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158) correspond à la classe [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) de la racine logique de l’ensemble des appareils amovibles actuellement connectés à l’appareil. Si une carte SD est présente, la première (et unique) classe **StorageFolder** sous le dossier **KnownFolders.RemovableDevices** représente la carte SD.
 
-Use code like the following to determine whether an SD card is present and to get a reference to it as a [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230).
+Utilisez du code comme le suivant pour déterminer si une carte SD est présente et obtenir une référence à cette carte sous forme de classe [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230).
 
 ```csharp
 using Windows.Storage;
@@ -89,27 +89,27 @@ using Windows.Storage;
             }
 ```
 
-### <a name="querying-the-contents-of-the-sd-card"></a>Querying the contents of the SD card
+### <a name="querying-the-contents-of-the-sd-card"></a>Interrogation du contenu de la carte SD
 
-The SD card can contain many folders and files that aren't recognized as known folders and can't be queried by using a location from [**KnownFolders**](https://msdn.microsoft.com/library/windows/apps/br227151). To find files, your app has to enumerate the contents of the card by traversing the file system recursively. Use [**GetFilesAsync (CommonFileQuery.DefaultQuery)**](https://msdn.microsoft.com/library/windows/apps/br227274) and [**GetFoldersAsync (CommonFolderQuery.DefaultQuery)**](https://msdn.microsoft.com/library/windows/apps/br227281) to get the contents of the SD card efficiently.
+La carte SD peut contenir de nombreux dossiers et fichiers qui ne sont pas identifiés en tant que dossiers connus et qui ne peuvent pas être interrogés à l’aide d’un emplacement issu de l’élément [**KnownFolders**](https://msdn.microsoft.com/library/windows/apps/br227151). Pour rechercher des fichiers, votre application doit énumérer le contenu de la carte en balayant le système de fichiers de manière récursive. Utilisez les éléments [**GetFilesAsync (CommonFileQuery.DefaultQuery)**](https://msdn.microsoft.com/library/windows/apps/br227274) et [**GetFoldersAsync (CommonFolderQuery.DefaultQuery)**](https://msdn.microsoft.com/library/windows/apps/br227281) pour obtenir efficacement le contenu de la carte SD.
 
-We recommend that you use a background thread to traverse the SD card. An SD card may contain many gigabytes of data.
+Nous vous recommandons d’utiliser un thread d’arrière-plan pour balayer la carte SD. Une carte SD peut contenir un grand nombre de gigaoctets de données.
 
-Your app can also require the user to choose specific folders by using the folder picker.
+Votre application peut également inviter l’utilisateur à choisir des dossiers spécifiques à l’aide du sélecteur de dossiers.
 
-When you access the file system on the SD card with a path that you derived from [**KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158), the following methods behave in the following way.
+Quand vous accédez au système de fichiers de la carte SD par un chemin d’accès dérivé de l’élément [**KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158), les méthodes se comportent de la manière suivante.
 
--   The [**GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227273) method returns the union of the file extensions that you have registered to handle and the file extensions associated with any media library capabilities that you have specified.
+-   La méthode [**GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227273) renvoie les extensions de fichier que vous avez inscrites à des fins de gestion et les extensions de fichier associées aux fonctionnalités de bibliothèque multimédia que vous avez spécifiées.
 
--   The [**GetFileFromPathAsync**](https://msdn.microsoft.com/library/windows/apps/br227206) method fails if you have not registered to handle the file extension of the file you are trying to access.
+-   La méthode [**GetFileFromPathAsync**](https://msdn.microsoft.com/library/windows/apps/br227206) échoue si vous n’avez pas inscrit l’extension du fichier auquel vous essayez d’accéder.
 
-## <a name="identifying-the-individual-sd-card"></a>Identifying the individual SD card
+## <a name="identifying-the-individual-sd-card"></a>Identification de la carte SD individuelle
 
-When the SD card is first mounted, the operating system generates a unique identifier for the card. It stores this ID in a file in the WPSystem folder at the root of the card. An app can use this ID to determine whether it recognizes the card. If an app recognizes the card, the app may be able to postpone certain operations that were completed previously. However the contents of the card may have changed since the card was last accessed by the app.
+Lors du montage initial de la carte SD, le système d’exploitation génère un identificateur unique (ID) pour elle. Il stocke cet ID dans un fichier du dossier WPSystem à la racine de la carte. Une application peut utiliser cet ID pour déterminer si elle reconnaît la carte. Si une application reconnaît la carte, elle peut être capable de différer certaines opérations qui ont été accomplies auparavant. Cependant, le contenu de la carte peut avoir changé depuis le dernier accès à la carte par l’application.
 
-For example, consider an app that indexes ebooks. If the app has previously scanned the whole SD card for ebook files and created an index of the ebooks, it can display the list immediately if the card is reinserted and the app recognizes the card. Separately it can start a low-priority background thread to search for new ebooks. It can also handle a failure to find an ebook that existed previously when the user tries to access the deleted ebook.
+Prenons l’exemple d’une application qui indexe des livres électroniques. Si l’application a analysé toute la carte SD au préalable pour rechercher des fichiers de livres électroniques, puis créé un index de ces livres, elle peut en afficher immédiatement la liste si la carte est réinsérée et que l’application la reconnaît. Par ailleurs, elle peut démarrer un thread d’arrière-plan de faible priorité pour rechercher les nouveaux livres électroniques. Elle peut également gérer l’échec d’une recherche de livre électronique précédemment existant quand l’utilisateur essaie d’accéder à ce livre supprimé.
 
-The name of the property that contains this ID is **WindowsPhone.ExternalStorageId**.
+Le nom de la propriété qui contient cet ID est **WindowsPhone.ExternalStorageId**.
 
 ```csharp
 using Windows.Storage;

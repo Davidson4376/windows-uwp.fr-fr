@@ -1,6 +1,6 @@
 ---
 author: TylerMSFT
-title: Launch an app on a remote device
+title: Lancer une application sur un appareil distant
 description: Learn how to launch an app on a remote device using Project "Rome".
 translationtype: Human Translation
 ms.sourcegitcommit: 4e94ee5b3c56f3ec20e3592b97348c291297a670
@@ -8,61 +8,61 @@ ms.openlocfilehash: d429ea4a6f8d52445c99cb170bb41c3fc1515dde
 
 ---
 
-# <a name="launch-an-app-on-a-remote-device"></a>Launch an app on a remote device
+# <a name="launch-an-app-on-a-remote-device"></a>Lancer une application sur un appareil distant
 
-This article explains how to launch a Windows app on a remote device.
+Cet article explique comment lancer une application Windows sur un appareil distant.
 
-Starting in Windows 10, version 1607, a UWP app can launch a UWP app or Windows desktop application remotely on another device that is also running Windows 10, version 1607 or later, provided that both devices are signed on with the same Microsoft Account (MSA).
+Depuis Windows&nbsp;10 version&nbsp;1607, une application&nbsp;UWP peut lancer une application&nbsp;UWP ou une application de bureau Windows à distance sur un autre appareil qui exécute également Windows&nbsp;10 version&nbsp;1607 ou ultérieure, pourvu que les deux&nbsp;appareils soient signés avec le même compte Microsoft (MSA).
 
-The remote launch feature enables task-oriented user experiences, where a user can start a task on one device and finish it on another. For example, if the user is listening to music on their phone in the car, they could then hand playback over to their Xbox One when they arrive at home. Remote launch allows you to pass contextual data to the remote app being launched, in order to pick up where the task was left off.
+La fonctionnalité de lancement à distance permet des expériences orientées tâches, où un utilisateur peut démarrer une tâche sur un appareil et la terminer sur un autre. Par exemple, si l’utilisateur écoute de la musique sur son téléphone dans la voiture, il peut ensuite transférer la lecture sur sa console Xbox&nbsp;One lorsqu’il arrive chez lui. Le lancement à distance vous permet de transmettre des données contextuelles à l’application distante démarrée, afin de reprendre exactement la tâche là où elle a été arrêtée.
 
-## <a name="add-the-remotesystem-capability"></a>Add the remoteSystem capability
+## <a name="add-the-remotesystem-capability"></a>Ajouter la fonctionnalité remoteSystem
 
-In order for your app to launch an app on a remote device, you must add the `remoteSystem` capability to your app package manifest. You can use the package manifest designer to add it by selecting **Remote System** on the **Capabilities** tab, or you can manually add the following line to your project's Package.appxmanifest file.
+Pour que votre application puisse lancer une application sur un appareil distant, vous devez ajouter la fonctionnalité `remoteSystem` dans le manifeste de votre package d’application. Vous pouvez l’ajouter avec le concepteur de manifeste de package en sélectionnant **Système distant** dans l’onglet **Capacités**, ou manuellement en ajoutant la ligne suivante dans le fichier Package.appxmanifest de votre projet.
 
 ``` xml
 <Capabilities>
    <uap3:Capability Name="remoteSystem"/>
  </Capabilities>
 ```
-## <a name="find-a-remote-device"></a>Find a remote device
+## <a name="find-a-remote-device"></a>Trouver un appareil distant
 
-You must first find the device that you want to connect with. [Discover remote devices](discover-remote-devices.md) discusses how to do this in detail. We'll use a simple approach here that forgoes filtering by device or connectivity type. We will create a remote system watcher that looks for remote devices, and write handlers for the events that are raised when devices are discovered or removed. This will provide us with a collection of remote devices.
+Vous devez tout d’abord trouver l’appareil auquel vous souhaitez vous connecter. La section [Détecter les périphériques distants](discover-remote-devices.md) explique en détail comment faire. Nous allons utiliser une approche simple, qui permet un filtrage par type d’appareil ou de connectivité. Nous allons créer un observateur qui recherche des appareils distants et écrire des gestionnaires d’événement qui surviennent lorsque des appareils sont détectés ou supprimés. Ce qui nous fournira un ensemble d’appareils distants.
 
-The code in these examples assumes that you have a `using Windows.System.RemoteSystems` statement in your file.
+Le code de ces exemples suppose que votre fichier contient une instruction `using Windows.System.RemoteSystems`.
 
 [!code-cs[Main](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetBuildDeviceList)]
 
-The first thing you must do before making a remote launch is call `RemoteSystem.RequestAccessAsync()`. Check the return value to make sure your app is allowed to access remote devices. One reason this check could fail is if you haven't added the `remoteSystem` capability to your app.
+La première chose à faire avant d’effectuer lancement à distance est d’appeler `RemoteSystem.RequestAccessAsync()`. Vérifiez la valeur de retour pour vous assurer que votre application est autorisée à accéder à des appareils distants. Cette vérification peut échouer si vous n’avez ajouté la fonctionnalité `remoteSystem` à votre application.
 
-The system watcher event handlers are called when a device that we can connect with is discovered or is no longer available. We will use these event handlers to keep an updated list of devices that we can connect to.
+Les gestionnaires d’événements de l’Observateur du système sont appelés lorsqu’un appareil auquel nous pouvons nous connecter est détecté ou n’est plus disponible. Nous allons utiliser ces gestionnaires d’événements pour conserver une liste mise à jour d’appareils auxquels nous pouvons nous connecter.
 
 [!code-cs[Main](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetEventHandlers)]
 
-We will track the devices by remote system ID using a **Dictionary**. An **ObservableCollection** is used to hold the list of devices that we can enumerate. An **ObservableCollection** also makes it easy to bind the list of devices to UI, though we won't do that in this example.
+Nous assurons le suivi des appareils par ID de système distant, à l’aide d’un **dictionnaire**. Un objet **ObservableCollection** est utilisé pour stocker la liste des appareils que nous pouvons énumérer. Un objet **ObservableCollection** facilite aussi la liaison de la liste des appareils à l’interface utilisateur, mais nous nous en dispenserons dans cet exemple.
 
 [!code-cs[Main](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetMembers)]
 
-Add a call to `BuildDeviceList()` in your app startup code before you attempt to launch a remote app.
+Ajoutez un appel à `BuildDeviceList()` dans le code de démarrage de l’application avant d’essayer de lancer une application à distance.
 
-## <a name="launch-an-app-on-a-remote-device"></a>Launch an app on a remote device
+## <a name="launch-an-app-on-a-remote-device"></a>Lancer une application sur un appareil distant
 
-Launch an app remotely by passing the device you wish to connect with to the [**RemoteLauncher.LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/windows.system.remotelauncher.launchuriasync.aspx) API. There are three overloads for this method. The simplest, which this example demonstrates, specifies the URI that will activate the app on the remote device. In this example the URI opens the Maps app on the remote machine with a 3D view of the Space Needle.
+Lancez une application à distance en transmettant l’appareil auquel vous souhaitez vous connecter à l’API [**RemoteLauncher.LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/windows.system.remotelauncher.launchuriasync.aspx). Il existe trois&nbsp;surcharges pour cette méthode. La plus simple, reprise dans cet exemple, spécifie l’URI qui active l’application sur l’appareil distant. Dans cet exemple, l’URI ouvre l’application Cartes sur l’ordinateur distant avec une vue&nbsp;3D sur l’Aiguille de l’espace de Seattle.
 
-Other **RemoteLauncher.LaunchUriAsync** overloads allow you to specify options such as the URI of the web site to view if no appropriate app can be launched on the remote device, and an optional list of package family names that could be used to launch the URI on the remote device. You can also provide data in the form of key/value pairs. You might pass data to the app you are activating to provide context to the remote app, such as the name of the song to play and the current playback location when you hand off playback from one device to another.
+Les autres surcharges de **RemoteLauncher.LaunchUriAsync** vous permettent de spécifier des options telles que l’URI du site web à afficher si aucune application capable de gérer l’URI ne peut être lancée sur l’appareil distant, et une liste facultative de noms de famille de package pouvant servir à lancer l’URI sur l’appareil distant. Vous pouvez également fournir des données sous la forme de paires clé/valeur. Vous pouvez transmettre des données à l’application que vous activez pour fournir un contexte à l’application distante, comme le nom de la chanson à lire et le lieu de lecture en cours lorsque vous basculez la lecture d’un appareil à un autre.
 
-In practical scenarios, you might provide UI to select the device you want to target. But to simplify this example, we'll just use the first remote device on the list.
+Concrètement, vous pouvez fournir l’interface utilisateur pour sélectionner l’appareil que vous souhaitez cibler. Mais pour simplifier cet exemple, nous allons utiliser le premier appareil distant sur la liste.
 
 [!code-cs[Main](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetRemoteUriLaunch)]
 
-The [**RemoteLaunchUriStatus**](https://msdn.microsoft.com/library/windows/apps/windows.system.remotelaunchuristatus.aspx) object that is returned from **RemoteLauncher.LaunchUriAsync()** provides information about whether the remote launch succeeded, and if not, the reason why.
+L’objet [**RemoteLaunchUriStatus**](https://msdn.microsoft.com/library/windows/apps/windows.system.remotelaunchuristatus.aspx) renvoyé par **RemoteLauncher.LaunchUriAsync()** permet de savoir si le lancement à distance a abouti ou non (et dans ce cas, la raison de l’échec).
 
-## <a name="related-topics"></a>Related topics
+## <a name="related-topics"></a>Rubriques connexes
 
-[Remote Systems API reference](https://msdn.microsoft.com/en-us/library/windows/apps/Windows.System.RemoteSystems)  
-[Connected apps and devices (Project "Rome") overview](connected-apps-and-devices.md)  
-[Discover remote devices](discover-remote-devices.md)  
-[Remote Systems sample](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems) demonstrates how to discover a remote system, launch an app on a remote system, and use app services to send messages between apps running on two systems.
+[Référence sur l’API Systèmes distants](https://msdn.microsoft.com/en-us/library/windows/apps/Windows.System.RemoteSystems)  
+[Applications et appareils connectés (projet «&nbsp;Rome&nbsp;»)](connected-apps-and-devices.md)  
+[Détecter des appareils distants](discover-remote-devices.md)  
+L’[exemple Systèmes distants](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems) montre comment détecter un système distant, lancer une application sur un système distant et utiliser des services d’application pour échanger des messages avec des applications qui s’exécutent sur deux&nbsp;systèmes.
 
 
 

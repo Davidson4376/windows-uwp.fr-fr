@@ -1,91 +1,91 @@
 ---
 author: mcleanbyron
-Description: Whether your app is free or not, you can sell content, other apps, or new app functionality (such as unlocking the next level of a game) from right within the app. Here we show you how to enable these products in your app.
-title: Enable in-app product purchases
+Description: "Que votre application soit gratuite ou non, vous pouvez vendre du contenu, d’autres applications ou de nouvelles fonctionnalités applicatives (par exemple le déverrouillage d’un nouveau niveau de jeu) directement dans l’application. Nous allons vous montrer comment activer ces produits dans votre application."
+title: Activer les achats de produits in-app
 ms.assetid: D158E9EB-1907-4173-9889-66507957BD6B
-keywords: in-app offer code sample
+keywords: "exemple de code d’une offre intégrée à l’application"
 translationtype: Human Translation
 ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
 ms.openlocfilehash: 1cd748cd1b6ca7e85cfb86daba367540af25db88
 
 ---
 
-# <a name="enable-in-app-product-purchases"></a>Enable in-app product purchases
+# <a name="enable-in-app-product-purchases"></a>Activer les achats de produits in-app
 
->**Note**&nbsp;&nbsp;This article demonstrates how to use members of the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace. If your app targets Windows 10, version 1607, or later, we recommend that you use members of the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace to manage add-ons (also known as in-app products or IAPs) instead of the **Windows.ApplicationModel.Store** namespace. For more information, see [In-app purchases and trials](in-app-purchases-and-trials.md).
+>**Remarque**&nbsp;&nbsp;Cet article montre comment utiliser les membres de l’espace de noms [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx). Si votre application cible Windows&nbsp;10, version&nbsp;1607 ou ultérieure, nous vous recommandons d’utiliser des membres de l’espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) pour gérer les extensions (également appelées produits in-app ou PIA) plutôt que l’espace de noms **Windows.ApplicationModel.Store**. Pour plus d’informations, voir [Versions d’évaluation et achats in-app](in-app-purchases-and-trials.md).
 
-Whether your app is free or not, you can sell content, other apps, or new app functionality (such as unlocking the next level of a game) from right within the app. Here we show you how to enable these products in your app.
+Que votre application soit gratuite ou non, vous pouvez vendre du contenu, d’autres applications ou de nouvelles fonctionnalités applicatives (par exemple le déverrouillage d’un nouveau niveau de jeu) directement dans l’application. Nous allons vous montrer comment activer ces produits dans votre application.
 
-> **Note**&nbsp;&nbsp;In-app products cannot be offered from a trial version of an app. Customers using a trial version of your app can only buy an in-app product if they purchase a full version of your app.
+> **Remarque**&nbsp;&nbsp;Les produits in-app ne peuvent pas être offerts dans le cadre d’une version d’évaluation d’une application. Les clients qui utilisent une version d’évaluation de votre application ne peuvent acheter un produit in-app que s’ils achètent une version complète de votre application.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Prérequis
 
--   A Windows app in which to add features for customers to buy.
--   When you code and test new in-app products for the first time, you must use the [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) object instead of the [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765) object. This way you can verify your license logic using simulated calls to the license server instead of calling the live server. To do this, you need to customize the file named WindowsStoreProxy.xml in %userprofile%\\AppData\\local\\packages\\&lt;package name&gt;\\LocalState\\Microsoft\\Windows Store\\ApiData. The Microsoft Visual Studio simulator creates this file when you run your app for the first time—or you can also load a custom one at runtime. For more info, see [Using the WindowsStoreProxy.xml file with CurrentAppSimulator](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#proxy).
--   This topic also references code examples provided in the [Store sample](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store). This sample is a great way to get hands-on experience with the different monetization options provided for Universal Windows Platform (UWP) apps.
+-   Application Windows dans laquelle ajouter des fonctionnalités que les clients peuvent acheter.
+-   Lorsque vous codez et testez de nouveaux produits in-app pour la première fois, vous devez utiliser l’objet [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) au lieu de l’objet [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765). Cela vous permet de vérifier votre logique de licence à l’aide d’appels simulés au serveur de licences au lieu d’appels au serveur Windows&nbsp;Live. Pour ce faire, vous devez personnaliser le fichier WindowsStoreProxy.xml dans %userprofile%\\AppData\\local\\packages\\&lt;nom_package&gt;\\LocalState\\Microsoft\\Windows Store\\ApiData. Le simulateur Microsoft Visual&nbsp;Studio crée ce fichier quand vous exécutez votre application pour la première fois. Vous pouvez également charger un fichier personnalisé au moment de l’exécution. Pour plus d’informations, consultez [Utilisation du fichier WindowsStoreProxy.xml avec CurrentAppSimulator](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#proxy).
+-   Cette rubrique fait également référence à des exemples de code fournis dans [Exemple Windows&nbsp;Store](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store). Cet exemple représente un excellent moyen d’obtenir une expérience pratique avec les différentes options de monétisation fournies pour les applications UWP.
 
-## <a name="step-1-initialize-the-license-info-for-your-app"></a>Step 1: Initialize the license info for your app
+## <a name="step-1-initialize-the-license-info-for-your-app"></a>Étape&nbsp;1&nbsp;: Initialisation des informations de licence de votre application
 
-When your app is initializing, get the [LicenseInformation](https://msdn.microsoft.com/library/windows/apps/br225157) object for your app by initializing the [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765) or [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) to enable purchases of an in-app product.
+Lors de l’initialisation de votre application, obtenez l’objet [LicenseInformation](https://msdn.microsoft.com/library/windows/apps/br225157) de votre application en initialisant l’élément [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765) ou [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) pour activer les achats d’un produit in-app.
 
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[EnableInAppPurchases](./code/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs#InitializeLicenseTest)]
 
-## <a name="step-2-add-the-in-app-offers-to-your-app"></a>Step 2: Add the in-app offers to your app
+## <a name="step-2-add-the-in-app-offers-to-your-app"></a>Étape&nbsp;2&nbsp;: Ajout d’offres in-app à votre application
 
-For each feature that you want to make available through an in-app product, create an offer and add it to your app.
+Pour chaque fonctionnalité que vous voulez proposer par le biais d’un produit dans l’application, créez une offre et ajoutez-la à votre application.
 
-> **Important**&nbsp;&nbsp;You must add all the in-app products that you want to present to your customers to your app before you submit it to the Store. If you want to add new in-app products later, you must update your app and re-submit a new version.
+> **Important**&nbsp;&nbsp;Vous devez ajouter dans l’application tous les produits in-app que vous voulez proposer à vos clients avant de la soumettre au Windows&nbsp;Store. Pour ajouter ultérieurement de nouveaux produits dans l’application, vous devez mettre à jour votre application et en soumettre une nouvelle version.
 
-1.  **Create an in-app offer token**
+1.  **Création d’un jeton d’offre dans l’application**
 
-    You identify each in-app product in your app by a token. This token is a string that you define and use in your app and in the Store to identify a specific in-app product. Give it a unique (to your app) and meaningful name so that you can quickly identify the correct feature it represents while you are coding. Here are some examples of names:
+    Identifiez chaque produit dans l’application, via un jeton. Ce jeton est une chaîne que vous définissez et utilisez dans votre application, ainsi que dans le Windows Store, pour identifier un produit spécifique dans l’application. Donnez à votre jeton un nom unique et évocateur (dans l’application) afin de pouvoir rapidement identifier la fonctionnalité qu’il représente, lors de l’écriture du code. Voici quelques exemples de noms :
 
-    -   "SpaceMissionLevel4"
+    -   « SpaceMissionLevel4 »
 
-    -   "ContosoCloudSave"
+    -   « ContosoCloudSave »
 
-    -   "RainbowThemePack"
+    -   «&nbsp;RainbowThemePack&nbsp;»
 
-2.  **Code the feature in a conditional block**
+2.  **Codage de la fonctionnalité dans un bloc conditionnel**
 
-    You must put the code for each feature that is associated with an in-app product in a conditional block that tests to see if the customer has a license to use that feature.
+    Vous devez placer dans un bloc conditionnel le code de chaque fonctionnalité associée à un produit dans l’application. Ce bloc vérifie si le client possède une licence lui permettant d’utiliser cette fonctionnalité.
 
-    Here's an example that shows how you can code a product feature named **featureName** in a license-specific conditional block. The string, **featureName**, is the token that uniquely identifies this product within the app and is also used to identify it in the Store.
+    Voici un exemple indiquant comment vous pouvez coder une fonctionnalité de produit nommée **featureName** dans le bloc conditionnel propre à une licence. La chaîne **featureName** correspond au jeton qui identifie ce produit de manière unique dans l’application et dans le Windows&nbsp;Store.
 
     > [!div class="tabbedCodeSnippets"]
     [!code-cs[EnableInAppPurchases](./code/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs#CodeFeature)]
 
-3.  **Add the purchase UI for this feature**
+3.  **Ajout de l’interface utilisateur d’achat pour cette fonctionnalité**
 
-    Your app must also provide a way for your customers to purchase the product or feature offered by the in-app product. They can't purchase them through the Store in the same way they purchased the full app.
+    Votre application doit également fournir à vos clients un moyen d’acheter le composant ou la fonctionnalité proposés par le produit dans l’application. En effet, ils ne peuvent pas les acheter par l’intermédiaire du Windows Store, de la même façon qu’ils ont acheté l’application complète.
 
-    Here's how to test to see if your customer already owns an in-app product and, if they don't, displays the purchase dialog so they can buy it. Replace the comment "show the purchase dialog" with your custom code for the purchase dialog (such as a page with a friendly "Buy this app!" button).
+    Voici comment vérifier si votre client possède déjà un produit dans l’application et, si tel n’est pas le cas, comment afficher la boîte de dialogue d’achat lui permettant de l’acheter. Remplacez le commentaire «&nbsp;Afficher la boîte de dialogue d’achat&nbsp;» par votre code personnalisé pour la boîte de dialogue d’achat (par exemple, une page présentant un bouton «&nbsp;Acheter cette application&nbsp;» convivial).
 
     > [!div class="tabbedCodeSnippets"]
     [!code-cs[EnableInAppPurchases](./code/InAppPurchasesAndLicenses/cs/EnableInAppPurchases.cs#BuyFeature)]
 
-## <a name="step-3-change-the-test-code-to-the-final-calls"></a>Step 3: Change the test code to the final calls
+## <a name="step-3-change-the-test-code-to-the-final-calls"></a>Étape&nbsp;3&nbsp;: Modification du code de test jusqu’aux appels finaux
 
-This is an easy step: change every reference to [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) to [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765) in your app's code. You don't need to provide the WindowsStoreProxy.xml file any longer, so remove it from your app's path (although you may want to save it for reference when you configure the in-app offer in the next step).
+C’est simple&nbsp;: remplacez chaque référence à [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) par une référence à [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765) dans le code de votre application. Le fichier WindowsStoreProxy.xml n’est plus nécessaire. Vous pouvez le supprimer du chemin d’accès de votre application (mais vous pouvez l’enregistrer à titre de référence pour la configuration de l’offre in-app à l’étape suivante).
 
-## <a name="step-4-configure-the-in-app-product-offer-in-the-store"></a>Step 4: Configure the in-app product offer in the Store
+## <a name="step-4-configure-the-in-app-product-offer-in-the-store"></a>Étape 4 : Configuration dans le Windows Store de l’offre de produit in-app
 
-In the Dev Center dashboard, define the product ID, type, price, and other properties for your in-app product. Make sure that you configure it identically to the configuration you set in WindowsStoreProxy.xml when testing. For more information, see [IAP submissions](https://msdn.microsoft.com/library/windows/apps/mt148551).
+Dans le tableau de bord du Centre de développement, définissez l’ID de produit, le type, le prix et les autres propriétés pour votre produit in-app. Veillez à effectuer les différents réglages en respectant la configuration définie dans le fichier WindowsStoreProxy.xml pendant le test. Pour plus d’informations, voir l’article [Soumissions de PIA](https://msdn.microsoft.com/library/windows/apps/mt148551).
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Notes
 
-If you're interested in providing your customers with consumable in-app product options (items that can be purchased, used up, and then purchased again if desired), move on to the [Enable consumable in-app product purchases](enable-consumable-in-app-product-purchases.md) topic.
+Si vous envisagez de fournir à vos clients des options de produits consommables intégrés à l’application (éléments pouvant être achetés, utilisés, puis rachetés si nécessaire), passez à la rubrique [Activer les achats de produits consommables intégrés à l’application](enable-consumable-in-app-product-purchases.md).
 
-If you need to use receipts to verify that user made an in-app purchase, be sure to review [Use receipts to verify product purchases](use-receipts-to-verify-product-purchases.md).
+Si vous avez besoin de reçus pour vérifier que l’utilisateur a bien effectué un achat in-app, consultez la rubrique [Utiliser des reçus pour vérifier les achats de produits](use-receipts-to-verify-product-purchases.md).
 
-## <a name="related-topics"></a>Related topics
+## <a name="related-topics"></a>Rubriques connexes
 
 
-* [Enable consumable in-app product purchases](enable-consumable-in-app-product-purchases.md)
-* [Manage a large catalog of in-app products](manage-a-large-catalog-of-in-app-products.md)
-* [Use receipts to verify product purchases](use-receipts-to-verify-product-purchases.md)
-* [Store sample (demonstrates trials and in-app purchases)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
+* [Activer les achats de produits consommables in-app](enable-consumable-in-app-product-purchases.md)
+* [Gérer un grand catalogue de produits in-app](manage-a-large-catalog-of-in-app-products.md)
+* [Utiliser des reçus pour vérifier les achats de produits](use-receipts-to-verify-product-purchases.md)
+* [Exemple du Windows Store (montre des versions d’évaluation et des achats in-app)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
 
 
 

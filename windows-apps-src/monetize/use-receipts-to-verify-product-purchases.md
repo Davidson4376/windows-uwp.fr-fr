@@ -1,33 +1,33 @@
 ---
 author: mcleanbyron
 ms.assetid: E322DFFE-8EEC-499D-87BC-EDA5CFC27551
-description: Each Windows Store transaction that results in a successful product purchase can optionally return a transaction receipt.
-title: Use receipts to verify product purchases
+description: "Chaque transaction du Windows Store qui se traduit par un achat de produit peut éventuellement renvoyer un reçu de transaction."
+title: "Utiliser des reçus pour vérifier les achats de produits"
 translationtype: Human Translation
 ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
 ms.openlocfilehash: 55631d364ca6f2d76d214eca6d00fbdd969c0e15
 
 ---
 
-# <a name="use-receipts-to-verify-product-purchases"></a>Use receipts to verify product purchases
+# <a name="use-receipts-to-verify-product-purchases"></a>Utiliser des reçus pour vérifier les achats de produits
 
 
->**Note**&nbsp;&nbsp;This article shows how to use members of the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace to get and validate a receipt for an in-app purchase. If you are using the alternative [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace for in-app purchases (introduced in Windows 10, version 1607), this namespace does not provide an API for getting purchase receipts for in-app purchases. However, you can use a REST method in the Windows Store collection API to get data for a purchase transaction. For more information, see [Receipts for in-app purchases](in-app-purchases-and-trials.md#receipts).
+>**Remarque**&nbsp;&nbsp;Cet article montre comment utiliser des membres de l’espace de noms [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) pour obtenir et valider un reçu pour un achat in-app. Si vous utilisez l’espace de noms alternatif [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) pour les achats in-app (nouveauté de Windows&nbsp;10 version&nbsp;1607), cet espace de noms ne fournit pas une API permettant d’obtenir des reçus d’achat in-app. Toutefois, vous pouvez utiliser une méthode REST dans l’API de collection du Windows&nbsp;Store pour obtenir les données d’une transaction d’achat. Pour plus d’informations, consultez [Reçus d’achats in-app](in-app-purchases-and-trials.md#receipts).
 
 
-Each Windows Store transaction that results in a successful product purchase can optionally return a transaction receipt. This receipt provides information about the listed product and monetary cost to the customer.
+Chaque transaction du Windows&nbsp;Store qui se traduit par un achat de produit peut éventuellement renvoyer un reçu de transaction. Ce reçu fournit des informations sur le produit et le coût monétaire pour le client.
 
-Having access to this information supports scenarios where your app needs to verify that a user purchased your app, or has made add-on (also called in-app product or IAP) purchases from the Windows Store. For example, imagine a game that offers downloaded content. If the user who purchased the game content wants to play it on a different device, you need to verify that the user already owns the content. Here's how.
+L’accès à ces informations permet à votre application de vérifier qu’un utilisateur a acheté votre application ou des modules complémentaires (également appelés produits in-app) dans le Windows&nbsp;Store. Par exemple, imaginez un jeu qui propose du contenu téléchargé. Si l’utilisateur qui a acheté le contenu du jeu veut jouer à ce jeu sur un autre appareil, vous devez vérifier qu’il a bien acheté le contenu. Voici comment procéder.
 
-## <a name="requesting-a-receipt"></a>Requesting a receipt
+## <a name="requesting-a-receipt"></a>Demande d’un reçu
 
 
-The **Windows.ApplicationModel.Store** namespace supports several ways to get a receipt:
+L’espace de noms **Windows.ApplicationModel.Store** prend en charge plusieurs modes pour obtenir un reçu&nbsp;:
 
-* When you make a purchase by using [CurrentApp.RequestAppPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/hh967813) or [CurrentApp.RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/hh779780.aspx) (or one of the other overloads of this method), the return value contains the receipt.
-* You can call the [CurrentApp.GetAppReceiptAsync](https://msdn.microsoft.com/library/windows/apps/hh967811) method to retrieve the current receipt info for your app and any add-ons in your app.
+* Lorsque vous effectuez un achat à l’aide de [CurrentApp.RequestAppPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/hh967813) ou [CurrentApp.RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/hh779780.aspx) (ou l’une des autres surcharges de cette méthode), la valeur de retour contient le reçu.
+* Vous pouvez appeler la méthode [CurrentApp.GetAppReceiptAsync](https://msdn.microsoft.com/library/windows/apps/hh967811) pour récupérer les informations du reçu de votre application et des modules complémentaires de votre application.
 
-An app receipt looks something like this.
+Un reçu d’application ressemble à ceci.
 
 > [!div class="tabbedCodeSnippets"]
 ```xml
@@ -51,7 +51,7 @@ An app receipt looks something like this.
 </Receipt>
 ```
 
-A product receipt looks like this.
+Un reçu de produit ressemble à ceci.
 
 > [!div class="tabbedCodeSnippets"]
 ```xml
@@ -74,69 +74,69 @@ A product receipt looks like this.
 </Receipt>
 ```
 
-You can use either of these receipt examples to test your validation code. For more information about the contents of the receipt, see the [element and attribute descriptions](#receipt-descriptions).
+Vous pouvez utiliser ces exemples de reçu pour tester votre code de validation. Pour plus d’informations sur le contenu du reçu, consultez la [description des éléments et des attributs](#receipt-descriptions).
 
-## <a name="validating-a-receipt"></a>Validating a receipt
+## <a name="validating-a-receipt"></a>Validation d’un reçu
 
-To validate a receipt's authenticity, you need your back-end system (a web service or something similar) to check the receipt's signature using the public certificate. To get this certificate, use the URL ```https://go.microsoft.com/fwlink/p/?linkid=246509&cid=CertificateId```, where ```CertificateId``` is the **CertificateId** value in the receipt.
+Pour valider l’authenticité d’un reçu, vous avez besoin de votre système dorsal (service web ou autre) afin d’en vérifier la signature à l’aide du certificat public. Pour obtenir ce certificat, utilisez l’URL ```https://go.microsoft.com/fwlink/p/?linkid=246509&cid=CertificateId```, où ```CertificateId``` est la valeur **CertificateId** du reçu.
 
-Here's an example of that validation process. This code runs in a .NET Framework console application that includes a reference to the **System.Security** assembly.
+Voici un exemple de ce processus de validation. Ce code s’exécute dans une application de console .NET Framework, qui inclut une référence à l’assemblage **System.Security**.
 
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[ReceiptVerificationSample](./code/ReceiptVerificationSample/cs/Program.cs#ReceiptVerificationSample)]
 
 <span id="receipt-descriptions" />
-## <a name="element-and-attribute-descriptions-for-a-receipt"></a>Element and attribute descriptions for a receipt
+## <a name="element-and-attribute-descriptions-for-a-receipt"></a>Description des éléments et des attributs d’un reçu
 
-This section describes the elements and attributes in a receipt.
+Cette section décrit les éléments et attributs d’un reçu.
 
-### <a name="receipt-element"></a>Receipt element
+### <a name="receipt-element"></a>Élément d’un reçu
 
-The root element of this file is the **Receipt** element, which contains information about app and in-app purchases. This element contains the following child elements.
+L’élément racine de ce fichier est l’élément **Receipt**, qui contient des informations sur l’application et les achats in-app. Cet élément contient les éléments enfants suivants&nbsp;:
 
-|  Element  |  Required  |  Quantity  |  Description   |
+|  Élément  |  Requis  |  Quantité  |  Description   |
 |-------------|------------|--------|--------|
-|  [AppReceipt](#appreceipt)  |    No        |  0 or 1  |  Contains purchase information for the current app.            |
-|  [ProductReceipt](#productreceipt)  |     No       |  0 or more    |   Contains information about an in-app purchase for the current app.     |
-|  Signature  |      Yes      |  1   |   This element is a standard [XML-DSIG construct](http://go.microsoft.com/fwlink/p/?linkid=251093). It contains a **SignatureValue** element, which contains the signature you can use to validate the receipt, and a **SignedInfo** element.      |
+|  [AppReceipt](#appreceipt)  |    Non        |  0 ou 1  |  Contient des informations sur l’achat pour l’application actuelle.            |
+|  [ProductReceipt](#productreceipt)  |     Non       |  0 ou davantage    |   Contient des informations sur un achat in-app pour l’application actuelle.     |
+|  Signature  |      Oui      |  1   |   Cet élément est une construction [XML-DSIG](http://go.microsoft.com/fwlink/p/?linkid=251093) standard. Il contient un élément **SignatureValue** qui contient la signature que vous pouvez utiliser pour valider le reçu, un élément **SignedInfo**.      |
 
-**Receipt** has the following attributes.
+L’élément **Receipt** a les attributs suivants&nbsp;:
 
-|  Attribute  |  Description   |
+|  Attribut  |  Description   |
 |-------------|-------------------|
-|  **Version**  |    The version number of the receipt.            |
-|  **CertificateId**  |     The certificate thumbprint used to sign the receipt.          |
-|  **ReceiptDate**  |    Date the receipt was signed and downloaded.           |  
-|  **ReceiptDeviceId**  |   Identifies the device used to request this receipt.         |  |
+|  **Version**  |    Numéro de version du reçu.            |
+|  **CertificateId**  |     Empreinte de certificat utilisée pour signer le reçu.          |
+|  **ReceiptDate**  |    Date de signature et de téléchargement du reçu.           |  
+|  **ReceiptDeviceId**  |   Identifie l’appareil utilisé pour demander ce reçu.         |  |
 
 <span id="appreceipt" />
-### <a name="appreceipt-element"></a>AppReceipt element
+### <a name="appreceipt-element"></a>Élément AppReceipt
 
-This element contains purchase information for the current app.
+Cet élément contient des informations sur l’achat pour l’application actuelle.
 
-**AppReceipt** has the following attributes.
+L’élément **AppReceipt** a les attributs suivants&nbsp;:
 
-|  Attribute  |  Description   |
+|  Attribut  |  Description   |
 |-------------|-------------------|
-|  **Id**  |    Identifies the purchase.           |
-|  **AppId**  |     The Package Family Name value that the OS uses for the app.           |
-|  **LicenseType**  |    **Full**, if the user purchased the full version of the app. **Trial**, if the user downloaded a trial version of the app.           |  
-|  **PurchaseDate**  |    Date when the app was acquired.          |  |
+|  **Id**  |    Identifie l’achat.           |
+|  **AppId**  |     Nom de la famille de packages, utilisé par le système d’exploitation pour l’application.           |
+|  **LicenseType**  |    **Full**, si l’utilisateur a acheté la version complète de l’application. **Trial**, si l’utilisateur a téléchargé une version d’évaluation de l’application.           |  
+|  **PurchaseDate**  |    Date d’acquisition de l’application.          |  |
 
 <span id="productreceipt" />
-### <a name="productreceipt-element"></a>ProductReceipt element
+### <a name="productreceipt-element"></a>Élément ProductReceipt
 
-This element contains information about an in-app purchase for the current app.
+Cet élément contient des informations sur un achat in-app pour l’application actuelle.
 
-**ProductReceipt** has the following attributes.
+L’élément **ProductReceipt** a les attributs suivants&nbsp;:
 
-|  Attribute  |  Description   |
+|  Attribut  |  Description   |
 |-------------|-------------------|
-|  **Id**  |    Identifies the purchase.           |
-|  **AppId**  |     Identifies the app through which the user made the purchase.           |
-|  **ProductId**  |     Identifies the product purchased.           |
-|  **ProductType**  |    Determines the product type. Currently only supports a value of **Durable**.          |  
-|  **PurchaseDate**  |    Date when the purchase occurred.          |  |
+|  **Id**  |    Identifie l’achat.           |
+|  **AppId**  |     Identifie l’application avec laquelle l’utilisateur a effectué l’achat.           |
+|  **ProductId**  |     Identifie le produit acheté.           |
+|  **ProductType**  |    Détermine le type de produit. Actuellement, ne prend en charge que la valeur **Durable**.          |  
+|  **PurchaseDate**  |    Date à laquelle l’achat a eu lieu.          |  |
 
  
 

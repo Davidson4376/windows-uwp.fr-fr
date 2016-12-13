@@ -1,29 +1,29 @@
 ---
 author: laurenhughes
 ms.assetid: 3A404CC0-A997-45C8-B2E8-44745539759D
-title: File access permissions
-description: Apps can access certain file system locations by default. Apps can also access additional locations through the file picker, or by declaring capabilities.
+title: "Autorisations d’accès aux fichiers"
+description: "Les applications peuvent accéder à certains emplacements du système de fichiers par défaut. Les applications peuvent également accéder à des emplacements supplémentaires par le biais du sélecteur de fichiers, ou en déclarant des fonctionnalités."
 translationtype: Human Translation
 ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
 ms.openlocfilehash: d6cb8bd32766157b1edf886621bdc605ca160db5
 
 ---
-# <a name="file-access-permissions"></a>File access permissions
+# <a name="file-access-permissions"></a>Autorisations d’accès aux fichiers
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows&nbsp;10. Pour les articles sur Windows&nbsp;8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-Apps can access certain file system locations by default. Apps can also access additional locations through the file picker, or by declaring capabilities.
+Les applications peuvent accéder à certains emplacements du système de fichiers par défaut. Les applications peuvent également accéder à des emplacements supplémentaires par le biais du sélecteur de fichiers ou en déclarant des fonctionnalités.
 
-## <a name="the-locations-that-all-apps-can-access"></a>The locations that all apps can access
+## <a name="the-locations-that-all-apps-can-access"></a>Emplacements accessibles à toutes les applications
 
-When you create a new app, you can access the following file system locations by default:
+Lorsque vous créez une application, vous pouvez accéder par défaut aux emplacements suivants du système de fichiers :
 
--   **Application install directory**. The folder where your app is installed on the user’s system.
+-   **Répertoire d’installation de l’application**. Dossier dans lequel votre application est installée sur le système de l’utilisateur.
 
-    There are two primary ways to access files and folders in your app’s install directory:
+    Il existe deux manières principales d’accéder à des fichiers et des dossiers dans le répertoire d’installation de votre application :
 
-    1.  You can retrieve a [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) that represents your app's install directory, like this:
+    1.  Vous pouvez récupérer une classe [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) qui représente le répertoire d’installation de votre application, comme suit :
         > [!div class="tabbedCodeSnippets"]
         ```csharp
         Windows.Storage.StorageFolder installedLocation = Windows.ApplicationModel.Package.Current.InstalledLocation;
@@ -32,9 +32,9 @@ When you create a new app, you can access the following file system locations by
         var installDirectory = Windows.ApplicationModel.Package.current.installedLocation;
         ```
 
-       You can then access files and folders in the directory using [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) methods. In the example, this **StorageFolder** is stored in the `installDirectory` variable. You can learn more about working with your app package and install directory by downloading the [App package information sample](http://go.microsoft.com/fwlink/p/?linkid=231526) for Windows 8.1 and re-using its source code in your Windows 10 app.
+       Vous pouvez accéder aux fichiers et dossiers du répertoire à l’aide des méthodes [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230). Dans l’exemple, cette classe **StorageFolder** est stockée dans la variable `installDirectory`. Pour en savoir plus sur l’utilisation de votre package d’application et du répertoire d’installation, téléchargez l’[exemple d’informations de package d’application](http://go.microsoft.com/fwlink/p/?linkid=231526) pour Windows&nbsp;8.1 et réutilisez son code source dans votre application Windows&nbsp;10.
 
-    2.  You can retrieve a file directly from your app's install directory by using an app URI, like this:
+    2.  Vous pouvez récupérer un fichier directement à partir du répertoire d’installation de votre application en utilisant un URI d’application, comme suit&nbsp;:
         > [!div class="tabbedCodeSnippets"]
         ```csharp
         using Windows.Storage;            
@@ -48,21 +48,21 @@ When you create a new app, you can access the following file system locations by
         );
         ```
 
-        When [**GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) completes, it returns a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) that represents the *file.txt* file in the app's install directory (`file` in the example).
+        Une fois la méthode [**GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) exécutée, elle renvoie une classe [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) qui représente le fichier *file.txt* dans le répertoire d’installation de l’application (`file`, dans cet exemple).
 
-        The "ms-appx:///" prefix in the URI refers to the app's install directory. You can learn more about using app URIs in [How to use URIs to reference content](https://msdn.microsoft.com/library/windows/apps/hh781215).
+        Le préfixe «&nbsp;ms-appx:///&nbsp;» de l’URI fait référence au répertoire d’installation de l’application. Pour en savoir plus sur l’utilisation des URI d’application, voir [Comment utiliser des URI pour référencer du contenu](https://msdn.microsoft.com/library/windows/apps/hh781215).
 
-    In addition, and unlike other locations, you can also access files in your app install directory by using some [Win32 and COM for Universal Windows Platform (UWP) apps](https://msdn.microsoft.com/library/windows/apps/br205757) and some [C/C++ Standard Library functions from Microsoft Visual Studio](http://msdn.microsoft.com/library/hh875057.aspx).
+    En outre, contrairement à d’autres emplacements, vous pouvez également accéder à des fichiers dans le répertoire d’installation de votre application à l’aide de certaines [API Win32 et COM pour les applications de plateforme Windows universelle (UWP)](https://msdn.microsoft.com/library/windows/apps/br205757) et de certaines [fonctions de la bibliothèque C/C++ standard à partir de Microsoft Visual&nbsp;Studio](http://msdn.microsoft.com/library/hh875057.aspx).
 
-    The app's install directory is a read-only location. You can’t gain access to the install directory through the file picker.
+    Le répertoire d’installation de l’application est un emplacement en lecture seule. Vous ne pouvez pas accéder à ce répertoire d’installation par le biais du sélecteur de fichiers.
 
--   **Application data locations.** The folders where your app can store data. These folders (local, roaming and temporary) are created when your app is installed.
+-   **Emplacements des données d’application** Les dossiers dans lesquels votre application peut stocker des données. Ces dossiers (local, roaming et temporary) sont créés lors de l’installation de votre application.
 
-    There are two primary ways to access files and folders from your app’s data locations:
+    Il existe deux manières principales d’accéder à des fichiers et des dossiers dans les emplacements des données de votre application :
 
-    1.  Use [**ApplicationData**](https://msdn.microsoft.com/library/windows/apps/br241587) properties to retrieve an app data folder.
+    1.  Utilisez les propriétés [**ApplicationData**](https://msdn.microsoft.com/library/windows/apps/br241587) pour récupérer un dossier de données de l’application.
 
-        For example, you can use [**ApplicationData**](https://msdn.microsoft.com/library/windows/apps/br241587).[**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621) to retrieve a [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) that represents your app's local folder like this:
+        Par exemple, vous pouvez utiliser [**ApplicationData**](https://msdn.microsoft.com/library/windows/apps/br241587).[**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621) pour récupérer une classe [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) qui représente le dossier local de votre application, comme suit :
         > [!div class="tabbedCodeSnippets"]
         ```csharp
         using Windows.Storage;
@@ -72,11 +72,11 @@ When you create a new app, you can access the following file system locations by
         var localFolder = Windows.Storage.ApplicationData.current.localFolder;
         ```
 
-        If you want to access your app's roaming or temporary folder, use the [**RoamingFolder**](https://msdn.microsoft.com/library/windows/apps/br241623) or [**TemporaryFolder**](https://msdn.microsoft.com/library/windows/apps/br241629) property instead.
+        Si vous souhaitez accéder au dossier roaming ou temporary de votre application, utilisez la propriété [**RoamingFolder**](https://msdn.microsoft.com/library/windows/apps/br241623) ou [**TemporaryFolder**](https://msdn.microsoft.com/library/windows/apps/br241629) à la place.
 
-        After you retrieve a [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) that represents an app data location, you can access files and folders in that location by using **StorageFolder** methods. In the example, these **StorageFolder** objects are stored in the `localFolder` variable. You can learn more about using app data locations in [Managing application data](https://msdn.microsoft.com/library/windows/apps/hh465109), and by downloading the [Application data sample](http://go.microsoft.com/fwlink/p/?linkid=231478) for Windows 8.1 and re-using its source code in your Windows 10 app.
+        Une fois que vous avez récupéré une classe [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) qui représente un emplacement des données de l’application, vous pouvez accéder aux fichiers et dossiers situés dans cet emplacement en utilisant les méthodes **StorageFolder**. Dans cet exemple, ces objets **StorageFolder** sont stockés dans la variable `localFolder`. Pour en savoir plus sur l’utilisation des emplacements des données de l’application, consultez [Gestion des données d’application](https://msdn.microsoft.com/library/windows/apps/hh465109), puis téléchargez l’[exemple de données d’application](http://go.microsoft.com/fwlink/p/?linkid=231478) pour Windows&nbsp;8.1 et réutilisez son code source dans votre application Windows&nbsp;10.
 
-    2.  For example, you can retrieve a file directly from your app's local folder by using an app URI, like this:
+    2.  Par exemple, vous pouvez récupérer un fichier directement à partir du dossier local de votre application en utilisant un URI d’application, comme suit&nbsp;:
         > [!div class="tabbedCodeSnippets"]
         ```csharp
         using Windows.Storage;
@@ -90,29 +90,29 @@ When you create a new app, you can access the following file system locations by
         );
         ```
 
-        When [**GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) completes, it returns a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) that represents the *file.txt* file in the app's local folder (`file` in the example).
+        Une fois la méthode [**GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) exécutée, elle renvoie une classe [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) qui représente le fichier *file.txt* dans le dossier local de l’application (`file`, dans cet exemple).
 
-        The "ms-appdata:///local/" prefix in the URI refers to the app's local folder. To access files in the app's roaming or temporary folders use "ms-appdata:///roaming/" or "ms-appdata:///temporary/" instead. You can learn more about using app URIs in [How to load file resources](https://msdn.microsoft.com/library/windows/apps/hh781229).
+        Le préfixe «&nbsp;ms-appdata:///local/&nbsp;» de l’URI fait référence au dossier local de l’application. Pour accéder à des fichiers dans les dossiers roaming ou temporary, utilisez «&nbsp;ms-appdata:///roaming/&nbsp;» ou «&nbsp;ms-appdata:///temporary/&nbsp;» à la place. Pour en savoir plus sur l’utilisation des URI d’application, voir [Comment charger des ressources de fichiers](https://msdn.microsoft.com/library/windows/apps/hh781229).
 
-    In addition, and unlike other locations, you can also access files in your app data locations by using some [Win32 and COM for UWP apps](https://msdn.microsoft.com/library/windows/apps/br205757) and some C/C++ Standard Library functions from Visual Studio.
+    En outre, contrairement à d’autres emplacements, vous pouvez également accéder à des fichiers dans les emplacements de données de votre application à l’aide de certaines [API Win32 et COM pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/br205757) et de certaines fonctions de la bibliothèque C/C++ standard à partir de Microsoft Visual&nbsp;Studio.
 
-    You can’t access the local, roaming, or temporary folders through the file picker.
+    Vous ne pouvez pas accéder aux dossiers local, roaming ni temporary par le biais du sélecteur de fichiers.
 
--   **Removable devices.** Additionally, your app can access some of the files on connected devices by default. This is an option if your app uses the [AutoPlay extension](https://msdn.microsoft.com/library/windows/apps/xaml/hh464906.aspx#autoplay) to launch automatically when users connect a device, like a camera or USB thumb drive, to their system. The files your app can access are limited to specific file types that are specified via File Type Association declarations in your app manifest.
+-   **Périphériques amovibles** De plus, votre application peut accéder par défaut à certains fichiers sur les périphériques connectés. Cela est une option si votre application utilise l’[extension de lecture automatique](https://msdn.microsoft.com/library/windows/apps/xaml/hh464906.aspx#autoplay) pour se lancer automatiquement lorsque l’utilisateur connecte un appareil, tel qu’un appareil photo ou une clé&nbsp;USB, à son système. Les fichiers auxquels votre application peut accéder sont limités aux types de fichiers spécifiques qui sont spécifiés par le biais de déclarations d’associations de types de fichiers dans le manifeste de votre application.
 
-    Of course, you can also gain access to files and folders on a removable device by calling the file picker (using [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) and [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881)) and letting the user pick files and folders for your app to access. Learn how to use the file picker in [Open files and folders with a picker](quickstart-using-file-and-folder-pickers.md).
+    Bien entendu, vous pouvez également accéder à des fichiers et dossiers sur un périphérique amovible en appelant le sélecteur de fichiers (en utilisant [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) et [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881)) et en laissant l’utilisateur sélectionner les fichiers et dossiers auxquels votre application pourra accéder. Découvrez comment utiliser le sélecteur de fichiers dans [Ouvrir des fichiers et dossiers à l’aide d’un sélecteur](quickstart-using-file-and-folder-pickers.md).
 
-    **Note**  For more info about accessing an SD card from a mobile app, see [Access the SD card](access-the-sd-card.md).
+    **Remarque** Pour plus d’informations sur l’accès à une carte&nbsp;SD à partir d’une application mobile, voir [Accéder à la carte&nbsp;SD](access-the-sd-card.md).
 
      
 
-## <a name="locations-windows-store-apps-can-access"></a>Locations Windows Store apps can access
+## <a name="locations-windows-store-apps-can-access"></a>Emplacements auxquels les applications du Windows Store peuvent accéder
 
--   **User’s Downloads folder.** The folder where downloaded files are saved by default.
+-   **Dossier Téléchargements de l’utilisateur** Dossier dans lequel les fichiers téléchargés sont enregistrés par défaut.
 
-    By default, your app can only access files and folders in the user's Downloads folder that your app created. However, you can gain access to files and folders in the user's Downloads folder by calling a file picker ([**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) or [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881)) so that users can navigate and pick files or folders for your app to access.
+    Par défaut, votre application peut seulement accéder aux fichiers et dossiers situés dans le dossier Téléchargements de l’utilisateur que votre application a créé. Toutefois, vous pouvez accéder aux fichiers et dossiers situés dans le dossier Téléchargements de l’utilisateur en appelant un sélecteur de fichiers ([**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) ou [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881)) afin que les utilisateurs puissent parcourir et sélectionner les fichiers ou les dossiers auxquels votre application pourra accéder.
 
-    -   You can create a file in the user's Downloads folder like this:
+    -   Vous pouvez créer un fichier dans le dossier Téléchargements de l’utilisateur comme suit :
         > [!div class="tabbedCodeSnippets"]
         ```csharp
         using Windows.Storage;
@@ -126,9 +126,9 @@ When you create a new app, you can access the following file system locations by
         );
         ```
 
-        [**DownloadsFolder**](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh996761) is overloaded so that you can specify what the system should do if there is already an existing file in the Downloads folder that has the same name. When these methods complete, they return a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) that represents the file that was created. This file is called `newFile` in the example.
+        [**DownloadsFolder**](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh996761) est surchargé afin que vous puissiez spécifier ce que le système doit faire si le dossier Téléchargements contient déjà un fichier du même nom. Une fois ces méthodes exécutées, elles renvoient une classe [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) qui représente le fichier qui a été créé. Ce fichier est appelé `newFile` dans cet exemple.
 
-    -   You can create a subfolder in the user's Downloads folder like this:
+    -   Vous pouvez créer un sous-dossier dans le dossier Téléchargements de l’utilisateur comme suit&nbsp;:
         > [!div class="tabbedCodeSnippets"]
         ```csharp
         using Windows.Storage;
@@ -142,26 +142,26 @@ When you create a new app, you can access the following file system locations by
         );
         ```
 
-        [**DownloadsFolder**](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFolderAsync**](https://msdn.microsoft.com/library/windows/apps/hh996763) is overloaded so that you can specify what the system should do if there is already an existing subfolder in the Downloads folder that has the same name. When these methods complete, they return a [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) that represents the subfolder that was created. This file is called `newFolder` in the example.
+        [**DownloadsFolder**](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFolderAsync**](https://msdn.microsoft.com/library/windows/apps/hh996763) est surchargé afin que vous puissiez spécifier ce que le système doit faire si le dossier Téléchargements contient déjà un sous-dossier du même nom. Une fois ces méthodes exécutées, elles renvoient une classe [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) qui représente le sous-dossier qui a été créé. Ce fichier est appelé `newFolder` dans cet exemple.
 
-    If you create a file or folder in the Downloads folder, we recommend that you add that item to your app's [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) so that your app can readily access that item in the future.
+    Si vous créez un fichier ou un dossier dans le dossier Téléchargements, nous vous recommandons d’ajouter cet élément à la propriété [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) de votre application afin qu’elle puisse accéder à cet élément dans le futur.
 
-## <a name="accessing-additional-locations"></a>Accessing additional locations
+## <a name="accessing-additional-locations"></a>Accès à des emplacements supplémentaires
 
-In addition to the default locations, an app can access additional files and folders by declaring capabilities in the app manifest (see [App capability declarations](https://msdn.microsoft.com/library/windows/apps/mt270968)), or by calling a file picker to let the user pick files and folders for the app to access (see [Open files and folders with a picker](quickstart-using-file-and-folder-pickers.md)).
+Outre les emplacements par défaut, une application peut accéder à des fichiers et dossiers supplémentaires en déclarant des fonctionnalités dans le manifeste de l’application (voir [Déclarations des fonctionnalités d’application](https://msdn.microsoft.com/library/windows/apps/mt270968)) ou en appelant un sélecteur de fichiers pour permettre à l’utilisateur de sélectionner les fichiers et les dossiers auxquels l’application pourra accéder (voir [Ouvrir des fichiers et dossiers à l’aide d’un sélecteur](quickstart-using-file-and-folder-pickers.md)).
 
-The following table lists additional locations that you can access by declaring a capability (or capabilities) and using the associated [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) API:
+Le tableau qui suit dresse une liste d’emplacements supplémentaires auxquels vous pouvez accéder en déclarant une ou plusieurs fonctionnalités et en vous servant de l’API [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) associée&nbsp;:
 
-| Location | Capability | Windows.Storage API |
+| Emplacement | Fonctionnalité | API Windows.Storage |
 |----------|------------|---------------------|
-| Documents | DocumentsLibrary <br><br>Note: You must add File Type Associations to your app manifest that declare specific file types that your app can access in this location. <br><br>Use this capability if your app:<br>- Facilitates cross-platform offline access to specific OneDrive content using valid OneDrive URLs or Resource IDs<br>- Saves open files to the user’s OneDrive automatically while offline | [KnownFolders.DocumentsLibrary](https://msdn.microsoft.com/library/windows/apps/br227152) |
-| Music     | MusicLibrary <br>Also see [Files and folders in the Music, Pictures, and Videos libraries](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md). | [KnownFolders.MusicLibrary](https://msdn.microsoft.com/library/windows/apps/br227155) |    
-| Pictures  | PicturesLibrary<br> Also see [Files and folders in the Music, Pictures, and Videos libraries](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md). | [KnownFolders.PicturesLibrary](https://msdn.microsoft.com/library/windows/apps/br227156) |  
-| Videos    | VideosLibrary<br>Also see [Files and folders in the Music, Pictures, and Videos libraries](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md). | [KnownFolders.VideosLibrary](https://msdn.microsoft.com/library/windows/apps/br227159) |   
-| Removable devices  | RemovableDevices <br><br>Note  You must add File Type Associations to your app manifest that declare specific file types that your app can access in this location. <br><br>Also see [Access the SD card](access-the-sd-card.md). | [KnownFolders.RemovableDevices](https://msdn.microsoft.com/library/windows/apps/br227158) |  
-| Homegroup libraries  | At least one of the following capabilities is needed. <br>- MusicLibrary <br>- PicturesLibrary <br>- VideosLibrary | [KnownFolders.HomeGroup](https://msdn.microsoft.com/library/windows/apps/br227153) |      
-| Media server devices (DLNA) | At least one of the following capabilities is needed. <br>- MusicLibrary <br>- PicturesLibrary <br>- VideosLibrary | [KnownFolders.MediaServerDevices](https://msdn.microsoft.com/library/windows/apps/br227154) |
-| Universal Naming Convention (UNC) folders | A combination of the following capabilities is needed. <br><br>The home and work networks capability: <br>- PrivateNetworkClientServer <br><br>And at least one internet and public networks capability: <br>- InternetClient <br>- InternetClientServer <br><br>And, if applicable, the domain credentials capability:<br>- EnterpriseAuthentication <br><br>Note: You must add File Type Associations to your app manifest that declare specific file types that your app can access in this location. | Retrieve a folder using: <br>[StorageFolder.GetFolderFromPathAsync](https://msdn.microsoft.com/library/windows/apps/br227278) <br><br>Retrieve a file using: <br>[StorageFile.GetFileFromPathAsync](https://msdn.microsoft.com/library/windows/apps/br227206) |
+| Documents | DocumentsLibrary <br><br>Remarque&nbsp;: vous devez ajouter des associations de types de fichiers dans le manifeste de l’application pour déclarer les types de fichiers spécifiques auxquels votre application pourra accéder dans cet emplacement. <br><br>Utilisez cette fonctionnalité si votre application&nbsp;:<br>- facilite l’accès hors connexion interplateforme à du contenu OneDrive spécifique à l’aide d’URL ou d’ID de ressource OneDrive valides&nbsp;;<br>- enregistre automatiquement les fichiers ouverts sur le OneDrive de l’utilisateur en mode hors connexion. | [KnownFolders.DocumentsLibrary](https://msdn.microsoft.com/library/windows/apps/br227152) |
+| Musique     | MusicLibrary <br>Voir également [Fichiers et dossiers dans les bibliothèques de musique, d’images et de vidéos](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md). | [KnownFolders.MusicLibrary](https://msdn.microsoft.com/library/windows/apps/br227155) |    
+| Images  | PicturesLibrary<br> Voir également [Fichiers et dossiers dans les bibliothèques de musique, d’images et de vidéos](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md). | [KnownFolders.PicturesLibrary](https://msdn.microsoft.com/library/windows/apps/br227156) |  
+| Vidéos    | VideosLibrary<br>Voir également [Fichiers et dossiers dans les bibliothèques de musique, d’images et de vidéos](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md). | [KnownFolders.VideosLibrary](https://msdn.microsoft.com/library/windows/apps/br227159) |   
+| Périphériques amovibles  | RemovableDevices <br><br>Remarque&nbsp;: vous devez ajouter des associations de types de fichiers dans le manifeste de l’application pour déclarer les types de fichiers spécifiques auxquels votre application pourra accéder dans cet emplacement. <br><br>Voir également [Accéder à la carte&nbsp;SD](access-the-sd-card.md). | [KnownFolders.RemovableDevices](https://msdn.microsoft.com/library/windows/apps/br227158) |  
+| Bibliothèques du groupe résidentiel  | Au moins une des fonctionnalités suivantes est requise. <br>- MusicLibrary <br>- PicturesLibrary <br>- VideosLibrary | [KnownFolders.HomeGroup](https://msdn.microsoft.com/library/windows/apps/br227153) |      
+| Appareils de serveur multimédia (DLNA) | Au moins une des fonctionnalités suivantes est requise. <br>- MusicLibrary <br>- PicturesLibrary <br>- VideosLibrary | [KnownFolders.MediaServerDevices](https://msdn.microsoft.com/library/windows/apps/br227154) |
+| Dossiers UNC (Universal Naming Convention) | Une combinaison des fonctionnalités suivantes est requise. <br><br>Fonctionnalité des réseaux domestiques et d’entreprise&nbsp;: <br>- PrivateNetworkClientServer <br><br>Et au moins une fonctionnalité de réseaux Internet et publics&nbsp;: <br>- InternetClient <br>- InternetClientServer <br><br>Et, le cas échéant, la fonctionnalité des informations d’identification de domaine&nbsp;:<br>- EnterpriseAuthentication <br><br>Remarque&nbsp;: vous devez ajouter des associations de types de fichiers dans le manifeste de l’application pour déclarer les types de fichiers spécifiques auxquels votre application pourra accéder dans cet emplacement. | Récupérez un dossier en utilisant&nbsp;: <br>[StorageFolder.GetFolderFromPathAsync](https://msdn.microsoft.com/library/windows/apps/br227278) <br><br>Récupérez un fichier en utilisant&nbsp;: <br>[StorageFile.GetFileFromPathAsync](https://msdn.microsoft.com/library/windows/apps/br227206) |
 
 
 

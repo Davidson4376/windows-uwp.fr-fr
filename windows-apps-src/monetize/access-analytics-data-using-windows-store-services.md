@@ -1,51 +1,51 @@
 ---
 author: mcleanbyron
 ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
-description: Use the Windows Store analytics API to programmatically retrieve analytics data for apps that are registered to your or your organization&quot;&quot;s Windows Dev Center account.
-title: Access analytics data using Windows Store services
+description: "Utilisez l’API d’analyse du Windows&nbsp;Store pour récupérer par programmation les données d’analyse pour les applications qui sont enregistrées sur votre compte personnel ou compte d’organisation du Centre de développement Windows."
+title: "Accéder aux données d’analyse à l’aide des services du Windows Store"
 translationtype: Human Translation
 ms.sourcegitcommit: dcf4c263ff3fd8df846d1d5620ba31a9da7a5e6c
 ms.openlocfilehash: 5ae5dcbe6684aa34a1428760cd5c7e9b8f599ebf
 
 ---
 
-# <a name="access-analytics-data-using-windows-store-services"></a>Access analytics data using Windows Store services
+# <a name="access-analytics-data-using-windows-store-services"></a>Accéder aux données d’analyse à l’aide des services du Windows Store
 
-Use the *Windows Store analytics API* to programmatically retrieve analytics data for apps that are registered to your or your organization's Windows Dev Center account. This API enables you to retrieve data for app and add-on (also known as in-app product or IAP) acquisitions, errors, app ratings and reviews. This API uses Azure Active Directory (Azure AD) to authenticate the calls from your app or service.
+Utilisez l’*API d’analyse du Windows Store* pour récupérer par programmation les données d’analyse des applications inscrites dans votre compte, ou celui de votre organisation, du Centre de développement Windows. Cette API permet de récupérer des données sur les acquisitions, les erreurs, les évaluations et les avis sur les applications et les extensions (également connues sous le nom PIA, produit in-app). Cette API utilise Azure Active Directory (Azure AD) pour authentifier les appels en provenance de votre application ou service.
 
-The following steps describe the end-to-end process:
+Les étapes suivantes décrivent le processus de bout en bout&nbsp;:
 
-1.  Make sure that you have completed all the [prerequisites](#prerequisites).
-2.  Before you call a method in the Windows Store analytics API, [obtain an Azure AD access token](#obtain-an-azure-ad-access-token). After you obtain a token, you have 60 minutes to use this token in calls to the Windows Store analytics API before the token expires. After the token expires, you can generate a new token.
-3.  [Call the Windows Store analytics API](#call-the-windows-store-analytics-api).
+1.  Vérifiez que vous avez rempli toutes les [conditions préalables](#prerequisites).
+2.  Avant d’appeler une méthode dans l’API d’analyse du Windows Store, [procurez-vous un jeton d’accès Azure AD](#obtain-an-azure-ad-access-token). Une fois le jeton obtenu, vous avez 60&nbsp;minutes pour l’utiliser dans les appels à l’API d’analyse du Windows Store avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en générer un nouveau.
+3.  [Appelez l’API d’analyse du Windows Store](#call-the-windows-store-analytics-api).
 
 <span id="prerequisites" />
-## <a name="step-1-complete-prerequisites-for-using-the-windows-store-analytics-api"></a>Step 1: Complete prerequisites for using the Windows Store analytics API
+## <a name="step-1-complete-prerequisites-for-using-the-windows-store-analytics-api"></a>Étape&nbsp;: Remplir les conditions préalables à l’utilisation de l’API d’analyse du Windows Store
 
-Before you start writing code to call the Windows Store analytics API, make sure that you have completed the following prerequisites.
+Avant d’écrire le code d’appel de l’API d’analyse du Windows Store, vérifiez que vous remplissez bien les conditions préalables suivantes.
 
-* You (or your organization) must have an Azure AD directory and you must have [Global administrator](http://go.microsoft.com/fwlink/?LinkId=746654) permission for the directory. If you already use Office 365 or other business services from Microsoft, you already have Azure AD directory. Otherwise, you can [create a new Azure AD in Dev Center](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users) for no additional charge.
+* Vous (ou votre organisation) devez disposer d’un annuaire Azure AD et d’une autorisation [Administrateur global](http://go.microsoft.com/fwlink/?LinkId=746654) pour l’annuaire. Si vous utilisez déjà Office&nbsp;365 ou d’autres services professionnels de Microsoft, vous disposez déjà d’un annuaire Azure AD. Dans le cas contraire, vous pouvez [créer un annuaire Azure AD dans le Centre de développement](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users) sans frais supplémentaires.
 
-* You must associate an Azure AD application with your Dev Center account, retrieve the tenant ID and client ID for the application and generate a key. The Azure AD application represents the app or service from which you want to call the Windows Store analytics API. You need the tenant ID, client ID and key to obtain an Azure AD access token that you pass to the API.
+* Vous devez associer une application Azure AD à votre compte du Centre de développement, récupérer l’ID de locataire et l’ID client pour l’application et générer une clé. L’application Azure AD est l’application ou le service à partir duquel vous allez appeler l’API d’analyse du Windows Store. Vous avez besoin de l’ID de locataire, de l’ID client et de la clé pour obtenir le jeton d’accès Azure AD à transmettre à l’API.
 
-  >**Note**&nbsp;&nbsp;You only need to perform this task one time. After you have the tenant ID, client ID and key, you can reuse them any time you need to create a new Azure AD access token.
+  >**Remarque**&nbsp;&nbsp;Vous n’avez besoin d’effectuer cette tâche qu’une seule fois. Une fois que vous avez l’ID de locataire, l’ID client et la clé à disposition, vous pouvez les réutiliser chaque fois que vous avez besoin de créer un nouveau jeton d’accès Azure AD.
 
-To associate an Azure AD application with your Dev Center account and retrieve the required values:
+Pour associer une application Azure AD à votre compte du Centre de développement Windows et récupérer les valeurs nécessaires&nbsp;:
 
-1.  In Dev Center, go to your **Account settings**, click **Manage users**, and associate your organization's Dev Center account with your organization's Azure AD directory. For detailed instructions, see [Manage account users](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users).
+1.  Dans le Centre de développement, accédez à vos **Paramètres du compte**, cliquez sur **Gérer les utilisateurs**, puis associez le compte du Centre de développement de votre organisation à son annuaire Azure AD. Pour obtenir des instructions détaillées, voir [Gérer les utilisateurs de comptes](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users).
 
-2.  In the **Manage users** page, click **Add Azure AD applications**, add the Azure AD application that represents the app or service that you will use to access analytics data for your Dev Center account, and assign it the **Manager** role. If this application already exists in your Azure AD directory, you can select it on the **Add Azure AD applications** page to add it to your Dev Center account. Otherwise, you can create a new Azure AD application on the **Add Azure AD applications** page. For more information, see [Add and manage Azure AD applications](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications).
+2.  Dans la page **Gérer les utilisateurs**, cliquez sur **Ajouter des applications Azure&nbsp;AD**, ajoutez l’application Azure&nbsp;AD qui représente l’application ou le service que vous allez utiliser pour accéder aux données d’analyse de votre compte du Centre de développement, puis affectez-lui le rôle **Gestionnaire**. Si cette application existe déjà dans votre annuaire Azure&nbsp;AD, vous pouvez la sélectionner dans la page **Ajouter des applications Azure AD** pour l’ajouter à votre compte du Centre de développement. Sinon, vous pouvez créer une application Azure AD dans la page **Ajouter des applications Azure AD**. Pour plus d’informations, voir [Ajouter et gérer des applications Azure AD](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications).
 
-3.  Return to the **Manage users** page, click the name of your Azure AD application to go to the application settings, and copy down the **Tenant ID** and **Client ID** values.
+3.  Revenez à la page **Gérer les utilisateurs**, cliquez sur le nom de votre application Azure AD pour accéder aux paramètres de l’application, puis notez les valeurs des champs **ID de locataire** et **ID client**.
 
-4. Click **Add new key**. On the following screen, copy down the **Key** value. You won't be able to access this info again after you leave this page. For more information, see the information about managing keys in [Add and manage Azure AD applications](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications).
+4. Cliquez sur **Ajouter une clé**. Dans l’écran suivant, notez la valeur du champ **Clé**. Vous ne pourrez plus accéder à ces informations une fois que vous aurez quitté cette page. Pour en savoir plus, consultez les informations sur la gestion des clés dans l’article [Ajouter et gérer des applications Azure AD](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications).
 
 <span id="obtain-an-azure-ad-access-token" />
-## <a name="step-2-obtain-an-azure-ad-access-token"></a>Step 2: Obtain an Azure AD access token
+## <a name="step-2-obtain-an-azure-ad-access-token"></a>Étape&nbsp;2&nbsp;: Obtenir un jeton d’accès Azure AD
 
-Before you call any of the methods in the Windows Store analytics API, you must first obtain an Azure AD access token that you pass to the **Authorization** header of each method in the API. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can refresh the token so you can continue to use it in further calls to the API.
+Avant d’appeler l’une des méthodes dans l’API d’analyse du Windows Store, vous devez d’abord obtenir un jeton d’accès Azure AD pour le passer à l’en-tête **Autorisation** de chaque méthode de l’API. Après avoir obtenu un jeton d’accès, vous disposez de 60&nbsp;minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez l’actualiser pour pouvoir continuer à l’utiliser dans d’autres appels à l’API.
 
-To obtain the access token, follow the instructions in [Service to Service Calls Using Client Credentials](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/) to send an HTTP POST to the ```https://login.microsoftonline.com/<tenant_id>/oauth2/token``` endpoint. Here is a sample request.
+Pour obtenir le jeton d’accès, suivez les instructions présentées dans l’article [Appels de service à service à l’aide des informations d’identification du client](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/) pour envoyer une requête HTTP POST au point de terminaison ```https://login.microsoftonline.com/<tenant_id>/oauth2/token```. Voici un exemple de requête.
 
 ```
 POST https://login.microsoftonline.com/<your_tenant_id>/oauth2/token HTTP/1.1
@@ -58,29 +58,29 @@ grant_type=client_credentials
 &resource=https://manage.devcenter.microsoft.com
 ```
 
-For the *tenant\_id*, *client\_id* and *client\_secret* parameters, specify the tenant ID, client ID and the key for your application that you retrieved from Dev Center in the previous section. For the *resource* parameter, you must specify the ```https://manage.devcenter.microsoft.com``` URI.
+Pour les paramètres *tenant\_id*, *client\_id* et *client\_secret*, spécifiez l’ID de locataire, l’ID client et la clé pour votre application que vous avez récupérés à partir du Centre de développement à l’étape précédente. Pour le paramètre *resource*, vous devez spécifier l’URI ```https://manage.devcenter.microsoft.com```.
 
-After your access token expires, you can refresh it by following the instructions [here](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens).
+Une fois votre jeton d’accès arrivé à expiration, vous pouvez l’actualiser en suivant les instructions fournies [ici](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens).
 
 <span id="call-the-windows-store-analytics-api" />
-## <a name="step-3-call-the-windows-store-analytics-api"></a>Step 3: Call the Windows Store analytics API
+## <a name="step-3-call-the-windows-store-analytics-api"></a>Étape&nbsp;3&nbsp;: Appeler l’API d’analyse du Windows Store
 
-After you have an Azure AD access token, you are ready to call the Windows Store analytics API. For information about the syntax of each method, see the following articles. You must pass the access token to the **Authorization** header of each method.
+Une fois que vous disposez d’un jeton d’accès Azure AD, vous pouvez appeler l’API d’analyse du Windows Store. Pour plus d’informations sur la syntaxe de chacune de ces méthodes, voir les articles suivants. Vous devez transmettre le jeton d’accès à l’en-tête **Authorization** de chaque méthode.
 
-* [Get app acquisitions](get-app-acquisitions.md)
-* [Get add-on acquisitions](get-in-app-acquisitions.md)
-* [Get error reporting data](get-error-reporting-data.md)
-* [Get details for an error in your app](get-details-for-an-error-in-your-app.md)
-* [Get the stack trace for an error in your app](get-the-stack-trace-for-an-error-in-your-app.md)
-* [Get app ratings](get-app-ratings.md)
-* [Get app reviews](get-app-reviews.md)
-* [Get ad performance data](get-ad-performance-data.md)
-* [Get ad campaign performance data](get-ad-campaign-performance-data.md)
+* [Obtenir des acquisitions d’applications](get-app-acquisitions.md)
+* [Obtenir des acquisitions d’extensions](get-in-app-acquisitions.md)
+* [Obtenir les données de rapport d’erreurs](get-error-reporting-data.md)
+* [Obtenir les informations sur une erreur de votre application](get-details-for-an-error-in-your-app.md)
+* [Obtenir la trace de pile concernant une erreur dans votre application](get-the-stack-trace-for-an-error-in-your-app.md)
+* [Obtenir les classifications des applications](get-app-ratings.md)
+* [Obtenir les avis sur les applications](get-app-reviews.md)
+* [Obtenir les données relatives aux performances publicitaires](get-ad-performance-data.md)
+* [Obtenir les données relatives aux performances de la campagne publicitaire](get-ad-campaign-performance-data.md)
 
-## <a name="code-example"></a>Code example
+## <a name="code-example"></a>Exemple de code
 
 
-The following code example demonstrates how to obtain an Azure AD access token and call the Windows Store analytics API from a C# console app. To use this code example, assign the *tenantId*, *clientId*, *clientSecret*, and *appID* variables to the appropriate values for your scenario. This example requires the [Json.NET package](http://www.newtonsoft.com/json) from Newtonsoft to deserialize the JSON data returned by the Windows Store analytics API.
+L’exemple de code suivant montre comment obtenir un jeton d’accès Azure&nbsp;AD et appeler l’API d’analyse du Windows&nbsp;Store à partir d’une application de console C#. Pour utiliser cet exemple de code, affectez les variables *tenantId*, *clientId*, *clientSecret*, et *appID* aux valeurs appropriées pour votre scénario. Cet exemple requiert le [package Json.NET](http://www.newtonsoft.com/json) de Newtonsoft afin de désérialiser les données JSON renvoyées par l’API d’analyse du Windows Store.
 
 ```CSharp
 using Newtonsoft.Json;
@@ -206,10 +206,10 @@ namespace TestAnalyticsAPI
 }
 ```
 
-## <a name="error-responses"></a>Error responses
+## <a name="error-responses"></a>Réponses d’erreur
 
 
-The Windows Store analytics API returns error responses in a JSON object that contains error codes and messages. The following example demonstrates an error response caused by an invalid parameter.
+L’API d’analyse du Windows Store renvoie les réponses d’erreur dans un objet JSON qui contient des messages et des codes d’erreur. L’exemple suivant montre une réponse d’erreur causée par un paramètre non valide.
 
 ```json
 {
@@ -230,17 +230,17 @@ The Windows Store analytics API returns error responses in a JSON object that co
 }
 ```
 
-## <a name="related-topics"></a>Related topics
+## <a name="related-topics"></a>Rubriques connexes
 
-* [Get app acquisitions](get-app-acquisitions.md)
-* [Get add-on acquisitions](get-in-app-acquisitions.md)
-* [Get error reporting data](get-error-reporting-data.md)
-* [Get details for an error in your app](get-details-for-an-error-in-your-app.md)
-* [Get the stack trace for an error in your app](get-the-stack-trace-for-an-error-in-your-app.md)
-* [Get app ratings](get-app-ratings.md)
-* [Get app reviews](get-app-reviews.md)
-* [Get ad performance data](get-ad-performance-data.md)
-* [Get ad campaign performance data](get-ad-campaign-performance-data.md)
+* [Obtenir des acquisitions d’applications](get-app-acquisitions.md)
+* [Obtenir des acquisitions d’extensions](get-in-app-acquisitions.md)
+* [Obtenir les données de rapport d’erreurs](get-error-reporting-data.md)
+* [Obtenir les informations sur une erreur de votre application](get-details-for-an-error-in-your-app.md)
+* [Obtenir la trace de pile concernant une erreur dans votre application](get-the-stack-trace-for-an-error-in-your-app.md)
+* [Obtenir les classifications des applications](get-app-ratings.md)
+* [Obtenir les avis sur les applications](get-app-reviews.md)
+* [Obtenir les données relatives aux performances publicitaires](get-ad-performance-data.md)
+* [Obtenir les données relatives aux performances de la campagne publicitaire](get-ad-campaign-performance-data.md)
  
 
 

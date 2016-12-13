@@ -1,225 +1,225 @@
 ---
 author: GrantMeStrength
 ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
-title: Create a Hello, world app (XAML)
-description: This tutorial teaches you how to use Extensible Application Markup Language (XAML) with C# to create a simple Hello, world app that targets the Universal Windows Platform (UWP) on Windows 10.
+title: "Créer une application «&nbsp;Hello World&nbsp;» (XAML)"
+description: "Ce didacticiel vous apprend à utiliser le langage XAML (Extensible Application Markup Language) avec C# pour créer une application «&nbsp;Hello World&nbsp;» simple ciblant la plateforme Windows universelle (UWP) sur Windows&nbsp;10."
 translationtype: Human Translation
 ms.sourcegitcommit: 7e76c9abd4157c22b38d79b178f5f07827d336ca
 ms.openlocfilehash: e928b4bb116ad98ffe7c225ac1ef2306e56a13ea
 
 ---
 
-# <a name="create-a-hello-world-app-xaml"></a>Create a "Hello, world" app (XAML)
+# <a name="create-a-hello-world-app-xaml"></a>Créer une application «&nbsp;Hello World&nbsp;» (XAML)
 
-This tutorial teaches you how to use XAML and C# to create a simple "Hello, world" app for the Universal Windows Platform (UWP) on Windows 10. With a single project in Microsoft Visual Studio, you can build an app that runs on any Windows 10 device.
+Ce didacticiel vous explique comment utiliser XAML et C# pour créer une simple application «&nbsp;Hello World&nbsp;» pour la plateforme Windows universelle (UWP) sur Windows&nbsp;10. Dans Microsoft Visual Studio, un seul projet vous permet de générer une application qui s’exécute sur n’importe quel appareil Windows&nbsp;10.
 
-Here you'll learn how to:
+Vous allez apprendre à effectuer les opérations suivantes&nbsp;:
 
--   Create a new **Visual Studio 2015** project that targets **Windows 10** and the **UWP**.
--   Write XAML to change the UI on your start page.
--   Run the project on the local desktop and on the phone emulator in Visual Studio.
--   Use a SpeechSynthesizer to make the app talk when you press a button.
+-   créer un projet **Visual Studio&nbsp;2015** qui cible **Windows&nbsp;10** et la **plateforme Windows universelle (UWP)**&nbsp;;
+-   écrire du code XAML pour modifier l’interface utilisateur de votre page de démarrage&nbsp;;
+-   exécuter le projet sur l’ordinateur local et sur l’émulateur de téléphone dans Visual Studio&nbsp;;
+-   utilisez un objet SpeechSynthesizer pour faire parler l’application quand vous appuyez sur un bouton.
 
-## <a name="before-you-start"></a>Before you start...
+## <a name="before-you-start"></a>Avant de commencer...
 
--   [What's a Universal Windows app](whats-a-uwp.md)?
--   [What's new in Windows 10](https://dev.windows.com/whats-new-windows-10-dev-preview)?
--   To complete this tutorial, you need Windows 10 and Visual Studio 2015. [Get set up](get-set-up.md).
--   We also assume you're using the default window layout in Visual Studio. If you change the default layout, you can reset it in the **Window** menu by using the **Reset Window Layout** command.
+-   [Qu’est-ce qu’une application Windows universelle&nbsp;?](whats-a-uwp.md)
+-   [Nouveautés de Windows&nbsp;10](https://dev.windows.com/whats-new-windows-10-dev-preview)
+-   Pour suivre ce didacticiel, vous avez besoin de Windows&nbsp;10 et de Visual Studio&nbsp;2015. [Se préparer](get-set-up.md).
+-   Nous partons également du principe que vous utilisez la disposition de fenêtre par défaut de Visual Studio. Si vous modifiez la disposition par défaut, vous pouvez la réinitialiser dans le menu **Fenêtre** en choisissant la commande **Rétablir la disposition de fenêtre**.
 
 
-## <a name="if-you-would-rather-watch-a-video"></a>If you would rather watch a video...
+## <a name="if-you-would-rather-watch-a-video"></a>Si vous préférez visionner une vidéo...
 
 <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Writing-Your-First-Windows-10-App/player" width="640" height="360" allowFullScreen frameBorder="0"></iframe>
 
-If you prefer a visual approach over a step-by-step guide, this video covers the same material but with a nice soundtrack.
+Si vous préférez une approche visuelle plutôt qu’un guide pas à pas, cette vidéo aborde les mêmes sujets avec en prime une bande son séduisante.
 
-## <a name="step-1-create-a-new-project-in-visual-studio"></a>Step 1: Create a new project in Visual Studio.
+## <a name="step-1-create-a-new-project-in-visual-studio"></a>Étape&nbsp;1&nbsp;: Créer un projet dans Visual Studio
 
-1.  Launch Visual Studio 2015.
+1.  Lancez Visual Studio&nbsp;2015.
 
-2.  From the **File** menu, select **New > Project...** to open the *New Project* dialog.
+2.  Dans le menu **Fichier**, sélectionnez **Nouveau &gt; Projet...** pour ouvrir la boîte de dialogue *Nouveau projet*.
 
-3.  From the list of templates on the left, open **Installed > Templates > Visual C# > Windows**, and then choose **Universal** to see the list of UWP project templates.
+3.  Dans la liste de modèles de gauche, ouvrez **Installé &gt; Modèles &gt; Visual C# &gt; Windows**, puis choisissez **Universel** pour afficher la liste des modèles de projet UWP.
 
-    (If you don't see any Universal templates, you might not have Visual Studio 2015, or may be missing the components for creating UWP apps. Please see [Get set up](get-set-up.md) to fix your tools.)
+    (Si aucun modèle universel n’apparaît, c’est que vous n’avez pas Visual Studio&nbsp;2015 ou qu’il vous manque les composants permettant de créer des applications UWP. Voir [Préparation](get-set-up.md) pour réparer vos outils.)
 
-4.  Choose the **Blank App (Universal Windows)** template, and enter "HelloWorld" as the **Name**. Select **OK**.
+4.  Choisissez le modèle **Application vide (Windows universel)**, puis entrez «&nbsp;HelloWorld&nbsp;» comme **Nom**. Sélectionnez **OK**.
 
-    ![The new project window](images/win10-cs-01.png)
+    ![Fenêtre Nouveau projet](images/win10-cs-01.png)
 
-5.  The target version/minimum version dialog appears. The default settings are fine, so select **OK** to create the project.
+5.  La boîte de dialogue Version cible/Version minimale s’affiche. Les paramètres par défaut étant corrects, sélectionnez **OK** pour créer le projet.
 
-    ![The solution explorer window](images/win10-cs-02.png)
+    ![Fenêtre Explorateur de solutions](images/win10-cs-02.png)
 
-6.  When your new project opens, its files are displayed in the **Solution Explorer** pane on the right. You may need to choose the **Solution Explorer** tab instead of the **Properties** tab to see your files.
+6.  Votre nouveau projet s’ouvre en affichant ses fichiers dans le volet **Explorateur de solutions**, à droite. Vous devrez peut-être choisir l’onglet **Explorateur de solutions** à la place de l’onglet **Propriétés** pour voir vos fichiers.
 
-    ![The solution explorer window](images/win10-cs-03.png)
+    ![Fenêtre Explorateur de solutions](images/win10-cs-03.png)
 
-Although the **Blank App (Universal Window)** is a minimal template, it still contains a lot of files. These files are essential to all UWP apps using C#. Every project that you create in Visual Studio contains them.
+Même si le modèle **Application vide (Windows universel)** est dépouillé, il contient cependant de nombreux fichiers. Ces fichiers sont indispensables pour toutes les applications UWP en C#. Ils se trouvent dans tous les projets que vous créez dans Visual Studio.
 
 
-### <a name="whats-in-the-files"></a>What's in the files?
+### <a name="whats-in-the-files"></a>Que contiennent les fichiers&nbsp;?
 
-To view and edit a file in your project, double-click the file in the **Solution Explorer**. Expand a XAML file just like a folder to see its associated code file. XAML files open in a split view that shows both the design surface and the XAML editor.
+Pour afficher et modifier un fichier de votre projet, double-cliquez dessus dans l’**Explorateur de solutions**. Développez un fichier XAML à la manière d’un dossier pour afficher le fichier de code qui lui est associé. Les fichiers XAML s’ouvrent en mode Fractionné avec l’aire de conception et l’éditeur XAML tous deux affichés.
 > [!NOTE]
-> What is XAML? Extensible Application Markup Language (XAML) is the language used to define your app's user interface. It can be entered manually, or created using the Visual Studio design tools. A .xaml file has a .xaml.cs code-behind file which contains the logic. Together, the XAML and code-behind make a complete class. For more information, see [XAML overview](https://msdn.microsoft.com/library/windows/apps/Mt185595).
+> Qu’est-ce que le XAML&nbsp;? XAML (Extensible Application Markup Language) est le langage utilisé pour définir l’interface utilisateur de votre application. Vous pouvez entrer son code manuellement ou le créer avec les outils de conception Visual&nbsp;Studio. Un fichier .xaml s’accompagne d’un fichier code-behind .xaml.cs qui contient la logique. Ensemble, les fichiers XAML et code-behind forment une classe à part entière. Pour plus d’informations, voir [Vue d’ensemble du langage XAML](https://msdn.microsoft.com/library/windows/apps/Mt185595).
 
-*App.xaml and App.xaml.cs*
+*App.xaml et App.xaml.cs*
 
--   App.xaml is where you declare resources that are used across the app.
--   App.xaml.cs is the code-behind file for App.xaml. Like all code-behind pages, it contains a constructor that calls the `InitializeComponent` method. You don't write the `InitializeComponent` method. It's generated by Visual Studio, and its main purpose is to initialize the elements declared in the XAML file.
--   App.xaml.cs is the entry point for your app.
--   App.xaml.cs also contains methods to handle activation and suspension of the app.
+-   App.xaml est le fichier dans lequel vous déclarez les ressources utilisées dans l’application.
+-   App.xaml.cs est le fichier code-behind d’App.xaml. Comme toutes les pages code-behind, il contient un constructeur qui appelle la méthode `InitializeComponent`. Ce n’est pas vous qui écrivez la méthode `InitializeComponent`. Elle est générée par Visual Studio et vise essentiellement à initialiser les éléments déclarés dans le fichier XAML.
+-   App.xaml.cs est le point d’entrée de votre application.
+-   App.xaml.cs contient par ailleurs des méthodes destinées à gérer l’activation et la suspension de l’application.
 
 *MainPage.xaml*
 
--   MainPage.xaml is where you define the UI for your app. You can add elements directly using XAML markup, or you can use the design tools provided by Visual Studio.
--   MainPage.xaml.cs is the code-behind page for MainPage.xaml. It's where you add your app logic and event handlers.
--   Together these two files define a new class called `MainPage`, which inherits from [**Page**](https://msdn.microsoft.com/library/windows/apps/BR227503), in the `HelloWorld` namespace.
+-   MainPage.xaml est le fichier dans lequel vous définissez l’interface utilisateur de votre application. Vous pouvez y ajouter directement des éléments en utilisant du balisage XAML ou vous pouvez utiliser les outils de conception fournis avec Visual Studio.
+-   MainPage.xaml.cs est la page code-behind de MainPage.xaml. Cette page vous permet d’ajouter la logique de votre application et les gestionnaires d’événements.
+-   Ces deux fichiers définissent ensemble une nouvelle classe appelée `MainPage`, qui hérite de l’élément [**Page**](https://msdn.microsoft.com/library/windows/apps/BR227503), dans l’espace de noms `HelloWorld`.
 
 *Package.appxmanifest*
--   A manifest file that describes your app: its name, description, tile, start page, etc.
--   Includes a list of the files that your app contains.
+-   Fichier manifeste qui décrit votre application&nbsp;: nom, description, vignette, page de démarrage, etc..
+-   Comprend la liste des fichiers contenus dans votre application.
 
-*A set of logo images*
--   Assets/Square150x150Logo.scale-200.png represents your app in the start menu.
--   Assets/StoreLogo.png represents your app in the Windows Store.
--   Assets/SplashScreen.scale-200.png is the splash screen that appears when your app starts.
+*Ensemble d’images de logo*
+-   Assets/Square150x150Logo.scale-200.png représente votre application dans le menu Démarrer.
+-   Assets/StoreLogo.png représente votre application dans le Windows&nbsp;Store.
+-   Assets/SplashScreen.scale-200.png est l’écran de démarrage qui s’affiche quand votre application démarre.
 
-## <a name="step-2-adding-a-button"></a>Step 2: Adding a button
+## <a name="step-2-adding-a-button"></a>Étape&nbsp;2&nbsp;: Ajouter un bouton
 
-### <a name="using-the-designer-view"></a>Using the designer view
+### <a name="using-the-designer-view"></a>En utilisant le mode concepteur
 
-Let's add a button to our page. In this tutorial, you work with just a few of the files listed previously: App.xaml, MainPage.xaml, and MainPage.xaml.cs.
+Ajoutons un bouton à la page. Dans ce didacticiel, vous n’utiliserez qu’une partie des fichiers mentionnés précédemment&nbsp;: App.xaml, MainPage.xaml et MainPage.xaml.cs.
 
-1.  Double-click on **MainPage.xaml** to open it in the Design view.
+1.  Double-cliquez sur **MainPage.xaml** pour l’ouvrir en mode Création.
 
-    You'll notice there is a graphical view on the top part of the screen, and the XAML code view underneath. You can make changes to either, but for now we'll use the graphical view.
+    Vous remarquerez dans la partie supérieure de l’écran la présence d’un affichage graphique et en dessous celle d’un affichage de code XAML. Même si les deux peuvent être modifiés, nous n’utiliserons pour le moment que l’affichage graphique.
 
-    ![The solution explorer window](images/win10-cs-04.png)
+    ![Fenêtre Explorateur de solutions](images/win10-cs-04.png)
 
-2.  Click on the vertical **Toolbox** tab on the left to open the list of UI controls. (You can click the pin icon in its title bar to keep it visible.)
+2.  Cliquez sur l’onglet vertical **Boîte à outils** à gauche pour ouvrir la liste des contrôles d’interface utilisateur. (Vous pouvez cliquer sur l’épingle dans sa barre de titre pour qu’elle reste visible.)
 
-    ![The solution explorer window](images/win10-cs-05.png)
+    ![Fenêtre Explorateur de solutions](images/win10-cs-05.png)
 
-3.  Expand **Common XAML Controls**, and drag the **Button** out to the middle of the design canvas.
+3.  Développez **Contrôles XAML communs** et faites glisser le contrôle **Button** jusqu’au milieu de l’aire de conception.
 
-    ![The solution explorer window](images/win10-cs-06.png)
+    ![Fenêtre Explorateur de solutions](images/win10-cs-06.png)
 
-    If you look at the XAML code window, you'll see that the Button has been added there too:
+    Si vous regardez dans la fenêtre de code XAML, vous constaterez que le contrôle Button y a été aussi ajouté&nbsp;:
 
  ```XAML
 <Button x:name="button" Content="Button" HorizontalAlignment="Left" Margin = "152,293,0,0" VerticalAlignment="Top"/>
  ```
 
-4.  Change the button's text.
+4.  Modifiez le texte du bouton.
 
-    Click in the XAML code view, and change the Content from "Button" to "Hello, world!".
+    Cliquez dans l’affichage de code XAML et modifiez la valeur de Content en remplaçant «&nbsp;Button&nbsp;» par «&nbsp;Hello World&nbsp;!&nbsp;».
 
 ```XAML
 <Button x:name="button" Content="Hello, world!" HorizontalAlignment="Left" Margin = "152,293,0,0" VerticalAlignment="Top"/>
 ```
 
-Notice how the button displayed in the design canvas updates to display the new text.
+Le bouton figurant dans l’aire de conception est alors mis à jour pour présenter le nouveau texte.
 
-![The solution explorer window](images/win10-cs-07.png)
+![Fenêtre Explorateur de solutions](images/win10-cs-07.png)
 
-## <a name="step-3-start-the-app"></a>Step 3: Start the app
-
-
-At this point, you've created a very simple app. This is a good time to build, deploy, and launch your app and see what it looks like. You can debug your app on the local machine, in a simulator or emulator, or on a remote device. Here's the target device menu in Visual Studio.
-
-![Drop-down list of device targets for debugging your app](images/uap-debug.png)
-
-### <a name="start-the-app-on-a-desktop-device"></a>Start the app on a Desktop device
-
-By default, the app runs on the local machine. The target device menu provides several options for debugging your app on devices from the desktop device family.
-
--   **Simulator**
--   **Local Machine**
--   **Remote Machine**
-
-**To start debugging on the local machine**
-
-1.  In the target device menu (![Start debugging menu](images/startdebug-full.png)) on the **Standard** toolbar, make sure that **Local Machine** is selected. (It's the default selection.)
-2.  Click the **Start Debugging** button (![Start debugging button](images/startdebug-sm.png)) on the toolbar.
-
-   –or–
-
-   From the **Debug** menu, click **Start Debugging**.
-
-   –or–
-
-   Press F5.
-
-The app opens in a window, and a default splash screen appears first. The splash screen is defined by an image (SplashScreen.png) and a background color (specified in your app's manifest file).
-
-The splash screen disappears, and then your app appears. It looks like this.
-
-![Initial app screen](images/win10-cs-08.png)
-
-Press the Windows key to open the **Start** menu, then show all apps. Notice that deploying the app locally adds its tile to the **Start** menu. To run the app again later (not in debugging mode), tap or click its tile in the **Start** menu.
-
-It doesn't do much—yet—but congratulations, you've built your first UWP app!
-
-**To stop debugging**
-
-   Click the **Stop Debugging** button (![Stop debugging button](images/stopdebug.png)) in the toolbar.
-
-   –or–
-
-   From the **Debug** menu, click **Stop debugging**.
-
-   –or–
-
-   Close the app window.
-
-### <a name="start-the-app-on-a-mobile-device-emulator"></a>Start the app on a mobile device emulator
-
-Your app runs on any Windows 10 device, so let’s see how it looks on a Windows Phone.
-
-In addition to the options to debug on a desktop device, Visual Studio provides options for deploying and debugging your app on a physical mobile device connected to the computer, or on a mobile device emulator. You can choose among emulators for devices with different memory and display configurations.
-
--   **Device**
--   **Emulator <SDK version> WVGA 4 inch 512MB**
--   **Emulator <SDK version> WVGA 4 inch 1GB**
--   etc... (Various emulators in other configurations)
-
-(Don't see the emulators? See [Get set up](get-set-up.md) to make sure you have the Universal Windows App Development Tools installed.)
-
-**To start debugging on a mobile device emulator**
-
-1.  It's a good practice to test your app on a device with a small screen and limited memory, so in the target device menu (![Start debugging menu](images/startdebug-full.png)) on the **Standard** toolbar, pick **Emulator 10.0.14393.0 WVGA 4 inch 512MB**.
-
-2.  Click the **Start Debugging** button (![Start debugging button](images/startdebug-sm.png)) in the toolbar.
-
-   –or–
-
-   From the **Debug** menu, click **Start Debugging**.
-
-   –or–
-
-   Press F5.
-
-Visual Studio starts the selected emulator and then deploys and starts your app. This might take a little time the first time it starts up. On the mobile device emulator, the app looks like this.
-
-![Initial app screen on mobile device](images/win10-cs-09.png)
-
-If you have a Windows Phone running Windows 10, you can also connect it to the computer and deploy and run the app on it directly (although you will need to [enable developer mode](enable-your-device-for-development.md) first).
+## <a name="step-3-start-the-app"></a>Étape 3&nbsp;: Démarrer l’application
 
 
-## <a name="step-3-event-handlers"></a>Step 3: Event handlers
+À ce stade, vous avez créé une application très simple. Le moment est bien choisi pour générer, déployer et lancer votre application et voir à quoi elle ressemble. Vous pouvez déboguer votre application sur l’ordinateur local, dans un simulateur ou un émulateur, ou sur un appareil distant. Voici le menu des périphériques cibles dans Visual Studio.
 
-An "event handler" sounds complicated, but it's just another name for the code that is called when an event happens (such as the user clicking on your button).
+![Liste déroulante des périphériques cibles pour le débogage de votre application](images/uap-debug.png)
 
-1.  Stop the app from running, if you haven't already.
+### <a name="start-the-app-on-a-desktop-device"></a>Démarrer l’application sur un ordinateur de bureau
 
-2.  Double-click on the button control on the design canvas to make Visual Studio create an event handler for your button.
+Par défaut, l’application s’exécute sur l’ordinateur local. Le menu des périphériques cibles vous offre plusieurs options pour le débogage de votre application sur des périphériques de la famille des ordinateurs de bureau.
 
-  You can of course, create all the code manually too. Or you can click on the button to select it, and look in the **Properties** pane on the lower right. If you switch to **Events** (the little lightning bolt) you can add the name of your event handler.
+-   **Simulateur**
+-   **Ordinateur local**
+-   **Ordinateur distant**
 
-3.  Edit the event handler code in *MainPage.xaml.cs*, the code-behind page. This is where things get interesting. The default event handler looks like this:
+**Pour démarrer le débogage sur l’ordinateur local**
+
+1.  Dans le menu des appareils cibles (![Menu Démarrer le débogage](images/startdebug-full.png)) figurant sur la barre d’outils **Standard**, assurez-vous que l’option **Ordinateur local** est sélectionnée. (Il s’agit de la sélection par défaut.)
+2.  Cliquez sur le bouton **Démarrer le débogage** (![Bouton Démarrer le débogage](images/startdebug-sm.png)) de la barre d’outils.
+
+   –ou–
+
+   Dans le menu **Déboguer**, cliquez sur **Démarrer le débogage**.
+
+   –ou–
+
+   Appuyez sur F5.
+
+L’application s’ouvre dans une fenêtre, et un écran de démarrage par défaut s’affiche en premier. Cet écran est défini par une image (SplashScreen.png) et par une couleur d’arrière-plan (spécifiées dans le fichier manifeste de votre application).
+
+L’écran de démarrage disparaît pour céder la place à votre application. Cette dernière se présente comme suit.
+
+![Écran initial de l’application](images/win10-cs-08.png)
+
+Appuyez sur la touche Windows pour ouvrir le menu **Démarrer**, puis affichez toutes les applications. Notez que le déploiement de l’application entraîne l’ajout local de sa vignette au menu **Démarrer**. Pour exécuter de nouveau l’application à un moment ultérieur (pas en mode débogage), appuyez ou cliquez sur sa vignette dans le menu **Démarrer**.
+
+Félicitations&nbsp;! Vous venez de créer votre première application UWP, même si celle-ci ne propose pas (encore) beaucoup de fonctions.
+
+**Pour arrêter le débogage**
+
+   Cliquez sur le bouton **Arrêter le débogage** (![Bouton Arrêter le débogage](images/stopdebug.png)) dans la barre d’outils.
+
+   –ou–
+
+   Dans le menu **Déboguer**, cliquez sur **Arrêter le débogage**.
+
+   –ou–
+
+   Fermez la fenêtre de l’application.
+
+### <a name="start-the-app-on-a-mobile-device-emulator"></a>Démarrer l’application sur un émulateur d’appareil mobile
+
+Votre application s’exécute sur n’importe quel appareil Windows&nbsp;10. Examinons donc son aspect sur un Windows Phone.
+
+Outre les options de débogage sur un ordinateur de bureau, Visual Studio offre des options de déploiement et de débogage de votre application sur un appareil mobile physique connecté à l’ordinateur ou sur un émulateur d’appareil mobile. Vous pouvez choisir parmi plusieurs émulateurs d’appareil correspondant à différentes configurations de mémoire et d’affichage.
+
+-   **Appareil**
+-   **Émulateur <SDK version> WVGA 4&nbsp;pouces 512&nbsp;Mo**
+-   **Émulateur <SDK version> WVGA 4&nbsp;pouces 1&nbsp;Go**
+-   etc. (Divers émulateurs associés à d’autres configurations)
+
+(Vous ne voyez pas les émulateurs&nbsp;? Consultez [Préparation](get-set-up.md) pour vérifier que vous avez bien installé les outils de développement d’applications Windows universelles.)
+
+**Pour démarrer le débogage sur un émulateur d’appareil mobile**
+
+1.  En guise de bonne pratique, nous vous conseillons de tester votre application sur un appareil équipé d’un petit écran et d’une mémoire limitée. Pour cela, dans le menu de l’appareil cible (![menu Démarrer le débogage](images/startdebug-full.png)), dans la barre d’outils **Standard**, sélectionnez **Emulator 10.0.14393.0 WVGA 4&nbsp;pouces 512 Mo**.
+
+2.  Cliquez sur le bouton **Démarrer le débogage** (![Bouton Démarrer le débogage](images/startdebug-sm.png)) dans la barre d’outils.
+
+   –ou–
+
+   Dans le menu **Déboguer**, cliquez sur **Démarrer le débogage**.
+
+   –ou–
+
+   Appuyez sur F5.
+
+Visual Studio démarre l’émulateur sélectionné, puis déploie et démarre votre application. Cette opération peut prendre un peu de temps au premier démarrage de l’émulateur. Sur l’émulateur d’appareil mobile, l’application se présente comme suit.
+
+![Écran initial de l’application sur un appareil mobile](images/win10-cs-09.png)
+
+Si vous possédez un Windows Phone exécutant Windows&nbsp;10, vous pouvez le connecter à l’ordinateur pour y déployer l’application et l’exécuter directement (vous devez au préalable [activer le mode développeur](enable-your-device-for-development.md)).
+
+
+## <a name="step-3-event-handlers"></a>Étape&nbsp;3&nbsp;: Gestionnaires d’événements
+
+Si le terme «&nbsp;gestionnaire d’événements&nbsp;» vous paraît compliqué, il s’agit simplement d’un autre nom pour désigner le code qui est appelé quand un événement se produit (par exemple, quand l’utilisateur clique sur votre bouton).
+
+1.  Arrêtez l’exécution de l’application, si ce n’est déjà fait.
+
+2.  Double-cliquez sur le contrôle de bouton dans l’aire de conception pour que Visual Studio crée un gestionnaire d’événements pour votre bouton.
+
+  Bien entendu, vous pouvez créer l’intégralité du code manuellement. Vous pouvez aussi sélectionner le bouton en cliquant dessus et consulter le volet **Propriétés** en bas à droite. Si vous basculez dans **Événements** (le petit boulon clignotant), vous pouvez ajouter le nom de votre gestionnaire d’événements.
+
+3.  Modifiez le code du gestionnaire d’événements dans *MainPage.xaml.cs*, la page code-behind. C’est là où les choses deviennent intéressantes. Le gestionnaire d’événements par défaut se présente ceci&nbsp;:
 
 ```C#
 private void button_Click(object sender, RouteEventArgs e)
@@ -228,7 +228,7 @@ private void button_Click(object sender, RouteEventArgs e)
 }
 ```
 
-  Let's change it, so it looks like this:
+  Modifions-le de sorte qu’il se présente comme ceci&nbsp;:
 
 ```C#
 private async void button_Click(object sender, RoutedEventArgs e)
@@ -241,21 +241,21 @@ private async void button_Click(object sender, RoutedEventArgs e)
         }
 ```
 
-Make sure you include the **async** keyword as well, or you'll get an error when you try to run the app.
+Veillez aussi à inclure le mot clé **async** car à défaut, vous obtiendrez une erreur en essayant d’exécuter l’application.
 
-### <a name="what-did-we-just-do"></a>What did we just do?
+### <a name="what-did-we-just-do"></a>Que venons-nous de faire&nbsp;?
 
-This code uses some Windows APIs to create a speech synthesis object, and then gives it some text to say. (For more information on using SpeechSynthesis, see the [SpeechSynthesis namespace](https://msdn.microsoft.com/library/windows/apps/windows.media.speechsynthesis.aspx) docs.)
+Ce code utilise certaines API Windows pour créer un objet de synthèse vocale et lui donne du texte à prononcer. (Pour plus d’informations sur l’utilisation de SpeechSynthesis, voir la documentation [Espace de noms SpeechSynthesis](https://msdn.microsoft.com/library/windows/apps/windows.media.speechsynthesis.aspx).)
 
-When you run the app and click on the button, your computer (or phone) will literally say "Hello, World!".
-
-
-## <a name="summary"></a>Summary
+Quand vous exécutez l’application et que vous cliquez sur le bouton, votre ordinateur (ou téléphone) prononce «&nbsp;Hello World&nbsp;!&nbsp;».
 
 
-Congratulations, you've created your first app for Windows 10 and the UWP!
+## <a name="summary"></a>Récapitulatif
 
-To learn how to use XAML to lay out the controls your app will use, try the ([grid tutorial](../layout/grid-tutorial.md), or jump straight to the [next step](learn-more.md)?
+
+Félicitations&nbsp;! Vous venez de créer votre première application pour Windows&nbsp;10 et l’application UWP.
+
+Pour apprendre à utiliser XAML et mettre en place les contrôles utilisés par votre application, essayez le [didacticiel de grille](../layout/grid-tutorial.md) ou passez directement à la section [Étape suivante](learn-more.md).
 
 
 

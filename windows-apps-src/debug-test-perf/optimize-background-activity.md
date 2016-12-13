@@ -1,54 +1,54 @@
 ---
 author: PatrickFarley
 ms.assetid: 24351dad-2ee3-462a-ae78-2752bb3374c2
-title: Utilize battery-saving features
-description: Create UWP apps that work with the system to use background tasks in a battery-efficient way.
+title: "Utiliser des fonctionnalités d’économie d’énergie"
+description: "Créez des applications UWP qui fonctionnent avec le système pour utiliser des tâches en arrière-plan de manière économe en énergie."
 translationtype: Human Translation
 ms.sourcegitcommit: 73b19e54b863693aece045e5b653bc0583a676bb
 ms.openlocfilehash: 854ec43d075f8adc1f875d3b9e5e2d818434edb9
 
 ---
 
-# <a name="optimize-background-activity"></a>Optimize background activity
+# <a name="optimize-background-activity"></a>Optimiser l’activité en arrière-plan
 
-Universal Windows apps should perform consistently well across all device families. On battery-powered devices, power consumption is a critical factor in the user's overall experience with your app. All-day battery life is a desirable feature to every user, but it requires efficiency from all of the software installed on the device, including your own. 
+Les applications Windows universelles doivent fonctionner correctement sur toutes les familles d’appareils. Sur les appareils alimentés par batterie, la consommation d’énergie est un facteur critique dans l’expérience globale de l’utilisateur avec votre application. Une autonomie d’une journée est souhaitable pour les utilisateurs, mais elle nécessite une efficacité énergétique de tous les logiciels installés sur l’appareil, y compris du vôtre. 
 
-Background task behavior is arguably the greatest factor in the total energy cost of an app. A background task is any program activity that has been registered with the system to run without the app being open. See [Create and register an out-of-process background task](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-an-outofproc-background-task) for more.
+Le comportement des tâches en arrière-plan est sans doute le facteur le plus important dans le coût d’énergie total d’une application. Une tâche en arrière-plan correspond à une activité d’un programme exécutée par le système, lorsque l’application n’est pas ouverte. Pour plus d’informations, consultez [Créer et inscrire une tâche en arrière-plan hors processus](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-an-outofproc-background-task).
 
-## <a name="background-activity-allowance"></a>Background activity allowance
+## <a name="background-activity-allowance"></a>Allocation des activités en arrière-plan
 
-In Windows 10, version 1607, users can view their "Battery usage by app" in the **Battery** section of the Settings app. Here, they will see a list of apps and the percentage of battery life (out of the amount of battery life that has been used since the last charge) that each app has consumed. 
+Dans Windows&nbsp;10 version&nbsp;1607, l’utilisateur peut afficher l’«&nbsp;utilisation de la batterie par application&nbsp;» dans la section **Batterie** de l’application Paramètres. Là s’affichent une liste d’applications et le pourcentage de charge (par rapport au niveau d’autonomie depuis le dernier chargement) que chaque application a consommée. 
 
-![battery usage by app](images/battery-usage-by-app.png)
+![utilisation de la batterie par application](images/battery-usage-by-app.png)
 
-For UWP apps on this list, users have some control over how the system treats their background activity. Background activity can be specified as "Always allowed," "Managed by Windows" (the default setting), or "Never allowed" (more details on these below). Use the **BackgroundAccessStatus** enum value returned from the [**BackgroundExecutionManager.RequestAccessAsync()**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync.aspx) method to see what background activity allowance your app has.
+Pour les applications UWP de cette liste, les utilisateurs ont un certain contrôle sur le traitement de l’activité en arrière-plan par le système. L’activité en arrière-plan peut être spécifiée comme suit&nbsp;: «&nbsp;Toujours autorisé&nbsp;» «&nbsp;Gestion par Windows&nbsp;» (paramètre par défaut) ou «&nbsp;Jamais autorisé&nbsp;» (plus d’informations sur ci-dessous). Utilisez la valeur d’énumération **BackgroundAccessStatus** renvoyée par la méthode [**BackgroundExecutionManager.RequestAccessAsync()**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync.aspx) pour connaître les activités en arrière-plan autorisées par votre application.
 
-![background task permissions](images/background-task-permissions.png)
+![autorisations des tâches en arrière-plan](images/background-task-permissions.png)
 
-All this is to say that if your app doesn't implement responsible background activity management, the user may deny background permissions to your app altogether, which is not desirable for either party.
+Tout cela pour dire que, si votre application ne gère pas l’activité en arrière-plan de manière responsable, l’utilisateur peut refuser des autorisations en arrière-plan à votre application, ce qui n’est pas toujours souhaitable pour les deux&nbsp;parties.
 
-## <a name="work-with-the-battery-saver-feature"></a>Work with the Battery Saver feature
-Battery Saver is a system-level feature that users can configure in Settings. It cuts off all background activity of all apps when the battery level drops below a user-defined threshold, *except* for the background activity of apps that have been set to "Always allowed."
+## <a name="work-with-the-battery-saver-feature"></a>Utiliser la fonctionnalité Économiseur de batterie
+L’Économiseur de batterie est une fonctionnalité système que les utilisateurs peuvent configurer dans les paramètres. Il interrompt l’activité en arrière-plan de toutes les applications lorsque le niveau de batterie descend en dessous d’un seuil défini par l’utilisateur, *sauf* pour l’activité en arrière-plan des applications qui a été configurée sur «&nbsp;Toujours autorisé&nbsp;».
 
-If your app is marked as "Managed by Windows" and calls **BackgroundExecutionManager.RequestAccessAsync()** to register a background activity while Battery Saver is on, it will return a **DeniedSubjectToSystemPolicy** value. Your app should handle this by notifying the user that the given background task(s) will not run until Battery Saver is off and they are re-registered with the system. If a background task has already been registered to run, and Battery Saver is on at the time of its trigger, the task will not run and the user will not be notified. To reduce the chance of this happening, it is a good practice to program your app to re-register its background tasks each time it is opened.
+Si votre application est configurée avec «&nbsp;Gestion par Windows&nbsp;» et appelle **BackgroundExecutionManager.RequestAccessAsync()** pour enregistrer une activité en arrière-plan lorsque l’Économiseur de batterie est activé, elle renvoie une valeur **DeniedSubjectToSystemPolicy**. Votre application doit gérer cette situation en notifiant l’utilisateur que les tâches en arrière-plan données ne s’exécuteront pas tant que l’Économiseur de batterie est désactivé et qu’elles sont déclarées à nouveau dans le système. Si une tâche en arrière-plan a déjà été déclarée comme étant à exécuter et que l’Économiseur de batterie est activé au moment de son déclenchement, la tâche ne s’exécute pas et l’utilisateur n’est pas averti. Afin de réduire ce risque, il est recommandé de programmer votre application pour qu’elle redéclare ses tâches en arrière-plan à chaque ouverture.
 
-While background activity management is the primary purpose of the Battery Saver feature, your app can make additional adjustments to further conserve energy when Battery Saver is on. Check the status of Battery Saver mode from within your app by referencing the [**PowerManager.PowerSavingMode**](https://msdn.microsoft.com/library/windows/apps/windows.phone.system.power.powermanager.powersavingmode.aspx) property. It is an enum value: either **PowerSavingMode.Off** or **PowerSavingMode.On**. In the case where Battery Saver is on, your app could reduce its use of animations, stop location polling, or delay syncs and backups. 
+Si la gestion de l’activité en arrière-plan est l’objectif principal de la fonctionnalité d’Économiseur de batterie, votre application peut effectuer des ajustements supplémentaires pour économiser davantage d’énergie lorsque l’Économiseur de batterie est activé. Vérifiez l’état du mode Économiseur de batterie dans votre application en référençant la propriété [**PowerManager.PowerSavingMode**](https://msdn.microsoft.com/library/windows/apps/windows.phone.system.power.powermanager.powersavingmode.aspx). Il s’agit d’une valeur d’énumération&nbsp;: **PowerSavingMode.Off** ou **PowerSavingMode.On**. Lorsque l’Économiseur de batterie est activé, votre application peut réduire son utilisation des animations, arrêter l’interrogation de localisation ou différer les synchronisations et les sauvegardes. 
 
-## <a name="further-optimize-background-tasks"></a>Further optimize background tasks
-The following are additional steps you can take when registering your background tasks to make them more battery-aware.
+## <a name="further-optimize-background-tasks"></a>Optimiser les tâches en arrière-plan
+Voici les étapes supplémentaires que vous pouvez effectuer lors de la déclaration de vos tâches en arrière-plan pour les rendre plus économes en énergie.
 
-Use a maintenance trigger. A [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.maintenancetrigger.aspx) object can be used instead of a [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.systemtrigger.aspx) object to determine when a background task starts. Tasks that use maintenance triggers will only run when the device is connected to AC power, and they are allowed to run for longer. See [Use a maintenance trigger](https://msdn.microsoft.com/windows/uwp/launch-resume/use-a-maintenance-trigger) for instructions.
+Utilisez un déclencheur de maintenance. Un objet [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.maintenancetrigger.aspx) peut s’utiliser à la place d’un objet [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.systemtrigger.aspx) pour déterminer le moment de démarrage d’une tâche en arrière-plan. Les tâches qui utilisent des déclencheurs de maintenance ne s’exécutent que lorsque l’appareil est connecté à une prise de courant&nbsp;CA, et elles sont autorisées à s’exécuter plus longtemps. Pour obtenir des instructions, consultez [Utiliser un déclencheur de maintenance](https://msdn.microsoft.com/windows/uwp/launch-resume/use-a-maintenance-trigger).
 
-Use the **BackgroundWorkCostNotHigh** system condition type. System conditions must be met in order for background tasks to run (see [Set conditions for running a background task](https://msdn.microsoft.com/windows/uwp/launch-resume/set-conditions-for-running-a-background-task) for more). The background work cost is a measurement that denotes the *relative* energy impact of running the background task. A task running when the device is plugged into AC power would be marked as **low** (little/no impact on battery). A task running when the device is on battery power with the screen off is marked as **high** because there is presumably little program activity running on the device at the time, so the background task would have a greater relative cost. A task running when the device is on battery power with the screen *on* is marked as **medium**, because there is presumably already some program activity running, and the background task would add a bit more to the energy cost. The **BackgroundWorkCostNotHigh** system condition simply delays your task's ability to run until either the screen is on or the device is connected to AC power.
+Utilisez le type de condition système **BackgroundWorkCostNotHigh**. Les conditions système doivent être réunies dans l’ordre pour que les tâches en arrière-plan puissent s’exécuter. Pour plus d’informations, consultez [Définir des conditions pour exécuter une tâche en arrière-plan](https://msdn.microsoft.com/windows/uwp/launch-resume/set-conditions-for-running-a-background-task). Le coût du travail en arrière-plan est une mesure qui évalue l’impact énergétique *relatif* de l’exécution de la tâche en arrière-plan. Une tâche en cours lorsque l’appareil est branché sur secteur est considérée comme **faible** (impact faible/nul sur la batterie). Une tâche en cours lorsque l’appareil est sur batterie avec l’écran éteint est considérée comme **haute**, car l’activité des programmes sur l’appareil est probablement faible sur l’appareil, de sorte que la tâche en arrière-plan a un coût relatif supérieur. Une tâche en cours lorsque l’appareil est sur batterie avec l’écran *allumé* est considérée comme **moyenne**, car certains programmes peuvent être en cours d’exécution et la tâche en arrière-plan a un coût énergétique un peu supérieur. La condition système **BackgroundWorkCostNotHigh** diffère simplement la capacité de votre tâche à s’exécuter lorsque l’écran est allumé ou que l’appareil est connecté à une prise de courant.
 
-## <a name="test-battery-efficiency"></a>Test battery efficiency
+## <a name="test-battery-efficiency"></a>Tester l’efficacité de la batterie
 
-Make sure to test your app on real devices for any high-power-consumption scenarios. It's a good idea to test your app on many different devices, with Battery Saver on and off, and in environments of varying network strength.
+Veillez à tester votre application sur des appareils réels pour tous les scénarios requérant une forte consommation d’énergie. Il est recommandé de tester votre application sur différents appareils, avec l’économiseur de batterie activé et désactivé, dans des environnements à niveau de sécurité réseau variable.
 
-## <a name="related-topics"></a>Related topics
+## <a name="related-topics"></a>Rubriques connexes
 
-* [Create and register an out-of-process background task](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-an-outofproc-background-task)  
-* [Planning for performance](https://msdn.microsoft.com/windows/uwp/debug-test-perf/planning-and-measuring-performance)  
+* [Créer et inscrire une tâche en arrière-plan hors processus](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-an-outofproc-background-task)  
+* [Planification des performances](https://msdn.microsoft.com/windows/uwp/debug-test-perf/planning-and-measuring-performance)  
 
 
 

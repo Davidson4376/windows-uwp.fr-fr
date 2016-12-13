@@ -1,62 +1,62 @@
 ---
 author: mcleanbyron
 ms.assetid: 32572890-26E3-4FBB-985B-47D61FF7F387
-description: Learn how to enable in-app purchases and trials in UWP apps that target releases before Windows 10, version 1607.
-title: In-app purchases and trials using the Windows.ApplicationModel.Store namespace
+description: "Découvrez comment activer les achats in-app et les versions d’évaluation dans les applications UWP qui ciblent les versions antérieures à Windows&nbsp;10 version&nbsp;1607."
+title: "Versions d’évaluation et achats in-app utilisant l’espace de noms Windows.ApplicationModel.Store"
 translationtype: Human Translation
 ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
 ms.openlocfilehash: ee2a52a54be8510b962f1ef5c40570f3836d28c3
 
 ---
 
-# <a name="in-app-purchases-and-trials-using-the-windowsapplicationmodelstore-namespace"></a>In-app purchases and trials using the Windows.ApplicationModel.Store namespace
+# <a name="in-app-purchases-and-trials-using-the-windowsapplicationmodelstore-namespace"></a>Versions d’évaluation et achats in-app utilisant l’espace de noms Windows.ApplicationModel.Store
 
-You can use members in the [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) namespace to add in-app purchases and trial functionality to your Universal Windows Platform (UWP) app to help monetize your app. These APIs also provide access to the license info for your app.
+Vous pouvez utiliser les membres de l’espace de noms [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) pour ajouter des achats in-app, et la fonctionnalité d’évaluation dans votre application de plateforme Windows universelle (UWP) pour monétiser votre application. Ces API offrent également l’accès aux informations de licence de votre application.
 
-The articles in this section provide in-depth guidance and code examples for using the members in the **Windows.ApplicationModel.Store** namespace for several common scenarios. For an overview of basic concepts related to in-app purchases in UWP apps, see [In-app purchases and trials](in-app-purchases-and-trials.md).
+Les articles de cette section fournissent des instructions détaillées et des exemples de code pour utiliser les membres de l’espace de noms **Windows.ApplicationModel.Store** dans plusieurs scénarios courants. Pour une vue d’ensemble des concepts liés aux achats in-app dans les applications UWP, consultez [Achats in-app et versions d’évaluation](in-app-purchases-and-trials.md).
 
-For a complete sample that demonstrates how to implement trials and in-app purchases using the **Windows.ApplicationModel.Store** namespace, see the [Store sample](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store).
+Pour obtenir un exemple complet montrant comment implémenter des versions d’évaluation et des achats in-app à l’aide de l’espace de noms **Windows.ApplicationModel.Store**, consultez l’[Exemple Windows&nbsp;Store](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store).
 
->**Notes**&nbsp;&nbsp;
+>**Remarques**&nbsp;&nbsp;
 >
-> * If your app targets Windows 10, version 1607, or later, we recommend that you use members of the [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) namespace instead of the **Windows.ApplicationModel.Store** namespace. The **Windows.Services.Store** namespace supports the latest add-on types, such as Store-managed consumable add-ons, and is designed to be compatible with future types of products and features supported by Windows Dev Center and the Store. The **Windows.Services.Store** namespace is also designed to have better performance. For more information, see [In-app purchases and trials](in-app-purchases-and-trials.md).
+> * Si votre application cible Windows&nbsp;10, version&nbsp;1607 ou ultérieure, nous vous recommandons d’utiliser les membres de l’espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) plutôt que l’espace de noms **Windows.ApplicationModel.Store**. L’espace de noms **Windows.Services.Store** prend en charge les types d’extension les plus récents, comme les extensions consommables gérées par le Windows Store. Il est conçu pour être compatible avec les futurs types de produits et de fonctionnalités pris en charge par le Centre de développement Windows et le Windows&nbsp;Store. L’espace de noms **Windows.Services.Store** affiche également de meilleures performances. Pour plus d’informations, voir [Versions d’évaluation et achats in-app](in-app-purchases-and-trials.md).
 <br/><br/>
-> * The **Windows.ApplicationModel.Store** namespace is not supported in Windows desktop applications that use the [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop). These applications must use the **Windows.Services.Store** namespace to implement in-app purchases and trials.
+> * L’espace de noms **Windows.ApplicationModel.Store** n’est pas pris en charge dans les applications de bureau Windows qui utilisent [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop). Ces applications doivent utiliser l’espace de noms **Windows.Services.Store** pour implémenter les achats in-app et les versions d’évaluation.
 
-## <a name="get-started-with-the-currentapp-and-currentappsimulator-classes"></a>Get started with the CurrentApp and CurrentAppSimulator classes
+## <a name="get-started-with-the-currentapp-and-currentappsimulator-classes"></a>Prise en main des classes CurrentApp et CurrentAppSimulator
 
-The main entry point to the **Windows.ApplicationModel.Store** namespace is the [CurrentApp](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.aspx) class. This class provides static properties and methods you can use to get info for the current app and its available add-ons (also known as in-app products or IAPs), get license info for the current app or its add-ons, purchase an app or add-on for the current user, and perform other tasks.
+Le point d’entrée principal de l’espace de noms **Windows.ApplicationModel.Store** est la classe [CurrentApp](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.aspx). Cette classe fournit des propriétés et des méthodes statiques qui permettent, entre autres, d’obtenir des informations sur l’application active et ses modules complémentaires disponibles (également appelés produits in-app), d’obtenir les informations de licence de l’application actuelle ou de ses modules complémentaires, d’acheter une application ou un module complémentaire pour l’utilisateur actuel et d’effectuer d’autres tâches.
 
-The [CurrentApp](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.aspx) class obtains its data from the Windows Store, so you must have a developer account and the app must be published in the Store before you can successfully use this class in your app. Before you submit your app to the Store, you can test your code with a simulated version of this class called [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.aspx). After you test your app, and before you submit it to the Windows Store, you must replace the instances of **CurrentAppSimulator** with **CurrentApp**. Your app will fail certification if it uses **CurrentAppSimulator**.
+La classe [CurrentApp](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.aspx) obtient ses données à partir du Windows&nbsp;Store. Vous devez donc disposer d’un compte de développeur et l’application doit être publiée dans le Windows&nbsp;Store pour que vous puissiez utiliser cette classe dans votre application. Avant de soumettre votre application au Windows&nbsp;Store, vous pouvez tester votre code avec une version de cette classe appelée [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.aspx). Après avoir testé votre application et avant de la soumettre au Windows&nbsp;Store, vous devez remplacer les instances de **CurrentAppSimulator** par **CurrentApp**. Votre application ne sera pas certifiée si elle utilise **CurrentAppSimulator**.
 
-When the **CurrentAppSimulator** is used, the initial state of your app's licensing and in-app products is described in a local file on your development computer named WindowsStoreProxy.xml. For more information about this file, see [Using the WindowsStoreProxy.xml file with CurrentAppSimulator](#proxy).
+Lorsque **CurrentAppSimulator** est utilisé, l’état initial des produits in-app et de licence de votre application est décrit dans un fichier local nommé WindowsStoreProxy.xml, situé sur votre ordinateur de développement. Pour plus d’informations sur ce fichier, consultez [Utilisation du fichier WindowsStoreProxy.xml avec CurrentAppSimulator](#proxy).
 
-For more information about common tasks you can perform using **CurrentApp** and **CurrentAppSimulator**, see the following articles.
+Pour plus d’informations sur les tâches courantes exécutables avec **CurrentApp** et **CurrentAppSimulator**, consultez les articles suivants.
 
-| Topic       | Description                 |
+| Rubrique       | Description                 |
 |----------------------------|-----------------------------|
-| [Exclude or limit features in a trial version](exclude-or-limit-features-in-a-trial-version-of-your-app.md) | If you enable customers to use your app for free during a trial period, you can entice your customers to upgrade to the full version of your app by excluding or limiting some features during the trial period. |
-| [Enable in-app product purchases](enable-in-app-product-purchases.md)      |  Whether your app is free or not, you can sell content, other apps, or new app functionality (such as unlocking the next level of a game) from right within the app. Here we show you how to enable these products in your app.  |
-| [Enable consumable in-app product purchases](enable-consumable-in-app-product-purchases.md)      | Offer consumable in-app products—items that can be purchased, used, and purchased again—through the Store commerce platform to provide your customers with a purchase experience that is both robust and reliable. This is especially useful for things like in-game currency (gold, coins, etc.) that can be purchased and then used to purchase specific power-ups. |
-| [Manage a large catalog of in-app products](manage-a-large-catalog-of-in-app-products.md)      |   If your app offers a large in-app product catalog, you can optionally follow the process described in this topic to help manage your catalog.    |
-| [Use receipts to verify product purchases](use-receipts-to-verify-product-purchases.md)      |   Each Windows Store transaction that results in a successful product purchase can optionally return a transaction receipt that provides information about the listed product and monetary cost to the customer. Having access to this information supports scenarios where your app needs to verify that a user purchased your app, or has made in-app product purchases from the Windows Store. |
+| [Exclure ou limiter des fonctionnalités de la version d’évaluation](exclude-or-limit-features-in-a-trial-version-of-your-app.md) | Si vous donnez aux clients la possibilité d’utiliser votre application gratuitement pendant une période d’évaluation, vous pouvez leur donner envie d’obtenir la version complète de votre application en excluant ou en limitant certaines fonctionnalités pendant la période d’évaluation. |
+| [Activer les achats de produits in-app](enable-in-app-product-purchases.md)      |  Que votre application soit gratuite ou non, vous pouvez vendre du contenu, d’autres applications ou de nouvelles fonctionnalités applicatives (par exemple le déverrouillage d’un nouveau niveau de jeu) directement dans l’application. Nous allons vous montrer comment activer ces produits dans votre application.  |
+| [Activer les achats de produits consommables in-app](enable-consumable-in-app-product-purchases.md)      | Proposez des produits consommables dans l’application qui peuvent être achetés, utilisés et rachetés via la plateforme commerciale du Windows Store, afin d’offrir à vos clients une expérience d’achat à la fois solide et fiable au sein de l’application. Cette fonction est particulièrement utile pour différents aspects du jeu, comme les devises (or, pièces, etc.) susceptibles d’être achetées, puis utilisées pour acheter certaines améliorations. |
+| [Gérer un vaste catalogue de produits in-app](manage-a-large-catalog-of-in-app-products.md)      |   Si votre application propose un vaste catalogue de produits in-app, vous pouvez éventuellement suivre la procédure décrite dans cette rubrique pour faciliter la gestion de votre catalogue.    |
+| [Utiliser des reçus pour vérifier les achats de produits](use-receipts-to-verify-product-purchases.md)      |   Chaque transaction du Windows Store qui entraîne un achat de produit peut éventuellement retourner un reçu de transaction qui fournit des informations sur le produit répertorié et le coût monétaire pour le client. L’accès à ces informations autorise les scénarios dans lesquels votre application doit vérifier qu’un utilisateur a acheté votre application ou qu’il a effectué des achats in-app de produits dans le Windows&nbsp;Store. |
 
 <span id="proxy" />
-## <a name="using-the-windowsstoreproxyxml-file-with-currentappsimulator"></a>Using the WindowsStoreProxy.xml file with CurrentAppSimulator
+## <a name="using-the-windowsstoreproxyxml-file-with-currentappsimulator"></a>Utilisation du fichier WindowsStoreProxy.xml avec CurrentAppSimulator
 
-When the **CurrentAppSimulator** is used, the initial state of your app's licensing and in-app products is described in a local file on your development computer named WindowsStoreProxy.xml. **CurrentAppSimulator** methods that alter the app's state, for example by buying a license or handling an in-app purchase, only update the state of the **CurrentAppSimulator** object in memory. The contents of WindowsStoreProxy.xml are not changed. When the app starts again, the license state reverts to what is described in WindowsStoreProxy.xml.
+Lorsque **CurrentAppSimulator** est utilisé, l’état initial des produits in-app et de licence de votre application est décrit dans un fichier local nommé WindowsStoreProxy.xml, situé sur votre ordinateur de développement. Les méthodes **CurrentAppSimulator** qui modifient l’état de l’application, par exemple en achetant une licence ou en gérant un achat in-app, mettent simplement à jour l’état de l’objet **CurrentAppSimulator** en mémoire. Le contenu du fichier WindowsStoreProxy.xml n’est pas modifié. Au redémarrage de l’application, la licence reprend l’état décrit dans le fichier WindowsStoreProxy.xml.
 
-A WindowsStoreProxy.xml file is created by default at the following location: %UserProfile%\AppData\Local\Packages\\&lt;app package folder&gt;\LocalState\Microsoft\Windows Store\ApiData. You can edit this file to define the scenario that you want to simulate in the **CurrentAppSimulator** properties.
+Un fichier WindowsStoreProxy.xml est créé par défaut à l’emplacement suivant&nbsp;: %UserProfile%\AppData\Local\Packages\\&lt;dossier du package d’application&gt;\LocalState\Microsoft\Windows Store\ApiData. Vous pouvez modifier ce fichier pour définir le scénario que vous voulez simuler dans les propriétés de **CurrentAppSimulator**.
 
-Although you can modify the values in this file, we recommend that you create your own WindowsStoreProxy.xml file (in a data folder of your Visual Studio project) for **CurrentAppSimulator** to use instead. When simulating the transaction, call [ReloadSimulatorAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.reloadsimulatorasync.aspx) to load your file. If you do not call **ReloadSimulatorAsync** to load your own WindowsStoreProxy.xml file, **CurrentAppSimulator** will create/load (but not overwrite) the default WindowsStoreProxy.xml file.
+Si vous pouvez modifier les valeurs dans ce fichier, nous vous recommandons de créer votre propre fichier WindowsStoreProxy.xml (dans un dossier de données de votre projet Visual Studio) pour **CurrentAppSimulator** et de l’utiliser à la place de l’autre. Lors de la simulation de la transaction, appelez [ReloadSimulatorAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.reloadsimulatorasync.aspx) pour charger votre fichier. Si vous n’appelez pas **ReloadSimulatorAsync** pour charger votre propre fichier WindowsStoreProxy.xml, **CurrentAppSimulator** crée/charge (mais ne remplace pas) le fichier WindowsStoreProxy.xml par défaut.
 
->**Note**&nbsp;&nbsp;Be aware that **CurrentAppSimulator** is not fully initialized until **ReloadSimulatorAsync** completes. And, since **ReloadSimulatorAsync** is an asynchronous method, care should be taken to avoid the race condition of querying **CurrentAppSimulator** on one thread while it is being initialized on another. One technique is to use a flag to indicate that initialization is complete. An app that is installed from the Windows Store must use **CurrentApp** instead of **CurrentAppSimulator**, and in that case **ReloadSimulatorAsync** is not called and therefore the race condition just mentioned does not apply. For this reason, design your code so that it will work in both cases, both asychronously and synchronously.
+>**Remarque**&nbsp;&nbsp;N’oubliez pas que **CurrentAppSimulator** ne s’initialise pleinement qu’une fois **ReloadSimulatorAsync** exécuté. Et, dans la mesure où **ReloadSimulatorAsync** est une méthode asynchrone, veillez à éviter la condition de concurrence avec l’interrogation de **CurrentAppSimulator** sur un thread pendant son initialisation sur un autre. Une technique consiste à utiliser un indicateur pour signaler la fin de l’initialisation. Une application installée à partir du Windows&nbsp;Store doit utiliser **CurrentApp** à la place de **CurrentAppSimulator**. Dans ce cas, **ReloadSimulatorAsync** n’est pas appelé et la condition de concurrence mentionnée auparavant ne s’applique pas. Pour cette raison, concevez votre code afin qu’il fonctionne dans les deux&nbsp;cas de figure (asychrone et synchrone).
 
 
 <span id="proxy-examples" />
-### <a name="examples"></a>Examples
+### <a name="examples"></a>Exemples
 
-This example is a WindowsStoreProxy.xml file (UTF-16 encoded) that describes an app with a trial mode that expires at 05:00 (UTC) on Jan. 19, 2015.
+Cet exemple est un fichier WindowsStoreProxy.xml (codé en UTF-16) qui décrit une application dont le mode évaluation arrive à expiration le 19&nbsp;janvier 2015 à 05:00 (UTC).
 
 > [!div class="tabbedCodeSnippets"]
 ```xml
@@ -89,7 +89,7 @@ This example is a WindowsStoreProxy.xml file (UTF-16 encoded) that describes an 
 </CurrentApp>
 ```
 
-The next example is a WindowsStoreProxy.xml file (UTF-16 encoded) that describes an app that has been purchased, has a feature that expires at 05:00 (UTC) on Jan. 19, 2015, and has a consumable in-app purchase.
+L’exemple suivant est un fichier WindowsStoreProxy.xml (codé en UTF-16) qui décrit une application achetée, dotée d’une fonctionnalité expirant le 19&nbsp;janvier&nbsp;2015 à 05:00 (UTC), et associée à un achat in-app consommable.
 
 > [!div class="tabbedCodeSnippets"]
 ```xml
@@ -141,18 +141,18 @@ The next example is a WindowsStoreProxy.xml file (UTF-16 encoded) that describes
 
 
 <span id="proxy-schema" />
-### <a name="schema"></a>Schema
+### <a name="schema"></a>Schéma
 
-This section lists the XSD file that defines the structure of the WindowsStoreProxy.xml file. To apply this schema to the XML editor in Visual Studio when working with your WindowsStoreProxy.xml file, do the following:
+Cette section présente le fichier&nbsp;XSD qui définit la structure du fichier WindowsStoreProxy.xml. Pour appliquer ce schéma à l’éditeur XML dans Visual Studio lorsque vous utilisez votre fichier WindowsStoreProxy.xml, procédez comme suit&nbsp;:
 
-1. Open the WindowsStoreProxy.xml file in Visual Studio.
-2. On the **XML** menu, click **Create Schema**. This will create a temporary WindowsStoreProxy.xsd file based on the contents of the XML file.
-3. Replace the contents of that .xsd file with the schema below.
-4. Save the file to a location where you can apply it to multiple app projects.
-5. Switch to your WindowsStoreProxy.xml file in Visual Studio.
-6. On the **XML** menu, click **Schemas**, then locate the row in the list for the WindowsStoreProxy.xsd file. If the location for the file is not the one you want (for example, if the temporary file is still shown), click **Add**. Navigate to the right file, then click **OK**. You should now see that file in the list. Make sure a checkmark appears in the **Use** column for that schema.
+1. Ouvrez le fichier WindowsStoreProxy.xml dans Visual Studio.
+2. Dans le menu **XML**, cliquez sur **Créer un schéma**. Le fichier WindowsStoreProxy.xsd temporaire est créé en fonction du contenu du fichier&nbsp;XML.
+3. Remplacez le contenu de ce fichier&nbsp;XSD par le schéma ci-dessous.
+4. Enregistrez le fichier là où vous pouvez l’appliquer à plusieurs projets d’application.
+5. Basculez vers le fichier WindowsStoreProxy.xml dans Visual Studio.
+6. Dans le menu **XML**, cliquez sur **Schémas**, puis recherchez la ligne correspondant au fichier WindowsStoreProxy.xsd dans la liste. Si l’emplacement du fichier n’est pas celui que vous souhaitez (par exemple, si le fichier temporaire s’affiche toujours), cliquez sur **Ajouter**. Accédez au fichier, puis cliquez sur **OK**. Vous devez maintenant voir ce fichier dans la liste. Vérifiez qu’une coche apparaît dans la colonne **Utilisation** de ce schéma.
 
-Once you've done this, edits you make to WindowsStoreProxy.xml will be subject to the schema. For more information, see [How to: Select the XML Schemas to Use](http://go.microsoft.com/fwlink/p/?LinkId=403014).
+Une fois ceci fait, les modifications apportées à WindowsStoreProxy.xml sont soumises au schéma. Pour plus d’informations, consultez [Procédure&nbsp;: sélectionner les schémas XML à utiliser](http://go.microsoft.com/fwlink/p/?LinkId=403014).
 
 > [!div class="tabbedCodeSnippets"]
 ```xml
@@ -345,198 +345,198 @@ Once you've done this, edits you make to WindowsStoreProxy.xml will be subject t
 
 
 <span id="proxy-descriptions" />
-### <a name="element-and-attribute-descriptions"></a>Element and attribute descriptions
+### <a name="element-and-attribute-descriptions"></a>Description des éléments et des attributs
 
-This section describes the elements and attributes in the WindowsStoreProxy.xml file.
+Cette section décrit les éléments et attributs dans le fichier WindowsStoreProxy.xml.
 
-The root element of this file is the **CurrentApp** element, which represents the current app. This element contains the following child elements.
+L’élément racine de ce fichier est l’élément **CurrentApp** qui représente l’application active. Cet élément contient les éléments enfants suivants&nbsp;:
 
-|  Element  |  Required  |  Quantity  |  Description   |
+|  Élément  |  Requis  |  Quantité  |  Description   |
 |-------------|------------|--------|--------|
-|  [ListingInformation](#listinginformation)  |    Yes        |  1  |  Contains data from the app's listing.            |
-|  [LicenseInformation](#licenseinformation)  |     Yes       |   1    |   Describes the licenses available for this app and its durable add-ons.     |
-|  [ConsumableInformation](#consumableinformation)  |      No      |   0 or 1   |   Describes the consumable add-ons that are available for this app.      |
-|  [Simulation](#simulation)  |     No       |      0 or 1      |   Describes how calls to various [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.aspx) methods will work in the app during testing.    |
+|  [ListingInformation](#listinginformation)  |    Oui        |  1  |  Contient les données de la liste de l’application.            |
+|  [LicenseInformation](#licenseinformation)  |     Oui       |   1    |   Décrit les licences disponibles pour cette application et ses modules complémentaires durables.     |
+|  [ConsumableInformation](#consumableinformation)  |      Non      |   0 ou 1   |   Décrit les modules complémentaires consommables disponibles pour cette application.      |
+|  [Simulation](#simulation)  |     Non       |      0 ou 1      |   Décrit le fonctionnement des appels à plusieurs méthodes [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.aspx) dans l’application lors du test.    |
 
 <span id="listinginformation" />
-#### <a name="listinginformation-element"></a>ListingInformation element
+#### <a name="listinginformation-element"></a>Élément ListingInformation
 
-This element contains data from the app's listing. **ListingInformation** is a required child of the **CurrentApp** element.
+Cet élément contient les données de la liste de l’application. **ListingInformation** est un enfant requis de l’élément **CurrentApp**.
 
-**ListingInformation** contains the following child elements.
+**ListingInformation** contient les éléments enfants suivants.
 
-|  Element  |  Required  |  Quantity  |  Description   |
+|  Élément  |  Requis  |  Quantité  |  Description   |
 |-------------|------------|--------|--------|
-|  [App](#app-child-of-listinginformation)  |    Yes   |  1   |    Provides data about the app.         |
-|  [Product](#product-child-of-listinginformation)  |    No  |  0 or more   |      Describes an add-on for the app.     |     |
+|  [App](#app-child-of-listinginformation)  |    Oui   |  1   |    Fournit des données sur l’application.         |
+|  [Product](#product-child-of-listinginformation)  |    Non  |  0 ou davantage   |      Décrit un module complémentaire de l’application.     |     |
 
 <span id="app-child-of-listinginformation"/>
-#### <a name="app-element-child-of-listinginformation"></a>App element (child of ListingInformation)
+#### <a name="app-element-child-of-listinginformation"></a>Élément App (enfant de ListingInformation)
 
-This element describes the app's license. **App** is a required child of the [ListingInformation](#listinginformation) element.
+Cet élément décrit la licence de l’application. **App** est un enfant requis de l’élément [ListingInformation](#listinginformation).
 
-**App** contains the following child elements.
+**App** contient les éléments enfants suivants.
 
-|  Element  |  Required  |  Quantity  | Description   |
+|  Élément  |  Requis  |  Quantité  | Description   |
 |-------------|------------|--------|--------|
-|  **AppId**  |    Yes   |  1   |   The GUID that identifies the app in the Store. This can be any GUID for testing.        |
-|  **LinkUri**  |    Yes  |  1   |    The URI of the listing page in the store. This can be any valid URI for testing.         |
-|  **CurrentMarket**  |    Yes  |  1   |    The customer's country/region.         |
-|  **AgeRating**  |    Yes  |  1   |     An integer that represents the minimum age rating of the app. This is the same value you would specify in the Dev Center dashboard when you submit the app. The values used by the Store are: 3, 7, 12, and 16. For more info on these ratings, see [Age ratings](../publish/age-ratings.md).        |
-|  [MarketData](#marketdata-child-of-app)  |    Yes  |  1 or more      |    Contains info about the app for a given country/region. For each country/region in which the app is listed, you must include a **MarketData** element.       |    |
+|  **AppId**  |    Oui   |  1   |   GUID identifiant l’application dans le Windows&nbsp;Store. Cela peut être le GUID utilisé pour le test.        |
+|  **LinkUri**  |    Oui  |  1   |    URI de la page de liste dans le Windows&nbsp;store. Cela peut être n’importe quel URL valide pour le test.         |
+|  **CurrentMarket**  |    Oui  |  1   |    Pays/région du client.         |
+|  **AgeRating**  |    Oui  |  1   |     Entier représentant la classification d’âge minimum de l’application. Il s’agit de la même valeur que vous spécifiez dans le tableau de bord du Centre de développement lorsque vous soumettez l’application. Les valeurs utilisées par le Windows&nbsp;Store sont&nbsp;: 3, 7, 12 et 16. Pour plus d’informations sur ces classifications, consultez [Classification par âge](../publish/age-ratings.md).        |
+|  [MarketData](#marketdata-child-of-app)  |    Oui  |  1 ou davantage      |    Contient des informations sur l’application pour un pays/une région donné(e). Pour chaque pays/région où l’application est répertoriée, vous devez inclure un élément **MarketData**.       |    |
 
 <span id="marketdata-child-of-app"/>
-#### <a name="marketdata-element-child-of-app"></a>MarketData element (child of App)
+#### <a name="marketdata-element-child-of-app"></a>Élément MarketData (enfant d’App)
 
-This element provides info about the app for a given country/region. For each country/region in which the app is listed, you must include a **MarketData** element. **MarketData** is a required child of the [App](#app-child-of-listinginformation) element.
+Cet élément fournit des informations sur l’application pour un pays/une région donné(e). Pour chaque pays/région où l’application est répertoriée, vous devez inclure un élément **MarketData**. **MarketData** est un enfant requis de l’élément [App](#app-child-of-listinginformation).
 
-**MarketData** contains the following child elements.
+**MarketData** contient les éléments enfants suivants.
 
-|  Element  |  Required  |  Quantity  | Description   |
+|  Élément  |  Requis  |  Quantité  | Description   |
 |-------------|------------|--------|--------|
-|  **Name**  |    Yes   |  1   |   The name of the app in this country/region.        |
-|  **Description**  |    Yes  |  1   |      The description of the app for this country/region.       |
-|  **Price**  |    Yes  |  1   |     The price of the app in this country/region.        |
-|  **CurrencySymbol**  |    Yes  |  1   |     The currency symbol used in this country/region.        |
-|  **CurrencyCode**  |    No  |  0 or 1      |      The currency code used in this country/region.         |  |
+|  **Name**  |    Oui   |  1   |   Nom de l’application dans ce pays/cette région.        |
+|  **Description**  |    Oui  |  1   |      Description de l’application dans ce pays/cette région.       |
+|  **Price**  |    Oui  |  1   |     Prix de l’application dans ce pays/cette région.        |
+|  **CurrencySymbol**  |    Oui  |  1   |     Symbole de devise utilisé dans ce pays/cette région.        |
+|  **CurrencyCode**  |    Non  |  0 ou 1      |      Code de devise utilisé dans ce pays/cette région.         |  |
 
-**MarketData** has the following attributes.
+**MarketData** a les attributs suivants.
 
-|  Attribute  |  Required  |  Description   |
+|  Attribut  |  Requis  |  Description   |
 |-------------|------------|----------------|
-|  **xml:lang**  |    Yes        |     Specifies the country/region for which the market data info applies.          |  |
+|  **xml:lang**  |    Oui        |     Spécifie le pays/la région où les données de marché s’appliquent.          |  |
 
 <span id="product-child-of-listinginformation"/>
-#### <a name="product-element-child-of-listinginformation"></a>Product element (child of ListingInformation)
+#### <a name="product-element-child-of-listinginformation"></a>Élément Product (enfant de ListingInformation)
 
-This element describes an add-on for the app. **Product** is an optional child of the [ListingInformation](#listinginformation) element, and it contains one or more [MarketData](#marketdata-child-of-product) elements.
+Cet élément décrit un module complémentaire de l’application. **Product** est un enfant facultatif de l’élément [ListingInformation](#listinginformation) et il contient un ou plusieurs éléments [MarketData](#marketdata-child-of-product)s.
 
-**Product** has the following attributes.
+**Product** a les attributs suivants.
 
-|  Attribute  |  Required  |  Description   |
+|  Attribut  |  Requis  |  Description   |
 |-------------|------------|----------------|
-|  **ProductId**  |    Yes        |    Contains the string used by the app to identify the add-on.           |
-|  **LicenseDuration**  |    No        |    Indicates the number of days for which the license will be valid after the item has been purchased. The expiration date of the new license created by a product purchase is the purchase date plus the license duration. This attribute is used only if the **ProductType** attribute is **Durable**; this attribute is ignored for consumable add-ons.           |
-|  **ProductType**  |    No        |    Contains a value to identify the persistence of the in-app product. The supported values are **Durable** (the default) and **Consumable**. For durable types, additional information is described by a [Product](#product-child-of-licenseinformation) element under [LicenseInformation](#licenseinformation); for consumable types, additional information is described by a [Product](#product-child-of-consumableinformation) element under [ConsumableInformation](#consumableinformation).           |  |
+|  **ProductId**  |    Oui        |    Contient la chaîne utilisée par l’application pour identifier le module complémentaire.           |
+|  **LicenseDuration**  |    Non        |    Indique le nombre de jours pendant lesquels la licence reste valide, une fois l’élément acheté. La date d’expiration de la nouvelle licence créée par un achat de produit correspond à la date d’achat avec la durée de la licence. Cet attribut n’est utilisé que si l’attribut **ProductType** a pour valeur **Durable**. Il est ignoré pour les modules complémentaires consommables.           |
+|  **ProductType**  |    Non        |    Contient une valeur permettant d’identifier la persistance du produit in-app. Les valeurs prises en charge sont **Durable** (valeur par défaut) et **Consumable**. Pour les types durables, les informations supplémentaires sont décrites par un élément [Product](#product-child-of-licenseinformation) sous [LicenseInformation](#licenseinformation). Pour les types consommables, les informations supplémentaires sont décrites par un élément [Product](#product-child-of-consumableinformation) sous [ConsumableInformation](#consumableinformation).           |  |
 
 <span id="marketdata-child-of-product"/>
-#### <a name="marketdata-element-child-of-product"></a>MarketData element (child of Product)
+#### <a name="marketdata-element-child-of-product"></a>Élément MarketData (enfant de Product)
 
-This element provides info about the add-on for a given country/region. For each country/region in which the add-on is listed, you must include a **MarketData** element. **MarketData** is a required child of the [Product](#product-child-of-listinginformation) element.
+Cet élément fournit des informations sur le module complémentaire pour un pays/une région donné(e). Pour chaque pays/région où le module complémentaire est répertorié, vous devez inclure un élément **MarketData**. **MarketData** est un enfant requis de l’élément [Product](#product-child-of-listinginformation).
 
-**MarketData** contains the following child elements.
+**MarketData** contient les éléments enfants suivants.
 
-|  Element  |  Required  |  Quantity  | Description   |
+|  Élément  |  Requis  |  Quantité  | Description   |
 |-------------|------------|--------|--------|
-|  **Name**  |    Yes   |  1   |   The name of the add-on in this country/region.        |
-|  **Price**  |    Yes  |  1   |     The price of the add-on in this country/region.        |
-|  **CurrencySymbol**  |    Yes  |  1   |     The currency symbol used in this country/region.        |
-|  **CurrencyCode**  |    No  |  0 or 1      |      The currency code used in this country/region.         |  
-|  **Description**  |    No  |   0 or 1   |      The description of the add-on for this country/region.       |
-|  **Tag**  |    No  |   0 or 1   |      The [custom developer data](../publish/enter-add-on-properties.md#custom-developer-data) (also called tag) for the add-on.       |
-|  **Keywords**  |    No  |   0 or 1   |      Contains up to 10 **Keyword** elements that contain the [keywords](../publish/enter-add-on-properties.md#keywords) for the add-on.       |
-|  **ImageUri**  |    No  |   0 or 1   |      The [URI for the image](../publish/create-add-on-store-listings.md#icon) in the add-on's listing.           |  |
+|  **Name**  |    Oui   |  1   |   Nom du module complémentaire dans ce pays/cette région.        |
+|  **Price**  |    Oui  |  1   |     Prix du module complémentaire dans ce pays/cette région.        |
+|  **CurrencySymbol**  |    Oui  |  1   |     Symbole de devise utilisé dans ce pays/cette région.        |
+|  **CurrencyCode**  |    Non  |  0 ou 1      |      Code de devise utilisé dans ce pays/cette région.         |  
+|  **Description**  |    Non  |   0 ou 1   |      Description du module complémentaire pour ce pays/cette région.       |
+|  **Tag**  |    Non  |   0 ou 1   |      [Données personnalisées du développeur](../publish/enter-add-on-properties.md#custom-developer-data) (également appelées balise) du module complémentaire.       |
+|  **Keywords**  |    Non  |   0 ou 1   |      Contient jusqu’à 10&nbsp;éléments **Keyword** qui contiennent les [mots clés](../publish/enter-add-on-properties.md#keywords) du module complémentaire.       |
+|  **ImageUri**  |    Non  |   0 ou 1   |      [URI de l’image](../publish/create-add-on-store-listings.md#icon) dans la liste du module complémentaire.           |  |
 
-**MarketData** has the following attributes.
+**MarketData** a les attributs suivants.
 
-|  Attribute  |  Required  |  Description   |
+|  Attribut  |  Requis  |  Description   |
 |-------------|------------|----------------|
-|  **xml:lang**  |    Yes        |     Specifies the country/region for which the market data info applies.          |  |
+|  **xml:lang**  |    Oui        |     Spécifie le pays/la région où les données de marché s’appliquent.          |  |
 
 <span id="licenseinformation"/>
-#### <a name="licenseinformation-element"></a>LicenseInformation element
+#### <a name="licenseinformation-element"></a>Élément LicenseInformation
 
-This element describes the licenses available for this app and its durable in-app products. **LicenseInformation** is a required child of the **CurrentApp** element.
+Cet élément décrit les licences disponibles pour cette application et ses produits in-app durables. **LicenseInformation** est un enfant requis de l’élément **CurrentApp**.
 
-**LicenseInformation** contains the following child elements.
+**LicenseInformation** contient les éléments enfants suivants.
 
-|  Element  |  Required  |  Quantity  | Description   |
+|  Élément  |  Requis  |  Quantité  | Description   |
 |-------------|------------|--------|--------|
-|  [App](#app-child-of-licenseinformation)  |    Yes   |  1   |    Describes the app's license.         |
-|  [Product](#product-child-of-licenseinformation)  |    No  |  0 or more   |      Describes the license status of a durable add-on in the app.         |   |
+|  [App](#app-child-of-licenseinformation)  |    Oui   |  1   |    Décrit la licence de l’application.         |
+|  [Product](#product-child-of-licenseinformation)  |    Non  |  0 ou davantage   |      Décrit l’état de la licence d’un module complémentaire durable dans l’application.         |   |
 
-The following table shows how to simulate some common conditions by combining values under the **App** and **Product** elements.
+Le tableau suivant montre comment simuler certaines conditions courantes en combinant les valeurs des éléments **App** et **Product**.
 
-|  Condition to simulate  |  IsActive  |  IsTrial  | ExpirationDate   |
+|  Condition à simuler  |  IsActive  |  IsTrial  | ExpirationDate   |
 |-------------|------------|--------|--------|
-|  Fully licensed  |    true   |  false  |    Absent. It actually may be present and specify a future date, but you're advised to omit the element from the XML file. If it is present and specifies a date in the past, then **IsActive** will be ignored and taken to be false.          |
-|  In trial period  |    true  |  true   |      &lt;a datetime in the future&gt; This element must be present because **IsTrial** is true. You can visit a website showing the current Coordinated Universal Time (UTC) to know how far in the future to set this to get the remaining trial period you want.         |
-|  Expired trial  |    false  |  true   |      &lt;a datetime in the past&gt; This element must be present because **IsTrial** is true. You can visit a website showing the current Coordinated Universal Time (UTC) to know when "the past" is in UTC.         |
-|  Invalid  |    false  | false       |     &lt;any value or omitted&gt;          |  |
+|  Licence complète  |    true   |  false  |    Absent. Cet élément peut être présent et spécifier une date future, mais il est recommandé de l’omettre du fichier XML. S’il est présent et spécifie une date passée, **IsActive** est ignoré et considéré comme ayant la valeur false.          |
+|  In trial period  |    true  |  true   |      &lt;horodatage futur&gt; Cet élément doit être présent car **IsTrial** a la valeur true. Vous pouvez visiter un site&nbsp;Web affichant l’heure UTC (Temps universel coordonné) pour savoir quelle date choisir et obtenir la période d’évaluation restante souhaitée.         |
+|  Expired trial  |    false  |  true   |      &lt;horodatage passé&gt; Cet élément doit être présent car **IsTrial** a la valeur true. Vous pouvez visiter un site&nbsp;Web affichant l’heure UTC (Temps Universel Coordonné) pour savoir depuis combien de temps l’heure&nbsp;UTC est passée.         |
+|  Invalid  |    false  | false       |     &lt;n’importe quelle valeur ou valeur omise&gt;          |  |
 
 <span id="app-child-of-licenseinformation"/>
-#### <a name="app-element-child-of-licenseinformation"></a>App element (child of LicenseInformation)
+#### <a name="app-element-child-of-licenseinformation"></a>Élément App (enfant de LicenseInformation)
 
-This element describes the app's license. **App** is a required child of the [LicenseInformation](#licenseinformation) element.
+Cet élément décrit la licence de l’application. **App** est un enfant requis de l’élément [LicenseInformation](#licenseinformation).
 
-**App** contains the following child elements.
+**App** contient les éléments enfants suivants.
 
-|  Element  |  Required  |  Quantity  | Description   |
+|  Élément  |  Requis  |  Quantité  | Description   |
 |-------------|------------|--------|--------|
-|  **IsActive**  |    Yes   |  1   |    Describes the current license state of this app. The value **true** indicates the license is valid; **false** indicates an invalid license. Normally this value is **true**, whether the app has a trial mode or not.  Set this value to **false** to test how your app behaves when it has an invalid license.           |
-|  **IsTrial**  |    Yes  |  1   |      Describes the current trial state of this app. The value **true** indicates the app is being used during the trial period; **false** indicates the app is not in a trial, either because the app has been purchased or the trial period has expired.         |
-|  **ExpirationDate**  |    No  |  0 or 1       |     The date the trial period for this app expires, in Coordinated Universal Time (UTC). The date must be expressed as: yyyy-mm-ddThh:mm:ss.ssZ. For example, 05:00 on January 19, 2015 would be specified as 2015-01-19T05:00:00.00Z. This element is required when **IsTrial** is **true**. Otherwise, it is not required.          |  |
+|  **IsActive**  |    Oui   |  1   |    Décrit l’état actuel de la licence de cette application. La valeur **true** indique que la licence est valide. La valeur **false** indique une licence non valide. Normalement, cette valeur est **true**, que l’application ait un mode d’évaluation ou non.  Réglez cette valeur sur **false** pour tester le comportement de votre application quand sa licence n’est pas valide.           |
+|  **IsTrial**  |    Oui  |  1   |      Décrit l’état actuel d’évaluation de cette application. La valeur **true** indique que l’application est utilisée pendant la période d’évaluation. La valeur **false** indique que l’application n’est pas en période d’évaluation, soit parce qu’elle a été achetée, soit parce que la période d’évaluation est échue.         |
+|  **ExpirationDate**  |    Non  |  0 ou 1       |     Date à laquelle la période d’évaluation de cette application expire, en temps universel coordonné (UTC). La date doit se présenter comme suit&nbsp;: aaaa-mm-jjThh:mm:ss.ssZ. Par exemple, le 19&nbsp;janvier&nbsp;2015 à&nbsp;05:00 correspond à 2015-01-19T05:00:00.00Z. Cet élément est requis lorsque **IsTrial** est **true**. Sinon, il est facultatif.          |  |
 
 <span id="product-child-of-licenseinformation"/>
-#### <a name="product-element-child-of-licenseinformation"></a>Product element (child of LicenseInformation)
+#### <a name="product-element-child-of-licenseinformation"></a>Élément Product (enfant de LicenseInformation)
 
-This element describes the license status of a durable add-on in the app. **Product** is an optional child of the [LicenseInformation](#licenseinformation) element.
+Cet élément décrit l’état de la licence d’un module complémentaire durable dans l’application. **Product** est un enfant facultatif de l’élément [LicenseInformation](#licenseinformation).
 
-**Product** contains the following child elements.
+**Product** contient les éléments enfants suivants.
 
-|  Element  |  Required  |  Quantity  | Description   |
+|  Élément  |  Requis  |  Quantité  | Description   |
 |-------------|------------|--------|--------|
-|  **IsActive**  |    Yes   |  1     |    Describes the current license state of this add-on. The value **true** indicates the add-on can be used; **false** indicates the add-on cannot be used or has not been purchased           |
-|  **ExpirationDate**  |    No   |  0 or 1     |     The date the add-on expires, in Coordinated Universal Time (UTC). The date must be expressed as: yyyy-mm-ddThh:mm:ss.ssZ. For example, 05:00 on January 19, 2015 would be specified as 2015-01-19T05:00:00.00Z. If this element is present, the add-on has an expiration date. If it's not present, the add-on does not expire.  |  
+|  **IsActive**  |    Oui   |  1     |    Décrit l’état actuel de la licence de ce module complémentaire. La valeur **true** indique que le module complémentaire est utilisable. La valeur **false** indique que le module complémentaire n’est pas utilisable ou n’a pas été acheté.           |
+|  **ExpirationDate**  |    Non   |  0 ou 1     |     Date d’expiration du module complémentaire, en temps universel coordonné (UTC). La date doit se présenter comme suit&nbsp;: aaaa-mm-jjThh:mm:ss.ssZ. Par exemple, le 19&nbsp;janvier&nbsp;2015 à&nbsp;05:00 correspond à 2015-01-19T05:00:00.00Z. Si cet élément est présent, le module complémentaire a une date d’expiration. S’il n’est pas présent, le module complémentaire n’expire pas.  |  
 
-**Product** has the following attributes.
+**Product** a les attributs suivants.
 
-|  Attribute  |  Required  |  Description   |
+|  Attribut  |  Requis  |  Description   |
 |-------------|------------|----------------|
-|  **ProductId**  |    Yes        |   Contains the string used by the app to identify the add-on.            |
-|  **OfferId**  |     No       |   Contains the string used by the app to identify the category in which the add-on belongs. This provides support for large item catalogs, as described in [Manage a large catalog of in-app products](manage-a-large-catalog-of-in-app-products.md).           |
+|  **ProductId**  |    Oui        |   Contient la chaîne utilisée par l’application pour identifier le module complémentaire.            |
+|  **OfferId**  |     Non       |   Contient la chaîne utilisée par l’application pour identifier la catégorie à laquelle appartient le module complémentaire. Il permet de prendre en charge des catalogues volumineux, comme indiqué dans [Gérer un vaste catalogue de produits intégrés à l'application](manage-a-large-catalog-of-in-app-products.md).           |
 
 <span id="simulation"/>
-#### <a name="simulation-element"></a>Simulation element
+#### <a name="simulation-element"></a>Élément de simulation
 
-This element describes how calls to various [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.aspx) methods will work in the app during testing. **Simulation** is an optional child of the **CurrentApp** element, and it contains zero or more [DefaultResponse](#defaultresponse) elements.
+Cet élément décrit le fonctionnement des appels à plusieurs méthodes [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.aspx) dans l’application lors du test. **Simulation** est un enfant facultatif de l’élément **CurrentApp** et contient zéro, un ou plusieurs éléments [DefaultResponse](#defaultresponse).
 
-**Simulation** has the following attributes.
+**Simulation** a les attributs suivants.
 
-|  Attribute  |  Required  |  Description   |
+|  Attribut  |  Requis  |  Description   |
 |-------------|------------|----------------|
-|  **SimulationMode**  |    No        |      Values can be **Interactive** or **Automatic**. When this attribute is set to **Automatic**, the methods will automatically return the specified HRESULT error codes. This can be used when running automated test cases.       |
+|  **SimulationMode**  |    Non        |      La valeur peut être **Interactive** ou **Automatic**. Lorsque cet attribut a pour valeur **Automatic**, les méthodes renvoient automatiquement les codes d’erreur HRESULT spécifiés. Il peut s’utiliser lors de l’exécution de scénarios de test automatisés.       |
 
 <span id="defaultresponse"/>
-#### <a name="defaultresponse-element"></a>DefaultResponse element
+#### <a name="defaultresponse-element"></a>Élément DefaultResponse
 
-This element describes the default error code returned by a **CurrentAppSimulator** method. **DefaultResponse** is an optional child of the [Simulation](#simulation) element.
+Cet élément décrit le code d’erreur par défaut renvoyé par une méthode **CurrentAppSimulator**. **DefaultResponse** est un enfant facultatif de l’élément [Simulation](#simulation).
 
-**DefaultResponse** has the following attributes.
+**DefaultResponse** a les attributs suivants.
 
-|  Attribute  |  Required  |  Description   |
+|  Attribut  |  Requis  |  Description   |
 |-------------|------------|----------------|
-|  **MethodName**  |    Yes        |   Assign this attribute to one of the enum values shown for the **StoreMethodName** type in the [schema](#schema). Each of these enum values represents a **CurrentAppSimulator** method for which you want to simulate an error code return value in your app during testing. For example, the value **RequestAppPurchaseAsync_GetResult** indicates you want to simulate the error code return value of the [RequestAppPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.requestapppurchaseasync.aspx) method.            |
-|  **HResult**  |     Yes       |   Assign this attribute to one of the enum values shown for the **ResponseCodes** type in the [schema](#schema). Each of these enum values represents the error code you want to return for the method that is assigned to the **MethodName** attribute for this **DefaultResponse** element.           |
+|  **MethodName**  |    Oui        |   Affectez à cet attribut l’une des valeurs d’énumération affichées pour le type **StoreMethodName** dans le [schéma](#schema). Chacune de ces valeurs d’énumération représente une méthode **CurrentAppSimulator** pour laquelle vous voulez simuler la valeur de retour du code d’erreur dans votre application au cours du test. Par exemple, la valeur **RequestAppPurchaseAsync_GetResult** indique que vous voulez simuler la valeur de retour du code d’erreur de la méthode [RequestAppPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.requestapppurchaseasync.aspx).            |
+|  **HResult**  |     Oui       |   Affectez à cet attribut l’une des valeurs d’énumération affichées pour le type **ResponseCodes** dans le [schéma](#schema). Chacune de ces valeurs d’énumération représente le code d’erreur que vous voulez renvoyer pour la méthode affectée à l’attribut **MethodName** de cet élément **DefaultResponse**.           |
 
 <span id="consumableinformation"/>
-#### <a name="consumableinformation-element"></a>ConsumableInformation element
+#### <a name="consumableinformation-element"></a>Élément ConsumableInformation
 
-This element describes the consumable add-ons available for this app. **ConsumableInformation** is an optional child of the **CurrentApp** element, and it can contain zero or more [Product](#product-child-of-consumableinformation) elements.
+Cet élément décrit les modules complémentaires consommables disponibles pour cette application. **ConsumableInformation** est un enfant facultatif de l’élément **CurrentApp** et contient zéro, un ou plusieurs éléments [Product](#product-child-of-consumableinformation).
 
 <span id="product-child-of-consumableinformation"/>
-#### <a name="product-element-child-of-consumableinformation"></a>Product element (child of ConsumableInformation)
+#### <a name="product-element-child-of-consumableinformation"></a>Élément Product (enfant de ConsumableInformation)
 
-This element describes a consumable add-on. **Product** is an optional child of the [ConsumableInformation](#consumableinformation) element.
+Cet élément décrit un module complémentaire consommable. **Product** est un enfant facultatif de l’élément [ConsumableInformation](#consumableinformation).
 
-**Product** has the following attributes.
+**Product** a les attributs suivants.
 
-|  Attribute  |  Required  |  Description   |
+|  Attribut  |  Requis  |  Description   |
 |-------------|------------|----------------|
-|  **ProductId**  |    Yes        |   Contains the string used by the app to identify the consumable add-on.            |
-|  **TransactionId**  |     Yes       |   Contains a GUID (as a string) used by the app to track the purchase transaction of a consumable through the process of fulfillment. See [Enable consumable in-app product purchases](enable-consumable-in-app-product-purchases.md).            |
-|  **Status**  |      Yes      |  Contains the string used by the app to indicate the fulfillment status of a consumable. Values can be **Active**, **PurchaseReverted**, **PurchasePending**, or **ServerError**.             |
-|  **OfferId**  |     No       |    Contains the string used by the app to identify the category in which the consumable belongs. This provides support for large item catalogs, as described in [Manage a large catalog of in-app products](manage-a-large-catalog-of-in-app-products.md).           |
+|  **ProductId**  |    Oui        |   Contient la chaîne utilisée par l’application pour identifier le module complémentaire consommable.            |
+|  **TransactionId**  |     Oui       |   Contient un GUID (sous forme de chaîne) utilisé pour suivre la transaction d’achat d’un consommable via le processus d’acquisition. Consultez [Activer l’achat de produits in-app consommables](enable-consumable-in-app-product-purchases.md).            |
+|  **Status**  |      Oui      |  Contient la chaîne utilisée par l’application pour indiquer l’état d’acquisition d’un consommable. La valeur peut être **Active**, **PurchaseReverted**, **PurchasePending** ou **ServerError**.             |
+|  **OfferId**  |     Non       |    Contient la chaîne utilisée par l’application pour identifier la catégorie à laquelle appartient le consommable. Il permet de prendre en charge des catalogues volumineux, comme indiqué dans [Gérer un vaste catalogue de produits intégrés à l'application](manage-a-large-catalog-of-in-app-products.md).           |
 
 
 

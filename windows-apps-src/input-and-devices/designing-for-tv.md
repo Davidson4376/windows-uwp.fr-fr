@@ -1,7 +1,7 @@
 ---
 author: eliotcowley
-Description: Design your app so that it looks good and functions well on your television.
-title: Designing for Xbox and TV
+Description: "Concevez votre application pour une esthétique et un fonctionnement optimaux sur votre télévision."
+title: "Conception pour Xbox et télévision"
 ms.assetid: 780209cb-3e8a-4cf7-8f80-8b8f449580bf
 label: Designing for Xbox and TV
 template: detail.hbs
@@ -12,105 +12,105 @@ ms.openlocfilehash: de76a3c6d4949b9203df79855e1748a81d76ca64
 
 ---
 
-# <a name="designing-for-xbox-and-tv"></a>Designing for Xbox and TV
+# <a name="designing-for-xbox-and-tv"></a>Conception pour Xbox et télévision
 
-Design your Universal Windows Platform (UWP) app so that it looks good and functions well on Xbox One and television screens.
+Concevez votre application de plateforme&nbsp;Windows universelle (UWP) pour une esthétique et un fonctionnement optimaux sur les écrans de télévision et Xbox&nbsp;One.
 
-## <a name="overview"></a>Overview
+## <a name="overview"></a>Vue d’ensemble
 
-The Universal Windows Platform lets you create delightful experiences across multiple Windows 10 devices. Most of the functionality provided by the UWP framework enables apps to use the same user interface (UI) across these devices, without additional work. However, tailoring and optimizing your app to work great on Xbox One and TV screens requires special considerations.
+La plateforme&nbsp;Windows universelle vous permet de créer des expériences agréables sur plusieurs types d’appareils Windows&nbsp;10. La plupart des fonctionnalités fournies par l’infrastructure&nbsp;UWP permettent aux applications d’utiliser la même interface utilisateur sur ces appareils, sans travail supplémentaire. Toutefois, des éléments particuliers sont à prendre en compte afin d’optimiser votre application et l’adapter pour un fonctionnement parfait sur les écrans de télévision et Xbox&nbsp;One.
 
-The experience of sitting on your couch across the room, using a gamepad or remote to interact with your TV, is called the **10-foot experience**. It is so named because the user is generally sitting approximately 10 feet away from the screen. This provides unique challenges that aren't present in, say, the *2-foot* experience, or interacting with a PC. If you are developing an app for Xbox One or any other device that outputs to the TV screen and uses a controller for input, you should always keep this in mind.
+L’expérience qui consiste à se trouver assis sur son fauteuil en face de la télévision et à interagir avec celle-ci à l’aide d’un boîtier de commande ou d’une télécommande est appelée le «&nbsp;**10-foot experience**&nbsp;» Ce nom vient du fait que l’utilisateur se trouve généralement à 3&nbsp;mètres (10&nbsp;pieds) de l’écran. Cela soulève des défis propres à cette expérience, qui ne sont pas présents dans l’expérience «&nbsp;*2-foot experience*&nbsp;» ou lors d’interactions avec un PC. Si vous développez une application pour Xbox&nbsp;One ou tout autre appareil dont la sortie et l’entrée se font respectivement sur télévision et par boîtier de commande, vous devez toujours garder ceci à l’esprit.
 
-Not all of the steps in this article are required to make your app work well for 10-foot experiences, but understanding them and making the appropriate decisions for your app will result in a better 10-foot experience tailored for your app's specific needs. As you bring your app to life in the 10-foot environment, consider the following design principles.
+Toutes les étapes décrites dans cet article ne sont pas nécessaires pour que votre application fonctionne pour les expériences «&nbsp;10-foot experience&nbsp;», mais le fait de les comprendre et de prendre les décisions appropriées pour votre application créera une meilleure «&nbsp;10-foot&nbsp;experience&nbsp;», mieux adaptée aux besoins spécifiques de votre application. Lorsque vous concevez une application pour un environnement de 3&nbsp;mètres, prenez en compte les principes de conception suivants.
 
-### <a name="simple"></a>Simple
+### <a name="simple"></a>Simplicité
 
-Designing for the 10-foot environment presents a unique set of challenges. Resolution and viewing distance can make it difficult for people to process too much information. Try to keep your design clean, reduced to the simplest possible components. The amount of information displayed on a TV should be comparable to what you'd see on a mobile phone, rather than on a desktop.
+La conception pour un environnement de 3&nbsp;mètres présente des défis uniques. La résolution et la distance d’affichage peuvent rendre difficile pour les utilisateurs l’assimilation d’une trop grande quantité d’informations. Faites en sorte que votre conception soit épurée et réduite aux composants les plus simples. La quantité d’informations affichées sur une télévision doit être comparable à ce que vous pourriez voir sur un téléphone mobile, plutôt que sur un bureau d’ordinateur.
 
-![Xbox One home screen](images/designing-for-tv/xbox-home-screen.png)
+![Écran d’accueil de Xbox&nbsp;One](images/designing-for-tv/xbox-home-screen.png)
 
-### <a name="coherent"></a>Coherent
+### <a name="coherent"></a>Cohérence
 
-UWP apps in the 10-foot environment should be intuitive and easy to use. Make the focus clear and unmistakable. Arrange content so that movement across the space is consistent and predictable. Give people the shortest path to what they want to do.
+Les applications UWP dans un environnement de 3&nbsp;mètres doivent être intuitives et faciles d’utilisation. Le focus doit apparaître clairement. Organisez le contenu de manière à ce que la navigation soit prévisible et cohérente. Fournissez à vos utilisateurs le chemin d’accès le plus rapide au contenu souhaité.
 
-![Xbox One Movies app](images/designing-for-tv/xbox-movies-app.png)
+![L’application Xbox&nbsp;One&nbsp;Movies](images/designing-for-tv/xbox-movies-app.png)
 
-_**All movies shown in the screenshot are available on Microsoft Movies & TV.**_  
+_**Tous les films présentés dans la capture d’écran sont disponibles sur Films et TV&nbsp;Microsoft.**_  
 
-### <a name="captivating"></a>Captivating
+### <a name="captivating"></a>Captivant
 
-The most immersive, cinematic experiences take place on the big screen. Edge-to-edge scenery, elegant motion, and vibrant use of color and typography take your apps to the next level. Be bold and beautiful.
+Les expériences les plus immersives et cinématographiques se passent sur grand écran. Des paysages de bord à bord et l’utilisation de couleurs et d’une typographie vives font passer vos applications au niveau supérieur. Osez. Imaginez.
 
-![Xbox One Avatar app](images/designing-for-tv/xbox-avatar-app.png)
+![Application des avatars de Xbox&nbsp;One](images/designing-for-tv/xbox-avatar-app.png)
 
-### <a name="optimizations-for-the-10-foot-experience"></a>Optimizations for the 10-foot experience
+### <a name="optimizations-for-the-10-foot-experience"></a>Optimisations en matière d’expérience «&nbsp;10-foot&nbsp;»
 
-Now that you know the principles of good UWP app design for the 10-foot experience, read through the following overview of the specific ways you can optimize your app and make for a great user experience.
+À présent que vous connaissez les principes d’une bonne conception d’application&nbsp;UWP pour une expérience «&nbsp;10-foot&nbsp;», lisez les descriptions suivantes pour vous approprier les différentes façons d’optimiser votre application et créer une expérience utilisateur améliorée.
 
-| Feature        | Description           |
+| Fonctionnalité        | Description           |
 | -------------------------------------------------------------- |--------------------------------|
-| [Gamepad and remote control](#gamepad-and-remote-control)      | Making sure that your app works well with gamepad and remote is the most important step in optimizing for 10-foot experiences. There are several gamepad and remote-specific improvements that you can make to optimize the user interaction experience on a device where their actions are somewhat limited. |
-| [XY focus navigation and interaction](#xy-focus-navigation-and-interaction) | The UWP provides **XY focus navigation** that allows the user to navigate around your app's UI. However, this limits the user to navigating up, down, left, and right. Recommendations for dealing with this and other considerations are outlined in this section. |
-| [Mouse mode](#mouse-mode)|In some user interfaces, such as maps and drawing surfaces, it is not possible or practical to use XY focus navigation. For these interfaces, the UWP provides **mouse mode** to let the gamepad/remote navigate freely, like a mouse on a desktop computer.|
-| [Focus visual](#focus-visual)  | The focus visual is the border around the UI element that currently has focus. This helps orient the user so that they can easily navigate your UI without getting lost. If the focus is not clearly visible, the user could get lost in your UI and not have a great experience.  |
-| [Focus engagement](#focus-engagement) | Setting focus engagement on a UI element requires the user to press the **A/Select** button in order to interact with it. This can help create a better experience for the user when navigating your app's UI.
-| [UI element sizing](#ui-element-sizing)  | The Universal Windows Platform uses [scaling and effective pixels](..\layout\design-and-ui-intro.md#effective-pixels-and-scaling) to scale the UI according to the viewing distance. Understanding sizing and applying it across your UI will help optimize your app for the 10-foot environment.  |
-|  [TV-safe area](#tv-safe-area) | The UWP will automatically avoid displaying any UI in TV-unsafe areas (areas close to the edges of the screen) by default. However, this creates a "boxed-in" effect in which the UI looks letterboxed. For your app to be truly immersive on TV, you will want to modify it so that it extends to the edges of the screen on TVs that support it. |
-| [Colors](#colors)  |  The UWP supports color themes, and an app that respects the system theme will default to **dark** on Xbox One. If your app has a specific color theme, you should consider that some colors don't work well for TV and should be avoided. |
-| [Sound](../style/sound.md)    | Sounds play a key role in the 10-foot experience, helping to immerse and give feedback to the user. The UWP provides functionality that automatically turns on sounds for common controls when the app is running on Xbox One. Find out more about the sound support built into the UWP and learn how to take advantage of it.    |
-| [Guidelines for UI controls](#guidelines-for-ui-controls)  |  There are several UI controls that work well across multiple devices, but have certain considerations when used on TV. Read about some best practices for using these controls when designing for the 10-foot experience. |
-| [Custom visual state trigger for Xbox](#custom-visual-state-trigger-for-xbox) | To tailor your UWP app for the 10-foot experience, we recommend that you use a custom *visual state trigger* to make layout changes when the app detects that it has been launched on an Xbox console.
+| [Boîtier de commande et télécommande](#gamepad-and-remote-control)      | Le bon fonctionnement de votre application avec un boîtier de commande et une télécommande représente l’étape la plus importante de l’optimisation des expériences «&nbsp;10-foot&nbsp;». Vous pouvez cependant apporter des améliorations relatives aux boîtiers de commande et aux télécommandes pour optimiser l’expérience d’interaction utilisateur sur un appareil où leurs actions sont relativement limitées. |
+| [Interaction et navigation en mode focus&nbsp;XY](#xy-focus-navigation-and-interaction) | La plateforme UWP propose une **navigation en mode focus XY** qui permet à l’utilisateur de naviguer dans l’interface utilisateur de votre application. Toutefois, cela limite la navigation à quatre directions&nbsp;: haut, bas, gauche et droite. Cette section apporte des recommandations pour y remédier ainsi que d’autres considérations. |
+| [Mode souris](#mouse-mode)|Dans certaines interfaces utilisateur, telles que les cartes et les surfaces de dessin, l’utilisation de la navigation en mode focus&nbsp;XY est impossible ou peu pratique. Pour ces interfaces, la plateforme UWP propose le **mode souris** pour que l’utilisateur puisse naviguer librement avec le boîtier de commande/la télécommande, comme avec une souris sur un ordinateur de bureau.|
+| [Visuel du focus](#focus-visual)  | Le visuel du focus est le contour de l’élément de l’interface utilisateur sur lequel se trouve actuellement le focus. Cela permet de guider l’utilisateur pour une navigation facile dans votre interface utilisateur et sans se perdre. Si le focus n’est pas clairement visible, l’utilisateur peut se perdre dans votre interface utilisateur et garder ainsi une mauvaise impression de son expérience.  |
+| [Activation du focus](#focus-engagement) | Définir l’activation du focus sur un élément d’interface utilisateur nécessite que l’utilisateur appuie sur le bouton **A/Sélectionner** pour interagir avec lui. Cela peut contribuer à créer une meilleure expérience pour l’utilisateur lors de sa navigation dans l’interface utilisateur de votre application.
+| [Redimensionnement des éléments de l’interface utilisateur](#ui-element-sizing)  | La plateforme Windows universelle utilise la [mise à l’échelle et les pixels effectifs](..\layout\design-and-ui-intro.md#effective-pixels-and-scaling) pour mettre à l’échelle l’interface utilisateur en fonction de la distance d’affichage. Le fait de comprendre le redimensionnement et de l’appliquer à votre interface utilisateur vous aide à optimiser votre environnement de 3&nbsp;mètres.  |
+|  [Zones adaptées à l’écran de TV](#tv-safe-area) | La plateforme&nbsp;UWP évite automatiquement et par défaut l’affichage de contenu dans les zones non adaptées à l’écran de TV (près des bords de l’écran). Cela crée cependant un effet «&nbsp;d’encadré&nbsp;»&nbsp;; l’interface utilisateur semble alors s’afficher dans un cadre. Pour que votre application soit véritablement immersive sur les écrans de télévision, vous devez la modifier afin qu’elle s’étende jusqu’aux bords des écrans compatibles. |
+| [Couleurs](#colors)  |  La plateforme UWP prend en charge les thèmes de couleur. Une application qui respecte le thème du système sera **foncée** par défaut sur Xbox One. Si votre application possède un thème de couleur spécifique, gardez à l’esprit que certaines couleurs ne fonctionnent pas correctement sur les écrans de télévision et doivent donc être évitées. |
+| [Son](../style/sound.md)    | Les sons jouent un rôle clé dans l’expérience «&nbsp;10-foot&nbsp;», contribuant ainsi à l’envoi de commentaires à l’utilisateur. La plateforme UWP fournit des fonctionnalités qui activent automatiquement les sons des contrôles courants lorsque l’application s’exécute sur Xbox&nbsp;One. Découvrez la prise en charge des sons intégrée à la plateforme UWP et comment en tirer partie.    |
+| [Recommandations en matière de contrôles d’interface utilisateur](#guidelines-for-ui-controls)  |  Il existe plusieurs contrôles d’interface utilisateur qui fonctionnent correctement sur plusieurs appareils, mais pour lesquels certains éléments doivent être pris en compte s’ils sont utilisés sur un téléviseur. Découvrez certaines meilleures pratiques portant sur l’utilisation de ces contrôles lors de la conception pour l’expérience «&nbsp;10-foot&nbsp;». |
+| [Déclencheur d’état visuel personnalisé pour Xbox](#custom-visual-state-trigger-for-xbox) | Pour personnaliser votre application&nbsp;UWP pour l’expérience «&nbsp;10-foot&nbsp;», nous vous recommandons d’utiliser un *déclencheur d’état visuel* personnalisé pour modifier la disposition lorsque l’application détecte son lancement sur une console Xbox.
 
 > [!NOTE]
-> Most of the code snippets in this topic are in XAML/C#; however, the principles and concepts apply to all UWP apps. If you're developing an HTML/JavaScript UWP app for Xbox, check out the excellent [TVHelpers](https://github.com/Microsoft/TVHelpers/wiki) library on GitHub.
+> La plupart des extraits de code dans cette rubrique sont en langage XAML/C#. Mais, les principes et les concepts s’appliquent à toutes les applications&nbsp;UWP. Si vous développez une application UWP en HTML/JavaScript pour Xbox, consultez l’excellente bibliothèque [TVHelpers](https://github.com/Microsoft/TVHelpers/wiki) sur GitHub.
 
-## <a name="gamepad-and-remote-control"></a>Gamepad and remote control
+## <a name="gamepad-and-remote-control"></a>Boîtier de commande et télécommande
 
-Just like keyboard and mouse are for PC, and touch is for phone and tablet, gamepad and remote control are the main input devices for the 10-foot experience. This section introduces what the hardware buttons are and what they do. In [XY focus navigation and interaction](#xy-focus-navigation-and-interaction) and [Mouse mode](#mouse-mode), you will learn how to optimize your app when using these input devices.
+Comme le clavier et la souris pour PC et la fonction tactile pour les téléphones et tablettes, le boîtier de commande et la télécommande sont les principaux périphériques d’entrée pour l’expérience «&nbsp;10-foot&nbsp;». Cette section présente les boutons matériels et leur fonction. Dans les sections [Interaction et navigation en mode focus XY](#xy-focus-navigation-and-interaction) et [Mode souris](#mouse-mode), vous découvrirez comment optimiser votre application en cas d’utilisation de ces périphériques d’entrée.
 
-The quality of gamepad and remote behavior that you get out-of-the-box depends on how well keyboard is supported in your app. A good way to ensure that your app will work well with gamepad/remote is to make sure that it works well with keyboard on PC, and then test with gamepad/remote to find weak spots in your UI.
+La qualité du comportement du boîtier de commande et de la télécommande lors de la première utilisation dépend de la prise en charge correcte du clavier dans votre application. Un moyen efficace de vous assurer que votre application fonctionne correctement avec le boîtier de commande/télécommande est de voir si celle-ci fonctionne correctement avec le clavier sur PC, puis testez-la avec un boîtier de commande/télécommande pour déterminer les points faibles dans votre interface utilisateur.
 
-### <a name="hardware-buttons"></a>Hardware buttons
+### <a name="hardware-buttons"></a>Boutons matériels
 
-Throughout this document, buttons will be referred to by the names given in the following diagram.
+Tout au long de ce document, les boutons seront appelés par leurs noms fournis dans le schéma suivant.
 
-![Gamepad and remote buttons diagram](images/designing-for-tv/hardware-buttons-gamepad-remote.png)
+![Schéma affichant les boutons d’un boîtier de commande et d’une télécommande](images/designing-for-tv/hardware-buttons-gamepad-remote.png)
 
-As you can see from the diagram, there are some buttons that are supported on gamepad that are not supported on remote control, and vice versa. While you can use buttons that are only supported on one input device to make navigating the UI faster, be aware that using them for critical interactions may create a situation where the user is unable to interact with certain parts of the UI.
+Comme vous pouvez le constater sur le schéma, certains des boutons pris en charge sur le boîtier de commande ne le sont pas sur la télécommande, et vice versa. Bien que vous puissiez utiliser des boutons qui sont uniquement pris en charge sur un périphérique d’entrée (pour rendre plus rapide la navigation dans l’interface utilisateur), n’oubliez pas que leur utilisation pour des interactions critiques peut créer une situation dans laquelle l’utilisateur se trouve dans l’impossibilité d’interagir avec certaines parties de l’interface utilisateur.
 
-The following table lists all of the hardware buttons supported by UWP apps, and which input device supports them.
+Le tableau suivant répertorie tous les boutons matériels pris en charge par les applications UWP et les périphériques d’entrée qui les prennent en charge.
 
-| Button                    | Gamepad   | Remote control    |
+| Button                    | Boîtier de commande   | Télécommande    |
 |---------------------------|-----------|-------------------|
-| A/Select button           | Yes       | Yes               |
-| B/Back button             | Yes       | Yes               |
-| Directional pad (D-pad)   | Yes       | Yes               |
-| Menu button               | Yes       | Yes               |
-| View button               | Yes       | Yes               |
-| X and Y buttons           | Yes       | No                |
-| Left stick                | Yes       | No                |
-| Right stick               | Yes       | No                |
-| Left and right triggers   | Yes       | No                |
-| Left and right bumpers    | Yes       | No                |
-| OneGuide button           | No        | Yes               |
-| Volume button             | No        | Yes               |
-| Channel button            | No        | Yes               |
-| Media control buttons     | No        | Yes               |
-| Mute button               | No        | Yes               |
+| Bouton&nbsp;A/Sélectionner           | Oui       | Oui               |
+| Bouton B/Précédent             | Oui       | Oui               |
+| Bouton multidirectionnel   | Oui       | Oui               |
+| Touche Menu               | Oui       | Oui               |
+| Touche Affichage               | Oui       | Oui               |
+| Boutons X et Y           | Oui       | Non                |
+| Stick analogique gauche                | Oui       | Non                |
+| Stick analogique droit               | Oui       | Non                |
+| Gâchette gauche et droite   | Oui       | Non                |
+| Gâchettes hautes gauche et droite    | Oui       | Non                |
+| Bouton&nbsp;OneGuide           | Non        | Oui               |
+| Bouton de volume             | Non        | Oui               |
+| Bouton de changement de chaîne            | Non        | Oui               |
+| Boutons de contrôle multimédia     | Non        | Oui               |
+| Bouton Muet               | Non        | Oui               |
 
-### <a name="built-in-button-support"></a>Built-in button support
+### <a name="built-in-button-support"></a>Prise en charge des boutons intégrés
 
-The UWP automatically maps existing keyboard input behavior to gamepad and remote control input. The following table lists these built-in mappings.
+La plateforme UWP mappe automatiquement le comportement d’entrée du clavier existant sur les entrées du boîtier de commande et de la télécommande. Le tableau suivant répertorie ces mappages intégrés.
 
-| Keyboard              | Gamepad/remote                        |
+| Clavier              | Boîtier de commande/Télécommande                        |
 |-----------------------|---------------------------------------|
-| Arrow keys            | D-pad (also left stick on gamepad)    |
-| Spacebar              | A/Select button                       |
-| Enter                 | A/Select button                       |
-| Escape                | B/Back button*                        |
+| Touches de direction            | Bouton multidirectionnel (également stick analogique gauche sur le boîtier de commande)    |
+| Espace              | Bouton&nbsp;A/Sélectionner                       |
+| Entrée                 | Bouton&nbsp;A/Sélectionner                       |
+| Échap                | Bouton B/Précédent*                        |
 
-\*When neither the [KeyDown](https://msdn.microsoft.com/library/windows/apps/br208941.aspx) nor [KeyUp](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.keyup.aspx) events for the B button are handled by the app, the [SystemNavigationManager.BackRequested](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.systemnavigationmanager.backrequested.aspx) event will be fired, which should result in back navigation within the app. However, you have to implement this yourself, as in the following code snippet:
+\*Lorsque les événements [KeyDown](https://msdn.microsoft.com/library/windows/apps/br208941.aspx) et [KeyUp](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.keyup.aspx) pour le bouton&nbsp;B ne sont pas gérés par l’application, l’événement [SystemNavigationManager.BackRequested](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.systemnavigationmanager.backrequested.aspx) est déclenché, ce qui doit se traduire par une navigation vers l’arrière au sein de l’application. Cependant, vous devez implémenter cela vous-même, comme dans l’extrait de code suivant&nbsp;:
 
 ```csharp
 // This code goes in the MainPage class
@@ -154,36 +154,36 @@ private bool BackRequested()
 }
 ```
 
-UWP apps on Xbox One also support pressing the **Menu** button to open context menus. For more information, see [CommandBar and ContextFlyout](#commandbar-and-contextflyout).
+Les applications UWP sur Xbox&nbsp;One permettent également d’appuyer sur le bouton **Menu** pour ouvrir les menus contextuels. Pour plus d’informations, voir [CommandBar et ContextFlyout](#commandbar-and-contextflyout).
 
-### <a name="accelerator-support"></a>Accelerator support
+### <a name="accelerator-support"></a>Prise en charge des boutons accélérateurs
 
-Accelerator buttons are buttons that can be used to speed up navigation through a UI. However, these buttons may be unique to a certain input device, so keep in mind that not all users will be able to use these functions. In fact, gamepad is currently the only input device that supports accelerator functions for UWP apps on Xbox One.
+Les boutons accélérateurs permettant d’accélérer la navigation dans une interface utilisateur. Cependant, ces boutons peuvent être propres à certains périphériques d’entrée&nbsp;; certains utilisateurs ne seront donc pas en mesure d’utiliser ces fonctions. En réalité, le boîtier de commande est le seul périphérique d’entrée qui prend en charge les fonctions d’accélération pour les applications&nbsp;UWP sur Xbox&nbsp;One.
 
-The following table lists the accelerator support built into the UWP, as well as that which you can implement on your own. Utilize these behaviors in your custom UI to provide a consistent and friendly user experience.
+Le tableau suivant répertorie la prise en charge intégrée des accélérateurs dans l’UWP, en plus de ce que vous pouvez implémenter vous-même. Intégrez ces comportements à votre interface utilisateur personnalisée afin de proposer une expérience utilisateur cohérente et conviviale.
 
-| Interaction   | Keyboard   | Gamepad      | Built-in for:  | Recommended for: |
+| Interaction   | Clavier   | Boîtier de commande      | Intégrée pour&nbsp;:  | Recommandée pour&nbsp;: |
 |---------------|------------|--------------|----------------|------------------|
-| Page up/down  | Page up/down | Left/right triggers | [CalendarView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.calendarview.aspx), [ListBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listbox.aspx), [ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx), [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), `ScrollViewer`, [Selector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.aspx), [LoopingSelector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.loopingselector.aspx), [ComboBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.combobox.aspx), [FlipView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx) | Views that support vertical scrolling
-| Page left/right | None | Left/right bumpers | [Pivot](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.pivot.aspx), [ListBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listbox.aspx), [ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx), [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), `ScrollViewer`, [Selector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.aspx), [LoopingSelector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.loopingselector.aspx), [FlipView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx) | Views that support horizontal scrolling
-| Zoom in/out        | Ctrl +/- | Left/right triggers | None | `ScrollViewer`, views that support zooming in and out |
-| Open/close nav pane | None | View | None | Navigation panes |
-| [Search](#search-experience) | None | Y button | None | Shortcut to the main search function in the app |
+| Page vers le haut/bas  | Page vers le haut/bas | Gâchette gauche/droite | [CalendarView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.calendarview.aspx), [ListBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listbox.aspx), [ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx), [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), `ScrollViewer`, [Selector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.aspx), [LoopingSelector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.loopingselector.aspx), [ComboBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.combobox.aspx), [FlipView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx) | Affichages qui prennent en charge le défilement vertical
+| Page vers la gauche/droite | Aucun | Gâchettes hautes gauche/droite | [Pivot](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.pivot.aspx), [ListBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listbox.aspx), [ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx), [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx), `ScrollViewer`, [Selector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.aspx), [LoopingSelector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.loopingselector.aspx), [FlipView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx) | Affichages qui prennent en charge le défilement horizontal
+| Zoom avant/arrière        | Ctrl&nbsp;+/- | Gâchette gauche/droite | Aucun | `ScrollViewer`, les affichages qui prennent en charge le zoom avant et arrière |
+| Ouvrir/fermer le volet de navigation | Aucun | Affichage | Aucun | Volets de navigation |
+| [Rechercher](#search-experience) | Aucun | Bouton Y | Aucun | Raccourci pour la fonction de recherche principale dans l’application |
 
-## <a name="xy-focus-navigation-and-interaction"></a>XY focus navigation and interaction
+## <a name="xy-focus-navigation-and-interaction"></a>Interaction et navigation en mode focus&nbsp;XY
 
-If your app supports proper focus navigation for keyboard, this will translate well to gamepad and remote control. Navigation with the arrow keys is mapped to the **D-pad** (as well as the **left stick** on gamepad), and interaction with UI elements is mapped to the **Enter/Select** key (see [Gamepad and remote control](#gamepad-and-remote-control)). 
+Si votre application prend en charge une navigation en mode focus appropriée pour le clavier, cela conviendra également pour le boîtier de commande et la télécommande. La navigation avec les touches de direction est mappée au **bouton multidirectionnel** (ainsi qu’au **stick analogique gauche** sur le boîtier de commande), et l’interaction avec les éléments d’interface utilisateur est mappée à la touche **Entrée/Sélectionner** (voir [Boîtier de commande et télécommande](#gamepad-and-remote-control)). 
 
-Many events and properties are used by both keyboard and gamepad&mdash;they both fire `KeyDown` and `KeyUp` events, and they both will only navigate to controls that have the properties `IsTabStop="True"` and `Visibility="Visible"`. For keyboard design guidance, see [Keyboard interactions](keyboard-interactions.md).
+De nombreux événements et propriétés sont utilisés par le boîtier de commande et le clavier&mdash;les deux déclenchent des événements `KeyDown` et `KeyUp`, et accéderont uniquement à des contrôles qui sont dotés des propriétés `IsTabStop="True"` et `Visibility="Visible"`. Pour des recommandations en matière de conception de clavier, voir [Interactions avec le clavier](keyboard-interactions.md).
 
-If keyboard support is implemented properly, your app will work reasonably well; however, there may be some extra work required to support every scenario. Think about your app's specific needs to provide the best user experience possible.
+Si la prise en charge du clavier est correctement implémentée, votre application fonctionnera assez bien&nbsp;; toutefois, du travail supplémentaire peut être nécessaire pour la prise en charge de chaque scénario. Réfléchissez aux besoins spécifiques de votre application pour proposer une expérience utilisateur optimale.
 
 > [!IMPORTANT]
-> Mouse mode is enabled by default for UWP apps running on Xbox One. To disable mouse mode and enable XY focus navigation, set `Application.RequiresPointerMode=WhenRequested`.
+> Le mode souris est activé par défaut pour les applications UWP qui s’exécutent sur Xbox&nbsp;One. Pour désactiver le mode souris et activer la navigation en mode focus XY, définissez `Application.RequiresPointerMode=WhenRequested`.
 
-### <a name="debugging-focus-issues"></a>Debugging focus issues
+### <a name="debugging-focus-issues"></a>Débogage des problèmes de focus
 
-The [FocusManager.GetFocusedElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.focusmanager.getfocusedelement.aspx) method will tell you which element currently has focus. This is useful for situations where the location of the focus visual may not be obvious. You can log this information to the Visual Studio output window like so:
+La méthode [FocusManager.GetFocusedElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.focusmanager.getfocusedelement.aspx) vous indique sur quel élément le focus se trouve actuellement. Cela s’avère utile dans des situations où l’emplacement du focus visuel n’est pas clairement identifiable. Vous pouvez consigner les informations dans la fenêtre Sortie de Visual&nbsp;Studio&nbsp;:
 
 ```csharp
 page.GotFocus += (object sender, RoutedEventArgs e) =>
@@ -197,34 +197,34 @@ page.GotFocus += (object sender, RoutedEventArgs e) =>
 };
 ```
 
-There are three common reasons why XY navigation might not work the way you expect:
+La navigation en mode XY peut ne pas fonctionner comme prévu pour trois raisons courantes&nbsp;:
 
-* The [IsTabStop](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.istabstop.aspx) or [Visibility](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.visibility.aspx) property is set wrong.
-* The control getting focus is actually bigger than you think&mdash;XY navigation looks at the total size of the control ([ActualWidth](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.actualwidth.aspx) and [ActualHeight](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.actualheight.aspx)), not just the portion of the control that renders something interesting.
-* One focusable control is on top of another&mdash;XY navigation doesn't support controls that are overlapped.
+* La valeur de la propriété [IsTabStop](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.istabstop.aspx) ou [Visibility](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.visibility.aspx) est incorrecte.
+* Le contrôle sur lequel se trouve le focus est en réalité plus large que prévu&mdash;La navigation en mode XY examine la taille totale du contrôle ([ActualWidth](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.actualwidth.aspx) et [ActualHeight](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.actualheight.aspx)), et pas seulement la partie du contrôle effectuant le rendu d’un élément important.
+* Un contrôle pouvant être actif se trouve au-dessus d’un autre&mdash;La navigation en mode XY ne prend pas en charge les contrôles qui se chevauchent.
 
-If XY navigation is still not working the way you expect after fixing these issues, you can manually point to the element that you want to get focus using the method described in [Overriding the default navigation](#overriding-the-default-navigation).
+Si la navigation en mode XY ne fonctionne toujours pas après correction de ces problèmes courants, vous pouvez pointer manuellement vers l’élément sur lequel vous voulez un focus à l’aide de la méthode décrite dans [Remplacement de la navigation par défaut](#overriding-the-default-navigation).
 
-If XY navigation is working as intended but no focus visual is displayed, one of the following issues may be the cause:
+Si la navigation en mode XY fonctionne comme prévu, mais qu’aucun focus visuel n’est affiché, l’un des problèmes suivants peut en être la cause&nbsp;:
 
-* You re-templated the control and didn't include a focus visual. Set `UseSystemFocusVisuals="True"` or add a focus visual manually.
-* You moved the focus by calling `Focus(FocusState.Pointer)`. The [FocusState](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.focusstate.aspx) parameter controls what happens to the focus visual. Generally you should set this to `FocusState.Programmatic`, which keeps the focus visual visible if it was visible before, and hidden if it was hidden before.
+* Vous avez remodélisé le contrôle sans inclure de focus visuel. Définissez `UseSystemFocusVisuals="True"` ou ajoutez un focus visuel manuellement.
+* Vous avez déplacé le focus en appelant la méthode `Focus(FocusState.Pointer)`. Le paramètre [FocusState](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.focusstate.aspx) détermine ce qui se produit pour le focus visuel. En général, vous devez définir ce paramètre sur `FocusState.Programmatic`, ce qui maintient la visibilité du focus visuel si ce dernier était déjà visible, et le maintient masqué si c’était le cas précédemment.
 
-The rest of this section goes into detail about common design challenges when using XY navigation, and offers several ways to solve them.
+Le reste de cette section décrit en détail les problèmes courants de conception lorsque la navigation en mode XY est utilisée, et propose plusieurs méthodes pour résoudre ces problèmes.
 
-### <a name="inaccessible-ui"></a>Inaccessible UI
+### <a name="inaccessible-ui"></a>Interface utilisateur inaccessible
 
-Because XY focus navigation limits the user to moving up, down, left, and right, you may end up with scenarios where parts of the UI are inaccessible. The following diagram illustrates an example of the kind of UI layout that XY focus navigation doesn't support. Note that the element in the middle is not accessible by using gamepad/remote because the vertical and horizontal navigation will be prioritized and the middle element will never be high enough priority to get focus.
+Étant donné que la navigation en mode focus&nbsp;XY limite le déplacement vers le haut, le bas, à gauche et à droite, il existe des scénarios où certaines parties de l’interface utilisateur ne sont pas accessibles. Le schéma suivant illustre un exemple du type de disposition d’interface utilisateur que la navigation en mode focus&nbsp;XY ne prend pas en charge. Notez que l’élément au milieu n’est pas accessible à l’aide du boîtier de commande/télécommande dans la mesure où la navigation horizontale et la navigation verticale sont prioritaires&nbsp;; l’élément du milieu ne sera jamais d’une priorité suffisamment élevée pour avoir le focus.
 
-![Elements in four corners with inaccessible element in middle](images/designing-for-tv/2d-navigation-best-practices-ui-layout-to-avoid.png)
+![Éléments dans les quatre coins avec un élément inaccessible au milieu](images/designing-for-tv/2d-navigation-best-practices-ui-layout-to-avoid.png)
 
-If for some reason rearranging the UI is not possible, use one of the techniques discussed in the next section to override the default focus behavior.
+Si, pour une raison quelconque, il n’est pas possible de réorganiser l’interface utilisateur, utilisez l’une des techniques décrites dans la section suivante pour remplacer le comportement de focus par défaut.
 
-### <a name="overriding-the-default-navigation"></a>Overriding the default navigation
+### <a name="overriding-the-default-navigation"></a>Remplacement de la navigation par défaut
 
-While the Universal Windows Platform tries to ensure that D-pad/left stick navigation makes sense to the user, it cannot guarantee behavior that is optimized for your app's intentions. The best way to ensure that navigation is optimized for your app is to test it with a gamepad and confirm that every UI element can be accessed by the user in a manner that makes sense for your app's scenarios. In case your app's scenarios call for a behavior not achieved through the XY focus navigation provided, consider following the recommendations in the following sections and/or overriding the behavior to place the focus on a logical item.
+Si la plateforme Windows universelle tente de garantir la convivialité de la navigation par bouton multidirectionnel/stick analogique gauche, elle ne peut pas garantir un comportement optimisé pour les intentions de votre application. Pour vous assurer que la navigation est optimisée pour votre application, la meilleure solution consiste à la tester avec une manette de jeu et à vérifier que tous les éléments d’interface utilisateur sont accessibles par l’utilisateur, d’une manière qui soit pertinente pour les scénarios de votre application. Si les scénarios de votre application nécessitent un comportement ne pouvant être obtenu par le biais de la navigation en mode focus&nbsp;XY, envisagez de suivre les conseils indiqués dans les sections suivantes et/ou de remplacer le comportement afin de placer le focus sur un élément logique.
 
-The following code snippet shows how you might override the XY focus navigation behavior:
+L’extrait de code suivant montre comment remplacer le comportement de navigation en mode focus&nbsp;XY&nbsp;:
 
 ```xml
 <StackPanel>
@@ -244,9 +244,9 @@ The following code snippet shows how you might override the XY focus navigation 
 </StackPanel>
 ```
 
-In this case, when focus is on the `Home` button and the user navigates to the left, focus will move to the `MyBtnLeft` button; if the user navigates to the right, focus will move to the `MyBtnRight` button; and so on.
+Dans ce cas, lorsque le focus est sur le bouton `Home` et que l’utilisateur navigue vers la gauche, le focus se déplace sur le bouton `MyBtnLeft` ; si l’utilisateur navigue vers la droite, le focus se déplace sur le bouton `MyBtnRight` et ainsi de suite.
 
-To prevent the focus from moving from a control in a certain direction, use the `XYFocus*` property to point it at the same control:
+Pour empêcher le focus de se déplacer dans une certaine direction à partir d’un contrôle, utilisez la propriété `XYFocus*` pour pointer sur ce même contrôle&nbsp;:
 
 ```xml
 <Button Name="HomeButton"  
@@ -254,7 +254,7 @@ To prevent the focus from moving from a control in a certain direction, use the 
         XYFocusLeft ="{x:Bind HomeButton}" />
 ```
 
-Using these `XYFocus` properties, a control parent can also force the navigation of its children when the next focus candidate is out of its visual tree, unless the child who has the focus uses the same `XYFocus` property.
+Avec ces propriétés `XYFocus`, un parent de contrôle peut également forcer la navigation de ses enfants lorsque le candidat au focus suivant se trouve en dehors de son arborescence visuelle, à moins que l’enfant qui a le focus utilise la même propriété `XYFocus`.
 
 ```xml
 <StackPanel Orientation="Horizontal" Margin="300,300">
@@ -271,29 +271,29 @@ Using these `XYFocus` properties, a control parent can also force the navigation
 </StackPanel> 
 ```
 
-In the sample above, if the focus is on `Button` Two and the user navigates to the right, the best focus candidate is `Button` Four; however, the focus is moved to `Button` Three because the parent `UserControl` forces it to navigate there when it is out of its visual tree.
+Dans l’exemple ci-dessus, si le focus est sur l’objet `Button` Two et l’utilisateur navigue vers la droite, le meilleur candidat au focus est l’objet `Button` Four&nbsp;; cependant, le focus est déplacé vers l’objet `Button` Three, car le parent `UserControl` l’oblige à naviguer vers celui-ci lorsqu’il se trouve en dehors de son arborescence visuelle.
 
-### <a name="path-of-least-clicks"></a>Path of least clicks
+### <a name="path-of-least-clicks"></a>Chemin nécessitant le moins de clics
 
-Try to allow the user to perform the most common tasks in the least number of clicks. In the following example, the [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) is placed between the **Play** button (which initially gets focus) and a commonly used element, so that an unnecessary element is placed in between priority tasks.
+Permettez à l’utilisateur d’effectuer les tâches les plus courantes avec le moins de clics possible. Dans l’exemple suivant, la classe [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) est placée entre le bouton **Lecture** (qui a initialement le focus) et un élément couramment utilisé&nbsp;; un élément inutile est ainsi placé entre les tâches prioritaires.
 
-![Navigation best practices provide path with least clicks](images/designing-for-tv/2d-navigation-best-practices-provide-path-with-least-clicks.png)
+![Meilleures pratiques en matière de navigation nécessitant le moins de clics](images/designing-for-tv/2d-navigation-best-practices-provide-path-with-least-clicks.png)
 
-In the following example, the [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) is placed above the **Play** button instead. Simply rearranging the UI so that unnecessary elements are not placed in between priority tasks will greatly improve your app's usability.
+Dans l’exemple suivant, la classe [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) est placée au-dessus du bouton **Lecture** à la place. Le simple fait de réorganiser l’interface utilisateur afin que les éléments inutiles ne soient pas placés entre les tâches prioritaires améliore considérablement la facilité d’utilisation de votre application.
 
-![TextBlock moved above Play button so that it is no longer between priority tasks](images/designing-for-tv/2d-navigation-best-practices-provide-path-with-least-clicks-2.png)
+![TextBlock déplacée au-dessus du bouton de lecture afin qu’elle ne soit plus entre les tâches prioritaires](images/designing-for-tv/2d-navigation-best-practices-provide-path-with-least-clicks-2.png)
 
-### <a name="commandbar-and-contextflyout"></a>CommandBar and ContextFlyout
+### <a name="commandbar-and-contextflyout"></a>CommandBar et ContextFlyout
 
-When using a [CommandBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx), keep in mind the issue of scrolling through a list as mentioned in [Problem: UI elements located after long scrolling list/grid](#problem-ui-elements-located-after-long-scrolling-list-grid). The following image shows a UI layout with the `CommandBar` on the bottom of a list/grid. The user would need to scroll all the way down through the list/grid to reach the `CommandBar`.
+Lorsque vous utilisez une [CommandBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx), n’oubliez pas le problème de défilement dans une liste, comme mentionné dans [Problème&nbsp;: Éléments d’interface utilisateur localisés suite à un long défilement dans une liste/grille](#problem-ui-elements-located-after-long-scrolling-list-grid). L’image suivante illustre une disposition d’interface utilisateur avec la `CommandBar` en bas d’une liste/grille. L’utilisateur devrait faire défiler toute la liste/grille pour atteindre la `CommandBar`.
 
-![CommandBar at bottom of list/grid](images/designing-for-tv/2d-navigation-best-practices-commandbar-and-contextflyout.png)
+![CommandBar en bas de la liste/grille](images/designing-for-tv/2d-navigation-best-practices-commandbar-and-contextflyout.png)
 
-What if you put the `CommandBar` *above* the list/grid? While a user who scrolled down the list/grid would have to scroll back up to reach the `CommandBar`, it is slightly less navigation than the previous configuration. Note that this is assuming that your app's initial focus is placed next to or above the `CommandBar`; this approach won't work as well if the initial focus is below the list/grid. If these `CommandBar` items are global action items that don't have to be accessed very often (such as a **Sync** button), it may be acceptable to have them above the list/grid.
+Que se passe-t-il si vous placez le contrôle `CommandBar` *au-dessus* de la liste/grille&nbsp;? Bien qu’un utilisateur ayant effectué un défilement vers le bas de la liste/grille doive en refaire un vers le haut pour atteindre le contrôle `CommandBar`, cette navigation est un peu plus courte que la configuration précédente. On suppose ici que le focus initial de votre application est placé à côté ou au-dessus de la `CommandBar` ; cette approche ne fonctionne pas aussi bien si le focus initial se trouve sous la liste/grille. Si ces éléments `CommandBar` sont des éléments d’action globale auxquels l’utilisateur n’accède que rarement (tels qu’un bouton **Synchronisation**), le fait de les disposer au-dessus de la liste/grille reste acceptable.
 
-While you can't stack a `CommandBar`'s items vertically, placing them against the scroll direction (for example, to the left or right of a vertically scrolling list, or the top or bottom of a horizontally scrolling list) is another option you may want to consider if it works well for your UI layout.
+Bien qu’il soit impossible d’empiler les éléments d’une `CommandBar` verticalement, le fait de les placer en face du défilement (par exemple, à gauche ou à droite d’une liste avec défilement vertical, ou en haut ou en bas d’une liste avec défilement horizontal) constitue une autre option que vous devrez peut-être prendre en compte si elle fonctionne bien pour la disposition de votre interface utilisateur.
 
-If your app has a `CommandBar` whose items need to be readily accessible by users, you may want to consider placing these items inside a [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) and removing them from the `CommandBar`. `ContextFlyout` is a property of [UIElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.aspx) and is the [context menu](../controls-and-patterns/dialogs-popups-menus.md) associated with that element. On PC, when you right-click on an element with a `ContextFlyout`, that context menu will pop up. On Xbox One, this will happen when you press the **Menu** button while the focus is on such an element.
+Si votre application dispose d’une `CommandBar` dont les éléments doivent être facilement accessibles aux utilisateurs, vous devrez peut-être les placer à l’intérieur d’un [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) et les supprimer de la `CommandBar`. `ContextFlyout` est une propriété de [UIElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.aspx) et constitue le [menu contextuel](../controls-and-patterns/dialogs-popups-menus.md) associé à cet élément. Sur PC, lorsque cliquez à l’aide du bouton droit sur un élément avec un `ContextFlyout`, ce menu contextuel apparaît. Sur Xbox&nbsp;One, cela se produit lorsque vous appuyez sur le bouton **Menu** tandis que le focus se trouve sur un tel élément.
 
 <!--The following XAML code demonstrates a simple `ContextFlyout`:
 
@@ -338,67 +338,67 @@ private void MyButton_ContextRequested(UIElement sender, ContextRequestedEventAr
 ```
 > **Note** Don't use both of these options, as `ContextFlyout` already handles the `ContextRequested` event.-->
 
-### <a name="ui-layout-challenges"></a>UI layout challenges
+### <a name="ui-layout-challenges"></a>Défis en matière de disposition de l’interface utilisateur
 
-Some UI layouts are more challenging due to the nature of XY focus navigation, and should be evaluated on a case-by-case basis. While there is no single "right" way, and which solution you choose is up to your app's specific needs, there are some techniques that you can employ to make a great TV experience.
+Certaines dispositions d’interface utilisateur posent plus de défis en raison de la navigation en mode focus&nbsp;XY et doivent être évaluées au cas par cas. Bien qu’il n’existe pas de méthode «&nbsp;absolue&nbsp;» et que la solution que vous choisissez dépend des besoins spécifiques de votre application, certaines techniques permettent de créer une excellente expérience&nbsp;TV.
 
-To understand this better, let's look at an imaginary app that illustrates some of these issues and techniques to overcome them.
+Pour mieux comprendre ce point, examinons un exemple d’application qui illustre certains de ces problèmes et les techniques permettant de les résoudre.
 
 > [!NOTE]
-> This fake app is meant to illustrate UI problems and potential solutions to them, and is not intended to show the best user experience for your particular app.
+> Cet exemple d’application sert à illustrer des problèmes d’interface utilisateur et leurs solutions potentielles, et ne vise pas à présenter la meilleure expérience utilisateur possible pour votre application.
 
-The following is an imaginary real estate app which shows a list of houses available for sale, a map, a description of a property, and other information. This app poses three challenges that you can overcome by using the following techniques:
+Ce qui suit est un exemple d’application pour le secteur immobilier qui affiche une liste des maisons disponibles à la vente, une carte, la description des propriétés, ainsi que d’autres informations. Cette application pose trois défis que vous pouvez surmonter à l’aide des techniques suivantes&nbsp;:
 
-- [UI rearrange](#ui-rearrange)
-- [Focus engagement](#engagement)
-- [Mouse mode](#mouse-mode)
+- [Réorganisation de l’interface utilisateur](#ui-rearrange)
+- [Activation du focus](#engagement)
+- [Mode souris](#mouse-mode)
 
-![Fake real estate app](images/designing-for-tv/2d-focus-navigation-and-interaction-real-estate-app.png)
+![Exemple d’application pour le secteur immobilier](images/designing-for-tv/2d-focus-navigation-and-interaction-real-estate-app.png)
 
-#### <a name="problem-ui-elements-located-after-long-scrolling-listgrid-a-nameproblem-ui-elements-located-after-long-scrolling-list-grida"></a>Problem: UI elements located after long scrolling list/grid <a name="problem-ui-elements-located-after-long-scrolling-list-grid"></a>
+#### <a name="problem-ui-elements-located-after-long-scrolling-listgrid-a-nameproblem-ui-elements-located-after-long-scrolling-list-grida"></a>Problème&nbsp;: Éléments d’interface utilisateur situés après une liste/grille à long défilement <a name="problem-ui-elements-located-after-long-scrolling-list-grid"></a>
 
-The [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) of properties shown in the following image is a very long scrolling list. If [engagement](#focus-engagement) is *not* required on the `ListView`, when the user navigates to the list, focus will be placed on the first item in the list. For the user to reach the **Previous** or **Next** button, they must go through all the items in the list. In cases like this where requiring the user to traverse the entire list is painful&mdash;that is, when the list is not short enough for this experience to be acceptable&mdash;you may want to consider other options.
+La [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) des propriétés visibles dans l’image suivante est une très longue liste à faire défiler. Si l’[activation](#focus-engagement) n’est *pas* requise pour la `ListView`, le focus se place sur le premier élément de la liste lorsque l’utilisateur navigue vers cette dernière. L’utilisateur doit parcourir tous les éléments de la liste pour atteindre le bouton **Précédent** ou **Suivant**. Dans ces cas peu pratiques où l’utilisateur doit parcourir toute la liste &mdash;c’est-à-dire, lorsque la liste est trop longue pour que cette expérience soit acceptable&mdash;, vous devez envisager d’autres options.
 
-![Real estate app: list with 50 items takes 51 clicks to reach buttons below](images/designing-for-tv/2d-focus-navigation-and-interaction-real-estate-app-list.png)
+![Application pour le secteur immobilier&nbsp;: une liste comprenant 50&nbsp;éléments nécessite 51&nbsp;clics pour atteindre les boutons du bas.](images/designing-for-tv/2d-focus-navigation-and-interaction-real-estate-app-list.png)
 
 #### <a name="solutions"></a>Solutions
 
-**UI rearrange <a name="ui-rearrange"></a>**
+**Réorganisation de l’interface utilisateur <a name="ui-rearrange"></a>**
 
-Unless your initial focus is placed at the bottom of the page, UI elements placed above a long scrolling list are typically more easily accessible than if placed below. If this new layout works for other devices, changing the layout for all device families instead of doing special UI changes just for Xbox One might be a less costly approach. Additionally, placing UI elements against the scrolling direction (that is, horizontally to a vertically scrolling list, or vertically to a horizontally scrolling list) will make for even better accessibility.
+À moins que le focus initial ne soit placé au bas de la page, les éléments d’interface utilisateur placés au-dessus d’une liste à long défilement sont en général plus facilement accessibles que s’ils étaient placés au-dessous. Si cette nouvelle disposition fonctionne pour d’autres appareils, il serait moins coûteux en ressources de modifier la disposition pour toutes les familles d’appareils au lieu d’apporter des modifications d’interface utilisateur spécifiques pour Xbox&nbsp;One. En outre, le fait de placer des éléments d’interface utilisateur à l’opposé du sens de défilement (autrement dit, horizontalement pour une liste à défilement vertical ou verticalement pour une liste à défilement horizontal) améliorera davantage l’accessibilité.
 
-![Real estate app: place buttons above long scrolling list](images/designing-for-tv/2d-focus-navigation-and-interaction-ui-rearrange.png)
+![Application pour le secteur immobilier&nbsp;: Placement des boutons au-dessus d’une liste à long défilement](images/designing-for-tv/2d-focus-navigation-and-interaction-ui-rearrange.png)
 
-**Focus engagement <a name="engagement"></a>**
+**Activation du focus <a name="engagement"></a>**
 
-When engagement is *required*, the entire `ListView` becomes a single focus target. The user will be able to bypass the contents of the list to get to the next focusable element. Read more about what controls support engagement and how to use them in [Focus engagement](#focus-engagement).
+Lorsqu’une activation est *requise*, la totalité de la `ListView` devient une cible du focus unique. L’utilisateur sera en mesure d’ignorer le contenu de la liste afin d’accéder au prochain élément pouvant être actif. Pour en savoir plus sur les contrôles prenant en charge l’activation et sur leur utilisation, consultez la section [Activation du focus](#focus-engagement).
 
-![Real estate app: set engagement to required so that it only takes 1 click to reach Previous/Next buttons](images/designing-for-tv/2d-focus-navigation-and-interaction-engagement.png)
+![Application pour le secteur immobilier&nbsp;: définition de l’activation sur Requis pour atteindre les boutons Précédent/Suivant en un clic](images/designing-for-tv/2d-focus-navigation-and-interaction-engagement.png)
 
-#### <a name="problem-scrollviewer-without-any-focusable-elements"></a>Problem: ScrollViewer without any focusable elements
+#### <a name="problem-scrollviewer-without-any-focusable-elements"></a>Problème&nbsp;: ScrollViewer sans élément pouvant être actif
 
-Because XY focus navigation relies on navigating to one focusable UI element at a time, a [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx) that doesn't contain any focusable elements (such as one with only text, as in this example) may cause a scenario where the user isn't able to view all of the content in the `ScrollViewer`. For solutions to this and other related scenarios, see [Focus engagement](#focus-engagement).
+Étant donné que la navigation en mode focus XY dépend de la navigation vers un seul élément d’interface utilisateur pouvant être actif à la fois, un [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx) ne contenant aucun élément pouvant être actif (par exemple, contenant seulement du texte), peut provoquer un scénario dans lequel l’utilisateur n’est pas en mesure d’afficher l’ensemble du contenu dans le `ScrollViewer`. Pour connaître les solutions de ce scénario et des scénarios connexes, voir [Activation du focus](#focus-engagement).
 
-![Real estate app: ScrollViewer with only text](images/designing-for-tv/2d-focus-navigation-and-interaction-scrollviewer.png)
+![Application pour le secteur immobilier&nbsp;: ScrollViewer contenant uniquement du texte](images/designing-for-tv/2d-focus-navigation-and-interaction-scrollviewer.png)
 
-#### <a name="problem-free-scrolling-ui"></a>Problem: Free-scrolling UI
+#### <a name="problem-free-scrolling-ui"></a>Problème&nbsp;: interface utilisateur à défilement libre
 
-When your app requires a freely scrolling UI, such as a drawing surface or, in this example, a map, XY focus navigation simply doesn't work. In such cases, you can turn on [mouse mode](#mouse-mode) to allow the user to navigate freely inside a UI element.
+Si votre application nécessite une interface utilisateur à défilement libre, telle qu’une surface de dessin ou, dans l’exemple présent, une carte, la navigation en mode focus&nbsp;XY ne fonctionne simplement pas. Dans ce cas, vous pouvez activer le [mode souris](#mouse-mode) pour permettre à l’utilisateur de naviguer librement à l’intérieur d’un élément d’interface utilisateur.
 
-![Map UI element using mouse mode](images/designing-for-tv/map-mouse-mode.png)
+![Mapper un élément d’interface utilisateur à l’aide du mode souris](images/designing-for-tv/map-mouse-mode.png)
 
-## <a name="mouse-mode"></a>Mouse mode
+## <a name="mouse-mode"></a>Mode souris
 
-As described in [XY focus navigation and interaction](#xy-focus-navigation-and-interaction), on Xbox One the focus is moved by using an XY navigation system, allowing the user to shift the focus from control to control by moving up, down, left, and right. However, some controls, such as [WebView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webview.aspx) and [MapControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mapcontrol.aspx), require a mouse-like interaction where users can freely move the pointer inside the boundaries of the control. There are also some apps where it makes sense for the user to be able to move the pointer across the entire page, having an experience with gamepad/remote similar to what users can find on a PC with a mouse.
+Comme décrit dans [Interaction et navigation en mode focus XY](#xy-focus-navigation-and-interaction), le focus est déplacé à l’aide du système de navigation XY sur Xbox&nbsp;One, ce qui permet à l’utilisateur de déplacer le focus entre les contrôles en effectuant des déplacements vers le haut, le bas, la gauche et la droite. Toutefois, certains contrôles comme [WebView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webview.aspx) et [MapControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mapcontrol.aspx) nécessitent une interaction semblable à celle faite avec la souris, avec laquelle les utilisateurs peuvent déplacer le pointeur librement à l’intérieur des limites du contrôle. Certaines applications permettent également de déplacer le pointeur sur la page entière&nbsp;; l’expérience boîtier de commande/télécommande est alors semblable à l’expérience souris sur PC.
 
-For these scenarios, you should request a pointer (mouse mode) for the entire page, or on a control inside a page. For example, your app could have a page that has a `WebView` control that uses mouse mode only while inside the control, and XY focus navigation everywhere else. To request a pointer, you can specify whether you want it **when a control or page is engaged** or **when a page has focus**.
+Pour ces scénarios, demandez un pointeur (mode souris) pour la page entière, ou sur un contrôle à l’intérieur d’une page. Par exemple, votre application peut contenir une page comportant un contrôle `WebView` qui utilise le mode souris uniquement à l’intérieur du contrôle tandis que la navigation en mode focus XY est utilisée partout ailleurs. Pour demander un pointeur, vous pouvez spécifier si vous le voulez **lorsqu’un contrôle ou une page sont actifs** ou **lorsqu’une page a le focus**.
 
 > [!NOTE] 
-> Requesting a pointer when a control gets focus is not supported.
+> La demande de pointeur lorsqu’un contrôle a le focus n’est pas prise en charge.
 
-For both XAML and hosted web apps running on Xbox One, mouse mode is turned on by default for the entire app. It is highly recommended that you turn this off and optimize your app for XY navigation. To do this, set the `Application.RequiresPointerMode` property to `WhenRequested` so that you only enable mouse mode when a control or page calls for it.
+Pour les applications XAML et les applications web hébergées qui s’exécutent sur Xbox&nbsp;One, le mode souris est activé par défaut pour l’ensemble de l’application. Il est vivement conseillé de désactiver cette fonctionnalité et d’optimiser votre application pour la navigation en mode&nbsp;XY. Pour ce faire, définissez la propriété `Application.RequiresPointerMode` sur `WhenRequested` afin d’activer le mode souris uniquement lorsqu’un contrôle ou une page le demandent.
 
-To do this in a XAML app, use the following code in your `App` class: 
+Pour ce faire, dans une application XAML, utilisez le code suivant dans votre classe `App`&nbsp;: 
 
 ```csharp
 public App() 
@@ -410,25 +410,25 @@ public App()
 }
 ```
 
-For more information, including sample code for HTML/JavaScript, see [How to disable mouse mode](https://msdn.microsoft.com/windows/uwp/xbox-apps/how-to-disable-mouse-mode).
+Pour plus d’informations et des exemples de code HTML/JavaScript, consultez [Comment désactiver le mode souris](https://msdn.microsoft.com/windows/uwp/xbox-apps/how-to-disable-mouse-mode).
 
-The following diagram shows the button mappings for gamepad/remote in mouse mode.
+Le schéma suivant montre les mappages de bouton pour le boîtier de commande/la télécommande en mode souris.
 
-![Button mappings for gamepad/remote in mouse mode](images/designing-for-tv/mouse-mode.png)
-
-> [!NOTE]
-> Mouse mode is only supported on Xbox One with gamepad/remote. On other device families and input types it is silently ignored.
-
-Use the `RequiresPointer` property on a control or page to activate mouse mode on it. `RequiresPointer` has three possible values: `Never` (the default value), `WhenEngaged`, and `WhenFocused`.
+![Mappages de bouton pour boîtier de commande/télécommande en mode souris](images/designing-for-tv/mouse-mode.png)
 
 > [!NOTE]
-> `RequiresPointer` is a new API and not yet documented. 
+> Le mode souris est uniquement pris en charge sur Xbox&nbsp;One avec boîtier de commande/télécommande. Il est ignoré sans avertissement dans d’autres familles d’appareils et types d’entrée.
+
+Utilisez la propriété `RequiresPointer` dans un contrôle ou une page pour activer le mode souris sur ceux-ci. `RequiresPointer` a trois valeurs possibles&nbsp;: `Never` (valeur par défaut), `WhenEngaged` et `WhenFocused`.
+
+> [!NOTE]
+> `RequiresPointer` est une nouvelle API qui n’a pas encore été documentée. 
 
 <!--TODO: Link to doc-->
 
-### <a name="activating-mouse-mode-on-a-control"></a>Activating mouse mode on a control
+### <a name="activating-mouse-mode-on-a-control"></a>Activation du mode souris sur un contrôle
 
-When the user engages a control with `RequiresPointer="WhenEngaged"`, mouse mode is activated on the control until the user disengages it. The following code snippet demonstrates a simple `MapControl` that activates mouse mode when engaged:
+Lorsque l’utilisateur active un contrôle avec `RequiresPointer="WhenEngaged"`, le mode souris est activé sur le contrôle en question jusqu’à ce que l’utilisateur le désactive. L’extrait de code suivant montre un `MapControl` simple qui, lorsqu’il est activé, active le mode souris&nbsp;:
 
 ```xml
 <Page>
@@ -440,15 +440,15 @@ When the user engages a control with `RequiresPointer="WhenEngaged"`, mouse mode
 ```
 
 > [!NOTE]
-> If a control activates mouse mode when engaged, it must also require engagement with `IsEngagementRequired="true"`; otherwise, mouse mode will never be activated.
+> Si un contrôle active le mode souris lorsqu’il est employé, il doit également être employé avec `IsEngagementRequired="true"`&nbsp;; sinon, le mode souris n’est pas activé.
 
-When a control is in mouse mode, its nested controls will be in mouse mode as well. The requested mode of its children will be ignored&mdash;it's impossible for a parent to be in mouse mode but a child not to be.
+Lorsqu’un contrôle est en mode souris, ses contrôles imbriqués le sont également. Le mode demandé de ses enfants est ignoré &mdash; un parent ne peut pas être en mode souris si ses enfants ne le sont pas également.
 
-Additionally, the requested mode of a control is only inspected when it gets focus, so the mode won't change dynamically while it has focus.
+En outre, le mode demandé d’un contrôle est examiné uniquement lorsqu’il a le focus&nbsp;; le mode n’est pas changé dynamiquement tant qu’il a le focus.
 
-### <a name="activating-mouse-mode-on-a-page"></a>Activating mouse mode on a page
+### <a name="activating-mouse-mode-on-a-page"></a>Activation du mode souris dans une page
 
-When a page has the property `RequiresPointer="WhenFocused"`, mouse mode will be activated for the whole page when it gets focus. The following code snippet demonstrates giving a page this property:
+Lorsqu’une page dispose de la propriété `RequiresPointer="WhenFocused"`, le mode souris est activé pour la page entière lorsqu’elle a le focus. L’extrait de code suivant illustre l’obtention de cette propriété par une page&nbsp;:
 
 ```xml
 <Page RequiresPointer="WhenFocused">
@@ -457,197 +457,197 @@ When a page has the property `RequiresPointer="WhenFocused"`, mouse mode will be
 ```
 
 > [!NOTE]
-> The `WhenFocused` value is only supported on [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) objects. If you try to set this value on a control, an exception will be thrown.
+> La valeur `WhenFocused` est uniquement prise en charge dans les objets [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx). Une exception est levée si vous tentez de définir cette valeur sur un contrôle.
 
-### <a name="disabling-mouse-mode-for-full-screen-content"></a>Disabling mouse mode for full screen content
+### <a name="disabling-mouse-mode-for-full-screen-content"></a>Désactivation du mode souris pour le contenu en plein écran
 
-Usually when displaying video or other types of content in full screen, you will want to hide the cursor because it can distract the user. This scenario occurs when the rest of the app uses mouse mode, but you want to turn it off when showing full screen content. To accomplish this, put the full screen content on its own `Page`, and follow the steps below.
+Lors de l’affichage de vidéos ou d’autres types de contenu en plein écran, il est généralement préférable de masquer le curseur, car celui-ci peut distraire l’utilisateur. Ce scénario se produit lorsque le reste de l’application utilise le mode souris, mais que vous souhaitez désactiver ce mode lors de l’affichage de contenu en plein écran. Pour ce faire, placez le contenu en plein écran dans son propre objet `Page`, puis suivez les étapes ci-dessous.
 
-1. In the `App` object, set `RequiresPointerMode="WhenRequested"`.
-2. In every `Page` object *except* for the full screen `Page`, set `RequiresPointer="WhenFocused"`.
-3. For the full screen `Page`, set `RequiresPointer="Never"`.
+1. Dans l’objet `App`, définissez `RequiresPointerMode="WhenRequested"`.
+2. Dans chaque objet `Page`, *excepté* l’objet `Page` en plein écran, définissez `RequiresPointer="WhenFocused"`.
+3. Pour l’objet `Page` en plein écran, définissez `RequiresPointer="Never"`.
 
-This way, the cursor will never appear when showing full screen content.
+De cette façon, le curseur n’apparaîtra jamais lors de l’affichage de contenu plein écran.
 
-## <a name="focus-visual"></a>Focus visual
+## <a name="focus-visual"></a>Visuel du focus
 
-The focus visual is the border around the UI element that currently has focus. This helps orient the user so that they can easily navigate your UI without getting lost.
+Le visuel du focus est le contour de l’élément de l’interface utilisateur sur lequel se trouve actuellement le focus. Cela permet de guider l’utilisateur pour une navigation facile dans votre interface utilisateur et sans se perdre.
 
-With a visual update and numerous customization options added to focus visual, developers can trust that a single focus visual will work well on PCs and Xbox One, as well as on any other Windows 10 devices that support keyboard and/or gamepad/remote.
+Avec l’ajout d’une mise à jour visuelle et de nombreuses options de personnalisation au visuel du focus, les développeurs peuvent être certains qu’un seul visuel du focus fonctionne correctement sur les PC et Xbox&nbsp;One, ainsi que sur tous les appareils Windows&nbsp;10 prenant en charge le clavier et/ou le boîtier de commande/télécommande.
 
-While the same focus visual can be used across different platforms, the context in which the user encounters it is slightly different for the 10-foot experience. You should assume that the user is not paying full attention to the entire TV screen, and therefore it is important that the currently focused element is clearly visible to the user at all times to avoid the frustration of searching for the visual.
+Bien que le même visuel du focus puisse être utilisé sur différentes plateformes, le contexte diffère légèrement pour l’expérience «&nbsp;10-foot&nbsp;». Vous devez supposer que l’utilisateur ne se concentre pas sur l’ensemble de l’écran de TV. C’est pourquoi il est important que l’élément ayant actuellement le focus s’affiche toujours clairement à l’utilisateur&nbsp;; cela évite la frustration de devoir rechercher les éléments visuels.
 
-It is also important to keep in mind that the focus visual is displayed by default when using a gamepad or remote control, but *not* a keyboard. Thus, even if you don't implement it, it will appear when you run your app on Xbox One.
+Il est également important de garder à l’esprit que le visuel du focus s’affiche par défaut lorsqu’un boîtier de commande ou une télécommande sont utilisés, mais *pas* un clavier. Il s’affiche donc lorsque vous exécutez votre application sur Xbox&nbsp;One, même si vous ne l’avez pas implémenté.
 
-### <a name="initial-focus-visual-placement"></a>Initial focus visual placement
+### <a name="initial-focus-visual-placement"></a>Placement initial du visuel du focus
 
-When launching an app or navigating to a page, place the focus on a UI element that makes sense as the first element on which the user would take action. For example, a photo app may place focus on the first item in the gallery, and a music app navigated to a detailed view of a song might place focus on the play button for ease of playing music.
+Lors du lancement d’une application ou de la navigation vers une page, placez le focus sur un élément d’interface utilisateur approprié (le premier élément auquel l’utilisateur applique une action). Par exemple, une application de photos peut placer le focus sur le premier élément dans la galerie de photos, et une application de musique, dans laquelle l’utilisateur a ouvert une vue détaillée d’un morceau, peut placer le focus sur le bouton Lecture pour faciliter la lecture de la musique.
 
-Try to put initial focus in the top left region of your app (or top right for a right-to-left flow). Most users tend to focus on that corner first because that's where app content flow generally begins.
+Essayez de placer le focus initial dans la zone supérieure gauche de votre application (ou en haut à droite pour un flux de droite à gauche). La plupart des utilisateurs ont tendance à se concentrer sur cet angle en premier car c’est à cet endroit que commence généralement le flux de contenu d’une application.
 
-### <a name="making-focus-clearly-visible"></a>Making focus clearly visible
+### <a name="making-focus-clearly-visible"></a>Rendre le focus clairement visible
 
-One focus visual should always be visible on the screen so that the user can pick up where they left off without searching for the focus. Similarly, there should be a focusable item onscreen at all times&mdash;for example, don't use pop-ups with only text and no focusable elements.
+Un visuel du focus doit toujours être visible à l’écran pour que l’utilisateur puisse reprendre à l’endroit où il s’est arrêté sans avoir à chercher le focus. De même, des éléments pouvant être actifs doivent toujours se trouver à l’écran&mdash;Par exemple, n’utilisez pas de fenêtres contextuelles contenant uniquement du texte sans éléments pouvant être actifs.
 
-An exception to this rule would be for full-screen experiences, such as watching videos or viewing images, in which cases it would not be appropriate to show the focus visual.
+Les expériences en plein écran, telles que la lecture de vidéos ou le visionnage de photos, pourraient constituer une exception à cette règle. Dans ces cas, l’affichage du focus visuel n’est pas approprié.
 
-### <a name="customizing-the-focus-visual"></a>Customizing the focus visual
+### <a name="customizing-the-focus-visual"></a>Personnaliser le focus visuel
 
-If you'd like to customize the focus visual, you can do so by modifying the properties related to the focus visual for each control. There are several such properties that you can take advantage of to personalize your app.
+Si vous souhaitez personnaliser le focus visuel, vous pouvez le faire en modifiant les propriétés relatives au focus visuel pour chaque contrôle. Vous pouvez tirer parti de plusieurs de ces propriétés afin de personnaliser votre application.
 
-You can even opt out of the system-provided focus visuals by drawing your own using visual states. To learn more, see [VisualState](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstate.Aspx).
+Vous pouvez même désactiver le focus visuel fourni par le système en dessinant votre propre focus visuel à l’aide des états visuels. Pour en savoir plus, voir [VisualState](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstate.Aspx).
 
-### <a name="light-dismiss-overlay"></a>Light dismiss overlay
+### <a name="light-dismiss-overlay"></a>Superposition de l’abandon interactif
 
-To call the user's attention to the UI elements that the user is currently manipulating with the game controller or remote control, the UWP automatically adds a "smoke" layer that covers areas outside of the popup UI when the app is running on Xbox One. This requires no extra work, but is something to keep in mind when designing your UI. You can set the `LightDismissOverlayMode` property on any `FlyoutBase` to enable or disable the smoke layer; it defaults to `Auto`, meaning that it is enabled on Xbox and disabled elsewhere. For more information, see [Modal vs light dismiss](../controls-and-patterns/dialogs-popups-menus.md#modal-vs-light-dismiss).
+Pour attirer l’attention de l’utilisateur sur les éléments d’interface utilisateur que ce dernier manipule avec le contrôleur de jeu ou la télécommande, l’UWP ajoute automatiquement une couche «&nbsp;de fumée&nbsp;» qui couvre les zones en dehors de l’interface utilisateur contextuelle lorsque l’application s’exécute sur Xbox&nbsp;One. Cela ne nécessite aucun travail supplémentaire, mais est un élément à prendre en compte lors de la conception de votre interface utilisateur. Vous pouvez définir la propriété `LightDismissOverlayMode` sur un `FlyoutBase` quelconque pour activer ou désactiver la couche de fumée&nbsp;; la valeur par défaut est `Auto`, ce qui signifie qu’elle est activée sur Xbox et désactivée ailleurs. Pour plus d’informations, voir [Boîte de dialogue modale et abandon interactif](../controls-and-patterns/dialogs-popups-menus.md#modal-vs-light-dismiss).
 
-## <a name="focus-engagement"></a>Focus engagement
+## <a name="focus-engagement"></a>Activation du focus
 
-Focus engagement is intended to make it easier to use a gamepad or remote to interact with an app. 
-
-> [!NOTE]
-> Setting focus engagement does not impact keyboard or other input devices.
-
-When the property `IsFocusEngagementEnabled` on a [FrameworkElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.aspx) object is set to `True`, it marks the control as requiring focus engagement. This means that the user must press the **A/Select** button to "engage" the control and interact with it. When they are finished, they can press the **B/Back** button to disengage the control and navigate out of it.
+L’activation du focus est conçue pour faciliter l’utilisation d’une manette de jeu ou d’une télécommande pour interagir avec une application. 
 
 > [!NOTE]
-> `IsFocusEngagementEnabled` is a new API and not yet documented.
+> La définition de l’activation du focus n’affecte pas le clavier ou les autres périphériques d’entrée.
 
-### <a name="focus-trapping"></a>Focus trapping
+Lorsque la propriété `IsFocusEngagementEnabled` d’un objet [FrameworkElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.aspx) est définie sur `True`, elle signale le contrôle comme nécessitant l’activation du focus. Cela signifie que l’utilisateur doit appuyer sur le bouton **A/Sélectionner** pour activer le contrôle et interagir avec ce dernier. Lorsqu’il a terminé, l’utilisateur peut appuyer sur le bouton **B/Précédent** pour désactiver le contrôle et naviguer hors de ce dernier.
 
-Focus trapping is what happens when a user attempts to navigate an app's UI but becomes "trapped" within a control, making it difficult or even impossible to move outside of that control.
+> [!NOTE]
+> `IsFocusEngagementEnabled` est une nouvelle API qui n’a pas encore été documentée.
 
-The following example shows UI that creates focus trapping.
+### <a name="focus-trapping"></a>Interruption du focus
 
-![Buttons to the left and right of a horizontal slider](images/designing-for-tv/focus-engagement-focus-trapping.png)
+L’interruption du focus survient lorsqu’un utilisateur tente d’accéder à l’interface utilisateur d’une application, mais la navigation est «&nbsp;interrompue&nbsp;» au sein d’un contrôle, rendant difficile, voire impossible, le déplacement en dehors de ce contrôle.
 
-If the user wants to navigate from the left button to the right button, it would be logical to assume that all they'd have to do is press right on the D-pad/left stick twice. However, if the [Slider](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx) doesn't require engagement, the following behavior would occur: when the user presses right the first time, focus would shift to the `Slider`, and when they press right again, the `Slider`'s handle would move to the right. The user would keep moving the handle to the right and wouldn't be able to get to the button.
+L’exemple suivant montre une interface utilisateur provoquant l’interruption du focus.
 
-There are several approaches to getting around this issue. One is to design a different layout, similar to the real estate app example in [XY focus navigation and interaction](#xy-focus-navigation-and-interaction) where we relocated the **Previous** and **Next** buttons above the `ListView`. Stacking the controls vertically instead of horizontally as in the following image would solve the problem.
+![Boutons à gauche et à droite d’un curseur horizontal](images/designing-for-tv/focus-engagement-focus-trapping.png)
 
-![Buttons above and below a horizontal slider](images/designing-for-tv/focus-engagement-focus-trapping-2.png)
+Si l’utilisateur veut accéder au bouton droit à partir du bouton gauche, il serait logique de supposer que la seule action requise serait d’appuyer deux fois sur le bouton multidirectionnel/stick analogique gauche. Toutefois, si le [Slider](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx) ne nécessite pas d’activation, le comportement suivant se produit : lorsque l’utilisateur appuie à droite pour la première fois, le focus est décalé vers le `Slider` ; lorsqu’il réappuie à droite, la poignée du `Slider` se déplace à droite. L’utilisateur continuerait de déplacer la poignée vers la droite sans toutefois réussir à atteindre le bouton.
 
-Now the user can navigate to each of the controls by pressing up and down on the D-pad/left stick, and when the `Slider` has focus, they can press left and right to move the `Slider` handle, as expected.
+Plusieurs approches existent pour contourner ce problème. L’une consiste à concevoir une disposition différente, comme dans l’exemple d’application pour le secteur immobilier dans [Interaction et navigation en mode focus XY](#xy-focus-navigation-and-interaction), où nous avons déplacé les boutons **Précédent** et **Suivant** au-dessus de `ListView`. L’empilement vertical (et non horizontal) des contrôles, comme le montre l’image suivante, peut résoudre le problème.
 
-Another approach to solving this problem is to require engagement on the `Slider`. If you set `IsFocusEngagementEnabled="True"`, this will result in the following behavior.
+![Boutons au-dessus et en dessous d’un curseur horizontal](images/designing-for-tv/focus-engagement-focus-trapping-2.png)
 
-![Requiring focus engagement on slider so user can navigate to button on the right](images/designing-for-tv/focus-engagement-slider.png)
+À présent, l’utilisateur peut accéder à chaque contrôle en appuyant sur les boutons haut et bas sur le bouton multidirectionnel/stick analogique gauche. Lorsque le `Slider` a le focus, l’utilisateur peut appuyer sur le bouton gauche/droite pour déplacer la poignée du `Slider`, comme prévu.
 
-When the `Slider` requires focus engagement, the user can get to the button on the right simply by pressing right on the D-pad/left stick twice. This solution is great because it requires no UI adjustment and produces the expected behavior.
+Une autre approche pour résoudre ce problème consiste à demander une activation du `Slider`. Si vous définissez `IsFocusEngagementEnabled="True"`, cela se traduit par le comportement suivant.
 
-### <a name="items-controls"></a>Items controls
+![Nécessité d’activation du focus sur un curseur afin que l’utilisateur puisse accéder au bouton situé à droite](images/designing-for-tv/focus-engagement-slider.png)
 
-Aside from the [Slider](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx) control, there are other controls which you may want to require engagement, such as:
+Lorsque le `Slider` nécessite une activation du focus, l’utilisateur peut accéder au bouton situé à droite en appuyant simplement deux fois à droite sur le bouton multidirectionnel/stick analogique gauche. Cette solution est excellente, car elle ne nécessite aucun ajustement de l’interface utilisateur et produit le comportement attendu.
 
-- [ListBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listbox.aspx)
+### <a name="items-controls"></a>Contrôles d’éléments
+
+Outre le contrôle [Slider](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx), il existe d’autres contrôles que vous souhaiterez peut-être activer&nbsp;:
+
+- [Listbox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listbox.aspx)
 - [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)
 - [GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)
 - [FlipView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flipview)
 
-Unlike the `Slider` control, these controls don't trap focus within themselves; however, they can cause usability issues when they contain large amounts of data. The following is an example of a `ListView` that contains a large amount of data.
+Contrairement au contrôle `Slider`, ces contrôles n’interrompent pas le focus en leur sein ; cependant, ils peuvent poser des problèmes en matière de facilité d’utilisation s’ils contiennent de grandes quantités de données. Voici un exemple d’un contrôle `ListView` qui contient une grande quantité de données.
 
-![ListView with large amount of data and buttons above and below](images/designing-for-tv/focus-engagement-list-and-grid-controls.png)
+![Contrôle&nbsp;ListView avec une grande quantité de données et des boutons au-dessus et en dessous](images/designing-for-tv/focus-engagement-list-and-grid-controls.png)
 
-Similar to the `Slider` example, let's try to navigate from the button at the top to the button at the bottom with a gamepad/remote. Starting with focus on the top button, pressing down on the D-pad/stick will place the focus on the first item in the `ListView` ("Item 1"). When the user presses down again, the next item in the list gets focus, not the button on the bottom. To get to the button, the user must navigate through every item in the `ListView` first. If the `ListView` contains a large amount of data, this could be inconvenient and not an optimal user experience.
+Comme pour l’exemple `Slider`, nous allons essayer de naviguer à partir du bouton du haut vers le bouton du bas avec un boîtier de commande/une télécommande. En partant du bouton du haut, où se trouve le focus, le fait d’appuyer sur la flèche Bas sur le bouton multidirectionnel/stick analogique gauche déplace le focus sur le premier élément dans le contrôle `ListView` (« Item 1 »). Lorsque l’utilisateur appuie à nouveau, le focus est déplacé sur l’élément suivant dans la liste, et non sur le bouton situé en bas. Pour accéder au bouton du bas, l’utilisateur doit d’abord parcourir chaque élément du contrôle `ListView`. Si le contrôle `ListView` contient une grande quantité de données, cela peut s’avérer peu pratique et dégrader l’expérience utilisateur.
 
-To solve this problem, set the property `IsFocusEngagementEnabled="True"` on the `ListView` to require engagement on it. This will allow the user to quickly skip over the `ListView` by simply pressing down. However, they will not be able to scroll through the list or choose an item from it unless they engage it by pressing the **A/Select** button when it has focus, and then pressing the **B/Back** button to disengage.
+Pour résoudre ce problème, définissez la propriété `IsFocusEngagementEnabled="True"` sur `ListView` pour demander son activation. Cela permet à l’utilisateur de traverser rapidement le contrôle `ListView` en appuyant simplement sur le bouton Bas. Néanmoins, l’utilisateur n’est pas en mesure de parcourir la liste ou de sélectionner un élément dans celle-ci, sauf s’il l’active en appuyant sur le bouton **A/Sélectionner** lorsqu’il a le focus, puis en appuyant sur le bouton **B/Précédent** pour le désactiver.
 
-![ListView with engagement required](images/designing-for-tv/focus-engagement-list-and-grid-controls-2.png)
+![Contrôle ListView avec activation requise](images/designing-for-tv/focus-engagement-list-and-grid-controls-2.png)
 
 #### <a name="scrollviewer"></a>ScrollViewer
 
-Slightly different from these controls is the [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx), which has its own quirks to consider. If you have a `ScrollViewer` with focusable content, by default navigating to the `ScrollViewer` will allow you to move through its focusable elements. Like in a `ListView`, you must scroll through each item to navigate outside of the `ScrollViewer`. 
+Le contrôle [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx), qui possède des caractéristiques particulières, diffère légèrement des contrôles précédents. Si vous disposez d’un `ScrollViewer` avec du contenu pouvant être actif, par défaut, la navigation vers `ScrollViewer` vous permet de parcourir ses éléments pouvant être actifs. Comme pour un contrôle `ListView`, vous devez parcourir chaque élément pour naviguer en dehors du contrôle `ScrollViewer`. 
 
-If the `ScrollViewer` has *no* focusable content&mdash;for example, if it only contains text&mdash;you can set `IsFocusEngagementEnabled="True"` so the user can engage the `ScrollViewer` by using the **A/Select** button. After they have engaged, they can scroll through the text by using the **D-pad/left stick**, and then press the **B/Back** button to disengage when they're finished.
+Si le contrôle `ScrollViewer` n’a *pas* de contenu pouvant être actif &mdash; par exemple, s’il contient uniquement du texte&mdash;, vous pouvez définir `IsFocusEngagementEnabled="True"` afin que l’utilisateur puisse activer `ScrollViewer` à l’aide du bouton **A/Sélectionner**. Une fois activé, l’utilisateur peut faire défiler le texte à l’aide du **bouton multidirectionnel/stick analogique gauche**, puis appuyer sur le bouton **B/Précédent** pour le désactiver.
 
-Another approach would be to set `IsTabStop="True"` on the `ScrollViewer` so that the user doesn't have to engage the control&mdash;they can simply place focus on it and then scroll by using the **D-pad/left stick** when there are no focusable elements within the `ScrollViewer`.
+Une autre approche consiste à définir `IsTabStop="True"` sur le contrôle `ScrollViewer` afin que l’utilisateur n’ait pas à activer le contrôle. Il peut simplement y placer le focus, puis le faire défiler à l’aide du **bouton multidirectionnel/stick analogique gauche** lorsqu’il n’existe pas d’éléments pouvant être actifs au sein du contrôle `ScrollViewer`.&mdash;
 
-### <a name="focus-engagement-defaults"></a>Focus engagement defaults
+### <a name="focus-engagement-defaults"></a>Paramètres par défaut de l’activation du focus
 
-Some controls cause focus trapping commonly enough to warrant their default settings to require focus engagement, while others have focus engagement turned off by default but can benefit from turning it on. The following table lists these controls and their default focus engagement behaviors.
+Certains contrôles provoquent une interruption du focus assez fréquente pour justifier une activation du focus pour leurs paramètres par défaut. D’autres ont désactivé cette fonction par défaut, mais peuvent tirer profit de son activation. Le tableau suivant répertorie ces contrôles et leurs comportements d’activation du focus par défaut.
 
-| Control               | Focus engagement default  |
+| Contrôle               | Paramètre par défaut de l’activation du focus  |
 |-----------------------|---------------------------|
-| CalendarDatePicker    | On                        |
-| FlipView              | Off                       |
-| GridView              | Off                       |
-| ListBox               | Off                       |
-| ListView              | Off                       |
-| ScrollViewer          | Off                       |
-| SemanticZoom          | Off                       |
-| Slider                | On                        |
+| CalendarDatePicker    | Activé                        |
+| FlipView              | Désactivé                       |
+| GridView              | Désactivé                       |
+| Listbox               | Désactivé                       |
+| ListView              | Désactivé                       |
+| ScrollViewer          | Désactivé                       |
+| SemanticZoom          | Désactivé                       |
+| Slider                | Activé                        |
 
-All other UWP controls will result in no behavioral or visual changes when `IsFocusEngagementEnabled="True"`.
+Aucun autre contrôle UWP n’a de modification comportementale ou visuelle lorsque `IsFocusEngagementEnabled="True"`.
 
-## <a name="ui-element-sizing"></a>UI element sizing
+## <a name="ui-element-sizing"></a>Redimensionnement des éléments de l’interface utilisateur
 
-Because the user of an app in the 10-foot environment is using a remote control or gamepad and is sitting several feet away from the screen, there are some UI considerations that need to be factored into your design. Make sure that the UI has an appropriate content density and is not too cluttered so that the user can easily navigate and select elements. Remember: simplicity is key.
+Étant donné que l’utilisateur d’une application dans un environnement de 3&nbsp;mètres utilise un boîtier de commande ou une télécommande et se trouve à plusieurs mètres de l’écran, vous devez incorporer à votre conception certains éléments liés à l’interface utilisateur. Assurez-vous que le contenu sur l’interface utilisateur présente la densité appropriée et que l’interface n’est pas trop encombrée, afin que l’utilisateur puisse la parcourir et sélectionner des éléments en toute simplicité. N’oubliez pas que la simplicité est le maître mot.
 
-### <a name="scale-factor-and-adaptive-layout"></a>Scale factor and adaptive layout
+### <a name="scale-factor-and-adaptive-layout"></a>Facteur d’échelle et disposition adaptative
 
-**Scale factor** helps with ensuring that UI elements are displayed with the right sizing for the device on which the app is running. On desktop, this setting can be found in **Settings > System > Display** as a sliding value. This same setting exists on phone as well if the device supports it.
+Le **facteur d’échelle** permet de s’assurer que le dimensionnement des éléments de l’interface utilisateur est approprié pour l’appareil sur lequel s’exécute l’application. Sur le Bureau, ce paramètre se trouve dans **Paramètres &gt; Système &gt; Affichage** sous forme de curseur. Ce paramètre existe également sur les appareils mobiles prenant en charge ce paramètre.
 
-![Change the size of text, apps, and other items](images/designing-for-tv/ui-scaling.png) 
+![Modifier la taille du texte, des applications et des autres éléments](images/designing-for-tv/ui-scaling.png) 
 
-On Xbox One, there is no such system setting; however, for UWP UI elements to be sized appropriately for TV, they are scaled at a default of **200%** for XAML apps and **150%** for HTML apps. As long as UI elements are appropriately sized for other devices, they will be appropriately sized for TV. Xbox One renders your app at 1080p (1920 x 1080 pixels). Therefore, when bringing an app from other devices such as PC, ensure that the UI looks great at 960 x 540 px at 100% scale (or 1280 x 720 px at 100% scale for HTML apps) utilizing [adaptive techniques](https://msdn.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design).
+Sur Xbox&nbsp;One, aucun paramètre système ne permet d’effectuer ces opérations. Cependant, pour que les éléments d’interface utilisateur UWP aient une taille appropriée pour la TV, ils sont dimensionnés par défaut à **200&nbsp;%** pour les applications XAML et à **150&nbsp;%** pour les applications HTML. Tant que les éléments de l’interface utilisateur ont une taille appropriée pour les autres appareils, ce sera également le cas pour la TV. Xbox&nbsp;One effectue le rendu de votre application à 1080&nbsp;p (1920&nbsp;x&nbsp;1080&nbsp;pixels). Par conséquent, lorsque vous intégrez une application à partir d’autres appareils, comme un PC, assurez-vous de l’aspect correct de l’interface utilisateur à 960&nbsp;x&nbsp;540&nbsp;pixels à une échelle de 100&nbsp;% (ou à 1280&nbsp;x&nbsp;720&nbsp;pixels à une échelle de 100&nbsp;% pour les applications HTML) à l’aide de [techniques adaptatives](https://msdn.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design).
 
-Designing for Xbox is a little different from designing for PC because you only need to worry about one resolution, 1920 x 1080. It doesn't matter if the user has a TV that has better resolution&mdash;UWP apps will always scale to 1080p.
+La conception pour Xbox diffère quelque peu de la conception pour PC, car une seule résolution est concernée&nbsp;: 1920&nbsp;x&nbsp;1080. Peu importe si l’utilisateur possède une télévision dont la résolution est supérieure&nbsp;&mdash; les applications UWP sont toujours mises à l’échelle à 1080&nbsp;p.
 
-Correct asset sizes from the 200% (or 150% for HTML apps) set will also be pulled in for your app when running on Xbox One, regardless of TV resolution.
+Les tailles de ressource appropriées sont également extraites pour votre application à partir de l’échelle&nbsp;200&nbsp;% (ou 150&nbsp;% pour les applications HTML) lorsque l’application est exécutée sur Xbox&nbsp;One, quelle que soit la résolution de la télévision.
 
-### <a name="content-density"></a>Content density
+### <a name="content-density"></a>Densité de contenu
 
-When designing your app, remember that the user will be viewing the UI from a distance and interacting with it by using a remote or game controller, which takes more time to navigate than using mouse or touch input.
+Lorsque vous concevez votre application, n’oubliez pas que l’utilisateur se trouve relativement loin de l’interface utilisateur et interagit avec cette dernière à l’aide d’un contrôleur de jeu ou d’une télécommande, qui rend la navigation plus chronophage que s’il utilisait une souris ou une entrée tactile.
 
-#### <a name="sizes-of-ui-controls"></a>Sizes of UI controls
+#### <a name="sizes-of-ui-controls"></a>Tailles des contrôles d’interface utilisateur
 
-Interactive UI elements should be sized at a minimum height of 32 epx (effective pixels). This is the default for common UWP controls, and when used at 200% scale, it ensures that UI elements are visible from a distance and helps reduce content density. 
+La taille des éléments interactifs de l’interface utilisateur doit être d’au moins 32&nbsp;pixels (pixels effectifs). Ceci est la valeur par défaut pour les contrôles&nbsp;UWP courants. Lorsqu’elle est utilisée à une échelle de 200&nbsp;%, elle permet d’assurer la visibilité à distance des éléments de l’interface utilisateur et de réduire la densité du contenu. 
 
-![UWP button at 100% and 200% scale](images/designing-for-tv/button-100-200.png)
+![Bouton&nbsp;UWP à une échelle de 100&nbsp;% et 200&nbsp;%](images/designing-for-tv/button-100-200.png)
 
-#### <a name="number-of-clicks"></a>Number of clicks
+#### <a name="number-of-clicks"></a>Nombre de clics.
 
-When the user is navigating from one edge of the TV screen to the other, it should take no more than **six clicks** to simplify your UI. Again, the principle of **simplicity** applies here. For more details, see [Path of least clicks](#path-of-least-clicks).
+Lorsque l’utilisateur navigue d’un bord de l’écran de télévision à l’autre, la simplification de votre interface utilisateur doit se faire en **six&nbsp;clics** maximum. Là encore s’applique le principe de la **simplicité**. Pour en savoir plus, voir [Chemin nécessitant le moins de clics](#path-of-least-clicks).
 
-![6 icons across](images/designing-for-tv/six-clicks.png)
+![6 icônes pour traverser](images/designing-for-tv/six-clicks.png)
 
-### <a name="text-sizes"></a>Text sizes
+### <a name="text-sizes"></a>Tailles de texte
 
-To make your UI visible from a distance, use the following rules of thumb:
+Pour rendre votre interface utilisateur visible à distance, appuyez-vous sur les règles suivantes&nbsp;:
 
-* Main text and reading content: 15 epx minimum
-* Non-critical text and supplemental content: 12 epx minimum
+* Texte principal et contenu de lecture&nbsp;: 15&nbsp;epx au minimum
+* Texte non critique et contenu supplémentaire&nbsp;: 12&nbsp;epx au minimum
 
-When using larger text in your UI, pick a size that does not limit screen real estate too much, taking up space that other content could potentially fill.
+Lorsque vous utilisez du texte supérieur à la normale dans votre interface utilisateur, choisissez une taille qui ne limite pas trop l’espace de l’écran (en occupant de l’espace que d’autres contenus pourraient remplir).
 
-### <a name="opting-out-of-scale-factor"></a>Opting out of scale factor
+### <a name="opting-out-of-scale-factor"></a>Désactivation du facteur d’échelle
 
-We recommend that your app take advantage of scale factor support, which will help it run appropriately on all devices by scaling for each device type. However, it is possible to opt out of this behavior and design all of your UI at 100% scale. Note that you cannot change the scale factor to anything other than 100%.
+Nous recommandons que votre application tire parti de la prise en charge du facteur d’échelle, ce qui lui permettra de s’exécuter correctement sur tous les appareils, ayant été mise à l’échelle pour chaque type d’appareil. Il reste cependant possible de désactiver ce comportement et de concevoir toutes vos interfaces utilisateur à une échelle de 100&nbsp;%. Notez que vous ne pouvez pas remplacer le facteur d’échelle par une valeur autre que 100&nbsp;%.
 
-For XAML apps, you can opt out of scale factor by using the following code snippet:
+Dans les applications XAML, vous pouvez annuler le facteur d’échelle en utilisant l’extrait de code suivant&nbsp;:
 
 ```csharp
 bool result = 
     Windows.UI.ViewManagement.ApplicationViewScaling.TrySetDisableLayoutScaling(true);
 ```
 
-`result` will inform you whether you successfully opted out.
+`result` vous indique l’opération d’annulation a abouti.
 
-For more information, including sample code for HTML/JavaScript, see [How to turn off scaling](https://msdn.microsoft.com/windows/uwp/xbox-apps/disable-scaling).
+Pour plus d’informations et des exemples de code HTML/JavaScript, consultez [Comment désactiver la mise à l’échelle](https://msdn.microsoft.com/windows/uwp/xbox-apps/disable-scaling).
 
-Please be sure to calculate the appropriate sizes of UI elements by doubling the *effective* pixel values mentioned in this topic to *actual* pixel values (or multiplying by 1.5 for HTML apps).
+Veillez à calculer la taille appropriée des éléments d’interface utilisateur en doublant le nombre *effectif* de pixels *réels* mentionnés dans cette rubrique (ou en multipliant la valeur par 1,5 pour les applications HTML).
 
-## <a name="tv-safe-area"></a>TV-safe area
+## <a name="tv-safe-area"></a>Zones adaptées à l’écran de TV
 
-Not all TVs display content all the way to the edges of the screen due to historical and technological reasons. By default, the UWP will avoid displaying any UI content in TV-unsafe areas and instead will only draw the page background.
+Le contenu n’occupe pas l’ensemble de l’écran de toutes les télévisions pour des raisons historiques, mais aussi technologiques. La plateforme&nbsp;UWP évite d’afficher du contenu d’interface utilisateur dans des zones inadaptées à l’écran de TV&nbsp;; elle dessine uniquement l’arrière-plan de la page.
 
-The TV-unsafe area is represented by the blue area in the following image.
+La zone inadaptée à l’écran de TV est représentée par la zone bleue dans l’image suivante.
 
-![TV-unsafe area](images/designing-for-tv/tv-unsafe-area.png)
+![Zone inadaptée à l’écran de TV](images/designing-for-tv/tv-unsafe-area.png)
 
-You can set the background to a static or themed color, or to an image, as the following code snippets demonstrate.
+Vous pouvez définir l’arrière-plan sur une couleur statique ou une couleur de thème, voire sur une image, comme le démontrent les extraits de code suivants.
 
-### <a name="theme-color"></a>Theme color
+### <a name="theme-color"></a>Couleur de thème
 
 ```xml
 <Page x:Class="Sample.MainPage"
@@ -661,49 +661,49 @@ You can set the background to a static or themed color, or to an image, as the f
       Background="\Assets\Background.png"/>
 ```
 
-This is what your app will look like without additional work.
+Votre application ressemblera à ceci sans travail supplémentaire.
 
-![TV-safe area](images/designing-for-tv/tv-safe-area.png)
+![Zones adaptées à l’écran de TV](images/designing-for-tv/tv-safe-area.png)
 
-This is not optimal because it gives the app a "boxed-in" effect, with parts of the UI such as the nav pane and grid seemingly cut off. However, you can make optimizations to extend parts of the UI to the edges of the screen to give the app a more cinematic effect.
+Ce n’est pas une solution optimale car elle crée un effet d’«&nbsp;encadré&nbsp;», donnant l’impression que des parties de l’interface utilisateur, telles que le volet et la grille de navigation, ont été tronquées. Vous pouvez cependant faire des optimisations pour étendre certaines parties de l’interface utilisateur à l’ensemble de l’écran. Cela donne à l’application un aspect plus cinématographique.
 
-### <a name="drawing-ui-to-the-edge"></a>Drawing UI to the edge
+### <a name="drawing-ui-to-the-edge"></a>Étendre l’IU à l’ensemble de l’écran
 
-We recommend that you use certain UI elements to extend to the edges of the screen to provide more immersion to the user. These include [ScrollViewers](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx), [nav panes](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/nav-pane), and [CommandBars](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx).
+Nous vous recommandons d’étendre certains éléments d’interface utilisateur à l’ensemble de l’écran pour apporter à l’utilisateur une véritable expérience d’immersion. Cela comprend les classes [ScrollViewers](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx) et [CommandBars](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx) ainsi que les [volets de navigation](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/nav-pane).
 
-On the other hand, it's also important that interactive elements and text always avoid the screen edges to ensure that they won't be cut off on some TVs. We recommend that you draw only non-essential visuals within 5% of the screen edges. As mentioned in [UI element sizing](#ui-element-sizing), a UWP app following the Xbox One console's default scale factor of 200% will utilize an area of 960 x 540 epx, so in your app's UI, you should avoid putting essential UI in the following areas:
+En revanche, il est important que le texte et les éléments interactifs ne soient jamais près des bords de l’écran&nbsp;; cela garantit qu’ils ne seront pas tronqués sur certaines télévisions. Nous recommandons d’étendre seulement les éléments visuels non essentiels à une distance de 5&nbsp;% des bords de l’écran. Comme mentionné dans [Redimensionnement des éléments de l’interface utilisateur](#ui-element-sizing), une application UWP suivant le facteur d’échelle par défaut de la console Xbox&nbsp;One (200&nbsp;%) utilise une zone de 960&nbsp;x&nbsp;540&nbsp;epx. Vous devez donc éviter de placer l’interface utilisateur primordiale de votre application dans les zones suivantes&nbsp;:
 
-- 27 epx from the top and bottom
-- 48 epx from the left and right sides
+- 27&nbsp;epx à partir du haut et du bas
+- 48&nbsp;epx des bords gauche et droit
 
-The following sections describe how to make your UI extend to the screen edges.
+Les sections suivantes décrivent comment étendre votre interface utilisateur aux bords de l’écran.
 
-#### <a name="core-window-bounds"></a>Core window bounds
+#### <a name="core-window-bounds"></a>Limites de fenêtre principale
 
-For UWP apps targeting only the 10-foot experience, using core window bounds is a more straightforward option.
+Pour les applications UWP ciblant uniquement l’expérience «&nbsp;10-foot&nbsp;», les limites de fenêtre principale constituent une option plus simple.
 
-In the `OnLaunched` method of `App.xaml.cs`, add the following code:
+Dans la méthode `OnLaunched` de `App.xaml.cs`, ajoutez le code suivant :
 
 ```csharp
 Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMode
     (Windows.UI.ViewManagement.ApplicationViewBoundsMode.UseCoreWindow);
 ```
 
-With this line of code, the app window will extend to the edges of the screen, so you will need to move all interactive and essential UI into the TV-safe area described earlier. Transient UI, such as context menus and opened [ComboBoxes](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.combobox.aspx), will automatically remain inside the TV-safe area.
+Avec cette ligne de code, la fenêtre d’application remplit l’écran. Vous devez donc déplacer toutes les UI interactives et essentielles dans la zone adaptée à l’écran de TV décrite précédemment. L’interface utilisateur temporaire, telle que les menus contextuels et les classes [ComboBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.combobox.aspx) ouvertes restent automatiquement à l’intérieur de la zone adaptée à l’écran de TV.
 
-![Core window bounds](images/designing-for-tv/core-window-bounds.png)
+![Limites de fenêtre principale](images/designing-for-tv/core-window-bounds.png)
 
-#### <a name="pane-backgrounds"></a>Pane backgrounds 
+#### <a name="pane-backgrounds"></a>Arrière-plans de volet de navigation 
 
-Navigation panes are typically drawn near the edge of the screen, so the background should extend into the TV-unsafe area so as not to introduce awkward gaps. You can do this by simply changing the color of the nav pane's background to the color of the app's background.
+Les volets de navigation sont généralement placés près du bord de l’écran. L’arrière-plan doit donc s’étendre dans la zone inadaptée à l’écran de TV pour ne pas qu’il y ait d’espaces vides. Vous pouvez le faire en modifiant simplement la couleur d’arrière-plan du volet de navigation pour la rendre identique à la couleur d’arrière-plan de l’application.
 
-Using the core window bounds as previously described will allow you to draw your UI to the edges of the screen, but you should then use positive margins on the [SplitView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.splitview.aspx)'s content to keep it within the TV-safe area.
+Les limites de fenêtre principale vous permettent d’étendre votre interface utilisateur aux bords de l’écran (comme décrit précédemment), mais vous devez ensuite utiliser des marges positives sur le contenu de [SplitView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.splitview.aspx) pour le conserver dans la zone adaptée à l’écran de TV.
 
-![Nav pane extended to edges of screen](images/designing-for-tv/tv-safe-areas-2.png)
+![Volet de navigation étendu aux bords de l’écran](images/designing-for-tv/tv-safe-areas-2.png)
 
-Here, the nav pane's background has been extended to the edges of the screen, while its navigation items are kept in the TV-safe area. The content of the `SplitView` (in this case, a grid of items) has been extended to the bottom of the screen so that it looks like it continues and isn't cut off, while the top of the grid is still within the TV-safe area. (Learn more about how to do this in [Scrolling ends of lists and grids](#scrolling-ends-of-lists-and-grids)).
+L’arrière-plan du volet de navigation a été étendu aux bords de l’écran, tandis que ses éléments de navigation sont conservés dans la zone adaptée à l’écran de TV. Le contenu de `SplitView` (dans ce cas, une grille d’éléments) a été étendu vers le bas de l’écran pour ne pas avoir l’air tronqué. La partie supérieure de la grille reste toujours dans la zone adaptée à l’écran de TV. (Pour en savoir plus, voir [Extrémités de listes et de grilles défilantes](#scrolling-ends-of-lists-and-grids)).
 
-The following code snippet achieves this effect:
+L’extrait de code suivant permet de réaliser l’effet en question&nbsp;:
 
 ```xml
 <SplitView x:Name="RootSplitView"
@@ -722,9 +722,9 @@ The following code snippet achieves this effect:
 </SplitView>
 ```
 
-[CommandBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx) is another example of a pane that is commonly positioned near one or more edges of the app, and as such on TV its background should extend to the edges of the screen. It also usually contains a **More** button, represented by "..." on the right side, which should remain in the TV-safe area. The following are a few different strategies to achieve the desired interactions and visual effects.
+[CommandBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx) est un autre exemple de volet généralement positionné près d’un ou plusieurs bords de l’application. Son arrière-plan doit donc s’étendre aux bords des écrans de TV. Il contient généralement un bouton **Plus** (...) sur le côté droit qui doit rester dans la zone adaptée à l’écran de TV. Voici quelques stratégies différentes permettant d’obtenir les interactions et effets visuels souhaités.
 
-**Option 1**: Change the `CommandBar` background color to either transparent or the same color as the page background:
+**Option&nbsp;1**&nbsp;: modifiez la couleur d’arrière-plan de `CommandBar` pour la définir sur transparent ou sur la même couleur que l’arrière-plan de la page&nbsp;:
 
 ```xml
 <CommandBar x:Name="topbar" 
@@ -733,9 +733,9 @@ The following code snippet achieves this effect:
 </CommandBar>
 ```
 
-Doing this will make the `CommandBar` look like it is on top of the same background as the rest of the page, so the background seamlessly flows to the edge of the screen.
+`CommandBar` paraît ainsi avoir le même arrière-plan que le reste de la page&nbsp;; l’arrière-plan s’étend donc vers le bord de l’écran en toute fluidité.
 
-**Option 2**: Add a background rectangle whose fill is the same color as the `CommandBar` background, and have it lie below the `CommandBar` and across the rest of the page:
+**Option&nbsp;2**&nbsp;: ajoutez un rectangle en arrière-plan dont le remplissage est de la même couleur que l’arrière-plan de `CommandBar`, puis placez-le sous `CommandBar` et à travers le reste de la page&nbsp;:
 
 ```xml
 <Rectangle VerticalAlignment="Top" 
@@ -749,21 +749,21 @@ Doing this will make the `CommandBar` look like it is on top of the same backgro
 ```
 
 > [!NOTE]
-> If using this approach, be aware that the **More** button changes the height of the opened `CommandBar` if necessary, in order to show the labels of the `AppBarButton`s below their icons. We recommend that you move the labels to the *right* of their icons to avoid this resizing. For more information, see [CommandBar labels](#commandbar-labels).
+> Si vous optez pour cette approche, gardez à l’esprit que le bouton **Plus** modifie la hauteur de la classe `CommandBar` ouverte, si nécessaire, afin de montrer les étiquettes des `AppBarButton` sous leurs icônes. Nous vous recommandons de déplacer les étiquettes à *droite* de leurs icônes afin d’éviter ce redimensionnement. Pour plus d’informations, voir [Libellés CommandBar](#commandbar-labels).
 
-Both of these approaches also apply to the other types of controls listed in this section.
+Ces deux approches s’appliquent également aux autres types de contrôle répertoriés dans cette section.
 
-#### <a name="scrolling-ends-of-lists-and-grids"></a>Scrolling ends of lists and grids
+#### <a name="scrolling-ends-of-lists-and-grids"></a>Extrémités de listes et de grilles défilantes
 
-It's common for lists and grids to contain more items than can fit onscreen at the same time. When this is the case, we recommend that you extend the list or grid to the edge of the screen. Horizontally scrolling lists and grids should extend to the right edge, and vertically scrolling ones should extend to the bottom.
+Il est courant que les listes et les grilles contiennent davantage d’éléments que l’écran puisse afficher simultanément. Lorsque c’est le cas, nous vous recommandons d’étendre la liste ou la grille au bord de l’écran. Les listes et les grilles à défilement horizontal doivent s’étendre vers le bord droit et celles à défilement vertical doivent s’étendre vers le bas.
 
-![TV safe area grid cutoff](images/designing-for-tv/tv-safe-area-grid-cutoff.png)
+![Grille contenue dans la zone adaptée à l’écran de TV tronquée](images/designing-for-tv/tv-safe-area-grid-cutoff.png)
 
-While a list or grid is extended like this, it's important to keep the focus visual and its associated item inside the TV-safe area.
+Pendant qu’une liste ou une grille est étendue de la sorte, il est important de conserver le visuel du focus et son élément associé à l’intérieur de la zone adaptée à l’écran de TV.
 
-![Scrolling grid focus should be kept in TV-safe area](images/designing-for-tv/scrolling-grid-focus.png)
+![Le focus de la grille défilante doit être conservé à l’intérieur de la zone adaptée à l’écran de TV](images/designing-for-tv/scrolling-grid-focus.png)
 
-The UWP has functionality that will keep the focus visual inside the [VisibleBounds](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.applicationview.visiblebounds.aspx), but you need to add padding to ensure that the list/grid items can scroll into view of the safe area. Specifically, you add a positive margin to the [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) or [GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)'s [ItemsPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemspresenter.aspx), as in the following code snippet:
+La plateforme UWP comporte des fonctionnalités qui permettent de conserver le visuel du focus à l’intérieur des [VisibleBounds](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.applicationview.visiblebounds.aspx), mais vous devez ajouter du remplissage pour vous assurer que les éléments de liste/grille peuvent défiler à l’écran à l’intérieur de la zone adaptée à l’écran de TV. Plus précisément, vous ajoutez une marge positive à la classe [ItemsPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemspresenter.aspx) des classes [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) ou [GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx), comme l’illustre l’extrait de code suivant&nbsp;:
 
 ```xml
 <Style x:Key="TitleSafeListViewStyle" 
@@ -804,7 +804,7 @@ The UWP has functionality that will keep the focus visual inside the [VisibleBou
 </Style>
 ```
 
-You would put the previous code snippet in either the page or app resources, and then access it in the following way:
+Vous placez l’extrait de code précédent dans les ressources de la page ou de l’application, puis vous y accédez de la manière suivante&nbsp;:
 
 ```xml
 <Page>
@@ -814,64 +814,64 @@ You would put the previous code snippet in either the page or app resources, and
 ```
 
 > [!NOTE]
-> This code snippet is specifically for `ListView`s; for a `GridView` style, set the [TargetType](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.controltemplate.targettype.aspx) attribute for both the [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.controltemplate.aspx) and the [Style](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.style.aspx) to `GridView`.
+> Cet extrait de code est spécifiquement conçu pour les contrôles `ListView`. Pour un style `GridView`, définissez l’attribut [TargetType](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.controltemplate.targettype.aspx) des éléments [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.controltemplate.aspx) et [Style](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.style.aspx) sur `GridView`.
 
-## <a name="colors"></a>Colors
+## <a name="colors"></a>Couleurs
 
-By default, the Universal Windows Platform doesn't do anything to alter your app's colors. That said, there are improvements that you can make to the set of colors your app uses to improve the visual experience on TV.
+Par défaut, la plateforme&nbsp;Windows universelle ne modifie pas les couleurs de votre application. Vous pouvez cependant faire des améliorations à la palette de couleurs de votre application pour optimiser l’expérience visuelle sur télévision.
 
-### <a name="application-theme"></a>Application theme
+### <a name="application-theme"></a>Thème d’application
 
-You can choose an **Application theme** (dark or light) according to what is right for your app, or you can opt out of theming. Read more about general recommendations for themes in [Color themes](../style/color.md).
+Vous pouvez choisir un **thème d’application** (clair ou foncé) en fonction de ce qui est approprié pour votre application, ou vous pouvez ignorer le thème. Pour en savoir plus sur les recommandations générales pour les thèmes, voir [Thèmes de couleur](../style/color.md).
 
-The UWP also allows apps to dynamically set the theme based on the system settings provided by the devices on which they run. While the UWP always respects the theme settings specified by the user, each device also provides an appropriate default theme. Because of the nature of Xbox One, which is expected to have more *media* experiences than *productivity* experiences, it defaults to a dark system theme. If your app's theme is based on the system settings, expect it to default to dark on Xbox One.
+L’UWP permet également aux applications de définir le thème de manière dynamique selon les paramètres système fournis par les appareils sur lesquels elles s’exécutent. Bien que l’UWP respecte toujours les paramètres de thème spécifiés par l’utilisateur, chaque appareil fournit également un thème par défaut approprié. En raison de la nature de Xbox&nbsp;One, qui génère plus d’expériences *multimédias* que d’expériences de *productivité*, son thème de système est foncé par défaut. Si le thème de votre application est basé sur les paramètres système, celui-ci devrait être foncé sur Xbox&nbsp;One par défaut.
 
-### <a name="accent-color"></a>Accent color
+### <a name="accent-color"></a>Couleur d’accentuation
 
-The UWP provides a convenient way to expose the **accent color** that the user has selected from their system settings.
+La plateforme UWP fournit un moyen pratique pour afficher la **couleur d’accentuation** que l’utilisateur a sélectionnée dans ses paramètres système.
 
-On Xbox One, the user is able to select a user color, just as they can select an accent color on a PC. As long as your app calls these accent colors through brushes or color resources, the color that the user selected in the system settings will be used. Note that accent colors on Xbox One are per user, not per system.
+Sur Xbox&nbsp;One, l’utilisateur est en mesure de sélectionner une couleur utilisateur, comme il peut sélectionner une couleur d’accentuation sur un PC. Dans la mesure où votre application appelle ces couleurs d’accentuation par le biais de pinceaux ou de ressources de couleur, la couleur sélectionnée par l’utilisateur dans les paramètres système sera utilisée. Notez que les couleurs d’accentuation sur Xbox&nbsp;One sont définies par l’utilisateur et non par le système.
 
-Please also note that the set of user colors on Xbox One is not the same as that on PCs, phones, and other devices. This is partly due to the fact that these colors are hand-picked to make for the best 10-foot experience on Xbox One, following the same methodologies and strategies explained in this article.
+Notez également que l’ensemble des couleurs utilisateur sur Xbox&nbsp;One n’est pas le même que sur les PC, téléphones et autres appareils. C’est en partie dû au fait que ces couleurs sont triées sur le volet pour optimiser l’expérience «&nbsp;10-foot&nbsp;» sur Xbox&nbsp;One, suivant les mêmes méthodologies et stratégies décrites dans cet article.
 
-As long as your app uses a brush resource such as **SystemControlForegroundAccentBrush**, or a color resource (**SystemAccentColor**), or instead calls accent colors directly through the [UIColorType.Accent*](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uicolortype.aspx) API, those colors are replaced with accent colors appropriate for TV. High contrast brush colors are also pulled in from the system the same way as on a PC and phone, but with TV-appropriate colors.
+Tant que votre application utilise une ressource de pinceau, telle que **SystemControlForegroundAccentBrush**, ou une ressource de couleur (**SystemAccentColor**), ou appelle les couleurs d’accentuation directement via l’API [UIColorType.Accent*](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uicolortype.aspx), les couleurs sont remplacées par des couleurs d’accentuation qui conviennent pour la télévision. Les couleurs de pinceau à contraste élevé sont également extraites à partir du système de la même manière que sur un PC et téléphone, mais avec des couleurs qui conviennent pour la télévision.
 
-To learn more about accent color in general, see [Accent color](../style/color.md#accent-color).
+Pour en savoir plus sur la couleur d’accentuation en général, voir [Couleur d’accentuation](../style/color.md#accent-color).
 
-### <a name="color-variance-among-tvs"></a>Color variance among TVs
+### <a name="color-variance-among-tvs"></a>Variantes de couleur entre les écrans de télévision
 
-When designing for TV, note that colors display quite differently depending on the TV on which they are rendered. Don't assume colors will look exactly as they do on your monitor. If your app relies on subtle differences in color to differentiate parts of the UI, colors could blend together and users could get confused. Try to use colors that are different enough that users will be able to clearly differentiate them, regardless of the TV they are using.
+Lors de la conception d’applications pour la télévision, notez que les couleurs s’affichent de manière légèrement différente en fonction des types de télévision. Ne supposez pas que les couleurs ressembleront exactement à celles de votre écran. Si votre application repose sur des nuances de couleur subtiles pour différencier les diverses parties de l’interface utilisateur, les couleurs pourraient facilement se mélanger et ainsi dérouter les utilisateurs. Essayez d’utiliser des couleurs assez distinctes pour que les utilisateurs puissent bien les différentier, quelle que soit la télévision qu’ils utilisent.
 
-### <a name="tv-safe-colors"></a>TV-safe colors
+### <a name="tv-safe-colors"></a>Couleurs adaptées aux écrans de TV
 
-A color's RGB values represent intensities for red, green, and blue. TVs don't handle extreme intensities very well; therefore, you should avoid using these colors when designing for the 10-foot experience. They can produce an odd banded effect, or appear washed out on certain TVs. Additionally, high-intensity colors may cause blooming (nearby pixels start drawing the same colors). 
+Les valeurs RVB d’une couleur représentent l’intensité du rouge, du vert et du bleu. Les écrans de télévision prennent mal en charge des intensités extrêmes&nbsp;; par conséquent, évitez d’utiliser ces couleurs lors de la conception pour l’expérience «&nbsp;10-foot&nbsp;». Ces couleurs peuvent produire un effet de «&nbsp;bandes&nbsp;» ou apparaître délavées sur certains écrans de télévision. En outre, les couleurs à haute intensité peuvent provoquer un effet Bloom (les pixels avoisinants émettent les mêmes couleurs). 
 
-While there are different schools of thought in what are considered TV-safe colors, colors within the RGB values of 16-235 (or 10-EB in hexadecimal) are generally safe to use for TV.
+Bien que les avis divergent sur quelles couleurs sont adaptées aux écrans de TV, les couleurs dont les valeurs RVB sont comprises entre 16 et 235 (ou 10-EB en notation hexadécimale) sont généralement adaptées aux écrans de TV.
 
-![TV-safe color range](images/designing-for-tv/tv-safe-colors.png)
+![Plage de couleurs adaptées aux écrans de TV](images/designing-for-tv/tv-safe-colors.png)
 
-### <a name="fixing-tv-unsafe-colors"></a>Fixing TV-unsafe colors
+### <a name="fixing-tv-unsafe-colors"></a>Correction des couleurs inadaptées aux écrans de TV
 
-Fixing TV-unsafe colors individually by adjusting their RGB values to be within the TV-safe range is typically referred to as **color clamping**. This method may be appropriate for an app that doesn't use a rich color palette. However, fixing colors using only this method may cause colors to collide with each other, which doesn't provide for the best 10-foot experience.
+La correction des couleurs inadaptées aux écrans de TV en ajustant leurs valeurs RVB afin qu’elles soient incluses dans la plage des couleurs adaptées est généralement appelée **déplacement de couleur**. Cette méthode peut être appropriée pour une application qui n’utilise pas une palette élargie de couleurs. Toutefois, la correction des couleurs par cette seule méthode peut provoquer la collision des couleurs, ce qui n’assure pas une expérience «&nbsp;10-foot&nbsp;» optimale.
 
-To optimize your color palette for TV, we recommend that you first ensure that your colors are TV-safe through a method such as color clamping, then use a method called **scaling**.
+Pour optimiser votre palette de couleurs pour la télévision, nous vous recommandons de vous assurer que vos couleurs sont adaptées aux écrans de TV, à l’aide du déplacement de couleur par exemple, puis d’utiliser une méthode appelée **mise à l’échelle**.
 
-This involves scaling all of your colors' RGB values by a certain factor to get them within the TV-safe range. Scaling all of your app's colors helps prevent color collision and makes for a better 10-foot experience.
+Cela implique la mise à l’échelle d’un certain facteur de toutes les valeurs&nbsp;RVB de vos couleurs pour qu’elles soient adaptées aux écrans de TV. La mise à l’échelle de toutes les couleurs de votre application permet d’éviter les collisions de couleur et améliore l’expérience «&nbsp;10-foot&nbsp;».
 
-![Clamping vs. scaling](images/designing-for-tv/clamping-vs-scaling.png)
+![Déplacement de couleur ou la mise à l’échelle](images/designing-for-tv/clamping-vs-scaling.png)
 
-### <a name="assets"></a>Assets
+### <a name="assets"></a>Ressources
 
-When making changes to colors, make sure to also update assets accordingly. If your app uses a color in XAML that is supposed to look the same as an asset color, but you only update the XAML code, your assets will look off-color.
+Lorsque vous modifiez des couleurs, veillez à mettre à jour les ressources en conséquence. Si votre application utilise une couleur dans le code XAML censée être identique à une couleur de ressource, la couleur de la ressource ne semblera pas identique si vous mettez seulement à jour le code XAML.
 
-### <a name="uwp-color-sample"></a>UWP color sample
+### <a name="uwp-color-sample"></a>Exemple de couleur&nbsp;UWP
 
-[UWP color themes](../style/color.md) are designed around the app's background being either **black** for the dark theme or **white** for the light theme. Because neither black nor white are TV-safe, these colors needed to be fixed by using *clamping*. After they were fixed, all the other colors needed to be adjusted through *scaling* to retain the necessary contrast.
+Les [thèmes de couleurs UWP](../style/color.md) sont conçus selon l’arrière-plan de l’application ; **noir** pour le thème foncé ou **blanc** pour le thème clair. Ni le noir, ni le blanc n’étant adaptés aux écrans de TV, ces couleurs doivent être modifiées en utilisant le *déplacement de couleur*. Une fois modifiées, toutes les autres couleurs doivent être ajustées par le biais de la *mise à l’échelle* afin de conserver le contraste nécessaire.
 
 <!--[v-lcap to eliot]why is the above paragraph in the past tense?-->
 <!--[elcowle] Because this is something that Microsoft had to do to the UWP color themes to accommodate TV-safe colors for Xbox. These themes are then provided in the below code sample.-->
 
-The following sample code provides a color theme that has been optimized for TV use:
+L’exemple de code suivant fournit un thème de couleur optimisé pour l’utilisation de TV&nbsp;:
 
 ```xml
 <Application.Resources>
@@ -939,12 +939,12 @@ The following sample code provides a color theme that has been optimized for TV 
 ```
 
 > [!NOTE]
-> The light theme **SystemChromeMediumLowColor** and **SystemChromeMediumLowColor** are the same color on purpose and not caused as a result of clamping. 
+> Le thème clair **SystemChromeMediumLowColor** et **SystemChromeMediumLowColor** sont délibérément de la même couleur et non suite à une opération de déplacement de couleur. 
 
 > [!NOTE]
-> Hexadecimal colors are specified in **ARGB** (Alpha Red Green Blue).
+> Les couleurs hexadécimales s’écrivent sous la forme **ARVB** (Alpha, Rouge, Vert, Bleu).
 
-We don't recommend using TV-safe colors on a monitor able to display the full range without clamping because the colors will look washed out. Instead, load the resource dictionary (previous sample) when your app is running on Xbox but *not* other platforms. In the `OnLaunched` method of `App.xaml.cs`, add the following check:
+Nous déconseillons l’utilisation de couleurs adaptées aux écrans de TV sur un écran pouvant afficher la palette complète des couleurs (sans opération de déplacement), car les couleurs sembleraient délavées. Il est préférable de charger le dictionnaire de ressources (exemple précédent) lorsque votre application s’exécute sur Xbox, mais *pas* sur les autres plateformes. Dans la méthode `OnLaunched` de `App.xaml.cs`, ajoutez la vérification suivante&nbsp;:
 
 ```csharp
 if (IsTenFoot)
@@ -957,43 +957,43 @@ if (IsTenFoot)
 ```
 
 > [!NOTE] 
-> The `IsTenFoot` variable is defined in [Custom visual state trigger for Xbox](#custom-visual-state-trigger-for-xbox).
+> La variable `IsTenFoot` est définie dans [Déclencheur d’état visuel personnalisé pour Xbox](#custom-visual-state-trigger-for-xbox).
 
-This will ensure that the correct colors will display on whichever device the app is running, providing the user with a better, more aesthetically pleasing experience.
+Cela permet de garantir que les couleurs appropriées s’affichent pour l’appareil sur lequel l’application est exécutée, fournissant ainsi à l’utilisateur une expérience plus agréable et plus esthétique.
 
-## <a name="guidelines-for-ui-controls"></a>Guidelines for UI controls
+## <a name="guidelines-for-ui-controls"></a>Recommandations en matière de contrôles d’interface utilisateur
 
-There are several UI controls that work well across multiple devices, but have certain considerations when used on TV. Read about some best practices for using these controls when designing for the 10-foot experience.
+Il existe plusieurs contrôles d’interface utilisateur qui fonctionnent correctement sur plusieurs appareils, mais pour lesquels certains éléments doivent être pris en compte s’ils sont utilisés sur un téléviseur. Découvrez certaines meilleures pratiques portant sur l’utilisation de ces contrôles lors de la conception pour l’expérience «&nbsp;10-foot&nbsp;».
 
-### <a name="pivot-control"></a>Pivot control
+### <a name="pivot-control"></a>Contrôle Pivot
 
-A [Pivot](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.pivot.aspx) provides quick navigation of views within an app through selecting different headers or tabs. The control underlines whichever header has focus, making it more obvious which header is currently selected when using gamepad/remote. 
+Un contrôle [Pivot](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.pivot.aspx) permet une navigation rapide des affichages au sein d’une application en sélectionnant différents en-têtes ou onglets. Le contrôle souligne l’en-tête sur lequel se trouve le focus, ce qui rend plus visible l’en-tête sélectionné lorsque vous utilisez le boîtier de commande/la télécommande. 
 
-![Pivot underline](images/designing-for-tv/pivot-underline.png)
+![Souligné par contrôle Pivot](images/designing-for-tv/pivot-underline.png)
 
 <!--By default, when you navigate to a `Pivot`, one of the [PivotItem](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.pivotitem.aspx)s will get focus. However, you can show focus around all the headers by setting `Pivot.HeaderFocusVisualPlacement="ItemHeaders"`.
 
 ![Pivot focus around headers](images/designing-for-tv/pivot-headers-focus.png)-->
 
-You can set the [Pivot.IsHeaderItemsCarouselEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.pivot.isheaderitemscarouselenabled.aspx) property to `true` so that pivots always keep the same position, rather than having the selected pivot header always move to the first position. This is a better experience for large-screen displays such as TV, because header wrapping can be distracting to users. If all of the pivot headers don't fit onscreen at once, there will be a scrollbar to let customers see the other headers; however, you should make sure that they all fit on the screen to provide the best experience. For more information, see [Tabs and pivots](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/tabs-pivot).
+Vous pouvez régler la propriété [Pivot.IsHeaderItemsCarouselEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.pivot.isheaderitemscarouselenabled.aspx) sur `true` pour que les pivots gardent toujours la même position, et éviter que l’en-tête de pivot sélectionné se place toujours en première position. Cette expérience est plus intéressante pour les grands écrans tels que les écrans de télévision, car le renvoi à la ligne des en-têtes peut gêner les utilisateurs. Si tous les en-têtes de pivot ne sont pas visibles à l’écran en même temps, une barre de défilement permet aux clients d’afficher les autres en-têtes. Toutefois, vous devez vous assurer qu’ils tiennent tous à l’écran pour offrir la meilleure expérience possible. Pour en savoir plus, consultez [Onglets et pivots](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/tabs-pivot).
 
 <!--If you find it necessary to wrap headers, you can set it so that it doesn't show the selected header in the left-most position, like it does by default. When you set `Pivot.IsHeaderItemsCarouselEnabled="False"`, the selected header will move left by the minimal amount required to become fully visible. This is the recommended approach for 10-foot design.
 
 ![Pivot headers carousel disabled](images/designing-for-tv/pivot-headers-carousel.png)-->
 
-### <a name="navigation-pane"></a>Navigation pane
+### <a name="navigation-pane"></a>Volet de navigation
 
-A navigation pane (also known as a *hamburger menu*) is a navigation control commonly used in UWP apps. Typically it is a pane with several options to choose from in a list style menu that will take the user to different pages. Generally this pane starts out collapsed to save space, and the user can open it by clicking on a button. 
+Un volet de navigation (également appelé *menu hamburger*) est un contrôle de navigation couramment utilisé dans les applications UWP. En règle générale, il s’agit d’un volet comportant plusieurs options dans un menu de style de liste qui dirigera l’utilisateur vers différentes pages. En général, ce volet démarre en mode réduit pour économiser l’espace&nbsp;; l’utilisateur peut l’ouvrir en cliquant sur un bouton. 
 
-While nav panes are very accessible with mouse and touch, gamepad/remote makes them less accessible since the user has to navigate to a button to open the pane. Therefore, a good practice is to have the **View** button open the nav pane, as well as allow the user to open it by navigating all the way to the left of the page. This will provide the user with very easy access to the contents of the pane. For more information about how nav panes behave in different screen sizes as well as best practices for gamepad/remote navigation, see [Nav panes](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/nav-pane).
+Même si les volets de navigation sont très accessibles par souris et écran tactile, ce n’est pas le cas pour le boîtier de commande/la télécommande car l’utilisateur doit ouvrir le volet par le biais d’un bouton. Par conséquent, une bonne pratique consiste à rendre possible l’ouverture du panneau de navigation à l’aide de la touche **Affichage**, ainsi que son ouverture en naviguant tout à gauche de la page. L’accès aux contenus du volet est ainsi grandement facilité. Pour en savoir plus sur la façon dont les volets de navigation se comportent sur des écrans de tailles différentes et pour connaître les meilleures pratiques en matière de navigation pour le boîtier de commande/la télécommande, voir [Volets de navigation](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/nav-pane).
 
-### <a name="commandbar-labels"></a>CommandBar labels
+### <a name="commandbar-labels"></a>Libellés CommandBar
 
-It is a good idea to have the labels placed to the right of the icons on a [CommandBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx) so that its height is minimized and stays consistent. You can do this by setting the [CommandBar.DefaultLabelPosition](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.defaultlabelposition.aspx) property to `CommandBarDefaultLabelPosition.Right`.
+Il est judicieux de placer les libellés à droite des icônes sur une classe [CommandBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx) afin de réduire sa hauteur et garantir la cohérence de cette dernière. Vous pouvez le faire en définissant la propriété [CommandBar.DefaultLabelPosition](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.defaultlabelposition.aspx) sur `CommandBarDefaultLabelPosition.Right`.
 
-![CommandBar with labels to the right of icons](images/designing-for-tv/commandbar.png)
+![CommandBar comportant des libellés à droite des icônes](images/designing-for-tv/commandbar.png)
 
-Setting this property will also cause the labels to always be displayed, which works well for the 10-foot experience because it minimizes the number of clicks for the user. This is also a great model for other device types to follow.
+La définition de cette propriété provoquera également l’affichage permanent des libellés, ce qui fonctionne bien pour l’expérience «&nbsp;10-foot&nbsp;», car elle réduit le nombre de clics requis pour l’utilisateur. C’est également un excellent modèle que les autres types d’appareil peuvent suivre.
 
 <!--When there isn't enough space in the window to fit all of the `AppBarButton`s, buttons move into an overflow menu, which is accessed by selecting the "..." button. This happens dynamically as the screen resizes. This generally shouldn't be a problem for TV because the screen size is so large, but if you find that you have overflow buttons, you can specify which appear first using the `AppBarButton.DynamicOverflowOrder` property.
 
@@ -1001,23 +1001,23 @@ Setting this property will also cause the labels to always be displayed, which w
 
 ### <a name="tooltip"></a>Tooltip
 
-The [Tooltip](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltip.aspx) control was introduced as a way to provide more information in the UI when the user hovers the mouse over, or taps and holds their figure on, an element. For gamepad and remote, `Tooltip` appears after a brief moment when the element gets focus, stays onscreen for a short time, and then disappears. This behavior could be distracting if too many `Tooltip`s are used. Try to avoid using `Tooltip` when designing for TV.
+Le contrôle [Tooltip](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltip.aspx) a été introduit pour fournir à l’utilisateur des informations supplémentaires dans l’interface utilisateur lorsqu’il pointe avec la souris ou maintient son doigt sur un élément. Pour le boîtier de commande et la télécommande, `Tooltip` s’affiche après un court instant lorsque l’élément obtient le focus, reste à l’écran pendant un court moment, puis disparaît. Ce comportement peut devenir gênant si trop de contrôles `Tooltip` sont utilisés. Essayez d’éviter `Tooltip` lors de la conception d’applications pour la télévision.
 
-### <a name="button-styles"></a>Button styles
+### <a name="button-styles"></a>Styles de bouton
 
-While the standard UWP buttons work well on TV, some visual styles of buttons call attention to the UI better, which you may want to consider for all platforms, particularly in the 10-foot experience, which benefits from clearly communicating where the focus is located. To read more about these styles, see [Buttons](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/buttons).
+Bien que les boutons UWP standard fonctionnent correctement sur les télévisions, certains styles visuels attirent mieux l’attention sur l’interface utilisateur. Vous devez prendre cela en compte pour l’ensemble des plateformes, en particulier pour l’expérience «&nbsp;10-foot&nbsp;»&nbsp;; elles bénéficient d’une communication claire sur l’emplacement du focus. Pour en savoir plus sur ces styles, voir [Boutons](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/buttons).
 
-### <a name="nested-ui-elements"></a>Nested UI elements
+### <a name="nested-ui-elements"></a>Éléments d’interface utilisateur imbriquée
 
-Nested UI exposes nested actionable items enclosed inside a container UI element where both the nested item as well as the container item can take independent focus from each other.
+L’interface utilisateur imbriquée expose les éléments actionnables imbriqués inclus dans un élément d’interface utilisateur conteneur où l’élément imbriqué et l’élément conteneur peuvent prendre le focus indépendamment l’un de l’autre.
 
-Nested UI works well for some input types, but not always for gamepad and remote, which rely on XY navigation. Be sure to follow the guidance in this topic to ensure that your UI is optimized for the 10-foot environment, and that the user can access all interactable elements easily. One common solution is to place nested UI elements in a `ContextFlyout` (see [CommandBar and ContextFlyout](#commandbar-and-contextflyout)).
+L’interface utilisateur imbriquée est parfaitement indiquée pour certains types d’entrée, mais pas toujours pour les manettes de jeu et les télécommandes, qui font appel à la navigation XY. Veillez à suivre les recommandations fournies dans cette rubrique pour vous assurer que votre interface utilisateur est optimisée pour l’environnement TV (visualisation à 3&nbsp;mètres) et que l’utilisateur peut facilement accéder à tous les éléments interactifs. Une solution courante consiste à placer des éléments de l’interface utilisateur imbriquée dans un `ContextFlyout` (voir [CommandBar et ContextFlyout](#commandbar-and-contextflyout)).
 
-For more information on nested UI, see [Nested UI in list items](../controls-and-patterns/nested-ui.md).
+Pour plus d’informations sur l’interface utilisateur imbriquée, voir [Interface utilisateur imbriquée dans des éléments de liste](../controls-and-patterns/nested-ui.md).
 
 ### <a name="mediatransportcontrols"></a>MediaTransportControls
 
-The [MediaTransportControls](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediatransportcontrols.aspx) element lets users interact with their media by providing a default playback experience that allows them to play, pause, turn on closed captions, and more. This control is a property of [MediaPlayerElement](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement.aspx) and supports two layout options: *single-row* and *double-row*. In the single-row layout, the slider and playback buttons are all located in one row, with the play/pause button located to the left of the slider. In the double-row layout, the slider occupies its own row, with the playback buttons on a separate lower row. When designing for the 10-foot experience, the double-row layout should be used, as it provides better navigation for gamepad. To enable the double-row layout, set `IsCompact="False"` on the `MediaTransportControls` element in the [TransportControls](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.transportcontrols.aspx) property of the `MediaPlayerElement`.
+L’élément [MediaTransportControls](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediatransportcontrols.aspx) permet aux utilisateurs d’interagir avec leur média en fournissant une expérience de lecture par défaut grâce à laquelle ils peuvent lire le contenu, le mettre en pause, activer les sous-titres, etc. Ce contrôle est une propriété de l’objet [MediaPlayerElement](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement.aspx) et prend en charge deux options de disposition&nbsp;: *sur une ligne* et *sur deux lignes*. Dans la disposition sur une ligne, le curseur et les boutons de lecture se trouvent tous sur une même ligne, le bouton lecture/pause étant situé à gauche du curseur. Dans la disposition sur deux lignes, le curseur occupe sa propre ligne, les boutons de lecture se trouvant sur une ligne distincte en dessous. Lors de la conception pour l’expérience «&nbsp;10-foot&nbsp;», la disposition sur deux lignes doit être utilisée, car elle assure une meilleure navigation avec une manette de jeu. Pour activer la disposition sur deux lignes, définissez `IsCompact="False"` pour l’élément `MediaTransportControls` dans la propriété [TransportControls](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.transportcontrols.aspx) de la `MediaPlayerElement`.
 
 ```xml
 <MediaPlayerElement x:Name="mediaPlayerElement1"  
@@ -1029,26 +1029,26 @@ The [MediaTransportControls](https://msdn.microsoft.com/library/windows/apps/win
 </MediaPlayerElement>
 ```  
 
-Visit [Media playback](../controls-and-patterns/media-playback.md) to learn more about adding media to your app.
+Pour en savoir plus sur l’ajout de médias à votre application, consultez l’article [Lecteur multimédia](../controls-and-patterns/media-playback.md).
 
-> ![NOTE] `MediaPlayerElement` is only available in Windows 10, version 1607 and later. If you're developing an app for an earlier version of Windows 10, you'll need to use [MediaElement](https://msdn.microsoft.com/library/windows/apps/br242926) instead. The recommendations above apply to `MediaElement` as well, and the `TransportControls` property is accessed in the same way.
+> ![REMARQUE] L’objet `MediaPlayerElement` est uniquement disponible dans Windows&nbsp;10, version&nbsp;1607 et ultérieure. Si vous développez une application pour une version antérieure de Windows&nbsp;10, vous devez utiliser l’objet [MediaElement](https://msdn.microsoft.com/library/windows/apps/br242926) à la place. Les recommandations ci-dessus s’appliquent également à l’objet `MediaElement` et la propriété `TransportControls` est accessible de la même manière.
 
-### <a name="search-experience"></a>Search experience
+### <a name="search-experience"></a>Expérience de recherche
 
-Searching for content is one of the most commonly performed functions in the 10-foot experience. If your app provides a search experience, it is helpful for the user to have quick access to it by using the **Y** button on the gamepad as an accelerator.
+La recherche de contenu est l’une des fonctions les plus fréquemment exécutées dans le cadre d’une expérience «&nbsp;10-foot&nbsp;». Si votre application offre une fonction de recherche, l’utilisateur doit pouvoir y accéder rapidement en utilisant le bouton accélérateur **Y** sur le boîtier de commande.
 
-Most customers should already be familiar with this accelerator, but if you like you can add a visual **Y** glyph to the UI to indicate that the customer can use the button to access search functionality. If you do add this cue, be sure to use the symbol from the **Segoe Xbox MDL2 Symbol** font (`&#xE3CC;` for XAML apps, `\E426` for HTML apps) to provide consistency with the Xbox shell and other apps.
+La plupart des clients connaissent probablement cet accélérateur. Toutefois, si vous le souhaitez, vous pouvez ajouter un glyphe visuel **Y** dans l’interface utilisateur afin d’indiquer que le client peut utiliser le bouton pour accéder à la fonctionnalité de recherche. Si vous ajoutez cet indicateur, veillez à utiliser le symbole de la police **Segoe Xbox Symbol MDL2** (`&#xE3CC;` pour les applications XAML, `\E426` pour les applications HTML) pour fournir une expérience cohérente avec l’interpréteur de commandes Xbox et d’autres applications.
 
 > [!NOTE]
-> Because the **Segoe Xbox MDL2 Symbol** font is only available on Xbox, the symbol won't appear correctly on your PC. However, it will show up on the TV once you deploy to Xbox.
+> Comme la police **Segoe Xbox MDL2 Symbol** n’est disponible que sur Xbox, le symbole ne s’affiche pas correctement sur votre PC. Mais, il apparaîtra sur le téléviseur lorsque vous le déploierez sur Xbox.
 
-Since the **Y** button is only available on gamepad, make sure to provide other methods of access to search, such as buttons in the UI. Otherwise, some customers may not be able to access the functionality.
+Dans la mesure où le bouton **Y** n’est disponible que sur le boîtier de commande, veillez à fournir d’autres méthodes d’accès à la recherche, comme des boutons dans l’interface utilisateur. Sinon, certains clients risquent de ne pas pouvoir accéder à la fonctionnalité.
 
-In the 10-foot experience, it is often easier for customers to use a full screen search experience because there is limited room on the display. Whether you have full screen or partial-screen, "in-place" search, we recommend that when the user opens the search experience, the onscreen keyboard appears already opened, ready for the customer to enter search terms.
+Dans l’expérience «&nbsp;10-foot&nbsp;», il est souvent plus facile pour les clients d’utiliser une fonction de recherche en mode plein écran, car l’espace disponible sur l’écran est limité. En mode plein écran ou écran partiel, il est préférable que le clavier visuel affiché soit déjà ouvert lorsque l’utilisateur sélectionne la fonction de recherche. Ainsi il peut immédiatement saisir les termes de sa recherche.
 
-## <a name="custom-visual-state-trigger-for-xbox"></a>Custom visual state trigger for Xbox
+## <a name="custom-visual-state-trigger-for-xbox"></a>Déclencheur d’état visuel personnalisé pour Xbox
 
-To tailor your UWP app for the 10-foot experience, we recommend that you make layout changes when the app detects that it has been launched on an Xbox console. One way to do this is by using a custom *visual state trigger*. Visual state triggers are most useful when you want to edit in **Blend for Visual Studio**. The following code snippet shows how to create a visual state trigger for Xbox:
+Pour personnaliser votre application&nbsp;UWP pour l’expérience «&nbsp;10-foot&nbsp;», nous vous recommandons d’effectuer des modifications de disposition lorsque l’application détecte son lancement sur une console Xbox. L’une des méthodes utilisées pour cette fin est le *déclencheur d’état visuel* personnalisé. Les déclencheurs d’état visuel sont particulièrement utiles lorsque vous souhaitez apporter des modifications dans **Blend pour Visual Studio**. L’extrait de code suivant montre comment créer un déclencheur d’état visuel pour Xbox&nbsp;:
 
 ```xml
 <VisualStateManager.VisualStateGroups>
@@ -1074,7 +1074,7 @@ To tailor your UWP app for the 10-foot experience, we recommend that you make la
 </VisualStateManager.VisualStateGroups>
 ```
 
-To create the trigger, add the following class to your app. This is the class that is referenced by the XAML code above:
+Pour créer le déclencheur, ajoutez la classe suivante à votre application. Il s’agit de la classe référencée par le code&nbsp;XAML précédemment&nbsp;:
 
 ```csharp
 class DeviceFamilyTrigger : StateTriggerBase
@@ -1098,26 +1098,26 @@ class DeviceFamilyTrigger : StateTriggerBase
 }
 ```
 
-After you've added your custom trigger, your app will automatically make the layout modifications you specified in your XAML code whenever it detects that it is running on an Xbox One console.
+Une fois que vous ajoutez votre déclencheur personnalisé, votre application effectuera automatiquement les modifications de disposition spécifiées dans votre code XAML à chaque fois qu’elle détecte son exécution sur une console Xbox&nbsp;One.
 
-Another way you can check whether your app is running on Xbox and then make the appropriate adjustments is through code. You can use the following simple variable to check if your app is running on Xbox:
+Vous pouvez également utiliser du code pour vérifier si votre application s’exécute sur Xbox, puis effectuer les ajustements appropriés. Vous pouvez utiliser la variable simple suivante pour vérifier si votre application s’exécute sur Xbox&nbsp;:
 
 ```csharp
 bool IsTenFoot = (Windows.System.Profile.AnaylticsInfo.VersionInfo.DeviceFamily == 
                     "Windows.Xbox");
 ```
 
-Then, you can make the appropriate adjustments to your UI in the code block following this check. An example of this is shown in [UWP color sample](#uwp-color-sample).
+Après avoir effectué cette vérification, vous pouvez effectuer les réglages appropriés de votre interface utilisateur dans le bloc de code. Un exemple illustratif se trouve dans l’[exemple de couleur UWP](#uwp-color-sample).
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>Résumé
 
-Designing for the 10-foot experience has special considerations to take into account that make it different from designing for any other platform. While you can certainly do a straight port of your UWP app to Xbox One and it will work, it won't necessarily be optimized for the 10-foot experience and can lead to user frustration. Following the guidelines in this article will make sure that your app is as good as it can be on TV.
+La conception pour l’expérience «&nbsp;10-foot&nbsp;» implique de prendre en compte des points spéciaux qui la distinguent de la conception pour toute autre plateforme. Si vous pouvez certainement transférer directement votre application UWP vers Xbox&nbsp;One avec succès, cette application n’est pas nécessairement optimisée pour l’expérience «&nbsp;10-foot&nbsp;», ce qui peut générer de la frustration chez l’utilisateur. Suivez les recommandations contenues dans cet article pour vous assurer que votre application fonctionne aussi bien que possible sur TV.
 
-## <a name="related-articles"></a>Related articles
+## <a name="related-articles"></a>Articles connexes
 
-- [Device primer for Universal Windows Platform (UWP) apps](device-primer.md)
-- [Gamepad and remote control interactions](gamepad-and-remote-interactions.md)
-- [Sound in UWP apps](../style/sound.md)
+- [Notions fondamentales sur les appareils pour les applications de plateforme Windows universelle (UWP)](device-primer.md)
+- [Interactions entre le boîtier de commande et la télécommande](gamepad-and-remote-interactions.md)
+- [Son dans les applications UWP](../style/sound.md)
 
 
 

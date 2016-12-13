@@ -1,28 +1,28 @@
 ---
 author: laurenhughes
 ms.assetid: 6AA037C0-35ED-4B9C-80A3-5E144D7EE94B
-title: Install apps with the WinAppDeployCmd.exe tool
-description: Windows Application Deployment (WinAppDeployCmd.exe) is a command line tool that can use to deploy a Universal Windows Platform (UWP) app from a Windows 10 PC to any Windows 10 device.
+title: "Installer des applications avec l’outil WinAppDeployCmd.exe"
+description: "Le déploiement d’applications Windows (WinAppDeployCmd.exe) est un outil de ligne de commande qui permet de déployer une application de plateforme Windows universelle (UWP) à partir d’un PC Windows&nbsp;10 et vers tout appareil Windows&nbsp;10."
 translationtype: Human Translation
 ms.sourcegitcommit: f467bd83c2f700d94a232c99a06f86f1f1b1a0ac
 ms.openlocfilehash: 37028e1e119f27a8c82bc024e52f939a89243244
 
 ---
-# <a name="install-apps-with-the-winappdeploycmdexe-tool"></a>Install apps with the WinAppDeployCmd.exe tool
+# <a name="install-apps-with-the-winappdeploycmdexe-tool"></a>Installer des applications avec l’outil WinAppDeployCmd.exe
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows&nbsp;10. Pour les articles sur Windows&nbsp;8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Windows Application Deployment (WinAppDeployCmd.exe) is a command line tool that can use to deploy a Universal Windows Platform (UWP) app from a Windows 10 PC to any Windows 10 device. You can use this tool to deploy an .appx package when the Windows 10 device is connected by USB or available on the same subnet without needing Microsoft Visual Studio or the solution for that app. You can also deploy the app without packaging first to a remote PC or Xbox One. This article describes how to install UWP apps using this tool.
+Le déploiement d’applications Windows (WinAppDeployCmd.exe) est un outil de ligne de commande qui permet de déployer une application de plateforme Windows universelle (UWP) à partir d’un PC Windows&nbsp;10 et vers tout appareil Windows&nbsp;10. Vous pouvez utiliser cet outil pour déployer un package .appx lorsque l’appareil Windows&nbsp;10 est connecté via un port USB ou disponible sur le même sous-réseau, sans avoir besoin de Microsoft Visual Studio ni de la solution pour cette application. Vous pouvez également déployer l’application sans créer de package au préalable vers un ordinateur distant ou une Xbox&nbsp;One. Cet article décrit comment installer des applications UWP à l’aide de cet outil.
 
-You just need the Windows 10 SDK installed to run the WinAppDeployCmd tool from a command prompt or a script file. When you install an app with WinAppDeployCmd.exe, this uses the .appx file or AppxManifest(for loose files) to side-load your app onto a Windows 10 device. This command does not install the certificate required for your app. To run the app, the Windows 10 device must be in developer mode or already have the certificate installed.
+Vous devez simplement installer le Kit de développement logiciel (SDK) Windows&nbsp;10 pour exécuter l’outil WinAppDeployCmd à partir d’une invite de commandes ou d’un fichier de script. Lorsque vous installez une application avec WinAppDeployCmd.exe, celui-ci utilise le fichier .appx ou AppxManifest (pour les fichiers isolés) pour le chargement indépendant de votre application sur un appareil Windows&nbsp;10. Cette commande n’installe pas le certificat nécessaire pour votre application. Pour exécuter l’application, l’appareil Windows&nbsp;10 doit être en mode développeur ou le certificat doit déjà avoir été installé.
 
-To deploy to mobile devices, you must first create a package. For more information, see [here](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
+Pour un déploiement vers des appareils mobiles, vous devez d’abord créer un package. Pour plus d’informations, voir [cet article](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps).
 
-The **WinAppDeployCmd.exe** tool is located here on your Windows 10 PC: **C:\\Program Files (x86)\\Windows Kits\\10\\bin\\x86\\WinAppDeployCmd.exe** (based on your installation path for the SDK). First, connect your Windows 10 device to the same subnet or connect it directly to your Windows 10 machine with a USB connection. Then use the following syntax and examples of this command later in this article to deploy your UWP app:
+L’outil **WinAppDeployCmd.exe** se trouve ici sur votre PC Windows&nbsp;10 : **C:\\Program Files (x86)\\Windows Kits\\10\\bin\\x86\\WinAppDeployCmd.exe** (selon le chemin d’installation du Kit de développement logiciel (SDK) sur votre PC). Tout d’abord, connectez votre appareil Windows&nbsp;10 au même sous-réseau ou connectez-le directement à votre ordinateur Windows&nbsp;10 via un port USB. Utilisez ensuite la syntaxe et les exemples suivants de la commande présentés plus loin dans cet article pour déployer votre application UWP&nbsp;:
 
-## <a name="winappdeploycmd-syntax-and-options"></a>WinAppDeployCmd syntax and options
+## <a name="winappdeploycmd-syntax-and-options"></a>Options et syntaxe WinAppDeployCmd
 
-Here is the possible syntax that you can use for **WinAppDeployCmd.exe**
+Voici la syntaxe que vous pouvez utiliser pour **WinAppDeployCmd.exe**
 
 ``` syntax
 WinAppDeployCmd command -option <argument> ...
@@ -45,105 +45,105 @@ WinAppDeployCmd command -option <argument> ...
 
 ```
 
-You can install or uninstall an app on the target device, or you can update an app that's already installed. To keep data or settings saved by an app that's already installed, use the **update** options instead of the **install** options.
+Vous pouvez installer ou désinstaller une application sur l’appareil cible, ou vous pouvez mettre à jour une application déjà installée. Pour conserver les données ou les paramètres enregistrés par une application déjà installée, utilisez les options **update** plutôt que les options **install**.
 
-The following table describes the commands for **WinAppDeployCmd.exe**.
+Le tableau suivant décrit les commandes pour **WinAppDeployCmd.exe**.
 
 
-| **Command**  | **Description**                                                     |
+| **Commande**  | **Description**                                                     |
 |--------------|---------------------------------------------------------------------|
-| devices      | Show the list of available network devices.                         |
-| install      | Install a UWP app package to the target device.                     |
-| update       | Update a UWP app that is already installed on the target device.    |
-| list         | Show the list of UWP apps installed on the specified target device. |
-| uninstall    | Uninstall the specified app package from the target device.         |
-| deployfiles  | Copy over loose file app at the target path to the remote relative path on the device.|
-| registerfiles| Register the loose file app at the remote deploy directory.         |
-| addcreds     | Add credentials to an Xbox to allow it to access a network location for app registration.|
-| getcreds     | Get network credentials for the target uses when running an application from a network share.|
-| deletecreds  | Delete network credentials the target uses when running an application from a network share.|
+| devices      | Affiche la liste des périphériques réseau disponibles.                         |
+| install      | Installe un package d’application UWP sur l’appareil cible.                     |
+| update       | Met à jour une application UWP déjà installée sur l’appareil cible.    |
+| list         | Affiche la liste des applications UWP installées sur l’appareil cible spécifié. |
+| uninstall    | Désinstalle le package d’application spécifié de l’appareil cible.         |
+| deployfiles  | Copie les fichiers isolés d’application présents dans le chemin d’accès cible vers le chemin d’accès relatif distant sur l’appareil.|
+| registerfiles| Inscrit les fichiers isolés d’application dans le répertoire de déploiement distant.         |
+| addcreds     | Ajoute des informations d’identification à une Xbox pour lui permettre d’accéder à un emplacement réseau pour l’enregistrement d’applications.|
+| getcreds     | Récupère les informations d’identification réseau utilisées par la cible lors de l’exécution d’une application depuis un partage réseau.|
+| deletecreds  | Supprime les informations d’identification réseau utilisées par la cible lors de l’exécution d’une application depuis un partage réseau.|
 
  
-The following table describes the options for **WinAppDeployCmd.exe**
+Le tableau suivant décrit les options pour **WinAppDeployCmd.exe**.
 
-| **Command**  | **Description**                                                     |
+| **Commande**  | **Description**                                                     |
 |--------------|---------------------------------------------------------------------|
-| -h (-help)       | Show the commands, options and arguments.|
-| -ip              | IP address of the target device.|
-| -g (-guid)       | Unique identifier of the target device.|
-| -d (-dependency) | (Optional) Specifies the dependency path for each of the package dependencies. <br />If no path is specified, the tool searches for dependencies in the root directory for the app package and the SDK directories.|
-| -f (-file)       | File path for the app package to install, update or uninstall.|
-| -p (-package)    | The full package name for the app package to uninstall. <br />(You can use the list command to find the full names for packages already installed on the device.)|
-| -pin             | A pin if it is required to establish a connection with the target device. <br />(You will be prompted to retry with the -pin option if authentication is required.)|
-| -credserver      | The server name of the network credentials for use by the target.|
-| -credusername    | The user name of the network credentials for use by the target.|
-| -credpassword    | The password of the network credentials for use by the target.|
-| -connecttimeout  | The timeout in seconds used when connecting to the device.|
-| -remotedeploydir | Relative directory path/name to copy files over to on the remote device; <br />This will be a well-known, automatically determined remote deployment folder.|
-| -deleteextrafile | Switch to indicate whether existing files in the remote directory should be purged to match the source directory.|
+| -h (-help)       | Affiche les commandes, les options et les arguments.|
+| -ip              | Adresse IP de l’appareil cible.|
+| -g (-guid)       | Identificateur unique de l’appareil cible.|
+| -d (-dependency) | (Facultatif) Spécifie le chemin d’accès de dépendance pour chacune des dépendances du package. <br />Si aucun chemin d’accès n’est spécifié, l’outil recherche des dépendances dans le répertoire racine pour le package d’application et les répertoires du kit de développement logiciel (SDK).|
+| -f (-file)       | Chemin d’accès de fichier pour le package d’application à installer, mettre à jour ou désinstaller.|
+| -p (-package)    | Le nom complet du package pour le package d’application à désinstaller. <br />(Vous pouvez utiliser la commande « list » pour rechercher le nom complet des packages déjà installés sur l’appareil.)|
+| -pin             | Un code confidentiel, s’il est nécessaire pour établir une connexion avec l’appareil cible. <br />(Vous serez invité à réessayer avec l’option -pin si une authentification est nécessaire.)|
+| -credserver      | Nom de serveur des informations d’identification réseau à utiliser par la cible.|
+| -credusername    | Nom d’utilisateur des informations d’identification réseau à utiliser par la cible.|
+| -credpassword    | Mot de passe des informations d’identification réseau à utiliser par la cible.|
+| -connecttimeout  | Délai d’expiration en secondes utilisé lors de la connexion à l’appareil.|
+| -remotedeploydir | Chemin d’accès/nom du répertoire relatif dans lequel copier les fichiers sur l’appareil distant. <br />Il s’agit d’un dossier de déploiement bien connu, déterminé automatiquement.|
+| -deleteextrafile | Paramètre booléen servant à indiquer si les fichiers existants du répertoire distant doivent être supprimés pour que ce dernier corresponde au répertoire source.|
  
 
-The following table describes the options for **WinAppDeployCmd.exe**.
+Le tableau suivant décrit les options pour **WinAppDeployCmd.exe**.
 
 | **Argument**           | **Description**                                                              |
 |------------------------|------------------------------------------------------------------------------|
-| &lt;x&gt;              | Timeout in seconds. (Default is 10)                                          |
-| &lt;address&gt;        | IP address or unique identifier of the target device.                        |
-| &lt;a&gt;&lt;b&gt; ... | Dependency path for each of the app package dependencies.                    |
-| &lt;p&gt;              | An alpha-numeric pin shown in the device settings to establish a connection. |
-| &lt;path&gt;           | File system path.                                                            |
-| &lt;name&gt;           | Full package name for the app package to uninstall.                          |
-| &lt;server&gt;         | Server on the file network.                                                  |
-| &lt;username&gt;       | User for the credentials with access to the server on the file network.      |
-| &lt;password&gt;       | Password for the credentials with access to the server on the files network. |
-| &lt;remotedeploydir&gt;| Directory on device relative to the deployment location                      |
+| &lt;x&gt;              | Délai d’expiration en secondes. (La valeur par défaut est 10)                                          |
+| &lt;adresse&gt;        | Adresse IP ou identificateur unique de l’appareil cible.                        |
+| &lt;a&gt;&lt;b&gt; ... | Chemin d’accès de dépendance pour chacune des dépendances du package d’application.                    |
+| &lt;p&gt;              | Un PIN alphanumérique indiqué dans les paramètres de l’appareil pour établir une connexion. |
+| &lt;path&gt;           | Chemin d’accès au système de fichiers.                                                            |
+| &lt;name&gt;           | Nom complet du package pour le package d’application à désinstaller.                          |
+| &lt;server&gt;         | Serveur sur le réseau de fichiers.                                                  |
+| &lt;username&gt;       | Nom d’utilisateur des informations d’identification pour l’accès au serveur sur le réseau de fichiers.      |
+| &lt;password&gt;       | Mot de passe des informations d’identification pour l’accès au serveur sur le réseau de fichiers. |
+| &lt;remotedeploydir&gt;| Répertoire de l’appareil relatif à l’emplacement de déploiement.                      |
 
  
-## <a name="winappdeploycmdexe-examples"></a>WinAppDeployCmd.exe examples
+## <a name="winappdeploycmdexe-examples"></a>Exemples de WinAppDeployCmd.exe
 
-Here are some examples of how to deploy from the command-line using the sytax for **WinAppDeployCmd.exe**.
+Voici quelques exemples illustrant comment déployer à partir de la ligne de commande via la syntaxe pour **WinAppDeployCmd.exe**.
 
-Shows the devices that are available for deployment. The command times out in 3 seconds.
+Affiche les appareils qui sont disponibles pour le déploiement. La commande expire au bout de 3&nbsp;secondes.
 
 ``` syntax
 WinAppDeployCmd devices 3
 ```
 
-Installs the app from MyApp.appx package that is in your PC's Downloads directory to a Windows 10 device with an IP address of 192.168.0.1 with a PIN of A1B2C3 to establish a connection with the device
+Installe l’application à partir du package MyApp.appx qui se trouve dans le répertoire Téléchargements de votre PC pour un appareil Windows&nbsp;10 avec l’adresse IP 192.168.0.1 et avec le PIN A1B2C3 nécessaire pour établir une connexion avec l’appareil.
 
 ``` syntax
 WinAppDeployCmd install -file "Downloads\MyApp.appx" -ip 192.168.0.1 -pin A1B2C3
 ```
 
-Uninstalls the specified package (based on its full name) from a Windows 10 device with an IP address of 192.168.0.1. You can use the list command to see the full names of any packages that are installed on a device.
+Désinstalle le package spécifié (en fonction de son nom complet) à partir d’un appareil Windows&nbsp;10 avec l’adresse IP 192.168.0.1. Vous pouvez utiliser la commande list pour afficher le nom complet de tous les packages installés sur un appareil.
 
 ``` syntax
 WinAppDeployCmd uninstall -package Company.MyApp_1.0.0.1_x64__qwertyuiop -ip 192.168.0.1
 ```
 
-Updates the app that is already installed on the Windows 10 device with an IP address of 192.168.0.1 using the specified .appx package.
+Met à jour l’application qui est déjà installée sur l’appareil Windows&nbsp;10 avec l’adresse IP 192.168.0.1 à l’aide du package .appx spécifié.
 
 ``` syntax
 WinAppDeployCmd update -file "Downloads\MyApp.appx" -ip 192.168.0.1
 ```
 
-Deploys the files of an app to a PC or Xbox with an IP address of 192.168.0.1 in the same folder as the AppxManifest to the app1_F5 directory under the deployment path of the device.
+Déploie les fichiers d’une application présents dans le même dossier que le fichier AppxManifest vers un PC ou une Xbox avec l’adresse IP 192.168.0.1 dans le répertoire app1_F5 sous le chemin d’accès de déploiement de l’appareil.
 
 ``` syntax
 WinAppDeployCmd deployfiles -file "C:\apps\App1\AppxManifest.xml" -remotedeploydir app1_F5 -ip 192.168.0.1
 ```
 
-Registers the app at the app1_F5 directory under the deployment path of the PC or Xbox at 192.168.0.1.
+Inscrit l’application dans le répertoire app1_F5 sous le chemin de déploiement du PC ou de la Xbox à l’adresse&nbsp;IP 192.168.0.1.
 
 ``` syntax
 WinAppDeployCmd registerfiles -file app1_F5 -ip 192.168.0.1
 ```
 
-## <a name="using-winappdeploycmd-to-set-up-run-from-pc-deployment-on-xbox-one"></a>Using WinAppDeployCmd to set up Run from PC deployment on Xbox One
+## <a name="using-winappdeploycmd-to-set-up-run-from-pc-deployment-on-xbox-one"></a>Utilisation de WinAppDeployCmd pour configurer un déploiement d’exécution à partir d’un PC sur une console Xbox&nbsp;One
 
-Run from PC allows you to deploy a UWP application to an Xbox One without copying the binaries over, instead the binaries are hosted on a network share on the same network as the Xbox.  In order to do this, you need a developer unlocked Xbox One, and a loose file UWP application on a network drive that the Xbox can access.
+L’exécution à partir d’un PC vous permet de déployer une application UWP sur une console Xbox&nbsp;One sans copier les fichiers binaires dessus. Au lieu de cela, les fichiers binaires sont hébergés sur un partage réseau sur le même réseau que la Xbox.  Pour ce faire, vous avez besoin d’une console Xbox&nbsp;One déverrouillée par le développeur et d’un application UWP à fichier libre sur un lecteur réseau auquel la Xbox peut accéder.
 
-Run this to register the app:
+Exécutez la commande suivante pour inscrire l’application&nbsp;:
 ``` syntax
 WinAppDeployCmd registerfiles -ip <Xbox One IP> -remotedeploydir <location of app> -username <user for network> -password <password for user>
 

@@ -1,41 +1,41 @@
 ---
 author: laurenhughes
 ms.assetid: 4C59D5AC-58F7-4863-A884-E9E54228A5AD
-title: Enumerate and query files and folders
-description: Access files and folders in either a folder, library, device, or network location. You can also query the files and folders in a location by constructing file and folder queries.
+title: "Énumérer et interroger des fichiers et dossiers"
+description: "Accédez aux fichiers et dossiers dans un dossier, une bibliothèque, un appareil ou un emplacement réseau. Vous pouvez également interroger les fichiers et dossiers situés dans un emplacement en créant des requêtes de fichiers et de dossiers."
 translationtype: Human Translation
 ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
 ms.openlocfilehash: 80c9a2f37b7744d983f3f742895e9ac2408850df
 
 ---
-# <a name="enumerate-and-query-files-and-folders"></a>Enumerate and query files and folders
+# <a name="enumerate-and-query-files-and-folders"></a>Énumérer et interroger des fichiers et dossiers
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows&nbsp;10. Pour les articles sur Windows&nbsp;8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-Access files and folders in either a folder, library, device, or network location. You can also query the files and folders in a location by constructing file and folder queries.
+Accédez aux fichiers et dossiers dans un dossier, une bibliothèque, un appareil ou un emplacement réseau. Vous pouvez également interroger les fichiers et dossiers d’un emplacement en créant des requêtes de fichiers et de dossiers.
 
-For detailed guidance on how to store your Universal Windows Platform app's data, see the [ApplicationData](https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.aspx) class.
+Pour obtenir des instructions détaillées sur le stockage des données de votre application de plateforme Windows universelle, consultez la classe [ApplicationData](https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.aspx).
 
-**Note**  Also see the [Folder enumeration sample](http://go.microsoft.com/fwlink/p/?linkid=619993).
+**Remarque** Consultez également l’[exemple d’énumération de dossier](http://go.microsoft.com/fwlink/p/?linkid=619993).
 
  
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Prérequis
 
--   **Understand async programming for Universal Windows Platform (UWP) apps**
+-   **Comprendre la programmation asynchrone pour les applications pour la plateforme Windows universelle (UWP)**
 
-    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
+    Pour apprendre à écrire des applications asynchrones en C# ou Visual Basic, voir [Appeler des API asynchrones en C# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). Pour apprendre à écrire des applications asynchrones en C++, voir [Programmation asynchrone en C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
 
--   **Access permissions to the location**
+-   **Autorisations d’accès à l’emplacement**
 
-    For example, the code in these examples require the **picturesLibrary** capability, but your location may require a different capability or no capability at all. To learn more, see [File access permissions](file-access-permissions.md).
+    Par exemple, le code de ces exemples nécessite la fonctionnalité **picturesLibrary**, mais votre emplacement peut avoir besoin d’une autre fonctionnalité, voire d’aucune. Pour en savoir plus, voir [Autorisations d’accès aux fichiers](file-access-permissions.md).
 
-## <a name="enumerate-files-and-folders-in-a-location"></a>Enumerate files and folders in a location
+## <a name="enumerate-files-and-folders-in-a-location"></a>Énumérer les fichiers et dossiers dans un emplacement
 
-> **Note**  Remember to declare the **picturesLibrary** capability.
+> **Remarque** N’oubliez pas de déclarer la fonctionnalité **picturesLibrary**.
 
-In this example we first use the [**StorageFolder.GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227276) method to get all the files in the root folder of the [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) (not in subfolders) and list the name of each file. Next, we use the [**GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br227280) method to get all the subfolders in the **PicturesLibrary** and list the name of each subfolder.
+Dans cet exemple, nous utilisons d’abord la méthode [**StorageFolder.GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227276) pour obtenir tous les fichiers figurant dans le dossier racine de la propriété [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) (pas dans les sous-dossiers) et obtenir le nom de chaque fichier. Ensuite, nous utilisons la méthode [**GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br227280) pour obtenir tous les sous-dossiers dans la propriété **PicturesLibrary** et obtenir le nom de chaque sous-dossier.
 
 <!--BUGBUG: IAsyncOperation<IVectorView<StorageFolder^>^>^  causes build to flake out-->
 > [!div class="tabbedCodeSnippets"]
@@ -138,10 +138,10 @@ In this example we first use the [**StorageFolder.GetFilesAsync**](https://msdn.
 > ```
 
 
-> **Note**  In C# or Visual Basic, remember to put the **async** keyword in the method declaration of any method in which you use the **await** operator.
+> **Remarque** En&nbsp;C# ou Visual&nbsp;Basic, n’oubliez pas de placer le mot-clé **async** dans la déclaration de toutes les méthodes dans lesquelles vous utilisez l’opérateur **await**.
  
 
-Alternatively, you can use the [**GetItemsAsync**](https://msdn.microsoft.com/library/windows/apps/br227286) method to get all items (both files and subfolders) in a particular location. The following example uses the **GetItemsAsync** method to get all files and subfolders in the root folder of the [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) (not in subfolders). Then the example lists the name of each file and subfolder. If the item is a subfolder, the example appends `"folder"` to the name.
+Vous pouvez aussi utiliser la méthode [**GetItemsAsync**](https://msdn.microsoft.com/library/windows/apps/br227286) pour obtenir tous les éléments (fichiers et sous-dossiers) figurant dans un emplacement particulier. L’exemple suivant utilise la méthode **GetItemsAsync** pour obtenir tous les fichiers et sous-dossiers figurant dans le dossier racine de la propriété [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) (pas dans les sous-dossiers). L’exemple affiche ensuite le nom de chaque fichier et sous-dossier. Si l’élément est un sous-dossier, l’exemple ajoute `"folder"` au nom.
 
 > [!div class="tabbedCodeSnippets"]
 > ```cpp
@@ -210,11 +210,11 @@ Alternatively, you can use the [**GetItemsAsync**](https://msdn.microsoft.com/li
 > Next item
 > ```
 
-## <a name="query-files-in-a-location-and-enumerate-matching-files"></a>Query files in a location and enumerate matching files
+## <a name="query-files-in-a-location-and-enumerate-matching-files"></a>Interroger les fichiers figurant dans un emplacement et énumérer les fichiers correspondants
 
-In this example we query for all the files in the [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) grouped by the month, and this time the example recurses into subfolders. First, we call [**StorageFolder.CreateFolderQuery**](https://msdn.microsoft.com/library/windows/apps/br227262) and pass the [**CommonFolderQuery.GroupByMonth**](https://msdn.microsoft.com/library/windows/apps/br207957) value to the method. That gives us a [**StorageFolderQueryResult**](https://msdn.microsoft.com/library/windows/apps/br208066) object.
+Dans cet exemple, nous interrogeons tous les fichiers figurant dans la propriété [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156), regroupés en fonction du mois, et cette fois, l’exemple recherche dans les sous-dossiers. Tout d’abord, nous appelons la méthode [**StorageFolder.CreateFolderQuery**](https://msdn.microsoft.com/library/windows/apps/br227262) et transmettons la valeur [**CommonFolderQuery.GroupByMonth**](https://msdn.microsoft.com/library/windows/apps/br207957) à la méthode. Nous obtenons ainsi un objet [**StorageFolderQueryResult**](https://msdn.microsoft.com/library/windows/apps/br208066).
 
-Next we call [**StorageFolderQueryResult.GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br208074) which returns [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) objects representing virtual folders. In this case we're grouping by month, so the virtual folders each represent a group of files with the same month.
+Ensuite, nous appelons la méthode [**StorageFolderQueryResult.GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br208074) qui retourne des objets [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) représentant des dossiers virtuels. Dans ce cas, nous regroupons par mois, de sorte que chaque dossier virtuel représente un groupe de fichiers du même mois.
 
 > [!div class="tabbedCodeSnippets"]
 > ```cpp
@@ -313,7 +313,7 @@ Next we call [**StorageFolderQueryResult.GetFoldersAsync**](https://msdn.microso
 > Next folder
 > ```
 
-The output of the example looks similar to the following.
+La sortie de l’exemple ressemble à ce qui suit.
 
 ``` syntax
 July ‎2015 (2)

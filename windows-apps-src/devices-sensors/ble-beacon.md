@@ -1,57 +1,57 @@
 ---
 author: msatranjr
-title: Bluetooth Advertisements
-description: This section contains articles on how to integrate Bluetooth Low Energy (LE) Advertisements into Universal Windows Platform (UWP) apps through the user of AdvertisementWatcher and AdvertisementPublisher APIs.
+title: Annonces publicitaires Bluetooth
+description: "Cette section contient des articles expliquant comment intégrer des annonces Bluetooth Low Energy (LE) dans les applications de plateforme Windows universelle (UWP) par le biais de l’utilisation des API AdvertisementWatcher et AdvertisementPublisher."
 translationtype: Human Translation
 ms.sourcegitcommit: b1493d3d0d61a5fc45ab563b56bffa43650bbed9
 ms.openlocfilehash: feda9b20b4cbc265832bdb51f90546d9e1f668e8
 
 ---
 
-# <a name="bluetooth-le-advertisements"></a>Bluetooth LE Advertisements
+# <a name="bluetooth-le-advertisements"></a>Annonces publicitaires Bluetooth&nbsp;LE
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows&nbsp;10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-**Important APIs**
+**API importantes**
 
 -   [**Windows.Devices.Bluetooth.Advertisement**](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.advertisement.aspx)
 
-This article provides an overview of Bluetooth Low Energy (LE) Advertisement beacons for Universal Windows Platform (UWP) apps.  
+Cet article fournit une vue d’ensemble des balises d’annonce Bluetooth Low Energy (LE) pour les applications de plateforme Windows universelle (UWP).  
 
-## <a name="overview"></a>Overview
+## <a name="overview"></a>Vue d’ensemble
 
-There are two main functions that a developer can perform using the LE Advertisement APIs:
+Un développeur peut exécuter deux&nbsp;fonctions principales à l’aide des API d’annonce Bluetooth&nbsp;LE&nbsp;:
 
--   [Advertisement Watcher](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher.aspx): listen for nearby beacons and filter them out based on payload or proximity.  
--   [Advertisement Publisher](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.advertisement.bluetoothleadvertisementpublisher.aspx): define a payload for Windows to advertise on a developers behalf.  
+-   [Advertisement Watcher](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher.aspx)&nbsp;: écouter les balises proches et les filtrer en fonction de la charge utile ou de la proximité.  
+-   [Advertisement Publisher](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.advertisement.bluetoothleadvertisementpublisher.aspx)&nbsp;: définir une charge utile pour Windows afin de créer des annonces au nom des développeurs.  
 
-Full sample code is found in the [Bluetooth Advertisement Sample](http://go.microsoft.com/fwlink/p/?LinkId=619990) on Github
+L’exemple de code complet est disponible dans l’[exemple d’annonce Bluetooth](http://go.microsoft.com/fwlink/p/?LinkId=619990) sur Github.
 
-## <a name="basic-setup"></a>Basic Setup
+## <a name="basic-setup"></a>Configuration de base
 
-To use basic Bluetooth LE functionality in a Universal Windows Platform app, you must check the Bluetooth capability in the Package.appxmanifest.
+Pour utiliser les fonctionnalités Bluetooth LE de base dans une application de plateforme Windows universelle, vous devez vérifier la fonctionnalité Bluetooth dans le fichier Package.appxmanifest.
 
-1. Open Package.appxmanifest
-2. Go to the Capabilities tab
-3. Find Bluetooth in the list on the left and check the box next to it.
+1. Ouvrez Package.appxmanifest.
+2. Accédez à l’onglet Capabilities.
+3. Recherchez Bluetooth dans la liste de gauche et cochez la case située en regard.
 
-## <a name="publishing-advertisements"></a>Publishing Advertisements
+## <a name="publishing-advertisements"></a>Publication d’annonces publicitaires
 
-Bluetooth LE Advertisements allow your device to constantly beacon out a specific payload, called an advertisement. This advertisement can be seen by any nearby Bluetooth LE capable device, if they are set up to listen for this specific advertisment.
+Les annonces Bluetooth&nbsp;LE permettent à votre appareil de baliser en permanence une charge utile spécifique, appelée annonce publicitaire. Cette annonce est visible par n’importe quel appareil compatible Bluetooth&nbsp;LE à proximité, s’il est configuré pour écouter cette annonce spécifiquement.
 
-**Note** For user privacy, the lifespan of your advertisement is tied to that of your app. You can create a BluetoothLEAdvertisementPublisher and call Start in a background task for advertisement in the background. For more information about background tasks, see [Launching, resuming, and background tasks](https://msdn.microsoft.com/en-us/windows/uwp/launch-resume/index).
+**Remarque** Pour préserver la confidentialité des utilisateurs, la durée de vie de votre annonce est liée à celle de votre application. Vous pouvez créer une annonce BluetoothLEAdvertisementPublisher et appeler Start dans une tâche en arrière-plan pour l’annonce en arrière-plan. Pour plus d’informations sur les tâches en arrière-plan, consultez [Lancement, reprise et tâches en arrière-plan](https://msdn.microsoft.com/en-us/windows/uwp/launch-resume/index).
 
-### <a name="basic-publishing"></a>Basic Publishing
+### <a name="basic-publishing"></a>Publication de base
 
-There are many different ways to add data to an Advertisement. This example shows a common way to create a company-specific advertisement. 
+Il existe plusieurs manières d’ajouter des données à une annonce. Cet exemple montre une façon courante de créer une annonce concernant une société. 
 
-First, create the advertisement publisher that controls whether or not the device is beaconing out a specific advertisement.
+Tout d’abord, créez l’éditeur d’annonce qui vérifie si l’appareil balise ou non une annonce particulière.
 
 ```csharp
 BluetoothLEAdvertisementPublisher publisher = new BluetoothLEAdvertisementPublisher();
 ```
 
-Second, create a custom data section. This example uses an unassigned **CompanyId** value *0xFFFE* and adds the text *Hello World* to the advertisement. 
+Ensuite, créez une section de données personnalisée. Cet exemple utilise une valeur **CompanyId** non attribuée de *0xFFFE* et ajoute le texte *Hello World* dans l’annonce. 
 
 ```csharp
 // Add custom data to the advertisement
@@ -69,17 +69,17 @@ manufacturerData.Data = writer.DetachBuffer();
 publisher.Advertisement.ManufacturerData.Add(manufacturerData);
 ```
 
-Now that the publisher has been created and setup, you can call **Start** to begin advertising.
+Maintenant que l’éditeur est créé et installé, vous pouvez appeler **Start** pour lancer l’annonce.
 
 ```csharp
 publisher.Start();
 ```
 
-## <a name="watching-for-advertisements"></a>Watching for Advertisements
+## <a name="watching-for-advertisements"></a>Visionnage des annonces
 
-### <a name="basic-watching"></a>Basic Watching
+### <a name="basic-watching"></a>Visionnage de base
 
-The following code demonstrates how to create a Bluetooth LE Advertisement watcher, set a callback, and start watching for all LE advertisements.
+Le code suivant montre comment créer un observateur d’annonces Bluetooth&nbsp;LE, définir un rappel et commencer à visionner toutes les annonces&nbsp;LE.
 
 ```csharp
 BluetoothLEAdvertisementWatcher watcher = new BluetoothLEAdvertisementWatcher();
@@ -94,16 +94,16 @@ private async void OnAdvertisementReceived(BluetoothLEAdvertisementWatcher watch
 }
 ```
 
-#### <a name="active-scanning"></a>Active Scanning
-To receive scan response advertisements as well, set the following after creating the watcher. Note that this will cause greater power drain and is not available while in background modes.
+#### <a name="active-scanning"></a>Analyse active
+Pour recevoir également des annonces en réponse à une analyse, définissez ce qui suit après avoir créé l’observateur. Notez que cette opération consomme davantage de puissance et n’est pas disponible dans les modes en arrière-plan.
 
 ```csharp
 watcher.ScanningMode = BluetoothLEScanningMode.Active;
 ```
 
-### <a name="watching-for-a-specific-advertisement-pattern"></a>Watching for a Specific Advertisement Pattern
+### <a name="watching-for-a-specific-advertisement-pattern"></a>Visionnage d’un modèle d’annonce spécifique
 
-Sometimes you want to listen for a specific advertisement. In this case, listen for an advertisement containing a payload with a made up company (identified as 0xFFFE) and containing the string *Hello World* in the advertisement. This can be paired with the Basic Publishing example to have one Windows machine advertising and another watching. Be sure to set this advertisement filter before you start the watcher!
+Parfois, vous voulez écouter une annonce spécifique. Dans ce cas, écoutez une annonce contenant une charge utile avec une société fictive (identifiée par 0xFFFE) et contenant la chaîne *Hello World*. Vous pouvez associer cette information à l’exemple Publication de base pour obtenir une machine Windows qui émet l’annonce et une autre qui l’affiche. N’oubliez pas de définir ce filtre d’annonce avant de lancer l’observateur&nbsp;!
 
 ```csharp
 var manufacturerData = new BluetoothLEManufacturerData();
@@ -118,9 +118,9 @@ manufacturerData.Data = writer.DetachBuffer();
 watcher.AdvertisementFilter.Advertisement.ManufacturerData.Add(manufacturerData);
 ```
 
-### <a name="watching-for-a-nearby-advertisement"></a>Watching for a Nearby Advertisement
+### <a name="watching-for-a-nearby-advertisement"></a>Visionnage d’une annonce à proximité
 
-Sometimes you only want to trigger your watcher when the device advertising has come in range. You can define your own range, just note that values will be clipped to between 0 and -128. 
+Parfois, vous souhaitez ne déclencher votre observateur que si votre appareil est à portée de l’annonce. Vous pouvez définir votre propre portée. Notez simplement que les valeurs seront comprises entre 0 et -128. 
 
 ```csharp
 // Set the in-range threshold to -70dBm. This means advertisements with RSSI >= -70dBm 
@@ -138,9 +138,9 @@ watcher.SignalStrengthFilter.OutOfRangeThresholdInDBm = -75;
 watcher.SignalStrengthFilter.OutOfRangeTimeout = TimeSpan.FromMilliseconds(2000);
 ```
 
-### <a name="gauging-distance"></a>Gauging Distance
+### <a name="gauging-distance"></a>Estimation de la distance
 
-When your Bluetooth LE Watcher's callback is triggered, the eventArgs include an RSSI value telling you the received signal strength (how strong the Bluetooth signal is).
+Lorsque le rappel de votre observateur Bluetooth&nbsp;LE se déclenche, les arguments eventArgs incluent une valeur RSSI indiquant la force du signal reçu (autrement dit, la qualité du signal Bluetooth).
 
 ```csharp
 private async void OnAdvertisementReceived(BluetoothLEAdvertisementWatcher watcher, BluetoothLEAdvertisementReceivedEventArgs eventArgs)
@@ -150,9 +150,9 @@ private async void OnAdvertisementReceived(BluetoothLEAdvertisementWatcher watch
 }
 ```
 
-This can be roughly translated into distance, but should not be used to measure true distances as each individual radio is different. Different environmental factors can make distance difficult to gauge (such as walls, cases around the radio, or even air humidity).
+Cette valeur peut être convertie en une distance, mais ne doit pas servir à mesurer des distances réelles, car chaque radio est différente. Différents facteurs environnementaux peuvent compliquer l’évaluation de la distance (comme les murs, le boîtier de la radio et même l’humidité ambiante).
 
-An alternative to judging pure distance is to define "buckets". Radios tend to report 0 to -50 DBm when they are very close, -50 to -90 when they are a medium distance away, and below -90 when they are far away. Trial and error is best to determine what you want these buckets to be for your app.
+Une autre solution permettant d’évaluer une distance consiste à définir des «&nbsp;compartiments&nbsp;». Les radios ont tendance à émettre entre&nbsp;0 et&nbsp;50&nbsp;dBm quand elles sont très proches, entre -50 et -90 lorsqu’elles sont à moyenne distance, et au-dessous de -90 lorsqu’elles sont éloignées. La méthode d’ajustement par tâtonnements est la meilleure pour déterminer les compartiments idéaux pour votre application.
 
 
 <!--HONumber=Dec16_HO1-->

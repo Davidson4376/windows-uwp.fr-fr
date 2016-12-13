@@ -1,95 +1,95 @@
 ---
 author: mcleanbyron
 ms.assetid: 
-description: Use this method in the Windows Store analytics API to get the stack trace for an error in your app.
-title: Get the stack trace for an error in your app
+description: "Utilisez cette méthode dans l’API d’analyse du Windows&nbsp;Store pour obtenir la trace de pile concernant une erreur dans votre application."
+title: Obtenir la trace de pile concernant une erreur dans votre application
 translationtype: Human Translation
 ms.sourcegitcommit: 767097f068630e5ec171415c05d6dc395c8b26b3
 ms.openlocfilehash: 90481b5f85d010a142e86ca67ac94c3ec25d89c6
 
 ---
 
-# <a name="get-the-stack-trace-for-an-error-in-your-app"></a>Get the stack trace for an error in your app
+# <a name="get-the-stack-trace-for-an-error-in-your-app"></a>Obtenir la trace de pile concernant une erreur dans votre application
 
-Use this method in the Windows Store analytics API to get the stack trace for an error in your app. This method can only download the stack trace for an app error that occurred in the last 30 days. Stack traces are also available in the **Failures** section of the [Health report](../publish/health-report.md) in the Windows Dev Center dashboard.
+Utilisez cette méthode dans l’API d’analyse du Windows&nbsp;Store pour obtenir la trace de pile concernant une erreur dans votre application. Cette méthode ne peut télécharger que la trace de pile concernant une erreur d’application survenue dans les 30&nbsp;derniers jours. Les traces de pile sont également disponibles dans la section **Échecs** du [rapport d’intégrité](../publish/health-report.md) dans le tableau de bord du Centre de développement Windows.
 
-Before you can use this method, you must first use the [get details for an error in your app](get-details-for-an-error-in-your-app.md) method to retrieve the ID of the CAB file that is associated with the error for which you want to retrieve the stack trace.
+Pour utiliser cette méthode, vous devez d’abord utiliser la méthode [Obtenir les détails sur une erreur dans votre application](get-details-for-an-error-in-your-app.md) pour récupérer l’ID du fichier&nbsp;CAB associé à l’erreur dont vous voulez récupérer la trace de pile.
 
-## <a name="prerequisites"></a>Prerequisites
-
-
-To use this method, you need to first do the following:
-
-* If you have not done so already, complete all the [prerequisites](access-analytics-data-using-windows-store-services.md#prerequisites) for the Windows Store analytics API.
-* [Obtain an Azure AD access token](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
-* Get the ID of the CAB file that is associated with the error for which you want to retrieve the stack trace. To get this ID, use the [get details for an error in your app](get-details-for-an-error-in-your-app.md) method to retrieve details for a specific error in your app, and use the **cabId** value in the response body of that method.
-
-## <a name="request"></a>Request
+## <a name="prerequisites"></a>Conditions préalables
 
 
-### <a name="request-syntax"></a>Request syntax
+Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes&nbsp;:
 
-| Method | Request URI                                                          |
+* Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](access-analytics-data-using-windows-store-services.md#prerequisites) relatives à l’API d’analyse du Windows Store.
+* [Obtenez un jeton d’accès Azure AD](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60&nbsp;minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
+* Obtenez l’ID du fichier&nbsp;CAB associé à l’erreur dont vous voulez récupérer la trace de pile. Pour obtenir cet ID, utilisez la méthode [Obtenir les détails d’une erreur dans votre application](get-details-for-an-error-in-your-app.md) pour récupérer les détails d’une erreur spécifique dans votre application, en spécifiant la valeur **cabId** dans le corps de la réponse.
+
+## <a name="request"></a>Requête
+
+
+### <a name="request-syntax"></a>Syntaxe de la requête
+
+| Méthode | URI de la requête                                                          |
 |--------|----------------------------------------------------------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/stacktrace``` |
 
 <span/> 
 
-### <a name="request-header"></a>Request header
+### <a name="request-header"></a>En-tête de requête
 
-| Header        | Type   | Description                                                                 |
+| En-tête        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
+| Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;. |
 
 <span/> 
 
-### <a name="request-parameters"></a>Request parameters
+### <a name="request-parameters"></a>Paramètres de la requête
 
-| Parameter        | Type   |  Description      |  Required  |
+| Paramètre        | Type   |  Description      |  Requis  |
 |---------------|--------|---------------|------|
-| applicationId | string | The Store ID of the app for which you want to get the stack trace. The Store ID is available on the [App identity page](../publish/view-app-identity-details.md) of the Dev Center dashboard. An example Store ID is 9WZDNCRFJ3Q8. |  Yes  |
-| cabId | string | The unique ID of the CAB file that is associated with the error for which you want to retrieve the stack trace. To get this ID, use the [get details for an error in your app](get-details-for-an-error-in-your-app.md) method to retrieve details for a specific error in your app, and use the **cabId** value in the response body of that method. |  Yes  |
+| applicationId | chaîne | ID Windows&nbsp;Store de l’application dont vous souhaitez obtenir la trace de pile. L’ID Windows&nbsp;Store est disponible dans la page [Identité de l’application](../publish/view-app-identity-details.md) du tableau de bord du Centre de développement. Exemple d’ID Windows&nbsp;Store&nbsp;: 9WZDNCRFJ3Q8. |  Oui  |
+| cabId | chaîne | ID unique du fichier&nbsp;CAB associé à l’erreur dont vous voulez récupérer la trace de pile. Pour obtenir cet ID, utilisez la méthode [Obtenir les détails d’une erreur dans votre application](get-details-for-an-error-in-your-app.md) pour récupérer les détails d’une erreur spécifique dans votre application, en spécifiant la valeur **cabId** dans le corps de la réponse. |  Oui  |
 
 <span/>
  
-### <a name="request-example"></a>Request example
+### <a name="request-example"></a>Exemple de requête
 
-The following example demonstrates how to get a stack trace using this method. Replace the *applicationId* value with the Store ID for your app.
+L’exemple suivant montre comment obtenir la trace de pile avec cette méthode. Remplacez la valeur *applicationId* par l’ID Windows&nbsp;Store de votre application.
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/stacktrace?applicationId=9NBLGGGZ5QDR&cabId=1336373323853 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-## <a name="response"></a>Response
+## <a name="response"></a>Réponse
 
 
-### <a name="response-body"></a>Response body
+### <a name="response-body"></a>Corps de la réponse
 
-| Value      | Type    | Description                  |
+| Valeur      | Type    | Description                  |
 |------------|---------|--------------------------------|
-| Value      | array   | An array of objects that each contain one frame of stack trace data. For more information about the data in each object, see the [stack trace values](#stack-trace-values) section below. |
-| @nextLink  | string  | If there are additional pages of data, this string contains a URI that you can use to request the next page of data. For example, this value is returned if the **top** parameter of the request is set to 10 but there are more than 10 rows of errors for the query. |
-| TotalCount | inumber | The total number of rows in the data result for the query.          |
+| Valeur      | array   | Tableau d’objets qui contiennent chacun une image de données de trace de pile. Pour plus d’informations sur les données de chaque objet, consultez la section [Valeurs de la trace de pile](#stack-trace-values) ci-dessous. |
+| @nextLink  | chaîne  | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour demander la page suivante. Par exemple, cette valeur est renvoyée si le paramètre **top** de la requête est défini sur&nbsp;10, mais que plus de 10&nbsp;lignes d’erreur sont associées à la requête. |
+| TotalCount | nombre entier | Nombre total de lignes dans les résultats de la requête.          |
 
 <span/>
 
-### <a name="stack-trace-values"></a>Stack trace values
+### <a name="stack-trace-values"></a>Valeurs de la trace de pile
 
-Elements in the *Value* array contain the following values.
+Les éléments du tableau *Value* ont les valeurs suivantes&nbsp;:
 
-| Value           | Type    | Description      |
+| Valeur           | Type    | Description      |
 |-----------------|---------|----------------|
-| level            | string  |  The frame number that this element represents in the call stack.  |
-| image   | string  |   The name of the executable or library image that contains the function that is called in this stack frame.           |
-| function | string  |  The name of the function that is called in this stack frame. This is available only if your app includes symbols for the executable or library.              |
-| offset     | string  |  The byte offset of the current instruction relative to the start of the function.      |
+| level            | chaîne  |  Numéro de l’image représentant cet élément dans la pile d’appels.  |
+| image   | chaîne  |   Nom du fichier exécutable ou de l’image de bibliothèque qui contient la fonction appelée dans cette image de pile.           |
+| function | chaîne  |  Nom de la fonction appelée dans cette image de pile. Cette fonctionnalité n’est disponible que si votre application contient des symboles pour le fichier exécutable ou la bibliothèque.              |
+| offset     | chaîne  |  Décalage d’octet de l’instruction actuelle par rapport au début de la fonction.      |
 
 <span/> 
 
-### <a name="response-example"></a>Response example
+### <a name="response-example"></a>Exemple de réponse
 
-The following example demonstrates an example JSON response body for this request.
+L’exemple suivant représente un corps de réponse JSON pour cette requête.
 
 ```json
 {
@@ -119,12 +119,12 @@ The following example demonstrates an example JSON response body for this reques
 
 ```
 
-## <a name="related-topics"></a>Related topics
+## <a name="related-topics"></a>Rubriques connexes
 
-* [Health report](../publish/health-report.md)
-* [Access analytics data using Windows Store services](access-analytics-data-using-windows-store-services.md)
-* [Get error reporting data](get-error-reporting-data.md)
-* [Get details for an error in your app](get-details-for-an-error-in-your-app.md)
+* [Rapport d’intégrité](../publish/health-report.md)
+* [Accéder aux données d’analyse à l’aide des services du Windows Store](access-analytics-data-using-windows-store-services.md)
+* [Obtenir les données de rapport d’erreurs](get-error-reporting-data.md)
+* [Obtenir les informations sur une erreur de votre application](get-details-for-an-error-in-your-app.md)
 
 
 

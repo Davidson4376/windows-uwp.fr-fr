@@ -1,6 +1,6 @@
 ---
 author: mijacobs
-Description: Notifications Visualizer is a new Universal Windows Platform (UWP) app in the Store that helps developers design adaptive live tiles for Windows 10.
+Description: "Notifications Visualizer est une nouvelle application de plateforme Windows universelle (UWP) dans le Windows Store qui permet aux développeurs de concevoir des vignettes dynamiques adaptatives pour Windows 10."
 title: Notifications Visualizer
 ms.assetid: FCBB7BB1-2C79-484B-8FFC-26FE1934EC1C
 label: TBD
@@ -15,47 +15,47 @@ ms.openlocfilehash: 20e73c2de82bcc76c94fff38163dddac7ef9d8a9
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
-Notifications Visualizer is a new Universal Windows Platform (UWP) app in [the Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1) that helps developers design adaptive live tiles for Windows 10.
+Notifications Visualizer est une nouvelle application de plateforme Windows universelle (UWP) dans [le Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1) qui permet aux développeurs de concevoir des vignettes dynamiques adaptatives pour Windows&nbsp;10.
 
-## <a name="overview"></a>Overview
+## <a name="overview"></a>Vue d’ensemble
 
 
-The Notifications Visualizer app provides instant visual previews of your tile as you edit, similar to Visual Studio's XAML editor/design view. The app also checks for errors, which ensures that you create a valid tile payload.
+L’application Notifications Visualizer fournit des aperçus visuels instantanés de votre vignette pendant que vous effectuez des modifications, similaires à la vue de l’éditeur/de la conception XAML de Visual Studio. L’application contrôle également les erreurs, ce qui vous permet de créer une charge utile de vignette valide.
 
-This screenshot from the app shows the XML payload and how tile sizes appear on a selected device:
+Cette capture d’écran à partir de l’application montre la charge utile XML et la façon dont les tailles de vignette apparaissent sur un appareil sélectionné&nbsp;:
 
-![screenshot of notifications visualizer app editor with code and tiles](images/notif-visualizer-001.png)
-
- 
-
-With Notifications Visualizer, you can create and test adaptive tile payloads without having to edit and deploy the app itself. Once you've created a payload with ideal visual results you can integrate that into your app. See [Send a local tile notification](tiles-and-notifications-sending-a-local-tile-notification.md) to learn more.
-
-**Note**   Notifications Visualizer's simulation of the Windows Start menu isn't always completely accurate, and it doesn't support some payload properties like [baseUri](https://msdn.microsoft.com/library/windows/apps/br208712). When you have the tile design you want, test it by pinning the tile to the actual Start menu to verify that it appears as you intend.
+![Capture d’écran de l’éditeur d’application Notifications Visualizer avec le code et les vignettes](images/notif-visualizer-001.png)
 
  
 
-## <a name="features"></a>Features
+Avec Notifications Visualizer, vous pouvez créer et tester des charges utiles de vignettes adaptatives sans avoir à modifier et déployer l’application proprement dite. Une fois que vous avez créé une charge utile avec des résultats visuels satisfaisants, vous pouvez l’intégrer dans votre application. Pour plus d’informations, voir [Envoyer une notification par vignette locale](tiles-and-notifications-sending-a-local-tile-notification.md).
 
-
-Notifications Visualizer comes with a number of sample payloads to showcase what's possible with adaptive live tiles and to help you get started. You can experiment with all the different text options, groups/subgroups, background images, and you can see how the tile adapts to different devices and screens. Once you've made changes, you can save your updated payload to a file for future use.
-
-The editor provides real-time errors and warnings. For example, if your app payload is limited to less than 5 KB (a platform limitation), Notifications Visualizer warns you if your payload exceeds that limit. It gives you warnings for incorrect attribute names or values, which helps you debug visual issues.
-
-You can control tile properties like display name, color, logos, ShowName, badge value. These options help you instantly understand how your tile properties and tile notification payloads interact, and the results they produce.
-
-This screenshot from the app shows the tile editor:
-
-![screenshot of notifications visualizer editor with tiles](images/notif-visualizer-004.png)
+**Remarque** La simulation Notifications Visualizer du menu Démarrer de Windows n’est pas toujours tout à fait précise, et elle ne prend pas en charge certaines propriétés de charge utile comme [baseUri](https://msdn.microsoft.com/library/windows/apps/br208712). Une fois la conception de vignette voulue obtenue, testez-la en épinglant la vignette au menu Démarrer réel pour vérifier qu’elle s’affiche comme vous le souhaitez.
 
  
 
-## <a name="related-topics"></a>Related topics
+## <a name="features"></a>Fonctionnalités
 
 
-* [Get Notifications Visualizer in the Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)
-* [Create adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md)
-* [Adaptive tile templates: schema and documentation](tiles-and-notifications-adaptive-tiles-schema.md)
-* [Tiles and toasts (MSDN blog)](http://blogs.msdn.com/b/tiles_and_toasts/)
+Notifications Visualizer est fourni avec quelques exemples de charges utiles pour montrer ce qu’il est possible de réaliser avec des vignettes dynamiques adaptatives et vous aider à démarrer. Vous pouvez tester les différentes options de texte, les gorupes/sous-groupes, les images d’arrière-plan, et vous pouvoir voir de quelle façon les vignettes s’adaptent aux différents écrans et appareils. Une fois les modifications effectuées, vous pouvez enregistrer votre charge utile mise à jour dans un fichier pour l’utiliser ultérieurement.
+
+L’éditeur fournit des avertissements et des erreurs en temps réel. Par exemple, si la charge utile de votre application est limitée à 5 Ko maximum (limitation de la plateforme), Notifications Visualizer vous avertit si votre charge utile dépasse cette limite. Vous êtes averti en cas de noms ou de valeurs d’attributs incorrects, ce qui vous permet de déboguer les problèmes visuels.
+
+Vous pouvez contrôler les propriétés des vignettes comme le nom complet, la couleur, les logos, ShowName, la valeur de badge. Ces options vous aident à comprendre instantanément de quelle façon les propriétés des vignettes et les charges utiles de notification des vignettes interagissent, et quels sont les résultats produits.
+
+Cette capture d’écran de l’application montre l’éditeur de vignettes&nbsp;:
+
+![Capture d’écran de l’éditeur Notifications Visualizer avec les vignettes](images/notif-visualizer-004.png)
+
+ 
+
+## <a name="related-topics"></a>Rubriques connexes
+
+
+* [Obtenir Notifications Visualizer dans le Windows&nbsp;Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)
+* [Créer des vignettes adaptatives](tiles-and-notifications-create-adaptive-tiles.md)
+* [Modèles de vignette adaptative : schéma et documentation](tiles-and-notifications-adaptive-tiles-schema.md)
+* [Vignettes et notifications toast (blog MSDN, en anglais)](http://blogs.msdn.com/b/tiles_and_toasts/)
 
 
 <!--HONumber=Dec16_HO1-->

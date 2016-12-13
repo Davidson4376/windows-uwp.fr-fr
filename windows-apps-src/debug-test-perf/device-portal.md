@@ -1,202 +1,202 @@
 ---
 author: mcleblanc
 ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
-title: Windows Device Portal overview
-description: Learn how the Windows Device Portal lets you configure and manage your device remotely over a network or USB connection.
+title: "Vue d’ensemble de Windows Device Portal"
+description: "Découvrez comment Windows Device Portal vous permet de configurer et de gérer à distance votre appareil par le biais d’une connexion réseau ou USB."
 translationtype: Human Translation
 ms.sourcegitcommit: 8dee2c7bf5ec44f913e34f1150223c1172ba6c02
 ms.openlocfilehash: 6c697782683bca6671c01aa0941a78bc66fb052a
 
 ---
-# <a name="windows-device-portal-overview"></a>Windows Device Portal overview
+# <a name="windows-device-portal-overview"></a>Vue d’ensemble de Windows Device Portal
 
-The Windows Device Portal lets you configure and manage your device remotely over a network or USB connection. It also provides advanced diagnostic tools to help you troubleshoot and view the real time performance of your Windows device.
+Windows Device Portal vous permet de configurer et de gérer à distance votre appareil par le biais d’une connexion réseau ou USB. Il fournit également des outils de diagnostic avancés pour vous permettre de résoudre les problèmes et d’afficher les performances en temps réel de votre appareil Windows.
 
-The Device Portal is a web server on your device that you can connect to from a web browser on your PC. If your device has a web browser, you can also connect locally with the browser on your device.
+Device Portal est un serveur web sur l’appareil auquel vous pouvez vous connecter à partir d’un navigateur web sur votre PC. Si votre appareil dispose d’un navigateur web, vous pouvez également vous connecter localement avec le navigateur sur votre appareil.
 
-Windows Device Portal is available on each device family, but features and setup vary based on the device's requirements. This article provides a general description of Device Portal and links to articles with more specific information for each device family.
+Windows Device Portal est disponible sur chaque famille d’appareils. Toutefois, les fonctionnalités et la configuration varient en fonction des exigences de l’appareil. Cet article fournit une description générale de Device Portal et des liens vers des articles contenant des informations plus spécifiques pour chaque famille d’appareils.
 
-Everything in the Windows Device Portal is built on top of [REST API's](device-portal-api-core.md) that you can use to access the data and control your device programmatically.
+Dans Windows Device Portal, tout repose sur les [API REST](device-portal-api-core.md) que vous pouvez utiliser pour accéder aux données et contrôler votre appareil par programme.
 
-## <a name="setup"></a>Setup
+## <a name="setup"></a>Installation
 
-Each device has specific instructions for connecting to Device Portal, but each requires these general steps:
-1. Enable Developer Mode and Device Portal on your device.
-2. Connect your device and PC via local network or USB.
-3. Navigate to the Device Portal page in your browser. This table shows the ports and protcols used by each device family.
+Chaque appareil possède des instructions spécifiques concernant la connexion à Device Portal. Toutefois, chacun nécessite d’effectuer les étapes générales suivantes.
+1. Activez le mode développeur et Device Portal sur votre appareil.
+2. Connectez votre appareil et votre PC via USB ou un réseau local.
+3. Accéder à la page Device Portal dans votre navigateur. Le tableau suivant répertorie les ports et protocoles utilisés par chaque famille d’appareils.
 
-Device family | On by default? | HTTP | HTTPS | USB
+Famille d’appareils | Activé par défaut&nbsp;? | HTTP | HTTPS | USB
 --------------|----------------|------|-------|----
-HoloLens | Yes, in Dev Mode | 80 (default) | 443 (default) | http://127.0.0.1:10080
-IoT | Yes, in Dev Mode | 8080 | Enable via regkey | N/A
-Xbox | Enable inside Dev Mode | Disabled | 11443 | N/A
-Desktop| Enable inside Dev Mode | 50080\* | 50043\* | N/A
-Phone | Enable inside Dev Mode | 80| 443 | http://127.0.0.1:10080
+HoloLens | Oui, en mode de développement | 80 (par défaut) | 443 (par défaut) | http://127.0.0.1:10080
+IoT | Oui, en mode de développement | 8080 | Activer via la clé de registre | Non applicable
+Xbox | Activer dans le mode de développement | Désactivé | 11443 | Non applicable
+Bureau| Activer dans le mode de développement | 50080\* | 50043\* | Non applicable
+Téléphone | Activer dans le mode de développement | 80| 443 | http://127.0.0.1:10080
 
-\* This is not always the case, as Device Portal on desktop claims ports in the ephemeral range (>50,000) to prevent collisions with existing port claims on the device.  To learn more, see the [Port Settings](device-portal-desktop.md#setting-port-numbers) section for desktop.  
+\ * Cela n’est pas toujours le cas, car Device Portal sur le bureau revendique des ports dans la plage éphémère (&gt;&nbsp;50&nbsp;000) afin d’éviter les collisions avec les déclarations de port existant sur l’appareil.  Pour plus d’informations, consultez la section [Paramètres de port](device-portal-desktop.md#setting-port-numbers) pour le bureau.  
 
-For device-specific setup instructions, see:
-- [Device Portal for HoloLens](https://dev.windows.com/holographic/using_the_windows_device_portal)
-- [Device Portal for IoT](https://go.microsoft.com/fwlink/?LinkID=616499)
-- [Device Portal for Mobile](device-portal-mobile.md)
-- [Device Portal for Xbox](device-portal-xbox.md)
-- [Device Portal for Desktop](device-portal-desktop.md#set-up-device-portal-on-windows-desktop)
+Pour obtenir des instructions d’installation propres à chaque appareil, consultez&nbsp;:
+- [Device Portal pour HoloLens](https://dev.windows.com/holographic/using_the_windows_device_portal)
+- [Device Portal pour IoT](https://go.microsoft.com/fwlink/?LinkID=616499)
+- [Device Portal pour appareils mobiles](device-portal-mobile.md)
+- [Device Portal pour Xbox](device-portal-xbox.md)
+- [Device Portal pour Bureau](device-portal-desktop.md#set-up-device-portal-on-windows-desktop)
 
-## <a name="features"></a>Features
+## <a name="features"></a>Fonctionnalités
 
-### <a name="toolbar-and-navigation"></a>Toolbar and navigation
+### <a name="toolbar-and-navigation"></a>Barre d’outils et navigation
 
-The toolbar at the top of the page provides access to commonly used status and features.
-- **Shutdown**: Turns off the device.
-- **Restart**: Cycles power on the device.
-- **Help**: Opens the help page.
+La barre d’outils se trouvant en haut de la page permet d’accéder aux fonctionnalités et aux états couramment utilisés.
+- **Arrêt**&nbsp;: éteint l’appareil.
+- **Redémarrer**&nbsp;: mise sous tension de l’appareil par cycle.
+- **Aide**&nbsp;: ouvre la page d’aide.
 
-Use the links in the navigation pane along the left side of the page to navigate to the available management and monitoring tools for your device.
+Utilisez les liens du volet de navigation sur le côté gauche de la page pour naviguer vers les outils d’analyse et de gestion disponibles pour votre appareil.
 
-Tools that are common across devices are described here. Other options might be available depending on the device. For more info, see the specific page for your device.
+Les outils courants des appareils sont décrits ici. D’autres options peuvent être disponibles selon l’appareil. Pour plus d’informations, voir la page spécifique de votre appareil.
 
-### <a name="home"></a>Home
+### <a name="home"></a>Accueil
 
-Your Device Portal session starts at the home page. The home page typically has information about the device, such as name and OS version, and preferences that you can set for the device.
+Votre session Device Portal démarre sur la page d’accueil. La page d’accueil affiche généralement des informations sur l’appareil, comme le nom, la version du système d’exploitation et les préférences que vous pouvez définir pour l’appareil.
 
-### <a name="apps"></a>Apps
+### <a name="apps"></a>Applications
 
-Provides install/uninstall and management functionality for AppX packages and bundles on your device.
+Propose des fonctionnalités d’installation/de désinstallation et de gestion pour les packages AppX et les offres groupées sur votre appareil
 
-![Device Portal for mobile](images/device-portal/mob-device-portal-apps.png)
+![Device Portal pour appareils mobiles](images/device-portal/mob-device-portal-apps.png)
 
-- **Installed apps**: Remove and start apps.
-- **Running apps**: Lists apps that are running currently.
-- **Install app**: Select app packages for installation from a folder on your computer or network.
-- **Dependency**: Add dependencies for the app you are going to install.
-- **Deploy**: Deploy the selected app and dependencies to your device.
+- **Applications installées**&nbsp;: supprime et démarre les applications.
+- **Applications en cours d’exécution**&nbsp;: répertorie les applications actuellement en cours d’exécution.
+- **Installer l’application**&nbsp;: sélectionnez les packages d’application à installer à partir d’un dossier de votre ordinateur ou de votre réseau.
+- **Dépendance**&nbsp;: ajoutez des dépendances pour l’application que vous souhaitez installer.
+- **Déployer**&nbsp;: déployez l’application sélectionnée et les dépendances sur votre appareil.
 
-**To install an app**
+**Pour installer une application**
 
-1.  When you've [created an app package](https://msdn.microsoft.com/library/windows/apps/xaml/hh454036(v=vs.140).aspx), you can remotely install it onto your device. After you build it in Visual Studio, an output folder is generated.
+1.  Lorsque vous avez [créé un package d’application](https://msdn.microsoft.com/library/windows/apps/xaml/hh454036(v=vs.140).aspx), vous pouvez l’installer à distance sur votre appareil. Une fois créé dans Visual Studio, un dossier de sortie est généré.
 
-    ![App install](images/device-portal/iot-installapp0.png)
-2.  Click browse and find your app package (.appx).
-3.  Click browse and find the certificate file (.cer). (Not required on all devices.)
-4.  Add dependencies. If you have more than one, add each one individually.     
-5.  Under **Deploy**, click **Go**. 
-6.  To install another app, click the **Reset** button to clear the fields.
+    ![Installation d’applications](images/device-portal/iot-installapp0.png)
+2.  Cliquez sur Parcourir et recherchez votre package d’application (.appx).
+3.  Cliquez sur Parcourir et recherchez le fichier de certificat (.cer). (Non requis sur tous les appareils.)
+4.  Ajoutez des dépendances. Si vous avez plusieurs objets, ajoutez chacun d’eux individuellement.     
+5.  Sous **Déployer**, cliquez sur **OK**. 
+6.  Pour installer une autre application, cliquez sur le bouton **Réinitialiser** pour effacer les champs.
 
 
-**To uninstall an app**
+**Pour désinstaller une application**
 
-1.  Ensure that your app is not running. 
-2.  If it is, go to 'running apps' and close it. If you attempt to uninstall while the app is running, it will cause issues when trying to re-install the app. 
-3.  Once you're ready, click **Uninstall**.
+1.  Assurez-vous que votre application n’est pas en cours d’exécution. 
+2.  Si c’est le cas, passez à Applications en cours d’exécution et fermez l’application en question. Si vous essayez de désinstaller une application en cours d’exécution, celle-ci provoquera des problèmes lors de sa réinstallation. 
+3.  Dès que vous êtes prêt, cliquez sur **Désinstaller**.
 
-### <a name="processes"></a>Processes
+### <a name="processes"></a>Processus
 
-Shows details about currently running processes. This includes both apps and system processes.
+Affiche les détails concernant les processus en cours d’exécution. Cela comprend les processus relatifs aux applications au système.
 
-Much like the Task Manager on your PC, this page lets you see which processes are currently running as well as their memory usage.  On some platforms (Desktop, IoT, and HoloLens) you can terminate processes.
+Comme le Gestionnaire de tâches sur votre PC, cette page vous permet de voir les processus en cours d’exécution, ainsi que leur utilisation de la mémoire.  Sur certaines plateformes (Desktop, IoT et HoloLens), vous pouvez mettre fin aux processus.
 
-![Device Portal for mobile](images/device-portal/mob-device-portal-processes.png)
+![Device Portal pour appareils mobiles](images/device-portal/mob-device-portal-processes.png)
 
-### <a name="performance"></a>Performance
+### <a name="performance"></a>Performances
 
-Shows real-time graphs of system diagnostic info, like power usage, frame rate, and CPU load.
+Présente des graphiques en temps réel des informations de diagnostic système, telles que la consommation d’énergie, la fréquence d’images et la charge du processeur.
 
-These are the available metrics:
-- **CPU**: Percent of total available
-- **Memory**: Total, in use, available committed, paged, and non-paged
-- **GPU**: GPU engine utilization, percent of total available
-- **I/O**: Reads and writes
-- **Network**: Received and sent
+Voici les mesures disponibles&nbsp;:
+- **Processeur**&nbsp;: pourcentage du total disponible
+- **Mémoire**&nbsp;: totale, en cours d’utilisation, disponible validée, paginée et non paginée
+- **GPU**&nbsp;: utilisation du moteur GPU, pourcentage du total disponible
+- **E/S**&nbsp;: lectures et écritures
+- **Réseau**&nbsp;: réceptions et envois
 
-![Device Portal for mobile](images/device-portal/mob-device-portal-perf.png)
+![Device Portal pour appareils mobiles](images/device-portal/mob-device-portal-perf.png)
 
-### <a name="event-tracing-for-windows-etw"></a>Event Tracing for Windows (ETW)
+### <a name="event-tracing-for-windows-etw"></a>Suivi d’événements pour Windows (ETW)
 
-Manages realtime Event Tracing for Windows (ETW) on the device.
+Gère en temps réel le suivi d’événements pour Windows (ETW) sur l’appareil.
 
-![Device Portal for mobile](images/device-portal/mob-device-portal-etw.png)
+![Device Portal pour appareils mobiles](images/device-portal/mob-device-portal-etw.png)
 
-Check **Hide providers** to show the Events list only.
-- **Registered providers**: Select the ETW provider and the tracing level. Tracing level is one of these values:
-    1. Abnormal exit or termination
-    2. Severe errors
-    3. Warnings
-    4. Non-error warnings
-    5. Detailed trace (*)
+Cochez la case **Masquer les fournisseurs** pour n’afficher que la liste des événements.
+- **Fournisseurs enregistrés** sélectionnez le fournisseur ETW et le niveau de suivi. Le niveau de suivi est l’une des valeurs suivantes&nbsp;:
+    1. Sortie ou arrêt anormal
+    2. Erreurs graves
+    3. Avertissements
+    4. Avertissements sans erreur
+    5. Suivi détaillé (*)
 
-Click or tap **Enable** to start tracing. The provider is added to the **Enabled Providers** dropdown.
-- **Custom providers**: Select a custom ETW provider and the tracing level. Identify the provider by its GUID. Don't include brackets in the GUID.
-- **Enabled providers**: Lists the enabled providers. Select a provider from the dropdown and click or tap **Disable** to stop tracing. Click or tap **Stop all** to suspend all tracing.
-- **Providers history**: Shows the ETW providers that were enabled during the current session. Click or tap **Enable** to activate a provider that was disabled. Click or tap **Clear** to clear the history.
-- **Events**: Lists ETW events from the selected providers in table format. This table is updated in real time. Beneath the table, click the **Clear** button to delete all ETW events from the table. This does not disable any providers. You can click **Save to file** to export the currently collected ETW events to a CSV file locally.
+Cliquez ou appuyez sur **Activer** pour démarrer le suivi. Le fournisseur est ajouté à la liste déroulante **Fournisseurs activés**.
+- **Fournisseurs personnalisés** sélectionnez un fournisseur ETW personnalisé et le niveau de suivi. Identifiez le fournisseur par son GUID. N’insérez pas de crochets dans le GUID.
+- **Fournisseurs activés**&nbsp;: répertorie les fournisseurs activés. Sélectionnez un fournisseur dans la liste déroulante, puis cliquez sur ou appuyez sur **Désactiver** pour arrêter le suivi. Cliquez ou appuyez sur **Arrêter tout** pour suspendre tout le suivi.
+- **Historique des fournisseurs**&nbsp;: affiche les fournisseurs ETW activés pendant la session active. Cliquez ou appuyez sur **Activer** pour activer un fournisseur qui a été désactivé. Cliquez ou appuyez sur **Effacer** pour supprimer l’historique.
+- **Événements**&nbsp;: répertorie les événements ETW des fournisseurs sélectionnés sous forme de tableau. Le tableau suivant est mis à jour en temps réel. En dessous du tableau, cliquez sur le bouton **Effacer** pour supprimer tous les événements ETW du tableau. Cela ne désactive pas les fournisseurs. Vous pouvez cliquer sur **Enregistrer dans le fichier** pour exporter vers un fichier&nbsp;CSV en local les événements ETW actuellement collectés.
 
-For more details on using ETW tracing, see the [blogpost](https://blogs.windows.com/buildingapps/2016/06/10/using-device-portal-to-view-debug-logs-for-uwp/) about using it to collect real-time logs from your app. 
+Pour plus d’informations sur l’utilisation du suivi&nbsp;ETW, consultez le [billet de blog](https://blogs.windows.com/buildingapps/2016/06/10/using-device-portal-to-view-debug-logs-for-uwp/) dédié à l’utilisation de cette fonctionnalité pour collecter des journaux en temps réel à partir de votre application. 
 
-### <a name="performance-tracing"></a>Performance tracing
+### <a name="performance-tracing"></a>Suivi des performances
 
-Capture [Windows Performance Recorder](https://msdn.microsoft.com/library/windows/hardware/hh448205.aspx) (WPR) traces from your device.
+Capturez les suivis de l’[Enregistreur de performance Windows](https://msdn.microsoft.com/library/windows/hardware/hh448205.aspx) (WPR) à partir de votre appareil.
 
-![Device Portal for mobile](images/device-portal/mob-device-portal-perf-tracing.png)
+![Device Portal pour appareils mobiles](images/device-portal/mob-device-portal-perf-tracing.png)
 
-- **Available profiles**: Select the WPR profile from the dropdown, and click or tap **Start** to start tracing.
-- **Custom profiles**: Click or tap **Browse** to choose a WPR profile from your PC. Click or tap **Upload and start** to start tracing.
+- **Profils disponibles**&nbsp;: sélectionnez le profil WPR dans la liste déroulante, puis cliquez ou appuyez sur **Démarrer** pour commencer le suivi.
+- **Profils personnalisés**&nbsp;: cliquez ou appuyez sur **Parcourir** pour choisir un profil WPR depuis votre PC. Cliquez ou appuyez sur **Charger et démarrer** pour commencer le suivi.
 
-To stop the trace, click **Stop**. Stay on this page until the trace file (.ETL) has completed downloading.
+Pour arrêter le suivi, cliquez sur **Arrêter**. Restez sur cette page jusqu’à ce que le fichier de suivi (. ETL) a terminé le téléchargement.
 
-Captured ETL files can be opened for analysis in [Windows Performance Analyzer](https://msdn.microsoft.com/library/windows/hardware/hh448170.aspx).
+Les fichiers ETL capturés peuvent être ouverts pour analyse dans [Windows Performance Analyzer](https://msdn.microsoft.com/library/windows/hardware/hh448170.aspx).
 
-### <a name="devices"></a>Devices
+### <a name="devices"></a>Appareils
 
-Enumerates all peripherals attached to your device.
+Énumère tous les périphériques connectés à votre appareil.
 
-![Device Portal for mobile](images/device-portal/mob-device-portal-devices.png)
+![Device Portal pour appareils mobiles](images/device-portal/mob-device-portal-devices.png)
 
-### <a name="networking"></a>Networking
+### <a name="networking"></a>Mise en réseau
 
-Manages network connections on the device.  Unless you are connected to Device Portal via USB, changing these settings will likely disconnect you from Device Portal.
-- **Profiles**: Select a different WiFi profile to use.  
-- **Available networks**: The WiFi networks available to the device. Clicking or tapping on a network will allow you to connect to it and supply a passkey if needed. Note: Device Portal does not yet support Enterprise Authentication. 
+Gère les connexions réseau sur l’appareil.  Sauf si vous êtes connecté à Device Portal via USB, la modification de ces paramètres entraînera certainement la déconnexion de Device Portal.
+- **Profils**&nbsp;: sélectionnez un autre profil Wi-Fi à utiliser.  
+- **Réseaux disponibles**&nbsp;: réseaux Wi-Fi disponibles sur l’appareil. Appuyez ou cliquez sur un réseau pour vous y connecter et fournir une clé d’accès si nécessaire. Remarque&nbsp;: Device Portal ne gère pas encore l’authentification en entreprise. 
 
-![Device Portal for mobile](images/device-portal/mob-device-portal-network.png)
+![Device Portal pour appareils mobiles](images/device-portal/mob-device-portal-network.png)
 
-### <a name="app-file-explorer"></a>App File Explorer
+### <a name="app-file-explorer"></a>Explorateur de fichiers de l’application
 
-Allows you to view and manipulate files stored by your sideloaded apps.  This is a new, cross-platform version of the [Isolated Storage Explorer](https://msdn.microsoft.com/library/windows/apps/hh286408(v=vs.105).aspx) from Windows Phone 8.1  See [this blog post](https://blogs.windows.com/buildingapps/2016/06/08/using-the-app-file-explorer-to-see-your-app-data/) to learn more about the App File Explorer and how to use it. 
+Permet d’afficher et de manipuler les fichiers stockés par vos applications chargées de manière indépendante.  Il s’agit d’une nouvelle version interplateforme de l’[outil d’exploration des stockages isolés](https://msdn.microsoft.com/library/windows/apps/hh286408(v=vs.105).aspx) de Windows Phone&nbsp;8.1. Pour en savoir plus sur l’explorateur de fichiers de l’application, voir [ce billet de blog](https://blogs.windows.com/buildingapps/2016/06/08/using-the-app-file-explorer-to-see-your-app-data/). 
 
-![Device Portal for mobile](images/device-portal/mob-device-portal-AppFileExplorer.png)
+![Device Portal pour appareils mobiles](images/device-portal/mob-device-portal-AppFileExplorer.png)
 
-## <a name="service-features-and-notes"></a>Service Features and Notes
+## <a name="service-features-and-notes"></a>Remarques et fonctionnalités de service
 
 ### <a name="dns-sd"></a>DNS-SD
 
-Device Portal advertises its presence on the local network using DNS-SD.  All Device Portal instances, regardless of their device type, advertise under "WDP._wdp._tcp.local". The TXT records for the service instance provide the following:
+Device&nbsp;Portal signale sa présence sur le réseau local à l’aide de&nbsp;DNS-SD.  Toutes les instances Device&nbsp;Portal, quel que soit le type d’appareil, sont signalées sous «&nbsp;WDP._wdp._tcp.local&nbsp;». Les enregistrements&nbsp;TXT relatifs à l’instance de service fournissent les éléments suivants&nbsp;:
 
-Key | Type | Description 
+Clé | Type | Description 
 ----|------|-------------
-S | int | Secure port for Device Portal.  If 0 (zero), Device Portal is not listening for HTTPS connections. 
-D | string | Type of device.  This will be in the format "Windows.*", e.g. Windows.Xbox or Windows.Desktop
-A | string | Device architecture.  This will be ARM, x86, or AMD64.  
-T | null-character delineated list of strings | User-applied tags for the device. See the Tags REST API for how to use this. List is double-null terminated.  
+S | entier | Port sécurisé pour Device Portal.  Si la valeur est égale à&nbsp;0 (zéro), Device&nbsp;Portal ne détecte pas les connexions&nbsp;HTTPS. 
+D | chaîne | Type d’appareil.  Cette information sera au format «&nbsp;Windows.*&nbsp;», par exemple Windows.Xbox ou Windows.Desktop
+A | chaîne | Architecture d’appareil.  Par exemple ARM, x 86 ou AMD64.  
+T | liste de chaînes délimitées par des caractères&nbsp;Null | Balises appliquées par l’utilisateur pour l’appareil. Reportez-vous à l’API REST Tags pour apprendre à l’utiliser. La liste se termine par deux caractères&nbsp;Null.  
 
-Connecting on the HTTPS port is suggested, as not all devices are listening on the HTTP port advertised by the DNS-SD record. 
+La connexion au port&nbsp;HTTPS est suggérée, car les appareils ne sont pas tous détectés sur le port&nbsp;HTTP signalé par l’enregistrement DNS-SD. 
 
-### <a name="csrf-protection-and-scripting"></a>CSRF Protection and Scripting
+### <a name="csrf-protection-and-scripting"></a>Protection&nbsp;CSRF et écriture de scripts
 
-In order to protect against [CSRF attacks](https://wikipedia.org/wiki/Cross-site_request_forgery), a unique token is required on all non-GET requests. This token, the X-CSRF-Token request header, is derived from a session cookie, CSRF-Token. In the Device Portal web UI, the CSRF-Token cookie is copied into the X-CSRF-Token header on each request.
+Afin d’offrir une protection contre les [attaques&nbsp;CSRF](https://wikipedia.org/wiki/Cross-site_request_forgery), un jeton unique est requis pour toutes les demandes non&nbsp;GET. Ce jeton, qui est l’en-tête de demande X-CSRF-Token, dérive d’un cookie de session, CSRF-Token. Dans l’interface utilisateur Device&nbsp;Portal, le cookie CSRF-Token est copié dans l’en-tête X-CSRF-Token à chaque demande.
 
-**Important** This protection prevents usages of the REST APIs from a standalone client (e.g. command-line utilities). This can be solved in 3 ways: 
+**Important** Cette protection empêche toute utilisation des API&nbsp;REST à partir d’un client autonome (par exemple, utilitaires de ligne de commande). Cette situation peut être résolue de 3&nbsp;manières différentes&nbsp;: 
 
-1. Use of the "auto-" username. Clients that prepend "auto-" to their username will bypass CSRF protection. It is important that this username not be used to log in to Device Portal through the browser, as it will open up the service to CSRF attacks. Example: If Device Portal's username is "admin", ```curl -u auto-admin:password <args>``` should be used to bypass CSRF protection. 
+1. Utilisez le nom d’utilisateur «&nbsp;auto-&nbsp;». Les clients qui font précéder leur nom d’utilisateur du préfixe « auto-» contournent la protection&nbsp;CSRF. Ce nom d’utilisateur ne doit pas servir à se connecter à Device&nbsp;Portal par le biais du navigateur, car il rend le service vulnérable aux attaques&nbsp;CSRF. Exemple&nbsp;: Si le nom d’utilisateur Device&nbsp;Portal est «&nbsp;admin&nbsp;», ```curl -u auto-admin:password <args>``` doit être utilisé pour contourner la protection&nbsp;CSRF. 
 
-2. Implement the cookie-to-header scheme in the client. This requires a GET request to establish the session cookie, and then the inclusion of both the header and the cookie on all subsequent requests. 
+2. Implémentez le schéma de type cookie vers en-tête dans le client. Cette opération nécessite une requête&nbsp;GET afin d’établir le cookie de session, puis l’inclusion de l’en-tête et du cookie sur toutes les requêtes ultérieures. 
  
-3. Disable authentication and use HTTP. CSRF protection only applies to HTTPS endpoints, so connections on HTTP endpoints will not need to do either of the above. 
+3. Désactivez l’authentification et utilisez le protocole&nbsp;HTTP. La protection&nbsp;CSRF s’applique uniquement aux points de terminaison&nbsp;HTTPS&nbsp;: les connexions au niveau des points de terminaison&nbsp;HTTP n’ont donc pas besoin de satisfaire les conditions ci-dessus. 
 
-**Note**: a username that begins with "auto-" will not be able to log into Device Portal via the browser.  
+**Remarque**&nbsp;: un nom d’utilisateur qui commence par «&nbsp;auto-&nbsp;» ne permet pas de se connecter à Device&nbsp;Portal par le biais du navigateur.  
 
-#### <a name="cross-site-websocket-hijacking-cswsh-protection"></a>Cross-Site WebSocket Hijacking (CSWSH) protection
+#### <a name="cross-site-websocket-hijacking-cswsh-protection"></a>Protection CSWSH (Cross-Site WebSocket Hijacking)
 
-To protect against [CSWSH attacks](https://www.christian-schneider.net/CrossSiteWebSocketHijacking.html), all clients opening a WebSocket connection to Device Portal must also provide an Origin header that matches the Host header.  This proves to Device Portal that the request comes either from the Device Portal UI or a valid client application.  Without the Origin header your request will be rejected. 
+Afin d’éliminer les risques d’[attaques CSWSH](https://www.christian-schneider.net/CrossSiteWebSocketHijacking.html), tous les clients ouvrant une connexion WebSocket à Device&nbsp;Portal doivent également fournir un en-tête Origin correspondant à l’en-tête Host.  Cela prouve à Device&nbsp;Portal que la requête provient soit de l’interface utilisateur de Device&nbsp;Portal, soit d’une application cliente valide.  Si la requête ne présente pas d’en-tête Origin, elle sera rejetée. 
 
 
 

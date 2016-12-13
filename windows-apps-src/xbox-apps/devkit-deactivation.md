@@ -1,90 +1,90 @@
 ---
 author: Mtoepke
-title: Xbox One Developer Mode deactivation
-description: How to deactivate Developer Mode.
+title: "Désactivation du Mode développeur Xbox&nbsp;One"
+description: "Comment désactiver le Mode développeur"
 translationtype: Human Translation
 ms.sourcegitcommit: 0eee645f068614d2368623859dec4e16f3190169
 ms.openlocfilehash: cccc263dcd0ed9ae843cf845438b30605e9b9d9d
 
 ---
 
-# <a name="xbox-one-developer-mode-deactivation"></a>Xbox One Developer Mode deactivation
+# <a name="xbox-one-developer-mode-deactivation"></a>Désactivation du Mode développeur Xbox&nbsp;One
 
-* [Switch to Retail Mode](#switch-to-retail-mode)
-* [Deactivate your console using the Dev Mode Activation app](#deactivate-your-console-using-the-dev-mode-activation-app)  
-* [Reset your console](#reset-your-console)
-* [Deactivate your console using Windows Dev Center](#deactivate-your-console-using-windows-dev-center)
+* [Basculer en Mode commercial](#switch-to-retail-mode)
+* [Désactiver votre console à l’aide de l’application Dev Mode Activation](#deactivate-your-console-using-the-dev-mode-activation-app)  
+* [Réinitialiser votre console](#reset-your-console)
+* [Désactiver votre console à l’aide du Centre de développement Windows](#deactivate-your-console-using-windows-dev-center)
 
-If you decide you no longer want to use your console for development, use the following steps to deactivate Developer Mode.
+Si vous décidez de ne plus utiliser votre console pour le développement, procédez comme suit pour désactiver le Mode développeur.
 
-## <a name="switch-to-retail-mode"></a>Switch to Retail Mode
-First, return your Xbox One console to Retail Mode.
+## <a name="switch-to-retail-mode"></a>Basculer en Mode commercial
+Tout d’abord, basculez de nouveau votre console Xbox One en Mode commercial.
 
-1. Open **Dev Home**.
-2. Click **Leave developer mode**.  Your console will restart in Retail Mode.  
+1. Ouvrez **Dev Home**.
+2. Cliquez sur **Quitter le mode développeur**.  Votre console redémarre en Mode commercial.  
 
-   ![Leaving Developer Mode](images/deactivation-leave-dev-mode.png)
+   ![Fermeture du Mode développeur](images/deactivation-leave-dev-mode.png)
 
-Now deactivate your console by using one of the following methods.
+Maintenant, désactivez votre console à l’aide de l’une des méthodes suivantes.
 
-## <a name="deactivate-your-console-using-the-dev-mode-activation-app"></a>Deactivate your console using the Dev Mode Activation app
+## <a name="deactivate-your-console-using-the-dev-mode-activation-app"></a>Désactiver votre console à l’aide de l’application Dev Mode Activation
 
-The preferred method of deactivating Developer Mode on your console is to use the Dev Mode Activation app. 
+La méthode recommandée pour désactiver le Mode développeur sur votre console consiste à utiliser l’application Dev Mode Activation. 
 
-1. Navigate to **My games & apps** > **Apps**.
+1. Accédez à **Mes jeux et applications** > **Applications**.
   
-   ![Activation Step 3](images/activation-step-3.png)    
+   ![Activation - Étape&nbsp;3](images/activation-step-3.png)    
    
-2.  Open the Dev Mode Activation app.    
-3.  Click **Deactivate**.
+2.  Ouvrez l’application Dev Mode Activation.    
+3.  Cliquez sur **Désactiver**.
   
-![Deactivate console](images/deactivation-app.png)
+![Désactiver la console](images/deactivation-app.png)
 
-## <a name="reset-your-console"></a>Reset your console
+## <a name="reset-your-console"></a>Réinitialiser votre console
 
-You can also deactivate Developer Mode by resetting your console.  
+Vous pouvez également désactiver le Mode développeur en réinitialisant votre console.  
 
 > [!NOTE]
-> When you reset your console, all local save game data will be lost.
+> La réinitialisation de votre console entraîne la perte de toutes les données de jeu enregistrées localement.
 
-To reset your console perform the following steps:
+Pour réinitialiser votre console procédez comme suit&nbsp;:
 
-1.  Go to **My games & apps**.  
-2.  Select **Apps**, and then select **Settings**.  
-3.  Go to **System** in the left pane, and then select **Console info & updates** in the right pane.  
-4.  Go to **Console info & updates**.  
+1.  Accédez à **Mes jeux et applications**.  
+2.  Sélectionnez **Applications**, puis sélectionnez **Paramètres**.  
+3.  Accédez à **Système** dans le volet gauche, puis sélectionnez **Informations de la console et mises à jour** dans le volet droit.  
+4.  Accédez à **Informations de la console et mises à jour**.  
    
-    ![Console info and updates](images/deactivation-console-info-updates.png)  
+    ![Informations de la console et mises à jour](images/deactivation-console-info-updates.png)  
     
-5.  Click **Reset console**.
+5.  Cliquez sur **Réinitialiser la console**.
     
-    ![Reset console](images/deactivation-reset-console.png)
+    ![Réinitialiser la console](images/deactivation-reset-console.png)
     
-6.  Next, click **Reset and remove everything**. This option resets the console to its original retail state.  All of your apps, games, and local save data will be deleted. Note that choosing the other option, **Reset and keep my games & apps**, will not remove your console from the developer program.  
+6.  Ensuite, cliquez sur **Réinitialiser et supprimer tous les éléments**. Cette option rétablit la console dans sa version commerciale d’origine.  L’ensemble de vos applications, jeux et de vos données enregistrées localement seront supprimés. Notez que si vous choisissez l’option **Réinitialiser et conserver mes jeux et applications**, votre console ne sera pas supprimée du programme de développement.  
    
-    ![Reset and remove everything](images/deactivation-reset-remove.png)
+    ![Réinitialiser et supprimer tous les éléments](images/deactivation-reset-remove.png)
 
-## <a name="deactivate-your-console-using-windows-dev-center"></a>Deactivate your console using Windows Dev Center
+## <a name="deactivate-your-console-using-windows-dev-center"></a>Désactiver votre console à l’aide du Centre de développement Windows
 
-If you are unable to access your console for any reason, you can also deactivate Developer Mode on your console by using Windows Dev Center.
+Si vous ne parvenez pas à accéder à votre console pour une raison quelconque, vous pouvez également désactiver le Mode développeur sur votre console à l’aide du Centre de développement Windows.
 
-1. Go to [developer.microsoft.com/xboxdevices](https://developer.microsoft.com/xboxdevices).    
-2. Sign in to Dev Center with your Dev Center account.    
-3. Find the console that you want to deactivate in the list of consoles by matching the serial number, console ID, or the device ID.  
-4. Click **Deactivate**.  
+1. Accédez à [developer.microsoft.com/xboxdevices](https://developer.microsoft.com/xboxdevices).    
+2. Connectez-vous au Centre de développement à l’aide du compte correspondant.    
+3. Recherchez la console que vous voulez désactiver dans la liste des consoles à l’aide du numéro de série ou de l’ID de la console ou de l’appareil.  
+4. Cliquez sur **Désactiver**.  
   
-![Deactivate using DevCenter](images/deactivation-devcenter.png)
+![Désactiver à l’aide de DevCenter](images/deactivation-devcenter.png)
 
-If you didn't previously return your Xbox One console to Retail Mode, do so now.
+Si vous n’avez pas encore basculé votre console Xbox One en Mode commercial, faites-le maintenant.
 
-1. Launch **Dev Home**.
-2. Click **Leave developer mode**.  Your console will restart in Retail Mode.
+1. Lancez **Dev Home**.
+2. Cliquez sur **Quitter le mode développeur**.  Votre console redémarre en Mode commercial.
 
-![Activation Step 13](images/deactivation-leave-dev-mode.png)
+![Activation - Étape&nbsp;13](images/deactivation-leave-dev-mode.png)
 
-## <a name="see-also"></a>See also
-- [Xbox One Developer Mode activation](devkit-activation.md)
-- [UWP on Xbox One](index.md)
+## <a name="see-also"></a>Voir aussi
+- [Activation du Mode développeur Xbox&nbsp;One](devkit-activation.md)
+- [UWP sur Xbox&nbsp;One](index.md)
 
 
 

@@ -1,92 +1,92 @@
 ---
 author: mcleanbyron
 ms.assetid: 1599605B-4243-4081-8D14-40F6F7734E25
-description: Use this method in the Windows Store analytics API to get aggregate acquisition data for an add-on during a given date range and other optional filters.
-title: Get add-on acquisitions
+description: "Utilisez cette méthode dans l’API d’analyse du Windows&nbsp;Store pour obtenir les données d’acquisition agrégées d’une extension pour une plage de dates données, et en fonction de filtres facultatifs."
+title: "Obtenir des acquisitions d’extensions"
 translationtype: Human Translation
 ms.sourcegitcommit: 7d05c8953f1f50be0b388a044fe996f345d45006
 ms.openlocfilehash: a79cd324d57151318445df0dedd35a98d9c9f915
 
 ---
 
-# <a name="get-add-on-acquisitions"></a>Get add-on acquisitions
+# <a name="get-add-on-acquisitions"></a>Obtenir des acquisitions d’extensions
 
 
 
 
-Use this method in the Windows Store analytics API to get aggregate acquisition data for add-ons (also known as in-app products or IAPs) for your app in JSON format during a given date range and other optional filters. This information is also available in the [Add-on acquisitions report](../publish/add-on-acquisitions-report.md) in the Windows Dev Center dashboard.
+Utilisez cette méthode dans l’API d’analyse du Windows&nbsp;Store pour obtenir les données d’acquisition agrégées des extensions (également connue sous le nom produit in-app ou PIA) au format&nbsp;JSON pour votre application, pour une plage de dates données, et en fonction de filtres facultatifs. Ces informations sont également disponibles dans le [rapport sur les acquisitions des extensions](../publish/add-on-acquisitions-report.md) du tableau de bord du Centre de développement.
 
-## <a name="prerequisites"></a>Prerequisites
-
-
-To use this method, you need to first do the following:
-
-* If you have not done so already, complete all the [prerequisites](access-analytics-data-using-windows-store-services.md#prerequisites) for the Windows Store analytics API.
-* [Obtain an Azure AD access token](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
-
-## <a name="request"></a>Request
+## <a name="prerequisites"></a>Prérequis
 
 
-### <a name="request-syntax"></a>Request syntax
+Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes&nbsp;:
 
-| Method | Request URI                                                                |
+* Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](access-analytics-data-using-windows-store-services.md#prerequisites) relatives à l’API d’analyse du Windows Store.
+* [Obtenez un jeton d’accès Azure AD](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60&nbsp;minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
+
+## <a name="request"></a>Requête
+
+
+### <a name="request-syntax"></a>Syntaxe de la requête
+
+| Méthode | URI de la requête                                                                |
 |--------|----------------------------------------------------------------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappacquisitions``` |
 
 <span/> 
 
-### <a name="request-header"></a>Request header
+### <a name="request-header"></a>En-tête de requête
 
-| Header        | Type   | Description          |
+| En-tête        | Type   | Description          |
 |---------------|--------|--------------|
-| Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
+| Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;. |
 
 <span/> 
 
-### <a name="request-parameters"></a>Request parameters
+### <a name="request-parameters"></a>Paramètres de la requête
 
-The *applicationId* or *inAppProductId* parameter is required. To retrieve acquisition data for all add-ons registered to the app, specify the *applicationId* parameter. To retrieve acquisition data for a single add-on, specify the *inAppProductId* parameter. If you specify both, the *applicationId* parameter is ignored.
+Le paramètre *applicationId* ou *inAppProductId* est obligatoire. Pour récupérer les données d’acquisition de toutes les extensions inscrites dans l’application, spécifiez le paramètre *applicationId*. Pour récupérer les données d’acquisition d’une seule extension, spécifiez le paramètre *inAppProductId*. Si vous spécifiez les deux&nbsp;valeurs, le paramètre *applicationId* est ignoré.
 
-| Parameter        | Type   |  Description      |  Required  
+| Paramètre        | Type   |  Description      |  Requis  
 |---------------|--------|---------------|------|
-| applicationId | string | The Store ID of the app for which you want to retrieve add-on acquisition data. The Store ID is available on the [App identity page](../publish/view-app-identity-details.md) of the Dev Center dashboard. An example Store ID is 9WZDNCRFJ3Q8. |  Yes  |
-| inAppProductId | string | The Store ID of the add-on for which you want to retrieve acquisition data. The Store ID is available in the URL of the overview page for the add-on in the Windows Dev Center dashboard. For example, if the URL for the dashboard page for an add-on is ```https://developer.microsoft.com/en-us/dashboard/iaps/9NBLGGH4SCZS?appId=9NBLGGH29DM8```, the Store ID for the add-on is the string 9NBLGGH4SCZS. | Yes  |
-| startDate | date | The start date in the date range of add-on acquisition data to retrieve. The default is the current date. |  No  |
-| endDate | date | The end date in the date range of add-on acquisition data to retrieve. The default is the current date. |  No  |
-| top | int | The number of rows of data to return in the request. The maximum value and the default value if not specified is 10000. If there are more rows in the query, the response body includes a next link that you can use to request the next page of data. |  No  |
-| skip | int | The number of rows to skip in the query. Use this parameter to page through large data sets. For example, top=10000 and skip=0 retrieves the first 10000 rows of data, top=10000 and skip=10000 retrieves the next 10000 rows of data, and so on. |  No  |
-| filter |string  | One or more statements that filter the rows in the response. For more information, see the [filter fields](#filter-fields) section below. | No   |
-| aggregationLevel | string | Specifies the time range for which to retrieve aggregate data. Can be one of the following strings: <strong>day</strong>, <strong>week</strong>, or <strong>month</strong>. If unspecified, the default is <strong>day</strong>. | No |
-| orderby | string | A statement that orders the result data values for each add-on acquisition. The syntax is <em>orderby=field [order],field [order],...</em>. The <em>field</em> parameter can be one of the following strings:<ul><li><strong>date</strong></li><li><strong>acquisitionType</strong></li><li><strong>ageGroup</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>orderName</strong></li></ul><p>The <em>order</em> parameter is optional, and can be <strong>asc</strong> or <strong>desc</strong> to specify ascending or descending order for each field. The default is <strong>asc</strong>.</p><p>Here is an example <em>orderby</em> string: <em>orderby=date,market</em></p> |  No  |
-| groupby | string | A statement that applies data aggregation only to the specified fields. You can specify the following fields:<ul><li><strong>date</strong></li><li><strong>applicationName</strong></li><li><strong>inAppProductName</strong></li><li><strong>acquisitionType</strong></li><li><strong>ageGroup</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>orderName</strong></li></ul><p>The returned data rows will contain the fields specified in the <em>groupby</em> parameter as well as the following:</p><ul><li><strong>date</strong></li><li><strong>applicationId</strong></li><li><strong>inAppProductId</strong></li><li><strong>acquisitionQuantity</strong></li></ul><p>The <em>groupby</em> parameter can be used with the <em>aggregationLevel</em> parameter. For example: <em>&amp;groupby=ageGroup,market&amp;aggregationLevel=week</em></p> |  No  |
+| applicationId | chaîne | ID Windows&nbsp;Store de l’application pour laquelle vous voulez récupérer des données d’acquisition d’extension. L’ID Windows&nbsp;Store est disponible dans la [page Identité de l’application](../publish/view-app-identity-details.md) du tableau de bord du Centre de développement. Exemple d’ID Windows&nbsp;Store&nbsp;: 9WZDNCRFJ3Q8. |  Oui  |
+| inAppProductId | chaîne | ID Windows&nbsp;Store de l’extension pour laquelle vous voulez récupérer des données d’acquisition. L’ID Windows Store est disponible dans l’URL de la page de la vue d’ensemble de l’extension dans le tableau de bord du Centre de développement Windows. Par exemple, si l’URL de la page du tableau de bord d’une extension est ```https://developer.microsoft.com/en-us/dashboard/iaps/9NBLGGH4SCZS?appId=9NBLGGH29DM8```, l’ID Windows Store de cette extension est la chaîne 9NBLGGH4SCZS. | Oui  |
+| startDate | date | Dans la plage de dates, date de début de la récupération des données d’acquisition. La valeur par défaut est la date du jour. |  Non  |
+| endDate | date | Dans la plage de dates, date de fin de la récupération des données d’acquisition. La valeur par défaut est la date du jour. |  Non  |
+| top | entier | Le nombre de lignes de données à renvoyer dans la requête. La valeur maximale et la valeur par défaut en l’absence de définition est 10000. Si la requête comporte davantage de lignes, le corps de la réponse inclut un lien sur lequel vous cliquez pour solliciter la page suivante de données. |  Non  |
+| skip | entier | Le nombre de lignes à ignorer dans la requête. Utilisez ce paramètre pour parcourir de grands ensembles de données. Par exemple, indiquez top=10000 et skip=0 pour obtenir les 10000 premières lignes de données, top=10000 et skip=10000 pour obtenir les 10000 lignes suivantes, et ainsi de suite. |  Non  |
+| filter |chaîne  | Une ou plusieurs instructions qui filtrent les lignes de la réponse. Pour plus d’informations, voir la section [Champs de filtre](#filter-fields) ci-dessous. | Non   |
+| aggregationLevel | chaîne | Indique la plage de temps pendant laquelle récupérer les données agrégées. Il peut s’agit des chaînes suivantes : <strong>day</strong>, <strong>week</strong> ou <strong>month</strong>. Par défaut, la valeur est <strong>day</strong>. | Non |
+| orderby | chaîne | Instruction qui commande les valeurs de données de résultats pour chaque acquisition d’extension. Syntaxe&nbsp;: <em>orderby=field [order],field [order],...</em>. Le paramètre <em>field</em> peut comporter l’une des chaînes suivantes :<ul><li><strong>date</strong></li><li><strong>acquisitionType</strong></li><li><strong>ageGroup</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>orderName</strong></li></ul><p>Le paramètre <em>order</em>, facultatif, peut comporter les valeurs <strong>asc</strong> ou <strong>desc</strong> afin de spécifier l’ordre croissant ou décroissant pour chaque champ. La valeur par défaut est <strong>asc</strong>.</p><p>Voici un exemple de chaîne <em>orderby</em> : <em>orderby=date,market</em></p> |  Non  |
+| groupby | chaîne | Une instruction qui applique l’agrégation des données uniquement sur les champs spécifiés. Vous pouvez spécifier les champs suivants&nbsp;:<ul><li><strong>date</strong></li><li><strong>applicationName</strong></li><li><strong>inAppProductName</strong></li><li><strong>acquisitionType</strong></li><li><strong>ageGroup</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>orderName</strong></li></ul><p>Les lignes de données renvoyées comportent les champs spécifiés dans le paramètre <em>groupby</em>, ainsi que dans les paramètres suivants :</p><ul><li><strong>date</strong></li><li><strong>applicationId</strong></li><li><strong>inAppProductId</strong></li><li><strong>acquisitionQuantity</strong></li></ul><p>Le paramètre <em>groupby</em> peut être utilisé avec le paramètre <em>aggregationLevel</em>. Par exemple&nbsp;: <em>&amp;groupby=ageGroup,market&amp;aggregationLevel=week</em></p> |  Non  |
 
 <span/>
 
-### <a name="filter-fields"></a>Filter fields
+### <a name="filter-fields"></a>Champs de filtrage
 
-The *filter* parameter of the request contains one or more statements that filter the rows in the response. Each statement contains a field and value that are associated with the **eq** or **ne** operators, and statements can be combined using **and** or **or**. Here are some example *filter* parameters:
+Le paramètre *filter* de la requête contient une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction comporte un champ et une valeur qui sont associés aux opérateurs **eq** ou **ne**, et les instructions peuvent être combinées à l’aide des opérateurs **and** ou **or**. Voici quelques exemples de paramètres *filter*&nbsp;:
 
--   *filter=market eq 'US' and gender eq 'm'*
--   *filter=(market ne 'US') and (gender ne 'Unknown') and (gender ne 'm') and (market ne 'NO') and (ageGroup ne 'greater than 55' or ageGroup ne ‘less than 13’)*
+-   *filter=market eq ’US’ and gender eq ’m’*
+-   *filter=(market ne ’US’) and (gender ne ’Unknown’) and (gender ne ’m’) and (market ne ’NO’) and (ageGroup ne ’greater than 55’ or ageGroup ne ‘less than 13’)*
 
-For a list of the supported fields, see the following table. String values must be surrounded by single quotes in the *filter* parameter.
+Pour obtenir la liste des champs pris en charge, consultez le tableau suivant&nbsp;: Les valeurs de chaîne doivent être entourées par des guillemets dans le paramètre *filter*.
 
-| Fields        |  Description        |
+| Champs        |  Description        |
 |---------------|-----------------|
-| acquisitionType | One of the following strings:<ul><li><strong>free</strong></li><li><strong>trial</strong></li><li><strong>paid</strong></li><li><strong>promotional code</strong></li><li><strong>iap</strong></li></ul> |
-| ageGroup | One of the following strings:<ul><li><strong>less than 13</strong></li><li><strong>13-17</strong></li><li><strong>18-24</strong></li><li><strong>25-34</strong></li><li><strong>35-44</strong></li><li><strong>44-55</strong></li><li><strong>greater than 55</strong></li><li><strong>Unknown</strong></li></ul> |
-| storeClient | One of the following strings:<ul><li><strong>Windows Phone Store (client)</strong></li><li><strong>Windows Store (client)</strong></li><li><strong>Windows Store (web)</strong></li><li><strong>Volume purchase by organizations</strong></li><li><strong>Other</strong></li></ul> |
-| gender | One of the following strings:<ul><li><strong>m</strong></li><li><strong>f</strong></li><li><strong>Unknown</strong></li></ul> |
-| market | A string that contains the ISO 3166 country code of the market where the acquisition occurred. |
-| osVersion | One of the following strings:<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows 8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>Unknown</strong></li></ul> |
-| deviceType | One of the following strings:<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul> |
-| orderName | A string that specifies the name of the order for the promotional code that was used to acquire the add-on (this only applies if the user acquired the add-on by redeeming a promotional code). |
+| acquisitionType | Une des chaînes suivantes&nbsp;:<ul><li><strong>free</strong></li><li><strong>trial</strong></li><li><strong>paid</strong></li><li><strong>promotional code</strong></li><li><strong>iap</strong></li></ul> |
+| ageGroup | Une des chaînes suivantes&nbsp;:<ul><li><strong>less than 13</strong></li><li><strong>13-17</strong></li><li><strong>18-24</strong></li><li><strong>25-34</strong></li><li><strong>35-44</strong></li><li><strong>44-55</strong></li><li><strong>greater than 55</strong></li><li><strong>Unknown</strong></li></ul> |
+| storeClient | Une des chaînes suivantes&nbsp;:<ul><li><strong>Windows Phone Store (client)</strong></li><li><strong>Windows Store (client)</strong></li><li><strong>Windows Store (web)</strong></li><li><strong>Volume purchase by organizations</strong></li><li><strong>Other</strong></li></ul> |
+| gender | Une des chaînes suivantes&nbsp;:<ul><li><strong>m</strong></li><li><strong>f</strong></li><li><strong>Unknown</strong></li></ul> |
+| market | Chaîne contenant le code pays ISO&nbsp;3166 du marché de l’acquisition. |
+| osVersion | Une des chaînes suivantes&nbsp;:<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows&nbsp;8</strong></li><li><strong>Windows&nbsp;8.1</strong></li><li><strong>Windows&nbsp;10</strong></li><li><strong>Unknown</strong></li></ul> |
+| deviceType | Une des chaînes suivantes&nbsp;:<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul> |
+| orderName | Chaîne spécifiant le nom de la commande correspondant au code promotionnel utilisé pour l’acquisition du module complémentaire (elle s’applique uniquement si l’utilisateur a acquis le module complémentaire à l’aide d’un code promotionnel). |
 
 <span/> 
 
-### <a name="request-example"></a>Request example
+### <a name="request-example"></a>Exemple de requête
 
-The following examples demonstrates several requests for getting add-on acquisition data. Replace the *inAppProductId* and *applicationId* values with the appropriate Store ID for your add-on or app.
+L’exemple suivant illustre quelques requêtes d’obtention de données d’acquisition d’extensions. Remplacez les valeurs *inAppProductId* et *applicationId* par l’ID Windows&nbsp;Store qui correspond à votre extension ou application.
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappacquisitions?inAppProductId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1
@@ -99,46 +99,46 @@ GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappacquisitions?i
 Authorization: Bearer <your access token>
 ```
 
-## <a name="response"></a>Response
+## <a name="response"></a>Réponse
 
 
-### <a name="response-body"></a>Response body
+### <a name="response-body"></a>Corps de la réponse
 
-| Value      | Type   | Description         |
+| Valeur      | Type   | Description         |
 |------------|--------|------------------|
-| Value      | array  | An array of objects that contain aggregate add-on acquisition data. For more information about the data in each object, see the [add-on acquisition values](#add-on-acquisition-values) section below.                                                                                                              |
-| @nextLink  | string | If there are additional pages of data, this string contains a URI that you can use to request the next page of data. For example, this value is returned if the **top** parameter of the request is set to 10000 but there are more than 10000 rows of add-on acquisition data for the query. |
-| TotalCount | int    | The total number of rows in the data result for the query.                                                                                                                                                                                                                                 |
+| Valeur      | tableau  | Tableau d’objets contenant des données d’acquisition agrégées d’extensions. Pour plus d’informations sur les données incluses dans chaque objet, voir [Valeurs d’acquisition d’extensions](#add-on-acquisition-values) ci-dessous.                                                                                                              |
+| @nextLink  | chaîne | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour solliciter la page suivante de données. Par exemple, cette valeur est renvoyée si le paramètre **top** de la requête a la valeur 10000, mais qu’il existe plus de 10&nbsp;000&nbsp;lignes de données d’acquisition d’extensions pour la demande. |
+| TotalCount | entier    | Nombre total de lignes dans les résultats de données de la requête.                                                                                                                                                                                                                                 |
 
 <span/>
 
 <span id="add-on-acquisition-values" />
-### <a name="add-on-acquisition-values"></a>Add-on acquisition values
+### <a name="add-on-acquisition-values"></a>Valeurs d’acquisition d’extensions
 
-Elements in the *Value* array contain the following values.
+Les éléments du tableau *Value* comportent les valeurs suivantes&nbsp;:
 
-| Value               | Type    | Description        |
+| Valeur               | Type    | Description        |
 |---------------------|---------|---------------------|
-| date                | string  | The first date in the date range for the acquisition data. If the request specified a single day, this value is that date. If the request specified a week, month, or other date range, this value is the first date in that date range. |
-| inAppProductId      | string  | The Store ID of the add-on for which you are retrieving acquisition data.                                                                                                                                                                 |
-| inAppProductName    | string  | The display name of the add-on. This value only appears in the response data if the *aggregationLevel* parameter is set to **day**, unless you specify the **inAppProductName** field in the *groupby* parameter.                                                                                                                                                                                                            |
-| applicationId       | string  | The Store ID of the app for which you want to retrieve add-on acquisition data.                                                                                                                                                           |
-| applicationName     | string  | The display name of the app.                                                                                                                                                                                                             |
-| deviceType          | string  | The type of device that completed the acquisition. For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                                  |
-| orderName           | string  | The name of the order.                                                                                                                                                                                                                   |
-| storeClient         | string  | The version of the Store where the acquisition occurred. For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                            |
-| osVersion           | string  | The OS version on which the acquisition occurred. For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                                   |
-| market              | string  | The ISO 3166 country code of the market where the acquisition occurred.                                                                                                                                                                  |
-| gender              | string  | The gender of the user who made the acquisition. For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                                    |
-| ageGroup            | string  | The age group of the user who made the acquisition. For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                                 |
-| acquisitionType     | string  | The type of acquisition (free, paid, and so on). For a list of the supported strings, see the [filter fields](#filter-fields) section above.                                                                                                    |
-| acquisitionQuantity | inumber | The number of acquisitions that occurred.                                                                                                                                                                                                |
+| date                | chaîne  | Première date dans la plage de dates des données d’acquisition. Si la requête était relative à un jour unique, cette valeur correspond à la date associée. Si la requête était relative à une semaine, un mois ou toute autre plage de dates, cette valeur correspond à la première date de la plage de dates. |
+| inAppProductId      | chaîne  | ID Windows&nbsp;Store de l’extension pour laquelle vous récupérez des données d’acquisition.                                                                                                                                                                 |
+| inAppProductName    | chaîne  | Nom d’affichage de l’extension. Cette valeur apparaît dans les données de la réponse uniquement si le paramètre *aggregationLevel* est défini sur **day**, sauf si vous définissez le champ **inAppProductName** dans le paramètre *groupby*.                                                                                                                                                                                                            |
+| applicationId       | chaîne  | ID Windows&nbsp;Store de l’application pour laquelle vous voulez récupérer des données d’acquisition d’extension.                                                                                                                                                           |
+| applicationName     | chaîne  | Nom d’affichage de l’application.                                                                                                                                                                                                             |
+| deviceType          | chaîne  | Le type d’appareil ayant effectué l’acquisition. Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                                  |
+| orderName           | chaîne  | Le nom de la commande.                                                                                                                                                                                                                   |
+| storeClient         | chaîne  | La version du Store dans laquelle l’acquisition s’est produite. Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                            |
+| osVersion           | chaîne  | La version de système d’exploitation sur laquelle l’acquisition s’est produite. Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                                   |
+| market              | chaîne  | Le code pays ISO&nbsp;3166 du marché dans lequel l’acquisition s’est produite.                                                                                                                                                                  |
+| gender              | chaîne  | Le sexe de l’utilisateur qui a effectué l’acquisition. Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                                    |
+| ageGroup            | chaîne  | Le groupe d’âge de l’utilisateur qui a effectué l’acquisition. Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                                 |
+| acquisitionType     | chaîne  | Le type d’acquisition (gratuite, payante, etc.). Pour obtenir la liste des chaînes prises en charge, consultez la section [Champs de filtrage](#filter-fields) ci-dessus.                                                                                                    |
+| acquisitionQuantity | nombre entier | Le nombre d’acquisitions qui se sont produites.                                                                                                                                                                                                |
 
 <span/> 
 
-### <a name="response-example"></a>Response example
+### <a name="response-example"></a>Exemple de réponse
 
-The following example demonstrates an example JSON response body for this request.
+L’exemple suivant représente un corps de réponse JSON pour cette requête.
 
 ```json
 {
@@ -165,14 +165,14 @@ The following example demonstrates an example JSON response body for this reques
 }
 ```
 
-## <a name="related-topics"></a>Related topics
+## <a name="related-topics"></a>Rubriques connexes
 
-* [Add-on acquisitions report](../publish/add-on-acquisitions-report.md)
-* [Access analytics data using Windows Store services](access-analytics-data-using-windows-store-services.md)
-* [Get app acquisitions](get-app-acquisitions.md)
-* [Get error reporting data](get-error-reporting-data.md)
-* [Get app ratings](get-app-ratings.md)
-* [Get app reviews](get-app-reviews.md)
+* [Rapport sur les acquisitions des extensions](../publish/add-on-acquisitions-report.md)
+* [Accéder aux données d’analyse à l’aide des services du Windows Store](access-analytics-data-using-windows-store-services.md)
+* [Obtenir des acquisitions d’applications](get-app-acquisitions.md)
+* [Obtenir les données de rapport d’erreurs](get-error-reporting-data.md)
+* [Obtenir les classifications des applications](get-app-ratings.md)
+* [Obtenir les avis sur les applications](get-app-reviews.md)
 
  
 

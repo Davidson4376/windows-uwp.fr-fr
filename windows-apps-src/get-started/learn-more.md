@@ -1,9 +1,9 @@
 ---
 author: GrantMeStrength
 ms.assetid: 4288E511-581C-49DC-A2F2-1CB832C4A676
-title: What&quot;s next?
-description: Now that you&quot;ve created your first app, check out the rest of the Dev Center. Here&quot;s an introduction to the different sections it contains.&quot;
-keywords: Dev Center, Getting started
+title: "Et après ?"
+description: "Maintenant que vous avez créé votre première application, consultez le reste du Centre de développement. Les différentes sections qu’il contient sont présentées ci-après."
+keywords: "Centre de développement, Prise en main"
 translationtype: Human Translation
 ms.sourcegitcommit: 7e76c9abd4157c22b38d79b178f5f07827d336ca
 ms.openlocfilehash: 087c298f59798010628aefc428eedf9933bb2686
@@ -12,61 +12,61 @@ ms.openlocfilehash: 087c298f59798010628aefc428eedf9933bb2686
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-# <a name="whats-next"></a>What's next?
+# <a name="whats-next"></a>Et après&nbsp;?
 
-So you want to write an app and publish it to the Windows Store: where do you start? If you're completely new to the UWP platform, try some of the <a href="https://channel9.msdn.com/">Channel 9</a> videos and <a href="https://www.microsoftvirtualacademy.com">Microsoft Virtual Academy</a> courses. If you are already familiar with XAML and C#, you can start reading through the topics below, or go straight to [downloading some samples](https://msdn.microsoft.com/windows/uwp/get-started/get-uwp-app-samples).
+Donc, vous voulez écrire une application et la publier dans le Windows&nbsp;Store&nbsp;: par où commencer&nbsp;? Si vous découvrez la plateforme UWP, certaines vidéos de <a href="https://channel9.msdn.com/">Channel&nbsp;9</a> et formations de la <a href="https://www.microsoftvirtualacademy.com">Microsoft Virtual Academy</a> pourront vous être utiles. Si les langages XAML et C# vous sont déjà familiers, commencez par lire les rubriques ci-dessous ou accédez directement au [téléchargement de certains exemples](https://msdn.microsoft.com/windows/uwp/get-started/get-uwp-app-samples).
 
-There are many tools and frameworks available to help you write apps, and many support cross-platform development. For example, if you want to write 2D games, you might want to look at <a href="http://www.monogame.net">Monogame</a>. For 3D games, there's <a href="http://www.unity3d.com">Unity</a>, and don't forget <a href="http://www.xamarin.com">Xamarin</a> if your focus is mobile devices.
+De nombreux outils et infrastructures sont disponibles pour vous aider à écrire des applications et prennent en charge le développement sur plusieurs plateformes. Par exemple, si vous souhaitez écrire des jeux en&nbsp;2D, jetez un œil sur <a href="http://www.monogame.net">Monogame</a>. Pour les jeux en&nbsp;3D, il y a <a href="http://www.unity3d.com">Unity</a> et n’oubliez pas <a href="http://www.xamarin.com">Xamarin</a> si les appareils mobiles constituent votre objectif.
 
-If you are getting started, our recommendation is that you look through the UWP topics to get a feel for the platform, and then investigate creating your user interface by using, and then customizing, XAML controls. You'll use XAML to layout your app ([here's a tutorial](../layout/grid-tutorial.md) that will walk you through it), but XAML's main strength is the use of *data binding* which couples the controls to the information your app wants to display: if you are new to the Windows platform, this will be an important concept to understand. 
+Si vous êtes débutant, nous vous recommandons de parcourir les rubriques sur la plateforme&nbsp;UWP de façon à obtenir une idée générale, puis d’essayer de créer votre interface utilisateur à l’aide de contrôles&nbsp;XAML que vous pourrez ensuite personnaliser. Vous allez utiliser XAML pour organiser votre application ([ce didacticiel](../layout/grid-tutorial.md) vous décrit la marche à suivre), mais le principal atout de ce langage est l’utilisation de la *liaison de données*, qui associe les contrôles aux informations que votre application souhaite afficher&nbsp;: si vous n’êtes pas familier de la plateforme Windows, il s’agit d’un concept important que vous devez assimiler. 
 <table class="wdg-noborder">
 <tr>
  <td width=60><img src="images/icon3.png" width=64></td>
-    <td><h2>UWP and the UWP app Lifecycle</h2><p>How does an app start, what happens when you start another one? Here’s the story.</p> <ul>
-    <li><a href="https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide">Guide to Universal Windows Platform (UWP) apps</a></li>
-    <li><a href="https://msdn.microsoft.com/windows/uwp/launch-resume/app-lifecycle">UWP app lifecycle</a></li>
-    <li><a href="https://developer.microsoft.com/windows/windows-10-for-developers">What's cool in Windows 10</a></ul></td>  
+    <td><h2>Plateforme UWP et cycle de vie des applications UWP</h2><p>Comment une application démarre-t-elle et que se passe-t-il quand vous en démarrez une autre&nbsp;? Voici la réponse.</p> <ul>
+    <li><a href="https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide">Guide des applications pour la plateforme Windows universelle (UWP)</a></li>
+    <li><a href="https://msdn.microsoft.com/windows/uwp/launch-resume/app-lifecycle">Cycle de vie des applications UWP</a></li>
+    <li><a href="https://developer.microsoft.com/windows/windows-10-for-developers">Nouveautés intéressantes de Windows&nbsp;10</a></ul></td>  
 </tr>
 <tr>
  <td width=60><img src="images/icon7.png" width=64></td>
-    <td><h2>UX and UI</h2><p>What controls do you have at your disposal, and how can they be used? These topics explain how controls and code work together, and how you can customize them to suit the look of your app.</p> <ul>
-    <li><a href="https://developer.microsoft.com/windows/design">Design and UI</a></li>
-    <li><a href="https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml">Define page layouts with XAML</a></li>
-    <li><a href="https://msdn.microsoft.com/windows/uwp/controls-and-patterns/controls-by-function">Controls by function</a></li>
-      <li><a href="https://msdn.microsoft.com/windows/uwp/controls-and-patterns/controls-and-events-intro">Intro to controls and patterns</a></li>
-     <li><a href="https://msdn.microsoft.com/windows/uwp/controls-and-patterns/styling-controls">Styling controls</a></li>
-      <li><a href="https://msdn.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design">Screen sizes and break points for responsive design</a></li>
-      <li><a href="https://developer.microsoft.com/windows/projects/campaigns/welcome-toolbox">Use the UWP Community Toolkit for a selection of prebuilt controls and patterns</a></li>
+    <td><h2>Expérience utilisateur et interface utilisateur</h2><p>De quels contrôles disposez-vous et comment les utiliser&nbsp;? Ces rubriques vous expliquent comment les contrôles et le code fonctionnent ensemble et comment vous pouvez les personnaliser en fonction de l’apparence que vous voulez donner à votre application.</p> <ul>
+    <li><a href="https://developer.microsoft.com/windows/design">Conception et interface utilisateur</a></li>
+    <li><a href="https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml">Définir des dispositions de pages avec XAML</a></li>
+    <li><a href="https://msdn.microsoft.com/windows/uwp/controls-and-patterns/controls-by-function">Contrôles par fonction</a></li>
+      <li><a href="https://msdn.microsoft.com/windows/uwp/controls-and-patterns/controls-and-events-intro">Présentation des contrôles et des modèles</a></li>
+     <li><a href="https://msdn.microsoft.com/windows/uwp/controls-and-patterns/styling-controls">Application de styles aux contrôles</a></li>
+      <li><a href="https://msdn.microsoft.com/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design">Tailles d’écran et points d’arrêt pour la conception réactive</a></li>
+      <li><a href="https://developer.microsoft.com/windows/projects/campaigns/welcome-toolbox">Utilisez le kit de ressources de la communauté UWP pour obtenir une sélection de modèles et de contrôles préintégrés</a></li>
     </ul></td>  
 </tr>
 <tr>
  <td width=60><img src="images/icon6.png" width=64></td>
-    <td><h2>Data and Services</h2><p>Learn about data binding, which lets your code automatically populate lists and grids. Discover how to link to external resources to get data into your apps.</p> <ul>
-    <li><a href="https://msdn.microsoft.com/windows/uwp/data-binding/index">Data binding</a></li>
-    <li><a href="https://msdn.microsoft.com/windows/uwp/controls-and-patterns/listview-and-gridview">ListViews, GridViews and data binding</a></li>
-     <li><a href="https://msdn.microsoft.com/windows/uwp/data-access/index">Data access</a></li>
+    <td><h2>Données et services</h2><p>Découvrez les principes de la liaison de données, qui permet de faire remplir automatiquement les listes et les grilles par votre code. Découvrez comment vous lier à des ressources externes pour permettre à vos applications d’obtenir des données.</p> <ul>
+    <li><a href="https://msdn.microsoft.com/windows/uwp/data-binding/index">Liaison de données</a></li>
+    <li><a href="https://msdn.microsoft.com/windows/uwp/controls-and-patterns/listview-and-gridview">Contrôles ListView, GridView et liaison de données</a></li>
+     <li><a href="https://msdn.microsoft.com/windows/uwp/data-access/index">Accès aux données</a></li>
     </ul></td>  
 </tr>
 <tr>
  <td width=60><img src="images/icon4.png" width=64></td>
-    <td><h2>Publishing</h2><p>Share your work with the world, make money. We’ll walk you through the process of getting your app onto the store.</p> <ul>
-    <li><a href="https://msdn.microsoft.com/windows/uwp/publish/index">Publish Windows apps</a></li>
-    <li><a href="https://msdn.microsoft.com/windows/uwp/packaging/index">Packaging apps</a></li>
+    <td><h2>Publication</h2><p>Partagez votre travail avec le monde entier et tirez-en profit. Nous vous montrerons comment publier votre application sur le Windows Store.</p> <ul>
+    <li><a href="https://msdn.microsoft.com/windows/uwp/publish/index">Publier des applications Windows</a></li>
+    <li><a href="https://msdn.microsoft.com/windows/uwp/packaging/index">Création de packages d’application</a></li>
     </ul></td>  
 </tr>
 <tr>
  <td width=60><img src="images/icon2.png" width=64></td>
-    <td><h2>Other resources</h2><p>Samples, tutorials, videos, other tools and SDKs. Take it to the next level.</p>
+    <td><h2>Autres ressources</h2><p>Exemples, didacticiels, vidéos et autres outils et Kits de développement logiciel (SDK). Passez à la vitesse supérieure.</p>
     <ul>
-    <li><a href="https://developer.microsoft.com/windows/develop">How-to articles</a></li>
-    <li><a href="https://developer.microsoft.com/windows/samples">Code samples</a></li>
-    <li><a href="https://msdn.microsoft.com/library/618ayhy6(VS.110).aspx">C# reference</a></li>
-    <li><a href="https://msdn.microsoft.com/library/windows/apps/bg124285.aspx">API Reference</a></li>
-     <li><a href="https://msdn.microsoft.com/windows/uwp/xbox-apps/index">Writing apps for Xbox One</a></li>
-     <li><a href="https://www.microsoft.com/microsoft-hololens/developers">Developing for HoloLens</a></li>
-     <li><a href="https://msdn.microsoft.com/windows/uwp/porting/index">Porting apps to Windows 10</a></li>
-      <li><a href="https://msdn.microsoft.com/windows/uwp/enterprise/index">Writing apps for the Enterprise</a></li>
-      <li><a href="https://blogs.windows.com/buildingapps/2016/08/17/introducing-the-uwp-community-toolkit/#D1IfVxCZMQGZqlc7.97">The UWP Community Toolkit</a></li>
+    <li><a href="https://developer.microsoft.com/windows/develop">Articles sur les procédures</a></li>
+    <li><a href="https://developer.microsoft.com/windows/samples">Exemples de code</a></li>
+    <li><a href="https://msdn.microsoft.com/library/618ayhy6(VS.110).aspx">Informations de référence sur C#</a></li>
+    <li><a href="https://msdn.microsoft.com/library/windows/apps/bg124285.aspx">Informations de référence sur les API</a></li>
+     <li><a href="https://msdn.microsoft.com/windows/uwp/xbox-apps/index">Écriture d’applications pour Xbox One</a></li>
+     <li><a href="https://www.microsoft.com/microsoft-hololens/developers">Développer pour HoloLens</a></li>
+     <li><a href="https://msdn.microsoft.com/windows/uwp/porting/index">Portage d’applications vers Windows&nbsp;10</a></li>
+      <li><a href="https://msdn.microsoft.com/windows/uwp/enterprise/index">Écriture d’applications pour l’entreprise</a></li>
+      <li><a href="https://blogs.windows.com/buildingapps/2016/08/17/introducing-the-uwp-community-toolkit/#D1IfVxCZMQGZqlc7.97">Kit de ressources de la communauté UWP</a></li>
     </ul>
     </td>  
 </tr>
@@ -74,37 +74,37 @@ If you are getting started, our recommendation is that you look through the UWP 
 
 <hr>
 
-## <a name="windows-developer-blog"></a>Windows Developer Blog
+## <a name="windows-developer-blog"></a>Blog des développeurs Windows
 
-The [Windows Developer Blog](https://blogs.windows.com/buildingapps) includes regular postings on the latest in coding techniques, project ideas, and tools. Here are some you might find useful as you explore Windows development.
+Le [Blog des développeurs Windows](https://blogs.windows.com/buildingapps) publie régulièrement des articles sur les dernières techniques de codage, les idées de projet et les outils. En voici quelques-uns qui peuvent vous intéresser lorsque vous explorez le développement sous Windows.
 
-* [Animations with the Visual layer](https://blogs.windows.com/buildingapps/2016/09/16/animations-with-the-visual-layer/#JM2XkQcL7MRSXe3X.97)
-* [Interop between XAML and the Visual layer](https://blogs.windows.com/buildingapps/2016/08/26/interop-between-xaml-and-the-visual-layer/#ue6O7MWpqrVFE81K.97)
-* [Creating beautiful effects for UWP](https://blogs.windows.com/buildingapps/2016/09/12/creating-beautiful-effects-for-uwp/#85jsfw6PFXX825rR.97)
-* [Beautiful apps made possible and easy with Windows.UI](https://blogs.windows.com/buildingapps/2016/08/23/beautiful-apps-made-possible-and-easy-with-windows-ui/#GBREkRSBwsRvi2uL.97)
-* [Polishing your app with animation and audio cues](https://blogs.windows.com/buildingapps/2016/08/09/polishing-your-app-with-animations-and-audio-cues/#hziKxt2xPwUE1oqU.97) 
-* [Adding color to your design](https://blogs.windows.com/buildingapps/2016/07/28/adding-color-to-your-design/#HcPqMlfPsuKETOIo.97)
-
-<hr>
-
-## <a name="finding-help-in-the-dev-center"></a>Finding help in the Dev Center
-
-The [Microsoft Dev Center](http://devcenter.microsoft.com) contains a mountain of documentation for many different tools, frameworks and platforms. When you are searching for topics and samples, you should make sure you are reading UWP specific content. How can you be sure you're reading the right content?
-Conceptual content, that is, non-API reference content, will have UWP in the topic's URL. API content will have a path that includes Windows Runtime APIs. 
-
-![An example UWP conceptual topic](images/devcenter-topic2.png)
-
-![An example UWP reference topic](images/devcenter-topic1.png)
-
-When using a search engine, appending "Windows app development" to your search string will more often than not lead you to UWP content.
-
+* [Animations avec la couche visuelle](https://blogs.windows.com/buildingapps/2016/09/16/animations-with-the-visual-layer/#JM2XkQcL7MRSXe3X.97)
+* [Interopérabilité entre XAML et la couche visuelle](https://blogs.windows.com/buildingapps/2016/08/26/interop-between-xaml-and-the-visual-layer/#ue6O7MWpqrVFE81K.97)
+* [Création d’effets magnifiques pour UWP](https://blogs.windows.com/buildingapps/2016/09/12/creating-beautiful-effects-for-uwp/#85jsfw6PFXX825rR.97)
+* [Conception simplifiée d’applications soignées Windows.UI](https://blogs.windows.com/buildingapps/2016/08/23/beautiful-apps-made-possible-and-easy-with-windows-ui/#GBREkRSBwsRvi2uL.97)
+* [Amélioration de votre application avec l’animation et les signaux audio](https://blogs.windows.com/buildingapps/2016/08/09/polishing-your-app-with-animations-and-audio-cues/#hziKxt2xPwUE1oqU.97) 
+* [Ajout de couleurs à votre conception](https://blogs.windows.com/buildingapps/2016/07/28/adding-color-to-your-design/#HcPqMlfPsuKETOIo.97)
 
 <hr>
 
+## <a name="finding-help-in-the-dev-center"></a>Accès à l’aide dans le Centre de développement
 
-## <a name="important-dev-center-topics"></a>Important Dev Center topics
+Le [Centre de développement Microsoft](http://devcenter.microsoft.com) propose une documentation riche et variée pour divers outils, infrastructures et plateformes. Quand vous recherchez des rubriques et des exemple, vérifiez qu’elles portent bien sur UWP. Comment s’assurer que vous lisez le bon contenu&nbsp;?
+Le contenu conceptuel, autrement dit, le contenu de référence hors API, est reconnaissable à la présence du terme «&nbsp;UWP&nbsp;» dans l’URL des rubriques. Le chemin d’accès au contenu sur les API contient«&nbsp;API Windows Runtime&nbsp;». 
 
-Here is a list of the key sections of content in the DevCenter. 
+![Exemple de rubrique conceptuelle UWP](images/devcenter-topic2.png)
+
+![Exemple de rubrique d’informations de référence sur UWP](images/devcenter-topic1.png)
+
+Si vous utilisez un moteur de recherche, le fait d’ajouter «&nbsp;Développement d’applications Windows&nbsp;» à votre chaîne de recherche vous conduira la plupart du temps à du contenu UWP.
+
+
+<hr>
+
+
+## <a name="important-dev-center-topics"></a>Rubriques importantes du Centre de développement
+
+Voici la liste des principales sections de contenu dans le Centre de développement. 
 
 
 <table style="width:100%">
@@ -117,46 +117,46 @@ Here is a list of the key sections of content in the DevCenter.
 <tbody>
 
 <tr class="even" style="background-color: #f2f2f2">
-<td align="left"><strong>Design</strong></td>
-<td align="left"><a href="http://go.microsoft.com/fwlink/p/?LinkId=533896">Design guidelines for UWP apps.</a></td>
+<td align="left"><strong>Conception</strong></td>
+<td align="left"><a href="http://go.microsoft.com/fwlink/p/?LinkId=533896">Recommandations en matière de conception pour les applications UWP.</a></td>
 </tr>
 
 
 <tr class="odd" style="background-color: #ffffff">
-<td align="left"><strong>Develop</strong></td>
-<td align="left"><a href="http://go.microsoft.com/fwlink/p/?LinkId=529575">Detailed info and coding examples for the many of the features available to your app.</a></td>
+<td align="left"><strong>Développement</strong></td>
+<td align="left"><a href="http://go.microsoft.com/fwlink/p/?LinkId=529575">Informations détaillées et exemples de codage pour la plupart des fonctionnalités accessibles à votre application.</a></td>
 </tr>
 <tr class="even" style="background-color: #f2f2f2">
-<td align="left"><strong>Language reference</strong></td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/apps/bg124285.aspx">The programming languages available for UWP development.</a></td>
+<td align="left"><strong>Informations de référence sur les langages</strong></td>
+<td align="left"><a href="https://msdn.microsoft.com/library/windows/apps/bg124285.aspx">Langages de programmation disponibles pour le développement UWP.</a></td>
 </tr>
 <tr class="odd" style="background-color: #ffffff">
-<td align="left"><strong>Games</strong></td>
-<td align="left"><a href="http://go.microsoft.com/fwlink/p/?LinkId=534184">Developing games with DirectX.</a></td>
+<td align="left"><strong>Jeux</strong></td>
+<td align="left"><a href="http://go.microsoft.com/fwlink/p/?LinkId=534184">Développement de jeux avec DirectX.</a></td>
 </tr>
 <tr class="even" style="background-color: #f2f2f2">
-<td align="left"><strong>Internet of Things</strong></td>
-<td align="left"><a href="http://go.microsoft.com/fwlink/p/?LinkId=534186">Building your own connected devices.</a></td>
+<td align="left"><strong>IoT (Internet des objets)</strong></td>
+<td align="left"><a href="http://go.microsoft.com/fwlink/p/?LinkId=534186">Création de vos propres appareils connectés.</a></td>
 </tr>
 <tr class="odd" style="background-color: #ffffff">
-<td align="left"><strong>Porting</strong></td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/apps/Mt238321">Leverage your Android and iOS skills to quickly make UWP apps.</a></td>
+<td align="left"><strong>Portage</strong></td>
+<td align="left"><a href="https://msdn.microsoft.com/library/windows/apps/Mt238321">Exploitez vos compétences iOS et Android pour créer rapidement des applications UWP.</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>Windows Bridges</strong></td>
-<td align="left"><a href="https://developer.microsoft.com/windows/bridges">Tools for updating older apps and iOS apps to UWP.</a></td>
+<td align="left"><strong>Ponts Windows</strong></td>
+<td align="left"><a href="https://developer.microsoft.com/windows/bridges">Outils destinés à mettre à jour les anciennes applications et les applications iOS vers UWP.</a></td>
 </tr>
 <tr class="odd" style="background-color: #ffffff">
 <td align="left"><strong>Xamarin</strong></td>
-<td align="left"><a href="https://www.xamarin.com">Use C# to write apps for iOS, Android and Windows 10.</a></td>
+<td align="left"><a href="https://www.xamarin.com">Utilisez C# pour écrire des applications pour iOS, Android et Windows&nbsp;10.</a></td>
 </tr>
 <tr class="odd" style="background-color: #ffffff">
-<td align="left"><strong>Task snippets</strong></td>
-<td align="left"><a href="https://github.com/Microsoft/Windows-task-snippets">Ready-to-use code that accomplish small but useful tasks.</a></td>
+<td align="left"><strong>Extraits de tâches</strong></td>
+<td align="left"><a href="https://github.com/Microsoft/Windows-task-snippets">Code prêt à l’emploi qui accomplit des tâches simples mais utiles.</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>How-to topics</strong></td>
-<td align="left"><a href="https://developer.microsoft.com/windows/develop">Sample code covering specific UWP features.</a></td>
+<td align="left"><strong>Rubriques de procédures</strong></td>
+<td align="left"><a href="https://developer.microsoft.com/windows/develop">Exemple de code portant sur des fonctionnalités UWP spécifiques.</a></td>
 </tr>
 </table>
 

@@ -1,72 +1,72 @@
 ---
 author: scottmill
 ms.assetid: a2751e22-6842-073a-daec-425fb981bafe
-title: Visual Layer
-description: The Windows.UI.Composition API gives you access to the composition layer between the framework layer (XAML), and the graphics layer (DirectX).
+title: Couche visuelle
+description: "L’API Windows.UI.Composition vous donne accès à la couche de composition comprise entre la couche d’infrastructure (XAML) et la couche graphique (DirectX)."
 translationtype: Human Translation
 ms.sourcegitcommit: 9ea05f7ba76c7813b200a4c8cd021613f980355d
 ms.openlocfilehash: de6fe0688bec196fc90433ab9274f2e4c4fd9b90
 
 ---
-# <a name="visual-layer"></a>Visual Layer
+# <a name="visual-layer"></a>Couche visuelle
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows&nbsp;10. Pour les articles sur Windows&nbsp;8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-In Windows 10, significant work was done to create a new unified compositor and rendering engine for all Windows applications, be it desktop or mobile. A result of that work was the unified Composition WinRT API called Windows.UI.Composition that offers access to new lightweight Composition objects along with new Compositor driven Animations and Effects.
+Dans Windows&nbsp;10, un travail considérable a été effectué pour créer un compositeur unifié et un moteur de rendu pour toutes les applications Windows, qu’elles soient pour ordinateurs de bureau ou pour appareils mobiles. Conséquence de ce travail, l’API WinRT Composition unifiée, appelée Windows.UI.Composition, qui permet d’accéder à de nouveaux objets de composition légers et aux animations et effets du nouveau compositeur.
 
-Windows.UI.Composition is a declarative, [Retained-Mode](https://msdn.microsoft.com/library/windows/desktop/ff684178.aspx) API that can be called from any Universal Windows Platform (UWP) Application to create composition objects, animations and effects directly in an application. The API is a powerful supplement to existing frameworks such as XAML to give developers of UWP applications a familiar C# surface to add to their application. These APIs can also be used to create DX style framework-less applications.
+Windows.UI.Composition est une API déclarative [en mode retenu](https://msdn.microsoft.com/library/windows/desktop/ff684178.aspx) qui peut être appelée à partir de toutes les applications UWP créer des objets, des animations et des effets de composition directement dans une application. L’API est un puissant complément des infrastructures existantes, par exemple XAML, qui fournit aux développeurs d’applications UWP une surface C# familière à ajouter dans leur application. Ces API peuvent également être utilisées pour créer des applications reposant sur moins d’infrastructure de style DX.
 
-A XAML developer can “drop down” to the composition layer in C# to do custom work in the composition layer using WinRT, rather than dropping all the way down to the graphics layer and using DirectX and C++ for any custom UI work. This technique can be used to animate an existing element using Composition API's, or to augment a UI by creating a "Visual Island" of Windows.UI.Composition content within the XAML element tree.
+Un développeur XAML peut «&nbsp;dérouler&nbsp;» jusqu’à la couche de composition en C# pour réaliser un travail personnalisé dans la couche de composition à l’aide de WinRT au lieu d’atteindre la couche graphique et d’utiliser DirectX et C++ pour effectuer des tâches personnalisées de l’interface utilisateur. Cette technique permet d’animer un élément à l’aide d’API de composition ou d’enrichir une interface utilisateur en créant une «&nbsp;île visuelle&nbsp;» de contenu Windows.UI.Composition dans l’arborescence d’éléments XAML.
 
-![UI framework layering: the framework layer (Windows.UI.XAML) is built on the visual layer (Windows.UI.Composition) which is build on the graphics layer (DirectX)](images/layers-win-ui-composition.png)
-## <a name="span-idcompositionobjectsandthecompositorspanspan-idcompositionobjectsandthecompositorspanspan-idcompositionobjectsandthecompositorspancomposition-objects-and-the-compositor"></a><span id="Composition_Objects_and_The_Compositor"></span><span id="composition_objects_and_the_compositor"></span><span id="COMPOSITION_OBJECTS_AND_THE_COMPOSITOR"></span>Composition Objects and the Compositor
+![Couche d’infrastructure de l’interface utilisateur&nbsp;: la couche d’infrastructure (Windows.UI.XAML) s’appuie sur la couche visuelle (Windows.UI.Composition) qui repose sur la couche graphique (DirectX).](images/layers-win-ui-composition.png)
+## <a name="span-idcompositionobjectsandthecompositorspanspan-idcompositionobjectsandthecompositorspanspan-idcompositionobjectsandthecompositorspancomposition-objects-and-the-compositor"></a><span id="Composition_Objects_and_The_Compositor"></span><span id="composition_objects_and_the_compositor"></span><span id="COMPOSITION_OBJECTS_AND_THE_COMPOSITOR"></span>Objets de composition et compositeur
 
-Composition objects are created by the [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) which acts as a factory for composition objects. The compositor can create [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) objects, which allow for the creation of a visual tree structure on which all other features and Composition objects in the API use and build on.
+Les objets de composition sont créés par le [**compositeur**](https://msdn.microsoft.com/library/windows/apps/Dn706789) qui sert de fabrique pour les objets de composition. Le compositeur peut créer des objets [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858), qui autorisent la création d’une structure arborescente d’éléments visuels sur laquelle toutes les autres fonctionnalités et tous les objets de composition de l’API reposent.
 
-The API allows developers to define and create one or many [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) objects each representing a single node in a Visual tree.
+L’API permet aux développeurs de définir et de créer un ou plusieurs objets [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858), qui représentent chacun un nœud unique dans une arborescence d’éléments visuels.
 
-Visuals can be containers for other Visuals or can host content Visuals. The API allows for ease of use by providing a clear set of [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) objects for specific tasks that exist in a hierarchy:
+Les éléments visuels peuvent être des conteneurs d’autres éléments visuels. Ils peuvent également héberger des éléments visuels de contenu. L’API permet une utilisation aisée en fournissant un ensemble clair d’objets [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) destiné à des tâches spécifiques qui existent dans une hiérarchie :
 
--   [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) – The base object. The majority of the properties are here, and inherited by the other Visual objects.
--   [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) – Derives from [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858), and adds the ability to insert child visuals.
--   [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) – Derives from [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810), and contains content in the form of images, effects, and swapchains.
--   [**LayerVisual**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.layervisual.aspx) - A ContainerVisual whose children are flattened into a single layer.  
--   [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) – The object factory that manages the relationship between an application and the system compositor process.
+-   [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) : objet de base. La plupart des propriétés sont répertoriées ici et héritées par les autres objets visuels.
+-   [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) : dérive de [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858), et ajoute la possibilité d’insérer des éléments visuels enfants.
+-   [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433)&nbsp;: dérive de [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810), et contient des images, des effets et des chaînes de permutation.
+-   [**LayerVisual**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.layervisual.aspx)&nbsp;: ContainerVisual dont les enfants sont aplatis en une seule couche.  
+-   [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789)&nbsp;: fabrique d’objet qui gère la relation entre une application et le processus de composition du système.
 
-The compositor is also a factory for a number of other composition objects used to clip or transform visuals in the tree as well as a rich set of animations and effects.
+Le compositeur est également une fabrique pour plusieurs autres objets de composition utilisés pour découper ou transformer des éléments visuels dans l’arborescence, ainsi qu’un riche ensemble d’animations et d’effets.
 
-## <a name="span-ideffectssystemspanspan-ideffectssystemspanspan-ideffectssystemspaneffects-system"></a><span id="Effects_System"></span><span id="effects_system"></span><span id="EFFECTS_SYSTEM"></span>Effects System
+## <a name="span-ideffectssystemspanspan-ideffectssystemspanspan-ideffectssystemspaneffects-system"></a><span id="Effects_System"></span><span id="effects_system"></span><span id="EFFECTS_SYSTEM"></span>Système d’effets
 
-Windows.UI.Composition supports real time effects that can be animated, customized and chained. Effects include 2D affine transforms, arithmetic composites, blends, color source, composite, contrast, exposure, grayscale, gamma transfer, hue rotate, invert, saturate, sepia, temperature and tint.
+Windows.UI.Composition prend en charge les effets en temps réel qui peuvent être animés, personnalisés et enchaînés. Par effets, on entend transformation affine 2D, composite arithmétique, fusion, source de couleur, composite, contraste, exposition, nuances de gris, transfert gamma, rotation teinte, inversion, température, saturation, sépia et teinte.
 
-For more information, see the [Composition Effects](composition-effects.md) overview.
+Pour plus d’informations, consultez la vue d’ensemble [Effets de composition](composition-effects.md).
 
-## <a name="span-idanimationsystemspanspan-idanimationsystemspanspan-idanimationsystemspananimation-system"></a><span id="Animation_System"></span><span id="animation_system"></span><span id="ANIMATION_SYSTEM"></span>Animation System
+## <a name="span-idanimationsystemspanspan-idanimationsystemspanspan-idanimationsystemspananimation-system"></a><span id="Animation_System"></span><span id="animation_system"></span><span id="ANIMATION_SYSTEM"></span>Système d’animation
 
-Windows.UI.Composition contains an expressive, framework agnostic animation system that allows you to set up two types of Animations: key frame animations and expression animations. These are used to move visual objects, drive a transform or a clip, or animate an effect. By running directly in the compositor process, this ensures smoothness and scale, letting you run large numbers of concurrent, unique animations.
+Windows.UI.Composition contient un système d’animations expressif et indépendant de l’infrastructure, qui vous permet de configurer deux&nbsp;types d’animation&nbsp;: par images clés et par expressions. Elles permettent de déplacer des objets visuels, d’effectuer une transformation ou une découpe, ou d’animer un effet. L’exécution directe dans le processus de composition garantit fluidité et mise à l’échelle, car vous pouvez exécuter un grand nombre d’animations simultanées uniques.
 
-For more information, see the [Composition animations](composition-animation.md) overview.
+Pour plus d’informations, consultez la vue d’ensemble [Animations de composition](composition-animation.md).
 
-## <a name="span-idxamlinteroperationspanspan-idxamlinteroperationspanspan-idxamlinteroperationspanxaml-interoperation"></a><span id="XAML_Interoperation"></span><span id="xaml_interoperation"></span><span id="XAML_INTEROPERATION"></span>XAML Interoperation
+## <a name="span-idxamlinteroperationspanspan-idxamlinteroperationspanspan-idxamlinteroperationspanxaml-interoperation"></a><span id="XAML_Interoperation"></span><span id="xaml_interoperation"></span><span id="XAML_INTEROPERATION"></span>Interopérabilité du code XAML
 
-In addition to creating a visual tree from scratch, the Composition API can interoperate with an existing XAML UI using the [**ElementCompositionPreview**](https://msdn.microsoft.com/library/windows/apps/Mt608976) class in [**Windows.UI.Xaml.Hosting**](https://msdn.microsoft.com/library/windows/apps/Hh701908).
+En plus de créer une arborescence de visuels de toutes pièces, l’API Composition peut interagir avec une interface utilisateur&nbsp;XAML à l’aide de la classe [**ElementCompositionPreview**](https://msdn.microsoft.com/library/windows/apps/Mt608976) dans [**Windows.UI.Xaml.Hosting**](https://msdn.microsoft.com/library/windows/apps/Hh701908).
 
-- [**ElementCompositionPreview.GetElementVisual()**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): Get the backing Visual of an element to animate it using Composition API's
-- [**ElementCompositionPreview.SetChildVisual()**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual): Add a "Visual island" of Composition content to a XAML tree.
-- [**ElementCompositionPreview.GetScrollViewerManipulationPropertySet()**](https://msdn.microsoft.com/library/windows/apps/mt608980.aspx): Use manipulation of a [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx) as input to a Composition animation
+- [**ElementCompositionPreview.GetElementVisual()**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual)&nbsp;: obtenez le visuel sous-jacent d’un élément pour l’animer à l’aide d’API Composition.
+- [**ElementCompositionPreview.SetChildVisual()**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual)&nbsp;: ajoutez une «&nbsp;île visuelle&nbsp;» de contenu de composition à une arborescence XAML.
+- [**ElementCompositionPreview.GetScrollViewerManipulationPropertySet()**](https://msdn.microsoft.com/library/windows/apps/mt608980.aspx)&nbsp;: utilisez la manipulation d’un élément [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx) comme entrée d’une animation de composition.
 
 
-**Note**  
-This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+**Remarque**  
+Cet article s’adresse aux développeurs de Windows&nbsp;10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows&nbsp;8.x ou Windows&nbsp;Phone&nbsp;8.x, consultez la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
-## <a name="span-idadditionalresourcesspanspan-idadditionalresourcesspanspan-idadditionalresourcesspanadditional-resources"></a><span id="Additional_Resources_"></span><span id="additional_resources_"></span><span id="ADDITIONAL_RESOURCES_"></span>Additional Resources:
+## <a name="span-idadditionalresourcesspanspan-idadditionalresourcesspanspan-idadditionalresourcesspanadditional-resources"></a><span id="Additional_Resources_"></span><span id="additional_resources_"></span><span id="ADDITIONAL_RESOURCES_"></span>Ressources supplémentaires&nbsp;:
 
--   Read Kenny Kerr's MSDN Article on this API: [Graphics and Animation - Windows Composition Turns 10](https://msdn.microsoft.com/magazine/mt590968)
--   Advanced UI and Composition samples in the [WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs).
--   [**Full reference documentation for the API**](https://msdn.microsoft.com/library/windows/apps/Dn706878).
--   [Known Issues](http://go.microsoft.com/fwlink/?LinkId=823237).
+-   Lisez l’article MSDN de Kenny Kerr sur cette API&nbsp;: [Graphismes et animation&nbsp;: l’API Composition Windows passe à Windows&nbsp;10](https://msdn.microsoft.com/magazine/mt590968)
+-   Exemples d’interface utilisateur et de composition avancés dans le [GitHub WindowsUIDevLabs](https://github.com/microsoft/windowsuidevlabs).
+-   [**Documentation de référence complète pour l’API**](https://msdn.microsoft.com/library/windows/apps/Dn706878).
+-   [Problèmes connus](http://go.microsoft.com/fwlink/?LinkId=823237).
 
  
 

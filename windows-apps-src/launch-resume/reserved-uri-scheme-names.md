@@ -1,24 +1,24 @@
 ---
 author: TylerMSFT
-title: Reserved file and URI scheme names
-description: This topic lists the reserved file and URI scheme names that are not available to your app.
+title: "Noms de schéma d’URI et de fichier réservés"
+description: "Cette rubrique répertorie les noms de schéma d’URI et de fichier réservés, indisponibles pour votre application."
 ms.assetid: 7428C4A2-1380-4EBB-9C2A-7DF7B5C468AE
 translationtype: Human Translation
 ms.sourcegitcommit: 6f46f5973b9c18ffd7c38bd27cee0a0a21be50e5
 ms.openlocfilehash: c514ae4831f21b4c471b0445b3cf54a6a08ff92a
 
 ---
-# <a name="reserved-file-and-uri-scheme-names"></a>Reserved file and URI scheme names
+# <a name="reserved-file-and-uri-scheme-names"></a>Noms de schéma d’URI et de fichier réservés
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows&nbsp;10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-You can use URI associations to automatically launch your app when another app launches a specific URI scheme. But there are some URI associations that you can’t use because they are reserved. If your app registers for a reserved association, that registration will be ignored. This topic lists the reserved file and URI scheme names that are not available to your app.
+Vous pouvez utiliser des associations d’URI pour lancer automatiquement votre application quand une autre application lance un schéma d’URI spécifique. Il existe cependant des associations d’URI que vous ne pouvez pas utiliser, car elles sont réservées. Si votre application s’inscrit pour une association réservée, cette inscription est ignorée. Cette rubrique répertorie les noms de schéma d’URI et de fichier réservés, indisponibles pour votre application.
 
-## <a name="reserved-file-types"></a>Reserved file types
+## <a name="reserved-file-types"></a>Types de fichiers réservés
 
-There are two types of reserved file types: file types reserved for built-in apps and file types reserved for the operating system. When a file type reserved for a built-in app is launched, only the built-in app will launch. Any attempt to register your app with that file type is ignored. Similarly, any attempt to register your app with a file type reserved for the operating system also will be ignored.
+Il existe deux types de fichiers réservés : réservés aux applications intégrées et réservés au système d’exploitation. En cas de lancement d’un type de fichier réservé pour une application intégrée, seule celle-ci est lancée. Toute tentative d’inscription de votre application avec ce type de fichier est ignorée. De même, toute tentative d’inscription de votre application avec un type de fichier réservé au système d’exploitation est également ignorée.
 
-File types reserved for built-in apps
+Types de fichier réservés aux applications intégrées
 
 <table>
 <tr><td>.aac</td><td>.icon</td><td>.pem</td><td>.wdp</td></tr>
@@ -35,12 +35,12 @@ File types reserved for built-in apps
 <tr><td>.ico</td><td>.p7b</td><td>.wav</td><td></td></tr>
 </table> 
 
-## <a name="file-types-reserved-for-the-operating-system"></a>File types reserved for the operating system
+## <a name="file-types-reserved-for-the-operating-system"></a>Types de fichier réservés au système d’exploitation
 
-The following file types are reserved for the operating system
+Les types de fichiers suivants sont réservés au système d’exploitation
 
 <table>
-<tr><td>.accountpicture-ms</td><td>its</td><td>.ops</td><td>.url</td></tr>
+<tr><td>.accountpicture-ms</td><td>.its</td><td>.ops</td><td>.url</td></tr>
 <tr><td>.ade</td><td>.jar</td><td>.pcd</td><td>.vb</td></tr>
 <tr><td>.adp</td><td>.js</td><td>.pif</td><td>.vbe</td></tr>
 <tr><td>.app</td><td>.jse</td><td>.pl</td><td>.vbp</td></tr>
@@ -78,7 +78,7 @@ The following file types are reserved for the operating system
 <tr><td>.isp</td><td>.ocx</td><td>.ttf</td><td></td></tr>
 </table>
 
-## <a name="reserved-uri-scheme-names"></a>Reserved URI scheme names
+## <a name="reserved-uri-scheme-names"></a>Noms de schéma d’URI réservés
 
 <table>
 <tr><td>application.manifest</td><td>internetshortcut</td><td>ms-settings:network-mobilehotspot</td><td>shbfile</td></tr>

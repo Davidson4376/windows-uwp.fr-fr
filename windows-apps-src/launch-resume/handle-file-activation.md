@@ -1,7 +1,7 @@
 ---
 author: TylerMSFT
-title: Handle file activation
-description: An app can register to become the default handler for a certain file type.
+title: "Gérer l’activation des fichiers"
+description: "Une application peut s’inscrire afin de devenir le gestionnaire par défaut pour un certain type de fichier."
 ms.assetid: A0F914C5-62BC-4FF7-9236-E34C5277C363
 translationtype: Human Translation
 ms.sourcegitcommit: ed7aee6add80d31b48006d9dec9e207c449a1912
@@ -9,49 +9,49 @@ ms.openlocfilehash: ffcfa8991e9eb73b8d6a47bb7dd1cd23220097e0
 
 ---
 
-# <a name="handle-file-activation"></a>Handle file activation
+# <a name="handle-file-activation"></a>Gérer l’activation des fichiers
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows&nbsp;10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-**Important APIs**
+**API importantes**
 
 -   [**Windows.ApplicationModel.Activation.FileActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224716)
 -   [**Windows.UI.Xaml.Application.OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331)
 
-An app can register to become the default handler for a certain file type. Both Windows desktop applications and Universal Windows Platform (UWP) apps can register to be a default file handler. If the user chooses your app as the default handler for a certain file type, your app will be activated when that type of file is launched.
+Une application peut s’inscrire afin de devenir le gestionnaire par défaut pour un certain type de fichier. Tant les applications de plateforme Windows classique (CWP) que les applications de plateforme Windows universelle (UWP) peuvent s’inscrire pour devenir gestionnaire de fichiers par défaut. Si l’utilisateur choisit votre application en tant que gestionnaire par défaut pour un certain type de fichier, celle-ci sera activée lors du lancement de ce type de fichier.
 
-We recommend that you only register for a file type if you expect to handle all file launches for that type of file. If your app only needs to use the file type internally, then you don't need to register to be the default handler. If you do choose to register for a file type, you must provide the end user with the functionality that is expected when your app is activated for that file type. For example, a picture viewer app may register to display a .jpg file. For more info on file associations, see [Guidelines for file types and URIs](https://msdn.microsoft.com/library/windows/apps/hh700321).
+Nous vous recommandons de vous inscrire uniquement pour un type de fichier si vous pensez gérer tous les lancements de fichiers pour ce type. Si votre application nécessite uniquement d’utiliser ce type de fichier en interne, vous ne devez pas vous inscrire pour devenir le gestionnaire par défaut. Si vous choisissez de vous inscrire pour un type de fichier, vous devez fournir à l’utilisateur final la fonctionnalité attendue lorsque votre application est activée pour ce type de fichier. Par exemple, une visionneuse d’images doit s’inscrire pour afficher un fichier .jpg. Pour plus d’informations sur les associations de fichiers, voir [Recommandations en matière de types de fichier et d’URI](https://msdn.microsoft.com/library/windows/apps/hh700321).
 
-These steps show how to register for a custom file type, .alsdk, and how to activate your app when the user launches an .alsdk file.
+Ces étapes montrent comment s’inscrire pour un type de fichier personnalisé, alsdk, et comment activer votre application quand l’utilisateur lance un fichier alsdk.
 
-> **Note**  In UWP apps, certain URIs and file extensions are reserved for use by built-in apps and the operating system. Attempts to register your app with a reserved URI or file extension will be ignored. For more information, see [Reserved file and URI scheme names](reserved-uri-scheme-names.md).
+> **Remarque** Dans les applications UWP, certains URI et certaines extensions de fichier ne peuvent être utilisés que par des applications intégrées et le système d’exploitation. Toute tentative d’inscription de votre application avec une extension de fichier ou un URI réservés sera ignorée. Pour plus d’informations, voir [Noms de schéma d’URI et de fichier réservé](reserved-uri-scheme-names.md).
 
-## <a name="step-1-specify-the-extension-point-in-the-package-manifest"></a>Step 1: Specify the extension point in the package manifest
+## <a name="step-1-specify-the-extension-point-in-the-package-manifest"></a>Étape 1 : spécifier le point d’extension dans le manifeste du package
 
 
-The app receives activation events only for the file extensions listed in the package manifest. Here's how you indicate that your app handles the files with the `.alsdk` extension.
+L’application reçoit des événements d’activation uniquement pour les extensions de fichiers répertoriées dans le manifeste du package. Procédez comme suit pour indiquer que votre application gère les fichiers portant l’extension `.alsdk`.
 
-1.  In the **Solution Explorer**, double-click package.appxmanifest to open the manifest designer. Select the **Declarations** tab and in the **Available Declarations** drop-down, select **File Type Associations** and then click **Add**. See [Programmatic Identifiers](https://msdn.microsoft.com/library/windows/desktop/cc144152) for more details of identifiers used by file associations.
+1.  Dans l’**Explorateur de solutions**, double-cliquez sur package.appxmanifest pour ouvrir le concepteur de manifeste. Sélectionnez l’onglet **Déclarations**. Dans la liste déroulante **Déclarations disponibles**, sélectionnez **Associations de types de fichier**, puis cliquez sur **Ajouter**. Pour plus d’informations sur les identificateurs utilisés par les associations de fichiers, voir [Identificateurs programmatiques](https://msdn.microsoft.com/library/windows/desktop/cc144152).
 
-    Here is a brief description of each of the fields that you may fill in the manifest designer:
+    Voici une brève description de chacun des champs que vous pouvez remplir dans le concepteur de manifeste&nbsp;:
 
-| Field | Description |
+| Champ | Description |
 |------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Display Name** | Specify the display name for a group of file types. The display name is used to identify the file type in the [Set Default Programs](https://msdn.microsoft.com/library/windows/desktop/cc144154) on the **Control Panel**. |
-| **Logo** | Specify the logo that is used to identify the file type on the desktop and in the [Set Default Programs](https://msdn.microsoft.com/library/windows/desktop/cc144154) on the **Control Panel**. If no Logo is specified, the application’s small logo is used. |
-| **Info Tip** | Specify the [info tip](https://msdn.microsoft.com/library/windows/desktop/cc144152) for a group of file types. This tool tip text appears when the user hovers on the icon for a file of this type. |
-| **Name** | Choose a name for a group of file types that share the same display name, logo, info tip, and edit flags. Choose a group name that can stay the same across app updates. **Note**  The Name must be in all lower case letters. |
-| **Content Type** | Specify the MIME content type, such as **image/jpeg**, for a particular file type. **Important Note about allowed content types:** Here is an alphabetic list of MIME content types that you cannot enter into the package manifest because they are either reserved or forbidden: **application/force-download**, **application/octet-stream**, **application/unknown**, **application/x-msdownload**. |
-| **File type** | Specify the file type to register for, preceded by a period, for example, “.jpeg”. **Reserved and forbidden file types:** See [Reserved URI scheme names and file types](reserved-uri-scheme-names.md) for an alphabetic list of file types for built-in apps that you can't register for your UWP apps because they are either reserved or forbidden. |
+| **Nom complet** | Spécifiez le nom complet d’un groupe de types de fichiers. Le nom d’affichage sert à identifier le type de fichier dans l’option [Définir les programmes par défaut](https://msdn.microsoft.com/library/windows/desktop/cc144154) du **Panneau de configuration**. |
+| **Logo** | Spécifiez le logo utilisé pour identifier le type de fichier sur le Bureau et dans l’option [Définir les programmes par défaut](https://msdn.microsoft.com/library/windows/desktop/cc144154) du **Panneau de configuration**. Si aucun logo n’est spécifié, le petit logo de l’application est utilisé. |
+| **Info-bulle** | Spécifiez l’[info-bulle](https://msdn.microsoft.com/library/windows/desktop/cc144152) d’un groupe de types de fichier. Cette info-bulle s’affiche quand l’utilisateur pointe sur l’icône d’un fichier de ce type avec la souris. |
+| **Nom** | Choisissez un nom pour un groupe de types de fichiers partageant les mêmes nom complet, logo, info-bulle et indicateurs de modification. Choisissez un nom de groupe pouvant rester le même sur toutes les applications à mettre à jour. **Remarque** Le nom doit être entièrement en minuscules. |
+| **Type de contenu** | Spécifiez le type de contenu MIME, par exemple **image/jpeg**, pour un type de fichier particulier. **Remarque importante sur les types de contenu autorisés&nbsp;:** voici la liste alphabétique des types de contenu MIME que vous ne pouvez pas inclure dans le manifeste du package, car ils sont réservés ou interdits&nbsp;: **application/force-download**, **application/octet-stream**, **application/unknown**, **application/x-msdownload**. |
+| **Type de fichier** | Indiquez le type de fichier à inscrire, précédé d’un point (par exemple, «&nbsp;.jpeg&nbsp;»). **Types de fichier réservés et interdits&nbsp;:** pour obtenir la liste alphabétique des types de fichier des applications intégrées que vous ne pouvez pas inscrire dans vos applications&nbsp;UWP parce qu’ils sont réservés ou interdits, consultez [Noms de schéma d’URI et de fichier réservés](reserved-uri-scheme-names.md). |
 
-2.  Enter `alsdk` as the **Name**.
-3.  Enter `.alsdk` as the **File Type**.
-4.  Enter “images\\Icon.png” as the Logo.
-5.  Press Ctrl+S to save the change to package.appxmanifest.
+2.  Entrez `alsdk` dans **Nom**.
+3.  Entrez `.alsdk` comme **Type de fichier**.
+4.  Entrez «&nbsp;images\Icon.png&nbsp;» comme Logo.
+5.  Appuyez sur Ctrl+S pour enregistrer la modification dans package.appxmanifest.
 
-The steps above add an [**Extension**](https://msdn.microsoft.com/library/windows/apps/br211400) element like this one to the package manifest. The **windows.fileTypeAssociation** category indicates that the app handles files with the `.alsdk` extension.
+Les étapes ci-dessus ajoutent un élément [**Extension**](https://msdn.microsoft.com/library/windows/apps/br211400) tel que celui-ci dans le manifeste du package. La catégorie **windows.fileTypeAssociation** indique que l’application gère les fichiers portant l’extension `.alsdk`.
 
 ```xml
       <Extensions>
@@ -66,23 +66,23 @@ The steps above add an [**Extension**](https://msdn.microsoft.com/library/window
       </Extensions>
 ```
 
-## <a name="step-2-add-the-proper-icons"></a>Step 2: Add the proper icons
+## <a name="step-2-add-the-proper-icons"></a>Étape 2&nbsp;: Ajouter les icônes appropriées
 
 
-Apps that become the default for a file type have their icons displayed in various places throughout the system. For example these icons are shown in:
+Les applications qui deviennent la valeur par défaut d’un type de fichier ont leurs icônes affichées à différents emplacements dans l’ensemble du système. Par exemple, ces icônes s’affichent dans :
 
--   Windows Explorer ItemsView, context menus, and the Ribbon
--   Default programs Control Panel
--   File picker
--   Search results on the Start screen
+-   la vue d’éléments de l’Explorateur Windows, les menus contextuels et le Ruban ;
+-   l’applet Programmes par défaut du Panneau de configuration ;
+-   le sélecteur de fichiers ;
+-   les résultats de recherche sur l’écran d’accueil.
 
-Match the look of the app tile logo and use your app's background color rather than making the icon transparent. Have the logo extend to the edge without padding it. Test your icons on white backgrounds. For example icons, see the [Association launching sample](http://go.microsoft.com/fwlink/p/?LinkID=620490).
-![the solution explorer with a view of the files in the images folder. there are 16, 32, 48, and 256 pixel versions of both ‘icon.targetsize’ and ‘smalltile-sdk’](images/seviewofimages.png)
+Reproduisez l’apparence du logo de la vignette de l’application et utilisez la couleur d’arrière-plan de celle-ci au lieu de rendre l’icône transparente. Faites en sorte que le logo s’étende jusqu’au bord sans remplissage. Testez vos icônes sur des arrière-plans blancs. Pour obtenir des exemples d’icônes, voir [Exemple de lancement d’association](http://go.microsoft.com/fwlink/p/?LinkID=620490).
+![explorateur de solutions avec une vue des fichiers dans le dossier images. il existe des versions de 16, 32, 48 et 256&nbsp;pixels de «&nbsp;icon.targetsize&nbsp;» et de «&nbsp;smalltile-sdk&nbsp;».](images/seviewofimages.png)
 
-## <a name="step-3-handle-the-activated-event"></a>Step 3: Handle the activated event
+## <a name="step-3-handle-the-activated-event"></a>Étape&nbsp;3&nbsp;: Gérer l’événement activé
 
 
-The [**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331) event handler receives all file activation events.
+Le gestionnaire d’événements [**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331) reçoit tous les événements d’activation des fichiers.
 
 > [!div class="tabbedCodeSnippets"]
 ```vb
@@ -111,40 +111,40 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 
     > **Note**  When launched via File Contract, make sure that Back button takes the user back to the screen that launched the app and not to the app's previous content.
 
-It is recommended that apps create a new XAML Frame for each activation event that opens a new page. This way, the navigation backstack for the new XAML Frame will not contain any previous content that the app might have on the current window when suspended. Apps that decide to use a single XAML Frame for Launch and File Contracts should clear the pages on the Frame's navigation journal before navigating to a new page.
+Nous recommandons la création par les applications d’une image XAML pour chaque événement d’activation qui ouvre une nouvelle page. De cette façon, le backstack de navigation pour la nouvelle image XAML ne contient aucune partie du contenu précédent pouvant figurer dans la fenêtre active de l’application au moment de la suspension. Les applications qui décident d’utiliser une seule image XAML pour le lancement et les contrats de fichier doivent effacer les pages du journal de navigation de l’image avant de naviguer vers une nouvelle page.
 
-When launched via File activation, apps should consider including UI that allows the user to go back to the top page of the app.
+En cas de lancement via l’activation de fichier, les applications doivent envisager d’inclure une interface utilisateur permettant à l’utilisateur de revenir à la première page de l’application.
 
-## <a name="remarks"></a>Remarks
+## <a name="remarks"></a>Remarques
 
 
-The files that you receive could come from an untrusted source. We recommend that you validate the content of a file before taking action on it. For more info on input validation, see [Writing Secure Code](http://go.microsoft.com/fwlink/p/?LinkID=142053)
+Les fichiers que vous recevez peuvent provenir d’une source non approuvée. Nous vous recommandons de vérifier le contenu d’un fichier avant d’entreprendre une quelconque action sur ce fichier. Pour plus d’informations sur la validation d’entrée, voir [Écriture de code sécurisé](http://go.microsoft.com/fwlink/p/?LinkID=142053).
 
-> **Note**  This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Remarque** Cet article s’adresse aux développeurs Windows&nbsp;10 qui développent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows&nbsp;8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
-## <a name="related-topics"></a>Related topics
+## <a name="related-topics"></a>Rubriques connexes
 
-**Complete example**
+**Exemple complet**
 
-* [Association launching sample](http://go.microsoft.com/fwlink/p/?LinkID=231484)
+* [Exemple de lancement d’association](http://go.microsoft.com/fwlink/p/?LinkID=231484)
 
 **Concepts**
 
-* [Default Programs](https://msdn.microsoft.com/library/windows/desktop/cc144154)
-* [File Type and Protocol Associations Model](https://msdn.microsoft.com/library/windows/desktop/hh848047)
+* [Programmes par défaut](https://msdn.microsoft.com/library/windows/desktop/cc144154)
+* [Modèle d’associations de types de fichiers et de protocoles](https://msdn.microsoft.com/library/windows/desktop/hh848047)
 
-**Tasks**
+**Tâches**
 
-* [Launch the default app for a file](launch-the-default-app-for-a-file.md)
-* [Handle URI activation](handle-uri-activation.md)
+* [Lancer l’application par défaut d’un fichier](launch-the-default-app-for-a-file.md)
+* [Gérer l’activation des URI](handle-uri-activation.md)
 
-**Guidelines**
+**Recommandations**
 
-* [Guidelines for file types and URIs](https://msdn.microsoft.com/library/windows/apps/hh700321)
+* [Recommandations en matière de types de fichiers et d’URI](https://msdn.microsoft.com/library/windows/apps/hh700321)
 
-**Reference**
+**Référence**
 * [**Windows.ApplicationModel.Activation.FileActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224716)
 * [**Windows.UI.Xaml.Application.OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331)
 

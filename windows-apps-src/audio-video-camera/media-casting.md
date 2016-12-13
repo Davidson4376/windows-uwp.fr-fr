@@ -1,152 +1,152 @@
 ---
 author: drewbatgit
 ms.assetid: 40B97E0C-EB1B-40C2-A022-1AB95DFB085E
-description: This article shows you how to cast media to remote devices from a Universal Windows app.
-title: Media casting
+description: "Cet article vous montre comment procéder à une diffusion multimédia sur des appareils distants à partir d’une application Windows universelle."
+title: "Diffusion multimédia"
 translationtype: Human Translation
 ms.sourcegitcommit: ebcd2f2b28a7cd2a8a9dad16c30239b06e147ec3
 ms.openlocfilehash: fc69e3b5bb814752480fa0151c36ae0a8c783c4e
 
 ---
 
-# <a name="media-casting"></a>Media casting
+# <a name="media-casting"></a>Diffusion multimédia
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows&nbsp;10. Pour les articles sur Windows&nbsp;8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-This article shows you how to cast media to remote devices from a Universal Windows app.
+Cet article vous montre comment effectuer une diffusion multimédia sur des appareils distants à partir d’une application Windows universelle.
 
-## <a name="built-in-media-casting-with-mediaplayerelement"></a>Built-in media casting with MediaPlayerElement
+## <a name="built-in-media-casting-with-mediaplayerelement"></a>Diffusion multimédia intégrée avec MediaPlayerElement
 
-The simplest way to cast media from a Universal Windows app is to use the built-in casting capability of the [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement) control.
+Le moyen le plus simple d’effectuer une diffusion multimédia à partir d’une application Windows universelle consiste à utiliser la fonctionnalité intégrée de diffusion du contrôle [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement).
 
-To allow the user to open a video file to be played in the **MediaPlayerElement** control, add the following namespaces to your project.
+Pour permettre à l’utilisateur d’ouvrir un fichier vidéo à lire dans le contrôle **MediaPlayerElement**, ajoutez les espaces de noms suivants à votre projet.
 
 [!code-cs[BuiltInCastingUsing](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetBuiltInCastingUsing)]
 
-In your app's XAML file, add a **MediaPlayerElement** and set [**AreTransportControlsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn298977) to true.
+Dans le fichier XAML de votre application, ajoutez un élément **MediaPlayerElement** et définissez [**AreTransportControlsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn298977) sur true.
 
 [!code-xml[MediaElement](./code/MediaCasting_RS1/cs/MainPage.xaml#SnippetMediaElement)]
 
-Add a button to let the user initiate picking a file.
+Ajoutez un bouton pour permettre à l’utilisateur de lancer la sélection d’un fichier.
 
 [!code-xml[OpenButton](./code/MediaCasting_RS1/cs/MainPage.xaml#SnippetOpenButton)]
 
-In the [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) event handler for the button, create a new instance of the [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847), add video file types to the [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850) collection, and set the starting location to the user's videos library.
+Dans le gestionnaire d’événements [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) du bouton, créez une instance de la classe [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847), ajoutez des types de fichiers vidéo à la collection [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850) et définissez l’emplacement de démarrage sur la vidéothèque de l’utilisateur.
 
-Call [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) to launch the file picker dialog. When this method returns, the result is a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) object representing the video file. Check to make sure the file isn't null, which it will be if the user cancels the picking operation. Call the file's [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br227221.aspx) method to get an [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) for the file. Finally, create a new **MediaSource** object from the selected file by calling [**CreateFromStorageFile**](https://msdn.microsoft.com/library/windows/apps/dn930909) and assign it to the **MediaPlayerElement** object's [**Source**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement.Source) property to make the video file the video source for the control.
+Appelez [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) pour ouvrir la boîte de dialogue du sélecteur de fichiers. La méthode renvoie un objet [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) représentant le fichier vidéo. Vérifiez que la valeur de ce fichier n’est pas null, ce qui est le cas si l’utilisateur annule l’opération de sélection. Appelez la méthode [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br227221.aspx) du fichier pour obtenir un élément [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) pour le fichier. Enfin, créez un objet **MediaSource** à partir du fichier sélectionné en appelant [**CreateFromStorageFile**](https://msdn.microsoft.com/library/windows/apps/dn930909) et attribuez-le à la propriété [**Source**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement.Source) de l’objet **MediaPlayerElement** pour définir le fichier source du contrôle.
 
 [!code-cs[OpenButtonClick](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetOpenButtonClick)]
 
-Once the video is loaded in the **MediaPlayerElement**, the user can simply press the casting button on the transport controls to launch a built-in dialog that allows them to choose a device to which the loaded media will be cast.
+Une fois la vidéo chargée dans l’élément **MediaPlayerElement**, il suffit à l’utilisateur d’appuyer sur le bouton de diffusion sur les contrôles de transport pour lancer une boîte de dialogue intégrée qui lui permet de choisir un appareil sur lequel diffuser le média chargé.
 
-![mediaelement casting button](images/media-element-casting-button.png)
+![Bouton de diffusion MediaElement](images/media-element-casting-button.png)
 
 > [!NOTE] 
-> Starting with Windows 10, version 1607, it is recommended that you use the **MediaPlayer** class to play media items. The **MediaPlayerElement** is a lightweight XAML control that is used to render the content of a **MediaPlayer** in a XAML page. The **MediaElement** control continues to be supported for backwards compatibility. For more information on using **MediaPlayer** and **MediaPlayerElement** to play media content, see [Play audio and video with MediaPlayer](play-audio-and-video-with-mediaplayer.md). For information on using **MediaSource** and related APIs to work with media content, see [Media items, playlists, and tracks](media-playback-with-mediasource.md).
+> À compter de Windows&nbsp;10, version&nbsp;1607, nous vous recommandons d’utiliser la classe **MediaPlayer** pour lire des éléments multimédias. **MediaPlayerElement** est un contrôle XAML léger utilisé pour afficher le contenu d’un **MediaPlayer** dans une page XAML. Le contrôle **MediaElement** continue d’être pris en charge pour la compatibilité descendante. Pour plus d’informations sur l’utilisation de **MediaPlayer** et **MediaPlayerElement** pour lire du contenu multimédia, voir [Lire du contenu audio et vidéo avec MediaPlayer](play-audio-and-video-with-mediaplayer.md). Pour plus d’informations sur l’utilisation de **MediaSource** et des API associées pour utiliser du contenu multimédia, voir [Éléments, playlists et pistes multimédias](media-playback-with-mediasource.md).
 
-## <a name="media-casting-with-the-castingdevicepicker"></a>Media casting with the CastingDevicePicker
+## <a name="media-casting-with-the-castingdevicepicker"></a>Diffusion multimédia à l’aide de la classe CastingDevicePicker
 
-A second way to cast media to a device is to use the [**CastingDevicePicker**](https://msdn.microsoft.com/library/windows/apps/dn972525). To use this class, include the [**Windows.Media.Casting**](https://msdn.microsoft.com/library/windows/apps/dn972568) namespace in your project.
+L’autre méthode pour procéder à une diffusion multimédia sur un appareil consiste à utiliser la classe [**CastingDevicePicker**](https://msdn.microsoft.com/library/windows/apps/dn972525). Afin de l’utiliser, vous devez inclure l’espace de noms [**Windows.Media.Casting**](https://msdn.microsoft.com/library/windows/apps/dn972568) dans votre projet.
 
 [!code-cs[CastingNamespace](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetCastingNamespace)]
 
-Declare a member variable for the **CastingDevicePicker** object.
+Déclarez une variable de membre pour l’objet **CastingDevicePicker**.
 
 [!code-cs[DeclareCastingPicker](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetDeclareCastingPicker)]
 
-When you page is initialized, create a new instance of the casting picker and set the [**Filter**](https://msdn.microsoft.com/library/windows/apps/dn972540) to [**SupportsVideo**](https://msdn.microsoft.com/library/windows/apps/dn972526) property to indicate that the casting devices listed by the picker should support video. Register a handler for the [**CastingDeviceSelected**](https://msdn.microsoft.com/library/windows/apps/dn972539) event, which is raised when the user picks a device for casting.
+Une fois la page initialisée, créez une instance du sélecteur de diffusion et définissez [**Filter**](https://msdn.microsoft.com/library/windows/apps/dn972540) sur la propriété [**SupportsVideo**](https://msdn.microsoft.com/library/windows/apps/dn972526) pour indiquer que les appareils de diffusion répertoriés par le sélecteur doivent prendre en charge la vidéo. Enregistrez un gestionnaire pour l’événement [**CastingDeviceSelected**](https://msdn.microsoft.com/library/windows/apps/dn972539), qui est déclenché lorsque l’utilisateur sélectionne un appareil pour la diffusion.
 
 [!code-cs[InitCastingPicker](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetInitCastingPicker)]
 
-In your XAML file, add a button to allow the user to launch the picker.
+Dans votre fichier XAML, ajoutez un bouton pour permettre à l’utilisateur de lancer le sélecteur.
 
 [!code-xml[CastPickerButton](./code/MediaCasting_RS1/cs/MainPage.xaml#SnippetCastPickerButton)]
 
-In the **Click** event handler for the button, call [**TransformToVisual**](https://msdn.microsoft.com/library/windows/apps/br208986) to get the transform of a UI element relative to another element. In this example, the transform is the position of the cast picker button relative to the visual root of the application window. Call the [**Show**](https://msdn.microsoft.com/library/windows/apps/dn972542) method of the [**CastingDevicePicker**](https://msdn.microsoft.com/library/windows/apps/dn972525) object to launch the casting picker dialog. Specify the location and dimensions of the cast picker button so that the system can make the dialog fly out from the button that the user pressed.
+Dans le gestionnaire d’événements **Click** du bouton, appelez [**TransformToVisual**](https://msdn.microsoft.com/library/windows/apps/br208986) pour obtenir la transformation d’un élément d’interface utilisateur par rapport à un autre élément. Dans cet exemple, la transformation est la position du bouton du sélecteur de diffusion par rapport à la racine visuelle de la fenêtre d’application. Appelez la méthode [**Show**](https://msdn.microsoft.com/library/windows/apps/dn972542) de l’objet [**CastingDevicePicker**](https://msdn.microsoft.com/library/windows/apps/dn972525) pour lancer la boîte de dialogue du sélecteur de diffusion. Indiquez l’emplacement et les dimensions du bouton du sélecteur de diffusion afin que le système puisse afficher la boîte de dialogue à partir du bouton sur lequel l’utilisateur a appuyé.
 
 [!code-cs[CastPickerButtonClick](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetCastPickerButtonClick)]
 
-In the **CastingDeviceSelected** event handler, call the [**CreateCastingConnection**](https://msdn.microsoft.com/library/windows/apps/dn972547) method of the [**SelectedCastingDevice**](https://msdn.microsoft.com/library/windows/apps/dn972546) property of the event args, which represents the casting device selected by the user. Register handlers for the [**ErrorOccurred**](https://msdn.microsoft.com/library/windows/apps/dn972519) and [**StateChanged**](https://msdn.microsoft.com/library/windows/apps/dn972523) events. Finally, call [**RequestStartCastingAsync**](https://msdn.microsoft.com/library/windows/apps/dn972520) to begin casting, passing in the result to the **MediaPlayerElement** control's **MediaPlayer** object's [**GetAsCastingSource**](https://msdn.microsoft.com/library/windows/apps/dn920012) method to specify that the media to be cast is the content of the **MediaPlayer** associated with the **MediaPlayerElement**.
+Dans le gestionnaire d’événements **CastingDeviceSelected**, appelez la méthode [**CreateCastingConnection**](https://msdn.microsoft.com/library/windows/apps/dn972547) de la propriété [**SelectedCastingDevice**](https://msdn.microsoft.com/library/windows/apps/dn972546) des arguments d’événement, qui représente l’appareil de diffusion sélectionné par l’utilisateur. Enregistrez des gestionnaires pour les événements [**ErrorOccurred**](https://msdn.microsoft.com/library/windows/apps/dn972519) et [**StateChanged**](https://msdn.microsoft.com/library/windows/apps/dn972523). Enfin, appelez [**RequestStartCastingAsync**](https://msdn.microsoft.com/library/windows/apps/dn972520) pour lancer la diffusion en transmettant le résultat à la méthode [**GetAsCastingSource**](https://msdn.microsoft.com/library/windows/apps/dn920012) de l’objet **MediaPlayer** du contrôle **MediaPlayerElement** pour indiquer que le contenu multimédia à diffuser correspond à celui du **MediaPlayer** associé à **MediaPlayerElement**.
 
 > [!NOTE] 
-> The casting connection must be initiated on the UI thread. Since the **CastingDeviceSelected** is not called on the UI thread, you must place these calls inside a call to [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) which causes them to be called on the UI thread.
+> La connexion de la diffusion doit être lancée sur le thread d’interface utilisateur. Étant donné que **CastingDeviceSelected** n’est pas appelé sur le thread d’interface utilisateur, vous devez placer ces appels à l’intérieur d’un appel à [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) pour changer cela.
 
 [!code-cs[CastingDeviceSelected](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetCastingDeviceSelected)]
 
-In the **ErrorOccurred** and **StateChanged** event handlers, you should update your UI to inform the user of the current casting status. These events are discussed in detail in the following section on creating a custom casting device picker.
+Dans les gestionnaires d’événements **ErrorOccurred** et **StateChanged**, vous devez mettre à jour votre interface utilisateur pour informer l’utilisateur de l’état de diffusion actuel. Ces événements sont décrits en détail dans la section suivante portant sur la création d’un sélecteur d’appareil de diffusion personnalisé.
 
 [!code-cs[EmptyStateHandlers](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetEmptyStateHandlers)]
 
-## <a name="media-casting-with-a-custom-device-picker"></a>Media casting with a custom device picker
+## <a name="media-casting-with-a-custom-device-picker"></a>Diffusion multimédia à l’aide d’un sélecteur d’appareil personnalisé
 
-The following section describes how to create your own casting device picker UI by enumerating the casting devices and initiating the connection from your code.
+La section suivante décrit comment créer votre propre interface utilisateur de sélecteur d’appareil de diffusion par l’énumération des appareils de diffusion et le lancement de la connexion à partir de votre code.
 
-To enumerate the available casting devices, include the [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/br225459) namespace in your project.
+Pour énumérer les appareils de diffusion disponibles, incluez l’espace de noms [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/br225459) dans votre projet.
 
 [!code-cs[EnumerationNamespace](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetEnumerationNamespace)]
 
-Add the following controls to your XAML page to implement the rudimentary UI for this example:
+Ajoutez les contrôles suivants à votre page XAML pour implémenter l’interface utilisateur rudimentaire pour cet exemple&nbsp;:
 
--   A button to start the device watcher that looks for available casting devices.
--   A [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) control to provide feedback to the user that casting enumeration is ongoing.
--   A [**ListBox**](https://msdn.microsoft.com/library/windows/apps/br242868) to list the discovered casting devices. Define an [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/br242830) for the control so that we can assign the casting device objects directly to the control and still display the [**FriendlyName**](https://msdn.microsoft.com/library/windows/apps/dn972549) property.
--   A button to allow the user to disconnect the casting device.
+-   Un bouton pour démarrer l’observateur d’appareils qui recherche les appareils de diffusion disponibles.
+-   Un contrôle [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) pour signaler à l’utilisateur que l’énumération de la diffusion est en cours.
+-   Une classe [**ListBox**](https://msdn.microsoft.com/library/windows/apps/br242868) pour répertorier les appareils de diffusion détectés. Définissez une propriété [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/br242830) pour le contrôle afin que nous puissions affecter les objets de l’appareil de diffusion directement au contrôle et toujours afficher la propriété [**FriendlyName**](https://msdn.microsoft.com/library/windows/apps/dn972549).
+-   Un bouton permettant à l’utilisateur de déconnecter l’appareil de diffusion.
 
 [!code-xml[CustomPickerXAML](./code/MediaCasting_RS1/cs/MainPage.xaml#SnippetCustomPickerXAML)]
 
-In your code behind, declare member variables for the [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/br225446) and the [**CastingConnection**](https://msdn.microsoft.com/library/windows/apps/dn972510).
+Dans le code sous-jacent, déclarez des variables de membre pour [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/br225446) et [**CastingConnection**](https://msdn.microsoft.com/library/windows/apps/dn972510).
 
 [!code-cs[DeclareDeviceWatcher](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetDeclareDeviceWatcher)]
 
-In the **Click** handler for the *startWatcherButton*, first update the UI by disabling the button and making the progress ring active while device enumeration is ongoing. Clear the list box of casting devices.
+Dans le gestionnaire **Click** de l’événement *startWatcherButton*, commencez par mettre à jour l’interface utilisateur en désactivant le bouton et en activant l’anneau de progression pendant l’énumération des appareils. Effacez la zone de liste des appareils de diffusion.
 
-Next, create a device watcher by calling [**DeviceInformation.CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/br225427). This method can be used to watch for many different types of devices. Specify that you want to watch for devices that support video casting by using the device selector string returned by [**CastingDevice.GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/dn972551).
+Ensuite, créez un observateur d’appareils en appelant [**DeviceInformation.CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/br225427). Cette méthode peut être utilisée pour observer de nombreux types d’appareils différents. Indiquez que vous souhaitez observer les appareils prenant en charge la diffusion vidéo en utilisant la chaîne de sélecteur d’appareil renvoyée par [**CastingDevice.GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/dn972551).
 
-Finally, register event handlers for the [**Added**](https://msdn.microsoft.com/library/windows/apps/br225450), [**Removed**](https://msdn.microsoft.com/library/windows/apps/br225453), [**EnumerationCompleted**](https://msdn.microsoft.com/library/windows/apps/br225451), and [**Stopped**](https://msdn.microsoft.com/library/windows/apps/br225457) events.
+Enfin, enregistrez des gestionnaires d’événements pour les événements [**Added**](https://msdn.microsoft.com/library/windows/apps/br225450), [**Removed**](https://msdn.microsoft.com/library/windows/apps/br225453), [**EnumerationCompleted**](https://msdn.microsoft.com/library/windows/apps/br225451) et [**Stopped**](https://msdn.microsoft.com/library/windows/apps/br225457).
 
 [!code-cs[StartWatcherButtonClick](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetStartWatcherButtonClick)]
 
-The **Added** event is raised when a new device is discovered by the watcher. In the handler for this event, create a new [**CastingDevice**](https://msdn.microsoft.com/library/windows/apps/dn972524) object by calling [**CastingDevice.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/dn972550) and passing in the ID of the discovered casting device, which is contained in the **DeviceInformation** object passed into the handler.
+L’événement **Added** est déclenché lorsqu’un nouvel appareil est détecté par l’observateur. Dans le gestionnaire de cet événement, créez un objet [**CastingDevice**](https://msdn.microsoft.com/library/windows/apps/dn972524) en appelant [**CastingDevice.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/dn972550) et en transmettant l’ID de l’appareil de diffusion détecté, qui est contenu dans l’objet **DeviceInformation** transmis au gestionnaire.
 
-Add the **CastingDevice** to the casting device **ListBox** so that the user can select it. Because of the [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/br242830) defined in the XAML, the [**FriendlyName**](https://msdn.microsoft.com/library/windows/apps/dn972549) property will be used as the item text for in the list box. Because this event handler is not called on the UI thread, you must update the UI from within a call to [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317).
+Ajoutez le **CastingDevice** à l’appareil de diffusion **ListBox** afin que l’utilisateur puisse le sélectionner. En raison de la propriété [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/br242830) définie dans le code XAML, la propriété [**FriendlyName**](https://msdn.microsoft.com/library/windows/apps/dn972549) est utilisée comme texte d’élément dans la zone de liste. Dans la mesure où ce gestionnaire d’événements n’est pas appelé sur le thread d’interface utilisateur, vous devez mettre à jour l’interface utilisateur à partir d’un appel à [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317).
 
 [!code-cs[WatcherAdded](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetWatcherAdded)]
 
-The **Removed** event is raised when the watcher detects that a casting device is no longer present. Compare the ID property of the **Added** object passed into the handler to the ID of each **Added** in the list box's [**Items**](https://msdn.microsoft.com/library/windows/apps/br242823) collection. If the ID matches, remove that object from the collection. Again, because the UI is being updated, this call must be made from within a **RunAsync** call.
+L’événement **Removed** est déclenché lorsque l’observateur détecte qu’un appareil de diffusion n’est plus présent. Comparez la propriété de l’ID de l’objet **Added** transmis par le biais du gestionnaire à l’ID de chaque **Added** de la collection [**Items**](https://msdn.microsoft.com/library/windows/apps/br242823) de la zone de liste. Si l’ID correspond, supprimez cet objet de la collection. Là encore, dans la mesure où l’interface utilisateur est mise à jour, cet appel doit être effectué depuis un appel **RunAsync**.
 
 [!code-cs[WatcherRemoved](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetWatcherRemoved)]
 
-The **EnumerationCompleted** event is raised when the watcher has finished detecting devices. In the handler for this event, update the UI to let the user know that device enumeration has completed and stop the device watcher by calling [**Stop**](https://msdn.microsoft.com/library/windows/apps/br225456).
+L’événement **EnumerationCompleted** est déclenché lorsque l’observateur a terminé la détection des appareils. Dans le gestionnaire de cet événement, mettez à jour l’interface utilisateur pour informer l’utilisateur que l’énumération des appareils est terminée et arrêter l’observateur en appelant [**Stop**](https://msdn.microsoft.com/library/windows/apps/br225456).
 
 [!code-cs[WatcherEnumerationCompleted](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetWatcherEnumerationCompleted)]
 
-The Stopped event is raised when the device watcher has finished stopping. In the handler for this event, stop the [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) control and reenable the *startWatcherButton* so that the user can restart the device enumeration process.
+L’événement Stopped est déclenché lorsque l’observateur d’appareils a terminé l’arrêt. Dans le gestionnaire de cet événement, arrêtez le contrôle [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) et réactivez le paramètre *startWatcherButton* afin que l’utilisateur puisse redémarrer le processus d’énumération des appareils.
 
 [!code-cs[WatcherStopped](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetWatcherStopped)]
 
-When the user selects one of the casting devices from the list box, the [**SelectionChanged**](https://msdn.microsoft.com/library/windows/apps/br209776) event is raised. It is within this handler that the casting connection will be created and casting will be started.
+L’événement [**SelectionChanged**](https://msdn.microsoft.com/library/windows/apps/br209776) est déclenché, dès que l’utilisateur sélectionne un des appareils de diffusion à partir de la zone de liste. La création de la connexion de la diffusion et le démarrage de la diffusion s’effectuent dans ce gestionnaire.
 
-First, make sure the device watcher is stopped so that device enumeration doesn't interfere with media casting. Create a casting connection by calling [**CreateCastingConnection**](https://msdn.microsoft.com/library/windows/apps/dn972547) on the **CastingDevice** object selected by the user. Add event handlers for the [**StateChanged**](https://msdn.microsoft.com/library/windows/apps/dn972523) and [**ErrorOccurred**](https://msdn.microsoft.com/library/windows/apps/dn972519) events.
+Tout d’abord, assurez-vous que l’observateur d’appareils est arrêté afin que l’énumération des appareils n’interfère pas avec la diffusion multimédia. Créez une connexion de diffusion en appelant [**CreateCastingConnection**](https://msdn.microsoft.com/library/windows/apps/dn972547) sur l’objet **CastingDevice** sélectionné par l’utilisateur. Ajoutez des gestionnaires d’événements pour les événements [**StateChanged**](https://msdn.microsoft.com/library/windows/apps/dn972523) et [**ErrorOccurred**](https://msdn.microsoft.com/library/windows/apps/dn972519).
 
-Start media casting by calling [**RequestStartCastingAsync**](https://msdn.microsoft.com/library/windows/apps/dn972520), passing in the casting source returned by calling the **MediaPlayer** method [**GetAsCastingSource**](https://msdn.microsoft.com/library/windows/apps/dn920012). Finally, make the disconnect button visible to allow the user to stop media casting.
+Lancez la diffusion multimédia en appelant [**RequestStartCastingAsync**](https://msdn.microsoft.com/library/windows/apps/dn972520) et en transmettant la source de diffusion renvoyée en appelant la méthode [**GetAsCastingSource**](https://msdn.microsoft.com/library/windows/apps/dn920012) de **MediaPlayer**. Enfin, faites en sorte que le bouton de déconnexion soit visible pour permettre à l’utilisateur d’arrêter la diffusion multimédia.
 
 [!code-cs[SelectionChanged](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetSelectionChanged)]
 
-In the state changed handler, the action you take depends on the new state of the casting connection:
+Dans le gestionnaire de changement d’état, l’action effectuée dépend du nouvel état de la connexion de diffusion&nbsp;:
 
--   If the state is **Connected** or **Rendering**, make sure the **ProgressRing** control is inactive and the disconnect button is visible.
--   If the state is **Disconnected**, unselect the current casting device in the list box, make the **ProgressRing** control inactive, and hide the disconnect button.
--   If the state is **Connecting**, make the **ProgressRing** control active and hide the disconnect button.
--   If the state is **Disconnecting**, make the **ProgressRing** control active and hide the disconnect button.
+-   Si l’état est **Connected** ou **Rendering**, assurez-vous que le contrôle **ProgressRing** est inactif et que le bouton de déconnexion est visible.
+-   Si l’état est **Disconnected**, désélectionnez l’appareil de diffusion actuel dans la zone de liste, assurez-vous que le contrôle **ProgressRing** est inactif et masquez le bouton de déconnexion.
+-   Si l’état est **Connecting**, activez le contrôle **ProgressRing** et masquez le bouton de déconnexion.
+-   Si l’état est **Disconnecting**, activez le contrôle **ProgressRing** et masquez le bouton de déconnexion.
 
 [!code-cs[StateChanged](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetStateChanged)]
 
-In the handler for the **ErrorOccurred** event, update your UI to let the user know that a casting error occurred and unselect the current **CastingDevice** object in the list box.
+Dans le gestionnaire de l’événement **ErrorOccurred**, mettez à jour votre interface utilisateur pour informer l’utilisateur qu’une erreur de diffusion s’est produite et désélectionnez l’objet **CastingDevice** dans la zone de liste.
 
 [!code-cs[ErrorOccurred](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetErrorOccurred)]
 
-Finally, implement the handler for the disconnect button. Stop media casting and disconnect from the casting device by calling the **CastingConnection** object's [**DisconnectAsync**](https://msdn.microsoft.com/library/windows/apps/dn972518) method. This call must be dispatched to the UI thread by calling [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317).
+Enfin, implémentez le gestionnaire pour le bouton de déconnexion. Arrêtez la diffusion multimédia et déconnectez l’appareil de diffusion en appelant la méthode [**DisconnectAsync**](https://msdn.microsoft.com/library/windows/apps/dn972518) de l’objet **CastingConnection**. Cet appel doit être transmis au thread d’interface utilisateur en appelant [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317).
 
 [!code-cs[DisconnectButton](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetDisconnectButton)]
 

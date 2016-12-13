@@ -1,88 +1,88 @@
 ---
 author: mcleanbyron
 ms.assetid: 
-description: Use this method in the Windows Store analytics API to get detailed data for a specific error for your app.
-title: Get details for an error in your app
+description: "Utilisez cette méthode dans l’API d’analyse du Windows&nbsp;Store pour obtenir les informations concernant une erreur spécifique de votre application."
+title: Obtenir les informations sur une erreur de votre application
 translationtype: Human Translation
 ms.sourcegitcommit: 767097f068630e5ec171415c05d6dc395c8b26b3
 ms.openlocfilehash: cd72e58ec252c556cf0f2e5ce071744e8fac6c9e
 
 ---
 
-# <a name="get-details-for-an-error-in-your-app"></a>Get details for an error in your app
+# <a name="get-details-for-an-error-in-your-app"></a>Obtenir les informations sur une erreur de votre application
 
-Use this method in the Windows Store analytics API to get detailed data for a specific error for your app in JSON format. This method can only retrieve details for errors that occurred in the last 30 days. Detailed error data is also available in the **Failures** section of the [Health report](../publish/health-report.md) in the Windows Dev Center dashboard.
+Utilisez cette méthode dans l’API d’analyse du Windows&nbsp;Store pour obtenir les informations concernant une erreur spécifique de votre application, au format JSON. Cette méthode ne récupère que les informations concernant les erreurs survenues dans les 30&nbsp;derniers jours. Ces informations sont également disponibles dans la section **Échecs** du [rapport d’intégrité](../publish/health-report.md) dans le tableau de bord du Centre de développement Windows.
 
-Before you can use this method, you must first use the [get error reporting data](get-error-reporting-data.md) method to retrieve the ID of the error for which you want to get detailed info.
+Pour utiliser cette méthode, vous devez d’abord utiliser la méthode [Obtenir les données de rapport d’erreurs](get-error-reporting-data.md) afin de récupérer l’ID de l’erreur sur laquelle vous souhaitez des informations détaillées.
 
-## <a name="prerequisites"></a>Prerequisites
-
-
-To use this method, you need to first do the following:
-
-* If you have not done so already, complete all the [prerequisites](access-analytics-data-using-windows-store-services.md#prerequisites) for the Windows Store analytics API.
-* [Obtain an Azure AD access token](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) to use in the request header for this method. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can obtain a new one.
-* Get the ID of the error for which you want to get detailed info. To get this ID, use the [get error reporting data](get-error-reporting-data.md) method and use the **failureHash** value in the response body of that method.
-
-## <a name="request"></a>Request
+## <a name="prerequisites"></a>Conditions préalables
 
 
-### <a name="request-syntax"></a>Request syntax
+Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes&nbsp;:
 
-| Method | Request URI                                                          |
+* Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](access-analytics-data-using-windows-store-services.md#prerequisites) relatives à l’API d’analyse du Windows Store.
+* [Obtenez un jeton d’accès Azure AD](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60&nbsp;minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
+* Récupérez l’ID de l’erreur sur laquelle vous souhaitez des informations détaillées. Pour ce faire, utilisez la méthode [Obtenir les données de rapport d’erreurs](get-error-reporting-data.md) et utilisez la valeur **failureHash** dans le corps de la réponse de cette méthode.
+
+## <a name="request"></a>Requête
+
+
+### <a name="request-syntax"></a>Syntaxe de la requête
+
+| Méthode | URI de la requête                                                          |
 |--------|----------------------------------------------------------------------|
 | GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/failuredetails``` |
 
 <span/> 
 
-### <a name="request-header"></a>Request header
+### <a name="request-header"></a>En-tête de requête
 
-| Header        | Type   | Description                                                                 |
+| En-tête        | Type   | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | Required. The Azure AD access token in the form **Bearer** &lt;*token*&gt;. |
+| Authorization | chaîne | Obligatoire. Jeton d’accès Azure AD sous la forme **Bearer** &lt;*jeton*&gt;. |
 
 <span/> 
 
-### <a name="request-parameters"></a>Request parameters
+### <a name="request-parameters"></a>Paramètres de la requête
 
-| Parameter        | Type   |  Description      |  Required  
+| Paramètre        | Type   |  Description      |  Requis  
 |---------------|--------|---------------|------|
-| applicationId | string | The Store ID of the app for which you want to retrieve detailed error data. The Store ID is available on the [App identity page](../publish/view-app-identity-details.md) of the Dev Center dashboard. An example Store ID is 9WZDNCRFJ3Q8. |  Yes  |
-| failureHash | string | The unique ID of the error for which you want to get detailed info. To get this value for the error you are interested in, use the [get error reporting data](get-error-reporting-data.md) method and use the **failureHash** value in the response body of that method. |  Yes  |
-| startDate | date | The start date in the date range of detailed error data to retrieve. The default is 30 days before the current date. |  No  |
-| endDate | date | The end date in the date range of detailed error data to retrieve. The default is the current date. |  No  |
-| top | int | The number of rows of data to return in the request. The maximum value and the default value if not specified is 10000. If there are more rows in the query, the response body includes a next link that you can use to request the next page of data. |  No  |
-| skip | int | The number of rows to skip in the query. Use this parameter to page through large data sets. For example, top=10 and skip=0 retrieves the first 10 rows of data, top=10 and skip=10 retrieves the next 10 rows of data, and so on. |  No  |
-| filter |string  | One or more statements that filter the rows in the response. For more information, see the [filter fields](#filter-fields) section below. | No   |
-| orderby | string | A statement that orders the result data values. The syntax is <em>orderby=field [order],field [order],...</em>. The <em>field</em> parameter can be one of the following strings:<ul><li><strong>date</strong></li><li><strong>market</strong></li><li><strong>cabId</strong></li><li><strong>cabExpirationTime</strong></li><li><strong>deviceType</strong></li><li><strong>deviceModel</strong></li><li><strong>osVersion</strong></li><li><strong>packageVersion</strong></li><li><strong>osBuild</strong></li></ul><p>The <em>order</em> parameter is optional, and can be <strong>asc</strong> or <strong>desc</strong> to specify ascending or descending order for each field. The default is <strong>asc</strong>.</p><p>Here is an example <em>orderby</em> string: <em>orderby=date,market</em></p> |  No  |
+| applicationId | chaîne | ID Windows&nbsp;Store de l’application dont vous souhaitez récupérer des données d’erreur. L’ID Windows&nbsp;Store est disponible dans la page [Identité de l’application](../publish/view-app-identity-details.md) du tableau de bord du Centre de développement. Exemple d’ID Windows&nbsp;Store&nbsp;: 9WZDNCRFJ3Q8. |  Oui  |
+| failureHash | chaîne | ID de l’erreur sur laquelle vous souhaitez des informations détaillées. Pour obtenir la valeur correspondant à l’erreur qui vous intéresse, utilisez la méthode [Obtenir les données de rapport d’erreurs](get-error-reporting-data.md) et utilisez la valeur **failureHash** dans le corps de la réponse de cette méthode. |  Oui  |
+| startDate | date | Date de début des données à récupérer concernant l’erreur. La valeur par défaut est de 30&nbsp;jours avant la date actuelle. |  Non  |
+| endDate | date | Date de fin des données à récupérer concernant l’erreur. La valeur par défaut est la date actuelle |  Non  |
+| top | entier | Le nombre de lignes de données à renvoyer dans la requête. La valeur maximale et la valeur par défaut en l’absence de définition est 10000. Si la requête comporte davantage de lignes, le corps de la réponse inclut un lien sur lequel vous cliquez pour solliciter la page suivante de données. |  Non  |
+| skip | entier | Le nombre de lignes à ignorer dans la requête. Utilisez ce paramètre pour parcourir de grands ensembles de données. Par exemple, indiquez top=10 et skip=0 pour obtenir les 10&nbsp;premières lignes de données, top=10 et skip=10 pour obtenir les 10&nbsp;lignes suivantes, et ainsi de suite. |  Non  |
+| filter |chaîne  | Une ou plusieurs instructions qui filtrent les lignes de la réponse. Pour plus d’informations, voir la section [Champs de filtre](#filter-fields) ci-dessous. | Non   |
+| orderby | chaîne | Instruction commandant les valeurs des données de résultats. Syntaxe&nbsp;: <em>orderby=field [order],field [order],...</em>. Le paramètre <em>field</em> peut comporter l’une des chaînes suivantes :<ul><li><strong>date</strong></li><li><strong>market</strong></li><li><strong>cabId</strong></li><li><strong>cabExpirationTime</strong></li><li><strong>deviceType</strong></li><li><strong>deviceModel</strong></li><li><strong>osVersion</strong></li><li><strong>packageVersion</strong></li><li><strong>osBuild</strong></li></ul><p>Le paramètre facultatif <em>order</em> peut avoir la valeur <strong>asc</strong> ou <strong>desc</strong> pour spécifier l’ordre croissant ou décroissant de chaque champ. La valeur par défaut est <strong>asc</strong>.</p><p>Voici un exemple de chaîne <em>orderby</em> : <em>orderby=date,market</em></p> |  Non  |
 
 <span/>
  
-### <a name="filter-fields"></a>Filter fields
+### <a name="filter-fields"></a>Champs de filtrage
 
-The *filter* parameter of the request contains one or more statements that filter the rows in the response. Each statement contains a field and value that are associated with the **eq** or **ne** operators, and statements can be combined using **and** or **or**. Here are some example *filter* parameters:
+Le paramètre *filter* de la requête contient une ou plusieurs instructions qui filtrent les lignes de la réponse. Chaque instruction comporte un champ et une valeur qui sont associés aux opérateurs **eq** ou **ne**, et les instructions peuvent être combinées à l’aide des opérateurs **and** ou **or**. Voici quelques exemples de paramètres *filter*&nbsp;:
 
 -   *filter=market eq 'US' and osVersion eq 'Windows 10'*
 -   *filter=market ne 'US' and osVersion ne 'Windows 8'*
 
-For a list of the supported fields, see the following table. String values must be surrounded by single quotes in the *filter* parameter.
+Pour obtenir la liste des champs pris en charge, consultez le tableau suivant&nbsp;: Les valeurs de chaîne doivent être entourées par des guillemets dans le paramètre *filter*.
 
-| Fields        |  Description        |
+| Champs        |  Description        |
 |---------------|-----------------|
-| osVersion | One of the following strings:<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows 8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>Unknown</strong></li></ul> |
-| osBuild | The build number of the OS on which the app was running when the error occurred. |
-| market | A string that contains the ISO 3166 country code of the market of the device on which the app was running when the error occurred. |
-| deviceType | One of the following strings that specifies the type of the device on which the app was running when the error occurred:<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul> |
-| deviceModel | A string that specifies the model of the device on which the app was running when the error occurred. |
-| cabId | The unique ID of the CAB file that is associated with this error. |
-| cabExpirationTime | The date and time when the CAB file is expired and can no longer be downloaded, in ISO 8601 format. |
-| packageVersion | The version of the app package that is associated with this error. |
+| osVersion | Une des chaînes suivantes&nbsp;:<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows&nbsp;8</strong></li><li><strong>Windows&nbsp;8.1</strong></li><li><strong>Windows&nbsp;10</strong></li><li><strong>Unknown</strong></li></ul> |
+| osBuild | Numéro de version du système d’exploitation sur lequel l’application s’exécutait lorsque l’erreur s’est produite. |
+| market | Chaîne contenant le code de pays ISO&nbsp;3166 du marché de l’appareil sur lequel l’application s’exécutait lorsque l’erreur s’est produite. |
+| deviceType | Une des chaînes suivantes qui spécifie le type de l’appareil sur lequel l’application s’exécutait lorsque l’erreur s’est produite&nbsp;:<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul> |
+| deviceModel | Chaîne identifiant le modèle d’appareil sur lequel l’application s’exécutait lorsque l’erreur s’est produite. |
+| cabId | ID unique du fichier&nbsp;CAB associé à cette erreur. |
+| cabExpirationTime | Date et heure auxquelles le fichier&nbsp;CAB est arrivé à expiration et n’est plus téléchargeable au format ISO&nbsp;8601. |
+| packageVersion | Version du package applicatif associé à cette erreur. |
 
 <span/> 
 
-### <a name="request-example"></a>Request example
+### <a name="request-example"></a>Exemple de requête
 
-The following examples demonstrate several requests for getting detailed error data. Replace the *applicationId* value with the Store ID for your app.
+Les exemples suivants fournissent plusieurs requêtes permettant de récupérer des données d’erreur. Remplacez la valeur *applicationId* par l’ID Windows&nbsp;Store de votre application.
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/failuredetails?applicationId=9NBLGGGZ5QDR&failureHash=012e33e3-dbc9-b12f-c124-9d9810f05d8b&startDate=2016-11-05&endDate=2016-11-06&top=10&skip=0 HTTP/1.1
@@ -92,43 +92,43 @@ GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/failuredetails?appl
 Authorization: Bearer <your access token>
 ```
 
-## <a name="response"></a>Response
+## <a name="response"></a>Réponse
 
 
-### <a name="response-body"></a>Response body
+### <a name="response-body"></a>Corps de la réponse
 
-| Value      | Type    | Description    |
+| Valeur      | Type    | Description    |
 |------------|---------|------------|
-| Value      | array   | An array of objects that contain detailed error data. For more information about the data in each object, see the [error detail values](#error-detail-values) section below.          |
-| @nextLink  | string  | If there are additional pages of data, this string contains a URI that you can use to request the next page of data. For example, this value is returned if the **top** parameter of the request is set to 10 but there are more than 10 rows of errors for the query. |
-| TotalCount | inumber | The total number of rows in the data result for the query.        |
+| Valeur      | array   | Tableau d’objets comportant des données d’erreur détaillées. Pour plus d’informations sur les données de chaque objet, consultez la section [Valeurs des informations d’erreur](#error-detail-values) ci-dessous.          |
+| @nextLink  | chaîne  | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour demander la page suivante. Par exemple, cette valeur est renvoyée si le paramètre **top** de la requête est défini sur&nbsp;10, mais que plus de 10&nbsp;lignes d’erreur sont associées à la requête. |
+| TotalCount | nombre entier | Nombre total de lignes dans les résultats de la requête.        |
 
 <span id="error-detail-values"/>
-### <a name="error-detail-values"></a>Error detail values
+### <a name="error-detail-values"></a>Valeurs des informations d’erreur
 
-Elements in the *Value* array contain the following values.
+Les éléments du tableau *Value* ont les valeurs suivantes&nbsp;:
 
-| Value           | Type    | Description     |
+| Valeur           | Type    | Description     |
 |-----------------|---------|----------------------------|
-| date            | string  | The first date in the date range for the error data. If the request specified a single day, this value is that date. If the request specified a week, month, or other date range, this value is the first date in that date range. |
-| applicationId   | string  | The Store ID of the app for which you retrieved detailed error data.      |
-| failureName     | string  | The name of the error. This is the same name that appears in the **Failures** section of the [Health report](../publish/health-report.md) in the Windows Dev Center dashboard.            |
-| failureHash     | string  | The unique identifier for the error.     |
-| osVersion       | string  | The OS version on which the error occurred.    |
-| market          | string  | The ISO 3166 country code of the device market.     |
-| deviceType      | string  | The type of device that on which the error occurred.     |
-| packageVersion  | string  | The version of the app package that is associated with this error.    |
-| osBuild         | string  | The build number of the OS on which the error occurred.       |
-| cabId           | string  | The unique ID of the CAB file that is associated with this error.   |
-| cabExpirationTime  | string  | The date and time when the CAB file is expired and can no longer be downloaded, in ISO 8601 format.   |
-| deviceModel           | string  | A string that specifies the model of the device on which the app was running when the error occurred.   |
-| cabDownloadable           | Boolean  | Indicates whether the CAB file is downloadable for this user.   |
+| date            | chaîne  | Date de début des données d’erreur. Si la requête spécifiait un jour unique, cette valeur est cette date. Si la requête était relative à une semaine, un mois ou toute autre plage de dates, cette valeur correspond à la première date de la plage de dates. |
+| applicationId   | chaîne  | ID Windows&nbsp;Store de l’application dont vous souhaitez récupérer des données d’erreur.      |
+| failureName     | chaîne  | Nom de l’erreur. Ce nom est celui qui figure dans la section **Échecs** du [rapport d’intégrité](../publish/health-report.md) dans le tableau de bord du Centre de développement Windows.            |
+| failureHash     | chaîne  | Identificateur unique de l’erreur.     |
+| osVersion       | chaîne  | Version de système d’exploitation sur laquelle l’erreur s’est produite.    |
+| market          | chaîne  | Code pays ISO&nbsp;3166 du marché des appareils.     |
+| deviceType      | chaîne  | Type d’appareil sur lequel l’erreur s’est produite.     |
+| packageVersion  | chaîne  | Version du package applicatif associé à cette erreur.    |
+| osBuild         | chaîne  | Numéro de version du système d’exploitation sur lequel l’erreur s’est produite.       |
+| cabId           | chaîne  | ID unique du fichier&nbsp;CAB associé à cette erreur.   |
+| cabExpirationTime  | chaîne  | Date et heure auxquelles le fichier&nbsp;CAB est arrivé à expiration et n’est plus téléchargeable au format ISO&nbsp;8601.   |
+| deviceModel           | chaîne  | Chaîne identifiant le modèle d’appareil sur lequel l’application s’exécutait lorsque l’erreur s’est produite.   |
+| cabDownloadable           | Booléen  | Indique si le fichier CAB est téléchargeable par cet utilisateur.   |
 
 <span/> 
 
-### <a name="response-example"></a>Response example
+### <a name="response-example"></a>Exemple de réponse
 
-The following example demonstrates an example JSON response body for this request.
+L’exemple suivant représente un corps de réponse JSON pour cette requête.
 
 ```json
 {
@@ -154,12 +154,12 @@ The following example demonstrates an example JSON response body for this reques
 }
 ```
 
-## <a name="related-topics"></a>Related topics
+## <a name="related-topics"></a>Rubriques connexes
 
-* [Health report](../publish/health-report.md)
-* [Access analytics data using Windows Store services](access-analytics-data-using-windows-store-services.md)
-* [Get error reporting data](get-error-reporting-data.md)
-* [Get the stack trace for an error in your app](get-the-stack-trace-for-an-error-in-your-app.md)
+* [Rapport d’intégrité](../publish/health-report.md)
+* [Accéder aux données d’analyse à l’aide des services du Windows Store](access-analytics-data-using-windows-store-services.md)
+* [Obtenir les données de rapport d’erreurs](get-error-reporting-data.md)
+* [Obtenir la trace de pile concernant une erreur dans votre application](get-the-stack-trace-for-an-error-in-your-app.md)
 
 
 
