@@ -15,7 +15,7 @@ ms.openlocfilehash: a5e1f8940f53f228808e5a6540759199c4440645
 
 Utilisez les méthodes suivantes dans l’API de soumission du Windows Store pour gérer les soumissions d’extensions (également connue sous le nom produit in-app ou PIA) pour les applications inscrites dans votre compte du Centre de développement Windows. Pour obtenir une présentation de l’API de soumission du Windows Store, notamment les conditions préalables à l’utilisation de l’API, voir [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md).
 
->**Remarque**&nbsp;&nbsp;Ces méthodes ne peuvent être utilisées que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation. Pour pouvoir utiliser ces méthodes pour créer ou gérer des soumissions pour une extension, l’extension doit déjà exister dans votre compte du Centre de développement. Vous pouvez créer une extension [à l’aide du tableau de bord du Centre de développement](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions) ou en utilisant les méthodes de l’API de soumission du Windows Store décrites dans [Gérer les extensions](manage-add-ons.md).
+>**Remarque**  Ces méthodes ne peuvent être utilisées que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation. Pour pouvoir utiliser ces méthodes pour créer ou gérer des soumissions pour une extension, l’extension doit déjà exister dans votre compte du Centre de développement. Vous pouvez créer une extension [à l’aide du tableau de bord du Centre de développement](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions) ou en utilisant les méthodes de l’API de soumission du Windows Store décrites dans [Gérer les extensions](manage-add-ons.md).
 
 | Méthode        | URI    | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -31,9 +31,9 @@ Utilisez les méthodes suivantes dans l’API de soumission du Windows Store pou
 
 Pour créer une soumission pour une extension, suivez ce processus.
 
-1. Si vous ne l’avez pas encore fait, remplissez les conditions préalables décrites dans [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md), notamment l’association d’une application Azure AD à votre compte du Centre de développement Windows et l’obtention de votre ID client et de votre clé. Vous n’aurez à le faire qu’une seule fois. Une fois à votre disposition, l’ID client et la clé sont réutilisables chaque fois que vous avez besoin de créer un jeton d’accès Azure&nbsp;AD.  
+1. Si vous ne l’avez pas encore fait, remplissez les conditions préalables décrites dans [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md), notamment l’association d’une application Azure AD à votre compte du Centre de développement Windows et l’obtention de votre ID client et de votre clé. Vous n’aurez à le faire qu’une seule fois. Une fois à votre disposition, l’ID client et la clé sont réutilisables chaque fois que vous avez besoin de créer un jeton d’accès Azure AD.  
 
-2. [Obtenir un jeton d’accès Azure&nbsp;AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token). Vous devez transmettre ce jeton d’accès aux méthodes de l’API de soumission du Windows Store. Après avoir obtenu un jeton d’accès, vous avez 60&nbsp;minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
+2. [Obtenir un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token). Vous devez transmettre ce jeton d’accès aux méthodes de l’API de soumission du Windows Store. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 
 3. Exécutez la méthode suivante de l’API de soumission du Windows Store. Cette méthode crée une soumission en cours, qui est une copie de votre dernière soumission publiée. Pour plus d’informations, voir [Créer une soumission d’extension](create-an-add-on-submission.md).
 
@@ -41,7 +41,7 @@ Pour créer une soumission pour une extension, suivez ce processus.
   POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions
   ```
 
-  Le corps de la réponse contient trois éléments&nbsp;: l’ID de la nouvelle soumission, ses données (notamment toutes les listes et informations tarifaires), ainsi que l’URI de signature d’accès partagé (SAS) pour le chargement de toutes les icônes d’extension de la soumission. Pour plus d’informations sur SAS, voir [Signatures d’accès partagé, partie 1&nbsp;: présentation du modèle SAS](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/).
+  Le corps de la réponse contient trois éléments : l’ID de la nouvelle soumission, ses données (notamment toutes les listes et informations tarifaires), ainsi que l’URI de signature d’accès partagé (SAS) pour le chargement de toutes les icônes d’extension de la soumission. Pour plus d’informations sur SAS, voir [Signatures d’accès partagé, partie 1 : présentation du modèle SAS](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/).
 
 4. Si vous ajoutez de nouvelles icônes pour la soumission, [préparez-les](https://msdn.microsoft.com/windows/uwp/publish/create-iap-descriptions#icon) et ajoutez-les à une archive ZIP.
 
@@ -51,9 +51,9 @@ Pour créer une soumission pour une extension, suivez ce processus.
   PUT https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}
   ```
 
-  >**Remarque**&nbsp;&nbsp;Si vous ajoutez de nouvelles icônes pour la soumission, assurez-vous de mettre à jour les données de la soumission pour faire référence au nom et au chemin relatif de ces fichiers dans l’archive ZIP.
+  >**Remarque**  Si vous ajoutez de nouvelles icônes pour la soumission, assurez-vous de mettre à jour les données de la soumission pour faire référence au nom et au chemin relatif de ces fichiers dans l’archive ZIP.
 
-4. Si vous ajoutez de nouvelles icônes pour la soumission, chargez l’archive ZIP sur l’URI SAS fourni dans le corps de la réponse de la méthode POST appelée à l’étape&nbsp;2. Pour plus d’informations, voir [Signatures d’accès partagé, partie 2&nbsp;: créer et utiliser une SAS avec le stockage d’objets blob](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/).
+4. Si vous ajoutez de nouvelles icônes pour la soumission, chargez l’archive ZIP sur l’URI SAS fourni dans le corps de la réponse de la méthode POST appelée à l’étape 2. Pour plus d’informations, voir [Signatures d’accès partagé, partie 2 : créer et utiliser une SAS avec le stockage d’objets blob](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/).
 
   L’extrait de code suivant montre comment charger l’archive à l’aide de la classe [CloudBlockBlob](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.blob.cloudblockblob.aspx) incluse dans la bibliothèque cliente de stockage Azure pour .NET.
 
@@ -158,16 +158,16 @@ Cette ressource a les valeurs suivantes.
 | Valeur      | Type   | Description                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | id            | chaîne  | ID de la soumission.  |
-| contentType           | chaîne  |  [Type de contenu](../publish/enter-add-on-properties.md#content-type) qui est fourni dans l’extension. Les valeurs possibles sont les suivantes&nbsp;: <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
-| keywords           | tableau  | Tableau de chaînes qui contiennent jusqu’à 10&nbsp;[mots&nbsp;clés](../publish/enter-add-on-properties.md#keywords) pour l’extension. Votre application peut rechercher des extensions à l’aide de ces mots&nbsp;clés.   |
-| lifetime           | chaîne  |  Durée de vie de l’extension. Les valeurs possibles sont les suivantes&nbsp;: <ul><li>Forever</li><li>OneDay</li><li>ThreeDays</li><li>FiveDays</li><li>OneWeek</li><li>TwoWeeks</li><li>OneMonth</li><li>TwoMonths</li><li>ThreeMonths</li><li>SixMonths</li><li>OneYear</li></ul> |
+| contentType           | chaîne  |  [Type de contenu](../publish/enter-add-on-properties.md#content-type) qui est fourni dans l’extension. Les valeurs possibles sont les suivantes : <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
+| keywords           | tableau  | Tableau de chaînes qui contiennent jusqu’à 10 [mots clés](../publish/enter-add-on-properties.md#keywords) pour l’extension. Votre application peut rechercher des extensions à l’aide de ces mots clés.   |
+| lifetime           | chaîne  |  Durée de vie de l’extension. Les valeurs possibles sont les suivantes : <ul><li>Forever</li><li>OneDay</li><li>ThreeDays</li><li>FiveDays</li><li>OneWeek</li><li>TwoWeeks</li><li>OneMonth</li><li>TwoMonths</li><li>ThreeMonths</li><li>SixMonths</li><li>OneYear</li></ul> |
 | listings           | objet  |  Dictionnaire de paires clé/valeur, où chaque clé est un code de pays à deux lettres ISO 3166-1 alpha-2 et chaque valeur est un objet de [ressource de listing](#listing-object) qui contient les informations de listing pour l’application.  |
 | pricing           | objet  | Objet qui contient des informations de tarification pour l’extension. Pour plus d’informations, voir la section relative à la [ressource de tarification](#pricing-object) ci-après.  |
-| targetPublishMode           | chaîne  | Mode de publication pour la soumission. Les valeurs possibles sont les suivantes&nbsp;: <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
-| targetPublishDate           | chaîne  | Date de publication de la soumission au format ISO&nbsp;8601, si le paramètre *targetPublishMode* a la valeur SpecificDate.  |
+| targetPublishMode           | chaîne  | Mode de publication pour la soumission. Les valeurs possibles sont les suivantes : <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
+| targetPublishDate           | chaîne  | Date de publication de la soumission au format ISO 8601, si le paramètre *targetPublishMode* a la valeur SpecificDate.  |
 | tag           | chaîne  |  [Données développeur personnalisées](../publish/enter-add-on-properties.md#custom-developer-data) de l’extension (ces informations étaient précédemment appelées *tag*).   |
-| visibility  | chaîne  |  Visibilité de l’extension. Les valeurs possibles sont les suivantes&nbsp;: <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>  |
-| status  | chaîne  |  État de la soumission. Les valeurs possibles sont les suivantes&nbsp;: <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>   |
+| visibility  | chaîne  |  Visibilité de l’extension. Les valeurs possibles sont les suivantes : <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>  |
+| status  | chaîne  |  État de la soumission. Les valeurs possibles sont les suivantes : <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>   |
 | statusDetails           | objet  |  Contient des détails supplémentaires sur l’état de la soumission, notamment des informations sur les éventuelles erreurs. Pour plus d’informations, voir la section [Détails d’état](#status-details-object) ci-après. |
 | fileUploadUrl           | chaîne  | URI de la signature d’accès partagé (SAS) pour le chargement des packages de la soumission. Si vous ajoutez de nouveaux packages à la soumission, chargez l’archive ZIP contenant les packages vers cet URI. Pour plus d’informations, voir [Créer une soumission d’extension](#create-an-add-on-submission).  |
 | friendlyName  | chaîne  |  Nom convivial de l’extension, utilisé à des fins d’affichage.  |
@@ -191,7 +191,7 @@ Cette ressource contient les données d’icône du listing d’extensions. Cett
 | Valeur           | Type    | Description                                                                                                                                                                                                                          |
 |-----------------|---------|------|
 |  fileName               |    chaîne     |   Nom du fichier d’icône dans l’archive ZIP que vous avez chargé pour la soumission.    |     
-|  fileStatus               |   chaîne      |  État du fichier d’icône. Les valeurs possibles sont les suivantes&nbsp;: <ul><li>None</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>   |
+|  fileStatus               |   chaîne      |  État du fichier d’icône. Les valeurs possibles sont les suivantes : <ul><li>None</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>   |
 
 <span id="pricing-object" />
 ### <a name="pricing"></a>Tarification
@@ -210,12 +210,12 @@ Cette ressource contient des informations de tarification pour l’extension. Ce
 
 Cette ressource contient des informations commerciales sur un module complémentaire.
 
->**Important**&nbsp;&nbsp;La ressource **Sale** n’est plus prise en charge et vous ne pouvez ni obtenir ni modifier les données commerciales concernant la soumission d’un module complémentaire à l’aide de l’API de soumission du Windows&nbsp;Store&nbsp;:
+>**Important**  La ressource **Sale** n’est plus prise en charge et vous ne pouvez ni obtenir ni modifier les données commerciales concernant la soumission d’un module complémentaire à l’aide de l’API de soumission du Windows Store :
 
    > * Après avoir appelé la [méthode GET pour soumettre un module complémentaire](get-an-add-on-submission.md), la ressource *Sales* est vide. Vous pouvez toujours utiliser le tableau de bord du Centre de développement pour obtenir les données commerciales concernant la soumission de votre module complémentaire.
    > * Lors de l’appel de la [méthode PUT pour mettre à jour la soumission d’un module complémentaire](update-an-add-on-submission.md), les informations de la valeur *Sales* sont ignorées. Vous pouvez toujours utiliser le tableau de bord du Centre de développement pour changer les données commerciales concernant la soumission de modules complémentaires.
 
-> À l’avenir, nous allons mettre à jour l’API de soumission du Windows&nbsp;Store pour proposer une nouvelle façon d’accéder par programmation aux informations commerciales concernant la soumission de modules complémentaires.
+> À l’avenir, nous allons mettre à jour l’API de soumission du Windows Store pour proposer une nouvelle façon d’accéder par programmation aux informations commerciales concernant la soumission de modules complémentaires.
 
 Cette ressource a les valeurs suivantes.
 
@@ -259,7 +259,7 @@ Cette ressource donne accès aux données du rapport de certification pour une s
 
 | Valeur           | Type    | Description                                                                                                                                                                                                                          |
 |-----------------|---------|------|
-|     date            |    chaîne     |  Date et heure de génération du rapport, au format ISO&nbsp;8601.    |
+|     date            |    chaîne     |  Date et heure de génération du rapport, au format ISO 8601.    |
 |     reportUrl            |    chaîne     |  URL vous permettant d’accéder au rapport.    |
 
 
@@ -276,10 +276,10 @@ Les valeurs suivantes représentent les niveaux de prix disponibles pour une sou
 
 | Valeur           | Description                                                                                                                                                                                                                          |
 |-----------------|------|
-|  Base               |   Le niveau de prix n’est pas défini&nbsp;; utilisez le prix de base de l’extension.      |     
+|  Base               |   Le niveau de prix n’est pas défini ; utilisez le prix de base de l’extension.      |     
 |  NotAvailable              |   L’extension n’est pas disponible dans la région spécifiée.    |     
 |  Free              |   L’extension est gratuite.    |    
-|  Tier2 à Tier194               |   Tier2 représente le niveau de prix 0,99&nbsp;USD. Chaque niveau supplémentaire représente des incréments supplémentaires (1,29&nbsp;USD, 1,49&nbsp;USD, 1,99&nbsp;USD, etc.).    |
+|  Tier2 à Tier194               |   Tier2 représente le niveau de prix 0,99 USD. Chaque niveau supplémentaire représente des incréments supplémentaires (1,29 USD, 1,49 USD, 1,99 USD, etc.).    |
 
 
 <span id="submission-status-code" />

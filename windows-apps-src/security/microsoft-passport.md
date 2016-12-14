@@ -1,6 +1,6 @@
 ---
-title: Microsoft&nbsp;Passport et Windows&nbsp;Hello
-description: "Cet article décrit la nouvelle technologie Microsoft Passport intégrée au système d’exploitation Windows&nbsp;10 et explique comment les développeurs peuvent implémenter cette technologie pour protéger leurs applications UWP et services principaux. Il présente des fonctionnalités spécifiques de ces technologies qui contribuent à atténuer les menaces découlant de l’utilisation des informations d’identification classiques et fournit des recommandations sur la conception et le déploiement de ces technologies dans le cadre de votre lancement de Windows 10."
+title: "Microsoft Passport et Windows Hello"
+description: "Cet article décrit la nouvelle technologie Microsoft Passport intégrée au système d’exploitation Windows 10 et explique comment les développeurs peuvent implémenter cette technologie pour protéger leurs applications UWP et services principaux. Il présente des fonctionnalités spécifiques de ces technologies qui contribuent à atténuer les menaces découlant de l’utilisation des informations d’identification classiques et fournit des recommandations sur la conception et le déploiement de ces technologies dans le cadre de votre lancement de Windows 10."
 ms.assetid: 0B907160-B344-4237-AF82-F9D47BCEE646
 author: awkoren
 translationtype: Human Translation
@@ -12,10 +12,10 @@ ms.openlocfilehash: cb24b1e75dbb8f37fcd4482e3e0d468855155f04
 # <a name="microsoft-passport-and-windows-hello"></a>Microsoft Passport et Windows Hello
 
 
-\[ Mise à jour pour les applications UWP sur Windows&nbsp;10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-Cet article décrit la nouvelle technologie Microsoft Passport intégrée au système d’exploitation Windows&nbsp;10 et explique comment les développeurs peuvent implémenter cette technologie pour protéger leurs applications UWP et services principaux. Il présente des fonctionnalités spécifiques de ces technologies qui contribuent à atténuer les menaces découlant de l’utilisation des informations d’identification classiques et fournit des recommandations sur la conception et le déploiement de ces technologies dans le cadre de votre lancement de Windows 10.
+Cet article décrit la nouvelle technologie Microsoft Passport intégrée au système d’exploitation Windows 10 et explique comment les développeurs peuvent implémenter cette technologie pour protéger leurs applications UWP et services principaux. Il présente des fonctionnalités spécifiques de ces technologies qui contribuent à atténuer les menaces découlant de l’utilisation des informations d’identification classiques et fournit des recommandations sur la conception et le déploiement de ces technologies dans le cadre de votre lancement de Windows 10.
 
 Notez que cet article est axé sur le développement d’applications. Pour plus d’informations sur l’architecture et l’implémentation de Microsoft Passport et de Windows Hello, voir le [Guide de Microsoft Passport sur TechNet](https://technet.microsoft.com/library/mt589441.aspx).
 
@@ -88,7 +88,7 @@ Dans la mesure du possible, Microsoft vous recommande d’utiliser un TPM matér
 ## <a name="232-authentication"></a>2.3.2 Authentification
 
 
-Lorsqu’un utilisateur souhaite accéder à un matériel de clé protégé, le processus d’authentification commence quand l’utilisateur entre un code confidentiel ou un mouvement biométrique pour déverrouiller l’appareil, ce processus étant parfois appelé «&nbsp;libération de la clé&nbsp;».
+Lorsqu’un utilisateur souhaite accéder à un matériel de clé protégé, le processus d’authentification commence quand l’utilisateur entre un code confidentiel ou un mouvement biométrique pour déverrouiller l’appareil, ce processus étant parfois appelé « libération de la clé ».
 
 Une application ne peut jamais utiliser les clés d’une autre application, tout comme une personne ne peut jamais utiliser les clés d’un autre utilisateur. Ces clés sont utilisées pour signer les demandes d’accès à des ressources spécifiées envoyées au fournisseur d’identité ou IdP. Les applications peuvent utiliser des API spécifiques pour demander des opérations qui nécessitent un matériel de clé pour certaines actions. L’accès par le biais de ces API implique une validation explicite à l’aide d’un mouvement de l’utilisateur. Le matériel de clé n’est pas exposé à l’application à l’origine de la demande. L’application demande plutôt des actions spécifiques, comme la signature d’un élément de données, et la couche Microsoft Passport gère la tâche réelle et renvoie les résultats.
 
@@ -147,11 +147,11 @@ Une fois la paire de clés et les informations d’attestation créées sur l’
 
 Pour permettre à l’utilisateur d’accéder à l’application sur plusieurs appareils, le service principal doit pouvoir stocker plusieurs clés pour le même utilisateur. Étant donné que chaque clé est unique pour chaque appareil, toutes ces clés vont être stockées en étant connectées au même utilisateur. Un identificateur d’appareil est utilisé pour optimiser le composant serveur lors de l’authentification des utilisateurs. Nous aborderons ce sujet plus en détail dans le chapitre suivant.
 
-Voici un exemple de schéma de base de données permettant de stocker ces informations sur le système principal&nbsp;:
+Voici un exemple de schéma de base de données permettant de stocker ces informations sur le système principal :
 
 ![Exemple de schéma de base de données Passport](images/passport-db.png)
 
-La logique d’inscription peut ressembler à ceci&nbsp;:
+La logique d’inscription peut ressembler à ceci :
 
 ![Logique d’inscription auprès de Microsoft Passport](images/passport-registration.png)
 
@@ -222,7 +222,7 @@ Lorsque le serveur reçoit la clé RSA générée, la déclaration d’attestati
 
 -   La signature du certificat AIK est valide.
 -   Le certificat AIK forme une chaîne jusqu’à une racine de confiance.
--   Le certificat AIK et sa chaîne sont activés pour EKU OID «&nbsp;2.23.133.8.3&nbsp;» (son nom développé est «&nbsp;certificat de clé d’attestation d’identité&nbsp;»).
+-   Le certificat AIK et sa chaîne sont activés pour EKU OID « 2.23.133.8.3 » (son nom développé est « certificat de clé d’attestation d’identité »).
 -   Le certificat AIK a une limite de validité.
 -   Tous les certificats d’autorité de certification de la chaîne ont une limite de validité et ne sont pas révoqués.
 -   La déclaration d’attestation présente un format correct.
@@ -262,7 +262,7 @@ En plus de vérifier les clés, le service peut également vérifier l’attesta
 
 Une attestation est uniquement disponible pour les appareils dotés d’un processeur de TPM version 2.0 ou ultérieure. Vous devez donc tenir compte du fait que ces informations risquent de ne pas être disponibles sur certains appareils.
 
-Le flux de travail du client pourra ressembler à ceci&nbsp;:
+Le flux de travail du client pourra ressembler à ceci :
 
 ![Flux de travail du client Passport](images/passport-client-workflow.png)
 
@@ -292,7 +292,7 @@ La première ligne, [**KeyCredentialManager.OpenAsync**](https://msdn.microsoft.
 
 Les API demandent au système d’exploitation de signer la demande avec la clé privée. Le système demande ensuite à l’utilisateur son code confidentiel ou une identification biométrique configurée. Si les informations entrées sont correctes, le système peut demander au processeur du TPM d’exécuter les fonctions de chiffrement et de signer la demande (ou d’utiliser la solution logicielle de secours, si aucun TPM n’est disponible). Le client doit renvoyer la demande signée au serveur.
 
-Le diagramme de séquence ci-après illustre un flux de demande-réponse&nbsp;:
+Le diagramme de séquence ci-après illustre un flux de demande-réponse :
 
 ![Flux de demande-réponse de Passport](images/passport-challenge-response.png)
 
@@ -405,7 +405,7 @@ L’une des approches consiste à laisser l’utilisateur décider du moment où
 var keyCredentialAvailable = await KeyCredentialManager.IsSupportedAsync();
 ```
 
-L’interface utilisateur peut ressembler à ce qui suit&nbsp;:
+L’interface utilisateur peut ressembler à ce qui suit :
 
 ![Interface utilisateur de Passport](images/passport-ui.png)
 

@@ -35,7 +35,7 @@ Voici un exemple de la façon dont vous pouvez définir la propriété jointe [*
 
 Pour plus d’informations sur les propriétés jointes, voir [Vue d’ensemble des propriétés jointes](../xaml-platform/attached-properties-overview.md).
 
-> **Remarque**&nbsp;&nbsp;Une propriété jointe est un concept XAML qui requiert une syntaxe spéciale pour obtenir ou définir à partir du code. Pour utiliser des propriétés jointes dans le code, voir la section *Propriétés jointes dans le code* de l’article *Vue d’ensemble des propriétés jointes*.
+> **Remarque**  Une propriété jointe est un concept XAML qui requiert une syntaxe spéciale pour obtenir ou définir à partir du code. Pour utiliser des propriétés jointes dans le code, voir la section *Propriétés jointes dans le code* de l’article *Vue d’ensemble des propriétés jointes*.
 
 **Bordures des panneaux**
 
@@ -91,7 +91,7 @@ Ce code XAML montre comment organiser des éléments dans un élément RelativeP
 </RelativePanel>
 ```
 
-Le résultat se présente ainsi: 
+Le résultat se présente ainsi : 
 
 ![Panneau relatif](images/layout-panel-relative-panel.png)
 
@@ -118,7 +118,7 @@ Le code XAML suivant indique comment créer un empilement StackPanel vertical de
 ```
 
 
-Le résultat se présente ainsi:
+Le résultat se présente ainsi :
 
 ![Panneau d’empilement](images/layout-panel-stack-panel.png)
 
@@ -187,7 +187,7 @@ Voici comment utiliser un élément VariableSizedWrapGrid en XAML.
 ```
 
 
-Le résultat se présente ainsi:
+Le résultat se présente ainsi :
 
 ![Grille avec renvoi à la ligne à taille variable](images/layout-panel-variable-size-wrap-grid.png)
 
@@ -213,7 +213,7 @@ Voici un exemple d’élément Canvas en XAML.
 ```
 
 
-Le résultat se présente ainsi:
+Le résultat se présente ainsi :
 
 ![Canevas](images/layout-panel-canvas.png)
 

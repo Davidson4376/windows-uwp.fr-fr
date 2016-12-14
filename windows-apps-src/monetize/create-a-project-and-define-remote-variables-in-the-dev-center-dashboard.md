@@ -1,6 +1,6 @@
 ---
 author: mcleanbyron
-Description: "Pour lancer une expérience dans votre application de plateformeWindows universelle (UWP) avec des tests A/B, vous devez créer un projet et définir vos variables distantes dans le tableau de bord du Centre de développement."
+Description: "Pour lancer une expérience dans votre application de plateforme Windows universelle (UWP) avec des tests A/B, vous devez créer un projet et définir vos variables distantes dans le tableau de bord du Centre de développement."
 title: "Créer un projet et de définir des variables distantes dans le tableau de bord du Centre de développement"
 ms.assetid: C3809FF1-0A6A-4715-B989-BE9D0E8C9013
 translationtype: Human Translation
@@ -28,7 +28,7 @@ Les instructions suivantes décrivent les étapes de base pour créer un projet.
   3. Une fois les variables ajoutées, cliquez sur **Enregistrer**.
 3. Dans la section **Intégration du SDK**, notez la valeur indiquée dans [ID du projet](run-app-experiments-with-a-b-testing.md#terms). Lorsque vous [codez votre application à des fins d’expérimentation](code-your-experiment-in-your-app.md), vous devez indiquer cet ID de projet dans votre code pour pouvoir recevoir des données de variation et signaler des événements d’affichage et de conversion au Centre de développement.
 
->**Remarque**&nbsp;&nbsp;Vous ne pouvez pas modifier, ajouter ou supprimer des variables distantes si une expérience est active dans le projet. Cette limitation protège l’intégrité des données du groupe de contrôle de l’expérience active.
+>**Remarque**  Vous ne pouvez pas modifier, ajouter ou supprimer des variables distantes si une expérience est active dans le projet. Cette limitation protège l’intégrité des données du groupe de contrôle de l’expérience active.
 
 
 ## Étapes suivantes

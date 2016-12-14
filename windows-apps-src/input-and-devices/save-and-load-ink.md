@@ -1,7 +1,7 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "Les applications UWP qui prennent en charge Windows&nbsp;Ink peuvent sérialiser et désérialiser les traits d’encre dans un fichier ISF (Ink Serialized Format). Le fichier&nbsp;ISF est une image&nbsp;GIF contenant des métadonnées supplémentaires pour tous les comportements et propriétés de traits d’encre. Les applications qui ne sont pas compatibles avec les entrées manuscrites peuvent afficher l’image GIF statique, y compris la transparence d’arrière-plan de canal alpha."
-title: "Stocker et récupérer les données de traits Windows&nbsp;Ink"
+Description: "Les applications UWP qui prennent en charge Windows Ink peuvent sérialiser et désérialiser les traits d’encre dans un fichier ISF (Ink Serialized Format). Le fichier ISF est une image GIF contenant des métadonnées supplémentaires pour tous les comportements et propriétés de traits d’encre. Les applications qui ne sont pas compatibles avec les entrées manuscrites peuvent afficher l’image GIF statique, y compris la transparence d’arrière-plan de canal alpha."
+title: "Stocker et récupérer les données de traits Windows Ink"
 ms.assetid: C96C9D2F-DB69-4883-9809-4A0DF7CEC506
 label: Store and retrieve Windows Ink stroke data
 template: detail.hbs
@@ -12,10 +12,10 @@ ms.openlocfilehash: d4458b66f4f1917e99495353a088680b19cb94c9
 
 ---
 
-# <a name="store-and-retrieve-windows-ink-stroke-data"></a>Stocker et récupérer les données de traits Windows&nbsp;Ink
+# <a name="store-and-retrieve-windows-ink-stroke-data"></a>Stocker et récupérer les données de traits Windows Ink
 
 
-Les applications UWP qui prennent en charge Windows&nbsp;Ink peuvent sérialiser et désérialiser les traits d’encre dans un fichier ISF (Ink Serialized Format). Le fichier&nbsp;ISF est une image&nbsp;GIF contenant des métadonnées supplémentaires pour tous les comportements et propriétés de traits d’encre. Les applications qui ne sont pas compatibles avec les entrées manuscrites peuvent afficher l’image GIF statique, y compris la transparence d’arrière-plan de canal alpha.
+Les applications UWP qui prennent en charge Windows Ink peuvent sérialiser et désérialiser les traits d’encre dans un fichier ISF (Ink Serialized Format). Le fichier ISF est une image GIF contenant des métadonnées supplémentaires pour tous les comportements et propriétés de traits d’encre. Les applications qui ne sont pas compatibles avec les entrées manuscrites peuvent afficher l’image GIF statique, y compris la transparence d’arrière-plan de canal alpha.
 
 
 **API importantes**

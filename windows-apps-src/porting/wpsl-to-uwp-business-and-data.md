@@ -11,7 +11,7 @@ ms.openlocfilehash: 6e6cea49064f49a15b557aad037c5baaa1e9b57b
 
 #  <a name="porting-windows-phone-silverlight-business-and-data-layers-to-uwp"></a>Portage des couches métier et des couches de données de Silverlight pour Windows Phone vers UWP
 
-\[ Article mis à jour pour les applications UWP sur Windows&nbsp;10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Rubrique précédente : [Portage pour le modèle d’E/S, d’appareil et d’application](wpsl-to-uwp-input-and-sensors.md).
 
@@ -89,7 +89,7 @@ Le code Silverlight pour Windows Phone qui stocke des paramètres d’applicatio
     string myFavoriteAuthor = propertySet.Contains(key) ? (string)propertySet[key] : "<none>";
 ```
 
-Et son équivalent UWP&nbsp;:
+Et son équivalent UWP :
 
 ```csharp
     var propertySet = Windows.Storage.ApplicationData.Current.LocalSettings.Values;
@@ -115,7 +115,7 @@ Bien qu’un sous-ensemble de l’espace de noms **Windows.Storage** soit mis à
     }
 ```
 
-Et son équivalent pour UWP&nbsp;:
+Et son équivalent pour UWP :
 
 ```csharp
     const string filename = "FavoriteAuthor.txt";

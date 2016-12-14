@@ -17,13 +17,13 @@ Pour plus d’informations sur la façon dont cette méthode s’inscrit dans le
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes&nbsp;:
+Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
 
 * Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
-* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60&nbsp;minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
+* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 * Créez une soumission pour une application dans votre compte du Centre de développement. Pour cela, vous pouvez utiliser le tableau de bord du Centre de développement ou la méthode [Créer une soumission d’application](create-an-app-submission.md).
 
->**Remarque**&nbsp;&nbsp;Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
+>**Remarque**  Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
 
 ## <a name="request"></a>Requête
 
@@ -59,13 +59,13 @@ Le corps de la requête contient les paramètres suivants.
 
 | Valeur      | Type   | Description                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| applicationCategory           | chaîne  |   Chaîne qui spécifie la [catégorie et/ou sous-catégorie](https://msdn.microsoft.com/windows/uwp/publish/category-and-subcategory-table) pour votre application. Les catégories et sous-catégories sont combinées en une seule chaîne à l’aide du caractère trait de soulignement&nbsp;«&nbsp;_&nbsp;», par exemple **BooksAndReference_EReader**.      |  
+| applicationCategory           | chaîne  |   Chaîne qui spécifie la [catégorie et/ou sous-catégorie](https://msdn.microsoft.com/windows/uwp/publish/category-and-subcategory-table) pour votre application. Les catégories et sous-catégories sont combinées en une seule chaîne à l’aide du caractère trait de soulignement « _ », par exemple **BooksAndReference_EReader**.      |  
 | pricing           |  objet  | Objet qui contient les informations de tarification pour l’application. Pour plus d’informations, voir la section relative à la [ressource de tarification](manage-app-submissions.md#pricing-object).       |   
-| visibility           |  chaîne  |  Visibilité de l’application. Les valeurs possibles sont les suivantes&nbsp;: <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>       |   
-| targetPublishMode           | chaîne  | Mode de publication pour la soumission. Les valeurs possibles sont les suivantes&nbsp;: <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
-| targetPublishDate           | chaîne  | Date de publication de la soumission au format ISO&nbsp;8601, si le paramètre *targetPublishMode* a la valeur SpecificDate.  |  
+| visibility           |  chaîne  |  Visibilité de l’application. Les valeurs possibles sont les suivantes : <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>       |   
+| targetPublishMode           | chaîne  | Mode de publication pour la soumission. Les valeurs possibles sont les suivantes : <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
+| targetPublishDate           | chaîne  | Date de publication de la soumission au format ISO 8601, si le paramètre *targetPublishMode* a la valeur SpecificDate.  |  
 | listings           |   objet  |  Dictionnaire de paires clé/valeur, où chaque clé est un code de pays et chaque valeur est un objet de [ressource de référencement](manage-app-submissions.md#listing-object) qui contient des informations de référencement pour l’application.       |   
-| hardwarePreferences           |  tableau  |   Tableau de chaînes qui définissent les [préférences matérielles](https://msdn.microsoft.com/windows/uwp/publish/enter-app-properties#hardware_preferences) pour votre application. Les valeurs possibles sont les suivantes&nbsp;: <ul><li>Touch</li><li>Keyboard</li><li>Mouse</li><li>Camera</li><li>NfcHce</li><li>NFC</li><li>BluetoothLE</li><li>Telephony</li></ul>     |   
+| hardwarePreferences           |  tableau  |   Tableau de chaînes qui définissent les [préférences matérielles](https://msdn.microsoft.com/windows/uwp/publish/enter-app-properties#hardware_preferences) pour votre application. Les valeurs possibles sont les suivantes : <ul><li>Touch</li><li>Keyboard</li><li>Mouse</li><li>Camera</li><li>NfcHce</li><li>NFC</li><li>BluetoothLE</li><li>Telephony</li></ul>     |   
 | automaticBackupEnabled           |  booléen  |   Indique si Windows peut inclure les données de votre application dans les sauvegardes automatiques sur OneDrive. Pour plus d’informations, voir [Déclarations d’application](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).   |   
 | canInstallOnRemovableMedia           |  booléen  |   Indique si les clients peuvent installer votre application sur un stockage amovible. Pour plus d’informations, voir [Déclarations d’application](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).     |   
 | isGameDvrEnabled           |  booléen |   Indique si les jeux DVR sont activés pour l’application.    |   
@@ -75,8 +75,8 @@ Le corps de la requête contient les paramètres suivants.
 | applicationPackages           |   tableau  | Contient des objets qui fournissent des détails sur chaque package de la soumission. Pour plus d’informations, voir la section [Package d’application](manage-app-submissions.md#application-package-object). Quand vous appelez cette méthode pour mettre à jour une soumission d’application, seules les valeurs *fileName*, *fileStatus*, *minimumDirectXVersion* et *minimumSystemRam* de ces objets sont nécessaires dans le corps de la requête. Les autres valeurs sont renseignées par le Centre de développement.   |    
 | packageDeliveryOptions    | objet  | Contient les paramètres de déploiement de package progressif et de mise à jour obligatoire de la soumission. Pour plus d’informations, consultez [Objet options de remise du package](manage-app-submissions.md#package-delivery-options-object).  |
 | enterpriseLicensing           |  chaîne  |  Une des [valeur de gestion des licences d’entreprise](manage-app-submissions.md#enterprise-licensing) qui indiquent le comportement de la gestion des licences d’entreprise pour l’application.  |    
-| allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  booléen   |  Indique si Microsoft est autorisé à [rendre l’application disponible pour les futures familles d’appareils Windows&nbsp;10](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families).    |    
-| allowTargetFutureDeviceFamilies           | booléen   |  Indique si votre application est autorisée à [cibler les futures familles d’appareils Windows&nbsp;10](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families).     |    
+| allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  booléen   |  Indique si Microsoft est autorisé à [rendre l’application disponible pour les futures familles d’appareils Windows 10](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families).    |    
+| allowTargetFutureDeviceFamilies           | booléen   |  Indique si votre application est autorisée à [cibler les futures familles d’appareils Windows 10](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families).     |    
 
 <span/>
 

@@ -1,14 +1,14 @@
 ---
 author: mcleanbyron
 description: "Utilisez cette méthode dans l’API de soumission du Windows Store pour finaliser le lancement du package pour une soumission de version d’évaluation du package."
-title: "Finalisez le lancement du package pour une soumission de version d’évaluation du package à l’aide de l’API de soumission du WindowsStore"
+title: "Finalisez le lancement du package pour une soumission de version d’évaluation du package à l’aide de l’API de soumission du Windows Store"
 translationtype: Human Translation
 ms.sourcegitcommit: 9b76a11adfab838b21713cb384cdf31eada3286e
 ms.openlocfilehash: 7e08aa793ee0f889995e8ec80554c6b6e41bd8b6
 
 ---
 
-# Finalisez le lancement du package pour une soumission de version d’évaluation du package à l’aide de l’API de soumission du WindowsStore
+# Finalisez le lancement du package pour une soumission de version d’évaluation du package à l’aide de l’API de soumission du Windows Store
 
 
 Utilisez cette méthode dans l’API de soumission du Windows Store pour [finaliser le lancement du package](../publish/gradual-package-rollout.md#completing-the-rollout) pour une soumission de version d’évaluation du package. Pour plus d’informations sur le processus de création d’une soumission de version d’évaluation de package à l’aide de l’API de soumission du Windows Store, voir [Gérer les soumissions de versions d’évaluation du package](manage-flight-submissions.md).
@@ -16,14 +16,14 @@ Utilisez cette méthode dans l’API de soumission du Windows Store pour [finali
 
 ## Conditions préalables
 
-Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
+Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
 
 * Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
-* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
+* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 * Créez une soumission pour une application dans votre compte du Centre de développement. Pour cela, vous pouvez utiliser le tableau de bord du Centre de développement ou la méthode [Créer une soumission d’application](create-an-app-submission.md).
 * Autorisez un lancement de package progressif pour la soumission. Pour cela, vous pouvez utiliser le [tableau de bord du Centre de développement](manage-flight-submissions.md#manage-gradual-package-rollout) ou [l’API de soumission du Windows Store](../publish/gradual-package-rollout.md).
 
->**Remarque**&nbsp;&nbsp;Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
+>**Remarque**  Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
 
 ## Requête
 
@@ -87,7 +87,7 @@ Si la requête ne peut pas aboutir, la réponse contient l’un des codes d’er
 | Error code |  Description   |
 |--------|------------------|
 | 404  | La soumission de version d’évaluation du package est introuvable. |
-| 409  | Ce code indique l’une des erreurs suivantes:<br/><br/><ul><li>La soumission n’est pas dans un état valide pour l’opération de lancement progressif (avant d’appeler cette méthode, la soumission doit être publiée et la valeur [packageRolloutStatus](manage-flight-submissions.md#package-rollout-object) doit être définie sur **PackageRolloutInProgress**).</li><li>La soumission n’appartient pas à l’application spécifiée.</li><li>L’application utilise une fonctionnalité du tableau de bord du Centre de développement qui n’est [actuellement pas prise en charge par l’API de soumission du Windows Store](create-and-manage-submissions-using-windows-store-services.md#not_supported).</li></ul> |   
+| 409  | Ce code indique l’une des erreurs suivantes :<br/><br/><ul><li>La soumission n’est pas dans un état valide pour l’opération de lancement progressif (avant d’appeler cette méthode, la soumission doit être publiée et la valeur [packageRolloutStatus](manage-flight-submissions.md#package-rollout-object) doit être définie sur **PackageRolloutInProgress**).</li><li>La soumission n’appartient pas à l’application spécifiée.</li><li>L’application utilise une fonctionnalité du tableau de bord du Centre de développement qui n’est [actuellement pas prise en charge par l’API de soumission du Windows Store](create-and-manage-submissions-using-windows-store-services.md#not_supported).</li></ul> |   
 
 <span/>
 

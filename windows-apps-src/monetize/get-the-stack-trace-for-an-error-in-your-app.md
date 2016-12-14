@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 ms.assetid: 
-description: "Utilisez cette méthode dans l’API d’analyse du Windows&nbsp;Store pour obtenir la trace de pile concernant une erreur dans votre application."
+description: "Utilisez cette méthode dans l’API d’analyse du Windows Store pour obtenir la trace de pile concernant une erreur dans votre application."
 title: Obtenir la trace de pile concernant une erreur dans votre application
 translationtype: Human Translation
 ms.sourcegitcommit: 767097f068630e5ec171415c05d6dc395c8b26b3
@@ -11,18 +11,18 @@ ms.openlocfilehash: 90481b5f85d010a142e86ca67ac94c3ec25d89c6
 
 # <a name="get-the-stack-trace-for-an-error-in-your-app"></a>Obtenir la trace de pile concernant une erreur dans votre application
 
-Utilisez cette méthode dans l’API d’analyse du Windows&nbsp;Store pour obtenir la trace de pile concernant une erreur dans votre application. Cette méthode ne peut télécharger que la trace de pile concernant une erreur d’application survenue dans les 30&nbsp;derniers jours. Les traces de pile sont également disponibles dans la section **Échecs** du [rapport d’intégrité](../publish/health-report.md) dans le tableau de bord du Centre de développement Windows.
+Utilisez cette méthode dans l’API d’analyse du Windows Store pour obtenir la trace de pile concernant une erreur dans votre application. Cette méthode ne peut télécharger que la trace de pile concernant une erreur d’application survenue dans les 30 derniers jours. Les traces de pile sont également disponibles dans la section **Échecs** du [rapport d’intégrité](../publish/health-report.md) dans le tableau de bord du Centre de développement Windows.
 
-Pour utiliser cette méthode, vous devez d’abord utiliser la méthode [Obtenir les détails sur une erreur dans votre application](get-details-for-an-error-in-your-app.md) pour récupérer l’ID du fichier&nbsp;CAB associé à l’erreur dont vous voulez récupérer la trace de pile.
+Pour utiliser cette méthode, vous devez d’abord utiliser la méthode [Obtenir les détails sur une erreur dans votre application](get-details-for-an-error-in-your-app.md) pour récupérer l’ID du fichier CAB associé à l’erreur dont vous voulez récupérer la trace de pile.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
 
-Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes&nbsp;:
+Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
 
 * Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](access-analytics-data-using-windows-store-services.md#prerequisites) relatives à l’API d’analyse du Windows Store.
-* [Obtenez un jeton d’accès Azure AD](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60&nbsp;minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
-* Obtenez l’ID du fichier&nbsp;CAB associé à l’erreur dont vous voulez récupérer la trace de pile. Pour obtenir cet ID, utilisez la méthode [Obtenir les détails d’une erreur dans votre application](get-details-for-an-error-in-your-app.md) pour récupérer les détails d’une erreur spécifique dans votre application, en spécifiant la valeur **cabId** dans le corps de la réponse.
+* [Obtenez un jeton d’accès Azure AD](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
+* Obtenez l’ID du fichier CAB associé à l’erreur dont vous voulez récupérer la trace de pile. Pour obtenir cet ID, utilisez la méthode [Obtenir les détails d’une erreur dans votre application](get-details-for-an-error-in-your-app.md) pour récupérer les détails d’une erreur spécifique dans votre application, en spécifiant la valeur **cabId** dans le corps de la réponse.
 
 ## <a name="request"></a>Requête
 
@@ -47,14 +47,14 @@ Pour utiliser cette méthode, vous devez d’abord effectuer les opérations sui
 
 | Paramètre        | Type   |  Description      |  Requis  |
 |---------------|--------|---------------|------|
-| applicationId | chaîne | ID Windows&nbsp;Store de l’application dont vous souhaitez obtenir la trace de pile. L’ID Windows&nbsp;Store est disponible dans la page [Identité de l’application](../publish/view-app-identity-details.md) du tableau de bord du Centre de développement. Exemple d’ID Windows&nbsp;Store&nbsp;: 9WZDNCRFJ3Q8. |  Oui  |
-| cabId | chaîne | ID unique du fichier&nbsp;CAB associé à l’erreur dont vous voulez récupérer la trace de pile. Pour obtenir cet ID, utilisez la méthode [Obtenir les détails d’une erreur dans votre application](get-details-for-an-error-in-your-app.md) pour récupérer les détails d’une erreur spécifique dans votre application, en spécifiant la valeur **cabId** dans le corps de la réponse. |  Oui  |
+| applicationId | chaîne | ID Windows Store de l’application dont vous souhaitez obtenir la trace de pile. L’ID Windows Store est disponible dans la page [Identité de l’application](../publish/view-app-identity-details.md) du tableau de bord du Centre de développement. Exemple d’ID Windows Store : 9WZDNCRFJ3Q8. |  Oui  |
+| cabId | chaîne | ID unique du fichier CAB associé à l’erreur dont vous voulez récupérer la trace de pile. Pour obtenir cet ID, utilisez la méthode [Obtenir les détails d’une erreur dans votre application](get-details-for-an-error-in-your-app.md) pour récupérer les détails d’une erreur spécifique dans votre application, en spécifiant la valeur **cabId** dans le corps de la réponse. |  Oui  |
 
 <span/>
  
 ### <a name="request-example"></a>Exemple de requête
 
-L’exemple suivant montre comment obtenir la trace de pile avec cette méthode. Remplacez la valeur *applicationId* par l’ID Windows&nbsp;Store de votre application.
+L’exemple suivant montre comment obtenir la trace de pile avec cette méthode. Remplacez la valeur *applicationId* par l’ID Windows Store de votre application.
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/stacktrace?applicationId=9NBLGGGZ5QDR&cabId=1336373323853 HTTP/1.1
@@ -69,14 +69,14 @@ Authorization: Bearer <your access token>
 | Valeur      | Type    | Description                  |
 |------------|---------|--------------------------------|
 | Valeur      | array   | Tableau d’objets qui contiennent chacun une image de données de trace de pile. Pour plus d’informations sur les données de chaque objet, consultez la section [Valeurs de la trace de pile](#stack-trace-values) ci-dessous. |
-| @nextLink  | chaîne  | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour demander la page suivante. Par exemple, cette valeur est renvoyée si le paramètre **top** de la requête est défini sur&nbsp;10, mais que plus de 10&nbsp;lignes d’erreur sont associées à la requête. |
+| @nextLink  | chaîne  | S’il existe des pages supplémentaires de données, cette chaîne comporte un URI que vous pouvez utiliser pour demander la page suivante. Par exemple, cette valeur est renvoyée si le paramètre **top** de la requête est défini sur 10, mais que plus de 10 lignes d’erreur sont associées à la requête. |
 | TotalCount | nombre entier | Nombre total de lignes dans les résultats de la requête.          |
 
 <span/>
 
 ### <a name="stack-trace-values"></a>Valeurs de la trace de pile
 
-Les éléments du tableau *Value* ont les valeurs suivantes&nbsp;:
+Les éléments du tableau *Value* ont les valeurs suivantes :
 
 | Valeur           | Type    | Description      |
 |-----------------|---------|----------------|

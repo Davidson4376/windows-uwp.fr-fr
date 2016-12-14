@@ -11,7 +11,7 @@ ms.openlocfilehash: f762d7eb70a0e9119f32350a815691109f994c75
 
 # <a name="launch-the-windows-settings-app"></a>Lancer l’application Paramètres Windows
 
-\[ Article mis à jour pour les applications UWP sur Windows&nbsp;10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **API importantes**
 
@@ -47,7 +47,7 @@ Par ailleurs, votre application peut appeler la méthode[**LaunchUriAsync**](htt
 bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-webcam"));
 ```
 
-Le code ci-dessus ouvre la page des paramètres de confidentialité relatifs à l’appareil photo&nbsp;:
+Le code ci-dessus ouvre la page des paramètres de confidentialité relatifs à l’appareil photo :
 
 ![paramètres de confidentialité de l’appareil photo.](images/privacyawarenesssettingsapp.png)
 

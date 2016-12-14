@@ -12,7 +12,7 @@ ms.openlocfilehash: ae6a9806e982a866834371a60788f7a788b04e47
 # <a name="save-a-file-with-a-picker"></a>Enregistrer un fichier avec un sélecteur
 
 
-\[ Mise à jour pour les applications UWP sur Windows&nbsp;10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**

@@ -10,7 +10,7 @@ ms.openlocfilehash: 464548664f8065e4dba45d23ccbb71a68d0b6b17
 ---
 # <a name="get-file-properties"></a>Obtenir les propriétés du fichier
 
-\[ Mise à jour pour les applications UWP sur Windows&nbsp;10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 ** API importantes **

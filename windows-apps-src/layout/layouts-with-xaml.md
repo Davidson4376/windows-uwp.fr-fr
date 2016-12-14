@@ -14,9 +14,9 @@ ms.openlocfilehash: 8ca8852df2747410b9d139b55a4f24366cc0eefc
 
 XAML fournit un système de disposition souple qui permet d’utiliser le dimensionnement automatique, les panneaux de disposition, les états visuels et même des définitions d’interface utilisateur séparées pour créer une interface utilisateur réactive. Grâce à cette structure souple, vous pouvez valoriser votre application en modifiant son apparence à l’écran, notamment en variant les tailles de fenêtre d’application, les résolutions, les densités de pixels et les orientations.
 
-Nous vous expliquons ici comment utiliser les propriétés XAML et les panneaux de disposition pour que votre application soit réactive et adaptative. Nous nous appuyons sur les informations importantes trouvées dans [Présentation de la conception des applications UWP](../layout/design-and-ui-intro.md). Vous devez comprendre ce que sont les pixels effectifs et connaître chacune des techniques de conception réactive: Repositionner, Redimensionner, Ajuster dynamiquement, Révéler, Remplacer et Remodéliser.
+Nous vous expliquons ici comment utiliser les propriétés XAML et les panneaux de disposition pour que votre application soit réactive et adaptative. Nous nous appuyons sur les informations importantes trouvées dans [Présentation de la conception des applications UWP](../layout/design-and-ui-intro.md). Vous devez comprendre ce que sont les pixels effectifs et connaître chacune des techniques de conception réactive : Repositionner, Redimensionner, Ajuster dynamiquement, Révéler, Remplacer et Remodéliser.
 
-> **Remarque**&nbsp;&nbsp;La disposition de votre application commence par le modèle de navigation choisi. Par exemple, vous pouvez choisir d’utiliser [**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) avec le modèle [«onglets et pivot»](../controls-and-patterns/tabs-pivot.md) ou [**SplitView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.aspx) avec le modèle [«volet de navigation»](../controls-and-patterns/nav-pane.md). Pour plus d’informations à ce sujet, voir [Informations de base relatives à la conception de la navigation pour les applications UWP](../layout/navigation-basics.md). Ici, nous abordons les techniques pour rendre réactive la disposition d’une page unique ou d’un groupe d’éléments. Ces informations s’appliquent quel que soit le modèle de navigation que vous choisissez pour votre application.
+> **Remarque**  La disposition de votre application commence par le modèle de navigation choisi. Par exemple, vous pouvez choisir d’utiliser [**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) avec le modèle [« onglets et pivot »](../controls-and-patterns/tabs-pivot.md) ou [**SplitView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.aspx) avec le modèle [« volet de navigation »](../controls-and-patterns/nav-pane.md). Pour plus d’informations à ce sujet, voir [Informations de base relatives à la conception de la navigation pour les applications UWP](../layout/navigation-basics.md). Ici, nous abordons les techniques pour rendre réactive la disposition d’une page unique ou d’un groupe d’éléments. Ces informations s’appliquent quel que soit le modèle de navigation que vous choisissez pour votre application.
 
 L’infrastructure XAML fournit plusieurs niveaux d’optimisation que vous pouvez utiliser pour créer une interface utilisateur réactive.
 - **Disposition fluide**
@@ -27,11 +27,11 @@ L’infrastructure XAML fournit plusieurs niveaux d’optimisation que vous pouv
 - **Disposition adaptative**
    Utilisez les états visuels pour apporter des changements significatifs à votre interface utilisateur en fonction de la taille de la fenêtre ou d’autres modifications.
 
-    Lorsque la fenêtre de votre application grandit ou rétrécit au-delà d’une certaine proportion, vous pouvez, si vous le souhaitez, changer les propriétés de disposition pour repositionner, redimensionner, ajuster dynamiquement, révéler ou remplacer des sections de votre interface utilisateur. Vous pouvez définir des états visuels différents pour votre interface utilisateur et les appliquer lorsque la largeur ou la hauteur de la fenêtre atteint un seuil spécifié. Un [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.adaptivetrigger.aspx) offre un moyen facile de définir le seuil (également appelé «point d’arrêt») au niveau duquel un état est appliqué.
+    Lorsque la fenêtre de votre application grandit ou rétrécit au-delà d’une certaine proportion, vous pouvez, si vous le souhaitez, changer les propriétés de disposition pour repositionner, redimensionner, ajuster dynamiquement, révéler ou remplacer des sections de votre interface utilisateur. Vous pouvez définir des états visuels différents pour votre interface utilisateur et les appliquer lorsque la largeur ou la hauteur de la fenêtre atteint un seuil spécifié. Un [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.adaptivetrigger.aspx) offre un moyen facile de définir le seuil (également appelé « point d’arrêt ») au niveau duquel un état est appliqué.
 
 - **Disposition personnalisée**
    Une disposition personnalisée est optimisée pour une famille d’appareils spécifique ou une plage de tailles d’écran. Dans la famille d’appareils, la disposition doit toujours réagir et s’adapter aux modifications de la plage de tailles de fenêtres prises en charge.
-    > **Remarque**&nbsp;&nbsp; Avec [Continuum pour téléphones](http://go.microsoft.com/fwlink/p/?LinkID=699431), les utilisateurs peuvent connecter leurs téléphones à un moniteur, une souris et un clavier. Cette fonctionnalité estompe les lignes entre le téléphone et les familles d’appareils de bureau.
+    > **Remarque**   Avec [Continuum pour téléphones](http://go.microsoft.com/fwlink/p/?LinkID=699431), les utilisateurs peuvent connecter leurs téléphones à un moniteur, une souris et un clavier. Cette fonctionnalité estompe les lignes entre le téléphone et les familles d’appareils de bureau.
 
     Les solutions de la personnalisation sont les suivantes
     - Créer un déclenchement personnalisé
@@ -66,7 +66,7 @@ Définissez les propriétés [**Height**](https://msdn.microsoft.com/library/win
 
 Le dimensionnement automatique permet de redimensionner les éléments d’interface pour qu’ils s’adaptent à leur contenu ou à leur conteneur parent. Vous pouvez également utiliser le dimensionnement automatique avec les lignes et les colonnes d’une grille. Pour utiliser le dimensionnement automatique, définissez la propriété Height et/ou Width des éléments d’interface utilisateur sur **Auto**.
 
-> **Remarque**&nbsp;&nbsp;Le redimensionnement d’un élément en fonction de son contenu ou de son conteneur dépend de la valeur de ses propriétés [**HorizontalAlignment**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.horizontalalignment.aspx) et [**VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.verticalalignment.aspx), et de la manière dont le conteneur parent gère le dimensionnement de ses enfants. Pour plus d’informations, voir [Alignement]() et [Panneaux de disposition]() plus loin dans cet article.
+> **Remarque**  Le redimensionnement d’un élément en fonction de son contenu ou de son conteneur dépend de la valeur de ses propriétés [**HorizontalAlignment**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.horizontalalignment.aspx) et [**VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.verticalalignment.aspx), et de la manière dont le conteneur parent gère le dimensionnement de ses enfants. Pour plus d’informations, voir [Alignement]() et [Panneaux de disposition]() plus loin dans cet article.
 
 Le *dimensionnement proportionnel* sert à répartir l’espace disponible entre les lignes et les colonnes d’une grille par proportions pondérées. En XAML, les valeurs proportionnelles sont exprimées par \* (ou *n*\* pour le dimensionnement proportionnel pondéré). À titre d’exemple, dans une disposition à deux colonnes, pour spécifier qu’une colonne est cinq fois plus large que l’autre colonne, utilisez « 5\* » et « \* » pour les propriétés [**Width**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.columndefinition.width.aspx) des éléments [**ColumnDefinition**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.columndefinition.aspx).
 
@@ -79,7 +79,7 @@ Colonne_2 | * | Une fois les colonnes Auto calculées, la colonne conserve une p
 Colonne_3 | **44** | La colonne aura une largeur de 44 pixels.
 Colonne_4 | **2**\* | Une fois les colonnes Auto calculées, la colonne conserve une partie de la largeur restante. Colonne_4 sera deux fois plus large que Colonne_2.
 
-La largeur par défaut de la colonne est «*», de sorte que vous n’avez pas besoin de définir explicitement cette valeur pour la deuxième colonne.
+La largeur par défaut de la colonne est « * », de sorte que vous n’avez pas besoin de définir explicitement cette valeur pour la deuxième colonne.
 
 ```xaml
 <Grid>
@@ -150,7 +150,7 @@ Vous pouvez afficher ou masquer un élément en définissant sa propriété [**V
 
 Vous pouvez modifier la propriété Visibility d’un élément dans le code ou dans un état visuel. Lorsque la valeur Visibility d’un élément est modifiée, tous ses éléments enfants sont également modifiés. Vous pouvez remplacer des sections de votre interface utilisateur en révélant un panneau et en en réduisant un autre.
 
-> **Conseil**&nbsp;&nbsp;Lorsque votre interface utilisateur comporte des éléments qui ont la valeur **Collapsed** par défaut, les objets sont toujours créés au démarrage, même s’ils ne sont pas visibles. Vous pouvez différer le chargement de ces éléments jusqu’à ce qu’ils soient affichés en définissant **l’attribut x:DeferLoadStrategy** sur Lazy. Cela peut améliorer les performances de démarrage. Pour plus d’informations, voir [Attribut x:DeferLoadStrategy](../xaml-platform/x-deferloadstrategy-attribute.md).
+> **Conseil**  Lorsque votre interface utilisateur comporte des éléments qui ont la valeur **Collapsed** par défaut, les objets sont toujours créés au démarrage, même s’ils ne sont pas visibles. Vous pouvez différer le chargement de ces éléments jusqu’à ce qu’ils soient affichés en définissant **l’attribut x:DeferLoadStrategy** sur Lazy. Cela peut améliorer les performances de démarrage. Pour plus d’informations, voir [Attribut x:DeferLoadStrategy](../xaml-platform/x-deferloadstrategy-attribute.md).
 
 ### Ressources de style
 
@@ -277,7 +277,7 @@ Cet exemple produit le même résultat que le précédent, mais utilise la synta
 </Page>
 ```
 
-> **Important**&nbsp;&nbsp;Dans l’exemple précédent, la propriété jointe VisualStateManager.VisualStateGroups est définie sur l’élément **Grid**. Lorsque vous utilisez des éléments StateTrigger, vérifiez toujours que VisualStateGroups est jointe au premier enfant de la racine pour que les déclencheurs prennent effet automatiquement. (Ici, **Grid** est le premier enfant de l’élément racine **Page**.)
+> **Important**  Dans l’exemple précédent, la propriété jointe VisualStateManager.VisualStateGroups est définie sur l’élément **Grid**. Lorsque vous utilisez des éléments StateTrigger, vérifiez toujours que VisualStateGroups est jointe au premier enfant de la racine pour que les déclencheurs prennent effet automatiquement. (Ici, **Grid** est le premier enfant de l’élément racine **Page**.)
 
 ### Syntaxe de la propriété jointe
 
@@ -381,7 +381,7 @@ Utilisez les vues XAML pour créer différentes définitions d’interface utili
 
 **Pour ajouter une vue XAML à une application**
 1. Sélectionnez Projet &gt; Ajouter un nouvel élément. La boîte de dialogue Ajouter un nouvel élément s’ouvre.
-    > **Conseil**&nbsp;&nbsp;Vérifiez que le projet ou un dossier, et non la solution, est sélectionné dans l’Explorateur de solutions.
+    > **Conseil**  Vérifiez que le projet ou un dossier, et non la solution, est sélectionné dans l’Explorateur de solutions.
 2. Sous Visual C# ou Visual Basic dans le volet gauche, choisissez le type de modèle XAML.
 3. Dans le volet central, choisissez Vue XAML.
 4. Entrez le nom de la vue. La vue doit être nommée correctement. Pour plus d’informations sur l’attribution de noms, consultez le reste de cette section.
@@ -415,7 +415,7 @@ Pour fournir des fonctionnalités et des vues uniques, vous pouvez créer des fi
 
 **Pour ajouter une page XAML à une application**
 1. Sélectionnez Projet &gt; Ajouter un nouvel élément. La boîte de dialogue Ajouter un nouvel élément s’ouvre.
-    > **Conseil**&nbsp;&nbsp;Vérifiez que le projet, et non la solution, est sélectionné dans l’Explorateur de solutions.
+    > **Conseil**  Vérifiez que le projet, et non la solution, est sélectionné dans l’Explorateur de solutions.
 2. Sous Visual C# ou Visual Basic dans le volet gauche, choisissez le type de modèle XAML.
 3. Dans le volet central, choisissez Page vierge.
 4. Entrez le nom de la page. Par exemple, MainPage_Mobile. Les fichiers de code MainPage_Mobile.xaml et MainPage_Mobile.xaml.cs/vb/cpp sont créés.

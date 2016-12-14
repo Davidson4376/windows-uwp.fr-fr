@@ -1,6 +1,6 @@
 ---
 author: mijacobs
-Description: "Les modèles de vignette adaptative sont une nouvelle fonctionnalité de Windows&nbsp;10, qui vous permet de concevoir votre propre contenu de notification par vignette à l’aide d’un langage de balisage simple et flexible adapté à différentes densités d’écran."
+Description: "Les modèles de vignette adaptative sont une nouvelle fonctionnalité de Windows 10, qui vous permet de concevoir votre propre contenu de notification par vignette à l’aide d’un langage de balisage simple et flexible adapté à différentes densités d’écran."
 title: "Créer des vignettes adaptatives"
 ms.assetid: 1246B58E-D6E3-48C7-AD7F-475D113600F9
 label: Create adaptive tiles
@@ -15,16 +15,16 @@ ms.openlocfilehash: a00796da398d6e0246caac43b18fb688a9e03fce
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
-Les modèles de vignette adaptative sont une nouvelle fonctionnalité de Windows&nbsp;10, qui vous permet de concevoir votre propre contenu de notification par vignette à l’aide d’un langage de balisage simple et flexible adapté à différentes densités d’écran. Cet article vous indique comment créer des vignettes dynamiques adaptatives pour votre application de plateforme Windows universelle (UWP). Pour obtenir la liste complète des éléments et attributs adaptatifs, voir [Schéma des vignettes adaptatives](tiles-and-notifications-adaptive-tiles-schema.md).
+Les modèles de vignette adaptative sont une nouvelle fonctionnalité de Windows 10, qui vous permet de concevoir votre propre contenu de notification par vignette à l’aide d’un langage de balisage simple et flexible adapté à différentes densités d’écran. Cet article vous indique comment créer des vignettes dynamiques adaptatives pour votre application de plateforme Windows universelle (UWP). Pour obtenir la liste complète des éléments et attributs adaptatifs, voir [Schéma des vignettes adaptatives](tiles-and-notifications-adaptive-tiles-schema.md).
 
 (Si vous le souhaitez, vous pouvez toujours utiliser les modèles prédéfinis du [catalogue de modèles de vignette Windows 8](https://msdn.microsoft.com/library/windows/apps/hh761491) lors de la conception de notifications pour Windows 10.)
 
 
 ## <a name="getting-started"></a>Prise en main
 
-**Installez la bibliothèque Notifications.** Si vous préférez utiliser&nbsp;C# plutôt que&nbsp;XML pour générer les notifications, installez le package&nbsp;NuGet [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) (recherchez «&nbsp;notifications uwp&nbsp;». Les exemples de code C# indiqués dans cet article utilisent la version&nbsp;1.0.0 du package NuGet.
+**Installez la bibliothèque Notifications.** Si vous préférez utiliser C# plutôt que XML pour générer les notifications, installez le package NuGet [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) (recherchez « notifications uwp ». Les exemples de code C# indiqués dans cet article utilisent la version 1.0.0 du package NuGet.
 
-**Installez Notifications Visualizer.** Cette application UWP gratuite vous permet de concevoir des vignettes dynamiques adaptatives en fournissant un aperçu visuel instantané de votre vignette lorsque vous la modifiez, comparable au mode Création/Éditeur XAML de Visual&nbsp;Studio. Pour plus d’informations, lisez [ce billet de blog](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/09/22/introducing-notifications-visualizer-for-windows-10.aspx). Vous pouvez également télécharger Notifications Visualizer [ici](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1).
+**Installez Notifications Visualizer.** Cette application UWP gratuite vous permet de concevoir des vignettes dynamiques adaptatives en fournissant un aperçu visuel instantané de votre vignette lorsque vous la modifiez, comparable au mode Création/Éditeur XAML de Visual Studio. Pour plus d’informations, lisez [ce billet de blog](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/09/22/introducing-notifications-visualizer-for-windows-10.aspx). Vous pouvez également télécharger Notifications Visualizer [ici](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1).
 
 
 ## <a name="how-to-send-a-tile-notification"></a>Comment envoyer une notification par vignette
@@ -105,14 +105,14 @@ TileContent content = new TileContent()
 };
 ```
 
-**Résultat&nbsp;:**
+**Résultat :**
 
 ![exemple de vignette rapide](images/adaptive-tiles-quicksample.png)
 
 ## <a name="tile-sizes"></a>Tailles des vignettes
 
 
-Le contenu de chaque taille de vignette est spécifié individuellement dans des éléments [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) distincts au sein de la charge utile XML. Choisissez la taille cible en définissant l’attribut de modèle sur l’une des valeurs suivantes&nbsp;:
+Le contenu de chaque taille de vignette est spécifié individuellement dans des éléments [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) distincts au sein de la charge utile XML. Choisissez la taille cible en définissant l’attribut de modèle sur l’une des valeurs suivantes :
 
 -   TileSmall
 -   TileMedium
@@ -197,16 +197,16 @@ TileContent content = new TileContent()
 };
 ```
 
-**Résultat&nbsp;:**
+**Résultat :**
 
-![tailles de vignettes adaptatives&nbsp;: petite, moyenne, large et grande](images/adaptive-tiles-sizes.png)
+![tailles de vignettes adaptatives : petite, moyenne, large et grande](images/adaptive-tiles-sizes.png)
 
 ## <a name="branding"></a>Personnalisation
 
 
-Vous pouvez contrôler la personnalisation en bas d’une vignette dynamique (nom d’affichage et logo d’angle) à l’aide de l’attribut branding de la charge utile de notification. Vous pouvez choisir de ne rien afficher (valeur «&nbsp;none&nbsp;»), d’afficher uniquement le nom (valeur «&nbsp;name&nbsp;»), d’afficher uniquement le logo (valeur «&nbsp;logo&nbsp;») ou d’afficher à la fois le nom et le logo (valeur «&nbsp;nameAndLogo&nbsp;»).
+Vous pouvez contrôler la personnalisation en bas d’une vignette dynamique (nom d’affichage et logo d’angle) à l’aide de l’attribut branding de la charge utile de notification. Vous pouvez choisir de ne rien afficher (valeur « none »), d’afficher uniquement le nom (valeur « name »), d’afficher uniquement le logo (valeur « logo ») ou d’afficher à la fois le nom et le logo (valeur « nameAndLogo »).
 
-**Remarque** Étant donné que Windows&nbsp;Mobile ne prend pas en charge le logo d’angle, les valeurs «&nbsp;logo&nbsp;» et «&nbsp;nameAndLogo&nbsp;» sont redéfinies par défaut sur «&nbsp;name&nbsp;» sur Windows&nbsp;Mobile.
+**Remarque** Étant donné que Windows Mobile ne prend pas en charge le logo d’angle, les valeurs « logo » et « nameAndLogo » sont redéfinies par défaut sur « name » sur Windows Mobile.
 
  
 
@@ -224,11 +224,11 @@ new TileVisual()
 }
 ```
 
-**Résultat&nbsp;:**
+**Résultat :**
 
 ![Vignettes adaptatives, nom et logo](images/adaptive-tiles-namelogo.png)
 
-Vous pouvez appliquer une personnalisation à des tailles de vignettes spécifiques en procédant de l’une des deux manières suivantes&nbsp;:
+Vous pouvez appliquer une personnalisation à des tailles de vignettes spécifiques en procédant de l’une des deux manières suivantes :
 
 1. En appliquant l’attribut à l’élément [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md)
 2. En appliquant l’attribut sur l’élément [&lt;visual&gt;](tiles-and-notifications-adaptive-tiles-schema.md) (qui affecte la charge utile de notification entière si vous ne spécifiez pas de personnalisation pour une liaison), la personnalisation fournie sur l’élément visuel est utilisée.
@@ -272,13 +272,13 @@ TileContent content = new TileContent()
 };
 ```
 
-**Résultat de la personnalisation par défaut&nbsp;:**
+**Résultat de la personnalisation par défaut :**
 
 ![Personnalisation par défaut des vignettes](images/adaptive-tiles-defaultbranding.png)
 
-Si vous ne spécifiez aucune personnalisation dans votre charge utile de notification, les propriétés de base de la vignette déterminent la personnalisation. Si la vignette de base indique le nom d’affichage, alors la personnalisation est définie par défaut sur « name ». Si le nom d’affichage n’est pas indiqué, la personnalisation est définie par défaut sur «&nbsp;none&nbsp;».
+Si vous ne spécifiez aucune personnalisation dans votre charge utile de notification, les propriétés de base de la vignette déterminent la personnalisation. Si la vignette de base indique le nom d’affichage, alors la personnalisation est définie par défaut sur « name ». Si le nom d’affichage n’est pas indiqué, la personnalisation est définie par défaut sur « none ».
 
-**Remarque** Il s’agit d’une modification par rapport à Windows&nbsp;8.x, dans lequel la personnalisation par défaut était définie sur «&nbsp;logo&nbsp;».
+**Remarque** Il s’agit d’une modification par rapport à Windows 8.x, dans lequel la personnalisation par défaut était définie sur « logo ».
 
  
 
@@ -287,7 +287,7 @@ Si vous ne spécifiez aucune personnalisation dans votre charge utile de notific
 
 Vous pouvez remplacer le nom d’affichage d’une notification en entrant la chaîne de texte de votre choix avec l’attribut **displayName**. Comme pour la personnalisation, vous pouvez spécifier cela dans l’élément [&lt;visual&gt;](tiles-and-notifications-adaptive-tiles-schema.md), ce qui affecte toute la charge utile de notification. Vous pouvez également spécifier cela dans l’élément [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md), ce qui affecte uniquement les vignettes individuelles.
 
-**Problème connu** Sur Windows&nbsp;Mobile, si vous spécifiez une ShortName pour votre vignette, le nom d’affichage fourni dans votre notification ne sera pas utilisé (seule la chaîne ShortName sera toujours affichée). 
+**Problème connu** Sur Windows Mobile, si vous spécifiez une ShortName pour votre vignette, le nom d’affichage fourni dans votre notification ne sera pas utilisé (seule la chaîne ShortName sera toujours affichée). 
 
 ```XML
 <tile>
@@ -329,7 +329,7 @@ TileContent content = new TileContent()
 };
 ```
 
-**Résultat&nbsp;:**
+**Résultat :**
 
 ![Nom d’affichage des vignettes adaptatives](images/adaptive-tiles-displayname.png)
 
@@ -350,7 +350,7 @@ new AdaptiveText()
 };
 ```
 
-**Résultat&nbsp;:**
+**Résultat :**
 
 ![Texte de vignette adaptative](images/adaptive-tiles-text.png)
 
@@ -372,7 +372,7 @@ new AdaptiveText()
 };
 ```
 
-**Résultat&nbsp;:**
+**Résultat :**
 
 ![Vignette adaptative avec renvoi de texte à la ligne](images/adaptive-tiles-textwrapping.png)
 
@@ -400,7 +400,7 @@ new AdaptiveText()
 }
 ```
 
-**Résultat&nbsp;:**
+**Résultat :**
 
 ![Styles de texte des vignettes adaptatives](images/adaptive-tiles-textstyles.png)
 
@@ -472,7 +472,7 @@ new AdaptiveText()
 };
 ```
 
-**Résultat&nbsp;:**
+**Résultat :**
 
 ![Alignement du texte des vignettes adaptatives](images/adaptive-tiles-textalignment.png)
 
@@ -567,7 +567,7 @@ private static AdaptiveGroup CreateGroup(string from, string subject, string bod
 }
 ```
 
-**Résultat&nbsp;:**
+**Résultat :**
 
 ![Groupes et sous-groupes de vignettes adaptatives](images/adaptive-tiles-groups-subgroups.png)
 
@@ -605,7 +605,7 @@ L’attribut **hint-weight** vous permet de contrôler la largeur des colonnes. 
 <td align="left">25 %</td>
 </tr>
 <tr class="even">
-<td align="left">Pondération totale&nbsp;: 4</td>
+<td align="left">Pondération totale : 4</td>
 <td align="left"></td>
 </tr>
 </tbody>
@@ -636,7 +636,7 @@ Pour qu’une colonne soit deux fois plus large qu’une autre colonne, attribue
 <td align="left">66,7 %</td>
 </tr>
 <tr class="even">
-<td align="left">Pondération totale&nbsp;: 3</td>
+<td align="left">Pondération totale : 3</td>
 <td align="left"></td>
 </tr>
 </tbody>
@@ -646,7 +646,7 @@ Pour qu’une colonne soit deux fois plus large qu’une autre colonne, attribue
 
 ![Sous-groupes avec une colonne deux fois plus large que l’autre](images/adaptive-tiles-subgroups02.png)
 
-Si vous souhaitez que les première et seconde colonnes occupent respectivement 20&nbsp;% et 80&nbsp;% de la largeur totale, définissez la première pondération sur 20 et la seconde sur 80. Si la totalité des pondérations est égale à 100, elles correspondent à des pourcentages.
+Si vous souhaitez que les première et seconde colonnes occupent respectivement 20 % et 80 % de la largeur totale, définissez la première pondération sur 20 et la seconde sur 80. Si la totalité des pondérations est égale à 100, elles correspondent à des pourcentages.
 
 <table>
 <colgroup>
@@ -667,7 +667,7 @@ Si vous souhaitez que les première et seconde colonnes occupent respectivement 
 <td align="left">80 %</td>
 </tr>
 <tr class="even">
-<td align="left">Pondération totale&nbsp;: 100</td>
+<td align="left">Pondération totale : 100</td>
 <td align="left"></td>
 </tr>
 </tbody>
@@ -677,7 +677,7 @@ Si vous souhaitez que les première et seconde colonnes occupent respectivement 
 
 ![Sous-groupes avec des pondérations totalisant 100](images/adaptive-tiles-subgroups03.png)
 
-**Remarque** Une marge de 8&nbsp;pixels est automatiquement ajoutée entre les colonnes.
+**Remarque** Une marge de 8 pixels est automatiquement ajoutée entre les colonnes.
 
  
 
@@ -781,7 +781,7 @@ private static AdaptiveSubgroup CreateSubgroup(string day, string image, string 
 }
 ```
 
-**Résultat&nbsp;:**
+**Résultat :**
 
 ![Exemple d’une vignette météo](images/adaptive-tiles-weathertile.png)
 
@@ -868,7 +868,7 @@ private static AdaptiveSubgroup CreateSubgroup(string day, string image, string 
 }
 ```
 
-**Résultat&nbsp;:**
+**Résultat :**
 
 ![Exemple d’image](images/adaptive-tiles-images01.png)
 
@@ -901,13 +901,13 @@ TileLarge = new TileBinding()
 }
 ```
 
-**Résultat&nbsp;:**
+**Résultat :**
 
 ![Exemple d’alignement d’images (à gauche, au centre, à droite)](images/adaptive-tiles-imagealignment.png)
 
 ### <a name="image-margins"></a>Marges d’images
 
-Par défaut, une marge de 8&nbsp;pixels est insérée dans les images incluses entre le contenu et l’image située au-dessus ou au-dessous. Cette marge peut être supprimée à l’aide de l’attribut **hint-removeMargin** dans l’image. Toutefois, les images conservent toujours la marge de 8&nbsp;pixels à partir du bord de la vignette, et les sous-groupes (colonnes) conservent toujours le remplissage de 8&nbsp;pixels entre les colonnes.
+Par défaut, une marge de 8 pixels est insérée dans les images incluses entre le contenu et l’image située au-dessus ou au-dessous. Cette marge peut être supprimée à l’aide de l’attribut **hint-removeMargin** dans l’image. Toutefois, les images conservent toujours la marge de 8 pixels à partir du bord de la vignette, et les sous-groupes (colonnes) conservent toujours le remplissage de 8 pixels entre les colonnes.
 
 ```XML
 <binding template="TileMedium" branding="none">
@@ -987,7 +987,7 @@ private static AdaptiveSubgroup CreateSubgroup(string day, string image, string 
 
 ### <a name="image-cropping"></a>Rognage d’images
 
-Les images peuvent être rognées dans un cercle à l’aide de l’attribut **hint-crop**, qui ne prend actuellement en charge que les valeurs «&nbsp;none&nbsp;» (par défaut) ou «&nbsp;circle&nbsp;».
+Les images peuvent être rognées dans un cercle à l’aide de l’attribut **hint-crop**, qui ne prend actuellement en charge que les valeurs « none » (par défaut) ou « circle ».
 
 ```XML
 <binding template="TileLarge" hint-textStacking="center">
@@ -1049,7 +1049,7 @@ TileLarge = new TileBinding()
 }
 ```
 
-**Résultat&nbsp;:**
+**Résultat :**
 
 ![exemple de rognage d’image](images/adaptive-tiles-imagecropping.png)
 
@@ -1131,7 +1131,7 @@ private static AdaptiveSubgroup CreateSubgroup(string day, string image, string 
 }
 ```
 
-**Résultat&nbsp;:**
+**Résultat :**
 
 ![exemple d’image d’arrière-plan](images/adaptive-tiles-backgroundimage.png)
 
@@ -1178,7 +1178,7 @@ TileWide = new TileBinding()
 
 **Rognage d’images furtives et d’arrière-plan dans un cercle**
 
-Pour rogner les images furtives et d’arrière-plan dans un cercle, utilisez l’attribut suivant&nbsp;:
+Pour rogner les images furtives et d’arrière-plan dans un cercle, utilisez l’attribut suivant :
 
 ```XML
 <image placement="peek" hint-crop="circle" src="Assets/Apps/Hipstame/hipster.jpg"/>
@@ -1192,7 +1192,7 @@ new TilePeekImage()
 }
 ```
 
-Le résultat se présente comme suit&nbsp;:
+Le résultat se présente comme suit :
 
 ![Rognage d’image furtive et d’arrière-plan dans un cercle](images/circlecrop-image.png)
 
@@ -1200,7 +1200,7 @@ Le résultat se présente comme suit&nbsp;:
 
 Pour utiliser une image furtive et une image d’arrière-plan sur une notification par vignette, spécifiez ces deux images dans la charge utile de notification.
 
-Le résultat présentera l’aspect suivant&nbsp;:
+Le résultat présentera l’aspect suivant :
 
 ![Utilisation combinée d’une image furtive et d’une image d’arrière-plan](images/peekandbackground.png)
 
@@ -1211,7 +1211,7 @@ Vous pouvez définir une superposition noire sur vos images furtives et d’arri
 
 **Utilisation de l’attribut hint-overlay sur une image d’arrière-plan**
 
-Votre image d’arrière-plan adopte par défaut une superposition à 20&nbsp;% tant que votre charge utile contient des éléments de texte (la superposition par défaut est de 0&nbsp;%).
+Votre image d’arrière-plan adopte par défaut une superposition à 20 % tant que votre charge utile contient des éléments de texte (la superposition par défaut est de 0 %).
 
 ```XML
 <binding template="TileWide">
@@ -1236,13 +1236,13 @@ TileWide = new TileBinding()
 }
 ```
 
-**Résultat de l’application de l’attribut hint-overlay&nbsp;:**
+**Résultat de l’application de l’attribut hint-overlay :**
 
 ![Exemple d’image avec superposition](images/adaptive-tiles-image-hintoverlay.png)
 
 **Utilisation de l’attribut hint-overlay sur une image furtive**
 
-La version&nbsp;1511 de Windows&nbsp;10 prend en charge une superposition de votre image furtive, comme de votre image d’arrière-plan. Spécifiez l’attribut hint-overlay sur l’image furtive sous la forme d’un nombre entier compris entre&nbsp;0 et&nbsp;100. La superposition par défaut des images furtives est de&nbsp;0 (aucune superposition).
+La version 1511 de Windows 10 prend en charge une superposition de votre image furtive, comme de votre image d’arrière-plan. Spécifiez l’attribut hint-overlay sur l’image furtive sous la forme d’un nombre entier compris entre 0 et 100. La superposition par défaut des images furtives est de 0 (aucune superposition).
 
 ```XML
 <binding template="TileMedium">
@@ -1266,7 +1266,7 @@ TileMedium = new TileBinding()
 }
 ```
 
-Cet exemple montre une image furtive avec une opacité de 20&nbsp;% (à gauche) et une opacité de 0&nbsp;% (à droite)&nbsp;:
+Cet exemple montre une image furtive avec une opacité de 20 % (à gauche) et une opacité de 0 % (à droite) :
 
 ![Attribut hint-overlay sur une image furtive](images/hintoverlay.png)
 
@@ -1390,7 +1390,7 @@ TileWide = new TileBinding()
 
 
 * [Schéma des vignettes adaptatives](tiles-and-notifications-adaptive-tiles-schema.md)
-* [Démarrage rapide&nbsp;: Envoyer une notification par vignette locale](tiles-and-notifications-create-adaptive-tiles.md)
+* [Démarrage rapide : Envoyer une notification par vignette locale](tiles-and-notifications-create-adaptive-tiles.md)
 * [Bibliothèque Notifications sur GitHub](https://github.com/Microsoft/UWPCommunityToolkit/tree/dev/Notifications)
 * [Catalogue de modèles de vignette spéciaux](tiles-and-notifications-special-tile-templates-catalog.md)
  

@@ -13,17 +13,17 @@ ms.openlocfilehash: 3abef943530cc756de117edccc5ab16e5f178604
 
 Les versions précédentes du Kit de développement logiciel (SDK) publicitaire Microsoft permettaient aux applications de la plateforme Windows universelle (UWP) d’afficher des bannières publicitaires à l’aide de la classe **AdMediatorControl**. Les développeurs pouvaient ainsi optimiser leurs revenus publicitaires en affichant des bannières publicitaires à partir de nos réseaux de partenaires (AOL et AppNexus), ainsi que d’AdDuplex. Le [SDK Microsoft Store Services](http://aka.ms/store-em-sdk) ne prend plus prend en charge la classe **AdMediatorControl**. Si vous avez une application qui utilise la classe **AdMediatorControl** d’une version précédente du SDK et que vous voulez migrer vers une application UWP qui utilise le [SDK Microsoft Store Services](http://aka.ms/store-em-sdk), suivez les instructions de cet article pour mettre à jour votre code de manière à utiliser la classe **AdControl** au lieu de la classe **AdMediatorControl**. Vous pouvez éventuellement configurer votre application pour qu’elle utilise AdDuplex pour la médiation publicitaire, selon une approche pondérée ou classée.
 
->**Remarque**&nbsp;&nbsp;Les exemples de code fournis dans cet article sont donnés uniquement à des fins d’illustration. Vous devrez peut-être effectuer des ajustements pour adapter ces exemples de code à votre application.
+>**Remarque**  Les exemples de code fournis dans cet article sont donnés uniquement à des fins d’illustration. Vous devrez peut-être effectuer des ajustements pour adapter ces exemples de code à votre application.
 
 ## Prérequis
 
 * Une application UWP qui utilise actuellement la classe AdMediatorControl et qui est publiée dans le Windows Store.
-* Un ordinateur de développement avec VisualStudio2015 et le [SDK Microsoft Store Services](http://aka.ms/store-em-sdk).
-* Si vous souhaitez utiliser AdDuplex pour la médiation publicitaire, vous devez également disposer du [SDK AdDuplex Windows10](https://visualstudiogallery.msdn.microsoft.com/6930860a-e64b-4b46-9d72-62d7fddda077) sur votre ordinateur de développement.
+* Un ordinateur de développement avec Visual Studio 2015 et le [SDK Microsoft Store Services](http://aka.ms/store-em-sdk).
+* Si vous souhaitez utiliser AdDuplex pour la médiation publicitaire, vous devez également disposer du [SDK AdDuplex Windows 10](https://visualstudiogallery.msdn.microsoft.com/6930860a-e64b-4b46-9d72-62d7fddda077) sur votre ordinateur de développement.
 
-  >**Remarque**&nbsp;&nbsp;Au lieu d’exécuter le programme d’installation du SDK AdDuplex à partir du lien ci-dessus, vous pouvez installer les bibliothèques AdDuplex pour votre projet d’application UWP dans VisualStudio2015. Ouvrez votre projet d’application UWP dans VisualStudio2015, puis cliquez sur **Projet** > **Gérer les packages NuGet**. Recherchez le package NuGet nommé **AdDuplexWin10**, puis installez-le.
+  >**Remarque**  Au lieu d’exécuter le programme d’installation du SDK AdDuplex à partir du lien ci-dessus, vous pouvez installer les bibliothèques AdDuplex pour votre projet d’application UWP dans Visual Studio 2015. Ouvrez votre projet d’application UWP dans Visual Studio 2015, puis cliquez sur **Projet** > **Gérer les packages NuGet**. Recherchez le package NuGet nommé **AdDuplexWin10**, puis installez-le.
 
-## Étape 1: récupérer vos ID d’application et d’unité publicitaire
+## Étape 1 : récupérer vos ID d’application et d’unité publicitaire
 
 Lorsque vous migrez votre code pour pouvoir utiliser la classe **AdControl**, vous devez connaître vos ID d’application et vos ID d’unité publicitaire. La meilleure façon d’obtenir les ID les plus récents consiste à les récupérer à partir de votre fichier de configuration de médiation.
 
@@ -64,7 +64,7 @@ Lorsque vous migrez votre code pour pouvoir utiliser la classe **AdControl**, vo
 7. Si vous utilisez des [publicités maison](../publish/about-house-ads.md), repérez l’élément ```<AdAdapterInfo>``` contenant l’élément enfant ```<Name>MicrosoftAdvertisingHouse</Name>```. Dans cet élément, recherchez les éléments ```<Key>``` associés aux valeurs **MAdUnitId** et **WAdUnitId**, puis enregistrez les valeurs des éléments ```<Value>``` correspondants pour pouvoir les utiliser ultérieurement. Ces valeurs correspondent respectivement aux ID d’annonces mobiles et non mobiles pour les publicités maison Microsoft.
 8. Si vous utilisez AdDuplex, recherchez l’élément ```<AdAdapterInfo>``` contenant l’élément enfant ```<Name>AdDuplex</Name>```. Dans cet élément, recherchez les éléments ```<Key>``` associés aux valeurs **AppKey** et **AdUnitId**, puis enregistrez les valeurs des éléments ```<Value>``` correspondants pour pouvoir les utiliser ultérieurement. Ces valeurs correspondent respectivement à votre clé d’application AdDuplex et à votre ID d’unité publicitaire.
 
-## Étape 2: mettre à jour votre code d’application
+## Étape 2 : mettre à jour votre code d’application
 
 Maintenant que vous connaissez votre ID d’application et votre ID d’unité publicitaire, vous êtes prêt à mettre à jour le code de votre application pour utiliser la classe **AdControl** au lieu de la classe **AdMediatorControl**.
 
@@ -72,11 +72,11 @@ Maintenant que vous connaissez votre ID d’application et votre ID d’unité p
 
 Si vous utilisez uniquement des publicités payantes Microsoft dans votre configuration de médiation publicitaire, procédez comme suit.
 
-  >**Remarque**&nbsp;&nbsp;Ces étapes supposent que la page d’application sur laquelle vous voulez afficher des publicités contient une grille vide nommée **myAdGrid**, par exemple: ```<Grid x:Name="myAdGrid"/>```. Dans ces étapes, vous allez créer et configurer les contrôles publicitaires entièrement dans votre code, plutôt qu’avec XAML.
+  >**Remarque**  Ces étapes supposent que la page d’application sur laquelle vous voulez afficher des publicités contient une grille vide nommée **myAdGrid**, par exemple : ```<Grid x:Name="myAdGrid"/>```. Dans ces étapes, vous allez créer et configurer les contrôles publicitaires entièrement dans votre code, plutôt qu’avec XAML.
 
 1. Ouvrez votre application UWP dans Visual Studio.
 2.  Dans la fenêtre **Explorateur de solutions**, cliquez avec le bouton droit sur **Références**, puis sélectionnez **Ajouter une référence...**.
-Dans **Gestionnaire de références**, développez **Windows universel**, cliquez sur **Extensions**, puis cochez la case en regard de **Kit de développement logiciel (SDK) Microsoft Advertising pour XAML** (version10.0).
+Dans **Gestionnaire de références**, développez **Windows universel**, cliquez sur **Extensions**, puis cochez la case en regard de **Kit de développement logiciel (SDK) Microsoft Advertising pour XAML** (version 10.0).
 3. Dans **Gestionnaire de références**, cliquez sur OK.
 4. Supprimez la déclaration **AdMediatorControl** de votre code XAML et supprimez le code qui utilise cet objet **AdMediatorControl**, y compris tous les gestionnaires d’événements associés.
 5. Ouvrez le fichier de code de l’application **Page** sur laquelle vous voulez afficher des publicités.
@@ -96,10 +96,10 @@ Dans **Gestionnaire de références**, développez **Windows universel**, clique
   private const string MAPPLICATIONID = "<tbd>";
   private const string MADUNITID = "<tbd>";
   ```
-7. Pour chacune de ces déclarations de constantes, remplacez les valeurs ```<tbd>```:
-  * **AD_WIDTH** et **AD_HEIGHT**: assignez ces éléments à l’une des [tailles de bannières publicitaires prises en charge]( https://msdn.microsoft.com/windows/uwp/monetize/supported-ad-sizes-for-banner-ads).
-  * **WAPPLICATIONID** et **WADUNITID**: affectez ces éléments aux valeurs **WApplicationId** et **WAdUnitId** pour les publicités payantes Microsoft que vous avez récupérées précédemment à partir du fichier de configuration de la médiation (ces valeurs s’appliquent à l’unité publicitaire non mobile correspondant aux publicités payantes).
-  * **MAPPLICATIONID** et **MADUNITID**: affectez ces éléments aux valeurs **MApplicationId** et **MAdUnitId** pour les publicités payantes Microsoft que vous avez récupérées précédemment à partir du fichier de configuration de la médiation (ces valeurs s’appliquent à l’unité publicitaire mobile correspondant aux publicités payantes).
+7. Pour chacune de ces déclarations de constantes, remplacez les valeurs ```<tbd>``` :
+  * **AD_WIDTH** et **AD_HEIGHT** : assignez ces éléments à l’une des [tailles de bannières publicitaires prises en charge]( https://msdn.microsoft.com/windows/uwp/monetize/supported-ad-sizes-for-banner-ads).
+  * **WAPPLICATIONID** et **WADUNITID** : affectez ces éléments aux valeurs **WApplicationId** et **WAdUnitId** pour les publicités payantes Microsoft que vous avez récupérées précédemment à partir du fichier de configuration de la médiation (ces valeurs s’appliquent à l’unité publicitaire non mobile correspondant aux publicités payantes).
+  * **MAPPLICATIONID** et **MADUNITID** : affectez ces éléments aux valeurs **MApplicationId** et **MAdUnitId** pour les publicités payantes Microsoft que vous avez récupérées précédemment à partir du fichier de configuration de la médiation (ces valeurs s’appliquent à l’unité publicitaire mobile correspondant aux publicités payantes).
 
 8. Ajoutez les déclarations de variables suivantes à votre classe **Page**.
 
@@ -140,11 +140,11 @@ Dans **Gestionnaire de références**, développez **Windows universel**, clique
 
 Si vous utilisez les publicités maison Microsoft, AdDuplex ou encore les publicités payantes Microsoft et que vous souhaitez continuer d’utiliser AdDuplex pour votre médiation publicitaire, suivez les étapes décrites dans cette section. Les exemples de code prennent en charge aussi bien AdDuplex que les publicités maison Microsoft. Si vous utilisez AdDuplex mais pas les publicités maison Microsoft (ou inversement), supprimez le code qui ne s’applique pas à votre scénario.
 
-  >**Remarque**&nbsp;&nbsp;Ces étapes supposent que la page d’application sur laquelle vous voulez afficher des publicités contient une grille vide nommée **myAdGrid**, par exemple: ```<Grid x:Name="myAdGrid"/>```. Dans ces étapes, vous allez créer et configurer les contrôles publicitaires entièrement dans votre code, plutôt qu’avec XAML.
+  >**Remarque**  Ces étapes supposent que la page d’application sur laquelle vous voulez afficher des publicités contient une grille vide nommée **myAdGrid**, par exemple : ```<Grid x:Name="myAdGrid"/>```. Dans ces étapes, vous allez créer et configurer les contrôles publicitaires entièrement dans votre code, plutôt qu’avec XAML.
 
 1. Ouvrez votre application UWP dans Visual Studio.
 2.  Dans la fenêtre **Explorateur de solutions**, cliquez avec le bouton droit sur **Références**, puis sélectionnez **Ajouter une référence...**.
-Dans **Gestionnaire de références**, développez **Windows universel**, cliquez sur **Extensions**, puis cochez la case en regard de **Kit de développement logiciel (SDK) Microsoft Advertising pour XAML** (version10.0).
+Dans **Gestionnaire de références**, développez **Windows universel**, cliquez sur **Extensions**, puis cochez la case en regard de **Kit de développement logiciel (SDK) Microsoft Advertising pour XAML** (version 10.0).
 3. Dans **Gestionnaire de références**, cliquez sur OK.
 4. Supprimez la déclaration **AdMediatorControl** de votre code XAML et supprimez le code qui utilise cet objet **AdMediatorControl**, y compris tous les gestionnaires d’événements associés.
 5. Ouvrez le fichier de code de l’application **Page** sur laquelle vous voulez afficher des publicités.
@@ -173,13 +173,13 @@ Dans **Gestionnaire de références**, développez **Windows universel**, clique
   private const string ADDUPLEX_ADUNIT = "<tbd>";
   ```
 4. Pour chacune des déclarations de constante affectées à ```<tbd>```, remplacez la valeur ```<tbd>``` par la valeur réelle de votre scénario.
-  * **AD_WIDTH** et **AD_HEIGHT**: assignez ces éléments à l’une des [tailles de bannières publicitaires prises en charge]( https://msdn.microsoft.com/windows/uwp/monetize/supported-ad-sizes-for-banner-ads).
-  * **HOUSE_AD_WEIGHT**: affectez cet élément à un entier compris entre 0 et 100 qui spécifie la valeur de poids que vous voulez appliquer aux publicités maison Microsoft par rapport aux publicités payantes Microsoft (où 0 indique que les publicités maison ne doivent jamais être affichées, et 100 que les publicités maison doivent toujours être affichées).
-  * **WAPPLICATIONID** et **WADUNITID_PAID**: affectez ces éléments aux valeurs **WApplicationId** et **WAdUnitId** pour les publicités payantes Microsoft que vous avez récupérées précédemment à partir du fichier de configuration de la médiation (ces valeurs s’appliquent à l’unité publicitaire non mobile correspondant aux publicités payantes).
-  * **WADUNITID_HOUSE**: affectez cet élément à la valeur **WAdUnitId** correspondant aux publicités maison que vous avez récupérées précédemment à partir du fichier de configuration de la médiation (cette valeur s’applique à l’unité publicitaire non mobile correspondant aux publicités maison).
-  * **MAPPLICATIONID** et **MADUNITID_PAID**: affectez ces éléments aux valeurs **MApplicationId** et **MAdUnitId** pour les publicités payantes Microsoft que vous avez récupérées précédemment à partir du fichier de configuration de la médiation (ces valeurs s’appliquent à l’unité publicitaire mobile correspondant aux publicités payantes).
-  * **MADUNITID_HOUSE**: affectez cet élément à la valeur **MAdUnitId** correspondant aux publicités maison que vous avez récupérées précédemment à partir du fichier de configuration de la médiation (cette valeur s’applique à l’unité publicitaire mobile correspondant aux publicités maison).
-  * **ADDUPLEX_APPKEY** et **ADDUPLEX_ADUNIT**: affectez ces éléments aux valeurs de clé d’application AdDuplex et d’unité publicitaire que vous avez récupérées à partir du fichier de configuration de la médiation.
+  * **AD_WIDTH** et **AD_HEIGHT** : assignez ces éléments à l’une des [tailles de bannières publicitaires prises en charge]( https://msdn.microsoft.com/windows/uwp/monetize/supported-ad-sizes-for-banner-ads).
+  * **HOUSE_AD_WEIGHT** : affectez cet élément à un entier compris entre 0 et 100 qui spécifie la valeur de poids que vous voulez appliquer aux publicités maison Microsoft par rapport aux publicités payantes Microsoft (où 0 indique que les publicités maison ne doivent jamais être affichées, et 100 que les publicités maison doivent toujours être affichées).
+  * **WAPPLICATIONID** et **WADUNITID_PAID** : affectez ces éléments aux valeurs **WApplicationId** et **WAdUnitId** pour les publicités payantes Microsoft que vous avez récupérées précédemment à partir du fichier de configuration de la médiation (ces valeurs s’appliquent à l’unité publicitaire non mobile correspondant aux publicités payantes).
+  * **WADUNITID_HOUSE** : affectez cet élément à la valeur **WAdUnitId** correspondant aux publicités maison que vous avez récupérées précédemment à partir du fichier de configuration de la médiation (cette valeur s’applique à l’unité publicitaire non mobile correspondant aux publicités maison).
+  * **MAPPLICATIONID** et **MADUNITID_PAID** : affectez ces éléments aux valeurs **MApplicationId** et **MAdUnitId** pour les publicités payantes Microsoft que vous avez récupérées précédemment à partir du fichier de configuration de la médiation (ces valeurs s’appliquent à l’unité publicitaire mobile correspondant aux publicités payantes).
+  * **MADUNITID_HOUSE** : affectez cet élément à la valeur **MAdUnitId** correspondant aux publicités maison que vous avez récupérées précédemment à partir du fichier de configuration de la médiation (cette valeur s’applique à l’unité publicitaire mobile correspondant aux publicités maison).
+  * **ADDUPLEX_APPKEY** et **ADDUPLEX_ADUNIT** : affectez ces éléments aux valeurs de clé d’application AdDuplex et d’unité publicitaire que vous avez récupérées à partir du fichier de configuration de la médiation.
 5. Ajoutez les déclarations de variables suivantes à votre classe **Page**.
   ```csharp
   // Dispatch timer to fire at each ad refresh interval.

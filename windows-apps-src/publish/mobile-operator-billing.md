@@ -18,11 +18,11 @@ Le Windows Store offre la facturation de l’opérateur mobile comme mode de pai
 
 Nous collaborons régulièrement avec les opérateurs mobiles pour développer la disponibilité de ce mode de paiement. Si vous souhaitez nous suggérer la prise en charge d’un opérateur mobile dont le nom est absent des listes ci-dessous, contactez l’opérateur mobile.
 
-## <a name="mobile-operator-billing-for-windows-10-and-xbox-one-devices"></a>Facturation de l’opérateur mobile pour les appareils Windows&nbsp;10 et Xbox One
+## <a name="mobile-operator-billing-for-windows-10-and-xbox-one-devices"></a>Facturation de l’opérateur mobile pour les appareils Windows 10 et Xbox One
 
-Windows&nbsp;10 introduit une nouvelle implémentation de facturation de l’opérateur mobile. Cette implémentation est disponible pour tous les appareils exécutant Windows&nbsp;10, les téléphones exécutant Windows&nbsp;10 Mobile et les consoles Xbox One. Sur ces appareils, les clients peuvent ajouter la facturation de l’opérateur mobile comme mode de paiement et l’utiliser pour effectuer des achats. 
+Windows 10 introduit une nouvelle implémentation de facturation de l’opérateur mobile. Cette implémentation est disponible pour tous les appareils exécutant Windows 10, les téléphones exécutant Windows 10 Mobile et les consoles Xbox One. Sur ces appareils, les clients peuvent ajouter la facturation de l’opérateur mobile comme mode de paiement et l’utiliser pour effectuer des achats. 
 
-L’implémentation sur Windows&nbsp;10 de la facturation de l’opérateur mobile est actuellement prise en charge par les opérateurs mobiles suivants.
+L’implémentation sur Windows 10 de la facturation de l’opérateur mobile est actuellement prise en charge par les opérateurs mobiles suivants.
 
 | Pays/région  | Opérateurs mobiles |
 |-----------------|------------------|
@@ -40,10 +40,10 @@ L’implémentation sur Windows&nbsp;10 de la facturation de l’opérateur mobi
 
  
 
-## <a name="mobile-operator-billing-for-windows-phone-8x-and-windows-10-mobile-devices"></a>Facturation de l’opérateur mobile pour appareils Windows&nbsp;Phone&nbsp;8.x et Windows&nbsp;10&nbsp;Mobile
+## <a name="mobile-operator-billing-for-windows-phone-8x-and-windows-10-mobile-devices"></a>Facturation de l’opérateur mobile pour appareils Windows Phone 8.x et Windows 10 Mobile
 
 
-Une implémentation héritée de la facturation de l'opérateur mobile est disponible pour les appareils Windows Phone 8.x. Certains opérateurs mobiles peuvent choisir d'inclure cette implémentation sur les téléphones conçus pour Windows&nbsp;10 Mobile. Sur les appareils qui comprennent cette implémentation, la facturation de l’opérateur mobile est proposée automatiquement comme mode de paiement aux utilisateurs.
+Une implémentation héritée de la facturation de l'opérateur mobile est disponible pour les appareils Windows Phone 8.x. Certains opérateurs mobiles peuvent choisir d'inclure cette implémentation sur les téléphones conçus pour Windows 10 Mobile. Sur les appareils qui comprennent cette implémentation, la facturation de l’opérateur mobile est proposée automatiquement comme mode de paiement aux utilisateurs.
 
 L'implémentation héritée de la facturation de l'opérateur mobile est prise en charge par les opérateurs mobiles suivants.
 

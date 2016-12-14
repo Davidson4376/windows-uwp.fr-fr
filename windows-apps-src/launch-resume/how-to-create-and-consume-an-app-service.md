@@ -13,18 +13,18 @@ ms.openlocfilehash: 81786f6bf76d1d3840d5cd8c6191550b98a248b2
 # <a name="create-and-consume-an-app-service"></a>Créer et utiliser un service d’application
 
 
-\[ Mise à jour pour les applications UWP sur Windows&nbsp;10. Pour les articles sur Windows&nbsp;8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Apprenez à écrire une application de plateforme Windows universelle (UWP) pouvant fournir des services à d’autres applications UWP et à utiliser ces derniers.
 
-À partir de Windows&nbsp;10 version&nbsp;1607, vous pouvez créer des services d’application qui s’exécutent dans le même processus que l’application hôte. Cet article porte sur la création de services d’application qui s’exécutent dans un processus en arrière-plan distinct. Voir [Convertir un service d’application pour qu’il s’exécute dans le même processus que son application hôte](convert-app-service-in-process.md) pour plus d’informations sur les services d’application qui s’exécutent dans le même processus que le fournisseur.
+À partir de Windows 10 version 1607, vous pouvez créer des services d’application qui s’exécutent dans le même processus que l’application hôte. Cet article porte sur la création de services d’application qui s’exécutent dans un processus en arrière-plan distinct. Voir [Convertir un service d’application pour qu’il s’exécute dans le même processus que son application hôte](convert-app-service-in-process.md) pour plus d’informations sur les services d’application qui s’exécutent dans le même processus que le fournisseur.
 
 ## <a name="create-a-new-app-service-provider-project"></a>Créer un projet de fournisseur de service d’application
 
 Dans la procédure décrite ici, nous allons créer tous les éléments dans une seule solution par souci de simplicité.
 
--   Dans Microsoft Visual Studio&nbsp;2015, créez un projet d’application UWP et nommez-le AppServiceProvider. (Dans la boîte de dialogue **Nouveau projet**, sélectionnez **Modèles &gt; Autres langages &gt; Visual C# &gt; Windows &gt; Windows universel &gt; Application vide [Windows universel]**). Il s’agira de l’application qui fournit le service d’application.
+-   Dans Microsoft Visual Studio 2015, créez un projet d’application UWP et nommez-le AppServiceProvider. (Dans la boîte de dialogue **Nouveau projet**, sélectionnez **Modèles &gt; Autres langages &gt; Visual C# &gt; Windows &gt; Windows universel &gt; Application vide [Windows universel]**). Il s’agira de l’application qui fournit le service d’application.
 
 ## <a name="add-an-app-service-extension-to-packageappxmanifest"></a>Ajouter une extension de service d’application à package.appxmanifest
 
@@ -54,14 +54,14 @@ L’attribut **EntryPoint** identifie la classe qui implémente le service, que 
 
 1.  Un service d’application est implémenté sous forme de tâche en arrière-plan. Cela permet à une application au premier plan d’appeler un service d’application dans une autre application pour effectuer des tâches en arrière-plan. Ajoutez un nouveau projet de composant Windows Runtime nommé MyAppService à la solution (**Fichier&gt; Ajouter&gt; Nouveau projet**). (Dans la boîte de dialogue **Ajouter un nouveau projet**, choisissez **Installé &gt; Autres langages &gt; Visual C# &gt; Windows &gt; Windows universel &gt; Composant Windows Runtime (Windows universel)**.
 2.  Dans le projet AppServiceProvider, ajoutez une référence au projet MyAppService.
-3.  Dans le projet MyappService, ajoutez les instructions **using** suivantes au début du fichier Class1.cs&nbsp;:
+3.  Dans le projet MyappService, ajoutez les instructions **using** suivantes au début du fichier Class1.cs :
     ```cs
     using Windows.ApplicationModel.AppService;
     using Windows.ApplicationModel.Background;
     using Windows.Foundation.Collections;
     ```
 
-4.  Remplacez le code stub pour **Class1** par une nouvelle classe de tâche en arrière-plan nommée **Inventory**&nbsp;:
+4.  Remplacez le code stub pour **Class1** par une nouvelle classe de tâche en arrière-plan nommée **Inventory** :
 
     ```cs
     public sealed class Inventory : IBackgroundTask
@@ -161,7 +161,7 @@ Notez que **OnRequestedReceived()** a pour valeur **async**, car nous effectuons
 
 Un report est effectué afin que le service puisse utiliser les méthodes **async** dans le gestionnaire OnRequestReceived. Cela permet de s’assurer que l’appel à OnRequestReceived ne se termine pas avant la fin du traitement du message. [**SendResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn921722) est utilisé pour envoyer une réponse parallèlement à l’achèvement. **SendResponseAsync** n’indique pas l’achèvement de l’appel. C’est l’achèvement du report qui indique à [**SendMessageAsync**](https://msdn.microsoft.com/library/windows/apps/dn921712) que OnRequestReceived est terminé.
 
-Les services d’application utilisent une classe [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) pour échanger des informations. La taille des données que vous pouvez transmettre est limitée uniquement par les ressources système. Il n’y a aucune clé prédéfinie utilisable dans votre classe **ValueSet**. Vous devez déterminer quelles valeurs de clé vous allez utiliser pour définir le protocole de votre service d’application. L’appelant doit être écrit avec ce protocole à l’esprit. Dans cet exemple, nous avons choisi une clé nommée «&nbsp;Command&nbsp;» dont la valeur indique si nous voulons que le service d’application fournisse le nom de l’article en stock ou son prix. L’index du nom d’inventaire est stocké sous la clé «&nbsp;ID&nbsp;». La valeur renvoyée est stockée sous la clé «&nbsp;Result&nbsp;».
+Les services d’application utilisent une classe [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) pour échanger des informations. La taille des données que vous pouvez transmettre est limitée uniquement par les ressources système. Il n’y a aucune clé prédéfinie utilisable dans votre classe **ValueSet**. Vous devez déterminer quelles valeurs de clé vous allez utiliser pour définir le protocole de votre service d’application. L’appelant doit être écrit avec ce protocole à l’esprit. Dans cet exemple, nous avons choisi une clé nommée « Command » dont la valeur indique si nous voulons que le service d’application fournisse le nom de l’article en stock ou son prix. L’index du nom d’inventaire est stocké sous la clé « ID ». La valeur renvoyée est stockée sous la clé « Result ».
 
 Une énumération [**AppServiceClosedStatus**](https://msdn.microsoft.com/library/windows/apps/dn921703) est renvoyée à l’appelant pour indiquer si l’appel au service d’application a réussi ou échoué. L’appel au service d’application peut échouer par exemple si le système d’exploitation abandonne le point de terminaison du service ou si les ressources sont dépassées. Vous pouvez renvoyer des informations d’erreur supplémentaires via la classe [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131). Dans cet exemple, nous utilisons une clé nommée Status pour renvoyer des informations plus détaillées sur l’erreur à l’appelant.
 
@@ -171,13 +171,13 @@ L’appel à [**SendResponseAsync**](https://msdn.microsoft.com/library/windows/
 
 L’application qui fournit le service d’application doit être déployée avant de pouvoir être appelée depuis un client. Vous avez également besoin du nom de famille du package de l’application de service d’application pour l’appeler.
 
--   Un moyen d’obtenir le nom de famille du package de l’application de service d’application consiste à appeler [**Windows.ApplicationModel.Package.Current.Id.FamilyName**](https://msdn.microsoft.com/library/windows/apps/br224670) à partir du projet **AppServiceProvider** (par exemple, depuis `public App()` dans App.xaml.cs) et à noter le résultat. Pour exécuter AppServiceProvider dans Microsoft Visual&nbsp;Studio, définissez-le en tant que projet de démarrage dans la fenêtre Explorateur de solutions, puis exécutez le projet.
--   Pour obtenir le nom de famille du package, vous pouvez également déployer la solution (**Générer &gt; Déployer la solution**) et noter le nom complet du package dans la fenêtre Sortie (**Affichage &gt; Sortie**). Vous devez supprimer les informations de plateforme de la chaîne dans la fenêtre Sortie pour obtenir le nom du package. Par exemple, si le nom complet du package indiqué dans la fenêtre de sortie était «&nbsp;9fe3058b-3de0-4e05-bea7-84a06f0ee4f0\_1.0.0.0\_x86\_\_yd7nk54bq29ra&nbsp;», vous extrairiez «&nbsp;1.0.0.0\_x86\_\_&nbsp;» et laisseriez «&nbsp;9fe3058b-3de0-4e05-bea7-84a06f0ee4f0\_yd7nk54bq29ra&nbsp;» comme nom de la famille de packages.
+-   Un moyen d’obtenir le nom de famille du package de l’application de service d’application consiste à appeler [**Windows.ApplicationModel.Package.Current.Id.FamilyName**](https://msdn.microsoft.com/library/windows/apps/br224670) à partir du projet **AppServiceProvider** (par exemple, depuis `public App()` dans App.xaml.cs) et à noter le résultat. Pour exécuter AppServiceProvider dans Microsoft Visual Studio, définissez-le en tant que projet de démarrage dans la fenêtre Explorateur de solutions, puis exécutez le projet.
+-   Pour obtenir le nom de famille du package, vous pouvez également déployer la solution (**Générer &gt; Déployer la solution**) et noter le nom complet du package dans la fenêtre Sortie (**Affichage &gt; Sortie**). Vous devez supprimer les informations de plateforme de la chaîne dans la fenêtre Sortie pour obtenir le nom du package. Par exemple, si le nom complet du package indiqué dans la fenêtre de sortie était « 9fe3058b-3de0-4e05-bea7-84a06f0ee4f0\_1.0.0.0\_x86\_\_yd7nk54bq29ra », vous extrairiez « 1.0.0.0\_x86\_\_ » et laisseriez « 9fe3058b-3de0-4e05-bea7-84a06f0ee4f0\_yd7nk54bq29ra » comme nom de la famille de packages.
 
 ## <a name="write-a-client-to-call-the-app-service"></a>Écrire un client pour appeler le service d’application
 
 1.  Ajoutez un nouveau projet d’application Windows universel vide nommé ClientApp à la solution (**Fichier &gt; Ajouter &gt; Nouveau projet**). (Dans la boîte de dialogue **Ajouter un nouveau projet**, choisissez **Installé &gt; Autres langages &gt; Visual C# &gt; Windows &gt; Windows universel &gt; Application vide [Windows universel]**).
-2.  Dans le projet ClientApp, ajoutez l’instruction **using** suivante au début du fichier MainPage.xaml.cs&nbsp;:
+2.  Dans le projet ClientApp, ajoutez l’instruction **using** suivante au début du fichier MainPage.xaml.cs :
     ```cs
     >using Windows.ApplicationModel.AppService;
     ```
@@ -248,15 +248,15 @@ L’application qui fournit le service d’application doit être déployée ava
 
     Le code établit tout d’abord une connexion avec le service d’application. La connexion reste alors ouverte jusqu’à ce que vous supprimiez **this.inventoryService**. Le nom du service d’application doit correspondre à l’attribut **AppService Name** que vous avez ajouté au fichier Package.appxmanifest du projet AppServiceProvider. Dans cet exemple, il s’agit de `<uap:AppService Name="com.microsoft.inventory"/>`.
 
-    Un [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) nommé **message** est créé pour spécifier la commande que vous souhaitez envoyer au service d’application. L’exemple de service d’application attend une commande pour indiquer laquelle des deux&nbsp;actions effectuer. Nous obtenons l’index de l’élément textbox de ClientApp, puis appelons le service à l’aide de la commande Item pour obtenir la description de l’article. Ensuite, nous effectuons l’appel avec la commande Price afin d’obtenir le prix de l’article. Le texte du bouton est défini en fonction du résultat.
+    Un [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) nommé **message** est créé pour spécifier la commande que vous souhaitez envoyer au service d’application. L’exemple de service d’application attend une commande pour indiquer laquelle des deux actions effectuer. Nous obtenons l’index de l’élément textbox de ClientApp, puis appelons le service à l’aide de la commande Item pour obtenir la description de l’article. Ensuite, nous effectuons l’appel avec la commande Price afin d’obtenir le prix de l’article. Le texte du bouton est défini en fonction du résultat.
 
     Comme [**AppServiceResponseStatus**](https://msdn.microsoft.com/library/windows/apps/dn921724) indique uniquement si le système d’exploitation a été en mesure de connecter l’appel au service d’application, nous vérifions la clé Status dans le [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) que nous recevons à partir du service d’application pour nous assurer qu’il a pu répondre à la demande.
 
-6.  Dans Visual&nbsp;Studio, définissez le projet ClientApp en tant que projet de démarrage dans la fenêtre Explorateur de solutions et exécutez la solution. Entrez le chiffre&nbsp;1 dans la zone de texte et cliquez sur le bouton. Le service doit renvoyer «&nbsp;Chair : Price = 88.99&nbsp;».
+6.  Dans Visual Studio, définissez le projet ClientApp en tant que projet de démarrage dans la fenêtre Explorateur de solutions et exécutez la solution. Entrez le chiffre 1 dans la zone de texte et cliquez sur le bouton. Le service doit renvoyer « Chair : Price = 88.99 ».
 
     ![exemple d’application affichant chair price=88.99](images/appserviceclientapp.png)
 
-Si l’appel au service d’application échoue, vérifiez les éléments suivants dans ClientApp&nbsp;:
+Si l’appel au service d’application échoue, vérifiez les éléments suivants dans ClientApp :
 
 1.  Vérifiez que le nom de la famille de packages affecté à la connexion au service d’inventaire correspond au nom de la famille de packages de l’application AppServiceProvider. Voir **button\_Click()**`this.inventoryService.PackageFamilyName = "...";`).
 2.  Dans **button\_Click()**, vérifiez que le nom de service d’application affecté à la connexion au service d’inventaire correspond au nom du service d’application dans le fichier Package.appxmanifest du projet AppServiceProvider. Voir `this.inventoryService.AppServiceName = "com.microsoft.inventory";`.
@@ -269,8 +269,8 @@ Si l’appel au service d’application échoue, vérifiez les éléments suivan
 2.  Dans l’Explorateur de solutions, cliquez avec le bouton droit sur le projet AppServiceProvider et choisissez **Propriétés**. Dans l’onglet **Déboguer**, définissez **Action de démarrage** sur **Ne pas lancer, mais déboguer mon code au démarrage**.
 3.  Dans le projet MyAppService, dans le fichier Class1.cs, définissez un point d’arrêt dans OnRequestReceived().
 4.  Définissez le projet AppServiceProvider en tant que projet de démarrage et appuyez sur F5.
-5.  Lancez ClientApp depuis le menu Démarrer (et non depuis Visual&nbsp;Studio).
-6.  Entrez le chiffre&nbsp;1 dans la zone de texte et appuyez sur le bouton. Le débogueur s’arrête dans l’appel au service d’application sur le point d’arrêt défini dans votre service d’application.
+5.  Lancez ClientApp depuis le menu Démarrer (et non depuis Visual Studio).
+6.  Entrez le chiffre 1 dans la zone de texte et appuyez sur le bouton. Le débogueur s’arrête dans l’appel au service d’application sur le point d’arrêt défini dans votre service d’application.
 
 ## <a name="debug-the-client"></a>Déboguer le client
 
@@ -278,7 +278,7 @@ Si l’appel au service d’application échoue, vérifiez les éléments suivan
 2.  Lancez ClientApp depuis le menu Démarrer.
 3.  Attachez le débogueur au processus ClientApp.exe (et non au processus ApplicationFrameHost.exe). (Dans Visual Studio, choisissez **Déboguer &gt; Attacher au processus…**.)
 4.  Dans le projet ClientApp, définissez un point d’arrêt dans **button\_Click()**.
-5.  Les points d’arrêt dans le client et le service d’application sont maintenant atteints lorsque vous entrez le chiffre&nbsp;1 dans la zone de texte de ClientApp et cliquez sur le bouton.
+5.  Les points d’arrêt dans le client et le service d’application sont maintenant atteints lorsque vous entrez le chiffre 1 dans la zone de texte de ClientApp et cliquez sur le bouton.
 
 ## <a name="remarks"></a>Remarques
 

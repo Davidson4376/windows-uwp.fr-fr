@@ -19,7 +19,7 @@ Vous pouvez démarrer votre soumission lorsque votre application est terminée e
 
 Une fois votre application publiée, vous pouvez publier une version mise à jour en créant une autre soumission dans le tableau de bord. Le fait de créer une soumission vous permet d'introduire et de publier tous les changements nécessaires, que vous chargiez d'autres packages ou que vous changiez juste des détails comme le prix ou la catégorie. Pour créer une soumission pour une application, cliquez sur **Mettre à jour** en regard de la soumission plus récente affichée sur la page de présentation de l’application.
 
-> **Remarque**&nbsp;&nbsp;Cette section de la documentation explique comment créer une soumission d’application sur le tableau de bord du Centre de développement. Sinon, vous pouvez utiliser [l’API de soumission du Windows Store](../monetize/create-and-manage-submissions-using-windows-store-services.md) pour automatiser les soumissions d’application.
+> **Remarque**  Cette section de la documentation explique comment créer une soumission d’application sur le tableau de bord du Centre de développement. Sinon, vous pouvez utiliser [l’API de soumission du Windows Store](../monetize/create-and-manage-submissions-using-windows-store-services.md) pour automatiser les soumissions d’application.
 
 ## Liste de vérification relative à la soumission d’une application
 
@@ -64,7 +64,7 @@ Les éléments que vous devez obligatoirement fournir ou spécifier sont signal�
 | Nom du champ                    | Remarques                                  | Informations supplémentaires                          |
 |-------------------------------|----------------------------------------|----------------------------------------|
 | **Contrôle du chargement des packages**    | Obligatoire (au moins un package)        | [Chargement des packages d’application](upload-app-packages.md) |
-| **Disponibilité de la famille d’appareils** | Par défaut: basée sur les packages       | [Disponibilité de la famille d’appareils](upload-app-packages.md#device-family-availability) |
+| **Disponibilité de la famille d’appareils** | Par défaut : basée sur les packages       | [Disponibilité de la famille d’appareils](upload-app-packages.md#device-family-availability) |
 | **Lancement de package progressif**   | Facultatif (pour les mises à jour uniquement)            | [Lancement de package progressif](gradual-package-rollout.md) |
 | **Mise à jour obligatoire**          | Facultatif (pour les mises à jour uniquement)            | [Mise à jour obligatoire](upload-app-packages.md#mandatory-update)
 
@@ -89,7 +89,7 @@ Vous devez indiquer toutes les informations requises pour au moins l’une des l
 | **Site web**                   | Facultatif                                    | [Site web](create-app-store-listings.md#website)                     |
 | **Coordonnées du support technique**      | Facultatif                                    | [Coordonnées du support technique](create-app-store-listings.md)                |
 | **Politique de confidentialité**            | Obligatoire pour certaines applications. Voir le [contrat du développeur d'applications](https://msdn.microsoft.com/library/windows/apps/hh694058) et les [stratégies du Windows Store](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_5_1) | [Politique de confidentialité](create-app-store-listings.md#privacy-policy) |
-| **Descriptions dans le WindowsStore spécifiques à la plateforme** | Facultatif                               | [Créer des descriptions dans le WindowsStore spécifiques à la plateforme](create-platform-specific-store-listings.md) |
+| **Descriptions dans le Windows Store spécifiques à la plateforme** | Facultatif                               | [Créer des descriptions dans le Windows Store spécifiques à la plateforme](create-platform-specific-store-listings.md) |
 
 <span/>
 
@@ -101,7 +101,7 @@ Vous devez indiquer toutes les informations requises pour au moins l’une des l
 
 <span/>
 
-**Remarque**&nbsp;&nbsp;Pour plus d’informations sur la publication d’applications métier directement à l’attention des entreprises, voir [Distribuer des applications métier aux entreprises](distribute-lob-apps-to-enterprises.md).
+**Remarque**  Pour plus d’informations sur la publication d’applications métier directement à l’attention des entreprises, voir [Distribuer des applications métier aux entreprises](distribute-lob-apps-to-enterprises.md).
 
 
 

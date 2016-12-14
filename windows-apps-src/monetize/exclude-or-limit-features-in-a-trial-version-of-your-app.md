@@ -13,7 +13,7 @@ ms.openlocfilehash: 0d377677237264e2dad290c7d49c47800c255138
 # <a name="exclude-or-limit-features-in-a-trial-version"></a>Exclure ou limiter des fonctionnalités de la version d’évaluation
 
 
->**Remarque**&nbsp;&nbsp;Cet article montre comment utiliser les membres de l’espace de noms [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx). Si votre application cible Windows&nbsp;10, version&nbsp;1607 ou ultérieure, nous vous recommandons d’utiliser des membres de l’espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) pour implémenter une version d’évaluation, plutôt que l’espace de noms **Windows.ApplicationModel.Store**. Pour plus d’informations, voir [Implémenter une version d’évaluation de votre application](implement-a-trial-version-of-your-app.md).
+>**Remarque**  Cet article montre comment utiliser les membres de l’espace de noms [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx). Si votre application cible Windows 10, version 1607 ou ultérieure, nous vous recommandons d’utiliser des membres de l’espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) pour implémenter une version d’évaluation, plutôt que l’espace de noms **Windows.ApplicationModel.Store**. Pour plus d’informations, voir [Implémenter une version d’évaluation de votre application](implement-a-trial-version-of-your-app.md).
 
 Si vous donnez aux clients la possibilité d’utiliser votre application gratuitement pendant une période d’évaluation, vous pouvez leur donner envie de mettre à niveau vers la version complète de votre application en excluant ou en limitant certaines fonctionnalités pendant la période d’évaluation. Choisissez les fonctionnalités à limiter avant de commencer à coder, puis faites en sorte que votre application ne les rende disponibles qu’à l’achat de la licence complète. Vous pouvez également activer certaines fonctionnalités, telles que des bannières ou des filigranes, qui ne s’afficheront que pendant la période d’évaluation, avant l’achat de votre application par un client.
 
@@ -23,7 +23,7 @@ Voyons comment ajouter cette prise en charge à votre application.
 
 Application Windows dans laquelle ajouter des fonctionnalités que les clients peuvent acheter
 
-## <a name="step-1-pick-the-features-you-want-to-enable-or-disable-during-the-trial-period"></a>Étape&nbsp;1&nbsp;: Sélection des fonctionnalités à activer ou désactiver durant la période d’évaluation
+## <a name="step-1-pick-the-features-you-want-to-enable-or-disable-during-the-trial-period"></a>Étape 1 : Sélection des fonctionnalités à activer ou désactiver durant la période d’évaluation
 
 L’état actuel de la licence de votre application est stocké dans les propriétés de la classe [LicenseInformation](https://msdn.microsoft.com/library/windows/apps/br225157). En général, vous placez les fonctions qui dépendent de l’état de la licence dans un bloc conditionnel, comme expliqué à l’étape suivante. Lorsque vous développez ces fonctionnalités, assurez-vous de pouvoir les implémenter de telle manière qu’elles fonctionnent avec tous les états de la licence.
 
@@ -58,21 +58,21 @@ Pour la plupart des applications qui ne sont pas des jeux, la définition d’un
 
 Si vous voulez détecter la modification de la licence et exécuter une action quelconque dans votre application, vous devez ajouter un gestionnaire d’événements, comme décrit à l’étape suivante.
 
-## <a name="step-2-initialize-the-license-info"></a>Étape&nbsp;2&nbsp;: Initialisation des informations de licence
+## <a name="step-2-initialize-the-license-info"></a>Étape 2 : Initialisation des informations de licence
 
 Lors de l’initialisation de votre application, recherchez l’objet [LicenseInformation](https://msdn.microsoft.com/library/windows/apps/br225157) de votre application, comme indiqué dans cet exemple. Nous supposons que **licenseInformation** est une variable globale ou un champ global de type **LicenseInformation**.
 
-Pour le moment, vous obtenez des informations de licence simulées, en utilisant [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) à la place de [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765). Avant de soumettre la version finale de votre application au **Windows&nbsp;Store**, vous devez remplacer tous les références **CurrentAppSimulator** par des références **CurrentApp** dans votre code.
+Pour le moment, vous obtenez des informations de licence simulées, en utilisant [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) à la place de [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765). Avant de soumettre la version finale de votre application au **Windows Store**, vous devez remplacer tous les références **CurrentAppSimulator** par des références **CurrentApp** dans votre code.
 
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseTest)]
 
-Ensuite, ajoutez un gestionnaire d’événements pour recevoir des notifications en cas de modification de la licence lorsque l’application est en cours d’exécution. La licence de l’application peut notamment changer si la période d’évaluation arrive à expiration ou si le client achète l’application dans un Windows&nbsp;Store.
+Ensuite, ajoutez un gestionnaire d’événements pour recevoir des notifications en cas de modification de la licence lorsque l’application est en cours d’exécution. La licence de l’application peut notamment changer si la période d’évaluation arrive à expiration ou si le client achète l’application dans un Windows Store.
 
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseTestWithEvent)]
 
-## <a name="step-3-code-the-features-in-conditional-blocks"></a>Étape&nbsp;3&nbsp;: Coder les fonctionnalités dans des blocs conditionnels
+## <a name="step-3-code-the-features-in-conditional-blocks"></a>Étape 3 : Coder les fonctionnalités dans des blocs conditionnels
 
 Lorsque l’événement de changement de licence est déclenché, votre application doit appeler l’API de licence pour déterminer si l’état de la version d’évaluation a changé. Le code de cette étape indique comment structurer votre gestionnaire pour cet événement. À ce stade, si un utilisateur a acheté l’application, il est de bonne pratique de lui indiquer que l’état de sa licence a été modifié. Demandez à l’utilisateur de redémarrer l’application si vous avez conçu votre application ainsi. Rendez cependant cette transition aussi simple que possible.
 
@@ -81,7 +81,7 @@ Cet exemple montre comment évaluer l’état de la licence d’une application 
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#ReloadLicense)]
 
-## <a name="step-4-get-an-apps-trial-expiration-date"></a>Étape&nbsp;4&nbsp;: Obtenir la date d’expiration de la version d’évaluation d’une application
+## <a name="step-4-get-an-apps-trial-expiration-date"></a>Étape 4 : Obtenir la date d’expiration de la version d’évaluation d’une application
 
 Ajoutez le code permettant de déterminer la date d’expiration de la version d’évaluation de l’application.
 
@@ -90,22 +90,22 @@ Le code de cet exemple définit une fonction pour obtenir la date d’expiration
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#DisplayTrialVersionExpirationTime)]
 
-## <a name="step-5-test-the-features-using-simulated-calls-to-the-license-api"></a>Étape&nbsp;5&nbsp;: Test des fonctionnalités à l’aide d’appels simulés à l’API de la licence
+## <a name="step-5-test-the-features-using-simulated-calls-to-the-license-api"></a>Étape 5 : Test des fonctionnalités à l’aide d’appels simulés à l’API de la licence
 
 Maintenant, testez votre application à l’aide des données simulées. **CurrentAppSimulator** obtient les informations de licence propres au test à partir d’un fichier XML appelé WindowsStoreProxy.xml, situé dans %UserProfile%\\AppData\\local\\packages\\&lt;nom_package&gt;\\LocalState\\Microsoft\\Windows Store\\ApiData. Vous pouvez modifier les dates d’expiration simulées de votre application et de ses fonctionnalités dans le fichier WindowsStoreProxy.xml. Testez l’ensemble de vos configurations d’expiration et de licence possibles, afin de vous assurer que tout fonctionne comme vous le souhaitez. Pour plus d’informations, consultez [Utilisation du fichier WindowsStoreProxy.xml avec CurrentAppSimulator](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#proxy).
 
 Si ce chemin d’accès et ce fichier n’existent pas, vous devez les créer lors de l’installation ou de l’exécution. Si vous essayez d’accéder à la propriété [CurrentAppSimulator.LicenseInformation](https://msdn.microsoft.com/library/windows/apps/hh779768) mais que le fichier WindowsStoreProxy.xml n’est pas présent à cet emplacement, une erreur se produit.
 
-## <a name="step-6-replace-the-simulated-license-api-methods-with-the-actual-api"></a>Étape&nbsp;6&nbsp;: Remplacement des méthodes d’API de licence simulées par l’API réelle
+## <a name="step-6-replace-the-simulated-license-api-methods-with-the-actual-api"></a>Étape 6 : Remplacement des méthodes d’API de licence simulées par l’API réelle
 
-Après avoir testé votre application à l’aide du serveur de licences simulées et avant d’envoyer votre application à un Windows&nbsp;Store à des fins de certification, remplacez **CurrentAppSimulator** par **CurrentApp**, comme indiqué dans l’exemple de code suivant.
+Après avoir testé votre application à l’aide du serveur de licences simulées et avant d’envoyer votre application à un Windows Store à des fins de certification, remplacez **CurrentAppSimulator** par **CurrentApp**, comme indiqué dans l’exemple de code suivant.
 
->**Important**&nbsp;&nbsp;Votre application doit utiliser l’objet **CurrentApp** quand vous la soumettez au Windows&nbsp;Store. Dans le cas contraire, elle ne sera pas certifiée.
+>**Important**  Votre application doit utiliser l’objet **CurrentApp** quand vous la soumettez au Windows Store. Dans le cas contraire, elle ne sera pas certifiée.
 
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[TrialVersion](./code/InAppPurchasesAndLicenses/cs/TrialVersion.cs#InitializeLicenseRetailWithEvent)]
 
-## <a name="step-7-describe-how-the-free-trial-works-to-your-customers"></a>Étape&nbsp;7&nbsp;: Description du fonctionnement de la version d’évaluation à vos clients
+## <a name="step-7-describe-how-the-free-trial-works-to-your-customers"></a>Étape 7 : Description du fonctionnement de la version d’évaluation à vos clients
 
 Prenez soin d’expliquer à vos clients comment votre application se comportera pendant et après la période d’évaluation gratuite afin qu’ils ne soient pas surpris par le comportement de l’application.
 

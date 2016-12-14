@@ -11,7 +11,7 @@ ms.openlocfilehash: 809cd0ea85d4dfc6ecf633d0ca9f16bbefee78ca
 
 # <a name="register-a-background-task"></a>Inscrire une tâche en arrière-plan
 
-\[ Mise à jour pour les applications UWP sur Windows&nbsp;10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **API importantes**
 
@@ -36,7 +36,7 @@ Pour vous assurer que votre application Windows universelle continue de s’exé
 Cette méthode contient le point d’entrée de la tâche, son nom, un déclencheur de tâche en arrière-plan créé à l’avance et un objet [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) pour la tâche en arrière-plan (facultatif). Cette méthode renvoie un objet [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786).
 
 > [!Important]
-> `taskEntryPoint` - pour les tâches en arrière-plan qui s’exécutent hors processus, la chaîne doit être au format suivant&nbsp;: nom de l’espace de noms, «&nbsp;.&nbsp;» et nom de la classe contenant votre classe en arrière-plan. La chaîne est sensible à la casse.  Par exemple, si vous avez un espace de noms «&nbsp;MyBackgroundTasks&nbsp;» et une classe «&nbsp;BackgroundTask1&nbsp;» contenant votre code de classe en arrière-plan, la chaîne pour `taskEntryPoint` serait «&nbsp;MyBackgroundTasks.BackgroundTask1&nbsp;».
+> `taskEntryPoint` - pour les tâches en arrière-plan qui s’exécutent hors processus, la chaîne doit être au format suivant : nom de l’espace de noms, « . » et nom de la classe contenant votre classe en arrière-plan. La chaîne est sensible à la casse.  Par exemple, si vous avez un espace de noms « MyBackgroundTasks » et une classe « BackgroundTask1 » contenant votre code de classe en arrière-plan, la chaîne pour `taskEntryPoint` serait « MyBackgroundTasks.BackgroundTask1 ».
 > Si votre tâche en arrière-plan s’exécute dans le même processus que votre application (c’est-à-dire dans le cas d’une tâche en arrière-plan in-process), la chaîne `taskEntryPoint` ne doit pas être définie.
 
 > [!div class="tabbedCodeSnippets"]
@@ -147,7 +147,7 @@ Inscrivez ensuite la tâche à l’aide d’un nouvel objet [**BackgroundTaskBui
 > **Remarque** Les paramètres d’inscription de la tâche en arrière-plan sont validés au moment de l’inscription. Une erreur est retournée si l’un des paramètres d’inscription n’est pas valide. Vérifiez que votre application gère de manière fluide les scénarios dans lesquels l’inscription de la tâche en arrière-plan échoue. En revanche, si votre application dépend d’un objet d’inscription valide après la tentative d’inscription d’une tâche, elle peut se bloquer.
 > **Remarque** Si vous inscrivez une tâche en arrière-plan qui s’exécute dans le même processus que votre application, envoyez `String.Empty` ou `null` pour le paramètre `taskEntryPoint`.
 
-L’exemple suivant renvoie la tâche existante ou bien ajoute le code chargé d’inscrire la tâche en arrière-plan (y&nbsp;compris la condition système facultative si elle est fournie)&nbsp;:
+L’exemple suivant renvoie la tâche existante ou bien ajoute le code chargé d’inscrire la tâche en arrière-plan (y compris la condition système facultative si elle est fournie) :
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -371,7 +371,7 @@ Cet exemple montre la fonction d’inscription des tâches en arrière-plan parv
 > }
 > ```
 
-> **Remarque** Cet article s’adresse aux développeurs Windows&nbsp;10 qui développent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows&nbsp;8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Remarque** Cet article s’adresse aux développeurs Windows 10 qui développent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
 ## <a name="related-topics"></a>Rubriques connexes
 

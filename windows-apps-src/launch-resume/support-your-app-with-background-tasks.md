@@ -11,30 +11,30 @@ ms.openlocfilehash: b33fd118289ca575207be97bd8a1a33ddcc49a87
 
 # <a name="support-your-app-with-background-tasks"></a>Prendre en charge votre application avec des tâches en arrière-plan
 
-\[ Mise à jour pour les applications UWP sur Windows&nbsp;10. Pour les articles sur Windows&nbsp;8.x, consultez l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, consultez l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
 Les rubriques de cette section expliquent comment exécuter du code léger en arrière-plan, en réponse à des déclencheurs. Vous pouvez utiliser les tâches en arrière-plan pour fournir des fonctionnalités lorsque votre application est suspendue ou n’est pas en cours d’exécution. Les tâches en arrière-plan sont également utiles pour les applications de communication en temps réel (VoIP, messagerie électronique et messagerie instantanée, par exemple).
 
 ## <a name="playing-media-in-the-background"></a>Lecture de contenu multimédia en arrière-plan
 
-À partir de Windows&nbsp;10, version&nbsp;1607, il est beaucoup plus facile de lire du contenu audio en arrière-plan. Voir [Lire du contenu multimédia en arrière-plan](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio) pour obtenir plus d’informations.
+À partir de Windows 10, version 1607, il est beaucoup plus facile de lire du contenu audio en arrière-plan. Voir [Lire du contenu multimédia en arrière-plan](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio) pour obtenir plus d’informations.
 
 ## <a name="in-process-and-out-of-process-background-tasks"></a>Tâches en arrière-plan in-process et hors processus
 
-Il existe deux approches pour implémenter des tâches en arrière-plan&nbsp;: in-process, dans lequel l’application et son processus en arrière-plan s’exécutent dans le même processus&nbsp;; et hors processus, où l’application et le processus en arrière-plan s’exécutent dans des processus distincts. L’approche in-process a été introduite dans Windows&nbsp;10 version&nbsp;1607 pour simplifier l’écriture des tâches en arrière-plan. Toutefois, vous pouvez toujours écrire des tâches en arrière-plan hors processus. Consultez la rubrique [Recommandations en matière de tâches en arrière-plan](guidelines-for-background-tasks.md) pour savoir quand utiliser une approche hors processus ou intra-processus pour écrire une tâche en arrière-plan.
+Il existe deux approches pour implémenter des tâches en arrière-plan : in-process, dans lequel l’application et son processus en arrière-plan s’exécutent dans le même processus ; et hors processus, où l’application et le processus en arrière-plan s’exécutent dans des processus distincts. L’approche in-process a été introduite dans Windows 10 version 1607 pour simplifier l’écriture des tâches en arrière-plan. Toutefois, vous pouvez toujours écrire des tâches en arrière-plan hors processus. Consultez la rubrique [Recommandations en matière de tâches en arrière-plan](guidelines-for-background-tasks.md) pour savoir quand utiliser une approche hors processus ou intra-processus pour écrire une tâche en arrière-plan.
 
 Les tâches en arrière-plan hors processus offrent une meilleure résilience, car votre processus en arrière-plan ne peut pas bloquer le processus de votre application en cas de problème. Mais la résilience implique une plus grande complexité lorsqu’il s’agit de gérer la communication entre les processus.
 
 Les tâches en arrière-plan hors processus sont implémentées en tant que classes légères que le système d’exploitation exécute dans un processus distinct (backgroundtaskhost.exe). Les tâches en arrière-plan hors processus sont des classes que vous écrivez pour implémenter l’interface [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794). Vous inscrivez une tâche en arrière-plan à l’aide de la classe [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Le nom de la classe est utilisé pour spécifier le point d’entrée lors de l’inscription de la tâche en arrière-plan.
 
-Dans Windows&nbsp;10 version&nbsp;1607, vous pouvez activer l’activité en arrière-plan sans avoir à créer de tâche en arrière-plan. Vous pouvez exécuter votre code en arrière-plan directement à l’intérieur de l’application au premier plan.
+Dans Windows 10 version 1607, vous pouvez activer l’activité en arrière-plan sans avoir à créer de tâche en arrière-plan. Vous pouvez exécuter votre code en arrière-plan directement à l’intérieur de l’application au premier plan.
 
 Pour savoir comment créer des tâches en arrière-plan in-process, consultez la rubrique [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md).
 
 Pour savoir comment créer des tâches en arrière-plan hors processus, consultez la rubrique [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-an-outofproc-background-task.md).
 
 > [!TIP]
-> À partir de Windows&nbsp;10, il n’est plus nécessaire de placer une application sur l’écran de verrouillage pour qu’elle inscrive une tâche en arrière-plan.
+> À partir de Windows 10, il n’est plus nécessaire de placer une application sur l’écran de verrouillage pour qu’elle inscrive une tâche en arrière-plan.
 
 ## <a name="background-tasks-for-system-events"></a>Tâches en arrière-plan pour événements système
 
@@ -72,12 +72,12 @@ Pour que votre application puisse inscrire une tâche en arrière-plan qui s’e
 
 ## <a name="background-tasks"></a>Tâches en arrière-plan
 
-Les déclencheurs en temps réel suivants peuvent être utilisés pour exécuter du code léger personnalisé en arrière-plan&nbsp;:
+Les déclencheurs en temps réel suivants peuvent être utilisés pour exécuter du code léger personnalisé en arrière-plan :
 
 | Déclencheur en temps réel  | Description |
 |--------------------|-------------|
 | **Canal de contrôle** | Les tâches en arrière-plan peuvent conserver une connexion active et recevoir des messages sur le canal de contrôle en utilisant l’objet [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032). Si votre application est à l’écoute d’un socket, vous pouvez utiliser le Broker de socket à la place du **ControlChannelTrigger**. Pour plus d’informations sur l’utilisation du Broker de socket, voir [SocketActivityTrigger](https://msdn.microsoft.com/library/windows/apps/dn806009). La classe **ControlChannelTrigger** n’est pas prise en charge sur Windows Phone. |
-| **Minuteur** | Vous pouvez exécuter des tâches en arrière-plan toutes les 15&nbsp;minutes et programmer leur exécution à l’aide du [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843). Pour plus d’informations, voir [Exécuter une tâche en arrière-plan en fonction d’un minuteur](run-a-background-task-on-a-timer-.md). |
+| **Minuteur** | Vous pouvez exécuter des tâches en arrière-plan toutes les 15 minutes et programmer leur exécution à l’aide du [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843). Pour plus d’informations, voir [Exécuter une tâche en arrière-plan en fonction d’un minuteur](run-a-background-task-on-a-timer-.md). |
 | **Notification Push** | Les tâches en arrière-plan répondent à l’objet [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) pour recevoir des notifications Push brutes. |
 
 **Remarque**  
@@ -88,7 +88,7 @@ Pour vous assurer que votre application Windows universelle continue de s’exé
 
 ## <a name="system-event-triggers"></a>Déclencheurs d’événements système
 
-L’énumération [**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839) répertorie les déclencheurs d’événements système suivants&nbsp;:
+L’énumération [**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839) répertorie les déclencheurs d’événements système suivants :
 
 | Nom du déclencheur            | Description                                                       |
 |-------------------------|-------------------------------------------------------------------|
@@ -110,7 +110,7 @@ Les déclencheurs d’événements système suivants permettent de savoir lorsqu
 
 Les tâches en arrière-plan sont légères. Le fait de limiter autant que possible l’exécution en arrière-plan garantit une expérience utilisateur optimale pour les applications de premier plan et une meilleure autonomie de la batterie. Pour cela, il convient d’appliquer des contraintes de ressource aux tâches en arrière-plan.
 
-Les tâches en arrière-plan sont limitées à 30&nbsp;secondes de l’utilisation de l’horloge.
+Les tâches en arrière-plan sont limitées à 30 secondes de l’utilisation de l’horloge.
 
 ### <a name="memory-constraints"></a>Contraintes de mémoire
 
@@ -152,11 +152,11 @@ Les tâches en arrière-plan peuvent signaler leur progression, leur annulation 
 [Surveiller la progression et l’achèvement des tâches en arrière-plan](monitor-background-task-progress-and-completion.md)
 
 **Remarque**  
-Cet article s’adresse aux développeurs de Windows&nbsp;10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows&nbsp;8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+Cet article s’adresse aux développeurs de Windows 10 qui développent des applications de la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  ## <a name="related-topics"></a>Rubriques connexes
 
-**Recommandations conceptuelles pour le multitâche sous Windows&nbsp;10**
+**Recommandations conceptuelles pour le multitâche sous Windows 10**
 
 * [Lancement, reprise et multitâche](index.md)
 

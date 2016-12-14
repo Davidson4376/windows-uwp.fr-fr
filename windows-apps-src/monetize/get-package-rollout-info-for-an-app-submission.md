@@ -1,27 +1,27 @@
 ---
 author: mcleanbyron
-description: "Appliquez cette méthode dans l’API de soumission du WindowsStore pour récupérer les informations sur le lancement du package pour une soumission d’application."
-title: "Récupérez les informations sur le lancement de package pour une soumission d’application à l’aide de l’API de soumission du WindowsStore."
+description: "Appliquez cette méthode dans l’API de soumission du Windows Store pour récupérer les informations sur le lancement du package pour une soumission d’application."
+title: "Récupérez les informations sur le lancement de package pour une soumission d’application à l’aide de l’API de soumission du Windows Store."
 translationtype: Human Translation
 ms.sourcegitcommit: 9b76a11adfab838b21713cb384cdf31eada3286e
 ms.openlocfilehash: c7a3a12625594533af550921ae580842fa59be08
 
 ---
 
-# Récupérez les informations sur le lancement de package pour une soumission d’application à l’aide de l’API de soumission du WindowsStore.
+# Récupérez les informations sur le lancement de package pour une soumission d’application à l’aide de l’API de soumission du Windows Store.
 
 
-Appliquez cette méthode dans l’API de soumission du WindowsStore pour récupérer les informations sur le [lancement du package](../publish/gradual-package-rollout.md) pour une soumission de version d’évaluation du package. Pour plus d’informations sur le processus de création d’une soumission d’application à l’aide de l’API de soumission du Windows Store, voir [Gérer les soumissions d’applications](manage-app-submissions.md).
+Appliquez cette méthode dans l’API de soumission du Windows Store pour récupérer les informations sur le [lancement du package](../publish/gradual-package-rollout.md) pour une soumission de version d’évaluation du package. Pour plus d’informations sur le processus de création d’une soumission d’application à l’aide de l’API de soumission du Windows Store, voir [Gérer les soumissions d’applications](manage-app-submissions.md).
 
 ## Conditions préalables
 
-Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
+Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
 
 * Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
-* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
+* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 * Créez une soumission pour une application dans votre compte du Centre de développement. Pour cela, vous pouvez utiliser le tableau de bord du Centre de développement ou la méthode [Créer une soumission d’application](create-an-app-submission.md).
 
->**Remarque**&nbsp;&nbsp;Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
+>**Remarque**  Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
 
 ## Requête
 

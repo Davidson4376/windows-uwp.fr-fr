@@ -16,14 +16,14 @@ Vous pouvez créer une campagne de publicité à l’aide du tableau de bord du 
 
 > **Remarque** Vous ne pouvez créer des campagnes de publicité que pour les applications qui ont réussi la phase de publication finale du [processus de certification des applications](the-app-certification-process.md).
 
-Voici comment créer une campagne de publicité pour promouvoir votre application&nbsp;:
+Voici comment créer une campagne de publicité pour promouvoir votre application :
 
 1.  Dans le menu de navigation gauche de la page de votre application dans le tableau de bord du Centre de développement, cliquez sur **Monétisation** &gt; **Promouvoir votre application**.
-2.  Effectuez l’une des opérations suivantes&nbsp;:
+2.  Effectuez l’une des opérations suivantes :
 
     -   Si vous n’avez pas encore créé de campagne de publicité pour cette application, la page **Promouvoir votre application** affiche les informations sur les avantages des campagnes de publicité. Cliquez sur **Prise en main** ou **Création d’une campagne de publicité**.
     -   Si vous avez déjà créé une campagne de publicité pour cette application, la page **Promouvoir votre application** répertorie vos campagnes de publicité existantes. Cliquez sur **Nouvelle campagne**.
-3.  Sur la page **Nouvelle campagne**, dans la section **Objectif de campagne**, choisissez l’une des options suivantes&nbsp;:
+3.  Sur la page **Nouvelle campagne**, dans la section **Objectif de campagne**, choisissez l’une des options suivantes :
     -   **Augmenter les installations de votre application**. Sélectionnez cette option si votre campagne de publicité est conçue pour convaincre les clients d’installer votre application.
     -   **Augmenter l’intérêt pour votre application**. Sélectionnez cette option si votre campagne de publicité vise à inciter les clients à utiliser votre application plus souvent. Lorsque vous sélectionnez cette option, vous pouvez cibler votre campagne de publicité sur les [segments de clientèle](create-customer-segments.md) spécifiques que vous définissez.
 
@@ -31,9 +31,9 @@ Voici comment créer une campagne de publicité pour promouvoir votre applicatio
     -   Donnez un nom à votre campagne de publicité dans le champ **Nom de la campagne**.
     -   Sous **Type de campagne**, choisissez l’une des options suivantes :
         -   **Payé** : ces publicités s’exécutent dans n’importe quelle application correspondant à l’appareil et à la catégorie de votre application.
-        -   **Annonces de la communauté (gratuites)**&nbsp;: ces publicités s’exécutent dans les applications publiées par d’autres développeurs, qui créent également des campagnes de publicité à base d’annonces de la communauté. Avant de sélectionner cette option, cochez la case **Afficher des annonces de la communauté dans mon application** de la page **Monétiser avec des publicités** du tableau de bord. Pour en savoir plus, voir [À propos des annonces de la communauté](about-community-ads.md).
-        -   **Publicités maison (gratuites)**&nbsp;: ces publicités s’exécutent uniquement dans vos applications (correspondant à l’appareil de l’application publiée). Les publicités maison sont gratuites. Pour plus d’informations, consultez [À propos des publicités maison](about-house-ads.md).
-    -   Sous **Durée de la campagne**, choisissez l’une des options suivantes&nbsp;:
+        -   **Annonces de la communauté (gratuites)** : ces publicités s’exécutent dans les applications publiées par d’autres développeurs, qui créent également des campagnes de publicité à base d’annonces de la communauté. Avant de sélectionner cette option, cochez la case **Afficher des annonces de la communauté dans mon application** de la page **Monétiser avec des publicités** du tableau de bord. Pour en savoir plus, voir [À propos des annonces de la communauté](about-community-ads.md).
+        -   **Publicités maison (gratuites)** : ces publicités s’exécutent uniquement dans vos applications (correspondant à l’appareil de l’application publiée). Les publicités maison sont gratuites. Pour plus d’informations, consultez [À propos des publicités maison](about-house-ads.md).
+    -   Sous **Durée de la campagne**, choisissez l’une des options suivantes :
         - **Personnalisée**. Si vous choisissez cette option, le budget de votre campagne est dépensé pendant la période que vous spécifiez. Cette option n’est disponible que pour les développeurs titulaires d’un compte premium. Pour plus d’informations sur les comptes premium, consultez [Questions courantes sur les campagnes de publicité](common-questions.md#how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign).
         - **Mensuelle**. Si vous choisissez cette option, votre budget de campagne est utilisé de manière récurrente jusqu’à l’arrêt de la campagne.
 
@@ -41,7 +41,7 @@ Voici comment créer une campagne de publicité pour promouvoir votre applicatio
 
 5.  Si vous choisissez **Augmenter les installations de l’application** comme objectif de campagne, nous allons choisir le public de vos publicités, d’après les paramètres que vous avez sélectionnés lors de la création de l’application dans le tableau de bord du Centre de développement. Si vous préférez choisir vous-même le public pour vos publicités, sélectionnez **Manuel** pour développer la section **Audience**. Si vous souhaitez revenir au ciblage par défaut, sélectionnez **Automatique**.
 
-    Si vous sélectionnez **Manuel**, vous pouvez modifier les informations de ciblage suivantes&nbsp;:
+    Si vous sélectionnez **Manuel**, vous pouvez modifier les informations de ciblage suivantes :
 
     -   Choisissez les pays ou les régions dans lesquels vous souhaitez que ces publicités apparaissent. Vous pouvez en choisir jusqu’à 5. Pour obtenir la liste des régions ou des pays pris en charge, consultez [Questions courantes sur les campagnes de publicité](common-questions.md#where-will-my-ad-appear).
     -   Choisissez les types d’appareil sur lesquels vous voulez que ces publicités apparaissent. Seuls les types d’appareils pris en charge par votre application sont affichés.
@@ -55,9 +55,9 @@ Voici comment créer une campagne de publicité pour promouvoir votre applicatio
     > **Remarque** Les publicités créées à l’aide de cette campagne sont vues seulement par les clients qui sont inclus dans le segment. Vous ne pouvez sélectionner qu’un segment par campagne de publicité. Pour plus d’informations sur les segments, consultez [Créer des segments de clients](create-customer-segments.md).
 
 
-7.  Dans la section **Conception d’annonces**, choisissez l’une des options suivantes&nbsp;:
-    -   **Personnalisée**. Choisissez cette option pour utiliser vos propres conceptions d’annonces. Notez que si vous avez sélectionné un segment de clients à l’étape&nbsp;6, vous devez utiliser des options créatives personnalisées. Vous pouvez charger différents fichiers pour chacune des tailles d’annonce disponibles. Les fichiers doivent répondre aux exigences et directives suivantes&nbsp;:
-        -   Chaque fichier doit être un .png ou .jpg inférieur ou égal à 40&nbsp;Ko.
+7.  Dans la section **Conception d’annonces**, choisissez l’une des options suivantes :
+    -   **Personnalisée**. Choisissez cette option pour utiliser vos propres conceptions d’annonces. Notez que si vous avez sélectionné un segment de clients à l’étape 6, vous devez utiliser des options créatives personnalisées. Vous pouvez charger différents fichiers pour chacune des tailles d’annonce disponibles. Les fichiers doivent répondre aux exigences et directives suivantes :
+        -   Chaque fichier doit être un .png ou .jpg inférieur ou égal à 40 Ko.
         -   Vos conceptions d’annonces doivent respecter les critères spécifiés dans la [Microsoft Creative Acceptance Policy](http://go.microsoft.com/fwlink?LinkId=532595).
         -   Le contenu de vos conceptions d’annonces doit être approprié à l’application dont vous faites la promotion. Les conceptions d’annonces qui ne sont pas liées à l’application ne seront pas distribuées aux publicités au sein des autres applications.
         -   Tout le contenu de vos conceptions d’annonces doit être clairement lisible. Par exemple, le contenu ne doit pas être flou, pixelisé ou déformé.
@@ -66,7 +66,7 @@ Voici comment créer une campagne de publicité pour promouvoir votre applicatio
         -   Pour ajouter une ligne supplémentaire à votre annonce, entrez le texte dans le champ **Slogan personnalisé**.
             > **Remarque** Le texte que vous entrez doit être localisé dans la langue sélectionnée. Le slogan personnalisé sera rejeté si le texte n’est pas conforme aux [politiques Bing Ads](http://go.microsoft.com/fwlink?LinkId=398341). Lisez cette page pour obtenir des conseils sur le style et les contenus non autorisés.
 
-        -   Pour personnaliser l’annonce davantage, développez **Personnaliser la conception d’annonce/Voir toutes les tailles d’annonces** et choisissez l’une des options suivantes&nbsp;:
+        -   Pour personnaliser l’annonce davantage, développez **Personnaliser la conception d’annonce/Voir toutes les tailles d’annonces** et choisissez l’une des options suivantes :
             - **Couleur d’arrière-plan**. Choisissez parmi les options disponibles.
             - **Images**. Les images disponibles sont les images que vous avez associées à votre application dans le Windows Store.
             - **Afficher la notation de mon application**. Activez cette case à cocher si vous souhaitez afficher la notation de l’application.
@@ -75,7 +75,7 @@ Voici comment créer une campagne de publicité pour promouvoir votre applicatio
 
 8.  Si vous avez un [compte premium](common-questions.md#how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign), vous pouvez utiliser la zone **URL de destination** pour contrôler ce qui se passe quand un client clique sur votre annonce.
     - Si vous laissez la zone vide, quand un client clique sur votre annonce, la liste de vos applications dans le Windows Store s’affiche.
-    - Si vous utilisez Kochava ou Tune pour mesurer les analyses d’installation de votre application, entrez votre URL de suivi d’installation à partir de Kochava ou de Tune. Lorsque vous enregistrez la campagne, l’URL de suivi est validée pour garantir sa résolution dans la page de description de votre application dans le Windows&nbsp;Store. Pour plus d’informations sur le suivi d’installation avec Kochava et Tune, consultez la documentation de [Kochava](http://support.kochava.com/) et de [Tune](https://help.tune.com/).
+    - Si vous utilisez Kochava ou Tune pour mesurer les analyses d’installation de votre application, entrez votre URL de suivi d’installation à partir de Kochava ou de Tune. Lorsque vous enregistrez la campagne, l’URL de suivi est validée pour garantir sa résolution dans la page de description de votre application dans le Windows Store. Pour plus d’informations sur le suivi d’installation avec Kochava et Tune, consultez la documentation de [Kochava](http://support.kochava.com/) et de [Tune](https://help.tune.com/).
     - Si vous avez choisi d’**augmenter l’implication de l’application** comme objectif de campagne, vous pouvez spécifier un [URI de lien ciblé](../launch-resume/handle-uri-activation.md) pour rediriger les clients du segment sélectionné dans une page spécifique de votre application.
     - Si vous spécifiez une destination qui n’est pas la page de description de votre application ni une page interne à votre application, votre campagne est automatiquement suspendue.
 

@@ -16,7 +16,7 @@ ms.openlocfilehash: 7b59bb255774c8050232831e7f0d7a78a921ec6d
 
 Utilisez les méthodes suivantes dans l’API de soumission du Windows Store pour gérer les soumissions de versions d’évaluation de package pour les applications qui sont inscrites dans votre compte du Centre de développement Windows. Pour obtenir une présentation de l’API de soumission du Windows Store, notamment les conditions préalables à l’utilisation de l’API, voir [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md).
 
->**Remarque**&nbsp;&nbsp;Ces méthodes ne peuvent être utilisées que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation. Avant de pouvoir utiliser ces méthodes pour créer ou gérer les soumissions de version d’évaluation de package, la version d’évaluation de package doit déjà exister dans votre compte du Centre de développement. Vous pouvez créer une version d’évaluation de package en [utilisant le tableau de bord du Centre de développement](https://msdn.microsoft.com/windows/uwp/publish/package-flights) ou en utilisant les méthodes de l’API de soumission du Windows Store décrites dans [Gérer les versions d’évaluation de package](manage-flights.md).
+>**Remarque**  Ces méthodes ne peuvent être utilisées que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation. Avant de pouvoir utiliser ces méthodes pour créer ou gérer les soumissions de version d’évaluation de package, la version d’évaluation de package doit déjà exister dans votre compte du Centre de développement. Vous pouvez créer une version d’évaluation de package en [utilisant le tableau de bord du Centre de développement](https://msdn.microsoft.com/windows/uwp/publish/package-flights) ou en utilisant les méthodes de l’API de soumission du Windows Store décrites dans [Gérer les versions d’évaluation de package](manage-flights.md).
 
 | Méthode        | URI    | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -36,9 +36,9 @@ Utilisez les méthodes suivantes dans l’API de soumission du Windows Store pou
 
 Pour créer une soumission pour une version d’évaluation de package, procédez comme suit.
 
-1. Si vous ne l’avez pas encore fait, remplissez les conditions préalables décrites dans [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md), notamment l’association d’une application AzureAD à votre compte du Centre de développement Windows et l’obtention de votre ID client et de votre clé. Vous n’aurez à le faire qu’une seule fois. Une fois à votre disposition, l’ID client et la clé sont réutilisables chaque fois que vous avez besoin de créer un jeton d’accès AzureAD.  
+1. Si vous ne l’avez pas encore fait, remplissez les conditions préalables décrites dans [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md), notamment l’association d’une application Azure AD à votre compte du Centre de développement Windows et l’obtention de votre ID client et de votre clé. Vous n’aurez à le faire qu’une seule fois. Une fois à votre disposition, l’ID client et la clé sont réutilisables chaque fois que vous avez besoin de créer un jeton d’accès Azure AD.  
 
-2. [Obtenir un jeton d’accès AzureAD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token). Vous devez transmettre ce jeton d’accès aux méthodes de l’API de soumission du Windows Store. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
+2. [Obtenir un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token). Vous devez transmettre ce jeton d’accès aux méthodes de l’API de soumission du Windows Store. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 
 3. [Créez une soumission de version d’évaluation de package](create-a-flight-submission.md) en exécutant la méthode suivante dans l’API de soumission du Windows Store. Cette méthode crée une soumission en cours, qui est une copie de votre dernière soumission publiée.
 
@@ -46,7 +46,7 @@ Pour créer une soumission pour une version d’évaluation de package, procéde
   POST https://manage.devcenter.microsoft.com/v1.0/my/applications{applicationId}/flights/{flightId}/submissions
   ```
 
-  Le corps de la réponse contient trois éléments: l’ID de la nouvelle soumission, ses données (notamment toutes les listes et informations tarifaires), ainsi que l’URI de signatures d’accès partagé (SAS) pour le chargement de tous les packages de la soumission. Pour plus d’informations sur SAS, voir [Signatures d’accès partagé, partie1: présentation du modèle SAS](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/).
+  Le corps de la réponse contient trois éléments : l’ID de la nouvelle soumission, ses données (notamment toutes les listes et informations tarifaires), ainsi que l’URI de signatures d’accès partagé (SAS) pour le chargement de tous les packages de la soumission. Pour plus d’informations sur SAS, voir [Signatures d’accès partagé, partie 1 : présentation du modèle SAS](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/).
 
 4. Si vous ajoutez de nouveaux packages pour la soumission, [préparez-les](https://msdn.microsoft.com/windows/uwp/publish/app-package-requirements) et ajoutez-les à une archive ZIP.
 
@@ -56,9 +56,9 @@ Pour créer une soumission pour une version d’évaluation de package, procéde
   PUT https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}
   ```
 
-  >**Remarque**&nbsp;&nbsp;Si vous ajoutez de nouveaux packages pour la soumission, veillez à mettre à jour les données de la soumission pour faire référence au nom et au chemin relatif de ces fichiers dans l’archiveZIP.
+  >**Remarque**  Si vous ajoutez de nouveaux packages pour la soumission, veillez à mettre à jour les données de la soumission pour faire référence au nom et au chemin relatif de ces fichiers dans l’archive ZIP.
 
-4. Si vous ajoutez de nouveaux packages pour la soumission, chargez l’archiveZIP sur l’URI SAS fourni dans le corps de la réponse de la méthode POST appelée à l’étape2. Pour plus d’informations, voir [Signatures d’accès partagé, partie 2: créer et utiliser une SAS avec le stockage d’objets blob](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/).
+4. Si vous ajoutez de nouveaux packages pour la soumission, chargez l’archive ZIP sur l’URI SAS fourni dans le corps de la réponse de la méthode POST appelée à l’étape 2. Pour plus d’informations, voir [Signatures d’accès partagé, partie 2 : créer et utiliser une SAS avec le stockage d’objets blob](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/).
 
   L’extrait de code suivant montre comment charger l’archive à l’aide de la classe [CloudBlockBlob](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.blob.cloudblockblob.aspx) incluse dans la bibliothèque cliente de stockage Azure pour .NET.
 
@@ -89,11 +89,11 @@ Pour créer une soumission pour une version d’évaluation de package, procéde
 <span id="manage-gradual-package-rollout">
 ## Gérer un lancement de package progressif pour une soumission de version d’évaluation de package
 
-Vous pouvez publier progressivement les packages mis à jour d’une soumission de version d’évaluation de package pour un pourcentage des clients de votre application sur Windows10. Cela vous permet de surveiller les commentaires et les données d’analyse des packages spécifiques et de vérifier l’adéquation de votre mise à jour avant de la déployer plus largement. Vous pouvez modifier le pourcentage de lancement (ou arrêter la mise à jour) d’une soumission publiée sans avoir à créer une nouvelle soumission. Pour plus d’informations, y compris des instructions pour l’activation et la gestion d’un lancement de package progressif dans le tableau de bord du Centre de développement, consultez [cet article](../publish/gradual-package-rollout.md).
+Vous pouvez publier progressivement les packages mis à jour d’une soumission de version d’évaluation de package pour un pourcentage des clients de votre application sur Windows 10. Cela vous permet de surveiller les commentaires et les données d’analyse des packages spécifiques et de vérifier l’adéquation de votre mise à jour avant de la déployer plus largement. Vous pouvez modifier le pourcentage de lancement (ou arrêter la mise à jour) d’une soumission publiée sans avoir à créer une nouvelle soumission. Pour plus d’informations, y compris des instructions pour l’activation et la gestion d’un lancement de package progressif dans le tableau de bord du Centre de développement, consultez [cet article](../publish/gradual-package-rollout.md).
 
 Vous pouvez également activer et gérer par programmation un lancement de package progressif pour une soumission de version d’évaluation de package en utilisant les méthodes suivantes de l’API de soumission du Windows Store.
 
-* Pour gérer un lancement de package progressif pour une soumission de version d’évaluation de package:
+* Pour gérer un lancement de package progressif pour une soumission de version d’évaluation de package :
 
   1. [Créez une soumission de version d’évaluation de package](create-a-flight-submission.md) ou [récupérez une soumission de version d’évaluation de package](get-a-flight-submission.md).
   2. Dans les données de réponse, localisez la ressource [packageRollout](#package-rollout-object), définissez le champ *isPackageRollout* sur true, puis définissez le champ *packageRolloutPercentage* sur le pourcentage des clients de votre application qui doivent obtenir les packages mis à jour.
@@ -185,13 +185,13 @@ Cette ressource a les valeurs suivantes.
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | id            | chaîne  | ID de la soumission.  |
 | flightId           | chaîne  |  ID de la version d’évaluation du package auquel la soumission est associée.  |  
-| status           | chaîne  | État de la soumission. Les valeurs possibles sont les suivantes: <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>   |
+| status           | chaîne  | État de la soumission. Les valeurs possibles sont les suivantes : <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>   |
 | statusDetails           | objet  |  Contient des détails supplémentaires sur l’état de la soumission, notamment des informations sur les éventuelles erreurs. Pour plus d’informations, voir la section [Détails d’état](#status-details-object) ci-après. |
 | flightPackages           | tableau  | Contient des objets qui fournissent des détails sur chaque package de la soumission. Pour plus d’informations, voir la section [Package de version d’évaluation](#flight-package-object) ci-après.  |
 | packageDeliveryOptions    | objet  | Contient les paramètres de lancement de package progressif et de mise à jour obligatoire de la soumission. Pour plus d’informations, consultez la section [Objet options de remise du package](#package-delivery-options-object) ci-dessous.  |
 | fileUploadUrl           | chaîne  | URI de la signature d’accès partagé (SAS) pour le chargement des packages de la soumission. Si vous ajoutez de nouveaux packages à la soumission, chargez l’archive ZIP contenant les packages vers cet URI. Pour plus d’informations, voir [Créer une soumission de version d’évaluation de package](#create-a-package-flight-submission).  |
-| targetPublishMode           | chaîne  | Mode de publication pour la soumission. Les valeurs possibles sont les suivantes: <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
-| targetPublishDate           | chaîne  | Date de publication de la soumission au format ISO8601, si le paramètre *targetPublishMode* a la valeur SpecificDate.  |
+| targetPublishMode           | chaîne  | Mode de publication pour la soumission. Les valeurs possibles sont les suivantes : <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
+| targetPublishDate           | chaîne  | Date de publication de la soumission au format ISO 8601, si le paramètre *targetPublishMode* a la valeur SpecificDate.  |
 | notesForCertification           | chaîne  |  Fournit des informations supplémentaires aux testeurs de certification, telles que les informations d’identification du compte de test et les étapes permettant d’accéder aux fonctionnalités et de les vérifier. Pour plus d’informations, voir [Notes de certification](https://msdn.microsoft.com/windows/uwp/publish/notes-for-certification). |
 
 <span id="status-details-object" />
@@ -224,7 +224,7 @@ Cette ressource donne accès aux données du rapport de certification pour une s
 
 | Valeur           | Type    | Description                                                                                                                                                                                                                          |
 |-----------------|---------|------|
-|     date            |    chaîne     |  Date et heure de génération du rapport, au format ISO8601.    |
+|     date            |    chaîne     |  Date et heure de génération du rapport, au format ISO 8601.    |
 |     reportUrl            |    chaîne     |  URL vous permettant d’accéder au rapport.    |
 
 
@@ -252,19 +252,19 @@ Cette ressource fournit des détails sur un package d’une soumission. L’exem
 
 Cette ressource a les valeurs suivantes.
 
->**Remarque**&nbsp;&nbsp;Quand vous appelez la méthode de [mise à jour d’une soumission de version d’évaluation](update-a-flight-submission.md), seules les valeurs *fileName*, *fileStatus*, *minimumDirectXVersion* et *minimumSystemRam* de cet objet sont nécessaires dans le corps de la requête. Les autres valeurs sont renseignées par le Centre de développement.
+>**Remarque**  Quand vous appelez la méthode de [mise à jour d’une soumission de version d’évaluation](update-a-flight-submission.md), seules les valeurs *fileName*, *fileStatus*, *minimumDirectXVersion* et *minimumSystemRam* de cet objet sont nécessaires dans le corps de la requête. Les autres valeurs sont renseignées par le Centre de développement.
 
 | Valeur           | Type    | Description                                                                                                                                                                                                                          |
 |-----------------|---------|------|
 | fileName   |   chaîne      |  Nom du package.    |  
-| fileStatus    | chaîne    |  État du package. Les valeurs possibles sont les suivantes: <ul><li>None</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>    |  
+| fileStatus    | chaîne    |  État du package. Les valeurs possibles sont les suivantes : <ul><li>None</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>    |  
 | id    |  chaîne   |  ID qui identifie de manière unique le package. Cette valeur est utilisée par le Centre de développement.   |     
 | version    |  chaîne   |  Version du package d’application. Pour plus d’informations, voir [Numérotation des versions de packages](https://msdn.microsoft.com/windows/uwp/publish/package-version-numbering).   |   
 | architecture    |  chaîne   |  Architecture du package d’application (par exemple, ARM).   |     
 | languages    | tableau    |  Tableau des codes des langues prises en charge par l’application. Pour plus d’informations, voir [Langues prises en charge](https://msdn.microsoft.com/windows/uwp/publish/supported-languages).    |     
 | capabilities    |  tableau   |  Tableau des fonctionnalités exigées par le package. Pour plus d’informations sur les fonctionnalités, voir [Déclarations des fonctionnalités d’application](https://msdn.microsoft.com/windows/uwp/packaging/app-capability-declarations).   |     
-| minimumDirectXVersion    |  chaîne   |  Version DirectX minimale prise en charge par le package d’application. Cette valeur peut être définie uniquement pour les applications qui ciblent Windows8.x. Elle est ignorée pour les applications qui ciblent d’autres versions. Les valeurs possibles sont les suivantes: <ul><li>None</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
-| minimumSystemRam    | chaîne    |  Mémoire RAM minimale exigée par le package d’application. Cette valeur peut être définie uniquement pour les applications qui ciblent Windows8.x. Elle est ignorée pour les applications qui ciblent d’autres versions. Les valeurs possibles sont les suivantes: <ul><li>None</li><li>Memory2GB</li></ul>   |    
+| minimumDirectXVersion    |  chaîne   |  Version DirectX minimale prise en charge par le package d’application. Cette valeur peut être définie uniquement pour les applications qui ciblent Windows 8.x. Elle est ignorée pour les applications qui ciblent d’autres versions. Les valeurs possibles sont les suivantes : <ul><li>None</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
+| minimumSystemRam    | chaîne    |  Mémoire RAM minimale exigée par le package d’application. Cette valeur peut être définie uniquement pour les applications qui ciblent Windows 8.x. Elle est ignorée pour les applications qui ciblent d’autres versions. Les valeurs possibles sont les suivantes : <ul><li>None</li><li>Memory2GB</li></ul>   |    
 
 
 <span id="package-delivery-options-object" />
@@ -304,7 +304,7 @@ Contient les [paramètres de lancement de package](#manage-gradual-package-rollo
 |-----------------|---------|------|
 | isPackageRollout   |   booléen      |  Indique si le lancement de package progressif est activé pour la soumission.    |  
 | packageRolloutPercentage    | flottant    |  Pourcentage d’utilisateurs qui recevront les packages de lancement progressif.    |  
-| packageRolloutStatus    |  chaîne   |  Une des chaînes suivantes qui indique l’état de lancement de package progressif: <ul><li>PackageRolloutNotStarted</li><li>PackageRolloutInProgress</li><li>PackageRolloutComplete</li><li>PackageRolloutStopped</li></ul>  |  
+| packageRolloutStatus    |  chaîne   |  Une des chaînes suivantes qui indique l’état de lancement de package progressif : <ul><li>PackageRolloutNotStarted</li><li>PackageRolloutInProgress</li><li>PackageRolloutComplete</li><li>PackageRolloutStopped</li></ul>  |  
 | fallbackSubmissionId    |  chaîne   |  ID de la soumission qui sera reçue par les clients n’obtenant pas les packages de lancement progressif.   |          
 
 <span/>

@@ -11,7 +11,7 @@ ms.openlocfilehash: fedba87189e6ee5b6f8f81dfa06703b2011adf6a
 
 #  <a name="porting-windows-phone-silverlight-to-uwp-for-io-device-and-app-model"></a>Portage d’une application Silverlight pour Windows Phone vers UWP pour le modèle d’E/S, d’appareil et d’application
 
-\[ Article mis à jour pour les applications UWP sur Windows&nbsp;10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Rubrique précédente : [Portage du balisage XAML et de la couche interface utilisateur](wpsl-to-uwp-porting-xaml-and-ui.md).
 

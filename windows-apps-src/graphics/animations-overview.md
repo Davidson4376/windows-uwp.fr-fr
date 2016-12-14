@@ -10,7 +10,7 @@ ms.openlocfilehash: e3e21c55ea8ddeab0969e304080394b940da010d
 ---
 # <a name="animations-overview"></a>Vue d’ensemble des animations
 
-\[ Mise à jour pour les applications UWP sur Windows&nbsp;10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Dans Windows Runtime, les animations peuvent améliorer votre application en la rendant plus vivante et interactive. À l’aide des animations de la bibliothèque d’animations du Windows Runtime, vous pouvez intégrer l’apparence de Windows dans votre application. Cette rubrique présente les animations et des exemples de situations classiques où chacune d’elles est utilisée.
@@ -25,7 +25,7 @@ Les animations de la bibliothèque d’animations Windows Runtime offrent les av
 
 Par exemple, quand l’utilisateur ajoute un élément à une liste, au lieu que ce nouvel élément apparaisse instantanément dans la liste, il se met en place par animation. Les autres éléments de la liste sont animés vers leur nouvelle position en peu de temps, faisant ainsi de la place pour le nouvel élément. Ce comportement de transition rend l’interaction du contrôle plus apparente à l’utilisateur.
 
-Windows&nbsp;10, version&nbsp;1607 introduit une nouvelle API [**ConnectedAnimationService**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.connectedanimationservice.aspx) pour l’implémentation d’animations où un élément animé s’affiche entre les vues pendant une navigation. Cette API possède un modèle d’utilisation différente de celui des autres API de la bibliothèque d’animations. L’utilisation de **ConnectedAnimationService** est traitée dans la [page de référence](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.connectedanimationservice.aspx).
+Windows 10, version 1607 introduit une nouvelle API [**ConnectedAnimationService**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.connectedanimationservice.aspx) pour l’implémentation d’animations où un élément animé s’affiche entre les vues pendant une navigation. Cette API possède un modèle d’utilisation différente de celui des autres API de la bibliothèque d’animations. L’utilisation de **ConnectedAnimationService** est traitée dans la [page de référence](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.connectedanimationservice.aspx).
 
 La bibliothèque d’animations ne fournit pas des animations pour chaque scénario possible. Il peut arriver que vous souhaitiez créer une animation personnalisée en XAML. Pour plus d’informations, voir [Animations dans une table de montage séquentiel](storyboarded-animations.md).
 
@@ -38,14 +38,14 @@ La bibliothèque d’animations et le système d’animations Windows Runtime on
 -   Les *transitions thématiques* sont appliquées automatiquement quand certaines conditions sont modifiées dans l’interface utilisateur, impliquant des éléments ou contrôles provenant des types d’interface utilisateur XAML Windows Runtime prédéfinis. Elles sont appelées *transitions thématiques*, car elles prennent en charge l’apparence Windows et définissent les actions de toutes les applications pour des scénarios d’interface utilisateur particuliers quand elles passent d’un mode d’interaction à un autre. Les transitions thématiques font partie de la bibliothèque d’animations.
 -   Les *animations thématiques* sont des animations appliquées à une ou plusieurs propriétés de types d’interface utilisateur XAML Windows Runtime prédéfinis. Elles diffèrent des transitions thématiques car elles ciblent un élément spécifique et existent dans des états visuels spécifiques dans un contrôle, alors que les transitions thématiques sont affectées à des propriétés du contrôle qui existent en dehors des états visuels et influencent les transitions entre ces états. Une grande partie des contrôles XAML Windows Runtime comprennent des animations thématiques dans des storyboards qui font partie de leur modèle de contrôle, les animations étant déclenchées par les états visuels. Du moment que vous ne changez pas les modèles, vous disposez de ces animations thématiques intégrées pour les contrôles dans votre interface utilisateur. En revanche, si vous remplacez des modèles, vous supprimez également les animations thématiques de contrôle intégrées. Pour les récupérer, vous devez définir une table de montage séquentiel qui comprend des animations thématiques dans le jeu d’états visuels du contrôle. Vous pouvez aussi exécuter des animations thématiques à partir de storyboards qui ne sont pas dans des états visuels et les démarrer avec la méthode [**Begin**](https://msdn.microsoft.com/library/windows/apps/BR210491), mais ce scénario est moins courant. Les animations thématiques font partie de la bibliothèque d’animations.
 -   Les *transitions visuelles* sont appliquées quand un contrôle passe de l’un de ses états visuels définis à un autre état. Il s’agit d’animations personnalisées que vous créez et elles sont généralement associées au modèle personnalisé que vous créez pour un contrôle et aux définitions d’état visuel de ce modèle. L’animation est exécutée uniquement pendant le délai entre les états et celui-ci est généralement court, quelques secondes au plus. Pour plus d’informations, voir la [section « VisualTransition » dans Animations dans une table de montage séquentiel pour les états visuels](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808#VisualTransition).
--   Les *animations dans une table de montage séquentiel* animent la valeur d’une propriété de dépendance Windows&nbsp;Runtime au fil du temps. Les tables de montage séquentiel peuvent être définies dans le cadre d’une transition visuelle ou déclenchées par l’application lors de l’exécution. Pour plus d’informations, voir [Animations dans une table de montage séquentiel](storyboarded-animations.md). Pour plus d’informations sur les propriétés de dépendance et sur l’emplacement où elles existent, voir [Vue d’ensemble des propriétés de dépendance](https://msdn.microsoft.com/library/windows/apps/Mt185583).
--   Les *animations connectées* fournies par la nouvelle API [**ConnectedAnimationService**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.connectedanimationservice.aspx) permettent aux développeurs de créer facilement un effet où un élément animé s’affiche entre les vues pendant une navigation. Cette API est disponible à partir de Windows&nbsp;10, version&nbsp;1607. Pour plus d’informations, voir [**ConnectedAnimationService**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.connectedanimationservice.aspx).
+-   Les *animations dans une table de montage séquentiel* animent la valeur d’une propriété de dépendance Windows Runtime au fil du temps. Les tables de montage séquentiel peuvent être définies dans le cadre d’une transition visuelle ou déclenchées par l’application lors de l’exécution. Pour plus d’informations, voir [Animations dans une table de montage séquentiel](storyboarded-animations.md). Pour plus d’informations sur les propriétés de dépendance et sur l’emplacement où elles existent, voir [Vue d’ensemble des propriétés de dépendance](https://msdn.microsoft.com/library/windows/apps/Mt185583).
+-   Les *animations connectées* fournies par la nouvelle API [**ConnectedAnimationService**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.connectedanimationservice.aspx) permettent aux développeurs de créer facilement un effet où un élément animé s’affiche entre les vues pendant une navigation. Cette API est disponible à partir de Windows 10, version 1607. Pour plus d’informations, voir [**ConnectedAnimationService**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.connectedanimationservice.aspx).
 
 ## <a name="animations-available-in-the-library"></a>Animations disponibles dans la bibliothèque
 
 Les animations suivantes sont fournies dans la bibliothèque d’animations. Cliquez sur le nom d’une animation pour en savoir plus sur ses principaux scénarios d’utilisation, comment la définir, ainsi que pour afficher un exemple de l’animation.
 
--   [Transition de page](./animations-overview.md#page-transition)&nbsp;: anime les transitions entre les pages dans un [**cadre**](https://msdn.microsoft.com/library/windows/apps/br242682).
+-   [Transition de page](./animations-overview.md#page-transition) : anime les transitions entre les pages dans un [**cadre**](https://msdn.microsoft.com/library/windows/apps/br242682).
 -   [Transition de contenu et d’entrée](./animations-overview.md#content-transition-and-entrance-transition) : anime des éléments de contenu à l’intérieur ou en dehors de la vue.
 -   [Apparition/disparition en fondu et fondu enchaîné](./animations-overview.md#fade-in-out-and-crossfade) : affiche les éléments ou contrôles provisoires, ou actualise une zone de contenu.
 -   [Pointeur vers le haut/bas](./animations-overview.md#pointer-up-down) : affiche un retour visuel d’un appui ou d’un clic sur une vignette.
@@ -202,7 +202,7 @@ Les exemples précédents appliquent une transition de thème à un seul contrô
 
 Les rectangles enfants de l’objet [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) apparaissent par le biais d’une transition, l’un après l’autre et de façon harmonieuse, plutôt que tous ensemble comme ce serait le cas si vous appliquiez cette animation aux rectangles un à un.
 
-Voici une démonstration de cette animation&nbsp;:
+Voici une démonstration de cette animation :
 
 ![animation montrant un rectangle enfant apparaissant par le biais d’une transition](./images/animation-child-rectangles.gif)
 
@@ -281,7 +281,7 @@ Vous pouvez appliquer plusieurs animations de transition à un même objet ou co
 ...      
 ```
 
-Plusieurs effets de transition permettent de créer des animations applicables à vos éléments d’interface utilisateur au fur et à mesure de leur ajout, de leur retrait, de leur réorganisation, etc. Les noms de ces API contiennent tous «&nbsp;ThemeTransition&nbsp;»&nbsp;:
+Plusieurs effets de transition permettent de créer des animations applicables à vos éléments d’interface utilisateur au fur et à mesure de leur ajout, de leur retrait, de leur réorganisation, etc. Les noms de ces API contiennent tous « ThemeTransition » :
 
 | API | Description |
 |-----|-------------|
@@ -345,7 +345,7 @@ Contrairement aux animations de transition, une animation de thème n’a pas de
 
  
 
-Vous pouvez appliquer plusieurs autres animations de thème à vos éléments d’interface utilisateur pour créer des effets d’animation. Les noms de ces API contiennent tous «&nbsp;ThemeAnimation&nbsp;»&nbsp;:
+Vous pouvez appliquer plusieurs autres animations de thème à vos éléments d’interface utilisateur pour créer des effets d’animation. Les noms de ces API contiennent tous « ThemeAnimation » :
 
 | API | Description |
 |-----|-------------|

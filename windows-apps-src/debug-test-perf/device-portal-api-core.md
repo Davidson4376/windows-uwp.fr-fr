@@ -2,16 +2,16 @@
 author: dbirtolo
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
 title: "Informations de référence sur les API principales Device Portal"
-description: "Découvrez les API REST principales Windows&nbsp;Device&nbsp;Portal que vous pouvez utiliser pour accéder aux données et contrôler votre appareil par programmation."
+description: "Découvrez les API REST principales Windows Device Portal que vous pouvez utiliser pour accéder aux données et contrôler votre appareil par programmation."
 translationtype: Human Translation
 ms.sourcegitcommit: b4222774dc4b0f9cdcac871311f5ead69c1e70a9
 ms.openlocfilehash: 3bacb9ac42e157afaed5e9e0e6438654db03ff28
 
 ---
 
-# <a name="device-portal-core-api-reference"></a>Référence sur les API principales Device&nbsp;Portal
+# <a name="device-portal-core-api-reference"></a>Référence sur les API principales Device Portal
 
-Dans Windows&nbsp;Device&nbsp;Portal, tout repose sur les API REST que vous pouvez utiliser pour accéder aux données et contrôler votre appareil par programmation.
+Dans Windows Device Portal, tout repose sur les API REST que vous pouvez utiliser pour accéder aux données et contrôler votre appareil par programmation.
 
 ## <a name="app-deployment"></a>Déploiement des applications
 
@@ -28,7 +28,7 @@ POST | /api/app/packagemanager/package
 <br />
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête&nbsp;:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -341,7 +341,7 @@ GET | /api/debug/dump/usermode/crashcontrol
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête&nbsp;:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -393,7 +393,7 @@ DELETE | /api/debug/dump/usermode/crashdump
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête&nbsp;:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -441,7 +441,7 @@ DELETE | /api/debug/dump/usermode/crashcontrol
 <br />
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête&nbsp;:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -488,7 +488,7 @@ GET | /api/debug/dump/usermode/crashdump
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête&nbsp;:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -538,7 +538,7 @@ POST | /api/debug/dump/usermode/crashcontrol
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête&nbsp;:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -632,7 +632,7 @@ GET | /api/debug/dump/kernel/dump
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête&nbsp;:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -703,13 +703,13 @@ La réponse comprend les paramètres de contrôle d’incident. Pour plus d’in
 
 **Types de vidage**
 
-0&nbsp;: désactivé
+0 : désactivé
 
-1&nbsp;: image mémoire complète (collecte toute la mémoire utilisée)
+1 : image mémoire complète (collecte toute la mémoire utilisée)
 
-2&nbsp;: image mémoire du noyau (ignore la mémoire en mode utilisateur)
+2 : image mémoire du noyau (ignore la mémoire en mode utilisateur)
 
-3&nbsp;: minividage limité du noyau
+3 : minividage limité du noyau
 
 **Code d’état**
 
@@ -783,7 +783,7 @@ GET | /api/debug/dump/usermode/live
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête&nbsp;:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -830,7 +830,7 @@ POST | /api/debug/dump/kernel/crashcontrol
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête&nbsp;:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -892,7 +892,7 @@ GET/WebSocket | /api/etw/session/realtime
 
 **Réponse**
 
-La réponse comprend les événements ETW issus des fournisseurs activés.  Voir les commandes WebSocket&nbsp;ETW ci-dessous. 
+La réponse comprend les événements ETW issus des fournisseurs activés.  Voir les commandes WebSocket ETW ci-dessous. 
 
 **Code d’état**
 
@@ -939,7 +939,7 @@ Cette réponse est envoyée du serveur vers le client. Elle est envoyée sous fo
 
 Les objets de charge utile sont des paires clé-valeur supplémentaires (chaîne:chaîne) qui sont fournies dans l’événement ETW d’origine.
 
-Exemple&nbsp;:
+Exemple :
 ```
 {
     "ID" : 42, 
@@ -1193,7 +1193,7 @@ GET | /api/os/devicefamily
 
 **Réponse**
 
-La réponse comprend la famille d’appareils (référence&nbsp;: ordinateur de bureau, Xbox, etc.).
+La réponse comprend la famille d’appareils (référence : ordinateur de bureau, Xbox, etc.).
 
 ```
 {
@@ -1201,7 +1201,7 @@ La réponse comprend la famille d’appareils (référence&nbsp;: ordinateur de 
 }
 ```
 
-DeviceType aura pour valeur une chaîne du type «&nbsp;Windows.Xbox&nbsp;», «&nbsp;Windows.Desktop&nbsp;», etc. 
+DeviceType aura pour valeur une chaîne du type « Windows.Xbox », « Windows.Desktop », etc. 
 
 **Code d’état**
 
@@ -1235,7 +1235,7 @@ POST | /api/os/machinename
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête&nbsp;:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -1525,7 +1525,7 @@ Méthode      | URI de la requête
 :------     | :-----
 GET | /api/power/cfg/
 <br />
-Options&nbsp;:
+Options :
 - SCHEME_CURRENT
 
 **Paramètres d’URI**
@@ -1618,7 +1618,7 @@ POST | /api/power/activecfg
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête&nbsp;:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -1663,7 +1663,7 @@ POST | /api/power/cfg/
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête&nbsp;:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -1934,7 +1934,7 @@ POST | /api/taskmanager/app
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête&nbsp;:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -1983,7 +1983,7 @@ DELETE | /api/taskmanager/app
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête&nbsp;:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -2182,7 +2182,7 @@ GET | /api/wifi/networks
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête&nbsp;:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -2252,7 +2252,7 @@ POST | /api/wifi/network
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête&nbsp;:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -2302,7 +2302,7 @@ DELETE | /api/wifi/network
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête&nbsp;:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -2351,7 +2351,7 @@ GET | /api/wer/report/file
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête&nbsp;:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -2402,7 +2402,7 @@ GET | /api/wer/report/files
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête&nbsp;:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -2569,7 +2569,7 @@ POST | /api/wpr/boottrace
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête&nbsp;:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -2637,7 +2637,7 @@ GET | /api/wpr/boottrace
 
 **Réponse**
 
--  Aucune.  **Remarque&nbsp;:** il s’agit d’une opération longue.  Elle renverra une réponse à la fin de l’écriture de l’ETL sur le disque.
+-  Aucune.  **Remarque :** il s’agit d’une opération longue.  Elle renverra une réponse à la fin de l’écriture de l’ETL sur le disque.
 
 **Code d’état**
 
@@ -2670,7 +2670,7 @@ POST | /api/wpr/trace
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête&nbsp;:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -2738,7 +2738,7 @@ GET | /api/wpr/trace
 
 **Réponse**
 
-- Aucune.  **Remarque&nbsp;:** il s’agit d’une opération longue.  Elle renverra une réponse à la fin de l’écriture de l’ETL sur le disque.  
+- Aucune.  **Remarque :** il s’agit d’une opération longue.  Elle renverra une réponse à la fin de l’écriture de l’ETL sur le disque.  
 
 **Code d’état**
 
@@ -2880,7 +2880,7 @@ GET | /api/wpr/tracefile
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier le paramètre supplémentaire suivant dans l’URI de requête&nbsp;:
+Vous pouvez spécifier le paramètre supplémentaire suivant dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -2929,7 +2929,7 @@ DELETE | /api/wpr/tracefile
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier le paramètre supplémentaire suivant dans l’URI de requête&nbsp;:
+Vous pouvez spécifier le paramètre supplémentaire suivant dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -2965,13 +2965,13 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-## <a name="dns-sd-tags"></a>Balises&nbsp;DNS-SD 
+## <a name="dns-sd-tags"></a>Balises DNS-SD 
 ---
 ### <a name="view-tags"></a>Afficher les balises
 
 **Requête**
 
-Affichez les balises actuellement appliquées pour l’appareil.  Ces balises sont annoncées par le biais d’enregistrements&nbsp;DNS-SD&nbsp;TXT dans la clé&nbsp;T.  
+Affichez les balises actuellement appliquées pour l’appareil.  Ces balises sont annoncées par le biais d’enregistrements DNS-SD TXT dans la clé T.  
  
 Méthode      | URI de la requête
 :------     | :-----
@@ -3024,7 +3024,7 @@ Code d’état HTTP      | Description
 
 **Requête**
 
-Supprimez toutes les balises actuellement signalées par&nbsp;DNS-SD.   
+Supprimez toutes les balises actuellement signalées par DNS-SD.   
  
 Méthode      | URI de requête
 :------     | :-----
@@ -3069,7 +3069,7 @@ Code d’état HTTP      | Description
 
 **Requête**
 
-Supprimez une balise actuellement signalée par&nbsp;DNS-SD.   
+Supprimez une balise actuellement signalée par DNS-SD.   
  
 Méthode      | URI de requête
 :------     | :-----
@@ -3115,7 +3115,7 @@ Code d’état HTTP      | Description
 
 **Requête**
 
-Ajoutez une balise à l’annonce&nbsp;DNS-SD.   
+Ajoutez une balise à l’annonce DNS-SD.   
  
 Méthode      | URI de la requête
 :------     | :-----
@@ -3146,7 +3146,7 @@ Cette API comporte les codes d’état attendus suivants.
 Code d’état HTTP      | Description
 :------     | :-----
 200 | OK
-401 | Dépassement de capacité pour l’espace de balise.  Survient lorsque la balise proposée est trop longue pour l’enregistrement de service&nbsp;DNS-SD résultant.  
+401 | Dépassement de capacité pour l’espace de balise.  Survient lorsque la balise proposée est trop longue pour l’enregistrement de service DNS-SD résultant.  
 
 <br />
 **Familles d’appareils disponibles**

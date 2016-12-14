@@ -10,7 +10,7 @@ ms.openlocfilehash: c514ae4831f21b4c471b0445b3cf54a6a08ff92a
 ---
 # <a name="reserved-file-and-uri-scheme-names"></a>Noms de schéma d’URI et de fichier réservés
 
-\[ Mise à jour pour les applications UWP sur Windows&nbsp;10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Vous pouvez utiliser des associations d’URI pour lancer automatiquement votre application quand une autre application lance un schéma d’URI spécifique. Il existe cependant des associations d’URI que vous ne pouvez pas utiliser, car elles sont réservées. Si votre application s’inscrit pour une association réservée, cette inscription est ignorée. Cette rubrique répertorie les noms de schéma d’URI et de fichier réservés, indisponibles pour votre application.
 

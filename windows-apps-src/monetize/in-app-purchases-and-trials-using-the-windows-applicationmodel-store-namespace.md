@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 ms.assetid: 32572890-26E3-4FBB-985B-47D61FF7F387
-description: "Découvrez comment activer les achats in-app et les versions d’évaluation dans les applications UWP qui ciblent les versions antérieures à Windows&nbsp;10 version&nbsp;1607."
+description: "Découvrez comment activer les achats in-app et les versions d’évaluation dans les applications UWP qui ciblent les versions antérieures à Windows 10 version 1607."
 title: "Versions d’évaluation et achats in-app utilisant l’espace de noms Windows.ApplicationModel.Store"
 translationtype: Human Translation
 ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
@@ -15,11 +15,11 @@ Vous pouvez utiliser les membres de l’espace de noms [Windows.ApplicationModel
 
 Les articles de cette section fournissent des instructions détaillées et des exemples de code pour utiliser les membres de l’espace de noms **Windows.ApplicationModel.Store** dans plusieurs scénarios courants. Pour une vue d’ensemble des concepts liés aux achats in-app dans les applications UWP, consultez [Achats in-app et versions d’évaluation](in-app-purchases-and-trials.md).
 
-Pour obtenir un exemple complet montrant comment implémenter des versions d’évaluation et des achats in-app à l’aide de l’espace de noms **Windows.ApplicationModel.Store**, consultez l’[Exemple Windows&nbsp;Store](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store).
+Pour obtenir un exemple complet montrant comment implémenter des versions d’évaluation et des achats in-app à l’aide de l’espace de noms **Windows.ApplicationModel.Store**, consultez l’[Exemple Windows Store](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store).
 
 >**Remarques**&nbsp;&nbsp;
 >
-> * Si votre application cible Windows&nbsp;10, version&nbsp;1607 ou ultérieure, nous vous recommandons d’utiliser les membres de l’espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) plutôt que l’espace de noms **Windows.ApplicationModel.Store**. L’espace de noms **Windows.Services.Store** prend en charge les types d’extension les plus récents, comme les extensions consommables gérées par le Windows Store. Il est conçu pour être compatible avec les futurs types de produits et de fonctionnalités pris en charge par le Centre de développement Windows et le Windows&nbsp;Store. L’espace de noms **Windows.Services.Store** affiche également de meilleures performances. Pour plus d’informations, voir [Versions d’évaluation et achats in-app](in-app-purchases-and-trials.md).
+> * Si votre application cible Windows 10, version 1607 ou ultérieure, nous vous recommandons d’utiliser les membres de l’espace de noms [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) plutôt que l’espace de noms **Windows.ApplicationModel.Store**. L’espace de noms **Windows.Services.Store** prend en charge les types d’extension les plus récents, comme les extensions consommables gérées par le Windows Store. Il est conçu pour être compatible avec les futurs types de produits et de fonctionnalités pris en charge par le Centre de développement Windows et le Windows Store. L’espace de noms **Windows.Services.Store** affiche également de meilleures performances. Pour plus d’informations, voir [Versions d’évaluation et achats in-app](in-app-purchases-and-trials.md).
 <br/><br/>
 > * L’espace de noms **Windows.ApplicationModel.Store** n’est pas pris en charge dans les applications de bureau Windows qui utilisent [Desktop Bridge](https://developer.microsoft.com/windows/bridges/desktop). Ces applications doivent utiliser l’espace de noms **Windows.Services.Store** pour implémenter les achats in-app et les versions d’évaluation.
 
@@ -27,7 +27,7 @@ Pour obtenir un exemple complet montrant comment implémenter des versions d’�
 
 Le point d’entrée principal de l’espace de noms **Windows.ApplicationModel.Store** est la classe [CurrentApp](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.aspx). Cette classe fournit des propriétés et des méthodes statiques qui permettent, entre autres, d’obtenir des informations sur l’application active et ses modules complémentaires disponibles (également appelés produits in-app), d’obtenir les informations de licence de l’application actuelle ou de ses modules complémentaires, d’acheter une application ou un module complémentaire pour l’utilisateur actuel et d’effectuer d’autres tâches.
 
-La classe [CurrentApp](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.aspx) obtient ses données à partir du Windows&nbsp;Store. Vous devez donc disposer d’un compte de développeur et l’application doit être publiée dans le Windows&nbsp;Store pour que vous puissiez utiliser cette classe dans votre application. Avant de soumettre votre application au Windows&nbsp;Store, vous pouvez tester votre code avec une version de cette classe appelée [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.aspx). Après avoir testé votre application et avant de la soumettre au Windows&nbsp;Store, vous devez remplacer les instances de **CurrentAppSimulator** par **CurrentApp**. Votre application ne sera pas certifiée si elle utilise **CurrentAppSimulator**.
+La classe [CurrentApp](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.aspx) obtient ses données à partir du Windows Store. Vous devez donc disposer d’un compte de développeur et l’application doit être publiée dans le Windows Store pour que vous puissiez utiliser cette classe dans votre application. Avant de soumettre votre application au Windows Store, vous pouvez tester votre code avec une version de cette classe appelée [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.aspx). Après avoir testé votre application et avant de la soumettre au Windows Store, vous devez remplacer les instances de **CurrentAppSimulator** par **CurrentApp**. Votre application ne sera pas certifiée si elle utilise **CurrentAppSimulator**.
 
 Lorsque **CurrentAppSimulator** est utilisé, l’état initial des produits in-app et de licence de votre application est décrit dans un fichier local nommé WindowsStoreProxy.xml, situé sur votre ordinateur de développement. Pour plus d’informations sur ce fichier, consultez [Utilisation du fichier WindowsStoreProxy.xml avec CurrentAppSimulator](#proxy).
 
@@ -39,24 +39,24 @@ Pour plus d’informations sur les tâches courantes exécutables avec **Current
 | [Activer les achats de produits in-app](enable-in-app-product-purchases.md)      |  Que votre application soit gratuite ou non, vous pouvez vendre du contenu, d’autres applications ou de nouvelles fonctionnalités applicatives (par exemple le déverrouillage d’un nouveau niveau de jeu) directement dans l’application. Nous allons vous montrer comment activer ces produits dans votre application.  |
 | [Activer les achats de produits consommables in-app](enable-consumable-in-app-product-purchases.md)      | Proposez des produits consommables dans l’application qui peuvent être achetés, utilisés et rachetés via la plateforme commerciale du Windows Store, afin d’offrir à vos clients une expérience d’achat à la fois solide et fiable au sein de l’application. Cette fonction est particulièrement utile pour différents aspects du jeu, comme les devises (or, pièces, etc.) susceptibles d’être achetées, puis utilisées pour acheter certaines améliorations. |
 | [Gérer un vaste catalogue de produits in-app](manage-a-large-catalog-of-in-app-products.md)      |   Si votre application propose un vaste catalogue de produits in-app, vous pouvez éventuellement suivre la procédure décrite dans cette rubrique pour faciliter la gestion de votre catalogue.    |
-| [Utiliser des reçus pour vérifier les achats de produits](use-receipts-to-verify-product-purchases.md)      |   Chaque transaction du Windows Store qui entraîne un achat de produit peut éventuellement retourner un reçu de transaction qui fournit des informations sur le produit répertorié et le coût monétaire pour le client. L’accès à ces informations autorise les scénarios dans lesquels votre application doit vérifier qu’un utilisateur a acheté votre application ou qu’il a effectué des achats in-app de produits dans le Windows&nbsp;Store. |
+| [Utiliser des reçus pour vérifier les achats de produits](use-receipts-to-verify-product-purchases.md)      |   Chaque transaction du Windows Store qui entraîne un achat de produit peut éventuellement retourner un reçu de transaction qui fournit des informations sur le produit répertorié et le coût monétaire pour le client. L’accès à ces informations autorise les scénarios dans lesquels votre application doit vérifier qu’un utilisateur a acheté votre application ou qu’il a effectué des achats in-app de produits dans le Windows Store. |
 
 <span id="proxy" />
 ## <a name="using-the-windowsstoreproxyxml-file-with-currentappsimulator"></a>Utilisation du fichier WindowsStoreProxy.xml avec CurrentAppSimulator
 
 Lorsque **CurrentAppSimulator** est utilisé, l’état initial des produits in-app et de licence de votre application est décrit dans un fichier local nommé WindowsStoreProxy.xml, situé sur votre ordinateur de développement. Les méthodes **CurrentAppSimulator** qui modifient l’état de l’application, par exemple en achetant une licence ou en gérant un achat in-app, mettent simplement à jour l’état de l’objet **CurrentAppSimulator** en mémoire. Le contenu du fichier WindowsStoreProxy.xml n’est pas modifié. Au redémarrage de l’application, la licence reprend l’état décrit dans le fichier WindowsStoreProxy.xml.
 
-Un fichier WindowsStoreProxy.xml est créé par défaut à l’emplacement suivant&nbsp;: %UserProfile%\AppData\Local\Packages\\&lt;dossier du package d’application&gt;\LocalState\Microsoft\Windows Store\ApiData. Vous pouvez modifier ce fichier pour définir le scénario que vous voulez simuler dans les propriétés de **CurrentAppSimulator**.
+Un fichier WindowsStoreProxy.xml est créé par défaut à l’emplacement suivant : %UserProfile%\AppData\Local\Packages\\&lt;dossier du package d’application&gt;\LocalState\Microsoft\Windows Store\ApiData. Vous pouvez modifier ce fichier pour définir le scénario que vous voulez simuler dans les propriétés de **CurrentAppSimulator**.
 
 Si vous pouvez modifier les valeurs dans ce fichier, nous vous recommandons de créer votre propre fichier WindowsStoreProxy.xml (dans un dossier de données de votre projet Visual Studio) pour **CurrentAppSimulator** et de l’utiliser à la place de l’autre. Lors de la simulation de la transaction, appelez [ReloadSimulatorAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.reloadsimulatorasync.aspx) pour charger votre fichier. Si vous n’appelez pas **ReloadSimulatorAsync** pour charger votre propre fichier WindowsStoreProxy.xml, **CurrentAppSimulator** crée/charge (mais ne remplace pas) le fichier WindowsStoreProxy.xml par défaut.
 
->**Remarque**&nbsp;&nbsp;N’oubliez pas que **CurrentAppSimulator** ne s’initialise pleinement qu’une fois **ReloadSimulatorAsync** exécuté. Et, dans la mesure où **ReloadSimulatorAsync** est une méthode asynchrone, veillez à éviter la condition de concurrence avec l’interrogation de **CurrentAppSimulator** sur un thread pendant son initialisation sur un autre. Une technique consiste à utiliser un indicateur pour signaler la fin de l’initialisation. Une application installée à partir du Windows&nbsp;Store doit utiliser **CurrentApp** à la place de **CurrentAppSimulator**. Dans ce cas, **ReloadSimulatorAsync** n’est pas appelé et la condition de concurrence mentionnée auparavant ne s’applique pas. Pour cette raison, concevez votre code afin qu’il fonctionne dans les deux&nbsp;cas de figure (asychrone et synchrone).
+>**Remarque**  N’oubliez pas que **CurrentAppSimulator** ne s’initialise pleinement qu’une fois **ReloadSimulatorAsync** exécuté. Et, dans la mesure où **ReloadSimulatorAsync** est une méthode asynchrone, veillez à éviter la condition de concurrence avec l’interrogation de **CurrentAppSimulator** sur un thread pendant son initialisation sur un autre. Une technique consiste à utiliser un indicateur pour signaler la fin de l’initialisation. Une application installée à partir du Windows Store doit utiliser **CurrentApp** à la place de **CurrentAppSimulator**. Dans ce cas, **ReloadSimulatorAsync** n’est pas appelé et la condition de concurrence mentionnée auparavant ne s’applique pas. Pour cette raison, concevez votre code afin qu’il fonctionne dans les deux cas de figure (asychrone et synchrone).
 
 
 <span id="proxy-examples" />
 ### <a name="examples"></a>Exemples
 
-Cet exemple est un fichier WindowsStoreProxy.xml (codé en UTF-16) qui décrit une application dont le mode évaluation arrive à expiration le 19&nbsp;janvier 2015 à 05:00 (UTC).
+Cet exemple est un fichier WindowsStoreProxy.xml (codé en UTF-16) qui décrit une application dont le mode évaluation arrive à expiration le 19 janvier 2015 à 05:00 (UTC).
 
 > [!div class="tabbedCodeSnippets"]
 ```xml
@@ -89,7 +89,7 @@ Cet exemple est un fichier WindowsStoreProxy.xml (codé en UTF-16) qui décrit u
 </CurrentApp>
 ```
 
-L’exemple suivant est un fichier WindowsStoreProxy.xml (codé en UTF-16) qui décrit une application achetée, dotée d’une fonctionnalité expirant le 19&nbsp;janvier&nbsp;2015 à 05:00 (UTC), et associée à un achat in-app consommable.
+L’exemple suivant est un fichier WindowsStoreProxy.xml (codé en UTF-16) qui décrit une application achetée, dotée d’une fonctionnalité expirant le 19 janvier 2015 à 05:00 (UTC), et associée à un achat in-app consommable.
 
 > [!div class="tabbedCodeSnippets"]
 ```xml
@@ -143,16 +143,16 @@ L’exemple suivant est un fichier WindowsStoreProxy.xml (codé en UTF-16) qui d
 <span id="proxy-schema" />
 ### <a name="schema"></a>Schéma
 
-Cette section présente le fichier&nbsp;XSD qui définit la structure du fichier WindowsStoreProxy.xml. Pour appliquer ce schéma à l’éditeur XML dans Visual Studio lorsque vous utilisez votre fichier WindowsStoreProxy.xml, procédez comme suit&nbsp;:
+Cette section présente le fichier XSD qui définit la structure du fichier WindowsStoreProxy.xml. Pour appliquer ce schéma à l’éditeur XML dans Visual Studio lorsque vous utilisez votre fichier WindowsStoreProxy.xml, procédez comme suit :
 
 1. Ouvrez le fichier WindowsStoreProxy.xml dans Visual Studio.
-2. Dans le menu **XML**, cliquez sur **Créer un schéma**. Le fichier WindowsStoreProxy.xsd temporaire est créé en fonction du contenu du fichier&nbsp;XML.
-3. Remplacez le contenu de ce fichier&nbsp;XSD par le schéma ci-dessous.
+2. Dans le menu **XML**, cliquez sur **Créer un schéma**. Le fichier WindowsStoreProxy.xsd temporaire est créé en fonction du contenu du fichier XML.
+3. Remplacez le contenu de ce fichier XSD par le schéma ci-dessous.
 4. Enregistrez le fichier là où vous pouvez l’appliquer à plusieurs projets d’application.
 5. Basculez vers le fichier WindowsStoreProxy.xml dans Visual Studio.
 6. Dans le menu **XML**, cliquez sur **Schémas**, puis recherchez la ligne correspondant au fichier WindowsStoreProxy.xsd dans la liste. Si l’emplacement du fichier n’est pas celui que vous souhaitez (par exemple, si le fichier temporaire s’affiche toujours), cliquez sur **Ajouter**. Accédez au fichier, puis cliquez sur **OK**. Vous devez maintenant voir ce fichier dans la liste. Vérifiez qu’une coche apparaît dans la colonne **Utilisation** de ce schéma.
 
-Une fois ceci fait, les modifications apportées à WindowsStoreProxy.xml sont soumises au schéma. Pour plus d’informations, consultez [Procédure&nbsp;: sélectionner les schémas XML à utiliser](http://go.microsoft.com/fwlink/p/?LinkId=403014).
+Une fois ceci fait, les modifications apportées à WindowsStoreProxy.xml sont soumises au schéma. Pour plus d’informations, consultez [Procédure : sélectionner les schémas XML à utiliser](http://go.microsoft.com/fwlink/p/?LinkId=403014).
 
 > [!div class="tabbedCodeSnippets"]
 ```xml
@@ -349,7 +349,7 @@ Une fois ceci fait, les modifications apportées à WindowsStoreProxy.xml sont s
 
 Cette section décrit les éléments et attributs dans le fichier WindowsStoreProxy.xml.
 
-L’élément racine de ce fichier est l’élément **CurrentApp** qui représente l’application active. Cet élément contient les éléments enfants suivants&nbsp;:
+L’élément racine de ce fichier est l’élément **CurrentApp** qui représente l’application active. Cet élément contient les éléments enfants suivants :
 
 |  Élément  |  Requis  |  Quantité  |  Description   |
 |-------------|------------|--------|--------|
@@ -379,10 +379,10 @@ Cet élément décrit la licence de l’application. **App** est un enfant requi
 
 |  Élément  |  Requis  |  Quantité  | Description   |
 |-------------|------------|--------|--------|
-|  **AppId**  |    Oui   |  1   |   GUID identifiant l’application dans le Windows&nbsp;Store. Cela peut être le GUID utilisé pour le test.        |
-|  **LinkUri**  |    Oui  |  1   |    URI de la page de liste dans le Windows&nbsp;store. Cela peut être n’importe quel URL valide pour le test.         |
+|  **AppId**  |    Oui   |  1   |   GUID identifiant l’application dans le Windows Store. Cela peut être le GUID utilisé pour le test.        |
+|  **LinkUri**  |    Oui  |  1   |    URI de la page de liste dans le Windows store. Cela peut être n’importe quel URL valide pour le test.         |
 |  **CurrentMarket**  |    Oui  |  1   |    Pays/région du client.         |
-|  **AgeRating**  |    Oui  |  1   |     Entier représentant la classification d’âge minimum de l’application. Il s’agit de la même valeur que vous spécifiez dans le tableau de bord du Centre de développement lorsque vous soumettez l’application. Les valeurs utilisées par le Windows&nbsp;Store sont&nbsp;: 3, 7, 12 et 16. Pour plus d’informations sur ces classifications, consultez [Classification par âge](../publish/age-ratings.md).        |
+|  **AgeRating**  |    Oui  |  1   |     Entier représentant la classification d’âge minimum de l’application. Il s’agit de la même valeur que vous spécifiez dans le tableau de bord du Centre de développement lorsque vous soumettez l’application. Les valeurs utilisées par le Windows Store sont : 3, 7, 12 et 16. Pour plus d’informations sur ces classifications, consultez [Classification par âge](../publish/age-ratings.md).        |
 |  [MarketData](#marketdata-child-of-app)  |    Oui  |  1 ou davantage      |    Contient des informations sur l’application pour un pays/une région donné(e). Pour chaque pays/région où l’application est répertoriée, vous devez inclure un élément **MarketData**.       |    |
 
 <span id="marketdata-child-of-app"/>
@@ -434,7 +434,7 @@ Cet élément fournit des informations sur le module complémentaire pour un pay
 |  **CurrencyCode**  |    Non  |  0 ou 1      |      Code de devise utilisé dans ce pays/cette région.         |  
 |  **Description**  |    Non  |   0 ou 1   |      Description du module complémentaire pour ce pays/cette région.       |
 |  **Tag**  |    Non  |   0 ou 1   |      [Données personnalisées du développeur](../publish/enter-add-on-properties.md#custom-developer-data) (également appelées balise) du module complémentaire.       |
-|  **Keywords**  |    Non  |   0 ou 1   |      Contient jusqu’à 10&nbsp;éléments **Keyword** qui contiennent les [mots clés](../publish/enter-add-on-properties.md#keywords) du module complémentaire.       |
+|  **Keywords**  |    Non  |   0 ou 1   |      Contient jusqu’à 10 éléments **Keyword** qui contiennent les [mots clés](../publish/enter-add-on-properties.md#keywords) du module complémentaire.       |
 |  **ImageUri**  |    Non  |   0 ou 1   |      [URI de l’image](../publish/create-add-on-store-listings.md#icon) dans la liste du module complémentaire.           |  |
 
 **MarketData** a les attributs suivants.
@@ -460,8 +460,8 @@ Le tableau suivant montre comment simuler certaines conditions courantes en comb
 |  Condition à simuler  |  IsActive  |  IsTrial  | ExpirationDate   |
 |-------------|------------|--------|--------|
 |  Licence complète  |    true   |  false  |    Absent. Cet élément peut être présent et spécifier une date future, mais il est recommandé de l’omettre du fichier XML. S’il est présent et spécifie une date passée, **IsActive** est ignoré et considéré comme ayant la valeur false.          |
-|  In trial period  |    true  |  true   |      &lt;horodatage futur&gt; Cet élément doit être présent car **IsTrial** a la valeur true. Vous pouvez visiter un site&nbsp;Web affichant l’heure UTC (Temps universel coordonné) pour savoir quelle date choisir et obtenir la période d’évaluation restante souhaitée.         |
-|  Expired trial  |    false  |  true   |      &lt;horodatage passé&gt; Cet élément doit être présent car **IsTrial** a la valeur true. Vous pouvez visiter un site&nbsp;Web affichant l’heure UTC (Temps Universel Coordonné) pour savoir depuis combien de temps l’heure&nbsp;UTC est passée.         |
+|  In trial period  |    true  |  true   |      &lt;horodatage futur&gt; Cet élément doit être présent car **IsTrial** a la valeur true. Vous pouvez visiter un site Web affichant l’heure UTC (Temps universel coordonné) pour savoir quelle date choisir et obtenir la période d’évaluation restante souhaitée.         |
+|  Expired trial  |    false  |  true   |      &lt;horodatage passé&gt; Cet élément doit être présent car **IsTrial** a la valeur true. Vous pouvez visiter un site Web affichant l’heure UTC (Temps Universel Coordonné) pour savoir depuis combien de temps l’heure UTC est passée.         |
 |  Invalid  |    false  | false       |     &lt;n’importe quelle valeur ou valeur omise&gt;          |  |
 
 <span id="app-child-of-licenseinformation"/>
@@ -475,7 +475,7 @@ Cet élément décrit la licence de l’application. **App** est un enfant requi
 |-------------|------------|--------|--------|
 |  **IsActive**  |    Oui   |  1   |    Décrit l’état actuel de la licence de cette application. La valeur **true** indique que la licence est valide. La valeur **false** indique une licence non valide. Normalement, cette valeur est **true**, que l’application ait un mode d’évaluation ou non.  Réglez cette valeur sur **false** pour tester le comportement de votre application quand sa licence n’est pas valide.           |
 |  **IsTrial**  |    Oui  |  1   |      Décrit l’état actuel d’évaluation de cette application. La valeur **true** indique que l’application est utilisée pendant la période d’évaluation. La valeur **false** indique que l’application n’est pas en période d’évaluation, soit parce qu’elle a été achetée, soit parce que la période d’évaluation est échue.         |
-|  **ExpirationDate**  |    Non  |  0 ou 1       |     Date à laquelle la période d’évaluation de cette application expire, en temps universel coordonné (UTC). La date doit se présenter comme suit&nbsp;: aaaa-mm-jjThh:mm:ss.ssZ. Par exemple, le 19&nbsp;janvier&nbsp;2015 à&nbsp;05:00 correspond à 2015-01-19T05:00:00.00Z. Cet élément est requis lorsque **IsTrial** est **true**. Sinon, il est facultatif.          |  |
+|  **ExpirationDate**  |    Non  |  0 ou 1       |     Date à laquelle la période d’évaluation de cette application expire, en temps universel coordonné (UTC). La date doit se présenter comme suit : aaaa-mm-jjThh:mm:ss.ssZ. Par exemple, le 19 janvier 2015 à 05:00 correspond à 2015-01-19T05:00:00.00Z. Cet élément est requis lorsque **IsTrial** est **true**. Sinon, il est facultatif.          |  |
 
 <span id="product-child-of-licenseinformation"/>
 #### <a name="product-element-child-of-licenseinformation"></a>Élément Product (enfant de LicenseInformation)
@@ -487,7 +487,7 @@ Cet élément décrit l’état de la licence d’un module complémentaire dura
 |  Élément  |  Requis  |  Quantité  | Description   |
 |-------------|------------|--------|--------|
 |  **IsActive**  |    Oui   |  1     |    Décrit l’état actuel de la licence de ce module complémentaire. La valeur **true** indique que le module complémentaire est utilisable. La valeur **false** indique que le module complémentaire n’est pas utilisable ou n’a pas été acheté.           |
-|  **ExpirationDate**  |    Non   |  0 ou 1     |     Date d’expiration du module complémentaire, en temps universel coordonné (UTC). La date doit se présenter comme suit&nbsp;: aaaa-mm-jjThh:mm:ss.ssZ. Par exemple, le 19&nbsp;janvier&nbsp;2015 à&nbsp;05:00 correspond à 2015-01-19T05:00:00.00Z. Si cet élément est présent, le module complémentaire a une date d’expiration. S’il n’est pas présent, le module complémentaire n’expire pas.  |  
+|  **ExpirationDate**  |    Non   |  0 ou 1     |     Date d’expiration du module complémentaire, en temps universel coordonné (UTC). La date doit se présenter comme suit : aaaa-mm-jjThh:mm:ss.ssZ. Par exemple, le 19 janvier 2015 à 05:00 correspond à 2015-01-19T05:00:00.00Z. Si cet élément est présent, le module complémentaire a une date d’expiration. S’il n’est pas présent, le module complémentaire n’expire pas.  |  
 
 **Product** a les attributs suivants.
 

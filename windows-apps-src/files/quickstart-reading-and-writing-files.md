@@ -12,7 +12,7 @@ ms.openlocfilehash: 0709d9c9126dc4523eae58d5db8d9037a2fb618e
 # <a name="create-write-and-read-a-file"></a>Créer, écrire et lire un fichier
 
 
-\[ Mise à jour pour les applications UWP sur Windows&nbsp;10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -180,7 +180,7 @@ string text = await Windows.Storage.FileIO.ReadTextAsync(sampleFile);
 Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
 ```
 
-**Lecture de texte dans un fichier via une mémoire tampon (2&nbsp;étapes)**
+**Lecture de texte dans un fichier via une mémoire tampon (2 étapes)**
 
 1.  Commencez par appeler la méthode [**ReadBufferAsync**](https://msdn.microsoft.com/library/windows/apps/hh701468) de la classe [**FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440).
 > [!div class="tabbedCodeSnippets"]

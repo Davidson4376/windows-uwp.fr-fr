@@ -20,7 +20,7 @@ Ce article présente les quatre options de notification (locale, planifiée, pé
 ## <a name="notification-delivery-methods-overview"></a>Vue d’ensemble des méthodes de remise des notifications
 
 
-Une application peut utiliser quatre méthodes pour remettre une notification&nbsp;:
+Une application peut utiliser quatre méthodes pour remettre une notification :
 
 -   **Locales**
 -   **Planifiées**
@@ -68,7 +68,7 @@ Ce tableau récapitule les types de remise des notifications.
 <td align="left">Vignette, Badge</td>
 <td align="left">Notifications qui mettent à jour les vignettes et les badges régulièrement à intervalles fixes en interrogeant un service cloud afin d’obtenir le nouveau contenu.</td>
 <td align="left"><ul>
-<li>Une application météo met à jour sa vignette, laquelle indique les prévisions toutes les 30&nbsp;minutes.</li>
+<li>Une application météo met à jour sa vignette, laquelle indique les prévisions toutes les 30 minutes.</li>
 <li>Un site &quot;Affaire du jour&quot; met à jour son offre quotidienne tous les matins.</li>
 <li>Une vignette qui indique le nombre de jours restant avant un événement met quotidiennement à jour le compte à rebours à minuit.</li>
 </ul></td>
@@ -92,18 +92,18 @@ Ce tableau récapitule les types de remise des notifications.
 ## <a name="local-notifications"></a>Notifications locales
 
 
-La mise à jour de la vignette ou du badge de l’application, ou le déclenchement d’une notification toast pendant que l’application s’exécute constitue le mécanisme de remise des notifications le plus simple&nbsp;; il requiert uniquement des appels d’API locaux. Chaque application peut donner des informations utiles ou intéressantes sur la vignette, même si ce contenu ne change qu’une fois que l’utilisateur a lancé l’application ou interagi avec elle. Les notifications locales sont également un bon moyen d’assurer l’actualisation de la vignette de l’application, même si vous utilisez également l’un des autres mécanismes de notification. Par exemple, la vignette d’une application de photo peut montrer des photos d’un album récemment ajouté.
+La mise à jour de la vignette ou du badge de l’application, ou le déclenchement d’une notification toast pendant que l’application s’exécute constitue le mécanisme de remise des notifications le plus simple ; il requiert uniquement des appels d’API locaux. Chaque application peut donner des informations utiles ou intéressantes sur la vignette, même si ce contenu ne change qu’une fois que l’utilisateur a lancé l’application ou interagi avec elle. Les notifications locales sont également un bon moyen d’assurer l’actualisation de la vignette de l’application, même si vous utilisez également l’un des autres mécanismes de notification. Par exemple, la vignette d’une application de photo peut montrer des photos d’un album récemment ajouté.
 
 Nous recommandons que votre application mette à jour sa vignette en local au premier démarrage, ou au moins immédiatement après toute modification apportée par l’utilisateur qui se refléterait normalement sur la vignette. Cette mise à jour ne se voit pas tant que l’utilisateur n’a pas quitté l’application, mais l’effectuer alors que l’application est en cours d’utilisation permet de veiller à ce que la vignette soit déjà mise à jour au moment où l’utilisateur s’en va.
 
 Alors que les appels d’API sont locaux, les notifications peuvent référencer des images Web. Si l’image Web n’est pas disponible au téléchargement, est endommagée ou ne satisfait pas les spécifications correspondantes, les vignettes et le toast répondent différemment :
 
--   Vignettes&nbsp;: la mise à jour ne s’affiche pas
--   Toast&nbsp;: la notification s’affiche, mais sans votre image
+-   Vignettes : la mise à jour ne s’affiche pas
+-   Toast : la notification s’affiche, mais sans votre image
 
-Par défaut, les notifications toast locales ont une durée de vie de trois&nbsp;jours, mais les notifications par vignette locales n’expirent jamais. Nous vous recommandons de remplacer ces valeurs par défaut par une durée d’expiration explicite adaptée à vos notifications (durée de vie maximum des notifications toast&nbsp;: trois&nbsp;jours). 
+Par défaut, les notifications toast locales ont une durée de vie de trois jours, mais les notifications par vignette locales n’expirent jamais. Nous vous recommandons de remplacer ces valeurs par défaut par une durée d’expiration explicite adaptée à vos notifications (durée de vie maximum des notifications toast : trois jours). 
 
-Pour plus d’informations, consultez les rubriques suivantes&nbsp;:
+Pour plus d’informations, consultez les rubriques suivantes :
 
 -   [Envoyer une notification par vignette locale](tiles-and-notifications-sending-a-local-tile-notification.md)
 -   [Envoyer une notification toast locale](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/07/08/quickstart-sending-a-local-toast-notification-and-handling-activations-from-it-windows-10/)
@@ -114,11 +114,11 @@ Pour plus d’informations, consultez les rubriques suivantes&nbsp;:
 
 Les notifications planifiées sont le sous-ensemble des notifications locales pouvant indiquer l’heure précise à laquelle une vignette doit être mise à jour ou une notification toast envoyée. Les notifications planifiées sont idéales pour les situations dans lesquelles le contenu à mettre à jour est connu d’avance, comme dans une invitation à une réunion. Si vous ne connaissez pas le contenu de la notification à l’avance, il est préférable d’utiliser une notification Push ou périodique.
 
-Notez que les notifications planifiées ne peuvent pas être utilisées pour les notifications de badge&nbsp;; celles-ci sont mieux servies par des notifications locales, périodiques ou Push.
+Notez que les notifications planifiées ne peuvent pas être utilisées pour les notifications de badge ; celles-ci sont mieux servies par des notifications locales, périodiques ou Push.
 
 Par défaut, les notifications planifiées expirent trois jours après leur émission. Vous pouvez modifier ce délai d’expiration par défaut dans les notifications par vignette planifiées, mais pas dans les notifications toast planifiées.
 
-Pour plus d’informations, consultez les rubriques suivantes&nbsp;:
+Pour plus d’informations, consultez les rubriques suivantes :
 
 -   [Exemples de code de notifications de plateforme Windows universelle (UWP)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
@@ -127,7 +127,7 @@ Pour plus d’informations, consultez les rubriques suivantes&nbsp;:
 
 Les notifications périodiques vous donnent des mises à jour de vignette en direct avec un minimum de service cloud et d’investissement client. Elles sont également une excellente méthode de distribution du même contenu à un large public. Votre code client spécifie l’URL d’un emplacement cloud que Windows interroge afin d’obtenir les mises à jour de vignette ou de badge, ainsi que la fréquence d’interrogation de cet emplacement. À chaque interrogation, Windows contacte l’URL afin de télécharger le contenu XML spécifié pour l’afficher sur la vignette.
 
-Les notifications périodiques requièrent que l’application héberge un service cloud, et ce service est interrogé en fonction de l’intervalle spécifié par tous les utilisateurs qui ont installé l’application. Notez que les mises à jour périodiques ne peuvent pas être utilisées pour les notifications toast&nbsp;; celles-ci sont mieux servies par des notifications planifiées ou Push.
+Les notifications périodiques requièrent que l’application héberge un service cloud, et ce service est interrogé en fonction de l’intervalle spécifié par tous les utilisateurs qui ont installé l’application. Notez que les mises à jour périodiques ne peuvent pas être utilisées pour les notifications toast ; celles-ci sont mieux servies par des notifications planifiées ou Push.
 
 Par défaut, les notifications périodiques expirent trois jours après l’interrogation. Si nécessaire, vous pouvez remplacer cette valeur par défaut par un délai d’expiration explicite.
 
@@ -143,9 +143,9 @@ Les notifications Push sont idéales pour communiquer des données en temps rée
 
 Les notifications Push requièrent un service cloud qui gère des canaux de notification Push et détermine quand et à qui envoyer les notifications.
 
-Par défaut, les notifications Push expirent trois&nbsp;jours après leur réception par l’appareil. Si nécessaire, vous pouvez remplacer cette valeur par défaut par un délai d’expiration explicite (durée de vie maximale des notifications Toast&nbsp;: 3&nbsp;jours).
+Par défaut, les notifications Push expirent trois jours après leur réception par l’appareil. Si nécessaire, vous pouvez remplacer cette valeur par défaut par un délai d’expiration explicite (durée de vie maximale des notifications Toast : 3 jours).
 
-Pour plus d’informations, consultez&nbsp;:
+Pour plus d’informations, consultez :
 
 -   [Vue d’ensemble des services de notifications Push Windows (WNS)](tiles-and-notifications-windows-push-notification-services--wns--overview.md)
 -   [Recommandations en matière de notifications Push](https://msdn.microsoft.com/library/windows/apps/hh761462)

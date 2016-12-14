@@ -1,7 +1,7 @@
 ---
 author: Karl-Bridge-Microsoft
 Description: "Créez des applications de plateforme Windows universelle (UWP) qui prennent en charge les interactions personnalisées à partir de stylos et de stylets, y compris l’encre numérique pour des expériences de dessin et d’écriture naturelles."
-title: Interactions avec le stylet et Windows&nbsp;Ink dans les applications UWP
+title: "Interactions avec le stylet et Windows Ink dans les applications UWP"
 ms.assetid: 3DA4F2D2-5405-42A1-9ED9-3A87BCD84C43
 label: Pen interactions and Windows Ink in UWP apps
 template: detail.hbs
@@ -12,7 +12,7 @@ ms.openlocfilehash: 49098df1bf7fb72264a633aae37f941951cee2cf
 
 ---
 
-# <a name="pen-interactions-and-windows-ink-in-uwp-apps"></a>Interactions avec le stylet et Windows&nbsp;Ink dans les applications UWP
+# <a name="pen-interactions-and-windows-ink-in-uwp-apps"></a>Interactions avec le stylet et Windows Ink dans les applications UWP
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 <!--
@@ -29,17 +29,17 @@ ms.openlocfilehash: 49098df1bf7fb72264a633aae37f941951cee2cf
 
 ## <a name="overview"></a>Vue d’ensemble
 
-Optimisez votre application de plateforme Windows universelle (UWP) pour la saisie au stylet, afin de fournir une fonctionnalité standard d’[**appareil de pointage**](https://msdn.microsoft.com/library/windows/apps/br225633) et d’offrir une expérience Windows&nbsp;Ink optimale à vos utilisateurs.
+Optimisez votre application de plateforme Windows universelle (UWP) pour la saisie au stylet, afin de fournir une fonctionnalité standard d’[**appareil de pointage**](https://msdn.microsoft.com/library/windows/apps/br225633) et d’offrir une expérience Windows Ink optimale à vos utilisateurs.
 
 > [!NOTE]
-> Cette rubrique est dédiée à la plateforme Windows&nbsp;Ink. Pour en savoir plus sur la gestion des entrées au pointeur (similaires aux fonctionnalités tactiles, de la souris et du pavé tactile), consultez [Gérer les entrées du pointeur](handle-pointer-input.md).
+> Cette rubrique est dédiée à la plateforme Windows Ink. Pour en savoir plus sur la gestion des entrées au pointeur (similaires aux fonctionnalités tactiles, de la souris et du pavé tactile), consultez [Gérer les entrées du pointeur](handle-pointer-input.md).
 
 | Vidéos |   |
 | --- | --- |
 | <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Ink-in-Your-UWP-App/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe> | <iframe src="https://channel9.msdn.com/Events/Ignite/2016/BRK2060/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe> |
 | *Utilisation d’entrée manuscrite dans votre application UWP* | *Utiliser le stylet et l’entrée manuscrite Windows pour créer des applications d’entreprise plus conviviales* |
 
-La plateforme Windows&nbsp;Ink, associée à un stylet, permet de créer des notes manuscrites, des dessins et des annotations plus naturellement. La plateforme prend en charge la capture d’entrée du numériseur sous forme de données d’entrée manuscrite, la génération et la gestion de données d’entrée manuscrite, la restitution de ces données sous forme de traits et la conversion de l’encre en texte via la reconnaissance d’écriture manuscrite.
+La plateforme Windows Ink, associée à un stylet, permet de créer des notes manuscrites, des dessins et des annotations plus naturellement. La plateforme prend en charge la capture d’entrée du numériseur sous forme de données d’entrée manuscrite, la génération et la gestion de données d’entrée manuscrite, la restitution de ces données sous forme de traits et la conversion de l’encre en texte via la reconnaissance d’écriture manuscrite.
 
 En plus de capturer la position et les mouvements de base du stylet lorsque l’utilisateur écrit ou dessine, votre application peut également effectuer le suivi des niveaux de pression variables utilisés pour un trait et en effectuer le suivi. Ces informations, ainsi que les paramètres relatifs à la forme de la pointe, à sa taille et à sa rotation, à la couleur de l’encre et à l’utilisation (entrée manuscrite normale, effacement, surlignage et sélection), vous permettent de proposer des expériences utilisateur ressemblant étroitement à l’écriture ou au dessin sur papier à l’aide d’un stylo, d’un crayon ou d’un pinceau.
 
@@ -437,7 +437,7 @@ Pour cet exemple, nous utilisons les fichiers MainPage.xaml et MainPage.xaml.cs 
 
 ## <a name="custom-ink-rendering"></a>Restitution d’une entrée manuscrite personnalisée
 
-Par défaut, l’entrée manuscrite est traitée sur un thread d’arrière-plan de faible latence et restituée «&nbsp;humide&nbsp;» comme elle est dessinée. Lorsque le trait est terminé (stylet ou doigt relevé, ou bouton de la souris relâché), le trait est traité sur le thread de l’interface utilisateur et restitué « sec » à la couche [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) (au-dessus du contenu de l’application et en remplaçant l’encre humide).
+Par défaut, l’entrée manuscrite est traitée sur un thread d’arrière-plan de faible latence et restituée « humide » comme elle est dessinée. Lorsque le trait est terminé (stylet ou doigt relevé, ou bouton de la souris relâché), le trait est traité sur le thread de l’interface utilisateur et restitué « sec » à la couche [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) (au-dessus du contenu de l’application et en remplaçant l’encre humide).
 
 La plateforme d’entrée manuscrite vous permet de remplacer ce comportement et de personnaliser entièrement l’expérience d’entrée manuscrite par un séchage personnalisé de cette dernière.
 
@@ -449,7 +449,7 @@ Pour obtenir un exemple complet de cette fonctionnalité, consultez [l’exemple
 
 > [!NOTE]
 > Séchage personnalisé et élément [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)  
-> Si votre application remplace le comportement par défaut du rendu d’entrée manuscrite de l’élément [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) par une implémentation de séchage personnalisé, les traits d’encre restitués ne sont plus disponibles pour l’élément InkToolbar et les commandes d’effacement intégrées de l’élément InkToolbar ne fonctionneront pas comme prévu. Pour fournir des fonctionnalités d’effacement, vous devez gérer tous les événements de pointeur, effectuer le test de positionnement sur chaque trait et remplacer la commande intégrée «&nbsp;Effacer toutes les entrées manuscrites&nbsp;».
+> Si votre application remplace le comportement par défaut du rendu d’entrée manuscrite de l’élément [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) par une implémentation de séchage personnalisé, les traits d’encre restitués ne sont plus disponibles pour l’élément InkToolbar et les commandes d’effacement intégrées de l’élément InkToolbar ne fonctionneront pas comme prévu. Pour fournir des fonctionnalités d’effacement, vous devez gérer tous les événements de pointeur, effectuer le test de positionnement sur chaque trait et remplacer la commande intégrée « Effacer toutes les entrées manuscrites ».
 
 ## <a name="other-articles-in-this-section"></a>Autres articles de cette section
 

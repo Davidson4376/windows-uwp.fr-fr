@@ -13,7 +13,7 @@ ms.openlocfilehash: 4095cfbe96f239afb5f3173e0a7f84e01d63452c
 
 [Obtenir Desktop App Converter](https://aka.ms/converter)
 
-Desktop App Converter (DAC) est un outil qui vous permet de déployer vos applications de bureau existantes écrites pour .NET&nbsp;4.6.1 ou Win32 sur la plateforme Windows universelle (UWP). Vous pouvez exécuter vos programmes d’installation de bureau à l’aide du convertisseur en mode sans assistance et obtenir un package AppX que vous pouvez installer en utilisant l’applet de commande PowerShell Add-AppxPackage sur votre ordinateur de développement.
+Desktop App Converter (DAC) est un outil qui vous permet de déployer vos applications de bureau existantes écrites pour .NET 4.6.1 ou Win32 sur la plateforme Windows universelle (UWP). Vous pouvez exécuter vos programmes d’installation de bureau à l’aide du convertisseur en mode sans assistance et obtenir un package AppX que vous pouvez installer en utilisant l’applet de commande PowerShell Add-AppxPackage sur votre ordinateur de développement.
 
 Desktop App Converter est désormais disponible dans le [Windows Store](https://aka.ms/converter).
 
@@ -33,8 +33,8 @@ Cette section présente les modifications entre les versions de Desktop App Conv
 ### <a name="9142016-v10"></a>14/9/2016 (v1.0)
 
 * Desktop App Converter est désormais disponible en téléchargement dans le [Windows Store](https://aka.ms/converter). 
-* Obtenez les dernières images de base Windows&nbsp;10 (.wim) dans le [Centre de téléchargement](https://aka.ms/converterimages) pour les utiliser avec DAC.
-* Avec l’application du Windows&nbsp;Store, vous pouvez maintenant utiliser le nouveau point d’entrée *DesktopAppConverter.exe <arguments>* pour exécuter le convertisseur à partir de n’importe quel endroit dans une invite de commandes avec élévation de privilèges ou une fenêtre PowerShell.  
+* Obtenez les dernières images de base Windows 10 (.wim) dans le [Centre de téléchargement](https://aka.ms/converterimages) pour les utiliser avec DAC.
+* Avec l’application du Windows Store, vous pouvez maintenant utiliser le nouveau point d’entrée *DesktopAppConverter.exe <arguments>* pour exécuter le convertisseur à partir de n’importe quel endroit dans une invite de commandes avec élévation de privilèges ou une fenêtre PowerShell.  
 
 
 ### <a name="922016-v0125"></a>2/9/2016 (v0.1.25)
@@ -47,8 +47,8 @@ Cette section présente les modifications entre les versions de Desktop App Conv
 
 * Ajout de la prise en charge de la signature automatique des applications converties produites par DAC à des fins de test. Consultez l’indicateur ```–Sign``` pour essayer vous-même. 
 * Ajout d’avertissements si l’une des inscriptions COM dans la ruche du Registre virtuel n’est pas prise en charge dans l’AppX empaqueté.  
-* Ajout de la prise en charge de la détection automatique de dépendances d’application sur les bibliothèques&nbsp;VC++ puis de leur conversion en dépendances de manifeste AppX. Notez que pour charger de manière indépendante des applications et les tester à l’aide du runtime&nbsp;VC++, vous devez télécharger les packages d’infrastructure VCLib comme indiqué dans le billet de blog [Using Visual&nbsp;C++ Runtime in a Centennial project](https://blogs.msdn.microsoft.com/vcblog/2016/07/07/using-visual-c-runtime-in-centennial-project) (en anglais). Recherchez les packages sous le dossier ```Program Files (x86)\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs.Desktop``` sur votre ordinateur, accédez à la version dont vous dépendez (par exemple, 11.0, 12,0, 14,0), puis double-cliquez sur le package d’architecture approprié (x64, x86) pour l’installer.
-* Mise à jour du schéma de manifeste pour qu’il corresponde à la mise à jour anniversaire Windows&nbsp;10 (10.0.14393.0). 
+* Ajout de la prise en charge de la détection automatique de dépendances d’application sur les bibliothèques VC++ puis de leur conversion en dépendances de manifeste AppX. Notez que pour charger de manière indépendante des applications et les tester à l’aide du runtime VC++, vous devez télécharger les packages d’infrastructure VCLib comme indiqué dans le billet de blog [Using Visual C++ Runtime in a Centennial project](https://blogs.msdn.microsoft.com/vcblog/2016/07/07/using-visual-c-runtime-in-centennial-project) (en anglais). Recherchez les packages sous le dossier ```Program Files (x86)\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs.Desktop``` sur votre ordinateur, accédez à la version dont vous dépendez (par exemple, 11.0, 12,0, 14,0), puis double-cliquez sur le package d’architecture approprié (x64, x86) pour l’installer.
+* Mise à jour du schéma de manifeste pour qu’il corresponde à la mise à jour anniversaire Windows 10 (10.0.14393.0). 
 * Plusieurs résolutions de bogues et amélioration de la disposition de la sortie. 
 
 ### <a name="772016-v0122"></a>07/07/2016 (v0.1.22)
@@ -58,7 +58,7 @@ Cette section présente les modifications entre les versions de Desktop App Conv
 
 ### <a name="6162016-v0120"></a>16/06/2016 (v0.1.20)
 
-* Résolution de problèmes provoquant l’échec des conversions sur les dernières builds de Windows&nbsp;10&nbsp;Insider&nbsp;Preview. 
+* Résolution de problèmes provoquant l’échec des conversions sur les dernières builds de Windows 10 Insider Preview. 
 * Remplacement de ```–CreateX86Package``` par ```–PackageArch```, ce qui vous permet de préciser l’architecture du package généré. 
 
 ### <a name="682016"></a>6/8/2016
@@ -74,7 +74,7 @@ Cette section présente les modifications entre les versions de Desktop App Conv
 ### <a name="5122016"></a>5/12/2016
 
 - Restauration de la prise en charge de l’édition professionnelle de Windows. 
-- L’indicateur ```-Setup``` du Convertisseur active désormais la fonctionnalité Conteneurs Windows et gère l’extension de l’image de base. Pour effectuer une installation unique, à partir d’une invite de commandes avec élévation de privilèges PowerShell, exécutez les éléments suivants&nbsp;: ```PS C:\> .\DesktopAppConverter.ps1 -Setup -BaseImage BaseImage-12345.wim -Verbose```
+- L’indicateur ```-Setup``` du Convertisseur active désormais la fonctionnalité Conteneurs Windows et gère l’extension de l’image de base. Pour effectuer une installation unique, à partir d’une invite de commandes avec élévation de privilèges PowerShell, exécutez les éléments suivants : ```PS C:\> .\DesktopAppConverter.ps1 -Setup -BaseImage BaseImage-12345.wim -Verbose```
 - Ajout de la détection automatique du chemin d’installation de l’application et déplacement de la racine de l’application en dehors de VFS pour limiter les redirections inutiles éventuelles du système de fichiers lors de l’exécution.
 - Ajout de la détection automatique de l’image de base étendue dans le cadre du processus de conversion.
 - Ajout de la détection automatique pour les associations et protocoles de types de fichiers.
@@ -86,23 +86,23 @@ Cette section présente les modifications entre les versions de Desktop App Conv
 
 ### <a name="operating-system"></a>Système d’exploitation
 
-+ Version d’évaluation de la mise à jour anniversaire de Windows&nbsp;10 (10.0.14393.0 et versions ultérieures) édition Professionnel ou Entreprise.
++ Version d’évaluation de la mise à jour anniversaire de Windows 10 (10.0.14393.0 et versions ultérieures) édition Professionnel ou Entreprise.
 
 ### <a name="hardware-configuration"></a>Configuration matérielle
 
-+ Processeur 64&nbsp;bits (x64)
++ Processeur 64 bits (x64)
 + Assistance matérielle à la virtualisation
 + Traduction d’adresse de second niveau (SLAT, Second Level Address Translation)
 
 ### <a name="required-resources"></a>Ressources nécessaires
 
-+ [Kit de développement logiciel Windows (Kit SDK Windows) pour Windows&nbsp;10](https://go.microsoft.com/fwlink/?linkid=821375)
++ [Kit de développement logiciel Windows (Kit SDK Windows) pour Windows 10](https://go.microsoft.com/fwlink/?linkid=821375)
 
 ## <a name="set-up-the-desktop-app-converter"></a>Configurer Desktop App Converter
 
-Desktop App Converter repose sur les dernières fonctionnalités de Windows&nbsp;10. Assurez-vous que vous utilisez la mise à jour anniversaire de Windows&nbsp;10 (14393.0 ou versions ultérieures).
+Desktop App Converter repose sur les dernières fonctionnalités de Windows 10. Assurez-vous que vous utilisez la mise à jour anniversaire de Windows 10 (14393.0 ou versions ultérieures).
 
-### <a name="store-download"></a>Téléchargement à partir du Windows&nbsp;Store
+### <a name="store-download"></a>Téléchargement à partir du Windows Store
 
 1.  Téléchargez [DesktopAppConverter à partir du Windows Store](https://aka.ms/converter) et le [fichier .wim de l’image de base correspondant à votre build](https://aka.ms/converterimages).  
 2.  Exécutez DesktopAppConverter en tant qu’administrateur. Vous pouvez le faire à partir du menu Démarrer en cliquant avec le bouton droit sur la vignette et en sélectionnant *Exécuter en tant qu’administrateur* sous *Plus*, ou à partir de la barre des tâches en cliquant avec le bouton droit sur la vignette, puis en cliquant à nouveau avec le bouton droit sur le nom de l’application qui s’affiche et en sélectionnant *Exécuter en tant qu’administrateur.*
@@ -122,8 +122,8 @@ DAC reste disponible sous la forme d’un fichier zip dans le [centre de téléc
 
 ## <a name="run-the-desktop-app-converter"></a>Exécuter Desktop App Converter
 
-+ **Téléchargement à partir du Windows Store**&nbsp;: utilisez ```DesktopAppConverter.exe``` pour exécuter le convertisseur.
-+ **Fichier zip**&nbsp;: utilisez ```DesktopAppConverter.ps1``` pour exécuter le convertisseur. 
++ **Téléchargement à partir du Windows Store** : utilisez ```DesktopAppConverter.exe``` pour exécuter le convertisseur.
++ **Fichier zip** : utilisez ```DesktopAppConverter.ps1``` pour exécuter le convertisseur. 
 
 ### <a name="usage"></a>Utilisation
 
@@ -167,40 +167,40 @@ Vous pouvez également utiliser le paramètre ```-Register``` de l’applet de c
 
 Pour plus d’informations sur le déploiement et le débogage de votre application convertie, voir [Déployer et déboguer votre application UWP convertie](desktop-to-uwp-deploy-and-debug.md). 
 
-## <a name="sign-your-appx-package"></a>Signer votre package&nbsp;.Appx
+## <a name="sign-your-appx-package"></a>Signer votre package .Appx
 
-L’applet de commande Add-AppxPackage nécessite que le package d’application (.appx) déployé soit signé. Utilisez l’indicateur ```-Sign``` dans le cadre de la ligne de commande du convertisseur ou SignTool.exe, fourni dans le SDK Microsoft Windows&nbsp;10, pour signer le package&nbsp;.appx.
+L’applet de commande Add-AppxPackage nécessite que le package d’application (.appx) déployé soit signé. Utilisez l’indicateur ```-Sign``` dans le cadre de la ligne de commande du convertisseur ou SignTool.exe, fourni dans le SDK Microsoft Windows 10, pour signer le package .appx.
 
-Pour obtenir des détails supplémentaires sur la façon de signer votre package&nbsp;.appx, voir [Signer votre application de bureau convertie](desktop-to-uwp-signing.md). 
+Pour obtenir des détails supplémentaires sur la façon de signer votre package .appx, voir [Signer votre application de bureau convertie](desktop-to-uwp-signing.md). 
 
 ## <a name="caveats"></a>Avertissements
 
-1. La build de Windows&nbsp;10 sur l’ordinateur hôte doit correspondre à l’image de base que vous avez obtenue lors du téléchargement du Convertisseur d’applications de bureau.  
+1. La build de Windows 10 sur l’ordinateur hôte doit correspondre à l’image de base que vous avez obtenue lors du téléchargement du Convertisseur d’applications de bureau.  
 2. Assurez-vous que le programme d’installation de bureau est dans un répertoire indépendant, car le convertisseur copie tout le contenu du répertoire sur l’environnement Windows isolé.  
-3. Actuellement, le Convertisseur d’applications de bureau prend en charge l’exécution du processus de conversion sur système d’exploitation 64&nbsp;bits uniquement. Vous pouvez déployer les packages .appx convertis sur système d’exploitation 64&nbsp;bits (x64) uniquement.  
+3. Actuellement, le Convertisseur d’applications de bureau prend en charge l’exécution du processus de conversion sur système d’exploitation 64 bits uniquement. Vous pouvez déployer les packages .appx convertis sur système d’exploitation 64 bits (x64) uniquement.  
 4. Le Convertisseur d’applications de bureau exige que le programme d’installation de bureau soit exécuté en mode sans assistance. Assurez-vous de transmettre l’indicateur de mode silencieux de votre programme d’installation au convertisseur à l’aide du paramètre *-InstallerArguments*.
-5. La publication d’assemblys Fusion côte à côte publics ne fonctionne pas. Pendant l’installation, une application peut publier des assemblys Fusion côte à côte publics, accessibles à tout autre processus. Lors de la création de contexte d’activation des processus, ces assemblys sont récupérés par un processus système nommé CSRSS.exe. Dans le cas d’un processus converti, la création de contexte d’activation et le chargement de modules de ces assemblys échouent. Les assemblys de boîte de réception, comme ComCtl, sont livrés avec le système d’exploitation. Ainsi, la prise d’une dépendance sur eux est sûre. Les assemblys Fusion côte à côte sont enregistrés dans les emplacements suivants&nbsp;:
-  + Registre&nbsp;: `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\SideBySide\Winners`
-  + Système de fichiers&nbsp;: %windir%\\SideBySide
+5. La publication d’assemblys Fusion côte à côte publics ne fonctionne pas. Pendant l’installation, une application peut publier des assemblys Fusion côte à côte publics, accessibles à tout autre processus. Lors de la création de contexte d’activation des processus, ces assemblys sont récupérés par un processus système nommé CSRSS.exe. Dans le cas d’un processus converti, la création de contexte d’activation et le chargement de modules de ces assemblys échouent. Les assemblys de boîte de réception, comme ComCtl, sont livrés avec le système d’exploitation. Ainsi, la prise d’une dépendance sur eux est sûre. Les assemblys Fusion côte à côte sont enregistrés dans les emplacements suivants :
+  + Registre : `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\SideBySide\Winners`
+  + Système de fichiers : %windir%\\SideBySide
 
 ## <a name="known-issues"></a>Problèmes connus
 
-+ Si vous obtenez une version d’évaluation Windows&nbsp;Insider sur un ordinateur de développement sur lequel était installé Desktop App Converter, l’erreur `New-ContainerNetwork: The object already exists` peut s’afficher lorsque vous configurez la nouvelle image de base. Pour contourner ce problème, exécutez la commande `Netsh int ipv4 reset` à partir d’une invite de commandes avec élévation des privilèges, puis redémarrez votre ordinateur. 
-+ Une application .NET compilée avec l’option de build «&nbsp;AnyCPU&nbsp;» ne peut être installée si l’exécutable principal ou l’une des dépendances ont été placés sous «&nbsp;Program&nbsp;Files&nbsp;» ou «&nbsp;Windows\System32&nbsp;». Pour contourner ce problème, utilisez un programme d’installation spécifique à votre architecture (32&nbsp;bits ou 64&nbsp;bits) pour générer correctement un package AppX.
++ Si vous obtenez une version d’évaluation Windows Insider sur un ordinateur de développement sur lequel était installé Desktop App Converter, l’erreur `New-ContainerNetwork: The object already exists` peut s’afficher lorsque vous configurez la nouvelle image de base. Pour contourner ce problème, exécutez la commande `Netsh int ipv4 reset` à partir d’une invite de commandes avec élévation des privilèges, puis redémarrez votre ordinateur. 
++ Une application .NET compilée avec l’option de build « AnyCPU » ne peut être installée si l’exécutable principal ou l’une des dépendances ont été placés sous « Program Files » ou « Windows\System32 ». Pour contourner ce problème, utilisez un programme d’installation spécifique à votre architecture (32 bits ou 64 bits) pour générer correctement un package AppX.
 
 ## <a name="telemetry-from-desktop-app-converter"></a>Télémétrie d’un Convertisseur d’applications de bureau  
 Le Convertisseur d’applications de bureau peut collecter des informations sur vous et votre utilisation du logiciel et les envoyer à Microsoft. Vous pouvez en savoir plus sur la collecte et l’utilisation de données de Microsoft dans la documentation des produits et dans la [Déclaration de confidentialité Microsoft](http://go.microsoft.com/fwlink/?LinkId=521839). Vous acceptez de respecter toutes les dispositions applicables de la Déclaration de confidentialité de Microsoft.
 
-Par défaut, la télémétrie est activée pour le Convertisseur d’applications de bureau. Ajoutez la clé de Registre suivante pour configurer la télémétrie selon un paramètre de votre choix&nbsp;:  
+Par défaut, la télémétrie est activée pour le Convertisseur d’applications de bureau. Ajoutez la clé de Registre suivante pour configurer la télémétrie selon un paramètre de votre choix :  
 ```CMD
 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\DesktopAppConverter
 ```
-+ Ajoutez ou modifiez la valeur *DisableTelemetry* à l’aide d’une valeur DWORD définie sur&nbsp;1.
++ Ajoutez ou modifiez la valeur *DisableTelemetry* à l’aide d’une valeur DWORD définie sur 1.
 + Pour activer la télémétrie, supprimez la clé ou définissez la valeur sur 0.
 
 ## <a name="desktop-app-converter-usage"></a>Utilisation du Convertisseur d’applications de bureau
 
-Voici une liste de paramètres pour le Convertisseur d’applications de bureau. Vous pouvez également afficher cette liste en exécutant&nbsp;:   
+Voici une liste de paramètres pour le Convertisseur d’applications de bureau. Vous pouvez également afficher cette liste en exécutant :   
 
 ```CMD
 Get-Help DesktopAppConverter.exe -detailed
@@ -220,11 +220,11 @@ Get-Help DesktopAppConverter.exe -detailed
 
 |Paramètre|Description|
 |---------|-----------|
-|```-AppInstallPath <String> [optional]``` | Chemin d’accès complet au dossier racine de votre application pour les fichiers installés en cas d’installation (par exemple, «&nbsp;C:\Program Files (x86)\MyApp&nbsp;»).| 
-|```-Destination <String>``` | La destination souhaitée pour la sortie d’appx du convertisseur&nbsp;: DesktopAppConverter peut créer cet emplacement s’il n’existe pas déjà.|
+|```-AppInstallPath <String> [optional]``` | Chemin d’accès complet au dossier racine de votre application pour les fichiers installés en cas d’installation (par exemple, « C:\Program Files (x86)\MyApp »).| 
+|```-Destination <String>``` | La destination souhaitée pour la sortie d’appx du convertisseur : DesktopAppConverter peut créer cet emplacement s’il n’existe pas déjà.|
 |```-Installer <String>``` | Le chemin d’accès du programme d’installation de votre application doit être en mesure de s’exécuter sans assistance/silencieusement|
-|```-InstallerArguments <String>``` [facultatif] | Une liste séparée par des virgules ou une chaîne d’arguments pour forcer votre programme d’installation à s’exécuter sans assistance/silencieusement. Ce paramètre est facultatif si votre programme d’installation est un fichier msi. Pour obtenir un fichier journal à partir de votre programme d’installation, indiquez ici l’argument de la journalisation pour le programme d’installation, et utilisez le chemin d’accès ```<log_folder>```, qui est un jeton que le convertisseur remplace par le chemin d’accès approprié. <br><br>**REMARQUE&nbsp;: les indicateurs de mode sans assistance/silencieux et les arguments de journalisation varient selon les technologies d’installation.** <br><br>Exemple d’utilisation de ce paramètre : ```-InstallerArguments "/silent /log <log_folder>\install.log"``` Un autre exemple qui ne crée pas de fichier journal peut ressembler à ceci : ```-InstallerArguments "/quiet", "/norestart"``` là encore, vous devez littéralement diriger tous les journaux sur le chemin d’accès du jeton ```<log_folder>``` si vous voulez que le convertisseur les capture et les place dans un dossier des journaux finaux.|
-|```-InstallerValidExitCodes <Int32>``` [facultatif] | Une liste séparée par des virgules des codes de sortie qui indiquent que votre programme d’installation a été exécuté correctement (par exemple&nbsp;: 0, 1234, 5678).  Par défaut, le code est 0 pour les éléments non msi et 0, 1641, 3010 pour les éléments msi.|
+|```-InstallerArguments <String>``` [facultatif] | Une liste séparée par des virgules ou une chaîne d’arguments pour forcer votre programme d’installation à s’exécuter sans assistance/silencieusement. Ce paramètre est facultatif si votre programme d’installation est un fichier msi. Pour obtenir un fichier journal à partir de votre programme d’installation, indiquez ici l’argument de la journalisation pour le programme d’installation, et utilisez le chemin d’accès ```<log_folder>```, qui est un jeton que le convertisseur remplace par le chemin d’accès approprié. <br><br>**REMARQUE : les indicateurs de mode sans assistance/silencieux et les arguments de journalisation varient selon les technologies d’installation.** <br><br>Exemple d’utilisation de ce paramètre : ```-InstallerArguments "/silent /log <log_folder>\install.log"``` Un autre exemple qui ne crée pas de fichier journal peut ressembler à ceci : ```-InstallerArguments "/quiet", "/norestart"``` là encore, vous devez littéralement diriger tous les journaux sur le chemin d’accès du jeton ```<log_folder>``` si vous voulez que le convertisseur les capture et les place dans un dossier des journaux finaux.|
+|```-InstallerValidExitCodes <Int32>``` [facultatif] | Une liste séparée par des virgules des codes de sortie qui indiquent que votre programme d’installation a été exécuté correctement (par exemple : 0, 1234, 5678).  Par défaut, le code est 0 pour les éléments non msi et 0, 1641, 3010 pour les éléments msi.|
 
 ### <a name="appx-identity-parameters"></a>Paramètres d’identité Appx  
 
@@ -238,8 +238,8 @@ Get-Help DesktopAppConverter.exe -detailed
 
 |Paramètre|Description|
 |---------|-----------|
-|```-AppExecutable <String> [optional]``` [facultatif] | Nom de l’exécutable principal de votre application (par exemple, «&nbsp;MyApp.exe&nbsp;»). |
-|```-AppFileTypes <String>``` [facultatif] | Une liste séparée par des virgules des types de fichiers auxquels l’application sera associée (p. ex., «&nbsp;.txt, .doc&nbsp;», sans les guillemets).|
+|```-AppExecutable <String> [optional]``` [facultatif] | Nom de l’exécutable principal de votre application (par exemple, « MyApp.exe »). |
+|```-AppFileTypes <String>``` [facultatif] | Une liste séparée par des virgules des types de fichiers auxquels l’application sera associée (p. ex., « .txt, .doc », sans les guillemets).|
 |```-AppId <String>``` [facultatif] | Spécifie une valeur sur laquelle définir l’ID d’application dans le manifeste appx. Si elle n’est pas spécifiée, elle sera définie à la valeur transmise pour *PackageName*.|
 |```-AppDisplayName <String>``` [facultatif] | Spécifie une valeur sur laquelle définir le nom complet de l’application dans le manifeste appx. Si elle n’est pas spécifiée, elle sera définie à la valeur transmise pour *PackageName*. |
 |```-AppDescription <String>``` [facultatif] | Spécifie une valeur sur laquelle définir la description de l’application dans le manifeste appx. Si elle n’est pas spécifiée, elle sera définie à la valeur transmise pour *PackageName*.|
@@ -254,7 +254,7 @@ Get-Help DesktopAppConverter.exe -detailed
 |```-MakeAppx [<SwitchParameter>]``` [facultatif] | Un commutateur qui, lorsqu’il est présent, indique à ce script d’appeler MakeAppx sur la sortie. |
 |```-LogFile <String>``` [facultatif] | Spécifie un fichier journal. S’il est omis, un emplacement temporaire du fichier journal est créé. |
 | ```Sign [<SwitchParameter>] [optional]``` | Indique à ce script de signer l’Appx de sortie. Ce commutateur doit être présent en même temps que le commutateur ```-MakeAppx```. 
-|```<Common parameters>``` | Cette applet de commande prend en charge les paramètres courants&nbsp;: *Verbose*, *Debug*, *ErrorAction*, *ErrorVariable*, *WarningAction*, *WarningVariable*, *OutBuffer*, *PipelineVariable* et *OutVariable*. Pour plus d’informations, consultez [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216). |
+|```<Common parameters>``` | Cette applet de commande prend en charge les paramètres courants : *Verbose*, *Debug*, *ErrorAction*, *ErrorVariable*, *WarningAction*, *WarningVariable*, *OutBuffer*, *PipelineVariable* et *OutVariable*. Pour plus d’informations, consultez [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216). |
 
 ### <a name="cleanup-parameters"></a>Paramètres de nettoyage
 
@@ -267,17 +267,17 @@ Get-Help DesktopAppConverter.exe -detailed
 
 ### <a name="package-architecture"></a>Architecture de package
 
-Desktop App Converter prend désormais en charge la création de packages d’applications&nbsp;x64 et&nbsp;x86 que vous pouvez installer et exécuter sur des ordinateurs amd64 et&nbsp;x86. Notez que Desktop App Converter doit toujours s’exécuter sur un ordinateur AMD64 pour effectuer une conversion réussie.
+Desktop App Converter prend désormais en charge la création de packages d’applications x64 et x86 que vous pouvez installer et exécuter sur des ordinateurs amd64 et x86. Notez que Desktop App Converter doit toujours s’exécuter sur un ordinateur AMD64 pour effectuer une conversion réussie.
 
 |Paramètre|Description|
 |---------|-----------|
-|```-PackageArch <String>``` | Génère un package selon l’architecture spécifiée. Les options valides sont «&nbsp;x86&nbsp;» ou «&nbsp;x64&nbsp;»&nbsp;; par exemple, -PackageArch x86. Ce paramètre est facultatif. Si ce paramètre n’est pas spécifié, le Convertisseur d’applications de bureau essaie de détecter automatiquement l’architecture du package. Si la détection automatique échoue, le convertisseur choisit par défaut l’architecture&nbsp;x64. 
+|```-PackageArch <String>``` | Génère un package selon l’architecture spécifiée. Les options valides sont « x86 » ou « x64 » ; par exemple, -PackageArch x86. Ce paramètre est facultatif. Si ce paramètre n’est pas spécifié, le Convertisseur d’applications de bureau essaie de détecter automatiquement l’architecture du package. Si la détection automatique échoue, le convertisseur choisit par défaut l’architecture x64. 
 
 ### <a name="running-the-peheadercertfixtool"></a>Exécution de PEHeaderCertFixTool
 
-Au cours du processus de conversion, DesktopAppConverter exécute automatiquement l’outil PEHeaderCertFixTool pour corriger tous les en-têtes&nbsp;PE endommagés. Toutefois, vous pouvez également exécuter PEHeaderCertFixTool sur un appx UWP, des fichiers libres ou un fichier binaire spécifique. 
+Au cours du processus de conversion, DesktopAppConverter exécute automatiquement l’outil PEHeaderCertFixTool pour corriger tous les en-têtes PE endommagés. Toutefois, vous pouvez également exécuter PEHeaderCertFixTool sur un appx UWP, des fichiers libres ou un fichier binaire spécifique. 
 
-PEHeaderCertFixTool est fourni avec le DesktopAppConverter.zip. Exemple d’utilisation&nbsp;: 
+PEHeaderCertFixTool est fourni avec le DesktopAppConverter.zip. Exemple d’utilisation : 
 
 ```CMD
 PEHeaderCertFixTool.exe <binary file>|<.appx package>|<folder> [/c] [/v]
@@ -290,12 +290,12 @@ example3: PEHeaderCertFixTool c:\myapp /c /v
 
 ## <a name="language-support"></a>Prise en charge des langues
 
-Desktop App Converter ne prend pas en charge Unicode. Par conséquent, aucun caractère chinois ou caractères non&nbsp;ASCII ne peut être utilisés avec l’outil.
+Desktop App Converter ne prend pas en charge Unicode. Par conséquent, aucun caractère chinois ou caractères non ASCII ne peut être utilisés avec l’outil.
 
 ## <a name="see-also"></a>Voir aussi
 
 + [Porter les applications de bureau vers UWP à l’aide de Desktop App Converter](https://channel9.msdn.com/events/Build/2016/P504)
-+ [Projet Centennial&nbsp;: Porter des applications de bureau existantes vers la plateforme Windows universelle](https://channel9.msdn.com/events/Build/2016/B829)  
++ [Projet Centennial : Porter des applications de bureau existantes vers la plateforme Windows universelle](https://channel9.msdn.com/events/Build/2016/B829)  
 
 
 <!--HONumber=Dec16_HO1-->

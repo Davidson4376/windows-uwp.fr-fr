@@ -33,7 +33,7 @@ La vue symétrique permet d’afficher les images ou d’autres éléments d’u
 
 
 
-## Est-ce le contrôle approprié?
+## Est-ce le contrôle approprié ?
 
 La vue symétrique est appropriée pour l’examen des images des petites et moyennes collections (jusqu’à 25 éléments environ). Les exemples de telles collections comprennent les éléments d’une page de détails de produit ou les photos d’un album. Même si nous ne recommandons pas la vue symétrique pour la plupart des grandes collections, ce contrôle est souvent utilisé pour afficher les images individuelles d’un album photo.
 
@@ -118,7 +118,7 @@ Dans le cas présent, la propriété ItemsSource est liée à un objet [**Collec
           ItemsSource="{Binding Source={StaticResource itemsViewSource}}"/>
 ```
 
->**Remarque**&nbsp;&nbsp;Vous pouvez remplir un contrôle FlipView en ajoutant des éléments directement dans sa collection Items ou en définissant sa propriété ItemsSource, mais vous ne pouvez pas faire les deux à la fois. Si vous définissez la propriété ItemsSource et que vous ajoutez un élément en XAML, l’élément ajouté est ignoré. Si vous définissez la propriété ItemsSource et que vous ajoutez un élément à la collection Items dans le code, une exception est levée.
+>**Remarque**  Vous pouvez remplir un contrôle FlipView en ajoutant des éléments directement dans sa collection Items ou en définissant sa propriété ItemsSource, mais vous ne pouvez pas faire les deux à la fois. Si vous définissez la propriété ItemsSource et que vous ajoutez un élément en XAML, l’élément ajouté est ignoré. Si vous définissez la propriété ItemsSource et que vous ajoutez un élément à la collection Items dans le code, une exception est levée.
 
 ### Spécifier l’accès des éléments
 
@@ -198,13 +198,13 @@ Pour les plus grandes collections (10 à 25 éléments), un indicateur qui propo
 
 ## Pratiques conseillées et déconseillées
 
--   Les vues symétriques sont particulièrement adaptées aux collections contenant jusqu’à 25éléments environ.
+-   Les vues symétriques sont particulièrement adaptées aux collections contenant jusqu’à 25 éléments environ.
 -   Évitez d’utiliser un contrôle de vue symétrique pour les collections de grande taille, car le passage d’un élément à l’autre peut être fastidieux. Les albums photo, qui possèdent souvent des centaines, voire des milliers d’images, constituent une exception. Ils passent presque toujours en vue symétrique dès lors qu’une photo a été sélectionnée dans l’affichage Grille. Pour les autres collections de grande taille, pensez à [l’affichage Liste ou Grille](lists.md).
 -   Pour les indicateurs de contexte :
     -   L’ordre des points (ou n’importe quel marqueur visuel que vous choisissez) fonctionne mieux lorsqu’il est centré et placé sous une galerie avec un mouvement panoramique horizontal.
     -   Si vous souhaitez ajouter un indicateur de contexte dans une galerie avec un mouvement panoramique vertical, nous vous conseillons de le positionner au centre et à droite des images.
     -   Le point en surbrillance indique l’élément actuel. Généralement, le point en surbrillance est blanc et les autres points sont gris.
-    -   Le nombre de points peut varier, mais veillez à ne pas en placer trop car l’utilisateur pourrait avoir du mal à se situer. 10points est généralement le nombre maximal à afficher.
+    -   Le nombre de points peut varier, mais veillez à ne pas en placer trop car l’utilisateur pourrait avoir du mal à se situer. 10 points est généralement le nombre maximal à afficher.
 
 ## Liste de contrôle de globalisation et de localisation
 

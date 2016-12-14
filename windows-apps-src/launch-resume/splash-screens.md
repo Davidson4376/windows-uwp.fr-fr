@@ -14,11 +14,11 @@ Toutes les applications UWP doivent disposer d’un écran de démarrage compren
 
 Votre écran de démarrage s’affiche dès que l’utilisateur lance votre application. Il fournit des informations pendant que les ressources d’applications sont initialisées. Dès que votre application autorise l’interaction, l’écran de démarrage disparaît.
 
-Un écran de démarrage bien conçu peut contribuer à rendre votre application plus attrayante. Voici un écran de démarrage simple et discret&nbsp;:
+Un écran de démarrage bien conçu peut contribuer à rendre votre application plus attrayante. Voici un écran de démarrage simple et discret :
 
-![écran de démarrage redimensionné à 75&nbsp;% de la taille de l’exemple.](images/regularsplashscreen.png)
+![écran de démarrage redimensionné à 75 % de la taille de l’exemple.](images/regularsplashscreen.png)
 
-Cet écran de démarrage est créé en combinant une couleur d’arrière-plan verte à une image&nbsp;PNG à arrière-plan transparent.
+Cet écran de démarrage est créé en combinant une couleur d’arrière-plan verte à une image PNG à arrière-plan transparent.
 
 Une image simple avec une couleur d’arrière-plan s’affiche correctement, quel que soit l’appareil sur lequel votre application s’exécute. Seules les dimensions de l’arrière-plan sont modifiées pour prendre en charge différentes tailles d’écran. Votre image reste toujours intacte.
 

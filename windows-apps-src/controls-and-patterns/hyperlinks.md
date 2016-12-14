@@ -31,11 +31,11 @@ Les liens hypertexte redirigent l’utilisateur vers une autre partie de l’app
 
 
 
-## Est-ce le contrôle approprié?
+## Est-ce le contrôle approprié ?
 
 Utilisez un lien hypertexte lorsque vous avez besoin de texte qui réponde lorsqu’il est sélectionné et dirige l’utilisateur vers plus d’informations.
 
-Choisissez le type de lien hypertexte approprié en fonction de vos besoins:
+Choisissez le type de lien hypertexte approprié en fonction de vos besoins :
 
 -   Utilisez un élément de texte **Hyperlink** inclus dans un contrôle de texte. Un élément Hyperlink comprend d’autres éléments de texte et vous pouvez l’utiliser dans toute collection InlineCollection. Utilisez un lien hypertexte de type texte si vous souhaitez un saut de ligne automatique et si vous n’avez pas nécessairement besoin d’une cible large. Le texte du lien hypertexte peut être petit et difficile à cibler, notamment pour les fonctions tactiles.
 -   Utilisez un contrôle **HyperlinkButton** pour les liens hypertexte autonomes. Un contrôle HyperlinkButton est un contrôle Button spécialisé que vous pouvez utiliser à tout endroit où vous utiliseriez un bouton.
@@ -60,11 +60,11 @@ Cet exemple montre comment utiliser un élément de texte Hyperlink à l’inté
 </StackPanel>
 
 ```
-Le lien hypertexte s’affiche en ligne avec le texte qui l’entoure:
+Le lien hypertexte s’affiche en ligne avec le texte qui l’entoure :
 
 ![Exemple de lien hypertexte en tant qu’élément de texte](images/controls_hyperlink-element.png) 
 
-> **Conseil**&nbsp;&nbsp;Quand vous utilisez un élément Hyperlink dans un contrôle de texte avec d’autres éléments de texte en XAML, placez le contenu dans un conteneur [Span](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) et appliquez l’attribut `xml:space="preserve"` au conteneur Span pour conserver l’espace blanc entre l’élément Hyperlink et les autres éléments.
+> **Conseil**  Quand vous utilisez un élément Hyperlink dans un contrôle de texte avec d’autres éléments de texte en XAML, placez le contenu dans un conteneur [Span](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) et appliquez l’attribut `xml:space="preserve"` au conteneur Span pour conserver l’espace blanc entre l’élément Hyperlink et les autres éléments.
 
 ## Créer un HyperlinkButton
 
@@ -83,7 +83,7 @@ Voici comment utiliser un HyperlinkButton, avec un texte et une image.
 </StackPanel>
 
 ```
-Les boutons de lien hypertexte incluant du texte s’affichent en tant que texte marqué. L’image du logo Contoso est également un lien hypertexte sur lequel vous pouvez cliquer:
+Les boutons de lien hypertexte incluant du texte s’affichent en tant que texte marqué. L’image du logo Contoso est également un lien hypertexte sur lequel vous pouvez cliquer :
 
 ![Exemple de lien hypertexte en tant que contrôle de bouton](images/controls_hyperlink-button-image.png)
 
@@ -95,7 +95,7 @@ Pour les deux types de liens hypertexte, vous gérez navigation de la même mani
 
 Pour utiliser le lien hypertexte afin d’accéder à un URI, définissez la propriété NavigateUri. Lorsqu’un utilisateur clique ou appuie sur le lien hypertexte, l’URI spécifié s’ouvre dans le navigateur par défaut. Le navigateur par défaut s’exécute dans un processus distinct de votre application.
 
-> **Remarque**&nbsp;&nbsp;Vous n’êtes pas obligé d’utiliser les schémas http: ou https:. Vous pouvez utiliser des schémas tels que ms-appx:, ms-appdata: ou ms-ressources: si le contenu des ressources à ces emplacements peut être chargé dans un navigateur. Toutefois, le schéma file: est bloqué. Pour plus d’informations, voir [Schémas d’URI](https://msdn.microsoft.com/library/windows/apps/jj655406.aspx).
+> **Remarque**  Vous n’êtes pas obligé d’utiliser les schémas http: ou https:. Vous pouvez utiliser des schémas tels que ms-appx:, ms-appdata: ou ms-ressources: si le contenu des ressources à ces emplacements peut être chargé dans un navigateur. Toutefois, le schéma file: est bloqué. Pour plus d’informations, voir [Schémas d’URI](https://msdn.microsoft.com/library/windows/apps/jj655406.aspx).
 
 > Quand un utilisateur clique sur le lien hypertexte, la valeur de la propriété NavigateUri est transmise à un gestionnaire de système pour les schémas et types d’URI. Ensuite, le système lance l’application qui est inscrite pour le schéma d’URI fourni pour NavigateUri.
 
@@ -121,7 +121,7 @@ Vous pouvez définir la propriété [UnderlineStyle](https://msdn.microsoft.com/
 
 Par défaut, l’élément HyperlinkButton s’affiche sous forme de texte souligné lorsque vous définissez une chaîne comme valeur pour la propriété [Content](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content.aspx).
 
-Le texte n’apparaît pas souligné dans les cas suivants:
+Le texte n’apparaît pas souligné dans les cas suivants :
 - Si vous définissez un [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) comme valeur pour la propriété Content et définissez la propriété [Text](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.text.aspx) sur TextBlock.
 - Si vous redéfinissez le modèle de l’élément HyperlinkButton et modifiez le nom de la partie du modèle [ContentPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentpresenter.aspx).
 

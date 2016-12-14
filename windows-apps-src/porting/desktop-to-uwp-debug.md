@@ -15,19 +15,19 @@ Cette rubrique contient des informations pour vous aider à réussir le débogag
 
 ## <a name="attach-to-process"></a>Attacher au processus
 
-Lorsque Microsoft Visual Studio est exécuté «&nbsp;en tant qu’administrateur&nbsp;», les commandes *Démarrer le débogage* et *Exécuter sans débogage* fonctionnent pour un projet d’application convertie, mais l’application lancée s’exécute avec un [niveau d’intégrité moyen](https://msdn.microsoft.com/library/bb625963) (c’est-à-dire, qu’elle ne dispose pas de privilèges élevés). Pour conférer des privilèges d’administrateur sur l’application lancée, vous devez d’abord la lancer «&nbsp;en tant qu’administrateur&nbsp;» via un raccourci ou une vignette. Une fois que l’application est exécutée, à partir d’une instance de Microsoft Visual Studio exécutée «&nbsp;en tant qu’administrateur&nbsp;», appelez __Attacher au processus__, puis sélectionnez le processus de votre application dans la boîte de dialogue.
+Lorsque Microsoft Visual Studio est exécuté « en tant qu’administrateur », les commandes *Démarrer le débogage* et *Exécuter sans débogage* fonctionnent pour un projet d’application convertie, mais l’application lancée s’exécute avec un [niveau d’intégrité moyen](https://msdn.microsoft.com/library/bb625963) (c’est-à-dire, qu’elle ne dispose pas de privilèges élevés). Pour conférer des privilèges d’administrateur sur l’application lancée, vous devez d’abord la lancer « en tant qu’administrateur » via un raccourci ou une vignette. Une fois que l’application est exécutée, à partir d’une instance de Microsoft Visual Studio exécutée « en tant qu’administrateur », appelez __Attacher au processus__, puis sélectionnez le processus de votre application dans la boîte de dialogue.
 
 ## <a name="f5-debug"></a>Débogage F5
 
 Visual Studio prend désormais en charge un nouveau projet de création de packages. Le nouveau projet vous permet de copier automatiquement toutes les mises à jour lorsque vous concevez votre application dans le package AppX créé à partir du convertisseur dans le programme d’installation de votre application. Une fois le projet de création de packages configuré , vous pouvez également utiliser F5 pour déboguer directement dans le package AppX. 
 
->Remarque&nbsp;: vous pouvez également déboguer un package Appx en sélectionnant Déboguer&nbsp;-&gt; Autres cibles à déboguer&nbsp;-&gt; Déboguer le package d’application installé.
+>Remarque : vous pouvez également déboguer un package Appx en sélectionnant Déboguer -&gt; Autres cibles à déboguer -&gt; Déboguer le package d’application installé.
 
-Voici comment faire&nbsp;: 
+Voici comment faire : 
 
 1. Tout d’abord, vérifiez que vous êtes prêt pour utiliser Desktop App Converter. Pour obtenir des instructions, consultez [Desktop App Converter](desktop-to-uwp-run-desktop-app-converter.md).
 
-2. Exécutez le convertisseur, puis le programme d’installation pour votre application Win32. Le convertisseur capture la disposition et toute modification apportée au Registre et génère un Appx avec manifeste et registery.dat pour virtualiser le Registre&nbsp;:
+2. Exécutez le convertisseur, puis le programme d’installation pour votre application Win32. Le convertisseur capture la disposition et toute modification apportée au Registre et génère un Appx avec manifeste et registery.dat pour virtualiser le Registre :
 
 ![alt](images/desktop-to-uwp/debug-1.png)
 
@@ -37,23 +37,23 @@ Voici comment faire&nbsp;:
 
 5. Ouvrez la solution Win32 correspondante qui a été convertie dans Visual Studio.
  
-6. Ajoutez le nouveau projet de création de packages à votre solution en cliquant avec le bouton droit sur la solution et en choisissant «&nbsp;Ajouter un nouveau projet&nbsp;». Ensuite, sous Configuration et déploiement, choisissez le projet de création de packages du bureau vers UWP&nbsp;:
+6. Ajoutez le nouveau projet de création de packages à votre solution en cliquant avec le bouton droit sur la solution et en choisissant « Ajouter un nouveau projet ». Ensuite, sous Configuration et déploiement, choisissez le projet de création de packages du bureau vers UWP :
 
     ![alt](images/desktop-to-uwp/debug-2.png)
 
-    Le projet qui en résulte sera ajouté à votre solution&nbsp;:
+    Le projet qui en résulte sera ajouté à votre solution :
 
     ![alt](images/desktop-to-uwp/debug-3.png)
 
     Dans le projet de création de packages, AppXFileList fournit un mappage des fichiers dans la disposition AppX. Les références démarrent vides, mais doivent être définies manuellement sur le projet .exe pour le classement des build. 
 
-7. Le projet DesktopToUWPPackaging possède une page de propriété qui vous permet de configurer la racine du package AppX et la vignette à exécuter&nbsp;:
+7. Le projet DesktopToUWPPackaging possède une page de propriété qui vous permet de configurer la racine du package AppX et la vignette à exécuter :
 
     ![alt](images/desktop-to-uwp/debug-4.png)
 
     Définissez PackageLayout sur l’emplacement racine de l’AppX qui a été créé par le convertisseur (ci-dessus). Ensuite, choisissez la vignette à exécuter.
 
-8.  Ouvrez et modifiez AppXFileList.xml. Ce fichier définit la façon de copier la sortie de la build de débogage Win32 dans la disposition AppX conçue par le convertisseur. Par défaut, un espace réservé figure dans le fichier avec un exemple de balise et de commentaire&nbsp;:
+8.  Ouvrez et modifiez AppXFileList.xml. Ce fichier définit la façon de copier la sortie de la build de débogage Win32 dans la disposition AppX conçue par le convertisseur. Par défaut, un espace réservé figure dans le fichier avec un exemple de balise et de commentaire :
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -88,9 +88,9 @@ Voici comment faire&nbsp;:
     </Project>
     ```
 
-    Le fichier est défini comme suit&nbsp;: 
+    Le fichier est défini comme suit : 
 
-    Tout d’abord, nous définissons *MyProjectOutputPath* de manière à désigner l’emplacement de création du projet Win32&nbsp;:
+    Tout d’abord, nous définissons *MyProjectOutputPath* de manière à désigner l’emplacement de création du projet Win32 :
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -122,7 +122,7 @@ Voici comment faire&nbsp;:
 
 11. Si vous mettez à jour votre application, vous devrez utiliser MakeAppX pour remettre en package votre application. Pour plus d’informations, consultez [Outil de création de packages (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx). 
 
-Si vous disposez de plusieurs configurations de build (par exemple, pour la sortie et le débogage), vous pouvez ajouter ce qui suit au fichier AppXFileList.xml pour copier la version Win32 depuis différents emplacements&nbsp;:
+Si vous disposez de plusieurs configurations de build (par exemple, pour la sortie et le débogage), vous pouvez ajouter ce qui suit au fichier AppXFileList.xml pour copier la version Win32 depuis différents emplacements :
 
 ```XML
 <PropertyGroup>
@@ -148,13 +148,13 @@ Vous pouvez également utiliser la compilation conditionnelle pour activer des c
     }
     ```
 
-2.  Vous pouvez utiliser Configuration Manager pour ajouter la nouvelle configuration de build&nbsp;:
+2.  Vous pouvez utiliser Configuration Manager pour ajouter la nouvelle configuration de build :
 
     ![alt](images/desktop-to-uwp/debug-6.png)
 
     ![alt](images/desktop-to-uwp/debug-7.png)
 
-3.  Ensuite, sous les propriétés du projet, ajoutez la prise en charge des symboles de compilation conditionnelle&nbsp;:
+3.  Ensuite, sous les propriétés du projet, ajoutez la prise en charge des symboles de compilation conditionnelle :
 
     ![alt](images/desktop-to-uwp/debug-8.png)
 
@@ -168,7 +168,7 @@ PLMDebug.exe est inclus dans le SDK Windows. Pour plus d’informations, consult
 
 ## <a name="run-another-process-inside-the-full-trust-container"></a>Exécuter un autre processus à l’intérieur du conteneur d’un niveau de confiance totale 
 
-Vous pouvez appeler des processus personnalisés à l’intérieur du conteneur d’un package d’application spécifié. Cela peut être utile pour les scénarios de tests (par exemple, si vous avez un atelier de test personnalisé et que vous voulez tester la sortie de l’application). Pour ce faire, utilisez l’applet de commande PowerShell ```Invoke-CommandInDesktopPackage```&nbsp;: 
+Vous pouvez appeler des processus personnalisés à l’intérieur du conteneur d’un package d’application spécifié. Cela peut être utile pour les scénarios de tests (par exemple, si vous avez un atelier de test personnalisé et que vous voulez tester la sortie de l’application). Pour ce faire, utilisez l’applet de commande PowerShell ```Invoke-CommandInDesktopPackage``` : 
 
 ```CMD
 Invoke-CommandInDesktopPackage [-PackageFamilyName] <string> [-AppId] <string> [-Command] <string> [[-Args]

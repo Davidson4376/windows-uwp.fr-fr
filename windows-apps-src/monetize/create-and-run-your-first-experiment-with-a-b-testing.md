@@ -11,11 +11,11 @@ ms.openlocfilehash: 65785e53b2e5ba788dbda533373737e193e1c792
 
 # <a name="create-and-run-your-first-experiment-with-ab-testing"></a>Créer et exécuter votre première expérience avec des tests A/B
 
-Dans cette procédure pas à pas, vous allez&nbsp;:
-* créer un [projet](run-app-experiments-with-a-b-testing.md#terms) d’expérimentation dans le tableau de bord du Centre de développement qui définit plusieurs variables distantes qui représentent le texte et la couleur d’un bouton d’application&nbsp;;
-* créer une application avec du code qui récupère les valeurs des variables distantes, puis utilise ces données pour modifier la couleur d’arrière-plan d’un bouton et consigne les données des événements d’affichage et de conversion dans le Centre de développement&nbsp;;
-* créer une expérience dans le projet pour tester si la modification de la couleur d’arrière-plan du bouton d’application augmente effectivement le nombre de clics de bouton&nbsp;;
-* exécuter l’application pour collecter des données d’expérience&nbsp;;
+Dans cette procédure pas à pas, vous allez :
+* créer un [projet](run-app-experiments-with-a-b-testing.md#terms) d’expérimentation dans le tableau de bord du Centre de développement qui définit plusieurs variables distantes qui représentent le texte et la couleur d’un bouton d’application ;
+* créer une application avec du code qui récupère les valeurs des variables distantes, puis utilise ces données pour modifier la couleur d’arrière-plan d’un bouton et consigne les données des événements d’affichage et de conversion dans le Centre de développement ;
+* créer une expérience dans le projet pour tester si la modification de la couleur d’arrière-plan du bouton d’application augmente effectivement le nombre de clics de bouton ;
+* exécuter l’application pour collecter des données d’expérience ;
 * passer en revue les résultats de l’expérience sur le tableau de bord du Centre de développement, choisir une variante à activer pour tous les utilisateurs de l’application, puis terminer l’expérience.
 
 Pour une vue d’ensemble des tests A/B avec le Centre de développement, voir [Exécuter des expériences d’application avec des tests A/B](run-app-experiments-with-a-b-testing.md).
@@ -40,39 +40,39 @@ Pour suivre cette procédure pas à pas, vous devez posséder un compte du Centr
 
 ## <a name="code-the-experiment-in-your-app"></a>Coder l’expérience dans votre application
 
-1. Dans Visual&nbsp;Studio&nbsp;2015, créez un projet de plateforme&nbsp;Windows universelle à l’aide de Visual&nbsp;C#. Nommez le projet **SampleExperiment**.
+1. Dans Visual Studio 2015, créez un projet de plateforme Windows universelle à l’aide de Visual C#. Nommez le projet **SampleExperiment**.
 2. Dans l’Explorateur de solutions, développez votre nœud de projet, cliquez avec le bouton droit sur **Références**, puis sélectionnez **Ajouter une référence**.
 3. Dans le **Gestionnaire de références**, développez **Windows universel**, puis cliquez sur **Extensions**.
 4. Dans la liste des kits de développement logiciel (SDK), cochez la case en regard de **Microsoft Engagement Framework** et cliquez sur **OK**.
 5. Dans l’**Explorateur de solutions**, double-cliquez sur MainPage.xaml pour ouvrir le concepteur pour la page principale de l’application.
 6. Faites glisser un **Bouton** de la **Boîte à outils** vers la page.
 7. Double-cliquez sur le bouton dans le concepteur pour ouvrir le fichier de code et ajoutez un gestionnaire d’événements pour l’événement **Click**.  
-8. Remplacez l’ensemble du contenu du fichier de code par le code ci-après. Affectez à la variable&nbsp;```projectId``` la valeur [ID de projet](run-app-experiments-with-a-b-testing.md#terms) que vous avez obtenue à partir du tableau de bord du Centre de développement dans la section précédente.
+8. Remplacez l’ensemble du contenu du fichier de code par le code ci-après. Affectez à la variable ```projectId``` la valeur [ID de projet](run-app-experiments-with-a-b-testing.md#terms) que vous avez obtenue à partir du tableau de bord du Centre de développement dans la section précédente.
 
   > [!div class="tabbedCodeSnippets"]
   [!code-cs[SampleExperiment](./code/StoreSDKSamples/cs/ExperimentPage.xaml.cs#SampleExperiment)]
 
 10. Enregistrez le fichier de code et créez le projet.
 
-## <a name="create-the-experiment-in-windows-dev-center"></a>Créer l’expérience dans le Centre de développement&nbsp;Windows
+## <a name="create-the-experiment-in-windows-dev-center"></a>Créer l’expérience dans le Centre de développement Windows
 
 1. Revenez à la page du projet **Expériences sur les clics de bouton** dans le tableau de bord du Centre de développement Windows.
 2. Dans la section **Expériences**, cliquez sur le bouton **Nouvelle expérience**.
 5. Dans la section **Experiment details (Détails de l’expérience)**, tapez le nom **Optimiser les clics de bouton** dans le champ **Experiment name (Nom de l’expérience)**.
 6. Dans la section **View event (Événement d’affichage)**, tapez **userViewedButton** dans le champ **View event name (Nom de l’événement d’affichage)**. Notez que ce nom correspond à la chaîne de l’événement d’affichage enregistré dans le code que vous avez ajoutée dans la section précédente.
-7. Dans la section **Objectifs et événements de conversion**, entrez les valeurs suivantes&nbsp;:
+7. Dans la section **Objectifs et événements de conversion**, entrez les valeurs suivantes :
   * Dans le champ **Nom d’objectif**, tapez **Increase Button Clicks**.
   * Dans le champ **Nom de l’événement de conversion**, tapez le nom **userClickedButton**. Notez que ce nom correspond à la chaîne de l’événement de conversion enregistré dans le code que vous avez ajoutée dans la section précédente.
   * Dans le champ **Objectif**, choisissez **Agrandir**.
 8. Dans la section **Variables distantes et variantes**, vérifiez que la case **Répartir en valeurs égales** est cochée pour que les variantes soient distribuées équitablement à votre application.
-9. Ajoutez des variables à votre expérience&nbsp;:
-  9. Cliquez sur le contrôle de liste déroulante, choisissez **buttonText**, puis cliquez sur **Ajouter une variable**. La chaîne **Bouton gris** apparaît automatiquement dans la colonne **Variante&nbsp;A** (cette valeur est dérivée des paramètres du projet). Dans la colonne **Variante&nbsp;B**, tapez **Bouton bleu**.
-  9. Cliquez une nouvelle fois sur le contrôle de liste déroulante, choisissez **r**, puis cliquez sur **Ajouter une variable**. La chaîne **128** doit apparaître automatiquement dans la colonne **Variante&nbsp;A**. Dans la colonne **Variante&nbsp;B**, tapez **1**.
-  9. Cliquez une nouvelle fois sur le contrôle de liste déroulante, choisissez **g**, puis cliquez sur **Ajouter une variable**. La chaîne **128** doit apparaître automatiquement dans la colonne **Variante&nbsp;A**. Dans la colonne **Variante&nbsp;B**, tapez **1**.  
-  9. Cliquez une nouvelle fois sur le contrôle de liste déroulante, choisissez **b**, puis cliquez sur **Ajouter une variable**. La chaîne **128** doit apparaître automatiquement dans la colonne **Variante&nbsp;A**. Dans la colonne **Variante&nbsp;B**, tapez **255**.  
+9. Ajoutez des variables à votre expérience :
+  9. Cliquez sur le contrôle de liste déroulante, choisissez **buttonText**, puis cliquez sur **Ajouter une variable**. La chaîne **Bouton gris** apparaît automatiquement dans la colonne **Variante A** (cette valeur est dérivée des paramètres du projet). Dans la colonne **Variante B**, tapez **Bouton bleu**.
+  9. Cliquez une nouvelle fois sur le contrôle de liste déroulante, choisissez **r**, puis cliquez sur **Ajouter une variable**. La chaîne **128** doit apparaître automatiquement dans la colonne **Variante A**. Dans la colonne **Variante B**, tapez **1**.
+  9. Cliquez une nouvelle fois sur le contrôle de liste déroulante, choisissez **g**, puis cliquez sur **Ajouter une variable**. La chaîne **128** doit apparaître automatiquement dans la colonne **Variante A**. Dans la colonne **Variante B**, tapez **1**.  
+  9. Cliquez une nouvelle fois sur le contrôle de liste déroulante, choisissez **b**, puis cliquez sur **Ajouter une variable**. La chaîne **128** doit apparaître automatiquement dans la colonne **Variante A**. Dans la colonne **Variante B**, tapez **255**.  
 10. Cliquez sur **Enregistrer**, puis sur **Activer**.
 
-> **Important**&nbsp;&nbsp;Une fois que vous avez activé une expérience, vous ne pouvez plus en modifier les paramètres, sauf si vous avez coché la case **Editable experiment** (Expérience modifiable) quand vous avez créé l’expérience. D’habitude, nous vous recommandons de coder l’expérience dans votre application avant de l’activer.
+> **Important**  Une fois que vous avez activé une expérience, vous ne pouvez plus en modifier les paramètres, sauf si vous avez coché la case **Editable experiment** (Expérience modifiable) quand vous avez créé l’expérience. D’habitude, nous vous recommandons de coder l’expérience dans votre application avant de l’activer.
 
 ## <a name="run-the-app-to-gather-experiment-data"></a>Exécuter l’application pour collecter des données d’expérience
 
@@ -84,17 +84,17 @@ Pour suivre cette procédure pas à pas, vous devez posséder un compte du Centr
 
 Laissez s’écouler plusieurs heures après avoir terminé la section précédente, puis suivez ces étapes pour passer en revue les résultats de votre expérience et terminer l’expérience.
 
-> **Remarque**&nbsp;&nbsp;Dès que vous activez une expérience, le Centre de développement lance immédiatement la collecte de données de toutes les applications consignant des données pour votre expérience. L’apparition des données de l’expérience dans le tableau de bord peut cependant prendre plusieurs heures.
+> **Remarque**  Dès que vous activez une expérience, le Centre de développement lance immédiatement la collecte de données de toutes les applications consignant des données pour votre expérience. L’apparition des données de l’expérience dans le tableau de bord peut cependant prendre plusieurs heures.
 
 1. Dans le Centre de développement, revenez à la page **Expérimentation** de votre application.
 2. Dans la section **Active experiments** (Expériences actives), cliquez sur **Optimize Button Clicks** (Optimiser les clics de bouton) pour accéder à la page de cette expérience.
 3. Vérifiez que les résultats affichés dans les sections **Résumé des résultats** et **Détails des résultats** correspondent à ce que vous attendez. Pour en savoir plus sur ces sections, voir [Gérer votre expérience dans le tableau de bord du Centre de développement](manage-your-experiment.md#review-the-results-of-your-experiment).
 
-  >**Remarque**&nbsp;&nbsp;Le Centre de développement signale uniquement le premier événement de conversion pour chaque utilisateur sur une période de 24&nbsp;heures. Si un utilisateur déclenche plusieurs événements de conversion dans votre application au cours d’une période de 24&nbsp;heures, seul le premier événement de conversion est signalé. Ceci est conçu pour empêcher le fait qu’un utilisateur unique avec plusieurs événements de conversion fausse les résultats de l’expérience pour un groupe représentatif d’utilisateurs.
+  >**Remarque**  Le Centre de développement signale uniquement le premier événement de conversion pour chaque utilisateur sur une période de 24 heures. Si un utilisateur déclenche plusieurs événements de conversion dans votre application au cours d’une période de 24 heures, seul le premier événement de conversion est signalé. Ceci est conçu pour empêcher le fait qu’un utilisateur unique avec plusieurs événements de conversion fausse les résultats de l’expérience pour un groupe représentatif d’utilisateurs.
 4. Vous êtes désormais prêt à terminer l’expérience. Dans la section **Résumé des résultats**, cliquez sur **Basculer** dans la colonne **Variante B**. Cela permet de basculer tous les utilisateurs de votre application sur le bouton bleu.
 5. Cliquez sur **OK** pour confirmer que vous souhaitez mettre fin à l’expérience.
 6. Exécutez l’application **SampleExperiment** que vous avez créée dans la section précédente.
-7. Vérifiez que vous voyez un bouton bleu. Notez que jusqu’à 2&nbsp;minutes peuvent être nécessaires pour que votre application reçoive une affectation de variante mise à jour.
+7. Vérifiez que vous voyez un bouton bleu. Notez que jusqu’à 2 minutes peuvent être nécessaires pour que votre application reçoive une affectation de variante mise à jour.
 
 ## <a name="related-topics"></a>Rubriques connexes
 

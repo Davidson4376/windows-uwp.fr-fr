@@ -10,7 +10,7 @@ ms.openlocfilehash: 2d73b44933ed71dc388b3d37793b7c99b8d0a3dd
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>Envoyer un élément de travail au pool de threads
 
-\[ Mise à jour pour les applications UWP sur Windows&nbsp;10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 ** API importantes **
 
@@ -27,7 +27,7 @@ Trois versions de [**RunAsync**](https://msdn.microsoft.com/library/windows/apps
 
 **Remarque** Utilisez [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) pour accéder au thread d’interface utilisateur et afficher la progression à partir de l’élément de travail.
 
-L’exemple suivant crée un élément de travail et fournit une expression lambda pour effectuer la tâche&nbsp;:
+L’exemple suivant crée un élément de travail et fournit une expression lambda pour effectuer la tâche :
 
 > [!div class="tabbedCodeSnippets"]
 > ``` cpp
@@ -198,7 +198,7 @@ Notez que l’élément de travail vérifie la propriété [**IAsyncInfo.Status*
 
 Fournissez un gestionnaire d’achèvement en définissant la propriété [**IAsyncAction.Completed**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.completed.aspx) de l’élément de travail. Fournissez un délégué (vous pouvez utiliser une expression lambda ou une fonction déléguée) pour gérer l’achèvement de l’élément de travail. Par exemple, utilisez [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) pour accéder au thread d’interface utilisateur et afficher le résultat.
 
-L’exemple suivant met à jour l’interface utilisateur avec le résultat de l’élément de travail envoyé à l’étape&nbsp;1&nbsp;:
+L’exemple suivant met à jour l’interface utilisateur avec le résultat de l’élément de travail envoyé à l’étape 1 :
 
 > [!div class="tabbedCodeSnippets"]
 > ``` cpp

@@ -12,7 +12,7 @@ ms.openlocfilehash: ffcfa8991e9eb73b8d6a47bb7dd1cd23220097e0
 # <a name="handle-file-activation"></a>Gérer l’activation des fichiers
 
 
-\[ Mise à jour pour les applications UWP sur Windows&nbsp;10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -35,7 +35,7 @@ L’application reçoit des événements d’activation uniquement pour les exte
 
 1.  Dans l’**Explorateur de solutions**, double-cliquez sur package.appxmanifest pour ouvrir le concepteur de manifeste. Sélectionnez l’onglet **Déclarations**. Dans la liste déroulante **Déclarations disponibles**, sélectionnez **Associations de types de fichier**, puis cliquez sur **Ajouter**. Pour plus d’informations sur les identificateurs utilisés par les associations de fichiers, voir [Identificateurs programmatiques](https://msdn.microsoft.com/library/windows/desktop/cc144152).
 
-    Voici une brève description de chacun des champs que vous pouvez remplir dans le concepteur de manifeste&nbsp;:
+    Voici une brève description de chacun des champs que vous pouvez remplir dans le concepteur de manifeste :
 
 | Champ | Description |
 |------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -43,12 +43,12 @@ L’application reçoit des événements d’activation uniquement pour les exte
 | **Logo** | Spécifiez le logo utilisé pour identifier le type de fichier sur le Bureau et dans l’option [Définir les programmes par défaut](https://msdn.microsoft.com/library/windows/desktop/cc144154) du **Panneau de configuration**. Si aucun logo n’est spécifié, le petit logo de l’application est utilisé. |
 | **Info-bulle** | Spécifiez l’[info-bulle](https://msdn.microsoft.com/library/windows/desktop/cc144152) d’un groupe de types de fichier. Cette info-bulle s’affiche quand l’utilisateur pointe sur l’icône d’un fichier de ce type avec la souris. |
 | **Nom** | Choisissez un nom pour un groupe de types de fichiers partageant les mêmes nom complet, logo, info-bulle et indicateurs de modification. Choisissez un nom de groupe pouvant rester le même sur toutes les applications à mettre à jour. **Remarque** Le nom doit être entièrement en minuscules. |
-| **Type de contenu** | Spécifiez le type de contenu MIME, par exemple **image/jpeg**, pour un type de fichier particulier. **Remarque importante sur les types de contenu autorisés&nbsp;:** voici la liste alphabétique des types de contenu MIME que vous ne pouvez pas inclure dans le manifeste du package, car ils sont réservés ou interdits&nbsp;: **application/force-download**, **application/octet-stream**, **application/unknown**, **application/x-msdownload**. |
-| **Type de fichier** | Indiquez le type de fichier à inscrire, précédé d’un point (par exemple, «&nbsp;.jpeg&nbsp;»). **Types de fichier réservés et interdits&nbsp;:** pour obtenir la liste alphabétique des types de fichier des applications intégrées que vous ne pouvez pas inscrire dans vos applications&nbsp;UWP parce qu’ils sont réservés ou interdits, consultez [Noms de schéma d’URI et de fichier réservés](reserved-uri-scheme-names.md). |
+| **Type de contenu** | Spécifiez le type de contenu MIME, par exemple **image/jpeg**, pour un type de fichier particulier. **Remarque importante sur les types de contenu autorisés :** voici la liste alphabétique des types de contenu MIME que vous ne pouvez pas inclure dans le manifeste du package, car ils sont réservés ou interdits : **application/force-download**, **application/octet-stream**, **application/unknown**, **application/x-msdownload**. |
+| **Type de fichier** | Indiquez le type de fichier à inscrire, précédé d’un point (par exemple, « .jpeg »). **Types de fichier réservés et interdits :** pour obtenir la liste alphabétique des types de fichier des applications intégrées que vous ne pouvez pas inscrire dans vos applications UWP parce qu’ils sont réservés ou interdits, consultez [Noms de schéma d’URI et de fichier réservés](reserved-uri-scheme-names.md). |
 
 2.  Entrez `alsdk` dans **Nom**.
 3.  Entrez `.alsdk` comme **Type de fichier**.
-4.  Entrez «&nbsp;images\Icon.png&nbsp;» comme Logo.
+4.  Entrez « images\Icon.png » comme Logo.
 5.  Appuyez sur Ctrl+S pour enregistrer la modification dans package.appxmanifest.
 
 Les étapes ci-dessus ajoutent un élément [**Extension**](https://msdn.microsoft.com/library/windows/apps/br211400) tel que celui-ci dans le manifeste du package. La catégorie **windows.fileTypeAssociation** indique que l’application gère les fichiers portant l’extension `.alsdk`.
@@ -66,7 +66,7 @@ Les étapes ci-dessus ajoutent un élément [**Extension**](https://msdn.microso
       </Extensions>
 ```
 
-## <a name="step-2-add-the-proper-icons"></a>Étape 2&nbsp;: Ajouter les icônes appropriées
+## <a name="step-2-add-the-proper-icons"></a>Étape 2 : Ajouter les icônes appropriées
 
 
 Les applications qui deviennent la valeur par défaut d’un type de fichier ont leurs icônes affichées à différents emplacements dans l’ensemble du système. Par exemple, ces icônes s’affichent dans :
@@ -77,9 +77,9 @@ Les applications qui deviennent la valeur par défaut d’un type de fichier ont
 -   les résultats de recherche sur l’écran d’accueil.
 
 Reproduisez l’apparence du logo de la vignette de l’application et utilisez la couleur d’arrière-plan de celle-ci au lieu de rendre l’icône transparente. Faites en sorte que le logo s’étende jusqu’au bord sans remplissage. Testez vos icônes sur des arrière-plans blancs. Pour obtenir des exemples d’icônes, voir [Exemple de lancement d’association](http://go.microsoft.com/fwlink/p/?LinkID=620490).
-![explorateur de solutions avec une vue des fichiers dans le dossier images. il existe des versions de 16, 32, 48 et 256&nbsp;pixels de «&nbsp;icon.targetsize&nbsp;» et de «&nbsp;smalltile-sdk&nbsp;».](images/seviewofimages.png)
+![explorateur de solutions avec une vue des fichiers dans le dossier images. il existe des versions de 16, 32, 48 et 256 pixels de « icon.targetsize » et de « smalltile-sdk ».](images/seviewofimages.png)
 
-## <a name="step-3-handle-the-activated-event"></a>Étape&nbsp;3&nbsp;: Gérer l’événement activé
+## <a name="step-3-handle-the-activated-event"></a>Étape 3 : Gérer l’événement activé
 
 
 Le gestionnaire d’événements [**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331) reçoit tous les événements d’activation des fichiers.
@@ -120,7 +120,7 @@ En cas de lancement via l’activation de fichier, les applications doivent envi
 
 Les fichiers que vous recevez peuvent provenir d’une source non approuvée. Nous vous recommandons de vérifier le contenu d’un fichier avant d’entreprendre une quelconque action sur ce fichier. Pour plus d’informations sur la validation d’entrée, voir [Écriture de code sécurisé](http://go.microsoft.com/fwlink/p/?LinkID=142053).
 
-> **Remarque** Cet article s’adresse aux développeurs Windows&nbsp;10 qui développent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows&nbsp;8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Remarque** Cet article s’adresse aux développeurs Windows 10 qui développent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 

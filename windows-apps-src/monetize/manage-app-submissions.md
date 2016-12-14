@@ -14,7 +14,7 @@ ms.openlocfilehash: 5c19a05f51a14d9df38e64aac3b741e916fc0524
 
 Utilisez les méthodes suivantes dans l’API de soumission du Windows Store pour gérer les soumissions des applications qui sont inscrites dans votre compte du Centre de développement Windows. Pour obtenir une présentation de l’API de soumission du Windows Store, notamment les conditions préalables à l’utilisation de l’API, voir [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md).
 
->**Remarque**&nbsp;&nbsp;Ces méthodes ne peuvent être utilisées que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
+>**Remarque**  Ces méthodes ne peuvent être utilisées que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
 
 
 | Méthode        | URI    | Description                                                                 |
@@ -37,9 +37,9 @@ Pour créer une soumission pour une application, suivez ce processus.
 
 1. Si ce n’est pas déjà le cas, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
 
-  >**Remarque**&nbsp;&nbsp;Vérifiez que l’application a déjà fait l’objet d’au moins une soumission complète avec les informations de [classification par âge](https://msdn.microsoft.com/windows/uwp/publish/age-ratings) spécifiées.
+  >**Remarque**  Vérifiez que l’application a déjà fait l’objet d’au moins une soumission complète avec les informations de [classification par âge](https://msdn.microsoft.com/windows/uwp/publish/age-ratings) spécifiées.
 
-2. [Obtenir un jeton d’accès Azure&nbsp;AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token). Vous devez transmettre ce jeton d’accès aux méthodes de l’API de soumission du Windows Store. Après avoir obtenu un jeton d’accès, vous avez 60&nbsp;minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
+2. [Obtenir un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token). Vous devez transmettre ce jeton d’accès aux méthodes de l’API de soumission du Windows Store. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 
 3. [Créez une soumission d’application](create-an-app-submission.md) en exécutant la méthode suivante dans l’API de soumission du Windows Store. Cette méthode crée une soumission en cours, qui est une copie de votre dernière soumission publiée.
 
@@ -47,7 +47,7 @@ Pour créer une soumission pour une application, suivez ce processus.
   POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions
   ```
 
-  Le corps de la réponse contient trois éléments&nbsp;: l’ID de la nouvelle soumission, ses données (notamment toutes les listes et informations tarifaires), ainsi que l’URI de signature d’accès partagé (SAS) pour le chargement de tous les packages d’application et toutes les images de listing de la soumission. Pour plus d’informations sur SAS, voir [Signatures d’accès partagé, partie 1&nbsp;: présentation du modèle SAS](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/).
+  Le corps de la réponse contient trois éléments : l’ID de la nouvelle soumission, ses données (notamment toutes les listes et informations tarifaires), ainsi que l’URI de signature d’accès partagé (SAS) pour le chargement de tous les packages d’application et toutes les images de listing de la soumission. Pour plus d’informations sur SAS, voir [Signatures d’accès partagé, partie 1 : présentation du modèle SAS](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/).
 
 4. Si vous ajoutez de nouveaux packages ou de nouvelles images pour la soumission, [préparez les packages d’application](https://msdn.microsoft.com/windows/uwp/publish/app-package-requirements) et [préparez les images et captures d’écran de l’application](https://msdn.microsoft.com/windows/uwp/publish/app-screenshots-and-images). Ajoutez tous ces fichiers à une archive ZIP.
 
@@ -57,9 +57,9 @@ Pour créer une soumission pour une application, suivez ce processus.
   PUT https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}
   ```
 
-  >**Remarque**&nbsp;&nbsp;Si vous ajoutez de nouveaux packages ou de nouvelles images pour la soumission, veillez à mettre à jour les données de la soumission pour faire référence au nom et au chemin relatif de ces fichiers dans l’archive&nbsp;ZIP.
+  >**Remarque**  Si vous ajoutez de nouveaux packages ou de nouvelles images pour la soumission, veillez à mettre à jour les données de la soumission pour faire référence au nom et au chemin relatif de ces fichiers dans l’archive ZIP.
 
-4. Si vous ajoutez de nouveaux packages ou de nouvelles images pour la soumission, chargez l’archive&nbsp;ZIP sur l’URI SAS fourni dans le corps de la réponse de la méthode POST appelée à l’étape&nbsp;2. Pour plus d’informations, voir [Signatures d’accès partagé, partie 2&nbsp;: créer et utiliser une SAS avec le stockage d’objets blob](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/).
+4. Si vous ajoutez de nouveaux packages ou de nouvelles images pour la soumission, chargez l’archive ZIP sur l’URI SAS fourni dans le corps de la réponse de la méthode POST appelée à l’étape 2. Pour plus d’informations, voir [Signatures d’accès partagé, partie 2 : créer et utiliser une SAS avec le stockage d’objets blob](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/).
 
   L’extrait de code suivant montre comment charger l’archive à l’aide de la classe [CloudBlockBlob](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.blob.cloudblockblob.aspx) incluse dans la bibliothèque cliente de stockage Azure pour .NET.
 
@@ -90,11 +90,11 @@ Pour créer une soumission pour une application, suivez ce processus.
 <span id="manage-gradual-package-rollout">
 ## <a name="manage-a-gradual-package-rollout-for-an-app-submission"></a>Gérer un déploiement de package progressif pour une soumission d’application
 
-Vous pouvez publier progressivement les packages mis à jour d’une soumission d’application pour un pourcentage des clients de votre application sur Windows&nbsp;10. Cela vous permet de surveiller les commentaires et les données d’analyse des packages spécifiques et de vérifier l’adéquation de votre mise à jour avant de la déployer plus largement. Vous pouvez modifier le pourcentage de lancement (ou arrêter la mise à jour) d’une soumission publiée sans avoir à créer une nouvelle soumission. Pour plus d’informations, y compris des instructions pour l’activation et la gestion d’un déploiement de package progressif dans le tableau de bord du Centre de développement, consultez [cet article](../publish/gradual-package-rollout.md).
+Vous pouvez publier progressivement les packages mis à jour d’une soumission d’application pour un pourcentage des clients de votre application sur Windows 10. Cela vous permet de surveiller les commentaires et les données d’analyse des packages spécifiques et de vérifier l’adéquation de votre mise à jour avant de la déployer plus largement. Vous pouvez modifier le pourcentage de lancement (ou arrêter la mise à jour) d’une soumission publiée sans avoir à créer une nouvelle soumission. Pour plus d’informations, y compris des instructions pour l’activation et la gestion d’un déploiement de package progressif dans le tableau de bord du Centre de développement, consultez [cet article](../publish/gradual-package-rollout.md).
 
 Vous pouvez également activer et gérer par programmation un déploiement de package progressif pour une soumission d’application en utilisant les méthodes suivantes de l’API de soumission du Windows Store.
 
-* Pour activer le déploiement de package progressif d’une soumission d’application&nbsp;:
+* Pour activer le déploiement de package progressif d’une soumission d’application :
 
   1. [Créez une soumission d’application](create-an-app-submission.md) ou [obtenez une soumission d’application](get-an-app-submission.md).
   2. Dans les données de réponse, localisez la ressource [packageRollout](#package-rollout-object), définissez le champ *isPackageRollout* sur true, puis définissez le champ *packageRolloutPercentage* sur le pourcentage des clients de votre application qui doivent obtenir les packages mis à jour.
@@ -246,27 +246,27 @@ Cette ressource a les valeurs suivantes.
 | Valeur      | Type   | Description      |
 |------------|--------|-------------------|
 | id            | chaîne  | ID de la soumission.  |
-| applicationCategory           | chaîne  |   Chaîne qui spécifie la [catégorie et/ou sous-catégorie](https://msdn.microsoft.com/windows/uwp/publish/category-and-subcategory-table) pour votre application. Les catégories et sous-catégories sont combinées en une seule chaîne à l’aide du caractère trait de soulignement&nbsp;«&nbsp;_&nbsp;», par exemple **BooksAndReference_EReader**.      |  
+| applicationCategory           | chaîne  |   Chaîne qui spécifie la [catégorie et/ou sous-catégorie](https://msdn.microsoft.com/windows/uwp/publish/category-and-subcategory-table) pour votre application. Les catégories et sous-catégories sont combinées en une seule chaîne à l’aide du caractère trait de soulignement « _ », par exemple **BooksAndReference_EReader**.      |  
 | pricing           |  objet  | Objet qui contient les informations de tarification pour l’application. Pour plus d’informations, voir la section relative à la [ressource de tarification](#pricing-object) ci-après.       |   
-| visibility           |  chaîne  |  Visibilité de l’application. Les valeurs possibles sont les suivantes&nbsp;: <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>       |   
-| targetPublishMode           | chaîne  | Mode de publication pour la soumission. Les valeurs possibles sont les suivantes&nbsp;: <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
-| targetPublishDate           | chaîne  | Date de publication de la soumission au format ISO&nbsp;8601, si le paramètre *targetPublishMode* a la valeur SpecificDate.  |  
+| visibility           |  chaîne  |  Visibilité de l’application. Les valeurs possibles sont les suivantes : <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>       |   
+| targetPublishMode           | chaîne  | Mode de publication pour la soumission. Les valeurs possibles sont les suivantes : <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
+| targetPublishDate           | chaîne  | Date de publication de la soumission au format ISO 8601, si le paramètre *targetPublishMode* a la valeur SpecificDate.  |  
 | listings           |   objet  |  Dictionnaire de paires clé/valeur, où chaque clé est un code de pays et chaque valeur est un objet de [ressource de référencement](#listing-object) qui contient des informations de référencement pour l’application.       |   
-| hardwarePreferences           |  tableau  |   Tableau de chaînes qui définissent les [préférences matérielles](https://msdn.microsoft.com/windows/uwp/publish/enter-app-properties#hardware_preferences) pour votre application. Les valeurs possibles sont les suivantes&nbsp;: <ul><li>Touch</li><li>Keyboard</li><li>Mouse</li><li>Camera</li><li>NfcHce</li><li>NFC</li><li>BluetoothLE</li><li>Telephony</li></ul>     |   
+| hardwarePreferences           |  tableau  |   Tableau de chaînes qui définissent les [préférences matérielles](https://msdn.microsoft.com/windows/uwp/publish/enter-app-properties#hardware_preferences) pour votre application. Les valeurs possibles sont les suivantes : <ul><li>Touch</li><li>Keyboard</li><li>Mouse</li><li>Camera</li><li>NfcHce</li><li>NFC</li><li>BluetoothLE</li><li>Telephony</li></ul>     |   
 | automaticBackupEnabled           |  booléen  |   Indique si Windows peut inclure les données de votre application dans les sauvegardes automatiques sur OneDrive. Pour plus d’informations, voir [Déclarations d’application](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).   |   
 | canInstallOnRemovableMedia           |  booléen  |   Indique si les clients peuvent installer votre application sur un stockage amovible. Pour plus d’informations, voir [Déclarations d’application](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).     |   
 | isGameDvrEnabled           |  booléen |   Indique si les jeux DVR sont activés pour l’application.    |   
 | hasExternalInAppProducts           |     booléen          |   Indique si votre application permet aux utilisateurs d’effectuer des achats hors du système de commerce du Windows Store. Pour plus d’informations, voir [Déclarations d’application](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).     |   
 | meetAccessibilityGuidelines           |    booléen           |  Indique si votre application a fait l’objet de tests pour voir si elle est conforme aux recommandations d’accessibilité. Pour plus d’informations, voir [Déclarations d’application](https://msdn.microsoft.com/windows/uwp/publish/app-declarations).      |   
 | notesForCertification           |  chaîne  |   Contient des [notes de certification](https://msdn.microsoft.com/windows/uwp/publish/notes-for-certification) pour votre application.    |    
-| status           |   chaîne  |  État de la soumission. Les valeurs possibles sont les suivantes&nbsp;: <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>      |    
+| status           |   chaîne  |  État de la soumission. Les valeurs possibles sont les suivantes : <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>      |    
 | statusDetails           |   objet  |  Contient des détails supplémentaires sur l’état de la soumission, notamment des informations sur les éventuelles erreurs. Pour plus d’informations, voir la section [Détails d’état](#status-details-object) ci-après.       |    
 | fileUploadUrl           |   chaîne  | URI de la signature d’accès partagé (SAS) pour le chargement des packages de la soumission. Si vous ajoutez de nouveaux packages ou de nouvelles images à la soumission, chargez l’archive ZIP qui les contient vers cet URI. Pour plus d’informations, voir [Créer une soumission d’application](#create-an-app-submission).       |    
 | applicationPackages           |   tableau  | Contient des objets qui fournissent des détails sur chaque package de la soumission. Pour plus d’informations, voir la section [Package d’application](#application-package-object) ci-après. |    
 | packageDeliveryOptions    | objet  | Contient les paramètres de lancement de package progressif et de mise à jour obligatoire de la soumission. Pour plus d’informations, consultez la section [Objet options de remise du package](#package-delivery-options-object) ci-dessous.  |
 | enterpriseLicensing           |  chaîne  |  Une des [valeur de gestion des licences d’entreprise](#enterprise-licensing) qui indiquent le comportement de la gestion des licences d’entreprise pour l’application.  |    
-| allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  booléen   |  Indique si Microsoft est autorisé à [rendre l’application disponible pour les futures familles d’appareils Windows&nbsp;10](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families).    |    
-| allowTargetFutureDeviceFamilies           | objet   |  Dictionnaire de paires clé/valeur, où chaque clé est une [famille d’appareils Windows&nbsp;10](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families) et chaque valeur est une valeur booléenne qui indique si votre application est autorisée à cibler la famille d’appareils spécifiée.     |    
+| allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  booléen   |  Indique si Microsoft est autorisé à [rendre l’application disponible pour les futures familles d’appareils Windows 10](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families).    |    
+| allowTargetFutureDeviceFamilies           | objet   |  Dictionnaire de paires clé/valeur, où chaque clé est une [famille d’appareils Windows 10](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families) et chaque valeur est une valeur booléenne qui indique si votre application est autorisée à cibler la famille d’appareils spécifiée.     |    
 | friendlyName           |   chaîne  |  Nom convivial de l’application, utilisé à des fins d’affichage.       |  
 
 
@@ -278,7 +278,7 @@ Cette ressource contient des informations de listing pour une application. Cette
 | Valeur           | Type    | Description                                                                                                                                                                                                                          |
 |-----------------|---------|------|
 |  baseListing               |   objet      |  Informations de [listing de base](#base-listing-object) pour l’application, qui définissent les informations de listing par défaut pour toutes les plateformes.   |     
-|  platformOverrides               | objet |   Dictionnaire de paires clé/valeur, où chaque clé est une chaîne qui identifie une plateforme pour laquelle remplacer les informations de listing et chaque valeur est un objet [listing de base](#base-listing-object) (contenant uniquement les valeurs de la description au titre) qui spécifie les informations de listing à remplacer pour la plateforme spécifiée. Les clés peuvent avoir les valeurs suivantes&nbsp;: <ul><li>Unknown</li><li>Windows80</li><li>Windows81</li><li>WindowsPhone71</li><li>WindowsPhone80</li><li>WindowsPhone81</li></ul>     |      |     
+|  platformOverrides               | objet |   Dictionnaire de paires clé/valeur, où chaque clé est une chaîne qui identifie une plateforme pour laquelle remplacer les informations de listing et chaque valeur est un objet [listing de base](#base-listing-object) (contenant uniquement les valeurs de la description au titre) qui spécifie les informations de listing à remplacer pour la plateforme spécifiée. Les clés peuvent avoir les valeurs suivantes : <ul><li>Unknown</li><li>Windows80</li><li>Windows81</li><li>WindowsPhone71</li><li>WindowsPhone80</li><li>WindowsPhone81</li></ul>     |      |     
 
 <span id="base-listing-object" />
 ### <a name="base-listing"></a>Listing de base
@@ -294,10 +294,10 @@ Cette ressource contient des informations de listing de base pour une applicatio
 |  supportContact                |   chaîne      |  URL ou adresse e-mail de l’[assistance technique](https://msdn.microsoft.com/windows/uwp/publish/support-contact-info) de votre application.     |
 |  websiteUrl                |   chaîne      |  URL de la [page web](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#website) de votre application.    |    
 |  description               |    chaîne     |   [Description](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#description) du listing de l’application.   |     
-|  fonctionnalités               |    tableau     |  Tableau contenant 20&nbsp;chaînes au maximum qui répertorient les [fonctionnalités](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#app-features) de votre application.     |
+|  fonctionnalités               |    tableau     |  Tableau contenant 20 chaînes au maximum qui répertorient les [fonctionnalités](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#app-features) de votre application.     |
 |  releaseNotes               |  chaîne       |  [Notes de publication](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#release-notes) de votre application.    |
 |  images               |   tableau      |  Tableau des données d’[image et d’icône](#image-object) du listing de l’application.  |
-|  recommendedHardware               |   tableau      |  Tableau contenant jusqu’à 11&nbsp;chaînes qui répertorient les [configurations matérielles recommandées](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#recommended-hardware) pour votre application.     |
+|  recommendedHardware               |   tableau      |  Tableau contenant jusqu’à 11 chaînes qui répertorient les [configurations matérielles recommandées](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#recommended-hardware) pour votre application.     |
 |  title               |     chaîne    |   Titre du listing de l’application.   |  
 
 
@@ -309,10 +309,10 @@ Cette ressource contient les données d’image et d’icône d’un listing d�
 | Valeur           | Type    | Description           |
 |-----------------|---------|------|
 |  fileName               |    chaîne     |   Nom du fichier image dans l’archive ZIP que vous avez chargé pour la soumission.    |     
-|  fileStatus               |   chaîne      |  État du fichier image. Les valeurs possibles sont les suivantes&nbsp;: <ul><li>None</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>   |
+|  fileStatus               |   chaîne      |  État du fichier image. Les valeurs possibles sont les suivantes : <ul><li>None</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>   |
 |  id  |  chaîne  | ID de l’image, comme indiqué par le Centre de développement.  |
 |  description  |  chaîne  | Description de l’image.  |
-|  imageType  |  chaîne  | Une des chaînes suivantes qui indique le type de l’image&nbsp;: <ul><li>Unknown</li><li>Screenshot</li><li>PromotionalArtwork414X180</li><li>PromotionalArtwork846X468</li><li>PromotionalArtwork558X756</li><li>PromotionalArtwork414X468</li><li>PromotionalArtwork558X558</li><li>PromotionalArtwork2400X1200</li><li>Icon</li><li>WideIcon358X173</li><li>BackgroundImage1000X800</li><li>SquareIcon358X358</li><li>MobileScreenshot</li><li>XboxScreenshot</li><li>SurfaceHubScreenshot</li><li>HoloLensScreenshot</li></ul>      |
+|  imageType  |  chaîne  | Une des chaînes suivantes qui indique le type de l’image : <ul><li>Unknown</li><li>Screenshot</li><li>PromotionalArtwork414X180</li><li>PromotionalArtwork846X468</li><li>PromotionalArtwork558X756</li><li>PromotionalArtwork414X468</li><li>PromotionalArtwork558X558</li><li>PromotionalArtwork2400X1200</li><li>Icon</li><li>WideIcon358X173</li><li>BackgroundImage1000X800</li><li>SquareIcon358X358</li><li>MobileScreenshot</li><li>XboxScreenshot</li><li>SurfaceHubScreenshot</li><li>HoloLensScreenshot</li></ul>      |
 
 
 <span id="pricing-object" />
@@ -322,7 +322,7 @@ Cette ressource contient des informations de tarification pour l’application. 
 
 | Valeur           | Type    | Description                                                                                                                                                                                                                          |
 |-----------------|---------|------|
-|  trialPeriod               |    chaîne     |  Chaîne qui spécifie la période d’évaluation de l’application. Les valeurs possibles sont les suivantes&nbsp;: <ul><li>NoFreeTrial</li><li>OneDay</li><li>TrialNeverExpires</li><li>SevenDays</li><li>FifteenDays</li><li>ThirtyDays</li></ul>    |
+|  trialPeriod               |    chaîne     |  Chaîne qui spécifie la période d’évaluation de l’application. Les valeurs possibles sont les suivantes : <ul><li>NoFreeTrial</li><li>OneDay</li><li>TrialNeverExpires</li><li>SevenDays</li><li>FifteenDays</li><li>ThirtyDays</li></ul>    |
 |  marketSpecificPricings               |    objet     |  Dictionnaire de paires clé/valeur, où chaque clé est un code de pays à deux lettres ISO 3166-1 alpha-2 et chaque valeur est un [niveau de prix](#price-tiers). Ces éléments représentent les [prix personnalisés de votre application sur des marchés spécifiques](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices). Tous les éléments de ce dictionnaire remplacent le prix de base spécifié par la valeur *priceId* du marché spécifié.      |     
 |  sales               |   array      |  **Deprecated**. Tableau d’objets qui contiennent des informations commerciales pour l’application. Pour plus d’informations, consultez la section [Vente](#sale-object) ci-dessous.    |     
 |  priceId               |   chaîne      |  [Niveau de prix](#price-tiers) qui spécifie le [prix de base](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#base-price) de l’application.   |
@@ -333,12 +333,12 @@ Cette ressource contient des informations de tarification pour l’application. 
 
 Cette ressource contient des informations commerciales pour une application.
 
->**Important**&nbsp;&nbsp;La ressource **Sale** n’est plus prise en charge et vous ne pouvez ni obtenir ni modifier les données commerciales concernant la soumission d’une application à l’aide de l’API de soumission du Windows&nbsp;Store&nbsp;:
+>**Important**  La ressource **Sale** n’est plus prise en charge et vous ne pouvez ni obtenir ni modifier les données commerciales concernant la soumission d’une application à l’aide de l’API de soumission du Windows Store :
 
    > * Après avoir appelé la [méthode GET pour soumettre une application](get-an-app-submission.md), la ressource *Sales* est vide. Vous pouvez toujours utiliser le tableau de bord du Centre de développement pour obtenir les données commerciales concernant la soumission de votre application.
    > * Lors de l’appel de la [méthode PUT pour mettre à jour la soumission d’une application](update-an-app-submission.md), les informations de la valeur *Sales* sont ignorées. Vous pouvez toujours utiliser le tableau de bord du Centre de développement pour changer les données commerciales concernant la soumission de votre application.
 
-> Bientôt, nous allons mettre à jour l’API de soumission du Windows&nbsp;Store pour proposer une nouvelle façon d’accéder par programmation aux informations commerciales concernant les soumissions d’application.
+> Bientôt, nous allons mettre à jour l’API de soumission du Windows Store pour proposer une nouvelle façon d’accéder par programmation aux informations commerciales concernant les soumissions d’application.
 
 Cette ressource a les valeurs suivantes.
 
@@ -408,20 +408,20 @@ Cette ressource contient des détails sur un package d’application pour la sou
 
 Cette ressource a les valeurs suivantes.  
 
->**Remarque**&nbsp;&nbsp;Quand vous appelez la méthode de [mise à jour d’une soumission d’application](update-an-app-submission.md), seules les valeurs *fileName*, *fileStatus*, *minimumDirectXVersion* et *minimumSystemRam* de cet objet sont obligatoires dans le corps de la requête. Les autres valeurs sont renseignées par le Centre de développement.
+>**Remarque**  Quand vous appelez la méthode de [mise à jour d’une soumission d’application](update-an-app-submission.md), seules les valeurs *fileName*, *fileStatus*, *minimumDirectXVersion* et *minimumSystemRam* de cet objet sont obligatoires dans le corps de la requête. Les autres valeurs sont renseignées par le Centre de développement.
 
 | Valeur           | Type    | Description                   |
 |-----------------|---------|------|
 | fileName   |   chaîne      |  Nom du package.    |  
-| fileStatus    | chaîne    |  État du package. Les valeurs possibles sont les suivantes&nbsp;: <ul><li>None</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>    |  
+| fileStatus    | chaîne    |  État du package. Les valeurs possibles sont les suivantes : <ul><li>None</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>    |  
 | id    |  chaîne   |  ID qui identifie de manière unique le package. Cette valeur est utilisée par le Centre de développement.   |     
 | version    |  chaîne   |  Version du package d’application. Pour plus d’informations, voir [Numérotation des versions de packages](https://msdn.microsoft.com/windows/uwp/publish/package-version-numbering).   |   
 | architecture    |  chaîne   |  Architecture du package (par exemple, ARM).   |     
 | languages    | tableau    |  Tableau des codes des langues prises en charge par l’application. Pour plus d’informations, voir [Langues prises en charge](https://msdn.microsoft.com/windows/uwp/publish/supported-languages).    |     
 | capabilities    |  tableau   |  Tableau des fonctionnalités exigées par le package. Pour plus d’informations sur les fonctionnalités, voir [Déclarations des fonctionnalités d’application](https://msdn.microsoft.com/windows/uwp/packaging/app-capability-declarations).   |     
-| minimumDirectXVersion    |  chaîne   |  Version DirectX minimale prise en charge par le package d’application. Cette valeur peut être définie uniquement pour les applications qui ciblent Windows&nbsp;8.x. Elle est ignorée pour les applications qui ciblent d’autres versions. Les valeurs possibles sont les suivantes&nbsp;: <ul><li>None</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
-| minimumSystemRam    | chaîne    |  Mémoire RAM minimale exigée par le package d’application. Cette valeur peut être définie uniquement pour les applications qui ciblent Windows&nbsp;8.x. Elle est ignorée pour les applications qui ciblent d’autres versions. Les valeurs possibles sont les suivantes&nbsp;: <ul><li>None</li><li>Memory2GB</li></ul>   |       
-| targetDeviceFamilies    | tableau    |  Tableau de chaînes qui représentent les familles d’appareils que le package cible. Cette valeur est utilisée uniquement pour les packages qui ciblent Windows&nbsp;10. Pour les packages qui ciblent des versions antérieures, cette valeur est **None**. Les chaînes de familles d’appareils suivantes sont actuellement prises en charge pour les packages Windows&nbsp;10, où *{0}* est une chaîne de version de Windows&nbsp;10 comme 10.0.10240.0, 10.0.10586.0 ou 10.0.14393.0&nbsp;: <ul><li>Windows.Universal min version *{0}*</li><li>Windows.Desktop min version *{0}*</li><li>Windows.Mobile min version *{0}*</li><li>Windows.Xbox min version *{0}*</li><li>Windows.Holographic min version *{0}*</li></ul>   |    
+| minimumDirectXVersion    |  chaîne   |  Version DirectX minimale prise en charge par le package d’application. Cette valeur peut être définie uniquement pour les applications qui ciblent Windows 8.x. Elle est ignorée pour les applications qui ciblent d’autres versions. Les valeurs possibles sont les suivantes : <ul><li>None</li><li>DirectX93</li><li>DirectX100</li></ul>   |     
+| minimumSystemRam    | chaîne    |  Mémoire RAM minimale exigée par le package d’application. Cette valeur peut être définie uniquement pour les applications qui ciblent Windows 8.x. Elle est ignorée pour les applications qui ciblent d’autres versions. Les valeurs possibles sont les suivantes : <ul><li>None</li><li>Memory2GB</li></ul>   |       
+| targetDeviceFamilies    | tableau    |  Tableau de chaînes qui représentent les familles d’appareils que le package cible. Cette valeur est utilisée uniquement pour les packages qui ciblent Windows 10. Pour les packages qui ciblent des versions antérieures, cette valeur est **None**. Les chaînes de familles d’appareils suivantes sont actuellement prises en charge pour les packages Windows 10, où *{0}* est une chaîne de version de Windows 10 comme 10.0.10240.0, 10.0.10586.0 ou 10.0.14393.0 : <ul><li>Windows.Universal min version *{0}*</li><li>Windows.Desktop min version *{0}*</li><li>Windows.Mobile min version *{0}*</li><li>Windows.Xbox min version *{0}*</li><li>Windows.Holographic min version *{0}*</li></ul>   |    
 
 <span/>
 
@@ -432,7 +432,7 @@ Cette ressource donne accès aux données du rapport de certification pour une s
 
 | Valeur           | Type    | Description                                                                                                                                                                                                                          |
 |-----------------|---------|------|
-|     date            |    chaîne     |  Date et heure de génération du rapport, au format ISO&nbsp;8601.    |
+|     date            |    chaîne     |  Date et heure de génération du rapport, au format ISO 8601.    |
 |     reportUrl            |    chaîne     |  URL vous permettant d’accéder au rapport.    |
 
 
@@ -473,7 +473,7 @@ Contient les [paramètres de déploiement de package](#manage-gradual-package-ro
 |-----------------|---------|------|
 | isPackageRollout   |   booléen      |  Indique si le déploiement de package progressif est activé pour la soumission.    |  
 | packageRolloutPercentage    | flottant    |  Pourcentage d’utilisateurs qui recevront les packages de déploiement progressif.    |  
-| packageRolloutStatus    |  chaîne   |  Une des chaînes suivantes qui indique l’état de déploiement de package progressif&nbsp;: <ul><li>PackageRolloutNotStarted</li><li>PackageRolloutInProgress</li><li>PackageRolloutComplete</li><li>PackageRolloutStopped</li></ul>  |  
+| packageRolloutStatus    |  chaîne   |  Une des chaînes suivantes qui indique l’état de déploiement de package progressif : <ul><li>PackageRolloutNotStarted</li><li>PackageRolloutInProgress</li><li>PackageRolloutComplete</li><li>PackageRolloutStopped</li></ul>  |  
 | fallbackSubmissionId    |  chaîne   |  ID de la soumission qui sera reçue par les clients n’obtenant pas les packages de déploiement progressif.   |          
 
 <span/>
@@ -490,10 +490,10 @@ Les valeurs suivantes représentent les niveaux de prix disponibles pour une sou
 
 | Valeur           | Description                                                                                                                                                                                                                          |
 |-----------------|------|
-|  Base               |   Le niveau de prix n’est pas défini&nbsp;; utilisez le prix de base de l’application.      |     
+|  Base               |   Le niveau de prix n’est pas défini ; utilisez le prix de base de l’application.      |     
 |  NotAvailable              |   L’application n’est pas disponible dans la région spécifiée.    |     
 |  Free              |   L’application est gratuite.    |    
-|  Tier2 à Tier194               |   Tier2 représente le niveau de prix 0,99&nbsp;USD. Chaque niveau supplémentaire représente des incréments supplémentaires (1,29&nbsp;USD, 1,49&nbsp;USD, 1,99&nbsp;USD, etc.).    |
+|  Tier2 à Tier194               |   Tier2 représente le niveau de prix 0,99 USD. Chaque niveau supplémentaire représente des incréments supplémentaires (1,29 USD, 1,49 USD, 1,99 USD, etc.).    |
 
 
 <span id="enterprise-licensing" />

@@ -11,20 +11,20 @@ ms.openlocfilehash: 7667cfb9671a7517a394f6f691aef4c305c02087
 
 # <a name="launching-resuming-and-background-tasks"></a>Lancement, reprise et tâches en arrière-plan
 
-\[ Article mis à jour pour les applications UWP sur Windows&nbsp;10. Pour les articles sur Windows&nbsp;8.x, consultez l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, consultez l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
-Cette section contient des informations sur ce qui suit&nbsp;:
+Cette section contient des informations sur ce qui suit :
 
 - Ce qui se produit en cas de démarrage, de suspension, de reprise ou d’arrêt d’une application de plateforme Windows universelle (UWP).
 - Comment lancer des applications à l’aide d’un URI ou par activation de fichiers.
 - Comment utiliser des services d’application qui permettent à votre application de plateforme Windows universelle (UWP) de partager des données et des fonctionnalités avec d’autres applications.
-- Comment utiliser des tâches d’arrière-plan qui permettent à une application&nbsp;UWP de fonctionner même lorsqu’elle n’est pas au premier plan.
+- Comment utiliser des tâches d’arrière-plan qui permettent à une application UWP de fonctionner même lorsqu’elle n’est pas au premier plan.
 - Comment détecter les appareils connectés, lancer une application sur un autre appareil et communiquer avec un service d’application sur un appareil distant, pour créer des expériences utilisateur fluides sur plusieurs appareils.
 - Comment ajouter et configurer l’écran de démarrage de votre application.
 
 ## <a name="the-app-lifecycle"></a>Cycle de vie d’une application
 
-Cette rubrique décrit le cycle de vie d’une application de plateforme Windows universelle (UWP) Windows&nbsp;10, depuis son activation jusqu’à sa fermeture.
+Cette rubrique décrit le cycle de vie d’une application de plateforme Windows universelle (UWP) Windows 10, depuis son activation jusqu’à sa fermeture.
 
 | Rubrique | Description |
 |-------|-------------|
@@ -46,7 +46,7 @@ La section [Lancer une application avec un URI](launch-app-with-uri.md) explique
 | [Lancer une application pour obtenir des résultats](how-to-launch-an-app-for-results.md) | Découvrez comment démarrer une application à partir d’une autre, et échanger des données entre les deux. On parle de démarrage d’une application pour afficher les résultats. |
 | [Sélectionner et enregistrer des tonalités à l’aide du schéma d’URI ms-tonepicker](launch-ringtone-picker.md) | Cette rubrique décrit le schéma d’URI ms-tonepicker et explique comment il affiche un outil permettant de sélectionner une tonalité, d’enregistrer une tonalité et de lui attribuer un nom convivial. |
 | [Lancer l’application Paramètres Windows](launch-settings-app.md) | Découvrez comment lancer l’application Paramètres Windows à partir de votre application. Cette rubrique décrit le schéma d’URI ms-settings. Utilisez ce schéma d’URI pour lancer l’application Paramètres Windows en ouvrant des pages de paramètres spécifiques. |
-| [Lancer l’application du Windows&nbsp;Store](launch-store-app.md) | Cette rubrique décrit le schéma d’URI ms-windows-store. Votre application peut utiliser ce schéma d’URI pour lancer l’application du Windows&nbsp;Store sur des pages spécifiques du Windows&nbsp;Store. |
+| [Lancer l’application du Windows Store](launch-store-app.md) | Cette rubrique décrit le schéma d’URI ms-windows-store. Votre application peut utiliser ce schéma d’URI pour lancer l’application du Windows Store sur des pages spécifiques du Windows Store. |
 | [Lancer l’application Cartes Windows](launch-maps-app.md) | Découvrez comment lancer l’application Cartes Windows à partir de votre application. |
 | [Lancer l’application Contacts](launch-people-apps.md) | Cette rubrique décrit le schéma d’URI ms-people. Votre application peut utiliser ce schéma d’URI afin de lancer l’application Contacts pour effectuer des actions spécifiques. |
 | [Prise en charge de la liaison application-site web avec les gestionnaires d’URI d’application](web-to-app-linking.md) | Rendez votre application plus attractive avec des gestionnaires d’URI d’application. |
@@ -63,11 +63,11 @@ Consultez les rubriques liées au lancement d’une application ci-dessous.
 | Rubrique | Description |
 |-------|-------------|
 | [Noms de schéma d’URI et de fichier réservés](reserved-uri-scheme-names.md) | Cette rubrique répertorie les noms de schéma d’URI et de fichier réservés, indisponibles pour votre application. |
-| [Démarrage automatique avec lecture automatique](auto-launching-with-autoplay.md) | Vous pouvez utiliser la lecture automatique pour proposer votre application en tant qu’option lorsque l’utilisateur connecte un périphérique à son PC. Cela inclut les appareils qui ne sont pas des volumes, tels qu’un appareil photo ou un lecteur multimédia, et les appareils qui sont des volumes, tels qu’une clé&nbsp;USB, une carte mémoire&nbsp;SD ou un DVD. |
+| [Démarrage automatique avec lecture automatique](auto-launching-with-autoplay.md) | Vous pouvez utiliser la lecture automatique pour proposer votre application en tant qu’option lorsque l’utilisateur connecte un périphérique à son PC. Cela inclut les appareils qui ne sont pas des volumes, tels qu’un appareil photo ou un lecteur multimédia, et les appareils qui sont des volumes, tels qu’une clé USB, une carte mémoire SD ou un DVD. |
 
 ## <a name="app-services"></a>Services d’application
 
-La section [Services d’application](app-services.md) décrit comment intégrer des services d’application dans votre application&nbsp;UWP pour autoriser le partage des données et des fonctionnalités entre les applications.
+La section [Services d’application](app-services.md) décrit comment intégrer des services d’application dans votre application UWP pour autoriser le partage des données et des fonctionnalités entre les applications.
 
 | Rubrique | Description |
 |-------|-------------|
@@ -99,7 +99,7 @@ La section [Tâches en arrière-plan](support-your-app-with-background-tasks.md)
 
 ## <a name="remote-systems"></a>Systèmes distants
 
-La section [Applications et appareils connectés (projet «&nbsp;Rome&nbsp;»)](connected-apps-and-devices.md) explique comment utiliser la plateforme Systèmes distants pour identifier les appareils distants, lancer une application sur un appareil distant et communiquer avec un service d’application sur un appareil distant.
+La section [Applications et appareils connectés (projet « Rome »)](connected-apps-and-devices.md) explique comment utiliser la plateforme Systèmes distants pour identifier les appareils distants, lancer une application sur un appareil distant et communiquer avec un service d’application sur un appareil distant.
 
 | Rubrique | Description |
 |-------|-------------|

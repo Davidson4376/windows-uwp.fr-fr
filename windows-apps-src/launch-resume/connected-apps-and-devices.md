@@ -8,19 +8,19 @@ ms.openlocfilehash: 2dbce34aeaf4933eee22e1e8ef40c48e633f6f7e
 
 ---
 
-# <a name="connected-apps-and-devices-project-rome"></a>Applications et appareils connectés (projet «&nbsp;Rome&nbsp;»)
+# <a name="connected-apps-and-devices-project-rome"></a>Applications et appareils connectés (projet « Rome »)
 
-Cette section explique comment connecter des applications sur différents appareils et plateformes à l’aide du projet «&nbsp;Rome&nbsp;». Découvrez comment détecter les appareils distants, lancer une application sur un appareil distant et communiquer avec un service d’application sur un appareil distant.
+Cette section explique comment connecter des applications sur différents appareils et plateformes à l’aide du projet « Rome ». Découvrez comment détecter les appareils distants, lancer une application sur un appareil distant et communiquer avec un service d’application sur un appareil distant.
 
 La plupart des gens ont plusieurs appareils et commencent souvent une activité sur un pour la terminer sur un autre. Pour répondre à cette situation, les applications doivent être accessibles sur plusieurs appareils et plateformes.
 
-Les [API Systèmes distants](https://msdn.microsoft.com/en-us/library/windows/apps/Windows.System.RemoteSystems) intégrées dans Windows&nbsp;10 version&nbsp;1607 vous permettent d’écrire des applications grâce auxquelles les utilisateurs peuvent commencer une tâche sur un appareil et la terminer sur un autre. La tâche reste le point central, et les utilisateurs peuvent faire leur travail sur l’appareil le plus pratique pour eux. Par exemple, vous pouvez écouter la radio sur votre téléphone en voiture, mais une fois à la maison, vous voudrez sans doute transférer la lecture à votre Xbox One qui est raccordée à votre chaîne stéréo.
+Les [API Systèmes distants](https://msdn.microsoft.com/en-us/library/windows/apps/Windows.System.RemoteSystems) intégrées dans Windows 10 version 1607 vous permettent d’écrire des applications grâce auxquelles les utilisateurs peuvent commencer une tâche sur un appareil et la terminer sur un autre. La tâche reste le point central, et les utilisateurs peuvent faire leur travail sur l’appareil le plus pratique pour eux. Par exemple, vous pouvez écouter la radio sur votre téléphone en voiture, mais une fois à la maison, vous voudrez sans doute transférer la lecture à votre Xbox One qui est raccordée à votre chaîne stéréo.
 
-Vous pouvez également utiliser le projet «&nbsp;Rome&nbsp;» pour les appareils compléments, ou des scénarios de contrôle à distance. Utilisez les API de messagerie d’application pour créer un canal d’application entre deux&nbsp;appareils afin d’échanger des messages personnalisés. Par exemple, vous pouvez écrire une application pour votre téléphone, qui contrôle la lecture sur votre téléviseur, ou une application complément qui fournit des informations sur les personnages d’une émission de télévision que vous regardez sur une autre application.  
+Vous pouvez également utiliser le projet « Rome » pour les appareils compléments, ou des scénarios de contrôle à distance. Utilisez les API de messagerie d’application pour créer un canal d’application entre deux appareils afin d’échanger des messages personnalisés. Par exemple, vous pouvez écrire une application pour votre téléphone, qui contrôle la lecture sur votre téléviseur, ou une application complément qui fournit des informations sur les personnages d’une émission de télévision que vous regardez sur une autre application.  
 
 Les appareils peuvent être connectés à proximité par Bluetooth et sans fil, ou à distance par le cloud, à l’aide du compte Microsoft de la personne qui les utilise.
 
-Pour des exemples illustrant comment détecter le système distant, lancer une application sur un système distant et utiliser des services d’application pour échanger des messages entre des applications qui s’exécutent sur deux&nbsp;systèmes, consultez la section [Exemple de Systèmes distants](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems ).
+Pour des exemples illustrant comment détecter le système distant, lancer une application sur un système distant et utiliser des services d’application pour échanger des messages entre des applications qui s’exécutent sur deux systèmes, consultez la section [Exemple de Systèmes distants](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems ).
 
 | Rubrique | Description |
 |-------|-------------|

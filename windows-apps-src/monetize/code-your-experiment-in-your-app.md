@@ -1,6 +1,6 @@
 ---
 author: mcleanbyron
-Description: "Pour exécuter une expérience dans votre app. de plateforme&nbsp;Windows universelle (UWP) avec des tests&nbsp;A/B, vous devez code l’expérience dans votre application."
+Description: "Pour exécuter une expérience dans votre app. de plateforme Windows universelle (UWP) avec des tests A/B, vous devez code l’expérience dans votre application."
 title: "Coder votre application à des fins d’expérimentation"
 ms.assetid: 6A5063E1-28CD-4087-A4FA-FBB511E9CED5
 translationtype: Human Translation
@@ -11,28 +11,28 @@ ms.openlocfilehash: cc32e2688bce636e1f4bda02aade4ed1d94f3e28
 
 # <a name="code-your-app-for-experimentation"></a>Coder votre application à des fins d’expérimentation
 
-Une fois que vous avez [créé un projet et défini des variables distantes dans le tableau de bord du Centre de développement](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md), vous êtes prêt à mettre à jour le code dans votre application de plateforme&nbsp;Windows universelle (UWP) dans le but de&nbsp;:
-* recevoir des valeurs de variables distances à partir du Centre de développement Windows&nbsp;;
-* utiliser des variables distantes pour configurer des expériences d’application pour vos utilisateurs&nbsp;;
+Une fois que vous avez [créé un projet et défini des variables distantes dans le tableau de bord du Centre de développement](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md), vous êtes prêt à mettre à jour le code dans votre application de plateforme Windows universelle (UWP) dans le but de :
+* recevoir des valeurs de variables distances à partir du Centre de développement Windows ;
+* utiliser des variables distantes pour configurer des expériences d’application pour vos utilisateurs ;
 * consigner les événements dans le Centre de développement qui indiquent à quels moments les utilisateurs ont visualisé votre expérience et effectué une action désirée (aussi appelée *conversion*).
 
 Pour ajouter ce comportement à votre application, vous allez utiliser les API fournies par le Microsoft Store Services SDK.
 
 Les sections suivantes décrivent le processus général d’obtention de variantes pour votre expérience et de consignation des événements dans le Centre de développement. Après avoir codé votre application à des fins d’expérimentation, vous pouvez [définir une expérience dans le tableau de bord du Centre de développement](define-your-experiment-in-the-dev-center-dashboard.md). Pour découvrir une procédure pas à pas illustrant le processus de création et d’exécution d’une expérience de bout en bout, voir [Créer et exécuter votre première expérience avec des tests A/B](create-and-run-your-first-experiment-with-a-b-testing.md).
 
->**Remarque**&nbsp;&nbsp;Certaines des API d’expérimentation dans le Kit de développement logiciel (SDK) Windows Store Services utilisent le [modèle asynchrone](../threading-async/asynchronous-programming-universal-windows-platform-apps.md) pour récupérer les données à partir du Centre de développement. Cela signifie qu’une partie de l’exécution de ces méthodes peut avoir lieu après l’appel des méthodes, afin que l’interface utilisateur de votre application puisse rester réactive pendant que les opérations se terminent. Le modèle asynchrone exige que votre application utilise le mot-clé **async** et l’opérateur **await** pour appeler les API, comme illustré par les exemples de code dans cet article. Par convention, les méthodes asynchrones se terminent par **Async**.
+>**Remarque**  Certaines des API d’expérimentation dans le Kit de développement logiciel (SDK) Windows Store Services utilisent le [modèle asynchrone](../threading-async/asynchronous-programming-universal-windows-platform-apps.md) pour récupérer les données à partir du Centre de développement. Cela signifie qu’une partie de l’exécution de ces méthodes peut avoir lieu après l’appel des méthodes, afin que l’interface utilisateur de votre application puisse rester réactive pendant que les opérations se terminent. Le modèle asynchrone exige que votre application utilise le mot-clé **async** et l’opérateur **await** pour appeler les API, comme illustré par les exemples de code dans cet article. Par convention, les méthodes asynchrones se terminent par **Async**.
 
 ## <a name="configure-your-project"></a>Configurer votre projet
 
 Pour commencer, installez le Kit de développement logiciel Microsoft Store Services SDK sur votre ordinateur de développement et ajoutez les références nécessaires à votre projet.
 
 1. Installez le [Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk).
-2. Ouvrez votre projet dans Visual&nbsp;Studio.
+2. Ouvrez votre projet dans Visual Studio.
 3. Dans l’Explorateur de solutions, développez votre nœud de projet, cliquez avec le bouton droit sur **Références**, puis sélectionnez **Ajouter une référence**.
 3. Dans le **Gestionnaire de références**, développez **Windows universel**, puis cliquez sur **Extensions**.
 4. Dans la liste des kits de développement logiciel (SDK), cochez la case en regard de **Microsoft Engagement Framework** et cliquez sur **OK**.
 
->**Remarque**&nbsp;&nbsp;Les exemples de code dans cet article supposent que votre fichier de code disposent d’instructions **using** pour les espaces de noms **System.Threading.Tasks** et **Microsoft.Services.Store.Engagement**.
+>**Remarque**  Les exemples de code dans cet article supposent que votre fichier de code disposent d’instructions **using** pour les espaces de noms **System.Threading.Tasks** et **Microsoft.Services.Store.Engagement**.
 
 ## <a name="get-variation-data-and-log-the-view-event-for-your-experiment"></a>Obtenir des données de variante et consigner l’événement d’affichage pour votre expérience
 
@@ -51,7 +51,7 @@ Les étapes suivantes décrivent les éléments importants de ce processus en d�
   [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet1)]
 
 1. Déclarez une variable de chaîne affectée à l’[ID de projet](run-app-experiments-with-a-b-testing.md#terms) de l’expérience que vous souhaitez récupérer.
-  >**Remarque**&nbsp;&nbsp;Vous obtenez un ID de projet au moment de [créer un projet dans le tableau de bord du Centre de développement](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md). L’ID de projet présenté ci-dessous n’est fourni qu’à titre d’exemple.
+  >**Remarque**  Vous obtenez un ID de projet au moment de [créer un projet dans le tableau de bord du Centre de développement](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md). L’ID de projet présenté ci-dessous n’est fourni qu’à titre d’exemple.
 
   > [!div class="tabbedCodeSnippets"]
   [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet2)]
@@ -87,7 +87,7 @@ Les étapes suivantes décrivent les éléments importants de ce processus en d�
 
 ## <a name="log-conversion-events-to-dev-center"></a>Consigner les événements de conversion dans le Centre de développement
 
-Ensuite, ajoutez du code qui consigne les [événements de conversion](run-app-experiments-with-a-b-testing.md#terms) dans le service des tests&nbsp;A/B du Centre de développement. Votre code doit consigner un événement de conversion quand l’utilisateur atteint un objectif pour votre expérience. Le code spécifique dont vous avez besoin dépend de votre application, mais voici les étapes générales. Pour obtenir un exemple de code complet, voir [Créer et exécuter votre première expérience avec des tests A/B](create-and-run-your-first-experiment-with-a-b-testing.md).
+Ensuite, ajoutez du code qui consigne les [événements de conversion](run-app-experiments-with-a-b-testing.md#terms) dans le service des tests A/B du Centre de développement. Votre code doit consigner un événement de conversion quand l’utilisateur atteint un objectif pour votre expérience. Le code spécifique dont vous avez besoin dépend de votre application, mais voici les étapes générales. Pour obtenir un exemple de code complet, voir [Créer et exécuter votre première expérience avec des tests A/B](create-and-run-your-first-experiment-with-a-b-testing.md).
 
 1. Dans le code qui s’exécute quand l’utilisateur atteint un objectif pour l’un des objectifs de l’expérience, appelez de nouveau la méthode [LogForVariation](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation.aspx) et transmettez l’objet [StoreServicesExperimentVariation](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesexperimentvariation.aspx) et le nom d’un événement de conversion pour votre expérience. Cela doit correspondre aux noms des événements de conversion que vous entrez pour votre expérience dans le tableau de bord du Centre de développement.
 
@@ -98,7 +98,7 @@ Ensuite, ajoutez du code qui consigne les [événements de conversion](run-app-e
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Dès lors que vous avez codé l’expérience dans votre application, vous êtes prêt pour les étapes suivantes&nbsp;:
+Dès lors que vous avez codé l’expérience dans votre application, vous êtes prêt pour les étapes suivantes :
 1. [Définissez votre expérience dans le tableau de bord du Centre de développement](define-your-experiment-in-the-dev-center-dashboard.md). Créez une expérience qui définisse les événements d’affichage, les événements de conversion et les variantes uniques pour votre test A/B.
 2. [Exécutez et gérez votre expérience dans le tableau de bord du Centre de développement](manage-your-experiment.md).
 
