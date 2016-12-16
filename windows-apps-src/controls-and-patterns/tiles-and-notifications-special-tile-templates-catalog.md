@@ -10,12 +10,8 @@ ms.sourcegitcommit: d51aacb31f41cbd9c065b013ffb95b83a6edaaf4
 ms.openlocfilehash: fc01951adfb151f1c5952d9181492a1d1f88b0cc
 
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 # <a name="special-tile-templates"></a>Modèles de vignette spéciaux
-
-
-
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 Les modèles de vignette spéciaux sont des modèles uniques qui sont animés, ou qui vous permettent simplement d’effectuer des opérations qui ne sont pas possibles avec des vignettes adaptatives. Chaque modèle de vignette spécial a été spécifiquement conçu pour Windows 10, sauf pour le modèle de vignette Icônes, modèle spécial classique qui a été mis à jour pour Windows 10. Cet article traite des trois modèles de vignette spéciaux : Icônes, Photos et Contacts.
 

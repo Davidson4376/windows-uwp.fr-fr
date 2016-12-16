@@ -13,16 +13,17 @@ ms.openlocfilehash: d4458b66f4f1917e99495353a088680b19cb94c9
 ---
 
 # <a name="store-and-retrieve-windows-ink-stroke-data"></a>Stocker et récupérer les données de traits Windows Ink
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 Les applications UWP qui prennent en charge Windows Ink peuvent sérialiser et désérialiser les traits d’encre dans un fichier ISF (Ink Serialized Format). Le fichier ISF est une image GIF contenant des métadonnées supplémentaires pour tous les comportements et propriétés de traits d’encre. Les applications qui ne sont pas compatibles avec les entrées manuscrites peuvent afficher l’image GIF statique, y compris la transparence d’arrière-plan de canal alpha.
 
-
-**API importantes**
-
--   [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)
--   [**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
-
+<div class="important-apis" >
+<b>API importantes</b><br/>
+<ul>
+<li>[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)</li>
+<li>[**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)</li>
+</ul>
+</div>
 
 
 > [!NOTE]
