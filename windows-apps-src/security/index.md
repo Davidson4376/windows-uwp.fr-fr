@@ -4,23 +4,23 @@ description: "Cette section contient des articles sur la création d’applicati
 ms.assetid: 41E2EEFB-E8A9-4592-814C-72B703CD952C
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: a178f992ddd39b5609ce6d15b7e3560e157b9afb
-ms.openlocfilehash: 19f024bd3ad99b4ef9355cc3c9229b1b3ffc51e2
+ms.sourcegitcommit: 82f6e2decde2d332bd08b0b9798350b973860f21
+ms.openlocfilehash: b30492c3c74b19d5ce306829302be17ff303723f
 
 ---
 
-# Sécurité
+# <a name="security"></a>Sécurité
 
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
-Cette section contient des articles sur la création d’applications de plateforme Windows universelle (UWP) sécurisées pour Windows10.
+Cette section contient des articles sur la création d’applications de plateforme Windows universelle (UWP) sécurisées pour Windows 10.
 
-## Introduction 
+## <a name="introduction"></a>Introduction 
 
-Si vous débutez dans le développement d’applications Windows ou UWP, commencez par l’article [Présentation du développement d’applications Windows sécurisées](web-authentication-broker.md). Cet article introductif offre une vue d’ensemble des considérations en matière de sécurité pour les applications et les différentes fonctionnalités disponibles dans Windows10.
+Si vous débutez dans le développement d’applications Windows ou UWP, commencez par l’article [Présentation du développement d’applications Windows sécurisées](intro-to-secure-windows-app-development.md). Cet article introductif offre une vue d’ensemble des considérations en matière de sécurité pour les applications et les différentes fonctionnalités disponibles dans Windows 10.
 
-## Authentification et identité des utilisateurs
+## <a name="authentication-and-user-identity"></a>Authentification et identité des utilisateurs
 
 La [section sur l’authentification et l’identité des utilisateurs](authentication-and-user-identity.md) présente les procédures pas à pas concernant les scénarios liés à la connexion et à l’identité de l’utilisateur. Les applications ont plusieurs options pour l’authentification des utilisateurs. Cela peut aller de l’authentification unique (SSO) à l’aide d’un [service Broker d’authentification Web](web-authentication-broker.md) à l’authentification hautement sécurisée à deux facteurs.
 
@@ -34,12 +34,12 @@ La [section sur l’authentification et l’identité des utilisateurs](authenti
 <tr><td>[Créer un service de connexion Microsoft Passport](microsoft-passport-login-auth-service.md)</td><td>Deuxième partie de la procédure complète sur l’utilisation de Microsoft Passport comme alternative aux systèmes d’authentification par nom d’utilisateur et mot de passe traditionnels dans des applications UWP Windows 10.</td></tr>
 <tr><td>[Cartes à puce](smart-cards.md)</td><td>Cette rubrique explique comment les applications peuvent utiliser des cartes à puce pour connecter des utilisateurs à des services réseau sécurisés, notamment comment accéder aux lecteurs de carte à puce physiques, créer des cartes à puce virtuelles, communiquer avec des cartes à puce, authentifier des utilisateurs, réinitialiser des PIN d’utilisateur, et supprimer ou déconnecter des cartes à puce.</td></tr>
 <tr><td>[Partager des certificats entre applications](share-certificates.md)</td><td>Les applications UWP qui nécessitent une authentification sécurisée en plus de l’identifiant et du mot de passe de l’utilisateur peuvent utiliser des certificats à des fins d’authentification. L’authentification par certificat permet d’authentifier un utilisateur avec un niveau de confiance élevé. Dans certains cas, un groupe de services peut authentifier un utilisateur pour plusieurs applications. Cet article montre comment authentifier plusieurs applications à l’aide du même certificat. Vous apprendrez également à écrire du code pour permettre à un utilisateur d’importer un certificat fourni pour accéder à des services web sécurisés.</td></tr>
-<tr><td>[DéverrouillageWindows avec appareils IoT complémentaires](companion-device-unlock.md)</td><td>Un dispositif complémentaire est un appareil pouvant agir en conjonction avec votre ordinateur de bureau Windows10 pour améliorer l’expérience d’authentification utilisateur. S’appuyant sur l’infrastructure CompanionDeviceFramework, un dispositif complémentaire peut enrichir considérablement l’expérience MicrosoftPassport, même en l’absence de WindowsHello (par exemple, si l’ordinateur de bureau Windows10 ne dispose pas d’appareil photo pour l’authentification faciale ou d’un lecteur d’empreintes digitales).</td></tr>
-<tr><td>[Gestionnaire de comptes web](web-account-manager.md)</td><td>Cet article explique comment afficher la classe AccountsSettingsPane et connecter votre application de plateforme Windows universelle (UWP) à des fournisseurs d’identité externes, tels que Microsoft ou Facebook, à l’aide des nouvelles API du Gestionnaire de comptes web de Windows10. Vous découvrirez comment demander l’autorisation d’un utilisateur pour utiliser son compte Microsoft, obtenir un jeton d’accès et l’utiliser pour effectuer des opérations de base (par exemple, obtenir des données de profil ou télécharger des fichiers dans OneDrive). </td></tr>
+<tr><td>[Déverrouillage Windows avec appareils IoT complémentaires](companion-device-unlock.md)</td><td>Un dispositif complémentaire est un appareil pouvant agir en conjonction avec votre ordinateur de bureau Windows 10 pour améliorer l’expérience d’authentification utilisateur. S’appuyant sur l’infrastructure Companion Device Framework, un dispositif complémentaire peut enrichir considérablement l’expérience Microsoft Passport, même en l’absence de Windows Hello (par exemple, si l’ordinateur de bureau Windows 10 ne dispose pas d’appareil photo pour l’authentification faciale ou d’un lecteur d’empreintes digitales).</td></tr>
+<tr><td>[Gestionnaire de comptes web](web-account-manager.md)</td><td>Cet article explique comment afficher la classe AccountsSettingsPane et connecter votre application de plateforme Windows universelle (UWP) à des fournisseurs d’identité externes, tels que Microsoft ou Facebook, à l’aide des nouvelles API du Gestionnaire de comptes web de Windows 10. Vous découvrirez comment demander l’autorisation d’un utilisateur pour utiliser son compte Microsoft, obtenir un jeton d’accès et l’utiliser pour effectuer des opérations de base (par exemple, obtenir des données de profil ou télécharger des fichiers dans OneDrive). </td></tr>
 <tr><td>[Service Broker d’authentification web](web-authentication-broker.md)</td><td>Cet article explique comment connecter votre application à un fournisseur d’identité en ligne qui utilise des protocoles d’authentification comme OpenID ou OAuth, par exemple, Facebook, Twitter, Flickr, Instagram, etc. La méthode [AuthenticateAsync](https://msdn.microsoft.com/library/windows/apps/br212066) envoie une demande au fournisseur d’identité en ligne, puis obtient un jeton d’accès en retour qui décrit les ressources du fournisseur auxquelles l’application a accès.</td></tr>
 </table>
 
-## Chiffrement 
+## <a name="cryptography"></a>Chiffrement 
 
 La section sur le chiffrement contient des informations sur des sujets plus complexes liés au chiffrement. 
 
@@ -54,6 +54,6 @@ La section sur le chiffrement contient des informations sur des sujets plus comp
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Dec16_HO1-->
 
 

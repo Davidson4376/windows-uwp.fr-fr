@@ -4,28 +4,30 @@ title: "Lancement, reprise et tâches en arrière-plan"
 description: "Cette section décrit ce qui se produit en cas de démarrage, de suspension, de reprise et d’arrêt d’une application de plateforme Windows universelle (UWP)."
 ms.assetid: 75011D52-1511-4ECF-9DF6-52CBBDB15BD7
 translationtype: Human Translation
-ms.sourcegitcommit: 7ed2596c33338c3954b6cfe1e779284283ae7769
-ms.openlocfilehash: 3b1be5b6951b72d5699e7b31e95702b827b741b5
+ms.sourcegitcommit: a21b2e9bb41e951660916bbbdb09b0bd3e5ecf2d
+ms.openlocfilehash: 7667cfb9671a7517a394f6f691aef4c305c02087
 
 ---
 
-# Lancement, reprise et tâches en arrière-plan
+# <a name="launching-resuming-and-background-tasks"></a>Lancement, reprise et tâches en arrière-plan
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, consultez l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, consultez l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132).\]
 
-Cette section décrit les éléments suivants:
+Cette section contient des informations sur ce qui suit :
 
-- Ce qui se produit en cas de démarrage, de suspension, de reprise et d’arrêt d’une application de plateforme Windows universelle (UWP).
-- Comment activer des applications à l’aide d’un contrat ou une extension.  
-- Comment utiliser des tâches en arrière-plan qui permettent à une application UWP de fonctionner même lorsqu’elle n’est pas au premier plan.
-- Les services d’application, qui permettent à votre application de plateforme Windows universelle (UWP) d’offrir des services utilisables par d’autres applications UWP, pour pouvoir créer des applications qui s’appuient les unes sur les autres.
-- Comment détecter les appareils connectés, lancer une application sur un autre appareil et communiquer avec une application sur un appareil distant, pour pouvoir créer des expériences utilisateur fluides sur plusieurs appareils.
-- Comment ajouter un écran de démarrage à votre application.
+- Ce qui se produit en cas de démarrage, de suspension, de reprise ou d’arrêt d’une application de plateforme Windows universelle (UWP).
+- Comment lancer des applications à l’aide d’un URI ou par activation de fichiers.
+- Comment utiliser des services d’application qui permettent à votre application de plateforme Windows universelle (UWP) de partager des données et des fonctionnalités avec d’autres applications.
+- Comment utiliser des tâches d’arrière-plan qui permettent à une application UWP de fonctionner même lorsqu’elle n’est pas au premier plan.
+- Comment détecter les appareils connectés, lancer une application sur un autre appareil et communiquer avec un service d’application sur un appareil distant, pour créer des expériences utilisateur fluides sur plusieurs appareils.
+- Comment ajouter et configurer l’écran de démarrage de votre application.
 
-## Le cycle de vie de l’application
+## <a name="the-app-lifecycle"></a>Cycle de vie d’une application
 
-| Rubrique                                            | Description                                                                                                     |
-|--------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
+Cette rubrique décrit le cycle de vie d’une application de plateforme Windows universelle (UWP) Windows 10, depuis son activation jusqu’à sa fermeture.
+
+| Rubrique | Description |
+|-------|-------------|
 | [Cycle de vie de l’application](app-lifecycle.md)               | Découvrez le cycle de vie d’une application UWP et ce qui se passe quand Windows lance, suspend et reprend l’exécution de votre application. |
 | [Gérer le prélancement d’une application](handle-app-prelaunch.md) | Découvrez comment gérer le prélancement d’une application.                                                                              |
 | [Gérer l’activation d’une application](activate-an-app.md)     | Découvrez comment gérer l’activation d’une application.                                                                             |
@@ -33,33 +35,54 @@ Cette section décrit les éléments suivants:
 | [Gérer la reprise d’une application](resume-an-app.md)           | Apprenez à actualiser le contenu à l’écran lorsque le système reprend l’exécution de votre application.                                        |
 | [Libérer de la mémoire lorsque l’application bascule en arrière-plan](reduce-memory-usage.md)           | Découvrez comment réduire la quantité de mémoire utilisée par votre application lorsqu’elle est en arrière-plan, afin qu’elle ne soit pas arrêtée.                                        |
 
-## Lancer des applications
+## <a name="launch-apps"></a>Lancer des applications
 
-| Activation d’URI et de fichier                                                                         | Description                                                                                                                                                                |
-|-------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Applications et appareils connectés (projet «Rome»)](connected-apps-and-devices.md) | Découvrez comment détecter les appareils connectés, lancer une application sur un autre appareil et communiquer avec une application sur un appareil distant. |
-| [Lancer une application pour obtenir des résultats](how-to-launch-an-app-for-results.md)                               | Découvrez comment démarrer une application à partir d’une autre et échanger des données entre les deux. |
-| [Lancer l’application par défaut pour un URI](launch-default-app.md)                                      | Découvrez comment lancer l’application par défaut pour un URI (Uniform Resource Identifier).  |
-| [Lancer une application sur un appareil distant](launch-a-remote-app.md)                                     | Découvrez comment lancer une application pour un URI sur un appareil distant. |
-| [Gérer l’activation des URI](handle-uri-activation.md)                                              | Découvrez comment inscrire une application pour en faire le gestionnaire par défaut d’un nom de schéma d’URI. |
-| [Liaisons application-site web avec les gestionnaires d’URI](web-to-app-linking.md) | Découvrez comment inscrire une application comme gestionnaire par défaut d’une liaison http ou https. |
-| [Lancer l’application par défaut d’un fichier](launch-the-default-app-for-a-file.md)                      | Découvrez comment lancer l’application par défaut pour un type fichier.  |
-| [Gérer l’activation des fichiers](handle-file-activation.md)                                            | Découvrez comment inscrire votre application comme gestionnaire par défaut d’un type de fichier.  |
-| [Noms de schéma d’URI et de fichier réservés](reserved-uri-scheme-names.md)                             | Cette rubrique répertorie les noms de schéma d’URI et de fichier réservés, indisponibles pour votre application.  |
-| [Démarrage automatique avec lecture automatique](auto-launching-with-autoplay.md)                                | Découvrez comment utiliser la lecture automatique pour proposer votre application comme une option lorsque l’utilisateur connecte un appareil à son PC.  |
-| [Lancer l’application Paramètres Windows](launch-settings-app.md)                                      | Découvrez comment lancer l’application Paramètres Windows.  |
-| [Lancer l’application du Windows Store](launch-store-app.md)                                            | Découvrez comment lancer l’application du Windows Store.  |
-| [Lancer l’application Cartes Windows](launch-maps-app.md)                                              | Découvrez comment lancer l’application Cartes Windows.  |
-| [Lancer l’application Personnes Windows](launch-people-apps.md)                                                 | Découvrez comment lancer l’application Personnes Windows.  |
+La section [Lancer une application avec un URI](launch-app-with-uri.md) explique comment utiliser un URI (Uniform Resource Identifier) pour lancer une application à partir d’une autre application.
 
-## Tâches en arrière-plan
+| Rubrique | Description |
+|-------|-------------|
+| [Lancer l’application par défaut d’un URI](launch-default-app.md) | Découvrez comment lancer l’application par défaut d’un URI (Uniform Resource Identifier). Un URI permet de lancer une autre application pour effectuer une tâche spécifique. Cette rubrique fournit également une vue d’ensemble des nombreux schémas d’URI intégrés à Windows. |
+| [Gérer l’activation des URI](handle-uri-activation.md) | Découvrez comment inscrire une application pour qu’elle devienne le gestionnaire par défaut d’un nom de schéma URI (Uniform Resource Identifier). |
+| [Lancer une application pour obtenir des résultats](how-to-launch-an-app-for-results.md) | Découvrez comment démarrer une application à partir d’une autre, et échanger des données entre les deux. On parle de démarrage d’une application pour afficher les résultats. |
+| [Sélectionner et enregistrer des tonalités à l’aide du schéma d’URI ms-tonepicker](launch-ringtone-picker.md) | Cette rubrique décrit le schéma d’URI ms-tonepicker et explique comment il affiche un outil permettant de sélectionner une tonalité, d’enregistrer une tonalité et de lui attribuer un nom convivial. |
+| [Lancer l’application Paramètres Windows](launch-settings-app.md) | Découvrez comment lancer l’application Paramètres Windows à partir de votre application. Cette rubrique décrit le schéma d’URI ms-settings. Utilisez ce schéma d’URI pour lancer l’application Paramètres Windows en ouvrant des pages de paramètres spécifiques. |
+| [Lancer l’application du Windows Store](launch-store-app.md) | Cette rubrique décrit le schéma d’URI ms-windows-store. Votre application peut utiliser ce schéma d’URI pour lancer l’application du Windows Store sur des pages spécifiques du Windows Store. |
+| [Lancer l’application Cartes Windows](launch-maps-app.md) | Découvrez comment lancer l’application Cartes Windows à partir de votre application. |
+| [Lancer l’application Contacts](launch-people-apps.md) | Cette rubrique décrit le schéma d’URI ms-people. Votre application peut utiliser ce schéma d’URI afin de lancer l’application Contacts pour effectuer des actions spécifiques. |
+| [Prise en charge de la liaison application-site web avec les gestionnaires d’URI d’application](web-to-app-linking.md) | Rendez votre application plus attractive avec des gestionnaires d’URI d’application. |
 
-| Rubrique                                                                                                            | Description                                                                                                                                                                                   |
-|------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Prendre en charge votre application avec des tâches en arrière-plan](support-your-app-with-background-tasks.md)                             | Les rubriques de cette section expliquent comment exécuter votre propre code léger en arrière-plan en répondant aux déclencheurs au moyen de tâches en arrière-plan.                                                       |
-| [Accéder aux capteurs et aux périphériques à partir d’une tâche en arrière-plan](access-sensors-and-devices-from-a-background-task.md)       | [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) permet à votre application Windows universelle d’accéder aux capteurs et aux périphériques en arrière-plan, même si votre application au premier plan est suspendue. |
+La section [Lancer une application par l’activation de fichiers](launch-app-from-file.md) explique comment configurer le démarrage de votre application à l’ouverture d’un fichier d’un type donné.
+
+| Rubrique | Description |
+|-------|-------------|
+| [Lancer l’application par défaut d’un fichier](launch-the-default-app-for-a-file.md) | Découvrez comment lancer l’application par défaut d’un fichier. |
+| [Gérer l’activation des fichiers](handle-file-activation.md) | Découvrez comment inscrire votre application comme gestionnaire par défaut d’un type de fichier. |
+
+Consultez les rubriques liées au lancement d’une application ci-dessous.
+
+| Rubrique | Description |
+|-------|-------------|
+| [Noms de schéma d’URI et de fichier réservés](reserved-uri-scheme-names.md) | Cette rubrique répertorie les noms de schéma d’URI et de fichier réservés, indisponibles pour votre application. |
+| [Démarrage automatique avec lecture automatique](auto-launching-with-autoplay.md) | Vous pouvez utiliser la lecture automatique pour proposer votre application en tant qu’option lorsque l’utilisateur connecte un périphérique à son PC. Cela inclut les appareils qui ne sont pas des volumes, tels qu’un appareil photo ou un lecteur multimédia, et les appareils qui sont des volumes, tels qu’une clé USB, une carte mémoire SD ou un DVD. |
+
+## <a name="app-services"></a>Services d’application
+
+La section [Services d’application](app-services.md) décrit comment intégrer des services d’application dans votre application UWP pour autoriser le partage des données et des fonctionnalités entre les applications.
+
+| Rubrique | Description |
+|-------|-------------|
+| [Créer et utiliser un service d’application](how-to-create-and-consume-an-app-service.md) | Découvrez comment écrire une application de plateforme Windows universelle (UWP) fournissant des services à d’autres applications UWP et comment utiliser ces derniers. |
+| [Convertir un service d’application pour qu’il s’exécute dans le même processus que son application hôte](convert-app-service-in-process.md) | Convertissez un code de service d’application qui s’exécutait dans un processus distinct en arrière-plan en code qui s’exécute dans le même processus que votre fournisseur de service d’application. |
+
+## <a name="background-tasks"></a>Tâches en arrière-plan
+
+La section [Tâches en arrière-plan](support-your-app-with-background-tasks.md) vous montre comment exécuter du code léger en arrière-plan, en réponse à des déclencheurs.
+
+| Rubrique | Description |
+|-------|-------------|
+| [Accéder à des capteurs et des appareils à partir d’une tâche en arrière-plan](access-sensors-and-devices-from-a-background-task.md)       | [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) permet à votre application Windows universelle d’accéder aux capteurs et aux périphériques en arrière-plan, même si votre application au premier plan est suspendue. |
 | [Recommandations pour les tâches en arrière-plan](guidelines-for-background-tasks.md)                                           | Assurez-vous que votre application répond aux exigences relatives à l’exécution de tâches en arrière-plan.                                                                                                                          |
-| [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-an-outofproc-background-task.md)                               | Créez et inscrivez une tâche en arrière-plan qui s’exécute dans un processus distinct de votre application, et inscrivez-la pour qu’elle s’exécute lorsque votre application ne se trouve pas au premier plan.                                                                                                 |
+| [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-a-background-task.md)                               | Créez et inscrivez une tâche en arrière-plan qui s’exécute dans un processus distinct de votre application, et inscrivez-la pour qu’elle s’exécute lorsque votre application ne se trouve pas au premier plan.                                                                                                 |
 | [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md)                               | Créez et inscrivez une tâche en arrière-plan in-process qui s’exécute dans le même processus que votre application au premier plan.                                                                                                 |
 | [Convertir une tâche en arrière-plan hors processus en une tâche en arrière-plan in-process](convert-out-of-process-background-task.md)                               | Découvrez comment convertir une tâche en arrière-plan hors processus en une tâche en arrière-plan in-process qui s’exécute dans le même processus que votre application au premier plan.
 | [Déboguer une tâche en arrière-plan](debug-a-background-task.md)                                                           | Découvrez comment déboguer une tâche en arrière-plan, notamment dans le cadre de son activation et du suivi de débogage dans le journal des événements Windows.                                                                        |
@@ -74,43 +97,27 @@ Cette section décrit les éléments suivants:
 | [Mettre à jour une vignette dynamique à partir d’une tâche en arrière-plan](update-a-live-tile-from-a-background-task.md)                       | Utilisez une tâche en arrière-plan pour mettre à jour une vignette dynamique de votre application avec du contenu actualisé.                                                                                                                      |
 | [Utiliser un déclencheur de maintenance](use-a-maintenance-trigger.md)                                                       | Découvrez comment utiliser la classe [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) pour exécuter du code léger en arrière-plan pendant que l’appareil est branché.                             |
 
-## Services d’application
+## <a name="remote-systems"></a>Systèmes distants
 
-| Rubrique                                                                                                            | Description                                                                                                                                                                                   |
-|------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Créer et utiliser un service d’application](how-to-create-and-consume-an-app-service.md)                                | Découvrez comment écrire une applicationUWP capable de fournir des services à d’autres applications UWP, et comment utiliser ces services.                                                                                  |
-| [Communiquer avec un service d’application distant](communicate-with-a-remote-app-service.md) | Découvrez comment échanger des messages avec un service d’application exécuté sur un appareil distant. |
-| [Convertir un service d’application pour qu’il s’exécute dans le même processus que son application hôte](convert-app-service-in-process.md)                                | Découvrez comment convertir le code de service d’application qui s’exécute dans un processus en arrière-plan distinct, en code qui s’exécute dans le même processus que l’application qui héberge votre service d’application.                                                                                  |
+La section [Applications et appareils connectés (projet « Rome »)](connected-apps-and-devices.md) explique comment utiliser la plateforme Systèmes distants pour identifier les appareils distants, lancer une application sur un appareil distant et communiquer avec un service d’application sur un appareil distant.
 
-## Ajouter un écran de démarrage
+| Rubrique | Description |
+|-------|-------------|
+| [Détecter des appareils distants](discover-remote-devices.md)  | Découvrez comment détecter les appareils auxquels vous pouvez vous connecter. |
+| [Lancer une application sur un appareil distant](launch-a-remote-app.md) | Découvrez comment lancer une application sur un appareil distant.  |
+| [Communiquer avec un service d’application distant](communicate-with-a-remote-app-service.md) | Découvrez comment interagir avec une application sur un appareil distant. |
 
-Toutes les applications UWP doivent disposer d’un écran de démarrage constitué d’une image d’écran de démarrage et d’une couleur d’arrière-plan, que vous pouvez personnaliser.
+## <a name="splash-screens"></a>Écrans de démarrage
 
-Votre écran de démarrage s’affiche dès que l’utilisateur lance votre application. Il fournit des informations pendant que les ressources d’applications sont initialisées. Dès que votre application autorise l’interaction, l’écran de démarrage disparaît.
+La section [Écrans de démarrage](splash-screens.md) explique comment définir et configurer l’écran de démarrage de votre application.
 
-Un écran de démarrage bien conçu peut contribuer à rendre votre application plus attrayante. Voici un écran de démarrage simple et discret:
-
-![aperçu de l’exemple d’écran de démarrage défini à l’échelle de 75%.](images/regularsplashscreen.png)
-
-Cet écran de démarrage est créé en combinant un arrière-plan vert et une image PNG transparente.
-
-La combinaison de l’image et de la couleur d’arrière-plan choisies permet d’obtenir un écran de démarrage qui s’affiche correctement quel que soit l’appareil sur lequel votre application est installée. Lorsque l’écran de démarrage apparaît, seules les dimensions de l’arrière-plan sont modifiées afin de prendre en charge toute une variété de tailles d’écran. Votre image reste toujours intacte.
-
-De plus, vous pouvez utiliser la classe [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) pour personnaliser l’expérience de démarrage de votre application. Vous pouvez placer un écran de démarrage étendu créé par vos propres soins, afin d’accorder à votre application davantage de temps pour effectuer des tâches supplémentaires telles que la préparation de l’interface utilisateur ou l’achèvement des opérations de mise en réseau. Vous pouvez également utiliser la classe **SplashScreen** pour vous avertir lorsque l’écran de démarrage est supprimé, ce qui vous permet de lancer les animations d’entrée.
-
-| Rubrique                                                                          | Description                                                                                                                                                                                       |
-|--------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Ajouter un écran de démarrage](add-a-splash-screen.md)                                 | Définissez l’image et la couleur d’arrière-plan de l’écran de démarrage de votre application.                                                                                                                                          |
+| Rubrique | Description |
+|-------|-------------|
+| [Ajouter un écran de démarrage](add-a-splash-screen.md) | Définissez l’image et la couleur d’arrière-plan de l’écran de démarrage de votre application. |
 | [Afficher un écran de démarrage plus longtemps](create-a-customized-splash-screen.md) | Affichez un écran de démarrage plus longtemps en créant et en affichant un écran de démarrage étendu pour votre application. Cet écran étendu imite l’écran de démarrage affiché quand votre application est lancée. Il peut être personnalisé. |
 
- 
-
- 
-
- 
 
 
-
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

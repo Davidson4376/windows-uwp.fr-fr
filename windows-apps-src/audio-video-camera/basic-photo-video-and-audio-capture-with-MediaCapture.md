@@ -4,21 +4,22 @@ ms.assetid:
 description: "Cet article vous présente le moyen le plus simple de capturer des photos et des vidéos à l’aide de la classe MediaCapture."
 title: "Capture photo, vidéo et audio de base à l’aide de MediaCapture"
 translationtype: Human Translation
-ms.sourcegitcommit: 0c7355d442cd650f110042d5e01f51becbb51d0e
-ms.openlocfilehash: 19a546d4778d0edfbc5ca2e3acf0ded084445958
+ms.sourcegitcommit: 9cbe7948767ba45e8ef495a9349621969957ab04
+ms.openlocfilehash: 98f71104b5a95f9327a0b3f879e4dbb91b74b581
 
 ---
 
-# Capture photo, vidéo et audio de base à l’aide de MediaCapture
+# <a name="basic-photo-video-and-audio-capture-with-mediacapture"></a>Capture photo, vidéo et audio de base à l’aide de MediaCapture
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cet article vous présente le moyen le plus simple de capturer des photos et des vidéos à l’aide de la classe [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture). La classe **MediaCapture** expose un jeu robuste d’API qui fournit un contrôle de niveau inférieur sur le pipeline de capture et prend en charge des scénarios de capture avancés, mais cet article est destiné à vous aider à ajouter rapidement et facilement la capture multimédia à votre application. Pour en savoir plus sur les fonctions fournies par **MediaCapture**, consultez la section [**Caméra**](camera.md).
 
 Si vous souhaitez simplement capturer une photo ou une vidéo et n’avez pas l’intention d’ajouter de fonctions supplémentaires de capture multimédia, ou si vous ne souhaitez pas créer votre propre interface utilisateur d’appareil photo, vous pouvez utiliser la classe [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CameraCaptureUI). Avec elle, vous lancez simplement l’application intégrée d’appareil photo afin de recevoir le fichier audio ou vidéo capturé. Pour plus d’informations, consultez la section [**Capturer des photos et des vidéos à l’aide de l’interface utilisateur de l’appareil photo intégré à Windows**](capture-photos-and-video-with-cameracaptureui.md).
 
+Le code fourni dans cet article a été adapté à partir de l’exemple [**CameraStarterKit**](https://go.microsoft.com/fwlink/?linkid=619479). Vous pouvez télécharger l’exemple pour voir le code utilisé en contexte ou pour vous en servir comme base pour votre propre application.
 
-## Ajouter des déclarations de fonctionnalités au manifeste de l’application
+## <a name="add-capability-declarations-to-the-app-manifest"></a>Ajouter des déclarations de fonctionnalités au manifeste de l’application
 
 Afin que votre application puisse accéder à l’appareil photo d’un appareil, vous devez déclarer que cette application utilise les fonctionnalités de l’appareil *webcam* et *microphone*. Si vous souhaitez enregistrer dans la bibliothèque d’images ou dans la vidéothèque de l’utilisateur des photos et des vidéos capturées, vous devez également déclarer les fonctionnalités *picturesLibrary* et *videosLibrary*.
 
@@ -30,18 +31,18 @@ Afin que votre application puisse accéder à l’appareil photo d’un appareil
 4.  Pour accéder à la bibliothèque d’images et à la vidéothèque, cochez les cases correspondant à **Bibliothèque d’images** et **Vidéothèque**.
 
 
-## Initialiser l’objet MediaCapture
+## <a name="initialize-the-mediacapture-object"></a>Initialiser l’objet MediaCapture
 Toutes les méthodes de capture décrites dans cet article nécessitent la première étape d’initialisation de l’objet [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture), exécutée via l’appel du constructeur, puis de [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.InitializeAsync). Dans la mesure où l’objet **MediaCapture** est accessible depuis plusieurs emplacements de votre application, déclarez une variable de classe pour stocker l’objet.  Implémentez un gestionnaire pour l’objet [**Failed**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.Failed) de la classe **MediaCapture** afin d’être informé d’un éventuel échec de l’opération de capture.
 
 [!code-cs[DeclareMediaCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetDeclareMediaCapture)]
 
 [!code-cs[InitMediaCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetInitMediaCapture)]
 
-## Définissez l’aperçu de l’appareil photo
+## <a name="set-up-the-camera-preview"></a>Définissez l’aperçu de l’appareil photo
 Il est possible de capturer des photos, vidéos et audio à l’aide de **MediaCapture** sans afficher l’aperçu de l’appareil photo, mais en règle générale, vous souhaitez afficher le flux d’aperçu de manière à ce que l’utilisateur n’ait aucune visibilité sur le contenu capturé. Par ailleurs, quelques fonctions **MediaCapture** nécessitent l’exécution du flux d’aperçu pour être activées. Il s’agit notamment la mise au point, l’exposition et la balance des blancs automatiques. Pour savoir comment configurer l’aperçu de l’appareil photo, consultez la page [**Afficher l’aperçu de l’appareil photo**](simple-camera-preview-access.md).
 
-## Capturer une photo sur une classe SoftwareBitmap
-La classe [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.SoftwareBitmap) a été introduite dans Windows10 afin d’offrir une représentation commune des images entre plusieurs fonctions. Si vous souhaitez capturer une photo avant de l’utiliser immédiatement dans votre application, en l’affichant par exemple au format XAML au lieu de la capturer dans un fichier, vous devez la capturer dans une classe **SoftwareBitmap**. Vous avez toujours la possibilité d’enregistrer l’image sur un disque ultérieurement.
+## <a name="capture-a-photo-to-a-softwarebitmap"></a>Capturer une photo sur une classe SoftwareBitmap
+La classe [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.SoftwareBitmap) a été introduite dans Windows 10 afin d’offrir une représentation commune des images entre plusieurs fonctions. Si vous souhaitez capturer une photo avant de l’utiliser immédiatement dans votre application, en l’affichant par exemple au format XAML au lieu de la capturer dans un fichier, vous devez la capturer dans une classe **SoftwareBitmap**. Vous avez toujours la possibilité d’enregistrer l’image sur un disque ultérieurement.
 
 Après l’initialisation de l’objet **MediaCapture**, vous pouvez capturer une photo dans une méthode **SoftwareBitmap** à l’aide de la classe [**LowLagPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagPhotoCapture). Récupérez une instance de cette classe en appelant [**PrepareLowLagPhotoCaptureAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.PrepareLowLagPhotoCaptureAsync), en passant un objet [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.ImageEncodingProperties) spécifiant le format d’image souhaité. [**CreateUncompressed**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.ImageEncodingProperties.CreateUncompressed) génère un encodage non compressé avec le format de pixel spécifié. Capturez une photo en appelant [**CaptureAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagPhotoCapture.CaptureAsync), qui renvoie un objet [**CapturedPhoto**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CapturedPhoto). Récupérez une méthode **SoftwareBitmap** en accédant à la propriété [**Frame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CapturedPhoto.Frame), puis à la propriété [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CapturedFrame.SoftwareBitmap).
 
@@ -51,7 +52,7 @@ Si vous le souhaitez, vous pouvez capturer plusieurs photos en appelant à plusi
 
 Pour plus d’informations sur l’utilisation de l’objet **SoftwareBitmap**, notamment sur l’affichage dans une page XAML, consultez la section [**Acquisition d’images**](imaging.md).
 
-## Capturer une photo dans un fichier
+## <a name="capture-a-photo-to-a-file"></a>Capturer une photo dans un fichier
 Une application de photographie classique enregistre une photo capturée sur un disque ou sur un stockage cloud et doit ajouter des métadonnées, comme l’orientation de la photo, au fichier. L’exemple suivant vous explique comment capturer une photo dans un fichier. Vous avez toujours la possibilité de créer ultérieurement une méthode **SoftwareBitmap** à partir du fichier image. 
 
 La technique décrite dans cet exemple capture la photo dans un flux en mémoire, puis procède à son transcodage sur un fichier sur disque. Cet exemple utilise [**GetLibraryAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageLibrary.GetLibraryAsync) pour récupérer la bibliothèque d’images de l’utilisateur, puis la propriété [**SaveFolder**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageLibrary.SaveFolder) pour récupérer un dossier d’enregistrement de référence par défaut. N’oubliez pas d’ajouter la fonctionnalité **Bibliothèque d’images** à votre manifeste d’application pour accéder à ce dossier. [**CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageFolder.CreateFileAsync) crée un nouvel élément [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageFile) sur lequel enregistrer la photo.
@@ -66,7 +67,7 @@ Enfin, appelez [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/
 
 Pour plus d’utilisation sur l’utilisation des fichiers et des dossiers, consultez la section [**Fichiers, dossiers et bibliothèques**](https://msdn.microsoft.com/windows/uwp/files/index).
 
-## Capturer une vidéo
+## <a name="capture-a-video"></a>Capturer une vidéo
 Ajoutez rapidement une capture vidéo à votre application à l’aide de la classe [**LowLagMediaRecording**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording). Tout d’abord, déclarez une variable de classe associée à l’objet.
 
 [!code-cs[LowLagMediaRecording](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetLowLagMediaRecording)]
@@ -85,20 +86,20 @@ Vous pouvez continuer à appeler **StartAsync** et **StopAsync** pour capturer d
 
 [!code-cs[FinishAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetFinishAsync)]
 
-Lorsque vous capturez de la vidéo, vous devez enregistrer un gestionnaire pour l’événement [**RecordLimitationExceeded**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.RecordLimitationExceeded) de l’objet **MediaCapture**, qui sera déclenché par la système d’exploitation si vous dépassez la limite d’un enregistrement unique, généralement de troisheures. Dans le gestionnaire de l’événement, vous devez finaliser votre enregistrement en appelant [**StopAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.StopAsync).
+Lorsque vous capturez de la vidéo, vous devez enregistrer un gestionnaire pour l’événement [**RecordLimitationExceeded**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.RecordLimitationExceeded) de l’objet **MediaCapture**, qui sera déclenché par la système d’exploitation si vous dépassez la limite d’un enregistrement unique, généralement de trois heures. Dans le gestionnaire de l’événement, vous devez finaliser votre enregistrement en appelant [**StopAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.StopAsync).
 
 [!code-cs[RecordLimitationExceeded](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetRecordLimitationExceeded)]
 
 [!code-cs[RecordLimitationExceededHandler](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetRecordLimitationExceededHandler)]
 
-## Interrompre et reprendre l’enregistrement vidéo
+## <a name="pause-and-resume-video-recording"></a>Interrompre et reprendre l’enregistrement vidéo
 Pour suspendre un enregistrement vidéo et le reprendre sans créer de fichier de sortie séparé, appelez [**PauseAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.PauseAsync), puis [**ResumeAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.ResumeAsync).
 
 [!code-cs[PauseRecordingSimple](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetPauseRecordingSimple)]
 
 [!code-cs[ResumeRecordingSimple](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetResumeRecordingSimple)]
 
-À partir de Windows10, version 1607, vous pouvez suspendre un enregistrement vidéo et recevoir la dernière image capturée avant l’interruption. Vous pouvez alors superposer cette image sur l’aperçu de l’appareil photo afin de permettre à l’utilisateur d’aligner l’appareil photo avec l’image interrompue avant de reprendre l’enregistrement. L’appel à [**PauseWithResultAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.PauseWithResultAsync) renvoie un objet [**MediaCapturePauseResult**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapturePauseResult). la propriété [**LastFrame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapturePauseResult.LastFrame) est un objet [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.VideoFrame) représentant la dernière image. Pour afficher l’image au format XAML, récupérez la représentation **SoftwareBitmap** de l’image vidéo. Actuellement, seules les images au format BGRA8 avec un canal alpha prémultiplié ou vide sont prises en charge, aussi appelez [**Convert**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.SoftwareBitmap.Covert) pour récupérer le format approprié, si nécessaire.  Créez un nouvel objet [**SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource), puis appelez [**SetBitmapAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource.SetBitmapAsync) pour l’initialiser. Enfin, définissez la propriété **Source** d’un contrôle XAML [**Image**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.Image) afin d’afficher l’image. Pour que cette astuce fonctionne, votre image doit être alignée sur le contrôle **CaptureElement** et présenter une valeur d’opacité inférieure à 1. N’oubliez pas que vous pouvez modifier l’interface utilisateur uniquement sur le thread dédié. Dès lors, effectuez cet appel à l’intérieur de [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Core.CoreDispatcher.RunAsync).
+À partir de Windows 10, version 1607, vous pouvez suspendre un enregistrement vidéo et recevoir la dernière image capturée avant l’interruption. Vous pouvez alors superposer cette image sur l’aperçu de l’appareil photo afin de permettre à l’utilisateur d’aligner l’appareil photo avec l’image interrompue avant de reprendre l’enregistrement. L’appel à [**PauseWithResultAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.PauseWithResultAsync) renvoie un objet [**MediaCapturePauseResult**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapturePauseResult). la propriété [**LastFrame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapturePauseResult.LastFrame) est un objet [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.VideoFrame) représentant la dernière image. Pour afficher l’image au format XAML, récupérez la représentation **SoftwareBitmap** de l’image vidéo. Actuellement, seules les images au format BGRA8 avec un canal alpha prémultiplié ou vide sont prises en charge, aussi appelez [**Convert**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.SoftwareBitmap.Covert) pour récupérer le format approprié, si nécessaire.  Créez un nouvel objet [**SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource), puis appelez [**SetBitmapAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource.SetBitmapAsync) pour l’initialiser. Enfin, définissez la propriété **Source** d’un contrôle XAML [**Image**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.Image) afin d’afficher l’image. Pour que cette astuce fonctionne, votre image doit être alignée sur le contrôle **CaptureElement** et présenter une valeur d’opacité inférieure à 1. N’oubliez pas que vous pouvez modifier l’interface utilisateur uniquement sur le thread dédié. Dès lors, effectuez cet appel à l’intérieur de [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Core.CoreDispatcher.RunAsync).
 
 **PauseWithResultAsync** renvoie également la durée de la vidéo enregistrée dans le segment précédent, si vous souhaitez effectuer un suivi de la durée totale enregistrée.
 
@@ -111,7 +112,7 @@ Quand vous reprenez l’enregistrement, vous pouvez définir la source de l’im
 Notez que vous pouvez également récupérer une image résultante quand vous arrêtez la vidéo en appelant [**StopWithResultAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.StopWithResultAsync).
 
 
-## Capturer l’audio 
+## <a name="capture-audio"></a>Capturer l’audio 
 Vous pouvez rapidement ajouter la capture audio à votre application en appliquant la technique décrite ci-dessus relative à la capture vidéo. L’exemple ci-dessous est relatif à la création d’un élément **StorageFile** dans le dossier des données de l’application. Appelez [**PrepareLowLagRecordToStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.PrepareLowLagRecordToStorageFileAsync) pour initialiser la session de capture, en passant le fichier et une classe [**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.MediaEncodingProfile) générée dans l’exemple par la méthode statique [**CreateMp3**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.MediaEncodingProfile.CreateMp3). Pour démarrer l’enregistrement, appelez [**StartAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.StartAsync).
 
 [!code-cs[StartAudioCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStartAudioCapture)]
@@ -125,7 +126,7 @@ Vous pouvez appeler **StartAsync** et **StopAsync** à plusieurs reprises pour e
 
 [!code-cs[FinishAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetFinishAsync)]
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Appareil photo](camera.md)
 * [Capturer des photos et des vidéos à l’aide de l’interface utilisateur de l’appareil photo intégré à Windows](capture-photos-and-video-with-cameracaptureui.md)
@@ -136,6 +137,6 @@ Vous pouvez appeler **StartAsync** et **StopAsync** à plusieurs reprises pour e
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

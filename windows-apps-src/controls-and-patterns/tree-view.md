@@ -17,7 +17,7 @@ TreeView est un modèle de liste hiérarchique comportant des nœuds de dévelop
 
 L’[exemple TreeView](http://go.microsoft.com/fwlink/?LinkId=785018) est une implémentation de référence générée à l’aide de **ListView**. Il ne s’agit pas d’un contrôle autonome. Le contrôle TreeView rencontré dans le volet Favoris du navigateur Microsoft Edge utilise cette implémentation de référence.
 
-L’exemple prend en charge les éléments suivants:
+L’exemple prend en charge les éléments suivants :
 - Imbrication de niveau N
 - Extension/Réduction des nœuds
 - Glissement - déplacement des nœuds dans le contrôle TreeView
@@ -27,7 +27,7 @@ L’exemple prend en charge les éléments suivants:
 -- | --
 Exemple de référence TreeView | TreeView dans le navigateur Edge
 
-## Est-ce le modèle approprié?
+## Est-ce le modèle approprié ?
 
 - Utilisez un contrôle TreeView lorsque les éléments comportent des éléments de liste imbriqués et s’il est important d’illustrer la relation hiérarchique des éléments par rapport à leurs homologues et leurs nœuds.
 
@@ -69,7 +69,7 @@ Utilisez les traits rouges dans la capture d’écran ci-dessous pour la mise en
 
 TreeView comporte les classes principales suivantes. Elles sont toutes définies et incluses dans l’implémentation de référence.
 
-> **Remarque**&nbsp;&nbsp;TreeView est implémenté sous forme de [composant Windows Runtime](https://msdn.microsoft.com/windows/uwp/winrt-components/index) écrit en C++. Par conséquent, une application UWP peut y faire référence dans n’importe quelle langue. Dans l’exemple, le code TreeView se trouve dans le dossier *cpp/Control*. Il n’existe aucun dossier *cs/Control* correspondant pour C#.
+> **Remarque**  TreeView est implémenté sous forme de [composant Windows Runtime](https://msdn.microsoft.com/windows/uwp/winrt-components/index) écrit en C++. Par conséquent, une application UWP peut y faire référence dans n’importe quelle langue. Dans l’exemple, le code TreeView se trouve dans le dossier *cpp/Control*. Il n’existe aucun dossier *cs/Control* correspondant pour C#.
 
 - La classe `TreeNode` implémente la disposition hiérarchique pour TreeView. Elle conserve également les données qui seront associées dans le modèle d’éléments.
 - La classe `TreeView` implémente des événements pour ItemClick, développe/réduit des dossiers, et lance l’opération glisser.

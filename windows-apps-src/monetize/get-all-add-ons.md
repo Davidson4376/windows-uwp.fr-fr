@@ -18,12 +18,12 @@ Utilisez cette méthode dans l’API de soumission du Windows Store pour récup�
 
 ## Conditions préalables
 
-Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes:
+Pour utiliser cette méthode, vous devez d’abord effectuer les opérations suivantes :
 
 * Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store.
-* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
+* [Obtenez un jeton d’accès Azure AD](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token) à utiliser dans l’en-tête de requête de cette méthode. Après avoir obtenu un jeton d’accès, vous avez 60 minutes pour l’utiliser avant expiration. Une fois le jeton arrivé à expiration, vous pouvez en obtenir un nouveau.
 
->**Remarque**&nbsp;&nbsp;Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
+>**Remarque**  Cette méthode ne peut être utilisée que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation.
 
 ## Requête
 
@@ -51,7 +51,7 @@ Tous les paramètres de la requête sont facultatifs pour cette méthode. Si vou
 |  Paramètre  |  Type  |  Description  |  Obligatoire  |
 |------|------|------|------|
 |  top  |  entier  |  Nombre d’éléments à retourner dans la requête (autrement dit, nombre d’extensions à retourner). Si votre compte comporte plus d’extensions que la valeur que vous spécifiez dans la requête, le corps de la réponse comprend un chemin d’URI relatif que vous pouvez ajouter à l’URI de la méthode pour solliciter la page suivante de données.  |  Non  |
-|  skip  |  entier  |  Nombre d’éléments à ignorer dans la requête avant de retourner les éléments restants. Utilisez ce paramètre pour parcourir des ensembles de données. Par exemple, top=10 et skip=0 permettent de récupérer les éléments 1 à10, top=10 et skip=10 permettent de récupérer les éléments 11 à20, et ainsi de suite.  |  Non  |
+|  skip  |  entier  |  Nombre d’éléments à ignorer dans la requête avant de retourner les éléments restants. Utilisez ce paramètre pour parcourir des ensembles de données. Par exemple, top=10 et skip=0 permettent de récupérer les éléments 1 à 10, top=10 et skip=10 permettent de récupérer les éléments 11 à 20, et ainsi de suite.  |  Non  |
 
 <span/>
 
@@ -68,7 +68,7 @@ GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-L’exemple suivant montre comment récupérer les 10premières extensions uniquement.
+L’exemple suivant montre comment récupérer les 10 premières extensions uniquement.
 
 ```
 GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts?top=10 HTTP/1.1
@@ -77,7 +77,7 @@ Authorization: Bearer <your access token>
 
 ## Réponse
 
-L’exemple suivant montre le corps de réponse JSON renvoyé par une requête réussie sur les 5premières extensions inscrites dans un compte de développeur qui en possède1072 au total. Pour des raisons de concision, cet exemple affiche uniquement les données des deux premières extensions retournées par la requête. Pour plus d’informations sur les valeurs figurant dans le corps de réponse, voir la section suivante.
+L’exemple suivant montre le corps de réponse JSON renvoyé par une requête réussie sur les 5 premières extensions inscrites dans un compte de développeur qui en possède 1072 au total. Pour des raisons de concision, cet exemple affiche uniquement les données des deux premières extensions retournées par la requête. Pour plus d’informations sur les valeurs figurant dans le corps de réponse, voir la section suivante.
 
 ```json
 {
@@ -138,7 +138,7 @@ L’exemple suivant montre le corps de réponse JSON renvoyé par une requête r
 
 | Valeur      | Type   | Description                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| @nextLink  | chaîne | S’il existe des pages supplémentaires de données, cette chaîne contient un chemin relatif que vous pouvez ajouter à l’URI de requête ```https://manage.devcenter.microsoft.com/v1.0/my/``` de base pour solliciter la page suivante de données. Par exemple, si le paramètre *top* du corps de requête initial a la valeur 10, mais qu’il existe 100extensions inscrites dans votre compte, le corps de réponse comprendra une valeur @nextLink de ```inappproducts?skip=10&top=10```, ce qui indique que vous pouvez appeler ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts?skip=10&top=10``` pour solliciter les 10extensions suivantes. |
+| @nextLink  | chaîne | S’il existe des pages supplémentaires de données, cette chaîne contient un chemin relatif que vous pouvez ajouter à l’URI de requête ```https://manage.devcenter.microsoft.com/v1.0/my/``` de base pour solliciter la page suivante de données. Par exemple, si le paramètre *top* du corps de requête initial a la valeur 10, mais qu’il existe 100 extensions inscrites dans votre compte, le corps de réponse comprendra une valeur @nextLink de ```inappproducts?skip=10&top=10```, ce qui indique que vous pouvez appeler ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts?skip=10&top=10``` pour solliciter les 10 extensions suivantes. |
 | value            | tableau  |  Tableau contenant des objets qui fournissent des informations sur chaque extension. Pour plus d’informations, voir [ressource d’extension](manage-add-ons.md#add-on-object).   |
 | totalCount   | entier  | Nombre d’objets d’application dans le tableau *value* du corps de réponse.                                                                                                                                                 |
 

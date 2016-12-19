@@ -19,7 +19,7 @@ Dans Windows, la couleur est également personnalisable. Les utilisateurs peuven
 
 ## Couleur d’accentuation
 
-L’utilisateur peut sélectionner une seule couleur appelée couleur d’accentuation à partir de *Paramètres&gt; Personnalisation&gt; Couleurs*. Il peut choisir parmi un ensemble de 48nuances de couleur, sauf sur Xbox où la palette inclut 21couleurs adaptées aux écrans de TV.
+L’utilisateur peut sélectionner une seule couleur appelée couleur d’accentuation à partir de *Paramètres &gt; Personnalisation &gt; Couleurs*. Il peut choisir parmi un ensemble de 48 nuances de couleur, sauf sur Xbox où la palette inclut 21 couleurs adaptées aux écrans de TV.
 
 <!-- Alternate version for the dev center. Need to add hex values. -->
 ![Couleurs d’accentuation par défaut](images/accentcolorswatch.png) Couleurs d’accentuation par défaut
@@ -39,13 +39,13 @@ Par défaut, les liens hypertexte utilisent la couleur d’accentuation de l’u
 
 ![Traits rouges pour le centre de notifications coloré](images/action_center_redline_zoom.png) Exemple d’application de la logique de couleur à une spécification de conception.
 
-**Remarque**&nbsp;&nbsp;En XAML, la couleur d’accentuation principale est exposée en tant que [ressource de thème](https://msdn.microsoft.com/library/windows/apps/Mt187274.aspx) nommée `SystemAccentColor`. Les nuances sont disponibles en tant que `SystemAccentColorLight3`, `SystemAccentColorLight2`, `SystemAccentColorLight1`, `SystemAccentColorDark1`, `SystemAccentColorDark2` et `SystemAccentColorDark3`. Également disponible par programmation via les énumérations [UISettings.GetColorValue](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uisettings.getcolorvalue.aspx) et [UIColorType](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uicolortype.aspx).
+**Remarque**  En XAML, la couleur d’accentuation principale est exposée en tant que [ressource de thème](https://msdn.microsoft.com/library/windows/apps/Mt187274.aspx) nommée `SystemAccentColor`. Les nuances sont disponibles en tant que `SystemAccentColorLight3`, `SystemAccentColorLight2`, `SystemAccentColorLight1`, `SystemAccentColorDark1`, `SystemAccentColorDark2` et `SystemAccentColorDark3`. Également disponible par programmation via les énumérations [UISettings.GetColorValue](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uisettings.getcolorvalue.aspx) et [UIColorType](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.uicolortype.aspx).
 
 ## Thèmes de couleur
 
 Les utilisateurs peuvent également choisir entre un thème clair ou un thème foncé pour le système. Certaines applications modifient leur thème selon la préférence de l’utilisateur.
 
-Les applications utilisant le thème clair sont conçues pour des scénarios impliquant des applications de productivité. Par exemple, la suite d’applications disponibles avec MicrosoftOffice. Le thème clair permet une lecture plus aisée de textes longs associée à de longues périodes de travail.
+Les applications utilisant le thème clair sont conçues pour des scénarios impliquant des applications de productivité. Par exemple, la suite d’applications disponibles avec Microsoft Office. Le thème clair permet une lecture plus aisée de textes longs associée à de longues périodes de travail.
 
 Un thème foncé rend plus visible le contraste des contenus pour les applications multimédias ou dans des scénarios où les utilisateurs ont accès à une quantité importante de vidéos et d’images. Dans ces scénarios, la lecture n’est pas forcément prépondérante, contrairement au visionnage d’un film, dans un environnement peu éclairé.
 
@@ -76,7 +76,7 @@ Pour faciliter la conception des thèmes, Windows propose une palette de couleur
 
 ## Modification du thème
 
-Vous pouvez facilement modifier les thèmes en modifiant la propriété **RequestedTheme** dans votre fichier App.xaml:
+Vous pouvez facilement modifier les thèmes en modifiant la propriété **RequestedTheme** dans votre fichier App.xaml :
 
 ```XAML
 <Application

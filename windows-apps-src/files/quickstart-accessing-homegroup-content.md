@@ -1,16 +1,16 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: 12ECEA89-59D2-4BCE-B24C-5A4DD525E0C7
 title: "Accès au contenu du Groupement résidentiel"
 description: "Accédez au contenu stocké dans le dossier Groupement résidentiel de l’utilisateur, qui contient des images, de la musique et des vidéos."
 translationtype: Human Translation
-ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
-ms.openlocfilehash: d8f755b64d9a8b0a87dc7d37fb24ffd6ea1b5044
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: d55908186e5e0687c7dbd22fee9d2f7b70ba1707
 
 ---
-# Accès au contenu du Groupement résidentiel
+# <a name="accessing-homegroup-content"></a>Accès au contenu du Groupement résidentiel
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 ** API importantes **
@@ -19,15 +19,15 @@ ms.openlocfilehash: d8f755b64d9a8b0a87dc7d37fb24ffd6ea1b5044
 
 Accédez au contenu stocké dans le dossier Groupement résidentiel de l’utilisateur, qui contient des images, de la musique et des vidéos.
 
-## Conditions préalables
+## <a name="prerequisites"></a>Conditions préalables
 
 -   **Comprendre la programmation asynchrone pour les applications pour la plateforme Windows universelle (UWP)**
 
-    Pour apprendre à écrire des applications asynchrones en C# ou Visual Basic, voir [Appeler des API asynchrones en C# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). Pour apprendre à écrire des applications asynchrones enC++, voir [Programmation asynchrone enC++](https://msdn.microsoft.com/library/windows/apps/mt187334).
+    Pour apprendre à écrire des applications asynchrones en C# ou Visual Basic, voir [Appeler des API asynchrones en C# ou Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). Pour apprendre à écrire des applications asynchrones en C++, voir [Programmation asynchrone en C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
 
 -   **Déclarations des fonctionnalités d’application**
 
-    Pour accéder au contenu Groupement résidentiel, l’ordinateur de l’utilisateur doit avoir un Groupement résidentiel configuré et votre application au moins l’une des fonctionnalités suivantes: **picturesLibrary**, **musicLibrary** ou **videosLibrary**. Lorsque votre application accédera au dossier Groupement résidentiel, elle ne verra que les bibliothèques correspondant aux fonctionnalités déclarées dans le manifeste de votre application. Pour en savoir plus, voir [Autorisations d’accès aux fichiers](file-access-permissions.md).
+    Pour accéder au contenu Groupement résidentiel, l’ordinateur de l’utilisateur doit avoir un Groupement résidentiel configuré et votre application au moins l’une des fonctionnalités suivantes : **picturesLibrary**, **musicLibrary** ou **videosLibrary**. Lorsque votre application accédera au dossier Groupement résidentiel, elle ne verra que les bibliothèques correspondant aux fonctionnalités déclarées dans le manifeste de votre application. Pour en savoir plus, voir [Autorisations d’accès aux fichiers](file-access-permissions.md).
 
     **Remarque** Le contenu de la bibliothèque Documents d’un Groupement résidentiel n’est pas visible pour votre application quelles que soient les fonctionnalités déclarées dans le manifeste de votre application et quels que soient les paramètres de partage de l’utilisateur.
 
@@ -41,7 +41,7 @@ Accédez au contenu stocké dans le dossier Groupement résidentiel de l’utili
 
     Vous pouvez utiliser des requêtes pour énumérer les fichiers et les dossiers du Groupement résidentiel. Pour en savoir plus sur les requêtes de fichiers et de dossiers, voir [Énumération et interrogation de fichiers et de dossiers](quickstart-listing-files-and-folders.md).
 
-## Ouvrir le sélecteur de fichiers au Groupement résidentiel
+## <a name="open-the-file-picker-at-the-homegroup"></a>Ouvrir le sélecteur de fichiers au Groupement résidentiel
 
 Suivez ces étapes pour ouvrir une instance du sélecteur de fichiers qui permet à l’utilisateur de sélectionner des fichiers et des dossiers du Groupement résidentiel :
 
@@ -49,7 +49,7 @@ Suivez ces étapes pour ouvrir une instance du sélecteur de fichiers qui permet
 
     Utilisez [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) pour créer le sélecteur de fichiers, puis définissez le paramètre [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) du sélecteur sur [**PickerLocationId.HomeGroup**](https://msdn.microsoft.com/library/windows/apps/br207890). Ou définissez les autres propriétés qui sont pertinentes pour vos utilisateurs et votre application. Pour obtenir des directives susceptibles de vous aider à choisir comment personnaliser le sélecteur de fichiers, voir [Recommandations et liste de vérification sur les sélecteurs de fichiers](https://msdn.microsoft.com/library/windows/apps/hh465182).
 
-    Cet exemple crée un sélecteur de fichiers qui s’ouvre au Groupement résidentiel, inclut des fichiers de tous types et affiche les fichiers sous forme d’images miniatures:
+    Cet exemple crée un sélecteur de fichiers qui s’ouvre au Groupement résidentiel, inclut des fichiers de tous types et affiche les fichiers sous forme d’images miniatures :
     ```csharp
     Windows.Storage.Pickers.FileOpenPicker picker = new Windows.Storage.Pickers.FileOpenPicker();
     picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
@@ -76,7 +76,7 @@ Suivez ces étapes pour ouvrir une instance du sélecteur de fichiers qui permet
     }   
     ```
 
-## Chercher des fichiers dans le Groupement résidentiel
+## <a name="search-the-homegroup-for-files"></a>Chercher des fichiers dans le Groupement résidentiel
 
 Cette sélection illustre comment trouver des éléments du Groupement résidentiel qui correspondent à un terme de requête fourni par l’utilisateur.
 
@@ -119,7 +119,7 @@ Cette sélection illustre comment trouver des éléments du Groupement résident
     ```
 
 
-## Rechercher dans le Groupement résidentiel les fichiers partagés d’un utilisateur particulier
+## <a name="search-the-homegroup-for-a-particular-users-shared-files"></a>Rechercher dans le Groupement résidentiel les fichiers partagés d’un utilisateur particulier
 
 Cette section vous montre comment trouver les fichiers du Groupement résidentiel qui sont partagés par un utilisateur particulier.
 
@@ -164,7 +164,7 @@ Cette section vous montre comment trouver les fichiers du Groupement résidentie
     }    
     ```
 
-## Lecture en continu de la vidéo du Groupement résidentiel
+## <a name="stream-video-from-the-homegroup"></a>Lecture en continu de la vidéo du Groupement résidentiel
 
 Suivez les étapes suivantes pour lire en continu le contenu vidéo du Groupement résidentiel :
 
@@ -211,6 +211,6 @@ Suivez les étapes suivantes pour lire en continu le contenu vidéo du Groupemen
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

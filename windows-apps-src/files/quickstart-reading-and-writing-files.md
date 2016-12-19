@@ -1,18 +1,18 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: 27914C0A-2A02-473F-BDD5-C931E3943AA0
 title: "Créer, écrire et lire un fichier"
 description: "Lisez et écrivez un fichier à l’aide d’un objet StorageFile."
 translationtype: Human Translation
-ms.sourcegitcommit: 24f50f2c4ac7fcfe931759d42ba73e758d77f6e8
-ms.openlocfilehash: 2a9f5de71712e657bc9a0a39b668085c399ce9fb
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: 0709d9c9126dc4523eae58d5db8d9037a2fb618e
 
 ---
 
-# Créer, écrire et lire un fichier
+# <a name="create-write-and-read-a-file"></a>Créer, écrire et lire un fichier
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -25,7 +25,7 @@ Lisez et écrivez un fichier à l’aide d’un objet [**StorageFile**](https://
 
 > **Remarque** Consultez aussi l’[exemple d’accès aux fichiers](http://go.microsoft.com/fwlink/p/?linkid=619995).
 
-## Prérequis
+## <a name="prerequisites"></a>Prérequis
 
 -   **Comprendre la programmation asynchrone pour les applications pour la plateforme Windows universelle (UWP)**
 
@@ -35,7 +35,7 @@ Lisez et écrivez un fichier à l’aide d’un objet [**StorageFile**](https://
 
     Pour apprendre à vous procurer un fichier à l’aide d’un sélecteur de fichiers, voir [Ouvrir des fichiers et dossiers à l’aide d’un sélecteur](quickstart-using-file-and-folder-pickers.md).
 
-## Création d’un fichier
+## <a name="creating-a-file"></a>Création d’un fichier
 
 Voici comment créer un fichier dans le dossier local de l'application. S'il existe déjà, nous le remplaçons.
 > [!div class="tabbedCodeSnippets"]
@@ -53,7 +53,7 @@ Dim storageFolder As StorageFolder = Windows.Storage.ApplicationData.Current.Loc
 Dim sampleFile As StorageFile = Await storageFolder.CreateFileAsync("sample.txt", CreationCollisionOption.ReplaceExisting)
 ```
 
-## Écriture dans un fichier
+## <a name="writing-to-a-file"></a>Écriture dans un fichier
 
 
 Voici comment écrire dans un fichier accessible en écriture sur le disque à l’aide de la classe [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171). La première étape pour chacune des méthodes d'écriture dans un fichier (sauf si vous écrivez dans le fichier immédiatement après sa création) consiste à obtenir le fichier à l’aide de la méthode [**StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272).
@@ -153,7 +153,7 @@ using (var dataWriter = new Windows.Storage.Streams.DataWriter(outputStream))
         Await outputStream.FlushAsync()
 ```
 
-## Lecture d’un fichier
+## <a name="reading-from-a-file"></a>Lecture d’un fichier
 
 
 Voici comment lire un fichier sur disque en utilisant la classe [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171). La première étape de lecture d'un fichier consiste à obtenir le fichier à l’aide de la méthode [**StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272).
@@ -180,7 +180,7 @@ string text = await Windows.Storage.FileIO.ReadTextAsync(sampleFile);
 Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
 ```
 
-**Lecture de texte dans un fichier via une mémoire tampon (2étapes)**
+**Lecture de texte dans un fichier via une mémoire tampon (2 étapes)**
 
 1.  Commencez par appeler la méthode [**ReadBufferAsync**](https://msdn.microsoft.com/library/windows/apps/hh701468) de la classe [**FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440).
 > [!div class="tabbedCodeSnippets"]
@@ -259,6 +259,6 @@ Dim dataReader As New DataReader(inputStream)
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

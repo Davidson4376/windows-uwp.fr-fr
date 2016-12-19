@@ -1,14 +1,14 @@
 ---
 author: Mtoepke
-title: "Désactivation du Mode développeur XboxOne"
+title: "Désactivation du Mode développeur Xbox One"
 description: "Comment désactiver le Mode développeur"
 translationtype: Human Translation
-ms.sourcegitcommit: c80849904eccae1ef0e0740bb4e882f7f0f37cc8
-ms.openlocfilehash: 273cd14d5f51a693ba8385c13d128bb2888de2ea
+ms.sourcegitcommit: 0eee645f068614d2368623859dec4e16f3190169
+ms.openlocfilehash: cccc263dcd0ed9ae843cf845438b30605e9b9d9d
 
 ---
 
-# Désactivation du Mode développeur XboxOne
+# <a name="xbox-one-developer-mode-deactivation"></a>Désactivation du Mode développeur Xbox One
 
 * [Basculer en Mode commercial](#switch-to-retail-mode)
 * [Désactiver votre console à l’aide de l’application Dev Mode Activation](#deactivate-your-console-using-the-dev-mode-activation-app)  
@@ -17,37 +17,37 @@ ms.openlocfilehash: 273cd14d5f51a693ba8385c13d128bb2888de2ea
 
 Si vous décidez de ne plus utiliser votre console pour le développement, procédez comme suit pour désactiver le Mode développeur.
 
-## Basculer en Mode commercial
+## <a name="switch-to-retail-mode"></a>Basculer en Mode commercial
 Tout d’abord, basculez de nouveau votre console Xbox One en Mode commercial.
 
 1. Ouvrez **Dev Home**.
 2. Cliquez sur **Quitter le mode développeur**.  Votre console redémarre en Mode commercial.  
 
-   ![](images/deactivation-leave-dev-mode.png)
+   ![Fermeture du Mode développeur](images/deactivation-leave-dev-mode.png)
 
-À présent, désactivez votre console à l’aide d’une des méthodes suivantes.
+Maintenant, désactivez votre console à l’aide de l’une des méthodes suivantes.
 
-## Désactiver votre console à l’aide de l’application Dev Mode Activation
+## <a name="deactivate-your-console-using-the-dev-mode-activation-app"></a>Désactiver votre console à l’aide de l’application Dev Mode Activation
 
 La méthode recommandée pour désactiver le Mode développeur sur votre console consiste à utiliser l’application Dev Mode Activation. 
 
 1. Accédez à **Mes jeux et applications** > **Applications**.
   
-   ![Activation - Étape3](images/activation-step-3.png)    
+   ![Activation - Étape 3](images/activation-step-3.png)    
    
 2.  Ouvrez l’application Dev Mode Activation.    
 3.  Cliquez sur **Désactiver**.
   
 ![Désactiver la console](images/deactivation-app.png)
 
-## Réinitialiser votre console
+## <a name="reset-your-console"></a>Réinitialiser votre console
 
 Vous pouvez également désactiver le Mode développeur en réinitialisant votre console.  
 
 > [!NOTE]
 > La réinitialisation de votre console entraîne la perte de toutes les données de jeu enregistrées localement.
 
-Pour réinitialiser votre console procédez comme suit:
+Pour réinitialiser votre console procédez comme suit :
 
 1.  Accédez à **Mes jeux et applications**.  
 2.  Sélectionnez **Applications**, puis sélectionnez **Paramètres**.  
@@ -64,7 +64,7 @@ Pour réinitialiser votre console procédez comme suit:
    
     ![Réinitialiser et supprimer tous les éléments](images/deactivation-reset-remove.png)
 
-## Désactiver votre console à l’aide du Centre de développement Windows
+## <a name="deactivate-your-console-using-windows-dev-center"></a>Désactiver votre console à l’aide du Centre de développement Windows
 
 Si vous ne parvenez pas à accéder à votre console pour une raison quelconque, vous pouvez également désactiver le Mode développeur sur votre console à l’aide du Centre de développement Windows.
 
@@ -80,14 +80,14 @@ Si vous n’avez pas encore basculé votre console Xbox One en Mode commercial, 
 1. Lancez **Dev Home**.
 2. Cliquez sur **Quitter le mode développeur**.  Votre console redémarre en Mode commercial.
 
-![Activation - Étape13](images/deactivation-leave-dev-mode.png)
+![Activation - Étape 13](images/deactivation-leave-dev-mode.png)
 
-## Voir aussi
-- [Activation du Mode développeur XboxOne](devkit-activation.md)
-- [UWP sur XboxOne](index.md)
+## <a name="see-also"></a>Voir aussi
+- [Activation du Mode développeur Xbox One](devkit-activation.md)
+- [UWP sur Xbox One](index.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

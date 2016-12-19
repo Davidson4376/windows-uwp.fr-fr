@@ -36,7 +36,7 @@ Les cases d’option permettent aux utilisateurs de faire un choix parmi au moin
 
 
 
-## Est-ce le contrôle approprié?
+## Est-ce le contrôle approprié ?
 
 Utilisez les cases d’option pour présenter à l’utilisateur au moins deux options qui s’excluent mutuellement, comme ci-après.
 
@@ -61,19 +61,19 @@ S’il existe plus de huit options, utilisez une [liste déroulante](lists.md), 
 Si les options disponibles dépendent du contexte actuel de l’application, ou sont amenées à changer de manière dynamique, utilisez une [zone de liste](lists.md) à sélection unique.
 
 ## Exemple
-Cases d’option dans les paramètres du navigateur MicrosoftEdge.
+Cases d’option dans les paramètres du navigateur Microsoft Edge.
 
-![Cases d’option dans les paramètres du navigateur MicrosoftEdge](images/control-examples/radio-buttons-edge.png)
+![Cases d’option dans les paramètres du navigateur Microsoft Edge](images/control-examples/radio-buttons-edge.png)
 
 ## Créer une case d’option
 
-Les cases d’option s’utilisent en groupes. Les 2méthodes permettant de grouper des contrôles de cases d’option sont les suivantes:
+Les cases d’option s’utilisent en groupes. Les 2 méthodes permettant de grouper des contrôles de cases d’option sont les suivantes :
 - Placez-les dans le même conteneur parent.
 - Définissez la propriété [**GroupName**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.radiobutton.groupname.aspx) de chaque case d’option sur la même valeur.
 
-> **Remarque**&nbsp;&nbsp;Un groupe de cases d’options se comporte comme un seul contrôle quand l’utilisateur y accède via le clavier. Seule l’option sélectionnée est accessible à l’aide de la touche Tab, mais les utilisateurs peuvent passer d’une option à l’autre dans le groupe à l’aide des touches de direction.
+> **Remarque**  Un groupe de cases d’options se comporte comme un seul contrôle quand l’utilisateur y accède via le clavier. Seule l’option sélectionnée est accessible à l’aide de la touche Tab, mais les utilisateurs peuvent passer d’une option à l’autre dans le groupe à l’aide des touches de direction.
 
-Dans cet exemple, le premier groupe de cases d’option est implicitement formé en raison de son appartenance au même panneau d’empilement. Le second groupe est divisé entre 2panneaux d’empilement, si bien que les cases d’option sont explicitement groupées par GroupName.
+Dans cet exemple, le premier groupe de cases d’option est implicitement formé en raison de son appartenance au même panneau d’empilement. Le second groupe est divisé entre 2 panneaux d’empilement, si bien que les cases d’option sont explicitement groupées par GroupName.
 
 ```xaml
 <StackPanel>
@@ -159,7 +159,7 @@ Les groupes de cases d’option ressemblent à ceci une fois que l’utilisateur
 
 ![Cases d’option en deux groupes](images/radio-button-groups.png)
 
-Une case d’option a deux états: *sélectionnée* ou *désactivée*. Lorsqu’une case d’option est sélectionnée, sa propriété [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) vaut **true**. Lorsqu’une case d’option est désactivée, sa propriété **IsChecked** vaut **false**. Une case d’option peut être désactivée en cliquant sur une autre case d’option dans le même groupe. Elle ne peut pas être désactivée en cliquant à nouveau dessus. Toutefois, vous pouvez désactiver une case d’option par programme en définissant sa propriété IsChecked sur **false**.
+Une case d’option a deux états : *sélectionnée* ou *désactivée*. Lorsqu’une case d’option est sélectionnée, sa propriété [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) vaut **true**. Lorsqu’une case d’option est désactivée, sa propriété **IsChecked** vaut **false**. Une case d’option peut être désactivée en cliquant sur une autre case d’option dans le même groupe. Elle ne peut pas être désactivée en cliquant à nouveau dessus. Toutefois, vous pouvez désactiver une case d’option par programme en définissant sa propriété IsChecked sur **false**.
 
 ## Recommandations
 

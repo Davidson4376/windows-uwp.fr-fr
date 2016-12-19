@@ -13,7 +13,7 @@ ms.openlocfilehash: 99d609decc8c38952961deac5bb8ec6926d91c88
 
 Utilisez les méthodes suivantes dans l’API de soumission du Windows Store pour obtenir des données pour les applications inscrites dans votre compte du Centre de développement Windows. Pour obtenir une présentation de l’API de soumission du Windows Store, voir [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md).
 
->**Remarque**&nbsp;&nbsp;Ces méthodes ne peuvent être utilisées que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation. Ces méthodes peuvent uniquement être utilisées pour obtenir des données pour les applications. Pour créer ou gérer des soumissions pour des applications, voir les méthodes dans [Gérer les soumissions d’applications](manage-app-submissions.md).
+>**Remarque**  Ces méthodes ne peuvent être utilisées que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation. Ces méthodes peuvent uniquement être utilisées pour obtenir des données pour les applications. Pour créer ou gérer des soumissions pour des applications, voir les méthodes dans [Gérer les soumissions d’applications](manage-app-submissions.md).
 
 | Méthode        | URI    | Description                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -65,7 +65,7 @@ Cette ressource a les valeurs suivantes.
 | packageFamilyName | chaîne  | Nom de la famille de packages de l’application.                                                                                                                                                                                                         |
 | packageIdentityName          | chaîne  | Nom de l’identité du package de l’application.                                                                                                                                                              |
 | publisherName       | chaîne  | ID de l’éditeur Windows associé à l’application. Celui-ci correspond à la valeur **Package/Identité/Éditeur** qui apparaît dans la page [Identité de l’application](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details) de l’application dans le tableau de bord du Centre de développement Windows.                                                                                             |
-| firstPublishedDate      | chaîne  | Date de la première publication de l’application, au format ISO8601.                                                                                         |
+| firstPublishedDate      | chaîne  | Date de la première publication de l’application, au format ISO 8601.                                                                                         |
 | lastPublishedApplicationSubmission       | objet | Objet qui fournit des informations sur la dernière soumission publiée de l’application. Pour plus d’informations, voir la section [Soumission](#submission_object) ci-dessous.                                                                                                                                                          |
 | pendingApplicationSubmission        | objet  |  Objet qui fournit des informations sur la soumission actuellement en attente pour l’application. Pour plus d’informations, voir la section [Soumission](#submission_object) ci-dessous.  |   |
 
@@ -85,7 +85,7 @@ Cette ressource a les valeurs suivantes.
 
 | Valeur           | Type    | Description                                                                                                                                                                                                                          |
 |-----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| inAppProductId            | chaîne  | ID Windows Store de l’extension. Cette valeur est fournie par le Windows Store. Exemple d’ID Windows Store: 9NBLGGH4TNMP.   |
+| inAppProductId            | chaîne  | ID Windows Store de l’extension. Cette valeur est fournie par le Windows Store. Exemple d’ID Windows Store : 9NBLGGH4TNMP.   |
 
 
 <span id="flight-object" />

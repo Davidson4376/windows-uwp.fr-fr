@@ -1,52 +1,52 @@
 ---
 title: "Créer une application de connexion Microsoft Passport"
-description: "Voici la première partie de la procédure complète sur la création d’une application UWP Windows10 qui utilise Microsoft Passport comme alternative aux systèmes d’authentification par nom d’utilisateur et mot de passe traditionnels."
+description: "Voici la première partie de la procédure complète sur la création d’une application UWP Windows 10 qui utilise Microsoft Passport comme alternative aux systèmes d’authentification par nom d’utilisateur et mot de passe traditionnels."
 ms.assetid: A9E11694-A7F5-4E27-95EC-889307E0C0EF
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: af8ae79f67d77195d5ed4801d040b2f1aafe8a97
-ms.openlocfilehash: 1b0a510592002cf869dac06b55d377d790c06cac
+ms.sourcegitcommit: a70a59283fe664bef9ddab56df57a9fc46c91033
+ms.openlocfilehash: 04311e9c3242bdaf6588c8102a06ae658e6637e2
 
 ---
 
-# Créer une application de connexion Microsoft Passport
+# <a name="create-a-microsoft-passport-login-app"></a>Créer une application de connexion Microsoft Passport
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 \[Certaines informations concernent la version préliminaire de produits susceptibles d’être considérablement modifiés d’ici leur commercialisation. Microsoft ne donne aucune garantie, expresse ou implicite, concernant les informations fournies ici.\]
 
-Voici la première partie de la procédure complète sur la création d’une application UWP Windows10 qui utilise Microsoft Passport comme alternative aux systèmes d’authentification par nom d’utilisateur et mot de passe traditionnels. L’application utilise un nom d’utilisateur pour la connexion et crée une clé Passport pour chaque compte. Ces comptes sont protégés par le code PIN configuré dans les paramètres Windows lors de la configuration de Microsoft Passport.
+Voici la première partie de la procédure complète sur la création d’une application UWP Windows 10 qui utilise Microsoft Passport comme alternative aux systèmes d’authentification par nom d’utilisateur et mot de passe traditionnels. L’application utilise un nom d’utilisateur pour la connexion et crée une clé Passport pour chaque compte. Ces comptes sont protégés par le code PIN configuré dans les paramètres Windows lors de la configuration de Microsoft Passport.
 
 Cette procédure pas à pas est en deux parties : création de l’application et connexion au service principal. Lorsque vous avez terminé cet article, passez à la deuxième partie : [Service de connexion Microsoft Passport](microsoft-passport-login-auth-service.md).
 
 Avant de commencer, consultez la vue d’ensemble [Microsoft Passport et Windows Hello](microsoft-passport.md) pour bien comprendre le fonctionnement de Microsoft Passport.
 
-## Prise en main
+## <a name="get-started"></a>Prise en main
 
 
 Pour créer ce projet, il vous faut connaître C# et XAML. Vous devrez également utiliser Visual Studio 2015 (Community Edition ou version ultérieure) sur un ordinateur Windows 10.
 
 -   Ouvrez Visual Studio 2015, puis sélectionnez Fichier &gt; Nouveau &gt; Projet.
 -   Une fenêtre Nouveau projet s’ouvre. Navigation vers Modèles &gt; Visual C#.
--   Choisissez une application vide (Windows universelle) et appelez-la «PassportLogin».
+-   Choisissez une application vide (Windows universelle) et appelez-la « PassportLogin ».
 -   Générez et exécutez la nouvelle application (F5). Une fenêtre vide doit s’afficher sur l’écran. Fermez l’application.
 
-![](images/passport-login-1.png)
+![nouveau projet Passport](images/passport-login-1.png)
 
-## Exercice 1 : Connexion avec Microsoft Passport
+## <a name="exercise-1-login-with-microsoft-passport"></a>Exercice 1 : Connexion avec Microsoft Passport
 
 
 Dans cet exercice, vous découvrirez comment vérifier que Microsoft Passport est bien installé sur l’ordinateur et comment vous connecter à un compte à l’aide de Microsoft Passport.
 
--   Dans le nouveau projet, créez un dossier dans la solution appelé «Vues». Ce dossier contient les pages que vous consulterez dans cet exemple. Cliquez avec le bouton droit sur le projet dans l’Explorateur de solutions, sélectionnez Ajouter &gt; Nouveau dossier, puis nommez le dossier Vues.
+-   Dans le nouveau projet, créez un dossier dans la solution appelé « Vues ». Ce dossier contient les pages que vous consulterez dans cet exemple. Cliquez avec le bouton droit sur le projet dans l’Explorateur de solutions, sélectionnez Ajouter &gt; Nouveau dossier, puis renommez le dossier en Vues.
 
-    ![](images/passport-login-2.png)
+    ![ajout d’un dossier dans Passport](images/passport-login-2.png)
 
--   Cliquez avec le bouton droit sur le nouveau dossier Vues, sélectionnez Ajouter &gt; Nouvel élément, puis sélectionnez Page vierge. Nommez cette page «Login.xaml».
+-   Cliquez avec le bouton droit sur le nouveau dossier Vues, sélectionnez Ajouter &gt; Nouvel élément, puis sélectionnez Page vierge. Nommez cette page « Login.xaml ».
 
-    ![](images/passport-login-3.png)
+    ![ajout d’une page vierge dans Passport](images/passport-login-3.png)
 
 -   Pour définir l’interface utilisateur de la nouvelle page de connexion, ajoutez le code XAML suivant. Ce code XAML définit un élément StackPanel pour aligner les enfants suivants :
 
@@ -162,9 +162,9 @@ Dans cet exercice, vous découvrirez comment vérifier que Microsoft Passport es
 
 -   Pour créer la classe MicrosoftPassportHelper, cliquez avec le bouton droit sur la solution PassportLogin (Windows universelle), puis cliquez sur Ajouter &gt; Nouveau dossier. Nommez ce dossier Utilitaires.
 
-    ![](images/passport-login-5.png)
+    ![création d’une classe d’assistance dans Passport](images/passport-login-5.png)
 
--   Cliquez avec le bouton droit sur le dossier Utilitaires, puis cliquez sur Ajouter &gt; Classe. Nommez cette classe «MicrosoftPassportHelper.cs».
+-   Cliquez avec le bouton droit sur le dossier Utilitaires, puis cliquez sur Ajouter &gt; Classe. Nommez cette classe « MicrosoftPassportHelper.cs ».
 -   Modifiez la définition de classe de MicrosoftPassportHelper sur statique publique, puis ajoutez la méthode suivante pour indiquer à l’utilisateur si Microsoft Passport est prêt à être utilisé. Vous devez ajouter les espaces de noms requis.
 
     ```cs
@@ -209,12 +209,12 @@ Dans cet exercice, vous découvrirez comment vérifier que Microsoft Passport es
 
 -   Créez et exécutez l’application (F5). Vous accédez à la page de connexion et la bannière Microsoft Passport vous indique que Passport est prêt à être utilisé. Vous devez voir une bannière bleue ou verte indiquant le statut de Microsoft Passport sur votre ordinateur.
 
-    ![](images/passport-login-6.png)
+    ![écran de connexion à Passport prêt](images/passport-login-6.png)
 
-    ![](images/passport-login-7.png)
+    ![écran de connexion à Passport non configuré](images/passport-login-7.png)
 
--   Vous devez ensuite générer la logique de connexion. Créez un dossier appelé «Modèles».
--   Dans le dossier Modèles, créez une classe appelée «Account.cs». Cette classe fera office de modèle de compte. Comme il s’agit d’un modèle, il contient uniquement un nom d’utilisateur. Modifiez la définition de classe sur publique et ajoutez la propriété Nom d’utilisateur.
+-   L’étape suivante consiste à générer la logique de connexion. Créez un dossier appelé « Modèles ».
+-   Dans le dossier Modèles, créez une classe appelée « Account.cs ». Cette classe fera office de modèle de compte. Comme il s’agit d’un modèle, il contient uniquement un nom d’utilisateur. Modifiez la définition de classe sur publique et ajoutez la propriété Nom d’utilisateur.
     
     ```cs
     namespace PassportLogin.Models
@@ -226,7 +226,7 @@ Dans cet exercice, vous découvrirez comment vérifier que Microsoft Passport es
     }
     ```
 
--   Il vous faut une solution pour gérer les comptes. Pour ces travaux pratiques, une liste d’utilisateurs sera enregistrée et chargée localement puisqu’il n’y a ni serveur ni base de données. Cliquez avec le bouton droit sur le dossier Utilitaires, puis ajoutez une nouvelle classe appelée «AccountHelper.cs». Modifiez la définition de classe sur publique statique. AccountHelper est une classe statique qui contient toutes les méthodes nécessaires pour enregistrer et charger la liste des comptes localement. L’enregistrement et le chargement fonctionnent à l’aide de XmlSerializer. Vous devez également vous souvenir du fichier que vous avez enregistré et de l’emplacement auquel vous l’avez enregistré. Les espaces de noms supplémentaires doivent être référencés.
+-   Il vous faut une solution pour gérer les comptes. Pour ces travaux pratiques, une liste d’utilisateurs sera enregistrée et chargée localement puisqu’il n’y a ni serveur ni base de données. Cliquez avec le bouton droit sur le dossier Utilitaires, puis ajoutez une nouvelle classe appelée « AccountHelper.cs ». Modifiez la définition de classe sur publique statique. AccountHelper est une classe statique qui contient toutes les méthodes nécessaires pour enregistrer et charger la liste des comptes localement. L’enregistrement et le chargement fonctionnent à l’aide de XmlSerializer. Vous devez également vous souvenir du fichier que vous avez enregistré et de l’emplacement auquel vous l’avez enregistré. Les espaces de noms supplémentaires doivent être référencés.
     
     ```cs
     using System.IO;
@@ -351,7 +351,7 @@ Dans cet exercice, vous découvrirez comment vérifier que Microsoft Passport es
             }<
     ```
 
--   La prochaine étape consiste à gérer une demande de connexion de l’utilisateur. Dans Login.xaml.cs, créez une variable privée qui contient la connexion du compte actif. Ajoutez ensuite un nouvel appel de méthode SignInPassport. Cela permet de valider les informations d’identification de compte à l’aide de la méthode AccountHelper.ValidateAccountCredentials. Cette méthode retourne une valeur booléenne si le nom d’utilisateur entré est identique à la valeur de chaîne codée en dur définie à l’étape précédente. La valeur codée en dur de cet exemple est «sampleUsername».
+-   La prochaine étape consiste à gérer une demande de connexion de l’utilisateur. Dans Login.xaml.cs, créez une variable privée qui contient la connexion du compte actif. Ajoutez ensuite un nouvel appel de méthode SignInPassport. Cela permet de valider les informations d’identification de compte à l’aide de la méthode AccountHelper.ValidateAccountCredentials. Cette méthode retourne une valeur booléenne si le nom d’utilisateur entré est identique à la valeur de chaîne codée en dur définie à l’étape précédente. La valeur codée en dur de cet exemple est « sampleUsername ».
 
     ```cs
     using PassportLogin.Models;
@@ -484,16 +484,16 @@ Dans cet exercice, vous découvrirez comment vérifier que Microsoft Passport es
     }
     ```
 
--   Créez et exécutez l’application. Vous arriverez sur le page de connexion. Tapez «sampleUsername» et cliquez sur Connexion. Une invite Microsoft Passport vous demande d’entrer votre code PIN. Une fois le code PIN saisi correctement, la méthode CreatePassportKeyAsync sera en mesure de créer une clé Passport. Contrôlez les fenêtres de sortie pour voir si un message indiquant que l’opération a réussi s’affiche.
+-   Créez et exécutez l’application. Vous arriverez sur le page de connexion. Tapez « sampleUsername » et cliquez sur Connexion. Une invite Microsoft Passport vous demande d’entrer votre code PIN. Une fois le code PIN correct saisi, la méthode CreatePassportKeyAsync peut créer une clé Passport. Contrôlez les fenêtres de sortie pour voir si un message indiquant que l’opération a réussi s’affiche.
 
-    ![](images/passport-login-8.png)
+    ![invite de saisie du code PIN de connexion à Passport](images/passport-login-8.png)
 
-## Exercice 2 : Pages d’accueil et de sélection utilisateur
+## <a name="exercise-2-welcome-and-user-selection-pages"></a>Exercice 2 : Pages d’accueil et de sélection d’utilisateur
 
 
 Cet exercice est la suite de l’exercice précédent. Lorsqu’un utilisateur réussit à se connecter, il arrive sur une page d’accueil sur laquelle il peut se déconnecter ou supprimer son compte. Puisque Passport crée une clé pour chaque ordinateur, un écran de sélection utilisateur affichant tous les utilisateurs qui se sont connectés à cet ordinateur peut être créé. Un utilisateur peut ensuite sélectionner l’un de ces comptes et accéder directement à l’écran d’accueil sans devoir saisir de nouveau un mot de passe, puisqu’il a déjà été authentifié pour accéder à l’ordinateur.
 
--   Dans le dossier Vues, ajoutez une nouvelle page vierge appelée «Welcome.xaml». Ajoutez le code XAML suivant pour terminer l’interface utilisateur. Cette dernière affiche un titre, le nom de l’utilisateur connecté et deux boutons. L’un permet de revenir à la liste des utilisateurs (que vous créerez plus tard) et l’autre permet de gérer l’oubli de l’utilisateur.
+-   Dans le dossier Vues, ajoutez une nouvelle page vierge appelée « Welcome.xaml ». Ajoutez le code XAML suivant pour terminer l’interface utilisateur. Cette dernière affiche un titre, le nom de l’utilisateur connecté et deux boutons. L’un permet de revenir à la liste des utilisateurs (que vous créerez plus tard) et l’autre permet de gérer l’oubli de l’utilisateur.
 
     ```xml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -622,11 +622,11 @@ Cet exercice est la suite de l’exercice précédent. Lorsqu’un utilisateur r
     }
     ```
 
--   Créez et exécutez l’application. Connectez-vous avec «sampleUsername» et cliquez sur Connexion. Entrez votre code PIN. Si tout fonctionne correctement, vous accédez à l’écran d’accueil. Essayez de cliquer sur oublier l’utilisateur et contrôlez la fenêtre Sortie pour voir si l’utilisateur a été supprimé. Lorsque l’utilisateur est supprimé, vous restez sur la page d’accueil. Vous devez créer une page de sélection utilisateur accessible à l’application.
+-   Créez et exécutez l’application. Connectez-vous avec « sampleUsername » et cliquez sur Connexion. Entrez votre code PIN. Si tout fonctionne correctement, vous accédez à l’écran d’accueil. Essayez de cliquer sur oublier l’utilisateur et contrôlez la fenêtre Sortie pour voir si l’utilisateur a été supprimé. Lorsque l’utilisateur est supprimé, vous restez sur la page d’accueil. Vous devez créer une page de sélection d’utilisateur à laquelle l’application peut accéder.
 
-    ![](images/passport-login-9.png)
+    !passport welcome screen](images/passport-login-9.png)
 
--   Dans le dossier Vues, créez une nouvelle page vierge appelée «UserSelection.xaml» et ajoutez le code XAML suivant pour définir l’interface utilisateur. Cette page contient un [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) qui affiche tous les utilisateurs de la liste locale des comptes et un bouton qui accède à la page de connexion pour permettre à l’utilisateur d’ajouter un autre compte.
+-   Dans le dossier Vues, créez une page vierge appelée « UserSelection.xaml » et ajoutez le code XAML suivant pour définir l’interface utilisateur. Cette page contient un [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) qui affiche tous les utilisateurs de la liste locale des comptes et un bouton qui accède à la page de connexion pour permettre à l’utilisateur d’ajouter un autre compte.
 
     ```xml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -870,16 +870,16 @@ Cet exercice est la suite de l’exercice précédent. Lorsqu’un utilisateur r
     }
     ```
 
--   Créez et exécutez l’application. Connectez-vous avec «sampleUsername». Entrez votre code PIN. Si tout fonctionne correctement, vous accédez à l’écran d’accueil. Cliquez pour revenir à la liste des utilisateurs. Vous devez maintenant voir un utilisateur dans la liste. Si vous cliquez sur cet utilisateur, Passport vous permet de vous reconnecter sans devoir entrer de nouveau le mot de passe, etc.
+-   Créez et exécutez l’application. Connectez-vous avec « sampleUsername ». Entrez votre code PIN. Si tout fonctionne correctement, vous accédez à l’écran d’accueil. Cliquez pour revenir à la liste des utilisateurs. Vous devez maintenant voir un utilisateur dans la liste. Si vous cliquez sur cet utilisateur, Passport vous permet de vous reconnecter sans avoir à entrer à nouveau le mot de passe.
 
-    ![](images/passport-login-10.png)
+    ![liste de sélection d’utilisateurs dans Passport](images/passport-login-10.png)
 
-## Exercice3: Inscription d’un nouvel utilisateur Passport
+## <a name="exercise-3-registering-a-new-passport-user"></a>Exercice 3 : Inscription d’un nouvel utilisateur Passport
 
 
 Dans cet exercice, vous créerez une page pour créer un compte avec Passport. Son fonctionnement sera identique à celui de la page de connexion. La page de connexion est implémentée pour un utilisateur existant qui migre pour utiliser Passport. Une page PassportRegister crée l’inscription auprès de Passport pour un nouvel utilisateur.
 
--   Dans le dossier Vues, créez une page vierge appelée «PassportRegister.xaml». Dans le code XAML, ajoutez le code ci-dessous pour configurer l’interface utilisateur. L’interface est similaire à la page de connexion.
+-   Dans le dossier Vues, créez une page vierge appelée « PassportRegister.xaml ». Dans le code XAML, ajoutez le code ci-dessous pour configurer l’interface utilisateur. L’interface est similaire à la page de connexion.
 
     ```xml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -959,20 +959,20 @@ Dans cet exercice, vous créerez une page pour créer un compte avec Passport. S
     }
     ```
 
--   Créez et exécutez l’application. Essayez d’inscrire un nouvel utilisateur. Revenez à la liste des utilisateurs, et vérifiez que vous pouvez sélectionner cet utilisateur et vous connecter.
+-   Créez et exécutez l’application. Essayez d’inscrire un nouvel utilisateur. Revenez à la liste des utilisateurs et vérifiez que vous pouvez sélectionner cet utilisateur et vous connecter.
 
-    ![](images/passport-login-11.png)
+    ![inscription d’un nouvel utilisateur dans Passport](images/passport-login-11.png)
 
-Dans cet exercice pratique, vous avez appris les compétences essentielles pour utiliser la nouvelle API Microsoft Passport permettant d’authentifier les utilisateurs existants et de créer des comptes pour les nouveaux utilisateurs. Avec ces nouvelles connaissances, les utilisateurs n’ont plus besoin de mémoriser un mot de passe, mais n’ayez crainte, votre application reste protégée grâce à l’authentification utilisateur. Windows 10 utilise la technologie Passport pour prendre en charge la connexion biométrique à Windows Hello. Si vous utilisiez un ordinateur qui prend en charge Windows Hello, vous avez constaté que ces exercices prennent déjà en charge Windows Hello.
+Dans cet exercice pratique, vous avez appris les bases pour utiliser la nouvelle API Microsoft Passport permettant d’authentifier les utilisateurs existants et de créer des comptes pour les nouveaux utilisateurs. Avec ces nouvelles connaissances, les utilisateurs n’ont plus besoin de mémoriser un mot de passe, mais n’ayez crainte, votre application reste protégée grâce à l’authentification utilisateur. Windows 10 utilise la technologie Passport pour prendre en charge la connexion biométrique à Windows Hello. Si vous utilisiez un ordinateur qui prend en charge Windows Hello, vous avez constaté que ces exercices prennent déjà en charge Windows Hello.
 
 En tant que développeur, vous n’avez pas d’efforts supplémentaires à fournir pour prendre en charge Windows Hello une fois que vous avez implémenté la prise en charge de Microsoft Passport.
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Microsoft Passport et Windows Hello](microsoft-passport.md)
 * [Service de connexion Microsoft Passport](microsoft-passport-login-auth-service.md)
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

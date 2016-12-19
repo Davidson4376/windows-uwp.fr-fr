@@ -4,19 +4,19 @@ ms.assetid: 40B97E0C-EB1B-40C2-A022-1AB95DFB085E
 description: "Cet article vous montre comment procéder à une diffusion multimédia sur des appareils distants à partir d’une application Windows universelle."
 title: "Diffusion multimédia"
 translationtype: Human Translation
-ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
-ms.openlocfilehash: e225d5f5b7957ab21136de7294f086af62c2a5ec
+ms.sourcegitcommit: ebcd2f2b28a7cd2a8a9dad16c30239b06e147ec3
+ms.openlocfilehash: fc69e3b5bb814752480fa0151c36ae0a8c783c4e
 
 ---
 
-# Diffusion multimédia
+# <a name="media-casting"></a>Diffusion multimédia
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-Cet article vous montre comment procéder à une diffusion multimédia sur des appareils distants à partir d’une application Windows universelle.
+Cet article vous montre comment effectuer une diffusion multimédia sur des appareils distants à partir d’une application Windows universelle.
 
-## Intégrer la diffusion multimédia à MediaElement
+## <a name="built-in-media-casting-with-mediaplayerelement"></a>Diffusion multimédia intégrée avec MediaPlayerElement
 
 Le moyen le plus simple d’effectuer une diffusion multimédia à partir d’une application Windows universelle consiste à utiliser la fonctionnalité intégrée de diffusion du contrôle [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement).
 
@@ -43,9 +43,9 @@ Une fois la vidéo chargée dans l’élément **MediaPlayerElement**, il suffit
 ![Bouton de diffusion MediaElement](images/media-element-casting-button.png)
 
 > [!NOTE] 
-> À compter de Windows10, version1607, nous vous recommandons d’utiliser la classe **MediaPlayer** pour lire des éléments multimédias. **MediaPlayerElement** est un contrôle XAML léger utilisé pour afficher le contenu d’un **MediaPlayer** dans une page XAML. Le contrôle **MediaElement** continue d’être pris en charge pour la compatibilité descendante. Pour plus d’informations sur l’utilisation de **MediaPlayer** et **MediaPlayerElement** pour lire du contenu multimédia, voir [Lire du contenu audio et vidéo avec MediaPlayer](play-audio-and-video-with-mediaplayer.md). Pour plus d’informations sur l’utilisation de **MediaSource** et des API associées pour utiliser du contenu multimédia, voir [Éléments, playlists et pistes multimédias](media-playback-with-mediasource.md).
+> À compter de Windows 10, version 1607, nous vous recommandons d’utiliser la classe **MediaPlayer** pour lire des éléments multimédias. **MediaPlayerElement** est un contrôle XAML léger utilisé pour afficher le contenu d’un **MediaPlayer** dans une page XAML. Le contrôle **MediaElement** continue d’être pris en charge pour la compatibilité descendante. Pour plus d’informations sur l’utilisation de **MediaPlayer** et **MediaPlayerElement** pour lire du contenu multimédia, voir [Lire du contenu audio et vidéo avec MediaPlayer](play-audio-and-video-with-mediaplayer.md). Pour plus d’informations sur l’utilisation de **MediaSource** et des API associées pour utiliser du contenu multimédia, voir [Éléments, playlists et pistes multimédias](media-playback-with-mediasource.md).
 
-## Diffusion multimédia à l’aide de la classe CastingDevicePicker
+## <a name="media-casting-with-the-castingdevicepicker"></a>Diffusion multimédia à l’aide de la classe CastingDevicePicker
 
 L’autre méthode pour procéder à une diffusion multimédia sur un appareil consiste à utiliser la classe [**CastingDevicePicker**](https://msdn.microsoft.com/library/windows/apps/dn972525). Afin de l’utiliser, vous devez inclure l’espace de noms [**Windows.Media.Casting**](https://msdn.microsoft.com/library/windows/apps/dn972568) dans votre projet.
 
@@ -78,7 +78,7 @@ Dans les gestionnaires d’événements **ErrorOccurred** et **StateChanged**, v
 
 [!code-cs[EmptyStateHandlers](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetEmptyStateHandlers)]
 
-## Diffusion multimédia à l’aide d’un sélecteur d’appareil personnalisé
+## <a name="media-casting-with-a-custom-device-picker"></a>Diffusion multimédia à l’aide d’un sélecteur d’appareil personnalisé
 
 La section suivante décrit comment créer votre propre interface utilisateur de sélecteur d’appareil de diffusion par l’énumération des appareils de diffusion et le lancement de la connexion à partir de votre code.
 
@@ -86,7 +86,7 @@ Pour énumérer les appareils de diffusion disponibles, incluez l’espace de no
 
 [!code-cs[EnumerationNamespace](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetEnumerationNamespace)]
 
-Ajoutez les contrôles suivants à votre page XAML pour implémenter l’interface utilisateur rudimentaire pour cet exemple:
+Ajoutez les contrôles suivants à votre page XAML pour implémenter l’interface utilisateur rudimentaire pour cet exemple :
 
 -   Un bouton pour démarrer l’observateur d’appareils qui recherche les appareils de diffusion disponibles.
 -   Un contrôle [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) pour signaler à l’utilisateur que l’énumération de la diffusion est en cours.
@@ -133,7 +133,7 @@ Lancez la diffusion multimédia en appelant [**RequestStartCastingAsync**](https
 
 [!code-cs[SelectionChanged](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetSelectionChanged)]
 
-Dans le gestionnaire de changement d’état, l’action effectuée dépend du nouvel état de la connexion de diffusion:
+Dans le gestionnaire de changement d’état, l’action effectuée dépend du nouvel état de la connexion de diffusion :
 
 -   Si l’état est **Connected** ou **Rendering**, assurez-vous que le contrôle **ProgressRing** est inactif et que le bouton de déconnexion est visible.
 -   Si l’état est **Disconnected**, désélectionnez l’appareil de diffusion actuel dans la zone de liste, assurez-vous que le contrôle **ProgressRing** est inactif et masquez le bouton de déconnexion.
@@ -160,6 +160,6 @@ Enfin, implémentez le gestionnaire pour le bouton de déconnexion. Arrêtez la 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

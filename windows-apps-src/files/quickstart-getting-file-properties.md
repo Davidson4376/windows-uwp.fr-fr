@@ -1,16 +1,16 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: AC96F645-1BDE-4316-85E0-2FBDE0A0A62A
 title: "Obtenir les propriétés du fichier"
 description: "Obtenez les propriétés (de niveau supérieur, de base et étendues) d’un fichier représenté par un objet StorageFile."
 translationtype: Human Translation
-ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
-ms.openlocfilehash: 78fdc200b134525fc0445af64e73b184b49ef2a3
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: 464548664f8065e4dba45d23ccbb71a68d0b6b17
 
 ---
-# Obtenir les propriétés du fichier
+# <a name="get-file-properties"></a>Obtenir les propriétés du fichier
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 ** API importantes **
@@ -26,7 +26,7 @@ Obtenez les propriétés (de niveau supérieur, de base et étendues) d’un fic
  
 
 
-## Prérequis
+## <a name="prerequisites"></a>Prérequis
 
 -   **Comprendre la programmation asynchrone pour les applications pour la plateforme Windows universelle (UWP)**
 
@@ -36,7 +36,7 @@ Obtenez les propriétés (de niveau supérieur, de base et étendues) d’un fic
 
     Par exemple, le code de ces exemples nécessite la fonctionnalité **picturesLibrary**, mais votre emplacement peut avoir besoin d’une autre fonctionnalité, voire d’aucune. Pour en savoir plus, voir [Autorisations d’accès aux fichiers](file-access-permissions.md).
 
-## Obtention des propriétés de niveau supérieur d’un fichier
+## <a name="getting-a-files-top-level-properties"></a>Obtention des propriétés de niveau supérieur d’un fichier
 
 De nombreuses propriétés de fichier de haut niveau sont accessibles en tant que membres de la classe [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171). Ces propriétés incluent les attributs des fichiers, le type de contenu, la date de création, le nom d’affichage, le type de fichier, etc.
 
@@ -62,7 +62,7 @@ foreach (Windows.Storage.StorageFile file in files)
 }
 ```
 
-## Obtention des propriétés de base d’un fichier
+## <a name="getting-a-files-basic-properties"></a>Obtention des propriétés de base d’un fichier
 
 De nombreuses propriétés de fichier de base sont obtenues en appelant d’abord la méthode [**StorageFile.GetBasicPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh701737). Cette méthode retourne un objet [**BasicProperties**](https://msdn.microsoft.com/library/windows/apps/br212113) qui définit les propriétés de taille de l’élément (fichier ou dossier), ainsi que la date de sa dernière modification.
 
@@ -87,7 +87,7 @@ foreach (Windows.Storage.StorageFile file in files)
 }
  ```
 
-## Obtention des propriétés étendues d’un fichier
+## <a name="getting-a-files-extended-properties"></a>Obtention des propriétés étendues d’un fichier
 
 Outre les propriétés de fichier de haut niveau et de base, il existe de nombreuses propriétés associées au contenu du fichier. Ces propriétés étendues sont accessibles en appelant la méthode [**BasicProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br212124). (Un objet [**BasicProperties**](https://msdn.microsoft.com/library/windows/apps/br212113) est obtenu en appelant la propriété [**StorageFile.Properties**](https://msdn.microsoft.com/library/windows/apps/br227225).) Alors que les propriétés de fichier de niveau supérieur et de base sont accessibles en tant que propriétés d’une classe ([**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) et **BasicProperties**, respectivement), les propriétés étendues sont obtenues en passant une collection [IEnumerable](http://go.microsoft.com/fwlink/p/?LinkID=313091) d’objets [String](http://go.microsoft.com/fwlink/p/?LinkID=325032) qui représentent les noms des propriétés à récupérer à la méthode **BasicProperties.RetrievePropertiesAsync**. Cette méthode retourne ensuite une collection [IDictionary](http://go.microsoft.com/fwlink/p/?LinkId=325238). Chaque propriété étendue est ensuite récupérée à partir de la collection par nom ou par index.
 
@@ -137,6 +137,6 @@ foreach (Windows.Storage.StorageFile file in files)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -1,31 +1,33 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "Cette rubrique décrit l’utilisation de la géométrie de contact pour le ciblage tactile et indique les meilleures pratiques de ciblage dans les applications WindowsRuntime."
+Description: "Cette rubrique décrit l’utilisation de la géométrie de contact pour le ciblage tactile et indique les meilleures pratiques de ciblage dans les applications Windows Runtime."
 title: Ciblage
 ms.assetid: 93ad2232-97f3-42f5-9e45-3fc2143ac4d2
 label: Targeting
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 5707d36533e1b6566efb23ca9b6bf2bbf659cc63
+ms.sourcegitcommit: 5b52f6a8e944e4166c2f4c7e16e4a83ddff23dac
+ms.openlocfilehash: 09e2241523411daa372bc7630d13b96a2aa8203b
 
 ---
 
-# Recommandations en matière de ciblage
+# <a name="guidelines-for-targeting"></a>Recommandations en matière de ciblage
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 Le ciblage tactile dans Windows utilise la zone de contact entière de chaque doigt détecté par un numériseur tactile. Le jeu de données d’entrée plus grand et plus complexe généré par le numériseur est utilisé pour accroître la précision lors de la détermination de la cible souhaitée (ou la plus probable) de l’utilisateur.
 
-**API importantes**
-
--   [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)
--   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
--   [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
-
-
+<div class="important-apis" >
+<b>API importantes</b><br/>
+<ul>
+<li>[**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)</li>
+<li>[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)</li>
+<li>[**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)</li>
+</ul>
+</div>
 
 Cette rubrique décrit l’utilisation de la géométrie de contact pour le ciblage tactile et indique les meilleures pratiques de ciblage dans les applications UWP.
 
-## Mesures et mise à l’échelle
+## <a name="measurements-and-scaling"></a>Mesures et mise à l’échelle
 
 
 Pour conserver la cohérence des différentes tailles d’écran et densités de pixels, toutes les tailles de cibles sont représentées en unités physiques (millimètres). Pour convertir les unités physiques en pixels, utilisez l’équation suivante :
@@ -44,17 +46,17 @@ Pixels = 48 pixels
 
 Ce résultat doit être ajusté en fonction de chaque plateau d’échelle défini par le système.
 
-## Seuils
+## <a name="thresholds"></a>Seuils
 
 
 Des seuils de distance et de temps peuvent être utilisés pour déterminer le résultat d’une interaction.
 
-Par exemple, lorsqu’un appui est détecté, il est enregistré si l’objet est glissé de moins de 2,7 mm par rapport au point d’appui et que le doigt est levé dans les 0,1 seconde suivant l’appui. Le fait de déplacer le doigt sur l’écran au-delà de ce seuil de 2,7mm entraîne un glissement de l’objet et sa sélection ou son déplacement (pour plus d’informations, voir [Recommandations en matière de glisser transversal](guidelines-for-cross-slide.md)). En fonction de votre application, le fait de maintenir appuyé le doigt pendant plus de 0,1seconde peut provoquer de la part du système une interaction d’auto-révélation (pour plus d’informations, voir [Recommandations en matière de retour visuel](guidelines-for-visualfeedback.md#selfreveal)).
+Par exemple, lorsqu’un appui est détecté, il est enregistré si l’objet est glissé de moins de 2,7 mm par rapport au point d’appui et que le doigt est levé dans les 0,1 seconde suivant l’appui. Le fait de déplacer le doigt sur l’écran au-delà de ce seuil de 2,7 mm entraîne un glissement de l’objet et sa sélection ou son déplacement (pour plus d’informations, voir [Recommandations en matière de glisser transversal](guidelines-for-cross-slide.md)). En fonction de votre application, le fait de maintenir appuyé le doigt pendant plus de 0,1 seconde peut provoquer de la part du système une interaction d’auto-révélation (pour plus d’informations, voir [Recommandations en matière de retour visuel](guidelines-for-visualfeedback.md)).
 
-## Taille des cibles
+## <a name="target-sizes"></a>Taille des cibles
 
 
-En général, vous devez définir votre cible tactile sur une taille de 9mm carrés ou plus (48x48pixels sur un affichage de 135PPP pour un plateau de mise à l’échelle de 1.0x). Évitez d’utiliser des cibles tactiles inférieures à 7 mm carrés.
+En général, vous devez définir votre cible tactile sur une taille de 9 mm carrés ou plus (48x48 pixels sur un affichage de 135 PPP pour un plateau de mise à l’échelle de 1.0x). Évitez d’utiliser des cibles tactiles inférieures à 7 mm carrés.
 
 Le schéma suivant montre comment la taille de la cible est généralement une combinaison de la cible visuelle, de la taille réelle de la cible et de l’éventuel espacement entre la cible réelle et d’autres cibles potentielles.
 
@@ -83,8 +85,8 @@ Le tableau suivant montre les tailles minimales et recommandées pour les compos
 </tr>
 <tr class="even">
 <td align="left">Taille visuelle de la cible</td>
-<td align="left">&lt; 60% de la taille réelle</td>
-<td align="left">90 à 100% de la taille réelle
+<td align="left">&lt; 60 % de la taille réelle</td>
+<td align="left">90 à 100 % de la taille réelle
 <p>La plupart des utilisateurs ne se rendront pas compte qu’une cible visuelle est tactile si elle fait moins de 4,2 mm carrés (60 % de la taille de cible minimale recommandée, 7 mm).</p></td>
 </tr>
 <tr class="odd">
@@ -113,16 +115,16 @@ Vous pouvez modifier ces recommandations en matière de tailles de cibles en fon
 -   Visualisations tactiles
 -   Digitaliseurs matériel et tactile
 
-## Aide au ciblage
+## <a name="targeting-assistance"></a>Aide au ciblage
 
 
-Windows offre une aide au ciblage pour prendre en charge les scénarios dans lesquels les recommandations en matière de taille ou d’espacement minimal présentées ici ne peuvent pas s’appliquer; par exemple, des liens hypertexte sur une page web, des contrôles de calendrier, des listes déroulantes et des zones de liste modifiable ou une sélection de texte.
+Windows offre une aide au ciblage pour prendre en charge les scénarios dans lesquels les recommandations en matière de taille ou d’espacement minimal présentées ici ne peuvent pas s’appliquer ; par exemple, des liens hypertexte sur une page web, des contrôles de calendrier, des listes déroulantes et des zones de liste modifiable ou une sélection de texte.
 
 Ces améliorations de la plateforme de ciblage et les comportement de l’interface utilisateur fonctionnent ensemble avec le retour visuel (interface utilisateur de résolution des ambiguïtés) afin d’améliorer la précision et la confiance de l’utilisateur. Pour plus d’informations, voir [Recommandations en matière de retour visuel](guidelines-for-visualfeedback.md).
 
 Si la taille d’un élément tactile doit être inférieure à la taille de cible minimale recommandée, vous pouvez utiliser les techniques suivantes pour réduire les problèmes de ciblage qui en découlent.
 
-## Connexion
+## <a name="tethering"></a>Connexion
 
 
 La connexion est un signal visuel (un connecteur situé entre un point de contact et le rectangle englobant d’un objet) qui sert à indiquer à l’utilisateur qu’il est connecté à un objet et qu’il interagit avec celui-ci, même si le contact d’entrée ne touche pas directement l’objet. Ceci peut se produire dans les cas suivants :
@@ -130,9 +132,9 @@ La connexion est un signal visuel (un connecteur situé entre un point de contac
 -   Un contact tactile a été détecté pour la première fois dans un certain seuil de proximité d’un objet et cet objet a été identifié comme la cible la plus probable du contact.
 -   Un contact tactile a été éloigné d’un objet, mais il reste encore dans un seuil de proximité.
 
-Cette fonctionnalité n’est pas exposée aux développeurs d’applications du WindowsStore en JavaScript.
+Cette fonctionnalité n’est pas exposée aux développeurs d’applications du Windows Store en JavaScript.
 
-## Frottement
+## <a name="scrubbing"></a>Frottement
 
 
 Le frottement consiste à toucher n’importe où dans un champ de cibles et de laisser glisser le doigt pour sélectionner la cible souhaitée sans le lever tant qu’il n’est pas sur la cible souhaitée. Avec cette technique, également appelée « activation par décollage », l’objet qui est activé, est celui qui a été touché en dernier lorsque l’utilisateur a levé le doigt de l’écran.
@@ -147,7 +149,7 @@ Pour concevoir des interactions de frottement, tenez compte des recommandations 
 -   La connexion à une cible de frottement est spécifiée si les actions effectuées par la cible sont sans danger ; par exemple, passer d’une date à une autre dans un calendrier.
 -   La connexion est spécifiée dans une seule direction, horizontalement ou verticalement.
 
-## Articles connexes
+## <a name="related-articles"></a>Articles connexes
 
 
 **Exemples**
@@ -157,7 +159,7 @@ Pour concevoir des interactions de frottement, tenez compte des recommandations 
 * [Exemple de visuels de focus](http://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **Exemples d’archive**
-* [Entrée: exemple d’événements d’entrée utilisateurXAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [Entrée : exemple d’événements d’entrée utilisateur XAML](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [Entrée : exemple de fonctionnalités d’appareils](http://go.microsoft.com/fwlink/p/?linkid=231530)
 * [Entrée : exemple de test de positionnement tactile](http://go.microsoft.com/fwlink/p/?linkid=231590)
 * [Exemple de zoom, de panoramique et de défilement XAML](http://go.microsoft.com/fwlink/p/?linkid=251717)
@@ -175,6 +177,6 @@ Pour concevoir des interactions de frottement, tenez compte des recommandations 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

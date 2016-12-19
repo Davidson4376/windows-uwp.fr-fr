@@ -4,20 +4,20 @@ description: "Cet article introductif aide les architectes et développeurs d’
 ms.assetid: 6AFF9D09-77C2-4811-BB1A-BBF4A6FF511E
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
-ms.openlocfilehash: 434505a697e045198972ce529366be281774af86
+ms.sourcegitcommit: a70a59283fe664bef9ddab56df57a9fc46c91033
+ms.openlocfilehash: 2ac9edf074ceb91d5cfea17228f0a39fef200b74
 
 ---
 
-# Présentation du développement d’applications Windows sécurisées
+# <a name="intro-to-secure-windows-app-development"></a>Présentation du développement d’applications Windows sécurisées
 
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Cet article introductif aide les architectes et développeurs d’applications à se familiariser avec les diverses fonctionnalités de plateforme Windows 10 qui accélèrent la création d’applications de plateforme Windows universelle (UWP). Il explique en détail comment utiliser les fonctionnalités de sécurité Windows disponibles à chacune des phases suivantes : authentification, données en transit et données au repos. Vous pourrez accéder à des informations plus détaillées sur les différents sujets en consultant les ressources supplémentaires mentionnées dans chaque chapitre.
 
-## 1 Introduction
+## <a name="1-introduction"></a>1 Introduction
 
 
 Le développement d’une application sécurisée peut relever du défi. Au rythme où évoluent les applications d’entreprise mobiles, sociales, cloud et complexes d’aujourd’hui, les clients exigent que les applications soient disponibles et mises à jour en un temps record. Ils utilisent également de nombreux types d’appareils, rendant ainsi le processus de création d’applications encore plus complexe. Si vous développez pour la plateforme Windows universelle (UWP) Windows 10, vos applications doivent pouvoir s’exécuter sur l’éventail traditionnel d’ordinateurs de bureau, ordinateurs portables, tablettes et appareils mobiles, ainsi que sur un nombre croissant de nouveaux appareils englobant l’Internet des objets, Xbox One, Microsoft Surface Hub et HoloLens. En tant que développeur, vous devez vous assurer que vos applications communiquent et stockent les données de manière sécurisée, sur l’ensemble des plateformes ou des appareils utilisés.
@@ -34,7 +34,7 @@ Les données en transit font référence à la connexion et aux messages transf�
 
 Enfin, les données au repos désignent les données qui résident en mémoire ou sur les médias de stockage. Windows 10 intègre un modèle d’application qui empêche les accès non autorisés aux données entre applications et fournit des API de chiffrement pour sécuriser davantage les données sur l’appareil. La fonctionnalité Stockage sécurisé des informations d’identification permet de stocker les informations d’identification de l’utilisateur sur l’appareil en toute sécurité, le système d’exploitation empêchant les autres applications d’y accéder.
 
-## 2 Facteurs d’authentification
+## <a name="2-authentication-factors"></a>2 Facteurs d’authentification
 
 
 Pour protéger les données, le système doit identifier la personne qui demande l’accès aux ressources de données et doit autoriser cet accès. Le processus d’identification d’un utilisateur est appelé authentification, et la détermination des privilèges d’accès vis-à-vis d’une ressource est désigné sous le terme d’autorisation. Ces deux opérations sont étroitement liées et peuvent se révéler impossibles à distinguer par l’utilisateur. Le degré de complexité de ces opérations dépend de nombreux facteurs et varie, par exemple, selon que les données résident sur un seul serveur ou sont réparties entre plusieurs systèmes. Le serveur fournissant les services d’authentification et d’autorisation est désigné sous le terme de fournisseur d’identité.
@@ -49,7 +49,7 @@ Un mot de passe créé par l’utilisateur est un facteur d’authentification e
 
 La conception de la méthode d’authentification utilisée par un système constitue donc un aspect complexe et important de la sécurité des données. En règle générale, plus vous utilisez de facteurs d’authentification, plus le système est sécurisé. Toutefois, le processus d’authentification doit rester simple. Étant donné qu’un utilisateur se connecte généralement plusieurs fois par jour, il a besoin de pouvoir effectuer cette opération rapidement. Le type d’authentification que vous choisissez doit représenter un bon compromis entre la sécurité et la facilité d’utilisation ; l’authentification à un seul facteur se révèle la moins sécurisée mais la plus simple d’emploi, tandis que l’authentification multifacteur devient de plus en plus sûre mais aussi plus complexe à mesure que le nombre de facteurs utilisés augmente.
 
-## 2.1 Authentification à un seul facteur
+## <a name="21-single-factor-authentication"></a>2.1 Authentification à un seul facteur
 
 
 Ce type d’authentification repose sur une seule information d’identification d’utilisateur. Il s’agit généralement d’un mot de passe, mais cette information peut également prendre la forme d’un code confidentiel.
@@ -69,7 +69,7 @@ L’inconvénient des mots de passe réside dans le fait qu’ils sont plus faci
 
 En dépit de ses inconvénients, l’authentification à un seul facteur dote l’utilisateur d’un contrôle total sur son information d’identification. En effet, l’utilisateur peut créer et modifier ces informations, et le processus d’authentification ne nécessite rien d’autre qu’un clavier. Cet aspect constitue la principale différence entre l’authentification à un seul facteur et l’authentification multifacteur.
 
-## 2.1.1 Service Broker d’authentification web
+## <a name="211-web-authentication-broker"></a>2.1.1 Service Broker d’authentification web
 
 
 Comme décrit précédemment, l’une des difficultés liées à l’authentification par mot de passe pour un service informatique réside dans le surcroît de travail induit par la gestion de la base de noms d’utilisateur/mots de passe, des mécanismes de réinitialisation, etc. Une solution de plus en plus populaire consiste à recourir à des fournisseurs d’identité tiers assurant l’authentification par le biais du standard ouvert OAuth.
@@ -128,7 +128,7 @@ catch (Exception ex)
 }
 ```
 
-## 2.2 Authentification multifacteur
+## <a name="22-multi-factor-authentication"></a>2.2 Authentification multifacteur
 
 
 Comme son nom l’indique, l’authentification multifacteur a recours à plusieurs facteurs d’authentification. Elle combine généralement un élément que vous connaissez, tel qu’un mot de passe, avec un élément dont vous disposez, par exemple un téléphone mobile ou une carte à puce. Ainsi, même si un attaquant découvre le mot de passe de l’utilisateur, le compte restera inaccessible sans le dispositif ou la carte. Inversement, un dispositif ou une carte dont l’intégrité a été compromise ne seront d’aucune utilité à l’attaquant sans le mot de passe. L’authentification multifacteur se révèle donc plus sécurisée, mais également plus complexe, que l’authentification à un seul facteur.
@@ -146,7 +146,7 @@ Les services qui utilisent l’authentification multifacteur permettent souvent 
 
 Comme vous pouvez le voir, ce processus diffère également de l’authentification à un seul facteur par le fait que la seconde information d’identification est envoyée à l’utilisateur et non créée ou fournie par ce dernier. L’utilisateur ne dispose donc pas d’un contrôle total sur les informations d’identification requises. C’est également le cas lorsqu’une carte à puce est utilisée comme seconde information d’identification : l’organisation est responsable de sa création et de sa remise à l’utilisateur.
 
-## 2.2.1 Azure Active Directory
+## <a name="221-azure-active-directory"></a>2.2.1 Azure Active Directory
 
 
 Azure Active Directory (Azure AD) est un service de gestion des identités et des accès basé sur le cloud qui peut faire office de fournisseur d’identité dans les processus d’authentification à un seul facteur ou multifacteur. L’authentification Azure AD est utilisable avec ou sans code de vérification.
@@ -155,7 +155,7 @@ Bien qu’Azure AD puisse également implémenter l’authentification à un seu
 
 En outre, Azure AD peut jouer le rôle de fournisseur OAuth, en offrant à l’utilisateur standard un mécanisme d’authentification et d’autorisation pour des applications exécutées sur différentes plateformes. Pour plus d’informations, voir [Azure Active Directory](https://azure.microsoft.com/services/active-directory/) et [Azure Multi-Factor Authentication](https://azure.microsoft.com/services/multi-factor-authentication/).
 
-## 2.4 Microsoft Passport et Windows Hello
+## <a name="24-microsoft-passport-and-windows-hello"></a>2.4 Microsoft Passport et Windows Hello
 
 
 Le système d’exploitation Windows 10 intègre un mécanisme d’authentification multifacteur d’une grande simplicité. Les deux composants impliqués dans ce mécanisme sont Microsoft Passport et Windows Hello. Windows Hello est le nouveau système de connexion biométrique intégré à Microsoft 10. Étant donné qu’il est directement intégré au système d’exploitation, Windows Hello peut identifier le visage ou les empreintes digitales pour déverrouiller les appareils des utilisateurs. Le magasin d’informations d’identification sécurisées Windows protège les données biométriques figurant sur l’appareil.
@@ -166,7 +166,7 @@ Toutefois, Microsoft Passport n’est pas un simple substitut aux systèmes 2FA 
 
 Un appareil doit être inscrit auprès de Microsoft Passport pour que les utilisateurs puissent s’authentifier sur cet appareil. Microsoft Passport utilise un chiffrement asymétrique (clé publique/privée) dans le cadre duquel l’une des parties utilise une clé publique pour chiffrer des données que l’autre partie peut déchiffrer à l’aide d’une clé privée. Microsoft Passport crée un ensemble de paires de clés publique/privée et écrit les clés privées sur le processeur du module de plateforme sécurisée (TPM) de l’appareil. Une fois qu’un appareil est inscrit, les applications UWP peuvent appeler les API système pour récupérer la clé publique de l’utilisateur, qui peut être utilisée pour inscrire l’utilisateur sur le serveur.
 
-Le flux de travail d’inscription d’une application peut ressembler à ce qui suit:
+Le flux de travail d’inscription d’une application peut ressembler à ce qui suit :
 
 ![inscription auprès de Microsoft Passport](images/secure-passport.png)
 
@@ -174,12 +174,12 @@ Les informations d’inscription que vous collectez peuvent inclure beaucoup d�
 
 Pour plus d’informations sur Microsoft Passport et sur Windows Hello, voir le [Guide de Microsoft Passport](https://msdn.microsoft.com/library/mt589441) et le [Guide du développeur de Microsoft Passport](microsoft-passport.md).
 
-## 3 Méthodes de sécurité des données en transit
+## <a name="3-data-in-flight-security-methods"></a>3 Méthodes de sécurité des données en transit
 
 
 Ces méthodes de sécurité s’appliquent aux données en transit entre plusieurs appareils connectés à un réseau. Les données peuvent être transférées entre les systèmes de l’environnement haute sécurité d’un intranet d’entreprise privé ou entre un client et un service web dans l’environnement non sécurisé du web. Les applications Windows 10 prennent en charge des normes comme SSL par le biais de leurs API de réseau, et fonctionnent avec des technologies telles que le service Azure Gestion des API, qui permettent aux développeurs de garantir le niveau de sécurité approprié pour leurs applications.
 
-## 3.1 Authentification de système distant
+## <a name="31-remote-system-authentication"></a>3.1 Authentification de système distant
 
 
 Il existe deux scénarios types impliquant une communication avec un système informatique distant.
@@ -193,14 +193,14 @@ La première exigence concerne la confidentialité des messages : les informatio
 
 La seconde exigence concerne l’intégrité des messages : le client et le service web doivent être en mesure de vérifier que les messages qu’ils reçoivent sont ceux destinés à être envoyés par l’autre partie, et que le message n’a pas été modifié lors du transit. Ce résultat est obtenu grâce à la signature des messages à l’aide de signatures numériques, ainsi que par le biais de l’authentification par certificat.
 
-## 3.2 Connexions SSL
+## <a name="32-ssl-connections"></a>3.2 Connexions SSL
 
 
 Pour établir et garantir des connexions sécurisées avec les clients, les services web peuvent utiliser le protocole SSL (Secure Sockets Layer), qui est pris en charge par le protocole S-HTTP (Secure Hypertext Transfer Protocol). SSL assure la confidentialité et l’intégrité des messages en prenant en charge le chiffrement à clé publique, ainsi que des certificats de serveur. SSL a été remplacé par le protocole TLS (Transport Layer Security), mais ce dernier est encore souvent désigné sous le nom de SSL.
 
 Lorsqu’un client demande l’accès à une ressource sur un serveur, SSL démarre un processus de négociation avec le serveur, appelé établissement d’une liaison SSL. Un niveau de chiffrement, un ensemble de clés de chiffrement publiques et privées et les informations d’identité figurant dans les certificats clients et de serveur sont acceptés comme base de l’ensemble des communications pour toute la durée de la connexion SSL. Le serveur peut également exiger que le client ait été authentifié à ce stade. Une fois la connexion établie, tous les messages sont chiffrés avec la clé publique négociée jusqu’à ce que la connexion se ferme.
 
-## 3.2.1 Épinglage SSL
+## <a name="321-ssl-pinning"></a>3.2.1 Épinglage SSL
 
 
 Alors que le protocole SSL peut assurer la confidentialité des messages à l’aide du chiffrement et des certificats, il ne vérifie pas que le serveur avec lequel le client communique est le serveur approprié. Le comportement du serveur peut être simulé par un tiers non autorisé, interceptant ainsi les données sensibles transmises par le client. Pour éviter ce problème, une technique appelée épinglage SSL permet de vérifier que le certificat sur le serveur est le certificat attendu et approuvé par le client.
@@ -260,7 +260,7 @@ private bool ValidateCertificates(IReadOnlyList<Certificate> certs)
 }
 ```
 
-## 3.3 Publication et sécurisation de l’accès aux API REST
+## <a name="33-publishing-and-securing-access-to-rest-apis"></a>3.3 Publication et sécurisation de l’accès aux API REST
 
 
 Pour garantir un accès autorisé aux services web, ces derniers doivent nécessiter une authentification chaque fois qu’un appel d’API est effectué. L’aptitude à contrôler les performances et l’évolutivité sont également des éléments à prendre en compte lorsque les services web sont exposés sur le web. Le service Azure Gestion des API contribue à faciliter l’exposition d’API sur le web tout en fournissant des fonctionnalités à trois niveaux.
@@ -273,12 +273,12 @@ Les **applications** créées par ces développeurs accèdent ensuite à l’API
 
 En outre, le service Azure Gestion des API est en mesure de réduire le nombre d’appels d’API à un service (cette procédure étant désignée sous le terme de limitation de requêtes) pour optimiser les performances du service web. Pour plus d’informations, voir [Azure Gestion des API](https://azure.microsoft.com/services/api-management/) et la vidéo de [présentation d’Azure Gestion des API à AzureCon 2015](https://channel9.msdn.com/events/Microsoft-Azure/AzureCon-2015/ACON313) (en anglais).
 
-## 4 Méthodes de sécurité des données au repos
+## <a name="4-data-at-rest-security-methods"></a>4 Méthodes de sécurité des données au repos
 
 
 Lorsque les données arrivent sur un appareil, nous les désignons sous le terme de « données au repos ». Ces données doivent être stockées sur l’appareil de manière sécurisée de façon à ne pas être accessibles par des utilisateurs ou applications non autorisés. Le modèle d’application inclus dans Windows 10 contribue à garantir le fait que les données stockées par une application quelconque sont uniquement accessibles à cette dernière, tout en fournissant des API permettant de partager les données lorsque cela se révèle nécessaire. Des API supplémentaires sont également disponibles pour assurer le chiffrement des données et le stockage sécurisé des informations d’identification.
 
-## 4.1 Modèle d’application Windows
+## <a name="41-windows-app-model"></a>4.1 Modèle d’application Windows
 
 
 Par le passé, Windows n’a jamais présenté de définition d’une application. Ce terme désignait le plus souvent un exécutable (.exe), et ceci n’englobait jamais l’installation, le stockage d’état, la durée d’exécution, le contrôle de version, l’intégration du système d’exploitation et la communication entre les applications. Le modèle de plateforme Windows universelle définit un modèle d’application qui couvre l’installation, l’environnement d’exécution, la gestion des ressources, les mises à jour, le modèle de données et la désinstallation.
@@ -293,7 +293,7 @@ Lorsque les ressources mémoire sur l’appareil deviennent insuffisantes, Windo
 
 Pour plus d’informations, voir [Plateforme Windows universelle : présentation du cycle de vie d’une application Windows 10](https://visualstudiomagazine.com/articles/2015/09/01/its-universal.aspx) (en anglais).
 
-## 4.2 Protection des informations d’identification stockées
+## <a name="42-stored-credential-protection"></a>4.2 Protection des informations d’identification stockées
 
 
 Les applications Windows qui accèdent aux services authentifiés offrent souvent aux utilisateurs la possibilité de stocker leurs informations d’identification sur leur appareil local. Cela simplifie la tâche des utilisateurs, car lorsque ces derniers fournissent leur nom d’utilisateur et leur mot de passe, l’application réutilise automatiquement ces informations à chacun de ses lancements ultérieurs. Cette fonctionnalité risquant de poser un problème de sécurité si un attaquant parvient à accéder à ces données stockées, Windows 10 permet aux applications Windows de stocker les informations d’identification des utilisateurs dans un stockage sécurisé des informations d’identification. L’application appelle l’API Stockage sécurisé des informations d’identification pour stocker et récupérer les informations d’identification dans cet espace sécurisé plutôt que de les conserver dans le conteneur de stockage de l’application. Le Stockage sécurisé des informations d’identification est géré par le système d’exploitation, mais son accès est limité à l’application qui stocke ces informations, offrant ainsi une solution gérée en toute sécurité pour le stockage des informations d’identification.
@@ -359,12 +359,12 @@ private PasswordCredential GetCredentialFromLocker()
 
 Pour plus d’informations, voir [Stockage sécurisé des informations d’identification](credential-locker.md).
 
-## 4.3 Protection des données stockées
+## <a name="43-stored-data-protection"></a>4.3 Protection des données stockées
 
 
 Le chiffrement des données stockées, communément désignées sous le terme de données au repos, permet d’éviter tout risque d’accès non autorisé à ces données. Les deux mécanismes courants de chiffrement des données consistent à utiliser des clés symétriques ou des clés asymétriques. Toutefois, le chiffrement des données ne permet pas de garantir que les données ne sont pas modifiées entre le moment de leur envoi et celui de leur stockage. En d’autres termes, l’intégrité des données ne peut pas être assurée. L’utilisation de codes d’authentification des messages, de codes de hachage et de signatures numériques sont des techniques courantes pour résoudre ce problème.
 
-## 4.3.1 Chiffrement des données
+## <a name="431-data-encryption"></a>4.3.1 Chiffrement des données
 
 
 Avec le chiffrement symétrique, l’expéditeur et le destinataire disposent de la même clé et l’utilisent aussi bien pour chiffrer les données que pour les déchiffrer. La difficulté liée à cette approche réside généralement dans le partage sécurisé de la clé pour que les deux parties la reconnaissent.
@@ -373,10 +373,10 @@ L’un des moyens de résoudre cette difficulté correspond au chiffrement asym�
 
 Les développeurs d’applications Windows peuvent implémenter le chiffrement symétrique et asymétrique dans leurs applications UWP à l’aide des classes [**SymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241537) et [**AsymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241478). En outre, la classe [**CryptographicEngine**](https://msdn.microsoft.com/library/windows/apps/br241490) permet de chiffrer et déchiffrer des données, signer du contenu et vérifier les signatures numériques. Les applications peuvent également utiliser la classe [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) de l’espace de noms [**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585) pour chiffrer et déchiffrer les données locales stockées.
 
-## 4.3 Détection des falsifications de message (codes d’authentification de message (MAC), codes de hachage et signatures)
+## <a name="432-detecting-message-tampering-macs-hashes-and-signatures"></a>4.3.2 Détection des falsifications de message (codes MAC, codes de hachage et signatures)
 
 
-Un code d’authentification de message (code MAC) est un code (ou une balise) résultant de l’utilisation d’une clé symétrique (appelé clé secrète) ou d’un message en guise d’entrée dans un algorithme de chiffrement MAC. La clé secrète et l’algorithme sont acceptés par l’expéditeur et le destinataire avant le transfert des messages.
+Un code d’authentification de message (MAC) est un code (ou une balise) résultant de l’utilisation d’une clé symétrique (appelée clé secrète) ou d’un message comme entrée dans un algorithme de chiffrement MAC. La clé secrète et l’algorithme sont acceptés par l’expéditeur et le destinataire avant le transfert des messages.
 
 Les codes MAC vérifient les messages en procédant comme suit.
 
@@ -385,14 +385,14 @@ Les codes MAC vérifient les messages en procédant comme suit.
 -   Le destinataire dérive la balise MAC en utilisant la clé secrète et le message en tant qu’entrées pour l’algorithme MAC.
 -   Le destinataire compare sa balise MAC avec celle de l’expéditeur. Si les deux balises sont identiques, cela signifie que le message n’a pas été falsifié.
 
-![](images/secure-macs.png)
+![vérification de code MAC](images/secure-macs.png)
 
 Les applications Windows peuvent implémenter la vérification des messages MAC en appelant la classe [**MacAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241530) pour générer la clé et la classe [**CryptographicEngine**](https://msdn.microsoft.com/library/windows/apps/br241490) pour exécuter l’algorithme de chiffrement MAC.
 
-## 4.3.1 Utilisation de codes de hachage
+## <a name="433-using-hashes"></a>4.3.3 Utilisation de codes de hachage
 
 
-Une fonction de hachage est un algorithme de chiffrement qui prend un long bloc de données au hasard et renvoie une chaîne de bits de taille fixe appelée valeur de hachage. Une famille complète de fonctions de hachage permet d’effectuer cette opération.
+Une fonction de hachage est un algorithme de chiffrement qui sélectionne un long bloc de données au hasard et renvoie une chaîne de bits de taille fixe, appelée valeur de hachage. Une famille complète de fonctions de hachage permet d’effectuer cette opération.
 
 Il est possible d’utiliser une valeur de hachage à la place d’un code MAC dans le scénario de transfert de message décrit ci-dessus. L’expéditeur envoie une valeur de hachage et un message, puis le destinataire dérive sa propre valeur de hachage de celle de l’expéditeur et du message associé et compare les deux valeurs de hachage. Les applications qui s’exécutent sur Windows 10 peuvent appeler la classe [**HashAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241511) pour énumérer les algorithmes de hachage disponibles et exécuter l’un d’eux. La classe [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) représente la valeur de hachage. La méthode [**CryptographicHash.GetValueAndReset**](https://msdn.microsoft.com/library/windows/apps/hh701376) peut être utilisée pour hacher différentes données de manière répétée sans avoir à recréer l’objet pour chaque utilisation. La méthode Append de la classe **CryptographicHash** ajoute de nouvelles données à une mémoire tampon pour qu’elles soient hachées. L’ensemble de ce processus est illustré dans l’exemple de code C# suivant.
 
@@ -428,7 +428,7 @@ public void SampleReusableHash()
 }
 ```
 
-## 4.3.2 Signatures numériques
+## <a name="434-digital-signatures"></a>4.3.4 Signatures numériques
 
 
 La vérification de l’intégrité des données d’un message stocké signé numériquement est comparable à celle de l’authentification par code MAC. Le flux de travail de signature numérique est décrit ci-après.
@@ -444,7 +444,7 @@ Grâce à la grande rapidité des algorithmes de hachage, les valeurs de hachage
 
 Pour plus d’informations, voir les articles [Signatures numériques](https://msdn.microsoft.com/library/windows/desktop/aa381977), [Codes d’authentification des messages, hachages et signatures](macs-hashes-and-signatures.md) et [Chiffrement.](cryptography.md)
 
-## 5 Récapitulatif
+## <a name="5-summary"></a>5 Récapitulatif
 
 
 La plateforme Windows universelle de Windows 10 offre de nombreuses techniques pour tirer parti des fonctionnalités du système d’exploitation afin de créer des applications plus sécurisées. Dans les différents scénarios d’authentification, tels que l’authentification à un seul facteur, multifacteur ou par le biais du service Broker avec un fournisseur d’identité OAuth, des API sont disponibles pour atténuer les difficultés les plus courantes en matière d’authentification. Windows Hello fournit un nouveau système d’identification biométrique qui reconnaît l’utilisateur et décourage activement les tentatives de contournement des identifications. Microsoft Passport fonctionne avec Windows Hello pour transmettre plusieurs couches de clés et les certificats qui ne peuvent jamais être affichés ou utilisés en dehors du module de plateforme sécurisée. Par ailleurs, une couche supplémentaire de sécurité est disponible par le biais de l’utilisation facultative de certificats et de clés d’identité d’attestation.
@@ -453,10 +453,10 @@ Pour sécuriser les données en transit, des API sont proposées pour communique
 
 Lorsque les données arrivent sur l’appareil, le modèle d’application Windows offre un surcroît de contrôle sur le mode d’installation, de mise à jour et d’accès aux données de l’application, tout en empêchant cette dernière d’accéder aux données d’autres applications de manière inappropriée. Enfin, le système d’exploitation gère un Stockage sécurisé des informations d’identification des utilisateurs, et les autres données peuvent être protégées sur les appareils à l’aide des API de chiffrement et de hachage offertes par la plateforme Windows universelle.
 
-## 6 Ressources
+## <a name="6-resources"></a>6 Ressources
 
 
-### 6.1 Articles sur les procédures
+### <a name="61-how-to-articles"></a>6.1 Articles sur les procédures
 
 -   [Authentification et identité des utilisateurs](authentication-and-user-identity.md)
 -   [Microsoft Passport](microsoft-passport.md)
@@ -473,7 +473,7 @@ Lorsque les données arrivent sur l’appareil, le modèle d’application Windo
 -   [Restrictions à l’exportation liées à l’utilisation du chiffrement](export-restrictions-on-cryptography.md)
 -   [Tâches courantes de chiffrement](common-cryptography-tasks.md)
 
-### 6.2 Exemples de code
+### <a name="62-code-samples"></a>6.2 Exemples de code
 
 -   [Stockage sécurisé des informations d’identification](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/PasswordVault)
 -   [Sélecteur d’informations d’identification](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/CredentialPicker)
@@ -484,7 +484,7 @@ Lorsque les données arrivent sur l’appareil, le modèle d’application Windo
 -   [Gestion de comptes web](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/WebAccountManagement)
 -   [WebAuthenticationBroker](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/WebAuthenticationBroker)
 
-### 6.3 Informations de référence sur les API
+### <a name="63-api-reference"></a>6.3 Informations de référence sur les API
 
 -   [**Windows.Security.Authentication.OnlineId**](https://msdn.microsoft.com/library/windows/apps/hh701371)
 -   [**Windows.Security.Authentication.Web**](https://msdn.microsoft.com/library/windows/apps/br227044)
@@ -501,6 +501,6 @@ Lorsque les données arrivent sur l’appareil, le modèle d’application Windo
 -   [**Windows.Security.EnterpriseData**](https://msdn.microsoft.com/library/windows/apps/dn279153)
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

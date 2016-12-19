@@ -1,25 +1,25 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: 1AE29512-7A7D-4179-ADAC-F02819AC2C39
 title: "Fichiers et dossiers dans les bibliothèques de musique, d’images et de vidéos"
 description: "Ajoutez les dossiers existants de musique, images ou vidéos dans les bibliothèques correspondantes. Vous pouvez également supprimer des dossiers de bibliothèques, obtenir la liste des dossiers d’une bibliothèque et découvrir des photos, de la musique et des vidéos."
 translationtype: Human Translation
-ms.sourcegitcommit: affe6002e22bd10e714dc4782a60ef528c31a407
-ms.openlocfilehash: def1c5c8d9d062a81731744e1e1465472225494a
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: 4e2b7d10e1d24427aede21ccae176d7cd55f9de8
 
 ---
 
-# Fichiers et dossiers dans les bibliothèques de musique, d’images et de vidéos
+# <a name="files-and-folders-in-the-music-pictures-and-videos-libraries"></a>Fichiers et dossiers dans les bibliothèques de musique, d’images et de vidéos
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 Ajoutez les dossiers existants de musique, images ou vidéos dans les bibliothèques correspondantes. Vous pouvez également supprimer des dossiers de bibliothèques, obtenir la liste des dossiers d’une bibliothèque, et découvrir des photos, de la musique et des vidéos.
 
 Une bibliothèque est une collection virtuelle de dossiers, qui comprend un dossier connu par défaut, ainsi que d’autres dossiers que l’utilisateur a ajouté à la bibliothèque à l’aide de votre application ou d’une des applications intégrées. Par exemple, la bibliothèque d’images inclut le dossier connu d’images par défaut. L’utilisateur peut ajouter ou supprimer des dossiers dans la bibliothèque d’images à l’aide de votre application ou de l’application Photos intégrée.
 
-## Conditions préalables
+## <a name="prerequisites"></a>Conditions préalables
 
 
 -   **Comprendre la programmation asynchrone pour les applications pour la plateforme Windows universelle (UWP)**
@@ -36,7 +36,7 @@ Une bibliothèque est une collection virtuelle de dossiers, qui comprend un doss
 
     Pour en savoir plus, voir [Autorisations d’accès aux fichiers](file-access-permissions.md).
 
-## Obtenir une référence à une bibliothèque
+## <a name="get-a-reference-to-a-library"></a>Obtenir une référence à une bibliothèque
 
 
 **Remarque** N’oubliez pas de déclarer la fonctionnalité appropriée.
@@ -53,7 +53,7 @@ Pour obtenir une référence à la bibliothèque Musique, Images ou Vidéo de l�
         (Windows.Storage.KnownLibraryId.Pictures);
 ```
 
-## Obtenir la liste des dossiers d’une bibliothèque
+## <a name="get-the-list-of-folders-in-a-library"></a>Obtenir la liste des dossiers d’une bibliothèque
 
 
 Pour obtenir la liste des dossiers d’une bibliothèque, obtenez la valeur de la propriété [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724).
@@ -66,7 +66,7 @@ Pour obtenir la liste des dossiers d’une bibliothèque, obtenez la valeur de l
     IObservableVector<Windows.Storage.StorageFolder> myPictureFolders = myPictures.Folders;
 ```
 
-## Obtenir le dossier contenu dans une bibliothèque où les nouveaux fichiers sont enregistrés par défaut
+## <a name="get-the-folder-in-a-library-where-new-files-are-saved-by-default"></a>Obtenir le dossier contenu dans une bibliothèque où les nouveaux fichiers sont enregistrés par défaut
 
 
 Pour obtenir le dossier d’une bibliothèque où les nouveaux fichiers sont enregistrés par défaut, obtenez la valeur de la propriété [**StorageLibrary.SaveFolder**](https://msdn.microsoft.com/library/windows/apps/dn251728).
@@ -75,7 +75,7 @@ Pour obtenir le dossier d’une bibliothèque où les nouveaux fichiers sont enr
     Windows.Storage.StorageFolder savePicturesFolder = myPictures.SaveFolder;
 ```
 
-## Ajouter un dossier existant à une bibliothèque
+## <a name="add-an-existing-folder-to-a-library"></a>Ajouter un dossier existant à une bibliothèque
 
 
 Pour ajouter un dossier à une bibliothèque, vous appelez la méthode [**StorageLibrary.RequestAddFolderAsync**](https://msdn.microsoft.com/library/windows/apps/dn251726). En prenant l’exemple de la bibliothèque Images, l’appel de cette méthode entraîne l’affichage d’un sélecteur de dossiers avec un bouton **Ajouter ce dossier à Images**. Si l’utilisateur sélectionne un dossier, celui-ci reste à son emplacement d’origine sur le disque et devient un élément dans la propriété [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) (et dans l’application Photos intégrée), mais le dossier n’apparaît pas en tant qu’enfant du dossier Images dans l’Explorateur de fichiers.
@@ -85,7 +85,7 @@ Pour ajouter un dossier à une bibliothèque, vous appelez la méthode [**Storag
     Windows.Storage.StorageFolder newFolder = await myPictures.RequestAddFolderAsync();
 ```
 
-## Supprimer un dossier d’une bibliothèque
+## <a name="remove-a-folder-from-a-library"></a>Supprimer un dossier d’une bibliothèque
 
 
 Pour supprimer un dossier d’une bibliothèque, appelez la méthode [**StorageLibrary.RequestRemoveFolderAsync**](https://msdn.microsoft.com/library/windows/apps/dn251727) et spécifiez le dossier à supprimer. Vous pouvez utiliser [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) et un contrôle [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) (ou similaire) pour permettre à l’utilisateur de sélectionner un dossier à supprimer.
@@ -99,7 +99,7 @@ L’exemple suivant suppose que l’utilisateur a sélectionné le dossier à su
     bool result = await myPictures.RequestRemoveFolderAsync(folder);
 ```
 
-## Recevoir des notifications de modifications apportées à la liste des dossiers d’une bibliothèque
+## <a name="get-notified-of-changes-to-the-list-of-folders-in-a-library"></a>Recevoir des notifications de modifications apportées à la liste des dossiers d’une bibliothèque
 
 
 Pour être averti des modifications apportées à la liste des dossiers d’une bibliothèque, inscrivez un gestionnaire pour l’événement [**StorageLibrary.DefinitionChanged**](https://msdn.microsoft.com/library/windows/apps/dn251723) de la bibliothèque.
@@ -115,7 +115,7 @@ void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
 }
 ```
 
-## Dossiers de bibliothèque multimédia
+## <a name="media-library-folders"></a>Dossiers de bibliothèque multimédia
 
 
 Un appareil propose cinq emplacements prédéfinis aux utilisateurs et aux applications pour stocker des fichiers multimédias. Les applications intégrées stockent à la fois les médias créés par l’utilisateur et les médias téléchargés à ces emplacements.
@@ -134,7 +134,7 @@ Ces emplacements sont :
 
 Les utilisateurs ou applications peuvent également stocker des fichiers multimédias en dehors des dossiers de bibliothèque multimédia sur la carte SD. Pour trouver un fichier multimédia de manière fiable sur la carte SD, analysez le contenu de la carte SD ou demandez à l’utilisateur de localiser le fichier à l’aide d’un sélecteur de fichiers. Pour plus d’informations, voir [Accéder à la carte SD](access-the-sd-card.md).
 
-## Interrogation des bibliothèques multimédias
+## <a name="querying-the-media-libraries"></a>Interrogation des bibliothèques multimédias
 
 Pour obtenir une collection de fichiers, spécifiez la bibliothèque et le type des fichiers souhaités.
 
@@ -164,20 +164,20 @@ private async void getSongs()
 }
 ```
 
-### Les résultats de requête incluent à la fois le stockage interne et amovible
+### <a name="query-results-include-both-internal-and-removable-storage"></a>Les résultats de requête incluent à la fois le stockage interne et amovible
 
 Par défaut, les utilisateurs peuvent choisir de stocker les fichiers sur la carte SD en option. Les applications, en revanche, peuvent choisir de ne pas autoriser le stockage des fichiers sur la carte SD. Par conséquent, les bibliothèques multimédias peuvent se partager entre le stockage interne de l’appareil et la carte SD.
 
 Il n’est pas nécessaire d’écrire d’autre code pour gérer cette possibilité. Les méthodes de l’espace de noms [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) qui interrogent les dossiers connus combinent en toute transparence les résultats de requête issus de ces deux emplacements. De même, vous n’avez pas à spécifier la fonctionnalité **removableStorage** dans le fichier manifeste de l’application pour obtenir ces résultats combinés.
 
-Examinons l’état du stockage de l’appareil illustré dans l’image suivante:
+Examinons l’état du stockage de l’appareil illustré dans l’image suivante :
 
 ![Images sur le téléphone et la carte SD](images/phone-media-locations.png)
 
 Si vous interrogez le contenu de la bibliothèque d’images en appelant `await KnownFolders.PicturesLibrary.GetFilesAsync()`, les résultats incluent à la fois internalPic.jpg et SDPic.jpg.
 
 
-## Utilisation de photos
+## <a name="working-with-photos"></a>Utilisation de photos
 
 
 Sur les périphériques où l’appareil photo enregistre à la fois une image basse résolution et une image haute résolution de chaque photo, les requêtes profondes retournent uniquement l’image basse résolution.
@@ -197,7 +197,7 @@ Si vous voulez laisser l’utilisateur rouvrir une photo dans l’application qu
   testPhoto.Properties.SavePropertiesAsync(propertiesToSave).AsyncWait();   
 ```
 
-## Utilisation de méthodes de flux pour ajouter un fichier à une bibliothèque multimédia
+## <a name="using-stream-methods-to-add-a-file-to-a-media-library"></a>Utilisation de méthodes de flux pour ajouter un fichier à une bibliothèque multimédia
 
 
 Quand vous accédez à une bibliothèque multimédia à l’aide d’un dossier connu comme **KnownFolders.PictureLibrary** et que vous utilisez des méthodes de flux pour y ajouter un fichier, veillez à fermer tous les flux que votre code ouvre. Sinon, ces méthodes ne parviennent pas à ajouter le fichier à la bibliothèque multimédia comme prévu car au moins un flux possède toujours un handle vers le fichier.
@@ -246,6 +246,6 @@ using (var sourceStream = await sourceFile.OpenReadAsync())
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

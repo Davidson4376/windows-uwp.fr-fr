@@ -2,21 +2,21 @@
 author: dbirtolo
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
 title: "Informations de référence sur les API principales Device Portal"
-description: "Découvrez les API REST principales WindowsDevicePortal que vous pouvez utiliser pour accéder aux données et contrôler votre appareil par programmation."
+description: "Découvrez les API REST principales Windows Device Portal que vous pouvez utiliser pour accéder aux données et contrôler votre appareil par programmation."
 translationtype: Human Translation
-ms.sourcegitcommit: fae2c6b31c9c6c07026abc4718959b02a36e6600
-ms.openlocfilehash: 226ecaecd93e4996e438f56f780926ca63c184fd
+ms.sourcegitcommit: b4222774dc4b0f9cdcac871311f5ead69c1e70a9
+ms.openlocfilehash: 3bacb9ac42e157afaed5e9e0e6438654db03ff28
 
 ---
 
-# Référence sur les API principales DevicePortal
+# <a name="device-portal-core-api-reference"></a>Référence sur les API principales Device Portal
 
-Dans WindowsDevicePortal, tout repose sur les API REST que vous pouvez utiliser pour accéder aux données et contrôler votre appareil par programmation.
+Dans Windows Device Portal, tout repose sur les API REST que vous pouvez utiliser pour accéder aux données et contrôler votre appareil par programmation.
 
-## Déploiement des applications
+## <a name="app-deployment"></a>Déploiement des applications
 
 ---
-### Installer une application
+### <a name="install-an-app"></a>Installer une application
 
 **Requête**
 
@@ -28,7 +28,7 @@ POST | /api/app/packagemanager/package
 <br />
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -64,7 +64,7 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Obtenir l’état de l’installation de l’application
+### <a name="get-app-installation-status"></a>Obtenir l’état de l’installation de l’application
 
 **Requête**
 
@@ -107,7 +107,7 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Désinstaller une application
+### <a name="uninstall-an-app"></a>Désinstaller une application
 
 **Requête**
 
@@ -153,7 +153,7 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Obtenir des applications installées
+### <a name="get-installed-apps"></a>Obtenir des applications installées
 
 **Requête**
 
@@ -222,9 +222,9 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-## Gestionnaire de périphériques
+## <a name="device-manager"></a>Gestionnaire de périphériques
 ---
-### Obtenir les périphériques installés sur l’ordinateur
+### <a name="get-the-installed-devices-on-the-machine"></a>Obtenir les périphériques installés sur l’ordinateur
 
 **Requête**
 
@@ -281,9 +281,9 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-## Collection de vidages
+## <a name="dump-collection"></a>Collection de vidages
 ---
-### Obtenir la liste de tous les vidages sur incident pour les applications
+### <a name="get-the-list-of-all-crash-dumps-for-apps"></a>Obtenir la liste de tous les vidages sur incident pour les applications
 
 **Requête**
 
@@ -322,12 +322,13 @@ Code d’état HTTP      | Description
 <br />
 **Familles d’appareils disponibles**
 
+* Windows Mobile (dans le programme Windows Insider)
 * Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### Obtenir les paramètres de collection de vidage sur incident pour une application
+### <a name="get-the-crash-dump-collection-settings-for-an-app"></a>Obtenir les paramètres de collection de vidage sur incident pour une application
 
 **Requête**
 
@@ -340,7 +341,7 @@ GET | /api/debug/dump/usermode/crashcontrol
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -373,12 +374,13 @@ Code d’état HTTP      | Description
 <br />
 **Familles d’appareils disponibles**
 
+* Windows Mobile (dans le programme Windows Insider)
 * Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### Supprimer un vidage sur incident pour une application chargée de manière indépendante
+### <a name="delete-a-crash-dump-for-a-sideloaded-app"></a>Supprimer un vidage sur incident pour une application chargée de manière indépendante
 
 **Requête**
 
@@ -391,7 +393,7 @@ DELETE | /api/debug/dump/usermode/crashdump
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -420,12 +422,13 @@ Code d’état HTTP      | Description
 <br />
 **Familles d’appareils disponibles**
 
+* Windows Mobile (dans le programme Windows Insider)
 * Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### Désactiver les vidages sur incident pour une application chargée de manière indépendante
+### <a name="disable-crash-dumps-for-a-sideloaded-app"></a>Désactiver les vidages sur incident pour une application chargée de manière indépendante
 
 **Requête**
 
@@ -438,7 +441,7 @@ DELETE | /api/debug/dump/usermode/crashcontrol
 <br />
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -466,12 +469,13 @@ Code d’état HTTP      | Description
 <br />
 **Familles d’appareils disponibles**
 
+* Windows Mobile (dans le programme Windows Insider)
 * Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### Télécharger le vidage sur incident pour une application chargée de manière indépendante
+### <a name="download-the-crash-dump-for-a-sideloaded-app"></a>Télécharger le vidage sur incident pour une application chargée de manière indépendante
 
 **Requête**
 
@@ -484,7 +488,7 @@ GET | /api/debug/dump/usermode/crashdump
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -515,12 +519,13 @@ Code d’état HTTP      | Description
 <br />
 **Familles d’appareils disponibles**
 
+* Windows Mobile (dans le programme Windows Insider)
 * Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### Désactiver les vidages sur incident pour une application chargée de manière indépendante
+### <a name="enable-crash-dumps-for-a-sideloaded-app"></a>Désactiver les vidages sur incident pour une application chargée de manière indépendante
 
 **Requête**
 
@@ -533,7 +538,7 @@ POST | /api/debug/dump/usermode/crashcontrol
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -559,12 +564,13 @@ Code d’état HTTP      | Description
 <br />
 **Familles d’appareils disponibles**
 
+* Windows Mobile (dans le programme Windows Insider)
 * Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### Obtenir la liste des fichiers de vérification d’erreur
+### <a name="get-the-list-of-bugcheck-files"></a>Obtenir la liste des fichiers de vérification d’erreur
 
 **Requête**
 
@@ -589,12 +595,12 @@ GET | /api/debug/dump/kernel/dumplist
 
 **Réponse**
 
-La réponse comprend une liste des noms de fichier de vidage et leur taille. Cette liste doit avoir le format suivant. Le second paramètre *FileName* correspond à la taille du fichier. Il s’agit d’un bogue connu.
+La réponse comprend une liste des noms de fichier de vidage et leur taille. Cette liste doit avoir le format suivant. 
 ```
 {"DumpFiles": [
     {
         "FileName": string,
-        "FileName": string
+        "FileSize": int
     },...
 ]}
 ```
@@ -613,7 +619,7 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Télécharger un fichier de vidage de vérification d’erreur
+### <a name="download-a-bugcheck-dump-file"></a>Télécharger un fichier de vidage de vérification d’erreur
 
 **Requête**
 
@@ -626,7 +632,7 @@ GET | /api/debug/dump/kernel/dump
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -660,7 +666,7 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Obtenir les paramètres de contrôle d’incident de la vérification d’erreur
+### <a name="get-the-bugcheck-crash-control-settings"></a>Obtenir les paramètres de contrôle d’incident de la vérification d’erreur
 
 **Requête**
 
@@ -688,12 +694,22 @@ GET | /api/debug/dump/kernel/crashcontrol
 La réponse comprend les paramètres de contrôle d’incident. Pour plus d’informations sur CrashControl, voir l’article [CrashControl](https://technet.microsoft.com/library/cc951703.aspx). Le modèle de la réponse est le suivant.
 ```
 {
-    "autoreboot": int,
-    "dumptype": int,
+    "autoreboot": bool (0 or 1),
+    "dumptype": int (0 to 4),
     "maxdumpcount": int,
-    "overwrite": int
+    "overwrite": bool (0 or 1)
 }
 ```
+
+**Types de vidage**
+
+0 : désactivé
+
+1 : image mémoire complète (collecte toute la mémoire utilisée)
+
+2 : image mémoire du noyau (ignore la mémoire en mode utilisateur)
+
+3 : minividage limité du noyau
 
 **Code d’état**
 
@@ -711,7 +727,7 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Obtenir un vidage du noyau dynamique
+### <a name="get-a-live-kernel-dump"></a>Obtenir un vidage du noyau dynamique
 
 **Requête**
 
@@ -754,7 +770,7 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Obtenir un vidage à partir d’un processus utilisateur dynamique
+### <a name="get-a-dump-from-a-live-user-process"></a>Obtenir un vidage à partir d’un processus utilisateur dynamique
 
 **Requête**
 
@@ -767,7 +783,7 @@ GET | /api/debug/dump/usermode/live
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -801,7 +817,7 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Obtenir les paramètres de contrôle d’incident de la vérification d’erreur
+### <a name="set-the-bugcheck-crash-control-settings"></a>Obtenir les paramètres de contrôle d’incident de la vérification d’erreur
 
 **Requête**
 
@@ -814,7 +830,7 @@ POST | /api/debug/dump/kernel/crashcontrol
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -849,9 +865,9 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-## ETW
+## <a name="etw"></a>ETW
 ---
-### Créer une session ETW en temps réel via un websocket
+### <a name="create-a-realtime-etw-session-over-a-websocket"></a>Créer une session ETW en temps réel via un websocket
 
 **Requête**
 
@@ -876,7 +892,7 @@ GET/WebSocket | /api/etw/session/realtime
 
 **Réponse**
 
-La réponse comprend les événements ETW issus des fournisseurs activés.  Voir les commandes WebSocketETW ci-dessous. 
+La réponse comprend les événements ETW issus des fournisseurs activés.  Voir les commandes WebSocket ETW ci-dessous. 
 
 **Code d’état**
 
@@ -895,13 +911,12 @@ Code d’état HTTP      | Description
 * HoloLens
 * IoT
 
-### Commandes WebSocket ETW
+### <a name="etw-websocket-commands"></a>Commandes WebSocket ETW
 Ces commandes sont envoyées du client vers le serveur.
 
 Commande | Description
 :----- | :-----
-provider *{guid}* enable *{level}* | Activez le fournisseur marqué par *{guid}* (sans crochets) au niveau spécifié. 
-            *{level}* est un entier **int** de 1 (peu détaillé) à 5 (très détaillé).
+provider *{guid}* enable *{level}* | Activez le fournisseur marqué par *{guid}* (sans crochets) au niveau spécifié. *{level}* est un entier **int** de 1 (peu détaillé) à 5 (très détaillé).
 provider *{guid}* disable | Désactivez le fournisseur marqué par *{guid}* (sans crochets).
 
 Cette réponse est envoyée du serveur vers le client. Elle est envoyée sous forme de texte et vous obtenez le format suivant en analysant le JSON.
@@ -924,7 +939,7 @@ Cette réponse est envoyée du serveur vers le client. Elle est envoyée sous fo
 
 Les objets de charge utile sont des paires clé-valeur supplémentaires (chaîne:chaîne) qui sont fournies dans l’événement ETW d’origine.
 
-Exemple:
+Exemple :
 ```
 {
     "ID" : 42, 
@@ -946,7 +961,7 @@ Exemple:
 ```
 
 ---
-### Énumérer les fournisseurs ETW enregistrés
+### <a name="enumerate-the-registered-etw-providers"></a>Énumérer les fournisseurs ETW enregistrés
 
 **Requête**
 
@@ -997,7 +1012,7 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Énumérez les fournisseurs ETW personnalisés exposés par la plate-forme.
+### <a name="enumerate-the-custom-etw-providers-exposed-by-the-platform"></a>Énumérez les fournisseurs ETW personnalisés exposés par la plate-forme.
 
 **Requête**
 
@@ -1045,9 +1060,9 @@ GET | /api/etw/customproviders
 * IoT
 
 ---
-## Informations sur le système d’exploitation
+## <a name="os-information"></a>Informations sur le système d’exploitation
 ---
-### Obtenir le nom de l’ordinateur
+### <a name="get-the-machine-name"></a>Obtenir le nom de l’ordinateur
 
 **Requête**
 
@@ -1097,7 +1112,7 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Obtenir les informations du système d’exploitation
+### <a name="get-the-operating-system-information"></a>Obtenir les informations du système d’exploitation
 
 **Requête**
 
@@ -1153,7 +1168,7 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Obtenir la famille d’appareils 
+### <a name="get-the-device-family"></a>Obtenir la famille d’appareils 
 
 **Requête**
 
@@ -1178,7 +1193,7 @@ GET | /api/os/devicefamily
 
 **Réponse**
 
-La réponse comprend la famille d’appareils (référence: ordinateur de bureau, Xbox, etc.).
+La réponse comprend la famille d’appareils (référence : ordinateur de bureau, Xbox, etc.).
 
 ```
 {
@@ -1186,7 +1201,7 @@ La réponse comprend la famille d’appareils (référence: ordinateur de bureau
 }
 ```
 
-DeviceType aura pour valeur une chaîne du type «Windows.Xbox», «Windows.Desktop», etc. 
+DeviceType aura pour valeur une chaîne du type « Windows.Xbox », « Windows.Desktop », etc. 
 
 **Code d’état**
 
@@ -1207,7 +1222,7 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Obtenir le nom de l’ordinateur
+### <a name="set-the-machine-name"></a>Obtenir le nom de l’ordinateur
 
 **Requête**
 
@@ -1220,7 +1235,7 @@ POST | /api/os/machinename
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -1253,9 +1268,9 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-## Données relatives aux performances
+## <a name="performance-data"></a>Données relatives aux performances
 ---
-### Obtenir la liste des processus en cours d’exécution
+### <a name="get-the-list-of-running-processes"></a>Obtenir la liste des processus en cours d’exécution
 
 **Requête**
 
@@ -1316,7 +1331,7 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Obtenir les statistiques des performances du système
+### <a name="get-the-system-performance-statistics"></a>Obtenir les statistiques des performances du système
 
 **Requête**
 
@@ -1395,9 +1410,9 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-## Alimentation
+## <a name="power"></a>Alimentation
 ---
-### Obtenir l’état actuel de la batterie
+### <a name="get-the-current-battery-state"></a>Obtenir l’état actuel de la batterie
 
 **Requête**
 
@@ -1448,13 +1463,13 @@ Code d’état HTTP      | Description
 <br />
 **Familles d’appareils disponibles**
 
+* Windows Mobile
 * Windows Desktop
 * HoloLens
 * IoT
-* Mobile
 
 ---
-### Obtenir le schéma d’alimentation actif
+### <a name="get-the-active-power-scheme"></a>Obtenir le schéma d’alimentation actif
 
 **Requête**
 
@@ -1500,7 +1515,7 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Obtenir la sous-valeur pour un schéma d’alimentation
+### <a name="get-the-sub-value-for-a-power-scheme"></a>Obtenir la sous-valeur pour un schéma d’alimentation
 
 **Requête**
 
@@ -1510,7 +1525,7 @@ Méthode      | URI de la requête
 :------     | :-----
 GET | /api/power/cfg/
 <br />
-Options:
+Options :
 - SCHEME_CURRENT
 
 **Paramètres d’URI**
@@ -1543,7 +1558,7 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Obtenir l’état d’alimentation du système
+### <a name="get-the-power-state-of-the-system"></a>Obtenir l’état d’alimentation du système
 
 **Requête**
 
@@ -1590,7 +1605,7 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Définir le schéma d’alimentation actif
+### <a name="set-the-active-power-scheme"></a>Définir le schéma d’alimentation actif
 
 **Requête**
 
@@ -1603,7 +1618,7 @@ POST | /api/power/activecfg
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -1635,7 +1650,7 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Obtenir la sous-valeur pour un schéma d’alimentation
+### <a name="set-the-sub-value-for-a-power-scheme"></a>Obtenir la sous-valeur pour un schéma d’alimentation
 
 **Requête**
 
@@ -1648,7 +1663,7 @@ POST | /api/power/cfg/
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -1679,7 +1694,7 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Obtenir un rapport d’étude sur la suspension d’activité
+### <a name="get-a-sleep-study-report"></a>Obtenir un rapport d’étude sur la suspension d’activité
 
 **Requête**
 
@@ -1722,7 +1737,7 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Énumérer les rapports d’étude sur la suspension d’activité disponibles
+### <a name="enumerate-the-available-sleep-study-reports"></a>Énumérer les rapports d’étude sur la suspension d’activité disponibles
 
 **Requête**
 
@@ -1773,7 +1788,7 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Obtenir la transformation de l’étude sur la suspension d’activité
+### <a name="get-the-sleep-study-transform"></a>Obtenir la transformation de l’étude sur la suspension d’activité
 
 **Requête**
 
@@ -1816,9 +1831,9 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-## Contrôle à distance
+## <a name="remote-control"></a>Contrôle à distance
 ---
-### Redémarrer l’ordinateur cible.
+### <a name="restart-the-target-computer"></a>Redémarrer l’ordinateur cible.
 
 **Requête**
 
@@ -1860,7 +1875,7 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Arrêter l’ordinateur cible
+### <a name="shut-down-the-target-computer"></a>Arrêter l’ordinateur cible
 
 **Requête**
 
@@ -1904,9 +1919,9 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-## Gestionnaire des tâches
+## <a name="task-manager"></a>Gestionnaire des tâches
 ---
-### Démarrer une application moderne
+### <a name="start-a-modern-app"></a>Démarrer une application moderne
 
 **Requête**
 
@@ -1919,7 +1934,7 @@ POST | /api/taskmanager/app
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -1955,7 +1970,7 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Arrêter une application moderne
+### <a name="stop-a-modern-app"></a>Arrêter une application moderne
 
 **Requête**
 
@@ -1968,7 +1983,7 @@ DELETE | /api/taskmanager/app
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -2004,9 +2019,9 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-## Mise en réseau
+## <a name="networking"></a>Mise en réseau
 ---
-### Obtenir la configuration IP actuelle
+### <a name="get-the-current-ip-configuration"></a>Obtenir la configuration IP actuelle
 
 **Requête**
 
@@ -2092,7 +2107,7 @@ Code d’état HTTP      | Description
 * IoT
 
 --
-### Énumérer les interfaces réseau sans fil
+### <a name="enumerate-wireless-network-interfaces"></a>Énumérer les interfaces réseau sans fil
 
 **Requête**
 
@@ -2154,7 +2169,7 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Énumérer les réseaux sans fil
+### <a name="enumerate-wireless-networks"></a>Énumérer les réseaux sans fil
 
 **Requête**
 
@@ -2167,7 +2182,7 @@ GET | /api/wifi/networks
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -2224,7 +2239,7 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Se connecter à un réseau Wi-Fi et se déconnecter
+### <a name="connect-and-disconnect-to-a-wi-fi-network"></a>Se connecter à un réseau Wi-Fi et se déconnecter
 
 **Requête**
 
@@ -2237,7 +2252,7 @@ POST | /api/wifi/network
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -2274,7 +2289,7 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Supprimer un profil Wi-Fi
+### <a name="delete-a-wi-fi-profile"></a>Supprimer un profil Wi-Fi
 
 **Requête**
 
@@ -2287,7 +2302,7 @@ DELETE | /api/wifi/network
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -2321,9 +2336,9 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-## Rapport d’erreurs Windows
+## <a name="windows-error-reporting-wer"></a>Rapport d’erreurs Windows
 ---
-### Télécharger un fichier de rapport d’erreurs Windows
+### <a name="download-a-windows-error-reporting-wer-file"></a>Télécharger un fichier de rapport d’erreurs Windows
 
 **Requête**
 
@@ -2336,7 +2351,7 @@ GET | /api/wer/report/file
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -2374,7 +2389,7 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Énumérer les fichiers dans un rapport d’erreurs Windows
+### <a name="enumerate-files-in-a-windows-error-reporting-wer-report"></a>Énumérer les fichiers dans un rapport d’erreurs Windows
 
 **Requête**
 
@@ -2387,7 +2402,7 @@ GET | /api/wer/report/files
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -2429,7 +2444,7 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Répertorier les rapports d’erreurs Windows
+### <a name="list-the-windows-error-reporting-wer-reports"></a>Répertorier les rapports d’erreurs Windows
 
 **Requête**
 
@@ -2487,9 +2502,9 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-## Enregistreur de performance Windows (WPR) 
+## <a name="windows-performance-recorder-wpr"></a>Enregistreur de performance Windows (WPR) 
 ---
-### Démarrer le suivi avec un profil personnalisé
+### <a name="start-tracing-with-a-custom-profile"></a>Démarrer le suivi avec un profil personnalisé
 
 **Requête**
 
@@ -2541,7 +2556,7 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Démarrer une session de suivi des performances de démarrage
+### <a name="start-a-boot-performance-tracing-session"></a>Démarrer une session de suivi des performances de démarrage
 
 **Requête**
 
@@ -2554,7 +2569,7 @@ POST | /api/wpr/boottrace
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -2597,7 +2612,7 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Arrêter une session de suivi des performances de démarrage
+### <a name="stop-a-boot-performance-tracing-session"></a>Arrêter une session de suivi des performances de démarrage
 
 **Requête**
 
@@ -2622,7 +2637,7 @@ GET | /api/wpr/boottrace
 
 **Réponse**
 
-- Renvoie le fichier ETL de suivi.
+-  Aucune.  **Remarque :** il s’agit d’une opération longue.  Elle renverra une réponse à la fin de l’écriture de l’ETL sur le disque.
 
 **Code d’état**
 
@@ -2642,7 +2657,7 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Démarrer une session de suivi des performances
+### <a name="start-a-performance-tracing-session"></a>Démarrer une session de suivi des performances
 
 **Requête**
 
@@ -2655,7 +2670,7 @@ POST | /api/wpr/trace
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête:
+Vous pouvez spécifier les paramètres supplémentaires suivants dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -2698,7 +2713,7 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Arrêter une session de suivi des performances
+### <a name="stop-a-performance-tracing-session"></a>Arrêter une session de suivi des performances
 
 **Requête**
 
@@ -2723,8 +2738,7 @@ GET | /api/wpr/trace
 
 **Réponse**
 
-- Aucune.  
-            **Remarque:** il s’agit d’une opération longue.  Elle renverra une réponse à la fin de l’écriture de l’ETL sur le disque.  
+- Aucune.  **Remarque :** il s’agit d’une opération longue.  Elle renverra une réponse à la fin de l’écriture de l’ETL sur le disque.  
 
 **Code d’état**
 
@@ -2744,7 +2758,7 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Récupérer l’état d’une session de suivi
+### <a name="retrieve-the-status-of-a-tracing-session"></a>Récupérer l’état d’une session de suivi
 
 **Requête**
 
@@ -2796,7 +2810,7 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Répertorier les sessions de suivi terminées (ETL)
+### <a name="list-completed-tracing-sessions-etls"></a>Répertorier les sessions de suivi terminées (ETL)
 
 **Requête**
 
@@ -2853,7 +2867,7 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Télécharger une session de suivi (ETL)
+### <a name="download-a-tracing-session-etl"></a>Télécharger une session de suivi (ETL)
 
 **Requête**
 
@@ -2866,7 +2880,7 @@ GET | /api/wpr/tracefile
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier le paramètre supplémentaire suivant dans l’URI de requête:
+Vous pouvez spécifier le paramètre supplémentaire suivant dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -2902,7 +2916,7 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Supprimer une session de suivi (ETL)
+### <a name="delete-a-tracing-session-etl"></a>Supprimer une session de suivi (ETL)
 
 **Requête**
 
@@ -2915,7 +2929,7 @@ DELETE | /api/wpr/tracefile
 
 **Paramètres d’URI**
 
-Vous pouvez spécifier le paramètre supplémentaire suivant dans l’URI de requête:
+Vous pouvez spécifier le paramètre supplémentaire suivant dans l’URI de requête :
 
 Paramètre d’URI | Description
 :---          | :---
@@ -2951,13 +2965,13 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-## BalisesDNS-SD 
+## <a name="dns-sd-tags"></a>Balises DNS-SD 
 ---
-### Afficher les balises
+### <a name="view-tags"></a>Afficher les balises
 
 **Requête**
 
-Affichez les balises actuellement appliquées pour l’appareil.  Ces balises sont annoncées par le biais d’enregistrementsDNS-SDTXT dans la cléT.  
+Affichez les balises actuellement appliquées pour l’appareil.  Ces balises sont annoncées par le biais d’enregistrements DNS-SD TXT dans la clé T.  
  
 Méthode      | URI de la requête
 :------     | :-----
@@ -2976,8 +2990,7 @@ GET | /api/dns-sd/tags
 
 - Aucun
 
-
-            **Réponse** Balises actuellement appliquées au format suivant. 
+**Réponse** Balises actuellement appliquées au format suivant. 
 ```
  {
     "tags": [
@@ -3007,11 +3020,11 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Supprimer des balises
+### <a name="delete-tags"></a>Supprimer des balises
 
 **Requête**
 
-Supprimez toutes les balises actuellement signalées parDNS-SD.   
+Supprimez toutes les balises actuellement signalées par DNS-SD.   
  
 Méthode      | URI de requête
 :------     | :-----
@@ -3052,11 +3065,11 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Supprimer une balise
+### <a name="delete-tag"></a>Supprimer une balise
 
 **Requête**
 
-Supprimez une balise actuellement signalée parDNS-SD.   
+Supprimez une balise actuellement signalée par DNS-SD.   
  
 Méthode      | URI de requête
 :------     | :-----
@@ -3098,11 +3111,11 @@ Code d’état HTTP      | Description
 * IoT
  
 ---
-### Ajouter une balise
+### <a name="add-a-tag"></a>Ajouter une balise
 
 **Requête**
 
-Ajoutez une balise à l’annonceDNS-SD.   
+Ajoutez une balise à l’annonce DNS-SD.   
  
 Méthode      | URI de la requête
 :------     | :-----
@@ -3133,7 +3146,7 @@ Cette API comporte les codes d’état attendus suivants.
 Code d’état HTTP      | Description
 :------     | :-----
 200 | OK
-401 | Dépassement de capacité pour l’espace de balise.  Survient lorsque la balise proposée est trop longue pour l’enregistrement de serviceDNS-SD résultant.  
+401 | Dépassement de capacité pour l’espace de balise.  Survient lorsque la balise proposée est trop longue pour l’enregistrement de service DNS-SD résultant.  
 
 <br />
 **Familles d’appareils disponibles**
@@ -3144,10 +3157,10 @@ Code d’état HTTP      | Description
 * HoloLens
 * IoT
 
-## Explorateur de fichiers de l’application
+## <a name="app-file-explorer"></a>Explorateur de fichiers de l’application
 
 ---
-### Obtenir les dossiers connus
+### <a name="get-known-folders"></a>Obtenir les dossiers connus
 
 **Requête**
 
@@ -3170,8 +3183,7 @@ GET | /api/filesystem/apps/knownfolders
 
 - Aucun
 
-
-            **Réponse** Dossiers disponibles au format suivant. 
+**Réponse** Dossiers disponibles au format suivant. 
 ```
  {"KnownFolders": [
     "folder0",
@@ -3198,7 +3210,7 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Obtenir des fichiers
+### <a name="get-files"></a>Obtenir des fichiers
 
 **Requête**
 
@@ -3225,8 +3237,7 @@ path | (**facultatif**) Sous-répertoire du dossier ou du package spécifié ci-
 
 - Aucun
 
-
-            **Réponse** Dossiers disponibles au format suivant. 
+**Réponse** Dossiers disponibles au format suivant. 
 ```
 {"Items": [
     {
@@ -3259,7 +3270,7 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Télécharger un fichier
+### <a name="download-a-file"></a>Télécharger un fichier
 
 **Requête**
 
@@ -3307,7 +3318,7 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Renommer un fichier
+### <a name="rename-a-file"></a>Renommer un fichier
 
 **Demande**
 
@@ -3359,7 +3370,7 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Supprimer un fichier
+### <a name="delete-a-file"></a>Supprimer un fichier
 
 **Requête**
 
@@ -3409,7 +3420,7 @@ Code d’état HTTP      | Description
 * IoT
 
 ---
-### Charger un fichier
+### <a name="upload-a-file"></a>Charger un fichier
 
 **Requête**
 
@@ -3456,7 +3467,6 @@ Code d’état HTTP      | Description
 * IoT
 
 
-
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

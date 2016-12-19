@@ -3,99 +3,99 @@ author: Mtoepke
 title: Forum Aux Questions
 description: Forum aux questions concernant UWP sur Xbox.
 translationtype: Human Translation
-ms.sourcegitcommit: 07e7ec6a5816d4b8d33322b2b1af05ffc3e1b820
-ms.openlocfilehash: 38e5d48b2b0303b5f7d13fdaf6f71e1b3fa56978
+ms.sourcegitcommit: 1ee75d73cc42455677bc2c0df08b41f33fc4f7b0
+ms.openlocfilehash: a6d410e3a4873bb96fba46789b28185c392a7492
 
 ---
 
-# Forum Aux Questions
+# <a name="frequently-asked-questions"></a>Forum Aux Questions
 
-Vous n’obtenez pas les résultats escomptés? Parcourez cette page répertoriant les questions fréquemment posées. Consultez également la rubrique [Problèmes connus](known-issues.md) et le forum [Développement d’applications Windows universelles](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop). 
+Vous n’obtenez pas les résultats escomptés ? Parcourez cette page répertoriant les questions fréquemment posées. Consultez également la rubrique [Problèmes connus](known-issues.md) et le forum [Développement d’applications Windows universelles](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop). 
 
-### Pourquoi mes jeux et applications ne fonctionnent-ils pas?
+### <a name="why-are-my-games-and-apps-not-working"></a>Pourquoi mes jeux et applications ne fonctionnent-ils pas ?
 
-Si vos jeux et applications ne fonctionnent pas ou que vous n’avez pas accès au WindowsStore ou aux services MicrosoftLive, vous travaillez probablement en mode développeur. Le mode développeur est activé si, après avoir sélectionné Accueil, vous voyez apparaître une grande vignette Accueil du développeur sur le côté droit de votre écran, au lieu du contenu Gold/Live habituel. Si vous souhaitez jouer à des jeux, vous pouvez ouvrir l’outil Accueil du développeur et revenir au mode commercial à l’aide du bouton **Quitter le mode développeur**.
+Si vos jeux et applications ne fonctionnent pas ou que vous n’avez pas accès au Windows Store ou aux services Microsoft Live, vous travaillez probablement en mode développeur. Le mode développeur est activé si, après avoir sélectionné Accueil, vous voyez apparaître une grande vignette Accueil du développeur sur le côté droit de votre écran, au lieu du contenu Gold/Live habituel. Si vous souhaitez jouer à des jeux, vous pouvez ouvrir l’outil Accueil du développeur et revenir au mode commercial à l’aide du bouton **Quitter le mode développeur**.
 
-### Pourquoi ne puis-je pas me connecter à ma console XboxOne à l’aide de VisualStudio?
+### <a name="why-cant-i-connect-to-my-xbox-one-using-visual-studio"></a>Pourquoi ne puis-je pas me connecter à ma console Xbox One à l’aide de Visual Studio ?
 
-Commencez par vérifier que vous travaillez en mode développeur, et non en mode commercial. Vous ne pouvez pas vous connecter à la console XboxOne en mode commercial. Pour connaître le mode actif, il vous suffit d’appuyer sur le bouton **Accueil** et de rechercher la vignette Accueil du développeur sur le côté droit de votre écran. Si cette vignette n’apparaît pas, mais que vous voyez le contenu Gold/Live, vous travaillez en mode commercial. Pour basculer en mode développeur, vous devez exécuter l’application Dev Mode Activation.
+Commencez par vérifier que vous travaillez en mode développeur, et non en mode commercial. Vous ne pouvez pas vous connecter à la console Xbox One en mode commercial. Pour connaître le mode actif, il vous suffit d’appuyer sur le bouton **Accueil** et de rechercher la vignette Accueil du développeur sur le côté droit de votre écran. Si cette vignette n’apparaît pas, mais que vous voyez le contenu Gold/Live, vous travaillez en mode commercial. Pour basculer en mode développeur, vous devez exécuter l’application Dev Mode Activation.
 
 > [!NOTE]
 > Un utilisateur doit être connecté afin de pouvoir déployer une application.
 
 Pour plus d’informations, voir [Résolution des problèmes de déploiement](#fixing-deployment-failures) plus loin sur cette page.
 
-### Comment basculer entre les modes commercial et développeur?
+### <a name="how-do-i-switch-between-retail-mode-and-developer-mode"></a>Comment basculer entre les modes commercial et développeur ?
 
 Suivez les instructions de la rubrique [Activation du Mode développeur Xbox One](devkit-activation.md) pour obtenir une description de ces deux modes.
 
-### Comment savoir si je suis en mode commercial ou en mode développeur?
+### <a name="how-do-i-know-if-i-am-in-retail-mode-or-developer-mode"></a>Comment savoir si je suis en mode commercial ou en mode développeur ?
 
 Suivez les instructions de la rubrique [Activation du Mode développeur Xbox One](devkit-activation.md) pour obtenir une description de ces deux modes. 
 
 Pour connaître le mode actif, il vous suffit d’appuyer sur le bouton **Accueil** et d’examiner le côté droit de votre écran. Si vous vous trouvez en mode développeur, la vignette Accueil du développeur apparaît sur la droite. Si vous êtes en mode commercial, vous voyez le contenu Gold/Live habituel.
 
-### Mes jeux et applications continueront-ils de fonctionner si j’active le mode développeur?
+### <a name="will-my-games-and-apps-still-work-if-i-activate-developer-mode"></a>Mes jeux et applications continueront-ils de fonctionner si j’active le mode développeur ?
 
 Oui. Lorsque vous vous trouvez en mode développeur, vous pouvez basculer vers le mode commercial qui vous permet de jouer à vos jeux. Pour plus d’informations, voir la page [Activation du Mode développeur Xbox One](devkit-activation.md). 
 
-### Vais-je perdre mes jeux et applications ou les modifications que j’ai enregistrées?
+### <a name="will-i-lose-my-games-and-apps-or-saved-changes"></a>Vais-je perdre mes jeux et applications ou les modifications que j’ai enregistrées ?
 
 Si vous décidez de quitter le programme pour les développeurs, vous ne perdrez pas les applications et les jeux que vous avez installés. De plus, si vous avez joué en ligne, tous vos jeux ont été enregistrés sur votre profil cloud de compte Live. Vous ne pouvez donc pas les perdre.
 
-### Comment quitter le programme pour les développeurs?
+### <a name="how-do-i-leave-the-developer-program"></a>Comment quitter le programme pour les développeurs ?
 
 Pour plus d’informations la manière de quitter le programme pour les développeurs, voir [Désactivation du mode développeur Xbox One](devkit-deactivation.md).
 
-### J’ai vendu ma console XboxOne en la laissant en mode développeur. Comment désactiver le mode développeur?
+### <a name="i-sold-my-xbox-one-and-left-it-in-developer-mode-how-do-i-deactivate-developer-mode"></a>J’ai vendu ma console Xbox One en la laissant en mode développeur. Comment désactiver le mode développeur ?
 
-Si vous n’avez plus accès à votre console XboxOne, vous pouvez la désactiver dans le Centre de développement Windows. Pour plus d’informations, voir la section **Désactiver votre console à l’aide du Centre de développement Windows** dans la rubrique [Désactivation du Mode développeur Xbox One](devkit-deactivation.md#deactivate-your-console-through-windows-dev-center).
+Si vous n’avez plus accès à votre console Xbox One, vous pouvez la désactiver dans le Centre de développement Windows. Pour plus d’informations, voir la section **Désactiver votre console à l’aide du Centre de développement Windows** dans la rubrique [Désactivation du Mode développeur Xbox One](devkit-deactivation.md#deactivate-your-console-using-windows-dev-center). 
 
-### J’ai quitté le programme pour les développeurs à l’aide du Centre de développement Windows, mais je suis toujours en mode développeur. Que dois-je faire?
+### <a name="i-left-the-developer-program-using-windows-dev-center-but-im-in-still-developer-mode-what-do-i-do"></a>J’ai quitté le programme pour les développeurs à l’aide du Centre de développement Windows, mais je suis toujours en mode développeur. Que dois-je faire ?
 
 Démarrez l’outil Accueil du développeur et sélectionnez le bouton **Quitter le mode développeur**. Cette action a pour effet de redémarrer votre console en mode commercial. 
 
-### Puis-je publier mon application?
+### <a name="can-i-publish-my-app"></a>Puis-je publier mon application ?
 
-Vous pouvez [publier des applications](../publish/index.md) par le biais du Centre de développement si vous disposez d’un [compte de développeur](https://developer.microsoft.com/store/register). Les applications UWP créées et testées sur une console XboxOne commerciale feront l’objet des mêmes processus d’ingestion, de révision et de publication que ceux actuellement effectués par Windows, et seront soumises à des vérifications supplémentaires pour répondre aux normes XboxOne en vigueur.
+Vous pouvez [publier des applications](../publish/index.md) par le biais du Centre de développement si vous disposez d’un [compte de développeur](https://developer.microsoft.com/store/register). Les applications UWP créées et testées sur une console Xbox One commerciale feront l’objet des mêmes processus d’ingestion, de révision et de publication que ceux actuellement effectués par Windows, et seront soumises à des vérifications supplémentaires pour répondre aux normes Xbox One en vigueur.
 
-### Puis-je publier mon jeu?
+### <a name="can-i-publish-my-game"></a>Puis-je publier mon jeu ?
 
-Vous pouvez utiliser UWP et votre console XboxOne en mode développeur pour créer et tester vos jeux sur XboxOne. Pour publier des jeux UWP, vous devez vous inscrire auprès d’[ID@XBOX](http://www.xbox.com/Developers/id). 
+Vous pouvez utiliser UWP et votre console Xbox One en mode développeur pour créer et tester vos jeux sur Xbox One. Pour publier des jeux UWP, vous devez vous inscrire auprès d’[ID@XBOX](http://www.xbox.com/Developers/id). 
 [ID@XBOX](http://www.xbox.com/Developers/id) offre aux développeurs un accès complet aux API Xbox Live pour leurs jeux, notamment Scores du joueur et Succès, ainsi que la possibilité de tirer parti du mode multijoueur sur plusieurs appareils, des enregistrements dans le cloud et de toutes les fonctionnalités de Xbox Live sur Xbox One. 
 [ID@XBOX](http://www.xbox.com/Developers/id) permet également d’accéder à des kits de développement Xbox One pour les jeux qui sollicitent les capacités maximales du matériel Xbox One.
 
-### Les moteurs de jeu standard fonctionneront-ils?
+### <a name="will-the-standard-game-engines-work"></a>Les moteurs de jeu standard fonctionneront-ils ?
 
 Consultez la page [Problèmes connus](known-issues.md) concernant cette version.
 
-### Quelles sont les fonctionnalités et ressources système disponibles pour les jeux UWP sur XboxOne? 
+### <a name="what-capabilities-and-system-resources-are-available-to-uwp-games-on-xbox-one"></a>Quelles sont les fonctionnalités et ressources système disponibles pour les jeux UWP sur Xbox One ? 
 
 Pour plus d’informations, voir [Ressources système pour les applications et jeux UWP sur Xbox One](system-resource-allocation.md).
 
-### Si je crée un jeu UWP DirectX12 , s’exécutera-t-il sur ma console XboxOne en mode développeur?
+### <a name="if-i-create-a-directx-12-uwp-game-will-it-run-on-my-xbox-one-in-developer-mode"></a>Si je crée un jeu UWP DirectX 12 , s’exécutera-t-il sur ma console Xbox One en mode développeur ?
 
 Pour plus d’informations, voir [Ressources système pour les applications et jeux UWP sur Xbox One](system-resource-allocation.md).
 
-### La surface d’API UWP sera-t-elle disponible en totalité sur Xbox?
+### <a name="will-the-entire-uwp-api-surface-be-available-on-xbox"></a>La surface d’API UWP sera-t-elle disponible en totalité sur Xbox ?
 
 Consultez la page [Problèmes connus](known-issues.md) concernant cette version.
 
-### Résolution des problèmes de déploiement
+### <a name="fixing-deployment-failures"></a>Résolution des problèmes de déploiement
 
-Si vous ne parvenez pas à déployer votre application à partir de VisualStudio, les étapes suivantes peuvent vous aider à résoudre le problème. Si vous êtes bloqué, demandez de l’aide sur le forum.
+Si vous ne parvenez pas à déployer votre application à partir de Visual Studio, les étapes suivantes peuvent vous aider à résoudre le problème. Si vous êtes bloqué, demandez de l’aide sur le forum.
 
 > [!NOTE]
 > Un utilisateur doit être connecté afin de pouvoir déployer une application. Si vous recevez un message d’erreur 0x87e10008, assurez-vous qu’un utilisateur est connecté, puis essayez de nouveau.
 
-Si VisualStudio ne peut pas se connecter à votre console XboxOne:
+Si Visual Studio ne peut pas se connecter à votre console Xbox One :
 
 1. Assurez-vous que vous êtes en mode développeur (comme décrit précédemment sur cette page).
 2. Vérifiez que vous avez correctement configuré votre PC de développement. Avez-vous suivi *toutes* les instructions de la rubrique [Prise en main du développement d’applications UWP sur Xbox One](getting-started.md) ? 
 
 3. Si vous ne l’avez pas encore fait, lisez les rubriques [Configuration de l’environnement de développement](development-environment-setup.md) et [Présentation des outils Xbox One](introduction-to-xbox-tools.md).
 
-4. Vérifiez que vous pouvez «effectuer un test ping» sur l’adresseIP de votre console à partir de votre PC de développement.
+4. Vérifiez que vous pouvez « effectuer un test ping » sur l’adresse IP de votre console à partir de votre PC de développement.
   > [!NOTE]
   > Pour des performances de déploiement optimales, nous vous recommandons d’utiliser une connexion câblée à votre console.
 
@@ -122,18 +122,18 @@ Go to Settings > System > Console info & updates > Reset console, and select the
 This will delete all of your games, apps, settings and content and deactivate Developer Mode.
 -->
 
-### Si je crée une application en HTML/JavaScript, comment puis-je activer la navigation par boîtier de commande?
+### <a name="if-im-building-an-app-using-htmljavascript-how-do-i-enable-gamepad-navigation"></a>Si je crée une application en HTML/JavaScript, comment puis-je activer la navigation par boîtier de commande ?
 
-TVHelpers est un ensemble d’exemples et de bibliothèques JavaScript et XAML/C# conçu pour vous aider à créer des applications réussies pour XboxOne et la télévision en JavaScript et C#. TVJS est une bibliothèque qui vous permet de créer des applications UWP de grande qualité pour XboxOne. TVJS inclut la prise en charge de la navigation automatique par manette, la lecture de contenus multimédias enrichis, la recherche et plus encore. Vous pouvez utiliser TVJS avec votre application web hébergée tout aussi facilement qu’avec une application UWP web empaqueté avec accès complet aux API WindowsRuntime.
+TVHelpers est un ensemble d’exemples et de bibliothèques JavaScript et XAML/C# conçu pour vous aider à créer des applications réussies pour Xbox One et la télévision en JavaScript et C#. TVJS est une bibliothèque qui vous permet de créer des applications UWP de grande qualité pour Xbox One. TVJS inclut la prise en charge de la navigation automatique par manette, la lecture de contenus multimédias enrichis, la recherche et plus encore. Vous pouvez utiliser TVJS avec votre application web hébergée tout aussi facilement qu’avec une application UWP web empaqueté avec accès complet aux API Windows Runtime.
 
 Pour plus d’informations, voir le projet [TVHelpers](https://github.com/Microsoft/TVHelpers) et le projet [wiki](https://github.com/Microsoft/TVHelpers/wiki).
 
-## Voir également
-- [Problèmes connus avec UWP sur XboxOne](known-issues.md)
-- [UWP sur XboxOne](index.md)
+## <a name="see-also"></a>Voir également
+- [Problèmes connus avec UWP sur Xbox One](known-issues.md)
+- [UWP sur Xbox One](index.md)
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Dec16_HO1-->
 
 

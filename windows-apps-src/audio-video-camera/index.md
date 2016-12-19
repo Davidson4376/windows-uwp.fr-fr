@@ -4,14 +4,14 @@ ms.assetid: 0fc12d26-f1cf-4da7-b5a7-735a5074b74a
 description: "Cette section fournit des informations sur la création d’une application Windows universelle (UWP) qui capture, lit ou modifie des photos, des vidéos ou des fichiers audio."
 title: "Audio, vidéo et appareil photo"
 translationtype: Human Translation
-ms.sourcegitcommit: fd5b52a1d431b9396a4b162077d4f8d6246cd597
-ms.openlocfilehash: 6e67f57fbc00e596bb07cc37f2c9f762a5c9f557
+ms.sourcegitcommit: 77f47bce2a4be3f7c5ee3d320ff6c68e8c7ce6b0
+ms.openlocfilehash: d1aad0800bfe4982a316aa5da719db005b687fa1
 
 ---
 
-# Audio, vidéo et appareil photo
+# <a name="audio-video-and-camera"></a>Audio, vidéo et appareil photo
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 Cette section fournit des informations sur la création d’une application Windows universelle (UWP) qui capture, lit ou modifie des photos, des vidéos ou des fichiers audio.
  
@@ -21,7 +21,8 @@ Cette section fournit des informations sur la création d’une application Wind
 | [Lecture de contenu multimédia](media-playback.md) | Fournit des informations sur la création d’applications UWP qui utilisent la lecture audio et vidéo. |
 | [Détecter les visages dans des images ou des vidéos](detect-and-track-faces-in-an-image.md) | Explique comment utiliser [FaceTracker](https://msdn.microsoft.com/library/windows/apps/dn974150) pour suivre les visages au fil du temps dans une séquence d’images vidéo. |
 | [Compositions multimédias et modification](media-compositions-and-editing.md) | Explique comment utiliser les API de l’espace de noms [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) pour développer rapidement des applications qui permettent aux utilisateurs de créer des compositions multimédias à partir de fichiers sources audio et vidéo. |
-| [Effets vidéo personnalisés](custom-video-effects.md) | Explique comment créer un composant WindowsRuntime implémentant l’interface **IBasicVideoEffect** pour créer des effets personnalisés de flux vidéo. |
+| [Effets vidéo personnalisés](custom-video-effects.md) | Explique comment créer un composant Windows Runtime implémentant l’interface **IBasicVideoEffect** afin de créer des effets personnalisés pour des flux vidéo. |
+| [Effets audio personnalisés](custom-audio-effects.md) | Explique comment créer un composant Windows Runtime implémentant l’interface **IBasicVideoEffect** afin de créer des effets personnalisés pour des flux audio. |
 | [Créer, modifier et enregistrer des images bitmap](imaging.md) | Explique comment charger et enregistrer des fichiers image à l’aide de l’objet [SoftwareBitmap](https://msdn.microsoft.com/library/windows/apps/dn887358) pour représenter des images bitmap.  |
 | [Propriétés d’informations des appareils audio](audio-device-information-properties.md)  | Répertorie les propriétés d’informations liées aux appareils audio. |
 | [Transcoder des fichiers multimédias](transcode-media-files.md) | Explique comment utiliser les API [Windows.Media.Transcoding](https://msdn.microsoft.com/library/windows/apps/br207105) pour transcoder des fichiers vidéo d’un format à un autre. |
@@ -33,8 +34,8 @@ Cette section fournit des informations sur la création d’une application Wind
 | [Codecs pris en charge](supported-codecs.md) | Répertorie les codecs et formats audio, vidéo et d’image pris en charge dans les applications UWP. |
 
 
-## Voir aussi
-- [Développer des applicationsUWP](https://developer.microsoft.com/en-us/windows/develop)
+## <a name="see-also"></a>Voir aussi
+- [Développer des applications UWP](https://developer.microsoft.com/en-us/windows/develop)
 
  
 
@@ -48,6 +49,6 @@ Cette section fournit des informations sur la création d’une application Wind
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

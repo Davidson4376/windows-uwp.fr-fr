@@ -17,11 +17,11 @@ ms.openlocfilehash: a02793e45f190b9401f18e845af3dc73d235c3fc
 <div style="float:left; font-size:80%; text-align:left; margin: 0px 15px 15px 0px;">
 <img src="images/badge-example.png" alt="A tile with a numeric badge displaying the number 63 to indicate 63 unread mails." style="padding-bottom:0.0em; margin-bottom: 2px" /><br/>Une vignette avec un badge numérique affichant<br/> le nombre 63 pour indiquer 63 e-mails non lus.</div>
 
-Un badge de notification transmet des informations récapitulatives ou d’état propres à votre application. Ces informations peuvent être numériques (1 à 99) ou correspondre à l’un des ensembles de glyphes fournis par le système. Voici quelques exemples des informations les mieux transmises par l’intermédiaire d’un badge: état de la connexion réseau dans un jeu en ligne, statut de l’utilisateur dans une application de messagerie, nombre de messages non lus dans une application de courrier électronique et nombre de nouveaux billets dans une application de médias sociaux. 
+Un badge de notification transmet des informations récapitulatives ou d’état propres à votre application. Ces informations peuvent être numériques (1 à 99) ou correspondre à l’un des ensembles de glyphes fournis par le système. Voici quelques exemples des informations les mieux transmises par l’intermédiaire d’un badge : état de la connexion réseau dans un jeu en ligne, statut de l’utilisateur dans une application de messagerie, nombre de messages non lus dans une application de courrier électronique et nombre de nouveaux billets dans une application de médias sociaux. 
 
 Les badges de notification apparaissent sur l’icône de la barre des tâches de votre application et dans le coin inférieur droit de sa vignette d’accueil, que l’application soit en cours d’exécution ou non. Il est possible d’afficher les badges sur des vignettes de toute taille.  
 
-**Remarque**&nbsp;&nbsp;Il n’est pas possible de fournir votre propre image de badge. Seules les images de badge fournies par le système sont utilisables.
+**Remarque**  Il n’est pas possible de fournir votre propre image de badge. Seules les images de badge fournies par le système sont utilisables.
 
 ## Badges numériques
 
@@ -32,7 +32,7 @@ Les badges de notification apparaissent sur l’icône de la barre des tâches d
         <th>XML</th>
     </tr>
     <tr>
-        <td>Nombre compris entre 1 et 99 Une valeur de 0 est équivalente à la valeur de glyphe «aucuneˆ» et efface le badge.</td>
+        <td>Nombre compris entre 1 et 99 Une valeur de 0 est équivalente à la valeur de glyphe « aucuneˆ» et efface le badge.</td>
         <td>![Un badge numérique inférieur à 100.](images/badges/badge-numeric.png)</td>
         <td>`<badge value="1"/>`</td>
     </tr>

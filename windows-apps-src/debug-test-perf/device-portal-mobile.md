@@ -4,43 +4,43 @@ ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: Device Portal pour appareils mobiles
 description: "Découvrez comment Windows Device Portal vous permet de configurer et de gérer à distance votre appareil mobile."
 translationtype: Human Translation
-ms.sourcegitcommit: df6d42d6a91b8721e905fe9bc3a339dc33408459
-ms.openlocfilehash: 802030f12f2ca3e29eec053d89ab806298974dc7
+ms.sourcegitcommit: ea4f755afbf16d4ba5043ebb6be586f19dcc4370
+ms.openlocfilehash: c39c1a843c4f466e1999b4e80bf87f5842ad1996
 
 ---
-# Device Portal pour appareils mobiles
+# <a name="device-portal-for-mobile"></a>Device Portal pour appareils mobiles
 
-À partir de Windows10 version1511, des fonctionnalités de développement supplémentaires sont disponibles pour la famille d’appareils mobiles. Ces fonctionnalités sont disponibles uniquement lorsque le mode développeur est activé sur l’appareil.
+À partir de Windows 10 version 1511, des fonctionnalités de développement supplémentaires sont disponibles pour la famille d’appareils mobiles. Ces fonctionnalités sont disponibles uniquement lorsque le mode développeur est activé sur l’appareil.
 
 Pour en savoir plus sur la façon d’activer le mode développeur, consultez [Activer votre appareil pour le développement](../get-started/enable-your-device-for-development.md).
 
 ![Paramètres de Device Portal](images/device-portal/mob-dev-mode-options.png)
 
-## Configurer Device Portal sur Windows Phone
+## <a name="set-up-device-portal-on-windows-phone"></a>Configurer Device Portal sur Windows Phone
 
-### Activer la détection et le couplage d’appareils
+### <a name="turn-on-device-discovery-and-pairing"></a>Activer la détection et le couplage d’appareils
 
-Pour vous connecter à Device Portal, vous devez activer la détection d’appareils. Cela vous permet de coupler votre téléphone avec un PC ou un autre appareil Windows 10. Les deux appareils doivent être connectés au même sous-réseau du réseau par une connexion filaire ou sans fil, ou ils doivent être connectés par USB.
+Pour vous connecter à Device Portal, vous devez activer la détection d’appareils et Device Portal. Cela vous permet de coupler votre téléphone à un PC ou à un autre appareil Windows 10. Les deux appareils doivent être connectés au même sous-réseau du réseau par une connexion filaire ou sans fil, ou ils doivent être connectés par USB.
 
-La première fois que vous vous connectez à Device Portal, vous êtes invité à entrer un code de sécurité à 6 caractères (avec respect de la casse). Cela garantit votre accès au téléphone et vous préserve des attaques. Appuyez sur le bouton Coupler de votre téléphone pour générer et afficher le code, puis entrez les 6caractères dans la zone de texte du navigateur.
+La première fois que vous vous connectez à Device Portal, vous êtes invité à entrer un code de sécurité à 6 caractères (avec respect de la casse). Cela garantit votre accès au téléphone et vous préserve des attaques. Appuyez sur le bouton Coupler de votre téléphone pour générer et afficher le code, puis entrez les 6 caractères dans la zone de texte du navigateur.
 
 ![Paramètres de détection d’appareils en mode développeur](images/device-portal/mob-dev-mode-pairing.png)
 
-Vous pouvez vous connecter à Device Portal de 3façons: USB, hôte local et sur le réseau local (y compris avec VPN et fonction modem).
+Vous pouvez vous connecter à Device Portal de 3 façons : USB, hôte local et sur le réseau local (y compris avec VPN et fonction modem).
 
 **Pour se connecter à Device Portal**
 
 1. Dans votre navigateur, entrez l’adresse indiquée ici selon le type de connexion que vous utilisez.
 
-    - USB: `http://127.0.0.1:10080`
+    - USB : `http://127.0.0.1:10080`
 
-    utilisez cette adresse lorsque le téléphone est connecté à un PC par le biais d’une connexion USB. Les deux appareils doivent disposer de Windows10 version1511 ou ultérieure.
+    utilisez cette adresse lorsque le téléphone est connecté à un PC par le biais d’une connexion USB. Les deux appareils doivent disposer de Windows 10 version 1511 ou ultérieure.
     
-    - Hôte local: `http://127.0.0.1`
+    - Hôte local : `http://127.0.0.1`
 
-    utilisez cette adresse pour afficher Device Portal localement sur le téléphone dans Microsoft Edge pour Windows10 Mobile.
+    utilisez cette adresse pour afficher Device Portal localement sur le téléphone dans Microsoft Edge pour Windows 10 Mobile.
     
-    - Réseau local: `https://<The IP address of the phone>`
+    - Réseau local : `https://<The IP address or hostname of the phone>`
 
     utilisez cette adresse pour établir la connexion par le biais d’un réseau local.
 
@@ -48,7 +48,7 @@ Vous pouvez vous connecter à Device Portal de 3façons: USB, hôte local et sur
 
 2. Appuyez sur le bouton Coupler de votre téléphone pour générer et afficher le code de sécurité requis.
 
-3. Entrez le code de sécurité à 6caractères dans la zone de mot de passe de Device Portal, dans votre navigateur.
+3. Entrez le code de sécurité à 6 caractères dans la zone de mot de passe de Device Portal, dans votre navigateur.
 
 4. (Facultatif) Activez la case à cocher Mémoriser mon ordinateur dans votre navigateur afin de mémoriser ce couplage.
 
@@ -58,25 +58,25 @@ Voici la section Device Portal de la page des paramètres du développeur sur Wi
 
 Si vous utilisez Device Portal dans un environnement protégé, comme un laboratoire de test, où vous faites confiance à tous les utilisateurs du réseau local, si aucune information personnelle n’est présente sur votre appareil et si vous présentez des exigences uniques, vous pouvez désactiver l’authentification. Cela permet une communication non chiffrée. Toute personne connaissant l’adresse IP de votre téléphone pourra le contrôler.
 
-## Remarques relatives à l’outil
+## <a name="tool-notes"></a>Remarques relatives à l’outil
 
-## Pages Device Portal
-### Processus
+## <a name="device-portal-pages"></a>Pages Device Portal
+### <a name="processes"></a>Processus
 
 Windows Mobile Device Portal ne permet pas d’arrêter les processus arbitraires. 
 
-Device Portal sur les appareils mobiles propose les pages standard. Pour obtenir une description détaillée, voir [Vue d’ensemble de Windows Device Portal](device-portal.md).
+Device Portal sur les appareils mobiles propose les pages standard. Pour obtenir une description détaillée, consultez [Vue d’ensemble de Windows Device Portal](device-portal.md).
 
-- Applications
+- Gestionnaire d’applications
+- Explorateur de fichiers de l’application (outil d’exploration des stockages isolés)
 - Processus
-- Performances
-- Suivi d’événements pour Windows (ETW)
-- Suivi des performances
+- Graphiques de performances
+- Suivi des événements pour Windows (ETW)
+- Suivi des performances (WPR) 
 - Appareils
 - Mise en réseau
 
 
-
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -4,14 +4,14 @@ description: "Cette section explique comment partager des données entre des app
 title: Communication entre les applications
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: 94e1586a73743e8918ef160897b1b22c8c545ea0
-ms.openlocfilehash: 05ac668e0e3c33f6dd9da9f578335bab96c6429c
+ms.sourcegitcommit: ea67ae5b568d1c51af3bb951fe3a68a8def8a556
+ms.openlocfilehash: 951e2ea29a47e362d9fdee0f597d2e7c808212b6
 
 ---
 
-# Communication entre les applications
+# <a name="app-to-app-communication"></a>Communication entre les applications
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Article mis à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Cette section explique comment partager des données entre des applications de plateforme Windows universelle (UWP), notamment comment utiliser le contrat de partage, copier et coller, et glisser-déplacer.
 
@@ -21,7 +21,7 @@ Une application peut prendre en charge la fonctionnalité de partage de deux man
 
 Outre le contrat de partage, les applications peuvent également intégrer des techniques classiques de transfert de données, comme glisser-déplacer ou copier-coller. Outre la communication entre les applications UWP, ces méthodes prennent également en charge le partage vers et depuis des applications de bureau.
 
-## Dans cette section
+## <a name="in-this-section"></a>Dans cette section
 
 | Rubrique | Description |
 |-------|-------------|
@@ -30,11 +30,11 @@ Outre le contrat de partage, les applications peuvent également intégrer des t
 | [Copier et coller](copy-and-paste.md) | Cet article explique comment prendre en charge le copier-coller dans les applications UWP en utilisant le Presse-papiers. Le copier-coller est la méthode classique utiliser pour échanger des données entre les applications, ou dans une application, et presque chaque application peut prendre en charge les opérations du Presse-papiers dans une certaine mesure. |
 | [Glisser-déplacer](drag-and-drop.md) | Cet article explique comment ajouter le glisser-déplacer dans votre application UWP. Glisser-déplacer est une méthode naturelle et classique d’interaction avec le contenu comme les images et les fichiers. Une fois implémenté, le glisser-déplacer fonctionne parfaitement dans toutes les directions, notamment d’application à application, d’application à bureau et de bureau à application. |
 
-## Voir également
-- [Développer des applicationsUWP](https://developer.microsoft.com/en-us/windows/develop)
+## <a name="see-also"></a>Voir également
+- [Développer des applications UWP](https://developer.microsoft.com/windows/develop)
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Dec16_HO1-->
 
 

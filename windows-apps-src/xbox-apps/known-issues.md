@@ -1,50 +1,50 @@
 ---
 author: Mtoepke
-title: "Problèmes connus avec UWP dans le programme pour les développeurs XboxOne"
+title: "Problèmes connus avec UWP dans le programme pour les développeurs Xbox One"
 description: 
 translationtype: Human Translation
-ms.sourcegitcommit: 5774ada049e5f300e9cb990f5a079c8c21796f8b
-ms.openlocfilehash: 5892e00f4da74af5aa4e24fdd12b0df0e8a4a7d9
+ms.sourcegitcommit: 20ac6fb738de1c8aaf10f46c359842f31714dbbf
+ms.openlocfilehash: b6fe2f90e0aff4b8e77b4c20aec0d29f2a6a36f8
 
 ---
 
-# Problèmes connus avec UWP dans  le programme pour les développeurs Xbox
+# <a name="known-issues-with-uwp-on-xbox-developer-program"></a>Problèmes connus avec UWP dans le programme pour les développeurs Xbox
 
 Cette rubrique décrit les problèmes connus liés à la plateforme UWP dans le programme pour les développeurs Xbox. Pour plus d’informations sur ce programme, voir [UWP sur Xbox](index.md). 
 
-\[Si vous avez accédé à cette page à partir d’un lien dans une rubrique de référence d’une API et que vous recherchez des informations sur les API pour la famille d’appareils universels, consultez [Fonctionnalités UWP qui ne sont pas encore prises en charge sur Xbox](http://go.microsoft.com/fwlink/?LinkID=760755).\]
+\[Si vous avez accédé à cette page à partir d’un lien dans une rubrique de référence d’une API et que vous recherchez des informations sur les API pour les appareils universels, consultez [Fonctionnalités UWP non encore prises en charge sur Xbox](http://go.microsoft.com/fwlink/?LinkID=760755).\]
 
-La liste ci-après met en relief certains problèmes connus que vous pouvez rencontrer dans cette version, mais cette liste n’est pas exhaustive. 
+La liste ci-après répertorie certains problèmes connus que vous pourriez rencontrer, mais cette liste n’est pas exhaustive. 
 
-**Vos commentaires nous intéressent**. Par conséquent, n’hésitez pas à nous faire part de vos éventuels problèmes sur le forum [Développement d’applications de plateforme Windows universelle](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop). 
+**Vos commentaires nous intéressent**. Par conséquent, n’hésitez pas à nous faire part de vos éventuels problèmes sur le forum [Développement d’applications de plateforme Windows universelle](https://social.msdn.microsoft.com/forums/windowsapps/home?forum=wpdevelop). 
 
 Si vous êtes bloqué, lisez les informations présentées dans cette rubrique, consultez le [Forum aux questions](frequently-asked-questions.md) et utilisez les forums pour demander de l’aide.
 
 
 <!--## Developing games-->
  
-## Les limites de mémoire des applications en arrière-plan sont partiellement appliquées
+## <a name="memory-limits-for-background-apps-are-partially-enforced"></a>Les limites de mémoire des applications en arrière-plan sont partiellement appliquées
  
-L’encombrement mémoire maximal pour les applications qui s’exécutent en arrière-plan est de 128mégaoctets. Dans la version actuelle d’UWP sur Xbox One, votre application est suspendue si elle est au-dessus de cette limite lorsqu’elle passe en arrière-plan. Actuellement, cette limite n’est pas appliquée si votre application dépasse la limite alors qu’elle est déjà en cours d’exécution en arrière-plan. Ainsi, si votre application dépasse 128Mo alors qu’elle s’exécute en arrière-plan, elle sera toujours en mesure d’allouer de la mémoire.
+L’encombrement mémoire maximal pour les applications qui s’exécutent en arrière-plan est de 128 mégaoctets. Dans la version actuelle d’UWP sur Xbox One, votre application est suspendue si elle est au-dessus de cette limite lorsqu’elle passe en arrière-plan. Actuellement, cette limite n’est pas appliquée si votre application dépasse la limite alors qu’elle est déjà en cours d’exécution en arrière-plan. Ainsi, si votre application dépasse 128 Mo alors qu’elle s’exécute en arrière-plan, elle sera toujours en mesure d’allouer de la mémoire.
  
-Il n’existe actuellement aucun moyen de contourner ce problème. Les applications doivent contrôler leur utilisation de la mémoire en conséquence et continuer de rester sous la limite de 128Mo pendant l’exécution en arrière-plan.
+Il n’existe actuellement aucun moyen de contourner ce problème. Les applications doivent contrôler leur utilisation de la mémoire en conséquence et continuer de rester sous la limite de 128 Mo pendant l’exécution en arrière-plan.
  
-## Le déploiement à partir de VisualStudio échoue lorsque les paramètres de contrôle parental sont activés
+## <a name="deploying-from-vs-fails-with-parental-controls-turned-on"></a>Le déploiement à partir de Visual Studio échoue lorsque les paramètres de contrôle parental sont activés
 
 Le lancement de votre application à partir de Visual Studio n’aboutit pas si le contrôle parental est activé dans les paramètres.
 
-Pour contourner ce problème, désactivez ces paramètres temporairement ou procédez comme suit:
+Pour contourner ce problème, désactivez ces paramètres temporairement ou procédez comme suit :
 1. Déployez votre application sur la console en désactivant les paramètres de contrôle parental.
 2. Activez ces paramètres.
 3. Lancez votre application à partir de la console.
-4. Saisissez un mot de passe ou un codeconfidentiel pour permettre à l’application de se lancer.
+4. Saisissez un mot de passe ou un code confidentiel pour permettre à l’application de se lancer.
 5. L’application se lance.
 6. Fermez l’application.
-7. Effectuez le lancement à partir de Visual Studio à l’aide de la toucheF5; l’application s’ouvre sans afficher d’invite.
+7. Effectuez le lancement à partir de Visual Studio à l’aide de la touche F5 ; l’application s’ouvre sans afficher d’invite.
 
 À ce stade, l’autorisation est _rémanente_ jusqu’à ce que vous fermiez la session de l’utilisateur, même si vous désinstallez l’application et la réinstallez.
  
-Il existe un autre type d’exemption, uniquement disponible pour les comptesenfant. Un compteenfant requiert un parent, qui doit se connecter pour accorder l’autorisation adéquate. Lorsqu’il se connecte, le parent peut choisir d’autoriser systématiquement l’enfant à lancer l’application (paramètre **Toujours**). Cette exemption est stockée dans le cloud et est persistante, même si l’enfant se déconnecte et se reconnecte.   
+Il existe un autre type d’exemption, uniquement disponible pour les comptes enfant. Un compte enfant requiert un parent, qui doit se connecter pour accorder l’autorisation adéquate. Lorsqu’il se connecte, le parent peut choisir d’autoriser systématiquement l’enfant à lancer l’application (paramètre **Toujours**). Cette exemption est stockée dans le cloud et est persistante, même si l’enfant se déconnecte et se reconnecte.   
 
 <!--### x86 vs. x64
 
@@ -67,11 +67,11 @@ The following game engines have been confirmed to work:
 There are likely others that are working too. We would love to get your feedback on what you find. 
 Please use the forum to report any issues you see.-->
 
-## Prise en charge de DirectX12
+## <a name="directx-12-support"></a>Prise en charge de DirectX 12
 
-UWP sur XboxOne prend en charge la fonctionnalité DirectX11 niveau10. DirectX12 n’est pas pris en charge pour l’instant. 
+UWP sur Xbox One prend en charge la fonctionnalité DirectX 11 niveau 10. DirectX 12 n’est pas pris en charge pour l’instant. 
 
-À l’instar de toutes les consoles de jeu traditionnelles, XboxOne est un matériel spécialisé qui requiert un Kit de développement logiciel (SDK) spécifique pour fonctionner au maximum de ses capacités. Si vous travaillez sur un jeu sollicitant les capacités maximales du matériel Xbox One, vous pouvez vous inscrire au programme [ID@XBOX](http://www.xbox.com/Developers/id) pour accéder à ce Kit SDK, qui inclut la prise en charge de DirectX 12.
+À l’instar de toutes les consoles de jeu traditionnelles, Xbox One est un matériel spécialisé qui requiert un Kit de développement logiciel (SDK) spécifique pour fonctionner au maximum de ses capacités. Si vous travaillez sur un jeu sollicitant les capacités maximales du matériel Xbox One, vous pouvez vous inscrire au programme [ID@XBOX](http://www.xbox.com/Developers/id) pour accéder à ce Kit SDK, qui inclut la prise en charge de DirectX 12.
 
 <!-- ### Xbox One Developer Preview disables game streaming to Windows 10
 
@@ -91,13 +91,13 @@ In this developer preview, inbound and outbound network access from the console 
 Developers can still use HTTP and WebSockets.
 --> 
 
-## Ports réseau bloqués sur Xbox One
+## <a name="blocked-networking-ports-on-xbox-one"></a>Ports réseau bloqués sur Xbox One
 
-Les applications de plateforme Windows universelle (UWP) sur les appareils Xbox One ne sont pas autorisées à établir une liaison aux ports dans la plage [49152, 65535]. Même si la liaison à ces ports semble réussir au moment de l’exécution, le trafic réseau peut être annulé sans avertissement avant d’atteindre votre application. Votre application doit si possible établir une liaison au port 0, ce qui permet au système de sélectionner le port local. Si vous avez besoin d’utiliser un port spécifique, le numéro de port doit être dans la plage [1025, 49151]. Vous devez vérifier dans le Registre IANA et éviter les conflits. Pour plus d’informations, voir le [Registre des noms de services et des numéros de ports des protocoles de transport](http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml).
+Les applications de plateforme Windows universelle (UWP) sur les appareils Xbox One ne sont pas autorisées à établir une liaison aux ports dans la plage [49152, 65535]. Même si la liaison à ces ports semble réussir au moment de l’exécution, le trafic réseau peut être annulé sans avertissement avant d’atteindre votre application. Votre application doit si possible établir une liaison au port  0, ce qui permet au système de sélectionner le port local. Si vous avez besoin d’utiliser un port spécifique, le numéro de port doit être dans la plage [1025, 49151]. Vous devez vérifier dans le Registre IANA et éviter les conflits. Pour plus d’informations, voir le [Registre des noms de services et des numéros de ports des protocoles de transport](http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml).
 
-## Couverture des API UWP
+## <a name="uwp-api-coverage"></a>Couverture des API UWP
 
-Les APIUWP ne sont pas toutes prises en charge sur Xbox. Pour obtenir la liste des API dont nous savons qu’elles ne fonctionnent pas, voir [Fonctionnalités UWP qui ne sont pas encore prises en charge sur Xbox](http://go.microsoft.com/fwlink/p/?LinkId=760755). Si vous rencontrez des problèmes avec d’autres API, signalez-les sur les forums. 
+Les API UWP ne sont pas toutes prises en charge sur Xbox. Pour obtenir la liste des API dont nous savons qu’elles ne fonctionnent pas, voir [Fonctionnalités UWP qui ne sont pas encore prises en charge sur Xbox](http://go.microsoft.com/fwlink/p/?LinkId=760755). Si vous rencontrez des problèmes avec d’autres API, signalez-les sur les forums. 
 
 <!--## XAML controls do not look like or behave like the controls in the Xbox One shell
 
@@ -160,9 +160,9 @@ This will delete all of your games, apps, settings and content, deactivate Devel
 
 Sometimes this is resolved by sorting a column on the table.-->
 
-## Avertissement de sécurité déclenché par l’accès à WDP
+## <a name="navigating-to-wdp-causes-a-certificate-warning"></a>Avertissement de sécurité déclenché par l’accès à WDP
 
-Vous recevrez un avertissement concernant le certificat fourni, semblable à la capture d’écran ci-dessous, car le certificat de sécurité signé par votre console XboxOne n’est pas considéré comme un éditeur approuvé bien connu. Pour accéder à Windows Device Portal, cliquez sur **Poursuivre sur ce site web**.
+Vous recevrez un avertissement concernant le certificat fourni, semblable à la capture d’écran ci-dessous, car le certificat de sécurité signé par votre console Xbox One n’est pas considéré comme un éditeur approuvé bien connu. Pour accéder à Windows Device Portal, cliquez sur **Poursuivre sur ce site web**.
 
 ![Avertissement concernant le certificat de sécurité d’un site web](images/security_cert_warning.jpg)
 
@@ -171,12 +171,12 @@ Vous recevrez un avertissement concernant le certificat fourni, semblable à la 
 Occasionally, selecting the “Manage Windows Device Portal” option in Dev Home will cause Dev Home to silently exit to the Home screen. 
 This is caused by a failure in the WDP infrastructure on the console and can be resolved by restarting the console.-->
 
-## Voir aussi
+## <a name="see-also"></a>Voir aussi
 - [Forum Aux Questions](frequently-asked-questions.md)
-- [UWP sur XboxOne](index.md)
+- [UWP sur Xbox One](index.md)
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Dec16_HO1-->
 
 

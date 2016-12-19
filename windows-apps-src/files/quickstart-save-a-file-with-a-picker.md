@@ -1,18 +1,18 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: 8BDDE64A-77D2-4F9D-A1A0-E4C634BCD890
 title: "Enregistrer un fichier avec un sélecteur"
 description: "Utilisez FileSavePicker pour permettre aux utilisateurs de spécifier le nom et l’emplacement où ils souhaitent que votre application enregistre un fichier."
 translationtype: Human Translation
-ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
-ms.openlocfilehash: 8e65131a913f5ea69438ff986151da11d3126314
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: ae6a9806e982a866834371a60788f7a788b04e47
 
 ---
 
-# Enregistrer un fichier avec un sélecteur
+# <a name="save-a-file-with-a-picker"></a>Enregistrer un fichier avec un sélecteur
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 **API importantes**
@@ -26,7 +26,7 @@ Utilisez [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br
 
  
 
-## Prérequis
+## <a name="prerequisites"></a>Prérequis
 
 
 -   **Comprendre la programmation asynchrone pour les applications pour la plateforme Windows universelle (UWP)**
@@ -37,7 +37,7 @@ Utilisez [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br
 
     Voir [Autorisations d’accès aux fichiers](file-access-permissions.md).
 
-## Sélecteur FileSavePicker : pas à pas
+## <a name="filesavepicker-step-by-step"></a>Sélecteur FileSavePicker : pas à pas
 
 
 Utilisez un [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) pour permettre à l’utilisateur de spécifier le nom, le type et l’emplacement d’un fichier à enregistrer. Créez, personnalisez et affichez un objet sélecteur de fichiers, puis enregistrez des données via l’objet [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) retourné qui représente le fichier sélectionné.
@@ -114,6 +114,6 @@ L’exemple vérifie que le fichier est valide et y écrit son propre nom de fic
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

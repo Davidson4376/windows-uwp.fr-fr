@@ -5,14 +5,14 @@ title: "Touches d’accès rapide"
 ms.assetid: C2F3F3CE-737F-4652-98B7-5278A462F9D3
 label: Access keys
 template: detail.hbs
-keyword: Access keys, keyboard, accessibility
+keywords: "Touches d’accès rapide, clavier, accessibilité"
 translationtype: Human Translation
-ms.sourcegitcommit: ac86012b63646e53dbde492eef504cb8230f2afd
-ms.openlocfilehash: d96d507c6ce8537888619ce174e2ff0e5284dcce
+ms.sourcegitcommit: 2b6b1d7b1755aad4d75a29413d989c6e8112128a
+ms.openlocfilehash: dfe89e4d4fd089dde6b7b307325b8fe43de82c10
 
 ---
 
-# Touches d’accès rapide
+# <a name="access-keys"></a>Touches d’accès rapide
 
 Les utilisateurs n’étant pas à l’aise avec la souris, tels que ceux souffrant d’un handicap moteur, comptent souvent sur le clavier pour naviguer dans une application et interagir avec celle-ci.  L’infrastructure XAML vous permet de proposer un accès via le clavier aux éléments d’interface utilisateur à l’aide des touches d’accès rapide et de la navigation par onglets.
 
@@ -21,25 +21,25 @@ Les utilisateurs n’étant pas à l’aise avec la souris, tels que ceux souffr
 
 Pour plus d’informations sur l’accessibilité et la navigation via le clavier, consultez [Interaction avec le clavier](https://msdn.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions) et [Accessibilité du clavier](https://msdn.microsoft.com/windows/uwp/accessibility/keyboard-accessibility). Cet article part du principe que vous comprenez les concepts abordés dans ces articles.
 
-## Vue d’ensemble des touches d’accès rapide
+## <a name="access-key-overview"></a>Vue d’ensemble des touches d’accès rapide
 
 Les touches d’accès rapide permettent aux utilisateurs d’appeler des boutons ou de définir le focus directement à l’aide du clavier, sans devoir appuyer plusieurs fois sur les touches de flèches et de tabulation. Les touches d’accès rapide sont conçues pour être facilement détectables, vous devez donc les documenter directement dans l’interface utilisateur (à l’aide d’un badge flottant au-dessus du contrôle avec la touche d’accès rapide par exemple).
 
 ![Exemple de touches d’accès rapide et d’indications sur les touches associées dans Microsoft Word](images/keyboard/accesskeys-keytips.png)
 
-_Figure1: Exemple de touches d’accès rapide et d’indications sur les touches associées dans Microsoft Word._
+_Figure 1 : Exemple de touches d’accès rapide et d’indications sur les touches associées dans Microsoft Word._
 
 Une touche d’accès rapide correspond à un ou plusieurs caractères alphanumériques associés à un élément d’interface utilisateur. Par exemple, Microsoft Word utilise _H_ pour l’onglet Accueil, _2_ pour le bouton Annuler ou _JI_ pour l’onglet Création.
 
 **Étendue de la touche d’accès rapide**
 
-Une touche d’accès rapide fait partie d’une étendue spécifique. Par exemple, dans la Figure1, _F_, _H_, _N_ et _JI_ font partie de l’étendue de la page.  Lorsque l’utilisateur appuie sur _H_, l’étendue change et passe à l’étendue de l’onglet Accueil et ses touches d’accès rapide sont affichées comme illustré dans la Figure2. Les touches d’accès rapide _V_, _FP_, _FF_ et _FS_ font partie de l’étendue de l’onglet Accueil.
+Une touche d’accès rapide fait partie d’une étendue spécifique. Par exemple, dans la Figure 1, _F_, _H_, _N_ et _JI_ font partie de l’étendue de la page.  Lorsque l’utilisateur appuie sur _H_, l’étendue change et passe à l’étendue de l’onglet Accueil et ses touches d’accès rapide sont affichées comme illustré dans la Figure 2. Les touches d’accès rapide _V_, _FP_, _FF_ et _FS_ font partie de l’étendue de l’onglet Accueil.
 
 ![Exemple de touches d’accès rapide et d’indications sur les touches associées pour l’étendue de l’onglet Accueil dans Microsoft Word](images/keyboard/accesskeys-keytips-hometab.png)
 
-_Figure2: Exemple de touches d’accès rapide et d’indications sur les touches associées pour l’étendue de l’onglet Accueil dans Microsoft Word._
+_Figure 2 : Exemple de touches d’accès rapide et d’indications sur les touches associées pour l’étendue de l’onglet Accueil dans Microsoft Word._
 
-Deux éléments peuvent avoir les mêmes touches d’accès rapide si ceux-ci font partie d’étendues différentes. Par exemple, _2_ est la touche d’accès rapide correspondant à l’action Annuler dans l’étendue de la page (Figure1) et correspond également à la fonction de mise en italique dans l’étendue de l’onglet Accueil (Figure2). Toutes les touches d’accès rapide font partie de l’étendue par défaut, sauf si une autre étendue est spécifiée.
+Deux éléments peuvent avoir les mêmes touches d’accès rapide si ceux-ci font partie d’étendues différentes. Par exemple, _2_ est la touche d’accès rapide correspondant à l’action Annuler dans l’étendue de la page (Figure 1) et correspond également à la fonction de mise en italique dans l’étendue de l’onglet Accueil (Figure 2). Toutes les touches d’accès rapide font partie de l’étendue par défaut, sauf si une autre étendue est spécifiée.
 
 **Séquence de touches d’accès rapide**
 
@@ -49,18 +49,18 @@ Un utilisateur peut appeler plusieurs touches d’accès rapide dans une séquen
 
 Certains éléments finalisent une séquence de touches d’accès rapide après avoir été appelés (comme le bouton Reproduire la mise en forme) et d’autres non (comme l’onglet Accueil). Appeler une touche d’accès rapide peut entraîner l’exécution d’une commande, le déplacement du focus, la modification de l’étendue de la touche d’accès rapide ou une autre action qui lui est associée.
 
-## Interaction utilisateur avec les touches d’accès rapide
+## <a name="access-key-user-interaction"></a>Interaction utilisateur avec les touches d’accès rapide
 
-Pour comprendre les API de touche d’accès rapide, il est d’abord nécessaire de comprendre le modèle d’interaction utilisateur. Vous trouverez ci-dessous un résumé du modèle d’interaction utilisateur avec les touches d’accès rapide:
+Pour comprendre les API de touche d’accès rapide, il est d’abord nécessaire de comprendre le modèle d’interaction utilisateur. Vous trouverez ci-dessous un résumé du modèle d’interaction utilisateur avec les touches d’accès rapide :
 
 - Lorsque l’utilisateur appuie sur la touche Alt, la séquence de touches d’accès rapide démarre, même lorsque le focus se trouve sur un contrôle d’entrée. Ensuite, l’utilisateur peut appuyer sur la touche d’accès rapide pour appeler l’action associée. Cette interaction utilisateur nécessite que vous documentiez les touches d’accès rapide disponibles au sein de l’interface utilisateur avec des affordances visuelles, tels que des badges flottants, qui s’affichent lorsque l’utilisateur appuie sur la touche Alt.
 - Lorsque l’utilisateur appuie simultanément sur la touche Alt et la touche d’accès rapide, la touche d’accès rapide est appelée immédiatement. Cela est similaire à un raccourci clavier défini par Alt +_touche d’accès rapide_. Dans ce cas, les affordances visuelles de touche d’accès rapide ne s’affichent pas. Toutefois, appeler une touche d’accès rapide peut entraîner une modification de l’étendue de la touche d’accès rapide. Dans ce cas, une séquence de touches d’accès rapide est lancée et les affordances visuelles sont affichées pour la nouvelle étendue.
     > [!NOTE]
     > Seules les touches d’accès rapide avec un seul caractère peuvent tirer parti de cette interaction utilisateur. La combinaison Alt +_touche d’accès rapide_ n’est pas prise en charge pour les touches d’accès rapide avec plusieurs caractères.    
-- S’il existe plusieurs touches d’accès rapide multicaractères qui partagent certains caractères, alors, quand l’utilisateur appuie sur un caractère partagé, les touches d’accès rapide sont filtrées. Par exemple, supposons que trois touches d’accès rapide sont affichées: _A1_, _A2_ et _C_. Si l’utilisateur appuie sur _A_, alors seules les touches d’accès rapide _A1_ et _A2_ s’affichent et l’affordance visuelle pour C est masquée.
+- S’il existe plusieurs touches d’accès rapide multicaractères qui partagent certains caractères, alors, quand l’utilisateur appuie sur un caractère partagé, les touches d’accès rapide sont filtrées. Par exemple, supposons que trois touches d’accès rapide sont affichées : _A1_, _A2_ et _C_. Si l’utilisateur appuie sur _A_, alors seules les touches d’accès rapide _A1_ et _A2_ s’affichent et l’affordance visuelle pour C est masquée.
 - La touche Échap permet de supprimer un niveau de filtrage. Par exemple, s’il existe des touches d’accès rapide _B_, _ABC_, _ACD_ et _ABD_ et que l’utilisateur appuie sur _A_, alors seules les touches d’accès rapide _ABC_, _ACD_ et _ABD_ sont affichées. Si l’utilisateur appuie ensuite sur _B_, seules les touches d’accès rapide _ABC_ et _ABD_ sont affichées. Si l’utilisateur appuie sur Échap, un niveau de filtrage est supprimé et les touches d’accès rapide _ABC_, _ACD_ et _ABD_ sont affichées. Si l’utilisateur appuie une nouvelle fois sur Échap, un autre niveau de filtrage est supprimé et toutes les touches d’accès rapide _B_, _ABC_, _ACD_ et _ABD_ sont activées et leurs affordances visuelles sont affichées.
 - La touche Échap permet de revenir à l’étendue précédente. Les touches d’accès rapide peuvent faire partie d’étendues différentes pour faciliter la navigation entre les applications comprenant de nombreuses commandes. La séquence de touches d’accès rapide démarre toujours sur l’étendue principale. Toutes les touches d’accès rapide font partie de l’étendue principale, sauf celles qui spécifient un élément d’interface utilisateur particulier comme étant leur propriétaire d’étendue. Lorsque l’utilisateur appelle la touche d’accès rapide d’un élément qui est un propriétaire d’étendue, l’infrastructure XAML y déplace automatiquement l’étendue et l’ajoute à une pile de navigation de touches d’accès rapide interne. La touche Échap permet de revenir à la pile de navigation de touches d’accès rapide.
-- Il existe plusieurs façons pour quitter la séquence de touches d’accès rapide:
+- Il existe plusieurs façons pour quitter la séquence de touches d’accès rapide :
     - L’utilisateur peut appuyer sur Alt pour quitter une séquence de touches d’accès rapide en cours d’exécution. N’oubliez pas qu’en appuyant sur Alt, vous initiez également la séquence de touches accès rapide.
     - La touche Échap permet de quitter la séquence de touches d’accès rapide si elle se trouve dans l’étendue principale et qu’elle n’est pas filtrée.
         > [!NOTE]
@@ -72,14 +72,14 @@ Pour comprendre les API de touche d’accès rapide, il est d’abord nécessair
 - Par défaut, appeler une touche d’accès rapide permet de quitter la séquence de touches d’accès rapide.  Toutefois, vous pouvez remplacer ce comportement en définissant la propriété [ExitDisplayModeOnAccessKeyInvoked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.exitdisplaymodeonaccesskeyinvoked.aspx) sur **false**.
 - Des conflits de touches d’accès rapide se produisent lorsque l’utilisation d’un automate fini déterministe n’est pas possible. Les conflits de touches d’accès rapide sont déconseillés, mais peuvent se produire en raison d’un grand nombre de commandes, de problèmes de localisation ou de générations d’exécution de touches d’accès rapides.
 
- Il existe deux cas pour lesquels des conflits se produisent:
+ Il existe deux cas pour lesquels des conflits se produisent :
  - Lorsque deux éléments d’interface utilisateur ont la même valeur de touche d’accès rapide et font partie de la même étendue de touche d’accès rapide. Par exemple, une touche d’accès rapide _A1_ pour un `button1` et une touche d’accès rapide _A1_ pour un `button2` qui fait partie de l’étendue par défaut. Dans ce cas, le système résout le conflit en traitant la touche d’accès rapide du premier élément ajouté à l’arborescence visuelle. Le reste est ignoré.
- - Quand il existe plusieurs options de calcul dans la même étendue de touches d’accès rapide. Par exemple, _A_ et _A1_. Lorsque l’utilisateur appuie sur _A_, le système propose deux options: appeler la touche d’accès rapide _A_ ou continuer et utiliser le caractère A à partir de la touche d’accès rapide _A1_. Dans ce cas, le système traite uniquement le premier appel de touche d’accès rapide atteint par l’automate. Dans l’exemple avec _A_ et _A1_, le système appelle uniquement la touche d’accès rapide_A_.
--   Lorsque l’utilisateur appuie sur une touche d’accès rapide non valide dans une séquence de touches d’accès rapide, rien ne se produit. Il existe deux catégories de touches considérées comme des touches d’accès rapide valides dans une séquence de touches d’accès rapide:
- - Les touches spéciales pour quitter la séquence de touches d’accès rapide: il s’agit des touches Échap, Alt, de flèches, Entrée et de tabulation.
+ - Quand il existe plusieurs options de calcul dans la même étendue de touches d’accès rapide. Par exemple, _A_ et _A1_. Lorsque l’utilisateur appuie sur _A_, le système propose deux options : appeler la touche d’accès rapide _A_ ou continuer et utiliser le caractère A à partir de la touche d’accès rapide _A1_. Dans ce cas, le système traite uniquement le premier appel de touche d’accès rapide atteint par l’automate. Dans l’exemple avec _A_ et _A1_, le système appelle uniquement la touche d’accès rapide_A_.
+-   Lorsque l’utilisateur appuie sur une touche d’accès rapide non valide dans une séquence de touches d’accès rapide, rien ne se produit. Il existe deux catégories de touches considérées comme des touches d’accès rapide valides dans une séquence de touches d’accès rapide :
+ - Les touches spéciales pour quitter la séquence de touches d’accès rapide : il s’agit des touches Échap, Alt, de flèches, Entrée et de tabulation.
  - Les caractères alphanumériques affectés aux touches d’accès rapide.
 
-## API de touche d’accès rapide
+## <a name="access-key-apis"></a>API de touche d’accès rapide
 
 Pour prendre en charge l’interaction utilisateur avec les touches d’accès rapide, l’infrastructure XAML fournit les API décrites ici.
 
@@ -125,16 +125,16 @@ Par défaut, lorsqu’une touche d’accès rapide est appelée et que l’élé
 
 Les touches d’accès rapide peuvent être localisées en plusieurs langues et chargées à l’exécution à l’aide des API [ResourceLoader](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.resources.resourceloader.aspx).
 
-## Modèles de contrôle utilisés lorsqu’une touche d’accès rapide est appelée
+## <a name="control-patterns-used-when-an-access-key-is-invoked"></a>Modèles de contrôle utilisés lorsqu’une touche d’accès rapide est appelée
 
-Les modèles de contrôle sont les implémentations d’interface qui exposent les fonctionnalités des contrôles courants; par exemple, les boutons implémentent le modèle de contrôle **Invoke** et cela déclenche l’événement **Click**. Lorsqu’une touche d’accès rapide est appelée, l’infrastructure XAML recherche si l’élément appelé implémente un modèle de contrôle et l’exécute le cas échéant. Si l’élément comporte plusieurs modèles de contrôle, un seul est appelé et les autres sont ignorés. Les modèles de contrôle sont recherchés dans l’ordre suivant:
+Les modèles de contrôle sont les implémentations d’interface qui exposent les fonctionnalités des contrôles courants ; par exemple, les boutons implémentent le modèle de contrôle **Invoke** et cela déclenche l’événement **Click**. Lorsqu’une touche d’accès rapide est appelée, l’infrastructure XAML recherche si l’élément appelé implémente un modèle de contrôle et l’exécute le cas échéant. Si l’élément comporte plusieurs modèles de contrôle, un seul est appelé et les autres sont ignorés. Les modèles de contrôle sont recherchés dans l’ordre suivant :
 
 1.  Invoke. Par exemple, un élément Button.
 2.  Toggle. Par exemple, un élément Checkbox.
 3.  Selection. Par exemple, un élément RadioButton.
 4.  Expand/Collapse. Par exemple, un élément ComboBox.
 
-Si un modèle de contrôle n’est pas trouvé, l’appel de touche d’accès rapide apparaît sous la forme d’un no-op, et un message de débogage est enregistré pour vous aider à résoudre cette situation : «Aucun modèle d’automation pour ce composant n’a été trouvé. Implémentez le comportement souhaité dans le gestionnaire d’événements pour AccessKeyInvoked. Définir la propriété Handled sur true dans votre gestionnaire d’événements supprime ce message.»
+Si un modèle de contrôle n’est pas trouvé, l’appel de touche d’accès rapide apparaît sous la forme d’un no-op, et un message de débogage est enregistré pour vous aider à résoudre cette situation : « Aucun modèle d’automation pour ce composant n’a été trouvé. Implémentez le comportement souhaité dans le gestionnaire d’événements pour AccessKeyInvoked. Définir la propriété Handled sur true dans votre gestionnaire d’événements supprime ce message. »
 
 > [!NOTE]
 > Le type de processus Application du débogueur doit être défini sur _Mixte (managé et natif)_ ou _Natif_ dans les paramètres de débogage de Visual Studio pour voir ce message.
@@ -150,18 +150,18 @@ private void OnAccessKeyInvoked(UIElement sender, AccessKeyInvokedEventArgs args
 
 Pour plus d’informations sur les modèles de contrôle, consultez [Vue d’ensemble sur les modèles de contrôle UI Automation](https://msdn.microsoft.com/library/windows/desktop/ee671194.aspx).
 
-## Touches d’accès rapide et Narrateur
+## <a name="access-keys-and-narrator"></a>Touches d’accès rapide et Narrateur
 
 Windows Runtime a des fournisseurs UI Automation qui exposent des propriétés sur les éléments de Microsoft UI Automation. Ces propriétés permettent aux applications de client UI Automation de détecter des informations sur les parties de l’interface utilisateur. La propriété [AutomationProperties.AccessKey](https://msdn.microsoft.com/library/windows/apps/hh759763) permet aux clients, tels que Narrateur, de détecter la touche d’accès rapide associée à un élément. Narrateur lit cette propriété chaque fois qu’un élément a le focus. Si la propriété AutomationProperties.AccessKey n’a pas de valeur, l’infrastructure XAML renvoie la valeur de propriété [AccessKey](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskey.aspx) de l’élément UIElement ou TextElement. Vous n’avez pas besoin de configurer AutomationProperties.AccessKey si la propriété AccessKey possède déjà une valeur.
 
-## Exemple: Touche d’accès rapide pour un bouton
+## <a name="example-access-key-for-button"></a>Exemple : Touche d’accès rapide pour un bouton
 
 Cet exemple montre comment créer une touche d’accès rapide pour un bouton. Des info-bulles sont utilisées comme affordances visuelles pour implémenter un badge flottant qui contient la touche d’accès rapide.
 
 > [!NOTE]
 > Les info-bulles sont utilisées par souci de simplicité, mais nous vous recommandons de créer votre propre contrôle pour l’afficher à l’aide, par exemple, d’un élément [Popup](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.popup.aspx).
 
-L’infrastructure XAML appelle automatiquement le gestionnaire pour l’événement Click, vous n’avez donc pas besoin de gérer l’événement AccessKeyInvoked. L’exemple fournit des affordances visuelles seulement pour les caractères restant pour appeler la touche d’accès rapide à l’aide de la propriété [AccessKeyDisplayRequestedEventArgs.PressedKeys](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeydisplayrequestedeventargs.pressedkeys.aspx). Par exemple, s’il existe trois touches d’accès rapide affichées: _A1_, _A2_ et _C_, et que l’utilisateur appuie sur _A_, alors seules les touches d’accès rapide_A1_ et _A2_ ne sont pas filtrées et s’affichent sous la forme _1_ et _2_ au lieu de _A1_ et _A2_.
+L’infrastructure XAML appelle automatiquement le gestionnaire pour l’événement Click, vous n’avez donc pas besoin de gérer l’événement AccessKeyInvoked. L’exemple fournit des affordances visuelles seulement pour les caractères restant pour appeler la touche d’accès rapide à l’aide de la propriété [AccessKeyDisplayRequestedEventArgs.PressedKeys](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeydisplayrequestedeventargs.pressedkeys.aspx). Par exemple, s’il existe trois touches d’accès rapide affichées : _A1_, _A2_ et _C_, et que l’utilisateur appuie sur _A_, alors seules les touches d’accès rapide_A1_ et _A2_ ne sont pas filtrées et s’affichent sous la forme _1_ et _2_ au lieu de _A1_ et _A2_.
 
 ```xaml
 <StackPanel
@@ -229,7 +229,7 @@ L’infrastructure XAML appelle automatiquement le gestionnaire pour l’événe
     }
 ```
 
-## Exemple: Touches d’accès rapide dans l’étendue
+## <a name="example-scoped-access-keys"></a>Exemple : Touches d’accès rapide dans l’étendue
 
 Cet exemple montre comment créer des touches d’accès rapide dans une étendue. La propriété IsAccessKeyScope de PivotItem empêche les touches d’accès rapide des éléments enfants de PivotItem de s’afficher quand l’utilisateur appuie sur Alt. Ces touches d’accès rapide sont affichées uniquement quand l’utilisateur appelle PivotItem, car l’infrastructure XAML bascule automatiquement l’étendue. L’infrastructure masque également les touches d’accès rapide des autres étendues.
 
@@ -385,6 +385,6 @@ public sealed partial class ScopedAccessKeys : Page
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

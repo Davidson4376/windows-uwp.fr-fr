@@ -1,30 +1,30 @@
 ---
 author: mcleanbyron
 ms.assetid: adb2fa45-e18f-4254-bd8b-a749a386e3b4
-description: "Apprenez à utiliser la classe AdControl pour afficher des bannières pub. dans une app. HTML/JavaScript pour Windows10 (UWP), Windows8.1 ou Windows Phone8.1."
-title: AdControl en HTML5 et JavaScript
+description: "Apprenez à utiliser la classe AdControl pour afficher des bannières pub. dans une app. HTML/JavaScript pour Windows 10 (UWP), Windows 8.1 ou Windows Phone 8.1."
+title: "AdControl en HTML 5 et JavaScript"
 translationtype: Human Translation
 ms.sourcegitcommit: 2f0835638f330de0ac2d17dae28347686cc7ed97
 ms.openlocfilehash: 501edf178ecccf8a6b62d4602837dbbdf820d744
 
 ---
 
-# AdControl en HTML5 et JavaScript
+# AdControl en HTML 5 et JavaScript
 
 
 
 
-Cette procédure pas à pas montre comment utiliser la classe [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) pour afficher des bannières publicitaires dans une application HTML/JavaScript pour Windows10 (UWP), Windows8.1 ou Windows Phone8.1. Cette procédure pas à pas n’utilise ni **AdMediatorControl** ni la médiation publicitaire.
+Cette procédure pas à pas montre comment utiliser la classe [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) pour afficher des bannières publicitaires dans une application HTML/JavaScript pour Windows 10 (UWP), Windows 8.1 ou Windows Phone 8.1. Cette procédure pas à pas n’utilise ni **AdMediatorControl** ni la médiation publicitaire.
 
 Pour un exemple de projet complet illustrant l’ajout de bannières publicitaires à une application HTML/JavaScript, voir [Exemples de publicité sur GitHub](http://aka.ms/githubads).
 
 ## Conditions préalables
 
 
-* Pour les applications UWP: installez [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) avec Visual Studio2015.
-* Pour les applicationsWindows8.1 ou WindowsPhone8.1: [installez le Kit de développement logiciel (SDK) Microsoft Advertising pour Windows et Windows Phone8.x](http://aka.ms/store-8-sdk) avec Visual Studio2015 ou Visual Studio2013.
+* Pour les applications UWP : installez [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) avec Visual Studio 2015.
+* Pour les applications Windows 8.1 ou Windows Phone 8.1 : [installez le Kit de développement logiciel (SDK) Microsoft Advertising pour Windows et Windows Phone 8.x](http://aka.ms/store-8-sdk) avec Visual Studio 2015 ou Visual Studio 2013.
 
-> **Remarque** Si vous avez installé Windows10 Anniversary SDK Preview Build14295 ou ultérieure avec Visual Studio2015, vous devez aussi installer la bibliothèque WinJS. Cette bibliothèque était incluse dans les versions précédentes du Kit de développement logiciel Windows (Kit SDK Windows) pour Windows10, mais depuis Windows10 Anniversary SDK Preview Build14295, elle doit être installée séparément. Pour installer WinJS, voir [Obtenir WinJS](http://try.buildwinjs.com/download/GetWinJS/).
+> **Remarque** Si vous avez installé Windows 10 Anniversary SDK Preview Build 14295 ou ultérieure avec Visual Studio 2015, vous devez aussi installer la bibliothèque WinJS. Cette bibliothèque était incluse dans les versions précédentes du Kit de développement logiciel Windows (Kit SDK Windows) pour Windows 10, mais depuis Windows 10 Anniversary SDK Preview Build 14295, elle doit être installée séparément. Pour installer WinJS, voir [Obtenir WinJS](http://try.buildwinjs.com/download/GetWinJS/).
 
 ## Développement du code
 
@@ -34,17 +34,17 @@ Pour un exemple de projet complet illustrant l’ajout de bannières publicitair
 
 3.  Dans la fenêtre **Explorateur de solutions**, cliquez avec le bouton droit sur **Références**, puis sélectionnez **Ajouter une référence.**
 
-4.  Dans **Gestionnaire de références**, sélectionnez l’une des références suivantes en fonction de votre type de projet:
+4.  Dans **Gestionnaire de références**, sélectionnez l’une des références suivantes en fonction de votre type de projet :
 
-    -   Pour un projet de plateforme Windows universelle (UWP): développez **Windows universel**, cliquez sur **Extensions**, puis cochez la case en regard de **Kit de développement logiciel (SDK) Microsoft Advertising pour JavaScript** (version10.0).
+    -   Pour un projet de plateforme Windows universelle (UWP) : développez **Windows universel**, cliquez sur **Extensions**, puis cochez la case en regard de **Kit de développement logiciel (SDK) Microsoft Advertising pour JavaScript** (version 10.0).
 
-    -   Pour un projet Windows8.1: développez **Windows8.1**, cliquez sur **Extensions**, puis cochez la case en regard de **Kit de développement logiciel (SDK) Microsoft Advertising pour Windows8.1 natif (JS)**.
+    -   Pour un projet Windows 8.1 : développez **Windows 8.1**, cliquez sur **Extensions**, puis cochez la case en regard de **Kit de développement logiciel (SDK) Microsoft Advertising pour Windows 8.1 natif (JS)**.
 
-    -   Pour un projet Windows Phone8.1: développez **Windows Phone8.1**, cliquez sur **Extensions**, puis cochez la case en regard de **Kit de développement logiciel (SDK) Microsoft Advertising pour Windows Phone8.1 natif (JS)**.
+    -   Pour un projet Windows Phone 8.1 : développez **Windows Phone 8.1**, cliquez sur **Extensions**, puis cochez la case en regard de **Kit de développement logiciel (SDK) Microsoft Advertising pour Windows Phone 8.1 natif (JS)**.
 
     ![javascriptaddreference](images/13-f7f6d6a6-161e-4f17-995d-1236d0b5d9f2.png)
 
-    > **Remarque** Cette image correspond à la génération d’un projet UWP pour Windows10 à l’aide de Visual Studio2015. Si vous générez une application Windows8.1 ou Windows Phone8.1 à l’aide de Visual Studio2013, votre écran aura une apparence différente.
+    > **Remarque** Cette image correspond à la génération d’un projet UWP pour Windows 10 à l’aide de Visual Studio 2015. Si vous générez une application Windows 8.1 ou Windows Phone 8.1 à l’aide de Visual Studio 2013, votre écran aura une apparence différente.
 
 5.  Dans **Gestionnaire de références**, cliquez sur OK.
 
@@ -59,18 +59,18 @@ Pour un exemple de projet complet illustrant l’ajout de bannières publicitair
     <script src="//Microsoft.Advertising.JavaScript/ad.js"></script>
     ```
 
-    Dans un projet Windows8.1 ou Windows Phone8.1, ajoutez le code suivant.
+    Dans un projet Windows 8.1 ou Windows Phone 8.1, ajoutez le code suivant.
 
     ``` syntax
     <!-- Microsoft advertising required references -->
     <script src="/MSAdvertisingJS/ads/ad.js"></script>
     ```
 
-    > **Remarque**&nbsp;&nbsp; Vous devez placer cette ligne dans la section **&lt;head&gt;** après l’inclusion de default.js, faute de quoi vous rencontrerez une erreur pendant la génération de votre projet.
+    > **Remarque**   Vous devez placer cette ligne dans la section **&lt;head&gt;** après l’inclusion de default.js, faute de quoi vous rencontrerez une erreur pendant la génération de votre projet.
 
 8.  Modifiez la section **&lt;body&gt;** dans le fichier default.html (ou un autre fichier html, selon votre projet) pour inclure l’élément div correspondant à la classe **AdControl**. Affectez les propriétés **applicationId** et **adUnitId** de la classe **AdControl** aux valeurs de test indiquées dans [Valeurs du mode test](test-mode-values.md), puis ajustez la hauteur et la largeur du contrôle en tenant compte des [tailles de bannières publicitaires prises en charge](supported-ad-sizes-for-banner-ads.md).
 
-    > **Remarque**&nbsp;&nbsp;Avant de soumettre votre application, remplacez les valeurs de test **applicationId** et **adUnitId** par des valeurs dynamiques.
+    > **Remarque**  Avant de soumettre votre application, remplacez les valeurs de test **applicationId** et **adUnitId** par des valeurs dynamiques.
 
     ``` syntax
     <div id="myAd" style="position: absolute; top: 50px; left: 0px; width: 300px; height: 250px; z-index: 1"

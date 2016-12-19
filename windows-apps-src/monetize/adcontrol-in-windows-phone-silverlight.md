@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 ms.assetid: c0450f7b-5c81-4d8c-92ef-2b1190d18af7
-description: "Découvrez comment utiliser la classe AdControl pour afficher des bannières publicitaires dans une application Silverlight pour Windows Phone8.1 ou Windows Phone8.0."
+description: "Découvrez comment utiliser la classe AdControl pour afficher des bannières publicitaires dans une application Silverlight pour Windows Phone 8.1 ou Windows Phone 8.0."
 title: AdControl dans Silverlight Windows Phone
 translationtype: Human Translation
 ms.sourcegitcommit: 3a09b37a5cae0acaaf97a543cae66e4de3eb3f60
@@ -15,28 +15,28 @@ ms.openlocfilehash: 40e68625ed666a9242ed83729b2f8113da363735
 
 
 
-Cette procédure pas à pas montre comment utiliser la classe [AdControl](https://msdn.microsoft.com/library/windows/apps/hh524191.aspx) pour afficher des bannières publicitaires dans une application Silverlight pour Windows Phone8.1 ou Windows Phone8.0.
+Cette procédure pas à pas montre comment utiliser la classe [AdControl](https://msdn.microsoft.com/library/windows/apps/hh524191.aspx) pour afficher des bannières publicitaires dans une application Silverlight pour Windows Phone 8.1 ou Windows Phone 8.0.
 
-> **Remarque concernant Windows Phone Silverlight 8.0**&nbsp;&nbsp;Les bannières publicitaires sont toujours prises en charge pour les applications Silverlight Windows Phone8.0 existantes qui utilisent un **AdControl** d’une version antérieure du Kit de développement Logiciel (SDK) Universal Ad Client ou Microsoft Advertising et qui sont déjà disponibles dans le Windows Store. Cependant, les bannières publicitaires ne sont plus prises en charge dans les nouveaux projets Silverlight Windows Phone8.0. Par ailleurs, certains scénarios de débogage et de test sont limités dans les projets Silverlight Windows Phone8.x. Pour plus d’informations, voir [Afficher des publicités dans votre application](display-ads-in-your-app.md#silverlight_support).
+> **Remarque concernant Windows Phone Silverlight 8.0**  Les bannières publicitaires sont toujours prises en charge pour les applications Silverlight Windows Phone 8.0 existantes qui utilisent un **AdControl** d’une version antérieure du Kit de développement Logiciel (SDK) Universal Ad Client ou Microsoft Advertising et qui sont déjà disponibles dans le Windows Store. Cependant, les bannières publicitaires ne sont plus prises en charge dans les nouveaux projets Silverlight Windows Phone 8.0. Par ailleurs, certains scénarios de débogage et de test sont limités dans les projets Silverlight Windows Phone 8.x. Pour plus d’informations, voir [Afficher des publicités dans votre application](display-ads-in-your-app.md#silverlight_support).
 
 
 ## Ajouter les assemblys publicitaires à votre projet
 
 Pour commencer, téléchargez et installez le package NuGet qui contient les assemblys publicitaires Microsoft pour Silverlight Windows Phone à votre projet.
 
-1.  Ouvrez votre projet dans VisualStudio.
+1.  Ouvrez votre projet dans Visual Studio.
 
 2.  Cliquez sur **Outils**, pointez sur **Gestionnaire de package NuGet**, puis cliquez sur **Console du Gestionnaire de package**.
 
 3.  Dans la fenêtre **Console du Gestionnaire de package**, entrez l’une de ces commandes.
 
-  * Si votre projet cible Windows Phone8.0, entrez cette commande.
+  * Si votre projet cible Windows Phone 8.0, entrez cette commande.
 
       ```
       Install-Package Microsoft.Advertising.WindowsPhone.SL80 -Version 6.2.40501.1
       ```
 
-  * Si votre projet cible Windows Phone8.1, entrez cette commande.
+  * Si votre projet cible Windows Phone 8.1, entrez cette commande.
 
       ```
       Install-Package Microsoft.Advertising.WindowsPhone.SL81 -Version 8.1.50112
@@ -55,7 +55,7 @@ Pour commencer, téléchargez et installez le package NuGet qui contient les ass
     <Capability Name="ID_CAP_PHONEDIALER"/>
     ```
 
-    Pour cet exemple, le nœud **Fonctionnalités** ressemble à ceci:
+    Pour cet exemple, le nœud **Fonctionnalités** ressemble à ceci :
 
     ``` syntax
         <Capabilities>
@@ -86,7 +86,7 @@ Pour commencer, téléchargez et installez le package NuGet qui contient les ass
     xmlns:UI="clr-namespace:Microsoft.Advertising.Mobile.UI;assembly=Microsoft.Advertising.Mobile.UI"
     ```
 
-    L’en-tête de votre page contient alors le code suivant:
+    L’en-tête de votre page contient alors le code suivant :
 
     ``` syntax
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -96,7 +96,7 @@ Pour commencer, téléchargez et installez le package NuGet qui contient les ass
 
 6.  Dans la balise **Grid**, ajoutez le code suivant correspondant à la classe **AdControl**. Affectez les propriétés **ApplicationId** et **AdUnitId** aux valeurs de test indiquées dans [Valeurs du mode test](test-mode-values.md), puis attribuez aux propriétés **Height** et **Width** l’une des [tailles de bannières publicitaires prises en charge](supported-ad-sizes-for-banner-ads.md).
 
-    > **Remarque**&nbsp;&nbsp;Avant de soumettre votre application, remplacez les valeurs de test **ApplicationId** et **AdUnitId** par des valeurs dynamiques.
+    > **Remarque**  Avant de soumettre votre application, remplacez les valeurs de test **ApplicationId** et **AdUnitId** par des valeurs dynamiques.
 
     ``` syntax
     <Grid x:Name="ContentPanel" Grid.Row="1">
@@ -112,7 +112,7 @@ Pour commencer, téléchargez et installez le package NuGet qui contient les ass
     </Grid>
     ```
 
-7.  Générez et exécutez votre projet. Vérifiez que votre application affiche une publicité, qui ressemble à ce qui suit:
+7.  Générez et exécutez votre projet. Vérifiez que votre application affiche une publicité, qui ressemble à ce qui suit :
 
     ![wp81silverlight\-emulatorwithad](images/13-8db1492f-ae1d-439b-9b78-bed8e22fe996.jpg)
 

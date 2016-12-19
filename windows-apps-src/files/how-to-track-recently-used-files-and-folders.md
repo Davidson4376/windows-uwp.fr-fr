@@ -1,16 +1,16 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: BF929A68-9C82-4866-BC13-A32B3A550005
 title: "Suivre les fichiers et dossiers récemment utilisés"
 description: "Effectuez le suivi des fichiers auxquels l’utilisateur accède fréquemment en les ajoutant à la liste Utilisés récemment de votre application."
 translationtype: Human Translation
-ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
-ms.openlocfilehash: 84b78cc4af9490f142c0f74fec127e1d003ce6df
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: fc873da2d0b48cdc614fa319a294e67642440cdf
 
 ---
-# Suivre les fichiers et dossiers récemment utilisés
+# <a name="track-recently-used-files-and-folders"></a>Suivre les fichiers et dossiers récemment utilisés
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
 ** API importantes **
@@ -26,7 +26,7 @@ Les éléments récents de votre application sont représentés par la classe [*
 
  
 
-## Prérequis
+## <a name="prerequisites"></a>Prérequis
 
 -   **Comprendre la programmation asynchrone pour les applications pour la plateforme Windows universelle (UWP)**
 
@@ -40,7 +40,7 @@ Les éléments récents de votre application sont représentés par la classe [*
 
     Les fichiers sélectionnés sont souvent ceux auxquels les utilisateurs reviennent inlassablement.
 
- ## Ajouter un fichier sélectionné au éléments récents
+ ## <a name="add-a-picked-file-to-the-mru"></a>Ajouter un fichier sélectionné au éléments récents
 
 -   Les fichiers que l'utilisateur sélectionne sont souvent des fichiers auxquels il revient à plusieurs reprises. Par conséquent, songez à ajouter des fichiers sélectionnés à la liste d’éléments récents de votre application dès leur sélection. Voici comment procéder.
 
@@ -53,13 +53,13 @@ Les éléments récents de votre application sont représentés par la classe [*
     string mruToken = mru.Add(file, "profile pic");
     ```
 
-    [**StorageItemMostRecentlyUsedList.Add**](https://msdn.microsoft.com/library/windows/apps/br207476) est surchargé. Dans l’exemple, nous utilisons [**Add(IStorageItem, String)**](https://msdn.microsoft.com/library/windows/apps/br207481) afin de pouvoir associer des métadonnées au fichier. La définition des métadonnées vous permet d’enregistrer la finalité de l’élément, par exemple, «image du profil». Vous pouvez également ajouter le fichier à la liste Utilisés récemment sans métadonnées en appelant [**Add(IStorageItem)**](https://msdn.microsoft.com/library/windows/apps/br207480). Chaque fois que vous ajoutez un élément aux éléments récents, la méthode retourne une chaîne d’identification unique, ou jeton, qui est utilisée pour récupérer l’élément.
+    [**StorageItemMostRecentlyUsedList.Add**](https://msdn.microsoft.com/library/windows/apps/br207476) est surchargé. Dans l’exemple, nous utilisons [**Add(IStorageItem, String)**](https://msdn.microsoft.com/library/windows/apps/br207481) afin de pouvoir associer des métadonnées au fichier. La définition des métadonnées vous permet d’enregistrer la finalité de l’élément, par exemple, « image du profil ». Vous pouvez également ajouter le fichier à la liste Utilisés récemment sans métadonnées en appelant [**Add(IStorageItem)**](https://msdn.microsoft.com/library/windows/apps/br207480). Chaque fois que vous ajoutez un élément aux éléments récents, la méthode retourne une chaîne d’identification unique, ou jeton, qui est utilisée pour récupérer l’élément.
 
     **Conseil** Le jeton étant nécessaire pour récupérer un élément de la liste Utilisés récemment, il convient de le conserver quelque part. Pour plus d’informations sur les données d’application, consultez [Gestion des données d’application](https://msdn.microsoft.com/library/windows/apps/hh465109).
 
      
 
-## Utiliser un jeton pour récupérer un élément de la liste des éléments récents
+## <a name="use-a-token-to-retrieve-an-item-from-the-mru"></a>Utiliser un jeton pour récupérer un élément de la liste des éléments récents
 
 Utilisez la méthode de récupération la plus appropriée pour l’élément à récupérer.
 
@@ -87,18 +87,18 @@ foreach (Windows.Storage.AccessCache.AccessListEntry entry in mru.Entries)
 
 La [**AccessListEntryView**](https://msdn.microsoft.com/library/windows/apps/br227349) vous permet d’itérer des entrées dans la liste Utilisés récemment. Ces entrées sont des structures [**AccessListEntry**](https://msdn.microsoft.com/library/windows/apps/br227348) contenant le jeton et les métadonnées d’un élément.
 
-## Suppression d’éléments de la liste des éléments récents quand celle-ci est pleine
+## <a name="removing-items-from-the-mru-when-its-full"></a>Suppression d’éléments de la liste des éléments récents quand celle-ci est pleine
 
 Quand cette limite de 25 éléments est atteinte et que vous essayez d’ajouter un nouvel élément, l’élément auquel l’utilisateur a accédé dans le passé le plus lointain est automatiquement supprimé. Par conséquent, vous devez jamais supprimer un élément avant d'en ajouter un nouveau.
 
-## Liste d'accès futurs
+## <a name="future-access-list"></a>Liste d'accès futurs
 
 Comme pour les éléments récents, votre application dispose d’une liste d'accès futurs. En sélectionnant des fichiers et dossiers, votre utilisateur autorise votre application à accéder à des éléments qui pourraient ne pas être accessibles autrement. En ajoutant ces éléments à votre liste d'accès futurs, vous conservez cette autorisation au cas où votre application devrait accéder à ces éléments ultérieurement. La liste d’accès futurs de votre application est représentée par la classe [**StorageItemAccessList**](https://msdn.microsoft.com/library/windows/apps/br207459) que vous obtenez à partir de la propriété [**StorageApplicationPermissions.FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) statique.
 
 Quand un utilisateur sélectionne un élément, songez à ajouter celui-ci à votre liste d'accès futurs ainsi qu’aux éléments récents.
 
--   La [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) peut contenir jusqu’à 1000éléments. N'oubliez pas que ce nombre comprend les dossiers et les fichiers.
--   La plateforme ne supprime jamais d’éléments de la [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) à votre place. Lorsque vous avez atteint la limite des 1000éléments, vous ne pouvez plus en ajouter sans libérer préalablement de l’espace avec la méthode [**Remove**](https://msdn.microsoft.com/library/windows/apps/br207497).
+-   La [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) peut contenir jusqu’à 1 000 éléments. N'oubliez pas que ce nombre comprend les dossiers et les fichiers.
+-   La plateforme ne supprime jamais d’éléments de la [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) à votre place. Lorsque vous avez atteint la limite des 1 000 éléments, vous ne pouvez plus en ajouter sans libérer préalablement de l’espace avec la méthode [**Remove**](https://msdn.microsoft.com/library/windows/apps/br207497).
 
  
 
@@ -106,6 +106,6 @@ Quand un utilisateur sélectionne un élément, songez à ajouter celui-ci à vo
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

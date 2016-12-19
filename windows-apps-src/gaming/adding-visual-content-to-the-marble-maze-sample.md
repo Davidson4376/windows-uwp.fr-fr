@@ -4,15 +4,15 @@ title: "Ajout de contenu visuel à l’exemple Marble Maze"
 description: "Ce document décrit comment le jeu Marble Maze utilise Direct3D et Direct2D dans l’environnement d’application de plateforme Windows universelle (UWP) afin de vous présenter ces modèles et de vous aider à les adapter à vos propres jeux."
 ms.assetid: 6e43422e-e1a1-b79e-2c4b-7d5b4fa88647
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 70f35fe423b8ceb3e3e3e0c1c3c2563dc0d8cd61
+ms.sourcegitcommit: eb0115bf83627a9ba8209cce6bdd9edecc165ddf
+ms.openlocfilehash: 6b7880703d40d6ef5ed5f42f3e09bc5573170e1f
 
 ---
 
-# Ajout de contenu visuel à l’exemple Marble Maze
+# <a name="adding-visual-content-to-the-marble-maze-sample"></a>Ajout de contenu visuel à l’exemple Marble Maze
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Ce document décrit comment le jeu Marble Maze utilise Direct3D et Direct2D dans l’environnement d’application de plateforme Windows universelle (UWP) afin de vous présenter ces modèles et de vous aider à les adapter à vos propres jeux. Pour apprendre la place des composants visuels dans la structure globale de l’application Marble Maze, voir [Structure de l’application Marble Maze](marble-maze-application-structure.md).
@@ -32,7 +32,7 @@ Nous devions également répéter plusieurs fois ces étapes pendant le processu
 > **Remarque** L’exemple de code correspondant à ce document est disponible dans l’[exemple de jeu Marble Maze en DirectX](http://go.microsoft.com/fwlink/?LinkId=624011).
 
  
-Voici quelques-uns des éléments clés de ce document qui décrivent l’utilisation de DirectX et de contenu de jeu visuel, notamment l’initialisation des bibliothèques de graphiques DirectX, le chargement des ressources de scène et la mise à jour et le rendu de la scène:
+Voici quelques-uns des éléments clés de ce document qui décrivent l’utilisation de DirectX et de contenu de jeu visuel, notamment l’initialisation des bibliothèques de graphiques DirectX, le chargement des ressources de scène et la mise à jour et le rendu de la scène :
 
 -   L’ajout de contenu de jeu comprend de nombreuses étapes. Ces étapes doivent souvent être itérées. Les développeurs de jeu commencent par ajouter du contenu 3D avant d’ajouter du contenu 2D.
 -   Plus vous prenez en charge des matériels graphiques différents, plus vous êtes en mesure de fournir une expérience de jeu de grande qualité à différents types d’utilisateur.
@@ -43,7 +43,7 @@ Voici quelques-uns des éléments clés de ce document qui décrivent l’utilis
 -   En règle générale, vous dessinez vos objets de scène 3D, puis les objets 2D qui s’affichent sur le devant de la scène.
 -   Synchronisez le dessin sur le vide vertical afin que votre jeu ne dessine pas des images qui ne sont jamais affichées.
 
-## Prise en main des graphiques DirectX
+## <a name="getting-started-with-directx-graphics"></a>Prise en main des graphiques DirectX
 
 
 Quand nous avons commencé à imaginer le jeu de la plateforme Windows universelle (UWP), notre choix s’est tourné vers C++ et Direct3D 11.1, tous deux parfaits pour créer des jeux 3D qui nécessitent un contrôle optimal sur le rendu et pour obtenir d’excellentes performances. DirectX 11.1 prend en charge le matériel DirectX 9 à DirectX 11, ce qui vous permet de proposer votre jeu à davantage d’utilisateurs sans avoir besoin de réécrire le code pour les versions antérieures de DirectX.
@@ -52,21 +52,21 @@ Marble Maze utilise Direct3D 11.1 pour le rendu des éléments 3D, c’est-à-di
 
 Le développement de jeu nécessite une bonne planification. S’il s’agit de votre première utilisation des graphiques DirectX, nous recommandons la lecture de Création d’un jeu DirectX pour vous familiariser avec les concepts de base liés à la création d’un jeu DirectX UWP. Au fur et à mesure de votre lecture de ce document et de l’utilisation du code source de Marble Maze, vous pouvez consulter les ressources suivantes pour des informations détaillées sur les graphiques DirectX.
 
--   [Graphismes Direct3D11](https://msdn.microsoft.com/library/windows/desktop/ff476080) Décrit Direct3D11, une API graphique3D à accélération matérielle puissante pour le rendu d’éléments géométriques3D sur la plateforme Windows.
--   [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990) Décrit Direct2D, une API graphique2D à accélération matérielle qui fournit des performances élevées et un rendu de grande qualité pour les éléments géométriques2D, les images bitmap et le texte.
+-   [Graphismes Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476080) Décrit Direct3D 11, une API graphique 3D à accélération matérielle puissante pour le rendu d’éléments géométriques 3D sur la plateforme Windows.
+-   [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990) Décrit Direct2D, une API graphique 2D à accélération matérielle qui fournit des performances élevées et un rendu de grande qualité pour les éléments géométriques 2D, les images bitmap et le texte.
 -   [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038) Décrit DirectWrite, qui prend en charge un rendu de haute qualité du texte.
 -   [Composant Imagerie Windows](https://msdn.microsoft.com/library/windows/desktop/ee719902) Décrit WIC, une plateforme extensible qui fournit une API de bas niveau pour les images numériques.
 
-### Niveaux de fonctionnalité
+### <a name="feature-levels"></a>Niveaux de fonctionnalité
 
-Direct3D 11 propose un modèle de référence nommé niveaux de fonctionnalité. Un niveau de fonctionnalité est un ensemble de fonctionnalités GPU définies. Utilisez les niveaux de fonctionnalités afin que votre jeu puisse s’exécuter sur des versions antérieures de matériel Direct3D. Marble Maze prend en charge le niveau de fonctionnalité 9.1 car il ne nécessite pas les fonctionnalités avancées des niveaux supérieurs. Nous recommandons de prendre en charge la gamme de matériel la plus étendue possible afin que vos utilisateurs puissent bénéficier de la même expérience quel que soit leur ordinateur. Pour plus d’informations sur les niveaux de fonctionnalité, voir [Direct3D11 sur du matériel avec un niveau de fonctionnalité inférieur](https://msdn.microsoft.com/library/windows/desktop/ff476872).
+Direct3D 11 propose un modèle de référence nommé niveaux de fonctionnalité. Un niveau de fonctionnalité est un ensemble de fonctionnalités GPU définies. Utilisez les niveaux de fonctionnalités afin que votre jeu puisse s’exécuter sur des versions antérieures de matériel Direct3D. Marble Maze prend en charge le niveau de fonctionnalité 9.1 car il ne nécessite pas les fonctionnalités avancées des niveaux supérieurs. Nous recommandons de prendre en charge la gamme de matériel la plus étendue possible afin que vos utilisateurs puissent bénéficier de la même expérience quel que soit leur ordinateur. Pour plus d’informations sur les niveaux de fonctionnalité, voir [Direct3D 11 sur du matériel avec un niveau de fonctionnalité inférieur](https://msdn.microsoft.com/library/windows/desktop/ff476872).
 
-## Initialisation Direct3D et Direct2D
+## <a name="initializing-direct3d-and-direct2d"></a>Initialisation Direct3D et Direct2D
 
 
 Un appareil représente la carte vidéo. Vous créez des appareils Direct3D et Direct2D dans une application pour UWP tout comme dans une application de bureau Windows classique. La différence principale réside dans la connexion de la chaîne d’échange Direct3D au système de fenêtrage.
 
-Les *applications DirectX11 et XAML (Windows universel)* proposent certaines fonctions de rendu3D et de système d’exploitation génériques à partir des fonctions inhérentes au jeu. La classe **DeviceResources** est un élément fondamental de la gestion Direct3D et Direct2D. Elle gère l’infrastructure générale et non les ressources spécifiques du jeu. Marble Maze définit la classe **MarbleMaze** afin de gérer les ressources intrinsèques du jeu. Il dispose ainsi d’une référence à un objet **DeviceResources** qui lui procure un accès à Direct3D et Direct2D.
+Les *applications DirectX 11 et XAML (Windows universel)* proposent certaines fonctions de rendu 3D et de système d’exploitation génériques à partir des fonctions inhérentes au jeu. La classe **DeviceResources** est un élément fondamental de la gestion Direct3D et Direct2D. Elle gère l’infrastructure générale et non les ressources spécifiques du jeu. Marble Maze définit la classe **MarbleMaze** afin de gérer les ressources intrinsèques du jeu. Il dispose ainsi d’une référence à un objet **DeviceResources** qui lui procure un accès à Direct3D et Direct2D.
 
 Lors de l’initialisation, la méthode **DeviceResources::Initialize** crée des ressources indépendantes du périphérique ainsi que les périphériques Direct3D et Direct2D.
 
@@ -85,7 +85,7 @@ void DeviceResources::DeviceResources(CoreWindow^ window, float dpi)
 
 La classe **DeviceResources** sépare cette fonctionnalité afin d’obtenir une meilleure réponse lors de changement d’environnement. Par exemple, elle appelle la méthode **CreateWindowSizeDependentResources** quand la taille de la fenêtre change.
 
-###  Initialisation des fabriques Direct2D, DirectWrite, et WIC
+###  <a name="initializing-the-direct2d-directwrite-and-wic-factories"></a>Initialisation des fabriques Direct2D, DirectWrite, et WIC
 
 La méthode **DeviceResources::CreateDeviceIndependentResources** crée les fabriques pour Direct2D, DirectWrite et WIC. Dans les graphiques DirectX, les fabriques constituent le point de départ pour la création des ressources graphiques. Marble Maze spécifie **D2D1\_FACTORY\_TYPE\_SINGLE\_THREADED**, car il effectue le dessin sur le thread principal.
 
@@ -129,9 +129,9 @@ void DeviceResources::CreateDeviceIndependentResources()
 }
 ```
 
-###  Création des appareils Direct3D et Direct2D
+###  <a name="creating-the-direct3d-and-direct2d-devices"></a>Création des appareils Direct3D et Direct2D
 
-La méthode **DeviceResources::CreateDeviceResources** appelle [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) pour créer l’objet périphérique qui représente la carte vidéo Direct3D. Dans la mesure où Marble Maze prend en charge le niveau de fonctionnalité 9.1 et supérieur, la méthode **DeviceResources::CreateDeviceResources** indique les niveaux 9.1 à 11.1 dans le tableau de valeurs **\\**. Direct3D parcourt la liste dans l’ordre et donne à l’application le premier niveau de fonctionnalité disponible. C’est pourquoi les entrées du tableau **D3D\_FEATURE\_LEVEL** sont répertoriées en ordre décroissant, afin que l’application puisse obtenir le niveau de fonctionnalité le plus élevé disponible. La méthode **DeviceResources::CreateDeviceResources** obtient le périphérique Direct3D11.1 en interrogeant le périphérique Direct3D11 qui est renvoyé par **D3D11CreateDevice**.
+La méthode **DeviceResources::CreateDeviceResources** appelle [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) pour créer l’objet périphérique qui représente la carte vidéo Direct3D. Dans la mesure où Marble Maze prend en charge le niveau de fonctionnalité 9.1 et supérieur, la méthode **DeviceResources::CreateDeviceResources** indique les niveaux 9.1 à 11.1 dans le tableau de valeurs . Direct3D parcourt la liste dans l’ordre et donne à l’application le premier niveau de fonctionnalité disponible. C’est pourquoi les entrées du tableau **D3D\_FEATURE\_LEVEL** sont répertoriées en ordre décroissant, afin que l’application puisse obtenir le niveau de fonctionnalité le plus élevé disponible. La méthode **DeviceResources::CreateDeviceResources** obtient le périphérique Direct3D 11.1 en interrogeant le périphérique Direct3D 11 qui est renvoyé par **D3D11CreateDevice**.
 
 ```cpp
 // This array defines the set of DirectX hardware feature levels this app will support. 
@@ -217,7 +217,7 @@ DX::ThrowIfFailed(
 
 Pour plus d’informations sur DXGI et l’interopérabilité entre Direct2D et Direct3D, voir [Vue d’ensemble de DXGI](https://msdn.microsoft.com/library/windows/desktop/bb205075) et [Vue d’ensemble de l’interopérabilité Direct2D et Direct3D](https://msdn.microsoft.com/library/windows/desktop/dd370966).
 
-### Association de Direct3D à la vue
+### <a name="associating-direct3d-with-the-view"></a>Association de Direct3D à la vue
 
 La méthode **DeviceResources::CreateWindowSizeDependentResources** crée les ressources graphiques qui dépendent d’une taille de fenêtre donnée, telle que la chaîne d’échange et les cibles de rendu Direct3D et Direct2D. Une différence majeure entre une application DirectX UWP et une application de bureau est la façon dont la chaîne d’échange est associée à la fenêtre de sortie. Une chaîne d’échange est chargée d’afficher la mémoire tampon grâce à laquelle l’appareil donne son rendu à l’écran. Le document Structure de l’application Marble Maze décrit les différences entre le système de fenêtrage d’une application pour UWP et d’une application de bureau. Dans la mesure où une application du Windows Store n’utilise pas d’objets **HWND**, Marble Maze doit utiliser la méthode [**IDXGIFactory2::CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559) pour associer la sortie de périphérique à la vue. L’exemple suivant montre la partie de la méthode **DeviceResources::CreateWindowSizeDependentResources** qui crée la chaîne d’échange.
 
@@ -247,20 +247,20 @@ DX::ThrowIfFailed(
 
 La méthode **DeviceResources::CreateWindowSizeDependentResources** initialise les ressources graphiques d’une façon qui convient à la plupart des jeux.
 
-> **Remarque** Le terme *vue* a une signification différente dans Windows Runtime et Direct3D. Dans le Windows Runtime, une vue fait référence à la collection de paramètres d’interface utilisateur d’une application, notamment la zone d’affichage et les comportements d’entrée, auxquels s’ajoute le thread qu’elle utilise pour le traitement. Vous spécifiez la configuration et les paramètres dont vous avez besoin quand vous créez une vue. Le processus de définition de la vue de l’application est décrit dans [Structure de l’application Marble Maze](marble-maze-application-structure.md). Dans Direct3D, le terme vue a plusieurs significations. Tout d’abord, une vue de ressource définit les sous-ressources auxquelles cette ressource peut accéder. Par exemple, quand un objet texture est associé à une vue de ressource de nuanceur, ce nuanceur peut ensuite accéder à la texture. L’un des avantages d’une vue de ressource est que vous pouvez interpréter des données de différentes manières à différentes étapes du pipeline de rendu. Pour plus d’informations sur les vues de ressource, voir [Vues de texture (Direct3D10)](https://msdn.microsoft.com/library/windows/desktop/bb205128). Quand elle est utilisée dans le cadre d’une transformation de vue ou d’une matrice de transformation de vue, elle fait référence à l’emplacement et à l’orientation de la caméra. Une transformation de vue repositionne les objets dans l’espace autour de la position et de l’orientation de la caméra. Pour plus d’informations sur les transformations de vue, voir [Transformation de vue (Direct3D9)](https://msdn.microsoft.com/library/windows/desktop/bb206342). La façon dont Marble Maze utilise les vues de ressource et de matrice est décrite en détail dans cette rubrique.
+> **Remarque** Le terme *vue* a une signification différente dans Windows Runtime et Direct3D. Dans le Windows Runtime, une vue fait référence à la collection de paramètres d’interface utilisateur d’une application, notamment la zone d’affichage et les comportements d’entrée, auxquels s’ajoute le thread qu’elle utilise pour le traitement. Vous spécifiez la configuration et les paramètres dont vous avez besoin quand vous créez une vue. Le processus de définition de la vue de l’application est décrit dans [Structure de l’application Marble Maze](marble-maze-application-structure.md). Dans Direct3D, le terme vue a plusieurs significations. Tout d’abord, une vue de ressource définit les sous-ressources auxquelles cette ressource peut accéder. Par exemple, quand un objet texture est associé à une vue de ressource de nuanceur, ce nuanceur peut ensuite accéder à la texture. L’un des avantages d’une vue de ressource est que vous pouvez interpréter des données de différentes manières à différentes étapes du pipeline de rendu. Pour plus d’informations sur les vues de ressource, voir [Vues de texture (Direct3D 10)](https://msdn.microsoft.com/library/windows/desktop/bb205128). Quand elle est utilisée dans le cadre d’une transformation de vue ou d’une matrice de transformation de vue, elle fait référence à l’emplacement et à l’orientation de la caméra. Une transformation de vue repositionne les objets dans l’espace autour de la position et de l’orientation de la caméra. Pour plus d’informations sur les transformations de vue, voir [Transformation de vue (Direct3D 9)](https://msdn.microsoft.com/library/windows/desktop/bb206342). La façon dont Marble Maze utilise les vues de ressource et de matrice est décrite en détail dans cette rubrique.
 
  
 
-## Chargement des ressources de scène
+## <a name="loading-scene-resources"></a>Chargement des ressources de scène
 
 
-Marble Maze utilise la classe **BasicLoader**, qui est déclarée dans BasicLoader.h, pour charger les textures et les nuanceurs. Marble Maze utilise la classe **SDKMesh** pour charger les maillages3D pour le labyrinthe et la bille.
+Marble Maze utilise la classe **BasicLoader**, qui est déclarée dans BasicLoader.h, pour charger les textures et les nuanceurs. Marble Maze utilise la classe **SDKMesh** pour charger les maillages 3D pour le labyrinthe et la bille.
 
-Pour garantir la réactivité de l’application, Marble Maze charge les ressources de scène de façon asynchrone, ou en arrière-plan. Quand les éléments sont chargés en arrière-plan, votre jeu peut répondre aux événements de fenêtrage. Ce processus est décrit en détail dans [Chargement des composants du jeu en arrière-plan](marble-maze-application-structure.md#loading_game_assets) dans ce guide.
+Pour garantir la réactivité de l’application, Marble Maze charge les ressources de scène de façon asynchrone, ou en arrière-plan. Quand les éléments sont chargés en arrière-plan, votre jeu peut répondre aux événements de fenêtrage. Ce processus est décrit en détail dans [Chargement des composants du jeu en arrière-plan](marble-maze-application-structure.md#loading-game-assets-in-the-background) dans ce guide.
 
-###  Chargement de la superposition 2D et de l’interface utilisateur
+###  <a name="loading-the-2-d-overlay-and-user-interface"></a>Chargement de la superposition 2D et de l’interface utilisateur
 
-Dans Marble Maze, la superposition est l’image qui s’affiche en haut de l’écran. La superposition s’affiche toujours sur le devant de la scène. Dans Marble Maze, la superposition contient le logo Windows et la chaîne de texte «Exemple de jeu DirectX Marble Maze». La gestion de la superposition est effectuée par la classe **SampleOverlay**, qui est définie dans SampleOverlay.h. Bien que nous utilisions la superposition dans le cadre des exemples Direct3D, vous pouvez adapter ce code pour afficher des images sur le devant de votre scène.
+Dans Marble Maze, la superposition est l’image qui s’affiche en haut de l’écran. La superposition s’affiche toujours sur le devant de la scène. Dans Marble Maze, la superposition contient le logo Windows et la chaîne de texte « Exemple de jeu DirectX Marble Maze ». La gestion de la superposition est effectuée par la classe **SampleOverlay**, qui est définie dans SampleOverlay.h. Bien que nous utilisions la superposition dans le cadre des exemples Direct3D, vous pouvez adapter ce code pour afficher des images sur le devant de votre scène.
 
 Dans la mesure où le contenu de la superposition ne change pas, la classe **SampleOverlay** dessine, ou met en cache, son contenu dans un objet [**ID2D1Bitmap1**](https://msdn.microsoft.com/library/windows/desktop/hh404349) lors de l’initialisation. Au moment du dessin, la classe **SampleOverlay** n’a plus qu’à dessiner l’image bitmap à l’écran. De cette façon, les routines gourmandes en ressources, telles que le dessin de texte ne sont pas exécutées à chaque image.
 
@@ -308,7 +308,7 @@ En fournissant une classe de base commune pour tous les éléments d’interface
 
  
 
-###  Chargement des nuanceurs
+###  <a name="loading-shaders"></a>Chargement des nuanceurs
 
 Marble Maze utilise la méthode **BasicLoader::LoadShader** pour charger un nuanceur à partir d’un fichier.
 
@@ -376,7 +376,7 @@ float4 main(sPSInput input) : SV_TARGET
 }
 ```
 
-> **Attention** Le nuanceur de pixels compilé contient 32instructions arithmétiques et 1instruction de texture. Ce nuanceur donne de bons résultats sur les ordinateurs de bureau et les tablettes haut de gamme. Cependant, un ordinateur moins puissant peut ne pas être en mesure de traiter ce nuanceur, mais fournir quand même une fréquence d’images interactive. Ciblez du matériel de base et concevez vos nuanceurs pour qu’ils s’adaptent à ce matériel.
+> **Attention** Le nuanceur de pixels compilé contient 32 instructions arithmétiques et 1 instruction de texture. Ce nuanceur donne de bons résultats sur les ordinateurs de bureau et les tablettes haut de gamme. Cependant, un ordinateur moins puissant peut ne pas être en mesure de traiter ce nuanceur, mais fournir quand même une fréquence d’images interactive. Ciblez du matériel de base et concevez vos nuanceurs pour qu’ils s’adaptent à ce matériel.
 
  
 
@@ -392,7 +392,7 @@ La méthode **MarbleMaze::LoadDeferredResources** utilise la méthode **BasicLoa
     );
 ```
 
-La variable membre **m_inputLayout** est un objet [**ID3D11InputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476575). L’objet de disposition d’entrée encapsule l’état d’entrée de l’étape d’assembleur d’entrée (IA). L’un des rôles de l’étape IA est d’améliorer l’efficacité des nuanceurs en utilisant des valeurs générées par le système, également appelées *sémantiques*, pour traiter uniquement les primitives ou les vertex qui n’ont pas encore été traités. Utilisez la méthode [**ID3D11Device::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512) pour créer une disposition d’entrée à partir d’un tableau de descriptions d’élément d’entrée. Ce tableau contient un ou plusieurs éléments d’entrée, chaque élément d’entrée décrit un élément de données de vertex à partir d’une mémoire tampon vertex. L’ensemble des descriptions d’élément d’entrée décrit tous les éléments de données de vertex de toutes les mémoires tampon de vertex qui seront liées à l’étape IA. L’exemple suivant montre la description de disposition utilisée par Marble Maze. La description de disposition décrit une mémoire tampon de vertex qui contient quatre éléments de données de vertex. Les éléments importants de chaque entrée dans le tableau sont le nom de la sémantique, le format de données et le décalage d’octet . Par exemple, l’élément **POSITION** spécifie la position du vertex dans l’espace d’objets. Il commence au décalage d’octet0 et contient trois composants à virgule flottante (pour un total de 12octets). L’élément **NORMAL** spécifie le vecteur normal. Il commence au décalage d’octet12, car il s’affiche directement après **POSITION** dans la disposition, qui nécessite 12octets. L’élément **NORMAL** contient un entier non signé 32bits de quatrecomposants.
+La variable membre **m_inputLayout** est un objet [**ID3D11InputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476575). L’objet de disposition d’entrée encapsule l’état d’entrée de l’étape d’assembleur d’entrée (IA). L’un des rôles de l’étape IA est d’améliorer l’efficacité des nuanceurs en utilisant des valeurs générées par le système, également appelées *sémantiques*, pour traiter uniquement les primitives ou les vertex qui n’ont pas encore été traités. Utilisez la méthode [**ID3D11Device::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512) pour créer une disposition d’entrée à partir d’un tableau de descriptions d’élément d’entrée. Ce tableau contient un ou plusieurs éléments d’entrée, chaque élément d’entrée décrit un élément de données de vertex à partir d’une mémoire tampon vertex. L’ensemble des descriptions d’élément d’entrée décrit tous les éléments de données de vertex de toutes les mémoires tampon de vertex qui seront liées à l’étape IA. L’exemple suivant montre la description de disposition utilisée par Marble Maze. La description de disposition décrit une mémoire tampon de vertex qui contient quatre éléments de données de vertex. Les éléments importants de chaque entrée dans le tableau sont le nom de la sémantique, le format de données et le décalage d’octet . Par exemple, l’élément **POSITION** spécifie la position du vertex dans l’espace d’objets. Il commence au décalage d’octet 0 et contient trois composants à virgule flottante (pour un total de 12 octets). L’élément **NORMAL** spécifie le vecteur normal. Il commence au décalage d’octet 12, car il s’affiche directement après **POSITION** dans la disposition, qui nécessite 12 octets. L’élément **NORMAL** contient un entier non signé 32 bits de quatre composants.
 
 ```cpp
 D3D11_INPUT_ELEMENT_DESC layoutDesc[] = 
@@ -440,7 +440,7 @@ sPSInput main(sVSInput input)
 
 Le document [Sémantiques](https://msdn.microsoft.com/library/windows/desktop/bb509647) décrit chaque sémantique disponible en détail.
 
-> **Remarque** Dans une disposition, vous pouvez indiquer des composants supplémentaires qui ne sont pas utilisés pour permettre à plusieurs nuanceurs de partager la même disposition. Par exemple, l’élément **TANGENT** n’est pas utilisé par le nuanceur. Vous pouvez utiliser l’élément **TANGENT** si vous voulez tester des techniques, par exemple le mappage normal. En utilisant le mappage normal, également appelé placage de relief (bump mapping), vous pouvez créer l’effet de relief sur les surfaces des objets. Pour plus d’informations sur le placage de relief, voir [Placage de relief (Direct3D9)](https://msdn.microsoft.com/library/windows/desktop/bb172379).
+> **Remarque** Dans une disposition, vous pouvez indiquer des composants supplémentaires qui ne sont pas utilisés pour permettre à plusieurs nuanceurs de partager la même disposition. Par exemple, l’élément **TANGENT** n’est pas utilisé par le nuanceur. Vous pouvez utiliser l’élément **TANGENT** si vous voulez tester des techniques, par exemple le mappage normal. En utilisant le mappage normal, également appelé placage de relief (bump mapping), vous pouvez créer l’effet de relief sur les surfaces des objets. Pour plus d’informations sur le placage de relief, voir [Placage de relief (Direct3D 9)](https://msdn.microsoft.com/library/windows/desktop/bb172379).
 
  
 
@@ -448,7 +448,7 @@ Pour plus d’informations sur l’état de l’étape d’assembly d’entrée,
 
 Le processus d’utilisation de nuanceurs de vertex et de pixels pour le rendu de la scène est décrit dans la section [Rendu de la scène](#rendering_the_scene) plus loin dans ce document.
 
-### Création de la mémoire tampon constante
+### <a name="creating-the-constant-buffer"></a>Création de la mémoire tampon constante
 
 Direct3D met en mémoire tampon des groupes d’ensemble de données. Une mémoire tampon constante est un type de mémoire tampon que vous utilisez pour passer des données aux nuanceurs. Marble Maze utilise une mémoire tampon pour contenir la vue du modèle (ou monde) et les matrices de projection pour l’objet de scène actif.
 
@@ -490,7 +490,7 @@ struct ConstantBuffer
 };
 ```
 
-Pour mieux comprendre comment les mémoires tampons constantes sont mappées au code du nuanceur, comparez la structure **ConstantBuffer** à la mémoire tampon constante **SimpleConstantBuffer** définie par le nuanceur de vertex dans BasicVertexShader.hlsl:
+Pour mieux comprendre comment les mémoires tampons constantes sont mappées au code du nuanceur, comparez la structure **ConstantBuffer** à la mémoire tampon constante **SimpleConstantBuffer** définie par le nuanceur de vertex dans BasicVertexShader.hlsl :
 
 ```hlsl
 cbuffer ConstantBuffer : register(b0)
@@ -504,11 +504,11 @@ cbuffer ConstantBuffer : register(b0)
 };
 ```
 
-La disposition de la structure **ConstantBuffer** correspond à l’objet **cbuffer**. La variable **cbuffer** spécifie register b0, ce qui signifie que les données de la mémoire tampon constante sont stockées dans le registre0. La méthode **MarbleMaze::Render** spécifie register0 quand elle active la mémoire tampon constante. Ce processus est décrit en détail plus loin dans ce document.
+La disposition de la structure **ConstantBuffer** correspond à l’objet **cbuffer**. La variable **cbuffer** spécifie register b0, ce qui signifie que les données de la mémoire tampon constante sont stockées dans le registre 0. La méthode **MarbleMaze::Render** spécifie register 0 quand elle active la mémoire tampon constante. Ce processus est décrit en détail plus loin dans ce document.
 
-Pour plus d’informations sur les mémoires tampons constantes, voir [Présentation des mémoires tampons dans Direct3D11](https://msdn.microsoft.com/library/windows/desktop/ff476898). Pour plus d’informations sur le mot clé register, voir [**register**](https://msdn.microsoft.com/library/windows/desktop/dd607359).
+Pour plus d’informations sur les mémoires tampons constantes, voir [Présentation des mémoires tampons dans Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476898). Pour plus d’informations sur le mot clé register, voir [**register**](https://msdn.microsoft.com/library/windows/desktop/dd607359).
 
-###  Chargement des maillages
+###  <a name="loading-meshes"></a>Chargement des maillages
 
 Marble Maze utilise SDK-Mesh comme format d’exécution car ce format fournit une méthode de base pour charger les données de maillage pour les applications d’exemple. Pour une utilisation en production, utilisez un format de maillage qui correspond aux exigences spécifiques à votre jeu.
 
@@ -541,7 +541,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-###  Chargement des données de collision
+###  <a name="loading-collision-data"></a>Chargement des données de collision
 
 Bien que cette section ne décrive pas en détail l’implémentation de la simulation physique entre la bille et le labyrinthe dans Marble Maze, la géométrie de maillage pour le système physique est lue quand les maillages sont chargés.
 
@@ -578,14 +578,14 @@ m_physics.SetRadius(radius);
 
 La façon dont vous chargez les données de collision dépend du format d’exécution que vous utilisez. Pour plus d’informations sur la façon dont Marble Maze charge la géométrie de collision à partir d’un fichier SDK-Mesh, voir la méthode **MarbleMaze::ExtractTrianglesFromMesh** dans le code source.
 
-## Mise à jour de l’état du jeu
+## <a name="updating-game-state"></a>Mise à jour de l’état du jeu
 
 
 Marble Maze sépare la logique du jeu et la logique de rendu en mettant à jour tous les objets de scène avant de les afficher.
 
 Le document Structure de l’application Marble Maze décrit la boucle du jeu principale. La mise à jour de la scène, qui fait partie de la boucle du jeu, se produit après le traitement des événements de fenêtrage et des entrées et avant le rendu de la scène. La méthode **MarbleMaze::Update** gère la mise à jour de l’interface utilisateur et du jeu.
 
-### Mise à jour de l’interface utilisateur
+### <a name="updating-the-user-interface"></a>Mise à jour de l’interface utilisateur
 
 La méthode **MarbleMaze::Update** appelle la méthode **UserInterface::Update** pour mettre à jour l’état de l’interface utilisateur.
 
@@ -623,7 +623,7 @@ void StopwatchTimer::Update(float timeTotal, float timeDelta)
 }
 ```
 
-###  Mise à jour de la scène
+###  <a name="updating-the-scene"></a>Mise à jour de la scène
 
 La méthode **MarbleMaze::Update** met à jour le jeu en fonction de l’état de la machine à états active. Quand le jeu est dans un état actif, Marble Maze met à jour la caméra pour qu’elle suive la bille, met à jour la partie de matrice de vue des mémoires tampon constante et met à jour la simulation physique.
 
@@ -677,7 +677,7 @@ m_marbleConstantBufferData.view = view;
 
 Pour plus d’informations sur la façon dont la méthode **MarbleMaze::Update** lit les entrées utilisateur et simule le mouvement de la bille, voir [Ajout d’entrées et d’interactivité à l’exemple Marble Maze](adding-input-and-interactivity-to-the-marble-maze-sample.md).
 
-## Rendu de la scène
+## <a name="rendering-the-scene"></a>Rendu de la scène
 
 
 En règle générale, les étapes suivantes sont comprises dans le rendu d’une scène.
@@ -691,7 +691,7 @@ En règle générale, les étapes suivantes sont comprises dans le rendu d’une
 
 La méthode **MarbleMaze::Render** lie les vues de gabarit/profondeur et cible de rendu, efface ces vues, dessine la scène et la superposition.
 
-###  Préparation des cibles de rendu
+###  <a name="preparing-the-render-targets"></a>Préparation des cibles de rendu
 
 Avant d’effectuer le rendu de votre scène, vous devez définir la mémoire tampon de gabarit/profondeur cible de rendu active. Si votre scène ne doit pas dessiner sur chaque pixel de l’écran, effacez également les vues de rendu et de gabarit. Marble Maze efface les vues de rendu et de gabarit sur chaque image afin qu’aucun objet de l’image précédente ne soit visible.
 
@@ -721,9 +721,9 @@ m_d3dContext->ClearDepthStencilView(
     );
 ```
 
-Les interfaces [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) et [**ID3D11DepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476377) prennent en charge le mécanisme de vue de texture fourni par Direct3D10 et les versions ultérieures. Pour plus d’informations sur les vues de texture, voir [Vues de texture (Direct3D10)](https://msdn.microsoft.com/library/windows/desktop/bb205128). La méthode [**OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) prépare l’étape de fusion/sortie du pipeline Direct3D. Pour plus d’informations sur l’étape de fusion/sortie, voir [Étape de fusion/sortie](https://msdn.microsoft.com/library/windows/desktop/bb205120).
+Les interfaces [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) et [**ID3D11DepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476377) prennent en charge le mécanisme de vue de texture fourni par Direct3D 10 et les versions ultérieures. Pour plus d’informations sur les vues de texture, voir [Vues de texture (Direct3D 10)](https://msdn.microsoft.com/library/windows/desktop/bb205128). La méthode [**OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) prépare l’étape de fusion/sortie du pipeline Direct3D. Pour plus d’informations sur l’étape de fusion/sortie, voir [Étape de fusion/sortie](https://msdn.microsoft.com/library/windows/desktop/bb205120).
 
-### Création du nuanceur de vertex et du nuanceur de pixels
+### <a name="preparing-the-vertex-and-pixel-shaders"></a>Création du nuanceur de vertex et du nuanceur de pixels
 
 Avant d’effectuer le rendu des objets de scène, exécutez les étapes suivantes pour préparer les nuanceurs de vertex et de pixels pour le dessin :
 
@@ -731,7 +731,7 @@ Avant d’effectuer le rendu des objets de scène, exécutez les étapes suivant
 2.  Définissez les nuanceurs de vertex et de pixels comme nuanceurs actifs.
 3.  Mettez à jour les mémoires tampon constantes avec les données que vous devez transmettre aux nuanceurs.
 
-> **Important** Marble Maze utilise une paire de nuanceurs de vertex et de pixels pour tous les objets3D. Si votre jeu utilise plus d’une paire de nuanceurs, vous devez effectuer ces étapes chaque fois que vous dessinez des objets qui utilisent des nuanceurs différents. Pour réduire la charge associée à la modification de l’état du nuanceur, nous recommandons de grouper les appels de rendu pour tous les objets qui utilisent les mêmes nuanceurs.
+> **Important** Marble Maze utilise une paire de nuanceurs de vertex et de pixels pour tous les objets 3D. Si votre jeu utilise plus d’une paire de nuanceurs, vous devez effectuer ces étapes chaque fois que vous dessinez des objets qui utilisent des nuanceurs différents. Pour réduire la charge associée à la modification de l’état du nuanceur, nous recommandons de grouper les appels de rendu pour tous les objets qui utilisent les mêmes nuanceurs.
 
  
 
@@ -793,7 +793,7 @@ m_d3dContext->PSSetConstantBuffers(
 
 La méthode **MarbleMaze::Render** effectue des étapes similaires pour préparer le rendu de la bille.
 
-### Rendu du labyrinthe et de la bille
+### <a name="rendering-the-maze-and-the-marble"></a>Rendu du labyrinthe et de la bille
 
 Après avoir activé les nuanceurs actifs, vous pouvez dessiner les objets de votre scène. La méthode **MarbleMaze::Render** appelle la méthode **SDKMesh::Render** pour effectuer le rendu du maillage du labyrinthe.
 
@@ -803,9 +803,9 @@ m_mazeMesh.Render(m_d3dContext.Get(), 0, INVALID_SAMPLER_SLOT, INVALID_SAMPLER_S
 
 La méthode **MarbleMaze::Render** effectue des étapes similaires pour le rendu de la bille.
 
-Comme indiqué précédemment dans ce document, la classe **SDKMesh** est fournie à des fins de démonstration, mais nous ne recommandons pas son utilisation pour la production d’un jeu de qualité. Cependant, notez que la méthode **SDKMesh::RenderMesh**, qui est appelée par **SDKMesh::Render**, utilise les méthodes [**ID3D11DeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) et [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) pour définir les mémoires tampons de vertex et d’index actives qui définissent le maillage, et la méthode [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476410) pour dessiner les mémoires tampons. Pour plus d’informations sur l’utilisation des mémoires tampons de vertex et d’index, voir [Présentation des mémoires tampons dans Direct3D11](https://msdn.microsoft.com/library/windows/desktop/ff476898).
+Comme indiqué précédemment dans ce document, la classe **SDKMesh** est fournie à des fins de démonstration, mais nous ne recommandons pas son utilisation pour la production d’un jeu de qualité. Cependant, notez que la méthode **SDKMesh::RenderMesh**, qui est appelée par **SDKMesh::Render**, utilise les méthodes [**ID3D11DeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) et [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) pour définir les mémoires tampons de vertex et d’index actives qui définissent le maillage, et la méthode [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476410) pour dessiner les mémoires tampons. Pour plus d’informations sur l’utilisation des mémoires tampons de vertex et d’index, voir [Présentation des mémoires tampons dans Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476898).
 
-### Dessin de l’interface utilisateur et de la superposition
+### <a name="drawing-the-user-interface-and-overlay"></a>Dessin de l’interface utilisateur et de la superposition
 
 Après avoir dessiné les objets de scène 3D, Marble Maze dessine les éléments d’interface 2D qui s’affichent sur le devant de la scène.
 
@@ -841,11 +841,11 @@ void UserInterface::Render()
 
 La méthode **SampleOverlay::Render** utilise une technique identique pour dessiner l’image bitmap de superposition.
 
-###  Présentation de la scène
+###  <a name="presenting-the-scene"></a>Présentation de la scène
 
 Une fois les objets de scène 2D et 3D dessinés, Marble Maze présente l’image rendue à l’écran. Il synchronise le dessin sur le vide vertical afin que votre jeu ne dessine pas des images qui ne sont jamais affichées. Marble Maze gère également les changements d’appareils quand il présente la scène.
 
-Une fois la méthode **MarbleMaze::Render** renvoyée, la boucle de jeu appelle la méthode **MarbleMaze::Present** pour envoyer l’image rendue à l’écran. La classe **MarbleMaze** ne remplace pas la méthode **DirectXBase::Present**. La méthode **DirectXBase::Present** appelle [**IDXGISwapChain1::Present**](https://msdn.microsoft.com/library/windows/desktop/hh446797) pour effectuer l’opération de présentation, comme indiqué dans l’exemple suivant:
+Une fois la méthode **MarbleMaze::Render** renvoyée, la boucle de jeu appelle la méthode **MarbleMaze::Present** pour envoyer l’image rendue à l’écran. La classe **MarbleMaze** ne remplace pas la méthode **DirectXBase::Present**. La méthode **DirectXBase::Present** appelle [**IDXGISwapChain1::Present**](https://msdn.microsoft.com/library/windows/desktop/hh446797) pour effectuer l’opération de présentation, comme indiqué dans l’exemple suivant :
 
 ```cpp
 // The application may optionally specify "dirty" or "scroll" rects 
@@ -883,12 +883,12 @@ else
 }
 ```
 
-## Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes
 
 
 Pour plus d’informations sur les pratiques clés en matière de périphériques d’entrée, voir [Ajout d’entrées et d’interactivité à l’exemple Marble Maze](adding-input-and-interactivity-to-the-marble-maze-sample.md). Ce document explique comment Marble Maze prend en charge les entrées tactiles, d’accéléromètre, de contrôleur Xbox 360 et de souris.
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 
 * [Ajout d’entrées et d’interactivité à l’exemple Marble Maze](adding-input-and-interactivity-to-the-marble-maze-sample.md)
@@ -905,6 +905,6 @@ Pour plus d’informations sur les pratiques clés en matière de périphérique
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

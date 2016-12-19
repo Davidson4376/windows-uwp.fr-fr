@@ -14,9 +14,9 @@ ms.openlocfilehash: 488c47e7fd3ab55c51454e867d802d632a0b4df2
 
 
 
-MicrosoftAdvertising prend en charge les tailles de bannières publicitaires suivantes:
+Microsoft Advertising prend en charge les tailles de bannières publicitaires suivantes :
 
-## Windows10 Mobile et WindowsPhone8x
+## Windows 10 Mobile et Windows Phone 8x
 
 <table>
 <colgroup>
@@ -39,7 +39,7 @@ MicrosoftAdvertising prend en charge les tailles de bannières publicitaires sui
 <td align="left"><img src="images/13-f6f413da-ddde-4424-9364-41d8ba536d21.jpg" alt="AdSizesPhone320x50" /></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>480x80</p><p>**Remarque**&nbsp;&nbsp;Cette taille est prise en charge uniquement pour Silverlight Windows Phone.</p></td>
+<td align="left"><p>480x80</p><p>**Remarque**  Cette taille est prise en charge uniquement pour Silverlight Windows Phone.</p></td>
 <td align="left"><img src="images/13-0f11f562-0624-40d6-9720-400420f0a486.jpg" alt="AdSizesPhone480x80" /></td>
 </tr>
 <tr class="even">
@@ -51,7 +51,7 @@ MicrosoftAdvertising prend en charge les tailles de bannières publicitaires sui
 
  
 
-## Windows10 (UWP) et Windows8.1
+## Windows 10 (UWP) et Windows 8.1
 
 <table>
 <colgroup>

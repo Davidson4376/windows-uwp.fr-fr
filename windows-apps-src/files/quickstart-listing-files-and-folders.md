@@ -1,25 +1,27 @@
 ---
-author: normesta
+author: laurenhughes
 ms.assetid: 4C59D5AC-58F7-4863-A884-E9E54228A5AD
 title: "Énumérer et interroger des fichiers et dossiers"
 description: "Accédez aux fichiers et dossiers dans un dossier, une bibliothèque, un appareil ou un emplacement réseau. Vous pouvez également interroger les fichiers et dossiers situés dans un emplacement en créant des requêtes de fichiers et de dossiers."
 translationtype: Human Translation
-ms.sourcegitcommit: de0b23cfd8f6323d3618c3424a27a7d0ce5e1374
-ms.openlocfilehash: a7a8ba7166cf8c6778003396b13b7098578097ca
+ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
+ms.openlocfilehash: 80c9a2f37b7744d983f3f742895e9ac2408850df
 
 ---
-# Énumérer et interroger des fichiers et dossiers
+# <a name="enumerate-and-query-files-and-folders"></a>Énumérer et interroger des fichiers et dossiers
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 
-Accédez aux fichiers et dossiers dans un dossier, une bibliothèque, un appareil ou un emplacement réseau. Vous pouvez également interroger les fichiers et dossiers situés dans un emplacement en créant des requêtes de fichiers et de dossiers.
+Accédez aux fichiers et dossiers dans un dossier, une bibliothèque, un appareil ou un emplacement réseau. Vous pouvez également interroger les fichiers et dossiers d’un emplacement en créant des requêtes de fichiers et de dossiers.
 
-**Remarque** Consultez aussi l’[exemple d’énumération de dossier](http://go.microsoft.com/fwlink/p/?linkid=619993).
+Pour obtenir des instructions détaillées sur le stockage des données de votre application de plateforme Windows universelle, consultez la classe [ApplicationData](https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.aspx).
+
+**Remarque** Consultez également l’[exemple d’énumération de dossier](http://go.microsoft.com/fwlink/p/?linkid=619993).
 
  
-## Prérequis
+## <a name="prerequisites"></a>Prérequis
 
 -   **Comprendre la programmation asynchrone pour les applications pour la plateforme Windows universelle (UWP)**
 
@@ -29,7 +31,7 @@ Accédez aux fichiers et dossiers dans un dossier, une bibliothèque, un apparei
 
     Par exemple, le code de ces exemples nécessite la fonctionnalité **picturesLibrary**, mais votre emplacement peut avoir besoin d’une autre fonctionnalité, voire d’aucune. Pour en savoir plus, voir [Autorisations d’accès aux fichiers](file-access-permissions.md).
 
-## Énumérer les fichiers et dossiers dans un emplacement
+## <a name="enumerate-files-and-folders-in-a-location"></a>Énumérer les fichiers et dossiers dans un emplacement
 
 > **Remarque** N’oubliez pas de déclarer la fonctionnalité **picturesLibrary**.
 
@@ -136,7 +138,7 @@ Dans cet exemple, nous utilisons d’abord la méthode [**StorageFolder.GetFiles
 > ```
 
 
-> **Remarque** EnC# ou VisualBasic, n’oubliez pas de placer le mot-clé **async** dans la déclaration de toutes les méthodes dans lesquelles vous utilisez l’opérateur **await**.
+> **Remarque** En C# ou Visual Basic, n’oubliez pas de placer le mot-clé **async** dans la déclaration de toutes les méthodes dans lesquelles vous utilisez l’opérateur **await**.
  
 
 Vous pouvez aussi utiliser la méthode [**GetItemsAsync**](https://msdn.microsoft.com/library/windows/apps/br227286) pour obtenir tous les éléments (fichiers et sous-dossiers) figurant dans un emplacement particulier. L’exemple suivant utilise la méthode **GetItemsAsync** pour obtenir tous les fichiers et sous-dossiers figurant dans le dossier racine de la propriété [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) (pas dans les sous-dossiers). L’exemple affiche ensuite le nom de chaque fichier et sous-dossier. Si l’élément est un sous-dossier, l’exemple ajoute `"folder"` au nom.
@@ -208,7 +210,7 @@ Vous pouvez aussi utiliser la méthode [**GetItemsAsync**](https://msdn.microsof
 > Next item
 > ```
 
-## Interroger les fichiers figurant dans un emplacement et énumérer les fichiers correspondants
+## <a name="query-files-in-a-location-and-enumerate-matching-files"></a>Interroger les fichiers figurant dans un emplacement et énumérer les fichiers correspondants
 
 Dans cet exemple, nous interrogeons tous les fichiers figurant dans la propriété [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156), regroupés en fonction du mois, et cette fois, l’exemple recherche dans les sous-dossiers. Tout d’abord, nous appelons la méthode [**StorageFolder.CreateFolderQuery**](https://msdn.microsoft.com/library/windows/apps/br227262) et transmettons la valeur [**CommonFolderQuery.GroupByMonth**](https://msdn.microsoft.com/library/windows/apps/br207957) à la méthode. Nous obtenons ainsi un objet [**StorageFolderQueryResult**](https://msdn.microsoft.com/library/windows/apps/br208066).
 
@@ -324,6 +326,6 @@ July ‎2015 (2)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 
