@@ -163,7 +163,7 @@ Vous pouvez utiliser gpedit.msc pour définir les stratégies de groupe visant �
 
     -   **Autoriser l’installation des applications approuvées**
 
-    - - ou -
+    - ou -
 
     Pour activer le mode développeur, modifiez les stratégies pour activer les deux options suivantes :
 
@@ -179,7 +179,7 @@ Vous pouvez utiliser gpedit.msc pour définir les stratégies de groupe visant �
 
     -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowAllTrustedApps**
 
-    - - ou -
+    - ou -
 
     Pour activer le mode développeur, définissez ces valeurs DWORD sur 1 :
 
@@ -192,7 +192,7 @@ Vous pouvez utiliser gpedit.msc pour définir les stratégies de groupe visant �
 
     -   **PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowAllTrustedApps" /d "1"**
 
-    - - ou -
+    - ou -
 
     Pour activer le mode développeur, exécutez cette commande :
 
