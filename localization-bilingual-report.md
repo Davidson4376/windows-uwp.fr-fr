@@ -6,24 +6,21 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\get-started\enable-your-device-for-development.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/7a6f0be15105bc70e580eaaf581152338c56bed7?path=windows-apps-src%2Fget-started%2Fenable-your-device-for-development.md&_a=contents) | HandedOffSuccess | [Details](#3641fdd1f7eb74a11233115d9dfb809ea959926e3616)
+ [windows-apps-src\get-started\create-a-basic-windows-10-app-in-cpp.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/351feda6d9b12b44b0711fe7f4665e08e320580d?path=windows-apps-src%2Fget-started%2Fcreate-a-basic-windows-10-app-in-cpp.md&_a=contents) | InSyncHandedBackSuccess | [Details](#d6f90d8bcff80ef8fae5f85a572e1b1ab11f153d3613)
 
 ## Item Details
-##### <a name='3641fdd1f7eb74a11233115d9dfb809ea959926e3616'></a> Source: [windows-apps-src\get-started\enable-your-device-for-development.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/7a6f0be15105bc70e580eaaf581152338c56bed7?path=windows-apps-src%2Fget-started%2Fenable-your-device-for-development.md&_a=contents)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [enable-your-device-for-development.e920a727ccc1fc364c6c44e8138c1a619fa0b67d.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/943579e94e6bc8a2d24b48b5b18ddf774931e9fc?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Fenable-your-device-for-development.e920a727ccc1fc364c6c44e8138c1a619fa0b67d.fr-fr.xlf&_a=contents)
-* Handoff Datetime: 2016-12-14 20:14:08
+##### <a name='d6f90d8bcff80ef8fae5f85a572e1b1ab11f153d3613'></a> Source: [windows-apps-src\get-started\create-a-basic-windows-10-app-in-cpp.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/351feda6d9b12b44b0711fe7f4665e08e320580d?path=windows-apps-src%2Fget-started%2Fcreate-a-basic-windows-10-app-in-cpp.md&_a=contents)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\get-started\create-a-basic-windows-10-app-in-cpp.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.fr-fr/commit/16108a05c2cb3c2e3e37af8296bba5627be606cc?path=windows-apps-src%2Fget-started%2Fcreate-a-basic-windows-10-app-in-cpp.md&_a=contents)
+* Handoff File: [create-a-basic-windows-10-app-in-cpp.d466310b61c18b0f5f397440292f7327c0926725.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/64831dc5ca720ba3d2452bb65416287b2dfc80ad?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Fcreate-a-basic-windows-10-app-in-cpp.d466310b61c18b0f5f397440292f7327c0926725.fr-fr.xlf&_a=contents)
+* Handoff Datetime: 2016-12-02 01:18:01
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\get-started\enable-your-device-for-development.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.fr-fr/commit/264fa3583b27fb96636d74c4cbe22eaa7797a478?path=windows-apps-src%2Fget-started%2Fenable-your-device-for-development.md&_a=contents)
-* Current Handback File: [enable-your-device-for-development.e920a727ccc1fc364c6c44e8138c1a619fa0b67d.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/156c9405752515b8d1d40e0c61d7eca0f1729abc?path=ol-handback%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Fenable-your-device-for-development.e920a727ccc1fc364c6c44e8138c1a619fa0b67d.fr-fr.xlf&_a=contents)
-* Current Handback Datetime: 2016-12-21 16:01:42
-* Bilingual File: [enable-your-device-for-development.e920a727ccc1fc364c6c44e8138c1a619fa0b67d.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/156c9405752515b8d1d40e0c61d7eca0f1729abc?path=ol-handback%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Fenable-your-device-for-development.e920a727ccc1fc364c6c44e8138c1a619fa0b67d.fr-fr.xlf&_a=contents)
-* Bilingual Datetime: 2016-12-21 16:05:16
+* Handback File: [create-a-basic-windows-10-app-in-cpp.d466310b61c18b0f5f397440292f7327c0926725.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/a9d8b777b5cdb62eb0edf7203e5812cbe9c3d85e?path=ol-handback%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Fcreate-a-basic-windows-10-app-in-cpp.d466310b61c18b0f5f397440292f7327c0926725.fr-fr.xlf&_a=contents)
+* Handback Datetime: 2016-12-28 20:07:53
+* Bilingual File: [create-a-basic-windows-10-app-in-cpp.d466310b61c18b0f5f397440292f7327c0926725.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/a9d8b777b5cdb62eb0edf7203e5812cbe9c3d85e?path=ol-handback%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Fcreate-a-basic-windows-10-app-in-cpp.d466310b61c18b0f5f397440292f7327c0926725.fr-fr.xlf&_a=contents)
+* Bilingual Datetime: 2016-12-28 20:11:46
 * [Back to Top](#report-top)
 
 
