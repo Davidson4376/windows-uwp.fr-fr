@@ -1,28 +1,11 @@
 # <a name='report-top'></a> Localization Bilingual Report
 
 ## Summary
- Total Files | 1
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [windows-apps-src\get-started\create-a-basic-windows-10-app-in-cpp.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/351feda6d9b12b44b0711fe7f4665e08e320580d?path=windows-apps-src%2Fget-started%2Fcreate-a-basic-windows-10-app-in-cpp.md&_a=contents) | InSyncHandedBackSuccess | [Details](#d6f90d8bcff80ef8fae5f85a572e1b1ab11f153d3613)
 
 ## Item Details
-##### <a name='d6f90d8bcff80ef8fae5f85a572e1b1ab11f153d3613'></a> Source: [windows-apps-src\get-started\create-a-basic-windows-10-app-in-cpp.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/351feda6d9b12b44b0711fe7f4665e08e320580d?path=windows-apps-src%2Fget-started%2Fcreate-a-basic-windows-10-app-in-cpp.md&_a=contents)
-* Status: InSyncHandedBackSuccess
-* Target File: [windows-apps-src\get-started\create-a-basic-windows-10-app-in-cpp.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.fr-fr/commit/16108a05c2cb3c2e3e37af8296bba5627be606cc?path=windows-apps-src%2Fget-started%2Fcreate-a-basic-windows-10-app-in-cpp.md&_a=contents)
-* Handoff File: [create-a-basic-windows-10-app-in-cpp.d466310b61c18b0f5f397440292f7327c0926725.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/64831dc5ca720ba3d2452bb65416287b2dfc80ad?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Fcreate-a-basic-windows-10-app-in-cpp.d466310b61c18b0f5f397440292f7327c0926725.fr-fr.xlf&_a=contents)
-* Handoff Datetime: 2016-12-02 01:18:01
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: [create-a-basic-windows-10-app-in-cpp.d466310b61c18b0f5f397440292f7327c0926725.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/a9d8b777b5cdb62eb0edf7203e5812cbe9c3d85e?path=ol-handback%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Fcreate-a-basic-windows-10-app-in-cpp.d466310b61c18b0f5f397440292f7327c0926725.fr-fr.xlf&_a=contents)
-* Handback Datetime: 2016-12-28 20:07:53
-* Bilingual File: [create-a-basic-windows-10-app-in-cpp.d466310b61c18b0f5f397440292f7327c0926725.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/a9d8b777b5cdb62eb0edf7203e5812cbe9c3d85e?path=ol-handback%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Fcreate-a-basic-windows-10-app-in-cpp.d466310b61c18b0f5f397440292f7327c0926725.fr-fr.xlf&_a=contents)
-* Bilingual Datetime: 2016-12-28 20:11:46
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
