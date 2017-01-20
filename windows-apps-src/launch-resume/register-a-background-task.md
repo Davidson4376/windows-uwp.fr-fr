@@ -4,8 +4,8 @@ title: "Inscrire une tâche en arrière-plan"
 description: "Découvrez comment créer une fonction que vous pouvez réutiliser pour inscrire la plupart des tâches en arrière-plan en toute sécurité."
 ms.assetid: 8B1CADC5-F630-48B8-B3CE-5AB62E3DFB0D
 translationtype: Human Translation
-ms.sourcegitcommit: 2f46f5cd26656b2d6b7d14c0d85aa7a0a6950fb8
-ms.openlocfilehash: 809cd0ea85d4dfc6ecf633d0ca9f16bbefee78ca
+ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
+ms.openlocfilehash: d65b8d3312e49469bd99d458b45bf5a46f345e6a
 
 ---
 
@@ -21,7 +21,7 @@ ms.openlocfilehash: 809cd0ea85d4dfc6ecf633d0ca9f16bbefee78ca
 
 Découvrez comment créer une fonction que vous pouvez réutiliser pour inscrire la plupart des tâches en arrière-plan en toute sécurité.
 
-Cette rubrique s’applique aussi bien aux tâches en arrière-plan in-process qu’aux tâches en arrière-plan hors processus. Cette rubrique suppose que vous disposez déjà d’une tâche en arrière-plan nécessitant une inscription. (Consultez les rubriques [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-an-outofproc-background-task.md) ou [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md) pour découvrir comment écrire une tâche en arrière-plan).
+Cette rubrique s’applique aussi bien aux tâches en arrière-plan in-process qu’aux tâches en arrière-plan hors processus. Cette rubrique suppose que vous disposez déjà d’une tâche en arrière-plan nécessitant une inscription. (Consultez les rubriques [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-a-background-task.md) ou [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md) pour découvrir comment écrire une tâche en arrière-plan).
 
 Cette rubrique décrit une fonction utilitaire chargée d’inscrire les tâches en arrière-plan. Pour éviter tout problème avec de multiples inscriptions, cette fonction utilitaire recherche d’abord des inscriptions existantes avant d’inscrire la tâche plusieurs fois. Elle peut aussi appliquer une condition système à la tâche en arrière-plan. La procédure pas à pas inclut un exemple de mise en pratique exhaustif de cette fonction utilitaire.
 
@@ -71,7 +71,7 @@ Vérifiez si la tâche est déjà inscrite. Cette vérification est primordiale 
 
 Pour rechercher des inscriptions existantes, vous pouvez interroger la propriété [**BackgroundTaskRegistration.AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) et examiner le résultat. Vérifiez le nom de chaque instance. S’il correspond au nom de la tâche que vous inscrivez, sortez de la boucle et définissez une variable d’indicateur afin que votre code puisse choisir un chemin différent lors de la prochaine étape.
 
-> **Remarque** Utilisez des noms de tâches en arrière-plan uniques à votre application. Assurez-vous que chaque tâche en arrière-plan possède un nom unique.
+> **Remarque** Utilisez des noms de tâches en arrière-plan uniques dans votre application. Assurez-vous que chaque tâche en arrière-plan possède un nom unique.
 
 Le code qui suit inscrit une tâche en arrière-plan à l’aide de l’objet [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) créé au cours de la dernière étape :
 
@@ -371,13 +371,13 @@ Cet exemple montre la fonction d’inscription des tâches en arrière-plan parv
 > }
 > ```
 
-> **Remarque** Cet article s’adresse aux développeurs Windows 10 qui développent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Remarque** Cet article s’adresse aux développeurs Windows 10 qui développent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
 ## <a name="related-topics"></a>Rubriques connexes
 
 ****
 
-* [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-an-outofproc-background-task.md)
+* [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-a-background-task.md)
 * [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md)
 * [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md)
 * [Gérer une tâche en arrière-plan annulée](handle-a-cancelled-background-task.md)
@@ -397,6 +397,6 @@ Cet exemple montre la fonction d’inscription des tâches en arrière-plan parv
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

@@ -2,45 +2,44 @@
 author: mcleanbyron
 ms.assetid: 5fa16a27-fdc0-43b2-84cd-8547fd4915de
 description: "Découvrez comment affecter les propriétés **AdControl** au format HTML."
-title: "Exemple de propriétés HTML"
+title: "Exemple de propriétés AdControl HTML"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: 1898ed2ccad74ac33c5130c627363e0a9daebceb
-
+ms.sourcegitcommit: f88a71491e185aec84a86248c44e1200a65ff179
+ms.openlocfilehash: 741cf19ee0310c84d1a85f4a1e82b353d88d1b9e
 
 ---
 
-# Exemple de propriétés HTML
-
-
-
+# <a name="adcontrol-html-properties-example"></a>Exemple de propriétés AdControl HTML
 
 L’exemple suivant montre comment affecter les propriétés [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) au format HTML. Les propriétés **applicationId** et **adUnitId** sont requises. Les autres propriétés et événements sont facultatifs. Si vous n’indiquez pas les valeurs des propriétés facultatives, le contrôle utilise les valeurs par défaut qui créent une publicité en harmonie avec l’expérience utilisateur de l’application.
 
-Les cinqdernières lignes sont un exemple d’inscription des fonctions dans les événements **AdControl**. Vous ne pouvez inscrire que les fonctions que vous avez définies dans votre code JavaScript.
+Les cinq dernières lignes sont un exemple d’inscription des fonctions dans les événements **AdControl**. Vous ne pouvez inscrire que les fonctions que vous avez définies dans votre code JavaScript.
 
 Les valeurs indiquées sont des exemples. Dans votre code, vous allez définir les valeurs de ces fonctions et propriétés pour qu’elles conviennent à votre application.
 
-``` syntax
-data-win-control="MicrosoftNSJS.Advertising.AdControl"
-data-win-options="{applicationId: '3f83fe91-d6be-434d-a0ae-7351c5a997f1',
-                    adUnitId: '10865270',
-                    isAutoRefreshEnabled: false,
-                    onAdRefreshed: myAdRefreshed,
-                    onErrorOccurred: myAdError,
-                    onEngagedChanged: myAdEngagedChanged,
-                    onPointerDown: myPointerDown,
-                    onPointerUp: myPointerUp }"
+> [!div class="tabbedCodeSnippets"]
+``` html
+<div id="myAd" style="position: absolute; top: 50px; left: 0px; width: 300px; height: 250px; z-index: 1"
+    data-win-control="MicrosoftNSJS.Advertising.AdControl"
+    data-win-options="{applicationId: '3f83fe91-d6be-434d-a0ae-7351c5a997f1',
+                       adUnitId: '10865270',
+                       isAutoRefreshEnabled: false,
+                       onAdRefreshed: myAdRefreshed,
+                       onErrorOccurred: myAdError,
+                       onEngagedChanged: myAdEngagedChanged,
+                       onPointerDown: myPointerDown,
+                       onPointerUp: myPointerUp }" />
 ```
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
+* [AdControl en HTML 5 et JavaScript](adcontrol-in-html-5-and-javascript.md)
 * [Exemples de publicité sur GitHub](http://aka.ms/githubads)
 
  
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

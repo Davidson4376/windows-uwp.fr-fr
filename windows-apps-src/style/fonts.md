@@ -6,34 +6,28 @@ ms.assetid: 1B8B90AD-CDC4-4997-ACDE-871C1E94A929
 label: Fonts
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: d7236006f2c620a4ff0de4e0f413f32a2eaf5687
-ms.openlocfilehash: b79a6f3ee32494f04fa472c0531c06aa0a60098b
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 0b25dc91a5ec82a83ae24a41854e9eeab8990128
 
 ---
 
+
+# <a name="fonts-for-uwp-apps"></a>Polices pour les applications UWP
+
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-# Polices pour les applications UWP
-
-Cet article répertorie les polices recommandées pour les applications UWP. Ces polices sont systématiquement disponibles dans toutes les éditions de Windows10 prenant en charge les applications UWP.
+Cet article répertorie les polices recommandées pour les applications UWP. Ces polices sont systématiquement disponibles dans toutes les éditions de Windows 10 prenant en charge les applications UWP.
 
 <div class="important-apis" >
 <b>API importantes</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br209655"><strong>Propriété FontFamily</strong></a></li>
+<li>[**Propriété FontFamily**](https://msdn.microsoft.com/library/windows/apps/br209655)</li>
 </ul>
-
 </div>
-</div>
-
-
 
 Le [guide typographique UWP](typography.md) recommande que les applications utilisent la police Segoe UI. Même si cette police est un excellent choix pour la plupart des applications, vous n’êtes pas contraint de l’utiliser pour tout. Vous pouvez utiliser d’autres polices dans certains cas de figure, notamment pour la lecture, ou pour l’affichage de textes rédigés dans certaines autres langues que l’anglais. 
-
-
-
  
-## Polices sans-serif
+## <a name="sans-serif-fonts"></a>Polices sans-serif
 
 Les polices sans-serif sont un excellent choix pour les titres et les éléments d’interface utilisateur. 
 
@@ -94,7 +88,7 @@ Les polices sans-serif sont un excellent choix pour les titres et les éléments
 </table>
 
 
-## Polices serif
+## <a name="serif-fonts"></a>Polices serif
 
 Les polices serif sont parfaites pour présenter de grandes quantités de texte. 
 
@@ -133,7 +127,7 @@ Les polices serif sont parfaites pour présenter de grandes quantités de texte.
 </tbody>
 </table>
 
-## Symboles et icônes
+## <a name="symbols-and-icons"></a>Symboles et icônes
 
 
 <table>
@@ -165,7 +159,7 @@ Les polices serif sont parfaites pour présenter de grandes quantités de texte.
 
 
 
-## Polices pour les langues non latines
+## <a name="fonts-for-non-latin-languages"></a>Polices pour les langues non latines
 
 Même si beaucoup de ces polices proposent des caractères latins.
 
@@ -294,21 +288,17 @@ Même si beaucoup de ces polices proposent des caractères latins.
 </table>
 
 
-## Polices de globalisation/localisation
+## <a name="globalizinglocalizing-fonts"></a>Polices de globalisation/localisation
 Utilisez les API de [mappage de police LanguageFont](https://msdn.microsoft.com/library/windows/apps/br206864) pour l’accès par programmation à la gamme de polices, à la taille, à l’épaisseur et au style recommandés pour une langue particulière. L’objet LanguageFont assure l’accès aux informations de police appropriées pour diverses catégories de contenu, notamment les en-têtes d’interface utilisateur, les notifications, le texte de corps et les polices de corps de document modifiables par l’utilisateur. Pour plus d’informations, voir [Ajuster la disposition et les polices pour prendre en charge la globalisation](https://msdn.microsoft.com/windows/uwp/globalizing/adjust-layout-and-fonts--and-support-rtl).
 
-<!--
-## Triggering a font download
-If you use a font that's not listed in this article, your app might trigger an automatic download of the font data from a Microsoft service. This can have performance and other impacts that may be a concern, particularly for mobile devices. In particular, note that this might consume some of a user's mobile data plan or result in mobile data usage costs. UWP apps that will available on mobile devices should never use fonts for UI content other than fonts in this list.
--->
 
-## Obtenir les exemples
+## <a name="get-the-samples"></a>Obtenir les exemples
 
 * [Exemple de polices téléchargeables](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlCloudFontIntegration)
 * [Exemple d’éléments de base d’interface utilisateur](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
 * [Exemple d’interligne avec DirectWrite](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/DWriteLineSpacingModes) 
 
-## Articles connexes
+## <a name="related-articles"></a>Articles connexes
 
 * [Ajuster la disposition et les polices pour prendre en charge la globalisation](https://msdn.microsoft.com/windows/uwp/globalizing/adjust-layout-and-fonts--and-support-rtl)
 * [Segoe MDL2](segoe-ui-symbol-font.md)
@@ -325,6 +315,6 @@ If you use a font that's not listed in this article, your app might trigger an a
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

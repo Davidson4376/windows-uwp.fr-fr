@@ -3,21 +3,23 @@ description: "Obtenez les derniers téléchargements et outils pour concevoir la
 keywords: "disposition des applications uwp, interface utilisateur, conceptions d’interface utilisateur, téléchargements, outils uwp"
 title: "Téléchargements de conceptions pour les apps UWP - Développement d’applications Windows"
 author: mijacobs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: f1ea979f5179cce0bb059534b064c2ecf805ce89
-ms.openlocfilehash: da21817eea3a26ffd162bd19c8eb69345ac1d726
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: d18696de51451552aef14c55d2a1b62c6037fb59
 
 ---
-
+# <a name="design-downloads-for-uwp-apps"></a>Téléchargements de conceptions pour les applications UWP
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-
-# Téléchargements de conceptions pour les applications UWP
-
 
 Cette section regroupe des téléchargements liés à la conception et à l’interface utilisateur des applications UWP. Pour obtenir des outils supplémentaires, tels que Visual Studio, consultez [la page principale des téléchargements](https://developer.microsoft.com/downloads). 
 
 
-## Modèles de conception
+## <a name="design-templates"></a>Modèles de conception
 
 <div class="side-by-side">
 <div class="side-by-side-content">
@@ -34,7 +36,7 @@ Ce support dispose de tous les éléments nécessaires pour rapidement créer un
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-            <p><b>AdobeIllustrator</b><br/>
+            <p><b>Adobe Illustrator</b><br/>
 Ces modèles Adobe Illustrator fournissent des contrôles et dispositions pour la conception d’applications UWP.<br/>[Télécharger les modèles de conception pour Adobe Illustrator](https://go.microsoft.com/fwlink/p/?LinkId=534634)</p>    
   </div>
   <div class="side-by-side-content-right">
@@ -47,7 +49,7 @@ Ces modèles Adobe Illustrator fournissent des contrôles et dispositions pour l
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
             <p><b>Adobe Photoshop</b><br/>
-Contrôles et dispositions pour la conception d’applications UWP dans AdobePhotoshop.<br/>[Télécharger les modèles de conception pour AdobePhotoshop](http://go.microsoft.com/fwlink/p/?LinkId=626453)</p>    
+Contrôles et dispositions pour la conception d’applications UWP dans Adobe Photoshop.<br/>[Télécharger les modèles de conception pour Adobe Photoshop](http://go.microsoft.com/fwlink/p/?LinkId=626453)</p>    
   </div>
   <div class="side-by-side-content-right">
 <a href="http://go.microsoft.com/fwlink/p/?LinkId=626453"><img src="images/photoshop.jpg" alt="Download the design templates for Adobe Photoshop" /></a>
@@ -55,13 +57,13 @@ Contrôles et dispositions pour la conception d’applications UWP dans AdobePho
 </div>
 </div>
 
-## Outils
+## <a name="tools"></a>Outils
 
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-            <p><b>Générateur de vignettes et d’icônes pour AdobePhotoshop</b><br/>
-Cet ensemble d’actions pour AdobePhotoshop génère les 68vignettes et icônes recommandées à partir de seulement 7fichiers. <br/>[Télécharger le générateur de vignettes et d’icônes](http://go.microsoft.com/fwlink/p/?LinkId=760394)</p>    
+            <p><b>Générateur de vignettes et d’icônes pour Adobe Photoshop</b><br/>
+Cet ensemble d’actions pour Adobe Photoshop génère les 68 vignettes et icônes recommandées à partir de seulement 7 fichiers. <br/>[Télécharger le générateur de vignettes et d’icônes](http://go.microsoft.com/fwlink/p/?LinkId=760394)</p>    
   </div>
   <div class="side-by-side-content-right">
 <a href="http://go.microsoft.com/fwlink/p/?LinkId=760394"><img src="images/tile-icon-generator.png" alt="Download the tile and icon generator" /></a>
@@ -69,19 +71,8 @@ Cet ensemble d’actions pour AdobePhotoshop génère les 68vignettes et icônes
 </div>
 </div>
 
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">
-            <p><b>Outil Profileur pour AdobeIllustrator</b><br/>
-Générez facilement des lignes rouges à partir de vos prototypesIllustrator. (Nécessite Adobe Illustrator CC ou version ultérieure.)<br/>[Télécharger l’outil Profileur pour AdobeIllustrator](https://go.microsoft.com/fwlink/p/?LinkId=534641)</p>  
-  </div>
-  <div class="side-by-side-content-right">
-<a href="https://go.microsoft.com/fwlink/p/?LinkId=534641"><img src="images/redliner-tool.png" alt="Download the Redliner tool for Adobe Illustrator" /></a>
-  </div>
-</div>
-</div>
 
-## Exemples
+## <a name="samples"></a>Exemples
 
 <div class="side-by-side">
 <div class="side-by-side-content">
@@ -106,9 +97,9 @@ Cet exemple intègre des fonctionnalités Windows avec une automatisation domest
   </div>
 </div>
 </div>
-<b>Vous voulez plus de code?</b> Consultez la page d’exemples Windows pour obtenir la liste complète de tous nos exemples d’applications UWP. [Accédez au portail d’exemples](https://developer.microsoft.com/samples)
+<b>Vous voulez plus de code ?</b> Consultez la page d’exemples Windows pour obtenir la liste complète de tous nos exemples d’applications UWP. [Accédez au portail d’exemples](https://developer.microsoft.com/samples)
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Dec16_HO2-->
 
 

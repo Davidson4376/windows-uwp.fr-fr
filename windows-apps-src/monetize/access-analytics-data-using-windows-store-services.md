@@ -4,8 +4,8 @@ ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
 description: "Utilisez l’API d’analyse du Windows Store pour récupérer par programmation les données d’analyse pour les applications qui sont enregistrées sur votre compte personnel ou compte d’organisation du Centre de développement Windows."
 title: "Accéder aux données d’analyse à l’aide des services du Windows Store"
 translationtype: Human Translation
-ms.sourcegitcommit: dcf4c263ff3fd8df846d1d5620ba31a9da7a5e6c
-ms.openlocfilehash: 5ae5dcbe6684aa34a1428760cd5c7e9b8f599ebf
+ms.sourcegitcommit: 1a2e856cddf9998eeb8b0132c2fb79f5188c218b
+ms.openlocfilehash: 596cc5054367acf0d3609a34b764bc7fcf33ea0b
 
 ---
 
@@ -28,7 +28,7 @@ Avant d’écrire le code d’appel de l’API d’analyse du Windows Store, vé
 
 * Vous devez associer une application Azure AD à votre compte du Centre de développement, récupérer l’ID de locataire et l’ID client pour l’application et générer une clé. L’application Azure AD est l’application ou le service à partir duquel vous allez appeler l’API d’analyse du Windows Store. Vous avez besoin de l’ID de locataire, de l’ID client et de la clé pour obtenir le jeton d’accès Azure AD à transmettre à l’API.
 
-  >**Remarque**  Vous n’avez besoin d’effectuer cette tâche qu’une seule fois. Une fois que vous avez l’ID de locataire, l’ID client et la clé à disposition, vous pouvez les réutiliser chaque fois que vous avez besoin de créer un nouveau jeton d’accès Azure AD.
+  >**Remarque**&nbsp;&nbsp;Vous n’avez besoin d’effectuer cette tâche qu’une seule fois. Une fois que vous avez l’ID de locataire, l’ID client et la clé à disposition, vous pouvez les réutiliser chaque fois que vous avez besoin de créer un nouveau jeton d’accès Azure AD.
 
 Pour associer une application Azure AD à votre compte du Centre de développement Windows et récupérer les valeurs nécessaires :
 
@@ -48,7 +48,7 @@ Avant d’appeler l’une des méthodes dans l’API d’analyse du Windows Stor
 Pour obtenir le jeton d’accès, suivez les instructions présentées dans l’article [Appels de service à service à l’aide des informations d’identification du client](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-service-to-service/) pour envoyer une requête HTTP POST au point de terminaison ```https://login.microsoftonline.com/<tenant_id>/oauth2/token```. Voici un exemple de requête.
 
 ```
-POST https://login.microsoftonline.com/<your_tenant_id>/oauth2/token HTTP/1.1
+POST https://login.microsoftonline.com/<tenant_id>/oauth2/token HTTP/1.1
 Host: login.microsoftonline.com
 Content-Type: application/x-www-form-urlencoded; charset=utf-8
 
@@ -58,7 +58,7 @@ grant_type=client_credentials
 &resource=https://manage.devcenter.microsoft.com
 ```
 
-Pour les paramètres *tenant\_id*, *client\_id* et *client\_secret*, spécifiez l’ID de locataire, l’ID client et la clé pour votre application que vous avez récupérés à partir du Centre de développement à l’étape précédente. Pour le paramètre *resource*, vous devez spécifier l’URI ```https://manage.devcenter.microsoft.com```.
+Pour la valeur *tenant\_id* dans l’URI POST et les paramètres *client\_id* et *client\_secret*, spécifiez l’ID de locataire, l’ID client et la clé pour votre application que vous avez récupérés à partir du Centre de développement à l’étape précédente. Pour le paramètre *resource*, vous devez spécifier ```https://manage.devcenter.microsoft.com```.
 
 Une fois votre jeton d’accès arrivé à expiration, vous pouvez l’actualiser en suivant les instructions fournies [ici](https://azure.microsoft.com/documentation/articles/active-directory-protocols-oauth-code/#refreshing-the-access-tokens).
 
@@ -79,135 +79,12 @@ Une fois que vous disposez d’un jeton d’accès Azure AD, vous pouvez appeler
 
 ## <a name="code-example"></a>Exemple de code
 
-
 L’exemple de code suivant montre comment obtenir un jeton d’accès Azure AD et appeler l’API d’analyse du Windows Store à partir d’une application de console C#. Pour utiliser cet exemple de code, affectez les variables *tenantId*, *clientId*, *clientSecret*, et *appID* aux valeurs appropriées pour votre scénario. Cet exemple requiert le [package Json.NET](http://www.newtonsoft.com/json) de Newtonsoft afin de désérialiser les données JSON renvoyées par l’API d’analyse du Windows Store.
 
-```CSharp
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TestAnalyticsAPI
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            string tenantId = "<your tenant ID>";
-            string clientId = "<your client ID>";
-            string clientSecret = "<your secret>";
-
-            string scope = "https://manage.devcenter.microsoft.com";
-
-            // Retrieve an Azure AD access token
-            string accessToken = GetClientCredentialAccessToken(
-                    tenantId,
-                    clientId,
-                    clientSecret,
-                    scope).Result;
-
-            // This is your app's Store ID. This ID is available on
-            // the App identity page of the Dev Center dashboard.
-            string appID = "<your app's Store ID>";
-
-            DateTime startDate = DateTime.Parse("08-01-2015");
-            DateTime endDate = DateTime.Parse("11-01-2015");
-            int pageSize = 1000;
-            int startPageIndex = 0;
-
-            // Call the Windows Store analytics API
-            CallAnalyticsAPI(accessToken, appID, startDate, endDate, pageSize, startPageIndex);
-
-            Console.Read();
-        }
-
-        private static void CallAnalyticsAPI(string accessToken, string appID, DateTime startDate, DateTime endDate, int top, int skip)
-        {
-            string requestURI;
-
-            // Get app acquisitions
-            requestURI = string.Format(
-                "https://manage.devcenter.microsoft.com/v1.0/my/analytics/appacquisitions?applicationId={0}&startDate={1}&endDate={2}&top={3}&skip={4}",
-                appID, startDate, endDate, top, skip);
-
-            //// Get add-on acquisitions
-            //requestURI = string.Format(
-            //    "https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappacquisitions?applicationId={0}&startDate={1}&endDate={2}&top={3}&skip={4}",
-            //    appID, startDate, endDate, top, skip);
-
-            //// Get app failures
-            //requestURI = string.Format(
-            //    "https://manage.devcenter.microsoft.com/v1.0/my/analytics/failurehits?applicationId={0}&startDate={1}&endDate={2}&top={3}&skip={4}",
-            //    appID, startDate, endDate, top, skip);
-
-            //// Get app ratings
-            //requestURI = string.Format(
-            //    "https://manage.devcenter.microsoft.com/v1.0/my/analytics/ratings?applicationId={0}&startDate={1}&endDate={2}top={3}&skip={4}",
-            //    appID, startDate, endDate, top, skip);
-
-            //// Get app reviews
-            //requestURI = string.Format(
-            //    "https://manage.devcenter.microsoft.com/v1.0/my/analytics/reviews?applicationId={0}&startDate={1}&endDate={2}&top={3}&skip={4}",
-            //    appID, startDate, endDate, top, skip);
-
-            HttpRequestMessage requestMessage = new HttpRequestMessage(HttpMethod.Get, requestURI);
-            requestMessage.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-
-            WebRequestHandler handler = new WebRequestHandler();
-            HttpClient httpClient = new HttpClient(handler);
-
-            HttpResponseMessage response = httpClient.SendAsync(requestMessage).Result;
-
-            Console.WriteLine(response);
-            Console.WriteLine(response.Content.ReadAsStringAsync().Result);
-
-            response.Dispose();
-        }
-
-        public static async Task<string> GetClientCredentialAccessToken(string tenantId, string clientId, string clientSecret, string scope)
-        {
-            string tokenEndpointFormat = "https://login.microsoftonline.com/{0}/oauth2/token";
-            string tokenEndpoint = string.Format(tokenEndpointFormat, tenantId);
-
-            dynamic result;
-            using (HttpClient client = new HttpClient())
-            {
-                string tokenUrl = tokenEndpoint;
-                using (
-                    HttpRequestMessage request = new HttpRequestMessage(
-                        HttpMethod.Post,
-                        tokenUrl))
-                {
-                    string content =
-                        string.Format(
-                            "grant_type=client_credentials&client_id={0}&client_secret={1}&resource={2}",
-                            clientId,
-                            clientSecret,
-                            scope);
-
-                    request.Content = new StringContent(content, Encoding.UTF8, "application/x-www-form-urlencoded");
-
-                    using (HttpResponseMessage response = await client.SendAsync(request))
-                    {
-                        string responseContent = await response.Content.ReadAsStringAsync();
-                        result = JsonConvert.DeserializeObject(responseContent);
-                    }
-                }
-            }
-
-            return result.access_token;
-        }
-    }
-}
-```
+> [!div class="tabbedCodeSnippets"]
+[!code-cs[AnalyticsApi](./code/StoreServicesExamples_Analytics/cs/Program.cs#AnalyticsApiExample)]
 
 ## <a name="error-responses"></a>Réponses d’erreur
-
 
 L’API d’analyse du Windows Store renvoie les réponses d’erreur dans un objet JSON qui contient des messages et des codes d’erreur. L’exemple suivant montre une réponse d’erreur causée par un paramètre non valide.
 
@@ -245,6 +122,6 @@ L’API d’analyse du Windows Store renvoie les réponses d’erreur dans un ob
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO4-->
 
 

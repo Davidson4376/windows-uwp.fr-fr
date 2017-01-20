@@ -5,27 +5,38 @@ title: "Définir des contraintes de reconnaissance vocale personnalisées"
 ms.assetid: 26289DE5-6AC9-42C3-A160-E522AE62D2FC
 label: Define custom recognition constraints
 template: detail.hbs
+keywords: "voix, vocal, reconnaissance vocale, langage naturel, dictée, saisie, interaction utilisateur"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: d619cd6b3c9f5d62ca7d68f555e4c051abaf9bad
+ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
+ms.openlocfilehash: c75ee725ce4bc9fc33d9ea13e4ab92ed60bfb04d
 
 ---
 
-# Définir des contraintes de reconnaissance vocale personnalisées
+# <a name="define-custom-recognition-constraints"></a>Définir des contraintes de reconnaissance vocale personnalisées
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 Découvrez comment définir et utiliser des contraintes personnalisées pour la reconnaissance vocale.
 
-**API importantes**
-
--   [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)
--   [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)
--   [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)
+<div class="important-apis" >
+<b>API importantes</b><br/>
+<ul>
+<li>[**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)</li>
+<li>[**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)</li>
+<li>[**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)</li>
+</ul>
+</div>
 
 
 La reconnaissance vocale requiert au moins une contrainte pour définir un vocabulaire reconnaissable. Si aucune contrainte n’est spécifiée, la grammaire de dictée prédéfinie des applications Windows universelles est utilisée. Voir [Reconnaissance vocale](speech-recognition.md).
 
 
-## Ajouter des contraintes
+## <a name="add-constraints"></a>Ajouter des contraintes
 
 
 Utilisez la propriété [**SpeechRecognizer.Constraints**](https://msdn.microsoft.com/library/windows/apps/dn653241) pour ajouter des contraintes à un moteur de reconnaissance vocale.
@@ -41,9 +52,9 @@ Chaque moteur de reconnaissance vocale possède sa propre collection de contrain
 -   Une contrainte de sujet unique, ou une grammaire prédéfinie (dictée ou recherche web). Aucune autre contrainte n’est autorisée.
 -   Une combinaison de contraintes de liste et/ou de contraintes de fichier de grammaire.
 
-**Notez bien:**Appelez la méthode [**SpeechRecognizer.CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) pour compiler les contraintes avant de commencer le processus de reconnaissance vocale.
+**Rappel** Appelez la méthode [**SpeechRecognizer.CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) pour compiler les contraintes avant de commencer le processus de reconnaissance vocale.
 
-## Spécifier une grammaire de recherche web (SpeechRecognitionTopicConstraint)
+## <a name="specify-a-web-search-grammar-speechrecognitiontopicconstraint"></a>Spécifier une grammaire de recherche web (SpeechRecognitionTopicConstraint)
 
 
 Les contraintes de sujet (dictée ou grammaire de recherche web) doivent être ajoutées à la collection de contraintes d’un moteur de reconnaissance vocale.
@@ -80,7 +91,7 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## Spécifier une contrainte de liste de programmation (SpeechRecognitionListConstraint)
+## <a name="specify-a-programmatic-list-constraint-speechrecognitionlistconstraint"></a>Spécifier une contrainte de liste de programmation (SpeechRecognitionListConstraint)
 
 
 Les contraintes de liste doivent être ajoutées à la collection de contraintes d’un moteur de reconnaissance vocale.
@@ -120,7 +131,7 @@ private async void YesOrNo_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## Spécifier une contrainte de grammaire SRGS (SpeechRecognitionGrammarFileConstraint)
+## <a name="specify-an-srgs-grammar-constraint-speechrecognitiongrammarfileconstraint"></a>Spécifier une contrainte de grammaire SRGS (SpeechRecognitionGrammarFileConstraint)
 
 
 Les fichiers de grammaire SRGS doivent être ajoutés à la collection de contraintes d’un moteur de reconnaissance vocale.
@@ -140,7 +151,7 @@ Les grammaires SRGS offrent un ensemble complet de fonctionnalités pour vous ai
 
 Pour plus d’informations sur les éléments et les attributs SRGS, voir [Informations de référence XML sur la grammaire SRGS](http://go.microsoft.com/fwlink/p/?LinkID=269886). Pour commencer à créer une grammaire SRGS, voir [Comment créer une grammaire XML de base](http://go.microsoft.com/fwlink/p/?LinkID=269887).
 
-Gardez à l’esprit les points suivants:
+Gardez à l’esprit les points suivants :
 
 -   Vous pouvez ajouter plusieurs contraintes de fichier de grammaire à une collection de contraintes.
 -   Utilisez l’extension de fichier .grxml pour les documents de grammaire XML qui sont conformes aux règles SRGS.
@@ -174,7 +185,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 
 Ce fichier SRGS (srgs.grxml) inclut des balises d’interprétation sémantique. Ces balises fournissent un mécanisme permettant de retourner à votre application les données correspondant à la grammaire. Les grammaires doivent être conformes à la spécification W3C (World Wide Web Consortium) [SISR (Semantic Interpretation for Speech Recognition) 1.0](http://go.microsoft.com/fwlink/p/?LinkID=201765).
 
-Ici, nous écoutons des variantes de «yes» et «no».
+Ici, nous écoutons des variantes de « yes » et « no ».
 
 ```CSharp
 <grammar xml:lang="en-US" 
@@ -211,7 +222,7 @@ Ici, nous écoutons des variantes de «yes» et «no».
 </grammar>
 ```
 
-## Gérer les contraintes
+## <a name="manage-constraints"></a>Gérer les contraintes
 
 
 Quand une collection de contraintes est chargée pour la reconnaissance vocale, votre application peut gérer les contraintes qui sont activées pour les opérations de reconnaissance vocale en affectant à la propriété [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402) d’une contrainte la valeur **true** ou **false**. Le paramètre par défaut est **true**.
@@ -224,7 +235,7 @@ Déterminez les contraintes à activer en fonction des expressions susceptibles 
 
 Pour informer l’utilisateur des expressions qu’il peut énoncer, utilisez les propriétés [**SpeechRecognizerUIOptions.AudiblePrompt**](https://msdn.microsoft.com/library/windows/apps/dn653235) et [**SpeechRecognizerUIOptions.ExampleText**](https://msdn.microsoft.com/library/windows/apps/dn653236), que vous définissez à l’aide de la propriété [**SpeechRecognizer.UIOptions**](https://msdn.microsoft.com/library/windows/apps/dn653254). En informant les utilisateurs de ce qu’ils peuvent dire pendant l’opération de reconnaissance vocale, ils seront plus à même de prononcer une expression qui pourra être associée à une contrainte active.
 
-## Articles connexes
+## <a name="related-articles"></a>Articles connexes
 
 
 * [Interactions vocales](speech-interactions.md)
@@ -241,6 +252,6 @@ Pour informer l’utilisateur des expressions qu’il peut énoncer, utilisez le
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO3-->
 
 

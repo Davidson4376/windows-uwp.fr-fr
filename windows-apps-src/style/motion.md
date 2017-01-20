@@ -6,31 +6,33 @@ ms.assetid: 21AA1335-765E-433A-85D8-560B340AE966
 label: Motion
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: d7236006f2c620a4ff0de4e0f413f32a2eaf5687
-ms.openlocfilehash: 1cdbb81c783d17af16743a4ff5f82dc1c92df6b4
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 53b6108a472e021caa0d11327c1457b3f6ca8aac
 
 ---
 
-# Animations pour les applications UWP
+# <a name="motion-for-uwp-apps"></a>Animations pour les applications UWP
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 Avec des animations utiles et bien faites, vos applications prennent vie et donnent l’impression d’un travail soigné. Elles permettent aux utilisateurs de comprendre les changements de contexte et assure l’homogénéité des expériences par des transitions visuelles.
 
-## Avantages de l’animation
+## <a name="benefits-of-animation"></a>Avantages de l’animation
 
 
 Une animation ne consiste pas simplement à faire bouger des objets. L’animation est un outil qui permet de créer un écosystème physique dans lequel l’utilisateur peut évoluer et qu’il peut manipuler de façon tactile. La qualité de l’expérience dépend de la façon dont l’application répond à l’utilisateur et du type de personnalité communiqué par l’interface utilisateur.
 
-Assurez-vous que l’animation a une fonction spécifique dans votre application. Les meilleures applications de plateforme Windows universelle (UWP) utilisent l’animation pour donner vie à l’interface utilisateur. Une animation doit:
+Assurez-vous que l’animation a une fonction spécifique dans votre application. Les meilleures applications de plateforme Windows universelle (UWP) utilisent l’animation pour donner vie à l’interface utilisateur. Une animation doit :
 
--   fournir un retour d’informations basé sur le comportement de l’utilisateur;
--   enseigner à l’utilisateur comment interagir avec l’interface utilisateur;
+-   fournir un retour d’informations basé sur le comportement de l’utilisateur ;
+-   enseigner à l’utilisateur comment interagir avec l’interface utilisateur ;
 -   indiquer comment accéder aux vues précédentes ou suivantes.
 
-Plus un utilisateur passe de temps dans votre application (ou plus les tâches deviennent sophistiquées), plus la qualité de l’animation devient importante: elle permet de modifier la façon dont l’utilisateur perçoit la charge cognitive et la simplicité d’utilisation de votre application. Une animation présente de nombreux autres avantages directs:
+Plus un utilisateur passe de temps dans votre application (ou plus les tâches deviennent sophistiquées), plus la qualité de l’animation devient importante : elle permet de modifier la façon dont l’utilisateur perçoit la charge cognitive et la simplicité d’utilisation de votre application. Une animation présente de nombreux autres avantages directs :
 
 -   **l’animation ajoute des conseils concernant l’interaction.**
 
-    L’animation est directionnelle: elle permet de se déplacer vers l’avant ou en arrière, dans ou hors du contenu, laissant un minimum de traces quant à la façon dont l’utilisateur est parvenu jusqu’à la vue active.
+    L’animation est directionnelle : elle permet de se déplacer vers l’avant ou en arrière, dans ou hors du contenu, laissant un minimum de traces quant à la façon dont l’utilisateur est parvenu jusqu’à la vue active.
 
 -   **L’animation peut donner l’impression de performances accrues.**
 
@@ -48,15 +50,13 @@ Plus un utilisateur passe de temps dans votre application (ou plus les tâches d
 
     Les animations peuvent permettre d’indiquer à l’utilisateur que son téléphone n’est pas figé et qu’il traite actuellement une opération, et elles peuvent exposer de manière passive de nouvelles informations susceptibles d’intéresser l’utilisateur.
 
-## Dans cette section
+<h2>Dans cette section</h2>
+
 <table>
-<thead>
-<tr class="header">
+<tr>
 <th align="left">Type d’animation</th>
 <th align="left">Description</th>
 </tr>
-</thead>
-<tbody>
     <tr>
         <td>[Ajouter et supprimer](motion-list.md)
         </td>
@@ -99,8 +99,6 @@ Plus un utilisateur passe de temps dans votre application (ou plus les tâches d
         <td>Déplacez les éléments à un nouvel emplacement.
         </td>
     </tr>
-
-</tbody>
 </table>
 
  
@@ -111,6 +109,6 @@ Plus un utilisateur passe de temps dans votre application (ou plus les tâches d
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

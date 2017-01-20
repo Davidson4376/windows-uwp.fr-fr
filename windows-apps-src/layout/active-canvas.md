@@ -1,20 +1,21 @@
 ---
 author: Jwmsft
-Description: "Modèle avec zones de contenu et de commande destiné aux apps à affichage unique ou aux expériences modales (ex.&#58; visionneuses de photos/documents ou autres apps utilisant un affichage à défilement libre)."
+Description: "Modèle avec zones de contenu et de commande destiné aux apps à affichage unique ou aux expériences modales (ex. &#58; visionneuses de photos/documents ou autres apps utilisant un affichage à défilement libre)."
 title: "Modèle de disposition avec Canvas actif"
 ms.assetid: 4D768472-64D6-406C-9E87-F750F6B981A0
 label: TBD
 template: detail.hbs
+op-migration-status: ready
 translationtype: Human Translation
-ms.sourcegitcommit: ef71196ba0aefd4428daae70c54bcc9cbeaa56a2
-ms.openlocfilehash: 2c4bb601e1657bad8d1acad49f0591658b5b1d77
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: b38d7664a8a874743c5307e44e81104ce512454e
 
 ---
-# Modèle de disposition avec Canvas actif
+# <a name="active-canvas-layout-pattern"></a>Modèle de disposition avec Canvas actif
 
 Un Canvas actif est un modèle avec une zone de contenu et une zone de commande. Il est destiné aux applications à affichage unique ou aux expériences modales, telles que les éditeurs/visionneuses de photos, les visionneuses de documents, les applications cartographiques, les applications de dessin ou les autres applications qui utilisent un affichage à défilement libre. Pour entreprendre des actions, un Canvas actif peut être associé à une barre de commandes ou simplement à des boutons, selon le nombre et le type d’action dont vous avez besoin.
 
-## Exemples
+## <a name="examples"></a>Exemples
 
 Cette conception d’application de retouche photo présente un modèle de Canvas actif, avec un exemple mobile à gauche et un exemple de bureau à droite. La surface de retouche d’image est un Canvas et la barre de commandes située en bas de l’écran contient toutes les actions contextuelles pour l’application.
 
@@ -25,7 +26,7 @@ Cette conception d’une application de carte métro utilise un Canvas actif dot
 ![Exemple d’application cartographique utilisant un modèle de Canvas actif](images/uap-subway-pc-phone-700.png)
 
 
-## Implémentation de ce modèle
+## <a name="implementing-this-pattern"></a>Implémentation de ce modèle
 
 Un modèle de Canvas actif comporte une zone de contenu et une zone de commande.
 
@@ -35,12 +36,12 @@ Un modèle de Canvas actif comporte une zone de contenu et une zone de commande.
 
 
 
-## Articles connexes
+## <a name="related-articles"></a>Articles connexes
 
 -   [**Barre de l’application et barre de commandes**](../controls-and-patterns/app-bars.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

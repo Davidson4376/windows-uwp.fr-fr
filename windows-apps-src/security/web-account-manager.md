@@ -1,19 +1,19 @@
 ---
 title: "Connexion à un fournisseur d’identité avec Gestionnaire de compte web"
-description: "Cet article explique comment utiliser la classe AccountsSettingsPane pour connecter votre application de plateforme Windows universelle (UWP) à des fournisseurs d’identité externes, tels que Microsoft ou Facebook, à l’aide des nouvelles API du Gestionnaire de comptes web de Windows10."
+description: "Cet article explique comment utiliser la classe AccountsSettingsPane pour connecter votre application de plateforme Windows universelle (UWP) à des fournisseurs d’identité externes, tels que Microsoft ou Facebook, à l’aide des nouvelles API du Gestionnaire de comptes web de Windows 10."
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: e16977a9a11b292ea9624ff421aa964c11d615be
-ms.openlocfilehash: d234811b395790a35ad50dea9ef4cc56d60458e8
+ms.sourcegitcommit: 0aef3cc9a3312a647197d8b2a7b815ed42d54fa3
+ms.openlocfilehash: 10851432b6e28934ab60041d23a5cf319671f704
 
 ---
-# Connexion à un fournisseur d’identité avec Gestionnaire de compte web
+# <a name="connect-to-identity-providers-with-web-account-manager"></a>Connexion à un fournisseur d’identité avec Gestionnaire de compte web
 
-Cet article explique comment afficher la classe AccountsSettingsPane et connecter votre application de plateforme Windows universelle (UWP) à des fournisseurs d’identité externes, tels que Microsoft ou Facebook, à l’aide des nouvelles API du Gestionnaire de comptes web de Windows10. Vous découvrirez comment demander l’autorisation d’un utilisateur pour utiliser son compte Microsoft, obtenir un jeton d’accès et l’utiliser pour effectuer des opérations de base (par exemple, obtenir des données de profil ou télécharger des fichiers dans OneDrive). Pour obtenir l’autorisation et l’accès utilisateur, les étapes sont similaires quel que soit le fournisseur d’identité, à condition qu’il prenne en charge le Gestionnaire de compte web.
+Cet article explique comment afficher la classe AccountsSettingsPane et connecter votre application de plateforme Windows universelle (UWP) à des fournisseurs d’identité externes, tels que Microsoft ou Facebook, à l’aide des nouvelles API du Gestionnaire de comptes web de Windows 10. Vous découvrirez comment demander l’autorisation d’un utilisateur pour utiliser son compte Microsoft, obtenir un jeton d’accès et l’utiliser pour effectuer des opérations de base (par exemple, obtenir des données de profil ou télécharger des fichiers dans OneDrive). Pour obtenir l’autorisation et l’accès utilisateur, les étapes sont similaires quel que soit le fournisseur d’identité, à condition qu’il prenne en charge le Gestionnaire de compte web.
 
-> Remarque: pour obtenir un exemple du code complet, voir l’[exemple WebAccountManagement sur GitHub](http://go.microsoft.com/fwlink/p/?LinkId=620621).
+> Remarque : pour obtenir un exemple du code complet, voir l’[exemple WebAccountManagement sur GitHub](http://go.microsoft.com/fwlink/p/?LinkId=620621).
 
-## Préparation
+## <a name="get-set-up"></a>Préparation
 
 Pour commencer, créez une nouvelle application vierge dans Visual Studio. 
 
@@ -29,7 +29,7 @@ Enfin, créez une interface utilisateur très simple constituée d’un bouton X
 </StackPanel>
 ```
 
-Reliez un gestionnaire d’événements à votre bouton dans le code-behind:
+Reliez un gestionnaire d’événements à votre bouton dans le code-behind :
 
 ```C#
 private void LoginButton_Click(object sender, RoutedEventArgs e)
@@ -37,7 +37,7 @@ private void LoginButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Pour finir, ajoutez les espaces de noms suivants afin de ne pas avoir à vous soucier ultérieurement des problèmes de référence: 
+Pour finir, ajoutez les espaces de noms suivants afin de ne pas avoir à vous soucier ultérieurement des problèmes de référence : 
 
 ```C#
 using System;
@@ -51,9 +51,9 @@ using Windows.UI.Xaml.Navigation;
 using Windows.Web.Http;
 ```
 
-## Afficher le AccountSettingsPane
+## <a name="show-the-accountsettingspane"></a>Afficher le AccountSettingsPane
 
-Le système fournit une interface utilisateur intégrée permettant de gérer les fournisseurs d’identité et les comptes web, appelée AccountSettingsPane. Vous pouvez l’afficher comme suit:
+Le système fournit une interface utilisateur intégrée permettant de gérer les fournisseurs d’identité et les comptes web, appelée AccountSettingsPane. Vous pouvez l’afficher comme suit :
 
 ```C#
 private void LoginButton_Click(object sender, RoutedEventArgs e)
@@ -62,17 +62,17 @@ private void LoginButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Si vous exécutez votre application et cliquez sur le bouton «Se connecter», elle affiche une fenêtre vide. 
+Si vous exécutez votre application et cliquez sur le bouton « Se connecter », elle affiche une fenêtre vide. 
 
 ![Volet Paramètres du compte](images/tb-1.png)
 
 Le volet est vide, car le système propose uniquement un interpréteur de commandes de l’interface utilisateur. Il revient au développeur de programmer le remplissage du volet avec les fournisseurs d’identité. 
 
-## S’inscrire à AccountCommandsRequested
+## <a name="register-for-accountcommandsrequested"></a>S’inscrire à AccountCommandsRequested
 
 Pour ajouter des commandes au volet, il faut tout d’abord s’inscrire au gestionnaire d’événements AccountCommandsRequested. Cela indique au système d’exécuter notre logique de build lorsque l’utilisateur demande à afficher le volet (par exemple, en cliquant sur notre bouton XAML). 
 
-Dans votre code-behind, remplacez les événements OnNavigatedTo et OnNavigatedFrom et ajoutez-y le code suivant: 
+Dans votre code-behind, remplacez les événements OnNavigatedTo et OnNavigatedFrom et ajoutez-y le code suivant : 
 
 ```C#
 protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -88,9 +88,9 @@ protected override void OnNavigatedFrom(NavigationEventArgs e)
 }
 ```
 
-Les utilisateurs n’interagissent pas très souvent avec les comptes, ce qui signifie qu’en procédant ainsi pour l’inscription et la désinscription de votre gestionnaire d’événements, vous évitez les fuites de mémoire. De cette façon, votre volet personnalisé est uniquement en mémoire lorsqu’il y a de grandes chances qu’un utilisateur le demande (parce qu’il est sur une page «Paramètres» ou «Connexion», par exemple). 
+Les utilisateurs n’interagissent pas très souvent avec les comptes, ce qui signifie qu’en procédant ainsi pour l’inscription et la désinscription de votre gestionnaire d’événements, vous évitez les fuites de mémoire. De cette façon, votre volet personnalisé est uniquement en mémoire lorsqu’il y a de grandes chances qu’un utilisateur le demande (parce qu’il est sur une page « Paramètres » ou « Connexion », par exemple). 
 
-## Conception du volet Paramètres du compte
+## <a name="build-the-account-settings-pane"></a>Conception du volet Paramètres du compte
 
 La méthode BuildPaneAsync est appelée chaque fois que le volet AccountSettingsPane s’affiche. C’est ici que nous allons enregistrer le code nécessaire à la personnalisation des commandes affichées dans le volet. 
 
@@ -106,7 +106,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s,
 }
 ```
 
-Ensuite, obtenez un fournisseur à l’aide de la méthode WebAuthenticationCoreManager.FindAccountProviderAsync. L’URL du fournisseur varie en fonction du fournisseur et figure dans la documentation correspondante. Pour Microsoft Accounts et Azure Active Directory, il s’agit de «https://login.microsoft.com». 
+Ensuite, obtenez un fournisseur à l’aide de la méthode WebAuthenticationCoreManager.FindAccountProviderAsync. L’URL du fournisseur varie en fonction du fournisseur et figure dans la documentation correspondante. Pour Microsoft Accounts et Azure Active Directory, il s’agit de « https://login.microsoft.com ». 
 
 ```C#
 private async void BuildPaneAsync(AccountsSettingsPane s,
@@ -121,9 +121,9 @@ private async void BuildPaneAsync(AccountsSettingsPane s,
 }
 ```
 
-Notez que nous passons également la chaîne «consumers» au paramètre facultatif *authority*. En effet, Microsoft fournit deux types d’authentification: les comptes Microsoft (MSA) pour les «consommateurs» et Azure Active Directory (AAD) pour les «entreprises». Le paramètre «consumers» indique que nous voulons l’option MSA. Si vous développez une application d’entreprise, utilisez la chaîne «organizations» à la place.
+Notez que nous passons également la chaîne « consumers » au paramètre facultatif *authority*. En effet, Microsoft fournit deux types d’authentification : les comptes Microsoft (MSA) pour les « consommateurs » et Azure Active Directory (AAD) pour les « entreprises ». Le paramètre « consumers » indique que nous voulons l’option MSA. Si vous développez une application d’entreprise, utilisez la chaîne « organizations » à la place.
 
-Enfin, ajoutez le fournisseur à la classe AccountsSettingsPane en créant une nouvelle commande WebAccountProviderCommand comme suit: 
+Enfin, ajoutez le fournisseur à la classe AccountsSettingsPane en créant une nouvelle commande WebAccountProviderCommand comme suit : 
 
 ```C#
 private async void BuildPaneAsync(AccountsSettingsPane s,
@@ -144,15 +144,15 @@ private async void BuildPaneAsync(AccountsSettingsPane s,
 
 Notez que la méthode GetMsaToken que nous avons passé à notre nouvelle commande WebAccountProviderCommand n’existe pas encore (nous allons la créer à l’étape suivante). Par conséquent, n’hésitez pas à l’ajouter en tant que méthode vide pour le moment.
 
-Exécutez le code ci-dessus pour que votre volet ressemble à ceci: 
+Exécutez le code ci-dessus pour que votre volet ressemble à ceci : 
 
 ![Volet Paramètres du compte](images/tb-2.png)
 
-### Demander un jeton
+### <a name="request-a-token"></a>Demander un jeton
 
 Une fois que l’option Compte Microsoft s’affiche dans le volet AccountsSettingsPane, nous devons gérer ce qui se produit lorsque l’utilisateur la sélectionne. Nous avons enregistré notre méthode GetMsaToken afin qu’elle se déclenche quand l’utilisateur choisit d’ouvrir une session avec son compte Microsoft. C’est donc ainsi que nous allons obtenir le jeton. 
 
-Pour obtenir un jeton, utilisez la méthode RequestTokenAsync comme suit: 
+Pour obtenir un jeton, utilisez la méthode RequestTokenAsync comme suit : 
 
 ```C#
 private async void GetMsaTokenAsync(WebAccountProviderCommand command)
@@ -162,14 +162,14 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 }
 ```
 
-Dans cet exemple, nous passons la chaîne «wl.basic» au paramètre d’étendue. L’étendue représente le type d’informations concernant un utilisateur spécifique que vous demandez au service fournisseur. Certaines étendues donnent uniquement accès aux informations de base sur un utilisateur, comme son nom ou son adresse e-mail. D’autres peuvent donner accès à des informations sensibles, telles que des les photos ou la boîte de réception de l’utilisateur. En règle générale, votre application doit utiliser l’étendue la moins permissive, à moins que notre application nécessite explicitement une autorisation supplémentaire: par exemple, ne demandez pas l’accès aux informations sensibles si votre application n’en a pas absolument besoin. 
+Dans cet exemple, nous passons la chaîne « wl.basic » au paramètre d’étendue. L’étendue représente le type d’informations concernant un utilisateur spécifique que vous demandez au service fournisseur. Certaines étendues donnent uniquement accès aux informations de base sur un utilisateur, comme son nom ou son adresse e-mail. D’autres peuvent donner accès à des informations sensibles, telles que des les photos ou la boîte de réception de l’utilisateur. En règle générale, votre application doit utiliser l’étendue la moins permissive, à moins que notre application nécessite explicitement une autorisation supplémentaire : par exemple, ne demandez pas l’accès aux informations sensibles si votre application n’en a pas absolument besoin. 
 
 Les fournisseurs de services proposeront une documentation dans laquelle les étendues devront être spécifiées pour obtenir des jetons à utiliser avec leurs services. 
 
-* Pour les étendues Office365 et Outlook.com, voir (Authentification des API Office365 et Outlook.com à l’aide du point de terminaison d’authentification v2.0) [https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2]. 
-* Pour OneDrive, voir (Authentification et connexion OneDrive) [https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes]. 
+* Pour les étendues Office 365 et Outlook.com, consultez [Authentification des API Office 365 et Outlook.com à l’aide du point de terminaison d’authentification v2.0](https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2). 
+* Pour OneDrive, consultez [Authentification et connexion OneDrive](https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes). 
 
-Si vous développez une application d’entreprise, vous souhaiterez probablement vous connecter à une instance Azure Active Directory (AAD) et utiliser l’API Microsoft Graph plutôt que les services MSA classiques. Dans ce cas, utilisez le code suivant: 
+Si vous développez une application d’entreprise, vous souhaiterez probablement vous connecter à une instance Azure Active Directory (AAD) et utiliser l’API Microsoft Graph plutôt que les services MSA classiques. Dans ce cas, utilisez le code suivant : 
 
 ```C#
 private async void GetAadTokenAsync(WebAccountProviderCommand command)
@@ -183,7 +183,7 @@ private async void GetAadTokenAsync(WebAccountProviderCommand command)
 
 Le reste de cet article décrit la suite du scénario MSA, mais le code pour AAD est très similaire. Pour plus d’informations sur AAD/Microsoft Graph, notamment un exemple complet sur GitHub, voir la [documentation Microsoft Graph](https://graph.microsoft.io/docs/platform/get-started).
 
-## Utiliser le jeton
+## <a name="use-the-token"></a>Utiliser le jeton
 
 La méthode RequestTokenAsync renvoie un objet WebTokenRequestResult, qui contient les résultats de votre demande. Si votre demande a abouti, elle contiendra un jeton.  
 
@@ -200,7 +200,7 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 }
 ```
 
-> Remarque: si une erreur est générée lors de la demande d’un jeton, vérifiez que vous avez bien associé votre application à WindowsStore, comme décrit à l’étape1. Votre application ne pourra pas obtenir de jeton si vous avez ignoré cette étape. 
+> Remarque : si une erreur est générée lors de la demande d’un jeton, vérifiez que vous avez bien associé votre application à Windows Store, comme décrit à l’étape 1. Votre application ne pourra pas obtenir de jeton si vous avez ignoré cette étape. 
 
 Une fois le jeton en votre possession, vous pouvez l’utiliser pour appeler les API de votre fournisseur. Dans le code ci-dessous, nous allons appeler les API Microsoft Live pour obtenir des informations de base relatives à l’utilisateur et les afficher dans notre interface utilisateur. 
 
@@ -232,13 +232,13 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 }
 ```
 
-La méthode utilisée pour appeler les différentes API REST varie d’un fournisseur à l’autre; voir la documentation sur les API du fournisseur pour plus d’informations sur l’utilisation de votre jeton. 
+La méthode utilisée pour appeler les différentes API REST varie d’un fournisseur à l’autre ; voir la documentation sur les API du fournisseur pour plus d’informations sur l’utilisation de votre jeton. 
 
-## Enregistrer l’état du compte
+## <a name="save-account-state"></a>Enregistrer l’état du compte
 
-Les jetons sont utiles pour obtenir immédiatement des informations relatives à un utilisateur, mais leur durée de validité est généralement très variable: les jetons MSA, par exemple, ne sont valides que pendant quelques heures. Heureusement, vous n’avez pas besoin d’afficher de nouveau le volet AccountsSettingsPane chaque fois qu’un jeton arrive à expiration. Lorsqu’un utilisateur a autorisé une fois votre application, vous pouvez stocker les informations de compte de l’utilisateur pour une utilisation future. 
+Les jetons sont utiles pour obtenir immédiatement des informations relatives à un utilisateur, mais leur durée de validité est généralement très variable : les jetons MSA, par exemple, ne sont valides que pendant quelques heures. Heureusement, vous n’avez pas besoin d’afficher de nouveau le volet AccountsSettingsPane chaque fois qu’un jeton arrive à expiration. Lorsqu’un utilisateur a autorisé une fois votre application, vous pouvez stocker les informations de compte de l’utilisateur pour une utilisation future. 
 
-Pour ce faire, utilisez la classe WebAccount. Une classe WebAccount est renvoyée avec la demande de jeton:
+Pour ce faire, utilisez la classe WebAccount. Une classe WebAccount est renvoyée avec la demande de jeton :
 
 ```C#
 private async void GetMsaTokenAsync(WebAccountProviderCommand command)
@@ -253,7 +253,7 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 }
 ```
 
-Une fois que vous disposez d’une classe WebAccount, vous pouvez la stocker facilement. Dans l’exemple suivant, nous utilisons LocalSettings: 
+Une fois que vous disposez d’une classe WebAccount, vous pouvez la stocker facilement. Dans l’exemple suivant, nous utilisons LocalSettings : 
 
 ```C#
 private async void StoreWebAccount(WebAccount account)
@@ -263,7 +263,7 @@ private async void StoreWebAccount(WebAccount account)
 }
 ```
 
-Vous pouvez tenter d’obtenir un jeton silencieusement (en arrière-plan) au prochain démarrage de l’application par l’utilisateur en procédant comme suit: 
+Vous pouvez tenter d’obtenir un jeton silencieusement (en arrière-plan) au prochain démarrage de l’application par l’utilisateur en procédant comme suit : 
 
 ```C#
 private async Task<string> GetTokenSilentlyAsync()
@@ -304,7 +304,7 @@ Dans la mesure où il est très simple d’obtenir un jeton silencieusement, nou
 
 Notez que l’exemple ci-dessus couvre uniquement les cas d’échec et de réussite de base. Votre application doit également prendre en compte des scénarios plus inhabituels, comme un utilisateur qui révoque l’autorisation de votre application ou qui supprimer son compte de Windows, par exemple, et les gérer de manière fluide.  
 
-## Se déconnecter d’un compte 
+## <a name="log-out-an-account"></a>Se déconnecter d’un compte 
 
 Si vous conservez une classe WebAccount, vous voudrez peut-être fournir une fonctionnalité de déconnexion à vos utilisateurs afin qu’ils puissent jongler entre plusieurs comptes ou simplement dissocier leur compte de votre application. Pour ce faire, commencez par supprimer les comptes enregistrés et les informations sur le fournisseur. Appelez ensuite WebAccount.SignOutAsync() pour vider le cache et invalider des jetons existants dont votre application dispose. 
 
@@ -317,9 +317,9 @@ private async Task SignOutAccountAsync(WebAccount account)
 }
 ```
 
-## Ajouter des fournisseurs qui ne prennent pas en charge WebAccountManager
+## <a name="add-providers-that-dont-support-webaccountmanager"></a>Ajouter des fournisseurs qui ne prennent pas en charge WebAccountManager
 
-Si vous souhaitez intégrer l’authentification à votre application à partir d’un service qui ne prend pas en charge WebAccountManager (Google+ ou Twitter, par exemple), vous pouvez ajouter manuellement ce fournisseur à la classe AccountsSettingsPane. Pour ce faire, créez un nouvel objet WebAccountProvider avec vos propres nom et icône .png, puis ajoutez-le à WebAccountProviderCommands. Voici le code stub: 
+Si vous souhaitez intégrer l’authentification à votre application à partir d’un service qui ne prend pas en charge WebAccountManager (Google+ ou Twitter, par exemple), vous pouvez ajouter manuellement ce fournisseur à la classe AccountsSettingsPane. Pour ce faire, créez un nouvel objet WebAccountProvider avec vos propres nom et icône .png, puis ajoutez-le à WebAccountProviderCommands. Voici le code stub : 
 
  ```C#
 private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCommandsRequestedEventArgs e)
@@ -342,9 +342,9 @@ private async void GetTwitterTokenAsync(WebAccountProviderCommand command)
 
 Notez que cette action ajoute uniquement une icône au volet AccountsSettingsPane et exécute la méthode que vous indiquez en cas de clic sur l’icône (GetTwitterTokenAsync, dans le cas présent). Vous devez fournir le code qui gère l’authentification réelle. Pour plus d’informations, voir (Service Broker d’authentification Web)[web-authentication-broker], qui fournit des méthodes d’assistance pour l’authentification à l’aide des services REST. 
 
-## Ajouter un en-tête personnalisé
+## <a name="add-a-custom-header"></a>Ajouter un en-tête personnalisé
 
-Vous pouvez personnaliser le volet Paramètres du compte à l’aide de la propriété HeaderText, comme ceci: 
+Vous pouvez personnaliser le volet Paramètres du compte à l’aide de la propriété HeaderText, comme ceci : 
 
 ```C#
 private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCommandsRequestedEventArgs e)
@@ -359,13 +359,13 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 ![Volet Paramètres du compte](images/tb-3.png)
 
-Ne développez pas trop le texte de l’en-tête; il doit rester bref et concis. Si votre processus de connexion est compliqué et que vous avez besoin d’afficher plus d’informations, renvoyez l’utilisateur à une page distincte à l’aide d’un lien personnalisé. 
+Ne développez pas trop le texte de l’en-tête ; il doit rester bref et concis. Si votre processus de connexion est compliqué et que vous avez besoin d’afficher plus d’informations, renvoyez l’utilisateur à une page distincte à l’aide d’un lien personnalisé. 
 
-## Ajouter des liens personnalisés
+## <a name="add-custom-links"></a>Ajouter des liens personnalisés
 
 Vous pouvez ajouter des commandes personnalisées à la classe AccountsSettingsPane. Elles apparaissent sous forme de liens sous vos WebAccountProviders pris en charge. Les commandes personnalisées sont parfaites pour les tâches simples sur les comptes d’utilisateurs, telles que l’affichage d’une politique de confidentialité ou l’ouverture d’une page de support pour les utilisateurs rencontrant des difficultés. 
 
-Voici un exemple: 
+Voici un exemple : 
 
 ```C#
 private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCommandsRequestedEventArgs e)
@@ -387,7 +387,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 En théorie, vous pouvez utiliser les commandes de paramètres pour tout. Toutefois, nous vous recommandons d’en limiter l’utilisation aux scénarios intuitifs liés aux comptes, tels que ceux décrits ci-dessus. 
 
-## Voir également
+## <a name="see-also"></a>Voir également
 
 [Espace de noms Windows.Security.Authentication.Web.Core](https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.web.core.aspx)
 
@@ -401,6 +401,6 @@ En théorie, vous pouvez utiliser les commandes de paramètres pour tout. Toutef
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO5-->
 
 

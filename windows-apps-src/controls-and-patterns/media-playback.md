@@ -7,11 +7,11 @@ dev.assetid: AF2F2008-9B53-430C-BBC3-8888F631B0B0
 label: Media player
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 6945708f0d81cd9f2edd363ed193c76601ec5652
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 155f1712beb70d2a1fc93809ddc254e8f6e6f4a2
 
 ---
-# Lecteur multimédia
+# <a name="media-player"></a>Lecteur multimédia
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -22,28 +22,25 @@ Le lecteur multimédia permet d’afficher et d’écouter des fichiers vidéo e
 <div class="important-apis" >
 <b>API importantes</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx"><strong>Classe MediaPlayerElement</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediatransportcontrols"><strong>Classe MediaTransportControls</strong></a></li>
+<li>[**Classe MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx)</li>
+<li>[**Classe MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediatransportcontrols)</li>
 </ul>
-
-</div>
 </div>
 
 
+> **Remarque**&nbsp;&nbsp; **MediaPlayerElement** est uniquement disponible dans Windows 10, version 1607 et ultérieure. Si vous développez une application pour une version antérieure de Windows 10, vous devez utiliser [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) à la place. Toutes les recommandations de cette page s’appliquent à MediaElement également.
 
-> **Remarque**   **MediaPlayerElement** est uniquement disponible dans Windows 10, version 1607 et ultérieure. Si vous développez une application pour une version antérieure de Windows 10, vous devez utiliser [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) à la place. Toutes les recommandations de cette page s’appliquent à MediaElement également.
-
-## Est-ce le contrôle approprié ?
+## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
 Utilisez un lecteur multimédia lorsque vous voulez lire des fichiers audio ou vidéo dans votre application. Pour afficher des collections d’images, utilisez une [vue symétrique](flipview.md).
 
-## Exemples
+## <a name="examples"></a>Exemples
 
 Un lecteur multimédia dans l’application Prise en main de Windows 10.
 
 ![Un élément multimédia dans l’application Prise en main de Windows 10.](images/control-examples/mtc_getstarted_example.png)
 
-## Créer un lecteur multimédia
+## <a name="create-a-media-player"></a>Créer un lecteur multimédia
 Ajoutez du contenu multimédia à votre application en créant un objet [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) en XAML et définissez la [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) sur un [**MediaSource**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.core.mediasource.aspx) qui pointe sur un fichier audio ou vidéo.
 
 Ce code XAML crée un [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) et définit sa propriété [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) sur l’URI d’un fichier vidéo stocké localement dans l’application. **MediaPlayerElement** commence la lecture quand la page se charge. Pour empêcher le démarrage immédiat du contenu multimédia, vous pouvez définir la propriété [**AutoPlay**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.autoplay.aspx) sur **false**.
@@ -65,7 +62,7 @@ Ce code XAML crée un [**MediaPlayerElement**](https://msdn.microsoft.com/librar
                     AreTransportControlsEnabled="True"/>
 ```
 
-### Contrôles de transport multimédia
+### <a name="media-transport-controls"></a>Contrôles de transport multimédia
 [**MediaPlayerElement**] ((https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) intègre des contrôles de transport qui gèrent la lecture, l’arrêt, la mise en pause, le volume, la désactivation du son, la recherche/progression, les sous-titres et la sélection de piste audio. Pour activer ces contrôles, définissez [**AreTransportControlsEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.AreTransportControlsEnabled.aspx) sur **true**. Pour les désactiver, attribuez à **AreTransportControlsEnabled** la valeur **false**. Les contrôles de transport sont représentés par la classe [**MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn831962). Vous pouvez utiliser les contrôles de transport en l’état ou les personnaliser de différentes manières. Pour plus d’informations, voir les informations de référence de la classe [**MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn831962) et la rubrique [Créer des contrôles de transport personnalisés](custom-transport-controls.md).
 
 Les contrôles de transport prennent en charge les dispositions sur une seule et deux lignes. Le premier exemple ci-dessous correspond à une disposition sur une ligne, avec le bouton lecture/pause situé à gauche de la chronologie des médias. Cette disposition est réservée à la lecture multimédia insérée et aux écrans compacts.
@@ -80,13 +77,13 @@ La disposition des contrôles sur deux lignes (voir ci-dessous) est recommandée
 
 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) est automatiquement intégré aux contrôles de transport de média système. Les contrôles de transport de média système sont les contrôles qui s’affichent quand l’utilisateur appuie sur une touche de média matériel, comme les boutons de média d’un clavier. Pour plus d’informations, voir [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677).
 
-> **Remarque**   [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) n’est pas automatiquement intégré au système de contrôles de transport de média, vous devez le connecter vous-même. Pour plus d’informations, voir [Contrôles de transport de média système](https://msdn.microsoft.com/library/windows/apps/mt228338).
+> **Remarque**&nbsp;&nbsp; [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) n’est pas automatiquement intégré au système de contrôles de transport de média, vous devez le connecter vous-même. Pour plus d’informations, voir [Contrôles de transport de média système](https://msdn.microsoft.com/library/windows/apps/mt228338).
 
 
-### Définir la source du média
+### <a name="set-the-media-source"></a>Définir la source du média
 Pour lire des fichiers sur le réseau ou des fichiers incorporés dans l’application, définissez la propriété [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) sur un [**MediaSource**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.core.mediasource.aspx) avec le chemin du fichier.
 
-**Conseil** Pour ouvrir des fichiers à partir d’Internet, vous devez déclarer la fonctionnalité **Internet (Client)** dans le manifeste de votre application (Package.appxmanifest). Pour plus d’informations sur la déclaration des fonctionnalités, voir [Déclarations des fonctionnalités d’application](https://msdn.microsoft.com/library/windows/apps/mt270968).
+**Conseil** Pour ouvrir des fichiers à partir d’Internet, vous devez déclarer la fonctionnalité **Internet (Client)** dans le manifeste de votre application (fichier Package.appxmanifest). Pour plus d’informations sur la déclaration des fonctionnalités, voir [Déclarations des fonctionnalités d’application](https://msdn.microsoft.com/library/windows/apps/mt270968).
 
  
 
@@ -155,7 +152,7 @@ private void LoadEmbeddedAppFile()
 }
 ```
 
-### Ouvrir des fichiers multimédias locaux
+### <a name="open-local-media-files"></a>Ouvrir des fichiers multimédias locaux
 Pour ouvrir des fichiers sur le système local ou à partir de OneDrive, vous pouvez utiliser [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) pour obtenir le fichier et [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) pour définir la source du média, ou vous pouvez accéder par programmation aux dossiers de médias de l’utilisateur.
 
 Si votre application a besoin d’accéder aux dossiers **Musique** ou **Vidéo** sans l’interaction de l’utilisateur, par exemple, si vous énumérez tous les fichiers de musique ou vidéo de la collection de l’utilisateur pour ensuite les afficher dans votre application, vous devez déclarer les fonctionnalités **Music Library** et **Video Library**. Pour plus d’informations, voir [Fichiers et dossiers dans les bibliothèques de musique, d’images et de vidéos](https://msdn.microsoft.com/library/windows/apps/mt188703).
@@ -208,7 +205,7 @@ async private System.Threading.Tasks.Task SetLocalMedia()
 }
 ```
 
-### Définir la source de l’affiche
+### <a name="set-the-poster-source"></a>Définir la source de l’affiche
 La propriété [**PosterSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.PosterSource.aspx) vous permet de fournir à votre [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) une représentation visuelle avant le chargement du média. Un **PosterSource** est une image (par exemple, une capture d’écran ou une affiche de film) qui est affichée à la place du média. Le **PosterSource** est affiché dans les situations suivantes :
 
 -   Quand aucune source valide n’est définie. Par exemple, si la propriété [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) n’est pas définie, si **Source** est définie sur **Null** ou si la source n’est pas valide (comme lorsqu’un événement [**MediaFailed**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.mediafailed.aspx) se produit).
@@ -222,7 +219,7 @@ Voici un [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/app
 <MediaPlayerElement Source="Media/Track1.mp4" PosterSource="Media/AlbumCover.png"/>
 ```
 
-### Maintenir l’écran de l’appareil actif
+### <a name="keep-the-devices-screen-active"></a>Maintenir l’écran de l’appareil actif
 Normalement, un appareil estompe l’affichage (et finit par le désactiver) pour préserver l’autonomie de la batterie quand l’utilisateur s’absente, mais les applications vidéo doivent maintenir l’écran allumé pour que l’utilisateur puisse voir la vidéo. Pour empêcher la désactivation de l’affichage quand aucune action de l’utilisateur n’est détectée (par exemple, quand une application lit une vidéo), vous pouvez appeler [**DisplayRequest.RequestActive**](https://msdn.microsoft.com/library/windows/apps/br241818). La classe [**DisplayRequest**](https://msdn.microsoft.com/library/windows/apps/br241816) vous permet d’indiquer à Windows de laisser activé l’affichage pour permettre à l’utilisateur de voir la vidéo.
 
 Pour économiser l’énergie et prolonger l’autonomie de la batterie, vous devez appeler [**DisplayRequest.RequestRelease**](https://msdn.microsoft.com/library/windows/apps/br241819) pour libérer la demande d’affichage lorsqu’elle n’est plus nécessaire. Windows désactive automatiquement les demandes d’affichage actives de votre application lorsque cette dernière n’est plus à l’écran, et les réactive quand votre application revient au premier plan.
@@ -233,7 +230,7 @@ Voici quelques situations où vous devez libérer la demande d’affichage :
 -   La lecture s’arrête. Par exemple, la lecture de la vidéo ou la présentation est terminée.
 -   Une erreur de lecture s’est produite. Il peut s’agir de problèmes de connectivité réseau ou d’un fichier endommagé.
 
-> **Remarque**   Si [**MediaPlayerElement.IsFullWindow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.IsFullWindow.aspx) a la valeur true et que le contenu multimédia est en cours de lecture, la désactivation de l’affichage est automatiquement empêchée.
+> **Remarque**&nbsp;&nbsp; Si [**MediaPlayerElement.IsFullWindow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.IsFullWindow.aspx) a la valeur true et que le contenu multimédia est en cours de lecture, la désactivation de l’affichage est automatiquement empêchée.
 
 **Pour maintenir l’écran actif**
 
@@ -287,13 +284,13 @@ private DisplayRequest appDisplayRequest = null;
     }
     ```
 
-### Contrôler le lecteur multimédia par programmation
+### <a name="control-the-media-player-programmatically"></a>Contrôler le lecteur multimédia par programmation
 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) propose diverses propriétés, méthodes et événements destinés à contrôler la lecture audio et vidéo par le biais de la propriété [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx). Pour obtenir la liste complète des propriétés, méthodes et événements, voir la page de référence de [**MediaPlayer**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.aspx).
 
-### Scénarios de lecture multimédia avancés
+### <a name="advanced-media-playback-scenarios"></a>Scénarios de lecture multimédia avancés
 Pour les scénarios de lecture multimédia plus complexes, comme la lecture d’une playlist, le basculement entre des langues audio ou la création de pistes de métadonnées personnalisées, définissez le [**MediaPlayerElement.Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) sur un [**MediaPlaybackItem**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplaybackitem.aspx) ou un [**MediaPlaybackList**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplaybacklist.aspx). Voir la page [**Lecture multimédia**](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/media-playback-with-mediasource) dans le centre de développement pour plus d’informations sur l’activation de plusieurs fonctionnalités multimédias avancées.
 
-### Activer le rendu vidéo dans une fenêtre entière
+### <a name="enable-full-window-video-rendering"></a>Activer le rendu vidéo dans une fenêtre entière
 
 Définissez la propriété [**IsFullWindow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.isfullwindow.aspx) pour activer et désactiver le rendu dans une fenêtre entière. Lorsque vous définissez le rendu dans une fenêtre entière par programme dans votre application, vous devez toujours utiliser la propriété **IsFullWindow** au lieu de le faire manuellement. Avec la propriété **IsFullWindow**, vous êtes assuré que les optimisations au niveau du système sont exécutées, ce qui améliore les performances et l’autonomie de la batterie. Si l’affichage du rendu dans une fenêtre entière n’est pas configuré correctement, il se peut que ces optimisations ne soient pas activées.
 
@@ -312,7 +309,7 @@ private void FullWindow_Click(object sender, object e)
 }
 ```
 
-### Redimensionner et étirer une vidéo
+### <a name="resize-and-stretch-video"></a>Redimensionner et étirer une vidéo
 
 Utilisez la propriété [**Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.stretch.aspx) pour modifier la façon dont le contenu vidéo et/ou le [**PosterSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.postersource.aspx) remplit son conteneur. Le redimensionnement et l’étirement de la vidéo dépendent de la valeur de [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br242968). Les états de **Stretch** sont comparables aux réglages du format de l’image de nombreux téléviseurs. Vous pouvez l’accrocher à un bouton et permettre ainsi à l’utilisateur d’effectuer les réglages de son choix.
 
@@ -354,7 +351,7 @@ private void PictureSize_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-### Activer la lecture à faible latence
+### <a name="enable-low-latency-playback"></a>Activer la lecture à faible latence
 
 Définissez la propriété [**RealTimePlayback**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.realtimeplayback.aspx) sur **true** sur un [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.mediaplayer.aspx) pour activer l’élément de lecteur multimédia qui réduit la latence initiale de lecture. Ce mode est essentiel pour les applications de communication bidirectionnelle et peut être appliqué à certains scénarios de jeu. Sachez qu’il consomme plus de ressources et qu’il est moins économique en termes d’énergie.
 
@@ -366,7 +363,7 @@ MediaPlayerElement mp = new MediaPlayerElement();
 mp.MediaPlayer.RealTimePlayback = true;
 ```
 
-## Recommandations
+## <a name="recommendations"></a>Recommandations
 
 Le lecteur multimédia prend en charge les thèmes clairs et sombres, mais un thème sombre offre une meilleure expérience pour la plupart des scénarios de divertissement. L’arrière-plan sombre offre un meilleur contraste, notamment en cas de faible luminosité, et empêche la barre de contrôle de gêner l’affichage.
 
@@ -374,17 +371,17 @@ Quand vous lisez du contenu vidéo, privilégiez un affichage dédié en encoura
 
 Si vous disposez d’une grande surface d’écran ou que vous concevez pour une interface à 3 mètres (« 10-foot experience »), adoptez la disposition sur deux lignes. Cette disposition propose plus d’espace pour les contrôles que la disposition plus compacte sur une ligne, et facilite la navigation à l’aide du boîtier de commande pour une interface à 3 mètres.
 
-> **Remarque**   Consultez l’article [Conception pour Xbox et télévision](../input-and-devices/designing-for-tv.md) pour plus d’informations sur l’optimisation de votre application pour une interface à 3 mètres.
+> **Remarque**&nbsp;&nbsp; Consultez l’article [Conception pour Xbox et télévision](../input-and-devices/designing-for-tv.md) pour plus d’informations sur l’optimisation de votre application pour une interface à 3 mètres.
 
 Les contrôles par défaut ont été optimisés pour la lecture multimédia, toutefois, vous avez la possibilité d’ajouter au lecteur multimédia les options personnalisées dont vous avez besoin afin de fournir la meilleure expérience pour votre application. Consultez [Créer des contrôles de transport personnalisés](custom-transport-controls.md) pour en savoir plus sur l’ajout de contrôles personnalisés.
 
-## Articles connexes
+## <a name="related-articles"></a>Articles connexes
 
 - [Informations de base relatives à la conception des commandes pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/dn958433)
 - [Informations de base relatives à la conception de contenu pour les applications UWP](https://msdn.microsoft.com/library/windows/apps/dn958434)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

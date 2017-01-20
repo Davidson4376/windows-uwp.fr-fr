@@ -6,11 +6,11 @@ ms.assetid: 45C9FE8B-ECA6-44BF-8DDE-7D12ED34A7F7
 label: Master/details
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: f0083e3c50e7e899e6caf62595a7ecbf0af22b3d
+ms.sourcegitcommit: 98b3a9739b1906b7abb529cea1e7d433118cbcdd
+ms.openlocfilehash: ef57c6d1a00797e2a68291475b6a38778e5d73ad
 
 ---
-# Modèle Maître/Détails
+# <a name="masterdetails-pattern"></a>Modèle Maître/Détails
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -18,7 +18,7 @@ Le modèle Maître/Détails possède un volet principal (généralement avec un 
 
 ![Exemple de modèle Maître/Détails](images/HIGSecOne_MasterDetail.png)
 
-## Est-ce le modèle approprié ?
+## <a name="is-this-the-right-pattern"></a>Est-ce le modèle approprié ?
 
 Le modèle Maître/Détails fonctionne bien si vous souhaitez :
 
@@ -26,7 +26,7 @@ Le modèle Maître/Détails fonctionne bien si vous souhaitez :
 -   rechercher et hiérarchiser une grande collection de contenu ;
 -   permettre d’ajouter et de supprimer rapidement des éléments dans une liste tout en basculant entre les contextes.
 
-## Choisir le style approprié
+## <a name="choose-the-right-style"></a>Choisir le style approprié
 
 Lorsque vous implémentez le modèle Maître/Détails, nous vous recommandons d’utiliser le style empilé ou le style côte à côte, en fonction de l’espace d’écran disponible.
 
@@ -36,7 +36,7 @@ Lorsque vous implémentez le modèle Maître/Détails, nous vous recommandons d�
 | 720 epx ou plus large       | Côte à côte      |
 
  
-## Style empilé
+## <a name="stacked-style"></a>Style empilé
 
 Le style empilé ne permet de visualiser qu’un seul volet à la fois : le volet principal ou le volet d’informations.
 
@@ -44,7 +44,7 @@ Le style empilé ne permet de visualiser qu’un seul volet à la fois : le vole
 
 L’utilisateur commence au niveau du volet principal et descend dans le volet d’informations en sélectionnant un élément dans la liste principale. Pour l’utilisateur, les affichages Maître et Détails apparaissent dans deux pages distinctes.
 
-### Créer un modèle Maître/Détails empilé
+### <a name="create-a-stacked-masterdetails-pattern"></a>Créer un modèle Maître/Détails empilé
 
 L’une des façons de créer le modèle Maître/Détails empilé consiste à utiliser des pages distinctes pour le volet principal et pour le volet d’informations. Placez l’affichage Liste qui contient la liste principale dans une page, et l’élément de contenu du volet d’informations dans une autre page.
 
@@ -54,7 +54,7 @@ Pour le volet principal, un contrôle d’[affichage Liste](lists.md) fonctionne
 
 Pour le volet d’informations, utilisez l’élément de contenu le plus logique. Si vous disposez d’un grand nombre de champs distincts, pensez à utiliser une disposition en grille pour organiser les éléments dans un formulaire.
 
-## Style côte à côte
+## <a name="side-by-side-style"></a>Style côte à côte
 
 Dans le style côte à côte, le volet principal et le volet d’informations sont visibles en même temps.
 
@@ -62,13 +62,13 @@ Dans le style côte à côte, le volet principal et le volet d’informations so
 
 La liste du volet principal possède un objet visuel de sélection pour indiquer l’élément sélectionné. La sélection d’un nouvel élément dans la liste principale entraîne la mise à jour du volet d’informations.
 
-### Créer un modèle Maître/Détails côte à côte
+### <a name="create-a-side-by-side-masterdetails-pattern"></a>Créer un modèle Maître/Détails côte à côte
 
 Pour le volet principal, un contrôle d’[affichage Liste](lists.md) fonctionne bien pour présenter des listes pouvant contenir des images et du texte.
 
 Pour le volet d’informations, utilisez l’élément de contenu le plus logique. Si vous disposez d’un grand nombre de champs distincts, pensez à utiliser une disposition en grille pour organiser les éléments dans un formulaire.
 
-## Exemples
+## <a name="examples"></a>Exemples
 
 La conception d’application ci-dessous qui suit la bourse utilise un modèle Maître/Détails. Dans cet exemple de l’application telle qu’elle serait affichée sur un téléphone, le volet/la liste principal(e) apparaît à gauche, tandis que le volet d’informations figure à droite.
 
@@ -78,9 +78,11 @@ La conception d’application ci-dessous qui suit la bourse utilise un modèle M
 
 ![Exemple d’application utilisant le modèle Maître/Détails sur un ordinateur](images/uap-finance-desktop700.png)
 
+Pour obtenir un exemple de code affichant le modèle Maître/Détails, voir
+- [Exemple de ListView et GridView](http://go.microsoft.com/fwlink/p/?LinkId=619900)
+- [Exemple de lecteur RSS](https://github.com/Microsoft/Windows-appsample-rssreader)
 
-
-## Articles connexes
+## <a name="related-articles"></a>Articles connexes
 
 - [Listes](lists.md)
 - [Recherche](search.md)
@@ -89,6 +91,6 @@ La conception d’application ci-dessous qui suit la bourse utilise un modèle M
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

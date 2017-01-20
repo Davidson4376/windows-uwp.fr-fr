@@ -7,30 +7,30 @@ ms.assetid: 0342DC3F-DDD1-4DD4-872E-A4EC340CAE79
 label: Do's and don'ts
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: 9d16e553eb38526b4ae1f5aa827132e130cd05c7
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 72849c304d2150fd7fe6768181a504f94ef98d5f
 
 ---
 
-# Pratiques conseillées et déconseillées en matière de globalisation et de localisation
+# <a name="globalization-and-localization-dos-and-donts"></a>Pratiques conseillées et déconseillées en matière de globalisation et de localisation
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
+Suivez ces meilleures pratiques en globalisant vos applications pour un public plus large, et en localisant vos applications pour un marché spécifique.
+
+<div class="important-apis" >
+<b>API importantes</b><br/>
+<ul>
+<li>[**Globalisation**](https://msdn.microsoft.com/library/windows/apps/br206813)</li>
+<li>[**Globalization.NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136)</li>
+<li>[**Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)</li>
+<li>[**Ressources**](https://msdn.microsoft.com/library/windows/apps/br206022)</li>
+<li>[**Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039)</li>
+</ul>
+</div>
 
 
 
-
-
-**API importantes**
-
--   [**Globalisation**](https://msdn.microsoft.com/library/windows/apps/br206813)
--   [**Globalization.NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136)
--   [**Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)
--   [**Ressources**](https://msdn.microsoft.com/library/windows/apps/br206022)
--   [**Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039)
-
-Suivez ces meilleures pratiques en globalisant vos applications pour un public plus large, et en les localisant pour un marché spécifique.
-
-
-
-## <span id="guidelines_for_internationalization"></span><span id="GUIDELINES_FOR_INTERNATIONALIZATION"></span>Globalisation
+## <a name="globalization"></a>Globalisation
 
 Préparez votre application pour l’adapter simplement à différents marchés. Pour ce faire, choisissez des termes et des images mondialement appropriés pour votre interface utilisateur, utilisez des API [**Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) pour mettre en forme les données de l’application et évitez les hypothèses fondées sur un lieu géographique ou une langue.
 
@@ -106,7 +106,7 @@ Préparez votre application pour l’adapter simplement à différents marchés.
 
  
 
-## <span id="guidelines_for_localization"></span><span id="GUIDELINES_FOR_LOCALIZATION"></span>Localisation
+## <a name="localization"></a>Localisation
 
 <table>
 <colgroup>
@@ -178,7 +178,7 @@ Préparez votre application pour l’adapter simplement à différents marchés.
 
  
 
-## <span id="related_topics"></span>Articles connexes
+## <a name="related-articles"></a>Articles connexes
 
 
 **Exemples**
@@ -193,6 +193,6 @@ Préparez votre application pour l’adapter simplement à différents marchés.
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

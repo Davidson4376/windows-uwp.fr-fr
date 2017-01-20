@@ -1,21 +1,28 @@
 ---
-description: "Bénéficiez de recommandations en matière de conception ainsi que d’instructions de codage pour l’ajout de contrôles et de modèles à votre application UWP. Vous trouverez plus de 45contrôles puissants utilisables avec votre application."
+description: "Bénéficiez de recommandations en matière de conception ainsi que d’instructions de codage pour l’ajout de contrôles et de modèles à votre application UWP. Vous trouverez plus de 45 contrôles puissants utilisables avec votre application."
 title: "Contrôles et modèles UWP - Développement d’applications Windows"
 author: mijacobs
 keywords: "contrôles uwp, interface utilisateur, contrôles d’application"
+label: Controls & patterns
+template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 2f9d2059399efd949fc8a1d90a5b6c8c106a478e
-ms.openlocfilehash: ef383e46f2c610b57eec1c7767d5100e42075f6c
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: e530c8fab64c160737ccc06faf676d1d113896c4
 
 ---
-# Contrôles et modèles pour applications UWP
+# <a name="controls-and-patterns-for-uwp-apps"></a>Contrôles et modèles pour applications UWP
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-Dans le développement d’applications UWP, un <i>contrôle</i> est un élément d’interface utilisateur qui affiche du contenu ou permet une interaction. Les contrôles constituent les blocs de construction de l’interface utilisateur. Nous vous proposons plus de 45contrôles, des simples boutons aux contrôles de données puissants, tels que l’affichage Grille. Un <i>modèle</i> est en quelque sorte une recette permettant d’associer plusieurs contrôles pour créer un élément nouveau.
+Dans le développement d’applications UWP, un <i>contrôle</i> est un élément d’interface utilisateur qui affiche du contenu ou permet une interaction. Les contrôles constituent les blocs de construction de l’interface utilisateur. Nous vous proposons plus de 45 contrôles, des simples boutons aux contrôles de données puissants, tels que l’affichage Grille. Un <i>modèle</i> est en quelque sorte une recette permettant d’associer plusieurs contrôles pour créer un élément nouveau.
 
 Les articles de cette section donnent des recommandations en matière de conception et des instructions de codage pour l’ajout de contrôles et de modèles à votre application UWP. 
 
-## Introduction
+## <a name="intro"></a>Introduction
 
 Instructions générales et exemples de code d’ajout et de stylisation de contrôles en XAML et C#.
 
@@ -23,7 +30,7 @@ Instructions générales et exemples de code d’ajout et de stylisation de cont
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
    <p><b>[Ajouter des contrôles et gérer des événements](controls-and-events-intro.md)</b> <br/>
-L’ajout de contrôles à votre application se fait en trois étapes: l’ajout de contrôle à l’interface utilisateur de votre application, la définition de propriétés sur le contrôle et l’ajout de code aux gestionnaires d’événements du contrôle pour que ce dernier soit opérationnel.</li>
+L’ajout de contrôles à votre application se fait en trois étapes : l’ajout de contrôle à l’interface utilisateur de votre application, la définition de propriétés sur le contrôle et l’ajout de code aux gestionnaires d’événements du contrôle pour que ce dernier soit opérationnel.</li>
 </ul> 
 </p>
   </div>
@@ -34,7 +41,7 @@ Vous pouvez personnaliser l’apparence de vos applications de nombreuses maniè
 </div>
 </div>
 
-## Index alphabétique 
+## <a name="alphabetical-index"></a>Index alphabétique 
 
 Informations détaillées en matière de contrôles et de modèles spécifiques.
 
@@ -169,6 +176,6 @@ Informations détaillées en matière de contrôles et de modèles spécifiques.
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Dec16_HO2-->
 
 

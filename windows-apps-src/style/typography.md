@@ -5,12 +5,14 @@ title: Typographie
 ms.assetid: ca35f78a-e4da-423d-9f5b-75896e0b8f82
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 0356d9420d85fbf54718223df77ed501d4b6f5e5
-ms.openlocfilehash: 45b4bbc86c69cabae4a2ee83d2d43c7189a710ce
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: e13e9c8b559c16676628ab6e77ddad019a4c22e0
 
 ---
 
 # <a name="typography"></a>Typographie
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 En tant que représentation visuelle du langage, la typographie doit avant tout apporter de la clarté. Son style doit toujours être aligné sur cet objectif. Mais la typographie joue également un rôle important en tant que composant de la disposition, grâce à son puissant effet sur la densité et la complexité de la conception, ainsi que sur l’expérience de l’utilisateur concernant cette conception.
 
@@ -38,7 +40,7 @@ Lorsque vous empilez une grande taille de caractère sur une taille de caractèr
 
 En XAML, cette opération est effectuée par l’empilement de deux éléments [TextBlock](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) et par la définition de la marge appropriée.
 
-```xml
+```xaml
 <StackPanel Width="200">
     <!-- Setting a bottom margin of 3px on the header
          puts the baseline of the body text exactly 24px
@@ -59,47 +61,65 @@ En XAML, cette opération est effectuée par l’empilement de deux éléments [
 ```
 
 
-
-## <a name="kerning-and-tracking"></a>Crénage et interlettrage
+<div class="side-by-side">
+<div class="side-by-side-content">
+  <div class="side-by-side-content-left">
+<h2>Crénage et interlettrage</h2>
 
 Segoe est une police proche de l’écriture humaine, dotée d’une apparence douce et conviviale et de formes ouvertes organiques reposant sur du texte manuscrit. Pour optimiser la lisibilité de cette police et pour en conserver l’intégrité humaniste, il convient d’attribuer des valeurs spécifiques à ses paramètres de crénage et d’interlettrage.
 
 Le crénage doit être défini sur « metrics », et l’interlettrage doit présenter la valeur « 0 ».
-
-
-![Montre la différence entre le crénage et l’interlettrage](images/kerning-tracking.png)
-
-
-
-## <a name="word-and-letter-spacing"></a>Espacement entre les mots et entre les lettres
+  </div>
+  <div class="side-by-side-content-right">
+<h2>Espacement entre les mots et entre les lettres</h2>
 
 Comme pour le crénage et l’interlettrage, les paramètres d’espacement entre les mots et entre les lettres utilisent des valeurs spécifiques pour optimiser la lisibilité et l’intégrité humaniste de la police.
 
 L’espacement entre les mots est toujours de 100 % par défaut, et l’espacement entre les lettres doit être défini sur « 0 ».
+  </div>
+</div>
+</div>
+<div class="side-by-side">
+<div class="side-by-side-content">
+  <div class="side-by-side-content-left">
+![Différence entre le crénage et l’interlettrage](images/kerning-tracking.png)  
+  </div>
+  <div class="side-by-side-content-right">
+![Différence entre l’espacement entre les mots et l’espacement entre les lettres](images/word-letter.png) 
+  </div>
+</div>
+</div>
 
 
-![Montre la différence entre l’espacement entre les mots et l’espacement entre les lettres](images/word-letter.png)
+>[!NOTE]
+>Dans un contrôle de texte XAML, utilisez [Typography.Kerning](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) et [FontStretch](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.control.fontstretch.aspx) pour contrôler le crénage et l’interlettrage, respectivement. Par défaut, Typography.Kerning est défini sur « true », tandis que FontStretch est défini sur « Normal » ; il s’agit des valeurs recommandées.
 
-**Note**  Dans un contrôle de texte XAML, utilisez [Typogrphy.Kerning](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) pour contrôler le crénage et [FontStretch](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.control.fontstretch.aspx) pour contrôler l’interlettrage. Par défaut, Typography.Kerning est défini sur « true », tandis que FontStretch est défini sur « Normal » ; il s’agit des valeurs recommandées.
+<div class="side-by-side">
+<div class="side-by-side-content">
+  <div class="side-by-side-content-left">
+<h2>Alignement</h2>
 
-
-
-
-## <a name="alignment"></a>Alignement
-
-En règle générale, nous recommandons que les éléments visuels et les colonnes de caractères soient alignés à gauche. Dans la plupart des cas, cette approche d’alignement à gauche et de non-alignement à droite garantit un ancrage cohérent du contenu et une disposition uniforme.
-
-
-![Montre un texte aligné à gauche](images/alignment.png)
-
-
-
-## <a name="line-endings"></a>Fins de ligne
+En règle générale, nous recommandons que les éléments visuels et les colonnes de caractères soient alignés à gauche. Dans la plupart des cas, cette approche d’alignement à gauche et de non-alignement à droite garantit un ancrage cohérent du contenu et une disposition uniforme. 
+  </div>
+  <div class="side-by-side-content-right">
+<h2>Fins de ligne</h2>
 
 Lorsque la typographie n’est pas positionnée comme étant alignée à gauche et non alignée à droite, essayez de garantir des fins de ligne égales et d’éviter la coupure de mots.
+  </div>
+</div>
+</div>
 
+<div class="side-by-side">
+<div class="side-by-side-content">
+  <div class="side-by-side-content-left">
+![Montre un texte aligné à gauche.](images/alignment.png)  
+  </div>
+  <div class="side-by-side-content-right">
+![Montre des fins de lignes égales.](images/line-endings.png) 
+  </div>
+</div>
+</div>
 
-![Montre des fins de lignes égales](images/line-endings.png)
 
 ## <a name="paragraphs"></a>Paragraphes
 
@@ -125,7 +145,8 @@ Lorsque la hauteur du texte dépasse celle de l’icône, la première ligne de 
 
 ![Montre différentes associations d’icônes et de texte](images/hanging-text-alignment.png)
 
-**Note**  La propriété [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) du code XAML fournit un accès aux mesures de police de base et de hauteur de majuscule. Elle peut être utilisée pour les types de textes centrés verticalement ou alignés vers le haut.
+>[!NOTE]
+>La propriété [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) du code XAML fournit l’accès aux mesures de police de base et de hauteur de majuscule. Elle peut être utilisée pour les types de textes centrés verticalement ou alignés vers le haut.
 
 ## <a name="clipping-and-ellipses"></a>Détourage et ellipses
 
@@ -138,16 +159,31 @@ Exceptions : pour les conteneurs qui sont pas clairement définis (par exemple,
 ## <a name="type-ramp"></a>Gamme de caractères
 La gamme de types établit une relation fondamentale entre les titres et le corps du texte et garantit une hiérarchie claire et compréhensible entre les différents niveaux. Cette hiérarchie crée une structure qui permet aux utilisateurs de parcourir aisément une communication écrite.
 
-![Montre la gamme de caractères](images/type-ramp.png) Toutes les tailles sont exprimées en pixels effectifs. 
+<div class="uwpd-image-with-caption">
+    <img src="images/type-ramp.png" alt="Shows the type ramp" />
+    <div>Toutes les tailles sont mesurées en pixels effectifs. Pour plus d’informations, voir [Présentation de la conception des applications UWP](../layout/design-and-ui-intro.md).</div>
+</div>
+
+>[!NOTE]
+>La plupart des niveaux de la gamme sont disponibles sous forme de [ressources statiques](https://msdn.microsoft.com/en-us/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp) XAML qui suivent la convention d’affectation de noms `*TextBlockStyle` (par exemple, `HeaderTextBlockStyle`).
 
 
-**Note**   La plupart des niveaux de la gamme sont disponibles en tant que [ressources statiques](https://msdn.microsoft.com/en-us/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp) XAML qui suivent la convention d’affectation de noms `*TextBlockStyle` (ex : `HeaderTextBlockStyle`).
+<div class="microsoft-internal-note">
+SubtitleAlt, BaseAlt et CaptionAlt ne sont pas fournis. Vous pouvez créer les styles dans votre application en vous aidant des extraits de code disponibles via le lien ci-dessus. Notez également que le code XAML ne correspond pas exactement à la hauteur de ligne.
+</div>
 
 
 ## <a name="primary-and-secondary-text"></a>Texte principal et secondaire
 
 Si vous souhaitez créer une hiérarchie supplémentaire par rapport à celle de la gamme, définissez un texte secondaire avec une opacité de 60 %. Dans la [palette de thèmes de couleur](color.md#color-theming), vous utiliseriez le thème BaseMedium. Le texte principal doit toujours présenter une opacité de 100 %, correspondant au thème BaseHigh.
 
+<!-- Need new images
+![Two phone apps using SubtitleAlt](images/type-ramp-example-2.png)
+Recommended use of SubtitleAlt. Also note the primary and secondary text usage in list items.
+
+![Two phone apps using CaptionAlt](images/type-ramp-example-1.png)
+Recommended use of CaptionAlt.
+-->
 
 ## <a name="all-caps-titles"></a>Titres tout en majuscules
 
@@ -156,32 +192,28 @@ Certains titres de page doivent apparaître TOUT EN MAJUSCULES pour ajouter enco
 Toutefois, dans certaines langues, les noms propres changent de signification lorsqu’ils sont écrits en majuscules ; par conséquent, les titres de page reposant sur des noms ou des entrées utilisateur ne doivent *pas* être convertis intégralement en majuscules.
 
 
-**Pratiques conseillées**
+<!-- Need new images
+![Shows several apps where they should and should not use all caps](images/all-caps.png)
+Green shows where all caps should be used. Red shows where it should not.
+-->
 
-
-
+## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
 * Utilisez Body pour la plus grande partie du texte.
 * Utilisez Base pour les titres lorsque l’espace est restreint.
 * Incorporez SubtitleAlt pour créer un contraste et une hiérarchie en mettant en évidence le contenu de premier niveau.
-
-
-
-**Pratiques déconseillées**
-
-
-
 * N’utilisez pas Caption pour les chaînes longues ou pour une action principale.
 * N’utilisez pas Header ou Subheader si le texte doit faire l’objet d’un retour automatique à la ligne.
 * Ne combinez pas Subtitle et SubtitleAlt sur une même page.
 
 
-
 ## <a name="related-articles"></a>Articles connexes
 
 * [Contrôles de texte](../controls-and-patterns/text-controls.md)
+* [Polices](fonts.md)
+* [Icônes Segoe MDL2](segoe-ui-symbol-font.md)
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

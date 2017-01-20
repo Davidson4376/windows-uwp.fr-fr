@@ -7,11 +7,11 @@ isNew: true
 label: Date picker
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 2253172ff20ae46b0ada556551adfeac62136398
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 76d5cd756f462ebaad5a200cf4bcf7f4076e4652
 
 ---
-# Sélecteur de dates
+# <a name="date-picker"></a>Sélecteur de dates
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -20,30 +20,25 @@ Le sélecteur de dates offre aux utilisateurs une méthode standard de sélectio
 <div class="important-apis" >
 <b>API importantes</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx"><strong>Classe DatePicker</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.date.aspx"><strong>Propriété Date</strong></a></li>
+<li>[**Classe DatePicker**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx)</li>
+<li>[**Propriété Date**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.date.aspx) </li>
+
 </ul>
-
-</div>
 </div>
 
 
-
-
-
-
-## Est-ce le contrôle approprié ?
+## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 Utilisez un sélecteur de dates pour permettre à un utilisateur de choisir une date connue, par exemple, une date de naissance, où le contexte du calendrier n’est pas important.
 
 Pour plus d’informations sur le choix du contrôle de date approprié, voir l’article [Contrôles de date et d’heure](date-and-time.md).
 
-## Exemples
+## <a name="examples"></a>Exemples
 
 Le point d’entrée affiche la date choisie, et lorsque l’utilisateur sélectionne ce point d’entrée, la surface du sélecteur s’agrandit à la verticale à partir du milieu pour que l’utilisateur effectue une sélection. Le sélecteur de dates se superpose aux autres éléments de l’interface utilisateur ; il ne les ferme pas.
 
 ![Exemple de développement du sélecteur de date](images/controls_datepicker_expand.png)
 
-## Créer un sélecteur de dates
+## <a name="create-a-date-picker"></a>Créer un sélecteur de dates
 
 Cet exemple montre comment créer un sélecteur de dates simple avec un en-tête.
 
@@ -60,11 +55,11 @@ Le sélecteur de dates qui en résulte se présente comme suit :
 
 ![Exemple de sélecteur de dates](images/date-picker-closed.png)
 
-> **Remarque**  Pour obtenir des informations importantes sur les valeurs de date, voir [Valeurs DateTime et Calendar](date-and-time.md#datetime-and-calendar-values) dans l’article Contrôles de date et d’heure.
+> **Remarque**&nbsp;&nbsp;Pour obtenir des informations importantes sur les valeurs de date, voir [Valeurs DateTime et Calendar](date-and-time.md#datetime-and-calendar-values) dans l’article Contrôles de date et d’heure.
 
 
 
-## Articles connexes
+## <a name="related-articles"></a>Articles connexes
 
 - [Contrôles de date et d’heure](date-and-time.md)
 - [Sélecteur de dates du calendrier](calendar-date-picker.md)
@@ -73,6 +68,6 @@ Le sélecteur de dates qui en résulte se présente comme suit :
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

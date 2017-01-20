@@ -4,39 +4,66 @@ ms.assetid: 4F9657E5-1AF8-45E0-9617-45AF64E144FC
 description: "Utilisez ces méthodes dans l’API de soumission du Windows Store pour gérer les extensions des applications qui sont inscrites dans votre compte du Centre de développement Windows."
 title: "Gérer les extensions à l’aide de l’API de soumission du Windows Store"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 75548ee4689fd31d734c570f8e3eca5d33a6181f
+ms.sourcegitcommit: 020c8b3f4d9785842bbe127dd391d92af0962117
+ms.openlocfilehash: 058d11938dd6efc961da58a9d937be76beac5978
 
 ---
 
-# Gérer les extensions à l’aide de l’API de soumission du Windows Store
+# <a name="manage-add-ons-using-the-windows-store-submission-api"></a>Gérer les extensions à l’aide de l’API de soumission du Windows Store
 
+Utilisez les méthodes suivantes dans l’API de soumission du Windows Store pour gérer les extensions (également connues sous le nom produits in-app ou PIA) pour vos applications. Pour obtenir une présentation de l’API de soumission du Windows Store, voir [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md).
 
+>**Remarque**&nbsp;&nbsp;Ces méthodes ne peuvent être utilisées que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation. Ces méthodes peuvent uniquement être utilisées pour obtenir, créer ou supprimer des extensions. Pour créer des soumissions pour des extensions, voir les méthodes indiquées dans [Gérer les soumissions d’extensions](manage-add-on-submissions.md).
 
+<table>
+<colgroup>
+<col width="10%" />
+<col width="30%" />
+<col width="60%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Méthode</th>
+<th align="left">URI</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">GET</td>
+<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts```</td>
+<td align="left">[Obtient toutes les extensions pour vos applications](get-all-add-ons.md)</td>
+</tr>
+<tr>
+<td align="left">GET</td>
+<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}```</td>
+<td align="left">[Obtient une extension spécifique](get-an-add-on.md)</td>
+</tr>
+<tr>
+<td align="left">POST</td>
+<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts```</td>
+<td align="left">[Crée une extension](create-an-add-on.md)</td>
+</tr>
+<tr>
+<td align="left">DELETE</td>
+<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}```</td>
+<td align="left">[Supprime une extension](delete-an-add-on.md)</td>
+</tr>
+</tbody>
+</table>
 
-Utilisez les méthodes suivantes dans l’API de soumission du Windows Store pour gérer les extensions (également connues sous le nom produits in-app ou PIA) pour les applications inscrites dans votre compte du Centre de développement Windows. Pour obtenir une présentation de l’API de soumission du Windows Store, voir [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md).
+## <a name="prerequisites"></a>Prérequis
 
->**Remarque**  Ces méthodes ne peuvent être utilisées que pour les comptes du Centre de développement Windows qui ont reçu l’autorisation d’utiliser l’API de soumission du Windows Store. Tous les comptes ne bénéficient pas de cette autorisation. Ces méthodes peuvent uniquement être utilisées pour obtenir, créer ou supprimer des extensions. Pour créer des soumissions pour des extensions, voir les méthodes indiquées dans [Gérer les soumissions d’extensions](manage-add-on-submissions.md).
+Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store avant d’essayer d’utiliser l’une de ces méthodes.
 
-| Méthode        | URI    | Description                                                                 |
-|---------------|--------|-----------------------------------------------------------------------------|
-| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts``` | Obtient les données de toutes les extensions de toutes les applications inscrites dans votre compte du Centre de développement Windows. Pour plus d’informations, voir [Obtenir toutes les extensions](get-all-add-ons.md). |
-| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId} ``` | Obtient les données d’une extension spécifique. Pour plus d’informations, voir [Obtenir une extension](get-an-add-on.md). |
-| POST | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts``` | Crée une extension. Pour plus d’informations, voir [Créer une extension](create-an-add-on.md).  |
-| DELETE | ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{inAppProductId}``` | Supprime une extension. Pour plus d’informations, voir [Supprimer une extension](delete-an-add-on.md). |
+## <a name="data-resources"></a>Ressources de données
 
-## Conditions préalables
-
-Si ce n’est pas déjà fait, remplissez toutes les [conditions préalables](create-and-manage-submissions-using-windows-store-services.md#prerequisites) relatives à l’API de soumission du Windows Store avant d’essayer d’utiliser l’une de ces méthodes.
-
-## Ressources
-
-Ces méthodes utilisent les ressources suivantes pour formater les données.
+Les méthodes de l’API de soumission du Windows Store pour gérer les extensions utilisent les ressources de données JSON suivantes.
 
 <span id="add-on-object" />
-### Extension
+### <a name="add-on-resource"></a>Ressource d’extension
 
-Cette ressource représente une extension. L’exemple suivant illustre le format de cette ressource.
+Cette ressource décrit une extension.
 
 ```json
 {
@@ -65,19 +92,19 @@ Cette ressource représente une extension. L’exemple suivant illustre le forma
 
 Cette ressource a les valeurs suivantes.
 
-| Valeur      | Type   | Description                                                                                                                                                                                                                                                                         |
-|------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| applications      | tableau  | Tableau qui contient un objet qui représente l’application à laquelle est associée cette extension. Pour plus d’informations sur les données incluses dans cet objet, voir la section [Objet d’application](#application-object) ci-dessous. Un seul élément est pris en charge dans ce tableau.  |
-| id | chaîne  | ID Windows Store de l’extension. Cette valeur est fournie par le Windows Store. Exemple d’ID Windows Store : 9NBLGGH4TNMP.  |
+| Valeur      | Type   | Description        |
+|------------|--------|--------------|
+| applications      | tableau  | Tableau qui contient une [ressource d’application](#application-object) qui représente l’application à laquelle cette extension est associée. Un seul élément est pris en charge dans ce tableau.  |
+| id | chaîne  | ID Windows Store de l’extension. Cette valeur est fournie par le Windows Store. Exemple d’ID Windows Store : 9NBLGGH4TNMP.  |
 | productId | chaîne  | ID de produit de l’extension. Il s’agit de l’ID fourni par le développeur au moment de la création de l’extension. Pour plus d’informations, consultez [Définir le type et l’ID de votre produit](https://msdn.microsoft.com/windows/uwp/publish/set-your-iap-product-id). |
 | productType | chaîne  | Type de produit de l’extension. Les valeurs suivantes sont prises en charge : **Durable** et **Consommable**.  |
-| lastPublishedInAppProductSubmission       | objet | Objet qui fournit des informations sur la dernière soumission publiée de l’extension. Pour plus d’informations, voir la section [Soumission](#submission-object) ci-dessous.                                                                                                                                                          |
-| pendingInAppProductSubmission        | objet  |  Objet qui fournit des informations sur la soumission actuellement en attente pour l’extension. Pour plus d’informations, voir la section [Soumission](#submission-object) ci-dessous.  |   |
+| lastPublishedInAppProductSubmission       | objet | [Ressource de soumission](#submission-object) qui fournit des informations sur la dernière soumission publiée de l’extension.         |
+| pendingInAppProductSubmission        | objet  |  [Ressource de soumission](#submission-object) qui fournit des informations sur la soumission actuellement en attente pour l’extension.  |   |
 
 <span id="application-object" />
-### Application
+### <a name="application-resource"></a>Ressource d’application
 
-Cette ressource représente une application à laquelle est associée à une extension. L’exemple suivant illustre le format de cette ressource.
+Cette ressource décrit l’application à laquelle une extension est associée. L’exemple suivant illustre le format de cette ressource.
 
 ```json
 {
@@ -95,15 +122,15 @@ Cette ressource représente une application à laquelle est associée à une ext
 
 Cette ressource a les valeurs suivantes.
 
-| Valeur           | Type    | Description                                                                                                                                                                                                                          |
+| Valeur           | Type    | Description        |
 |-----------------|---------|-----------|
 | value            | objet  |  Objet qui contient les valeurs suivantes : <br/><br/> <ul><li>*id*. ID Windows Store de l’application. Pour plus d’informations sur l’ID Windows Store, voir [Visualiser les informations d’identité des applications](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details).</li><li>*resourceLocation*. Chemin relatif à ajouter à l’URI de requête ```https://manage.devcenter.microsoft.com/v1.0/my/``` de base pour récupérer les données complètes de l’application.</li></ul>   |
 | totalCount   | entier  | Nombre d’objets d’application dans le tableau *applications* du corps de la réponse.                                                                                                                                                 |
 
 <span id="submission-object" />
-### Soumission
+### <a name="submission-resource"></a>Ressource de soumission
 
-Cette ressource fournit des informations sur une soumission pour une extension. L’exemple suivant illustre le format de cette ressource.
+Cette ressource fournit des informations sur une soumission d’une extension. L’exemple suivant illustre le format de cette ressource.
 
 ```json
 {
@@ -116,14 +143,13 @@ Cette ressource fournit des informations sur une soumission pour une extension. 
 
 Cette ressource a les valeurs suivantes.
 
-| Valeur           | Type    | Description                                                                                                                                                                                                                          |
-|-----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Valeur           | Type    | Description     |
+|-----------------|---------|------------------|
 | id            | chaîne  | ID de la soumission.    |
-| resourceLocation   | chaîne  | Chemin relatif à ajouter à l’URI de requête ```https://manage.devcenter.microsoft.com/v1.0/my/``` de base pour récupérer les données complètes de la soumission.                                                                                                                                               |
+| resourceLocation   | chaîne  | Chemin relatif à ajouter à l’URI de requête ```https://manage.devcenter.microsoft.com/v1.0/my/``` de base pour récupérer les données complètes de la soumission.     |
  
 <span/>
-
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 * [Créer et gérer des soumissions à l’aide des services du Windows Store](create-and-manage-submissions-using-windows-store-services.md)
 * [Gérer les soumissions d’extensions à l’aide de l’API de soumission du Windows Store](manage-add-on-submissions.md)
@@ -134,6 +160,6 @@ Cette ressource a les valeurs suivantes.
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Dec16_HO3-->
 
 

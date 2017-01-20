@@ -3,8 +3,8 @@ author: Mtoepke
 title: "Problèmes connus avec UWP dans le programme pour les développeurs Xbox One"
 description: 
 translationtype: Human Translation
-ms.sourcegitcommit: 20ac6fb738de1c8aaf10f46c359842f31714dbbf
-ms.openlocfilehash: b6fe2f90e0aff4b8e77b4c20aec0d29f2a6a36f8
+ms.sourcegitcommit: 3f0647bb76340ccbd538e9e4fefe173924d6baf4
+ms.openlocfilehash: 18c8d1fcd696f336601dc6c531424fe8bfb78304
 
 ---
 
@@ -22,16 +22,22 @@ Si vous êtes bloqué, lisez les informations présentées dans cette rubrique, 
 
 
 <!--## Developing games-->
+
+## <a name="issue-when-leaving-dev-mode"></a>Problème lors de la fermeture du mode développeur
+Il arrive parfois que vous ne puissiez pas quitter le mode développeur ni en utilisant DevHome ni dans Paramètres de développeur.
+Il existe deux solutions possibles pour contourner ce problème : 
+1. Lorsque vous quittez le mode développeur, décochez la case **Delete side loaded games and apps**.
+2. Accédez à Mes jeux et applications et désinstallez les applications de développeur que vous avez éventuellement installées sur votre console.
  
-## <a name="memory-limits-for-background-apps-are-partially-enforced"></a>Les limites de mémoire des applications en arrière-plan sont partiellement appliquées
+<!--## Memory limits for background apps are partially enforced
  
-L’encombrement mémoire maximal pour les applications qui s’exécutent en arrière-plan est de 128 mégaoctets. Dans la version actuelle d’UWP sur Xbox One, votre application est suspendue si elle est au-dessus de cette limite lorsqu’elle passe en arrière-plan. Actuellement, cette limite n’est pas appliquée si votre application dépasse la limite alors qu’elle est déjà en cours d’exécution en arrière-plan. Ainsi, si votre application dépasse 128 Mo alors qu’elle s’exécute en arrière-plan, elle sera toujours en mesure d’allouer de la mémoire.
+The maximum memory footprint for apps running in the background is 128 megabytes. In the current version of UWP on Xbox One, your app will be suspended if it is above this limit when it is moved to the background. This limit is not currently enforced if your app exceeds the limit while it is already running in the background—this means that if your app exceeds 128 MB while running in the background, it will still be able to allocate memory.
  
-Il n’existe actuellement aucun moyen de contourner ce problème. Les applications doivent contrôler leur utilisation de la mémoire en conséquence et continuer de rester sous la limite de 128 Mo pendant l’exécution en arrière-plan.
+There is currently no workaround for this issue. Apps should govern their memory usage accordingly and continue to stay under the 128 MB limit while running in the background.-->
  
 ## <a name="deploying-from-vs-fails-with-parental-controls-turned-on"></a>Le déploiement à partir de Visual Studio échoue lorsque les paramètres de contrôle parental sont activés
 
-Le lancement de votre application à partir de Visual Studio n’aboutit pas si le contrôle parental est activé dans les paramètres.
+Le lancement de votre application à partir de Visual Studio n’aboutit pas si le contrôle parental est activé dans les paramètres.
 
 Pour contourner ce problème, désactivez ces paramètres temporairement ou procédez comme suit :
 1. Déployez votre application sur la console en désactivant les paramètres de contrôle parental.
@@ -93,7 +99,7 @@ Developers can still use HTTP and WebSockets.
 
 ## <a name="blocked-networking-ports-on-xbox-one"></a>Ports réseau bloqués sur Xbox One
 
-Les applications de plateforme Windows universelle (UWP) sur les appareils Xbox One ne sont pas autorisées à établir une liaison aux ports dans la plage [49152, 65535]. Même si la liaison à ces ports semble réussir au moment de l’exécution, le trafic réseau peut être annulé sans avertissement avant d’atteindre votre application. Votre application doit si possible établir une liaison au port  0, ce qui permet au système de sélectionner le port local. Si vous avez besoin d’utiliser un port spécifique, le numéro de port doit être dans la plage [1025, 49151]. Vous devez vérifier dans le Registre IANA et éviter les conflits. Pour plus d’informations, voir le [Registre des noms de services et des numéros de ports des protocoles de transport](http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml).
+Les applications de plateforme Windows universelle (UWP) sur les appareils Xbox One ne sont pas autorisées à établir une liaison aux ports dans la plage [57344, 65535] (numéros de port inclus). Même si la liaison à ces ports semble réussir au moment de l’exécution, le trafic réseau peut être annulé sans avertissement avant d’atteindre votre application. Votre application doit si possible établir une liaison au port  0, ce qui permet au système de sélectionner le port local. Si vous avez besoin d’utiliser un port spécifique, le numéro de port doit être dans la plage [1025, 49151]. Vous devez vérifier dans le Registre IANA et éviter les conflits. Pour plus d’informations, voir le [Registre des noms de services et des numéros de ports des protocoles de transport](http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml).
 
 ## <a name="uwp-api-coverage"></a>Couverture des API UWP
 
@@ -177,6 +183,6 @@ This is caused by a failure in the WDP infrastructure on the console and can be 
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

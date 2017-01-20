@@ -4,8 +4,8 @@ title: "Lancement, reprise et tâches en arrière-plan"
 description: "Cette section décrit ce qui se produit en cas de démarrage, de suspension, de reprise et d’arrêt d’une application de plateforme Windows universelle (UWP)."
 ms.assetid: 75011D52-1511-4ECF-9DF6-52CBBDB15BD7
 translationtype: Human Translation
-ms.sourcegitcommit: a21b2e9bb41e951660916bbbdb09b0bd3e5ecf2d
-ms.openlocfilehash: 7667cfb9671a7517a394f6f691aef4c305c02087
+ms.sourcegitcommit: 32737991b31eaceb33fc2ecb5152def167c36fdd
+ms.openlocfilehash: 6b350ef65f381d18585c8b080c6259f7607c7bf9
 
 ---
 
@@ -33,7 +33,8 @@ Cette rubrique décrit le cycle de vie d’une application de plateforme Windows
 | [Gérer l’activation d’une application](activate-an-app.md)     | Découvrez comment gérer l’activation d’une application.                                                                             |
 | [Gérer la suspension d’une application](suspend-an-app.md)         | Découvrez comment enregistrer d’importantes données d’application lorsque le système suspend l’exécution de votre application.                                 |
 | [Gérer la reprise d’une application](resume-an-app.md)           | Apprenez à actualiser le contenu à l’écran lorsque le système reprend l’exécution de votre application.                                        |
-| [Libérer de la mémoire lorsque l’application bascule en arrière-plan](reduce-memory-usage.md)           | Découvrez comment réduire la quantité de mémoire utilisée par votre application lorsqu’elle est en arrière-plan, afin qu’elle ne soit pas arrêtée.                                        |
+| [Libérer de la mémoire lorsque l’application bascule en arrière-plan](reduce-memory-usage.md) | Découvrez comment réduire la quantité de mémoire utilisée par votre application lorsqu’elle est en arrière-plan, afin qu’elle ne soit pas arrêtée.|
+| [Exécuter en mode réduit avec exécution étendue](run-minimized-with-extended-execution.md) | Découvrir comment utiliser l’exécution étendue pour que votre application continue de s’exécuter lorsqu’elle est en mode réduit |
 
 ## <a name="launch-apps"></a>Lancer des applications
 
@@ -118,6 +119,6 @@ La section [Écrans de démarrage](splash-screens.md) explique comment définir 
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

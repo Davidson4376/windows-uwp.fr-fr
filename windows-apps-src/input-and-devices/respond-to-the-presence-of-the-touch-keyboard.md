@@ -6,20 +6,23 @@ ms.assetid: 70C6130E-23A2-4F9D-88E7-7060062DA988
 label: Respond to the presence of the touch keyboard
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 97a626aedff1b0915c845f151b16b3678e1cf977
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 7db7c360c1e6e3cadf6423d888240bb2f0f4651a
 
 ---
 
-# Répondre à la présence du clavier tactile
+# <a name="respond-to-the-presence-of-the-touch-keyboard"></a>Répondre à la présence du clavier tactile
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 Découvrez comment personnaliser l’interface utilisateur de votre application lorsque le clavier tactile est affiché ou masqué.
 
-
-**API importantes**
-
--   [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/br209185)
--   [**InputPane**](https://msdn.microsoft.com/library/windows/apps/br242255)
+<div class="important-apis" >
+<b>API importantes</b><br/>
+<ul>
+<li>[**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/br209185)</li>
+<li>[**InputPane**](https://msdn.microsoft.com/library/windows/apps/br242255)</li>
+</ul>
+</div> 
 
 
 
@@ -33,7 +36,7 @@ Pour prendre en charge le comportement de clavier tactile correspondant dans un 
 
 Une fois cette prise en charge ajoutée à votre contrôle personnalisé, vous pouvez répondre de manière appropriée à la présence du clavier tactile.
 
-**Éléments requis:  **
+**Éléments requis :  **
 
 Cette rubrique s’appuie sur l’article [Interactions avec le clavier](keyboard-interactions.md).
 
@@ -44,11 +47,11 @@ Si vous débutez dans le développement d’applications de plateforme Windows u
 -   [Créer votre première application](https://msdn.microsoft.com/library/windows/apps/bg124288)
 -   Découvrir les événements avec [Vue d’ensemble des événements et des événements routés](https://msdn.microsoft.com/library/windows/apps/mt185584).
 
-**Recommandations en matière d’expérience utilisateur:  **
+**Recommandations en matière d’expérience utilisateur :  **
 
 Pour obtenir de précieux conseils concernant la conception d’une application optimisée pour la saisie au clavier à la fois utile et conviviale, voir [Recommandations en matière de conception de clavier](https://msdn.microsoft.com/library/windows/apps/hh972345).
 
-## Clavier tactile et interface utilisateur personnalisée
+## <a name="touch-keyboard-and-a-custom-ui"></a>Clavier tactile et interface utilisateur personnalisée
 
 
 Voici quelques recommandations de base concernant les contrôles de saisie de texte personnalisés.
@@ -67,11 +70,11 @@ Voici quelques recommandations de base concernant les contrôles de saisie de te
 
     ![Formulaire avec et sans clavier tactile apparent](images/touch-keyboard-pan1.png)
 
-    Dans certains cas, il existe des éléments d’interface utilisateur qui doivent rester tout le temps à l’écran. Concevez l’interface utilisateur de sorte que les contrôles de formulaire se trouvent dans une région panoramique et que les éléments d’interface utilisateur importants soient statiques. Par exemple:
+    Dans certains cas, il existe des éléments d’interface utilisateur qui doivent rester tout le temps à l’écran. Concevez l’interface utilisateur de sorte que les contrôles de formulaire se trouvent dans une région panoramique et que les éléments d’interface utilisateur importants soient statiques. Par exemple :
 
     ![formulaire contenant des zones devant toujours rester affichées](images/touch-keyboard-pan2.png)
 
-## Gestion des événements d’affichage et de masquage
+## <a name="handling-the-showing-and-hiding-events"></a>Gestion des événements d’affichage et de masquage
 
 
 Voici un exemple d’association de gestionnaires d’événements pour les événements [**showing**](https://msdn.microsoft.com/library/windows/apps/br242262) et [**hiding**](https://msdn.microsoft.com/library/windows/apps/br242260) du clavier tactile.
@@ -124,7 +127,7 @@ public class MyApplication
 }
 ```
 
-## Articles connexes
+## <a name="related-articles"></a>Articles connexes
 
 * [Interactions avec le clavier](keyboard-interactions.md)
 * [Accessibilité du clavier](https://msdn.microsoft.com/library/windows/apps/mt244347)
@@ -146,6 +149,6 @@ public class MyApplication
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

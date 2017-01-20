@@ -1,44 +1,47 @@
 ---
 author: mijacobs
-Description: "Une application a principalement pour objet d’offrir un accès à un contenu. Dans une application de retouche photo, le contenu correspond aux photos; dans une application de voyage, le contenu comprend les cartes et les informations sur les destinations, etc."
+Description: "Une application a principalement pour objet d’offrir un accès à un contenu. Dans une application de retouche photo, le contenu correspond aux photos ; dans une application de voyage, le contenu comprend les cartes et les informations sur les destinations, etc."
 title: "Informations de base relatives à la conception de contenu pour les applications de plateforme Windows universelle (UWP)"
 ms.assetid: 3102530A-E0D1-4C55-AEFF-99443D39D567
 label: Content design basics
 template: detail.hbs
+op-migration-status: ready
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 4ac800f9d2dd51ac074ec50cd1046e5a78c80710
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 7433fcabe455c0a0198cd23f883ed72b0b4558fc
 
 ---
 
-#  Informations de base relatives à la conception de contenu pour les applications UWP
+#  <a name="content-design-basics-for-uwp-apps"></a>Informations de base relatives à la conception de contenu pour les applications UWP
 
-Le rôle principal de toute application est d’offrir un accès à un contenu. Dans une application de retouche photo, le contenu correspond aux photos; dans une application de voyage, le contenu comprend les cartes et les informations sur les destinations, etc. Les éléments de navigation donnent accès au contenu. Les éléments de commande permettent à l’utilisateur d’interagir avec contenu. Les éléments de contenu affichent le contenu réel.
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-Cet article fournit des recommandations de conception de contenu pour les troisscénarios de contenu.
+Le rôle principal de toute application est d’offrir un accès à un contenu. Dans une application de retouche photo, le contenu correspond aux photos ; dans une application de voyage, le contenu comprend les cartes et les informations sur les destinations, etc. Les éléments de navigation donnent accès au contenu. Les éléments de commande permettent à l’utilisateur d’interagir avec contenu. Les éléments de contenu affichent le contenu réel.
 
-## <span id="Design_for_the_right_content_scenario"></span><span id="design_for_the_right_content_scenario"></span><span id="DESIGN_FOR_THE_RIGHT_CONTENT_SCENARIO"></span>Scénario de conception de contenu adapté
+Cet article fournit des recommandations de conception de contenu pour les trois scénarios de contenu.
 
-
-Il existe troisscénarios principaux en matière de contenu:
-
--   **Consommation**: expérience principalement unidirectionnelle où le contenu est utilisé. Les actions de lecture de documents, de morceaux de musique ou de vidéos, ou d’affichage de photos et d’images rentrent dans la catégorie Consommation.
--   **Création**: expérience principalement unidirectionnelle dans laquelle l’objectif est de créer du contenu. Elle inclut les actions de création d’éléments à partir de zéro (par exemple, capture de photos ou de vidéos, création d’images dans une application de dessin ou ouverture d’un nouveau document).
--   **Interaction**: expérience de contenu bidirectionnelle qui inclut la consommation, la création et la révision de contenu.
-
-## <span id="Consumption-focused_apps"></span><span id="consumption-focused_apps"></span><span id="CONSUMPTION-FOCUSED_APPS"></span>Applications axées sur la consommation
+## <a name="design-for-the-right-content-scenario"></a>Scénario de conception de contenu adapté
 
 
-Les éléments de contenu reçoivent la priorité la plus élevée dans une application axée sur la consommation, suivie des [éléments de navigation](navigation-basics.md) permettant aux utilisateurs de trouver le contenu qu’ils recherchent. Exemples d’applications axées sur la consommation: lecteurs de films, applications de lecture, applications de musique et visionneuses de photos.
+Il existe trois scénarios principaux en matière de contenu :
+
+-   **Consommation** : expérience principalement unidirectionnelle où le contenu est utilisé. Les actions de lecture de documents, de morceaux de musique ou de vidéos, ou d’affichage de photos et d’images rentrent dans la catégorie Consommation.
+-   **Création** : expérience principalement unidirectionnelle dans laquelle l’objectif est de créer du contenu. Elle inclut les actions de création d’éléments à partir de zéro (par exemple, capture de photos ou de vidéos, création d’images dans une application de dessin ou ouverture d’un nouveau document).
+-   **Interaction** : expérience de contenu bidirectionnelle qui inclut la consommation, la création et la révision de contenu.
+
+## <a name="consumption-focused-apps"></a>Applications axées sur la consommation
+
+
+Les éléments de contenu reçoivent la priorité la plus élevée dans une application axée sur la consommation, suivie des [éléments de navigation](navigation-basics.md) permettant aux utilisateurs de trouver le contenu qu’ils recherchent. Exemples d’applications axées sur la consommation : lecteurs de films, applications de lecture, applications de musique et visionneuses de photos.
 
 ![application de lecteur de news](images/news-reader/v2/newsreader-v2-tablet-phone.png)
 
-Recommandations générales pour les applications axées sur la consommation:
+Recommandations générales pour les applications axées sur la consommation :
 
 -   Pensez à créer des pages de [navigation](navigation-basics.md) dédiées et des pages d’affichage de contenu, afin que lorsque les utilisateurs trouvent le contenu recherché, ils puissent l’afficher sur une page dédiée exempte de distractions.
 -   Pensez à créer une option de mode plein écran qui étend le contenu pour remplir tout l’écran et masque tous les autres éléments d’interface utilisateur.
 
-## <span id="Creation-focused_apps"></span><span id="creation-focused_apps"></span><span id="CREATION-FOCUSED_APPS"></span>Applications axées sur la création
+## <a name="creation-focused-apps"></a>Applications axées sur la création
 
 
 Le contenu et les éléments de [commande](commanding-basics.md) sont les éléments d’interface utilisateur les plus importants dans une application axée sur la création. Les éléments de commande permettent à l’utilisateur de créer du contenu. Exemples : applications de peinture, applications de retouche photo, applications de retouche vidéo et applications de traitement de texte.
@@ -47,19 +50,19 @@ Par exemple, voici une conception pour une application de retouche photo qui uti
 
 ![exemple d’une conception d’application de retouche photo utilisant un Canvas actif](images/photo-editor/uap-photo-tabletphone-sbs.png)
 
-Recommandations générales pour les applications axées sur la création:
+Recommandations générales pour les applications axées sur la création :
 
 -   Réduisez l’utilisation des éléments de [navigation](navigation-basics.md).
 -   Les éléments de [commande](commanding-basics.md) sont particulièrement importants dans les applications axées sur la création. Dans la mesure où les utilisateurs doivent exécuter un grand nombre de commandes, nous vous recommandons de fournir une fonctionnalité d’historique/annulation de commande.
 
-## <span id="Apps_with_interactive_content"></span><span id="apps_with_interactive_content"></span><span id="APPS_WITH_INTERACTIVE_CONTENT"></span>Applications avec contenu interactif
+## <a name="apps-with-interactive-content"></a>Applications avec contenu interactif
 
 
-Dans une application avec contenu interactif, les utilisateurs créent, affichent et modifient du contenu. De nombreuses applications entrent dans cette catégorie. Exemples: applications métier, applications de gestion de l’inventaire, applications permettant à l’utilisateur de créer ou de modifier des recettes de cuisine.
+Dans une application avec contenu interactif, les utilisateurs créent, affichent et modifient du contenu. De nombreuses applications entrent dans cette catégorie. Exemples : applications métier, applications de gestion de l’inventaire, applications permettant à l’utilisateur de créer ou de modifier des recettes de cuisine.
 
 ![conception pour un outil de collaboration, application disposant d’un contenu interactif](images/collaboration-tool/uap-collaboration-tabphone-700.png)
 
-Ces applications doivent trouver un équilibre entre les trois éléments de l’interface utilisateur:
+Ces applications doivent trouver un équilibre entre les trois éléments de l’interface utilisateur :
 
 -   Les éléments de [navigation](navigation-basics.md) permettent aux utilisateurs de rechercher et d’afficher du contenu. Si l’objectif principal consiste à afficher et à rechercher du contenu, donnez la priorité aux éléments de navigation, au filtrage et au tri, ainsi qu’à la recherche.
 -   Les éléments de [commande](commanding-basics.md) permettent à l’utilisateur de créer, modifier et manipuler du contenu.
@@ -68,7 +71,7 @@ Recommandations générales concernant les applications avec un contenu interact
 
 -   Il peut être difficile d’équilibrer les éléments de navigation, de contenu et de commande, car ils ont chacun leur importance. Si possible, envisagez de créer des écrans distincts pour la navigation, la création et la modification du contenu, ou fournissez des changements de mode.
 
-## <span id="Commonly_used_content_elements"></span><span id="commonly_used_content_elements"></span><span id="COMMONLY_USED_CONTENT_ELEMENTS"></span>Éléments de contenu couramment utilisés
+## <a name="commonly-used-content-elements"></a>Éléments de contenu couramment utilisés
 
 
 Voici quelques éléments d’interface utilisateur couramment utilisés pour afficher du contenu. (Pour en obtenir la liste complète, voir [Contrôles et éléments d’interface utilisateur](https://msdn.microsoft.com/library/windows/apps/dn611856).)
@@ -123,6 +126,6 @@ Voici quelques éléments d’interface utilisateur couramment utilisés pour af
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

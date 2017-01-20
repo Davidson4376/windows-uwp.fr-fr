@@ -6,11 +6,11 @@ ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
 label: Flip view
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 7e52f9d379b909c4dd35bc535cbca2d7b8cca6ac
+ms.sourcegitcommit: 92c523c100a021808e01dffe4cd9b5c47c21b58a
+ms.openlocfilehash: 3ad89682248462efa5022467ceb330da03843de4
 
 ---
-# Vue symétrique
+# <a name="flip-view"></a>Vue symétrique
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -19,25 +19,18 @@ La vue symétrique permet d’afficher les images ou d’autres éléments d’u
 <div class="important-apis" >
 <b>API importantes</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx"><strong>Classe FlipView</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx"><strong>Propriété ItemsSource</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx"><strong>Propriété ItemTemplate</strong></a></li>
+<li>[**Classe FlipView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx)</li>
+<li> [**Propriété ItemsSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx)</li>
+<li>[**Propriété ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx)</li>
+
 </ul>
-
-</div>
 </div>
 
-
-
-
-
-
-
-## Est-ce le contrôle approprié ?
+## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
 La vue symétrique est appropriée pour l’examen des images des petites et moyennes collections (jusqu’à 25 éléments environ). Les exemples de telles collections comprennent les éléments d’une page de détails de produit ou les photos d’un album. Même si nous ne recommandons pas la vue symétrique pour la plupart des grandes collections, ce contrôle est souvent utilisé pour afficher les images individuelles d’un album photo.
 
-## Exemples
+## <a name="examples"></a>Exemples
 
 La navigation horizontale, c’est-à-dire à partir de l’élément le plus à gauche et vers la droite, est la disposition de vue symétrique la plus commune. Cette disposition fonctionne bien en orientation portrait ou paysage sur tous les appareils :
 
@@ -47,13 +40,13 @@ Une vue symétrique peut également être utilisée verticalement :
 
 ![Exemple de vue symétrique verticale](images/controls_flipview_vertical.jpg)
 
-## Créer une vue symétrique
+## <a name="create-a-flip-view"></a>Créer une vue symétrique
 
 Le contrôle FlipView est un élément [ItemsControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.aspx). Il peut donc contenir une collection d’éléments de n’importe quel type. Pour renseigner la vue, ajoutez des éléments à la collection [**Items**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx), ou définissez une propriété [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) sur une source de données.
 
 Par défaut, un élément de données est affiché dans la vue symétrique en tant que représentation de chaîne de l’objet de données auquel il est lié. Pour définir exactement la manière dont les éléments s’affichent dans la vue symétrique, créez un [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.datatemplate.aspx) afin de définir la disposition des contrôles utilisés pour afficher un élément. Les contrôles dans la disposition peuvent être liés aux propriétés d’un objet de données ou leur contenu peut être défini inline. L’objet DataTemplate est affecté à la propriété [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) de l’objet FlipView.
 
-### Ajouter des éléments à la collection Items
+### <a name="add-items-to-the-items-collection"></a>Ajouter des éléments à la collection Items
 
 Vous pouvez ajouter des éléments à la collection [**Items**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx) en utilisant le langage XAML ou du code. Vous ajoutez généralement des éléments de cette façon si vous avez un petit nombre d’éléments qui ne sont pas modifiés et sont facilement définis en XAML, ou si vous générez les éléments dans le code lors de l’exécution. Voici un FlipView avec des éléments définis inline.
 
@@ -80,7 +73,7 @@ Lorsque vous ajoutez des éléments à une vue symétrique, ils sont placés aut
 
 Lorsque vous définissez les éléments en XAML, ceux-ci sont automatiquement ajoutés à la collection Items.
 
-### Définir la source des éléments
+### <a name="set-the-items-source"></a>Définir la source des éléments
 
 On utilise en général une vue symétrique pour afficher des données d’une source telle qu’une base de données ou Internet. Pour renseigner une vue symétrique à partir d’une source de données, vous affectez à sa propriété [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) une collection d’éléments de données.
 
@@ -118,9 +111,9 @@ Dans le cas présent, la propriété ItemsSource est liée à un objet [**Collec
           ItemsSource="{Binding Source={StaticResource itemsViewSource}}"/>
 ```
 
->**Remarque**  Vous pouvez remplir un contrôle FlipView en ajoutant des éléments directement dans sa collection Items ou en définissant sa propriété ItemsSource, mais vous ne pouvez pas faire les deux à la fois. Si vous définissez la propriété ItemsSource et que vous ajoutez un élément en XAML, l’élément ajouté est ignoré. Si vous définissez la propriété ItemsSource et que vous ajoutez un élément à la collection Items dans le code, une exception est levée.
+>**Remarque**&nbsp;&nbsp;Vous pouvez remplir un contrôle FlipView en ajoutant des éléments directement dans sa collection Items ou en définissant sa propriété ItemsSource, mais vous ne pouvez pas faire les deux à la fois. Si vous définissez la propriété ItemsSource et que vous ajoutez un élément en XAML, l’élément ajouté est ignoré. Si vous définissez la propriété ItemsSource et que vous ajoutez un élément à la collection Items dans le code, une exception est levée.
 
-### Spécifier l’accès des éléments
+### <a name="specify-the-look-of-the-items"></a>Spécifier l’accès des éléments
 
 Par défaut, un élément de données est affiché dans la vue symétrique en tant que représentation de chaîne de l’objet de données auquel il est lié. En général, on souhaite afficher une représentation enrichie des données. Pour définir précisément la façon dont les éléments sont affichés dans la vue symétrique, vous devez créer un objet [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.datatemplate.aspx). Le code XAML dans l’objet DataTemplate définit la disposition et l’apparence des contrôles qui permettent d’afficher un élément spécifique. Les contrôles dans la disposition peuvent être liés aux propriétés d’un objet de données ou leur contenu peut être défini inline. L’objet DataTemplate est affecté à la propriété [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) du contrôle FlipView.
 
@@ -149,7 +142,7 @@ Voici à quoi ressemble la disposition définie par le modèle de données.
 
 Modèle de données affiché sous forme de vue symétrique.
 
-### Définir l’orientation de la vue symétrique
+### <a name="set-the-orientation-of-the-flip-view"></a>Définir l’orientation de la vue symétrique
 
 Par défaut, la vue symétrique défile horizontalement. Pour le faire défiler verticalement, utilisez un panneau d’empilement avec une orientation verticale comme l’objet [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx) de la vue symétrique.
 
@@ -186,7 +179,7 @@ Voici à quoi ressemble la vue symétrique avec une orientation verticale.
 
 ![Exemple de vue symétrique verticale](images/controls_flipview_vertical.jpg)
 
-## Ajout d’un indicateur de contexte
+## <a name="adding-a-context-indicator"></a>Ajout d’un indicateur de contexte
 
 Un indicateur de contexte dans une vue symétrique fournit un bon point de référence. Les points d’un indicateur de contexte standard ne sont pas interactifs. Comme illustré dans cet exemple, le meilleur emplacement est généralement au centre et en dessous de la galerie de photos :
 
@@ -196,7 +189,9 @@ Pour les plus grandes collections (10 à 25 éléments), un indicateur qui propo
 
 ![Exemple d’indicateur de contexte](images/controls_contextindicator.jpg)
 
-## Pratiques conseillées et déconseillées
+Pour obtenir un exemple de code montrant comment ajouter un indicateur de contexte à un FlipView, consultez [Exemple de ListView XAML](http://go.microsoft.com/fwlink/p/?LinkID=311760).
+
+## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
 
 -   Les vues symétriques sont particulièrement adaptées aux collections contenant jusqu’à 25 éléments environ.
 -   Évitez d’utiliser un contrôle de vue symétrique pour les collections de grande taille, car le passage d’un élément à l’autre peut être fastidieux. Les albums photo, qui possèdent souvent des centaines, voire des milliers d’images, constituent une exception. Ils passent presque toujours en vue symétrique dès lors qu’une photo a été sélectionnée dans l’affichage Grille. Pour les autres collections de grande taille, pensez à [l’affichage Liste ou Grille](lists.md).
@@ -206,7 +201,7 @@ Pour les plus grandes collections (10 à 25 éléments), un indicateur qui propo
     -   Le point en surbrillance indique l’élément actuel. Généralement, le point en surbrillance est blanc et les autres points sont gris.
     -   Le nombre de points peut varier, mais veillez à ne pas en placer trop car l’utilisateur pourrait avoir du mal à se situer. 10 points est généralement le nombre maximal à afficher.
 
-## Liste de contrôle de globalisation et de localisation
+## <a name="globalization-and-localization-checklist"></a>Liste de contrôle de globalisation et de localisation
 
 <table>
 <tr>
@@ -215,14 +210,17 @@ Pour les plus grandes collections (10 à 25 éléments), un indicateur qui propo
 
 </table>
 
+## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
+* [Exemple d’éléments de base d’une interface utilisateur XAML](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
 
-## Articles connexes
+
+## <a name="related-articles"></a>Articles connexes
 
 - [Recommandations en matière de listes](lists.md)
 - [**Classe FlipView**](https://msdn.microsoft.com/library/windows/apps/br242678)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

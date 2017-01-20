@@ -6,11 +6,11 @@ ms.assetid: C328FAA3-F6AE-4970-8372-B413F1290C39
 label: Search
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: f245db6c37b7c8257e4fe937417d981e49101b8c
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: af8ee5679fe9bb152718b57bd198238bf9a3f6cd
 
 ---
-# Recherche et recherche dans la page
+# <a name="search-and-find-in-page"></a>Recherche et recherche dans la page
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -19,25 +19,16 @@ L’option de recherche est l’un des moyens les plus courants pour rechercher 
 <div class="important-apis" >
 <b>API importantes</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/dn633874"><strong>Classe AutoSuggestBox (XAML)</strong></a></li>
+<li>[**Classe AutoSuggestBox (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn633874)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-
-
-
-
-
-## Aspects de l’expérience de recherche
+## <a name="elements-of-the-search-experience"></a>Aspects de l’expérience de recherche
 
 
 **Entrée.**  La saisie de texte est le mode d’entrée de recherche le plus courant et le sujet principal de ce guide. Les modes d’entrée Voix et Webcam sont également couramment utilisés, mais ils nécessitent généralement de pouvoir communiquer avec le matériel et, dans certains cas, l’ajout de contrôles ou d’une interface utilisateur personnalisée au sein de l’application.
 
-**Entrée nulle.**  Lorsque le champ d’entrée est activé par l’utilisateur, mais qu’aucun texte n’a été saisi, vous pouvez afficher ce que l’on appelle un «canevas d’entrée nulle». Le canevas d’entrée nulle apparaît généralement dans les canevas de l’application, afin que la fonction de [suggestion automatique](auto-suggest-box.md) remplace ce contenu lorsque l’utilisateur commence à entrer sa requête. L’historique des dernières recherches, les tendances des recherches, les suggestions de recherche contextuelle, les astuces et les conseils sont tous de bons candidats pour l’état d’entrée nulle.
+**Entrée nulle.**  Lorsque le champ d’entrée est activé par l’utilisateur, mais qu’aucun texte n’a été saisi, vous pouvez afficher ce que l’on appelle un « canevas d’entrée nulle ». Le canevas d’entrée nulle apparaît généralement dans les canevas de l’application, afin que la fonction de [suggestion automatique](auto-suggest-box.md) remplace ce contenu lorsque l’utilisateur commence à entrer sa requête. L’historique des dernières recherches, les tendances des recherches, les suggestions de recherche contextuelle, les astuces et les conseils sont tous de bons candidats pour l’état d’entrée nulle.
 
 ![Exemple de Cortana dans un canevas d’entrée nulle](images/search-cortana-example.png)
 
@@ -55,12 +46,12 @@ Vous pouvez faciliter l’accès aux fonctions de modification de la dernière r
 
 L’affichage du jeu de résultats peut prendre différentes formes en fonction du contenu. Le [mode Liste](lists.md) offre une grande flexibilité et convient parfaitement à la plupart des recherches. Le mode Grille fonctionne bien pour les images ou les autres contenus multimédias. Vous pouvez utiliser une carte pour indiquer la distribution spatiale.
 
-## Zones de recherche
+## <a name="search-scopes"></a>Zones de recherche
 
 
 La fonction recherche est d’utilisation. Les interfaces utilisateur de recherche sont intégrées à l’interpréteur de commandes et à de nombreuses applications. Bien que les points d’entrée de recherche présentent généralement un aspect similaire, ils permettent d’obtenir des résultats aussi larges (recherche sur le web ou sur un périphérique) que précis (liste de contacts d’un utilisateur). Le point d’entrée de recherche doit être juxtaposé au contenu en cours de recherche.
 
-Voici quelques exemples d’étendues de recherche courantes:
+Voici quelques exemples d’étendues de recherche courantes :
 
 **Global** et **contextuel/optimal.**  Rechercher dans plusieurs sources du cloud et du contenu local. Résultats variés incluant des URL, des documents, des médias, des actions, des applications et plus encore.
 
@@ -78,7 +69,7 @@ Utilisez un texte d’information afin d’indiquer l’étendue de la recherche
 
 « Rechercher dans les paramètres »
 
-«Rechercher un emplacement»
+« Rechercher un emplacement »
 
 ![Exemple de texte d’information de recherche](images/search-windowsandweb.png)
 
@@ -86,18 +77,18 @@ Utilisez un texte d’information afin d’indiquer l’étendue de la recherche
 
 En délimitant précisément l’étendue d’un point d’entrée de recherche, vous permettez à l’utilisateur de s’assurer que ses critères correspondent bien à la fonction de recherche et vous limitez ainsi les désagréments éventuels.
 
-## Implémentation
+## <a name="implementation"></a>Implémentation
 
 
 Les champs d’entrée de texte sont recommandés pour la plupart des applications, car ils offrent un point d’entrée de recherche bien visible. Les textes d’information facilitent également la découverte et la communication avec l’étendue de la recherche. Lorsque la recherche est une fonction plus secondaire, ou lorsque l’espace est limité, l’icône de recherche peut servir de point d’entrée, sans qu’un champ d’entrée ne lui soit associé. Lorsque la recherche est affichée sous forme d’une icône, assurez-vous qu’il reste suffisamment d’espace pour afficher la zone de recherche modale, comme illustré dans les exemples ci-dessous.
 
-Avant de cliquer sur l’icône de recherche:
+Avant de cliquer sur l’icône de recherche :
 
 ![Exemple d’icône de recherche et de zone de recherche réduite](images/search-icon-collapsed.png)
 
  
 
-Après avoir cliqué sur l’icône de recherche:
+Après avoir cliqué sur l’icône de recherche :
 
 ![Exemple d’icône de recherche et de zone de recherche développée](images/search-icon-expanded.png)
 
@@ -113,40 +104,40 @@ Dans le cas des listes de défilement, il est utile d’afficher systématiqueme
 
 Les fonctionnalités d’entrée nulle et de formulation de requêtes sont facultatives pour les recherches contextuelles/optimales, dans lesquelles la liste est filtrée en temps réel par l’entrée de l’utilisateur. Des exceptions existent, notamment lorsque les suggestions de mise en forme des requêtes sont disponibles, comme les options de filtrage de la boîte de réception (à :&lt;input string&gt;, de : &lt;input string&gt;, objet : &lt;input string&gt;, etc.).
 
-## Exemple
+## <a name="example"></a>Exemple
 
 
 Cette section présente des exemples de recherche en contexte.
 
-Recherche en tant qu’action dans la barre d’outils Windows:
+Recherche en tant qu’action dans la barre d’outils Windows :
 
 ![Exemple de recherche en tant qu’action dans la barre d’outils Windows](images/search-toolbar-action.png)
 
  
 
-Recherche en tant qu’entrée sur le canevas d’application:
+Recherche en tant qu’entrée sur le canevas d’application :
 
 ![Exemple de recherche sur un canevas d’application](images/search-canvas-contacts.png)
 
  
 
-Recherche dans un volet de navigation:
+Recherche dans un volet de navigation :
 
 ![Exemple de recherche dans un menu de navigation](images/search-navmenu.png)
 
  
 
-La recherche en ligne est réservée au cas où la recherche est rarement utilisée ou est hautement contextuelle:
+La recherche en ligne est réservée au cas où la recherche est rarement utilisée ou est hautement contextuelle :
 
 ![Exemple de recherche en ligne](images/patterns-search-results-desktop.png)
 
 
-## Recommandations en matière de recherche dans la page
+## <a name="guidelines-for-find-in-page"></a>Recommandations en matière de recherche dans la page
 
 
-La recherche dans la page permet aux utilisateurs de trouver des correspondances dans le corps du texte affiché. Les visionneuses de documents, lecteurs et navigateurs constituent les types d’applications les plus classiques offrant cette fonctionnalité.
+La recherche dans la page permet aux utilisateurs de trouver des correspondances dans le corps du texte affiché. Les visionneuses de documents, lecteurs et navigateurs constituent les types d’application les plus classiques qui offrent cette fonctionnalité.
 
-## Recommandations
+## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
 
 
 -   Placez une barre de commandes dans votre application avec la fonctionnalité de recherche dans la page pour permettre à l’utilisateur d’y trouver du texte. Pour plus d’informations sur le placement, voir la section Exemples.
@@ -172,50 +163,62 @@ La recherche dans la page permet aux utilisateurs de trouver des correspondances
 -   Incluez un compteur de correspondances pour indiquer à l’utilisateur le nombre de correspondances de texte sur la page.
 -   Implémentez le raccourci clavier (Ctrl+F).
 
-## Exemples
+## <a name="examples"></a>Exemples
 
 
-Fournissez un moyen facile d’accéder à la fonctionnalité de recherche dans la page. Dans cet exemple sur une interface utilisateur mobile, la fonctionnalité «Rechercher dans la page» s’affiche après deux commandes «Ajouter à...» dans un menu extensible:
+Fournissez un moyen facile d’accéder à la fonctionnalité de recherche dans la page. Dans cet exemple sur une interface utilisateur mobile, la fonctionnalité « Rechercher dans la page » s’affiche après deux commandes « Ajouter à... » dans un menu extensible :
 
-![Exemple de recherche dans la page1](images/findinpage-01.png)
-
- 
-
-Après avoir sélectionné Rechercher dans la page, l’utilisateur entre un terme recherché. Des suggestions de texte peuvent apparaître lors de la saisie du terme recherché:
-
-![Exemple de recherche dans la page2](images/findinpage-02.png)
+![Exemple de recherche dans la page 1](images/findinpage-01.png)
 
  
 
-Si aucune correspondance de texte n’est trouvée dans la recherche, une chaîne de texte «Aucun résultat» doit s’afficher dans la zone de résultats:
+Après avoir sélectionné Rechercher dans la page, l’utilisateur entre un terme recherché. Des suggestions de texte peuvent apparaître lors de la saisie du terme recherché :
 
-![Exemple de recherche dans la page3](images/findinpage-03.png)
-
- 
-
-Si la recherche trouve des correspondances de texte, le premier terme doit être surligné dans une couleur distincte, et les autres occurrences dans une couleur plus claire de la même nuance, comme illustré dans cet exemple:
-
-![Exemple de recherche dans la page4](images/findinpage-04.png)
+![Exemple de recherche dans la page 2](images/findinpage-02.png)
 
  
 
-La Recherche dans la page a un compteur de correspondances:
+Si aucune correspondance de texte n’est trouvée dans la recherche, une chaîne de texte « Aucun résultat » doit s’afficher dans la zone de résultats :
+
+![Exemple de recherche dans la page 3](images/findinpage-03.png)
+
+ 
+
+Si la recherche trouve des correspondances de texte, le premier terme doit être surligné dans une couleur distincte, et les autres occurrences dans une couleur plus claire de la même nuance, comme illustré dans cet exemple :
+
+![Exemple de recherche dans la page 4](images/findinpage-04.png)
+
+ 
+
+La Recherche dans la page a un compteur de correspondances :
 
 ![Exemple de compteur de recherche dans la page](images/findinpage-counter.png)
 
 
 
 
-## **Implémentation de la recherche dans la page**
+## **<a name="implementing-find-in-page"></a>Implémentation de la recherche dans la page**
 
 -   Les visionneuses de documents, lecteurs et navigateurs, qui sont les types d’applications les plus susceptibles d’offrir la fonctionnalité de recherche dans la page, offrent à l’utilisateur une expérience d’affichage/lecture plein écran.
 -   La fonctionnalité de recherche dans la page est une fonctionnalité secondaire qui doit figurer dans une barre de commandes.
 
-Pour plus d’informations sur l’ajout de commandes à votre barre de commandes, voir [Barre de commandes](app-bars.md).
+Pour en savoir plus sur l’ajout de commandes à votre barre de commandes, voir [Barre de commandes](app-bars.md).
+
+<div class="microsoft-internal-note">
+## Liste de contrôle de globalisation et de localisation
+
+<table>
+<tr>
+<th>Espacement vertical</th><td>Utilisez les caractères non latins d’espacement vertical pour assurer un affichage correct des scripts non latins, y compris les nombres.</td>
+</tr>
+<tr>
+<th>Considérations bidirectionnelles</th><td>L’icône Loupe ne doit pas être affichée dans une forme en miroir en mode bidirectionnel.</td>
+</tr>
+</table>
+</div>
 
 
-
-## Articles connexes
+## <a name="related-articles"></a>Articles connexes
 
 * [**Zone de suggestion automatique**](auto-suggest-box.md)
 
@@ -226,6 +229,6 @@ Pour plus d’informations sur l’ajout de commandes à votre barre de commande
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

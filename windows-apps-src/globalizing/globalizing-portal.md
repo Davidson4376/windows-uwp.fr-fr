@@ -7,21 +7,19 @@ ms.assetid: c0791eec-5bb8-4a13-8977-61d7d98e35ce
 label: Intro
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: a34b682cc903555b9d6f64636c3d1cf7bee75b5d
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 3149eb8275cc74c61ff0e35963f3fd1dbdc4e833
 
 ---
 
-# Globalisation et localisation
-
-
-
+# <a name="globalization-and-localization"></a>Globalisation et localisation
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 Windows est utilisé dans le monde entier, par des publics de diverses cultures, régions et langues. Un utilisateur peut parler une ou même plusieurs langues. Un utilisateur peut se trouver n'importe où dans le monde et peut parler une langue quelconque selon l’endroit où il se trouve. Pour étendre le marché potentiel de votre application, vous pouvez la rendre facilement adaptable grâce aux fonctionnalités de *globalisation* et de *localisation*.
 
 **La globalisation** consiste à concevoir et développer votre application de sorte qu’elle adapte son comportement aux différents marchés du monde entier sans aucune modification ou personnalisation.
 
-Vous pouvez par exemple:
+Vous pouvez par exemple :
 
 -   Concevoir la disposition de votre application pour qu’elle s’adapte aux différentes longueurs de texte et tailles de police des autres langues dans les libellés et les chaînes de texte.
 -   Récupérer du texte et des images liées à la culture à partir de ressources pouvant être adaptées à différents marchés locaux, au lieu de les coder en dur dans le code ou le balisage de votre application.
@@ -29,14 +27,14 @@ Vous pouvez par exemple:
 
 **La localisation** consiste à adapter votre application pour répondre aux besoins linguistiques, culturels et politiques d’un marché local spécifique.
 
-Par exemple:
+Par exemple :
 
 -   Traduire le texte et les libellés de l'application pour le nouveau marché et créer des ressources distinctes pour la langue utilisée sur ce marché.
 -   Modifier si besoin les images liées à la culture, puis les placer dans des ressources distincts.
 
 Regardez cette vidéo pour savoir brièvement comment préparer votre application à une utilisation dans le monde entier : [Introduction à la globalisation et à la localisation](https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-globalization-and-localization).
 
-## Articles
+## <a name="articles"></a>Articles
 <table>
 <colgroup>
 <col width="50%" />
@@ -99,6 +97,6 @@ Consultez également la documentation initialement créée pour Windows 8.x, qui
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

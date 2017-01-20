@@ -5,20 +5,22 @@ title: Alignement, marge et espacement pour les applications de plateforme Windo
 ms.assetid: 9412ABD4-3674-4865-B07D-64C7C26E4842
 label: Alignment, margin, and padding
 template: detail.hbs
+op-migration-status: ready
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: ec16fa013e177529c517f91610b77ea22402a958
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: f6c8665c935380078efd2e8ea9d225967cf45eba
 
 ---
-# Alignement, marge et espacement
+# <a name="alignment-margin-and-padding"></a>Alignement, marge et espacement
 
 Outre les propriétés de dimension (largeur, hauteur et contraintes), les éléments peuvent aussi avoir des propriétés d’alignement, de marge et d’espacement qui influencent le comportement de disposition lorsqu’un élément subit une passe de disposition et est affiché dans une interface utilisateur. Il existe des relations entre les propriétés de dimension, d’alignement, de marge et d’espacement qui respectent un flux logique par défaut quand un objet [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) est positionné et qui font que des valeurs sont parfois utilisées et parfois ignorées selon les circonstances.
 
-## Propriétés d’alignement
+## <a name="alignment-properties"></a>Propriétés d’alignement
 
 Les propriétés [**HorizontalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208720) et [**VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208749) décrivent comment un élément enfant doit être positionné dans l’espace de disposition alloué d’un élément parent. En associant ces propriétés, la logique de disposition d’un conteneur peut positionner les éléments enfants dans un conteneur (un panneau ou un contrôle). Les propriétés d’alignement sont censées suggérer la disposition souhaitée à un conteneur de disposition adaptative. Elles sont donc définies sur des enfants [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) et interprétées par un autre parent conteneur **FrameworkElement**. Les valeurs d’alignement peuvent spécifier si les éléments sont alignés par rapport à l’un des deux bords d’une orientation ou par rapport au centre. Toutefois, la valeur par défaut des deux propriétés d’alignement est **Stretch**. Avec l’alignement **Stretch**, les éléments remplissent l’espace qui leur est alloué dans la disposition. **Stretch** est la valeur par défaut, ce qui facilite l’utilisation de techniques de disposition adaptatives lorsqu’il n’existe aucune mesure explicite ou aucune valeur [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) résultant de la passe de mesure de disposition. Avec cette valeur par défaut, il n’y a aucun risque qu’une largeur ou hauteur explicite ne soit trop élevée pour le conteneur et soit coupée jusqu’à ce que vous dimensionniez chaque conteneur.
 
-> **Remarque**  En règle générale, il est préférable de n’appliquer des mesures qu’à certains éléments clés et d’utiliser le comportement de disposition adaptative pour les autres éléments. Cela permet de bénéficier d’un comportement de disposition flexible quand l’utilisateur dimensionne la fenêtre de l’application supérieure, opération normalement possible à tout moment.
+> [!NOTE]
+> En règle générale, il est préférable d’appliquer des mesures uniquement à certains éléments clés et d’utiliser le comportement de disposition adaptative pour les autres éléments. Cela permet de bénéficier d’un comportement de disposition flexible quand l’utilisateur dimensionne la fenêtre de l’application supérieure, opération normalement possible à tout moment.
 
  
 S’il y a des valeurs [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) et [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) ou une troncature dans un conteneur adaptatif, même si **Stretch** est défini comme valeur d’alignement, la disposition est contrôlée par le comportement de son conteneur. Dans les panneaux, une valeur **Stretch** qui a été supplantée par **Height** et **Width** agit comme si la valeur était **Center**.
@@ -33,7 +35,7 @@ Les contrôles d’éléments affichent parfois des éléments pour lesquels les
 
 Les propriétés d’alignement ne sont pertinentes que si un espace supplémentaire est disponible dans une dimension du conteneur de disposition parent. Si un conteneur de disposition tronque déjà du contenu, l’alignement peut affecter la zone de l’élément où la troncature sera appliquée. Par exemple, si vous définissez `HorizontalAlignment="Left"`, le côté droit de l’élément est tronqué.
 
-## Marge
+## <a name="margin"></a>Marge
 
 La propriété [**Margin**](https://msdn.microsoft.com/library/windows/apps/br208724) décrit la distance entre un élément et ses homologues dans une situation de disposition, ainsi que la distance entre un élément et la zone de contenu d’un conteneur qui contient l’élément. Si l’on considère les éléments comme des cadres englobants ou des rectangles où les dimensions sont les valeurs [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) et [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709), la disposition **Margin** s’applique à l’extérieur de ce rectangle et n’ajoute pas de pixels aux valeurs **ActualHeight** et **ActualWidth**. La marge n’est pas non plus considérée comme faisant partie de l’élément pour les besoins des tests de positionnement et de la détection des événements d’entrée.
 
@@ -49,7 +51,7 @@ Une utilisation correcte de la propriété [**Margin**](https://msdn.microsoft.c
 
 La classe [**Block**](https://msdn.microsoft.com/library/windows/apps/br244379), qui est une classe de base pour [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244503), possède aussi une propriété [**Margin**](https://msdn.microsoft.com/library/windows/apps/jj191725). Elle a un effet analogue sur la façon dont cet objet **Paragraph** est positionné dans son conteneur parent, qui est généralement un objet [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565) ou [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/br227548), et également sur la façon dont plusieurs paragraphes sont positionnés par rapport à d’autres homologues **Block** de la collection [**RichTextBlock.Blocks**](https://msdn.microsoft.com/library/windows/apps/br244347).
 
-## Espacement
+## <a name="padding"></a>Espacement
 
 Une propriété **Padding** décrit la distance entre un élément et tout contenu ou élément enfant qu’il contient. Le contenu est traité comme un cadre englobant unique qui renferme tout le contenu, s’il s’agit d’un élément qui autorise plusieurs enfants. Par exemple, si un objet [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/br242803) contient deux éléments, la propriété [**Padding**](https://msdn.microsoft.com/library/windows/apps/br209459) est appliquée autour du cadre englobant qui contient les éléments. **Padding** est soustrait de la taille disponible durant les calculs de passe de mesure et de disposition pour ce conteneur. Les valeurs font partie des valeurs de taille souhaitées quand le conteneur subit une passe de disposition pour son contenu. Contrairement à [**Margin**](https://msdn.microsoft.com/library/windows/apps/br208724), **Padding** n’est pas une propriété de [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706). En fait, il existe plusieurs classes qui définissent chacune leur propre propriété **Padding** :
 
@@ -60,28 +62,23 @@ Une propriété **Padding** décrit la distance entre un élément et tout conte
 
 Dans chacun de ces cas, le même élément a aussi une propriété **Margin**. Si une marge et un espacement sont appliqués, ils s’ajoutent. Autrement dit, la distance apparente entre un conteneur extérieur et tout contenu intérieur est égale à la marge plus l’espacement. Si des valeurs d’arrière-plan différentes sont appliquées au contenu, à l’élément ou au conteneur, le point où la marge se termine et où l’espacement commence est potentiellement visible dans le rendu.
 
-## Dimensions (Height, Width)
+## <a name="dimensions-height-width"></a>Dimensions (Height, Width)
 
 Les propriétés [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) et [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) d’un objet [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) influencent souvent le comportement des propriétés d’alignement, de marge et d’espacement durant une passe de disposition. En particulier, une valeur **Height** et **Width** à nombre réel annule les alignements **Stretch** et est également promue comme composant possible de la valeur [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) qui est établie durant la passe de mesure de disposition. **Height** et **Width** ont des propriétés de contrainte : la valeur **Height** peut être contrainte avec [**MinHeight**](https://msdn.microsoft.com/library/windows/apps/br208731) et [**MaxHeight**](https://msdn.microsoft.com/library/windows/apps/br208726), et la valeur **Width** peut être contrainte avec [**MinWidth**](https://msdn.microsoft.com/library/windows/apps/br208733) et [**MaxWidth**](https://msdn.microsoft.com/library/windows/apps/br208728). De plus, [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) et [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) sont des propriétés calculées en lecture seule qui contiennent des valeurs valides uniquement quand la passe de disposition est terminée. Pour plus d’informations sur les relations entre les dimensions et les contraintes ou propriétés calculées, voir les Notes dans [**FrameworkElement.Height**](https://msdn.microsoft.com/library/windows/apps/br208718) et [**FrameworkElement.Width**](https://msdn.microsoft.com/library/windows/apps/br208751).
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 **Référence**
 
-[**FrameworkElement.Height**](https://msdn.microsoft.com/library/windows/apps/br208718)
-
-[**FrameworkElement.Width**](https://msdn.microsoft.com/library/windows/apps/br208751)
-
-[**FrameworkElement.HorizontalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208720)
-
-[**FrameworkElement.VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208749)
-
-[**FrameworkElement.Margin**](https://msdn.microsoft.com/library/windows/apps/br208724)
-
-[**Control.Padding**](https://msdn.microsoft.com/library/windows/apps/br209459)
+* [**FrameworkElement.Height**](https://msdn.microsoft.com/library/windows/apps/br208718)
+* [**FrameworkElement.Width**](https://msdn.microsoft.com/library/windows/apps/br208751)
+* [**FrameworkElement.HorizontalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208720)
+* [**FrameworkElement.VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208749)
+* [**FrameworkElement.Margin**](https://msdn.microsoft.com/library/windows/apps/br208724)
+* [**Control.Padding**](https://msdn.microsoft.com/library/windows/apps/br209459)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

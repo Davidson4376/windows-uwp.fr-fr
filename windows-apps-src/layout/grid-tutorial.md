@@ -1,6 +1,16 @@
+---
+author: mukin
+Description: "Cet article se présente sous forme de didacticiel conçu pour guider le lecteur tout au long des étapes nécessaires pour créer l’interface utilisateur d’une application simple. Il explique et montre comment utiliser Grid et StackPanel, deux des éléments XAML les plus courants."
+title: "Créer une application Météo simple à l’aide de Grid et de StackPanel"
+translationtype: Human Translation
+ms.sourcegitcommit: c30aed9681d7c091e9831df3f53d8779dfacce38
+ms.openlocfilehash: 1990a3ad4e56fa039d024c53a04b021e60bed145
+
+---
+
 # <a name="create-a-simple-weather-app-by-using-grid-and-stackpanel"></a>Créer une application Météo simple à l’aide de Grid et de StackPanel
 
-Utilisez XAML pour créer la disposition d’une application Météo simple à l’aide des éléments **Grid** et **StackPanel**. Ces outils permettent de créer des applications qui s’affichent correctement sur n’importe quel appareil exécutant Windows 10. Ce didacticiel dure 10 à 20 minutes.
+Utilisez XAML pour créer la disposition d’une application Météo simple à l’aide des éléments **Grid** et **StackPanel**. Ces outils vous permettent de créer des applications esthétiques qui fonctionnent sur tous les appareils exécutant Windows 10. Ce didacticiel dure 10 à 20 minutes.
 
 ## <a name="prerequisites"></a>Conditions préalables
 - Windows 10 et Microsoft Visual Studio 2015. [Cliquez ici pour savoir comment prendre en main Visual Studio](../get-started/get-set-up.md).
@@ -14,7 +24,7 @@ Utilisez XAML pour créer la disposition d’une application Météo simple à l
 5. Pour exécuter le programme, choisissez **Déboguer** > **Démarrer le débogage** dans le menu, ou appuyez sur F5.
 
 ## <a name="step-2-define-a-grid"></a>Étape 2 : Définir une grille
-Dans le code XAML, une **grille** comprend une série de lignes et de colonnes. En spécifiant la ligne et la colonne d’un élément dans une **grille**, vous pouvez facilement placer et espacer d’autres éléments dans une interface utilisateur. Les lignes et colonnes sont définies avec les éléments **RowDefinition** et **ColumnDefinition**.
+Dans le code XAML, une **grille** comprend une série de lignes et de colonnes. En spécifiant la ligne et la colonne d’un élément dans une **grille**, vous pouvez placer et espacer d’autres éléments dans une interface utilisateur. Les lignes et colonnes sont définies avec les éléments **RowDefinition** et **ColumnDefinition**.
 
 Pour commencer à créer une disposition, ouvrez **MainPage.xaml** à l’aide de l’**Explorateur de solutions** et remplacez l’élément **Grid** généré automatiquement par ce code.
 
@@ -33,7 +43,7 @@ Pour commencer à créer une disposition, ouvrez **MainPage.xaml** à l’aide d
 
 Le nouvel élément **Grid** crée un ensemble de deux lignes et colonnes, qui définit la disposition de l’interface de l’application. La première colonne a une **largeur** de « 3\* », tandis que la seconde a une largeur de « 5\* », divisant l’espace horizontal entre les deux colonnes à un rapport de 3:5. De la même manière, les deux lignes ont une **hauteur** de « 3\* » et « \* » respectivement, l’élément **Grid** allouant trois fois plus d’espace à la première ligne qu’à la seconde (« \* » est identique à « 1\* »). Ces rapports sont conservés même si la fenêtre est redimensionnée ou si l’appareil est modifié.
 
-Pour en savoir plus sur les autres méthodes de dimensionnement des lignes et des colonnes, consultez [Définir des dispositions avec XAML](https://msdn.microsoft.com/en-us/windows/uwp/layout/layouts-with-xaml#layout-properties).
+Pour en savoir plus sur les autres méthodes de dimensionnement des lignes et des colonnes, consultez [Définir des dispositions avec XAML](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml#layout-properties).
 
 Si vous exécutez l’application maintenant, vous ne verrez rien d’autre qu’une page vide, car aucune des zones de la **grille** ne contient d’informations. Pour afficher la **grille**, donnons-lui de la couleur.
 
@@ -102,11 +112,12 @@ C’est tout ! Vous venez de créer la disposition d’une application Météo 
 Si vous le souhaitez, testez la disposition ci-dessus et explorez les différentes façons de représenter des données météorologiques.
 
 ## <a name="related-articles"></a>Articles connexes
-Pour une introduction à la conception de dispositions d’application UWP, consultez [Introduction à la conception d’une application UWP](https://msdn.microsoft.com/en-us/windows/uwp/layout/design-and-ui-intro).
+Pour une introduction à la conception de dispositions d’application UWP, consultez [Introduction à la conception d’une application UWP](https://msdn.microsoft.com/windows/uwp/layout/design-and-ui-intro).
 
-Pour apprendre à créer des dispositions réactives adaptables à différentes tailles d’écran, consultez [Définir des dispositions de pages avec XAML](https://msdn.microsoft.com/en-us/windows/uwp/layout/layouts-with-xaml).
+Pour apprendre à créer des dispositions réactives adaptables à différentes tailles d’écran, consultez [Définir des dispositions de pages avec XAML](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml).
 
 
-<!--HONumber=Dec16_HO1-->
+
+<!--HONumber=Jan17_HO1-->
 
 

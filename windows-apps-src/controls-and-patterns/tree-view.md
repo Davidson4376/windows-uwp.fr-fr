@@ -5,13 +5,16 @@ title: Arborescence
 label: Tree view
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: b81ef40954860cb026038447158ba1a9edb07002
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 88e3e79b7ebdf06c200f3525095d7685f7e3e6dc
 
 ---
-# Disposition hiérarchique avec TreeView
+# <a name="hierarchical-layout-with-treeview"></a>Disposition hiérarchique avec TreeView
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
+<div class="microsoft-internal-note">
+Les lignes rouges à utiliser pour l’arborescence se trouvent dans le Design Depot : http://designdepotweb1/DesignDepot.FrontEnd/#/Dashboard/856
+</div>
 
 TreeView est un modèle de liste hiérarchique comportant des nœuds de développement et de réduction qui contiennent des éléments imbriqués. Ces derniers peuvent être des nœuds supplémentaires ou des éléments de liste standard. Vous pouvez utiliser un élément [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) pour générer une arborescence afin d’illustrer une structure de dossiers ou des relations imbriquées dans votre interface utilisateur.
 
@@ -27,56 +30,56 @@ L’exemple prend en charge les éléments suivants :
 -- | --
 Exemple de référence TreeView | TreeView dans le navigateur Edge
 
-## Est-ce le modèle approprié ?
+## <a name="is-this-the-right-pattern"></a>Est-ce le modèle approprié ?
 
 - Utilisez un contrôle TreeView lorsque les éléments comportent des éléments de liste imbriqués et s’il est important d’illustrer la relation hiérarchique des éléments par rapport à leurs homologues et leurs nœuds.
 
 - Évitez d’utiliser TreeView si la mise en évidence de la relation imbriquée d’un élément n’est pas une priorité. Pour la plupart des scénarios d’exploration, un affichage sous forme de liste normal est approprié
 
-## Structure de l’interface utilisateur de TreeView
+## <a name="treeview-ui-structure"></a>Structure de l’interface utilisateur de TreeView
 
 Vous pouvez utiliser des icônes pour représenter les nœuds dans un modèle TreeView. Une combinaison de retraits et d’icônes peut être utilisée pour représenter la relation imbriquée existant entre les nœuds parent/de dossier et les nœuds enfant/autre que des dossiers. Voici comment procéder.
 
-### Icônes
+### <a name="icons"></a>Icônes
 
 Utilisez des icônes pour indiquer qu’un élément est un nœud, ainsi que son état (développé ou réduit).
 
-#### Chevron
+#### <a name="chevron"></a>Chevron
 
 Par souci de cohérence, les nœuds réduits doivent utiliser un chevron pointant vers la droite, et les nœuds développés un chevron pointant vers le bas.
 
 ![Utilisation de l’icône Chevron dans TreeView](images/treeview_chevron.png)
 
-#### Dossier
+#### <a name="folder"></a>Dossier
 
 Utilisez une icône de dossier uniquement pour les représentations littérales des dossiers.
 
 ![Utilisation de l’icône Dossier dans TreeView](images/treeview_folder.png)
 
-#### Chevron et Dossier
+#### <a name="chevron-and-folder"></a>Chevron et Dossier
 
 La combinaison chevron/dossier doit être utilisée uniquement si les éléments de liste autres que des nœuds dans TreeView possèdent également des icônes.
 
 ![Utilisation combinée des icônes Chevron et Dossier dans un modèle TreeView](images/treeview_chevron_folder.png)
 
-#### Traits rouges pour la mise en retrait des nœuds de dossier et d’autres types
+#### <a name="redlines-for-indentation-of-folders-and-non-folder-nodes"></a>Traits rouges pour la mise en retrait des nœuds de dossier et d’autres types
 
 Utilisez les traits rouges dans la capture d’écran ci-dessous pour la mise en retrait des nœuds de dossier et d’autres types
 
 ![Traits rouges pour la mise en retrait des nœuds de dossier et d’autres types](images/treeview_chevron_folder_indent_rl.png)
 
-## Création d’un modèle TreeView
+## <a name="building-a-treeview"></a>Création d’un modèle TreeView
 
 TreeView comporte les classes principales suivantes. Elles sont toutes définies et incluses dans l’implémentation de référence.
 
-> **Remarque**  TreeView est implémenté sous forme de [composant Windows Runtime](https://msdn.microsoft.com/windows/uwp/winrt-components/index) écrit en C++. Par conséquent, une application UWP peut y faire référence dans n’importe quelle langue. Dans l’exemple, le code TreeView se trouve dans le dossier *cpp/Control*. Il n’existe aucun dossier *cs/Control* correspondant pour C#.
+> **Remarque**&nbsp;&nbsp;TreeView est implémenté sous forme de [composant Windows Runtime](https://msdn.microsoft.com/windows/uwp/winrt-components/index) écrit en C++. Par conséquent, une application UWP peut y faire référence dans n’importe quelle langue. Dans l’exemple, le code TreeView se trouve dans le dossier *cpp/Control*. Il n’existe aucun dossier *cs/Control* correspondant pour C#.
 
 - La classe `TreeNode` implémente la disposition hiérarchique pour TreeView. Elle conserve également les données qui seront associées dans le modèle d’éléments.
 - La classe `TreeView` implémente des événements pour ItemClick, développe/réduit des dossiers, et lance l’opération glisser.
 - La classe `TreeViewItem` implémente les événements pour l’opération déplacer.
 - La classe `ViewModel` aplatit la liste des TreeViewItems afin que les opérations, telles que la navigation au clavier et les opérations de glisser-déplacer puissent être héritées de ListView.
 
-## Créer un modèle de données pour votre TreeViewItem
+## <a name="create-a-data-template-for-your-treeviewitem"></a>Créer un modèle de données pour votre TreeViewItem
 
 Voici la partie du code XAML qui configure le modèle de données pour les éléments de type dossier et autre.
 - Pour spécifier un ListViewItem comme dossier, vous devez définir explicitement la propriété [AllowDrop](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.allowdrop.aspx) sur **true** sur ce ListViewItem. Ce code XAML montre une manière d’y parvenir.
@@ -133,7 +136,7 @@ Voici la partie du code XAML qui configure le modèle de données pour les élé
 </DataTemplate>
 ```
 
-## Configurer les données dans votre TreeView
+## <a name="set-up-the-data-in-your-treeview"></a>Configurer les données dans votre TreeView
 
 Voici le code qui configure les données dans l’exemple TreeView.
 
@@ -179,7 +182,7 @@ Une fois que vous avez terminé les étapes ci-dessus, vous aurez une dispositio
 Pour fournir à l’utilisateur la possibilité d’ajouter/supprimer des éléments à partir de TreeView, nous vous recommandons d’ajouter un menu contextuel pour exposer ces options à l’utilisateur.
 
 
-## Articles connexes
+## <a name="related-articles"></a>Articles connexes
 
 - [Exemple TreeView](http://go.microsoft.com/fwlink/?LinkId=785018)
 - [**ListView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)
@@ -187,6 +190,6 @@ Pour fournir à l’utilisateur la possibilité d’ajouter/supprimer des élém
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

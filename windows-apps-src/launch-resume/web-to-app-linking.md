@@ -3,9 +3,14 @@ author: TylerMSFT
 title: "Prise en charge de la liaison application-site web avec les gestionnaires d’URI d’application"
 description: "Rendez votre application plus attractive avec des gestionnaires d’URI d’application."
 keywords: "Liaisons Windows ciblées"
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 3e57ca2cf0e7c788f5a8be12ebaf3e6b05a4fe51
-ms.openlocfilehash: e5c815ef0c776954e5b0d7f1cb9bd5e32e10356c
+ms.sourcegitcommit: ffa6ad17ee865dda5349565094c38e09dc42e0e3
+ms.openlocfilehash: 524a0897b6b8a8d17bb7493dc4d9e4357d8c1456
 
 ---
 
@@ -65,7 +70,7 @@ L’exemple de fichier JSON ci-dessus illustre l’utilisation des caractères g
 
 | **Caractère générique** | **Description**               |
 |--------------|-------------------------------|
-| *****       | Représente une sous-chaîne      |
+| **\***       | Représente une sous-chaîne      |
 | **?**        | Représente un caractère unique |
 
 Par exemple, avec la ligne `"excludePaths" : [ "/news/*", "/blog/*" ]` donnée dans l’exemple ci-dessus, votre application prendra en charge tous les chemins d’accès qui commencent par l’adresse de votre site web (par exemple, msn.com), **sauf** ceux qui se trouvent sous `/news/` et `/blog/`. **msn.com/weather.html** sera donc pris en charge, mais pas ****msn.com/news/topnews.html****.
@@ -163,7 +168,7 @@ Fermez votre application pour vérifier que l’application est activée lorsque
 
 Vérifiez que votre application est fermée. Appuyez sur la **touche Windows + R** pour ouvrir la boîte de dialogue **Exécuter**, puis collez le lien dans la fenêtre. Votre application doit alors démarrer à la place du navigateur web.
 
-Vous pouvez aussi tester votre application en la démarrant à partir d’une autre application à l’aide de l’API [LaunchUriAsync](https://msdn.microsoft.com/en-us/library/windows/apps/hh701480.aspx). Vous pouvez utiliser cette API pour tester également votre application sur des téléphones.
+Vous pouvez aussi tester votre application en la démarrant à partir d’une autre application à l’aide de l’API [LaunchUriAsync](https://msdn.microsoft.com/library/windows/apps/hh701480.aspx). Vous pouvez utiliser cette API pour tester également votre application sur des téléphones.
 
 Si vous souhaitez suivre la logique d’activation du protocole, définissez un point d’arrêt dans le gestionnaire d’événements **OnActivated**.
 
@@ -183,18 +188,18 @@ Si vous souhaitez suivre la logique d’activation du protocole, définissez un 
 
 - Toutes les applications chargées de manière indépendante avec AppUriHandlers auront des liens validés pour l’hôte au moment de l’installation. Il est inutile de charger un fichier JSON pour tester la fonctionnalité.
 
-- Cette fonctionnalité fonctionne à chaque fois que votre application est une application UWP lancée avec [LaunchUriAsync](https://msdn.microsoft.com/en-us/library/windows/apps/hh701480.aspx) ou une application de bureau Windows lancée avec [ShellExecuteEx](https://msdn.microsoft.com/en-us/library/windows/desktop/bb762154(v=vs.85).aspx). Si l’URL correspond à un gestionnaire d’URI d’application enregistré, l’application sera lancée en lieu et place du navigateur.
+- Cette fonctionnalité est toujours disponible si votre application est une application UWP lancée avec [LaunchUriAsync](https://msdn.microsoft.com/library/windows/apps/hh701480.aspx) ou une application de bureau Windows lancée avec [ShellExecuteEx](https://msdn.microsoft.com/library/windows/desktop/bb762154(v=vs.85).aspx). Si l’URL correspond à un gestionnaire d’URI d’application enregistré, l’application sera lancée en lieu et place du navigateur.
 
 ## <a name="see-also"></a>Voir également
 
-[Inscription de windows.protocol](https://msdn.microsoft.com/en-us/library/windows/apps/br211458.aspx)
+[Inscription de windows.protocol](https://msdn.microsoft.com/library/windows/apps/br211458.aspx)
 
-[Gérer l’activation des URI](https://msdn.microsoft.com/en-us/windows/uwp/launch-resume/handle-uri-activation)
+[Gérer l’activation des URI](https://msdn.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 
 [L’exemple de lancement d’association](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching) explique comment utiliser l’API LaunchUriAsync().
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -4,8 +4,8 @@ description: "Voici la première partie de la procédure complète sur la créat
 ms.assetid: A9E11694-A7F5-4E27-95EC-889307E0C0EF
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: a70a59283fe664bef9ddab56df57a9fc46c91033
-ms.openlocfilehash: 04311e9c3242bdaf6588c8102a06ae658e6637e2
+ms.sourcegitcommit: 126811b615117c0204e3ac4326d810c986a51e55
+ms.openlocfilehash: 27f06fe3031d391a03bc5f5b08723983b34308f0
 
 ---
 
@@ -624,9 +624,9 @@ Cet exercice est la suite de l’exercice précédent. Lorsqu’un utilisateur r
 
 -   Créez et exécutez l’application. Connectez-vous avec « sampleUsername » et cliquez sur Connexion. Entrez votre code PIN. Si tout fonctionne correctement, vous accédez à l’écran d’accueil. Essayez de cliquer sur oublier l’utilisateur et contrôlez la fenêtre Sortie pour voir si l’utilisateur a été supprimé. Lorsque l’utilisateur est supprimé, vous restez sur la page d’accueil. Vous devez créer une page de sélection d’utilisateur à laquelle l’application peut accéder.
 
-    !passport welcome screen](images/passport-login-9.png)
+    ![écran d’accueil à Passport](images/passport-login-9.png)
 
--   Dans le dossier Vues, créez une page vierge appelée « UserSelection.xaml » et ajoutez le code XAML suivant pour définir l’interface utilisateur. Cette page contient un [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) qui affiche tous les utilisateurs de la liste locale des comptes et un bouton qui accède à la page de connexion pour permettre à l’utilisateur d’ajouter un autre compte.
+-   Dans le dossier Vues, créez une page vierge appelée « UserSelection.xaml » et ajoutez le code XAML suivant pour définir l’interface utilisateur. Cette page contient un [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) qui affiche tous les utilisateurs de la liste locale des comptes et un bouton qui accède à la page de connexion pour permettre à l’utilisateur d’ajouter un autre compte.
 
     ```xml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -973,6 +973,6 @@ En tant que développeur, vous n’avez pas d’efforts supplémentaires à four
 * [Service de connexion Microsoft Passport](microsoft-passport-login-auth-service.md)
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

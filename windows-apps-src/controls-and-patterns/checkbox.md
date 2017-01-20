@@ -6,11 +6,11 @@ ms.assetid: 6231A806-287D-43EE-BD8D-39D2FF761914
 label: Check boxes
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: f565acbebbee8b8fb88a72970c9dbe3202ba24df
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 874d1a7200359ecc46b26b306b208946c7a6f273
 
 ---
-# Cases à cocher
+# <a name="check-boxes"></a>Cases à cocher
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -21,20 +21,14 @@ Une case à cocher permet de sélectionner ou de désélectionner des éléments
 <div class="important-apis" >
 <b>API importantes</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br209316"><strong>Classe CheckBox</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx"><strong>Événement Checked</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx"><strong>Propriété IsChecked</strong></a> </li>
+<li>[**Classe CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316)</li>
+<li>[**Événement Checked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)</li>
+<li>[**Propriété IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) </li>
 </ul>
-
-</div>
 </div>
 
 
-
-
-
-
-## Est-ce le contrôle approprié ?
+## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
 Utilisez une **case à cocher unique** pour un choix binaire Oui/Non, comme avec la question « Mémoriser mes informations ? » scénario de connexion avec conditions d’utilisation du service.
 
@@ -54,7 +48,7 @@ Lorsque les options peuvent être regroupées, vous pouvez utiliser une case à 
 
 Les deux contrôles **case à cocher** et **case d’option** permettent à l’utilisateur d’effectuer un choix dans une liste d’options. Les cases à cocher permettent à l’utilisateur de sélectionner une combinaison quelconque d’options. En revanche, les cases d’option permettent à l’utilisateur d’effectuer un choix unique à partir d’options qui s’excluent mutuellement. Lorsque plusieurs options sont disponibles mais qu’une seule peut être choisie, utilisez une case d’option à la place.
 
-## Exemples
+## <a name="examples"></a>Exemples
 
 Une case à cocher dans une boîte de dialogue du navigateur Microsoft Edge.
 
@@ -64,7 +58,7 @@ Des cases à cocher dans l’application Alarmes et horloge dans Windows.
 
 ![Des cases à cocher dans l’application Alarmes et horloge dans Windows](images/control-examples/check-box-alarm.png)
 
-## Créer une case à cocher
+## <a name="create-a-checkbox"></a>Créer une case à cocher
 
 Pour attribuer une étiquette à la case à cocher, définissez la propriété [**Content**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content.aspx). L’étiquette s’affiche en regard de la case à cocher.
 
@@ -82,13 +76,13 @@ CheckBox checkBox1 = new CheckBox();
 checkBox1.Content = "I agree to the terms of service.";
 ```
 
-### Lier à IsChecked
+### <a name="bind-to-ischecked"></a>Lier à IsChecked
 
 Utilisez la propriété [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) pour déterminer si la case à cocher est activée ou désactivée. Vous pouvez lier la valeur de la propriété IsChecked à une autre valeur binaire. Toutefois, étant donné que IsChecked est une valeur booléenne [Nullable](https://msdn.microsoft.com/library/windows/apps/b3h38hb0.aspx), vous devez utiliser un convertisseur de valeur pour la lier à une valeur booléenne.
 
 Dans cet exemple, la propriété **IsChecked** de la case à cocher pour accepter les conditions d’utilisation est liée à la propriété [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isenabled.aspx) du bouton Envoyer. Le bouton Envoyer est activé uniquement si l’utilisateur accepte les conditions d’utilisation.
 
-> Remarque  Nous affichons ici uniquement le code approprié. Pour en savoir plus sur les convertisseurs de valeurs et la liaison de données, voir [Vue d’ensemble de la liaison de données](../data-binding/data-binding-quickstart.md).
+> Remarque&nbsp;&nbsp;Nous affichons ici uniquement le code approprié. Pour en savoir plus sur les convertisseurs de valeurs et la liaison de données, voir [Vue d’ensemble de la liaison de données](../data-binding/data-binding-quickstart.md).
 
 ```xaml
 ...
@@ -127,7 +121,7 @@ public class NullableBooleanToBooleanConverter : IValueConverter
 }
 ```
 
-### Gérer les événements Click et Checked
+### <a name="handle-click-and-checked-events"></a>Gérer les événements Click et Checked
 
 Pour effectuer une action lorsque l’état de la case à cocher change, vous pouvez gérer soit l’événement [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx), soit les événements [**Checked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx) et [**Unchecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.unchecked.aspx). 
 
@@ -180,7 +174,7 @@ private void toppingsCheckbox_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-### Utiliser l’état indéterminé
+### <a name="use-the-indeterminate-state"></a>Utiliser l’état indéterminé
 
 Le contrôle CheckBox hérite de [ToggleButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.aspx) et peut avoir trois états : 
 
@@ -276,7 +270,7 @@ private void SetCheckedState()
 }
 ```
 
-## Pratiques conseillées et déconseillées
+## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
 
 -   Assurez-vous que le but et l’état actuel de la case à cocher sont clairs.
 -   Limitez le texte de la case à cocher à deux lignes.
@@ -298,7 +292,7 @@ private void SetCheckedState()
     ![Groupe de cases d’options proposant trois options : Non épicé, Épicé et Très épicé.](images/spicyoptions.png)
 
 
-## Articles connexes
+## <a name="related-articles"></a>Articles connexes
 
 -   [**Classe CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 
 -   [Cases d’option](radio-button.md)
@@ -308,6 +302,6 @@ private void SetCheckedState()
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

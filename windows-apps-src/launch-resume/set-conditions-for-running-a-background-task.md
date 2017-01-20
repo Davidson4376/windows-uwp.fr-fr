@@ -4,14 +4,14 @@ title: "Définir des conditions pour exécuter une tâche en arrière-plan"
 description: "Découvrez comment définir des conditions qui contrôlent le moment auquel votre tâche en arrière-plan s’exécutera."
 ms.assetid: 10ABAC9F-AA8C-41AC-A29D-871CD9AD9471
 translationtype: Human Translation
-ms.sourcegitcommit: 7d1c160f8b725cd848bf8357325c6ca284b632ae
-ms.openlocfilehash: c22fed27b77f3287dd11a05c32405fe18521af65
+ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
+ms.openlocfilehash: c83f861f43209c42dff661e3277e1d8a1b67d37c
 
 ---
 
-# Définir des conditions pour exécuter une tâche en arrière-plan
+# <a name="set-conditions-for-running-a-background-task"></a>Définir des conditions pour exécuter une tâche en arrière-plan
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **API importantes**
 
@@ -27,15 +27,15 @@ L’affectation de conditions aux tâches en arrière-plan permet d’économise
 
 Il est également possible de combiner plusieurs conditions en appelant AddCondition plusieurs fois sur le même [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Veillez à ne pas ajouter de conditions conflictuelles, telles que **UserPresent** et **UserNotPresent**.
 
-## Créer un objet SystemCondition
+## <a name="create-a-systemcondition-object"></a>Créer un objet SystemCondition
 
-Cette rubrique suppose qu’une tâche en arrière-plan est déjà associée à votre application et que cette dernière comporte déjà du code qui crée un objet [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) nommé **taskBuilder**.  Consultez [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md) ou [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-an-outofproc-background-task.md) si vous devez commencer par créer une tâche en arrière-plan.
+Cette rubrique suppose qu’une tâche en arrière-plan est déjà associée à votre application et que cette dernière comporte déjà du code qui crée un objet [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) nommé **taskBuilder**.  Consultez [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md) ou [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-a-background-task.md) si vous devez commencer par créer une tâche en arrière-plan.
 
 Cette rubrique concerne aussi bien les tâches en arrière-plan qui s’exécutent hors processus que celles qui s’exécutent dans le même processus que l’application au premier plan.
 
 Avant d’ajouter la condition, créez un objet [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) représentant la condition qui doit être effective pour qu’une tâche en arrière-plan soit exécutée. Dans le constructeur, spécifiez la condition qui doit être remplie en fournissant une valeur d’énumération [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
 
-Le code suivant crée un objet [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) qui spécifie l’accessibilité à Internet comme étant une condition essentielle:
+Le code suivant crée un objet [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) qui spécifie l’accessibilité à Internet comme étant une condition essentielle :
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -45,7 +45,7 @@ Le code suivant crée un objet [**SystemCondition**](https://msdn.microsoft.com/
 > SystemCondition ^ internetCondition = ref new SystemCondition(SystemConditionType::InternetAvailable);
 > ```
 
-## Ajouter l’objet SystemCondition à votre tâche en arrière-plan
+## <a name="add-the-systemcondition-object-to-your-background-task"></a>Ajouter l’objet SystemCondition à votre tâche en arrière-plan
 
 
 Pour ajouter la condition, appelez la méthode [**AddCondition**](https://msdn.microsoft.com/library/windows/apps/br224769) sur l’objet [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) et transmettez-lui l’objet [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834).
@@ -60,12 +60,12 @@ Le code suivant inscrit la condition de tâche en arrière-plan InternetAvailabl
 > taskBuilder->AddCondition(internetCondition);
 > ```
 
-## Inscrire votre tâche en arrière-plan
+## <a name="register-your-background-task"></a>Inscrire votre tâche en arrière-plan
 
 
-Vous pouvez à présent inscrire votre tâche en arrière-plan à l’aide de la méthode [**Register**](https://msdn.microsoft.com/library/windows/apps/br224772); la tâche ne démarrera pas tant que la condition spécifiée n’aura pas été satisfaite.
+Vous pouvez à présent inscrire votre tâche en arrière-plan à l’aide de la méthode [**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) ; la tâche ne démarrera pas tant que la condition spécifiée n’aura pas été satisfaite.
 
-Le code suivant inscrit la tâche et stocke l’objet BackgroundTaskRegistration obtenu:
+Le code suivant inscrit la tâche et stocke l’objet BackgroundTaskRegistration obtenu :
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -75,20 +75,20 @@ Le code suivant inscrit la tâche et stocke l’objet BackgroundTaskRegistration
 > BackgroundTaskRegistration ^ task = taskBuilder->Register();
 > ```
 
-> **Remarque** Les applications Windows universelles doivent appeler [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) avant d’inscrire tout type de déclencheur en arrière-plan.
+> **Remarque** Les applications Windows universelles doivent appeler l’élément [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) avant d’inscrire tout type de déclencheur en arrière-plan.
 
 Pour vous assurer que votre application Windows universelle continue de s’exécuter correctement après la publication d’une mise à jour, vous devez appeler [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471), puis [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) lorsque votre application est lancée après avoir été mise à jour. Pour plus d’informations, voir [Recommandations en matière de tâches en arrière-plan](guidelines-for-background-tasks.md).
 
 > **Remarque** Les paramètres d’inscription de la tâche en arrière-plan sont validés au moment de l’inscription. Une erreur est retournée si l’un des paramètres d’inscription n’est pas valide. Vérifiez que votre application gère de façon fluide les scénarios dans lesquels l’inscription de la tâche en arrière-plan échoue. En revanche, si votre application dépend d’un objet d’inscription valide après la tentative d’inscription d’une tâche, elle peut se bloquer.
 
-## Placer plusieurs conditions dans la tâche en arrière-plan
+## <a name="place-multiple-conditions-on-your-background-task"></a>Placer plusieurs conditions dans la tâche en arrière-plan
 
 Pour ajouter plusieurs conditions, votre application effectue plusieurs appels à la méthode [**AddCondition**](https://msdn.microsoft.com/library/windows/apps/br224769). Pour être effectifs, ces appels doivent intervenir avant l’inscription de la tâche.
 
 > **Remarque** Veillez à ne pas ajouter de conditions conflictuelles à une tâche en arrière-plan.
  
 
-L’extrait de code suivant présente plusieurs conditions dans un contexte de création et d’inscription d’une tâche en arrière-plan:
+L’extrait de code suivant présente plusieurs conditions dans un contexte de création et d’inscription d’une tâche en arrière-plan :
 
 > [!div class="tabbedCodeSnippets"]
 ```cs
@@ -150,18 +150,18 @@ L’extrait de code suivant présente plusieurs conditions dans un contexte de c
 > BackgroundTaskRegistration ^ task = recurringTaskBuilder->Register();
 ```
 
-## Remarques
+## <a name="remarks"></a>Remarques
 
 
-> **Remarque** Choisissez les conditions appropriées pour votre tâche en arrière-plan afin qu’elle s’exécute uniquement lorsque cela est nécessaire, et non à un moment inopportun. Voir [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) pour obtenir une description des différentes conditions de tâche en arrière-plan.
+> **Remarque** Choisissez les conditions appropriées pour votre tâche en arrière-plan, afin qu’elle s’exécute uniquement lorsque cela est nécessaire, et non à un moment inopportun. Voir [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) pour obtenir une description des différentes conditions de tâche en arrière-plan.
 
-> **Remarque** Cet article s’adresse aux développeurs Windows10 qui créent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Remarque** Cet article s’adresse aux développeurs Windows 10 qui développent des applications de plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 ****
 
-* [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-an-outofproc-background-task.md)
+* [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-a-background-task.md)
 * [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md)
 * [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md)
 * [Gérer une tâche en arrière-plan annulée](handle-a-cancelled-background-task.md)
@@ -181,6 +181,6 @@ L’extrait de code suivant présente plusieurs conditions dans un contexte de c
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

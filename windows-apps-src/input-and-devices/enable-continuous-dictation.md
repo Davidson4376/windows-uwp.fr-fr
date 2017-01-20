@@ -5,24 +5,31 @@ title: "Activer la dictée continue"
 ms.assetid: 383B3E23-1678-4FBB-B36E-6DE2DA9CA9DC
 label: Continuous dictation
 template: detail.hbs
+keywords: "voix, vocal, reconnaissance vocale, langage naturel, dictée, saisie, interaction utilisateur"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 1f074b210d42b1c40817e88b5d73921652fa7d05
+ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
+ms.openlocfilehash: f4353807c83cbf91c385b31acfd481abb6ea5aed
 
 ---
 
-# Dictée continue
+# <a name="continuous-dictation"></a>Dictée continue
 
-
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 Découvrez comment capturer et reconnaître une entrée vocale dictée en continu et sur une longue durée.
 
-**API importantes**
-
--   [**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896)
--   [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913)
-
+<div class="important-apis" >
+<b>API importantes</b><br/>
+<ul>
+<li>[**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896)</li>
+<li>[**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913)</li>
+</ul>
+</div>
 
 Dans [Reconnaissance vocale](speech-recognition.md), vous avez appris à capturer et à reconnaître des saisies vocales de durée relativement courte à l’aide des méthodes [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) ou [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) d’un objet [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226), par exemple, lorsque l’utilisateur compose un SMS ou pose une question.
 
@@ -30,7 +37,7 @@ Pour les sessions de reconnaissance vocale en continu plus longues, tel qu’un 
 
 
 
-## Configuration
+## <a name="set-up"></a>Configuration
 
 
 Votre application a besoin de plusieurs objets pour gérer une session de dictée continue :
@@ -64,7 +71,7 @@ Ici, nous utilisons un objet [**StringBuilder**](https://msdn.microsoft.com/libr
 private StringBuilder dictatedTextBuilder;
 ```
 
-## Initialisation
+## <a name="initialization"></a>Initialisation
 
 
 Pendant l’initialisation de la reconnaissance vocale en continu, vous devez :
@@ -72,7 +79,7 @@ Pendant l’initialisation de la reconnaissance vocale en continu, vous devez :
 -   Si vous mettez à jour l’interface utilisateur de votre application dans les gestionnaires d’événements de reconnaissance continue, récupérez le répartiteur pour le thread d’interface utilisateur.
 -   Initialisez le module de reconnaissance vocale.
 -   Compilez la grammaire de dictée intégrée.
-    **Remarque** La reconnaissance vocale requiert au moins une contrainte pour définir un vocabulaire reconnaissable. Si aucune contrainte n’est spécifiée, une grammaire de dictée prédéfinie est utilisée. Voir [Reconnaissance vocale](speech-recognition.md).
+    **Remarque** La reconnaissance vocale nécessite au moins une contrainte pour définir un vocabulaire reconnaissable. Si aucune contrainte n’est spécifiée, une grammaire de dictée prédéfinie est utilisée. Voir [Reconnaissance vocale](speech-recognition.md).
 -   Configurez les détecteurs d’événements pour les événements de reconnaissance.
 
 Nous initialisons la reconnaissance vocale dans l’événement de page [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508).
@@ -99,7 +106,7 @@ SpeechRecognitionCompilationResult result =
       await speechRecognizer.CompileConstraintsAsync();
 ```
 
-## Gérer les événements de reconnaissance
+## <a name="handle-recognition-events"></a>Gérer les événements de reconnaissance
 
 
 Ici, vous pouvez capturer un seul énoncé ou une seule expression de courte durée en appelant [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) ou [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245). 
@@ -115,7 +122,7 @@ Deux événements sont particulièrement essentiels :
 
 L’événement [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) est déclenché lorsque l’utilisateur parle. Le module de reconnaissance écoute l’utilisateur en continu et déclenche périodiquement un événement qui transmet un segment d’entrée vocale. Examinez l’entrée vocale à l’aide de la propriété [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) de l’argument d’événement et prenez les mesures appropriées dans le gestionnaire d’événements, par exemple en ajoutant du texte à un objet StringBuilder.
 
-En tant qu’instance de [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432), la propriété [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) permet d’indiquer si vous acceptez l’entrée vocale ou non: Une instance [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432) fournit deux propriétés spécifiques :
+En tant qu’instance de [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432), la propriété [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) permet d’indiquer si vous acceptez l’entrée vocale ou non : Une instance [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432) fournit deux propriétés spécifiques :
 -   [**Status**](https://msdn.microsoft.com/library/windows/apps/dn631440) indique si la reconnaissance a réussi. La reconnaissance peut échouer pour diverses raisons.
 -   [**Confidence**](https://msdn.microsoft.com/library/windows/apps/dn631434) indique que le module de reconnaissance a relativement bien compris les mots énoncés.
 
@@ -204,10 +211,10 @@ private async void ContinuousRecognitionSession_Completed(
       }
 ```
 
-## Fournir des commentaires en cours de reconnaissance
+## <a name="provide-ongoing-recognition-feedback"></a>Fournir des commentaires en cours de reconnaissance
 
 
-Lorsque des individus discutent, ces derniers s’appuient généralement sur le contexte pour déterminer le sens de la conversation. De la même manière, le module de reconnaissance vocale a souvent besoin de contexte pour fournir des résultats de reconnaissance très fiables. Par exemple, la différence entre les mots «poids» et «pois» est imperceptible tant qu’un contexte plus précis ne révèle leur sens. Tant que le module de reconnaissance n’est pas certain qu’un ou plusieurs mots ont été reconnus correctement, celui-ci ne déclenche pas l’événement [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900).
+Lorsque des individus discutent, ces derniers s’appuient généralement sur le contexte pour déterminer le sens de la conversation. De la même manière, le module de reconnaissance vocale a souvent besoin de contexte pour fournir des résultats de reconnaissance très fiables. Par exemple, la différence entre les mots « poids » et « pois » est imperceptible tant qu’un contexte plus précis ne révèle leur sens. Tant que le module de reconnaissance n’est pas certain qu’un ou plusieurs mots ont été reconnus correctement, celui-ci ne déclenche pas l’événement [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900).
 
 Cela peut entraîner une expérience peu agréable, dans la mesure où l’utilisateur continue de parler sans qu’aucun résultat n’apparaisse, jusqu’à ce que le moteur de reconnaissance soit suffisamment certain pour déclencher l’événement [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900).
 
@@ -232,7 +239,7 @@ private async void SpeechRecognizer_HypothesisGenerated(
   }
 ```
 
-## Démarrer et arrêter la reconnaissance
+## <a name="start-and-stop-recognition"></a>Démarrer et arrêter la reconnaissance
 
 
 Avant de démarrer une session de reconnaissance, vérifiez la valeur de la propriété [**State**](https://msdn.microsoft.com/library/windows/apps/dn913915) du module de reconnaissance vocale. Le module de reconnaissance vocale doit être dans un état [**Idle**](https://msdn.microsoft.com/library/windows/apps/dn653227).
@@ -267,7 +274,7 @@ Si vous définissez tous les champs privés lors de l’annulation de la session
 
  
 
-## Articles connexes
+## <a name="related-articles"></a>Articles connexes
 
 
 * [Interactions vocales](speech-interactions.md)
@@ -284,6 +291,6 @@ Si vous définissez tous les champs privés lors de l’annulation de la session
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO3-->
 
 

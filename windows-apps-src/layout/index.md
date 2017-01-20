@@ -3,18 +3,25 @@ description: "Découvrez comment concevoir et coder une application UWP intuitiv
 title: "Conception de disposition pour les app. UWP - Dév. d’app. Windows"
 author: mijacobs
 keywords: "disposition d’application uwp, plateforme windows universelle, conception d’application, interface"
+label: Layout
+template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 2f9d2059399efd949fc8a1d90a5b6c8c106a478e
-ms.openlocfilehash: 72c4b957c98956965c773b4c2182796880f59a1d
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: e643b7029d5bc417437f7a1b8586424ac4345c3b
 
 ---
-# Disposition pour les applications UWP
+# <a name="layout-for-uwp-apps"></a>Disposition pour les applications UWP
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
 La structure de l’application, la mise en page et la navigation sont les trois éléments clés de l’expérience utilisateur de votre application. Les articles de cette section vous aident à créer une application intuitive qui s’affiche parfaitement sur un grand nombre d’appareils et sur des écrans de différentes tailles.
 
-## Introduction
+## <a name="intro"></a>Introduction
 
 <div class="side-by-side">
 <div class="side-by-side-content">
@@ -28,8 +35,8 @@ Lorsque vous concevez une application UWP, vous créez une interface utilisateur
 </div>
 </div>
 
-## Disposition et structure d’application
-Consultez ces recommandations pour structurer votre application et exploiter les trois types d’éléments d’interface utilisateur: navigation, commande et contenu.
+## <a name="app-layout-and-structure"></a>Disposition et structure d’application
+Consultez ces recommandations pour structurer votre application et exploiter les trois types d’éléments d’interface utilisateur : navigation, commande et contenu.
 
 <div class="side-by-side">
 <div class="side-by-side-content">
@@ -40,7 +47,7 @@ La navigation dans les applications UWP est basée sur un modèle flexible de st
 </p>
 <p>
 <b>[Notions de base sur le contenu](content-basics.md)</b><br/>
-Le rôle principal de toute application est d’offrir un accès à un contenu. Dans une application de retouche photo, le contenu correspond aux photos; dans une application de voyage, le contenu comprend les cartes et les informations sur les destinations, etc. Cet article fournit des recommandations de conception de contenu pour les troisscénarios de contenu: consommation, création et interaction.
+Le rôle principal de toute application est d’offrir un accès à un contenu. Dans une application de retouche photo, le contenu correspond aux photos ; dans une application de voyage, le contenu comprend les cartes et les informations sur les destinations, etc. Cet article fournit des recommandations de conception de contenu pour les trois scénarios de contenu : consommation, création et interaction.
 </p> 
   </div>
   <div class="side-by-side-content-right">
@@ -50,7 +57,7 @@ Les éléments de commande sont les éléments d’interface utilisateur interac
 </div>
 </div>
 
-## Mise en page 
+## <a name="page-layout"></a>Mise en page 
 Grâce à ces articles, vous pourrez créer une interface utilisateur flexible, qui s’adapte à différentes tailles d’écran et de fenêtre, résolutions et orientations. 
 
 
@@ -58,7 +65,7 @@ Grâce à ces articles, vous pourrez créer une interface utilisateur flexible, 
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
    <p><b>[Tailles d’écran et points d’arrêt](screen-sizes-and-breakpoints-for-responsive-design.md)</b><br/>
-Le nombre d’appareils cibles et de tailles d’écran dans l’écosystème Windows10 est trop élevé pour pouvoir optimiser votre interface utilisateur pour chacun d’eux. À la place, nous vous recommandons de concevoir une application pour plusieurs largeurs principales (également appelées «points d’arrêt»): 360, 640, 1024 et 1366epx.</p>
+Le nombre d’appareils cibles et de tailles d’écran dans l’écosystème Windows 10 est trop élevé pour pouvoir optimiser votre interface utilisateur pour chacun d’eux. À la place, nous vous recommandons de concevoir une application pour plusieurs largeurs principales (également appelées « points d’arrêt ») : 360, 640, 1024 et 1366 epx.</p>
   </div>
   <div class="side-by-side-content-right">
  <p><b>[Définir des dispositions avec XAML](layouts-with-xaml.md)</b> <br/>
@@ -83,6 +90,6 @@ Outre les propriétés de dimension (largeur, hauteur et contraintes), les élé
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Dec16_HO2-->
 
 

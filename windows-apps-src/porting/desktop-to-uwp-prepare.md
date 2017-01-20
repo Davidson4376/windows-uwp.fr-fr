@@ -4,8 +4,8 @@ Description: "Cet article rappelle les points à connaître avant de convertir u
 Search.Product: eADQiWindows 10XVcnh
 title: "Préparer votre application pour Desktop to UWP Bridge"
 translationtype: Human Translation
-ms.sourcegitcommit: f7a8b8d586983f42fe108cd8935ef084eb108e35
-ms.openlocfilehash: 81a2485d5be22dd392c21aaff281c1c9263883a9
+ms.sourcegitcommit: d22d51d52c129534f8766ab76e043a12d140e8b7
+ms.openlocfilehash: a93d5ad1c1f429182c8df7d29df85dee70064e2f
 
 ---
 
@@ -67,6 +67,12 @@ Cet article rappelle les points à connaître avant de convertir une application
 `<PackageDependency Name="Microsoft.VCLibs.110.00.UWPDesktop" MinVersion="11.0.24217.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />`  
 Pendant l’installation à partir du Windows Store, la version appropriée (x86 ou x64) de l’infrastructure VCLibs 11 est installée avant l’application.  
 Les dépendances ne sont pas installées si l’application est installée en chargement indépendant. Pour installer les dépendances manuellement sur votre ordinateur, vous devez télécharger et installer les [packages d’infrastructure VC 11.0 pour Desktop Bridge](https://www.microsoft.com/download/details.aspx?id=53340&WT.mc_id=DX_MVP4025064). Pour plus d’informations sur ces scénarios, consultez [Utilisation de Visual C++ Runtime dans le projet Centennial](https://blogs.msdn.microsoft.com/vcblog/2016/07/07/using-visual-c-runtime-in-centennial-project/).
+
++ __Votre application crée des entrées de liste de raccourcis et appelle [ICustomDestinationList::SetAppID](https://msdn.microsoft.com/library/windows/desktop/dd378403(v=vs.85).aspx) ou [SetCurrentProcessExplicitAppUserModelID](https://msdn.microsoft.com/library/windows/desktop/dd378422(v=vs.85).aspx)__. Ne définissez pas votre AppID dans le code par programmation. Sinon, vos entrées de liste de raccourcis ne s’afficheront pas. Si vous devez définir un ID personnalisé pour votre application, faites-le en utilisant le fichier manifeste. Pour obtenir des instructions, consultez [Convertir manuellement votre application en application UWP à l’aide de Desktop Bridge](desktop-to-uwp-manual-conversion.md). L’AppID de votre application est définie dans la section *YOUR_PRAID_HERE*. 
+
++ __Votre application ajoute un lien shell de liste de raccourcis qui fait référence à un exécutable dans votre package__. Vous ne pouvez pas lancer des exécutables dans votre package directement à partir d’une liste de raccourcis (sauf pour le chemin d’accès absolu du propre fichier .exe d’une application). Au lieu de cela, inscrivez un alias d’exécution d’application (qui permet à une application convertie d’être démarrée à l’aide d’un mot clé comme si elle était définie dans la variable PATH) et définissez le chemin cible du lien sur l’alias. Pour plus d’informations sur l’utilisation de l’extension appExecutionAlias, consultez [Extensions d’application Desktop Bridge](desktop-to-uwp-extensions.md). Notez que, pour mapper les ressources du lien dans la liste de raccourcis au fichier .exe d’origine, vous devez définir les ressources telles que l’icône avec [**SetIconLocation**](https://msdn.microsoft.com/library/windows/desktop/bb761047(v=vs.85).aspx) et définir le nom complet avec PKEY_Title, comme vous le feriez pour d’autres entrées personnalisées. 
+
++ __Votre application ajoute des entrées de liste de raccourcis qui font référence aux ressources dans le package de l’application par des chemins absolus__. Le chemin d’installation d’une application peut changer lors d’une mise à jour de ses packages qui modifie l’emplacement des ressources (icônes, documents, exécutables, etc.). Si des entrées de liste de raccourcis font référence à ces ressources par des chemins absolus, l’application doit actualiser régulièrement sa liste de raccourcis (par exemple, au démarrage) pour garantir la résolution correcte des chemins. Vous pouvez aussi utiliser les API UWP [**Windows.UI.StartScreen.JumpList**](https://msdn.microsoft.com/library/windows/apps/windows.ui.startscreen.jumplist.aspx), qui vous permettent de faire référence à des ressources chaîne et image à l’aide du schéma d’URI ms-resource relatif au package (également avec prise en charge linguistique, DPI et du contraste élevé). 
 
 
 <!--HONumber=Dec16_HO1-->

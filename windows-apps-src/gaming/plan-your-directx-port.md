@@ -1,18 +1,18 @@
 ---
 author: mtoepke
 title: Planifier votre portage DirectX
-description: "Planifiez le portage de votre jeu DirectX9 sur DirectX11 et la plateforme Windows universelle (UWP): mettez à niveau votre code graphique et préparez votre jeu pour l’environnement WindowsRuntime."
+description: "Planifiez le portage de votre jeu DirectX 9 sur DirectX 11 et la plateforme Windows universelle (UWP) : mettez à niveau votre code graphique et préparez votre jeu pour l’environnement Windows Runtime."
 ms.assetid: 3c0c33ca-5d15-ae12-33f8-9b5d8da08155
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: fbd582b2cc90ee763cb167c65dac88cee4e7a025
+ms.sourcegitcommit: 115377ed3e5a13668481d1122f354610b3077763
+ms.openlocfilehash: f5f66f5da79eb62e3a81f4fe0d7398fed689d378
 
 ---
 
-# Planifier votre portage DirectX
+# <a name="plan-your-directx-port"></a>Planifier votre portage DirectX
 
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **Récapitulatif**
 
@@ -21,9 +21,9 @@ ms.openlocfilehash: fbd582b2cc90ee763cb167c65dac88cee4e7a025
 -   [Mappage des fonctionnalités](feature-mapping.md)
 
 
-Planifiez le portage de votre jeu DirectX9 sur DirectX11 et la plateforme Windows universelle (UWP): mettez à niveau votre code graphique et préparez votre jeu pour l’environnement Windows Runtime.
+Planifiez le portage de votre jeu DirectX 9 sur DirectX 11 et la plateforme Windows universelle (UWP) : mettez à niveau votre code graphique et préparez votre jeu pour l’environnement Windows Runtime.
 
-## Planifier le portage du code graphique
+## <a name="plan-to-port-graphics-code"></a>Planifier le portage du code graphique
 
 
 Avant de commencer le portage de votre jeu sur WPU, il est essentiel de vous assurer que ce jeu ne comporte plus d’éléments issus de Direct3D 8. Vérifiez notamment que votre jeu ne contient plus de références au pipeline de fonctions fixes. Pour obtenir la liste complète des fonctionnalités déconseillées, y compris le pipeline de fonctions fixes, voir [Fonctionnalités déconseillées](https://msdn.microsoft.com/library/windows/desktop/cc308047).
@@ -32,15 +32,15 @@ La mise à niveau de Direct3D 9 vers Direct3D 11 ne se limite pas à une simple 
 
 Vous devez remplacer les bibliothèques d’applications auxiliaires D3DX et DXUT par vos propres bibliothèques d’applications auxiliaires ou par des outils de la communauté. Pour plus d’informations, voir la section [Mappage des fonctionnalités](feature-mapping.md).
 
-> **Remarque** Vous pouvez utiliser le [Kit de ressources DirectX](http://go.microsoft.com/fwlink/p/?LinkID=248929) ou [DirectXTex](http://go.microsoft.com/fwlink/p/?LinkID=248926) pour remplacer certaines fonctionnalités qui étaient auparavant fournies par D3DX et DXUT.
+> **Remarque** Vous pouvez utiliser le [Kit de ressources DirectX](http://go.microsoft.com/fwlink/p/?LinkID=248929) ou [DirectXTex](http://go.microsoft.com/fwlink/p/?LinkID=248926) pour remplacer certaines fonctionnalités qui étaient auparavant fournies par D3DX et DXUT.
 
  
 
-Les nuanceurs écrits en langage assembleur doivent être mis à niveau vers HLSL avec le modèle de nuanceur4 niveau de fonctionnalité 9\_1 ou 9\_3. Les nuanceurs conçus pour la bibliothèque d’effets doivent être mis à jour avec une version plus récente de la syntaxe HLSL. Pour plus d’informations, voir la section [Mappage des fonctionnalités](feature-mapping.md).
+Les nuanceurs écrits en langage assembleur doivent être mis à niveau vers HLSL avec le modèle de nuanceur 4 niveau de fonctionnalité 9\_1 ou 9\_3. Les nuanceurs conçus pour la bibliothèque d’effets doivent être mis à jour avec une version plus récente de la syntaxe HLSL. Pour plus d’informations, voir la section [Mappage des fonctionnalités](feature-mapping.md).
 
 Familiarisez-vous avec les différents [niveaux de fonctionnalité Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff476876). Ces niveaux de fonctionnalité permettent de classer les divers matériels vidéo selon des ensembles définis de fonctionnalités prises en charge. Chaque ensemble correspond globalement à une version de Direct3D (versions 9.1 à 11.2). Tous les niveaux de fonctionnalité s’appliquent à l’API DirectX 11.
 
-## Planifier le portage du code d’interface utilisateur Win32 sur CoreWindow
+## <a name="plan-to-port-win32-ui-code-to-corewindow"></a>Planifier le portage du code d’interface utilisateur Win32 sur CoreWindow
 
 
 Les applications UWP s’exécutent dans une fenêtre créée pour un conteneur d’application, appelée [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). Votre jeu contrôle cette fenêtre en héritant d’[**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478), qui nécessite moins d’informations d’implémentation détaillées qu’une fenêtre de bureau. La boucle principale de votre jeu sera définie dans la méthode [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505).
@@ -53,21 +53,21 @@ Les bibliothèques natives, telles que l’[API Interlocked](https://msdn.micros
 
 Nos modèles et exemples de code utilisent de nouvelles fonctionnalités C++ que vous ne connaissez peut-être pas encore. Citons, par exemple, les méthodes asynchrones que vous pouvez utiliser avec des [**lambda expressions**](https://msdn.microsoft.com/library/windows/apps/dd293608.aspx) pour charger les ressources Direct3D sans bloquer le thread d’interface utilisateur.
 
-Les deuxconcepts suivants vous seront souvent utiles:
+Les deux concepts suivants vous seront souvent utiles :
 
--   Les références managées ([**^**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx) et les [**classes managées**](https://msdn.microsoft.com/library/windows/apps/6w96b5h7.aspx) (classes de référence) sont des éléments fondamentaux de Windows Runtime. Vous aurez besoin d’utiliser des classes de référence managées pour assurer la communication avec les composants WindowsRuntime, tels qu’[**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) (pour plus d’informations, voir la procédure pas à pas).
--   Si vous travaillez avec des interfacesCOM Direct3D11, optez pour le type de modèle [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) afin de faciliter l’utilisation des pointeurs COM.
-
- 
+-   Les références managées ([**l’opérateur ^**](https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx)) et les [**classes managées**](https://msdn.microsoft.com/library/windows/apps/6w96b5h7.aspx) (classes de référence) sont des éléments fondamentaux de Windows Runtime. Vous aurez besoin d’utiliser des classes de référence managées pour assurer la communication avec les composants Windows Runtime, tels qu’[**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) (pour plus d’informations, voir la procédure pas à pas).
+-   Si vous travaillez avec des interfaces COM Direct3D 11, optez pour le type de modèle [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) afin de faciliter l’utilisation des pointeurs COM.
 
  
 
+ 
 
 
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Dec16_HO2-->
 
 

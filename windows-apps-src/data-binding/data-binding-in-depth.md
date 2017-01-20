@@ -4,8 +4,8 @@ ms.assetid: 41E1B4F1-6CAF-4128-A61A-4E400B149011
 title: "Présentation détaillée de la liaison de données"
 description: "La liaison est un moyen dont dispose l’interface de votre application pour afficher des données et éventuellement rester synchronisée avec ces données."
 translationtype: Human Translation
-ms.sourcegitcommit: 8dee2c7bf5ec44f913e34f1150223c1172ba6c02
-ms.openlocfilehash: 48db13fec4ce9c6a9a998c84ddaaba30f7a24d83
+ms.sourcegitcommit: fa3a3cf6194f04a05301ae4dfb75a7a21ff22e73
+ms.openlocfilehash: fca2c9a795e38983f439d6df5c5a7394c29c1217
 
 ---
 # <a name="data-binding-in-depth"></a>Présentation détaillée de la liaison de données
@@ -19,7 +19,7 @@ ms.openlocfilehash: 48db13fec4ce9c6a9a998c84ddaaba30f7a24d83
 -   [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713)
 -   [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899)
 
-> **Remarque**  Cette rubrique décrit en détail les fonctionnalités de liaison de données. Pour une brève présentation pratique, voir [Vue d’ensemble de la liaison de données](data-binding-quickstart.md).
+> **Remarque**&nbsp;&nbsp;Cette rubrique décrit en détail les fonctionnalités de liaison de données. Pour une brève présentation pratique, voir [Vue d’ensemble de la liaison de données](data-binding-quickstart.md).
 
 
 La liaison de données est un moyen dont dispose l’interface utilisateur de votre application pour afficher des données et éventuellement rester synchronisée avec ces données. La liaison de données vous permet de séparer les problématiques liées aux données de celles liées à l’interface utilisateur, ce qui se traduit par un modèle conceptuel plus simple et l’amélioration de la lisibilité, de la testabilité et de la gestion de la maintenance de votre application.
@@ -55,7 +55,7 @@ Dans les sections suivantes, nous allons examiner de plus près la source de lia
 
 Voici une implémentation très rudimentaire d’une classe que nous pourrions utiliser comme source de liaison.
 
-**Remarque** Si vous utilisez [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) avec des extensions de composant Visual C++ (C++/CX), vous devrez ajouter l’attribut [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) à votre classe source de liaison. Si vous utilisez [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783), vous n’aurez pas besoin de cet attribut. Voir [Ajout d’un affichage de détails](data-binding-quickstart.md#adding-a-details-view) pour un extrait de code.
+**Remarque** Si vous utilisez [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) avec des extensions de composant Visual C++ (C++/CX), vous devrez ajouter l’attribut [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) à votre classe source de liaison. Si vous utilisez [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783), vous n’aurez pas besoin de cet attribut. Voir [Ajout d’un affichage de détails](data-binding-quickstart.md#adding-a-details-view) pour un extrait de code.
 
 ```csharp
 public class HostViewModel
@@ -75,7 +75,7 @@ Une manière de le faire consiste à dériver d’un objet [**DependencyObject**
 
 Une méthode moins lourde pour rendre une classe observable (méthode obligatoire pour les classes possédant déjà une classe de base) consiste à implémenter [**System.ComponentModel.INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx). Cela implique en fait simplement l’implémentation d’un événement unique nommé **PropertyChanged**. Vous trouverez ci-dessous un exemple utilisant **HostViewModel**.
 
-**Remarque** Pour C++/CX, vous devez implémenter [**Windows::UI::Xaml::Data::INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899) et la classe source de liaison doit avoir l’attribut [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) ou implémenter [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878).
+**Remarque** Pour C++/CX, vous devez implémenter [**Windows::UI::Xaml::Data::INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899), et la classe source de liaison doit avoir l’attribut [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) ou implémenter [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878).
 
 ```csharp
 public class HostViewModel : INotifyPropertyChanged
@@ -360,7 +360,7 @@ Le moteur de liaison appelle les méthodes [**Convert**](https://msdn.microsoft.
 
 Le convertisseur est également doté de paramètres optionnels : [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.converterlanguage), qui autorise la spécification du langage à utiliser dans la conversion, et [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.converterparameter), qui autorise la transmission d’un paramètre pour la logique de conversion. Pour obtenir un exemple qui utilise un paramètre de convertisseur, voir [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/BR209903).
 
-**Remarque** S’il existe une erreur dans la conversion, ne levez pas d’exception. Retournez plutôt [**DependencyProperty.UnsetValue**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyproperty.unsetvalue), qui arrêtera le transfert de données.
+**Remarque** S’il y a une erreur dans la conversion, ne levez pas d’exception. Retournez plutôt [**DependencyProperty.UnsetValue**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyproperty.unsetvalue), qui arrêtera le transfert de données.
 
 Pour afficher une valeur par défaut à utiliser chaque fois que la source de liaison ne peut pas être résolue, définissez la propriété **FallbackValue** sur l’objet de liaison dans le balisage. Cette méthode s’avère utile pour gérer les erreurs de conversion et de mise en forme. Elle est également utile pour la liaison aux propriétés sources qui peuvent ne pas exister sur tous les objets dans une collection liée de types hétérogènes.
 
@@ -371,7 +371,7 @@ Si vous liez un contrôle de texte à une valeur autre qu’une chaîne, le mote
 
 ## <a name="function-binding-in-xbind"></a>Liaison de fonction dans {x:Bind}
 
-Avec {x:Bind}, l’étape finale d’un chemin de liaison peut être une fonction. Cela peut servir à effectuer des conversions et des liaisons qui dépendent de plusieurs propriétés. Voir [**Extension de balisage {x:Bind}**](https://msdn.microsoft.com/en-us/windows/uwp/xaml-platform/x-bind-markup-extension)
+Avec {x:Bind}, l’étape finale d’un chemin de liaison peut être une fonction. Cela peut servir à effectuer des conversions et des liaisons qui dépendent de plusieurs propriétés. Voir [**Extension de balisage {x:Bind}**](https://msdn.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)
 
 <span id="resource-dictionaries-with-x-bind"/>
 ## <a name="resource-dictionaries-with-xbind"></a>Dictionnaires de ressources avec {x:Bind}
@@ -653,6 +653,6 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

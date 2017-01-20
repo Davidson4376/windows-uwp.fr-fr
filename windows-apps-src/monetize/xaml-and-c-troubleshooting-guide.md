@@ -4,51 +4,45 @@ ms.assetid: 141900dd-f1d3-4432-ac8b-b98eaa0b0da2
 description: "Découvrez les solutions aux problèmes de développement courants liés aux bibliothèques de publicités Microsoft dans les applications XAML."
 title: "Guide de résolution des problèmes pour XAML et C#"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: 0688ca6e0c88628803ad4e9a55b9285bd39351b4
+ms.sourcegitcommit: f88a71491e185aec84a86248c44e1200a65ff179
+ms.openlocfilehash: 63db8e9899c3337f558fc0e60b1b81cbcf9b0d8d
 
 ---
 
-# Guide de résolution des problèmes pour XAML et C#
-
-
+# <a name="xaml-and-c-troubleshooting-guide"></a>Guide de résolution des problèmes pour XAML et C#
 
 Cette rubrique contient les solutions aux problèmes de développement courants liés aux bibliothèques de publicités Microsoft dans les applications XAML.
 
--   [XAML](#xaml)
+* [XAML](#xaml)
+  * [AdControl invisible](#xaml-notappearing)
+  * [Une boîte noire clignote et disparaît](#xaml-blackboxblinksdisappears)
+  * [Non-actualisation des publicités](#xaml-adsnotrefreshing)
 
-    -   [AdControl invisible](#xaml-notappearing)
-
-    -   [Une boîte noire clignote et disparaît](#xaml-blackboxblinksdisappears)
-
-    -   [Non-actualisation des publicités](#xaml-adsnotrefreshing)
-
--   [C#](#csharp)
-
-    -   [AdControl invisible](#csharp-adcontrolnotappearing)
-
-    -   [Une boîte noire clignote et disparaît](#csharp-blackboxblinksdisappears)
-
-    -   [Non-actualisation des publicités](#csharp-adsnotrefreshing)
+* [C#](#csharp)
+  * [AdControl invisible](#csharp-adcontrolnotappearing)
+  * [Une boîte noire clignote et disparaît](#csharp-blackboxblinksdisappears)
+  * [Non-actualisation des publicités](#csharp-adsnotrefreshing)
 
 <span id="xaml"/>
-## XAML
+## <a name="xaml"></a>XAML
 
 <span id="xaml-notappearing"/>
-### AdControl invisible
+### <a name="adcontrol-not-appearing"></a>AdControl invisible
 
 1.  Assurez-vous que la fonctionnalité **Internet (client)** est sélectionnée dans le fichier Package.appxmanifest.
 
 2.  Vérifiez l’ID de l’application et l’ID d’unité publicitaire. Ces ID doivent correspondre à l’ID de l’application et à l’ID d’unité publicitaire que vous avez obtenus dans le Centre de développement Windows. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre application](set-up-ad-units-in-your-app.md).
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` xml
     <UI:AdControl AdUnitId="{AdUnitID}" ApplicationId="{ApplicationID}"
                   Width="728" Height="90" />
     ```
 
 3.  Vérifiez les propriétés **Height** et **Width**. Elles doivent être définies sur l’une des [tailles de bannières publicitaires prises en charge](supported-ad-sizes-for-banner-ads.md).
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` xml
     <UI:AdControl AdUnitId="{AdUnitID}"
                   ApplicationId="{ApplicationID}"
                   Width="728" Height="90" />
@@ -58,7 +52,8 @@ Cette rubrique contient les solutions aux problèmes de développement courants 
 
 5.  Vérifiez la propriété **Visibility**. La propriété facultative **Visibility** ne doit pas être définie sur collapsed ou hidden. Cette propriété peut être incluse (comme illustré ci-dessous) ou définie dans une feuille de style externe.
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` xml
     <UI:AdControl AdUnitId="{AdUnitID}"
                   ApplicationId="{ApplicationID}"
                   Visibility="Visible"
@@ -67,7 +62,8 @@ Cette rubrique contient les solutions aux problèmes de développement courants 
 
 6.  Vérifiez la propriété **IsEnabled**. La propriété facultative `IsEnabled` doit être définie sur `True`.
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` xml
     <UI:AdControl AdUnitId="{AdUnitID}"
                   ApplicationId="{ApplicationID}"
                   IsEnabled="True"
@@ -76,7 +72,8 @@ Cette rubrique contient les solutions aux problèmes de développement courants 
 
 7.  Vérifiez le parent du **AdControl**. Si l’élément **AdControl** réside dans un élément parent, ce dernier doit être actif et visible.
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` xml
     <StackPanel>
         <UI:AdControl AdUnitId="{AdUnitID}"
                       ApplicationId="{ApplicationID}"
@@ -89,7 +86,7 @@ Cette rubrique contient les solutions aux problèmes de développement courants 
 9.  Les valeurs dynamiques des paramètres **ApplicationId** et **AdUnitId** ne doivent pas être testées dans l’émulateur. Pour vous assurer du bon fonctionnement du contrôle **AdControl**, utilisez les ID de test pour les valeurs **ApplicationId** et **AdUnitId** contenues dans [Valeurs du mode test](test-mode-values.md).
 
 <span id="xaml-blackboxblinksdisappears"/>
-### Une boîte noire clignote et disparaît
+### <a name="black-box-blinks-and-disappears"></a>Une boîte noire clignote et disparaît
 
 1.  Vérifiez toutes les étapes indiquées dans la section précédente [AdControl invisible](#xaml-notappearing).
 
@@ -97,18 +94,19 @@ Cette rubrique contient les solutions aux problèmes de développement courants 
 
     Cet exemple illustre un gestionnaire d’événements **ErrorOccurred**. Le premier extrait est le balisage d’interface utilisateur XAML.
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` xml
     <UI:AdControl AdUnitId="{AdUnitID}"
                   ApplicationId="{ApplicationID}"
                   Width="728" Height="90"
                   ErrorOccurred="adControl_ErrorOccurred" />
-
     <TextBlock x:Name="TextBlock1" TextWrapping="Wrap" Width="500" Height="250" />
     ```
 
-    Cet exemple présente le code correspondant.
+    Cet exemple présente le code C# correspondant.
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` cs
     private void adControl_ErrorOccurred(object sender,               
         Microsoft.Advertising.WinRT.UI.AdErrorEventArgs e)
     {
@@ -116,29 +114,31 @@ Cette rubrique contient les solutions aux problèmes de développement courants 
     }
     ```
 
-    L’erreur la plus courante provoquant une boîte noire est la suivante: «Aucune publicité disponible». Cette erreur signifie qu’aucune publicité n’est disponible pour être retourné à partir de la demande.
+    L’erreur la plus courante provoquant une boîte noire est la suivante : « Aucune publicité disponible ». Cette erreur signifie qu’aucune publicité n’est disponible pour être retourné à partir de la demande.
 
 3.  Le contrôle [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) se comporte normalement.
 
     Par défaut, le **AdControl** est réduit s’il ne peut pas afficher de publicité. Si d’autres éléments sont des enfants du même parent, ils peuvent être déplacés pour combler le vide du contrôle **AdControl** réduit, et développés à la prochaine demande.
 
 <span id="xaml-adsnotrefreshing"/>
-### Non-actualisation des publicités
+### <a name="ads-not-refreshing"></a>Non-actualisation des publicités
 
 1.  Vérifiez la propriété [IsAutoRefreshEnabled](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled.aspx). Par défaut, cette propriété facultative est définie sur **True**. Si elle est définie sur **False**, la méthode [Refresh](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.refresh.aspx) doit être utilisée pour récupérer une autre publicité.
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` xml
     <UI:AdControl AdUnitId="{AdUnitID}"
                   ApplicationId="{ApplicationID}"
                   Width="728" Height="90"
                   IsAutoRefreshEnabled="True" />
     ```
 
-2.  Vérifiez les appels à la méthode **Refresh**. Si vous utilisez l’actualisation automatique, la méthode **Refresh** ne permet pas de récupérer une autre publicité. Si vous utilisez l’actualisation manuelle, la méthode **Refresh** doit être appelée uniquement après un minimum de 30à 60secondes en fonction de la connexion de données actuelle de l’appareil.
+2.  Vérifiez les appels à la méthode **Refresh**. Si vous utilisez l’actualisation automatique, la méthode **Refresh** ne permet pas de récupérer une autre publicité. Si vous utilisez l’actualisation manuelle, la méthode **Refresh** doit être appelée uniquement après un minimum de 30 à 60 secondes en fonction de la connexion de données actuelle de l’appareil.
 
     Les extraits de code suivants illustrent comment utiliser la méthode **Refresh**. Le premier extrait est le balisage d’interface utilisateur XAML.
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` xml
     <UI:AdControl x:Name="adControl1"
                   AdUnitId="{AdUnit_ID}"
                   ApplicationId="{ApplicationID}"
@@ -148,8 +148,9 @@ Cette rubrique contient les solutions aux problèmes de développement courants 
 
     Cet extrait de code présente un exemple de code C# derrière le balisage d’interface utilisateur.
 
-    ``` syntax
-    public Ads()
+    > [!div class="tabbedCodeSnippets"]
+    ``` cs
+    public RefreshAds()
     {
         var timer = new DispatcherTimer() { Interval = TimeSpan.FromSeconds(60) };
         timer.Tick += (s, e) => adControl1.Refresh();
@@ -160,43 +161,22 @@ Cette rubrique contient les solutions aux problèmes de développement courants 
 3.  Le contrôle **AdControl** se comporte normalement. Parfois, une même publicité s’affiche plusieurs fois dans une ligne, ce qui donne l’impression que les publicités ne sont pas actualisées.
 
 <span id="csharp"/>
-## C\# #
+## <a name="c"></a>C\# #
 
 <span id="csharp-adcontrolnotappearing"/>
-### AdControl invisible
+### <a name="adcontrol-not-appearing"></a>AdControl invisible
 
 1.  Assurez-vous que la fonctionnalité **Internet (client)** est sélectionnée dans le fichier Package.appxmanifest.
 
 2.  Vérifiez que le contrôle **AdControl** est instancié. Si le contrôle **AdControl** n’est pas instancié, il ne sera pas disponible.
 
-    ``` syntax
-    using Microsoft.Advertising.WinRT.UI;
+    > [!div class="tabbedCodeSnippets"]
+    [!code-cs[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet1)]
 
-    namespace App1
-    {
-        public sealed partial class MainPage : Page
-        {
-            AdControl adControl;
+3.  Vérifiez l’ID de l'application et l’ID d’unité publicitaire. Ces ID doivent correspondre à l’ID de l’application et à l’ID d’unité publicitaire que vous avez obtenus dans le Centre de développement Windows. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre application](set-up-ad-units-in-your-app.md).
 
-            public MainPage()
-            {
-                this.InitializeComponent();
-
-                adControl = new AdControl()
-                {
-                    ApplicationId = "{ApplicationID}",
-                    AdUnitId = "{AdUnitID}",
-                    Height = 90,
-                    Width = 728
-                };
-            }
-        }
-    }
-    ```
-
-3.  Vérifiez l’ID de l’application et l’ID d’unité publicitaire. Ces ID doivent correspondre à l’ID de l’application et à l’ID d’unité publicitaire que vous avez obtenus dans le Centre de développement Windows. Pour plus d’informations, voir [Configurer des unités publicitaires dans votre application](set-up-ad-units-in-your-app.md).
-
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` cs
     adControl = new AdControl();
     adControl.ApplicationId = "{ApplicationID}";adControl.AdUnitId = "{AdUnitID}";
     adControl.Height = 90;
@@ -205,7 +185,8 @@ Cette rubrique contient les solutions aux problèmes de développement courants 
 
 4.  Vérifiez les paramètres **Height** et **Width**. Ils doivent être définis sur l’une des [tailles de bannières publicitaires prises en charge](supported-ad-sizes-for-banner-ads.md).
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` cs
     adControl = new AdControl();
     adControl.ApplicationId = "{ApplicationID}";
     adControl.AdUnitId = "{AdUnitID}";
@@ -214,7 +195,8 @@ Cette rubrique contient les solutions aux problèmes de développement courants 
 
 5.  Assurez-vous que le contrôle **AdControl** est ajouté à un élément parent. Pour qu’il s’affiche, le contrôle **AdControl** doit être ajouté en tant qu’enfant d’un contrôle parent (par exemple, **StackPanel** ou **Grid**).
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` cs
     ContentPanel.Children.Add(adControl);
     ```
 
@@ -222,7 +204,8 @@ Cette rubrique contient les solutions aux problèmes de développement courants 
 
 7.  Vérifiez la propriété **Visibility**. La propriété facultative **Visibility** doit être définie sur **Visible**.
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` cs
     adControl = new AdControl();
     adControl.ApplicationId = "{ApplicationID}";
     adControl.AdUnitId = "{AdUnitID}";
@@ -233,7 +216,8 @@ Cette rubrique contient les solutions aux problèmes de développement courants 
 
 8.  Vérifiez la propriété **IsEnabled**. La propriété facultative **IsEnabled** doit être définie sur **True**.
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` cs
     adControl = new AdControl();
     adControl.ApplicationId = "{ApplicationID}";
     adControl.AdUnitId = "{AdUnitID}";
@@ -247,7 +231,7 @@ Cette rubrique contient les solutions aux problèmes de développement courants 
 10. Les valeurs dynamiques des paramètres **ApplicationId** et **AdUnitId** ne doivent pas être testées dans l’émulateur. Pour vous assurer du bon fonctionnement du contrôle **AdControl**, utilisez les ID de test pour les valeurs **ApplicationId** et **AdUnitId** contenues dans [Valeurs du mode test](test-mode-values.md).
 
 <span id="csharp-blackboxblinksdisappears"/>
-### Une boîte noire clignote et disparaît
+### <a name="black-box-blinks-and-disappears"></a>Une boîte noire clignote et disparaît
 
 1.  Vérifiez toutes les étapes indiquées dans la section [AdControl invisible](#csharp-adcontrolnotappearing) ci-dessus.
 
@@ -255,82 +239,31 @@ Cette rubrique contient les solutions aux problèmes de développement courants 
 
     Les exemples suivants présentent le code de base requis pour implémenter un appel d’erreur. Ce code XAML définit un **TextBlock** utilisé pour afficher le message d’erreur.
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` xml
     <TextBlock x:Name="TextBlock1" TextWrapping="Wrap" Width="500" Height="250" />
     ```
 
     Ce code C# récupère le message d’erreur et l’affiche dans le **TextBlock**.
 
-    ``` syntax
-    using Microsoft.Advertising.WinRT.UI;
+    > [!div class="tabbedCodeSnippets"]
+    [!code-cs[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet2)]
 
-    namespace App1
-    {
-        public partial class MainPage : Page
-        {
-            AdControl adControl;
-
-            public MainPage()
-            {
-                this.InitializeComponent();
-
-                adControl = new AdControl();
-                adControl.ApplicationId = "{ApplicationID}";
-                adControl.AdUnitId = "{AdUnitID}";
-                adControl.Height = 90;
-                adControl.Width = 728;
-                adControl.ErrorOccurred += (s,e) =>
-                {
-                    TextBlock1.Text = e.Error.Message;
-                };
-            }
-        }
-    }
-    ```
-
-    L’erreur la plus courante provoquant une boîte noire est la suivante: «Aucune publicité disponible». Cette erreur signifie qu’aucune publicité n’est disponible pour être retourné à partir de la demande.
+    L’erreur la plus courante provoquant une boîte noire est la suivante : « Aucune publicité disponible ». Cette erreur signifie qu’aucune publicité n’est disponible pour être retourné à partir de la demande.
 
 3.  Le contrôle **AdControl** se comporte normalement. Parfois, une même publicité s’affiche plusieurs fois dans une ligne, ce qui donne l’impression que les publicités ne sont pas actualisées.
 
 <span id="csharp-adsnotrefreshing"/>
-### Non-actualisation des publicités
+### <a name="ads-not-refreshing"></a>Non-actualisation des publicités
 
-1.  Vérifiez la propriété **IsAutoRefreshEnabled**. Par défaut, cette propriété facultative est définie sur **True**. Si elle est définie sur **False**, la méthode **Refresh** doit être utilisée pour récupérer une autre publicité.
+1.  Vérifiez si la propriété [IsAutoRefreshEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled.aspx) de votre **AdControl** est définie sur false. Par défaut, cette propriété facultative est définie sur **true**. Si elle est définie sur **false**, la méthode **Refresh** doit être utilisée pour récupérer une autre publicité.
 
-    L’exemple suivant montre comment utiliser la propriété **isAutoRefreshEnabled**.
-
-    ``` syntax
-    adControl = new AdControl();
-    adControl.ApplicationId = "{ApplicationID}";
-    adControl.AdUnitId = "{AdUnitID}";
-    adControl.Height = 90;
-    adControl.Width = 728;
-    adControl.IsAutoRefreshEnabled = true;
-    ```
-
-2.  Vérifiez les appels à la méthode **Refresh**. Si vous utilisez l’actualisation automatique, la méthode **Refresh** ne permet pas de récupérer une autre publicité. Si vous utilisez l’actualisation manuelle, la méthode **Refresh** doit être appelée uniquement après un minimum de 30à 60secondes en fonction de la connexion de données actuelle de l’appareil.
+2.  Vérifiez les appels à la méthode [Refresh](https://msdn.microsoft.com/library/windows/apps/xaml/microsoft.advertising.winrt.ui.adcontrol.refresh.aspx). Si vous utilisez l’actualisation automatique (**IsAutoRefreshEnabled** est définie sur **true**), la méthode **Refresh** ne permet pas de récupérer une autre publicité. Si vous utilisez l’actualisation manuelle (**IsAutoRefreshEnabled** est définie sur **false**), la méthode **Refresh** doit être appelée uniquement après un minimum de 30 à 60 secondes en fonction de la connexion de données actuelle de l’appareil.
 
     L’exemple suivant montre comment appeler la méthode **Refresh**.
 
-    ``` syntax
-    public MainPage()
-    {
-        InitializeComponent();
-
-        adControl = new AdControl();
-        adControl.ApplicationId = "{ApplicationID}";
-        adControl.AdUnitId = "{AdUnitID}";
-        adControl.Height = 90;
-        adControl.Width = 728;
-        adControl.IsAutoRefreshEnabled = false;
-
-        ContentPanel.Children.Add(adControl);
-
-        var timer = new DispatcherTimer() { Interval = TimeSpan.FromSeconds(60) };
-        timer.Tick += (s, e) => adControl.Refresh();
-        timer.Start();
-    }
-    ```
+    > [!div class="tabbedCodeSnippets"]
+    [!code-cs[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet3)]
 
 3.  Le contrôle **AdControl** se comporte normalement. Parfois, une même publicité s’affiche plusieurs fois dans une ligne, ce qui donne l’impression que les publicités ne sont pas actualisées.
 
@@ -340,6 +273,6 @@ Cette rubrique contient les solutions aux problèmes de développement courants 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 
