@@ -70,7 +70,7 @@ Le son le plus courant déclenché par un contrôle dans notre système actuel e
 
 En règle générale, ce son est uniquement émis quand un utilisateur cible explicitement un contrôle simple ou une partie d’un contrôle par l’intermédiaire d’un [périphérique d’entrée](../input-and-devices/input-primer.md).
 
-&lt;Clip audio SelectButtonClick.mp3 ici&gt;
+<Clip audio SelectButtonClick.mp3 ici>
 
 Pour lire ce son à partir d’un événement de contrôle quelconque, il vous suffit d’appeler la méthode Play à partir du système **ElementSoundPlayer** et de transmettre l’élément **ElementSound.Invoke** :
 ```C#
@@ -83,14 +83,14 @@ Le code XAML offre de nombreux menus volants, boîtes de dialogue et interfaces 
 
 Lorsqu’une fenêtre de contenu superposée s’affiche, le son **Show** doit être appelé :
 
-&lt;Clip audio OverlayIn.mp3 ici&gt;
+<Clip audio OverlayIn.mp3 ici>
 
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.Show);
 ```
 À l’inverse, quand une fenêtre de contenu superposée se ferme (ou fait l’objet d’un abandon interactif), il convient d’appeler le son **Hide** :
 
-&lt;Clip audio OverlayOut.mp3 ici&gt;
+<Clip audio OverlayOut.mp3 ici>
 
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.Hide);
@@ -103,14 +103,14 @@ L’expérience audio associée à ce concept de navigation est représentée pa
 
 Lors de l’accès à une vue/un panneau considérés comme l’*élément suivant* d’une liste, appelez la méthode :
 
-&lt;Clip audio PageTransitionRight.mp3 ici&gt;
+<Clip audio PageTransitionRight.mp3 ici>
 
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.MoveNext);
 ```
 Lors de l’accès à une vue/un panneau considérés comme l’*élément précédent* d’une liste, appelez la méthode :
 
-&lt;Clip audio PageTransitionLeft.mp3 ici&gt;
+<Clip audio PageTransitionLeft.mp3 ici>
 
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.MovePrevious);
@@ -119,7 +119,7 @@ ElementSoundPlayer.Play(ElementSoundKind.MovePrevious);
 
 Lors de l’accès à la page précédente d’une application à partir d’une page donnée, le son **GoBack** doit être appelé :
 
-&lt;Clip audio BackButtonClick.mp3 ici&gt;
+<Clip audio BackButtonClick.mp3 ici>
 
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.GoBack);
@@ -132,7 +132,7 @@ Le placement du focus se produit quand un utilisateur parcourt une application, 
 
 Pour configurer un contrôle afin qu’il lise le son **Focus** lorsqu’il reçoit le focus, appelez la méthode :
 
-&lt;Clip audio ElementFocus1.mp3 ici&gt;
+<Clip audio ElementFocus1.mp3 ici>
 
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.Focus);
