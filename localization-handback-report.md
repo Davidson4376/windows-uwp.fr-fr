@@ -1,11 +1,53 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 0
+ Total Files | 2
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [windows-apps-src\style\sound.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/3c073879ab847a3e1af454e0c1550d8af0f78b3e?path=windows-apps-src%2Fstyle%2Fsound.md&_a=contents) | HandedOffSuccess | [Details](#d91fc82fad38f5e885df58a7a2fad8f9501263dc7774)
+ [windows-apps-src\xbox-apps\known-issues.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/3c073879ab847a3e1af454e0c1550d8af0f78b3e?path=windows-apps-src%2Fxbox-apps%2Fknown-issues.md&_a=contents) | HandedOffSuccess | [Details](#1c196b27c8b7fb725b17ba832c9529760b7df8bf7931)
 
 ## Item Details
+##### <a name='d91fc82fad38f5e885df58a7a2fad8f9501263dc7774'></a> Source: [windows-apps-src\style\sound.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/3c073879ab847a3e1af454e0c1550d8af0f78b3e?path=windows-apps-src%2Fstyle%2Fsound.md&_a=contents)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [sound.640badc71d5e71614fef1214ebef20367f363e08.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/9c7d0715f28e49ab8534678ce9e6e6c842643cfb?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Fsound.640badc71d5e71614fef1214ebef20367f363e08.fr-fr.xlf&_a=contents)
+* Handoff Datetime: 2017-01-19 02:01:15
+* Handoff Reason: Include
+* Handoff Name: 
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Handback Name: 
+* Current Target File: [windows-apps-src\style\sound.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.fr-fr/commit/2767a2a46e1e43bba159b679a581582aee027cad?path=windows-apps-src%2Fstyle%2Fsound.md&_a=contents)
+* Current Handback File: [sound.640badc71d5e71614fef1214ebef20367f363e08.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/98c23872f1bc21d8c13a6f301fe9de01c0f279e6?path=ol-handback%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Fsound.640badc71d5e71614fef1214ebef20367f363e08.fr-fr.xlf&_a=contents)
+* Current Handback Datetime: 2017-01-24 18:31:11
+* Bilingual File: [sound.640badc71d5e71614fef1214ebef20367f363e08.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/59c30e2a801c773453fcb7d8ede42e8a5cf80cf1?path=ol-handback%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Fsound.640badc71d5e71614fef1214ebef20367f363e08.fr-fr.xlf&_a=contents)
+* Bilingual Datetime: 2017-01-20 14:55:09
+* [Back to Top](#report-top)
+
+##### <a name='1c196b27c8b7fb725b17ba832c9529760b7df8bf7931'></a> Source: [windows-apps-src\xbox-apps\known-issues.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/3c073879ab847a3e1af454e0c1550d8af0f78b3e?path=windows-apps-src%2Fxbox-apps%2Fknown-issues.md&_a=contents)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [known-issues.83c75815621268c5c51534a658527cef71ffe8bd.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/9c7d0715f28e49ab8534678ce9e6e6c842643cfb?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Fknown-issues.83c75815621268c5c51534a658527cef71ffe8bd.fr-fr.xlf&_a=contents)
+* Handoff Datetime: 2017-01-19 02:01:15
+* Handoff Reason: Include
+* Handoff Name: 
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Handback Name: 
+* Current Target File: [windows-apps-src\xbox-apps\known-issues.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.fr-fr/commit/2767a2a46e1e43bba159b679a581582aee027cad?path=windows-apps-src%2Fxbox-apps%2Fknown-issues.md&_a=contents)
+* Current Handback File: [known-issues.83c75815621268c5c51534a658527cef71ffe8bd.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/98c23872f1bc21d8c13a6f301fe9de01c0f279e6?path=ol-handback%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Fknown-issues.83c75815621268c5c51534a658527cef71ffe8bd.fr-fr.xlf&_a=contents)
+* Current Handback Datetime: 2017-01-24 18:31:11
+* Bilingual File: [known-issues.83c75815621268c5c51534a658527cef71ffe8bd.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/59c30e2a801c773453fcb7d8ede42e8a5cf80cf1?path=ol-handback%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Fknown-issues.83c75815621268c5c51534a658527cef71ffe8bd.fr-fr.xlf&_a=contents)
+* Bilingual Datetime: 2017-01-20 14:55:09
+* [Back to Top](#report-top)
+
 
 ## Error Details
 

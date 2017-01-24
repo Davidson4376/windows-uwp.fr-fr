@@ -1948,7 +1948,7 @@
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.fr-fr\\master\\5e4decdfdda0cad59d80395440f974d4ff3303a6.49ff371a82345e6109aab1d0a1397b9e63a15178.xml",
       "LocXliff": "ol-handback\\cpubwin\\windows-uwp.fr-fr\\master\\sound.640badc71d5e71614fef1214ebef20367f363e08.fr-fr.xlf",
-      "LocXliffCommit": "59c30e2a801c773453fcb7d8ede42e8a5cf80cf1"
+      "LocXliffCommit": "98c23872f1bc21d8c13a6f301fe9de01c0f279e6"
     },
     "windows-apps-src\\controls-and-patterns\\progress-controls.md.c639c35c9851ebf22a0d9dbf8ec7d8aac31a4d82.HT": {
       "SourceFilename": "windows-apps-src\\controls-and-patterns\\progress-controls.md",
@@ -2468,7 +2468,7 @@
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.fr-fr\\master\\18c8d1fcd696f336601dc6c531424fe8bfb78304.807b967e9b37b88283e13ee533a8bb6386a6617b.xml",
       "LocXliff": "ol-handback\\cpubwin\\windows-uwp.fr-fr\\master\\known-issues.83c75815621268c5c51534a658527cef71ffe8bd.fr-fr.xlf",
-      "LocXliffCommit": "59c30e2a801c773453fcb7d8ede42e8a5cf80cf1"
+      "LocXliffCommit": "98c23872f1bc21d8c13a6f301fe9de01c0f279e6"
     },
     "windows-apps-src\\devices-sensors\\ble-beacon.md.4bdb8c6b0f38e4519b77a21e20c45e05d4443150.HT": {
       "SourceFilename": "windows-apps-src\\devices-sensors\\ble-beacon.md",
