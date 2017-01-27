@@ -6,24 +6,27 @@ ms.assetid: 6064755F-6E24-4901-A4FF-263F05F0DFD6
 label: Motion--Drag and drop
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 58934982554aa3caf0060c84df113d483e62e1d2
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: e71b936be1649f8ede394b019369176c7e3ca631
 
 ---
 
-# Animations de glissement
+# <a name="drag-animations"></a>Animations de glissement
 
 
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 Utilisez les animations de glisser-déplacer lors du déplacement d’objets par les utilisateurs, par exemple pour le déplacement d’un élément dans une liste ou le positionnement d’un élément au-dessus d’un autre.
 
-**API importantes**
+<div class="important-apis" >
+<b>API importantes</b><br/>
+<ul>
+<li>[**Classe DragItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br243174)</li>
+</ul>
+</div>
 
--   [**Classe DragItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br243174)
 
-
-## Pratiques conseillées et déconseillées
+## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
 
 
 **Animation de début du glissement**
@@ -52,12 +55,12 @@ Utilisez les animations de glisser-déplacer lors du déplacement d’objets par
 -   N’utilisez pas l’animation de glissement entre les objets par éloignement si vous n’avez pas d’abord utilisé l’animation de glissement entre les objets.
 
 
-## Articles connexes
+## <a name="related-articles"></a>Articles connexes
 
-**Pour les développeurs (XAML)**
+**Pour les développeurs**
 * [Vue d’ensemble des animations](https://msdn.microsoft.com/library/windows/apps/mt187350)
 * [Animation de séquences de glisser-déplacer](https://msdn.microsoft.com/library/windows/apps/xaml/jj649427)
-* [Démarrage rapide: animation de votre interface utilisateur avec des animations de la bibliothèque](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [Démarrage rapide : Animation de votre interface utilisateur avec des animations de la bibliothèque](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
 * [**Classe DragItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br243174)
 * [**Classe DropTargetItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br243186)
 * [**Classe DragOverThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/br243180)
@@ -71,6 +74,6 @@ Utilisez les animations de glisser-déplacer lors du déplacement d’objets par
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

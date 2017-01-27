@@ -1,45 +1,47 @@
 ---
 author: DelfCo
-Description: "Utilisez l’API Windows.Globalization.DateTimeFormatting avec des modèles personnalisés pour afficher les dates et heures dans le format souhaité."
+Description: "Utilisez l’API Windows.Globalization.DateTimeFormatting avec des modèles personnalisés pour afficher les dates et heures dans le format que vous désirez."
 title: "Utiliser des modèles de format des dates et heures"
 ms.assetid: 012028B3-9DA2-4E72-8C0E-3E06BEC3B3FE
 label: Use patterns to format dates and times
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: f49af17ada36ceb2e5898d80047c2d616b1d0c6e
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 564062173544ab368d8dd7fc8fe2c35e9d518444
 
 ---
 
-# Utiliser des modèles de format des dates et heures
+# <a name="use-patterns-to-format-dates-and-times"></a>Utiliser des modèles de format des dates et heures
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
+Utilisez l’API [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859) avec des modèles personnalisés pour afficher les dates et heures dans le format que vous désirez.
+
+<div class="important-apis" >
+<b>API importantes</b><br/>
+<ul>
+<li>[**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)</li>
+<li>[**DateTimeFormatter**](https://msdn.microsoft.com/library/windows/apps/br206828)</li>
+<li>[**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576)</li>
+</ul>
+</div>
 
 
+## <a name="introduction"></a>Introduction
 
 
-
-**API importantes**
-
--   [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)
--   [**DateTimeFormatter**](https://msdn.microsoft.com/library/windows/apps/br206828)
--   [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576)
-
-Utilisez l’API [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859) avec des modèles personnalisés pour afficher les dates et heures dans le format souhaité.
-
-## <span id="Introduction"></span><span id="introduction"></span><span id="INTRODUCTION"></span>Introduction
-
-
-[**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859) offre différentes façons de formater correctement les dates et heures selon les langues et régions du monde. Vous pouvez utiliser des formats standard pour l’année, le mois, le jour, etc., ou recourir à des modèles de chaîne standard, tels que «date_longue» ou «jour mois».
+[**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859) offre différentes façons de formater correctement les dates et heures selon les langues et régions du monde. Vous pouvez utiliser des formats standard pour l’année, le mois, le jour, etc., ou recourir à des modèles de chaîne standard, tels que « date_longue » ou « jour mois ».
 
 Toutefois, si vous voulez mieux contrôler l’ordre et le format des éléments de la chaîne [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576) à afficher, vous pouvez utiliser une syntaxe spéciale pour le paramètre du modèle de chaîne, appelée « modèle ». La syntaxe modèle vous permet d’obtenir des constituants individuels d’un objet **DateTime**, seulement le nom du mois ou la valeur de l’année, par exemple, afin de les afficher dans n’importe quel format personnalisé de votre choix. En outre, il est possible de localiser le modèle pour l’adapter à d’autres langues et régions.
 
-**Remarque** Il s’agit d’une vue d’ensemble des modèles de format. Pour consulter une description plus complète des modèles et types de formats, voir la section «Remarques» de la classe [**DateTimeFormatter**](https://msdn.microsoft.com/library/windows/apps/br206828).
+**Remarque** Il s’agit d’une vue d’ensemble des modèles de format. Pour consulter une description plus complète des modèles et types de formats, voir la section « Remarques » de la classe [**DateTimeFormatter**](https://msdn.microsoft.com/library/windows/apps/br206828).
 
  
 
-## <span id="What_you_need_to_know"></span><span id="what_you_need_to_know"></span><span id="WHAT_YOU_NEED_TO_KNOW"></span>Ce que vous devez savoir
+## <a name="what-you-need-to-know"></a>Ce que vous devez savoir
 
 
-Il est important de noter que lorsque vous utilisez des modèles, vous créez un format personnalisé qui n’est pas forcément valide dans toutes les cultures. Par exemple, considérez le modèle «jour mois»:
+Il est important de noter que lorsque vous utilisez des modèles, vous créez un format personnalisé qui n’est pas forcément valide dans toutes les cultures. Par exemple, considérez le modèle « jour mois » :
 
 **C#**
 ```CSharp
@@ -50,7 +52,7 @@ var datefmt = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("mo
 var datefmt = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("month day");
 ```
 
-Ce code crée un formateur basé sur la langue et la région du contexte actuel. Il affiche donc toujours le jour et le mois ensemble dans un format international approprié. Par exemple, il affiche «January1» pour l’anglais (États-Unis), mais «1erjanvier» pour le français (France) et «1月1日» pour le japonais. Ceci est dû au fait que le modèle est basé sur une chaîne de modèle propre à la culture, qui est accessible par le biais de la propriété pattern:
+Ce code crée un formateur basé sur la langue et la région du contexte actuel. Il affiche donc toujours le jour et le mois ensemble dans un format international approprié. Par exemple, il affiche « January 1» pour l’anglais (États-Unis), mais « 1er janvier» pour le français (France) et « 1月1日 » pour le japonais. Ceci est dû au fait que le modèle est basé sur une chaîne de modèle propre à la culture, qui est accessible par le biais de la propriété pattern :
 
 **C#**
 ```CSharp
@@ -61,7 +63,7 @@ var monthdaypattern = datefmt.Patterns;
 var monthdaypattern = datefmt.patterns;
 ```
 
-Les résultats diffèrent selon la langue et la région du formateur. Notez que différentes régions peuvent utiliser des constituants distincts dans des ordres différents, avec ou sans espacement et caractères supplémentaires:
+Les résultats diffèrent selon la langue et la région du formateur. Notez que différentes régions peuvent utiliser des constituants distincts dans des ordres différents, avec ou sans espacement et caractères supplémentaires :
 
 ``` syntax
 En-US: "{month.full} {day.integer}"
@@ -80,7 +82,7 @@ var datefmt = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("{m
 var datefmt = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("{month.full} {day.integer}");
 ```
 
-Windows renvoie des valeurs propres à la culture pour les constituants individuels indiqués entre crochets {}. En revanche, avec la syntaxe modèle, l’ordre des constituants est invariable. Vous obtenez exactement ce que vous demandez, ce qui pourrait ne pas convenir d’un point de vue culturel:
+Windows renvoie des valeurs propres à la culture pour les constituants individuels indiqués entre crochets {}. En revanche, avec la syntaxe modèle, l’ordre des constituants est invariable. Vous obtenez exactement ce que vous demandez, ce qui pourrait ne pas convenir d’un point de vue culturel :
 
 ``` syntax
 En-US: January 1
@@ -102,27 +104,27 @@ Pour résumer les différences entre les modèles de chaîne standard et les mod
 -   Représentation abstraite d’un format [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576) qui inclut des valeurs pour le mois et le jour, dans un certain ordre.
 -   Garantie de retourner un format standard valide pour toutes les valeurs langue-région prises en charge par Windows.
 -   Garantie de produire une chaîne formatée adaptée à la langue-région donnée.
--   Les combinaisons de constituants ne sont pas toutes valides. Par exemple, il n’existe aucun modèle de chaîne pour «jour_de_la_semaine jour».
+-   Les combinaisons de constituants ne sont pas toutes valides. Par exemple, il n’existe aucun modèle de chaîne pour « jour_de_la_semaine jour ».
 
-**Modèles de chaîne, tels que «{month.full} {day.integer}»:**
+**Modèles de chaîne, tels que « {month.full} {day.integer} » :**
 
 -   Chaîne explicitement ordonnée qui exprime le nom complet du mois, suivi d’un espace, suivi par l’entier du jour, dans cet ordre.
 -   Peut ne pas correspondre à un format standard valable pour toute paire langue-région.
 -   Pas de garantie d’être adapté d’un point de vue culturel.
 -   Toute combinaison de constituants peut être spécifiée dans n’importe quel ordre.
 
-## <span id="Tasks"></span><span id="tasks"></span><span id="TASKS"></span>Tâches
+## <a name="tasks"></a>Tâches
 
 
-Supposons que vous souhaitiez afficher le mois et le jour courants avec l’heure courante dans un format spécifique. Par exemple, vous souhaitez que les utilisateurs américains voient une chaîne de ce type:
+Supposons que vous souhaitiez afficher le mois et le jour courants avec l’heure courante dans un format spécifique. Par exemple, vous souhaitez que les utilisateurs américains voient une chaîne de ce type :
 
 ``` syntax
 June 25 | 1:38 PM
 ```
 
-La partie date correspond au modèle «mois jour», et la partie heure correspond au modèle «minute heure». Vous pouvez donc créer un format personnalisé qui concatène les éléments composant ces modèles.
+La partie date correspond au modèle « mois jour », et la partie heure correspond au modèle « minute heure ». Vous pouvez donc créer un format personnalisé qui concatène les éléments composant ces modèles.
 
-Tout d’abord, obtenez les formateurs pour les modèles de date et heure pertinents, puis les modèles de ces modèles:
+Tout d’abord, obtenez les formateurs pour les modèles de date et heure pertinents, puis les modèles de ces modèles :
 
 **C#**
 ```CSharp
@@ -146,7 +148,7 @@ var mydatepattern = mydate.patterns[0];
 var mytimepattern = mytime.patterns[0];
 ```
 
-Votre format personnalisé doit être stocké dans une chaîne de ressource localisable. Par exemple, la chaîne pour l’anglais (États-Unis) serait «{date} | {time}». Les localisateurs peuvent ajuster cette chaîne selon les besoins. Ils peuvent par exemple changer l’ordre des constituants, si une langue ou une région spécifiques utilisent plus naturellement l’heure avant la date. Ils peuvent également remplacer le caractère «|» par tout autre caractère de séparation. Lors de l’exécution, vous remplacez les parties {date} et {time} de la chaîne par le modèle pertinent:
+Votre format personnalisé doit être stocké dans une chaîne de ressource localisable. Par exemple, la chaîne pour l’anglais (États-Unis) serait « {date} | {time} ». Les localisateurs peuvent ajuster cette chaîne selon les besoins. Ils peuvent par exemple changer l’ordre des constituants, si une langue ou une région spécifiques utilisent plus naturellement l’heure avant la date. Ils peuvent également remplacer le caractère « | » par tout autre caractère de séparation. Lors de l’exécution, vous remplacez les parties {date} et {time} de la chaîne par le modèle pertinent :
 
 **C#**
 ```CSharp
@@ -164,7 +166,7 @@ mydateplustime = mydateplustime.replace("{date}", mydatepattern);
 mydateplustime = mydateplustime.replace("{time}", mytimepattern);
 ```
 
-Vous pouvez ensuite construire un nouveau formateur basé sur le modèle personnalisé:
+Vous pouvez ensuite construire un nouveau formateur basé sur le modèle personnalisé :
 
 **C#**
 ```CSharp
@@ -177,7 +179,7 @@ var mydateplustimefmt = new Windows.Globalization.DateTimeFormatting.DateTimeFor
 var mydateplustimefmt = new dtf.DateTimeFormatter(mydateplustime);
 ```
 
-## <span id="related_topics"></span>Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 
 * [Exemple de mise en forme des dates et heures](http://go.microsoft.com/fwlink/p/?LinkId=231618)
@@ -192,6 +194,6 @@ var mydateplustimefmt = new dtf.DateTimeFormatter(mydateplustime);
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

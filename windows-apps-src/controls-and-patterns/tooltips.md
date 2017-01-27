@@ -6,16 +6,13 @@ ms.assetid: A21BB12B-301E-40C9-B84B-C055FD43D307
 label: Tooltips
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 4110f902adf01e5e25ac674faf9be8faf61f4ea0
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 1ed8bc2339b0616ea5e34b640bb572693d397cce
 
 
 ---
-# Info-bulles
+# <a name="tooltips"></a>Info-bulles
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
-
-
-
 
 Une info-bulle est une brève description qui est liée à un autre contrôle ou objet. Les info-bulles aident à comprendre des objets peu familiers qui ne sont pas directement décrits dans l’interface utilisateur. Une info-bulle s’affiche automatiquement lorsque l’utilisateur déplace le focus, appuie de façon prolongée ou pointe avec sa souris sur un contrôle. L’info-bulle disparaît après quelques secondes, ou lorsque l’utilisateur déplace le focus du doigt, du pointeur ou du clavier/boîtier de commande.
 
@@ -24,24 +21,19 @@ Une info-bulle est une brève description qui est liée à un autre contrôle ou
 <div class="important-apis" >
 <b>API importantes</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br227608"><strong>Classe ToolTip</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice"><strong>Classe ToolTipService</strong></a></li>
+<li>[**Classe ToolTip**](https://msdn.microsoft.com/library/windows/apps/br227608)</li>
+<li>[**Classe ToolTipService**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-
-## Est-ce le contrôle approprié?
+## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
 Utilisez une info-bulle pour fournir plus d’informations sur un contrôle avant d’inviter l’utilisateur à effectuer une action. Les info-bulles doivent être utilisées avec parcimonie, et uniquement quand elles aident l’utilisateur à accomplir une tâche. En règle générale, si les informations sont déjà disponibles autre part, n’ajoutez pas une info-bulle. Une info-bulle utile donne un éclairage sur une action qui n’est pas bien expliquée.
 
-Quand utiliser une info-bulle Pour vous décider, posez-vous les questions suivantes:
+Quand utiliser une info-bulle Pour vous décider, posez-vous les questions suivantes :
 
--   **Les informations doivent-elles devenir visibles lors du passage du pointeur?**
-    Si ce n’est pas le cas, utilisez un autre contrôle. Les info-bulles doivent uniquement être affichées par une action de l’utilisateur; ne les laissez jamais s’afficher d’elles-mêmes.
+-   **Les informations doivent-elles devenir visibles lors du passage du pointeur ?**
+    Si ce n’est pas le cas, utilisez un autre contrôle. Les info-bulles doivent uniquement être affichées par une action de l’utilisateur ; ne les laissez jamais s’afficher d’elles-mêmes.
 
 -   **Le contrôle a-t-il une étiquette avec un libellé ?**
     Si ce n’est pas le cas, utilisez une info-bulle pour l’indiquer. Attribuer une étiquette à la plus grande partie des contrôles est une bonne habitude de conception de l’expérience utilisateur et pour ceci, vous n’avez pas besoin d’info-bulles. Les contrôles et les commandes des barres d’outils affichant seulement des icônes doivent être accompagnés d’une info-bulle.
@@ -61,13 +53,13 @@ Quand utiliser une info-bulle Pour vous décider, posez-vous les questions suiva
 -   **Les utilisateurs pourraient-ils être ennuyés ou gênés par les info-bulles ?**
     Si cela peut être le cas, envisagez une autre solution, notamment de ne rien ajouter du tout. Si les info-bulles sont susceptibles de gêner l’utilisateur, permettez-lui de les désactiver.
 
-## Exemple
+## <a name="example"></a>Exemple
 
 Une info-bulle dans l’application Bing Cartes.
 
 ![Une info-bulle dans l’application Bing Cartes](images/control-examples/tool-tip-maps.png)
 
-## Recommandations
+## <a name="recommendations"></a>Recommandations
 
 -   Utilisez les info-bulles avec parcimonie (ou pas du tout). Les info-bulles sont une interruption. Une info-bulle peut être aussi distrayante qu’une fenêtre contextuelle. Dès lors, utilisez-les seulement si elles apportent un plus.
 -   Veillez à ce que le texte de l’info-bulle soit concis. Les info-bulles sont adaptées aux phrases courtes et aux fragments de phrases. La lecture de grands blocs de texte peut prendre du temps et l’info-bulle risque d’expirer avant que l’utilisateur ait fini de la lire.
@@ -78,12 +70,11 @@ Une info-bulle dans l’application Bing Cartes.
 -   Ne placez pas d’images qui semblent être interactives à l’intérieur de l’info-bulle.
 
 Rubriques connexes
------------------------------------------------
 
 * [**Classe ToolTip**](https://msdn.microsoft.com/library/windows/apps/br227608)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

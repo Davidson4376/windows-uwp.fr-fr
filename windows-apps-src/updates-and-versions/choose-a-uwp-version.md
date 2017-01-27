@@ -3,8 +3,8 @@ author: QuinnRadich
 title: Choisir une version UWP
 description: "Lors de l’écriture d’applications UWP dans Microsoft Visual Studio, vous pouvez choisir la version à cibler. Découvrez ce qui distingue les différentes versions d’UWP et apprenez à configurer vos choix dans les projets nouveaux et existants."
 translationtype: Human Translation
-ms.sourcegitcommit: 006b5d01c2474591a81e4d7a83c5735dc0b3d9d8
-ms.openlocfilehash: 5d05c427ecc1ec57856b7c3909be50c3d87daa28
+ms.sourcegitcommit: 7e59551f528e23e497122f822fbfc09ec3086cdc
+ms.openlocfilehash: 58e58c212cb6efd76f4afb8d3b6c7a3c5ddf215e
 
 ---
 
@@ -14,7 +14,7 @@ Lors de l’écriture d’applications UWP dans Microsoft Visual Studio, vous po
 
 | Version | Description |
 | --- | --- |
-| Build 14393 (Édition anniversaire) | Il s’agit de la version la plus récente de Windows 10, publiée en juillet 2016. Voici quelques fonctionnalités phares de cette version : </br> \* **Windows Ink** : nouvelles commandes InkCanvas et InkToolbar. </br> \* **API Cortana** : les nouvelles actions de Cortana permettent d’intégrer la prise en charge de Cortana à des fonctions spécifiques de votre application. </br> \* **Windows Hello** : Microsoft Edge prend désormais en charge Windows Hello, ce qui donne aux développeurs web l’accès à l’authentification biométrique. </br> Pour plus d’informations sur ces fonctionnalités et de nombreuses autres ajoutées dans cette version de Windows, visitez le [Centre de développement](https://developer.microsoft.com/en-us/windows/windows-10-for-developers) ou consultez la page [Nouveautés de Windows 10 pour les développeurs](../whats-new/windows-10-version-1607.md).  |
+| Build 14393 (Édition anniversaire) | Il s’agit de la version la plus récente de Windows 10, publiée en juillet 2016. Voici quelques fonctionnalités phares de cette version : </br> \* **Windows Ink** : nouvelles commandes InkCanvas et InkToolbar. </br> \* **API Cortana** : les nouvelles actions de Cortana permettent d’intégrer la prise en charge de Cortana à des fonctions spécifiques de votre application. </br> \* **Windows Hello** : Microsoft Edge prend désormais en charge Windows Hello, ce qui donne aux développeurs web l’accès à l’authentification biométrique. </br> Pour plus d’informations sur ces fonctionnalités et de nombreuses autres ajoutées dans cette version de Windows, visitez le [Centre de développement](https://developer.microsoft.com/windows/windows-10-for-developers) ou consultez la page [Nouveautés de Windows 10 pour les développeurs](../whats-new/windows-10-version-1607.md).  |
 | Build 10586 | Cette version de Windows 10 a été publiée en novembre 2015. Les fonctionnalités phares comprennent l’introduction des API ORTC (Object Real-Time Communications) pour la communication vidéo dans Microsoft Edge et des API fournisseurs permettant aux applications d’utiliser l’authentification faciale Windows Hello. [Plus d’informations sur les fonctionnalités introduites dans cette version.](../whats-new/windows-10-version-1511.md) |
 | Build 10240 | Il s’agit de la version initiale de Windows 10 publiée en juillet 2015. [Plus d’informations sur les fonctionnalités introduites dans cette version.](../whats-new/windows-10-version-1507.md) |
 
@@ -22,7 +22,7 @@ Nous recommandons vivement aux nouveaux développeurs et aux développeurs qui �
 
 ## <a name="whats-different-in-each-uwp-version"></a>Qu’est-ce qui différencie chaque version UWP ?
 
-Les API nouvelles et modifiées pour UWP sont disponibles dans toutes les versions successives de Windows 10. Pour savoir quelles fonctionnalités ont été ajoutées dans quelle version, consultez [Nouveautés de Windows10 pour les développeurs](../whats-new/windows-10-version-1607.md).
+Les API nouvelles et modifiées pour UWP sont disponibles dans toutes les versions successives de Windows 10. Pour savoir quelles fonctionnalités ont été ajoutées dans quelle version, consultez [Nouveautés de Windows](../whats-new/windows-10-version-1607.md).
 
 Pour consulter des rubriques de référence qui énumèrent toutes les familles d’appareils et leurs versions, ainsi que les contrats d’API et leurs versions, consultez [Familles d’appareils](https://msdn.microsoft.com/library/windows/apps/dn706137.aspx) et [Contrats d’API](https://msdn.microsoft.com/library/windows/apps/dn706135.aspx).
 

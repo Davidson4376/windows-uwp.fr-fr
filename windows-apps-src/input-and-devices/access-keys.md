@@ -5,10 +5,15 @@ title: "Touches d’accès rapide"
 ms.assetid: C2F3F3CE-737F-4652-98B7-5278A462F9D3
 label: Access keys
 template: detail.hbs
-keywords: "Touches d’accès rapide, clavier, accessibilité"
+keywords: "Touches d’accès rapide, clavier, accessibilité, interaction utilisateur, entrées"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 2b6b1d7b1755aad4d75a29413d989c6e8112128a
-ms.openlocfilehash: dfe89e4d4fd089dde6b7b307325b8fe43de82c10
+ms.sourcegitcommit: 76b012ab4cf737f00fc986c81c88fd48339867fc
+ms.openlocfilehash: 34cce6acc786fe34b3d94faaec57011474e029ff
 
 ---
 
@@ -58,7 +63,7 @@ Pour comprendre les API de touche d’accès rapide, il est d’abord nécessair
     > [!NOTE]
     > Seules les touches d’accès rapide avec un seul caractère peuvent tirer parti de cette interaction utilisateur. La combinaison Alt +_touche d’accès rapide_ n’est pas prise en charge pour les touches d’accès rapide avec plusieurs caractères.    
 - S’il existe plusieurs touches d’accès rapide multicaractères qui partagent certains caractères, alors, quand l’utilisateur appuie sur un caractère partagé, les touches d’accès rapide sont filtrées. Par exemple, supposons que trois touches d’accès rapide sont affichées : _A1_, _A2_ et _C_. Si l’utilisateur appuie sur _A_, alors seules les touches d’accès rapide _A1_ et _A2_ s’affichent et l’affordance visuelle pour C est masquée.
-- La touche Échap permet de supprimer un niveau de filtrage. Par exemple, s’il existe des touches d’accès rapide _B_, _ABC_, _ACD_ et _ABD_ et que l’utilisateur appuie sur _A_, alors seules les touches d’accès rapide _ABC_, _ACD_ et _ABD_ sont affichées. Si l’utilisateur appuie ensuite sur _B_, seules les touches d’accès rapide _ABC_ et _ABD_ sont affichées. Si l’utilisateur appuie sur Échap, un niveau de filtrage est supprimé et les touches d’accès rapide _ABC_, _ACD_ et _ABD_ sont affichées. Si l’utilisateur appuie une nouvelle fois sur Échap, un autre niveau de filtrage est supprimé et toutes les touches d’accès rapide _B_, _ABC_, _ACD_ et _ABD_ sont activées et leurs affordances visuelles sont affichées.
+- La touche Échap permet de supprimer un niveau de filtrage. Par exemple, s’il existe des touches d’accès rapide _B_, _ABC_, _ACD_ et _ABD_ et que l’utilisateur appuie sur _A_, alors seules les touches d’accès rapide _ABC_, _ACD_ et _ABD_ sont affichées. Si l’utilisateur appuie ensuite sur _B_, seules les touches d’accès rapide _ABC_ et _ABD_ sont affichées. Si l’utilisateur appuie sur Échap, un niveau de filtrage est supprimé et les touches d’accès rapide _ABC_, _ACD_ et _ABD_ sont affichées. Si l’utilisateur appuie une nouvelle fois sur Échap, un autre niveau de filtrage est supprimé et toutes les touches d’accès rapide (_B_, _ABC_, _ACD_ et _ABD_) sont activées et leurs affordances visuelles sont affichées.
 - La touche Échap permet de revenir à l’étendue précédente. Les touches d’accès rapide peuvent faire partie d’étendues différentes pour faciliter la navigation entre les applications comprenant de nombreuses commandes. La séquence de touches d’accès rapide démarre toujours sur l’étendue principale. Toutes les touches d’accès rapide font partie de l’étendue principale, sauf celles qui spécifient un élément d’interface utilisateur particulier comme étant leur propriétaire d’étendue. Lorsque l’utilisateur appelle la touche d’accès rapide d’un élément qui est un propriétaire d’étendue, l’infrastructure XAML y déplace automatiquement l’étendue et l’ajoute à une pile de navigation de touches d’accès rapide interne. La touche Échap permet de revenir à la pile de navigation de touches d’accès rapide.
 - Il existe plusieurs façons pour quitter la séquence de touches d’accès rapide :
     - L’utilisateur peut appuyer sur Alt pour quitter une séquence de touches d’accès rapide en cours d’exécution. N’oubliez pas qu’en appuyant sur Alt, vous initiez également la séquence de touches accès rapide.
@@ -385,6 +390,6 @@ public sealed partial class ScopedAccessKeys : Page
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

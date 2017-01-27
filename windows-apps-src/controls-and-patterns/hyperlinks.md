@@ -6,11 +6,11 @@ ms.assetid: 74302FF0-65FC-4820-B59A-718A765EF7F0
 label: Hyperlinks
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 71749f09eb11f779427bc450ae607f3fa99c2490
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 4d474af6930354482f9f8b6e7754ddaf6fe65dac
 
 ---
-# Liens hypertexte
+# <a name="hyperlinks"></a>Liens hypertexte
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -21,17 +21,13 @@ Les liens hypertexte redirigent l’utilisateur vers une autre partie de l’app
 <div class="important-apis" >
 <b>API importantes</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/dn279356"><strong>Élément de texte Hyperlink|</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br242739"><strong>Contrôle HyperlinkButton</strong></a></li>
+<li>[**Élément de texte Hyperlink|**](https://msdn.microsoft.com/library/windows/apps/dn279356)</li>
+<li>[**Contrôle HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739)</li>
 </ul>
-
-</div>
 </div>
 
 
-
-
-## Est-ce le contrôle approprié ?
+## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
 Utilisez un lien hypertexte lorsque vous avez besoin de texte qui réponde lorsqu’il est sélectionné et dirige l’utilisateur vers plus d’informations.
 
@@ -41,13 +37,13 @@ Choisissez le type de lien hypertexte approprié en fonction de vos besoins :
 -   Utilisez un contrôle **HyperlinkButton** pour les liens hypertexte autonomes. Un contrôle HyperlinkButton est un contrôle Button spécialisé que vous pouvez utiliser à tout endroit où vous utiliseriez un bouton.
 -   Utilisez un contrôle **HyperlinkButton** avec un élément [Image](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.image.aspx) comme contenu pour créer une image sur laquelle vous pouvez cliquer.
 
-## Exemples
+## <a name="examples"></a>Exemples
 
 Liens hypertexte dans l’application Calculatrice.
 
 ![Exemple de lien hypertexte dans l’application Calculatrice](images/control-examples/hyperlinks-calculator.png)
 
-## Créer un élément de texte Hyperlink
+## <a name="create-a-hyperlink-text-element"></a>Créer un élément de texte Hyperlink
 
 Cet exemple montre comment utiliser un élément de texte Hyperlink à l’intérieur d’un [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx).
 
@@ -64,9 +60,9 @@ Le lien hypertexte s’affiche en ligne avec le texte qui l’entoure :
 
 ![Exemple de lien hypertexte en tant qu’élément de texte](images/controls_hyperlink-element.png) 
 
-> **Conseil**  Quand vous utilisez un élément Hyperlink dans un contrôle de texte avec d’autres éléments de texte en XAML, placez le contenu dans un conteneur [Span](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) et appliquez l’attribut `xml:space="preserve"` au conteneur Span pour conserver l’espace blanc entre l’élément Hyperlink et les autres éléments.
+> **Conseil**&nbsp;&nbsp;Quand vous utilisez un élément Hyperlink dans un contrôle de texte avec d’autres éléments de texte en XAML, placez le contenu dans un conteneur [Span](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) et appliquez l’attribut `xml:space="preserve"` au conteneur Span pour conserver l’espace blanc entre l’élément Hyperlink et les autres éléments.
 
-## Créer un HyperlinkButton
+## <a name="create-a-hyperlinkbutton"></a>Créer un HyperlinkButton
 
 Voici comment utiliser un HyperlinkButton, avec un texte et une image.
 
@@ -87,7 +83,7 @@ Les boutons de lien hypertexte incluant du texte s’affichent en tant que texte
 
 ![Exemple de lien hypertexte en tant que contrôle de bouton](images/controls_hyperlink-button-image.png)
 
-## Gérer la navigation
+## <a name="handle-navigation"></a>Gérer la navigation
 
 Pour les deux types de liens hypertexte, vous gérez navigation de la même manière. Vous pouvez définir la propriété **NavigateUri** ou gérez l’événement **Click**.
 
@@ -95,7 +91,8 @@ Pour les deux types de liens hypertexte, vous gérez navigation de la même mani
 
 Pour utiliser le lien hypertexte afin d’accéder à un URI, définissez la propriété NavigateUri. Lorsqu’un utilisateur clique ou appuie sur le lien hypertexte, l’URI spécifié s’ouvre dans le navigateur par défaut. Le navigateur par défaut s’exécute dans un processus distinct de votre application.
 
-> **Remarque**  Vous n’êtes pas obligé d’utiliser les schémas http: ou https:. Vous pouvez utiliser des schémas tels que ms-appx:, ms-appdata: ou ms-ressources: si le contenu des ressources à ces emplacements peut être chargé dans un navigateur. Toutefois, le schéma file: est bloqué. Pour plus d’informations, voir [Schémas d’URI](https://msdn.microsoft.com/library/windows/apps/jj655406.aspx).
+> [!NOTE]
+> Vous n’êtes pas tenu d’utiliser les schémas http: ou https:. Vous pouvez utiliser des schémas tels que ms-appx:, ms-appdata: ou ms-ressources: si le contenu des ressources à ces emplacements peut être chargé dans un navigateur. Toutefois, le schéma file: est bloqué. Pour plus d’informations, voir [Schémas d’URI](https://msdn.microsoft.com/library/windows/apps/jj655406.aspx).
 
 > Quand un utilisateur clique sur le lien hypertexte, la valeur de la propriété NavigateUri est transmise à un gestionnaire de système pour les schémas et types d’URI. Ensuite, le système lance l’application qui est inscrite pour le schéma d’URI fourni pour NavigateUri.
 
@@ -110,7 +107,7 @@ En règle générale, vous n’avez pas à gérer l’événement Click et à sp
 
 Vous ne pouvez rien faire au niveau du gestionnaire d’événements Click pour empêcher le navigateur par défaut de charger toute cible valide spécifiée pour NavigateUri. En effet, cette action se déclenche automatiquement (de manière asynchrone) lorsque le lien hypertexte est activé et ne peut être annulée à partir du gestionnaire d’événements Click. 
 
-## Soulignement de lien hypertexte
+## <a name="hyperlink-underlines"></a>Soulignement de lien hypertexte
 Par défaut, les liens hypertexte sont soulignés. Ce trait de soulignement est important, car il permet de répondre aux exigences d’accessibilité. Les utilisateurs daltoniens utilisent le trait de soulignement pour distinguer les liens hypertexte du reste du texte. Si vous désactivez les traits de soulignement, pensez à ajouter un type de format spécial permettant de distinguer les liens hypertexte du reste du texte, tel que FontWeight ou FontStyle.
 
 **Éléments de texte Hyperlink**
@@ -127,7 +124,7 @@ Le texte n’apparaît pas souligné dans les cas suivants :
 
 Si vous avez besoin d’un bouton qui apparaît sous forme de texte non souligné, pensez à utiliser un contrôle Button standard et à appliquer la ressource du système `TextBlockButtonStyle` intégrée à sa propriété Style.
 
-## Remarques concernant l’élément de texte Hyperlink
+## <a name="notes-for-hyperlink-text-element"></a>Remarques concernant l’élément de texte Hyperlink
 
 Cette section s’applique uniquement à l’élément de texte Hyperlink et non au contrôle HyperlinkButton.
 
@@ -145,16 +142,14 @@ L’élément Hyperlink n’hérite pas de [Control](https://msdn.microsoft.com/
 
 La couleur par défaut du lien hypertexte est la couleur d’accentuation du système. Vous pouvez définir la propriété [Foreground](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.foreground.aspx) pour remplacer celle-ci.
 
-## Recommandations
+## <a name="recommendations"></a>Recommandations
 
 -   Utilisez uniquement les liens hypertexte pour la navigation. Ne les utilisez pas pour d’autres actions.
 -   Utilisez le style Body de la gamme de types pour les liens hypertexte de type texte. Voir [**fonts and the Windows 10 type ramp**](fonts.md).
 -   Gardez les liens hypertexte suffisamment éloignés les uns des autres pour que l’utilisateur puisse les distinguer et les sélectionner aisément.
 -   Ajoutez des info-bulles aux liens hypertexte pour indiquer à l’utilisateur l’emplacement vers lequel il va être dirigé. Si l’utilisateur est dirigé vers un site externe, insérez le nom de domaine de niveau supérieur dans l’info-bulle, puis appliquez un style au texte avec une couleur de police secondaire.
 
-
-
-## Articles connexes
+## <a name="related-articles"></a>Articles connexes
 
 - [Contrôles de texte](text-controls.md)
 - [Recommandations en matière d’info-bulles](tooltips.md)
@@ -165,6 +160,6 @@ La couleur par défaut du lien hypertexte est la couleur d’accentuation du sys
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

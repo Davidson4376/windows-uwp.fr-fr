@@ -6,13 +6,13 @@ ms.assetid: 73008F80-FE62-457D-BAEC-412ED6BAB0C8
 label: Interaction primer
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 19e033455caf677c4e65ffb7bd7ce11a5a93b7a9
-ms.openlocfilehash: 5f6aee51984f86c67db9dc77eace614e385df088
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: b754e3f039e4dca0949bb31fe1da52f6a404dfb4
 
 ---
 
-# Notions fondamentales sur les interactions
-
+# <a name="interaction-primer"></a>Notions fondamentales sur les interactions
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 ![types d’entrée Windows](images/input-interactions/icons-inputdevices03.png)
 
@@ -22,29 +22,29 @@ La plateforme UWP utilise un système d’interactions contextuelles intelligent
 
 Familiarisez-vous avec chaque type de périphérique d’entrée, ses comportements, ses fonctionnalités et ses limites, selon son association à certains facteurs de forme. Cela vous aidera à déterminer si les contrôles et l’intuitivité de la plateforme sont suffisants pour votre application ou requièrent une personnalisation de l’expérience d’interaction utilisateur.
 
-## Surface Dial
+## <a name="surface-dial"></a>Surface Dial
 
-À l’occasion de la mise à jour anniversaire de Windows10, nous introduisons une nouvelle catégorie de périphérique de saisie appelé Windows Wheel. Surface Dial est le premier de cette classe de périphérique. 
+À l’occasion de la mise à jour anniversaire de Windows 10, nous introduisons une nouvelle catégorie de périphérique de saisie appelé Windows Wheel. Surface Dial est le premier de cette classe de périphérique. 
 
-### Prise en charge des appareils
+### <a name="device-support"></a>Prise en charge des appareils
 
 -   Tablette
 -   PC et portables
 
-### Utilisation type
+### <a name="typical-usage"></a>Utilisation type
 
 Avec un format appelant à une action de rotation (ou un mouvement), Surface Dial est conçu à la manière d’un périphérique de saisie secondaire multimode venant compléter ou modifier la saisie à partir d’un périphérique principal. Dans la plupart des cas, l’utilisateur manipule le périphérique avec la main qu’il utilise le moins tout en effectuant une tâche avec sa main dominante (par exemple, la saisie manuscrite avec un stylet).
 
-### Informations supplémentaires
+### <a name="more-info"></a>Informations supplémentaires
 
 [Recommandations de conception de Surface Dial](windows-wheel-interactions.md)
 
 
-## Cortana
+## <a name="cortana"></a>Cortana
 
-Dans Windows10, l’extensibilité de **Cortana** vous permet de gérer les commandes vocales d’un utilisateur et de lancer votre application pour effectuer une opération unique.
+Dans Windows 10, l’extensibilité de **Cortana** vous permet de gérer les commandes vocales d’un utilisateur et de lancer votre application pour effectuer une opération unique.
 
-### Prise en charge des appareils
+### <a name="device-support"></a>Prise en charge des appareils
 
 -   Téléphones et phablettes
 -   Tablette
@@ -56,18 +56,18 @@ Dans Windows10, l’extensibilité de **Cortana** vous permet de gérer les comm
 
 ![cortana](images/input-interactions/icons-cortana01.png)
 
-### Utilisation type
+### <a name="typical-usage"></a>Utilisation type
 
 Une commande vocale est un énoncé, défini dans un fichier VCD (Voice Command Definition), qui est dirigé vers une application installée via **Cortana**. L’application peut être lancée au premier plan ou en arrière-plan en fonction du niveau et de la complexité de l’interaction. Par exemple, les commandes vocales qui requièrent un contexte ou une entrée utilisateur supplémentaire sont mieux gérées au premier plan, tandis que les commandes de base peuvent être gérées en arrière-plan.
 
 L’intégration des fonctionnalités de base de votre application et la fourniture d’un point d’entrée central pour que l’utilisateur accomplisse la plupart des tâches sans ouvrir directement votre application, permettent à **Cortana** de devenir une liaison entre votre application et l’utilisateur. Dans de nombreux cas, cela permet à l’utilisateur de gagner beaucoup de temps et d’énergie. Pour plus d’informations, voir [Recommandations relatives à la conception de Cortana](https://msdn.microsoft.com/library/windows/apps/dn974233).
 
-### Informations supplémentaires
+### <a name="more-info"></a>Informations supplémentaires
 
 [Recommandations relatives à la conception de Cortana](https://msdn.microsoft.com/library/windows/apps/dn974233)
  
 
-## Fonctions vocales
+## <a name="speech"></a>Fonctions vocales
 
 Les fonctions vocales offrent un moyen efficace et naturel d’interagir avec les applications. Elles assurent une communication simple et précise avec les applications et permettent aux utilisateurs d’être productifs et de se tenir informés dans diverses situations.
 
@@ -75,7 +75,7 @@ Les fonctions vocales peuvent compléter ou, souvent, constituer le type d’ent
 
 La conversion de texte par synthèse vocale (ou TTS) est utilisée pour informer ou guider l’utilisateur.
 
-### Prise en charge des appareils
+### <a name="device-support"></a>Prise en charge des appareils
 
 -   Téléphones et phablettes
 -   Tablette
@@ -87,15 +87,15 @@ La conversion de texte par synthèse vocale (ou TTS) est utilisée pour informer
 
 ![fonctions vocales](images/input-interactions/icons-speech01.png)
 
-### Utilisation type
+### <a name="typical-usage"></a>Utilisation type
 
-Il existe trois modes d’interaction vocale:
+Il existe trois modes d’interaction vocale :
 
 **Langage naturel**
 
 Le langage naturel est la façon dont nous interagissons verbalement avec d’autres personnes de façon régulière. Notre discours varie d’une personne à l’autre et d’une situation à l’autre, et il est généralement compris. Lorsque ce n’est pas le cas, nous utilisons souvent d’autres mots et séquences de mots pour formuler la même idée.
 
-Les interactions en langage naturel avec une application sont similaires: nous parlons à l’application par le biais de notre appareil comme s’il s’agissait d’une personne et attendons de l’application qu’elle comprenne et réagisse en conséquence.
+Les interactions en langage naturel avec une application sont similaires : nous parlons à l’application par le biais de notre appareil comme s’il s’agissait d’une personne et attendons de l’application qu’elle comprenne et réagisse en conséquence.
 
 Le langage naturel est le mode d’interaction vocale le plus avancé. Il peut être implémenté et exposé par le biais de **Cortana**.
 
@@ -111,22 +111,22 @@ La méthode d’entrée vocale la plus simple. Chaque énoncé est converti en t
 
 La dictée est généralement utilisée lorsqu’une application n’a pas besoin de comprendre la signification ou l’intention des phrases.
 
-### Informations supplémentaires
+### <a name="more-info"></a>Informations supplémentaires
 
 [Recommandations en matière de conception de fonctions vocales](https://msdn.microsoft.com/library/windows/apps/dn596121)
  
 
-## Stylet
+## <a name="pen"></a>Stylet
 
 Un stylet peut servir de dispositif de pointage précis au niveau des pixels, tel que la souris. Il constitue également l’appareil d’entrée manuscrite numérique optimal.
 
-**Remarque** Il existe deuxtypes de stylet: actif et passif.
+**Remarque**  Il existe deux types de stylet : actif et passif.
   -   Les stylets passifs ne contiennent pas d’éléments électroniques et peuvent émuler efficacement des entrées tactiles au doigt. Ils requièrent un écran de base reconnaissant les entrées en fonction de la pression de contact. Dans la mesure où les utilisateurs posent souvent leur main lorsqu’ils écrivent sur la surface d’entrée, les données d’entrée peuvent être altérées en raison d’une mauvaise élimination des interférences de la paume.
   -   Les stylets actifs contiennent des éléments électroniques et peuvent fonctionner avec des écrans d’appareil complexes. Ils peuvent ainsi fournir des données d’entrée beaucoup plus étendues (pointage ou données de proximité, par exemple) au système et à votre application. L’élimination des interférences de la paume est beaucoup plus robuste.
 
 Lorsque nous parlons de stylets, nous faisons référence à des stylets actifs qui fournissent des données d’entrée riches et qui sont utilisés principalement dans les interactions de pointage et d’écriture précises.
 
-### Prise en charge des appareils
+### <a name="device-support"></a>Prise en charge des appareils
 
 -   Téléphones et phablettes
 -   Tablette
@@ -136,7 +136,7 @@ Lorsque nous parlons de stylets, nous faisons référence à des stylets actifs 
 
 ![stylet](images/input-interactions/icons-pen01.png)
 
-### Utilisation type
+### <a name="typical-usage"></a>Utilisation type
 
 La plateforme d’entrée manuscrite de Windows, associée à un stylet, fournit un moyen naturel de créer des notes manuscrites, des dessins et des annotations. Cette plateforme prend en charge la capture de données d’entrée manuscrite à partir de l’entrée du numériseur, la génération de données d’entrée manuscrite, le rendu de ces données sous forme de traits d’encre sur le périphérique de sortie, la gestion des données d’entrée manuscrite et la reconnaissance de l’écriture manuscrite. En plus de capturer les mouvements spatiaux du stylet à mesure que l’utilisateur écrit ou dessine, votre application peut également recueillir des informations telles que la pression, la forme, la couleur et l’opacité, de manière à offrir des expériences utilisateur ressemblant étroitement au dessin réel à l’aide d’un stylo, d’un crayon ou d’un pinceau.
 
@@ -144,16 +144,16 @@ Les entrées tactiles et du stylet divergent en raison de la capacité de l’en
 
 Il est recommandé de fournir des commandes d’interface utilisateur spécifiques au stylet (ou un élément incitatif) pour prendre en charge ces interactions. Par exemple, utilisez les boutons Précédent et Suivant (ou + et -) pour permettre aux utilisateurs de tourner les pages de contenu ou de faire pivoter, de redimensionner et d’agrandir les objets.
 
-### Informations supplémentaires
+### <a name="more-info"></a>Informations supplémentaires
 
 [Recommandations en matière de conception pour le stylet](https://msdn.microsoft.com/library/windows/apps/dn456352)
  
 
-## Interface tactile
+## <a name="touch"></a>Interface tactile
 
 Avec une interface tactile, les mouvements physiques avec un ou plusieurs doigts peuvent servir à émuler la manipulation directe d’éléments d’interface utilisateur (par exemple, le mouvement panoramique, la rotation, le redimensionnement ou le déplacement), ou faire office de méthode d’entrée alternative (semblable à la souris ou au stylet) ou complémentaire (pour modifier l’aspect d’autres entrées, comme par exemple maculer un trait d’encre dessiné avec un stylet). Les expériences tactiles peuvent fournir des sensations plus naturelles et proches de celles du monde réel pour les utilisateurs lorsqu’ils interagissent avec des éléments sur un écran.
 
-### Prise en charge des appareils
+### <a name="device-support"></a>Prise en charge des appareils
 
 -   Téléphones et phablettes
 -   Tablette
@@ -163,7 +163,7 @@ Avec une interface tactile, les mouvements physiques avec un ou plusieurs doigts
 
 ![interface tactile](images/input-interactions/icons-touch01.png)
 
-### Utilisation type
+### <a name="typical-usage"></a>Utilisation type
 
 La prise en charge des entrées tactiles peut varier de manière significative selon l’appareil.
 
@@ -179,23 +179,23 @@ En règle générale, une interface tactile répond aux critères suivants :
 -   Pas de contrainte quant à l’orientation de l’appareil
 -   Utilisée pour toutes les interactions, y compris les entrées de texte (clavier tactile) et les entrées manuscrites (application configurée).
 
-### Informations supplémentaires
+### <a name="more-info"></a>Informations supplémentaires
 
 [Recommandations en matière de conception pour l’interface tactile](https://msdn.microsoft.com/library/windows/apps/hh465370)
  
 
-## Pavé tactile
+## <a name="touchpad"></a>Pavé tactile
 
 Un pavé tactile combine l’entrée tactile multipoint indirecte et l’entrée de précision d’un dispositif de pointage comme la souris. Fort de cette combinaison, le pavé tactile est adapté à l’interface utilisateur optimisée pour l’interaction tactile et aux cibles d’applications de productivité plus petites.
 
-### Prise en charge des appareils
+### <a name="device-support"></a>Prise en charge des appareils
 
 -   PC et portables
 -   IoT
 
 ![pavé tactile](images/input-interactions/icons-touchpad01.png)
 
-### Utilisation type
+### <a name="typical-usage"></a>Utilisation type
 
 Les pavés tactiles prennent généralement en charge un ensemble de mouvements tactiles similaires à la manipulation directe d’objets et de l’interface utilisateur.
 
@@ -203,18 +203,18 @@ Outre la prise en charge de l’entrée tactile, nous vous recommandons égaleme
 
 Il est recommandé de fournir des commandes d’interface utilisateur spécifiques à la souris (ou un élément incitatif) pour prendre en charge ces interactions. Par exemple, utilisez les boutons Précédent et Suivant (ou + et -) pour permettre aux utilisateurs de tourner les pages de contenu ou de faire pivoter, de redimensionner et d’agrandir les objets.
 
-### Informations supplémentaires
+### <a name="more-info"></a>Informations supplémentaires
 
 [Recommandations en matière de conception pour le pavé tactile](https://msdn.microsoft.com/library/windows/apps/dn456353)
  
 
-## Clavier
+## <a name="keyboard"></a>Clavier
 
 Le clavier, principal périphérique d’entrée de texte, est indispensable pour les personnes souffrant de certains handicaps et les utilisateurs qui le considèrent simplement comme un mode d’interaction plus rapide et plus efficace avec une application.
 
-Avec [Continuum pour téléphones](http://go.microsoft.com/fwlink/p/?LinkID=699431), une nouvelle expérience pour les appareils mobiles Windows10 compatibles, les utilisateurs peuvent connecter leurs téléphones à une souris et un clavier pour les utiliser comme un ordinateur portable.
+Avec [Continuum pour téléphones](http://go.microsoft.com/fwlink/p/?LinkID=699431), une nouvelle expérience pour les appareils mobiles Windows 10 compatibles, les utilisateurs peuvent connecter leurs téléphones à une souris et un clavier pour les utiliser comme un ordinateur portable.
 
-### Prise en charge des appareils
+### <a name="device-support"></a>Prise en charge des appareils
 
 -   Téléphones et phablettes
 -   Tablette
@@ -226,7 +226,7 @@ Avec [Continuum pour téléphones](http://go.microsoft.com/fwlink/p/?LinkID=6994
 
 ![clavier](images/input-interactions/icons-keyboard01.png)
 
-### Utilisation type
+### <a name="typical-usage"></a>Utilisation type
 
 Les utilisateurs peuvent interagir avec les applications Windows universelles via un clavier matériel et deux claviers logiciels : le clavier visuel et le clavier tactile.
 
@@ -234,25 +234,25 @@ Le clavier visuel est un clavier logiciel visuel que vous pouvez utiliser à la 
 
 Le clavier tactile est un clavier logiciel visuel permettant d’entrer du texte à l’aide de la fonction tactile. Le clavier tactile ne se substitue pas au clavier visuel car il n’est utilisé que pour la saisie de texte (il n’émule pas le clavier matériel) et apparaît seulement quand un champ textuel ou un autre contrôle textuel modifiable reçoit le focus. Le clavier tactile ne gère pas les commandes système ou de l’application.
 
-**Remarque** Le clavier visuel a priorité sur le clavier tactile, lequel n’est pas visible si le clavier visuel est présent.
+**Remarque**  Le clavier visuel a priorité sur le clavier tactile, lequel n’est pas visible si le clavier visuel est présent.
 
-En règle générale, un clavier répond aux critères suivants:
+En règle générale, un clavier répond aux critères suivants :
 
 -   Utilisateur unique
 -   Pas de contrainte quant à l’orientation de l’appareil
 -   Utilisé pour l’entrée de texte, la navigation, le jeu et l’accessibilité
 -   Toujours disponible, de façon proactive ou réactive
 
-### Informations supplémentaires
+### <a name="more-info"></a>Informations supplémentaires
 
 [Recommandations en matière de conception pour le clavier](https://msdn.microsoft.com/library/windows/apps/hh972345)
  
 
-## Souris
+## <a name="mouse"></a>Souris
 
 La souris est particulièrement adaptée aux applications de productivité et interfaces utilisateur haute densité, lorsque les interactions utilisateur nécessitent une précision au niveau des pixels pour le ciblage et la commande.
 
-### Prise en charge des appareils
+### <a name="device-support"></a>Prise en charge des appareils
 
 -   Téléphones et phablettes
 -   Tablette
@@ -262,7 +262,7 @@ La souris est particulièrement adaptée aux applications de productivité et in
 
 ![souris](images/input-interactions/icons-mouse01.png)
 
-### Utilisation type
+### <a name="typical-usage"></a>Utilisation type
 
 Les entrées de souris peuvent être modifiées avec l’ajout de plusieurs touches du clavier (Ctrl, Maj, Alt, etc.). Ces touches peuvent être combinées avec le bouton gauche de la souris, le bouton droit de la souris, la roulette et les boutons X pour un ensemble de commandes étendues optimisées pour la souris. (Certaines souris Microsoft possèdent deux boutons supplémentaires, nommés boutons X, qui permettent en général de naviguer vers l’arrière et vers l’avant dans les navigateurs Web.)
 
@@ -270,16 +270,16 @@ Comme pour le stylet, les entrées tactiles et de la souris divergent en raison 
 
 Il est recommandé de fournir des commandes d’interface utilisateur spécifiques à la souris (ou un élément incitatif) pour prendre en charge ces interactions. Par exemple, utilisez les boutons Précédent et Suivant (ou + et -) pour permettre aux utilisateurs de tourner les pages de contenu ou de faire pivoter, de redimensionner et d’agrandir les objets.
 
-### Informations supplémentaires
+### <a name="more-info"></a>Informations supplémentaires
 
 [Recommandations en matière de conception pour la souris](https://msdn.microsoft.com/library/windows/apps/dn456351)
  
 
-## Mouvement
+## <a name="gesture"></a>Mouvement
 
 Un mouvement désigne tous les gestes de l’utilisateur reconnus comme entrée pour contrôler ou interagir avec une application. Les mouvements prennent différentes formes : mouvements simples de la main pour cibler quelque chose à l’écran, mouvements appris dans un but spécifique ou longs mouvements continus effectués avec la totalité du corps. Soyez prudent lors de la conception des mouvements personnalisés, car leur signification peut varier en fonction des paramètres régionaux et de la culture.
 
-### Prise en charge des appareils
+### <a name="device-support"></a>Prise en charge des appareils
 
 -   PC et portables
 -   IoT
@@ -288,7 +288,7 @@ Un mouvement désigne tous les gestes de l’utilisateur reconnus comme entrée 
 
 ![mouvement](images/input-interactions/icons-gesture01.png)
 
-### Utilisation type
+### <a name="typical-usage"></a>Utilisation type
 
 Les événements d’action statique sont déclenchés une fois qu’une interaction se termine.
 
@@ -303,11 +303,11 @@ Les événements d’action de manipulation indiquent une interaction en cours. 
 Outre la prise en charge de l’entrée tactile, nous vous recommandons également de fournir des commandes d’interface utilisateur (ou un élément incitatif) accessibles à l’aide de la souris grâce à la convergence des expériences d’interaction prises en charge par Windows. Par exemple, utilisez les boutons Précédent et Suivant (ou + et -) pour permettre aux utilisateurs de tourner les pages de contenu ou de faire pivoter, redimensionner et agrandir les objets.
 
 
-## Boîtier de commande/contrôleur
+## <a name="gamepadcontroller"></a>Boîtier de commande/contrôleur
 
 Le boîtier de commande/contrôleur est un périphérique spécialisé généralement dédié aux jeux. Toutefois, il est également utilisé pour émuler les entrées de clavier de base et pour offrir une expérience de navigation de l’interface utilisateur très similaire au clavier.
 
-### Prise en charge des appareils
+### <a name="device-support"></a>Prise en charge des appareils
 
 -   PC et portables
 -   IoT
@@ -315,16 +315,16 @@ Le boîtier de commande/contrôleur est un périphérique spécialisé général
 
 ![contrôleur](images/input-interactions/icons-controller01.png)
 
-### Utilisation type
+### <a name="typical-usage"></a>Utilisation type
 
 Jouer à des jeux et interagir avec une console spécialisée.
 
 
-## Entrées multiples
+## <a name="multiple-inputs"></a>Entrées multiples
 
 En vous adaptant au plus grand nombre d’utilisateurs et d’appareils et en concevant vos applications de manière à ce qu’elles fonctionnent avec le plus grand nombre de types d’entrée (mouvement, commande vocale, entrée tactile, pavé tactile, souris et clavier), vous optimisez la flexibilité, la facilité d’utilisation et l’accessibilité.
 
-### Prise en charge des appareils
+### <a name="device-support"></a>Prise en charge des appareils
 
 -   Téléphones et phablettes
 -   Tablette
@@ -336,7 +336,7 @@ En vous adaptant au plus grand nombre d’utilisateurs et d’appareils et en co
 
 ![entrées multiples](images/input-interactions/icons-inputdevices03-vertical.png)
 
-### Utilisation type
+### <a name="typical-usage"></a>Utilisation type
 
 Tout comme les personnes ont recours à une combinaison de voix et de mouvement pour communiquer entre elles, plusieurs types et modes d’entrée peuvent également être utilisés lors de l’interaction avec une application. Toutefois, ces interactions combinées doivent être aussi intuitives et naturelles que possible pour ne pas perturber l’expérience de l’utilisateur.
 
@@ -350,6 +350,6 @@ Tout comme les personnes ont recours à une combinaison de voix et de mouvement 
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

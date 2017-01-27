@@ -4,8 +4,8 @@ Description: "Le Windows Store offre la facturation de l’opérateur mobile com
 title: "Facturation de l’opérateur mobile"
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 translationtype: Human Translation
-ms.sourcegitcommit: e829808a8e521f2308454e05e8911579b22be807
-ms.openlocfilehash: fe11b56430a07e1326f78b59579ffd9e733ed1b0
+ms.sourcegitcommit: 694c3223278c8666bfb47bf9898ac7c02ac981f4
+ms.openlocfilehash: 831e3fbd1524ce452a4346b6c52f3f1c76385d68
 
 ---
 
@@ -14,7 +14,7 @@ ms.openlocfilehash: fe11b56430a07e1326f78b59579ffd9e733ed1b0
 
 Le Windows Store offre la facturation de l’opérateur mobile comme mode de paiement des opérateurs mobiles qui prennent en charge cette fonctionnalité. Si l’opérateur mobile d’un client prend en charge cette fonctionnalité, le client peut effectuer des achats dans le Windows Store à l’aide de son compte mobile.
 
-> **Remarque** Si l’opérateur mobile d’un client offre la facturation de l’opérateur mobile, mais que le client n’a pas accès à cette option sur son appareil, voir les [étapes de dépannage](http://go.microsoft.com/fwlink/p/?LinkId=523993) suivantes.
+> **Remarque** Si l’opérateur mobile d’un client offre la facturation de l’opérateur mobile, mais que le client n’a pas accès à cette option sur son appareil, consultez les [étapes de résolution des problèmes](http://go.microsoft.com/fwlink/p/?LinkId=523993) suivantes.
 
 Nous collaborons régulièrement avec les opérateurs mobiles pour développer la disponibilité de ce mode de paiement. Si vous souhaitez nous suggérer la prise en charge d’un opérateur mobile dont le nom est absent des listes ci-dessous, contactez l’opérateur mobile.
 
@@ -22,14 +22,15 @@ Nous collaborons régulièrement avec les opérateurs mobiles pour développer l
 
 Windows 10 introduit une nouvelle implémentation de facturation de l’opérateur mobile. Cette implémentation est disponible pour tous les appareils exécutant Windows 10, les téléphones exécutant Windows 10 Mobile et les consoles Xbox One. Sur ces appareils, les clients peuvent ajouter la facturation de l’opérateur mobile comme mode de paiement et l’utiliser pour effectuer des achats. 
 
-L’implémentation sur Windows 10 de la facturation de l’opérateur mobile est actuellement prise en charge par les opérateurs mobiles suivants.
+L’implémentation sur Windows 10 de la facturation de l’opérateur mobile est actuellement prise en charge par les opérateurs mobiles ci-après.
 
 | Pays/région  | Opérateurs mobiles |
 |-----------------|------------------|
 | Finlande         | DNA, Elisa       |
+| France          | Orange           |
 | Allemagne         | O2               |
 | Hongrie         | Telenor          |
-| Italie           | Vent             |
+| Italie           | Wind             |
 | Norvège          | Telenor          |
 | Pologne          | Orange           |
 | Russie          | Beeline          |
@@ -77,7 +78,7 @@ L'implémentation héritée de la facturation de l'opérateur mobile est prise e
 | Afrique du Sud         | Vodacom                                                            |
 | Espagne                | Movistar, Vodafone, Orange                                         |
 | Royaume-Uni       | Everything Everywhere (T-Mobile), Telefonica (O2), Three, Vodafone |
-| États-Unis        | AT&amp;T, Sprint, T-Mobile, Verizon                                    |
+| États-Unis        | AT&T, T-Mobile, Verizon                                    |
 | Vietnam              | Viettel, Vietnamobile, Vinaphone, Mobifone                         |
 
  
@@ -94,6 +95,6 @@ Cette liste sera régulièrement mise à jour au fur et à mesure que nous déve
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

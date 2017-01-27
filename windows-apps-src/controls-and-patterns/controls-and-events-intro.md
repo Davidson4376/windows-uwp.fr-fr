@@ -6,11 +6,11 @@ ms.assetid: 64740BF2-CAA1-419E-85D1-42EE7E15F1A5
 label: Intro to controls and patterns
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: c597b2e5a1da23247a2100aeae88beaf1bfdaa64
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 8a9a9009574b46ff3ae5b05569fb871a49e2f1ea
 
 ---
-# Présentation des contrôles et des modèles
+# <a name="intro-to-controls-and-patterns"></a>Présentation des contrôles et des modèles
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -20,13 +20,13 @@ Un *modèle* est en quelque sorte une recette qui permet de modifier un contrôl
 
 Dans de nombreux cas, vous pouvez utiliser un contrôle en l’état. Toutefois, les contrôles XAML distinguent la fonction de la structure et de l’apparence, vous pouvez donc apporter des modifications à différents niveaux pour les adapter à vos besoins. Dans la section [Style](../style/index.md), vous pouvez apprendre à utiliser des [styles XAML](xaml-styles.md) et des [modèles de contrôle](control-templates.md) pour modifier un contrôle.
 
-Dans cette section, nous fournissons des indications pour chaque contrôle XAML que vous pouvez utiliser pour créer l’interface utilisateur de votre application. Pour commencer, cet article explique comment ajouter des contrôles à votre application. Il existe 3étapes principales pour utiliser des contrôles dans votre application: 
+Dans cette section, nous fournissons des indications pour chaque contrôle XAML que vous pouvez utiliser pour créer l’interface utilisateur de votre application. Pour commencer, cet article explique comment ajouter des contrôles à votre application. Il existe 3 étapes principales pour utiliser des contrôles dans votre application : 
 
 - Ajoutez un contrôle à l’interface utilisateur de votre application. 
 - Définissez des propriétés sur le contrôle, telles que la largeur, la hauteur ou la couleur de premier plan. 
 - Associez du code aux gestionnaires d’événements du contrôle afin qu’il effectue une opération. 
 
-## Ajouter un contrôle
+## <a name="add-a-control"></a>Ajouter un contrôle
 Vous pouvez ajouter un contrôle à une application de plusieurs façons :
  
 - Utilisez un outil de conception tel que Blend pour Visual Studio ou le concepteur XAML (Extensible Application Markup Language) Microsoft Visual Studio. 
@@ -43,7 +43,7 @@ La boîte à outils Visual Studio affiche de nombreux contrôles utilisables dan
 
 Vous pouvez également faire glisser le contrôle à partir de la boîte à outils jusqu’au concepteur XAML.
 
-## Définir le nom d’un contrôle 
+## <a name="set-the-name-of-a-control"></a>Définir le nom d’un contrôle 
 
 Pour utiliser un contrôle dans du code, vous définissez son attribut [x:Name](../xaml-platform/x-name-attribute.md), puis vous le référencez par son nom dans votre code. Vous pouvez définir le nom dans la fenêtre Propriétés de Visual Studio ou en XAML. Voici comment définir le nom du contrôle actuellement sélectionné en utilisant la zone de texte Nom en haut de la fenêtre Propriétés. 
 
@@ -60,7 +60,7 @@ Voici comment vous pouvez définir le nom d’un contrôle dans l’éditeur XAM
 <Button x:Name="Button1" Content="Button"/>
 ```
 
-## Définir les propriétés de contrôle 
+## <a name="set-the-control-properties"></a>Définir les propriétés de contrôle 
 
 Les propriétés vous permettent de spécifier l’aspect, le contenu et d’autres attributs des contrôles. Lorsque vous ajoutez un contrôle à l’aide d’un outil de conception, certaines propriétés qui contrôlent la taille, la position et le contenu peuvent être définis automatiquement par Visual Studio. Vous pouvez modifier certaines propriétés, telles que Width, Height ou Margin, en sélectionnant et en manipulant le contrôle en mode Création. L’illustration suivante montre certains des outils de redimensionnement disponibles en mode Création. 
 
@@ -98,7 +98,7 @@ Voici comment définir la propriété Foreground dans du code.
 Button1.Foreground = new SolidColorBrush(Windows.UI.Colors.Beige);
 ```
 
-## Créer un gestionnaire d’événements 
+## <a name="create-an-event-handler"></a>Créer un gestionnaire d’événements 
 
 Chaque contrôle possède des événements qui réagissent aux actions de l’utilisateur ou à d’autres modifications dans votre application. Par exemple, un contrôle Button contient un événement Click qui est déclenché lorsqu’un utilisateur clique sur l’objet Button. Vous créez une méthode, appelée gestionnaire d’événements, pour gérer l’événement. Vous pouvez associer l’événement d’un contrôle à une méthode de gestionnaire d’événements dans la fenêtre Propriétés, en XAML ou dans du code. Pour plus d’informations sur les événements, voir [Vue d’ensemble des événements et des événements routés](../xaml-platform/events-and-routed-events-overview.md).
 
@@ -106,7 +106,7 @@ Pour créer un gestionnaire d’événements, sélectionnez le contrôle, puis c
 
 ![Liste des événements Visual Studio](images/add-controls-add-event-designer.png)
 
-Pour créer un gestionnaire d’événements avec le nom par défaut, double-cliquez sur la zone de texte en regard du nom d’événement dans la fenêtre Propriétés. Pour créer un gestionnaire d’événements avec un nom personnalisé, tapez le nom de votre choix dans la zone de texte, puis appuyez sur Entrée. Le gestionnaire d’événements est créé, et le fichier code-behind est ouvert dans l’éditeur de code. La méthode de gestionnaire d’événements possède 2paramètres. Le premier est `sender`, qui est une référence à l’objet auquel le gestionnaire est attaché. Le paramètre `sender` est un type **Object**. Vous effectuez généralement une conversion de type (transtypage) `sender` en un type plus précis si vous prévoyez de vérifier ou de modifier l’état sur l’objet `sender` lui-même. En fonction de la conception de votre propre application, vous attendez un type vers lequel un transtypage de `sender` peut être effectué en toute sécurité, en fonction de l’élément auquel le gestionnaire est attaché. La seconde valeur correspond aux données d’événement, qui apparaissent généralement dans les signatures sous la forme du paramètre `e` ou `args`.
+Pour créer un gestionnaire d’événements avec le nom par défaut, double-cliquez sur la zone de texte en regard du nom d’événement dans la fenêtre Propriétés. Pour créer un gestionnaire d’événements avec un nom personnalisé, tapez le nom de votre choix dans la zone de texte, puis appuyez sur Entrée. Le gestionnaire d’événements est créé, et le fichier code-behind est ouvert dans l’éditeur de code. La méthode de gestionnaire d’événements possède 2 paramètres. Le premier est `sender`, qui est une référence à l’objet auquel le gestionnaire est attaché. Le paramètre `sender` est un type **Object**. Vous effectuez généralement une conversion de type (transtypage) `sender` en un type plus précis si vous prévoyez de vérifier ou de modifier l’état sur l’objet `sender` lui-même. En fonction de la conception de votre propre application, vous attendez un type vers lequel un transtypage de `sender` peut être effectué en toute sécurité, en fonction de l’élément auquel le gestionnaire est attaché. La seconde valeur correspond aux données d’événement, qui apparaissent généralement dans les signatures sous la forme du paramètre `e` ou `args`.
 
 Voici le code qui gère l’événement Click d’un objet Button nommé `Button1`. Lorsque vous cliquez sur le bouton, la propriété Foreground de l’objet Button sur lequel vous avez cliqué a la valeur blue. 
 
@@ -136,9 +136,7 @@ Vous pouvez également associer un événement à son gestionnaire d’événeme
 Button1.Click += new RoutedEventHandler(Button_Click);
 ```
 
-
-
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 -   [Index des contrôles par fonction](controls-by-function.md)
 -   [Espace de noms Windows.UI.Xaml.Controls](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
@@ -148,6 +146,6 @@ Button1.Click += new RoutedEventHandler(Button_Click);
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

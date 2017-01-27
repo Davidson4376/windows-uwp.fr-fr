@@ -4,26 +4,26 @@ ms.assetid: 4a311d20-ba8c-4816-8091-35726428dc94
 description: "Obtenez des exemples supplémentaires qui montrent comment utiliser les propriétés, méthodes et événements des classes AdControl et InterstitialAd dans les bibliothèques de publicités Microsoft."
 title: Exemples de code
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: 0a852a4bf8404d7ab0d8a2a169a16451c0388122
+ms.sourcegitcommit: f88a71491e185aec84a86248c44e1200a65ff179
+ms.openlocfilehash: a8f18048915927f9e93d4469e7288e5a06a69070
 
 ---
 
-# Exemples de code
+# <a name="code-samples"></a>Exemples de code
 
 
 
 
 Cette section propose des exemples qui montrent comment utiliser les propriétés, méthodes et événements des classes [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) et [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) dans les bibliothèques de publicités Microsoft afin de cibler des utilisateurs, actualiser manuellement les publicités et gérer les événements. Pour passer en revue les procédures pas à pas d’introduction qui montrent comment ajouter ces contrôles à votre application, voir [Procédures pas à pas pour développeurs](developer-walkthroughs.md).
 
-Pour obtenir des exemples complets de projet qui montrent comment ajouter des bannières et des spots vidéo publicitaires à des applications HTML/JavaScript et XAML en C# et C++, voir [Exemples de publicité sur GitHub](http://aka.ms/githubads).
+Pour obtenir des exemples complets de projets qui montrent comment ajouter des bannières et des spots vidéo publicitaires à des applications HTML/JavaScript et XAML en C# et C++, voir [Exemples de publicité sur GitHub](http://aka.ms/githubads).
 
-## Dans cette section
+## <a name="in-this-section"></a>Dans cette section
 
 |  Rubrique    | Description |               
 |----------|-------|
-| [Exemple de propriétés HTML](html-properties-example.md)     | Présente un **AdControl** dont les attributs sont intégralement définis en HTML.        |
-| [Exemple de propriétés XAML](xaml-properties-example.md)     | Présente un **AdControl** dont les attributs sont intégralement définis en XAML.        |
+| [Exemple de propriétés AdControl HTML](html-properties-example.md)     | Présente un **AdControl** dont les attributs sont intégralement définis en HTML.        |
+| [Exemple de propriétés AdControl XAML](xaml-properties-example.md)     | Présente un **AdControl** dont les attributs sont intégralement définis en XAML.        |
 | [Créer un AdControl en JavaScript](create-an-adcontrol-in-javascript.md)     | Montre comment créer un **AdControl** en JavaScript.        |
 | [Événements AdControl en JavaScript](adcontrol-events-in-javascript.md)     | Montre comment gérer les événements **AdControl** en JavaScript.       |
 | [Événements AdControl en C#](adcontrol-events-in-c.md)     | Montre comment gérer les événements **AdControl** en C#.       |
@@ -41,6 +41,6 @@ Pour obtenir des exemples complets de projet qui montrent comment ajouter des ba
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

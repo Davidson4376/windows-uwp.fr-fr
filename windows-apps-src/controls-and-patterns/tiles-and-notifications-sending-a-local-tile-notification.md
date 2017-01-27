@@ -6,22 +6,19 @@ ms.assetid: D34B0514-AEC6-4C41-B318-F0985B51AF8A
 label: TBD
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: d51aacb31f41cbd9c065b013ffb95b83a6edaaf4
-ms.openlocfilehash: 8fc2fc007d14bd9c5d08ca4eb7e61a2dfdf04d3b
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: bbc09a6638fd7c0798e49600bd74388d5bb4629d
 
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 # <a name="send-a-local-tile-notification"></a>Envoyer une notification par vignette locale
-
-
-
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 Les vignettes d’application principales de Windows 10 sont définies dans le manifeste de votre application, tandis que les vignettes secondaires sont créées et définies par programme par le code de votre application. Cet article décrit comment envoyer une notification par vignette locale à une vignette principale et une vignette secondaire à l’aide de modèles de vignette adaptative. (Une notification locale est une notification envoyée à partir du code d’application, par opposition à une notification qui fait l’objet d’une transmission de type push ou pull à partir d’un serveur web).
 
 ![Vignette par défaut et vignette avec notification](images/sending-local-tile-01.png)
 
-**Remarque** Pour plus d’informations, voir [Créer des vignettes adaptatives](tiles-and-notifications-create-adaptive-tiles.md) et [Modèles de vignette adaptative : schéma et conseils](tiles-and-notifications-adaptive-tiles-schema.md).
+> [!NOTE] 
+>Pour plus d’informations, voir [Créer des vignettes adaptatives](tiles-and-notifications-create-adaptive-tiles.md) et [Modèles de vignette adaptative : schéma et conseils](tiles-and-notifications-adaptive-tiles-schema.md).
 
  
 
@@ -285,7 +282,6 @@ var notification = new TileNotification(doc);
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-
 * [Créer des vignettes adaptatives](tiles-and-notifications-create-adaptive-tiles.md)
 * [Modèles de vignette adaptative : schéma et documentation](tiles-and-notifications-adaptive-tiles-schema.md)
 * [Bibliothèque Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
@@ -303,6 +299,6 @@ var notification = new TileNotification(doc);
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

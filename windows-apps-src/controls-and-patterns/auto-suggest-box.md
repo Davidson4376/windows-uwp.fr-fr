@@ -7,11 +7,11 @@ dev.assetid: 54F8DB8A-120A-4D79-8B5A-9315A3764C2F
 label: Auto-suggest box
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 9406f9b826dfb7d2603a0812f209dfb38cf639ae
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 6b41c8b1888b61c82aa3d54244151b08d963658d
 
 ---
-# Zone de suggestion automatique
+# <a name="auto-suggest-box"></a>Zone de suggestion automatique
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 Utilisez un objet AutoSuggestBox pour fournir une liste de suggestions afin que les utilisateurs puissent sélectionner des options au fil de leur saisie.
@@ -21,33 +21,28 @@ Utilisez un objet AutoSuggestBox pour fournir une liste de suggestions afin que 
 <div class="important-apis" >
 <b>API importantes</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx"><strong>Classe AutoSuggestBox</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.textchanged.aspx"><strong>Événement TextChanged</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.suggestionchosen.aspx"><strong>Événement SuggestionChose</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.querysubmitted.aspx"><strong>Événement QuerySubmitted</strong></a></li>
+<li>[**Classe AutoSuggestBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)</li>
+<li>[**Événement TextChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.textchanged.aspx)</li>
+<li>[**Événement SuggestionChose**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.suggestionchosen.aspx)</li>
+<li>[**Événement QuerySubmitted**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.querysubmitted.aspx)</li>
 </ul>
-
-</div>
 </div>
 
 
-
-
-
-## Est-ce le contrôle approprié?
+## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
 Si vous recherchez un contrôle simple et personnalisable permettant d’effectuer une recherche de texte avec une liste de suggestions, choisissez une zone de suggestion.
 
 Pour plus d’informations sur le choix du contrôle de texte approprié, voir l’article [Contrôles de texte](text-controls.md).
 
-## Exemples
+## <a name="examples"></a>Exemples
 
-Zone de suggestion automatique dans l’application GrooveMusique.
+Zone de suggestion automatique dans l’application Groove Musique.
 
-![Zone de suggestion automatique dans l’application GrooveMusique](images/control-examples/auto-suggest-box-groove.png)
+![Zone de suggestion automatique dans l’application Groove Musique](images/control-examples/auto-suggest-box-groove.png)
 
-## Anatomie
-Le point d’entrée de la zone de suggestion automatique se compose d’un en-tête facultatif et d’une zone de texte avec texte d’information facultatif:
+## <a name="anatomy"></a>Anatomie
+Le point d’entrée de la zone de suggestion automatique se compose d’un en-tête facultatif et d’une zone de texte avec texte d’information facultatif :
 
 ![Exemple de point d’entrée pour le contrôle de suggestion automatique](images/controls_autosuggest_entrypoint.png)
 
@@ -55,15 +50,15 @@ La liste des résultats de suggestion automatique se remplit automatiquement dè
 
 ![Exemple de contrôle de suggestion automatique étendu](images/controls_autosuggest_expanded01.png)
 
-## Créer une zone de suggestion automatique
+## <a name="create-an-auto-suggest-box"></a>Créer une zone de suggestion automatique
 
-Pour utiliser un objet AutoSuggestBox, vous devez répondre à 3actions effectuées par les utilisateurs.
+Pour utiliser un objet AutoSuggestBox, vous devez répondre à 3 actions effectuées par les utilisateurs.
 
-- Texte modifié: lorsque l’utilisateur entre du texte, mettre à jour la liste de suggestions.
+- Texte modifié : lorsque l’utilisateur entre du texte, mettre à jour la liste de suggestions.
 - Suggestion choisie : lorsque l’utilisateur choisit une suggestion dans la liste de suggestions, mettre à jour la zone de texte.
 - Requête envoyée : lorsque l’utilisateur envoie une requête, afficher les résultats de la requête.
 
-### Texte modifié
+### <a name="text-changed"></a>Texte modifié
 
 L’événement [**TextChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.textchanged.aspx) se produit chaque fois que le contenu de la zone de texte est mis à jour. Utilisez la propriété [Reason](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestboxtextchangedeventargs.reason.aspx) d’arguments d’événement pour déterminer si la modification est due à une entrée utilisateur. Si la raison de la modification est **UserInput**, filtrez vos données en fonction de l’entrée. Ensuite, définissez les données filtrées comme [ItemsSource](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) de l’objet AutoSuggestBox pour mettre à jour la liste de suggestions.
 
@@ -72,7 +67,7 @@ Pour contrôler la façon dont les éléments sont affichés dans la liste de su
 - Pour afficher le texte d’une seule propriété de votre élément de données, définissez la propriété DisplayMemberPath pour choisir la propriété de votre objet à afficher dans la liste de suggestions.
 - Pour définir une apparence personnalisée pour chaque élément dans la liste, utilisez la propriété ItemTemplate.
 
-### Suggestion choisie
+### <a name="suggestion-chosen"></a>Suggestion choisie
 
 Lorsqu’un utilisateur navigue dans la liste de suggestions à l’aide du clavier, vous devez mettre à jour le texte dans la zone de texte pour assurer la correspondance.
 
@@ -80,17 +75,17 @@ Vous pouvez définir la propriété [TextMemberPath](https://msdn.microsoft.com/
 
 Si vous avez besoin d’afficher plus qu’une simple propriété, gérez l’événement [SuggestionChosen](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.suggestionchosen.aspx) pour remplir la zone de texte avec du texte personnalisé basé sur l’élément sélectionné.
 
-### Requête envoyée
+### <a name="query-submitted"></a>Requête envoyée
 
 Gérez l’événement [QuerySubmitted](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.querysubmitted.aspx) pour effectuer une action de requête appropriée sur votre application et montrer les résultats à l’utilisateur.
 
-L’événement QuerySubmitted se produit lorsqu’un utilisateur valide une chaîne de requête. L’utilisateur peut valider une requête de l’une de ces manières:
+L’événement QuerySubmitted se produit lorsqu’un utilisateur valide une chaîne de requête. L’utilisateur peut valider une requête de l’une de ces manières :
 - Lorsque le focus est sur la zone de texte, appuyez sur Entrée ou cliquez sur l’icône de requête. La propriété [ChosenSuggestion](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.chosensuggestion.aspx) des arguments d’événement est **null**.
 - Lorsque le focus est sur la liste de suggestions, appuyez sur Entrée, puis cliquez ou appuyez sur un élément. La propriété ChosenSuggestion des arguments d’événement contient l’élément sélectionné dans la liste.
 
 Dans tous les cas, la propriété [QueryText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.querytext.aspx) des arguments d’événement contient le texte de la zone de texte.
 
-## Utiliser AutoSuggestBox pour la recherche
+## <a name="use-autosuggestbox-for-search"></a>Utiliser AutoSuggestBox pour la recherche
 
 Utilisez un objet AutoSuggestBox pour fournir une liste de suggestions afin que les utilisateurs puissent sélectionner des options au fil de leur saisie.
 
@@ -104,9 +99,9 @@ Voici AutoSuggestBox avec une icône Rechercher.
 
 ![Exemple de point d’entrée pour le contrôle de suggestion automatique](images/controls_autosuggest_entrypoint.png)
 
-## Exemples
+## <a name="get-the-sample-code"></a>Obtenir l’exemple de code 
 
-Pour voir des exemples de mise en pratique exhaustifs de AutoSuggestBox, voir l’[exemple de migration AutoSuggestBox](http://go.microsoft.com/fwlink/p/?LinkId=619996) et l’[exemple d’éléments de base d’une interface utilisateur XAML](http://go.microsoft.com/fwlink/p/?LinkId=619992).
+Pour obtenir des exemples complets d’utilisation du contrôle AutoSuggestBox, consultez l’[exemple AutoSuggestBox](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlAutoSuggestBox) et l’[exemple d’éléments de base d’une interface utilisateur XAML](http://go.microsoft.com/fwlink/p/?LinkId=619992).
 
 Voici un simple élément AutoSuggestBox avec les gestionnaires d’événements requis.
 
@@ -150,24 +145,37 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 }
 ```
 
-## Pratiques conseillées et déconseillées
+## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
 
--   Lorsque vous utilisez la zone de suggestion automatique pour effectuer des recherches et qu’il n’existe aucun résultat de recherche pour le texte entré, affichez le message d’une ligne «Aucun résultat» comme résultat afin que les utilisateurs sachent que leur requête de recherche a été exécutée:
+-   Lorsque vous utilisez la zone de suggestion automatique pour effectuer des recherches et qu’il n’existe aucun résultat de recherche pour le texte entré, affichez le message d’une ligne « Aucun résultat » comme résultat afin que les utilisateurs sachent que leur requête de recherche a été exécutée :
 
     ![Exemple de zone de suggestion automatique sans résultat de recherche](images/controls_autosuggest_noresults.png)
 
+<div class="microsoft-internal-note">
+**Liste de contrôle de globalisation et de localisation**
 
-## Articles connexes
+<table>
+<tr>
+<th>Espacement vertical</th><td>Utilisez les caractères non latins d’espacement vertical pour assurer un affichage correct des scripts non latins, y compris les nombres.</td>
+</tr>
+<tr>
+<th>Défilement</th><td>Quand l’utilisateur sélectionne le texte de suggestion automatique, il doit pouvoir atteindre la fin de la chaîne en la faisant défiler.</td>
+</tr>
+</table>
+</div>
+
+
+## <a name="related-articles"></a>Articles connexes
 
 - [Contrôles de texte](text-controls.md)
 - [Vérification de l’orthographe](spell-checking-and-prediction.md)
 - [Recherche](search.md)
 - [**Classe TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [**Classe PasswordBox Windows.UI.Xaml.Controls**](https://msdn.microsoft.com/library/windows/apps/br227519)
-- [Propriété String.Length](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
+- [Propriété String.Length](https://msdn.microsoft.com/library/system.string.length.aspx)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

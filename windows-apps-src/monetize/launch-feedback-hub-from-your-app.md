@@ -4,8 +4,8 @@ Description: "Vous pouvez encourager vos clients à laisser des commentaires en 
 title: "Lancer le Hub de commentaires à partir de votre application"
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
 translationtype: Human Translation
-ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
-ms.openlocfilehash: 4296bd4007ae5109c9a3736c977ba68f312b208c
+ms.sourcegitcommit: a3c4ebc9bfda5ed41363de139d43a6a2c7934e0e
+ms.openlocfilehash: 54c6503add19ead5226da5a862b199bc3f305b7e
 
 ---
 
@@ -15,14 +15,14 @@ Vous pouvez encourager vos clients à laisser des commentaires en ajoutant à vo
 
 Pour lancer le Hub de commentaires à partir de votre application, utilisez une API fournie par [Microsoft Store Services SDK](http://aka.ms/store-em-sdk). Nous vous recommandons d’utiliser cette API pour lancer le Hub de commentaires à partir d’un élément d’interface utilisateur de votre application qui respecte nos recommandations en matière de conception.
 
->**Remarque**  Le Hub de commentaires est disponible uniquement sur les appareils exécutant la version 10.0.14271 ou une version ultérieure d’un système d’exploitation Windows 10 basé sur les [familles d’appareils](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide#device-families) mobiles et de bureau. Nous vous recommandons de n’afficher un contrôle de commentaires dans votre application que si le Hub de commentaires est disponible sur l’appareil de l’utilisateur. Le code de cette rubrique illustre comment procéder.
+>**Remarque**&nbsp;&nbsp;Le Hub de commentaires est disponible uniquement sur les appareils exécutant la version 10.0.14271 ou une version ultérieure d’un système d’exploitation Windows 10 basé sur les [familles d’appareils](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide#device-families) mobiles et de bureau. Nous vous recommandons de n’afficher un contrôle de commentaires dans votre application que si le Hub de commentaires est disponible sur l’appareil de l’utilisateur. Le code de cette rubrique illustre comment procéder.
 
 ## <a name="how-to-launch-feedback-hub-from-your-app"></a>Lancement du Hub de commentaires à partir de votre application
 
 Pour lancer le Hub de commentaires à partir de votre application :
 
 1. [Installez le Microsoft Store Services SDK](microsoft-store-services-sdk.md#install-the-sdk). Outre l’API relative au lancement du Hub de commentaires, ce SDK fournit des API pour d’autres fonctionnalités, telles que l’exécution d’expériences dans vos applications avec des tests A/B et l’affichage d’annonces publicitaires.
-2. Ouvrez votre projet dans Visual Studio.
+2. Ouvrez votre projet dans Visual Studio.
 3. Dans l’Explorateur de solutions, cliquez avec le bouton droit sur le nœud **Références**, puis sélectionnez **Ajouter une référence**.
 4. Dans le **Gestionnaire de références**, développez **Windows universel**, puis cliquez sur **Extensions**.
 5. Dans la liste des kits de développement logiciel (SDK), cochez la case en regard de **Microsoft Engagement Framework** et cliquez sur **OK**.
@@ -31,7 +31,7 @@ Pour lancer le Hub de commentaires à partir de votre application :
   * Définissez le texte du contrôle sur le code de caractère Unicode hexadécimal E939. Il s’agit du code de caractère de l’icône de commentaires recommandée dans la police **Segoe MDL2 Assets**.
   * Définissez la visibilité du contrôle sur la valeur « hidden ».
 
-    > **Remarque**  Nous vous recommandons de masquer votre contrôle de commentaires par défaut et de ne l’afficher dans votre code d’initialisation que si le Hub de commentaires est disponible sur l’appareil de l’utilisateur. L’étape suivante illustre comment procéder.
+    > **Remarque**&nbsp;&nbsp;Nous vous recommandons de masquer votre contrôle de commentaires par défaut et de ne l’afficher dans votre code d’initialisation que si le Hub de commentaires est disponible sur l’appareil de l’utilisateur. L’étape suivante illustre comment procéder.
 
   Le code ci-après présente la définition XAML d’un élément [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx) configuré comme décrit ci-dessus.
 
@@ -48,7 +48,7 @@ Pour lancer le Hub de commentaires à partir de votre application :
   [!code-cs[LaunchFeedback](./code/StoreSDKSamples/cs/FeedbackPage.xaml.cs#ToggleFeedbackVisibility)]
 
   <span/>
-  >**Remarque**  Bien que les appareils Xbox ne prennent pas en charge le Hub de commentaires pour l’instant, la propriété **IsSupported** renvoie la valeur **true** sur les appareils Xbox exécutant la version 10.0.14271 ou une version ultérieure de Windows 10. Il s’agit d’un problème connu qui sera résolu dans une prochaine version de Microsoft Store Services SDK.  
+  >**Remarque**&nbsp;&nbsp;Bien que les appareils Xbox ne prennent pas en charge le Hub de commentaires pour l’instant, la propriété **IsSupported** renvoie la valeur **true** sur les appareils Xbox exécutant la version 10.0.14271 ou une version ultérieure de Windows 10. Il s’agit d’un problème connu qui sera résolu dans une prochaine version de Microsoft Store Services SDK.  
 
 8. Dans le gestionnaire d’événements qui s’exécute quand l’utilisateur clique sur le contrôle, obtenez un objet [StoreServicesFeedbackLauncher](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesfeedbacklauncher.aspx) et appelez la méthode [LaunchAsync](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesfeedbacklauncher.launchasync.aspx) pour lancer l’application Hub de commentaires. Il existe deux surcharges pour cette méthode : une sans paramètre et une autre qui accepte un dictionnaire de paires clé/valeur contenant les métadonnées que vous voulez associer au commentaire. L’exemple suivant montre comment lancer le Hub de commentaires dans le gestionnaire d’événements [Click](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) d’un élément [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx).
 
@@ -59,16 +59,16 @@ Pour lancer le Hub de commentaires à partir de votre application :
 
 Pour lancer le Hub de commentaires, nous vous recommandons d’ajouter à votre application un élément d’interface utilisateur (tel qu’un bouton) affichant l’icône de commentaires standard suivante avec la police Segoe MDL2 Assets et le code de caractère E939.
 
-![]Feedback icon](images/feedback_icon.PNG)
+![Icône de commentaires](images/feedback_icon.PNG)
 
 Nous vous recommandons également d’utiliser une ou plusieurs des options de placement suivantes pour créer un lien vers le Hub de commentaires dans votre application.
 * **Directement dans la barre de l’application**. Selon votre implémentation, vous voudrez utiliser l’icône seule ou y ajouter du texte (comme illustré ci-dessous).
 
-  ![]Feedback icon](images/feedback_appbar_placement.png)
+  ![Icône de commentaires](images/feedback_appbar_placement.png)
 
 * **Dans les paramètres de votre application**. Cette méthode constitue un moyen plus subtil de fournir un accès au Hub de commentaires. Dans l’exemple ci-dessous, le lien Commentaires apparaît comme l’un des liens disponibles sous Application.
 
-  ![]Feedback icon](images/feedback_settings_placement.png)
+  ![Icône de commentaires](images/feedback_settings_placement.png)
 
 * **Dans un menu volant basé sur l’événement**. Cette méthode est utile lorsque vous souhaitez interroger vos clients sur un sujet spécifique avant de lancer le Hub de commentaires Windows. Par exemple, après avoir intégré une nouvelle fonctionnalité à votre application, vous pouvez poser une question spécifique aux clients concernant leur niveau de satisfaction vis-à-vis de cette fonctionnalité. Si les clients choisissent d’y répondre, votre application lance le Hub de commentaires.
 
@@ -79,6 +79,6 @@ Nous vous recommandons également d’utiliser une ou plusieurs des options de p
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

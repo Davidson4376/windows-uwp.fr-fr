@@ -6,11 +6,11 @@ ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: a02793e45f190b9401f18e845af3dc73d235c3fc
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 465c75ccb2af9b162202a79025aa292fbd626a58
 
 ---
-# Notifications de badge pour les applications UWP
+# <a name="badge-notifications-for-uwp-apps"></a>Notifications de badge pour les applications UWP
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -21,9 +21,11 @@ Un badge de notification transmet des informations récapitulatives ou d’état
 
 Les badges de notification apparaissent sur l’icône de la barre des tâches de votre application et dans le coin inférieur droit de sa vignette d’accueil, que l’application soit en cours d’exécution ou non. Il est possible d’afficher les badges sur des vignettes de toute taille.  
 
-**Remarque**  Il n’est pas possible de fournir votre propre image de badge. Seules les images de badge fournies par le système sont utilisables.
+> [!NOTE]
+> Il n’est pas possible de fournir votre propre image de badge. Seules les images de badge fournies par le système sont utilisables.
 
-## Badges numériques
+
+## <a name="numeric-badges"></a>Badges numériques
 
 <table>
     <tr>
@@ -43,7 +45,7 @@ Les badges de notification apparaissent sur l’icône de la barre des tâches d
     </tr>    
 </table>
 
-## Badges de glyphe
+## <a name="glyph-badges"></a>Badges de glyphe
 Au lieu d’un nombre, un badge peut afficher l’un des ensembles de glyphes d’état non extensibles. 
 
 <table>
@@ -119,11 +121,11 @@ Au lieu d’un nombre, un badge peut afficher l’un des ensembles de glyphes d�
 </tr>
 </table>
 
-## Créer un badge
+## <a name="create-a-badge"></a>Créer un badge
 
 Ces exemples vous montrent comment créer une mise à jour de badge.
 
-### Créer un badge numérique
+### <a name="create-a-numeric-badge"></a>Créer un badge numérique
 
 ````csharp
 private void setBadgeNumber(int num)
@@ -150,7 +152,7 @@ private void setBadgeNumber(int num)
 }
 ````
 
-### Créer un badge de glyphe
+### <a name="create-a-glyph-badge"></a>Créer un badge de glyphe
 ````csharp
 private void updateBadgeGlyph()
 {
@@ -178,7 +180,7 @@ private void updateBadgeGlyph()
 }
 ````
 
-### Effacer un badge
+### <a name="clear-a-badge"></a>Effacer un badge
 
 ````csharp
 private void clearBadge()
@@ -187,17 +189,17 @@ private void clearBadge()
 }
 ````
 
-## Obtenir les exemples
+## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
 
 * [Exemples de notification](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/Notifications)<br/> Montre comment créer des vignettes dynamiques, envoyer des mises à jour de badge et afficher des notifications toast. 
 
-## Articles connexes
+## <a name="related-articles"></a>Articles connexes
 
 * [Notifications toast adaptatives et interactives](tiles-and-notifications-adaptive-interactive-toasts.md)
 * [Créer des vignettes](tiles-and-notifications-creating-tiles.md)
 * [Créer des vignettes adaptatives](tiles-and-notifications-create-adaptive-tiles.md)
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

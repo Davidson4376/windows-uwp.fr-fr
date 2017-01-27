@@ -6,11 +6,11 @@ ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
 label: Radio buttons
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: f26b042bb7efb6599993b8fd7cee6ee35e1765fd
-ms.openlocfilehash: 0e9cd8db21577bdbfe4c53fc9a17fbcbf5c81f76
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 95ddb1ddd1dfd318a5c491504c95f7833f98115e
 
 ---
-# Cases d’option
+# <a name="radio-buttons"></a>Cases d’option
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -23,20 +23,14 @@ Les cases d’option permettent aux utilisateurs de faire un choix parmi au moin
 <div class="important-apis" >
 <b>API importantes</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br227544"><strong>Classe RadioButton</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx"><strong>Événement Checked</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx"><strong>Propriété IsChecked</strong></a></li>
+<li>[**Classe RadioButton**](https://msdn.microsoft.com/library/windows/apps/br227544)</li>
+<li>[**Événement Checked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)</li>
+<li>[**Propriété IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)</li>
 </ul>
-
-</div>
 </div>
 
 
-
-
-
-
-## Est-ce le contrôle approprié ?
+## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
 Utilisez les cases d’option pour présenter à l’utilisateur au moins deux options qui s’excluent mutuellement, comme ci-après.
 
@@ -60,20 +54,20 @@ S’il existe plus de huit options, utilisez une [liste déroulante](lists.md), 
 
 Si les options disponibles dépendent du contexte actuel de l’application, ou sont amenées à changer de manière dynamique, utilisez une [zone de liste](lists.md) à sélection unique.
 
-## Exemple
+## <a name="example"></a>Exemple
 Cases d’option dans les paramètres du navigateur Microsoft Edge.
 
 ![Cases d’option dans les paramètres du navigateur Microsoft Edge](images/control-examples/radio-buttons-edge.png)
 
-## Créer une case d’option
+## <a name="create-a-radio-button"></a>Créer une case d’option
 
 Les cases d’option s’utilisent en groupes. Les 2 méthodes permettant de grouper des contrôles de cases d’option sont les suivantes :
 - Placez-les dans le même conteneur parent.
 - Définissez la propriété [**GroupName**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.radiobutton.groupname.aspx) de chaque case d’option sur la même valeur.
 
-> **Remarque**  Un groupe de cases d’options se comporte comme un seul contrôle quand l’utilisateur y accède via le clavier. Seule l’option sélectionnée est accessible à l’aide de la touche Tab, mais les utilisateurs peuvent passer d’une option à l’autre dans le groupe à l’aide des touches de direction.
+> **Remarque**&nbsp;&nbsp;Un groupe de cases d’options se comporte comme un seul contrôle quand l’utilisateur y accède via le clavier. Seule l’option sélectionnée est accessible à l’aide de la touche Tab, mais les utilisateurs peuvent passer d’une option à l’autre dans le groupe à l’aide des touches de direction.
 
-Dans cet exemple, le premier groupe de cases d’option est implicitement formé en raison de son appartenance au même panneau d’empilement. Le second groupe est divisé entre 2 panneaux d’empilement, si bien que les cases d’option sont explicitement groupées par GroupName.
+Dans cet exemple, le premier groupe de cases d’option est implicitement formé en raison de son appartenance au même panneau d’empilement. Le second groupe est divisé entre 2 panneaux d’empilement, si bien que les cases d’option sont explicitement regroupées par GroupName.
 
 ```xaml
 <StackPanel>
@@ -155,13 +149,13 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 }
 ```
 
-Les groupes de cases d’option ressemblent à ceci une fois que l’utilisateur a sélectionné un arrière-plan bleu et une bordure verte.
+La case d’option ressemble à ceci.
 
 ![Cases d’option en deux groupes](images/radio-button-groups.png)
 
 Une case d’option a deux états : *sélectionnée* ou *désactivée*. Lorsqu’une case d’option est sélectionnée, sa propriété [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) vaut **true**. Lorsqu’une case d’option est désactivée, sa propriété **IsChecked** vaut **false**. Une case d’option peut être désactivée en cliquant sur une autre case d’option dans le même groupe. Elle ne peut pas être désactivée en cliquant à nouveau dessus. Toutefois, vous pouvez désactiver une case d’option par programme en définissant sa propriété IsChecked sur **false**.
 
-## Recommandations
+## <a name="recommendations"></a>Recommandations
 
 -   Assurez-vous que le but et l’état actuel d’un ensemble de cases d’option sont clairs.
 -   Fournissez toujours un retour visuel quand l’utilisateur appuie sur une case d’option.
@@ -176,12 +170,12 @@ Une case d’option a deux états : *sélectionnée* ou *désactivée*. Lorsqu�
 -   Ne placez pas plus de huit options dans un groupe de cases d’option. Si vous voulez en présenter davantage, utilisez plutôt une [liste déroulante](lists.md), une [zone de liste](lists.md) ou un [affichage sous forme de liste](lists.md).
 -   Ne placez pas deux groupes de cases d’option en regard l’un de l’autre. Lorsque deux groupes de cases d’option sont adjacents, il est difficile de déterminer quelles cases appartiennent à quel groupe. Utilisez des étiquettes de groupe pour les distinguer.
 
-## Indications d’utilisation supplémentaires
+## <a name="additional-usage-guidance"></a>Indications d’utilisation supplémentaires
 
 Cette illustration montre la manière convenable de positionner et espacer les cases d’option.
 
 ![Ensemble de cases d’option](images/radiobutton_layout1.png)
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 **Pour les concepteurs**
 - [Recommandations en matière de boutons](buttons.md)
@@ -198,6 +192,6 @@ Cette illustration montre la manière convenable de positionner et espacer les c
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

@@ -7,46 +7,36 @@ ms.assetid: DFB215C2-8A61-4957-B662-3B1991AC9BE1
 label: Segoe MDL2 icons
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: d7236006f2c620a4ff0de4e0f413f32a2eaf5687
-ms.openlocfilehash: a779d4ff5d404c2eca658cee836c5d45c42f14d8
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 1e7914c0641d2897efbcbe5c9479a2ecc1a8dd2d
 
 ---
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+# <a name="segoe-mdl2-icons"></a>Icônes Segoe MDL2
 
-# Icônes Segoe MDL2
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 Cet article répertorie les icônes fournies par la police Segoe MDL2 Assets. 
 
 <div class="important-apis" >
 <b>API importantes</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/dn252842"><strong>Énumération Symbol (XAML)</strong></a></li>
+<li>[**Énumération Symbol (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn252842)</li>
 </ul>
-
-</div>
 </div>
 
 
+## <a name="about-segoe-mdl2-assets"></a>À propos de la police Segoe MDL2 Assets
 
-## Comment obtenir cette police?
-Pour obtenir la police Segoe MDL2 Assets, vous devez installer Windows10. 
-
-## À propos de la police Segoe MDL2 Assets
-
-La police Segoe MDL2 Assets La police d’icône Segoe UI Symbol Windows8/8.1 a été remplacée par la police Segoe MDL2 Assets dans la version Windows10. <!-- It can be used in much the same manner as the older font, but many glyphs have been redrawn in the Windows 10 icon style with the font’s metrics set so that icons are aligned within the font’s em-square instead of on a typographic baseline. --> **Segoe UI Symbol** reste disponible comme ressource «héritée», mais nous vous recommandons de mettre à jour votre application avec la nouvelle police **Segoe MDL2 Assets**.
-
-> **Remarque**
->
-> Un **Em** est une unité de mesure typographique. 1em de la police équivaut à 100% de la valeur de point spécifiée à 72ppp. Par exemple, 16 pt est égal à 16 px à 72 ppp (également appelé Plateau 100 %). Les nouvelles polices MDL2 sont conçues afin que l’encombrement de la zone de l’icône soit d’un pica carré. Par conséquent, si vous définissez 16 px pour la largeur et la hauteur dans le code, vous obtenez un encombrement d’icône de 16 x 16 px. Cela ne signifie pas toujours que l’icône occupe entièrement la dimension de l’encombrement.
+Depuis la publication de Windows 10, la police Segoe MDL2 Assets a remplacé la police d’icône Segoe UI Symbol Windows 8/8.1. <!-- It can be used in much the same manner as the older font, but many glyphs have been redrawn in the Windows 10 icon style with the font’s metrics set so that icons are aligned within the font’s em-square instead of on a typographic baseline. --> (La police **Segoe UI Symbol** reste disponible comme ressource « héritée », mais nous vous recommandons de mettre à jour votre application de façon à utiliser la nouvelle police **Segoe MDL2 Assets**).
 
 La plupart des icônes et des contrôles d’interface utilisateur inclus dans la police **Segoe MDL2 Assets** sont mappés à la zone d’utilisation privée d’Unicode. La zone d’utilisation privée permet aux développeurs de polices d’affecter des valeurs Unicode privées à des glyphes qui ne correspondent pas à des points de code existants. Cette opération peut s’avérer utile lors de la création d’une police de symboles, mais elle génère un problème d’interopérabilité. Si la police n’est pas disponible, les glyphes n’apparaissent pas. Utilisez ces glyphes uniquement lorsque vous pouvez spécifier la police **Segoe MDL2 Assets**.
 
 Utilisez ces glyphes uniquement si vous pouvez spécifier explicitement la police **Segoe MDL2 Assets**. Si vous utilisez des vignettes, vous ne pouvez pas utiliser ces glyphes car vous ne pouvez pas spécifier la police des vignettes et les glyphes de la zone d’utilisation privée ne sont pas disponibles via font-fallback.
 
-À la différence de la police **Segoe UI Symbol**, les icônes de la police **Segoe MDL2 Assets** ne sont pas conçues pour être alignées sur du texte. Cela signifie que certaines anciennes «astuces» comme les flèches de divulgation progressive ne s’appliquent plus. De même, dans la mesure où toutes les nouvelles icônes sont dimensionnées et positionnées de la même manière, elles ne peuvent pas avoir une chasse nulle. Nous avons simplement veillé à ce qu’elles fonctionnent en tant que jeu. Théoriquement, vous pouvez superposer deux icônes conçues en tant que jeu. Elles se fondent. Nous pouvons faire cela pour permettre une colorisation dans le code. Par exemple, les icônes U+EA3A et U+EA3B ont été créées pour le badge de la vignette de démarrage. Comme elles sont déjà centrées, le remplissage du cercle peut changer de couleur en fonction de l’état.
+À la différence de la police **Segoe UI Symbol**, les icônes de la police **Segoe MDL2 Assets** ne sont pas conçues pour être alignées sur du texte. Cela signifie que certaines anciennes « astuces » comme les flèches de divulgation progressive ne s’appliquent plus. De même, dans la mesure où toutes les nouvelles icônes sont dimensionnées et positionnées de la même manière, elles ne peuvent pas avoir une chasse nulle. Nous avons simplement veillé à ce qu’elles fonctionnent en tant que jeu. Théoriquement, vous pouvez superposer deux icônes conçues en tant que jeu. Elles se fondent. Nous pouvons faire cela pour permettre une colorisation dans le code. Par exemple, les icônes U+EA3A et U+EA3B ont été créées pour le badge de la vignette de démarrage. Comme elles sont déjà centrées, le remplissage du cercle peut changer de couleur en fonction de l’état.
 
-## Superposition et mise en miroir
+## <a name="layering-and-mirroring"></a>Superposition et mise en miroir
 
 Tous les glyphes de la police **Segoe MDL2 Assets** ayant la même à largeur fixe avec une hauteur constante et un point d’origine à gauche, des effets de superposition et de colorisation peuvent être obtenus en dessinant des glyphes directement l’un par-dessus l’autre. Cet exemple montre un contour noir dessiné sur le cœur rouge en largeur nulle.
 
@@ -54,14 +44,17 @@ Tous les glyphes de la police **Segoe MDL2 Assets** ayant la même à largeur fi
 
 De nombreuses icônes offrent également des formes en miroir utilisables dans des langues qui s’écrivent de droite à gauche, comme l’arabe, l’hébreu et le persan.
 
-## Énumération Symbol
+## <a name="symbol-enumeration"></a>Énumération Symbol
 Si vous développez une application en C#/VB/C++ et XAML, vous pouvez utiliser l’[**énumération Symbol**](https://msdn.microsoft.com/library/windows/apps/dn252842) pour utiliser des icônes de la police Segoe MDL2 Assets. 
+
+## <a name="how-do-i-get-this-font"></a>Comment obtenir cette police ?
+Pour obtenir la police Segoe MDL2 Assets, vous devez installer Windows 10. 
 
 <!--
 Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons than we can show here. Many of these are intended for specialized purposed and are not typically used anywhere else.
 -->
 
-## Liste des icônes
+## <a name="icon-list"></a>Liste des icônes
 
 <table>
 
@@ -5143,10 +5136,7 @@ Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons 
 
 
 
-
-
-
-## Articles connexes
+## <a name="related-articles"></a>Articles connexes
 
 * [Recommandations en matière de polices](fonts.md)
 * [**Énumération Symbol**](https://msdn.microsoft.com/library/windows/apps/dn252842)
@@ -5160,6 +5150,6 @@ Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

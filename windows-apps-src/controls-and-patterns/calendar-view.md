@@ -6,39 +6,34 @@ ms.assetid: d8ec5ba8-7a9d-405d-a1a5-5a1b502b9e64
 label: Calendar view
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 4d67cf41bf44904e094476d6350ad68cc46ab52f
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 86062f744efa487cc70adb9648ff3f3584226000
 
 ---
-# Affichage Calendrier
+# <a name="calendar-view"></a>Affichage Calendrier
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 Un affichage Calendrier permet à un utilisateur d’afficher un calendrier qu’il peut parcourir par mois, par année ou par décennie, et d’interagir avec celui-ci. Un utilisateur peut sélectionner une seule date ou une plage de dates. Il n’y a pas de surface de sélection et le calendrier est toujours visible. 
 
+
 <div class="important-apis" >
 <b>API importantes</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx"><strong>Classe CalendarView</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx"><strong>Événement SelectedDatesChanged</strong></a></li>
+<li>[**Classe CalendarView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx)</li>
+<li>[**Événement SelectedDatesChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx)</li>
 </ul>
-
-</div>
 </div>
 
 
-
-
-
-
-## Est-ce le contrôle approprié ?
+## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 Utilisez un affichage Calendrier pour permettre à un utilisateur de sélectionner une date unique ou une plage de dates à partir d’un calendrier toujours visible.
 
 Si vous avez besoin de permettre à un utilisateur de sélectionner plusieurs dates en une seule fois, vous devez utiliser un affichage Calendrier. Si vous avez besoin de permettre à un utilisateur de sélectionner une seule date sans que le calendrier soit toujours visible, envisagez d’utiliser un contrôle de type [Sélecteur de dates du calendrier](calendar-date-picker.md) ou [Sélecteur de date](date-picker.md).
 
 Pour plus d’informations sur le choix du contrôle approprié, voir l’article [Contrôles de date et d’heure](date-and-time.md).
 
-## Exemples
+## <a name="examples"></a>Exemples
 
 L’affichage Calendrier se compose de 3 affichages distincts : l’affichage mensuel, l’affichage annuel et l’affichage décennal. Par défaut, il s’ouvre avec l’affichage mensuel. Vous pouvez spécifier un affichage de démarrage en définissant la propriété [**DisplayMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.displaymode.aspx).
 
@@ -46,7 +41,7 @@ L’affichage Calendrier se compose de 3 affichages distincts : l’affichage 
 
 Les utilisateurs cliquent sur l’en-tête dans l’affichage mensuel pour ouvrir l’affichage annuel, et cliquent sur l’en-tête dans l’affichage annuel pour ouvrir l’affichage décennal. Les utilisateurs sélectionnent une année dans l’affichage décennal pour revenir à l’affichage annuel, et sélectionnent un mois dans l’affichage annuel pour revenir à l’affichage mensuel. Les deux flèches sur le côté de l’en-tête permettent d’avancer ou de reculer par mois, par année ou par décennie. 
 
-## Créer un affichage Calendrier
+## <a name="create-a-calendar-view"></a>Créer un affichage Calendrier
 
 Cet exemple montre comment créer un simple affichage calendrier.
 
@@ -58,7 +53,7 @@ L’affichage Calendrier obtenu se présente comme suit :
 
 ![Exemple d’affichage Calendrier](images/controls_calendar_monthview.png)
 
-### Sélection de dates
+### <a name="selecting-dates"></a>Sélection de dates
 
 Par défaut, la propriété [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selectionmode.aspx) est définie sur **Single**. Cela permet à l’utilisateur de sélectionner une date unique dans le calendrier. Définissez SelectionMode sur **None** pour désactiver la sélection de date. 
 
@@ -73,9 +68,10 @@ Un utilisateur peut désélectionner une date sélectionnée en cliquant ou en a
 
 Vous pouvez gérer l’événement [**SelectedDatesChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx) pour être averti quand la collection [**SelectedDates**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddates.aspx) a changé.
 
-> **Remarque**  Pour obtenir des informations importantes sur les valeurs de date, voir [Valeurs DateTime et Calendar](date-and-time.md#datetime-and-calendar-values) dans l’article Contrôles de date et d’heure.
+> [!NOTE]
+> Pour obtenir des informations importantes sur les valeurs de date, consultez [Valeurs DateTime et Calendar](date-and-time.md#datetime-and-calendar-values) dans l’article Contrôles de date et d’heure.
 
-### Personnalisation de l’apparence de l’affichage du calendrier
+### <a name="customizing-the-calendar-views-appearance"></a>Personnalisation de l’apparence de l’affichage du calendrier
 
 L’affichage Calendrier est constitué d’éléments XAML définis dans le ControlTemplate et d’éléments visuels rendus directement par le contrôle. 
 - Les éléments XAML définis dans le modèle de contrôle incluent la bordure qui encadre le contrôle, l’en-tête, les boutons Précédent et Suivant et les éléments DayOfWeek. À l’instar de tout contrôle XAML, vous pouvez appliquer un style et redéfinir le modèle de ces éléments. 
@@ -116,7 +112,7 @@ calendarView1.MinDate = new DateTime(2000, 1, 1);
 calendarView1.MaxDate = new DateTime(2099, 12, 31);
 ```
 
-### Mise à jour des éléments Jour du calendrier
+### <a name="updating-calendar-day-items"></a>Mise à jour des éléments Jour du calendrier
 
 Dans le calendrier, chaque jour est représenté par un objet [**CalendarViewDayItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.aspx). Pour accéder à un élément Jour individuel et utiliser ses propriétés et ses méthodes, gérez l’événement [**CalendarViewDayItemChanging**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.calendarviewdayitemchanging.aspx) et utilisez la propriété Item des arguments d’événement pour accéder à CalendarViewDayItem.
 
@@ -128,7 +124,7 @@ Voici quelques éléments Jour dans un calendrier. Les jours 1 et 2 sont grisés
 
 ![Jours du calendrier avec des barres de densité](images/calendar-view-density-bars.png)
 
-### Rendu progressif
+### <a name="phased-rendering"></a>Rendu progressif
 
 Un affichage Calendrier peut contenir un grand nombre d’objets CalendarViewDayItem. Pour assurer la réactivité de l’interface utilisateur et permettre une navigation fluide dans le calendrier, l’affichage Calendrier prend en charge le rendu progressif. Vous pouvez ainsi répartir le traitement d’un élément Jour en plusieurs phases. Si un jour est déplacé en dehors de l’affichage avant que toutes les phases soient terminées, aucun temps supplémentaire n’est consacré à essayer de traiter et de rendre de cet élément.
 
@@ -198,7 +194,7 @@ private void CalendarView_CalendarViewDayItemChanging(CalendarView sender,
 }
 ```
 
-## Articles connexes
+## <a name="related-articles"></a>Articles connexes
 
 - [Contrôles de date et d’heure](date-and-time.md)
 - [Sélecteur de dates du calendrier](calendar-date-picker.md)
@@ -207,6 +203,6 @@ private void CalendarView_CalendarViewDayItemChanging(CalendarView sender,
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

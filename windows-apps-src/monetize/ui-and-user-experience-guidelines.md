@@ -2,57 +2,77 @@
 author: mcleanbyron
 ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
 description: "En savoir plus sur les recommandations en matière d’expérience utilisateur et d’interface utilisateur pour les publicités dans les applications."
-title: "Recommandations pour pubs in-app : expérience et interface utilisateur"
+title: "Recommandations en matière d’expérience utilisateur et d’interface utilisateur pour les publicités dans les applications"
 translationtype: Human Translation
-ms.sourcegitcommit: 148aca16104f599f3048f5965c4131a3f37799f8
-ms.openlocfilehash: 97feb4f79e0592a7b54a8263b15cd2b85dd3243d
-
+ms.sourcegitcommit: e44392a1dc69a98655ba7e576d2af102a608acaa
+ms.openlocfilehash: ce39829cd6cd2dfb0c6a3aef930dd8fa82351b75
 
 ---
 
 # <a name="ui-and-user-experience-guidelines-for-ads-in-apps"></a>Recommandations en matière d’expérience utilisateur et d’interface utilisateur pour les publicités dans les applications
 
+Cet article fournit des recommandations pour concevoir des expériences exceptionnelles avec les bannières et spots publicitaires affichés dans vos applications. Pour obtenir des conseils généraux sur la conception de l’apparence et du style des applications, consultez [Conception et interface utilisateur](https://developer.microsoft.com/windows/design).
 
-## <a name="general-ui-resources-for-windows-apps"></a>Ressources d’interface utilisateur générales pour applications Windows
+>**Important**&nbsp;&nbsp;Toute utilisation de publicité dans votre application doit se conformer aux Politiques du Windows Store, y compris et sans s’y limiter, à la [politique 10.10](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_10) (Conduite en matière de publicité et contenu publicitaire). En particulier, l’implémentation de bannières ou spots publicitaires dans votre application doit respecter les règles stipulées dans la [politique 10.10.1](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_10) des Politiques du Windows Store. Cet article fournit des exemples d’implémentations qui ne respectent pas cette politique. Ces exemples sont fournis à titre d’information uniquement, pour vous aider à comprendre comment respecter la politique. Ces exemples ne sont pas exhaustifs. Il existe beaucoup d’autres cas possibles de non-respect des Politiques du Windows Store qui ne sont pas répertoriés dans le présent article.
 
-Vous trouverez des informations sur la façon de concevoir l’apparence des applications dans [Conception et interface utilisateur](https://developer.microsoft.com/windows/design).
+## <a name="guidelines-for-banner-ads"></a>Recommandations pour les bannières publicitaires
 
-## <a name="adcontrol-best-practices"></a>Meilleures pratiques AdControl
+Les sections suivantes fournissent des recommandations sur la façon d’implémenter des bannières publicitaires dans votre application à l’aide d’objets [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx). Elles donnent également des exemples d’implémentations qui ne respectent pas les règles stipulées dans la [politique 10.10.1](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_10) des Politiques du Windows Store.
 
-* [Meilleures pratiques AdControl : À FAIRE](#adcontrolbestpracticesdo10)
-* [Meilleures pratiques AdControl : À NE PAS FAIRE](#adcontrolbestpracticesdont10)
+### <a name="best-practices"></a>Bonnes pratiques
 
-<span id="adcontrolbestpracticesdo10"/>
-### <a name="adcontrol-best-practices-do"></a>Meilleures pratiques AdControl : À FAIRE
+Nous vous recommandons de suivre ces bonnes pratiques quand vous implémentez des bannières publicitaires dans votre application :
+
+* Réservez la majeure partie de l’interface utilisateur de votre application aux contrôles et au contenu fonctionnels.
 
 * Intégrez des publicités à votre expérience. Donnez à vos concepteurs un exemple d’annonce pour planifier ce à quoi ressemblera la publicité. La disposition de publicités en tant que contenu et la disposition scindée sont deux exemples de publicités bien planifiées dans les applications.
 
-  Pour bénéficier d’un aperçu du fonctionnement et de l’apparence de différentes tailles d’annonces au sein de votre application, vous pouvez utiliser nos unités de publicité en mode test pour Windows Phone, Windows 8.1 et Windows 10. Une fois vos tests terminés, pensez à [mettre à jour votre application avec des ID d’unité publicitaire réels](set-up-ad-units-in-your-app.md), avant d’envoyer l’application pour certification.
+  Pour obtenir un aperçu du fonctionnement et de l’apparence de différentes tailles d’annonces dans votre application pendant les phases de développement et de test, vous pouvez utiliser nos [unités publicitaires en mode test](test-mode-values.md). Après les tests, pensez à [mettre à jour votre application avec des ID d’unité publicitaire réels](set-up-ad-units-in-your-app.md) avant d’envoyer l’application pour certification.
+
+* Choisissez des [tailles de bannières publicitaires](supported-ad-sizes-for-banner-ads.md) adaptées à la disposition sur l’appareil utilisé.
 
 * Planifiez pour les périodes au cours desquelles aucune annonce ne sera disponible. Il peut arriver à certains moments qu’aucune annonce ne soit envoyée à votre application. Disposez vos pages de telle façon qu’elles s’affichent de manière optimale avec ou sans annonce. Pour plus d’informations, consultez [Gestion des erreurs](error-handling-with-advertising-libraries.md).
 
-<span id="adcontrolbestpracticesdont10"/>
-### <a name="adcontrol-best-practices-dont"></a>Meilleures pratiques AdControl : À NE PAS FAIRE
+* Si, dans votre scénario, la gestion des alertes envoyées à l’utilisateur est plus efficace avec une superposition, appelez [AdControl.Suspend](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.suspend.aspx) quand la superposition s’affiche, puis appelez [AdControl.Resume](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.resume.aspx) à la fin de l’alerte.
 
-* Bloquer de la publicité dans les espaces ouverts. L’espace publicitaire ne doit pas être placé dans le premier espace libre que vous trouvez. Au lieu de cela, il doit être incorporé dans la conception globale de votre application.
+<span />
+### <a name="practices-to-avoid"></a>Pratiques à éviter
 
-* Publicité excessive et saturation de votre application. Trop de publicités dans votre application détournent l’attention de son apparence et de sa facilité d’utilisation. Vous souhaitez gagner de l’argent avec les publicités, mais pas au détriment de l’application elle-même.
+Nous vous recommandons d’éviter ces pratiques quand vous implémentez des bannières publicitaires dans votre application :
 
-* Distraire l’utilisateur de ses tâches de base. L’axe principal doit toujours être l’application. L’espace publicitaire doit être incorporé de manière à rester secondaire.
+* Ne bloquez pas les publicités dans les espaces ouverts. L’espace publicitaire ne doit pas être placé dans le premier espace libre que vous trouvez. Au lieu de cela, il doit être incorporé dans la conception globale de votre application.
 
-<span id="interstitialbestpractices10"/>
-## <a name="interstitial-best-practices-and-policies"></a>Meilleures pratiques et politiques Spots
+* Ne surchargez pas votre application avec une publicité excessive. Trop de publicités dans votre application détournent l’attention de son apparence et de sa facilité d’utilisation. Vous souhaitez gagner de l’argent avec les publicités, mais pas au détriment de l’application elle-même.
 
-* [Meilleures pratiques Spots : À FAIRE](#interstitialbestpracticesdo10)
-* [Meilleures pratiques Spots : À ÉVITER](#interstitialbestpracticesavoid10)
-* [Meilleures pratiques Spots : À NE JAMAIS FAIRE (Stratégie appliquée)](#interstitialbestpracticesnever10)
+* Ne distrayez pas l’utilisateur de ses tâches de base. L’axe principal doit toujours être l’application. L’espace publicitaire doit être incorporé de manière à rester secondaire.
 
-Lorsqu’ils sont utilisés de façon élégante, les spots publicitaires vidéo peuvent augmenter considérablement vos revenus issus de l’application, sans impact négatif sur la satisfaction des utilisateurs. En cas d’utilisation incorrecte, ils peuvent produire l’effet inverse exact.
+<span />
+### <a name="examples-of-policy-violations"></a>Exemples de non-respect de la politique
 
-Ici, nous cherchons à vous aider à atteindre l’élégance. Étant donné que vous connaissez votre application mieux que quiconque, sauf en matière de stratégie, nous vous laissons prendre la meilleure décision finale. Ce qu’il faut absolument retenir c’est que les évaluations de vos applications et le montant de vos recettes sont étroitement liés.
+Cette section donne des exemples d’implémentations de bannières publicitaires qui ne respectent pas les règles stipulées dans la [politique 10.10.1](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_10) des Politiques du Windows Store. Ces exemples sont fournis à titre d’information uniquement, pour vous aider à comprendre comment respecter la politique. Ces exemples ne sont pas exhaustifs. Il existe beaucoup d’autres cas possibles de non-respect de la politique 10.10.1 qui ne sont pas répertoriés ici.
 
-<span id="interstitialbestpracticesdo10"/>
-### <a name="interstitial-best-practices-do"></a>Meilleures pratiques Spots : À FAIRE
+* Empêcher d’une façon ou d’une autre l’utilisateur d’afficher la bannière publicitaire, comme modifier l’opacité de l’objet [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) ou placer un autre contrôle sur **AdControl** (sans appeler au préalable [AdControl.Suspend](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.suspend.aspx)).
+
+* Obliger les utilisateurs à cliquer sur une bannière publicitaire pour pouvoir effectuer une tâche dans votre application, ou concevoir votre application de sorte que les utilisateurs n’aient pas d’autre choix que cliquer sur des bannières publicitaires.
+
+* Contourner le minuteur d’actualisation intégré minimum pour les bannières publicitaires par quelque moyen que ce soit, y compris, mais sans s’y limiter, en remplaçant des objets [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) ou en actualisant automatiquement une page sans aucune interaction utilisateur.
+
+* Utiliser des unités publicitaires dynamiques (celles provenant du tableau de bord du Centre de développement Windows) pendant les phases de développement et de test, ou dans un émulateur.
+
+* Écrire ou distribuer du code qui appelle des services publicitaires par d’autres moyens que les bibliothèques de publicités Microsoft exécutées dans le contexte de votre application.
+
+* Interagir avec des interfaces non documentées ou des objets enfants créés par les bibliothèques de publicités Microsoft, comme **WebView** ou **MediaElement**.
+
+<span id="interstitialbestpractices10">
+## <a name="guidelines-for-interstitial-ads"></a>Recommandations pour les spots publicitaires
+
+Quand ils sont utilisés de façon élégante, les spots publicitaires peuvent augmenter considérablement vos revenus issus de l’application, sans impact négatif sur la satisfaction des utilisateurs. En cas d’utilisation incorrecte, ils peuvent produire l’effet inverse exact.
+
+Les sections suivantes fournissent des recommandations sur la façon d’implémenter des spots publicitaires dans votre application à l’aide d’objets [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx). Elles donnent également des exemples d’implémentations qui ne respectent pas les règles stipulées dans la [politique 10.10.1](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_10) des Politiques du Windows Store. Étant donné que vous connaissez votre application mieux que quiconque, sauf en matière de stratégie, nous vous laissons prendre la meilleure décision finale. Ce qu’il faut absolument retenir c’est que les évaluations de vos applications et le montant de vos recettes sont étroitement liés.
+
+### <a name="best-practices"></a>Bonnes pratiques
+
+Nous vous recommandons de suivre ces bonnes pratiques quand vous implémentez des spots publicitaires dans votre application :
 
 * Intégrez des spots publicitaires dans le flux naturel de l’application, par exemple entre les niveaux de jeu.
 
@@ -66,7 +86,7 @@ Ici, nous cherchons à vous aider à atteindre l’élégance. Étant donné que
 
 * Si votre application requiert le visionnage complet d’une publicité vidéo, mentionnez cette règle d’emblée afin que les utilisateurs ne soient pas surpris par un message d’erreur en appuyant sur le bouton Fermer.
 
-* Récupérez d’abord la publicité (en appelant la méthode [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx)), dans l’idéal, 30 à 60 secondes avant que vous ayez besoin de l’afficher.
+* Récupérez d’abord la publicité (en appelant la méthode [InterstitialAd.RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx)), dans l’idéal, 30 à 60 secondes avant que vous ayez besoin de l’afficher.
 
 * Abonnez-vous aux quatre événements exposés dans la classe [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) (**Canceled**, **Completed**, **AdReady** et **ErrorOccurred**) et utilisez-les pour prendre les bonnes décisions pour votre application.
 
@@ -78,69 +98,57 @@ Ici, nous cherchons à vous aider à atteindre l’élégance. Étant donné que
 
     * Si vous choisissez d’économiser la bande passante de l’utilisateur en fonction de [ConnectionProfile](https://msdn.microsoft.com/library/windows/apps/windows.networking.connectivity.connectionprofile.aspx), il existe des API dans la classe **ConnectionProfile** qui peuvent vous aider.
 
-* Utilisez le délai d’expiration par défaut (30 s), sauf si vous avez une raison valable de faire autrement, auquel cas n’allez pas en dessous de 10 s.
-
-    * Les annonces vidéo sont beaucoup plus longues à télécharger que les bannières, en particulier dans les marchés ne disposant pas de connexions haut débit.
+* Utilisez le délai d’expiration par défaut (30 secondes), sauf si vous avez une raison valable de faire autrement, auquel cas n’allez pas en dessous de 10 secondes. Les annonces vidéo sont beaucoup plus longues à télécharger que les bannières, en particulier dans les marchés ne disposant pas de connexions haut débit.
 
 <span/>
 
 * Gardez à l’esprit les forfaits de données des utilisateurs. Par exemple, n’affichez pas d’annonce vidéo, ou avertissez l’utilisateur avant de le faire sur un appareil mobile approchant de ou ayant dépassé sa limite de données. Il existe des API dans la classe [ConnectionProfile](https://msdn.microsoft.com/library/windows/apps/windows.networking.connectivity.connectionprofile.aspx) qui peuvent vous aider.
 
-* Améliorez en permanence votre application après la soumission initiale. Examinez les rapports de publicité et apportez des modifications de conception pour améliorer les taux de remplissage et d’achèvement vidéo.
+* Améliorez en permanence votre application après la soumission initiale. Examinez les [rapports de publicité](../publish/advertising-performance-report.md) et apportez des modifications de conception pour améliorer les taux de remplissage et d’achèvement vidéo.
 
-<span id="interstitialbestpracticesavoid10"/>
-### <a name="interstitial-best-practices-avoid"></a>Meilleures pratiques Spots : À ÉVITER
+<span />
+### <a name="practices-to-avoid"></a>Pratiques à éviter
 
-* Exagération. N’envoyez pas de publicités à une fréquence supérieure à toutes les 5 minutes environ, à moins que l’utilisateur ne bénéficie d’un avantage concret en option, au-delà du jeu.
+Nous vous recommandons d’éviter ces pratiques quand vous implémentez des spots publicitaires dans votre application :
 
-* Des spots vidéo au lancement de l’application, car les utilisateurs pourraient penser qu’ils ont cliqué sur la mauvaise vignette.
+* N’intégrez pas de spots publicitaires de manière excessive dans votre application. N’envoyez pas de publicités à une fréquence supérieure à toutes les 5 minutes environ, à moins que l’utilisateur ne bénéficie d’un avantage concret en option, au-delà du jeu.
 
-* Des spots vidéo de sortie. Il s’agit d’un mauvais calcul, car les taux d’achèvement seront proches de zéro.
+* N’affichez pas de spots vidéo au lancement de l’application, car les utilisateurs pourraient penser qu’ils ont cliqué sur la mauvaise vignette.
 
-    * Deux annonces vidéo d’affilée.
+* N’affichez pas de spots vidéo de sortie. Il s’agit d’un mauvais calcul, car les taux d’achèvement seront proches de zéro.
 
-    * Les utilisateurs seront contrariés de voir la barre de progression de l’annonce revenir au point de départ.
+* N’affichez pas plusieurs spots publicitaires d’affilée. Les utilisateurs seront contrariés de voir la barre de progression de l’annonce revenir au point de départ. Beaucoup penseront qu’il s’agit d’un bogue de codage ou d’affichage de publicité.
 
-    * Beaucoup penseront qu’il s’agit d’un bogue de codage ou d’affichage de publicité.
+* Ne récupérez pas un spot vidéo plus de 5 minutes avant d’appeler [InterstitialAd.Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx). Un bon inventaire va optimiser la conversion de publicités récupérées en impressions facturables.
 
-* Récupération d’une annonce vidéo plus de 5 minutes avant d’appeler [Afficher](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx).
+* Ne pénalisez pas un utilisateur pour les défaillances d’affichage de publicités, par exemple quand aucune publicité n’est disponible. Par exemple, si vous affichez une option d’interface utilisateur de type « Regarder une publicité pour obtenir *xxx* », vous devez fournir *xxx* si l’utilisateur a rempli sa part du contrat. Deux options sont à envisager :
 
-  * Un bon inventaire va optimiser la conversion de publicités récupérées en impressions facturables.
-
-<span/>
-
-* Pénaliser un utilisateur pour les défaillances d’affichage de publicités, par exemple lorsqu’aucune publicité n’est disponible. Par exemple, si vous affichez une option d’interface utilisateur de type « Regarder une publicité pour obtenir *xxx* », vous devez fournir *xxx* si l’utilisateur a rempli sa part du contrat. Deux options à envisager :
-
-    * N’incluez pas l’option, sauf si l’événement [AdReady](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.adready.aspx) a été déclenché.
+    * N’incluez pas l’option, sauf si l’événement [InterstitialAd.AdReady](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.adready.aspx) a été déclenché.
 
     * Proposez une application incluant une expérience intégrée qui procure les mêmes avantages qu’une annonce réelle.
 
-* Permettre à un utilisateur de gagner un avantage compétitif dans un jeu multijoueur.
+* N’utilisez pas de spots publicitaires permettant à un utilisateur de gagner un avantage compétitif dans un jeu multijoueur. Par exemple, n’affichez pas de spot publicitaire incitant l’utilisateur à se servir d’une meilleure arme dans un jeu de tir. Une chemise personnalisée sur l’avatar du joueur pourrait faire l’affaire, tant qu’elle ne sert pas de camouflage !
 
-    * Une meilleure arme dans un jeu de tir entrerait clairement dans cette catégorie.
+<span />
+### <a name="examples-of-policy-violations"></a>Exemples de non-respect de la politique
 
-    * Une chemise personnalisée sur l’avatar du joueur pourrait faire l’affaire, tant qu’elle ne sert pas de camouflage !
+Cette section donne des exemples d’implémentations de spots publicitaires qui ne respectent pas les règles stipulées dans la [politique 10.10.1](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_10) des Politiques du Windows Store. Ces exemples sont fournis à titre d’information uniquement, pour vous aider à comprendre comment respecter la politique. Ces exemples ne sont pas exhaustifs. Il existe beaucoup d’autres cas possibles de non-respect de la politique 10.10.1 qui ne sont pas répertoriés ici.
 
-<span id="interstitialbestpracticesnever10"/>
-### <a name="interstitial-best-practices-never-policy-enforced"></a>Meilleures pratiques Spots : À NE JAMAIS FAIRE (Stratégie appliquée)
+* Placer un élément d’interface utilisateur sur le conteneur de spot publicitaire.
 
-* Ne jamais placer les éléments de l’interface utilisateur sur le conteneur de publicité.
+* Appeler [InterstitialAd.Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx) quand l’utilisateur interagit avec l’application.
 
-    * Les annonceurs ont payé pour l’intégralité de l’écran.
+* Utiliser des spots publicitaires pour obtenir tout ce qui peut être utilisé comme une devise ou échangé avec d’autres utilisateurs.
 
-<span/>
+* Demander un nouveau spot publicitaire dans le contexte du gestionnaire d’événements pour l’événement [InterstitialAd.ErrorOccurred](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.erroroccurred.aspx). Cela peut produire une boucle infinie et provoquer des problèmes de fonctionnement du service publicitaire.
 
-* Ne jamais appeler [Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx) lorsque l’utilisateur utilise l’application.
+* Demander un spot publicitaire simplement pour avoir une publicité de secours à une cascade de publicités. Si vous demandez un spot publicitaire et que vous recevez l’événement [InterstitialAd.AdReady](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.adready.aspx), le spot publicitaire suivant affiché dans votre application doit être celui qui est prêt à être affiché par la méthode [InterstitialAd.Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx).
 
-    * Dans la mesure où [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) va créer une superposition sur l’intégralité de l’écran, l’utilisateur risque d’être déstabilisé.
+* Utiliser des unités publicitaires dynamiques (celles provenant du tableau de bord du Centre de développement Windows) pendant les phases de développement et de test, ou dans un émulateur.
 
-    * Cela peut également donner lieu à des taux de clic exagérés.
+* Écrire ou distribuer du code qui appelle des services publicitaires par d’autres moyens que les bibliothèques de publicités Microsoft exécutées dans le contexte de votre application.
 
-* Ne jamais utiliser des annonces pour obtenir tout ce qui peut être utilisé comme une devise ou échangé avec d’autres utilisateurs.
-
-* Ne jamais demander une nouvelle publicité dans le contexte du gestionnaire d’événements pour l’événement [ErrorOccurred](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.erroroccurred.aspx). Cela peut produire une boucle infinie et provoquer des problèmes de fonctionnement du service publicitaire.
-
-* Ne demandez jamais un spot publicitaire simplement pour avoir une publicité de secours à une cascade de publicités. Si vous demandez un spot publicitaire et que vous recevez l’événement [AdReady](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.adready.aspx), le spot publicitaire suivant affiché dans votre application doit être celui qui est prêt à être affiché par la méthode [Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx).
+* Interagir avec des interfaces non documentées ou des objets enfants créés par les bibliothèques de publicités Microsoft, comme **WebView** ou **MediaElement**.
 
  
 
@@ -148,6 +156,6 @@ Ici, nous cherchons à vous aider à atteindre l’élégance. Étant donné que
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Jan17_HO1-->
 
 

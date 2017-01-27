@@ -5,26 +5,35 @@ title: "Gérer les problèmes liés aux entrées audio"
 ms.assetid: 3E36C683-C96A-4FEE-AD52-FDB87E0CC299
 label: Manage audio input issues
 template: detail.hbs
+keywords: "voix, vocal, reconnaissance vocale, langage naturel, dictée, saisie, interaction utilisateur"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 12f46dd0ec375977cc33efeb73757c5ec75077bd
+ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
+ms.openlocfilehash: a6f6e4c04f608898d2871113f38fe647b62bf8a5
 
 ---
 
-# Gérer les problèmes liés aux entrées audio
+# <a name="manage-issues-with-audio-input"></a>Gérer les problèmes liés aux entrées audio
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 Découvrez comment gérer les problèmes liés à la précision de la reconnaissance vocale qu’entraîne une baisse de qualité des entrées audio.
 
-**API importantes**
+<div class="important-apis" >
+<b>API importantes</b><br/>
+<ul>
+<li>[**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226)</li>
+<li>[**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243)</li>
+<li>[**SpeechRecognitionAudioProblem**](https://msdn.microsoft.com/library/windows/apps/dn631406)</li>
 
--   [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226)
--   [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243)
--   [**SpeechRecognitionAudioProblem**](https://msdn.microsoft.com/library/windows/apps/dn631406)
+</ul>
+</div>
 
 
-
-
-## Évaluer la qualité de l’entrée audio
+## <a name="assess-audio-input-quality"></a>Évaluer la qualité de l’entrée audio
 
 
 Lorsque la reconnaissance vocale est active, utilisez l’événement [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243) de votre moteur de reconnaissance vocale pour déterminer si un ou plusieurs problèmes audio peuvent interférer avec la saisie vocale. L’argument d’événement ([**SpeechRecognitionQualityDegradingEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn631430)) fournit la propriété [**Problem**](https://msdn.microsoft.com/library/windows/apps/dn631431), qui décrit les problèmes détectés liés à l’entrée audio.
@@ -63,7 +72,7 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## Gérer l’expérience de la fonction de reconnaissance vocale
+## <a name="manage-the-speech-recognition-experience"></a>Gérer l’expérience de la fonction de reconnaissance vocale
 
 
 Utilisez la description fournie par la propriété [**Problem**](https://msdn.microsoft.com/library/windows/apps/dn631431) pour améliorer l’expérience de l’utilisateur en matière de reconnaissance vocale.
@@ -103,7 +112,7 @@ private async void speechRecognizer_RecognitionQualityDegrading(
 }
 ```
 
-## Articles connexes
+## <a name="related-articles"></a>Articles connexes
 
 
 * [Interactions vocales](speech-interactions.md)
@@ -120,6 +129,6 @@ private async void speechRecognizer_RecognitionQualityDegrading(
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO3-->
 
 

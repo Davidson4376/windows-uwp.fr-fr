@@ -4,14 +4,14 @@ title: "Utiliser un déclencheur de maintenance"
 description: "Découvrez comment utiliser la classe MaintenanceTrigger pour exécuter du code léger en arrière-plan tandis que l’appareil est branché."
 ms.assetid: 727D9D84-6C1D-4DF3-B3B0-2204EA4D76DD
 translationtype: Human Translation
-ms.sourcegitcommit: 7d1c160f8b725cd848bf8357325c6ca284b632ae
-ms.openlocfilehash: 2f459156ac8bc52c79b9b6d3b902882693120028
+ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
+ms.openlocfilehash: 8ca0255be671d0a2900bb7be3a66d4df4e793725
 
 ---
 
-# Utiliser un déclencheur de maintenance
+# <a name="use-a-maintenance-trigger"></a>Utiliser un déclencheur de maintenance
 
-\[ Mise à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
 
 **API importantes**
 
@@ -21,17 +21,17 @@ ms.openlocfilehash: 2f459156ac8bc52c79b9b6d3b902882693120028
 
 Découvrez comment utiliser la classe [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) pour exécuter du code léger en arrière-plan tandis que l’appareil est branché.
 
-## Créer un objet déclencheur de maintenance
+## <a name="create-a-maintenance-trigger-object"></a>Créer un objet déclencheur de maintenance
 
 Cet exemple suppose que vous disposez d’un code léger à exécuter en arrière-plan qui vous permettra d’améliorer votre application pendant que l’appareil est branché. Cette rubrique porte sur le déclencheur [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517), qui est semblable au déclencheur [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839).
 
-Des informations supplémentaires sur l’écriture d’une classe de tâche en arrière-plan sont disponibles dans les rubriques [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md) ou [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-an-outofproc-background-task.md).
+Des informations supplémentaires sur l’écriture d’une classe de tâche en arrière-plan sont disponibles dans les rubriques [Créer et inscrire une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md) ou [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-a-background-task.md).
 
 Créez un objet [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843). Le deuxième paramètre, *OneShot*, indique si la tâche de maintenance s’exécute une seule fois ou régulièrement. Si *OneShot* est défini sur true, le premier paramètre (*FreshnessTime*) indique le nombre de minutes à attendre avant de planifier la tâche en arrière-plan. Si *OneShot* est défini sur false, *FreshnessTime* indique la fréquence d’exécution de la tâche en arrière-plan.
 
-> **Remarque** Si *FreshnessTime* indique une fréquence inférieure à 15minutes, une exception est levée lors de la tentative d’inscription de la tâche en arrière-plan.
+> **Remarque** Si *FreshnessTime* indique une fréquence inférieure à 15 minutes, une exception est levée lors de la tentative d’inscription de la tâche en arrière-plan.
 
-Cet exemple de code crée un déclencheur qui s’exécute une fois par heure:
+Cet exemple de code crée un déclencheur qui s’exécute une fois par heure :
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -45,13 +45,13 @@ Cet exemple de code crée un déclencheur qui s’exécute une fois par heure:
 > MaintenanceTrigger ^ taskTrigger = ref new MaintenanceTrigger(waitIntervalMinutes, false);
 > ```
 
-## (Facultatif) Ajouter une condition
+## <a name="optional-add-a-condition"></a>(Facultatif) Ajouter une condition
 
 -   Si besoin est, créez une condition de tâche en arrière-plan afin de contrôler le moment où la tâche est exécutée. Une condition empêche votre tâche en arrière-plan de s’exécuter tant que la condition n’est pas satisfaite. Pour plus d’informations, voir [Définir des conditions pour exécuter une tâche en arrière-plan](set-conditions-for-running-a-background-task.md).
 
 Dans cet exemple, la condition est définie sur **InternetAvailable**, de sorte que la maintenance s’exécute quand Internet est accessible (ou le devient). Pour obtenir la liste des conditions de tâche en arrière-plan possibles, voir [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
 
-Le code suivant ajoute une condition au générateur de tâches de maintenance:
+Le code suivant ajoute une condition au générateur de tâches de maintenance :
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -61,7 +61,7 @@ Le code suivant ajoute une condition au générateur de tâches de maintenance:
 > SystemCondition ^ exampleCondition = ref new SystemCondition(SystemConditionType::InternetAvailable);
 > ```
 
-## Inscrire la tâche en arrière-plan
+## <a name="register-the-background-task"></a>Inscrire la tâche en arrière-plan
 
 -   Inscrivez la tâche en arrière-plan en appelant la fonction qui vous permet de le faire. Pour plus d’informations sur l’inscription des tâches en arrière-plan, voir [Inscrire une tâche en arrière-plan](register-a-background-task.md).
 
@@ -81,7 +81,7 @@ Le code suivant ajoute une condition au générateur de tâches de maintenance:
     > BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName, taskTrigger, exampleCondition);
     > ```
 
-    > **Remarque** Pour toutes les familles d’appareils, à l’exception des ordinateurs de bureau, les tâches en arrière-plan peuvent être arrêtées en cas de mémoire insuffisante de l’appareil. Si aucune exception de mémoire insuffisante n’est exposée ou que l’application ne la gère pas, la tâche en arrière-plan est arrêtée sans avertissement ni déclenchement de l’événement OnCanceled. Cela permet de garantir l’expérience utilisateur de l’application au premier plan. Votre tâche en arrière-plan doit être conçue de manière à gérer ce scénario.
+    > **Remarque** Pour toutes les familles d’appareils, à l’exception des ordinateurs de bureau, les tâches en arrière-plan peuvent être arrêtées en cas de mémoire insuffisante de l’appareil. Si aucune exception de mémoire insuffisante n’est exposée ou si l’application ne la gère pas, la tâche en arrière-plan est alors arrêtée sans avertissement ni déclenchement de l’événement OnCanceled. Cela permet de garantir l’expérience utilisateur de l’application au premier plan. Votre tâche en arrière-plan doit être conçue de manière à gérer ce scénario.
 
     > **Remarque** Les applications Windows universelles doivent appeler [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) avant d’inscrire tout type de déclencheur en arrière-plan.
 
@@ -90,15 +90,14 @@ Le code suivant ajoute une condition au générateur de tâches de maintenance:
     > **Remarque** Les paramètres d’inscription de la tâche en arrière-plan sont validés au moment de l’inscription. Une erreur est retournée si l’un des paramètres d’inscription n’est pas valide. Vérifiez que votre application gère de façon fluide les scénarios dans lesquels l’inscription de la tâche en arrière-plan échoue. En revanche, si votre application dépend d’un objet d’inscription valide après la tentative d’inscription d’une tâche, elle peut se bloquer.
 
 
-> 
-  **Remarque** Cet article s’adresse aux développeurs de Windows10 qui créent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Remarque** Cet article s’adresse aux développeurs Windows 10 qui créent des applications pour la plateforme Windows universelle (UWP). Si vous développez une application pour Windows 8.x ou Windows Phone 8.x, voir la [documentation archivée](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
-## Rubriques connexes
+## <a name="related-topics"></a>Rubriques connexes
 
 ****
 
 * [Créez et inscrivez une tâche en arrière-plan in-process](create-and-register-an-inproc-background-task.md).
-* [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-an-outofproc-background-task.md)
+* [Créer et inscrire une tâche en arrière-plan hors processus](create-and-register-a-background-task.md)
 * [Déclarer des tâches en arrière-plan dans le manifeste de l’application](declare-background-tasks-in-the-application-manifest.md)
 * [Gérer une tâche en arrière-plan annulée](handle-a-cancelled-background-task.md)
 * [Surveiller la progression et l’achèvement des tâches en arrière-plan](monitor-background-task-progress-and-completion.md)
@@ -113,6 +112,6 @@ Le code suivant ajoute une condition au générateur de tâches de maintenance:
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

@@ -5,29 +5,39 @@ title: "Définir des délais d’expiration de reconnaissance vocale"
 ms.assetid: 58F446AC-4A56-454D-8125-62A2C4DBFCC8
 label: Speech recognition timeouts
 template: detail.hbs
+keywords: "voix, vocal, reconnaissance vocale, langage naturel, dictée, saisie, interaction utilisateur"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 0e5b60b2a59478899343ed4dee9d9c2039607491
+ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
+ms.openlocfilehash: 770a34c7c190540456a2748290b0aa557fcc1800
 
 ---
 
-# Définir des délais d’expiration de reconnaissance vocale
+# <a name="set-speech-recognition-timeouts"></a>Définir des délais d’expiration de reconnaissance vocale
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 Définissez la durée pendant laquelle un moteur de reconnaissance vocale ignore les silences ou les sons incompréhensibles (brouhaha) et continue à écouter la saisie vocale.
 
-**API importantes**
+<div class="important-apis" >
+<b>API importantes</b><br/>
+<ul>
+<li>[**Timeouts**](https://msdn.microsoft.com/library/windows/apps/dn653253)</li>
+<li>[**SpeechRecognizerTimeouts**](https://msdn.microsoft.com/library/windows/apps/dn653230)</li>
+</ul>
+</div>
 
--   [**Timeouts**](https://msdn.microsoft.com/library/windows/apps/dn653253)
--   [**SpeechRecognizerTimeouts**](https://msdn.microsoft.com/library/windows/apps/dn653230)
+## <a name="set-a-timeout"></a>Définir un délai d’expiration
 
 
-## Définir un délai d’expiration
-
-
-Ici, nous spécifions différentes valeurs [**Timeouts**](https://msdn.microsoft.com/library/windows/apps/dn653253):
+Ici, nous spécifions différentes valeurs [**Timeouts**](https://msdn.microsoft.com/library/windows/apps/dn653253) :
 
 -   InitialSilenceTimeout : durée pendant laquelle un SpeechRecognizer détecte du silence (avant que les résultats de la reconnaissance vocale aient été générés) avant de supposer qu’aucune saisie vocale ne va être effectuée.
 -   BabbleTimeout : durée pendant laquelle un SpeechRecognizer continue à écouter les sons incompréhensibles (brouhaha) avant de supposer que la saisie vocale est terminée et de mettre fin à l’opération de reconnaissance vocale.
--   EndSilenceTimeout: durée pendant laquelle un SpeechRecognizer détecte du silence (après que les résultats de la reconnaissance vocale ont été générés) avant de supposer que la saisie vocale est terminée.
+-   EndSilenceTimeout : durée pendant laquelle un SpeechRecognizer détecte du silence (après que les résultats de la reconnaissance vocale ont été générés) avant de supposer que la saisie vocale est terminée.
 
 **Remarque** Les délais d’expiration sont définissables pour chaque moteur de reconnaissance vocale.
 
@@ -40,7 +50,7 @@ recognizer.Timeouts.BabbleTimeout = TimeSpan.FromSeconds(4.0);
 recognizer.Timeouts.EndSilenceTimeout = TimeSpan.FromSeconds(1.2);
 ```
 
-## Articles connexes
+## <a name="related-articles"></a>Articles connexes
 
 
 * [Interactions vocales](speech-interactions.md)
@@ -56,6 +66,6 @@ recognizer.Timeouts.EndSilenceTimeout = TimeSpan.FromSeconds(1.2);
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO3-->
 
 

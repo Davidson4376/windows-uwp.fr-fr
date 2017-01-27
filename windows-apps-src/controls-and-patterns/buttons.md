@@ -4,11 +4,11 @@ Description: "Un bouton permet à l’utilisateur de déclencher une action imm�
 label: Buttons
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 845aa9935908aa68b64c856ee5e263490a3340c4
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: bb670533769d8bae9cdea0f18e9cbb5717eb3877
 
 ---
-# Boutons
+# <a name="buttons"></a>Boutons
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 Un bouton permet à l’utilisateur de déclencher une action immédiate.
@@ -18,33 +18,30 @@ Un bouton permet à l’utilisateur de déclencher une action immédiate.
 <div class="important-apis" >
 <b>API importantes</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx"><strong>Classe Button</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx"><strong>Classe RepeatButton</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx"><strong>Événement Click</strong></a></li>
+<li>[**Classe Button**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)</li>
+<li>[**Classe RepeatButton**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx)</li>
+<li>[**Événement Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx)</li>
+<li> </li>
+<li> </li>
+<li> </li>
 </ul>
-
-</div>
 </div>
 
-
-
-
-
-## Est-ce le contrôle approprié?
+## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
 Un bouton permet à l’utilisateur d’initier une action immédiate, telle que l’envoi d’un formulaire.
 
-N’utilisez pas de bouton lorsque l’action consiste à naviguer vers une autre page; dans ce cas, utilisez plutôt un lien. Voir [Liens hypertexte](hyperlinks.md) pour plus d’informations.
+N’utilisez pas de bouton lorsque l’action consiste à naviguer vers une autre page ; dans ce cas, utilisez plutôt un lien. Voir [Liens hypertexte](hyperlinks.md) pour plus d’informations.
     
-> Exception: pour la navigation dans un assistant, utilisez les boutons Précédent et Suivant. Pour les autres types de navigation vers l’arrière ou vers un niveau supérieur, utilisez un bouton Précédent.
+> Exception : pour la navigation dans un assistant, utilisez les boutons Précédent et Suivant. Pour les autres types de navigation vers l’arrière ou vers un niveau supérieur, utilisez un bouton Précédent.
 
-## Exemple
+## <a name="example"></a>Exemple
 
-Cet exemple utilise deux boutons, Tout fermer et Annuler, dans une boîte de dialogue du navigateur MicrosoftEdge. 
+Cet exemple utilise deux boutons, Tout fermer et Annuler, dans une boîte de dialogue du navigateur Microsoft Edge. 
 
 ![Exemple de boutons utilisés dans une boîte de dialogue](images/control-examples/buttons-edge.png)
 
-## Créer un bouton
+## <a name="create-a-button"></a>Créer un bouton
 
 Cet exemple illustre un bouton qui répond à un clic. 
 
@@ -78,7 +75,7 @@ private async void SubmitButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-### Interaction de bouton
+### <a name="button-interaction"></a>Interaction de bouton
 
 Lorsque vous appuyez sur un bouton avec un doigt ou un stylet, ou lorsque vous cliquez dessus avec le bouton de la souris, le bouton déclenche l’événement [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx). Si un bouton est sélectionné au clavier, une pression sur la touche Entrée ou sur la barre d’espace déclenche également l’événement Click.
 
@@ -87,7 +84,7 @@ Généralement, vous ne pouvez pas gérer les événements [**PointerPressed**](
 Vous pouvez modifier la façon dont un bouton déclenche l’événement Click en modifiant la propriété [**ClickMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.clickmode.aspx). La valeur ClickMode par défaut est **Release**. Si ClickMode est défini sur **Hover**, l’événement Click ne peut pas être déclenché avec le clavier ou le mode tactile. 
 
 
-### Contenu du bouton
+### <a name="button-content"></a>Contenu du bouton
 
 Le bouton est un [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.aspx). Sa propriété de contenu XAML est [**Content**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx), ce qui permet une syntaxe comme celle-ci pour XAML : `<Button>A button's content</Button>`. Vous pouvez définir n’importe quel objet comme contenu du bouton. Si le contenu est un objet [UIElement](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.aspx), il est affiché dans le bouton. Si le contenu est un autre type d’objet, sa représentation sous forme de chaîne est affichée dans le bouton.
 
@@ -109,7 +106,7 @@ Le bouton ressemble à ceci.
 
 ![Bouton avec contenu d’image et de texte](images/button-orange.png)
 
-## Créer un bouton de répétition
+## <a name="create-a-repeat-button"></a>Créer un bouton de répétition
 
 Un [**RepeatButton**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx) est un bouton qui déclenche les événements [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) plusieurs fois à partir du moment où il est enfoncé jusqu’à ce qu’il soit relâché. Définissez la propriété [**Delay**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.delay.aspx) pour spécifier la durée pendant laquelle RepeatButton attend entre le moment où il est actionné et le moment où il commence à répéter l’action de clic. Définissez la propriété [**Interval**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.interval.aspx) pour spécifier la durée entre les répétitions de l’action de clic. Les durées pour les deux propriétés sont spécifiées en millisecondes.
 
@@ -141,10 +138,17 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## Recommandations
+## <a name="recommendations"></a>Recommandations
 
 -   Assurez-vous que le but et l’état actuel d’un bouton sont clairs pour l’utilisateur.
--   Utilisez un texte concis, précis et suffisamment explicite qui décrit clairement l’action effectuée par le bouton. Généralement le texte d’un bouton est représenté par un seul mot, un verbe.
+-   Utilisez un texte concis, précis et suffisamment explicite qui décrit clairement l’action effectuée par le bouton. Généralement, le texte d’un bouton est représenté par un seul mot, un verbe.
+-   Quand plusieurs boutons permettent de faire le même choix (comme dans une boîte de dialogue de confirmation), présentez les boutons de validation dans cet ordre : 
+    -   OK/[Faire l’action]/Oui
+    -   [Ne pas faire l’action]/Non
+    -   Annuler
+
+    (où [Faire l’action] et [Ne pas faire l’action] sont des réponses spécifiques à l’instruction principale.)
+
 -   Si le contenu du texte du bouton est dynamique, par exemple s’il est localisé, songez au redimensionnement du bouton et à ses conséquences sur les contrôles environnant.
 -   Pour les boutons de commande avec du texte, utilisez une largeur de bouton minimale.
 -   Évitez les boutons de commande trop étroits, petits ou hauts avec des étiquettes de texte.
@@ -160,15 +164,15 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 -   Ne permutez pas les styles par défaut des boutons submit, reset et button.
 -   Ne surchargez pas le contenu d’un bouton. Faites en sorte que le contenu soit concis et facile à comprendre (rien d’autre qu’une image et du texte).
 
-## Boutons Précédent
+## <a name="back-buttons"></a>Boutons Précédent
 Le bouton Précédent est un élément de l’interface utilisateur fournie par le système qui permet de revenir en arrière dans la pile Back ou dans l’historique de navigation de l’utilisateur. Vous n’avez pas besoin de créer votre propre bouton précédent, mais vous devez peut-être effectuer certaines opérations pour obtenir une bonne expérience de navigation vers l’arrière. Pour plus d’informations, voir [Navigation dans l’historique et navigation vers l’arrière](../layout/navigation-history-and-backwards-navigation.md)
 
-## Obtenir les exemples
+## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
 *   [Exemple d’éléments de base d’une interface utilisateur XAML](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)<br/>
     Affichez tous les contrôles XAML dans un format interactif.
 
 
-## Articles connexes
+## <a name="related-articles"></a>Articles connexes
 
 - [Cases d’option](radio-button.md)
 - [Boutons bascule](toggles.md)
@@ -179,6 +183,6 @@ Le bouton Précédent est un élément de l’interface utilisateur fournie par 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

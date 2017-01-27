@@ -6,11 +6,11 @@ ms.assetid: B5C21FE7-BA83-4940-9CC1-96F6A2DC28C7
 label: Semantic zoom
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 125cb6e45defe3213af3f5cd20f524a5311241af
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: b3ca48b678fb4e1ddb4b26ad7add723474527591
 
 ---
-# Zoom sémantique
+# <a name="semantic-zoom"></a>Zoom sémantique
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -24,18 +24,11 @@ Par exemple, s’il consulte un carnet d’adresses, l’utilisateur peut effect
 <div class="important-apis" >
 <b>API importantes</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/hh702601"><strong>Classe SemanticZoom</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx"><strong>Classe ListView</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx"><strong>Classe GridView</strong></a></li>
+<li>[**Classe SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601)</li>
+<li>[**Classe ListView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx)</li>
+<li>[**Classe GridView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx)</li>
 </ul>
-
 </div>
-</div>
-
-
-
-
-
 
 **Fonctionnalités** :
 
@@ -43,13 +36,13 @@ Par exemple, s’il consulte un carnet d’adresses, l’utilisateur peut effect
 -   Appuyer sur un en-tête de groupe permet de basculer entre les vues. Il est possible d’activer le pincement pour basculer entre les vues.
 -   Les en-têtes actifs basculent entre les vues.
 
-## Est-ce le contrôle approprié ?
+## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
 Utilisez un contrôle **SemanticZoom** quand vous avez besoin d’afficher un jeu de données regroupées trop grand pour être affiché sur une ou deux pages.
 
 Ne confondez pas le zoom sémantique avec le zoom optique. Ces deux types de zoom interagissent et se comportent fondamentalement de la même façon (en affichant des données plus ou moins détaillées selon le facteur de zoom choisi), mais le zoom optique sert à ajuster le grossissement d’une zone de contenu ou d’un objet, tel qu’une photographie. Pour plus d’informations sur le contrôle qui effectue un zoom optique, voir le contrôle [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx).
 
-## Exemples
+## <a name="examples"></a>Exemples
 
 **Application Photos**
 
@@ -63,7 +56,7 @@ Un carnet d’adresses est un autre exemple de jeu de données dans lequel la na
 
 ![Exemple de zoom sémantique utilisé dans une liste de contacts](images/semanticzoom-win10.png)
 
-## Créer un zoom sémantique
+## <a name="create-a-semantic-zoom"></a>Créer un zoom sémantique
 
 Le contrôle **SemanticZoom** n’a pas de représentation visuelle propre. Il s’agit d’un contrôle hôte qui gère la transition entre 2 autres contrôles qui fournissent les vues de votre contenu, généralement les contrôles **ListView** ou **GridView**.  Vous définissez les contrôles d’affichage sur les propriétés [**ZoomedInView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.zoomedinview.aspx) et [**ZoomedOutView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.zoomedoutview.aspx) de SemanticZoom.
 
@@ -74,7 +67,7 @@ Les 3 éléments dont vous avez besoin pour un zoom sémantique sont les suivan
 
 Avant d’utiliser un zoom sémantique, vous devez comprendre comment utiliser un affichage Liste avec des données regroupées. Pour plus d’informations, voir [Affichage Liste et affichage Grille](listview-and-gridview.md) et [Regroupement d’éléments dans une liste](). 
 
-> **Remarque**  Pour définir la vue avec zoom avant et la vue avec zoom arrière du contrôle SemanticZoom, vous pouvez utiliser l’un ou l’autre des deux contrôles qui implémentent l’interface [**ISemanticZoomInformation**](). L’infrastructure XAML fournit 3 contrôles qui implémentent cette interface : ListView, GridView et Hub.
+> **Remarque**&nbsp;&nbsp;Pour définir la vue avec zoom avant et la vue avec zoom arrière du contrôle SemanticZoom, vous pouvez utiliser l’un ou l’autre des deux contrôles qui implémentent l’interface [**ISemanticZoomInformation**](). L’infrastructure XAML fournit 3 contrôles qui implémentent cette interface : ListView, GridView et Hub.
  
  Ce code XAML montre la structure du contrôle SemanticZoom. Vous attribuez d’autres contrôles aux propriétés ZoomedInView et ZoomedOutView.
  
@@ -182,26 +175,27 @@ private void SemanticZoom_ViewChangeStarted(object sender, SemanticZoomViewChang
 }
 ```
 
-## Recommandations
+## <a name="recommendations"></a>Recommandations
 
 -   Lorsque vous utilisez le zoom sémantique dans votre application, veillez à ce que la disposition et le sens du mouvement panoramique de l’élément ne changent pas en fonction du niveau de zoom. Les dispositions et les interactions de mouvement panoramique doivent être cohérentes et prévisibles dans tous les niveaux de zoom.
 -   Comme le zoom sémantique permet aux utilisateurs de passer rapidement d’un élément de contenu à un autre, limitez à trois le nombre de pages/d’écrans du mode d’affichage général. Un mouvement panoramique trop important réduit la fonctionnalité du zoom sémantique.
 -   Évitez d’utiliser le zoom sémantique pour modifier l’étendue du contenu. Par exemple, il convient de ne pas basculer un album photo vers un affichage des dossiers dans l’Explorateur de fichiers.
 -   Utilisez une structure et une sémantique qui sont essentielles à la vue.
 -   Utilisez des noms de groupe pour les éléments d’une collection groupée.
--   Utilisez un ordre de tri pour une collection non groupée, mais triée, par exemple l’ordre chronologique pour des dates ou l’ordre alphabétique pour une liste de noms.
+-   Utilisez un ordre de tri pour une collection non groupée, mais triée, par exemple l’ordre chronologique de dates ou l’ordre alphabétique d’une liste de noms.
 
-## Articles connexes
+
+## <a name="get-the-sample-code"></a>Obtenir l’exemple de code
+
+- [Exemple d’éléments de base d’une interface utilisateur XAML](http://go.microsoft.com/fwlink/p/?LinkId=619992)
+
+
+## <a name="related-articles"></a>Articles connexes
 
 - [Informations de base relatives à la conception de la navigation](../layout/navigation-basics.md)
 - [Affichage Liste et affichage Grille](listview-and-gridview.md)
 - [Modèles d’élément d’affichage Liste](listview-item-templates.md)
 
-**Exemples**
-
-- [Exemple d’éléments de base d’une interface utilisateur XAML](http://go.microsoft.com/fwlink/p/?LinkId=619992)
-
- 
 
 
 
@@ -209,6 +203,6 @@ private void SemanticZoom_ViewChangeStarted(object sender, SemanticZoomViewChang
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

@@ -3,10 +3,15 @@ author: GrantMeStrength
 ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
 title: "Activer votre appareil pour le développement"
 description: "Configurez votre appareil Windows 10 pour le développement et le débogage."
-keywords: activer un appareil
+keywords: "Commencer avec une licence de développeur Visual Studio, appareil avec licence de développeur activée"
+ms.author: jken
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ed91f7585b63199ab9d591c712d4260a3b452b85
-ms.openlocfilehash: 416dce2f7cbe3bba9285f7e354868a2c00728802
+ms.sourcegitcommit: 7a6f0be15105bc70e580eaaf581152338c56bed7
+ms.openlocfilehash: 3641fdd1f7eb74a11233115d9dfb809ea959926e
 
 ---
 # <a name="enable-your-device-for-development"></a>Activer votre appareil pour le développement
@@ -163,7 +168,7 @@ Vous pouvez utiliser gpedit.msc pour définir les stratégies de groupe visant �
 
     -   **Autoriser l’installation des applications approuvées**
 
-    - - ou -
+    - ou -
 
     Pour activer le mode développeur, modifiez les stratégies pour activer les deux options suivantes :
 
@@ -179,7 +184,7 @@ Vous pouvez utiliser gpedit.msc pour définir les stratégies de groupe visant �
 
     -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowAllTrustedApps**
 
-    - - ou -
+    - ou -
 
     Pour activer le mode développeur, définissez ces valeurs DWORD sur 1 :
 
@@ -192,7 +197,7 @@ Vous pouvez utiliser gpedit.msc pour définir les stratégies de groupe visant �
 
     -   **PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowAllTrustedApps" /d "1"**
 
-    - - ou -
+    - ou -
 
     Pour activer le mode développeur, exécutez cette commande :
 
@@ -213,6 +218,6 @@ Erreur : DEP0700 : Échec de l’inscription de l’application.
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

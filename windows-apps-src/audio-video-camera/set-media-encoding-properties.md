@@ -2,16 +2,16 @@
 author: drewbatgit
 ms.assetid: 09BA9250-A476-4803-910E-52F0A51704B1
 description: "Cet article vous montre comment utiliser l’interface IMediaEncodingProperties pour définir la résolution et la fréquence d’images du flux d’aperçu de l’appareil photo, et des photos et vidéos capturées."
-title: "Définir les propriétés d’encodage du média pour MediaCapture"
+title: "Définir le format, la résolution et la fréquence d’images pour MediaCapture"
 translationtype: Human Translation
-ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
-ms.openlocfilehash: 1b20578fe52c004a55c5099ccb89e8c180571009
+ms.sourcegitcommit: 6c3ed4ab773fe821acaee7d5b8c70fdc8770de81
+ms.openlocfilehash: 828cbddd9568bd4e9d0a571880a867afff293e34
 
 ---
 
-# Définir les propriétés d’encodage du média pour MediaCapture
+# <a name="set-format-resolution-and-frame-rate-for-mediacapture"></a>Définir le format, la résolution et la fréquence d’images pour MediaCapture
 
-\[ Article mis à jour pour les applications UWP sur Windows10. Pour les articles sur Windows8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132). \]
+\[ Mise à jour pour les applications UWP sur Windows 10. Pour les articles sur Windows 8.x, voir l’[archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Cet article vous montre comment utiliser l’interface [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) pour définir la résolution et la fréquence d’images du flux d’aperçu de caméra et des photos et vidéos capturées. Il montre également comment s’assurer que les proportions du flux d’aperçu correspondent à celle du média capturé.
@@ -23,9 +23,9 @@ Le code figurant dans cet article a été adapté à partir de l’[exemple Came
 > [!NOTE] 
 > Cet article repose sur les concepts et le code décrits dans [Capture photo, vidéo et audio de base à l’aide de MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md), qui décrit comment implémenter la capture photo et vidéo de base. Nous vous recommandons de vous familiariser avec le modèle de capture multimédia de base dans cet article avant de passer à des scénarios de capture plus avancés. Le code de cet article repose sur l’hypothèse que votre application possède déjà une instance de MediaCapture initialisée correctement.
 
-## Classe d’assistance des propriétés d’encodage du média
+## <a name="a-media-encoding-properties-helper-class"></a>Classe d’assistance des propriétés d’encodage du média
 
-La création d’une classe d’assistance simple englobant la fonctionnalité de l’interface [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) simplifie la sélection d’un ensemble de propriétés d’encodage qui répondent à des critères particuliers. Cette classe d’assistance est particulièrement utile en raison du comportement de la fonctionnalité des propriétés d’encodage suivant:
+La création d’une classe d’assistance simple englobant la fonctionnalité de l’interface [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) simplifie la sélection d’un ensemble de propriétés d’encodage qui répondent à des critères particuliers. Cette classe d’assistance est particulièrement utile en raison du comportement de la fonctionnalité des propriétés d’encodage suivant :
 
 **Avertissement**  
 La méthode [**VideoDeviceController.GetAvailableMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211994) utilise un membre de l’énumération [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/br226640), tel que **VideoRecord** ou **Photo**, et renvoie une liste d’objets [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) ou [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) transmettant les paramètres d’encodage du flux, tels que la résolution de la photo ou de la vidéo capturée. Les résultats de l’appel de **GetAvailableMediaStreamProperties** peuvent inclure **ImageEncodingProperties** ou **VideoEncodingProperties** quelle que soit la valeur de **MediaStreamType** spécifiée. Pour cette raison, vous devez toujours vérifier le type de chaque valeur renvoyée et le convertir dans le type approprié avant d’essayer d’accéder à une des valeurs de propriété.
@@ -38,13 +38,13 @@ Vous devez inclure l’espace de noms [**Windows.Media.MediaProperties**](https:
 
 [!code-cs[StreamPropertiesHelper](./code/BasicMediaCaptureWin10/cs/StreamPropertiesHelper.cs#SnippetStreamPropertiesHelper)]
 
-## Déterminer si les flux de capture et d’aperçu sont indépendants
+## <a name="determine-if-the-preview-and-capture-streams-are-independent"></a>Déterminer si les flux de capture et d’aperçu sont indépendants
 
 Sur certains appareils, le même code confidentiel de matériel est utilisé pour afficher et capturer des flux. Sur ces appareils, la définition des propriétés d’encodage d’un flux a pour effet de définir l’autre. Sur les appareils utilisant différents codes de matériel pour la capture et l’aperçu, il est possible de définir les propriétés de chaque flux de manière indépendante. Utilisez le code suivant pour déterminer si les flux de capture et d’aperçu sont indépendants. Vous devez ajuster votre interface utilisateur pour activer ou désactiver le paramètre des flux de manière indépendante en fonction du résultat de ce test.
 
 [!code-cs[CheckIfStreamsAreIdentical](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCheckIfStreamsAreIdentical)]
 
-## Obtenir une liste des propriétés de flux disponibles
+## <a name="get-a-list-of-available-stream-properties"></a>Obtenir une liste des propriétés de flux disponibles
 
 Obtenez une liste des propriétés de flux disponibles pour un appareil de capture en obtenant l’élément [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) pour l’objet [MediaCapture](capture-photos-and-video-with-mediacapture.md) de votre application, puis en appelant [**GetAvailableMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211994) et en transmettant l’une des valeurs de [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/br226640) : **VideoPreview**, **VideoRecord** ou **Photo**. Dans cet exemple, la syntaxe Linq est utilisée pour créer une liste d’objets **StreamPropertiesHelper**, définis précédemment dans cet article, pour chacune des valeurs [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) renvoyées par **GetAvailableMediaStreamProperties**. Cet exemple utilise d’abord les méthodes d’extension Linq pour classer les propriétés renvoyées tout d’abord en fonction de la résolution, puis de la fréquence d’images.
 
@@ -52,7 +52,7 @@ Si votre application exige une résolution ou une fréquence d’images spécifi
 
 [!code-cs[PopulateStreamPropertiesUI](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPopulateStreamPropertiesUI)]
 
-## Définir les propriétés de flux souhaitées
+## <a name="set-the-desired-stream-properties"></a>Définir les propriétés de flux souhaitées
 
 Indiquez au contrôleur d’appareil vidéo d’utiliser les propriétés d’encodage voulues en appelant [**SetMediaStreamPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh700895) et en transmettant la valeur **MediaStreamType** indiquant si les propriétés de photo, de vidéo ou d’aperçu doivent être définies. Cet exemple définit les propriétés d’encodage demandées lorsque l’utilisateur sélectionne un élément dans l’un des objets **ComboBox** remplis à l’aide de la méthode d’assistance **PopulateStreamPropertiesUI**.
 
@@ -62,7 +62,7 @@ Indiquez au contrôleur d’appareil vidéo d’utiliser les propriétés d’en
 
 [!code-cs[VideoSettingsChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoSettingsChanged)]
 
-## Faire correspondre les proportions des flux d’aperçu et de la capture
+## <a name="match-the-aspect-ratio-of-the-preview-and-capture-streams"></a>Faire correspondre les proportions des flux d’aperçu et de la capture
 
 Une application de caméra classique fournira l’interface utilisateur permettant à l’utilisateur de sélectionner la résolution de capture vidéo ou photo, mais définira par programme la résolution de l’aperçu. Plusieurs stratégies différentes permettent de sélectionner la meilleure résolution de flux d’aperçu pour votre application :
 
@@ -90,6 +90,6 @@ Pour vous assurer que les flux de capture de photo ou de vidéo correspondent au
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -6,11 +6,11 @@ ms.assetid: 4AFC0DFA-3B89-434D-9F86-4309CCFF7839
 label: Rich edit box
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: f26bcc596417f607ee348e93009905ec4a3e27c8
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: a8e8e42c87809eb08685fb137a242b1177b824b4
 
 ---
-# Zone d’édition enrichie
+# <a name="rich-edit-box"></a>Zone d’édition enrichie
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -19,23 +19,16 @@ Vous pouvez utiliser un contrôle RichEditBox pour entrer et modifier des docume
 <div class="important-apis" >
 <b>API importantes</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx"><strong>Classe RichEditBox</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx"><strong>Propriété Document</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isreadonly.aspx"><strong>Propriété IsReadOnly</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx"><strong>Propriété IsSpellCheckEnabled</strong></a></li>
+<li>[**Classe RichEditBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)</li>
+<li>[**Propriété Document**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx)</li>
+<li>[**Propriété IsReadOnly**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isreadonly.aspx)</li>
+<li>[**Propriété IsSpellCheckEnabled**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx)</li>
 </ul>
-
-</div>
 </div>
 
+## <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
-
-
-
-
-## Est-ce le contrôle approprié?
-
-Utilisez un contrôle **RichEditBox** pour afficher et modifier les fichiers de texte. Vous n’utilisez pas un contrôle RichEditBox pour obtenir les données entrées dans votre application par l’utilisateur de la même façon que vous utilisez d’autres zones de saisie de texte standard. En fait, ce contrôle vous permet de travailler sur des fichiers de texte séparés de votre application. Le texte entré dans un contrôle RichEditBox est généralement enregistré dans un fichier.rtf.
+Utilisez un contrôle **RichEditBox** pour afficher et modifier les fichiers de texte. Vous n’utilisez pas un contrôle RichEditBox pour obtenir les données entrées dans votre application par l’utilisateur de la même façon que vous utilisez d’autres zones de saisie de texte standard. En fait, ce contrôle vous permet de travailler sur des fichiers de texte séparés de votre application. Le texte entré dans un contrôle RichEditBox est généralement enregistré dans un fichier .rtf.
 -   Si l’objectif principal de la zone de texte de plusieurs lignes est de créer des documents (par exemple les entrées d’un blog ou le contenu d’un message électronique) et si ces documents nécessitent du texte enrichi, utilisez une zone de texte enrichi.
 -   Si vous voulez permettre aux utilisateurs de mettre en forme leur texte, utilisez une zone de texte enrichi.
 -   Pour saisir du texte qui sera uniquement utilisé et non réaffiché aux utilisateurs, utilisez un contrôle de saisie de texte brut.
@@ -43,13 +36,13 @@ Utilisez un contrôle **RichEditBox** pour afficher et modifier les fichiers de 
 
 Pour plus d’informations sur le choix du contrôle de texte approprié, voir l’article [Contrôles de texte](text-controls.md).
 
-## Exemples
+## <a name="examples"></a>Exemples
 
 Un document au format RTF est ouvert dans cette zone d’édition enrichie. Les boutons de mise en forme et de fichier ne font pas partie de la zone d’édition enrichie. Cependant, vous devez fournir au moins un jeu minimal de boutons de style et implémenter leurs actions.
 
 ![Une zone de texte enrichi avec un document ouvert](images/rich-edit-box.png)
 
-## Créer une zone d’édition enrichie
+## <a name="create-a-rich-edit-box"></a>Créer une zone d’édition enrichie
 
 Par défaut, le contrôle RichEditBox prend en charge la vérification orthographique. Pour désactiver le vérificateur d’orthographe, définissez la propriété [IsSpellCheckEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx) sur **false**. Pour plus d’informations, voir l’article [Recommandations en matière de vérification orthographique](spell-checking-and-prediction.md).
 
@@ -194,40 +187,33 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## Choisissez le clavier approprié pour votre contrôle de texte
+## <a name="choose-the-right-keyboard-for-your-text-control"></a>Choisissez le clavier approprié pour votre contrôle de texte
 
 Pour faciliter la saisie de données par les utilisateurs au moyen du clavier tactile, ou panneau de saisie, définissez l’étendue des entrées du contrôle de texte de sorte qu’elle corresponde au type de données attendu de la part de l’utilisateur. La disposition de clavier par défaut est généralement appropriée pour l’utilisation de documents au format RTF.
 
 Pour en savoir plus sur l’utilisation des étendues des entrées, voir [Utiliser l’étendue des entrées pour modifier le clavier tactile](https://msdn.microsoft.com/library/windows/apps/mt280229).
 
-## Recommandations
+## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
 
--   Quand vous créez une zone de texte enrichi, proposez des boutons de style et implémentez leurs actions.
+-   Lorsque vous créez une zone de texte enrichi, proposez des boutons de style et implémentez leurs actions.
 -   Utilisez une police cohérente avec le style de votre application.
 -   Faites en sorte que la hauteur du contrôle de texte soit suffisante pour recevoir des entrées classiques.
 -   Ne laissez pas les contrôles de saisie de texte s’allonger en hauteur lorsque les utilisateurs entrent le texte.
 -   N’utilisez pas de zone de texte de plusieurs lignes quand les utilisateurs n’ont besoin que d’une seule ligne.
--   N’utilisez pas de contrôle de texte enrichi si un contrôle de texte brut est approprié.
+-   N’utilisez aucun contrôle de texte enrichi si un contrôle de texte brut est approprié.
 
 
+## <a name="related-articles"></a>Articles connexes
 
-
-
-## Articles connexes
-
-[Contrôles de texte](text-controls.md)
-
-**Pour les concepteurs**
+* [Contrôles de texte](text-controls.md)
 - [Recommandations en matière de vérification orthographique](spell-checking-and-prediction.md)
 - [Ajout de la fonctionnalité de recherche](search.md)
 - [Recommandations en matière de saisie de texte](text-controls.md)
-
-**Pour les développeurs (XAML)**
 - [**Classe TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [**Classe PasswordBox Windows.UI.Xaml.Controls**](https://msdn.microsoft.com/library/windows/apps/br227519)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

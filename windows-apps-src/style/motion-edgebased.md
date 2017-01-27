@@ -6,24 +6,28 @@ ms.assetid: 5A8F73B1-F4F6-424b-9EDF-A9766C5DEAE8
 label: Motion--edge-based UI
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: a835e57c3ae778149cda933d57cf74408b74b416
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 925826f2702474a0003f2ca2dee6ff10992f5f25
 
 ---
 
-# Animations latérales de l’interface utilisateur
+# <a name="edge-based-ui-animations"></a>Animations latérales de l’interface utilisateur
 
 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 
 Les animations latérales affichent ou masquent l’interface utilisateur qui part du bord de l’écran. L’utilisateur ou l’application peut initier les actions d’affichage ou de masquage. L’interface utilisateur peut se superposer à l’application ou intégrer sa surface principale. Si l’élément d’interface utilisateur fait partie de la surface principale, un redimensionnement du reste de l’application peut être nécessaire pour l’accueillir.
 
-**API importantes**
+<div class="important-apis" >
+<b>API importantes</b><br/>
+<ul>
+<li>[**Classe EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/hh702324)</li>
+</ul>
+</div>
 
--   [**Classe EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/hh702324)
 
-
-## Pratiques conseillées et déconseillées
+## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
 
 
 -   Utilisez les animations latérales de l’interface utilisateur pour afficher ou masquer une barre de messages ou une barre d’erreur qui n’occupe pas beaucoup d’espace à l’écran.
@@ -36,15 +40,15 @@ Les animations latérales affichent ou masquent l’interface utilisateur qui pa
 -   Ne mettez pas en application ces animations pour les notifications. Les notifications ne doivent pas être hébergées au sein d’une interface utilisateur latérale.
 -   N’appliquez pas les animations latérales de l’interface utilisateur ou des volets à un conteneur ou contrôle d’interface utilisateur qui ne se trouve pas au bord de l’écran. Ces animations ne servent que pour l’affichage, le redimensionnement et la fermeture d’éléments d’interface utilisateur aux bords de l’écran. Pour déplacer d’autres types d’interface utilisateur, utilisez les animations de repositionnement.
 
-    ![Montre quand utiliser les animations latérales de l’interface utilisateur ou des volets et quand faire appel au repositionnement.](images/edgevsreposition.png)
+    ![Indique à quel moment utiliser les animations latérales de l’interface utilisateur ou des volets et quand faire appel au repositionnement.](images/edgevsreposition.png)
 
-## Articles connexes
+## <a name="related-articles"></a>Articles connexes
 
 
-**Pour les développeurs (XAML)**
+**Pour les développeurs**
 * [Vue d’ensemble des animations](https://msdn.microsoft.com/library/windows/apps/mt187350)
 * [Animation latérale de l’interface utilisateur](https://msdn.microsoft.com/library/windows/apps/xaml/jj649428)
-* [Démarrage rapide: animation de votre interface utilisateur avec des animations de la bibliothèque](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [Démarrage rapide : Animation de votre interface utilisateur avec des animations de la bibliothèque](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
 * [**Classe EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/hh702324)
 * [**Classe PaneThemeTransition**](https://msdn.microsoft.com/library/windows/apps/hh969160)
 * [Animation de fondus](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
@@ -60,6 +64,6 @@ Les animations latérales affichent ou masquent l’interface utilisateur qui pa
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

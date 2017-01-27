@@ -3,8 +3,8 @@ author: msatranjr
 title: Annonces publicitaires Bluetooth
 description: "Cette section contient des articles expliquant comment intégrer des annonces Bluetooth Low Energy (LE) dans les applications de plateforme Windows universelle (UWP) par le biais de l’utilisation des API AdvertisementWatcher et AdvertisementPublisher."
 translationtype: Human Translation
-ms.sourcegitcommit: b1493d3d0d61a5fc45ab563b56bffa43650bbed9
-ms.openlocfilehash: feda9b20b4cbc265832bdb51f90546d9e1f668e8
+ms.sourcegitcommit: b454e08015ea9bd6240c836563b1fec78e38dc2c
+ms.openlocfilehash: e21567bf2ffa5b05861cf96099290e1bb66dbf03
 
 ---
 
@@ -39,7 +39,7 @@ Pour utiliser les fonctionnalités Bluetooth LE de base dans une application de 
 
 Les annonces Bluetooth LE permettent à votre appareil de baliser en permanence une charge utile spécifique, appelée annonce publicitaire. Cette annonce est visible par n’importe quel appareil compatible Bluetooth LE à proximité, s’il est configuré pour écouter cette annonce spécifiquement.
 
-**Remarque** Pour préserver la confidentialité des utilisateurs, la durée de vie de votre annonce est liée à celle de votre application. Vous pouvez créer une annonce BluetoothLEAdvertisementPublisher et appeler Start dans une tâche en arrière-plan pour l’annonce en arrière-plan. Pour plus d’informations sur les tâches en arrière-plan, consultez [Lancement, reprise et tâches en arrière-plan](https://msdn.microsoft.com/en-us/windows/uwp/launch-resume/index).
+**Remarque** Pour préserver la confidentialité des utilisateurs, la durée de vie de votre annonce est liée à celle de votre application. Vous pouvez créer une annonce BluetoothLEAdvertisementPublisher et appeler Start dans une tâche en arrière-plan pour l’annonce en arrière-plan. Pour plus d’informations sur les tâches en arrière-plan, consultez [Lancement, reprise et tâches en arrière-plan](https://msdn.microsoft.com/windows/uwp/launch-resume/index).
 
 ### <a name="basic-publishing"></a>Publication de base
 
@@ -155,6 +155,6 @@ Cette valeur peut être convertie en une distance, mais ne doit pas servir à me
 Une autre solution permettant d’évaluer une distance consiste à définir des « compartiments ». Les radios ont tendance à émettre entre 0 et 50 dBm quand elles sont très proches, entre -50 et -90 lorsqu’elles sont à moyenne distance, et au-dessous de -90 lorsqu’elles sont éloignées. La méthode d’ajustement par tâtonnements est la meilleure pour déterminer les compartiments idéaux pour votre application.
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

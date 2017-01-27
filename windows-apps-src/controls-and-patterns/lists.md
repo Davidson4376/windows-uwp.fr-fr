@@ -6,15 +6,15 @@ ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
 label: Lists
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 508a09e0c12006c00dbdf7675516b41119eab8a6
-ms.openlocfilehash: 8b8820c9ab82ce0789fbe2fb9f62309e48f4ce9d
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 93f5d7fe5ec14a0d5ccb69e84e9419488192a5c4
 
 ---
-# Listes
+# <a name="lists"></a>Listes
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-Les listes affichent et activent l’interaction avec du contenu basé sur des collections. Les quatre modèles de liste traités dans cet article sont les suivants:
+Les listes affichent et activent l’interaction avec du contenu basé sur des collections. Les quatre modèles de liste traités dans cet article sont les suivants :
 
 -   Affichages Liste, principalement utilisés pour afficher des collections de contenus riches en texte
 -   Affichages Grille, principalement utilisés pour afficher des collections de contenus riches en images
@@ -26,22 +26,17 @@ Des recommandations en matière de conception, des fonctionnalités et des exemp
 <div class="important-apis" >
 <b>API importantes</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br242878"><strong>Classe ListView</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br242705"><strong>Classe GridView</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br209348"><strong>Classe ComboBox</strong></a></li>
+<li>[**Classe ListView**](https://msdn.microsoft.com/library/windows/apps/br242878)</li>
+<li>[**Classe GridView**](https://msdn.microsoft.com/library/windows/apps/br242705)</li>
+<li>[**Classe ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-
-## Affichages de liste
+## <a name="list-views"></a>Affichages de liste
 
 Les affichages Liste permettent de classer des éléments et d’affecter des en-têtes de groupe, de glisser-déplacer des éléments, de traiter du contenu et de réorganiser des éléments.
 
-### Est-ce le contrôle approprié ?
+### <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
 Utilisez un affichage Liste pour :
 
@@ -49,18 +44,18 @@ Utilisez un affichage Liste pour :
 -   Naviguer dans une collection de contenu unique ou catégorisée.
 -   Créer le volet principal dans le [modèle Maître/Détails](master-details.md). Un modèle Maître/Détails est souvent utilisé dans les applications de messagerie, dans lesquelles un volet (maître) contient une liste d’éléments sélectionnables, tandis que l’autre (détails) affiche une vue détaillée de l’élément sélectionné.
 
-### Exemples
+### <a name="examples"></a>Exemples
 
 Voici un affichage Liste simple montrant des données regroupées sur un téléphone.
 
 ![Un affichage Liste avec des données regroupées](images/simple-list-view-phone.png)
 
-### Recommandations
+### <a name="recommendations"></a>Recommandations
 
 -   Les éléments d’une liste doivent avoir le même comportement.
 -   Si votre liste est répartie en groupes, vous pouvez utiliser un [zoom sémantique](semantic-zoom.md) pour permettre aux utilisateurs de naviguer plus facilement dans un contenu regroupé.
 
-### Articles sur l’affichage Liste
+### <a name="list-view-articles"></a>Articles sur l’affichage Liste
 <table>
 <colgroup>
 <col width="50%" />
@@ -96,11 +91,11 @@ Voici un affichage Liste simple montrant des données regroupées sur un télép
 </tbody>
 </table>
 
-## Affichages Grille
+## <a name="grid-views"></a>Affichages Grille
 
 Les affichages Grille conviennent pour l’organisation et l’exploration des collections de contenus à base d’images. Une disposition de liste Grille défile verticalement et s’étend horizontalement. Les éléments sont disposés dans un ordre de lecture de gauche à droite, puis de haut en bas.
 
-### Est-ce le contrôle approprié ?
+### <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
 Utilisez un affichage Liste pour :
 
@@ -108,7 +103,7 @@ Utilisez un affichage Liste pour :
 -   Afficher des bibliothèques de contenu.
 -   Mettre en forme les deux affichages de contenu associés à un [zoom sémantique](semantic-zoom.md).
 
-### Exemples
+### <a name="examples"></a>Exemples
 
 Cet exemple illustre une disposition d’affichage Grille standard, dans ce cas pour des applications de navigation. Les métadonnées pour les éléments d’un affichage Grille sont généralement limitées à quelques lignes de texte et à une évaluation.
 
@@ -118,12 +113,12 @@ Un affichage Grille est une solution idéale pour une bibliothèque de contenu, 
 
 ![Exemple de bibliothèque de contenu](images/controls_list_contentlibrary.png)
 
-### Recommandations
+### <a name="recommendations"></a>Recommandations
 
 -   Les éléments d’une liste doivent avoir le même comportement.
 -   Si votre liste est répartie en groupes, vous pouvez utiliser un [zoom sémantique](semantic-zoom.md) pour permettre aux utilisateurs de naviguer plus facilement dans un contenu regroupé.
 
-### Articles sur l’affichage Grille
+### <a name="grid-view-articles"></a>Articles sur l’affichage Grille
 <table>
 <colgroup>
 <col width="50%" />
@@ -151,18 +146,18 @@ Un affichage Grille est une solution idéale pour une bibliothèque de contenu, 
 </tbody>
 </table>
 
-## Listes déroulantes
+## <a name="drop-down-lists"></a>Listes déroulantes
 
 Les listes déroulantes, également appelées zones de liste déroulante, démarrent dans un état compact et se développent pour afficher une liste d’éléments sélectionnables. L’élément sélectionné est toujours visible, et les éléments non visibles peuvent s’afficher lorsque l’utilisateur appuie sur la zone de liste déroulante pour la développer.
 
-### Est-ce le contrôle approprié?
+### <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
 -   Utilisez une liste déroulante pour permettre aux utilisateurs de sélectionner une valeur unique parmi un ensemble d’éléments qui peuvent être représentés correctement à l’aide de simples lignes de texte.
 -   Utilisez un affichage Liste ou Grille au lieu d’une zone de liste déroulante pour afficher des éléments contenant plusieurs lignes de texte ou images.
 -   En présence de moins de cinq éléments, utilisez des [cases d’option](radio-button.md) (si un seul élément peut être sélectionné) ou des [cases à cocher](checkbox.md) (si plusieurs éléments peuvent être sélectionnés).
 -   Utilisez cette zone de liste déroulante pour les éléments de sélection d’importance secondaire au sein de votre application. Si l’option par défaut est recommandée pour la plupart des utilisateurs dans la majorité des situations, l’affichage de tous les éléments à l’aide d’un affichage Liste risque d’attirer l’attention sur les options plus qu’il n’est nécessaire. Pour économiser de l’espace et éviter de distraire l’utilisateur, utilisez une zone de liste déroulante.
 
-### Exemples
+### <a name="examples"></a>Exemples
 
 Une zone de liste déroulante en état compact peut afficher un en-tête.
 
@@ -176,20 +171,20 @@ Si la collection figurant dans une zone de liste déroulante est suffisamment lo
 
 ![Exemple de barre de défilement dans une liste déroulante](images/combo_box_scroll.png)
 
-### Recommandations
+### <a name="recommendations"></a>Recommandations
 
 -   Limitez le contenu texte des éléments de zone de liste déroulante à une seule ligne.
 -   Triez les éléments d’une zone de liste déroulante dans l’ordre le plus logique. Regroupez les options associées et placez les options les plus courantes en haut. Triez les noms par ordre alphabétique, les nombres par ordre numérique et les dates par ordre chronologique.
 
-### Recherche en texte
+### <a name="text-search"></a>Recherche en texte
 
-Les zones de liste déroulante prennent automatiquement en charge la recherche au sein de leurs collections. Lorsque les utilisateurs tapent des caractères sur un clavier physique dans une zone de liste déroulante ouverte ou fermée, des candidats correspondant à la chaîne entrée apparaissent. Cette fonctionnalité est particulièrement utile lors de la navigation dans une liste longue. Par exemple, lorsqu’un utilisateur interagit avec une liste déroulante contenant une liste des États américains, le fait d’appuyer sur la touche «W» affiche «Washington» pour une sélection rapide. 
+Les zones de liste déroulante prennent automatiquement en charge la recherche au sein de leurs collections. Lorsque les utilisateurs tapent des caractères sur un clavier physique dans une zone de liste déroulante ouverte ou fermée, des candidats correspondant à la chaîne entrée apparaissent. Cette fonctionnalité est particulièrement utile lors de la navigation dans une liste longue. Par exemple, lorsqu’un utilisateur interagit avec une liste déroulante contenant une liste des États américains, le fait d’appuyer sur la touche « W » affiche « Washington » pour une sélection rapide. 
 
-## Zones de liste
+## <a name="list-boxes"></a>Zones de liste
 
 Une zone de liste permet à l’utilisateur de choisir un ou plusieurs éléments d’une collection. Les zones de liste sont similaires aux listes déroulantes, sauf qu’elles sont toujours ouvertes, c’est-à-dire qu’elles n’ont pas d’état compact (non développé). Les éléments de la liste peuvent défiler si l’espace est insuffisant pour les afficher tous.
 
-### Est-ce le contrôle approprié ?
+### <a name="is-this-the-right-control"></a>Est-ce le contrôle approprié ?
 
 -   Une zone de liste peut être utile quand des éléments de la liste sont suffisamment importants pour être mis en avant, et quand l’écran offre suffisamment d’espace pour afficher la liste complète.
 -   Une zone de liste doit attirer l’attention de l’utilisateur sur toutes les possibilités d’un choix important. En revanche, une liste déroulante attire initialement l’attention de l’utilisateur sur l’élément sélectionné.
@@ -200,7 +195,7 @@ Une zone de liste permet à l’utilisateur de choisir un ou plusieurs élément
     -   Les éléments sont des valeurs numériques contiguës. Si tel est le cas, pensez à utiliser un [curseur](slider.md).
     -   Les éléments de sélection ont une importance secondaire dans le flux de votre application, ou l’option par défaut est recommandée pour la plupart des utilisateurs dans la majorité des situations. Dans ce cas, utilisez plutôt une liste déroulante.
 
-### Recommandations
+### <a name="recommendations"></a>Recommandations
 
 -   La plage idéale d’éléments dans une zone de liste est de 3 à 9.
 -   Une zone de liste est efficace quand ses éléments peuvent varier de manière dynamique.
@@ -211,7 +206,7 @@ Une zone de liste permet à l’utilisateur de choisir un ou plusieurs élément
 -   Utilisez la police par défaut à moins que vos instructions de personnalisation imposent d’en utiliser une autre.
 -   N’utilisez pas une zone de liste pour exécuter des commandes ou pour afficher ou masquer de manière dynamique d’autres contrôles.
 
-## Mode de sélection
+## <a name="selection-mode"></a>Mode de sélection
 
 Le mode de sélection permet aux utilisateurs de sélectionner et d’exécuter une action sur un ou plusieurs éléments. Il peut être appelé par le biais d’un menu contextuel, à l’aide de la combinaison CTRL+clic ou MAJ+clic sur un élément, ou par la substitution d’une cible sur un élément dans un affichage Galerie. Quand le mode de sélection est actif, des cases à cocher s’affichent à côté de chaque élément de la liste, et des actions peuvent apparaître en haut ou en bas de l’écran.
 
@@ -233,7 +228,7 @@ Le point d’entrée du mode Sélection doit être juxtaposé au contenu concern
 
 Pour des recommandations relatives à la barre de commandes, voir [Recommandations en matière de barres de commandes](app-bars.md).
 
-## Liste de contrôle de globalisation et de localisation
+## <a name="globalization-and-localization-checklist"></a>Liste de contrôle de globalisation et de localisation
 
 <table>
 <tr>
@@ -248,7 +243,7 @@ Pour des recommandations relatives à la barre de commandes, voir [Recommandatio
 </table>
 
 
-## Articles connexes
+## <a name="related-articles"></a>Articles connexes
 
 - [Hub](hub.md)
 - [Maître/détails](master-details.md)
@@ -264,6 +259,6 @@ Pour des recommandations relatives à la barre de commandes, voir [Recommandatio
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

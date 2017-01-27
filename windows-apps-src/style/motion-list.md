@@ -6,24 +6,26 @@ ms.assetid: A85006AE-4992-457a-B514-500B8BEF5DC8
 label: Motion--add and delete animations
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: b6c57d1ceadd0785a51c518bc51f93892aa472d5
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: e1fc86e5110da8926194e20947552337216d4a72
 
 ---
 
-# Ajout et suppression d’animations
+# <a name="add-and-delete-animations"></a>Ajout et suppression d’animations
 
-
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 Les animations de liste vous permettent d’insérer ou de supprimer un ou plusieurs éléments dans une collection telle qu’un album photo ou une liste de résultats de recherche.
 
-**API importantes**
+<div class="important-apis" >
+<b>API importantes</b><br/>
+<ul>
+<li>[**Classe AddDeleteThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br243048)</li>
+</ul>
+</div>
 
--   [**Classe AddDeleteThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br243048)
 
-
-## Pratiques conseillées et déconseillées
+## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
 
 
 -   Utilisez les animations de liste pour ajouter un nouvel élément unique à un ensemble d’éléments existants, par exemple, quand un nouveau courrier électronique arrive ou quand une nouvelle photo est importée dans un ensemble existant.
@@ -35,13 +37,11 @@ Les animations de liste vous permettent d’insérer ou de supprimer un ou plusi
 
 
 
-## Articles connexes
+## <a name="related-articles"></a>Articles connexes
 
-
-**Pour les développeurs (XAML)**
 * [Vue d’ensemble des animations](https://msdn.microsoft.com/library/windows/apps/mt187350)
 * [Animation d’ajouts et de suppressions dans la liste](https://msdn.microsoft.com/library/windows/apps/xaml/jj649430)
-* [Démarrage rapide: animation de votre interface utilisateur avec des animations de la bibliothèque](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [Démarrage rapide : animation de votre interface utilisateur avec des animations de la bibliothèque](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
 * [**Classe AddDeleteThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br243048)
 
  
@@ -54,6 +54,6 @@ Les animations de liste vous permettent d’insérer ou de supprimer un ou plusi
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

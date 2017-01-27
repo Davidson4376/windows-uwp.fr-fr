@@ -4,9 +4,15 @@ Description: "Incorporez des fonctionnalités vocales dans vos applications en u
 title: Interactions avec Surface Dial
 label: Surface Dial interactions
 template: detail.hbs
+keywords: "Surface Dial, Windows Wheel, RadialController, contrôleur Radial, interaction utilisateur, entrées"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 0f7f54c5c5baccdedfe32bc7c71994e43a93f032
-ms.openlocfilehash: 08ac5d58f2650306b162e4dec7f4e606543ca80f
+ms.sourcegitcommit: eb86863d6ce2e545b3e534ef6cafb220904e3dc8
+ms.openlocfilehash: 96b9a2e213c36b8f92664185e9cdcaea6d457368
 
 ---
 
@@ -24,7 +30,7 @@ Les appareils Windows Wheel, tels que Surface Dial, sont une nouvelle catégorie
 
 | Vidéos |   |
 | --- | --- |
-| <iframe width="300" height="200" src="https://www.youtube.com/embed/WMklcdzcNcU" frameborder="0" allowfullscreen></iframe> | <iframe width="300" height="200" src="https://www.youtube.com/embed/2tajuOfs9p0" frameborder="0" allowfullscreen></iframe> |
+| <iframe width="300" height="200" src="https://www.youtube.com/embed/WMklcdzcNcU" frameborder="0" allowfullscreen></iframe> | <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Programming-the-Microsoft-Surface-Dial/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe> |
 | *Partenaires d’applications Surface Dial* | *Surface Dial pour les développeurs* |
 
 Avec un format appelant à une action de *rotation* (ou de mouvement), Surface Dial est conçu à la manière d’un appareil d’entrée secondaire multimode venant compléter la saisie à partir d’un appareil principal. Dans la plupart des cas, l’utilisateur manipule l’appareil avec sa main non dominante tout en effectuant une tâche avec sa main dominante (par exemple, l’entrée manuscrite avec un stylet). L’appareil n’est pas conçu pour effectuer des entrées d’un pointeur de précision (par exemple, interaction tactile, stylet ou souris). 
@@ -662,6 +668,6 @@ Envoyez vos questions, suggestions et commentaires à [radialcontroller@microsof
 [Exemple du bureau classique Windows](https://aka.ms/radialcontrollerclassicsample)
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

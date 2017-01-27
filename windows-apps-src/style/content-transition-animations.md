@@ -3,26 +3,27 @@ author: mijacobs
 Description: "Les animations de transition de contenu vous permettent de modifier le contenu d’une zone de l’écran tout en maintenant le conteneur ou l’arrière-plan constant. Le nouveau contenu apparaît. Si du contenu déjà à l’écran doit être remplacé, il disparaît."
 title: "Recommandations en matière d’animations de transition de contenu"
 ms.assetid: 0188FDB4-E183-466f-8A03-EE3FF5C474B1
+template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: d7236006f2c620a4ff0de4e0f413f32a2eaf5687
-ms.openlocfilehash: 2b3e0196b573fb426c9cd71fc613819a2dd2d615
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: ed2d580568b73e787ad7b980981e025652232a83
 
 ---
 
-# Animations de transition de contenu
+# <a name="content-transition-animations"></a>Animations de transition de contenu
 
-
-
-
-
-**API importantes**
-
--   [**Classe ContentThemeTransition (XAML)**](https://msdn.microsoft.com/library/windows/apps/br243104)
--   [**Fonction enterContent (HTML)**](https://msdn.microsoft.com/library/windows/apps/hh701582)
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 Les animations de transition de contenu vous permettent de modifier le contenu d’une zone de l’écran tout en maintenant le conteneur ou l’arrière-plan constant. Le nouveau contenu apparaît. Si du contenu déjà à l’écran doit être remplacé, il disparaît.
 
-## Pratiques conseillées et déconseillées
+<div class="important-apis" >
+<b>API importantes</b><br/>
+<ul>
+<li>[**Classe ContentThemeTransition (XAML)**](https://msdn.microsoft.com/library/windows/apps/br243104)</li>
+</ul>
+</div>
+
+## <a name="dos-and-donts"></a>Pratiques conseillées et déconseillées
 
 
 -   Utilisez une animation d’ouverture lorsque vous devez insérer un ensemble de nouveaux éléments dans un conteneur vide. Par exemple, après le chargement initial d’une application, une partie de son contenu est susceptible de ne pas pouvoir s’afficher immédiatement. Une fois le contenu prêt à l’affichage, utilisez une animation de transition de contenu pour activer son affichage.
@@ -35,12 +36,12 @@ Les animations de transition de contenu vous permettent de modifier le contenu d
 
 
 
-## Articles connexes
+## <a name="related-articles"></a>Articles connexes
 
 **Pour les développeurs (XAML)**
 * [Vue d’ensemble des animations](https://msdn.microsoft.com/library/windows/apps/mt187350)
 * [Animation de transitions de contenu](https://msdn.microsoft.com/library/windows/apps/xaml/jj649426)
-* [Démarrage rapide: animation de votre interface utilisateur avec des animations de la bibliothèque](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [Démarrage rapide : animation de votre interface utilisateur avec des animations de la bibliothèque](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
 * [**Classe ContentThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br243104)
 
  
@@ -53,6 +54,6 @@ Les animations de transition de contenu vous permettent de modifier le contenu d
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 
