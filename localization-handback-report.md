@@ -1,33 +1,11 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 1
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [windows-apps-src\gaming\headset.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/12f1c02e89f8feb24f9fb8994bdf8633e85965b1?path=windows-apps-src%2Fgaming%2Fheadset.md&_a=contents) | HandedOffSuccess | [Details](#51e2e716c0bb3e26af76493b3f987f747ff8e33e2584)
 
 ## Item Details
-##### <a name='51e2e716c0bb3e26af76493b3f987f747ff8e33e2584'></a> Source: [windows-apps-src\gaming\headset.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/12f1c02e89f8feb24f9fb8994bdf8633e85965b1?path=windows-apps-src%2Fgaming%2Fheadset.md&_a=contents)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [headset.4a461e6c1e6f0d799e154ce271ac7d4bffa92cc1.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/26c587acc33c359b8730d761e9b4d63ef9b24a09?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Fheadset.4a461e6c1e6f0d799e154ce271ac7d4bffa92cc1.fr-fr.xlf&_a=contents)
-* Handoff Datetime: 2017-01-27 22:38:49
-* Handoff Reason: Include
-* Handoff Name: 
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Handback Name: 
-* Current Target File: [windows-apps-src\gaming\headset.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.fr-fr/commit/6271fdde7a89a59064def6efb77ceb996866fa10?path=windows-apps-src%2Fgaming%2Fheadset.md&_a=contents)
-* Current Handback File: [headset.4a461e6c1e6f0d799e154ce271ac7d4bffa92cc1.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/349ef8f50b289f30b6d7f4120d59dae5fc87ebd5?path=ol-handback%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Fheadset.4a461e6c1e6f0d799e154ce271ac7d4bffa92cc1.fr-fr.xlf&_a=contents)
-* Current Handback Datetime: 2017-02-01 18:37:24
-* Bilingual File: [headset.4a461e6c1e6f0d799e154ce271ac7d4bffa92cc1.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/59c30e2a801c773453fcb7d8ede42e8a5cf80cf1?path=ol-handback%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Fheadset.4a461e6c1e6f0d799e154ce271ac7d4bffa92cc1.fr-fr.xlf&_a=contents)
-* Bilingual Datetime: 2017-01-20 14:55:09
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
