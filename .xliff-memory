@@ -2728,7 +2728,7 @@
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.fr-fr\\master\\5306ef31bf20b25a5f2a24dee8bd8b55de2773da.8a0c5d4738fdb7214a1705ad2e37c8e6e61b40d0.xml",
       "LocXliff": "ol-handback\\cpubwin\\windows-uwp.fr-fr\\master\\headset.4a461e6c1e6f0d799e154ce271ac7d4bffa92cc1.fr-fr.xlf",
-      "LocXliffCommit": "59c30e2a801c773453fcb7d8ede42e8a5cf80cf1"
+      "LocXliffCommit": "349ef8f50b289f30b6d7f4120d59dae5fc87ebd5"
     },
     "windows-apps-src\\monetize\\create-and-manage-submissions-using-windows-store-services.md.09ae01926464f8f9e337e43a329d9ace28955450.HT": {
       "SourceFilename": "windows-apps-src\\monetize\\create-and-manage-submissions-using-windows-store-services.md",
