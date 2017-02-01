@@ -69,7 +69,7 @@ Les détails de l’utilisation du point de terminaison XAudio ne sont pas couve
 [igamecontroller.headset]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.headset.aspx
 [igamecontroller.headsetconnected]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.headsetconnected.aspx
 [igamecontroller.headsetdisconnected]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.igamecontroller.headsetdisconnected.aspx
-[casque]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.headset.aspx
+[headset]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.headset.aspx
 
 
 
