@@ -6,15 +6,15 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\devices-sensors\enable-usermode-access.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/ad1c99240f52b9119edc191aef1db82f0b361d86?path=windows-apps-src%2Fdevices-sensors%2Fenable-usermode-access.md&_a=contents) | HandedOffSuccess | [Details](#d96d01216a37c4e8dbcd0fcd0eb83ccb4859b2882451)
- [windows-apps-src\TOC.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/812da00057020bfbe711fbf3116ad1a05e48a9ca?path=windows-apps-src%2FTOC.md&_a=contents) | HandedOffSuccess | [Details](#3ebc7e4b3055c43f52d1e7b5125ce942404bec667825)
+ [windows-apps-src\get-started\learn-more.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/0cda4dc1110d54172df654b545b3df0b672738c8?path=windows-apps-src%2Fget-started%2Flearn-more.md&_a=contents) | HandedOffSuccess | [Details](#364889ca15bdae717557187c7b05c23d976b83f73081)
+ [windows-apps-src\porting\android-ios-uwp-map.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/3a609016e67db4d6fb75e8b37c08a330622cc37e?path=windows-apps-src%2Fporting%2Fandroid-ios-uwp-map.md&_a=contents) | HandedOffSuccess | [Details](#ce32bd7ebaca20827a637c456b2dbe82811817cb4654)
 
 ## Item Details
-##### <a name='d96d01216a37c4e8dbcd0fcd0eb83ccb4859b2882451'></a> Source: [windows-apps-src\devices-sensors\enable-usermode-access.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/ad1c99240f52b9119edc191aef1db82f0b361d86?path=windows-apps-src%2Fdevices-sensors%2Fenable-usermode-access.md&_a=contents)
+##### <a name='364889ca15bdae717557187c7b05c23d976b83f73081'></a> Source: [windows-apps-src\get-started\learn-more.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/0cda4dc1110d54172df654b545b3df0b672738c8?path=windows-apps-src%2Fget-started%2Flearn-more.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [enable-usermode-access.03d2b42ceea545cfbb5a86cb77d17968d4a4b712.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/95a335f9497b3ed4aa6673d84a69d1c303095b7c?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Fenable-usermode-access.03d2b42ceea545cfbb5a86cb77d17968d4a4b712.fr-fr.xlf&_a=contents)
-* Handoff Datetime: 2017-02-24 01:17:13
+* Handoff File: [learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/7c759d887c5da73a6aad7ea5f89e8306b95e256c?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Flearn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.fr-fr.xlf&_a=contents)
+* Handoff Datetime: 2017-02-24 17:10:26
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -22,18 +22,18 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [windows-apps-src\devices-sensors\enable-usermode-access.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.fr-fr/commit/b499722b387bb5bf9961078746547751e280aace?path=windows-apps-src%2Fdevices-sensors%2Fenable-usermode-access.md&_a=contents)
-* Current Handback File: [enable-usermode-access.03d2b42ceea545cfbb5a86cb77d17968d4a4b712.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/a2b58f321961fe8e5a80c86cd6d53f983c3d6f0e?path=ol-handback%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Fenable-usermode-access.03d2b42ceea545cfbb5a86cb77d17968d4a4b712.fr-fr.xlf&_a=contents)
-* Current Handback Datetime: 2016-11-21 16:54:33
-* Bilingual File: [enable-usermode-access.03d2b42ceea545cfbb5a86cb77d17968d4a4b712.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/a2b58f321961fe8e5a80c86cd6d53f983c3d6f0e?path=ol-handback%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Fenable-usermode-access.03d2b42ceea545cfbb5a86cb77d17968d4a4b712.fr-fr.xlf&_a=contents)
-* Bilingual Datetime: 2016-11-21 17:10:43
+* Current Target File: [windows-apps-src\get-started\learn-more.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.fr-fr/commit/f65a0178c7caffc8c106bec649216bb53dba5c89?path=windows-apps-src%2Fget-started%2Flearn-more.md&_a=contents)
+* Current Handback File: [learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/59c30e2a801c773453fcb7d8ede42e8a5cf80cf1?path=ol-handback%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Flearn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.fr-fr.xlf&_a=contents)
+* Current Handback Datetime: 2017-01-20 14:40:27
+* Bilingual File: [learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/59c30e2a801c773453fcb7d8ede42e8a5cf80cf1?path=ol-handback%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Flearn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.fr-fr.xlf&_a=contents)
+* Bilingual Datetime: 2017-01-20 14:55:09
 * [Back to Top](#report-top)
 
-##### <a name='3ebc7e4b3055c43f52d1e7b5125ce942404bec667825'></a> Source: [windows-apps-src\TOC.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/812da00057020bfbe711fbf3116ad1a05e48a9ca?path=windows-apps-src%2FTOC.md&_a=contents)
+##### <a name='ce32bd7ebaca20827a637c456b2dbe82811817cb4654'></a> Source: [windows-apps-src\porting\android-ios-uwp-map.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/3a609016e67db4d6fb75e8b37c08a330622cc37e?path=windows-apps-src%2Fporting%2Fandroid-ios-uwp-map.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/95a335f9497b3ed4aa6673d84a69d1c303095b7c?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2FTOC.350f1fabd525c277c15320fda16caad6a319dd0a.fr-fr.xlf&_a=contents)
-* Handoff Datetime: 2017-02-24 01:17:13
+* Handoff File: [android-ios-uwp-map.6676821c86614bdd62f0f709cefaaa98367a24a7.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/7c759d887c5da73a6aad7ea5f89e8306b95e256c?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Fandroid-ios-uwp-map.6676821c86614bdd62f0f709cefaaa98367a24a7.fr-fr.xlf&_a=contents)
+* Handoff Datetime: 2017-02-24 17:10:26
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -41,11 +41,11 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [windows-apps-src\TOC.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.fr-fr/commit/f65a0178c7caffc8c106bec649216bb53dba5c89?path=windows-apps-src%2FTOC.md&_a=contents)
-* Current Handback File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/59c30e2a801c773453fcb7d8ede42e8a5cf80cf1?path=ol-handback%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2FTOC.350f1fabd525c277c15320fda16caad6a319dd0a.fr-fr.xlf&_a=contents)
-* Current Handback Datetime: 2017-01-20 14:40:27
-* Bilingual File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/59c30e2a801c773453fcb7d8ede42e8a5cf80cf1?path=ol-handback%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2FTOC.350f1fabd525c277c15320fda16caad6a319dd0a.fr-fr.xlf&_a=contents)
-* Bilingual Datetime: 2017-01-20 14:55:09
+* Current Target File: [windows-apps-src\porting\android-ios-uwp-map.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.fr-fr/commit/b499722b387bb5bf9961078746547751e280aace?path=windows-apps-src%2Fporting%2Fandroid-ios-uwp-map.md&_a=contents)
+* Current Handback File: [android-ios-uwp-map.6676821c86614bdd62f0f709cefaaa98367a24a7.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/a2b58f321961fe8e5a80c86cd6d53f983c3d6f0e?path=ol-handback%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Fandroid-ios-uwp-map.6676821c86614bdd62f0f709cefaaa98367a24a7.fr-fr.xlf&_a=contents)
+* Current Handback Datetime: 2016-11-21 16:54:33
+* Bilingual File: [android-ios-uwp-map.6676821c86614bdd62f0f709cefaaa98367a24a7.fr-fr.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/a2b58f321961fe8e5a80c86cd6d53f983c3d6f0e?path=ol-handback%2Fcpubwin%2Fwindows-uwp.fr-fr%2Fmaster%2Fandroid-ios-uwp-map.6676821c86614bdd62f0f709cefaaa98367a24a7.fr-fr.xlf&_a=contents)
+* Bilingual Datetime: 2016-11-21 17:10:43
 * [Back to Top](#report-top)
 
 
